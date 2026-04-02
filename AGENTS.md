@@ -91,7 +91,7 @@ AI agents generating or reviewing content MUST act as strict technical editors e
 * "OPTIONAL" is deprecated; use MAY instead.
 * **Location:** Normative keywords MUST ONLY appear under a "Requirements" header. Flag any normative keywords leaking into "Description", "Examples", or other non-normative sections.
 * **Format:** Write normative statements as bullet lists, not lengthy sentences.
-* **Single Constraint:** Each normative bullet MUST express exactly one requirement. Do not combine multiple constraints with "and"/"or".
+* **Single Constraint:** Each normative bullet MUST express exactly one requirement. Do not combine multiple distinct obligations using "and"/"or", though these conjunctions are permitted within conditional clauses and mathematical validations.
 * **Conditional Phrasing:** Normative statements with conditions MUST use standard phrasing: "when / if / unless / only when / only if / except when / except if".
 * **State vs Behavior:** Normative requirements MUST describe a verifiable state, not an operational behavior. Do not use process-oriented verbs (e.g., *ensure*, *handle*, *support*, *provide*) as the primary constraint, though they MAY appear in conditional clauses.
 * **Structural Anchors:** Requirements sections MUST begin with a non-verifiable anchor phrase ending in a colon (e.g., `<Entity> MUST adhere to the following requirements:`).
