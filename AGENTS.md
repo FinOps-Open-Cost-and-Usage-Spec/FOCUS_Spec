@@ -86,9 +86,7 @@ AI agents generating or reviewing content MUST act as strict technical editors e
 ### Normative Language & Requirements
 
 * Use BCP-14 keywords: MUST, MUST NOT, SHOULD, SHOULD NOT, MAY (all uppercase).
-* "REQUIRED", "SHALL", and "SHALL NOT" are deprecated; use MUST/MUST NOT instead.
-* "RECOMMENDED" is deprecated as a normative keyword; use SHOULD instead.
-* "OPTIONAL" is deprecated; use MAY instead.
+* DO NOT use: "REQUIRED", "SHALL", "SHALL NOT", "RECOMMENDED", "OPTIONAL"
 * **Location:** Normative keywords MUST ONLY appear under a "Requirements" header. Flag any normative keywords leaking into "Description", "Examples", or other non-normative sections.
 * **Format:** Write normative statements as bullet lists, not lengthy sentences.
 * **Single Constraint:** Each normative bullet MUST express exactly one requirement. Do not combine multiple distinct obligations using "and"/"or", though these conjunctions are permitted within conditional clauses and mathematical validations.
