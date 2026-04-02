@@ -20,7 +20,7 @@
 
 To illustrate how FOCUS normalizes the presentation of data across diverse technology environments, the appendix uses a standardized set of fictitious [*data generators*](#metadata.datagenerator). These represent common architectural components, ranging from core cloud infrastructure to SaaS platforms. Using these examples demonstrates cross-vendor cost allocation, standardized billing schemas, and multi-cloud reporting without relying on proprietary vendor data.
 
-Disclaimer: *The fictitious data generators referenced in this appendix are intended solely for illustrative purposes to resemble real-world services. They do not reflect, represent, or imply the actual current or future FOCUS implementations, billing schemas, or data formats of any real-world companies or equivalents listed herein.*
+Disclaimer: *The fictitious entities (data generators, customers, and commitment programs) referenced in this appendix are intended solely for illustrative purposes to resemble real-world services and organizations. They do not reflect, represent, or imply the actual current or future FOCUS implementations, billing schemas, or data formats of any real-world companies or equivalents listed herein.*
 
 The table below outlines the fictitious *data generators* used throughout the appendix, their primary functions, and their real-world counterparts for context:
 
