@@ -8,7 +8,7 @@ This document does not cover spec design decisions, editorial standards, or PR r
 
 ### Title
 
-FR titles must start with `[FR]` and follow these conventions. During triage, titles that don't conform should be corrected by the triager.
+FR titles must start with `[FR]` and follow these conventions. During triage, mechanical title issues (casing, length, filler words) should be corrected directly by the triager. If the title has a substantive problem that requires the author's input (e.g., describes an implementation rather than an outcome), apply `weak title`.
 
 * **Start with a standard verb.** Choose one or use a verb similar to: Add, Clarify, Standardize, Enable, Define, Remove, Rename
 * **Use correct sentence structure.** Pick whichever reads best between: Verb + Target + Qualifier OR Verb + Qualifier + Target (e.g., "Add data generator-calculated shared cost allocation" vs. "Standardize tag export across clouds")
@@ -122,8 +122,9 @@ These labels indicate a section is present but does not meet the quality bar def
 | Label | When to apply |
 |:------|:--------------|
 | `weak problem statement` | Problem statement describes a solution, is too vague, or restates the use case |
-| `weak use case` | Use case is solution-oriented, too broad, bundles multiple capabilities, or mixes dimensions and metrics |
+| `weak use case` | Use case is solution-oriented, mixes dimensions and metrics, or has quality problems beyond scope bundling. If bundling is the primary issue, prefer `needs splitting` instead. |
 | `weak success criteria` | Success criteria describe implementation changes rather than testable practitioner outcomes |
+| `weak title` | Title does not follow conventions and requires author input to fix (e.g., describes implementation rather than outcome) |
 | `weak org requesting` | Organizations are listed but lack blocker/nice-to-have classification |
 
 ### Lifecycle Label
@@ -172,7 +173,7 @@ Is the FR well-scoped and actionable?
 
 * If the FR bundles multiple capabilities: apply `needs splitting` and comment with a recommendation for how to decompose it.
 * If the FR scope is unclear or ambiguity is too high to estimate: apply `needs scoping` and comment with what needs clarification.
-* If the FR contains out-of-scope elements (e.g., telemetry, non-billing data): comment and ask the submitter to revise.
+* If the FR contains out-of-scope elements (e.g., telemetry, non-billing data): apply `needs scoping` and comment asking the submitter to revise the scope. This is rare but ensures the unresolved state is trackable.
 
 **Ambiguity factors.** The following factors help assess whether an FR's scope is clear enough to proceed:
 
