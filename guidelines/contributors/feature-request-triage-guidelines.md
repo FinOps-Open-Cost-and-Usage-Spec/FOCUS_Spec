@@ -201,7 +201,7 @@ The PM fills the Maintainer Assessment sections of the FR template:
 
 ## Staleness Policy
 
-Feature Requests that remain in an unresolved triage state accumulate staleness across release cycles. The release count starts from when the first `needs` or `weak` label is applied.
+Feature Requests that remain in an unresolved triage state accumulate staleness across release cycles. The release count starts from when the oldest currently-unresolved `needs` or `weak` label was applied. If all triage labels are cleared and a new one is applied later, the count restarts from that point.
 
 | Threshold | Action |
 |:----------|:-------|

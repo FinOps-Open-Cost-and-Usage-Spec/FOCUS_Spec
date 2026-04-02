@@ -41,7 +41,7 @@ Feedback Issues will have a title that starts with \`\[Feedback]\`.
 
 All suggestions and feature requests should be introduced to the FOCUS project via GitHub Issues of the type Feature. The template for these Issues will ensure the needed information is gathered and available for prioritisation processes. Anyone can submit Feature Request Issues within the GitHub repository. 
 
-For FR title conventions and quality bar requirements, see [Feature Request Triage and Improvement Guidelines](feature-request-triage-guidelines.md).
+Feature Request Issues will have a title that starts with `[FR]`. For title quality conventions and triage requirements, see [Feature Request Triage and Improvement Guidelines](feature-request-triage-guidelines.md).
 
 Feature Request Issues will have the Type: "Feature" and Label: "feature", and be associated with the FOCUS WG project.
 
