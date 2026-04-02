@@ -24,7 +24,7 @@ Disclaimer: *The fictitious data generators referenced in this appendix are inte
 
 The table below outlines the fictitious *data generators* used throughout the appendix, their primary functions, and their real-world counterparts for context:
 
-| Fictitious Data Generator | Service Offering | Fictitious Data Generator Description | Similar Real-World Companies |
+| Fictitious Data Generator | Service Offering | Fictitious Data Generator Description | Similar Real-World Examples |
 | :--- | :--- | :--- | :--- |
 | **Aura Web** | Cloud Service Provider | A highly scalable, market-leading cloud infrastructure provider offering extensive compute, storage, and serverless options. | Amazon Web Services (AWS) |
 | **CrestNode** | Cloud Service Provider | An enterprise-focused cloud platform with deep integrations into existing corporate software ecosystems and directory services. | Microsoft Azure |
