@@ -10,15 +10,15 @@ This document does not cover spec design decisions, editorial standards, or PR r
 
 FR titles must start with `[FR]` and follow these conventions. During triage, titles that don't conform should be corrected by the triager.
 
-- **Start with a standard verb.** Choose one or use a verb similar to: Add, Clarify, Standardize, Enable, Define, Remove, Rename
-- **Use correct sentence structure.** Pick whichever reads best between: Verb + Target + Qualifier OR Verb + Qualifier + Target (e.g., "Add data generator-calculated shared cost allocation" vs. "Standardize tag export across clouds")
-- **Describe the outcome, not the implementation.** "Add daily amortized cost" > "Create SQL to amortize daily"
-- **Sentence case; acronyms uppercase; no ALL-CAPS words.** "Add RI coverage metric" not "ADD RI COVERAGE METRIC"
-- **Use canonical FOCUS terminology; stay service-provider-agnostic.** Vendor specifics belong in examples, not the title
-- **Express one concept per title.** If you need two independent changes, create two issues. "And" and "or" are indications that multiple issues are needed
-- **Trim filler words unless they improve clarity.** Drop "the," "of," "for," etc., where possible to save space
-- **Keep titles ≤ 75 characters (aim for ~60).** Short enough to fit in GitHub lists, change logs, and slides without wrapping
-- **Don't end with a trailing period**
+* **Start with a standard verb.** Choose one or use a verb similar to: Add, Clarify, Standardize, Enable, Define, Remove, Rename
+* **Use correct sentence structure.** Pick whichever reads best between: Verb + Target + Qualifier OR Verb + Qualifier + Target (e.g., "Add data generator-calculated shared cost allocation" vs. "Standardize tag export across clouds")
+* **Describe the outcome, not the implementation.** "Add daily amortized cost" > "Create SQL to amortize daily"
+* **Sentence case; acronyms uppercase; no ALL-CAPS words.** "Add RI coverage metric" not "ADD RI COVERAGE METRIC"
+* **Use canonical FOCUS terminology; stay service-provider-agnostic.** Vendor specifics belong in examples, not the title
+* **Express one concept per title.** If you need two independent changes, create two issues. "And" and "or" are indications that multiple issues are needed
+* **Trim filler words unless they improve clarity.** Drop "the," "of," "for," etc., where possible to save space
+* **Keep titles ≤ 75 characters (aim for ~60).** Short enough to fit in GitHub lists, change logs, and slides without wrapping
+* **Don't end with a trailing period**
 
 ### Sections
 
@@ -96,7 +96,14 @@ These labels indicate a required section is absent or empty.
 | `needs success criteria` | Success Criteria section is missing or empty |
 | `needs org requesting` | Organizations Requesting section is missing or empty |
 
-The following existing `needs` labels are unchanged and continue to serve their current purpose: `needs triage`, `needs backlog review`, `needs stakeholder input`, `needs examples`, `needs work item`, `needs features`.
+The following existing `needs` labels are unchanged and continue to serve their current purpose:
+
+* `needs triage`
+* `needs backlog review`
+* `needs stakeholder input`
+* `needs examples`
+* `needs work item`
+* `needs features`
 
 ### `needs` Labels (Structural)
 
@@ -195,7 +202,7 @@ Feature Requests that remain in an unresolved triage state accumulate staleness 
 | Threshold | Action |
 |:----------|:-------|
 | 3 releases with unresolved `needs` or `weak` labels | Apply `stale` label. Comment notifying the submitter of what is needed and that the FR will be closed if unaddressed. |
-| 5 releases with no substantive update | Close the FR with a comment explaining the closure reason. |
+| 5 releases with unresolved `needs` or `weak` labels | Close the FR with a comment explaining the closure reason. |
 
 A "substantive update" means the submitter edited the FR to address the labeled issues. A "still interested" comment without changes does not count.
 

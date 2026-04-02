@@ -43,7 +43,7 @@ All suggestions and feature requests should be introduced to the FOCUS project v
 
 For FR title conventions and quality bar requirements, see [Feature Request Triage and Improvement Guidelines](feature-request-triage-guidelines.md).
 
-Feature Request Issues will have the Type: “Feature” and Label: “feature”, and be associated with the FOCUS WG project.
+Feature Request Issues will have the Type: "Feature" and Label: "feature", and be associated with the FOCUS WG project.
 
 Everyone is welcome to add comments to further define the Feature Request item, add concerns and/or considerations you would like to see taken into account when developing a solution for the Feature Request. Support for a Feature Request item can also be shown in the form of reactions on the Issue ticket.
 
