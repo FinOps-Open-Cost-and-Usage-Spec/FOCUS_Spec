@@ -79,26 +79,39 @@ The `specification/requirements_model/` directory contains a machine-readable re
 - Status: M (Mandatory), O (Optional), C (Conditional)
 - Example: `ListUnitPrice-C-001-M`
 
-## Writing Specification Content
+## Writing Specification Content & Review Guidelines
 
-### Normative Language
+AI agents generating or reviewing content MUST act as strict technical editors enforcing the FOCUS standards. Focus entirely on specification documents, schema definitions, and markdown formatting. 
 
-- Use BCP-14 keywords: MUST, MUST NOT, SHOULD, SHOULD NOT, MAY (all uppercase)
-- "REQUIRED" is deprecated; use MUST instead
-- "SHALL" is deprecated; use MUST instead
-- "SHALL NOT" is deprecated; use MUST NOT instead
-- "RECOMMENDED" is deprecated; use SHOULD instead
-- "NOT RECOMMENDED" is deprecated; use SHOULD NOT instead
-- "OPTIONAL" is deprecated; use MAY instead
-- Write normative statements as bullet lists, not lengthy sentences
+### Normative Language & Requirements
+
+- Use BCP-14 keywords: MUST, MUST NOT, SHOULD, SHOULD NOT, MAY (all uppercase).
+- "REQUIRED", "SHALL", and "SHALL NOT" are deprecated; use MUST/MUST NOT instead.
+- "RECOMMENDED" is deprecated as a normative keyword; use SHOULD instead.
+- "OPTIONAL" is deprecated; use MAY instead.
+- **Location:** Normative keywords MUST ONLY appear under a "Requirements" header. Flag any normative keywords leaking into "Description", "Examples", or other non-normative sections.
+- **Format:** Write normative statements as bullet lists, not lengthy sentences.
+- **Single Constraint:** Each normative bullet MUST express exactly one requirement. Do not combine multiple constraints with "and"/"or".
+- **Conditional Phrasing:** Normative statements with conditions MUST use standard phrasing: "when / if / unless / only when / only if / except when / except if".
+- **State vs Behavior:** Normative requirements MUST describe a verifiable state, not an operational behavior. Do not use process-oriented verbs like *ensure*, *handle*, *support*, or *provide*.
+- **Structural Anchors:** Requirements sections MUST begin with a non-verifiable anchor phrase ending in a colon (e.g., `<Entity> MUST adhere to the following requirements:`).
 
 ### Editorial Conventions
 
-- Column/Attribute IDs: PascalCase without spaces (e.g., `PricingQuantity`)
-- Column/Attribute Display Names: Normal text with spaces (e.g., "Pricing Quantity")
-- Column values: Enclosed in double quotes (e.g., `"Usage"`, `"Tax"`)
-- Glossary terms: Link with `[*term*](#glossary:term)` format (first occurrence per section)
-- First mention of Column/Attribute names should link to their definition section
+- **Column/Attribute IDs:** PascalCase without spaces (e.g., `PricingQuantity`). Entity IDs MUST be used in normative text sections.
+- **Column/Attribute Display Names:** Normal text with spaces (e.g., "Pricing Quantity"). These SHOULD be used in introductory or explanatory non-normative text.
+- **No Mixing:** Do not mix Entity IDs and Display Names within the same sentence.
+- **Column values:** Enclosed in double quotes (e.g., `"Usage"`, `"Tax"`).
+- **Glossary terms:** Link with `[*term*](#glossary:term)` format.
+- **Linking Rule:** First mention of Column/Attribute names and Glossary terms should link to their definition section. They MUST ONLY be hyperlinked the *first occurrence* per section.
+- **Lists:** All unordered lists MUST use asterisks (`*`), never dashes (`-`) or plus signs (`+`). Nested bullet points MUST use exactly two spaces per level.
+- **Notes:** Important notes must use the blockquote format (`> Important Consideration`).
+
+### Validation & Schema Accuracy
+
+- **Mathematical & Schema Accuracy:** AI reviewers MUST rigorously calculate, parse, and verify all data within examples (especially JSON snippets and tables). Flag any mathematical inconsistencies or hallucinated data.
+- **JSON Formatting:** JSON blocks MUST use double quotation marks for keys. Verify that the JSON is structurally valid.
+- **Example Disclaimer:** Any section containing examples MUST include the exact warning note: `> Note: The following examples are informative and non-normative. They do not define requirements.`
 
 ### File Organization
 
