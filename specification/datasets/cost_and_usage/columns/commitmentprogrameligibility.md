@@ -50,7 +50,6 @@ CommitmentProgramEligibilityObject MUST adhere to the following requirements:
 
 | Key         | ValueType                            | Required | Description                                                                                                |
 |:-------------|:-------------|:-------------|:------------------------------|
-| ProgramCategory | [String](#attributes.stringhandling) | True     | Provider-agnostic classification of *commitment program*. |
 | ProgramType | [String](#attributes.stringhandling) | True     | The specific type of commitment program (e.g., discount or capacity reservation) available for this usage. |
 
 ### Object Example
@@ -127,7 +126,7 @@ Scenario: A compute instance type and tenancy that are eligible for both discoun
 
 This example demonstrates how to calculate an accurate [*commitment*](#glossary:commitment) coverage rate using [CommitmentProgramEligibility](#datasets.costandusage.commitmentprogrameligibility) alongside [CommitmentDiscountId](#datasets.costandusage.commitmentdiscountid).
 
-Acme Corp runs compute workloads on Aura Web. Some usage is covered by a Resource Reservation, some is eligible but uncovered, and a support fee is ineligible for any [*commitment program*](#glossary:commitment-program). In this scenario, Aura Web populates CommitmentProgramEligibility on uncovered rows but omits it on some covered rows. This is permitted by the spec since the column is conditional. However, it creates a gap in naive coverage calculations that rely solely on CommitmentProgramEligibility to define the eligible population.
+Acme Corp runs compute workloads on Aura Web. Some usage is covered by a Resource Reservation, some is eligible but uncovered, and a support fee is ineligible for any [*commitment program*](#glossary:commitment-program). While the specification mandates that CommitmentProgramEligibility must not be null when a charge is eligible, practitioners may encounter non-compliant provider data where this column is omitted on covered rows. This creates a gap in naive coverage calculations that rely solely on CommitmentProgramEligibility to define the eligible population.
 
 Four usage rows for a single charge period (2025-04-01):
 
