@@ -24,8 +24,8 @@ FR titles must start with `[FR]` and follow these conventions. During triage, ti
 
 Each required section of the [Feature Request template](../../.github/ISSUE_TEMPLATE/feature-request.yml) has a defined quality bar. A section can fail in two ways:
 
-- **Missing**: The section is absent, empty, or contains only placeholder text.
-- **Below bar**: The section is present but does not meet the standard.
+* **Missing**: The section is absent, empty, or contains only placeholder text.
+* **Below bar**: The section is present but does not meet the standard.
 
 ### Problem Statement
 
@@ -57,11 +57,11 @@ Success criteria are testable statements focused on what practitioners can do on
 
 Good criteria typically fall into one of these lenses:
 
-- **Data availability**: "Practitioners can [identify/query/segment] [specific data point] for [purpose]"
-- **Cross-provider consistency**: "[Data/concept] is consistently [represented/structured] across data generators that support this capability"
-- **Actionability**: "Practitioners can [perform analysis/build report] using [the data] without [manual step/external data]"
-- **Clarity**: "[Concept A] is clearly [distinguishable/defined] relative to [Concept B]"
-- **Guidance**: "Data generators have clear guidance on [how to represent/when to populate] [the data]"
+* **Data availability**: "Practitioners can [identify/query/segment] [specific data point] for [purpose]"
+* **Cross-provider consistency**: "[Data/concept] is consistently [represented/structured] across data generators that support this capability"
+* **Actionability**: "Practitioners can [perform analysis/build report] using [the data] without [manual step/external data]"
+* **Clarity**: "[Concept A] is clearly [distinguishable/defined] relative to [Concept B]"
+* **Guidance**: "Data generators have clear guidance on [how to represent/when to populate] [the data]"
 
 | Outcome | Criteria |
 |:--------|:---------|
@@ -103,7 +103,8 @@ The following existing `needs` labels are unchanged and continue to serve their 
 * `needs stakeholder input`
 * `needs examples`
 * `needs work item`
-* `needs features`
+* `needs supported features`
+* `needs org support`
 
 ### `needs` Labels (Structural)
 
@@ -135,6 +136,8 @@ These labels indicate a section is present but does not meet the quality bar def
 
 An FR with zero `needs` and `weak` labels has cleared the quality bar. No separate "ready" or "approved" label is needed. The absence of triage labels is the positive signal.
 
+Any maintainer may remove a `needs` or `weak` label once the corresponding section meets the quality bar.
+
 If an FR still carries any `needs` or `weak` label, it cannot advance to "Under Consideration." The PM may begin Maintainer Assessment work in parallel while labels are being resolved, but the FR cannot exit triage until all `needs` and `weak` labels are cleared.
 
 The specific failure mode behind a `weak` label (e.g., solution-oriented vs. too broad) belongs in the triage comment on the issue, not in the label. This reduces label proliferation and avoids the "which sub-label?" question during triage.
@@ -142,6 +145,8 @@ The specific failure mode behind a `weak` label (e.g., solution-oriented vs. too
 ### When to Create Labels
 
 Labels defined in this document will be created in GitHub after these guidelines are approved. No labels should be created, renamed, or deleted before approval.
+
+The existing kebab-case labels `needs-scoping` and `needs-splitting` will be deleted and replaced by the space-separated equivalents defined above. Existing granular triage labels (e.g., `use-cases-solution-oriented`, `use-cases-too-broad`, `success-criteria-not-testable`, `blends-dimensions-metrics`) will be deprecated in favor of the `weak` prefix labels, with failure details captured in triage comments instead of label names.
 
 ## Triage Workflow
 
@@ -151,23 +156,23 @@ Triage follows four logical gates. An FR must clear all four before it can be co
 
 Are all required sections present and non-empty?
 
-- If not: apply the relevant `needs` label(s), comment on the issue explaining what is missing, and set the project status to "Needs More Info."
-- If yes: proceed to Gate 2.
+* If not: apply the relevant `needs` label(s), comment on the issue explaining what is missing, and set the project status to "Needs More Info."
+* If yes: proceed to Gate 2.
 
 ### Gate 2: Quality Check
 
 Do present sections meet the quality bar defined above?
 
-- If not: apply the relevant `weak` label(s), comment on the issue with specific feedback on what to improve.
-- If yes: proceed to Gate 3.
+* If not: apply the relevant `weak` label(s), comment on the issue with specific feedback on what to improve.
+* If yes: proceed to Gate 3.
 
 ### Gate 3: Structural Check
 
 Is the FR well-scoped and actionable?
 
-- If the FR bundles multiple capabilities: apply `needs splitting` and comment with a recommendation for how to decompose it.
-- If the FR scope is unclear or ambiguity is too high to estimate: apply `needs scoping` and comment with what needs clarification.
-- If the FR contains out-of-scope elements (e.g., telemetry, non-billing data): comment and ask the submitter to revise.
+* If the FR bundles multiple capabilities: apply `needs splitting` and comment with a recommendation for how to decompose it.
+* If the FR scope is unclear or ambiguity is too high to estimate: apply `needs scoping` and comment with what needs clarification.
+* If the FR contains out-of-scope elements (e.g., telemetry, non-billing data): comment and ask the submitter to revise.
 
 **Ambiguity factors.** The following factors help assess whether an FR's scope is clear enough to proceed:
 
@@ -186,18 +191,18 @@ FRs where multiple factors fall in the "increases ambiguity" column should recei
 
 The PM fills the Maintainer Assessment sections of the FR template:
 
-- Adoption Impact
-- Supported Features Alignment
-- Implementation Scope (MVP Definition, North Star Vision, Phasing Strategy)
-- Impacted Parties
-- Level of Ambiguity
-- FinOps Scope Alignment
+* Adoption Impact
+* Supported Features Alignment
+* Implementation Scope (MVP Definition, North Star Vision, Phasing Strategy)
+* Impacted Parties
+* Level of Ambiguity
+* FinOps Scope Alignment
 
 **Entry to "Under Consideration"** requires: zero `needs` or `weak` labels remaining AND Maintainer Assessment sections complete.
 
 ## Staleness Policy
 
-Feature Requests that remain in an unresolved triage state accumulate staleness across release cycles.
+Feature Requests that remain in an unresolved triage state accumulate staleness across release cycles. The release count starts from the FR's creation date.
 
 | Threshold | Action |
 |:----------|:-------|
