@@ -8,7 +8,7 @@ This document does not cover spec design decisions, editorial standards, or PR r
 
 ### Title
 
-FR titles must start with `[FR]` and follow these conventions. During triage, mechanical title issues (casing, length, filler words) should be corrected directly by the triager. If the title has a substantive problem that requires the author's input (e.g., describes an implementation rather than an outcome), apply `weak title`.
+FR titles must start with `[FR]` and follow these conventions. During triage, mechanical title issues (casing, length, filler words) should be corrected directly by the triager. If the title has a substantive problem that requires the author's input (e.g., describes an implementation rather than an outcome), apply `revise title`.
 
 * **Start with a standard verb.** Choose one or use a verb similar to: Add, Clarify, Standardize, Enable, Define, Remove, Rename
 * **Use correct sentence structure.** Pick whichever reads best between: Verb + Target + Qualifier OR Verb + Qualifier + Target (e.g., "Add data generator-calculated shared cost allocation" vs. "Standardize tag export across clouds")
@@ -115,33 +115,33 @@ These labels indicate the FR has structural issues that must be resolved before 
 | `needs scoping` | FR scope is unclear; ambiguity is too high to estimate |
 | `needs splitting` | FR bundles multiple capabilities that should be separate issues |
 
-### `weak` Labels (Below Quality Bar)
+### `revise` Labels (Below Quality Bar)
 
 These labels indicate a section is present but does not meet the quality bar defined above.
 
 | Label | When to apply |
 |:------|:--------------|
-| `weak problem statement` | Problem statement describes a solution, is too vague, or restates the use case |
-| `weak use case` | Use case is solution-oriented, mixes dimensions and metrics, or has quality problems beyond scope bundling. If bundling is the primary issue, prefer `needs splitting` instead. |
-| `weak success criteria` | Success criteria describe implementation changes rather than testable practitioner outcomes |
-| `weak title` | Title does not follow conventions and requires author input to fix (e.g., describes implementation rather than outcome) |
-| `weak org requesting` | Organizations are listed but lack blocker/nice-to-have classification |
+| `revise problem statement` | Problem statement describes a solution, is too vague, or restates the use case |
+| `revise use case` | Use case is solution-oriented, mixes dimensions and metrics, or has quality problems beyond scope bundling. If bundling is the primary issue, prefer `needs splitting` instead. |
+| `revise success criteria` | Success criteria describe implementation changes rather than testable practitioner outcomes |
+| `revise title` | Title does not follow conventions and requires author input to fix (e.g., describes implementation rather than outcome) |
+| `revise org requesting` | Organizations are listed but lack blocker/nice-to-have classification |
 
 ### Lifecycle Label
 
 | Label | When to apply |
 |:------|:--------------|
-| `stale` | FR has carried unresolved `needs` or `weak` labels for 3 or more releases without a substantive update |
+| `stale` | FR has carried unresolved `needs` or `revise` labels for 3 or more releases without a substantive update |
 
 ### Reading the Labels
 
-An FR with zero `needs` and `weak` labels has cleared the quality bar. No separate "ready" or "approved" label is needed. The absence of triage labels is the positive signal.
+An FR with zero `needs` and `revise` labels has cleared the quality bar. No separate "ready" or "approved" label is needed. The absence of triage labels is the positive signal.
 
-Any maintainer may remove a `needs` or `weak` label once the corresponding section meets the quality bar.
+Any maintainer may remove a `needs` or `revise` label once the corresponding section meets the quality bar.
 
-If an FR still carries any `needs` or `weak` label, it cannot advance to "Under Consideration." The PM may begin Maintainer Assessment work in parallel while labels are being resolved, but the FR cannot exit triage until all `needs` and `weak` labels are cleared.
+If an FR still carries any `needs` or `revise` label, it cannot advance to "Under Consideration." The PM may begin Maintainer Assessment work in parallel while labels are being resolved, but the FR cannot exit triage until all `needs` and `revise` labels are cleared.
 
-The specific failure mode behind a `weak` label (e.g., solution-oriented vs. too broad) belongs in the triage comment on the issue, not in the label. This reduces label proliferation and avoids the "which sub-label?" question during triage.
+The specific failure mode behind a `revise` label (e.g., solution-oriented vs. too broad) belongs in the triage comment on the issue, not in the label. This reduces label proliferation and avoids the "which sub-label?" question during triage.
 
 ### When to Create Labels
 
@@ -162,7 +162,7 @@ Are all required sections present and non-empty?
 
 Do present sections meet the quality bar defined above?
 
-* If not: apply the relevant `weak` label(s), comment on the issue with specific feedback on what to improve.
+* If not: apply the relevant `revise` label(s), comment on the issue with specific feedback on what to improve.
 * If yes: proceed to Gate 3.
 
 ### Gate 3: Structural Check
@@ -197,16 +197,16 @@ The PM fills the Maintainer Assessment sections of the FR template:
 * Level of Ambiguity
 * FinOps Scope Alignment
 
-**Entry to "Under Consideration"** requires: zero `needs` or `weak` labels remaining AND Maintainer Assessment sections complete.
+**Entry to "Under Consideration"** requires: zero `needs` or `revise` labels remaining AND Maintainer Assessment sections complete.
 
 ## Staleness Policy
 
-Feature Requests that remain in an unresolved triage state accumulate staleness across release cycles. The release count starts from when the oldest currently-unresolved `needs` or `weak` label was applied. If all triage labels are cleared and a new one is applied later, the count restarts from that point.
+Feature Requests that remain in an unresolved triage state accumulate staleness across release cycles. The release count starts from when the oldest currently-unresolved `needs` or `revise` label was applied. If all triage labels are cleared and a new one is applied later, the count restarts from that point.
 
 | Threshold | Action |
 |:----------|:-------|
-| 3 releases with unresolved `needs` or `weak` labels | Apply `stale` label. Comment notifying the submitter of what is needed and that the FR will be closed if unaddressed. |
-| 5 releases with unresolved `needs` or `weak` labels | Close the FR with a comment explaining the closure reason. |
+| 3 releases with unresolved `needs` or `revise` labels | Apply `stale` label. Comment notifying the submitter of what is needed and that the FR will be closed if unaddressed. |
+| 5 releases with unresolved `needs` or `revise` labels | Close the FR with a comment explaining the closure reason. |
 
 A "substantive update" means the submitter edited the FR to address the labeled issues. A "still interested" comment without changes does not count.
 
