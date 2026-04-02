@@ -37,7 +37,9 @@ The `ProgramType` property follows PascalCase by convention, identifying [*commi
 
 The FOCUS specification implements commitment eligibility via the [CommitmentProgramEligibility](#datasets.costandusage.commitmentprogrameligibility) column, which is defined in [*JSON object format*](#attributes.jsonobjectformat).
 
-Because ANSI SQL does not inherently support the parsing of JSON, the following queries leverage the JSON functions and utility functions (e.g., SAFE_DIVIDE) found in BigQuery Standard SQL in order to demonstrate this feature's functionality. Similar functions are available in all major SQL engines; thus, the below examples can be slightly modified to accommodate any particular database instance.
+Because ANSI SQL does not define a standard for parsing JSON, the following queries use BigQuery Standard SQL JSON functions (e.g., `JSON_VALUE`, `JSON_EXTRACT_ARRAY`, `UNNEST`). Similar functions are available in all major SQL engines; the examples can be adapted to accommodate any particular database instance. Non-JSON constructs (CTEs, `NULLIF`) are ANSI SQL and should work without modification.
+
+Note: The following queries assume FOCUS-conformant dataset artifacts. Practitioners should verify provider conformance before relying on these queries. Non-conformant dataset artifacts may produce inaccurate results.
 
 Note: The `CommitmentPrograms` array contains all [*commitment program*](#glossary:commitment-program) types, including both discount-bearing programs and [*capacity reservations*](#glossary:capacity-reservation). The first three queries below focus on discount-bearing programs and use [CommitmentDiscountId](#datasets.costandusage.commitmentdiscountid) to determine coverage. Capacity reservations are fundamentally different: they secure resource availability rather than provide discounts, and are tracked via [CapacityReservationId](#datasets.costandusage.capacityreservationid) and [CapacityReservationStatus](#datasets.costandusage.capacityreservationstatus). A separate query for capacity reservation analysis follows. Providers using only custom (`x_`-prefixed) top-level keys would require modified JSON paths.
 
@@ -62,6 +64,8 @@ WHERE CU.ChargePeriodStart >= ? AND CU.ChargePeriodEnd < ?
   AND CU.ChargeCategory = 'Usage'
   AND CU.CommitmentDiscountId IS NULL
   AND CU.CommitmentProgramEligibility IS NOT NULL
+  -- Replace with provider-specific discount-bearing program types
+  AND JSON_VALUE(CP, '$.ProgramType') IN ('FlexibleSpendPlan', 'ResourceReservation')
 GROUP BY
   CU.ServiceProviderName,
   CU.ServiceName,
@@ -72,66 +76,64 @@ ORDER BY TotalEligibleUncoveredCost DESC
 ### Calculate Commitment Discount Coverage Rate with Eligibility-Adjusted Denominator
 
 This query computes a [*commitment discount*](#glossary:commitment-discount) coverage rate using only eligible [*charges*](#glossary:charge) as the denominator. Without eligibility data, practitioners typically divide covered spend by total spend, which produces a coverage rate that includes ineligible charges (e.g., storage services, support fees) in the denominator and may not reflect the actionable coverage opportunity. This query targets discount-bearing programs only; for [*capacity reservation*](#glossary:capacity-reservation) utilization, see the capacity reservation query below.
-The denominator uses an OR condition: a charge is counted as eligible if it is already covered ([CommitmentDiscountId](#datasets.costandusage.commitmentdiscountid) is not null) or if it is flagged as eligible ([CommitmentProgramEligibility](#datasets.costandusage.commitmentprogrameligibility) is not null). While the specification mandates that CommitmentProgramEligibility must be populated on eligible covered rows, this safeguards against non-compliant provider data where the JSON is omitted. Without this OR condition, such omissions would exclude covered spend from the denominator and produce an artificially low or 0% rate.
 
 Note: Unused commitment rows (CommitmentDiscountStatus = "Unused") have CommitmentDiscountId populated and will artificially inflate both the numerator and the denominator if left in the dataset. To calculate a true, utilization-adjusted coverage rate, practitioners should additionally filter out these rows (e.g., AND CU.CommitmentDiscountStatus != 'Unused').
 
 ```sql
+WITH CommitmentDiscountEligible AS (
+  SELECT
+    CU.ServiceProviderName,
+    CU.EffectiveCost,
+    CU.CommitmentDiscountId
+  FROM focus_data_table CU
+  CROSS JOIN
+    UNNEST(JSON_EXTRACT_ARRAY(CU.CommitmentProgramEligibility, '$.CommitmentPrograms')) AS CP
+  WHERE CU.ChargePeriodStart >= ? AND CU.ChargePeriodEnd < ?
+    AND CU.ChargeCategory = 'Usage'
+    AND CU.CommitmentProgramEligibility IS NOT NULL
+    -- Replace with provider-specific discount-bearing program types
+    AND JSON_VALUE(CP, '$.ProgramType') IN ('FlexibleSpendPlan', 'ResourceReservation')
+)
 SELECT
-  CU.ServiceProviderName,
-  SUM(CASE
-    WHEN CU.CommitmentDiscountId IS NOT NULL
-    THEN CU.EffectiveCost ELSE 0 END) AS CoveredCost,
-  SUM(CASE
-    WHEN CU.CommitmentDiscountId IS NOT NULL
-      OR CU.CommitmentProgramEligibility IS NOT NULL
-    THEN CU.EffectiveCost ELSE 0 END) AS TotalEligibleCost,
-  SAFE_DIVIDE(
-    SUM(CASE
-      WHEN CU.CommitmentDiscountId IS NOT NULL
-      THEN CU.EffectiveCost ELSE 0 END),
-    SUM(CASE
-      WHEN CU.CommitmentDiscountId IS NOT NULL
-        OR CU.CommitmentProgramEligibility IS NOT NULL
-      THEN CU.EffectiveCost ELSE 0 END)
-  ) AS CommitmentCoverageRate
-FROM focus_data_table CU
-WHERE CU.ChargePeriodStart >= ? AND CU.ChargePeriodEnd < ?
-  AND CU.ChargeCategory = 'Usage'
-GROUP BY CU.ServiceProviderName
+  ServiceProviderName,
+  SUM(CASE WHEN CommitmentDiscountId IS NOT NULL THEN EffectiveCost ELSE 0 END) AS CoveredCost,
+  SUM(EffectiveCost) AS TotalEligibleCost,
+  SUM(CASE WHEN CommitmentDiscountId IS NOT NULL THEN EffectiveCost ELSE 0 END)
+    / NULLIF(SUM(EffectiveCost), 0) AS CommitmentCoverageRate
+FROM CommitmentDiscountEligible
+GROUP BY ServiceProviderName
 ```
 
 ### Compare Commitment Opportunities Across Providers (Cross-Provider with SaaS)
 
 This query aggregates eligible spend and uncovered eligible spend across all providers, including SaaS platforms. A practitioner managing both CSP and SaaS workloads can identify where uncovered eligible spend is concentrated across [*commitment program*](#glossary:commitment-program) types.
 
-Note: Some SaaS providers may not populate [CommitmentDiscountId](#datasets.costandusage.commitmentdiscountid) even when a [*commitment*](#glossary:commitment) is applied. For those providers, this query will falsely categorize all eligible spend as "Uncovered," resulting in an artificially high Uncovered Rate. Practitioners should consult provider-specific documentation to determine how commitment utilization is actually surfaced in the data.
-
 Note: As with the first query above, when a charge is eligible for multiple *commitment program* types, it appears once per eligible type. Removing the EligibleProgramType grouping without deduplicating would inflate totals.
 
 ```sql
+WITH CommitmentDiscountEligible AS (
+  SELECT
+    CU.ServiceProviderName,
+    JSON_VALUE(CP, '$.ProgramType') AS ProgramType,
+    CU.EffectiveCost,
+    CASE WHEN CU.CommitmentDiscountId IS NULL THEN CU.EffectiveCost ELSE 0 END AS UncoveredCost
+  FROM focus_data_table CU
+  CROSS JOIN
+    UNNEST(JSON_EXTRACT_ARRAY(CU.CommitmentProgramEligibility, '$.CommitmentPrograms')) AS CP
+  WHERE CU.ChargePeriodStart >= ? AND CU.ChargePeriodEnd < ?
+    AND CU.ChargeCategory = 'Usage'
+    AND CU.CommitmentProgramEligibility IS NOT NULL
+    -- Replace with provider-specific discount-bearing program types
+    AND JSON_VALUE(CP, '$.ProgramType') IN ('FlexibleSpendPlan', 'ResourceReservation')
+)
 SELECT
-  CU.ServiceProviderName,
-  JSON_VALUE(CP, '$.ProgramType') AS EligibleProgramType,
-  SUM(CU.EffectiveCost) AS TotalEligibleCost,
-  SUM(CASE
-    WHEN CU.CommitmentDiscountId IS NULL
-    THEN CU.EffectiveCost ELSE 0 END) AS UncoveredEligibleCost,
-  SAFE_DIVIDE(
-    SUM(CASE
-      WHEN CU.CommitmentDiscountId IS NULL
-      THEN CU.EffectiveCost ELSE 0 END),
-    SUM(CU.EffectiveCost)
-  ) AS UncoveredRate
-FROM focus_data_table CU
-CROSS JOIN
-  UNNEST(JSON_EXTRACT_ARRAY(CU.CommitmentProgramEligibility, '$.CommitmentPrograms')) AS CP
-WHERE CU.ChargePeriodStart >= ? AND CU.ChargePeriodEnd < ?
-  AND CU.ChargeCategory = 'Usage'
-  AND CU.CommitmentProgramEligibility IS NOT NULL
-GROUP BY
-  CU.ServiceProviderName,
-  JSON_VALUE(CP, '$.ProgramType')
+  ServiceProviderName,
+  ProgramType AS EligibleProgramType,
+  SUM(EffectiveCost) AS TotalEligibleCost,
+  SUM(UncoveredCost) AS UncoveredEligibleCost,
+  SUM(UncoveredCost) / NULLIF(SUM(EffectiveCost), 0) AS UncoveredRate
+FROM CommitmentDiscountEligible
+GROUP BY ServiceProviderName, ProgramType
 ORDER BY UncoveredEligibleCost DESC
 ```
 
@@ -141,7 +143,7 @@ ORDER BY UncoveredEligibleCost DESC
 
 The query filters [CommitmentProgramEligibility](#datasets.costandusage.commitmentprogrameligibility) to rows whose `ProgramType` values correspond to capacity-reservation programs (e.g., "AdvanceResourceCommitment", "ZonalResourceCommitment"). It then uses CapacityReservationId and CapacityReservationStatus to determine reservation utilization.
 
-Note: Not all providers populate CapacityReservationId for used capacity. The FOCUS specification requires CapacityReservationId to not be null when a charge represents unused capacity, and recommends (SHOULD) populating it when a charge is related to a *capacity reservation*. Practitioners should consult provider-specific documentation to confirm availability.
+Note: The FOCUS specification requires CapacityReservationId to not be null when a charge represents unused capacity (MUST), but only recommends (SHOULD) populating it when a charge is related to a used [*capacity reservation*](#glossary:capacity-reservation). Where a provider does not populate CapacityReservationId on used rows, this query will show those rows with a null CapacityReservationStatus.
 
 ```sql
 SELECT
