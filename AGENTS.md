@@ -98,7 +98,7 @@ AI agents generating or reviewing content MUST act as strict technical editors e
 
 ### Editorial Conventions
 
-- **Column/Attribute IDs:** PascalCase without spaces (e.g., `PricingQuantity`). Entity IDs MUST be used in normative text sections.
+- **Column/Attribute IDs:** PascalCase without spaces (e.g., PricingQuantity). Entity IDs SHOULD be used in normative text sections.
 - **Column/Attribute Display Names:** Normal text with spaces (e.g., "Pricing Quantity"). These SHOULD be used in introductory or explanatory non-normative text.
 - **No Mixing:** Do not mix Entity IDs and Display Names within the same sentence.
 - **Column values:** Enclosed in double quotes (e.g., `"Usage"`, `"Tax"`).
