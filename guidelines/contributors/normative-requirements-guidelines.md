@@ -176,20 +176,24 @@ A requirement MUST be split into multiple bullets if it:
 
 ### 1.7. Composite Requirements
 
-Composite (parent + nested) requirements MAY be used when strictly controlled.
+Composite (parent + nested) requirements MAY be used to group related constraints under a shared condition, context, or subject.
 
 Composite requirements MUST adhere to the following requirements:
 
-* Nested bullets MUST share the same condition if defined by the parent bullet.
-* Nested bullets SHOULD NOT introduce a different subject.
-* When nested bullets introduce different subjects, all subjects SHOULD be of the same subject type (e.g., FOCUS columns).
+* **Nuanced Obligation:** When a parent bullet uses a BCP 14 keyword (e.g., MUST), it establishes a mandatory requirement to evaluate the nested constraints. Each nested bullet then defines the specific nuance of that obligation for its respective subject or condition using its own BCP 14 keyword.
+* **Shared Conditionality:** Nested bullets MUST share the same condition if defined by the parent bullet.
+* **Context and Subject Consistency:** Nested bullets SHOULD maintain a consistent business context. While nested bullets SHOULD NOT introduce a different subject type, they MAY reference different subjects (e.g., a FOCUS dataset and its custom columns) provided they all relate to the same primary business context defined by the parent bullet.
+
+**Exceptions:**
+
+* **Conformance Recommendations:** When a parent bullet uses a SHOULD keyword to establish recommended conformance to a set of requirements (e.g., in `CustomColumnHandling` or when a column declares conformance to an attribute like `UnitFormat`), the weakest keyword in the hierarchy applies to the overall conformance.
 
 Composite requirements SHOULD be used when grouping improves readability and:
 
-* multiple requirements share the same subject, or
-* multiple requirements share the same business context (e.g., all requirements related to a specific business scenario or feature)
+* Multiple requirements share the same Business Context.
+* Multiple requirements share the same subject.
 
-Flat parallel bullets SHOULD be preferred when ordering keyword is sufficient for clarity and readability.
+Flat parallel bullets SHOULD be preferred when ordering keywords alone is sufficient for clarity and readability.
 
 ### 1.8. Definitions vs. Normative Requirements
 
