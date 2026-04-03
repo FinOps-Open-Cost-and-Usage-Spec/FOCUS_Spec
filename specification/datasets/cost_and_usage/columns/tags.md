@@ -19,18 +19,18 @@ Tags MUST adhere to the following requirements:
   * Data generator SHOULD publish tag finalization methods and semantics within their respective documentation.
   * Data generator MUST NOT alter tag values unless applying true (boolean) to valueless tags.
 * Provider-defined tags MUST adhere to the following requirements:
-  * Provider-defined tag keys MUST be prefixed with a predetermined, provider-specified tag key prefix that is unique to each corresponding provider-specified tag scheme.
+  * Provider-defined tag keys MUST be prefixed with a predetermined, provider-specified tag key prefix that is unique to each corresponding provider-specified [*tag scheme*](#glossary:tag-scheme).
   * Data generator SHOULD publish all provider-specified tag key prefixes within their respective documentation.
 * User-defined tags MUST adhere to the following requirements:
-  * Data generator MUST prefix all but one user-defined tag scheme with a predetermined, provider-specified tag key prefix that is unique to each corresponding user-defined tag scheme when the data generator has more than one user-defined tag scheme.
-  * Data generator MUST NOT prefix tag keys when the data generator has only one user-defined tag scheme.
-  * Data generator MUST NOT allow reserved tag key prefixes to be used as prefixes for any user-defined tag keys within a prefixless user-defined tag scheme.
+  * Data generator MUST prefix all but one user-defined *tag scheme* with a predetermined, provider-specified tag key prefix that is unique to each corresponding user-defined *tag scheme* when the data generator has more than one user-defined *tag scheme*.
+  * Data generator MUST NOT prefix tag keys when the data generator has only one user-defined *tag scheme*.
+  * Data generator MUST NOT allow reserved tag key prefixes to be used as prefixes for any user-defined tag keys within a prefixless user-defined *tag scheme*.
 
 ## Provider-Defined vs. User-Defined Tags
 
-This example illustrates various tags produced from multiple user-defined and provider-defined tag schemes.  The first three tags illustrate examples from three different, user-defined tag schemes. The data generator predetermined that 1 user-defined tag scheme (i.e., `"foo": "bar"`) does not have a prepended prefix, but the remaining two user-defined tag schemes (i.e., `"userDefinedTagScheme2/foo": "bar"`, `"userDefinedTagScheme3/foo": true`) do have provider-defined and reserved prefixes.  Additionally, the third tag is produced from a valueless, user-defined tag scheme, so the data generator also applies `true` as its default value.
+This example illustrates various tags produced from multiple user-defined and provider-defined *tag schemes*.  The first three tags illustrate examples from three different, user-defined *tag schemes*. The data generator predetermined that one user-defined *tag scheme* (i.e., `"foo": "bar"`) does not have a prepended prefix, but the remaining two user-defined *tag schemes* (i.e., `"userDefinedTagScheme2/foo": "bar"`, `"userDefinedTagScheme3/foo": true`) do have provider-defined and reserved prefixes.  Additionally, the third tag is produced from a valueless, user-defined *tag scheme*, so the data generator also applies `true` as its default value.
 
-The last two tags illustrate examples from two different, provider-defined tag schemes. Since all provider-defined tag schemes require a prefix, the data generator has prepended predefined and reserved prefixes (`providerDefinedTagScheme1/`, `providerDefinedTagScheme2/`) to each tag.
+The last two tags illustrate examples from two different, provider-defined *tag schemes*. Since all provider-defined *tag schemes* require a prefix, the data generator has prepended predefined and reserved prefixes (`providerDefinedTagScheme1/`, `providerDefinedTagScheme2/`) to each tag.
 
 ```json
     {

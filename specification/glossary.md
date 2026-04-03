@@ -240,7 +240,7 @@ A row in a FOCUS-compatible cost and usage dataset.
 
 <a name="glossary:service"><b>Service</b></a>
 
-An offering that can be purchased from a service provider, and can include many types of usage or other charges; eg., a cloud database service may include compute, storage, and networking charges.
+An offering that can be purchased from a service provider, and can include many types of usage or other charges; e.g., a cloud database service may include compute, storage, and networking charges.
 
 <a name="glossary:sku"><b>SKU</b></a>
 
@@ -257,6 +257,10 @@ A sub account is an optional service-provider-supported construct for organizing
 <a name="glossary:tag"><b>Tag</b></a>
 
 A metadata label assigned to a resource to provide information about it or to categorize it for organizational and management purposes.
+
+<a name="glossary:tag-scheme"><b>Tag Scheme</b></a>
+
+A distinct framework for assigning metadata to charges, resources, or other assets. Different metadata types within a single provider (e.g., "tags" vs. "labels") are considered separate schemes. They can be user-defined (i.e., allowing user input) or provider-defined (i.e., controlled by the service provider).
 
 <a name="glossary:tag-source"><b>Tag Source</b></a>
 
