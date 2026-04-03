@@ -187,7 +187,6 @@ CommitmentProgramEligibilityDetails is populated on both Used and Unused rows (R
 
 The capacity reservation query filters on CommitmentProgramEligibilityDetails and specific `ProgramType` values. Row 4 is excluded because CommitmentProgramEligibilityDetails is null. Rows 1 through 3 appear in the output, grouped by `ProgramType` and CapacityReservationStatus, allowing practitioners to see used, unused, and unreserved eligible spend separately.
 
-
 ## Introduced (Version)
 
 1.4
