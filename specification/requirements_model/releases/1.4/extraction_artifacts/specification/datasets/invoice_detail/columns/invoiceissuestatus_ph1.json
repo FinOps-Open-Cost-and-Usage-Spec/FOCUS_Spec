@@ -166,6 +166,31 @@
       },
       "_alignment_status": "confirmed",
       "ref": "L013"
+    },
+    {
+      "temp_id": "R007",
+      "order": 7,
+      "text": "InvoiceIssueStatus MUST NOT transition from \"Issued\" to \"Open\" unless explicitly requested or approved by the customer.",
+      "keyword": "MUST NOT",
+      "role": "requirement",
+      "section_path": [
+        "Invoice Issue Status",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 14,
+        "line_end": 14
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L014"
     }
   ],
   "warnings": [],
