@@ -1,7 +1,7 @@
 {
   "ModelRules": {
     "ATT-DatasetCompleteness-C-000-M": {
-      "Function": "Validation",
+      "Function": "Composite",
       "Reference": "DatasetCompleteness",
       "EntityType": "Attribute",
       "EntityName": "Dataset Completeness",
@@ -30,7 +30,7 @@
       }
     },
     "ATT-DatasetCompleteness-C-001-M": {
-      "Function": "Presence",
+      "Function": "Composite",
       "Reference": "DatasetCompleteness",
       "EntityType": "Attribute",
       "EntityName": "Dataset Completeness",
