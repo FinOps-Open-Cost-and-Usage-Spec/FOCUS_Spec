@@ -1,7 +1,7 @@
 {
   "ModelRules": {
     "IND-InvoiceIssueStatus-C-000-M": {
-      "Function": "Composite",
+      "Function": "Validation",
       "Reference": "InvoiceIssueStatus",
       "EntityType": "Column",
       "EntityName": "Invoice Issue Status",
@@ -26,7 +26,8 @@
           "IND-InvoiceIssueStatus-C-002-M",
           "IND-InvoiceIssueStatus-C-003-M",
           "IND-InvoiceIssueStatus-C-004-M",
-          "IND-InvoiceIssueStatus-C-005-M"
+          "IND-InvoiceIssueStatus-C-005-M",
+          "IND-InvoiceIssueStatus-C-006-C"
         ]
       }
     },
@@ -145,6 +146,30 @@
       "ValidationCriteria": {
         "MustSatisfy": "InvoiceIssueStatus MUST represent the current publication state of the invoice.",
         "Keyword": "MUST",
+        "Requirement": {},
+        "Condition": [],
+        "Dependencies": []
+      }
+    },
+    "IND-InvoiceIssueStatus-C-006-C": {
+      "Function": "Validation",
+      "Reference": "InvoiceIssueStatus",
+      "EntityType": "Column",
+      "EntityName": "Invoice Issue Status",
+      "EntityId": "InvoiceIssueStatus",
+      "Notes": "",
+      "ModelVersionIntroduced": "1.4",
+      "Status": "Active",
+      "ModelVersionRemoved": "",
+      "ApplicabilityCriteria": [],
+      "Type": "Dynamic",
+      "Order": 60,
+      "DatasetType": "IND",
+      "DatasetId": "InvoiceDetail",
+      "DatasetName": "Invoice Detail",
+      "ValidationCriteria": {
+        "MustSatisfy": "InvoiceIssueStatus MUST NOT transition from \"Issued\" to \"Open\" unless explicitly requested or approved by the customer.",
+        "Keyword": "MUST NOT",
         "Requirement": {},
         "Condition": [],
         "Dependencies": []
