@@ -24,6 +24,7 @@
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
+        "Payment Currency Billed Cost",
         "Requirements"
       ],
       "block": {
@@ -48,6 +49,7 @@
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
+        "Payment Currency Billed Cost",
         "Requirements"
       ],
       "block": {
@@ -72,6 +74,7 @@
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
+        "Payment Currency Billed Cost",
         "Requirements"
       ],
       "block": {
@@ -96,6 +99,7 @@
       "keyword": "MUST NOT",
       "role": "requirement",
       "section_path": [
+        "Payment Currency Billed Cost",
         "Requirements"
       ],
       "block": {
@@ -116,10 +120,11 @@
     {
       "temp_id": "R005",
       "order": 5,
-      "text": "PaymentCurrencyBilledCost MUST be 0 for *charges* where payments are received by a third party (e.g., marketplace transactions).",
+      "text": "PaymentCurrencyBilledCost MUST be denominated in the [PaymentCurrency](#datasets.invoicedetail.paymentcurrency).",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
+        "Payment Currency Billed Cost",
         "Requirements"
       ],
       "block": {
@@ -140,10 +145,11 @@
     {
       "temp_id": "R006",
       "order": 6,
-      "text": "PaymentCurrencyBilledCost MAY be non-zero while [BilledCost](#datasets.invoicedetail.billedcost) is 0 when PaymentCurrencyBilledCost represents the aggregation of BilledCost amounts (denominated in [PaymentCurrency](#datasets.invoicedetail.paymentcurrency)) stated in other records.",
-      "keyword": "MAY",
+      "text": "PaymentCurrencyBilledCost MUST be the PaymentCurrency-denominated equivalent of [BilledCost](#datasets.invoicedetail.billedcost).",
+      "keyword": "MUST",
       "role": "requirement",
       "section_path": [
+        "Payment Currency Billed Cost",
         "Requirements"
       ],
       "block": {
@@ -164,10 +170,11 @@
     {
       "temp_id": "R007",
       "order": 7,
-      "text": "PaymentCurrencyBilledCost MAY be 0 while [BilledCost](#datasets.invoicedetail.billedcost) is non-zero when BilledCost (denominated in [PaymentCurrency](#datasets.invoicedetail.paymentcurrency)) is represented in a separate aggregate record.",
+      "text": "PaymentCurrencyBilledCost MAY be non-zero while [BilledCost](#datasets.invoicedetail.billedcost) is 0 when PaymentCurrencyBilledCost represents the aggregation of BilledCost amounts (denominated in [PaymentCurrency](#datasets.invoicedetail.paymentcurrency)) stated in other records.",
       "keyword": "MAY",
       "role": "requirement",
       "section_path": [
+        "Payment Currency Billed Cost",
         "Requirements"
       ],
       "block": {
@@ -184,6 +191,31 @@
       },
       "_alignment_status": "confirmed",
       "ref": "L014"
+    },
+    {
+      "temp_id": "R008",
+      "order": 8,
+      "text": "PaymentCurrencyBilledCost MAY be 0 while [BilledCost](#datasets.invoicedetail.billedcost) is non-zero when BilledCost (denominated in [PaymentCurrency](#datasets.invoicedetail.paymentcurrency)) is represented in a separate aggregate record.",
+      "keyword": "MAY",
+      "role": "requirement",
+      "section_path": [
+        "Payment Currency Billed Cost",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 15,
+        "line_end": 15
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L015"
     }
   ],
   "warnings": [],
