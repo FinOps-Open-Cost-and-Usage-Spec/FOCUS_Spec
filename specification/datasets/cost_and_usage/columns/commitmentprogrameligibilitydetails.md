@@ -135,7 +135,7 @@ Four usage rows for a single charge period (2025-04-01):
 3. **Covered compute without eligibility** (Row 3): Also covered by the same ResourceReservation. The provider omits CommitmentProgramEligibilityDetails on this row. BilledCost is &dollar;0.00; EffectiveCost is &dollar;100.00.
 4. **Support fee** (Row 4): Not eligible for any *commitment program*. Both CommitmentProgramEligibilityDetails and CommitmentDiscountId are null. BilledCost and EffectiveCost are both &dollar;50.00.
 
-The coverage rate query from the [supported features documentation](#supportedfeatures.commitmentprogrameligibilitydetails) uses an OR condition in its denominator:
+A defensive approach adds an OR condition to the denominator, catching covered rows even when a provider omits CommitmentProgramEligibilityDetails:
 
 `CommitmentDiscountId IS NOT NULL OR CommitmentProgramEligibilityDetails IS NOT NULL`
 
