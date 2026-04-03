@@ -105,6 +105,14 @@ A correction (lowercase) may consist of one or more simultaneous changes, includ
 
 In contrast to the broader concept of correction (lowercase), the term "Correction" (capitalized) refers to a specific allowed value in the [Charge Class](#datasets.costandusage.chargeclass) column in Cost and Usage datasets. It designates [*charges*](#glossary:charge) used to correct cost or usage data from a previously [*closed billing period*](#glossary:closed-billing-period).
 
+<a name="glossary:covered-charge"><b>Covered Charge</b></a>
+
+A [*charge*](#glossary:charge) whose [Billed Cost](#datasets.costandusage.billedcost) is fully or partially absorbed by a corresponding [*covering charge*](#glossary:covering-charge). Common examples include usage charges applied against [*commitment discounts*](#glossary:commitment-discount), or consumption of SaaS offerings drawn from a prepayment, such as marketplace purchases.
+
+<a name="glossary:covering-charge"><b>Covering Charge</b></a>
+
+A purchase [*charge*](#glossary:charge) whose cost is applied against one or more [*covered charges*](#glossary:covered-charge), offsetting their [Billed Cost](#datasets.costandusage.billedcost). Common examples include [*commitment discount*](#glossary:commitment-discount) purchases, prepayment charges, and marketplace purchases that cover consumption-based usage.
+
 <a name="glossary:credit"><b>Credit</b></a>
 
 A financial incentive or allowance granted by a service provider unrelated to other past/current/future charges.
@@ -262,7 +270,7 @@ A row in a FOCUS-compatible cost and usage dataset.
 
 <a name="glossary:service"><b>Service</b></a>
 
-An offering that can be purchased from a service provider, and can include many types of usage or other charges; eg., a cloud database service may include compute, storage, and networking charges.
+An offering that can be purchased from a service provider, and can include many types of usage or other charges; e.g., a cloud database service may include compute, storage, and networking charges.
 
 <a name="glossary:sku"><b>SKU</b></a>
 
@@ -279,6 +287,10 @@ A sub account is an optional service-provider-supported construct for organizing
 <a name="glossary:tag"><b>Tag</b></a>
 
 A metadata label assigned to a resource to provide information about it or to categorize it for organizational and management purposes.
+
+<a name="glossary:tag-scheme"><b>Tag Scheme</b></a>
+
+A distinct framework for assigning metadata to charges, resources, or other assets. Different metadata types within a single provider (e.g., "tags" vs. "labels") are considered separate schemes. They can be user-defined (i.e., allowing user input) or provider-defined (i.e., controlled by the service provider).
 
 <a name="glossary:tag-source"><b>Tag Source</b></a>
 
