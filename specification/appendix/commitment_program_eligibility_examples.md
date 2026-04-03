@@ -1,6 +1,6 @@
 # Examples: Commitment Program Eligibility
 
-This section demonstrates how [CommitmentProgramEligibilityDetails](#datasets.costandusage.commitmentprogrameligibilitydetails) interacts with other columns for [*capacity reservation*](#glossary:capacity-reservation) programs. For discount-bearing program examples, see the [uncovered eligible spend](/specification/data/commitment_eligibility/uncovered_eligible_spend_by_program_type.csv) and [coverage rate](/specification/data/commitment_eligibility/coverage_rate_eligibility_adjusted.csv) CSVs.
+This section demonstrates how [CommitmentProgramEligibilityDetails](#datasets.costandusage.commitmentprogrameligibilitydetails) interacts with other columns for [*capacity reservation*](#glossary:capacity-reservation) programs. For discount-bearing program SQL queries, see the [Commitment Program Eligibility](#supportedfeatures.commitmentprogrameligibility) supported feature.
 
 ## Capacity Reservation Eligible Spend
 
@@ -8,7 +8,7 @@ This example demonstrates how [CommitmentProgramEligibilityDetails](#datasets.co
 
 Acme Corp runs compute workloads on Aura Web and holds an Advance Resource Commitment (cr-arc-acme-001) for a single charge period (2025-04-01). The `ProgramType` values "AdvanceResourceCommitment" and "ZonalResourceCommitment" are illustrative and do not correspond to a specific provider's program names.
 
-This example focuses on Usage rows, which are the rows that the capacity reservation query above filters on. Purchase rows for the reservation itself are not shown.
+This example focuses on Usage rows. Purchase rows for the reservation itself are not shown.
 
 Four usage rows for the period:
 
