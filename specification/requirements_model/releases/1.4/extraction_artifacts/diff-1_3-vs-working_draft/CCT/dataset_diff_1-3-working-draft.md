@@ -21,7 +21,7 @@ ContractCommitment [-adheres-]{+MUST adhere+} to the following requirements:
 {+  * ContractCommitment MUST include [ContractCommitmentOfferCategory](#datasets.contractcommitment.contractcommitmentoffercategory).+}
 {+  * ContractCommitment MUST include [ContractCommitmentPaymentInterval](#datasets.contractcommitment.contractcommitmentpaymentinterval).+}
 {+  * ContractCommitment MUST include [ContractCommitmentPaymentModel](#datasets.contractcommitment.contractcommitmentpaymentmodel).+}
-{+  * ContractCommitment MUST include [ContractCommitmentPaymentUpfrontPercentage](#datasets.contractcommitment.contractcommitmentpaymentupfrontpercentage) if the service provider offers "Partial Upfront" [payment models](#datasets.contractcommitment.contractcommitmentpaymentmodel).+}
+{+  * ContractCommitment MUST include [ContractCommitmentPaymentUpfrontPercentage](#datasets.contractcommitment.contractcommitmentpaymentupfrontpercentage) when the service provider offers "Partial Upfront" [payment models](#datasets.contractcommitment.contractcommitmentpaymentmodel).+}
 {+  * ContractCommitment MUST include [ContractCommitmentPeriodEnd](#datasets.contractcommitment.contractcommitmentperiodend).+}
 {+  * ContractCommitment MUST include [ContractCommitmentPeriodStart](#datasets.contractcommitment.contractcommitmentperiodstart).+}
 {+  * ContractCommitment MUST include [ContractCommitmentQuantity](#datasets.contractcommitment.contractcommitmentquantity).+}
@@ -35,6 +35,8 @@ ContractCommitment [-adheres-]{+MUST adhere+} to the following requirements:
 {+  * ContractCommitment MUST include [PricingCurrencyContractCommitmentCost](#datasets.contractcommitment.pricingcurrencycontractcommitmentcost) when the service provider supports pricing and billing in different currencies.+}
 {+  * ContractCommitment MUST include [ServiceProviderName](#datasets.contractcommitment.serviceprovidername).+}
 {+* ContractCommitment MUST conform to [ColumnHandling](#attributes.columnhandling) requirements.+}
+{+* ContractCommitment MUST conform to [CorrectionHandling](#attributes.correctionhandling) requirements.+}
 {+* ContractCommitment MUST conform to [DatasetCompleteness](#attributes.datasetcompleteness) requirements.+}
-{+* ContractCommitment+} MUST conform to [-[ColumnHandling](#columnhandling)-]{+[NullHandling](#attributes.nullhandling)+} requirements.
-* ContractCommitment MUST conform to [-[NullHandling](#nullhandling)-]{+[DatasetConfiguration](#attributes.datasetconfiguration)+} requirements.
+{+* ContractCommitment MUST conform to [DatasetConfiguration](#attributes.datasetconfiguration) requirements.+}
+{+* ContractCommitment+} MUST conform to [-[ColumnHandling](#columnhandling)-]{+[DeliveryHandling](#attributes.deliveryhandling)+} requirements.
+* ContractCommitment MUST conform to [-[NullHandling](#nullhandling)-]{+[NullHandling](#attributes.nullhandling)+} requirements.
