@@ -1,7 +1,7 @@
 {
   "ModelRules": {
     "IND-PaymentCurrencyBilledCost-C-000-M": {
-      "Function": "Validation",
+      "Function": "Composite",
       "Reference": "PaymentCurrencyBilledCost",
       "EntityType": "Column",
       "EntityName": "Payment Currency Billed Cost",
