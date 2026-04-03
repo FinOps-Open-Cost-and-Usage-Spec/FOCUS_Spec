@@ -702,8 +702,8 @@ To ensure clarity and consistency across columns and corresponding requirements,
   * Use "one" instead of "1".
   * Use "more than one" instead of "2 or more".
 * Examples:
-  * When the service provider has only one user-defined tag scheme. (instead of: When the service provider has only 1 user-defined tag scheme.)
-  * When the service provider has more than one user-defined tag scheme. (instead of: When the service provider has 2 or more user-defined tag schemes.)
+  * When the service provider has only one user-defined [*tag scheme*](#glossary:tag-scheme). (instead of: When the service provider has only 1 user-defined *tag scheme*.)
+  * When the service provider has more than one user-defined *tag scheme*. (instead of: When the service provider has 2 or more user-defined *tag schemes*.)
 
 ### 3.8. Column Normative Requirements Examples
 
