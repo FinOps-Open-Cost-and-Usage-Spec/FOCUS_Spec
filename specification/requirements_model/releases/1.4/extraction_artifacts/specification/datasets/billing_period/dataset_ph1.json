@@ -45,7 +45,7 @@
     {
       "temp_id": "R002",
       "order": 2,
-      "text": "BillingPeriod MUST be present if the invoice issuer supports payable invoices.",
+      "text": "BillingPeriod MUST be present when the invoice issuer supports payable invoices.",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
@@ -270,7 +270,7 @@
     {
       "temp_id": "R011",
       "order": 11,
-      "text": "BillingPeriod MUST conform to [DatasetCompleteness](#attributes.datasetcompleteness) requirements.",
+      "text": "BillingPeriod MUST conform to [CorrectionHandling](#attributes.correctionhandling) requirements.",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
@@ -291,6 +291,81 @@
       },
       "_alignment_status": "confirmed",
       "ref": "L038"
+    },
+    {
+      "temp_id": "R012",
+      "order": 12,
+      "text": "BillingPeriod MUST conform to [DatasetCompleteness](#attributes.datasetcompleteness) requirements.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Billing Period",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 39,
+        "line_end": 39
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L039"
+    },
+    {
+      "temp_id": "R013",
+      "order": 13,
+      "text": "BillingPeriod MUST conform to [DatasetConfiguration](#attributes.datasetconfiguration) requirements.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Billing Period",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 40,
+        "line_end": 40
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L040"
+    },
+    {
+      "temp_id": "R014",
+      "order": 14,
+      "text": "BillingPeriod MUST conform to [DeliveryHandling](#attributes.deliveryhandling) requirements.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Billing Period",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 41,
+        "line_end": 41
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L041"
     }
   ],
   "warnings": [],
