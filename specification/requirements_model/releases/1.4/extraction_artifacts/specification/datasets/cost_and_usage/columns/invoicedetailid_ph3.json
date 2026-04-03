@@ -1,7 +1,7 @@
 {
   "ModelRules": {
     "CAU-InvoiceDetailId-C-000-M": {
-      "Function": "Composite",
+      "Function": "Validation",
       "Reference": "InvoiceDetailId",
       "EntityType": "Column",
       "EntityName": "Invoice Detail ID",
@@ -79,7 +79,7 @@
       }
     },
     "CAU-InvoiceDetailId-C-003-M": {
-      "Function": "Composite",
+      "Function": "Nullability",
       "Reference": "InvoiceDetailId",
       "EntityType": "Column",
       "EntityName": "Invoice Detail ID",
