@@ -71,7 +71,7 @@ ContractCommitment MUST adhere to the following requirements:
   * ContractCommitment MUST include [ContractCommitmentOfferCategory](#datasets.contractcommitment.contractcommitmentoffercategory).
   * ContractCommitment MUST include [ContractCommitmentPaymentInterval](#datasets.contractcommitment.contractcommitmentpaymentinterval).
   * ContractCommitment MUST include [ContractCommitmentPaymentModel](#datasets.contractcommitment.contractcommitmentpaymentmodel).
-  * ContractCommitment MUST include [ContractCommitmentPaymentUpfrontPercentage](#datasets.contractcommitment.contractcommitmentpaymentupfrontpercentage) if the service provider offers "Partial Upfront" [payment models](#datasets.contractcommitment.contractcommitmentpaymentmodel).
+  * ContractCommitment MUST include [ContractCommitmentPaymentUpfrontPercentage](#datasets.contractcommitment.contractcommitmentpaymentupfrontpercentage) when the service provider offers "Partial Upfront" [payment models](#datasets.contractcommitment.contractcommitmentpaymentmodel).
   * ContractCommitment MUST include [ContractCommitmentPeriodEnd](#datasets.contractcommitment.contractcommitmentperiodend).
   * ContractCommitment MUST include [ContractCommitmentPeriodStart](#datasets.contractcommitment.contractcommitmentperiodstart).
   * ContractCommitment MUST include [ContractCommitmentQuantity](#datasets.contractcommitment.contractcommitmentquantity).
