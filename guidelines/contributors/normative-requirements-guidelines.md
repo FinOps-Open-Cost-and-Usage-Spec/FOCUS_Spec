@@ -196,11 +196,17 @@ Composite requirements SHOULD be used when grouping improves readability and:
 
 Flat parallel bullets SHOULD be preferred when ordering keywords alone is sufficient for clarity and readability.
 
-### 1.8. Definitions vs. Normative Requirements
+### 1.8. Contextual Information (e.g., Definitions, Examples) and Normative Authority (Requirements)
 
-* Definitions, explanations, rationale, and examples MUST NOT be expressed as normative requirements.
-* Definitions SHOULD be written as plain declarative statements without BCP 14 keywords.
-* Normative bullets SHOULD be reduced to the enforceable constraint only.
+While normative requirements MUST focus on **enforceable constraints** and **verifiable states**, definitions, informative clauses, and examples MAY be included within a requirement where necessary to provide essential context and ensure unambiguous interpretation.
+
+#### Separation of Concerns:
+* **Definitions:** If a definition is complex or applies to multiple requirements, it SHOULD be placed in the [Glossary](#glossary) or the preamble section and referenced as a link within the requirement.
+* **Complex Logic:** If an informative or normative clause is complex or applies to multiple requirements, it SHOULD be placed in the **Implementation Context** section to maintain the clarity of the core requirement.
+* **Normative Authority:** To ensure consistency, BCP 14 keywords MUST ONLY be used within the **Requirements** section. The content in the **Glossary**, preamble, or **Implementation Context** MUST NOT contain BCP 14 keywords.
+
+#### Non-Normative Examples:
+* **Incorporation:** Examples incorporated in requirements MUST be clearly identified using "e.g." and placed within parentheses `(e.g., ...)` to distinguish them from the normative constraint.
 
 ### 1.9. DRY (Don't Repeat Yourself) Principle
 
