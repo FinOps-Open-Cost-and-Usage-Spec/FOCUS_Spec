@@ -2,13 +2,13 @@
 
 ## Description
 
-FOCUS supports the identification of [*charges*](#glossary:charge) in the [Cost and Usage](#datasets.costandusage) dataset that are eligible for [*commitment programs*](#glossary:commitment-program). The [CommitmentProgramEligibility](#datasets.costandusage.commitmentprogrameligibility) column captures which *commitment programs* a charge qualifies for, regardless of whether a [*commitment*](#glossary:commitment) is currently applied. This enables practitioners to calculate eligibility-adjusted commitment coverage rates, identify uncovered savings opportunities, and compare commitment options across providers.
+FOCUS supports the identification of [*charges*](#glossary:charge) in the [Cost and Usage](#datasets.costandusage) dataset that are eligible for [*commitment programs*](#glossary:commitment-program). The [CommitmentProgramEligibilityDetails](#datasets.costandusage.commitmentprogrameligibilitydetails) column captures which *commitment programs* a charge qualifies for, regardless of whether a [*commitment*](#glossary:commitment) is currently applied. This enables practitioners to calculate eligibility-adjusted commitment coverage rates, identify uncovered savings opportunities, and compare commitment options across providers.
 
-CommitmentProgramEligibility contains a JSON object with a FOCUS-defined top-level key `CommitmentPrograms` containing an array of objects. Each object has a `ProgramType` property identifying the specific *commitment program*. Both discount-bearing programs (e.g., Flexible Spend Plans, Resource Reservations) and capacity-reservation programs (e.g., Advance Resource Commitments) are included in the same array, distinguished by their `ProgramType` value. Providers may include additional custom keys (prefixed with x_) to pass through extra metadata or provider-specific attributes related to the eligibility. Per the [column requirements](#datasets.costandusage.commitmentprogrameligibility), providers should also include negotiated *commitment programs* for which usage is eligible. For more information, see the definition of Commitment Program Eligibility [here](#datasets.costandusage.commitmentprogrameligibility).
+CommitmentProgramEligibilityDetails contains a JSON object with a FOCUS-defined top-level key `CommitmentPrograms` containing an array of objects. Each object has a `ProgramType` property identifying the specific *commitment program*. Both discount-bearing programs (e.g., Flexible Spend Plans, Resource Reservations) and capacity-reservation programs (e.g., Advance Resource Commitments) are included in the same array, distinguished by their `ProgramType` value. Service providers may include additional custom keys (prefixed with x_) to pass through extra metadata or provider-specific attributes related to the eligibility. Per the [column requirements](#datasets.costandusage.commitmentprogrameligibilitydetails), service providers may include negotiated *commitment programs* when the usage is eligible and the program is not broadly applicable across the service provider's service catalog. For more information, see the definition of Commitment Program Eligibility [here](#datasets.costandusage.commitmentprogrameligibilitydetails).
 
 ### Naming Conventions for ProgramType Values
 
-The `ProgramType` property follows PascalCase by convention, identifying [*commitment programs*](#glossary:commitment-program) supported by the provider. Per the [column requirements](#datasets.costandusage.commitmentprogrameligibility), these values:
+The `ProgramType` property follows PascalCase by convention, identifying [*commitment programs*](#glossary:commitment-program) supported by the provider. Per the [column requirements](#datasets.costandusage.commitmentprogrameligibilitydetails), these values:
 
 * Must equal [CommitmentDiscountType](#datasets.costandusage.commitmentdiscounttype) for one object in the `CommitmentPrograms` array when CommitmentDiscountType is not null.
 * Should correspond to terminology disclosed by the [*service provider*](#glossary:service-provider) in public documentation. This guidance is especially relevant for SaaS providers that do not itemize [*commitment discount*](#glossary:commitment-discount) application at the row level, where CommitmentDiscountType is typically not populated.
@@ -16,7 +16,7 @@ The `ProgramType` property follows PascalCase by convention, identifying [*commi
 
 ## Directly Dependent Columns
 
-* CommitmentProgramEligibility
+* CommitmentProgramEligibilityDetails
 
 ## Supporting Columns
 
@@ -35,7 +35,7 @@ The `ProgramType` property follows PascalCase by convention, identifying [*commi
 
 ## Example SQL Queries
 
-The FOCUS specification implements commitment eligibility via the [CommitmentProgramEligibility](#datasets.costandusage.commitmentprogrameligibility) column, which is defined in [*JSON object format*](#attributes.jsonobjectformat).
+The FOCUS specification implements commitment eligibility via the [CommitmentProgramEligibilityDetails](#datasets.costandusage.commitmentprogrameligibilitydetails) column, which is defined in [*JSON object format*](#attributes.jsonobjectformat).
 
 Because ANSI SQL does not define a standard for parsing JSON, the following queries use BigQuery Standard SQL JSON functions (e.g., `JSON_VALUE`, `JSON_EXTRACT_ARRAY`, `UNNEST`). Similar functions are available in all major SQL engines; the examples can be adapted to accommodate any particular database instance. Non-JSON constructs (CTEs, `NULLIF`) are ANSI SQL and should work without modification.
 
@@ -47,7 +47,7 @@ Note: The `CommitmentPrograms` array contains all [*commitment program*](#glossa
 
 This query identifies [*charges*](#glossary:charge) that are eligible for [*commitment programs*](#glossary:commitment-program) but are not currently covered by a [*commitment discount*](#glossary:commitment-discount). A practitioner running relevant workloads can use this to quantify the savings opportunity per *commitment program* type (e.g., FlexibleSpendPlan vs. ResourceReservation) and per [*service*](#glossary:service).
 
-The query filters to "Usage" charges where [CommitmentProgramEligibility](#datasets.costandusage.commitmentprogrameligibility) is populated (the charge is eligible) and [CommitmentDiscountId](#datasets.costandusage.commitmentdiscountid) is null (no [*commitment*](#glossary:commitment) is applied). It then expands the `CommitmentPrograms` array to aggregate eligible spend per `ProgramType`. This query uses BilledCost rather than EffectiveCost because the charges are uncovered (CommitmentDiscountId IS NULL), so BilledCost reflects the actual amount paid and the savings opportunity.
+The query filters to "Usage" charges where [CommitmentProgramEligibilityDetails](#datasets.costandusage.commitmentprogrameligibilitydetails) is populated (the charge is eligible) and [CommitmentDiscountId](#datasets.costandusage.commitmentdiscountid) is null (no [*commitment*](#glossary:commitment) is applied). It then expands the `CommitmentPrograms` array to aggregate eligible spend per `ProgramType`. This query uses BilledCost rather than EffectiveCost because the charges are uncovered (CommitmentDiscountId IS NULL), so BilledCost reflects the actual amount paid and the savings opportunity.
 
 Note: When a charge is eligible for multiple *commitment program* types, it appears once per eligible type. Costs are not deduplicated across types, since each type represents an independent purchasing opportunity.
 
@@ -59,11 +59,11 @@ SELECT
   SUM(CU.BilledCost) AS TotalEligibleUncoveredCost
 FROM focus_data_table CU
 CROSS JOIN
-  UNNEST(JSON_EXTRACT_ARRAY(CU.CommitmentProgramEligibility, '$.CommitmentPrograms')) AS CP
+  UNNEST(JSON_EXTRACT_ARRAY(CU.CommitmentProgramEligibilityDetails, '$.CommitmentPrograms')) AS CP
 WHERE CU.ChargePeriodStart >= ? AND CU.ChargePeriodEnd < ?
   AND CU.ChargeCategory = 'Usage'
   AND CU.CommitmentDiscountId IS NULL
-  AND CU.CommitmentProgramEligibility IS NOT NULL
+  AND CU.CommitmentProgramEligibilityDetails IS NOT NULL
   -- Replace with provider-specific discount-bearing program types
   AND JSON_VALUE(CP, '$.ProgramType') IN ('FlexibleSpendPlan', 'ResourceReservation')
 GROUP BY
@@ -87,10 +87,10 @@ WITH CommitmentDiscountEligible AS (
     CU.CommitmentDiscountId
   FROM focus_data_table CU
   CROSS JOIN
-    UNNEST(JSON_EXTRACT_ARRAY(CU.CommitmentProgramEligibility, '$.CommitmentPrograms')) AS CP
+    UNNEST(JSON_EXTRACT_ARRAY(CU.CommitmentProgramEligibilityDetails, '$.CommitmentPrograms')) AS CP
   WHERE CU.ChargePeriodStart >= ? AND CU.ChargePeriodEnd < ?
     AND CU.ChargeCategory = 'Usage'
-    AND CU.CommitmentProgramEligibility IS NOT NULL
+    AND CU.CommitmentProgramEligibilityDetails IS NOT NULL
     -- Replace with provider-specific discount-bearing program types
     AND JSON_VALUE(CP, '$.ProgramType') IN ('FlexibleSpendPlan', 'ResourceReservation')
 )
@@ -119,10 +119,10 @@ WITH CommitmentDiscountEligible AS (
     CASE WHEN CU.CommitmentDiscountId IS NULL THEN CU.EffectiveCost ELSE 0 END AS UncoveredCost
   FROM focus_data_table CU
   CROSS JOIN
-    UNNEST(JSON_EXTRACT_ARRAY(CU.CommitmentProgramEligibility, '$.CommitmentPrograms')) AS CP
+    UNNEST(JSON_EXTRACT_ARRAY(CU.CommitmentProgramEligibilityDetails, '$.CommitmentPrograms')) AS CP
   WHERE CU.ChargePeriodStart >= ? AND CU.ChargePeriodEnd < ?
     AND CU.ChargeCategory = 'Usage'
-    AND CU.CommitmentProgramEligibility IS NOT NULL
+    AND CU.CommitmentProgramEligibilityDetails IS NOT NULL
     -- Replace with provider-specific discount-bearing program types
     AND JSON_VALUE(CP, '$.ProgramType') IN ('FlexibleSpendPlan', 'ResourceReservation')
 )
@@ -141,7 +141,7 @@ ORDER BY UncoveredEligibleCost DESC
 
 [*Capacity reservations*](#glossary:capacity-reservation) secure resource availability rather than provide discounts, and are tracked via [CapacityReservationId](#datasets.costandusage.capacityreservationid) and [CapacityReservationStatus](#datasets.costandusage.capacityreservationstatus) rather than the [*commitment discount*](#glossary:commitment-discount) columns used in the queries above. This query identifies [*charges*](#glossary:charge) eligible for capacity-reservation [*commitment programs*](#glossary:commitment-program), distinguishing between used and unused reservations.
 
-The query filters [CommitmentProgramEligibility](#datasets.costandusage.commitmentprogrameligibility) to rows whose `ProgramType` values correspond to capacity-reservation programs (e.g., "AdvanceResourceCommitment", "ZonalResourceCommitment"). It then uses CapacityReservationId and CapacityReservationStatus to determine reservation utilization.
+The query filters [CommitmentProgramEligibilityDetails](#datasets.costandusage.commitmentprogrameligibilitydetails) to rows whose `ProgramType` values correspond to capacity-reservation programs (e.g., "AdvanceResourceCommitment", "ZonalResourceCommitment"). It then uses CapacityReservationId and CapacityReservationStatus to determine reservation utilization.
 
 Note: The FOCUS specification requires CapacityReservationId to not be null when a charge represents unused capacity (MUST), but only recommends (SHOULD) populating it when a charge is related to a used [*capacity reservation*](#glossary:capacity-reservation). Where a provider does not populate CapacityReservationId on used rows, this query will show those rows with a null CapacityReservationStatus.
 
@@ -155,10 +155,10 @@ SELECT
   COUNT(*) AS RowCount
 FROM focus_data_table CU
 CROSS JOIN
-  UNNEST(JSON_EXTRACT_ARRAY(CU.CommitmentProgramEligibility, '$.CommitmentPrograms')) AS CP
+  UNNEST(JSON_EXTRACT_ARRAY(CU.CommitmentProgramEligibilityDetails, '$.CommitmentPrograms')) AS CP
 WHERE CU.ChargePeriodStart >= ? AND CU.ChargePeriodEnd < ?
   AND CU.ChargeCategory = 'Usage'
-  AND CU.CommitmentProgramEligibility IS NOT NULL
+  AND CU.CommitmentProgramEligibilityDetails IS NOT NULL
   AND JSON_VALUE(CP, '$.ProgramType') IN ('AdvanceResourceCommitment', 'ZonalResourceCommitment')
 GROUP BY
   CU.ServiceProviderName,
@@ -170,7 +170,7 @@ ORDER BY TotalCost DESC
 
 ### Capacity Reservation Eligible Spend
 
-This example demonstrates how [CommitmentProgramEligibility](#datasets.costandusage.commitmentprogrameligibility) interacts with [CapacityReservationId](#datasets.costandusage.capacityreservationid) and [CapacityReservationStatus](#datasets.costandusage.capacityreservationstatus) for [*capacity reservation*](#glossary:capacity-reservation) programs. Unlike discount-bearing [*commitment programs*](#glossary:commitment-program), capacity reservations secure resource availability and are tracked via their own columns rather than the [*commitment discount*](#glossary:commitment-discount) columns. For discount-bearing program examples, see the [uncovered eligible spend](/specification/data/commitment_eligibility/uncovered_eligible_spend_by_program_type.csv) and [coverage rate](/specification/data/commitment_eligibility/coverage_rate_eligibility_adjusted.csv) CSVs.
+This example demonstrates how [CommitmentProgramEligibilityDetails](#datasets.costandusage.commitmentprogrameligibilitydetails) interacts with [CapacityReservationId](#datasets.costandusage.capacityreservationid) and [CapacityReservationStatus](#datasets.costandusage.capacityreservationstatus) for [*capacity reservation*](#glossary:capacity-reservation) programs. Unlike discount-bearing [*commitment programs*](#glossary:commitment-program), capacity reservations secure resource availability and are tracked via their own columns rather than the [*commitment discount*](#glossary:commitment-discount) columns. For discount-bearing program examples, see the [uncovered eligible spend](/specification/data/commitment_eligibility/uncovered_eligible_spend_by_program_type.csv) and [coverage rate](/specification/data/commitment_eligibility/coverage_rate_eligibility_adjusted.csv) CSVs.
 
 Acme Corp runs compute workloads on Aura Web and holds an Advance Resource Commitment (cr-arc-acme-001) for a single charge period (2025-04-01). The `ProgramType` values "AdvanceResourceCommitment" and "ZonalResourceCommitment" are illustrative and do not correspond to a specific provider's program names.
 
@@ -181,13 +181,12 @@ Four usage rows for the period:
 1. **Used capacity** (Row 1): Compute usage consuming the reservation. [CapacityReservationStatus](#datasets.costandusage.capacityreservationstatus) is "Used". [BilledCost](#datasets.costandusage.billedcost) and [EffectiveCost](#datasets.costandusage.effectivecost) are both &dollar;180.00.
 2. **Unused capacity** (Row 2): Reserved capacity that went idle. CapacityReservationStatus is "Unused". BilledCost and EffectiveCost are both &dollar;70.00. Unlike *commitment discount* unused rows (where BilledCost is &dollar;0.00 because the purchase is invoiced separately), capacity reservation rows reflect the cost of reserved capacity whether consumed or not.
 3. **Eligible but unreserved** (Row 3): Compute usage eligible for a ZonalResourceCommitment but no reservation is active. CapacityReservationId and CapacityReservationStatus are null. BilledCost and EffectiveCost are both &dollar;120.00 at standard pricing.
-4. **Ineligible** (Row 4): A support fee with no [*commitment program*](#glossary:commitment-program) eligibility. CommitmentProgramEligibility is null.
+4. **Ineligible** (Row 4): A support fee with no [*commitment program*](#glossary:commitment-program) eligibility. CommitmentProgramEligibilityDetails is null.
 
-CommitmentProgramEligibility is populated on both Used and Unused rows (Rows 1 and 2). The column requirement states that CommitmentProgramEligibility "MUST NOT be null when a charge is eligible for a commitment program, regardless of whether a commitment was actually applied." The underlying resource type remains eligible for the program regardless of utilization status.
+CommitmentProgramEligibilityDetails is populated on both Used and Unused rows (Rows 1 and 2). The column requirement states that CommitmentProgramEligibilityDetails "MUST NOT be null when a charge is eligible for a commitment program, regardless of whether a commitment was actually applied." The underlying resource type remains eligible for the program regardless of utilization status.
 
-The capacity reservation query filters on CommitmentProgramEligibility and specific `ProgramType` values. Row 4 is excluded because CommitmentProgramEligibility is null. Rows 1 through 3 appear in the output, grouped by `ProgramType` and CapacityReservationStatus, allowing practitioners to see used, unused, and unreserved eligible spend separately.
+The capacity reservation query filters on CommitmentProgramEligibilityDetails and specific `ProgramType` values. Row 4 is excluded because CommitmentProgramEligibilityDetails is null. Rows 1 through 3 appear in the output, grouped by `ProgramType` and CapacityReservationStatus, allowing practitioners to see used, unused, and unreserved eligible spend separately.
 
-[CSV Example](/specification/data/commitment_eligibility/capacity_reservation_eligible_spend.csv)
 
 ## Introduced (Version)
 

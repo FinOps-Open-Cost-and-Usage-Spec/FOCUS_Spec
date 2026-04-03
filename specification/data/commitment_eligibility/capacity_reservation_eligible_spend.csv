@@ -1,5 +1,0 @@
-ChargePeriodStart,ChargePeriodEnd,ChargeCategory,PricingCategory,ServiceProviderName,ServiceName,CapacityReservationId,CapacityReservationStatus,CommitmentProgramEligibility,BilledCost,EffectiveCost
-2025-04-01T00:00:00Z,2025-04-02T00:00:00Z,Usage,Committed,Aura Web,Compute,cr-arc-acme-001,Used,"{""CommitmentPrograms"":[{""ProgramType"":""AdvanceResourceCommitment""}]}",180.0,180.0
-2025-04-01T00:00:00Z,2025-04-02T00:00:00Z,Usage,Committed,Aura Web,Compute,cr-arc-acme-001,Unused,"{""CommitmentPrograms"":[{""ProgramType"":""AdvanceResourceCommitment""}]}",70.0,70.0
-2025-04-01T00:00:00Z,2025-04-02T00:00:00Z,Usage,Standard,Aura Web,Compute,,,"{""CommitmentPrograms"":[{""ProgramType"":""ZonalResourceCommitment""}]}",120.0,120.0
-2025-04-01T00:00:00Z,2025-04-02T00:00:00Z,Usage,Standard,Aura Web,Support,,,,50.0,50.0
