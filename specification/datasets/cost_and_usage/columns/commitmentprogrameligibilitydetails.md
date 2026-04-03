@@ -130,7 +130,7 @@ Acme Corp runs compute workloads on Aura Web. Some usage is covered by a Resourc
 
 Four usage rows for a single charge period (2025-04-01):
 
-1. **On-demand compute** (Row 1): Eligible for FlexibleSpendPlan and ResourceReservation, not currently covered. [BilledCost](#datasets.costandusage.billedcost) and [EffectiveCost](#datasets.costandusage.effectivecost) are both &dollar;200.00.
+1. **Uncovered compute** (Row 1): Eligible for FlexibleSpendPlan and ResourceReservation, not currently covered. [BilledCost](#datasets.costandusage.billedcost) and [EffectiveCost](#datasets.costandusage.effectivecost) are both &dollar;200.00.
 2. **Covered compute with eligibility** (Row 2): Covered by a ResourceReservation. CommitmentProgramEligibilityDetails is populated. BilledCost is &dollar;0.00; EffectiveCost is &dollar;150.00.
 3. **Covered compute without eligibility** (Row 3): Also covered by the same ResourceReservation. The provider omits CommitmentProgramEligibilityDetails on this row. BilledCost is &dollar;0.00; EffectiveCost is &dollar;100.00.
 4. **Support fee** (Row 4): Not eligible for any *commitment program*. Both CommitmentProgramEligibilityDetails and CommitmentDiscountId are null. BilledCost and EffectiveCost are both &dollar;50.00.
