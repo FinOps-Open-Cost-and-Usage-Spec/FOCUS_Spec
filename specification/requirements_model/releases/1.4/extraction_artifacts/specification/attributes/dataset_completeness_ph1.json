@@ -45,7 +45,7 @@
     {
       "temp_id": "R002",
       "order": 2,
-      "text": "*FOCUS dataset* MUST include [*custom columns*](#glossary:custom-column) for all corresponding [*native dataset*](#glossary:native-dataset) columns except those explicitly listed as exclusions with justification (e.g., deprecated fields, overlap with [*FOCUS columns*](#glossary:FOCUS-column)) in publicly-available documentation.",
+      "text": "*FOCUS dataset* MUST adhere to the following *custom column* presence requirements:",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
@@ -58,7 +58,7 @@
         "bullet": "*"
       },
       "lead_in": {
-        "ends_with_colon": false
+        "ends_with_colon": true
       },
       "provenance": {
         "line_start": 35,
@@ -70,8 +70,8 @@
     {
       "temp_id": "R003",
       "order": 3,
-      "text": "*FOCUS dataset* SHOULD include custom columns that enable correlation between *FOCUS dataset* records and *native dataset* records (e.g., native [*charge*](#glossary:charge) identifiers), even if they meet the criteria for exclusion.",
-      "keyword": "SHOULD",
+      "text": "*FOCUS dataset* MUST include *custom columns* (e.g., `x_ChargeSubType`) needed to support [*invoice reconciliation*](#glossary:invoice-reconciliation) when the invoice issuer supports payable invoices, and when *FOCUS columns* are not sufficient.",
+      "keyword": "MUST",
       "role": "requirement",
       "section_path": [
         "Dataset Completeness",
@@ -79,7 +79,7 @@
       ],
       "block": {
         "block_type": "list_item",
-        "indent_level": 0,
+        "indent_level": 1,
         "bullet": "*"
       },
       "lead_in": {
@@ -95,8 +95,8 @@
     {
       "temp_id": "R004",
       "order": 4,
-      "text": "*FOCUS dataset* SHOULD exclude custom columns that duplicate information already captured in FOCUS columns, except during a transitional period as defined in publicly-available documentation, to enable migration without breaking changes.",
-      "keyword": "SHOULD",
+      "text": "*FOCUS dataset* MUST include *custom columns* corresponding to [*native dataset*](#glossary:native-dataset) columns, except those explicitly listed as exclusions with justification in publicly-available documentation, provided those excluded columns are unrelated to *invoice reconciliation*.",
+      "keyword": "MUST",
       "role": "requirement",
       "section_path": [
         "Dataset Completeness",
@@ -104,7 +104,7 @@
       ],
       "block": {
         "block_type": "list_item",
-        "indent_level": 0,
+        "indent_level": 1,
         "bullet": "*"
       },
       "lead_in": {
@@ -120,8 +120,8 @@
     {
       "temp_id": "R005",
       "order": 5,
-      "text": "*FOCUS dataset* MUST NOT alter the aggregated values of summable [*metrics*](#glossary:metric) (e.g., costs and quantities) due to the inclusion of custom columns.",
-      "keyword": "MUST NOT",
+      "text": "*FOCUS dataset* SHOULD include *custom columns* that enable correlation between *FOCUS dataset* records and *native dataset* records (e.g., native [*charge*](#glossary:charge) identifiers), even if they meet the criteria for exclusion.",
+      "keyword": "SHOULD",
       "role": "requirement",
       "section_path": [
         "Dataset Completeness",
@@ -129,7 +129,7 @@
       ],
       "block": {
         "block_type": "list_item",
-        "indent_level": 0,
+        "indent_level": 1,
         "bullet": "*"
       },
       "lead_in": {
@@ -145,8 +145,8 @@
     {
       "temp_id": "R006",
       "order": 6,
-      "text": "*FOCUS dataset* MUST ensure *custom columns* retain the fidelity of corresponding *native dataset* values without lossy transformations (e.g., rounding or truncation).",
-      "keyword": "MUST",
+      "text": "*FOCUS dataset* SHOULD exclude *custom columns* that duplicate information already captured in *FOCUS columns*, except during a transitional period as defined in publicly-available documentation, to enable migration without breaking changes.",
+      "keyword": "SHOULD",
       "role": "requirement",
       "section_path": [
         "Dataset Completeness",
@@ -154,7 +154,7 @@
       ],
       "block": {
         "block_type": "list_item",
-        "indent_level": 0,
+        "indent_level": 1,
         "bullet": "*"
       },
       "lead_in": {
@@ -170,8 +170,8 @@
     {
       "temp_id": "R007",
       "order": 7,
-      "text": "*FOCUS dataset* SHOULD sort all *FOCUS columns* alphabetically first, then all *custom columns* alphabetically second.",
-      "keyword": "SHOULD",
+      "text": "*FOCUS dataset* MUST NOT alter the aggregated values of summable [*metrics*](#glossary:metric) (e.g., costs and quantities) due to the inclusion of *custom columns*.",
+      "keyword": "MUST NOT",
       "role": "requirement",
       "section_path": [
         "Dataset Completeness",
@@ -191,6 +191,56 @@
       },
       "_alignment_status": "confirmed",
       "ref": "L040"
+    },
+    {
+      "temp_id": "R008",
+      "order": 8,
+      "text": "*FOCUS dataset* MUST ensure *custom columns* retain the fidelity of corresponding *native dataset* values without lossy transformations (e.g., rounding or truncation).",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Dataset Completeness",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 41,
+        "line_end": 41
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L041"
+    },
+    {
+      "temp_id": "R009",
+      "order": 9,
+      "text": "*FOCUS dataset* SHOULD sort all *FOCUS columns* alphabetically first, then all *custom columns* alphabetically second.",
+      "keyword": "SHOULD",
+      "role": "requirement",
+      "section_path": [
+        "Dataset Completeness",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 42,
+        "line_end": 42
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L042"
     }
   ],
   "warnings": [],
