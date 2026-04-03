@@ -39,8 +39,8 @@ CostAndUsage [-adheres-]{+MUST adhere+} to the following requirements:
 {+  * CostAndUsage MUST include [ContractedUnitPrice](#datasets.costandusage.contractedunitprice) when the service provider supports negotiated pricing concepts.+}
 {+  * CostAndUsage MUST include [EffectiveCost](#datasets.costandusage.effectivecost).+}
 {+  * CostAndUsage MUST include [HostProviderName](#datasets.costandusage.hostprovidername).+}
-{+  * CostAndUsage MUST include [InvoiceDetailId](#datasets.costandusage.invoicedetailid).+}
-{+  * CostAndUsage MUST include [InvoiceId](#datasets.costandusage.invoiceid).+}
+{+  * CostAndUsage MUST include [InvoiceDetailId](#datasets.costandusage.invoicedetailid) when the invoice issuer supports payable invoices.+}
+{+  * CostAndUsage MUST include [InvoiceId](#datasets.costandusage.invoiceid) when the invoice issuer supports payable invoices.+}
 {+  * CostAndUsage MUST include [InvoiceIssuerName](#datasets.costandusage.invoiceissuername).+}
 {+  * CostAndUsage MUST include [ListCost](#datasets.costandusage.listcost).+}
 {+  * CostAndUsage MUST include [ListUnitPrice](#datasets.costandusage.listunitprice) when the service provider publishes unit prices exclusive of discounts.+}
@@ -69,9 +69,10 @@ CostAndUsage [-adheres-]{+MUST adhere+} to the following requirements:
 {+  * CostAndUsage MUST include [SubAccountType](#datasets.costandusage.subaccounttype) when the service provider supports more than one possible SubAccountType value.+}
 {+  * CostAndUsage MUST include [Tags](#datasets.costandusage.tags) when the data generator supports setting user or provider-defined tags.+}
 {+* CostAndUsage MUST conform to [ColumnHandling](#attributes.columnhandling) requirements.+}
-{+* CostAndUsage MUST conform to [NullHandling](#attributes.nullhandling) requirements.+}
-{+* CostAndUsage+} MUST conform to [-[ColumnHandling](#columnhandling)-]{+[DiscountHandling](#attributes.discounthandling)+} requirements.
-* CostAndUsage MUST conform to [-[NullHandling](#nullhandling)-]{+[InvoiceHandling](#attributes.invoicehandling)+} requirements.
-* CostAndUsage MUST conform to [-[DiscountHandling](#discounthandling)-]{+[DataGeneratorCalculatedSplitCostAllocationHandling](#attributes.datagenerator-calculatedsplitcostallocationhandling)+} requirements.
-* CostAndUsage MUST conform to [-[InvoiceHandling](#invoicehandling)-]{+[DatasetCompleteness](#attributes.datasetcompleteness)+} requirements.
-* CostAndUsage MUST conform to [-[DataGeneratorCalculatedSplitCostAllocationHandling](#datagenerator-calculatedsplitcostallocationhandling)-]{+[DatasetConfiguration](#attributes.datasetconfiguration)+} requirements.
+{+* CostAndUsage MUST conform to [CorrectionHandling](#attributes.correctionhandling) requirements.+}
+{+* CostAndUsage MUST conform to [DataGeneratorCalculatedSplitCostAllocationHandling](#attributes.datagenerator-calculatedsplitcostallocationhandling) requirements.+}
+{+* CostAndUsage+} MUST conform to [-[ColumnHandling](#columnhandling)-]{+[DatasetCompleteness](#attributes.datasetcompleteness)+} requirements.
+* CostAndUsage MUST conform to [-[NullHandling](#nullhandling)-]{+[DatasetConfiguration](#attributes.datasetconfiguration)+} requirements.
+* CostAndUsage MUST conform to [-[DiscountHandling](#discounthandling)-]{+[DeliveryHandling](#attributes.deliveryhandling)+} requirements.
+* CostAndUsage MUST conform to [-[InvoiceHandling](#invoicehandling)-]{+[DiscountHandling](#attributes.discounthandling)+} requirements.
+* CostAndUsage MUST conform to [-[DataGeneratorCalculatedSplitCostAllocationHandling](#datagenerator-calculatedsplitcostallocationhandling)-]{+[NullHandling](#attributes.nullhandling)+} requirements.

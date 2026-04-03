@@ -3,7 +3,7 @@
 AllocatedTags [-adheres-]{+MUST adhere+} to the following requirements:
 
 * AllocatedTags MUST[-be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports [Data Generator-Calculated Split Cost Allocation](#datagenerator-calculatedsplitcostallocationhandling).-]
-[-* AllocatedTags MUST-] conform to KeyValueFormat requirements.
+[-* AllocatedTags MUST-] conform to [-[KeyValueFormat](#key-valueformat)-]{+[KeyValueFormat](#attributes.key-valueformat)+} requirements.
 * AllocatedTags {+MUST adhere to the following+} nullability [-is defined as follows:-]{+requirements:+}
   * AllocatedTags MUST be null when a *charge* is not related to a data generator-calculated split cost allocation.
   * AllocatedTags MAY be null in all other cases.
@@ -13,8 +13,8 @@ AllocatedTags [-adheres-]{+MUST adhere+} to the following requirements:
   * Tag keys that do not support corresponding values MUST have a corresponding true (boolean) value set.
   * Data generator MUST NOT alter tag values unless applying true (boolean) to valueless tags.
 * Data generator-defined tags {+MUST+} adhere to the following[-additional-] requirements:
-  * Data generator-defined tag keys MUST be prefixed with a predetermined, data generator-specified tag key prefix that is unique to each corresponding provider-specified tag scheme.
+  * Data generator-defined tag keys MUST be prefixed with a predetermined, data generator-specified tag key prefix that is unique to each corresponding provider-specified [-tag scheme.-]{+[*tag scheme*](#glossary:tag-scheme).+}
   * Data generator SHOULD publish all data generator-specified tag key prefixes within their respective documentation.
 * User-defined tags {+MUST+} adhere to the following[-additional-] requirements:
-  * Data generator MUST prefix all user-defined tags scheme with a predetermined, data generator-specified tag key prefix that is unique to each corresponding user-defined tag scheme when the data generator has more than one user-defined tag scheme.
+  * Data generator MUST prefix all user-defined [-tags scheme-]{+*tag schemes*+} with a predetermined, data generator-specified tag key prefix that is unique to each corresponding user-defined [-tag scheme-]{+*tag scheme*+} when the data generator has more than one user-defined [-tag scheme.-]{+*tag scheme*.+}
 
