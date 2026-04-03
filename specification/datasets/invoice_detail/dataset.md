@@ -71,15 +71,17 @@ InvoiceDetail MUST adhere to the following requirements:
   * InvoiceDetail MUST include [PurchaseOrderNumber](#datasets.invoicedetail.purchaseordernumber) when the invoice issuer supports customer input of purchase order numbers.
   * InvoiceDetail MUST include [ReferenceInvoiceId](#datasets.invoicedetail.referenceinvoiceid).
 * InvoiceDetail MUST conform to [ColumnHandling](#attributes.columnhandling) requirements.
+* InvoiceDetail MUST conform to [CorrectionHandling](#attributes.correctionhandling) requirements.
 * InvoiceDetail MUST conform to [DatasetCompleteness](#attributes.datasetcompleteness) requirements.
 * InvoiceDetail MUST conform to [DatasetConfiguration](#attributes.datasetconfiguration) requirements.
+* InvoiceDetail MUST conform to [DeliveryHandling](#attributes.deliveryhandling) requirements.
 * InvoiceDetail MUST conform to [NullHandling](#attributes.nullhandling) requirements.
-* InvoiceDetail MUST conform to [InvoiceHandling](#attributes.invoicehandling) requirements.
-* InvoiceDetail MUST represent all invoice line items with a non-zero [BilledCost](#datasets.invoicedetail.billedcost) on any invoice associated with a [BillingAccountId](#datasets.invoicedetail.billingaccountid).
+* InvoiceDetail MUST represent all invoice line items with a non-zero BilledCost on any invoice associated with a BillingAccountId.
+* InvoiceDetail MUST include [*custom columns*](#glossary:custom-column) to represent any monetary metric that appears on an invoice issued to a BillingAccountId when there is no equivalent [*FOCUS column*](#glossary:FOCUS-column).
 * InvoiceDetail documentation MUST adhere to the following requirements:
   * InvoiceDetail documentation MUST specify how InvoiceDetail records correspond to invoice line items.
   * InvoiceDetail documentation MUST specify whether invoice line items with BilledCost of 0 are excluded from InvoiceDetail.
-  * InvoiceDetail documentation MUST describe how columns in the CostAndUsage and InvoiceDetail datasets represent the invoice issuer's invoice reconciliation process.
+  * InvoiceDetail documentation MUST describe how columns in the CostAndUsage and InvoiceDetail datasets represent the invoice issuer's [*invoice reconciliation*](#glossary:invoice-reconciliation) process.
   * InvoiceDetail documentation MUST be freely accessible to FOCUS consumers.
 
 ## Dataset ID<!--SkipTOC-->
