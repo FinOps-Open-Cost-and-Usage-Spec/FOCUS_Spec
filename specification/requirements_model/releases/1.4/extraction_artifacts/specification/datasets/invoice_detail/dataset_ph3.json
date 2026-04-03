@@ -1,7 +1,7 @@
 {
   "ModelRules": {
     "IND-InvoiceDetail-C-000-M": {
-      "Function": "Validation",
+      "Function": "Composite",
       "Reference": "InvoiceDetail",
       "EntityType": "Dataset",
       "EntityName": "Invoice Detail",
@@ -61,7 +61,7 @@
       }
     },
     "IND-InvoiceDetail-C-002-M": {
-      "Function": "Presence",
+      "Function": "Composite",
       "Reference": "InvoiceDetail",
       "EntityType": "Dataset",
       "EntityName": "Invoice Detail",
@@ -828,7 +828,7 @@
       }
     },
     "IND-InvoiceDetail-C-033-M": {
-      "Function": "Validation",
+      "Function": "Composite",
       "Reference": "InvoiceDetail",
       "EntityType": "Dataset",
       "EntityName": "Invoice Detail",
