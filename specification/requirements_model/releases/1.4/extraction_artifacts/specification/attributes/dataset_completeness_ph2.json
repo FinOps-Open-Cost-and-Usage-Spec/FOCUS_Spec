@@ -17,27 +17,29 @@
       "Dataset Requirements",
       "Attribute Requirements"
     ],
-    "atoms_in_scope_count": 7
+    "atoms_in_scope_count": 9
   },
   "0_outline_root": "ROOT: Dataset Completeness > Requirements",
   "0_outline_lines": [
     "L033: \"*FOCUS dataset* MUST adhere to the following requirements:\"",
-    "  L035: \"*FOCUS dataset* MUST include [*custom columns*](#glossary:custom-column) for all corresponding [*native dataset*](#glossary:native-dataset) columns except those explicitly listed as exclusions with justification (e.g., deprecated fields, overlap with [*FOCUS columns*](#glossary:FOCUS-column)) in publicly-available documentation.\"",
-    "  L036: \"*FOCUS dataset* SHOULD include custom columns that enable correlation between *FOCUS dataset* records and *native dataset* records (e.g., native [*charge*](#glossary:charge) identifiers), even if they meet the criteria for exclusion.\"",
-    "  L037: \"*FOCUS dataset* SHOULD exclude custom columns that duplicate information already captured in FOCUS columns, except during a transitional period as defined in publicly-available documentation, to enable migration without breaking changes.\"",
-    "  L038: \"*FOCUS dataset* MUST NOT alter the aggregated values of summable [*metrics*](#glossary:metric) (e.g., costs and quantities) due to the inclusion of custom columns.\"",
-    "  L039: \"*FOCUS dataset* MUST ensure *custom columns* retain the fidelity of corresponding *native dataset* values without lossy transformations (e.g., rounding or truncation).\"",
-    "  L040: \"*FOCUS dataset* SHOULD sort all *FOCUS columns* alphabetically first, then all *custom columns* alphabetically second.\""
+    "  L035: \"*FOCUS dataset* MUST adhere to the following *custom column* presence requirements:\"",
+    "    L036: \"*FOCUS dataset* MUST include *custom columns* (e.g., `x_ChargeSubType`) needed to support [*invoice reconciliation*](#glossary:invoice-reconciliation) when the invoice issuer supports payable invoices, and when *FOCUS columns* are not sufficient.\"",
+    "    L037: \"*FOCUS dataset* MUST include *custom columns* corresponding to [*native dataset*](#glossary:native-dataset) columns, except those explicitly listed as exclusions with justification in publicly-available documentation, provided those excluded columns are unrelated to *invoice reconciliation*.\"",
+    "    L038: \"*FOCUS dataset* SHOULD include *custom columns* that enable correlation between *FOCUS dataset* records and *native dataset* records (e.g., native [*charge*](#glossary:charge) identifiers), even if they meet the criteria for exclusion.\"",
+    "    L039: \"*FOCUS dataset* SHOULD exclude *custom columns* that duplicate information already captured in *FOCUS columns*, except during a transitional period as defined in publicly-available documentation, to enable migration without breaking changes.\"",
+    "  L040: \"*FOCUS dataset* MUST NOT alter the aggregated values of summable [*metrics*](#glossary:metric) (e.g., costs and quantities) due to the inclusion of *custom columns*.\"",
+    "  L041: \"*FOCUS dataset* MUST ensure *custom columns* retain the fidelity of corresponding *native dataset* values without lossy transformations (e.g., rounding or truncation).\"",
+    "  L042: \"*FOCUS dataset* SHOULD sort all *FOCUS columns* alphabetically first, then all *custom columns* alphabetically second.\""
   ],
   "0_outline_summary": {
-    "node_count": 7,
-    "leaf_count": 6,
-    "lead_in_count": 1,
-    "max_depth": 1,
-    "max_indent_level": 0,
+    "node_count": 9,
+    "leaf_count": 7,
+    "lead_in_count": 2,
+    "max_depth": 2,
+    "max_indent_level": 1,
     "root_children_count": 1,
     "keyword_distribution": {
-      "MUST": 3,
+      "MUST": 5,
       "SHOULD": 3,
       "MUST NOT": 1
     },
@@ -45,7 +47,12 @@
       {
         "ref": "L033",
         "text_preview": "*FOCUS dataset* MUST adhere to the following requirements:",
-        "children": 6
+        "children": 4
+      },
+      {
+        "ref": "L035",
+        "text_preview": "*FOCUS dataset* MUST adhere to the following *custom column* presence requirements:",
+        "children": 4
       }
     ]
   },
@@ -84,7 +91,7 @@
                 "temp_id": "R002",
                 "order": 2,
                 "ref": "L035",
-                "text": "*FOCUS dataset* MUST include [*custom columns*](#glossary:custom-column) for all corresponding [*native dataset*](#glossary:native-dataset) columns except those explicitly listed as exclusions with justification (e.g., deprecated fields, overlap with [*FOCUS columns*](#glossary:FOCUS-column)) in publicly-available documentation.",
+                "text": "*FOCUS dataset* MUST adhere to the following *custom column* presence requirements:",
                 "keyword": "MUST",
                 "section_path": [
                   "Dataset Completeness",
@@ -96,67 +103,116 @@
                   "bullet": "*"
                 },
                 "lead_in": {
-                  "ends_with_colon": false
+                  "ends_with_colon": true
                 }
               },
-              "children": []
-            },
-            {
-              "node_id": "R003",
-              "kind": "atom",
-              "atom": {
-                "temp_id": "R003",
-                "order": 3,
-                "ref": "L036",
-                "text": "*FOCUS dataset* SHOULD include custom columns that enable correlation between *FOCUS dataset* records and *native dataset* records (e.g., native [*charge*](#glossary:charge) identifiers), even if they meet the criteria for exclusion.",
-                "keyword": "SHOULD",
-                "section_path": [
-                  "Dataset Completeness",
-                  "Requirements"
-                ],
-                "block": {
-                  "block_type": "list_item",
-                  "indent_level": 0,
-                  "bullet": "*"
+              "children": [
+                {
+                  "node_id": "R003",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R003",
+                    "order": 3,
+                    "ref": "L036",
+                    "text": "*FOCUS dataset* MUST include *custom columns* (e.g., `x_ChargeSubType`) needed to support [*invoice reconciliation*](#glossary:invoice-reconciliation) when the invoice issuer supports payable invoices, and when *FOCUS columns* are not sufficient.",
+                    "keyword": "MUST",
+                    "section_path": [
+                      "Dataset Completeness",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
                 },
-                "lead_in": {
-                  "ends_with_colon": false
-                }
-              },
-              "children": []
-            },
-            {
-              "node_id": "R004",
-              "kind": "atom",
-              "atom": {
-                "temp_id": "R004",
-                "order": 4,
-                "ref": "L037",
-                "text": "*FOCUS dataset* SHOULD exclude custom columns that duplicate information already captured in FOCUS columns, except during a transitional period as defined in publicly-available documentation, to enable migration without breaking changes.",
-                "keyword": "SHOULD",
-                "section_path": [
-                  "Dataset Completeness",
-                  "Requirements"
-                ],
-                "block": {
-                  "block_type": "list_item",
-                  "indent_level": 0,
-                  "bullet": "*"
+                {
+                  "node_id": "R004",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R004",
+                    "order": 4,
+                    "ref": "L037",
+                    "text": "*FOCUS dataset* MUST include *custom columns* corresponding to [*native dataset*](#glossary:native-dataset) columns, except those explicitly listed as exclusions with justification in publicly-available documentation, provided those excluded columns are unrelated to *invoice reconciliation*.",
+                    "keyword": "MUST",
+                    "section_path": [
+                      "Dataset Completeness",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
                 },
-                "lead_in": {
-                  "ends_with_colon": false
+                {
+                  "node_id": "R005",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R005",
+                    "order": 5,
+                    "ref": "L038",
+                    "text": "*FOCUS dataset* SHOULD include *custom columns* that enable correlation between *FOCUS dataset* records and *native dataset* records (e.g., native [*charge*](#glossary:charge) identifiers), even if they meet the criteria for exclusion.",
+                    "keyword": "SHOULD",
+                    "section_path": [
+                      "Dataset Completeness",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R006",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R006",
+                    "order": 6,
+                    "ref": "L039",
+                    "text": "*FOCUS dataset* SHOULD exclude *custom columns* that duplicate information already captured in *FOCUS columns*, except during a transitional period as defined in publicly-available documentation, to enable migration without breaking changes.",
+                    "keyword": "SHOULD",
+                    "section_path": [
+                      "Dataset Completeness",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
                 }
-              },
-              "children": []
+              ]
             },
             {
-              "node_id": "R005",
+              "node_id": "R007",
               "kind": "atom",
               "atom": {
-                "temp_id": "R005",
-                "order": 5,
-                "ref": "L038",
-                "text": "*FOCUS dataset* MUST NOT alter the aggregated values of summable [*metrics*](#glossary:metric) (e.g., costs and quantities) due to the inclusion of custom columns.",
+                "temp_id": "R007",
+                "order": 7,
+                "ref": "L040",
+                "text": "*FOCUS dataset* MUST NOT alter the aggregated values of summable [*metrics*](#glossary:metric) (e.g., costs and quantities) due to the inclusion of *custom columns*.",
                 "keyword": "MUST NOT",
                 "section_path": [
                   "Dataset Completeness",
@@ -174,12 +230,12 @@
               "children": []
             },
             {
-              "node_id": "R006",
+              "node_id": "R008",
               "kind": "atom",
               "atom": {
-                "temp_id": "R006",
-                "order": 6,
-                "ref": "L039",
+                "temp_id": "R008",
+                "order": 8,
+                "ref": "L041",
                 "text": "*FOCUS dataset* MUST ensure *custom columns* retain the fidelity of corresponding *native dataset* values without lossy transformations (e.g., rounding or truncation).",
                 "keyword": "MUST",
                 "section_path": [
@@ -198,12 +254,12 @@
               "children": []
             },
             {
-              "node_id": "R007",
+              "node_id": "R009",
               "kind": "atom",
               "atom": {
-                "temp_id": "R007",
-                "order": 7,
-                "ref": "L040",
+                "temp_id": "R009",
+                "order": 9,
+                "ref": "L042",
                 "text": "*FOCUS dataset* SHOULD sort all *FOCUS columns* alphabetically first, then all *custom columns* alphabetically second.",
                 "keyword": "SHOULD",
                 "section_path": [
