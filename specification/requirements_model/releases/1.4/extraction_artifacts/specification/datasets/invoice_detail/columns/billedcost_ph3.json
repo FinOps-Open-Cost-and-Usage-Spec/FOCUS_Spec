@@ -1,7 +1,7 @@
 {
   "ModelRules": {
     "IND-BilledCost-C-000-M": {
-      "Function": "Validation",
+      "Function": "Composite",
       "Reference": "BilledCost",
       "EntityType": "Column",
       "EntityName": "Billed Cost",
@@ -228,7 +228,7 @@
       }
     },
     "IND-BilledCost-C-009-C": {
-      "Function": "Validation",
+      "Function": "Composite",
       "Reference": "BilledCost",
       "EntityType": "Column",
       "EntityName": "Billed Cost",
@@ -303,7 +303,7 @@
       }
     },
     "IND-BilledCost-C-012-C": {
-      "Function": "Validation",
+      "Function": "Composite",
       "Reference": "BilledCost",
       "EntityType": "Column",
       "EntityName": "Billed Cost",
