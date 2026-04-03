@@ -1,6 +1,6 @@
-# Examples: Commitment Program Eligibility
+# Examples: Commitment Program Eligibility Details
 
-This section demonstrates how [CommitmentProgramEligibilityDetails](#datasets.costandusage.commitmentprogrameligibilitydetails) interacts with other columns for [*capacity reservation*](#glossary:capacity-reservation) programs. For discount-bearing program SQL queries, see the [Commitment Program Eligibility](#supportedfeatures.commitmentprogrameligibility) supported feature.
+This section demonstrates how [CommitmentProgramEligibilityDetails](#datasets.costandusage.commitmentprogrameligibilitydetails) interacts with other columns for [*capacity reservation*](#glossary:capacity-reservation) programs. For discount-bearing program SQL queries, see the [Commitment Program Eligibility Details](#supportedfeatures.commitmentprogrameligibilitydetails) supported feature.
 
 ## Capacity Reservation Eligible Spend
 

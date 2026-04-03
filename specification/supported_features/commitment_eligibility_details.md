@@ -1,4 +1,4 @@
-# Commitment Program Eligibility
+# Commitment Program Eligibility Details
 
 ## Description
 
