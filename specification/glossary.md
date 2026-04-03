@@ -56,6 +56,10 @@ A row in a FOCUS-compatible cost and usage dataset.
 
 The time window for which a charge is effective, inclusive of the start date and exclusive of the end date. The charge period for continuous usage should match the time granularity of the dataset (e.g., 1 hour for hourly, 1 day for daily). The charge period for a non-usage charge with time boundaries should match the period of eligibility.
 
+<a name="glossary:closed-billing-period"><b>Closed Billing Period</b></a>
+
+A [*billing period*](#glossary:billing-period) with [Billing Period Status](#datasets.billingperiod.billingperiodstatus) set to "Closed". The period has been financially closed after all anticipated invoices for the period have been [*issued*](#glossary:issued-invoice) by designated invoice issuers and no additional invoices will be associated with this period. Exceptionally, additional invoices may be associated with a closed billing period if explicitly requested or approved by the customer.
+
 <a name="glossary:cloud-service-provider"><b>Cloud Service Provider (CSP)</b></a>
 
 A company or organization that provides remote access to computing resources, infrastructure, or applications for a fee.
@@ -99,7 +103,19 @@ The agreed-upon unit price for a single [Pricing Unit](#datasets.costandusage.pr
 
 <a name="glossary:correction"><b>Correction</b></a>
 
-A charge to correct cost or usage data in a previously invoiced [*billing period*](#glossary:billing-period).
+Any modification (including updates, additions, or omissions) to previously delivered records within a defined [*delivery scope*](#glossary:delivery-scope) (e.g., temporal grouping such as a [*billing period*](#glossary:billing-period) or non-temporal, logical grouping such as a [*contract*](#glossary:contract)).
+
+A correction (lowercase) may consist of one or more simultaneous changes, including updates to or omission of previously delivered records, or the addition of new records that supplement previously delivered data within the affected *delivery scope*. This concept applies across all FOCUS datasets.
+
+In contrast to the broader concept of correction (lowercase), the term "Correction" (capitalized) refers to a specific allowed value in the [Charge Class](#datasets.costandusage.chargeclass) column in Cost and Usage datasets. It designates [*charges*](#glossary:charge) used to correct cost or usage data from a previously [*closed billing period*](#glossary:closed-billing-period).
+
+<a name="glossary:covered-charge"><b>Covered Charge</b></a>
+
+A [*charge*](#glossary:charge) whose [Billed Cost](#datasets.costandusage.billedcost) is fully or partially absorbed by a corresponding [*covering charge*](#glossary:covering-charge). Common examples include usage charges applied against [*commitment discounts*](#glossary:commitment-discount), or consumption of SaaS offerings drawn from a prepayment, such as marketplace purchases.
+
+<a name="glossary:covering-charge"><b>Covering Charge</b></a>
+
+A purchase [*charge*](#glossary:charge) whose cost is applied against one or more [*covered charges*](#glossary:covered-charge), offsetting their [Billed Cost](#datasets.costandusage.billedcost). Common examples include [*commitment discount*](#glossary:commitment-discount) purchases, prepayment charges, and marketplace purchases that cover consumption-based usage.
 
 <a name="glossary:credit"><b>Credit</b></a>
 
@@ -120,6 +136,10 @@ A specific implementation of a [*FOCUS dataset*](#glossary:FOCUS-dataset) provid
 <a name="glossary:dataset-instance-artifact"><b>Dataset Instance Artifact</b></a>
 
 A physical representation of a specific [*dataset instance*](#glossary:dataset-instance) delivered by a [data generator](#metadata.datagenerator).
+
+<a name="glossary:delivery-scope"><b>Delivery Scope</b></a>
+
+A dataset-specific boundary or set of boundaries that determines which records are included in a [*dataset artifact*](#glossary:dataset-instance-artifact) delivery. Scopes can be temporal (e.g., a [*billing period*](#glossary:billing-period)) or non-temporal (e.g., a [*contract*](#glossary:contract) or other logical grouping), and multiple scopes may be applicable for a single dataset depending on use case or delivery configuration. Scopes determine how Overwrite and Append *dataset artifact* deliveries, as well as corrections, are applied.
 
 <a name="glossary:dimension"><b>Dimension</b></a>
 
@@ -157,6 +177,20 @@ A Date/Time Format value that is contained within the beginning bound of a time 
 
 A category of compute resources that can be paused or terminated by the CSP within certain criteria, often advertised at reduced unit pricing when compared to the equivalent non-interruptible resource.
 
+<a name="glossary:invoice"><b>Invoice</b></a>
+
+A document that summarizes the charges for resources or services consumed by a customer.
+
+<a name="glossary:invoice-reconciliation"><b>Invoice Reconciliation</b></a>
+
+The process of verifying that the costs, quantities, and applied adjustments on an [*invoice*](#glossary:invoice) match the underlying usage records and contracted rates for a specific [*billing period*](#glossary:billing-period).
+
+In the context of FOCUS, this process ensures consistency by reconciling cost and usage data across the invoice, the [Invoice Detail](#datasets.invoicedetail) dataset, and the [Cost and Usage](#datasets.costandusage) dataset to identify and resolve any discrepancies.
+
+<a name="glossary:issued-invoice"><b>Issued Invoice</b></a>
+
+An [*invoice*](#glossary:invoice) that has been formally [*reconciled*](#glossary:invoice-reconciliation) and issued by the designated invoice issuer ([Invoice Issue Status](#datasets.invoicedetail.invoiceissuestatus) set to "Issued"). Once issued, the invoice becomes the authoritative financial document and is considered finalized. The financial data presented on the invoice is not expected to change.
+
 <a name="glossary:json"><b>JSON</b></a>
 
 A common acronym for JavaScript Object Notation, a data format codified in [ECMA-404](https://ecma-international.org/wp-content/uploads/ECMA-404_2nd_edition_december_2017.pdf) as a standard for human-readable, serializable data objects. This data format is used in FOCUS to communicate multiple pieces of information about a charge (tags, properties, etc.) in a single column.
@@ -193,6 +227,10 @@ Negotiated discounts are classified with the following designations:
 <a name="glossary:on-demand"><b>On-Demand</b></a>
 
 A service that is available and provided immediately or as needed, without requiring a pre-scheduled appointment or prior arrangement. In cloud computing, virtual machines can be created and terminated as needed, i.e., on demand.
+
+<a name="glossary:open-billing-period"><b>Open Billing Period</b></a>
+
+A [*billing period*](#glossary:billing-period) with [Billing Period Status](#datasets.billingperiod.billingperiodstatus) set to "Open". Billing activities are ongoing, and the period remains subject to updates until formally closed.
 
 <a name="glossary:origin-charge"><b>Origin Charge</b></a>
 
@@ -236,7 +274,7 @@ A row in a FOCUS-compatible cost and usage dataset.
 
 <a name="glossary:service"><b>Service</b></a>
 
-An offering that can be purchased from a service provider, and can include many types of usage or other charges; eg., a cloud database service may include compute, storage, and networking charges.
+An offering that can be purchased from a service provider, and can include many types of usage or other charges; e.g., a cloud database service may include compute, storage, and networking charges.
 
 <a name="glossary:sku"><b>SKU</b></a>
 
@@ -253,6 +291,10 @@ A sub account is an optional service-provider-supported construct for organizing
 <a name="glossary:tag"><b>Tag</b></a>
 
 A metadata label assigned to a resource to provide information about it or to categorize it for organizational and management purposes.
+
+<a name="glossary:tag-scheme"><b>Tag Scheme</b></a>
+
+A distinct framework for assigning metadata to charges, resources, or other assets. Different metadata types within a single provider (e.g., "tags" vs. "labels") are considered separate schemes. They can be user-defined (i.e., allowing user input) or provider-defined (i.e., controlled by the service provider).
 
 <a name="glossary:tag-source"><b>Tag Source</b></a>
 
