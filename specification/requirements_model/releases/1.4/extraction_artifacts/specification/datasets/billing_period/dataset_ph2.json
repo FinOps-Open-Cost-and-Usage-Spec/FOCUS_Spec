@@ -17,12 +17,12 @@
       "Dataset Requirements",
       "Attribute Requirements"
     ],
-    "atoms_in_scope_count": 11
+    "atoms_in_scope_count": 14
   },
   "0_outline_root": "ROOT: Billing Period > Requirements",
   "0_outline_lines": [
     "L027: \"BillingPeriod MUST adhere to the following requirements:\"",
-    "  L029: \"BillingPeriod MUST be present if the invoice issuer supports payable invoices.\"",
+    "  L029: \"BillingPeriod MUST be present when the invoice issuer supports payable invoices.\"",
     "  L030: \"The presence of columns in BillingPeriod MUST adhere to the following requirements:\"",
     "    L031: \"BillingPeriod MUST include [BillingPeriodCreated](#datasets.billingperiod.billingperiodcreated).\"",
     "    L032: \"BillingPeriod MUST include [BillingPeriodEnd](#datasets.billingperiod.billingperiodend).\"",
@@ -31,23 +31,26 @@
     "    L035: \"BillingPeriod MUST include [BillingPeriodStatus](#datasets.billingperiod.billingperiodstatus).\"",
     "    L036: \"BillingPeriod MUST include [InvoiceIssuerName](#datasets.billingperiod.invoiceissuername).\"",
     "  L037: \"BillingPeriod MUST conform to [ColumnHandling](#attributes.columnhandling) requirements.\"",
-    "  L038: \"BillingPeriod MUST conform to [DatasetCompleteness](#attributes.datasetcompleteness) requirements.\""
+    "  L038: \"BillingPeriod MUST conform to [CorrectionHandling](#attributes.correctionhandling) requirements.\"",
+    "  L039: \"BillingPeriod MUST conform to [DatasetCompleteness](#attributes.datasetcompleteness) requirements.\"",
+    "  L040: \"BillingPeriod MUST conform to [DatasetConfiguration](#attributes.datasetconfiguration) requirements.\"",
+    "  L041: \"BillingPeriod MUST conform to [DeliveryHandling](#attributes.deliveryhandling) requirements.\""
   ],
   "0_outline_summary": {
-    "node_count": 11,
-    "leaf_count": 9,
+    "node_count": 14,
+    "leaf_count": 12,
     "lead_in_count": 2,
     "max_depth": 2,
     "max_indent_level": 1,
     "root_children_count": 1,
     "keyword_distribution": {
-      "MUST": 11
+      "MUST": 14
     },
     "lead_ins": [
       {
         "ref": "L027",
         "text_preview": "BillingPeriod MUST adhere to the following requirements:",
-        "children": 4
+        "children": 7
       },
       {
         "ref": "L030",
@@ -91,7 +94,7 @@
                 "temp_id": "R002",
                 "order": 2,
                 "ref": "L029",
-                "text": "BillingPeriod MUST be present if the invoice issuer supports payable invoices.",
+                "text": "BillingPeriod MUST be present when the invoice issuer supports payable invoices.",
                 "keyword": "MUST",
                 "section_path": [
                   "Billing Period",
@@ -308,7 +311,79 @@
                 "temp_id": "R011",
                 "order": 11,
                 "ref": "L038",
+                "text": "BillingPeriod MUST conform to [CorrectionHandling](#attributes.correctionhandling) requirements.",
+                "keyword": "MUST",
+                "section_path": [
+                  "Billing Period",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R012",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R012",
+                "order": 12,
+                "ref": "L039",
                 "text": "BillingPeriod MUST conform to [DatasetCompleteness](#attributes.datasetcompleteness) requirements.",
+                "keyword": "MUST",
+                "section_path": [
+                  "Billing Period",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R013",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R013",
+                "order": 13,
+                "ref": "L040",
+                "text": "BillingPeriod MUST conform to [DatasetConfiguration](#attributes.datasetconfiguration) requirements.",
+                "keyword": "MUST",
+                "section_path": [
+                  "Billing Period",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R014",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R014",
+                "order": 14,
+                "ref": "L041",
+                "text": "BillingPeriod MUST conform to [DeliveryHandling](#attributes.deliveryhandling) requirements.",
                 "keyword": "MUST",
                 "section_path": [
                   "Billing Period",
