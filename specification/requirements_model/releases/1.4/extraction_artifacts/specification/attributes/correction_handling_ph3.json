@@ -1,7 +1,7 @@
 {
   "ModelRules": {
     "ATT-CorrectionHandling-C-000-M": {
-      "Function": "Validation",
+      "Function": "Composite",
       "Reference": "CorrectionHandling",
       "EntityType": "Attribute",
       "EntityName": "Correction Handling",
