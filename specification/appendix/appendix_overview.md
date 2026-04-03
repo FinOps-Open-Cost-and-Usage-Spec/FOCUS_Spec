@@ -7,6 +7,7 @@
 | Topic | Description |
 | :--- | :--- |
 | [Commitment Discounts](#appendix.commitmentdiscounts) | Explains the purchasing, usage, and amortization of commitment discounts in a FOCUS dataset. |
+| [Examples: Commitment Program Eligibility](#appendix.examples:commitmentprogrameligibility) | Demonstrates how CommitmentProgramEligibilityDetails interacts with capacity reservation columns for capacity reservation programs. |
 | [Examples: Commitment Discount Flexibility](#appendix.examples:commitmentdiscountflexibility) | Demonstrates scenarios for usage-based commitment discounts with and without commitment discount flexibility. |
 | [Examples: Contract Commitments](#appendix.examples:contractcommitments) | Provides a structured representation and examples of commercial agreements between a customer and their service providers. |
 | [Examples: Invoice Detail](#appendix.examples:invoicedetail) | Demonstrates scenarios for issuing invoices, including typical cloud invoices, multi-currency settlements, and billing error corrections. |
