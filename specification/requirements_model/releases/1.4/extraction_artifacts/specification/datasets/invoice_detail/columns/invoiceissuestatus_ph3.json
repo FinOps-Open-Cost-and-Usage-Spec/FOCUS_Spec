@@ -1,7 +1,7 @@
 {
   "ModelRules": {
     "IND-InvoiceIssueStatus-C-000-M": {
-      "Function": "Validation",
+      "Function": "Composite",
       "Reference": "InvoiceIssueStatus",
       "EntityType": "Column",
       "EntityName": "Invoice Issue Status",

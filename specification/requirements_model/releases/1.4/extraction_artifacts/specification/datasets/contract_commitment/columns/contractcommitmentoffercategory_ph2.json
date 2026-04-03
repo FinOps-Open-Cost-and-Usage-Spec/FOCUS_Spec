@@ -1,0 +1,162 @@
+{
+  "phase": 2,
+  "source": {
+    "path": "specification/datasets/contract_commitment/columns/contractcommitmentoffercategory.md",
+    "version": "1.4"
+  },
+  "entity": {
+    "entity_type": "Column",
+    "entity_id": "ContractCommitmentOfferCategory",
+    "entity_name": "Contract Commitment Offer Category"
+  },
+  "requirements_scope": {
+    "section_names_allowed": [
+      "Requirements",
+      "Column Requirements",
+      "Object Requirements",
+      "Dataset Requirements",
+      "Attribute Requirements"
+    ],
+    "atoms_in_scope_count": 4
+  },
+  "0_outline_root": "ROOT: Contract Commitment Offer Category > Requirements",
+  "0_outline_lines": [
+    "L016: \"ContractCommitmentOfferCategory MUST adhere to the following requirements:\"",
+    "  L018: \"ContractCommitmentOfferCategory MUST be of type String.\"",
+    "  L019: \"ContractCommitmentOfferCategory MUST NOT be null.\"",
+    "  L020: \"ContractCommitmentOfferCategory MUST be one of the allowed values.\""
+  ],
+  "0_outline_summary": {
+    "node_count": 4,
+    "leaf_count": 3,
+    "lead_in_count": 1,
+    "max_depth": 1,
+    "max_indent_level": 0,
+    "root_children_count": 1,
+    "keyword_distribution": {
+      "MUST": 3,
+      "MUST NOT": 1
+    },
+    "lead_ins": [
+      {
+        "ref": "L016",
+        "text_preview": "ContractCommitmentOfferCategory MUST adhere to the following requirements:",
+        "children": 3
+      }
+    ]
+  },
+  "structure": {
+    "root": {
+      "node_id": "R000",
+      "kind": "root",
+      "children": [
+        {
+          "node_id": "R001",
+          "kind": "atom",
+          "atom": {
+            "temp_id": "R001",
+            "order": 1,
+            "ref": "L016",
+            "text": "ContractCommitmentOfferCategory MUST adhere to the following requirements:",
+            "keyword": "MUST",
+            "section_path": [
+              "Contract Commitment Offer Category",
+              "Requirements"
+            ],
+            "block": {
+              "block_type": "paragraph",
+              "indent_level": 0,
+              "bullet": null
+            },
+            "lead_in": {
+              "ends_with_colon": true
+            }
+          },
+          "children": [
+            {
+              "node_id": "R002",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R002",
+                "order": 2,
+                "ref": "L018",
+                "text": "ContractCommitmentOfferCategory MUST be of type String.",
+                "keyword": "MUST",
+                "section_path": [
+                  "Contract Commitment Offer Category",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R003",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R003",
+                "order": 3,
+                "ref": "L019",
+                "text": "ContractCommitmentOfferCategory MUST NOT be null.",
+                "keyword": "MUST NOT",
+                "section_path": [
+                  "Contract Commitment Offer Category",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R004",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R004",
+                "order": 4,
+                "ref": "L020",
+                "text": "ContractCommitmentOfferCategory MUST be one of the allowed values.",
+                "keyword": "MUST",
+                "section_path": [
+                  "Contract Commitment Offer Category",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "debug": {
+    "ruleset": "ph2_tree_v1",
+    "parenting_signals": [
+      "section_path_boundary",
+      "lead_in_colon",
+      "indent_level"
+    ],
+    "warnings": []
+  }
+}

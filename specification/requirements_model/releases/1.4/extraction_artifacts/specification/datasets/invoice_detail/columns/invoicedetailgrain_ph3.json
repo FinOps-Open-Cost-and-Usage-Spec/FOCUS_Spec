@@ -1,7 +1,7 @@
 {
   "ModelRules": {
     "IND-InvoiceDetailGrain-C-000-M": {
-      "Function": "Validation",
+      "Function": "Composite",
       "Reference": "InvoiceDetailGrain",
       "EntityType": "Column",
       "EntityName": "Invoice Detail Grain",
@@ -227,7 +227,7 @@
       }
     },
     "IND-InvoiceDetailGrain-C-009-M": {
-      "Function": "Validation",
+      "Function": "Composite",
       "Reference": "InvoiceDetailGrain",
       "EntityType": "Column",
       "EntityName": "Invoice Detail Grain",

@@ -1,0 +1,320 @@
+{
+  "phase": 1,
+  "source": {
+    "path": "specification/datasets/contract_commitment/columns/contractcommitmentdiscountpercentage.md",
+    "version": "1.4"
+  },
+  "entity": {
+    "entity_type": "Column",
+    "entity_id": "ContractCommitmentDiscountPercentage",
+    "entity_name": "Contract Commitment Discount Percentage"
+  },
+  "entities_found": [
+    {
+      "entity_type": "Column",
+      "entity_id": "ContractCommitmentDiscountPercentage",
+      "entity_name": "Contract Commitment Discount Percentage"
+    }
+  ],
+  "atoms": [
+    {
+      "temp_id": "R001",
+      "order": 1,
+      "text": "ContractCommitmentDiscountPercentage MUST adhere to the following requirements:",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Contract Commitment Discount Percentage",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "paragraph",
+        "indent_level": 0,
+        "bullet": null
+      },
+      "lead_in": {
+        "ends_with_colon": true
+      },
+      "provenance": {
+        "line_start": 34,
+        "line_end": 34
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L034"
+    },
+    {
+      "temp_id": "R002",
+      "order": 2,
+      "text": "ContractCommitmentDiscountPercentage MUST be of type Decimal.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Contract Commitment Discount Percentage",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 36,
+        "line_end": 36
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L036"
+    },
+    {
+      "temp_id": "R003",
+      "order": 3,
+      "text": "ContractCommitmentDiscountPercentage MUST conform to [NumericFormat](#attributes.numericformat) requirements.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Contract Commitment Discount Percentage",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 37,
+        "line_end": 37
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L037"
+    },
+    {
+      "temp_id": "R004",
+      "order": 4,
+      "text": "ContractCommitmentDiscountPercentage MUST NOT be null if [ContractCommitmentBenefitCategory](#datasets.contractcommitment.contractcommitmentbenefitcategory) is \"Discount\".",
+      "keyword": "MUST NOT",
+      "role": "requirement",
+      "section_path": [
+        "Contract Commitment Discount Percentage",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 38,
+        "line_end": 38
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L038"
+    },
+    {
+      "temp_id": "R005",
+      "order": 5,
+      "text": "ContractCommitmentDiscountPercentage MUST be null if ContractCommitmentBenefitCategory is \"Availability\".",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Contract Commitment Discount Percentage",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 39,
+        "line_end": 39
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L039"
+    },
+    {
+      "temp_id": "R006",
+      "order": 6,
+      "text": "ContractCommitmentDiscountPercentage MUST be a value between 0.0 and 1.0, inclusive.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Contract Commitment Discount Percentage",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 40,
+        "line_end": 40
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L040"
+    },
+    {
+      "temp_id": "R007",
+      "order": 7,
+      "text": "For contracts with multiple tiers (e.g., 5% discount up to 1M, 10% above 1M), ContractCommitmentDiscountPercentage MUST adhere to the following additional requirements:",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Contract Commitment Discount Percentage",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": true
+      },
+      "provenance": {
+        "line_start": 41,
+        "line_end": 41
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L041"
+    },
+    {
+      "temp_id": "R008",
+      "order": 8,
+      "text": "ContractCommitmentDiscountPercentage MUST reflect the discount percentage defined for the specific pricing tier represented by the Contract Commitment row.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Contract Commitment Discount Percentage",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 1,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 42,
+        "line_end": 42
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L042"
+    },
+    {
+      "temp_id": "R009",
+      "order": 9,
+      "text": "ContractCommitmentDiscountPercentage MUST correspond to only one pricing tier per Contract Commitment row.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Contract Commitment Discount Percentage",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 1,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 43,
+        "line_end": 43
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L043"
+    },
+    {
+      "temp_id": "R010",
+      "order": 10,
+      "text": "ContractCommitmentDiscountPercentage SHOULD represent the net effective discount if multiple contractual layers are applicable (e.g., a negotiated discount on top of a standard commitment).",
+      "keyword": "SHOULD",
+      "role": "requirement",
+      "section_path": [
+        "Contract Commitment Discount Percentage",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 44,
+        "line_end": 44
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L044"
+    }
+  ],
+  "warnings": [],
+  "structural": {
+    "lead_ins": [
+      {
+        "text": "For example, consider usage that yields a cost for which the following discounts are applicable:",
+        "class": "requirements_list_intro",
+        "confidence": "high",
+        "section_path": [
+          "Implementation Context",
+          "Calculating the Effective Percentage"
+        ],
+        "block": {
+          "block_type": "paragraph",
+          "indent_level": 0,
+          "bullet": null
+        },
+        "lead_in": {
+          "ends_with_colon": true
+        },
+        "provenance": {
+          "line_start": 13,
+          "line_end": 13
+        },
+        "ref": "LI013",
+        "next_normative_refs": [
+          "L034",
+          "L036",
+          "L037",
+          "L038",
+          "L039",
+          "L040",
+          "L041",
+          "L044"
+        ]
+      }
+    ],
+    "index": {
+      "by_section_path": {
+        "Implementation Context > Calculating the Effective Percentage": [
+          "LI013"
+        ]
+      },
+      "by_line": {
+        "13": [
+          "LI013"
+        ]
+      }
+    }
+  }
+}
