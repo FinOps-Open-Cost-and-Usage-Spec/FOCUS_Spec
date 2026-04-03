@@ -362,8 +362,6 @@ A Pull Request is eligible for approval when:
 
 To maintain the integrity of the consensus-building process, it is critical that approvals accurately reflect the current state of a Pull Request. Substantial changes introduced after approvals have been granted invalidate those approvals.
 
-#### Post-Approval Changes
-
 When commits are pushed to a branch after an approval has been logged:
 
 * PR author MUST re-request review from all approvers upon any commit that alters the normative requirements.
