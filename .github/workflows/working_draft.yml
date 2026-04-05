@@ -5,6 +5,10 @@ on:
       - "main"
       - "candidate_recommendation"
 
+# This permission is required for the action to overwrite tags/releases
+permissions:
+  contents: write
+
 jobs:
   # The job that will use the container image you just pushed to ghcr.io
   gen_pdf:
@@ -39,7 +43,7 @@ jobs:
         with:
           name: spec.md
           path: specification/spec.md
-      - name: Upload Spec
+      - name: Upload Spec (Native CI Artifact)
         uses: actions/upload-artifact@v4
         with:
           name: FOCUS_specification
@@ -49,3 +53,17 @@ jobs:
             specification/images/*
             specification/styles/*
             specification/requirements_model/build/*.json
+      - name: Update Floating Release Tag
+        uses: ncipollo/release-action@v1
+        # IMPORTANT: This ensures the draft links are ONLY overwritten by the working_draft branch
+        if: github.ref == 'refs/heads/working_draft'
+        with:
+          tag: "latest-draft"
+          name: "Latest Working Draft"
+          body: "Automatically generated artifacts representing the latest commits in the `working_draft` branch."
+          # Specify the exact files you want available as direct download links
+          artifacts: "specification/spec.html, specification/spec.pdf, specification/requirements_model/build/*.json"
+          allowUpdates: true
+          replacesArtifacts: true
+          makeLatest: false
+          prerelease: true
