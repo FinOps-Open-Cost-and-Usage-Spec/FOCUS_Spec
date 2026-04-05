@@ -43,7 +43,7 @@ jobs:
         with:
           name: spec.md
           path: specification/spec.md
-      - name: Upload Spec (Native CI Artifact)
+      - name: Upload Spec
         uses: actions/upload-artifact@v4
         with:
           name: FOCUS_specification
