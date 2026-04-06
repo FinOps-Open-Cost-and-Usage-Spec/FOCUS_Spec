@@ -4,7 +4,7 @@
 
 FOCUS supports the identification of [*charges*](#glossary:charge) in the [Cost and Usage](#datasets.costandusage) dataset that are eligible for [*commitment programs*](#glossary:commitment-program). The [CommitmentProgramEligibilityDetails](#datasets.costandusage.commitmentprogrameligibilitydetails) column captures which *commitment programs* a charge qualifies for, regardless of whether a [*commitment*](#glossary:commitment) is currently applied. This enables practitioners to calculate eligibility-adjusted commitment coverage rates, identify uncovered savings opportunities, and compare commitment options across providers.
 
-CommitmentProgramEligibilityDetails contains a JSON object with a FOCUS-defined top-level key `CommitmentPrograms` containing an array of objects. Each object has a `ProgramType` property identifying the specific *commitment program*. Both discount-bearing programs (e.g., Flexible Spend Plans, Resource Reservations) and capacity-reservation programs (e.g., Advance Resource Commitments) are included in the same array, distinguished by their `ProgramType` value. [*Service providers*](#glossary:service-provider) may include additional custom keys (prefixed with x_) to pass through extra metadata or provider-specific attributes related to the eligibility. Per the [column requirements](#datasets.costandusage.commitmentprogrameligibilitydetails), service providers may include negotiated *commitment programs* when the usage is eligible and the program is not broadly applicable across the service provider's service catalog. For more information, see [CommitmentProgramEligibilityDetails](#datasets.costandusage.commitmentprogrameligibilitydetails).
+CommitmentProgramEligibilityDetails contains a JSON object with a FOCUS-defined top-level key `CommitmentPrograms` containing an array of objects. Each object has a `ProgramType` property identifying the specific *commitment program*. Both discount-bearing programs (e.g., Flexible Spend Plans, Resource Reservations) and capacity-reservation programs (e.g., Advance Resource Commitments) are included in the same array, distinguished by their `ProgramType` value. [*Service providers*](#glossary:service-provider) may include additional custom keys (prefixed with x_) to pass through extra metadata or provider-specific attributes related to the eligibility. Per the [column requirements](#datasets.costandusage.commitmentprogrameligibilitydetails), service providers may include negotiated *commitment programs* when the usage is eligible and the program is not broadly applicable across the service provider's service catalog. For more information, see the CommitmentProgramEligibilityDetails column definition.
 
 ### Naming Conventions for ProgramType Values
 
@@ -89,7 +89,7 @@ WITH CommitmentDiscountEligible AS (
   WHERE CU.ChargePeriodStart >= ? AND CU.ChargePeriodEnd < ?
     AND CU.ChargeCategory = 'Usage'
     AND (
-      -- Defensive check: Always include actively covered rows in the denominator
+      -- Include covered rows in the denominator
       CU.CommitmentDiscountId IS NOT NULL
       -- If uncovered, check if the JSON array contains an eligible program type
       OR EXISTS (
