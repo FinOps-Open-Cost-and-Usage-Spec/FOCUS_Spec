@@ -10,9 +10,10 @@ CommitmentProgramEligibilityDetails contains a JSON object with a FOCUS-defined 
 
 The `ProgramType` property follows PascalCase by convention, identifying [*commitment programs*](#glossary:commitment-program) supported by the provider. Per the [column requirements](#datasets.costandusage.commitmentprogrameligibilitydetails), these values:
 
-* Must equal [CommitmentDiscountType](#datasets.costandusage.commitmentdiscounttype) for one object in the `CommitmentPrograms` array when CommitmentDiscountType is not null.
-* Should correspond to terminology disclosed by the [*service provider*](#glossary:service-provider) in public documentation. This guidance is especially relevant for SaaS providers that do not itemize [*commitment discount*](#glossary:commitment-discount) application at the row level, where CommitmentDiscountType is typically not populated.
-* Do not encode [*period*](#glossary:period) length, payment option, or other [*commitment*](#glossary:commitment) attributes (e.g., use "FlexibleSpendPlan" rather than "1YearFlexibleSpendPlanNoUpfront"). Where a provider's documented program name inherently includes a period reference (e.g., StackLens's "MonthlyPlatformCommitment"), use the provider name as-is.
+* Equals [CommitmentDiscountType](#datasets.costandusage.commitmentdiscounttype) for one object in the CommitmentPrograms array when CommitmentDiscountType is not null.
+* Corresponds to terminology disclosed by the service provider in public documentation. This guidance is especially relevant for SaaS providers that do not itemize commitment discount application at the row level, where CommitmentDiscountType is typically not populated.
+* Does not encode period length, payment option, or other commitment attributes (e.g., use "FlexibleSpendPlan" rather than "1YearFlexibleSpendPlanNoUpfront").
+* Uses the provider name as-is where a provider's documented program name inherently includes a period reference (e.g., StackLens's "MonthlyPlatformCommitment").
 
 ## Directly Dependent Columns
 
@@ -35,11 +36,13 @@ The `ProgramType` property follows PascalCase by convention, identifying [*commi
 
 ## Example SQL Queries
 
+> Note: The following examples are informative and non-normative. They do not define requirements.
+
 The FOCUS specification implements commitment eligibility via the [CommitmentProgramEligibilityDetails](#datasets.costandusage.commitmentprogrameligibilitydetails) column, which is defined in [*JSON object format*](#attributes.jsonobjectformat).
 
 Because ANSI SQL does not define a standard for parsing JSON, the following queries use BigQuery Standard SQL JSON functions (e.g., `JSON_VALUE`, `JSON_EXTRACT_ARRAY`, `UNNEST`). Similar functions are available in all major SQL engines; the examples can be adapted to accommodate any particular database instance. Non-JSON constructs (CTEs, `NULLIF`) are ANSI SQL and should work without modification.
 
-Note: The following queries assume FOCUS-conformant dataset artifacts. Practitioners should verify provider conformance before relying on these queries. Non-conformant dataset artifacts may produce inaccurate results.
+> Important Consideration: The following queries assume FOCUS-conformant dataset artifacts. Practitioners should verify provider conformance before relying on these queries. Non-conformant dataset artifacts may produce inaccurate results.
 
 Note: The `CommitmentPrograms` array contains all [*commitment program*](#glossary:commitment-program) types, including both discount-bearing programs and [*capacity reservations*](#glossary:capacity-reservation). The first three queries below focus on discount-bearing programs and use [CommitmentDiscountId](#datasets.costandusage.commitmentdiscountid) to determine coverage. Capacity reservations are fundamentally different: they secure resource availability rather than provide discounts, and are tracked via [CapacityReservationId](#datasets.costandusage.capacityreservationid) and [CapacityReservationStatus](#datasets.costandusage.capacityreservationstatus). A separate query for capacity reservation analysis follows. Providers using only custom (`x_`-prefixed) top-level keys would require modified JSON paths.
 
