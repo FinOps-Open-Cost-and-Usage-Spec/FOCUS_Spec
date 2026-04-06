@@ -14,7 +14,7 @@ Column conforming to StringHandling attribute MUST adhere to the following requi
   * *FOCUS dataset column* MUST reflect the altered value in all records pertaining to a period after the change.
   * *FOCUS dataset column* MUST reflect the string value as it existed prior to the change in all records pertaining to a period prior to the change when the record does not represent a correction to a previously closed billing period.
   * *FOCUS dataset column* MAY reflect the altered value in records pertaining to a period prior to the change when the record represents a correction to a previously closed billing period.
-* When column contains not-nullable string values, *FOCUS dataset column* MUST adhere to the following requirements:
+* When *FOCUS dataset column* contains not-nullable string values, it MUST adhere to the following requirements:
   * *FOCUS dataset column* SHOULD NOT contain empty strings.
   * *FOCUS dataset column* SHOULD NOT contain strings consisting solely of whitespace characters.
 
