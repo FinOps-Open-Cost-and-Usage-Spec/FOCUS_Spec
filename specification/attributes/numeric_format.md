@@ -15,7 +15,7 @@ Column conforming to NumericFormat attribute MUST adhere to the following requir
 * *FOCUS dataset column* MUST NOT contain commas or punctuation marks, except for a single decimal point when required for a decimal value.
 * *FOCUS dataset column* MUST use a negative sign (-) to indicate a negative value.
 * *FOCUS dataset column* MUST NOT include a positive sign (+) for a positive value.
-* When column contains numeric values expressed in scientific notation, *FOCUS dataset column* MUST adhere to the following requirements:
+* When *FOCUS dataset column* contains numeric values expressed in scientific notation, it MUST adhere to the following requirements:
   * *FOCUS dataset column* MUST use E notation "mEn", where m is a real number and n is an integer exponent.
   * *FOCUS dataset column* MUST use a negative sign (-) to indicate a negative exponent.
   * *FOCUS dataset column* MUST NOT include a positive sign (+) for a positive exponent.

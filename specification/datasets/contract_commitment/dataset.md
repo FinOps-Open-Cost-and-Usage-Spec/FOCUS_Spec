@@ -88,9 +88,9 @@ ContractCommitment MUST adhere to the following requirements:
 * ContractCommitment MUST conform to [DatasetCompleteness](#attributes.datasetcompleteness) requirements.
 * ContractCommitment MUST conform to [DatasetConfiguration](#attributes.datasetconfiguration) requirements.
 * ContractCommitment MUST conform to [DeliveryHandling](#attributes.deliveryhandling) requirements.
-* ContractCommitment FOCUS columns MUST conform to [FocusColumnHandling](#attributes.focuscolumnhandling) requirements.
-* ContractCommitment FOCUS columns MUST conform to [NullHandling](#attributes.nullhandling) requirements.
-* ContractCommitment custom columns MUST conform to [CustomColumnHandling](#attributes.customcolumnhandling) requirements.
+* ContractCommitment [*FOCUS columns*](#glossary:FOCUS-column) MUST conform to [FocusColumnHandling](#attributes.focuscolumnhandling) requirements.
+* ContractCommitment *FOCUS columns* MUST conform to [NullHandling](#attributes.nullhandling) requirements.
+* ContractCommitment [*custom columns*](#glossary:custom-column) MUST conform to [CustomColumnHandling](#attributes.customcolumnhandling) requirements.
 
 ## Dataset ID<!--SkipTOC-->
 

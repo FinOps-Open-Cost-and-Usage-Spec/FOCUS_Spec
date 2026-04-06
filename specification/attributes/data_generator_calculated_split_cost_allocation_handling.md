@@ -4,7 +4,7 @@ The data generator-calculated split cost allocation for data generator-defined s
 
 ## Requirements
 
-When the data generator supports data generator-calculated split cost allocation, column conforming to DataGeneratorCalculatedSplitCostAllocationHandling attribute MUST adhere to the following requirements:
+Column conforming to DataGeneratorCalculatedSplitCostAllocationHandling attribute MUST adhere to the following requirements:
 
 * [*FOCUS dataset column*](#glossary:FOCUS-dataset-column) values in *allocated charges* MUST match the corresponding value in the *origin charge* when the *FOCUS dataset column* represents a dimension.
 * *FOCUS dataset column* values in *allocated charges* MUST match the corresponding value in the *origin charge* when the *FOCUS dataset column* represents a non-summable [*metric*](#glossary:metric) (e.g., unit prices).
