@@ -56,7 +56,7 @@ SELECT
   CU.ServiceProviderName,
   CU.ServiceName,
   JSON_VALUE(CP, '$.ProgramType') AS EligibleProgramType,
-  SUM(CU.BilledCost) AS TotalEligibleUncoveredCost
+  SUM(CU.BilledCost) AS EligibleUncoveredCost
 FROM focus_data_table CU
 CROSS JOIN
   UNNEST(JSON_EXTRACT_ARRAY(CU.CommitmentProgramEligibilityDetails, '$.CommitmentPrograms')) AS CP
@@ -70,7 +70,7 @@ GROUP BY
   CU.ServiceProviderName,
   CU.ServiceName,
   JSON_VALUE(CP, '$.ProgramType')
-ORDER BY TotalEligibleUncoveredCost DESC
+ORDER BY EligibleUncoveredCost DESC
 ```
 
 ### Calculate Commitment Discount Coverage Rate with Eligibility-Adjusted Denominator
@@ -86,13 +86,18 @@ WITH CommitmentDiscountEligible AS (
     CU.EffectiveCost,
     CU.CommitmentDiscountId
   FROM focus_data_table CU
-  CROSS JOIN
-    UNNEST(JSON_EXTRACT_ARRAY(CU.CommitmentProgramEligibilityDetails, '$.CommitmentPrograms')) AS CP
   WHERE CU.ChargePeriodStart >= ? AND CU.ChargePeriodEnd < ?
     AND CU.ChargeCategory = 'Usage'
-    AND CU.CommitmentProgramEligibilityDetails IS NOT NULL
-    -- Replace with provider-specific discount-bearing program types
-    AND JSON_VALUE(CP, '$.ProgramType') IN ('FlexibleSpendPlan', 'ResourceReservation')
+    AND (
+      -- Defensive check: Always include actively covered rows in the denominator
+      CU.CommitmentDiscountId IS NOT NULL
+      -- If uncovered, check if the JSON array contains an eligible program type
+      OR EXISTS (
+        SELECT 1
+        FROM UNNEST(JSON_EXTRACT_ARRAY(CU.CommitmentProgramEligibilityDetails, '$.CommitmentPrograms')) AS CP
+        WHERE JSON_VALUE(CP, '$.ProgramType') IN ('FlexibleSpendPlan', 'ResourceReservation')
+      )
+    )
 )
 SELECT
   ServiceProviderName,
@@ -102,7 +107,6 @@ SELECT
     / NULLIF(SUM(EffectiveCost), 0) AS CommitmentCoverageRate
 FROM CommitmentDiscountEligible
 GROUP BY ServiceProviderName
-```
 
 ### Compare Commitment Opportunities Across Providers (Cross-Provider with SaaS)
 
