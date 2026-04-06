@@ -10,10 +10,10 @@ CommitmentProgramEligibilityDetails contains a JSON object with a FOCUS-defined 
 
 The `ProgramType` property follows [*PascalCase*](#glossary:pascalcase) by convention, identifying *commitment programs* supported by the provider. Per the [column requirements](#datasets.costandusage.commitmentprogrameligibilitydetails), these values:
 
-* Equals [CommitmentDiscountType](#datasets.costandusage.commitmentdiscounttype) for one object in the CommitmentPrograms array when CommitmentDiscountType is not null.
-* Corresponds to terminology disclosed by the service provider in public documentation. This guidance is especially relevant for SaaS providers that do not itemize commitment discount application at the row level, where CommitmentDiscountType is typically not populated.
-* Does not encode period length, payment option, or other commitment attributes (e.g., use "FlexibleSpendPlan" rather than "1YearFlexibleSpendPlanNoUpfront").
-* Uses the provider name as-is where a provider's documented program name inherently includes a period reference (e.g., StackLens's "MonthlyPlatformCommitment").
+* Equal [CommitmentDiscountType](#datasets.costandusage.commitmentdiscounttype) for one object in the CommitmentPrograms array when CommitmentDiscountType is not null.
+* Correspond to terminology disclosed by the service provider in public documentation. This guidance is especially relevant for SaaS providers that do not itemize commitment discount application at the row level, where CommitmentDiscountType is typically not populated.
+* Do not encode period length, payment option, or other commitment attributes (e.g., use "FlexibleSpendPlan" rather than "1YearFlexibleSpendPlanNoUpfront").
+* Use the provider name as-is where a provider's documented program name inherently includes a period reference (e.g., StackLens's "MonthlyPlatformCommitment").
 
 ## Directly Dependent Columns
 
@@ -151,7 +151,7 @@ ORDER BY UncoveredEligibleCost DESC
 
 The query filters [CommitmentProgramEligibilityDetails](#datasets.costandusage.commitmentprogrameligibilitydetails) to rows whose `ProgramType` values correspond to capacity-reservation programs (e.g., "AdvanceResourceCommitment", "ZonalResourceCommitment"). It then uses CapacityReservationId and CapacityReservationStatus to determine reservation utilization.
 
-Note: The FOCUS specification requires CapacityReservationId to not be null when a charge represents unused capacity (MUST), but only recommends (SHOULD) populating it when a charge is related to a [*capacity reservation*](#glossary:capacity-reservation). Where a provider does not populate CapacityReservationId on used rows, this query will show those rows with a null CapacityReservationStatus.
+Note: The FOCUS specification requires CapacityReservationId to not be null when a charge represents unused capacity (MUST), but only recommends (SHOULD) populating it when a charge is related to a used [*capacity reservation*](#glossary:capacity-reservation). Where a provider does not populate CapacityReservationId on used rows, this query will show those rows with a null CapacityReservationStatus.
 
 ```sql
 SELECT
