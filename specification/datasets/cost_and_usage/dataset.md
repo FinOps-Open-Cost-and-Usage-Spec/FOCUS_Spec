@@ -154,15 +154,16 @@ CostAndUsage MUST adhere to the following requirements:
   * CostAndUsage MUST include [SubAccountName](#datasets.costandusage.subaccountname) when the service provider supports a *sub account* construct.
   * CostAndUsage MUST include [SubAccountType](#datasets.costandusage.subaccounttype) when the service provider supports more than one possible SubAccountType value.
   * CostAndUsage MUST include [Tags](#datasets.costandusage.tags) when the data generator supports setting user or provider-defined tags.
+* CostAndUsage MUST include [*custom columns*](#glossary:custom-column) needed to identify applied discounts when [*FOCUS columns*](#glossary:FOCUS-column) are not sufficient.
 * CostAndUsage MUST conform to [CorrectionHandling](#attributes.correctionhandling) requirements.
 * CostAndUsage MUST conform to [DatasetCompleteness](#attributes.datasetcompleteness) requirements.
 * CostAndUsage MUST conform to [DatasetConfiguration](#attributes.datasetconfiguration) requirements.
 * CostAndUsage MUST conform to [DeliveryHandling](#attributes.deliveryhandling) requirements.
 * CostAndUsage MUST conform to [DiscountHandling](#attributes.discounthandling) requirements.
-* CostAndUsage [*FOCUS columns*](#glossary:FOCUS-column) MUST conform to [DataGeneratorCalculatedSplitCostAllocationHandling](#attributes.datagenerator-calculatedsplitcostallocationhandling) requirements when the data generator supports data generator-calculated split cost allocation.
+* CostAndUsage *FOCUS columns* MUST conform to [DataGeneratorCalculatedSplitCostAllocationHandling](#attributes.datagenerator-calculatedsplitcostallocationhandling) requirements when the data generator supports data generator-calculated split cost allocation.
 * CostAndUsage *FOCUS columns* MUST conform to [FocusColumnHandling](#attributes.focuscolumnhandling) requirements.
 * CostAndUsage *FOCUS columns* MUST conform to [NullHandling](#attributes.nullhandling) requirements.
-* CostAndUsage [*custom columns*](#glossary:custom-column) MUST conform to [CustomColumnHandling](#attributes.customcolumnhandling) requirements.
+* CostAndUsage *custom columns* MUST conform to [CustomColumnHandling](#attributes.customcolumnhandling) requirements.
 * When the data generator supports data generator-calculated split cost allocation, CostAndUsage MUST adhere to the following requirements:
   * CostAndUsage MUST have its data generator-calculated split cost allocation method documented and accessible to practitioners.
   * CostAndUsage SHOULD offer data generator-calculated split cost allocation on an opt-in basis.
