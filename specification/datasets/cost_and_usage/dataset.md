@@ -154,7 +154,7 @@ CostAndUsage MUST adhere to the following requirements:
   * CostAndUsage MUST include [SubAccountName](#datasets.costandusage.subaccountname) when the service provider supports a *sub account* construct.
   * CostAndUsage MUST include [SubAccountType](#datasets.costandusage.subaccounttype) when the service provider supports more than one possible SubAccountType value.
   * CostAndUsage MUST include [Tags](#datasets.costandusage.tags) when the data generator supports setting user or provider-defined tags.
-* CostAndUsage MUST include [*custom columns*](#glossary:custom-column) needed to identify applied discounts when [*FOCUS columns*](#glossary:FOCUS-column) are not sufficient.
+  * CostAndUsage MUST include [*custom columns*](#glossary:custom-column) needed to identify applied [*discounts*](#glossary:discount) when [*FOCUS columns*](#glossary:FOCUS-column) are not sufficient.
 * CostAndUsage MUST conform to [CorrectionHandling](#attributes.correctionhandling) requirements.
 * CostAndUsage MUST conform to [DatasetCompleteness](#attributes.datasetcompleteness) requirements.
 * CostAndUsage MUST conform to [DatasetConfiguration](#attributes.datasetconfiguration) requirements.
