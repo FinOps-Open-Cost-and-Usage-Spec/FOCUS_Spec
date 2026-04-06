@@ -154,7 +154,7 @@ CostAndUsage MUST adhere to the following requirements:
   * CostAndUsage MUST include [SubAccountName](#datasets.costandusage.subaccountname) when the service provider supports a *sub account* construct.
   * CostAndUsage MUST include [SubAccountType](#datasets.costandusage.subaccounttype) when the service provider supports more than one possible SubAccountType value.
   * CostAndUsage MUST include [Tags](#datasets.costandusage.tags) when the data generator supports setting user or provider-defined tags.
-  * CostAndUsage SHOULD include [*custom columns*](#glossary:custom-column) needed to identify applied [*discounts*](#glossary:discount) when [*FOCUS columns*](#glossary:FOCUS-column) are not sufficient.
+  * CostAndUsage SHOULD include [*custom columns*](#glossary:custom-column) needed to identify all applied discounts when [*FOCUS columns*](#glossary:FOCUS-column) are not sufficient.
 * CostAndUsage MUST conform to [CorrectionHandling](#attributes.correctionhandling) requirements.
 * CostAndUsage MUST conform to [DatasetCompleteness](#attributes.datasetcompleteness) requirements.
 * CostAndUsage MUST conform to [DatasetConfiguration](#attributes.datasetconfiguration) requirements.
@@ -169,15 +169,11 @@ CostAndUsage MUST adhere to the following requirements:
   * CostAndUsage MAY contain records for concepts not related to resource usage, if it aligns with the documented data generator-calculated split cost allocation method.
   * CostAndUsage MAY contain records for unused or unallocated usage from the *origin charge* as separate *allocated charges*, if it aligns with the documented data generator-calculated split cost allocation method.
   * CostAndUsage MAY contain *allocated charges* with apportioned costs for unused or unallocated usage, if it aligns with the documented data generator-calculated split cost allocation method.
-* When the service provider supports *contract commitments*, CostAndUsage MUST adhere to the following requirements:
-  * CostAndUsage MUST include *charges* representing unused portions of *contract commitments* when applicable.
-  * CostAndUsage SHOULD reflect all applicable discounts in *charges* they pertain to.
-  * CostAndUsage SHOULD NOT represent discounts as separate negating or offsetting *charges*.
-* When the service provider supports *commitment discounts*, CostAndUsage MUST adhere to the following requirements:
-  * CostAndUsage MUST include *charges* representing unused portions of *commitment discounts* when applicable.
-  * CostAndUsage MUST include separate *charges* representing discounted and non-discounted portions when a *commitment discount* applies to only a portion of the originally incurred *charge*.
-  * CostAndUsage SHOULD reflect all applicable *commitment discounts* in *charges* they pertain to.
-  * CostAndUsage SHOULD NOT represent *commitment discounts* as separate negating or offsetting *charges*.
+* CostAndUsage MUST include *charges* representing unused portions of a [*commitment*](#glossary:commitment) when the *commitment* is not fully utilized.
+* CostAndUsage MUST include separate *charges* representing discounted and non-discounted portions when a *commitment discount* applies to only a portion of the originally incurred *charge*.
+* CostAndUsage SHOULD reflect all applied discounts in *charges* they pertain to.
+* CostAndUsage SHOULD NOT represent applied discounts as separate negating or offsetting *charges*.
+
 
 ## Dataset ID<!--SkipTOC-->
 
