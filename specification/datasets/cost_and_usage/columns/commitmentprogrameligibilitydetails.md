@@ -129,20 +129,15 @@ Scenario: A compute instance type and tenancy that are eligible for both discoun
 
 This example demonstrates how to calculate an accurate [*commitment*](#glossary:commitment) coverage rate using [CommitmentProgramEligibilityDetails](#datasets.costandusage.CommitmentProgramEligibilityDetails) alongside [CommitmentDiscountId](#datasets.costandusage.commitmentdiscountid).
 
-Acme Corp runs compute workloads on Aura Web. Some usage is covered by a Resource Reservation, some is eligible but uncovered, and a support fee is ineligible for any [*commitment program*](#glossary:commitment-program). While the specification mandates that CommitmentProgramEligibilityDetails must not be null when a charge is eligible, practitioners may encounter non-compliant provider data where this column is omitted on covered rows. This creates a gap in naive coverage calculations that rely solely on CommitmentProgramEligibilityDetails to define the eligible population.
+Acme Corp runs compute workloads on Aura Web. Some usage is covered by a Resource Reservation, some is eligible but uncovered, and a support fee is ineligible for any [*commitment program*](#glossary:commitment-program).
 
-Four usage rows for a single charge period (2025-04-01):
+Three usage rows for a single charge period (2025-04-01):
 
 1. **Uncovered compute** (Row 1): Eligible for FlexibleSpendPlan and ResourceReservation, not currently covered. [BilledCost](#datasets.costandusage.billedcost) and [EffectiveCost](#datasets.costandusage.effectivecost) are both &dollar;200.00.
-2. **Covered compute with eligibility** (Row 2): Covered by a ResourceReservation. CommitmentProgramEligibilityDetails is populated. BilledCost is &dollar;0.00; EffectiveCost is &dollar;150.00.
-3. **Covered compute without eligibility** (Row 3): Also covered by the same ResourceReservation. The provider omits CommitmentProgramEligibilityDetails on this row. BilledCost is &dollar;0.00; EffectiveCost is &dollar;100.00.
-4. **Support fee** (Row 4): Not eligible for any *commitment program*. Both CommitmentProgramEligibilityDetails and CommitmentDiscountId are null. BilledCost and EffectiveCost are both &dollar;50.00.
+2. **Covered compute** (Row 2): Covered by a ResourceReservation. CommitmentProgramEligibilityDetails is populated. BilledCost is &dollar;0.00; EffectiveCost is &dollar;150.00.
+3. **Support fee** (Row 3): Not eligible for any *commitment program*. Both CommitmentProgramEligibilityDetails and CommitmentDiscountId are null. BilledCost and EffectiveCost are both &dollar;50.00.
 
-A defensive approach adds an OR condition to the denominator, catching covered rows even when a provider omits CommitmentProgramEligibilityDetails:
-
-`CommitmentDiscountId IS NOT NULL OR CommitmentProgramEligibilityDetails IS NOT NULL`
-
-**Without OR** (using only `CommitmentProgramEligibilityDetails IS NOT NULL`):
+By filtering the denominator to rows where `CommitmentProgramEligibilityDetails IS NOT NULL`, the &dollar;50.00 support fee is correctly excluded from the eligible population:
 
 | Metric | Value |
 |:-------|:------|
@@ -150,17 +145,7 @@ A defensive approach adds an OR condition to the denominator, catching covered r
 | Covered numerator | Row 2 (&dollar;150.00) |
 | Coverage rate | `150 / 350` = **42.9%** |
 
-Row 3 is excluded from both numerator and denominator because its CommitmentProgramEligibilityDetails is null, even though it is actively covered.
-
-**With OR** (using `CommitmentDiscountId IS NOT NULL OR CommitmentProgramEligibilityDetails IS NOT NULL`):
-
-| Metric | Value |
-|:-------|:------|
-| Eligible denominator | Row 1 (&dollar;200.00) + Row 2 (&dollar;150.00) + Row 3 (&dollar;100.00) = &dollar;450.00 |
-| Covered numerator | Row 2 (&dollar;150.00) + Row 3 (&dollar;100.00) = &dollar;250.00 |
-| Coverage rate | `250 / 450` = **55.6%** |
-
-The OR condition catches Row 3 via its CommitmentDiscountId. This produces an accurate rate that reflects all covered and eligible spend. Row 4 (support fee) is correctly excluded from both approaches because neither column is populated.
+Row 3 (support fee) is correctly excluded because CommitmentProgramEligibilityDetails is null for ineligible charges.
 
 [CSV Example](/specification/data/commitment_eligibility/coverage_rate_eligibility_adjusted.csv)
 
