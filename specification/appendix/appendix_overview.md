@@ -6,6 +6,7 @@
 
 | Topic | Description |
 | :--- | :--- |
+| [Discount Handling](#appendix.discounthandling) | Explains how discounts are represented and applied to charges in a FOCUS dataset. |
 | [Commitment Discounts](#appendix.commitmentdiscounts) | Explains the purchasing, usage, and amortization of commitment discounts in a FOCUS dataset. |
 | [Examples: Commitment Discount Flexibility](#appendix.examples:commitmentdiscountflexibility) | Demonstrates scenarios for usage-based commitment discounts with and without commitment discount flexibility. |
 | [Examples: Contract Commitments](#appendix.examples:contractcommitments) | Provides a structured representation and examples of commercial agreements between a customer and their service providers. |
