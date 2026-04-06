@@ -147,8 +147,6 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 
 * **Linking Only the First Time**: To prevent excessive linking within sections, Entity Names and Entity IDs (e.g., Column Names, Attribute IDs, and Glossary) will only be linked to their corresponding section or glossary the first time they appear in a section.
 
----
-
 ### Normative Requirements
 
 * **Normative Requirements as a Bullet List**: Normative statements (those using Normative Keywords) MUST be written as bullet points instead of lengthy sentences.
@@ -187,8 +185,6 @@ These guidelines can be modified through a Pull Request (PR), which the members 
   ```
 * **No Compound Conditions:** Normative statements MUST NOT combine multiple conditions using “and” or “or” within a single statement.
 
----
-
 ### Entity References
 
 * **Entity IDs:** Entity IDs (e.g., Column IDs, Attribute IDs, Dataset IDs) SHOULD be used in normative text sections, such as when specifying mandatory rules, schema definitions, or other implementation-related content. 
@@ -206,7 +202,6 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 * **Multiple Entity References:** MUST use Entity IDs when referencing multiple entities in a normative statement.
 
 * **Entity Scope:** These rules apply to all entities defined in the FOCUS specification (e.g., Columns, Attributes, Datasets, Objects).
-
 
 ### Bullet Structure
 
@@ -240,8 +235,6 @@ These guidelines can be modified through a Pull Request (PR), which the members 
   * ... MUST be null when ChargeCategory is "Adjustment".
   ```
 
----
-
 ### Formatting
 
 * **Introductory Phrase for Rules:** Normative bullet lists SHOULD be preceded by a short introductory phrase ending with a colon (:). 
@@ -254,8 +247,6 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 
 * **Consistent Introductory Phrases:** Introductory phrases for normative lists SHOULD be consistent within a section.
 
----
-
 ### JSON Formatting
 
 * **Valid JSON:** JSON examples MUST be valid and complete.
@@ -264,7 +255,6 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 
 * **Consistent Structure:** JSON examples SHOULD follow consistent formatting and indentation.
 
----
 
 ### Section Structure
 
@@ -288,8 +278,6 @@ These guidelines can be modified through a Pull Request (PR), which the members 
   * PricingQuantity MUST be greater than 0.
 ```
 
----
-
 ### Examples
 
 * **Valid Examples:** Examples MUST reflect valid combinations of values defined in the specification.
@@ -305,8 +293,6 @@ These guidelines can be modified through a Pull Request (PR), which the members 
   ```md
   > Note: The following examples are informative and non-normative. They do not define requirements.
   ```
-
----
 
 ### Important Text
 
