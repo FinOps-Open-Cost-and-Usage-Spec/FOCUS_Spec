@@ -271,10 +271,12 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 ```md
  ✔ Correct:
   ## Requirements
+  ...
   * PricingQuantity MUST be greater than 0.
   
  ✘ Incorrect:
   ## Description
+  ...
   * PricingQuantity MUST be greater than 0.
 ```
 
@@ -333,6 +335,55 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 > **2.28.5. Introduced (version)** 
 >
 > 1.0-preview
+---
+---
+
+> **3.1.45. Pricing Quantity**
+
+> The Pricing Quantity represents the volume of a given S K U associated with a resource or service used or purchased, based on the Pricing Unit. Distinct from Consumed Quantity (complementary to Consumed Unit), it focuses on pricing and cost, not resource and service consumption.
+>
+> **3.1.45.1. Requirements**
+
+> PricingQuantity adheres to the following requirements:
+> * PricingQuantity MUST be present in a Cost and Usage FOCUS dataset.
+> * PricingQuantity MUST be of type Decimal.
+> * PricingQuantity MUST conform to NumericFormat requirements.
+> * PricingQuantity nullability is defined as follows:
+>   * PricingQuantity MUST be null when SkuPriceId is null.
+>   * PricingQuantity MUST be null when ChargeCategory is "Tax"
+>   * PricingQuantity MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and
+> ChargeClass is not "Correction"
+>   * PricingQuantity MAY be null in all other cases.
+> * PricingQuantity MUST be a valid decimal value when not null.
+> * Cost metric (e.g., ContractedCost) MUST equal the product of the corresponding unit price
+> (e.g., ContractedUnitPrice) and PricingQuantity when the unit price is not null and
+> PricingQuantity is not null.
+>
+> **3.1.45.2. Column ID**
+>
+> PricingQuantity
+>
+> **3.1.45.3. Display Name**
+>
+> Pricing Quantity
+>
+> **3.1.45.4. Description**
+> The volume of a given S K U associated with a r e s o u r c e or s e r v i c e used or purchased, based on the
+Pricing Unit.
+
+> **3.1.45.5. Usability Constraints**
+>
+> **Aggregation:** When aggregating Pricing Quantity for commitment utilization calculations, it's
+important to exclude c o m m i t m e n t d i s c o u n t purchases (i.e. when Charge Category is "Purchase") that
+are paid to cover future eligible c h a r g e s (e.g., c o m m i t m e n t d i s c o u n t ). Otherwise, when accounting
+for all upfront or accrued purchases, it's important to exclude c o m m i t m e n t d i s c o u n t usage (i.e. when
+Charge Category is "Usage"). This exclusion helps prevent double counting of these quantities in the
+aggregation.
+
+>3.1.45.6. Content Constraints
+>
+> <img width="492" alt="image" src="https://github.com/user-attachments/assets/5185cbf9-306d-4663-a1c7-c8b7ab5c5bb8">
+
 
 ### Example HTML Table
 This is an example of a complex table with merged rows and columns, along with an additional header row.
