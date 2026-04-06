@@ -174,7 +174,6 @@ CostAndUsage MUST adhere to the following requirements:
 * CostAndUsage SHOULD reflect all applied discounts in *charges* they pertain to.
 * CostAndUsage SHOULD NOT represent applied discounts as separate negating or offsetting *charges*.
 
-
 ## Dataset ID<!--SkipTOC-->
 
 CostAndUsage
