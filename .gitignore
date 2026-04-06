@@ -15,3 +15,6 @@ specification/requirements_model/build/*
 # AI tool local settings
 settings.local.json
 *.local.md
+
+# Ignore local Gemini agent settings
+.gemini/settings.json
