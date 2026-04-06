@@ -175,11 +175,10 @@ CostAndUsage MUST adhere to the following requirements:
   * CostAndUsage SHOULD reflect all applicable discounts in *charges* they pertain to.
   * CostAndUsage SHOULD NOT represent discounts as separate negating or offsetting *charges*.
 * When the service provider supports *commitment discounts*, CostAndUsage MUST adhere to the following requirements:
-  * CostAndUsage MUST include charges representing unused portions of *commitment discounts* when applicable.
-  * CostAndUsage MUST include separate charges representing discounted and non-discounted portions when a *commitment discount* applies to only a portion of the originally incurred charge.
+  * CostAndUsage MUST include *charges* representing unused portions of *commitment discounts* when applicable.
+  * CostAndUsage MUST include separate *charges* representing discounted and non-discounted portions when a *commitment discount* applies to only a portion of the originally incurred *charge*.
   * CostAndUsage SHOULD reflect all applicable *commitment discounts* in *charges* they pertain to.
   * CostAndUsage SHOULD NOT represent *commitment discounts* as separate negating or offsetting *charges*.
-
 
 ## Dataset ID<!--SkipTOC-->
 
