@@ -8,7 +8,7 @@ CommitmentProgramEligibilityDetails contains a JSON object with a FOCUS-defined 
 
 ### Naming Conventions for ProgramType Values
 
-The `ProgramType` property follows PascalCase by convention, identifying [*commitment programs*](#glossary:commitment-program) supported by the provider. Per the [column requirements](#datasets.costandusage.commitmentprogrameligibilitydetails), these values:
+The `ProgramType` property follows [*PascalCase*](#glossary:pascalcase) by convention, identifying *commitment programs* supported by the provider. Per the [column requirements](#datasets.costandusage.commitmentprogrameligibilitydetails), these values:
 
 * Equals [CommitmentDiscountType](#datasets.costandusage.commitmentdiscounttype) for one object in the CommitmentPrograms array when CommitmentDiscountType is not null.
 * Corresponds to terminology disclosed by the service provider in public documentation. This guidance is especially relevant for SaaS providers that do not itemize commitment discount application at the row level, where CommitmentDiscountType is typically not populated.
