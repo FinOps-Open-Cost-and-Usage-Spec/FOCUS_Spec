@@ -207,7 +207,6 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 
 * **Entity Scope:** These rules apply to all entities defined in the FOCUS specification (e.g., Columns, Attributes, Datasets, Objects).
 
----
 
 ### Bullet Structure
 
