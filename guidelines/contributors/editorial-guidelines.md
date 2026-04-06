@@ -78,9 +78,9 @@ These guidelines can be modified through a Pull Request (PR), which the members 
         </td>
     </tr>
     <tr>
-        <td><strong>Normative Keywords &amp; Statements</strong></td>
+        <td><strong>Normative Keywords &amp; Requirements Statements</strong></td>
         <td>
-            MUST, MAY, MUST NOT and normative statements
+            MUST, MAY, MUST NOT and normative requirements statements
         </td>
         <td>
             This column:</br>
@@ -149,7 +149,7 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 
 ### Normative Requirements
 
-* **Normative Requirements as a Bullet List**: Normative statements (those using Normative Keywords) MUST be written as bullet points instead of lengthy sentences.
+* **Normative Requirements as a Bullet List**: Normative requirements (those using Normative Keywords) MUST be written as bullet points instead of lengthy sentences.
 
 * **Normative Keyword Standardization:** To ensure consistency in the specification, normative language MUST use only the BCP-14 keywords MUST, MUST NOT, SHOULD, SHOULD NOT, and MAY. The term "RECOMMENDED" as a normative keyword is deprecated starting December 2025. Where legacy text uses RECOMMENDED, it MUST be replaced with SHOULD.
 
@@ -164,7 +164,7 @@ These guidelines can be modified through a Pull Request (PR), which the members 
   * ... MUST conform to CurrencyFormat requirements.
   ```
 
-* **Explicit Conditions:** Normative statements MUST include an explicit condition unless the rule applies in all cases.
+* **Explicit Conditions:** Normative requirements MUST include an explicit condition unless the rule applies in all cases.
 
 * **Condition Format:** Conditional clauses MUST use standardized patterns: “when / if / unless / only when / only if / except when / except if <condition>”.
 
@@ -183,7 +183,7 @@ These guidelines can be modified through a Pull Request (PR), which the members 
   ```md
   * PricingQuantity MUST be greater than 0.
   ```
-* **No Compound Conditions:** Normative statements MUST NOT combine multiple conditions using “and” or “or” within a single statement.
+* **No Compound Conditions:** Normative requirements MUST NOT combine multiple conditions using “and” or “or” within a single statement.
 
 ### Entity References
 
@@ -195,7 +195,7 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 
 * **Display Names:** Display Names SHOULD be used in introductory or explanatory sections where natural language context is more appropriate. These names should follow normal text conventions, including spaces between words (e.g., Commitment Discount ID).
 
-* **Consistent Reference Type:** Normative statements MUST use Entity IDs consistently.
+* **Consistent Reference Type:** Normative requirements MUST use Entity IDs consistently.
 
 * **Consistent Reference Type:** MUST NOT mix Entity IDs and Display Names within the same statement.
 
