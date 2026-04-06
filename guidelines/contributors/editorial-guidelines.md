@@ -149,7 +149,7 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 
 ---
 
-### Normative Statements
+### Normative Requirements
 
 * **Normative Requirements as a Bullet List**: Normative statements (those using Normative Keywords) MUST be written as bullet points instead of lengthy sentences.
 
