@@ -368,9 +368,8 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 > Pricing Quantity
 >
 > **3.1.45.4. Description**
-> The volume of a given S K U associated with a r e s o u r c e or s e r v i c e used or purchased, based on the
-Pricing Unit.
-
+> The volume of a given S K U associated with a resource or service used or purchased, based on the Pricing Unit.
+>
 > **3.1.45.5. Usability Constraints**
 >
 > **Aggregation:** When aggregating Pricing Quantity for commitment utilization calculations, it's
