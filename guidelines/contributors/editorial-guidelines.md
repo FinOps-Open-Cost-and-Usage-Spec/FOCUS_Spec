@@ -304,7 +304,7 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 
 > **3.1.45. Pricing Quantity**
 >
-> The Pricing Quantity represents the volume of a given S K U associated with a resource or service used or purchased, based on the Pricing Unit. Distinct from Consumed Quantity (complementary to Consumed Unit), it focuses on pricing and cost, not resource and service consumption.
+> The Pricing Quantity represents the volume of a given SKU associated with a resource or service used or purchased, based on the Pricing Unit. Distinct from Consumed Quantity (complementary to Consumed Unit), it focuses on pricing and cost, not resource and service consumption.
 >
 > **3.1.45.1. Requirements**
 >
