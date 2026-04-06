@@ -302,42 +302,6 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 
 ### Example
 
-> **2.28. Pricing Quantity**
->
-> The Pricing Quantity represents the volume of a given SKU associated with a [*resource*](#glossary:resource) or [*service*](#glossary:service) used or purchased, based on the [Pricing Unit](#pricingunit). Distinct from [Consumed Quantity](#consumedquantity) (complementary to [Consumed Unit](#consumedunit)), it focuses on pricing and cost, not *resource* and *service* consumption.
->
->  * The PricingQuantity column MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset). 
->  * This column MUST be of type Decimal and MUST conform to [Numeric Format](#numericformat) requirements 
->  * The value MAY be negative in cases where [ChargeClass](#chargeclass) is "Correction".
-> 
-> This column:
->  * MUST NOT be null when [ChargeClass](#chargeclass) is not "Correction" and [ChargeCategory](#chargecategory) is "Usage" or "Purchase", 
->  * MUST be null when ChargeCategory is "Tax", and 
->  * MAY be null for all other combinations of ChargeClass and ChargeCategory. 
->  * When unit prices are not null, multiplying PricingQuantity by a unit price MUST produce a result equal to the corresponding cost metric, except in cases of ChargeClass "Correction", which may address PricingQuantity or any cost discrepancies independently.
->
-> **2.28.1. Column ID**
->
-> PricingQuantity 
->
-> **2.28.2. Display Name**
->
-> Pricing Quantity
->
-> **2.28.3. Description**
->
-> The volume of a given SKU associated with a *resource* or *service* used or purchased, based on the Pricing Unit. 
->
-> **2.28.4. Content Constraints**
-> 
-> <img width="492" alt="image" src="https://github.com/user-attachments/assets/5185cbf9-306d-4663-a1c7-c8b7ab5c5bb8">
->
-> **2.28.5. Introduced (version)** 
->
-> 1.0-preview
----
----
-
 > **3.1.45. Pricing Quantity**
 >
 > The Pricing Quantity represents the volume of a given S K U associated with a resource or service used or purchased, based on the Pricing Unit. Distinct from Consumed Quantity (complementary to Consumed Unit), it focuses on pricing and cost, not resource and service consumption.
