@@ -365,19 +365,12 @@ To maintain the integrity of the consensus-building process, it is critical that
 When commits are pushed to a branch after an approval has been logged:
 
 * PR author MUST re-request review from all approvers upon any commit that alters the normative requirements.
-* PR author SHOULD re-request review from all approvers upon any commit that alters the technical design, structure, or implementation of the proposed feature (exempting minor commits, such as resolving simple merge conflicts or formatting fixes).
-
-**Chair Verification for Editorial Fixes**
-
-To prevent minor typo and grammar corrections in normative text from unnecessarily stalling development:
-
-* PR author MAY tag the Working Group Chair in a PR comment to request verification that the new commits are non-substantive.
-* Working Group Chair MAY confirm the changes are non-substantive via a recorded PR comment and reinstate the approvals on behalf of the working group, allowing the PR to proceed without a full re-review cycle.
+* PR author SHOULD re-request review from all approvers upon any commit that alters the informative text of technical design, structure, or implementation of the proposed feature.
 
 **Enforcement**
 
-* Administrators **MUST NOT** promote or merge a Pull Request containing post-approval changes to normative text without either a full re-review or explicit Chair verification. 
-* Any Pull Request merged in violation of this procedure is considered a breach of consensus and **MUST** be immediately reverted by the Working Group Chair or Administrators.
+* Administrators MUST NOT promote or merge a Pull Request containing post-approval changes to normative text without either a full re-review. 
+* Any Pull Request merged in violation of this procedure MUST be immediately reverted by the Administrators.
 
 
 #### Conflict Resolution
