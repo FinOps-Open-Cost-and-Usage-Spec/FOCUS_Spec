@@ -102,11 +102,12 @@ WITH CommitmentDiscountEligible AS (
 SELECT
   ServiceProviderName,
   SUM(CASE WHEN CommitmentDiscountId IS NOT NULL THEN EffectiveCost ELSE 0 END) AS CoveredCost,
-  SUM(EffectiveCost) AS TotalEligibleCost,
+  SUM(EffectiveCost) AS EligibleCost,
   SUM(CASE WHEN CommitmentDiscountId IS NOT NULL THEN EffectiveCost ELSE 0 END)
     / NULLIF(SUM(EffectiveCost), 0) AS CommitmentCoverageRate
 FROM CommitmentDiscountEligible
 GROUP BY ServiceProviderName
+```
 
 ### Compare Commitment Opportunities Across Providers (Cross-Provider with SaaS)
 
@@ -120,7 +121,7 @@ WITH CommitmentDiscountEligible AS (
     CU.ServiceProviderName,
     JSON_VALUE(CP, '$.ProgramType') AS ProgramType,
     CU.EffectiveCost,
-    CASE WHEN CU.CommitmentDiscountId IS NULL THEN CU.EffectiveCost ELSE 0 END AS UncoveredCost
+    CASE WHEN CU.CommitmentDiscountId IS NULL THEN CU.BilledCost ELSE 0 END AS UncoveredCost
   FROM focus_data_table CU
   CROSS JOIN
     UNNEST(JSON_EXTRACT_ARRAY(CU.CommitmentProgramEligibilityDetails, '$.CommitmentPrograms')) AS CP
@@ -133,7 +134,7 @@ WITH CommitmentDiscountEligible AS (
 SELECT
   ServiceProviderName,
   ProgramType AS EligibleProgramType,
-  SUM(EffectiveCost) AS TotalEligibleCost,
+  SUM(EffectiveCost) AS EligibleCost,
   SUM(UncoveredCost) AS UncoveredEligibleCost,
   SUM(UncoveredCost) / NULLIF(SUM(EffectiveCost), 0) AS UncoveredRate
 FROM CommitmentDiscountEligible
@@ -155,7 +156,7 @@ SELECT
   CU.ServiceName,
   JSON_VALUE(CP, '$.ProgramType') AS EligibleProgramType,
   CU.CapacityReservationStatus,
-  SUM(CU.BilledCost) AS TotalCost,
+  SUM(CU.BilledCost) AS BilledCost,
   COUNT(*) AS RowCount
 FROM focus_data_table CU
 CROSS JOIN
@@ -169,7 +170,7 @@ GROUP BY
   CU.ServiceName,
   JSON_VALUE(CP, '$.ProgramType'),
   CU.CapacityReservationStatus
-ORDER BY TotalCost DESC
+ORDER BY BilledCost DESC
 ```
 
 ## Introduced (Version)
