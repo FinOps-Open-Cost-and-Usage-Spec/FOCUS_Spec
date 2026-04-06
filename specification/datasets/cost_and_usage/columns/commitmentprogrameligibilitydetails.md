@@ -12,8 +12,8 @@ CommitmentProgramEligibilityDetails MUST adhere to the following requirements:
 * CommitmentProgramEligibilityDetails MUST NOT be null when a charge is eligible for a [*commitment program*](#glossary:commitment-program), regardless of whether a [*commitment*](#glossary:commitment) was actually applied to the charge.
 * CommitmentProgramEligibilityDetails MUST NOT consider transient account configurations or quotas that might temporarily prevent purchase or participation in a *commitment program*.
 * CommitmentProgramEligibilityDetails MUST include all publicly available *commitment programs* for which the usage is eligible.
-* CommitmentProgramEligibilityDetails MAY include negotiated *commitment programs* when the usage is eligible and the program is not broadly applicable across the service provider's service catalog.
-
+* CommitmentProgramEligibilityDetails MAY include negotiated *commitment programs* when the usage is eligible and the program is not broadly applicable across the service provider's service catalog.
+
 * CommitmentProgramEligibilityDetails MUST NOT include data related to *commitment* [*periods*](#glossary:period) or payment options.
 * CommitmentProgramEligibilityDetails MUST conform to [CommitmentProgramEligibilityDetailsObject](#datasets.costandusage.CommitmentProgramEligibilityDetails.CommitmentProgramEligibilityDetailsobject) requirements when CommitmentProgramEligibilityDetails is not null.
 
@@ -69,22 +69,22 @@ CommitmentProgramEligibilityDetailsObject MUST adhere to the following requireme
 ### JSON Type Definition
 
 ``` json
-{
-  "definitions": {
-    "commitmentProgramEntry": {
-      "properties": {
-        "ProgramType": { "type": "string" }
-      },
-      "additionalProperties": true
-    }
-  },
-  "properties": {
-    "CommitmentPrograms": {
-      "elements": { "ref": "commitmentProgramEntry" }
-    }
-  },
-  "additionalProperties": true
-}
+{
+  "definitions": {
+    "commitmentProgramEntry": {
+      "properties": {
+        "ProgramType": { "type": "string" }
+      },
+      "additionalProperties": true
+    }
+  },
+  "properties": {
+    "CommitmentPrograms": {
+      "elements": { "ref": "commitmentProgramEntry" }
+    }
+  },
+  "additionalProperties": true
+}
 ```
 
 NOTE: The above JSON Type Definition (JTD) is an approximation of the expected contents of this column, but it should not be considered normative because it cannot accurately describe the normative requirements (above) for CommitmentProgramEligibilityDetails. Where there are discrepancies, preference will be given to the normative requirements.
@@ -162,9 +162,9 @@ Six usage rows for a single charge period (2025-04-01):
 3. **Ineligible support** (Row 4): Aura Web Support with no CommitmentProgramEligibilityDetails. Filtered out because the column is null.
 4. **Uncovered observability** (Rows 5-6): Two StackLens Observability rows eligible for MonthlyIntervalSpendCommitment and AnnualIntervalSpendCommitment. BilledCost totals &dollar;200.00.
 
-To evaluate these purchasing options, the `CommitmentPrograms` JSON array must be flattened so each eligible program can be analyzed independently. By expanding the array (e.g., via `CROSS JOIN UNNEST`) and grouping the uncovered costs by `ServiceProviderName`, `ServiceName`, and `EligibleProgramType`, the practitioner gets the summary presented in the table below. A reference implementation is available in the [eligible uncovered spend query](#supportedfeatures.commitmentprogrameligibilitydetails) supported feature.
+To evaluate these purchasing options, the `CommitmentPrograms` JSON array must be flattened so each eligible program can be analyzed independently. By expanding the array (e.g., via `CROSS JOIN UNNEST`) and grouping the uncovered costs by `ServiceProviderName`, `ServiceName`, and `EligibleProgramType`, the practitioner gets the summary presented in the table below. A reference implementation is available in the [eligible uncovered spend query](#supportedfeatures.commitmentprogrameligibilitydetails) supported feature.
 
-| ServiceProviderName | ServiceName | EligibleProgramType | EligibleUncoveredCost |
+| ServiceProviderName | ServiceName | EligibleProgramType | EligibleUncoveredCost |
 |:--------------------|:------------|:--------------------|:---------------------------|
 | Aura Web | Compute | FlexibleSpendPlan | &dollar;500.00 |
 | Aura Web | Compute | ResourceReservation | &dollar;500.00 |
