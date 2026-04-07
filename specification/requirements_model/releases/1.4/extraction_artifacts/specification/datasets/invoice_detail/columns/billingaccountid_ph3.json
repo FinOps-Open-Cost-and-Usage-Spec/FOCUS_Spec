@@ -1,7 +1,7 @@
 {
   "ModelRules": {
     "IND-BillingAccountId-C-000-M": {
-      "Function": "Validation",
+      "Function": "Composite",
       "Reference": "BillingAccountId",
       "EntityType": "Column",
       "EntityName": "Billing Account ID",

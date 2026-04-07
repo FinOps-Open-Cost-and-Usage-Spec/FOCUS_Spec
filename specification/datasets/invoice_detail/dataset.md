@@ -46,7 +46,7 @@ For more information, see the [Invoice Reconciliation](#supportedfeatures.invoic
 
 InvoiceDetail MUST adhere to the following requirements:
 
-* InvoiceDetail MUST be present if the invoice issuer supports payable invoices.
+* InvoiceDetail MUST be present when the invoice issuer supports payable invoices.
 * The presence of columns in InvoiceDetail MUST adhere to the following requirements:
   * InvoiceDetail MUST include [BilledCost](#datasets.invoicedetail.billedcost).
   * InvoiceDetail MUST include [BillingAccountId](#datasets.invoicedetail.billingaccountid).
@@ -63,21 +63,25 @@ InvoiceDetail MUST adhere to the following requirements:
   * InvoiceDetail MUST include [InvoiceIssueDate](#datasets.invoicedetail.invoiceissuedate).
   * InvoiceDetail MUST include [InvoiceIssueStatus](#datasets.invoicedetail.invoiceissuestatus).
   * InvoiceDetail MUST include [InvoiceIssuerName](#datasets.invoicedetail.invoiceissuername).
-  * InvoiceDetail MUST include [PaymentCurrency](#datasets.invoicedetail.paymentcurrency) if the invoice issuer supports billing and payment in different currencies.
-  * InvoiceDetail MUST include [PaymentCurrencyBilledCost](#datasets.invoicedetail.paymentcurrencybilledcost) if the invoice issuer supports billing and payment in different currencies.
-  * InvoiceDetail MUST include [PaymentCurrencyInvoiceDetailId](#datasets.invoicedetail.paymentcurrencyinvoicedetailid) if the invoice issuer represents billing currency and payment currency at different aggregation levels on payable invoices.
+  * InvoiceDetail MUST include [PaymentCurrency](#datasets.invoicedetail.paymentcurrency) when the invoice issuer supports billing and payment in different currencies.
+  * InvoiceDetail MUST include [PaymentCurrencyBilledCost](#datasets.invoicedetail.paymentcurrencybilledcost) when the invoice issuer supports billing and payment in different currencies.
+  * InvoiceDetail MUST include [PaymentCurrencyInvoiceDetailId](#datasets.invoicedetail.paymentcurrencyinvoicedetailid) when the invoice issuer represents billing currency and payment currency at different aggregation levels on payable invoices.
   * InvoiceDetail MUST include [PaymentDueDate](#datasets.invoicedetail.paymentduedate).
   * InvoiceDetail MUST include [PaymentTerms](#datasets.invoicedetail.paymentterms).
-  * InvoiceDetail MUST include [PurchaseOrderNumber](#datasets.invoicedetail.purchaseordernumber) if the invoice issuer supports customer input of purchase order numbers.
+  * InvoiceDetail MUST include [PurchaseOrderNumber](#datasets.invoicedetail.purchaseordernumber) when the invoice issuer supports customer input of purchase order numbers.
   * InvoiceDetail MUST include [ReferenceInvoiceId](#datasets.invoicedetail.referenceinvoiceid).
 * InvoiceDetail MUST conform to [ColumnHandling](#attributes.columnhandling) requirements.
+* InvoiceDetail MUST conform to [CorrectionHandling](#attributes.correctionhandling) requirements.
+* InvoiceDetail MUST conform to [DatasetCompleteness](#attributes.datasetcompleteness) requirements.
+* InvoiceDetail MUST conform to [DatasetConfiguration](#attributes.datasetconfiguration) requirements.
+* InvoiceDetail MUST conform to [DeliveryHandling](#attributes.deliveryhandling) requirements.
 * InvoiceDetail MUST conform to [NullHandling](#attributes.nullhandling) requirements.
-* InvoiceDetail MUST conform to [InvoiceHandling](#attributes.invoicehandling) requirements.
-* InvoiceDetail MUST represent all invoice line items with a non-zero [BilledCost](#datasets.invoicedetail.billedcost) on any invoice associated with a [BillingAccountId](#datasets.invoicedetail.billingaccountid).
+* InvoiceDetail MUST represent all invoice line items with a non-zero BilledCost on any invoice associated with a BillingAccountId.
+* InvoiceDetail MUST include [*custom columns*](#glossary:custom-column) to represent any monetary metric that appears on an invoice issued to a BillingAccountId when there is no equivalent [*FOCUS column*](#glossary:FOCUS-column).
 * InvoiceDetail documentation MUST adhere to the following requirements:
   * InvoiceDetail documentation MUST specify how InvoiceDetail records correspond to invoice line items.
   * InvoiceDetail documentation MUST specify whether invoice line items with BilledCost of 0 are excluded from InvoiceDetail.
-  * InvoiceDetail documentation MUST describe how columns in the CostAndUsage and InvoiceDetail datasets represent the invoice issuer's invoice reconciliation process.
+  * InvoiceDetail documentation MUST describe how columns in the CostAndUsage and InvoiceDetail datasets represent the invoice issuer's [*invoice reconciliation*](#glossary:invoice-reconciliation) process.
   * InvoiceDetail documentation MUST be freely accessible to FOCUS consumers.
 
 ## Dataset ID<!--SkipTOC-->

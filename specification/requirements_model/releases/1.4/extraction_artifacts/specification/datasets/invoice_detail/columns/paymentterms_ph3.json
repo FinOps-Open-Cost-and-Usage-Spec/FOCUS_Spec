@@ -1,7 +1,7 @@
 {
   "ModelRules": {
     "IND-PaymentTerms-C-000-M": {
-      "Function": "Validation",
+      "Function": "Composite",
       "Reference": "PaymentTerms",
       "EntityType": "Column",
       "EntityName": "Payment Terms",

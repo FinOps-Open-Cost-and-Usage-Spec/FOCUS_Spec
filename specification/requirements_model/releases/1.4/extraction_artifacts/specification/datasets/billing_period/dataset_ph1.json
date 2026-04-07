@@ -266,6 +266,31 @@
       },
       "_alignment_status": "confirmed",
       "ref": "L037"
+    },
+    {
+      "temp_id": "R011",
+      "order": 11,
+      "text": "BillingPeriod MUST conform to [DatasetCompleteness](#attributes.datasetcompleteness) requirements.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Billing Period",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 38,
+        "line_end": 38
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L038"
     }
   ],
   "warnings": [],

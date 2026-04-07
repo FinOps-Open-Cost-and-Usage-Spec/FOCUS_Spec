@@ -6,7 +6,7 @@ EffectiveCost [-adheres-]{+MUST adhere+} to the following requirements:
 * EffectiveCost MUST be of type Decimal.
 * EffectiveCost MUST conform to NumericFormat requirements.
 * EffectiveCost MUST NOT be null.
-* EffectiveCost MUST be a valid decimal value.
+[-* EffectiveCost MUST be a valid decimal value.-]
 * EffectiveCost MUST be 0 when ChargeCategory is "Purchase" and the purchase is intended to cover future eligible *charges*.
 * EffectiveCost MUST be denominated in the BillingCurrency.
 * The sum of EffectiveCost in a given *billing period* MAY differ from the sum of the invoices received for the same *billing period* for a [*billing account*](#glossary:billing-account).

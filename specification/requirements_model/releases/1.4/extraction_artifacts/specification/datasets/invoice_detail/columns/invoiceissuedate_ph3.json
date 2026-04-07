@@ -1,7 +1,7 @@
 {
   "ModelRules": {
     "IND-InvoiceIssueDate-C-000-M": {
-      "Function": "Validation",
+      "Function": "Composite",
       "Reference": "InvoiceIssueDate",
       "EntityType": "Column",
       "EntityName": "Invoice Issue Date",

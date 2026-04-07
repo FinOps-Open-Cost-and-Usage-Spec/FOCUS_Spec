@@ -43,15 +43,15 @@ The specification for the Cost and Usage dataset defines a group of columns that
 | [Contracted Unit Price](#datasets.costandusage.contractedunitprice)                                 | Metric             | Conditional   | True         | Decimal   |
 | [Effective Cost](#datasets.costandusage.effectivecost)                                              | Metric             | Mandatory     | False        | Decimal   |
 | [Host Provider Name](#datasets.costandusage.hostprovidername)                                       | Dimension          | Mandatory     | False        | String    |
-| [Invoice Detail ID](#datasets.costandusage.invoicedetailid)                                                      | Dimension          | Recommended   | True         | String    |
-| [Invoice ID](#datasets.costandusage.invoiceid)                                                      | Dimension          | Recommended   | True         | String    |
+| [Invoice Detail ID](#datasets.costandusage.invoicedetailid)                                                      | Dimension          | Conditional   | True         | String    |
+| [Invoice ID](#datasets.costandusage.invoiceid)                                                      | Dimension          | Conditional   | True         | String    |
 | [Invoice Issuer Name](#datasets.costandusage.invoiceissuername)                                     | Dimension          | Mandatory     | False        | String    |
 | [List Cost](#datasets.costandusage.listcost)                                                        | Metric             | Mandatory     | False        | Decimal   |
 | [List Unit Price](#datasets.costandusage.listunitprice)                                             | Metric             | Conditional   | True         | Decimal   |
 | [Pricing Category](#datasets.costandusage.pricingcategory)                                          | Dimension          | Conditional   | True         | String    |
-| [Pricing Currency](#datasets.costandusage.pricingcurrency)                                          | Dimension          | Conditional   | True         | String    |
+| [Pricing Currency](#datasets.costandusage.pricingcurrency)                                          | Dimension          | Conditional   | False        | String    |
 | [Pricing Currency Contracted Unit Price](#datasets.costandusage.pricingcurrencycontractedunitprice) | Metric             | Conditional   | True         | Decimal   |
-| [Pricing Currency Effective Cost](#datasets.costandusage.pricingcurrencyeffectivecost)              | Metric             | Conditional   | True         | Decimal   |
+| [Pricing Currency Effective Cost](#datasets.costandusage.pricingcurrencyeffectivecost)              | Metric             | Conditional   | False        | Decimal   |
 | [Pricing Currency List Unit Price](#datasets.costandusage.pricingcurrencylistunitprice)             | Metric             | Conditional   | True         | Decimal   |
 | [Pricing Quantity](#datasets.costandusage.pricingquantity)                                          | Metric             | Mandatory     | True         | Decimal   |
 | [Pricing Unit](#datasets.costandusage.pricingunit)                                                  | Dimension          | Mandatory     | True         | String    |
@@ -125,8 +125,8 @@ CostAndUsage MUST adhere to the following requirements:
   * CostAndUsage MUST include [ContractedUnitPrice](#datasets.costandusage.contractedunitprice) when the service provider supports negotiated pricing concepts.
   * CostAndUsage MUST include [EffectiveCost](#datasets.costandusage.effectivecost).
   * CostAndUsage MUST include [HostProviderName](#datasets.costandusage.hostprovidername).
-  * CostAndUsage MUST include [InvoiceDetailId](#datasets.costandusage.invoicedetailid).
-  * CostAndUsage MUST include [InvoiceId](#datasets.costandusage.invoiceid).
+  * CostAndUsage MUST include [InvoiceDetailId](#datasets.costandusage.invoicedetailid) when the invoice issuer supports payable invoices.
+  * CostAndUsage MUST include [InvoiceId](#datasets.costandusage.invoiceid) when the invoice issuer supports payable invoices.
   * CostAndUsage MUST include [InvoiceIssuerName](#datasets.costandusage.invoiceissuername).
   * CostAndUsage MUST include [ListCost](#datasets.costandusage.listcost).
   * CostAndUsage MUST include [ListUnitPrice](#datasets.costandusage.listunitprice) when the service provider publishes unit prices exclusive of discounts.
@@ -155,11 +155,13 @@ CostAndUsage MUST adhere to the following requirements:
   * CostAndUsage MUST include [SubAccountType](#datasets.costandusage.subaccounttype) when the service provider supports more than one possible SubAccountType value.
   * CostAndUsage MUST include [Tags](#datasets.costandusage.tags) when the data generator supports setting user or provider-defined tags.
 * CostAndUsage MUST conform to [ColumnHandling](#attributes.columnhandling) requirements.
-* CostAndUsage MUST conform to [NullHandling](#attributes.nullhandling) requirements.
-* CostAndUsage MUST conform to [DiscountHandling](#attributes.discounthandling) requirements.
-* CostAndUsage MUST conform to [InvoiceHandling](#attributes.invoicehandling) requirements.
+* CostAndUsage MUST conform to [CorrectionHandling](#attributes.correctionhandling) requirements.
 * CostAndUsage MUST conform to [DataGeneratorCalculatedSplitCostAllocationHandling](#attributes.datagenerator-calculatedsplitcostallocationhandling) requirements.
+* CostAndUsage MUST conform to [DatasetCompleteness](#attributes.datasetcompleteness) requirements.
 * CostAndUsage MUST conform to [DatasetConfiguration](#attributes.datasetconfiguration) requirements.
+* CostAndUsage MUST conform to [DeliveryHandling](#attributes.deliveryhandling) requirements.
+* CostAndUsage MUST conform to [DiscountHandling](#attributes.discounthandling) requirements.
+* CostAndUsage MUST conform to [NullHandling](#attributes.nullhandling) requirements.
 
 ## Dataset ID<!--SkipTOC-->
 

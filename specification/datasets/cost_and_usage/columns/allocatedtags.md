@@ -16,16 +16,16 @@ AllocatedTags MUST adhere to the following requirements:
   * Tag keys that do not support corresponding values MUST have a corresponding true (boolean) value set.
   * Data generator MUST NOT alter tag values unless applying true (boolean) to valueless tags.
 * Data generator-defined tags MUST adhere to the following requirements:
-  * Data generator-defined tag keys MUST be prefixed with a predetermined, data generator-specified tag key prefix that is unique to each corresponding provider-specified tag scheme.
+  * Data generator-defined tag keys MUST be prefixed with a predetermined, data generator-specified tag key prefix that is unique to each corresponding provider-specified [*tag scheme*](#glossary:tag-scheme).
   * Data generator SHOULD publish all data generator-specified tag key prefixes within their respective documentation.
 * User-defined tags MUST adhere to the following requirements:
-  * Data generator MUST prefix all user-defined tags scheme with a predetermined, data generator-specified tag key prefix that is unique to each corresponding user-defined tag scheme when the data generator has more than one user-defined tag scheme.
+  * Data generator MUST prefix all user-defined *tag schemes* with a predetermined, data generator-specified tag key prefix that is unique to each corresponding user-defined *tag scheme* when the data generator has more than one user-defined *tag scheme*.
 
 ## Data Generator-Defined vs. User-Defined Tags
 
-This example illustrates various tags produced from multiple user-defined and data generator-defined tag schemes. The first two tags illustrate examples from two different, user-defined tag schemes. The second tag is produced from a valueless, user-defined tag scheme, so the data generator also applies `true` as its default value.
+This example illustrates various tags produced from multiple user-defined and data generator-defined *tag schemes*. The first two tags illustrate examples from two different, user-defined *tag schemes*. The second tag is produced from a valueless, user-defined *tag scheme*, so the data generator also applies `true` as its default value.
 
-The last two tags illustrate examples from two different, data generator-defined tag schemes.
+The last two tags illustrate examples from two different, data generator-defined *tag schemes*.
 
 ```json
     {
