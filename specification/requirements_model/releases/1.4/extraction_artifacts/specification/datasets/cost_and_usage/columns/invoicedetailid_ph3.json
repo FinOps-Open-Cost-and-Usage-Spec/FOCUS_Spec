@@ -1,0 +1,205 @@
+{
+  "ModelRules": {
+    "CAU-InvoiceDetailId-C-000-M": {
+      "Function": "Composite",
+      "Reference": "InvoiceDetailId",
+      "EntityType": "Column",
+      "EntityName": "Invoice Detail ID",
+      "EntityId": "InvoiceDetailId",
+      "Notes": "",
+      "ModelVersionIntroduced": "1.4",
+      "Status": "Active",
+      "ModelVersionRemoved": "",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "Order": 0,
+      "DatasetType": "CAU",
+      "DatasetId": "CostAndUsage",
+      "DatasetName": "Cost and Usage",
+      "ValidationCriteria": {
+        "MustSatisfy": "InvoiceDetailId MUST adhere to the following requirements:",
+        "Keyword": "MUST",
+        "Requirement": {},
+        "Condition": [],
+        "Dependencies": [
+          "CAU-InvoiceDetailId-C-001-M",
+          "CAU-InvoiceDetailId-C-002-M",
+          "CAU-InvoiceDetailId-C-003-M",
+          "CAU-InvoiceDetailId-C-006-O",
+          "CAU-InvoiceDetailId-C-007-M"
+        ]
+      }
+    },
+    "CAU-InvoiceDetailId-C-001-M": {
+      "Function": "Type",
+      "Reference": "InvoiceDetailId",
+      "EntityType": "Column",
+      "EntityName": "Invoice Detail ID",
+      "EntityId": "InvoiceDetailId",
+      "Notes": "",
+      "ModelVersionIntroduced": "1.4",
+      "Status": "Active",
+      "ModelVersionRemoved": "",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "Order": 10,
+      "DatasetType": "CAU",
+      "DatasetId": "CostAndUsage",
+      "DatasetName": "Cost and Usage",
+      "ValidationCriteria": {
+        "MustSatisfy": "InvoiceDetailId MUST be of type String.",
+        "Keyword": "MUST",
+        "Requirement": {},
+        "Condition": [],
+        "Dependencies": []
+      }
+    },
+    "CAU-InvoiceDetailId-C-002-M": {
+      "Function": "Format",
+      "Reference": "InvoiceDetailId",
+      "EntityType": "Column",
+      "EntityName": "Invoice Detail ID",
+      "EntityId": "InvoiceDetailId",
+      "Notes": "",
+      "ModelVersionIntroduced": "1.4",
+      "Status": "Active",
+      "ModelVersionRemoved": "",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "Order": 20,
+      "DatasetType": "CAU",
+      "DatasetId": "CostAndUsage",
+      "DatasetName": "Cost and Usage",
+      "ValidationCriteria": {
+        "MustSatisfy": "InvoiceDetailId MUST conform to StringHandling requirements.",
+        "Keyword": "MUST",
+        "Requirement": {},
+        "Condition": [],
+        "Dependencies": []
+      }
+    },
+    "CAU-InvoiceDetailId-C-003-M": {
+      "Function": "Composite",
+      "Reference": "InvoiceDetailId",
+      "EntityType": "Column",
+      "EntityName": "Invoice Detail ID",
+      "EntityId": "InvoiceDetailId",
+      "Notes": "",
+      "ModelVersionIntroduced": "1.4",
+      "Status": "Active",
+      "ModelVersionRemoved": "",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "Order": 30,
+      "DatasetType": "CAU",
+      "DatasetId": "CostAndUsage",
+      "DatasetName": "Cost and Usage",
+      "ValidationCriteria": {
+        "MustSatisfy": "InvoiceDetailId MUST adhere to the following nullability requirements:",
+        "Keyword": "MUST",
+        "Requirement": {},
+        "Condition": [],
+        "Dependencies": [
+          "CAU-InvoiceDetailId-C-004-C",
+          "CAU-InvoiceDetailId-C-005-C"
+        ]
+      }
+    },
+    "CAU-InvoiceDetailId-C-004-C": {
+      "Function": "Nullability",
+      "Reference": "InvoiceDetailId",
+      "EntityType": "Column",
+      "EntityName": "Invoice Detail ID",
+      "EntityId": "InvoiceDetailId",
+      "Notes": "",
+      "ModelVersionIntroduced": "1.4",
+      "Status": "Active",
+      "ModelVersionRemoved": "",
+      "ApplicabilityCriteria": [],
+      "Type": "Dynamic",
+      "Order": 40,
+      "DatasetType": "CAU",
+      "DatasetId": "CostAndUsage",
+      "DatasetName": "Cost and Usage",
+      "ValidationCriteria": {
+        "MustSatisfy": "InvoiceDetailId MUST be null when the charge is not associated either with an invoice or with a pre-generated provisional invoice.",
+        "Keyword": "MUST",
+        "Requirement": {},
+        "Condition": [],
+        "Dependencies": []
+      }
+    },
+    "CAU-InvoiceDetailId-C-005-C": {
+      "Function": "Nullability",
+      "Reference": "InvoiceDetailId",
+      "EntityType": "Column",
+      "EntityName": "Invoice Detail ID",
+      "EntityId": "InvoiceDetailId",
+      "Notes": "",
+      "ModelVersionIntroduced": "1.4",
+      "Status": "Active",
+      "ModelVersionRemoved": "",
+      "ApplicabilityCriteria": [],
+      "Type": "Dynamic",
+      "Order": 50,
+      "DatasetType": "CAU",
+      "DatasetId": "CostAndUsage",
+      "DatasetName": "Cost and Usage",
+      "ValidationCriteria": {
+        "MustSatisfy": "InvoiceDetailId MUST NOT be null when the charge is associated with either an issued invoice or a pre-generated provisional invoice.",
+        "Keyword": "MUST NOT",
+        "Requirement": {},
+        "Condition": [],
+        "Dependencies": []
+      }
+    },
+    "CAU-InvoiceDetailId-C-006-O": {
+      "Function": "Validation",
+      "Reference": "InvoiceDetailId",
+      "EntityType": "Column",
+      "EntityName": "Invoice Detail ID",
+      "EntityId": "InvoiceDetailId",
+      "Notes": "",
+      "ModelVersionIntroduced": "1.4",
+      "Status": "Active",
+      "ModelVersionRemoved": "",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "Order": 60,
+      "DatasetType": "CAU",
+      "DatasetId": "CostAndUsage",
+      "DatasetName": "Cost and Usage",
+      "ValidationCriteria": {
+        "MustSatisfy": "InvoiceDetailId MAY be generated prior to an invoice being issued.",
+        "Keyword": "MAY",
+        "Requirement": {},
+        "Condition": [],
+        "Dependencies": []
+      }
+    },
+    "CAU-InvoiceDetailId-C-007-M": {
+      "Function": "Validation",
+      "Reference": "InvoiceDetailId",
+      "EntityType": "Column",
+      "EntityName": "Invoice Detail ID",
+      "EntityId": "InvoiceDetailId",
+      "Notes": "",
+      "ModelVersionIntroduced": "1.4",
+      "Status": "Active",
+      "ModelVersionRemoved": "",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "Order": 70,
+      "DatasetType": "CAU",
+      "DatasetId": "CostAndUsage",
+      "DatasetName": "Cost and Usage",
+      "ValidationCriteria": {
+        "MustSatisfy": "InvoiceDetailId MUST uniquely identify a specific record within a given InvoiceId.",
+        "Keyword": "MUST",
+        "Requirement": {},
+        "Condition": [],
+        "Dependencies": []
+      }
+    }
+  }
+}

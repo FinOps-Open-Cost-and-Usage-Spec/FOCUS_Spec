@@ -1,7 +1,7 @@
 {
   "ModelRules": {
     "IND-InvoiceDetail-C-000-M": {
-      "Function": "Validation",
+      "Function": "Composite",
       "Reference": "InvoiceDetail",
       "EntityType": "Dataset",
       "EntityName": "Invoice Detail",
@@ -28,7 +28,8 @@
           "IND-InvoiceDetail-C-026-M",
           "IND-InvoiceDetail-C-027-M",
           "IND-InvoiceDetail-C-028-M",
-          "IND-InvoiceDetail-C-029-M"
+          "IND-InvoiceDetail-C-029-M",
+          "IND-InvoiceDetail-C-030-M"
         ]
       }
     },
@@ -57,7 +58,7 @@
       }
     },
     "IND-InvoiceDetail-C-002-M": {
-      "Function": "Presence",
+      "Function": "Composite",
       "Reference": "InvoiceDetail",
       "EntityType": "Dataset",
       "EntityName": "Invoice Detail",
@@ -672,7 +673,7 @@
       "DatasetId": "InvoiceDetail",
       "DatasetName": "Invoice Detail",
       "ValidationCriteria": {
-        "MustSatisfy": "InvoiceDetail MUST conform to NullHandling requirements.",
+        "MustSatisfy": "InvoiceDetail MUST conform to DatasetCompleteness requirements.",
         "Keyword": "MUST",
         "Requirement": {},
         "Condition": [],
@@ -696,7 +697,7 @@
       "DatasetId": "InvoiceDetail",
       "DatasetName": "Invoice Detail",
       "ValidationCriteria": {
-        "MustSatisfy": "InvoiceDetail MUST conform to InvoiceHandling requirements.",
+        "MustSatisfy": "InvoiceDetail MUST conform to NullHandling requirements.",
         "Keyword": "MUST",
         "Requirement": {},
         "Condition": [],
@@ -704,7 +705,7 @@
       }
     },
     "IND-InvoiceDetail-C-028-M": {
-      "Function": "Validation",
+      "Function": "Format",
       "Reference": "InvoiceDetail",
       "EntityType": "Dataset",
       "EntityName": "Invoice Detail",
@@ -720,7 +721,7 @@
       "DatasetId": "InvoiceDetail",
       "DatasetName": "Invoice Detail",
       "ValidationCriteria": {
-        "MustSatisfy": "InvoiceDetail MUST represent all invoice line items with a non-zero BilledCost on any invoice associated with a BillingAccountId.",
+        "MustSatisfy": "InvoiceDetail MUST conform to InvoiceHandling requirements.",
         "Keyword": "MUST",
         "Requirement": {},
         "Condition": [],
@@ -744,20 +745,15 @@
       "DatasetId": "InvoiceDetail",
       "DatasetName": "Invoice Detail",
       "ValidationCriteria": {
-        "MustSatisfy": "InvoiceDetail documentation MUST adhere to the following requirements:",
+        "MustSatisfy": "InvoiceDetail MUST represent all invoice line items with a non-zero BilledCost on any invoice associated with a BillingAccountId.",
         "Keyword": "MUST",
         "Requirement": {},
         "Condition": [],
-        "Dependencies": [
-          "IND-InvoiceDetail-C-030-M",
-          "IND-InvoiceDetail-C-031-M",
-          "IND-InvoiceDetail-C-032-M",
-          "IND-InvoiceDetail-C-033-M"
-        ]
+        "Dependencies": []
       }
     },
     "IND-InvoiceDetail-C-030-M": {
-      "Function": "Validation",
+      "Function": "Composite",
       "Reference": "InvoiceDetail",
       "EntityType": "Dataset",
       "EntityName": "Invoice Detail",
@@ -773,11 +769,16 @@
       "DatasetId": "InvoiceDetail",
       "DatasetName": "Invoice Detail",
       "ValidationCriteria": {
-        "MustSatisfy": "InvoiceDetail documentation MUST specify how InvoiceDetail records correspond to invoice line items.",
+        "MustSatisfy": "InvoiceDetail documentation MUST adhere to the following requirements:",
         "Keyword": "MUST",
         "Requirement": {},
         "Condition": [],
-        "Dependencies": []
+        "Dependencies": [
+          "IND-InvoiceDetail-C-031-M",
+          "IND-InvoiceDetail-C-032-M",
+          "IND-InvoiceDetail-C-033-M",
+          "IND-InvoiceDetail-C-034-M"
+        ]
       }
     },
     "IND-InvoiceDetail-C-031-M": {
@@ -797,7 +798,7 @@
       "DatasetId": "InvoiceDetail",
       "DatasetName": "Invoice Detail",
       "ValidationCriteria": {
-        "MustSatisfy": "InvoiceDetail documentation MUST specify whether invoice line items with BilledCost of 0 are excluded from InvoiceDetail.",
+        "MustSatisfy": "InvoiceDetail documentation MUST specify how InvoiceDetail records correspond to invoice line items.",
         "Keyword": "MUST",
         "Requirement": {},
         "Condition": [],
@@ -821,7 +822,7 @@
       "DatasetId": "InvoiceDetail",
       "DatasetName": "Invoice Detail",
       "ValidationCriteria": {
-        "MustSatisfy": "InvoiceDetail documentation MUST describe how columns in the CostAndUsage and InvoiceDetail datasets represent the invoice issuer's invoice reconciliation process.",
+        "MustSatisfy": "InvoiceDetail documentation MUST specify whether invoice line items with BilledCost of 0 are excluded from InvoiceDetail.",
         "Keyword": "MUST",
         "Requirement": {},
         "Condition": [],
@@ -841,6 +842,30 @@
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "Order": 330,
+      "DatasetType": "IND",
+      "DatasetId": "InvoiceDetail",
+      "DatasetName": "Invoice Detail",
+      "ValidationCriteria": {
+        "MustSatisfy": "InvoiceDetail documentation MUST describe how columns in the CostAndUsage and InvoiceDetail datasets represent the invoice issuer's invoice reconciliation process.",
+        "Keyword": "MUST",
+        "Requirement": {},
+        "Condition": [],
+        "Dependencies": []
+      }
+    },
+    "IND-InvoiceDetail-C-034-M": {
+      "Function": "Validation",
+      "Reference": "InvoiceDetail",
+      "EntityType": "Dataset",
+      "EntityName": "Invoice Detail",
+      "EntityId": "InvoiceDetail",
+      "Notes": "",
+      "ModelVersionIntroduced": "1.4",
+      "Status": "Active",
+      "ModelVersionRemoved": "",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "Order": 340,
       "DatasetType": "IND",
       "DatasetId": "InvoiceDetail",
       "DatasetName": "Invoice Detail",
