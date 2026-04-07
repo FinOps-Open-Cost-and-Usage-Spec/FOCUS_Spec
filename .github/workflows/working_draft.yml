@@ -18,6 +18,7 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4.2.2
+        
       - name: Install prequirements
         shell: bash
         run: |
@@ -26,23 +27,27 @@ jobs:
           DEBIAN_FRONTEND=noninteractive /usr/bin/apt install -y make
           DEBIAN_FRONTEND=noninteractive /usr/bin/apt install -y -f ./wkhtmltox_0.12.6.1-3.jammy_amd64.deb
           /usr/bin/pip3 install --break-system-packages -r requirements.txt
+          
       - name: Build PDF
         shell: bash
         working-directory: ./specification
         run: |
           make STYLE=working_draft BRANCH=${GITHUB_REF_NAME}
+          
       - name: Build Requirements Model JSON
         shell: bash
         working-directory: ./specification/requirements_model
         run: |
           /usr/bin/pip3 install --break-system-packages -r requirements.txt
           ./build_json.py
+          
       - name: Upload on failure
         uses: actions/upload-artifact@v4
-        if: ${{ failure()}}
+        if: ${{ failure() }}
         with:
           name: spec.md
           path: specification/spec.md
+          
       - name: Upload Spec
         uses: actions/upload-artifact@v4
         with:
@@ -50,19 +55,27 @@ jobs:
           path: |
             specification/spec.html
             specification/spec.pdf
+            specification/spec.md
             specification/images/*
             specification/styles/*
             specification/requirements_model/build/*.json
+
+      # Bundle HTML with assets
+      - name: Package HTML Bundle
+        shell: bash
+        run: |
+          cd specification
+          zip -r spec_html_with_assets.zip spec.html images/ styles/
+
       - name: Update Floating Release Tag
         uses: ncipollo/release-action@v1
-        # IMPORTANT: This ensures the draft links are ONLY overwritten by the working_draft branch
         if: github.ref == 'refs/heads/working_draft'
         with:
           tag: "latest-draft"
           name: "Latest Working Draft"
-          body: "Automatically generated artifacts representing the latest commits in the `working_draft` branch."
-          # Specify the exact files you want available as direct download links
-          artifacts: "specification/spec.html, specification/spec.pdf, specification/requirements_model/build/*.json"
+          body: "Automatically generated artifacts from the `working_draft` branch. For the best offline HTML experience, download the .zip bundle."
+          # Added spec.md and the new zip bundle here
+          artifacts: "specification/spec.pdf, specification/spec.md, specification/spec.html, specification/spec_html_with_assets.zip, specification/requirements_model/build/*.json"
           allowUpdates: true
           replacesArtifacts: true
           makeLatest: false
