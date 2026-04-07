@@ -124,7 +124,7 @@ WITH CommitmentDiscountEligible AS (
     CU.ServiceProviderName,
     JSON_VALUE(CP, '$.ProgramType') AS ProgramType,
     CU.EffectiveCost,
-    CASE WHEN CU.CommitmentDiscountId IS NULL THEN CU.BilledCost ELSE 0 END AS UncoveredCost
+    CASE WHEN CU.CommitmentDiscountId IS NULL THEN CU.EffectiveCost ELSE 0 END AS UncoveredCost
   FROM focus_data_table CU
   CROSS JOIN
     UNNEST(JSON_EXTRACT_ARRAY(CU.CommitmentProgramEligibilityDetails, '$.CommitmentPrograms')) AS CP
@@ -176,6 +176,6 @@ GROUP BY
 ORDER BY BilledCost DESC
 ```
 
-## Introduced (Version)
+## Introduced (version)
 
 1.4
