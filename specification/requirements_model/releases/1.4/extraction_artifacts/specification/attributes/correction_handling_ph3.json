@@ -1,7 +1,7 @@
 {
   "ModelRules": {
-    "ATT-CorrectionHandling-C-000-M": {
-      "Function": "Composite",
+    "ATT-CorrectionHandling-A-000-M": {
+      "Function": "Validation",
       "Reference": "CorrectionHandling",
       "EntityType": "Attribute",
       "EntityName": "Correction Handling",
@@ -22,14 +22,14 @@
         "Requirement": {},
         "Condition": [],
         "Dependencies": [
-          "ATT-CorrectionHandling-C-001-M",
-          "ATT-CorrectionHandling-C-002-C",
-          "ATT-CorrectionHandling-C-003-C",
-          "ATT-CorrectionHandling-C-004-C"
+          "ATT-CorrectionHandling-A-001-M",
+          "ATT-CorrectionHandling-A-002-C",
+          "ATT-CorrectionHandling-A-003-C",
+          "ATT-CorrectionHandling-A-004-C"
         ]
       }
     },
-    "ATT-CorrectionHandling-C-001-M": {
+    "ATT-CorrectionHandling-A-001-M": {
       "Function": "Validation",
       "Reference": "CorrectionHandling",
       "EntityType": "Attribute",
@@ -53,7 +53,7 @@
         "Dependencies": []
       }
     },
-    "ATT-CorrectionHandling-C-002-C": {
+    "ATT-CorrectionHandling-A-002-C": {
       "Function": "Validation",
       "Reference": "CorrectionHandling",
       "EntityType": "Attribute",
@@ -77,7 +77,7 @@
         "Dependencies": []
       }
     },
-    "ATT-CorrectionHandling-C-003-C": {
+    "ATT-CorrectionHandling-A-003-C": {
       "Function": "Validation",
       "Reference": "CorrectionHandling",
       "EntityType": "Attribute",
@@ -101,7 +101,7 @@
         "Dependencies": []
       }
     },
-    "ATT-CorrectionHandling-C-004-C": {
+    "ATT-CorrectionHandling-A-004-C": {
       "Function": "Validation",
       "Reference": "CorrectionHandling",
       "EntityType": "Attribute",
