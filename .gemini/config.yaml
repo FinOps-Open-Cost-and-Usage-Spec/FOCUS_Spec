@@ -1,5 +1,5 @@
 # Fun features (e.g., generating a poem about the PR)
-have_fun: false
+have_fun: true
 
 # Files or directories for the bot to completely ignore
 ignore_patterns:
