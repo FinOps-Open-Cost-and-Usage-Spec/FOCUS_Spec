@@ -799,7 +799,7 @@ Where `[Dataset|Column]` is the primary schema-level entity targeted by the Attr
 When an Attribute is applicable only under specific conditions, the structural anchor requirement MAY be preceded by an applicability criteria condition:
 
 ```markdown
-When <actor> <applicability-citeria-condition>, [Dataset|Column] conforming to <Attribute ID> attribute MUST adhere to the following requirements:
+When <actor> <applicability-criteria-condition>, [Dataset|Column] conforming to <AttributeId> attribute MUST adhere to the following requirements:
 ```
 
 ### Normative Subjects in Attribute Requirements
