@@ -231,26 +231,35 @@ Each normative requirement MUST be defined in exactly one place across the speci
 
 Grouping and ordering of dataset-level normative requirements ensures clarity, consistency, and maintainability across all FOCUS datasets, making related or similar requirements easy to identify and follow.
 
-  1. **Presence Requirements**
-     1 **Dataset Presence:** Defines whether, and under what conditions, a dataset must be present in the FOCUS delivery.
-     1. **Column Presence in Dataset:** Defines which columns must or are recommended to be present within a dataset, and under which conditions.
-  2. **Attribute Conformance Requirements**
-     1. **Dataset Attribute Conformance:** Defines requirements where a dataset MUST conform to one or more FOCUS-defined Attributes (e.g., `DatasetCompleteness`, `DatasetConfiguration`).
-     1. **FOCUS Column Attribute Conformance:** Defines requirements where FOCUS columns within a dataset MUST conform to one or more FOCUS-defined Attributes (e.g., `NullHandling`).
-     1. **Custom Column Attribute Conformance:** Defines requirements where custom columns within a dataset MUST conform to `CustomColumnHandling`.
-  3. **Other Requirements**
-     1. **Other:** Captures dataset-level requirements that do not fall into the above categories but are relevant for interpretation, validation, or integration.
+1. **Dataset Requirements** (subject: `{DatasetId}`)
+   1. **Dataset Presence:** Defines whether, and under what conditions, a dataset must be present in the FOCUS delivery.
+   1. **Column Presence in Dataset:** Defines which columns must or are recommended to be present within a dataset, and under which conditions. FOCUS columns are listed first, followed by custom columns.
+   1. **Dataset Attribute Conformance:** Defines requirements where a dataset MUST conform to one or more FOCUS-defined Attributes (e.g., `DatasetCompleteness`, `DatasetConfiguration`).
+   1. **Other:** Captures requirements with `{DatasetId}` as subject that do not fall into the above categories.
+2. **FOCUS Column Requirements** (subject: `{DatasetId} FOCUS columns`)
+   1. **FOCUS Column Attribute Conformance:** Defines requirements where FOCUS columns within a dataset MUST conform to one or more FOCUS-defined Attributes (e.g., `NullHandling`).
+   1. **Other:** Captures requirements with `{DatasetId} FOCUS columns` as subject that do not fall into the above categories.
+3. **Custom Column Requirements** (subject: `{DatasetId} custom columns`)
+   1. **Custom Column Attribute Conformance:** Defines requirements where custom columns within a dataset MUST conform to `CustomColumnHandling`.
+   1. **Other:** Captures requirements with `{DatasetId} custom columns` as subject that do not fall into the above categories.
+4. **Other Dataset-Related Requirements** (subject: varies)
+   1. **Documentation:** Defines requirements for dataset documentation.
+   1. **Other:** Captures requirements that do not fall into the above categories but are relevant for interpretation, validation, or integration.
 
 #### Tabular Overview of Dataset Normative Requirement Grouping and Specifications
 
-| **Requirement Type** | **Requirement Group** | **When required?** | **Example** |
+| **Subject** | **Requirement Group** | **When required?** | **Example** |
 |---|---|---|---|
-| Presence | Dataset Presence | Always | {DatasetId} MUST be present when {Condition}. |
-| Presence | Column Presence in Dataset | Always | {DatasetId} MUST include {ColumnId}. |
-| Attribute Conformance | Dataset Attribute Conformance | Always | {DatasetId} MUST conform to DatasetCompleteness requirements. |
-| Attribute Conformance | FOCUS Column Attribute Conformance | Always | {DatasetId} *FOCUS columns* MUST conform to NullHandling requirements. |
-| Attribute Conformance | Custom Column Attribute Conformance | Always | {DatasetId} *custom columns* MUST conform to CustomColumnHandling requirements. |
-| Other | Other | When applicable | InvoiceDetail MUST represent all invoice line items with a non-zero BilledCost on any invoice associated with a BillingAccountId. |
+| Dataset | Dataset Presence | Always | {DatasetId} MUST be present when {Condition}. |
+| Dataset | Column Presence in Dataset | Always | {DatasetId} MUST include {ColumnId}. |
+| Dataset | Dataset Attribute Conformance | Always | {DatasetId} MUST conform to DatasetCompleteness requirements. |
+| Dataset | Other Dataset Requirements | When applicable | CostAndUsage MUST have its data generator-calculated split cost allocation method documented and accessible to practitioners. |
+| FOCUS columns | FOCUS Column Attribute Conformance | Always | {DatasetId} *FOCUS columns* MUST conform to NullHandling requirements. |
+| FOCUS columns | Other FOCUS Column Requirements | When applicable | |
+| Custom columns | Custom Column Attribute Conformance | Always | {DatasetId} *custom columns* MUST conform to CustomColumnHandling requirements. |
+| Custom columns | Other Custom Column Requirements | When applicable | |
+| Documentation | Documentation | When applicable | {DatasetId} documentation MUST specify how records correspond to invoice line items. |
+| Other | Other | When applicable | |
 
 ### Ordering of Dataset Requirements Within Groups
 
@@ -263,11 +272,11 @@ To further enhance readability, individual requirements within each group SHOULD
 * **MAY** – optional
 * **MAY NOT** – optional prohibition / permitted not to
 
-* **Exception for Column Presence:** Requirements within the **Column Presence in Dataset** group MUST be ordered alphabetically by the referenced Column ID, taking precedence over the BCP 14 keyword ordering.
-
-> ***Important Note:*** *The term **RECOMMENDED** (recommended but not mandatory; previously used only for presence-related normative requirements) is no longer permitted for use in normative requirements as of December 2025. The keyword **SHOULD** must be used instead. Please refer to the [**Editorial Style Guidelines**](editorial-guidelines.md).*
+***Important Note:*** *The term **RECOMMENDED** (recommended but not mandatory; previously used only for presence-related normative requirements) is no longer permitted for use in normative requirements as of December 2025. The keyword **SHOULD** must be used instead. Please refer to the [**Editorial Style Guidelines**](editorial-guidelines.md).*
 
 * For detailed interpretation of keywords such as "MUST", "MUST NOT", "SHOULD", "SHOULD NOT", "MAY", and others, see [BCP14](https://tools.ietf.org/html/bcp14) [[RFC2119](https://tools.ietf.org/html/rfc2119)][[RFC8174](https://tools.ietf.org/html/rfc8174)].
+
+**Exception for Column Presence:** Requirements within the **Column Presence in Dataset** group MUST be ordered alphabetically by the referenced Column ID, taking precedence over the BCP 14 keyword ordering.
 
 ### Structuring Individual Dataset Requirements
 
