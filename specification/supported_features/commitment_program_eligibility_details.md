@@ -124,6 +124,7 @@ WITH CommitmentDiscountEligible AS (
     CU.ServiceProviderName,
     JSON_VALUE(CP, '$.ProgramType') AS ProgramType,
     CU.EffectiveCost,
+    -- EffectiveCost = BilledCost for uncovered rows; used here for ratio consistency
     CASE WHEN CU.CommitmentDiscountId IS NULL THEN CU.EffectiveCost ELSE 0 END AS UncoveredCost
   FROM focus_data_table CU
   CROSS JOIN
