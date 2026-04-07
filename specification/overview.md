@@ -57,7 +57,7 @@ The following principles were considered while building the specification.
 
 The FOCUS Specification is designed to support evolving FinOps needs across diverse billing models and service provider types.
 
-While the initial focus was on billing data from Cloud Service Providers (CSPs), version 1.2 introduces foundational support for Software as a Service (SaaS) platforms, including normative columns for pricing currencies, effective cost, and contracted pricing in non-monetary units such as credits or tokens.
+While the initial focus was on billing data from Cloud Service Providers (CSPs), subsequent versions introduced foundational support for Software as a Service (SaaS) and Platform as a Service (PaaS) providers, including normative columns for pricing currencies, effective cost, and contracted pricing in non-monetary units such as credits or tokens.
 
 The specification supports extensibility through structured naming conventions (e.g., x_ custom columns), conditional requirements, and a version-aware schema approach.
 
@@ -83,12 +83,12 @@ The keywords `MUST`, `MUST NOT`, `SHOULD`, `SHOULD NOT`, and `MAY` in this speci
 
 ## FOCUS Feature Level
 
-Under each column defined in the FOCUS specification, there exists a 'Feature level' designation that describes the column as 'Mandatory', 'Conditional', or 'Optional'. Feature level is designated based on the following criteria described in the normative requirements in each column definition:
+Under each column defined in the FOCUS specification, there exists a 'Feature level' designation that describes the column as `Mandatory`, `Conditional`, or `Optional`. Feature level is designated based on the following criteria described in the normative requirements in each column definition:
 
-* If the existence of a column is described with MUST with no conditions of when it applies, then the feature level is designated as 'Mandatory'.
-* If the existence of a column is described as MUST with conditions of when it applies, then the feature level is designated as 'Conditional'.
-* If the existence of a column is described as SHOULD, then the feature level is designated as 'Recommended'.
-* If the existence of a column is described as MAY, then the feature level is designated as 'Optional'.
+* If the existence of a column is described with `MUST` with no conditions of when it applies, then the feature level is designated as `Mandatory`.
+* If the existence of a column is described as `MUST` with conditions of when it applies, then the feature level is designated as `Conditional`.
+* If the existence of a column is described as `SHOULD`, then the feature level is designated as `Recommended`.
+* If the existence of a column is described as `MAY`, then the feature level is designated as `Optional`.
 
 ## Conformance Checkers and Validators
 
