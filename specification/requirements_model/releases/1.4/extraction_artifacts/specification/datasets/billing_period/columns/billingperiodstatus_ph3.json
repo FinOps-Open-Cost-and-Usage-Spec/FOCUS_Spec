@@ -1,7 +1,7 @@
 {
   "ModelRules": {
     "BIP-BillingPeriodStatus-C-000-M": {
-      "Function": "Validation",
+      "Function": "Composite",
       "Reference": "BillingPeriodStatus",
       "EntityType": "Column",
       "EntityName": "Billing Period Status",

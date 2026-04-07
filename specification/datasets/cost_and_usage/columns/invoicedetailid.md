@@ -31,8 +31,8 @@ The invoice-issuer-assigned identifier for an Invoice Detail record encapsulatin
 |    Constraint    |              Value             |
 |:----------------|:--------------------------------|
 | Column type     | Dimension                       |
-| Feature level   | Mandatory                       |
-| Allows nulls    | True                           |
+| Feature level   | Conditional                     |
+| Allows nulls    | True                            |
 | Data type       | String                          |
 | Value format    | \<not specified>                |
 
