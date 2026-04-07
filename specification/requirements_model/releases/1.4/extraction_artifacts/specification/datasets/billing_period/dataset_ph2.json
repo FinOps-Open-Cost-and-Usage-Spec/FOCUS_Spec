@@ -17,7 +17,7 @@
       "Dataset Requirements",
       "Attribute Requirements"
     ],
-    "atoms_in_scope_count": 10
+    "atoms_in_scope_count": 11
   },
   "0_outline_root": "ROOT: Billing Period > Requirements",
   "0_outline_lines": [
@@ -30,23 +30,24 @@
     "    L034: \"BillingPeriod MUST include [BillingPeriodStart](#datasets.billingperiod.billingperiodstart).\"",
     "    L035: \"BillingPeriod MUST include [BillingPeriodStatus](#datasets.billingperiod.billingperiodstatus).\"",
     "    L036: \"BillingPeriod MUST include [InvoiceIssuerName](#datasets.billingperiod.invoiceissuername).\"",
-    "  L037: \"BillingPeriod MUST conform to [ColumnHandling](#attributes.columnhandling) requirements.\""
+    "  L037: \"BillingPeriod MUST conform to [ColumnHandling](#attributes.columnhandling) requirements.\"",
+    "  L038: \"BillingPeriod MUST conform to [DatasetCompleteness](#attributes.datasetcompleteness) requirements.\""
   ],
   "0_outline_summary": {
-    "node_count": 10,
-    "leaf_count": 8,
+    "node_count": 11,
+    "leaf_count": 9,
     "lead_in_count": 2,
     "max_depth": 2,
     "max_indent_level": 1,
     "root_children_count": 1,
     "keyword_distribution": {
-      "MUST": 10
+      "MUST": 11
     },
     "lead_ins": [
       {
         "ref": "L027",
         "text_preview": "BillingPeriod MUST adhere to the following requirements:",
-        "children": 3
+        "children": 4
       },
       {
         "ref": "L030",
@@ -284,6 +285,30 @@
                 "order": 10,
                 "ref": "L037",
                 "text": "BillingPeriod MUST conform to [ColumnHandling](#attributes.columnhandling) requirements.",
+                "keyword": "MUST",
+                "section_path": [
+                  "Billing Period",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R011",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R011",
+                "order": 11,
+                "ref": "L038",
+                "text": "BillingPeriod MUST conform to [DatasetCompleteness](#attributes.datasetcompleteness) requirements.",
                 "keyword": "MUST",
                 "section_path": [
                   "Billing Period",

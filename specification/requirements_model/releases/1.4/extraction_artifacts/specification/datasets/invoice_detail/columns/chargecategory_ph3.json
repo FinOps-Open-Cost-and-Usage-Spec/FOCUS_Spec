@@ -1,7 +1,7 @@
 {
   "ModelRules": {
     "IND-ChargeCategory-C-000-M": {
-      "Function": "Validation",
+      "Function": "Composite",
       "Reference": "ChargeCategory",
       "EntityType": "Column",
       "EntityName": "Charge Category",
