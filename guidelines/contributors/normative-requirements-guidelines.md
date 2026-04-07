@@ -370,11 +370,11 @@ Grouping and ordering of requirements ensure clarity, logical flow, and consiste
 **Note**: This section provides a current preview of the requirements grouping and ordering. Members should review how this applies to specific columns and provide feedback. The order may be adjusted based on that feedback.
 
   1. **Technical Requirements**
-     * i. **Data Type**: Establishes a foundational expectation, ensuring all subsequent rules align with this type.
-     * ii. **Value Format**: Ensures the value (if present) adheres to specific structural or syntactic rules.
-     * iii. **Nullability**: Clarifies when the value can or cannot exist, ensuring all subsequent rules align with column nullability.
-     * iv. **Values and Value Ranges**: Further constrains valid values, assuming the format is already correct.
-     * v. **Column-to-Column Relationships**: Defines dependencies and consistency rules between related columns.
+     1. **Data Type**: Establishes a foundational expectation, ensuring all subsequent rules align with this type.
+     1. **Value Format**: Ensures the value (if present) adheres to specific structural or syntactic rules.
+     1. **Nullability**: Clarifies when the value can or cannot exist, ensuring all subsequent rules align with column nullability.
+     1. **Values and Value Ranges**: Further constrains valid values, assuming the format is already correct.
+     1. **Column-to-Column Relationships**: Defines dependencies and consistency rules between related columns.
   2. **Business & Contextual Requirements**
      * i. **Unit/Denomination**: Ensures consistency in measurement or currency.
      * ii. **Uniqueness**: Defines uniqueness constraints for data integrity.
