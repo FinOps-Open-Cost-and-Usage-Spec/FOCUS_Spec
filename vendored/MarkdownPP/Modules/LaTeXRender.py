@@ -22,7 +22,8 @@ from MarkdownPP.Transform import Transform
 #
 # Keep detection broad, then apply a content heuristic before rendering to
 # avoid treating currency/prose as LaTeX. Escaped dollars ("\$") are ignored.
-singlelinere = re.compile(r"(?<!\\)(?<!\$)(\$\$(?!\$)|\$(?!\$))(.+?)(?<!\\)\1(?!\$)")
+# Also enforces no space immediately after the opening $ or before the closing $
+singlelinere = re.compile(r"(?<!\\)(?<!\$)(\$\$(?!\$)|\$(?!\$))(?!\s)(.+?)(?<!\s)(?<!\\)\1(?!\$)")
 # $... or ...$ (or $$... or ...$$)
 startorendre = re.compile(r"^(?<!\\)\$(\$?)(?!\d)|^\S.*(?<!\\)\$(\$?)$")
 
