@@ -1,7 +1,7 @@
 {
   "ModelRules": {
     "IND-ReferenceInvoiceId-C-000-M": {
-      "Function": "Validation",
+      "Function": "Composite",
       "Reference": "ReferenceInvoiceId",
       "EntityType": "Column",
       "EntityName": "Reference Invoice ID",
