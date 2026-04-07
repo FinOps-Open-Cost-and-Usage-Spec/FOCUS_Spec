@@ -1,23 +1,11 @@
-# Fun features (e.g., generating a poem about the PR)
 have_fun: false
-
-# Files or directories for the bot to completely ignore
-ignore_patterns:
-  - "custom_linter_rules/**"
-
-# Settings for the Persistent Memory feature
-memory_config:
-  disabled: false
-
-# Global code review behavior
 code_review:
-  disable: false # Set to true ONLY if you want to disable manual /gemini reviews as well
+  disable: false
   comment_severity_threshold: LOW
   max_review_comments: -1
-
-# Automated actions triggered the moment a PR is opened or marked ready
-pull_request_opened:
-  help: false
-  summary: true
-  code_review: false # Disables the automatic line-by-line review on open
-  include_drafts: true
+  pull_request_opened:
+    help: false
+    summary: true
+    code_review: false
+    include_drafts: true
+ignore_patterns: []
