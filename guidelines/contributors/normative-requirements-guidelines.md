@@ -244,7 +244,7 @@ Grouping and ordering of dataset-level normative requirements ensures clarity, c
    1. **Other:** Captures requirements with `{DatasetId} custom columns` as subject that do not fall into the above categories.
 4. **Other Dataset-Related Requirements** (subject: varies)
    1. **Documentation:** Defines requirements for dataset documentation.
-   1. **Other:** Captures requirements that do not fall into the above categories but are relevant for interpretation, validation, or integration.
+   1. **Other:** Captures requirements that do not fall into the above categories.
 
 #### Tabular Overview of Dataset Normative Requirement Grouping and Specifications
 
