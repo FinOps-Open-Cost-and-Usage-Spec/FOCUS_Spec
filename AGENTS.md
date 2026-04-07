@@ -104,6 +104,7 @@ AI agents generating or reviewing content MUST act as strict technical editors e
 * **Linking Rule:** First mention of Column/Attribute names and Glossary terms should link to their definition section. They MUST ONLY be hyperlinked the *first occurrence* per section.
 * **Lists:** All unordered lists MUST use asterisks (`*`), never dashes (`-`) or plus signs (`+`). Nested bullet points MUST use exactly two spaces per level.
 * **Notes:** Important notes must use the blockquote format (`> Important Consideration`).
+* **Anchors:** Pandoc auto-generates custom heading anchors. DO NOT flag missing HTML `<a name="">` tags.
 
 ### Validation & Schema Accuracy
 
