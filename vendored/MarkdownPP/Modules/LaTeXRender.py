@@ -77,7 +77,7 @@ class LaTeXRender(Module):
         if word_count > 2:
             return False
 
-        return re.search(r"[A-Za-z0-9]|[+\-*/^_=<>{}()]", content) is not None
+        return re.search(r"[A-Za-z0-9+\-*/^_=<>{}()]", content) is not None
 
     def transform(self, data):
         transforms = []
