@@ -791,7 +791,7 @@ The structural anchor requirement:
 The canonical form of the structural anchor requirement is:
 
 ```markdown
-[Dataset|Column] conforming to <Attribute ID> attribute MUST adhere to the following requirements:
+[Dataset|Column] conforming to <AttributeId> attribute MUST adhere to the following requirements:
 ```
 
 Where `[Dataset|Column]` is the primary schema-level entity targeted by the Attribute — either Dataset or Column. Most Attributes target either datasets or columns, but not both. When an Attribute targets both datasets and columns, a separate structural anchor requirement MUST be used for each entity type.
