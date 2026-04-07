@@ -1,7 +1,7 @@
 {
   "ModelRules": {
-    "ATT-DatasetCompleteness-C-000-M": {
-      "Function": "Composite",
+    "ATT-DatasetCompleteness-A-000-M": {
+      "Function": "Validation",
       "Reference": "DatasetCompleteness",
       "EntityType": "Attribute",
       "EntityName": "Dataset Completeness",
@@ -22,15 +22,15 @@
         "Requirement": {},
         "Condition": [],
         "Dependencies": [
-          "ATT-DatasetCompleteness-C-001-M",
-          "ATT-DatasetCompleteness-C-006-M",
-          "ATT-DatasetCompleteness-C-007-M",
-          "ATT-DatasetCompleteness-C-008-O"
+          "ATT-DatasetCompleteness-A-001-M",
+          "ATT-DatasetCompleteness-A-006-M",
+          "ATT-DatasetCompleteness-A-007-M",
+          "ATT-DatasetCompleteness-A-008-O"
         ]
       }
     },
-    "ATT-DatasetCompleteness-C-001-M": {
-      "Function": "Composite",
+    "ATT-DatasetCompleteness-A-001-M": {
+      "Function": "Presence",
       "Reference": "DatasetCompleteness",
       "EntityType": "Attribute",
       "EntityName": "Dataset Completeness",
@@ -51,14 +51,14 @@
         "Requirement": {},
         "Condition": [],
         "Dependencies": [
-          "ATT-DatasetCompleteness-C-002-C",
-          "ATT-DatasetCompleteness-C-003-M",
-          "ATT-DatasetCompleteness-C-004-C",
-          "ATT-DatasetCompleteness-C-005-O"
+          "ATT-DatasetCompleteness-A-002-C",
+          "ATT-DatasetCompleteness-A-003-M",
+          "ATT-DatasetCompleteness-A-004-C",
+          "ATT-DatasetCompleteness-A-005-O"
         ]
       }
     },
-    "ATT-DatasetCompleteness-C-002-C": {
+    "ATT-DatasetCompleteness-A-002-C": {
       "Function": "Validation",
       "Reference": "DatasetCompleteness",
       "EntityType": "Attribute",
@@ -82,7 +82,7 @@
         "Dependencies": []
       }
     },
-    "ATT-DatasetCompleteness-C-003-M": {
+    "ATT-DatasetCompleteness-A-003-M": {
       "Function": "Validation",
       "Reference": "DatasetCompleteness",
       "EntityType": "Attribute",
@@ -106,7 +106,7 @@
         "Dependencies": []
       }
     },
-    "ATT-DatasetCompleteness-C-004-C": {
+    "ATT-DatasetCompleteness-A-004-C": {
       "Function": "Validation",
       "Reference": "DatasetCompleteness",
       "EntityType": "Attribute",
@@ -130,7 +130,7 @@
         "Dependencies": []
       }
     },
-    "ATT-DatasetCompleteness-C-005-O": {
+    "ATT-DatasetCompleteness-A-005-O": {
       "Function": "Validation",
       "Reference": "DatasetCompleteness",
       "EntityType": "Attribute",
@@ -154,7 +154,7 @@
         "Dependencies": []
       }
     },
-    "ATT-DatasetCompleteness-C-006-M": {
+    "ATT-DatasetCompleteness-A-006-M": {
       "Function": "Validation",
       "Reference": "DatasetCompleteness",
       "EntityType": "Attribute",
@@ -178,7 +178,7 @@
         "Dependencies": []
       }
     },
-    "ATT-DatasetCompleteness-C-007-M": {
+    "ATT-DatasetCompleteness-A-007-M": {
       "Function": "Validation",
       "Reference": "DatasetCompleteness",
       "EntityType": "Attribute",
@@ -202,7 +202,7 @@
         "Dependencies": []
       }
     },
-    "ATT-DatasetCompleteness-C-008-O": {
+    "ATT-DatasetCompleteness-A-008-O": {
       "Function": "Validation",
       "Reference": "DatasetCompleteness",
       "EntityType": "Attribute",
