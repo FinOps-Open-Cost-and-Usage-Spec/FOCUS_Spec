@@ -1,7 +1,7 @@
 {
   "ModelRules": {
     "IND-BillingCurrency-C-000-M": {
-      "Function": "Validation",
+      "Function": "Composite",
       "Reference": "BillingCurrency",
       "EntityType": "Column",
       "EntityName": "Billing Currency",

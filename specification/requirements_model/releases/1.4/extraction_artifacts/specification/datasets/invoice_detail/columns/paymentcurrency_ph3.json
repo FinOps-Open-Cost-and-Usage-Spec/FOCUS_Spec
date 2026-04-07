@@ -1,7 +1,7 @@
 {
   "ModelRules": {
     "IND-PaymentCurrency-C-000-M": {
-      "Function": "Validation",
+      "Function": "Composite",
       "Reference": "PaymentCurrency",
       "EntityType": "Column",
       "EntityName": "Payment Currency",

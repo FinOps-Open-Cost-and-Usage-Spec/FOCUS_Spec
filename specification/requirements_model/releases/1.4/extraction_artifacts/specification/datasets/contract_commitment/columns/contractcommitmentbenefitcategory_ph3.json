@@ -1,0 +1,104 @@
+{
+  "ModelRules": {
+    "CCT-ContractCommitmentBenefitCategory-C-000-M": {
+      "Function": "Composite",
+      "Reference": "ContractCommitmentBenefitCategory",
+      "EntityType": "Column",
+      "EntityName": "Contract Commitment Benefit Category",
+      "EntityId": "ContractCommitmentBenefitCategory",
+      "Notes": "",
+      "ModelVersionIntroduced": "1.4",
+      "Status": "Active",
+      "ModelVersionRemoved": "",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "Order": 0,
+      "DatasetType": "CCT",
+      "DatasetId": "ContractCommitment",
+      "DatasetName": "Contract Commitment",
+      "ValidationCriteria": {
+        "MustSatisfy": "ContractCommitmentBenefitCategory MUST adhere to the following requirements:",
+        "Keyword": "MUST",
+        "Requirement": {},
+        "Condition": [],
+        "Dependencies": [
+          "CCT-ContractCommitmentBenefitCategory-C-001-M",
+          "CCT-ContractCommitmentBenefitCategory-C-002-M",
+          "CCT-ContractCommitmentBenefitCategory-C-003-M"
+        ]
+      }
+    },
+    "CCT-ContractCommitmentBenefitCategory-C-001-M": {
+      "Function": "Type",
+      "Reference": "ContractCommitmentBenefitCategory",
+      "EntityType": "Column",
+      "EntityName": "Contract Commitment Benefit Category",
+      "EntityId": "ContractCommitmentBenefitCategory",
+      "Notes": "",
+      "ModelVersionIntroduced": "1.4",
+      "Status": "Active",
+      "ModelVersionRemoved": "",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "Order": 10,
+      "DatasetType": "CCT",
+      "DatasetId": "ContractCommitment",
+      "DatasetName": "Contract Commitment",
+      "ValidationCriteria": {
+        "MustSatisfy": "ContractCommitmentBenefitCategory MUST be of type String.",
+        "Keyword": "MUST",
+        "Requirement": {},
+        "Condition": [],
+        "Dependencies": []
+      }
+    },
+    "CCT-ContractCommitmentBenefitCategory-C-002-M": {
+      "Function": "Nullability",
+      "Reference": "ContractCommitmentBenefitCategory",
+      "EntityType": "Column",
+      "EntityName": "Contract Commitment Benefit Category",
+      "EntityId": "ContractCommitmentBenefitCategory",
+      "Notes": "",
+      "ModelVersionIntroduced": "1.4",
+      "Status": "Active",
+      "ModelVersionRemoved": "",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "Order": 20,
+      "DatasetType": "CCT",
+      "DatasetId": "ContractCommitment",
+      "DatasetName": "Contract Commitment",
+      "ValidationCriteria": {
+        "MustSatisfy": "ContractCommitmentBenefitCategory MUST NOT be null.",
+        "Keyword": "MUST NOT",
+        "Requirement": {},
+        "Condition": [],
+        "Dependencies": []
+      }
+    },
+    "CCT-ContractCommitmentBenefitCategory-C-003-M": {
+      "Function": "Validation",
+      "Reference": "ContractCommitmentBenefitCategory",
+      "EntityType": "Column",
+      "EntityName": "Contract Commitment Benefit Category",
+      "EntityId": "ContractCommitmentBenefitCategory",
+      "Notes": "",
+      "ModelVersionIntroduced": "1.4",
+      "Status": "Active",
+      "ModelVersionRemoved": "",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "Order": 30,
+      "DatasetType": "CCT",
+      "DatasetId": "ContractCommitment",
+      "DatasetName": "Contract Commitment",
+      "ValidationCriteria": {
+        "MustSatisfy": "ContractCommitmentBenefitCategory MUST be one of the allowed values.",
+        "Keyword": "MUST",
+        "Requirement": {},
+        "Condition": [],
+        "Dependencies": []
+      }
+    }
+  }
+}
