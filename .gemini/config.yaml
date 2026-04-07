@@ -14,10 +14,10 @@ code_review:
   disable: false # Set to true ONLY if you want to disable manual /gemini reviews as well
   comment_severity_threshold: LOW
   max_review_comments: -1
-
-# Automated actions triggered the moment a PR is opened or marked ready
-pull_request_opened:
-  help: false
-  summary: true
-  code_review: false # Disables the automatic line-by-line review on open
-  include_drafts: true
+  
+  # Automated actions triggered the moment a PR is opened or marked ready
+  pull_request_opened:
+    help: false
+    summary: true
+    code_review: false # Disables the automatic line-by-line review on open
+    include_drafts: true
