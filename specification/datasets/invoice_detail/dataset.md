@@ -70,7 +70,7 @@ InvoiceDetail MUST adhere to the following requirements:
   * InvoiceDetail MUST include [PaymentTerms](#datasets.invoicedetail.paymentterms).
   * InvoiceDetail MUST include [PurchaseOrderNumber](#datasets.invoicedetail.purchaseordernumber) when the invoice issuer supports customer input of purchase order numbers.
   * InvoiceDetail MUST include [ReferenceInvoiceId](#datasets.invoicedetail.referenceinvoiceid).
-* InvoiceDetail MUST include [*custom columns*](#glossary:custom-column) to represent any monetary metric that appears on an invoice issued to a BillingAccountId when there is no equivalent [*FOCUS column*](#glossary:FOCUS-column).
+  * InvoiceDetail MUST include [*custom columns*](#glossary:custom-column) to represent any monetary metric that appears on an invoice issued to a BillingAccountId when there is no equivalent [*FOCUS column*](#glossary:FOCUS-column).
 * InvoiceDetail MUST conform to [CorrectionHandling](#attributes.correctionhandling) requirements.
 * InvoiceDetail MUST conform to [DatasetCompleteness](#attributes.datasetcompleteness) requirements.
 * InvoiceDetail MUST conform to [DatasetConfiguration](#attributes.datasetconfiguration) requirements.
