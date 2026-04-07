@@ -1,0 +1,229 @@
+{
+  "phase": 1,
+  "source": {
+    "path": "specification/datasets/contract_commitment/columns/contractcommitmentdurationtype.md",
+    "version": "1.4"
+  },
+  "entity": {
+    "entity_type": "Column",
+    "entity_id": "ContractCommitmentDurationType",
+    "entity_name": "Contract Commitment Duration Type"
+  },
+  "entities_found": [
+    {
+      "entity_type": "Column",
+      "entity_id": "ContractCommitmentDurationType",
+      "entity_name": "Contract Commitment Duration Type"
+    }
+  ],
+  "atoms": [
+    {
+      "temp_id": "R001",
+      "order": 1,
+      "text": "ContractCommitmentDurationType MUST adhere to the following requirements:",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Contract Commitment Duration Type",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "paragraph",
+        "indent_level": 0,
+        "bullet": null
+      },
+      "lead_in": {
+        "ends_with_colon": true
+      },
+      "provenance": {
+        "line_start": 16,
+        "line_end": 16
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L016"
+    },
+    {
+      "temp_id": "R002",
+      "order": 2,
+      "text": "ContractCommitmentDurationType MUST be of type String.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Contract Commitment Duration Type",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 18,
+        "line_end": 18
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L018"
+    },
+    {
+      "temp_id": "R003",
+      "order": 3,
+      "text": "ContractCommitmentDurationType MUST conform to [StringHandling](#attributes.stringhandling) requirements.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Contract Commitment Duration Type",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 19,
+        "line_end": 19
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L019"
+    },
+    {
+      "temp_id": "R004",
+      "order": 4,
+      "text": "ContractCommitmentDurationType MUST NOT be null.",
+      "keyword": "MUST NOT",
+      "role": "requirement",
+      "section_path": [
+        "Contract Commitment Duration Type",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 20,
+        "line_end": 20
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L020"
+    },
+    {
+      "temp_id": "R005",
+      "order": 5,
+      "text": "ContractCommitmentDurationType SHOULD be expressed with a quantity and time unit, where quantity is a positive integer, and time-unit is a standardized unit of time, either singular or plural (e.g., \"1 Day\", \"1 Year\", \"3 Months\", \"3 Years\").",
+      "keyword": "SHOULD",
+      "role": "requirement",
+      "section_path": [
+        "Contract Commitment Duration Type",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 21,
+        "line_end": 21
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L021"
+    },
+    {
+      "temp_id": "R006",
+      "order": 6,
+      "text": "ContractCommitmentDurationType SHOULD present the unit of time as one of the allowed values.",
+      "keyword": "SHOULD",
+      "role": "requirement",
+      "section_path": [
+        "Contract Commitment Duration Type",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 22,
+        "line_end": 22
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L022"
+    },
+    {
+      "temp_id": "R007",
+      "order": 7,
+      "text": "ContractCommitmentDurationType SHOULD correspond to the standard duration of the purchased offering (e.g., \"1 Year\", \"3 Years\") rather than a precise calculation of days or hours.",
+      "keyword": "SHOULD",
+      "role": "requirement",
+      "section_path": [
+        "Contract Commitment Duration Type",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 23,
+        "line_end": 23
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L023"
+    },
+    {
+      "temp_id": "R008",
+      "order": 8,
+      "text": "ContractCommitmentDurationType MAY differ from the actual duration calculated between [ContractCommitmentPeriodStart](#datasets.contractcommitment.contractcommitmentperiodstart) and [ContractCommitmentPeriodEnd](#datasets.contractcommitment.contractcommitmentperiodend) (e.g., if a 3-year commitment is exchanged in its final month, the resulting record may have a short lifespan but retains a value of \"3 Years\").",
+      "keyword": "MAY",
+      "role": "requirement",
+      "section_path": [
+        "Contract Commitment Duration Type",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 24,
+        "line_end": 24
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L024"
+    }
+  ],
+  "warnings": [],
+  "structural": {
+    "lead_ins": [],
+    "index": {
+      "by_section_path": {},
+      "by_line": {}
+    }
+  }
+}

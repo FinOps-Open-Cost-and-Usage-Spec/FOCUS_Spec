@@ -1,0 +1,262 @@
+{
+  "phase": 2,
+  "source": {
+    "path": "specification/datasets/contract_commitment/columns/contractcommitmentpaymentupfrontpercentage.md",
+    "version": "1.4"
+  },
+  "entity": {
+    "entity_type": "Column",
+    "entity_id": "ContractCommitmentPaymentUpfrontPercentage",
+    "entity_name": "Contract Commitment Payment Upfront Percentage"
+  },
+  "requirements_scope": {
+    "section_names_allowed": [
+      "Requirements",
+      "Column Requirements",
+      "Object Requirements",
+      "Dataset Requirements",
+      "Attribute Requirements"
+    ],
+    "atoms_in_scope_count": 8
+  },
+  "0_outline_root": "ROOT: Contract Commitment Payment Upfront Percentage > Requirements",
+  "0_outline_lines": [
+    "L009: \"ContractCommitmentPaymentUpfrontPercentage MUST adhere to the following requirements:\"",
+    "  L011: \"ContractCommitmentPaymentUpfrontPercentage MUST be of type Decimal.\"",
+    "  L012: \"ContractCommitmentPaymentUpfrontPercentage MUST conform to [NumericFormat](#attributes.numericformat) requirements.\"",
+    "  L013: \"ContractCommitmentPaymentUpfrontPercentage MUST NOT be null.\"",
+    "  L014: \"ContractCommitmentPaymentUpfrontPercentage MUST be a value between 0.0 and 1.0, inclusive.\"",
+    "  L015: \"ContractCommitmentPaymentUpfrontPercentage MUST be 1.0 when [ContractCommitmentPaymentModel](#datasets.contractcommitment.contractcommitmentpaymentmodel) is \\\"All Upfront\\\".\"",
+    "  L016: \"ContractCommitmentPaymentUpfrontPercentage MUST be 0.0 when ContractCommitmentPaymentModel is \\\"No Upfront\\\".\"",
+    "  L017: \"ContractCommitmentPaymentUpfrontPercentage MUST be greater than 0.0 and less than 1.0 when ContractCommitmentPaymentModel is \\\"Partial Upfront\\\".\""
+  ],
+  "0_outline_summary": {
+    "node_count": 8,
+    "leaf_count": 7,
+    "lead_in_count": 1,
+    "max_depth": 1,
+    "max_indent_level": 0,
+    "root_children_count": 1,
+    "keyword_distribution": {
+      "MUST": 7,
+      "MUST NOT": 1
+    },
+    "lead_ins": [
+      {
+        "ref": "L009",
+        "text_preview": "ContractCommitmentPaymentUpfrontPercentage MUST adhere to the following requirements:",
+        "children": 7
+      }
+    ]
+  },
+  "structure": {
+    "root": {
+      "node_id": "R000",
+      "kind": "root",
+      "children": [
+        {
+          "node_id": "R001",
+          "kind": "atom",
+          "atom": {
+            "temp_id": "R001",
+            "order": 1,
+            "ref": "L009",
+            "text": "ContractCommitmentPaymentUpfrontPercentage MUST adhere to the following requirements:",
+            "keyword": "MUST",
+            "section_path": [
+              "Contract Commitment Payment Upfront Percentage",
+              "Requirements"
+            ],
+            "block": {
+              "block_type": "paragraph",
+              "indent_level": 0,
+              "bullet": null
+            },
+            "lead_in": {
+              "ends_with_colon": true
+            }
+          },
+          "children": [
+            {
+              "node_id": "R002",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R002",
+                "order": 2,
+                "ref": "L011",
+                "text": "ContractCommitmentPaymentUpfrontPercentage MUST be of type Decimal.",
+                "keyword": "MUST",
+                "section_path": [
+                  "Contract Commitment Payment Upfront Percentage",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R003",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R003",
+                "order": 3,
+                "ref": "L012",
+                "text": "ContractCommitmentPaymentUpfrontPercentage MUST conform to [NumericFormat](#attributes.numericformat) requirements.",
+                "keyword": "MUST",
+                "section_path": [
+                  "Contract Commitment Payment Upfront Percentage",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R004",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R004",
+                "order": 4,
+                "ref": "L013",
+                "text": "ContractCommitmentPaymentUpfrontPercentage MUST NOT be null.",
+                "keyword": "MUST NOT",
+                "section_path": [
+                  "Contract Commitment Payment Upfront Percentage",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R005",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R005",
+                "order": 5,
+                "ref": "L014",
+                "text": "ContractCommitmentPaymentUpfrontPercentage MUST be a value between 0.0 and 1.0, inclusive.",
+                "keyword": "MUST",
+                "section_path": [
+                  "Contract Commitment Payment Upfront Percentage",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R006",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R006",
+                "order": 6,
+                "ref": "L015",
+                "text": "ContractCommitmentPaymentUpfrontPercentage MUST be 1.0 when [ContractCommitmentPaymentModel](#datasets.contractcommitment.contractcommitmentpaymentmodel) is \"All Upfront\".",
+                "keyword": "MUST",
+                "section_path": [
+                  "Contract Commitment Payment Upfront Percentage",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R007",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R007",
+                "order": 7,
+                "ref": "L016",
+                "text": "ContractCommitmentPaymentUpfrontPercentage MUST be 0.0 when ContractCommitmentPaymentModel is \"No Upfront\".",
+                "keyword": "MUST",
+                "section_path": [
+                  "Contract Commitment Payment Upfront Percentage",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R008",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R008",
+                "order": 8,
+                "ref": "L017",
+                "text": "ContractCommitmentPaymentUpfrontPercentage MUST be greater than 0.0 and less than 1.0 when ContractCommitmentPaymentModel is \"Partial Upfront\".",
+                "keyword": "MUST",
+                "section_path": [
+                  "Contract Commitment Payment Upfront Percentage",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "debug": {
+    "ruleset": "ph2_tree_v1",
+    "parenting_signals": [
+      "section_path_boundary",
+      "lead_in_colon",
+      "indent_level"
+    ],
+    "warnings": []
+  }
+}

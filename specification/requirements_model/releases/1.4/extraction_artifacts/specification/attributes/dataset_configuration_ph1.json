@@ -20,6 +20,31 @@
     {
       "temp_id": "R001",
       "order": 1,
+      "text": "*FOCUS dataset* MUST adhere to the following requirements:",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Dataset Configuration",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "paragraph",
+        "indent_level": 0,
+        "bullet": null
+      },
+      "lead_in": {
+        "ends_with_colon": true
+      },
+      "provenance": {
+        "line_start": 26,
+        "line_end": 26
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L026"
+    },
+    {
+      "temp_id": "R002",
+      "order": 2,
       "text": "*FOCUS dataset* MUST be configurable to include only a user-defined selection of columns.",
       "keyword": "MUST",
       "role": "requirement",
@@ -36,15 +61,15 @@
         "ends_with_colon": false
       },
       "provenance": {
-        "line_start": 26,
-        "line_end": 26
+        "line_start": 28,
+        "line_end": 28
       },
       "_alignment_status": "confirmed",
-      "ref": "L026"
+      "ref": "L028"
     },
     {
-      "temp_id": "R002",
-      "order": 2,
+      "temp_id": "R003",
+      "order": 3,
       "text": "*FOCUS dataset* MUST adhere to all column-level specifications defined in the FOCUS schema, regardless of the user's chosen configuration (e.g., column selection).",
       "keyword": "MUST",
       "role": "requirement",
@@ -61,11 +86,61 @@
         "ends_with_colon": false
       },
       "provenance": {
-        "line_start": 27,
-        "line_end": 27
+        "line_start": 29,
+        "line_end": 29
       },
       "_alignment_status": "confirmed",
-      "ref": "L027"
+      "ref": "L029"
+    },
+    {
+      "temp_id": "R004",
+      "order": 4,
+      "text": "*FOCUS dataset* MAY offer a default column set.",
+      "keyword": "MAY",
+      "role": "requirement",
+      "section_path": [
+        "Dataset Configuration",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 30,
+        "line_end": 30
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L030"
+    },
+    {
+      "temp_id": "R005",
+      "order": 5,
+      "text": "*FOCUS dataset* default column set MUST include all applicable [*FOCUS columns*](#glossary:FOCUS-column) when a default column set is offered.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Dataset Configuration",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 31,
+        "line_end": 31
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L031"
     }
   ],
   "warnings": [],
