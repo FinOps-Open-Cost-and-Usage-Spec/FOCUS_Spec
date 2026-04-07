@@ -675,7 +675,7 @@ To ensure clarity and consistency across columns and corresponding requirements,
 * The sum of <ColumnId> in a given billing period MUST/MAY NOT match the sum of the invoices received for that billing period for a billing account.
 ```
 
-##### Business & Contextual Requirements: Cost Validation Rules
++##### Business & Contextual Requirements: Cost Validation
 
 ```markdown
 * <CostColumnId> MUST equal the product of <UnitPriceColumnId> and PricingQuantity when <UnitPriceColumnId> is not null and PricingQuantity is not null.
