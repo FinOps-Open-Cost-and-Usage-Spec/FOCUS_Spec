@@ -1,7 +1,7 @@
 {
   "ModelRules": {
-    "ATT-DeliveryHandling-C-000-M": {
-      "Function": "Composite",
+    "ATT-DeliveryHandling-A-000-M": {
+      "Function": "Validation",
       "Reference": "DeliveryHandling",
       "EntityType": "Attribute",
       "EntityName": "Delivery Handling",
@@ -22,16 +22,16 @@
         "Requirement": {},
         "Condition": [],
         "Dependencies": [
-          "ATT-DeliveryHandling-C-001-M",
-          "ATT-DeliveryHandling-C-002-M",
-          "ATT-DeliveryHandling-C-003-C",
-          "ATT-DeliveryHandling-C-006-C",
-          "ATT-DeliveryHandling-C-007-O",
-          "ATT-DeliveryHandling-C-008-C"
+          "ATT-DeliveryHandling-A-001-M",
+          "ATT-DeliveryHandling-A-002-M",
+          "ATT-DeliveryHandling-A-003-C",
+          "ATT-DeliveryHandling-A-006-C",
+          "ATT-DeliveryHandling-A-007-O",
+          "ATT-DeliveryHandling-A-008-C"
         ]
       }
     },
-    "ATT-DeliveryHandling-C-001-M": {
+    "ATT-DeliveryHandling-A-001-M": {
       "Function": "Validation",
       "Reference": "DeliveryHandling",
       "EntityType": "Attribute",
@@ -55,7 +55,7 @@
         "Dependencies": []
       }
     },
-    "ATT-DeliveryHandling-C-002-M": {
+    "ATT-DeliveryHandling-A-002-M": {
       "Function": "Validation",
       "Reference": "DeliveryHandling",
       "EntityType": "Attribute",
@@ -79,8 +79,8 @@
         "Dependencies": []
       }
     },
-    "ATT-DeliveryHandling-C-003-C": {
-      "Function": "Composite",
+    "ATT-DeliveryHandling-A-003-C": {
+      "Function": "Validation",
       "Reference": "DeliveryHandling",
       "EntityType": "Attribute",
       "EntityName": "Delivery Handling",
@@ -101,12 +101,12 @@
         "Requirement": {},
         "Condition": [],
         "Dependencies": [
-          "ATT-DeliveryHandling-C-004-M",
-          "ATT-DeliveryHandling-C-005-M"
+          "ATT-DeliveryHandling-A-004-M",
+          "ATT-DeliveryHandling-A-005-M"
         ]
       }
     },
-    "ATT-DeliveryHandling-C-004-M": {
+    "ATT-DeliveryHandling-A-004-M": {
       "Function": "Validation",
       "Reference": "DeliveryHandling",
       "EntityType": "Attribute",
@@ -130,7 +130,7 @@
         "Dependencies": []
       }
     },
-    "ATT-DeliveryHandling-C-005-M": {
+    "ATT-DeliveryHandling-A-005-M": {
       "Function": "Validation",
       "Reference": "DeliveryHandling",
       "EntityType": "Attribute",
@@ -154,7 +154,7 @@
         "Dependencies": []
       }
     },
-    "ATT-DeliveryHandling-C-006-C": {
+    "ATT-DeliveryHandling-A-006-C": {
       "Function": "Validation",
       "Reference": "DeliveryHandling",
       "EntityType": "Attribute",
@@ -178,7 +178,7 @@
         "Dependencies": []
       }
     },
-    "ATT-DeliveryHandling-C-007-O": {
+    "ATT-DeliveryHandling-A-007-O": {
       "Function": "Validation",
       "Reference": "DeliveryHandling",
       "EntityType": "Attribute",
@@ -202,7 +202,7 @@
         "Dependencies": []
       }
     },
-    "ATT-DeliveryHandling-C-008-C": {
+    "ATT-DeliveryHandling-A-008-C": {
       "Function": "Validation",
       "Reference": "DeliveryHandling",
       "EntityType": "Attribute",
