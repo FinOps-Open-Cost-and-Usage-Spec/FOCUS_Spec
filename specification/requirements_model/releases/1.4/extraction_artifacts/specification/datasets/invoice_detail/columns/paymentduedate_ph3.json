@@ -1,7 +1,7 @@
 {
   "ModelRules": {
     "IND-PaymentDueDate-C-000-M": {
-      "Function": "Validation",
+      "Function": "Composite",
       "Reference": "PaymentDueDate",
       "EntityType": "Column",
       "EntityName": "Payment Due Date",

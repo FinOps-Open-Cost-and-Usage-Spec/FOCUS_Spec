@@ -1,7 +1,7 @@
 {
   "ModelRules": {
     "BIP-BillingPeriodLastUpdated-C-000-M": {
-      "Function": "Validation",
+      "Function": "Composite",
       "Reference": "BillingPeriodLastUpdated",
       "EntityType": "Column",
       "EntityName": "Billing Period Last Updated",

@@ -1,7 +1,7 @@
 {
   "ModelRules": {
     "IND-PurchaseOrderNumber-C-000-M": {
-      "Function": "Validation",
+      "Function": "Composite",
       "Reference": "PurchaseOrderNumber",
       "EntityType": "Column",
       "EntityName": "Purchase Order Number",

@@ -1,7 +1,7 @@
 {
   "ModelRules": {
     "BIP-BillingPeriodStart-C-000-M": {
-      "Function": "Validation",
+      "Function": "Composite",
       "Reference": "BillingPeriodStart",
       "EntityType": "Column",
       "EntityName": "Billing Period Start",
