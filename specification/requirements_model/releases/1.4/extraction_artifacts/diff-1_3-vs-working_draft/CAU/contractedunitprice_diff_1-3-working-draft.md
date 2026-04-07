@@ -15,5 +15,4 @@ ContractedUnitPrice [-adheres-]{+MUST adhere+} to the following requirements:
 * When ContractedUnitPrice is not null, ContractedUnitPrice [-adheres-]{+MUST adhere+} to the following[-additional-] requirements:
   * ContractedUnitPrice MUST be a non-negative decimal value.
   * ContractedUnitPrice MUST be denominated in the BillingCurrency.
-* ContractedCost MUST equal the product of ContractedUnitPrice and PricingQuantity when ContractedUnitPrice is not null and PricingQuantity is not null.
-
+[-* [ContractedCost](#contractedcost) MUST equal the product of ContractedUnitPrice and [PricingQuantity](#pricingquantity) when ContractedUnitPrice is not null and PricingQuantity is not null.-]

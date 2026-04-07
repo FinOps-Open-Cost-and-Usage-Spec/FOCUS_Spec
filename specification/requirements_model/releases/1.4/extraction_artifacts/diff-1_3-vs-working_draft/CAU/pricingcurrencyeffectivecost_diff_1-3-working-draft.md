@@ -9,7 +9,7 @@ PricingCurrencyEffectiveCost [-adheres-]{+MUST adhere+} to the following require
 * PricingCurrencyEffectiveCost MUST be of type Decimal.
 * PricingCurrencyEffectiveCost MUST conform to NumericFormat requirements.
 * PricingCurrencyEffectiveCost MUST NOT be null.
-* PricingCurrencyEffectiveCost MUST be a valid decimal value.
+[-* PricingCurrencyEffectiveCost MUST be a valid decimal value.-]
 * PricingCurrencyEffectiveCost MUST be 0 in the event of prepaid purchases or purchases that are applicable to previous usage.
 * PricingCurrencyEffectiveCost MUST be denominated in the [-[PricingCurrency](#pricingcurrency).-]{+[PricingCurrency](#datasets.costandusage.pricingcurrency).+}
 
