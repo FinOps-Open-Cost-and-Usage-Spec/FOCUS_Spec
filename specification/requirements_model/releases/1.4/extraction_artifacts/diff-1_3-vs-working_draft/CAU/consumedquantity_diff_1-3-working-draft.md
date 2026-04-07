@@ -11,5 +11,5 @@ ConsumedQuantity [-adheres-]{+MUST adhere+} to the following requirements:
   * When ChargeCategory is "Usage" and CommitmentDiscountStatus is not "Unused", ConsumedQuantity [-adheres-]{+MUST adhere+} to the following[-additional-] requirements:
     * ConsumedQuantity MUST NOT be null when ChargeClass is not "Correction".
     * ConsumedQuantity MAY be null when ChargeClass is "Correction".
-* ConsumedQuantity MUST be a valid decimal value when not null.
+[-* ConsumedQuantity MUST be a valid decimal value when not null.-]
 

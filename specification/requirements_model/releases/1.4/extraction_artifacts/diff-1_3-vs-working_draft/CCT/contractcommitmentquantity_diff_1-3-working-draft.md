@@ -8,5 +8,5 @@ ContractCommitmentQuantity [-adheres-]{+MUST adhere+} to the following requireme
 * ContractCommitmentQuantity {+MUST adhere to the following+} nullability [-is defined as follows:-]{+requirements:+}
   * ContractCommitmentQuantity MUST NOT be null when ContractCommitmentCategory is "Usage".
   * ContractCommitmentQuantity MAY be null when ContractCommitmentCategory is "Spend".
-* ContractCommitmentQuantity MUST be a valid decimal value.
+[-* ContractCommitmentQuantity MUST be a valid decimal value.-]
 

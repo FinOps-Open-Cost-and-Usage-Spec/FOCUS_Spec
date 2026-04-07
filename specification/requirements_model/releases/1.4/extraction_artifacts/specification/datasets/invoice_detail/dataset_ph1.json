@@ -670,7 +670,7 @@
     {
       "temp_id": "R027",
       "order": 27,
-      "text": "InvoiceDetail MUST conform to [NullHandling](#attributes.nullhandling) requirements.",
+      "text": "InvoiceDetail MUST conform to [DatasetCompleteness](#attributes.datasetcompleteness) requirements.",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
@@ -695,7 +695,7 @@
     {
       "temp_id": "R028",
       "order": 28,
-      "text": "InvoiceDetail MUST conform to [InvoiceHandling](#attributes.invoicehandling) requirements.",
+      "text": "InvoiceDetail MUST conform to [NullHandling](#attributes.nullhandling) requirements.",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
@@ -720,7 +720,7 @@
     {
       "temp_id": "R029",
       "order": 29,
-      "text": "InvoiceDetail MUST represent all invoice line items with a non-zero [BilledCost](#datasets.invoicedetail.billedcost) on any invoice associated with a [BillingAccountId](#datasets.invoicedetail.billingaccountid).",
+      "text": "InvoiceDetail MUST conform to [InvoiceHandling](#attributes.invoicehandling) requirements.",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
@@ -745,6 +745,31 @@
     {
       "temp_id": "R030",
       "order": 30,
+      "text": "InvoiceDetail MUST represent all invoice line items with a non-zero [BilledCost](#datasets.invoicedetail.billedcost) on any invoice associated with a [BillingAccountId](#datasets.invoicedetail.billingaccountid).",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Invoice Detail",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 77,
+        "line_end": 77
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L077"
+    },
+    {
+      "temp_id": "R031",
+      "order": 31,
       "text": "InvoiceDetail documentation MUST adhere to the following requirements:",
       "keyword": "MUST",
       "role": "requirement",
@@ -761,31 +786,6 @@
         "ends_with_colon": true
       },
       "provenance": {
-        "line_start": 77,
-        "line_end": 77
-      },
-      "_alignment_status": "confirmed",
-      "ref": "L077"
-    },
-    {
-      "temp_id": "R031",
-      "order": 31,
-      "text": "InvoiceDetail documentation MUST specify how InvoiceDetail records correspond to invoice line items.",
-      "keyword": "MUST",
-      "role": "requirement",
-      "section_path": [
-        "Invoice Detail",
-        "Requirements"
-      ],
-      "block": {
-        "block_type": "list_item",
-        "indent_level": 1,
-        "bullet": "*"
-      },
-      "lead_in": {
-        "ends_with_colon": false
-      },
-      "provenance": {
         "line_start": 78,
         "line_end": 78
       },
@@ -795,7 +795,7 @@
     {
       "temp_id": "R032",
       "order": 32,
-      "text": "InvoiceDetail documentation MUST specify whether invoice line items with BilledCost of 0 are excluded from InvoiceDetail.",
+      "text": "InvoiceDetail documentation MUST specify how InvoiceDetail records correspond to invoice line items.",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
@@ -820,7 +820,7 @@
     {
       "temp_id": "R033",
       "order": 33,
-      "text": "InvoiceDetail documentation MUST describe how columns in the CostAndUsage and InvoiceDetail datasets represent the invoice issuer's invoice reconciliation process.",
+      "text": "InvoiceDetail documentation MUST specify whether invoice line items with BilledCost of 0 are excluded from InvoiceDetail.",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
@@ -845,7 +845,7 @@
     {
       "temp_id": "R034",
       "order": 34,
-      "text": "InvoiceDetail documentation MUST be freely accessible to FOCUS consumers.",
+      "text": "InvoiceDetail documentation MUST describe how columns in the CostAndUsage and InvoiceDetail datasets represent the invoice issuer's invoice reconciliation process.",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
@@ -866,6 +866,31 @@
       },
       "_alignment_status": "confirmed",
       "ref": "L081"
+    },
+    {
+      "temp_id": "R035",
+      "order": 35,
+      "text": "InvoiceDetail documentation MUST be freely accessible to FOCUS consumers.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Invoice Detail",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 1,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 82,
+        "line_end": 82
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L082"
     }
   ],
   "warnings": [],
