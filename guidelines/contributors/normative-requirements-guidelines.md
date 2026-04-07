@@ -142,6 +142,8 @@ The normative subject MUST be a schema-level entity, such as:
 
 The subject SHOULD be explicit and unambiguous.
 
+**Exception for Aggregate Expressions:** When a requirement describes an aggregate or derived value (e.g., sums, products, counts), the aggregate expression (e.g., "The sum of", "The product of") MAY be used as the grammatical subject when it improves readability. The column or metric being constrained MUST still be clearly identifiable within the requirement.
+
 #### Disallowed Subjects
 
 The following MUST NOT be used as normative subjects:
@@ -164,6 +166,7 @@ Specifically:
 
 * Each normative bullet MUST contain exactly one BCP 14 keyword (MUST, SHOULD, MAY, MUST NOT, SHOULD NOT). See [BCP14](https://tools.ietf.org/html/bcp14) [[RFC2119](https://tools.ietf.org/html/rfc2119)][[RFC8174](https://tools.ietf.org/html/rfc8174)].
 * A bullet containing more than one normative keyword MUST be split.
+
 * **Exception for Composite Requirements:** While each individual bullet (parent or nested) MUST contain only one BCP 14 keyword, a Composite Requirement as a whole MAY contain multiple keywords to express nuanced obligations. In such cases, the logical strength of the requirement is governed by the hierarchy defined in section Composite Requirements.
 
 ### Splitting Requirements
@@ -179,15 +182,13 @@ A requirement MUST be split into multiple bullets if it:
 
 Composite (parent + nested) requirements MAY be used to group related constraints under a shared condition, context, or subject.
 
-Composite requirements MUST adhere to the following requirements:
+Composite requirements MUST adhere to the following guidelines:
 
 * **Nuanced Obligation:** When a parent bullet uses a BCP 14 keyword (e.g., MUST), it establishes a mandatory requirement to evaluate the nested constraints. Each nested bullet then defines the specific nuance of that obligation for its respective subject or condition using its own BCP 14 keyword.
 * **Shared Conditionality:** Nested bullets MUST share the same condition if defined by the parent bullet.
 * **Context and Subject Consistency:** Nested bullets SHOULD maintain a consistent business context. While nested bullets SHOULD NOT introduce a different subject type, they MAY reference different subjects (e.g., a FOCUS dataset and its custom columns) provided they all relate to the same primary business context defined by the parent bullet.
 
-**Exceptions:**
-
-* **Conformance Recommendations:** When a parent bullet uses a SHOULD keyword to establish recommended conformance to a set of requirements (e.g., in `CustomColumnHandling` or when a column declares conformance to an attribute like `UnitFormat`), the weakest keyword in the hierarchy applies to the overall conformance.
+**Exception for Conformance Recommendations:** When a parent bullet uses a SHOULD keyword to establish recommended conformance to a set of requirements (e.g., in `CustomColumnHandling` or when a column declares conformance to an attribute like `UnitFormat`), the weakest keyword in the hierarchy applies to the overall conformance.
 
 Composite requirements SHOULD be used when grouping improves readability and:
 
