@@ -48,6 +48,11 @@ class LaTeXRender(Module):
         if not content:
             return False
 
+        # A valid inline math candidate should not contain additional
+        # unescaped dollar delimiters in its interior.
+        if re.search(r"(?<!\\)\$", content):
+            return False
+
         # Fragments that end with an operator (e.g. "0.00133 = ") are
         # typically prose/currency splits, not complete LaTeX expressions.
         if content.rstrip().endswith(("=", "+", "-", "*", "/", "^", "<", ">")):
@@ -102,26 +107,37 @@ class LaTeXRender(Module):
                     transforms.append(Transform(linenum, "drop"))
                     current_block += "\n" + line
 
-                match = singlelinere.search(line)
-                if match:
-                    code_pos = []
-                    for m in spancodere.finditer(line):
-                        code_pos += range(*m.span())
+                search_start = 0
+                match = None
+                code_pos = []
+                for m in spancodere.finditer(line):
+                    code_pos += range(*m.span())
 
-                    if not (match.start(0) in code_pos or
-                            match.end(0) in code_pos):
+                while True:
+                    match = singlelinere.search(line, search_start)
+                    if not match:
+                        break
 
-                        # Single LaTeX line
-                        tex = match.group(0)
-                        before_tex = line[0:line.find(tex)]
-                        after_tex = line[(line.find(tex) + len(tex)):
-                                         len(line)]
-                        if self.should_render(tex):
-                            transforms.append(Transform(linenum, "swap",
-                                                        before_tex +
-                                                        self.render(tex) +
-                                                        after_tex))
-                else:
+                    if match.start(0) in code_pos or match.end(0) in code_pos:
+                        search_start = match.start(0) + 1
+                        continue
+
+                    # Single LaTeX line
+                    tex = match.group(0)
+                    if not self.should_render(tex):
+                        search_start = match.start(0) + 1
+                        continue
+
+                    before_tex = line[0:line.find(tex)]
+                    after_tex = line[(line.find(tex) + len(tex)):
+                                     len(line)]
+                    transforms.append(Transform(linenum, "swap",
+                                                before_tex +
+                                                self.render(tex) +
+                                                after_tex))
+                    break
+
+                if not match:
                     match = startorendre.search(line)
                     if match:
                         # Starting or ending a multi-line LaTeX block
