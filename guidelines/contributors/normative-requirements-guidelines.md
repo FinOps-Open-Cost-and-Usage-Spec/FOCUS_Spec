@@ -231,14 +231,14 @@ Each normative requirement MUST be defined in exactly one place across the speci
 Grouping and ordering of dataset-level normative requirements ensures clarity, consistency, and maintainability across all FOCUS datasets, making related or similar requirements easy to identify and follow.
 
   1. **Presence Requirements**
-     * i. **Dataset Presence:** Defines whether, and under what conditions, a dataset must be present in the FOCUS delivery.
-     * ii. **Column Presence in Dataset:** Defines which columns must or are recommended to be present within a dataset, and under which conditions.
+     1 **Dataset Presence:** Defines whether, and under what conditions, a dataset must be present in the FOCUS delivery.
+     1. **Column Presence in Dataset:** Defines which columns must or are recommended to be present within a dataset, and under which conditions.
   2. **Attribute Conformance Requirements**
-     * i. **Dataset Attribute Conformance:** Defines requirements where a dataset MUST conform to one or more FOCUS-defined Attributes (e.g., `DatasetCompleteness`, `DatasetConfiguration`).
-     * ii. **FOCUS Column Attribute Conformance:** Defines requirements where FOCUS columns within a dataset MUST conform to one or more FOCUS-defined Attributes (e.g., `NullHandling`).
-     * iii. **Custom Column Attribute Conformance:** Defines requirements where custom columns within a dataset MUST conform to `CustomColumnHandling`.
+     1. **Dataset Attribute Conformance:** Defines requirements where a dataset MUST conform to one or more FOCUS-defined Attributes (e.g., `DatasetCompleteness`, `DatasetConfiguration`).
+     1. **FOCUS Column Attribute Conformance:** Defines requirements where FOCUS columns within a dataset MUST conform to one or more FOCUS-defined Attributes (e.g., `NullHandling`).
+     1. **Custom Column Attribute Conformance:** Defines requirements where custom columns within a dataset MUST conform to `CustomColumnHandling`.
   3. **Other Requirements**
-     * i. **Other:** Captures dataset-level requirements that do not fall into the above categories but are relevant for interpretation, validation, or integration.
+     1. **Other:** Captures dataset-level requirements that do not fall into the above categories but are relevant for interpretation, validation, or integration.
 
 #### Tabular Overview of Dataset Normative Requirement Grouping and Specifications
 
@@ -376,12 +376,12 @@ Grouping and ordering of requirements ensure clarity, logical flow, and consiste
      1. **Values and Value Ranges**: Further constrains valid values, assuming the format is already correct.
      1. **Column-to-Column Relationships**: Defines dependencies and consistency rules between related columns.
   2. **Business & Contextual Requirements**
-     * i. **Unit/Denomination**: Ensures consistency in measurement or currency.
-     * ii. **Uniqueness**: Defines uniqueness constraints for data integrity.
-     * iii. **Fallback/Substitute Values**: Specifies what alternative values may be used if the expected value is missing.
-     * iv. **Relationships Outside the Spec**: Defines dependencies on external systems or datasets.
-     * v. **Cost Validation**: Defines how cost-related values are calculated and validated, including mathematical relationships, dependencies on other columns, and business-specific logic.
-     * vi. **Other**: Requirements that do not fall into one of the previous categories.
+     1. **Unit/Denomination**: Ensures consistency in measurement or currency.
+     1. **Uniqueness**: Defines uniqueness constraints for data integrity.
+     1. **Fallback/Substitute Values**: Specifies what alternative values may be used if the expected value is missing.
+     1. **Relationships Outside the Spec**: Defines dependencies on external systems or datasets.
+     1. **Cost Validation**: Defines how cost-related values are calculated and validated, including mathematical relationships, dependencies on other columns, and business-specific logic.
+     1. **Other**: Requirements that do not fall into one of the previous categories.
 
 #### Tabular Overview of Column Normative Requirement Grouping and Specifications
 
@@ -862,25 +862,25 @@ Attributes may include requirements that apply to one or more intended normative
 
 0. **Structural Attribute Anchor Requirement:** Introduces the scope of the Attribute and provides a stable parsing entry point; it does not introduce a verifiable constraint.
 1. **FOCUS Dataset-level Attribute Requirements:**
-   * i. **Global FOCUS Dataset Requirements:** Applicable to all FOCUS datasets that declare conformance to the Attribute, regardless of their structure, specific role or context.
-   * ii. **Qualified FOCUS Dataset Requirements:** Applicable to a subset of FOCUS datasets that declare conformance to the Attribute and are identified through a qualifier.
-   * iii. **Specific FOCUS Dataset Requirements:** Applicable to a specific FOCUS dataset, identified explicitly by Dataset ID.
+   1. **Global FOCUS Dataset Requirements:** Applicable to all FOCUS datasets that declare conformance to the Attribute, regardless of their structure, specific role or context.
+   1. **Qualified FOCUS Dataset Requirements:** Applicable to a subset of FOCUS datasets that declare conformance to the Attribute and are identified through a qualifier.
+   1. **Specific FOCUS Dataset Requirements:** Applicable to a specific FOCUS dataset, identified explicitly by Dataset ID.
 2. **FOCUS Dataset Column-level Attribute Requirements:** Applicable to all columns (FOCUS columns and custom columns) in FOCUS datasets that declare conformance to the Attribute.
-   * i. **Global FOCUS Dataset Column Requirements:** Applicable to all FOCUS dataset columns that declare conformance to the Attribute, regardless of their structure, specific role or context.
-   * ii. **Qualified FOCUS Dataset Column Requirements:** Applicable to a subset of FOCUS dataset columns that declare conformance to the Attribute and are identified through a qualifier.
+   1. **Global FOCUS Dataset Column Requirements:** Applicable to all FOCUS dataset columns that declare conformance to the Attribute, regardless of their structure, specific role or context.
+   1. **Qualified FOCUS Dataset Column Requirements:** Applicable to a subset of FOCUS dataset columns that declare conformance to the Attribute and are identified through a qualifier.
 3. **FOCUS Column-level Attribute Requirements:** Applicable to FOCUS columns that declare conformance to the Attribute.
-   * i. **Global FOCUS Column Requirements:** Applicable to all FOCUS columns that declare conformance to the Attribute, regardless of their structure, specific role or context.
-   * ii. **Qualified FOCUS Column Requirements:** Applicable to a subset of FOCUS columns that declare conformance to the Attribute and are identified through a qualifier.
-   * iii. **Specific FOCUS Column Requirements:** Applicable to a specific FOCUS column, identified explicitly by Column ID.
+   1. **Global FOCUS Column Requirements:** Applicable to all FOCUS columns that declare conformance to the Attribute, regardless of their structure, specific role or context.
+   1. **Qualified FOCUS Column Requirements:** Applicable to a subset of FOCUS columns that declare conformance to the Attribute and are identified through a qualifier.
+   1. **Specific FOCUS Column Requirements:** Applicable to a specific FOCUS column, identified explicitly by Column ID.
 4. **FOCUS Column sub-element Attribute Requirements:** Applicable to structural sub-elements within columns that declare conformance to the Attribute.
-   * i. **Objects in Columns containing JsonObjectFormat values**
-   * ii. **Keys in Objects in Columns containing JsonObjectFormat values**
-   * iii. **Key values in Objects in Columns containing JsonObjectFormat values**
-   * iv. **Keys in Columns containing Key-Value pair format values**
-   * v. **Key values in Columns containing Key-Value pair format values**
+   1. **Objects in Columns containing JsonObjectFormat values**
+   1. **Keys in Objects in Columns containing JsonObjectFormat values**
+   1. **Key values in Objects in Columns containing JsonObjectFormat values**
+   1. **Keys in Columns containing Key-Value pair format values**
+   1. **Key values in Columns containing Key-Value pair format values**
 5. **Custom Column Attribute Requirements:**
-   * i. **Global Custom Column Requirements:** Applicable to all Custom columns, regardless of their structure or purpose.
-   * ii. **Qualified Custom Column Requirements:** Applicable to a subset of Custom columns, identified through a qualifier.
+   1. **Global Custom Column Requirements:** Applicable to all Custom columns, regardless of their structure or purpose.
+   1. **Qualified Custom Column Requirements:** Applicable to a subset of Custom columns, identified through a qualifier.
 
 ### Ordering of Attribute Requirements within Groups
 
