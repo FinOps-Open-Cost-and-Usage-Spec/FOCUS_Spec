@@ -26,8 +26,6 @@ AI tools (e.g., GitHub Copilot, Claude Code, Cursor, and similar coding assistan
   * Verifying no third-party intellectual property conflicts exist
   * Confirming the AI tool's terms of service do not conflict with FOCUS licensing
 
-Test change, please ignore.
-
 ### Review Process
 
 AI-assisted contributions follow the same review process as human-authored contributions:
