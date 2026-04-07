@@ -152,7 +152,7 @@ ORDER BY UncoveredEligibleCost DESC
 
 The query filters [CommitmentProgramEligibilityDetails](#datasets.costandusage.commitmentprogrameligibilitydetails) to rows whose `ProgramType` values correspond to capacity-reservation programs (e.g., "AdvanceResourceCommitment", "ZonalResourceCommitment"). It then uses CapacityReservationId and CapacityReservationStatus to determine reservation utilization.
 
-Note: The FOCUS specification requires CapacityReservationId to not be null when a charge represents unused capacity (MUST), but only recommends (SHOULD) populating it when a charge is related to a used [*capacity reservation*](#glossary:capacity-reservation). Where a provider does not populate CapacityReservationId on used rows, this query will show those rows with a null CapacityReservationStatus.
+Note: The FOCUS specification requires CapacityReservationId to not be null when a charge represents unused capacity, but only recommends populating it when a charge is related to a used *capacity reservation*. Where a data generator does not populate CapacityReservationId on used rows, this query will show those rows with a null CapacityReservationStatus.
 
 ```sql
 SELECT
