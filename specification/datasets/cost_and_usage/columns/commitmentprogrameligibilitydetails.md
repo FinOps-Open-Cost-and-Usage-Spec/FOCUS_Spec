@@ -14,7 +14,7 @@ CommitmentProgramEligibilityDetails MUST adhere to the following requirements:
 * CommitmentProgramEligibilityDetails MUST include all publicly available *commitment programs* for which the usage is eligible.
 * CommitmentProgramEligibilityDetails MAY include negotiated *commitment programs* when the usage is eligible and the program is not broadly applicable across the service provider's service catalog.
 * CommitmentProgramEligibilityDetails MUST NOT include data related to *commitment* [*periods*](#glossary:period) or payment options.
-* CommitmentProgramEligibilityDetails MUST conform to [CommitmentProgramEligibilityDetailsObject](#datasets.costandusage.CommitmentProgramEligibilityDetails.CommitmentProgramEligibilityDetailsobject) requirements when CommitmentProgramEligibilityDetails is not null.
+* CommitmentProgramEligibilityDetails MUST conform to [CommitmentProgramEligibilityDetailsObject](#datasets.costandusage.commitmentprogrameligibilitydetails.commitmentprogrameligibilitydetailsobject) requirements when CommitmentProgramEligibilityDetails is not null.
 
 ## Commitment Program Eligibility Details Object
 
