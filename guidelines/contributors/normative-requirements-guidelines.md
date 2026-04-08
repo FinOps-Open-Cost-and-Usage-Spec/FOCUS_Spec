@@ -167,7 +167,7 @@ Specifically:
 * Each normative bullet MUST contain exactly one BCP 14 keyword (MUST, SHOULD, MAY, MUST NOT, SHOULD NOT). See [BCP14](https://tools.ietf.org/html/bcp14) [[RFC2119](https://tools.ietf.org/html/rfc2119)][[RFC8174](https://tools.ietf.org/html/rfc8174)].
 * A bullet containing more than one normative keyword MUST be split.
 
-* **Exception for Composite Requirements:** While each individual bullet (parent or nested) MUST contain only one BCP 14 keyword, a Composite Requirement as a whole MAY contain multiple keywords to express nuanced obligations. In such cases, the logical strength of the requirement is governed by the hierarchy defined in section Composite Requirements.
+* **Exception for Composite Requirements:** While each individual bullet (parent or nested) MUST contain only one BCP 14 keyword, a Composite Requirement as a whole MAY contain multiple keywords to express nuanced obligations. In such cases, the logical strength of the requirement is governed by the hierarchy defined in section [Composite Requirements](#composite-requirements).
 
 ### Splitting Requirements
 
@@ -203,7 +203,7 @@ While normative requirements MUST focus on **enforceable constraints** and **ver
 
 #### Separation of Concerns:
 
-* **Definitions:** If a definition is complex or applies to multiple requirements, it SHOULD be placed in the [Glossary](#glossary) or the preamble section and referenced as a link within the requirement.
+* **Definitions:** If a definition is complex or applies to multiple requirements, it SHOULD be placed in the **Glossary** or the preamble section and referenced as a link within the requirement.
 * **Complex Logic:** If an informative or normative clause is complex or applies to multiple requirements, it SHOULD be placed in the **Implementation Context** section to maintain the clarity of the core requirement.
 * **Normative Authority:** To ensure consistency, BCP 14 keywords MUST ONLY be used within the **Requirements** section. The content in the **Glossary**, preamble, or **Implementation Context** MUST NOT contain BCP 14 keywords.
 
@@ -777,7 +777,7 @@ An entity is considered conforming to an Attribute if it explicitly declares con
 Conformance to an Attribute can be declared at:
 
 * **Dataset level:** The dataset declares conformance, and all columns within the dataset inherit it (e.g., `CostAndUsage MUST conform to NullHandling requirements.`).
-* **Column group level:** The dataset declares conformance for a specific group of columns (e.g., `CostAndUsage FOCUS columns MUST conform to [FocusColumnHandling] requirements.` or `CostAndUsage custom columns MUST conform to CustomColumnHandling requirements.`). This pattern is used to apply attributes separately to FOCUS columns and custom columns within a dataset.
+* **Column group level:** The dataset declares conformance for a specific group of columns (e.g., `CostAndUsage FOCUS columns MUST conform to FocusColumnHandling requirements.` or `CostAndUsage custom columns MUST conform to CustomColumnHandling requirements.`). This pattern is used to apply attributes separately to FOCUS columns and custom columns within a dataset.
 * **Column level:** A specific column declares conformance directly (e.g., `BilledCost MUST conform to NumericFormat requirements.`).
 
 Normative requirements defined in an Attribute section are evaluated within the scope of conforming entities but apply only to the subjects explicitly defined by each requirement. Conformance determines the set of entities in scope, while the requirement subject determines which of those entities are targeted.
@@ -833,25 +833,25 @@ The following table provides an overview of anchor subject types and requirement
 
 ### FOCUS Dataset Column vs FOCUS Column vs Custom Column Requirements
 
-Requirements that can apply to all columns in a FOCUS dataset (both FOCUS columns and custom columns) use `*FOCUS dataset column*` as the normative subject. This approach is used by the majority of attributes (e.g., NullHandling, DateTimeFormat, NumericFormat, StringHandling) to define column-agnostic requirements. Requirements specific to FOCUS-defined columns use `*FOCUS column*` as the normative subject and are defined in FocusColumnHandling. Requirements specific to custom columns use `*Custom column*` as the normative subject and are defined in CustomColumnHandling.
+Requirements that can apply to all columns in a FOCUS dataset (both FOCUS columns and custom columns) use `*FOCUS dataset column*` as the normative subject. This approach is used by the majority of attributes (e.g., `NullHandling`, `DateTimeFormat`, `NumericFormat`, `StringHandling`) to define column-agnostic requirements. Requirements specific to FOCUS-defined columns use `*FOCUS column*` as the normative subject and are defined in `FocusColumnHandling` attribute. Requirements specific to custom columns use `*Custom column*` as the normative subject and are defined in `CustomColumnHandling` attribute.
 
 When an Attribute uses `*FOCUS dataset column*` as the subject:
 
 * The requirements can apply equally to both FOCUS columns and custom columns.
-* CustomColumnHandling establishes the conformance level (typically SHOULD) for custom columns at the attribute reference level, not within individual requirements.
+* `CustomColumnHandling` establishes the conformance level (typically SHOULD) for custom columns at the attribute reference level, not within individual requirements.
 
-### CustomColumnHandling Attribute
+### `CustomColumnHandling` Attribute
 
-CustomColumnHandling serves as the single source of truth for all custom column requirements. It is a special Attribute that:
+`CustomColumnHandling` serves as the single source of truth for all custom column requirements. It is a special Attribute that:
 
 * Defines column ID naming requirements (e.g., `x_` prefix as MUST, Pascal case as SHOULD).
-* Typically references other attributes (e.g., NullHandling, DateTimeFormat, NumericFormat) with `SHOULD conform` to establish recommended conformance for custom columns.
+* Typically references other attributes (e.g., `NullHandling`, `DateTimeFormat`, `NumericFormat`) with `SHOULD conform` to establish recommended conformance for custom columns.
 * Lists specific requirements that must remain mandatory for custom columns (e.g., documented schema for JSON objects, single numeric value for numeric columns).
 
-Datasets declare conformance to CustomColumnHandling for custom columns using the pattern:
+Datasets declare conformance to `CustomColumnHandling` for custom columns using the pattern:
 
 ```markdown
-* <DatasetId> *custom columns* MUST conform to [CustomColumnHandling] requirements.
+* <DatasetId> *custom columns* MUST conform to CustomColumnHandling requirements.
 ```
 
 This pattern ensures custom column requirements are centralized in one Attribute rather than duplicated across individual attributes.
