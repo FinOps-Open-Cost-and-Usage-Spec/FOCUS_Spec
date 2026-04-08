@@ -281,7 +281,6 @@ To further enhance readability, individual requirements within each group SHOULD
 * **SHOULD** – recommended but not mandatory
 * **SHOULD NOT** – discouraged but not strictly prohibited
 * **MAY** – optional
-* **MAY NOT** – optional prohibition / permitted not to
 
 **Important Note:** The term **RECOMMENDED** (recommended but not mandatory; previously used only for presence-related normative requirements) is no longer permitted for use in normative requirements as of December 2025. The keyword **SHOULD** must be used instead. Please refer to the [**Editorial Style Guidelines**](editorial-guidelines.md).
 
