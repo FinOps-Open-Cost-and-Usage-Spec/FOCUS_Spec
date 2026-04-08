@@ -455,33 +455,33 @@ FOCUS defines two JSON-based value formats for columns: Key-Value Format and JSO
 
 ##### Key-Value Pairs
 
-* **References to Key-Value Pairs depend on the context**: The terminology for key-value pairs varies depending on the column and context. For instance, when referring to key-value pairs, **tags**, **user-defined tags**, and **data generator-defined tags** are used in **Tags**, whereas **SkuPriceDetails property** is used in **SkuPriceDetails**.
+* **References to Key-Value Pairs depend on the context**: The terminology for key-value pairs varies depending on the column and context. For instance, when referring to key-value pairs, **`tags`**, **`user-defined tags`**, and **`data generator-defined tags`** are used in **`Tags`**, whereas **`SkuPriceDetails property`** is used in **`SkuPriceDetails`**.
 
 * **Default to Plural for Key-Value Pairs**: When referring to key-value pairs, **tags** and **properties** should be used in the plural form to reflect the fact that the column may contain multiple key-value pairs.
 
 ##### Keys and Values
 
 * **Refer to Keys and Values Explicitly**: When specifying normative requirements for keys and values, use precise terminology based on the column context:
-  * In **Tags**, refer to **tag key** when addressing only the key, and **tag value** when addressing only the value.
-  * In **SkuPriceDetails**, refer to **property key** when addressing only the key, and **property value** when addressing only the value.
+  * In **`Tags`**, refer to **tag key** when addressing only the key, and **tag value** when addressing only the value.
+  * In **`SkuPriceDetails`**, refer to **property key** when addressing only the key, and **property value** when addressing only the value.
   * When linking a key to its value, use **corresponding value**.
 
-* **First Mention and Context**: In the case of SkuPriceDetails property key, the first mention explicitly uses "SkuPriceDetails property key" to establish the context. Subsequent references to "property key" and "property value" omit "SkuPriceDetails" as the context is already understood. In contrast, for Tags, this is not necessary, as the context is inherently clear from the column name.
+* **First Mention and Context**: In the case of `SkuPriceDetails property key`, the first mention explicitly uses `SkuPriceDetails property key` to establish the context. Subsequent references to `property key` and `property value` omit `SkuPriceDetails` as the context is already understood. In contrast, for `Tags`, this is not necessary, as the context is inherently clear from the column name.
 
 * **Start Key-Specific Requirements with the Key Term**: When a requirement applies to a key, it SHOULD begin with **tag key**, **property key**, or the applicable term for that column.
 
 * **Start Value-Specific Requirements with the Value Term**: When a requirement applies to a value, it SHOULD begin with **tag value**, **property value**, or the applicable term for that column.
 
 * **Plural vs. Singular Form for Keys and Values**:
-  * Use plural when referring to keys or values to reflect the fact that the column may contain multiple keys/values (e.g., "property keys", "tag values").
-  * Use singular when defining requirements for a key or value of a single tag or property (e.g., "property key", "tag value"), with the understanding that the requirement applies to all occurrences.
+  * Use plural when referring to keys or values to reflect the fact that the column may contain multiple keys/values (e.g., `property keys`, `tag values`).
+  * Use singular when defining requirements for a key or value of a single tag or property (e.g., `property key`, `tag value`), with the understanding that the requirement applies to all occurrences.
 
 #### JSON Object Format Columns
 
 ##### JSON Object Format Column Definition Structure
 
 * **Separate requirements into Column Requirements and Object Requirements sections**: JSON Object Format columns have requirements at two levels. Separating these into distinct sections provides better clarity.
-  * **Column Requirements** specify requirements of the column itself, such as data type, value format conformance (e.g., StringHandling, JsonObjectFormat), nullability, and object conformance.
+  * **Column Requirements** specify requirements of the column itself, such as data type, value format conformance (e.g., `StringHandling`, `JsonObjectFormat`), nullability, and object conformance.
   * **Object Requirements** specify requirements of the object structure, including formal JSON Schema conformance and property-level constraints (e.g., expected keys, value formats, relationships between properties).
 
 ##### Schema Requirements
