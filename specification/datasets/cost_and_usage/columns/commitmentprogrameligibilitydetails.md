@@ -128,7 +128,7 @@ Scenario: A compute instance type and tenancy that are eligible for both discoun
 
 ### Coverage Rate with Eligibility-Adjusted Denominator
 
-This example demonstrates how to calculate an accurate [*commitment*](#glossary:commitment) coverage rate using [CommitmentProgramEligibilityDetails](#datasets.costandusage.CommitmentProgramEligibilityDetails) alongside [CommitmentDiscountId](#datasets.costandusage.commitmentdiscountid).
+This example demonstrates how to calculate an accurate [*commitment*](#glossary:commitment) coverage rate using [CommitmentProgramEligibilityDetails](#datasets.costandusage.commitmentprogrameligibilitydetails) alongside [CommitmentDiscountId](#datasets.costandusage.commitmentdiscountid).
 
 Acme Corp runs compute workloads on Aura Web. Some usage is covered by a Resource Reservation, some is eligible but uncovered, and a support fee is ineligible for any [*commitment program*](#glossary:commitment-program).
 
@@ -152,7 +152,7 @@ Row 3 (support fee) is correctly excluded because CommitmentProgramEligibilityDe
 
 ### Uncovered Eligible Spend by Program Type
 
-This example demonstrates how to use [CommitmentProgramEligibilityDetails](#datasets.costandusage.CommitmentProgramEligibilityDetails) to identify uncovered savings opportunities across [*commitment program*](#glossary:commitment-program) types and providers.
+This example demonstrates how to use [CommitmentProgramEligibilityDetails](#datasets.costandusage.commitmentprogrameligibilitydetails) to identify uncovered savings opportunities across [*commitment program*](#glossary:commitment-program) types and providers.
 
 Acme Corp runs compute workloads on Aura Web and uses StackLens for observability monitoring. Some Aura Web compute usage is covered by a Resource Reservation. StackLens usage is uncovered but eligible for Interval Spend Commitments at monthly or annual terms. A practitioner wants to answer: "Which *commitment program* and provider should I target for my next purchase?"
 
@@ -210,7 +210,7 @@ The types of [*commitment programs*](#glossary:commitment-program) available for
 | Allows nulls  | True                                                                                                                         |
 | Data type     | JSON                                                                                                                         |
 | Value format  | [JsonObjectFormat](#attributes.jsonobjectformat)                                                                             |
-| Object        | [CommitmentProgramEligibilityDetailsObject](#datasets.costandusage.CommitmentProgramEligibilityDetails.CommitmentProgramEligibilityDetailsobject) |
+| Object        | [CommitmentProgramEligibilityDetailsObject](#datasets.costandusage.commitmentprogrameligibilitydetails.commitmentprogrameligibilitydetailsobject) |
 
 ## Introduced (version)
 
