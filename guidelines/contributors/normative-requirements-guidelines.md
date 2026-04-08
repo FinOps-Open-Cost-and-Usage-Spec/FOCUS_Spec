@@ -142,7 +142,7 @@ The normative subject MUST be a schema-level entity, such as:
 
 The subject SHOULD be explicit and unambiguous.
 
-**Exception for Aggregate Expressions:** When a requirement describes an aggregate or derived value (e.g., sums, products, counts), the aggregate expression (e.g., "The sum of", "The product of") MAY be used as the grammatical subject when it improves readability. The column or metric being constrained MUST still be clearly identifiable within the requirement.
+**Exception for Aggregate Expressions:** When a requirement describes an aggregate or derived value (e.g., sums, products, counts), the aggregate expression (e.g., `The sum of`, `The product of`) MAY be used as the grammatical subject when it improves readability. The column or metric being constrained MUST still be clearly identifiable within the requirement.
 
 #### Disallowed Subjects
 
@@ -175,8 +175,8 @@ A requirement MUST be split into multiple bullets if it:
 
 * contains more than one BCP 14 keyword,
 * combines multiple obligations (e.g., multiple verifiable state descriptors, multiple objects, or multiple conditions that result in distinct constraints),
-* contains a hidden constraint expressed as a definition (e.g., "ColumnA MUST be Z, where Z is defined as Y"),
-* applies constraints to multiple subjects, even with a single BCP 14 keyword (e.g., "ColumnA and ColumnB MUST be X").
+* contains a hidden constraint expressed as a definition (e.g., `ColumnA MUST be Z, where Z is defined as Y`),
+* applies constraints to multiple subjects, even with a single BCP 14 keyword (e.g., `ColumnA and ColumnB MUST be X`).
 
 ### Composite Requirements
 
@@ -274,7 +274,7 @@ To further enhance readability, individual requirements within each group SHOULD
 
 ***Important Note:*** *The term **RECOMMENDED** (recommended but not mandatory; previously used only for presence-related normative requirements) is no longer permitted for use in normative requirements as of December 2025. The keyword **SHOULD** must be used instead. Please refer to the [**Editorial Style Guidelines**](editorial-guidelines.md).*
 
-* For detailed interpretation of keywords such as "MUST", "MUST NOT", "SHOULD", "SHOULD NOT", "MAY", and others, see [BCP14](https://tools.ietf.org/html/bcp14) [[RFC2119](https://tools.ietf.org/html/rfc2119)][[RFC8174](https://tools.ietf.org/html/rfc8174)].
+* For detailed interpretation of keywords such as `MUST`, `MUST NOT`, `SHOULD`, `SHOULD NOT`, `MAY`, and others, see [BCP14](https://tools.ietf.org/html/bcp14) [[RFC2119](https://tools.ietf.org/html/rfc2119)][[RFC8174](https://tools.ietf.org/html/rfc8174)].
 
 **Exception for Column Presence:** Requirements within the **Column Presence in Dataset** group MUST be ordered alphabetically by the referenced Column ID, taking precedence over the BCP 14 keyword ordering.
 
@@ -424,9 +424,9 @@ To further enhance readability, individual requirements within each group SHOULD
 * **MAY** – optional
 * **MAY NOT** – optional prohibition / permitted not to
 
-> ***Important Note:*** *The term **RECOMMENDED** (recommended but not mandatory; previously used only for presence-related normative requirements) is no longer permitted for use in normative requirements as of December 2025. The keyword **SHOULD** must be used instead. Please refer to the [**Editorial Style Guidelines**](editorial-guidelines.md).*
+***Important Note:*** *The term **RECOMMENDED** (recommended but not mandatory; previously used only for presence-related normative requirements) is no longer permitted for use in normative requirements as of December 2025. The keyword **SHOULD** must be used instead. Please refer to the [**Editorial Style Guidelines**](editorial-guidelines.md).*
 
-* For detailed interpretation of keywords such as "MUST", "MUST NOT", "SHOULD", "SHOULD NOT", "MAY", and others, see [BCP14](https://tools.ietf.org/html/bcp14) [[RFC2119](https://tools.ietf.org/html/rfc2119)][[RFC8174](https://tools.ietf.org/html/rfc8174)].
+* For detailed interpretation of keywords such as `MUST`, `MUST NOT`, `SHOULD`, `SHOULD NOT`, `MAY`, and others, see [BCP14](https://tools.ietf.org/html/bcp14) [[RFC2119](https://tools.ietf.org/html/rfc2119)][[RFC8174](https://tools.ietf.org/html/rfc8174)].
 
 ### Structuring Individual Column Requirements
 
@@ -524,7 +524,7 @@ FOCUS defines two JSON-based value formats for columns: Key-Value Format and JSO
     * <ColumnId> MUST NOT be null when <Condition>.
   ```
 
-* When requirements follow conditional logic (e.g., "If... Else If... Else"), the order should be adjusted so that the most specific conditions appear first, while the most general requirement (e.g., a MUST or SHOULD) is placed last as the fallback rule ("In all other cases" clause).
+* When requirements follow conditional logic (e.g., `If... Else If... Else`), the order should be adjusted so that the most specific conditions appear first, while the most general requirement (e.g., a MUST or SHOULD) is placed last as the fallback rule (`In all other cases` clause).
 
   **Example Pattern 2**
 
@@ -688,39 +688,60 @@ To ensure clarity and consistency across columns and corresponding requirements,
 ##### Identifiers and Uniqueness within Scope
 
 * Patterns:
+
+  ```markdown
   * {ColumnId} MUST be a unique identifier within {Scope}.
   * {ColumnId} SHOULD be a fully-qualified identifier.
+  ```
+
 * Examples:
+
+  ```markdown
   * BillingAccountId MUST be a unique identifier within a service provider.
   * ResourceId SHOULD be a fully-qualified identifier.
+  ```
 
 ##### Column Aggregation
 
-* Pattern: The sum of {ColumnId} in a given billing period...
-* Example: The sum of BilledCost in a given billing period...
+* Pattern: `The sum of {ColumnId} in a given billing period...`
+* Example: `The sum of BilledCost in a given billing period...`
 
 ##### Column value Consistency
 
 * Patterns:
+
+  ```markdown
   * {ColumnId} MUST/SHOULD remain consistent over time for a given {OtherColumnId}.
+  ```
+
 * Examples:
+
+  ```markdown
   * SkuMeter SHOULD remain consistent over time for a given SkuId.
   * CommitmentDiscountUnit MUST remain consistent over time for a given CommitmentDiscountId.
+  ```
 
 ##### References to charge and billing periods
 
 * Patterns:
-  * in a given billing period
-  * in a given charge period
+
+  ```markdown
+  * ...in a given billing period...
+  * ...in a given charge period...
+  ```
 
 ##### Preferred Terminology for Numerical References
 
 * Patterns: When specifying quantities in normative requirements, follow these conventions:
-  * Use "one" instead of "1".
-  * Use "more than one" instead of "2 or more".
+  * Use `one` instead of `1`.
+  * Use `more than one` instead of `2 or more`.
+
 * Examples:
+
+  ```markdown
   * When the service provider has only one user-defined [*tag scheme*](#glossary:tag-scheme). (instead of: When the service provider has only 1 user-defined *tag scheme*.)
   * When the service provider has more than one user-defined *tag scheme*. (instead of: When the service provider has 2 or more user-defined *tag schemes*.)
+  ```
 
 ### Column Normative Requirements Examples
 
@@ -904,7 +925,7 @@ To further enhance readability, individual requirements within each group SHOULD
 
 > ***Important Note:*** *The term **RECOMMENDED** (recommended but not mandatory; previously used only for presence-related normative requirements) is no longer permitted for use in normative requirements as of December 2025. The keyword **SHOULD** must be used instead. Please refer to the [**Editorial Style Guidelines**](editorial-guidelines.md).*
 
-* For detailed interpretation of keywords such as "MUST", "MUST NOT", "SHOULD", "SHOULD NOT", "MAY", and others, see [BCP14](https://tools.ietf.org/html/bcp14) [[RFC2119](https://tools.ietf.org/html/rfc2119)][[RFC8174](https://tools.ietf.org/html/rfc8174)].
+* For detailed interpretation of keywords such as `MUST`, `MUST NOT`, `SHOULD`, `SHOULD NOT`, `MAY`, and others, see [BCP14](https://tools.ietf.org/html/bcp14) [[RFC2119](https://tools.ietf.org/html/rfc2119)][[RFC8174](https://tools.ietf.org/html/rfc8174)].
 
 ### Attribute Normative Requirements Examples
 
