@@ -96,7 +96,7 @@ These labels indicate a required section is absent or empty.
 | `needs success criteria` | Success Criteria section is missing or empty |
 | `needs org requesting` | Organizations Requesting section is missing or empty |
 
-The following existing `needs` labels are unchanged and continue to serve their current purpose:
+The following `needs` labels are also used across the triage workflow:
 
 * `needs triage`
 * `needs backlog review`
