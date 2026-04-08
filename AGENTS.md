@@ -110,7 +110,7 @@ AI agents generating or reviewing content MUST act as strict technical editors e
 
 * **Mathematical & Schema Accuracy:** AI reviewers MUST rigorously calculate, parse, and verify all data within examples (especially JSON snippets and tables). Flag any mathematical inconsistencies or hallucinated data.
 * **JSON Formatting:** JSON blocks MUST use double quotation marks for keys. Verify that the JSON is structurally valid.
-* **Example Disclaimer:** Any section containing examples MUST include the exact warning note: `> Note: The following examples are informative and non-normative. They do not define requirements.`
+* **Example Disclaimer:** The exact warning note (`> Note: The following examples are informative and non-normative. They do not define requirements.`) MUST be included at the top of main specification sections that contain examples. Do not enforce this disclaimer on individual subsections or column definition files.
 
 ### File Organization
 
