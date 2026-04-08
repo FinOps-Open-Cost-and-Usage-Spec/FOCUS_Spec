@@ -441,76 +441,28 @@ To further enhance readability, individual requirements within each group SHOULD
 
 ### Additional Guidelines for Columns in JSON Format
 
-#### Column Definition Structure
+FOCUS defines two JSON-based value formats for columns: Key-Value Format and JSON Object Format. Each has distinct conventions for structuring requirements. The guidelines below are organized by format type.
 
-* **Separate normative requirements into sections for column, JSON schema, and contents**: Communicating the normative requirements for a column, JSON schema, and the contents can be convoluted. Separating these requirements provides better clarity.
-  * Column normative requirements specify requirements of the column such as nullability.
-  * JSON schema normative requirements specify the shape of the JSON.
-  * Contents normative requirements usually specify the expected Keys, the format of the Values, and the expected contents of the Values.
+#### Key-Value Format Columns
 
-#### JSON Schema
+##### Key-Value Format Column Definition Structure
 
-* **Omit JSON schema normative requirements for Key-Value Format columns**: The Key-Value Format definition is sufficient to define the expected JSON schema.
+* **Single Requirements section**: Key-Value Format columns specify all requirements in a single Requirements section covering the column itself, including nullability, key and value constraints, and conformance declarations.
 
-* **Include JSON schema normative requirements for JSON Object Format columns**: The JSON Object Format specifies that the format is subject to the requirement of the column and that data generator-defined columns must have documented schema.
-  * The pattern used in [AllocatedMethodDetails](#allocatedmethoddetails) and [ContractApplied](#contractapplied) consists of Object containing a collection whose key is "Elements" which contains one or more objects in the Key-Value format.
-
-  **Example JSON**
-
-  ```json
-  {
-    "Elements" : [ {
-      "RequiredKey1" : 0.05,
-      "RecommendedKey2" : "CPU",
-      "RecommendedKey3" : 0.5
-    }, {
-      "RequiredKey1" : 0.1,
-      "RecommendedKey3" : 4,
-      "ProviderDefinedKey4": "SomeString"
-    } ]
-  }
-  ```
-
-* **Include a [JSON Type Definition](https://www.rfc-editor.org/rfc/rfc8927) (JTD) as an approximation of the expected schema, but clarify that JTD is non-normative and that normative requirements take precedence when there is a discrepancy**: JSON Type Definition is a convenient way to visualize the expected shape of JSON data, but it often cannot replicate the JSON schema normative requirements of FOCUS. E.g. [NumericFormat](#numericformat) allows for multiple numeric data types and precisions, but JTD requires both to be specified.
-
-  **Example JTD**
-  
-  ```json
-  {
-    "properties": {
-      "Elements": {
-        "elements": {
-          "properties": {
-            "RequiredKey1": { "type": "float64" }
-          },
-          "optionalProperties": {
-            "RecommendedKey2": { "type": "string" },
-            "RecommendedKey3": { "type": "float64" }
-          },
-          "additionalProperties": true
-        }
-      }
-    },
-    "additionalProperties": true
-  }
-  ```
-
-#### Key-Value Pairs
+##### Key-Value Pairs
 
 * **References to Key-Value Pairs depend on the context**: The terminology for key-value pairs varies depending on the column and context. For instance, when referring to key-value pairs, **tags**, **user-defined tags**, and **data generator-defined tags** are used in **Tags**, whereas **SkuPriceDetails property** is used in **SkuPriceDetails**.
 
 * **Default to Plural for Key-Value Pairs**: When referring to key-value pairs, **tags** and **properties** should be used in the plural form to reflect the fact that the column may contain multiple key-value pairs.
 
-#### Keys and Values
+##### Keys and Values
 
-* **Refer to Key and Values Explicitly**: When specifying normative requirements for key and value, use precise terminology based on the column type. For instance:
+* **Refer to Keys and Values Explicitly**: When specifying normative requirements for keys and values, use precise terminology based on the column context:
   * In **Tags**, refer to **tag key** when addressing only the key, and **tag value** when addressing only the value.
   * In **SkuPriceDetails**, refer to **property key** when addressing only the key, and **property value** when addressing only the value.
   * When linking a key to its value, use **corresponding value**.
 
 * **First Mention and Context**: In the case of SkuPriceDetails property key, the first mention explicitly uses "SkuPriceDetails property key" to establish the context. Subsequent references to "property key" and "property value" omit "SkuPriceDetails" as the context is already understood. In contrast, for Tags, this is not necessary, as the context is inherently clear from the column name.
-
-* **Put references to a specific key in double quotes**: In the case of AllocatedMethodDetails, normative requirements are applied to specific keys. To delineate for example that the object with the key "Elements" is being referred, the key should be used in its exact casing inside of double quotation marks `"`.
 
 * **Start Key-Specific Requirements with the Key Term**: When a requirement applies to a key, it SHOULD begin with **tag key**, **property key**, or the applicable term for that column.
 
@@ -518,7 +470,43 @@ To further enhance readability, individual requirements within each group SHOULD
 
 * **Plural vs. Singular Form for Keys and Values**:
   * Use plural when referring to keys or values to reflect the fact that the column may contain multiple keys/values (e.g., "property keys", "tag values").
-  * Use singular when referring to the key or value of a single tag or property (e.g., "property key", "tag value"), with the understanding that the requirement applies to all occurrences.
+  * Use singular when defining requirements for a key or value of a single tag or property (e.g., "property key", "tag value"), with the understanding that the requirement applies to all occurrences.
+
+#### JSON Object Format Columns
+
+##### JSON Object Format Column Definition Structure
+
+* **Separate requirements into Column Requirements and Object Requirements sections**: JSON Object Format columns have requirements at two levels. Separating these into distinct sections provides better clarity.
+  * **Column Requirements** specify requirements of the column itself, such as data type, value format conformance (e.g., StringHandling, JsonObjectFormat), nullability, and object conformance.
+  * **Object Requirements** specify requirements of the object structure, including formal JSON Schema conformance and property-level constraints (e.g., expected keys, value formats, relationships between properties).
+
+##### Schema Requirements
+
+* **Reference the Object in Column Requirements**: JSON Object Format columns SHOULD declare conformance to the corresponding object in the Column Requirements section using the following pattern:
+
+  ```markdown
+  * <ColumnId> MUST conform to <ObjectId> requirements[ when <Condition>].
+  ```
+
+* **Reference the JSON Schema in Object Requirements**: JSON Object Format columns SHOULD reference the corresponding JSON Schema in the Object Requirements section using the following pattern:
+
+  ```markdown
+  * <ObjectId> MUST conform to the <ObjectSchemaId> JSON Schema.
+  ```
+
+  The referenced schema should be consistent with the [JSON Schema Specification](https://json-schema.org/specification) (Draft 2020-12).
+
+##### Object Properties
+
+* **Use Dot-Notation to Reference Object Properties**: When specifying normative requirements for properties within JSON Object Format columns, use dot-notation to reference object properties (e.g., `ContractAppliedObject.Elements[*].ContractId`, `AllocatedMethodDetailsObject.Elements[*].AllocatedRatio`). Use bracket notation with `[*]` to indicate all elements within an array.
+
+* **Use the Object Property Path for Property and Value References**: Whenever possible, use the dot-notation path when referring to an object property or its values.
+
+* **Start Property-Specific Requirements with the Object Property Path**: When a requirement applies to a property in a JSON Object Format column, it should begin with the dot-notation path (e.g., `ContractAppliedObject.Elements[*].ContractCommitmentId MUST be a unique identifier within the service provider.`).
+
+* **Singular Form for Object Properties**: Use singular (dot-notation path with `[*]`) when defining requirements for individual property values, with the understanding that `[*]` applies the requirement to all elements in the array (e.g., `ContractAppliedObject.Elements[*].ContractId MUST be a unique identifier within the service provider.`).
+
+* **Aggregate Expressions for Object Properties**: For aggregate requirements over object properties, the Exception for Aggregate Expressions in the Normative Subject section applies (e.g., `The sum of AllocatedMethodDetailsObject.Elements[*].AllocatedRatio across all allocated charges related to a single origin charge MUST equal 1 (100%).`).
 
 ### Grouping of Nullability-Related and Subsequent Column Requirements
 
