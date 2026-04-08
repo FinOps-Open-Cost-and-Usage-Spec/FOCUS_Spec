@@ -219,11 +219,11 @@ Each normative requirement MUST be defined in exactly one place across the speci
 
 * If a requirement involves multiple columns within a single dataset, it MUST be defined on the primary column it describes. Other columns involved MUST NOT restate it as a normative requirement but MAY reference it in their introductory description.
 
-  *Example: `ListCost MUST equal the product of ListUnitPrice and PricingQuantity when ListUnitPrice is not null and PricingQuantity is not null.` — this requirement is defined on ListCost. ListUnitPrice and PricingQuantity MAY reference it in their introductory description but MUST NOT restate it as a normative requirement.*
+  Example: `ListCost MUST equal the product of ListUnitPrice and PricingQuantity when ListUnitPrice is not null and PricingQuantity is not null.` — this requirement is defined on `ListCost`. `ListUnitPrice` and `PricingQuantity` MAY reference it in their introductory description but MUST NOT restate it as a normative requirement.
 
 * If a requirement spans multiple datasets, it MUST be defined on the column in the dataset that is the primary owner of the validation. Other datasets involved MUST NOT restate it as a normative requirement but MAY reference it in their introductory description.
 
-  *Example: A cross-dataset sum validation comparing BilledCost aggregated by InvoiceId and InvoiceIssuerName between InvoiceDetail and CostAndUsage is defined on InvoiceDetail.BilledCost, as InvoiceDetail is the primary owner of invoice-level validation. CostAndUsage MAY reference it in its introductory description but MUST NOT restate it as a normative requirement.*
+  Example: A cross-dataset sum validation comparing `BilledCost` aggregated by `InvoiceId` and `InvoiceIssuerName` between `InvoiceDetail` and `CostAndUsage` is defined on `InvoiceDetail.BilledCost`, as `InvoiceDetail` is the primary owner of invoice-level validation. `CostAndUsage` MAY reference it in its introductory description but MUST NOT restate it as a normative requirement.
 
 ## Dataset Requirements
 
@@ -510,7 +510,7 @@ FOCUS defines two JSON-based value formats for columns: Key-Value Format and JSO
 
 * **Singular Form for Object Properties**: Use singular (dot-notation path with `[*]`) when defining requirements for individual property values, with the understanding that `[*]` applies the requirement to all elements in the array (e.g., `ContractAppliedObject.Elements[*].ContractId MUST be a unique identifier within the service provider.`).
 
-* **Aggregate Expressions for Object Properties**: For aggregate requirements over object properties, the Exception for Aggregate Expressions in the Normative Subject section applies (e.g., `The sum of AllocatedMethodDetailsObject.Elements[*].AllocatedRatio across all allocated charges related to a single origin charge MUST equal 1 (100%).`).
+* **Aggregate Expressions for Object Properties**: For aggregate requirements over object properties, the **Exception for Aggregate Expressions** in the [Normative Subject](#normative-subject) section applies (e.g., `The sum of AllocatedMethodDetailsObject.Elements[*].AllocatedRatio across all allocated charges related to a single origin charge MUST equal 1 (100%).`).
 
 ### Grouping of Nullability-Related and Subsequent Column Requirements
 
@@ -677,7 +677,7 @@ To ensure clarity and consistency across columns and corresponding requirements,
 * The sum of <ColumnId> in a given billing period MUST/MAY NOT match the sum of the invoices received for that billing period for a billing account.
 ```
 
-+##### Business & Contextual Requirements: Cost Validation
+##### Business & Contextual Requirements: Cost Validation
 
 ```markdown
 * <CostColumnId> MUST equal the product of <UnitPriceColumnId> and PricingQuantity when <UnitPriceColumnId> is not null and PricingQuantity is not null.
@@ -768,7 +768,7 @@ ListUnitPrice MUST adhere to the following requirements:
   * ...
 ```
 
-#### **CommitmentDiscountQuantity**
+#### **Commitment Discount Quantity**
 
 ```markdown
 CommitmentDiscountQuantity MUST adhere to the following requirements:
@@ -883,7 +883,7 @@ Structured grouping and ordering of Attribute requirements improves clarity, con
 
 The groups defined here represent an ordering convention, not a structural requirement. Requirements within each group MAY be expressed as flat parallel bullets or as composite (parent + nested) bullets — whichever improves clarity and readability.
 
-The only **exception** is the Structural Anchor Requirement (group 0), which by its nature always acts as a parent composite requirement.
+The only **exception** is the **Structural Attribute Anchor Requirement** (group 0), which by its nature always acts as a parent composite requirement.
 
 Attributes may include requirements that apply to one or more intended normative subjects. To make the applicability of each Attribute, and each of its individual requirements, as transparent as possible, intended normative subjects serve as the basis for grouping. This ensures that readers can readily determine whether a requirement applies to a dataset, a subset of datasets, FOCUS columns, or custom columns.
 
