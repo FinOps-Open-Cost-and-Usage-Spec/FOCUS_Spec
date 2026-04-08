@@ -162,16 +162,16 @@ Are all required sections present and non-empty?
 
 Do present sections meet the quality bar defined above?
 
-* If not: apply the relevant `revise` label(s), comment on the issue with specific feedback on what to improve.
+* If not: apply the relevant `revise` label(s), comment on the issue with specific feedback on what to improve, and set the project status to "Needs More Info."
 * If yes: proceed to Gate 3.
 
 ### Gate 3: Structural Check
 
 Is the FR well-scoped and actionable?
 
-* If the FR bundles multiple capabilities: apply `needs splitting` and comment with a recommendation for how to decompose it.
-* If the FR scope is unclear or ambiguity is too high to estimate: apply `needs scoping` and comment with what needs clarification.
-* If the FR contains out-of-scope elements (e.g., telemetry, non-billing data): apply `needs scoping` and comment asking the submitter to revise the scope. This is rare but ensures the unresolved state is trackable.
+* If the FR bundles multiple capabilities: apply `needs splitting`, comment with a recommendation for how to decompose it, and set the project status to "Needs More Info."
+* If the FR scope is unclear or ambiguity is too high to estimate: apply `needs scoping`, comment with what needs clarification, and set the project status to "Needs More Info."
+* If the FR contains out-of-scope elements (e.g., telemetry, non-billing data): apply `needs scoping`, comment asking the submitter to revise the scope, and set the project status to "Needs More Info." This is rare but ensures the unresolved state is trackable.
 
 **Ambiguity factors.** The following factors help assess whether an FR's scope is clear enough to proceed:
 
