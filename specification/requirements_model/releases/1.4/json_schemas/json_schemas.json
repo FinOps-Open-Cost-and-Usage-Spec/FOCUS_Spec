@@ -1,0 +1,31 @@
+{
+  "Schemas": {
+    "CAU-AllocatedMethodDetailsObjectSchema-S-001-M": {
+      "EntityType": "Schema",
+      "EntityName": "Allocated Method Details Object Schema",
+      "EntityId": "AllocatedMethodDetailsObjectSchema",
+      "DatasetType": "CAU",
+      "DatasetId": "CostAndUsage",
+      "DatasetName": "Cost and Usage",
+      "Schema": "file('datasets/cost_and_usage/allocatedmethoddetailsobjectschema.json')"
+    },
+    "CAU-ContractAppliedObjectSchema-S-001-M": {
+      "EntityType": "Schema",
+      "EntityName": "Contract Applied Object Schema",
+      "EntityId": "ContractAppliedObjectSchema",
+      "DatasetType": "CAU",
+      "DatasetId": "CostAndUsage",
+      "DatasetName": "Cost and Usage",
+      "Schema": "file('datasets/cost_and_usage/contractappliedobjectschema.json')"
+    },
+    "CCT-ContractCommitmentApplicabilityObjectSchema-S-001-M": {
+      "EntityType": "Schema",
+      "EntityName": "Contract Commitment Applicability Object Schema",
+      "EntityId": "ContractCommitmentApplicabilityObjectSchema",
+      "DatasetType": "CCT",
+      "DatasetId": "ContractCommitment",
+      "DatasetName": "Contract Commitment",
+      "Schema": "file('datasets/contract_commitment/contractcommitmentapplicabilityobjectschema.json')"
+    }
+  }
+}

@@ -24,6 +24,9 @@ def test_dependencies_order(cr_json):
 
     # Check each rule's Dependencies array for proper ordering
     for rule_id, rule in rules.items():
+        if (rule.get("Status") or "").strip() == "Removed":
+            continue
+
         dependencies = rule.get("ValidationCriteria", {}).get("Dependencies", [])
         parent_entity_id = rule.get("EntityId")
         
@@ -97,6 +100,9 @@ def test_no_duplicate_order_values(cr_json):
     entity_groups = defaultdict(list)
     
     for rule_id, rule in rules.items():
+        if (rule.get("Status") or "").strip() == "Removed":
+            continue
+
         entity_id = rule.get("EntityId")
         entity_type = rule.get("EntityType")
         dataset_id = rule.get("DatasetId")

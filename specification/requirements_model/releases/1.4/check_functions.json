@@ -103,6 +103,15 @@
         "CurrencyFormat-A-000-M"
       ]
     },
+    "CheckJSONSchema": {
+      "Description": "Check column (and path) has a JSON that meets a specific JSON schema",
+      "Arguments": [
+        "ColumnName",
+        "Path",
+        "SchemaId"
+      ],
+      "FormatAttributes": []
+    },
     "TypeDecimal": {
       "Description": "Check column has the data type of decimal",
       "Arguments": [
@@ -112,6 +121,13 @@
     },
     "TypeString": {
       "Description": "Check column has the data type of string",
+      "Arguments": [
+        "ColumnName"
+      ],
+      "FormatAttributes": []
+    },
+    "TypeJSON": {
+      "Description": "Check column has the data type of JSON",
       "Arguments": [
         "ColumnName"
       ],
