@@ -47,7 +47,9 @@ CommitmentProgramEligibilityDetailsObject MUST adhere to the following requireme
 |:----------|:----------|:----------|:---------------------------------------|
 | `CommitmentPrograms` | Array | True     | Array of objects identifying *commitment programs* for which the usage is eligible. |
 
-### Example Entries
+### CommitmentPrograms Object
+
+The `CommitmentPrograms` array contains one or more objects, each of which contains the following entries:
 
 | Key         | ValueType                            | Required | Description                                                                                                |
 |:-------------|:-------------|:-------------|:------------------------------|
