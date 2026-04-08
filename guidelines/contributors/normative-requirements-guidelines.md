@@ -337,7 +337,7 @@ Use standardized phrasing and terminology, and apply common requirement patterns
 **Notes:**
 
 * The examples below are **snippets** that illustrate patterns only, not full listings. The `...` indicates additional requirements exist in the full dataset specification.
-* Authors should consult the actual FOCUS dataset specification files as the **source of truth**, as these guidelines may not always reflect the latest version.
+* Authors should consult the actual FOCUS attribute specification files as the **source of truth**, as these guidelines do not necessarily reflect the latest version.
 
 #### **Contract Commitment**
 
@@ -430,7 +430,6 @@ To further enhance readability, individual requirements within each group SHOULD
 * **SHOULD** – recommended but not mandatory
 * **SHOULD NOT** – discouraged but not strictly prohibited
 * **MAY** – optional
-* **MAY NOT** – optional prohibition / permitted not to
 
 **Important Note:** The term **RECOMMENDED** (recommended but not mandatory; previously used only for presence-related normative requirements) is no longer permitted for use in normative requirements as of December 2025. The keyword **SHOULD** must be used instead. Please refer to the [**Editorial Style Guidelines**](editorial-guidelines.md).
 
@@ -682,7 +681,9 @@ To ensure clarity and consistency across columns and corresponding requirements,
 ##### Business & Contextual Requirements: Relationships Outside the Spec
 
 ```markdown
-* The sum of <ColumnId> in a given billing period MUST/MAY NOT match the sum of the invoices received for that billing period for a billing account.
+* The sum of <ColumnId>[ for a given <Scope>] MUST equal ...
+* The sum of <ColumnId>[ for a given <Scope>] MUST NOT differ from ...
+* The sum of <ColumnId>[ for a given <Scope>] MAY differ from ...
 ```
 
 ##### Business & Contextual Requirements: Cost Validation
@@ -929,7 +930,6 @@ To further enhance readability, individual requirements within each group SHOULD
   * **SHOULD** – recommended but not mandatory
   * **SHOULD NOT** – discouraged but not strictly prohibited
   * **MAY** – optional
-  * **MAY NOT** – optional prohibition / permitted not to
 
 **Important Note:** The term **RECOMMENDED** (recommended but not mandatory; previously used only for presence-related normative requirements) is no longer permitted for use in normative requirements as of December 2025. The keyword **SHOULD** must be used instead. Please refer to the [**Editorial Style Guidelines**](editorial-guidelines.md).
 
@@ -940,7 +940,7 @@ To further enhance readability, individual requirements within each group SHOULD
 **Notes:**
 
 * The examples below are **snippets** that illustrate patterns only, not full listings. The `...` indicates additional requirements exist in the full column specification.
-* Authors should consult the actual FOCUS attribute specification files as the **source of truth**, as these guidelines may not always reflect the latest version.
+* Authors should consult the actual FOCUS attribute specification files as the **source of truth**, as these guidelines do not necessarily reflect the latest version.
 
 #### Null Handling
 
