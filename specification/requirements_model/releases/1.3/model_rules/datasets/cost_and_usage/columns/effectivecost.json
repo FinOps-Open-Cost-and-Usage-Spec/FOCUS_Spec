@@ -352,7 +352,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "EffectiveCost of a charge unrelated to other charges (e.g., when the ChargeCategory is \"Credit\") MUST match the BilledCost.",
+      "MustSatisfy": "EffectiveCost of a charge unrelated to other charges (e.g., when the ChargeCategory is \"Credit\") MUST be equal to the BilledCost.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},

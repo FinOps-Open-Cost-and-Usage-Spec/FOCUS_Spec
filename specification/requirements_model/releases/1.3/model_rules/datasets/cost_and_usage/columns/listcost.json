@@ -276,7 +276,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "ListCost of a charge unrelated to other charges (e.g., when the ChargeCategory is \"Credit\") MUST match the BilledCost.",
+      "MustSatisfy": "ListCost of a charge unrelated to other charges (e.g., when the ChargeCategory is \"Credit\") MUST be equal to the BilledCost.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -299,7 +299,7 @@
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "The product of ListUnitPrice and PricingQuantity MUST match the ListCost when ListUnitPrice is not null, PricingQuantity is not null, and ChargeClass is not \"Correction\".",
+      "MustSatisfy": "The product of ListUnitPrice and PricingQuantity MUST be equal to the ListCost when ListUnitPrice is not null, PricingQuantity is not null, and ChargeClass is not \"Correction\".",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnByColumnEqualsColumnValue",

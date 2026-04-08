@@ -353,7 +353,7 @@
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "The product of PricingQuantity and a unit price (e.g., ContractedUnitPrice) MUST match the corresponding cost metric (e.g., ContractedCost) when the unit price is not null and ChargeClass is not \"Correction\".",
+      "MustSatisfy": "The product of PricingQuantity and a unit price (e.g., ContractedUnitPrice) MUST be equal to the corresponding cost metric (e.g., ContractedCost) when the unit price is not null and ChargeClass is not \"Correction\".",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -468,7 +468,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "Cost metric (e.g., ContractedCost) MUST equal the product of the corresponding unit price (e.g., ContractedUnitPrice) and PricingQuantity when the unit price is not null and PricingQuantity is not null.",
+      "MustSatisfy": "Cost metric (e.g., ContractedCost) MUST be equal to the product of the corresponding unit price (e.g., ContractedUnitPrice) and PricingQuantity when the unit price is not null and PricingQuantity is not null.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
