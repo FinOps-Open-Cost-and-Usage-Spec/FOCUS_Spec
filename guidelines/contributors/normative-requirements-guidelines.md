@@ -333,6 +333,7 @@ Use standardized phrasing and terminology, and apply common requirement patterns
 
 #### **Contract Commitment**
 
+```markdown
 ContractCommitment MUST adhere to the following requirements:
 
 * ContractCommitment MUST be present when the service provider supports *contract commitments*.
@@ -348,9 +349,11 @@ ContractCommitment MUST adhere to the following requirements:
 * ContractCommitment FOCUS columns MUST conform to [NullHandling](#attributes.nullhandling) requirements.
 * ContractCommitment custom columns MUST conform to [CustomColumnHandling](#attributes.customcolumnhandling) requirements.
 * ...
+```
 
 #### **Cost and Usage**
 
+```markdown
 CostAndUsage MUST adhere to the following requirements:
 
 * CostAndUsage MUST be present.
@@ -370,6 +373,7 @@ CostAndUsage MUST adhere to the following requirements:
 * ...
 * CostAndUsage [*custom columns*](#glossary:custom-column) MUST conform to [CustomColumnHandling](#attributes.customcolumnhandling) requirements.
 * ...
+```
 
 ## Column Requirements
 
@@ -727,6 +731,7 @@ To ensure clarity and consistency across columns and corresponding requirements,
 
 #### **List Unit Price**
 
+```markdown
 ListUnitPrice MUST adhere to the following requirements:
 
 * ListUnitPrice MUST be of type Decimal.
@@ -740,9 +745,11 @@ ListUnitPrice MUST adhere to the following requirements:
 * When ListUnitPrice is not null, ListUnitPrice MUST adhere to the following requirements:
   * ListUnitPrice MUST be a non-negative decimal value.
   * ...
+```
 
 #### **CommitmentDiscountQuantity**
 
+```markdown
 CommitmentDiscountQuantity MUST adhere to the following requirements:
 
 * CommitmentDiscountQuantity MUST be of type Decimal.
@@ -757,6 +764,7 @@ CommitmentDiscountQuantity MUST adhere to the following requirements:
 * When CommitmentDiscountQuantity is not null and ChargeCategory is "Purchase", CommitmentDiscountQuantity MUST adhere to the following requirements:
   * CommitmentDiscountQuantity MUST be the quantity of CommitmentDiscountUnit, paid fully or partially upfront, that is eligible for consumption over the *commitment discount's* *term* when [ChargeFrequency](#datasets.costandusage.chargefrequency) is "One-Time".
   * ...
+```
 
 ## Attribute Requirements
 
@@ -907,18 +915,21 @@ To further enhance readability, individual requirements within each group SHOULD
 
 #### Null Handling
 
-> *Note: This example illustrates the baseline pattern for an Attribute with flat bullets and no qualifiers.*
+This example illustrates the baseline pattern for an Attribute with flat bullets and no qualifiers.
 
+```markdown
 Column conforming to NullHandling attribute MUST adhere to the following requirements:
 
 * [*FOCUS dataset column*](#glossary:FOCUS-dataset-column) MUST use `null` for absent values when the *FOCUS dataset column* is defined as nullable.
 * *FOCUS dataset column* MUST NOT contain empty strings or placeholder strings (e.g., `Not Applicable`) for absent values when the *FOCUS dataset column* contains string values.
 * *FOCUS dataset column* MUST NOT contain placeholder numeric values (e.g., `0`) for absent values when the *FOCUS dataset column* contains numeric values.
+```
 
 #### Date/Time Format
 
-> *Note: This example illustrates an Attribute with flat bullets and a nested composite requirement.*
+This example illustrates an Attribute with flat bullets and a nested composite requirement.
 
+```markdown
 Column conforming to DateTimeFormat attribute MUST adhere to the following requirements:
 
 * [*FOCUS dataset column*](#glossary:FOCUS-dataset-column) MUST be expressed in UTC (Coordinated Universal Time) to avoid ambiguity and ensure consistency across different time zones.
@@ -928,11 +939,13 @@ Column conforming to DateTimeFormat attribute MUST adhere to the following requi
   * *FOCUS dataset column* MUST include both the date and time components, separated with the letter `T`.
   * *FOCUS dataset column* MUST use two-digit hours (`HH`), minutes (`mm`), and seconds (`ss`).
   * *FOCUS dataset column* MUST end with the ISO 8601 UTC designator `Z`.
+```
 
 #### JSON Object Format
 
-> *Note: This example illustrates an Attribute with sub-element requirements (Object, Key, Key value) expressed as flat bullets.*
+This example illustrates an Attribute with sub-element requirements (Object, Key, Key value) expressed as flat bullets.
 
+```markdown
 Column conforming to JsonObjectFormat attribute MUST adhere to the following requirements:
 
 * [*FOCUS dataset column*](#glossary:FOCUS-dataset-column) MUST contain a serialized JSON string, consistent with the [ECMA 404](https://www.ecma-international.org/wp-content/uploads/ECMA-404_2nd_edition_december_2017.pdf) definition of an object.
@@ -944,11 +957,13 @@ Column conforming to JsonObjectFormat attribute MUST adhere to the following req
   * Object in array in *FOCUS dataset column* MUST be of a consistent type.
   * Object in array in *FOCUS dataset column* MUST NOT be repeated.
   * Object in array in *FOCUS dataset column* MUST NOT be null.
+```
 
 #### Dataset Completeness
 
-> *Note: This example illustrates an Attribute with a Dataset anchor and nested composite requirement.*
+This example illustrates an Attribute with a Dataset anchor and nested composite requirement.
 
+```markdown
 Dataset conforming to DatasetCompleteness attribute MUST adhere to the following requirements:
 
 * *FOCUS dataset* MUST include *custom columns* for all corresponding *native dataset* columns except those explicitly listed as exclusions with justification (e.g., deprecated fields, overlap with *FOCUS columns*) in publicly-available documentation.
@@ -960,3 +975,4 @@ Dataset conforming to DatasetCompleteness attribute MUST adhere to the following
   * *FOCUS dataset* SHOULD list all *FOCUS columns* before all *custom columns*.
   * *FOCUS dataset* SHOULD sort *FOCUS columns* alphabetically by their Column ID within the *FOCUS columns* group.
   * *FOCUS dataset* SHOULD sort *custom columns* alphabetically by their Column ID within the *custom columns* group.
+```
