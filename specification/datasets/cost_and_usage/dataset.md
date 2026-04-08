@@ -159,20 +159,20 @@ CostAndUsage MUST adhere to the following requirements:
 * CostAndUsage MUST conform to [DatasetCompleteness](#attributes.datasetcompleteness) requirements.
 * CostAndUsage MUST conform to [DatasetConfiguration](#attributes.datasetconfiguration) requirements.
 * CostAndUsage MUST conform to [DeliveryHandling](#attributes.deliveryhandling) requirements.
-* CostAndUsage *FOCUS columns* MUST conform to [DataGeneratorCalculatedSplitCostAllocationHandling](#attributes.datagenerator-calculatedsplitcostallocationhandling) requirements when the data generator supports data generator-calculated split cost allocation.
-* CostAndUsage *FOCUS columns* MUST conform to [FocusColumnHandling](#attributes.focuscolumnhandling) requirements.
-* CostAndUsage *FOCUS columns* MUST conform to [NullHandling](#attributes.nullhandling) requirements.
-* CostAndUsage *custom columns* MUST conform to [CustomColumnHandling](#attributes.customcolumnhandling) requirements.
+* CostAndUsage MUST include *charges* representing unused portions of a [*commitment*](#glossary:commitment) when the *commitment* is not fully utilized.
+* CostAndUsage MUST include separate *charges* representing discounted and non-discounted portions when a *commitment discount* applies to only a portion of the originally incurred *charge*.
 * When the data generator supports data generator-calculated split cost allocation, CostAndUsage MUST adhere to the following requirements:
   * CostAndUsage MUST have its data generator-calculated split cost allocation method documented and accessible to practitioners.
   * CostAndUsage SHOULD offer data generator-calculated split cost allocation on an opt-in basis.
   * CostAndUsage MAY contain records for concepts not related to resource usage, if it aligns with the documented data generator-calculated split cost allocation method.
   * CostAndUsage MAY contain records for unused or unallocated usage from the *origin charge* as separate *allocated charges*, if it aligns with the documented data generator-calculated split cost allocation method.
   * CostAndUsage MAY contain *allocated charges* with apportioned costs for unused or unallocated usage, if it aligns with the documented data generator-calculated split cost allocation method.
-* CostAndUsage MUST include *charges* representing unused portions of a [*commitment*](#glossary:commitment) when the *commitment* is not fully utilized.
-* CostAndUsage MUST include separate *charges* representing discounted and non-discounted portions when a *commitment discount* applies to only a portion of the originally incurred *charge*.
 * CostAndUsage SHOULD reflect all applied discounts in *charges* they pertain to.
 * CostAndUsage SHOULD NOT represent applied discounts as separate negating or offsetting *charges*.
+* CostAndUsage [*FOCUS columns*](#glossary:FOCUS-column) MUST conform to [DataGeneratorCalculatedSplitCostAllocationHandling](#attributes.datagenerator-calculatedsplitcostallocationhandling) requirements when the data generator supports data generator-calculated split cost allocation.
+* CostAndUsage *FOCUS columns* MUST conform to [FocusColumnHandling](#attributes.focuscolumnhandling) requirements.
+* CostAndUsage *FOCUS columns* MUST conform to [NullHandling](#attributes.nullhandling) requirements.
+* CostAndUsage [*custom columns*](#glossary:custom-column) MUST conform to [CustomColumnHandling](#attributes.customcolumnhandling) requirements.
 
 ## Dataset ID<!--SkipTOC-->
 

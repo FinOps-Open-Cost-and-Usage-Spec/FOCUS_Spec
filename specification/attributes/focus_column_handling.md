@@ -13,10 +13,10 @@ Column conforming to FocusColumnHandling attribute MUST adhere to the following 
 * *FOCUS column* MUST NOT use abbreviations other than `Id` in the Column ID.
 * *FOCUS column* SHOULD NOT use acronyms other than `Sku` in the Column ID.
 * *FOCUS column* SHOULD NOT exceed 50 characters in the Column ID to accommodate column length restrictions of various data repositories.
-* *FOCUS column* MUST include the `Id` suffix in the Column ID when the *FOCUS column* represents an identifier.
-* *FOCUS column* MUST include the `Name` suffix in the Column ID when the *FOCUS column* represents a name.
-* *FOCUS column* MUST include `Sku` in the Column ID when the *FOCUS column* represents a product offering that incurred a charge.
-* *FOCUS column* MUST contain one of the FOCUS-defined allowed values when the *FOCUS column* includes `Category` suffix in the Column ID and is not null.
+* *FOCUS column* representing an identifier MUST include the `Id` suffix in the Column ID.
+* *FOCUS column* representing a name MUST include the `Name` suffix in the Column ID.
+* *FOCUS column* representing a product offering that incurred a charge MUST include `Sku` in the Column ID.
+* *FOCUS column* that includes the `Category` suffix in the Column ID and is not null MUST contain one of the FOCUS-defined allowed values.
 
 ## Attribute ID
 
