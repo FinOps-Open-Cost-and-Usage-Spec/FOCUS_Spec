@@ -45,7 +45,7 @@ style ObjectProperty fill:#d4edda,stroke:#666,stroke-width:1px
 
 * `CustomColumnHandling` is a special Attribute that references other Attributes (e.g., `NullHandling`, `DateTimeFormat`) to establish recommended conformance for custom columns. This cross-reference pattern is an exception rather than a general relationship shown in the diagram.
 
-> **Important clarification**
+## Dataset Abstraction and Normative Subject Convention
 
 By glossary definition, the following concepts are used:
 
@@ -139,16 +139,17 @@ The normative subject MUST be a schema-level entity, such as:
   * `Custom column` keyword represents any custom column  
   * `Custom column` keyword with a qualifier represents a qualified subset of custom columns (e.g., `Custom column containing numeric values`)
 
-* **Structural sub-elements within Columns** (objects, keys, key values):  
-  *Note: MUST NOT use `object`, `key`, or `value` keywords alone. Always reference them in context, e.g.:*  
-  * `Key in Object in [FOCUS|Custom] column containing JsonObjectFormat values`  
-  * `Key value in Object in [FOCUS|Custom] column containing key-value pairs`
-  * `Object in FOCUS dataset column`  
-  * `Object in array in FOCUS dataset column`  
-  * `Key in Object in FOCUS dataset column`  
-  * `Key value in Object in FOCUS dataset column`  
-  * `Key in FOCUS dataset column`  
-  * `Key value in FOCUS dataset column`
+* **Structural sub-elements within Columns** (objects, keys, key values):
+  * `object`, `key`, or `value` keywords MUST NOT be used alone. Always reference them in context.
+  * Examples of valid subject forms for structural sub-elements:
+    * `Key in Object in [FOCUS|Custom] column containing JsonObjectFormat values`
+    * `Key value in Object in [FOCUS|Custom] column containing key-value pairs`
+    * `Object in FOCUS dataset column`
+    * `Object in array in FOCUS dataset column`
+    * `Key in Object in FOCUS dataset column`
+    * `Key value in Object in FOCUS dataset column`
+    * `Key in FOCUS dataset column`
+    * `Key value in FOCUS dataset column`
 
 The subject SHOULD be explicit and unambiguous.
 
@@ -389,7 +390,7 @@ CostAndUsage MUST adhere to the following requirements:
 
 Grouping and ordering of requirements ensure clarity, logical flow, and consistency across all columns, making related requirements easy to identify and follow. This structure should be maintained for consistency across the specification.
 
-**Note**: This section provides a current preview of the requirements grouping and ordering. Members should review how this applies to specific columns and provide feedback. The order may be adjusted based on that feedback.
+**Note:** This section provides a current preview of the requirements grouping and ordering. Members should review how this applies to specific columns and provide feedback. The order may be adjusted based on that feedback.
 
   1. **Technical Requirements**
      1. **Data Type**: Establishes a foundational expectation, ensuring all subsequent rules align with this type.
@@ -714,7 +715,7 @@ To ensure clarity and consistency across columns and corresponding requirements,
 * Pattern: `The sum of {ColumnId} in a given billing period...`
 * Example: `The sum of BilledCost in a given billing period...`
 
-##### Column value Consistency
+##### Column Value Consistency
 
 * Patterns:
 
@@ -729,7 +730,7 @@ To ensure clarity and consistency across columns and corresponding requirements,
   * CommitmentDiscountUnit MUST remain consistent over time for a given CommitmentDiscountId.
   ```
 
-##### References to charge and billing periods
+##### References to Charge and Billing Periods
 
 * Patterns:
 
