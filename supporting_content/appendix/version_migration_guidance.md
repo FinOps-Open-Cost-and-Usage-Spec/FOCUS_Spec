@@ -126,7 +126,7 @@ For the complete scenario matrix, see [Participating Entity Identification Examp
 **Nullability rules:**
 - MAY be null when the service does not involve deployment on infrastructure (e.g., professional services, software licenses)
 - MAY be null when the hosting provider cannot be uniquely determined (e.g., Tax or Adjustment charges)
-- MUST equal `ServiceProviderName` when the service provider hosts their own services and does not expose the underlying host
+- MUST match `ServiceProviderName` when the service provider hosts their own services and does not expose the underlying host
 
 ### Query Migration Examples (Practitioners)
 

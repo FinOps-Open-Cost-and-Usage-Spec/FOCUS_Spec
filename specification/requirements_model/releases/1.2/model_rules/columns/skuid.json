@@ -350,7 +350,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "SkuId MAY equal SkuPriceId.",
+      "MustSatisfy": "SkuId MAY match SkuPriceId.",
       "Keyword": "MAY",
       "Requirement": {},
       "Condition": {},

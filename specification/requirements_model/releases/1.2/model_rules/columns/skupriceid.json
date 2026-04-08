@@ -344,7 +344,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "SkuPriceId MAY equal SkuId.",
+      "MustSatisfy": "SkuPriceId MAY match SkuId.",
       "Keyword": "MAY",
       "Requirement": {
         "CheckFunction": "CheckSameValue",

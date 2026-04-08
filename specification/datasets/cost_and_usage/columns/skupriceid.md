@@ -18,7 +18,7 @@ SkuPriceId MUST adhere to the following requirements:
   * SkuPriceId MUST have one and only one parent [SkuId](#datasets.costandusage.skuid).
   * SkuPriceId MUST remain consistent over time.
   * SkuPriceId MUST remain consistent across [*billing accounts*](#glossary:billing-account) or contracts.
-  * SkuPriceId MAY equal SkuId.
+  * SkuPriceId MAY match SkuId.
   * SkuPriceId MUST be associated with a given [*resource*](#glossary:resource) or [*service*](#glossary:service) when ChargeCategory is "Usage" or "Purchase".
   * SkuPriceId MUST reference a *SKU Price* in a service-provider-supplied *price list*, enabling the lookup of detailed information about the *SKU Price*.
   * SkuPriceId MUST support the lookup of the [ListUnitPrice](#datasets.costandusage.listunitprice) when the service provider publishes unit prices exclusive of discounts.

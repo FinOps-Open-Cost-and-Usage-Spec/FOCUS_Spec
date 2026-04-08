@@ -270,7 +270,7 @@
     "DatasetId": "ContractCommitment",
     "DatasetName": "Contract Commitment",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractCommitmentId MAY be equal to ContractId.",
+      "MustSatisfy": "ContractCommitmentId MAY match ContractId.",
       "Keyword": "MAY",
       "Requirement": {},
       "Condition": {},

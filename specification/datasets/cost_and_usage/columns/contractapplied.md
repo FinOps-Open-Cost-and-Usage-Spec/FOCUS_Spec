@@ -30,9 +30,9 @@ ContractAppliedObject MUST adhere to the following requirements:
 * ContractAppliedObject.Elements[\*].ContractCommitmentId MUST be a unique identifier within the service provider.
 * ContractAppliedObject.Elements[\*].ContractCommitmentId SHOULD be a fully-qualified identifier.
 * ContractAppliedObject.Elements[\*].ContractCommitmentId MUST have one and only one parent ContractAppliedObject.Elements[\*].ContractId.
-* ContractAppliedObject.Elements[\*].ContractCommitmentId MUST be equal to [ResourceId](#datasets.costandusage.resourceid) when [ChargeCategory](#datasets.costandusage.chargecategory) is "Purchase" and the charge represents a purchase of that contract commitment.
-* ContractAppliedObject.Elements[\*].ContractCommitmentId MUST be equal to [ResourceId](#datasets.costandusage.resourceid) when [ChargeCategory](#datasets.costandusage.chargecategory) is "Usage" and the charge represents an unused portion of that contract commitment.
-* ContractAppliedObject.Elements[\*].ContractCommitmentId MAY be equal to ContractAppliedObject.Elements[\*].ContractId.
+* ContractAppliedObject.Elements[\*].ContractCommitmentId MUST match [ResourceId](#datasets.costandusage.resourceid) when [ChargeCategory](#datasets.costandusage.chargecategory) is "Purchase" and the charge represents a purchase of that contract commitment.
+* ContractAppliedObject.Elements[\*].ContractCommitmentId MUST match [ResourceId](#datasets.costandusage.resourceid) when [ChargeCategory](#datasets.costandusage.chargecategory) is "Usage" and the charge represents an unused portion of that contract commitment.
+* ContractAppliedObject.Elements[\*].ContractCommitmentId MAY match ContractAppliedObject.Elements[\*].ContractId.
 * ContractAppliedObject.Elements[\*].ContractCommitmentAppliedCost MUST be denominated in the [BillingCurrency](#datasets.costandusage.billingcurrency).
 * ContractAppliedObject.Elements[\*].ContractCommitmentAppliedQuantity MUST be denominated in the ContractAppliedObject.Elements[\*].ContractCommitmentAppliedUnit.
 * ContractAppliedObject.Elements[\*].ContractCommitmentAppliedUnit SHOULD conform to [UnitFormat](#attributes.unitformat) requirements.

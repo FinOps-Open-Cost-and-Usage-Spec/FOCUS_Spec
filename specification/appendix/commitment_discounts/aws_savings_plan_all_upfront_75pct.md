@@ -114,7 +114,7 @@ The following critical rules apply to commitment discount data:
 | ConsumedQuantity           | null                                                           | **No resource consumed**                           |
 | CommitmentDiscountQuantity | 52.40                                                          | Commitment wasted                                  |
 | CommitmentDiscountStatus   | Unused                                                         | Commitment not utilized                            |
-| ResourceId                 | arn:aws:savingsplans::123456789012:savingsplan/sp-abc123def456 | must equal CommitmentDiscountId (no resource used) |
+| ResourceId                 | arn:aws:savingsplans::123456789012:savingsplan/sp-abc123def456 | must match CommitmentDiscountId (no resource used) |
 | ResourceName               | EC2 Instance Savings Plan                                      | Carried from Purchase row (no resource consumed)   |
 | ResourceType               | Commitment                                                     | Carried from Purchase row (no resource consumed)   |
 | SkuId                      | AWS-USEAST1-COMPUTE-PURCHASE                                   | must match Purchase row (no resource consumed)     |
