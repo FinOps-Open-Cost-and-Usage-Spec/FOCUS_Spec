@@ -64,6 +64,16 @@ However, by design decision, the specification adopts the following normative co
 
 This choice is intentional and overrides interpretations based solely on abstraction level.
 
+## Notation Conventions
+
+This document uses the following notation conventions in requirement patterns and examples:
+
+* `<placeholder>` — a named placeholder to be replaced with a specific value (used in code block patterns)
+* `{placeholder}` — a named placeholder to be replaced with a specific value (used in prose and tables)
+* `[optional element]` — an optional element that applies only under certain conditions
+* `[A|B]` — a choice between two alternatives (e.g., `[Dataset|Column]`)
+* `...` — indicates that additional content exists but is not shown in the example
+
 ## Core Normative Authoring Rules
 
 ### Normative Requirement Structure
@@ -248,7 +258,7 @@ Grouping and ordering of dataset-level normative requirements ensures clarity, c
 
 #### Tabular Overview of Dataset Normative Requirement Grouping and Specifications
 
-| **Subject** | **Requirement Group** | **When required?** | **Example** |
+| Subject | Requirement Group | When required? | Example |
 |---|---|---|---|
 | Dataset | Dataset Presence | Always | {DatasetId} MUST be present when {Condition}. |
 | Dataset | Column Presence in Dataset | Always | {DatasetId} MUST include {ColumnId}. |
@@ -272,7 +282,7 @@ To further enhance readability, individual requirements within each group SHOULD
 * **MAY** – optional
 * **MAY NOT** – optional prohibition / permitted not to
 
-***Important Note:*** *The term **RECOMMENDED** (recommended but not mandatory; previously used only for presence-related normative requirements) is no longer permitted for use in normative requirements as of December 2025. The keyword **SHOULD** must be used instead. Please refer to the [**Editorial Style Guidelines**](editorial-guidelines.md).*
+**Important Note:** The term **RECOMMENDED** (recommended but not mandatory; previously used only for presence-related normative requirements) is no longer permitted for use in normative requirements as of December 2025. The keyword **SHOULD** must be used instead. Please refer to the [**Editorial Style Guidelines**](editorial-guidelines.md).
 
 * For detailed interpretation of keywords such as `MUST`, `MUST NOT`, `SHOULD`, `SHOULD NOT`, `MAY`, and others, see [BCP14](https://tools.ietf.org/html/bcp14) [[RFC2119](https://tools.ietf.org/html/rfc2119)][[RFC8174](https://tools.ietf.org/html/rfc8174)].
 
@@ -284,8 +294,6 @@ To further enhance readability, individual requirements within each group SHOULD
 * **Use Asterisks for Lists**: All unordered lists representing normative requirements must use an asterisk (`*`) for the bullet character. Do not use dashes (`-`) or plus signs (`+`). This ensures visual consistency across the specification and aligns with our automated linting standards.
 
   **Example Pattern 1**
-
-  *Note: Text in square brackets [ ] indicates optional elements that apply only under certain conditions.*
 
   ```markdown
   * <DatasetId> MUST be present[ when <Condition>].
@@ -399,7 +407,7 @@ Grouping and ordering of requirements ensure clarity, logical flow, and consiste
 
 #### Tabular Overview of Column Normative Requirement Grouping and Specifications
 
-| **Requirement Type** | **Requirement Group** | **When required?** | **Example** |
+| Requirement Type | Requirement Group | When required? | Example |
 |---|---|---|---|
 | Technical | Data Type | Always | {ColumnId} MUST be of type String. |
 | Technical | Value Format | Always (except normalized dimensions) | {ColumnId} MUST conform to {AttributeId} requirements. |
@@ -424,7 +432,7 @@ To further enhance readability, individual requirements within each group SHOULD
 * **MAY** – optional
 * **MAY NOT** – optional prohibition / permitted not to
 
-***Important Note:*** *The term **RECOMMENDED** (recommended but not mandatory; previously used only for presence-related normative requirements) is no longer permitted for use in normative requirements as of December 2025. The keyword **SHOULD** must be used instead. Please refer to the [**Editorial Style Guidelines**](editorial-guidelines.md).*
+**Important Note:** The term **RECOMMENDED** (recommended but not mandatory; previously used only for presence-related normative requirements) is no longer permitted for use in normative requirements as of December 2025. The keyword **SHOULD** must be used instead. Please refer to the [**Editorial Style Guidelines**](editorial-guidelines.md).
 
 * For detailed interpretation of keywords such as `MUST`, `MUST NOT`, `SHOULD`, `SHOULD NOT`, `MAY`, and others, see [BCP14](https://tools.ietf.org/html/bcp14) [[RFC2119](https://tools.ietf.org/html/rfc2119)][[RFC8174](https://tools.ietf.org/html/rfc8174)].
 
@@ -923,7 +931,7 @@ To further enhance readability, individual requirements within each group SHOULD
   * **MAY** – optional
   * **MAY NOT** – optional prohibition / permitted not to
 
-> ***Important Note:*** *The term **RECOMMENDED** (recommended but not mandatory; previously used only for presence-related normative requirements) is no longer permitted for use in normative requirements as of December 2025. The keyword **SHOULD** must be used instead. Please refer to the [**Editorial Style Guidelines**](editorial-guidelines.md).*
+**Important Note:** The term **RECOMMENDED** (recommended but not mandatory; previously used only for presence-related normative requirements) is no longer permitted for use in normative requirements as of December 2025. The keyword **SHOULD** must be used instead. Please refer to the [**Editorial Style Guidelines**](editorial-guidelines.md).
 
 * For detailed interpretation of keywords such as `MUST`, `MUST NOT`, `SHOULD`, `SHOULD NOT`, `MAY`, and others, see [BCP14](https://tools.ietf.org/html/bcp14) [[RFC2119](https://tools.ietf.org/html/rfc2119)][[RFC8174](https://tools.ietf.org/html/rfc8174)].
 
