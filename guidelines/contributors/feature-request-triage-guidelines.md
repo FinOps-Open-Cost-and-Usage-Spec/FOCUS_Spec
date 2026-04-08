@@ -1,6 +1,8 @@
 # Feature Request Triage and Improvement Guidelines
 
-This document defines the quality bar, label system, and workflow for triaging Feature Requests (FRs) in the FOCUS specification backlog. It applies to both new submissions and existing backlog grooming. Existing backlog FRs will be triaged in batches following these guidelines.
+This document defines the quality bar, label system, and workflow for triaging Feature Requests (FRs) in the FOCUS specification backlog. Without a shared quality bar, FRs vary widely in specificity and completeness, which slows triage, creates rework during discovery, and makes prioritization harder to defend. These guidelines establish consistent expectations so that FRs entering the backlog are actionable and comparable.
+
+This document applies to both new submissions and existing backlog grooming. Existing backlog FRs will be triaged in batches following these guidelines.
 
 This document does not cover spec design decisions, editorial standards, or PR review. For those, see [spec-design-guidelines.md](spec-design-guidelines.md), [editorial-guidelines.md](editorial-guidelines.md), and [github-guidelines.md](github-guidelines.md).
 
@@ -20,14 +22,14 @@ FR titles must start with `[FR]` and follow these conventions. During triage, me
 * **Keep titles ≤ 75 characters (aim for ~60).** Short enough to fit in GitHub lists, change logs, and slides without wrapping
 * **Don't end with a trailing period**
 
-### Sections
+### Required Section Quality Standards
 
 Each required section of the [Feature Request template](../../.github/ISSUE_TEMPLATE/feature-request.yml) has a defined quality bar. A section can fail in two ways:
 
 * **Missing**: The section is absent, empty, or contains only placeholder text.
 * **Below bar**: The section is present but does not meet the standard.
 
-### Problem Statement
+#### Problem Statement
 
 The problem statement describes a gap in what FOCUS can do today. It does not prescribe a solution.
 
@@ -36,7 +38,7 @@ The problem statement describes a gap in what FOCUS can do today. It does not pr
 | Passes | Identifies a specific limitation or ambiguity in the current specification. Written from the perspective of a practitioner or data generator encountering the gap. Does not embed a solution direction. |
 | Fails (below bar) | Describes a solution instead of a problem (e.g., "add column X to the dataset"). Too vague to act on (e.g., "improve billing"). Restates the use case instead of identifying the underlying gap. Contains implementation language (column names, data types, JSON structures) rather than describing what practitioners cannot do. |
 
-### Use Case / User Story
+#### Use Case / User Story
 
 The use case follows the "As a / I need / So that" format. It is scoped to a single capability and describes a practitioner need, not an implementation detail.
 
@@ -45,7 +47,7 @@ The use case follows the "As a / I need / So that" format. It is scoped to a sin
 | Passes | Follows the As a / I need / So that structure. Scoped to one capability. Describes what the practitioner needs to accomplish, not how the spec should change. The "I need" clause references data or analysis, not spec mechanics. |
 | Fails (below bar) | Solution-oriented: describes spec changes or column additions rather than practitioner needs. Too broad: bundles multiple capabilities into a single use case (e.g., "I need commitment tracking, optimization, and renewal planning"). Mixes dimensions and metrics in a single request. The "So that" clause is missing or generic (e.g., "so that I can use the data"). |
 
-### Success Criteria
+#### Success Criteria
 
 Success criteria are testable statements focused on what practitioners can do once the FR is implemented. Each criterion must pass five quality checks:
 
@@ -65,10 +67,10 @@ Good criteria typically fall into one of these lenses:
 
 | Outcome | Criteria |
 |:--------|:---------|
-| Passes | Contains 2-4 criteria that satisfy the five quality checks above. Each criterion uses one of the lenses to describe a practitioner outcome. |
+| Passes | Contains typically 2-4 criteria that satisfy the five quality checks above. Each criterion uses one of the lenses to describe a practitioner outcome. Complex FRs that span multiple datasets or concepts may need more. |
 | Fails (below bar) | Describes implementation changes instead of outcomes (e.g., "Column X is added to the dataset"). Contains solution content misplaced from the Proposed Solution section. Not testable against a dataset. Too vague to verify (e.g., "improved consistency"). Criteria are redundant with each other. |
 
-### Organizations Requesting
+#### Organizations Requesting
 
 At least one organization is listed with a priority signal (blocker or nice-to-have).
 
@@ -79,7 +81,7 @@ At least one organization is listed with a priority signal (blocker or nice-to-h
 
 ### Optional Sections
 
-Data Generator Support, Supporting Documentation, and Proposed Solution are not triaged for quality. Their presence is encouraged but not required for an FR to advance.
+Data Generator Support, Data Generator Documentation Links, Supporting Documentation, Proposed Solution, and Additional Context are not triaged for quality. Their presence is encouraged but not required for an FR to advance.
 
 ## Label System
 
@@ -149,7 +151,9 @@ Labels defined in this document will be created in GitHub after these guidelines
 
 ## Triage Workflow
 
-Triage follows four logical gates. An FR must clear all four before it can be considered for scope assignment. These gates are logical checks, not necessarily separate passes. A single triage pass can clear multiple gates. Any contributor with triage permissions can perform Gates 1-3. Gate 4 is completed by the PM.
+Triage follows four logical gates. An FR must clear all four before it can be considered for scope assignment. These gates are logical checks, not necessarily separate passes. A single triage pass can clear multiple gates.
+
+The PM triages new FRs weekly. Any maintainer is empowered to triage at any time, especially for FRs they are stewarding or delivering. Gates 1-3 are open to any contributor with triage permissions. Gate 4 is completed by the PM.
 
 ### Gate 1: Completeness Check
 
@@ -202,6 +206,8 @@ The PM fills the Maintainer Assessment sections of the FR template:
 ## Staleness Policy
 
 Feature Requests that remain in an unresolved triage state accumulate staleness across release cycles. The release count starts from when the oldest currently-unresolved `needs` or `revise` label was applied. If all triage labels are cleared and a new one is applied later, the count restarts from that point.
+
+The PM monitors staleness as part of weekly triage. Closure at the 5-release threshold is brought to the Maintainers for review before the FR is closed.
 
 | Threshold | Action |
 |:----------|:-------|
