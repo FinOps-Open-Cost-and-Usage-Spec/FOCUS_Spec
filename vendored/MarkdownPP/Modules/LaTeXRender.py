@@ -76,7 +76,7 @@ class LaTeXRender(Module):
 
         # Numeric prose patterns such as "$4,380 / 12 months / 50 users" or
         # "$0.02 < Tolerance $1.00" are common false positives.
-        if has_digit and word_count > 0 and not mathcommandre.search(content):
+        if has_digit and word_count > 0:
             return False
 
         # Long prose between dollars is almost never intentional LaTeX.
