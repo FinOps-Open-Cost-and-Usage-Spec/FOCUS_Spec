@@ -297,8 +297,6 @@ To further enhance readability, individual requirements within each group SHOULD
 * **Start with the DatasetId**: Whenever possible, begin each requirement with the DatasetId to make the requirement clear and focused.
 * **Use Asterisks for Lists**: All unordered lists representing normative requirements must use an asterisk (`*`) for the bullet character. Do not use dashes (`-`) or plus signs (`+`). This ensures visual consistency across the specification and aligns with our automated linting standards.
 
-  Example Pattern:
-
 ```markdown
 * <DatasetId> MUST be present[ when <Condition>].
 ```
@@ -444,8 +442,6 @@ To further enhance readability, individual requirements within each group SHOULD
 * **Start with the ColumnId**: Whenever possible, begin each requirement with the ColumnId to make the requirement clear and focused.
 * **Use Asterisks for Lists**: All unordered lists representing normative requirements MUST use an asterisk (`*`) for the bullet character. Do not use dashes (`-`) or plus signs (`+`). This ensures visual consistency across the specification and aligns with our automated linting standards.
 
-  Example Pattern:
-
 ```markdown
 * <ColumnId> MUST/MUST NOT/SHOULD/MUST be null when <Condition>.
 ```
@@ -527,8 +523,6 @@ FOCUS defines two JSON-based value formats for columns: Key-Value Format and JSO
 
 * When there is only one nullability-related requirement, state it directly. If there are multiple, list them as nested bullets under the introductory bullet 'ColumnId nullability is defined as follows:'
 
-  Example Pattern:
-
 ```markdown
 * <ColumnId> MUST adhere to the following nullability requirements:
   * <ColumnId> MUST be null when <Condition>.
@@ -537,16 +531,12 @@ FOCUS defines two JSON-based value formats for columns: Key-Value Format and JSO
 
 * When requirements follow conditional logic (e.g., `If... Else If... Else`), the order should be adjusted so that the most specific conditions appear first, while the most general requirement (e.g., a MUST or SHOULD) is placed last as the fallback rule (`In all other cases` clause).
 
-  Example Pattern:
-
 ```markdown
 * <ColumnId> MUST adhere to the following nullability requirements:
   * <ColumnId> MUST/MUST NOT/SHOULD/SHOULD NOT/MAY be null when <Condition>.
   * <ColumnId> MUST/MUST NOT/SHOULD/SHOULD NOT/MAY be null when <Condition>.
   * <ColumnId> MUST/MUST NOT/SHOULD/SHOULD NOT/MAY be null in all other cases.
 ```
-
-  Example Pattern:
 
 ```markdown
 * <ColumnId> MUST adhere to the following nullability requirements:
@@ -561,13 +551,11 @@ FOCUS defines two JSON-based value formats for columns: Key-Value Format and JSO
 * **Parent Condition**
   * When a specific condition (or set of conditions) applies to a subset of requirements, you may group them under that condition.
   * The requirement's bullet should start with the {Condition}, and the following requirements should begin with the {ColumnId}.
-  * For conditions that apply to multiple nested requirements, use the following pattern:
+  * For conditions that apply to multiple nested requirements, use one of the following patterns:
 
 ```markdown
 * When <Condition(s)>, <ColumnId> MUST adhere to the following requirements:
 ```
-
-  Example Pattern:
   
 ```markdown
 * When <Condition>, <ColumnId> MUST adhere to the following requirements:
@@ -577,8 +565,6 @@ FOCUS defines two JSON-based value formats for columns: Key-Value Format and JSO
 
 * **Nested Condition**
   * For nested conditions, if the parent condition already defines the adherence (e.g., {ColumnId} adheres to the following additional requirements), do not repeat this phrase. Simply state the nested condition, and then list the specific requirements for that condition under the nested bullet.
-
-  Example Pattern:
 
 ```markdown
 * When <Condition>, <ColumnId> MUST adhere to the following requirements:
