@@ -150,6 +150,10 @@ The normative subject MUST be a schema-level entity, such as:
     * `Key value in Object in FOCUS dataset column`
     * `Key in FOCUS dataset column`
     * `Key value in FOCUS dataset column`
+    * `<term> key` / `<term> value` for column-specific key-value terminology (e.g., `Tag keys`, `Property value`)
+    * `<ObjectId>` for JSON Object-level requirements (e.g., `ContractAppliedObject`)
+    * `<ObjectId>.<PropertyPath>` for JSON Object property-level requirements (e.g., `ContractCommitmentApplicabilityObject.Applicability.Cost`)
+    * `<ObjectId>.<PropertyPath>[*].<PropertyPath>` for properties within arrays (e.g., `ContractAppliedObject.Elements[*].ContractId`, `ContractCommitmentApplicabilityObject.Inclusions[*].Dimension`)
 
 The subject SHOULD be explicit and unambiguous.
 
@@ -293,11 +297,11 @@ To further enhance readability, individual requirements within each group SHOULD
 * **Start with the DatasetId**: Whenever possible, begin each requirement with the DatasetId to make the requirement clear and focused.
 * **Use Asterisks for Lists**: All unordered lists representing normative requirements must use an asterisk (`*`) for the bullet character. Do not use dashes (`-`) or plus signs (`+`). This ensures visual consistency across the specification and aligns with our automated linting standards.
 
-  **Example Pattern 1**
+  Example Pattern:
 
-  ```markdown
-  * <DatasetId> MUST be present[ when <Condition>].
-  ```
+```markdown
+* <DatasetId> MUST be present[ when <Condition>].
+```
 
 ### Consistent Wording and Patterns in Dataset Requirements
 
@@ -440,11 +444,11 @@ To further enhance readability, individual requirements within each group SHOULD
 * **Start with the ColumnId**: Whenever possible, begin each requirement with the ColumnId to make the requirement clear and focused.
 * **Use Asterisks for Lists**: All unordered lists representing normative requirements MUST use an asterisk (`*`) for the bullet character. Do not use dashes (`-`) or plus signs (`+`). This ensures visual consistency across the specification and aligns with our automated linting standards.
 
-  **Example Pattern 1**
+  Example Pattern:
 
-  ```markdown
-  * <ColumnId> MUST/MUST NOT/SHOULD/MUST be null when <Condition>.
-  ```
+```markdown
+* <ColumnId> MUST/MUST NOT/SHOULD/MUST be null when <Condition>.
+```
 
 * **Use {ColumnId} for Column and Value References**: Whenever possible, use {ColumnId} when referring to a column or its values.
 
@@ -495,15 +499,15 @@ FOCUS defines two JSON-based value formats for columns: Key-Value Format and JSO
 
 * **Reference the Object in Column Requirements**: JSON Object Format columns SHOULD declare conformance to the corresponding object in the Column Requirements section using the following pattern:
 
-  ```markdown
-  * <ColumnId> MUST conform to <ObjectId> requirements[ when <Condition>].
-  ```
+```markdown
+* <ColumnId> MUST conform to <ObjectId> requirements[ when <Condition>].
+```
 
 * **Reference the JSON Schema in Object Requirements**: JSON Object Format columns SHOULD reference the corresponding JSON Schema in the Object Requirements section using the following pattern:
 
-  ```markdown
-  * <ObjectId> MUST conform to the <ObjectSchemaId> JSON Schema.
-  ```
+```markdown
+* <ObjectId> MUST conform to the <ObjectSchemaId> JSON Schema.
+```
 
   The referenced schema should be consistent with the [JSON Schema Specification](https://json-schema.org/specification) (Draft 2020-12).
 
@@ -523,34 +527,34 @@ FOCUS defines two JSON-based value formats for columns: Key-Value Format and JSO
 
 * When there is only one nullability-related requirement, state it directly. If there are multiple, list them as nested bullets under the introductory bullet 'ColumnId nullability is defined as follows:'
 
-  **Example Pattern 1**
+  Example Pattern:
 
-  ```markdown
-  * <ColumnId> MUST adhere to the following nullability requirements:
-    * <ColumnId> MUST be null when <Condition>.
-    * <ColumnId> MUST NOT be null when <Condition>.
-  ```
+```markdown
+* <ColumnId> MUST adhere to the following nullability requirements:
+  * <ColumnId> MUST be null when <Condition>.
+  * <ColumnId> MUST NOT be null when <Condition>.
+```
 
 * When requirements follow conditional logic (e.g., `If... Else If... Else`), the order should be adjusted so that the most specific conditions appear first, while the most general requirement (e.g., a MUST or SHOULD) is placed last as the fallback rule (`In all other cases` clause).
 
-  **Example Pattern 2**
+  Example Pattern:
 
-  ```markdown
-  * <ColumnId> MUST adhere to the following nullability requirements:
-    * <ColumnId> MUST/MUST NOT/SHOULD/SHOULD NOT/MAY be null when <Condition>.
-    * <ColumnId> MUST/MUST NOT/SHOULD/SHOULD NOT/MAY be null when <Condition>.
-    * <ColumnId> MUST/MUST NOT/SHOULD/SHOULD NOT/MAY be null in all other cases.
-  ```
+```markdown
+* <ColumnId> MUST adhere to the following nullability requirements:
+  * <ColumnId> MUST/MUST NOT/SHOULD/SHOULD NOT/MAY be null when <Condition>.
+  * <ColumnId> MUST/MUST NOT/SHOULD/SHOULD NOT/MAY be null when <Condition>.
+  * <ColumnId> MUST/MUST NOT/SHOULD/SHOULD NOT/MAY be null in all other cases.
+```
 
-  **Example Pattern 3**
+  Example Pattern:
 
-  ```markdown
-  * <ColumnId> MUST adhere to the following nullability requirements:
-    * <ColumnId> MUST be null when <Condition>.
-    * When <Condition>, <ColumnId> MUST adhere to the following requirements:
-      * <ColumnId> MUST NOT be null when <Condition>.
-      * <ColumnId> MAY be null when <Condition>.
-  ```
+```markdown
+* <ColumnId> MUST adhere to the following nullability requirements:
+  * <ColumnId> MUST be null when <Condition>.
+  * When <Condition>, <ColumnId> MUST adhere to the following requirements:
+    * <ColumnId> MUST NOT be null when <Condition>.
+    * <ColumnId> MAY be null when <Condition>.
+```
 
 ### Grouping of Column Requirements Based on Specific Conditions
 
@@ -559,30 +563,30 @@ FOCUS defines two JSON-based value formats for columns: Key-Value Format and JSO
   * The requirement's bullet should start with the {Condition}, and the following requirements should begin with the {ColumnId}.
   * For conditions that apply to multiple nested requirements, use the following pattern:
 
-  ```markdown
-    When <Condition(s)>, <ColumnId> MUST adhere to the following requirements:
-  ```
+```markdown
+* When <Condition(s)>, <ColumnId> MUST adhere to the following requirements:
+```
 
-  **Example Pattern 1**
+  Example Pattern:
   
-  ```markdown
-  * When <Condition>, <ColumnId> MUST adhere to the following requirements:
-    * <ColumnId> MUST NOT be null when <Condition>.
-    * <ColumnId> MAY be null when <Condition>.
-  ```
+```markdown
+* When <Condition>, <ColumnId> MUST adhere to the following requirements:
+  * <ColumnId> MUST NOT be null when <Condition>.
+  * <ColumnId> MAY be null when <Condition>.
+```
 
 * **Nested Condition**
   * For nested conditions, if the parent condition already defines the adherence (e.g., {ColumnId} adheres to the following additional requirements), do not repeat this phrase. Simply state the nested condition, and then list the specific requirements for that condition under the nested bullet.
 
-  **Example Pattern 2**
+  Example Pattern:
 
-  ```markdown
-  * When <Condition>, <ColumnId> MUST adhere to the following requirements:
+```markdown
+* When <Condition>, <ColumnId> MUST adhere to the following requirements:
+  * <ColumnId> MUST be <SpecificRequirement>.
+  * When <NestedCondition>:
     * <ColumnId> MUST be <SpecificRequirement>.
-    * When <NestedCondition>:
-      * <ColumnId> MUST be <SpecificRequirement>.
-      * <ColumnId> MUST be <SpecificRequirement>.
-  ```
+    * <ColumnId> MUST be <SpecificRequirement>.
+```
 
 ### Consistent Wording and Patterns in Column Requirements
 
@@ -698,17 +702,17 @@ To ensure clarity and consistency across columns and corresponding requirements,
 
 * Patterns:
 
-  ```markdown
-  * {ColumnId} MUST be a unique identifier within {Scope}.
-  * {ColumnId} SHOULD be a fully-qualified identifier.
-  ```
+```markdown
+* {ColumnId} MUST be a unique identifier within {Scope}.
+* {ColumnId} SHOULD be a fully-qualified identifier.
+```
 
 * Examples:
 
-  ```markdown
-  * BillingAccountId MUST be a unique identifier within a service provider.
-  * ResourceId SHOULD be a fully-qualified identifier.
-  ```
+```markdown
+* BillingAccountId MUST be a unique identifier within a service provider.
+* ResourceId SHOULD be a fully-qualified identifier.
+```
 
 ##### Column Aggregation
 
@@ -719,25 +723,25 @@ To ensure clarity and consistency across columns and corresponding requirements,
 
 * Patterns:
 
-  ```markdown
-  * {ColumnId} MUST/SHOULD remain consistent over time for a given {OtherColumnId}.
-  ```
+```markdown
+* {ColumnId} MUST/SHOULD remain consistent over time for a given {OtherColumnId}.
+```
 
 * Examples:
 
-  ```markdown
-  * SkuMeter SHOULD remain consistent over time for a given SkuId.
-  * CommitmentDiscountUnit MUST remain consistent over time for a given CommitmentDiscountId.
-  ```
+```markdown
+* SkuMeter SHOULD remain consistent over time for a given SkuId.
+* CommitmentDiscountUnit MUST remain consistent over time for a given CommitmentDiscountId.
+```
 
 ##### References to Charge and Billing Periods
 
 * Patterns:
 
-  ```markdown
-  * ...in a given billing period...
-  * ...in a given charge period...
-  ```
+```markdown
+* ...in a given billing period...
+* ...in a given charge period...
+```
 
 ##### Preferred Terminology for Numerical References
 
@@ -747,10 +751,10 @@ To ensure clarity and consistency across columns and corresponding requirements,
 
 * Examples:
 
-  ```markdown
-  * When the service provider has only one user-defined [*tag scheme*](#glossary:tag-scheme). (instead of: When the service provider has only 1 user-defined *tag scheme*.)
-  * When the service provider has more than one user-defined *tag scheme*. (instead of: When the service provider has 2 or more user-defined *tag schemes*.)
-  ```
+```markdown
+* When the service provider has only one user-defined [*tag scheme*](#glossary:tag-scheme). (instead of: When the service provider has only 1 user-defined *tag scheme*.)
+* When the service provider has more than one user-defined *tag scheme*. (instead of: When the service provider has 2 or more user-defined *tag schemes*.)
+```
 
 ### Column Normative Requirements Examples
 
