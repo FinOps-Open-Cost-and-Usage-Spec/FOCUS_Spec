@@ -36,7 +36,7 @@ CommitmentProgramEligibilityDetailsObject MUST adhere to the following requireme
   * Each entry in CommitmentProgramEligibilityDetailsObject.CommitmentPrograms MUST have property keys that begin with the string "x_" unless it is a FOCUS-defined property key.
   * CommitmentProgramEligibilityDetailsObject.CommitmentPrograms.ProgramType MUST be of type String.
   * CommitmentProgramEligibilityDetailsObject.CommitmentPrograms.ProgramType MUST NOT be null.
-  * CommitmentProgramEligibilityDetailsObject.CommitmentPrograms.ProgramType MUST correspond to a *commitment program* type supported by the service provider (e.g., "FlexibleSpendPlan", "ResourceReservation", "BulkCapacityCredit", "AdvanceResourceCommitment").
+  * CommitmentProgramEligibilityDetailsObject.CommitmentPrograms.ProgramType MUST correspond to a *commitment program* type supported by the service provider.
   * CommitmentProgramEligibilityDetailsObject.CommitmentPrograms.ProgramType MUST equal [CommitmentDiscountType](#datasets.costandusage.commitmentdiscounttype) for one object in CommitmentProgramEligibilityDetailsObject.CommitmentPrograms when CommitmentDiscountType is not null.
   * CommitmentProgramEligibilityDetailsObject.CommitmentPrograms.ProgramType SHOULD correspond to terminology disclosed by the service provider in public documentation.
 
