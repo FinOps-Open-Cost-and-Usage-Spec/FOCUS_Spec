@@ -160,7 +160,7 @@ CostAndUsage MUST adhere to the following requirements:
 * CostAndUsage MUST conform to [DatasetConfiguration](#attributes.datasetconfiguration) requirements.
 * CostAndUsage MUST conform to [DeliveryHandling](#attributes.deliveryhandling) requirements.
 * CostAndUsage MUST include *charges* representing unused portions of a [*commitment*](#glossary:commitment) when the *commitment* is not fully utilized.
-* CostAndUsage MUST include separate *charges* representing discounted and non-discounted portions when a *commitment discount* applies to only a portion of the originally incurred *charge*.
+* CostAndUsage MUST include separate *charges* representing discounted and non-discounted portions when a discount applies to only a portion of the originally incurred *charge*.
 * When the data generator supports data generator-calculated split cost allocation, CostAndUsage MUST adhere to the following requirements:
   * CostAndUsage MUST have its data generator-calculated split cost allocation method documented and accessible to practitioners.
   * CostAndUsage SHOULD offer data generator-calculated split cost allocation on an opt-in basis.
