@@ -1,14 +1,16 @@
 ## Diff
 
-diff --git a/specification/attributes/invoice_handling.md b/specification/attributes/invoice_handling.md
-deleted file mode 100644
-index 0c7d9a26..00000000
---- a/specification/attributes/invoice_handling.md
-+++ /dev/null
-@@ -1,33 +0,0 @@
+Note: InvoiceHandling Attribute was removed from release v1.4.
+
+- Path: `specification/attributes/invoice_handling.md`
+- From ref: `v1.3`
+- To ref: `working_draft`
+- Requirements found in from ref: `True`
+- Requirements found in to ref: `False`
+
 [-# Invoice Handling-]
 
-[-FinOps practitioners must be able to reconcile FOCUS datasets with the corresponding invoices and usage statements they receive from [*Invoice Issuers*](#glossary:InvoiceIssuer). In practice, this means ensuring that all monetary [*charges*](#glossary:charge) that appear on an invoice or usage statement — including those not tied to metered usage — are represented in the [*FOCUS dataset*](#glossary:FOCUS-dataset). Without this alignment, it becomes difficult to perform accurate invoice reconciliation, financial reporting, and chargeback.-]
+[-FinOps practitioners must be able to reconcile FOCUS datasets with the corresponding invoices and usage statements they receive from *Invoice Issuers*. In practice, this means ensuring that all monetary *charges* that appear on an invoice or usage statement — including those not tied to metered usage — are represented in the *FOCUS dataset*. Without this alignment, it becomes difficult to perform accurate invoice reconciliation, financial reporting, and chargeback.-]
 
 [-This attribute introduces requirements for how charges such as usage, taxes, credits, refunds, etc, inclusive of support, training, and marketplace transactions, and any other type of charge should be captured and categorized. It also defines expectations around the completeness and consistency of invoice-level totals within the dataset, enabling FOCUS datasets to be used in a system of record for all invoiced costs.-]
 
@@ -26,7 +28,7 @@ index 0c7d9a26..00000000
 
 [-## Requirements-]
 
-[-* All costs that appear on any invoice issued to a [*BillingAccountId*](#billingaccountid) MUST be included in the *FOCUS dataset*.-]
+[-* All costs that appear on any invoice issued to a *BillingAccountId* MUST be included in the *FOCUS dataset*.-]
 [-* If an invoice-level *charge* appears on a customer invoice but cannot be expressed using existing FOCUS columns, data generators MUST include provider-defined columns (e.g., x_ChargeSubType) to capture the non-FOCUS-defined details needed to support invoice *charges* reconciliation using the *FOCUS dataset*.-]
 
 [-## Exceptions-]
