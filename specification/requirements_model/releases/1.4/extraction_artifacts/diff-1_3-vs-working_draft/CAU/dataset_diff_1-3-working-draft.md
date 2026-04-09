@@ -1,78 +1,82 @@
 ## Diff
 
+[-<div class='h4-nonindex'>Requirements</div>-]{+## Requirements<!--SkipTOC-->+}
+
 CostAndUsage [-adheres-]{+MUST adhere+} to the following requirements:
 
 * CostAndUsage MUST be present.
-* CostAndUsage {+column presence MUST adhere to the following requirements:+}
-{+  * CostAndUsage SHOULD include [AllocatedMethodDetails](#datasets.costandusage.allocatedmethoddetails) when the data generator supports [Data Generator-Calculated Split Cost Allocation](#datagenerator-calculatedsplitcostallocationhandling).+}
-{+  * CostAndUsage MUST include [AllocatedMethodId](#datasets.costandusage.allocatedmethodid) when the data generator supports [Data Generator-Calculated Split Cost Allocation](#attributes.datagenerator-calculatedsplitcostallocationhandling).+}
-{+  * CostAndUsage MUST include [AllocatedResourceId](#datasets.costandusage.allocatedresourceid) when the data generator supports [Data Generator-Calculated Split Cost Allocation](#attributes.datagenerator-calculatedsplitcostallocationhandling).+}
-{+  * CostAndUsage MUST include [AllocatedResourceName](#datasets.costandusage.allocatedresourcename) when the data generator supports [Data Generator-Calculated Split Cost Allocation](#attributes.datagenerator-calculatedsplitcostallocationhandling).+}
-{+  * CostAndUsage MUST include [AllocatedTags](#datasets.costandusage.allocatedtags) when the service provider supports [Data Generator-Calculated Split Cost Allocation](#datagenerator-calculatedsplitcostallocationhandling).+}
-{+  * CostAndUsage SHOULD include [AvailabilityZone](#datasets.costandusage.availabilityzone) when the host provider supports deploying resources or services within an *availability zone*.+}
-{+  * CostAndUsage MUST include [BilledCost](#datasets.costandusage.billedcost).+}
-{+  * CostAndUsage MUST include [BillingAccountId](#datasets.costandusage.billingaccountid).+}
-{+  * CostAndUsage MUST include [BillingAccountName](#datasets.costandusage.billingaccountname).+}
-{+  * CostAndUsage MUST include [BillingAccountType](#datasets.costandusage.billingaccounttype) when the invoice issuer supports more than one possible BillingAccountType value.+}
-{+  * CostAndUsage MUST include [BillingCurrency](#datasets.costandusage.billingcurrency).+}
-{+  * CostAndUsage MUST include [BillingPeriodEnd](#datasets.costandusage.billingperiodend).+}
-{+  * CostAndUsage MUST include [BillingPeriodStart](#datasets.costandusage.billingperiodstart).+}
-{+  * CostAndUsage MUST include [CapacityReservationId](#datasets.costandusage.capacityreservationid) when the service provider supports *capacity reservations*.+}
-{+  * CostAndUsage MUST include [CapacityReservationStatus](#datasets.costandusage.capacityreservationstatus) when the service provider supports *capacity reservations*.+}
-{+  * CostAndUsage MUST include [ChargeCategory](#datasets.costandusage.chargecategory).+}
-{+  * CostAndUsage MUST include [ChargeClass](#datasets.costandusage.chargeclass).+}
-{+  * CostAndUsage MUST include [ChargeDescription](#datasets.costandusage.chargedescription).+}
-{+  * CostAndUsage SHOULD include [ChargeFrequency](#datasets.costandusage.chargefrequency).+}
-{+  * CostAndUsage MUST include [ChargePeriodEnd](#datasets.costandusage.chargeperiodend).+}
-{+  * CostAndUsage MUST include [ChargePeriodStart](#datasets.costandusage.chargeperiodstart).+}
-{+  * CostAndUsage MUST include [CommitmentDiscountCategory](#datasets.costandusage.commitmentdiscountcategory) when the service provider supports *commitment discounts*.+}
-{+  * CostAndUsage MUST include [CommitmentDiscountId](#datasets.costandusage.commitmentdiscountid) when the service provider supports *commitment discounts*.+}
-{+  * CostAndUsage MUST include [CommitmentDiscountName](#datasets.costandusage.commitmentdiscountname) when the service provider supports *commitment discounts*.+}
-{+  * CostAndUsage MUST include [CommitmentDiscountQuantity](#datasets.costandusage.commitmentdiscountquantity) when the service provider supports *commitment discounts*.+}
-{+  * CostAndUsage MUST include [CommitmentDiscountStatus](#datasets.costandusage.commitmentdiscountstatus) when the service provider supports *commitment discounts*.+}
-{+  * CostAndUsage MUST include [CommitmentDiscountType](#datasets.costandusage.commitmentdiscounttype) when the service provider supports *commitment discounts*.+}
-{+  * CostAndUsage MUST include [CommitmentDiscountUnit](#datasets.costandusage.commitmentdiscountunit) when the service provider supports *commitment discounts*.+}
-{+  * CostAndUsage MUST include [ConsumedQuantity](#datasets.costandusage.consumedquantity) when the service provider supports the measurement of usage.+}
-{+  * CostAndUsage MUST include [ConsumedUnit](#datasets.costandusage.consumedunit) when the service provider supports the measurement of usage.+}
-{+  * CostAndUsage MUST include [ContractApplied](#datasets.costandusage.contractapplied) when the service provider supports *contract commitments*.+}
-{+  * CostAndUsage MUST include [ContractedCost](#datasets.costandusage.contractedcost).+}
-{+  * CostAndUsage MUST include [ContractedUnitPrice](#datasets.costandusage.contractedunitprice) when the service provider supports negotiated pricing concepts.+}
-{+  * CostAndUsage MUST include [EffectiveCost](#datasets.costandusage.effectivecost).+}
-{+  * CostAndUsage MUST include [HostProviderName](#datasets.costandusage.hostprovidername).+}
-{+  * CostAndUsage MUST include [InvoiceDetailId](#datasets.costandusage.invoicedetailid) when the invoice issuer supports payable invoices.+}
-{+  * CostAndUsage MUST include [InvoiceId](#datasets.costandusage.invoiceid) when the invoice issuer supports payable invoices.+}
-{+  * CostAndUsage MUST include [InvoiceIssuerName](#datasets.costandusage.invoiceissuername).+}
-{+  * CostAndUsage MUST include [ListCost](#datasets.costandusage.listcost).+}
-{+  * CostAndUsage MUST include [ListUnitPrice](#datasets.costandusage.listunitprice) when the service provider publishes unit prices exclusive of discounts.+}
-{+  * CostAndUsage MUST include [PricingCategory](#datasets.costandusage.pricingcategory) when the service provider supports more than one pricing category across all [*SKUs*](#glossary:sku).+}
-{+  * CostAndUsage MUST include [PricingCurrency](#datasets.costandusage.pricingcurrency) when the service provider supports pricing and billing in different currencies.+}
-{+  * CostAndUsage MUST include [PricingCurrencyContractedUnitPrice](#datasets.costandusage.pricingcurrencycontractedunitprice) when the service provider supports prices in virtual currency and publishes unit prices exclusive of discounts.+}
-{+  * CostAndUsage MUST include [PricingCurrencyEffectiveCost](#datasets.costandusage.pricingcurrencyeffectivecost) when the service provider supports prices in virtual currency and publishes unit prices exclusive of discounts.+}
-{+  * CostAndUsage MUST include [PricingCurrencyListUnitPrice](#datasets.costandusage.pricingcurrencylistunitprice) when the service provider supports prices in virtual currency and publishes unit prices exclusive of discounts.+}
-{+  * CostAndUsage MUST include [PricingQuantity](#datasets.costandusage.pricingquantity).+}
-{+  * CostAndUsage MUST include [PricingUnit](#datasets.costandusage.pricingunit).+}
-{+  * CostAndUsage MUST include [RegionId](#datasets.costandusage.regionid) when the host provider supports deploying resources or services within a region.+}
-{+  * CostAndUsage MUST include [RegionName](#datasets.costandusage.regionname) when the host provider supports deploying resources or services within a region.+}
-{+  * CostAndUsage MUST include [ResourceId](#datasets.costandusage.resourceid) when the service provider supports billing based on provisioned *resources*.+}
-{+  * CostAndUsage MUST include [ResourceName](#datasets.costandusage.resourcename) when the service provider supports billing based on provisioned resources.+}
-{+  * CostAndUsage MUST include [ResourceType](#datasets.costandusage.resourcetype) when the service provider supports billing based on provisioned *resources* and supports assigning types to *resources*.+}
-{+  * CostAndUsage MUST include [ServiceCategory](#datasets.costandusage.servicecategory).+}
-{+  * CostAndUsage MUST include [ServiceName](#datasets.costandusage.servicename).+}
-{+  * CostAndUsage MUST include [ServiceProviderName](#datasets.costandusage.serviceprovidername).+}
-{+  * CostAndUsage SHOULD include [ServiceSubcategory](#datasets.costandusage.servicesubcategory).+}
-{+  * CostAndUsage MUST include [SkuId](#datasets.costandusage.skuid) when the service provider supports unit pricing concepts and publishes price lists, publicly or as part of contracting.+}
-{+  * CostAndUsage MUST include [SkuMeter](#datasets.costandusage.skumeter) when the service provider supports unit pricing concepts and publishes [*price lists*](#glossary:price-list), publicly or as part of contracting.+}
-{+  * CostAndUsage MUST include [SkuPriceDetails](#datasets.costandusage.skupricedetails) when the service provider supports unit pricing concepts and publishes [*price lists*](#glossary:price-list), publicly or as part of contracting.+}
-{+  * CostAndUsage MUST include [SkuPriceId](#datasets.costandusage.skupriceid) when the service provider supports unit pricing concepts and publishes *price lists*, publicly or as part of contracting.+}
-{+  * CostAndUsage MUST include [SubAccountId](#datasets.costandusage.subaccountid) when the service provider supports a *sub account* construct.+}
-{+  * CostAndUsage MUST include [SubAccountName](#datasets.costandusage.subaccountname) when the service provider supports a *sub account* construct.+}
-{+  * CostAndUsage MUST include [SubAccountType](#datasets.costandusage.subaccounttype) when the service provider supports more than one possible SubAccountType value.+}
-{+  * CostAndUsage MUST include [Tags](#datasets.costandusage.tags) when the data generator supports setting user or provider-defined tags.+}
-{+* CostAndUsage MUST conform to [ColumnHandling](#attributes.columnhandling) requirements.+}
-{+* CostAndUsage MUST conform to [CorrectionHandling](#attributes.correctionhandling) requirements.+}
-{+* CostAndUsage MUST conform to [DataGeneratorCalculatedSplitCostAllocationHandling](#attributes.datagenerator-calculatedsplitcostallocationhandling) requirements.+}
-{+* CostAndUsage+} MUST conform to [-[ColumnHandling](#columnhandling)-]{+[DatasetCompleteness](#attributes.datasetcompleteness)+} requirements.
-* CostAndUsage MUST conform to [-[NullHandling](#nullhandling)-]{+[DatasetConfiguration](#attributes.datasetconfiguration)+} requirements.
-* CostAndUsage MUST conform to [-[DiscountHandling](#discounthandling)-]{+[DeliveryHandling](#attributes.deliveryhandling)+} requirements.
-* CostAndUsage MUST conform to [-[InvoiceHandling](#invoicehandling)-]{+[DiscountHandling](#attributes.discounthandling)+} requirements.
-* CostAndUsage MUST conform to [-[DataGeneratorCalculatedSplitCostAllocationHandling](#datagenerator-calculatedsplitcostallocationhandling)-]{+[NullHandling](#attributes.nullhandling)+} requirements.
+{+* CostAndUsage column presence MUST adhere to the following requirements:+}
+{+  * CostAndUsage SHOULD include AllocatedMethodDetails when the data generator supports Data Generator-Calculated Split Cost Allocation.+}
+{+  * CostAndUsage MUST include AllocatedMethodId when the data generator supports Data Generator-Calculated Split Cost Allocation.+}
+{+  * CostAndUsage MUST include AllocatedResourceId when the data generator supports Data Generator-Calculated Split Cost Allocation.+}
+{+  * CostAndUsage MUST include AllocatedResourceName when the data generator supports Data Generator-Calculated Split Cost Allocation.+}
+{+  * CostAndUsage MUST include AllocatedTags when the service provider supports Data Generator-Calculated Split Cost Allocation.+}
+{+  * CostAndUsage SHOULD include AvailabilityZone when the host provider supports deploying resources or services within an *availability zone*.+}
+{+  * CostAndUsage MUST include BilledCost.+}
+{+  * CostAndUsage MUST include BillingAccountId.+}
+{+  * CostAndUsage MUST include BillingAccountName.+}
+{+  * CostAndUsage MUST include BillingAccountType when the invoice issuer supports more than one possible BillingAccountType value.+}
+{+  * CostAndUsage MUST include BillingCurrency.+}
+{+  * CostAndUsage MUST include BillingPeriodEnd.+}
+{+  * CostAndUsage MUST include BillingPeriodStart.+}
+{+  * CostAndUsage MUST include CapacityReservationId when the service provider supports *capacity reservations*.+}
+{+  * CostAndUsage MUST include CapacityReservationStatus when the service provider supports *capacity reservations*.+}
+{+  * CostAndUsage MUST include ChargeCategory.+}
+{+  * CostAndUsage MUST include ChargeClass.+}
+{+  * CostAndUsage MUST include ChargeDescription.+}
+{+  * CostAndUsage SHOULD include ChargeFrequency.+}
+{+  * CostAndUsage MUST include ChargePeriodEnd.+}
+{+  * CostAndUsage MUST include ChargePeriodStart.+}
+{+  * CostAndUsage MUST include CommitmentDiscountCategory when the service provider supports *commitment discounts*.+}
+{+  * CostAndUsage MUST include CommitmentDiscountId when the service provider supports *commitment discounts*.+}
+{+  * CostAndUsage MUST include CommitmentDiscountName when the service provider supports *commitment discounts*.+}
+{+  * CostAndUsage MUST include CommitmentDiscountQuantity when the service provider supports *commitment discounts*.+}
+{+  * CostAndUsage MUST include CommitmentDiscountStatus when the service provider supports *commitment discounts*.+}
+{+  * CostAndUsage MUST include CommitmentDiscountType when the service provider supports *commitment discounts*.+}
+{+  * CostAndUsage MUST include CommitmentDiscountUnit when the service provider supports *commitment discounts*.+}
+{+  * CostAndUsage MUST include ConsumedQuantity when the service provider supports the measurement of usage.+}
+{+  * CostAndUsage MUST include ConsumedUnit when the service provider supports the measurement of usage.+}
+{+  * CostAndUsage MUST include ContractApplied when the service provider supports *contract commitments*.+}
+{+  * CostAndUsage MUST include ContractedCost.+}
+{+  * CostAndUsage MUST include ContractedUnitPrice when the service provider supports negotiated pricing concepts.+}
+{+  * CostAndUsage MUST include EffectiveCost.+}
+{+  * CostAndUsage MUST include HostProviderName.+}
+{+  * CostAndUsage MUST include InvoiceDetailId when the invoice issuer supports payable invoices.+}
+{+  * CostAndUsage MUST include InvoiceId when the invoice issuer supports payable invoices.+}
+{+  * CostAndUsage MUST include InvoiceIssuerName.+}
+{+  * CostAndUsage MUST include ListCost.+}
+{+  * CostAndUsage MUST include ListUnitPrice when the service provider publishes unit prices exclusive of discounts.+}
+{+  * CostAndUsage MUST include PricingCategory when the service provider supports more than one pricing category across all *SKUs*.+}
+{+  * CostAndUsage MUST include PricingCurrency when the service provider supports pricing and billing in different currencies.+}
+{+  * CostAndUsage MUST include PricingCurrencyContractedUnitPrice when the service provider supports prices in virtual currency and publishes unit prices exclusive of discounts.+}
+{+  * CostAndUsage MUST include PricingCurrencyEffectiveCost when the service provider supports prices in virtual currency and publishes unit prices exclusive of discounts.+}
+{+  * CostAndUsage MUST include PricingCurrencyListUnitPrice when the service provider supports prices in virtual currency and publishes unit prices exclusive of discounts.+}
+{+  * CostAndUsage MUST include PricingQuantity.+}
+{+  * CostAndUsage MUST include PricingUnit.+}
+{+  * CostAndUsage MUST include RegionId when the host provider supports deploying resources or services within a region.+}
+{+  * CostAndUsage MUST include RegionName when the host provider supports deploying resources or services within a region.+}
+{+  * CostAndUsage MUST include ResourceId when the service provider supports billing based on provisioned *resources*.+}
+{+  * CostAndUsage MUST include ResourceName when the service provider supports billing based on provisioned resources.+}
+{+  * CostAndUsage MUST include ResourceType when the service provider supports billing based on provisioned *resources* and supports assigning types to *resources*.+}
+{+  * CostAndUsage MUST include ServiceCategory.+}
+{+  * CostAndUsage MUST include ServiceName.+}
+{+  * CostAndUsage MUST include ServiceProviderName.+}
+{+  * CostAndUsage SHOULD include ServiceSubcategory.+}
+{+  * CostAndUsage MUST include SkuId when the service provider supports unit pricing concepts and publishes price lists, publicly or as part of contracting.+}
+{+  * CostAndUsage MUST include SkuMeter when the service provider supports unit pricing concepts and publishes *price lists*, publicly or as part of contracting.+}
+{+  * CostAndUsage MUST include SkuPriceDetails when the service provider supports unit pricing concepts and publishes *price lists*, publicly or as part of contracting.+}
+{+  * CostAndUsage MUST include SkuPriceId when the service provider supports unit pricing concepts and publishes *price lists*, publicly or as part of contracting.+}
+{+  * CostAndUsage MUST include SubAccountId when the service provider supports a *sub account* construct.+}
+{+  * CostAndUsage MUST include SubAccountName when the service provider supports a *sub account* construct.+}
+{+  * CostAndUsage MUST include SubAccountType when the service provider supports more than one possible SubAccountType value.+}
+{+  * CostAndUsage MUST include Tags when the data generator supports setting user or provider-defined tags.+}
+* CostAndUsage MUST conform to ColumnHandling requirements.
+* CostAndUsage MUST conform to [-NullHandling requirements.-]
+[-* CostAndUsage MUST conform to DiscountHandling requirements.-]
+[-* CostAndUsage MUST conform to InvoiceHandling-]{+CorrectionHandling+} requirements.
+* CostAndUsage MUST conform to DataGeneratorCalculatedSplitCostAllocationHandling requirements.
+{+* CostAndUsage MUST conform to DatasetCompleteness requirements.+}
+{+* CostAndUsage MUST conform to DatasetConfiguration requirements.+}
+{+* CostAndUsage MUST conform to DeliveryHandling requirements.+}
+{+* CostAndUsage MUST conform to DiscountHandling requirements.+}
+{+* CostAndUsage MUST conform to NullHandling requirements.+}
