@@ -645,7 +645,7 @@
     {
       "temp_id": "R026",
       "order": 26,
-      "text": "InvoiceDetail MUST conform to [ColumnHandling](#attributes.columnhandling) requirements.",
+      "text": "InvoiceDetail MUST include [*custom columns*](#glossary:custom-column) to represent any monetary metric that appears on an invoice issued to a BillingAccountId when there is no equivalent [*FOCUS column*](#glossary:FOCUS-column).",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
@@ -654,7 +654,7 @@
       ],
       "block": {
         "block_type": "list_item",
-        "indent_level": 0,
+        "indent_level": 1,
         "bullet": "*"
       },
       "lead_in": {
@@ -770,7 +770,7 @@
     {
       "temp_id": "R031",
       "order": 31,
-      "text": "InvoiceDetail MUST conform to [NullHandling](#attributes.nullhandling) requirements.",
+      "text": "InvoiceDetail MUST represent all invoice line items with a non-zero BilledCost on any invoice associated with a BillingAccountId.",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
@@ -795,7 +795,7 @@
     {
       "temp_id": "R032",
       "order": 32,
-      "text": "InvoiceDetail MUST represent all invoice line items with a non-zero BilledCost on any invoice associated with a BillingAccountId.",
+      "text": "InvoiceDetail [*FOCUS columns*](#glossary:FOCUS-column) MUST conform to [FocusColumnHandling](#attributes.focuscolumnhandling) requirements.",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
@@ -820,7 +820,7 @@
     {
       "temp_id": "R033",
       "order": 33,
-      "text": "InvoiceDetail MUST include [*custom columns*](#glossary:custom-column) to represent any monetary metric that appears on an invoice issued to a BillingAccountId when there is no equivalent [*FOCUS column*](#glossary:FOCUS-column).",
+      "text": "InvoiceDetail *FOCUS columns* MUST conform to [NullHandling](#attributes.nullhandling) requirements.",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
@@ -845,6 +845,31 @@
     {
       "temp_id": "R034",
       "order": 34,
+      "text": "InvoiceDetail *custom columns* MUST conform to [CustomColumnHandling](#attributes.customcolumnhandling) requirements.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Invoice Detail",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 81,
+        "line_end": 81
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L081"
+    },
+    {
+      "temp_id": "R035",
+      "order": 35,
       "text": "InvoiceDetail documentation MUST adhere to the following requirements:",
       "keyword": "MUST",
       "role": "requirement",
@@ -861,31 +886,6 @@
         "ends_with_colon": true
       },
       "provenance": {
-        "line_start": 81,
-        "line_end": 81
-      },
-      "_alignment_status": "confirmed",
-      "ref": "L081"
-    },
-    {
-      "temp_id": "R035",
-      "order": 35,
-      "text": "InvoiceDetail documentation MUST specify how InvoiceDetail records correspond to invoice line items.",
-      "keyword": "MUST",
-      "role": "requirement",
-      "section_path": [
-        "Invoice Detail",
-        "Requirements"
-      ],
-      "block": {
-        "block_type": "list_item",
-        "indent_level": 1,
-        "bullet": "*"
-      },
-      "lead_in": {
-        "ends_with_colon": false
-      },
-      "provenance": {
         "line_start": 82,
         "line_end": 82
       },
@@ -895,7 +895,7 @@
     {
       "temp_id": "R036",
       "order": 36,
-      "text": "InvoiceDetail documentation MUST specify whether invoice line items with BilledCost of 0 are excluded from InvoiceDetail.",
+      "text": "InvoiceDetail documentation MUST specify how InvoiceDetail records correspond to invoice line items.",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
@@ -920,7 +920,7 @@
     {
       "temp_id": "R037",
       "order": 37,
-      "text": "InvoiceDetail documentation MUST describe how columns in the CostAndUsage and InvoiceDetail datasets represent the invoice issuer's [*invoice reconciliation*](#glossary:invoice-reconciliation) process.",
+      "text": "InvoiceDetail documentation MUST specify whether invoice line items with BilledCost of 0 are excluded from InvoiceDetail.",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
@@ -945,7 +945,7 @@
     {
       "temp_id": "R038",
       "order": 38,
-      "text": "InvoiceDetail documentation MUST be freely accessible to FOCUS consumers.",
+      "text": "InvoiceDetail documentation MUST describe how columns in the CostAndUsage and InvoiceDetail datasets represent the invoice issuer's [*invoice reconciliation*](#glossary:invoice-reconciliation) process.",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
@@ -966,6 +966,31 @@
       },
       "_alignment_status": "confirmed",
       "ref": "L085"
+    },
+    {
+      "temp_id": "R039",
+      "order": 39,
+      "text": "InvoiceDetail documentation MUST be freely accessible to FOCUS consumers.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Invoice Detail",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 1,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 86,
+        "line_end": 86
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L086"
     }
   ],
   "warnings": [],
