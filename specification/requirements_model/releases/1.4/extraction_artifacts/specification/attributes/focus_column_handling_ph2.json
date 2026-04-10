@@ -1,0 +1,363 @@
+{
+  "phase": 2,
+  "source": {
+    "path": "specification/attributes/focus_column_handling.md",
+    "version": "0.5"
+  },
+  "entity": {
+    "entity_type": "Attribute",
+    "entity_id": "FocusColumnHandling",
+    "entity_name": "FOCUS Column Handling"
+  },
+  "requirements_scope": {
+    "section_names_allowed": [
+      "Requirements",
+      "Column Requirements",
+      "Object Requirements",
+      "Dataset Requirements",
+      "Attribute Requirements"
+    ],
+    "atoms_in_scope_count": 12
+  },
+  "0_outline_root": "ROOT: FOCUS Column Handling > Requirements",
+  "0_outline_lines": [
+    "L007: \"Column conforming to FocusColumnHandling attribute MUST adhere to the following requirements:\"",
+    "  L009: \"[*FOCUS column*](#glossary:FOCUS-column) MUST use a Display Name consistent with the Column ID, with spaces inserted between words (e.g., Column ID `BillingAccountName` and Display Name `Billing Account Name`, Column ID `BillingAccountId` and Display Name `Billing Account ID`).\"",
+    "  L010: \"*FOCUS column* MUST use [*Pascal case*](#glossary:pascalcase) in the Column ID.\"",
+    "  L011: \"*FOCUS column* MUST use only alphanumeric characters in the Column ID.\"",
+    "  L012: \"*FOCUS column* MUST NOT include special characters in the Column ID.\"",
+    "  L013: \"*FOCUS column* MUST NOT use abbreviations other than `Id` in the Column ID.\"",
+    "  L014: \"*FOCUS column* SHOULD NOT use acronyms other than `Sku` in the Column ID.\"",
+    "  L015: \"*FOCUS column* SHOULD NOT exceed 50 characters in the Column ID to accommodate column length restrictions of various data repositories.\"",
+    "  L016: \"*FOCUS column* representing an identifier MUST include the `Id` suffix in the Column ID.\"",
+    "  L017: \"*FOCUS column* representing a name MUST include the `Name` suffix in the Column ID.\"",
+    "  L018: \"*FOCUS column* representing a product offering that incurred a charge MUST include `Sku` in the Column ID.\"",
+    "  L019: \"*FOCUS column* that includes the `Category` suffix in the Column ID and is not null MUST contain one of the FOCUS-defined allowed values.\""
+  ],
+  "0_outline_summary": {
+    "node_count": 12,
+    "leaf_count": 11,
+    "lead_in_count": 1,
+    "max_depth": 1,
+    "max_indent_level": 0,
+    "root_children_count": 1,
+    "keyword_distribution": {
+      "MUST": 8,
+      "MUST NOT": 2,
+      "SHOULD NOT": 2
+    },
+    "lead_ins": [
+      {
+        "ref": "L007",
+        "text_preview": "Column conforming to FocusColumnHandling attribute MUST adhere to the following requirements:",
+        "children": 11
+      }
+    ]
+  },
+  "structure": {
+    "root": {
+      "node_id": "R000",
+      "kind": "root",
+      "children": [
+        {
+          "node_id": "R001",
+          "kind": "atom",
+          "atom": {
+            "temp_id": "R001",
+            "order": 1,
+            "ref": "L007",
+            "text": "Column conforming to FocusColumnHandling attribute MUST adhere to the following requirements:",
+            "keyword": "MUST",
+            "section_path": [
+              "FOCUS Column Handling",
+              "Requirements"
+            ],
+            "block": {
+              "block_type": "paragraph",
+              "indent_level": 0,
+              "bullet": null
+            },
+            "lead_in": {
+              "ends_with_colon": true
+            }
+          },
+          "children": [
+            {
+              "node_id": "R002",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R002",
+                "order": 2,
+                "ref": "L009",
+                "text": "[*FOCUS column*](#glossary:FOCUS-column) MUST use a Display Name consistent with the Column ID, with spaces inserted between words (e.g., Column ID `BillingAccountName` and Display Name `Billing Account Name`, Column ID `BillingAccountId` and Display Name `Billing Account ID`).",
+                "keyword": "MUST",
+                "section_path": [
+                  "FOCUS Column Handling",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R003",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R003",
+                "order": 3,
+                "ref": "L010",
+                "text": "*FOCUS column* MUST use [*Pascal case*](#glossary:pascalcase) in the Column ID.",
+                "keyword": "MUST",
+                "section_path": [
+                  "FOCUS Column Handling",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R004",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R004",
+                "order": 4,
+                "ref": "L011",
+                "text": "*FOCUS column* MUST use only alphanumeric characters in the Column ID.",
+                "keyword": "MUST",
+                "section_path": [
+                  "FOCUS Column Handling",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R005",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R005",
+                "order": 5,
+                "ref": "L012",
+                "text": "*FOCUS column* MUST NOT include special characters in the Column ID.",
+                "keyword": "MUST NOT",
+                "section_path": [
+                  "FOCUS Column Handling",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R006",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R006",
+                "order": 6,
+                "ref": "L013",
+                "text": "*FOCUS column* MUST NOT use abbreviations other than `Id` in the Column ID.",
+                "keyword": "MUST NOT",
+                "section_path": [
+                  "FOCUS Column Handling",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R007",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R007",
+                "order": 7,
+                "ref": "L014",
+                "text": "*FOCUS column* SHOULD NOT use acronyms other than `Sku` in the Column ID.",
+                "keyword": "SHOULD NOT",
+                "section_path": [
+                  "FOCUS Column Handling",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R008",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R008",
+                "order": 8,
+                "ref": "L015",
+                "text": "*FOCUS column* SHOULD NOT exceed 50 characters in the Column ID to accommodate column length restrictions of various data repositories.",
+                "keyword": "SHOULD NOT",
+                "section_path": [
+                  "FOCUS Column Handling",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R009",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R009",
+                "order": 9,
+                "ref": "L016",
+                "text": "*FOCUS column* representing an identifier MUST include the `Id` suffix in the Column ID.",
+                "keyword": "MUST",
+                "section_path": [
+                  "FOCUS Column Handling",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R010",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R010",
+                "order": 10,
+                "ref": "L017",
+                "text": "*FOCUS column* representing a name MUST include the `Name` suffix in the Column ID.",
+                "keyword": "MUST",
+                "section_path": [
+                  "FOCUS Column Handling",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R011",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R011",
+                "order": 11,
+                "ref": "L018",
+                "text": "*FOCUS column* representing a product offering that incurred a charge MUST include `Sku` in the Column ID.",
+                "keyword": "MUST",
+                "section_path": [
+                  "FOCUS Column Handling",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R012",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R012",
+                "order": 12,
+                "ref": "L019",
+                "text": "*FOCUS column* that includes the `Category` suffix in the Column ID and is not null MUST contain one of the FOCUS-defined allowed values.",
+                "keyword": "MUST",
+                "section_path": [
+                  "FOCUS Column Handling",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "debug": {
+    "ruleset": "ph2_tree_v1",
+    "parenting_signals": [
+      "section_path_boundary",
+      "lead_in_colon",
+      "indent_level"
+    ],
+    "warnings": []
+  }
+}
