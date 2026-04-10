@@ -1,7 +1,7 @@
 {
   "ModelRules": {
     "ATT-DatasetConfiguration-A-000-M": {
-      "Function": "Validation",
+      "Function": "Composite",
       "Reference": "DatasetConfiguration",
       "EntityType": "Attribute",
       "EntityName": "Dataset Configuration",
@@ -17,7 +17,7 @@
       "DatasetId": "",
       "DatasetName": "",
       "ValidationCriteria": {
-        "MustSatisfy": "*FOCUS dataset* MUST adhere to the following requirements:",
+        "MustSatisfy": "Dataset conforming to DatasetConfiguration attribute MUST adhere to the following requirements:",
         "Keyword": "MUST",
         "Requirement": {},
         "Condition": [],
