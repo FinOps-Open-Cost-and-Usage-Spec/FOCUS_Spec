@@ -1,0 +1,329 @@
+{
+  "phase": 1,
+  "source": {
+    "path": "specification/attributes/focus_column_handling.md",
+    "version": "0.5"
+  },
+  "entity": {
+    "entity_type": "Attribute",
+    "entity_id": "FocusColumnHandling",
+    "entity_name": "FOCUS Column Handling"
+  },
+  "entities_found": [
+    {
+      "entity_type": "Attribute",
+      "entity_id": "FocusColumnHandling",
+      "entity_name": "FOCUS Column Handling"
+    }
+  ],
+  "atoms": [
+    {
+      "temp_id": "R001",
+      "order": 1,
+      "text": "Column conforming to FocusColumnHandling attribute MUST adhere to the following requirements:",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "FOCUS Column Handling",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "paragraph",
+        "indent_level": 0,
+        "bullet": null
+      },
+      "lead_in": {
+        "ends_with_colon": true
+      },
+      "provenance": {
+        "line_start": 7,
+        "line_end": 7
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L007"
+    },
+    {
+      "temp_id": "R002",
+      "order": 2,
+      "text": "[*FOCUS column*](#glossary:FOCUS-column) MUST use a Display Name consistent with the Column ID, with spaces inserted between words (e.g., Column ID `BillingAccountName` and Display Name `Billing Account Name`, Column ID `BillingAccountId` and Display Name `Billing Account ID`).",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "FOCUS Column Handling",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 9,
+        "line_end": 9
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L009"
+    },
+    {
+      "temp_id": "R003",
+      "order": 3,
+      "text": "*FOCUS column* MUST use [*Pascal case*](#glossary:pascalcase) in the Column ID.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "FOCUS Column Handling",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 10,
+        "line_end": 10
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L010"
+    },
+    {
+      "temp_id": "R004",
+      "order": 4,
+      "text": "*FOCUS column* MUST use only alphanumeric characters in the Column ID.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "FOCUS Column Handling",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 11,
+        "line_end": 11
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L011"
+    },
+    {
+      "temp_id": "R005",
+      "order": 5,
+      "text": "*FOCUS column* MUST NOT include special characters in the Column ID.",
+      "keyword": "MUST NOT",
+      "role": "requirement",
+      "section_path": [
+        "FOCUS Column Handling",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 12,
+        "line_end": 12
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L012"
+    },
+    {
+      "temp_id": "R006",
+      "order": 6,
+      "text": "*FOCUS column* MUST NOT use abbreviations other than `Id` in the Column ID.",
+      "keyword": "MUST NOT",
+      "role": "requirement",
+      "section_path": [
+        "FOCUS Column Handling",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 13,
+        "line_end": 13
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L013"
+    },
+    {
+      "temp_id": "R007",
+      "order": 7,
+      "text": "*FOCUS column* SHOULD NOT use acronyms other than `Sku` in the Column ID.",
+      "keyword": "SHOULD NOT",
+      "role": "requirement",
+      "section_path": [
+        "FOCUS Column Handling",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 14,
+        "line_end": 14
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L014"
+    },
+    {
+      "temp_id": "R008",
+      "order": 8,
+      "text": "*FOCUS column* SHOULD NOT exceed 50 characters in the Column ID to accommodate column length restrictions of various data repositories.",
+      "keyword": "SHOULD NOT",
+      "role": "requirement",
+      "section_path": [
+        "FOCUS Column Handling",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 15,
+        "line_end": 15
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L015"
+    },
+    {
+      "temp_id": "R009",
+      "order": 9,
+      "text": "*FOCUS column* representing an identifier MUST include the `Id` suffix in the Column ID.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "FOCUS Column Handling",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 16,
+        "line_end": 16
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L016"
+    },
+    {
+      "temp_id": "R010",
+      "order": 10,
+      "text": "*FOCUS column* representing a name MUST include the `Name` suffix in the Column ID.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "FOCUS Column Handling",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 17,
+        "line_end": 17
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L017"
+    },
+    {
+      "temp_id": "R011",
+      "order": 11,
+      "text": "*FOCUS column* representing a product offering that incurred a charge MUST include `Sku` in the Column ID.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "FOCUS Column Handling",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 18,
+        "line_end": 18
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L018"
+    },
+    {
+      "temp_id": "R012",
+      "order": 12,
+      "text": "*FOCUS column* that includes the `Category` suffix in the Column ID and is not null MUST contain one of the FOCUS-defined allowed values.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "FOCUS Column Handling",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 19,
+        "line_end": 19
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L019"
+    }
+  ],
+  "warnings": [],
+  "structural": {
+    "lead_ins": [],
+    "index": {
+      "by_section_path": {},
+      "by_line": {}
+    }
+  }
+}
