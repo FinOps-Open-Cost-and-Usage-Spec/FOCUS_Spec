@@ -17,30 +17,31 @@
       "Dataset Requirements",
       "Attribute Requirements"
     ],
-    "atoms_in_scope_count": 10
+    "atoms_in_scope_count": 11
   },
   "0_outline_root": "ROOT: Contract Commitment Discount Percentage > Requirements",
   "0_outline_lines": [
     "L034: \"ContractCommitmentDiscountPercentage MUST adhere to the following requirements:\"",
     "  L036: \"ContractCommitmentDiscountPercentage MUST be of type Decimal.\"",
     "  L037: \"ContractCommitmentDiscountPercentage MUST conform to [NumericFormat](#attributes.numericformat) requirements.\"",
-    "  L038: \"ContractCommitmentDiscountPercentage MUST NOT be null if [ContractCommitmentBenefitCategory](#datasets.contractcommitment.contractcommitmentbenefitcategory) is \\\"Discount\\\".\"",
-    "  L039: \"ContractCommitmentDiscountPercentage MUST be null if ContractCommitmentBenefitCategory is \\\"Availability\\\".\"",
-    "  L040: \"ContractCommitmentDiscountPercentage MUST be a value between 0.0 and 1.0, inclusive.\"",
-    "  L041: \"For contracts with multiple tiers (e.g., 5% discount up to 1M, 10% above 1M), ContractCommitmentDiscountPercentage MUST adhere to the following additional requirements:\"",
-    "    L042: \"ContractCommitmentDiscountPercentage MUST reflect the discount percentage defined for the specific pricing tier represented by the Contract Commitment row.\"",
-    "    L043: \"ContractCommitmentDiscountPercentage MUST correspond to only one pricing tier per Contract Commitment row.\"",
-    "  L044: \"ContractCommitmentDiscountPercentage SHOULD represent the net effective discount if multiple contractual layers are applicable (e.g., a negotiated discount on top of a standard commitment).\""
+    "  L038: \"ContractCommitmentDiscountPercentage MUST adhere to the following nullability requirements:\"",
+    "    L039: \"ContractCommitmentDiscountPercentage MUST NOT be null when [ContractCommitmentBenefitCategory](#datasets.contractcommitment.contractcommitmentbenefitcategory) is \\\"Discount\\\".\"",
+    "    L040: \"ContractCommitmentDiscountPercentage MUST be null when ContractCommitmentBenefitCategory is \\\"Availability\\\".\"",
+    "  L041: \"ContractCommitmentDiscountPercentage MUST be a value between 0.0 and 1.0, inclusive.\"",
+    "  L042: \"For contracts with multiple tiers (e.g., 5% discount up to 1M, 10% above 1M), ContractCommitmentDiscountPercentage MUST adhere to the following additional requirements:\"",
+    "    L043: \"ContractCommitmentDiscountPercentage MUST reflect the discount percentage defined for the specific pricing tier represented by the Contract Commitment row.\"",
+    "    L044: \"ContractCommitmentDiscountPercentage MUST correspond to only one pricing tier per Contract Commitment row.\"",
+    "  L045: \"ContractCommitmentDiscountPercentage SHOULD represent the net effective discount when multiple contractual layers are applicable (e.g., a negotiated discount on top of a standard commitment).\""
   ],
   "0_outline_summary": {
-    "node_count": 10,
+    "node_count": 11,
     "leaf_count": 8,
-    "lead_in_count": 2,
+    "lead_in_count": 3,
     "max_depth": 2,
     "max_indent_level": 1,
     "root_children_count": 1,
     "keyword_distribution": {
-      "MUST": 8,
+      "MUST": 9,
       "MUST NOT": 1,
       "SHOULD": 1
     },
@@ -48,10 +49,15 @@
       {
         "ref": "L034",
         "text_preview": "ContractCommitmentDiscountPercentage MUST adhere to the following requirements:",
-        "children": 7
+        "children": 6
       },
       {
-        "ref": "L041",
+        "ref": "L038",
+        "text_preview": "ContractCommitmentDiscountPercentage MUST adhere to the following nullability requirements:",
+        "children": 2
+      },
+      {
+        "ref": "L042",
         "text_preview": "For contracts with multiple tiers (e.g., 5% discount up to 1M, 10% above 1M), ContractCommitmentDiscountPercentage MUST…",
         "children": 2
       }
@@ -140,31 +146,7 @@
                 "temp_id": "R004",
                 "order": 4,
                 "ref": "L038",
-                "text": "ContractCommitmentDiscountPercentage MUST NOT be null if [ContractCommitmentBenefitCategory](#datasets.contractcommitment.contractcommitmentbenefitcategory) is \"Discount\".",
-                "keyword": "MUST NOT",
-                "section_path": [
-                  "Contract Commitment Discount Percentage",
-                  "Requirements"
-                ],
-                "block": {
-                  "block_type": "list_item",
-                  "indent_level": 0,
-                  "bullet": "*"
-                },
-                "lead_in": {
-                  "ends_with_colon": false
-                }
-              },
-              "children": []
-            },
-            {
-              "node_id": "R005",
-              "kind": "atom",
-              "atom": {
-                "temp_id": "R005",
-                "order": 5,
-                "ref": "L039",
-                "text": "ContractCommitmentDiscountPercentage MUST be null if ContractCommitmentBenefitCategory is \"Availability\".",
+                "text": "ContractCommitmentDiscountPercentage MUST adhere to the following nullability requirements:",
                 "keyword": "MUST",
                 "section_path": [
                   "Contract Commitment Discount Percentage",
@@ -176,18 +158,67 @@
                   "bullet": "*"
                 },
                 "lead_in": {
-                  "ends_with_colon": false
+                  "ends_with_colon": true
                 }
               },
-              "children": []
+              "children": [
+                {
+                  "node_id": "R005",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R005",
+                    "order": 5,
+                    "ref": "L039",
+                    "text": "ContractCommitmentDiscountPercentage MUST NOT be null when [ContractCommitmentBenefitCategory](#datasets.contractcommitment.contractcommitmentbenefitcategory) is \"Discount\".",
+                    "keyword": "MUST NOT",
+                    "section_path": [
+                      "Contract Commitment Discount Percentage",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R006",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R006",
+                    "order": 6,
+                    "ref": "L040",
+                    "text": "ContractCommitmentDiscountPercentage MUST be null when ContractCommitmentBenefitCategory is \"Availability\".",
+                    "keyword": "MUST",
+                    "section_path": [
+                      "Contract Commitment Discount Percentage",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                }
+              ]
             },
             {
-              "node_id": "R006",
+              "node_id": "R007",
               "kind": "atom",
               "atom": {
-                "temp_id": "R006",
-                "order": 6,
-                "ref": "L040",
+                "temp_id": "R007",
+                "order": 7,
+                "ref": "L041",
                 "text": "ContractCommitmentDiscountPercentage MUST be a value between 0.0 and 1.0, inclusive.",
                 "keyword": "MUST",
                 "section_path": [
@@ -206,12 +237,12 @@
               "children": []
             },
             {
-              "node_id": "R007",
+              "node_id": "R008",
               "kind": "atom",
               "atom": {
-                "temp_id": "R007",
-                "order": 7,
-                "ref": "L041",
+                "temp_id": "R008",
+                "order": 8,
+                "ref": "L042",
                 "text": "For contracts with multiple tiers (e.g., 5% discount up to 1M, 10% above 1M), ContractCommitmentDiscountPercentage MUST adhere to the following additional requirements:",
                 "keyword": "MUST",
                 "section_path": [
@@ -229,12 +260,12 @@
               },
               "children": [
                 {
-                  "node_id": "R008",
+                  "node_id": "R009",
                   "kind": "atom",
                   "atom": {
-                    "temp_id": "R008",
-                    "order": 8,
-                    "ref": "L042",
+                    "temp_id": "R009",
+                    "order": 9,
+                    "ref": "L043",
                     "text": "ContractCommitmentDiscountPercentage MUST reflect the discount percentage defined for the specific pricing tier represented by the Contract Commitment row.",
                     "keyword": "MUST",
                     "section_path": [
@@ -253,12 +284,12 @@
                   "children": []
                 },
                 {
-                  "node_id": "R009",
+                  "node_id": "R010",
                   "kind": "atom",
                   "atom": {
-                    "temp_id": "R009",
-                    "order": 9,
-                    "ref": "L043",
+                    "temp_id": "R010",
+                    "order": 10,
+                    "ref": "L044",
                     "text": "ContractCommitmentDiscountPercentage MUST correspond to only one pricing tier per Contract Commitment row.",
                     "keyword": "MUST",
                     "section_path": [
@@ -279,13 +310,13 @@
               ]
             },
             {
-              "node_id": "R010",
+              "node_id": "R011",
               "kind": "atom",
               "atom": {
-                "temp_id": "R010",
-                "order": 10,
-                "ref": "L044",
-                "text": "ContractCommitmentDiscountPercentage SHOULD represent the net effective discount if multiple contractual layers are applicable (e.g., a negotiated discount on top of a standard commitment).",
+                "temp_id": "R011",
+                "order": 11,
+                "ref": "L045",
+                "text": "ContractCommitmentDiscountPercentage SHOULD represent the net effective discount when multiple contractual layers are applicable (e.g., a negotiated discount on top of a standard commitment).",
                 "keyword": "SHOULD",
                 "section_path": [
                   "Contract Commitment Discount Percentage",
