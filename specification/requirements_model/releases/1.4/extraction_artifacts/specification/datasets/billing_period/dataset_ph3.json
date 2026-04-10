@@ -1,6 +1,6 @@
 {
   "ModelRules": {
-    "BIP-BillingPeriod-C-000-M": {
+    "BIP-BillingPeriod-D-000-M": {
       "Function": "Composite",
       "Reference": "BillingPeriod",
       "EntityType": "Dataset",
@@ -22,19 +22,19 @@
         "Requirement": {},
         "Condition": [],
         "Dependencies": [
-          "BIP-BillingPeriod-C-001-C",
-          "BIP-BillingPeriod-C-002-M",
-          "BIP-BillingPeriod-C-009-M",
-          "BIP-BillingPeriod-C-010-M",
-          "BIP-BillingPeriod-C-011-M",
-          "BIP-BillingPeriod-C-012-M",
-          "BIP-BillingPeriod-C-013-M",
-          "BIP-BillingPeriod-C-014-M",
-          "BIP-BillingPeriod-C-015-M"
+          "BIP-BillingPeriod-D-001-C",
+          "BIP-BillingPeriod-D-002-M",
+          "BIP-BillingPeriod-D-009-M",
+          "BIP-BillingPeriod-D-010-M",
+          "BIP-BillingPeriod-D-011-M",
+          "BIP-BillingPeriod-D-012-M",
+          "BIP-BillingPeriod-D-013-M",
+          "BIP-BillingPeriod-D-014-M",
+          "BIP-BillingPeriod-D-015-M"
         ]
       }
     },
-    "BIP-BillingPeriod-C-001-C": {
+    "BIP-BillingPeriod-D-001-C": {
       "Function": "Validation",
       "Reference": "BillingPeriod",
       "EntityType": "Dataset",
@@ -58,7 +58,7 @@
         "Dependencies": []
       }
     },
-    "BIP-BillingPeriod-C-002-M": {
+    "BIP-BillingPeriod-D-002-M": {
       "Function": "Composite",
       "Reference": "BillingPeriod",
       "EntityType": "Dataset",
@@ -80,16 +80,16 @@
         "Requirement": {},
         "Condition": [],
         "Dependencies": [
-          "BIP-BillingPeriod-C-003-M",
-          "BIP-BillingPeriod-C-004-M",
-          "BIP-BillingPeriod-C-005-M",
-          "BIP-BillingPeriod-C-006-M",
-          "BIP-BillingPeriod-C-007-M",
-          "BIP-BillingPeriod-C-008-M"
+          "BIP-BillingPeriod-D-003-M",
+          "BIP-BillingPeriod-D-004-M",
+          "BIP-BillingPeriod-D-005-M",
+          "BIP-BillingPeriod-D-006-M",
+          "BIP-BillingPeriod-D-007-M",
+          "BIP-BillingPeriod-D-008-M"
         ]
       }
     },
-    "BIP-BillingPeriod-C-003-M": {
+    "BIP-BillingPeriod-D-003-M": {
       "Function": "Validation",
       "Reference": "BillingPeriod",
       "EntityType": "Dataset",
@@ -113,7 +113,7 @@
         "Dependencies": []
       }
     },
-    "BIP-BillingPeriod-C-004-M": {
+    "BIP-BillingPeriod-D-004-M": {
       "Function": "Validation",
       "Reference": "BillingPeriod",
       "EntityType": "Dataset",
@@ -137,7 +137,7 @@
         "Dependencies": []
       }
     },
-    "BIP-BillingPeriod-C-005-M": {
+    "BIP-BillingPeriod-D-005-M": {
       "Function": "Validation",
       "Reference": "BillingPeriod",
       "EntityType": "Dataset",
@@ -161,7 +161,7 @@
         "Dependencies": []
       }
     },
-    "BIP-BillingPeriod-C-006-M": {
+    "BIP-BillingPeriod-D-006-M": {
       "Function": "Validation",
       "Reference": "BillingPeriod",
       "EntityType": "Dataset",
@@ -185,7 +185,7 @@
         "Dependencies": []
       }
     },
-    "BIP-BillingPeriod-C-007-M": {
+    "BIP-BillingPeriod-D-007-M": {
       "Function": "Validation",
       "Reference": "BillingPeriod",
       "EntityType": "Dataset",
@@ -209,7 +209,7 @@
         "Dependencies": []
       }
     },
-    "BIP-BillingPeriod-C-008-M": {
+    "BIP-BillingPeriod-D-008-M": {
       "Function": "Validation",
       "Reference": "BillingPeriod",
       "EntityType": "Dataset",
@@ -233,7 +233,7 @@
         "Dependencies": []
       }
     },
-    "BIP-BillingPeriod-C-009-M": {
+    "BIP-BillingPeriod-D-009-M": {
       "Function": "Format",
       "Reference": "BillingPeriod",
       "EntityType": "Dataset",
@@ -257,7 +257,7 @@
         "Dependencies": []
       }
     },
-    "BIP-BillingPeriod-C-010-M": {
+    "BIP-BillingPeriod-D-010-M": {
       "Function": "Format",
       "Reference": "BillingPeriod",
       "EntityType": "Dataset",
@@ -281,7 +281,7 @@
         "Dependencies": []
       }
     },
-    "BIP-BillingPeriod-C-011-M": {
+    "BIP-BillingPeriod-D-011-M": {
       "Function": "Format",
       "Reference": "BillingPeriod",
       "EntityType": "Dataset",
@@ -305,7 +305,7 @@
         "Dependencies": []
       }
     },
-    "BIP-BillingPeriod-C-012-M": {
+    "BIP-BillingPeriod-D-012-M": {
       "Function": "Format",
       "Reference": "BillingPeriod",
       "EntityType": "Dataset",
@@ -329,7 +329,7 @@
         "Dependencies": []
       }
     },
-    "BIP-BillingPeriod-C-013-M": {
+    "BIP-BillingPeriod-D-013-M": {
       "Function": "Format",
       "Reference": "BillingPeriod",
       "EntityType": "Dataset",
@@ -353,7 +353,7 @@
         "Dependencies": []
       }
     },
-    "BIP-BillingPeriod-C-014-M": {
+    "BIP-BillingPeriod-D-014-M": {
       "Function": "Format",
       "Reference": "BillingPeriod",
       "EntityType": "Dataset",
@@ -377,7 +377,7 @@
         "Dependencies": []
       }
     },
-    "BIP-BillingPeriod-C-015-M": {
+    "BIP-BillingPeriod-D-015-M": {
       "Function": "Format",
       "Reference": "BillingPeriod",
       "EntityType": "Dataset",
