@@ -20,7 +20,7 @@
     {
       "temp_id": "R001",
       "order": 1,
-      "text": "*FOCUS dataset* MUST adhere to the following requirements:",
+      "text": "Dataset conforming to DatasetCompleteness attribute MUST adhere to the following requirements:",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
@@ -36,11 +36,11 @@
         "ends_with_colon": true
       },
       "provenance": {
-        "line_start": 33,
-        "line_end": 33
+        "line_start": 9,
+        "line_end": 9
       },
       "_alignment_status": "confirmed",
-      "ref": "L033"
+      "ref": "L009"
     },
     {
       "temp_id": "R002",
@@ -61,11 +61,11 @@
         "ends_with_colon": true
       },
       "provenance": {
-        "line_start": 35,
-        "line_end": 35
+        "line_start": 11,
+        "line_end": 11
       },
       "_alignment_status": "confirmed",
-      "ref": "L035"
+      "ref": "L011"
     },
     {
       "temp_id": "R003",
@@ -86,11 +86,11 @@
         "ends_with_colon": false
       },
       "provenance": {
-        "line_start": 36,
-        "line_end": 36
+        "line_start": 12,
+        "line_end": 12
       },
       "_alignment_status": "confirmed",
-      "ref": "L036"
+      "ref": "L012"
     },
     {
       "temp_id": "R004",
@@ -111,15 +111,40 @@
         "ends_with_colon": false
       },
       "provenance": {
-        "line_start": 37,
-        "line_end": 37
+        "line_start": 13,
+        "line_end": 13
       },
       "_alignment_status": "confirmed",
-      "ref": "L037"
+      "ref": "L013"
     },
     {
       "temp_id": "R005",
       "order": 5,
+      "text": "*FOCUS dataset* MUST have all included *custom columns* documented in publicly-available documentation, including description, purpose, and relationship to *native dataset* columns.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Dataset Completeness",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 1,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 14,
+        "line_end": 14
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L014"
+    },
+    {
+      "temp_id": "R006",
+      "order": 6,
       "text": "*FOCUS dataset* SHOULD include *custom columns* that enable correlation between *FOCUS dataset* records and *native dataset* records (e.g., native [*charge*](#glossary:charge) identifiers), even if they meet the criteria for exclusion.",
       "keyword": "SHOULD",
       "role": "requirement",
@@ -136,15 +161,15 @@
         "ends_with_colon": false
       },
       "provenance": {
-        "line_start": 38,
-        "line_end": 38
+        "line_start": 15,
+        "line_end": 15
       },
       "_alignment_status": "confirmed",
-      "ref": "L038"
+      "ref": "L015"
     },
     {
-      "temp_id": "R006",
-      "order": 6,
+      "temp_id": "R007",
+      "order": 7,
       "text": "*FOCUS dataset* SHOULD exclude *custom columns* that duplicate information already captured in *FOCUS columns*, except during a transitional period as defined in publicly-available documentation, to enable migration without breaking changes.",
       "keyword": "SHOULD",
       "role": "requirement",
@@ -161,15 +186,40 @@
         "ends_with_colon": false
       },
       "provenance": {
-        "line_start": 39,
-        "line_end": 39
+        "line_start": 16,
+        "line_end": 16
       },
       "_alignment_status": "confirmed",
-      "ref": "L039"
+      "ref": "L016"
     },
     {
-      "temp_id": "R007",
-      "order": 7,
+      "temp_id": "R008",
+      "order": 8,
+      "text": "*FOCUS dataset* MUST retain the fidelity of corresponding *native dataset* values within *custom columns* without lossy transformations (e.g., rounding or truncation).",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Dataset Completeness",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 17,
+        "line_end": 17
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L017"
+    },
+    {
+      "temp_id": "R009",
+      "order": 9,
       "text": "*FOCUS dataset* MUST NOT alter the aggregated values of summable [*metrics*](#glossary:metric) (e.g., costs and quantities) due to the inclusion of *custom columns*.",
       "keyword": "MUST NOT",
       "role": "requirement",
@@ -186,40 +236,15 @@
         "ends_with_colon": false
       },
       "provenance": {
-        "line_start": 40,
-        "line_end": 40
+        "line_start": 18,
+        "line_end": 18
       },
       "_alignment_status": "confirmed",
-      "ref": "L040"
+      "ref": "L018"
     },
     {
-      "temp_id": "R008",
-      "order": 8,
-      "text": "*FOCUS dataset* MUST ensure *custom columns* retain the fidelity of corresponding *native dataset* values without lossy transformations (e.g., rounding or truncation).",
-      "keyword": "MUST",
-      "role": "requirement",
-      "section_path": [
-        "Dataset Completeness",
-        "Requirements"
-      ],
-      "block": {
-        "block_type": "list_item",
-        "indent_level": 0,
-        "bullet": "*"
-      },
-      "lead_in": {
-        "ends_with_colon": false
-      },
-      "provenance": {
-        "line_start": 41,
-        "line_end": 41
-      },
-      "_alignment_status": "confirmed",
-      "ref": "L041"
-    },
-    {
-      "temp_id": "R009",
-      "order": 9,
+      "temp_id": "R010",
+      "order": 10,
       "text": "*FOCUS dataset* SHOULD sort all *FOCUS columns* alphabetically first, then all *custom columns* alphabetically second.",
       "keyword": "SHOULD",
       "role": "requirement",
@@ -236,11 +261,11 @@
         "ends_with_colon": false
       },
       "provenance": {
-        "line_start": 42,
-        "line_end": 42
+        "line_start": 19,
+        "line_end": 19
       },
       "_alignment_status": "confirmed",
-      "ref": "L042"
+      "ref": "L019"
     }
   ],
   "warnings": [],
