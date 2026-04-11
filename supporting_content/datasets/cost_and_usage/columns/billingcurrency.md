@@ -14,9 +14,9 @@ Current column mappings found in available data sets:
 
 ## Requirements
 
-- For monetary values representing the amount charged for an invoice or for an overall charge, the underlying charge to be formatted should be represented as a decimal or string format.
-- Prices and charges will be returned in currency set on the billing account unless a specific currency is included on the request.
-- The character used as the thousands or decimal separator will be determined by the underlying currency being returned, based on industry standards.
+* For monetary values representing the amount charged for an invoice or for an overall charge, the underlying charge to be formatted should be represented as a decimal or string format.
+* Prices and charges will be returned in currency set on the billing account unless a specific currency is included on the request.
+* The character used as the thousands or decimal separator will be determined by the underlying currency being returned, based on industry standards.
 
 
 ## Example usage scenarios

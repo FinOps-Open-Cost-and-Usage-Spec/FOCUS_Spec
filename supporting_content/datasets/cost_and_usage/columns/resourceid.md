@@ -50,15 +50,15 @@ OCI:
 
 ## Discussion / Scratch space
 
-- Should there be a resource name and a separate fully qualified name? Use one column for resource ID and make a recommendation for the value to be globally unique within the provider (e.g. a fully qualified name)
-- Should this be prefixed with 'Provider' e.g. ProviderResourceID to show that it's a 1:1 mapping to a provider provided column.
-- Should governance say "Nullable where cost is not associated with a resource" to account for cost data not associated with a resource (e.g. API calls)
-- Do we make any statements about uniqueness? Or is this where we request a uniqueness composite key to be specified in a schema document
-  - Can we guarantee uniqueness and can it change over time?
-  - ResourceId can only be required to be unique within a provider not across providers (unless we dictate a format for fully qualifying the id e.g. ARN that includes provider).
-  - Also, note this is not the same as a line-item level uniqueness key. It's common for resource id's to show up many times in billing data for different time periods and different types of consumption
-- Empty values should not be allowed if a user or system generated ResourceId is null (should this be an attribute specified as a higher level attribute OR within this scope)?
-  - Should be specified in a higher-level attribute that applies spec-wide on how nulls/empty values and placeholders
-- Future attribute/dimension:
-  - Suggestion (Erik): Embrace a "Cloud Resource ID (CRID)" convention such as:
+* Should there be a resource name and a separate fully qualified name? Use one column for resource ID and make a recommendation for the value to be globally unique within the provider (e.g. a fully qualified name)
+* Should this be prefixed with 'Provider' e.g. ProviderResourceID to show that it's a 1:1 mapping to a provider provided column.
+* Should governance say "Nullable where cost is not associated with a resource" to account for cost data not associated with a resource (e.g. API calls)
+* Do we make any statements about uniqueness? Or is this where we request a uniqueness composite key to be specified in a schema document
+  * Can we guarantee uniqueness and can it change over time?
+  * ResourceId can only be required to be unique within a provider not across providers (unless we dictate a format for fully qualifying the id e.g. ARN that includes provider).
+  * Also, note this is not the same as a line-item level uniqueness key. It's common for resource id's to show up many times in billing data for different time periods and different types of consumption
+* Empty values should not be allowed if a user or system generated ResourceId is null (should this be an attribute specified as a higher level attribute OR within this scope)?
+  * Should be specified in a higher-level attribute that applies spec-wide on how nulls/empty values and placeholders
+* Future attribute/dimension:
+  * Suggestion (Erik): Embrace a "Cloud Resource ID (CRID)" convention such as:
     <br>  `Crid:provider:service-type:region:owner-account-id:resource-type:cloud-local-id`

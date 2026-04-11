@@ -12,13 +12,13 @@ Before contributing, please review the following guidelines carefully to ensure 
 ## 1. Before You Start
 
 1. **Join the FOCUS Project**
-   - If you’re not already a participant, visit the [FOCUS Enrolment](https://enrollment.lfx.linuxfoundation.org/?project=finopsopenbillingspec) for instructions on how **your company** can join the FOCUS Open Standards Project. In addition, you must be approved by your company as a contributor to this project. You are required to complete the steps indicated in the [README of the EasyCLA](https://github.com/FinOps-Open-Cost-and-Usage-Spec/EasyCLA/blob/main/README.md) repository.
-   - Only authorized contributors can submit or review Pull Requests.
+   * If you’re not already a participant, visit the [FOCUS Enrolment](https://enrollment.lfx.linuxfoundation.org/?project=finopsopenbillingspec) for instructions on how **your company** can join the FOCUS Open Standards Project. In addition, you must be approved by your company as a contributor to this project. You are required to complete the steps indicated in the [README of the EasyCLA](https://github.com/FinOps-Open-Cost-and-Usage-Spec/EasyCLA/blob/main/README.md) repository.
+   * Only authorized contributors can submit or review Pull Requests.
 
 2. **Get Familiar with the Project**
-   - Review the [FOCUS Specification Overview](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/working_draft/README.md#overview) and the latest release.
-   - Join the **FOCUS Slack working-group** for discussions and meeting updates. _(you will be invited once you have completed the [README CLA](https://github.com/FinOps-Open-Cost-and-Usage-Spec/EasyCLA/blob/main/README.md) steps)_
-   - Familiarize yourself with the [Roles & Tasks](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/operating_procedures.md#22-organization-roles) and [Review & Approval Process](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/operating_procedures.md#52-review--approval).
+   * Review the [FOCUS Specification Overview](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/working_draft/README.md#overview) and the latest release.
+   * Join the **FOCUS Slack working-group** for discussions and meeting updates. _(you will be invited once you have completed the [README CLA](https://github.com/FinOps-Open-Cost-and-Usage-Spec/EasyCLA/blob/main/README.md) steps)_
+   * Familiarize yourself with the [Roles & Tasks](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/operating_procedures.md#22-organization-roles) and [Review & Approval Process](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/operating_procedures.md#52-review--approval).
 
 ---
 
@@ -26,15 +26,15 @@ Before contributing, please review the following guidelines carefully to ensure 
 
 You can contribute to this repository in several ways:
 
-- **Action Items** – Updates or follow-up tasks resulting from meetings.
+* **Action Items** – Updates or follow-up tasks resulting from meetings.
 
-- **Feature Requests** – Proposals for new functionality, attributes, or examples.
+* **Feature Requests** – Proposals for new functionality, attributes, or examples.
 
-- **Feedback** – Comments or recommendations on existing content.
+* **Feedback** – Comments or recommendations on existing content.
 
-- **Maintenance** – Fixes or updates for typos, structure, or metadata.
+* **Maintenance** – Fixes or updates for typos, structure, or metadata.
 
-- **Work Items** – Specific contributions tracked as GitHub issues.
+* **Work Items** – Specific contributions tracked as GitHub issues.
 
 If you are not sure where your contribution fits, open a **Blank Issue** first and request feedback before submitting a Pull Request (PR).
 
@@ -46,10 +46,10 @@ AI tools (such as GitHub Copilot, Claude Code, Cursor, and similar coding assist
 
 **Key requirements:**
 
-- A CLA-covered human MUST take responsibility for all contributions
-- Approved AI agents MAY create PRs on behalf of a human who requested the work
-- The responsible human reviews and approves AI-generated contributions
-- AI-assisted contributions follow the same review process as other contributions, including peer review and consensus approval
+* A CLA-covered human MUST take responsibility for all contributions
+* Approved AI agents MAY create PRs on behalf of a human who requested the work
+* The responsible human reviews and approves AI-generated contributions
+* AI-assisted contributions follow the same review process as other contributions, including peer review and consensus approval
 
 For complete guidance, see [AI Usage Guidelines](guidelines/contributors/ai-usage-guidelines.md).
 
@@ -68,43 +68,43 @@ git checkout -b feature/your-change-description
 
 3. **Follow FOCUS content conventions:**
 
-- Use BCP-14 keywords (**MUST**, **SHOULD**, **MAY**, etc.) correctly.  
-- Do not remove normative content without prior discussion.
+* Use BCP-14 keywords (**MUST**, **SHOULD**, **MAY**, etc.) correctly.  
+* Do not remove normative content without prior discussion.
 
 > See [Typographic Conventions](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/working_draft/specification/overview.md#typographic-conventions), (e.g., “for how to use BCP-14 keywords”).
 
 4. **Submit your PR**
 
-- Include a clear summary of the change.  
-- Use one PR per logical change.  
-- Assign appropriate labels (e.g., `normative-change`, `editorial`, `discussion`).
+* Include a clear summary of the change.  
+* Use one PR per logical change.  
+* Assign appropriate labels (e.g., `normative-change`, `editorial`, `discussion`).
 
 > For details about labels and stages, see [Git Issues - Project - Content Creation](guidelines/contributors/development-processes.md#focus-development-process)
 
 5. **Participate in the review**
 
-- Your PR will go through the following review sequence:
+* Your PR will go through the following review sequence:
 
-    - **Maintainers / Task Force(s) → Members (for review and approval)**
+    * **Maintainers / Task Force(s) → Members (for review and approval)**
 
-    - Be responsive to reviewer comments and requested edits.
+    * Be responsive to reviewer comments and requested edits.
 
 ---
 
 6. **Writing Style and Format**
 
-- Use the provided Markdown Editorial Guidelines for all specification text.  
-- Follow the structure of existing sections (Introduction → Requirements → Examples → Notes).  
-- Use **RFC 2119** language for normative statements.
+* Use the provided Markdown Editorial Guidelines for all specification text.  
+* Follow the structure of existing sections (Introduction → Requirements → Examples → Notes).  
+* Use **RFC 2119** language for normative statements.
 
 > Visit [Editorial Guidelines](guidelines/contributors/editorial-guidelines.md) for further information.
 
 
 7. **Normative vs Supporting Content**
 
-- **Normative content** defines required behavior using **MUST**, **SHALL**, or **SHOULD**.  
-- **Supporting content** explains context or provides examples.  
-- If your contribution changes a normative rule, it will require review by the **Task Force** and **Members** before approval.
+* **Normative content** defines required behavior using **MUST**, **SHALL**, or **SHOULD**.  
+* **Supporting content** explains context or provides examples.  
+* If your contribution changes a normative rule, it will require review by the **Task Force** and **Members** before approval.
 
 ---
 
@@ -122,18 +122,18 @@ Status changes and approvals are tracked in GitHub **Issues** and **Pull Request
 
 9. **Resources and References**
 
-- [FOCUS Specification Website](https://focus.finops.org/focus-specification/)  
-- [FOCUS Governance Repository](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation)  
-- [FOCUS Membership Enrollment](https://enrollment.lfx.linuxfoundation.org/?project=finopsopenbillingspec) _Company joining instructions_ 
-- [FOCUS CLA Contribution](https://github.com/FinOps-Open-Cost-and-Usage-Spec/EasyCLA) _Contributors approved by own company_
-- [FinOps Foundation](https://www.finops.org)  
+* [FOCUS Specification Website](https://focus.finops.org/focus-specification/)  
+* [FOCUS Governance Repository](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation)  
+* [FOCUS Membership Enrollment](https://enrollment.lfx.linuxfoundation.org/?project=finopsopenbillingspec) _Company joining instructions_ 
+* [FOCUS CLA Contribution](https://github.com/FinOps-Open-Cost-and-Usage-Spec/EasyCLA) _Contributors approved by own company_
+* [FinOps Foundation](https://www.finops.org)  
 
 10. **License and Intellectual Property**
 
 All contributions are made under the terms of the **[FOCUS Member Agreement](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/FOCUS_-_Membership_Agreement_Package_for_use.pdf)**, as stated in the [LICENSE](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/working_draft/license.md) file.  
 By submitting a contribution, you agree that:
 
-- Your work complies with the project’s **[IPR and CLA](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/FOCUS_-_Membership_Agreement_Package_for_use.pdf)** requirements.  
-- You have the rights to submit the content.  
-- Contributions become part of the open **FinOps FOCUS Specification**.
+* Your work complies with the project’s **[IPR and CLA](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/FOCUS_-_Membership_Agreement_Package_for_use.pdf)** requirements.  
+* You have the rights to submit the content.  
+* Contributions become part of the open **FinOps FOCUS Specification**.
 
