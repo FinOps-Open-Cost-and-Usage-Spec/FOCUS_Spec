@@ -86,11 +86,25 @@ The recommended pattern for a normative requirement is:
 
 * Normative requirements MUST be expressed as individual bullet points.
 * Each bullet MUST represent exactly one normative requirement.
+* Each normative requirement MUST express a single requirement.
 * Each normative requirement MUST:
   * identify exactly one **normative subject** to which the requirement applies
   * contain exactly one **BCP 14 keyword** (MUST, SHOULD, MAY, MUST NOT, etc.), indicating the obligation level
   * express exactly one **verifiable constraint**
+  * be split into multiple bullets if it introduces multiple independent constraints.
 * Each normative requirement SHOULD describe a **verifiable state** of the object rather than behavior
+
+### Explicit Conditions in Normative Requirements
+
+* Normative requirements MUST include an explicit condition unless the rule applies universally.
+* Conditional clauses MUST use standardized patterns such as:
+   * when <condition>
+   * if <condition>
+   * unless <condition>  
+   * only when <condition>  
+   * only if <condition>  
+   * except when <condition>  
+   * except if <condition>
 
 ### Structural Anchor Requirement
 
@@ -118,6 +132,8 @@ For **Attribute Requirements** sections, a different canonical form applies:
 See [Section Structural Anchor Requirement for Attributes](#structural-anchor-requirement-for-attributes) for details.
 
 ### Normative Subject
+
+* Each normative requirement MUST clearly identify the subject being constrained.
 
 #### Terminology Usage in Normative Requirements
 
@@ -200,6 +216,7 @@ A requirement MUST be split into multiple bullets if it:
 
 * contains more than one BCP 14 keyword,
 * combines multiple obligations (e.g., multiple verifiable state descriptors, multiple objects, or multiple conditions that result in distinct constraints),
+* combines multiple independent conditions using “and” or “or” that result in distinct constraints,
 * contains a hidden constraint expressed as a definition (e.g., `ColumnA MUST be Z, where Z is defined as Y`),
 * applies constraints to multiple subjects, even with a single BCP 14 keyword (e.g., `ColumnA and ColumnB MUST be X`).
 

@@ -152,38 +152,6 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
 
 * **Linking Only the First Time**: To prevent excessive linking within sections, Entity Names and Entity IDs (e.g., Column Names, Attribute IDs, and Glossary) will only be linked to their corresponding section or glossary the first time they appear in a section.
 
-### Normative Requirements
-
-* **Single Requirement per Statement:** Each normative statement MUST express a single requirement.
-
-* **Example** (Markdown, illustrative):
-
-  ```md
-  * ... MUST be of type String.
-  * ... MUST conform to CurrencyFormat requirements.
-  ```
-
-* **Explicit Conditions:** Normative requirements MUST include an explicit condition unless the rule applies in all cases.
-
-* **Condition Format:** Conditional clauses MUST use standardized patterns: “when / if / unless / only when / only if / except when / except if <condition>”.
-
-* **Example** (Markdown, illustrative):
-
-  ```md
-  * ... MUST be null when ChargeCategory is "Tax".
-  * ... MUST be null if ChargeCategory is "Tax".
-  * ... MUST be null unless ChargeCategory is "Usage".
-  ```
-
-* **Subject Consistency:** Each normative statement MUST clearly identify the subject being constrained.
-
-* **Example** (Markdown, illustrative):
-
-  ```md
-  * PricingQuantity MUST be greater than 0.
-  ```
-* **No Compound Conditions:** Normative requirements MUST NOT combine multiple conditions using “and” or “or” within a single statement.
-
 ### Entity References
 
 * **Entity IDs:** Entity IDs (e.g., Column IDs, Attribute IDs, Dataset IDs), formatting and usage conventions for normative requirements are defined in the Normative Requirements Guidelines. 
