@@ -84,6 +84,8 @@ The recommended pattern for a normative requirement is:
 <Subject (+qualifier)> + <BCP 14 Keyword> + <Verifiable State Descriptor> + <Object (+qualifier)> [+ Conditions]
 ```
 
+* Normative requirements MUST be expressed as individual bullet points.
+* Each bullet MUST represent exactly one normative requirement.
 * Each normative requirement MUST:
   * identify exactly one **normative subject** to which the requirement applies
   * contain exactly one **BCP 14 keyword** (MUST, SHOULD, MAY, MUST NOT, etc.), indicating the obligation level
@@ -116,6 +118,12 @@ For **Attribute Requirements** sections, a different canonical form applies:
 See [Section Structural Anchor Requirement for Attributes](#structural-anchor-requirement-for-attributes) for details.
 
 ### Normative Subject
+
+#### Terminology Usage in Normative Requirements
+
+* Column references in normative requirements MUST use the ColumnId.
+* Display Names MUST NOT be used in normative requirements.
+* Display Names MAY be used in non-normative sections for readability.
 
 #### Allowed Subjects
 
@@ -181,6 +189,8 @@ Specifically:
 
 * Each normative bullet MUST contain exactly one BCP 14 keyword (MUST, SHOULD, MAY, MUST NOT, SHOULD NOT). See [BCP14](https://tools.ietf.org/html/bcp14) [[RFC2119](https://tools.ietf.org/html/rfc2119)][[RFC8174](https://tools.ietf.org/html/rfc8174)].
 * A bullet containing more than one normative keyword MUST be split.
+* The term **RECOMMENDED** MUST NOT be used as a normative keyword. The keyword **SHOULD** MUST be used instead.
+* The lowercase word “recommended” MAY be used in non-normative text, provided it does not express a normative requirement.
 
 * **Exception for Composite Requirements:** While each individual bullet (parent or nested) MUST contain only one BCP 14 keyword, a Composite Requirement as a whole MAY contain multiple keywords to express nuanced obligations. In such cases, the logical strength of the requirement is governed by the hierarchy defined in section [Composite Requirements](#composite-requirements).
 

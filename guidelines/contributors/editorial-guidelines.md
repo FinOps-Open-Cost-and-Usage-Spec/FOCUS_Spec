@@ -3,6 +3,11 @@ The "Editorial Style Guidelines" section ensures consistency and clarity across 
 
 These guidelines can be modified through a Pull Request (PR), which the members must review and agree upon. This process ensures that any changes are thoughtfully considered and maintains the overall integrity of our editorial standards.
 
+### Normative Requirements
+Normative requirements are defined and authored exclusively according to the Normative Requirements Guidelines.
+
+Authors MUST refer to the Normative Requirements Guidelines when writing or modifying normative requirements.
+
 <table>
     <tr>
         <th>Component</th>
@@ -78,9 +83,9 @@ These guidelines can be modified through a Pull Request (PR), which the members 
         </td>
     </tr>
     <tr>
-        <td><strong>Normative Keywords &amp; Requirements Statements</strong></td>
+        <td><strong>Normative Keywords</strong>(Formatting Only)</td>
         <td>
-            MUST, MAY, MUST NOT and normative requirements statements
+            Normative keywords and statements (see Normative Requirements Guidelines)
         </td>
         <td>
             This column:</br>
@@ -89,8 +94,8 @@ These guidelines can be modified through a Pull Request (PR), which the members 
             &nbsp;&nbsp; * MAY be null for all other combinations of ... </br>
         </td>
         <td>
-           - All uppercase, without bold.<br>
-           - Bullet list format. <br>
+           - Formatting follows Editorial Guidelines.<br>
+           - Structure and usage are defined in the Normative Requirements Guidelines.<br>
         </td>
     </tr>
     <tr>
@@ -149,12 +154,6 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 
 ### Normative Requirements
 
-* **Normative Requirements as a Bullet List**: Normative requirements (those using Normative Keywords) MUST be written as bullet points instead of lengthy sentences.
-
-* **Normative Keyword Standardization:** To ensure consistency in the specification, normative language MUST use only the BCP-14 keywords MUST, MUST NOT, SHOULD, SHOULD NOT, and MAY. The term "RECOMMENDED" as a normative keyword is deprecated starting December 2025. Where legacy text uses RECOMMENDED, it MUST be replaced with SHOULD.
-
-* **Non-Normative Use of “recommended”:** The lowercase word “recommended” may still be used in non-normative, descriptive text (e.g., “Feature level: Recommended”) provided it does not express a normative requirement on implementers.
-
 * **Single Requirement per Statement:** Each normative statement MUST express a single requirement.
 
 * **Example** (Markdown, illustrative):
@@ -187,7 +186,7 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 
 ### Entity References
 
-* **Entity IDs:** Entity IDs (e.g., Column IDs, Attribute IDs, Dataset IDs) SHOULD be used in normative text sections, such as when specifying mandatory rules, schema definitions, or other implementation-related content. 
+* **Entity IDs:** Entity IDs (e.g., Column IDs, Attribute IDs, Dataset IDs), formatting and usage conventions for normative requirements are defined in the Normative Requirements Guidelines. 
 
 * **Entity IDs:** MUST be formatted without spaces.
 
