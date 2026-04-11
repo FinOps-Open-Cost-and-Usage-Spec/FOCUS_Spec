@@ -162,12 +162,6 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
 
 * **Display Names:** Display Names SHOULD be used in introductory or explanatory sections where natural language context is more appropriate. These names should follow normal text conventions, including spaces between words (e.g., Commitment Discount ID).
 
-* **Consistent Reference Type:** Normative requirements MUST use Entity IDs consistently.
-
-* **Consistent Reference Type:** MUST NOT mix Entity IDs and Display Names within the same statement.
-
-* **Multiple Entity References:** MUST use Entity IDs when referencing multiple entities in a normative statement.
-
 * **Entity Scope:** These rules apply to all entities defined in the FOCUS specification (e.g., Columns, Attributes, Datasets, Objects).
 
 ### Bullet Structure
@@ -192,8 +186,6 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
 * **No Skipped Levels:** Nested bullets MUST NOT skip indentation levels.
 
 * **Consistent Indentation:** All bullets within the same list MUST use consistent indentation.
-
-* **Separate Conditions:** Alternative conditions MUST be expressed as separate bullet points.
 
 * **Example** (Markdown, illustrative):
 

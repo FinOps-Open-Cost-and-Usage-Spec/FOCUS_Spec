@@ -85,8 +85,7 @@ The recommended pattern for a normative requirement is:
 ```
 
 * Normative requirements MUST be expressed as individual bullet points.
-* Each bullet MUST represent exactly one normative requirement.
-* Each normative requirement MUST express a single requirement.
+* Each bullet MUST represent exactly one normative requirement expressing a single constraint.
 * Each normative requirement MUST:
   * identify exactly one **normative subject** to which the requirement applies
   * contain exactly one **BCP 14 keyword** (MUST, SHOULD, MAY, MUST NOT, etc.), indicating the obligation level
