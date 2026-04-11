@@ -190,6 +190,82 @@ All headers appearing after the !TOC directive automatically receive an HTML anc
 
 ***Note:*** *These anchors are generated for the HTML and PDF builds of the specification and differ from how GitHub natively generates anchors for markdown files. Links using these anchors will work in the built specification output but not when viewing the source markdown on GitHub.*
 
+## Currency and Dollar Sign Handling
+
+FOCUS content frequently includes monetary values. This section explains how literal dollar signs are interpreted by the build pipeline and how to avoid accidental math parsing.
+
+### Authoring Rule for Currency
+
+* Use a literal `$` for currency values in specification content (for example, `$1.00`, `$4,550.00`).
+* Write currency in normal prose and tables as needed. Contributors should not need to rewrite clear content to accommodate parser quirks.
+
+### How Dollar Parsing Works in This Repository
+
+The build pipeline has two relevant stages:
+
+* **MarkdownPP stage** (`markdown-pp`):
+    * The vendored LaTeX module in `vendored/MarkdownPP/Modules/LaTeXRender.py` can interpret dollar-delimited content as LaTeX.
+    * FOCUS includes local heuristic protections to reduce false positives for currency and prose patterns.
+* **Pandoc stage** (`spec.md` to HTML/PDF):
+    * The Makefile uses `-f gfm-tex_math_dollars` for Pandoc conversion so literal `$` currency is not interpreted as TeX math.
+
+### Intended Use of LaTeX Rendering
+
+* LaTeX rendering is available for intentional math expressions.
+* Currency and normal prose should not rely on LaTeX rendering.
+* If a contributor needs math rendering, use unambiguous math expressions and verify that output remains stable.
+
+### Examples: Rendered vs Not Rendered
+
+The following examples show expected behavior in this repository.
+
+**Example that SHOULD render as LaTeX:**
+
+```markdown
+The discount factor is $\alpha + \beta$.
+```
+
+**Examples that SHOULD NOT trigger LaTeX rendering:**
+
+```markdown
+Cost is $1.00 per hour.
+```
+
+```markdown
+Purchase amount: $4,550.00.
+```
+
+```markdown
+Difference $0.02 < Tolerance $1.00.
+```
+
+```markdown
+| BilledCost | EffectiveCost |
+| $402,960.00 | $0.00 |
+```
+
+### Troubleshooting
+
+If you suspect accidental dollar parsing:
+
+* Check MarkdownPP output for LaTeX rendering activity:
+
+```bash
+cd specification
+PYTHONPATH=../vendored ../vendored/bin/markdown-pp spec.mdpp -o spec.md 2>&1 | grep -n 'Rendering:'
+```
+
+* Check Pandoc output for TeX conversion warnings:
+
+```bash
+cd specification
+make -B spec.html spec.pdf 2>&1 | grep -nE 'Could not convert TeX math|WARNING'
+```
+
+No output from these commands typically indicates there are no active false-positive dollar parsing issues.
+
+If output does appear, the preferred fix is to improve parser/build behavior (MarkdownPP or Pandoc configuration), not to force content authors to degrade otherwise clear prose.
+
 ## Best Practices
 
 ### Header Conventions

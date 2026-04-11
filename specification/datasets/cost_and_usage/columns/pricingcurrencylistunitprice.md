@@ -6,9 +6,6 @@ The Pricing Currency List Unit Price represents the suggested service-provider-p
 
 PricingCurrencyListUnitPrice MUST adhere to the following requirements:
 
-* PricingCurrencyListUnitPrice presence in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) MUST adhere to the following presence requirements:
-  * PricingCurrencyListUnitPrice SHOULD be present in a Cost and Usage *FOCUS dataset* when the service provider supports pricing and billing in different currencies and publishes unit prices exclusive of discounts.
-  * PricingCurrencyListUnitPrice MAY be present in a Cost and Usage *FOCUS dataset* in all other cases.
 * PricingCurrencyListUnitPrice MUST be of type Decimal.
 * PricingCurrencyListUnitPrice MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * PricingCurrencyListUnitPrice MUST adhere to the following nullability requirements:

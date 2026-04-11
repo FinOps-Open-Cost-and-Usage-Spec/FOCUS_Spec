@@ -19,10 +19,10 @@ OS=$(shell uname)
 all: spec.md spec.pdf spec.html
 
 spec.html: spec.md
-	$(PANDOC) spec.md -o $@ -f gfm -F $(PANDOC_PROJECT_RELATIVE_LINKS) -M pathToProjectRoot=$(PATH_TO_PROJECT_ROOT) -s --css=styles/${STYLE}_html.css
+	$(PANDOC) spec.md -o $@ -f gfm-tex_math_dollars -F $(PANDOC_PROJECT_RELATIVE_LINKS) -M pathToProjectRoot=$(PATH_TO_PROJECT_ROOT) -s --css=styles/${STYLE}_html.css
 
 spec.pdf: spec.html
-	$(PANDOC) spec.md -o spec_pdf.html -f gfm -F $(PANDOC_PROJECT_RELATIVE_LINKS) -M pathToProjectRoot=$(PATH_TO_PROJECT_ROOT) -s --css=styles/${STYLE}.css $(PDF_MARGINS)
+	$(PANDOC) spec.md -o spec_pdf.html -f gfm-tex_math_dollars -F $(PANDOC_PROJECT_RELATIVE_LINKS) -M pathToProjectRoot=$(PATH_TO_PROJECT_ROOT) -s --css=styles/${STYLE}.css $(PDF_MARGINS)
 	$(WKHTMLTOPDF) --enable-local-file-access --footer-right "[page] of [topage]" --footer-font-name "Palatino" --footer-font-size 8 spec_pdf.html $@
 
 spec.md: $(SPEC_SOURCE_FILES)

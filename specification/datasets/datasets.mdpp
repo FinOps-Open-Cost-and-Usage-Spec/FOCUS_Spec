@@ -1,5 +1,5 @@
 !INCLUDE "data_model.md",0
 !INCLUDE "cost_and_usage/cost_and_usage.mdpp",1
+!INCLUDE "billing_period/billing_period.mdpp",1
 !INCLUDE "contract_commitment/contract_commitment.mdpp",1
 !INCLUDE "invoice_detail/invoice_detail.mdpp",1
-!INCLUDE "billing_period/billing_period.mdpp",1
