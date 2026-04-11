@@ -6,7 +6,7 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 ### Normative Requirements
 Normative requirements are defined and authored exclusively according to the Normative Requirements Guidelines.
 
-Authors MUST refer to the Normative Requirements Guidelines when writing or modifying normative requirements.
+Authors MUST refer to the [Normative Requirements Guidelines](normative-requirements-guidelines.md) when writing or modifying normative requirements.
 
 <table>
     <tr>
