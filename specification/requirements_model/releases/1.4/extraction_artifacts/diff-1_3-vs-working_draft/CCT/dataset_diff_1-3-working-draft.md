@@ -5,7 +5,7 @@
 ContractCommitment [-adheres-]{+MUST adhere+} to the following requirements:
 
 * ContractCommitment MUST be present when the service provider supports *contract commitments*.
-{+* ContractCommitment column presence MUST adhere to the following requirements:+}
+* ContractCommitment {+column presence MUST adhere to the following requirements:+}
 {+  * ContractCommitment MUST include BillingCurrency.+}
 {+  * ContractCommitment MUST include ContractCommitmentApplicability.+}
 {+  * ContractCommitment MUST include ContractCommitmentBenefitCategory.+}
@@ -36,9 +36,10 @@ ContractCommitment [-adheres-]{+MUST adhere+} to the following requirements:
 {+  * ContractCommitment MUST include PricingCurrency when the service provider supports pricing and billing in different currencies.+}
 {+  * ContractCommitment MUST include PricingCurrencyContractCommitmentCost when the service provider supports pricing and billing in different currencies.+}
 {+  * ContractCommitment MUST include ServiceProviderName.+}
-* ContractCommitment MUST conform to ColumnHandling requirements.
 {+* ContractCommitment MUST conform to CorrectionHandling requirements.+}
 {+* ContractCommitment MUST conform to DatasetCompleteness requirements.+}
-{+* ContractCommitment MUST conform to DatasetConfiguration requirements.+}
-{+* ContractCommitment MUST conform to DeliveryHandling requirements.+}
-* ContractCommitment MUST conform to NullHandling requirements.
+{+* ContractCommitment+} MUST conform to [-ColumnHandling-]{+DatasetConfiguration+} requirements.
+* ContractCommitment MUST conform to {+DeliveryHandling requirements.+}
+{+* ContractCommitment *FOCUS columns* MUST conform to FocusColumnHandling requirements.+}
+{+* ContractCommitment *FOCUS columns* MUST conform to+} NullHandling requirements.
+[-<div class='h4-nonindex'>Dataset ID</div>-]{+* ContractCommitment *custom columns* MUST conform to CustomColumnHandling requirements.+}
