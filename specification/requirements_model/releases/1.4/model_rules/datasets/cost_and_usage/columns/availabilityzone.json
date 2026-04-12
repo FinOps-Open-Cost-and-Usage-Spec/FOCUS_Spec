@@ -17,7 +17,7 @@
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "AvailabilityZone adheres to the following requirements:",
+      "MustSatisfy": "AvailabilityZone MUST adhere to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
