@@ -419,7 +419,7 @@
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "SkuPriceDetails properties for a given SkuPriceId MUST adhere to the following requirements:",
-      "Keyword": "SHOULD",
+      "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
         "Items": [
