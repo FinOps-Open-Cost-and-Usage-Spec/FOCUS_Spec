@@ -418,8 +418,8 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "SkuPriceDetails properties for a given SkuPriceId MUST adhere to the following requirements:",
-      "Keyword": "MUST",
+      "MustSatisfy": "SkuPriceDetails properties for a given SkuPriceId SHOULD adhere to the following requirements:",
+      "Keyword": "SHOULD",
       "Requirement": {
         "CheckFunction": "AND",
         "Items": [
