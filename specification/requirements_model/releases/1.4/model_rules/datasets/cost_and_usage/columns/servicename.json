@@ -239,7 +239,7 @@
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "The relationship between ServiceName and ServiceSubcategory MUST adhere to the following requirements:",
-      "Keyword": "SHOULD",
+      "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
         "Items": [
