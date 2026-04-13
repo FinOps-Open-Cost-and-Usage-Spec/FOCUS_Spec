@@ -255,6 +255,9 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 
 * **Consistent Structure:** JSON examples SHOULD follow consistent formatting and indentation.
 
+* **Sentence Spacing**: Sentences between paragraphs MUST be delienated with a single space; double spaces are not permitted.
+
+* **No Contractions**: In order to maintain a formal, professional tone throughout the specification, contractions MUST NOT be used (e.g., use "do not" instead of "don't").
 
 ### Section Structure
 
@@ -265,6 +268,8 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 * **Normative Scope:** Normative requirements (those using BCP-14 keywords) MUST appear only in the "Requirements" section.
 
 * **No Normative Leakage:** Normative keywords (MUST, SHOULD, MAY, etc.) MUST NOT be used in any section other than "Requirements".
+
+* **Title Case for Subheaders**: Subheaders MUST be denoted in Title Case. All words MUST be capitalized except articles (a, an, the), coordinating conjunctions (and, but, or), and short prepositions (e.g., in, on, at), unless they begin the subheader.
 
 * **Example** (Markdown, illustrative):
 
@@ -346,6 +351,9 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 >
 > 1.0-preview
 
+### Tables
+
+* **Markdown Table Spacing**: Markdown tables MUST use only a single space after values. Markdown tables MUST NOT be justified or padded with extra spaces simply to align the vertical pipes visually in the raw markdown.
 
 ### Example HTML Table
 This is an example of a complex table with merged rows and columns, along with an additional header row.
