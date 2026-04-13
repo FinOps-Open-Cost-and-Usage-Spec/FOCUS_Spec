@@ -353,7 +353,7 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 
 ### Tables
 
-* **Markdown Table Spacing**: Markdown tables MUST use only a single space after values. Markdown tables MUST NOT be justified or padded with extra spaces simply to align the vertical pipes visually in the raw markdown.
+* **Markdown Table Formatting**: Markdown tables MUST use exactly one space after values, without additional padding or justification to align vertical pipes in the raw markdown.
 
 ### Example HTML Table
 This is an example of a complex table with merged rows and columns, along with an additional header row.
