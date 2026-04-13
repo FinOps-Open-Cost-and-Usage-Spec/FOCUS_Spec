@@ -349,7 +349,9 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 
 ### Tables
 
-* **Markdown Table Formatting:** Markdown tables MUST use exactly one space after values, without additional padding or justification to align vertical pipes in the raw markdown.
+* **Markdown Table Spacing:**
+  * When a markdown table has a maximum row width of less than 120 characters, the table SHOULD be padded with spaces to align the vertical pipes visually.
+  * When a markdown table has a maximum row width of 120 characters or more, the table SHOULD use exactly one space after values without additional padding.
 
 ### Example HTML Table
 This is an example of a complex table with merged rows and columns, along with an additional header row.
