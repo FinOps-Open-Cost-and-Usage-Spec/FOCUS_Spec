@@ -9,7 +9,7 @@ InvoiceIssueStatus MUST adhere to the following requirements:
 * InvoiceIssueStatus MUST be of type String.
 * InvoiceIssueStatus MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * InvoiceIssueStatus MUST NOT be null.
-* InvoiceIssueStatus MUST be one of the allowed values defined in the [Allowed Values](#datasets.invoicedetail.invoiceissuestatus.allowed-values) section.
+* InvoiceIssueStatus MUST be one of the allowed values.
 * InvoiceIssueStatus MUST represent the current publication state of the invoice.
 * InvoiceIssueStatus MUST NOT transition from "Issued" to "Open" unless explicitly requested or approved by the customer.
 
@@ -47,7 +47,7 @@ The publication state of the invoice and the reliability of its associated deliv
 | Data type       | String                          |
 | Value format    | \<unspecified>                  |
 
-## Allowed Values
+Allowed values:
 
 | Value  | Description |
 | :---   | :---        |

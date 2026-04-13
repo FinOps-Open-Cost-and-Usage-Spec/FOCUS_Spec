@@ -34,7 +34,7 @@ The current lifecycle state of a [*contract commitment*](#glossary:contract-comm
 | Data type       | String         |
 | Value format    | Allowed values |
 
-## Allowed Values
+Allowed values:
 
 | Value | Sort Order | Description |
 | :--- | :--- | :--- |

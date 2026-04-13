@@ -8,7 +8,7 @@ BillingPeriodStatus MUST adhere to the following requirements:
 
 * BillingPeriodStatus MUST be of type String.
 * BillingPeriodStatus MUST NOT be null.
-* BillingPeriodStatus MUST be one of the [allowed values](#datasets.billingperiod.billingperiodstatus.allowed-values).
+* BillingPeriodStatus MUST be one of the allowed values.
 * BillingPeriodStatus MUST represent the state of the billing period identified by [BillingPeriodStart](#datasets.billingperiod.billingperiodstart) and [BillingPeriodEnd](#datasets.billingperiod.billingperiodend).
 * BillingPeriodStatus MUST NOT transition from "Closed" to "Open" unless explicitly requested or approved by the customer.
 
@@ -50,7 +50,7 @@ The state of the billing period (i.e., "Open" or "Closed"), indicating whether t
 | Data type     | String                              |
 | Value format  | Allowed values                      |
 
-## Allowed Values
+Allowed values:
 
 | Value    | Description                                                                                                   |
 | :------- | :------------------------------------------------------------------------------------------------------------ |
