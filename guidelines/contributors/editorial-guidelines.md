@@ -70,7 +70,7 @@ These guidelines can be modified through a Pull Request (PR), which the members 
         </td>
         <td>
             This column:<br>
-            &nbsp;&nbsp; * MUST be null when ChargeCategory is "Tax" ...
+            &nbsp;&nbsp; * MUST be null when ChargeCategory is `Tax` ...
         </td>
         <td>
             - Enclosed in backticks (e.g., `Usage`)<br>
@@ -171,9 +171,9 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 * **Example** (Markdown, illustrative):
 
   ```md
-  * ... MUST be null when ChargeCategory is "Tax".
-  * ... MUST be null if ChargeCategory is "Tax".
-  * ... MUST be null unless ChargeCategory is "Usage".
+  * ... MUST be null when ChargeCategory is `Tax`.
+  * ... MUST be null if ChargeCategory is `Tax`.
+  * ... MUST be null unless ChargeCategory is `Usage`.
   ```
 
 * **Subject Consistency:** Each normative statement MUST clearly identify the subject being constrained.
@@ -237,8 +237,8 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 * **Example** (Markdown, illustrative):
 
   ```md
-  * ... MUST be null when ChargeCategory is "Tax".
-  * ... MUST be null when ChargeCategory is "Adjustment".
+  * ... MUST be null when ChargeCategory is `Tax`.
+  * ... MUST be null when ChargeCategory is `Adjustment`.
   ```
 
 ### Formatting
@@ -346,7 +346,7 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 >
 > **3.1.45.5. Usability Constraints**
 >
-> **Aggregation:** When aggregating Pricing Quantity for commitment utilization calculations, it's important to exclude commitment discount purchases (i.e. when Charge Category is "Purchase") that are paid to cover future eligible charges (e.g., commitment discount ). Otherwise, when accounting for all upfront or accrued purchases, it's important to exclude commitment discount usage (i.e. when Charge Category is "Usage"). This exclusion helps prevent double counting of these quantities in the aggregation.
+> **Aggregation:** When aggregating Pricing Quantity for commitment utilization calculations, it's important to exclude commitment discount purchases (i.e. when Charge Category is `Purchase`) that are paid to cover future eligible charges (e.g., commitment discount ). Otherwise, when accounting for all upfront or accrued purchases, it's important to exclude commitment discount usage (i.e., when Charge Category is `Usage`). This exclusion helps prevent double counting of these quantities in the aggregation.
 >
 > **3.1.45.6. Content Constraints**
 >
