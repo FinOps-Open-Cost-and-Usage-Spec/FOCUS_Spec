@@ -255,6 +255,9 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 
 * **Sentence Spacing:** Sentences within paragraphs MUST be delineated with a single space.
 
+* **Spelling Out Numbers**: In standard prose, numbers zero through nine MUST be spelled out as words (e.g., "one", "two", "nine"), while numbers 10 and above MUST be written as numerals (e.g., "10", "42"). 
+  * **Exception:** This rule DOES NOT apply to technical values, mathematical formulas, JSON examples, or explicit column constraints (e.g., write `BilledCost MUST be 0`, not `BilledCost MUST be zero`).
+
 ### JSON Formatting
 
 * **Valid JSON:** JSON examples MUST be valid and complete.
