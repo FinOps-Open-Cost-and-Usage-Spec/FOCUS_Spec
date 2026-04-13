@@ -259,8 +259,6 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 
 * **Consistent Structure:** JSON examples SHOULD follow consistent formatting and indentation.
 
-* **No Contractions**: In order to maintain a formal, professional tone throughout the specification, contractions MUST NOT be used (e.g., use "do not" instead of "don't").
-
 ### Section Structure
 
 * **Consistent Subsection Order:** Sections for the same entity type SHOULD follow the same subsection order (e.g., Title, Requirements, Entity ID, Display Name, Description, Content Constraints, Introduced (version)).
