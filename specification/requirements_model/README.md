@@ -75,7 +75,7 @@ In FOCUS, artifacts refer to either **columns** or **attributes**:
   _e.g._: `DateTimeFormat-A-001-M`
 - **Dataset** - Requirement affecting the dataset as a whole.
   _e.g._: `BilledCost-D-001-M`
-- **Other** - There is a possibility we may define other entities such as e.g., `Provider`
+- **Other** - There is a possibility we may define other entities (e.g., `Provider`)
 
 ---
 
