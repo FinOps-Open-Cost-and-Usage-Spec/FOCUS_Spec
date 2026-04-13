@@ -74,7 +74,7 @@ These guidelines can be modified through a Pull Request (PR), which the members 
         </td>
         <td>
             - Enclosed in backticks (e.g., `Usage`)<br>
-            - Normal text without bold or italics
+            - Formatted as inline code
         </td>
     </tr>
     <tr>
@@ -326,8 +326,8 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 > * PricingQuantity MUST conform to NumericFormat requirements.
 > * PricingQuantity nullability is defined as follows:
 >   * PricingQuantity MUST be null when SkuPriceId is null.
->   * PricingQuantity MUST be null when ChargeCategory is "Tax"
->   * PricingQuantity MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and ChargeClass is not "Correction"
+>   * PricingQuantity MUST be null when ChargeCategory is `Tax`
+>   * PricingQuantity MUST NOT be null when ChargeCategory is `Usage` or `Purchase` and ChargeClass is not `Correction`
 >   * PricingQuantity MAY be null in all other cases.
 > * PricingQuantity MUST be a valid decimal value when not null.
 > * Cost metric (e.g., ContractedCost) MUST equal the product of the corresponding unit price (e.g., ContractedUnitPrice) and PricingQuantity when the unit price is not null and
