@@ -13,7 +13,7 @@ Each SKU ID represents a unique set of features that can be sold at different pr
 * Commitment discount pricing [*period*](#glossary:period) (e.g., 1 year, 3 years).
 * Negotiated discounts or other contractual terms or conditions.
 
-SKU ID should be consistent across pricing variations of a good or service to facilitate price comparisons for the same functionality, like where the functionality is provided or how it's paid for. SKU ID can be referenced on a catalog or [*price list*](#glossary:price-list) published by a service provider to look up detailed information about the *SKU*. The composition of the properties associated with the SKU ID may differ across service providers. SKU ID is commonly used for analyzing and comparing costs for the same SKU across different price details (e.g., *period*, tier, location).
+SKU ID should be consistent across pricing variations of a good or service to facilitate price comparisons for the same functionality, like where the functionality is provided or how it is paid for. SKU ID can be referenced on a catalog or [*price list*](#glossary:price-list) published by a service provider to look up detailed information about the *SKU*. The composition of the properties associated with the SKU ID may differ across service providers. SKU ID is commonly used for analyzing and comparing costs for the same SKU across different price details (e.g., *period*, tier, location).
 
 ## Requirements
 

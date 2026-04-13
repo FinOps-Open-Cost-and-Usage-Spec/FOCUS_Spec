@@ -37,7 +37,7 @@ The following principles were considered while building the specification.
 ### Working backward with ease of adoption
 
 * Aim to work backward from essential FinOps capabilities that practitioners need to perform to prioritize the dimensions, metrics and attributes of the cost and usage data that should be defined in the specification to fulfill that capability.
-* Be FinOps scenario-driven. Define columns that answer scenario questions; don't look for scenarios to fit a column, each column must have a use case.
+* Be FinOps scenario-driven. Define columns that answer scenario questions; do not look for scenarios to fit a column, each column must have a use case.
 * Don't add dimensions or metrics to the specification just because it can be added.
 * When defining the specification, consideration should be made to existing data already in the major cloud service providers' (AWS, GCP, Azure, OCI) datasets.
 * As long as it solves the FinOps use case, there should be a preference to align with data that is already present in a majority of the major data generators.

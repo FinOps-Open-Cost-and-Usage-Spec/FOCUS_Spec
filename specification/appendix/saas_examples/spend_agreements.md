@@ -64,7 +64,7 @@ For this scenario B, contract includes the following terms in addition to the ba
 
 ### Scenario B1: Prepaid with no minimum spend requirement per month
 
-Scenario B1 is similar to scenario A1 with the difference being that it's a pre-paid contract.
+Scenario B1 is similar to scenario A1 with the difference being that it is a pre-paid contract.
 
 [**CSV Example**](/specification/data/saas_examples/spend_agreements/saas_spend_agreements_b1.csv)
 
@@ -77,7 +77,7 @@ Note the following details in the example dataset:
 
 ### Scenario B2: Prepaid with a minimum spend requirement per month
 
-Scenario B2 is similar to A2 with the difference being that it's a pre-paid contract.
+Scenario B2 is similar to A2 with the difference being that it is a pre-paid contract.
 
 [**CSV Example**](/specification/data/saas_examples/spend_agreements/saas_spend_agreements_b2.csv)
 

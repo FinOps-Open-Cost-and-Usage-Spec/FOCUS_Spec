@@ -1,6 +1,6 @@
 # Null Handling
 
-[*FOCUS dataset*](#glossary:FOCUS-dataset) records that don't have a value that can be presented for a column must be handled in a consistent way to reduce friction for FinOps practitioners who consume the data for analysis, reporting, and other use cases.
+[*FOCUS dataset*](#glossary:FOCUS-dataset) records that do not have a value that can be presented for a column must be handled in a consistent way to reduce friction for FinOps practitioners who consume the data for analysis, reporting, and other use cases.
 
 ## Requirements
 
@@ -20,7 +20,7 @@ Null Handling
 
 ## Description
 
-Indicates how to handle columns that don't have a value.
+Indicates how to handle columns that do not have a value.
 
 ## Introduced (version)
 

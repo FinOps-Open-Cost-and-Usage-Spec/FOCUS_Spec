@@ -18,7 +18,7 @@ This example shows a **Google Cloud Platform Spend-based CUD**, which is a commi
 
 The **No Upfront** payment option means you pay nothing at purchase time and instead pay a recurring monthly fee. GCP CUDs are billed monthly with no upfront payment option. This results in a recurring Purchase row each billing period with BilledCost equal to the monthly fee and zero EffectiveCost.
 
-This scenario demonstrates **full utilization** where exactly 100% of the commitment capacity is consumed. All usage rows have CommitmentDiscountStatus='Used', indicating the commitment was fully applied. BilledCost=0 on usage rows because they're covered by the commitment.
+This scenario demonstrates **full utilization** where exactly 100% of the commitment capacity is consumed. All usage rows have CommitmentDiscountStatus='Used', indicating the commitment was fully applied. BilledCost=0 on usage rows because they are covered by the commitment.
 
 ## Row Summary
 

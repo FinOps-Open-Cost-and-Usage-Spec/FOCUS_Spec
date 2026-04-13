@@ -12,7 +12,7 @@ Corrections are applied to the open billing period rather than modifying the clo
 
 ### Correction Style
 
-While the Overwrite mechanism is permissible when it doesn't impact issued invoices, ACME Corp defaults to the Append mechanism (Delta and Ledger styles) for all closed period corrections. This preference prioritizes auditability and traceability, ensuring that downstream consumers - particularly those managing chargeback - receive a clear, additive history of changes.
+While the Overwrite mechanism is permissible when it does not impact issued invoices, ACME Corp defaults to the Append mechanism (Delta and Ledger styles) for all closed period corrections. This preference prioritizes auditability and traceability, ensuring that downstream consumers - particularly those managing chargeback - receive a clear, additive history of changes.
 
 ### Scenario 1: Closed-Period Correction - Partial Reallocation to Correct Resource
 

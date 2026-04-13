@@ -90,7 +90,7 @@ The following keys should be used when applicable to facilitate cross-SKU and cr
 Notes
 <br><sup>1</sup> In the case of "burstable" SKUs offering variable levels of performance, the baseline or guaranteed value should be used.
 <br><sup>2</sup> Memory manufacturers still commonly uses "GB" to refer to 2<sup>30</sup> bytes, which is known as GiB in other contexts.
-<br><sup>3</sup> This is the operating system family of the SKU, if it's included with the SKU or the SKU only supports one type of operating system.
+<br><sup>3</sup> This is the operating system family of the SKU, if it is included with the SKU or the SKU only supports one type of operating system.
 
 ## Introduced (version)
 
