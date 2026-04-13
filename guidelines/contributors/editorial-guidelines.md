@@ -247,7 +247,7 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 
 * **Consistent Introductory Phrases:** Introductory phrases for normative lists SHOULD be consistent within a section.
 
-* **Sentence Spacing:** Sentences MUST be delineated with a single space.
+* **Sentence Spacing:** Sentences within paragraphs MUST be delineated with a single space.
 
 ### JSON Formatting
 
