@@ -29,7 +29,7 @@ The volume of a given *SKU* associated with a *resource* or *service* used or pu
 
 ## Usability Constraints
 
-**Aggregation:** When aggregating Pricing Quantity for commitment utilization calculations, it's important to exclude [*commitment discount*](#glossary:commitment-discount) purchases (i.e. when Charge Category is "Purchase") that are paid to cover future eligible [*charges*](#glossary:charge) (e.g., *commitment discount*). Otherwise, when accounting for all upfront or accrued purchases, it's important to exclude *commitment discount* usage (i.e. when Charge Category is "Usage"). This exclusion helps prevent double counting of these quantities in the aggregation.
+**Aggregation:** When aggregating Pricing Quantity for commitment utilization calculations, it is important to exclude [*commitment discount*](#glossary:commitment-discount) purchases (i.e., when Charge Category is "Purchase") that are paid to cover future eligible [*charges*](#glossary:charge) (e.g., *commitment discount*). Otherwise, when accounting for all upfront or accrued purchases, it is important to exclude *commitment discount* usage (i.e., when Charge Category is "Usage"). This exclusion helps prevent double counting of these quantities in the aggregation.
 
 ## Content Constraints
 
@@ -41,7 +41,7 @@ The volume of a given *SKU* associated with a *resource* or *service* used or pu
 | Allows nulls    | True                                                 |
 | Data type       | Decimal                                              |
 | Value format    | [Numeric Format](#attributes.numericformat)          |
-| Number Range    | Any valid decimal value                              |
+| Number range    | Any valid decimal value                              |
 
 ## Introduced (version)
 

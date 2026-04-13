@@ -31,31 +31,31 @@ Highest-level classification of a *service* based on the core function of the *s
 | Feature level   | Mandatory                                            |
 | Allows nulls    | False                                                |
 | Data type       | String                                               |
-| Value format    | Allowed Values                                       |
+| Value format    | Allowed values                                       |
 
 Allowed values:
 
-| Service Category          | Description                                                                                    |
-| :------------------------ | :--------------------------------------------------------------------------------------------- |
-| AI and Machine Learning   | Artificial Intelligence and Machine Learning related technologies.                             |
-| Analytics                 | Data processing, analytics, and visualization capabilities.                                    |
-| Business Applications     | Business and productivity applications and services.                                           |
-| Compute                   | Virtual, containerized, serverless, or high-performance computing infrastructure and services. |
-| Databases                 | Database platforms and services that allow for storage and querying of data.                   |
-| Developer Tools           | Software development and delivery tools and services.                                          |
-| Multicloud                | Support for interworking of multiple cloud and/or on-premises environments.                    |
-| Identity                  | Identity and access management services.                                                       |
-| Integration               | Services that allow applications to interact with one another.                                 |
-| Internet of Things        | Development and management of IoT devices and networks.                                        |
-| Management and Governance | Management, logging, and observability of a customer's use of cloud.                           |
-| Media                     | Media and entertainment streaming and processing services.                                     |
-| Migration                 | Moving applications and data to the cloud.                                                     |
-| Mobile                    | Services enabling cloud applications to interact via mobile technologies.                      |
-| Networking                | Network connectivity and management.                                                           |
-| Security                  | Security monitoring and compliance services.                                                   |
-| Storage                   | Storage services for structured or unstructured data.                                          |
-| Web                       | Services enabling cloud applications to interact via the Internet.                             |
-| Other                     | New or emerging services that do not align with an existing category.                          |
+| Service Category              | Description                                                                                    |
+| :---------------------------- | :--------------------------------------------------------------------------------------------- |
+| "AI and Machine Learning"     | Artificial Intelligence and Machine Learning related technologies.                             |
+| "Analytics"                   | Data processing, analytics, and visualization capabilities.                                    |
+| "Business Applications"       | Business and productivity applications and services.                                           |
+| "Compute"                     | Virtual, containerized, serverless, or high-performance computing infrastructure and services. |
+| "Databases"                   | Database platforms and services that allow for storage and querying of data.                   |
+| "Developer Tools"             | Software development and delivery tools and services.                                          |
+| "Multicloud"                  | Support for interworking of multiple cloud and/or on-premises environments.                    |
+| "Identity"                    | Identity and access management services.                                                       |
+| "Integration"                 | Services that allow applications to interact with one another.                                 |
+| "Internet of Things"          | Development and management of IoT devices and networks.                                        |
+| "Management and Governance"   | Management, logging, and observability of a customer's use of cloud.                           |
+| "Media"                       | Media and entertainment streaming and processing services.                                     |
+| "Migration"                   | Moving applications and data to the cloud.                                                     |
+| "Mobile"                      | Services enabling cloud applications to interact via mobile technologies.                      |
+| "Networking"                  | Network connectivity and management.                                                           |
+| "Security"                    | Security monitoring and compliance services.                                                   |
+| "Storage"                     | Storage services for structured or unstructured data.                                          |
+| "Web"                         | Services enabling cloud applications to interact via the Internet.                             |
+| "Other"                       | New or emerging services that do not align with an existing category.                          |
 
 ## Introduced (version)
 
