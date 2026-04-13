@@ -15,7 +15,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ServiceName adheres to the following requirements:",
+      "MustSatisfy": "ServiceName MUST adhere to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -148,7 +148,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "The relationship between ServiceName and ServiceCategory is defined as follows:",
+      "MustSatisfy": "The relationship between ServiceName and ServiceCategory MUST adhere to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -238,7 +238,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "The relationship between ServiceName and ServiceSubcategory is defined as follows:",
+      "MustSatisfy": "The relationship between ServiceName and ServiceSubcategory MUST adhere to the following requirements:",
       "Keyword": "SHOULD",
       "Requirement": {
         "CheckFunction": "AND",
