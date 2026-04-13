@@ -37,10 +37,10 @@ Indicates whether the *commitment discount* identified in the CommitmentDiscount
 
 Allowed values:
 
-| Value   | Description                                                              |
-|:--------|:-------------------------------------------------------------------------|
-| Spend   | Commitment discounts that require a predetermined amount of spend. |
-| Usage   | Commitment discounts that require a predetermined amount of usage. |
+| Value     | Description                                                              |
+|:----------|:-------------------------------------------------------------------------|
+| "Spend"   | Commitment discounts that require a predetermined amount of spend. |
+| "Usage"   | Commitment discounts that require a predetermined amount of usage. |
 
 ## Introduced (version)
 

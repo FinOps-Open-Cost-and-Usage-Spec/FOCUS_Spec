@@ -51,10 +51,10 @@ Allowed values:
 
 | Value | Sort Order | Description | Typical Use Case |
 | :--- | :--- | :--- | :--- |
-| Discount | 10 | A financial reduction in the unit price or list rate, whether applied immediately or conditionally upon meeting usage or spend thresholds. | Flat rate negotiated reductions, Savings Plans, growth rebates, or volume-tier discounts. |
-| Entitlement | 20 | The contractual right to access and consume specific products, features, or software tiers that would otherwise be unavailable. | Marketplace SaaS purchases, Enterprise Agreements (e.g., Snowflake), or paid Proof of Concepts. |
-| Availability | 30 | A contractual assurance of resource access and physical capacity. | Capacity reservations or dedicated host guarantees. |
-| Other | 40 | Benefits not captured by standard categories. | Support access, training, or professional services. |
+| "Discount" | 10 | A financial reduction in the unit price or list rate, whether applied immediately or conditionally upon meeting usage or spend thresholds. | Flat rate negotiated reductions, Savings Plans, growth rebates, or volume-tier discounts. |
+| "Entitlement" | 20 | The contractual right to access and consume specific products, features, or software tiers that would otherwise be unavailable. | Marketplace SaaS purchases, Enterprise Agreements (e.g., Snowflake), or paid Proof of Concepts. |
+| "Availability" | 30 | A contractual assurance of resource access and physical capacity. | Capacity reservations or dedicated host guarantees. |
+| "Other" | 40 | Benefits not captured by standard categories. | Support access, training, or professional services. |
 
 ## Introduced (version)
 

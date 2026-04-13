@@ -37,8 +37,8 @@ Allowed values:
 
 | Value   | Description                                                              |
 |:--------|:-------------------------------------------------------------------------|
-| Spend   | Contract commitments that require a predetermined amount of spend.       |
-| Usage   | Contract commitments that require a predetermined amount of usage.       |
+| "Spend"   | Contract commitments that require a predetermined amount of spend.       |
+| "Usage"   | Contract commitments that require a predetermined amount of usage.       |
 
 ## Introduced (version)
 

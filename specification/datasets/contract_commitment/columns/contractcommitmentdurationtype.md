@@ -52,20 +52,20 @@ The following units should be used for the representation of time:
 
 | Time Unit |
 | :--- |
-| Minute |
-| Minutes |
-| Hour |
-| Hours |
-| Day |
-| Days |
-| Week |
-| Weeks |
-| Month |
-| Months |
-| Quarter |
-| Quarters |
-| Year |
-| Years |
+| "Minute" |
+| "Minutes" |
+| "Hour" |
+| "Hours" |
+| "Day" |
+| "Days" |
+| "Week" |
+| "Weeks" |
+| "Month" |
+| "Months" |
+| "Quarter" |
+| "Quarters" |
+| "Year" |
+| "Years" |
 
 ## Introduced (version)
 
