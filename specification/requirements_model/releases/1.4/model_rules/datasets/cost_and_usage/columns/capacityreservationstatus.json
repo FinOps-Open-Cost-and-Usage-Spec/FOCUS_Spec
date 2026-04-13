@@ -17,7 +17,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CapacityReservationStatus adheres to the following requirements:",
+      "MustSatisfy": "CapacityReservationStatus MUST adhere to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -87,7 +87,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CapacityReservationStatus nullability is defined as follows:",
+      "MustSatisfy": "CapacityReservationStatus MUST adhere to the following nullability requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -203,7 +203,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "When CapacityReservationStatus is not null, CapacityReservationStatus adheres to the following additional requirements:",
+      "MustSatisfy": "When CapacityReservationStatus is not null, CapacityReservationStatus MUST adhere to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
