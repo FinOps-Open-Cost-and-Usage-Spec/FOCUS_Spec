@@ -247,6 +247,8 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 
 * **Consistent Introductory Phrases:** Introductory phrases for normative lists SHOULD be consistent within a section.
 
+* **Sentence Spacing**: Sentences MUST be delineated with a single space.
+
 ### JSON Formatting
 
 * **Valid JSON:** JSON examples MUST be valid and complete.
@@ -254,8 +256,6 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 * **JSON Quotation Marks:** JSON keys MUST use double quotation marks.
 
 * **Consistent Structure:** JSON examples SHOULD follow consistent formatting and indentation.
-
-* **Sentence Spacing**: Sentences between paragraphs MUST be delienated with a single space; double spaces are not permitted.
 
 * **No Contractions**: In order to maintain a formal, professional tone throughout the specification, contractions MUST NOT be used (e.g., use "do not" instead of "don't").
 
