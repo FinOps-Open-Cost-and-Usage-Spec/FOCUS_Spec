@@ -87,7 +87,7 @@ AI agents generating or reviewing content MUST act as strict technical editors e
 
 * Use BCP-14 keywords: MUST, MUST NOT, SHOULD, SHOULD NOT, MAY (all uppercase).
 * DO NOT use: "REQUIRED", "SHALL", "SHALL NOT", "RECOMMENDED", "OPTIONAL"
-* **Location:** Normative keywords MUST NOT appear outside of the "Requirements" header. They MAY appear in non-normative sections only if explicitly enclosed in quotation marks in reference to an existing statement.
+* **Location:** Capitalized BCP-14 keywords MUST NOT appear outside "Requirements" unless quoted. Do not flag lowercase usage (e.g., "may", "should").
 * **Format:** Write normative statements as bullet lists, not lengthy sentences.
 * **Single Constraint:** Each normative bullet MUST express exactly one requirement. Do not combine multiple distinct obligations using "and"/"or", though these conjunctions are permitted within conditional clauses and mathematical validations.
 * **Conditional Phrasing:** Normative statements with conditions MUST use standard phrasing: "when / if / unless / only when / only if / except when / except if".
@@ -101,7 +101,7 @@ AI agents generating or reviewing content MUST act as strict technical editors e
 * **No Mixing:** Do not mix Entity IDs and Display Names within the same normative requirement.
 * **Column values:** Enclosed in double quotes (e.g., `"Usage"`, `"Tax"`).
 * **Glossary terms:** Link with `[*term*](#glossary:term)` format.
-* **Linking Rule:** Link entity names and Glossary terms ONLY on their first occurrence per file. Exception: Functional links using different anchor text are exempt.
+* **Linking Rule:** Link entity names and Glossary terms ONLY on their first occurrence per source file. Exception: Functional links using different anchor text are exempt.
 * **Lists:** All unordered lists MUST use asterisks (`*`), never dashes (`-`) or plus signs (`+`). Nested bullet points MUST use exactly two spaces per level.
 * **Notes:** Important notes must use the blockquote format (`> Important Consideration`).
 * **Anchors:** Pandoc auto-generates custom heading anchors. DO NOT flag missing HTML `<a name="">` tags.
@@ -110,7 +110,7 @@ AI agents generating or reviewing content MUST act as strict technical editors e
 
 * **Mathematical & Schema Accuracy:** AI reviewers MUST rigorously calculate, parse, and verify all data within examples (especially JSON snippets and tables). Flag any mathematical inconsistencies or hallucinated data.
 * **JSON Formatting:** JSON blocks MUST use double quotation marks for keys. Verify that the JSON is structurally valid.
-* **Example Disclaimer:** The exact warning note (`> Note: The following examples are informative and non-normative. They do not define requirements.`) MUST be included at the top of main specification sections that contain examples. Do not enforce this disclaimer on individual subsections or column definition files.
+* **Example Disclaimer:** Top-level sections with examples MUST begin with this exact note (skip all subsections): `> Note: The following examples are informative and non-normative. They do not define requirements.`
 
 ### File Organization
 
