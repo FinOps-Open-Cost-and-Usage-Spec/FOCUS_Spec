@@ -40,7 +40,7 @@ Sample known issues observed in billing data and other data sources for various 
   * Other suggestions?
 
 * How should we reference the attribute?
-  * Explicitly within individual column specs (in normative paragraph and constraint table, similar to e.g., Unit and Value)?
+  * Explicitly within individual column specs (in normative paragraph and constraint table (e.g., Unit and Value))?
   * Implicitly applicable to all String columns without explicitly referencing it in individual column specs (similar to null-handing)? **<-- selected by the group**
 
 * To avoid unintentionally suggesting a higher priority for these specific columns, current references to value-format consistency requirements were removed from the following columns:
