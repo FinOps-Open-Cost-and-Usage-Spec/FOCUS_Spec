@@ -17,7 +17,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "PricingCurrencyEffectiveCost adheres to the following requirements:",
+      "MustSatisfy": "PricingCurrencyEffectiveCost MUST adhere to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
