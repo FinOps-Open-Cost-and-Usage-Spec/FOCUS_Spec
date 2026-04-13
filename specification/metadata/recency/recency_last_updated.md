@@ -17,7 +17,7 @@ RecencyLastUpdated
 
 Recency Last Updated
 
-## Content constraints
+## Content Constraints
 
 | Constraint    | Value                                     |
 |:--------------|:------------------------------------------|

@@ -18,7 +18,7 @@ Deprecated
 
 Deprecated
 
-## Content constraints
+## Content Constraints
 
 | Constraint      | Value            |
 |:----------------|:-----------------|

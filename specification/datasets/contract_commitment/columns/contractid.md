@@ -25,7 +25,7 @@ Contract ID
 
 A service-provider-assigned identifier for a contract describing the agreed terms between a service provider and a customer.
 
-## Content constraints
+## Content Constraints
 
 | Constraint      | Value                                                |
 |:----------------|:-----------------------------------------------------|

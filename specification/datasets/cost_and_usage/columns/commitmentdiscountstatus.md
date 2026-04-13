@@ -26,7 +26,7 @@ Commitment Discount Status
 
 Indicates whether the *charge* corresponds with the consumption of a *commitment discount* or the unused portion of the committed amount.
 
-## Content constraints
+## Content Constraints
 
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |

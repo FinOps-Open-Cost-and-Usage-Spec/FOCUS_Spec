@@ -26,7 +26,7 @@ Commitment Discount Name
 
 The display name assigned to a *commitment discount*.
 
-## Content constraints
+## Content Constraints
 
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |

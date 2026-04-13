@@ -24,7 +24,7 @@ Payment Currency
 
 The currency in which the invoice is paid.
 
-## Content constraints
+## Content Constraints
 
 |    Constraint    |              Value             |
 |:----------------|:--------------------------------|
