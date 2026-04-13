@@ -16,7 +16,7 @@
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ServiceSubcategory MUST adhere to the following requirements:",
-      "Keyword": "SHOULD",
+      "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
         "Items": [
