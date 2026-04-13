@@ -177,6 +177,10 @@ Specifically:
   * a constraint on the resulting dataset state, or
   * a constraint on a schema-defined artifact.
 
+### Tone and Grammar
+
+In order to maintain a formal, professional tone throughout the specification, contractions MUST NOT be used in normative requirements (e.g., use "do not" instead of "don't").
+
 ### Use of BCP 14 Keywords
 
 * Each normative bullet MUST contain exactly one BCP 14 keyword (MUST, SHOULD, MAY, MUST NOT, SHOULD NOT). See [BCP14](https://tools.ietf.org/html/bcp14) [[RFC2119](https://tools.ietf.org/html/rfc2119)][[RFC8174](https://tools.ietf.org/html/rfc8174)].
