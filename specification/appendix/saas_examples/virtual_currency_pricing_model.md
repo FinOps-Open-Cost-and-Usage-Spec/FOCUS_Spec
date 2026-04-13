@@ -11,7 +11,7 @@ The following baseline conditions apply to the scenarios described below:
 * AwesomeCorp has signed an agreement with SaaS service provider Acme Co to use their services.
 * Acme Co offers a virtual currency pricing model for their services and requires a purchase of virtual currency in advance of usage. Their denomination of virtual currency is called "tokens".
 * Acme Co requires purchase of additional tokens in the event of usage exceeding purchased tokens.
-* Acme Co publicly lists the cost of their tokens at &dollar;2 per token.
+* Acme Co publicly lists the cost of their tokens at $2 per token.
 * Acme Co treats token purchases as resources; therefore, charges for token purchases include values for ResourceId, ResourceName, and ResourceType.
 * Acme Co publicly lists their usage to token rates. These rates are as follows:
   * 1 Q Widget Execution = 1 token
@@ -28,7 +28,7 @@ For this scenario, contract terms include the following terms in addition to the
 
 For this scenario, the initial purchase of virtual currency is executed as follows:
 
-* On April 1, 2025, AwesomeCorp agrees to purchase 100,000 tokens at &dollar;2 per token for a total spend &dollar;200,000. These tokens are only valid for 12 months.
+* On April 1, 2025, AwesomeCorp agrees to purchase 100,000 tokens at $2 per token for a total spend $200,000. These tokens are only valid for 12 months.
 
 [**CSV Example**](/specification/data/saas_examples/virtual_currency_pricing_model_a1.csv)
 
@@ -36,10 +36,10 @@ Note the following details in the example dataset:
 
 * The Charge Period is April 1st 2025 - April 1st 2026. The Billing Period is the month of April 2025 (when the tokens were purchased) and therefore will appear in the April invoice.
 * Because Acme Co uses a virtual currency pricing model for usage and publishes their token price in terms of dollars and their usage cost in terms of tokens, their Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) includes the columns PricingCurrency, PricingCurrencyContractedUnitPrice, PricingCurrencyEffectiveCost, and PricingCurrencyListUnitPrice.
-* A single charge representing the total payment for the initial token purchase agreement (&dollar;200,000) is charged in the first invoice.
+* A single charge representing the total payment for the initial token purchase agreement ($200,000) is charged in the first invoice.
   * ListCost, BilledCost, and ContractedCost of the purchase are all represented in this charge, however EffectiveCost is zero since the tokens are not yet consumed.
 * PricingQuantity is set to the total tokens purchased.
-* Because Awesome Corp is paying the list price, ListUnitPrice and ContractedUnitPrice are all set to the same value of &dollar;2.
+* Because Awesome Corp is paying the list price, ListUnitPrice and ContractedUnitPrice are all set to the same value of $2.
 
 ## Scenario A2: Usage of Virtual Currency Purchased Without a Discount
 
@@ -68,7 +68,7 @@ For this scenario, contract terms include the following terms in addition to the
 
 For this scenario, the initial purchase of virtual currency is executed as follows:
 
-* On April 1, 2025, AwesomeCorp agrees to purchase 100,000 tokens at discounted cost of &dollar;1 per token for a total spend &dollar;100,000. These tokens are only valid for 12 months.
+* On April 1, 2025, AwesomeCorp agrees to purchase 100,000 tokens at discounted cost of $1 per token for a total spend $100,000. These tokens are only valid for 12 months.
 
 [**CSV Example**](/specification/data/saas_examples/virtual_currency_pricing_model_b1.csv)
 
@@ -76,10 +76,10 @@ Note the following details in the example dataset:
 
 * The Charge Period is April 1st 2025 - April 1st 2026. The Billing Period is the month of April 2025 (when the tokens were purchased) and therefore will appear in the April invoice.
 * Because Acme Co uses a virtual currency pricing model for usage and publishes their token price in terms of dollars and their usage cost in terms of tokens, their *FOCUS dataset* includes the columns PricingCurrency, PricingCurrencyContractedUnitPrice, PricingCurrencyEffectiveCost, and PricingCurrencyListUnitPrice.
-* A single charge representing the total payment for the initial token purchase agreement (&dollar;100,000) is charged in the first invoice.
+* A single charge representing the total payment for the initial token purchase agreement ($100,000) is charged in the first invoice.
   * ListCost, BilledCost, and ContractedCost of the purchase are all represented in this charge, however EffectiveCost is zero, as required for prepaid purchases.
 * PricingQuantity is set to the total tokens purchased.
-* Because Awesome Corp is receiving a discount on the token price, the ListUnitPrice is set to &dollar;2 and the ContractedUnitPrice is set to &dollar;1. A ListCost of (&dollar;200,000) and ContractedCost (&dollar;100,000) reflect the cost of the tokens at the list price and contracted price respectively. The BilledCost is set to &dollar;100,000 since this is the amount that Awesome Corp will be charged for the purchase of tokens.
+* Because Awesome Corp is receiving a discount on the token price, the ListUnitPrice is set to $2 and the ContractedUnitPrice is set to $1. A ListCost of ($200,000) and ContractedCost ($100,000) reflect the cost of the tokens at the list price and contracted price respectively. The BilledCost is set to $100,000 since this is the amount that Awesome Corp will be charged for the purchase of tokens.
 
 ## Scenario B2: Usage of Virtual Currency Purchased at a Discount
 
@@ -112,7 +112,7 @@ Additionally, Acme Co offers a modified usage to token ratio for one of their se
 
 Note the following details in the example dataset:
 
-* Because of the modified rate for Workflow Operations, the PricingCurrencyContractedUnitPrice and PricingCurrencyListUnitPrice are different for this charge. The ContractedUnitPrice is set to &dollar;1 and the ListUnitPrice is set to &dollar;2.
+* Because of the modified rate for Workflow Operations, the PricingCurrencyContractedUnitPrice and PricingCurrencyListUnitPrice are different for this charge. The ContractedUnitPrice is set to $1 and the ListUnitPrice is set to $2.
 * The PricingCurrencyEffectiveCost is 240 tokens for this charge, which is less than example B2 above due to the modified rate.
 * ListCost reflects the cost of the charge at both the list cost of the tokens and the list rate for which the usage consumes tokens.
 
@@ -120,7 +120,7 @@ Note the following details in the example dataset:
 
 For this scenario, Awesome Corp has exceeded their purchased tokens on October 1st 2025 by 1,500 tokens and Acme Co has charged them for the overage. The following conditions apply:
 
-* Acme Co has charged Awesome Corp for the cost of tokens at the list price of &dollar;2 per token, and this purchase is effective from April 1st 2025 to the date of the purchase, October 1st 2025.
+* Acme Co has charged Awesome Corp for the cost of tokens at the list price of $2 per token, and this purchase is effective from April 1st 2025 to the date of the purchase, October 1st 2025.
 * Awesome Corp purchases an additional 25,000 tokens to facilitate usage to the end of their contract. These tokens are valid from October 1st 2025 to April 1st 2026.
 
 [**CSV Example**](/specification/data/saas_examples/virtual_currency_pricing_model_c.csv)

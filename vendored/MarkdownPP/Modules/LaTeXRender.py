@@ -19,12 +19,18 @@ from MarkdownPP.Module import Module
 from MarkdownPP.Transform import Transform
 
 # $...$ (or $$...$$)
-singlelinere = re.compile(r"\$(\$?)..*\$(\$?)")
+#
+# Keep detection broad, then apply a content heuristic before rendering to
+# avoid treating currency/prose as LaTeX. Escaped dollars ("\$") are ignored.
+# Also enforces no space immediately after the opening $ or before the closing $
+singlelinere = re.compile(r"(?<!\\)(?<!\$)(\$\$(?!\$)|\$(?!\$))(?!\s)(.+?)(?<!\s)(?<!\\)\1(?!\$)")
 # $... or ...$ (or $$... or ...$$)
-startorendre = re.compile(r"^\$(\$?)|^\S.*\$(\$?)$")
+startorendre = re.compile(r"^(?<!\\)\$(\$?)(?!\d)|^\S.*(?<!\\)\$(\$?)$")
 
 codere = re.compile(r"^(    |\t)")
 spancodere = re.compile(r'(`[^`]+\`)')  # code between backticks
+mathcommandre = re.compile(r"\\[A-Za-z]+")
+wordre = re.compile(r"[A-Za-z]{2,}")
 
 # Support for Pandoc style code blocks with attributes
 fencedcodere = re.compile(r"^((> *)?```\w*|(> *)?~~~~*(\s*{.*})?)$")
@@ -35,6 +41,49 @@ class LaTeXRender(Module):
     Module for rendering LaTeX enclosed between $ dollar signs $.
     Rendering is performed using QuickLaTeX via ProblemSetMarmoset.
     """
+
+    def should_render(self, tex):
+        """Return True when a $...$ candidate is likely math, not currency."""
+        content = tex.strip().strip("$").strip()
+        if not content:
+            return False
+
+        # A valid inline math candidate should not contain additional
+        # unescaped dollar delimiters in its interior.
+        if re.search(r"(?<!\\)\$", content):
+            return False
+
+        # Fragments that end with an operator (e.g. "0.00133 = ") are
+        # typically prose/currency splits, not complete LaTeX expressions.
+        if content.rstrip().endswith(("=", "+", "-", "*", "/", "^", "<", ">")):
+            return False
+
+        # Table rows often produce matches like "$402,960.00 | $0.00".
+        # Treat pipe-delimited content as non-LaTeX unless explicit commands exist.
+        if "|" in content and not mathcommandre.search(content):
+            return False
+
+        # Pure numeric/currency values are not LaTeX expressions.
+        if re.match(r"^\s*[0-9][0-9,]*(\.[0-9]+)?\s*$", content):
+            return False
+
+        # Explicit LaTeX command is a strong signal.
+        if mathcommandre.search(content):
+            return True
+
+        has_digit = re.search(r"\d", content) is not None
+        word_count = len(wordre.findall(content))
+
+        # Numeric prose patterns such as "$4,380 / 12 months / 50 users" or
+        # "$0.02 < Tolerance $1.00" are common false positives.
+        if has_digit and word_count > 0:
+            return False
+
+        # Long prose between dollars is almost never intentional LaTeX.
+        if word_count > 2:
+            return False
+
+        return re.search(r"[A-Za-z0-9+\-*/^_=<>{}()]", content) is not None
 
     def transform(self, data):
         transforms = []
@@ -58,25 +107,37 @@ class LaTeXRender(Module):
                     transforms.append(Transform(linenum, "drop"))
                     current_block += "\n" + line
 
-                match = singlelinere.search(line)
-                if match:
-                    code_pos = []
-                    for m in spancodere.finditer(line):
-                        code_pos += range(*m.span())
+                search_start = 0
+                match = None
+                code_pos = []
+                for m in spancodere.finditer(line):
+                    code_pos += range(*m.span())
 
-                    if not (match.start(0) in code_pos or
-                            match.end(0) in code_pos):
+                while True:
+                    match = singlelinere.search(line, search_start)
+                    if not match:
+                        break
 
-                        # Single LaTeX line
-                        tex = match.group(0)
-                        before_tex = line[0:line.find(tex)]
-                        after_tex = line[(line.find(tex) + len(tex)):
-                                         len(line)]
-                        transforms.append(Transform(linenum, "swap",
-                                                    before_tex +
-                                                    self.render(tex) +
-                                                    after_tex))
-                else:
+                    if match.start(0) in code_pos or match.end(0) in code_pos:
+                        search_start = match.start(0) + 1
+                        continue
+
+                    # Single LaTeX line
+                    tex = match.group(0)
+                    if not self.should_render(tex):
+                        search_start = match.start(0) + 1
+                        continue
+
+                    before_tex = line[0:line.find(tex)]
+                    after_tex = line[(line.find(tex) + len(tex)):
+                                     len(line)]
+                    transforms.append(Transform(linenum, "swap",
+                                                before_tex +
+                                                self.render(tex) +
+                                                after_tex))
+                    break
+
+                if not match:
                     match = startorendre.search(line)
                     if match:
                         # Starting or ending a multi-line LaTeX block

@@ -13,6 +13,8 @@ CommitmentDiscountId MUST adhere to the following requirements:
   * CommitmentDiscountId MUST NOT be null when a *charge* is related to a *commitment discount*.
 * When CommitmentDiscountId is not null, CommitmentDiscountId MUST adhere to the following requirements:
   * CommitmentDiscountId MUST be a unique identifier within the service provider.
+  * CommitmentDiscountId MUST be equal to [ResourceId](#datasets.costandusage.resourceid) when [ChargeCategory](#datasets.costandusage.chargecategory) is "Purchase" and the *charge* represents a purchase of that *commitment discount*.
+  * CommitmentDiscountId MUST be equal to ResourceId when ChargeCategory is "Usage" and the *charge* represents an unused portion of that *commitment discount*.
   * CommitmentDiscountId SHOULD be a fully-qualified identifier.
 
 ## Column ID

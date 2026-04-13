@@ -22,9 +22,9 @@ The *service provider*'s on-demand pricing for this example:
 
 | Service | SKU | Unit Price | Pricing Unit | Credits/Hour |
 | :------ | :-- | ---------: | :----------- | -----------: |
-| Virtual Warehouse Compute | XS Warehouse | &dollar;3.00 | Credits | 1 |
-| Virtual Warehouse Compute | Medium Warehouse | &dollar;3.00 | Credits | 4 |
-| Storage | Active Storage | &dollar;23.00 | TB | n/a |
+| Virtual Warehouse Compute | XS Warehouse | $3.00 | Credits | 1 |
+| Virtual Warehouse Compute | Medium Warehouse | $3.00 | Credits | 4 |
+| Storage | Active Storage | $23.00 | TB | n/a |
 
 Credit consumption varies by warehouse size. An XS warehouse consumes 1 credit per hour. A Medium warehouse consumes 4 credits per hour.
 
@@ -36,11 +36,11 @@ A customer runs two warehouses in the US East region during January 2025:
 
 Three usage charges appear on the January invoice:
 
-* XS Warehouse: `200 Credits x $3.00` = &dollar;600.00
-* Medium Warehouse: `320 Credits x $3.00` = &dollar;960.00
-* Active Storage: `5 TB x $23.00` = &dollar;115.00
+* XS Warehouse: `200 Credits x $3.00` = $600.00
+* Medium Warehouse: `320 Credits x $3.00` = $960.00
+* Active Storage: `5 TB x $23.00` = $115.00
 
-Total [BilledCost](#datasets.costandusage.billedcost): &dollar;1,675.00
+Total [BilledCost](#datasets.costandusage.billedcost): $1,675.00
 
 Here is how these charges appear in the data (relevant columns only):
 
@@ -50,16 +50,16 @@ Here is how these charges appear in the data (relevant columns only):
 | ChargeFrequency | Usage-Based | Usage-Based | Recurring |
 | ConsumedQuantity | 200 | 320 | 5 |
 | ConsumedUnit | Credits | Credits | TB |
-| BilledCost | &dollar;600.00 | &dollar;960.00 | &dollar;115.00 |
-| EffectiveCost | &dollar;600.00 | &dollar;960.00 | &dollar;115.00 |
-| ListCost | &dollar;600.00 | &dollar;960.00 | &dollar;115.00 |
-| ContractedCost | &dollar;600.00 | &dollar;960.00 | &dollar;115.00 |
+| BilledCost | $600.00 | $960.00 | $115.00 |
+| EffectiveCost | $600.00 | $960.00 | $115.00 |
+| ListCost | $600.00 | $960.00 | $115.00 |
+| ContractedCost | $600.00 | $960.00 | $115.00 |
 | PricingUnit | Credits | Credits | TB |
 | PricingCategory | Standard | Standard | Standard |
 
 Key observations:
 
-* Both warehouses share the same [ListUnitPrice](#datasets.costandusage.listunitprice) of &dollar;3.00 per credit. The credit price is determined by the service edition, not warehouse size.
+* Both warehouses share the same [ListUnitPrice](#datasets.costandusage.listunitprice) of $3.00 per credit. The credit price is determined by the service edition, not warehouse size.
 * [ConsumedUnit](#datasets.costandusage.consumedunit) is "Credits" for compute and "TB" for storage. The credit is the *service provider*'s unit of compute consumption.
 * [ChargeFrequency](#datasets.costandusage.chargefrequency) is "Usage-Based" for compute (metered by credit consumption) and "Recurring" for storage (billed per TB per month).
 * Storage has no [ResourceId](#datasets.costandusage.resourceid) or [ResourceName](#datasets.costandusage.resourcename) because it is an account-level charge, not tied to a specific [*resource*](#glossary:resource).
@@ -75,9 +75,9 @@ The *service provider*'s on-demand pricing for this example:
 
 | Service | SKU | Unit Price | Pricing Unit |
 | :------ | :-- | ---------: | :----------- |
-| Infrastructure Monitoring | Infra Pro | &dollar;18.00 | Hosts |
-| APM | APM Standard | &dollar;36.00 | Hosts |
-| Log Management | Log Ingestion | &dollar;0.10 | GB |
+| Infrastructure Monitoring | Infra Pro | $18.00 | Hosts |
+| APM | APM Standard | $36.00 | Hosts |
+| Log Management | Log Ingestion | $0.10 | GB |
 
 A customer uses the *service provider*'s monitoring platform on a month-to-month basis with no annual commitment. During January 2025, the customer's usage is:
 
@@ -87,11 +87,11 @@ A customer uses the *service provider*'s monitoring platform on a month-to-month
 
 Three usage charges appear on the January invoice:
 
-* Infrastructure Monitoring: `25 Hosts x $18.00` = &dollar;450.00
-* APM: `10 Hosts x $36.00` = &dollar;360.00
-* Log Management: `150 GB x $0.10` = &dollar;15.00
+* Infrastructure Monitoring: `25 Hosts x $18.00` = $450.00
+* APM: `10 Hosts x $36.00` = $360.00
+* Log Management: `150 GB x $0.10` = $15.00
 
-Total [BilledCost](#datasets.costandusage.billedcost): &dollar;825.00
+Total [BilledCost](#datasets.costandusage.billedcost): $825.00
 
 Here is how these charges appear in the data (relevant columns only):
 
@@ -101,10 +101,10 @@ Here is how these charges appear in the data (relevant columns only):
 | ChargeFrequency | Recurring | Recurring | Usage-Based |
 | ConsumedQuantity | 25 | 10 | 150 |
 | ConsumedUnit | Hosts | Hosts | GB |
-| BilledCost | &dollar;450.00 | &dollar;360.00 | &dollar;15.00 |
-| EffectiveCost | &dollar;450.00 | &dollar;360.00 | &dollar;15.00 |
-| ListCost | &dollar;450.00 | &dollar;360.00 | &dollar;15.00 |
-| ContractedCost | &dollar;450.00 | &dollar;360.00 | &dollar;15.00 |
+| BilledCost | $450.00 | $360.00 | $15.00 |
+| EffectiveCost | $450.00 | $360.00 | $15.00 |
+| ListCost | $450.00 | $360.00 | $15.00 |
+| ContractedCost | $450.00 | $360.00 | $15.00 |
 | PricingUnit | Hosts | Hosts | GB |
 | PricingCategory | Standard | Standard | Standard |
 
@@ -127,12 +127,12 @@ The [*service provider*](#glossary:service%20provider), SprintCanvas, offers a p
 
 | Billing Option | Unit Price | Monthly Cost (50 users) | Annual Cost |
 | :------------- | ---------: | ----------------------: | ----------: |
-| Monthly | &dollar;9.05/user/month | &dollar;452.50 | &dollar;5,430.00 |
-| Annual | &dollar;7.58/user/month | &dollar;379.00 | &dollar;4,550.00 |
+| Monthly | $9.05/user/month | $452.50 | $5,430.00 |
+| Annual | $7.58/user/month | $379.00 | $4,550.00 |
 
 The annual option represents a ~16% discount versus monthly billing.
 
-A customer subscribes to the Standard plan for 50 users on April 1, 2025. They choose the annual billing option, paying &dollar;4,550.00 upfront for a 12-month term ending April 1, 2026. All 50 seats are occupied in the first month.
+A customer subscribes to the Standard plan for 50 users on April 1, 2025. They choose the annual billing option, paying $4,550.00 upfront for a 12-month term ending April 1, 2026. All 50 seats are occupied in the first month.
 
 Two charges appear in the April 2025 [*billing period*](#glossary:billing-period):
 
@@ -148,35 +148,35 @@ Here is how these charges appear in the data (relevant columns only):
 | CommitmentDiscountUnit | USD | USD |
 | ConsumedQuantity | *(null)* | 50 |
 | ConsumedUnit | *(null)* | Users |
-| BilledCost | &dollar;4,550.00 | &dollar;0.00 |
-| EffectiveCost | &dollar;0.00 | &dollar;379.00 |
-| ListCost | &dollar;5,430.00 | &dollar;452.50 |
-| ContractedCost | &dollar;5,430.00 | &dollar;452.50 |
+| BilledCost | $4,550.00 | $0.00 |
+| EffectiveCost | $0.00 | $379.00 |
+| ListCost | $5,430.00 | $452.50 |
+| ContractedCost | $5,430.00 | $452.50 |
 | PricingUnit | Count | Users |
 | PricingCategory | Standard | Committed |
 
 **Purchase Charge:** [ChargeCategory](#datasets.costandusage.chargecategory) is "Purchase" with [ChargeFrequency](#datasets.costandusage.chargefrequency) "One-Time". The full annual amount is invoiced in a single payment.
 * The [*charge period*](#glossary:chargeperiod) spans the entire commitment term: April 1, 2025 through April 1, 2026.
-* [BilledCost](#datasets.costandusage.billedcost) is &dollar;4,550.00. This is the [*cash-based*](#glossary:cash-based-accounting) invoiced amount for the annual subscription.
-* [EffectiveCost](#datasets.costandusage.effectivecost) is &dollar;0.00. The purchase covers future usage. Cost is recognized on an [*accrual basis*](#glossary:accrual-based-accounting) as usage occurs.
-* [ListCost](#datasets.costandusage.listcost) is &dollar;5,430.00 (`50 users x $9.05/user/month x 12 months`). This represents the cost without the annual discount.
-* [ContractedCost](#datasets.costandusage.contractedcost) is &dollar;5,430.00, equal to [ListCost](#datasets.costandusage.listcost). Because no [*negotiated discounts*](#glossary:negotiated-discount) apply (the annual rate is a published [*commitment discount*](#glossary:commitment-discount), not a bilateral negotiation), [ContractedUnitPrice](#datasets.costandusage.contractedunitprice) defaults to [ListUnitPrice](#datasets.costandusage.listunitprice) per the spec. The difference between [ContractedCost](#datasets.costandusage.contractedcost) (&dollar;5,430.00) and [BilledCost](#datasets.costandusage.billedcost) (&dollar;4,550.00) represents the &dollar;880.00 in [*commitment discount*](#glossary:commitment-discount) savings at the point of purchase.
+* [BilledCost](#datasets.costandusage.billedcost) is $4,550.00. This is the [*cash-based*](#glossary:cash-based-accounting) invoiced amount for the annual subscription.
+* [EffectiveCost](#datasets.costandusage.effectivecost) is $0.00. The purchase covers future usage. Cost is recognized on an [*accrual basis*](#glossary:accrual-based-accounting) as usage occurs.
+* [ListCost](#datasets.costandusage.listcost) is $5,430.00 (`50 users x $9.05/user/month x 12 months`). This represents the cost without the annual discount.
+* [ContractedCost](#datasets.costandusage.contractedcost) is $5,430.00, equal to [ListCost](#datasets.costandusage.listcost). Because no [*negotiated discounts*](#glossary:negotiated-discount) apply (the annual rate is a published [*commitment discount*](#glossary:commitment-discount), not a bilateral negotiation), [ContractedUnitPrice](#datasets.costandusage.contractedunitprice) defaults to [ListUnitPrice](#datasets.costandusage.listunitprice) per the spec. The difference between [ContractedCost](#datasets.costandusage.contractedcost) ($5,430.00) and [BilledCost](#datasets.costandusage.billedcost) ($4,550.00) represents the $880.00 in [*commitment discount*](#glossary:commitment-discount) savings at the point of purchase.
 * [ResourceId](#datasets.costandusage.resourceid) equals [CommitmentDiscountId](#datasets.costandusage.commitmentdiscountid). The [*commitment discount*](#glossary:commitment-discount) itself is the [*resource*](#glossary:resource) being purchased.
 * [CommitmentDiscountCategory](#datasets.costandusage.commitmentdiscountcategory) is "Spend" because the commitment is denominated in dollars, not usage units.
 * [CommitmentDiscountQuantity](#datasets.costandusage.commitmentdiscountquantity) is 4,550.00 [CommitmentDiscountUnit](#datasets.costandusage.commitmentdiscountunit) (USD). This is the total spend eligible for consumption over the term.
 * [PricingCategory](#datasets.costandusage.pricingcategory) is "Standard". The purchase of the [*commitment discount*](#glossary:commitment-discount) is at the agreed-upon rate.
 
 **Usage Charge (April 2025):** [ChargeCategory](#datasets.costandusage.chargecategory) is "Usage" with [PricingCategory](#datasets.costandusage.pricingcategory) "Committed". The usage is covered by the annual purchase.
-* [BilledCost](#datasets.costandusage.billedcost) is &dollar;0.00. No additional invoiced amount. The usage is covered by the purchase charge.
-* [EffectiveCost](#datasets.costandusage.effectivecost) is &dollar;379.00. This is the [*accrual-based*](#glossary:accrual-based-accounting) recognized portion of the annual commitment: `$7.58/user x 50 users`.
-* [ListCost](#datasets.costandusage.listcost) is &dollar;452.50 (`50 users x $9.05/user`). The monthly list cost without the annual discount.
-* [ContractedCost](#datasets.costandusage.contractedcost) is &dollar;452.50, equal to [ListCost](#datasets.costandusage.listcost). No [*negotiated discounts*](#glossary:negotiated-discount) apply, so [ContractedUnitPrice](#datasets.costandusage.contractedunitprice) defaults to [ListUnitPrice](#datasets.costandusage.listunitprice).
-* The [*commitment discount*](#glossary:commitment-discount) savings appear in the difference between [ContractedCost](#datasets.costandusage.contractedcost) (&dollar;452.50) and [EffectiveCost](#datasets.costandusage.effectivecost) (&dollar;379.00): &dollar;73.50 per month.
+* [BilledCost](#datasets.costandusage.billedcost) is $0.00. No additional invoiced amount. The usage is covered by the purchase charge.
+* [EffectiveCost](#datasets.costandusage.effectivecost) is $379.00. This is the [*accrual-based*](#glossary:accrual-based-accounting) recognized portion of the annual commitment: `$7.58/user x 50 users`.
+* [ListCost](#datasets.costandusage.listcost) is $452.50 (`50 users x $9.05/user`). The monthly list cost without the annual discount.
+* [ContractedCost](#datasets.costandusage.contractedcost) is $452.50, equal to [ListCost](#datasets.costandusage.listcost). No [*negotiated discounts*](#glossary:negotiated-discount) apply, so [ContractedUnitPrice](#datasets.costandusage.contractedunitprice) defaults to [ListUnitPrice](#datasets.costandusage.listunitprice).
+* The [*commitment discount*](#glossary:commitment-discount) savings appear in the difference between [ContractedCost](#datasets.costandusage.contractedcost) ($452.50) and [EffectiveCost](#datasets.costandusage.effectivecost) ($379.00): $73.50 per month.
 * [CommitmentDiscountStatus](#datasets.costandusage.commitmentdiscountstatus) is "Used". All 50 seats are occupied.
 * [CommitmentDiscountQuantity](#datasets.costandusage.commitmentdiscountquantity) is 379.00 USD. This is the amount of spend consumed from the commitment in this [*charge period*](#glossary:chargeperiod).
 * [ResourceId](#datasets.costandusage.resourceid) is the actual [*resource*](#glossary:resource) (the customer's project management site), not the [*commitment discount*](#glossary:commitment-discount).
 
-**Rounding Note:** The per-user rate of &dollar;7.58 is derived from `$4,550 / 12 months / 50 users` = &dollar;7.5833, rounded to two decimal places. This means `$7.58 x 50 users x 12 months` = &dollar;4,548.00, which is &dollar;2.00 less than the &dollar;4,550.00 purchase. In a full 12-month dataset, the final month's charge would include a true-up to ensure the sum of [EffectiveCost](#datasets.costandusage.effectivecost) across all usage rows equals the [BilledCost](#datasets.costandusage.billedcost) of the purchase row.
+**Rounding Note:** The per-user rate of $7.58 is derived from `$4,550 / 12 months / 50 users` = $7.5833, rounded to two decimal places. This means `$7.58 x 50 users x 12 months` = $4,548.00, which is $2.00 less than the $4,550.00 purchase. In a full 12-month dataset, the final month's charge would include a true-up to ensure the sum of [EffectiveCost](#datasets.costandusage.effectivecost) across all usage rows equals the [BilledCost](#datasets.costandusage.billedcost) of the purchase row.
 
 [**CSV Example**](/specification/data/saas_examples/seat_based_saas_annual_a.csv)
 
@@ -188,26 +188,26 @@ The *service provider*'s on-demand pricing for this example:
 
 | Service | SKU | Unit Price | Pricing Unit |
 | :------ | :-- | ---------: | :----------- |
-| StoreStack Clusters | M10 Cluster | &dollar;0.08 | Hours |
-| StoreStack Clusters | M30 Cluster | &dollar;0.54 | Hours |
-| StoreStack Storage | SSD Storage | &dollar;0.25 | GB |
-| StoreStack Data Transfer | Data Transfer Out | &dollar;0.01 | GB |
+| StoreStack Clusters | M10 Cluster | $0.08 | Hours |
+| StoreStack Clusters | M30 Cluster | $0.54 | Hours |
+| StoreStack Storage | SSD Storage | $0.25 | GB |
+| StoreStack Data Transfer | Data Transfer Out | $0.01 | GB |
 
 A customer runs two dedicated database clusters in the US East region for the full month of January 2025 (744 hours). They also consume 100 GB of SSD storage and 50 GB of outbound data transfer.
 
-* 1x M10 cluster (analytics workload): 744 hours at &dollar;0.08/hour
-* 1x M30 cluster (production workload): 744 hours at &dollar;0.54/hour
+* 1x M10 cluster (analytics workload): 744 hours at $0.08/hour
+* 1x M30 cluster (production workload): 744 hours at $0.54/hour
 * 100 GB of SSD storage
 * 50 GB of outbound data transfer
 
 Four usage charges appear on the January invoice:
 
-* M10 Cluster: `744 Hours x $0.08` = &dollar;59.52
-* M30 Cluster: `744 Hours x $0.54` = &dollar;401.76
-* SSD Storage: `100 GB x $0.25` = &dollar;25.00
-* Data Transfer Out: `50 GB x $0.01` = &dollar;0.50
+* M10 Cluster: `744 Hours x $0.08` = $59.52
+* M30 Cluster: `744 Hours x $0.54` = $401.76
+* SSD Storage: `100 GB x $0.25` = $25.00
+* Data Transfer Out: `50 GB x $0.01` = $0.50
 
-Total [BilledCost](#datasets.costandusage.billedcost): &dollar;486.78
+Total [BilledCost](#datasets.costandusage.billedcost): $486.78
 
 Here is how these charges appear in the data (relevant columns only):
 
@@ -217,10 +217,10 @@ Here is how these charges appear in the data (relevant columns only):
 | ChargeFrequency | Usage-Based | Usage-Based | Recurring | Usage-Based |
 | ConsumedQuantity | 744 | 744 | 100 | 50 |
 | ConsumedUnit | Hours | Hours | GB | GB |
-| BilledCost | &dollar;59.52 | &dollar;401.76 | &dollar;25.00 | &dollar;0.50 |
-| EffectiveCost | &dollar;59.52 | &dollar;401.76 | &dollar;25.00 | &dollar;0.50 |
-| ListCost | &dollar;59.52 | &dollar;401.76 | &dollar;25.00 | &dollar;0.50 |
-| ContractedCost | &dollar;59.52 | &dollar;401.76 | &dollar;25.00 | &dollar;0.50 |
+| BilledCost | $59.52 | $401.76 | $25.00 | $0.50 |
+| EffectiveCost | $59.52 | $401.76 | $25.00 | $0.50 |
+| ListCost | $59.52 | $401.76 | $25.00 | $0.50 |
+| ContractedCost | $59.52 | $401.76 | $25.00 | $0.50 |
 | PricingUnit | Hours | Hours | GB | GB |
 | PricingCategory | Standard | Standard | Standard | Standard |
 | RegionId | us-east-1 | us-east-1 | us-east-1 | us-east-1 |
@@ -244,17 +244,17 @@ The *service provider*'s pricing for this example:
 
 | Service | SKU | Unit Price | Pricing Unit |
 | :------ | :-- | ---------: | :----------- |
-| CollabChat | Pro Unlimited | &dollar;349.00 | Subscriptions |
+| CollabChat | Pro Unlimited | $349.00 | Subscriptions |
 
-The *service provider* also offers an annual billing option at &dollar;299.00 per month (billed annually). This example uses the month-to-month option with no annual commitment.
+The *service provider* also offers an annual billing option at $299.00 per month (billed annually). This example uses the month-to-month option with no annual commitment.
 
 A customer subscribes to the Pro Unlimited plan on a month-to-month basis. During January 2025, the customer's team of 35 people uses the platform.
 
 One charge appears on the January invoice:
 
-* Pro Unlimited: `1 Subscription x $349.00` = &dollar;349.00
+* Pro Unlimited: `1 Subscription x $349.00` = $349.00
 
-Total [BilledCost](#datasets.costandusage.billedcost): &dollar;349.00
+Total [BilledCost](#datasets.costandusage.billedcost): $349.00
 
 Here is how this charge appears in the data (relevant columns only):
 
@@ -264,10 +264,10 @@ Here is how this charge appears in the data (relevant columns only):
 | ChargeFrequency | Recurring |
 | ConsumedQuantity | 1 |
 | ConsumedUnit | Subscriptions |
-| BilledCost | &dollar;349.00 |
-| EffectiveCost | &dollar;349.00 |
-| ListCost | &dollar;349.00 |
-| ContractedCost | &dollar;349.00 |
+| BilledCost | $349.00 |
+| EffectiveCost | $349.00 |
+| ListCost | $349.00 |
+| ContractedCost | $349.00 |
 | PricingUnit | Subscriptions |
 | PricingQuantity | 1 |
 | PricingCategory | Standard |
@@ -277,7 +277,7 @@ Key observations:
 * [ChargeFrequency](#datasets.costandusage.chargefrequency) is "Recurring". The subscription is a fixed monthly fee regardless of usage activity or user count within the [*billing period*](#glossary:billing-period).
 * [PricingUnit](#datasets.costandusage.pricingunit) is "Subscriptions" and [PricingQuantity](#datasets.costandusage.pricingquantity) is 1. Unlike per-seat or per-unit models, the entire platform is a single billable unit.
 * There is no relationship between [ConsumedQuantity](#datasets.costandusage.consumedquantity) and the number of users. The 35-person team does not affect the charge.
-* If the customer chose the annual billing option (&dollar;299.00/month billed annually), this would follow a [*commitment discount*](#glossary:commitment-discount) pattern similar to the Seat-Based SaaS Subscription example above, with a Purchase row for the annual payment and monthly Usage rows for amortized [EffectiveCost](#datasets.costandusage.effectivecost).
+* If the customer chose the annual billing option ($299.00/month billed annually), this would follow a [*commitment discount*](#glossary:commitment-discount) pattern similar to the Seat-Based SaaS Subscription example above, with a Purchase row for the annual payment and monthly Usage rows for amortized [EffectiveCost](#datasets.costandusage.effectivecost).
 * [BilledCost](#datasets.costandusage.billedcost) and [EffectiveCost](#datasets.costandusage.effectivecost) are equal because there are no purchase [*charges*](#glossary:charge) covering future usage (see the Credit-Based Consumption example for a full explanation of when these columns diverge).
 
 [**CSV Example**](/specification/data/saas_examples/flat_rate_saas_licensing_a.csv)
@@ -290,16 +290,16 @@ The *service provider*'s pricing for this example (Professional plan, 10 users):
 
 | Billing Option | Unit Price | Monthly Cost (10 users) | Annual Cost |
 | :------------- | ---------: | ----------------------: | ----------: |
-| Annual (pay upfront) | &dollar;90.00/user/month | &dollar;900.00 | &dollar;10,800.00 |
-| Annual (billed monthly) | &dollar;100.00/user/month | &dollar;1,000.00 | &dollar;12,000.00 |
+| Annual (pay upfront) | $90.00/user/month | $900.00 | $10,800.00 |
+| Annual (billed monthly) | $100.00/user/month | $1,000.00 | $12,000.00 |
 
-A customer subscribes to the Professional plan for 10 users, choosing the annual commitment with monthly billing. They pay &dollar;100.00 per user per month with no upfront payment.
+A customer subscribes to the Professional plan for 10 users, choosing the annual commitment with monthly billing. They pay $100.00 per user per month with no upfront payment.
 
 One charge appears on the January 2025 invoice:
 
-* Sales Platform Professional: `10 Users x $100.00` = &dollar;1,000.00
+* Sales Platform Professional: `10 Users x $100.00` = $1,000.00
 
-Total [BilledCost](#datasets.costandusage.billedcost): &dollar;1,000.00
+Total [BilledCost](#datasets.costandusage.billedcost): $1,000.00
 
 Here is how this charge appears in the data (relevant columns only):
 
@@ -309,19 +309,19 @@ Here is how this charge appears in the data (relevant columns only):
 | ChargeFrequency | Recurring |
 | ConsumedQuantity | 10 |
 | ConsumedUnit | Users |
-| BilledCost | &dollar;1,000.00 |
-| EffectiveCost | &dollar;1,000.00 |
-| ListCost | &dollar;1,000.00 |
-| ContractedCost | &dollar;1,000.00 |
+| BilledCost | $1,000.00 |
+| EffectiveCost | $1,000.00 |
+| ListCost | $1,000.00 |
+| ContractedCost | $1,000.00 |
 | PricingUnit | Users |
 | PricingCategory | Standard |
 
 Key observations:
 
-* [BilledCost](#datasets.costandusage.billedcost), [EffectiveCost](#datasets.costandusage.effectivecost), [ListCost](#datasets.costandusage.listcost), and [ContractedCost](#datasets.costandusage.contractedcost) are all equal at &dollar;1,000.00. Monthly billing on an annual contract produces no divergence between [*cash-based*](#glossary:cash-based-accounting) and [*accrual-based*](#glossary:accrual-based-accounting) costs because there is no upfront payment to amortize.
+* [BilledCost](#datasets.costandusage.billedcost), [EffectiveCost](#datasets.costandusage.effectivecost), [ListCost](#datasets.costandusage.listcost), and [ContractedCost](#datasets.costandusage.contractedcost) are all equal at $1,000.00. Monthly billing on an annual contract produces no divergence between [*cash-based*](#glossary:cash-based-accounting) and [*accrual-based*](#glossary:accrual-based-accounting) costs because there is no upfront payment to amortize.
 * [PricingCategory](#datasets.costandusage.pricingcategory) is "Standard" because the billed rate equals the [ListUnitPrice](#datasets.costandusage.listunitprice). The annual contract is a term commitment, not a pricing discount. No [*commitment discount*](#glossary:commitment-discount) columns are populated.
 * [ChargeFrequency](#datasets.costandusage.chargefrequency) is "Recurring" because the charge recurs monthly at a fixed per-seat rate regardless of usage activity within the [*billing period*](#glossary:billing-period).
-* If the customer chose the annual pay-upfront option (&dollar;90.00/user/month), the &dollar;10.00 per-seat discount would qualify as a [*commitment discount*](#glossary:commitment-discount), following the pattern in the Seat-Based SaaS Subscription example with a Purchase row and amortized [EffectiveCost](#datasets.costandusage.effectivecost).
+* If the customer chose the annual pay-upfront option ($90.00/user/month), the $10.00 per-seat discount would qualify as a [*commitment discount*](#glossary:commitment-discount), following the pattern in the Seat-Based SaaS Subscription example with a Purchase row and amortized [EffectiveCost](#datasets.costandusage.effectivecost).
 * This scenario demonstrates that an annual contract does not automatically produce a [*commitment discount*](#glossary:commitment-discount) in FOCUS. The distinguishing factor is whether the commitment provides a price reduction from the standard rate.
 
 [**CSV Example**](/specification/data/saas_examples/annual_commitment_billed_monthly_a.csv)
@@ -334,8 +334,8 @@ The *service provider*'s pricing for this example (Essentials 50K plan):
 
 | Component | Rate | Unit |
 | :-------- | ---: | :--- |
-| Plan fee (includes 50,000 emails) | &dollar;19.95 | Count |
-| Overage | &dollar;0.00133 | Emails |
+| Plan fee (includes 50,000 emails) | $19.95 | Count |
+| Overage | $0.00133 | Emails |
 
 This example covers two billing periods to show both under-minimum and over-minimum scenarios:
 
@@ -344,13 +344,13 @@ This example covers two billing periods to show both under-minimum and over-mini
 
 **January charges (under minimum):**
 
-The monthly plan fee of &dollar;19.95 appears as a Purchase charge. Two Usage charges split the commitment between used and unused portions:
+The monthly plan fee of $19.95 appears as a Purchase charge. Two Usage charges split the commitment between used and unused portions:
 
-* Purchase: &dollar;19.95 (plan fee covering 50,000 emails)
-* Used: 30,000 emails, [EffectiveCost](#datasets.costandusage.effectivecost) = &dollar;11.97 (`30,000 / 50,000 x $19.95`)
-* Unused: 20,000 emails, [EffectiveCost](#datasets.costandusage.effectivecost) = &dollar;7.98 (`20,000 / 50,000 x $19.95`)
+* Purchase: $19.95 (plan fee covering 50,000 emails)
+* Used: 30,000 emails, [EffectiveCost](#datasets.costandusage.effectivecost) = $11.97 (`30,000 / 50,000 x $19.95`)
+* Unused: 20,000 emails, [EffectiveCost](#datasets.costandusage.effectivecost) = $7.98 (`20,000 / 50,000 x $19.95`)
 
-Total [BilledCost](#datasets.costandusage.billedcost): &dollar;19.95
+Total [BilledCost](#datasets.costandusage.billedcost): $19.95
 
 Here is how the January charges appear in the data (relevant columns only):
 
@@ -364,10 +364,10 @@ Here is how the January charges appear in the data (relevant columns only):
 | CommitmentDiscountUnit | Emails | Emails | Emails |
 | ConsumedQuantity | *(null)* | 30,000 | *(null)* |
 | ConsumedUnit | *(null)* | Emails | *(null)* |
-| BilledCost | &dollar;19.95 | &dollar;0.00 | &dollar;0.00 |
-| EffectiveCost | &dollar;0.00 | &dollar;11.97 | &dollar;7.98 |
-| ListCost | &dollar;19.95 | &dollar;39.90 | &dollar;26.60 |
-| ContractedCost | &dollar;19.95 | &dollar;39.90 | &dollar;26.60 |
+| BilledCost | $19.95 | $0.00 | $0.00 |
+| EffectiveCost | $0.00 | $11.97 | $7.98 |
+| ListCost | $19.95 | $39.90 | $26.60 |
+| ContractedCost | $19.95 | $39.90 | $26.60 |
 | PricingUnit | Count | Emails | Emails |
 | PricingCategory | Standard | Committed | Committed |
 
@@ -375,11 +375,11 @@ Here is how the January charges appear in the data (relevant columns only):
 
 The customer uses all 50,000 plan emails plus 15,000 overage emails:
 
-* Purchase: &dollar;19.95 (plan fee covering 50,000 emails)
-* Used: 50,000 emails, [EffectiveCost](#datasets.costandusage.effectivecost) = &dollar;19.95 (full allowance consumed)
-* Overage: 15,000 emails at &dollar;0.00133 = &dollar;19.95 (standard pricing, not part of commitment)
+* Purchase: $19.95 (plan fee covering 50,000 emails)
+* Used: 50,000 emails, [EffectiveCost](#datasets.costandusage.effectivecost) = $19.95 (full allowance consumed)
+* Overage: 15,000 emails at $0.00133 = $19.95 (standard pricing, not part of commitment)
 
-Total [BilledCost](#datasets.costandusage.billedcost): &dollar;39.90
+Total [BilledCost](#datasets.costandusage.billedcost): $39.90
 
 Here is how the February charges appear in the data (relevant columns only):
 
@@ -393,21 +393,21 @@ Here is how the February charges appear in the data (relevant columns only):
 | CommitmentDiscountUnit | Emails | Emails | *(null)* |
 | ConsumedQuantity | *(null)* | 50,000 | 15,000 |
 | ConsumedUnit | *(null)* | Emails | Emails |
-| BilledCost | &dollar;19.95 | &dollar;0.00 | &dollar;19.95 |
-| EffectiveCost | &dollar;0.00 | &dollar;19.95 | &dollar;19.95 |
-| ListCost | &dollar;19.95 | &dollar;66.50 | &dollar;19.95 |
-| ContractedCost | &dollar;19.95 | &dollar;66.50 | &dollar;19.95 |
+| BilledCost | $19.95 | $0.00 | $19.95 |
+| EffectiveCost | $0.00 | $19.95 | $19.95 |
+| ListCost | $19.95 | $66.50 | $19.95 |
+| ContractedCost | $19.95 | $66.50 | $19.95 |
 | PricingUnit | Count | Emails | Emails |
 | PricingCategory | Standard | Committed | Standard |
 
 Key observations:
 
 * [CommitmentDiscountCategory](#datasets.costandusage.commitmentdiscountcategory) is "Usage" on all commitment-related rows. The plan minimum is denominated in email quantity (50,000 emails), not a dollar amount. This distinguishes it from the "Spend" category in the Seat-Based SaaS Subscription example.
-* [CommitmentDiscountStatus](#datasets.costandusage.commitmentdiscountstatus) shows "Used" and "Unused" on Usage rows. In January, the customer only consumed 30,000 of 50,000 emails, so the remaining 20,000 generate an "Unused" row. The Unused row has [BilledCost](#datasets.costandusage.billedcost) of &dollar;0.00 but [EffectiveCost](#datasets.costandusage.effectivecost) of &dollar;7.98, representing waste from the commitment.
-* The Purchase row has [BilledCost](#datasets.costandusage.billedcost) of &dollar;19.95 and [EffectiveCost](#datasets.costandusage.effectivecost) of &dollar;0.00. This follows the same pattern as the Seat-Based SaaS Subscription: the purchase captures the [*cash-based*](#glossary:cash-based-accounting) cost, while [*accrual-based*](#glossary:accrual-based-accounting) cost is recognized on the Usage rows.
+* [CommitmentDiscountStatus](#datasets.costandusage.commitmentdiscountstatus) shows "Used" and "Unused" on Usage rows. In January, the customer only consumed 30,000 of 50,000 emails, so the remaining 20,000 generate an "Unused" row. The Unused row has [BilledCost](#datasets.costandusage.billedcost) of $0.00 but [EffectiveCost](#datasets.costandusage.effectivecost) of $7.98, representing waste from the commitment.
+* The Purchase row has [BilledCost](#datasets.costandusage.billedcost) of $19.95 and [EffectiveCost](#datasets.costandusage.effectivecost) of $0.00. This follows the same pattern as the Seat-Based SaaS Subscription: the purchase captures the [*cash-based*](#glossary:cash-based-accounting) cost, while [*accrual-based*](#glossary:accrual-based-accounting) cost is recognized on the Usage rows.
 * The overage row in February has no [*commitment discount*](#glossary:commitment-discount) columns populated. Overage emails are billed at the standard per-email rate and are not part of the commitment.
-* [ContractedUnitPrice](#datasets.costandusage.contractedunitprice) and [ListUnitPrice](#datasets.costandusage.listunitprice) are both &dollar;0.00133 on all Usage rows. Because no [*negotiated discounts*](#glossary:negotiated-discount) apply, [ContractedUnitPrice](#datasets.costandusage.contractedunitprice) defaults to [ListUnitPrice](#datasets.costandusage.listunitprice) per the spec. The [*commitment discount*](#glossary:commitment-discount) savings are reflected in the difference between [ContractedCost](#datasets.costandusage.contractedcost) and [EffectiveCost](#datasets.costandusage.effectivecost), not in [ContractedUnitPrice](#datasets.costandusage.contractedunitprice).
-* [ListCost](#datasets.costandusage.listcost) and [ContractedCost](#datasets.costandusage.contractedcost) on Usage rows represent the market value of those emails at the per-email rate: `$0.00133 x 30,000` = &dollar;39.90 for the January Used row. These values exceed [BilledCost](#datasets.costandusage.billedcost) (&dollar;0.00) because the usage is covered by the plan fee, not billed individually. The gap between [ListCost](#datasets.costandusage.listcost) and [EffectiveCost](#datasets.costandusage.effectivecost) shows the [*commitment discount*](#glossary:commitment-discount) benefit per row.
+* [ContractedUnitPrice](#datasets.costandusage.contractedunitprice) and [ListUnitPrice](#datasets.costandusage.listunitprice) are both $0.00133 on all Usage rows. Because no [*negotiated discounts*](#glossary:negotiated-discount) apply, [ContractedUnitPrice](#datasets.costandusage.contractedunitprice) defaults to [ListUnitPrice](#datasets.costandusage.listunitprice) per the spec. The [*commitment discount*](#glossary:commitment-discount) savings are reflected in the difference between [ContractedCost](#datasets.costandusage.contractedcost) and [EffectiveCost](#datasets.costandusage.effectivecost), not in [ContractedUnitPrice](#datasets.costandusage.contractedunitprice).
+* [ListCost](#datasets.costandusage.listcost) and [ContractedCost](#datasets.costandusage.contractedcost) on Usage rows represent the market value of those emails at the per-email rate: `$0.00133 x 30,000` = $39.90 for the January Used row. These values exceed [BilledCost](#datasets.costandusage.billedcost) ($0.00) because the usage is covered by the plan fee, not billed individually. The gap between [ListCost](#datasets.costandusage.listcost) and [EffectiveCost](#datasets.costandusage.effectivecost) shows the [*commitment discount*](#glossary:commitment-discount) benefit per row.
 * [PricingUnit](#datasets.costandusage.pricingunit) is "Count" on the Purchase row because the plan fee is a single monthly purchase, not denominated in the usage unit (emails). On Usage rows, [PricingUnit](#datasets.costandusage.pricingunit) is "Emails" because those rows are priced per email.
 * [ChargeFrequency](#datasets.costandusage.chargefrequency) is "Recurring" on the Purchase rows (the plan fee recurs monthly). On the Usage rows, [ChargeFrequency](#datasets.costandusage.chargefrequency) is "Usage-Based" for both Used and Unused rows because the amounts vary based on actual email consumption each period.
 

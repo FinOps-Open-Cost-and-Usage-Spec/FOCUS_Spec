@@ -154,6 +154,8 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 
 * **Unordered List Style:** All unordered lists in Markdown MUST use asterisks (`*`) rather than dashes (`-`) or plus signs (`+`). This maintains visual consistency across the specification and aligns with our automated linting standards.
 
+* **Currency and Dollar Signs:** Use literal `$` for currency values in prose and tables. For build-pipeline behavior and troubleshooting related to dollar-sign parsing, see [MarkdownPP Guidelines](markdownpp-guidelines.md#currency-and-dollar-sign-handling).
+
 ### Example
 
 > **2.28. Pricing Quantity**
