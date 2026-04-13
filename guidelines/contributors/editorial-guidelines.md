@@ -64,16 +64,16 @@ These guidelines can be modified through a Pull Request (PR), which the members 
     <tr>
         <td><strong>Column Values:</strong></td>
         <td>
-            - "Usage"<br>
-            - "Tax"<br>
-            - "TB"<br>
+            - `Usage`<br>
+            - `Tax`<br>
+            - `TB`<br>
         </td>
         <td>
             This column:<br>
             &nbsp;&nbsp; * MUST be null when ChargeCategory is "Tax" ...
         </td>
         <td>
-            - Enclosed in double quotation marks<br>
+            - Enclosed in backticks (e.g., `Usage`)<br>
             - Normal text without bold or italics
         </td>
     </tr>
@@ -202,6 +202,12 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 * **Multiple Entity References:** MUST use Entity IDs when referencing multiple entities in a normative statement.
 
 * **Entity Scope:** These rules apply to all entities defined in the FOCUS specification (e.g., Columns, Attributes, Datasets, Objects).
+
+### Column Values
+
+* **Inline Code for Values:** When referencing specific string values that a column can contain, the value MUST be enclosed in backticks to render as inline code (e.g., `Usage`). 
+
+* **Consistent Formatting:** This formatting MUST be used consistently across all normative requirements, descriptions, and tables when referencing a specific string value.
 
 ### Bullet Structure
 
