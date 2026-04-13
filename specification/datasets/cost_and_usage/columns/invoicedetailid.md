@@ -11,7 +11,7 @@ InvoiceDetailId MUST adhere to the following requirements:
 * InvoiceDetailId MUST adhere to the following nullability requirements:
   * InvoiceDetailId MUST be null when the charge is not associated either with an invoice or with a pre-generated provisional invoice.
   * InvoiceDetailId MUST NOT be null when the charge is associated with either an issued invoice or a pre-generated provisional invoice.
-* InvoiceDetailId MAY be generated prior to an invoice being issued.  
+* InvoiceDetailId MAY be generated prior to an invoice being issued. 
 * InvoiceDetailId MUST uniquely identify a specific record within a given [InvoiceId](#datasets.invoicedetail.invoiceid).
 
 ## Column ID
