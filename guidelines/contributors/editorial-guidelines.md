@@ -269,7 +269,7 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 
 * **No Normative Leakage:** Normative keywords (MUST, SHOULD, MAY, etc.) MUST NOT be used in any section other than "Requirements".
 
-* **Title Case for Subheaders**: Subheaders MUST be denoted in Title Case. All words MUST be capitalized except articles (a, an, the), coordinating conjunctions (and, but, or), and short prepositions (e.g., in, on, at), unless they begin the subheader.
+* **Title Case for Subheaders**: Subheaders MUST be denoted in Title Case, with all words capitalized except articles (a, an, the), coordinating conjunctions (and, but, or), and short prepositions (e.g., in, on, at), unless they begin the subheader.
 
 * **Example** (Markdown, illustrative):
 
