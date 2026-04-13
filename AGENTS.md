@@ -123,7 +123,7 @@ AI agents generating or reviewing content MUST act as strict technical editors e
 * **Suggestion-first feedback:** When a concrete fix exists, post it as a GitHub `suggestion` block so the author can accept with one click. Use plain-text comments only when the feedback requires discussion rather than a specific replacement.
 * **Self-contained comments:** Every review comment or suggestion MUST include all context needed for the author to evaluate it independently. Do not reference other comments (e.g., "same as above" or "see my comment on line X").
 * **Diff-scope discipline:** Only flag issues on lines changed or added by the PR. Pre-existing problems are out of scope unless they create a direct inconsistency with new content in the same PR.
-* **Deduplication and attribution:** Before posting feedback, review existing comments from other reviewers. Do not re-raise an issue another reviewer has already flagged. Do not post a competing suggestion on lines where another reviewer has a pending suggestion, as this undermines their attribution when the author accepts. If you have additional substance to add, reply in the existing thread rather than starting a new one.
+* **Deduplication:** If your tooling can read PR threads, do not flag already-raised issues or post competing suggestions. To add details, reply to the existing thread.
 
 ## Context Files
 
