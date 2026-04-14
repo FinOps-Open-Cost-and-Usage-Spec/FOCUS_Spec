@@ -26,7 +26,7 @@ The following table defines the high-level expectations for key categorical colu
 
 ## Examples
 
-The following examples demonstrate some common patterns for issuing invoices from a major provider, **Acme Co**.
+The following examples demonstrate some common patterns for issuing invoices from a major provider, **Aura Web**.
 
 ### Scenario 1: Typical Monthly Cloud Invoice
 
@@ -54,7 +54,7 @@ This example includes a mix of standard consumption, a one-time purchase of a re
 | **Invoice ID** | `INV-2025-001` | `INV-2025-001` | `INV-2025-001` |
 | **Invoice Issue Date** | `2025-02-03T00:00:00Z` | `2025-02-03T00:00:00Z` | `2025-02-03T00:00:00Z` |
 | **Invoice Issue Status** | `Issued` | `Issued` | `Issued` |
-| **Invoice Issuer Name** | `Acme Co` | `Acme Co` | `Acme Co` |
+| **Invoice Issuer Name** | `Aura Web` | `Aura Web` | `Aura Web` |
 | **Payment Currency** | `USD` | `USD` | `USD` |
 | **Payment Currency Billed Cost** | `450.00` | `1000.00` | `128.63` |
 | **Payment Currency Invoice Detail ID** | `LINE-001` | `LINE-002` | `LINE-003` |
@@ -85,14 +85,14 @@ This example demonstrates the "Divergent Grain" model, where usage is tracked in
 | **Billing Period Start** | `2025-06-01T00:00:00Z` | `2025-06-01T00:00:00Z` | `2025-06-01T00:00:00Z` |
 | **Charge Category** | `Usage` | `Tax` | `Adjustment` |
 | **Invoice Detail Created** | `2025-07-01T12:00:00Z` | `2025-07-01T12:00:00Z` | `2025-07-01T12:00:00Z` |
-| **Invoice Detail Description** | `AcmeStore Standard Storage` | `Tax for AcmeStore` | `Currency Conversion Settlement` |
-| **Invoice Detail Grain** | `{"ServiceName": "AcmeStore"}` | `{"ServiceName": "AcmeStore"}` | `{}` |
+| **Invoice Detail Description** | `AuraStore Standard Storage` | `Tax for AuraStore` | `Currency Conversion Settlement` |
+| **Invoice Detail Grain** | `{"ServiceName": "AuraStore"}` | `{"ServiceName": "AuraStore"}` | `{}` |
 | **Invoice Detail ID** | `LINE-001` | `LINE-002` | `LINE-AGG` |
 | **Invoice Detail Last Updated** | `2025-07-01T12:00:00Z` | `2025-07-01T12:00:00Z` | `2025-07-01T12:00:00Z` |
 | **Invoice ID** | `AUIN25-1286479` | `AUIN25-1286479` | `AUIN25-1286479` |
 | **Invoice Issue Date** | `2025-07-01T00:00:00Z` | `2025-07-01T00:00:00Z` | `2025-07-01T00:00:00Z` |
 | **Invoice Issue Status** | `Issued` | `Issued` | `Issued` |
-| **Invoice Issuer Name** | `Acme Co` | `Acme Co` | `Acme Co` |
+| **Invoice Issuer Name** | `Aura Web` | `Aura Web` | `Aura Web` |
 | **Payment Currency** | `AUD` | `AUD` | `AUD` |
 | **Payment Currency Billed Cost** | `0.00` | `0.00` | `5.17` |
 | **Payment Currency Invoice Detail ID** | `LINE-AGG` | `LINE-AGG` | `LINE-AGG` |
@@ -128,7 +128,7 @@ This example demonstrates the lineage of a billing error correction.
 | **Invoice ID** | `INV-JAN` | `INV-FEB` |
 | **Invoice Issue Date** | `2025-02-03T00:00:00Z` | `2025-03-03T00:00:00Z` |
 | **Invoice Issue Status** | `Issued` | `Issued` |
-| **Invoice Issuer Name** | `Acme Co` | `Acme Co` |
+| **Invoice Issuer Name** | `Aura Web` | `Aura Web` |
 | **Payment Currency** | `USD` | `USD` |
 | **Payment Currency Billed Cost** | `150.00` | `-50.00` |
 | **Payment Currency Invoice Detail ID** | `Line-100` | `ADJ-001` |
