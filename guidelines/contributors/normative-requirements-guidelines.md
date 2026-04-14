@@ -84,7 +84,7 @@ The recommended pattern for a normative requirement is:
 <Subject (+qualifier)> + <BCP 14 Keyword> + <Verifiable State Descriptor> + <Object (+qualifier)> [+ Conditions]
 ```
 
-* Normative requirements MUST be expressed as individual bullet points.
+* Each normative requirement MUST be expressed as an individual bullet point, except for structural anchor requirements (see [Structural Anchor Requirement](#structural-anchor-requirement)).
 * Each bullet MUST represent exactly one normative requirement expressing a single constraint.
 * Each normative requirement MUST:
   * identify exactly one **normative subject** to which the requirement applies
