@@ -69,17 +69,17 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
     <tr>
         <td><strong>Column Values:</strong></td>
         <td>
-            - `Usage`<br>
-            - `Tax`<br>
-            - `TB`<br>
+            - "Usage"<br>
+            - "Tax"<br>
+            - "TB"<br>
         </td>
         <td>
             This column:<br>
-            &nbsp;&nbsp; * MUST be null when ChargeCategory is `Tax` ...
+            &nbsp;&nbsp; * MUST be null when ChargeCategory is "Tax" ...
         </td>
         <td>
-            - Enclosed in backticks (e.g., `Usage`)<br>
-            - Formatted as inline code
+            - Enclosed in double quotation marks<br>
+            - Normal text without bold or italics
         </td>
     </tr>
     <tr>
@@ -208,8 +208,8 @@ To ensure consistent language when describing relationships and evaluations betw
 * **Example** (Markdown, illustrative):
 
   ```md
-  * ... MUST be null when ChargeCategory is `Tax`.
-  * ... MUST be null when ChargeCategory is `Adjustment`.
+  * ... MUST be null when ChargeCategory is "Tax".
+  * ... MUST be null when ChargeCategory is "Adjustment".
   ```
 
 ### Formatting
