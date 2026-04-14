@@ -304,45 +304,44 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 
 ### Example
 
-> **3.1.45. Pricing Quantity**
+> **3.1.47 Pricing Quantity**
 >
-> The Pricing Quantity represents the volume of a given SKU associated with a resource or service used or purchased, based on the Pricing Unit. Distinct from Consumed Quantity (complementary to Consumed Unit), it focuses on pricing and cost, not resource and service consumption.
+> The Pricing Quantity represents the volume of a given [*SKU*](#glossary:sku) associated with a [*resource*](#glossary:resource) or [*service*](#glossary:service) used or purchased, based on the [Pricing Unit](#datasets.costandusage.pricingunit). Distinct from [Consumed Quantity](#datasets.costandusage.consumedquantity) (complementary to [Consumed Unit](#datasets.costandusage.consumedunit)), it focuses on pricing and cost, not *resource* and *service* consumption.
 >
-> **3.1.45.1. Requirements**
+> **3.1.47.1. Requirements**
 >
-> PricingQuantity adheres to the following requirements:
-> * PricingQuantity MUST be present in a Cost and Usage FOCUS dataset.
+> PricingQuantity MUST adhere to the following requirements:
+>
 > * PricingQuantity MUST be of type Decimal.
-> * PricingQuantity MUST conform to NumericFormat requirements.
-> * PricingQuantity nullability is defined as follows:
->   * PricingQuantity MUST be null when SkuPriceId is null.
->   * PricingQuantity MUST be null when ChargeCategory is "Tax"
->   * PricingQuantity MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and ChargeClass is not "Correction"
+> * PricingQuantity MUST conform to [NumericFormat](#attributes.numericformat) requirements.
+> * PricingQuantity MUST adhere to the following nullability requirements:
+>   * PricingQuantity MUST be null when [SkuPriceId](#datasets.costandusage.skupriceid) is null.
+>   * PricingQuantity MUST be null when [ChargeCategory](#datasets.costandusage.chargecategory) is "Tax".
+>   * PricingQuantity MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#datasets.costandusage.chargeclass) is not "Correction".
 >   * PricingQuantity MAY be null in all other cases.
-> * PricingQuantity MUST be a valid decimal value when not null.
-> * Cost metric (e.g., ContractedCost) MUST equal the product of the corresponding unit price (e.g., ContractedUnitPrice) and PricingQuantity when the unit price is not null and
-> * PricingQuantity is not null.
+> * Cost metric (e.g., [ContractedCost](#datasets.costandusage.contractedcost)) MUST equal the product of the corresponding unit price (e.g., [ContractedUnitPrice](#datasets.costandusage.contractedunitprice)) and PricingQuantity when the unit price is not null and PricingQuantity is not null.
 >
-> **3.1.45.2. Column ID**
+> **3.1.47.2. Column ID**
 >
 > PricingQuantity
 >
-> **3.1.45.3. Display Name**
+> **3.1.47.3. Display Name**
 >
 > Pricing Quantity
 >
-> **3.1.45.4. Description**
-> The volume of a given SKU associated with a resource or service used or purchased, based on the Pricing Unit.
+> **3.1.47.4. Description**
 >
-> **3.1.45.5. Usability Constraints**
+> The volume of a given *SKU* associated with a *resource* or *service* used or purchased, based on the Pricing Unit.
 >
-> **Aggregation:** When aggregating Pricing Quantity for commitment utilization calculations, it's important to exclude commitment discount purchases (i.e. when Charge Category is "Purchase") that are paid to cover future eligible charges (e.g., commitment discount ). Otherwise, when accounting for all upfront or accrued purchases, it's important to exclude commitment discount usage (i.e. when Charge Category is "Usage"). This exclusion helps prevent double counting of these quantities in the aggregation.
+> **3.1.47.5. Usability Constraints**
 >
-> **3.1.45.6. Content Constraints**
+> **Aggregation:** When aggregating Pricing Quantity for commitment utilization calculations, it's important to exclude [*commitment discount*](#glossary:commitment-discount) purchases (i.e. when Charge Category is "Purchase") that are paid to cover future eligible [*charges*](#glossary:charge) (e.g., *commitment discount*). Otherwise, when accounting for all upfront or accrued purchases, it's important to exclude *commitment discount* usage (i.e. when Charge Category is "Usage"). This exclusion helps prevent double counting of these quantities in the aggregation.
+>
+> **3.1.47.6. Content Constraints**
 >
 > <img width="492" alt="image" src="https://github.com/user-attachments/assets/5185cbf9-306d-4663-a1c7-c8b7ab5c5bb8">
 > 
-> **3.1.45.7. Introduced (version)** 
+> **3.1.47.7. Introduced (version)**
 >
 > 1.0-preview
 
