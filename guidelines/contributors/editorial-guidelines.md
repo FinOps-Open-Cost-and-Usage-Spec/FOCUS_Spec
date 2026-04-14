@@ -209,6 +209,8 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 
 * **Indentation Levels:** Nested bullet points MUST be indented using two spaces per level.
 
+* **Indentation Usage:** A nested indentation level MUST only be introduced when a parent bullet defines a composite (grouping) requirement, typically ending with a colon (:).
+
 * **Example** (illustrative):
 
     ```md
