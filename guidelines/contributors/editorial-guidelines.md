@@ -3,6 +3,11 @@ The "Editorial Style Guidelines" section ensures consistency and clarity across 
 
 These guidelines can be modified through a Pull Request (PR), which the members must review and agree upon. This process ensures that any changes are thoughtfully considered and maintains the overall integrity of our editorial standards.
 
+### Normative Requirements
+Normative requirements are defined and authored exclusively according to the Normative Requirements Guidelines.
+
+Authors MUST refer to the [Normative Requirements Guidelines](normative-requirements-guidelines.md) when writing or modifying normative requirements.
+
 <table>
     <tr>
         <th>Component</th>
@@ -78,9 +83,9 @@ These guidelines can be modified through a Pull Request (PR), which the members 
         </td>
     </tr>
     <tr>
-        <td><strong>Normative Keywords &amp; Requirements Statements</strong></td>
+        <td><strong>Normative Keywords</strong>(Formatting Only)</td>
         <td>
-            MUST, MAY, MUST NOT and normative requirements statements
+            Normative keywords and statements (see Normative Requirements Guidelines)
         </td>
         <td>
             This column:</br>
@@ -89,8 +94,8 @@ These guidelines can be modified through a Pull Request (PR), which the members 
             &nbsp;&nbsp; * MAY be null for all other combinations of ... </br>
         </td>
         <td>
-           - All uppercase, without bold.<br>
-           - Bullet list format. <br>
+           - Formatting follows Editorial Guidelines.<br>
+           - Structure and usage are defined in the Normative Requirements Guidelines.<br>
         </td>
     </tr>
     <tr>
@@ -147,59 +152,15 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 
 * **Linking Only the First Time**: To prevent excessive linking within sections, Entity Names and Entity IDs (e.g., Column Names, Attribute IDs, and Glossary) will only be linked to their corresponding section or glossary the first time they appear in a section.
 
-### Normative Requirements
-
-* **Normative Requirements as a Bullet List**: Normative requirements (those using Normative Keywords) MUST be written as bullet points instead of lengthy sentences.
-
-* **Normative Keyword Standardization:** To ensure consistency in the specification, normative language MUST use only the BCP-14 keywords MUST, MUST NOT, SHOULD, SHOULD NOT, and MAY. The term "RECOMMENDED" as a normative keyword is deprecated starting December 2025. Where legacy text uses RECOMMENDED, it MUST be replaced with SHOULD.
-
-* **Non-Normative Use of “recommended”:** The lowercase word “recommended” may still be used in non-normative, descriptive text (e.g., “Feature level: Recommended”) provided it does not express a normative requirement on implementers.
-
-* **Single Requirement per Statement:** Each normative statement MUST express a single requirement.
-
-* **Example** (Markdown, illustrative):
-
-  ```md
-  * ... MUST be of type String.
-  * ... MUST conform to CurrencyFormat requirements.
-  ```
-
-* **Explicit Conditions:** Normative requirements MUST include an explicit condition unless the rule applies in all cases.
-
-* **Condition Format:** Conditional clauses MUST use standardized patterns: “when / if / unless / only when / only if / except when / except if <condition>”.
-
-* **Example** (Markdown, illustrative):
-
-  ```md
-  * ... MUST be null when ChargeCategory is `Tax`.
-  * ... MUST be null if ChargeCategory is `Tax`.
-  * ... MUST be null unless ChargeCategory is `Usage`.
-  ```
-
-* **Subject Consistency:** Each normative statement MUST clearly identify the subject being constrained.
-
-* **Example** (Markdown, illustrative):
-
-  ```md
-  * PricingQuantity MUST be greater than 0.
-  ```
-* **No Compound Conditions:** Normative requirements MUST NOT combine multiple conditions using “and” or “or” within a single statement.
-
 ### Entity References
 
-* **Entity IDs:** Entity IDs (e.g., Column IDs, Attribute IDs, Dataset IDs) SHOULD be used in normative text sections, such as when specifying mandatory rules, schema definitions, or other implementation-related content. 
+* **Entity IDs:** Entity IDs (e.g., Column IDs, Attribute IDs, Dataset IDs), formatting and usage conventions for normative requirements are defined in the Normative Requirements Guidelines. 
 
 * **Entity IDs:** MUST be formatted without spaces.
 
 * **Entity IDs:** MUST match the exact naming conventions used in the schema (e.g., CommitmentDiscountId).
 
 * **Display Names:** Display Names SHOULD be used in introductory or explanatory sections where natural language context is more appropriate. These names should follow normal text conventions, including spaces between words (e.g., Commitment Discount ID).
-
-* **Consistent Reference Type:** Normative requirements MUST use Entity IDs consistently.
-
-* **Consistent Reference Type:** MUST NOT mix Entity IDs and Display Names within the same statement.
-
-* **Multiple Entity References:** MUST use Entity IDs when referencing multiple entities in a normative statement.
 
 * **Entity Scope:** These rules apply to all entities defined in the FOCUS specification (e.g., Columns, Attributes, Datasets, Objects).
 
@@ -239,8 +200,6 @@ To ensure consistent language when describing relationships and evaluations betw
 * **No Skipped Levels:** Nested bullets MUST NOT skip indentation levels.
 
 * **Consistent Indentation:** All bullets within the same list MUST use consistent indentation.
-
-* **Separate Conditions:** Alternative conditions MUST be expressed as separate bullet points.
 
 * **Example** (Markdown, illustrative):
 

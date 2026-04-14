@@ -84,11 +84,26 @@ The recommended pattern for a normative requirement is:
 <Subject (+qualifier)> + <BCP 14 Keyword> + <Verifiable State Descriptor> + <Object (+qualifier)> [+ Conditions]
 ```
 
+* Normative requirements MUST be expressed as individual bullet points.
+* Each bullet MUST represent exactly one normative requirement expressing a single constraint.
 * Each normative requirement MUST:
   * identify exactly one **normative subject** to which the requirement applies
   * contain exactly one **BCP 14 keyword** (MUST, SHOULD, MAY, MUST NOT, etc.), indicating the obligation level
   * express exactly one **verifiable constraint**
+  * be split into multiple bullets if it introduces multiple independent constraints.
 * Each normative requirement SHOULD describe a **verifiable state** of the object rather than behavior
+
+### Explicit Conditions in Normative Requirements
+
+* Normative requirements MUST include an explicit condition unless the rule applies universally.
+* Conditional clauses MUST use standardized patterns such as:
+   * when <condition>
+   * if <condition>
+   * unless <condition>  
+   * only when <condition>  
+   * only if <condition>  
+   * except when <condition>  
+   * except if <condition>
 
 ### Structural Anchor Requirement
 
@@ -116,6 +131,14 @@ For **Attribute Requirements** sections, a different canonical form applies:
 See [Section Structural Anchor Requirement for Attributes](#structural-anchor-requirement-for-attributes) for details.
 
 ### Normative Subject
+
+* Each normative requirement MUST clearly identify the subject being constrained.
+
+#### Terminology Usage in Normative Requirements
+
+* Column references in normative requirements MUST use the ColumnId.
+* Display Names MUST NOT be used in normative requirements.
+* Display Names MAY be used in non-normative sections for readability.
 
 #### Allowed Subjects
 
@@ -185,6 +208,8 @@ In order to maintain a formal, professional tone throughout the specification, c
 
 * Each normative bullet MUST contain exactly one BCP 14 keyword (MUST, SHOULD, MAY, MUST NOT, SHOULD NOT). See [BCP14](https://tools.ietf.org/html/bcp14) [[RFC2119](https://tools.ietf.org/html/rfc2119)][[RFC8174](https://tools.ietf.org/html/rfc8174)].
 * A bullet containing more than one normative keyword MUST be split.
+* The term **RECOMMENDED** MUST NOT be used as a normative keyword. The keyword **SHOULD** MUST be used instead.
+* The lowercase word “recommended” MAY be used in non-normative text, provided it does not express a normative requirement.
 
 * **Exception for Composite Requirements:** While each individual bullet (parent or nested) MUST contain only one BCP 14 keyword, a Composite Requirement as a whole MAY contain multiple keywords to express nuanced obligations. In such cases, the logical strength of the requirement is governed by the hierarchy defined in section [Composite Requirements](#composite-requirements).
 
@@ -194,6 +219,7 @@ A requirement MUST be split into multiple bullets if it:
 
 * contains more than one BCP 14 keyword,
 * combines multiple obligations (e.g., multiple verifiable state descriptors, multiple objects, or multiple conditions that result in distinct constraints),
+* combines multiple independent conditions using “and” or “or” that result in distinct constraints
 * contains a hidden constraint expressed as a definition (e.g., `ColumnA MUST be Z, where Z is defined as Y`),
 * applies constraints to multiple subjects, even with a single BCP 14 keyword (e.g., `ColumnA and ColumnB MUST be X`).
 
