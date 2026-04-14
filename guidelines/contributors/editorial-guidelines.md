@@ -154,15 +154,15 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
 
 ### Entity References
 
-* **Entity IDs - Reference:** Formatting and usage conventions for normative requirements are defined in the Normative Requirements Guidelines.
+* **Entity IDs Reference:** Formatting and usage conventions for normative requirements are defined in the Normative Requirements Guidelines.
 
-* **Entity IDs - Formatting:** Entity IDs MUST be formatted without spaces.
+* **Entity IDs Formatting:** Entity IDs MUST be formatted without spaces.
 
-* **Entity IDs - Naming:** Entity IDs MUST match the exact naming conventions used in the schema (e.g., CommitmentDiscountId).
+* **Entity IDs Naming:** Entity IDs MUST match the exact naming conventions used in the schema (e.g., CommitmentDiscountId).
 
-* **Display Names - Usage:** Display Names SHOULD be used in introductory or explanatory sections where natural language context is more appropriate. 
+* **Display Names Usage:** Display Names SHOULD be used in introductory or explanatory sections where natural language context is more appropriate. 
 
-* **Display Names - Formatting:** Display Names SHOULD follow normal text conventions, including spaces between words (e.g., Commitment Discount ID).
+* **Display Names Formatting:** Display Names SHOULD follow normal text conventions, including spaces between words (e.g., Commitment Discount ID).
 
 * **Entity Scope:** These rules apply to all entities defined in the FOCUS specification (e.g., Columns, Attributes, Datasets, Objects).
 
