@@ -1,0 +1,569 @@
+{
+  "phase": 2,
+  "source": {
+    "path": "specification/attributes/custom_column_handling.md",
+    "version": "1.4"
+  },
+  "entity": {
+    "entity_type": "Attribute",
+    "entity_id": "CustomColumnHandling",
+    "entity_name": "Custom Column Handling"
+  },
+  "requirements_scope": {
+    "section_names_allowed": [
+      "Requirements",
+      "Column Requirements",
+      "Object Requirements",
+      "Dataset Requirements",
+      "Attribute Requirements"
+    ],
+    "atoms_in_scope_count": 20
+  },
+  "0_outline_root": "ROOT: Custom Column Handling > Requirements",
+  "0_outline_lines": [
+    "L020: \"Column conforming to CustomColumnHandling attribute MUST adhere to the following requirements:\"",
+    "  L022: \"*Custom column* MUST adhere to the following Column ID naming requirements:\"",
+    "    L023: \"*Custom column* MUST include the `x_` prefix in the Column ID to identify it as an external *custom column* and to distinguish it from *FOCUS columns* to avoid conflicts in future releases.\"",
+    "    L024: \"*Custom column* SHOULD use [*Pascal case*](#glossary:pascalcase) in the portion of the Column ID following the required `x_` prefix.\"",
+    "    L025: \"*Custom column* SHOULD use only alphanumeric characters in the portion of the Column ID following the required `x_` prefix.\"",
+    "    L026: \"*Custom column* SHOULD NOT include special characters other than the underscore in the required `x_` prefix.\"",
+    "    L028: \"*Custom column* SHOULD NOT use abbreviations other than `Id` in the Column ID.\"",
+    "    L029: \"*Custom column* SHOULD NOT use acronyms other than `Sku` in the Column ID.\"",
+    "    L030: \"*Custom column* SHOULD NOT exceed 50 characters in the Column ID to accommodate column length restrictions of various data repositories.\"",
+    "    L031: \"*Custom column* SHOULD include the `Id` suffix in the Column ID when the *custom column* represents an identifier.\"",
+    "    L032: \"*Custom column* SHOULD include the `Name` suffix in the Column ID when the *custom column* represents a name.\"",
+    "  L033: \"*Custom column* SHOULD conform to [DataGeneratorCalculatedSplitCostAllocationHandling](#attributes.datagenerator-calculatedsplitcostallocationhandling) requirements when the data generator supports data generator-calculated split cost allocation.\"",
+    "  L034: \"*Custom column* SHOULD conform to [NullHandling](#attributes.nullhandling) requirements.\"",
+    "  L035: \"*Custom column* containing date/time values SHOULD conform to [DateTimeFormat](#attributes.datetimeformat) requirements.\"",
+    "  L036: \"*Custom column* containing JSON objects MUST have its object schema documented by the data generator and accessible to practitioners.\"",
+    "  L037: \"*Custom column* containing numeric values MUST contain a single numeric value.\"",
+    "  L038: \"*Custom column* containing numeric values SHOULD conform to [NumericFormat](#attributes.numericformat) requirements.\"",
+    "  L039: \"*Custom column* containing string values SHOULD conform to [StringHandling](#attributes.stringhandling) requirements.\"",
+    "  L040: \"*Custom column* representing a national currency SHOULD conform to [CurrencyFormat](#attributes.currencyformat) requirements.\"",
+    "  L041: \"*Custom column* representing a measurement unit SHOULD conform to [UnitFormat](#attributes.unitformat) requirements.\""
+  ],
+  "0_outline_summary": {
+    "node_count": 20,
+    "leaf_count": 18,
+    "lead_in_count": 2,
+    "max_depth": 2,
+    "max_indent_level": 1,
+    "root_children_count": 1,
+    "keyword_distribution": {
+      "MUST": 5,
+      "SHOULD": 11,
+      "SHOULD NOT": 4
+    },
+    "lead_ins": [
+      {
+        "ref": "L020",
+        "text_preview": "Column conforming to CustomColumnHandling attribute MUST adhere to the following requirements:",
+        "children": 10
+      },
+      {
+        "ref": "L022",
+        "text_preview": "*Custom column* MUST adhere to the following Column ID naming requirements:",
+        "children": 9
+      }
+    ]
+  },
+  "structure": {
+    "root": {
+      "node_id": "R000",
+      "kind": "root",
+      "children": [
+        {
+          "node_id": "R001",
+          "kind": "atom",
+          "atom": {
+            "temp_id": "R001",
+            "order": 1,
+            "ref": "L020",
+            "text": "Column conforming to CustomColumnHandling attribute MUST adhere to the following requirements:",
+            "keyword": "MUST",
+            "section_path": [
+              "Custom Column Handling",
+              "Requirements"
+            ],
+            "block": {
+              "block_type": "paragraph",
+              "indent_level": 0,
+              "bullet": null
+            },
+            "lead_in": {
+              "ends_with_colon": true
+            }
+          },
+          "children": [
+            {
+              "node_id": "R002",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R002",
+                "order": 2,
+                "ref": "L022",
+                "text": "*Custom column* MUST adhere to the following Column ID naming requirements:",
+                "keyword": "MUST",
+                "section_path": [
+                  "Custom Column Handling",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": true
+                }
+              },
+              "children": [
+                {
+                  "node_id": "R003",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R003",
+                    "order": 3,
+                    "ref": "L023",
+                    "text": "*Custom column* MUST include the `x_` prefix in the Column ID to identify it as an external *custom column* and to distinguish it from *FOCUS columns* to avoid conflicts in future releases.",
+                    "keyword": "MUST",
+                    "section_path": [
+                      "Custom Column Handling",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R004",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R004",
+                    "order": 4,
+                    "ref": "L024",
+                    "text": "*Custom column* SHOULD use [*Pascal case*](#glossary:pascalcase) in the portion of the Column ID following the required `x_` prefix.",
+                    "keyword": "SHOULD",
+                    "section_path": [
+                      "Custom Column Handling",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R005",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R005",
+                    "order": 5,
+                    "ref": "L025",
+                    "text": "*Custom column* SHOULD use only alphanumeric characters in the portion of the Column ID following the required `x_` prefix.",
+                    "keyword": "SHOULD",
+                    "section_path": [
+                      "Custom Column Handling",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R006",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R006",
+                    "order": 6,
+                    "ref": "L026",
+                    "text": "*Custom column* SHOULD NOT include special characters other than the underscore in the required `x_` prefix.",
+                    "keyword": "SHOULD NOT",
+                    "section_path": [
+                      "Custom Column Handling",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R007",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R007",
+                    "order": 7,
+                    "ref": "L028",
+                    "text": "*Custom column* SHOULD NOT use abbreviations other than `Id` in the Column ID.",
+                    "keyword": "SHOULD NOT",
+                    "section_path": [
+                      "Custom Column Handling",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R008",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R008",
+                    "order": 8,
+                    "ref": "L029",
+                    "text": "*Custom column* SHOULD NOT use acronyms other than `Sku` in the Column ID.",
+                    "keyword": "SHOULD NOT",
+                    "section_path": [
+                      "Custom Column Handling",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R009",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R009",
+                    "order": 9,
+                    "ref": "L030",
+                    "text": "*Custom column* SHOULD NOT exceed 50 characters in the Column ID to accommodate column length restrictions of various data repositories.",
+                    "keyword": "SHOULD NOT",
+                    "section_path": [
+                      "Custom Column Handling",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R010",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R010",
+                    "order": 10,
+                    "ref": "L031",
+                    "text": "*Custom column* SHOULD include the `Id` suffix in the Column ID when the *custom column* represents an identifier.",
+                    "keyword": "SHOULD",
+                    "section_path": [
+                      "Custom Column Handling",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R011",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R011",
+                    "order": 11,
+                    "ref": "L032",
+                    "text": "*Custom column* SHOULD include the `Name` suffix in the Column ID when the *custom column* represents a name.",
+                    "keyword": "SHOULD",
+                    "section_path": [
+                      "Custom Column Handling",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "R012",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R012",
+                "order": 12,
+                "ref": "L033",
+                "text": "*Custom column* SHOULD conform to [DataGeneratorCalculatedSplitCostAllocationHandling](#attributes.datagenerator-calculatedsplitcostallocationhandling) requirements when the data generator supports data generator-calculated split cost allocation.",
+                "keyword": "SHOULD",
+                "section_path": [
+                  "Custom Column Handling",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R013",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R013",
+                "order": 13,
+                "ref": "L034",
+                "text": "*Custom column* SHOULD conform to [NullHandling](#attributes.nullhandling) requirements.",
+                "keyword": "SHOULD",
+                "section_path": [
+                  "Custom Column Handling",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R014",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R014",
+                "order": 14,
+                "ref": "L035",
+                "text": "*Custom column* containing date/time values SHOULD conform to [DateTimeFormat](#attributes.datetimeformat) requirements.",
+                "keyword": "SHOULD",
+                "section_path": [
+                  "Custom Column Handling",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R015",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R015",
+                "order": 15,
+                "ref": "L036",
+                "text": "*Custom column* containing JSON objects MUST have its object schema documented by the data generator and accessible to practitioners.",
+                "keyword": "MUST",
+                "section_path": [
+                  "Custom Column Handling",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R016",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R016",
+                "order": 16,
+                "ref": "L037",
+                "text": "*Custom column* containing numeric values MUST contain a single numeric value.",
+                "keyword": "MUST",
+                "section_path": [
+                  "Custom Column Handling",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R017",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R017",
+                "order": 17,
+                "ref": "L038",
+                "text": "*Custom column* containing numeric values SHOULD conform to [NumericFormat](#attributes.numericformat) requirements.",
+                "keyword": "SHOULD",
+                "section_path": [
+                  "Custom Column Handling",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R018",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R018",
+                "order": 18,
+                "ref": "L039",
+                "text": "*Custom column* containing string values SHOULD conform to [StringHandling](#attributes.stringhandling) requirements.",
+                "keyword": "SHOULD",
+                "section_path": [
+                  "Custom Column Handling",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R019",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R019",
+                "order": 19,
+                "ref": "L040",
+                "text": "*Custom column* representing a national currency SHOULD conform to [CurrencyFormat](#attributes.currencyformat) requirements.",
+                "keyword": "SHOULD",
+                "section_path": [
+                  "Custom Column Handling",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R020",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R020",
+                "order": 20,
+                "ref": "L041",
+                "text": "*Custom column* representing a measurement unit SHOULD conform to [UnitFormat](#attributes.unitformat) requirements.",
+                "keyword": "SHOULD",
+                "section_path": [
+                  "Custom Column Handling",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "debug": {
+    "ruleset": "ph2_tree_v1",
+    "parenting_signals": [
+      "section_path_boundary",
+      "lead_in_colon",
+      "indent_level"
+    ],
+    "warnings": []
+  }
+}

@@ -1,31 +1,31 @@
 {
   "phase": 1,
   "source": {
-    "path": "specification/datasets/billing_period/dataset.md",
+    "path": "specification/datasets/cost_and_usage/columns/commitmentprogrameligibilitydetailsobject.md",
     "version": "1.4"
   },
   "entity": {
-    "entity_type": "Dataset",
-    "entity_id": "BillingPeriod",
-    "entity_name": "Billing Period"
+    "entity_type": "Object",
+    "entity_id": "CommitmentProgramEligibilityDetailsObject",
+    "entity_name": "Commitment Program Eligibility Details Object"
   },
   "entities_found": [
     {
-      "entity_type": "Dataset",
-      "entity_id": "BillingPeriod",
-      "entity_name": "Billing Period"
+      "entity_type": "Object",
+      "entity_id": "CommitmentProgramEligibilityDetailsObject",
+      "entity_name": "Commitment Program Eligibility Details Object"
     }
   ],
   "atoms": [
     {
       "temp_id": "R001",
       "order": 1,
-      "text": "BillingPeriod MUST adhere to the following requirements:",
+      "text": "CommitmentProgramEligibilityDetailsObject MUST adhere to the following requirements:",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
-        "Billing Period",
-        "Requirements"
+        "Commitment Program Eligibility Details Object",
+        "Object Requirements"
       ],
       "block": {
         "block_type": "paragraph",
@@ -36,21 +36,21 @@
         "ends_with_colon": true
       },
       "provenance": {
-        "line_start": 27,
-        "line_end": 27
+        "line_start": 7,
+        "line_end": 7
       },
       "_alignment_status": "confirmed",
-      "ref": "L027"
+      "ref": "L007"
     },
     {
       "temp_id": "R002",
       "order": 2,
-      "text": "BillingPeriod MUST be present when the invoice issuer supports payable invoices.",
+      "text": "CommitmentProgramEligibilityDetailsObject MUST have a top-level property key \"CommitmentPrograms\".",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
-        "Billing Period",
-        "Requirements"
+        "Commitment Program Eligibility Details Object",
+        "Object Requirements"
       ],
       "block": {
         "block_type": "list_item",
@@ -61,21 +61,71 @@
         "ends_with_colon": false
       },
       "provenance": {
-        "line_start": 29,
-        "line_end": 29
+        "line_start": 9,
+        "line_end": 9
       },
       "_alignment_status": "confirmed",
-      "ref": "L029"
+      "ref": "L009"
     },
     {
       "temp_id": "R003",
       "order": 3,
-      "text": "The presence of columns in BillingPeriod MUST adhere to the following requirements:",
+      "text": "CommitmentProgramEligibilityDetailsObject MAY contain additional data generator-defined top-level property keys.",
+      "keyword": "MAY",
+      "role": "requirement",
+      "section_path": [
+        "Commitment Program Eligibility Details Object",
+        "Object Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 10,
+        "line_end": 10
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L010"
+    },
+    {
+      "temp_id": "R004",
+      "order": 4,
+      "text": "CommitmentProgramEligibilityDetailsObject MUST have property keys that begin with the string \"x_\" unless it is a FOCUS-defined property key.",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
-        "Billing Period",
-        "Requirements"
+        "Commitment Program Eligibility Details Object",
+        "Object Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 11,
+        "line_end": 11
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L011"
+    },
+    {
+      "temp_id": "R005",
+      "order": 5,
+      "text": "CommitmentProgramEligibilityDetailsObject.CommitmentPrograms MUST adhere to the following requirements:",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Commitment Program Eligibility Details Object",
+        "Object Requirements"
       ],
       "block": {
         "block_type": "list_item",
@@ -86,71 +136,21 @@
         "ends_with_colon": true
       },
       "provenance": {
-        "line_start": 30,
-        "line_end": 30
+        "line_start": 12,
+        "line_end": 12
       },
       "_alignment_status": "confirmed",
-      "ref": "L030"
-    },
-    {
-      "temp_id": "R004",
-      "order": 4,
-      "text": "BillingPeriod MUST include [BillingPeriodCreated](#datasets.billingperiod.billingperiodcreated).",
-      "keyword": "MUST",
-      "role": "requirement",
-      "section_path": [
-        "Billing Period",
-        "Requirements"
-      ],
-      "block": {
-        "block_type": "list_item",
-        "indent_level": 1,
-        "bullet": "*"
-      },
-      "lead_in": {
-        "ends_with_colon": false
-      },
-      "provenance": {
-        "line_start": 31,
-        "line_end": 31
-      },
-      "_alignment_status": "confirmed",
-      "ref": "L031"
-    },
-    {
-      "temp_id": "R005",
-      "order": 5,
-      "text": "BillingPeriod MUST include [BillingPeriodEnd](#datasets.billingperiod.billingperiodend).",
-      "keyword": "MUST",
-      "role": "requirement",
-      "section_path": [
-        "Billing Period",
-        "Requirements"
-      ],
-      "block": {
-        "block_type": "list_item",
-        "indent_level": 1,
-        "bullet": "*"
-      },
-      "lead_in": {
-        "ends_with_colon": false
-      },
-      "provenance": {
-        "line_start": 32,
-        "line_end": 32
-      },
-      "_alignment_status": "confirmed",
-      "ref": "L032"
+      "ref": "L012"
     },
     {
       "temp_id": "R006",
       "order": 6,
-      "text": "BillingPeriod MUST include [BillingPeriodLastUpdated](#datasets.billingperiod.billingperiodlastupdated).",
+      "text": "CommitmentProgramEligibilityDetailsObject.CommitmentPrograms MUST be of type Array.",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
-        "Billing Period",
-        "Requirements"
+        "Commitment Program Eligibility Details Object",
+        "Object Requirements"
       ],
       "block": {
         "block_type": "list_item",
@@ -161,21 +161,21 @@
         "ends_with_colon": false
       },
       "provenance": {
-        "line_start": 33,
-        "line_end": 33
+        "line_start": 13,
+        "line_end": 13
       },
       "_alignment_status": "confirmed",
-      "ref": "L033"
+      "ref": "L013"
     },
     {
       "temp_id": "R007",
       "order": 7,
-      "text": "BillingPeriod MUST include [BillingPeriodStart](#datasets.billingperiod.billingperiodstart).",
+      "text": "CommitmentProgramEligibilityDetailsObject.CommitmentPrograms MUST contain one or more objects.",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
-        "Billing Period",
-        "Requirements"
+        "Commitment Program Eligibility Details Object",
+        "Object Requirements"
       ],
       "block": {
         "block_type": "list_item",
@@ -186,21 +186,21 @@
         "ends_with_colon": false
       },
       "provenance": {
-        "line_start": 34,
-        "line_end": 34
+        "line_start": 14,
+        "line_end": 14
       },
       "_alignment_status": "confirmed",
-      "ref": "L034"
+      "ref": "L014"
     },
     {
       "temp_id": "R008",
       "order": 8,
-      "text": "BillingPeriod MUST include [BillingPeriodStatus](#datasets.billingperiod.billingperiodstatus).",
+      "text": "Each entry in CommitmentProgramEligibilityDetailsObject.CommitmentPrograms MUST be of type JSON Object.",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
-        "Billing Period",
-        "Requirements"
+        "Commitment Program Eligibility Details Object",
+        "Object Requirements"
       ],
       "block": {
         "block_type": "list_item",
@@ -211,21 +211,21 @@
         "ends_with_colon": false
       },
       "provenance": {
-        "line_start": 35,
-        "line_end": 35
+        "line_start": 15,
+        "line_end": 15
       },
       "_alignment_status": "confirmed",
-      "ref": "L035"
+      "ref": "L015"
     },
     {
       "temp_id": "R009",
       "order": 9,
-      "text": "BillingPeriod MUST include [InvoiceIssuerName](#datasets.billingperiod.invoiceissuername).",
+      "text": "Each entry in CommitmentProgramEligibilityDetailsObject.CommitmentPrograms MUST have a property key \"ProgramType\".",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
-        "Billing Period",
-        "Requirements"
+        "Commitment Program Eligibility Details Object",
+        "Object Requirements"
       ],
       "block": {
         "block_type": "list_item",
@@ -236,186 +236,186 @@
         "ends_with_colon": false
       },
       "provenance": {
-        "line_start": 36,
-        "line_end": 36
+        "line_start": 16,
+        "line_end": 16
       },
       "_alignment_status": "confirmed",
-      "ref": "L036"
+      "ref": "L016"
     },
     {
       "temp_id": "R010",
       "order": 10,
-      "text": "BillingPeriod MUST conform to [CorrectionHandling](#attributes.correctionhandling) requirements.",
-      "keyword": "MUST",
+      "text": "Each entry in CommitmentProgramEligibilityDetailsObject.CommitmentPrograms MAY contain additional data generator-defined property keys.",
+      "keyword": "MAY",
       "role": "requirement",
       "section_path": [
-        "Billing Period",
-        "Requirements"
+        "Commitment Program Eligibility Details Object",
+        "Object Requirements"
       ],
       "block": {
         "block_type": "list_item",
-        "indent_level": 0,
+        "indent_level": 1,
         "bullet": "*"
       },
       "lead_in": {
         "ends_with_colon": false
       },
       "provenance": {
-        "line_start": 37,
-        "line_end": 37
+        "line_start": 17,
+        "line_end": 17
       },
       "_alignment_status": "confirmed",
-      "ref": "L037"
+      "ref": "L017"
     },
     {
       "temp_id": "R011",
       "order": 11,
-      "text": "BillingPeriod MUST conform to [DatasetCompleteness](#attributes.datasetcompleteness) requirements.",
+      "text": "Each entry in CommitmentProgramEligibilityDetailsObject.CommitmentPrograms MUST have property keys that begin with the string \"x_\" unless it is a FOCUS-defined property key.",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
-        "Billing Period",
-        "Requirements"
+        "Commitment Program Eligibility Details Object",
+        "Object Requirements"
       ],
       "block": {
         "block_type": "list_item",
-        "indent_level": 0,
+        "indent_level": 1,
         "bullet": "*"
       },
       "lead_in": {
         "ends_with_colon": false
       },
       "provenance": {
-        "line_start": 38,
-        "line_end": 38
+        "line_start": 18,
+        "line_end": 18
       },
       "_alignment_status": "confirmed",
-      "ref": "L038"
+      "ref": "L018"
     },
     {
       "temp_id": "R012",
       "order": 12,
-      "text": "BillingPeriod MUST conform to [DatasetConfiguration](#attributes.datasetconfiguration) requirements.",
+      "text": "CommitmentProgramEligibilityDetailsObject.CommitmentPrograms.ProgramType MUST be of type String.",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
-        "Billing Period",
-        "Requirements"
+        "Commitment Program Eligibility Details Object",
+        "Object Requirements"
       ],
       "block": {
         "block_type": "list_item",
-        "indent_level": 0,
+        "indent_level": 1,
         "bullet": "*"
       },
       "lead_in": {
         "ends_with_colon": false
       },
       "provenance": {
-        "line_start": 39,
-        "line_end": 39
+        "line_start": 19,
+        "line_end": 19
       },
       "_alignment_status": "confirmed",
-      "ref": "L039"
+      "ref": "L019"
     },
     {
       "temp_id": "R013",
       "order": 13,
-      "text": "BillingPeriod MUST conform to [DeliveryHandling](#attributes.deliveryhandling) requirements.",
-      "keyword": "MUST",
+      "text": "CommitmentProgramEligibilityDetailsObject.CommitmentPrograms.ProgramType MUST NOT be null.",
+      "keyword": "MUST NOT",
       "role": "requirement",
       "section_path": [
-        "Billing Period",
-        "Requirements"
+        "Commitment Program Eligibility Details Object",
+        "Object Requirements"
       ],
       "block": {
         "block_type": "list_item",
-        "indent_level": 0,
+        "indent_level": 1,
         "bullet": "*"
       },
       "lead_in": {
         "ends_with_colon": false
       },
       "provenance": {
-        "line_start": 40,
-        "line_end": 40
+        "line_start": 20,
+        "line_end": 20
       },
       "_alignment_status": "confirmed",
-      "ref": "L040"
+      "ref": "L020"
     },
     {
       "temp_id": "R014",
       "order": 14,
-      "text": "BillingPeriod [*FOCUS columns*](#glossary:focus-column) MUST conform to [FocusColumnHandling](#attributes.focuscolumnhandling) requirements.",
+      "text": "CommitmentProgramEligibilityDetailsObject.CommitmentPrograms.ProgramType MUST correspond to a *commitment program* type supported by the service provider.",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
-        "Billing Period",
-        "Requirements"
+        "Commitment Program Eligibility Details Object",
+        "Object Requirements"
       ],
       "block": {
         "block_type": "list_item",
-        "indent_level": 0,
+        "indent_level": 1,
         "bullet": "*"
       },
       "lead_in": {
         "ends_with_colon": false
       },
       "provenance": {
-        "line_start": 41,
-        "line_end": 41
+        "line_start": 21,
+        "line_end": 21
       },
       "_alignment_status": "confirmed",
-      "ref": "L041"
+      "ref": "L021"
     },
     {
       "temp_id": "R015",
       "order": 15,
-      "text": "BillingPeriod *FOCUS columns* MUST conform to [NullHandling](#attributes.nullhandling) requirements.",
+      "text": "CommitmentProgramEligibilityDetailsObject.CommitmentPrograms.ProgramType MUST equal [CommitmentDiscountType](#datasets.costandusage.commitmentdiscounttype) for one object in CommitmentProgramEligibilityDetailsObject.CommitmentPrograms when CommitmentDiscountType is not null.",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
-        "Billing Period",
-        "Requirements"
+        "Commitment Program Eligibility Details Object",
+        "Object Requirements"
       ],
       "block": {
         "block_type": "list_item",
-        "indent_level": 0,
+        "indent_level": 1,
         "bullet": "*"
       },
       "lead_in": {
         "ends_with_colon": false
       },
       "provenance": {
-        "line_start": 42,
-        "line_end": 42
+        "line_start": 22,
+        "line_end": 22
       },
       "_alignment_status": "confirmed",
-      "ref": "L042"
+      "ref": "L022"
     },
     {
       "temp_id": "R016",
       "order": 16,
-      "text": "BillingPeriod [*custom columns*](#glossary:custom-column) MUST conform to [CustomColumnHandling](#attributes.customcolumnhandling) requirements.",
-      "keyword": "MUST",
+      "text": "CommitmentProgramEligibilityDetailsObject.CommitmentPrograms.ProgramType SHOULD correspond to terminology disclosed by the service provider in public documentation.",
+      "keyword": "SHOULD",
       "role": "requirement",
       "section_path": [
-        "Billing Period",
-        "Requirements"
+        "Commitment Program Eligibility Details Object",
+        "Object Requirements"
       ],
       "block": {
         "block_type": "list_item",
-        "indent_level": 0,
+        "indent_level": 1,
         "bullet": "*"
       },
       "lead_in": {
         "ends_with_colon": false
       },
       "provenance": {
-        "line_start": 43,
-        "line_end": 43
+        "line_start": 23,
+        "line_end": 23
       },
       "_alignment_status": "confirmed",
-      "ref": "L043"
+      "ref": "L023"
     }
   ],
   "warnings": [],

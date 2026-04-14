@@ -1,0 +1,529 @@
+{
+  "phase": 1,
+  "source": {
+    "path": "specification/attributes/custom_column_handling.md",
+    "version": "1.4"
+  },
+  "entity": {
+    "entity_type": "Attribute",
+    "entity_id": "CustomColumnHandling",
+    "entity_name": "Custom Column Handling"
+  },
+  "entities_found": [
+    {
+      "entity_type": "Attribute",
+      "entity_id": "CustomColumnHandling",
+      "entity_name": "Custom Column Handling"
+    }
+  ],
+  "atoms": [
+    {
+      "temp_id": "R001",
+      "order": 1,
+      "text": "Column conforming to CustomColumnHandling attribute MUST adhere to the following requirements:",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Custom Column Handling",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "paragraph",
+        "indent_level": 0,
+        "bullet": null
+      },
+      "lead_in": {
+        "ends_with_colon": true
+      },
+      "provenance": {
+        "line_start": 20,
+        "line_end": 20
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L020"
+    },
+    {
+      "temp_id": "R002",
+      "order": 2,
+      "text": "*Custom column* MUST adhere to the following Column ID naming requirements:",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Custom Column Handling",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": true
+      },
+      "provenance": {
+        "line_start": 22,
+        "line_end": 22
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L022"
+    },
+    {
+      "temp_id": "R003",
+      "order": 3,
+      "text": "*Custom column* MUST include the `x_` prefix in the Column ID to identify it as an external *custom column* and to distinguish it from *FOCUS columns* to avoid conflicts in future releases.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Custom Column Handling",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 1,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 23,
+        "line_end": 23
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L023"
+    },
+    {
+      "temp_id": "R004",
+      "order": 4,
+      "text": "*Custom column* SHOULD use [*Pascal case*](#glossary:pascalcase) in the portion of the Column ID following the required `x_` prefix.",
+      "keyword": "SHOULD",
+      "role": "requirement",
+      "section_path": [
+        "Custom Column Handling",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 1,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 24,
+        "line_end": 24
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L024"
+    },
+    {
+      "temp_id": "R005",
+      "order": 5,
+      "text": "*Custom column* SHOULD use only alphanumeric characters in the portion of the Column ID following the required `x_` prefix.",
+      "keyword": "SHOULD",
+      "role": "requirement",
+      "section_path": [
+        "Custom Column Handling",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 1,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 25,
+        "line_end": 25
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L025"
+    },
+    {
+      "temp_id": "R006",
+      "order": 6,
+      "text": "*Custom column* SHOULD NOT include special characters other than the underscore in the required `x_` prefix.",
+      "keyword": "SHOULD NOT",
+      "role": "requirement",
+      "section_path": [
+        "Custom Column Handling",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 1,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 26,
+        "line_end": 26
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L026"
+    },
+    {
+      "temp_id": "R007",
+      "order": 7,
+      "text": "*Custom column* SHOULD NOT use abbreviations other than `Id` in the Column ID.",
+      "keyword": "SHOULD NOT",
+      "role": "requirement",
+      "section_path": [
+        "Custom Column Handling",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 1,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 28,
+        "line_end": 28
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L028"
+    },
+    {
+      "temp_id": "R008",
+      "order": 8,
+      "text": "*Custom column* SHOULD NOT use acronyms other than `Sku` in the Column ID.",
+      "keyword": "SHOULD NOT",
+      "role": "requirement",
+      "section_path": [
+        "Custom Column Handling",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 1,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 29,
+        "line_end": 29
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L029"
+    },
+    {
+      "temp_id": "R009",
+      "order": 9,
+      "text": "*Custom column* SHOULD NOT exceed 50 characters in the Column ID to accommodate column length restrictions of various data repositories.",
+      "keyword": "SHOULD NOT",
+      "role": "requirement",
+      "section_path": [
+        "Custom Column Handling",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 1,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 30,
+        "line_end": 30
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L030"
+    },
+    {
+      "temp_id": "R010",
+      "order": 10,
+      "text": "*Custom column* SHOULD include the `Id` suffix in the Column ID when the *custom column* represents an identifier.",
+      "keyword": "SHOULD",
+      "role": "requirement",
+      "section_path": [
+        "Custom Column Handling",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 1,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 31,
+        "line_end": 31
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L031"
+    },
+    {
+      "temp_id": "R011",
+      "order": 11,
+      "text": "*Custom column* SHOULD include the `Name` suffix in the Column ID when the *custom column* represents a name.",
+      "keyword": "SHOULD",
+      "role": "requirement",
+      "section_path": [
+        "Custom Column Handling",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 1,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 32,
+        "line_end": 32
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L032"
+    },
+    {
+      "temp_id": "R012",
+      "order": 12,
+      "text": "*Custom column* SHOULD conform to [DataGeneratorCalculatedSplitCostAllocationHandling](#attributes.datagenerator-calculatedsplitcostallocationhandling) requirements when the data generator supports data generator-calculated split cost allocation.",
+      "keyword": "SHOULD",
+      "role": "requirement",
+      "section_path": [
+        "Custom Column Handling",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 33,
+        "line_end": 33
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L033"
+    },
+    {
+      "temp_id": "R013",
+      "order": 13,
+      "text": "*Custom column* SHOULD conform to [NullHandling](#attributes.nullhandling) requirements.",
+      "keyword": "SHOULD",
+      "role": "requirement",
+      "section_path": [
+        "Custom Column Handling",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 34,
+        "line_end": 34
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L034"
+    },
+    {
+      "temp_id": "R014",
+      "order": 14,
+      "text": "*Custom column* containing date/time values SHOULD conform to [DateTimeFormat](#attributes.datetimeformat) requirements.",
+      "keyword": "SHOULD",
+      "role": "requirement",
+      "section_path": [
+        "Custom Column Handling",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 35,
+        "line_end": 35
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L035"
+    },
+    {
+      "temp_id": "R015",
+      "order": 15,
+      "text": "*Custom column* containing JSON objects MUST have its object schema documented by the data generator and accessible to practitioners.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Custom Column Handling",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 36,
+        "line_end": 36
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L036"
+    },
+    {
+      "temp_id": "R016",
+      "order": 16,
+      "text": "*Custom column* containing numeric values MUST contain a single numeric value.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Custom Column Handling",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 37,
+        "line_end": 37
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L037"
+    },
+    {
+      "temp_id": "R017",
+      "order": 17,
+      "text": "*Custom column* containing numeric values SHOULD conform to [NumericFormat](#attributes.numericformat) requirements.",
+      "keyword": "SHOULD",
+      "role": "requirement",
+      "section_path": [
+        "Custom Column Handling",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 38,
+        "line_end": 38
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L038"
+    },
+    {
+      "temp_id": "R018",
+      "order": 18,
+      "text": "*Custom column* containing string values SHOULD conform to [StringHandling](#attributes.stringhandling) requirements.",
+      "keyword": "SHOULD",
+      "role": "requirement",
+      "section_path": [
+        "Custom Column Handling",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 39,
+        "line_end": 39
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L039"
+    },
+    {
+      "temp_id": "R019",
+      "order": 19,
+      "text": "*Custom column* representing a national currency SHOULD conform to [CurrencyFormat](#attributes.currencyformat) requirements.",
+      "keyword": "SHOULD",
+      "role": "requirement",
+      "section_path": [
+        "Custom Column Handling",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 40,
+        "line_end": 40
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L040"
+    },
+    {
+      "temp_id": "R020",
+      "order": 20,
+      "text": "*Custom column* representing a measurement unit SHOULD conform to [UnitFormat](#attributes.unitformat) requirements.",
+      "keyword": "SHOULD",
+      "role": "requirement",
+      "section_path": [
+        "Custom Column Handling",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 41,
+        "line_end": 41
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L041"
+    }
+  ],
+  "warnings": [],
+  "structural": {
+    "lead_ins": [],
+    "index": {
+      "by_section_path": {},
+      "by_line": {}
+    }
+  }
+}

@@ -1,0 +1,470 @@
+{
+  "phase": 2,
+  "source": {
+    "path": "specification/datasets/cost_and_usage/columns/commitmentprogrameligibilitydetailsobject.md",
+    "version": "1.4"
+  },
+  "entity": {
+    "entity_type": "Object",
+    "entity_id": "CommitmentProgramEligibilityDetailsObject",
+    "entity_name": "Commitment Program Eligibility Details Object"
+  },
+  "requirements_scope": {
+    "section_names_allowed": [
+      "Requirements",
+      "Column Requirements",
+      "Object Requirements",
+      "Dataset Requirements",
+      "Attribute Requirements"
+    ],
+    "atoms_in_scope_count": 16
+  },
+  "0_outline_root": "ROOT: Commitment Program Eligibility Details Object > Requirements",
+  "0_outline_lines": [
+    "L007: \"CommitmentProgramEligibilityDetailsObject MUST adhere to the following requirements:\"",
+    "  L009: \"CommitmentProgramEligibilityDetailsObject MUST have a top-level property key \\\"CommitmentPrograms\\\".\"",
+    "  L010: \"CommitmentProgramEligibilityDetailsObject MAY contain additional data generator-defined top-level property keys.\"",
+    "  L011: \"CommitmentProgramEligibilityDetailsObject MUST have property keys that begin with the string \\\"x_\\\" unless it is a FOCUS-defined property key.\"",
+    "  L012: \"CommitmentProgramEligibilityDetailsObject.CommitmentPrograms MUST adhere to the following requirements:\"",
+    "    L013: \"CommitmentProgramEligibilityDetailsObject.CommitmentPrograms MUST be of type Array.\"",
+    "    L014: \"CommitmentProgramEligibilityDetailsObject.CommitmentPrograms MUST contain one or more objects.\"",
+    "    L015: \"Each entry in CommitmentProgramEligibilityDetailsObject.CommitmentPrograms MUST be of type JSON Object.\"",
+    "    L016: \"Each entry in CommitmentProgramEligibilityDetailsObject.CommitmentPrograms MUST have a property key \\\"ProgramType\\\".\"",
+    "    L017: \"Each entry in CommitmentProgramEligibilityDetailsObject.CommitmentPrograms MAY contain additional data generator-defined property keys.\"",
+    "    L018: \"Each entry in CommitmentProgramEligibilityDetailsObject.CommitmentPrograms MUST have property keys that begin with the string \\\"x_\\\" unless it is a FOCUS-defined property key.\"",
+    "    L019: \"CommitmentProgramEligibilityDetailsObject.CommitmentPrograms.ProgramType MUST be of type String.\"",
+    "    L020: \"CommitmentProgramEligibilityDetailsObject.CommitmentPrograms.ProgramType MUST NOT be null.\"",
+    "    L021: \"CommitmentProgramEligibilityDetailsObject.CommitmentPrograms.ProgramType MUST correspond to a *commitment program* type supported by the service provider.\"",
+    "    L022: \"CommitmentProgramEligibilityDetailsObject.CommitmentPrograms.ProgramType MUST equal [CommitmentDiscountType](#datasets.costandusage.commitmentdiscounttype) for one object in CommitmentProgramEligibilityDetailsObject.CommitmentPrograms when CommitmentDiscountType is not null.\"",
+    "    L023: \"CommitmentProgramEligibilityDetailsObject.CommitmentPrograms.ProgramType SHOULD correspond to terminology disclosed by the service provider in public documentation.\""
+  ],
+  "0_outline_summary": {
+    "node_count": 16,
+    "leaf_count": 14,
+    "lead_in_count": 2,
+    "max_depth": 2,
+    "max_indent_level": 1,
+    "root_children_count": 1,
+    "keyword_distribution": {
+      "MUST": 12,
+      "MAY": 2,
+      "MUST NOT": 1,
+      "SHOULD": 1
+    },
+    "lead_ins": [
+      {
+        "ref": "L007",
+        "text_preview": "CommitmentProgramEligibilityDetailsObject MUST adhere to the following requirements:",
+        "children": 4
+      },
+      {
+        "ref": "L012",
+        "text_preview": "CommitmentProgramEligibilityDetailsObject.CommitmentPrograms MUST adhere to the following requirements:",
+        "children": 11
+      }
+    ]
+  },
+  "structure": {
+    "root": {
+      "node_id": "R000",
+      "kind": "root",
+      "children": [
+        {
+          "node_id": "R001",
+          "kind": "atom",
+          "atom": {
+            "temp_id": "R001",
+            "order": 1,
+            "ref": "L007",
+            "text": "CommitmentProgramEligibilityDetailsObject MUST adhere to the following requirements:",
+            "keyword": "MUST",
+            "section_path": [
+              "Commitment Program Eligibility Details Object",
+              "Object Requirements"
+            ],
+            "block": {
+              "block_type": "paragraph",
+              "indent_level": 0,
+              "bullet": null
+            },
+            "lead_in": {
+              "ends_with_colon": true
+            }
+          },
+          "children": [
+            {
+              "node_id": "R002",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R002",
+                "order": 2,
+                "ref": "L009",
+                "text": "CommitmentProgramEligibilityDetailsObject MUST have a top-level property key \"CommitmentPrograms\".",
+                "keyword": "MUST",
+                "section_path": [
+                  "Commitment Program Eligibility Details Object",
+                  "Object Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R003",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R003",
+                "order": 3,
+                "ref": "L010",
+                "text": "CommitmentProgramEligibilityDetailsObject MAY contain additional data generator-defined top-level property keys.",
+                "keyword": "MAY",
+                "section_path": [
+                  "Commitment Program Eligibility Details Object",
+                  "Object Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R004",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R004",
+                "order": 4,
+                "ref": "L011",
+                "text": "CommitmentProgramEligibilityDetailsObject MUST have property keys that begin with the string \"x_\" unless it is a FOCUS-defined property key.",
+                "keyword": "MUST",
+                "section_path": [
+                  "Commitment Program Eligibility Details Object",
+                  "Object Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R005",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R005",
+                "order": 5,
+                "ref": "L012",
+                "text": "CommitmentProgramEligibilityDetailsObject.CommitmentPrograms MUST adhere to the following requirements:",
+                "keyword": "MUST",
+                "section_path": [
+                  "Commitment Program Eligibility Details Object",
+                  "Object Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": true
+                }
+              },
+              "children": [
+                {
+                  "node_id": "R006",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R006",
+                    "order": 6,
+                    "ref": "L013",
+                    "text": "CommitmentProgramEligibilityDetailsObject.CommitmentPrograms MUST be of type Array.",
+                    "keyword": "MUST",
+                    "section_path": [
+                      "Commitment Program Eligibility Details Object",
+                      "Object Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R007",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R007",
+                    "order": 7,
+                    "ref": "L014",
+                    "text": "CommitmentProgramEligibilityDetailsObject.CommitmentPrograms MUST contain one or more objects.",
+                    "keyword": "MUST",
+                    "section_path": [
+                      "Commitment Program Eligibility Details Object",
+                      "Object Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R008",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R008",
+                    "order": 8,
+                    "ref": "L015",
+                    "text": "Each entry in CommitmentProgramEligibilityDetailsObject.CommitmentPrograms MUST be of type JSON Object.",
+                    "keyword": "MUST",
+                    "section_path": [
+                      "Commitment Program Eligibility Details Object",
+                      "Object Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R009",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R009",
+                    "order": 9,
+                    "ref": "L016",
+                    "text": "Each entry in CommitmentProgramEligibilityDetailsObject.CommitmentPrograms MUST have a property key \"ProgramType\".",
+                    "keyword": "MUST",
+                    "section_path": [
+                      "Commitment Program Eligibility Details Object",
+                      "Object Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R010",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R010",
+                    "order": 10,
+                    "ref": "L017",
+                    "text": "Each entry in CommitmentProgramEligibilityDetailsObject.CommitmentPrograms MAY contain additional data generator-defined property keys.",
+                    "keyword": "MAY",
+                    "section_path": [
+                      "Commitment Program Eligibility Details Object",
+                      "Object Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R011",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R011",
+                    "order": 11,
+                    "ref": "L018",
+                    "text": "Each entry in CommitmentProgramEligibilityDetailsObject.CommitmentPrograms MUST have property keys that begin with the string \"x_\" unless it is a FOCUS-defined property key.",
+                    "keyword": "MUST",
+                    "section_path": [
+                      "Commitment Program Eligibility Details Object",
+                      "Object Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R012",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R012",
+                    "order": 12,
+                    "ref": "L019",
+                    "text": "CommitmentProgramEligibilityDetailsObject.CommitmentPrograms.ProgramType MUST be of type String.",
+                    "keyword": "MUST",
+                    "section_path": [
+                      "Commitment Program Eligibility Details Object",
+                      "Object Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R013",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R013",
+                    "order": 13,
+                    "ref": "L020",
+                    "text": "CommitmentProgramEligibilityDetailsObject.CommitmentPrograms.ProgramType MUST NOT be null.",
+                    "keyword": "MUST NOT",
+                    "section_path": [
+                      "Commitment Program Eligibility Details Object",
+                      "Object Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R014",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R014",
+                    "order": 14,
+                    "ref": "L021",
+                    "text": "CommitmentProgramEligibilityDetailsObject.CommitmentPrograms.ProgramType MUST correspond to a *commitment program* type supported by the service provider.",
+                    "keyword": "MUST",
+                    "section_path": [
+                      "Commitment Program Eligibility Details Object",
+                      "Object Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R015",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R015",
+                    "order": 15,
+                    "ref": "L022",
+                    "text": "CommitmentProgramEligibilityDetailsObject.CommitmentPrograms.ProgramType MUST equal [CommitmentDiscountType](#datasets.costandusage.commitmentdiscounttype) for one object in CommitmentProgramEligibilityDetailsObject.CommitmentPrograms when CommitmentDiscountType is not null.",
+                    "keyword": "MUST",
+                    "section_path": [
+                      "Commitment Program Eligibility Details Object",
+                      "Object Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R016",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R016",
+                    "order": 16,
+                    "ref": "L023",
+                    "text": "CommitmentProgramEligibilityDetailsObject.CommitmentPrograms.ProgramType SHOULD correspond to terminology disclosed by the service provider in public documentation.",
+                    "keyword": "SHOULD",
+                    "section_path": [
+                      "Commitment Program Eligibility Details Object",
+                      "Object Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "debug": {
+    "ruleset": "ph2_tree_v1",
+    "parenting_signals": [
+      "section_path_boundary",
+      "lead_in_colon",
+      "indent_level"
+    ],
+    "warnings": []
+  }
+}

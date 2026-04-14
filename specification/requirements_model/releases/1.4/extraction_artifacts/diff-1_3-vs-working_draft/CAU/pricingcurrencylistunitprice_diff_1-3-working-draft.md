@@ -1,11 +1,14 @@
 ## Diff
 
+@@ -1,19 +1,15 @@
+## Requirements
+
 PricingCurrencyListUnitPrice [-adheres-]{+MUST adhere+} to the following requirements:
 
-* PricingCurrencyListUnitPrice presence in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset)[-is defined as follows:-]
-[-  * PricingCurrencyListUnitPrice-] MUST [-be present in a Cost and Usage *FOCUS dataset* when-]{+adhere to+} the [-service provider supports prices in virtual currency and publishes unit prices exclusive of discounts.-]{+following presence requirements:+}
-  * PricingCurrencyListUnitPrice [-is RECOMMENDED to-]{+SHOULD+} be present in a Cost and Usage *FOCUS dataset* when the service provider supports pricing and billing in different currencies and publishes unit prices exclusive of discounts.
-  * PricingCurrencyListUnitPrice MAY be present in a Cost and Usage *FOCUS dataset* in all other cases.
+[-* PricingCurrencyListUnitPrice presence in a Cost and Usage *FOCUS dataset* is defined as follows:-]
+[-  * PricingCurrencyListUnitPrice MUST be present in a Cost and Usage *FOCUS dataset* when the service provider supports prices in virtual currency and publishes unit prices exclusive of discounts.-]
+[-  * PricingCurrencyListUnitPrice is RECOMMENDED to be present in a Cost and Usage *FOCUS dataset* when the service provider supports pricing and billing in different currencies and publishes unit prices exclusive of discounts.-]
+[-  * PricingCurrencyListUnitPrice MAY be present in a Cost and Usage *FOCUS dataset* in all other cases.-]
 * PricingCurrencyListUnitPrice MUST be of type Decimal.
 * PricingCurrencyListUnitPrice MUST conform to NumericFormat requirements.
 * PricingCurrencyListUnitPrice {+MUST adhere to the following+} nullability [-is defined as follows:-]{+requirements:+}
@@ -17,4 +20,3 @@ PricingCurrencyListUnitPrice [-adheres-]{+MUST adhere+} to the following require
 * When PricingCurrencyListUnitPrice is not null, PricingCurrencyListUnitPrice [-adheres-]{+MUST adhere+} to the following[-additional-] requirements:
   * PricingCurrencyListUnitPrice MUST be a non-negative decimal value.
   * PricingCurrencyListUnitPrice MUST be denominated in the PricingCurrency.
-

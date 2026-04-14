@@ -1,6 +1,6 @@
 {
   "ModelRules": {
-    "BIP-BillingPeriod-C-000-M": {
+    "BIP-BillingPeriod-D-000-M": {
       "Function": "Composite",
       "Reference": "BillingPeriod",
       "EntityType": "Dataset",
@@ -22,17 +22,19 @@
         "Requirement": {},
         "Condition": [],
         "Dependencies": [
-          "BIP-BillingPeriod-C-001-C",
-          "BIP-BillingPeriod-C-002-M",
-          "BIP-BillingPeriod-C-009-M",
-          "BIP-BillingPeriod-C-010-M",
-          "BIP-BillingPeriod-C-011-M",
-          "BIP-BillingPeriod-C-012-M",
-          "BIP-BillingPeriod-C-013-M"
+          "BIP-BillingPeriod-D-001-C",
+          "BIP-BillingPeriod-D-002-M",
+          "BIP-BillingPeriod-D-009-M",
+          "BIP-BillingPeriod-D-010-M",
+          "BIP-BillingPeriod-D-011-M",
+          "BIP-BillingPeriod-D-012-M",
+          "BIP-BillingPeriod-D-013-M",
+          "BIP-BillingPeriod-D-014-M",
+          "BIP-BillingPeriod-D-015-M"
         ]
       }
     },
-    "BIP-BillingPeriod-C-001-C": {
+    "BIP-BillingPeriod-D-001-C": {
       "Function": "Validation",
       "Reference": "BillingPeriod",
       "EntityType": "Dataset",
@@ -56,7 +58,7 @@
         "Dependencies": []
       }
     },
-    "BIP-BillingPeriod-C-002-M": {
+    "BIP-BillingPeriod-D-002-M": {
       "Function": "Composite",
       "Reference": "BillingPeriod",
       "EntityType": "Dataset",
@@ -78,16 +80,16 @@
         "Requirement": {},
         "Condition": [],
         "Dependencies": [
-          "BIP-BillingPeriod-C-003-M",
-          "BIP-BillingPeriod-C-004-M",
-          "BIP-BillingPeriod-C-005-M",
-          "BIP-BillingPeriod-C-006-M",
-          "BIP-BillingPeriod-C-007-M",
-          "BIP-BillingPeriod-C-008-M"
+          "BIP-BillingPeriod-D-003-M",
+          "BIP-BillingPeriod-D-004-M",
+          "BIP-BillingPeriod-D-005-M",
+          "BIP-BillingPeriod-D-006-M",
+          "BIP-BillingPeriod-D-007-M",
+          "BIP-BillingPeriod-D-008-M"
         ]
       }
     },
-    "BIP-BillingPeriod-C-003-M": {
+    "BIP-BillingPeriod-D-003-M": {
       "Function": "Validation",
       "Reference": "BillingPeriod",
       "EntityType": "Dataset",
@@ -111,7 +113,7 @@
         "Dependencies": []
       }
     },
-    "BIP-BillingPeriod-C-004-M": {
+    "BIP-BillingPeriod-D-004-M": {
       "Function": "Validation",
       "Reference": "BillingPeriod",
       "EntityType": "Dataset",
@@ -135,7 +137,7 @@
         "Dependencies": []
       }
     },
-    "BIP-BillingPeriod-C-005-M": {
+    "BIP-BillingPeriod-D-005-M": {
       "Function": "Validation",
       "Reference": "BillingPeriod",
       "EntityType": "Dataset",
@@ -159,7 +161,7 @@
         "Dependencies": []
       }
     },
-    "BIP-BillingPeriod-C-006-M": {
+    "BIP-BillingPeriod-D-006-M": {
       "Function": "Validation",
       "Reference": "BillingPeriod",
       "EntityType": "Dataset",
@@ -183,7 +185,7 @@
         "Dependencies": []
       }
     },
-    "BIP-BillingPeriod-C-007-M": {
+    "BIP-BillingPeriod-D-007-M": {
       "Function": "Validation",
       "Reference": "BillingPeriod",
       "EntityType": "Dataset",
@@ -207,7 +209,7 @@
         "Dependencies": []
       }
     },
-    "BIP-BillingPeriod-C-008-M": {
+    "BIP-BillingPeriod-D-008-M": {
       "Function": "Validation",
       "Reference": "BillingPeriod",
       "EntityType": "Dataset",
@@ -231,7 +233,7 @@
         "Dependencies": []
       }
     },
-    "BIP-BillingPeriod-C-009-M": {
+    "BIP-BillingPeriod-D-009-M": {
       "Function": "Format",
       "Reference": "BillingPeriod",
       "EntityType": "Dataset",
@@ -248,14 +250,14 @@
       "DatasetId": "BillingPeriod",
       "DatasetName": "Billing Period",
       "ValidationCriteria": {
-        "MustSatisfy": "BillingPeriod MUST conform to ColumnHandling requirements.",
+        "MustSatisfy": "BillingPeriod MUST conform to CorrectionHandling requirements.",
         "Keyword": "MUST",
         "Requirement": {},
         "Condition": [],
         "Dependencies": []
       }
     },
-    "BIP-BillingPeriod-C-010-M": {
+    "BIP-BillingPeriod-D-010-M": {
       "Function": "Format",
       "Reference": "BillingPeriod",
       "EntityType": "Dataset",
@@ -272,14 +274,14 @@
       "DatasetId": "BillingPeriod",
       "DatasetName": "Billing Period",
       "ValidationCriteria": {
-        "MustSatisfy": "BillingPeriod MUST conform to CorrectionHandling requirements.",
+        "MustSatisfy": "BillingPeriod MUST conform to DatasetCompleteness requirements.",
         "Keyword": "MUST",
         "Requirement": {},
         "Condition": [],
         "Dependencies": []
       }
     },
-    "BIP-BillingPeriod-C-011-M": {
+    "BIP-BillingPeriod-D-011-M": {
       "Function": "Format",
       "Reference": "BillingPeriod",
       "EntityType": "Dataset",
@@ -296,14 +298,14 @@
       "DatasetId": "BillingPeriod",
       "DatasetName": "Billing Period",
       "ValidationCriteria": {
-        "MustSatisfy": "BillingPeriod MUST conform to DatasetCompleteness requirements.",
+        "MustSatisfy": "BillingPeriod MUST conform to DatasetConfiguration requirements.",
         "Keyword": "MUST",
         "Requirement": {},
         "Condition": [],
         "Dependencies": []
       }
     },
-    "BIP-BillingPeriod-C-012-M": {
+    "BIP-BillingPeriod-D-012-M": {
       "Function": "Format",
       "Reference": "BillingPeriod",
       "EntityType": "Dataset",
@@ -320,14 +322,14 @@
       "DatasetId": "BillingPeriod",
       "DatasetName": "Billing Period",
       "ValidationCriteria": {
-        "MustSatisfy": "BillingPeriod MUST conform to DatasetConfiguration requirements.",
+        "MustSatisfy": "BillingPeriod MUST conform to DeliveryHandling requirements.",
         "Keyword": "MUST",
         "Requirement": {},
         "Condition": [],
         "Dependencies": []
       }
     },
-    "BIP-BillingPeriod-C-013-M": {
+    "BIP-BillingPeriod-D-013-M": {
       "Function": "Format",
       "Reference": "BillingPeriod",
       "EntityType": "Dataset",
@@ -344,7 +346,55 @@
       "DatasetId": "BillingPeriod",
       "DatasetName": "Billing Period",
       "ValidationCriteria": {
-        "MustSatisfy": "BillingPeriod MUST conform to DeliveryHandling requirements.",
+        "MustSatisfy": "BillingPeriod *FOCUS columns* MUST conform to FocusColumnHandling requirements.",
+        "Keyword": "MUST",
+        "Requirement": {},
+        "Condition": [],
+        "Dependencies": []
+      }
+    },
+    "BIP-BillingPeriod-D-014-M": {
+      "Function": "Format",
+      "Reference": "BillingPeriod",
+      "EntityType": "Dataset",
+      "EntityName": "Billing Period",
+      "EntityId": "BillingPeriod",
+      "Notes": "",
+      "ModelVersionIntroduced": "1.4",
+      "Status": "Active",
+      "ModelVersionRemoved": "",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "Order": 140,
+      "DatasetType": "BIP",
+      "DatasetId": "BillingPeriod",
+      "DatasetName": "Billing Period",
+      "ValidationCriteria": {
+        "MustSatisfy": "BillingPeriod *FOCUS columns* MUST conform to NullHandling requirements.",
+        "Keyword": "MUST",
+        "Requirement": {},
+        "Condition": [],
+        "Dependencies": []
+      }
+    },
+    "BIP-BillingPeriod-D-015-M": {
+      "Function": "Format",
+      "Reference": "BillingPeriod",
+      "EntityType": "Dataset",
+      "EntityName": "Billing Period",
+      "EntityId": "BillingPeriod",
+      "Notes": "",
+      "ModelVersionIntroduced": "1.4",
+      "Status": "Active",
+      "ModelVersionRemoved": "",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "Order": 150,
+      "DatasetType": "BIP",
+      "DatasetId": "BillingPeriod",
+      "DatasetName": "Billing Period",
+      "ValidationCriteria": {
+        "MustSatisfy": "BillingPeriod *custom columns* MUST conform to CustomColumnHandling requirements.",
         "Keyword": "MUST",
         "Requirement": {},
         "Condition": [],
