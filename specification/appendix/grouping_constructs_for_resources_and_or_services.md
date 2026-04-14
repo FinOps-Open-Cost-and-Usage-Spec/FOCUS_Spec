@@ -14,6 +14,6 @@ The table below highlights key properties of the two grouping constructs support
 | Requirement level    | Mandatory       | Optional                   |
 | Receives an invoice? | Yes             | No                         |
 | Invoiced at          | Self            | Associated billing account |
-| Examples             | AWS: Management Account<sup>*</sup><br>GCP: Billing Account<br>Azure MCA: Billing Profile<br>Snowflake: Organizational Account | AWS: Member Account<br>GCP: Project<br>Azure MCA: Subscription<br>Snowflake: Account |
+| Examples             | Aura Web: Management Account<sup>*</sup><br>LatticeScale: Billing Account<br>CrestNode: Billing Profile<br>OmniQuery: Organizational Account | Aura Web: Member Account<br>LatticeScale: Project<br>CrestNode: Subscription<br>OmniQuery: Account |
 
-<sup>*</sup> For organizations that have multiple AWS Member Accounts within an AWS Organization, consolidated billing is enabled by default and invoices are received at Management Account level. A Member Account can be removed from AWS consolidated billing whereby the removed account receives independent invoices and is responsible for payments.
+<sup>*</sup> For organizations that have multiple Aura Web Member Accounts within an Aura Web Organization, consolidated billing is enabled by default and invoices are received at Management Account level. A Member Account can be removed from Aura Web consolidated billing whereby the removed account receives independent invoices and is responsible for payments.
