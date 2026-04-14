@@ -96,14 +96,11 @@ The recommended pattern for a normative requirement is:
 ### Explicit Conditions in Normative Requirements
 
 * Normative requirements MUST include an explicit condition unless the rule applies universally.
-* Conditional clauses MUST use standardized patterns such as:
-   * when <condition>
-   * if <condition>
-   * unless <condition>  
-   * only when <condition>  
-   * only if <condition>  
-   * except when <condition>  
-   * except if <condition>
+* Conditional logic MUST be expressed using one of the following approved conditional keywords:
+  * `when`
+  * `unless`
+  * `only when`
+  * `except when`
 
 ### Structural Anchor Requirement
 
