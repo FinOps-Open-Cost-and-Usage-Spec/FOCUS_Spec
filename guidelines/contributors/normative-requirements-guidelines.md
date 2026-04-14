@@ -205,7 +205,6 @@ Specifically:
 * Each normative bullet MUST contain exactly one BCP 14 keyword (MUST, SHOULD, MAY, MUST NOT, SHOULD NOT). See [BCP14](https://tools.ietf.org/html/bcp14) [[RFC2119](https://tools.ietf.org/html/rfc2119)][[RFC8174](https://tools.ietf.org/html/rfc8174)].
 * A bullet containing more than one normative keyword MUST be split.
 * The term **RECOMMENDED** MUST NOT be used as a normative keyword. The keyword **SHOULD** MUST be used instead.
-* The lowercase word “recommended” MAY be used in non-normative text, provided it does not express a normative requirement.
 
 * **Exception for Composite Requirements:** While each individual bullet (parent or nested) MUST contain only one BCP 14 keyword, a Composite Requirement as a whole MAY contain multiple keywords to express nuanced obligations. In such cases, the logical strength of the requirement is governed by the hierarchy defined in section [Composite Requirements](#composite-requirements).
 
