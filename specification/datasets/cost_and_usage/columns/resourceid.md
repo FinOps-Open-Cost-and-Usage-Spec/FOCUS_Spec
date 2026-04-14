@@ -14,6 +14,7 @@ ResourceId MUST adhere to the following requirements:
 * When ResourceId is not null, ResourceId MUST adhere to the following requirements:
   * ResourceId MUST be a unique identifier within the service provider.
   * ResourceId SHOULD be a fully-qualified identifier.
+  * ResourceId MUST be the identifier of the *resource* that received the [*commitment discount*](#glossary:commitment-discount) when [CommitmentDiscountStatus](#datasets.costandusage.commitmentdiscountstatus) is "Used".
 
 ## Column ID
 

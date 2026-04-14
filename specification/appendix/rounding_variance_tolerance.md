@@ -21,35 +21,35 @@ The tolerance is the **greater** of the following values:
 ## Scenario 1: Small Invoice (Pass)
 
 * Data: A small invoice with 5 underlying CostAndUsage rows.
-* Values: CostAndUsage sums to &dollar;12.50. InvoiceDetail sums to &dollar;12.52. Difference is **&dollar;0.02**.
+* Values: CostAndUsage sums to $12.50. InvoiceDetail sums to $12.52. Difference is **$0.02**.
 * Limit Calculation:
-  * Statistical Limit: `SQRT(5) * 0.5 * 0.01` = &dollar;0.011.
-  * Floor Limit: `100 * 0.01` = &dollar;1.00.
-  * Effective Tolerance: **&dollar;1.00** (Greater of &dollar;0.011 and &dollar;1.00).
-* Result: **Pass** (Difference &dollar;0.02 < Tolerance &dollar;1.00).
+  * Statistical Limit: `SQRT(5) * 0.5 * 0.01` = $0.011.
+  * Floor Limit: `100 * 0.01` = $1.00.
+  * Effective Tolerance: **$1.00** (Greater of $0.011 and $1.00).
+* Result: **Pass** (Difference $0.02 < Tolerance $1.00).
 
 ## Scenario 2: Small Invoice (Fail)
 
-* Data: A small invoice with 5 underlying CostAndUsage rows where a &dollar;5.00 charge is missing from CostAndUsage.
-* Values: CostAndUsage sums to &dollar;10.00. InvoiceDetail sums to &dollar;15.00. Difference is **&dollar;5.00**.
+* Data: A small invoice with 5 underlying CostAndUsage rows where a $5.00 charge is missing from CostAndUsage.
+* Values: CostAndUsage sums to $10.00. InvoiceDetail sums to $15.00. Difference is **$5.00**.
 * Limit Calculation:
-  * Effective Tolerance: **&dollar;1.00**.
-* Result: **Fail** (Difference &dollar;5.00 > Tolerance &dollar;1.00).
+  * Effective Tolerance: **$1.00**.
+* Result: **Fail** (Difference $5.00 > Tolerance $1.00).
 
 ## Scenario 3: Large Invoice (Pass)
 
 * Data: An enterprise invoice with 1,000,000 underlying CostAndUsage rows.
-* Values: CostAndUsage sums to &dollar;5,000,000.00. InvoiceDetail sums to &dollar;5,000,004.50. Difference is **&dollar;4.50**.
+* Values: CostAndUsage sums to $5,000,000.00. InvoiceDetail sums to $5,000,004.50. Difference is **$4.50**.
 * Limit Calculation:
-  * Statistical Limit: `SQRT(1,000,000) * 0.5 * 0.01` = &dollar;5.00.
-  * Floor Limit: `100 * 0.01` = &dollar;1.00.
-  * Effective Tolerance: **&dollar;5.00** (Greater of &dollar;5.00 and &dollar;1.00).
-* Result: **Pass** (Difference &dollar;4.50 < Tolerance &dollar;5.00).
+  * Statistical Limit: `SQRT(1,000,000) * 0.5 * 0.01` = $5.00.
+  * Floor Limit: `100 * 0.01` = $1.00.
+  * Effective Tolerance: **$5.00** (Greater of $5.00 and $1.00).
+* Result: **Pass** (Difference $4.50 < Tolerance $5.00).
 
 ## Scenario 4: Large Invoice (Fail)
 
 * Data: An enterprise invoice with 1,000,000 underlying CostAndUsage rows with a systematic rounding error (truncation bias).
-* Values: CostAndUsage sums to &dollar;5,000,000.00. InvoiceDetail sums to &dollar;5,000,015.00. Difference is **&dollar;15.00**.
+* Values: CostAndUsage sums to $5,000,000.00. InvoiceDetail sums to $5,000,015.00. Difference is **$15.00**.
 * Limit Calculation:
-  * Effective Tolerance: **&dollar;5.00**.
-* Result: **Fail** (Difference &dollar;15.00 > Tolerance &dollar;5.00).
+  * Effective Tolerance: **$5.00**.
+* Result: **Fail** (Difference $15.00 > Tolerance $5.00).

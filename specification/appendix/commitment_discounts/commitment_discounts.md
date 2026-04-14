@@ -18,16 +18,16 @@ While customers are bound to the [*period*](#glossary:period) of a *commitment d
 * *No Upfront* - The *commitment discount* is paid on a repeated basis, typically over each [*billing period*](#glossary:billing-period) of the *period*.
 * *Partial Upfront* - Some of the *commitment discount* is paid before the *period* begins, and the rest is paid repeatedly over the *period*.
 
-For example, if a customer buys a 1-year, spend-based *commitment discount* with a &dollar;1.00 hourly commit and pays with the partial option, the *commitment discount's* payment consists of a one-time purchase in the beginning of the *period* *and* monthly recurring purchases. The one-time payment covers half of the annual commitment (AWS Savings Plans are half, Reserved Instances are a portion of the cost), while the recurring payment covers the remaining half and is calculated based on the exact number of hours in each [*billing period*](#glossary:billing-period):
+For example, if a customer buys a 1-year, spend-based *commitment discount* with a $1.00 hourly commit and pays with the partial option, the *commitment discount's* payment consists of a one-time purchase in the beginning of the *period* *and* monthly recurring purchases. The one-time payment covers half of the annual commitment (AWS Savings Plans are half, Reserved Instances are a portion of the cost), while the recurring payment covers the remaining half and is calculated based on the exact number of hours in each [*billing period*](#glossary:billing-period):
 
-1. *One-Time* - &dollar;4,380 (24 hours &times; 365 days &times; &dollar;1.00 &times; 0.5)
-2. *Recurring* - &dollar;336.00 for February (672 hours in the month &times; &dollar;1.00 &times; 0.5)
+1. *One-Time* - $4,380 (24 hours &times; 365 days &times; $1.00 &times; 0.5)
+2. *Recurring* - $336.00 for February (672 hours in the month &times; $1.00 &times; 0.5)
 
 ### Usage
 
 Commitment discounts follow a "use-it-or-lose-it" model where the [*amortization*](#glossary:amortization) of a *commitment discount's* purchase applies evenly to eligible *resources* over each [*charge period*](#glossary:charge-period) of the *period*.
 
-For example, if a customer buys a spend-based *commitment discount* with a &dollar;1.00 hourly commit in January (31 days), only &dollar;1.00 is eligible for consumption for each hourly *charge period*. If a customer has eligible *resources* running during this *charge period*, an amount of up to &dollar;1.00 will be allocated to these *resources*. Conversely, if a customer does not have eligible *resources* running that fully take advantage of this &dollar;1.00 during this *charge period*, then some or all of this amount will go to waste.
+For example, if a customer buys a spend-based *commitment discount* with a $1.00 hourly commit in January (31 days), only $1.00 is eligible for consumption for each hourly *charge period*. If a customer has eligible *resources* running during this *charge period*, an amount of up to $1.00 will be allocated to these *resources*. Conversely, if a customer does not have eligible *resources* running that fully take advantage of this $1.00 during this *charge period*, then some or all of this amount will go to waste.
 
 ## Data Generator Scenarios
 
