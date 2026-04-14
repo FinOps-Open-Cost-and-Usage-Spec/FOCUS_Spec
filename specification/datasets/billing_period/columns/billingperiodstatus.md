@@ -50,7 +50,7 @@ The state of the billing period (i.e., "Open" or "Closed"), indicating whether t
 | Data type     | String                              |
 | Value format  | Allowed values                      |
 
-Allowed values:
+## Allowed Values
 
 | Value    | Description                                                                                                   |
 | :------- | :------------------------------------------------------------------------------------------------------------ |
