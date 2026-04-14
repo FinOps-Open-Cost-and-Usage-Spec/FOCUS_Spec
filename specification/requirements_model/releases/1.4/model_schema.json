@@ -94,6 +94,51 @@
       },
       "additionalProperties": false
     },
+    "Schemas": {
+      "type": "object",
+      "description": "Reusable JSON Schema definitions referenced by model rules.",
+      "patternProperties": {
+        "^([A-Za-z0-9]{3}-)?[A-Za-z0-9]+-S-\\d{3}-[MOC]$": {
+          "type": "object",
+          "properties": {
+            "EntityType": {
+              "type": "string",
+              "const": "Schema"
+            },
+            "EntityName": {
+              "type": "string"
+            },
+            "EntityId": {
+              "type": "string"
+            },
+            "DatasetType": {
+              "type": "string",
+              "pattern": "^[A-Z]{3}$"
+            },
+            "DatasetId": {
+              "type": "string"
+            },
+            "DatasetName": {
+              "type": "string"
+            },
+            "Schema": {
+              "type": "object"
+            }
+          },
+          "required": [
+            "EntityType",
+            "EntityName",
+            "EntityId",
+            "DatasetType",
+            "DatasetId",
+            "DatasetName",
+            "Schema"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
     "ModelRules": {
       "type": "object",
       "description": "The list of all rules, each containing logic, reference metadata, and criteria.",
@@ -303,6 +348,7 @@
     "ApplicabilityCriteria",
     "CheckFunctions",
     "ModelDatasets",
+    "Schemas",
     "ModelRules"
   ],
   "additionalProperties": false

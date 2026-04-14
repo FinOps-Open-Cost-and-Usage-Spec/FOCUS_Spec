@@ -18,7 +18,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "SkuPriceDetails adheres to the following requirements:",
+      "MustSatisfy": "SkuPriceDetails MUST adhere to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -121,7 +121,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "SkuPriceDetails nullability is defined as follows:",
+      "MustSatisfy": "SkuPriceDetails MUST adhere to the following nullability requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -221,7 +221,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "When SkuPriceDetails is not null, SkuPriceDetails adheres to the following additional requirements:",
+      "MustSatisfy": "When SkuPriceDetails is not null, SkuPriceDetails MUST adhere to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -418,7 +418,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "SkuPriceDetails properties for a given SkuPriceId adhere to the following additional requirements:",
+      "MustSatisfy": "SkuPriceDetails properties for a given SkuPriceId SHOULD adhere to the following requirements:",
       "Keyword": "SHOULD",
       "Requirement": {
         "CheckFunction": "AND",
@@ -599,7 +599,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "FOCUS-defined SKU Price properties adhere to the following additional requirements:",
+      "MustSatisfy": "FOCUS-defined SKU Price properties MUST adhere to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",

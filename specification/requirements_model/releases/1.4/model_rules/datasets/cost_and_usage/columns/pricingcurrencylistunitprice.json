@@ -17,7 +17,7 @@
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "PricingCurrencyListUnitPrice adheres to the following requirements:",
+      "MustSatisfy": "PricingCurrencyListUnitPrice MUST adhere to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -118,7 +118,7 @@
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "PricingCurrencyListUnitPrice nullability is defined as follows:",
+      "MustSatisfy": "PricingCurrencyListUnitPrice MUST adhere to the following nullability requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -276,7 +276,7 @@
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "When PricingCurrencyListUnitPrice is not null, PricingCurrencyListUnitPrice adheres to the following additional requirements:",
+      "MustSatisfy": "When PricingCurrencyListUnitPrice is not null, PricingCurrencyListUnitPrice MUST adhere to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",

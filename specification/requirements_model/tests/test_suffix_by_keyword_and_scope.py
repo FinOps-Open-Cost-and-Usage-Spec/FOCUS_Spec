@@ -5,7 +5,8 @@ from conftest import requires_version
 # Phrases to exclude from keyword matching to avoid false positives
 KEYWORD_EXCLUDE_PHRASES = [
     "SLA credit details when the credit is already applied",
-    "(e.g., when the"
+    "(e.g., when the",
+    "where necessary"
 ]
 
 

@@ -144,6 +144,83 @@ def collect(spec: dict):
     return ordered
 
 
+def filter_reference_with_dependencies(grouped, reference_filter: str, dependency_scope: str = "transitive"):
+    """
+        Filter to the requested reference and optionally include dependency rules,
+        even when dependency rules use a different `Reference` value.
+
+        dependency_scope values:
+            - "none": selected reference rules only
+            - "immediate": include only direct dependencies of selected rules
+            - "transitive": include all dependency levels (default)
+    """
+    if not reference_filter:
+        return grouped
+
+    # Find the display name exactly as present in input (case-insensitive match).
+    matched_refs = [ref for ref in grouped.keys() if ref.lower() == reference_filter.lower()]
+    if not matched_refs:
+        return OrderedDict()
+
+    selected_ref = matched_refs[0]
+
+    # Build a rule lookup from all references.
+    rule_lookup = {}
+    for items in grouped.values():
+        for item in items:
+            rule_lookup.setdefault(item["ruleid"], item)
+
+    # Seed traversal with all rules directly under the selected reference.
+    seed_rule_ids = [item["ruleid"] for item in grouped[selected_ref]]
+
+    if dependency_scope not in {"none", "immediate", "transitive"}:
+        raise ValueError(f"Unsupported dependency scope: {dependency_scope}")
+
+    ordered_ids = []
+    seen = set()
+    seed_set = set(seed_rule_ids)
+
+    def add_rule(rule_id: str):
+        if rule_id in seen:
+            return
+        if rule_id not in rule_lookup:
+            return
+        seen.add(rule_id)
+        ordered_ids.append(rule_id)
+
+    def walk_transitive(rule_id: str):
+        add_rule(rule_id)
+        item = rule_lookup.get(rule_id)
+        if not item:
+            return
+        for dep in item.get("dependencies") or []:
+            walk_transitive(dep)
+
+    for rid in seed_rule_ids:
+        add_rule(rid)
+
+        if dependency_scope == "immediate":
+            item = rule_lookup.get(rid)
+            if not item:
+                continue
+            for dep in item.get("dependencies") or []:
+                if dep in seed_set and dep != rid:
+                    continue
+                add_rule(dep)
+
+        elif dependency_scope == "transitive":
+            item = rule_lookup.get(rid)
+            if not item:
+                continue
+            for dep in item.get("dependencies") or []:
+                if dep in seed_set and dep != rid:
+                    continue
+                walk_transitive(dep)
+
+    selected_items = [rule_lookup[rid] for rid in ordered_ids]
+    return OrderedDict({selected_ref: selected_items})
+
+
 def build_markdown(grouped, exclude_rmids=False, include_order=False):
     lines = []
     for ref, items in grouped.items():
@@ -234,17 +311,15 @@ def build_markdown(grouped, exclude_rmids=False, include_order=False):
     return ("\n".join(lines)).rstrip() + "\n"
 
 
-def main(in_path: Path, out_path: Path | None = None, exclude_rmids: bool = False, reference_filter: str | None = None, include_order: bool = False, dataset_filter: str = "CostAndUsage", attribute_filter: bool = False) -> None:
+def main(in_path: Path, out_path: Path | None = None, exclude_rmids: bool = False, reference_filter: str | None = None, include_order: bool = False, dataset_filter: str = "CostAndUsage", attribute_filter: bool = False, reference_dependency_scope: str = "transitive") -> None:
     spec = json.loads(in_path.read_text(encoding="utf-8"))
     grouped = collect(spec)
     
-    # Filter by reference if specified
+    # Filter by reference if specified. Include transitive dependencies of the
+    # selected reference so nested rules are not dropped when they use another
+    # Reference value.
     if reference_filter:
-        filtered_grouped = OrderedDict()
-        for ref, items in grouped.items():
-            if ref.lower() == reference_filter.lower():
-                filtered_grouped[ref] = items
-        grouped = filtered_grouped
+        grouped = filter_reference_with_dependencies(grouped, reference_filter, reference_dependency_scope)
     
     # Filter by attribute if specified (disregards dataset filter)
     if attribute_filter:
@@ -284,6 +359,8 @@ if __name__ == "__main__":
                        help="Include Order field at the start of each line (tab-separated)")
     parser.add_argument("--filename", type=str, help="Save output to specified filename instead of printing to console")
     parser.add_argument("--reference", type=str, help="Only display the normative text for the specified reference entity")
+    parser.add_argument("--reference-dependency-scope", choices=["none", "immediate", "transitive"], default="transitive",
+                       help="When --reference is used, include dependency rules by scope (default: transitive)")
     parser.add_argument("--datasetid", type=str, default="CostAndUsage",
                        help="Filter entities by DatasetId (default: CostAndUsage)")
     parser.add_argument("--attribute", action="store_true",
@@ -298,4 +375,13 @@ if __name__ == "__main__":
         out_path = Path(args.filename)
 
     
-    main(in_path, out_path, exclude_rmids=args.exclude_rmids, reference_filter=args.reference, include_order=args.include_order, dataset_filter=args.datasetid, attribute_filter=args.attribute)
+    main(
+        in_path,
+        out_path,
+        exclude_rmids=args.exclude_rmids,
+        reference_filter=args.reference,
+        include_order=args.include_order,
+        dataset_filter=args.datasetid,
+        attribute_filter=args.attribute,
+        reference_dependency_scope=args.reference_dependency_scope,
+    )

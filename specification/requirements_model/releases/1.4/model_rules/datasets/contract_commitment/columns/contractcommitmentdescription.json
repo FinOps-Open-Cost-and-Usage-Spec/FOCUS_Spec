@@ -15,7 +15,7 @@
     "DatasetName": "Contract Commitment",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractCommitmentDescription adheres to the following requirements:",
+      "MustSatisfy": "ContractCommitmentDescription MUST adhere to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",

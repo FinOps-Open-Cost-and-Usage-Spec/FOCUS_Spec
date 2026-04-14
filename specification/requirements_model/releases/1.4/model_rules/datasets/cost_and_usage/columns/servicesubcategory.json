@@ -15,8 +15,8 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ServiceSubcategory adheres to the following requirements:",
-      "Keyword": "SHOULD",
+      "MustSatisfy": "ServiceSubcategory MUST adhere to the following requirements:",
+      "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
         "Items": [

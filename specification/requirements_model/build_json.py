@@ -2,11 +2,15 @@
 import argparse
 import json
 import os
+import re
 from json.decoder import JSONDecodeError
 from build_helpers import init_logger
 import sys
 import subprocess
 from pathlib import Path
+
+
+FILE_REF_RE = re.compile(r'^file\(("|\')(.*)\1\)$')
 
 def get_args():
     parser = argparse.ArgumentParser(description='Model JSON Generator.')
@@ -14,6 +18,40 @@ def get_args():
     parser.add_argument('--build-only', action='store_true', help='Write out JSON file instead of running the test process')
     parser.add_argument('--version', type=str, default=None, help='Specific version to build (e.g., 1.3). If not specified, all versions will be built.')
     return parser.parse_args()
+
+
+def _load_json_file(path):
+    with open(path, 'rb') as f:
+        return json.loads(f.read())
+
+
+def _resolve_schema_file_refs(node, base_dir):
+    if isinstance(node, dict):
+        for key, value in list(node.items()):
+            if key == 'Schema' and isinstance(value, str):
+                match = FILE_REF_RE.match(value.strip())
+                if match:
+                    rel_path = match.group(2)
+                    schema_path = os.path.normpath(os.path.join(base_dir, rel_path))
+                    base_dir_abs = os.path.abspath(base_dir)
+                    schema_path_abs = os.path.abspath(schema_path)
+
+                    # Only allow schema references from the same release json_schemas folder.
+                    if os.path.commonpath([base_dir_abs, schema_path_abs]) != base_dir_abs:
+                        raise FileNotFoundError(
+                            f"Schema file reference escapes json_schemas folder: {rel_path}"
+                        )
+
+                    if not os.path.exists(schema_path):
+                        raise FileNotFoundError(
+                            f"Schema file reference not found in json_schemas folder: {schema_path}"
+                        )
+                    node[key] = _load_json_file(schema_path)
+            else:
+                _resolve_schema_file_refs(value, base_dir)
+    elif isinstance(node, list):
+        for item in node:
+            _resolve_schema_file_refs(item, base_dir)
 
 def build_version(version):
     """Build the model JSON for a specific version."""
@@ -30,6 +68,14 @@ def build_version(version):
         'check_functions.json',
         'model_datasets.json'
     ]
+
+    json_schemas_dir = os.path.join(version_dir, 'json_schemas')
+    json_schemas_file = os.path.join(json_schemas_dir, 'json_schemas.json')
+    if os.path.isdir(json_schemas_dir):
+        if os.path.exists(json_schemas_file):
+            files.append('json_schemas/json_schemas.json')
+        else:
+            logger.warning(f'⚠️  json_schemas folder exists but file not found: {json_schemas_file}')
     
     for filename in files:
         filepath = os.path.join(version_dir, filename)
@@ -38,10 +84,15 @@ def build_version(version):
             continue
         with open(filepath, 'rb') as f:
             try:
-              details = json.loads(f.read())
+                details = json.loads(f.read())
+                if filename == 'json_schemas/json_schemas.json':
+                    _resolve_schema_file_refs(details, json_schemas_dir)
             except JSONDecodeError as e:
                 logger.error(f'❌ Unable to read {filepath}')
                 logger.error(repr(e))
+                return False
+            except FileNotFoundError as e:
+                logger.error(f'❌ {str(e)}')
                 return False
             model.update(details)
 

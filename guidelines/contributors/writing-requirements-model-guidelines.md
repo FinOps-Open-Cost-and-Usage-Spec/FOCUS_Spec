@@ -16,6 +16,7 @@ The model document for FOCUS contains the following major sections:
 | ApplicabilityCriteria | Key flags used to define attributes about the data generator that need to be true for some model rules to apply |
 | CheckFunctions | Method definitions to describe the actual check needed to conform to a rule |
 | ModelDatasets | List of datasets defined by FOCUS and the related top level model rules associated with the dataset |
+| Schemas | Reusable JSON Schema definitions that can be referenced by validation rules |
 | ModelRules | Individual model rule definitions that are linked together by requirements and dependencies to form the full model ruleset |
 
 ## Steps to create model rules for FOCUS entities
@@ -29,7 +30,7 @@ The first stage of conversion of rules from the normative text to model rules is
 - `ModelRuleId` - Formal identifier for this model rule entry
 - `Function` - The type of rule to be defined (Valid types: `Composite`, `Presence`, `Type`, `Format`, `Validation`, `Nullability`)
 - `Reference` - The Column/Attribute Id this rule applies to
-- `EntityType` - The type of entity this rule applies to (Valid types: `Dataset`, `Column`, `Attribute`, `Object`)
+- `EntityType` - The type of entity this entry applies to (Valid types for ModelRules: `Dataset`, `Column`, `Attribute`, `Object`; valid type for Schemas entries: `Schema`)
 - `EntityName` - The human-readable name of the entity this rule applies to
 - `EntityId` - The unique identifier of the entity this rule applies to
 - `Notes` - Free form notes (short) included in the model rule document
@@ -64,6 +65,7 @@ Identify the target for the rule:
 - **Dataset**
 - **Column**
 - **Object**
+- **Schema**
 
 This sets the scope of the model requirement.
 
@@ -73,7 +75,7 @@ The following architectural components define the core entities in FOCUS that sh
 
 <img width="491" height="491" alt="Image" src="https://github.com/user-attachments/assets/a30d828e-d2af-4185-984c-475998466437"/>
 
-- **Dataset, Column, Object, and Attribute** are the **core structural entities** where model requirements are directly assigned.
+- **Dataset, Column, Object, Attribute, and Schema** are the **core structural entities** used across the requirements model.
 
 
 ##### FOCUS Entity Reference Table
@@ -84,6 +86,7 @@ The following architectural components define the core entities in FOCUS that sh
 | `Column`           | Named field across rows                             | Data type, format, constraints            | Column `BilledCost` MUST be of type `Decimal`                                                          |
 | `Object`           | JSONObject content of a column                      | Data type, format, constraints            | Object property `name` MUST be of type `String`                                                          |
 | `Attribute`        | Shared formatting/logic constraint                  | Formatting consistency across columns     | All `String` columns MUST conform to `StringHandling` requirements                                              |
+| `Schema`           | Reusable JSON Schema definition                     | Formal structural validation of JSON data | `AllocatedMethodDetailsObject` MUST conform to `AllocatedMethodDetailsObjectSchema`                            |
 
 For detailed guidance on working with each entity type, see the [Working with Entity Types](#working-with-entity-types) section below.
 
@@ -99,6 +102,9 @@ Construct a unique identifier for the rule using the appropriate format based on
 **For Datasets, Columns, and Objects:**  
 `DatasetType-EntityId-EntityType-NNN-Level`
 
+**For Schemas entries:**  
+`DatasetType-EntityId-S-NNN-Level`
+
 ##### RMId Component Definitions
 
 - `AttributeName`: Name of the attribute (e.g., `NumericFormat`, `StringHandling`, `InvoiceHandling`)
@@ -109,6 +115,7 @@ Construct a unique identifier for the rule using the appropriate format based on
   - `C` = Column
   - `O` = Object
   - `A` = Attribute
+  - `S` = Schema
 - `NNN:` Sequential number (unique only within the entity namespace)
   - `000` for root composite  
   - `0NN` for intermediate composites  
@@ -131,6 +138,9 @@ Construct a unique identifier for the rule using the appropriate format based on
 
 **Object rule example:**  
 → `RMId = CAU-AllocatedMethodDetailsObject-O-001-M`
+
+**Schema entry example:**  
+→ `RMId = CAU-AllocatedMethodDetailsObjectSchema-S-001-M`
 
 #### Multi-Dataset Entity Structure and Naming
 
@@ -318,6 +328,8 @@ pytest specification/requirements_model/tests/test_suffix_by_keyword_and_scope.p
 
 Categorize the type of logic the rule enforces. This helps determine how it should be validated.
 
+Note: This property applies to `ModelRules` entries only. `Schemas` entries do not use a `Function` field.
+
 - Use `Presence` for rules requiring the column’s inclusion in the dataset.
 - Use `Type` to enforce primitive types like `Decimal`, `String`, `Boolean`.
 - Use `Format` for pattern-based constraints (e.g., `DateTimeFormat`, `UUID`, `NumericFormat`).
@@ -340,6 +352,7 @@ Provide the identifier for the column or attribute that the rule applies to, usi
 - For columns: Use the ColumnId (e.g., `CommitmentDiscountQuantity`)
 - For objects: Use the ObjectId (e.g., `AllocatedMethodDetailsObject`)
 - For attributes: Use the attribute name (e.g., `NumericFormat`, `StringHandling`)
+- For schemas in `Schemas`: `Reference` is not used; use `EntityId` and `Schema`
 - This field should match the Id as defined in the FOCUS specification
 
 **Example**  
@@ -566,13 +579,13 @@ Use this field to add clarifying comments, editorial notes.
 
 #### 14. DatasetId and DatasetName – Dataset Association
 
-For Dataset, Column, and Object entity types, these fields establish the relationship between the rule and its parent dataset.
+For Dataset, Column, Object, and Schema entity types, these fields establish the relationship between the entry and its parent dataset.
 
 **Reasoning Rules**
 
 - `DatasetId` must match the identifier of the dataset the entity belongs to
 - `DatasetName` must match the human-readable name of the dataset
-- Both fields are required for Dataset, Column, and Object entity types
+- Both fields are required for Dataset, Column, Object, and Schema entity types
 - These fields ensure proper dataset-rule association and enable dataset-specific validation
 
 **Example**  
@@ -659,7 +672,7 @@ Rule removed in version 1.4:
 
 ### Working with Entity Types
 
-This section provides detailed guidance for creating model rules for each entity type in FOCUS.
+This section provides detailed guidance for creating requirements model entries for each entity type in FOCUS.
 
 #### Working with Attribute Entity Types
 
@@ -778,6 +791,35 @@ Object entity types validate the internal structure and properties of JSON objec
 
 Object rules are stored in: `specification/requirements_model/releases/X.Y/model_rules/datasets/<dataset_id>/objects/`
 
+#### Working with Schema Entity Types
+
+Schema entity types define reusable JSON Schema documents used to validate JSON content through model checks.
+
+**What They Represent:**
+- Formal JSON Schema definitions (Draft 2020-12 or other supported drafts)
+- Reusable schema artifacts that can be referenced by validation rules
+- Structured validation logic decoupled from per-rule inline JSON path checks
+
+**Key Characteristics:**
+
+1. **Naming Convention**: Schema EntityIds use PascalCase and typically end with `Schema` (e.g., `AllocatedMethodDetailsObjectSchema`)
+2. **RMId Format**: Use `-S-` in EntityType position: `CAU-AllocatedMethodDetailsObjectSchema-S-001-M`
+3. **EntityType**: Must be `Schema`
+4. **Schema Content**: `Schema` MUST contain a dereferenced JSON object in build output
+
+**Creating Schema Entries:**
+
+1. Add schema JSON files under `json_schemas/datasets/<dataset_id>/`
+2. Add an entry in `json_schemas/json_schemas.json` with Dataset metadata and a `Schema` file reference
+3. Use `file('relative/path.json')` paths relative to the version's `json_schemas/` folder
+4. Validate with `./build_json.py --build-only` to confirm dereferencing into top-level `Schemas`
+
+**File Organization:**
+
+Schema entries are stored in: `specification/requirements_model/releases/X.Y/json_schemas/json_schemas.json`
+
+Schema source files are stored in: `specification/requirements_model/releases/X.Y/json_schemas/datasets/<dataset_id>/`
+
 ### Stage 2
 
 The second phase of conversion is to take the table created in Stage 1 and create the entries in the `specification/requirements_model` folder that adds the rules to the formal JSON structure.
@@ -791,6 +833,8 @@ Version-specific model content is organized under `specification/requirements_mo
 - `applicability_criteria.json`: Feature flags controlling rule application
 - `check_functions.json`: Logical validation functions and their arguments
 - `model_datasets.json`: Maps datasets (e.g. FOCUS) to rule sets
+- `json_schemas/json_schemas.json`: Registry of reusable JSON Schema entries for the version
+- `json_schemas/datasets/<dataset_id>/`: JSON Schema source files referenced by `json_schemas.json`
 - `model_rules/attributes/`: JSON files defining multiple `ModelRules` for a single attribute
 - `model_rules/datasets/<dataset_id>/`: JSON files defining multiple `ModelRules` for a single dataset
 - `model_rules/datasets/<dataset_id>/columns/`: JSON files defining multiple `ModelRules` for a single column
@@ -811,6 +855,7 @@ Version-specific model content is organized under `specification/requirements_mo
 - Navigate to the appropriate model version directory under `specification/requirements_model/releases/X.Y/` (or use the `latest` symlink for current development)
 - Add a file into the relevant folder `model_rules/attributes/`, `model_rules/datasets/<dataset_id>/columns/`, or `model_rules/datasets/<dataset_id>/objects/` with name `entity-name.json` (example: availabilityzone.json)
 - Write your rules into this file based on the rules in the Stage 1 table from the AI ticket (See: [ModelRule Templates](#modelrule-templates) for helpers)
+- If you need reusable JSON Schema definitions, add source schema files under `json_schemas/datasets/<dataset_id>/` and register them in `json_schemas/json_schemas.json`
 - If you need to add new ApplicabilityCriteria add them to `applicability_criteria.json` in the version directory, avoiding duplication
 - If you need to add new CheckFunctions add them to `check_functions.json` in the version directory, avoiding duplication
 - Add your top level model rule entry into the relevant Dataset entries in the `model_datasets.json` file
@@ -833,8 +878,9 @@ cd specification/requirements_model
 This script will:
 1. Run all pytest tests to validate rule structure and dependencies
 2. Assemble all version-specific JSON files from `releases/X.Y/` directories
-3. Generate complete `build/model-X.Y.json` files for each version
-4. Validate the generated JSON against `model_schema.json`
+3. Resolve `Schemas.*.Schema` file references into dereferenced JSON content
+4. Generate complete `build/model-X.Y.json` files for each version
+5. Validate the generated JSON against `model_schema.json`
 
 **Build-only mode:**
 
@@ -875,6 +921,7 @@ The tests verify:
 
 - **JSON syntax errors**: Check for missing commas, brackets, or quotes in your rule files
 - **Schema validation failures**: Ensure all required fields are present (Function, Reference, EntityType, etc.)
+- **Schemas file reference failures**: Ensure `Schema` uses `file('...')` paths relative to `releases/X.Y/json_schemas/` and that the target file exists in that folder tree
 - **Dependency errors**: Verify all ModelRuleIds in Dependencies arrays exist
 - **RMId conflicts**: Ensure your RMId is unique within the dataset namespace
 
@@ -941,6 +988,32 @@ The `Order` field serves several important functions:
 - Validate dependency ordering using automated tests
 
 ## ModelRule Templates
+
+### Schemas entry template
+
+Use this template when registering a reusable JSON Schema in `json_schemas/json_schemas.json`.
+
+```json
+{
+  "Schemas": {
+    "CAU-SampleObjectSchema-S-001-M": {
+      "EntityType": "Schema",
+      "EntityName": "Sample Object Schema",
+      "EntityId": "SampleObjectSchema",
+      "DatasetType": "CAU",
+      "DatasetId": "CostAndUsage",
+      "DatasetName": "Cost and Usage",
+      "Schema": "file('datasets/cost_and_usage/sampleobjectschema.json')"
+    }
+  }
+}
+```
+
+Notes:
+- The schema entry ID should follow the `DatasetType-EntityId-S-NNN-Level` pattern.
+- `EntityType` must be `Schema`.
+- The `Schema` path must be relative to `releases/X.Y/json_schemas/`.
+- During build, `file('...')` is dereferenced and replaced with the JSON content in `build/model-X.Y.json`.
 
 ### Base column composite rule
 

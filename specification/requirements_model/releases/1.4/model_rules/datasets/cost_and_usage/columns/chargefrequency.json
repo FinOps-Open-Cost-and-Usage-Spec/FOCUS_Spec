@@ -15,7 +15,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ChargeFrequency adheres to the following requirements:",
+      "MustSatisfy": "ChargeFrequency MUST adhere to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",

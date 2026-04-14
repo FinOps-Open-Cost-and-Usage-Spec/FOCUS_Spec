@@ -15,7 +15,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ListCost adheres to the following requirements:",
+      "MustSatisfy": "ListCost MUST adhere to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -31,10 +31,6 @@
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-ListCost-C-003-M"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-ListCost-C-004-M"
           },
           {
             "CheckFunction": "CheckModelRule",
@@ -56,7 +52,6 @@
         "CAU-ListCost-C-001-M",
         "CAU-ListCost-C-002-M",
         "CAU-ListCost-C-003-M",
-        "CAU-ListCost-C-004-M",
         "CAU-ListCost-C-005-M",
         "CAU-ListCost-C-006-C",
         "CAU-ListCost-C-011-C"
@@ -150,7 +145,8 @@
     "EntityId": "ListCost",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "ApplicabilityCriteria": [],
     "Order": 50,
     "DatasetType": "CAU",
@@ -210,7 +206,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "When ListUnitPrice is null, ListCost adheres to the following additional requirements:",
+      "MustSatisfy": "When ListUnitPrice is null, ListCost MUST adhere to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",

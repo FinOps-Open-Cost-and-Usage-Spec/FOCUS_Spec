@@ -7,8 +7,8 @@
 | Commitment Discount Category | Spend               |
 | Utilization                  | 100%                |
 | Hours Generated              | 24                  |
-| Annual Commitment            | &dollar;628,004.40  |
-| List Unit Price              | &dollar;107.54/hour |
+| Annual Commitment            | $628,004.40  |
+| List Unit Price              | $107.54/hour |
 
 [CSV Example](/specification/data/commitment_discount_scenarios/aws_savings_plan_all_upfront_100pct.csv)
 
@@ -26,9 +26,9 @@ This scenario demonstrates **full utilization** where exactly 100% of the commit
 
 | Row Type         | Count | BilledCost             | EffectiveCost        |
 | ---------------- | ----- | ---------------------- | -------------------- |
-| Purchase         | 1     | &dollar;628,004.40     | &dollar;0.00         |
-| Usage (Used)     | 24    | &dollar;0.00           | &dollar;1,720.56     |
-| **Total**        | 25    | **&dollar;628,004.40** | **&dollar;1,720.56** |
+| Purchase         | 1     | $628,004.40     | $0.00         |
+| Usage (Used)     | 24    | $0.00           | $1,720.56     |
+| **Total**        | 25    | **$628,004.40** | **$1,720.56** |
 
 ## Column Interactions
 
@@ -44,14 +44,14 @@ These three quantity columns serve different purposes and must be understood in 
 | **ConsumedQuantity**           | Actual resource consumption           | Usage rows with resources     | 1 (hours consumed)         |
 | **CommitmentDiscountQuantity** | Commitment capacity applied           | Rows with commitment discount | 71.69 (USD)                |
 
-**For spend-based commitments:** CommitmentDiscountQuantity represents the dollar amount applied, not a count of resources. For a &dollar;71.69/hour commitment, this value is &dollar;71.69.
+**For spend-based commitments:** CommitmentDiscountQuantity represents the dollar amount applied, not a count of resources. For a $71.69/hour commitment, this value is $71.69.
 
 ### Pricing Columns: ListUnitPrice vs ContractedUnitPrice
 
 | Column                  | Purpose                  | Commitment-Covered |
 | ----------------------- | ------------------------ | ------------------ |
-| **ListUnitPrice**       | List (public) unit price | &dollar;107.54     |
-| **ContractedUnitPrice** | Negotiated unit price    | &dollar;107.54     |
+| **ListUnitPrice**       | List (public) unit price | $107.54     |
+| **ContractedUnitPrice** | Negotiated unit price    | $107.54     |
 
 **Why this matters:** ContractedUnitPrice reflects enterprise-negotiated pricing (e.g., EDP rates), not commitment discount savings. In non-negotiated scenarios, ContractedUnitPrice equals ListUnitPrice. Commitment discount savings are reflected in EffectiveCost, not in unit prices.
 
@@ -59,8 +59,8 @@ These three quantity columns serve different purposes and must be understood in 
 
 | Scenario         | BilledCost         | EffectiveCost | ListCost           |
 | ---------------- | ------------------ | ------------- | ------------------ |
-| **Purchase Row** | &dollar;628,004.40 | &dollar;0.00  | &dollar;628,004.40 |
-| **Used Row**     | &dollar;0.00       | &dollar;71.69 | &dollar;107.54     |
+| **Purchase Row** | $628,004.40 | $0.00  | $628,004.40 |
+| **Used Row**     | $0.00       | $71.69 | $107.54     |
 
 The following critical rules apply to commitment discount data:
 
@@ -73,11 +73,11 @@ The following critical rules apply to commitment discount data:
 | -------------------------- | ------------------------------------ | ----------------------------------------------------------- |
 | ChargeCategory             | Purchase                             | Commitment purchase transaction                             |
 | ChargeFrequency            | One-Time                             | One-time upfront payment                                    |
-| BilledCost                 | &dollar;628,004.40                   | Full annual commitment payment                              |
-| EffectiveCost              | &dollar;0.00                         | **must be 0** - cost is amortized to usage rows             |
+| BilledCost                 | $628,004.40                   | Full annual commitment payment                              |
+| EffectiveCost              | $0.00                         | **must be 0** - cost is amortized to usage rows             |
 | PricingQuantity            | 628,004.40                           | Total commitment in USD (PricingUnit = USD)                 |
 | CommitmentDiscountStatus   | null                                 | Status only applies to usage rows                           |
-| CommitmentDiscountQuantity | 628,004.40                           | Full annual commitment (&dollar;71.69/hr &times; 8,760 hrs) |
+| CommitmentDiscountQuantity | 628,004.40                           | Full annual commitment ($71.69/hr &times; 8,760 hrs) |
 | CommitmentDiscountUnit     | USD                                  | Unit of commitment capacity (spend-based)                   |
 | SkuId                      | AWS-USEAST1-COMPUTE-PURCHASE         | Commitment purchase SKU                                     |
 | SkuPriceId                 | AWS-USEAST1-COMPUTE-PURCHASE-UPFRONT | Price point for upfront purchase                            |
@@ -88,9 +88,9 @@ The following critical rules apply to commitment discount data:
 | -------------------------- | ----------------------------------------------------- | ------------------------------------------ |
 | ChargeCategory             | Usage                                                 | Compute resource consumption               |
 | PricingCategory            | Committed                                             | Priced under commitment discount           |
-| BilledCost                 | &dollar;0.00                                          | **must be 0** - covered by commitment      |
-| EffectiveCost              | &dollar;71.69                                         | Amortized cost (annual / hours)            |
-| ListCost                   | &dollar;107.54                                        | What you would have paid at list price     |
+| BilledCost                 | $0.00                                          | **must be 0** - covered by commitment      |
+| EffectiveCost              | $71.69                                         | Amortized cost (annual / hours)            |
+| ListCost                   | $107.54                                        | What you would have paid at list price     |
 | PricingQuantity            | 1                                                     | Units priced                               |
 | ConsumedQuantity           | 1                                                     | Hours used                                 |
 | CommitmentDiscountQuantity | 71.69                                                 | Hourly commitment spend applied            |

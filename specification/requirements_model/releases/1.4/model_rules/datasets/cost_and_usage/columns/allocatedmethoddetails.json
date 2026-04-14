@@ -17,7 +17,7 @@
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "The AllocatedMethodDetails column adheres to the following requirements:",
+      "MustSatisfy": "The AllocatedMethodDetails column MUST adhere to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -71,11 +71,20 @@
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "AllocatedMethodDetails MUST be of type String.",
+      "MustSatisfy": "AllocatedMethodDetails MUST be of type JSON Object (serialized as a String where necessary).",
       "Keyword": "MUST",
       "Requirement": {
-        "CheckFunction": "TypeString",
-        "ColumnName": "AllocatedMethodDetails"
+        "CheckFunction": "OR",
+        "Items": [
+          {
+            "CheckFunction": "TypeString",
+            "ColumnName": "AllocatedMethodDetails"
+          },
+          {
+            "CheckFunction": "TypeJSON",
+            "ColumnName": "AllocatedMethodDetails"
+          }
+        ]
       },
       "Condition": {},
       "Dependencies": []
@@ -150,7 +159,7 @@
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "AllocatedMethodDetails nullability is defined as follows:",
+      "MustSatisfy": "AllocatedMethodDetails MUST adhere to the following nullability requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -219,7 +228,7 @@
     }
   },
   "CAU-AllocatedMethodDetails-C-007-C": {
-    "Function": "Composite",
+    "Function": "Validation",
     "Reference": "AllocatedMethodDetails",
     "EntityName": "Allocated Method Details",
     "EntityId": "AllocatedMethodDetails",
@@ -234,20 +243,19 @@
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "AllocatedMethodDetailsObject MUST adhere to the following requirements:",
+      "MustSatisfy": "AllocatedMethodDetails MUST conform to AllocatedMethodDetailsObject requirements when AllocatedMethodDetails is not null.",
       "Keyword": "MUST",
       "Requirement": {
-        "CheckFunction": "AND",
-        "Items": [
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-AllocatedMethodDetailsObject-O-000-C"
-          }
-        ]
+        "CheckFunction": "CheckModelRule",
+        "ModelRuleId": "CAU-AllocatedMethodDetailsObject-O-000-M"
       },
-      "Condition": {},
+      "Condition": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "AllocatedMethodDetails",
+        "Value": null
+      },
       "Dependencies": [
-        "CAU-AllocatedMethodDetailsObject-O-000-C"
+        "CAU-AllocatedMethodDetailsObject-O-000-M"
       ]
     }
   }

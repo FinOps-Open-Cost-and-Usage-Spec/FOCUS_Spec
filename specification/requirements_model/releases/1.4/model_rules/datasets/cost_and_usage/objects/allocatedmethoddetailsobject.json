@@ -1,5 +1,5 @@
 {
-  "CAU-AllocatedMethodDetailsObject-O-000-C": {
+  "CAU-AllocatedMethodDetailsObject-O-000-M": {
     "Function": "Composite",
     "Reference": "AllocatedMethodDetailsObject",
     "EntityType": "Object",
@@ -15,69 +15,45 @@
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "When AllocatedMethodDetails is not null, the JsonObjectFormat for AllocatedMethodDetails adheres to the following requirements:",
+      "MustSatisfy": "The AllocatedMethodDetailsObject MUST adhere to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-AllocatedMethodDetailsObject-O-001-M"
+            "ModelRuleId": "CAU-AllocatedMethodDetailsObject-O-023-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-AllocatedMethodDetailsObject-O-002-M"
+            "ModelRuleId": "CAU-AllocatedMethodDetailsObject-O-024-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-AllocatedMethodDetailsObject-O-003-M"
+            "ModelRuleId": "CAU-AllocatedMethodDetailsObject-O-014-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-AllocatedMethodDetailsObject-O-004-M"
+            "ModelRuleId": "CAU-AllocatedMethodDetailsObject-O-018-O"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-AllocatedMethodDetailsObject-O-008-O"
+            "ModelRuleId": "CAU-AllocatedMethodDetailsObject-O-017-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-AllocatedMethodDetailsObject-O-009-C"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-AllocatedMethodDetailsObject-O-010-O"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-AllocatedMethodDetailsObject-O-011-M"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-AllocatedMethodDetailsObject-O-015-M"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-AllocatedMethodDetailsObject-O-019-O"
+            "ModelRuleId": "CAU-AllocatedMethodDetailsObject-O-022-O"
           }
         ]
       },
-      "Condition": {
-        "CheckFunction": "CheckNotValue",
-        "ColumnName": "AllocatedMethodDetails",
-        "Value": null
-      },
+      "Condition": {},
       "Dependencies": [
-        "CAU-AllocatedMethodDetailsObject-O-001-M",
-        "CAU-AllocatedMethodDetailsObject-O-002-M",
-        "CAU-AllocatedMethodDetailsObject-O-003-M",
-        "CAU-AllocatedMethodDetailsObject-O-004-M",
-        "CAU-AllocatedMethodDetailsObject-O-008-O",
-        "CAU-AllocatedMethodDetailsObject-O-009-C",
-        "CAU-AllocatedMethodDetailsObject-O-010-O",
-        "CAU-AllocatedMethodDetailsObject-O-011-M",
-        "CAU-AllocatedMethodDetailsObject-O-015-M",
-        "CAU-AllocatedMethodDetailsObject-O-019-O"
+        "CAU-AllocatedMethodDetailsObject-O-023-M",
+        "CAU-AllocatedMethodDetailsObject-O-024-M",
+        "CAU-AllocatedMethodDetailsObject-O-014-M",
+        "CAU-AllocatedMethodDetailsObject-O-018-O",
+        "CAU-AllocatedMethodDetailsObject-O-017-M",
+        "CAU-AllocatedMethodDetailsObject-O-022-O"
       ]
     }
   },
@@ -89,7 +65,8 @@
     "EntityId": "AllocatedMethodDetailsObject",
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "Order": 10,
@@ -117,7 +94,8 @@
     "EntityId": "AllocatedMethodDetailsObject",
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "Order": 20,
@@ -145,7 +123,8 @@
     "EntityId": "AllocatedMethodDetailsObject",
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "Order": 30,
@@ -172,7 +151,8 @@
     "EntityId": "AllocatedMethodDetailsObject",
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "Order": 40,
@@ -215,7 +195,8 @@
     "EntityId": "AllocatedMethodDetailsObject",
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "Order": 50,
@@ -238,7 +219,8 @@
     "EntityId": "AllocatedMethodDetailsObject",
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "Order": 60,
@@ -261,7 +243,8 @@
     "EntityId": "AllocatedMethodDetailsObject",
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "Order": 70,
@@ -284,7 +267,8 @@
     "EntityId": "AllocatedMethodDetailsObject",
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "Order": 80,
@@ -307,7 +291,8 @@
     "EntityId": "AllocatedMethodDetailsObject",
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "Order": 90,
@@ -340,7 +325,8 @@
     "EntityId": "AllocatedMethodDetailsObject",
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "Order": 100,
@@ -363,7 +349,8 @@
     "EntityId": "AllocatedMethodDetailsObject",
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "Order": 110,
@@ -406,7 +393,8 @@
     "EntityId": "AllocatedMethodDetailsObject",
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "Order": 120,
@@ -433,7 +421,8 @@
     "EntityId": "AllocatedMethodDetailsObject",
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "Order": 130,
@@ -464,12 +453,12 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
-    "Order": 140,
+    "Order": 30,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "Values for all \"AllocatedRatio\" properties across all allocated charges related to a single origin charge MUST sum up to 1 (100%).",
+      "MustSatisfy": "Values for all AllocatedMethodDetailsObject.Elements[*].AllocatedRatio properties across all allocated charges related to a single origin charge MUST sum up to 1 (100%).",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -484,7 +473,8 @@
     "EntityId": "AllocatedMethodDetailsObject",
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "Order": 150,
@@ -527,7 +517,8 @@
     "EntityId": "AllocatedMethodDetailsObject",
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "Order": 160,
@@ -561,12 +552,12 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
-    "Order": 170,
+    "Order": 50,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "Values for \"UsageUnit\" MUST capture the unit or component of data generator's documented AllocationMethod that was used to determine the \"AllocatedRatio\" value.",
+      "MustSatisfy": "AllocatedMethodDetailsObject.Elements[*].UsageUnit MUST represent the unit or component of data generator's documented AllocationMethod which was used to determine the AllocatedMethodDetailsObject.Elements[*].AllocatedRatio value.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -584,12 +575,12 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
-    "Order": 180,
+    "Order": 40,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "Values for \"UsageUnit\" SHOULD conform to UnitFormat requirements.",
+      "MustSatisfy": "AllocatedMethodDetailsObject.Elements[*].UsageUnit SHOULD conform to UnitFormat requirements.",
       "Keyword": "SHOULD",
       "Requirement": {
         "CheckFunction": "JSONCheckPathUnitFormat",
@@ -608,7 +599,8 @@
     "EntityId": "AllocatedMethodDetailsObject",
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "Order": 190,
@@ -651,7 +643,8 @@
     "EntityId": "AllocatedMethodDetailsObject",
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "Order": 200,
@@ -682,7 +675,8 @@
     "EntityId": "AllocatedMethodDetailsObject",
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "Order": 210,
@@ -712,13 +706,64 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
-    "Order": 220,
+    "Order": 60,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "Values for \"UsageQuantity\" SHOULD capture the quantity or volume of the \"UsageUnit\" measured by the data generator that was used to determine the \"AllocatedRatio\" value.",
+      "MustSatisfy": "AllocatedMethodDetailsObject.Elements[*].UsageQuantity SHOULD capture the quantity or volume of the AllocatedMethodDetailsObject.Elements[*].UsageUnit measured by the data generator that was used to determine the AllocatedMethodDetailsObject.Elements[*].AllocatedRatio value.",
       "Keyword": "SHOULD",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedMethodDetailsObject-O-023-M": {
+    "Function": "Validation",
+    "Reference": "AllocatedMethodDetailsObject",
+    "EntityType": "Object",
+    "EntityName": "Allocated Method Details Object",
+    "EntityId": "AllocatedMethodDetailsObject",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 10,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "AllocatedMethodDetailsObject MUST conform to the AllocatedMethodDetailsObjectSchema JSON Schema.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "CheckJSONSchema",
+        "ColumnName": "AllocatedMethodDetailsObject",
+        "Path": "$",
+        "SchemaId": "CAU-AllocatedMethodDetailsObjectSchema-S-001-M"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedMethodDetailsObject-O-024-M": {
+    "Function": "Validation",
+    "Reference": "AllocatedMethodDetailsObject",
+    "EntityType": "Object",
+    "EntityName": "Allocated Method Details Object",
+    "EntityId": "AllocatedMethodDetailsObject",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "Order": 20,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "AllocatedMethodDetailsObject.Elements[*].AllocatedRatio MUST represent the allocated charge's percentage of the origin charge.",
+      "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []
