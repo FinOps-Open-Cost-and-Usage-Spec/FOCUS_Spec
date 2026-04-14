@@ -40,13 +40,13 @@ Represents the highest-level classification of a *charge* based on the nature of
 
 Allowed values:
 
-| Value        | Description                                                                                                                                    |
-| :----------- | :----------------------------------------------------------------------------------------------------------------------------------------------|
-| "Usage"      | Positive or negative *charges* based on the quantity of a service or resource that was consumed over a given period of time including refunds. |
-| "Purchase"   | Positive or negative *charges* for the acquisition of a service or resource bought upfront or on a recurring basis including refunds. |
-| "Tax"        | Positive or negative applicable taxes that are levied by the relevant authorities including refunds. Tax *charges* may vary depending on factors such as the location, jurisdiction, and local or federal regulations. |
-| "Credit"     | Positive or negative *charges* granted by the service provider for various scenarios e.g., promotional credits or corrections to promotional credits. |
-| "Adjustment" | Positive or negative *charges* the service provider applies that do not fall into other category values. |
+| Value      | Description                                                                                                                                    |
+| :--------- | :----------------------------------------------------------------------------------------------------------------------------------------------|
+| Usage      | Positive or negative *charges* based on the quantity of a service or resource that was consumed over a given period of time including refunds. |
+| Purchase   | Positive or negative *charges* for the acquisition of a service or resource bought upfront or on a recurring basis including refunds.          |
+| Tax        | Positive or negative applicable taxes that are levied by the relevant authorities including refunds. Tax *charges* may vary depending on factors such as the location, jurisdiction, and local or federal regulations. |
+| Credit     | Positive or negative *charges* granted by the service provider for various scenarios e.g., promotional credits or corrections to promotional credits.    |
+| Adjustment | Positive or negative *charges* the service provider applies that do not fall into other category values.                                               |
 
 ## Introduced (version)
 

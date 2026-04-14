@@ -39,7 +39,7 @@ Allowed values:
 
 | Value      | Description                                                                                    |
 | :--------- | :----------------------------------------------------------------------------------------------|
-| "Correction" | Correction to a previously *closed billing period* (e.g., refunds and credit modifications). |
+| Correction | Correction to a previously *closed billing period* (e.g., refunds and credit modifications). |
 
 ## Introduced (version)
 
