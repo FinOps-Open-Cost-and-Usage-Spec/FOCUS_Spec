@@ -34,10 +34,6 @@
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-BilledCost-C-004-M"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-BilledCost-C-005-C"
           },
           {
@@ -56,7 +52,6 @@
         "CAU-BilledCost-C-001-M",
         "CAU-BilledCost-C-002-M",
         "CAU-BilledCost-C-003-M",
-        "CAU-BilledCost-C-004-M",
         "CAU-BilledCost-C-005-C",
         "CAU-BilledCost-C-006-M",
         "CAU-BilledCost-C-007-M"
@@ -150,7 +145,8 @@
     "EntityId": "BilledCost",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "ApplicabilityCriteria": [],
     "Order": 50,
     "DatasetType": "CAU",
