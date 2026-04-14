@@ -2,7 +2,7 @@
 
 ## Scenario
 
-ACME provides two FOCUS datasets: Cost and Usage and Contract. Each [Schema](#metadata.schema) metadata object includes the [Dataset](#datasets) metadata to indicate which FOCUS Dataset the Schema conforms to.
+CrestNode provides two FOCUS datasets: Cost and Usage and Contract. Each [Schema](#metadata.schema) metadata object includes the [Dataset](#datasets) metadata to indicate which FOCUS Dataset the Schema conforms to.
 
 ## Supplied Metadata
 

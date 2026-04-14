@@ -2,7 +2,7 @@
 
 ## Scenario
 
-ACME has decided to rename a column in their FOCUS data export. The column for rename is x_awesome_column1 and will be renamed to x_awesome_column_one. The data generator creates a new [Schema](#metadata.schema) object to represent the new schema, with a unique [SchemaId](#metadata.schema.schemaid). After this schema definition is created if the data generator creates another schema, the PreviousColumnName is removed.
+CrestNode has decided to rename a column in their FOCUS data export. The column for rename is x_awesome_column1 and will be renamed to x_awesome_column_one. The data generator creates a new [Schema](#metadata.schema) object to represent the new schema, with a unique [SchemaId](#metadata.schema.schemaid). After this schema definition is created if the data generator creates another schema, the PreviousColumnName is removed.
 
 ## Supplied Metadata
 
@@ -141,4 +141,4 @@ The subsequent new schema metadata after the rename could look like this:
       ]
 }
 ```
-For an example of how ACME ensures the schema metadata reference requirement is met see: [Schema Metadata to FOCUS Data Reference](#appendix.examples:metadata.schemametadatatofocusdatareference)
+For an example of how CrestNode ensures the schema metadata reference requirement is met see: [Schema Metadata to FOCUS Data Reference](#appendix.examples:metadata.schemametadatatofocusdatareference)
