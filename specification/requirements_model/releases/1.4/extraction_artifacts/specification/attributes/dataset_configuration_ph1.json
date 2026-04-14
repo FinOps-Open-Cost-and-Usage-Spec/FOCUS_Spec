@@ -20,7 +20,7 @@
     {
       "temp_id": "R001",
       "order": 1,
-      "text": "*FOCUS dataset* MUST adhere to the following requirements:",
+      "text": "Dataset conforming to DatasetConfiguration attribute MUST adhere to the following requirements:",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
@@ -36,11 +36,11 @@
         "ends_with_colon": true
       },
       "provenance": {
-        "line_start": 26,
-        "line_end": 26
+        "line_start": 14,
+        "line_end": 14
       },
       "_alignment_status": "confirmed",
-      "ref": "L026"
+      "ref": "L014"
     },
     {
       "temp_id": "R002",
@@ -61,11 +61,11 @@
         "ends_with_colon": false
       },
       "provenance": {
-        "line_start": 28,
-        "line_end": 28
+        "line_start": 16,
+        "line_end": 16
       },
       "_alignment_status": "confirmed",
-      "ref": "L028"
+      "ref": "L016"
     },
     {
       "temp_id": "R003",
@@ -86,11 +86,11 @@
         "ends_with_colon": false
       },
       "provenance": {
-        "line_start": 29,
-        "line_end": 29
+        "line_start": 17,
+        "line_end": 17
       },
       "_alignment_status": "confirmed",
-      "ref": "L029"
+      "ref": "L017"
     },
     {
       "temp_id": "R004",
@@ -111,11 +111,11 @@
         "ends_with_colon": false
       },
       "provenance": {
-        "line_start": 30,
-        "line_end": 30
+        "line_start": 18,
+        "line_end": 18
       },
       "_alignment_status": "confirmed",
-      "ref": "L030"
+      "ref": "L018"
     },
     {
       "temp_id": "R005",
@@ -136,11 +136,11 @@
         "ends_with_colon": false
       },
       "provenance": {
-        "line_start": 31,
-        "line_end": 31
+        "line_start": 19,
+        "line_end": 19
       },
       "_alignment_status": "confirmed",
-      "ref": "L031"
+      "ref": "L019"
     }
   ],
   "warnings": [],

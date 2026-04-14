@@ -17,7 +17,7 @@
       "Dataset Requirements",
       "Attribute Requirements"
     ],
-    "atoms_in_scope_count": 7
+    "atoms_in_scope_count": 8
   },
   "0_outline_root": "ROOT: Payment Currency Billed Cost > Requirements",
   "0_outline_lines": [
@@ -25,19 +25,20 @@
     "  L009: \"PaymentCurrencyBilledCost MUST be of type Decimal.\"",
     "  L010: \"PaymentCurrencyBilledCost MUST conform to [NumericFormat](#attributes.numericformat) requirements.\"",
     "  L011: \"PaymentCurrencyBilledCost MUST NOT be null.\"",
-    "  L012: \"PaymentCurrencyBilledCost MUST be 0 for *charges* where payments are received by a third party (e.g., marketplace transactions).\"",
-    "  L013: \"PaymentCurrencyBilledCost MAY be non-zero while [BilledCost](#datasets.invoicedetail.billedcost) is 0 when PaymentCurrencyBilledCost represents the aggregation of BilledCost amounts (denominated in [PaymentCurrency](#datasets.invoicedetail.paymentcurrency)) stated in other records.\"",
-    "  L014: \"PaymentCurrencyBilledCost MAY be 0 while [BilledCost](#datasets.invoicedetail.billedcost) is non-zero when BilledCost (denominated in [PaymentCurrency](#datasets.invoicedetail.paymentcurrency)) is represented in a separate aggregate record.\""
+    "  L012: \"PaymentCurrencyBilledCost MUST be denominated in the [PaymentCurrency](#datasets.invoicedetail.paymentcurrency).\"",
+    "  L013: \"PaymentCurrencyBilledCost MUST be the PaymentCurrency-denominated equivalent of [BilledCost](#datasets.invoicedetail.billedcost).\"",
+    "  L014: \"PaymentCurrencyBilledCost MAY be non-zero while [BilledCost](#datasets.invoicedetail.billedcost) is 0 when PaymentCurrencyBilledCost represents the aggregation of BilledCost amounts (denominated in [PaymentCurrency](#datasets.invoicedetail.paymentcurrency)) stated in other records.\"",
+    "  L015: \"PaymentCurrencyBilledCost MAY be 0 while [BilledCost](#datasets.invoicedetail.billedcost) is non-zero when BilledCost (denominated in [PaymentCurrency](#datasets.invoicedetail.paymentcurrency)) is represented in a separate aggregate record.\""
   ],
   "0_outline_summary": {
-    "node_count": 7,
-    "leaf_count": 6,
+    "node_count": 8,
+    "leaf_count": 7,
     "lead_in_count": 1,
     "max_depth": 1,
     "max_indent_level": 0,
     "root_children_count": 1,
     "keyword_distribution": {
-      "MUST": 4,
+      "MUST": 5,
       "MUST NOT": 1,
       "MAY": 2
     },
@@ -45,7 +46,7 @@
       {
         "ref": "L007",
         "text_preview": "PaymentCurrencyBilledCost MUST adhere to the following requirements:",
-        "children": 6
+        "children": 7
       }
     ]
   },
@@ -64,6 +65,7 @@
             "text": "PaymentCurrencyBilledCost MUST adhere to the following requirements:",
             "keyword": "MUST",
             "section_path": [
+              "Payment Currency Billed Cost",
               "Requirements"
             ],
             "block": {
@@ -86,6 +88,7 @@
                 "text": "PaymentCurrencyBilledCost MUST be of type Decimal.",
                 "keyword": "MUST",
                 "section_path": [
+                  "Payment Currency Billed Cost",
                   "Requirements"
                 ],
                 "block": {
@@ -109,6 +112,7 @@
                 "text": "PaymentCurrencyBilledCost MUST conform to [NumericFormat](#attributes.numericformat) requirements.",
                 "keyword": "MUST",
                 "section_path": [
+                  "Payment Currency Billed Cost",
                   "Requirements"
                 ],
                 "block": {
@@ -132,6 +136,7 @@
                 "text": "PaymentCurrencyBilledCost MUST NOT be null.",
                 "keyword": "MUST NOT",
                 "section_path": [
+                  "Payment Currency Billed Cost",
                   "Requirements"
                 ],
                 "block": {
@@ -152,9 +157,10 @@
                 "temp_id": "R005",
                 "order": 5,
                 "ref": "L012",
-                "text": "PaymentCurrencyBilledCost MUST be 0 for *charges* where payments are received by a third party (e.g., marketplace transactions).",
+                "text": "PaymentCurrencyBilledCost MUST be denominated in the [PaymentCurrency](#datasets.invoicedetail.paymentcurrency).",
                 "keyword": "MUST",
                 "section_path": [
+                  "Payment Currency Billed Cost",
                   "Requirements"
                 ],
                 "block": {
@@ -175,9 +181,10 @@
                 "temp_id": "R006",
                 "order": 6,
                 "ref": "L013",
-                "text": "PaymentCurrencyBilledCost MAY be non-zero while [BilledCost](#datasets.invoicedetail.billedcost) is 0 when PaymentCurrencyBilledCost represents the aggregation of BilledCost amounts (denominated in [PaymentCurrency](#datasets.invoicedetail.paymentcurrency)) stated in other records.",
-                "keyword": "MAY",
+                "text": "PaymentCurrencyBilledCost MUST be the PaymentCurrency-denominated equivalent of [BilledCost](#datasets.invoicedetail.billedcost).",
+                "keyword": "MUST",
                 "section_path": [
+                  "Payment Currency Billed Cost",
                   "Requirements"
                 ],
                 "block": {
@@ -198,9 +205,34 @@
                 "temp_id": "R007",
                 "order": 7,
                 "ref": "L014",
+                "text": "PaymentCurrencyBilledCost MAY be non-zero while [BilledCost](#datasets.invoicedetail.billedcost) is 0 when PaymentCurrencyBilledCost represents the aggregation of BilledCost amounts (denominated in [PaymentCurrency](#datasets.invoicedetail.paymentcurrency)) stated in other records.",
+                "keyword": "MAY",
+                "section_path": [
+                  "Payment Currency Billed Cost",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R008",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R008",
+                "order": 8,
+                "ref": "L015",
                 "text": "PaymentCurrencyBilledCost MAY be 0 while [BilledCost](#datasets.invoicedetail.billedcost) is non-zero when BilledCost (denominated in [PaymentCurrency](#datasets.invoicedetail.paymentcurrency)) is represented in a separate aggregate record.",
                 "keyword": "MAY",
                 "section_path": [
+                  "Payment Currency Billed Cost",
                   "Requirements"
                 ],
                 "block": {

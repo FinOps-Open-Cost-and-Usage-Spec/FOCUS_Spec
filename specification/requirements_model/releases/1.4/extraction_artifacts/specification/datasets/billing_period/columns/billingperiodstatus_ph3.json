@@ -25,7 +25,8 @@
           "BIP-BillingPeriodStatus-C-001-M",
           "BIP-BillingPeriodStatus-C-002-M",
           "BIP-BillingPeriodStatus-C-003-M",
-          "BIP-BillingPeriodStatus-C-004-M"
+          "BIP-BillingPeriodStatus-C-004-M",
+          "BIP-BillingPeriodStatus-C-005-C"
         ]
       }
     },
@@ -120,6 +121,30 @@
       "ValidationCriteria": {
         "MustSatisfy": "BillingPeriodStatus MUST represent the state of the billing period identified by BillingPeriodStart and BillingPeriodEnd.",
         "Keyword": "MUST",
+        "Requirement": {},
+        "Condition": [],
+        "Dependencies": []
+      }
+    },
+    "BIP-BillingPeriodStatus-C-005-C": {
+      "Function": "Validation",
+      "Reference": "BillingPeriodStatus",
+      "EntityType": "Column",
+      "EntityName": "Billing Period Status",
+      "EntityId": "BillingPeriodStatus",
+      "Notes": "",
+      "ModelVersionIntroduced": "1.4",
+      "Status": "Active",
+      "ModelVersionRemoved": "",
+      "ApplicabilityCriteria": [],
+      "Type": "Dynamic",
+      "Order": 50,
+      "DatasetType": "BIP",
+      "DatasetId": "BillingPeriod",
+      "DatasetName": "Billing Period",
+      "ValidationCriteria": {
+        "MustSatisfy": "BillingPeriodStatus MUST NOT transition from \"Closed\" to \"Open\" unless explicitly requested or approved by the customer.",
+        "Keyword": "MUST NOT",
         "Requirement": {},
         "Condition": [],
         "Dependencies": []

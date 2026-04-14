@@ -45,7 +45,7 @@
     {
       "temp_id": "R002",
       "order": 2,
-      "text": "BillingPeriod MUST be present if the invoice issuer supports payable invoices.",
+      "text": "BillingPeriod MUST be present when the invoice issuer supports payable invoices.",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
@@ -245,7 +245,7 @@
     {
       "temp_id": "R010",
       "order": 10,
-      "text": "BillingPeriod MUST conform to [ColumnHandling](#attributes.columnhandling) requirements.",
+      "text": "BillingPeriod MUST conform to [CorrectionHandling](#attributes.correctionhandling) requirements.",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
@@ -291,6 +291,131 @@
       },
       "_alignment_status": "confirmed",
       "ref": "L038"
+    },
+    {
+      "temp_id": "R012",
+      "order": 12,
+      "text": "BillingPeriod MUST conform to [DatasetConfiguration](#attributes.datasetconfiguration) requirements.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Billing Period",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 39,
+        "line_end": 39
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L039"
+    },
+    {
+      "temp_id": "R013",
+      "order": 13,
+      "text": "BillingPeriod MUST conform to [DeliveryHandling](#attributes.deliveryhandling) requirements.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Billing Period",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 40,
+        "line_end": 40
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L040"
+    },
+    {
+      "temp_id": "R014",
+      "order": 14,
+      "text": "BillingPeriod [*FOCUS columns*](#glossary:focus-column) MUST conform to [FocusColumnHandling](#attributes.focuscolumnhandling) requirements.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Billing Period",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 41,
+        "line_end": 41
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L041"
+    },
+    {
+      "temp_id": "R015",
+      "order": 15,
+      "text": "BillingPeriod *FOCUS columns* MUST conform to [NullHandling](#attributes.nullhandling) requirements.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Billing Period",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 42,
+        "line_end": 42
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L042"
+    },
+    {
+      "temp_id": "R016",
+      "order": 16,
+      "text": "BillingPeriod [*custom columns*](#glossary:custom-column) MUST conform to [CustomColumnHandling](#attributes.customcolumnhandling) requirements.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Billing Period",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 43,
+        "line_end": 43
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L043"
     }
   ],
   "warnings": [],

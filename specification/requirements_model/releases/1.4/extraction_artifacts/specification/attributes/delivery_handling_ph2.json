@@ -1,0 +1,294 @@
+{
+  "phase": 2,
+  "source": {
+    "path": "specification/attributes/delivery_handling.md",
+    "version": "1.4"
+  },
+  "entity": {
+    "entity_type": "Attribute",
+    "entity_id": "DeliveryHandling",
+    "entity_name": "Delivery Handling"
+  },
+  "requirements_scope": {
+    "section_names_allowed": [
+      "Requirements",
+      "Column Requirements",
+      "Object Requirements",
+      "Dataset Requirements",
+      "Attribute Requirements"
+    ],
+    "atoms_in_scope_count": 9
+  },
+  "0_outline_root": "ROOT: Delivery Handling > Requirements",
+  "0_outline_lines": [
+    "L058: \"DeliveryHandling MUST adhere to the following requirements:\"",
+    "  L060: \"*FOCUS dataset* MUST have its mechanism(s) for delivering *dataset artifacts* documented and accessible to practitioners (including whether Overwrite or Append is used and under which conditions).\"",
+    "  L061: \"*FOCUS dataset* MUST NOT require practitioners to deduplicate records within or across delivered dataset artifacts.\"",
+    "  L062: \"When using Overwrite delivery mechanism, *FOCUS dataset* MUST adhere to the following additional requirements:\"",
+    "    L063: \"*FOCUS dataset* MUST represent a complete snapshot for a given [*delivery scope*](#glossary:delivery-scope).\"",
+    "    L064: \"*FOCUS dataset* MUST supersede all previously delivered *dataset artifacts* for the same *delivery scope*.\"",
+    "  L065: \"*FOCUS dataset* MUST preserve all previously delivered *dataset artifacts* when using Append delivery mechanism.\"",
+    "  L066: \"*FOCUS dataset* SHOULD have delivered *dataset artifacts* accompanied by corresponding [FOCUS Metadata](#metadata).\"",
+    "  L067: \"*FOCUS dataset* MUST have its mechanism for correlating *dataset artifact* with the [FOCUS Metadata Schema object](#metadata.schema) documented and accessible to practitioners when the Metadata is delivered.\""
+  ],
+  "0_outline_summary": {
+    "node_count": 9,
+    "leaf_count": 7,
+    "lead_in_count": 2,
+    "max_depth": 2,
+    "max_indent_level": 1,
+    "root_children_count": 1,
+    "keyword_distribution": {
+      "MUST": 7,
+      "MUST NOT": 1,
+      "SHOULD": 1
+    },
+    "lead_ins": [
+      {
+        "ref": "L058",
+        "text_preview": "DeliveryHandling MUST adhere to the following requirements:",
+        "children": 6
+      },
+      {
+        "ref": "L062",
+        "text_preview": "When using Overwrite delivery mechanism, *FOCUS dataset* MUST adhere to the following additional requirements:",
+        "children": 2
+      }
+    ]
+  },
+  "structure": {
+    "root": {
+      "node_id": "R000",
+      "kind": "root",
+      "children": [
+        {
+          "node_id": "R001",
+          "kind": "atom",
+          "atom": {
+            "temp_id": "R001",
+            "order": 1,
+            "ref": "L058",
+            "text": "DeliveryHandling MUST adhere to the following requirements:",
+            "keyword": "MUST",
+            "section_path": [
+              "Delivery Handling",
+              "Requirements"
+            ],
+            "block": {
+              "block_type": "paragraph",
+              "indent_level": 0,
+              "bullet": null
+            },
+            "lead_in": {
+              "ends_with_colon": true
+            }
+          },
+          "children": [
+            {
+              "node_id": "R002",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R002",
+                "order": 2,
+                "ref": "L060",
+                "text": "*FOCUS dataset* MUST have its mechanism(s) for delivering *dataset artifacts* documented and accessible to practitioners (including whether Overwrite or Append is used and under which conditions).",
+                "keyword": "MUST",
+                "section_path": [
+                  "Delivery Handling",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R003",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R003",
+                "order": 3,
+                "ref": "L061",
+                "text": "*FOCUS dataset* MUST NOT require practitioners to deduplicate records within or across delivered dataset artifacts.",
+                "keyword": "MUST NOT",
+                "section_path": [
+                  "Delivery Handling",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R004",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R004",
+                "order": 4,
+                "ref": "L062",
+                "text": "When using Overwrite delivery mechanism, *FOCUS dataset* MUST adhere to the following additional requirements:",
+                "keyword": "MUST",
+                "section_path": [
+                  "Delivery Handling",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": true
+                }
+              },
+              "children": [
+                {
+                  "node_id": "R005",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R005",
+                    "order": 5,
+                    "ref": "L063",
+                    "text": "*FOCUS dataset* MUST represent a complete snapshot for a given [*delivery scope*](#glossary:delivery-scope).",
+                    "keyword": "MUST",
+                    "section_path": [
+                      "Delivery Handling",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R006",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R006",
+                    "order": 6,
+                    "ref": "L064",
+                    "text": "*FOCUS dataset* MUST supersede all previously delivered *dataset artifacts* for the same *delivery scope*.",
+                    "keyword": "MUST",
+                    "section_path": [
+                      "Delivery Handling",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "R007",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R007",
+                "order": 7,
+                "ref": "L065",
+                "text": "*FOCUS dataset* MUST preserve all previously delivered *dataset artifacts* when using Append delivery mechanism.",
+                "keyword": "MUST",
+                "section_path": [
+                  "Delivery Handling",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R008",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R008",
+                "order": 8,
+                "ref": "L066",
+                "text": "*FOCUS dataset* SHOULD have delivered *dataset artifacts* accompanied by corresponding [FOCUS Metadata](#metadata).",
+                "keyword": "SHOULD",
+                "section_path": [
+                  "Delivery Handling",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R009",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R009",
+                "order": 9,
+                "ref": "L067",
+                "text": "*FOCUS dataset* MUST have its mechanism for correlating *dataset artifact* with the [FOCUS Metadata Schema object](#metadata.schema) documented and accessible to practitioners when the Metadata is delivered.",
+                "keyword": "MUST",
+                "section_path": [
+                  "Delivery Handling",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "debug": {
+    "ruleset": "ph2_tree_v1",
+    "parenting_signals": [
+      "section_path_boundary",
+      "lead_in_colon",
+      "indent_level"
+    ],
+    "warnings": []
+  }
+}

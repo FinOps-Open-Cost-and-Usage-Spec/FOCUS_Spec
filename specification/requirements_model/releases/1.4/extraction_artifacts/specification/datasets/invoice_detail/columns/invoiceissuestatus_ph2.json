@@ -17,7 +17,7 @@
       "Dataset Requirements",
       "Attribute Requirements"
     ],
-    "atoms_in_scope_count": 6
+    "atoms_in_scope_count": 7
   },
   "0_outline_root": "ROOT: Invoice Issue Status > Requirements",
   "0_outline_lines": [
@@ -26,24 +26,25 @@
     "  L010: \"InvoiceIssueStatus MUST conform to [StringHandling](#attributes.stringhandling) requirements.\"",
     "  L011: \"InvoiceIssueStatus MUST NOT be null.\"",
     "  L012: \"InvoiceIssueStatus MUST be one of the allowed values defined in the [Allowed Values](#datasets.invoicedetail.invoiceissuestatus.allowed-values) section.\"",
-    "  L013: \"InvoiceIssueStatus MUST represent the current publication state of the invoice.\""
+    "  L013: \"InvoiceIssueStatus MUST represent the current publication state of the invoice.\"",
+    "  L014: \"InvoiceIssueStatus MUST NOT transition from \\\"Issued\\\" to \\\"Open\\\" unless explicitly requested or approved by the customer.\""
   ],
   "0_outline_summary": {
-    "node_count": 6,
-    "leaf_count": 5,
+    "node_count": 7,
+    "leaf_count": 6,
     "lead_in_count": 1,
     "max_depth": 1,
     "max_indent_level": 0,
     "root_children_count": 1,
     "keyword_distribution": {
       "MUST": 5,
-      "MUST NOT": 1
+      "MUST NOT": 2
     },
     "lead_ins": [
       {
         "ref": "L007",
         "text_preview": "InvoiceIssueStatus MUST adhere to the following requirements:",
-        "children": 5
+        "children": 6
       }
     ]
   },
@@ -180,6 +181,30 @@
                 "ref": "L013",
                 "text": "InvoiceIssueStatus MUST represent the current publication state of the invoice.",
                 "keyword": "MUST",
+                "section_path": [
+                  "Invoice Issue Status",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R007",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R007",
+                "order": 7,
+                "ref": "L014",
+                "text": "InvoiceIssueStatus MUST NOT transition from \"Issued\" to \"Open\" unless explicitly requested or approved by the customer.",
+                "keyword": "MUST NOT",
                 "section_path": [
                   "Invoice Issue Status",
                   "Requirements"

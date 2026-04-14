@@ -21,11 +21,11 @@
   },
   "0_outline_root": "ROOT: Dataset Configuration > Requirements",
   "0_outline_lines": [
-    "L026: \"*FOCUS dataset* MUST adhere to the following requirements:\"",
-    "  L028: \"*FOCUS dataset* MUST be configurable to include only a user-defined selection of columns.\"",
-    "  L029: \"*FOCUS dataset* MUST adhere to all column-level specifications defined in the FOCUS schema, regardless of the user's chosen configuration (e.g., column selection).\"",
-    "  L030: \"*FOCUS dataset* MAY offer a default column set.\"",
-    "  L031: \"*FOCUS dataset* default column set MUST include all applicable [*FOCUS columns*](#glossary:FOCUS-column) when a default column set is offered.\""
+    "L014: \"Dataset conforming to DatasetConfiguration attribute MUST adhere to the following requirements:\"",
+    "  L016: \"*FOCUS dataset* MUST be configurable to include only a user-defined selection of columns.\"",
+    "  L017: \"*FOCUS dataset* MUST adhere to all column-level specifications defined in the FOCUS schema, regardless of the user's chosen configuration (e.g., column selection).\"",
+    "  L018: \"*FOCUS dataset* MAY offer a default column set.\"",
+    "  L019: \"*FOCUS dataset* default column set MUST include all applicable [*FOCUS columns*](#glossary:FOCUS-column) when a default column set is offered.\""
   ],
   "0_outline_summary": {
     "node_count": 5,
@@ -40,8 +40,8 @@
     },
     "lead_ins": [
       {
-        "ref": "L026",
-        "text_preview": "*FOCUS dataset* MUST adhere to the following requirements:",
+        "ref": "L014",
+        "text_preview": "Dataset conforming to DatasetConfiguration attribute MUST adhere to the following requirements:",
         "children": 4
       }
     ]
@@ -57,8 +57,8 @@
           "atom": {
             "temp_id": "R001",
             "order": 1,
-            "ref": "L026",
-            "text": "*FOCUS dataset* MUST adhere to the following requirements:",
+            "ref": "L014",
+            "text": "Dataset conforming to DatasetConfiguration attribute MUST adhere to the following requirements:",
             "keyword": "MUST",
             "section_path": [
               "Dataset Configuration",
@@ -80,7 +80,7 @@
               "atom": {
                 "temp_id": "R002",
                 "order": 2,
-                "ref": "L028",
+                "ref": "L016",
                 "text": "*FOCUS dataset* MUST be configurable to include only a user-defined selection of columns.",
                 "keyword": "MUST",
                 "section_path": [
@@ -104,7 +104,7 @@
               "atom": {
                 "temp_id": "R003",
                 "order": 3,
-                "ref": "L029",
+                "ref": "L017",
                 "text": "*FOCUS dataset* MUST adhere to all column-level specifications defined in the FOCUS schema, regardless of the user's chosen configuration (e.g., column selection).",
                 "keyword": "MUST",
                 "section_path": [
@@ -128,7 +128,7 @@
               "atom": {
                 "temp_id": "R004",
                 "order": 4,
-                "ref": "L030",
+                "ref": "L018",
                 "text": "*FOCUS dataset* MAY offer a default column set.",
                 "keyword": "MAY",
                 "section_path": [
@@ -152,7 +152,7 @@
               "atom": {
                 "temp_id": "R005",
                 "order": 5,
-                "ref": "L031",
+                "ref": "L019",
                 "text": "*FOCUS dataset* default column set MUST include all applicable [*FOCUS columns*](#glossary:FOCUS-column) when a default column set is offered.",
                 "keyword": "MUST",
                 "section_path": [

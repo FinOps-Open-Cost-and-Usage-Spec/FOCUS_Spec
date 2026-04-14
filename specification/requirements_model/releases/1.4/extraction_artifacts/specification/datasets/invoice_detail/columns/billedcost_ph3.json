@@ -27,9 +27,11 @@
           "IND-BilledCost-C-003-M",
           "IND-BilledCost-C-004-M",
           "IND-BilledCost-C-005-M",
-          "IND-BilledCost-C-006-C",
-          "IND-BilledCost-C-007-C",
-          "IND-BilledCost-C-010-C"
+          "IND-BilledCost-C-006-M",
+          "IND-BilledCost-C-007-M",
+          "IND-BilledCost-C-008-C",
+          "IND-BilledCost-C-009-C",
+          "IND-BilledCost-C-012-C"
         ]
       }
     },
@@ -122,7 +124,7 @@
       "DatasetId": "InvoiceDetail",
       "DatasetName": "Invoice Detail",
       "ValidationCriteria": {
-        "MustSatisfy": "BilledCost MUST be 0 for *charges* where payments are received by a third party (e.g., marketplace transactions).",
+        "MustSatisfy": "BilledCost MUST be denominated in the BillingCurrency.",
         "Keyword": "MUST",
         "Requirement": {},
         "Condition": [],
@@ -146,14 +148,14 @@
       "DatasetId": "InvoiceDetail",
       "DatasetName": "Invoice Detail",
       "ValidationCriteria": {
-        "MustSatisfy": "BilledCost MUST be denominated in the BillingCurrency.",
+        "MustSatisfy": "BilledCost MUST reflect all applicable pricing adjustments, including but not limited to *negotiated discounts*, *commitment discounts*, and other applicable discount programs.",
         "Keyword": "MUST",
         "Requirement": {},
         "Condition": [],
         "Dependencies": []
       }
     },
-    "IND-BilledCost-C-006-C": {
+    "IND-BilledCost-C-006-M": {
       "Function": "Validation",
       "Reference": "BilledCost",
       "EntityType": "Column",
@@ -164,21 +166,21 @@
       "Status": "Active",
       "ModelVersionRemoved": "",
       "ApplicabilityCriteria": [],
-      "Type": "Dynamic",
+      "Type": "Static",
       "Order": 60,
       "DatasetType": "IND",
       "DatasetId": "InvoiceDetail",
       "DatasetName": "Invoice Detail",
       "ValidationCriteria": {
-        "MustSatisfy": "The sum of BilledCost for a given InvoiceDetailId, InvoiceId, and InvoiceIssuerName MUST match the payable amount provided in the corresponding entries on the issued invoice when InvoiceIssueStatus is \"Issued\".",
-        "Keyword": "MUST",
+        "MustSatisfy": "BilledCost MUST NOT include any portion of a *covered charge* that is offset by a *covering charge*.",
+        "Keyword": "MUST NOT",
         "Requirement": {},
         "Condition": [],
         "Dependencies": []
       }
     },
-    "IND-BilledCost-C-007-C": {
-      "Function": "Composite",
+    "IND-BilledCost-C-007-M": {
+      "Function": "Validation",
       "Reference": "BilledCost",
       "EntityType": "Column",
       "EntityName": "Billed Cost",
@@ -188,20 +190,17 @@
       "Status": "Active",
       "ModelVersionRemoved": "",
       "ApplicabilityCriteria": [],
-      "Type": "Dynamic",
+      "Type": "Static",
       "Order": 70,
       "DatasetType": "IND",
       "DatasetId": "InvoiceDetail",
       "DatasetName": "Invoice Detail",
       "ValidationCriteria": {
-        "MustSatisfy": "When comparing BilledCost aggregated by InvoiceId and InvoiceIssuerName with CostAndUsage.BilledCost aggregated by CostAndUsage.InvoiceId and CostAndUsage.InvoiceIssuerName, BilledCost MUST adhere to the following requirements:",
+        "MustSatisfy": "BilledCost MUST be 0 for *charges* that are fully *covered* by one or more *covering charges*.",
         "Keyword": "MUST",
         "Requirement": {},
         "Condition": [],
-        "Dependencies": [
-          "IND-BilledCost-C-008-C",
-          "IND-BilledCost-C-009-C"
-        ]
+        "Dependencies": []
       }
     },
     "IND-BilledCost-C-008-C": {
@@ -221,15 +220,15 @@
       "DatasetId": "InvoiceDetail",
       "DatasetName": "Invoice Detail",
       "ValidationCriteria": {
-        "MustSatisfy": "When ChargeCategory is not \"Tax\" and InvoiceIssueStatus is not \"Open\", the sum of BilledCost MUST NOT differ from the sum of CostAndUsage.BilledCost by more than `MAX(100 × Subunit, (SQRT(Rows) × 0.5) × Subunit)` as defined in Tolerance Formula.",
-        "Keyword": "MUST NOT",
+        "MustSatisfy": "The sum of BilledCost for a given InvoiceDetailId, InvoiceId, and InvoiceIssuerName MUST match the payable amount provided in the corresponding entries on the issued invoice when InvoiceIssueStatus is \"Issued\".",
+        "Keyword": "MUST",
         "Requirement": {},
         "Condition": [],
         "Dependencies": []
       }
     },
     "IND-BilledCost-C-009-C": {
-      "Function": "Validation",
+      "Function": "Composite",
       "Reference": "BilledCost",
       "EntityType": "Column",
       "EntityName": "Billed Cost",
@@ -245,15 +244,18 @@
       "DatasetId": "InvoiceDetail",
       "DatasetName": "Invoice Detail",
       "ValidationCriteria": {
-        "MustSatisfy": "When ChargeCategory is \"Tax\" or InvoiceIssueStatus is \"Open\", the sum of BilledCost MAY differ from the sum of CostAndUsage.BilledCost.",
-        "Keyword": "MAY",
+        "MustSatisfy": "When comparing BilledCost aggregated by InvoiceId and InvoiceIssuerName with CostAndUsage.BilledCost aggregated by CostAndUsage.InvoiceId and CostAndUsage.InvoiceIssuerName, BilledCost MUST adhere to the following requirements:",
+        "Keyword": "MUST",
         "Requirement": {},
         "Condition": [],
-        "Dependencies": []
+        "Dependencies": [
+          "IND-BilledCost-C-010-C",
+          "IND-BilledCost-C-011-C"
+        ]
       }
     },
     "IND-BilledCost-C-010-C": {
-      "Function": "Composite",
+      "Function": "Validation",
       "Reference": "BilledCost",
       "EntityType": "Column",
       "EntityName": "Billed Cost",
@@ -269,14 +271,11 @@
       "DatasetId": "InvoiceDetail",
       "DatasetName": "Invoice Detail",
       "ValidationCriteria": {
-        "MustSatisfy": "When comparing BilledCost aggregated by InvoiceDetailId, InvoiceId, and InvoiceIssuerName with CostAndUsage.BilledCost aggregated by CostAndUsage.InvoiceDetailId, CostAndUsage.InvoiceId, and CostAndUsage.InvoiceIssuerName, BilledCost MUST adhere to the following requirements:",
-        "Keyword": "MUST",
+        "MustSatisfy": "When ChargeCategory is not \"Tax\" and InvoiceIssueStatus is not \"Open\", the sum of BilledCost MUST NOT differ from the sum of CostAndUsage.BilledCost by more than `MAX(100 × Subunit, (SQRT(Rows) × 0.5) × Subunit)` as defined in Rounding Variance Tolerance.",
+        "Keyword": "MUST NOT",
         "Requirement": {},
         "Condition": [],
-        "Dependencies": [
-          "IND-BilledCost-C-011-C",
-          "IND-BilledCost-C-012-C"
-        ]
+        "Dependencies": []
       }
     },
     "IND-BilledCost-C-011-C": {
@@ -296,15 +295,15 @@
       "DatasetId": "InvoiceDetail",
       "DatasetName": "Invoice Detail",
       "ValidationCriteria": {
-        "MustSatisfy": "When InvoiceIssueStatus is not \"Open\", the sum of BilledCost MUST NOT differ from the sum of CostAndUsage.BilledCost by more than `MAX(100 × Subunit, (SQRT(Rows) × 0.5) × Subunit)` as defined in Tolerance Formula.",
-        "Keyword": "MUST NOT",
+        "MustSatisfy": "When ChargeCategory is \"Tax\" or InvoiceIssueStatus is \"Open\", the sum of BilledCost MAY differ from the sum of CostAndUsage.BilledCost.",
+        "Keyword": "MAY",
         "Requirement": {},
         "Condition": [],
         "Dependencies": []
       }
     },
     "IND-BilledCost-C-012-C": {
-      "Function": "Validation",
+      "Function": "Composite",
       "Reference": "BilledCost",
       "EntityType": "Column",
       "EntityName": "Billed Cost",
@@ -316,6 +315,57 @@
       "ApplicabilityCriteria": [],
       "Type": "Dynamic",
       "Order": 120,
+      "DatasetType": "IND",
+      "DatasetId": "InvoiceDetail",
+      "DatasetName": "Invoice Detail",
+      "ValidationCriteria": {
+        "MustSatisfy": "When comparing BilledCost aggregated by InvoiceDetailId, InvoiceId, and InvoiceIssuerName with CostAndUsage.BilledCost aggregated by CostAndUsage.InvoiceDetailId, CostAndUsage.InvoiceId, and CostAndUsage.InvoiceIssuerName, BilledCost MUST adhere to the following requirements:",
+        "Keyword": "MUST",
+        "Requirement": {},
+        "Condition": [],
+        "Dependencies": [
+          "IND-BilledCost-C-013-C",
+          "IND-BilledCost-C-014-C"
+        ]
+      }
+    },
+    "IND-BilledCost-C-013-C": {
+      "Function": "Validation",
+      "Reference": "BilledCost",
+      "EntityType": "Column",
+      "EntityName": "Billed Cost",
+      "EntityId": "BilledCost",
+      "Notes": "",
+      "ModelVersionIntroduced": "1.4",
+      "Status": "Active",
+      "ModelVersionRemoved": "",
+      "ApplicabilityCriteria": [],
+      "Type": "Dynamic",
+      "Order": 130,
+      "DatasetType": "IND",
+      "DatasetId": "InvoiceDetail",
+      "DatasetName": "Invoice Detail",
+      "ValidationCriteria": {
+        "MustSatisfy": "When InvoiceIssueStatus is not \"Open\", the sum of BilledCost MUST NOT differ from the sum of CostAndUsage.BilledCost by more than `MAX(100 × Subunit, (SQRT(Rows) × 0.5) × Subunit)` as defined in Rounding Variance Tolerance.",
+        "Keyword": "MUST NOT",
+        "Requirement": {},
+        "Condition": [],
+        "Dependencies": []
+      }
+    },
+    "IND-BilledCost-C-014-C": {
+      "Function": "Validation",
+      "Reference": "BilledCost",
+      "EntityType": "Column",
+      "EntityName": "Billed Cost",
+      "EntityId": "BilledCost",
+      "Notes": "",
+      "ModelVersionIntroduced": "1.4",
+      "Status": "Active",
+      "ModelVersionRemoved": "",
+      "ApplicabilityCriteria": [],
+      "Type": "Dynamic",
+      "Order": 140,
       "DatasetType": "IND",
       "DatasetId": "InvoiceDetail",
       "DatasetName": "Invoice Detail",

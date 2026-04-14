@@ -1,6 +1,6 @@
 {
   "ModelRules": {
-    "ATT-DatasetConfiguration-C-000-M": {
+    "ATT-DatasetConfiguration-A-000-M": {
       "Function": "Composite",
       "Reference": "DatasetConfiguration",
       "EntityType": "Attribute",
@@ -17,19 +17,19 @@
       "DatasetId": "",
       "DatasetName": "",
       "ValidationCriteria": {
-        "MustSatisfy": "*FOCUS dataset* MUST adhere to the following requirements:",
+        "MustSatisfy": "Dataset conforming to DatasetConfiguration attribute MUST adhere to the following requirements:",
         "Keyword": "MUST",
         "Requirement": {},
         "Condition": [],
         "Dependencies": [
-          "ATT-DatasetConfiguration-C-001-M",
-          "ATT-DatasetConfiguration-C-002-M",
-          "ATT-DatasetConfiguration-C-003-O",
-          "ATT-DatasetConfiguration-C-004-C"
+          "ATT-DatasetConfiguration-A-001-M",
+          "ATT-DatasetConfiguration-A-002-M",
+          "ATT-DatasetConfiguration-A-003-O",
+          "ATT-DatasetConfiguration-A-004-C"
         ]
       }
     },
-    "ATT-DatasetConfiguration-C-001-M": {
+    "ATT-DatasetConfiguration-A-001-M": {
       "Function": "Validation",
       "Reference": "DatasetConfiguration",
       "EntityType": "Attribute",
@@ -53,7 +53,7 @@
         "Dependencies": []
       }
     },
-    "ATT-DatasetConfiguration-C-002-M": {
+    "ATT-DatasetConfiguration-A-002-M": {
       "Function": "Validation",
       "Reference": "DatasetConfiguration",
       "EntityType": "Attribute",
@@ -77,7 +77,7 @@
         "Dependencies": []
       }
     },
-    "ATT-DatasetConfiguration-C-003-O": {
+    "ATT-DatasetConfiguration-A-003-O": {
       "Function": "Validation",
       "Reference": "DatasetConfiguration",
       "EntityType": "Attribute",
@@ -101,7 +101,7 @@
         "Dependencies": []
       }
     },
-    "ATT-DatasetConfiguration-C-004-C": {
+    "ATT-DatasetConfiguration-A-004-C": {
       "Function": "Validation",
       "Reference": "DatasetConfiguration",
       "EntityType": "Attribute",
