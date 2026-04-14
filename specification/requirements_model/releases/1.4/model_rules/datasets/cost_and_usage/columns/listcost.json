@@ -34,10 +34,6 @@
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-ListCost-C-004-M"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-ListCost-C-005-M"
           },
           {
@@ -56,7 +52,6 @@
         "CAU-ListCost-C-001-M",
         "CAU-ListCost-C-002-M",
         "CAU-ListCost-C-003-M",
-        "CAU-ListCost-C-004-M",
         "CAU-ListCost-C-005-M",
         "CAU-ListCost-C-006-C",
         "CAU-ListCost-C-011-C"
@@ -150,7 +145,8 @@
     "EntityId": "ListCost",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "ApplicabilityCriteria": [],
     "Order": 50,
     "DatasetType": "CAU",
