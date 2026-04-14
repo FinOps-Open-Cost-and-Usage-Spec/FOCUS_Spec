@@ -1,4 +1,4 @@
-# AWS Savings Plan - No Upfront - 100% Utilization
+# Aura Web Flexible Spend Plan - No Upfront - 100% Utilization
 
 | Parameter                    | Value              |
 | ---------------------------- | ------------------ |
@@ -10,11 +10,11 @@
 | Annual Commitment            | $462,966.00 |
 | List Unit Price              | $79.28/hour |
 
-[CSV Example](/specification/data/commitment_discount_scenarios/aws_savings_plan_no_upfront_100pct.csv)
+[CSV Example](/specification/data/commitment_discount_scenarios/aura_web_flexible_spend_plan_no_upfront_100pct.csv)
 
 ## Scenario Description
 
-This example shows an **Amazon Web Services EC2 Instance Savings Plan**, which is a commitment (with a Commitment Discount Category of `Spend`) where you commit to a specific dollar amount of usage per hour.
+This example shows an **Aura Web Flexible Spend Plan**, which is a commitment (with a Commitment Discount Category of `Spend`) where you commit to a specific dollar amount of usage per hour.
 
 The **No Upfront** payment option means you pay nothing at purchase time and instead pay a recurring monthly fee. This results in a recurring Purchase row each billing period with BilledCost equal to the monthly fee and zero EffectiveCost.
 
@@ -79,22 +79,22 @@ The following critical rules apply to commitment discount data:
 | CommitmentDiscountStatus   | null                                 | Status only applies to usage rows                                |
 | CommitmentDiscountQuantity | 35,515.20                            | Commitment capacity for Feb ($52.85/hr &times; 672 hrs)   |
 | CommitmentDiscountUnit     | USD                                  | Unit of commitment capacity (spend-based)                        |
-| SkuId                      | AWS-USEAST1-COMPUTE-PURCHASE         | Commitment purchase SKU                                          |
-| SkuPriceId                 | AWS-USEAST1-COMPUTE-PURCHASE-MONTHLY | Price point for recurring purchase                               |
+| SkuId                      | USEAST1-COMPUTE-PURCHASE         | Commitment purchase SKU                                          |
+| SkuPriceId                 | USEAST1-COMPUTE-PURCHASE-MONTHLY | Price point for recurring purchase                               |
 
 ## Usage Row Details (Commitment-Covered)
 
-| Column                     | Value                                                 | Explanation                                |
-| -------------------------- | ----------------------------------------------------- | ------------------------------------------ |
-| ChargeCategory             | Usage                                                 | Compute resource consumption               |
-| PricingCategory            | Committed                                             | Priced under commitment discount           |
-| BilledCost                 | $0.00                                          | **must be 0** - covered by commitment      |
-| EffectiveCost              | $52.85                                         | Amortized cost (annual / hours)            |
-| ListCost                   | $79.28                                         | What you would have paid at list price     |
-| PricingQuantity            | 1                                                     | Units priced                               |
-| ConsumedQuantity           | 1                                                     | Hours used                                 |
-| CommitmentDiscountQuantity | 52.85                                                 | Hourly commitment spend applied            |
-| CommitmentDiscountStatus   | Used                                                  | Commitment applied                         |
-| CommitmentDiscountId       | arn:aws:savingsplans::123456789012:savingsplan/sp-... | Links usage to purchase                    |
-| SkuId                      | AWS-USEAST1-COMPUTE-USAGE                             | Resource usage SKU (differs from Purchase) |
-| SkuPriceId                 | AWS-USEAST1-COMPUTE-USAGE-COMMITTED                   | Price point for committed usage            |
+| Column                     | Value                                                       | Explanation                                |
+| -------------------------- | ----------------------------------------------------------- | ------------------------------------------ |
+| ChargeCategory             | Usage                                                       | Compute resource consumption               |
+| PricingCategory            | Committed                                                   | Priced under commitment discount           |
+| BilledCost                 | $0.00                                                       | **must be 0** - covered by commitment      |
+| EffectiveCost              | $52.85                                                      | Amortized cost (annual / hours)            |
+| ListCost                   | $79.28                                                      | What you would have paid at list price     |
+| PricingQuantity            | 1                                                           | Units priced                               |
+| ConsumedQuantity           | 1                                                           | Hours used                                 |
+| CommitmentDiscountQuantity | 52.85                                                       | Hourly commitment spend applied            |
+| CommitmentDiscountStatus   | Used                                                        | Commitment applied                         |
+| CommitmentDiscountId       | aura:compute::123456789012:flexible-spend-plan/fsp-...      | Links usage to purchase                    |
+| SkuId                      | USEAST1-COMPUTE-USAGE                                    | Resource usage SKU (differs from Purchase) |
+| SkuPriceId                 | USEAST1-COMPUTE-USAGE-COMMITTED                          | Price point for committed usage            |

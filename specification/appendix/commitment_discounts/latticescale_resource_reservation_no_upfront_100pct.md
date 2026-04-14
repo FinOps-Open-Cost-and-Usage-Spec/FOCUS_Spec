@@ -1,4 +1,4 @@
-# GCP Resource CUD - No Upfront - 100% Utilization
+# LatticeScale Resource Reservation - No Upfront - 100% Utilization
 
 | Parameter                    | Value              |
 | ---------------------------- | ------------------ |
@@ -10,13 +10,13 @@
 | Annual Commitment            | $257,982.00 |
 | List Unit Price              | $44.18/hour |
 
-[CSV Example](/specification/data/commitment_discount_scenarios/gcp_resource_cud_no_upfront_100pct.csv)
+[CSV Example](/specification/data/commitment_discount_scenarios/latticescale_resource_reservation_no_upfront_100pct.csv)
 
 ## Scenario Description
 
-This example shows a **Google Cloud Platform Resource-based CUD**, which is a commitment (with a Commitment Discount Category of `Usage`) where you commit to a specific quantity of resource capacity (e.g., instance hours).
+This example shows a **LatticeScale Resource Reservation**, which is a commitment (with a Commitment Discount Category of `Usage`) where you commit to a specific quantity of resource capacity (e.g., instance hours).
 
-The **No Upfront** payment option means you pay nothing at purchase time and instead pay a recurring monthly fee. GCP CUDs are billed monthly with no upfront payment option. This results in a recurring Purchase row each billing period with BilledCost equal to the monthly fee and zero EffectiveCost.
+The **No Upfront** payment option means you pay nothing at purchase time and instead pay a recurring monthly fee. LatticeScale commitments are billed monthly with no upfront payment option. This results in a recurring Purchase row each billing period with BilledCost equal to the monthly fee and zero EffectiveCost.
 
 This scenario demonstrates **full utilization** where exactly 100% of the commitment capacity is consumed. All usage rows have CommitmentDiscountStatus='Used', indicating the commitment was fully applied. BilledCost=0 on usage rows because they're covered by the commitment.
 
@@ -79,8 +79,8 @@ The following critical rules apply to commitment discount data:
 | CommitmentDiscountStatus   | null                                    | Status only applies to usage rows                              |
 | CommitmentDiscountQuantity | 672.00                                  | Commitment capacity for Feb (1 instance-hr/hr &times; 672 hrs) |
 | CommitmentDiscountUnit     | Hours                                   | Unit of commitment capacity (usage-based)                      |
-| SkuId                      | GCP-USCENTRAL1-COMPUTE-PURCHASE         | Commitment purchase SKU                                        |
-| SkuPriceId                 | GCP-USCENTRAL1-COMPUTE-PURCHASE-MONTHLY | Price point for recurring purchase                             |
+| SkuId                      | USCENTRAL1-COMPUTE-PURCHASE          | Commitment purchase SKU                                        |
+| SkuPriceId                 | USCENTRAL1-COMPUTE-PURCHASE-MONTHLY  | Price point for recurring purchase                             |
 
 ## Usage Row Details (Commitment-Covered)
 
@@ -95,6 +95,6 @@ The following critical rules apply to commitment discount data:
 | ConsumedQuantity           | 1                                                     | Hours used                                 |
 | CommitmentDiscountQuantity | 1                                                     | Commitment units applied                   |
 | CommitmentDiscountStatus   | Used                                                  | Commitment applied                         |
-| CommitmentDiscountId       | projects/my-project-123456/locations/us-central1/c... | Links usage to purchase                    |
-| SkuId                      | GCP-USCENTRAL1-COMPUTE-USAGE                          | Resource usage SKU (differs from Purchase) |
-| SkuPriceId                 | GCP-USCENTRAL1-COMPUTE-USAGE-COMMITTED                | Price point for committed usage            |
+| CommitmentDiscountId       | ls/projects/my-project-123456/locations/us-central... | Links usage to purchase                    |
+| SkuId                      | USCENTRAL1-COMPUTE-USAGE                           | Resource usage SKU (differs from Purchase) |
+| SkuPriceId                 | USCENTRAL1-COMPUTE-USAGE-COMMITTED                 | Price point for committed usage            |

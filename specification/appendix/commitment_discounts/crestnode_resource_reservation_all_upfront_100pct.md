@@ -1,4 +1,4 @@
-# AWS Reserved Instance - All Upfront - 100% Utilization
+# CrestNode Resource Reservation - All Upfront - 100% Utilization
 
 | Parameter                    | Value              |
 | ---------------------------- | ------------------ |
@@ -7,14 +7,14 @@
 | Commitment Discount Category | Usage              |
 | Utilization                  | 100%               |
 | Hours Generated              | 24                 |
-| Annual Commitment            | $402,960.00 |
-| List Unit Price              | $69.00/hour |
+| Annual Commitment            | $358,021.20 |
+| List Unit Price              | $61.31/hour |
 
-[CSV Example](/specification/data/commitment_discount_scenarios/aws_reserved_instance_all_upfront_100pct.csv)
+[CSV Example](/specification/data/commitment_discount_scenarios/crestnode_resource_reservation_all_upfront_100pct.csv)
 
 ## Scenario Description
 
-This example shows an **Amazon Web Services EC2 Reserved Instance**, which is a commitment (with a Commitment Discount Category of `Usage`) where you commit to a specific quantity of resource capacity (e.g., instance hours).
+This example shows a **CrestNode Resource Reservation**, which is a commitment (with a Commitment Discount Category of `Usage`) where you commit to a specific quantity of resource capacity (e.g., instance hours).
 
 The **All Upfront** payment option means the entire commitment cost is paid at purchase time. This results in a single Purchase row with the full BilledCost and zero EffectiveCost (since the cost is amortized to usage rows).
 
@@ -26,9 +26,9 @@ This scenario demonstrates **full utilization** where exactly 100% of the commit
 
 | Row Type         | Count | BilledCost             | EffectiveCost        |
 | ---------------- | ----- | ---------------------- | -------------------- |
-| Purchase         | 1     | $402,960.00     | $0.00         |
-| Usage (Used)     | 24    | $0.00           | $1,104.00     |
-| **Total**        | 25    | **$402,960.00** | **$1,104.00** |
+| Purchase         | 1     | $358,021.20     | $0.00         |
+| Usage (Used)     | 24    | $0.00           | $980.88       |
+| **Total**        | 25    | **$358,021.20** | **$980.88**   |
 
 ## Column Interactions
 
@@ -50,8 +50,8 @@ These three quantity columns serve different purposes and must be understood in 
 
 | Column                  | Purpose                  | Commitment-Covered |
 | ----------------------- | ------------------------ | ------------------ |
-| **ListUnitPrice**       | List (public) unit price | $69.00      |
-| **ContractedUnitPrice** | Negotiated unit price    | $69.00      |
+| **ListUnitPrice**       | List (public) unit price | $61.31      |
+| **ContractedUnitPrice** | Negotiated unit price    | $61.31      |
 
 **Why this matters:** ContractedUnitPrice reflects enterprise-negotiated pricing (e.g., EDP rates), not commitment discount savings. In non-negotiated scenarios, ContractedUnitPrice equals ListUnitPrice. Commitment discount savings are reflected in EffectiveCost, not in unit prices.
 
@@ -59,8 +59,8 @@ These three quantity columns serve different purposes and must be understood in 
 
 | Scenario         | BilledCost         | EffectiveCost | ListCost           |
 | ---------------- | ------------------ | ------------- | ------------------ |
-| **Purchase Row** | $402,960.00 | $0.00  | $402,960.00 |
-| **Used Row**     | $0.00       | $46.00 | $69.00      |
+| **Purchase Row** | $358,021.20 | $0.00  | $358,021.20 |
+| **Used Row**     | $0.00       | $40.87 | $61.31      |
 
 The following critical rules apply to commitment discount data:
 
@@ -69,18 +69,18 @@ The following critical rules apply to commitment discount data:
 
 ## Purchase Row Details
 
-| Column                     | Value                                | Explanation                                                                           |
-| -------------------------- | ------------------------------------ | ------------------------------------------------------------------------------------- |
-| ChargeCategory             | Purchase                             | Commitment purchase transaction                                                       |
-| ChargeFrequency            | One-Time                             | One-time upfront payment                                                              |
-| BilledCost                 | $402,960.00                   | Full annual commitment payment                                                        |
-| EffectiveCost              | $0.00                         | **must be 0** - cost is amortized to usage rows                                       |
-| PricingQuantity            | 1                                    | One commitment unit purchased                                                         |
-| CommitmentDiscountStatus   | null                                 | Status only applies to usage rows                                                     |
-| CommitmentDiscountQuantity | 8760.00                              | Total commitment capacity for the 1-year term (1 instance-hr/hr &times; 8,760 hrs/yr) |
-| CommitmentDiscountUnit     | Hours                                | Unit of commitment capacity (usage-based)                                             |
-| SkuId                      | AWS-USEAST1-COMPUTE-PURCHASE         | Commitment purchase SKU                                                               |
-| SkuPriceId                 | AWS-USEAST1-COMPUTE-PURCHASE-UPFRONT | Price point for upfront purchase                                                      |
+| Column                     | Value                                 | Explanation                                                                           |
+| -------------------------- | ------------------------------------- | ------------------------------------------------------------------------------------- |
+| ChargeCategory             | Purchase                              | Commitment purchase transaction                                                       |
+| ChargeFrequency            | One-Time                              | One-time upfront payment                                                              |
+| BilledCost                 | $358,021.20                    | Full annual commitment payment                                                        |
+| EffectiveCost              | $0.00                          | **must be 0** - cost is amortized to usage rows                                       |
+| PricingQuantity            | 1                                     | One commitment unit purchased                                                         |
+| CommitmentDiscountStatus   | null                                  | Status only applies to usage rows                                                     |
+| CommitmentDiscountQuantity | 8760.00                               | Total commitment capacity for the 1-year term (1 instance-hr/hr &times; 8,760 hrs/yr) |
+| CommitmentDiscountUnit     | Hours                                 | Unit of commitment capacity (usage-based)                                             |
+| SkuId                      | EASTUS-COMPUTE-PURCHASE            | Commitment purchase SKU                                                               |
+| SkuPriceId                 | EASTUS-COMPUTE-PURCHASE-UPFRONT    | Price point for upfront purchase                                                      |
 
 ## Usage Row Details (Commitment-Covered)
 
@@ -89,12 +89,12 @@ The following critical rules apply to commitment discount data:
 | ChargeCategory             | Usage                                                 | Compute resource consumption               |
 | PricingCategory            | Committed                                             | Priced under commitment discount           |
 | BilledCost                 | $0.00                                          | **must be 0** - covered by commitment      |
-| EffectiveCost              | $46.00                                         | Amortized cost (annual / hours)            |
-| ListCost                   | $69.00                                         | What you would have paid at list price     |
+| EffectiveCost              | $40.87                                         | Amortized cost (annual / hours)            |
+| ListCost                   | $61.31                                         | What you would have paid at list price     |
 | PricingQuantity            | 1                                                     | Units priced                               |
 | ConsumedQuantity           | 1                                                     | Hours used                                 |
 | CommitmentDiscountQuantity | 1                                                     | Commitment units applied                   |
 | CommitmentDiscountStatus   | Used                                                  | Commitment applied                         |
-| CommitmentDiscountId       | arn:aws:ec2:us-east-1:123456789012:reserved-instan... | Links usage to purchase                    |
-| SkuId                      | AWS-USEAST1-COMPUTE-USAGE                             | Resource usage SKU (differs from Purchase) |
-| SkuPriceId                 | AWS-USEAST1-COMPUTE-USAGE-COMMITTED                   | Price point for committed usage            |
+| CommitmentDiscountId       | cn/subscriptions/f0e9d8c7-b6a5-4321-0987-654321fe...  | Links usage to purchase                    |
+| SkuId                      | EASTUS-COMPUTE-USAGE                               | Resource usage SKU (differs from Purchase) |
+| SkuPriceId                 | EASTUS-COMPUTE-USAGE-COMMITTED                     | Price point for committed usage            |

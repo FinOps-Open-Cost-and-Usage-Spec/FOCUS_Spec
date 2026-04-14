@@ -1,4 +1,4 @@
-# Azure Savings Plan - All Upfront - 100% Utilization
+# CrestNode Flexible Spend Plan - All Upfront - 100% Utilization
 
 | Parameter                    | Value              |
 | ---------------------------- | ------------------ |
@@ -10,11 +10,11 @@
 | Annual Commitment            | $462,002.40 |
 | List Unit Price              | $79.11/hour |
 
-[CSV Example](/specification/data/commitment_discount_scenarios/azure_savings_plan_all_upfront_100pct.csv)
+[CSV Example](/specification/data/commitment_discount_scenarios/crestnode_flexible_spend_plan_all_upfront_100pct.csv)
 
 ## Scenario Description
 
-This example shows a **Microsoft Azure Compute Savings Plan**, which is a commitment (with a Commitment Discount Category of `Spend`) where you commit to a specific dollar amount of usage per hour.
+This example shows a **CrestNode Flexible Spend Plan**, which is a commitment (with a Commitment Discount Category of `Spend`) where you commit to a specific dollar amount of usage per hour.
 
 The **All Upfront** payment option means the entire commitment cost is paid at purchase time. This results in a single Purchase row with the full BilledCost and zero EffectiveCost (since the cost is amortized to usage rows).
 
@@ -79,8 +79,8 @@ The following critical rules apply to commitment discount data:
 | CommitmentDiscountStatus   | null                                  | Status only applies to usage rows                           |
 | CommitmentDiscountQuantity | 462,002.40                            | Full annual commitment ($52.74/hr &times; 8,760 hrs) |
 | CommitmentDiscountUnit     | USD                                   | Unit of commitment capacity (spend-based)                   |
-| SkuId                      | Azure-EASTUS-COMPUTE-PURCHASE         | Commitment purchase SKU                                     |
-| SkuPriceId                 | Azure-EASTUS-COMPUTE-PURCHASE-UPFRONT | Price point for upfront purchase                            |
+| SkuId                      | EASTUS-COMPUTE-PURCHASE            | Commitment purchase SKU                                     |
+| SkuPriceId                 | EASTUS-COMPUTE-PURCHASE-UPFRONT    | Price point for upfront purchase                            |
 
 ## Usage Row Details (Commitment-Covered)
 
@@ -96,5 +96,5 @@ The following critical rules apply to commitment discount data:
 | CommitmentDiscountQuantity | 52.74                                                 | Hourly commitment spend applied            |
 | CommitmentDiscountStatus   | Used                                                  | Commitment applied                         |
 | CommitmentDiscountId       | /subscriptions/f0e9d8c7-b6a5-4321-0987-654321fedcb... | Links usage to purchase                    |
-| SkuId                      | Azure-EASTUS-COMPUTE-USAGE                            | Resource usage SKU (differs from Purchase) |
-| SkuPriceId                 | Azure-EASTUS-COMPUTE-USAGE-COMMITTED                  | Price point for committed usage            |
+| SkuId                      | EASTUS-COMPUTE-USAGE                               | Resource usage SKU (differs from Purchase) |
+| SkuPriceId                 | EASTUS-COMPUTE-USAGE-COMMITTED                     | Price point for committed usage            |
