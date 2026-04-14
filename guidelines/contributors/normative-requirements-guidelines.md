@@ -84,7 +84,7 @@ The recommended pattern for a normative requirement is:
 <Subject (+qualifier)> + <BCP 14 Keyword> + <Verifiable State Descriptor> + <Object (+qualifier)> [+ Conditions]
 ```
 
-* Normative requirements MUST be expressed as individual bullet points.
+* Each normative requirement MUST be expressed as an individual bullet point, except for structural anchor requirements (see [Structural Anchor Requirement](#structural-anchor-requirement)).
 * Each bullet MUST represent exactly one normative requirement expressing a single constraint.
 * Each normative requirement MUST:
   * identify exactly one **normative subject** to which the requirement applies
@@ -96,14 +96,11 @@ The recommended pattern for a normative requirement is:
 ### Explicit Conditions in Normative Requirements
 
 * Normative requirements MUST include an explicit condition unless the rule applies universally.
-* Conditional clauses MUST use standardized patterns such as:
-   * when <condition>
-   * if <condition>
-   * unless <condition>  
-   * only when <condition>  
-   * only if <condition>  
-   * except when <condition>  
-   * except if <condition>
+* Conditional logic MUST be expressed using one of the following approved conditional keywords:
+  * `when`
+  * `unless`
+  * `only when`
+  * `except when`
 
 ### Structural Anchor Requirement
 
@@ -209,7 +206,6 @@ In order to maintain a formal, professional tone throughout the specification, c
 * Each normative bullet MUST contain exactly one BCP 14 keyword (MUST, SHOULD, MAY, MUST NOT, SHOULD NOT). See [BCP14](https://tools.ietf.org/html/bcp14) [[RFC2119](https://tools.ietf.org/html/rfc2119)][[RFC8174](https://tools.ietf.org/html/rfc8174)].
 * A bullet containing more than one normative keyword MUST be split.
 * The term **RECOMMENDED** MUST NOT be used as a normative keyword. The keyword **SHOULD** MUST be used instead.
-* The lowercase word “recommended” MAY be used in non-normative text, provided it does not express a normative requirement.
 
 * **Exception for Composite Requirements:** While each individual bullet (parent or nested) MUST contain only one BCP 14 keyword, a Composite Requirement as a whole MAY contain multiple keywords to express nuanced obligations. In such cases, the logical strength of the requirement is governed by the hierarchy defined in section [Composite Requirements](#composite-requirements).
 
