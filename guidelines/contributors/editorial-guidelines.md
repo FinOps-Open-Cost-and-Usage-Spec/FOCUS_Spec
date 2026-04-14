@@ -209,6 +209,14 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 
 * **Consistent Formatting:** This formatting MUST be used consistently across all normative requirements, descriptions, and tables when referencing a specific string value.
 
+### Comparison Terminology
+
+To ensure consistent language when describing relationships and evaluations between values, normative requirements and standard prose MUST use the following terminology:
+
+* **Numeric Values:** Use "equal" or "be equal to" when comparing numeric values, costs, quantities, or mathematical sums (e.g., "ContractedCost MUST be equal to BilledCost"). Do not use "match".
+* **Identifiers and Strings:** Use "match" when comparing strings, IDs, or names (e.g., "HostProviderName MUST match ServiceProviderName"). Do not use "equal".
+* **State and Conditions:** Use "is" when evaluating if a column contains a specific value (e.g., "when ChargeCategory is `Purchase`"). Do not use "equals".
+
 ### Bullet Structure
 
 * **Unordered List Style:** All unordered lists in Markdown MUST use asterisks (`*`) rather than dashes (`-`) or plus signs (`+`). This maintains visual consistency across the specification and aligns with our automated linting standards.
