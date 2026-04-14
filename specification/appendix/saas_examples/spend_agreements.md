@@ -8,10 +8,10 @@ The scenarios described below illustrate how a Cost and Usage [*FOCUS dataset*](
 
 The following baseline conditions apply to the scenarios described below:
 
-* AwesomeCorp has signed an agreement with SaaS service provider Acme Co to use their database services
-* On April 1 2025, AwesomeCorp agrees to spend $1200 (post-discounts) in the upcoming 12-months
-* AwesomeCorp receives a 20% negotiated discount in return for the commitment
-* Acme Co calculates the spend counted against the agreements after discounts (like the negotiated discounts). Other service providers may use the cost after discounts i.e., using List Cost for calculating the spend commitment.
+* StoreStackrp has signed an agreement with SaaS service provider StoreStack to use their database services
+* On April 1 2025, StoreStackrp agrees to spend $1200 (post-discounts) in the upcoming 12-months
+* StoreStackrp receives a 20% negotiated discount in return for the commitment
+* StoreStack calculates the spend counted against the agreements after discounts (like the negotiated discounts). Other service providers may use the cost after discounts i.e., using List Cost for calculating the spend commitment.
 
 ## Scenario A: Billed in arrears
 
@@ -25,11 +25,11 @@ For this scenario, contract additionally includes the following terms:
 
 * Committed spend can be used anytime within the 1-year commitment period.
 
-AwesomeCorp's consumption looks like this:
+StoreStackrp's consumption looks like this:
 
-* In the first month, AwesomeCorp uses $48 of services (4 server hours). This usage has a List Cost of $60 (before discounts)
-* In the following 2 months, AwesomeCorp has some more usage
-* For the final 9 months, AwesomeCorp does not use Acme services
+* In the first month, StoreStackrp uses $48 of services (4 server hours). This usage has a List Cost of $60 (before discounts)
+* In the following 2 months, StoreStackrp has some more usage
+* For the final 9 months, StoreStackrp does not use StoreStack services
 
 [**CSV Example**](/specification/data/saas_examples/spend_agreements/saas_spend_agreements_a1.csv)
 
@@ -39,15 +39,15 @@ Note the following details in the example dataset:
 
 ### Scenario A2: Billed in arrears with a minimum spend requirement per month
 
-The spend agreement with Acme requires the customer to spend a minimum amount in each Billing Period (monthly). Unused fees are charged per Billing Period when the consumption is below this level (use-it or lose-it). For this scenario, contract additionally includes the following terms:
+The spend agreement with StoreStack requires the customer to spend a minimum amount in each Billing Period (monthly). Unused fees are charged per Billing Period when the consumption is below this level (use-it or lose-it). For this scenario, contract additionally includes the following terms:
 
 * A minimum of $60 needs to be spent each month
 
-AwesomeCorp's consumption looks like this:
+StoreStackrp's consumption looks like this:
 
-* In the first month, the AwesomeCorp uses $48 of services (4 server hours). This usage has a List Cost of $60 (before discounts). For this month, Acme charges $12 (ListCost of $15) for not meeting the monthly minimum
-* In the following 2 months, AwesomeCorp has usage at or above the minimum requirement
-* For the final 9 months, AwesomeCorp does not use Acme services
+* In the first month, the StoreStackrp uses $48 of services (4 server hours). This usage has a List Cost of $60 (before discounts). For this month, StoreStack charges $12 (ListCost of $15) for not meeting the monthly minimum
+* In the following 2 months, StoreStackrp has usage at or above the minimum requirement
+* For the final 9 months, StoreStackrp does not use StoreStack services
 
 [**CSV Example**](/specification/data/saas_examples/spend_agreements/saas_spend_agreements_a2.csv)
 

@@ -6,9 +6,9 @@ The scenarios described below illustrate how a Cost and Usage [*FOCUS dataset*](
 
 ## Scenario A1: Invoice Up-front for a Purchase of a Service
 
-ACME Corp allows its customers to purchase their service for a term (in this case, a year) for a $10,000. ACME provides AwesomeCorp with a single invoice for their usage. ACME does not provide detailed cost and usage reports to AwesomeCorp throughout the Charge Period after the initial purchase.
+StackLens allows its customers to purchase their service for a term (in this case, a year) for a $10,000. StackLens provides Acme Corp with a single invoice for their usage. StackLens does not provide detailed cost and usage reports to Acme Corp throughout the Charge Period after the initial purchase.
 
-Given that ACME does not charge based on or track usage, its usage details are irrelevant to this scenario.
+Given that StackLens does not charge based on or track usage, its usage details are irrelevant to this scenario.
 
 [**CSV Example**](/specification/data/saas_examples/simple_agreements/simple_saas_agreements_a1.csv)
 
@@ -20,9 +20,9 @@ Note the following details in the example dataset:
   
 ## Scenario A2: Invoice Up-front for a Quantity of a Service
 
-ACME Corp offers its customer the ability to purchase a fixed quantity of licenses for their service. ACME provides AwesomeCorp with a single invoice for their usage. ACME does not provide detailed cost and usage reports to AwesomeCorp throughout the Charge Period after the initial purchase.
+StackLens offers its customer the ability to purchase a fixed quantity of licenses for their service. StackLens provides Acme Corp with a single invoice for their usage. StackLens does not provide detailed cost and usage reports to Acme Corp throughout the Charge Period after the initial purchase.
 
-On April 1st, 2025, ACME executes a contract and invoices AwesomeCorp $50,000 (Billed Cost) for a Charge Period of April 1st 2025 to April 1st 2026. As there is no negotiated discount, List Cost of the purchase is also $50,000.
+On April 1st, 2025, StackLens executes a contract and invoices Acme Corp $50,000 (Billed Cost) for a Charge Period of April 1st 2025 to April 1st 2026. As there is no negotiated discount, List Cost of the purchase is also $50,000.
 
 [**CSV Example**](/specification/data/saas_examples/simple_agreements/simple_saas_agreements_a2.csv)
 
@@ -34,7 +34,7 @@ Note the following details in the example dataset:
 
 ## Scenario A3: Additional Purchase Records Provided in the SaaS Data Generator's FOCUS Dataset
 
-On June 1st 2025 ACME provides the following records due to AwesomeCorp's $1,000 mid-contract purchase of an additional 10 licenses for the same Charge Period (April 1st 2025 to April 1st 2026).
+On June 1st 2025 StackLens provides the following records due to Acme Corp's $1,000 mid-contract purchase of an additional 10 licenses for the same Charge Period (April 1st 2025 to April 1st 2026).
 
 [**CSV Example**](/specification/data/saas_examples/simple_agreements/simple_saas_agreements_a3.csv)
 
@@ -44,9 +44,9 @@ Note the following additional details in the example dataset:
 
 ## Scenario B: Billed in Arrears for a Quantity of a Service
 
-Similar to Scenario A above, ACME Corp offers its customer the ability to purchase their service with a fixed quantity of licenses. However, in Scenario B, ACME issues the invoice at the end of the usage period.
+Similar to Scenario A above, StackLens offers its customer the ability to purchase their service with a fixed quantity of licenses. However, in Scenario B, StackLens issues the invoice at the end of the usage period.
 
-On April 1st, 2026, ACME invoices AwesomeCorp $50,000 (Billed Cost) for the Charge Period of April 1st 2025 to April 1st 2026. As there is no negotiated discount, List Cost of the purchase is also $50,000.
+On April 1st, 2026, StackLens invoices Acme Corp $50,000 (Billed Cost) for the Charge Period of April 1st 2025 to April 1st 2026. As there is no negotiated discount, List Cost of the purchase is also $50,000.
 
 [**CSV Example**](/specification/data/saas_examples/simple_agreements/simple_saas_agreements_b.csv)
 
@@ -56,17 +56,17 @@ Note the following additional details in the example dataset:
 
 ## Scenario C: Simple SaaS Agreement with Monthly Billing
 
-Like Scenario A2 above, ACME Corp offers its customers the ability to purchase their service with a fixed quantity of licenses. However, in Scenario C, ACME issues invoices at the end of each month (usage period).
+Like Scenario A2 above, StackLens offers its customers the ability to purchase their service with a fixed quantity of licenses. However, in Scenario C, StackLens issues invoices at the end of each month (usage period).
 For this scenario, contract terms additionally include the following terms:
 
-* ACME charges users monthly for the licenses that were consumed in that Billing Period
+* StackLens charges users monthly for the licenses that were consumed in that Billing Period
 * The licenses are charged at $20 per license per month
 
-AwesomeCorp's consumption looks like this:
+Acme Corp's consumption looks like this:
 
-* In April 2025, AwesomeCorp uses 505 licenses
-* In May 2025, AwesomeCorp uses 650 licenses
-* In June 2025, AwesomeCorp uses 635 licenses
+* In April 2025, Acme Corp uses 505 licenses
+* In May 2025, Acme Corp uses 650 licenses
+* In June 2025, Acme Corp uses 635 licenses
 
 [**CSV Example**](/specification/data/saas_examples/simple_agreements/simple_saas_agreements_c.csv)
 
