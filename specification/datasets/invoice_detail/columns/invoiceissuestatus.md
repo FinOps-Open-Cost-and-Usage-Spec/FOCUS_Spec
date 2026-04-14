@@ -47,7 +47,7 @@ The publication state of the invoice and the reliability of its associated deliv
 | Data type       | String                          |
 | Value format    | \<unspecified>                  |
 
-Allowed values:
+## Allowed Values
 
 | Value  | Description |
 | :---   | :---        |
