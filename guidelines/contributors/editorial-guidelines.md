@@ -189,9 +189,9 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 
 * **Entity IDs:** Entity IDs (e.g., Column IDs, Attribute IDs, Dataset IDs) SHOULD be used in normative text sections, such as when specifying mandatory rules, schema definitions, or other implementation-related content. 
 
-* **Entity IDs:** MUST be formatted without spaces.
+* **Entity ID Spacing:** Entity IDs MUST be formatted without spaces.
 
-* **Entity IDs:** MUST match the exact naming conventions used in the schema (e.g., CommitmentDiscountId).
+* **Entity IDs Matching Schema:** Entity IDs MUST match the exact naming conventions used in the schema (e.g., CommitmentDiscountId).
 
 * **Display Names:** Display Names SHOULD be used in introductory or explanatory sections where natural language context is more appropriate. These names should follow normal text conventions, including spaces between words (e.g., Commitment Discount ID).
 
