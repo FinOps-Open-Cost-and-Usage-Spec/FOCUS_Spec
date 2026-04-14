@@ -90,7 +90,6 @@ The recommended pattern for a normative requirement is:
   * identify exactly one **normative subject** to which the requirement applies
   * contain exactly one **BCP 14 keyword** (MUST, SHOULD, MAY, MUST NOT, etc.), indicating the obligation level
   * express exactly one **verifiable constraint**
-  * be split into multiple bullets if it introduces multiple independent constraints.
 * Each normative requirement SHOULD describe a **verifiable state** of the object rather than behavior
 
 ### Explicit Conditions in Normative Requirements
