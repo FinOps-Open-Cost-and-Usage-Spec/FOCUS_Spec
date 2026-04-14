@@ -26,7 +26,7 @@ Invoice Detail ID
 
 The invoice-issuer-assigned identifier for an Invoice Detail record encapsulating charges in the corresponding billing period for a given billing account.
 
-## Content constraints
+## Content Constraints
 
 |    Constraint    |              Value             |
 |:----------------|:--------------------------------|

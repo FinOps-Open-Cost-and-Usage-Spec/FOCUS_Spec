@@ -24,7 +24,7 @@ Invoice Detail Description
 
 The invoice-issuer-provided description of an invoice line item.
 
-## Content constraints
+## Content Constraints
 
 |    Constraint    |              Value             |
 |:----------------|:--------------------------------|

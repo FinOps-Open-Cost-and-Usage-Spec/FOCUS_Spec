@@ -16,7 +16,7 @@ DatasetInstanceName
 
 Dataset Instance Name
 
-## Content constraints
+## Content Constraints
 
 | Constraint    | Value            |
 |:--------------|:-----------------|

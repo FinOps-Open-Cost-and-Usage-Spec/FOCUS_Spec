@@ -31,7 +31,7 @@ Pricing Category
 
 Describes the pricing model used for a *charge* at the time of use or purchase.
 
-## Content constraints
+## Content Constraints
 
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |

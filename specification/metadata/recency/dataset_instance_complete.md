@@ -16,7 +16,7 @@ DatasetInstanceComplete
 
 Dataset Instance Complete
 
-## Content constraints
+## Content Constraints
 
 | Constraint    | Value             |
 |:--------------|:------------------|

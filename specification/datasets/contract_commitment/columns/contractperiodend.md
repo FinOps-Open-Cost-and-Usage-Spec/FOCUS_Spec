@@ -23,7 +23,7 @@ Contract Period End
 
 The *exclusive end bound* of a *contract period*.
 
-## Content constraints
+## Content Constraints
 
 | Constraint      | Value                                                |
 |:----------------|:-----------------------------------------------------|

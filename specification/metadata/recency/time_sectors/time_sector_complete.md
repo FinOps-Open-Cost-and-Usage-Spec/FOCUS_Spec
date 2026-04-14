@@ -16,7 +16,7 @@ TimeSectorComplete
 
 Time Sector Complete
 
-## Content constraints
+## Content Constraints
 
 | Constraint    | Value             |
 |:--------------|:------------------|

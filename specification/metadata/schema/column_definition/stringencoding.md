@@ -16,7 +16,7 @@ StringEncoding
 
 StringEncoding
 
-## Content constraints
+## Content Constraints
 
 | Constraint      | Value            |
 |:----------------|:-----------------|

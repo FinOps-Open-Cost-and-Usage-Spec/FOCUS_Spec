@@ -23,7 +23,7 @@ Payment Due Date
 
 The date by which the payment for an invoice is expected to be received by the invoice issuer.
 
-## Content constraints
+## Content Constraints
 
 |    Constraint    |              Value             |
 |:----------------|:--------------------------------|
