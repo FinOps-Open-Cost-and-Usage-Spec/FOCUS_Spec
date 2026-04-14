@@ -18,7 +18,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "SkuMeter adheres to the following requirements:",
+      "MustSatisfy": "SkuMeter MUST adhere to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -119,7 +119,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "SkuMeter nullability is defined as follows:",
+      "MustSatisfy": "SkuMeter MUST adhere to the following nullabilityrequirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
