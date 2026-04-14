@@ -284,6 +284,8 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 
 ### Examples
 
+> Note: Authors should consult the actual FOCUS attribute specification files as the source of truth, as these guidelines do not necessarily reflect the latest version.
+
 * **Valid Examples:** Examples MUST reflect valid combinations of values defined in the specification.
 
 * **No New Terminology:** Examples MUST NOT introduce terminology that is not defined in the specification.
