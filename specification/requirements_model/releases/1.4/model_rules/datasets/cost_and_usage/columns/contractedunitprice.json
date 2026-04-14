@@ -33,6 +33,10 @@
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-ContractedUnitPrice-C-008-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ContractedUnitPrice-C-013-C"
           }
         ]
       },
@@ -41,7 +45,8 @@
         "CAU-CostAndUsage-D-034-C",
         "CAU-ContractedUnitPrice-C-001-M",
         "CAU-ContractedUnitPrice-C-004-M",
-        "CAU-ContractedUnitPrice-C-008-C"
+        "CAU-ContractedUnitPrice-C-008-C",
+        "CAU-ContractedUnitPrice-C-013-C"
       ]
     }
   },
@@ -480,8 +485,7 @@
     "EntityId": "ContractedUnitPrice",
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
-    "ModelVersionRemoved": "1.4",
-    "Status": "Removed",
+    "Status": "Active",
     "ApplicabilityCriteria": [],
     "Order": 140,
     "DatasetType": "CAU",
