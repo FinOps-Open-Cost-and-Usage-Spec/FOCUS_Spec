@@ -1,4 +1,4 @@
-# AWS Savings Plan - All Upfront - 50% Utilization
+# Aura Web Flexible Spend Plan - All Upfront - 50% Utilization
 
 | Parameter                    | Value               |
 | ---------------------------- | ------------------- |
@@ -10,11 +10,11 @@
 | Annual Commitment            | $693,003.60  |
 | List Unit Price              | $118.67/hour |
 
-[CSV Example](/specification/data/commitment_discount_scenarios/aws_savings_plan_all_upfront_50pct.csv)
+[CSV Example](/specification/data/commitment_discount_scenarios/aura_web_flexible_spend_plan_all_upfront_50pct.csv)
 
 ## Scenario Description
 
-This example shows an **Amazon Web Services EC2 Instance Savings Plan**, which is a commitment (with a Commitment Discount Category of `Spend`) where you commit to a specific dollar amount of usage per hour.
+This example shows an **Aura Web Flexible Spend Plan**, which is a commitment (with a Commitment Discount Category of `Spend`) where you commit to a specific dollar amount of usage per hour.
 
 The **All Upfront** payment option means the entire commitment cost is paid at purchase time. This results in a single Purchase row with the full BilledCost and zero EffectiveCost (since the cost is amortized to usage rows).
 
@@ -54,7 +54,7 @@ These three quantity columns serve different purposes and must be understood in 
 | **ListUnitPrice**       | List (public) unit price | $118.67     |
 | **ContractedUnitPrice** | Negotiated unit price    | $118.67     |
 
-**Why this matters:** ContractedUnitPrice reflects enterprise-negotiated pricing (e.g., EDP rates), not commitment discount savings. In non-negotiated scenarios, ContractedUnitPrice equals ListUnitPrice. Commitment discount savings are reflected in EffectiveCost, not in unit prices.
+**Why this matters:** ContractedUnitPrice reflects enterprise-negotiated pricing (e.g., enterprise-negotiated rates), not commitment discount savings. In non-negotiated scenarios, ContractedUnitPrice equals ListUnitPrice. Commitment discount savings are reflected in EffectiveCost, not in unit prices.
 
 ### Cost Columns: BilledCost vs EffectiveCost vs ListCost
 
@@ -82,8 +82,8 @@ The following critical rules apply to commitment discount data:
 | CommitmentDiscountStatus   | null                                 | Status only applies to usage rows                           |
 | CommitmentDiscountQuantity | 693,003.60                           | Full annual commitment ($79.11/hr &times; 8,760 hrs) |
 | CommitmentDiscountUnit     | USD                                  | Unit of commitment capacity (spend-based)                   |
-| SkuId                      | AWS-USEAST1-COMPUTE-PURCHASE         | Commitment purchase SKU                                     |
-| SkuPriceId                 | AWS-USEAST1-COMPUTE-PURCHASE-UPFRONT | Price point for upfront purchase                            |
+| SkuId                      | AW-USEAST1-COMPUTE-PURCHASE         | Commitment purchase SKU                                     |
+| SkuPriceId                 | AW-USEAST1-COMPUTE-PURCHASE-UPFRONT | Price point for upfront purchase                            |
 
 ## Usage Row Details (Commitment-Covered)
 
@@ -98,9 +98,9 @@ The following critical rules apply to commitment discount data:
 | ConsumedQuantity           | 1                                                     | Hours used                                 |
 | CommitmentDiscountQuantity | 79.11                                                 | Hourly commitment spend applied            |
 | CommitmentDiscountStatus   | Used                                                  | Commitment applied                         |
-| CommitmentDiscountId       | arn:aws:savingsplans::123456789012:savingsplan/sp-... | Links usage to purchase                    |
-| SkuId                      | AWS-USEAST1-COMPUTE-USAGE                             | Resource usage SKU (differs from Purchase) |
-| SkuPriceId                 | AWS-USEAST1-COMPUTE-USAGE-COMMITTED                   | Price point for committed usage            |
+| CommitmentDiscountId       | aw:flexspend::123456789012:flexspendplan/fsp-... | Links usage to purchase                    |
+| SkuId                      | AW-USEAST1-COMPUTE-USAGE                             | Resource usage SKU (differs from Purchase) |
+| SkuPriceId                 | AW-USEAST1-COMPUTE-USAGE-COMMITTED                   | Price point for committed usage            |
 
 ## Unused Commitment Row Details
 
@@ -114,10 +114,10 @@ The following critical rules apply to commitment discount data:
 | ConsumedQuantity           | null                                                           | **No resource consumed**                           |
 | CommitmentDiscountQuantity | 79.11                                                          | Commitment wasted                                  |
 | CommitmentDiscountStatus   | Unused                                                         | Commitment not utilized                            |
-| ResourceId                 | arn:aws:savingsplans::123456789012:savingsplan/sp-abc123def456 | must equal CommitmentDiscountId (no resource used) |
-| ResourceName               | EC2 Instance Savings Plan                                      | Carried from Purchase row (no resource consumed)   |
+| ResourceId                 | aw:flexspend::123456789012:flexspendplan/fsp-abc123def456 | must equal CommitmentDiscountId (no resource used) |
+| ResourceName               | Compute Flexible Spend Plan                                      | Carried from Purchase row (no resource consumed)   |
 | ResourceType               | Commitment                                                     | Carried from Purchase row (no resource consumed)   |
-| SkuId                      | AWS-USEAST1-COMPUTE-PURCHASE                                   | must match Purchase row (no resource consumed)     |
-| SkuPriceId                 | AWS-USEAST1-COMPUTE-PURCHASE-UPFRONT                           | must match Purchase row                            |
+| SkuId                      | AW-USEAST1-COMPUTE-PURCHASE                                   | must match Purchase row (no resource consumed)     |
+| SkuPriceId                 | AW-USEAST1-COMPUTE-PURCHASE-UPFRONT                           | must match Purchase row                            |
 
 For spend-based unused rows, PricingUnit is USD and PricingQuantity is the hourly commitment amount. ListCost = ListUnitPrice ($1.00) &times; PricingQuantity, which equals the wasted commitment dollars per hour.

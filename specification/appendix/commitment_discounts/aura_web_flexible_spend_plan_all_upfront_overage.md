@@ -1,4 +1,4 @@
-# AWS Savings Plan - All Upfront - 100% Utilization with Overage
+# Aura Web Flexible Spend Plan - All Upfront - 100% Utilization with Overage
 
 | Parameter                    | Value                                                    |
 | ---------------------------- | -------------------------------------------------------- |
@@ -10,15 +10,15 @@
 | Annual Commitment            | $211,992.00                                       |
 | List Unit Price              | $36.30/hour                                       |
 
-[CSV Example](/specification/data/commitment_discount_scenarios/aws_savings_plan_all_upfront_overage.csv)
+[CSV Example](/specification/data/commitment_discount_scenarios/aura_web_flexible_spend_plan_all_upfront_overage.csv)
 
 ## Scenario Description
 
-This example shows an **Amazon Web Services EC2 Instance Savings Plan**, which is a commitment (with a Commitment Discount Category of `Spend`) where you commit to a specific dollar amount of usage per hour.
+This example shows an **Aura Web Flexible Spend Plan**, which is a commitment (with a Commitment Discount Category of `Spend`) where you commit to a specific dollar amount of usage per hour.
 
 The **All Upfront** payment option means the entire commitment cost is paid at purchase time. This results in a single Purchase row with the full BilledCost and zero EffectiveCost (since the cost is amortized to usage rows).
 
-This scenario demonstrates **100% utilization with overage** where demand exceeds commitment capacity. The 24 Used rows represent full utilization of the commitment. The 12 Standard rows represent EC2 usage beyond the commitment that spills to standard pricing. Standard pricing rows have no CommitmentDiscountStatus, PricingCategory='Standard', and BilledCost=EffectiveCost at the full list price.
+This scenario demonstrates **100% utilization with overage** where demand exceeds commitment capacity. The 24 Used rows represent full utilization of the commitment. The 12 Standard rows represent compute usage beyond the commitment that spills to standard pricing. Standard pricing rows have no CommitmentDiscountStatus, PricingCategory='Standard', and BilledCost=EffectiveCost at the full list price.
 
 ## Row Summary
 
@@ -54,7 +54,7 @@ These three quantity columns serve different purposes and must be understood in 
 | **ListUnitPrice**       | List (public) unit price | $36.30      | $36.30 |
 | **ContractedUnitPrice** | Negotiated unit price    | $36.30      | $36.30 |
 
-**Why this matters:** ContractedUnitPrice reflects enterprise-negotiated pricing (e.g., EDP rates), not commitment discount savings. In non-negotiated scenarios, ContractedUnitPrice equals ListUnitPrice. Commitment discount savings are reflected in EffectiveCost, not in unit prices.
+**Why this matters:** ContractedUnitPrice reflects enterprise-negotiated pricing (e.g., enterprise-negotiated rates), not commitment discount savings. In non-negotiated scenarios, ContractedUnitPrice equals ListUnitPrice. Commitment discount savings are reflected in EffectiveCost, not in unit prices.
 
 ### Cost Columns: BilledCost vs EffectiveCost vs ListCost
 
@@ -82,8 +82,8 @@ The following critical rules apply to commitment discount data:
 | CommitmentDiscountStatus   | null                                 | Status only applies to usage rows                           |
 | CommitmentDiscountQuantity | 211,992.00                           | Full annual commitment ($24.20/hr &times; 8,760 hrs) |
 | CommitmentDiscountUnit     | USD                                  | Unit of commitment capacity (spend-based)                   |
-| SkuId                      | AWS-USEAST1-COMPUTE-PURCHASE         | Commitment purchase SKU                                     |
-| SkuPriceId                 | AWS-USEAST1-COMPUTE-PURCHASE-UPFRONT | Price point for upfront purchase                            |
+| SkuId                      | AW-USEAST1-COMPUTE-PURCHASE         | Commitment purchase SKU                                     |
+| SkuPriceId                 | AW-USEAST1-COMPUTE-PURCHASE-UPFRONT | Price point for upfront purchase                            |
 
 ## Usage Row Details (Commitment-Covered)
 
@@ -98,9 +98,9 @@ The following critical rules apply to commitment discount data:
 | ConsumedQuantity           | 1                                                     | Hours used                                 |
 | CommitmentDiscountQuantity | 24.20                                                 | Hourly commitment spend applied            |
 | CommitmentDiscountStatus   | Used                                                  | Commitment applied                         |
-| CommitmentDiscountId       | arn:aws:savingsplans::123456789012:savingsplan/sp-... | Links usage to purchase                    |
-| SkuId                      | AWS-USEAST1-COMPUTE-USAGE                             | Resource usage SKU (differs from Purchase) |
-| SkuPriceId                 | AWS-USEAST1-COMPUTE-USAGE-COMMITTED                   | Price point for committed usage            |
+| CommitmentDiscountId       | aw:flexspend::123456789012:flexspendplan/fsp-... | Links usage to purchase                    |
+| SkuId                      | AW-USEAST1-COMPUTE-USAGE                             | Resource usage SKU (differs from Purchase) |
+| SkuPriceId                 | AW-USEAST1-COMPUTE-USAGE-COMMITTED                   | Price point for committed usage            |
 
 ## Standard Pricing Usage Row Details
 
@@ -117,5 +117,5 @@ The following critical rules apply to commitment discount data:
 | CommitmentDiscountStatus   | null                                  | No commitment                                 |
 | CommitmentDiscountId       | null                                  | No associated commitment                      |
 | ContractedUnitPrice        | $36.30                         | Equals ListUnitPrice (no negotiated discount) |
-| SkuId                      | AWS-USEAST1-COMPUTE-ONDEMAND          | Standard (on-demand) resource SKU             |
-| SkuPriceId                 | AWS-USEAST1-COMPUTE-ONDEMAND-STANDARD | Price point for standard pricing              |
+| SkuId                      | AW-USEAST1-COMPUTE-ONDEMAND          | Standard (on-demand) resource SKU             |
+| SkuPriceId                 | AW-USEAST1-COMPUTE-ONDEMAND-STANDARD | Price point for standard pricing              |

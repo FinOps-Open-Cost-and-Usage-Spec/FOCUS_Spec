@@ -1,4 +1,4 @@
-# GCP Flex CUD - No Upfront - 100% Utilization
+# LatticeScale Dynamic Compute Commitment - No Upfront - 100% Utilization
 
 | Parameter                    | Value              |
 | ---------------------------- | ------------------ |
@@ -10,13 +10,13 @@
 | Annual Commitment            | $553,018.80 |
 | List Unit Price              | $94.70/hour |
 
-[CSV Example](/specification/data/commitment_discount_scenarios/gcp_flex_cud_no_upfront_100pct.csv)
+[CSV Example](/specification/data/commitment_discount_scenarios/latticescale_dynamic_compute_commitment_no_upfront_100pct.csv)
 
 ## Scenario Description
 
-This example shows a **Google Cloud Platform Spend-based CUD**, which is a commitment (with a Commitment Discount Category of `Spend`) where you commit to a specific dollar amount of usage per hour.
+This example shows a **LatticeScale Dynamic Compute Commitment**, which is a commitment (with a Commitment Discount Category of `Spend`) where you commit to a specific dollar amount of usage per hour.
 
-The **No Upfront** payment option means you pay nothing at purchase time and instead pay a recurring monthly fee. GCP CUDs are billed monthly with no upfront payment option. This results in a recurring Purchase row each billing period with BilledCost equal to the monthly fee and zero EffectiveCost.
+The **No Upfront** payment option means you pay nothing at purchase time and instead pay a recurring monthly fee. LatticeScale commitments are billed monthly with no upfront payment option. This results in a recurring Purchase row each billing period with BilledCost equal to the monthly fee and zero EffectiveCost.
 
 This scenario demonstrates **full utilization** where exactly 100% of the commitment capacity is consumed. All usage rows have CommitmentDiscountStatus='Used', indicating the commitment was fully applied. BilledCost=0 on usage rows because they're covered by the commitment.
 
@@ -53,7 +53,7 @@ These three quantity columns serve different purposes and must be understood in 
 | **ListUnitPrice**       | List (public) unit price | $94.70      |
 | **ContractedUnitPrice** | Negotiated unit price    | $94.70      |
 
-**Why this matters:** ContractedUnitPrice reflects enterprise-negotiated pricing (e.g., EDP rates), not commitment discount savings. In non-negotiated scenarios, ContractedUnitPrice equals ListUnitPrice. Commitment discount savings are reflected in EffectiveCost, not in unit prices.
+**Why this matters:** ContractedUnitPrice reflects enterprise-negotiated pricing (e.g., enterprise-negotiated rates), not commitment discount savings. In non-negotiated scenarios, ContractedUnitPrice equals ListUnitPrice. Commitment discount savings are reflected in EffectiveCost, not in unit prices.
 
 ### Cost Columns: BilledCost vs EffectiveCost vs ListCost
 
@@ -79,8 +79,8 @@ The following critical rules apply to commitment discount data:
 | CommitmentDiscountStatus   | null                                    | Status only applies to usage rows                              |
 | CommitmentDiscountQuantity | 42,423.36                               | Commitment capacity for Feb ($63.13/hr &times; 672 hrs) |
 | CommitmentDiscountUnit     | USD                                     | Unit of commitment capacity (spend-based)                      |
-| SkuId                      | GCP-USCENTRAL1-COMPUTE-PURCHASE         | Commitment purchase SKU                                        |
-| SkuPriceId                 | GCP-USCENTRAL1-COMPUTE-PURCHASE-MONTHLY | Price point for recurring purchase                             |
+| SkuId                      | LS-USCENTRAL1-COMPUTE-PURCHASE         | Commitment purchase SKU                                        |
+| SkuPriceId                 | LS-USCENTRAL1-COMPUTE-PURCHASE-MONTHLY | Price point for recurring purchase                             |
 
 ## Usage Row Details (Commitment-Covered)
 
@@ -95,6 +95,6 @@ The following critical rules apply to commitment discount data:
 | ConsumedQuantity           | 1                                                     | Hours used                                 |
 | CommitmentDiscountQuantity | 63.13                                                 | Hourly commitment spend applied            |
 | CommitmentDiscountStatus   | Used                                                  | Commitment applied                         |
-| CommitmentDiscountId       | projects/my-project-123456/locations/us-central1/c... | Links usage to purchase                    |
-| SkuId                      | GCP-USCENTRAL1-COMPUTE-USAGE                          | Resource usage SKU (differs from Purchase) |
-| SkuPriceId                 | GCP-USCENTRAL1-COMPUTE-USAGE-COMMITTED                | Price point for committed usage            |
+| CommitmentDiscountId       | ls:compute:us-central1:proj-123456:commitment-dis... | Links usage to purchase                    |
+| SkuId                      | LS-USCENTRAL1-COMPUTE-USAGE                          | Resource usage SKU (differs from Purchase) |
+| SkuPriceId                 | LS-USCENTRAL1-COMPUTE-USAGE-COMMITTED                | Price point for committed usage            |
