@@ -258,6 +258,11 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 * **Spelling Out Numbers**: In standard prose, numbers zero through nine MUST be spelled out as words (e.g., "one", "two", "nine"), while numbers 10 and above MUST be written as numerals (e.g., "10", "42"). 
   * **Exception:** This rule DOES NOT apply to technical values, mathematical formulas, JSON examples, or explicit column constraints (e.g., write `BilledCost MUST be 0`, not `BilledCost MUST be zero`).
 
+* **Dash Formatting:**
+  * An unspaced hyphen (`-`) MUST be used for compound words (e.g., `cost-only`) and ranges (e.g., `2024-2025`).
+  * A spaced hyphen (` - `) MUST be used to set off parenthetical phrases (e.g., `The metric - BilledCost - is required.`).
+  * HTML entities and special unicode dash characters SHOULD NOT be used.
+
 ### JSON Formatting
 
 * **Valid JSON:** JSON examples MUST be valid and complete.
