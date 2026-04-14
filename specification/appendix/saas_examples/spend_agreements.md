@@ -9,7 +9,7 @@ The scenarios described below illustrate how a Cost and Usage [*FOCUS dataset*](
 The following baseline conditions apply to the scenarios described below:
 
 * AwesomeCorp has signed an agreement with SaaS service provider Acme Co to use their database services
-* On April 1 2025, AwesomeCorp agrees to spend &dollar;1200 (post-discounts) in the upcoming 12-months
+* On April 1 2025, AwesomeCorp agrees to spend $1200 (post-discounts) in the upcoming 12-months
 * AwesomeCorp receives a 20% negotiated discount in return for the commitment
 * Acme Co calculates the spend counted against the agreements after discounts (like the negotiated discounts). Other service providers may use the cost after discounts i.e., using List Cost for calculating the spend commitment.
 
@@ -27,7 +27,7 @@ For this scenario, contract additionally includes the following terms:
 
 AwesomeCorp's consumption looks like this:
 
-* In the first month, AwesomeCorp uses &dollar;48 of services (4 server hours). This usage has a List Cost of &dollar;60 (before discounts)
+* In the first month, AwesomeCorp uses $48 of services (4 server hours). This usage has a List Cost of $60 (before discounts)
 * In the following 2 months, AwesomeCorp has some more usage
 * For the final 9 months, AwesomeCorp does not use Acme services
 
@@ -41,11 +41,11 @@ Note the following details in the example dataset:
 
 The spend agreement with Acme requires the customer to spend a minimum amount in each Billing Period (monthly). Unused fees are charged per Billing Period when the consumption is below this level (use-it or lose-it). For this scenario, contract additionally includes the following terms:
 
-* A minimum of &dollar;60 needs to be spent each month
+* A minimum of $60 needs to be spent each month
 
 AwesomeCorp's consumption looks like this:
 
-* In the first month, the AwesomeCorp uses &dollar;48 of services (4 server hours). This usage has a List Cost of &dollar;60 (before discounts). For this month, Acme charges &dollar;12 (ListCost of &dollar;15) for not meeting the monthly minimum
+* In the first month, the AwesomeCorp uses $48 of services (4 server hours). This usage has a List Cost of $60 (before discounts). For this month, Acme charges $12 (ListCost of $15) for not meeting the monthly minimum
 * In the following 2 months, AwesomeCorp has usage at or above the minimum requirement
 * For the final 9 months, AwesomeCorp does not use Acme services
 
@@ -70,8 +70,8 @@ Scenario B1 is similar to scenario A1 with the difference being that it's a pre-
 
 Note the following details in the example dataset:
 
-* A purchase record for the initial &dollar;1200 payment is present representing List, Billed, and Contracted cost of the purchase
-* The charge for the unused amount has a &dollar;0 BilledCost (since the total amount was billed with the prepayment). However, the charge captures the unused portion as an EffectiveCost.
+* A purchase record for the initial $1200 payment is present representing List, Billed, and Contracted cost of the purchase
+* The charge for the unused amount has a $0 BilledCost (since the total amount was billed with the prepayment). However, the charge captures the unused portion as an EffectiveCost.
 * The unused charge rows apply to the entire Charge Period the contract was signed for.
 * This scenario shows List Cost and Contracted Cost column double counting dynamic (described here in [ListCost](#datasets.costandusage.listcost) and [ContractedCost](#datasets.costandusage.contractedcost)) where either the [ChargeCategory](#datasets.costandusage.chargecategory) Purchase or Usage rows need to be excluded depending on the reporting scenario.
 
@@ -83,7 +83,7 @@ Scenario B2 is similar to A2 with the difference being that it's a pre-paid cont
 
 Note the following details in the example dataset:
 
-* A purchase record for the initial &dollar;1200 payment is present representing List, Billed, and Contracted cost of the purchase
-* The monthly charge for the unused amount has a &dollar;0 BilledCost (since the total amount was billed with the prepayment). However, the charge captures the unused portion as an EffectiveCost.
+* A purchase record for the initial $1200 payment is present representing List, Billed, and Contracted cost of the purchase
+* The monthly charge for the unused amount has a $0 BilledCost (since the total amount was billed with the prepayment). However, the charge captures the unused portion as an EffectiveCost.
 * The final month has a charge that captures the overall unmet spend requirement for the 12-month contract. Alternatively, this could be provided as two charges, one for the unused portion of the final month, and one to capture the overall unmet spend requirement.
 * This scenario shows List Cost and Contracted Cost column double counting dynamic (described here in [ListCost](#datasets.costandusage.listcost) and [ContractedCost](#datasets.costandusage.contractedcost)) where either the Purchase or Usage rows need to be excluded depending on the reporting scenario.
