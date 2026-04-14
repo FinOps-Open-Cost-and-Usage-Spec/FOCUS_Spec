@@ -150,17 +150,19 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
 
 ### Linking
 
-* **Linking Only the First Time**: To prevent excessive linking within sections, Entity Names and Entity IDs (e.g., Column Names, Attribute IDs, and Glossary) will only be linked to their corresponding section or glossary the first time they appear in a section.
+* **Linking Only the First Time:** To prevent excessive linking within sections, Entity Names and Entity IDs (e.g., Column Names, Attribute IDs, and Glossary) will only be linked to their corresponding section or glossary the first time they appear in a section.
 
 ### Entity References
 
-* **Entity IDs:** Entity IDs (e.g., Column IDs, Attribute IDs, Dataset IDs), formatting and usage conventions for normative requirements are defined in the Normative Requirements Guidelines. 
+* **Entity IDs - Reference:** Formatting and usage conventions for normative requirements are defined in the Normative Requirements Guidelines.
 
-* **Entity IDs:** MUST be formatted without spaces.
+* **Entity IDs - Formatting:** Entity IDs MUST be formatted without spaces.
 
-* **Entity IDs:** MUST match the exact naming conventions used in the schema (e.g., CommitmentDiscountId).
+* **Entity IDs - Naming:** Entity IDs MUST match the exact naming conventions used in the schema (e.g., CommitmentDiscountId).
 
-* **Display Names:** Display Names SHOULD be used in introductory or explanatory sections where natural language context is more appropriate. These names should follow normal text conventions, including spaces between words (e.g., Commitment Discount ID).
+* **Display Names - Usage:** Display Names SHOULD be used in introductory or explanatory sections where natural language context is more appropriate. 
+
+* **Display Names - Formatting:** Display Names SHOULD follow normal text conventions, including spaces between words (e.g., Commitment Discount ID).
 
 * **Entity Scope:** These rules apply to all entities defined in the FOCUS specification (e.g., Columns, Attributes, Datasets, Objects).
 
@@ -183,9 +185,9 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
           * ... MUST be of type ...
     ```
 
-* **No Skipped Levels:** Nested bullets MUST NOT skip indentation levels.
+* **No Skipped Levels:** Nested bullets points MUST NOT skip indentation levels.
 
-* **Consistent Indentation:** All bullets within the same list MUST use consistent indentation.
+* **Consistent Indentation:** All bullets points within the same list MUST use consistent indentation.
 
 * **Example** (Markdown, illustrative):
 
@@ -196,7 +198,7 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
 
 ### Formatting
 
-* **Introductory Phrase for Rules:** Normative bullet lists SHOULD be preceded by a short introductory phrase ending with a colon (:). 
+* **Introductory Phrase for Rules:** Normative bullet lists SHOULD be preceded by a short introductory phrase ending with a colon (:).
 
 * **Example** (Markdown, illustrative):
 
@@ -217,7 +219,7 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
 
 ### Section Structure
 
-* **Consistent Subsection Order:** Sections for the same entity type SHOULD follow the same subsection order (e.g., Title, Requirements, Entity ID, Display Name, Description, Content Constraints, Introduced (version)).
+* **Consistent Subsection Order:** Sections for the same entity type SHOULD follow a consistent subsection order (e.g., Title, Requirements, Entity ID, Display Name, Description, Content Constraints, Introduced (version)).
 
 * **Consistent Subsection Titles:** Subsection titles SHOULD match exactly across sections of the same entity type.
 
@@ -259,7 +261,7 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
 
 * **Informative Notes:** Important notes MUST NOT contain normative keywords.
 
-* **Currency and Dollar Signs:** Use literal `$` for currency values in prose and tables. For build-pipeline behavior and troubleshooting related to dollar-sign parsing, see [MarkdownPP Guidelines](markdownpp-guidelines.md#currency-and-dollar-sign-handling).
+* **Currency and Dollar Signs:** The `$` symbol SHOULD be used for currency values in prose and tables. For build-pipeline behavior and troubleshooting related to dollar-sign parsing, see [MarkdownPP Guidelines](markdownpp-guidelines.md#currency-and-dollar-sign-handling).
 
 ### Example
 
