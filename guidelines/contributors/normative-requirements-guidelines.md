@@ -90,6 +90,7 @@ The recommended pattern for a normative requirement is:
   * identify exactly one **normative subject** to which the requirement applies
   * contain exactly one **BCP 14 keyword** (MUST, SHOULD, MAY, MUST NOT, etc.), indicating the obligation level
   * express exactly one **verifiable constraint**
+  * be split into multiple bullets if it introduces multiple independent constraints.
 * Each normative requirement SHOULD describe a **verifiable state** of the object rather than behavior
 
 ### Explicit Conditions in Normative Requirements
@@ -195,6 +196,10 @@ Specifically:
 * If a requirement refers to actor behavior, it MUST be expressed as:
   * a constraint on the resulting dataset state, or
   * a constraint on a schema-defined artifact.
+
+### Tone and Grammar
+
+In order to maintain a formal, professional tone throughout the specification, contractions MUST NOT be used in normative requirements (e.g., use "do not" instead of "don't").
 
 ### Use of BCP 14 Keywords
 
