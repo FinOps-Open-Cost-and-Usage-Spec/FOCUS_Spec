@@ -36,10 +36,6 @@
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-PricingCurrencyEffectiveCost-C-004-M"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-PricingCurrencyEffectiveCost-C-005-M"
           },
           {
@@ -54,7 +50,6 @@
         "CAU-PricingCurrencyEffectiveCost-C-001-M",
         "CAU-PricingCurrencyEffectiveCost-C-002-M",
         "CAU-PricingCurrencyEffectiveCost-C-003-M",
-        "CAU-PricingCurrencyEffectiveCost-C-004-M",
         "CAU-PricingCurrencyEffectiveCost-C-005-M",
         "CAU-PricingCurrencyEffectiveCost-C-006-M"
       ]
@@ -147,7 +142,8 @@
     "EntityId": "PricingCurrencyEffectiveCost",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "ApplicabilityCriteria": [],
     "Order": 80,
     "DatasetType": "CAU",
