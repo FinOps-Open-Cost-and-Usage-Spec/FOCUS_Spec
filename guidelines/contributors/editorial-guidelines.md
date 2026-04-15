@@ -192,7 +192,7 @@ To ensure consistent language when describing relationships and evaluations betw
 * **Example** (illustrative):
 
     ```md
-    ... MUST adhere to the following rules:
+    ... MUST adhere to the following requirements:
 
     * ... MUST be of type JSON ...
     * ... MUST adhere to the following nullability requirements:
