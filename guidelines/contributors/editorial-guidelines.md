@@ -339,7 +339,7 @@ To ensure consistent language when describing relationships and evaluations betw
 
 * **Normative Scope:** Exceptions MUST NOT introduce or redefine normative requirements. If a condition represents a normative constraint, it MUST be expressed as a formal normative requirement instead.
 
-* **Avoidance in Normative Content:** Exceptions SHOULD be avoided in normative requirements. Authors SHOULD instead express conditions explicitly using structured requirement patterns (e.g., “when”, “unless”, “only if”).
+* **Avoidance in Normative Content:** Exceptions SHOULD be avoided in normative requirements. Authors SHOULD instead express conditions explicitly using structured requirement patterns (e.g., “when”, “unless”).
 
 * **Example** (Markdown, illustrative):
 
