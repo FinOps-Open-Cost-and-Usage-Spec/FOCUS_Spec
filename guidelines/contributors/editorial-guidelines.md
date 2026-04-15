@@ -333,8 +333,6 @@ To ensure consistent language when describing relationships and evaluations betw
 
 * **Single Exception:** A single exception MAY be expressed as a standalone sentence or as a single bullet point.
 
-* **No Pseudo-Headers:** Exceptions MUST NOT use bold text or other formatting to simulate subsection headers (e.g., `**Exceptions:**`), as this violates linting rules.
-
 * **Subsection Usage:** Subsections (headers) MAY be used for exceptions only when necessary for clarity and when consistent with section structure rules.
 
 * **Normative Scope:** Exceptions MUST NOT introduce or redefine normative requirements. If a condition represents a normative constraint, it MUST be expressed as a formal normative requirement instead.
@@ -344,7 +342,7 @@ To ensure consistent language when describing relationships and evaluations betw
 * **Example** (Markdown, illustrative):
 
   ```md
-  Exceptions:
+  **Exceptions:**
   * This rule does not apply when ChargeCategory is `Adjustment`.
   * This rule does not apply when ChargeCategory is `Tax`.
   ```
