@@ -56,8 +56,8 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
           &nbsp;&nbsp; PricingQuantity <br>
           &nbsp;&nbsp; PricingUnit<br>
           &nbsp;&nbsp; ServiceProviderName <br><br>
-          <strong>Attributes IDs:</strong> </br>
-          &nbsp;&nbsp; CurrencyCodeFormat </br>
+          <strong>Attributes IDs:</strong> <br/>
+          &nbsp;&nbsp; CurrencyCodeFormat <br/>
           &nbsp;&nbsp; DateTimeFormat <br>
         </td>
         <td>
@@ -88,10 +88,10 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
             Normative keywords and statements (see Normative Requirements Guidelines)
         </td>
         <td>
-            This column:</br>
-            &nbsp;&nbsp; * MUST NOT be null when ChargeClass is ... </br>
-            &nbsp;&nbsp; * MUST be null when ChargeCategory is ... </br>
-            &nbsp;&nbsp; * MAY be null for all other combinations of ... </br>
+            This column:<br/>
+            &nbsp;&nbsp; * MUST NOT be null when ChargeClass is ... <br/>
+            &nbsp;&nbsp; * MUST be null when ChargeCategory is ... <br/>
+            &nbsp;&nbsp; * MAY be null for all other combinations of ... <br/>
         </td>
         <td>
            - Formatting follows Editorial Guidelines.<br>
@@ -426,7 +426,7 @@ This is an example of a complex table with merged rows and columns, along with a
   </tr>
   <tr>
     <td colspan="2">Cell 2,1 & Cell 2,2</td>
-    <td rowspan="2">Cell 3,3 </br>& </br> Cell 4,3</td>
+    <td rowspan="2">Cell 3,3 <br/>& <br/> Cell 4,3</td>
     <td>Cell 3,4</td>
   </tr>
   <tr>
@@ -457,7 +457,7 @@ This is how it is written in HTML:
   </tr>
   <tr>
     <td colspan="2">Cell 2,1 & Cell 2,2</td>
-    <td rowspan="2">Cell 3,3 </br>& </br> Cell 4,3</td>
+    <td rowspan="2">Cell 3,3 <br/>& <br/> Cell 4,3</td>
     <td>Cell 3,4</td>
   </tr>
   <tr>
