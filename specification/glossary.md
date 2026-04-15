@@ -85,6 +85,10 @@ Commitment discounts are classified with the following designations:
 
 A feature of [*commitment discounts*](#glossary:commitment-discount) that may further transform the predetermined amount of usage purchased or consumed based on additional, service-provider-specific requirements.
 
+<a name="glossary:commitment-program"><b>Commitment Program</b></a>
+
+A service-provider offering that allows a customer to enter into a [*commitment*](#glossary:commitment). Commitment programs include [*commitment discounts*](#glossary:commitment-discount), [*capacity reservations*](#glossary:capacity-reservation), and other constructs that require advance spend or usage agreements.
+
 <a name="glossary:contract"><b>Contract</b></a>
 
 A collection of agreed terms between a service provider and a customer.
@@ -164,6 +168,10 @@ A structured collection of columns that conforms to the BCP14 criteria establish
 In addition to these standardized columns, [data generators](#metadata.datagenerator) include [*custom columns*](#glossary:custom-column) to capture information from [*native datasets*](#glossary:native-dataset) that is not represented by [*FOCUS columns*](#glossary:FOCUS-column). If custom columns introduce record-splitting (i.e., a single original charge results in multiple rows), the data generator is responsible for ensuring that all cost and quantity metrics still meet the aggregation and consistency rules required by the specification.
 
 The collection of datasets are designed to provide billing insight, additional context, metadata, mapping, or enrichment information that enhances the interpretability or completeness. See also: [*Native Dataset*](#glossary:native-dataset).
+
+<a name="glossary:FOCUS-dataset-column"><b>FOCUS Dataset Column</b></a>
+
+A column included in a [*FOCUS dataset*](#glossary:FOCUS-dataset). A FOCUS dataset column is either a [*FOCUS column*](#glossary:FOCUS-column) or a [*custom column*](#glossary:custom-column).
 
 <a name="glossary:inclusivestartbound"><b>Inclusive Start Bound</b></a>
 
