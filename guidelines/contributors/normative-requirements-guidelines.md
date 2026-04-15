@@ -186,6 +186,12 @@ The following MUST NOT be used as normative subjects:
 * Actors (e.g. data generator, service provider, consumer)
 * Processes or mechanisms (e.g. Delivery Handling, Correction Handling, etc.)
 
+### FOCUS Entity Reference Conventions
+
+* References to FOCUS entities in normative requirements MUST use their canonical identifiers (e.g., `{DatasetId}`, `{ColumnId}`, `{AttributeId}`) or canonical object/property reference paths (e.g., `Object.Property[*].Field`).
+* References to FOCUS entities in normative requirements MUST NOT use their Display Names.
+* References SHOULD default to singular form, with the understanding that the requirement applies to all applicable instances, values, or elements of the referenced entity unless otherwise specified.
+
 ### State, Not Behavior
 
 Normative requirements MUST describe a **verifiable state**, not an operational process or behavior.
@@ -242,7 +248,7 @@ Flat parallel bullets SHOULD be preferred when ordering keywords alone is suffic
 
 While normative requirements MUST focus on **enforceable constraints** and **verifiable states**, definitions, informative clauses, and examples MAY be included within a requirement where necessary to provide essential context and ensure unambiguous interpretation.
 
-#### Separation of Concerns:
+#### Separation of Concerns
 
 * **Definitions:** If a definition is complex or applies to multiple requirements, it SHOULD be placed in the **Glossary** or the preamble section and referenced as a link within the requirement.
 * **Complex Logic:** If an informative or normative clause is complex or applies to multiple requirements, it SHOULD be placed in the **Implementation Context** section to maintain the clarity of the core requirement.
@@ -317,15 +323,6 @@ To further enhance readability, individual requirements within each group SHOULD
 * For detailed interpretation of keywords such as `MUST`, `MUST NOT`, `SHOULD`, `SHOULD NOT`, `MAY`, and others, see [BCP14](https://tools.ietf.org/html/bcp14) [[RFC2119](https://tools.ietf.org/html/rfc2119)][[RFC8174](https://tools.ietf.org/html/rfc8174)].
 
 **Exception for Column Presence:** Requirements within the **Column Presence in Dataset** group MUST be ordered alphabetically by the referenced Column ID, taking precedence over the BCP 14 keyword ordering.
-
-### Structuring Individual Dataset Requirements
-
-* **Start with the DatasetId**: Whenever possible, begin each requirement with the DatasetId to make the requirement clear and focused.
-* **Use Asterisks for Lists**: All unordered lists representing normative requirements must use an asterisk (`*`) for the bullet character. Do not use dashes (`-`) or plus signs (`+`). This ensures visual consistency across the specification and aligns with our automated linting standards.
-
-```markdown
-* <DatasetId> MUST be present[ when <Condition>].
-```
 
 ### Consistent Wording and Patterns in Dataset Requirements
 
@@ -462,19 +459,6 @@ To further enhance readability, individual requirements within each group SHOULD
 **Important Note:** The term **RECOMMENDED** (recommended but not mandatory; previously used only for presence-related normative requirements) is no longer permitted for use in normative requirements as of December 2025. The keyword **SHOULD** must be used instead. Please refer to the [**Editorial Style Guidelines**](editorial-guidelines.md).
 
 * For detailed interpretation of keywords such as `MUST`, `MUST NOT`, `SHOULD`, `SHOULD NOT`, `MAY`, and others, see [BCP14](https://tools.ietf.org/html/bcp14) [[RFC2119](https://tools.ietf.org/html/rfc2119)][[RFC8174](https://tools.ietf.org/html/rfc8174)].
-
-### Structuring Individual Column Requirements
-
-* **Start with the ColumnId**: Whenever possible, begin each requirement with the ColumnId to make the requirement clear and focused.
-* **Use Asterisks for Lists**: All unordered lists representing normative requirements MUST use an asterisk (`*`) for the bullet character. Do not use dashes (`-`) or plus signs (`+`). This ensures visual consistency across the specification and aligns with our automated linting standards.
-
-```markdown
-* <ColumnId> MUST/MUST NOT/SHOULD/MUST be null when <Condition>.
-```
-
-* **Use {ColumnId} for Column and Value References**: Whenever possible, use {ColumnId} when referring to a column or its values.
-
-* **Default to Singular Form**: Column references should be singular, with the understanding that the requirement applies to all values in the column.
 
 ### Additional Guidelines for Columns in JSON Format
 
