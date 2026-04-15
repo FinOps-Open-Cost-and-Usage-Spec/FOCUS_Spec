@@ -286,6 +286,69 @@ To ensure consistent language when describing relationships and evaluations betw
   > Note: The following examples are informative and non-normative. They do not define requirements.
   ```
 
+### Notes and Exceptions
+
+#### Notes
+
+* **Blockquote Format:** Notes MUST be expressed using Markdown blockquote syntax (`>`). This creates a consistent, parseable container that can be styled during rendering.
+
+* **Note Label:** Notes MUST begin with the label `Note:` or `Notes:` followed by a colon.
+
+* **Single-Line Notes:** A note containing a single statement MUST be written as a single blockquote line.
+
+* **Multi-Line Notes:** A note spanning multiple lines MUST repeat the blockquote prefix (`>`) on each line.
+
+* **Multiple Notes:** When multiple notes are present in the same context, they SHOULD be grouped within a single blockquote and expressed as bullet points.
+
+* **Bullet Usage in Notes:** When using bullets inside a note, the bullets MUST follow standard bullet formatting rules defined in this document.
+
+* **Consistent Terminology:** Only the label `Note:` or `Notes:` MUST be used. Variants such as “Important Note”, “Warning”, or similar terms MUST NOT be used.
+
+* **Non-Normative Content:** Notes MUST be informative and non-normative. They MUST NOT contain normative keywords (e.g., MUST, SHOULD, MAY).
+
+* **Rendering Flexibility:** Notes SHOULD be authored using blockquotes to allow downstream tooling to control visual presentation in HTML and PDF outputs.
+
+* **Example** (Markdown, illustrative):
+
+  ```md
+  > **Note:** This is a single-line note.
+  ```
+* **Example** (Markdown, illustrative):
+
+  ```md
+  > **Notes:**
+  > * This is the first note.
+  > * This is the second note, which provides additional information.
+  ```
+
+### Exceptions
+
+* **No Blockquote Usage:** Exceptions MUST NOT be expressed using blockquote syntax.
+
+* **Structural Relationship:** Exceptions MUST be directly associated with the requirement or content they modify and SHOULD appear immediately after the relevant content.
+
+* **Formatting Approach:** Exceptions MUST be expressed using standard Markdown structures, such as plain text or bullet lists.
+
+* **Bullet Usage:** When multiple exceptions are defined, they MUST be expressed as a bullet list.
+
+* **Single Exception:** A single exception MAY be expressed as a standalone sentence or as a single bullet point.
+
+* **No Pseudo-Headers:** Exceptions MUST NOT use bold text or other formatting to simulate subsection headers (e.g., `**Exceptions:**`), as this violates linting rules.
+
+* **Subsection Usage:** Subsections (headers) MAY be used for exceptions only when necessary for clarity and when consistent with section structure rules.
+
+* **Normative Scope:** Exceptions MUST NOT introduce or redefine normative requirements. If a condition represents a normative constraint, it MUST be expressed as a formal normative requirement instead.
+
+* **Avoidance in Normative Content:** Exceptions SHOULD be avoided in normative requirements. Authors SHOULD instead express conditions explicitly using structured requirement patterns (e.g., “when”, “unless”, “only if”).
+
+* **Example** (Markdown, illustrative):
+
+  ```md
+  Exceptions:
+  * This rule does not apply when ChargeCategory is `Adjustment`.
+  * This rule does not apply when ChargeCategory is `Tax`.
+  ```
+
 ### Important Text
 
 * **Informative Notes:** Important notes MUST NOT contain normative keywords.
