@@ -209,11 +209,15 @@ In order to maintain a formal, professional tone throughout the specification, c
 
 ### Use of BCP 14 Keywords
 
-* Each normative bullet MUST contain exactly one BCP 14 keyword (MUST, SHOULD, MAY, MUST NOT, SHOULD NOT). See [BCP14](https://tools.ietf.org/html/bcp14) [[RFC2119](https://tools.ietf.org/html/rfc2119)][[RFC8174](https://tools.ietf.org/html/rfc8174)].
+* Each normative bullet MUST contain exactly one of the following BCP 14 keywords: `MUST`, `MUST NOT`, `SHOULD`, `SHOULD NOT`, `MAY`.
 * A bullet containing more than one normative keyword MUST be split.
-* The term **RECOMMENDED** MUST NOT be used as a normative keyword. The keyword **SHOULD** MUST be used instead.
+* The term `RECOMMENDED` MUST NOT be used as a normative keyword. The keyword `SHOULD` MUST be used instead.
 
 * **Exception for Composite Requirements:** While each individual bullet (parent or nested) MUST contain only one BCP 14 keyword, a Composite Requirement as a whole MAY contain multiple keywords to express nuanced obligations. In such cases, the logical strength of the requirement is governed by the hierarchy defined in section [Composite Requirements](#composite-requirements).
+
+> **Note:** The keyword `RECOMMENDED` was previously used for presence-related normative requirements with the meaning "recommended but not mandatory." This usage is deprecated as of December 2025.
+
+For detailed interpretation of BCP 14 keywords, see [BCP14](https://tools.ietf.org/html/bcp14) [[RFC2119](https://tools.ietf.org/html/rfc2119)][[RFC8174](https://tools.ietf.org/html/rfc8174)].
 
 ### Splitting Requirements
 
@@ -318,10 +322,6 @@ To further enhance readability, individual requirements within each group SHOULD
 * **SHOULD NOT** – discouraged but not strictly prohibited
 * **MAY** – optional
 
-**Important Note:** The term **RECOMMENDED** (recommended but not mandatory; previously used only for presence-related normative requirements) is no longer permitted for use in normative requirements as of December 2025. The keyword **SHOULD** must be used instead. Please refer to the [**Editorial Style Guidelines**](editorial-guidelines.md).
-
-* For detailed interpretation of keywords such as `MUST`, `MUST NOT`, `SHOULD`, `SHOULD NOT`, `MAY`, and others, see [BCP14](https://tools.ietf.org/html/bcp14) [[RFC2119](https://tools.ietf.org/html/rfc2119)][[RFC8174](https://tools.ietf.org/html/rfc8174)].
-
 **Exception for Column Presence:** Requirements within the **Column Presence in Dataset** group MUST be ordered alphabetically by the referenced Column ID, taking precedence over the BCP 14 keyword ordering.
 
 ### Consistent Wording and Patterns in Dataset Requirements
@@ -359,10 +359,10 @@ Use standardized phrasing and terminology, and apply common requirement patterns
 
 ### Dataset Normative Requirements Examples
 
-**Notes:**
-
-* The examples below are **snippets** that illustrate patterns only, not full listings. The `...` indicates additional requirements exist in the full dataset specification.
-* Authors should consult the actual FOCUS attribute specification files as the **source of truth**, as these guidelines do not necessarily reflect the latest version.
+> **Notes:**
+>
+> * The examples below are **snippets** that illustrate patterns only, not full listings. The `...` indicates additional requirements exist in the full dataset specification.
+> * Authors should consult the actual FOCUS attribute specification files as the **source of truth**, as these guidelines do not necessarily reflect the latest version.
 
 #### **Contract Commitment**
 
@@ -414,7 +414,7 @@ CostAndUsage MUST adhere to the following requirements:
 
 Grouping and ordering of requirements ensure clarity, logical flow, and consistency across all columns, making related requirements easy to identify and follow. This structure should be maintained for consistency across the specification.
 
-**Note:** This section provides a current preview of the requirements grouping and ordering. Members should review how this applies to specific columns and provide feedback. The order may be adjusted based on that feedback.
+> **Note:** This section provides a current preview of the requirements grouping and ordering. Members should review how this applies to specific columns and provide feedback. The order may be adjusted based on that feedback.
 
   1. **Technical Requirements**
      1. **Data Type**: Establishes a foundational expectation, ensuring all subsequent rules align with this type.
@@ -455,10 +455,6 @@ To further enhance readability, individual requirements within each group SHOULD
 * **SHOULD** – recommended but not mandatory
 * **SHOULD NOT** – discouraged but not strictly prohibited
 * **MAY** – optional
-
-**Important Note:** The term **RECOMMENDED** (recommended but not mandatory; previously used only for presence-related normative requirements) is no longer permitted for use in normative requirements as of December 2025. The keyword **SHOULD** must be used instead. Please refer to the [**Editorial Style Guidelines**](editorial-guidelines.md).
-
-* For detailed interpretation of keywords such as `MUST`, `MUST NOT`, `SHOULD`, `SHOULD NOT`, `MAY`, and others, see [BCP14](https://tools.ietf.org/html/bcp14) [[RFC2119](https://tools.ietf.org/html/rfc2119)][[RFC8174](https://tools.ietf.org/html/rfc8174)].
 
 ### Additional Guidelines for Columns in JSON Format
 
@@ -754,10 +750,10 @@ To ensure clarity and consistency across columns and corresponding requirements,
 
 ### Column Normative Requirements Examples
 
-**Notes:**
-
-* The examples below are **snippets** that illustrate patterns only, not full listings. The `...` indicates additional requirements exist in the full column specification.
-* Authors should consult the actual FOCUS column specification files as the **source of truth**, as these guidelines may not always reflect the latest version.
+> **Notes:**
+>
+> * The examples below are **snippets** that illustrate patterns only, not full listings. The `...` indicates additional requirements exist in the full column specification.
+> * Authors should consult the actual FOCUS column specification files as the **source of truth**, as these guidelines may not always reflect the latest version.
 
 #### **List Unit Price**
 
@@ -931,16 +927,12 @@ To further enhance readability, individual requirements within each group SHOULD
   * **SHOULD NOT** – discouraged but not strictly prohibited
   * **MAY** – optional
 
-**Important Note:** The term **RECOMMENDED** (recommended but not mandatory; previously used only for presence-related normative requirements) is no longer permitted for use in normative requirements as of December 2025. The keyword **SHOULD** must be used instead. Please refer to the [**Editorial Style Guidelines**](editorial-guidelines.md).
-
-* For detailed interpretation of keywords such as `MUST`, `MUST NOT`, `SHOULD`, `SHOULD NOT`, `MAY`, and others, see [BCP14](https://tools.ietf.org/html/bcp14) [[RFC2119](https://tools.ietf.org/html/rfc2119)][[RFC8174](https://tools.ietf.org/html/rfc8174)].
-
 ### Attribute Normative Requirements Examples
 
-**Notes:**
-
-* The examples below are **snippets** that illustrate patterns only, not full listings. The `...` indicates additional requirements exist in the full column specification.
-* Authors should consult the actual FOCUS attribute specification files as the **source of truth**, as these guidelines do not necessarily reflect the latest version.
+> **Notes:**
+>
+> * The examples below are **snippets** that illustrate patterns only, not full listings. The `...` indicates additional requirements exist in the full column specification.
+> * Authors should consult the actual FOCUS attribute specification files as the **source of truth**, as these guidelines do not necessarily reflect the latest version.
 
 #### Null Handling
 
