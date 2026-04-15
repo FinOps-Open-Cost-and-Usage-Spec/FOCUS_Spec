@@ -83,7 +83,7 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
         </td>
     </tr>
     <tr>
-        <td><strong>Normative Keywords</strong>(Formatting Only)</td>
+        <td><strong>Normative Keywords</strong> (Formatting Only)</td>
         <td>
             Normative keywords and statements (see Normative Requirements Guidelines)
         </td>
@@ -200,7 +200,7 @@ To ensure consistent language when describing relationships and evaluations betw
       * ... SHOULD NOT be null when ...
       * ... MUST be null when ...
       * ... MUST adhere to the following ...
-          * ... MUST be of type ...
+        * ... MUST be of type ...
     ```
 
 * **No Skipped Levels:** Nested bullets points MUST NOT skip indentation levels.
