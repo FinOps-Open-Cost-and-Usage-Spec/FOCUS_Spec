@@ -30,7 +30,7 @@ The following examples demonstrate some common patterns for issuing invoices fro
 
 ### Scenario 1: Typical Monthly Cloud Invoice
 
-This example includes a mix of standard consumption, a one-time purchase of a reserved instance, and taxes, all billed and paid in the same currency (USD).
+This example includes a mix of standard consumption, a one-time purchase of a resource reservation, and taxes, all billed and paid in the same currency (USD).
 
 * **Currencies:** Since Billing and Payment currencies are identical, `PaymentCurrencyBilledCost` matches `BilledCost`.
 * **Aggregate Payment Currency**: Since no aggregate rows are present, `PaymentCurrencyInvoiceDetailId` is different for all rows.
