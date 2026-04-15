@@ -38,7 +38,7 @@ This example includes a mix of standard consumption, a one-time purchase of a re
 
 #### Data Example: INV-2025-001
 
-| Column | Line 1: Compute Usage | Line 2: RI Purchase | Line 3: NY State Tax |
+| Column | Line 1: Compute Usage | Line 2: RR Purchase | Line 3: NY State Tax |
 | :--- | :--- | :--- | :--- |
 | **Billed Cost** | `450.00` | `1000.00` | `128.63` |
 | **Billing Account ID** | `123456789` | `123456789` | `123456789` |
@@ -47,7 +47,7 @@ This example includes a mix of standard consumption, a one-time purchase of a re
 | **Billing Period Start** | `2025-01-01T00:00:00Z` | `2025-01-01T00:00:00Z` | `2025-01-01T00:00:00Z` |
 | **Charge Category** | `Usage` | `Purchase` | `Tax` |
 | **Invoice Detail Created** | `2025-02-02T10:00:00Z` | `2025-02-02T10:00:00Z` | `2025-02-02T10:00:00Z` |
-| **Invoice Detail Description** | `Use of m5.large in us-east-1` | `Upfront fee for RI #998877` | `Sales Tax for NY Jurisdiction` |
+| **Invoice Detail Description** | `Use of m5.large in us-east-1` | `Upfront fee for RR #998877` | `Sales Tax for NY Jurisdiction` |
 | **Invoice Detail Grain** | `{"ServiceName": "Compute"}` | `{"ServiceName": "Compute"}` | `{}` |
 | **Invoice Detail ID** | `LINE-001` | `LINE-002` | `LINE-003` |
 | **Invoice Detail Last Updated** | `2025-02-02T10:00:00Z` | `2025-02-02T10:00:00Z` | `2025-02-02T10:00:00Z` |
