@@ -6,6 +6,7 @@ def test_dependencies_order(cr_json):
     """
     Test that Dependencies arrays are ordered according to the Order field of referenced rules.
     Rules without an Order field are ignored for ordering purposes.
+    Rules with Order == -1 are treated as hidden and ignored for ordering purposes.
     Only dependencies with the same Reference as the parent rule are checked for ordering.
     Dependencies with different References should appear last (in any order).
     """
@@ -45,7 +46,7 @@ def test_dependencies_order(cr_json):
             dep_entity_id = dep_info["entity_id"]
             dep_order = dep_info["order"]
             
-            if dep_entity_id == parent_entity_id and dep_order is not None:
+            if dep_entity_id == parent_entity_id and dep_order is not None and dep_order != -1:
                 same_ref_deps.append((dep_id, dep_order))
             else:
                 diff_ref_deps.append(dep_id)

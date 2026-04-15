@@ -72,6 +72,15 @@
       ],
       "FormatAttributes": []
     },
+    "CheckColumnComparison": {
+      "Description": "Check if one column value satisfies a comparison against another column value",
+      "Arguments": [
+        "ColumnAName",
+        "ColumnBName",
+        "Comparator"
+      ],
+      "FormatAttributes": []
+    },
     "CheckDecimalValue": {
       "Description": "Check if column has a valid decimal value",
       "Arguments": [

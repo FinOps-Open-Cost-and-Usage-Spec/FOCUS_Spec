@@ -18,6 +18,9 @@
     "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED": {
       "Description": "Data generator supports split cost allocation"
     },
+    "INVOICE_ISSUER_PAYABLE_INVOICES_SUPPORTED": {
+      "Description": "Invoice issuer supports payable invoices"
+    },
     "MULTIPLE_PRICING_CATEGORIES_SUPPORTED": {
       "Description": "Provider supports more than one pricing category across all SKUs"
     },

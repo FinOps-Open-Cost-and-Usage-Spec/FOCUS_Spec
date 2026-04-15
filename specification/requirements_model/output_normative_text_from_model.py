@@ -23,7 +23,8 @@ Other behavior:
 Usage:
   python output_normative_text_from_model.py /path/to/model-1.2.json --filename /path/to/out.md
   python output_normative_text_from_model.py /path/to/model-1.2.json --reference "BilledCost"
-  python output_normative_text_from_model.py --reference "BilledCost" --exclude-rmids
+    python output_normative_text_from_model.py --reference "BilledCost"
+    python output_normative_text_from_model.py --reference "BilledCost" --include-rmids
   python output_normative_text_from_model.py --reference "BilledCost" --include-order
 
 Defaults (if no args):
@@ -37,6 +38,33 @@ import re
 import argparse
 from pathlib import Path
 from collections import defaultdict, OrderedDict
+
+
+def load_spec_file(in_path: Path) -> dict:
+    """Load and parse the model JSON with user-friendly error messages."""
+    try:
+        raw = in_path.read_text(encoding="utf-8")
+    except FileNotFoundError as exc:
+        raise RuntimeError(
+            "Input model file was not found: "
+            f"{in_path}\n"
+            "If you have not generated the model yet, run\n"
+            "  ./build_json.py --build-only\n"
+            "from specification/requirements_model/."
+        ) from exc
+    except PermissionError as exc:
+        raise RuntimeError(f"Input model file is not readable: {in_path}") from exc
+    except OSError as exc:
+        raise RuntimeError(f"Unable to read input model file '{in_path}': {exc}") from exc
+
+    try:
+        return json.loads(raw)
+    except json.JSONDecodeError as exc:
+        raise RuntimeError(
+            "Input model file is not valid JSON: "
+            f"{in_path}\n"
+            f"JSON parse error at line {exc.lineno}, column {exc.colno}: {exc.msg}"
+        ) from exc
 
 
 def infer_entity_type(model_key: str, explicit: str | None) -> str:
@@ -221,11 +249,21 @@ def filter_reference_with_dependencies(grouped, reference_filter: str, dependenc
     return OrderedDict({selected_ref: selected_items})
 
 
-def build_markdown(grouped, exclude_rmids=False, include_order=False):
+def build_markdown(grouped, include_rmids=False, include_order=False):
     lines = []
     for ref, items in grouped.items():
         lines.append(f"# {ref}")
         lines.append("")
+
+        # Treat Order -1 as hidden: include for model logic, but do not render.
+        visible_items = [
+            item for item in items
+            if str(item.get("order")).strip() != "-1"
+        ]
+
+        if not visible_items:
+            lines.append("")
+            continue
         
         # Build dependency tree to determine proper nesting
         def build_dependency_map(items):
@@ -292,10 +330,10 @@ def build_markdown(grouped, exclude_rmids=False, include_order=False):
                 
             return 1  # Default level for non-composite root rules
         
-        dependency_map, rule_map = build_dependency_map(items)
+        dependency_map, rule_map = build_dependency_map(visible_items)
         
         # Generate output with proper indentation based on dependency structure
-        for item in items:
+        for item in visible_items:
             rule_id = item["ruleid"]
             level = get_rule_level(rule_id, dependency_map, rule_map)
             indent = "  " * level
@@ -303,16 +341,16 @@ def build_markdown(grouped, exclude_rmids=False, include_order=False):
             # Build the line with optional order prefix
             order_prefix = f'{item.get("order", "")}\t' if include_order else ""
             
-            if exclude_rmids:
-                lines.append(f'{order_prefix}{indent}* {item["must"]}')
-            else:
+            if include_rmids:
                 lines.append(f'{order_prefix}{indent}* {item["must"]} ({item["ruleid"]})')
+            else:
+                lines.append(f'{order_prefix}{indent}* {item["must"]}')
         lines.append("")
     return ("\n".join(lines)).rstrip() + "\n"
 
 
-def main(in_path: Path, out_path: Path | None = None, exclude_rmids: bool = False, reference_filter: str | None = None, include_order: bool = False, dataset_filter: str = "CostAndUsage", attribute_filter: bool = False, reference_dependency_scope: str = "transitive") -> None:
-    spec = json.loads(in_path.read_text(encoding="utf-8"))
+def main(in_path: Path, out_path: Path | None = None, include_rmids: bool = False, reference_filter: str | None = None, include_order: bool = False, dataset_filter: str = "CostAndUsage", attribute_filter: bool = False, reference_dependency_scope: str = "transitive") -> None:
+    spec = load_spec_file(in_path)
     grouped = collect(spec)
     
     # Filter by reference if specified. Include transitive dependencies of the
@@ -339,7 +377,7 @@ def main(in_path: Path, out_path: Path | None = None, exclude_rmids: bool = Fals
                 filtered_grouped[ref] = filtered_items
         grouped = filtered_grouped
     
-    md = build_markdown(grouped, exclude_rmids=exclude_rmids, include_order=include_order)
+    md = build_markdown(grouped, include_rmids=include_rmids, include_order=include_order)
     
     if out_path:
         out_path.write_text(md, encoding="utf-8")
@@ -353,8 +391,8 @@ if __name__ == "__main__":
     )
     parser.add_argument("input", nargs="?", default="build/model-1.2.json", 
                        help="Path to input JSON file (default: build/model-1.2.json)")
-    parser.add_argument("--exclude-rmids", "--no-rmids", action="store_true",
-                       help="Exclude Rule Model IDs from the output (only show MustSatisfy text)")
+    parser.add_argument("--include-rmids", action="store_true",
+                       help="Include Rule Model IDs in the output")
     parser.add_argument("--include-order", action="store_true",
                        help="Include Order field at the start of each line (tab-separated)")
     parser.add_argument("--filename", type=str, help="Save output to specified filename instead of printing to console")
@@ -375,13 +413,17 @@ if __name__ == "__main__":
         out_path = Path(args.filename)
 
     
-    main(
-        in_path,
-        out_path,
-        exclude_rmids=args.exclude_rmids,
-        reference_filter=args.reference,
-        include_order=args.include_order,
-        dataset_filter=args.datasetid,
-        attribute_filter=args.attribute,
-        reference_dependency_scope=args.reference_dependency_scope,
-    )
+    try:
+        main(
+            in_path,
+            out_path,
+            include_rmids=args.include_rmids,
+            reference_filter=args.reference,
+            include_order=args.include_order,
+            dataset_filter=args.datasetid,
+            attribute_filter=args.attribute,
+            reference_dependency_scope=args.reference_dependency_scope,
+        )
+    except RuntimeError as exc:
+        print(f"Error: {exc}", file=sys.stderr)
+        sys.exit(1)

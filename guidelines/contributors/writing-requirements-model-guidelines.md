@@ -951,6 +951,8 @@ The `Order` field serves several important functions:
 - Use incremental values (e.g., 10, 20, 30) to allow for future insertions
 - Lower values indicate higher priority/earlier processing
 - Rules without an `Order` field are ignored for ordering purposes
+- `Order: -1` is reserved for hidden rules that should not be displayed in generated normative text outputs
+- Rules with `Order: -1` are ignored in dependency ordering validation checks
 - The `Order` field is required for rules to show explicit sequencing
 
 **Dependency Array Ordering:**
