@@ -140,7 +140,7 @@ These are the ServiceCategory values used by each fictitious provider in the alr
 | Invoice Detail | Acme Co | Invoice Issuer | **Aura Web** |
 | Contract Commitments | Acme Co | Cloud Provider | **Aura Web** |
 | Contract Commitments | DataStreamer | Marketplace SaaS | **OmniQuery** |
-| Contract Commitments | CyberGuard Inc | Security Vendor | *(no approved equivalent)* |
+| Contract Commitments | CyberGuard Inc | Security Vendor (seat-based) | **SprintCanvas** *(closest fit: seat-based Business Applications)* |
 | Commitment Discount Flexibility | TinyCloud | Cloud Provider | **LatticeScale** |
 | Metadata Examples | ACME / Acme | Data Generator | **CrestNode** |
 | Commitment Program Eligibility | *(already correct)* | — | **Aura Web**, **Acme Corp** |

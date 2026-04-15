@@ -189,6 +189,10 @@ After completing replacements in each file, run verification:
 
 The same original name (e.g., "ACME") may serve as provider in one file and customer in another. Before replacing, identify the role in context and map to the correct fictitious entity (Data Generator vs Customer).
 
+### Rule 7: Replace ALL Unapproved Fictitious Names
+
+Any fictitious name that does not appear in the approved reference tables (PR #2115, `specification/appendix/appendix_overview.md`) must be replaced with the closest-matching approved name based on the context (service type, billing model, ServiceCategory). Unapproved fictitious names like "CyberGuard Inc", "DataStreamer", "TinyCloud", etc. are not real companies — they are ad-hoc placeholders that predate the standardized reference and must be mapped to an approved equivalent.
+
 ### Approved Name Mappings Per Appendix Section
 
 The canonical reference is `specification/appendix/appendix_overview.md`. The already-merged `billing_scenario_examples.md` and its CSVs on `working_draft` are the authoritative examples of correct usage. Key ServiceCategory assignments from those approved CSVs:
@@ -224,7 +228,7 @@ The canonical reference is `specification/appendix/appendix_overview.md`. The al
 | **Invoice Detail** | Acme Co | Invoice Issuer | **Aura Web** |
 | **Contract Commitments** | Acme Co | Cloud Provider | **Aura Web** |
 | **Contract Commitments** | DataStreamer | Marketplace SaaS | **OmniQuery** |
-| **Contract Commitments** | CyberGuard Inc | Security Vendor | *(no approved equivalent — keep or propose new name)* |
+| **Contract Commitments** | CyberGuard Inc | Security Vendor (seat-based) | **SprintCanvas** *(closest fit: seat-based Business Applications)* |
 | **Commitment Discount Flexibility** | TinyCloud | Cloud Provider | **LatticeScale** |
 | **Metadata Examples** | ACME / Acme | Data Generator | **CrestNode** |
 | **Commitment Program Eligibility** | (already correct) | — | **Aura Web**, **Acme Corp** |
