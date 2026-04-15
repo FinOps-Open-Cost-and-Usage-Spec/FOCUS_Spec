@@ -156,6 +156,39 @@ Persistent learnings are stored in `.ai/memory/` and are not deleted.
 * wkhtmltopdf (PDF generation)
 * GNU Make
 
+## Fictitious Name Replacement Safety Protocol (Issue #2129)
+
+When performing bulk find-and-replace of entity names in appendix and data files, follow these rules to prevent substring corruption. See `.ai/work/2129-fictitious-names/plan.md` for the full protocol and `specification/appendix/appendix_overview.md` for the approved fictitious names reference.
+
+### Rule 1: Build a Complete Variant Inventory First
+
+Before replacing ANY name in a file, grep for ALL case/format variants of that name — including exact case, ALL CAPS, hyphenated (`acme-corp`), underscored (`acme_corp`), concatenated in identifiers (`ACMECORP`, `AwesomeCorpDemo`), and embedded in resource/anchor IDs (`cr-arc-acme-001`, `awssavingsplan-allupfront`).
+
+### Rule 2: Replace Longest Matches First
+
+When multiple search patterns share a common prefix or overlap, always process the longest pattern first. For example, replace `AwesomeCorp` before `Awesome`, and `Acme Corp` before `Acme Co`. Failing to do this causes partial matches that leave behind suffixes (e.g., "AwesomeCo" matching inside "AwesomeCorp" → "StoreStackrp").
+
+### Rule 3: Use Exact Whole-String Matches
+
+Never use a prefix or substring as the search pattern. Always match the complete name:
+* Search for `AwesomeCorp` NOT `AwesomeCo`
+* Search for `ACMECORP` NOT `ACME` (unless `ACME` is genuinely a standalone occurrence)
+
+### Rule 4: Handle Compound Identifiers Explicitly
+
+Names embedded in identifiers (markdown anchors, resource IDs, tag prefixes, SKU patterns) must be replaced with compound forms of the fictitious name. These are separate replacement operations from the prose text replacements.
+
+### Rule 5: Verify After Every Replacement
+
+After completing replacements in each file, run verification:
+* Grep for fragments of OLD names to catch partial replacements
+* Grep for mangled NEW names: fictitious name followed by unexpected lowercase chars (e.g., `StoreStackrp`, `CrestNoderp`)
+* Confirm no real provider names remain
+
+### Rule 6: Distinguish Provider vs Customer Roles
+
+The same original name (e.g., "ACME") may serve as provider in one file and customer in another. Before replacing, identify the role in context and map to the correct fictitious entity (Data Generator vs Customer).
+
 ## AI Usage Policy
 
 AI-assisted contributions are permitted and follow the same review standards as human-authored content. See [AI Usage Guidelines](guidelines/contributors/ai-usage-guidelines.md) for details.
