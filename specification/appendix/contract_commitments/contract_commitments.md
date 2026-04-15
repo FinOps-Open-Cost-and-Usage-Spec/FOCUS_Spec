@@ -45,14 +45,14 @@ In the below table, CC represents Contract Commitment.
 
 | Offering Example | CC Category | CC Model | CC Offer Category | CC Benefit Category | CC Fulfillment Interval | CC Duration Type | CC Payment Model | CC Payment Interval |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Aura Web Flexible Spend Plan** | Spend | Continuous | Public | Discount | Hourly | 1 Year | Partial Upfront | Monthly |
-| **CrestNode Resource Reservation** | Usage | Continuous | Public | Discount | Hourly | 3 Years | All Upfront | One-Time |
-| **LatticeScale Dynamic Compute Commitment** | Spend | Continuous | Public | Discount | Hourly | 3 Years | No Upfront | Monthly |
-| **CrestNode Advance Resource Commitment** | Usage | Continuous | Public | Availability | Hourly | 1 Month | No Upfront | Monthly |
-| **Aura Web Enterprise Spend Agreement** | Spend | Discontinuous | Negotiated | Discount | Total Term | 3 Years | No Upfront | Monthly |
-| **OmniQuery Bulk Capacity Credits** | Spend | Discontinuous | Negotiated | Entitlement | Total Term | 1 Year | All Upfront | One-Time |
-| **StackLens Interval Spend Commitment** | Spend | Discontinuous | Public | Entitlement | Total Term | 1 Year | No Upfront | Monthly |
-| **PipelCRM Seat License** | Usage | Continuous | Negotiated | Discount | Monthly | 1 Year | No Upfront | Monthly |
+| **Flexible Spend Plan** | Spend | Continuous | Public | Discount | Hourly | 1 Year | Partial Upfront | Monthly |
+| **Resource Reservation** | Usage | Continuous | Public | Discount | Hourly | 3 Years | All Upfront | One-Time |
+| **Dynamic Compute Commitment** | Spend | Continuous | Public | Discount | Hourly | 3 Years | No Upfront | Monthly |
+| **Advance Resource Commitment** | Usage | Continuous | Public | Availability | Hourly | 1 Month | No Upfront | Monthly |
+| **Enterprise Spend Agreement** | Spend | Discontinuous | Negotiated | Discount | Total Term | 3 Years | No Upfront | Monthly |
+| **Bulk Capacity Credits** | Spend | Discontinuous | Negotiated | Entitlement | Total Term | 1 Year | All Upfront | One-Time |
+| **Interval Spend Commitment** | Spend | Discontinuous | Public | Entitlement | Total Term | 1 Year | No Upfront | Monthly |
+| **Seat License** | Usage | Continuous | Negotiated | Discount | Monthly | 1 Year | No Upfront | Monthly |
 | **Multi-Year Pool** | Spend | Discontinuous | Negotiated | Discount | Total Term | 3 Years | All Upfront | One-Time |
 | **Growth Rebate** | Spend | Discontinuous | Negotiated | Discount | Annual | 2 Years | No Upfront | Annual |
 | **API Credit Pack** | Usage | Discontinuous | Public | Entitlement | Transactional | 2 Years | All Upfront | One-Time |
