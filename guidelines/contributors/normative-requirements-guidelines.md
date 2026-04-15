@@ -210,7 +210,7 @@ In order to maintain a formal, professional tone throughout the specification, c
 ### Use of BCP 14 Keywords
 
 * Each normative bullet MUST contain exactly one of the following BCP 14 keywords: `MUST`, `MUST NOT`, `SHOULD`, `SHOULD NOT`, `MAY`.
-* A bullet containing more than one normative keyword MUST be split.
+* A bullet containing more than one normative keyword MUST be split (see [Splitting Requirements](#splitting-requirements) section).
 * The term `RECOMMENDED` MUST NOT be used as a normative keyword. The keyword `SHOULD` MUST be used instead.
 
 * **Exception for Composite Requirements:** While each individual bullet (parent or nested) MUST contain only one BCP 14 keyword, a Composite Requirement as a whole MAY contain multiple keywords to express nuanced obligations. In such cases, the logical strength of the requirement is governed by the hierarchy defined in section [Composite Requirements](#composite-requirements).
@@ -316,11 +316,11 @@ Grouping and ordering of dataset-level normative requirements ensures clarity, c
 
 To further enhance readability, individual requirements within each group SHOULD be ordered as follows:
 
-* **MUST** – an absolute requirement
-* **MUST NOT** – a prohibition
-* **SHOULD** – recommended but not mandatory
-* **SHOULD NOT** – discouraged but not strictly prohibited
-* **MAY** – optional
+* `MUST` – an absolute requirement
+* `MUST NOT` – a prohibition
+* `SHOULD` – recommended but not mandatory
+* `SHOULD NOT` – discouraged but not strictly prohibited
+* `MAY` – optional
 
 **Exception for Column Presence:** Requirements within the **Column Presence in Dataset** group MUST be ordered alphabetically by the referenced Column ID, taking precedence over the BCP 14 keyword ordering.
 
@@ -450,11 +450,11 @@ Grouping and ordering of requirements ensure clarity, logical flow, and consiste
 
 To further enhance readability, individual requirements within each group SHOULD be ordered as follows:
 
-* **MUST** – an absolute requirement
-* **MUST NOT** – a prohibition
-* **SHOULD** – recommended but not mandatory
-* **SHOULD NOT** – discouraged but not strictly prohibited
-* **MAY** – optional
+* `MUST` – an absolute requirement
+* `MUST NOT` – a prohibition
+* `SHOULD` – recommended but not mandatory
+* `SHOULD NOT` – discouraged but not strictly prohibited
+* `MAY` – optional
 
 ### Additional Guidelines for Columns in JSON Format
 
@@ -921,11 +921,11 @@ To further enhance readability, individual requirements within each group SHOULD
 * Requirements targeting the general subject (e.g., FOCUS column) first
 * Requirements targeting qualified subjects (e.g., FOCUS column containing numeric values) after
 * Within each subject, order by BCP 14 keyword:
-  * **MUST** – an absolute requirement
-  * **MUST NOT** – a prohibition
-  * **SHOULD** – recommended but not mandatory
-  * **SHOULD NOT** – discouraged but not strictly prohibited
-  * **MAY** – optional
+  * `MUST` – an absolute requirement
+  * `MUST NOT` – a prohibition
+  * `SHOULD` – recommended but not mandatory
+  * `SHOULD NOT` – discouraged but not strictly prohibited
+  * `MAY` – optional
 
 ### Attribute Normative Requirements Examples
 
