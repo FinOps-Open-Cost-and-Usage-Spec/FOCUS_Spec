@@ -24,14 +24,14 @@ In this scenario, the invoice issuer performs currency conversion at the individ
 * **Payment Currency:** EUR
 * **Exchange Rate:** 1.00 USD = 0.92 EUR
 
-| Column | Value |
-| :--- | :--- |
-| InvoiceDetailId | ID-001 |
-| ChargeCategory | Usage |
-| BillingCurrency | USD |
-| BilledCost | 100.00 |
-| PaymentCurrency | EUR |
-| PaymentCurrencyBilledCost | 92.00 |
+| Column                         | Value  |
+| :----------------------------- | :----- |
+| InvoiceDetailId                | ID-001 |
+| ChargeCategory                 | Usage  |
+| BillingCurrency                | USD    |
+| BilledCost                     | 100.00 |
+| PaymentCurrency                | EUR    |
+| PaymentCurrencyBilledCost      | 92.00  |
 | PaymentCurrencyInvoiceDetailId | ID-001 |
 
 > **Note:** Because the conversion is 1:1, the `PaymentCurrencyInvoiceDetailId` points to the record's own `InvoiceDetailId`.
@@ -44,13 +44,13 @@ In this scenario, the invoice issuer tracks usage in the billing currency at a g
 * **Payment Currency:** EUR
 * **Effective Exchange Rate:** 1.00 USD = 0.92 EUR
 
-| Column | A-101 | A-102 | Z-999 |
-| :--- | :--- | :--- | :--- |
-| InvoiceDetailId | A-101 | A-102 | Z-999 |
-| InvoiceDetailDescription | Compute Instance A | Compute Instance B | Usage in Payment Currency |
-| BilledCost | 45.00 | 55.00 | 0.00 |
-| PaymentCurrencyBilledCost | 0.00 | 0.00 | 92.00 |
-| PaymentCurrencyInvoiceDetailId | Z-999 | Z-999 | Z-999 |
+| Column                         | A-101              | A-102              | Z-999                     |
+| :----------------------------- | :----------------- | :----------------- | :------------------------ |
+| InvoiceDetailId                | A-101              | A-102              | Z-999                     |
+| InvoiceDetailDescription       | Compute Instance A | Compute Instance B | Usage in Payment Currency |
+| BilledCost                     | 45.00              | 55.00              | 0.00                      |
+| PaymentCurrencyBilledCost      | 0.00               | 0.00               | 92.00                     |
+| PaymentCurrencyInvoiceDetailId | Z-999              | Z-999              | Z-999                     |
 
 **Logic Breakdown:**
 
