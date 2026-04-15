@@ -321,7 +321,7 @@ To ensure consistent language when describing relationships and evaluations betw
   > * This is the second note, which provides additional information.
   ```
 
-### Exceptions
+#### Exceptions
 
 * **No Blockquote Usage:** Exceptions MUST NOT be expressed using blockquote syntax.
 
