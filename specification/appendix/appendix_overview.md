@@ -20,7 +20,7 @@
 | [Invoice and Billing Period Handling](#appendix.invoiceandbillingperiodhandling) | Outlines invoice reconciliation, invoice issuance, and open vs. closed billing periods across FOCUS datasets, including correction handling. |
 | [Rounding Variance Tolerance](#appendix.roundingvariancetolerance) | Defines the statistical tolerance formula and provides scenarios for handling precision differences during invoice reconciliation between detailed cost data and invoices. |
 
-## Fictitious Data Generator Reference
+## Fictitious Data Generator Reference<!--SkipTOC-->
 
 To illustrate how FOCUS normalizes the presentation of data across diverse technology environments, the appendix uses a standardized set of fictitious [*data generators*](#metadata.datagenerator). These represent common architectural components, ranging from core cloud infrastructure to SaaS platforms. Using these examples demonstrates cross-vendor cost allocation, standardized billing schemas, and multi-cloud reporting without relying on proprietary vendor data.
 
@@ -43,7 +43,7 @@ The table below outlines the fictitious *data generators* used throughout the ap
 | **Budget Beacon** | Cost Management | A cloud cost-optimization platform that shines a spotlight on overspending, waste, and savings opportunities across multi-cloud environments. | Cloudability, CloudHealth, ProsperOps |
 | **SchemaWeaver** | Open Source Library | An open-source tool that refines raw cloud cost and usage data, normalizing it into FOCUS-compliant schemas for downstream analytics and reporting. Not a public service. | OpenCost, Cloud Intelligence Dashboards, FinOps toolkit |
 
-## Fictitious Customer Reference
+## Fictitious Customer Reference<!--SkipTOC-->
 
 To contextualize the billing and cost allocation examples, this appendix utilizes fictitious customer profiles. These profiles represent common organizational structures and cloud adoption patterns.
 
@@ -53,7 +53,7 @@ To contextualize the billing and cost allocation examples, this appendix utilize
 | **AeroScale** | Cloud-Native Startup | A fast-growing tech startup operating entirely in the cloud. They heavily utilize serverless architectures, managed databases, and agile deployment pipelines. |
 | **GearPeak Outdoors** | Mid-Market Retailer | An outdoor apparel and equipment brand with massive seasonal traffic spikes. They leverage auto-scaling infrastructure for their e-commerce storefront and a heavy mix of SaaS for supply chain and CRM. |
 
-## Fictitious Commitment Program Reference
+## Fictitious Commitment Program Reference<!--SkipTOC-->
 
 To illustrate commitment program application and amortization without relying on vendor-specific terminology, the examples in this appendix use standardized fictitious commitment instruments. These constructs abstract the common commitment mechanisms used by major cloud and SaaS providers.
 
