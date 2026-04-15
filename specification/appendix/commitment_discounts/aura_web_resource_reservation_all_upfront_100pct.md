@@ -79,8 +79,8 @@ The following critical rules apply to commitment discount data:
 | CommitmentDiscountStatus   | null                                 | Status only applies to usage rows                                                     |
 | CommitmentDiscountQuantity | 8760.00                              | Total commitment capacity for the 1-year term (1 instance-hr/hr &times; 8,760 hrs/yr) |
 | CommitmentDiscountUnit     | Hours                                | Unit of commitment capacity (usage-based)                                             |
-| SkuId                      | AW-USEAST1-COMPUTE-PURCHASE         | Commitment purchase SKU                                                               |
-| SkuPriceId                 | AW-USEAST1-COMPUTE-PURCHASE-UPFRONT | Price point for upfront purchase                                                      |
+| SkuId                      | AURAWEB-USEAST1-COMPUTE-PURCHASE         | Commitment purchase SKU                                                               |
+| SkuPriceId                 | AURAWEB-USEAST1-COMPUTE-PURCHASE-UPFRONT | Price point for upfront purchase                                                      |
 
 ## Usage Row Details (Commitment-Covered)
 
@@ -95,6 +95,6 @@ The following critical rules apply to commitment discount data:
 | ConsumedQuantity           | 1                                                     | Hours used                                 |
 | CommitmentDiscountQuantity | 1                                                     | Commitment units applied                   |
 | CommitmentDiscountStatus   | Used                                                  | Commitment applied                         |
-| CommitmentDiscountId       | aw:compute:us-east-1:123456789012:resource-reserv... | Links usage to purchase                    |
-| SkuId                      | AW-USEAST1-COMPUTE-USAGE                             | Resource usage SKU (differs from Purchase) |
-| SkuPriceId                 | AW-USEAST1-COMPUTE-USAGE-COMMITTED                   | Price point for committed usage            |
+| CommitmentDiscountId       | auraweb:compute:us-east-1:123456789012:resource-reserv... | Links usage to purchase                    |
+| SkuId                      | AURAWEB-USEAST1-COMPUTE-USAGE                             | Resource usage SKU (differs from Purchase) |
+| SkuPriceId                 | AURAWEB-USEAST1-COMPUTE-USAGE-COMMITTED                   | Price point for committed usage            |

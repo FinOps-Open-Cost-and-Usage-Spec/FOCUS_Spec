@@ -81,8 +81,8 @@ The following critical rules apply to commitment discount data:
 | CommitmentDiscountStatus   | null                                 | Status only applies to usage rows                           |
 | CommitmentDiscountQuantity | 353,028.00                           | Full annual commitment ($40.30/hr &times; 8,760 hrs) |
 | CommitmentDiscountUnit     | USD                                  | Unit of commitment capacity (spend-based)                   |
-| SkuId                      | AW-USEAST1-COMPUTE-PURCHASE         | Commitment purchase SKU                                     |
-| SkuPriceId                 | AW-USEAST1-COMPUTE-PURCHASE-UPFRONT | Price point for upfront purchase                            |
+| SkuId                      | AURAWEB-USEAST1-COMPUTE-PURCHASE         | Commitment purchase SKU                                     |
+| SkuPriceId                 | AURAWEB-USEAST1-COMPUTE-PURCHASE-UPFRONT | Price point for upfront purchase                            |
 
 ## Unused Commitment Row Details
 
@@ -96,10 +96,10 @@ The following critical rules apply to commitment discount data:
 | ConsumedQuantity             | null                                                           | **No resource consumed**                           |
 | CommitmentDiscountQuantity   | 40.30                                                          | Commitment wasted                                  |
 | CommitmentDiscountStatus     | Unused                                                         | Commitment not utilized                            |
-| ResourceId                   | aw:flexspend::123456789012:flexspendplan/fsp-abc123def456 | must equal CommitmentDiscountId (no resource used) |
+| ResourceId                   | auraweb:flexspend::123456789012:flexspendplan/fsp-abc123def456 | must equal CommitmentDiscountId (no resource used) |
 | ResourceName                 | Compute Flexible Spend Plan                                      | Carried from Purchase row (no resource consumed)   |
 | ResourceType                 | Commitment                                                     | Carried from Purchase row (no resource consumed)   |
-| SkuId                        | AW-USEAST1-COMPUTE-PURCHASE                                   | must match Purchase row (no resource consumed)     |
-| SkuPriceId                   | AW-USEAST1-COMPUTE-PURCHASE-UPFRONT                           | must match Purchase row (no resource consumed)     |
+| SkuId                        | AURAWEB-USEAST1-COMPUTE-PURCHASE                                   | must match Purchase row (no resource consumed)     |
+| SkuPriceId                   | AURAWEB-USEAST1-COMPUTE-PURCHASE-UPFRONT                           | must match Purchase row (no resource consumed)     |
 
 For spend-based unused rows, PricingUnit is USD and PricingQuantity is the hourly commitment amount. ListCost = ListUnitPrice ($1.00) &times; PricingQuantity, which equals the wasted commitment dollars per hour.

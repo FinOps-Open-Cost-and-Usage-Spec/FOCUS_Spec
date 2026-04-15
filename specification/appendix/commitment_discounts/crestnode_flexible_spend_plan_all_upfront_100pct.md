@@ -79,8 +79,8 @@ The following critical rules apply to commitment discount data:
 | CommitmentDiscountStatus   | null                                  | Status only applies to usage rows                           |
 | CommitmentDiscountQuantity | 462,002.40                            | Full annual commitment ($52.74/hr &times; 8,760 hrs) |
 | CommitmentDiscountUnit     | USD                                   | Unit of commitment capacity (spend-based)                   |
-| SkuId                      | CN-EASTUS-COMPUTE-PURCHASE            | Commitment purchase SKU                                     |
-| SkuPriceId                 | CN-EASTUS-COMPUTE-PURCHASE-UPFRONT    | Price point for upfront purchase                            |
+| SkuId                      | CRESTNODE-EASTUS-COMPUTE-PURCHASE            | Commitment purchase SKU                                     |
+| SkuPriceId                 | CRESTNODE-EASTUS-COMPUTE-PURCHASE-UPFRONT    | Price point for upfront purchase                            |
 
 ## Usage Row Details (Commitment-Covered)
 
@@ -95,6 +95,6 @@ The following critical rules apply to commitment discount data:
 | ConsumedQuantity           | 1                                                     | Hours used                                 |
 | CommitmentDiscountQuantity | 52.74                                                 | Hourly commitment spend applied            |
 | CommitmentDiscountStatus   | Used                                                  | Commitment applied                         |
-| CommitmentDiscountId       | cn:compute:eastus:f0e9d8c7-b6a5-4321-0987-654321...   | Links usage to purchase                    |
-| SkuId                      | CN-EASTUS-COMPUTE-USAGE                               | Resource usage SKU (differs from Purchase) |
-| SkuPriceId                 | CN-EASTUS-COMPUTE-USAGE-COMMITTED                     | Price point for committed usage            |
+| CommitmentDiscountId       | crestnode:compute:eastus:f0e9d8c7-b6a5-4321-0987-654321...   | Links usage to purchase                    |
+| SkuId                      | CRESTNODE-EASTUS-COMPUTE-USAGE                               | Resource usage SKU (differs from Purchase) |
+| SkuPriceId                 | CRESTNODE-EASTUS-COMPUTE-USAGE-COMMITTED                     | Price point for committed usage            |

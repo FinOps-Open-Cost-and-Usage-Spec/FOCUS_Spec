@@ -79,8 +79,8 @@ The following critical rules apply to commitment discount data:
 | CommitmentDiscountStatus   | null                                    | Status only applies to usage rows                              |
 | CommitmentDiscountQuantity | 42,423.36                               | Commitment capacity for Feb ($63.13/hr &times; 672 hrs) |
 | CommitmentDiscountUnit     | USD                                     | Unit of commitment capacity (spend-based)                      |
-| SkuId                      | LS-USCENTRAL1-COMPUTE-PURCHASE         | Commitment purchase SKU                                        |
-| SkuPriceId                 | LS-USCENTRAL1-COMPUTE-PURCHASE-MONTHLY | Price point for recurring purchase                             |
+| SkuId                      | LATTICESCALE-USCENTRAL1-COMPUTE-PURCHASE         | Commitment purchase SKU                                        |
+| SkuPriceId                 | LATTICESCALE-USCENTRAL1-COMPUTE-PURCHASE-MONTHLY | Price point for recurring purchase                             |
 
 ## Usage Row Details (Commitment-Covered)
 
@@ -95,6 +95,6 @@ The following critical rules apply to commitment discount data:
 | ConsumedQuantity           | 1                                                     | Hours used                                 |
 | CommitmentDiscountQuantity | 63.13                                                 | Hourly commitment spend applied            |
 | CommitmentDiscountStatus   | Used                                                  | Commitment applied                         |
-| CommitmentDiscountId       | ls:compute:us-central1:proj-123456:commitment-dis... | Links usage to purchase                    |
-| SkuId                      | LS-USCENTRAL1-COMPUTE-USAGE                          | Resource usage SKU (differs from Purchase) |
-| SkuPriceId                 | LS-USCENTRAL1-COMPUTE-USAGE-COMMITTED                | Price point for committed usage            |
+| CommitmentDiscountId       | latticescale:compute:us-central1:proj-123456:commitment-dis... | Links usage to purchase                    |
+| SkuId                      | LATTICESCALE-USCENTRAL1-COMPUTE-USAGE                          | Resource usage SKU (differs from Purchase) |
+| SkuPriceId                 | LATTICESCALE-USCENTRAL1-COMPUTE-USAGE-COMMITTED                | Price point for committed usage            |

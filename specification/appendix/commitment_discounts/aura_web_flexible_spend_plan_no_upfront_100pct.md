@@ -79,8 +79,8 @@ The following critical rules apply to commitment discount data:
 | CommitmentDiscountStatus   | null                                 | Status only applies to usage rows                                |
 | CommitmentDiscountQuantity | 35,515.20                            | Commitment capacity for Feb ($52.85/hr &times; 672 hrs)   |
 | CommitmentDiscountUnit     | USD                                  | Unit of commitment capacity (spend-based)                        |
-| SkuId                      | AW-USEAST1-COMPUTE-PURCHASE         | Commitment purchase SKU                                          |
-| SkuPriceId                 | AW-USEAST1-COMPUTE-PURCHASE-MONTHLY | Price point for recurring purchase                               |
+| SkuId                      | AURAWEB-USEAST1-COMPUTE-PURCHASE         | Commitment purchase SKU                                          |
+| SkuPriceId                 | AURAWEB-USEAST1-COMPUTE-PURCHASE-MONTHLY | Price point for recurring purchase                               |
 
 ## Usage Row Details (Commitment-Covered)
 
@@ -95,6 +95,6 @@ The following critical rules apply to commitment discount data:
 | ConsumedQuantity           | 1                                                     | Hours used                                 |
 | CommitmentDiscountQuantity | 52.85                                                 | Hourly commitment spend applied            |
 | CommitmentDiscountStatus   | Used                                                  | Commitment applied                         |
-| CommitmentDiscountId       | aw:flexspend::123456789012:flexspendplan/fsp-... | Links usage to purchase                    |
-| SkuId                      | AW-USEAST1-COMPUTE-USAGE                             | Resource usage SKU (differs from Purchase) |
-| SkuPriceId                 | AW-USEAST1-COMPUTE-USAGE-COMMITTED                   | Price point for committed usage            |
+| CommitmentDiscountId       | auraweb:flexspend::123456789012:flexspendplan/fsp-... | Links usage to purchase                    |
+| SkuId                      | AURAWEB-USEAST1-COMPUTE-USAGE                             | Resource usage SKU (differs from Purchase) |
+| SkuPriceId                 | AURAWEB-USEAST1-COMPUTE-USAGE-COMMITTED                   | Price point for committed usage            |
