@@ -96,7 +96,7 @@ This example demonstrates a complex, multi-faceted agreement between a customer 
 | **CC Duration Type** | `3 Years` | `1 Year` | `1 Year` |
 | **CC Applicability** | `{"IsGlobalScope": true}` | `{"InclusionOperator": "Or", "Inclusions": [{"Dimension": "RegionId", "Operator": "In", "Values": ["us-east-1"]}]}` | `{"InclusionOperator": "Or", "Inclusions": [{"Dimension": "ServiceCategory", "Operator": "In", "Values": ["Analytics"]}]}` |
 | **CC Fulfillment Interval** | `Total Term` | `Hourly` | `Annual` |
-| **CC ID** | `CMT-SPEND-001` | `CMT-RI-002` | `CMT-SaaS-003` |
+| **CC ID** | `CMT-SPEND-001` | `CMT-RR-002` | `CMT-SaaS-003` |
 | **CC Last Updated** | `2026-02-01T10:00:00Z` | `2025-12-01T09:00:00Z` | `2026-01-15T14:30:00Z` |
 | **CC Model** | `Discontinuous` | `Continuous` | `Discontinuous` |
 | **CC Offer Category** | `Negotiated` | `Public` | `Negotiated` |
