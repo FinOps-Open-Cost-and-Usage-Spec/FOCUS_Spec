@@ -83,7 +83,7 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
         </td>
     </tr>
     <tr>
-        <td><strong>Normative Keywords</strong>(Formatting Only)</td>
+        <td><strong>Normative Keywords</strong> (Formatting Only)</td>
         <td>
             Normative keywords and statements (see Normative Requirements Guidelines)
         </td>
