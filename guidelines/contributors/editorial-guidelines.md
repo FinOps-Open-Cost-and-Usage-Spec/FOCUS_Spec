@@ -164,7 +164,6 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
 
 ### Column Values
 
-* **Inline Code for Values:** When referencing specific string values that a column can contain, the value MUST be enclosed in backticks to render as inline code (e.g., `Usage`). 
 
 * **Display Names Usage:** Display Names SHOULD be used in introductory or explanatory sections where natural language context is more appropriate. 
 
