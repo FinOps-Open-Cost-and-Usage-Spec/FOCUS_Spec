@@ -189,6 +189,46 @@ After completing replacements in each file, run verification:
 
 The same original name (e.g., "ACME") may serve as provider in one file and customer in another. Before replacing, identify the role in context and map to the correct fictitious entity (Data Generator vs Customer).
 
+### Approved Name Mappings Per Appendix Section
+
+The canonical reference is `specification/appendix/appendix_overview.md`. The already-merged `billing_scenario_examples.md` and its CSVs on `working_draft` are the authoritative examples of correct usage. Key ServiceCategory assignments from those approved CSVs:
+
+* PipelCRM → Business Applications (CRM, seat/license-based)
+* SprintCanvas → Business Applications (project management, seat-based)
+* StackLens → Management and Governance (observability, host/GB-based)
+* StoreStack → Databases (PaaS database, hours/GB-based)
+* OmniQuery → (data platform, credit-based consumption)
+* CollabChat → (team communications, flat-rate subscription)
+* PulseMail → (email API, tiered pricing)
+
+#### Per-Section Mapping
+
+| Appendix Section | Original Name | Role | Fictitious Replacement |
+| :--- | :--- | :--- | :--- |
+| **SaaS: simple_agreements** | ACME Corp / ACME | Provider | **PipelCRM** |
+| **SaaS: simple_agreements** | AwesomeCorp / Serenity Corp | Customer | **Acme Corp** |
+| **SaaS: spend_agreements** | Acme Co | Provider | **StoreStack** |
+| **SaaS: spend_agreements** | AwesomeCorp | Customer | **Acme Corp** |
+| **SaaS: spend_agreements** | AwesomeDB | Service | **StoreStack DB** |
+| **SaaS: virtual_currency** | Acme Co / ACMECORP | Provider | **OmniQuery** |
+| **SaaS: virtual_currency** | AwesomeCorp / Awesome Corp | Customer | **Acme Corp** |
+| **SaaS: virtual_currency** | ACMECORP SERVICE | Service | **OmniQuery Platform** |
+| **Commitment Discounts** | Amazon Web Services (AWS) | Provider | **Aura Web** |
+| **Commitment Discounts** | Microsoft Azure | Provider | **CrestNode** |
+| **Commitment Discounts** | Google Cloud Platform (GCP) | Provider | **LatticeScale** |
+| **Commitment Discounts** | Reserved Instance (AWS/Azure) | Program | **Resource Reservation (RR)** |
+| **Commitment Discounts** | Savings Plan (AWS/Azure) | Program | **Flexible Spend Plan (FSP)** |
+| **Commitment Discounts** | Resource CUD (GCP) | Program | **Resource Reservation (RR)** |
+| **Commitment Discounts** | Flex CUD (GCP) | Program | **Dynamic Compute Commitment (DCC)** |
+| **Correction Handling** | ACME Corp | Data Generator | **CrestNode** |
+| **Invoice Detail** | Acme Co | Invoice Issuer | **Aura Web** |
+| **Contract Commitments** | Acme Co | Cloud Provider | **Aura Web** |
+| **Contract Commitments** | DataStreamer | Marketplace SaaS | **OmniQuery** |
+| **Contract Commitments** | CyberGuard Inc | Security Vendor | *(no approved equivalent — keep or propose new name)* |
+| **Commitment Discount Flexibility** | TinyCloud | Cloud Provider | **LatticeScale** |
+| **Metadata Examples** | ACME / Acme | Data Generator | **CrestNode** |
+| **Commitment Program Eligibility** | (already correct) | — | **Aura Web**, **Acme Corp** |
+
 ## AI Usage Policy
 
 AI-assisted contributions are permitted and follow the same review standards as human-authored content. See [AI Usage Guidelines](guidelines/contributors/ai-usage-guidelines.md) for details.
