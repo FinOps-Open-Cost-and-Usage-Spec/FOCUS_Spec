@@ -55,7 +55,7 @@ The updated schema-related metadata could look like this:
           {
                 "ColumnName": "Tags",
                 "DataType": "JSON",
-                "DataGeneratorTagPrefixes": ["acme", "ac"]
+                "DataGeneratorTagPrefixes": ["crestnode", "cn"]
           },
           {
                 "ColumnName": "x_awesome_column1",

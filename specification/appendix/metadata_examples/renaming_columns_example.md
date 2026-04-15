@@ -52,7 +52,7 @@ The updated schema related metadata for the schema where the rename took place c
           {
                 "ColumnName": "Tags",
                 "DataType": "JSON",
-                "ProviderTagPrefixes": ["acme", "ac"]
+                "ProviderTagPrefixes": ["crestnode", "cn"]
           },
           {
                 "ColumnName": "x_awesome_column_one",
@@ -119,7 +119,7 @@ The subsequent new schema metadata after the rename could look like this:
           {
                 "ColumnName": "Tags",
                 "DataType": "JSON",
-                "ProviderTagPrefixes": ["acme", "ac"]
+                "ProviderTagPrefixes": ["crestnode", "cn"]
           },
           {
                 "ColumnName": "x_awesome_column_one",

@@ -56,7 +56,7 @@ The updated schema-related metadata could look like this:
     {
       "ColumnName": "Tags",
       "DataType": "JSON",
-      "ProviderTagPrefixes": ["acme", "ac"]
+      "ProviderTagPrefixes": ["crestnode", "cn"]
     },
     {
       "ColumnName": "x_awesome_column1",
@@ -117,7 +117,7 @@ For reference, the prior schema object looked like this:
     {
       "ColumnName": "Tags",
       "DataType": "JSON",
-      "ProviderTagPrefixes": ["acme", "ac"]
+      "ProviderTagPrefixes": ["crestnode", "cn"]
     },
     {
       "ColumnName": "x_awesome_column1",

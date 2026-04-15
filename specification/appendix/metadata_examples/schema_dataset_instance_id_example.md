@@ -52,7 +52,7 @@ The schema for the data artifact conforming to the dataset FOCUS Cost and Usage.
           {
                 "ColumnName": "Tags",
                 "DataType": "JSON",
-                "ProviderTagPrefixes": ["acme", "ac"]
+                "ProviderTagPrefixes": ["crestnode", "cn"]
           }
       ]
 }
