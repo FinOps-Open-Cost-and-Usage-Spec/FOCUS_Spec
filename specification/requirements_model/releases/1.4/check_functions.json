@@ -96,6 +96,14 @@
       ],
       "FormatAttributes": []
     },
+    "CheckGreaterThanValue": {
+      "Description": "Check if column has value greater than a value",
+      "Arguments": [
+        "ColumnName",
+        "Value"
+      ],
+      "FormatAttributes": []
+    },
     "CheckModelRule": {
       "Description": "Check another ModelRule and turn its value",
       "Arguments": [

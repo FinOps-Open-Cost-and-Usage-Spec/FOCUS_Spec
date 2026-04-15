@@ -27,8 +27,8 @@ def _text_has_keywords(text, keywords=None) -> bool:
     if not isinstance(text, str):
         return False
     if keywords is None:
-        keywords = ["when", "unless", "where"]
-    
+        keywords = ["when", "unless", "where", "if it"]
+
     # Remove excluded phrases before checking for keywords
     s = text.lower()
     for phrase in KEYWORD_EXCLUDE_PHRASES:
@@ -102,7 +102,7 @@ def test_suffixes_unified(cr_json, model_version):
         pytest.skip(reason)
     
     """
-    Scope = non-empty ApplicabilityCriteria OR non-empty Condition OR 'when'/'unless' in MustSatisfy
+    Scope = non-empty ApplicabilityCriteria OR non-empty Condition OR 'when'/'unless'/'where'/'if it' in MustSatisfy
     • If scope: require '-C' (skip '-M'/'-O').
 
     Otherwise (no scope):

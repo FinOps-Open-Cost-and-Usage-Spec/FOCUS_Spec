@@ -1,0 +1,153 @@
+{
+  "IND-PaymentDueDate-C-000-M": {
+    "Function": "Composite",
+    "Reference": "PaymentDueDate",
+    "EntityType": "Column",
+    "EntityName": "Payment Due Date",
+    "EntityId": "PaymentDueDate",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 0,
+    "DatasetType": "IND",
+    "DatasetId": "InvoiceDetail",
+    "DatasetName": "Invoice Detail",
+    "ValidationCriteria": {
+      "MustSatisfy": "PaymentDueDate MUST adhere to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "IND-PaymentDueDate-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "IND-PaymentDueDate-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "IND-PaymentDueDate-C-003-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "IND-PaymentDueDate-C-004-M"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "IND-PaymentDueDate-C-001-M",
+        "IND-PaymentDueDate-C-002-M",
+        "IND-PaymentDueDate-C-003-O",
+        "IND-PaymentDueDate-C-004-M",
+        "IND-InvoiceDetail-D-022-M"
+      ]
+    }
+  },
+  "IND-PaymentDueDate-C-001-M": {
+    "Function": "Type",
+    "Reference": "PaymentDueDate",
+    "EntityType": "Column",
+    "EntityName": "Payment Due Date",
+    "EntityId": "PaymentDueDate",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 10,
+    "DatasetType": "IND",
+    "DatasetId": "InvoiceDetail",
+    "DatasetName": "Invoice Detail",
+    "ValidationCriteria": {
+      "MustSatisfy": "PaymentDueDate MUST be of type Date/Time.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "TypeDateTime",
+        "ColumnName": "PaymentDueDate"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "IND-PaymentDueDate-C-002-M": {
+    "Function": "Format",
+    "Reference": "PaymentDueDate",
+    "EntityType": "Column",
+    "EntityName": "Payment Due Date",
+    "EntityId": "PaymentDueDate",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 20,
+    "DatasetType": "IND",
+    "DatasetId": "InvoiceDetail",
+    "DatasetName": "Invoice Detail",
+    "ValidationCriteria": {
+      "MustSatisfy": "PaymentDueDate MUST conform to DateTimeFormat requirements.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "FormatDateTime",
+        "ColumnName": "PaymentDueDate"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "IND-PaymentDueDate-C-003-O": {
+    "Function": "Nullability",
+    "Reference": "PaymentDueDate",
+    "EntityType": "Column",
+    "EntityName": "Payment Due Date",
+    "EntityId": "PaymentDueDate",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 30,
+    "DatasetType": "IND",
+    "DatasetId": "InvoiceDetail",
+    "DatasetName": "Invoice Detail",
+    "ValidationCriteria": {
+      "MustSatisfy": "PaymentDueDate MAY be null.",
+      "Keyword": "MAY",
+      "Requirement": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "PaymentDueDate",
+        "Value": null
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "IND-PaymentDueDate-C-004-M": {
+    "Function": "Validation",
+    "Reference": "PaymentDueDate",
+    "EntityType": "Column",
+    "EntityName": "Payment Due Date",
+    "EntityId": "PaymentDueDate",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "Order": 40,
+    "DatasetType": "IND",
+    "DatasetId": "InvoiceDetail",
+    "DatasetName": "Invoice Detail",
+    "ValidationCriteria": {
+      "MustSatisfy": "PaymentDueDate MUST be the date specified by the *invoice issuer* as the deadline for payment for the corresponding InvoiceId.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}

@@ -1,0 +1,188 @@
+{
+  "IND-InvoiceDetailLastUpdated-C-000-M": {
+    "Function": "Composite",
+    "Reference": "InvoiceDetailLastUpdated",
+    "EntityType": "Column",
+    "EntityName": "Invoice Detail Last Updated",
+    "EntityId": "InvoiceDetailLastUpdated",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 0,
+    "DatasetType": "IND",
+    "DatasetId": "InvoiceDetail",
+    "DatasetName": "Invoice Detail",
+    "ValidationCriteria": {
+      "MustSatisfy": "InvoiceDetailLastUpdated MUST adhere to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "IND-InvoiceDetailLastUpdated-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "IND-InvoiceDetailLastUpdated-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "IND-InvoiceDetailLastUpdated-C-003-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "IND-InvoiceDetailLastUpdated-C-004-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "IND-InvoiceDetailLastUpdated-C-005-M"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "IND-InvoiceDetailLastUpdated-C-001-M",
+        "IND-InvoiceDetailLastUpdated-C-002-M",
+        "IND-InvoiceDetailLastUpdated-C-003-M",
+        "IND-InvoiceDetailLastUpdated-C-004-C",
+        "IND-InvoiceDetailLastUpdated-C-005-M",
+        "IND-InvoiceDetail-D-014-M"
+      ]
+    }
+  },
+  "IND-InvoiceDetailLastUpdated-C-001-M": {
+    "Function": "Type",
+    "Reference": "InvoiceDetailLastUpdated",
+    "EntityType": "Column",
+    "EntityName": "Invoice Detail Last Updated",
+    "EntityId": "InvoiceDetailLastUpdated",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 10,
+    "DatasetType": "IND",
+    "DatasetId": "InvoiceDetail",
+    "DatasetName": "Invoice Detail",
+    "ValidationCriteria": {
+      "MustSatisfy": "InvoiceDetailLastUpdated MUST be of type Date/Time.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "TypeDateTime",
+        "ColumnName": "InvoiceDetailLastUpdated"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "IND-InvoiceDetailLastUpdated-C-002-M": {
+    "Function": "Format",
+    "Reference": "InvoiceDetailLastUpdated",
+    "EntityType": "Column",
+    "EntityName": "Invoice Detail Last Updated",
+    "EntityId": "InvoiceDetailLastUpdated",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 20,
+    "DatasetType": "IND",
+    "DatasetId": "InvoiceDetail",
+    "DatasetName": "Invoice Detail",
+    "ValidationCriteria": {
+      "MustSatisfy": "InvoiceDetailLastUpdated MUST conform to DateTimeFormat requirements.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "FormatDateTime",
+        "ColumnName": "InvoiceDetailLastUpdated"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "IND-InvoiceDetailLastUpdated-C-003-M": {
+    "Function": "Nullability",
+    "Reference": "InvoiceDetailLastUpdated",
+    "EntityType": "Column",
+    "EntityName": "Invoice Detail Last Updated",
+    "EntityId": "InvoiceDetailLastUpdated",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 30,
+    "DatasetType": "IND",
+    "DatasetId": "InvoiceDetail",
+    "DatasetName": "Invoice Detail",
+    "ValidationCriteria": {
+      "MustSatisfy": "InvoiceDetailLastUpdated MUST NOT be null.",
+      "Keyword": "MUST NOT",
+      "Requirement": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "InvoiceDetailLastUpdated",
+        "Value": null
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "IND-InvoiceDetailLastUpdated-C-004-C": {
+    "Function": "Validation",
+    "Reference": "InvoiceDetailLastUpdated",
+    "EntityType": "Column",
+    "EntityName": "Invoice Detail Last Updated",
+    "EntityId": "InvoiceDetailLastUpdated",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "Order": 40,
+    "DatasetType": "IND",
+    "DatasetId": "InvoiceDetail",
+    "DatasetName": "Invoice Detail",
+    "ValidationCriteria": {
+      "MustSatisfy": "InvoiceDetailLastUpdated MUST represent the most recent moment in time when any column value of the record identified by InvoiceDetailId was created or modified.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "IND-InvoiceDetailLastUpdated-C-005-M": {
+    "Function": "Validation",
+    "Reference": "InvoiceDetailLastUpdated",
+    "EntityType": "Column",
+    "EntityName": "Invoice Detail Last Updated",
+    "EntityId": "InvoiceDetailLastUpdated",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 50,
+    "DatasetType": "IND",
+    "DatasetId": "InvoiceDetail",
+    "DatasetName": "Invoice Detail",
+    "ValidationCriteria": {
+      "MustSatisfy": "InvoiceDetailLastUpdated MUST be greater than or equal to InvoiceDetailCreated.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "CheckColumnComparison",
+        "ColumnAName": "InvoiceDetailLastUpdated",
+        "ColumnBName": "InvoiceDetailCreated",
+        "Comparator": ">="
+      },
+      "Condition": {},
+      "Dependencies": [
+        "IND-InvoiceDetailCreated-C-000-M"
+      ]
+    }
+  }
+}

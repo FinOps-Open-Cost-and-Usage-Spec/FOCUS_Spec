@@ -1,0 +1,153 @@
+{
+  "IND-InvoiceIssueDate-C-000-M": {
+    "Function": "Composite",
+    "Reference": "InvoiceIssueDate",
+    "EntityType": "Column",
+    "EntityName": "Invoice Issue Date",
+    "EntityId": "InvoiceIssueDate",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 0,
+    "DatasetType": "IND",
+    "DatasetId": "InvoiceDetail",
+    "DatasetName": "Invoice Detail",
+    "ValidationCriteria": {
+      "MustSatisfy": "InvoiceIssueDate MUST adhere to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "IND-InvoiceIssueDate-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "IND-InvoiceIssueDate-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "IND-InvoiceIssueDate-C-003-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "IND-InvoiceIssueDate-C-004-M"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "IND-InvoiceIssueDate-C-001-M",
+        "IND-InvoiceIssueDate-C-002-M",
+        "IND-InvoiceIssueDate-C-003-O",
+        "IND-InvoiceIssueDate-C-004-M",
+        "IND-InvoiceDetail-D-016-M"
+      ]
+    }
+  },
+  "IND-InvoiceIssueDate-C-001-M": {
+    "Function": "Type",
+    "Reference": "InvoiceIssueDate",
+    "EntityType": "Column",
+    "EntityName": "Invoice Issue Date",
+    "EntityId": "InvoiceIssueDate",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 10,
+    "DatasetType": "IND",
+    "DatasetId": "InvoiceDetail",
+    "DatasetName": "Invoice Detail",
+    "ValidationCriteria": {
+      "MustSatisfy": "InvoiceIssueDate MUST be of type Date/Time.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "TypeDateTime",
+        "ColumnName": "InvoiceIssueDate"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "IND-InvoiceIssueDate-C-002-M": {
+    "Function": "Format",
+    "Reference": "InvoiceIssueDate",
+    "EntityType": "Column",
+    "EntityName": "Invoice Issue Date",
+    "EntityId": "InvoiceIssueDate",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 20,
+    "DatasetType": "IND",
+    "DatasetId": "InvoiceDetail",
+    "DatasetName": "Invoice Detail",
+    "ValidationCriteria": {
+      "MustSatisfy": "InvoiceIssueDate MUST conform to DateTimeFormat requirements.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "FormatDateTime",
+        "ColumnName": "InvoiceIssueDate"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "IND-InvoiceIssueDate-C-003-O": {
+    "Function": "Nullability",
+    "Reference": "InvoiceIssueDate",
+    "EntityType": "Column",
+    "EntityName": "Invoice Issue Date",
+    "EntityId": "InvoiceIssueDate",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 30,
+    "DatasetType": "IND",
+    "DatasetId": "InvoiceDetail",
+    "DatasetName": "Invoice Detail",
+    "ValidationCriteria": {
+      "MustSatisfy": "InvoiceIssueDate MAY be null.",
+      "Keyword": "MAY",
+      "Requirement": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "InvoiceIssueDate",
+        "Value": null
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "IND-InvoiceIssueDate-C-004-M": {
+    "Function": "Validation",
+    "Reference": "InvoiceIssueDate",
+    "EntityType": "Column",
+    "EntityName": "Invoice Issue Date",
+    "EntityId": "InvoiceIssueDate",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "Order": 40,
+    "DatasetType": "IND",
+    "DatasetId": "InvoiceDetail",
+    "DatasetName": "Invoice Detail",
+    "ValidationCriteria": {
+      "MustSatisfy": "InvoiceIssueDate MUST represent the official date of issuance for the corresponding InvoiceId.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}
