@@ -84,7 +84,7 @@ This example demonstrates a complex, multi-faceted agreement between a customer 
 
 ### Data Example: AGR-99-BETA
 
-| Column | Commitment 1: Spend Pool | Commitment 2: Compute RI | Commitment 3: Marketplace SaaS |
+| Column | Commitment 1: Spend Pool | Commitment 2: Compute Reservation | Commitment 3: Marketplace SaaS |
 | :--- | :--- | :--- | :--- |
 | **Billing Currency** | `EUR` | `EUR` | `EUR` |
 | **CC Benefit Category** | `Discount` | `Discount` | `Entitlement` |
@@ -129,11 +129,11 @@ In this scenario, an enterprise with an existing master agreement with **Aura We
 * **Commercial Logic:** A **Usage-based**, **Continuous** model with a short **3-Month** duration. It is paid **All Upfront** to secure priority capacity.
 * **Eligibility:** Restricted to the `AI/ML` service category.
 
-#### Commitment 2: Security Seat License (Quantity-based)
+#### Commitment 2: Observability Seat License (Quantity-based)
 
-* **Context:** A commitment to **500 Seats** of an endpoint security platform.
+* **Context:** A commitment to **500 Seats** of an observability and monitoring platform.
 * **Commercial Logic:** A **Quantity-based**, **Discontinuous** model. The unit of measure is **Seats** rather than a currency value.
-* **Invoice/Provider Alignment:** Unlike the Marketplace example, this is billed directly by the vendor (**CyberGuard Inc**), yet remains logically associated with the broader Cloud Transformation contract.
+* **Invoice/Provider Alignment:** Unlike the Marketplace example, this is billed directly by the vendor (**StackLens**), yet remains logically associated with the broader Cloud Transformation contract.
 
 #### Commitment 3: Cross-Cloud Data Connector (Tiered Usage)
 
@@ -143,14 +143,14 @@ In this scenario, an enterprise with an existing master agreement with **Aura We
 
 ### Data Example: AGR-44-GAMMA
 
-| Column | Commitment 1: AI Training | Commitment 2: Security Seats | Commitment 3: Data Connector |
+| Column | Commitment 1: AI Training | Commitment 2: Observability Seats | Commitment 3: Data Connector |
 | :--- | :--- | :--- | :--- |
 | **Billing Currency** | `USD` | `USD` | `USD` |
 | **CC Benefit Category** | `Discount` | `Entitlement` | `Discount` |
 | **CC Category** | `Usage` | `Usage` | `Usage` |
 | **CC Cost** | `250000.00` | `120000.00` | `15000.00` |
 | **CC Created** | `2026-02-01T08:00:00Z` | `2026-02-01T08:00:00Z` | `2026-02-01T08:00:00Z` |
-| **CC Description** | `H100 GPU Reservation - Q1` | `CyberGuard Endpoint Seats` | `Inter-Cloud Egress Tier` |
+| **CC Description** | `H100 GPU Reservation - Q1` | `StackLens Monitoring Seats` | `Inter-Cloud Egress Tier` |
 | **CC Discount %** | `0.30` | `null` | `0.50` |
 | **CC Duration Type** | `3 Months` | `1 Year` | `1 Year` |
 | **CC Applicability** | `{"InclusionOperator": "Or", "Inclusions": [{"Dimension": "ServiceCategory", "Operator": "In", "Values": ["AI/ML"]}]}` | `{"IsGlobalScope": true}` | `{"InclusionOperator": "Or", "Inclusions": [{"Dimension": "UsageType", "Operator": "Contains", "Values": ["Egress"]}]}` |
@@ -166,15 +166,15 @@ In this scenario, an enterprise with an existing master agreement with **Aura We
 | **CC Period Start** | `2026-02-01` | `2026-02-01` | `2026-02-01` |
 | **CC Quantity** | `5000.00` | `500.00` | `100.00` |
 | **CC Lifecycle Status** | `Active` | `Active` | `Active` |
-| **CC Type** | `Advance Resource Commitment` | `SaaS Subscription` | `Usage Tier` |
+| **CC Type** | `Resource Reservation` | `SaaS Subscription` | `Usage Tier` |
 | **CC Unit** | `GPU-Hours` | `Seats` | `Terabytes` |
 | **Contract ID** | `AGR-44-GAMMA` | `AGR-44-GAMMA` | `AGR-44-GAMMA` |
 | **Contract Period End** | `2029-02-01` | `2029-02-01` | `2029-02-01` |
 | **Contract Period Start** | `2026-02-01` | `2026-02-01` | `2026-02-01` |
-| **Invoice Issuer Name** | `Aura Web` | `CyberGuard Inc` | `Aura Web` |
+| **Invoice Issuer Name** | `Aura Web` | `StackLens` | `Aura Web` |
 | **Pricing Currency** | `USD` | `USD` | `USD` |
 | **Pricing Currency CC Cost** | `250000.00` | `120000.00` | `15000.00` |
-| **Service Provider Name** | `Aura Web` | `CyberGuard Inc` | `Aura Web` |
+| **Service Provider Name** | `Aura Web` | `StackLens` | `Aura Web` |
 
 [CSV Example](../../data/contract_commitments/contract_commitment_scenario_2.csv)
 
