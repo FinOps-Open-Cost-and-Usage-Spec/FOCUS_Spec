@@ -87,7 +87,7 @@ AI agents generating or reviewing content MUST act as strict technical editors e
 
 * Use BCP-14 keywords: MUST, MUST NOT, SHOULD, SHOULD NOT, MAY (all uppercase).
 * DO NOT use: "REQUIRED", "SHALL", "SHALL NOT", "RECOMMENDED", "OPTIONAL"
-* **Location:** In spec content, capitalized BCP-14 keywords MUST NOT appear outside "Requirements" unless quoted. Do not flag lowercase usage (e.g., "may", "should").
+* **Location:** In spec content, capitalized BCP-14 keywords MUST NOT appear outside "Requirements" sections unless quoted. Do not flag lowercase usage (e.g., "may", "should").
 * **Format:** Write normative statements as bullet lists, not lengthy sentences.
 * **Single Constraint:** Each normative bullet MUST express exactly one requirement. Do not combine multiple distinct obligations using "and"/"or", though these conjunctions are permitted within conditional clauses and mathematical validations.
 * **Conditional Phrasing:** Normative statements with conditions MUST use standard phrasing: "when / if / unless / only when / only if / except when / except if".
