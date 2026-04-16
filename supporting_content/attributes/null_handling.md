@@ -26,5 +26,5 @@ Current values observed in billing data for various scenarios:
 - Is there a difference between qualitative and quantitative columns<br>
   `TODO:` come back after metrics and other quantitative columns are defined so we can specify if dimensions should have separate null handling compared to metrics/measures columns
   - Many data analytics solutions will ignore NULL values when using aggregation functions. Aggregation functions are frequently used on quantitative columns
-- Cost data generators shouldn't intentionally convert data (e.g. convert empty *tag* -> null or the reverse null -> 'Not Set')
+- Cost data generators shouldn't intentionally convert data (e.g., convert empty *tag* -> null or the reverse null -> 'Not Set')
   - There were arguments on both sides of this

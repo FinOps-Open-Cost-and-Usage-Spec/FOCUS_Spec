@@ -4,7 +4,7 @@ The following examples illustrate how corrections to previously closed billing p
 
 ## Closed-Period Correction Scenarios
 
-These scenarios address discrepancies related to charges from the May 2025 billing period after it was closed and invoiced by the issuer ACME Corp on June 8th, 2025. The discrepancies were identified on July 5th, 2025. At that time, the June 2025 billing period was still open.
+These scenarios address discrepancies related to charges from the May 2025 billing period after it was closed and invoiced by the issuer CrestNode on June 8th, 2025. The discrepancies were identified on July 5th, 2025. At that time, the June 2025 billing period was still open.
 
 ### Billing Period Alignment
 
@@ -12,15 +12,15 @@ Corrections are applied to the open billing period rather than modifying the clo
 
 ### Correction Style
 
-While the Overwrite mechanism is permissible when it doesn't impact issued invoices, ACME Corp defaults to the Append mechanism (Delta and Ledger styles) for all closed period corrections. This preference prioritizes auditability and traceability, ensuring that downstream consumers - particularly those managing chargeback - receive a clear, additive history of changes.
+While the Overwrite mechanism is permissible when it doesn't impact issued invoices, CrestNode defaults to the Append mechanism (Delta and Ledger styles) for all closed period corrections. This preference prioritizes auditability and traceability, ensuring that downstream consumers - particularly those managing chargeback - receive a clear, additive history of changes.
 
 ### Scenario 1: Closed-Period Correction - Partial Reallocation to Correct Resource
 
-On July 5th, 2025, ACME Corp identified that a charge record previously invoiced for May 2025 was incorrectly attributed entirely to ResourceId `R-111`. In reality, only part of the cost and usage belonged to that resource, while the remainder pertained to ResourceId `R-222`.
+On July 5th, 2025, CrestNode identified that a charge record previously invoiced for May 2025 was incorrectly attributed entirely to ResourceId `R-111`. In reality, only part of the cost and usage belonged to that resource, while the remainder pertained to ResourceId `R-222`.
 
-To correct this misattribution, ACME Corp provisioned a reallocation correction using Append mechanisms. The correction was realized either through a Delta style correction, which redistributed the cost between resources using increment and decrement records, or through a Ledger style correction, which negated the original charge and introduced corrected records for each resource.
+To correct this misattribution, CrestNode provisioned a reallocation correction using Append mechanisms. The correction was realized either through a Delta style correction, which redistributed the cost between resources using increment and decrement records, or through a Ledger style correction, which negated the original charge and introduced corrected records for each resource.
 
-***Note:*** *Replacement (i.e., Overwrite delivery mechanism) could have been applied in this scenario because the reallocation would not affect invoice reconciliation and would not require additional invoices. However, ACME Corp chose Append to preserve traceability and auditability while ensuring that downstream processes, in particular chargeback, receive timely and accurate cost attribution.*
+***Note:*** *Replacement (i.e., Overwrite delivery mechanism) could have been applied in this scenario because the reallocation would not affect invoice reconciliation and would not require additional invoices. However, CrestNode chose Append to preserve traceability and auditability while ensuring that downstream processes, in particular chargeback, receive timely and accurate cost attribution.*
 
 CSV Examples:
 
@@ -44,9 +44,9 @@ Note the following details in the example datasets:
 
 ### Scenario 2: Closed-Period Correction - Late-arriving Usage
 
-On July 5th, 2025, ACME Corp identified a cost that was incurred during May 2025 (ChargePeriodStart: `2025-05-01`) but was not included in the finalized invoice issued on June 8th, 2025. Since the May billing period was closed, the correction was delivered in the next open billing period (e.g., June or July).
+On July 5th, 2025, CrestNode identified a cost that was incurred during May 2025 (ChargePeriodStart: `2025-05-01`) but was not included in the finalized invoice issued on June 8th, 2025. Since the May billing period was closed, the correction was delivered in the next open billing period (e.g., June or July).
 
-To account for the previously omitted usage, ACME Corp provisioned a correction using Append mechanisms. The correction was realized by introducing a single increment record in both Delta style correction and Ledger style correction formats, representing the late-arriving cost and usage.
+To account for the previously omitted usage, CrestNode provisioned a correction using Append mechanisms. The correction was realized by introducing a single increment record in both Delta style correction and Ledger style correction formats, representing the late-arriving cost and usage.
 
 CSV Examples:
 
@@ -64,9 +64,9 @@ Note the following details in the example datasets:
 
 ### Scenario 3: Closed-Period Correction - Itemized Cost-only Corrections
 
-On July 5th, 2025, ACME Corp detected a minor cost discrepancy caused by accumulated rounding differences across multiple previously invoiced records spanning several different SkuPriceId values. While each individual record was correctly rounded, the aggregated cost differed slightly from the precise total, resulting in a small drift.
+On July 5th, 2025, CrestNode detected a minor cost discrepancy caused by accumulated rounding differences across multiple previously invoiced records spanning several different SkuPriceId values. While each individual record was correctly rounded, the aggregated cost differed slightly from the precise total, resulting in a small drift.
 
-To reconcile this discrepancy, ACME Corp provisioned a cost-only correction using Append mechanism. In both Delta style correction and Ledger style correction formats, the correction was realized by introducing two itemized increment records, each representing a cost-only adjustment for one of the affected SkuPriceId values. Unlike bulk corrections, which consolidate adjustments into a single record without specifying a SkuPriceId, this approach explicitly itemizes the correction per SkuPriceId. Because the original records were individually correct and no single record requires reversal, the Ledger style correction does not include explicit reversals. In this case, the Ledger and Delta corrections are identical, as only additive records are needed to reconcile the accumulated drift.
+To reconcile this discrepancy, CrestNode provisioned a cost-only correction using Append mechanism. In both Delta style correction and Ledger style correction formats, the correction was realized by introducing two itemized increment records, each representing a cost-only adjustment for one of the affected SkuPriceId values. Unlike bulk corrections, which consolidate adjustments into a single record without specifying a SkuPriceId, this approach explicitly itemizes the correction per SkuPriceId. Because the original records were individually correct and no single record requires reversal, the Ledger style correction does not include explicit reversals. In this case, the Ledger and Delta corrections are identical, as only additive records are needed to reconcile the accumulated drift.
 
 Compared to the bulk correction approach, this method ensures transparency and traceability and is preferred when itemized correction is feasible.
 
@@ -89,9 +89,9 @@ Note the following details in the example datasets:
 
 ### Scenario 4: Closed-Period Correction - Bulk Cost-only Corrections
 
-On July 5th, 2025, ACME Corp detected a minor cost discrepancy caused by accumulated rounding differences across multiple previously invoiced records spanning several different SkuPriceId values. While each individual record was correctly rounded, the aggregated cost differed slightly from the precise total, resulting in a small drift.
+On July 5th, 2025, CrestNode detected a minor cost discrepancy caused by accumulated rounding differences across multiple previously invoiced records spanning several different SkuPriceId values. While each individual record was correctly rounded, the aggregated cost differed slightly from the precise total, resulting in a small drift.
 
-To reconcile this discrepancy, ACME Corp provisioned a bulk cost-only correction using Append mechanism. The correction was realized by introducing a single increment record in both Delta style correction and Ledger style correction formats, representing the bulk cost-only adjustment. Unlike itemized corrections, this bulk record did not specify a SkuPriceId, as the discrepancy spanned multiple SKU Price IDs. Because the original records were individually correct and no single record requires reversal, the Ledger style correction does not include explicit reversals. In this case, the Ledger and Delta corrections are identical, as only additive records are needed to reconcile the accumulated drift.
+To reconcile this discrepancy, CrestNode provisioned a bulk cost-only correction using Append mechanism. The correction was realized by introducing a single increment record in both Delta style correction and Ledger style correction formats, representing the bulk cost-only adjustment. Unlike itemized corrections, this bulk record did not specify a SkuPriceId, as the discrepancy spanned multiple SKU Price IDs. Because the original records were individually correct and no single record requires reversal, the Ledger style correction does not include explicit reversals. In this case, the Ledger and Delta corrections are identical, as only additive records are needed to reconcile the accumulated drift.
 
 CSV Examples:
 
