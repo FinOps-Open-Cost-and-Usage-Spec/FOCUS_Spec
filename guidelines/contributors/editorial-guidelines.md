@@ -291,23 +291,23 @@ To ensure consistent language when describing relationships and evaluations betw
 
 #### Notes
 
-* **Blockquote Format:** Notes MUST be expressed using Markdown blockquote syntax (`>`). This creates a consistent, parseable container that can be styled during rendering.
+* **Permitted in Non-Normative Content Only:** Notes MUST NOT appear in Requirements sections. Notes MAY appear in non-normative sections of the specification and in guidelines documents.
 
-* **Note Label:** Notes MUST begin with the label `Note:` or `Notes:` followed by a colon.
+* **Blockquote Format:** Notes MUST be expressed using Markdown blockquote syntax (`>`). This creates a consistent, parseable container and allows downstream tooling to control visual presentation in HTML and PDF outputs.
+
+* **Note Label:** Notes MUST begin with the label `**Note:**` or `**Notes:**` (the term `Note` or `Notes`, followed by a colon, in bold).
+
+* **Consistent Terminology:** Only the terms `Note` or `Notes` MUST be used. Variants such as `Important Note`, `Warning`, or similar terms MUST NOT be used.
+
+* **Non-Normative Content:** Notes MUST be informative and non-normative. They MUST NOT contain normative keywords (e.g., MUST, SHOULD, MAY).
 
 * **Single-Line Notes:** A note containing a single statement MUST be written as a single blockquote line.
 
-* **Multi-Line Notes:** A note spanning multiple lines MUST repeat the blockquote prefix (`>`) on each line.
+* **Multi-Line Notes:** A note spanning multiple lines MUST repeat the blockquote prefix (`>`) on each line. A blank blockquote line (`>`) MUST separate the label from the bullet list.
 
 * **Multiple Notes:** When multiple notes are present in the same context, they SHOULD be grouped within a single blockquote and expressed as bullet points.
 
 * **Bullet Usage in Notes:** When using bullets inside a note, the bullets MUST follow standard bullet formatting rules defined in this document.
-
-* **Consistent Terminology:** Only the label `Note:` or `Notes:` MUST be used. Variants such as “Important Note”, “Warning”, or similar terms MUST NOT be used.
-
-* **Non-Normative Content:** Notes MUST be informative and non-normative. They MUST NOT contain normative keywords (e.g., MUST, SHOULD, MAY).
-
-* **Rendering Flexibility:** Notes SHOULD be authored using blockquotes to allow downstream tooling to control visual presentation in HTML and PDF outputs.
 
 * **Example** (Markdown, illustrative):
 
