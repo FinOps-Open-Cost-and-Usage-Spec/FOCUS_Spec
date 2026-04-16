@@ -131,11 +131,7 @@ GitHub does not auto-apply templates when issues or PRs are created via API. AI 
 
 #### Pull Requests
 
-Every PR body MUST follow the template at `.github/pull_request_template.md`, including:
-
-* A summary of the changes
-* The appropriate "Type of Change" checkbox
-* All "Author Checklist" items checked, including the [AI Usage Guidelines](guidelines/contributors/ai-usage-guidelines.md) attestation
+PR bodies MUST complete `.github/pull_request_template.md`, including the summary, "Type of Change", and "Author Checklist" (with [AI Usage Guidelines](guidelines/contributors/ai-usage-guidelines.md) attestation).
 
 #### Issues
 
