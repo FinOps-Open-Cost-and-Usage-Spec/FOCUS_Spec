@@ -1,4 +1,4 @@
-# AWS Savings Plan - No Upfront - 100% Utilization
+# Aura Web Flexible Spend Plan - No Upfront - 100% Utilization
 
 | Parameter                    | Value              |
 | ---------------------------- | ------------------ |
@@ -10,11 +10,11 @@
 | Annual Commitment            | $462,966.00 |
 | List Unit Price              | $79.28/hour |
 
-[CSV Example](/specification/data/commitment_discount_scenarios/aws_savings_plan_no_upfront_100pct.csv)
+[CSV Example](/specification/data/commitment_discount_scenarios/aura_web_flexible_spend_plan_no_upfront_100pct.csv)
 
 ## Scenario Description
 
-This example shows an **Amazon Web Services EC2 Instance Savings Plan**, which is a commitment (with a Commitment Discount Category of `Spend`) where you commit to a specific dollar amount of usage per hour.
+This example shows an **Aura Web Flexible Spend Plan**, which is a commitment (with a Commitment Discount Category of `Spend`) where you commit to a specific dollar amount of usage per hour.
 
 The **No Upfront** payment option means you pay nothing at purchase time and instead pay a recurring monthly fee. This results in a recurring Purchase row each billing period with BilledCost equal to the monthly fee and zero EffectiveCost.
 
@@ -53,7 +53,7 @@ These three quantity columns serve different purposes and must be understood in 
 | **ListUnitPrice**       | List (public) unit price | $79.28      |
 | **ContractedUnitPrice** | Negotiated unit price    | $79.28      |
 
-**Why this matters:** ContractedUnitPrice reflects enterprise-negotiated pricing (e.g., EDP rates), not commitment discount savings. In non-negotiated scenarios, ContractedUnitPrice equals ListUnitPrice. Commitment discount savings are reflected in EffectiveCost, not in unit prices.
+**Why this matters:** ContractedUnitPrice reflects enterprise-negotiated pricing (e.g., enterprise-negotiated rates), not commitment discount savings. In non-negotiated scenarios, ContractedUnitPrice equals ListUnitPrice. Commitment discount savings are reflected in EffectiveCost, not in unit prices.
 
 ### Cost Columns: BilledCost vs EffectiveCost vs ListCost
 
@@ -79,8 +79,8 @@ The following critical rules apply to commitment discount data:
 | CommitmentDiscountStatus   | null                                 | Status only applies to usage rows                                |
 | CommitmentDiscountQuantity | 35,515.20                            | Commitment capacity for Feb ($52.85/hr &times; 672 hrs)   |
 | CommitmentDiscountUnit     | USD                                  | Unit of commitment capacity (spend-based)                        |
-| SkuId                      | AWS-USEAST1-COMPUTE-PURCHASE         | Commitment purchase SKU                                          |
-| SkuPriceId                 | AWS-USEAST1-COMPUTE-PURCHASE-MONTHLY | Price point for recurring purchase                               |
+| SkuId                      | AURAWEB-USEAST1-COMPUTE-PURCHASE         | Commitment purchase SKU                                          |
+| SkuPriceId                 | AURAWEB-USEAST1-COMPUTE-PURCHASE-MONTHLY | Price point for recurring purchase                               |
 
 ## Usage Row Details (Commitment-Covered)
 
@@ -95,6 +95,6 @@ The following critical rules apply to commitment discount data:
 | ConsumedQuantity           | 1                                                     | Hours used                                 |
 | CommitmentDiscountQuantity | 52.85                                                 | Hourly commitment spend applied            |
 | CommitmentDiscountStatus   | Used                                                  | Commitment applied                         |
-| CommitmentDiscountId       | arn:aws:savingsplans::123456789012:savingsplan/sp-... | Links usage to purchase                    |
-| SkuId                      | AWS-USEAST1-COMPUTE-USAGE                             | Resource usage SKU (differs from Purchase) |
-| SkuPriceId                 | AWS-USEAST1-COMPUTE-USAGE-COMMITTED                   | Price point for committed usage            |
+| CommitmentDiscountId       | auraweb:flexspend::123456789012:flexspendplan/fsp-... | Links usage to purchase                    |
+| SkuId                      | AURAWEB-USEAST1-COMPUTE-USAGE                             | Resource usage SKU (differs from Purchase) |
+| SkuPriceId                 | AURAWEB-USEAST1-COMPUTE-USAGE-COMMITTED                   | Price point for committed usage            |

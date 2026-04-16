@@ -1,4 +1,4 @@
-# Azure Reservation - No Upfront - 100% Utilization
+# CrestNode Resource Reservation - No Upfront - 100% Utilization
 
 | Parameter                    | Value               |
 | ---------------------------- | ------------------- |
@@ -10,11 +10,11 @@
 | Annual Commitment            | $664,008.00  |
 | List Unit Price              | $113.70/hour |
 
-[CSV Example](/specification/data/commitment_discount_scenarios/azure_reservation_no_upfront_100pct.csv)
+[CSV Example](/specification/data/commitment_discount_scenarios/crestnode_resource_reservation_no_upfront_100pct.csv)
 
 ## Scenario Description
 
-This example shows a **Microsoft Azure Virtual Machine Reserved Instance**, which is a commitment (with a Commitment Discount Category of `Usage`) where you commit to a specific quantity of resource capacity (e.g., instance hours).
+This example shows a **CrestNode Resource Reservation**, which is a commitment (with a Commitment Discount Category of `Usage`) where you commit to a specific quantity of resource capacity (e.g., instance hours).
 
 The **No Upfront** payment option means you pay nothing at purchase time and instead pay a recurring monthly fee. This results in a recurring Purchase row each billing period with BilledCost equal to the monthly fee and zero EffectiveCost.
 
@@ -53,7 +53,7 @@ These three quantity columns serve different purposes and must be understood in 
 | **ListUnitPrice**       | List (public) unit price | $113.70     |
 | **ContractedUnitPrice** | Negotiated unit price    | $113.70     |
 
-**Why this matters:** ContractedUnitPrice reflects enterprise-negotiated pricing (e.g., EDP rates), not commitment discount savings. In non-negotiated scenarios, ContractedUnitPrice equals ListUnitPrice. Commitment discount savings are reflected in EffectiveCost, not in unit prices.
+**Why this matters:** ContractedUnitPrice reflects enterprise-negotiated pricing (e.g., enterprise-negotiated rates), not commitment discount savings. In non-negotiated scenarios, ContractedUnitPrice equals ListUnitPrice. Commitment discount savings are reflected in EffectiveCost, not in unit prices.
 
 ### Cost Columns: BilledCost vs EffectiveCost vs ListCost
 
@@ -79,8 +79,8 @@ The following critical rules apply to commitment discount data:
 | CommitmentDiscountStatus   | null                                  | Status only applies to usage rows                              |
 | CommitmentDiscountQuantity | 672.00                                | Commitment capacity for Feb (1 instance-hr/hr &times; 672 hrs) |
 | CommitmentDiscountUnit     | Hours                                 | Unit of commitment capacity (usage-based)                      |
-| SkuId                      | Azure-EASTUS-COMPUTE-PURCHASE         | Commitment purchase SKU                                        |
-| SkuPriceId                 | Azure-EASTUS-COMPUTE-PURCHASE-MONTHLY | Price point for recurring purchase                             |
+| SkuId                      | CRESTNODE-EASTUS-COMPUTE-PURCHASE            | Commitment purchase SKU                                        |
+| SkuPriceId                 | CRESTNODE-EASTUS-COMPUTE-PURCHASE-MONTHLY    | Price point for recurring purchase                             |
 
 ## Usage Row Details (Commitment-Covered)
 
@@ -95,6 +95,6 @@ The following critical rules apply to commitment discount data:
 | ConsumedQuantity           | 1                                                     | Hours used                                 |
 | CommitmentDiscountQuantity | 1                                                     | Commitment units applied                   |
 | CommitmentDiscountStatus   | Used                                                  | Commitment applied                         |
-| CommitmentDiscountId       | /subscriptions/f0e9d8c7-b6a5-4321-0987-654321fedcb... | Links usage to purchase                    |
-| SkuId                      | Azure-EASTUS-COMPUTE-USAGE                            | Resource usage SKU (differs from Purchase) |
-| SkuPriceId                 | Azure-EASTUS-COMPUTE-USAGE-COMMITTED                  | Price point for committed usage            |
+| CommitmentDiscountId       | crestnode:compute:eastus:f0e9d8c7-b6a5-4321-0987-654321...   | Links usage to purchase                    |
+| SkuId                      | CRESTNODE-EASTUS-COMPUTE-USAGE                               | Resource usage SKU (differs from Purchase) |
+| SkuPriceId                 | CRESTNODE-EASTUS-COMPUTE-USAGE-COMMITTED                     | Price point for committed usage            |
