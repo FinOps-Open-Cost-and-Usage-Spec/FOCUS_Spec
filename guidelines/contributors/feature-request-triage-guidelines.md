@@ -22,6 +22,30 @@ FR titles must start with `[FR]` and follow these conventions. During triage, me
 * **Keep titles ≤ 75 characters (aim for ~60).** Short enough to fit in GitHub lists, change logs, and slides without wrapping
 * **Don't end with a trailing period**
 
+#### Examples
+
+> Passes:
+> `[FR] Add amortized cost for reservations`
+> `[FR] Clarify null handling for ListUnitPrice`
+
+> Fails (too long, restates problem):
+> `[FR] Expand the pricing model to better represent discounts across reserved, spot, and savings plan purchases`
+
+> Fails (implementation-describing):
+> `[FR] Add a new decimal column for effective hourly rate`
+
+> Fails (vague verb):
+> `[FR] Revisit commitment discount handling`
+
+> Fails (bundles two concepts):
+> `[FR] Add SKU metadata and standardize service categorization`
+
+> Fails (ALL-CAPS):
+> `[FR] ADD RI COVERAGE METRIC TO COST AND USAGE DATASET`
+
+> Fails (vendor-specific):
+> `[FR] Add support for AWS Savings Plans in commitment columns`
+
 ### Required Section Quality Standards
 
 Each required section of the [Feature Request template](../../.github/ISSUE_TEMPLATE/feature-request.yml) has a defined quality bar. A section can fail in two ways:
@@ -38,6 +62,20 @@ The problem statement describes a gap in what FOCUS can do today. It does not pr
 | Passes | Identifies a specific limitation or ambiguity in the current specification. Written from the perspective of a practitioner or data generator encountering the gap. Does not embed a solution direction. |
 | Fails (below bar) | Describes a solution instead of a problem (e.g., "add column X to the dataset"). Too vague to act on (e.g., "improve billing"). Restates the use case instead of identifying the underlying gap. Contains implementation language (column names, data types, JSON structures) rather than describing what practitioners cannot do. |
 
+##### Examples
+
+> Passes:
+> Practitioners cannot distinguish between committed-use discounts and volume-tier discounts in the current specification. Both flow through the same discount columns without a dimension that separates them, so reports that attribute savings to negotiated commitments cannot be built from FOCUS data alone.
+
+> Fails (solution-embedded):
+> FOCUS should add a `CommitmentDiscountType` column with values for "Committed Use" and "Volume Tier."
+
+> Fails (too vague):
+> Discount handling in FOCUS is inconsistent and needs improvement.
+
+> Fails (restates use case):
+> Practitioners want to report on committed-use savings separately from volume savings.
+
 #### Use Case / User Story
 
 The use case follows the "As a / I need / So that" format. It is scoped to a single capability and describes a practitioner need, not an implementation detail.
@@ -46,6 +84,20 @@ The use case follows the "As a / I need / So that" format. It is scoped to a sin
 |:--------|:---------|
 | Passes | Follows the As a / I need / So that structure. Scoped to one capability. Describes what the practitioner needs to accomplish, not how the spec should change. The "I need" clause references data or analysis, not spec mechanics. |
 | Fails (below bar) | Solution-oriented: describes spec changes or column additions rather than practitioner needs. Too broad: bundles multiple capabilities into a single use case (e.g., "I need commitment tracking, optimization, and renewal planning"). Mixes dimensions and metrics in a single request. The "So that" clause is missing or generic (e.g., "so that I can use the data"). |
+
+##### Examples
+
+> Passes:
+> As a FinOps practitioner, I need to attribute discount savings to the commitment program that generated them, so that I can measure the realized value of negotiated agreements against their contracted terms.
+
+> Fails (solution-oriented):
+> As a practitioner, I need a new `CommitmentDiscountType` column, so that I can filter by discount type.
+
+> Fails (bundled scope):
+> As a practitioner, I need commitment tracking, utilization reporting, and renewal forecasting, so that I can manage the full commitment lifecycle.
+
+> Fails (generic "so that"):
+> As a practitioner, I need discount type data, so that I can use it in reports.
 
 #### Success Criteria
 
@@ -70,6 +122,28 @@ Good criteria typically fall into one of these lenses:
 | Passes | Contains typically 2-4 criteria that satisfy the five quality checks above. Each criterion uses one of the lenses to describe a practitioner outcome. Complex FRs that span multiple datasets or concepts may need more. |
 | Fails (below bar) | Describes implementation changes instead of outcomes (e.g., "Column X is added to the dataset"). Contains solution content misplaced from the Proposed Solution section. Not testable against a dataset. Too vague to verify (e.g., "improved consistency"). Criteria are redundant with each other. |
 
+##### Examples
+
+A strong FR does not need to use every lens. The passing example below draws from three: data availability, cross-provider consistency, and guidance. All three fail cases below map to the same `revise success criteria` label; the triage comment carries the specific issue.
+
+> Passes:
+> * Practitioners can segment discount savings by commitment program type without joining external data.
+> * Commitment program type is consistently represented across data generators that offer committed-use pricing.
+> * Data generators have clear guidance on when a discount qualifies as commitment-driven versus volume-driven.
+
+> Fails (implementation-focused):
+> * A new column `CommitmentDiscountType` is added to the Cost and Usage dataset.
+> * The column accepts the values "Committed Use," "Volume Tier," and null.
+
+> Fails (not testable):
+> * Discount reporting is improved.
+> * The specification is clearer about commitment handling.
+
+> Fails (redundant):
+> * Practitioners can identify commitment-driven discounts.
+> * Practitioners can filter on commitment-driven discounts.
+> * Practitioners can report on commitment-driven discounts.
+
 #### Organizations Requesting
 
 At least one organization is listed with a priority signal (blocker or nice-to-have).
@@ -78,6 +152,16 @@ At least one organization is listed with a priority signal (blocker or nice-to-h
 |:--------|:---------|
 | Passes | At least one named organization. Each entry includes whether the feature is a blocker or nice-to-have. |
 | Fails (below bar) | Organizations listed but without blocker/nice-to-have classification. |
+
+##### Examples
+
+> Passes:
+> * Example Corp - Adoption Blocker - Cannot complete FY commitment renewal analysis without this signal
+> * Another Org - Nice to have - Useful for quarterly savings attribution reporting
+
+> Fails (missing priority signal):
+> * Example Corp
+> * Another Org
 
 ### Optional Sections
 
