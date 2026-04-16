@@ -16,7 +16,6 @@ At the conclusion of this process, a key objective is for the aggregated [Billed
 
 Similarly, practitioners rely on the aggregated Billed Costs in the Invoice Detail dataset to reconcile with the aggregated [Billed Costs](#datasets.costandusage.billedcost) in the Cost and Usage dataset for the same identifiers, subject to [Rounding Variance Tolerance](#appendix.roundingvariancetolerance).
 
-
 Practitioners may perform *invoice reconciliation* independently by verifying that invoice line items align with data delivered in [*FOCUS dataset artifacts*](#glossary:dataset-artifact), particularly Cost and Usage, Invoice Detail, and Billing Period.
 
 Once an invoice is issued, it becomes an authoritative financial document, and the information it contains is expected not to change.
