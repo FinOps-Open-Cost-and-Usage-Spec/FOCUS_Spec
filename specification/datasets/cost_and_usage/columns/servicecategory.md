@@ -31,7 +31,7 @@ Highest-level classification of a *service* based on the core function of the *s
 | Feature level   | Mandatory                                            |
 | Allows nulls    | False                                                |
 | Data type       | String                                               |
-| Value format    | Allowed Values                                       |
+| Value format    | Allowed values                                       |
 
 Allowed values:
 

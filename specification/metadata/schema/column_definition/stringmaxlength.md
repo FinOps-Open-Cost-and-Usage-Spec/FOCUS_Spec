@@ -16,7 +16,7 @@ StringMaxLength
 
 String Max Length
 
-## Content constraints
+## Content Constraints
 
 | Constraint    | Value                            |
 |:--------------|:---------------------------------|

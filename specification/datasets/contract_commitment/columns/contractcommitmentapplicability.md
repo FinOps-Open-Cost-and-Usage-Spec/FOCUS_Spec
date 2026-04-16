@@ -98,7 +98,7 @@ ContractCommitmentApplicability uses a reserved string to represent global or un
 
 ## Object Example
 
-Here is a basic example of the object format, describing organization-wide coverage **except** for Database services running in BillingAccountId 123456789012.  
+Here is a basic example of the object format, describing organization-wide coverage **except** for Database services running in BillingAccountId 123456789012.
 
 * For more detailed examples, please see this column's entry in the JSON Object Examples appendix entry [here](#appendix.examples:jsonobject.examples:contractcommitmentapplicability).
 * For the JSON schema, please see [Contract Commitment Applicability Object Schema](#schemas.contractcommitment.contractcommitmentapplicabilityobjectschema).

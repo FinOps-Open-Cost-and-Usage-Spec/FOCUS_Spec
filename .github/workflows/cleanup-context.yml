@@ -13,29 +13,34 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Extract issue number from branch
+      - name: Extract branch details
         id: branch
         run: |
           BRANCH_NAME="${{ github.event.pull_request.head.ref }}"
-          # Extract issue number if branch starts with a number (e.g., 1805-ai-usage-policy)
-          ISSUE_NUMBER=$(echo "$BRANCH_NAME" | grep -oE '^[0-9]+' || true)
+          
+          # Strip out any prefix before a slash (e.g., 'foobar/1878...' becomes '1878...')
+          BASE_BRANCH_NAME="${BRANCH_NAME##*/}"
+          
+          # Extract the issue number if branch starts with a number (e.g., 1805-ai-usage-policy)
+          ISSUE_NUMBER=$(echo "$BASE_BRANCH_NAME" | grep -oE '^[0-9]+' || true)
+          
           echo "issue=$ISSUE_NUMBER" >> $GITHUB_OUTPUT
-          echo "branch=$BRANCH_NAME" >> $GITHUB_OUTPUT
-          echo "Branch: $BRANCH_NAME, Issue: $ISSUE_NUMBER"
+          echo "base_branch=$BASE_BRANCH_NAME" >> $GITHUB_OUTPUT
+          
+          echo "Branch: $BRANCH_NAME"
+          echo "Base Branch: $BASE_BRANCH_NAME"
+          echo "Issue: $ISSUE_NUMBER"
 
       - name: Check for working folder
         id: check
         run: |
-          ISSUE_NUMBER="${{ steps.branch.outputs.issue }}"
-          BRANCH_NAME="${{ steps.branch.outputs.branch }}"
+          BASE_BRANCH_NAME="${{ steps.branch.outputs.base_branch }}"
           FOUND=""
 
-          if [ -n "$ISSUE_NUMBER" ]; then
-            # Look for folder matching this PR's branch name
-            FOLDER=".ai/work/${BRANCH_NAME}"
-            if [ -d "$FOLDER" ]; then
-              FOUND="$FOLDER"
-            fi
+          # Look for folder matching the base branch name, completely ignoring whether an issue number exists
+          FOLDER=".ai/work/${BASE_BRANCH_NAME}"
+          if [ -d "$FOLDER" ]; then
+            FOUND="$FOLDER"
           fi
 
           if [ -n "$FOUND" ]; then

@@ -17,7 +17,7 @@ FocusDatasetId
 
 FOCUS Dataset ID
 
-## Content constraints
+## Content Constraints
 
 | Constraint    | Value            |
 |:--------------|:-----------------|

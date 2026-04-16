@@ -38,7 +38,7 @@ SKU Price ID
 
 A service-provider-specified unique identifier that represents a specific *SKU Price* associated with a *resource* or *service* used or purchased.
 
-## Content constraints
+## Content Constraints
 
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |

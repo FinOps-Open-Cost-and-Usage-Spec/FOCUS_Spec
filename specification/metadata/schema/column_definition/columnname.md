@@ -16,7 +16,7 @@ ColumnName
 
 Column Name
 
-## Content constraints
+## Content Constraints
 
 | Constraint      | Value            |
 |:----------------|:-----------------|

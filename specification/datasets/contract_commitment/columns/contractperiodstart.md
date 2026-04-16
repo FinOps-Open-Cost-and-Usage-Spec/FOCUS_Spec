@@ -23,7 +23,7 @@ Contract Period Start
 
 The *inclusive start bound* of a *contract period*.
 
-## Content constraints
+## Content Constraints
 
 | Constraint      | Value                                                |
 |:----------------|:-----------------------------------------------------|

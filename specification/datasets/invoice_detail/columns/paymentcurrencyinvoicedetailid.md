@@ -24,7 +24,7 @@ Payment Currency Invoice Detail ID
 
 The identifier linking a granular record to the specific [Invoice Detail](#datasets.invoicedetail) record where its [Payment Currency Billed Cost](#datasets.invoicedetail.paymentcurrencybilledcost) is represented or aggregated.
 
-## Content constraints
+## Content Constraints
 
 |    Constraint    |              Value             |
 |:----------------|:--------------------------------|

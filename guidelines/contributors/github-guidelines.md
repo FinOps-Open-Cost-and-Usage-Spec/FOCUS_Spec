@@ -51,18 +51,18 @@ This folder contains various guidelines on development, editorial, normative req
 
 The core folder containing the specification documentation:
 
-- **`overview.md`** - Contains the main specification overview, principles, and requirements
-- **`glossary.md`** - Comprehensive glossary of terms and definitions used throughout the specification
-- **`columns` subfolder** - Contains detailed documentation for individual FOCUS columns like `servicesubcategory.md`
+* **`overview.md`** - Contains the main specification overview, principles, and requirements
+* **`glossary.md`** - Comprehensive glossary of terms and definitions used throughout the specification
+* **`columns` subfolder** - Contains detailed documentation for individual FOCUS columns like `servicesubcategory.md`
 
 ### 5. `supporting_content` folder
 
 The repository provides supporting content that includes example mappings between well-known service provider datasets and what's defined in the FOCUS specification. This likely includes mappings for major cloud providers like:
 
-- AWS (Amazon Web Services)
-- GCP (Google Cloud Platform)
-- Azure (Microsoft)
-- Oracle Cloud
+* AWS (Amazon Web Services)
+* GCP (Google Cloud Platform)
+* Azure (Microsoft)
+* Oracle Cloud
 
 ### 6. `vendored` folder
 
@@ -74,11 +74,11 @@ A typical FOCUS contributor will not spend much time interacting with this folde
 
 The repository follows standard documentation patterns with:
 
-- **`README.md`** - Main repository documentation
-- **`CHANGELOG.md`** - Version changes and updates
-- **`CONTRIBUTING.md`** - Overviews development environment for FOCUS specification.
-- **`RELEASE-PLANNING.md`** - Outlines release planning and schedule information for FOCUS.
-- Various markdown files for specification details
+* **`README.md`** - Main repository documentation
+* **`CHANGELOG.md`** - Version changes and updates
+* **`CONTRIBUTING.md`** - Overviews development environment for FOCUS specification.
+* **`RELEASE-PLANNING.md`** - Outlines release planning and schedule information for FOCUS.
+* Various markdown files for specification details
 
 ## Repository Organization Principles
 
@@ -86,21 +86,21 @@ The repository is organized around several key principles:
 
 ### FinOps Scenario-Driven Development
 
-- Columns are defined to answer use cases rather than looking for use cases to fit existing columns
-- Each column must have a clear use case
-- Work backward from essential FinOps capabilities to prioritize dimensions, metrics, and attributes
+* Columns are defined to answer use cases rather than looking for use cases to fit existing columns
+* Each column must have a clear use case
+* Work backward from essential FinOps capabilities to prioritize dimensions, metrics, and attributes
 
 ### Incremental Development
 
-- Incremental iterations are released regularly to provide higher value to practitioners
-- Allow feedback as the specification develops
-- The specification is expected to evolve over time
+* Incremental iterations are released regularly to provide higher value to practitioners
+* Allow feedback as the specification develops
+* The specification is expected to evolve over time
 
 ### Provider Neutrality
 
-- Contributors must ensure the specification examines how each decision relates to each of the major cloud, SaaS, and other service providers
-- Does not favor any single data generator's implementation
-- Prioritizes enabling FinOps capabilities and alignment with the FinOps Framework
+* Contributors must ensure the specification examines how each decision relates to each of the major cloud, SaaS, and other service providers
+* Does not favor any single data generator's implementation
+* Prioritizes enabling FinOps capabilities and alignment with the FinOps Framework
 
 ## Target Audience
 
@@ -114,11 +114,11 @@ The specification is designed to be used by three major groups:
 
 The repository is actively maintained and represents a collaborative effort between:
 
-- FinOps practitioners
-- Cloud and SaaS service providers
-- FinOps vendors
-- The FinOps Foundation (supporting organization)
-- Linux Foundation (hosting the specification project)
+* FinOps practitioners
+* Cloud and SaaS service providers
+* FinOps vendors
+* The FinOps Foundation (supporting organization)
+* Linux Foundation (hosting the specification project)
 
 The repository is well-structured for both specification development and practical implementation, supporting the goal of creating a vendor-neutral standard for cloud billing data that can be adopted across different cloud service providers and FinOps tools.
 
@@ -172,24 +172,24 @@ Configure what you want to receive via email:
 
 **Participating notifications:**
 
-- Comments on issues and pull requests you're involved in
-- Direct mentions of your username
-- Check the box to receive these via email
+* Comments on issues and pull requests you're involved in
+* Direct mentions of your username
+* Check the box to receive these via email
 
 **Watching notifications:**
 
-- Activity on repositories you're watching
-- Choose your preference: all activity, releases only, or ignore
+* Activity on repositories you're watching
+* Choose your preference: all activity, releases only, or ignore
 
 **Custom routing:**
 
-- Set up different email addresses for different organizations
-- Useful for separating work and personal notifications
+* Set up different email addresses for different organizations
+* Useful for separating work and personal notifications
 
 ### Web and Mobile Notifications
 
-- **Web notifications:** Enable browser notifications for real-time updates
-- **Mobile notifications:** Install the GitHub mobile app and configure push notifications
+* **Web notifications:** Enable browser notifications for real-time updates
+* **Mobile notifications:** Install the GitHub mobile app and configure push notifications
 
 ### Repository-Specific Notifications
 
@@ -198,16 +198,16 @@ For individual repositories:
 1. Go to the repository page
 2. Click the **Watch** button (eye icon) near the top right
 3. Choose your notification level:
-   - **Not watching:** Only receive notifications when participating or mentioned
-   - **Releases only:** Only get notified about new releases
-   - **Watching:** Get notified about all conversations
-   - **Ignoring:** Never get notifications
+   * **Not watching:** Only receive notifications when participating or mentioned
+   * **Releases only:** Only get notified about new releases
+   * **Watching:** Get notified about all conversations
+   * **Ignoring:** Never get notifications
 
 ### Managing Notification Frequency
 
-- **Automatically watch repositories:** Enable this to watch repositories you have push access to
-- **Automatically watch teams:** Get notifications when you're added to a team
-- **Dependency graph:** Get notifications about security vulnerabilities in your dependencies
+* **Automatically watch repositories:** Enable this to watch repositories you have push access to
+* **Automatically watch teams:** Get notifications when you're added to a team
+* **Dependency graph:** Get notifications about security vulnerabilities in your dependencies
 
 ---
 
@@ -253,13 +253,13 @@ Visual Studio Code (VS Code) is a free, powerful code editor that integrates sea
 2. Click **Download for Windows**
 3. Run the downloaded installer (`VSCodeUserSetup-{version}.exe`)
 4. Follow the installation wizard:
-   - Accept the license agreement
-   - Choose installation location (default is usually fine)
-   - Select additional tasks (recommended options):
-     - ✅ Add "Open with Code" action to Windows Explorer file context menu
-     - ✅ Add "Open with Code" action to Windows Explorer directory context menu
-     - ✅ Register Code as an editor for supported file types
-     - ✅ Add to PATH (important for command line usage)
+   * Accept the license agreement
+   * Choose installation location (default is usually fine)
+   * Select additional tasks (recommended options):
+     * ✅ Add "Open with Code" action to Windows Explorer file context menu
+     * ✅ Add "Open with Code" action to Windows Explorer directory context menu
+     * ✅ Register Code as an editor for supported file types
+     * ✅ Add to PATH (important for command line usage)
 5. Click **Install** and wait for completion
 6. Launch VSCode when installation finishes
 
@@ -339,10 +339,10 @@ This is also elaborated upon within the [Cloning a Repository with GitHub Deskto
 
 1. Click the **Source Control** icon in the sidebar (or press `Ctrl+Shift+G`)
 2. This panel shows:
-   - Changed files
-   - Staged changes
-   - Commit message box
-   - Sync status with remote repository
+   * Changed files
+   * Staged changes
+   * Commit message box
+   * Sync status with remote repository
 
 **Viewing Git History:**
 
@@ -442,19 +442,19 @@ GitHub Issues are a powerful way to track bugs, feature requests, tasks, and oth
 
 **What are Issues?**
 
-- Issues are discussion threads related to specific topics in a repository
-- They can be bug reports, feature requests, questions, or general discussions
-- Each issue has a unique number and can be referenced across the repository
-- Issues can be assigned to people, labeled, and organized into milestones
+* Issues are discussion threads related to specific topics in a repository
+* They can be bug reports, feature requests, questions, or general discussions
+* Each issue has a unique number and can be referenced across the repository
+* Issues can be assigned to people, labeled, and organized into milestones
 
 **Types of Issues**
 
-- Action Item - This is a task within a Work Item issue
-- FOCUS Feature Request - Propose a new attribute, refinement, or data structure for the FOCUS specification.
-- General Feedback - Suggest minor corrections, clarity improvements, or inconsistencies in the FOCUS Specification.
-- Maintenance Task - Create tasks related to work on the GitHub Repository or GitHub Actions.
-- Work Item - Template for creating new Work Items (these are linked to a Feature Request)
-- Blank issue - try not to use this, please
+* Action Item - This is a task within a Work Item issue
+* FOCUS Feature Request - Propose a new attribute, refinement, or data structure for the FOCUS specification.
+* General Feedback - Suggest minor corrections, clarity improvements, or inconsistencies in the FOCUS Specification.
+* Maintenance Task - Create tasks related to work on the GitHub Repository or GitHub Actions.
+* Work Item - Template for creating new Work Items (these are linked to a Feature Request)
+* Blank issue - try not to use this, please
 
 ### Finding and Accessing Issues
 
@@ -466,23 +466,23 @@ GitHub Issues are a powerful way to track bugs, feature requests, tasks, and oth
 
 **Filtering Issues:**
 
-- **Open/Closed:** Toggle between open and closed issues
-- **Labels:** Filter by specific labels (bug, enhancement, etc.)
-- **Assignee:** Filter by who's assigned to work on issues
-- **Milestone:** Filter by project milestone
-- **Author:** Filter by who created the issue
-- **Sort:** By newest, oldest, most commented, recently updated, etc.
+* **Open/Closed:** Toggle between open and closed issues
+* **Labels:** Filter by specific labels (bug, enhancement, etc.)
+* **Assignee:** Filter by who's assigned to work on issues
+* **Milestone:** Filter by project milestone
+* **Author:** Filter by who created the issue
+* **Sort:** By newest, oldest, most commented, recently updated, etc.
 
 **Search Issues:**
 
 1. Use the search bar at the top of the issues list
 2. Search by keywords, labels, or advanced queries
 3. Example searches:
-   - `is:issue state:open` - Open issues
-   - `is:issue state:open type:Feature` - All open features
-   - `is:issue state:open label:1.3` - Issues for version 1.3
-   - `author:username` - Issues created by specific user
-   - `assignee:username` - Issues assigned to specific user
+   * `is:issue state:open` - Open issues
+   * `is:issue state:open type:Feature` - All open features
+   * `is:issue state:open label:1.3` - Issues for version 1.3
+   * `author:username` - Issues created by specific user
+   * `assignee:username` - Issues assigned to specific user
 
 ### How to Submit an Issue
 
@@ -491,12 +491,12 @@ Issues are tickets in GitHub and are used to organize various request within FOC
 1. Go to https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues
 2. Click `New Issue` (upper right)
 3. Select the type of Issue that best describes your goal
-  - Action Item - This is a task within a Work Item issue
-  - FOCUS Feature Request - Propose a new attribute, refinement, or data structure for the FOCUS specification.
-  - General Feedback - Suggest minor corrections, clarity improvements, or inconsistencies in the FOCUS Specification.
-  - Maintenance Task - Create tasks related to work on the GitHub Repository or GitHub Actions.
-  - Work Item - Template for creating new Work Items (these are linked to a Feature Request)
-  - Blank issue - try not to use this, please
+  * Action Item - This is a task within a Work Item issue
+  * FOCUS Feature Request - Propose a new attribute, refinement, or data structure for the FOCUS specification.
+  * General Feedback - Suggest minor corrections, clarity improvements, or inconsistencies in the FOCUS Specification.
+  * Maintenance Task - Create tasks related to work on the GitHub Repository or GitHub Actions.
+  * Work Item - Template for creating new Work Items (these are linked to a Feature Request)
+  * Blank issue - try not to use this, please
 4. Fill out the details of the template, and please be straightforward and thorough.
 5. Click the `Create` button
 
@@ -512,12 +512,12 @@ Issues are tickets in GitHub and are used to organize various request within FOC
 
 **Key Information to Look For:**
 
-- **Steps to reproduce** (for bugs)
-- **Expected vs. actual behavior**
-- **Environment details** (OS, browser, version numbers)
-- **Screenshots or code examples**
-- **Previous attempts at solutions**
-- **Project maintainer responses**
+* **Steps to reproduce** (for bugs)
+* **Expected vs. actual behavior**
+* **Environment details** (OS, browser, version numbers)
+* **Screenshots or code examples**
+* **Previous attempts at solutions**
+* **Project maintainer responses**
 
 ### Writing Effective Comments
 
@@ -532,48 +532,48 @@ Issues are tickets in GitHub and are used to organize various request within FOC
 
 **Do:**
 
-- **Be respectful and professional** in all interactions
-- **Stay on topic** and relevant to the issue
-- **Provide concrete examples** with code, screenshots, or logs
-- **Update your comments** if you find additional information
-- **Thank contributors** for their time and effort
-- **Test suggestions** before recommending them
-- **Link to relevant resources** like documentation or related issues
+* **Be respectful and professional** in all interactions
+* **Stay on topic** and relevant to the issue
+* **Provide concrete examples** with code, screenshots, or logs
+* **Update your comments** if you find additional information
+* **Thank contributors** for their time and effort
+* **Test suggestions** before recommending them
+* **Link to relevant resources** like documentation or related issues
 
 **Don't:**
 
-- **Spam with "+1" comments** - use the thumbs up reaction instead
-- **Ask "when will this be fixed?"** - maintainers work on volunteer time
-- **Hijack issues** with unrelated problems - create a new issue instead
-- **Be demanding or impatient** - Open Standards are collaborative, not customer service
-- **Post duplicate information** that's already been shared
-- **Make assumptions** about others' skill levels or intentions
+* **Spam with "+1" comments** - use the thumbs up reaction instead
+* **Ask "when will this be fixed?"** - maintainers work on volunteer time
+* **Hijack issues** with unrelated problems - create a new issue instead
+* **Be demanding or impatient** - Open Standards are collaborative, not customer service
+* **Post duplicate information** that's already been shared
+* **Make assumptions** about others' skill levels or intentions
 
 ### Using Reactions and Interactions
 
 **Emoji Reactions:**
 
-- Use 👍 (thumbs up) to show support for an issue or comment
-- Use 👎 (thumbs down) to disagree (but explain why in a comment)
-- Use ❤️ (heart) to show appreciation
-- Use 🎉 (celebration) when issues are resolved
-- Use 👀 (eyes) to indicate you're watching/interested
+* Use 👍 (thumbs up) to show support for an issue or comment
+* Use 👎 (thumbs down) to disagree (but explain why in a comment)
+* Use ❤️ (heart) to show appreciation
+* Use 🎉 (celebration) when issues are resolved
+* Use 👀 (eyes) to indicate you're watching/interested
 
 **Other Interactions:**
 
-- **Subscribe** to issues you want to follow
-- **Reference issues** in commits and pull requests using #issue-number
-- **Mention users** with @username to get their attention
-- **Cross-reference** related issues and pull requests
+* **Subscribe** to issues you want to follow
+* **Reference issues** in commits and pull requests using #issue-number
+* **Mention users** with @username to get their attention
+* **Cross-reference** related issues and pull requests
 
 ### Following Up on Issues
 
 **When to Follow Up:**
 
-- If you've provided the requested information
-- If you've found a solution or workaround
-- If the issue status has changed (bug confirmed, feature approved, etc.)
-- If you've tested a proposed fix
+* If you've provided the requested information
+* If you've found a solution or workaround
+* If the issue status has changed (bug confirmed, feature approved, etc.)
+* If you've tested a proposed fix
 
 **How to Follow Up:**
 
@@ -604,21 +604,21 @@ Duplicate of #789
 
 **Can't Comment on Issues:**
 
-- Ensure you're signed in to GitHub
-- Check if the repository allows comments from external contributors
-- Verify the issue isn't locked or closed to new comments
+* Ensure you're signed in to GitHub
+* Check if the repository allows comments from external contributors
+* Verify the issue isn't locked or closed to new comments
 
 **Comments Not Formatting Properly:**
 
-- Preview your comment before posting using the "Preview" tab
-- Check your Markdown syntax
-- Use the formatting toolbar for basic formatting
+* Preview your comment before posting using the "Preview" tab
+* Check your Markdown syntax
+* Use the formatting toolbar for basic formatting
 
 **Not Receiving Notifications:**
 
-- Check your notification settings in GitHub
-- Ensure you're subscribed to the issue
-- Verify your email notifications are working
+* Check your notification settings in GitHub
+* Ensure you're subscribed to the issue
+* Verify your email notifications are working
 
 ---
 
@@ -640,9 +640,9 @@ Cloning creates a local copy of a repository on your computer, allowing you to w
 1. Open GitHub Desktop
 2. Click **File** → **Clone repository** (or use Ctrl/Cmd + Shift + O)
 3. You'll see three tabs:
-   - **GitHub.com:** Your repositories and those you have access to
-   - **GitHub Enterprise:** If you have an enterprise account
-   - **URL:** For repositories not listed or from other Git hosts
+   * **GitHub.com:** Your repositories and those you have access to
+   * **GitHub Enterprise:** If you have an enterprise account
+   * **URL:** For repositories not listed or from other Git hosts
 
 **Using GitHub.com tab:**
 
@@ -660,18 +660,18 @@ Cloning creates a local copy of a repository on your computer, allowing you to w
 
 Once cloned, you can:
 
-- **View files:** Browse the repository files in your file explorer
-- **Make changes:** Edit files using your preferred text editor or IDE (recommend [VSCode](https://code.visualstudio.com/))
-- **Commit changes:** Save your changes with a descriptive message
-- **Push to GitHub:** Upload your changes back to the online repository
-- **Pull updates:** Download changes made by others
+* **View files:** Browse the repository files in your file explorer
+* **Make changes:** Edit files using your preferred text editor or IDE (recommend [VSCode](https://code.visualstudio.com/))
+* **Commit changes:** Save your changes with a descriptive message
+* **Push to GitHub:** Upload your changes back to the online repository
+* **Pull updates:** Download changes made by others
 
 ### Working with Your Cloned Repository
 
 1. **Making changes:** Edit files in your preferred editor (recommend [VSCode](https://code.visualstudio.com/))
 2. **Reviewing changes:** GitHub Desktop shows all modified files in the left panel
 3. **Committing changes:**
-   - You will need to submit a Pull Request to make changes to the FOCUS repository.  See [Working with Pull Requests](#working-with-pull-requests) and [How to Submit a Pull Request (PR) using GitHub Desktop and VSCode](#how-to-submit-a-pull-request-pr-using-GitHub-desktop-and-vscode)
+   * You will need to submit a Pull Request to make changes to the FOCUS repository.  See [Working with Pull Requests](#working-with-pull-requests) and [How to Submit a Pull Request (PR) using GitHub Desktop and VSCode](#how-to-submit-a-pull-request-pr-using-GitHub-desktop-and-vscode)
 
 ---
 
@@ -697,7 +697,7 @@ Here's a comprehensive guide for submitting a Pull Request using GitHub Desktop 
 2. Select your repository from the dropdown
 3. Click "Current branch" at the top
 4. Click "New branch"
-5. Name your branch descriptively (e.g., Start with your name (e.g. `flanakin/skuterm`);  Start with the Work Item number (e.g. `636-clarify-guidance-around-refunds`)
+5. Name your branch descriptively (e.g., Start with your name (e.g., `flanakin/skuterm`);  Start with the Work Item number (e.g., `636-clarify-guidance-around-refunds`)
 6. Click "Create branch"
 
 ### 2. Make Your Changes (VSCode)
@@ -713,8 +713,8 @@ Here's a comprehensive guide for submitting a Pull Request using GitHub Desktop 
 2. You'll see your changes listed in the left panel
 3. Review the diff in the main panel to ensure changes are correct
 4. Add a descriptive commit message in the bottom left:
-   - **Summary**: Brief description (e.g., "Add user authentication form")
-   - **Description** (optional): More detailed explanation
+   * **Summary**: Brief description (e.g., "Add user authentication form")
+   * **Description** (optional): More detailed explanation
 5. Click "Commit to [your-branch-name]"
 
 ### 4. Push Your Branch
@@ -729,10 +729,10 @@ Here's a comprehensive guide for submitting a Pull Request using GitHub Desktop 
 3. You'll see a banner suggesting to create a PR for your recently pushed branch
 4. Click "Compare & pull request"
 5. Fill out the PR form:
-   - **Title**: Clear, descriptive title
-   - **Description**: Explain what changes you made and why
-   - **Reviewers**: Add team members if needed
-   - **Labels/Projects**: Add relevant tags if your repo uses them
+   * **Title**: Clear, descriptive title
+   * **Description**: Explain what changes you made and why
+   * **Reviewers**: Add team members if needed
+   * **Labels/Projects**: Add relevant tags if your repo uses them
 6. Click "Create pull request"
 
 ## Alternative: Creating PR from GitHub Desktop
@@ -744,10 +744,10 @@ GitHub Desktop also offers a direct "Create Pull Request" option:
 
 ## Best Practices
 
-- **Atomic commits**: Make commits that represent single, logical changes
-- **Clear commit messages**: Write messages that explain what and why, not just what
-- **Test before submitting**: Ensure your code works and doesn't break existing functionality
-- **Link issues**: Reference any related GitHub issues in your PR description using `#issue-number`
+* **Atomic commits**: Make commits that represent single, logical changes
+* **Clear commit messages**: Write messages that explain what and why, not just what
+* **Test before submitting**: Ensure your code works and doesn't break existing functionality
+* **Link issues**: Reference any related GitHub issues in your PR description using `#issue-number`
 
 ---
 
@@ -855,45 +855,45 @@ GitHub Desktop also offers a direct "Create Pull Request" option:
 
 **Before Making Changes:**
 
-- Read through the existing pull request description and comments
-- Understand the original intent and scope
-- Communicate with the original author if making significant changes
+* Read through the existing pull request description and comments
+* Understand the original intent and scope
+* Communicate with the original author if making significant changes
 
 **When Making Changes:**
 
-- Keep modifications focused and related to the pull request's purpose
-- Write clear commit messages that explain what and why
-- Test your changes thoroughly before pushing
+* Keep modifications focused and related to the pull request's purpose
+* Write clear commit messages that explain what and why
+* Test your changes thoroughly before pushing
 
 **Communication:**
 
-- Leave clear comments about what you changed and why
-- Tag the original pull request author
-- Update the pull request description if your changes expand the scope
+* Leave clear comments about what you changed and why
+* Tag the original pull request author
+* Update the pull request description if your changes expand the scope
 
 ### Troubleshooting Common Issues
 
 **Branch Not Found:**
 
-- Make sure you've fetched the latest changes from the remote repository
-- Verify the branch name matches exactly what's shown in the pull request
+* Make sure you've fetched the latest changes from the remote repository
+* Verify the branch name matches exactly what's shown in the pull request
 
 **Permission Issues:**
 
-- Ensure you have write access to the repository
-- For forks, you may need to push to your own fork and create a new pull request
+* Ensure you have write access to the repository
+* For forks, you may need to push to your own fork and create a new pull request
 
 **Merge Conflicts:**
 
-- Pull the latest changes from the target branch (usually main)
-- Resolve conflicts using GitHub Desktop's merge editor
-- Commit the resolution and push
+* Pull the latest changes from the target branch (usually main)
+* Resolve conflicts using GitHub Desktop's merge editor
+* Commit the resolution and push
 
 **Changes Not Appearing:**
 
-- Verify you're on the correct branch before making changes
-- Ensure you've committed and pushed your changes
-- Check that you're looking at the right pull request
+* Verify you're on the correct branch before making changes
+* Ensure you've committed and pushed your changes
+* Check that you're looking at the right pull request
 
 ---
 
@@ -916,10 +916,10 @@ GitHub Desktop also offers a direct "Create Pull Request" option:
 
 **Comment formatting options:**
 
-- Use Markdown for formatting (bold, italic, code blocks, etc.)
-- Add emoji reactions using `:emoji_name:` syntax
-- Tag people using `@username`
-- Reference issues with `#issue_number`
+* Use Markdown for formatting (bold, italic, code blocks, etc.)
+* Add emoji reactions using `:emoji_name:` syntax
+* Tag people using `@username`
+* Reference issues with `#issue_number`
 
 ### Making Line-Specific Comments
 
@@ -930,8 +930,8 @@ GitHub Desktop also offers a direct "Create Pull Request" option:
 3. Click the blue "+" icon that appears
 4. Type your comment in the text box
 5. Choose between:
-   - **"Add single comment"**: Posts immediately
-   - **"Start a review"**: Saves comment for a formal review
+   * **"Add single comment"**: Posts immediately
+   * **"Start a review"**: Saves comment for a formal review
 
 **For multi-line comments:**
 
@@ -965,9 +965,9 @@ const userName = user.name || 'Anonymous';
 2. Add line-specific comments as needed, choosing "Start a review"
 3. When finished reviewing all files, click "Review changes" (top right)
 4. Choose your review type:
-   - **Comment**: General feedback without approval status
-   - **Approve**: Approve the changes for merging
-   - **Request changes**: Block merging until issues are addressed
+   * **Comment**: General feedback without approval status
+   * **Approve**: Approve the changes for merging
+   * **Request changes**: Block merging until issues are addressed
 5. Add an overall review summary
 6. Click "Submit review"
 
@@ -975,46 +975,46 @@ const userName = user.name || 'Anonymous';
 
 #### Reactions
 
-- Click the emoji icon on any comment to add reactions
-- Possible reactions: 👍 👎 😄 🎉 😕 ❤️ 🚀 👀
+* Click the emoji icon on any comment to add reactions
+* Possible reactions: 👍 👎 😄 🎉 😕 ❤️ 🚀 👀
 
 #### Editing Comments
 
-- Click the "..." menu on your own comments
-- Select "Edit" to modify
-- Comments show "edited" indicator after changes
+* Click the "..." menu on your own comments
+* Select "Edit" to modify
+* Comments show "edited" indicator after changes
 
 #### Resolving Conversations
 
-- Click "Resolve conversation" on comment threads once issues are addressed
-  - Typically, the resolution is a partnership between the PR author and the comment author.  The conversation should be resolved by the comment author upon review.  However, the PR author has the license to close the conversation without resolution if they provide sufficient context and/or the comment author does not promptly provide review.
-- Helps track which feedback has been handled
+* Click "Resolve conversation" on comment threads once issues are addressed
+  * Typically, the resolution is a partnership between the PR author and the comment author.  The conversation should be resolved by the comment author upon review.  However, the PR author has the license to close the conversation without resolution if they provide sufficient context and/or the comment author does not promptly provide review.
+* Helps track which feedback has been handled
 
 ### Notifications
 
-- Use `@username` to notify specific people
-- Use `@team/teamname` to notify entire teams
+* Use `@username` to notify specific people
+* Use `@team/teamname` to notify entire teams
 
 ### Best Practices for PR Comments
 
 #### Be Constructive
 
-- Focus on the code, not the person
-- Explain the "why" behind your suggestions
-- Offer solutions, not just problems
+* Focus on the code, not the person
+* Explain the "why" behind your suggestions
+* Offer solutions, not just problems
 
 #### Be Specific
 
-- Quote the exact code you're referencing
-- Provide examples of better approaches
-- Link to documentation or standards when relevant
+* Quote the exact code you're referencing
+* Provide examples of better approaches
+* Link to documentation or standards when relevant
 
 #### Use Appropriate Comment Types
 
-- **Nitpicks**: Minor style/formatting issues
-- **Suggestions**: Improvement ideas
-- **Questions**: Ask for clarification
-- **Blockers**: Serious issues that prevent merging
+* **Nitpicks**: Minor style/formatting issues
+* **Suggestions**: Improvement ideas
+* **Questions**: Ask for clarification
+* **Blockers**: Serious issues that prevent merging
 
 #### Sample Comment Templates
 
@@ -1044,20 +1044,20 @@ Read the [development practices](development-processes.md) file.
 
 Ask questions in the [working-group](https://f2-focus.slack.com/archives/C06MJPRAPCH) slack channel.
 
-- **Commit frequently** with clear, descriptive messages
-- **Pull before pushing** to avoid conflicts
-- **Use branches** for new features or experiments
-- **Write good commit messages** that explain what and why, not just what
+* **Commit frequently** with clear, descriptive messages
+* **Pull before pushing** to avoid conflicts
+* **Use branches** for new features or experiments
+* **Write good commit messages** that explain what and why, not just what
 
 ### Common Issues and Solutions
 
-- **Repository not showing:** Make sure you're signed in to the correct GitHub account
-- **Clone fails:** Check your internet connection and repository permissions
-- **Can't push changes:** Ensure you have write access to the repository
-- **Merge conflicts:** Use GitHub Desktop's built-in merge conflict resolver
+* **Repository not showing:** Make sure you're signed in to the correct GitHub account
+* **Clone fails:** Check your internet connection and repository permissions
+* **Can't push changes:** Ensure you have write access to the repository
+* **Merge conflicts:** Use GitHub Desktop's built-in merge conflict resolver
 
 ### Getting Help
 
-- **GitHub Desktop documentation:** [docs.GitHub.com/desktop](https://docs.GitHub.com/desktop)
-- **GitHub Support:** [support.GitHub.com](https://support.GitHub.com)
-- **Community Forum:** [GitHub.community](https://GitHub.community)
+* **GitHub Desktop documentation:** [docs.GitHub.com/desktop](https://docs.GitHub.com/desktop)
+* **GitHub Support:** [support.GitHub.com](https://support.GitHub.com)
+* **Community Forum:** [GitHub.community](https://GitHub.community)

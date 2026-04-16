@@ -1,4 +1,4 @@
-# AWS Reserved Instance - Partial Upfront - 100% Utilization
+# Aura Web Resource Reservation - Partial Upfront - 100% Utilization
 
 | Parameter                    | Value              |
 | ---------------------------- | ------------------ |
@@ -10,11 +10,11 @@
 | Annual Commitment            | $440,014.80 |
 | List Unit Price              | $75.35/hour |
 
-[CSV Example](/specification/data/commitment_discount_scenarios/aws_reserved_instance_partial_upfront_100pct.csv)
+[CSV Example](/specification/data/commitment_discount_scenarios/aura_web_resource_reservation_partial_upfront_100pct.csv)
 
 ## Scenario Description
 
-This example shows an **Amazon Web Services EC2 Reserved Instance**, which is a commitment (with a Commitment Discount Category of `Usage`) where you commit to a specific quantity of resource capacity (e.g., instance hours).
+This example shows an **Aura Web Resource Reservation**, which is a commitment (with a Commitment Discount Category of `Usage`) where you commit to a specific quantity of resource capacity (e.g., instance hours).
 
 The **Partial Upfront** payment option combines an initial upfront payment with a reduced recurring monthly fee. This results in two Purchase rows: one One-Time for the upfront portion and one Recurring for the monthly fee, both with zero EffectiveCost.
 
@@ -53,7 +53,7 @@ These three quantity columns serve different purposes and must be understood in 
 | **ListUnitPrice**       | List (public) unit price | $75.35      |
 | **ContractedUnitPrice** | Negotiated unit price    | $75.35      |
 
-**Why this matters:** ContractedUnitPrice reflects enterprise-negotiated pricing (e.g., EDP rates), not commitment discount savings. In non-negotiated scenarios, ContractedUnitPrice equals ListUnitPrice. Commitment discount savings are reflected in EffectiveCost, not in unit prices.
+**Why this matters:** ContractedUnitPrice reflects enterprise-negotiated pricing (e.g., enterprise-negotiated rates), not commitment discount savings. In non-negotiated scenarios, ContractedUnitPrice equals ListUnitPrice. Commitment discount savings are reflected in EffectiveCost, not in unit prices.
 
 ### Cost Columns: BilledCost vs EffectiveCost vs ListCost
 
@@ -80,8 +80,8 @@ The following critical rules apply to commitment discount data:
 | CommitmentDiscountStatus   | null                                 | Status only applies to usage rows                                                    |
 | CommitmentDiscountQuantity | 8760.00                              | Full commitment capacity for the 1-year term (1 instance-hr/hr &times; 8,760 hrs/yr) |
 | CommitmentDiscountUnit     | Hours                                | Unit of commitment capacity (usage-based)                                            |
-| SkuId                      | AWS-USEAST1-COMPUTE-PURCHASE         | Commitment purchase SKU                                                              |
-| SkuPriceId                 | AWS-USEAST1-COMPUTE-PURCHASE-UPFRONT | Price point for upfront purchase                                                     |
+| SkuId                      | AURAWEB-USEAST1-COMPUTE-PURCHASE         | Commitment purchase SKU                                                              |
+| SkuPriceId                 | AURAWEB-USEAST1-COMPUTE-PURCHASE-UPFRONT | Price point for upfront purchase                                                     |
 
 ## Recurring Purchase Row Details
 
@@ -95,8 +95,8 @@ The following critical rules apply to commitment discount data:
 | CommitmentDiscountStatus   | null                                   | Status only applies to usage rows                              |
 | CommitmentDiscountQuantity | 672.00                                 | Commitment capacity for Feb (1 instance-hr/hr &times; 672 hrs) |
 | CommitmentDiscountUnit     | Hours                                  | Unit of commitment capacity (usage-based)                      |
-| SkuId                      | AWS-USEAST1-COMPUTE-PURCHASE           | Commitment purchase SKU                                        |
-| SkuPriceId                 | AWS-USEAST1-COMPUTE-PURCHASE-RECURRING | Price point for recurring purchase                             |
+| SkuId                      | AURAWEB-USEAST1-COMPUTE-PURCHASE           | Commitment purchase SKU                                        |
+| SkuPriceId                 | AURAWEB-USEAST1-COMPUTE-PURCHASE-RECURRING | Price point for recurring purchase                             |
 
 ## Usage Row Details (Commitment-Covered)
 
@@ -111,6 +111,6 @@ The following critical rules apply to commitment discount data:
 | ConsumedQuantity           | 1                                                     | Hours used                                 |
 | CommitmentDiscountQuantity | 1                                                     | Commitment units applied                   |
 | CommitmentDiscountStatus   | Used                                                  | Commitment applied                         |
-| CommitmentDiscountId       | arn:aws:ec2:us-east-1:123456789012:reserved-instan... | Links usage to purchase                    |
-| SkuId                      | AWS-USEAST1-COMPUTE-USAGE                             | Resource usage SKU (differs from Purchase) |
-| SkuPriceId                 | AWS-USEAST1-COMPUTE-USAGE-COMMITTED                   | Price point for committed usage            |
+| CommitmentDiscountId       | auraweb:compute:us-east-1:123456789012:resource-reserv... | Links usage to purchase                    |
+| SkuId                      | AURAWEB-USEAST1-COMPUTE-USAGE                             | Resource usage SKU (differs from Purchase) |
+| SkuPriceId                 | AURAWEB-USEAST1-COMPUTE-USAGE-COMMITTED                   | Price point for committed usage            |

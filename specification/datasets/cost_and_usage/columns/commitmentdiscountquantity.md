@@ -2,7 +2,7 @@
 
 Commitment Discount Quantity is the amount of a [*commitment discount*](#glossary:commitment-discount) purchased or accounted for in *commitment discount* related [*rows*](#glossary:row) that is denominated in [Commitment Discount Units](#datasets.costandusage.commitmentdiscountunit). The aggregated Commitment Discount Quantity across purchase records, pertaining to a particular [Commitment Discount ID](#datasets.costandusage.commitmentdiscountid) during its commitment [*period*](#glossary:period), represents the total Commitment Discount Units acquired with that commitment discount. For committed usage, the Commitment Discount Quantity is either the number of Commitment Discount Units consumed by a *row* that is covered by a *commitment discount* or is the unused portion of a *commitment discount* over a [*charge period*](#glossary:chargeperiod). Commitment Discount Quantity is commonly used in *commitment discount* analysis and optimization use cases and only applies to *commitment discounts*, not [*negotiated discounts*](#glossary:negotiated-discount).
 
-When [CommitmentDiscountCategory](#datasets.costandusage.commitmentdiscountcategory) is "Usage" (usage-based *commitment discounts*), the Commitment Discount Quantity reflects the predefined amount of usage purchased or consumed. If [*commitment discount flexibility*](#glossary:commitment-discount-flexibility) is applicable, this value may be further transformed based on additional, service-provider-specific requirements. When CommitmentDiscountCategory is "Spend" (spend-based *commitment discounts*), the Commitment Discount Quantity reflects the predefined amount of spend purchased or consumed.  See [Appendix: Commitment Discount Flexibility](#appendix.examples:commitmentdiscountflexibility) for more details around *commitment discount flexibility*.
+When [CommitmentDiscountCategory](#datasets.costandusage.commitmentdiscountcategory) is "Usage" (usage-based *commitment discounts*), the Commitment Discount Quantity reflects the predefined amount of usage purchased or consumed. If [*commitment discount flexibility*](#glossary:commitment-discount-flexibility) is applicable, this value may be further transformed based on additional, service-provider-specific requirements. When CommitmentDiscountCategory is "Spend" (spend-based *commitment discounts*), the Commitment Discount Quantity reflects the predefined amount of spend purchased or consumed. See [Appendix: Commitment Discount Flexibility](#appendix.examples:commitmentdiscountflexibility) for more details around *commitment discount flexibility*.
 
 ## Requirements
 
@@ -37,9 +37,9 @@ The amount of a *commitment discount* purchased or accounted for in *commitment 
 
 ## Usability Constraints
 
-**Aggregation:** When aggregating Commitment Discount Quantity for commitment utilization calculations, it's important to exclude [*commitment discount*](#glossary:commitment-discount) purchases (i.e. when Charge Category is "Purchase") that are paid to cover future eligible [*charges*](#glossary:charge) (e.g., *commitment discount*). Otherwise, when accounting for all upfront or accrued purchases, it's important to exclude *commitment discount* usage (i.e. when Charge Category is "Usage"). This exclusion helps prevent double counting of these quantities in the aggregation.
+**Aggregation:** When aggregating Commitment Discount Quantity for commitment utilization calculations, it's important to exclude [*commitment discount*](#glossary:commitment-discount) purchases (i.e., when Charge Category is "Purchase") that are paid to cover future eligible [*charges*](#glossary:charge) (e.g., *commitment discount*). Otherwise, when accounting for all upfront or accrued purchases, it's important to exclude *commitment discount* usage (i.e., when Charge Category is "Usage"). This exclusion helps prevent double counting of these quantities in the aggregation.
 
-## Content constraints
+## Content Constraints
 
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
