@@ -2,7 +2,7 @@
 
 ## Overview
 
-The **Invoice Detail** dataset provides a transactional representation of the financial obligations between a customer and an invoice issuer. While the [Cost and Usage](#datasets.costandusage) dataset tracks granular consumption, the Invoice Detail dataset tracks the financial record of charges as they appear on a physical or electronic billing document.
+The **Invoice Detail** dataset provides a transactional representation of the financial obligations between a customer and an [*invoice issuer*](#glossary:invoice issuer). While the [Cost and Usage](#datasets.costandusage) dataset tracks granular consumption, the Invoice Detail dataset tracks the financial record of charges as they appear on a physical or electronic billing document.
 
 ### Core Logical Pillars
 

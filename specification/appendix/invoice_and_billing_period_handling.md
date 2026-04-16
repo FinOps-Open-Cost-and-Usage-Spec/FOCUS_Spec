@@ -26,7 +26,7 @@ Once an invoice is issued, it becomes an authoritative financial document, and t
 
 ### Open and Closed Billing Periods
 
-A [*closed billing period*](#glossary:closed-billing-period) represents a billing period for which all anticipated invoices have been successfully issued by the designated invoice issuers, and no additional invoices are generally expected to be associated with that period, except where explicitly requested or approved by the customer. In contrast, an [*open billing period*](#glossary:open-billing-period) remains subject to ongoing billing activities until it is formally closed.
+A [*closed billing period*](#glossary:closed-billing-period) represents a billing period for which all anticipated invoices have been successfully issued by the designated [*invoice issuers*](#glossary:invoice issuer), and no additional invoices are generally expected to be associated with that period, except where explicitly requested or approved by the customer. In contrast, an [*open billing period*](#glossary:open-billing-period) remains subject to ongoing billing activities until it is formally closed.
 
 The Billing Period dataset provides the necessary context to determine the status of each billing period for a specific invoice issuer. Since invoice issuer and *billing period*-related columns are present in all three *FOCUS datasets* (Billing Period, Cost and Usage, and Invoice Detail), records across the three datasets can be consistently associated with the corresponding billing cycles.
 
