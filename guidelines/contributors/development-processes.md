@@ -42,16 +42,16 @@ Feedback Issues will have a title that starts with \`\[Feedback]\`.
 All suggestions and feature requests should be introduced to the FOCUS project via GitHub Issues of the type Feature. The template for these Issues will ensure the needed information is gathered and available for prioritisation processes. Anyone can submit Feature Request Issues within the GitHub repository. 
 
 _Normative guidelines to develop high-quality feature request titles_:
-- **Start with a standard verb**. Choose one or use a verb similar to: Add, Clarify, Standardize, Enable, Define, Remove, Rename
-- **Use correct sentence structure**. Pick whichever reads best between: Verb + Target + Qualifier OR Verb + Qualifier + Target
+* **Start with a standard verb**. Choose one or use a verb similar to: Add, Clarify, Standardize, Enable, Define, Remove, Rename
+* **Use correct sentence structure**. Pick whichever reads best between: Verb + Target + Qualifier OR Verb + Qualifier + Target
 (e.g., “Add data generator-calculated shared cost allocation” vs “Standardize tag export across clouds”)
-- **Describe the outcome, not the implementation**. “Add daily amortized cost” > “Create SQL to amortize daily”
-- **Sentence case; acronyms uppercase; no ALL-CAPS words**. “Add RI coverage metric” not “ADD RI COVERAGE METRIC”
-- **Use canonical FOCUS terminology; stay service-provider-agnostic**. Vendor specifics belong in examples, not the title
-- **Express one concept per title**. If you need two independent changes, create two issues. "And" and "or" are indications that multiple issues are needed
-- **Trim filler words unless they improve clarity**. Drop “the,” “of,” “for,” etc., where possible to save space
-- **Keep titles ≤ 75 characters (aim for ~60)**. Short enough to fit in GitHub lists, change logs, and slides without wrapping
-- **Don’t end with a trailing period**
+* **Describe the outcome, not the implementation**. “Add daily amortized cost” > “Create SQL to amortize daily”
+* **Sentence case; acronyms uppercase; no ALL-CAPS words**. “Add RI coverage metric” not “ADD RI COVERAGE METRIC”
+* **Use canonical FOCUS terminology; stay service-provider-agnostic**. Vendor specifics belong in examples, not the title
+* **Express one concept per title**. If you need two independent changes, create two issues. "And" and "or" are indications that multiple issues are needed
+* **Trim filler words unless they improve clarity**. Drop “the,” “of,” “for,” etc., where possible to save space
+* **Keep titles ≤ 75 characters (aim for ~60)**. Short enough to fit in GitHub lists, change logs, and slides without wrapping
+* **Don’t end with a trailing period**
 
 Feature Request Issues will have the Type: "Feature" and Label: "feature", and be associated with the FOCUS WG project.
 
@@ -88,47 +88,47 @@ The working group oversees the scope of the next release via a GitHub project.
 
 Each issue carries one of the following Status values, which represent the overall working group workflow from ideation to completion.
 
-- **Submitted:** newly filed, awaiting triage
-- **Needs More Info:** triaged; needs more clarification or detail before prioritization can begin
-- **Under Consideration:** being actively evaluated for upcoming spec work
-- **Provisional Scope:** provisionally added to next release
-- **Accepted in Scope:** will be developed in next release
-- **Ready for Dev:** not started
-- **In Evaluation:** Review of the Feature Request via Task Force
-- **In Discovery:** defining the concepts that this issue will entail via Task Force
-- **In Development:** discussing solution for how to solve for the concept / design via Task Force
-- **PR Needed:** TF requires a concrete proposal to move forward
-- **PR In Draft:** PR being authored
-- **PR TF Review:** PR issued and in review with Task Force
-- **PR Member Review:** TF approved, in review with Members
-- **PR Ready for Approval:** all threads resolved, ready for approval
-- **PR Approved:** PR approved by Members
-- **Implemented:** done and dusted
-- **Blocked:** cannot move forward
-- **Postponed:** removed from scope for this release; to be considered in the next release
-- **Closed:** out of scope, not feasible, or duplicative
+* **Submitted:** newly filed, awaiting triage
+* **Needs More Info:** triaged; needs more clarification or detail before prioritization can begin
+* **Under Consideration:** being actively evaluated for upcoming spec work
+* **Provisional Scope:** provisionally added to next release
+* **Accepted in Scope:** will be developed in next release
+* **Ready for Dev:** not started
+* **In Evaluation:** Review of the Feature Request via Task Force
+* **In Discovery:** defining the concepts that this issue will entail via Task Force
+* **In Development:** discussing solution for how to solve for the concept / design via Task Force
+* **PR Needed:** TF requires a concrete proposal to move forward
+* **PR In Draft:** PR being authored
+* **PR TF Review:** PR issued and in review with Task Force
+* **PR Member Review:** TF approved, in review with Members
+* **PR Ready for Approval:** all threads resolved, ready for approval
+* **PR Approved:** PR approved by Members
+* **Implemented:** done and dusted
+* **Blocked:** cannot move forward
+* **Postponed:** removed from scope for this release; to be considered in the next release
+* **Closed:** out of scope, not feasible, or duplicative
 
 Some notes about the use of Status values:
 
-- Each issue is assigned a Status of `Submitted` upon creation.
-- Each issue moves through these Status values as they are developed.
-- An issue that is postponed during the development phase is moved back to `Under Consideration` for the next release.
-- Each issue is assigned a Status of `Closed` upon being closed.
-- An issue that is assigned a Status of `Implemented` will automatically be closed.
-- Not every value is applicable to every issue type.
+* Each issue is assigned a Status of `Submitted` upon creation.
+* Each issue moves through these Status values as they are developed.
+* An issue that is postponed during the development phase is moved back to `Under Consideration` for the next release.
+* Each issue is assigned a Status of `Closed` upon being closed.
+* An issue that is assigned a Status of `Implemented` will automatically be closed.
+* Not every value is applicable to every issue type.
 
 #### AI Status
 
 Action Items carry a separate custom field called `AI Status` that carries a smaller set of values:
 
-- Open
-- In Progress
-- Blocked
-- On Hold
-- Closed
-- In Review
-- Completed
-- Postponed
+* Open
+* In Progress
+* Blocked
+* On Hold
+* Closed
+* In Review
+* Completed
+* Postponed
 
 Each Action Item is assigned an AI Status of `Open` upon creation.
 
@@ -160,9 +160,9 @@ This diagram represents the **Specification Development** phase, where implement
     <figcaption>Specification Development Phase</figcaption>
 </figure>
 
-- **Development Stage:** PRs are marked as e.g., `PR in Draft`, `In Development`, `Ready for Dev`, or `Blocked`.
-- **Review & Approval:** Once ready, PRs move into review with labels such as e.g., `PR TF Review`, `PR Member Review`, or `PR Ready for Approval`.
-- **Conclusion:** Approved PRs are marked as `PR Approved`, followed by `Implemented` and eventually `Closed` once fully integrated.
+* **Development Stage:** PRs are marked as e.g., `PR in Draft`, `In Development`, `Ready for Dev`, or `Blocked`.
+* **Review & Approval:** Once ready, PRs move into review with labels such as e.g., `PR TF Review`, `PR Member Review`, or `PR Ready for Approval`.
+* **Conclusion:** Approved PRs are marked as `PR Approved`, followed by `Implemented` and eventually `Closed` once fully integrated.
 
 This system of labeled pull requests provides clear visibility into the status of each contribution and ensures a structured path toward readiness for the **Consistency Review** stage.
 
@@ -174,8 +174,8 @@ During active development, it is common practice for each Feature Request to hav
 
 Working group content is often created and socialized in Google Workspace, especially via Google Sheets.  Often, content in those spreadsheets needs conversion into markdown for inclusion in the spec or supporting content.  Here a couple of tools to use for converting to markdown:
 
-- [Clipboard-To-Markdown](https://euangoddard.github.io/clipboard2markdown/) is useful for converting content other than the tables within your content.
-- [Tables Generator](https://www.tablesgenerator.com/markdown_tables) is useful for converting tables in your content.
+* [Clipboard-To-Markdown](https://euangoddard.github.io/clipboard2markdown/) is useful for converting content other than the tables within your content.
+* [Tables Generator](https://www.tablesgenerator.com/markdown_tables) is useful for converting tables in your content.
 
 ## Git Branches
 
@@ -183,10 +183,10 @@ Working group content is often created and socialized in Google Workspace, espec
 
 Our branch promotion process takes the following path:
 
-- _<\<dev\_branch>>:_ The feature branch in which a FOCUS Working Group member creates changes.  Such feature branches are ephemeral and are automatically deleted once their content is merged into the working draft.
-- _working\_draft:_ The branch in which all approved changes are collected during development.
-- _candidate\_recommendation_: The branch in which all approved changes are collected at the end of development for a release. Content in this branch is held for 30 days to enable the [Intellectual Property Rights (IPR) review process](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/working_draft/ipr.md).
-- _main_: The branch in which all approved changes are published after Steering Committee ratification of the latest release.
+* _<\<dev\_branch>>:_ The feature branch in which a FOCUS Working Group member creates changes.  Such feature branches are ephemeral and are automatically deleted once their content is merged into the working draft.
+* _working\_draft:_ The branch in which all approved changes are collected during development.
+* _candidate\_recommendation_: The branch in which all approved changes are collected at the end of development for a release. Content in this branch is held for 30 days to enable the [Intellectual Property Rights (IPR) review process](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/working_draft/ipr.md).
+* _main_: The branch in which all approved changes are published after Steering Committee ratification of the latest release.
 
 The process by which the Working Group promotes changes across these branches is described below.
 
@@ -195,9 +195,9 @@ The process by which the Working Group promotes changes across these branches is
 
 As per the overarching [procedures](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/workflow-procedures.md)/[workflow](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/w3c_mode_workflow.md) documented in the [FOCUS Foundation repository](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation), the following branches are protected in GitHub:
 
-- _working\_draft_
-- _candidate\_recommendation_
-- _main_
+* _working\_draft_
+* _candidate\_recommendation_
+* _main_
 
 Merges into the _candidate\_recommendation_ and _main_ branches are only to be performed by the \`Admins\` group in the GitHub Organization as part of the formal approval process with the FOCUS Members and FOCUS Steering Committee respectively.
 
@@ -246,14 +246,14 @@ Pull Requests (PRs) are used to promote development work through our branch pipe
 
 The _name_ of a Pull Request should be short but also clearly describe what the pull request is doing. The name should start with a verb in order to describe the action that has taken place (e.g., “Reorganize metadata appendix”, “Correct typos in Section 1.2”).  The reference to the parent issue should be included in the title also (e.g., #628) as often lists of Pull Request titles are made and this helps keep the reference to the related issue (see: Related to Issues).
 
-- Pull requests related directly to Feature Requests should have a title starting with \`FR #\<number of the FR ticket>:\` followed by a short description
-- Pull requests related directly to Action Items should have a title starting with \`AI #\<number of the AI ticket>:\` followed by a short description
+* Pull requests related directly to Feature Requests should have a title starting with \`FR #\<number of the FR ticket>:\` followed by a short description
+* Pull requests related directly to Action Items should have a title starting with \`AI #\<number of the AI ticket>:\` followed by a short description
 
 The _description_ of a Pull Request should be as detailed as possible to help other members better understand the PRs content. Descriptions should consider the following:
 
-- Any assumed knowledge (Preference a short education, links to relevant docs, etc)
-- Example data to demonstrate the outcome of the content being merged
-- Any decisions made in the development that are likely to become recurring suggestions (e.g., Decisions on naming, Lists of Values, etc).
+* Any assumed knowledge (Preference a short education, links to relevant docs, etc)
+* Example data to demonstrate the outcome of the content being merged
+* Any decisions made in the development that are likely to become recurring suggestions (e.g., Decisions on naming, Lists of Values, etc).
 
 As much as possible, descriptions should provide the most amount of information that enables those with less context of the change being proposed to review the content asynchronously and add valuable feedback.
 
@@ -277,8 +277,8 @@ Draft status signals that the author is still actively working on the pull reque
 While draft status generally discourages async feedback, authors MAY explicitly invite feedback on specific aspects of a draft PR:
 
 1. **Allowlist/Denylist Approach:** Authors can leave PR comments indicating which sections are ready for feedback (allowlist) or which sections are not ready (denylist):
-   - **More draft than open:** Keep as draft and comment on specific sections ready for feedback
-   - **More open than draft:** Mark as open and comment on specific sections not ready for feedback
+   * **More draft than open:** Keep as draft and comment on specific sections ready for feedback
+   * **More open than draft:** Mark as open and comment on specific sections not ready for feedback
 
 2. **Assignment as Signal:** Authors MAY assign specific reviewers to a draft PR to explicitly request their feedback, even while the PR remains in draft status.
 
@@ -286,8 +286,8 @@ While draft status generally discourages async feedback, authors MAY explicitly 
 
 #### Feedback Expectations
 
-- **Draft PRs:** Reviewers may provide feedback at any time. Authors may defer and/or resolve comments until the PR moves to open status.
-- **Open PRs:** Authors are expected to be responsive to reviewer feedback in a timely manner.
+* **Draft PRs:** Reviewers may provide feedback at any time. Authors may defer and/or resolve comments until the PR moves to open status.
+* **Open PRs:** Authors are expected to be responsive to reviewer feedback in a timely manner.
 
 When in doubt, respect the draft status as a signal that the author may still be iterating, and communicate directly with the author to ask if feedback would be helpful.
 
@@ -301,9 +301,9 @@ It is important for members to review all PRs especially when they are open and 
 
 The aim for all comments and suggestions on Issues/PRs should be constructive feedback, this means that comments must clearly:
 
-- Describe the item which is being supported or challenged
-- Aim to provide a suggestion of a solution, or at least suggest some items to consider
-- Remain positive and avoid being confrontational or antagonistic
+* Describe the item which is being supported or challenged
+* Aim to provide a suggestion of a solution, or at least suggest some items to consider
+* Remain positive and avoid being confrontational or antagonistic
 
 All FOCUS members are encouraged to review and make comments and suggestions. With the aim for all changes to the specification to be by consensus.
 
@@ -313,16 +313,16 @@ When submitting review comments using the **“Review Changes”** feature in Gi
 
 #### 1. **Comment**
 Use this option to provide *non-blocking feedback*, such as suggestions, requests for clarification, or minor edits.  
-- All comments **MUST** be reviewed and considered by the Working Group.  
-- Comments **MAY** be dismissed if they are determined to be non-impactful, already resolved, or out of scope.
+* All comments **MUST** be reviewed and considered by the Working Group.  
+* Comments **MAY** be dismissed if they are determined to be non-impactful, already resolved, or out of scope.
 
 #### 2. **Approve**
 Select this option to indicate **formal approval** of the proposed contribution.  
-- At least **three (3)** Working Group members must submit an “Approve” review for the pull request (PR) to be eligible for merging.
+* At least **three (3)** Working Group members must submit an “Approve” review for the pull request (PR) to be eligible for merging.
 
 #### 3. **Request Changes**
 Use this option when **significant revisions** are needed.  
-- If the request is made as an **OBJECTION**, it **MUST** be resolved before the contribution can proceed to merge.
+* If the request is made as an **OBJECTION**, it **MUST** be resolved before the contribution can proceed to merge.
 
 ### Resolving Comments and Suggestions
 
@@ -343,35 +343,35 @@ All Pull Requests **must go through a formal review and approval process before 
 
 #### Approvals Required
 
-- All reviewers assigned to the Pull Request must approve before the Pull Request is eligible for merging.
-- If a reviewer becomes inactive or unresponsive, Maintainers may reassign review to an alternate reviewer.
-- At least **one Maintainer** must approve the Pull Request.
-- It is not required to have approvals from _all_ FOCUS members, but all active reviewers must approve.
+* All reviewers assigned to the Pull Request must approve before the Pull Request is eligible for merging.
+* If a reviewer becomes inactive or unresponsive, Maintainers may reassign review to an alternate reviewer.
+* At least **one Maintainer** must approve the Pull Request.
+* It is not required to have approvals from _all_ FOCUS members, but all active reviewers must approve.
 
 
 #### Approval Criteria
 
 A Pull Request is eligible for approval when:
 
-- All reviewer comments and suggestions have been resolved or otherwise addressed.
-- The Pull Request fully meets the linked Issue's Definition of Done (DoD).
-- The Pull Request description is complete, including rationale, data examples, links to supporting information, and explanation of key decisions.
-- No unresolved objections remain from reviewers.
+* All reviewer comments and suggestions have been resolved or otherwise addressed.
+* The Pull Request fully meets the linked Issue's Definition of Done (DoD).
+* The Pull Request description is complete, including rationale, data examples, links to supporting information, and explanation of key decisions.
+* No unresolved objections remain from reviewers.
 
 
 #### Conflict Resolution
 
 If reviewers cannot reach consensus or if blocking objections are raised:
 
-- Follow the conflict resolution process outlined in the [FOCUS Foundation repository](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/workflow-procedures.md).
-- Escalate to the Maintainers group for mediation if needed.
+* Follow the conflict resolution process outlined in the [FOCUS Foundation repository](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/workflow-procedures.md).
+* Escalate to the Maintainers group for mediation if needed.
 
 
 #### Meeting Approval
 
 Having met all approval criteria, a Pull Request can be scheduled for final review and approval during the weekly FOCUS All Members Meeting.
 
-- Pull Requests in good standing (meeting all above criteria) may be formally approved at the meeting and merged thereafter by Maintainers or Admins as appropriate.
+* Pull Requests in good standing (meeting all above criteria) may be formally approved at the meeting and merged thereafter by Maintainers or Admins as appropriate.
 
 
 ## Git Notifications
@@ -416,12 +416,12 @@ Channel for maintainers to communicate and update each other about activities.
 
 ## Glossary
 
-- AI = Action Item
-- CLA = Contributor License Agreement
-- DoD = Definition of Done
-- FOCUS member = Individuals contributing after their Organization signs the [CLA](https://github.com/FinOps-Open-Cost-and-Usage-Spec/EasyCLA).
-- FR = Feature Request
-- PR = Pull Request
-- TF = Task Force
-- WG = Working Group
+* AI = Action Item
+* CLA = Contributor License Agreement
+* DoD = Definition of Done
+* FOCUS member = Individuals contributing after their Organization signs the [CLA](https://github.com/FinOps-Open-Cost-and-Usage-Spec/EasyCLA).
+* FR = Feature Request
+* PR = Pull Request
+* TF = Task Force
+* WG = Working Group
 

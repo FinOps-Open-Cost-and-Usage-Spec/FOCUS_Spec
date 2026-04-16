@@ -19,12 +19,12 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
         <td><strong>Column &amp; Attribute Names:</strong></td>
         <td>
             <strong>Column Names</strong>:<br>
-            - Pricing Quantity<br>
-            - Pricing Unit<br>
-            - Service Provider Name<br><br>
+            * Pricing Quantity<br>
+            * Pricing Unit<br>
+            * Service Provider Name<br><br>
             <strong>Attribute Names</strong>:<br>
-            - Currency Code Format<br>
-            - Date/Time Format
+            * Currency Code Format<br>
+            * Date/Time Format
         </td>
         <td>
             <strong>Column Names:</strong><br>
@@ -36,20 +36,20 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
             &nbsp;&nbsp; Date/Time Format<br>
         </td>
         <td>
-            - Use the display name in the non-normative section.<br>
-            - The first occurrence in a section is linked to the section.
+            * Use the display name in the non-normative section.<br>
+            * The first occurrence in a section is linked to the section.
         </td>
     </tr>
     <tr>
         <td><strong>Column &amp; Attribute IDs:</strong></td>
         <td>
            <strong>Columns IDs</strong>:<br>
-            - PricingQuantity<br> 
-            - PricingUnit<br> 
-            - ServiceProviderName<br><br>
+            * PricingQuantity<br> 
+            * PricingUnit<br> 
+            * ServiceProviderName<br><br>
           <strong>Attributes IDs</strong>:<br>
-            - CurrencyCodeFormat <br> 
-            - DateTimeFormat <br>
+            * CurrencyCodeFormat <br> 
+            * DateTimeFormat <br>
         </td>
         <td>
           <strong>Columns IDs:</strong><br>
@@ -61,25 +61,25 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
           &nbsp;&nbsp; DateTimeFormat <br>
         </td>
         <td>
-           - Use PascalCamel case (the first letter of every word, is capitalized)<br>
-           - Normal text without bold or italics.<br>
-           - The first occurrence in a section is linked to the section.
+           * Use PascalCamel case (the first letter of every word, is capitalized)<br>
+           * Normal text without bold or italics.<br>
+           * The first occurrence in a section is linked to the section.
         </td>
     </tr>
     <tr>
         <td><strong>Column Values:</strong></td>
         <td>
-            - "Usage"<br>
-            - "Tax"<br>
-            - "TB"<br>
+            * "Usage"<br>
+            * "Tax"<br>
+            * "TB"<br>
         </td>
         <td>
             This column:<br>
             &nbsp;&nbsp; * MUST be null when ChargeCategory is "Tax" ...
         </td>
         <td>
-            - Enclosed in double quotation marks<br>
-            - Normal text without bold or italics
+            * Enclosed in double quotation marks<br>
+            * Normal text without bold or italics
         </td>
     </tr>
     <tr>
@@ -94,8 +94,8 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
             &nbsp;&nbsp; * MAY be null for all other combinations of ... <br/>
         </td>
         <td>
-           - Formatting follows Editorial Guidelines.<br>
-           - Structure and usage are defined in the Normative Requirements Guidelines.<br>
+           * Formatting follows Editorial Guidelines.<br>
+           * Structure and usage are defined in the Normative Requirements Guidelines.<br>
         </td>
     </tr>
     <tr>
@@ -109,8 +109,8 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
             [*service*](#glossary:service) <br>
         </td>
         <td>
-            - Blue font + italic<br>
-            - The first occurrence in a section is linked to the glossary.
+            * Blue font + italic<br>
+            * The first occurrence in a section is linked to the glossary.
         </td>
     </tr>
     <tr>
