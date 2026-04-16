@@ -326,21 +326,23 @@ To ensure consistent language when describing relationships and evaluations betw
 
 #### Exceptions
 
-* **No Blockquote Usage:** Exceptions MUST NOT be expressed using blockquote syntax.
+* **Not Permitted in Requirements Sections:** Exceptions MUST NOT appear in Requirements sections of the specification. If a condition represents a normative constraint, authors MUST express it explicitly using structured requirement patterns (e.g., “when”, “unless”) instead.
 
-* **Structural Relationship:** Exceptions MUST be directly associated with the requirement or content they modify and SHOULD appear immediately after the relevant content.
+* **No Blockquote Usage:** Exceptions MUST NOT be expressed using blockquote syntax (which is strictly reserved for Notes).
 
-* **Formatting Approach:** Exceptions MUST be expressed using standard Markdown structures, such as plain text or bullet lists.
+* **No Header Usage:** Exceptions MUST NOT use Markdown headers (e.g., `#### Exceptions`). 
 
-* **Bullet Usage:** When multiple exceptions are defined, they MUST be expressed as a bullet list.
+* **Exception Label:** Exceptions MUST begin with the inline label `**Exception:**` or `**Exceptions:**` (the term `Exception` or `Exceptions`, optionally followed by a qualifier, followed by a colon, in bold).
 
-* **Single Exception:** A single exception MAY be expressed as a standalone sentence or as a single bullet point.
+* **Consistent Terminology:** Only the term `Exception` or `Exceptions` MUST be used. Variants such as `Special Case`, `Caveat`, or similar terms MUST NOT be used.
 
-* **Subsection Usage:** Subsections (headers) MAY be used for exceptions only when necessary for clarity and when consistent with section structure rules.
+* **Structural Relationship:** Exceptions MUST be directly associated with the content they modify and SHOULD appear immediately after the relevant content.
 
-* **Normative Scope:** Exceptions MUST NOT introduce or redefine normative requirements. If a condition represents a normative constraint, it MUST be expressed as a formal normative requirement instead.
+* **Single-Line Exceptions:** An exception containing a single statement MUST be written as a single line of plain text immediately following the label.
 
-* **Avoidance in Normative Content:** Exceptions SHOULD be avoided in normative requirements. Authors SHOULD instead express conditions explicitly using structured requirement patterns (e.g., “when”, “unless”).
+* **Multi-Line Exceptions:** An exception spanning multiple statements MUST be expressed as a bullet list. A blank line MUST separate the label from the bullet list.
+
+* **Bullet Usage in Exceptions:** When using bullets inside an exception, the bullets MUST follow standard bullet formatting rules defined in this document.
 
 * **Example** (Markdown, illustrative):
 
