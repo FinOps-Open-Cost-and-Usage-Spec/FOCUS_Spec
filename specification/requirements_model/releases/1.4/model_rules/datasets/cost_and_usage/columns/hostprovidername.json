@@ -15,7 +15,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "HostProviderName adheres to the following requirements:",
+      "MustSatisfy": "HostProviderName MUST adhere to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -116,7 +116,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "HostProviderName nullability is defined as follows:",
+      "MustSatisfy": "HostProviderName MUST adhere to the following nullability requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -228,7 +228,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "When HostProviderName is not null, HostProviderName values are defined as follows:",
+      "MustSatisfy": "When HostProviderName is not null, HostProviderName values MUST adhere to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",

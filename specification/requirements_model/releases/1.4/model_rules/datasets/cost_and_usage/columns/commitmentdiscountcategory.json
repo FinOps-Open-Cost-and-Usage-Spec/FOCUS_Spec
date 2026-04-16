@@ -17,7 +17,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CommitmentDiscountCategory adheres to the following requirements:",
+      "MustSatisfy": "CommitmentDiscountCategory MUST adhere to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -87,7 +87,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CommitmentDiscountCategory nullability is defined as follows:",
+      "MustSatisfy": "CommitmentDiscountCategory MUST adhere to the following nullability requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",

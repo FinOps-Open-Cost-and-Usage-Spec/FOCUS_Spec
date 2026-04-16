@@ -17,7 +17,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CommitmentDiscountStatus adheres to the following requirements:",
+      "MustSatisfy": "CommitmentDiscountStatus MUST adhere to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -33,6 +33,14 @@
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-CommitmentDiscountStatus-C-005-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CommitmentDiscountStatus-C-006-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CommitmentDiscountStatus-C-007-C"
           }
         ]
       },
@@ -41,7 +49,9 @@
         "CAU-CostAndUsage-D-017-C",
         "CAU-CommitmentDiscountStatus-C-001-M",
         "CAU-CommitmentDiscountStatus-C-002-C",
-        "CAU-CommitmentDiscountStatus-C-005-M"
+        "CAU-CommitmentDiscountStatus-C-005-M",
+        "CAU-CommitmentDiscountStatus-C-006-C",
+        "CAU-CommitmentDiscountStatus-C-007-C"
       ]
     }
   },
@@ -87,7 +97,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CommitmentDiscountStatus nullability is defined as follows:",
+      "MustSatisfy": "CommitmentDiscountStatus MUST adhere to the following nullability requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -213,6 +223,52 @@
           }
         ]
       },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CommitmentDiscountStatus-C-006-C": {
+    "Function": "Validation",
+    "Reference": "CommitmentDiscountStatus",
+    "EntityType": "Column",
+    "EntityName": "Commitment Discount Status",
+    "EntityId": "CommitmentDiscountStatus",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 70,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "CommitmentDiscountStatus MUST be \"Used\" when the charge utilizes a specific amount of a given CommitmentDiscountId.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CommitmentDiscountStatus-C-007-C": {
+    "Function": "Validation",
+    "Reference": "CommitmentDiscountStatus",
+    "EntityType": "Column",
+    "EntityName": "Commitment Discount Status",
+    "EntityId": "CommitmentDiscountStatus",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 80,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "CommitmentDiscountStatus MUST be \"Unused\" when the charge represents the unused portion of the given CommitmentDiscountId.",
+      "Keyword": "MUST",
+      "Requirement": {},
       "Condition": {},
       "Dependencies": []
     }

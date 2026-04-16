@@ -17,7 +17,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ConsumedQuantity adheres to the following requirements:",
+      "MustSatisfy": "ConsumedQuantity MUST adhere to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -33,10 +33,6 @@
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-ConsumedQuantity-C-003-C"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-ConsumedQuantity-C-008-C"
           }
         ]
       },
@@ -45,8 +41,7 @@
         "CAU-CostAndUsage-D-011-C",
         "CAU-ConsumedQuantity-C-001-M",
         "CAU-ConsumedQuantity-C-002-M",
-        "CAU-ConsumedQuantity-C-003-C",
-        "CAU-ConsumedQuantity-C-008-C"
+        "CAU-ConsumedQuantity-C-003-C"
       ]
     }
   },
@@ -118,7 +113,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ConsumedQuantity nullability is defined as follows:",
+      "MustSatisfy": "ConsumedQuantity MUST adhere to the following nullability requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -212,7 +207,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "When ChargeCategory is \"Usage\" and CommitmentDiscountStatus is not \"Unused\", ConsumedQuantity adheres to the following additional requirements:",
+      "MustSatisfy": "When ChargeCategory is \"Usage\" and CommitmentDiscountStatus is not \"Unused\", ConsumedQuantity MUST adhere to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -320,7 +315,8 @@
     "EntityId": "ConsumedQuantity",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "ApplicabilityCriteria": [],
     "Order": 90,
     "DatasetType": "CAU",

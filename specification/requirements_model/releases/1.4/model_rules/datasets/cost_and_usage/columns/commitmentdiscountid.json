@@ -17,7 +17,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CommitmentDiscountId adheres to the following requirements:",
+      "MustSatisfy": "CommitmentDiscountId MUST adhere to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -118,7 +118,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CommitmentDiscountId nullability is defined as follows:",
+      "MustSatisfy": "CommitmentDiscountId MUST adhere to the following nullability requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -202,7 +202,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "When CommitmentDiscountId is not null, CommitmentDiscountId adheres to the following additional requirements:",
+      "MustSatisfy": "When CommitmentDiscountId is not null, CommitmentDiscountId MUST adhere to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -210,6 +210,14 @@
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-CommitmentDiscountId-C-007-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CommitmentDiscountId-C-009-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CommitmentDiscountId-C-010-C"
           },
           {
             "CheckFunction": "CheckModelRule",
@@ -224,6 +232,8 @@
       },
       "Dependencies": [
         "CAU-CommitmentDiscountId-C-007-M",
+        "CAU-CommitmentDiscountId-C-009-C",
+        "CAU-CommitmentDiscountId-C-010-C",
         "CAU-CommitmentDiscountId-C-008-O"
       ]
     }
@@ -261,7 +271,7 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
-    "Order": 90,
+    "Order": 110,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
@@ -272,6 +282,64 @@
       "Requirement": {},
       "Condition": {},
       "Dependencies": []
+    }
+  },
+  "CAU-CommitmentDiscountId-C-009-C": {
+    "Function": "Validation",
+    "Reference": "CommitmentDiscountId",
+    "EntityType": "Column",
+    "EntityName": "Commitment Discount Id",
+    "EntityId": "CommitmentDiscountId",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 90,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "CommitmentDiscountId MUST be equal to ResourceId when ChargeCategory is \"Purchase\" and the charge represents a purchase of that commitment discount.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "ChargeCategory",
+        "Value": "Purchase"
+      },
+      "Dependencies": [
+        "CAU-ChargeCategory-C-000-M"
+      ]
+    }
+  },
+  "CAU-CommitmentDiscountId-C-010-C": {
+    "Function": "Validation",
+    "Reference": "CommitmentDiscountId",
+    "EntityType": "Column",
+    "EntityName": "Commitment Discount Id",
+    "EntityId": "CommitmentDiscountId",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 100,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "CommitmentDiscountId MUST be equal to ResourceId when ChargeCategory is \"Usage\" and the charge represents an unused portion of that commitment discount.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "ChargeCategory",
+        "Value": "Usage"
+      },
+      "Dependencies": [
+        "CAU-ChargeCategory-C-000-M"
+      ]
     }
   }
 }

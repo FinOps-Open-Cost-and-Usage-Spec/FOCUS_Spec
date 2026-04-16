@@ -17,7 +17,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CommitmentDiscountName adheres to the following requirements:",
+      "MustSatisfy": "CommitmentDiscountName MUST adhere to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -113,7 +113,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CommitmentDiscountName nullability is defined as follows:",
+      "MustSatisfy": "CommitmentDiscountName MUST adhere to the following nullability requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -182,7 +182,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "When CommitmentDiscountId is not null, CommitmentDiscountName adheres to the following additional requirements:",
+      "MustSatisfy": "When CommitmentDiscountId is not null, CommitmentDiscountName MUST adhere to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",

@@ -15,8 +15,8 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "InvoiceId adheres to the following requirements:",
-      "Keyword": "SHOULD",
+      "MustSatisfy": "InvoiceId MUST adhere to the following requirements:",
+      "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
         "Items": [
@@ -27,10 +27,6 @@
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-InvoiceId-C-002-M"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-InvoiceId-C-008-M"
           },
           {
             "CheckFunction": "CheckModelRule",
@@ -51,7 +47,6 @@
         "CAU-CostAndUsage-D-033-O",
         "CAU-InvoiceId-C-001-M",
         "CAU-InvoiceId-C-002-M",
-        "CAU-InvoiceId-C-008-M",
         "CAU-InvoiceId-C-003-C",
         "CAU-InvoiceId-C-006-O",
         "CAU-InvoiceId-C-007-C"
@@ -90,7 +85,7 @@
     "EntityType": "Column",
     "EntityName": "Invoice Id",
     "EntityId": "InvoiceId",
-    "Notes": "Cross-attribute reference: StringHandling",
+    "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
@@ -126,7 +121,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "InvoiceId nullability is defined as follows:",
+      "MustSatisfy": "InvoiceId MUST adhere to the following nullability requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "OR",
@@ -250,7 +245,8 @@
     "EntityId": "InvoiceId",
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "ApplicabilityCriteria": [],
     "Order": 40,
     "DatasetType": "CAU",

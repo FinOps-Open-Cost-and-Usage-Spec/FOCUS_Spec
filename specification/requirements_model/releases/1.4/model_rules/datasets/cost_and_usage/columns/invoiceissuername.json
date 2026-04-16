@@ -15,7 +15,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "InvoiceIssuerName adheres to the following requirements:",
+      "MustSatisfy": "InvoiceIssuerName MUST adhere to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",

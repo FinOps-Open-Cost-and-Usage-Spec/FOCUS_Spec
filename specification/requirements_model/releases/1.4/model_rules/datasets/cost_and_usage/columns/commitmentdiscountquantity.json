@@ -17,7 +17,7 @@
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "CommitmentDiscountQuantity adheres to the following requirements:",
+      "MustSatisfy": "CommitmentDiscountQuantity MUST adhere to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -128,7 +128,7 @@
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "CommitmentDiscountQuantity nullability is defined as follows:",
+      "MustSatisfy": "CommitmentDiscountQuantity MUST adhere to the following nullability requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -171,7 +171,7 @@
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "When ChargeCategory is \"Usage\" or \"Purchase\" and CommitmentDiscountId is not null, CommitmentDiscountQuantity adheres to the following additional requirements:",
+      "MustSatisfy": "When ChargeCategory is \"Usage\" or \"Purchase\" and CommitmentDiscountId is not null, CommitmentDiscountQuantity MUST adhere to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -353,7 +353,7 @@
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "When CommitmentDiscountQuantity is not null, CommitmentDiscountQuantity adheres to the following additional requirements:",
+      "MustSatisfy": "When CommitmentDiscountQuantity is not null, CommitmentDiscountQuantity MUST adhere to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -418,7 +418,7 @@
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "When CommitmentDiscountQuantity is not null and ChargeCategory is \"Purchase\", CommitmentDiscountQuantity adheres to the following additional requirements:",
+      "MustSatisfy": "When CommitmentDiscountQuantity is not null and ChargeCategory is \"Purchase\", CommitmentDiscountQuantity MUST adhere to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",

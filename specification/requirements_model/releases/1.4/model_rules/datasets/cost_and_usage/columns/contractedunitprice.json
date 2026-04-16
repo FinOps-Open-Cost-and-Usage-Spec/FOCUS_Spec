@@ -17,14 +17,18 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractedUnitPrice adheres to the following requirements:",
+      "MustSatisfy": "ContractedUnitPrice MUST adhere to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-ContractedUnitPrice-C-001-M"
+            "ModelRuleId": "CAU-ContractedUnitPrice-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ContractedUnitPrice-C-003-M"
           },
           {
             "CheckFunction": "CheckModelRule",
@@ -33,20 +37,16 @@
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-ContractedUnitPrice-C-008-C"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-ContractedUnitPrice-C-013-C"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
         "CAU-CostAndUsage-D-034-C",
-        "CAU-ContractedUnitPrice-C-001-M",
+        "CAU-ContractedUnitPrice-C-002-M",
+        "CAU-ContractedUnitPrice-C-003-M",
         "CAU-ContractedUnitPrice-C-004-M",
-        "CAU-ContractedUnitPrice-C-008-C",
-        "CAU-ContractedUnitPrice-C-013-C"
+        "CAU-ContractedUnitPrice-C-008-C"
       ]
     }
   },
@@ -58,7 +58,8 @@
     "EntityId": "ContractedUnitPrice",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "ApplicabilityCriteria": [],
     "Order": 20,
     "DatasetType": "CAU",
@@ -66,7 +67,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractedUnitPrice adheres to the following additional requirements:",
+      "MustSatisfy": "ContractedUnitPrice MUST adhere to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -156,7 +157,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractedUnitPrice nullability is defined as follows:",
+      "MustSatisfy": "ContractedUnitPrice MUST adhere to the following nullability requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -319,7 +320,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "When ContractedUnitPrice is not null, ContractedUnitPrice adheres to the following additional requirements:",
+      "MustSatisfy": "When ContractedUnitPrice is not null, ContractedUnitPrice MUST adhere to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -485,7 +486,8 @@
     "EntityId": "ContractedUnitPrice",
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "ApplicabilityCriteria": [],
     "Order": 140,
     "DatasetType": "CAU",

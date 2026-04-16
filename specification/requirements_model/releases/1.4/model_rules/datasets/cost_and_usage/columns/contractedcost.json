@@ -15,7 +15,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractedCost adheres to the following requirements:",
+      "MustSatisfy": "ContractedCost MUST MUST adhere to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -31,10 +31,6 @@
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-ContractedCost-C-003-M"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-ContractedCost-C-004-M"
           },
           {
             "CheckFunction": "CheckModelRule",
@@ -56,7 +52,6 @@
         "CAU-ContractedCost-C-001-M",
         "CAU-ContractedCost-C-002-M",
         "CAU-ContractedCost-C-003-M",
-        "CAU-ContractedCost-C-004-M",
         "CAU-ContractedCost-C-005-M",
         "CAU-ContractedCost-C-006-C",
         "CAU-ContractedCost-C-011-C"
@@ -150,7 +145,8 @@
     "EntityId": "ContractedCost",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "ApplicabilityCriteria": [],
     "Order": 50,
     "DatasetType": "CAU",
@@ -210,7 +206,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "When ContractedUnitPrice is null, ContractedCost adheres to the following additional requirements:",
+      "MustSatisfy": "When ContractedUnitPrice is null, ContractedCost MUST adhere to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
