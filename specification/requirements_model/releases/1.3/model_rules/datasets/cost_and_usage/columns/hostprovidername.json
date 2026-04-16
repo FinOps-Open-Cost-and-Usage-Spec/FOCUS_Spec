@@ -321,7 +321,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "HostProviderName MUST match ServiceProviderName in all other cases.",
+      "MustSatisfy": "HostProviderName MUST equal ServiceProviderName in all other cases.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},

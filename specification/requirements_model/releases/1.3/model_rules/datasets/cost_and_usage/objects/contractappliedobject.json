@@ -1282,7 +1282,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "\"ContractCommitmentId\" MUST match ResourceId when ChargeCategory is \"Purchase\".",
+      "MustSatisfy": "\"ContractCommitmentId\" MUST be equal to ResourceId when ChargeCategory is \"Purchase\".",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "JSONCheckPathSameValue",
@@ -1315,7 +1315,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "\"ContractCommitmentId\" MAY match \"ContractId\".",
+      "MustSatisfy": "\"ContractCommitmentId\" MAY be equal to \"ContractId\".",
       "Keyword": "MAY",
       "Requirement": {},
       "Condition": {},

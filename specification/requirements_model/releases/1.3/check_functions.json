@@ -163,7 +163,7 @@
       ]
     },
     "ColumnByColumnEqualsColumnValue": {
-      "Description": "Check the result of a column value times by another column value and confirm if it is equal to the value of third column",
+      "Description": "Check the result of a column value times by another column value and confirm if it matches the value of third column",
       "Arguments": [
         "ColumnAName",
         "ColumnBName",

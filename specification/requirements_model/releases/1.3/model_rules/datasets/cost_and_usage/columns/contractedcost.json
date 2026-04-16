@@ -276,7 +276,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractedCost of a charge unrelated to other charges (e.g., when the ChargeCategory is \"Credit\") MUST be equal to the BilledCost.",
+      "MustSatisfy": "ContractedCost of a charge unrelated to other charges (e.g., when the ChargeCategory is \"Credit\") MUST match the BilledCost.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -299,7 +299,7 @@
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "The product of ContractedUnitPrice and PricingQuantity MUST be equal to the ContractedCost when ContractedUnitPrice is not null, PricingQuantity is not null, and ChargeClass is not \"Correction\".",
+      "MustSatisfy": "The product of ContractedUnitPrice and PricingQuantity MUST match the ContractedCost when ContractedUnitPrice is not null, PricingQuantity is not null, and ChargeClass is not \"Correction\".",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {

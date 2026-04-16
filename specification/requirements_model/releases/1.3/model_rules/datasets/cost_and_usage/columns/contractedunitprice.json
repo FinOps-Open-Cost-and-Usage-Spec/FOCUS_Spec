@@ -413,7 +413,7 @@
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "The product of ContractedUnitPrice and PricingQuantity MUST be equal to the ContractedCost when PricingQuantity is not null and ChargeClass is not \"Correction\".",
+      "MustSatisfy": "The product of ContractedUnitPrice and PricingQuantity MUST match the ContractedCost when PricingQuantity is not null and ChargeClass is not \"Correction\".",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnByColumnEqualsColumnValue",

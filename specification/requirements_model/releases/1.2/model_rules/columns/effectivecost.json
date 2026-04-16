@@ -205,7 +205,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "The sum of EffectiveCost in a given billing period MAY not be equal to the sum of the invoices received for the same billing period for a billing account.",
+      "MustSatisfy": "The sum of EffectiveCost in a given billing period MAY not match the sum of the invoices received for the same billing period for a billing account.",
       "Keyword": "MAY",
       "Requirement": {},
       "Condition": {},
@@ -286,7 +286,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "EffectiveCost of a charge unrelated to other charges (e.g., when the ChargeCategory is \"Credit\") MUST be equal to the BilledCost.",
+      "MustSatisfy": "EffectiveCost of a charge unrelated to other charges (e.g., when the ChargeCategory is \"Credit\") MUST match the BilledCost.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},

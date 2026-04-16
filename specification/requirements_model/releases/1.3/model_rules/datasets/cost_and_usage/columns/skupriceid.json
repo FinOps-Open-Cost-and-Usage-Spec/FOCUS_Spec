@@ -416,7 +416,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "SkuPriceId MAY match SkuId.",
+      "MustSatisfy": "SkuPriceId MAY equal SkuId.",
       "Keyword": "MAY",
       "Requirement": {
         "CheckFunction": "CheckSameValue",

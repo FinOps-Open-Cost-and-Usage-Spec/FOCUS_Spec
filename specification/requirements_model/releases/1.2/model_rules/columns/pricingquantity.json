@@ -283,7 +283,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "The product of PricingQuantity and a unit price (e.g., ContractedUnitPrice) MUST be equal to the corresponding cost metric (e.g., ContractedCost) when the unit price is not null and ChargeClass is not \"Correction\".",
+      "MustSatisfy": "The product of PricingQuantity and a unit price (e.g., ContractedUnitPrice) MUST match the corresponding cost metric (e.g., ContractedCost) when the unit price is not null and ChargeClass is not \"Correction\".",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
