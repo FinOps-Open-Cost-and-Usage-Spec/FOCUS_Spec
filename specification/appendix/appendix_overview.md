@@ -57,7 +57,7 @@ To contextualize the billing and cost allocation examples, this appendix utilize
 
 To illustrate commitment program application and amortization without relying on vendor-specific terminology, the examples in this appendix use standardized fictitious commitment instruments. These constructs abstract the common commitment mechanisms used by major cloud and SaaS providers.
 
-| Fictitious Commitment Program | Abbr. | Category | Fictitious Commitment Program Description | Similar Real-World Programs |
+| Fictitious Commitment Program | Acronym | Category | Fictitious Commitment Program Description | Similar Real-World Programs |
 | :--- | :--- | :--- | :--- | :--- |
 | **Resource Reservation** | RR | Usage | An upfront commitment to use a specific resource type, family, and region for a set term (e.g., 1 or 3 years) in exchange for a significantly reduced hourly rate. | Reserved Instances (AWS/Azure), Resource-based CUDs (GCP) |
 | **Flexible Spend Plan** | FSP | Spend | A commitment to spend a specific monetary amount per hour across a broad category of compute or service offerings, providing high flexibility as workloads shift. | Savings Plans (AWS) |
