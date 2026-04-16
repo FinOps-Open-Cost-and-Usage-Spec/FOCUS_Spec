@@ -222,7 +222,7 @@ To ensure consistent language when describing relationships and evaluations betw
 * **Example** (Markdown, illustrative):
 
   ```md
-  ... MUST adhere to the following rules:
+  ... MUST adhere to the following requirements:
   ```
 
 * **Consistent Introductory Phrases:** Introductory phrases for normative lists SHOULD be consistent within a section.
