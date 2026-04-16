@@ -2,6 +2,8 @@
 
 Commitment Discount Type is a service-provider-assigned name to identify the type of [*commitment discount*](#glossary:commitment-discount) applied to the [*row*](#glossary:row). The CommitmentDiscountType column is only applicable to *commitment discounts* and not [*negotiated discounts*](#glossary:negotiated-discount).
 
+> Note: Example values for CommitmentDiscountType should use Title Case with spaces (e.g., "Savings Plan", "Reserved Instance") to align with provider conventions and the equality requirement with [CommitmentProgramEligibilityDetails](#datasets.costandusage.commitmentprogrameligibilitydetails) `ProgramType`.
+
 ## Requirements
 
 CommitmentDiscountType MUST adhere to the following requirements:
