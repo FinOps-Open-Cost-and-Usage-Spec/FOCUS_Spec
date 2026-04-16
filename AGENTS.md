@@ -144,9 +144,9 @@ Issue templates are `.yml` form definitions in `.github/ISSUE_TEMPLATE/`. Use th
 | Type | Title Prefix | Template |
 |---|---|---|
 | Action Item | `[AI] ` | `action-item.yml` |
-| Feature Request | `[FR]: ` | `feature-request.yml` |
+| Feature Request | `[FR] ` | `feature-request.yml` |
 | Feedback | `[Feedback] ` | `feedback.yml` |
-| Maintenance | `[MAINTENANCE]: ` | `maintenance.yml` |
+| Maintenance | `[Maintenance] ` | `maintenance.yml` |
 | Work Item | `[WI]` | `work-item.yml` |
 
 ## Context Files
