@@ -139,15 +139,15 @@ Every PR body MUST follow the template at `.github/pull_request_template.md`, in
 
 #### Issues
 
-Issue templates are `.yml` form definitions in `.github/ISSUE_TEMPLATE/`. Use the correct title prefix and include all required fields. AGENTS.md requirements take precedence over `required` flags in the `.yml` files.
+Issue templates are `.yml` form definitions in `.github/ISSUE_TEMPLATE/`. Use the correct title prefix and fill all fields marked required in the template.
 
-| Type | Title Prefix | Template | Required Fields |
-|---|---|---|---|
-| Action Item | `[AI] ` | `action-item.yml` | Definition of Done |
-| Feature Request | `[FR]: ` | `feature-request.yml` | All sections: Problem Statement, Success Criteria, Type of Request, Organizations Requesting This Feature, **and** Maintainer Assessment (Adoption Impact, Adoption Impact Justification, Supported Features Alignment, MVP Definition, North Star Vision, Phasing Strategy, Impacted Parties, Level of Ambiguity, FinOps Scope Alignment) |
-| Feedback | `[Feedback] ` | `feedback.yml` | Feedback Summary |
-| Maintenance | `[MAINTENANCE]: ` | `maintenance.yml` | Description, Definition of Done |
-| Work Item | `[WI]` | `work-item.yml` | Problem Statement, Use Case, Objective, Supporting Documentation |
+| Type | Title Prefix | Template |
+|---|---|---|
+| Action Item | `[AI] ` | `action-item.yml` |
+| Feature Request | `[FR]: ` | `feature-request.yml` |
+| Feedback | `[Feedback] ` | `feedback.yml` |
+| Maintenance | `[MAINTENANCE]: ` | `maintenance.yml` |
+| Work Item | `[WI]` | `work-item.yml` |
 
 ## Context Files
 
