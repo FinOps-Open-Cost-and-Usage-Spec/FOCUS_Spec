@@ -7,8 +7,8 @@
 | Commitment Discount Category | Usage              |
 | Utilization                  | 100%               |
 | Hours Generated              | 24                 |
-| Annual Commitment            | &dollar;358,021.20 |
-| List Unit Price              | &dollar;61.31/hour |
+| Annual Commitment            | $358,021.20 |
+| List Unit Price              | $61.31/hour |
 
 [CSV Example](/specification/data/commitment_discount_scenarios/azure_reservation_all_upfront_100pct.csv)
 
@@ -26,9 +26,9 @@ This scenario demonstrates **full utilization** where exactly 100% of the commit
 
 | Row Type         | Count | BilledCost             | EffectiveCost        |
 | ---------------- | ----- | ---------------------- | -------------------- |
-| Purchase         | 1     | &dollar;358,021.20     | &dollar;0.00         |
-| Usage (Used)     | 24    | &dollar;0.00           | &dollar;980.88       |
-| **Total**        | 25    | **&dollar;358,021.20** | **&dollar;980.88**   |
+| Purchase         | 1     | $358,021.20     | $0.00         |
+| Usage (Used)     | 24    | $0.00           | $980.88       |
+| **Total**        | 25    | **$358,021.20** | **$980.88**   |
 
 ## Column Interactions
 
@@ -50,8 +50,8 @@ These three quantity columns serve different purposes and must be understood in 
 
 | Column                  | Purpose                  | Commitment-Covered |
 | ----------------------- | ------------------------ | ------------------ |
-| **ListUnitPrice**       | List (public) unit price | &dollar;61.31      |
-| **ContractedUnitPrice** | Negotiated unit price    | &dollar;61.31      |
+| **ListUnitPrice**       | List (public) unit price | $61.31      |
+| **ContractedUnitPrice** | Negotiated unit price    | $61.31      |
 
 **Why this matters:** ContractedUnitPrice reflects enterprise-negotiated pricing (e.g., EDP rates), not commitment discount savings. In non-negotiated scenarios, ContractedUnitPrice equals ListUnitPrice. Commitment discount savings are reflected in EffectiveCost, not in unit prices.
 
@@ -59,8 +59,8 @@ These three quantity columns serve different purposes and must be understood in 
 
 | Scenario         | BilledCost         | EffectiveCost | ListCost           |
 | ---------------- | ------------------ | ------------- | ------------------ |
-| **Purchase Row** | &dollar;358,021.20 | &dollar;0.00  | &dollar;358,021.20 |
-| **Used Row**     | &dollar;0.00       | &dollar;40.87 | &dollar;61.31      |
+| **Purchase Row** | $358,021.20 | $0.00  | $358,021.20 |
+| **Used Row**     | $0.00       | $40.87 | $61.31      |
 
 The following critical rules apply to commitment discount data:
 
@@ -73,8 +73,8 @@ The following critical rules apply to commitment discount data:
 | -------------------------- | ------------------------------------- | ------------------------------------------------------------------------------------- |
 | ChargeCategory             | Purchase                              | Commitment purchase transaction                                                       |
 | ChargeFrequency            | One-Time                              | One-time upfront payment                                                              |
-| BilledCost                 | &dollar;358,021.20                    | Full annual commitment payment                                                        |
-| EffectiveCost              | &dollar;0.00                          | **must be 0** - cost is amortized to usage rows                                       |
+| BilledCost                 | $358,021.20                    | Full annual commitment payment                                                        |
+| EffectiveCost              | $0.00                          | **must be 0** - cost is amortized to usage rows                                       |
 | PricingQuantity            | 1                                     | One commitment unit purchased                                                         |
 | CommitmentDiscountStatus   | null                                  | Status only applies to usage rows                                                     |
 | CommitmentDiscountQuantity | 8760.00                               | Total commitment capacity for the 1-year term (1 instance-hr/hr &times; 8,760 hrs/yr) |
@@ -88,9 +88,9 @@ The following critical rules apply to commitment discount data:
 | -------------------------- | ----------------------------------------------------- | ------------------------------------------ |
 | ChargeCategory             | Usage                                                 | Compute resource consumption               |
 | PricingCategory            | Committed                                             | Priced under commitment discount           |
-| BilledCost                 | &dollar;0.00                                          | **must be 0** - covered by commitment      |
-| EffectiveCost              | &dollar;40.87                                         | Amortized cost (annual / hours)            |
-| ListCost                   | &dollar;61.31                                         | What you would have paid at list price     |
+| BilledCost                 | $0.00                                          | **must be 0** - covered by commitment      |
+| EffectiveCost              | $40.87                                         | Amortized cost (annual / hours)            |
+| ListCost                   | $61.31                                         | What you would have paid at list price     |
 | PricingQuantity            | 1                                                     | Units priced                               |
 | ConsumedQuantity           | 1                                                     | Hours used                                 |
 | CommitmentDiscountQuantity | 1                                                     | Commitment units applied                   |
