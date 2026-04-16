@@ -23,7 +23,7 @@ Contract Commitment Period End
 
 The *exclusive end bound* of a *contract commitment period*.
 
-## Content constraints
+## Content Constraints
 
 | Constraint      | Value                                                |
 |:----------------|:-----------------------------------------------------|

@@ -17,7 +17,7 @@ TimeSectorStart
 
 Time Sector Start
 
-## Content constraints
+## Content Constraints
 
 | Constraint    | Value                                |
 |:--------------|:-------------------------------------|

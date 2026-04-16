@@ -44,7 +44,7 @@ SKU ID
 
 Service-provider-specified unique identifier that represents a specific *SKU* (e.g., a quantifiable good or service offering).
 
-## Content constraints
+## Content Constraints
 
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |

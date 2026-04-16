@@ -23,7 +23,7 @@ Charge Period End
 
 The *exclusive end bound* of a *charge period*.
 
-## Content constraints
+## Content Constraints
 
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |

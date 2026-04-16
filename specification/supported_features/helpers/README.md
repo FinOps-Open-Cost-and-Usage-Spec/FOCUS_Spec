@@ -4,8 +4,8 @@ This directory contains utility scripts that assist with maintaining and process
 
 ## Requirements
 
-- Python 3.13
-- Dependencies listed in `requirements.txt`
+* Python 3.13
+* Dependencies listed in `requirements.txt`
 
 ### Installation
 
@@ -24,10 +24,10 @@ A Python script that finds SQL code blocks in Markdown files and transpiles them
 
 #### Purpose
 
-- Extract SQL code blocks from Markdown documentation
-- Detect SQL dialects automatically or use provided hints
-- Transpile SQL between different database dialects (BigQuery, Trino, T-SQL, etc.)
-- Validate SQL syntax across different platforms
+* Extract SQL code blocks from Markdown documentation
+* Detect SQL dialects automatically or use provided hints
+* Transpile SQL between different database dialects (BigQuery, Trino, T-SQL, etc.)
+* Validate SQL syntax across different platforms
 
 #### Usage
 
@@ -63,10 +63,10 @@ A Python script that finds SQL code blocks in Markdown files and transpiles them
 
 #### Options
 
-- `files`: Markdown files or glob patterns to process
-- `--to`: Target SQL dialect (default: ansi)
-- `--prefer`: Preferred dialect for detection (can be used multiple times)
-- `--list`: Only list SQL blocks found, don't transpile
+* `files`: Markdown files or glob patterns to process
+* `--to`: Target SQL dialect (default: ansi)
+* `--prefer`: Preferred dialect for detection (can be used multiple times)
+* `--list`: Only list SQL blocks found, don't transpile
 
 #### Supported Dialects
 
