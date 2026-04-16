@@ -45,7 +45,7 @@ The spend agreement with StoreStack requires the customer to spend a minimum amo
 
 Acme Corp's consumption looks like this:
 
-* In the first month, the Acme Corp uses $48 of services (4 server hours). This usage has a List Cost of $60 (before discounts). For this month, StoreStack charges $12 (ListCost of $15) for not meeting the monthly minimum
+* In the first month, Acme Corp uses $48 of services (4 server hours). This usage has a List Cost of $60 (before discounts). For this month, StoreStack charges $12 (ListCost of $15) for not meeting the monthly minimum
 * In the following 2 months, Acme Corp has usage at or above the minimum requirement
 * For the final 9 months, Acme Corp does not use StoreStack services
 
