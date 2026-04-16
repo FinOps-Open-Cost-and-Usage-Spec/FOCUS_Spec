@@ -19,7 +19,7 @@ TimeSectorEnd
 
 Time Sector End
 
-## Content constraints
+## Content Constraints
 
 | Constraint    | Value                                |
 |:--------------|:-------------------------------------|
