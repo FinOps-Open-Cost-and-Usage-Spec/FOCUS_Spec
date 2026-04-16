@@ -217,7 +217,7 @@ To ensure consistent language when describing relationships and evaluations betw
 
 ### Formatting
 
-* **Introductory Phrase for Rules:** Normative bullet lists SHOULD be preceded by a short introductory phrase ending with a colon (:).
+* * **Structural Anchor Requirements:** Normative bullet lists MUST be preceded by a structural anchor requirement. See [Normative Requirements Guidelines](normative-requirements-guidelines.md#structural-anchor-requirement) for details..
 
 * **Example** (Markdown, illustrative):
 
