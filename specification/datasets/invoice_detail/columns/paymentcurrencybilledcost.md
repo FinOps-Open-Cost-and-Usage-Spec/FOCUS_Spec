@@ -70,7 +70,7 @@ Payment Currency Billed Cost
 
 The [Billed Cost](#datasets.invoicedetail.billedcost) as expressed in [Payment Currency](#datasets.invoicedetail.paymentcurrency).
 
-## Content constraints
+## Content Constraints
 
 |    Constraint   |      Value              |
 |:----------------|:------------------------|

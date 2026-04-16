@@ -19,13 +19,13 @@ The creation of this publicly-available column shall be net-new for the cloud se
 
 In addition to the principles as defined during the creation of Service Categories in FOCUS 0.5, the following principles shall also be followed when constructing Service Subcategories:
 
-- Undercategorize rather than overcategorize where there is not broad consensus and/or materiality.
-  - Allow the community to advocate for new Subcategories (and Categories) in future releases, and leave Services uncategorized and/or unsubcategorized in the meantime.
-- Assign each Service to the one (and only one) Subcategory that describes its primary function.  
-  - The Service hierarchy is meant to serve as a relatively high-level set of groupings that primarily address the needs of the Executive persona.  A given Service can fulfill multiple functions across and within organizations, and so the assignment of a Service to one and only one Category and Subcategory may be inaccurate from org to the next.  However, this hierarchy will then give the Practitioner a solid place to start, and they can make a few tweaks to its composition to meet their org's needs rather than create a hierarchy from scratch.  Ultimately, the creation and maintenance of the Service hierarchy requires us to embrace the imperfect and somewhat subjective nature of assigining a given Service to a single Category / Subcategory.
-  - The (forthcoming) SKU hierarchy will be an opportunity to get very specific on the categorizations of cost and usage activity.  For example, GCP maintains a seven-level taxonomy for every SKU, and this will hopefully more concretely address the lower-level reporting needs of the Engineering persona.
-  - Use the "Platforms" suffix whenever a subcategory is needed to cover products and services that span multiple other subcategories.
-  - Avoid a "Platforms" subcategory if the service category does not have other subcategories.
+* Undercategorize rather than overcategorize where there is not broad consensus and/or materiality.
+  * Allow the community to advocate for new Subcategories (and Categories) in future releases, and leave Services uncategorized and/or unsubcategorized in the meantime.
+* Assign each Service to the one (and only one) Subcategory that describes its primary function.  
+  * The Service hierarchy is meant to serve as a relatively high-level set of groupings that primarily address the needs of the Executive persona.  A given Service can fulfill multiple functions across and within organizations, and so the assignment of a Service to one and only one Category and Subcategory may be inaccurate from org to the next.  However, this hierarchy will then give the Practitioner a solid place to start, and they can make a few tweaks to its composition to meet their org's needs rather than create a hierarchy from scratch.  Ultimately, the creation and maintenance of the Service hierarchy requires us to embrace the imperfect and somewhat subjective nature of assigining a given Service to a single Category / Subcategory.
+  * The (forthcoming) SKU hierarchy will be an opportunity to get very specific on the categorizations of cost and usage activity.  For example, GCP maintains a seven-level taxonomy for every SKU, and this will hopefully more concretely address the lower-level reporting needs of the Engineering persona.
+  * Use the "Platforms" suffix whenever a subcategory is needed to cover products and services that span multiple other subcategories.
+  * Avoid a "Platforms" subcategory if the service category does not have other subcategories.
 
 ### Sample provider mappings
 Here are sample subcategorizations of various services across the AWS, Azure, and GCP landscape.
@@ -125,11 +125,11 @@ A series of open questions were discussed over the course of July and August 202
 
 With Subcategories now in scope for FOCUS 1.1, there was then the potential of changing Categories.  For example: 
 
-- `Identity` could become a child Subcategory of `Security`.
-- `Web` and `Mobile` could be grouped together into a net-new category (proposed `Front-end` or `Application Tools`).
-- Activity that is truly cross-categorical could be placed in a net-new category (proposed `Crossfunctional`) separate from `Other`, which is more of an uncategorized placeholder.
-- `Integration` could be rescoped and renamed `Data Management` to be more inclusive of Service Subcategories such as Data Processing and API Management.
-- `Multicloud` could be rescoped and renamed `Hybrid and Multicloud` to be more inclusive of on-premises Services.
+* `Identity` could become a child Subcategory of `Security`.
+* `Web` and `Mobile` could be grouped together into a net-new category (proposed `Front-end` or `Application Tools`).
+* Activity that is truly cross-categorical could be placed in a net-new category (proposed `Crossfunctional`) separate from `Other`, which is more of an uncategorized placeholder.
+* `Integration` could be rescoped and renamed `Data Management` to be more inclusive of Service Subcategories such as Data Processing and API Management.
+* `Multicloud` could be rescoped and renamed `Hybrid and Multicloud` to be more inclusive of on-premises Services.
 
 After much discussion, particularly on the Aug 6 TF1 call, it became clear that the "burden of proof" for changing existing Categories is higher, given that some of the group feels this to constitute a "breaking change".  Some of the group felt that the Service hierarchy should be considered more of a "living document" that is revisited from one FOCUS release to another, in order to stay more tightly aligned with the slowly-changing nature of Service categorizations; others felt that would be prohibitively disruptive for FOCUS consumers who have constructed various downstream artifacts and depend on a certain Category and Subcategory composition.
 
@@ -149,17 +149,17 @@ _Outcome_: Service Category and Subcategory shall describe the Service's primary
 
 Commitment Discounts have various models that could belong in various places of a Service category hierarchy.  For example:
 
-- An Azure reservation for D8as v5 can be both Categorized (i.e. `Compute`) and Subcategorized (i.e. `Virtual Machines`).
-- An AWS Compute savings plan can be Categorized (i.e. `Compute`) but not Subcategorized (e.g., it can be applied to both `Virtual Machines` and `Serverless Compute`).
-- An OCI Credit can neither be Categorized nor Subcategorized (e.g., it can be applied to a wide variety of usage).
+* An Azure reservation for D8as v5 can be both Categorized (i.e. `Compute`) and Subcategorized (i.e. `Virtual Machines`).
+* An AWS Compute savings plan can be Categorized (i.e. `Compute`) but not Subcategorized (e.g., it can be applied to both `Virtual Machines` and `Serverless Compute`).
+* An OCI Credit can neither be Categorized nor Subcategorized (e.g., it can be applied to a wide variety of usage).
 
 Based on that, there was a robust discussion, particularly on the Jul 23 TF1 and Aug 8 Member calls, as to where Commitment Discounts belong.  Do they deserve their own Subcategories (e.g., `Commitments (Compute)`, `Commitments (Databases)`) underneath each Category?  Do they also deserve their own Category (e.g., `Commitments` or `Crossfunctional`)?
 
 _Outcome_: given the decision not to change the Category composition, and given the principle of undercategorizing rather than overcategorizing: 
 
-- Commitment Discounts with a natural Category / Subcategory shall be placed therein.
-- Commitment Discounts with a natural Category but no Subcategory shall be placed in `Other (<Category>)`.
-- Commitment Discounts with no natural Category or Subcategory shall be placed in `Other (Other)`.
+* Commitment Discounts with a natural Category / Subcategory shall be placed therein.
+* Commitment Discounts with a natural Category but no Subcategory shall be placed in `Other (<Category>)`.
+* Commitment Discounts with no natural Category or Subcategory shall be placed in `Other (Other)`.
 
 #### Shall certain technologies be given their own Categories?
 
@@ -167,12 +167,12 @@ The group discussed the possibility of "graduating" Services to their own net-ne
 
 Given the decision not to change the Category composition on the Aug 6 TF1 call, this became a moot discussion.  However, the group did discuss some specific examples, particularly on the Jul 23 TF1 and Jul 25 Member calls:
 
-- `Blockchain` belongs under `Databases > Ledger`.
-- `Containers` belongs under `Compute > Containers`.
-- `Support` belongs under `Management and Governance`.
-- `Mixed Reality` does not deserve its own Category.
-- `Industry Specific` does not deserve its own Category.
-- `Marketplace` Services shall be placed into the Category and Subcategory aligned with their purpose, rather than placed into a `Marketplace` Category.
+* `Blockchain` belongs under `Databases > Ledger`.
+* `Containers` belongs under `Compute > Containers`.
+* `Support` belongs under `Management and Governance`.
+* `Mixed Reality` does not deserve its own Category.
+* `Industry Specific` does not deserve its own Category.
+* `Marketplace` Services shall be placed into the Category and Subcategory aligned with their purpose, rather than placed into a `Marketplace` Category.
 
 _Outcome_: No Category additions or changes at this time.
 
@@ -187,9 +187,9 @@ Each Category carries an "Other" Subcategory to allow the providers to provide a
 
 The following considerations were included:
 
-- Brevity, simplicity, and consistency of Subcategory names (e.g., “Uncategorized (Management and Governance)” is pretty long).
-- Delineation of Category values from Subcategory values (e.g., use of Subcategory “Other” underneath all Categories “Compute”, “Databases” and “Other” could be confusing).
-- Analytical utility of Subcategory without Category context (e.g., uncategorized Compute from uncategorized Databases are automatically separated in a bar chart).
+* Brevity, simplicity, and consistency of Subcategory names (e.g., “Uncategorized (Management and Governance)” is pretty long).
+* Delineation of Category values from Subcategory values (e.g., use of Subcategory “Other” underneath all Categories “Compute”, “Databases” and “Other” could be confusing).
+* Analytical utility of Subcategory without Category context (e.g., uncategorized Compute from uncategorized Databases are automatically separated in a bar chart).
 
 _Outcome_: Option :two: was chosen.
 

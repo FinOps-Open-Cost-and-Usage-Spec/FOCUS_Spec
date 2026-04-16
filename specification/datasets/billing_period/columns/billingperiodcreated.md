@@ -23,7 +23,7 @@ Billing Period Created
 
 The timestamp when the *Billing Period* record was first created.
 
-## Content constraints
+## Content Constraints
 
 |    Constraint   |              Value              |
 |:----------------|:--------------------------------|

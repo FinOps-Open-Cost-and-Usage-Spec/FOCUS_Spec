@@ -113,8 +113,8 @@ The following options were developed for the Dataset Configuration attribute. Co
 
 Some capabilities are outside the scope of Dataset Configuration attributes:
 
-- **Data transformation**: Pivoting or reshaping data changes what the data IS, not how it's made available
-- **Access control**: Authentication and authorization are security concerns outside FOCUS scope
+* **Data transformation**: Pivoting or reshaping data changes what the data IS, not how it's made available
+* **Access control**: Authentication and authorization are security concerns outside FOCUS scope
 
 ## Column Selection
 
@@ -137,27 +137,27 @@ Column selection is valuable when:
 
 Select only FOCUS standard columns, excluding all custom (x_) columns. Useful for:
 
-- Standardized reporting across providers
-- Simplified data pipelines
-- Initial FOCUS adoption
+* Standardized reporting across providers
+* Simplified data pipelines
+* Initial FOCUS adoption
 
 #### Cost Allocation
 
 Select columns needed for cost allocation workflows:
 
-- BilledCost, EffectiveCost, ContractedCost, ListCost
-- BillingAccountId, SubAccountId
-- Tags, ResourceId, ResourceName
-- ServiceName, ServiceCategory
+* BilledCost, EffectiveCost, ContractedCost, ListCost
+* BillingAccountId, SubAccountId
+* Tags, ResourceId, ResourceName
+* ServiceName, ServiceCategory
 
 #### Commitment Analysis
 
 Select columns for commitment optimization:
 
-- CommitmentDiscountId, CommitmentDiscountStatus, CommitmentDiscountType
-- CommitmentDiscountQuantity, CommitmentDiscountUnit
-- EffectiveCost, BilledCost
-- ResourceId, ResourceType
+* CommitmentDiscountId, CommitmentDiscountStatus, CommitmentDiscountType
+* CommitmentDiscountQuantity, CommitmentDiscountUnit
+* EffectiveCost, BilledCost
+* ResourceId, ResourceType
 
 ## Row Aggregation
 
@@ -167,9 +167,9 @@ When practitioners select fewer columns, the resulting dataset may contain dupli
 
 Returning duplicate rows provides no value to practitioners:
 
-- **Storage waste**: 1 million rows with identical dimension values wastes storage
-- **Processing cost**: Practitioners must aggregate the data themselves anyway
-- **No data loss**: Summing metrics is mathematically correct; no information is lost
+* **Storage waste**: 1 million rows with identical dimension values wastes storage
+* **Processing cost**: Practitioners must aggregate the data themselves anyway
+* **No data loss**: Summing metrics is mathematically correct; no information is lost
 
 FOCUS recommends aggregation by default because it produces smaller, more efficient datasets without sacrificing accuracy.
 
@@ -177,9 +177,9 @@ FOCUS recommends aggregation by default because it produces smaller, more effici
 
 Some practitioners may need unaggregated data for specific use cases:
 
-- Auditing individual charge records
-- Debugging data quality issues
-- Matching to source system records
+* Auditing individual charge records
+* Debugging data quality issues
+* Matching to source system records
 
 Providers should allow practitioners to opt out of aggregation when needed.
 
@@ -308,10 +308,10 @@ Option A (extending Dataset Instance) is the most natural fit. The configuration
 
 This change would require:
 
-- New metadata property definitions in `specification/metadata/dataset_instance/` (5-8 new `.md` files)
-- Updates to `dataset_instance.mdpp` template
-- New requirements model rules in `specification/requirements_model/model_rules/`
-- Updates to `supporting_content/metadata/` for examples
+* New metadata property definitions in `specification/metadata/dataset_instance/` (5-8 new `.md` files)
+* Updates to `dataset_instance.mdpp` template
+* New requirements model rules in `specification/requirements_model/model_rules/`
+* Updates to `supporting_content/metadata/` for examples
 
 This is a significant change that warrants a separate PR to keep the Dataset Configuration attribute focused on its core requirements.
 

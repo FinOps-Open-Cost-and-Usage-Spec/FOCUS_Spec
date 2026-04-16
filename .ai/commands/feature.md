@@ -44,8 +44,8 @@
 
 Use `<issue-number>-<kebab-case-name>` matching your branch:
 
-- Branch: `1805-ai-usage-policy`
-- Folder: `.ai/work/1805-ai-usage-policy/`
+* Branch: `1805-ai-usage-policy`
+* Folder: `.ai/work/1805-ai-usage-policy/`
 
 ## Working File Purposes
 
@@ -61,13 +61,13 @@ Note: Fetch issue details from GitHub rather than saving locally. This ensures c
 
 **During the PR** (before final approval):
 
-- Migrate valuable research to `supporting_content/`
-- Add relevant implementation notes to PR description or linked issue
+* Migrate valuable research to `supporting_content/`
+* Add relevant implementation notes to PR description or linked issue
 
 **After approval, before merge**:
 
-- Delete only the `.ai/work/<issue-number>-<name>/` folder for this PR
-- Do not delete working files until final approval is received
+* Delete only the `.ai/work/<issue-number>-<name>/` folder for this PR
+* Do not delete working files until final approval is received
 
 After creating the PR, add this comment on `research.md` to remind reviewers:
 
@@ -84,9 +84,9 @@ After creating the PR, add this comment on `research.md` to remind reviewers:
 
 Read these for structure (don't memorize - read when needed):
 
-- **Column:** `specification/datasets/cost_and_usage/columns/billingaccountid.md`
-- **Attribute:** `specification/attributes/invoice_handling.md`
-- **JSON rules:** `guidelines/contributors/writing-requirements-model-guidelines.md`
+* **Column:** `specification/datasets/cost_and_usage/columns/billingaccountid.md`
+* **Attribute:** `specification/attributes/invoice_handling.md`
+* **JSON rules:** `guidelines/contributors/writing-requirements-model-guidelines.md`
 
 ## Rule ID Suffixes
 

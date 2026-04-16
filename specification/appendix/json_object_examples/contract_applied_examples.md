@@ -4,7 +4,7 @@
 
 A single Cost and Usage charge represents the values stated on a contract and its three contract commitments agreed between a service provider and a customer:
 
-1) 12345: Spend $500k overall.  (This is the value of the contract, and thus ContractId = ContractCommitmentId.)
+1) 12345: Spend $500k overall. (This is the value of the contract, and thus ContractId = ContractCommitmentId.)
 2) 23456: Spend $25k on a particular service.
 3) 34567: Consume 100k compute hours on a particular resource type.
 
@@ -38,9 +38,9 @@ The Charge Category is denoted as Purchase, and the Contract ID, Resource ID, an
 
 ## Scenario 2: Contract commitment usage with no custom columns
 
-Assume the contract commitment as described in Scenario 1.  Assume that only 50% of cost and usage gets applied to the contract commitments, per the contract terms.
+Assume the contract commitment as described in Scenario 1. Assume that only 50% of cost and usage gets applied to the contract commitments, per the contract terms.
 
-A single Cost and Usage charge for `myResource1` carries Effective Cost of 30 (denominated in USD) and Consumed Quantity of 1 (denominated in compute hours).  The Charge Category is denoted as Usage.
+A single Cost and Usage charge for `myResource1` carries Effective Cost of 30 (denominated in USD) and Consumed Quantity of 1 (denominated in compute hours). The Charge Category is denoted as Usage.
 
 This applies to the contract commitments in the following manner:
 
@@ -73,7 +73,7 @@ This applies to the contract commitments in the following manner:
 
 ## Scenario 3: Contract commitment usage with custom columns
 
-The same as Scenario 2, except a custom key-value pair `x_ContractCommitmentCostBalance` is provided by the data generator.   This datapoint represents the value remaining on a given contract commitment.
+The same as Scenario 2, except a custom key-value pair `x_ContractCommitmentCostBalance` is provided by the data generator. This datapoint represents the value remaining on a given contract commitment.
 
 ```json
 {

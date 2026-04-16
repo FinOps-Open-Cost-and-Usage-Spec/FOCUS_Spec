@@ -26,7 +26,7 @@ Billing Account ID
 
 The identifier assigned to a *billing account* by the invoice issuer.
 
-## Content constraints
+## Content Constraints
 
 |    Constraint   |      Value       |
 |:----------------|:-----------------|

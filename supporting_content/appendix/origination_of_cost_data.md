@@ -25,15 +25,15 @@ Current values observed in billing data or potential values that should be suppl
 
 ## Discussion / Scratch space
 
-- ProviderName is the entity through which you're purchasing the products regardless of the purchasing mechanism
-- PublisherName value matches who developed or produced the customer-facing infrastructure, software or services regardless of the purchasing mechanism. Where the resources and/or services are provided as a 'managed' offering, the branded name of the managed offering may be used as the publisher. E.g., If managed Kubernetes was provided via EKS / AKS / GKE / Internal cloud, the publisher would be the cloud providers, not the Kubernetes project or the CNCF.
-- Invoice Issuer always matches who did the billing for the transaction regardless of the purchasing mechanism.
-  - Invoice Issuer oddities:
-    - There would be differentiation between (e.g.) Google France SarL and Google, Inc. USA even though it's really "one Google"
-    - Azure in China is operated by SomeCompany, so this will be the Invoice Issuer, even if it looks like you are buying it from Microsoft. ("franchise model")
+* ProviderName is the entity through which you're purchasing the products regardless of the purchasing mechanism
+* PublisherName value matches who developed or produced the customer-facing infrastructure, software or services regardless of the purchasing mechanism. Where the resources and/or services are provided as a 'managed' offering, the branded name of the managed offering may be used as the publisher. E.g., If managed Kubernetes was provided via EKS / AKS / GKE / Internal cloud, the publisher would be the cloud providers, not the Kubernetes project or the CNCF.
+* Invoice Issuer always matches who did the billing for the transaction regardless of the purchasing mechanism.
+  * Invoice Issuer oddities:
+    * There would be differentiation between (e.g.) Google France SarL and Google, Inc. USA even though it's really "one Google"
+    * Azure in China is operated by SomeCompany, so this will be the Invoice Issuer, even if it looks like you are buying it from Microsoft. ("franchise model")
 
-- Cost reporting queries currently not possible with the current columns:
-  - Total cost of resources and/or services running on a particular provider (e.g., AWS)\
+* Cost reporting queries currently not possible with the current columns:
+  * Total cost of resources and/or services running on a particular provider (e.g., AWS)\
     In order to answer this query we would either need another dimension that can show the platform delivering the infra/services OR switch provider to show this value.
-    - Invalid query: group by provider, sum (invoice cost OR amortized cost) will include cost of other software and services that have been purchased on AWS (e.g., cases 7,8,9 above)
-    - Invalid query: group by publisher, sum (invoice cost OR amortized cost) will exclude cost of 3rd party software/services purchased on marketplace that runs on your AWS environment (e.g., cases 6 above)
+    * Invalid query: group by provider, sum (invoice cost OR amortized cost) will include cost of other software and services that have been purchased on AWS (e.g., cases 7,8,9 above)
+    * Invalid query: group by publisher, sum (invoice cost OR amortized cost) will exclude cost of 3rd party software/services purchased on marketplace that runs on your AWS environment (e.g., cases 6 above)
