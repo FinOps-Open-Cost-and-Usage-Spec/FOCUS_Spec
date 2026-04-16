@@ -345,7 +345,14 @@ To ensure consistent language when describing relationships and evaluations betw
 * **Example** (Markdown, illustrative):
 
   ```md
+  **Exceptions:** This is a single-line exception.
+  ```
+
+* **Example** (Markdown, illustrative):
+
+  ```md
   **Exceptions:**
+
   * This rule does not apply when ChargeCategory is `Adjustment`.
   * This rule does not apply when ChargeCategory is `Tax`.
   ```
