@@ -125,6 +125,30 @@ AI agents generating or reviewing content MUST act as strict technical editors e
 * **Diff-scope discipline:** Only flag issues on lines changed or added by the PR. Pre-existing problems are out of scope unless they create a direct inconsistency with new content in the same PR.
 * **Deduplication:** If your tooling can read PR threads, do not flag already-raised issues or post competing suggestions. To add details, reply to the existing thread.
 
+### Issue and Pull Request Templates
+
+GitHub does not auto-apply templates when issues or PRs are created via API. AI agents MUST include the required template content in the body.
+
+#### Pull Requests
+
+Every PR body MUST follow the template at `.github/pull_request_template.md`, including:
+
+* A summary of the changes
+* The appropriate "Type of Change" checkbox
+* All "Author Checklist" items checked, including the [AI Usage Guidelines](/guidelines/contributors/ai-usage-guidelines.md) attestation
+
+#### Issues
+
+Issue templates are `.yml` form definitions in `.github/ISSUE_TEMPLATE/`. Use the correct title prefix and include all required fields:
+
+| Type | Title Prefix | Template | Required Fields |
+|---|---|---|---|
+| Action Item | `[AI] ` | `action-item.yml` | Definition of Done |
+| Feature Request | `[FR]: ` | `feature-request.yml` | All sections: Problem Statement, Success Criteria, Type of Request, Organizations, **and** Maintainer Assessment (Adoption Impact, Supported Features Alignment, Implementation Scope, Impacted Parties, Ambiguity, FinOps Scope) |
+| Feedback | `[Feedback] ` | `feedback.yml` | Feedback Summary |
+| Maintenance | `[MAINTENANCE]: ` | `maintenance.yml` | Description, Definition of Done |
+| Work Item | `[WI] ` | `work-item.yml` | Problem Statement, Use Case, Objective, Supporting Documentation |
+
 ## Context Files
 
 ### Working Files
