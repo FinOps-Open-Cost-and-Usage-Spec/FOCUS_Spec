@@ -135,7 +135,7 @@ Every PR body MUST follow the template at `.github/pull_request_template.md`, in
 
 * A summary of the changes
 * The appropriate "Type of Change" checkbox
-* All "Author Checklist" items checked, including the [AI Usage Guidelines](/guidelines/contributors/ai-usage-guidelines.md) attestation
+* All "Author Checklist" items checked, including the [AI Usage Guidelines](guidelines/contributors/ai-usage-guidelines.md) attestation
 
 #### Issues
 
