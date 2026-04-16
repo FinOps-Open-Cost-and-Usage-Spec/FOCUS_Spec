@@ -1,6 +1,6 @@
 # Invoice Detail
 
-The Invoice Detail dataset is a transactional dataset that represents the financial record of [*charges*](#glossary:charge) as they appear on invoices provided by an invoice issuer. This dataset enables FinOps practitioners to perform financial reconciliation, tax reporting, and payment processing tasks. While the [Cost and Usage](#datasets.costandusage) dataset provides granular visibility into consumption, the Invoice Detail dataset ensures alignment with the physical or electronic billing documents.
+The Invoice Detail dataset is a transactional dataset that represents the financial record of [*charges*](#glossary:charge) as they appear on invoices provided by an [*invoice issuer*](#glossary:invoice issuer). This dataset enables FinOps practitioners to perform financial reconciliation, tax reporting, and payment processing tasks. While the [Cost and Usage](#datasets.costandusage) dataset provides granular visibility into consumption, the Invoice Detail dataset ensures alignment with the physical or electronic billing documents.
 
 ## Columns<!--SkipTOC-->
 
@@ -46,7 +46,7 @@ For more information, see the [Invoice Reconciliation](#supportedfeatures.invoic
 
 InvoiceDetail MUST adhere to the following requirements:
 
-* InvoiceDetail MUST be present when the invoice issuer supports payable invoices.
+* InvoiceDetail MUST be present when the [*invoice issuer*](#glossary:invoice issuer) supports payable invoices.
 * The presence of columns in InvoiceDetail MUST adhere to the following requirements:
   * InvoiceDetail MUST include [BilledCost](#datasets.invoicedetail.billedcost).
   * InvoiceDetail MUST include [BillingAccountId](#datasets.invoicedetail.billingaccountid).
@@ -95,7 +95,7 @@ Invoice Detail
 
 ## Description<!--SkipTOC-->
 
-The financial record of *charges* as they appear on invoices provided by an invoice issuer.
+The financial record of *charges* as they appear on invoices provided by an [*invoice issuer*](#glossary:invoice issuer).
 
 ## Introduced (version)<!--SkipTOC-->
 
