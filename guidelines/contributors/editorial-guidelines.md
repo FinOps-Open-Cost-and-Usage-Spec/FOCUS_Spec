@@ -319,6 +319,7 @@ To ensure consistent language when describing relationships and evaluations betw
 
   ```md
   > **Notes:**
+  >
   > * This is the first note.
   > * This is the second note, which provides additional information.
   ```
