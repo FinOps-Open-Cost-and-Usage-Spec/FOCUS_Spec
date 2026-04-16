@@ -164,7 +164,7 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
 
 * **Entity Scope:** These rules apply to all entities defined in the FOCUS specification (e.g., Columns, Attributes, Datasets, Objects).
 
-### Column Values
+### Display Names
 
 
 * **Display Names Usage:** Display Names SHOULD be used in introductory or explanatory sections where natural language context is more appropriate. 
