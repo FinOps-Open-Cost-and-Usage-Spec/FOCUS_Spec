@@ -2,7 +2,7 @@
 
 ## Scenario
 
-ACME's previous exports used FOCUS version 1.0. They are now going to adopt FOCUS version 1.1. It is required that they create a new schema metadata object which specifies the new FOCUS version via the [FOCUS Version](#metadata.schema.focusversion) property—regardless of schema changes. In this example, the new FOCUS version adoption doesn't include columns changes. This is to illustrate that FOCUS version changes are independent of column changes, however, this scenario is unlikely.
+CrestNode's previous exports used FOCUS version 1.0. They are now going to adopt FOCUS version 1.1. It is required that they create a new schema metadata object which specifies the new FOCUS version via the [FOCUS Version](#metadata.schema.focusversion) property—regardless of schema changes. In this example, the new FOCUS version adoption doesn't include columns changes. This is to illustrate that FOCUS version changes are independent of column changes, however, this scenario is unlikely.
 
 ## Supplied Metadata
 
@@ -52,7 +52,7 @@ The updated schema-related metadata could look like this:
           {
                 "ColumnName": "Tags",
                 "DataType": "JSON",
-                "ProviderTagPrefixes": ["acme", "ac"]
+                "ProviderTagPrefixes": ["crestnode", "cn"]
           },
           {
                 "ColumnName": "x_awesome_column1",
@@ -68,4 +68,4 @@ The updated schema-related metadata could look like this:
 }
 ```
 
-For an example of how ACME ensures the schema metadata reference requirement is met see: [Schema Metadata to FOCUS Data Reference](#appendix.examples:metadata.schemametadatatofocusdatareference)
+For an example of how CrestNode ensures the schema metadata reference requirement is met see: [Schema Metadata to FOCUS Data Reference](#appendix.examples:metadata.schemametadatatofocusdatareference)
