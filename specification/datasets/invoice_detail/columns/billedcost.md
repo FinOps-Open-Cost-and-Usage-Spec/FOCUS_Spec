@@ -29,7 +29,7 @@ BilledCost MUST adhere to the following requirements:
 
 ### Handling Rounding Discrepancies
 
-When validating InvoiceDetail.BilledCost against [CostAndUsage.BilledCost](#datasets.costandusage.billedcost), exact matches are not expected due to precision differences (e.g., 6 decimals in CostAndUsage vs. 2 decimals in InvoiceDetail). The requirement allows for a maximum rounding error based on the statistical probability of rounding variance, which grows with the square root of the row count.  For more information, see the [Rounding Variance Tolerance](#appendix.roundingvariancetolerance) appendix entry.
+When validating InvoiceDetail.BilledCost against [CostAndUsage.BilledCost](#datasets.costandusage.billedcost), exact matches are not expected due to precision differences (e.g., 6 decimals in CostAndUsage vs. 2 decimals in InvoiceDetail). The requirement allows for a maximum rounding error based on the statistical probability of rounding variance, which grows with the square root of the row count. For more information, see the [Rounding Variance Tolerance](#appendix.roundingvariancetolerance) appendix entry.
 
 ## Column ID
 
@@ -43,7 +43,7 @@ Billed Cost
 
 Cost of a *charge* as invoiced by the *invoice issuer* in a given *billing period*.
 
-## Content constraints
+## Content Constraints
 
 | Constraint | Value |
 | :--- | :--- |

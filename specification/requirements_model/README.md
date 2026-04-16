@@ -61,7 +61,7 @@ The model format is designed to help specification authors:
 |----------------|------------|-------|
 | **Mandatory (M)** | Required for interoperability and conformance | MUST be implemented |
 | **Optional (O)** | Enhances functionality | MAY be implemented |
-| **Conditional (C)** | Required only if certain conditions are met (e.g. implementation choices, external dependencies, regulations) | MAY unless the condition is met — then MUST |
+| **Conditional (C)** | Required only if certain conditions are met (e.g., implementation choices, external dependencies, regulations) | MAY unless the condition is met — then MUST |
 
 ---
 
@@ -75,7 +75,7 @@ In FOCUS, artifacts refer to either **columns** or **attributes**:
   _e.g._: `DateTimeFormat-A-001-M`
 * **Dataset** - Requirement affecting the dataset as a whole.
   _e.g._: `BilledCost-D-001-M`
-* **Other** - There is a possibility we may define other entities such as e.g. `Provider`
+* **Other** - There is a possibility we may define other entities (e.g., `Provider`)
 
 ---
 
@@ -95,8 +95,8 @@ In FOCUS, artifacts refer to either **columns** or **attributes**:
 
 ### Group Reference Formats
 
-* `ArtifactName:FeatureType` — e.g. `ListUnitPrice:MCF`
-* `FOCUS:FeatureType` — e.g. `FOCUS:OCF`
+* `ArtifactName:FeatureType` — e.g., `ListUnitPrice:MCF`
+* `FOCUS:FeatureType` — e.g., `FOCUS:OCF`
 
 ---
 
@@ -112,9 +112,9 @@ In FOCUS, artifacts refer to either **columns** or **attributes**:
 
 | Segment         | Meaning                                      |
 |-----------------|----------------------------------------------|
-| `ArtifactName`  | ColumnID (e.g. ListUnitPrice)                |
+| `ArtifactName`  | ColumnID (e.g., ListUnitPrice)                |
 | `ArtifactType`  | `C` (Column), `A` (Attribute), `D` (Dataset) |
-| `NumericId`     | Sequence ID (e.g. 001)                       |
+| `NumericId`     | Sequence ID (e.g., 001)                       |
 | `ArtifactStatus`| `M`, `O`, or `C`                             |
 
 ---
@@ -162,7 +162,7 @@ This approach ensures clear linkage to the original specification version while 
 * `model_details.json`: Metadata like versioning
 * `applicability_criteria.json`: Feature flags controlling rule application
 * `check_functions.json`: Logical validation functions and their arguments
-* `model_datasets.json`: Maps datasets (e.g. FOCUS) to rule sets
+* `model_datasets.json`: Maps datasets (e.g., FOCUS) to rule sets
 * `model_rules/`: JSON files defining multiple `ModelRules`
 
 ### 📤 Output

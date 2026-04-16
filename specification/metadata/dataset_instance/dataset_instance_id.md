@@ -18,7 +18,7 @@ DatasetInstanceId
 
 Dataset Instance ID
 
-## Content constraints
+## Content Constraints
 
 | Constraint    | Value              |
 |:--------------|:-------------------|

@@ -24,7 +24,7 @@ Invoice Detail Created
 
 The timestamp when the Invoice Detail record was first created.
 
-## Content constraints
+## Content Constraints
 
 |    Constraint    |              Value              |
 |:----------------|:--------------------------------|

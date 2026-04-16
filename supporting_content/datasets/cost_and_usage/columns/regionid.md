@@ -33,11 +33,11 @@ Current values observed in billing data for various scenarios:
 * For data transfer type use cases (from/to), does the region become the one that you get pricing for?
 * Should 'usage' type columns be in the spec?
 * Initial 0.5 scope is cost data primarily. Usage reasons are prioritized lower
-* GCP: 
+* GCP:
   * Location.location: The ResourceName column MUST be present in the billing data. This column MUST be of type String. The ResourceName value MAY be a nullable column as some cost data rows may not be associated with a resource or because a display name cannot be assigned to a resource. ResourceName MUST NOT be null if a display name can be assigned to a resource. Resources not provisioned interactively or only have a system generated ResourceId MUST NOT duplicate the same value as the ResourceName.
-  * Location.country --->  When location.location is a country, region, or zone, this field is the country of usage, e.g. US. For more information, see Geography and regions and Google Cloud locations.
-  * Location.region ---> When location.location is a region or zone, this field is the region of usage, e.g. us-central1. For more information, see Geography and regions and Google Cloud locations.
-  * Location.region ---> When location.location is a region or zone, this field is the region of usage, e.g. us-central1. For more information, see Geography and regions and Google Cloud locations.
+  * Location.country --->  When location.location is a country, region, or zone, this field is the country of usage, e.g., US. For more information, see Geography and regions and Google Cloud locations.
+  * Location.region ---> When location.location is a region or zone, this field is the region of usage, e.g., us-central1. For more information, see Geography and regions and Google Cloud locations.
+  * Location.region ---> When location.location is a region or zone, this field is the region of usage, e.g., us-central1. For more information, see Geography and regions and Google Cloud locations.
   * Another region related column might be billed region, priced region or something of that sort that signifies where the pricing rules are set
 * We had a poll about whether Region should be nullable or not and decided it should. Updated this as part of 1.0.
 

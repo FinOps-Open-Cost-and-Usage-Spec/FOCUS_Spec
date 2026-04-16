@@ -41,18 +41,6 @@ Subsequent *dataset artifacts* using the Append mechanism may include the follow
 * Additional records supplement previously delivered data.
 * Omitted records are recorded as new entries, representing the reversal.
 
-## Attribute ID
-
-DeliveryHandling
-
-## Attribute Name
-
-Delivery Handling
-
-## Description
-
-Defines how a [*data generator*](#metadata.datagenerator) delivers a *FOCUS dataset* to a customer.
-
 ## Requirements
 
 DeliveryHandling MUST adhere to the following requirements:
@@ -66,9 +54,17 @@ DeliveryHandling MUST adhere to the following requirements:
 * *FOCUS dataset* SHOULD have delivered *dataset artifacts* accompanied by corresponding [FOCUS Metadata](#metadata).
 * *FOCUS dataset* MUST have its mechanism for correlating *dataset artifact* with the [FOCUS Metadata Schema object](#metadata.schema) documented and accessible to practitioners when the Metadata is delivered.
 
-## Exceptions
+## Attribute ID
 
-None
+DeliveryHandling
+
+## Attribute Name
+
+Delivery Handling
+
+## Description
+
+Defines how a *data generator* delivers a *FOCUS dataset* to a customer.
 
 ## Introduced (version)
 

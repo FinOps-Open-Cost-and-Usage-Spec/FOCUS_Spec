@@ -14,7 +14,7 @@ All work in the FOCUS Project must be tracked via a GitHub Issue. This ensures v
 
 ### Naming and Descriptions
 
-Naming for all Issues should aim to be short, but remain clear and descriptive. Issue names that are too generic are hard to find, and long descriptions as the names of Issues makes it harder to list Issues. Descriptions should be detailed enough that with only the Issue itself a FOCUS member is able to understand the purpose of the Issue. 
+Naming for all Issues should aim to be short, but remain clear and descriptive. Issue names that are too generic are hard to find, and long descriptions as the names of Issues makes it harder to list Issues. Descriptions should be detailed enough that with only the Issue itself a FOCUS member is able to understand the purpose of the Issue.
 
 
 ### Issue Types
@@ -28,7 +28,7 @@ Issues should be created via the use of issue templates that adhere to Issue Typ
 
 #### Feedback
 
-All minor corrections (typos, syntax, editorial changes) should be introduced to the FOCUS project via GitHub Issues of the type Feedback. The template for these Issues will ensure the needed information is gathered and available for prioritization processes. Anyone can submit Feedback Issues within the GitHub repository. The description for feedback items should aim to be clear what the desired outcome should be, however for non-FOCUS members a solution should not be included (e.g. Column names, types of data to include, normative text suggestions). 
+All minor corrections (typos, syntax, editorial changes) should be introduced to the FOCUS project via GitHub Issues of the type Feedback. The template for these Issues will ensure the needed information is gathered and available for prioritization processes. Anyone can submit Feedback Issues within the GitHub repository. The description for feedback items should aim to be clear what the desired outcome should be, however for non-FOCUS members a solution should not be included (e.g., Column names, types of data to include, normative text suggestions).
 
 Feedback Issues will have the Type: Feedback and Label: feedback, and be associated with the FOCUS WG project.
 
@@ -44,7 +44,7 @@ All suggestions and feature requests should be introduced to the FOCUS project v
 _Normative guidelines to develop high-quality feature request titles_:
 * **Start with a standard verb**. Choose one or use a verb similar to: Add, Clarify, Standardize, Enable, Define, Remove, Rename
 * **Use correct sentence structure**. Pick whichever reads best between: Verb + Target + Qualifier OR Verb + Qualifier + Target
-(e.g. “Add data generator-calculated shared cost allocation” vs “Standardize tag export across clouds”)
+(e.g., “Add data generator-calculated shared cost allocation” vs “Standardize tag export across clouds”)
 * **Describe the outcome, not the implementation**. “Add daily amortized cost” > “Create SQL to amortize daily”
 * **Sentence case; acronyms uppercase; no ALL-CAPS words**. “Add RI coverage metric” not “ADD RI COVERAGE METRIC”
 * **Use canonical FOCUS terminology; stay service-provider-agnostic**. Vendor specifics belong in examples, not the title
@@ -211,7 +211,7 @@ Each Task Force (TF) group in the FOCUS Working Group is able to have a Maintain
 
 ### Branch Management
 
-Members of the FOCUS project need to be aware that all branches in the [FOCUS\_Spec](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec) repository are owned by the project and that frequent cleanups of stale branches will be performed by the \`Admins\`. This means that any scratch/WIP/ideation work which is not part of any open Action Items/Feature Requests should be moved out to a [fork of the repository](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo) in the individual members own GitHub repository. 
+Members of the FOCUS project need to be aware that all branches in the [FOCUS\_Spec](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec) repository are owned by the project and that frequent cleanups of stale branches will be performed by the \`Admins\`. This means that any scratch/WIP/ideation work which is not part of any open Action Items/Feature Requests should be moved out to a [fork of the repository](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo) in the individual members own GitHub repository.
 
 When Pull Requests are merged the option to delete the working branch should always be used, with a preference for a new branch to be created for further work.
 
@@ -220,8 +220,8 @@ When Pull Requests are merged the option to delete the working branch should alw
 
 As members of FOCUS you are able to open branches in the GitHub repository. The naming convention of branches must follow one of the following patterns:
 
-1. Start with your name (e.g. flanakin/skuterm)
-2. Start with the Feature Request number (e.g. 636-clarify-guidance-around-refunds)
+1. Start with your name (e.g., flanakin/skuterm)
+2. Start with the Feature Request number (e.g., 636-clarify-guidance-around-refunds)
 
 Branches not following this naming convention may be closed without notice.
 
@@ -239,12 +239,12 @@ The contributor may only proceed with requesting review of the complete set of e
 
 ## Pull Requests
 
-Pull Requests (PRs) are used to promote development work through our branch pipeline, with the overarching [contributing guidelines](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/contributing.md) being followed. 
+Pull Requests (PRs) are used to promote development work through our branch pipeline, with the overarching [contributing guidelines](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/contributing.md) being followed.
 
 
 ### Naming and Descriptions
 
-The _name_ of a Pull Request should be short but also clearly describe what the pull request is doing. The name should start with a verb in order to describe the action that has taken place (e.g., “Reorganize metadata appendix”, “Correct typos in Section 1.2”).  The reference to the parent issue should be included in the title also (e.g. #628) as often lists of Pull Request titles are made and this helps keep the reference to the related issue (see: Related to Issues).
+The _name_ of a Pull Request should be short but also clearly describe what the pull request is doing. The name should start with a verb in order to describe the action that has taken place (e.g., “Reorganize metadata appendix”, “Correct typos in Section 1.2”).  The reference to the parent issue should be included in the title also (e.g., #628) as often lists of Pull Request titles are made and this helps keep the reference to the related issue (see: Related to Issues).
 
 * Pull requests related directly to Feature Requests should have a title starting with \`FR #\<number of the FR ticket>:\` followed by a short description
 * Pull requests related directly to Action Items should have a title starting with \`AI #\<number of the AI ticket>:\` followed by a short description
@@ -253,7 +253,7 @@ The _description_ of a Pull Request should be as detailed as possible to help ot
 
 * Any assumed knowledge (Preference a short education, links to relevant docs, etc)
 * Example data to demonstrate the outcome of the content being merged
-* Any decisions made in the development that are likely to become recurring suggestions (e.g. Decisions on naming, Lists of Values, etc). 
+* Any decisions made in the development that are likely to become recurring suggestions (e.g., Decisions on naming, Lists of Values, etc).
 
 As much as possible, descriptions should provide the most amount of information that enables those with less context of the change being proposed to review the content asynchronously and add valuable feedback.
 
@@ -301,11 +301,11 @@ It is important for members to review all PRs especially when they are open and 
 
 The aim for all comments and suggestions on Issues/PRs should be constructive feedback, this means that comments must clearly:
 
-* Describe the item which is being supported or challenged 
+* Describe the item which is being supported or challenged
 * Aim to provide a suggestion of a solution, or at least suggest some items to consider
 * Remain positive and avoid being confrontational or antagonistic
 
-All FOCUS members are encouraged to review and make comments and suggestions. With the aim for all changes to the specification to be by consensus. 
+All FOCUS members are encouraged to review and make comments and suggestions. With the aim for all changes to the specification to be by consensus.
 
 ### Reviewing Contributions on GitHub
 
@@ -388,7 +388,7 @@ The FOCUS project has its own Slack workspace for members to communicate. As the
 
 ### Channels
 
-The Slack workspace works on a less is more motto for channels, the desire is to have fewer more active channels than many sparse channels. 
+The Slack workspace works on a less is more motto for channels, the desire is to have fewer more active channels than many sparse channels.
 
 
 #### #announcements

@@ -2,7 +2,7 @@
 
 ## Scenario
 
-ACME has decided to add additional columns to their FOCUS data export. The new columns are x_awesome_column1, x_awesome_column2, and x_awesome_column3. The data generator creates a new [Schema](#metadata.schema) object to represent the new schema, this schema object has a unique [SchemaId](#metadata.schema.schemaid). The subsequent data exports that use the new schema include the new schema's id as a reference to their corresponding schema object.
+CrestNode has decided to add additional columns to their FOCUS data export. The new columns are x_awesome_column1, x_awesome_column2, and x_awesome_column3. The data generator creates a new [Schema](#metadata.schema) object to represent the new schema, this schema object has a unique [SchemaId](#metadata.schema.schemaid). The subsequent data exports that use the new schema include the new schema's id as a reference to their corresponding schema object.
 
 ## Supplied Metadata
 
@@ -52,7 +52,7 @@ The updated schema-related metadata could look like this:
           {
                 "ColumnName": "Tags",
                 "DataType": "JSON",
-                "ProviderTagPrefixes": ["awecorp", "ac"]
+                "ProviderTagPrefixes": ["crestnode", "cn"]
           },
           {
                 "ColumnName": "x_awesome_column1",
@@ -74,4 +74,4 @@ The updated schema-related metadata could look like this:
 }
 ```
 
-For an example of how ACME ensures the schema metadata reference requirement is met see: [Schema Metadata to FOCUS Data Reference](#appendix.examples:metadata.schemametadatatofocusdatareference)
+For an example of how CrestNode ensures the schema metadata reference requirement is met see: [Schema Metadata to FOCUS Data Reference](#appendix.examples:metadata.schemametadatatofocusdatareference)

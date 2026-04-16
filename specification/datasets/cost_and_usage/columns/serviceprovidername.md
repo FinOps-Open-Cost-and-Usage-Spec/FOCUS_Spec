@@ -5,7 +5,8 @@ Service Provider Name is the name of the entity that provides the [*resources*](
 **Notes:**
 
 * In marketplace scenarios, the Service Provider represents the seller rather than the marketplace operator, as the marketplace operator merely provides a purchasing mechanism and does not itself provide the *resources* or *services* available for usage or purchase.
-* In reseller scenarios, if the reseller is selling resource or services that are white-labeled from another provider, the Service Provider is the reseller. In all other cases the Service Provider is the entity that produced the resources or services.
+* In reseller scenarios, if the reseller is selling resource or services that are white-labeled from another provider, the Service Provider is the reseller.
+* In all other scenarios, the Service Provider is the entity that produced the resources or services.
 
 ## Requirements
 
