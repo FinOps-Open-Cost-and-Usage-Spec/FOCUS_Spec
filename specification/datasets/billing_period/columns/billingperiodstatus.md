@@ -16,7 +16,7 @@ BillingPeriodStatus MUST adhere to the following requirements:
 
 While the transition from "Open" to "Closed" typically signifies the end of a billing cycle, in scenarios such as the following, it may be necessary to provide corrections to closed billing periods:
 
-* Retroactive adjustments: an invoice issuer generates credits or corrections for a period previously marked as finalized.
+* Retroactive adjustments: an [*invoice issuer*](#glossary:invoice issuer) generates credits or corrections for a period previously marked as finalized.
 * Audit corrections: discrepancies are discovered during financial reconciliation that require the data to be re-processed.
 * Late-arriving usage: occasional delays in usage reporting necessitate a revision of the final invoice.
 
