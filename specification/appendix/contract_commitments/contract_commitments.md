@@ -10,8 +10,8 @@ To ensure interoperability across different data generators, the dataset relies 
 
 1. **Commitment Categorization:** Distinguishes between obligations based on **Spend** (e.g., "I will spend 1M") vs. **Usage** (e.g., "I will use 500 vCPUs"). This determines which metrics —- Cost or Quantity —- are used to measure fulfillment.
 2. **Fulfillment Modeling:** Defines the operational behavior and consumption flexibility of a commitment.
-   * **Continuous** models (like Reserved Instances) are "use-it-or-lose-it", typically within short windows (e.g., Hourly).
-   * **Discontinuous** models (like Enterprise Agreements) allow consumption to be aggregated over a longer duration (e.g., Total Term).
+   * **Continuous** models (like Resource Reservations) are "use-it-or-lose-it", typically within short windows (e.g., Hourly).
+   * **Discontinuous** models (like Enterprise Spend Agreements) allow consumption to be aggregated over a longer duration (e.g., Total Term).
 3. **Eligibility Boundaries:** Using a structured JSON format, the dataset defines the logical perimeter of a commitment, specifying exactly which accounts, regions, or services are eligible to receive the negotiated benefit.
 
 ### Expected Value Taxonomy
@@ -45,14 +45,14 @@ In the below table, CC represents Contract Commitment.
 
 | Offering Example | CC Category | CC Model | CC Offer Category | CC Benefit Category | CC Fulfillment Interval | CC Duration Type | CC Payment Model | CC Payment Interval |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **AWS Savings Plan** | Spend | Continuous | Public | Discount | Hourly | 1 Year | Partial Upfront | Monthly |
-| **Azure Reservation** | Usage | Continuous | Public | Discount | Hourly | 3 Years | All Upfront | One-Time |
-| **GCP Flex CUD** | Spend | Continuous | Public | Discount | Hourly | 3 Years | No Upfront | Monthly |
-| **Azure ODCR** | Usage | Continuous | Public | Availability | Hourly | 1 Month | No Upfront | Monthly |
-| **AWS EDP / MACC** | Spend | Discontinuous | Negotiated | Discount | Total Term | 3 Years | No Upfront | Monthly |
-| **Snowflake (EA)** | Spend | Discontinuous | Negotiated | Entitlement | Total Term | 1 Year | All Upfront | One-Time |
-| **Datadog (Public)** | Spend | Discontinuous | Public | Entitlement | Total Term | 1 Year | No Upfront | Monthly |
-| **SaaS Seats (CRM)** | Usage | Continuous | Negotiated | Discount | Monthly | 1 Year | No Upfront | Monthly |
+| **Flexible Spend Plan** | Spend | Continuous | Public | Discount | Hourly | 1 Year | Partial Upfront | Monthly |
+| **Resource Reservation** | Usage | Continuous | Public | Discount | Hourly | 3 Years | All Upfront | One-Time |
+| **Dynamic Compute Commitment** | Spend | Continuous | Public | Discount | Hourly | 3 Years | No Upfront | Monthly |
+| **Advance Resource Commitment** | Usage | Continuous | Public | Availability | Hourly | 1 Month | No Upfront | Monthly |
+| **Enterprise Spend Agreement** | Spend | Discontinuous | Negotiated | Discount | Total Term | 3 Years | No Upfront | Monthly |
+| **Bulk Capacity Credits** | Spend | Discontinuous | Negotiated | Entitlement | Total Term | 1 Year | All Upfront | One-Time |
+| **Interval Spend Commitment** | Spend | Discontinuous | Public | Entitlement | Total Term | 1 Year | No Upfront | Monthly |
+| **Seat License** | Usage | Continuous | Negotiated | Discount | Monthly | 1 Year | No Upfront | Monthly |
 | **Multi-Year Pool** | Spend | Discontinuous | Negotiated | Discount | Total Term | 3 Years | All Upfront | One-Time |
 | **Growth Rebate** | Spend | Discontinuous | Negotiated | Discount | Annual | 2 Years | No Upfront | Annual |
 | **API Credit Pack** | Usage | Discontinuous | Public | Entitlement | Transactional | 2 Years | All Upfront | One-Time |
@@ -62,7 +62,7 @@ In the below table, CC represents Contract Commitment.
 
 ### Scenario 1: Strategic Cloud Transformation Agreement
 
-This example demonstrates a complex, multi-faceted agreement between a customer and a primary cloud provider, **Acme Co**. While governed by a single master contract (`AGR-99-BETA`), it contains three distinct commercial levers:
+This example demonstrates a complex, multi-faceted agreement between a customer and a primary cloud provider, **Aura Web**. While governed by a single master contract (`AGR-99-BETA`), it contains three distinct commercial levers:
 
 #### Commitment 1: The Global Spend Pool
 
@@ -78,25 +78,25 @@ This example demonstrates a complex, multi-faceted agreement between a customer 
 
 #### Commitment 3: Marketplace SaaS Add-on
 
-* **Context:** A specialized analytics tool, **DataStreamer**, purchased through the Acme marketplace.
+* **Context:** A specialized analytics tool, **OmniQuery**, purchased through the Aura Web marketplace.
 * **Commercial Logic:** A **Spend-based** "pass-through" for financial tracking with an **Annual Fulfillment Interval**.
-* **The Issuer/Provider Split:** The **Service Provider** is **DataStreamer**, but the **Invoice Issuer** remains **Acme Co**, showing how the model tracks third-party spend in a unified ecosystem.
+* **The Issuer/Provider Split:** The **Service Provider** is **OmniQuery**, but the **Invoice Issuer** remains **Aura Web**, showing how the model tracks third-party spend in a unified ecosystem.
 
 ### Data Example: AGR-99-BETA
 
-| Column | Commitment 1: Spend Pool | Commitment 2: Compute RI | Commitment 3: Marketplace SaaS |
+| Column | Commitment 1: Spend Pool | Commitment 2: Compute Reservation | Commitment 3: Marketplace SaaS |
 | :--- | :--- | :--- | :--- |
 | **Billing Currency** | `EUR` | `EUR` | `EUR` |
 | **CC Benefit Category** | `Discount` | `Discount` | `Entitlement` |
 | **CC Category** | `Spend` | `Usage` | `Spend` |
 | **CC Cost** | `925000.00` | `46250.00` | `111000.00` |
 | **CC Created** | `2025-12-01T09:00:00Z` | `2025-12-01T09:00:00Z` | `2026-01-15T14:30:00Z` |
-| **CC Description** | `3yr Enterprise Spend Goal` | `us-east-1 m5 Reservations` | `DataStreamer Pro via Marketplace` |
+| **CC Description** | `3yr Enterprise Spend Goal` | `us-east-1 m5 Resource Reservations` | `OmniQuery Pro via Marketplace` |
 | **CC Discount %** | `0.15` | `0.40` | `0.10` |
 | **CC Duration Type** | `3 Years` | `1 Year` | `1 Year` |
 | **CC Applicability** | `{"IsGlobalScope": true}` | `{"InclusionOperator": "Or", "Inclusions": [{"Dimension": "RegionId", "Operator": "In", "Values": ["us-east-1"]}]}` | `{"InclusionOperator": "Or", "Inclusions": [{"Dimension": "ServiceCategory", "Operator": "In", "Values": ["Analytics"]}]}` |
 | **CC Fulfillment Interval** | `Total Term` | `Hourly` | `Annual` |
-| **CC ID** | `CMT-SPEND-001` | `CMT-RI-002` | `CMT-SaaS-003` |
+| **CC ID** | `CMT-SPEND-001` | `CMT-RR-002` | `CMT-SaaS-003` |
 | **CC Last Updated** | `2026-02-01T10:00:00Z` | `2025-12-01T09:00:00Z` | `2026-01-15T14:30:00Z` |
 | **CC Model** | `Discontinuous` | `Continuous` | `Discontinuous` |
 | **CC Offer Category** | `Negotiated` | `Public` | `Negotiated` |
@@ -107,21 +107,21 @@ This example demonstrates a complex, multi-faceted agreement between a customer 
 | **CC Period Start** | `2025-12-01` | `2025-12-01` | `2026-01-15` |
 | **CC Quantity** | `1000000.00` | `10.00` | `120000.00` |
 | **CC Lifecycle Status** | `Active` | `Active` | `Pending` |
-| **CC Type** | `Enterprise Agreement` | `Reserved Instance` | `SaaS Subscription` |
+| **CC Type** | `Enterprise Spend Agreement` | `Resource Reservation` | `SaaS Subscription` |
 | **CC Unit** | `USD` | `Instance-Hours` | `Credits` |
 | **Contract ID** | `AGR-99-BETA` | `AGR-99-BETA` | `AGR-99-BETA` |
 | **Contract Period End** | `2028-12-01` | `2028-12-01` | `2028-12-01` |
 | **Contract Period Start** | `2025-12-01` | `2025-12-01` | `2025-12-01` |
-| **Invoice Issuer Name** | `Acme Co` | `Acme Co` | `Acme Co` |
+| **Invoice Issuer Name** | `Aura Web` | `Aura Web` | `Aura Web` |
 | **Pricing Currency** | `USD` | `USD` | `USD` |
 | **Pricing Currency CC Cost** | `1000000.00` | `50000.00` | `120000.00` |
-| **Service Provider Name** | `Acme Co` | `Acme Co` | `DataStreamer` |
+| **Service Provider Name** | `Aura Web` | `Aura Web` | `OmniQuery` |
 
 [CSV Example](../../data/contract_commitments/contract_commitment_scenario_1.csv)
 
 ### Scenario 2: SaaS Expansion & Hybrid Connector
 
-In this scenario, an enterprise with an existing master agreement with **Acme Co** (`AGR-44-GAMMA`) expands its footprint to include specialized AI training and security licensing. This example highlights how the model handles non-financial units (Seats) and project-based burst windows.
+In this scenario, an enterprise with an existing master agreement with **Aura Web** (`AGR-44-GAMMA`) expands its footprint to include specialized AI training and security licensing. This example highlights how the model handles non-financial units (Seats) and project-based burst windows.
 
 #### Commitment 1: AI Model Training (Usage-based Burst)
 
@@ -129,11 +129,11 @@ In this scenario, an enterprise with an existing master agreement with **Acme Co
 * **Commercial Logic:** A **Usage-based**, **Continuous** model with a short **3-Month** duration. It is paid **All Upfront** to secure priority capacity.
 * **Eligibility:** Restricted to the `AI/ML` service category.
 
-#### Commitment 2: Security Seat License (Quantity-based)
+#### Commitment 2: Observability Seat License (Quantity-based)
 
-* **Context:** A commitment to **500 Seats** of an endpoint security platform.
+* **Context:** A commitment to **500 Seats** of an observability and monitoring platform.
 * **Commercial Logic:** A **Quantity-based**, **Discontinuous** model. The unit of measure is **Seats** rather than a currency value.
-* **Invoice/Provider Alignment:** Unlike the Marketplace example, this is billed directly by the vendor (**CyberGuard Inc**), yet remains logically associated with the broader Cloud Transformation contract.
+* **Invoice/Provider Alignment:** Unlike the Marketplace example, this is billed directly by the vendor (**StackLens**), yet remains logically associated with the broader Cloud Transformation contract.
 
 #### Commitment 3: Cross-Cloud Data Connector (Tiered Usage)
 
@@ -143,14 +143,14 @@ In this scenario, an enterprise with an existing master agreement with **Acme Co
 
 ### Data Example: AGR-44-GAMMA
 
-| Column | Commitment 1: AI Training | Commitment 2: Security Seats | Commitment 3: Data Connector |
+| Column | Commitment 1: AI Training | Commitment 2: Observability Seats | Commitment 3: Data Connector |
 | :--- | :--- | :--- | :--- |
 | **Billing Currency** | `USD` | `USD` | `USD` |
 | **CC Benefit Category** | `Discount` | `Entitlement` | `Discount` |
 | **CC Category** | `Usage` | `Usage` | `Usage` |
 | **CC Cost** | `250000.00` | `120000.00` | `15000.00` |
 | **CC Created** | `2026-02-01T08:00:00Z` | `2026-02-01T08:00:00Z` | `2026-02-01T08:00:00Z` |
-| **CC Description** | `H100 GPU Reservation - Q1` | `CyberGuard Endpoint Seats` | `Inter-Cloud Egress Tier` |
+| **CC Description** | `H100 GPU Reservation - Q1` | `StackLens Monitoring Seats` | `Inter-Cloud Egress Tier` |
 | **CC Discount %** | `0.30` | `null` | `0.50` |
 | **CC Duration Type** | `3 Months` | `1 Year` | `1 Year` |
 | **CC Applicability** | `{"InclusionOperator": "Or", "Inclusions": [{"Dimension": "ServiceCategory", "Operator": "In", "Values": ["AI/ML"]}]}` | `{"IsGlobalScope": true}` | `{"InclusionOperator": "Or", "Inclusions": [{"Dimension": "UsageType", "Operator": "Contains", "Values": ["Egress"]}]}` |
@@ -166,15 +166,15 @@ In this scenario, an enterprise with an existing master agreement with **Acme Co
 | **CC Period Start** | `2026-02-01` | `2026-02-01` | `2026-02-01` |
 | **CC Quantity** | `5000.00` | `500.00` | `100.00` |
 | **CC Lifecycle Status** | `Active` | `Active` | `Active` |
-| **CC Type** | `Capacity Reservation` | `SaaS Subscription` | `Usage Tier` |
+| **CC Type** | `Resource Reservation` | `SaaS Subscription` | `Usage Tier` |
 | **CC Unit** | `GPU-Hours` | `Seats` | `Terabytes` |
 | **Contract ID** | `AGR-44-GAMMA` | `AGR-44-GAMMA` | `AGR-44-GAMMA` |
 | **Contract Period End** | `2029-02-01` | `2029-02-01` | `2029-02-01` |
 | **Contract Period Start** | `2026-02-01` | `2026-02-01` | `2026-02-01` |
-| **Invoice Issuer Name** | `Acme Co` | `CyberGuard Inc` | `Acme Co` |
+| **Invoice Issuer Name** | `Aura Web` | `StackLens` | `Aura Web` |
 | **Pricing Currency** | `USD` | `USD` | `USD` |
 | **Pricing Currency CC Cost** | `250000.00` | `120000.00` | `15000.00` |
-| **Service Provider Name** | `Acme Co` | `CyberGuard Inc` | `Acme Co` |
+| **Service Provider Name** | `Aura Web` | `StackLens` | `Aura Web` |
 
 [CSV Example](../../data/contract_commitments/contract_commitment_scenario_2.csv)
 
@@ -224,9 +224,9 @@ This scenario focuses on how the model handles growth beyond initial estimates. 
 | **Contract ID** | `AGR-11-DELTA` | `AGR-11-DELTA` | `AGR-11-DELTA` |
 | **Contract Period End** | `2029-02-01` | `2029-02-01` | `2029-02-01` |
 | **Contract Period Start** | `2026-02-01` | `2026-02-01` | `2026-02-01` |
-| **Invoice Issuer Name** | `Acme Co` | `Acme Co` | `Acme Co` |
+| **Invoice Issuer Name** | `Aura Web` | `Aura Web` | `Aura Web` |
 | **Pricing Currency** | `USD` | `USD` | `USD` |
 | **Pricing Currency CC Cost** | `50000.00` | `0.00` | `100000.00` |
-| **Service Provider Name** | `Acme Co` | `Acme Co` | `Acme Co` |
+| **Service Provider Name** | `Aura Web` | `Aura Web` | `Aura Web` |
 
 [CSV Example](../../data/contract_commitments/contract_commitment_scenario_3.csv)
