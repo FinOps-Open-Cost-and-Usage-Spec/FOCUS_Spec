@@ -183,8 +183,8 @@ The subject SHOULD be explicit and unambiguous.
 
 The following MUST NOT be used as normative subjects:
 
-* Actors (e.g. data generator, service provider, consumer)
-* Processes or mechanisms (e.g. Delivery Handling, Correction Handling, etc.)
+* Actors (e.g., data generator, service provider, consumer)
+* Processes or mechanisms (e.g., Delivery Handling, Correction Handling, etc.)
 
 ### FOCUS Entity Reference Conventions
 

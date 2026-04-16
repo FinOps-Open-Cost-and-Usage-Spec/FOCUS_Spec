@@ -24,7 +24,7 @@ See [Cost Metrics Examples Spreadsheet](https://docs.google.com/spreadsheets/d/1
 
 - Variable cost discounts are applied in Billed Cost.
 
-  - Examples are GCP SUD or equivalent. Ultimately, the spec can't define if these discounts show up as a single line or as multiple as long as negotiated discounts are applied AND the aggregation of rows at charge type (e.g. Usage) provides the correct sum.
+  - Examples are GCP SUD or equivalent. Ultimately, the spec can't define if these discounts show up as a single line or as multiple as long as negotiated discounts are applied AND the aggregation of rows at charge type (e.g., Usage) provides the correct sum.
 
 - Accuracy / format of values:
 

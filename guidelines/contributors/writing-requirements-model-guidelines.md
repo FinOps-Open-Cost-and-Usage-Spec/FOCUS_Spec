@@ -39,9 +39,9 @@ The first stage of conversion of rules from the normative text to model rules is
 - `ApplicabilityCriteria` - Specific criteria that must be true of the data generator for this rule to apply to the dataset
 - `Type` - Identifier if this is a Static or Dynamic rule, with Static rules being possible to assess model without external information being required
 - `Order` - The order in which this rule should be processed or displayed
-- `DatasetType` - The dataset type this rule applies to (e.g. "CAU" for Cost and Usage, "CCT" for Contract Commitment)
-- `DatasetId` - The identifier of the dataset this rule belongs to (Required for Dataset, Column, and Object entity types, e.g. "CostAndUsage" for Cost and Usage, "ContractCommitment" for Contract Commitment)
-- `DatasetName` - The human-readable name of the dataset this rule belongs to (Required for Dataset, Column, and Object entity types, e.g. "Cost and Usage" for Cost and Usage)
+- `DatasetType` - The dataset type this rule applies to (e.g., "CAU" for Cost and Usage, "CCT" for Contract Commitment)
+- `DatasetId` - The identifier of the dataset this rule belongs to (Required for Dataset, Column, and Object entity types, e.g., "CostAndUsage" for Cost and Usage, "ContractCommitment" for Contract Commitment)
+- `DatasetName` - The human-readable name of the dataset this rule belongs to (Required for Dataset, Column, and Object entity types, e.g., "Cost and Usage" for Cost and Usage)
 - `ValidationCriteria` - The detailed criteria that defines how this rule is to be validated
   - `MustSatisfy` - The normative text that this rule defines
   - `Keyword` - The Normative keyword that applies to this rule (Allowed Values: `MUST`, `MUST NOT`, `SHOULD`, `SHOULD NOT`, `MAY`)
@@ -790,7 +790,7 @@ Version-specific model content is organized under `specification/requirements_mo
 - `model_details.json`: Metadata like versioning for this model version
 - `applicability_criteria.json`: Feature flags controlling rule application
 - `check_functions.json`: Logical validation functions and their arguments
-- `model_datasets.json`: Maps datasets (e.g. FOCUS) to rule sets
+- `model_datasets.json`: Maps datasets (e.g., FOCUS) to rule sets
 - `model_rules/attributes/`: JSON files defining multiple `ModelRules` for a single attribute
 - `model_rules/datasets/<dataset_id>/`: JSON files defining multiple `ModelRules` for a single dataset
 - `model_rules/datasets/<dataset_id>/columns/`: JSON files defining multiple `ModelRules` for a single column
