@@ -150,10 +150,10 @@ _Outcome_: Service Category and Subcategory shall describe the Service's primary
 Commitment Discounts have various models that could belong in various places of a Service category hierarchy.  For example:
 
 - An Azure reservation for D8as v5 can be both Categorized (i.e. `Compute`) and Subcategorized (i.e. `Virtual Machines`).
-- An AWS Compute savings plan can be Categorized (i.e. `Compute`) but not Subcategorized (e.g. it can be applied to both `Virtual Machines` and `Serverless Compute`).
-- An OCI Credit can neither be Categorized nor Subcategorized (e.g. it can be applied to a wide variety of usage).
+- An AWS Compute savings plan can be Categorized (i.e. `Compute`) but not Subcategorized (e.g., it can be applied to both `Virtual Machines` and `Serverless Compute`).
+- An OCI Credit can neither be Categorized nor Subcategorized (e.g., it can be applied to a wide variety of usage).
 
-Based on that, there was a robust discussion, particularly on the Jul 23 TF1 and Aug 8 Member calls, as to where Commitment Discounts belong.  Do they deserve their own Subcategories (e.g. `Commitments (Compute)`, `Commitments (Databases)`) underneath each Category?  Do they also deserve their own Category (e.g. `Commitments` or `Crossfunctional`)?
+Based on that, there was a robust discussion, particularly on the Jul 23 TF1 and Aug 8 Member calls, as to where Commitment Discounts belong.  Do they deserve their own Subcategories (e.g., `Commitments (Compute)`, `Commitments (Databases)`) underneath each Category?  Do they also deserve their own Category (e.g., `Commitments` or `Crossfunctional`)?
 
 _Outcome_: given the decision not to change the Category composition, and given the principle of undercategorizing rather than overcategorizing: 
 
@@ -187,9 +187,9 @@ Each Category carries an "Other" Subcategory to allow the providers to provide a
 
 The following considerations were included:
 
-- Brevity, simplicity, and consistency of Subcategory names (e.g. “Uncategorized (Management and Governance)” is pretty long).
-- Delineation of Category values from Subcategory values (e.g. use of Subcategory “Other” underneath all Categories “Compute”, “Databases” and “Other” could be confusing).
-- Analytical utility of Subcategory without Category context (e.g. uncategorized Compute from uncategorized Databases are automatically separated in a bar chart).
+- Brevity, simplicity, and consistency of Subcategory names (e.g., “Uncategorized (Management and Governance)” is pretty long).
+- Delineation of Category values from Subcategory values (e.g., use of Subcategory “Other” underneath all Categories “Compute”, “Databases” and “Other” could be confusing).
+- Analytical utility of Subcategory without Category context (e.g., uncategorized Compute from uncategorized Databases are automatically separated in a bar chart).
 
 _Outcome_: Option :two: was chosen.
 

@@ -84,11 +84,23 @@ The recommended pattern for a normative requirement is:
 <Subject (+qualifier)> + <BCP 14 Keyword> + <Verifiable State Descriptor> + <Object (+qualifier)> [+ Conditions]
 ```
 
+* Each normative requirement MUST be expressed as an individual bullet point, except for structural anchor requirements (see [Structural Anchor Requirement](#structural-anchor-requirement)).
+* Each bullet MUST represent exactly one normative requirement expressing a single constraint.
 * Each normative requirement MUST:
   * identify exactly one **normative subject** to which the requirement applies
   * contain exactly one **BCP 14 keyword** (MUST, SHOULD, MAY, MUST NOT, etc.), indicating the obligation level
   * express exactly one **verifiable constraint**
+  * be split into multiple bullets if it introduces multiple independent constraints.
 * Each normative requirement SHOULD describe a **verifiable state** of the object rather than behavior
+
+### Explicit Conditions in Normative Requirements
+
+* Normative requirements MUST include an explicit condition unless the rule applies universally.
+* Conditional logic MUST be expressed using one of the following approved conditional keywords:
+  * `when`
+  * `unless`
+  * `only when`
+  * `except when`
 
 ### Structural Anchor Requirement
 
@@ -116,6 +128,14 @@ For **Attribute Requirements** sections, a different canonical form applies:
 See [Section Structural Anchor Requirement for Attributes](#structural-anchor-requirement-for-attributes) for details.
 
 ### Normative Subject
+
+* Each normative requirement MUST clearly identify the subject being constrained.
+
+#### Terminology Usage in Normative Requirements
+
+* Column references in normative requirements MUST use the ColumnId.
+* Display Names MUST NOT be used in normative requirements.
+* Display Names MAY be used in non-normative sections for readability.
 
 #### Allowed Subjects
 
@@ -163,8 +183,14 @@ The subject SHOULD be explicit and unambiguous.
 
 The following MUST NOT be used as normative subjects:
 
-* Actors (e.g. data generator, service provider, consumer)
-* Processes or mechanisms (e.g. Delivery Handling, Correction Handling, etc.)
+* Actors (e.g., data generator, service provider, consumer)
+* Processes or mechanisms (e.g., Delivery Handling, Correction Handling, etc.)
+
+### FOCUS Entity Reference Conventions
+
+* References to FOCUS entities in normative requirements MUST use their canonical identifiers (e.g., `{DatasetId}`, `{ColumnId}`, `{AttributeId}`) or canonical object/property reference paths (e.g., `Object.Property[*].Field`).
+* References to FOCUS entities in normative requirements MUST NOT use their Display Names.
+* References SHOULD default to singular form, with the understanding that the requirement applies to all applicable instances, values, or elements of the referenced entity unless otherwise specified.
 
 ### State, Not Behavior
 
@@ -177,12 +203,21 @@ Specifically:
   * a constraint on the resulting dataset state, or
   * a constraint on a schema-defined artifact.
 
+### Tone and Grammar
+
+In order to maintain a formal, professional tone throughout the specification, contractions MUST NOT be used in normative requirements (e.g., use "do not" instead of "don't").
+
 ### Use of BCP 14 Keywords
 
-* Each normative bullet MUST contain exactly one BCP 14 keyword (MUST, SHOULD, MAY, MUST NOT, SHOULD NOT). See [BCP14](https://tools.ietf.org/html/bcp14) [[RFC2119](https://tools.ietf.org/html/rfc2119)][[RFC8174](https://tools.ietf.org/html/rfc8174)].
-* A bullet containing more than one normative keyword MUST be split.
+* Each normative bullet MUST contain exactly one of the following BCP 14 keywords: `MUST`, `MUST NOT`, `SHOULD`, `SHOULD NOT`, `MAY`.
+* A bullet containing more than one normative keyword MUST be split (see [Splitting Requirements](#splitting-requirements) section).
+* The following BCP 14 keywords MUST NOT be used: `REQUIRED`, `SHALL`, `SHALL NOT`, `RECOMMENDED`, `NOT RECOMMENDED`, `OPTIONAL`.
 
 * **Exception for Composite Requirements:** While each individual bullet (parent or nested) MUST contain only one BCP 14 keyword, a Composite Requirement as a whole MAY contain multiple keywords to express nuanced obligations. In such cases, the logical strength of the requirement is governed by the hierarchy defined in section [Composite Requirements](#composite-requirements).
+
+> **Note:** The keyword `RECOMMENDED` was previously used for presence-related normative requirements with the meaning "recommended but not mandatory." This usage is deprecated as of December 2025.
+
+For detailed interpretation of BCP 14 keywords, see [BCP14](https://tools.ietf.org/html/bcp14) [[RFC2119](https://tools.ietf.org/html/rfc2119)][[RFC8174](https://tools.ietf.org/html/rfc8174)].
 
 ### Splitting Requirements
 
@@ -190,6 +225,7 @@ A requirement MUST be split into multiple bullets if it:
 
 * contains more than one BCP 14 keyword,
 * combines multiple obligations (e.g., multiple verifiable state descriptors, multiple objects, or multiple conditions that result in distinct constraints),
+* combines multiple independent conditions using “and” or “or” that result in distinct constraints
 * contains a hidden constraint expressed as a definition (e.g., `ColumnA MUST be Z, where Z is defined as Y`),
 * applies constraints to multiple subjects, even with a single BCP 14 keyword (e.g., `ColumnA and ColumnB MUST be X`).
 
@@ -216,7 +252,7 @@ Flat parallel bullets SHOULD be preferred when ordering keywords alone is suffic
 
 While normative requirements MUST focus on **enforceable constraints** and **verifiable states**, definitions, informative clauses, and examples MAY be included within a requirement where necessary to provide essential context and ensure unambiguous interpretation.
 
-#### Separation of Concerns:
+#### Separation of Concerns
 
 * **Definitions:** If a definition is complex or applies to multiple requirements, it SHOULD be placed in the **Glossary** or the preamble section and referenced as a link within the requirement.
 * **Complex Logic:** If an informative or normative clause is complex or applies to multiple requirements, it SHOULD be placed in the **Implementation Context** section to maintain the clarity of the core requirement.
@@ -280,26 +316,13 @@ Grouping and ordering of dataset-level normative requirements ensures clarity, c
 
 To further enhance readability, individual requirements within each group SHOULD be ordered as follows:
 
-* **MUST** – an absolute requirement
-* **MUST NOT** – a prohibition
-* **SHOULD** – recommended but not mandatory
-* **SHOULD NOT** – discouraged but not strictly prohibited
-* **MAY** – optional
-
-**Important Note:** The term **RECOMMENDED** (recommended but not mandatory; previously used only for presence-related normative requirements) is no longer permitted for use in normative requirements as of December 2025. The keyword **SHOULD** must be used instead. Please refer to the [**Editorial Style Guidelines**](editorial-guidelines.md).
-
-* For detailed interpretation of keywords such as `MUST`, `MUST NOT`, `SHOULD`, `SHOULD NOT`, `MAY`, and others, see [BCP14](https://tools.ietf.org/html/bcp14) [[RFC2119](https://tools.ietf.org/html/rfc2119)][[RFC8174](https://tools.ietf.org/html/rfc8174)].
+* `MUST` – an absolute requirement
+* `MUST NOT` – a prohibition
+* `SHOULD` – recommended but not mandatory
+* `SHOULD NOT` – discouraged but not strictly prohibited
+* `MAY` – optional
 
 **Exception for Column Presence:** Requirements within the **Column Presence in Dataset** group MUST be ordered alphabetically by the referenced Column ID, taking precedence over the BCP 14 keyword ordering.
-
-### Structuring Individual Dataset Requirements
-
-* **Start with the DatasetId**: Whenever possible, begin each requirement with the DatasetId to make the requirement clear and focused.
-* **Use Asterisks for Lists**: All unordered lists representing normative requirements must use an asterisk (`*`) for the bullet character. Do not use dashes (`-`) or plus signs (`+`). This ensures visual consistency across the specification and aligns with our automated linting standards.
-
-```markdown
-* <DatasetId> MUST be present[ when <Condition>].
-```
 
 ### Consistent Wording and Patterns in Dataset Requirements
 
@@ -336,10 +359,10 @@ Use standardized phrasing and terminology, and apply common requirement patterns
 
 ### Dataset Normative Requirements Examples
 
-**Notes:**
-
-* The examples below are **snippets** that illustrate patterns only, not full listings. The `...` indicates additional requirements exist in the full dataset specification.
-* Authors should consult the actual FOCUS attribute specification files as the **source of truth**, as these guidelines do not necessarily reflect the latest version.
+> **Notes:**
+>
+> * The examples below are **snippets** that illustrate patterns only, not full listings. The `...` indicates additional requirements exist in the full dataset specification.
+> * Authors should consult the actual FOCUS attribute specification files as the **source of truth**, as these guidelines do not necessarily reflect the latest version.
 
 #### **Contract Commitment**
 
@@ -391,7 +414,7 @@ CostAndUsage MUST adhere to the following requirements:
 
 Grouping and ordering of requirements ensure clarity, logical flow, and consistency across all columns, making related requirements easy to identify and follow. This structure should be maintained for consistency across the specification.
 
-**Note:** This section provides a current preview of the requirements grouping and ordering. Members should review how this applies to specific columns and provide feedback. The order may be adjusted based on that feedback.
+> **Note:** This section provides a current preview of the requirements grouping and ordering. Members should review how this applies to specific columns and provide feedback. The order may be adjusted based on that feedback.
 
   1. **Technical Requirements**
      1. **Data Type**: Establishes a foundational expectation, ensuring all subsequent rules align with this type.
@@ -427,28 +450,11 @@ Grouping and ordering of requirements ensure clarity, logical flow, and consiste
 
 To further enhance readability, individual requirements within each group SHOULD be ordered as follows:
 
-* **MUST** – an absolute requirement
-* **MUST NOT** – a prohibition
-* **SHOULD** – recommended but not mandatory
-* **SHOULD NOT** – discouraged but not strictly prohibited
-* **MAY** – optional
-
-**Important Note:** The term **RECOMMENDED** (recommended but not mandatory; previously used only for presence-related normative requirements) is no longer permitted for use in normative requirements as of December 2025. The keyword **SHOULD** must be used instead. Please refer to the [**Editorial Style Guidelines**](editorial-guidelines.md).
-
-* For detailed interpretation of keywords such as `MUST`, `MUST NOT`, `SHOULD`, `SHOULD NOT`, `MAY`, and others, see [BCP14](https://tools.ietf.org/html/bcp14) [[RFC2119](https://tools.ietf.org/html/rfc2119)][[RFC8174](https://tools.ietf.org/html/rfc8174)].
-
-### Structuring Individual Column Requirements
-
-* **Start with the ColumnId**: Whenever possible, begin each requirement with the ColumnId to make the requirement clear and focused.
-* **Use Asterisks for Lists**: All unordered lists representing normative requirements MUST use an asterisk (`*`) for the bullet character. Do not use dashes (`-`) or plus signs (`+`). This ensures visual consistency across the specification and aligns with our automated linting standards.
-
-```markdown
-* <ColumnId> MUST/MUST NOT/SHOULD/MUST be null when <Condition>.
-```
-
-* **Use {ColumnId} for Column and Value References**: Whenever possible, use {ColumnId} when referring to a column or its values.
-
-* **Default to Singular Form**: Column references should be singular, with the understanding that the requirement applies to all values in the column.
+* `MUST` – an absolute requirement
+* `MUST NOT` – a prohibition
+* `SHOULD` – recommended but not mandatory
+* `SHOULD NOT` – discouraged but not strictly prohibited
+* `MAY` – optional
 
 ### Additional Guidelines for Columns in JSON Format
 
@@ -744,10 +750,10 @@ To ensure clarity and consistency across columns and corresponding requirements,
 
 ### Column Normative Requirements Examples
 
-**Notes:**
-
-* The examples below are **snippets** that illustrate patterns only, not full listings. The `...` indicates additional requirements exist in the full column specification.
-* Authors should consult the actual FOCUS column specification files as the **source of truth**, as these guidelines may not always reflect the latest version.
+> **Notes:**
+>
+> * The examples below are **snippets** that illustrate patterns only, not full listings. The `...` indicates additional requirements exist in the full column specification.
+> * Authors should consult the actual FOCUS column specification files as the **source of truth**, as these guidelines may not always reflect the latest version.
 
 #### **List Unit Price**
 
@@ -915,22 +921,18 @@ To further enhance readability, individual requirements within each group SHOULD
 * Requirements targeting the general subject (e.g., FOCUS column) first
 * Requirements targeting qualified subjects (e.g., FOCUS column containing numeric values) after
 * Within each subject, order by BCP 14 keyword:
-  * **MUST** – an absolute requirement
-  * **MUST NOT** – a prohibition
-  * **SHOULD** – recommended but not mandatory
-  * **SHOULD NOT** – discouraged but not strictly prohibited
-  * **MAY** – optional
-
-**Important Note:** The term **RECOMMENDED** (recommended but not mandatory; previously used only for presence-related normative requirements) is no longer permitted for use in normative requirements as of December 2025. The keyword **SHOULD** must be used instead. Please refer to the [**Editorial Style Guidelines**](editorial-guidelines.md).
-
-* For detailed interpretation of keywords such as `MUST`, `MUST NOT`, `SHOULD`, `SHOULD NOT`, `MAY`, and others, see [BCP14](https://tools.ietf.org/html/bcp14) [[RFC2119](https://tools.ietf.org/html/rfc2119)][[RFC8174](https://tools.ietf.org/html/rfc8174)].
+  * `MUST` – an absolute requirement
+  * `MUST NOT` – a prohibition
+  * `SHOULD` – recommended but not mandatory
+  * `SHOULD NOT` – discouraged but not strictly prohibited
+  * `MAY` – optional
 
 ### Attribute Normative Requirements Examples
 
-**Notes:**
-
-* The examples below are **snippets** that illustrate patterns only, not full listings. The `...` indicates additional requirements exist in the full column specification.
-* Authors should consult the actual FOCUS attribute specification files as the **source of truth**, as these guidelines do not necessarily reflect the latest version.
+> **Notes:**
+>
+> * The examples below are **snippets** that illustrate patterns only, not full listings. The `...` indicates additional requirements exist in the full column specification.
+> * Authors should consult the actual FOCUS attribute specification files as the **source of truth**, as these guidelines do not necessarily reflect the latest version.
 
 #### Null Handling
 
