@@ -78,6 +78,26 @@ This section outlines the planned release schedule and key milestones for the FO
     </ul>
         </td>
     </tr>
+    <tr>
+        <td>v1.5</td>
+        <td>Dec 2026</td>
+        <td>
+<strong>Introducing the SKU-Price Reference Dataset (Price Sheet)</strong>
+    <ul>
+      <li>Add a standardized dataset for cross-provider price comparison and pre-consumption cost estimation</li>
+    </ul>
+  <strong>Support for Artificial Intelligence (AI)</strong>
+    <ul>
+      <li>Surface AI model identity and token consumption in FOCUS</li>
+      <li>Add worked examples for token and generation-based AI billing</li>
+    </ul>
+  <strong>Specification maintenance and tooling</strong>
+    <ul>
+      <li>Add 1.3 to 1.4 Version Migration Guide</li>
+      <li>Add 1.5 Specification revisions to Requirements Model</li>
+    </ul>
+        </td>
+    </tr>
 </table>
 
 ### Scope of Previous Releases
