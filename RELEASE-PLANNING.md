@@ -11,33 +11,6 @@ This section outlines the planned release schedule and key milestones for the FO
         <th>Scope | High-Level System Requirements</th>
     </tr>
     <tr>
-        <td>v1.3</td>
-        <td>Dec 2025</td>
-        <td>
-<strong>Augment support for Public Cloud scope</strong>
-    <ul>
-      <li>Shared cost allocation</li>
-      <li>Coverage eligibility</li>
-      <li>Pre-discount amortized cost</li>
-    </ul>
-  <strong>Augment support for SaaS/PaaS scope</strong>
-    <ul>
-      <li>Host Provider (and clarification of related terms)</li>
-    </ul>
-  <strong>Support for concepts applicable to all scopes</strong>
-    <ul>
-      <li>Contractual commitments</li>
-      <li>Distinguish between vendor and marketplace purchases</li>
-    </ul>
-  <strong>Addition of metadata / non-functional requirements</strong>
-    <ul>
-      <li>Static conformance requirements</li>
-      <li>Conformance program beta</li>
-      <li>Recency and completeness of data</li>  
-    </ul>
-        </td>
-    </tr>
-    <tr>
         <td>v1.4</td>
         <td>Jun 2026</td>
         <td>
@@ -96,7 +69,6 @@ This section outlines the planned release schedule and key milestones for the FO
       <li>Add 1.3 to 1.4 Version Migration Guide</li>
       <li>Add 1.5 Specification revisions to Requirements Model</li>
     </ul>
-        <p>Community-championed items are tracked in the <a href="https://github.com/orgs/FinOps-Open-Cost-and-Usage-Spec/projects/5/views/37">1.5 Candidates project view</a>.</p>
         </td>
     </tr>
 </table>
@@ -170,6 +142,33 @@ This section outlines the planned release schedule and key milestones for the FO
             <ul>
                 <li>Revisions of existing specification content to increase consistency and reduce ambiguity</li>
             </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>v1.3</td>
+        <td>Dec 2025</td>
+        <td>
+<strong>Augment support for Public Cloud scope</strong>
+    <ul>
+      <li>Shared cost allocation</li>
+      <li>Coverage eligibility</li>
+      <li>Pre-discount amortized cost</li>
+    </ul>
+  <strong>Augment support for SaaS/PaaS scope</strong>
+    <ul>
+      <li>Host Provider (and clarification of related terms)</li>
+    </ul>
+  <strong>Support for concepts applicable to all scopes</strong>
+    <ul>
+      <li>Contractual commitments</li>
+      <li>Distinguish between vendor and marketplace purchases</li>
+    </ul>
+  <strong>Addition of metadata / non-functional requirements</strong>
+    <ul>
+      <li>Static conformance requirements</li>
+      <li>Conformance program beta</li>
+      <li>Recency and completeness of data</li>  
+    </ul>
         </td>
     </tr>
 </table>
