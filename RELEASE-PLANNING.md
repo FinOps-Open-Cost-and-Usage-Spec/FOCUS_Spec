@@ -96,6 +96,7 @@ This section outlines the planned release schedule and key milestones for the FO
       <li>Add 1.3 to 1.4 Version Migration Guide</li>
       <li>Add 1.5 Specification revisions to Requirements Model</li>
     </ul>
+        <p>Community-championed items are tracked in the <a href="https://github.com/orgs/FinOps-Open-Cost-and-Usage-Spec/projects/5/views/37">1.5 Candidates project view</a>.</p>
         </td>
     </tr>
 </table>
