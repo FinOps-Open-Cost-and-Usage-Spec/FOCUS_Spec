@@ -17,7 +17,7 @@ CreationDate
 
 Creation Date
 
-## Content constraints
+## Content Constraints
 
 | Constraint    | Value                                |
 |:--------------|:-------------------------------------|

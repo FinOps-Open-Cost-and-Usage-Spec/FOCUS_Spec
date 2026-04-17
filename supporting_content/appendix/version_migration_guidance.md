@@ -59,10 +59,10 @@ Only the `ProviderName` and `PublisherName` columns are deprecated in FOCUS 1.3.
 
 Practitioners should complete this assessment before migrating queries:
 
-- [ ] Identify all queries, reports, and dashboards that reference `ProviderName` or `PublisherName`
-- [ ] For each usage, determine what business question the column was answering
-- [ ] Review [Participating Entity Identification Examples](/specification/appendix/participating_entity_identification.md) for scenarios matching your acquisition methods
-- [ ] Plan migration timeline (deprecated columns will be removed in FOCUS 1.4+)
+* [ ] Identify all queries, reports, and dashboards that reference `ProviderName` or `PublisherName`
+* [ ] For each usage, determine what business question the column was answering
+* [ ] Review [Participating Entity Identification Examples](/specification/appendix/participating_entity_identification.md) for scenarios matching your acquisition methods
+* [ ] Plan migration timeline (deprecated columns will be removed in FOCUS 1.4+)
 
 ### Why This Change Was Made
 
@@ -124,9 +124,9 @@ For the complete scenario matrix, see [Participating Entity Identification Examp
 **Purpose:** Identifies the entity providing the underlying infrastructure on which the Service Provider's resources or services are deployed.
 
 **Nullability rules:**
-- MAY be null when the service does not involve deployment on infrastructure (e.g., professional services, software licenses)
-- MAY be null when the hosting provider cannot be uniquely determined (e.g., Tax or Adjustment charges)
-- MUST equal `ServiceProviderName` when the service provider hosts their own services and does not expose the underlying host
+* MAY be null when the service does not involve deployment on infrastructure (e.g., professional services, software licenses)
+* MAY be null when the hosting provider cannot be uniquely determined (e.g., Tax or Adjustment charges)
+* MUST equal `ServiceProviderName` when the service provider hosts their own services and does not expose the underlying host
 
 ### Query Migration Examples (Practitioners)
 
@@ -209,15 +209,15 @@ After migrating queries, practitioners should verify results:
 ### Dual-Column Support During Transition
 
 Data generators SHOULD include both deprecated and new columns in FOCUS 1.3 datasets to support practitioners transitioning their queries. This allows practitioners to:
-- Continue using existing queries during migration
-- Validate new queries against old results
-- Transition at their own pace before FOCUS 1.4
+* Continue using existing queries during migration
+* Validate new queries against old results
+* Transition at their own pace before FOCUS 1.4
 
 ### Deprecation Metadata
 
 FOCUS 1.2 introduced metadata properties to signal column deprecation:
-- `Deprecated`: Boolean indicating whether a column is deprecated
-- `PreviousColumnName`: References the column this one replaces (if applicable)
+* `Deprecated`: Boolean indicating whether a column is deprecated
+* `PreviousColumnName`: References the column this one replaces (if applicable)
 
 Data generators SHOULD populate these properties in their metadata schema to help practitioners identify deprecated columns programmatically.
 
@@ -235,21 +235,21 @@ Data generators SHOULD populate these properties in their metadata schema to hel
 
 The following supported features reference participating entity columns and may require documentation or query updates:
 
-- [Charge Categorization](/specification/supported_features/charge_categorization.md)
-- [Commit Usage and Under Usage](/specification/supported_features/commit_usage_and_under_usage.md)
-- [Cost Comparison](/specification/supported_features/cost_comparison.md)
-- [Effective Cost](/specification/supported_features/effective_cost.md)
-- [Marketplace Purchases](/specification/supported_features/marketplace_purchases.md)
-- [Participating Entity Identification](/specification/supported_features/participating_entity_identification.md)
-- [Service Provider Services](/specification/supported_features/service_provider_services.md)
-- [Resource Usage](/specification/supported_features/resource_usage.md)
-- [Service Categorization](/specification/supported_features/service_categorization.md)
+* [Charge Categorization](/specification/supported_features/charge_categorization.md)
+* [Commit Usage and Under Usage](/specification/supported_features/commit_usage_and_under_usage.md)
+* [Cost Comparison](/specification/supported_features/cost_comparison.md)
+* [Effective Cost](/specification/supported_features/effective_cost.md)
+* [Marketplace Purchases](/specification/supported_features/marketplace_purchases.md)
+* [Participating Entity Identification](/specification/supported_features/participating_entity_identification.md)
+* [Service Provider Services](/specification/supported_features/service_provider_services.md)
+* [Resource Usage](/specification/supported_features/resource_usage.md)
+* [Service Categorization](/specification/supported_features/service_categorization.md)
 
 ---
 
 ## Additional Resources
 
-- [Participating Entity Identification Examples](/specification/appendix/participating_entity_identification.md) — Scenarios showing how entity values vary by acquisition method
-- [ServiceProviderName Column Specification](/specification/datasets/cost_and_usage/columns/serviceprovidername.md)
-- [HostProviderName Column Specification](/specification/datasets/cost_and_usage/columns/hostprovidername.md)
-- [FOCUS 1.3 Changelog](/CHANGELOG.md)
+* [Participating Entity Identification Examples](/specification/appendix/participating_entity_identification.md) — Scenarios showing how entity values vary by acquisition method
+* [ServiceProviderName Column Specification](/specification/datasets/cost_and_usage/columns/serviceprovidername.md)
+* [HostProviderName Column Specification](/specification/datasets/cost_and_usage/columns/hostprovidername.md)
+* [FOCUS 1.3 Changelog](/CHANGELOG.md)

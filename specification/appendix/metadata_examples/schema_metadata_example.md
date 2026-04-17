@@ -2,7 +2,7 @@
 
 ## Scenario
 
-ACME has only provided one [Schema](#metadata.schema) for their FOCUS data export. ACME provides a directory of schemas and each schema is a single file. Acme provides a file representing the schema for the data they provide.
+CrestNode has only provided one [Schema](#metadata.schema) for their FOCUS data export. CrestNode provides a directory of schemas and each schema is a single file. CrestNode provides a file representing the schema for the data they provide.
 
 ## Supplied Metadata
 
@@ -52,7 +52,7 @@ The updated schema-related metadata could look like this:
           {
                 "ColumnName": "Tags",
                 "DataType": "JSON",
-                "ProviderTagPrefixes": ["acme", "ac"]
+                "ProviderTagPrefixes": ["crestnode", "cn"]
           }
       ]
 }

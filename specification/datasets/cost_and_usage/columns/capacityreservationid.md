@@ -28,7 +28,7 @@ Capacity Reservation ID
 
 The identifier assigned to a *capacity reservation* by the service provider.
 
-## Content constraints
+## Content Constraints
 
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |

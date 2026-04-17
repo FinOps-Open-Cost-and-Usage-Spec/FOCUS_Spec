@@ -19,7 +19,7 @@ DataGeneratorVersion
 
 Data Generator Version
 
-## Content constraints
+## Content Constraints
 
 | Constraint    | Value            |
 |:--------------|:-----------------|

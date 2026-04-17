@@ -34,19 +34,19 @@ e.g., Typo in field `skuDescription` definition — should say "metered" instead
 ### Type of Feedback
 Select the category that best describes your suggestion:
 
-- [ ] Bug — incorrect or contradictory behavior in the current spec
+* [ ] Bug — incorrect or contradictory behavior in the current spec
   _e.g., a column definition that contradicts its own validation rules_
-- [ ] Typo or grammar
+* [ ] Typo or grammar
   _e.g., spelling, punctuation, or wording errors_
-- [ ] Clarity improvement
+* [ ] Clarity improvement
   _e.g., a confusing explanation, unclear table header, ambiguous instruction_
-- [ ] Field naming or label inconsistency
+* [ ] Field naming or label inconsistency
   _e.g., same concept referred to as `region` in one section and `location` in another_
-- [ ] Definition or behavior inconsistency
+* [ ] Definition or behavior inconsistency
   _e.g., a metric described differently across two pages or files_
-- [ ] Minor correction (non-breaking)
+* [ ] Minor correction (non-breaking)
   _e.g., formatting tweaks, broken links, outdated references_
-- [ ] Other (please explain)
+* [ ] Other (please explain)
 
 ---
 
