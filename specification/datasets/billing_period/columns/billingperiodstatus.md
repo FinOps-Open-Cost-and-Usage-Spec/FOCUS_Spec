@@ -12,6 +12,13 @@ BillingPeriodStatus MUST adhere to the following requirements:
 * BillingPeriodStatus MUST represent the state of the billing period identified by [BillingPeriodStart](#datasets.billingperiod.billingperiodstart) and [BillingPeriodEnd](#datasets.billingperiod.billingperiodend).
 * BillingPeriodStatus MUST NOT transition from "Closed" to "Open" unless explicitly requested or approved by the customer.
 
+## Allowed Values
+
+| Value  | Description                                                                                                   |
+| :----- | :------------------------------------------------------------------------------------------------------------ |
+| Open   | The billing period is currently active or still being processed. Records may continue to be added or revised. |
+| Closed | The billing period has ended, all anticipated invoices have been issued, and the delivered data is finalized. |
+
 ## Implementation Context
 
 While the transition from "Open" to "Closed" typically signifies the end of a billing cycle, in scenarios such as the following, it may be necessary to provide corrections to closed billing periods:
@@ -49,13 +56,6 @@ The state of the billing period (i.e., "Open" or "Closed"), indicating whether t
 | Allows nulls  | False                               |
 | Data type     | String                              |
 | Value format  | Allowed values                      |
-
-## Allowed Values
-
-| Value  | Description                                                                                                   |
-| :----- | :------------------------------------------------------------------------------------------------------------ |
-| Open   | The billing period is currently active or still being processed. Records may continue to be added or revised. |
-| Closed | The billing period has ended, all anticipated invoices have been issued, and the delivered data is finalized. |
 
 ## Introduced (version)
 
