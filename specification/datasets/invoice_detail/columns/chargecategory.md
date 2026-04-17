@@ -11,6 +11,16 @@ ChargeCategory MUST adhere to the following requirements:
 * ChargeCategory MUST be one of the allowed values.
 * ChargeCategory MAY equal "Usage" when the record aggregates *charges* across multiple allowed values other than "Tax" (for example, aggregation of "Usage" and "Credit" is allowed, but not "Usage" and "Tax").
 
+## Allowed Values
+
+| Value      | Description                                                                                                                                    |
+| :--------- | :----------------------------------------------------------------------------------------------------------------------------------------------|
+| Usage      | Positive or negative *charges* based on the quantity of a service or resource that was consumed over a given period of time including refunds. |
+| Purchase   | Positive or negative *charges* for the acquisition of a service or resource bought upfront or on a recurring basis including refunds. |
+| Tax        | Positive or negative applicable taxes that are levied by the relevant authorities including refunds. Tax *charges* may vary depending on factors such as the location, jurisdiction, and local or federal regulations. |
+| Credit     | Positive or negative *charges* granted by the service provider for various scenarios (e.g., promotional credits, corrections to promotional credits). |
+| Adjustment | Positive or negative *charges* the service provider applies that do not fall into other category values. |
+
 ## Column ID
 
 ChargeCategory
@@ -32,16 +42,6 @@ Represents the highest-level classification of a *charge* based on the nature of
 | Allows nulls    | False          |
 | Data type       | String         |
 | Value format    | Allowed values |
-
-## Allowed Values
-
-| Value      | Description                                                                                                                                    |
-| :--------- | :----------------------------------------------------------------------------------------------------------------------------------------------|
-| Usage      | Positive or negative *charges* based on the quantity of a service or resource that was consumed over a given period of time including refunds. |
-| Purchase   | Positive or negative *charges* for the acquisition of a service or resource bought upfront or on a recurring basis including refunds. |
-| Tax        | Positive or negative applicable taxes that are levied by the relevant authorities including refunds. Tax *charges* may vary depending on factors such as the location, jurisdiction, and local or federal regulations. |
-| Credit     | Positive or negative *charges* granted by the service provider for various scenarios (e.g., promotional credits, corrections to promotional credits). |
-| Adjustment | Positive or negative *charges* the service provider applies that do not fall into other category values. |
 
 ## Introduced (version)
 
