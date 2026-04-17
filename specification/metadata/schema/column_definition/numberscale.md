@@ -17,7 +17,7 @@ NumberScale
 
 Number Scale
 
-## Content constraints
+## Content Constraints
 
 | Constraint    | Value                            |
 |:--------------|:---------------------------------|

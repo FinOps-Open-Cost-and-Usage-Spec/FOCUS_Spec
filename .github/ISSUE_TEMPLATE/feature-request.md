@@ -48,25 +48,25 @@ Write your use case here.
 What needs to be true when we deliver this capability for it to be meaningful? Describe 2-4 specific criteria. Focus on what you need to be able to DO with the data, not implementation details.
 
 **Example** *(describe what you can DO, not structural changes like "add column X"):*
-- I can perform cost allocation using this data without additional processing
-- The data is consistently available across all data generators that support this concept
-- Missing or unavailable data is handled in a clear, standardized way
+* I can perform cost allocation using this data without additional processing
+* The data is consistently available across all data generators that support this concept
+* Missing or unavailable data is handled in a clear, standardized way
 
-- [ ] Criterion 1
-- [ ] Criterion 2
-- [ ] Criterion 3
-- [ ] Criterion 4
+* [ ] Criterion 1
+* [ ] Criterion 2
+* [ ] Criterion 3
+* [ ] Criterion 4
 
 ---
 
 ### Type of Request
 **Select the option that best describes this request.** Maintainers may reclassify during triage.
 
-- [ ] **Standardization** - Data already exists across data generators but is not yet normalized in FOCUS
-- [ ] **Enhancement** - Refinement or extension of an existing FOCUS column, metric, or capability
-- [ ] **Net New** - A concept not yet represented in FOCUS or widely available from data generators
-- [ ] **Enablement/Supporting Content** - Non-normative items like appendix explanations, examples, or supporting documentation
-- [ ] **Tech Debt** - Addressing technical debt or maintenance items *(Note: For Tech Debt items, feel free to liberally delete sections of this template that aren't relevant)*
+* [ ] **Standardization** - Data already exists across data generators but is not yet normalized in FOCUS
+* [ ] **Enhancement** - Refinement or extension of an existing FOCUS column, metric, or capability
+* [ ] **Net New** - A concept not yet represented in FOCUS or widely available from data generators
+* [ ] **Enablement/Supporting Content** - Non-normative items like appendix explanations, examples, or supporting documentation
+* [ ] **Tech Debt** - Addressing technical debt or maintenance items *(Note: For Tech Debt items, feel free to liberally delete sections of this template that aren't relevant)*
 
 ---
 
@@ -74,11 +74,11 @@ What needs to be true when we deliver this capability for it to be meaningful? D
 List one or more organizations who have requested or explicitly supported this request. For each organization, indicate whether this feature blocks their adoption of FOCUS or is a nice-to-have enhancement.
 
 **Format:**
-- **[Organization Name]** - [Adoption Blocker / Nice to Have] - [Brief explanation]
+* **[Organization Name]** - [Adoption Blocker / Nice to Have] - [Brief explanation]
 
 **Example:**
-- **Acme Corp** - Adoption Blocker - Cannot implement FOCUS without multi-cloud tagging support
-- **BigCloud Inc** - Nice to Have - Would streamline our reporting process
+* **Acme Corp** - Adoption Blocker - Cannot implement FOCUS without multi-cloud tagging support
+* **BigCloud Inc** - Nice to Have - Would streamline our reporting process
 
 ```
 List organizations here.
@@ -89,10 +89,10 @@ List organizations here.
 ### Data Generator Support (Optional)
 Do data generators already support this concept in their native billing data? It's OK to select "Unknown." Maintainers will validate during triage.
 
-- [ ] **Yes** - Widely available across data generators
-- [ ] **Partially** - Some data generators support this, others don't
-- [ ] **No** - Would require new data collection/exposure
-- [ ] **Unknown** - Not sure about data generator support
+* [ ] **Yes** - Widely available across data generators
+* [ ] **Partially** - Some data generators support this, others don't
+* [ ] **No** - Would require new data collection/exposure
+* [ ] **Unknown** - Not sure about data generator support
 
 **If yes or partially, please provide links to documentation:**
 
@@ -152,10 +152,10 @@ Links to similar or related feature requests or scopes of work.
 ### Adoption Impact
 Which category best describes this feature's impact on FOCUS adoption?
 
-- [ ] **Adoption Blocker** - Organizations cannot adopt FOCUS without this feature
-- [ ] **Adoption Accelerator** - This feature would help organizations start using FOCUS
-- [ ] **Practitioner Enhancement** - Improves experience for existing FOCUS users
-- [ ] **Technical Improvement** - Internal specification refinement
+* [ ] **Adoption Blocker** - Organizations cannot adopt FOCUS without this feature
+* [ ] **Adoption Accelerator** - This feature would help organizations start using FOCUS
+* [ ] **Practitioner Enhancement** - Improves experience for existing FOCUS users
+* [ ] **Technical Improvement** - Internal specification refinement
 
 **Justification:**
 
@@ -205,18 +205,18 @@ FOCUS Maintainers determine if/how this should be implemented in phases.
 ### Specification Impact
 
 **Impacted Parties:**
-- [ ] FinOps Practitioner - end users who analyze or act on the data
-- [ ] FOCUS Data Generator - data generators producing output aligned to the spec
-- [ ] Vendor Supporting FOCUS - vendors or tools ingesting the spec or using the spec language in their UI
-- [ ] Other: [specify]
+* [ ] FinOps Practitioner - end users who analyze or act on the data
+* [ ] FOCUS Data Generator - data generators producing output aligned to the spec
+* [ ] Vendor Supporting FOCUS - vendors or tools ingesting the spec or using the spec language in their UI
+* [ ] Other: [specify]
 
 **Level of Ambiguity:**
 *Note: This is for maintainers to assess, not for requesters to estimate.*
 
 Rate from 1 to 5:
-- 1 = very well-defined, low complexity
-- 3 = moderately scoped, some ambiguity
-- 5 = vague, high complexity or conceptual
+* 1 = very well-defined, low complexity
+* 3 = moderately scoped, some ambiguity
+* 5 = vague, high complexity or conceptual
 
 ```
 Rating and reasoning.
@@ -227,17 +227,17 @@ Rating and reasoning.
 ### FinOps Scope Alignment
 Does this request align with one or more of the following [FinOps Scopes](https://www.finops.org/framework/scopes/)?
 
-- [ ] Public Cloud - e.g., AWS, Azure, GCP, OCI
-- [ ] Software-as-a-Service (SaaS) - e.g., Salesforce, Snowflake
-- [ ] Data Center - on-prem compute and infrastructure
-- [ ] Licensing - subscription or usage-based licensing models *(under development)*
-- [ ] AI - cost and usage for AI models and platforms *(under development)*
-- [ ] Custom - internal tooling, specialized infra *(under development)*
+* [ ] Public Cloud - e.g., AWS, Azure, GCP, OCI
+* [ ] Software-as-a-Service (SaaS) - e.g., Salesforce, Snowflake
+* [ ] Data Center - on-prem compute and infrastructure
+* [ ] Licensing - subscription or usage-based licensing models *(under development)*
+* [ ] AI - cost and usage for AI models and platforms *(under development)*
+* [ ] Custom - internal tooling, specialized infra *(under development)*
 
 ## Community Support
 If your organization supports this request or has a similar use case:
 
-- Add a **comment** below including:
-  - Your **organization**
-  - A **brief explanation** of why this is important to you (e.g., use case, urgency)
-- FOCUS Staff & Maintainers will aggregate supporting orgs over time.
+* Add a **comment** below including:
+  * Your **organization**
+  * A **brief explanation** of why this is important to you (e.g., use case, urgency)
+* FOCUS Staff & Maintainers will aggregate supporting orgs over time.
