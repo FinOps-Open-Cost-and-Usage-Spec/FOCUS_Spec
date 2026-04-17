@@ -106,6 +106,10 @@ class RuleMd991(RulePlugin):
             word = word_match.group()
             word_lower = word.lower()
 
+            # Skip numbers (they have no case)
+            if word.isdigit():
+                continue
+
             # Check capitalization rules
             if is_first or is_last or follows_colon:
                 # First, last, or after colon: should be capitalized
@@ -144,6 +148,11 @@ class RuleMd991(RulePlugin):
 
             word = word_match.group()
             word_lower = word.lower()
+
+            # Skip numbers (keep them as-is)
+            if word.isdigit():
+                result.append(token)
+                continue
 
             # Determine if this word should be capitalized
             if is_first or is_last or follows_colon or word_lower not in self.__minor_words:
