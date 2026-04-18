@@ -23,12 +23,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 * Removal of deprecated `ProviderName` and `PublisherName` columns
 
-### Requirements Model & Validation Updates
-
-* **New Rule Files**: Added `applicability_criteria.json` and `check_functions.json` to define baseline validation functions.
-* **JSON Schema Support**: Introduced the `Schema` entity type (RMId format `-S-`) to allow reusable JSON Schema definitions across the requirements model.
-* **Normative Text Extraction**: Migrated Phase 1, 2, and 3 normative text out of the markdown specification and into the machine-readable JSON model.
-
 ### Added
 
 #### New supported features
@@ -125,6 +119,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   * `Accrual-Based Accounting`
   * `Cash-Based Accounting`
   * `Entitlement`
+
+### New requirements model features
+
+* Added `applicability_criteria.json` and `check_functions.json` to define baseline validation functions.
+* Added `Schema` entity type (RMId format `-S-`) to allow reusable JSON Schema definitions across the requirements model.
 
 ### Changed
 
