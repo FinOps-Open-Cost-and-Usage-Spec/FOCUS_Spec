@@ -36,11 +36,11 @@
         "ends_with_colon": true
       },
       "provenance": {
-        "line_start": 69,
-        "line_end": 69
+        "line_start": 57,
+        "line_end": 57
       },
       "_alignment_status": "confirmed",
-      "ref": "L069"
+      "ref": "L057"
     },
     {
       "temp_id": "R002",
@@ -61,11 +61,11 @@
         "ends_with_colon": false
       },
       "provenance": {
-        "line_start": 71,
-        "line_end": 71
+        "line_start": 59,
+        "line_end": 59
       },
       "_alignment_status": "confirmed",
-      "ref": "L071"
+      "ref": "L059"
     },
     {
       "temp_id": "R003",
@@ -86,11 +86,11 @@
         "ends_with_colon": false
       },
       "provenance": {
-        "line_start": 72,
-        "line_end": 72
+        "line_start": 60,
+        "line_end": 60
       },
       "_alignment_status": "confirmed",
-      "ref": "L072"
+      "ref": "L060"
     },
     {
       "temp_id": "R004",
@@ -111,11 +111,11 @@
         "ends_with_colon": false
       },
       "provenance": {
-        "line_start": 73,
-        "line_end": 73
+        "line_start": 61,
+        "line_end": 61
       },
       "_alignment_status": "confirmed",
-      "ref": "L073"
+      "ref": "L061"
     },
     {
       "temp_id": "R005",
@@ -136,11 +136,11 @@
         "ends_with_colon": false
       },
       "provenance": {
-        "line_start": 74,
-        "line_end": 74
+        "line_start": 62,
+        "line_end": 62
       },
       "_alignment_status": "confirmed",
-      "ref": "L074"
+      "ref": "L062"
     }
   ],
   "warnings": [],
