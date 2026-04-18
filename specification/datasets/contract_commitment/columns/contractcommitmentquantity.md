@@ -1,18 +1,16 @@
 # Contract Commitment Quantity
 
-Contract Commitment Quantity represents the amount associated with the [*contract commitment*](#glossary:contract-commitment), denominated in a service-provider-defined [Contract Commitment Unit](#datasets.contractcommitment.contractcommitmentunit).  Contract Commitment Quantity is commonly used for monitoring the progress towards fulfilling contractual commitments that may facilitate discounts for [*resources*](#glossary:resource) or [*services*](#glossary:service) as agreed between a provider and a customer.
+Contract Commitment Quantity represents the amount associated with the [*contract commitment*](#glossary:contract-commitment), denominated in a service-provider-defined [Contract Commitment Unit](#datasets.contractcommitment.contractcommitmentunit). Contract Commitment Quantity is commonly used for monitoring the progress towards fulfilling contractual commitments that may facilitate discounts for [*resources*](#glossary:resource) or [*services*](#glossary:service) as agreed between a provider and a customer.
 
 ## Requirements
 
-ContractCommitmentQuantity adheres to the following requirements:
+ContractCommitmentQuantity MUST adhere to the following requirements:
 
-* ContractCommitmentQuantity MUST be present in a Contract Commitment [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ContractCommitmentQuantity MUST be of type Decimal.
 * ContractCommitmentQuantity MUST conform to [NumericFormat](#attributes.numericformat) requirements.
-* ContractCommitmentQuantity nullability is defined as follows:
+* ContractCommitmentQuantity MUST adhere to the following nullability requirements:
   * ContractCommitmentQuantity MUST NOT be null when [ContractCommitmentCategory](#datasets.contractcommitment.contractcommitmentcategory) is "Usage".
   * ContractCommitmentQuantity MAY be null when ContractCommitmentCategory is "Spend".
-* ContractCommitmentQuantity MUST be a valid decimal value.
 
 ## Column ID
 
@@ -28,14 +26,15 @@ The amount associated with the *contract commitment*.
 
 ## Content Constraints
 
-| Constraint    | Value                              |
-| :------------ | :--------------------------------- |
-| Column type   | Metric                             |
-| Feature level | Mandatory                          |
-| Allows nulls  | True                               |
-| Data type     | Decimal                            |
-| Value format  | [Numeric Format](#attributes.numericformat)   |
-| Number range  | Any valid decimal value            |
+| Constraint      | Value                                                |
+|:----------------|:-----------------------------------------------------|
+| Dataset         | [Contract Commitment](#datasets.contractcommitment)  |
+| Column type     | Metric                                               |
+| Feature level   | Mandatory                                            |
+| Allows nulls    | True                                                 |
+| Data type       | Decimal                                              |
+| Value format    | [Numeric Format](#attributes.numericformat)          |
+| Number range    | Any valid decimal value                              |
 
 ## Introduced (version)
 

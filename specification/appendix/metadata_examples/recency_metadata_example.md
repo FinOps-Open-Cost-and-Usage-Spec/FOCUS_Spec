@@ -2,7 +2,7 @@
 
 ## Scenario
 
-ACME has elected to add recency metadata to its FOCUS data export. ACME provides a directory of recency metadata for each dataset they provide and each recency object is a single file.
+CrestNode has elected to add recency metadata to its FOCUS data export. CrestNode provides a directory of recency metadata for each dataset they provide and each recency object is a single file.
 
 ## Supplied Metadata
 

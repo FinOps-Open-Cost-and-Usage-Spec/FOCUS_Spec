@@ -3,6 +3,7 @@
 !INCLUDE "billed_cost_and_invoice_alignment.md",1
 !INCLUDE "charge_categorization.md",1
 !INCLUDE "commit_usage_and_under_usage.md",1
+!INCLUDE "commitment_program_eligibility_details.md",1
 !INCLUDE "contract_commitments.md",1
 !INCLUDE "cost_and_usage_attribution.md",1
 !INCLUDE "cost_comparison.md",1
@@ -11,6 +12,7 @@
 !INCLUDE "data_granularity.md",1
 !INCLUDE "dataset_instance_metadata.md",1
 !INCLUDE "effective_cost.md",1
+!INCLUDE "invoice_reconciliation.md",1
 !INCLUDE "location.md",1
 !INCLUDE "marketplace_purchases.md",1
 !INCLUDE "recency_metadata.md",1

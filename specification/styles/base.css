@@ -153,3 +153,54 @@ ul.toc.tocdepth2 li.toc.item a {
   line-height: 125%;
   margin-top: 2em;
 }
+
+/* Code styling with explicit font family for cross-platform consistency */
+code {
+  font-family: 'Courier New', Courier, 'Liberation Mono', monospace;
+  background-color: #f5f5f5;
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+/* Code block wrapping for PDF rendering */
+pre {
+  white-space: pre-wrap !important;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  background-color: #f5f5f5;
+  padding: 1em;
+  border-radius: 3px;
+}
+
+pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+pre>code {
+  white-space: pre-wrap !important;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  font-family: 'Courier New', Courier, 'Liberation Mono', monospace;
+}
+
+code.sourceCode {
+  white-space: pre-wrap !important;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  font-family: 'Courier New', Courier, 'Liberation Mono', monospace;
+}
+
+pre>code.sourceCode {
+  white-space: pre-wrap !important;
+  font-family: 'Courier New', Courier, 'Liberation Mono', monospace;
+}
+
+div.sourceCode {
+  overflow: visible !important;
+}
+
+.small-table table {
+  font-size: 0.65em;
+}

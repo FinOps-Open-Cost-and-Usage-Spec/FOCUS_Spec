@@ -1,11 +1,14 @@
 !INCLUDE "attributes_overview.md",0
-!INCLUDE "column_handling.md",1
+!INCLUDE "correction_handling.md",1
 !INCLUDE "currency_format.md",1
+!INCLUDE "custom_column_handling.md",1
 !INCLUDE "data_generator_calculated_split_cost_allocation_handling.md",1
+!INCLUDE "dataset_completeness.md",1
+!INCLUDE "dataset_configuration.md",1
 !INCLUDE "datetime_format.md",1
-!INCLUDE "discount_handling.md",1
+!INCLUDE "delivery_handling.md",1
+!INCLUDE "focus_column_handling.md",1
 !INCLUDE "json_object_format.md",1
-!INCLUDE "invoice_handling.md",1
 !INCLUDE "key_value_format.md",1
 !INCLUDE "null_handling.md",1
 !INCLUDE "numeric_format.md",1

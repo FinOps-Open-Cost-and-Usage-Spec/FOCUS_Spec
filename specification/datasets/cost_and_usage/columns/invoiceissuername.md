@@ -4,9 +4,8 @@ Invoice Issuer Name is the name of the entity responsible for issuing payable in
 
 ## Requirements
 
-InvoiceIssuerName adheres to the following requirements:
+InvoiceIssuerName MUST adhere to the following requirements:
 
-* InvoiceIssuerName MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * InvoiceIssuerName MUST be of type String.
 * InvoiceIssuerName MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * InvoiceIssuerName MUST NOT be null.
@@ -27,13 +26,14 @@ The name of the entity responsible for invoicing for the *resources* or *service
 
 ## Content Constraints
 
-| Constraint      | Value           |
-|:----------------|:----------------|
-| Column type     | Dimension       |
-| Feature level   | Mandatory       |
-| Allows nulls    | False           |
-| Data type       | String          |
-| Value format    | \<not specified> |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Dimension                                            |
+| Feature level   | Mandatory                                            |
+| Allows nulls    | False                                                |
+| Data type       | String                                               |
+| Value format    | \<not specified>                                     |
 
 ## Introduced (version)
 

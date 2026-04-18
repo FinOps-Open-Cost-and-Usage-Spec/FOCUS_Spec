@@ -4,7 +4,7 @@
 
 FOCUS supports the tracking of commitments made via contractual agreements between a service provider and a customer. Each row in the Cost and Usage dataset is associated with one or more unique identifiers representing those contracts and contract commitments, stored in a JSON column called Contract Applied. A richer amount of detail that describes those commitments is carried in a separate Contract Commitment dataset, which can be joined to the Cost and Usage dataset to facilitate various queries involving filtering and aggregation.
 
-The Contract Applied column contains several FOCUS-defined properties.  For more information, see the definition of Contract Applied [here](#datasets.costandusage.contractapplied).
+The Contract Applied column contains several FOCUS-defined properties. For more information, see the definition of Contract Applied [here](#datasets.costandusage.contractapplied).
 
 ## Directly Dependent Columns
 
@@ -32,7 +32,7 @@ The Contract Applied column contains several FOCUS-defined properties.  For more
 
 The FOCUS specification implements the application of contract commitments to cost and usage via the [*ContractApplied*](#datasets.costandusage.contractapplied) column, which is defined in [*JSON object format*](#attributes.jsonobjectformat).
 
-Because ANSI SQL does not inherently support the parsing of JSON, the following queries leverage the JSON functions found in BigQuery Standard SQL in order to demonstrate this feature's functionality.  Similar JSON functions are available in all major SQL engines; thus, the below examples can be slightly modified to accommodate any particular database instance.
+Because ANSI SQL does not inherently support the parsing of JSON, the following queries leverage the JSON functions found in BigQuery Standard SQL in order to demonstrate this feature's functionality. Similar JSON functions are available in all major SQL engines; thus, the below examples can be slightly modified to accommodate any particular database instance.
 
 ### Report on Initial Contract Commitment
 
@@ -78,7 +78,7 @@ ORDER BY ServiceProviderName, ContractCommitmentId
 
 ### Report on Usage Against Contract Commitment by Category
 
-This query takes inputs of a time range via ChargePeriodStart and ChargePeriodEnd, then presents the aggregation of the application of contract commitments from the CostAndUsage dataset per ServiceProviderName and ContractCommitmentID by filtering on the specified time range, along with ChargeCategory of `Usage`.  It also joins in the ContractCommitment dataset to provide further information about each contract commitment (in this case, the start and end date/time).
+This query takes inputs of a time range via ChargePeriodStart and ChargePeriodEnd, then presents the aggregation of the application of contract commitments from the CostAndUsage dataset per ServiceProviderName and ContractCommitmentID by filtering on the specified time range, along with ChargeCategory of `Usage`. It also joins in the ContractCommitment dataset to provide further information about each contract commitment (in this case, the start and end date/time).
 
 ```sql
 SELECT

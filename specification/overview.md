@@ -1,8 +1,8 @@
 # Introduction
 
-*This section is non-normative.*
+*This section is informative. It provides background context for the specification and contains no normative requirements.*
 
-FOCUS is a standards development organization (SDO) formed to establish an open, consensus-driven standard for billing data. In the absence of a broadly adopted standard, infrastructure and service [*service providers*](#glossary:service provider) have relied on proprietary billing schemas and inconsistent terminology, making cost data difficult to normalize and act upon across environments. This lack of conformance has forced FinOps [*practitioners*](#glossary:practitioner) to develop best-effort custom normalization schemes for each provider, in order to perform essential FinOps capabilities such as chargeback, cost allocation, budgeting and forecasting.
+FOCUS is a standards development organization (SDO) formed to establish an open, consensus-driven standard for billing data. In the absence of a broadly adopted standard, infrastructure and [*service providers*](#glossary:service-provider) have relied on proprietary billing schemas and inconsistent terminology, making cost data difficult to normalize and act upon across environments. This lack of conformance has forced FinOps [*practitioners*](#glossary:practitioner) to develop best-effort custom normalization schemes for each provider, in order to perform essential FinOps capabilities such as chargeback, cost allocation, budgeting and forecasting.
 
 The FOCUS Specification, developed by a global community of practitioners and vendors, defines a consistent, vendor-neutral approach to billing data. It is designed to improve interoperability between service providers, reduce operational complexity, and enable greater transparency in cloud and SaaS cost management.
 
@@ -57,7 +57,7 @@ The following principles were considered while building the specification.
 
 The FOCUS Specification is designed to support evolving FinOps needs across diverse billing models and service provider types.
 
-While the initial focus was on billing data from Cloud Service Providers (CSPs), version 1.2 introduces foundational support for Software as a Service (SaaS) platforms, including normative columns for pricing currencies, effective cost, and contracted pricing in non-monetary units such as credits or tokens.
+While the initial focus was on billing data from Cloud Service Providers (CSPs), subsequent versions introduced foundational support for Software as a Service (SaaS) and Platform as a Service (PaaS) providers, including normative columns for pricing currencies, effective cost, and contracted pricing in non-monetary units such as credits or tokens.
 
 The specification supports extensibility through structured naming conventions (e.g., x_ custom columns), conditional requirements, and a version-aware schema approach.
 
@@ -74,21 +74,21 @@ Future versions of FOCUS will consider including additional FinOps capabilities 
 ### Consistency helps with clarity
 
 * Where possible, use consistent names that will naturally create associations between related columns in the specification.
-* Column naming must strictly follow the [column handling](#attributes.columnhandling) requirements.
+* Column naming must strictly follow the [FOCUS Column Handling](#attributes.focuscolumnhandling) requirements.
 * Use established standards (e.g., ISO8601 for dates, ISO4217 for currency).
 
 ## Typographic Conventions
 
-The keywords "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this specification are to be interpreted as described in [BCP14](https://tools.ietf.org/html/bcp14) [[RFC2119](https://tools.ietf.org/html/rfc2119)][[RFC8174](https://tools.ietf.org/html/rfc8174)] when, and only when, they appear in all capitals, as shown here.
+The keywords `MUST`, `MUST NOT`, `SHOULD`, `SHOULD NOT`, and `MAY` in this specification are to be interpreted as described in [BCP14](https://tools.ietf.org/html/bcp14) [[RFC2119](https://tools.ietf.org/html/rfc2119)][[RFC8174](https://tools.ietf.org/html/rfc8174)] when, and only when, they appear in all capitals, as shown here.
 
 ## FOCUS Feature Level
 
-Under each column defined in the FOCUS specification, there exists a 'Feature level' designation that describes the column as 'Mandatory', 'Conditional', or 'Optional'. Feature level is designated based on the following criteria described in the normative requirements in each column definition:
+Under each column defined in the FOCUS specification, there exists a 'Feature level' designation that describes the column as `Mandatory`, `Conditional`, or `Optional`. Feature level is designated based on the following criteria described in the normative requirements in each column definition:
 
-* If the existence of a column is described with MUST with no conditions of when it applies, then the feature level is designated as 'Mandatory'.
-* If the existence of a column is described as MUST with conditions of when it applies, then the feature level is designated as 'Conditional'.
-* If the existence of a column is described as SHOULD, then the feature level is designated as 'Recommended'.
-* If the existence of a column is described as MAY, then the feature level is designated as 'Optional'.
+* If the existence of a column is described with `MUST` with no conditions of when it applies, then the feature level is designated as `Mandatory`.
+* If the existence of a column is described as `MUST` with conditions of when it applies, then the feature level is designated as `Conditional`.
+* If the existence of a column is described as `SHOULD`, then the feature level is designated as `Recommended`.
+* If the existence of a column is described as `MAY`, then the feature level is designated as `Optional`.
 
 ## Conformance Checkers and Validators
 

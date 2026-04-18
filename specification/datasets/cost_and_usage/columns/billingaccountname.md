@@ -4,9 +4,8 @@ A Billing Account Name is a display name assigned to a [*billing account*](#glos
 
 ## Requirements
 
-BillingAccountName adheres to the following requirements:
+BillingAccountName MUST adhere to the following requirements:
 
-* BillingAccountName MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * BillingAccountName MUST be of type String.
 * BillingAccountName MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * BillingAccountName MUST NOT be null when the invoice issuer supports assigning a display name for the *billing account*.
@@ -25,15 +24,16 @@ Billing Account Name
 
 The display name assigned to a *billing account*.
 
-## Content constraints
+## Content Constraints
 
-|    Constraint   |      Value       |
-|:----------------|:-----------------|
-| Column type     | Dimension        |
-| Feature level   | Mandatory        |
-| Allows nulls    | True             |
-| Data type       | String           |
-| Value format    | \<not specified> |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Dimension                                            |
+| Feature level   | Mandatory                                            |
+| Allows nulls    | True                                                 |
+| Data type       | String                                               |
+| Value format    | \<not specified>                                     |
 
 ## Introduced (version)
 

@@ -1,8 +1,14 @@
 # Null Handling
 
-Cost data [*rows*](#glossary:row) that don't have a value that can be presented for a column must be handled in a consistent way to reduce friction for FinOps practitioners who consume the data for analysis, reporting, and other use cases.
+[*FOCUS dataset*](#glossary:FOCUS-dataset) records that don't have a value that can be presented for a column must be handled in a consistent way to reduce friction for FinOps practitioners who consume the data for analysis, reporting, and other use cases.
 
-All columns defined in the FOCUS specification MUST follow the null handling requirements listed below. Custom columns SHOULD also follow the same formatting requirements.
+## Requirements
+
+Column conforming to NullHandling attribute MUST adhere to the following requirements:
+
+* [*FOCUS dataset column*](#glossary:FOCUS-dataset-column) MUST use `null` for absent values when the *FOCUS dataset column* is defined as nullable.
+* *FOCUS dataset column* MUST NOT contain empty strings or placeholder strings (e.g., `Not Applicable`) for absent values when the *FOCUS dataset column* contains string values.
+* *FOCUS dataset column* MUST NOT contain placeholder numeric values (e.g., `0`) for absent values when the *FOCUS dataset column* contains numeric values.
 
 ## Attribute ID
 
@@ -15,15 +21,6 @@ Null Handling
 ## Description
 
 Indicates how to handle columns that don't have a value.
-
-## Requirements
-
-* Columns MUST use NULL when there isn't a value that can be specified for a nullable column.
-* Columns MUST NOT use empty strings or placeholder values such as 0 for numeric columns or "Not Applicable" for string columns to represent a null or not having a value, regardless of whether the column allows nulls or not.
-
-## Exceptions
-
-None
 
 ## Introduced (version)
 

@@ -1,16 +1,15 @@
 # Contract ID
 
-Contract ID is a service-provider-assigned identifier for a contract describing the agreed terms between a service provider and a customer.  Contracts can include commitment to a certain amount of spend or usage over an agreed period of time.
+Contract ID is a service-provider-assigned identifier for a contract describing the agreed terms between a service provider and a customer. Contracts can include commitment to a certain amount of spend or usage over an agreed period of time.
 
 ## Requirements
 
-ContractId adheres to the following requirements:
+ContractId MUST adhere to the following requirements:
 
-* ContractId MUST be present in a Contract Commitment [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ContractId MUST be of type String.
 * ContractId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * ContractId MUST NOT be null.
-* When ContractId is not null, ContractId adheres to the following additional requirements:
+* When ContractId is not null, ContractId MUST adhere to the following requirements:
   * ContractId MUST be a unique identifier within the service provider.
   * ContractId SHOULD be a fully-qualified identifier.
 
@@ -26,15 +25,16 @@ Contract ID
 
 A service-provider-assigned identifier for a contract describing the agreed terms between a service provider and a customer.
 
-## Content constraints
+## Content Constraints
 
-|    Constraint   |      Value       |
-|:----------------|:-----------------|
-| Column type     | Dimension        |
-| Feature level   | Mandatory        |
-| Allows nulls    | True             |
-| Data type       | String           |
-| Value format    | \<not specified> |
+| Constraint      | Value                                                |
+|:----------------|:-----------------------------------------------------|
+| Dataset         | [Contract Commitment](#datasets.contractcommitment)  |
+| Column type     | Dimension                                            |
+| Feature level   | Mandatory                                            |
+| Allows nulls    | False                                                |
+| Data type       | String                                               |
+| Value format    | \<not specified>                                     |
 
 ## Introduced (version)
 

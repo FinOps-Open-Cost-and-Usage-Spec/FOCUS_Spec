@@ -34,8 +34,8 @@ This stage focuses on interpreting the `Requirement` field of each **RuleId** to
 
 These three stages form the foundation of the modeling workflow. Once complete, additional outputs will be generated from the JSON representations, including:
 
-- A standardized Markdown table of normative requirements for each column
-- A visual **DAG** _(Directed Acyclic Graph)_ diagram that maps ModelId dependencies
+* A standardized Markdown table of normative requirements for each column
+* A visual **DAG** _(Directed Acyclic Graph)_ diagram that maps ModelId dependencies
 
 This process enables reliable validation, clearer documentation, and easier integration with tooling.
 
@@ -47,11 +47,11 @@ This repository contains modular model components and a Python-based build proce
 
 The model format is designed to help specification authors:
 
-- Clearly define mandatory and optional requirements
-- Manage dependencies between conditions and validations
-- Maintain backward compatibility across versions
-- Support documentation generation and validation tooling
-- Enable automated testing of data generator datasets against the FOCUS specification
+* Clearly define mandatory and optional requirements
+* Manage dependencies between conditions and validations
+* Maintain backward compatibility across versions
+* Support documentation generation and validation tooling
+* Enable automated testing of data generator datasets against the FOCUS specification
 
 ---
 
@@ -61,7 +61,7 @@ The model format is designed to help specification authors:
 |----------------|------------|-------|
 | **Mandatory (M)** | Required for interoperability and conformance | MUST be implemented |
 | **Optional (O)** | Enhances functionality | MAY be implemented |
-| **Conditional (C)** | Required only if certain conditions are met (e.g. implementation choices, external dependencies, regulations) | MAY unless the condition is met — then MUST |
+| **Conditional (C)** | Required only if certain conditions are met (e.g., implementation choices, external dependencies, regulations) | MAY unless the condition is met — then MUST |
 
 ---
 
@@ -69,13 +69,13 @@ The model format is designed to help specification authors:
 
 In FOCUS, artifacts refer to either **columns** or **attributes**:
 
-- **Column** — Structural data elements in the FOCUS schema  
+* **Column** — Structural data elements in the FOCUS schema  
   _e.g._: `ListUnitPrice-C-001-M`
-- **Attribute** — Semantic labels or metadata affecting formatting, interpretation, or contract-based logic  
+* **Attribute** — Semantic labels or metadata affecting formatting, interpretation, or contract-based logic  
   _e.g._: `DateTimeFormat-A-001-M`
-- **Dataset** - Requirement affecting the dataset as a whole.
+* **Dataset** - Requirement affecting the dataset as a whole.
   _e.g._: `BilledCost-D-001-M`
-- **Other** - There is a possibility we may define other entities such as e.g. `Provider`
+* **Other** - There is a possibility we may define other entities (e.g., `Provider`)
 
 ---
 
@@ -90,13 +90,13 @@ In FOCUS, artifacts refer to either **columns** or **attributes**:
 
 **Usage Examples:**
 
-- `ListUnitPrice:MCF` → All mandatory column features for `ListUnitPrice`
-- `FOCUS:MCF` → All mandatory column features across the entire specification
+* `ListUnitPrice:MCF` → All mandatory column features for `ListUnitPrice`
+* `FOCUS:MCF` → All mandatory column features across the entire specification
 
 ### Group Reference Formats
 
-- `ArtifactName:FeatureType` — e.g. `ListUnitPrice:MCF`
-- `FOCUS:FeatureType` — e.g. `FOCUS:OCF`
+* `ArtifactName:FeatureType` — e.g., `ListUnitPrice:MCF`
+* `FOCUS:FeatureType` — e.g., `FOCUS:OCF`
 
 ---
 
@@ -112,9 +112,9 @@ In FOCUS, artifacts refer to either **columns** or **attributes**:
 
 | Segment         | Meaning                                      |
 |-----------------|----------------------------------------------|
-| `ArtifactName`  | ColumnID (e.g. ListUnitPrice)                |
+| `ArtifactName`  | ColumnID (e.g., ListUnitPrice)                |
 | `ArtifactType`  | `C` (Column), `A` (Attribute), `D` (Dataset) |
-| `NumericId`     | Sequence ID (e.g. 001)                       |
+| `NumericId`     | Sequence ID (e.g., 001)                       |
 | `ArtifactStatus`| `M`, `O`, or `C`                             |
 
 ---
@@ -147,8 +147,8 @@ minor          = 2*DIGIT / 1*DIGIT
 bugfix-num     = 1*DIGIT
 ```
 
-- major and minor represent the FOCUS Specification version (e.g., 1.2, 1.13, 2.01)
-- An optional -Bugfix# suffix identifies a correction to the original model version
+* major and minor represent the FOCUS Specification version (e.g., 1.2, 1.13, 2.01)
+* An optional -Bugfix# suffix identifies a correction to the original model version
 
 Example:
 If the model originally aligned with FOCUS Specification version `1.2`, but a correction is later made, the updated model version would be `1.2-Bugfix1`, a further correction would end up being `1.2-Bugfix2`
@@ -159,23 +159,27 @@ This approach ensures clear linkage to the original specification version while 
 
 ### 🔄 Input Files
 
-- `model_details.json`: Metadata like versioning
-- `applicability_criteria.json`: Feature flags controlling rule application
-- `check_functions.json`: Logical validation functions and their arguments
-- `model_datasets.json`: Maps datasets (e.g. FOCUS) to rule sets
-- `model_rules/`: JSON files defining multiple `ModelRules`
+* `model_details.json`: Metadata like versioning
+* `applicability_criteria.json`: Feature flags controlling rule application
+* `check_functions.json`: Logical validation functions and their arguments
+* `model_datasets.json`: Maps datasets (e.g., FOCUS) to rule sets
+* `model_rules/`: JSON files defining multiple `ModelRules`
 
 ### 📤 Output
 
-- `model-<version>.json`: Final merged and validated JSON document
+* `model-<version>.json`: Final merged and validated JSON document
 
 ### 📏 Schema
 
-- `model_schema.json`: JSON Schema (Draft 7) for validating `model-<version>.json`
+* `model_schema.json`: JSON Schema (Draft 7) for validating `model-<version>.json`
 
 ### 🛠 Build Script
 
-- `build_model_json.py`: Python script that builds and validates the final model file
+* `build_model_json.py`: Python script that builds and validates the final model file
+
+### 📋 Helper Scripts
+
+* `output_normative_text_from_model.py`: Utility script for extracting and formatting normative requirements from the model
 
 ---
 
@@ -195,9 +199,9 @@ python build_model_json.py
 
 This will:
 
-- Merge all input files into `model_json.json`
-- Validate the result against `model_schema.json`
-- Print success or detailed validation errors
+* Merge all input files into `model_json.json`
+* Validate the result against `model_schema.json`
+* Print success or detailed validation errors
 
 ### 3. Output Example
 
@@ -216,13 +220,73 @@ Or on error:
 
 ---
 
+## 📋 Normative Text Extraction
+
+The `output_normative_text_from_model.py` script extracts human-readable normative requirements from the compiled model file and formats them for documentation or review purposes.
+
+### Usage
+
+```bash
+# Print all normative text to console
+python output_normative_text_from_model.py
+
+# Save all normative text to a file
+python output_normative_text_from_model.py --filename requirements_output.md
+
+# Show only requirements for a specific reference entity
+python output_normative_text_from_model.py --reference "BilledCost"
+
+# Show requirements without Rule Model IDs (clean format)
+python output_normative_text_from_model.py --exclude-rmids
+
+# Combine options: specific reference, clean format, save to file
+python output_normative_text_from_model.py --reference "BilledCost" --exclude-rmids --filename billedcost_requirements.md
+```
+
+### Options
+
+| Option | Description |
+|--------|-------------|
+| `--filename <file>` | Save output to specified filename instead of printing to console |
+| `--reference <name>` | Only display normative text for the specified reference entity |
+| `--exclude-rmids` | Exclude Rule Model IDs from output (show only MustSatisfy text) |
+
+### Output Format
+
+The script organizes requirements by Reference entity and applies proper ordering based on:
+
+1. Composite rules (-000-) first
+2. Dataset rules, ordered by numeric ID and Order field
+3. Other rules (e.g., Column), ordered by numeric ID and Order field
+
+Example output:
+
+```markdown
+# BilledCost
+
+CAU-BilledCost-D-000-M – BilledCost adheres to the following requirements:
+CAU-BilledCost-D-001-M – MUST be present in a Cost and Usage FOCUS dataset
+CAU-BilledCost-C-000-M – BilledCost adheres to the following requirements:
+CAU-BilledCost-C-001-M – MUST be present in a Cost and Usage FOCUS dataset
+CAU-BilledCost-C-002-M – MUST be of type Decimal
+```
+
+This tool is particularly useful for:
+
+* Generating documentation from the model
+* Reviewing normative text for specific entities
+* Creating clean, human-readable requirement lists
+* Extracting requirements for specification comparison
+
+---
+
 ## 📘  Model Rule  Format
 
 Each JSON file in `model_rules/` contains one or more rules structured as:
 
 ```json
 {
-  "ListUnitPrice-C-001-C": {
+  "CAU-ListUnitPrice-C-001-C": {
     "Function": "Validation",
     "Reference": "SampleColumn",
     "EntityType": "Column",
@@ -252,6 +316,6 @@ Each JSON file in `model_rules/` contains one or more rules structured as:
 
 The schema enforces:
 
-- Required keys like `Details`, `ApplicabilityCriteria`, `CheckFunction`, etc.
-- Proper data types (e.g., arrays, strings, objects)
-- Structured `ValidationCriteria` for consistent rule logic
+* Required keys like `Details`, `ApplicabilityCriteria`, `CheckFunction`, etc.
+* Proper data types (e.g., arrays, strings, objects)
+* Structured `ValidationCriteria` for consistent rule logic

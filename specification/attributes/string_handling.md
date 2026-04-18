@@ -2,7 +2,21 @@
 
 Columns that capture string values conforming to specified requirements foster data integrity, interoperability, and consistency, improve data analysis and reporting, and support reliable data-driven decision-making.
 
-All columns capturing a string value, defined in the FOCUS specification, MUST follow the requirements listed below. Custom string value capturing columns SHOULD adopt the same requirements over time.
+## Requirements
+
+Column conforming to StringHandling attribute MUST adhere to the following requirements:
+
+* [*FOCUS dataset column*](#glossary:FOCUS-dataset-column) MUST preserve the original casing of string values.
+* *FOCUS dataset column* MUST preserve the original spacing of string values.
+* *FOCUS dataset column* MUST preserve other relevant consistency factors as specified by the data generator or end-user.
+* *FOCUS dataset column* MUST remain consistent across all [*billing periods*](#glossary:billing-period) when the *FOCUS dataset column* contains immutable string values (e.g., resource identifier, region identifier).
+* When *FOCUS dataset column* contains mutable string values (e.g., resource name, region name), it MUST adhere to the following requirements:
+  * *FOCUS dataset column* MUST reflect the altered value in all records pertaining to a period after the change.
+  * *FOCUS dataset column* MUST reflect the string value as it existed prior to the change in all records pertaining to a period prior to the change when the record does not represent a correction to a previously closed billing period.
+  * *FOCUS dataset column* MAY reflect the altered value in records pertaining to a period prior to the change when the record represents a correction to a previously closed billing period.
+* When *FOCUS dataset column* contains not-nullable string values, it MUST adhere to the following requirements:
+  * *FOCUS dataset column* SHOULD NOT contain empty strings.
+  * *FOCUS dataset column* SHOULD NOT contain strings consisting solely of whitespace characters.
 
 ## Attribute ID
 
@@ -15,17 +29,6 @@ String Handling
 ## Description
 
 Requirements for string-capturing columns appearing in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
-
-## Requirements
-
-* String values MUST maintain the original casing, spacing, and other relevant consistency factors as specified by data generators and end-users.
-* [*Charges*](#glossary:charge) to mutable entities (e.g., resource names) MUST be accurately reflected in corresponding *charges* incurred after the change and MUST NOT alter *charges* incurred before the change, preserving data integrity and auditability for all *charge* records.
-* Immutable string values that refer to the same entity (e.g., resource identifiers, region identifiers, etc.) MUST remain consistent and unchanged across all [*billing periods*](#glossary:billing-period).
-* Empty strings and strings consisting solely of spaces SHOULD NOT be used in not-nullable string columns.
-
-## Exceptions
-
-* When a record is provided after a change to a mutable string value and the [ChargeClass](#datasets.costandusage.chargeclass) is "Correction", the record MAY contain the altered value.
 
 ## Introduced (version)
 

@@ -4,9 +4,8 @@ Charge Period End represents the [*exclusive end bound*](#glossary:exclusiveendb
 
 ## Requirements
 
-ChargePeriodEnd adheres to the following requirements:
+ChargePeriodEnd MUST adhere to the following requirements:
 
-* ChargePeriodEnd MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ChargePeriodEnd MUST be of type Date/Time.
 * ChargePeriodEnd MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.
 * ChargePeriodEnd MUST NOT be null.
@@ -24,15 +23,16 @@ Charge Period End
 
 The *exclusive end bound* of a *charge period*.
 
-## Content constraints
+## Content Constraints
 
-| Constraint      | Value                                |
-|:----------------|:-------------------------------------|
-| Column type     | Dimension                            |
-| Feature level   | Mandatory                            |
-| Allows nulls    | False                                |
-| Data type       | Date/Time                            |
-| Value format    | [Date/Time Format](#attributes.date/timeformat) |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Dimension                                            |
+| Feature level   | Mandatory                                            |
+| Allows nulls    | False                                                |
+| Data type       | Date/Time                                            |
+| Value format    | [Date/Time Format](#attributes.date/timeformat)       |
 
 ## Introduced (version)
 
