@@ -100,10 +100,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 #### New appendix entries
 
+* [Discount Handling](/specification/appendix/discount_handling.md)
 * [Examples: Contract Commitments](/specification/appendix/contract_commitments/contract_commitments.md)
-* [Examples: JSON Object](/specification/appendix/json_object_examples/json_object_examples_overview.md)
-  * [Examples: Contract Commitment Applicability](/specification/appendix/json_object_examples/contract_commitment_applicability_examples.md)
 * [Examples: Invoice Detail](/specification/appendix/invoice_detail/invoice_detail.md)
+* [Examples: JSON Object](/specification/appendix/json_object_examples/json_object_examples_overview.md)
+* [Invoice and Billing Period Handling](/specification/appendix/invoice_and_billing_period_handling.md)
+* [Rounding Variance Tolerance](/specification/appendix/rounding_variance_tolerance.md)
 
 #### New guidelines
 
