@@ -16,7 +16,7 @@ DataType
 
 Data Type
 
-## Content constraints
+## Content Constraints
 
 | Constraint      | Value            |
 |:----------------|:-----------------|

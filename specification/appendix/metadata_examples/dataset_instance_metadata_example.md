@@ -2,7 +2,7 @@
 
 ## Scenario
 
-ACME provides three dataset instances: "Cost and Usage Daily," "Cost and Usage Hourly," and "Contract Commitments," corresponding to the FOCUS datasets Cost and Usage and Contract Commitment. ACME also provides a metadata directory containing a single file with metadata for each dataset instance.
+CrestNode provides three dataset instances: "Cost and Usage Daily," "Cost and Usage Hourly," and "Contract Commitments," corresponding to the FOCUS datasets Cost and Usage and Contract Commitment. CrestNode also provides a metadata directory containing a single file with metadata for each dataset instance.
 
 ## Supplied Metadata
 

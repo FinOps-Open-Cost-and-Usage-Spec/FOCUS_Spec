@@ -42,7 +42,7 @@ Invoice Detail Grain
 
 The set of key-value pairs that defines the granularity of the invoice line item.
 
-## Content constraints
+## Content Constraints
 
 |    Constraint    |              Value             |
 |:----------------|:--------------------------------|

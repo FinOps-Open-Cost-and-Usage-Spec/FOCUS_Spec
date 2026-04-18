@@ -23,7 +23,7 @@ Purchase Order Number
 
 The unique customer-issued identifier for tracking the lifecycle of a purchase.
 
-## Content constraints
+## Content Constraints
 
 |    Constraint    |              Value             |
 |:----------------|:--------------------------------|

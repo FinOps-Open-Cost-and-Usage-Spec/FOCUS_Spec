@@ -23,7 +23,7 @@ Payment Terms
 
 The terms (typically focused on timeframe) by which the [*invoice issuer*](#glossary:invoice issuer) expects to receive payment for an invoice.
 
-## Content constraints
+## Content Constraints
 
 |    Constraint   |              Value              |
 |:----------------|:--------------------------------|

@@ -24,7 +24,7 @@ Invoice ID
 
 The invoice-issuer-assigned identifier for an invoice encapsulating *charges* in the corresponding billing period for a given billing account.
 
-## Content constraints
+## Content Constraints
 
 |    Constraint   |      Value       |
 |:----------------|:-----------------|

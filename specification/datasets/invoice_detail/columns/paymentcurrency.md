@@ -1,6 +1,6 @@
 # Payment Currency
 
-Payment Currency represents the currency in which the [*invoice issuer*](#glossary:invoice issuer) requires settlement.  This is the currency of the financial obligation created by the invoice, which may differ from the [Billing Currency](#datasets.costandusage.billingcurrency) and/or the source currency of the payer's funds or bank account.  Payment Currency allows FinOps practitioners to track settlement obligations and foreign exchange impacts.
+Payment Currency represents the currency in which the [*invoice issuer*](#glossary:invoice issuer) requires settlement. This is the currency of the financial obligation created by the invoice, which may differ from the [Billing Currency](#datasets.costandusage.billingcurrency) and/or the source currency of the payer's funds or bank account. Payment Currency allows FinOps practitioners to track settlement obligations and foreign exchange impacts.
 
 ## Requirements
 
@@ -24,7 +24,7 @@ Payment Currency
 
 The currency in which the invoice is paid.
 
-## Content constraints
+## Content Constraints
 
 |    Constraint    |              Value             |
 |:----------------|:--------------------------------|

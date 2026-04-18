@@ -23,7 +23,7 @@ Invoice Issue Date
 
 The date the invoice was issued by the [*invoice issuer*](#glossary:invoice issuer).
 
-## Content constraints
+## Content Constraints
 
 |    Constraint    |              Value             |
 |:----------------|:--------------------------------|

@@ -23,7 +23,7 @@ Contract Commitment Created
 
 The timestamp when the contract commitment record was first created.
 
-## Content constraints
+## Content Constraints
 
 |    Constraint   |              Value              |
 |:----------------|:--------------------------------|

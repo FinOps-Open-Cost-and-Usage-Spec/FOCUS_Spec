@@ -25,7 +25,7 @@ Allocated Method ID
 
 A unique identifier defining the method of data generator-calculated split cost allocation.
 
-## Content constraints
+## Content Constraints
 
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
