@@ -46,11 +46,12 @@ Thanks to the following FOCUS members for their contributions to the FOCUS Relea
 
 ## Steering Committee Members
 
-Thanks to the following FOCUS Steering Committee members for their leadership on the FOCUS **v1.4** specification.
+Thanks to the following FOCUS Steering Committee members for their leadership on the FOCUS Release **v1.4** specification.
 
 * Ben Olson (Adobe)
 * Casey Doran (IBM Cloudability)
-* Christopher Harris (Datadog)
+* Christopher Harris (Datadog) (term ended 2026/03/30)
+* Deeja Cruz (Datadog)
 * Jerzy Grzywinski (Capital One) (term ended 2026/03/03)
 * John Ely (Capital One)
 * Letian Feng (Amazon Web Services)
