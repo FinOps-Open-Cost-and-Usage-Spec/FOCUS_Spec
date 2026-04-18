@@ -132,8 +132,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 #### Changed columns
 
 * [`CostAndUsage`](/specification/datasets/cost_and_usage/dataset.md)
-  * [`InvoiceId`](/specification/datasets/cost_and_usage/columns/invoiceid.md): Changed Feature Level from Recommended to Mandatory.
+  * [`BilledCost`](/specification/datasets/cost_and_usage/columns/billedcost.md): Expanded requirements to clarify handling of pricing adjustments, *covered charges*, non-invoicing entities, and introduced a Rounding Variance Tolerance for invoice matching.
   * [`ContractApplied`](/specification/datasets/cost_and_usage/columns/contractapplied.md): Revised format to follow new JSON Object Schema format.
+  * [`EffectiveCost`](/specification/datasets/cost_and_usage/columns/effectivecost.md): Heavily revised requirements to detail its exact relationship with `BilledCost` across various charge categories, including strict rules for amortizing *covering charges* and cross-record sum validations.
+  * [`InvoiceId`](/specification/datasets/cost_and_usage/columns/invoiceid.md): Changed Feature Level from Recommended to Mandatory.
 
 #### Changed attributes
 
