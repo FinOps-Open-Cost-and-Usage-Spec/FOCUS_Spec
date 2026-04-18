@@ -24,7 +24,7 @@ Billing Period Last Updated
 
 The timestamp when the Billing Period record was last updated.
 
-## Content constraints
+## Content Constraints
 
 |    Constraint    |              Value             |
 |:----------------|:--------------------------------|

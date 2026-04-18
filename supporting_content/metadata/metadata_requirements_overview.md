@@ -2,39 +2,39 @@
 
 ## Metadata structure overview
 
-- Metadata - **object**
-  - DataGenerator - **object**
-    - DataGenerator - *property*
-  - DatasetInstance - **collection of objects**
-    - FocusDatasetId - *property*
-    - DatasetInstanceId - *property*
-    - DatasetInstanceName - *property*
-  - Schema - **collection of objects**
-    - SchemaId - *property*
-    - CreationDate - *property*
-    - FocusVersion - *property*
-    - DataGeneratorVersion - *property*
-    - DatasetInstanceId - *property*
-    - ColumnDefinition - **collection of objects**
-      - ColumnName - *property*
-      - DataType - *property*
-      - Deprecated - *property*
-      - NumericPrecision - *property*
-      - NumberScale - *property*
-      - PreviousColumnName - *property*
-      - ProviderTagPrefixes - *property*
-      - StringEncoding - *property*
-      - StringMaxLength - *property*
-  - Recency - **collection of objects**
-    - DatasetInstanceId - *property*
-    - DatasetInstanceComplete - *property*
-    - DatasetInstanceLastUpdated - *property*
-    - RecencyLastUpdated - *property*
-    - TimeSectors - **collection of objects**
-      - TimeSectorComplete - *property*
-      - TimeSectorLast Updated - *property*
-      - TimeSectorStart - *property*
-      - TimeSectorEnd - *property*
+* Metadata - **object**
+  * DataGenerator - **object**
+    * DataGenerator - *property*
+  * DatasetInstance - **collection of objects**
+    * FocusDatasetId - *property*
+    * DatasetInstanceId - *property*
+    * DatasetInstanceName - *property*
+  * Schema - **collection of objects**
+    * SchemaId - *property*
+    * CreationDate - *property*
+    * FocusVersion - *property*
+    * DataGeneratorVersion - *property*
+    * DatasetInstanceId - *property*
+    * ColumnDefinition - **collection of objects**
+      * ColumnName - *property*
+      * DataType - *property*
+      * Deprecated - *property*
+      * NumericPrecision - *property*
+      * NumberScale - *property*
+      * PreviousColumnName - *property*
+      * ProviderTagPrefixes - *property*
+      * StringEncoding - *property*
+      * StringMaxLength - *property*
+  * Recency - **collection of objects**
+    * DatasetInstanceId - *property*
+    * DatasetInstanceComplete - *property*
+    * DatasetInstanceLastUpdated - *property*
+    * RecencyLastUpdated - *property*
+    * TimeSectors - **collection of objects**
+      * TimeSectorComplete - *property*
+      * TimeSectorLast Updated - *property*
+      * TimeSectorStart - *property*
+      * TimeSectorEnd - *property*
 
 ## Metadata
 

@@ -41,21 +41,21 @@
 
 **Supporting rationale:**
 
-- Point 1 with data/precedent
-- Point 2 with data/precedent
-- Point 3 with data/precedent
+* Point 1 with data/precedent
+* Point 2 with data/precedent
+* Point 3 with data/precedent
 
 **Risks if Position B adopted:**
 
-- Risk 1
-- Risk 2
+* Risk 1
+* Risk 2
 
 **Implementation cost/complexity:** [Low/Medium/High + 1 sentence why]
 
 **Affected stakeholders:**
 
-- [Stakeholder group 1 and how they're impacted]
-- [Stakeholder group 2 and how they're impacted]
+* [Stakeholder group 1 and how they're impacted]
+* [Stakeholder group 2 and how they're impacted]
 
 ---
 
@@ -68,21 +68,21 @@
 
 **Supporting rationale:**
 
-- Point 1 with data/precedent
-- Point 2 with data/precedent
-- Point 3 with data/precedent
+* Point 1 with data/precedent
+* Point 2 with data/precedent
+* Point 3 with data/precedent
 
 **Risks if Position A adopted:**
 
-- Risk 1
-- Risk 2
+* Risk 1
+* Risk 2
 
 **Implementation cost/complexity:** [Low/Medium/High + 1 sentence why]
 
 **Affected stakeholders:**
 
-- [Stakeholder group 1 and how they're impacted]
-- [Stakeholder group 2 and how they're impacted]
+* [Stakeholder group 1 and how they're impacted]
+* [Stakeholder group 2 and how they're impacted]
 
 ---
 
@@ -92,12 +92,12 @@ What FOCUS design principles and design notes should guide this decision?
 
 [List 3-5 criteria that matter for this specific decision. Reference specific principles such as:]
 
-- Iterative, living specification (Section 1.4.1)
-- Working backward with ease of adoption (Section 1.4.2)
-- Provider-neutral approach (Section 1.4.3)
-- Extensibility (Section 1.4.4)
-- Optimize for data analysis (Section 1.5.1)
-- Consistency helps with clarity (Section 1.5.2)
+* Iterative, living specification (Section 1.4.1)
+* Working backward with ease of adoption (Section 1.4.2)
+* Provider-neutral approach (Section 1.4.3)
+* Extensibility (Section 1.4.4)
+* Optimize for data analysis (Section 1.5.1)
+* Consistency helps with clarity (Section 1.5.2)
 
 ---
 
@@ -145,25 +145,25 @@ Before circulating this brief, confirm:
 
 ### Framing
 
-- [ ] Topic stated as a decision, not a complaint
-- [ ] Context explains impact on FOCUS adoption or practitioner outcomes
-- [ ] Both positions presented with equal rigor
-- [ ] No strawman arguments (each side's strongest case represented)
+* [ ] Topic stated as a decision, not a complaint
+* [ ] Context explains impact on FOCUS adoption or practitioner outcomes
+* [ ] Both positions presented with equal rigor
+* [ ] No strawman arguments (each side's strongest case represented)
 
 ### Evidence
 
-- [ ] Claims cite provider data, practitioner feedback, or spec precedent
-- [ ] Implementation costs estimated (even roughly)
-- [ ] Risks are specific and measurable
+* [ ] Claims cite provider data, practitioner feedback, or spec precedent
+* [ ] Implementation costs estimated (even roughly)
+* [ ] Risks are specific and measurable
 
 ### Completeness
 
-- [ ] Evaluation criteria tied to FOCUS charter/principles
-- [ ] Recommendation includes which stakeholders lose and why it's acceptable
-- [ ] Alternative compromises considered (if applicable)
+* [ ] Evaluation criteria tied to FOCUS charter/principles
+* [ ] Recommendation includes which stakeholders lose and why it's acceptable
+* [ ] Alternative compromises considered (if applicable)
 
 ### Readability
 
-- [ ] Fits on 1-2 pages
-- [ ] Jargon defined or linked
-- [ ] Written in active voice
+* [ ] Fits on 1-2 pages
+* [ ] Jargon defined or linked
+* [ ] Written in active voice

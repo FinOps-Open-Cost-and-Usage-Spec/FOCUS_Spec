@@ -27,7 +27,7 @@ Capacity Reservation Status
 
 Indicates whether the *charge* represents either the consumption of a *capacity reservation* or when a *capacity reservation* is unused.
 
-## Content constraints
+## Content Constraints
 
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
@@ -42,8 +42,8 @@ Allowed values:
 
 | Value  | Description                                                                 |
 | :----- | :-------------------------------------------------------------------------- |
-| Used   | *Charges* that utilized a specific amount of a *capacity reservation*.      |
-| Unused | *Charges* that represent the unused portion of a *capacity reservation*.    |
+| Used   | *Charges* that utilized a specific amount of a *capacity reservation*. |
+| Unused | *Charges* that represent the unused portion of a *capacity reservation*. |
 
 ## Introduced (version)
 

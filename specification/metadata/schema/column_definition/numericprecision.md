@@ -16,7 +16,7 @@ NumericPrecision
 
 Numeric Precision
 
-## Content constraints
+## Content Constraints
 
 | Constraint    | Value                            |
 |:--------------|:---------------------------------|
