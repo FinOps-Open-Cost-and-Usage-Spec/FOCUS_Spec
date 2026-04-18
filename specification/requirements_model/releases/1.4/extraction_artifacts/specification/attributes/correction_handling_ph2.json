@@ -21,11 +21,11 @@
   },
   "0_outline_root": "ROOT: Correction Handling > Requirements",
   "0_outline_lines": [
-    "L069: \"CorrectionHandling MUST adhere to the following requirements:\"",
-    "  L071: \"*FOCUS dataset* MUST have its styles for representing corrections in *dataset artifacts* documented and accessible to practitioners (including whether Replacement, Delta, or Ledger style is used and under which conditions each style applies).\"",
-    "  L072: \"*FOCUS dataset* MUST represent a complete snapshot of data for the affected [*delivery scope*](#glossary:delivery-scope) when using [Replacement correction style](#attributes.correctionhandling.overview.correctionstyles.replacementcorrections).\"",
-    "  L073: \"*FOCUS dataset* MUST include additive records representing corrections within the same *delivery scope* when using [Delta correction style](#attributes.correctionhandling.overview.correctionstyles.deltacorrections).\"",
-    "  L074: \"*FOCUS dataset* MUST include explicit reversal and re-entry additive records representing corrections within the same *delivery scope* when using [Ledger correction style](#attributes.correctionhandling.overview.correctionstyles.ledgercorrections).\""
+    "L057: \"CorrectionHandling MUST adhere to the following requirements:\"",
+    "  L059: \"*FOCUS dataset* MUST have its styles for representing corrections in *dataset artifacts* documented and accessible to practitioners (including whether Replacement, Delta, or Ledger style is used and under which conditions each style applies).\"",
+    "  L060: \"*FOCUS dataset* MUST represent a complete snapshot of data for the affected [*delivery scope*](#glossary:delivery-scope) when using [Replacement correction style](#attributes.correctionhandling.overview.correctionstyles.replacementcorrections).\"",
+    "  L061: \"*FOCUS dataset* MUST include additive records representing corrections within the same *delivery scope* when using [Delta correction style](#attributes.correctionhandling.overview.correctionstyles.deltacorrections).\"",
+    "  L062: \"*FOCUS dataset* MUST include explicit reversal and re-entry additive records representing corrections within the same *delivery scope* when using [Ledger correction style](#attributes.correctionhandling.overview.correctionstyles.ledgercorrections).\""
   ],
   "0_outline_summary": {
     "node_count": 5,
@@ -39,7 +39,7 @@
     },
     "lead_ins": [
       {
-        "ref": "L069",
+        "ref": "L057",
         "text_preview": "CorrectionHandling MUST adhere to the following requirements:",
         "children": 4
       }
@@ -56,7 +56,7 @@
           "atom": {
             "temp_id": "R001",
             "order": 1,
-            "ref": "L069",
+            "ref": "L057",
             "text": "CorrectionHandling MUST adhere to the following requirements:",
             "keyword": "MUST",
             "section_path": [
@@ -79,7 +79,7 @@
               "atom": {
                 "temp_id": "R002",
                 "order": 2,
-                "ref": "L071",
+                "ref": "L059",
                 "text": "*FOCUS dataset* MUST have its styles for representing corrections in *dataset artifacts* documented and accessible to practitioners (including whether Replacement, Delta, or Ledger style is used and under which conditions each style applies).",
                 "keyword": "MUST",
                 "section_path": [
@@ -103,7 +103,7 @@
               "atom": {
                 "temp_id": "R003",
                 "order": 3,
-                "ref": "L072",
+                "ref": "L060",
                 "text": "*FOCUS dataset* MUST represent a complete snapshot of data for the affected [*delivery scope*](#glossary:delivery-scope) when using [Replacement correction style](#attributes.correctionhandling.overview.correctionstyles.replacementcorrections).",
                 "keyword": "MUST",
                 "section_path": [
@@ -127,7 +127,7 @@
               "atom": {
                 "temp_id": "R004",
                 "order": 4,
-                "ref": "L073",
+                "ref": "L061",
                 "text": "*FOCUS dataset* MUST include additive records representing corrections within the same *delivery scope* when using [Delta correction style](#attributes.correctionhandling.overview.correctionstyles.deltacorrections).",
                 "keyword": "MUST",
                 "section_path": [
@@ -151,7 +151,7 @@
               "atom": {
                 "temp_id": "R005",
                 "order": 5,
-                "ref": "L074",
+                "ref": "L062",
                 "text": "*FOCUS dataset* MUST include explicit reversal and re-entry additive records representing corrections within the same *delivery scope* when using [Ledger correction style](#attributes.correctionhandling.overview.correctionstyles.ledgercorrections).",
                 "keyword": "MUST",
                 "section_path": [
