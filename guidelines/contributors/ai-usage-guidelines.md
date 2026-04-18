@@ -11,8 +11,8 @@ The use of AI in specification development is still evolving, and this is theref
 
 AI tools (e.g., GitHub Copilot, Claude Code, Cursor, and similar coding assistants) are typically used in two modes:
 
-- **Interactive**: A human contributor works with AI assistance in real-time. The human reviews, edits, and submits the contribution.
-- **Autonomous**: A human requests AI to work independently. The AI creates a PR, comments, or suggestions and assigns them to the human for review. The PR serves as the human review checkpoint.
+* **Interactive**: A human contributor works with AI assistance in real-time. The human reviews, edits, and submits the contribution.
+* **Autonomous**: A human requests AI to work independently. The AI creates a PR, comments, or suggestions and assigns them to the human for review. The PR serves as the human review checkpoint.
 
 ## Contribution Requirements
 
@@ -34,8 +34,19 @@ AI-assisted contributions follow the same review process as human-authored contr
 2. **Technical Validation**: The relevant Task Force MUST review the contribution for technical accuracy and schema compliance.
 3. **Strategic Alignment**: WG Members MUST review the contribution to ensure it aligns with broader community goals and the FOCUS roadmap.
 4. **Standard Approval**: All contributions MUST follow the established workflow per [Development Processes](development-processes.md).
+5. **Acceptance of Suggestions**: If the author chooses to apply the suggestion via a separate commit through the use of an AI assistant, the author MUST manually record the commenter's co-authorship in the commit message using standard `Co-authored-by:` trailers.
 
 AI-generated content does not bypass any approval workflow or receive different treatment during review.
+
+### Generation of Specification Examples
+
+AI tools frequently generate plausible but incorrect data, mathematical inconsistencies, and schema violations. Because examples serve as the ground truth for specification implementation, they require the highest level of scrutiny.
+
+To minimize the burden on reviewers:
+* **Manual Verification:** Contributors MUST independently calculate, parse, or manually verify all AI-generated examples before committing them to a pull request.
+* **No Blind Commits:** Contributors MUST NOT directly commit AI-generated examples without human validation.
+* **Mathematical and Schema Accuracy:** Contributors MUST ensure all data within an AI-generated example is logically consistent and mathematically accurate according to the FOCUS normative requirements.
+* **Zero-Tolerance for Unreviewed Examples:** Maintainers MUST return a pull request to draft if they determine it contains obviously unreviewed, hallucinated, or broken AI-assisted examples.
 
 ### CLA Coverage
 
@@ -58,15 +69,15 @@ The FOCUS project does not mandate a specific attribution format. This aligns wi
 
 This repository includes configuration files for AI coding assistants:
 
-- `AGENTS.md` - Project context and conventions (at root for tool compatibility)
-- `.ai/commands/` - Reusable workflow definitions
-- `.ai/memory/` - Persistent learnings across sessions
-- `.ai/<branch-name>/` - Working files for active issues (deleted after PR merge)
+* `AGENTS.md` - Project context and conventions (at root for tool compatibility)
+* `.ai/commands/` - Reusable workflow definitions
+* `.ai/memory/` - Persistent learnings across sessions
+* `.ai/<branch-name>/` - Working files for active issues (deleted after PR merge)
 
 Tool-specific wrapper files reference the centralized configuration:
 
-- `CLAUDE.md`, `.cursorrules`, `.github/copilot-instructions.md` - Symlinks to `AGENTS.md`
-- `.claude/commands/`, `.cursor/commands/`, `.github/prompts/` - Tool-specific wrappers for interactive use
+* `CLAUDE.md`, `.cursorrules`, `.github/copilot-instructions.md` - Symlinks to `AGENTS.md`
+* `.claude/commands/`, `.cursor/commands/`, `.github/prompts/` - Tool-specific wrappers for interactive use
 
 ### Creating Shared Commands
 
@@ -99,7 +110,7 @@ These configuration files help AI tools work effectively within the repository, 
 
 ## References
 
-- [Linux Foundation Generative AI Policy](https://www.linuxfoundation.org/legal/generative-ai)
-- [Apache Software Foundation Generative Tooling Guidance](https://www.apache.org/legal/generative-tooling.html)
-- [FOCUS Development Processes](development-processes.md)
-- [FOCUS CLA and IPR Requirements](../ipr.md)
+* [Linux Foundation Generative AI Policy](https://www.linuxfoundation.org/legal/generative-ai)
+* [Apache Software Foundation Generative Tooling Guidance](https://www.apache.org/legal/generative-tooling.html)
+* [FOCUS Development Processes](development-processes.md)
+* [FOCUS CLA and IPR Requirements](../ipr.md)

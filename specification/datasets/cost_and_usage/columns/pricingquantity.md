@@ -13,7 +13,6 @@ PricingQuantity MUST adhere to the following requirements:
   * PricingQuantity MUST be null when [ChargeCategory](#datasets.costandusage.chargecategory) is "Tax".
   * PricingQuantity MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#datasets.costandusage.chargeclass) is not "Correction".
   * PricingQuantity MAY be null in all other cases.
-* PricingQuantity MUST be a valid decimal value when not null.
 * Cost metric (e.g., [ContractedCost](#datasets.costandusage.contractedcost)) MUST equal the product of the corresponding unit price (e.g., [ContractedUnitPrice](#datasets.costandusage.contractedunitprice)) and PricingQuantity when the unit price is not null and PricingQuantity is not null.
 
 ## Column ID
@@ -30,7 +29,7 @@ The volume of a given *SKU* associated with a *resource* or *service* used or pu
 
 ## Usability Constraints
 
-**Aggregation:** When aggregating Pricing Quantity for commitment utilization calculations, it's important to exclude [*commitment discount*](#glossary:commitment-discount) purchases (i.e. when Charge Category is "Purchase") that are paid to cover future eligible [*charges*](#glossary:charge) (e.g., *commitment discount*). Otherwise, when accounting for all upfront or accrued purchases, it's important to exclude *commitment discount* usage (i.e. when Charge Category is "Usage"). This exclusion helps prevent double counting of these quantities in the aggregation.
+**Aggregation:** When aggregating Pricing Quantity for commitment utilization calculations, it's important to exclude [*commitment discount*](#glossary:commitment-discount) purchases (i.e., when Charge Category is "Purchase") that are paid to cover future eligible [*charges*](#glossary:charge) (e.g., *commitment discount*). Otherwise, when accounting for all upfront or accrued purchases, it's important to exclude *commitment discount* usage (i.e., when Charge Category is "Usage"). This exclusion helps prevent double counting of these quantities in the aggregation.
 
 ## Content Constraints
 
@@ -42,7 +41,7 @@ The volume of a given *SKU* associated with a *resource* or *service* used or pu
 | Allows nulls    | True                                                 |
 | Data type       | Decimal                                              |
 | Value format    | [Numeric Format](#attributes.numericformat)          |
-| Number Range    | Any valid decimal value                              |
+| Number range    | Any valid decimal value                              |
 
 ## Introduced (version)
 

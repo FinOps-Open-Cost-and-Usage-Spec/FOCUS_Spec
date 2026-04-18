@@ -2,6 +2,8 @@
 
 This document outlines the use of MarkdownPP in the FOCUS Specification repository, including build processes, custom enhancements, and best practices.
 
+***Note:*** *The guidelines in this document apply to the content within the `specification/` directory.*
+
 ## Overview
 
 The FOCUS Specification uses [MarkdownPP](https://github.com/amyreese/markdown-pp) (Markdown Preprocessor) to build the complete specification document from modular markdown files. The original instance of MarkdownPP is no longer actively maintained, and we use a locally modified version that includes enhancements specifically designed for multi-dataset technical documentation.
@@ -20,6 +22,8 @@ specification/
 ├── supported_features/          # Features enabled by FOCUS
 └── requirements_model/          # Validation rules and models
 ```
+
+***Note:*** *For directory and file naming conventions across the repository, see [Repository Naming Conventions](repository-naming-conventions.md).*
 
 ## MarkdownPP Usage in FOCUS
 
@@ -168,17 +172,133 @@ Headers can be excluded from table of contents generation while maintaining prop
 
 This feature automatically:
 
-- Excludes marked headers from TOC generation
-- Prevents section numbering for these headers
-- Skips anchor link creation
-- Ensures proper spacing around headers to meet markdown linting requirements
-- Maintains document readability and structure
+* Excludes marked headers from TOC generation
+* Prevents section numbering for these headers
+* Skips anchor link creation
+* Ensures proper spacing around headers to meet markdown linting requirements
+* Maintains document readability and structure
+
+**Automatic Anchor Generation:**
+
+All headers appearing after the !TOC directive automatically receive an HTML anchor generated from the header text whereby the following applies:
+
+* Anchor text is normalized to lowercase.
+* Whitespace and the following characters are removed: `,` `-` `(` `)`.
+* Other special characters are preserved.
+* Dots (.) are inserted between header levels to represent the full hierarchy of document sections.
+* Headers marked with `<!--SkipTOC-->` will appear in the document but will not be included in the Table of Contents, and no anchor will be created.
+
+***Note:*** *These anchors are generated for the HTML and PDF builds of the specification and differ from how GitHub natively generates anchors for markdown files. Links using these anchors will work in the built specification output but not when viewing the source markdown on GitHub.*
+
+## Currency and Dollar Sign Handling
+
+FOCUS content frequently includes monetary values. This section explains how literal dollar signs are interpreted by the build pipeline and how to avoid accidental math parsing.
+
+### Authoring Rule for Currency
+
+* Use a literal `$` for currency values in specification content (for example, `$1.00`, `$4,550.00`).
+* Write currency in normal prose and tables as needed. Contributors should not need to rewrite clear content to accommodate parser quirks.
+
+### How Dollar Parsing Works in This Repository
+
+The build pipeline has two relevant stages:
+
+* **MarkdownPP stage** (`markdown-pp`):
+    * The vendored LaTeX module in `vendored/MarkdownPP/Modules/LaTeXRender.py` can interpret dollar-delimited content as LaTeX.
+    * FOCUS includes local heuristic protections to reduce false positives for currency and prose patterns.
+* **Pandoc stage** (`spec.md` to HTML/PDF):
+    * The Makefile uses `-f gfm-tex_math_dollars` for Pandoc conversion so literal `$` currency is not interpreted as TeX math.
+
+### Intended Use of LaTeX Rendering
+
+* LaTeX rendering is available for intentional math expressions.
+* Currency and normal prose should not rely on LaTeX rendering.
+* If a contributor needs math rendering, use unambiguous math expressions and verify that output remains stable.
+
+### Examples: Rendered vs Not Rendered
+
+The following examples show expected behavior in this repository.
+
+**Example that SHOULD render as LaTeX:**
+
+```markdown
+The discount factor is $\alpha + \beta$.
+```
+
+**Examples that SHOULD NOT trigger LaTeX rendering:**
+
+```markdown
+Cost is $1.00 per hour.
+```
+
+```markdown
+Purchase amount: $4,550.00.
+```
+
+```markdown
+Difference $0.02 < Tolerance $1.00.
+```
+
+```markdown
+| BilledCost | EffectiveCost |
+| $402,960.00 | $0.00 |
+```
+
+### Troubleshooting
+
+If you suspect accidental dollar parsing:
+
+* Check MarkdownPP output for LaTeX rendering activity:
+
+```bash
+cd specification
+PYTHONPATH=../vendored ../vendored/bin/markdown-pp spec.mdpp -o spec.md 2>&1 | grep -n 'Rendering:'
+```
+
+* Check Pandoc output for TeX conversion warnings:
+
+```bash
+cd specification
+make -B spec.html spec.pdf 2>&1 | grep -nE 'Could not convert TeX math|WARNING'
+```
+
+No output from these commands typically indicates there are no active false-positive dollar parsing issues.
+
+If output does appear, the preferred fix is to improve parser/build behavior (MarkdownPP or Pandoc configuration), not to force content authors to degrade otherwise clear prose.
 
 ## Best Practices
 
+### Header Conventions
+
+The FOCUS Specification relies on Markdown headers to define document structure, section numbering, and navigation. Consistent header usage is required to ensure predictable Table of Contents (TOC) generation and stable internal links.
+
+#### File-Level Header Structure
+
+* Content-oriented Markdown files (.md) SHOULD begin with a top-level header that defines the section title.
+* MarkdownPP assembly files (.mdpp) that consist only of !INCLUDE directives MAY omit headers.
+
+#### Header Syntax
+
+To ensure predictable Table of Contents (TOC) generation, stable internal links, and reliable external references, all headers in the FOCUS Specification MUST follow these conventions:
+
+* Headers MUST use ATX-style Markdown syntax (`#`).
+* Up to six header levels (######) are supported.
+* A single space MUST follow the `#` character(s).
+* Headers MUST NOT use Setext-style headers (`=` or `-` underlines), even though they are technically supported.
+* Headers MUST NOT be empty.
+* Headers MUST be denoted in Title Case, with all words capitalized except articles (a, an, the), coordinating conjunctions (and, but, or), and short prepositions (e.g., in, on, at), unless they begin the subheader.
+* Header text SHOULD only contain alphanumeric characters (`A-Z`, `0-9`), spaces (` `), commas (`,`), and the following special characters: hyphens (`-`), apostrophes (`'`), and parentheses (`(`, `)`).
+* Other special characters SHOULD be avoided.
+
+#### Renaming or Changing Headers After Publication
+
+Header anchors are used by build processes (e.g., TOC generation) and may also appear in external hyperlinks. Header text and structure SHOULD remain stable after publication to maintain repository consistency, TOC accuracy, and external hyperlink integrity.
+
+If a header change is necessary, all affected build references MUST be updated accordingly to avoid broken links.
+
 ### File Content
 
-While markdown can be included in a .mdpp, the FOCUS project discourages this behavior, as the markdown will not natively render in GitHub and development environments such as VS Code, thereby making spec maintenance more difficult.  Therefore, we encourage the use of overview .md files, limiting the use of .mdpp files to `!INCLUDE` statements only.
+While markdown can be included in a .mdpp, the FOCUS project discourages this behavior, as the markdown will not natively render in GitHub and development environments such as VS Code, thereby making spec maintenance more difficult. Therefore, we encourage the use of overview .md files, limiting the use of .mdpp files to `!INCLUDE` statements only.
 
 ### File Organization
 

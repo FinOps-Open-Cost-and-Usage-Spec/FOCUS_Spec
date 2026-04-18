@@ -1,14 +1,16 @@
-# Commitment Discounts
+# Examples: Commitment Discounts
 
-## Examples: Commitment Discount Scenarios
+This appendix section defines the concept of a [*commitment discount*](#glossary:commitment-discount). It then lays out a series of FOCUS dataset examples.
+
+## Overview
 
 A [*commitment discount*](#glossary:commitment-discount) is a billing discount model that offers reduced rates on preselected [*SKUs*](#glossary:sku) in exchange for an obligated usage or spend amount over a specified [*period*](#glossary:period). *Commitment discounts* typically consist of purchase and usage records within cost and usage datasets.
 
 Usage-based *commitment discounts* obligate a customer to a predetermined amount of usage over a specified [*period*](#glossary:period). In some cases, usage-based *commitment discounts* also feature [*commitment discount flexibility*](#glossary:commitment-discount-flexibility) which may expand the types of [*resources*](#glossary:resource) that a *commitment discount* can cover. It is important to note when mixing *commitment discounts* with and without *commitment discount flexibility*, the [CommitmentDiscountUnit](#datasets.costandusage.commitmentdiscountunit) should reflect this difference.
 
-Spend-based commitment discounts obligate a customer to a predetermined amount of spend over a specified [*period*](#glossary:period). In the usage examples below, each [*row*](#glossary:row) measures the monetary amount of the hourly commit consumed by the *commitment discount*, so the CommitmentDiscountUnit chosen is "USD", or the [*billing currency*](#glossary:billing-currency).
+Spend-based *commitment discounts* obligate a customer to a predetermined amount of spend over a specified [*period*](#glossary:period). In the usage examples below, each [*row*](#glossary:row) measures the monetary amount of the hourly commit consumed by the *commitment discount*, so the CommitmentDiscountUnit chosen is "USD", or the [*billing currency*](#glossary:billing-currency).
 
-## Purchasing
+### Purchasing
 
 While customers are bound to the [*period*](#glossary:period) of a *commitment discount*, service providers offer some or all of the following payment options before and/or during the *period*:
 
@@ -16,80 +18,46 @@ While customers are bound to the [*period*](#glossary:period) of a *commitment d
 * *No Upfront* - The *commitment discount* is paid on a repeated basis, typically over each [*billing period*](#glossary:billing-period) of the *period*.
 * *Partial Upfront* - Some of the *commitment discount* is paid before the *period* begins, and the rest is paid repeatedly over the *period*.
 
-For example, if a customer buys a 1-year, spend-based *commitment discount* with a &dollar;1.00 hourly commit and pays with the partial option, the *commitment discount's* payment consists of a one-time purchase in the beginning of the *period* *and* monthly recurring purchases with the following totals:
+For example, if a customer buys a 1-year, spend-based *commitment discount* with a $1.00 hourly commit and pays with the partial option, the *commitment discount's* payment consists of a one-time purchase in the beginning of the *period* *and* monthly recurring purchases. The one-time payment covers half of the annual commitment (Flexible Spend Plans are half, Resource Reservations are a portion of the cost), while the recurring payment covers the remaining half and is calculated based on the exact number of hours in each [*billing period*](#glossary:billing-period):
 
-1. *One-Time* - &dollar;4,380 (`24 hours * 365 days * &dollar;1.00 * 0.5`)
-2. *Recurring* - &dollar;182.50 (`24 hours * 365 days * &dollar;1.00 / 12 months`)
+1. *One-Time* - $4,380 (24 hours &times; 365 days &times; $1.00 &times; 0.5)
+2. *Recurring* - $336.00 for February (672 hours in the month &times; $1.00 &times; 0.5)
 
-## Usage
+### Usage
 
 Commitment discounts follow a "use-it-or-lose-it" model where the [*amortization*](#glossary:amortization) of a *commitment discount's* purchase applies evenly to eligible *resources* over each [*charge period*](#glossary:charge-period) of the *period*.
 
-For example, if a customer buys a spend-based *commitment discount* with a &dollar;1.00 hourly commit in January (31 days), only &dollar;1.00 is eligible for consumption for each hourly *charge period*. If a customer has eligible *resources* running during this *charge period*, an amount of up to &dollar;1.00 will be allocated to these *resources*. Conversely, if a customer does not have eligible *resources* running that fully take advantage of this &dollar;1.00 during this *charge period*, then some or all of this amount will go to waste.
+For example, if a customer buys a spend-based *commitment discount* with a $1.00 hourly commit in January (31 days), only $1.00 is eligible for consumption for each hourly *charge period*. If a customer has eligible *resources* running during this *charge period*, an amount of up to $1.00 will be allocated to these *resources*. Conversely, if a customer does not have eligible *resources* running that fully take advantage of this $1.00 during this *charge period*, then some or all of this amount will go to waste.
 
-## Commitment Discounts in FOCUS
+## Data Generator Scenarios
 
-Within the FOCUS specification, the following examples demonstrate how a *commitment discount* appears across various payment and usage scenarios.
+Below are tables listing some common commitment discount scenarios for a few prominent FOCUS data generators.
 
-### Purchase *Rows*
+### Data Generator Scenarios: Aura Web
 
-All *commitment discount* purchases appear with a positive [BilledCost](#datasets.costandusage.billedcost), [PricingCategory](#datasets.costandusage.pricingcategory) as "Standard", and with the *commitment discount's* id populating both the [ResourceId](#datasets.costandusage.resourceid) and [CommitmentDiscountId](#datasets.costandusage.commitmentdiscountid) value. One-time purchases appear as a single record with [ChargeCategory](#datasets.costandusage.chargecategory) as "Purchase", [ChargeFrequency](#datasets.costandusage.chargefrequency) as "One-Time", and the total quantity and units for *commitment discount's* *period* reflected as [CommitmentDiscountQuantity](#datasets.costandusage.commitmentdiscountquantity) and CommitmentDiscountUnit, respectively.
+| Scenario | What You'll Learn |
+| --- | --- |
+| [Resource Reservation - All Upfront](#appendix.commitmentdiscountexamples.aurawebresourcereservation-allupfront-100%utilization) | How a single large upfront purchase amortizes across usage rows. BilledCost=0 on usage rows; EffectiveCost carries the amortized value. Usage-based commitment (`CommitmentDiscountCategory=Usage`). |
+| [Resource Reservation - Partial Upfront](#appendix.commitmentdiscountexamples.aurawebresourcereservation-partialupfront-100%utilization) | How partial upfront splits into two purchase rows: one `One-Time` and one `Recurring`. Demonstrates the hybrid payment model for Resource Reservations (RRs). |
+| [Flexible Spend Plan - All Upfront](#appendix.commitmentdiscountexamples.aurawebflexiblespendplan-allupfront-100%utilization) | How Flexible Spend Plans (FSPs) differ from RRs: `CommitmentDiscountCategory=Spend` (dollar-based) instead of `Usage` (instance-based). Quantities measured in USD, not instance hours. |
+| [Flexible Spend Plan - Partial Upfront](#appendix.commitmentdiscountexamples.aurawebflexiblespendplan-partialupfront-100%utilization) | The partial upfront pattern applied to FSPs. Two purchase rows (one-time + recurring) mirror the RR partial model but with spend-based commitment fields. |
+| [Flexible Spend Plan - No Upfront](#appendix.commitmentdiscountexamples.aurawebflexiblespendplan-noupfront-100%utilization) | The no-upfront model: only a `Recurring` purchase row, no initial capital outlay. Compare the higher effective rate against all-upfront and partial-upfront variants. |
+| [Flexible Spend Plan - 100% Utilization with Overage](#appendix.commitmentdiscountexamples.aurawebflexiblespendplan-allupfront-100%utilizationwithoverage) | What happens when demand exceeds commitment capacity. Committed hours apply the effective unit price; overage hours spill to standard pricing at full list price (`PricingCategory=Standard`). |
+| [Flexible Spend Plan - 75% Utilization](#appendix.commitmentdiscountexamples.aurawebflexiblespendplan-allupfront-75%utilization) | Moderate underutilization: 18 hours `Used`, 6 hours `Unused`. Unused rows carry EffectiveCost with null resource fields, representing wasted spend. |
+| [Flexible Spend Plan - 50% Utilization](#appendix.commitmentdiscountexamples.aurawebflexiblespendplan-allupfront-50%utilization) | Significant underutilization: 12 hours `Used`, 12 hours `Unused`. Half the commitment value is wasted - key pattern for identifying commitment right-sizing opportunities. |
+| [Flexible Spend Plan - 0% Utilization](#appendix.commitmentdiscountexamples.aurawebflexiblespendplan-allupfront-0%utilization) | Worst case: commitment purchased but never applied. All 24 hours show `Unused` status. EffectiveCost accrues entirely as waste. |
 
-Recurring purchases are allocated across all corresponding *charge periods* of the *period* when ChargeCategory is "Purchase", ChargeFrequency is "Recurring", and CommitmentDiscountQuantity and CommitmentDiscountUnit are reflected only for that *charge period*.
+### Data Generator Scenarios: CrestNode
 
-Using the same *commitment discount* example as above with a one-year, spend-based *commitment discount* with a &dollar;1.00 hourly commit purchased on Jan 1, 2023, various purchase options are available:
+| Scenario | What You'll Learn |
+| --- | --- |
+| [Resource Reservation - All Upfront](#appendix.commitmentdiscountexamples.crestnoderesourcereservation-allupfront-100%utilization) | CrestNode's usage-based reservation model in FOCUS format. Compare structure and rates against Aura Web Resource Reservations. |
+| [Resource Reservation - No Upfront](#appendix.commitmentdiscountexamples.crestnoderesourcereservation-noupfront-100%utilization) | CrestNode no-upfront reservations with monthly recurring payments only. Note the higher effective rate vs all-upfront, reflecting the deferred-payment premium. |
+| [Flexible Spend Plan - All Upfront](#appendix.commitmentdiscountexamples.crestnodeflexiblespendplan-allupfront-100%utilization) | CrestNode's spend-based Flexible Spend Plan (`CommitmentDiscountCategory=Spend`). Compare against CrestNode Resource Reservations and Aura Web Flexible Spend Plans. |
 
-#### Scenario #1: All Upfront
+### Data Generator Scenarios: LatticeScale
 
-The entire *commitment discount* is billed _once_ during the first *charge period* of the *period* for &dollar;8,670 (derived as `24 hours * 365 days * &dollar;1.00`).
-
-[CSV Example](/specification/data/commitment_discount_scenarios/commitment_discount_purchase_scenario_1.csv)
-
-#### Scenario #2: No Upfront
-
-The *commitment discount* is billed across all 8,760 (`24 hours * 365 days`) *charge periods* of the *period* with &dollar;1.00 allocated to each *charge period* over the *period*.
-
-[CSV Example](/specification/data/commitment_discount_scenarios/commitment_discount_purchase_scenario_2.csv)
-
-This example shows the first three hourly rows of 8,760 total rows that are all the same except for the incrementing monthly and hourly timeframes denoted in the Billing Period and Charge Period columns, respectively.
-
-#### Scenario #3: Partial Upfront
-
-With a 50/50 split, half of the commitment is billed _once_ during the first *charge period* of the *period* for &dollar;4,380 (derived as `24 hours * 182.5 days * &dollar;1.00`), and the other half is billed across each *charge period* over the commitment *period*, derived as (`&dollar;1.00 * 8,760 hours * 0.5`). Amortized costs incur half of the amount (i.e., &dollar;0.50) from the one-time purchase and the other half from the recurring purchase.
-
-[CSV Example](/specification/data/commitment_discount_scenarios/commitment_discount_purchase_scenario_3.csv)
-
-This example shows the first three hourly rows of 8,760 total rows that are all the same except for the incrementing monthly and hourly timeframes denoted in the Billing Period and Charge Period columns, respectively.
-
-### Usage *Rows*
-
-*Amortization* of *commitment discounts* occur similarly regardless of how *commitment discount* purchases are made.  The same usage-based or spend-based amount is applied evenly across all *charge periods* and potentially allocated to eligible *resources*.  Continuing with the same *commitment discount* example, a one-year, spend-based *commitment discount* with a &dollar;1.00 hourly commit and 1 *resource* (for simplicity) yields 4 types of scenarios that can occur during a *charge period*:
-
-* Scenario #1: An eligible *resource* fully consumes the allocated amount (100% utilization)
-* Scenario #2: No eligible *resource* consumes the allocated amount (0% utilization)
-* Scenario #3: An eligible *resource* partially consumes the allocated amount (75% utilization)
-* Scenario #4: An eligible *resource* fully consumes the &dollar;1.00 hourly commit with an overage (100% utilization + overage)
-
-#### Scenario #1: An eligible *resource* fully consumes the allocated amount (100% utilization)
-
-In this scenario, one eligible *resource* runs for the full hour and consumes &dollar;1.00, so one *row* allocated to the *resource* is produced.
-
-[CSV Example](/specification/data/commitment_discount_scenarios/commitment_discount_usage_scenario_1.csv)
-
-#### Scenario #2: No eligible *resource* consumes the allocated amount (0% utilization)
-
-In this situation, the full eligible, &dollar;1.00 amount remained unutilized and results in 1 unused *row*. In this scenario, it is important to note that while CommitmentDiscountQuantity is not because &dollar;1 was still drawn down by the *commitment discount* even though, no *resource* was allocated, so [ConsumedQuantity](#datasets.costandusage.consumedquantity) and [ConsumedUnit](#datasets.costandusage.consumedunit) are null.
-
-[CSV Example](/specification/data/commitment_discount_scenarios/commitment_discount_usage_scenario_2.csv)
-
-#### Scenario #3: An eligible *resource* partially consumes the allocated amount (75% utilization)
-
-In this scenario, one eligible *resource* runs for the full hour and consumes &dollar;0.75 of the &dollar;1.00 allocation. One *row* shows &dollar;0.75 to a *resource*, and the other *row* shows that &dollar;0.25 was unused.
-
-[CSV Example](/specification/data/commitment_discount_scenarios/commitment_discount_usage_scenario_3.csv)
-
-#### Scenario #4: An eligible *resource* fully consumes the &dollar;1.00 hourly commit with an overage (100% utilization + overage)
-
-In this scenario, one eligible *resource* runs for the full hour and is charged &dollar;1.50. One *row* shows that &dollar;1.00 was *amortized* from the *commitment discount*, and the other shows that &dollar;0.50 was charged as standard, on-demand spend.
-
-[CSV Example](/specification/data/commitment_discount_scenarios/commitment_discount_usage_scenario_4.csv)
+| Scenario | What You'll Learn |
+| --- | --- |
+| [Resource Reservation - No Upfront](#appendix.commitmentdiscountexamples.latticescaleresourcereservation-noupfront-100%utilization) | LatticeScale's usage-based commitment: `CommitmentDiscountCategory=Usage`, quantities in `Hours`. Monthly billing only (no upfront option). Deepest discount. |
+| [Dynamic Compute Commitment - No Upfront](#appendix.commitmentdiscountexamples.latticescaledynamiccomputecommitment-noupfront-100%utilization) | LatticeScale's spend-based commitment: `CommitmentDiscountCategory=Spend`, quantities in `USD`. Monthly recurring billing, no upfront payment. Compare against Aura Web and CrestNode. |

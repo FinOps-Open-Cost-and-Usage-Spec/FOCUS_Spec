@@ -1,6 +1,6 @@
 # Contract Commitment Cost
 
-Contract Commitment Cost represents the monetary value of the [*contract commitment*](#glossary:contract-commitment).  Contract Commitment Cost is commonly used for monitoring the progress towards fulfilling contractual commitments that may facilitate discounts for [*resources*](#glossary:resource) or [*services*](#glossary:service) as agreed between a service provider and a customer.
+Contract Commitment Cost represents the monetary value of the [*contract commitment*](#glossary:contract-commitment). Contract Commitment Cost is commonly used for monitoring the progress towards fulfilling contractual commitments that may facilitate discounts for [*resources*](#glossary:resource) or [*services*](#glossary:service) as agreed between a service provider and a customer.
 
 ## Requirements
 
@@ -11,7 +11,6 @@ ContractCommitmentCost MUST adhere to the following requirements:
 * ContractCommitmentCost MUST adhere to the following nullability requirements:
   * ContractCommitmentCost MUST NOT be null when [ContractCommitmentCategory](#datasets.contractcommitment.contractcommitmentcategory) is "Spend".
   * ContractCommitmentCost MAY be null when ContractCommitmentCategory is "Usage".
-* ContractCommitmentCost MUST be a valid decimal value.
 * ContractCommitmentCost MUST be denominated in the [BillingCurrency](#datasets.contractcommitment.billingcurrency).
 
 ## Column ID

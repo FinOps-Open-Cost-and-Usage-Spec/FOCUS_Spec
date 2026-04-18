@@ -117,27 +117,27 @@ Permutations:
 
 ## Discussion / Scratch space
 
-- What are the different types of spend that we want to group?
-- This work is to group the different values providers use to differentiate the spend. The plan is to introduce a ‘normalized’ dimension for this in v1.0
-  - Should this be prefixed with ‘Provider’ since we want to normalize this as well? If not, we have to come up with another name for the normalized column
-    - Decided that this should be a normalized column from v0.5.
-    - Given the mis-alignment of current vendor data, its not going to be much value to create a dimension where we put different vendor values in a single column so practitioners can use the vendor provided value using a single column rather than doing n different where clauses when looking for the vendor native value (not our normalized value).
-- This dimension may be referred to in other contexts - e.g. data granularity requirements (attribute) may change based on if its usage data vs tax or fees. For example, Should ResourceId be required based on if something is a ‘usage’ cost vs a ‘purchase’?
-- Use cases:
-  - Usage for cost reporting use cases / driving accountability
-  - Tax needs to be filterable for special accounting treatments within companies
-  - Fees are important for cost allocation / amortization - needs to be isolated from other cost
-  - Refunds - $s coming back after the original charge
-  - Credits are typically based on agreements for migration of workloads
-  - AWS handling for SPs: Anniversary charge (BillType) Savings Plan for $1 and a negation for UsageType (for -0.50)
-- Is it Recurring or not? (Attribute about the Purchase?)
-- What Charge Category values can BE recurring?
-- What Charge Category values for "Free Tier" with usage limits and "Free Trial" offers?
-- What adjustment categories do we need to group?
-- Do we need to normalize adjustment categories?
-- Refunds - $s coming back after the original charge
-- Credits are typically based on agreements for migration of workloads, or promotional items negotiated with the provider
-- Balance transfers - how do you show what a balance transfer is if in the unliely event you close an account with a positive value and open a new account
+* What are the different types of spend that we want to group?
+* This work is to group the different values providers use to differentiate the spend. The plan is to introduce a ‘normalized’ dimension for this in v1.0
+  * Should this be prefixed with ‘Provider’ since we want to normalize this as well? If not, we have to come up with another name for the normalized column
+    * Decided that this should be a normalized column from v0.5.
+    * Given the mis-alignment of current vendor data, its not going to be much value to create a dimension where we put different vendor values in a single column so practitioners can use the vendor provided value using a single column rather than doing n different where clauses when looking for the vendor native value (not our normalized value).
+* This dimension may be referred to in other contexts - e.g., data granularity requirements (attribute) may change based on if its usage data vs tax or fees. For example, Should ResourceId be required based on if something is a ‘usage’ cost vs a ‘purchase’?
+* Use cases:
+  * Usage for cost reporting use cases / driving accountability
+  * Tax needs to be filterable for special accounting treatments within companies
+  * Fees are important for cost allocation / amortization - needs to be isolated from other cost
+  * Refunds - $s coming back after the original charge
+  * Credits are typically based on agreements for migration of workloads
+  * AWS handling for SPs: Anniversary charge (BillType) Savings Plan for $1 and a negation for UsageType (for -0.50)
+* Is it Recurring or not? (Attribute about the Purchase?)
+* What Charge Category values can BE recurring?
+* What Charge Category values for "Free Tier" with usage limits and "Free Trial" offers?
+* What adjustment categories do we need to group?
+* Do we need to normalize adjustment categories?
+* Refunds - $s coming back after the original charge
+* Credits are typically based on agreements for migration of workloads, or promotional items negotiated with the provider
+* Balance transfers - how do you show what a balance transfer is if in the unliely event you close an account with a positive value and open a new account
 
 ### Example mappings for normalized values
 

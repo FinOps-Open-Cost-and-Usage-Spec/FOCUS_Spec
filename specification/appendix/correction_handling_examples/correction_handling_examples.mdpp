@@ -1,0 +1,4 @@
+!INCLUDE "correction_handling_examples_overview.md",0
+!INCLUDE "open_billing_period.md",1
+!INCLUDE "closed_billing_period.md",1
+

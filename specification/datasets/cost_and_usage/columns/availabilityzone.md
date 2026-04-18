@@ -22,7 +22,7 @@ Availability Zone
 
 A host-provider-assigned identifier for a physically separated and isolated area within a Region that provides high availability and fault tolerance.
 
-## Content constraints
+## Content Constraints
 
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |

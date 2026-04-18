@@ -8,9 +8,9 @@ The vision of the FOCUS project is to help the cloud and SaaS industry move towa
 
 Some of the use cases this capability can enable:
 
-- The FOCUS spec will make it easier for FinOps practitioners to approach a new billing data source, as common concepts have been mapped to the common vocabulary of the spec.
-- The FOCUS spec will make it easier to merge multiple billing data sources together, and perform cross-cloud and cross-vendor analysis and cost reporting.
-- The FOCUS spec should make it easier to open source more FinOps visibility tools, and to accelerate the FinOps framework capability of data ingestion and normalization.
+* The FOCUS spec will make it easier for FinOps practitioners to approach a new billing data source, as common concepts have been mapped to the common vocabulary of the spec.
+* The FOCUS spec will make it easier to merge multiple billing data sources together, and perform cross-cloud and cross-vendor analysis and cost reporting.
+* The FOCUS spec should make it easier to open source more FinOps visibility tools, and to accelerate the FinOps framework capability of data ingestion and normalization.
 
 ## Notation Conventions and Compliance
 
@@ -35,17 +35,17 @@ Changes to the [specification](./specification/overview.md) are described in [CH
 
 ## Project Naming
 
-- The official project name is "FinOps Open Cost and Usage Specification".
-- The official acronym used by the FinOps Open Cost and Usage Specification project is "FOCUS".
-- While the official acronym includes the word "Specification", it is still acceptable to refer to this working group's output as the "FOCUS Specification".
+* The official project name is "FinOps Open Cost and Usage Specification".
+* The official acronym used by the FinOps Open Cost and Usage Specification project is "FOCUS".
+* While the official acronym includes the word "Specification", it is still acceptable to refer to this working group's output as the "FOCUS Specification".
 
 ## About the project
 
 See the [project repository](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation) for information about the following, and more:
 
-- [Project Charter](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/FOCUS_-_Membership_Agreement_Package_for_use.pdf)
-- [Operating Procedures](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/operating_procedures.md)
-- [Steering Committee](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/steering_committee.md)
-- [Release Planning](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/working_draft/RELEASE-PLANNING.md)
-- [Change / contribution process](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/contributing.md)
+* [Project Charter](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/FOCUS_-_Membership_Agreement_Package_for_use.pdf)
+* [Operating Procedures](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/operating_procedures.md)
+* [Steering Committee](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/steering_committee.md)
+* [Release Planning](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/working_draft/RELEASE-PLANNING.md)
+* [Change / contribution process](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/contributing.md)
 

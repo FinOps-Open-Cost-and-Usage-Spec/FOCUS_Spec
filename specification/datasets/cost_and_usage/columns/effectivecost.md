@@ -1,8 +1,8 @@
 # Effective Cost
 
-Effective Cost represents the cost of a [*charge*](#glossary:charge) based on the [*resources*](#glossary:resource) used, [*services*](#glossary:service) used, or [*contract commitments*](#glossary:contract-commitment) recognized in a given [*charge period*](#glossary:charge-period). Effective Cost differs from [Billed Cost](#datasets.costandusage.billedcost) when *charges* (both pre-paid and post-paid) are invoiced separately from usage.
+Effective Cost represents the cost of a [*charge*](#glossary:charge) based on the [*resources*](#glossary:resource) used, [*services*](#glossary:service) used, or [*contract commitments*](#glossary:contract-commitment) recognized in a given [*charge period*](#glossary:charge-period). Effective Cost differs from [Billed Cost](#datasets.costandusage.billedcost) when [*covering charges*](#glossary:covering-charge) (e.g., prepaid or postpaid commitment purchases) are recorded separately from the [*covered charges*](#glossary:covered-charge) to which they are applied.
 
-For all *charges*, Effective Cost reflects all applicable pricing adjustments (e.g., reduced pricing from [*negotiated discounts*](#glossary:negotiated-discount) or [*commitment discounts*](#glossary:commitment-discount)). For usage *charges*, Effective Cost includes the recognized portion of *Billed Cost* from related purchase *charges* (e.g., amortized portions of prepayments, drawdowns). For purchase *charges*, Effective Cost excludes any amounts recognized in related usage *charges* (e.g., usage covered by *commitments*, pre-payments, or marketplace purchases which draw down based on usage), regardless of when those related *charges* are invoiced.
+For all *charges*, Effective Cost reflects all applicable pricing adjustments (e.g., reduced pricing from [*negotiated discounts*](#glossary:negotiated-discount) or [*commitment discounts*](#glossary:commitment-discount)). For usage *charges*, Effective Cost includes the recognized portion of *Billed Cost* from related purchase *charges* (e.g., amortized portions of prepayments, drawdowns). For purchase *charges*, Effective Cost excludes any amounts recognized in related usage *charges* (e.g., usage [*covered*](#glossary:covered-charge) by [*covering charges*](#glossary:covering-charge) such as *commitments*, prepayments, or marketplace purchases which draw down based on usage), regardless of when those related *charges* are invoiced.
 
 Effective Cost is denominated in the [Billing Currency](#datasets.costandusage.billingcurrency). Effective Cost is commonly used to support FinOps activities, including [*accrual-based*](#glossary:accrual-based-accounting) reporting, forecasting, and cost allocation.
 
@@ -13,16 +13,17 @@ EffectiveCost MUST adhere to the following requirements:
 * EffectiveCost MUST be of type Decimal.
 * EffectiveCost MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * EffectiveCost MUST NOT be null.
-* EffectiveCost MUST be a valid decimal value.
-* EffectiveCost MUST be 0 when [ChargeCategory](#datasets.costandusage.chargecategory) is "Purchase" and the purchase is intended to cover future eligible *charges*.
 * EffectiveCost MUST be denominated in the BillingCurrency.
-* The sum of EffectiveCost in a given *billing period* MAY differ from the sum of the invoices received for the same *billing period* for a [*billing account*](#glossary:billing-account).
-* When ChargeCategory is not "Usage" or "Purchase", EffectiveCost MUST adhere to the following requirements:
-  * EffectiveCost of a *charge* calculated based on other *charges* (e.g., when the ChargeCategory is "Tax") MUST be calculated based on the EffectiveCost of those related *charges*.
-  * EffectiveCost of a *charge* unrelated to other *charges* (e.g., when the ChargeCategory is "Credit") MUST match the [BilledCost](#datasets.costandusage.billedcost).
-* *Charges* for a given [CommitmentDiscountId](#datasets.costandusage.commitmentdiscountid) MUST adhere to the following requirements:
-  * The sum of EffectiveCost where ChargeCategory is "Usage" MUST equal the sum of BilledCost where ChargeCategory is "Purchase".
-  * The sum of EffectiveCost where ChargeCategory is "Usage" MUST equal the sum of EffectiveCost where ChargeCategory is "Usage" and [CommitmentDiscountStatus](#datasets.costandusage.commitmentdiscountstatus) is "Used", plus the sum of EffectiveCost where ChargeCategory is "Usage" and CommitmentDiscountStatus is "Unused".
+* EffectiveCost MUST reflect all applicable pricing adjustments, including but not limited to *negotiated discounts*, *commitment discounts*, and other applicable discount programs.
+* EffectiveCost MUST equal BilledCost when [ChargeCategory](#datasets.costandusage.chargecategory) is "Usage" and the *charge* is not [*covered*](#glossary:covered-charge) by other eligible *charges*.
+* EffectiveCost MUST equal BilledCost when ChargeCategory is "Purchase" and the *charge* is neither intended to cover other eligible *charges* nor *covered* by other eligible *charges*.
+* EffectiveCost MUST equal BilledCost when ChargeCategory is "Tax" or "Credit".
+* EffectiveCost MAY differ from BilledCost when ChargeCategory is "Adjustment".
+* EffectiveCost MUST include any portion of the BilledCost of [*covering*](#glossary:covering-charge) purchase *charges* (i.e., ChargeCategory is "Purchase") that is applied to this *charge*.
+* EffectiveCost MUST be 0 when ChargeCategory is "Purchase" and the purchase is intended to cover related eligible *charges*. This requirement applies even when the *covered charges* originate from different cost and usage datasets, possibly from a different [ServiceProviderName](#datasets.costandusage.serviceprovidername).
+* EffectiveCost MUST be 0 for *charges* generated by entities that do not originate the cost and usage data, to avoid double-counting when merging multiple datasets.
+* The sum of EffectiveCost across all related *covering* and *covered charges* MUST equal the sum of BilledCost across the same set of *charges*, within the [*charge period*](#glossary:chargeperiod) of the *covering charges*, when both the *covering* and *covered charges* are present in the dataset.
+* The sum of EffectiveCost for a given [*billing period*](#glossary:billing-period) MAY differ from the sum of BilledCost when *covered* and *covering charges* span multiple *billing periods* or [*billing accounts*](#glossary:billing-account), or when only one side of a covering relationship is present in the dataset.
 
 ## Column ID
 
@@ -36,7 +37,7 @@ Effective Cost
 
 Cost of a *charge* based on the *resources* used, *services* used, or *contract commitments* recognized in a given *charge period*.
 
-## Content constraints
+## Content Constraints
 
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
