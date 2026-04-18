@@ -200,57 +200,40 @@ This table displays key milestones and dates related to the development of FOCUS
       <td>1.5 Scope Ends</td>
     </tr>
     <tr>
-      <td rowspan="8"><strong>30-Apr-26 to 1-Oct-26</strong></td>
+      <td rowspan="6"><strong>30-Apr-26 to 8-Oct-26</strong></td>
       <td><strong>Thu Apr 30</strong></td>
       <td>1.5 Development Starts</td>
-      <td rowspan="8">
+      <td rowspan="6">
         Development begins immediately after v1.4 Final Consistency Review (30 Apr 2026).<br/>
-        Interim milestones occur on Thursdays (Members meeting cadence).<br/>
-        Feature Request Review counts toward the minimum Discovery &amp; Development window.
+        Interim milestones occur on Thursdays (Members meeting cadence).
       </td>
     </tr>
     <tr>
-      <td><strong>Thu Apr 30</strong><br/>(2 weeks)</td>
-      <td>Feature Request Review</td>
-    </tr>
-    <tr>
-      <td><strong>Thu May 14</strong><br/>(14 weeks, incl. FR review)</td>
-      <td>Discovery &amp; Development</td>
-    </tr>
-    <tr>
-      <td><strong>Thu Aug 6</strong><br/>(2 weeks)</td>
+      <td><strong>Thu Aug 13</strong><br/>(15 weeks)</td>
       <td>Deadline to Create PR Drafts</td>
     </tr>
     <tr>
-      <td><strong>Thu Aug 20</strong><br/>(2 weeks)</td>
+      <td><strong>Thu Aug 27</strong><br/>(2 weeks)</td>
       <td>Deadline to Complete PR Drafts</td>
     </tr>
     <tr>
-      <td><strong>Thu Sep 3</strong><br/>(2 weeks)</td>
+      <td><strong>Thu Sep 10</strong><br/>(2 weeks)</td>
       <td>Deadline to Start TF Review</td>
     </tr>
     <tr>
-      <td><strong>Thu Sep 17</strong><br/>(2 weeks)</td>
+      <td><strong>Thu Sep 24</strong><br/>(2 weeks)</td>
       <td>Deadline to Start Member Review</td>
     </tr>
     <tr>
-      <td><strong>Thu Oct 1</strong><br/>end of 1.5 dev</td>
+      <td><strong>Thu Oct 8</strong><br/>(2 weeks)</td>
       <td>Deadline to Approve Member Review PRs</td>
     </tr>
     <tr>
-      <td><strong>1-15-Oct-26</strong></td>
-      <td>(2 weeks)</td>
+      <td><strong>8-29-Oct-26</strong></td>
+      <td>(3 weeks)</td>
       <td>Start / End Final Consistency Review v1.5</td>
       <td>
-        Fixed two-week consistency review period (Thursday-to-Thursday). <br/> End of Consistency Review is followed by baseline preparation time for IPR Review.
-      </td>
-    </tr>
-        <tr>
-      <td><strong>15-29 Oct-26</strong></td>
-      <td>(2 weeks)</td>
-      <td>1.6 Release Scope Finalization</td>
-      <td>
-        End of 1.6 Release Scope is followed by the beginning of 1.6 Development, which runs in parallel with the IPR Review for v1.5. 
+        Fixed three-week consistency review period (Thursday-to-Thursday). <br/> End of Consistency Review is followed by baseline preparation time for IPR Review.
       </td>
     </tr>
     <tr>
@@ -283,7 +266,6 @@ This table displays key milestones and dates related to the development of FOCUS
     </tr>
   </tbody>
 </table>
-
 ### Estimated Timeline for v1.4
 This table displays key milestones and dates related to the development of FOCUS Release v1.4.
 
