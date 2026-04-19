@@ -10,7 +10,7 @@ SKU Price Details helps practitioners understand and distinguish *SKU Prices*, e
 
 SkuPriceDetails MUST adhere to the following requirements:
 
-* InvoiceDetailGrain MUST be of type JSON.
+* SkuPriceDetails MUST be of type JSON.
 * SkuPriceDetails MUST conform to [KeyValueFormat](#attributes.key-valueformat) requirements.
 * SkuPriceDetails property keys SHOULD conform to [PascalCase](#glossary:pascalcase) format.
 * SkuPriceDetails MUST adhere to the following nullability requirements:
