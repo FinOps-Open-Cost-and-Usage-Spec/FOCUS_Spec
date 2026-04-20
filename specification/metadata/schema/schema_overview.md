@@ -21,7 +21,7 @@ Schema adheres to the following requirements:
 
 ## Examples
 
-There are many scenarios that would result in an update to the Schema metadata.  These scenarios include but are not limited to:
+There are many scenarios that would result in an update to the Schema metadata. These scenarios include but are not limited to:
 
 * [Adding a new column](#appendix.examples:metadata.addingnewcolumns)
 * [Removing a column](#appendix.examples:metadata.removingcolumns)

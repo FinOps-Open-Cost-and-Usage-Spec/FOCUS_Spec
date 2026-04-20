@@ -24,7 +24,7 @@ Region ID
 
 Host-provider-assigned identifier for an isolated geographic area where a *resource* is provisioned or a *service* is provided.
 
-## Content constraints
+## Content Constraints
 
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |

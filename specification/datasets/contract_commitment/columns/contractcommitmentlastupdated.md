@@ -24,7 +24,7 @@ Contract Commitment Last Updated
 
 The timestamp when the contract commitment record was last updated.
 
-## Content constraints
+## Content Constraints
 
 |    Constraint    |              Value             |
 |:----------------|:--------------------------------|

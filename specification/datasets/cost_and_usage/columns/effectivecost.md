@@ -37,7 +37,7 @@ Effective Cost
 
 Cost of a *charge* based on the *resources* used, *services* used, or *contract commitments* recognized in a given *charge period*.
 
-## Content constraints
+## Content Constraints
 
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
