@@ -23,7 +23,7 @@ Charge Period Start
 
 The *inclusive start bound* of a *charge period*.
 
-## Content constraints
+## Content Constraints
 
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |

@@ -17,7 +17,7 @@ TimeSectorLastUpdated
 
 Time Sector Last Updated
 
-## Content constraints
+## Content Constraints
 
 | Constraint    | Value                                |
 |:--------------|:-------------------------------------|

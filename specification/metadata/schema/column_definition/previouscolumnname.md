@@ -19,7 +19,7 @@ PreviousColumnName
 
 Previous Column Name
 
-## Content constraints
+## Content Constraints
 
 | Constraint      | Value            |
 |:----------------|:-----------------|

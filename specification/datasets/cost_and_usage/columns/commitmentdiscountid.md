@@ -29,7 +29,7 @@ Commitment Discount ID
 
 The identifier assigned to a *commitment discount* by the service provider.
 
-## Content constraints
+## Content Constraints
 
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |

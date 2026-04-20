@@ -18,7 +18,7 @@ DataGenerator
 
 Data Generator
 
-## Content constraints
+## Content Constraints
 
 | Constraint      | Value            |
 |:----------------|:-----------------|
