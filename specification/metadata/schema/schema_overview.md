@@ -28,7 +28,7 @@ There are many scenarios that would result in an update to the Schema metadata. 
 * [Changing column metadata](#appendix.examples:metadata.changingcolumnmetadata)
 * [FOCUS Version has changed](#appendix.examples:metadata.focusversionchanged)
 * [Data Generator Version has changed](#appendix.examples:metadata.schemametadatatofocusdatareference)
-* [Correcting schema metadata errors](#appendix.examples:metadata.providermetadataerrorcorrection)
+* [Correcting schema metadata errors](#appendix.examples:metadata.datageneratormetadataerrorcorrection)
 
 For an example of the FOCUS schema metadata, please refer to: [Schema Metadata Example](#supportedfeatures.schemametadata).
 

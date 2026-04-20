@@ -1,6 +1,6 @@
 # Pricing Currency
 
-[*Pricing Currency*](#glossary:pricing-currency) is the national or virtual currency denomination that a [*resource*](#glossary:resource) or [*service*](#glossary:service) was priced in. Pricing Currency is commonly used in scenarios where different currencies are used for pricing and billing.
+Pricing Currency is the [*national*](#glossary:national-currency) or [*virtual currency*](glossary:virtual-currency) denomination that a [*resource*](#glossary:resource) or [*service*](#glossary:service) was priced in. Pricing Currency is commonly used in scenarios where different currencies are used for pricing and billing.
 
 ## Requirements
 
@@ -21,7 +21,7 @@ Pricing Currency
 
 ## Description
 
-The national or virtual currency denomination that a *resource* or *service* was priced in.
+The *national* or *virtual currency* denomination that a *resource* or *service* was priced in.
 
 ## Content Constraints
 
