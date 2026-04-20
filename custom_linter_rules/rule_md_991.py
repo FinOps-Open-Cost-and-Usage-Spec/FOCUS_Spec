@@ -156,8 +156,11 @@ class RuleMd991(RulePlugin):
 
             # Determine if this word should be capitalized
             if is_first or is_last or follows_colon or word_lower not in self.__minor_words:
-                # Capitalize the word
-                capitalized_word = word[0].upper() + word[1:].lower() if len(word) > 1 else word.upper()
+                # Smart case preservation: keep existing camelCase or ACRONYMS intact
+                if len(word) > 1 and any(c.isupper() for c in word[1:]):
+                    capitalized_word = word[0].upper() + word[1:]
+                else:
+                    capitalized_word = word.capitalize()
             else:
                 # Minor word in middle: lowercase
                 capitalized_word = word.lower()
