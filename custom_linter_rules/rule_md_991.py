@@ -98,31 +98,28 @@ class RuleMd991(RulePlugin):
             # Check if previous token ended with colon
             follows_colon = i > 0 and tokens[i-1].endswith(':')
 
-            # Extract alphanumeric word from token (removing surrounding punctuation)
-            word_match = re.search(r'\w+', token)
-            if not word_match:
-                continue
+            # Extract all alphanumeric words from token to handle hyphenated terms
+            for word_match in re.finditer(r'\w+', token):
+                word = word_match.group()
+                word_lower = word.lower()
 
-            word = word_match.group()
-            word_lower = word.lower()
+                # Skip numbers (they have no case)
+                if word.isdigit():
+                    continue
 
-            # Skip numbers (they have no case)
-            if word.isdigit():
-                continue
-
-            # Check capitalization rules
-            if is_first or is_last or follows_colon:
-                # First, last, or after colon: should be capitalized
-                if not word[0].isupper():
-                    return False
-            elif word_lower in self.__minor_words:
-                # Minor word in middle: should be lowercase
-                if not word.islower():
-                    return False
-            else:
-                # Major word: should be capitalized
-                if not word[0].isupper():
-                    return False
+                # Check capitalization rules
+                if is_first or is_last or follows_colon:
+                    # First, last, or after colon: should be capitalized
+                    if not word[0].isupper():
+                        return False
+                elif word_lower in self.__minor_words:
+                    # Minor word in middle: should be lowercase
+                    if not word.islower():
+                        return False
+                else:
+                    # Major word: should be capitalized
+                    if not word[0].isupper():
+                        return False
 
         return True
 
