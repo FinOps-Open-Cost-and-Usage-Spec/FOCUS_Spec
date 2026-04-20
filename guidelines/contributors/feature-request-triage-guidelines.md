@@ -25,7 +25,7 @@ FR titles must start with `[FR]` and follow these conventions. During triage, me
 #### Examples
 
 > Passes:
-> `[FR] Add amortized cost for reservations`
+> `[FR] Clarify discount stacking order across applied benefits`
 > `[FR] Clarify null handling for ListUnitPrice`
 
 > Fails (too long, restates problem):
@@ -65,10 +65,10 @@ The problem statement describes a gap in what FOCUS can do today. It does not pr
 ##### Examples
 
 > Passes:
-> Practitioners cannot distinguish between committed-use discounts and volume-tier discounts in the current specification. Both flow through the same discount columns without a dimension that separates them, so reports that attribute savings to negotiated commitments cannot be built from FOCUS data alone.
+> Practitioners cannot determine the order in which discounts were applied to a given charge in the current specification. When a commitment discount and one or more negotiated discounts apply to the same charge, FOCUS exposes the net effect through pricing columns but does not signal the application sequence, so reports that reconstruct the pricing derivation cannot be built from FOCUS data alone.
 
 > Fails (solution-embedded):
-> FOCUS should add a `CommitmentDiscountType` column with values for "Committed Use" and "Volume Tier."
+> FOCUS should add a `x_DiscountClassification` column with values for "Committed Use" and "Volume Tier."
 
 > Fails (too vague):
 > Discount handling in FOCUS is inconsistent and needs improvement.
@@ -88,10 +88,10 @@ The use case follows the "As a / I need / So that" format. It is scoped to a sin
 ##### Examples
 
 > Passes:
-> As a FinOps practitioner, I need to attribute discount savings to the commitment program that generated them, so that I can measure the realized value of negotiated agreements against their contracted terms.
+> As a FinOps practitioner, I need to see the order in which discounts applied to each charge, so that I can reconcile effective pricing against my negotiated agreements without reverse-engineering the derivation.
 
 > Fails (solution-oriented):
-> As a practitioner, I need a new `CommitmentDiscountType` column, so that I can filter by discount type.
+> As a practitioner, I need a new `x_DiscountClassification` column, so that I can filter by discount type.
 
 > Fails (bundled scope):
 > As a practitioner, I need commitment tracking, utilization reporting, and renewal forecasting, so that I can manage the full commitment lifecycle.
@@ -127,12 +127,12 @@ Good criteria typically fall into one of these lenses:
 A strong FR does not need to use every lens. The passing example below draws from three: data availability, cross-provider consistency, and guidance. All three fail cases below map to the same `revise success criteria` label; the triage comment carries the specific issue.
 
 > Passes:
-> * Practitioners can segment discount savings by commitment program type without joining external data.
-> * Commitment program type is consistently represented across data generators that offer committed-use pricing.
-> * Data generators have clear guidance on when a discount qualifies as commitment-driven versus volume-driven.
+> * Practitioners can determine the sequence in which discounts were applied to each charge without reverse-engineering the pricing derivation.
+> * Discount application order is consistently represented across data generators that apply multiple overlapping discounts.
+> * Data generators have clear guidance on how to populate the discount application sequence for each charge.
 
 > Fails (implementation-focused):
-> * A new column `CommitmentDiscountType` is added to the Cost and Usage dataset.
+> * A new column `x_DiscountClassification` is added to the Cost and Usage dataset.
 > * The column accepts the values "Committed Use," "Volume Tier," and null.
 
 > Fails (not testable):
@@ -140,9 +140,9 @@ A strong FR does not need to use every lens. The passing example below draws fro
 > * The specification is clearer about commitment handling.
 
 > Fails (redundant):
-> * Practitioners can identify commitment-driven discounts.
-> * Practitioners can filter on commitment-driven discounts.
-> * Practitioners can report on commitment-driven discounts.
+> * Practitioners can identify commitment discounts.
+> * Practitioners can filter on commitment discounts.
+> * Practitioners can report on commitment discounts.
 
 #### Organizations Requesting
 
