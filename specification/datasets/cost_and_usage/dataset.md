@@ -100,7 +100,7 @@ CostAndUsage MUST adhere to the following requirements:
   * CostAndUsage MUST include [BilledCost](#datasets.costandusage.billedcost).
   * CostAndUsage MUST include [BillingAccountId](#datasets.costandusage.billingaccountid).
   * CostAndUsage MUST include [BillingAccountName](#datasets.costandusage.billingaccountname).
-  * CostAndUsage MUST include [BillingAccountType](#datasets.costandusage.billingaccounttype) when the [*invoice issuer*](#glossary:invoice issuer) supports more than one possible BillingAccountType value.
+  * CostAndUsage MUST include [BillingAccountType](#datasets.costandusage.billingaccounttype) when the [*invoice issuer*](#glossary:invoice-issuer) supports more than one possible BillingAccountType value.
   * CostAndUsage MUST include [BillingCurrency](#datasets.costandusage.billingcurrency).
   * CostAndUsage MUST include [BillingPeriodEnd](#datasets.costandusage.billingperiodend).
   * CostAndUsage MUST include [BillingPeriodStart](#datasets.costandusage.billingperiodstart).

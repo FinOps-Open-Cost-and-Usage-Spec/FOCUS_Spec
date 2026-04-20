@@ -58,7 +58,7 @@ The time window for which a charge is effective, inclusive of the start date and
 
 <a name="glossary:closed-billing-period"><b>Closed Billing Period</b></a>
 
-A [*billing period*](#glossary:billing-period) with [Billing Period Status](#datasets.billingperiod.billingperiodstatus) set to "Closed". The period has been financially closed after all anticipated invoices for the period have been [*issued*](#glossary:issued-invoice) by designated [*invoice issuers*](#glossary:invoice issuer) and no additional invoices will be associated with this period. Exceptionally, additional invoices may be associated with a closed billing period if explicitly requested or approved by the customer.
+A [*billing period*](#glossary:billing-period) with [Billing Period Status](#datasets.billingperiod.billingperiodstatus) set to "Closed". The period has been financially closed after all anticipated invoices for the period have been [*issued*](#glossary:issued-invoice) by designated [*invoice issuers*](#glossary:invoice-issuer) and no additional invoices will be associated with this period. Exceptionally, additional invoices may be associated with a closed billing period if explicitly requested or approved by the customer.
 
 <a name="glossary:cloud-service-provider"><b>Cloud Service Provider (CSP)</b></a>
 
@@ -193,7 +193,7 @@ In the context of FOCUS, this process ensures consistency by reconciling cost an
 
 <a name="glossary:issued-invoice"><b>Issued Invoice</b></a>
 
-An [*invoice*](#glossary:invoice) that has been formally [*reconciled*](#glossary:invoice-reconciliation) and issued by the designated [*invoice issuer*](#glossary:invoice issuer) ([Invoice Issue Status](#datasets.invoicedetail.invoiceissuestatus) set to "Issued"). Once issued, the invoice becomes the authoritative financial document and is considered finalized. The financial data presented on the invoice is not expected to change.
+An [*invoice*](#glossary:invoice) that has been formally [*reconciled*](#glossary:invoice-reconciliation) and issued by the designated [*invoice issuer*](#glossary:invoice-issuer) ([Invoice Issue Status](#datasets.invoicedetail.invoiceissuestatus) set to "Issued"). Once issued, the invoice becomes the authoritative financial document and is considered finalized. The financial data presented on the invoice is not expected to change.
 
 <a name="glossary:json"><b>JSON</b></a>
 

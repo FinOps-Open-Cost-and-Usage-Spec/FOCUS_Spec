@@ -10,7 +10,7 @@ InvoiceId MUST adhere to the following requirements:
 * InvoiceId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * InvoiceId MUST NOT be null.
 * InvoiceId MAY be generated prior to an invoice being issued.
-* InvoiceId MUST uniquely identify the invoice as provided by the [*invoice issuer*](#glossary:invoice issuer).
+* InvoiceId MUST uniquely identify the invoice as provided by the [*invoice issuer*](#glossary:invoice-issuer).
 
 ## Column ID
 

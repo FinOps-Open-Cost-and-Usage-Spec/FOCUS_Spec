@@ -1,6 +1,6 @@
 # Payment Due Date
 
-Payment Due Date is the date by which the payment for an invoice is expected to be received by the [*invoice issuer*](#glossary:invoice issuer). This date is used by FinOps practitioners and finance teams to manage cash flow, prioritize payments, and avoid late fees or service interruptions.
+Payment Due Date is the date by which the payment for an invoice is expected to be received by the [*invoice issuer*](#glossary:invoice-issuer). This date is used by FinOps practitioners and finance teams to manage cash flow, prioritize payments, and avoid late fees or service interruptions.
 
 ## Requirements
 
@@ -9,7 +9,7 @@ PaymentDueDate MUST adhere to the following requirements:
 * PaymentDueDate MUST be of type Date/Time.
 * PaymentDueDate MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.
 * PaymentDueDate MAY be null.
-* PaymentDueDate MUST be the date specified by the [*invoice issuer*](#glossary:invoice issuer) as the deadline for payment for the corresponding [InvoiceId](#datasets.invoicedetail.invoiceid).
+* PaymentDueDate MUST be the date specified by the invoice issuer as the deadline for payment for the corresponding [InvoiceId](#datasets.invoicedetail.invoiceid).
 
 ## Column ID
 
@@ -21,7 +21,7 @@ Payment Due Date
 
 ## Description
 
-The date by which the payment for an invoice is expected to be received by the [*invoice issuer*](#glossary:invoice issuer).
+The date by which the payment for an invoice is expected to be received by the invoice issuer.
 
 ## Content Constraints
 

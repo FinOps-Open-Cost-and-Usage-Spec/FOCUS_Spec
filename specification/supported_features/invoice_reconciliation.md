@@ -2,7 +2,7 @@
 
 ## Description
 
-FOCUS supports the reconciliation of granular cloud consumption records with the formal financial documents issued by an [*invoice issuer*](#glossary:invoice issuer). The [Invoice Detail](#datasets.invoicedetail) dataset represents the definitive financial record of [*charges*](#glossary:charge) as they appear on an invoice. By leveraging common identifiers, practitioners can map usage-based costs in the [Cost and Usage](#datasets.costandusage) dataset back to their corresponding line items in the [Invoice Detail](#datasets.invoicedetail) dataset.
+FOCUS supports the reconciliation of granular cloud consumption records with the formal financial documents issued by an [*invoice issuer*](#glossary:invoice-issuer). The [Invoice Detail](#datasets.invoicedetail) dataset represents the definitive financial record of [*charges*](#glossary:charge) as they appear on an invoice. By leveraging common identifiers, practitioners can map usage-based costs in the [Cost and Usage](#datasets.costandusage) dataset back to their corresponding line items in the [Invoice Detail](#datasets.invoicedetail) dataset.
 
 This feature also supports reconciliation across divergent currency grains. When an invoice issuer represents billing and payment currencies at different aggregation levels, the `PaymentCurrencyInvoiceDetailId` provides the necessary lineage to link granular usage records to the aggregate records used for financial settlement.
 

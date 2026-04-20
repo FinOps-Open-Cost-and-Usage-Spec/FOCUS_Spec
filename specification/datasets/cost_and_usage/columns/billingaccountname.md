@@ -8,7 +8,7 @@ BillingAccountName MUST adhere to the following requirements:
 
 * BillingAccountName MUST be of type String.
 * BillingAccountName MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* BillingAccountName MUST NOT be null when the [*invoice issuer*](#glossary:invoice issuer) supports assigning a display name for the *billing account*.
+* BillingAccountName MUST NOT be null when the [*invoice issuer*](#glossary:invoice-issuer) supports assigning a display name for the *billing account*.
 
 See [Appendix: Grouping constructs for resources or services](#appendix.groupingconstructsforresourcesorservices) for details and examples of the different grouping constructs supported by FOCUS.
 
