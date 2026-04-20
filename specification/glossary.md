@@ -185,7 +185,7 @@ A category of compute resources that can be paused or terminated by the CSP with
 
 A document that summarizes the charges for resources or services consumed by a customer.
 
-<a name="glossary:invoice issuer"><b>Invoice Issuer</b></a>
+<a name="glossary:invoice-issuer"><b>Invoice Issuer</b></a>
 
 An entity responsible for issuing payable [*invoices*](#glossary:invoice) for the [*resources*](#glossary:resource) or [*services*](#glossary:service) consumed. Common examples include [*cloud service providers*](#glossary:cloud-service-provider), [*managed service providers*](#glossary:managed-service-provider), or marketplace operators.
 
