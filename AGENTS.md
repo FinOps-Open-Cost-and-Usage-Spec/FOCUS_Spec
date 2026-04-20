@@ -39,9 +39,14 @@ pytest tests/test_schema.py   # Run a single test file
 
 ### Lint Markdown
 
+Linting is automatically run as part of `make`. To lint individual files:
+
 ```bash
-pymarkdownlnt --config specification/markdownlnt.cfg scan <file.md>
+cd specification
+python3 enhanced_markdown_lint.py --config markdownlnt.cfg scan <file.md>
 ```
+
+Note: The enhanced linter provides contextual error messages showing actual vs expected values.
 
 ## Architecture
 

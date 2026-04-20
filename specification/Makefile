@@ -1,6 +1,6 @@
 PANDOC=$(shell which pandoc)
 MARKDOWNPP=../vendored/bin/markdown-pp
-PYMARKDOWNLNT=$(shell which pymarkdownlnt)
+PYMARKDOWNLNT=python3 ./enhanced_markdown_lint.py
 WKHTMLTOPDF=$(shell which wkhtmltopdf)
 PANDOC_PROJECT_RELATIVE_LINKS=../vendored/pandoc-project-relative-links/pandoc-project-relative-links.py
 ifeq ($(STYLE),)

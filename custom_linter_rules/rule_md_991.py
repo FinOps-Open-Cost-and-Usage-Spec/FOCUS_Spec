@@ -78,7 +78,7 @@ class RuleMd991(RulePlugin):
                 self.report_next_token_error(
                     context,
                     token,
-                    extra_error_information=f"Expected: '{suggestion}'"
+                    extra_error_information=f"Actual: '{heading_text}', Expected: '{suggestion}'"
                 )
 
     def _is_title_case(self, text: str) -> bool:
