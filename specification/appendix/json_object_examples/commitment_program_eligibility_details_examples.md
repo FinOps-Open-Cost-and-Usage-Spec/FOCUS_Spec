@@ -1,8 +1,8 @@
-## Examples: Commitment Program Eligibility Details
+# Examples: Commitment Program Eligibility Details
 
 The examples below are not exhaustive and may change over time. Service providers are the authoritative source for their [*commitment programs*](#glossary:commitment-program).
 
-### Aura Web (Partially Covered Compute Usage)
+## Aura Web (Partially Covered Compute Usage)
 
 Scenario: A compute usage row that is partially covered by a Flexible Spend Plan. The eligibility column still reflects all programs this usage qualifies for, regardless of current coverage.
 
@@ -10,7 +10,7 @@ Scenario: A compute usage row that is partially covered by a Flexible Spend Plan
 |---------------------|-------------|---------------------------------------------------------------------------------------------------------|
 | Aura Web            | Compute     | {"CommitmentPrograms": [{"ProgramType": "FlexibleSpendPlan"}, {"ProgramType": "ResourceReservation"}]} |
 
-### StackLens (Observability with Interval Spend Commitment)
+## StackLens (Observability with Interval Spend Commitment)
 
 Scenario: An observability platform usage row eligible for Monthly and Annual interval spend commitment pricing, offering lower effective rates than standard usage.
 
@@ -18,7 +18,7 @@ Scenario: An observability platform usage row eligible for Monthly and Annual in
 |---------------------|---------------|-------------------------------------------------------------------------------------------------------------------------|
 | StackLens           | Observability | {"CommitmentPrograms": [{"ProgramType": "MonthlyIntervalSpendCommitment"}, {"ProgramType": "AnnualIntervalSpendCommitment"}]} |
 
-### LatticeScale (Ineligible Object Storage Usage)
+## LatticeScale (Ineligible Object Storage Usage)
 
 Scenario: Standard object storage usage or a support fee, which is not eligible for any commitment program.
 
@@ -26,7 +26,7 @@ Scenario: Standard object storage usage or a support fee, which is not eligible 
 |---------------------|---------------|------------------------------|
 | LatticeScale        | ObjectStorage | null                         |
 
-### Aura Web (Advance Resource Commitment-Eligible Compute Usage)
+## Aura Web (Advance Resource Commitment-Eligible Compute Usage)
 
 Scenario: A compute instance type and tenancy that are eligible for both discount-bearing programs and advance resource commitments. The eligibility column reflects all commitment constructs the usage qualifies for.
 
@@ -34,7 +34,7 @@ Scenario: A compute instance type and tenancy that are eligible for both discoun
 |---------------------|-------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Aura Web            | Compute     | {"CommitmentPrograms": [{"ProgramType": "FlexibleSpendPlan"}, {"ProgramType": "ResourceReservation"}, {"ProgramType": "AdvanceResourceCommitment"}, {"ProgramType": "ZonalResourceCommitment"}]} |
 
-### Coverage Rate with Eligibility-Adjusted Denominator
+## Coverage Rate with Eligibility-Adjusted Denominator
 
 This example demonstrates how to calculate an accurate [*commitment*](#glossary:commitment) coverage rate using [CommitmentProgramEligibilityDetails](#datasets.costandusage.commitmentprogrameligibilitydetails) alongside [CommitmentDiscountId](#datasets.costandusage.commitmentdiscountid).
 
@@ -58,7 +58,7 @@ Row 3 (support fee) is correctly excluded because CommitmentProgramEligibilityDe
 
 [CSV Example](/specification/data/commitment_eligibility/coverage_rate_eligibility_adjusted.csv)
 
-### Uncovered Eligible Spend by Program Type
+## Uncovered Eligible Spend by Program Type
 
 This example demonstrates how to use [CommitmentProgramEligibilityDetails](#datasets.costandusage.commitmentprogrameligibilitydetails) to identify uncovered savings opportunities across [*commitment program*](#glossary:commitment-program) types and providers.
 
