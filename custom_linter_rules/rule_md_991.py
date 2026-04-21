@@ -137,33 +137,35 @@ class RuleMd991(RulePlugin):
             # Check if previous token ended with colon
             follows_colon = i > 0 and result[i-1].endswith(':')
 
-            # Extract alphanumeric word from token
-            word_match = re.search(r'\w+', token)
-            if not word_match:
-                result.append(token)
-                continue
+            # Process all alphanumeric words in token (handles hyphenated terms)
+            new_token = token
+            offset = 0  # Track position changes as we replace words
 
-            word = word_match.group()
-            word_lower = word.lower()
+            for word_match in re.finditer(r'\w+', token):
+                word = word_match.group()
+                word_lower = word.lower()
 
-            # Skip numbers (keep them as-is)
-            if word.isdigit():
-                result.append(token)
-                continue
+                # Skip numbers (keep them as-is)
+                if word.isdigit():
+                    continue
 
-            # Determine if this word should be capitalized
-            if is_first or is_last or follows_colon or word_lower not in self.__minor_words:
-                # Smart case preservation: keep existing camelCase or ACRONYMS intact
-                if len(word) > 1 and any(c.isupper() for c in word[1:]):
-                    capitalized_word = word[0].upper() + word[1:]
+                # Determine if this word should be capitalized
+                if is_first or is_last or follows_colon or word_lower not in self.__minor_words:
+                    # Smart case preservation: keep existing camelCase or ACRONYMS intact
+                    if len(word) > 1 and any(c.isupper() for c in word[1:]):
+                        capitalized_word = word[0].upper() + word[1:]
+                    else:
+                        capitalized_word = word.capitalize()
                 else:
-                    capitalized_word = word.capitalize()
-            else:
-                # Minor word in middle: lowercase
-                capitalized_word = word.lower()
+                    # Minor word in middle: lowercase
+                    capitalized_word = word.lower()
 
-            # Replace the word in the token while preserving surrounding punctuation
-            new_token = token[:word_match.start()] + capitalized_word + token[word_match.end():]
+                # Replace the word in the token while preserving surrounding punctuation
+                start = word_match.start() + offset
+                end = word_match.end() + offset
+                new_token = new_token[:start] + capitalized_word + new_token[end:]
+                offset += len(capitalized_word) - len(word)
+
             result.append(new_token)
 
         return ' '.join(result)

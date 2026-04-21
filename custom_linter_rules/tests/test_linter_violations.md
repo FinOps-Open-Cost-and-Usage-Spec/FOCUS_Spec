@@ -22,6 +22,22 @@ Test Column
 
 A test column for validating linter rules.
 
+## Hyphenated-word Title case Test
+
+Testing hyphenated words with mixed case.
+
+## Multi-part-hyphenated Header test
+
+Testing multiple hyphens in headers.
+
+## API-based Integration for Real-time processing
+
+Testing acronyms and hyphenated words together.
+
+## Cost-to-usage Ratio analysis
+
+Testing hyphenated compound terms.
+
 ## Content constraints
 
 | Constraint      | Value                                                |

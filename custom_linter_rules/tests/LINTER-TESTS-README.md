@@ -10,6 +10,13 @@ A comprehensive test file containing intentional markdown linting violations of 
 
 **Violations included:**
 - MD991: Title case violations (custom rule)
+  - Simple lowercase words (e.g., "column id" → "Column Id")
+  - Minor words incorrect case (e.g., "description with bad case" → "Description with Bad Case")
+  - Hyphenated words (e.g., "Hyphenated-word" → "Hyphenated-Word")
+  - Multiple hyphens (e.g., "Multi-part-hyphenated Header test" → "Multi-Part-Hyphenated Header Test")
+  - Acronyms and hyphens (e.g., "API-based Integration for Real-time" → "API-Based Integration for Real-Time")
+  - Compound hyphenated terms (e.g., "Cost-to-usage Ratio analysis" → "Cost-To-Usage Ratio Analysis")
+  - Parenthesized words (e.g., "Introduced (version)" → "Introduced (Version)")
 - MD012: Multiple consecutive blank lines
 - MD022: Headings not properly surrounded by blank lines
 - Various edge cases and combinations
@@ -37,7 +44,7 @@ From the `specification/` directory, run:
 python3 enhanced_markdown_lint.py --config markdownlnt.cfg scan ../custom_linter_rules/tests/test_linter_violations.md
 ```
 
-**Expected output:** 9 violations with enhanced error messages showing:
+**Expected output:** 13 violations with enhanced error messages showing:
 - Actual vs Expected values for title case violations
 - Heading text for MD022 violations
 - Consecutive blank line counts for MD012 violations
@@ -51,7 +58,7 @@ From the `specification/` directory, run:
 pymarkdownlnt --config markdownlnt.cfg scan ../custom_linter_rules/tests/test_linter_violations.md
 ```
 
-**Expected output:** Same 9 violations but with standard pymarkdownlnt error format.
+**Expected output:** Same 13 violations but with standard pymarkdownlnt error format.
 
 ### Test Title Case Logic
 
