@@ -367,6 +367,7 @@ When commits are pushed to a branch after an approval has been logged:
 
 * PR author MUST re-request review from all approvers upon any commit that alters the normative requirements.
 * PR author SHOULD re-request review from all approvers upon any commit that alters the informative text of technical design, structure, or implementation of the proposed feature.
+* PR author SHOULD provide a summary comment outlining the specific modifications made since the previous approvals were logged to facilitate an efficient re-review process.
 
 **Enforcement**
 
