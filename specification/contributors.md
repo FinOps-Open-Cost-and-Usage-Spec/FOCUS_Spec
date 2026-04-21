@@ -58,5 +58,5 @@ Thanks to the following FOCUS Steering Committee members for their leadership on
 * Letian Feng (Amazon Web Services)
 * Mike Fuller (FinOps Foundation)
 * Sarah McMullin (Google)
-* Tim O'Brien (Walmart) (term ended 2026/11/10)
+* Tim O'Brien (Walmart) (term ended 2025/11/10)
 * Vikram Desai (Microsoft)
