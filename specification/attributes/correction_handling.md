@@ -50,7 +50,8 @@ In the Ledger correction style, a *dataset artifact* uses the Append delivery me
 
 All previously delivered *dataset artifacts* are preserved, and corrections are expressed as additive records that reflect explicit reversals and re-entries, applied during aggregation. These records effectively increase or decrease values in selected additive metrics (e.g., cost- and quantity-related columns) of previously delivered records, or supplement previously delivered records, all within the same *delivery scope*. The practitioner must reference all *dataset artifacts* delivered for a given *delivery scope* in order to see a complete and accurate view.
 
-Given that the entire change history is presented, the Ledger correction style provides full inherent auditability. Net data volume increases over time as all delivered dataset artifacts are preserved, and is typically the highest compared to other correction styles as each correction requires explicit reversal and re-entry records.
+Given that the entire change history is presented, the Ledger correction style provides full inherent auditability. Net data volume increases over time as all delivered dataset artifacts are preserved, and is typically the highest of the three correction styles as each correction requires explicit reversal and re-entry records.
+
 
 ## Requirements
 
