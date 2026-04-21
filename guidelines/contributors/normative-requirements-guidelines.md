@@ -446,6 +446,10 @@ Grouping and ordering of requirements ensure clarity, logical flow, and consiste
 | Business | Cost Validation | When applicable | {CostColumnId} MUST equal the product of {UnitPriceColumnId} and PricingQuantity when {UnitPriceColumnId} is not null and PricingQuantity is not null. |
 | Business | Other | When applicable | HostProviderName MUST reflect the name of the host provider when explicitly selected by the customer. |
 
+### Cross-Dataset Column Definitions
+
+* **Same Column Names Across Datasets**: When defining columns with the same name across different datasets (e.g., `ChargeCategory` in `CostAndUsage` versus `InvoiceDetail`), the normative and informative text MAY differ to accommodate dataset-specific requirements. However, the author SHOULD provide informative guidance within the specification explaining the reason for this divergence.
+
 ### Ordering of Column Requirements Within Groups
 
 To further enhance readability, individual requirements within each group SHOULD be ordered as follows:
