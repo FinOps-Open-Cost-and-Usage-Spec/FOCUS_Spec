@@ -28,6 +28,12 @@ class RuleMd991(RulePlugin):
         'as', 'at', 'by', 'for', 'in', 'of', 'on', 'to', 'up', 'via', 'with', 'from',  # prepositions
     }
 
+    # Words that when followed by a single capital letter indicate it's a designation, not an article
+    __designation_keywords = {
+        'section', 'part', 'chapter', 'appendix', 'figure', 'table', 'step', 'phase',
+        'option', 'plan', 'tier', 'level', 'grade', 'class', 'type', 'version'
+    }
+
     def __init__(self) -> None:
         super().__init__()
         self.__in_atx_heading = False
@@ -91,6 +97,9 @@ class RuleMd991(RulePlugin):
         if not tokens:
             return True
 
+        # Track previous word across all tokens for designation detection
+        prev_word_lower_global = None
+
         for i, token in enumerate(tokens):
             is_first = (i == 0)
             is_last = (i == len(tokens) - 1)
@@ -98,8 +107,13 @@ class RuleMd991(RulePlugin):
             # Check if previous token ended with colon
             follows_colon = i > 0 and tokens[i-1].endswith(':')
 
-            # Extract all alphanumeric words from token to handle hyphenated terms
-            for word_match in re.finditer(r'\w+', token):
+            # Find colon positions in current token to check for words after colons
+            # This handles cases like "Section A: part B:"
+            colon_positions = [m.start() for m in re.finditer(':', token)]
+
+            # Extract all alphanumeric words from token, including possessives
+            # Use word boundary pattern that keeps apostrophes within words
+            for word_match in re.finditer(r"\b[a-zA-Z][a-zA-Z']*[a-zA-Z]|\b[a-zA-Z]\b", token):
                 word = word_match.group()
                 word_lower = word.lower()
 
@@ -107,19 +121,38 @@ class RuleMd991(RulePlugin):
                 if word.isdigit():
                     continue
 
+                # Check if this word follows a colon within the same token
+                # Word must come AFTER a colon (colon_pos + 1 < word start)
+                word_follows_colon = follows_colon or any(colon_pos + 1 < word_match.start() for colon_pos in colon_positions)
+
+                # Check if this is a designation letter (e.g., "Section A", "Part B")
+                # Use global previous word to handle cross-token designations
+                is_designation = (len(word) == 1 and word.isupper() and
+                                 prev_word_lower_global in self.__designation_keywords)
+
                 # Check capitalization rules
-                if is_first or is_last or follows_colon:
+                if is_first or is_last or word_follows_colon:
                     # First, last, or after colon: should be capitalized
                     if not word[0].isupper():
                         return False
                 elif word_lower in self.__minor_words:
                     # Minor word in middle: should be lowercase
-                    if not word.islower():
-                        return False
+                    # Exception: designation letters like "Section A" should stay capital
+                    if is_designation:
+                        # This is a designation letter - should stay capital
+                        if not word.isupper():
+                            return False
+                    else:
+                        # Regular minor word (including article 'a') - should be lowercase
+                        if not word.islower():
+                            return False
                 else:
                     # Major word: should be capitalized
                     if not word[0].isupper():
                         return False
+
+                # Update global previous word tracker
+                prev_word_lower_global = word_lower
 
         return True
 
@@ -130,6 +163,9 @@ class RuleMd991(RulePlugin):
         tokens = text.split()
         result = []
 
+        # Track previous word across all tokens for designation detection
+        prev_word_lower_global = None
+
         for i, token in enumerate(tokens):
             is_first = (i == 0)
             is_last = (i == len(tokens) - 1)
@@ -137,11 +173,15 @@ class RuleMd991(RulePlugin):
             # Check if previous token ended with colon
             follows_colon = i > 0 and result[i-1].endswith(':')
 
-            # Process all alphanumeric words in token (handles hyphenated terms)
+            # Find colon positions in current token to check for words after colons
+            colon_positions = [m.start() for m in re.finditer(':', token)]
+
+            # Process all alphanumeric words in token (handles hyphenated terms and possessives)
             new_token = token
             offset = 0  # Track position changes as we replace words
 
-            for word_match in re.finditer(r'\w+', token):
+            # Use word boundary pattern that keeps apostrophes within words
+            for word_match in re.finditer(r"\b[a-zA-Z][a-zA-Z']*[a-zA-Z]|\b[a-zA-Z]\b", token):
                 word = word_match.group()
                 word_lower = word.lower()
 
@@ -149,16 +189,35 @@ class RuleMd991(RulePlugin):
                 if word.isdigit():
                     continue
 
+                # Check if this word follows a colon within the same token
+                # Word must come AFTER a colon (colon_pos + 1 < word start)
+                word_follows_colon = follows_colon or any(colon_pos + 1 < word_match.start() for colon_pos in colon_positions)
+
+                # Check if this is a designation letter (e.g., "Section A", "Part B")
+                # Use global previous word to handle cross-token designations
+                is_designation = (len(word) == 1 and word.isupper() and
+                                 prev_word_lower_global in self.__designation_keywords)
+
                 # Determine if this word should be capitalized
-                if is_first or is_last or follows_colon or word_lower not in self.__minor_words:
+                if is_first or is_last or word_follows_colon or word_lower not in self.__minor_words:
+                    # Major word, first word, last word, or after colon: capitalize
                     # Smart case preservation: keep existing camelCase or ACRONYMS intact
                     if len(word) > 1 and any(c.isupper() for c in word[1:]):
                         capitalized_word = word[0].upper() + word[1:]
                     else:
                         capitalized_word = word.capitalize()
                 else:
-                    # Minor word in middle: lowercase
-                    capitalized_word = word.lower()
+                    # Minor word in middle
+                    # Exception: designation letters like "Section A" should stay capital
+                    if is_designation:
+                        # Designation letter - keep as capital
+                        capitalized_word = word.upper()
+                    else:
+                        # Regular minor word (including article 'a'): lowercase
+                        capitalized_word = word.lower()
+
+                # Update global previous word tracker
+                prev_word_lower_global = word_lower
 
                 # Replace the word in the token while preserving surrounding punctuation
                 start = word_match.start() + offset

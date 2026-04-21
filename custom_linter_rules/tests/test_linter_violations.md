@@ -38,6 +38,46 @@ Testing acronyms and hyphenated words together.
 
 Testing hyphenated compound terms.
 
+## Cost Analysis: a comprehensive guide
+
+Testing colon rule - words after colons should be capitalized.
+
+## the Cost Analysis Guide
+
+Testing minor word as first word - should be capitalized.
+
+## Guide to the
+
+Testing minor word as last word - should be capitalized.
+
+## Analysis: the results
+
+Testing minor word after colon - should be capitalized.
+
+## Section A: part B: the details
+
+Testing multiple colons.
+
+## Using [FOCUS] for cost Analysis
+
+Testing brackets and mixed case.
+
+## Cost/usage Analysis Report
+
+Testing forward slashes.
+
+## Provider's cost Data
+
+Testing possessives with incorrect case.
+
+## When A Dataset is Created
+
+Testing article 'a' in middle - should be lowercase.
+
+## Creating A New Resource
+
+Testing another article 'a' case.
+
 ## Content constraints
 
 | Constraint      | Value                                                |

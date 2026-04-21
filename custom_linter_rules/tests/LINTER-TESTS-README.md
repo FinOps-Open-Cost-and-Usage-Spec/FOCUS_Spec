@@ -16,7 +16,16 @@ A comprehensive test file containing intentional markdown linting violations of 
   - Multiple hyphens (e.g., "Multi-part-hyphenated Header test" → "Multi-Part-Hyphenated Header Test")
   - Acronyms and hyphens (e.g., "API-based Integration for Real-time" → "API-Based Integration for Real-Time")
   - Compound hyphenated terms (e.g., "Cost-to-usage Ratio analysis" → "Cost-To-Usage Ratio Analysis")
+  - Colon rule (e.g., "Cost Analysis: a comprehensive guide" → "Cost Analysis: A Comprehensive Guide")
+  - First word minor word (e.g., "the Cost Analysis Guide" → "The Cost Analysis Guide")
+  - Last word minor word (e.g., "Guide to the" → "Guide to The")
+  - Multiple colons (e.g., "Section A: part B: the details" → "Section A: Part B: The Details")
+  - Brackets (e.g., "Using [FOCUS] for cost Analysis" → "Using [FOCUS] for Cost Analysis")
+  - Forward slashes (e.g., "Cost/usage Analysis Report" → "Cost/Usage Analysis Report")
+  - Possessives (e.g., "Provider's cost Data" → "Provider's Cost Data")
   - Parenthesized words (e.g., "Introduced (version)" → "Introduced (Version)")
+  - Article 'a' in middle (e.g., "When A Dataset is Created" → "When a Dataset Is Created")
+  - Designation letters vs articles (e.g., "Section A:" preserves capital, but "Creating A New" lowercases article)
 - MD012: Multiple consecutive blank lines
 - MD022: Headings not properly surrounded by blank lines
 - Various edge cases and combinations
@@ -44,7 +53,7 @@ From the `specification/` directory, run:
 python3 enhanced_markdown_lint.py --config markdownlnt.cfg scan ../custom_linter_rules/tests/test_linter_violations.md
 ```
 
-**Expected output:** 13 violations with enhanced error messages showing:
+**Expected output:** 23 violations with enhanced error messages showing:
 - Actual vs Expected values for title case violations
 - Heading text for MD022 violations
 - Consecutive blank line counts for MD012 violations
@@ -58,7 +67,7 @@ From the `specification/` directory, run:
 pymarkdownlnt --config markdownlnt.cfg scan ../custom_linter_rules/tests/test_linter_violations.md
 ```
 
-**Expected output:** Same 13 violations but with standard pymarkdownlnt error format.
+**Expected output:** Same 23 violations but with standard pymarkdownlnt error format.
 
 ### Test Title Case Logic
 
