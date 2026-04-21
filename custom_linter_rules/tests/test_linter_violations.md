@@ -78,6 +78,22 @@ Testing article 'a' in middle - should be lowercase.
 
 Testing another article 'a' case.
 
+## Where The Data Is Stored
+
+Testing 'is' as minor word - should be lowercase in middle.
+
+## Services That Are Available
+
+Testing 'are' as minor word - should be lowercase in middle.
+
+## Azure Vs AWS Comparison
+
+Testing 'vs' as minor word - should be lowercase in middle.
+
+## Cost Vs. Usage Analysis
+
+Testing 'vs.' as minor word - should be lowercase in middle.
+
 ## Content constraints
 
 | Constraint      | Value                                                |

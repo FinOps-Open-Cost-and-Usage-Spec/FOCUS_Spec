@@ -26,6 +26,10 @@ A comprehensive test file containing intentional markdown linting violations of 
   - Parenthesized words (e.g., "Introduced (version)" → "Introduced (Version)")
   - Article 'a' in middle (e.g., "When A Dataset is Created" → "When a Dataset Is Created")
   - Designation letters vs articles (e.g., "Section A:" preserves capital, but "Creating A New" lowercases article)
+  - Technical exception 'is' (e.g., "Where The Data Is Stored" → "Where the Data is Stored")
+  - Technical exception 'are' (e.g., "Services That Are Available" → "Services That are Available")
+  - Technical exception 'vs' (e.g., "Azure Vs AWS Comparison" → "Azure vs AWS Comparison")
+  - Technical exception 'vs.' (e.g., "Cost Vs. Usage Analysis" → "Cost vs. Usage Analysis")
 - MD012: Multiple consecutive blank lines
 - MD022: Headings not properly surrounded by blank lines
 - Various edge cases and combinations
@@ -53,7 +57,7 @@ From the `specification/` directory, run:
 python3 enhanced_markdown_lint.py --config markdownlnt.cfg scan ../custom_linter_rules/tests/test_linter_violations.md
 ```
 
-**Expected output:** 23 violations with enhanced error messages showing:
+**Expected output:** 27 violations with enhanced error messages showing:
 - Actual vs Expected values for title case violations
 - Heading text for MD022 violations
 - Consecutive blank line counts for MD012 violations
@@ -67,7 +71,7 @@ From the `specification/` directory, run:
 pymarkdownlnt --config markdownlnt.cfg scan ../custom_linter_rules/tests/test_linter_violations.md
 ```
 
-**Expected output:** Same 23 violations but with standard pymarkdownlnt error format.
+**Expected output:** Same 27 violations but with standard pymarkdownlnt error format.
 
 ### Test Title Case Logic
 
