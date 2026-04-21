@@ -47,7 +47,7 @@ Allowed values:
 | Quarterly     | 50         | Measured over a 3-month fiscal period. | Enterprise true-ups or volume-based rebate targets. |
 | Semi-Annual   | 60         | Measured over a 6-month period. | Mid-year budget alignments or review cycles. |
 | Annual        | 70         | Measured over a 12-month period. | Discontinuous Model: Cloud EAs (Enterprise Agreements). |
-| Full Commitment Period | 80 | The fulfillment interval is the full duration of the contract commitment, with no internal resets. | "Pool-of-funds commitments" spanning the full commitment duration. |
+| Full Period | 80 | The fulfillment interval is the full duration of the contract commitment, with no internal resets. | "Pool-of-funds commitments" spanning the full commitment duration. |
 | Transactional | 90         | No time-based reset; based purely on event volume or credit consumption. | API call bundles or "Credit Packs" with no expiration date. |
 | Custom        | 100        | A bespoke interval that does not fit standard calendar units. | Bridge contracts, unique POCs, or non-standard durations (e.g., 100 days). |
 
