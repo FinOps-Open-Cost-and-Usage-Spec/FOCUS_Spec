@@ -21,11 +21,12 @@ class RuleMd991(RulePlugin):
     - Words after colons are capitalized
     """
 
-    # Words that should be lowercase in title case (unless first/last word)
+  # Words that should be lowercase in title case (unless first/last word)
     __minor_words = {
         'a', 'an', 'the',  # articles
         'and', 'but', 'or', 'nor', 'for', 'yet', 'so',  # coordinating conjunctions
         'as', 'at', 'by', 'for', 'in', 'of', 'on', 'to', 'up', 'via', 'with', 'from',  # prepositions
+        'is', 'are', 'vs', 'vs.'  # specific technical exceptions
     }
 
     # Words that when followed by a single capital letter indicate it's a designation, not an article
