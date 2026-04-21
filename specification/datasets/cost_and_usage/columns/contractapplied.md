@@ -59,6 +59,20 @@ The `Elements` array contains one or more objects, each of which contains the fo
 | `ContractCommitmentAppliedQuantity` | Decimal | Conditional | The quantity of the *charge* applied to the contract line item. It is associated with the contract line item via Contract Commitment ID, and is commonly used for monitoring the progress towards fulfilling contractual commitments that may facilitate discounts for [*resources*](#glossary:resource) or [*services*](#glossary:service) as agreed between a service provider and a customer. <br><br>**Condition:** Must be present if Cost is not provided. |
 | `ContractCommitmentAppliedUnit` | String | Conditional | A service-provider-specified measurement unit for the usage declared in Contract Commitment Applied Quantity. It complements the Contract Commitment Applied Quantity metric. <br><br>**Condition:** Must be present if Contract Commitment Applied Quantity is provided. |
 
+## Implementation Guidance
+
+### Custom Properties
+
+To facilitate querying data across allocations and across service providers, a data generator may include one or more custom properties. These may be placed at the top level of the object (alongside `Elements`) or nested within the individual `Elements` objects. Custom keys must be prefixed with "x_" followed by PascalCase format (e.g., `x_MyCustomKey`) to make them easy to identify as well as prevent collisions with FOCUS-defined keys.
+
+### Object ID
+
+ContractAppliedObject
+
+### Object Display Name
+
+Contract Applied Object
+
 ## Object Example
 
 Here is a basic example of the object format.
@@ -83,20 +97,6 @@ Here is a basic example of the object format.
   ]
 }
 ```
-
-## Implementation Guidance
-
-### Custom Properties
-
-To facilitate querying data across allocations and across service providers, a data generator may include one or more custom properties. These may be placed at the top level of the object (alongside `Elements`) or nested within the individual `Elements` objects. Custom keys must be prefixed with "x_" followed by PascalCase format (e.g., `x_MyCustomKey`) to make them easy to identify as well as prevent collisions with FOCUS-defined keys.
-
-### Object ID
-
-ContractAppliedObject
-
-### Object Display Name
-
-Contract Applied Object
 
 ## Column ID
 
