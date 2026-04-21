@@ -11,7 +11,7 @@ CommitmentProgramEligibilityDetails MUST adhere to the following requirements:
 * CommitmentProgramEligibilityDetails MUST be of type JSON Object (serialized as a String where necessary).
 * CommitmentProgramEligibilityDetails MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * CommitmentProgramEligibilityDetails MUST conform to [JsonObjectFormat](#attributes.jsonobjectformat) requirements.
-* CommitmentProgramEligibilityDetails MUST conform to [CommitmentProgramEligibilityDetailsObject](#datasets.costandusage.contractapplied.commitmentprogramelgibilitydetailsobject) requirements when CommitmentProgramEligibilityDetails is not null.
+* CommitmentProgramEligibilityDetails MUST conform to [CommitmentProgramEligibilityDetailsObject](#datasets.costandusage.contractapplied.commitmentprogrameligibilitydetailsobject) requirements when CommitmentProgramEligibilityDetails is not null.
 * CommitmentProgramEligibilityDetails MUST NOT be null when a charge is eligible for a [*commitment program*](#glossary:commitment-program), regardless of whether a [*commitment*](#glossary:commitment) was actually applied to the charge.
 * CommitmentProgramEligibilityDetails MUST NOT reflect restrictions (e.g., transient account configurations, quotas) that might temporarily prevent purchase or participation in a *commitment program*.
 * CommitmentProgramEligibilityDetails MUST include all publicly available *commitment programs* for which the usage is eligible.
