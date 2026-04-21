@@ -109,4 +109,16 @@ Testing 'vs.' as minor word - should be lowercase in middle.
 
 1.0
 
+## Cost &amp; Usage Analysis
+
+Testing HTML entity &amp; - should be ignored by linter.
+
+## Data &lt; 100 &amp; Quality &gt; 90
+
+Testing multiple HTML entities - should be ignored.
+
+## Cost Analysis &amp; Optimization
+
+Testing HTML entity in title case - should pass without errors.
+
 

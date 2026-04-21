@@ -32,7 +32,7 @@ class RuleMd991(RulePlugin):
     # Words that when followed by a single capital letter indicate it's a designation, not an article
     __designation_keywords = {
         'section', 'part', 'chapter', 'appendix', 'figure', 'table', 'step', 'phase',
-        'option', 'plan', 'tier', 'level', 'grade', 'class', 'type', 'version'
+        'option', 'plan', 'tier', 'level', 'grade', 'class', 'type', 'version', 'scenario'
     }
 
     def __init__(self) -> None:
@@ -92,8 +92,12 @@ class RuleMd991(RulePlugin):
         """
         Check if text follows title case rules.
         """
+        # Remove HTML entities before processing to avoid false positives
+        # Pattern matches &entity; format (e.g., &amp;, &lt;, &quot;)
+        text_without_entities = re.sub(r'&[a-zA-Z]+;', '', text)
+
         # Split on whitespace to get words (preserving punctuation)
-        tokens = text.split()
+        tokens = text_without_entities.split()
 
         if not tokens:
             return True
@@ -161,7 +165,11 @@ class RuleMd991(RulePlugin):
         """
         Convert text to title case for error message suggestions.
         """
-        tokens = text.split()
+        # Remove HTML entities before processing to avoid false positives
+        # Pattern matches &entity; format (e.g., &amp;, &lt;, &quot;)
+        text_without_entities = re.sub(r'&[a-zA-Z]+;', '', text)
+
+        tokens = text_without_entities.split()
         result = []
 
         # Track previous word across all tokens for designation detection
