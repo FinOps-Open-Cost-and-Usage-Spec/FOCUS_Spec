@@ -9,12 +9,14 @@ ChargeCategory MUST adhere to the following requirements:
 * ChargeCategory MUST be of type String.
 * ChargeCategory MUST NOT be null.
 * ChargeCategory MUST be one of the allowed values.
-* ChargeCategory MUST be "Usage" when the charge represents consumption of a service or resource.
-* ChargeCategory MAY be "Usage" when the record aggregates *charges* across multiple allowed values other than "Tax" (for example, aggregation of "Usage" and "Credit" is allowed, but not "Usage" and "Tax").
-* ChargeCategory MUST be "Purchase" when the charge represents acquisition of a service, resource, or commitment.
-* ChargeCategory MUST be "Tax" when the charge represents taxes levied by the relevant authorities.
-* ChargeCategory MUST be "Credit" when the charge represents a financial incentive or allowance unrelated to other charges.
-* ChargeCategory MUST be "Adjustment" when the charge represents a billing modification that does not fall into other ChargeCategories.
+* When the *charge* does not aggregate multiple classifications, ChargeCategory MUST adhere to the following requirements:
+  * ChargeCategory MUST be "Usage" when the *charge* represents consumption of a service or resource.
+  * ChargeCategory MUST be "Purchase" when the *charge* represents acquisition of a service, resource, or *commitment*.
+  * ChargeCategory MUST be "Tax" when the *charge* represents taxes levied by the relevant authorities.
+  * ChargeCategory MUST be "Credit" when the *charge* represents a financial incentive or allowance unrelated to other *charges*.
+  * ChargeCategory MUST be "Adjustment" when the *charge* represents a billing modification that does not fall into other ChargeCategories.
+* When the *charge* aggregates multiple classifications, ChargeCategory MUST adhere to the following requirements:
+  * ChargeCategory MAY be "Usage" when the record aggregates *charges* across multiple allowed values other than "Tax" (for example, aggregation of "Usage" and "Credit" is allowed, but not "Usage" and "Tax").
 
 ## Implementation Context
 
