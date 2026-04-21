@@ -39,6 +39,6 @@ The identifier of the object to which cost is allocated in data generator-calcul
 | Data type       | String                                               |
 | Value format    | \<not specified>                                     |
 
-## Introduced (version)
+## Version Introduced
 
 1.3

@@ -49,6 +49,6 @@ Cost of a *charge* based on the *resources* used, *services* used, or *contract 
 | Value format    | [Numeric Format](#attributes.numericformat)          |
 | Number range    | Any valid decimal value                              |
 
-## Introduced (version)
+## Version Introduced
 
 0.5

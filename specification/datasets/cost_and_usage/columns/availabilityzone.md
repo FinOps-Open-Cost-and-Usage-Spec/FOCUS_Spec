@@ -33,6 +33,6 @@ A host-provider-assigned identifier for a physically separated and isolated area
 | Data type       | String                                               |
 | Value format    | \<not specified>                                     |
 
-## Introduced (version)
+## Version Introduced
 
 0.5

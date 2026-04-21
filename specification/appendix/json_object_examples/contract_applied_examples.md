@@ -1,6 +1,6 @@
 # Examples: Contract Applied
 
-## Scenario 1: Initial contract commitment
+## Scenario 1: Initial Contract Commitment
 
 A single Cost and Usage charge represents the values stated on a contract and its three contract commitments agreed between a service provider and a customer:
 
@@ -36,7 +36,7 @@ The Charge Category is denoted as Purchase, and the Contract ID, Resource ID, an
 }
 ```
 
-## Scenario 2: Contract commitment usage with no custom columns
+## Scenario 2: Contract Commitment Usage with No Custom Columns
 
 Assume the contract commitment as described in Scenario 1. Assume that only 50% of cost and usage gets applied to the contract commitments, per the contract terms.
 
@@ -71,7 +71,7 @@ This applies to the contract commitments in the following manner:
 }
 ```
 
-## Scenario 3: Contract commitment usage with custom columns
+## Scenario 3: Contract Commitment Usage with Custom Columns
 
 The same as Scenario 2, except a custom key-value pair `x_ContractCommitmentCostBalance` is provided by the data generator. This datapoint represents the value remaining on a given contract commitment.
 

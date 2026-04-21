@@ -181,6 +181,6 @@ A structured definition of the specific entities to which a contract commitment 
 | Value format | [JSON Object Format](#attributes.jsonobjectformat) |
 | Object          | [ContractCommitmentApplicabilityObject](#datasets.contractcommitment.contractcommitmentapplicability.contractcommitmentapplicabilityobject) |
 
-## Introduced (version)
+## Version Introduced
 
 1.4

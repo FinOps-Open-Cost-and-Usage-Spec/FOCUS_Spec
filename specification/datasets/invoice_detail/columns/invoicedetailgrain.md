@@ -66,6 +66,6 @@ The following keys should be used when applicable when a relevant concept is rep
 * [SKU Price ID](#datasets.costandusage.skupriceid)
 * [Sub Account ID](#datasets.costandusage.subaccountid)
 
-## Introduced (version)
+## Version Introduced
 
 1.4

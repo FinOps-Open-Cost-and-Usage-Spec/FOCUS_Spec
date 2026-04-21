@@ -46,6 +46,6 @@ The current lifecycle state of a [*contract commitment*](#glossary:contract-comm
 | Canceled | 60 | The commitment is no longer active because it was terminated by either party prior to its scheduled end date. |
 | Superseded | 70 | The commitment is no longer active because it was replaced by a newer version prior to its scheduled end date. |
 
-## Introduced (version)
+## Version Introduced
 
 1.4

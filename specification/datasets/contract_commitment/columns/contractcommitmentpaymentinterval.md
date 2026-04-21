@@ -48,6 +48,6 @@ Allowed values:
 | Annual      | 50         | Invoices for the deferred balance are generated once per year. | Partial Upfront EAs billed yearly. |
 | Custom      | 60         | Hourly/Daily or other irregular cycles. | Irregular bridge contracts or non-standard terms. |
 
-## Introduced (version)
+## Version Introduced
 
 1.4

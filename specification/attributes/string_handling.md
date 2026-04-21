@@ -30,6 +30,6 @@ String Handling
 
 Requirements for string-capturing columns appearing in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 
-## Introduced (version)
+## Version Introduced
 
 1.0

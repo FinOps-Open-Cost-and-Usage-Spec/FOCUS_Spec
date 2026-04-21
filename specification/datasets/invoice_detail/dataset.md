@@ -97,6 +97,6 @@ Invoice Detail
 
 The financial record of *charges* as they appear on invoices provided by an invoice issuer.
 
-## Introduced (version)<!--SkipTOC-->
+## Version Introduced<!--SkipTOC-->
 
 1.4

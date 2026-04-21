@@ -75,6 +75,6 @@ Numeric Format
 
 Rules and formatting requirements for numeric columns appearing in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 
-## Introduced (version)
+## Version Introduced
 
 1.0-preview

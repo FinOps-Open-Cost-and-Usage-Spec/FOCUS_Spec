@@ -42,6 +42,6 @@ Allowed values:
 | Spend   | Commitment discounts that require a predetermined amount of spend. |
 | Usage   | Commitment discounts that require a predetermined amount of usage. |
 
-## Introduced (version)
+## Version Introduced
 
 1.0-preview

@@ -55,6 +55,6 @@ The publication state of the invoice and the reliability of its associated deliv
 | Issued | The invoice has been formally issued by the provider. It represents a valid financial obligation with finalized associated data. |
 | Voided | The invoice was previously issued but has been retracted or nullified. It is not a valid financial obligation. |
 
-## Introduced (version)
+## Version Introduced
 
 1.4

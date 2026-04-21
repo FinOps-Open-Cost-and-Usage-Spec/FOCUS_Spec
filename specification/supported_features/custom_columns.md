@@ -24,6 +24,6 @@ GROUP BY
 ORDER BY MonthlyCost DESC
 ```
 
-## Introduced (Version)
+## Version Introduced
 
 0.5

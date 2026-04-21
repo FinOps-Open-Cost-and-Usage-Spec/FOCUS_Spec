@@ -67,6 +67,6 @@ The following units should be used for the representation of time:
 | Year |
 | Years |
 
-## Introduced (version)
+## Version Introduced
 
 1.4

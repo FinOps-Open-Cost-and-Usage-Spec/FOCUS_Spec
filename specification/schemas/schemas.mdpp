@@ -12,7 +12,7 @@ The Contract Commitment Applicability Object Schema defines the structure for th
 
 !INCLUDECODE "schemas/datasets/contract_commitment/contractcommitmentapplicabilityobjectschema.json" (json)
 
-## Cost And Usage
+## Cost and Usage
 
 ### Allocated Method Details Object Schema
 

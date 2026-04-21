@@ -66,6 +66,6 @@ Delivery Handling
 
 Defines how a *data generator* delivers a *FOCUS dataset* to a customer.
 
-## Introduced (version)
+## Version Introduced
 
 1.4

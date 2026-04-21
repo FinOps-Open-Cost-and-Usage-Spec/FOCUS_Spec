@@ -67,7 +67,7 @@ Key observations:
 
 [**CSV Example**](/specification/data/saas_examples/credit_based_consumption_a.csv)
 
-## Host-Based SaaS Monitoring: Monthly On-Demand Usage
+## Host-Based SaaS Monitoring: Monthly on-Demand Usage
 
 A SaaS observability [*service provider*](#glossary:service%20provider), StackLens, offers multiple monitoring [*services*](#glossary:service) billed on different units: host-based pricing for infrastructure and application performance monitoring, and volume-based pricing for log ingestion.
 
@@ -180,7 +180,7 @@ Here is how these charges appear in the data (relevant columns only):
 
 [**CSV Example**](/specification/data/saas_examples/seat_based_saas_annual_a.csv)
 
-## Multi-Unit Usage-Based PaaS: Database-as-a-Service
+## Multi-Unit Usage-Based PaaS: Database-As-A-Service
 
 A PaaS database [*service provider*](#glossary:service%20provider), StoreStack, bills different resource types on different units. The *service provider* offers dedicated database clusters with separate charges for compute, storage, and data transfer.
 

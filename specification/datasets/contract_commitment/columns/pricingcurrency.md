@@ -34,6 +34,6 @@ The national or virtual currency denomination that the [Contract Commitment Cost
 | Data type       | String                              |
 | Value format    | [Currency Format](#attributes.currencyformat) |
 
-## Introduced (version)
+## Version Introduced
 
 1.4

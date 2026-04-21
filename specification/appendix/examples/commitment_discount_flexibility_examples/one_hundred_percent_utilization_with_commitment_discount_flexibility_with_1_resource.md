@@ -1,4 +1,4 @@
-# 100% utilization with commitment discount flexibility with 1 resource
+# 100% Utilization with Commitment Discount Flexibility with 1 Resource
 
 ## Context
 

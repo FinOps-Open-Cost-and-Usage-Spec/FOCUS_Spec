@@ -36,6 +36,6 @@ The display name of the object to which cost is allocated in data generator-calc
 | Data type       | String                                               |
 | Value format    | \<not specified>                                     |
 
-## Introduced (version)
+## Version Introduced
 
 1.3

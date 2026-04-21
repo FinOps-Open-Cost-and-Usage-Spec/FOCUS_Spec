@@ -9,6 +9,6 @@ FOCUS' schema metadata supports communication of important attributes about the 
 * Schema
   * Column Definition
 
-## Introduced (Version)
+## Version Introduced
 
 1.1

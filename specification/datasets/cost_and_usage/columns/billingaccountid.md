@@ -37,6 +37,6 @@ The identifier assigned to a *billing account* by the invoice issuer.
 | Data type       | String                                               |
 | Value format    | \<not specified>                                     |
 
-## Introduced (version)
+## Version Introduced
 
 0.5

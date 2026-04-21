@@ -35,6 +35,6 @@ The name of the entity responsible for invoicing for the *resources* or *service
 | Data type       | String                                               |
 | Value format    | \<not specified>                                     |
 
-## Introduced (version)
+## Version Introduced
 
 0.5

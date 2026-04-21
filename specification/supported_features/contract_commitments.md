@@ -103,6 +103,6 @@ GROUP BY ServiceProviderName, ContractCommitmentId, ContractCommitmentPeriodStar
 ORDER BY ServiceProviderName, ContractCommitmentId, ContractCommitmentPeriodStart, ContractCommitmentPeriodEnd
 ```
 
-## Introduced (Version)
+## Version Introduced
 
 1.3

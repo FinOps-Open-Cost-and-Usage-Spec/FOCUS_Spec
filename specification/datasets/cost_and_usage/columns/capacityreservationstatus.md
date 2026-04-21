@@ -45,6 +45,6 @@ Allowed values:
 | Used   | *Charges* that utilized a specific amount of a *capacity reservation*. |
 | Unused | *Charges* that represent the unused portion of a *capacity reservation*. |
 
-## Introduced (version)
+## Version Introduced
 
 1.1

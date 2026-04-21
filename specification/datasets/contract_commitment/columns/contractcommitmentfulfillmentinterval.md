@@ -53,6 +53,6 @@ Allowed values:
 
 Note: the sort orders and use cases presented above are included for convenience and are not defined as separate FOCUS columns.
 
-## Introduced (version)
+## Version Introduced
 
 1.4

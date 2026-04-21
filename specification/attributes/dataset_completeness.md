@@ -42,6 +42,6 @@ Dataset Completeness
 
 Defines requirements for a *FOCUS dataset* to include *custom columns* for *native dataset* columns not represented in *FOCUS columns*.
 
-## Introduced (version)
+## Version Introduced
 
 1.4

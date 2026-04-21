@@ -31,6 +31,6 @@ GROUP BY
   ConsumedUnit
 ```
 
-## Introduced (Version)
+## Version Introduced
 
 1.0

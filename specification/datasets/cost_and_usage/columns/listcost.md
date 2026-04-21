@@ -43,6 +43,6 @@ Cost calculated by multiplying List Unit Price and the corresponding Pricing Qua
 | Value format    | [Numeric Format](#attributes.numericformat)          |
 | Number range    | Any valid decimal value                              |
 
-## Introduced (version)
+## Version Introduced
 
 1.0-preview

@@ -122,6 +122,6 @@ A set of properties that associate a *charge* with one or more [*contract commit
 | Value format | [JSON Object Format](#attributes.jsonobjectformat) |
 | Object | [ContractAppliedObject](#datasets.costandusage.contractapplied.contractappliedobject) |
 
-## Introduced (version)
+## Version Introduced
 
 1.3

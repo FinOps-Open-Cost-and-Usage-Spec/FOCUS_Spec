@@ -61,7 +61,7 @@ FULL OUTER JOIN (
 WHERE ID.InvoiceId = ?
 ```
 
-### Reconcile Multi-Currency Settlement using Lineage IDs
+### Reconcile Multi-Currency Settlement Using Lineage IDs
 
 This query demonstrates how to use the `PaymentCurrencyInvoiceDetailId` to reconcile granular records (denominated in the billing currency) against the aggregate records used for payment (denominated in the payment currency). This resolves the "Divergent Grain" problem.
 
@@ -93,6 +93,6 @@ WHERE InvoiceId = ?
 GROUP BY InvoiceId
 ```
 
-## Introduced (Version)
+## Version Introduced
 
 1.4

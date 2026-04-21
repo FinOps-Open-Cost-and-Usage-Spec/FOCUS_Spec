@@ -21,6 +21,6 @@ TimeSectors
 
 Time Sectors
 
-## Introduced (version)
+## Version Introduced
 
 1.3

@@ -39,6 +39,6 @@ Identifier assigned to a *resource* by the service provider.
 | Data type       | String                                               |
 | Value format    | \<not specified>                                     |
 
-## Introduced (version)
+## Version Introduced
 
 0.5

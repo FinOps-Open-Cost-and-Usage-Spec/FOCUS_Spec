@@ -34,6 +34,6 @@ The timestamp when the Invoice Detail record was last updated.
 | Data type       | Date/Time                        |
 | Value format    | [Date/Time Format](#attributes.date/timeformat) |
 
-## Introduced (version)
+## Version Introduced
 
 1.4
