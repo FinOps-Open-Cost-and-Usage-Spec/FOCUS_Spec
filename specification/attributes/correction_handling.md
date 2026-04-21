@@ -52,7 +52,6 @@ All previously delivered *dataset artifacts* are preserved, and corrections are 
 
 Given that the entire change history is presented, the Ledger correction style provides full inherent auditability. Net data volume increases over time as all delivered dataset artifacts are preserved, and is typically the highest of the three correction styles as each correction requires explicit reversal and re-entry records.
 
-
 ## Requirements
 
 CorrectionHandling MUST adhere to the following requirements:
