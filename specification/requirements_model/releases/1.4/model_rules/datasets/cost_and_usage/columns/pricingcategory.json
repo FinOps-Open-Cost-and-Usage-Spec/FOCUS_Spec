@@ -38,10 +38,10 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CAU-CostAndUsage-D-022-C",
         "CAU-PricingCategory-C-001-M",
         "CAU-PricingCategory-C-002-M",
-        "CAU-PricingCategory-C-006-C"
+        "CAU-PricingCategory-C-006-C",
+        "CAU-CostAndUsage-D-022-C"
       ]
     }
   },

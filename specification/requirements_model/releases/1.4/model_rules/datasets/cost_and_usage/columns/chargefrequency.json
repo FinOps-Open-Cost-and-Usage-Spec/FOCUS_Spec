@@ -40,11 +40,11 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CAU-CostAndUsage-D-027-O",
         "CAU-ChargeFrequency-C-001-M",
         "CAU-ChargeFrequency-C-002-M",
         "CAU-ChargeFrequency-C-003-M",
-        "CAU-ChargeFrequency-C-004-C"
+        "CAU-ChargeFrequency-C-004-C",
+        "CAU-CostAndUsage-D-027-O"
       ]
     }
   },

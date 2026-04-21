@@ -40,11 +40,11 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CAU-CostAndUsage-D-075-M",
         "CAU-HostProviderName-C-001-M",
         "CAU-HostProviderName-C-002-M",
         "CAU-HostProviderName-C-003-M",
-        "CAU-HostProviderName-C-007-C"
+        "CAU-HostProviderName-C-007-C",
+        "CAU-CostAndUsage-D-075-M"
       ]
     }
   },

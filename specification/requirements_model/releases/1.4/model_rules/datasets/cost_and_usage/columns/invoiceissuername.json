@@ -36,10 +36,10 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CAU-CostAndUsage-D-023-M",
         "CAU-InvoiceIssuerName-C-001-M",
         "CAU-InvoiceIssuerName-C-002-M",
-        "CAU-InvoiceIssuerName-C-003-M"
+        "CAU-InvoiceIssuerName-C-003-M",
+        "CAU-CostAndUsage-D-023-M"
       ]
     }
   },

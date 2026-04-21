@@ -38,10 +38,10 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CAU-CostAndUsage-D-020-C",
         "CAU-CapacityReservationStatus-C-001-M",
         "CAU-CapacityReservationStatus-C-002-C",
-        "CAU-CapacityReservationStatus-C-005-C"
+        "CAU-CapacityReservationStatus-C-005-C",
+        "CAU-CostAndUsage-D-020-C"
       ]
     }
   },

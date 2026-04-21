@@ -43,11 +43,11 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CAU-CostAndUsage-D-058-C",
         "CAU-SkuPriceId-C-001-M",
         "CAU-SkuPriceId-C-002-M",
         "CAU-SkuPriceId-C-003-M",
-        "CAU-SkuPriceId-C-007-C"
+        "CAU-SkuPriceId-C-007-C",
+        "CAU-CostAndUsage-D-058-C"
       ]
     }
   },

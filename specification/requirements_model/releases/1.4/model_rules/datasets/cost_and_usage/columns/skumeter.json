@@ -43,11 +43,11 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CAU-CostAndUsage-D-059-C",
         "CAU-SkuMeter-C-001-M",
         "CAU-SkuMeter-C-002-M",
         "CAU-SkuMeter-C-003-C",
-        "CAU-SkuMeter-C-006-O"
+        "CAU-SkuMeter-C-006-O",
+        "CAU-CostAndUsage-D-059-C"
       ]
     }
   },

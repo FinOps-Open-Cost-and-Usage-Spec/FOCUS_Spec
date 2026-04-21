@@ -38,10 +38,10 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CAU-CostAndUsage-D-016-C",
         "CAU-CommitmentDiscountCategory-C-001-M",
         "CAU-CommitmentDiscountCategory-C-002-C",
-        "CAU-CommitmentDiscountCategory-C-005-M"
+        "CAU-CommitmentDiscountCategory-C-005-M",
+        "CAU-CostAndUsage-D-016-C"
       ]
     }
   },

@@ -36,10 +36,10 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CAU-CostAndUsage-D-005-M",
         "CAU-BillingAccountName-C-001-M",
         "CAU-BillingAccountName-C-002-M",
-        "CAU-BillingAccountName-C-003-C"
+        "CAU-BillingAccountName-C-003-C",
+        "CAU-CostAndUsage-D-005-M"
       ]
     }
   },

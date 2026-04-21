@@ -38,10 +38,10 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CAU-CostAndUsage-D-074-C",
         "CAU-ContractApplied-C-001-M",
         "CAU-ContractApplied-C-002-C",
-        "CAU-ContractApplied-C-003-C"
+        "CAU-ContractApplied-C-003-C",
+        "CAU-CostAndUsage-D-074-C"
       ]
     }
   },

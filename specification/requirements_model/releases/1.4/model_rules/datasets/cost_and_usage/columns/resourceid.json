@@ -43,11 +43,11 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CAU-CostAndUsage-D-043-C",
         "CAU-ResourceId-C-001-M",
         "CAU-ResourceId-C-002-M",
         "CAU-ResourceId-C-003-C",
-        "CAU-ResourceId-C-006-C"
+        "CAU-ResourceId-C-006-C",
+        "CAU-CostAndUsage-D-043-C"
       ]
     }
   },

@@ -172,13 +172,44 @@ def collect(spec: dict):
     return ordered
 
 
-def filter_reference_with_dependencies(grouped, reference_filter: str, dependency_scope: str = "transitive"):
+def _dependency_allowed(parent_item: dict, dep_item: dict, follow_dependencies: bool) -> bool:
+    """Return True when a dependency should be followed for output expansion."""
+    parent_type = parent_item.get("etype")
+    dep_type = dep_item.get("etype")
+
+    # Column rules: only same EntityId + EntityType by default.
+    if parent_type == "Column":
+        if dep_type == "Column" and dep_item.get("eid") == parent_item.get("eid"):
+            return True
+        # Optional expansion to related object rules.
+        if follow_dependencies and dep_type == "Object":
+            return True
+        return False
+
+    # Dataset rules: same EntityType is sufficient by default.
+    if parent_type == "Dataset":
+        if dep_type == "Dataset":
+            return True
+        # Optional expansion to related attribute rules.
+        if follow_dependencies and dep_type == "Attribute":
+            return True
+        return False
+
+    return False
+
+
+def filter_reference_with_dependencies(
+    grouped,
+    reference_filter: str,
+    dependency_scope: str = "transitive",
+    follow_dependencies: bool = False,
+):
     """
         Filter to the requested reference and optionally include dependency rules,
         even when dependency rules use a different `Reference` value.
 
         dependency_scope values:
-            - "none": selected reference rules only
+                - "none": selected reference rules plus all allowed transitive dependencies
             - "immediate": include only direct dependencies of selected rules
             - "transitive": include all dependency levels (default)
     """
@@ -198,8 +229,14 @@ def filter_reference_with_dependencies(grouped, reference_filter: str, dependenc
         for item in items:
             rule_lookup.setdefault(item["ruleid"], item)
 
-    # Seed traversal with all rules directly under the selected reference.
-    seed_rule_ids = [item["ruleid"] for item in grouped[selected_ref]]
+    # Seed traversal with rules directly under the selected reference.
+    # When a reference has mixed entity types (for example, Column + Dataset),
+    # prefer non-Dataset direct matches so dataset presence rules do not appear
+    # as primary output for a column reference.
+    selected_items = grouped[selected_ref]
+    non_dataset_items = [item for item in selected_items if item.get("etype") != "Dataset"]
+    seed_items = non_dataset_items if non_dataset_items else selected_items
+    seed_rule_ids = [item["ruleid"] for item in seed_items]
 
     if dependency_scope not in {"none", "immediate", "transitive"}:
         raise ValueError(f"Unsupported dependency scope: {dependency_scope}")
@@ -218,29 +255,59 @@ def filter_reference_with_dependencies(grouped, reference_filter: str, dependenc
 
     def walk_transitive(rule_id: str):
         add_rule(rule_id)
-        item = rule_lookup.get(rule_id)
-        if not item:
+        parent_item = rule_lookup.get(rule_id)
+        if not parent_item:
             return
-        for dep in item.get("dependencies") or []:
+        for dep in parent_item.get("dependencies") or []:
+            dep_item = rule_lookup.get(dep)
+            if not dep_item:
+                continue
+            if not _dependency_allowed(parent_item, dep_item, follow_dependencies):
+                continue
             walk_transitive(dep)
 
     for rid in seed_rule_ids:
         add_rule(rid)
 
-        if dependency_scope == "immediate":
-            item = rule_lookup.get(rid)
-            if not item:
+        # For `none`, still expand dependency closure for allowed entity matches,
+        # so composite sections render complete child requirement trees.
+        if dependency_scope == "none":
+            parent_item = rule_lookup.get(rid)
+            if not parent_item:
                 continue
-            for dep in item.get("dependencies") or []:
+            for dep in parent_item.get("dependencies") or []:
+                dep_item = rule_lookup.get(dep)
+                if not dep_item:
+                    continue
+                if not _dependency_allowed(parent_item, dep_item, follow_dependencies):
+                    continue
+                walk_transitive(dep)
+            continue
+
+        if dependency_scope == "immediate":
+            parent_item = rule_lookup.get(rid)
+            if not parent_item:
+                continue
+            for dep in parent_item.get("dependencies") or []:
+                dep_item = rule_lookup.get(dep)
+                if not dep_item:
+                    continue
+                if not _dependency_allowed(parent_item, dep_item, follow_dependencies):
+                    continue
                 if dep in seed_set and dep != rid:
                     continue
                 add_rule(dep)
 
         elif dependency_scope == "transitive":
-            item = rule_lookup.get(rid)
-            if not item:
+            parent_item = rule_lookup.get(rid)
+            if not parent_item:
                 continue
-            for dep in item.get("dependencies") or []:
+            for dep in parent_item.get("dependencies") or []:
+                dep_item = rule_lookup.get(dep)
+                if not dep_item:
+                    continue
+                if not _dependency_allowed(parent_item, dep_item, follow_dependencies):
+                    continue
                 if dep in seed_set and dep != rid:
                     continue
                 walk_transitive(dep)
@@ -250,6 +317,19 @@ def filter_reference_with_dependencies(grouped, reference_filter: str, dependenc
 
 
 def build_markdown(grouped, include_rmids=False, include_order=False):
+    # Build a global lookup so a reference section can render dependency trees
+    # that span rules with other Reference values.
+    global_rule_map = {}
+    for ref_items in grouped.values():
+        for item in ref_items:
+            global_rule_map[item["ruleid"]] = item
+
+    def render_sort_key(item):
+        order = item.get("order")
+        if isinstance(order, (int, float)):
+            return (order, item["num"], item["eid"].lower())
+        return (float("inf"), item["num"], item["eid"].lower())
+
     lines = []
     for ref, items in grouped.items():
         lines.append(f"# {ref}")
@@ -260,6 +340,31 @@ def build_markdown(grouped, include_rmids=False, include_order=False):
             item for item in items
             if str(item.get("order")).strip() != "-1"
         ]
+
+        # When a section includes dataset composite rules, render their full
+        # dependency closure even if dependencies belong to other references.
+        section_rule_map = {item["ruleid"]: item for item in visible_items}
+        dependency_stack = [
+            item["ruleid"]
+            for item in visible_items
+            if item.get("etype") == "Dataset" and item.get("function") == "Composite"
+        ]
+        while dependency_stack:
+            parent_rule_id = dependency_stack.pop()
+            parent_item = global_rule_map.get(parent_rule_id)
+            if not parent_item:
+                continue
+            for dep_rule_id in parent_item.get("dependencies") or []:
+                dep_item = global_rule_map.get(dep_rule_id)
+                if not dep_item:
+                    continue
+                if str(dep_item.get("order")).strip() == "-1":
+                    continue
+                if dep_rule_id in section_rule_map:
+                    continue
+                section_rule_map[dep_rule_id] = dep_item
+                dependency_stack.append(dep_rule_id)
+        visible_items = sorted(section_rule_map.values(), key=render_sort_key)
 
         if not visible_items:
             lines.append("")
@@ -349,7 +454,17 @@ def build_markdown(grouped, include_rmids=False, include_order=False):
     return ("\n".join(lines)).rstrip() + "\n"
 
 
-def main(in_path: Path, out_path: Path | None = None, include_rmids: bool = False, reference_filter: str | None = None, include_order: bool = False, dataset_filter: str = "CostAndUsage", attribute_filter: bool = False, reference_dependency_scope: str = "transitive") -> None:
+def main(
+    in_path: Path,
+    out_path: Path | None = None,
+    include_rmids: bool = False,
+    reference_filter: str | None = None,
+    include_order: bool = False,
+    dataset_filter: str = "CostAndUsage",
+    attribute_filter: bool = False,
+    reference_dependency_scope: str = "transitive",
+    follow_dependencies: bool = False,
+) -> None:
     spec = load_spec_file(in_path)
     grouped = collect(spec)
     
@@ -357,7 +472,12 @@ def main(in_path: Path, out_path: Path | None = None, include_rmids: bool = Fals
     # selected reference so nested rules are not dropped when they use another
     # Reference value.
     if reference_filter:
-        grouped = filter_reference_with_dependencies(grouped, reference_filter, reference_dependency_scope)
+        grouped = filter_reference_with_dependencies(
+            grouped,
+            reference_filter,
+            reference_dependency_scope,
+            follow_dependencies,
+        )
     
     # Filter by attribute if specified (disregards dataset filter)
     if attribute_filter:
@@ -399,7 +519,15 @@ if __name__ == "__main__":
     parser.add_argument("--reference", type=str, help="Only display the normative text for the specified reference entity")
     parser.add_argument("--reference-dependency-scope", choices=["none", "immediate", "transitive"], default="transitive",
                        help="When --reference is used, include dependency rules by scope (default: transitive)")
-    parser.add_argument("--datasetid", type=str, default="CostAndUsage",
+    parser.add_argument(
+        "--follow-dependencies",
+        action="store_true",
+        help=(
+            "When following dependencies via --reference, also traverse Dataset->Attribute "
+            "and Column->Object dependencies."
+        ),
+    )
+    parser.add_argument("--datasetid", "--dataset", type=str, default="CostAndUsage",
                        help="Filter entities by DatasetId (default: CostAndUsage)")
     parser.add_argument("--attribute", action="store_true",
                        help="Filter for Attribute entities only (disregards --datasetid)")
@@ -423,6 +551,7 @@ if __name__ == "__main__":
             dataset_filter=args.datasetid,
             attribute_filter=args.attribute,
             reference_dependency_scope=args.reference_dependency_scope,
+            follow_dependencies=args.follow_dependencies,
         )
     except RuntimeError as exc:
         print(f"Error: {exc}", file=sys.stderr)

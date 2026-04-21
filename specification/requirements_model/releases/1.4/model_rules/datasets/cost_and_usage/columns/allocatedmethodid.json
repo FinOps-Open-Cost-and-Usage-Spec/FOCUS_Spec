@@ -42,9 +42,9 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CAU-CostAndUsage-D-070-C",
         "CAU-AllocatedMethodId-C-001-M",
         "CAU-AllocatedMethodId-C-002-M",
+        "CAU-CostAndUsage-D-070-C",
         "CAU-AllocatedMethodId-C-003-C",
         "CAU-AllocatedMethodId-C-006-M"
       ]

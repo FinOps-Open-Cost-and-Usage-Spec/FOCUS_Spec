@@ -42,10 +42,10 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CAU-CostAndUsage-D-072-C",
         "CAU-AllocatedResourceName-C-001-M",
         "CAU-AllocatedResourceName-C-002-M",
         "CAU-AllocatedResourceName-C-003-C",
+        "CAU-CostAndUsage-D-072-C",
         "CAU-AllocatedResourceName-C-006-C"
       ]
     }

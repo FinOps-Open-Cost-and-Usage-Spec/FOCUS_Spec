@@ -46,12 +46,12 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CAU-CostAndUsage-D-015-C",
         "CAU-CommitmentDiscountUnit-C-001-M",
         "CAU-CommitmentDiscountUnit-C-002-M",
         "CAU-CommitmentDiscountUnit-C-003-O",
         "CAU-CommitmentDiscountUnit-C-004-C",
-        "CAU-CommitmentDiscountUnit-C-007-C"
+        "CAU-CommitmentDiscountUnit-C-007-C",
+        "CAU-CostAndUsage-D-015-C"
       ]
     }
   },

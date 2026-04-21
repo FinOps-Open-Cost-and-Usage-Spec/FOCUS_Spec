@@ -40,11 +40,11 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CAU-CostAndUsage-D-042-O",
         "CAU-ServiceSubcategory-C-001-M",
         "CAU-ServiceSubcategory-C-002-M",
         "CAU-ServiceSubcategory-C-003-M",
-        "CAU-ServiceSubcategory-C-004-M"
+        "CAU-ServiceSubcategory-C-004-M",
+        "CAU-CostAndUsage-D-042-O"
       ]
     }
   },

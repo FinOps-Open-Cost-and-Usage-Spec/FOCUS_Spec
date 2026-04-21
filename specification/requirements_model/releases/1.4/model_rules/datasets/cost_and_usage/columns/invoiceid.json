@@ -44,12 +44,12 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CAU-CostAndUsage-D-033-O",
         "CAU-InvoiceId-C-001-M",
         "CAU-InvoiceId-C-002-M",
         "CAU-InvoiceId-C-003-C",
         "CAU-InvoiceId-C-006-O",
-        "CAU-InvoiceId-C-007-C"
+        "CAU-InvoiceId-C-007-C",
+        "CAU-CostAndUsage-D-033-C"
       ]
     }
   },

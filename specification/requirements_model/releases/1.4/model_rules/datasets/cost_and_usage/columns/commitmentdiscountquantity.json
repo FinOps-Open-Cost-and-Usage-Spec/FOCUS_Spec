@@ -50,13 +50,13 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CAU-CostAndUsage-D-018-C",
         "CAU-CommitmentDiscountQuantity-C-001-M",
         "CAU-CommitmentDiscountQuantity-C-002-M",
         "CAU-CommitmentDiscountQuantity-C-003-C",
         "CAU-CommitmentDiscountQuantity-C-009-C",
         "CAU-CommitmentDiscountQuantity-C-010-C",
-        "CAU-CommitmentDiscountQuantity-C-013-C"
+        "CAU-CommitmentDiscountQuantity-C-013-C",
+        "CAU-CostAndUsage-D-018-C"
       ]
     }
   },

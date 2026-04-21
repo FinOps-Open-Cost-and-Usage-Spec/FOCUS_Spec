@@ -42,11 +42,11 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CAU-CostAndUsage-D-067-C",
         "CAU-SubAccountType-C-001-M",
         "CAU-SubAccountType-C-002-M",
         "CAU-SubAccountType-C-003-C",
-        "CAU-SubAccountType-C-006-M"
+        "CAU-SubAccountType-C-006-M",
+        "CAU-CostAndUsage-D-067-C"
       ]
     }
   },

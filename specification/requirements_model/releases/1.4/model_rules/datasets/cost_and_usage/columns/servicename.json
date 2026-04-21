@@ -44,12 +44,12 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CAU-CostAndUsage-D-041-M",
         "CAU-ServiceName-C-001-M",
         "CAU-ServiceName-C-002-M",
         "CAU-ServiceName-C-003-M",
         "CAU-ServiceName-C-004-C",
-        "CAU-ServiceName-C-007-C"
+        "CAU-ServiceName-C-007-C",
+        "CAU-CostAndUsage-D-041-M"
       ]
     }
   },

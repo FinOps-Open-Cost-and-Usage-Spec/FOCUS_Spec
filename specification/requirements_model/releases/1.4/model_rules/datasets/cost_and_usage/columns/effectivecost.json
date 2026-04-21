@@ -80,7 +80,6 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CAU-CostAndUsage-D-031-M",
         "CAU-EffectiveCost-C-001-M",
         "CAU-EffectiveCost-C-002-M",
         "CAU-EffectiveCost-C-003-M",
@@ -94,7 +93,8 @@
         "CAU-EffectiveCost-C-020-C",
         "CAU-EffectiveCost-C-021-C",
         "CAU-EffectiveCost-C-022-C",
-        "CAU-EffectiveCost-C-023-C"
+        "CAU-EffectiveCost-C-023-C",
+        "CAU-CostAndUsage-D-031-M"
       ]
     }
   },

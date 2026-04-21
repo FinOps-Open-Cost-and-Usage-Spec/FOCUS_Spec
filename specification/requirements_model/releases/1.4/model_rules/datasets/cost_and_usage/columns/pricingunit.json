@@ -44,12 +44,12 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CAU-CostAndUsage-D-068-M",
         "CAU-PricingUnit-C-001-M",
         "CAU-PricingUnit-C-002-M",
         "CAU-PricingUnit-C-003-O",
         "CAU-PricingUnit-C-004-C",
-        "CAU-PricingUnit-C-007-C"
+        "CAU-PricingUnit-C-007-C",
+        "CAU-CostAndUsage-D-068-M"
       ]
     }
   },

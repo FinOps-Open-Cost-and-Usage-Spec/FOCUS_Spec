@@ -36,10 +36,10 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CAU-CostAndUsage-D-026-M",
         "CAU-ChargeClass-C-001-M",
         "CAU-ChargeClass-C-002-C",
-        "CAU-ChargeClass-C-005-C"
+        "CAU-ChargeClass-C-005-C",
+        "CAU-CostAndUsage-D-026-M"
       ]
     }
   },

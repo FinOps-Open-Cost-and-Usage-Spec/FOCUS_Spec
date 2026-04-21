@@ -36,10 +36,10 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CAU-CostAndUsage-D-038-M",
         "CAU-ProviderName-C-001-M",
         "CAU-ProviderName-C-002-M",
-        "CAU-ProviderName-C-003-M"
+        "CAU-ProviderName-C-003-M",
+        "CAU-CostAndUsage-D-038-M"
       ]
     }
   },

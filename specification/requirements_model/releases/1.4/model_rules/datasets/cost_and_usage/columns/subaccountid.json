@@ -38,10 +38,10 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CAU-CostAndUsage-D-019-C",
         "CAU-SubAccountId-C-001-M",
         "CAU-SubAccountId-C-002-M",
-        "CAU-SubAccountId-C-003-C"
+        "CAU-SubAccountId-C-003-C",
+        "CAU-CostAndUsage-D-019-C"
       ]
     }
   },

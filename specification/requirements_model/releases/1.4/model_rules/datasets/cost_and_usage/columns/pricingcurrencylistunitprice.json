@@ -42,11 +42,11 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CAU-CostAndUsage-D-054-C",
         "CAU-PricingCurrencyListUnitPrice-C-001-M",
         "CAU-PricingCurrencyListUnitPrice-C-002-M",
         "CAU-PricingCurrencyListUnitPrice-C-003-M",
-        "CAU-PricingCurrencyListUnitPrice-C-007-C"
+        "CAU-PricingCurrencyListUnitPrice-C-007-C",
+        "CAU-CostAndUsage-D-054-C"
       ]
     }
   },

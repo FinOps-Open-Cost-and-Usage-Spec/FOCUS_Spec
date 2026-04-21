@@ -48,13 +48,13 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CAU-CostAndUsage-D-032-M",
         "CAU-ListCost-C-001-M",
         "CAU-ListCost-C-002-M",
         "CAU-ListCost-C-003-M",
         "CAU-ListCost-C-005-M",
         "CAU-ListCost-C-006-C",
-        "CAU-ListCost-C-011-C"
+        "CAU-ListCost-C-011-C",
+        "CAU-CostAndUsage-D-032-M"
       ]
     }
   },

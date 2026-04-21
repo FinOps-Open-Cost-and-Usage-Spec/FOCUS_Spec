@@ -40,11 +40,11 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CAU-CostAndUsage-D-025-M",
         "CAU-ChargeDescription-C-001-M",
         "CAU-ChargeDescription-C-002-M",
         "CAU-ChargeDescription-C-003-O",
-        "CAU-ChargeDescription-C-004-O"
+        "CAU-ChargeDescription-C-004-O",
+        "CAU-CostAndUsage-D-025-M"
       ]
     }
   },

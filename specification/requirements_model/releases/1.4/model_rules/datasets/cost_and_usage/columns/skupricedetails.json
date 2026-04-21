@@ -47,12 +47,12 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CAU-CostAndUsage-D-061-C",
         "CAU-SkuPriceDetails-C-001-M",
         "CAU-SkuPriceDetails-C-002-O",
         "CAU-SkuPriceDetails-C-003-C",
         "CAU-SkuPriceDetails-C-006-C",
-        "CAU-SkuPriceDetails-C-019-M"
+        "CAU-SkuPriceDetails-C-019-M",
+        "CAU-CostAndUsage-D-061-C"
       ]
     }
   },

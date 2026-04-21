@@ -46,12 +46,12 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CAU-CostAndUsage-D-050-C",
         "CAU-PricingCurrencyEffectiveCost-C-001-M",
         "CAU-PricingCurrencyEffectiveCost-C-002-M",
         "CAU-PricingCurrencyEffectiveCost-C-003-M",
         "CAU-PricingCurrencyEffectiveCost-C-005-M",
-        "CAU-PricingCurrencyEffectiveCost-C-006-M"
+        "CAU-PricingCurrencyEffectiveCost-C-006-M",
+        "CAU-CostAndUsage-D-050-C"
       ]
     }
   },

@@ -42,11 +42,11 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CAU-CostAndUsage-D-066-C",
         "CAU-ConsumedUnit-C-001-M",
         "CAU-ConsumedUnit-C-002-M",
         "CAU-ConsumedUnit-C-003-O",
-        "CAU-ConsumedUnit-C-004-C"
+        "CAU-ConsumedUnit-C-004-C",
+        "CAU-CostAndUsage-D-066-C"
       ]
     }
   },

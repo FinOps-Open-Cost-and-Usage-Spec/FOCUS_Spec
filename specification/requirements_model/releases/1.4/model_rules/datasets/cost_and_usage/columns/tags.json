@@ -46,12 +46,12 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CAU-CostAndUsage-D-064-C",
         "CAU-Tags-C-001-M",
         "CAU-Tags-C-002-O",
         "CAU-Tags-C-003-C",
         "CAU-Tags-C-011-M",
-        "CAU-Tags-C-014-M"
+        "CAU-Tags-C-014-M",
+        "CAU-CostAndUsage-D-064-C"
       ]
     }
   },

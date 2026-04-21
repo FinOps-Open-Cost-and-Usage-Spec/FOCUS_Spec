@@ -40,11 +40,11 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CAU-CostAndUsage-D-028-M",
         "CAU-ChargePeriodEnd-C-001-M",
         "CAU-ChargePeriodEnd-C-002-M",
         "CAU-ChargePeriodEnd-C-003-M",
-        "CAU-ChargePeriodEnd-C-004-M"
+        "CAU-ChargePeriodEnd-C-004-M",
+        "CAU-CostAndUsage-D-028-M"
       ]
     }
   },

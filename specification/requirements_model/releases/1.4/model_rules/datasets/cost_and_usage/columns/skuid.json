@@ -51,13 +51,13 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CAU-CostAndUsage-D-060-C",
         "CAU-SkuId-C-001-M",
         "CAU-SkuId-C-002-M",
         "CAU-SkuId-C-003-M",
         "CAU-SkuId-C-007-M",
         "CAU-SkuId-C-011-C",
-        "CAU-SkuId-C-012-O"
+        "CAU-SkuId-C-012-O",
+        "CAU-CostAndUsage-D-060-C"
       ]
     }
   },

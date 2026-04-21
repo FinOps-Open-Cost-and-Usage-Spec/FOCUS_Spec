@@ -38,10 +38,10 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CAU-CostAndUsage-D-011-C",
         "CAU-ConsumedQuantity-C-001-M",
         "CAU-ConsumedQuantity-C-002-M",
-        "CAU-ConsumedQuantity-C-003-C"
+        "CAU-ConsumedQuantity-C-003-C",
+        "CAU-CostAndUsage-D-011-C"
       ]
     }
   },

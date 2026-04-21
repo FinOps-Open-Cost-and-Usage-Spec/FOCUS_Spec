@@ -38,10 +38,10 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CAU-CostAndUsage-D-063-C",
         "CAU-RegionId-C-001-M",
         "CAU-RegionId-C-002-M",
-        "CAU-RegionId-C-003-C"
+        "CAU-RegionId-C-003-C",
+        "CAU-CostAndUsage-D-063-C"
       ]
     }
   },

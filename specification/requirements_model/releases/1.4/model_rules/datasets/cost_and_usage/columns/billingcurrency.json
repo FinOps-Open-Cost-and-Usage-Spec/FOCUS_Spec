@@ -48,13 +48,13 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CAU-CostAndUsage-D-035-M",
         "CAU-BillingCurrency-C-001-M",
         "CAU-BillingCurrency-C-002-M",
         "CAU-BillingCurrency-C-003-M",
         "CAU-BillingCurrency-C-004-M",
         "CAU-BillingCurrency-C-005-M",
-        "CAU-BillingCurrency-C-006-M"
+        "CAU-BillingCurrency-C-006-M",
+        "CAU-CostAndUsage-D-035-M"
       ]
     }
   },
