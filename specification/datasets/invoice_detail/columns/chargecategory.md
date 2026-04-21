@@ -9,7 +9,16 @@ ChargeCategory MUST adhere to the following requirements:
 * ChargeCategory MUST be of type String.
 * ChargeCategory MUST NOT be null.
 * ChargeCategory MUST be one of the allowed values.
-* ChargeCategory MAY equal "Usage" when the record aggregates *charges* across multiple allowed values other than "Tax" (for example, aggregation of "Usage" and "Credit" is allowed, but not "Usage" and "Tax").
+* ChargeCategory MUST be "Usage" when the charge represents consumption of a service or resource.
+* ChargeCategory MAY be "Usage" when the record aggregates *charges* across multiple allowed values other than "Tax" (for example, aggregation of "Usage" and "Credit" is allowed, but not "Usage" and "Tax").
+* ChargeCategory MUST be "Purchase" when the charge represents acquisition of a service, resource, or commitment.
+* ChargeCategory MUST be "Tax" when the charge represents taxes levied by the relevant authorities.
+* ChargeCategory MUST be "Credit" when the charge represents a financial incentive or allowance unrelated to other charges.
+* ChargeCategory MUST be "Adjustment" when the charge represents a billing modification that does not fall into other ChargeCategories.
+
+## Implementation Context
+
+Unlike the [CostAndUsage](#datasets.costandusage) dataset, which requires strict categorization per row, [InvoiceDetail](#datasets.invoicedetail) records are designed to align with physical or electronic invoice line items. Invoice issuers frequently aggregate different types of transactions (e.g., combining base usage and promotional credits) into a single billed line item. To accurately reflect the issued invoice without breaking schema validation, the `InvoiceDetail` dataset permits the `"Usage"` category to represent an aggregate of multiple charge types, provided that `"Tax"` charges are kept distinctly separate.
 
 ## Column ID
 
