@@ -1,0 +1,41 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://focus.finops.org/schemas/commitmentprogrameligibilitydetailsobject.json",
+    "title": "Commitment Program Eligibility Details Object",
+    "description": "Schema for validating the Commitment Program Eligibility Details column JSON object structure in FOCUS datasets",
+    "type": "object",
+    "required": [
+        "CommitmentPrograms"
+    ],
+    "properties": {
+        "CommitmentPrograms": {
+            "type": "array",
+            "description": "Array of objects identifying commitment programs for which the usage is eligible.",
+            "minItems": 1,
+            "items": {
+                "type": "object",
+                "required": [
+                    "ProgramType"
+                ],
+                "properties": {
+                    "ProgramType": {
+                        "type": "string",
+                        "description": "The specific type of commitment program (e.g., discount or capacity reservation) available for this usage."
+                    }
+                },
+                "patternProperties": {
+                    "^x_[A-Z][a-zA-Z0-9]*$": {
+                        "description": "Custom data generator-defined properties prefixed with x_ in PascalCase format"
+                    }
+                },
+                "additionalProperties": false
+            }
+        }
+    },
+    "patternProperties": {
+        "^x_[A-Z][a-zA-Z0-9]*$": {
+            "description": "Custom data generator-defined top-level properties prefixed with x_ in PascalCase format"
+        }
+    },
+    "additionalProperties": false
+}
