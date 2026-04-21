@@ -8,11 +8,6 @@ Contract Commitment Payment Model has three possible values: **No Upfront**, **P
 * Partial Upfront denotes that the obligation is settled through a combination of an initial payment and recurring charges.
 * All Upfront denotes that the obligation is settled via a single payment at the start of the duration.
 
-## Implementation Context
-
-* Settled via Upfront: Refer to the [contract commitment period start](#datasets.contractcommitment.contractcommitmentperiodstart) for the cash event.
-* Settled via Recurring Charges: Refer to the [contract commitment payment interval](#datasets.contractcommitment.contractcommitmentpaymentinterval) to understand the frequency of those subsequent cash events.
-
 ## Requirements
 
 ContractCommitmentPaymentModel MUST adhere to the following requirements:
@@ -20,6 +15,11 @@ ContractCommitmentPaymentModel MUST adhere to the following requirements:
 * ContractCommitmentPaymentModel MUST be of type String.
 * ContractCommitmentPaymentModel MUST NOT be null.
 * ContractCommitmentPaymentModel MUST be one of the allowed values.
+
+## Implementation Context
+
+* Settled via Upfront: Refer to the [contract commitment period start](#datasets.contractcommitment.contractcommitmentperiodstart) for the cash event.
+* Settled via Recurring Charges: Refer to the [contract commitment payment interval](#datasets.contractcommitment.contractcommitmentpaymentinterval) to understand the frequency of those subsequent cash events.
 
 ## Column ID
 

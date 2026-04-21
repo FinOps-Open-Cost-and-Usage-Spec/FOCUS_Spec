@@ -96,32 +96,6 @@ ContractCommitmentApplicability uses a reserved string to represent global or un
 2. **Exclusion Logic:** When `["*"]` is used in an Exclusion rule, the rule evaluates to `True` for every entity, effectively excluding all entities (this is typically used only in combination with `ExclusionOperator: "And"` for surgical filtering).
 3. **Implicit Wildcards:** If a Dimension (e.g., `RegionId`) is omitted entirely from the `Inclusions` array, it is treated as an implicit wildcard (unrestricted).
 
-## Object Example
-
-Here is a basic example of the object format, describing organization-wide coverage **except** for Database services running in BillingAccountId 123456789012.
-
-* For more detailed examples, please see this column's entry in the JSON Object Examples appendix entry [here](#appendix.examples:jsonobject.examples:contractcommitmentapplicability).
-* For the JSON schema, please see [Contract Commitment Applicability Object Schema](#schemas.contractcommitment.contractcommitmentapplicabilityobjectschema).
-
-```json
-{
-  "IsGlobalScope": true,
-  "ExclusionOperator": "And",
-  "Exclusions": [
-    {
-      "Dimension": "BillingAccountId",
-      "Operator": "In",
-      "Values": ["123456789012"]
-    },
-    {
-      "Dimension": "ServiceCategory",
-      "Operator": "In",
-      "Values": ["Database"]
-    }
-  ]
-}
-```
-
 ## Implementation Guidance
 
 ### Processing Workflow
@@ -156,6 +130,32 @@ ContractCommitmentApplicabilityObject
 ### Object Display Name
 
 Contract Commitment Applicability Object
+
+## Object Example
+
+Here is a basic example of the object format, describing organization-wide coverage **except** for Database services running in BillingAccountId 123456789012.
+
+* For more detailed examples, please see this column's entry in the JSON Object Examples appendix entry [here](#appendix.examples:jsonobject.examples:contractcommitmentapplicability).
+* For the JSON schema, please see [Contract Commitment Applicability Object Schema](#schemas.contractcommitment.contractcommitmentapplicabilityobjectschema).
+
+```json
+{
+  "IsGlobalScope": true,
+  "ExclusionOperator": "And",
+  "Exclusions": [
+    {
+      "Dimension": "BillingAccountId",
+      "Operator": "In",
+      "Values": ["123456789012"]
+    },
+    {
+      "Dimension": "ServiceCategory",
+      "Operator": "In",
+      "Values": ["Database"]
+    }
+  ]
+}
+```
 
 ## Column ID
 
