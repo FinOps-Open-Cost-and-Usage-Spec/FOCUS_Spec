@@ -370,7 +370,7 @@ When commits are pushed to a branch after an approval has been logged:
 
 **Enforcement**
 
-* Administrators MUST NOT promote or merge a Pull Request containing post-approval changes to normative text without either a full re-review. 
+* Administrators MUST NOT promote or merge a Pull Request containing post-approval changes to normative text without a full re-review. 
 * Any Pull Request merged in violation of this procedure MUST be immediately reverted by the Administrators.
 
 
