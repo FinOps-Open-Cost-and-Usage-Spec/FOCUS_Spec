@@ -14,10 +14,22 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 * New Datasets and Columns to support [Invoice Reconciliation](/specification/supported_features/invoice_reconciliation.md)
 * New Columns to support [Commitment Program Eligibility Detail](/specification/supported_features/commitment_program_eligibility_details.md)
+* Revised normative requirements for [Billed Cost and Invoice Alignment](/specification/supported_features/billed_cost_and_invoice_alignment.md) and [Effective Cost](/specification/supported_features/effective_cost.md)
 
 #### Migration Compatible Changes
 
-* None
+* Revised `ContractApplied` format to use the JSON Object Schema format, affecting:
+  * [Contract Commitments](/specification/supported_features/contract_commitments.md)
+* Removal of deprecated `ProviderName` and `PublisherName` columns, with use cases absorbed by `ServiceProviderName`, `HostProviderName`, `InvoiceIssuerName`, and `DataGenerator` metadata introduced in v1.3, affecting:
+  * [Charge Categorization](/specification/supported_features/charge_categorization.md)
+  * [Commit Usage and Under Usage](/specification/supported_features/commit_usage_and_under_usage.md)
+  * [Cost Comparison](/specification/supported_features/cost_comparison.md)
+  * [Effective Cost](/specification/supported_features/effective_cost.md)
+  * [Marketplace Purchases](/specification/supported_features/marketplace_purchases.md)
+  * [Participating Entity Identification](/specification/supported_features/participating_entity_identification.md)
+  * [Resource Usage](/specification/supported_features/resource_usage.md)
+  * [Service Categorization](/specification/supported_features/service_categorization.md)
+  * [Service Provider Services](/specification/supported_features/service_provider_services.md)
 
 #### Incompatible Changes
 
