@@ -52,14 +52,14 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CCT-ContractCommitment-D-005-M",
         "CCT-ContractCommitmentId-C-001-M",
         "CCT-ContractCommitmentId-C-002-M",
         "CCT-ContractCommitmentId-C-003-M",
         "CCT-ContractCommitmentId-C-005-M",
         "CCT-ContractCommitmentId-C-006-O",
         "CCT-ContractCommitmentId-C-007-M",
-        "CCT-ContractCommitmentId-C-008-O"
+        "CCT-ContractCommitmentId-C-008-O",
+        "CCT-ContractCommitment-D-005-M"
       ]
     }
   },

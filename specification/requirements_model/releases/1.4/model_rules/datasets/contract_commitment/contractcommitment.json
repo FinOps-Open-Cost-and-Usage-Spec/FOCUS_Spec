@@ -8,18 +8,24 @@
     "Notes": "Main dataset composite rule",
     "ModelVersionIntroduced": "1.3",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "ApplicabilityCriteria": [
+      "CONTRACT_COMMITMENTS_SUPPORTED"
+    ],
     "Type": "Static",
     "Order": 0,
     "DatasetType": "CCT",
     "DatasetId": "ContractCommitment",
     "DatasetName": "Contract Commitment",
     "ValidationCriteria": {
-      "MustSatisfy": "The ContractCommitment dataset adheres to the following requirements:",
+      "MustSatisfy": "ContractCommitment MUST adhere to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
         "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitment-D-016-C"
+          },
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CCT-ContractCommitment-D-001-M"
@@ -27,13 +33,49 @@
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CCT-ContractCommitment-D-002-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitment-D-034-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitment-D-035-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitment-D-036-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitment-D-037-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitment-D-038-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitment-D-039-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitment-D-040-M"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
+        "CCT-ContractCommitment-D-016-C",
         "CCT-ContractCommitment-D-001-M",
         "CCT-ContractCommitment-D-002-M",
+        "CCT-ContractCommitment-D-034-M",
+        "CCT-ContractCommitment-D-035-M",
+        "CCT-ContractCommitment-D-036-M",
+        "CCT-ContractCommitment-D-037-M",
+        "CCT-ContractCommitment-D-038-M",
+        "CCT-ContractCommitment-D-039-M",
+        "CCT-ContractCommitment-D-040-M",
         "NullHandling-A-000-M",
         "ColumnHandling-A-000-M"
       ]
@@ -49,13 +91,13 @@
     "ModelVersionIntroduced": "1.3",
     "Status": "Active",
     "ApplicabilityCriteria": [],
-    "Order": 10,
+    "Order": 20,
     "DatasetType": "CCT",
     "DatasetId": "ContractCommitment",
     "DatasetName": "Contract Commitment",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "The ContractCommitment dataset adheres to the following additional requirements:",
+      "MustSatisfy": "ContractCommitment column presence MUST adhere to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -66,11 +108,11 @@
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CCT-ContractCommitment-D-004-M"
+            "ModelRuleId": "CCT-ContractCommitment-D-017-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CCT-ContractCommitment-D-005-M"
+            "ModelRuleId": "CCT-ContractCommitment-D-018-M"
           },
           {
             "CheckFunction": "CheckModelRule",
@@ -78,7 +120,59 @@
           },
           {
             "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitment-D-004-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitment-D-019-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CCT-ContractCommitment-D-007-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitment-D-020-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitment-D-021-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitment-D-022-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitment-D-005-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitment-D-023-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitment-D-024-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitment-D-025-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitment-D-026-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitment-D-027-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitment-D-028-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitment-D-029-C"
           },
           {
             "CheckFunction": "CheckModelRule",
@@ -111,16 +205,45 @@
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CCT-ContractCommitment-D-015-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitment-D-030-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitment-D-031-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitment-D-032-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitment-D-033-M"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
         "CCT-ContractCommitment-D-003-M",
-        "CCT-ContractCommitment-D-004-M",
-        "CCT-ContractCommitment-D-005-M",
+        "CCT-ContractCommitment-D-017-M",
+        "CCT-ContractCommitment-D-018-M",
         "CCT-ContractCommitment-D-006-M",
+        "CCT-ContractCommitment-D-004-M",
+        "CCT-ContractCommitment-D-019-M",
         "CCT-ContractCommitment-D-007-M",
+        "CCT-ContractCommitment-D-020-M",
+        "CCT-ContractCommitment-D-021-M",
+        "CCT-ContractCommitment-D-022-M",
+        "CCT-ContractCommitment-D-005-M",
+        "CCT-ContractCommitment-D-023-M",
+        "CCT-ContractCommitment-D-024-M",
+        "CCT-ContractCommitment-D-025-M",
+        "CCT-ContractCommitment-D-026-M",
+        "CCT-ContractCommitment-D-027-M",
+        "CCT-ContractCommitment-D-028-M",
+        "CCT-ContractCommitment-D-029-C",
         "CCT-ContractCommitment-D-008-M",
         "CCT-ContractCommitment-D-009-M",
         "CCT-ContractCommitment-D-010-M",
@@ -128,7 +251,11 @@
         "CCT-ContractCommitment-D-012-M",
         "CCT-ContractCommitment-D-013-M",
         "CCT-ContractCommitment-D-014-M",
-        "CCT-ContractCommitment-D-015-M"
+        "CCT-ContractCommitment-D-015-M",
+        "CCT-ContractCommitment-D-030-M",
+        "CCT-ContractCommitment-D-031-C",
+        "CCT-ContractCommitment-D-032-C",
+        "CCT-ContractCommitment-D-033-M"
       ]
     }
   },
@@ -142,7 +269,7 @@
     "ModelVersionIntroduced": "1.3",
     "Status": "Active",
     "ApplicabilityCriteria": [],
-    "Order": 20,
+    "Order": -1,
     "DatasetType": "CCT",
     "DatasetId": "ContractCommitment",
     "DatasetName": "Contract Commitment",
@@ -236,12 +363,12 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
-    "Order": 10,
+    "Order": 30,
     "DatasetType": "CCT",
     "DatasetId": "ContractCommitment",
     "DatasetName": "Contract Commitment",
     "ValidationCriteria": {
-      "MustSatisfy": "BillingCurrency MUST be present in a Contract Commitment FOCUS dataset.",
+      "MustSatisfy": "ContractCommitment MUST include BillingCurrency.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -262,12 +389,12 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
-    "Order": 10,
+    "Order": 70,
     "DatasetType": "CCT",
     "DatasetId": "ContractCommitment",
     "DatasetName": "Contract Commitment",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractCommitmentCost MUST be present in a Contract Commitment FOCUS dataset.",
+      "MustSatisfy": "ContractCommitment MUST include ContractCommitmentCost.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -288,12 +415,12 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
-    "Order": 10,
+    "Order": 130,
     "DatasetType": "CCT",
     "DatasetId": "ContractCommitment",
     "DatasetName": "Contract Commitment",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractCommitmentId MUST be present in a Contract Commitment FOCUS dataset.",
+      "MustSatisfy": "ContractCommitment MUST include ContractCommitmentId.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -314,12 +441,12 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
-    "Order": 10,
+    "Order": 60,
     "DatasetType": "CCT",
     "DatasetId": "ContractCommitment",
     "DatasetName": "Contract Commitment",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractCommitmentCategory MUST be present in a Contract Commitment FOCUS dataset.",
+      "MustSatisfy": "ContractCommitment MUST include ContractCommitmentCategory.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -340,12 +467,12 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
-    "Order": 10,
+    "Order": 90,
     "DatasetType": "CCT",
     "DatasetId": "ContractCommitment",
     "DatasetName": "Contract Commitment",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractCommitmentDescription MUST be present in a Contract Commitment FOCUS dataset.",
+      "MustSatisfy": "ContractCommitment MUST include ContractCommitmentDescription.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -366,12 +493,12 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
-    "Order": 10,
+    "Order": 230,
     "DatasetType": "CCT",
     "DatasetId": "ContractCommitment",
     "DatasetName": "Contract Commitment",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractCommitmentPeriodEnd MUST be present in a Contract Commitment FOCUS dataset.",
+      "MustSatisfy": "ContractCommitment MUST include ContractCommitmentPeriodEnd.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -392,12 +519,12 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
-    "Order": 10,
+    "Order": 240,
     "DatasetType": "CCT",
     "DatasetId": "ContractCommitment",
     "DatasetName": "Contract Commitment",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractCommitmentPeriodStart MUST be present in a Contract Commitment FOCUS dataset.",
+      "MustSatisfy": "ContractCommitment MUST include ContractCommitmentPeriodStart.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -418,12 +545,12 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
-    "Order": 10,
+    "Order": 250,
     "DatasetType": "CCT",
     "DatasetId": "ContractCommitment",
     "DatasetName": "Contract Commitment",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractCommitmentQuantity MUST be present in a Contract Commitment FOCUS dataset.",
+      "MustSatisfy": "ContractCommitment MUST include ContractCommitmentQuantity.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -444,12 +571,12 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
-    "Order": 10,
+    "Order": 260,
     "DatasetType": "CCT",
     "DatasetId": "ContractCommitment",
     "DatasetName": "Contract Commitment",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractCommitmentType MUST be present in a Contract Commitment FOCUS dataset.",
+      "MustSatisfy": "ContractCommitment MUST include ContractCommitmentType.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -470,12 +597,12 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
-    "Order": 10,
+    "Order": 270,
     "DatasetType": "CCT",
     "DatasetId": "ContractCommitment",
     "DatasetName": "Contract Commitment",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractCommitmentUnit MUST be present in a Contract Commitment FOCUS dataset.",
+      "MustSatisfy": "ContractCommitment MUST include ContractCommitmentUnit.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -496,12 +623,12 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
-    "Order": 10,
+    "Order": 280,
     "DatasetType": "CCT",
     "DatasetId": "ContractCommitment",
     "DatasetName": "Contract Commitment",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractId MUST be present in a Contract Commitment FOCUS dataset.",
+      "MustSatisfy": "ContractCommitment MUST include ContractId.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -522,12 +649,12 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
-    "Order": 10,
+    "Order": 290,
     "DatasetType": "CCT",
     "DatasetId": "ContractCommitment",
     "DatasetName": "Contract Commitment",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractPeriodEnd MUST be present in a Contract Commitment FOCUS dataset.",
+      "MustSatisfy": "ContractCommitment MUST include ContractPeriodEnd.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -548,17 +675,649 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
-    "Order": 10,
+    "Order": 300,
     "DatasetType": "CCT",
     "DatasetId": "ContractCommitment",
     "DatasetName": "Contract Commitment",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractPeriodStart MUST be present in a Contract Commitment FOCUS dataset.",
+      "MustSatisfy": "ContractCommitment MUST include ContractPeriodStart.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
         "ColumnName": "ContractPeriodStart"
       },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CCT-ContractCommitment-D-016-C": {
+    "Function": "Presence",
+    "Reference": "ContractCommitment",
+    "EntityType": "Dataset",
+    "EntityName": "Contract Commitment",
+    "EntityId": "ContractCommitment",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "CONTRACT_COMMITMENTS_SUPPORTED"
+    ],
+    "Type": "Dynamic",
+    "Order": 10,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitment MUST be present when the service provider supports contract commitments.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CCT-ContractCommitment-D-017-M": {
+    "Function": "Presence",
+    "Reference": "ContractCommitmentApplicability",
+    "EntityType": "Dataset",
+    "EntityName": "Contract Commitment Applicability",
+    "EntityId": "ContractCommitmentApplicability",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 40,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitment MUST include ContractCommitmentApplicability.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ContractCommitmentApplicability"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CCT-ContractCommitment-D-018-M": {
+    "Function": "Presence",
+    "Reference": "ContractCommitmentBenefitCategory",
+    "EntityType": "Dataset",
+    "EntityName": "Contract Commitment Benefit Category",
+    "EntityId": "ContractCommitmentBenefitCategory",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 50,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitment MUST include ContractCommitmentBenefitCategory.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ContractCommitmentBenefitCategory"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CCT-ContractCommitment-D-019-M": {
+    "Function": "Presence",
+    "Reference": "ContractCommitmentCreated",
+    "EntityType": "Dataset",
+    "EntityName": "Contract Commitment Created",
+    "EntityId": "ContractCommitmentCreated",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 80,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitment MUST include ContractCommitmentCreated.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ContractCommitmentCreated"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CCT-ContractCommitment-D-020-M": {
+    "Function": "Presence",
+    "Reference": "ContractCommitmentDiscountPercentage",
+    "EntityType": "Dataset",
+    "EntityName": "Contract Commitment Discount Percentage",
+    "EntityId": "ContractCommitmentDiscountPercentage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 100,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitment MUST include ContractCommitmentDiscountPercentage.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ContractCommitmentDiscountPercentage"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CCT-ContractCommitment-D-021-M": {
+    "Function": "Presence",
+    "Reference": "ContractCommitmentDurationType",
+    "EntityType": "Dataset",
+    "EntityName": "Contract Commitment Duration Type",
+    "EntityId": "ContractCommitmentDurationType",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 110,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitment MUST include ContractCommitmentDurationType.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ContractCommitmentDurationType"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CCT-ContractCommitment-D-022-M": {
+    "Function": "Presence",
+    "Reference": "ContractCommitmentFulfillmentInterval",
+    "EntityType": "Dataset",
+    "EntityName": "Contract Commitment Fulfillment Interval",
+    "EntityId": "ContractCommitmentFulfillmentInterval",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 120,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitment MUST include ContractCommitmentFulfillmentInterval.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ContractCommitmentFulfillmentInterval"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CCT-ContractCommitment-D-023-M": {
+    "Function": "Presence",
+    "Reference": "ContractCommitmentLastUpdated",
+    "EntityType": "Dataset",
+    "EntityName": "Contract Commitment Last Updated",
+    "EntityId": "ContractCommitmentLastUpdated",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 140,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitment MUST include ContractCommitmentLastUpdated.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ContractCommitmentLastUpdated"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CCT-ContractCommitment-D-024-M": {
+    "Function": "Presence",
+    "Reference": "ContractCommitmentLifecycleStatus",
+    "EntityType": "Dataset",
+    "EntityName": "Contract Commitment Lifecycle Status",
+    "EntityId": "ContractCommitmentLifecycleStatus",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 160,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitment MUST include ContractCommitmentLifecycleStatus.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ContractCommitmentLifecycleStatus"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CCT-ContractCommitment-D-025-M": {
+    "Function": "Presence",
+    "Reference": "ContractCommitmentModel",
+    "EntityType": "Dataset",
+    "EntityName": "Contract Commitment Model",
+    "EntityId": "ContractCommitmentModel",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 170,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitment MUST include ContractCommitmentModel.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ContractCommitmentModel"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CCT-ContractCommitment-D-026-M": {
+    "Function": "Presence",
+    "Reference": "ContractCommitmentOfferCategory",
+    "EntityType": "Dataset",
+    "EntityName": "Contract Commitment Offer Category",
+    "EntityId": "ContractCommitmentOfferCategory",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 180,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitment MUST include ContractCommitmentOfferCategory.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ContractCommitmentOfferCategory"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CCT-ContractCommitment-D-027-M": {
+    "Function": "Presence",
+    "Reference": "ContractCommitmentPaymentInterval",
+    "EntityType": "Dataset",
+    "EntityName": "Contract Commitment Payment Interval",
+    "EntityId": "ContractCommitmentPaymentInterval",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 190,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitment MUST include ContractCommitmentPaymentInterval.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ContractCommitmentPaymentInterval"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CCT-ContractCommitment-D-028-M": {
+    "Function": "Presence",
+    "Reference": "ContractCommitmentPaymentModel",
+    "EntityType": "Dataset",
+    "EntityName": "Contract Commitment Payment Model",
+    "EntityId": "ContractCommitmentPaymentModel",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 200,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitment MUST include ContractCommitmentPaymentModel.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ContractCommitmentPaymentModel"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CCT-ContractCommitment-D-029-C": {
+    "Function": "Presence",
+    "Reference": "ContractCommitmentPaymentUpfrontPercentage",
+    "EntityType": "Dataset",
+    "EntityName": "Contract Commitment Payment Upfront Percentage",
+    "EntityId": "ContractCommitmentPaymentUpfrontPercentage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 210,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitment MUST include ContractCommitmentPaymentUpfrontPercentage when the service provider offers \"Partial Upfront\" payment models.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ContractCommitmentPaymentUpfrontPercentage"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CCT-ContractCommitment-D-030-M": {
+    "Function": "Presence",
+    "Reference": "InvoiceIssuerName",
+    "EntityType": "Dataset",
+    "EntityName": "Invoice Issuer Name",
+    "EntityId": "InvoiceIssuerName",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 310,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitment MUST include InvoiceIssuerName.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "InvoiceIssuerName"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CCT-ContractCommitment-D-031-C": {
+    "Function": "Presence",
+    "Reference": "PricingCurrency",
+    "EntityType": "Dataset",
+    "EntityName": "Pricing Currency",
+    "EntityId": "PricingCurrency",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
+    ],
+    "Type": "Static",
+    "Order": 320,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitment MUST include PricingCurrency when the service provider supports pricing and billing in different currencies.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "PricingCurrency"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CCT-ContractCommitment-D-032-C": {
+    "Function": "Presence",
+    "Reference": "PricingCurrencyContractCommitmentCost",
+    "EntityType": "Dataset",
+    "EntityName": "Pricing Currency Contract Commitment Cost",
+    "EntityId": "PricingCurrencyContractCommitmentCost",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
+    ],
+    "Type": "Static",
+    "Order": 340,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitment MUST include PricingCurrencyContractCommitmentCost when the service provider supports pricing and billing in different currencies.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "PricingCurrencyContractCommitmentCost"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CCT-ContractCommitment-D-033-M": {
+    "Function": "Presence",
+    "Reference": "ServiceProviderName",
+    "EntityType": "Dataset",
+    "EntityName": "Service Provider Name",
+    "EntityId": "ServiceProviderName",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 360,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitment MUST include ServiceProviderName.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ServiceProviderName"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CCT-ContractCommitment-D-034-M": {
+    "Function": "Validation",
+    "Reference": "ContractCommitment",
+    "EntityType": "Dataset",
+    "EntityName": "Contract Commitment",
+    "EntityId": "ContractCommitment",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "Order": 860,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitment MUST conform to CorrectionHandling requirements.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CCT-ContractCommitment-D-035-M": {
+    "Function": "Validation",
+    "Reference": "ContractCommitment",
+    "EntityType": "Dataset",
+    "EntityName": "Contract Commitment",
+    "EntityId": "ContractCommitment",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "Order": 870,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitment MUST conform to DatasetCompleteness requirements.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CCT-ContractCommitment-D-036-M": {
+    "Function": "Validation",
+    "Reference": "ContractCommitment",
+    "EntityType": "Dataset",
+    "EntityName": "Contract Commitment",
+    "EntityId": "ContractCommitment",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "Order": 880,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitment MUST conform to DatasetConfiguration requirements.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CCT-ContractCommitment-D-037-M": {
+    "Function": "Validation",
+    "Reference": "ContractCommitment",
+    "EntityType": "Dataset",
+    "EntityName": "Contract Commitment",
+    "EntityId": "ContractCommitment",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "Order": 890,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitment MUST conform to DeliveryHandling requirements.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CCT-ContractCommitment-D-038-M": {
+    "Function": "Validation",
+    "Reference": "ContractCommitment",
+    "EntityType": "Dataset",
+    "EntityName": "Contract Commitment",
+    "EntityId": "ContractCommitment",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "Order": 900,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitment FOCUS columns MUST conform to FocusColumnHandling requirements.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CCT-ContractCommitment-D-039-M": {
+    "Function": "Validation",
+    "Reference": "ContractCommitment",
+    "EntityType": "Dataset",
+    "EntityName": "Contract Commitment",
+    "EntityId": "ContractCommitment",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "Order": 910,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitment FOCUS columns MUST conform to NullHandling requirements.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CCT-ContractCommitment-D-040-M": {
+    "Function": "Validation",
+    "Reference": "ContractCommitment",
+    "EntityType": "Dataset",
+    "EntityName": "Contract Commitment",
+    "EntityId": "ContractCommitment",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "Order": 920,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitment custom columns MUST conform to CustomColumnHandling requirements.",
+      "Keyword": "MUST",
+      "Requirement": {},
       "Condition": {},
       "Dependencies": []
     }

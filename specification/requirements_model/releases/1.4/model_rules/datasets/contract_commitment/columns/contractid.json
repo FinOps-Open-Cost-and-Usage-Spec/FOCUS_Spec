@@ -40,11 +40,11 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CCT-ContractCommitment-D-013-M",
         "CCT-ContractId-C-001-M",
         "CCT-ContractId-C-002-M",
         "CCT-ContractId-C-003-M",
-        "CCT-ContractId-C-004-C"
+        "CCT-ContractId-C-004-C",
+        "CCT-ContractCommitment-D-013-M"
       ]
     }
   },

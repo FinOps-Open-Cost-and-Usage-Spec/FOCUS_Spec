@@ -34,7 +34,8 @@ def test_dependencies_order(cr_json):
         if not dependencies or len(dependencies) <= 1:
             continue  # Nothing to order
 
-        # Separate dependencies into same-entity_id and different-entity_id groups
+        # Separate dependencies into same-entity_id and different-entity_id groups.
+        # Same-EntityId dependencies with Order == -1 are hidden and ignored entirely.
         same_ref_deps = []
         diff_ref_deps = []
         
@@ -45,6 +46,10 @@ def test_dependencies_order(cr_json):
             dep_info = rule_info_map[dep_id]
             dep_entity_id = dep_info["entity_id"]
             dep_order = dep_info["order"]
+
+            # Hidden same-entity dependencies are ignored for all ordering checks.
+            if dep_entity_id == parent_entity_id and dep_order == -1:
+                continue
             
             if dep_entity_id == parent_entity_id and dep_order is not None and dep_order != -1:
                 same_ref_deps.append((dep_id, dep_order))
