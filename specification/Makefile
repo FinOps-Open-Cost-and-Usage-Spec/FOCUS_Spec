@@ -12,10 +12,14 @@ endif
 PATH_TO_PROJECT_ROOT=https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/$(BRANCH)
 PDF_MARGINS=--variable margin-top=15 --variable margin-bottom=25 --variable margin-left=0 --variable margin-right=10
 PDF_FOOTER=--pdf-engine-opt="--footer-right" --pdf-engine-opt="[page] of [topage]" --pdf-engine-opt="--footer-font-name" --pdf-engine-opt="Palatino" --pdf-engine-opt="--footer-font-size" --pdf-engine-opt="8"
-SPEC_SOURCE_FILES=$(filter-out spec.md, $(wildcard *.md*)) $(wildcard supported_features/*.md*) $(wildcard columns/*.md*) $(wildcard attributes/*.md*) $(wildcard appendix/*.md*) $(wildcard datasets/*.md*) $(wildcard datasets/*/*.md*) $(wildcard datasets/*/*/*.md*)
+SPEC_SOURCE_DIRS=. supported_features attributes appendix datasets metadata
+SPEC_SOURCE_FILES=$(filter-out ./spec.md, $(sort $(foreach dir,$(SPEC_SOURCE_DIRS),$(shell find $(dir) -name "*.md" -o -name "*.mdpp" 2>/dev/null))))
 SPEC_SOURCE_MDFILES=$(filter-out %.mdpp, $(SPEC_SOURCE_FILES))
 export TOCDEPTH=2
 OS=$(shell uname)
+# Set to 1 to force build even if linter finds errors (e.g., make force=1)
+force?=0
+.PHONY: all clean lint
 all: spec.md spec.pdf spec.html
 
 spec.html: spec.md
@@ -25,7 +29,14 @@ spec.pdf: spec.html
 	$(PANDOC) spec.md -o spec_pdf.html -f gfm-tex_math_dollars -F $(PANDOC_PROJECT_RELATIVE_LINKS) -M pathToProjectRoot=$(PATH_TO_PROJECT_ROOT) -s --css=styles/${STYLE}.css $(PDF_MARGINS)
 	$(WKHTMLTOPDF) --enable-local-file-access --footer-right "[page] of [topage]" --footer-font-name "Palatino" --footer-font-size 8 spec_pdf.html $@
 
-spec.md: $(SPEC_SOURCE_FILES)
+lint:
+ifeq ($(force),1)
+	-$(PYMARKDOWNLNT) --config markdownlnt.cfg scan $(SPEC_SOURCE_MDFILES)
+else
+	$(PYMARKDOWNLNT) --config markdownlnt.cfg scan $(SPEC_SOURCE_MDFILES)
+endif
+
+spec.md: lint $(SPEC_SOURCE_FILES)
 	@if [ "${STYLE}" = "working_draft" ]; then \
 	  cp versions/working_draft.md version.md; \
 	  echo "working draft"; \
@@ -72,8 +83,11 @@ spec.md: $(SPEC_SOURCE_FILES)
 		echo "WARNING: Found code block escape that is not aligned to the start of the line in file $$file on line $$line"; \
 	done || true
 	PYTHONPATH=../vendored/ $(MARKDOWNPP) spec.mdpp -o $@
-	$(PYMARKDOWNLNT) --config markdownlnt.cfg scan $(SPEC_SOURCE_MDFILES)
+ifeq ($(force),1)
+	-$(PYMARKDOWNLNT) --config markdownlnt.cfg scan $@
+else
 	$(PYMARKDOWNLNT) --config markdownlnt.cfg scan $@
+endif
 
 clean:
 	rm -f spec.pdf spec.html spec.md spec_pdf.md version.md

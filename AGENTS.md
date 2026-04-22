@@ -39,7 +39,15 @@ pytest tests/test_schema.py   # Run a single test file
 
 ### Lint Markdown
 
-Linting is automatically run as part of `make`. To lint individual files:
+Linting is automatically run as part of `make`. The build will stop if the linter detects issues and will not create the spec.md, spec.html, or spec.pdf files.
+
+To force the build to continue despite linter errors (useful for previewing changes or CI/CD), use:
+
+```bash
+make force=1
+```
+
+To lint individual files:
 
 ```bash
 cd specification
