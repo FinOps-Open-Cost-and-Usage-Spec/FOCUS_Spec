@@ -137,7 +137,7 @@ This section outlines the planned release schedule and key milestones for the FO
 <strong>Multi-dataset FOCUS Standardization</strong>
     <ul>
       <li>Extend support for contract commitment dataset</li>
-      <li>Add FOCUS invoice and billing period datasets</li>
+      <li>Add FOCUS InvoiceDetail and BillingPeriod datasets</li>
     </ul>
   <strong>Improving FOCUS adoption and implementation</strong>
     <ul>
