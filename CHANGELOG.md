@@ -19,6 +19,7 @@ v1.4 adds 2 datasets (`BillingPeriod`, `InvoiceDetail`), 47 new columns, 6 new a
 * Revised normative requirements for [`BilledCost`](/specification/datasets/cost_and_usage/columns/billedcost.md) and [`EffectiveCost`](/specification/datasets/cost_and_usage/columns/effectivecost.md), affecting:
   * [Billed Cost and Invoice Alignment](/specification/supported_features/billed_cost_and_invoice_alignment.md)
   * [Effective Cost](/specification/supported_features/effective_cost.md)
+* Expanded [Cost Comparison](/specification/supported_features/cost_comparison.md) with cash-based vs accrual-based comparison guidance, new dependent columns, and additional example queries.
 * Tightened [`InvoiceId`](/specification/datasets/cost_and_usage/columns/invoiceid.md) Feature Level from Recommended to Conditional (MUST when the invoice issuer supports payable invoices).
 
 #### Migration Compatible Changes
