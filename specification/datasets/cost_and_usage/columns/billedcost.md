@@ -40,7 +40,7 @@ Billed Cost
 
 Cost of a *charge* as invoiced by the *invoice issuer* in a given *billing period*.
 
-## Content constraints
+## Content Constraints
 
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |

@@ -17,7 +17,7 @@ DatasetInstanceLastUpdated
 
 Dataset Instance Last Updated
 
-## Content constraints
+## Content Constraints
 
 | Constraint    | Value                                |
 |:--------------|:-------------------------------------|

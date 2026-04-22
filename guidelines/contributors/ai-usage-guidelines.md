@@ -11,8 +11,8 @@ The use of AI in specification development is still evolving, and this is theref
 
 AI tools (e.g., GitHub Copilot, Claude Code, Cursor, and similar coding assistants) are typically used in two modes:
 
-- **Interactive**: A human contributor works with AI assistance in real-time. The human reviews, edits, and submits the contribution.
-- **Autonomous**: A human requests AI to work independently. The AI creates a PR, comments, or suggestions and assigns them to the human for review. The PR serves as the human review checkpoint.
+* **Interactive**: A human contributor works with AI assistance in real-time. The human reviews, edits, and submits the contribution.
+* **Autonomous**: A human requests AI to work independently. The AI creates a PR, comments, or suggestions and assigns them to the human for review. The PR serves as the human review checkpoint.
 
 ## Contribution Requirements
 
@@ -69,15 +69,15 @@ The FOCUS project does not mandate a specific attribution format. This aligns wi
 
 This repository includes configuration files for AI coding assistants:
 
-- `AGENTS.md` - Project context and conventions (at root for tool compatibility)
-- `.ai/commands/` - Reusable workflow definitions
-- `.ai/memory/` - Persistent learnings across sessions
-- `.ai/<branch-name>/` - Working files for active issues (deleted after PR merge)
+* `AGENTS.md` - Project context and conventions (at root for tool compatibility)
+* `.ai/commands/` - Reusable workflow definitions
+* `.ai/memory/` - Persistent learnings across sessions
+* `.ai/<branch-name>/` - Working files for active issues (deleted after PR merge)
 
 Tool-specific wrapper files reference the centralized configuration:
 
-- `CLAUDE.md`, `.cursorrules`, `.github/copilot-instructions.md` - Symlinks to `AGENTS.md`
-- `.claude/commands/`, `.cursor/commands/`, `.github/prompts/` - Tool-specific wrappers for interactive use
+* `CLAUDE.md`, `.cursorrules`, `.github/copilot-instructions.md` - Symlinks to `AGENTS.md`
+* `.claude/commands/`, `.cursor/commands/`, `.github/prompts/` - Tool-specific wrappers for interactive use
 
 ### Creating Shared Commands
 
@@ -110,7 +110,7 @@ These configuration files help AI tools work effectively within the repository, 
 
 ## References
 
-- [Linux Foundation Generative AI Policy](https://www.linuxfoundation.org/legal/generative-ai)
-- [Apache Software Foundation Generative Tooling Guidance](https://www.apache.org/legal/generative-tooling.html)
-- [FOCUS Development Processes](development-processes.md)
-- [FOCUS CLA and IPR Requirements](../ipr.md)
+* [Linux Foundation Generative AI Policy](https://www.linuxfoundation.org/legal/generative-ai)
+* [Apache Software Foundation Generative Tooling Guidance](https://www.apache.org/legal/generative-tooling.html)
+* [FOCUS Development Processes](development-processes.md)
+* [FOCUS CLA and IPR Requirements](../ipr.md)

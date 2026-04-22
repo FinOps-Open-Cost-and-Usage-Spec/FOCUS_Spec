@@ -24,13 +24,15 @@ In this scenario, the invoice issuer performs currency conversion at the individ
 * **Payment Currency:** EUR
 * **Exchange Rate:** 1.00 USD = 0.92 EUR
 
-<div class="small-table">
-
-| InvoiceDetailId | ChargeCategory | BillingCurrency | BilledCost | PaymentCurrency | PaymentCurrencyBilledCost | PaymentCurrencyInvoiceDetailId |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| ID-001 | Usage | USD | 100.00 | EUR | 92.00 | ID-001 |
-
-</div>
+| Column                         | Value  |
+| :----------------------------- | :----- |
+| InvoiceDetailId                | ID-001 |
+| ChargeCategory                 | Usage  |
+| BillingCurrency                | USD    |
+| BilledCost                     | 100.00 |
+| PaymentCurrency                | EUR    |
+| PaymentCurrencyBilledCost      | 92.00  |
+| PaymentCurrencyInvoiceDetailId | ID-001 |
 
 > **Note:** Because the conversion is 1:1, the `PaymentCurrencyInvoiceDetailId` points to the record's own `InvoiceDetailId`.
 
@@ -42,15 +44,13 @@ In this scenario, the invoice issuer tracks usage in the billing currency at a g
 * **Payment Currency:** EUR
 * **Effective Exchange Rate:** 1.00 USD = 0.92 EUR
 
-<div class="small-table">
-
-| InvoiceDetailId | InvoiceDetailDescription | BilledCost | PaymentCurrencyBilledCost | PaymentCurrencyInvoiceDetailId |
-| :--- | :--- | :--- | :--- | :--- |
-| A-101 | Compute Instance A | 45.00 | 0.00 | Z-999 |
-| A-102 | Compute Instance B | 55.00 | 0.00 | Z-999 |
-| Z-999 | Usage in Payment Currency | 0.00 | 92.00 | Z-999 |
-
-</div>
+| Column                         | A-101              | A-102              | Z-999                     |
+| :----------------------------- | :----------------- | :----------------- | :------------------------ |
+| InvoiceDetailId                | A-101              | A-102              | Z-999                     |
+| InvoiceDetailDescription       | Compute Instance A | Compute Instance B | Usage in Payment Currency |
+| BilledCost                     | 45.00              | 55.00              | 0.00                      |
+| PaymentCurrencyBilledCost      | 0.00               | 0.00               | 92.00                     |
+| PaymentCurrencyInvoiceDetailId | Z-999              | Z-999              | Z-999                     |
 
 **Logic Breakdown:**
 
@@ -70,7 +70,7 @@ Payment Currency Billed Cost
 
 The [Billed Cost](#datasets.invoicedetail.billedcost) as expressed in [Payment Currency](#datasets.invoicedetail.paymentcurrency).
 
-## Content constraints
+## Content Constraints
 
 |    Constraint   |      Value              |
 |:----------------|:------------------------|

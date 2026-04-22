@@ -24,7 +24,7 @@ Reference Invoice ID
 
 The invoice-issuer-assigned identifier for an invoice that affects charges as stated on a previous invoice.
 
-## Content constraints
+## Content Constraints
 
 |    Constraint    |              Value             |
 |:----------------|:--------------------------------|

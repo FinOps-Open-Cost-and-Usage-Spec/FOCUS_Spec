@@ -18,7 +18,7 @@ FocusVersion
 
 FOCUS Version
 
-## Content constraints
+## Content Constraints
 
 | Constraint    | Value            |
 |:--------------|:-----------------|

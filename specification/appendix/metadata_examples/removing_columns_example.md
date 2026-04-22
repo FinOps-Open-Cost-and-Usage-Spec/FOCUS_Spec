@@ -2,7 +2,7 @@
 
 ## Scenario
 
-ACME has decided to remove columns from their FOCUS data export. The column removed is x_awesome_column3. The data generator creates a new [Schema](#metadata.schema) object to represent the new schema, with a unique [SchemaId](#metadata.schema.schemaid).
+CrestNode has decided to remove columns from their FOCUS data export. The column removed is x_awesome_column3. The data generator creates a new [Schema](#metadata.schema) object to represent the new schema, with a unique [SchemaId](#metadata.schema.schemaid).
 
 ## Supplied Metadata
 
@@ -52,7 +52,7 @@ The updated schema related metadata could look like this:
           {
                 "ColumnName": "Tags",
                 "DataType": "JSON",
-                "ProviderTagPrefixes": ["acme", "ac"]
+                "ProviderTagPrefixes": ["crestnode", "cn"]
           },
           {
                 "ColumnName": "x_awesome_column1",
@@ -68,4 +68,4 @@ The updated schema related metadata could look like this:
 }
 ```
 
-For an example of how ACME ensures the schema metadata reference requirement is met see: [Schema Metadata to FOCUS Data Reference](#appendix.examples:metadata.schemametadatatofocusdatareference)
+For an example of how CrestNode ensures the schema metadata reference requirement is met see: [Schema Metadata to FOCUS Data Reference](#appendix.examples:metadata.schemametadatatofocusdatareference)

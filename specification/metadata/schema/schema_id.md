@@ -17,7 +17,7 @@ SchemaId
 
 Schema ID
 
-## Content constraints
+## Content Constraints
 
 | Constraint    | Value              |
 |:--------------|:-------------------|

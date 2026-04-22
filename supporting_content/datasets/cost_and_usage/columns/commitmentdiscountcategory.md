@@ -24,19 +24,19 @@ Current values observed in billing data for various scenarios:
 | Microsoft | Cost Details (PricingModel)| Usage                     | Reservation                      |
 
 ## Documentation
-- Microsoft
-  - Azure:  Understand usage details fields: https://learn.microsoft.com/en-us/azure/cost-management-billing/automate/understand-usage-details-fields
-- GCP
-  - Google Commitment Types:  https://cloud.google.com/docs/cuds#spend_versus_resource_commitments (This is the most similar to our selected implementation)
-  - https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/standard-usage - see credit.type
-- AWS
-  - Amazon: Reservation details - https://docs.aws.amazon.com/cur/latest/userguide/reservation-columns.html
+* Microsoft
+  * Azure:  Understand usage details fields: https://learn.microsoft.com/en-us/azure/cost-management-billing/automate/understand-usage-details-fields
+* GCP
+  * Google Commitment Types:  https://cloud.google.com/docs/cuds#spend_versus_resource_commitments (This is the most similar to our selected implementation)
+  * https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/standard-usage - see credit.type
+* AWS
+  * Amazon: Reservation details - https://docs.aws.amazon.com/cur/latest/userguide/reservation-columns.html
 
 ## Discussion Topics
 It was discussed whether or not this field should be a normalized list of values OR if we should make it a suggestive, freeform text field as different cloud providers have different names for their implementation of Commitment Usage Discounts. For example:
-  - Savings Plan
-  - RI/CUD
-  - Flexible CUDs
+  * Savings Plan
+  * RI/CUD
+  * Flexible CUDs
 
 For AWS, this column could possibly calculated as such:
   if reservation/ReservationARN <> '' then Usage, else if savingsPlan/SavingsPlanArn <> '' then Spend, else nullThis column
@@ -45,10 +45,10 @@ It was agreed that another column would be added (ideally in V1.0) that would id
 
 Update: The name of this additional column has been determined as Commitment Discount Type.
 
-- Microsoft
-  - Azure:  PricingModel: https://learn.microsoft.com/en-us/azure/cost-management-billing/automate/understand-usage-details-fields
-- GCP
-  - Google Commitment Types:  https://cloud.google.com/docs/cuds#spend_versus_resource_commitments (This is the most similar to our selected implementation)
-  - https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/standard-usage
-- AWS
-  - Amazon: Instance purchasing options - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-purchasing-options.html
+* Microsoft
+  * Azure:  PricingModel: https://learn.microsoft.com/en-us/azure/cost-management-billing/automate/understand-usage-details-fields
+* GCP
+  * Google Commitment Types:  https://cloud.google.com/docs/cuds#spend_versus_resource_commitments (This is the most similar to our selected implementation)
+  * https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/standard-usage
+* AWS
+  * Amazon: Instance purchasing options - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-purchasing-options.html
