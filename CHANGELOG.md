@@ -28,16 +28,7 @@ v1.4 adds 2 datasets (`BillingPeriod`, `InvoiceDetail`), 47 new columns, 6 new a
 * Removal of the `ColumnHandling` attribute, with requirements shifted to `FocusColumnHandling` and `CustomColumnHandling`.
 * Removal of the `DiscountHandling` attribute, with content moved to the [Discount Handling](/specification/appendix/discount_handling.md) appendix entry.
 * Removal of the `InvoiceHandling` attribute, with requirements shifted to `DeliveryHandling` and `DatasetCompleteness`.
-* Removal of deprecated `ProviderName` and `PublisherName` columns, with use cases absorbed by `ServiceProviderName`, `HostProviderName`, `InvoiceIssuerName`, and `DataGenerator` metadata introduced in v1.3, affecting:
-  * [Charge Categorization](/specification/supported_features/charge_categorization.md)
-  * [Commit Usage and Under Usage](/specification/supported_features/commit_usage_and_under_usage.md)
-  * [Cost Comparison](/specification/supported_features/cost_comparison.md)
-  * [Effective Cost](/specification/supported_features/effective_cost.md)
-  * [Marketplace Purchases](/specification/supported_features/marketplace_purchases.md)
-  * [Participating Entity Identification](/specification/supported_features/participating_entity_identification.md)
-  * [Resource Usage](/specification/supported_features/resource_usage.md)
-  * [Service Categorization](/specification/supported_features/service_categorization.md)
-  * [Service Provider Services](/specification/supported_features/service_provider_services.md)
+* Removal of deprecated `ProviderName` and `PublisherName` columns. Use cases were migrated to `ServiceProviderName`, `HostProviderName`, `InvoiceIssuerName`, and `DataGenerator` metadata during the v1.3 cycle. See [Participating Entity Identification](/specification/supported_features/participating_entity_identification.md) for guidance on selecting the correct successor column.
 
 #### Incompatible Changes
 
