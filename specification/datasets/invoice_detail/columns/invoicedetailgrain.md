@@ -8,7 +8,8 @@ This gives FinOps practitioners a single point of reference for all possible [In
 
 InvoiceDetailGrain MUST adhere to the following requirements:
 
-* InvoiceDetailGrain MUST be of type JSON.
+* InvoiceDetailGrain MUST be of type JSON Object (serialized as a String where necessary).
+* InvoiceDetailGrain MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * InvoiceDetailGrain MUST conform to [KeyValueFormat](#attributes.key-valueformat) requirements.
 * InvoiceDetailGrain MUST NOT be null when one or more properties uniquely define the granularity of the invoice line item.
 * InvoiceDetailGrain MUST contain the set of all properties that uniquely define the granularity of the invoice line item.
