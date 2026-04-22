@@ -1,4 +1,4 @@
-## Release Planning 
+## Release Planning
 
 This section outlines the planned release schedule and key milestones for the FOCUS project. It includes the scope and high-level system requirements for each version, as well as detailed timelines for the development and review processes for each present and past releases.
 
@@ -95,7 +95,7 @@ This section outlines the planned release schedule and key milestones for the FO
                 <li>Addition of Invoice ID to support invoice reconciliation use cases
                 </li>
                 <li>Addition of SKU properties that are prominent / common across providers
-                </li>                
+                </li>
             </ul>
             <strong>Fixes and clarifications</strong>
             <ul>
@@ -136,7 +136,7 @@ This section outlines the planned release schedule and key milestones for the FO
         <td>
 <strong>Multi-dataset FOCUS Standardization</strong>
     <ul>
-      <li>Extend support for contract commitment dataset</li>
+      <li>Extend support for ContractCommitment dataset</li>
       <li>Add InvoiceDetail and BillingPeriod datasets</li>
     </ul>
   <strong>Improving FOCUS adoption and implementation</strong>
@@ -153,7 +153,7 @@ This section outlines the planned release schedule and key milestones for the FO
       <li>Clarify definitions of EffectiveCost vs BilledCost across providers</li>
       <li>Clarify commitment concepts and glossary entries</li>
     </ul>
- <strong>Other Important Improvements</strong>
+  <strong>Other Important Improvements</strong>
     <ul>
       <li>Provide guidance for generating data center / on-prem FOCUS datasets</li>
       <li>Establish FOCUS attribute-specification guidelines</li>
@@ -170,6 +170,7 @@ This section outlines the planned release schedule and key milestones for the FO
 </table>
 
 ### Estimated Timeline for v1.5
+
 This table displays key milestones and dates related to the development of FOCUS Release v1.5.
 
 <table>
@@ -262,7 +263,9 @@ This table displays key milestones and dates related to the development of FOCUS
     </tr>
   </tbody>
 </table>
+
 ### Estimated Timeline for v1.4
+
 This table displays key milestones and dates related to the development of FOCUS Release v1.4.
 
 <table>
@@ -357,6 +360,7 @@ This table displays key milestones and dates related to the development of FOCUS
 </table>
 
 ### Estimated Timeline for v1.3
+
 This table displays key milestones and dates related to the development of FOCUS Release v1.3.
 
   <table>
