@@ -126,7 +126,7 @@ This section outlines the planned release schedule and key milestones for the FO
     <ul>
       <li>Static conformance requirements</li>
       <li>Conformance program beta</li>
-      <li>Recency and completeness of data</li>  
+      <li>Recency and completeness of data</li>
     </ul>
         </td>
     </tr>
