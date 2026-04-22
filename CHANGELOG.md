@@ -173,7 +173,13 @@ v1.4 adds 2 datasets (`BillingPeriod`, `InvoiceDetail`), 47 new columns, 6 new a
 
 #### Changed attributes
 
-* All attributes refactored to follow the same format as other entities (e.g., Datasets, Columns).
+* [`CurrencyFormat`](/specification/attributes/currency_format.md): Requirements simplified to mandate ISO 4217:2015 three-letter codes for all currency values. Removed the prior allowance for virtual currency values to use `StringHandling` rules.
+* [`JsonObjectFormat`](/specification/attributes/json_object_format.md): Removed the requirement for data generators to document JSON object schemas for custom columns. Retained other requirements.
+* [`NullHandling`](/specification/attributes/null_handling.md): Clarified that empty-string and placeholder-value prohibitions apply to absent-value scenarios, and split into separate rules for string and numeric columns.
+* [`NumericFormat`](/specification/attributes/numeric_format.md): Added normative tables specifying allowed Data Types and Allowed Precisions, replacing the v1.3 pattern that delegated precision to data generator documentation.
+* [`StringHandling`](/specification/attributes/string_handling.md): Added explicit rules for mutable versus immutable string values, including guidance on handling corrections to previously closed billing periods.
+* [`UnitFormat`](/specification/attributes/unit_format.md): Significantly expanded with normative rules for base units (data size, time-based, count-based), compound units, ratio units, and unit quantities. New definitions section clarifies terminology.
+* All attributes additionally refactored to a consistent structural format shared with datasets, columns, and other entities.
 
 #### Changed guidelines
 
