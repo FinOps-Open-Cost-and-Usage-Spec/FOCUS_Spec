@@ -1,0 +1,236 @@
+{
+  "CCT-PricingCurrencyContractCommitmentCost-C-000-M": {
+    "Function": "Composite",
+    "Reference": "PricingCurrencyContractCommitmentCost",
+    "EntityType": "Column",
+    "EntityName": "Pricing Currency Contract Commitment Cost",
+    "EntityId": "PricingCurrencyContractCommitmentCost",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 0,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCurrencyContractCommitmentCost MUST adhere to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-PricingCurrencyContractCommitmentCost-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-PricingCurrencyContractCommitmentCost-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-PricingCurrencyContractCommitmentCost-C-003-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-PricingCurrencyContractCommitmentCost-C-006-M"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CCT-PricingCurrencyContractCommitmentCost-C-001-M",
+        "CCT-PricingCurrencyContractCommitmentCost-C-002-M",
+        "CCT-PricingCurrencyContractCommitmentCost-C-003-C",
+        "CCT-PricingCurrencyContractCommitmentCost-C-006-M",
+        "CCT-ContractCommitment-D-032-C"
+      ]
+    }
+  },
+  "CCT-PricingCurrencyContractCommitmentCost-C-001-M": {
+    "Function": "Type",
+    "Reference": "PricingCurrencyContractCommitmentCost",
+    "EntityType": "Column",
+    "EntityName": "Pricing Currency Contract Commitment Cost",
+    "EntityId": "PricingCurrencyContractCommitmentCost",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 10,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCurrencyContractCommitmentCost MUST be of type Decimal.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "TypeDecimal",
+        "ColumnName": "PricingCurrencyContractCommitmentCost"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CCT-PricingCurrencyContractCommitmentCost-C-002-M": {
+    "Function": "Format",
+    "Reference": "PricingCurrencyContractCommitmentCost",
+    "EntityType": "Column",
+    "EntityName": "Pricing Currency Contract Commitment Cost",
+    "EntityId": "PricingCurrencyContractCommitmentCost",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 20,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCurrencyContractCommitmentCost MUST conform to NumericFormat requirements.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "FormatNumeric",
+        "ColumnName": "PricingCurrencyContractCommitmentCost"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CCT-PricingCurrencyContractCommitmentCost-C-003-C": {
+    "Function": "Composite",
+    "Reference": "PricingCurrencyContractCommitmentCost",
+    "EntityType": "Column",
+    "EntityName": "Pricing Currency Contract Commitment Cost",
+    "EntityId": "PricingCurrencyContractCommitmentCost",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 30,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCurrencyContractCommitmentCost MUST adhere to the following nullability requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-PricingCurrencyContractCommitmentCost-C-004-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-PricingCurrencyContractCommitmentCost-C-005-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CCT-PricingCurrencyContractCommitmentCost-C-004-C",
+        "CCT-PricingCurrencyContractCommitmentCost-C-005-C"
+      ]
+    }
+  },
+  "CCT-PricingCurrencyContractCommitmentCost-C-004-C": {
+    "Function": "Nullability",
+    "Reference": "PricingCurrencyContractCommitmentCost",
+    "EntityType": "Column",
+    "EntityName": "Pricing Currency Contract Commitment Cost",
+    "EntityId": "PricingCurrencyContractCommitmentCost",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 40,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCurrencyContractCommitmentCost MUST NOT be null when ContractCommitmentCategory is \"Spend\" and PricingCurrency is provided.",
+      "Keyword": "MUST NOT",
+      "Requirement": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "PricingCurrencyContractCommitmentCost",
+        "Value": null
+      },
+      "Condition": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ContractCommitmentCategory",
+            "Value": "Spend"
+          },
+          {
+            "CheckFunction": "CheckNotValue",
+            "ColumnName": "PricingCurrency",
+            "Value": null
+          }
+        ]
+      },
+      "Dependencies": []
+    }
+  },
+  "CCT-PricingCurrencyContractCommitmentCost-C-005-C": {
+    "Function": "Nullability",
+    "Reference": "PricingCurrencyContractCommitmentCost",
+    "EntityType": "Column",
+    "EntityName": "Pricing Currency Contract Commitment Cost",
+    "EntityId": "PricingCurrencyContractCommitmentCost",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 50,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCurrencyContractCommitmentCost MAY be null when ContractCommitmentCategory is \"Usage\".",
+      "Keyword": "MAY",
+      "Requirement": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "PricingCurrencyContractCommitmentCost",
+        "Value": null
+      },
+      "Condition": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "ContractCommitmentCategory",
+        "Value": "Usage"
+      },
+      "Dependencies": []
+    }
+  },
+  "CCT-PricingCurrencyContractCommitmentCost-C-006-M": {
+    "Function": "Validation",
+    "Reference": "PricingCurrencyContractCommitmentCost",
+    "EntityType": "Column",
+    "EntityName": "Pricing Currency Contract Commitment Cost",
+    "EntityId": "PricingCurrencyContractCommitmentCost",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "Order": 60,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCurrencyContractCommitmentCost MUST be denominated in the PricingCurrency.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}

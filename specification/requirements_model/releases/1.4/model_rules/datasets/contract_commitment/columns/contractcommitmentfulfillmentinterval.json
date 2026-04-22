@@ -1,0 +1,214 @@
+{
+  "CCT-ContractCommitmentFulfillmentInterval-C-000-M": {
+    "Function": "Composite",
+    "Reference": "ContractCommitmentFulfillmentInterval",
+    "EntityType": "Column",
+    "EntityName": "Contract Commitment Fulfillment Interval",
+    "EntityId": "ContractCommitmentFulfillmentInterval",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 0,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitmentFulfillmentInterval MUST adhere to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitmentFulfillmentInterval-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitmentFulfillmentInterval-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitmentFulfillmentInterval-C-003-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitmentFulfillmentInterval-C-004-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CCT-ContractCommitmentFulfillmentInterval-C-001-M",
+        "CCT-ContractCommitmentFulfillmentInterval-C-002-M",
+        "CCT-ContractCommitmentFulfillmentInterval-C-003-M",
+        "CCT-ContractCommitmentFulfillmentInterval-C-004-C",
+        "CCT-ContractCommitment-D-022-M"
+      ]
+    }
+  },
+  "CCT-ContractCommitmentFulfillmentInterval-C-001-M": {
+    "Function": "Type",
+    "Reference": "ContractCommitmentFulfillmentInterval",
+    "EntityType": "Column",
+    "EntityName": "Contract Commitment Fulfillment Interval",
+    "EntityId": "ContractCommitmentFulfillmentInterval",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 10,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitmentFulfillmentInterval MUST be of type String.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "TypeString",
+        "ColumnName": "ContractCommitmentFulfillmentInterval"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CCT-ContractCommitmentFulfillmentInterval-C-002-M": {
+    "Function": "Nullability",
+    "Reference": "ContractCommitmentFulfillmentInterval",
+    "EntityType": "Column",
+    "EntityName": "Contract Commitment Fulfillment Interval",
+    "EntityId": "ContractCommitmentFulfillmentInterval",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 20,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitmentFulfillmentInterval MUST NOT be null.",
+      "Keyword": "MUST NOT",
+      "Requirement": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "ContractCommitmentFulfillmentInterval",
+        "Value": null
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CCT-ContractCommitmentFulfillmentInterval-C-003-M": {
+    "Function": "Validation",
+    "Reference": "ContractCommitmentFulfillmentInterval",
+    "EntityType": "Column",
+    "EntityName": "Contract Commitment Fulfillment Interval",
+    "EntityId": "ContractCommitmentFulfillmentInterval",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 30,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitmentFulfillmentInterval MUST be one of the allowed values.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "OR",
+        "Items": [
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ContractCommitmentFulfillmentInterval",
+            "Value": "Hourly"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ContractCommitmentFulfillmentInterval",
+            "Value": "Daily"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ContractCommitmentFulfillmentInterval",
+            "Value": "Weekly"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ContractCommitmentFulfillmentInterval",
+            "Value": "Monthly"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ContractCommitmentFulfillmentInterval",
+            "Value": "Quarterly"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ContractCommitmentFulfillmentInterval",
+            "Value": "Semi-Annually"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ContractCommitmentFulfillmentInterval",
+            "Value": "Annually"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ContractCommitmentFulfillmentInterval",
+            "Value": "Total Term"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ContractCommitmentFulfillmentInterval",
+            "Value": "Transactional"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ContractCommitmentFulfillmentInterval",
+            "Value": "Custom"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CCT-ContractCommitmentFulfillmentInterval-C-004-C": {
+    "Function": "Validation",
+    "Reference": "ContractCommitmentFulfillmentInterval",
+    "EntityType": "Column",
+    "EntityName": "Contract Commitment Fulfillment Interval",
+    "EntityId": "ContractCommitmentFulfillmentInterval",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 40,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitmentFulfillmentInterval MUST NOT be \"Total Term\" if ContractCommitmentModel is \"Continuous\".",
+      "Keyword": "MUST NOT",
+      "Requirement": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "ContractCommitmentFulfillmentInterval",
+        "Value": "Total Term"
+      },
+      "Condition": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "ContractCommitmentModel",
+        "Value": "Continuous"
+      },
+      "Dependencies": [
+        "CCT-ContractCommitmentModel-C-003-M"
+      ]
+    }
+  }
+}

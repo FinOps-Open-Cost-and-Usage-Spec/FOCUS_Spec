@@ -104,6 +104,14 @@
       ],
       "FormatAttributes": []
     },
+    "CheckLessOrEqualThanValue": {
+      "Description": "Check if column has value equal or less than a value",
+      "Arguments": [
+        "ColumnName",
+        "Value"
+      ],
+      "FormatAttributes": []
+    },
     "CheckModelRule": {
       "Description": "Check another ModelRule and turn its value",
       "Arguments": [
@@ -133,6 +141,22 @@
       "Description": "Check column has the data type of decimal",
       "Arguments": [
         "ColumnName"
+      ],
+      "FormatAttributes": []
+    },
+    "CheckStringEndsWith": {
+      "Description": "Check if column value ends with a specific string",
+      "Arguments": [
+        "ColumnName",
+        "Value"
+      ],
+      "FormatAttributes": []
+    },
+    "CheckRegexMatch": {
+      "Description": "Check if column value matches a specific regex pattern",
+      "Arguments": [
+        "ColumnName",
+        "Pattern"
       ],
       "FormatAttributes": []
     },

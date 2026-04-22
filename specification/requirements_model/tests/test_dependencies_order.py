@@ -82,8 +82,8 @@ def test_dependencies_order(cr_json):
                     dep_reference = rule_info_map[diff_ref_id]["entity_id"]
                     violations.append({
                         "rule_id": rule_id,
-                        "dependency_pair": f"{diff_ref_id} (EntityId: {dep_reference})",
-                        "issue": f"Dependency {diff_ref_id} with different EntityId '{dep_reference}' should appear after all same-EntityId dependencies"
+                            "dependency_pair": f"{diff_ref_id} (EntityId: {dep_reference})",
+                            "issue": f"Dependency {diff_ref_id} with different EntityId '{dep_reference}' should appear after all same-EntityId dependencies"
                     })
 
     assert not violations, (

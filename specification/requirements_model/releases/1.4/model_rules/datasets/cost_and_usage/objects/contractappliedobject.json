@@ -2219,7 +2219,7 @@
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "CheckJSONSchema",
-        "ColumnName": "ContractAppliedObject",
+        "ColumnName": "ContractApplied",
         "Path": "$",
         "SchemaId": "CAU-ContractAppliedObjectSchema-S-001-M"
       },

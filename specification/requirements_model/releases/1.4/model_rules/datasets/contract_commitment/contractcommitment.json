@@ -286,11 +286,11 @@
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CCT-ContractCommitmentCost-C-000-M"
+            "ModelRuleId": "CCT-ContractCommitmentApplicability-C-000-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CCT-ContractCommitmentId-C-000-M"
+            "ModelRuleId": "CCT-ContractCommitmentBenefitCategory-C-000-M"
           },
           {
             "CheckFunction": "CheckModelRule",
@@ -298,7 +298,47 @@
           },
           {
             "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitmentCost-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitmentCreated-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitmentId-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CCT-ContractCommitmentDescription-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitmentDurationType-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitmentFulfillmentInterval-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitmentLifecycleStatus-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitmentModel-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitmentPaymentInterval-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitmentPaymentModel-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitmentPaymentUpfrontPercentage-C-000-M"
           },
           {
             "CheckFunction": "CheckModelRule",
@@ -331,16 +371,42 @@
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CCT-ContractPeriodStart-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-InvoiceIssuerName-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-PricingCurrency-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-PricingCurrencyContractCommitmentCost-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ServiceProviderName-C-000-M"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
         "CCT-BillingCurrency-C-000-M",
-        "CCT-ContractCommitmentCost-C-000-M",
-        "CCT-ContractCommitmentId-C-000-M",
+        "CCT-ContractCommitmentApplicability-C-000-M",
+        "CCT-ContractCommitmentBenefitCategory-C-000-M",
         "CCT-ContractCommitmentCategory-C-000-M",
+        "CCT-ContractCommitmentCost-C-000-M",
+        "CCT-ContractCommitmentCreated-C-000-M",
+        "CCT-ContractCommitmentId-C-000-M",
         "CCT-ContractCommitmentDescription-C-000-M",
+        "CCT-ContractCommitmentDurationType-C-000-M",
+        "CCT-ContractCommitmentFulfillmentInterval-C-000-M",
+        "CCT-ContractCommitmentLifecycleStatus-C-000-M",
+        "CCT-ContractCommitmentModel-C-000-M",
+        "CCT-ContractCommitmentPaymentInterval-C-000-M",
+        "CCT-ContractCommitmentPaymentModel-C-000-M",
+        "CCT-ContractCommitmentPaymentUpfrontPercentage-C-000-M",
         "CCT-ContractCommitmentPeriodEnd-C-000-M",
         "CCT-ContractCommitmentPeriodStart-C-000-M",
         "CCT-ContractCommitmentQuantity-C-000-M",
@@ -348,7 +414,11 @@
         "CCT-ContractCommitmentUnit-C-000-M",
         "CCT-ContractId-C-000-M",
         "CCT-ContractPeriodEnd-C-000-M",
-        "CCT-ContractPeriodStart-C-000-M"
+        "CCT-ContractPeriodStart-C-000-M",
+        "CCT-InvoiceIssuerName-C-000-M",
+        "CCT-PricingCurrency-C-000-M",
+        "CCT-PricingCurrencyContractCommitmentCost-C-000-M",
+        "CCT-ServiceProviderName-C-000-M"
       ]
     }
   },
@@ -363,7 +433,7 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
-    "Order": 30,
+    "Order": 80,
     "DatasetType": "CCT",
     "DatasetId": "ContractCommitment",
     "DatasetName": "Contract Commitment",
@@ -389,7 +459,7 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
-    "Order": 70,
+    "Order": 90,
     "DatasetType": "CCT",
     "DatasetId": "ContractCommitment",
     "DatasetName": "Contract Commitment",
@@ -726,7 +796,7 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
-    "Order": 40,
+    "Order": 60,
     "DatasetType": "CCT",
     "DatasetId": "ContractCommitment",
     "DatasetName": "Contract Commitment",

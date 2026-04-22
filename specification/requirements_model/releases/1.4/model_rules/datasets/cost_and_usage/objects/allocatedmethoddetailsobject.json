@@ -743,7 +743,7 @@
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "CheckJSONSchema",
-        "ColumnName": "AllocatedMethodDetailsObject",
+        "ColumnName": "AllocatedMethodDetails",
         "Path": "$",
         "SchemaId": "CAU-AllocatedMethodDetailsObjectSchema-S-001-M"
       },

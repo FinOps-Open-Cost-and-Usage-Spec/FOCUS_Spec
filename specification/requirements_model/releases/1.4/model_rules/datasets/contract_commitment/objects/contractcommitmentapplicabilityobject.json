@@ -1,0 +1,343 @@
+{
+  "CCT-ContractCommitmentApplicabilityObject-O-001-M": {
+    "Function": "Composite",
+    "Reference": "ContractCommitmentApplicabilityObject",
+    "EntityType": "Object",
+    "EntityName": "Contract Commitment Applicability Object",
+    "EntityId": "ContractCommitmentApplicabilityObject",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 0,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitmentApplicabilityObject MUST adhere to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitmentApplicabilityObject-O-002-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitmentApplicabilityObject-O-003-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitmentApplicabilityObject-O-004-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitmentApplicabilityObject-O-005-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitmentApplicabilityObject-O-006-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitmentApplicabilityObject-O-007-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitmentApplicabilityObject-O-008-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitmentApplicabilityObject-O-009-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitmentApplicabilityObject-O-010-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitmentApplicabilityObject-O-011-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitmentApplicabilityObject-O-012-M"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CCT-ContractCommitmentApplicabilityObject-O-002-M",
+        "CCT-ContractCommitmentApplicabilityObject-O-003-M",
+        "CCT-ContractCommitmentApplicabilityObject-O-004-M",
+        "CCT-ContractCommitmentApplicabilityObject-O-005-M",
+        "CCT-ContractCommitmentApplicabilityObject-O-006-M",
+        "CCT-ContractCommitmentApplicabilityObject-O-007-M",
+        "CCT-ContractCommitmentApplicabilityObject-O-008-M",
+        "CCT-ContractCommitmentApplicabilityObject-O-009-O",
+        "CCT-ContractCommitmentApplicabilityObject-O-010-O",
+        "CCT-ContractCommitmentApplicabilityObject-O-011-M",
+        "CCT-ContractCommitmentApplicabilityObject-O-012-M"
+      ]
+    }
+  },
+  "CCT-ContractCommitmentApplicabilityObject-O-002-M": {
+    "Function": "Validation",
+    "Reference": "ContractCommitmentApplicabilityObject",
+    "EntityType": "Object",
+    "EntityName": "Contract Commitment Applicability Object",
+    "EntityId": "ContractCommitmentApplicabilityObject",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 10,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitmentApplicabilityObject MUST conform to the ContractCommitmentApplicabilityObjectSchema JSON Schema.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "CheckJSONSchema",
+        "ColumnName": "ContractCommitmentApplicability",
+        "Path": "$",
+        "SchemaId": "CCT-ContractCommitmentApplicabilityObjectSchema-S-001-M"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CCT-ContractCommitmentApplicabilityObject-O-003-M": {
+    "Function": "Validation",
+    "Reference": "ContractCommitmentApplicabilityObject",
+    "EntityType": "Object",
+    "EntityName": "Contract Commitment Applicability Object",
+    "EntityId": "ContractCommitmentApplicabilityObject",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "Order": 20,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitmentApplicabilityObject.IsGlobalScope MUST be true if the contract commitment applies to all entities.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CCT-ContractCommitmentApplicabilityObject-O-004-M": {
+    "Function": "Validation",
+    "Reference": "ContractCommitmentApplicabilityObject",
+    "EntityType": "Object",
+    "EntityName": "Contract Commitment Applicability Object",
+    "EntityId": "ContractCommitmentApplicabilityObject",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "Order": 30,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitmentApplicabilityObject.IsComplexScope MUST be true if the contract commitment's applicability logic exceeds schema capabilities.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CCT-ContractCommitmentApplicabilityObject-O-005-M": {
+    "Function": "Validation",
+    "Reference": "ContractCommitmentApplicabilityObject",
+    "EntityType": "Object",
+    "EntityName": "Contract Commitment Applicability Object",
+    "EntityId": "ContractCommitmentApplicabilityObject",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "Order": 40,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitmentApplicabilityObject.Applicability.Cost MUST represent the fraction of an eligible charge's cost that is applicable to the commitment (0.0 to 1.0).",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CCT-ContractCommitmentApplicabilityObject-O-006-M": {
+    "Function": "Validation",
+    "Reference": "ContractCommitmentApplicabilityObject",
+    "EntityType": "Object",
+    "EntityName": "Contract Commitment Applicability Object",
+    "EntityId": "ContractCommitmentApplicabilityObject",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "Order": 50,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitmentApplicabilityObject.Applicability.Usage MUST represent the fraction of an eligible charge's usage that is applicable to the commitment (0.0 to 1.0).",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CCT-ContractCommitmentApplicabilityObject-O-007-M": {
+    "Function": "Validation",
+    "Reference": "ContractCommitmentApplicabilityObject",
+    "EntityType": "Object",
+    "EntityName": "Contract Commitment Applicability Object",
+    "EntityId": "ContractCommitmentApplicabilityObject",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "Order": 60,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitmentApplicabilityObject.Inclusions[*].Applicability.Cost MUST represent the fraction of an eligible charge's cost that is applicable to the commitment (0.0 to 1.0).",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CCT-ContractCommitmentApplicabilityObject-O-008-M": {
+    "Function": "Validation",
+    "Reference": "ContractCommitmentApplicabilityObject",
+    "EntityType": "Object",
+    "EntityName": "Contract Commitment Applicability Object",
+    "EntityId": "ContractCommitmentApplicabilityObject",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "Order": 70,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitmentApplicabilityObject.Inclusions[*].Applicability.Usage MUST represent the fraction of an eligible charge's usage that is applicable to the commitment (0.0 to 1.0).",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CCT-ContractCommitmentApplicabilityObject-O-009-O": {
+    "Function": "Validation",
+    "Reference": "ContractCommitmentApplicabilityObject",
+    "EntityType": "Object",
+    "EntityName": "Contract Commitment Applicability Object",
+    "EntityId": "ContractCommitmentApplicabilityObject",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "Order": 80,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitmentApplicabilityObject.Inclusions[*].Dimension SHOULD represent a column in Cost and Usage.",
+      "Keyword": "SHOULD",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CCT-ContractCommitmentApplicabilityObject-O-010-O": {
+    "Function": "Validation",
+    "Reference": "ContractCommitmentApplicabilityObject",
+    "EntityType": "Object",
+    "EntityName": "Contract Commitment Applicability Object",
+    "EntityId": "ContractCommitmentApplicabilityObject",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "Order": 90,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitmentApplicabilityObject.Exclusions[*].Dimension SHOULD represent a column in Cost and Usage.",
+      "Keyword": "SHOULD",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CCT-ContractCommitmentApplicabilityObject-O-011-M": {
+    "Function": "Validation",
+    "Reference": "ContractCommitmentApplicabilityObject",
+    "EntityType": "Object",
+    "EntityName": "Contract Commitment Applicability Object",
+    "EntityId": "ContractCommitmentApplicabilityObject",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "Order": 100,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitmentApplicabilityObject.Inclusions[*].Values MUST contain only the single string \"*\" if the wildcard is present.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CCT-ContractCommitmentApplicabilityObject-O-012-M": {
+    "Function": "Validation",
+    "Reference": "ContractCommitmentApplicabilityObject",
+    "EntityType": "Object",
+    "EntityName": "Contract Commitment Applicability Object",
+    "EntityId": "ContractCommitmentApplicabilityObject",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "Order": 110,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitmentApplicabilityObject.Exclusions[*].Values MUST contain only the single string \"*\" if the wildcard is present.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}

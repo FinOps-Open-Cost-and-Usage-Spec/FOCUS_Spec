@@ -6,7 +6,8 @@ from conftest import requires_version
 KEYWORD_EXCLUDE_PHRASES = [
     "SLA credit details when the credit is already applied",
     "(e.g., when the",
-    "where necessary"
+    "where necessary",
+    ", where quantity is a positive integer,"
 ]
 
 
@@ -42,7 +43,7 @@ def _rule_has_scope(rule: dict) -> bool:
     cond = vc.get("Condition")
     ms = vc.get("MustSatisfy")
     has_app = isinstance(app, list) and len(app) > 0
-    has_cond = isinstance(cond, dict) and len(cond) > 0
+    has_cond = (isinstance(cond, dict) or isinstance(cond, list)) and len(cond) > 0
     has_ms_scope = _text_has_keywords(ms)
     return has_app or has_cond or has_ms_scope
 
