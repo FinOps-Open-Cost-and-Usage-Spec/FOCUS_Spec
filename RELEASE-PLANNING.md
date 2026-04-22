@@ -137,14 +137,15 @@ This section outlines the planned release schedule and key milestones for the FO
 <strong>Multi-dataset FOCUS Standardization</strong>
     <ul>
       <li>Extend support for contract commitment dataset</li>
-      <li>Add FOCUS InvoiceDetail and BillingPeriod datasets</li>
+      <li>Add InvoiceDetail and BillingPeriod datasets</li>
     </ul>
   <strong>Improving FOCUS adoption and implementation</strong>
     <ul>
       <li>Add column selection as a non-functional requirement</li>
       <li>Add non-FOCUS columns to FOCUS datasets as a non-functional requirement</li>
       <li>Add provider column mappings as a non-functional requirement</li>
-      <li>Add commitment eligibility indicator for on-demand charges</li>
+      <li>Add Commitment Program Eligibility Details</li>
+      <li>Use adoption to prioritize the working group's efforts</li>
     </ul>
   <strong>Carry-over from 1.3</strong>
     <ul>
@@ -154,10 +155,15 @@ This section outlines the planned release schedule and key milestones for the FO
     </ul>
  <strong>Other Important Improvements</strong>
     <ul>
+      <li>Provide guidance for generating data center / on-prem FOCUS datasets</li>
       <li>Establish FOCUS attribute-specification guidelines</li>
+      <li>Handle for HTML/PDF anchor links for columns used in multiple datasets</li>
+      <li>Revise the table of contents generator to handle for dataset-level headers</li>
       <li>Relocate all normative requirements that apply to the dataset level to the dataset section of the document</li>
+      <li>Add 1.2 to 1.3 Version Migration Guide</li>
       <li>Add 1.3 Specification revisions to Requirements Model</li>
       <li>Add 1.4 Specification revisions to Requirements Model</li>
+      <li>Add Line-Item Examples for Non-Negotiated Commitment Scenarios</li>
     </ul>
         </td>
     </tr>
