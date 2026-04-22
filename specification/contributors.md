@@ -21,8 +21,8 @@ Thanks to the following FOCUS Maintainers for their leadership and contributions
 Thanks to the following FOCUS members for their contributions to the FOCUS Release **v1.4** specification.
 
 * Alexandra McCoy (A.M. Tech)
-* Andrew Qu (Everest)
 * Alfred Francis (thecloudx.co)
+* Andrew Qu (Everest)
 * Beau Nelford (Anglepoint)
 * David Earney (American Express)
 * Deeja Cruz (Datadog)

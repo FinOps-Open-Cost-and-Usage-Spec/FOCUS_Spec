@@ -14,12 +14,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 * New Datasets and Columns to support [Invoice Reconciliation](/specification/supported_features/invoice_reconciliation.md)
 * New Columns to support [Commitment Program Eligibility Detail](/specification/supported_features/commitment_program_eligibility_details.md)
-* Revised normative requirements for [Billed Cost and Invoice Alignment](/specification/supported_features/billed_cost_and_invoice_alignment.md) and [Effective Cost](/specification/supported_features/effective_cost.md)
+* Revised normative requirements for [`BilledCost`](/specification/datasets/cost_and_usage/columns/billedcost.md) and [`EffectiveCost`](/specification/datasets/cost_and_usage/columns/effectivecost.md), affecting:
+  * [Billed Cost and Invoice Alignment](/specification/supported_features/billed_cost_and_invoice_alignment.md)
+  * [Effective Cost](/specification/supported_features/effective_cost.md)
+* Tightened [`InvoiceId`](/specification/datasets/cost_and_usage/columns/invoiceid.md) Feature Level from Recommended to Conditional (MUST when the invoice issuer supports payable invoices, per [PR #2100](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pull/2100))
 
 #### Migration Compatible Changes
 
 * Revised `ContractApplied` format to use the JSON Object Schema format, affecting:
   * [Contract Commitments](/specification/supported_features/contract_commitments.md)
+* Removal of the `ColumnHandling` attribute, with requirements shifted to `FocusColumnHandling` and `CustomColumnHandling`.
+* Removal of the `DiscountHandling` attribute, with content moved to the [Discount Handling](/specification/appendix/discount_handling.md) appendix entry.
+* Removal of the `InvoiceHandling` attribute, with requirements shifted to `DeliveryHandling` and `DatasetCompleteness`.
 * Removal of deprecated `ProviderName` and `PublisherName` columns, with use cases absorbed by `ServiceProviderName`, `HostProviderName`, `InvoiceIssuerName`, and `DataGenerator` metadata introduced in v1.3, affecting:
   * [Charge Categorization](/specification/supported_features/charge_categorization.md)
   * [Commit Usage and Under Usage](/specification/supported_features/commit_usage_and_under_usage.md)
@@ -113,7 +119,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 #### New appendix entries
 
 * [Discount Handling](/specification/appendix/discount_handling.md)
+* [Examples: Commitment Program Eligibility Details](/specification/appendix/commitment_program_eligibility_details_examples.md)
 * [Examples: Contract Commitments](/specification/appendix/contract_commitments/contract_commitments.md)
+* [Examples: Correction Handling](/specification/appendix/correction_handling_examples/correction_handling_examples_overview.md)
 * [Examples: Invoice Detail](/specification/appendix/invoice_detail/invoice_detail.md)
 * [Examples: JSON Object](/specification/appendix/json_object_examples/json_object_examples_overview.md)
 * [Invoice and Billing Period Handling](/specification/appendix/invoice_and_billing_period_handling.md)
@@ -121,23 +129,38 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 #### New guidelines
 
-* [Dataset Mapping Documentation](/guidelines/data-generators/dataset-mapping-documentation.md)
-* [AI Usage Guidelines](/guidelines/contributors/ai-usage-guidelines.md)
-* [Decision Brief Guidelines](/guidelines/contributors/decision-brief-guidelines.md)
-* [Writing Requirements Model Guidelines](/guidelines/contributors/writing-requirements-model-guidelines.md)
 * [AGENTS.md](/AGENTS.md)
+* [AI Usage Guidelines](/guidelines/contributors/ai-usage-guidelines.md)
+* [Dataset Mapping Documentation](/guidelines/data-generators/dataset-mapping-documentation.md)
+* [Decision Brief Guidelines](/guidelines/contributors/decision-brief-guidelines.md)
+* [Editorial Guidelines](/guidelines/contributors/editorial-guidelines.md)
+* [Normative Requirements Guidelines](/guidelines/contributors/normative-requirements-guidelines.md)
+* [Writing Requirements Model Guidelines](/guidelines/contributors/writing-requirements-model-guidelines.md)
 
 #### New glossary entries
 
 * [Glossary](/specification/glossary.md)
   * `Accrual-Based Accounting`
   * `Cash-Based Accounting`
-  * `Entitlement`
+  * `Closed Billing Period`
+  * `Commitment Program`
+  * `Covered Charge`
+  * `Covering Charge`
+  * `Custom Column`
+  * `Delivery Scope`
+  * `FOCUS Column`
+  * `FOCUS Dataset Column`
+  * `Invoice`
+  * `Invoice Reconciliation`
+  * `Issued Invoice`
+  * `Native Dataset`
+  * `Open Billing Period`
+  * `Tag Scheme`
 
-### New requirements model features
+#### New requirements model features
 
 * Added `applicability_criteria.json` and `check_functions.json` to define baseline validation functions.
-* Added `Schema` entity type (RMId format `-S-`) to allow reusable JSON Schema definitions across the requirements model.
+* Added `Schema` entity type (RMId format `-S-`) to allow reusable JSON Schema definitions across the requirements model. See [Writing Requirements Model Guidelines](/guidelines/contributors/writing-requirements-model-guidelines.md) for authoring details.
 
 ### Changed
 
@@ -156,20 +179,32 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 #### Changed guidelines
 
 * Deprecated the normative keyword "RECOMMENDED" in favor of "SHOULD".
-* [Normative Requirements Guidelines](/guidelines/contributors/normative-requirements-guidelines.md)
-* [Editorial Guidelines](/guidelines/contributors/editorial-guidelines.md)
 
 #### Changed glossary entries
 
 * [Glossary](/specification/glossary.md)
+  * `Allocated Charge`: Revised definition.
+  * `Allocated Method`: Revised definition.
+  * `Commitment Discount`: Revised definition.
+  * `Contracted Unit Price`: Revised definition.
+  * `Correction`: Revised definition.
+  * `Dataset Instance`: Revised definition.
+  * `Dataset Instance Artifact`: Revised definition.
+  * `List Unit Price`: Revised definition.
+  * `Negotiated Discount`: Revised definition.
+  * `Origin Charge`: Revised definition.
+  * `Service`: Revised definition.
   * `Term`: Updated definition to apply to agreements specified on a contract *or* invoice.
 
 ### Removed
 
 * `ProviderName` column (deprecated in v1.3, removed in v1.4)
 * `PublisherName` column (deprecated in v1.3, removed in v1.4)
-* `InvoiceHandling` attribute (requirements shifted to `DeliveryHandling` and `DatasetCompleteness`)
 * `ColumnHandling` attribute (requirements shifted to `FocusColumnHandling` and `CustomColumnHandling`)
+* `DiscountHandling` attribute (content moved to the [Discount Handling](/specification/appendix/discount_handling.md) appendix entry)
+* `InvoiceHandling` attribute (requirements shifted to `DeliveryHandling` and `DatasetCompleteness`)
+* `Billed Cost` glossary entry
+* `Effective Cost` glossary entry
 
 ## v1.3
 
