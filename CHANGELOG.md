@@ -19,7 +19,7 @@ v1.4 adds 2 datasets (`BillingPeriod`, `InvoiceDetail`), 47 new columns, 6 new a
 * Revised normative requirements for [`BilledCost`](/specification/datasets/cost_and_usage/columns/billedcost.md) and [`EffectiveCost`](/specification/datasets/cost_and_usage/columns/effectivecost.md), affecting:
   * [Billed Cost and Invoice Alignment](/specification/supported_features/billed_cost_and_invoice_alignment.md)
   * [Effective Cost](/specification/supported_features/effective_cost.md)
-* Tightened [`InvoiceId`](/specification/datasets/cost_and_usage/columns/invoiceid.md) Feature Level from Recommended to Conditional (MUST when the invoice issuer supports payable invoices, per [PR #2100](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pull/2100))
+* Tightened [`InvoiceId`](/specification/datasets/cost_and_usage/columns/invoiceid.md) Feature Level from Recommended to Conditional (MUST when the invoice issuer supports payable invoices).
 
 #### Migration Compatible Changes
 
@@ -166,6 +166,10 @@ v1.4 adds 2 datasets (`BillingPeriod`, `InvoiceDetail`), 47 new columns, 6 new a
 
 ### Changed
 
+#### Changed datasets
+
+* [`CostAndUsage`](/specification/datasets/cost_and_usage/dataset.md) and [`ContractCommitment`](/specification/datasets/contract_commitment/dataset.md): Column presence requirements relocated from individual column files to dataset-level requirements, now expressed in dataset-subject form (e.g., `CostAndUsage MUST include ColumnId when Condition`). Promotes the "Column Presence in Dataset" pattern from future-use to active, centralizing presence rules previously scattered across column files. The [Normative Requirements Guidelines](/guidelines/contributors/normative-requirements-guidelines.md) were updated to document the new pattern.
+
 #### Changed columns
 
 * [`CostAndUsage`](/specification/datasets/cost_and_usage/dataset.md)
@@ -173,6 +177,7 @@ v1.4 adds 2 datasets (`BillingPeriod`, `InvoiceDetail`), 47 new columns, 6 new a
   * [`ContractApplied`](/specification/datasets/cost_and_usage/columns/contractapplied.md): Revised format to follow new JSON Object Schema format.
   * [`EffectiveCost`](/specification/datasets/cost_and_usage/columns/effectivecost.md): Heavily revised requirements to detail its exact relationship with `BilledCost` across various charge categories, including strict rules for amortizing *covering charges* and cross-record sum validations.
   * [`InvoiceId`](/specification/datasets/cost_and_usage/columns/invoiceid.md): Changed Feature Level from Recommended to Conditional.
+  * [`PricingCurrencyEffectiveCost`](/specification/datasets/cost_and_usage/columns/pricingcurrencyeffectivecost.md): Description expanded to position it as the `PricingCurrency`-denominated equivalent of `EffectiveCost`. Added a requirement that values MUST equal the `PricingCurrency`-denominated equivalent of `EffectiveCost`.
 
 #### Changed attributes
 
@@ -180,7 +185,7 @@ v1.4 adds 2 datasets (`BillingPeriod`, `InvoiceDetail`), 47 new columns, 6 new a
 
 #### Changed guidelines
 
-* Deprecated the normative keyword "RECOMMENDED" in favor of "SHOULD".
+* Deprecated the normative keyword "RECOMMENDED" in favor of "SHOULD" to align with [BCP-14](https://www.rfc-editor.org/info/bcp14), which treats the two as synonyms. Improves terminology consistency without changing the conformance strength of existing requirements.
 
 #### Changed glossary entries
 
