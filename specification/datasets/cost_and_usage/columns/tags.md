@@ -8,7 +8,8 @@ A tag becomes [*finalized*](#glossary:finalized-tag) when a single value is sele
 
 Tags MUST adhere to the following requirements:
 
-* Tags MUST be of type JSON.
+* Tags MUST be of type JSON Object (serialized as a String where necessary).
+* Tags MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * Tags MUST conform to [KeyValueFormat](#attributes.key-valueformat) requirements.
 * Tags MAY be null.
 * When Tags is not null, Tags MUST adhere to the following requirements:
