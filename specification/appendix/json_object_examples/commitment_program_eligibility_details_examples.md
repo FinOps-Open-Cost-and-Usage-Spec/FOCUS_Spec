@@ -8,7 +8,7 @@ Scenario: A compute usage row that is partially covered by a Flexible Spend Plan
 
 | ServiceProviderName | ServiceName | CommitmentProgramEligibilityDetails                                                                            |
 |---------------------|-------------|---------------------------------------------------------------------------------------------------------|
-| Aura Web            | Compute     | {"CommitmentPrograms": [{"ProgramType": "FlexibleSpendPlan"}, {"ProgramType": "ResourceReservation"}]} |
+| Aura Web            | Compute     | {"CommitmentPrograms": [{"ProgramType": "Flexible Spend Plan"}, {"ProgramType": "Resource Reservation"}]} |
 
 ## StackLens (Observability with Interval Spend Commitment)
 
@@ -16,7 +16,7 @@ Scenario: An observability platform usage row eligible for Monthly and Annual in
 
 | ServiceProviderName | ServiceName   | CommitmentProgramEligibilityDetails                                                                                            |
 |---------------------|---------------|-------------------------------------------------------------------------------------------------------------------------|
-| StackLens           | Observability | {"CommitmentPrograms": [{"ProgramType": "MonthlyIntervalSpendCommitment"}, {"ProgramType": "AnnualIntervalSpendCommitment"}]} |
+| StackLens           | Observability | {"CommitmentPrograms": [{"ProgramType": "Monthly Interval Spend Commitment"}, {"ProgramType": "Annual Interval Spend Commitment"}]} |
 
 ## LatticeScale (Ineligible Object Storage Usage)
 
@@ -32,7 +32,7 @@ Scenario: A compute instance type and tenancy that are eligible for both discoun
 
 | ServiceProviderName | ServiceName | CommitmentProgramEligibilityDetails                                                                                                                                                                           |
 |---------------------|-------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Aura Web            | Compute     | {"CommitmentPrograms": [{"ProgramType": "FlexibleSpendPlan"}, {"ProgramType": "ResourceReservation"}, {"ProgramType": "AdvanceResourceCommitment"}, {"ProgramType": "ZonalResourceCommitment"}]} |
+| Aura Web            | Compute     | {"CommitmentPrograms": [{"ProgramType": "Flexible Spend Plan"}, {"ProgramType": "Resource Reservation"}, {"ProgramType": "Advance Resource Commitment"}, {"ProgramType": "Zonal Resource Commitment"}]} |
 
 ## Coverage Rate with Eligibility-Adjusted Denominator
 
@@ -42,8 +42,8 @@ Acme Corp runs compute workloads on Aura Web. Some usage is covered by a Resourc
 
 Three usage rows for a single charge period (2025-04-01):
 
-1. **Uncovered compute** (Row 1): Eligible for FlexibleSpendPlan and ResourceReservation, not currently covered. [BilledCost](#datasets.costandusage.billedcost) and [EffectiveCost](#datasets.costandusage.effectivecost) are both &dollar;200.00.
-2. **Covered compute** (Row 2): Covered by a ResourceReservation. CommitmentProgramEligibilityDetails is populated. BilledCost is &dollar;0.00; EffectiveCost is &dollar;150.00.
+1. **Uncovered compute** (Row 1): Eligible for Flexible Spend Plan and Resource Reservation, not currently covered. [BilledCost](#datasets.costandusage.billedcost) and [EffectiveCost](#datasets.costandusage.effectivecost) are both &dollar;200.00.
+2. **Covered compute** (Row 2): Covered by a Resource Reservation. CommitmentProgramEligibilityDetails is populated. BilledCost is &dollar;0.00; EffectiveCost is &dollar;150.00.
 3. **Support fee** (Row 3): Not eligible for any *commitment program*. Both CommitmentProgramEligibilityDetails and CommitmentDiscountId are null. BilledCost and EffectiveCost are both &dollar;50.00.
 
 By filtering the denominator to rows where `CommitmentProgramEligibilityDetails IS NOT NULL`, the &dollar;50.00 support fee is correctly excluded from the eligible population:
@@ -66,21 +66,21 @@ Acme Corp runs compute workloads on Aura Web and uses StackLens for observabilit
 
 Six usage rows for a single charge period (2025-04-01):
 
-1. **Uncovered compute** (Rows 1-2): Two Aura Web Compute rows eligible for both FlexibleSpendPlan and ResourceReservation. [BilledCost](#datasets.costandusage.billedcost) totals &dollar;500.00 across both rows.
-2. **Covered compute** (Row 3): Aura Web Compute covered by an existing ResourceReservation. Filtered out by the query because [CommitmentDiscountId](#datasets.costandusage.commitmentdiscountid) is populated.
+1. **Uncovered compute** (Rows 1-2): Two Aura Web Compute rows eligible for both Flexible Spend Plan and Resource Reservation. [BilledCost](#datasets.costandusage.billedcost) totals &dollar;500.00 across both rows.
+2. **Covered compute** (Row 3): Aura Web Compute covered by an existing Resource Reservation. Filtered out by the query because [CommitmentDiscountId](#datasets.costandusage.commitmentdiscountid) is populated.
 3. **Ineligible support** (Row 4): Aura Web Support with no CommitmentProgramEligibilityDetails. Filtered out because the column is null.
-4. **Uncovered observability** (Rows 5-6): Two StackLens Observability rows eligible for MonthlyIntervalSpendCommitment and AnnualIntervalSpendCommitment. BilledCost totals &dollar;200.00.
+4. **Uncovered observability** (Rows 5-6): Two StackLens Observability rows eligible for Monthly Interval Spend Commitment and Annual Interval Spend Commitment. BilledCost totals &dollar;200.00.
 
 To evaluate these purchasing options, the `CommitmentPrograms` JSON array must be flattened so each eligible program can be analyzed independently. By expanding the array (e.g., via `CROSS JOIN UNNEST`) and grouping the uncovered costs by `ServiceProviderName`, `ServiceName`, and `EligibleProgramType`, the practitioner gets the summary presented in the table below. A reference implementation is available in the [eligible uncovered spend query](#supportedfeatures.commitmentprogrameligibilitydetails) supported feature.
 
 | ServiceProviderName | ServiceName | EligibleProgramType | EligibleUncoveredCost |
 |:--------------------|:------------|:--------------------|:---------------------------|
-| Aura Web | Compute | FlexibleSpendPlan | &dollar;500.00 |
-| Aura Web | Compute | ResourceReservation | &dollar;500.00 |
-| StackLens | Observability | MonthlyIntervalSpendCommitment | &dollar;200.00 |
-| StackLens | Observability | AnnualIntervalSpendCommitment | &dollar;200.00 |
+| Aura Web | Compute | Flexible Spend Plan | &dollar;500.00 |
+| Aura Web | Compute | Resource Reservation | &dollar;500.00 |
+| StackLens | Observability | Monthly Interval Spend Commitment | &dollar;200.00 |
+| StackLens | Observability | Annual Interval Spend Commitment | &dollar;200.00 |
 
-Aura Web Compute appears as &dollar;500.00 under both FlexibleSpendPlan and ResourceReservation. This does not mean &dollar;1,000.00 is uncovered. The &dollar;500.00 is the same spend, and each program type represents an independent purchasing opportunity. Purchasing a FlexibleSpendPlan would cover some or all of that &dollar;500.00, as would a ResourceReservation. The practitioner must choose between them (or split across both) based on flexibility requirements and discount depth.
+Aura Web Compute appears as &dollar;500.00 under both Flexible Spend Plan and Resource Reservation. This does not mean &dollar;1,000.00 is uncovered. The &dollar;500.00 is the same spend, and each program type represents an independent purchasing opportunity. Purchasing a Flexible Spend Plan would cover some or all of that &dollar;500.00, as would a Resource Reservation. The practitioner must choose between them (or split across both) based on flexibility requirements and discount depth.
 
 The same logic applies to StackLens: &dollar;200.00 of observability spend could be covered by either a monthly or annual Interval Spend Commitment. The annual option typically offers a deeper discount in exchange for a longer commitment term.
 

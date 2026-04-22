@@ -60,7 +60,12 @@ Here is a basic example of the object format.
     { "ProgramType": "FlexibleSpendPlan" },
     { "ProgramType": "ResourceReservation" },
     { "ProgramType": "AdvanceResourceCommitment" },
-    { "ProgramType": "ZonalResourceCommitment" }
+{
+  "CommitmentPrograms": [
+    { "ProgramType": "Flexible Spend Plan" },
+    { "ProgramType": "Resource Reservation" },
+    { "ProgramType": "Advance Resource Commitment" },
+    { "ProgramType": "Zonal Resource Commitment" }
   ]
 }
 ```
