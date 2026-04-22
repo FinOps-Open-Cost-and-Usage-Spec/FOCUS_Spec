@@ -8,6 +8,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 <sup>Announced June 2026</sup>
 
+v1.4 adds 2 datasets (`BillingPeriod`, `InvoiceDetail`), 47 new columns, 6 new attributes, 2 new supported features, and 16 new glossary entries.
+
 ### Changes to Supported Features by [Change Impact Classification](/guidelines/contributors/spec-change-guidelines.md)
 
 #### Compatible Changes
