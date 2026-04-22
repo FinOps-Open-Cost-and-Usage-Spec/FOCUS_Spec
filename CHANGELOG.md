@@ -24,7 +24,7 @@ v1.4 adds 2 datasets (`BillingPeriod`, `InvoiceDetail`), 47 new columns, 6 new a
 
 #### Migration Compatible Changes
 
-* Revised `ContractApplied` format to use the JSON Object Schema format, affecting:
+* Revised `ContractApplied` format to use the JSON Object Schema format. Queries that parse the `ContractApplied` JSON structure will need to be updated to the new schema. Affecting:
   * [Contract Commitments](/specification/supported_features/contract_commitments.md)
 * Removal of the `ColumnHandling` attribute, with requirements shifted to `FocusColumnHandling` and `CustomColumnHandling`.
 * Removal of the `DiscountHandling` attribute, with content moved to the [Discount Handling](/specification/appendix/discount_handling.md) appendix entry.
