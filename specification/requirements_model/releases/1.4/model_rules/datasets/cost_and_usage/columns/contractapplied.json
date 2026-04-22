@@ -24,6 +24,14 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ContractApplied-C-004-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ContractApplied-C-005-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-ContractApplied-C-001-M"
           },
           {
@@ -38,6 +46,8 @@
       },
       "Condition": {},
       "Dependencies": [
+        "CAU-ContractApplied-C-004-M",
+        "CAU-ContractApplied-C-005-M",
         "CAU-ContractApplied-C-001-M",
         "CAU-ContractApplied-C-002-C",
         "CAU-ContractApplied-C-003-C",
@@ -55,7 +65,7 @@
     "ModelVersionIntroduced": "1.3",
     "Status": "Active",
     "ApplicabilityCriteria": [],
-    "Order": 20,
+    "Order": 30,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
@@ -82,7 +92,7 @@
     "ModelVersionIntroduced": "1.3",
     "Status": "Active",
     "ApplicabilityCriteria": [],
-    "Order": 30,
+    "Order": 40,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
@@ -96,7 +106,7 @@
     }
   },
   "CAU-ContractApplied-C-003-C": {
-    "Function": "Composite",
+    "Function": "Validation",
     "Reference": "ContractApplied",
     "EntityName": "Contract Applied",
     "EntityId": "ContractApplied",
@@ -106,26 +116,71 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
-    "Order": 80,
+    "Order": 50,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractAppliedObject MUST adhere to the following requirements:",
+      "MustSatisfy": "ContractApplied MUST conform to ContractAppliedObject requirements when ContractApplied is not null.",
       "Keyword": "MUST",
       "Requirement": {
-        "CheckFunction": "AND",
-        "Items": [
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-ContractAppliedObject-O-000-C"
-          }
-        ]
+        "CheckFunction": "CheckModelRule",
+        "ModelRuleId": "CAU-ContractAppliedObject-O-000-C"
       },
-      "Condition": {},
+      "Condition": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "ContractApplied",
+        "Value": null
+      },
       "Dependencies": [
         "CAU-ContractAppliedObject-O-000-C"
       ]
+    }
+  },
+  "CAU-ContractApplied-C-004-M": {
+    "Function": "Type",
+    "Reference": "ContractApplied",
+    "EntityType": "Column",
+    "EntityId": "ContractApplied",
+    "EntityName": "Contract Applied",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 10,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractApplied MUST be of type JSON Object (serialized as a String where necessary).",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-ContractApplied-C-005-M": {
+    "Function": "Format",
+    "Reference": "ContractApplied",
+    "EntityType": "Column",
+    "EntityId": "ContractApplied",
+    "EntityName": "Contract Applied",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 20,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractApplied MUST conform to StringHandling requirements.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
     }
   }
 }
