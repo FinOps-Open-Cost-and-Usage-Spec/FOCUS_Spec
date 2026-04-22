@@ -30,6 +30,8 @@ A comprehensive test file containing intentional markdown linting violations of 
   - Technical exception 'vs' (e.g., "Azure Vs AWS Comparison" → "Azure vs AWS Comparison")
   - Technical exception 'vs.' (e.g., "Cost Vs. Usage Analysis" → "Cost vs. Usage Analysis")
   - HTML entities are ignored (e.g., "Cost &amp; Usage Analysis" passes without errors)
+  - Minor words in hyphenated compounds (e.g., "Database-As-A-Service" → "Database-as-a-Service")
+  - Minor words in hyphenated compounds after colons (e.g., "PaaS: Database-As-A-Service" → "PaaS: Database-as-a-Service")
 - MD012: Multiple consecutive blank lines
 - MD022: Headings not properly surrounded by blank lines
 - Various edge cases and combinations
@@ -57,7 +59,7 @@ From the `specification/` directory, run:
 python3 enhanced_markdown_lint.py --config markdownlnt.cfg scan ../custom_linter_rules/tests/test_linter_violations.md
 ```
 
-**Expected output:** 24 MD991 violations plus some MD012 and MD022 violations, with enhanced error messages showing:
+**Expected output:** 26 MD991 violations plus some MD012 and MD022 violations, with enhanced error messages showing:
 - Actual vs Expected values for title case violations
 - Heading text for MD022 violations
 - Consecutive blank line counts for MD012 violations
@@ -71,7 +73,7 @@ From the `specification/` directory, run:
 pymarkdownlnt --config markdownlnt.cfg scan ../custom_linter_rules/tests/test_linter_violations.md
 ```
 
-**Expected output:** 24 MD991 violations plus some MD012 and MD022 violations, with standard pymarkdownlnt error format.
+**Expected output:** 26 MD991 violations plus some MD012 and MD022 violations, with standard pymarkdownlnt error format.
 
 ### Test Title Case Logic
 

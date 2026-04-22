@@ -118,7 +118,9 @@ class RuleMd991(RulePlugin):
 
             # Extract all alphanumeric words from token, including possessives
             # Use word boundary pattern that keeps apostrophes within words
-            for word_match in re.finditer(r"\b[a-zA-Z][a-zA-Z']*[a-zA-Z]|\b[a-zA-Z]\b", token):
+            words_in_token = list(re.finditer(r"\b[a-zA-Z][a-zA-Z']*[a-zA-Z]|\b[a-zA-Z]\b", token))
+
+            for word_index, word_match in enumerate(words_in_token):
                 word = word_match.group()
                 word_lower = word.lower()
 
@@ -126,26 +128,46 @@ class RuleMd991(RulePlugin):
                 if word.isdigit():
                     continue
 
-                # Check if this word follows a colon within the same token
-                # Word must come AFTER a colon (colon_pos + 1 < word start)
-                word_follows_colon = follows_colon or any(colon_pos + 1 < word_match.start() for colon_pos in colon_positions)
+                # Check if this word follows a colon
+                # - If it's the first word in the token and the previous token ended with colon
+                # - OR if there's a colon in the current token before this word
+                word_follows_colon = (follows_colon and word_index == 0) or \
+                                    any(colon_pos + 1 < word_match.start() for colon_pos in colon_positions)
 
                 # Check if this is a designation letter (e.g., "Section A", "Part B")
                 # Use global previous word to handle cross-token designations
                 is_designation = (len(word) == 1 and word.isupper() and
                                  prev_word_lower_global in self.__designation_keywords)
 
+                # Check if word is in the middle of a hyphenated compound
+                # e.g., "as" in "Database-as-a-Service"
+                word_start = word_match.start()
+                word_end = word_match.end()
+                has_hyphen_before = word_start > 0 and token[word_start - 1] == '-'
+                has_hyphen_after = word_end < len(token) and token[word_end] == '-'
+                in_hyphenated_compound = has_hyphen_before and has_hyphen_after
+
+                # Determine if this is truly the first or last word in the entire heading
+                is_first_word = is_first and word_index == 0
+                is_last_word = is_last and word_index == len(words_in_token) - 1
+
                 # Check capitalization rules
-                if is_first or is_last or word_follows_colon:
+                if is_first_word or is_last_word or word_follows_colon:
                     # First, last, or after colon: should be capitalized
                     if not word[0].isupper():
                         return False
                 elif word_lower in self.__minor_words:
                     # Minor word in middle: should be lowercase
-                    # Exception: designation letters like "Section A" should stay capital
+                    # Exception 1: designation letters like "Section A" should stay capital
+                    # Exception 2: minor words in hyphenated compounds should be lowercase
                     if is_designation:
                         # This is a designation letter - should stay capital
                         if not word.isupper():
+                            return False
+                    elif in_hyphenated_compound:
+                        # Minor word in middle of hyphenated compound - should be lowercase
+                        # e.g., "as" in "Database-as-a-Service"
+                        if not word.islower():
                             return False
                     else:
                         # Regular minor word (including article 'a') - should be lowercase
@@ -153,6 +175,7 @@ class RuleMd991(RulePlugin):
                             return False
                 else:
                     # Major word: should be capitalized
+                    # Exception: if it's in the middle of a hyphenated compound AND already capitalized, keep it
                     if not word[0].isupper():
                         return False
 
@@ -190,7 +213,9 @@ class RuleMd991(RulePlugin):
             offset = 0  # Track position changes as we replace words
 
             # Use word boundary pattern that keeps apostrophes within words
-            for word_match in re.finditer(r"\b[a-zA-Z][a-zA-Z']*[a-zA-Z]|\b[a-zA-Z]\b", token):
+            words_in_token = list(re.finditer(r"\b[a-zA-Z][a-zA-Z']*[a-zA-Z]|\b[a-zA-Z]\b", token))
+
+            for word_index, word_match in enumerate(words_in_token):
                 word = word_match.group()
                 word_lower = word.lower()
 
@@ -198,17 +223,31 @@ class RuleMd991(RulePlugin):
                 if word.isdigit():
                     continue
 
-                # Check if this word follows a colon within the same token
-                # Word must come AFTER a colon (colon_pos + 1 < word start)
-                word_follows_colon = follows_colon or any(colon_pos + 1 < word_match.start() for colon_pos in colon_positions)
+                # Check if this word follows a colon
+                # - If it's the first word in the token and the previous token ended with colon
+                # - OR if there's a colon in the current token before this word
+                word_follows_colon = (follows_colon and word_index == 0) or \
+                                    any(colon_pos + 1 < word_match.start() for colon_pos in colon_positions)
 
                 # Check if this is a designation letter (e.g., "Section A", "Part B")
                 # Use global previous word to handle cross-token designations
                 is_designation = (len(word) == 1 and word.isupper() and
                                  prev_word_lower_global in self.__designation_keywords)
 
+                # Check if word is in the middle of a hyphenated compound
+                # e.g., "as" in "Database-as-a-Service"
+                word_start = word_match.start()
+                word_end = word_match.end()
+                has_hyphen_before = word_start > 0 and token[word_start - 1] == '-'
+                has_hyphen_after = word_end < len(token) and token[word_end] == '-'
+                in_hyphenated_compound = has_hyphen_before and has_hyphen_after
+
+                # Determine if this is truly the first or last word in the entire heading
+                is_first_word = is_first and word_index == 0
+                is_last_word = is_last and word_index == len(words_in_token) - 1
+
                 # Determine if this word should be capitalized
-                if is_first or is_last or word_follows_colon or word_lower not in self.__minor_words:
+                if is_first_word or is_last_word or word_follows_colon or word_lower not in self.__minor_words:
                     # Major word, first word, last word, or after colon: capitalize
                     # Smart case preservation: keep existing camelCase or ACRONYMS intact
                     if len(word) > 1 and any(c.isupper() for c in word[1:]):
@@ -217,10 +256,15 @@ class RuleMd991(RulePlugin):
                         capitalized_word = word.capitalize()
                 else:
                     # Minor word in middle
-                    # Exception: designation letters like "Section A" should stay capital
+                    # Exception 1: designation letters like "Section A" should stay capital
+                    # Exception 2: minor words in hyphenated compounds should be lowercase
                     if is_designation:
                         # Designation letter - keep as capital
                         capitalized_word = word.upper()
+                    elif in_hyphenated_compound:
+                        # Minor word in middle of hyphenated compound - keep lowercase
+                        # e.g., "as" in "Database-as-a-Service"
+                        capitalized_word = word.lower()
                     else:
                         # Regular minor word (including article 'a'): lowercase
                         capitalized_word = word.lower()

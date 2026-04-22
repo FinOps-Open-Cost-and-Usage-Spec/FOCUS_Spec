@@ -121,4 +121,12 @@ Testing multiple HTML entities - should be ignored.
 
 Testing HTML entity in title case - should pass without errors.
 
+## Multi-Unit Usage-Based PaaS: Database-As-A-Service
+
+Testing hyphenated compound with minor words - "as" and "a" should be lowercase even after colon.
+
+## Infrastructure-As-A-Service Platform
+
+Testing minor words in hyphenated compound - should be lowercase.
+
 
