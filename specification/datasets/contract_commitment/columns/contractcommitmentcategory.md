@@ -10,6 +10,13 @@ ContractCommitmentCategory MUST adhere to the following requirements:
 * ContractCommitmentCategory MUST NOT be null.
 * ContractCommitmentCategory MUST be one of the allowed values.
 
+## Allowed Values
+
+| Value   | Description                                                              |
+|:--------|:-------------------------------------------------------------------------|
+| Spend   | Contract commitments that require a predetermined amount of spend. |
+| Usage   | Contract commitments that require a predetermined amount of usage. |
+
 ## Column ID
 
 ContractCommitmentCategory
@@ -32,13 +39,6 @@ Represents the highest-level classification of a *contract commitment* based on 
 | Allows nulls    | False                                                |
 | Data type       | String                                               |
 | Value format    | Allowed values                                       |
-
-Allowed values:
-
-| Value   | Description                                                              |
-|:--------|:-------------------------------------------------------------------------|
-| Spend   | Contract commitments that require a predetermined amount of spend. |
-| Usage   | Contract commitments that require a predetermined amount of usage. |
 
 ## Introduced (version)
 
