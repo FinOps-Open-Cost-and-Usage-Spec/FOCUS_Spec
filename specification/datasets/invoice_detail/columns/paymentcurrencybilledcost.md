@@ -56,7 +56,7 @@ In this scenario, the invoice issuer tracks usage in the billing currency at a g
 
 * **Rows A-101 & A-102:** These are "child" records. Their `PaymentCurrencyBilledCost` is 0, so they provide a pointer in `PaymentCurrencyInvoiceDetailId` to Row **Z-999**, where the financial settlement value is stored.
 * **Row Z-999:** This is the "parent" record. It aggregates the costs of the children. To identify itself as the root of this conversion, its `PaymentCurrencyInvoiceDetailId` matches its own `InvoiceDetailId`.
-* **Reconciliation:** A practitioner can now sum all `BilledCost` values where `PaymentCurrencyInvoiceDetailId` is **Z-999** to verify that the $100.00 total matches the 92.00 EUR settlement using the expected exchange rate.
+* **Reconciliation:** A practitioner can now sum all `BilledCost` values where `PaymentCurrencyInvoiceDetailId` is **Z-999** to verify that the $100.00 total is equal to the 92.00 EUR settlement using the expected exchange rate.
 
 ## Column ID
 

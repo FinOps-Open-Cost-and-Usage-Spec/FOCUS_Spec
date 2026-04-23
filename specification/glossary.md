@@ -187,7 +187,7 @@ A document that summarizes the charges for resources or services consumed by a c
 
 <a name="glossary:invoice-reconciliation"><b>Invoice Reconciliation</b></a>
 
-The process of verifying that the costs, quantities, and applied adjustments on an [*invoice*](#glossary:invoice) match the underlying usage records and contracted rates for a specific [*billing period*](#glossary:billing-period).
+The process of verifying that the costs, quantities, and applied adjustments on an [*invoice*](#glossary:invoice) are equal to the underlying usage records and contracted rates for a specific [*billing period*](#glossary:billing-period).
 
 In the context of FOCUS, this process ensures consistency by reconciling cost and usage data across the invoice, the [Invoice Detail](#datasets.invoicedetail) dataset, and the [Cost and Usage](#datasets.costandusage) dataset to identify and resolve any discrepancies.
 
