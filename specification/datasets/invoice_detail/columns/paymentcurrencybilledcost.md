@@ -18,7 +18,7 @@ PaymentCurrencyBilledCost MUST adhere to the following requirements:
 
 ### Example 1: Consistent Grain
 
-In this scenario, the invoice issuer performs currency conversion at the individual line-item level. The grain of the payment currency matches the grain of the billing currency exactly.
+In this scenario, the [*invoice issuer*](#glossary:invoice-issuer) performs currency conversion at the individual line-item level. The grain of the payment currency matches the grain of the billing currency exactly.
 
 * **Billing Currency:** USD
 * **Payment Currency:** EUR
