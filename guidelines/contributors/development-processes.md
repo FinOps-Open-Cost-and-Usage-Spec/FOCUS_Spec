@@ -41,23 +41,11 @@ Feedback Issues will have a title that starts with \`\[Feedback]\`.
 
 All suggestions and feature requests should be introduced to the FOCUS project via GitHub Issues of the type Feature. The template for these Issues will ensure the needed information is gathered and available for prioritisation processes. Anyone can submit Feature Request Issues within the GitHub repository. 
 
-_Normative guidelines to develop high-quality feature request titles_:
-* **Start with a standard verb**. Choose one or use a verb similar to: Add, Clarify, Standardize, Enable, Define, Remove, Rename
-* **Use correct sentence structure**. Pick whichever reads best between: Verb + Target + Qualifier OR Verb + Qualifier + Target
-(e.g., “Add data generator-calculated shared cost allocation” vs “Standardize tag export across clouds”)
-* **Describe the outcome, not the implementation**. “Add daily amortized cost” > “Create SQL to amortize daily”
-* **Sentence case; acronyms uppercase; no ALL-CAPS words**. “Add RI coverage metric” not “ADD RI COVERAGE METRIC”
-* **Use canonical FOCUS terminology; stay service-provider-agnostic**. Vendor specifics belong in examples, not the title
-* **Express one concept per title**. If you need two independent changes, create two issues. "And" and "or" are indications that multiple issues are needed
-* **Trim filler words unless they improve clarity**. Drop “the,” “of,” “for,” etc., where possible to save space
-* **Keep titles ≤ 75 characters (aim for ~60)**. Short enough to fit in GitHub lists, change logs, and slides without wrapping
-* **Don’t end with a trailing period**
+Feature Request Issues will have a title that starts with `[FR]`. For title quality conventions and triage requirements, see [Feature Request Triage and Improvement Guidelines](feature-request-triage-guidelines.md).
 
 Feature Request Issues will have the Type: "Feature" and Label: "feature", and be associated with the FOCUS WG project.
 
 Everyone is welcome to add comments to further define the Feature Request item, add concerns and/or considerations you would like to see taken into account when developing a solution for the Feature Request. Support for a Feature Request item can also be shown in the form of reactions on the Issue ticket.
-
-Feature Request Issues will have a title that starts with \`\[FR]\`.
 
 #### Action Items
 

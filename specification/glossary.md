@@ -185,9 +185,13 @@ A category of compute resources that can be paused or terminated by the CSP with
 
 A document that summarizes the charges for resources or services consumed by a customer.
 
+<a name="glossary:invoice-issuer"><b>Invoice Issuer</b></a>
+
+An entity responsible for issuing payable [*invoices*](#glossary:invoice) for the [*resources*](#glossary:resource) or [*services*](#glossary:service) consumed. Common examples include [*cloud service providers*](#glossary:cloud-service-provider), [*managed service providers*](#glossary:managed-service-provider), or marketplace operators.
+
 <a name="glossary:invoice-reconciliation"><b>Invoice Reconciliation</b></a>
 
-The process of verifying that the costs, quantities, and applied adjustments on an [*invoice*](#glossary:invoice) match the underlying usage records and contracted rates for a specific [*billing period*](#glossary:billing-period).
+The process of verifying that the costs, quantities, and applied adjustments on an [*invoice*](#glossary:invoice) are equal to the underlying usage records and contracted rates for a specific [*billing period*](#glossary:billing-period).
 
 In the context of FOCUS, this process ensures consistency by reconciling cost and usage data across the invoice, the [Invoice Detail](#datasets.invoicedetail) dataset, and the [Cost and Usage](#datasets.costandusage) dataset to identify and resolve any discrepancies.
 
@@ -260,7 +264,7 @@ An individual who performs FinOps within an organization to maximize the busines
 
 A comprehensive list of prices offered by a service provider.
 
-<a name="glossary:service provider"><b>Service Provider</b></a>
+<a name="glossary:service-provider"><b>Service Provider</b></a>
 
 An entity that provides the [*resources*](#glossary:resource) or [*services*](#glossary:service) available for usage or purchase.
 
