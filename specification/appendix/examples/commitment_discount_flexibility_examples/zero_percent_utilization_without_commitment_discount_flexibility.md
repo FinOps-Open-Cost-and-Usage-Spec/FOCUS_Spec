@@ -2,7 +2,7 @@
 
 ## Context
 
-For this example, fictitious service provider, *TinyCloud*, offers the following SKU catalog which is used in the scenario below.
+For this example, fictitious service provider, *LatticeScale*, offers the following SKU catalog which is used in the scenario below.
 
 ## SKU Catalog
 

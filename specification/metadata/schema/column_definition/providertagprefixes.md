@@ -16,7 +16,7 @@ ProviderTagPrefixes
 
 Provider Tag Prefixes
 
-## Content constraints
+## Content Constraints
 
 | Constraint    | Value                 |
 |:--------------|:----------------------|

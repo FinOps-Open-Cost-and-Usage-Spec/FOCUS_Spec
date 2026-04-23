@@ -24,7 +24,7 @@ Billing Account Name
 
 The display name assigned to a *billing account*.
 
-## Content constraints
+## Content Constraints
 
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |

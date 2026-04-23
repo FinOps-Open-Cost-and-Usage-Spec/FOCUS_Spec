@@ -30,7 +30,7 @@ SkuId MUST adhere to the following requirements:
   * SkuId MUST remain consistent across [PricingCategory](#datasets.costandusage.pricingcategory) values.
   * SkuId MUST remain consistent regardless of any other factors that might impact the price but do not affect the functionality of the *SKU*.
 * SkuId MUST be associated with a given [*resource*](#glossary:resource) or [*service*](#glossary:service) when ChargeCategory is "Usage" or "Purchase".
-* SkuId MAY equal [SkuPriceId](#datasets.costandusage.skupriceid).
+* SkuId MAY match [SkuPriceId](#datasets.costandusage.skupriceid).
 
 ## Column ID
 
@@ -44,7 +44,7 @@ SKU ID
 
 Service-provider-specified unique identifier that represents a specific *SKU* (e.g., a quantifiable good or service offering).
 
-## Content constraints
+## Content Constraints
 
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |

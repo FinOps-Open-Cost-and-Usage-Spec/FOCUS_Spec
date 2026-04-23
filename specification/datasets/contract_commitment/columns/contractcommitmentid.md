@@ -1,6 +1,6 @@
 # Contract Commitment ID
 
-Contract Commitment ID is a service-provider-assigned identifier describing a single contract term agreed between a provider and a customer.  Contracts can include commitments to a certain amount of spend or usage over an agreed period of time.
+Contract Commitment ID is a service-provider-assigned identifier describing a single contract term agreed between a provider and a customer. Contracts can include commitments to a certain amount of spend or usage over an agreed period of time.
 
 ## Requirements
 
@@ -12,7 +12,7 @@ ContractCommitmentId MUST adhere to the following requirements:
 * ContractCommitmentId MUST be a unique identifier within the service provider.
 * ContractCommitmentId SHOULD be a fully-qualified identifier.
 * ContractCommitmentId MUST have one and only one parent [ContractId](#datasets.contractcommitment.contractid).
-* ContractCommitmentId MAY be equal to ContractId.
+* ContractCommitmentId MAY match ContractId.
 
 ## Column ID
 

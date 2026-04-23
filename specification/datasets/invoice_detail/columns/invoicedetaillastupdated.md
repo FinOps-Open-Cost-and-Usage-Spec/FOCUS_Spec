@@ -24,7 +24,7 @@ Invoice Detail Last Updated
 
 The timestamp when the Invoice Detail record was last updated.
 
-## Content constraints
+## Content Constraints
 
 |    Constraint    |              Value             |
 |:----------------|:--------------------------------|
