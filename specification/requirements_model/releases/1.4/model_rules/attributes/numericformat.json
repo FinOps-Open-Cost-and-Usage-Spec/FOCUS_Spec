@@ -1,5 +1,5 @@
 {
-  "NumericFormat-A-000-M": {
+  "ATT-NumericFormat-A-000-M": {
     "Function": "Composite",
     "Reference": "NumericFormat",
     "EntityType": "Attribute",
@@ -12,84 +12,90 @@
     "Order": 0,
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "All columns capturing a numeric value, defined in the FOCUS specification, MUST follow the formatting requirements listed below.",
+      "MustSatisfy": "Column conforming to NumericFormat attribute MUST adhere to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "NumericFormat-A-001-O"
+            "ModelRuleId": "ATT-NumericFormat-A-002-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "NumericFormat-A-002-M"
+            "ModelRuleId": "ATT-NumericFormat-A-003-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "NumericFormat-A-003-M"
+            "ModelRuleId": "ATT-NumericFormat-A-008-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "NumericFormat-A-004-M"
+            "ModelRuleId": "ATT-NumericFormat-A-009-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "NumericFormat-A-005-M"
+            "ModelRuleId": "ATT-NumericFormat-A-010-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "NumericFormat-A-006-M"
+            "ModelRuleId": "ATT-NumericFormat-A-011-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "NumericFormat-A-007-M"
+            "ModelRuleId": "ATT-NumericFormat-A-012-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "NumericFormat-A-008-M"
+            "ModelRuleId": "ATT-NumericFormat-A-013-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "NumericFormat-A-009-M"
+            "ModelRuleId": "ATT-NumericFormat-A-015-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "NumericFormat-A-010-M"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "NumericFormat-A-011-M"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "NumericFormat-A-012-M"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "NumericFormat-A-013-O"
+            "ModelRuleId": "ATT-NumericFormat-A-014-C"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "NumericFormat-A-001-O",
-        "NumericFormat-A-002-M",
-        "NumericFormat-A-003-M",
-        "NumericFormat-A-004-M",
-        "NumericFormat-A-005-M",
-        "NumericFormat-A-006-M",
-        "NumericFormat-A-007-M",
-        "NumericFormat-A-008-M",
-        "NumericFormat-A-009-M",
-        "NumericFormat-A-010-M",
-        "NumericFormat-A-011-M",
-        "NumericFormat-A-012-M",
-        "NumericFormat-A-013-O"
+        "ATT-NumericFormat-A-002-M",
+        "ATT-NumericFormat-A-003-M",
+        "ATT-NumericFormat-A-012-C",
+        "ATT-NumericFormat-A-013-C",
+        "ATT-NumericFormat-A-015-M",
+        "ATT-NumericFormat-A-008-M",
+        "ATT-NumericFormat-A-009-M",
+        "ATT-NumericFormat-A-011-M",
+        "ATT-NumericFormat-A-010-M",
+        "ATT-NumericFormat-A-014-C"
       ]
     }
   },
-  "NumericFormat-A-001-O": {
+  "ATT-NumericFormat-A-001-O": {
+    "Function": "Format",
+    "Reference": "NumericFormat",
+    "EntityType": "Attribute",
+    "EntityName": "Numeric Format",
+    "EntityId": "NumericFormat",
+    "ModelVersionIntroduced": "1.2",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Order": -1,
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Custom numeric value capturing columns SHOULD adopt the same format requirements over time.",
+      "Keyword": "SHOULD",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-NumericFormat-A-002-M": {
     "Function": "Format",
     "Reference": "NumericFormat",
     "EntityType": "Attribute",
@@ -102,15 +108,15 @@
     "Order": 10,
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "Custom numeric value capturing columns SHOULD adopt the same format requirements over time.",
-      "Keyword": "SHOULD",
+      "MustSatisfy": "FOCUS dataset column MUST contain a single numeric value.",
+      "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []
     }
   },
-  "NumericFormat-A-002-M": {
-    "Function": "Format",
+  "ATT-NumericFormat-A-003-M": {
+    "Function": "Type",
     "Reference": "NumericFormat",
     "EntityType": "Attribute",
     "EntityName": "Numeric Format",
@@ -122,44 +128,25 @@
     "Order": 20,
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "Columns with a Numeric value format MUST contain a single numeric value.",
+      "MustSatisfy": "FOCUS dataset column MUST have values of type integer, decimal, or scientific notation.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []
     }
   },
-  "NumericFormat-A-003-M": {
+  "ATT-NumericFormat-A-004-M": {
     "Function": "Format",
     "Reference": "NumericFormat",
     "EntityType": "Attribute",
     "EntityName": "Numeric Format",
     "EntityId": "NumericFormat",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "Notes": "",
     "ApplicabilityCriteria": [],
-    "Order": 30,
-    "Type": "Dynamic",
-    "ValidationCriteria": {
-      "MustSatisfy": "Numeric values MUST be expressed as an integer value, a decimal value, or a value expressed in scientific notation.",
-      "Keyword": "MUST",
-      "Requirement": {},
-      "Condition": {},
-      "Dependencies": []
-    }
-  },
-  "NumericFormat-A-004-M": {
-    "Function": "Format",
-    "Reference": "NumericFormat",
-    "EntityType": "Attribute",
-    "EntityName": "Numeric Format",
-    "EntityId": "NumericFormat",
-    "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
-    "Notes": "",
-    "ApplicabilityCriteria": [],
-    "Order": 40,
+    "Order": -1,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Fractional notation MUST NOT be used.",
@@ -169,127 +156,7 @@
       "Dependencies": []
     }
   },
-  "NumericFormat-A-005-M": {
-    "Function": "Format",
-    "Reference": "NumericFormat",
-    "EntityType": "Attribute",
-    "EntityName": "Numeric Format",
-    "EntityId": "NumericFormat",
-    "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
-    "Notes": "",
-    "ApplicabilityCriteria": [],
-    "Order": 50,
-    "Type": "Dynamic",
-    "ValidationCriteria": {
-      "MustSatisfy": "Numeric values expressed using scientific notation MUST be expressed using E notation \"mEn\" with a real number m and an integer n indicating a value of \"m x 10^n\".",
-      "Keyword": "MUST",
-      "Requirement": {},
-      "Condition": {},
-      "Dependencies": []
-    }
-  },
-  "NumericFormat-A-006-M": {
-    "Function": "Format",
-    "Reference": "NumericFormat",
-    "EntityType": "Attribute",
-    "EntityName": "Numeric Format",
-    "EntityId": "NumericFormat",
-    "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
-    "Notes": "",
-    "ApplicabilityCriteria": [],
-    "Order": 60,
-    "Type": "Dynamic",
-    "ValidationCriteria": {
-      "MustSatisfy": "The sign of the exponent MUST only be expressed as part of the exponent value if n is negative.",
-      "Keyword": "MUST",
-      "Requirement": {},
-      "Condition": {},
-      "Dependencies": []
-    }
-  },
-  "NumericFormat-A-007-M": {
-    "Function": "Format",
-    "Reference": "NumericFormat",
-    "EntityType": "Attribute",
-    "EntityName": "Numeric Format",
-    "EntityId": "NumericFormat",
-    "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
-    "Notes": "",
-    "ApplicabilityCriteria": [],
-    "Order": 70,
-    "Type": "Dynamic",
-    "ValidationCriteria": {
-      "MustSatisfy": "Numeric values MUST NOT be expressed with mathematical symbols, functions, or operators.",
-      "Keyword": "MUST NOT",
-      "Requirement": {},
-      "Condition": {},
-      "Dependencies": []
-    }
-  },
-  "NumericFormat-A-008-M": {
-    "Function": "Format",
-    "Reference": "NumericFormat",
-    "EntityType": "Attribute",
-    "EntityName": "Numeric Format",
-    "EntityId": "NumericFormat",
-    "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
-    "Notes": "",
-    "ApplicabilityCriteria": [],
-    "Order": 80,
-    "Type": "Dynamic",
-    "ValidationCriteria": {
-      "MustSatisfy": "Numeric values MUST NOT contain qualifiers or additional characters (e.g., currency symbols, units of measure, etc.).",
-      "Keyword": "MUST NOT",
-      "Requirement": {},
-      "Condition": {},
-      "Dependencies": []
-    }
-  },
-  "NumericFormat-A-009-M": {
-    "Function": "Format",
-    "Reference": "NumericFormat",
-    "EntityType": "Attribute",
-    "EntityName": "Numeric Format",
-    "EntityId": "NumericFormat",
-    "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
-    "Notes": "",
-    "ApplicabilityCriteria": [],
-    "Order": 90,
-    "Type": "Dynamic",
-    "ValidationCriteria": {
-      "MustSatisfy": "Numeric values MUST NOT contain commas or punctuation marks except for a single decimal point (\".\") if required to express a decimal value.",
-      "Keyword": "MUST NOT",
-      "Requirement": {},
-      "Condition": {},
-      "Dependencies": []
-    }
-  },
-  "NumericFormat-A-010-M": {
-    "Function": "Format",
-    "Reference": "NumericFormat",
-    "EntityType": "Attribute",
-    "EntityName": "Numeric Format",
-    "EntityId": "NumericFormat",
-    "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
-    "Notes": "",
-    "ApplicabilityCriteria": [],
-    "Order": 100,
-    "Type": "Dynamic",
-    "ValidationCriteria": {
-      "MustSatisfy": "Numeric values MUST NOT include a character to represent a sign for a positive value.",
-      "Keyword": "MUST NOT",
-      "Requirement": {},
-      "Condition": {},
-      "Dependencies": []
-    }
-  },
-  "NumericFormat-A-011-M": {
+  "ATT-NumericFormat-A-005-M": {
     "Function": "Format",
     "Reference": "NumericFormat",
     "EntityType": "Attribute",
@@ -302,14 +169,134 @@
     "Order": 110,
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "A negative sign (-) MUST indicate a negative value.",
+      "MustSatisfy": "FOCUS dataset column MUST use E notation \"mEn\", where m is a real number and n is an integer exponent.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []
     }
   },
-  "NumericFormat-A-012-M": {
+  "ATT-NumericFormat-A-006-M": {
+    "Function": "Format",
+    "Reference": "NumericFormat",
+    "EntityType": "Attribute",
+    "EntityName": "Numeric Format",
+    "EntityId": "NumericFormat",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Order": 120,
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS dataset column MUST use a negative sign (-) to indicate a negative exponent.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-NumericFormat-A-007-M": {
+    "Function": "Format",
+    "Reference": "NumericFormat",
+    "EntityType": "Attribute",
+    "EntityName": "Numeric Format",
+    "EntityId": "NumericFormat",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Order": 130,
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS dataset column MUST NOT include a positive sign (+) for a positive exponent.",
+      "Keyword": "MUST NOT",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-NumericFormat-A-008-M": {
+    "Function": "Format",
+    "Reference": "NumericFormat",
+    "EntityType": "Attribute",
+    "EntityName": "Numeric Format",
+    "EntityId": "NumericFormat",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Order": 60,
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS dataset column MUST NOT include additional characters or qualifiers (e.g., currency symbols, units of measure).",
+      "Keyword": "MUST NOT",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-NumericFormat-A-009-M": {
+    "Function": "Format",
+    "Reference": "NumericFormat",
+    "EntityType": "Attribute",
+    "EntityName": "Numeric Format",
+    "EntityId": "NumericFormat",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Order": 70,
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS dataset column MUST NOT contain commas or punctuation marks, except for a single decimal point when required for a decimal value.",
+      "Keyword": "MUST NOT",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-NumericFormat-A-010-M": {
+    "Function": "Format",
+    "Reference": "NumericFormat",
+    "EntityType": "Attribute",
+    "EntityName": "Numeric Format",
+    "EntityId": "NumericFormat",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Order": 90,
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS dataset column MUST NOT include a positive sign (+) for a positive value.",
+      "Keyword": "MUST NOT",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-NumericFormat-A-011-M": {
+    "Function": "Format",
+    "Reference": "NumericFormat",
+    "EntityType": "Attribute",
+    "EntityName": "Numeric Format",
+    "EntityId": "NumericFormat",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Order": 80,
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS dataset column MUST use a negative sign (-) to indicate a negative value.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-NumericFormat-A-012-C": {
     "Function": "Format",
     "Reference": "NumericFormat",
     "EntityType": "Attribute",
@@ -319,17 +306,17 @@
     "Status": "Active",
     "Notes": "Allowed values are Integer and Decimal per normative text table",
     "ApplicabilityCriteria": [],
-    "Order": 120,
+    "Order": 30,
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "Columns with a Numeric value format MUST present one of the following values as the \"Data type\" in the column definition.",
+      "MustSatisfy": "FOCUS dataset column MUST contain values that, when not null, conform to one of the allowed Data Types defined in the table below.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []
     }
   },
-  "NumericFormat-A-013-O": {
+  "ATT-NumericFormat-A-013-C": {
     "Function": "Format",
     "Reference": "NumericFormat",
     "EntityType": "Attribute",
@@ -339,11 +326,71 @@
     "Status": "Active",
     "Notes": "Allowed precision values: Integer (Short, Long, Extended), Decimal (Single, Double, Extended)",
     "ApplicabilityCriteria": [],
-    "Order": 130,
+    "Order": 40,
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "Providers SHOULD define precision and scale for Numeric Format columns using one of the following precision values in a data definition document that providers publish.",
-      "Keyword": "SHOULD",
+      "MustSatisfy": "FOCUS dataset column MUST contain values that, when not null, conform to one of the allowed precision levels (and scale, where applicable) defined in the table below.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-NumericFormat-A-014-C": {
+    "Function": "Composite",
+    "Reference": "NumericFormat",
+    "EntityType": "Attribute",
+    "EntityName": "Numeric Format",
+    "EntityId": "NumericFormat",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Order": 100,
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "When FOCUS dataset column contains numeric values expressed in scientific notation, it MUST adhere to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-NumericFormat-A-005-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-NumericFormat-A-006-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-NumericFormat-A-007-M"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "ATT-NumericFormat-A-005-M",
+        "ATT-NumericFormat-A-006-M",
+        "ATT-NumericFormat-A-007-M"
+      ]
+    }
+  },
+  "ATT-NumericFormat-A-015-M": {
+    "Function": "Format",
+    "Reference": "NumericFormat",
+    "EntityType": "Attribute",
+    "EntityName": "Numeric Format",
+    "EntityId": "NumericFormat",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Order": 50,
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS dataset column MUST NOT use mathematical symbols, functions, or operators, except for a negative sign (-) to indicate a negative value or a negative exponent in scientific notation.",
+      "Keyword": "MUST NOT",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []

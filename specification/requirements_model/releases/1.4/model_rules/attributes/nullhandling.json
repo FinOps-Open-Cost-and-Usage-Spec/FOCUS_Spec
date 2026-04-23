@@ -1,5 +1,5 @@
 {
-  "NullHandling-A-000-M": {
+  "ATT-NullHandling-A-000-C": {
     "Function": "Composite",
     "Reference": "NullHandling",
     "EntityType": "Attribute",
@@ -12,29 +12,34 @@
     "Order": 0,
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "All columns defined in the FOCUS specification MUST follow the null handling requirements listed below.",
+      "MustSatisfy": "Column conforming to NullHandling attribute MUST adhere to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "NullHandling-A-001-C"
+            "ModelRuleId": "ATT-NullHandling-A-001-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "NullHandling-A-002-M"
+            "ModelRuleId": "ATT-NullHandling-A-002-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-NullHandling-A-003-C"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "NullHandling-A-001-C",
-        "NullHandling-A-002-M"
+        "ATT-NullHandling-A-001-C",
+        "ATT-NullHandling-A-002-C",
+        "ATT-NullHandling-A-003-C"
       ]
     }
   },
-  "NullHandling-A-001-C": {
+  "ATT-NullHandling-A-001-C": {
     "Function": "Validation",
     "Reference": "NullHandling",
     "EntityType": "Attribute",
@@ -47,14 +52,14 @@
     "Order": 10,
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "Columns MUST use NULL when there isn’t a value that can be specified for a nullable column.",
+      "MustSatisfy": "FOCUS dataset column MUST use null for absent values when the FOCUS dataset column is defined as nullable.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []
     }
   },
-  "NullHandling-A-002-M": {
+  "ATT-NullHandling-A-002-C": {
     "Function": "Validation",
     "Reference": "NullHandling",
     "EntityType": "Attribute",
@@ -67,7 +72,27 @@
     "Order": 20,
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "Columns MUST NOT use empty strings or placeholder values such as 0 for numeric columns or “Not Applicable” for string columns to represent a null or not having a value, regardless of whether the column allows nulls or not.",
+      "MustSatisfy": "FOCUS dataset column MUST NOT contain empty strings or placeholder strings (e.g., Not Applicable ) for absent values when the FOCUS dataset column contains string values.",
+      "Keyword": "MUST NOT",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-NullHandling-A-003-C": {
+    "Function": "Validation",
+    "Reference": "NullHandling",
+    "EntityType": "Attribute",
+    "EntityName": "Null Handling",
+    "EntityId": "NullHandling",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Order": 30,
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS dataset column MUST NOT contain placeholder numeric values (e.g., 0 ) for absent values when the FOCUS dataset column contains numeric values.",
       "Keyword": "MUST NOT",
       "Requirement": {},
       "Condition": {},

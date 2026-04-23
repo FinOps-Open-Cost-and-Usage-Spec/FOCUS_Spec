@@ -1,12 +1,13 @@
 {
-  "DiscountHandling-A-000-C": {
+  "ATT-DiscountHandling-A-000-C": {
     "Function": "Composite",
     "Reference": "DiscountHandling",
     "EntityType": "Attribute",
     "EntityName": "Discount Handling",
     "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "Notes": "",
     "ApplicabilityCriteria": [
       "COMMITMENT_DISCOUNT_SUPPORTED"
@@ -21,39 +22,40 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "DiscountHandling-A-001-C"
+            "ModelRuleId": "ATT-DiscountHandling-A-001-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "DiscountHandling-A-002-C"
+            "ModelRuleId": "ATT-DiscountHandling-A-002-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "DiscountHandling-A-008-C"
+            "ModelRuleId": "ATT-DiscountHandling-A-008-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "DiscountHandling-A-020-C"
+            "ModelRuleId": "ATT-DiscountHandling-A-020-C"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "DiscountHandling-A-001-C",
-        "DiscountHandling-A-002-C",
-        "DiscountHandling-A-008-C",
-        "DiscountHandling-A-020-C"
+        "ATT-DiscountHandling-A-001-C",
+        "ATT-DiscountHandling-A-002-C",
+        "ATT-DiscountHandling-A-008-C",
+        "ATT-DiscountHandling-A-020-C"
       ]
     }
   },
-  "DiscountHandling-A-001-C": {
+  "ATT-DiscountHandling-A-001-C": {
     "Function": "Validation",
     "Reference": "DiscountHandling",
     "EntityType": "Attribute",
     "EntityName": "Discount Handling",
     "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "Notes": "",
     "ApplicabilityCriteria": [
       "COMMITMENT_DISCOUNT_SUPPORTED"
@@ -68,14 +70,15 @@
       "Dependencies": []
     }
   },
-  "DiscountHandling-A-002-C": {
+  "ATT-DiscountHandling-A-002-C": {
     "Function": "Composite",
     "Reference": "DiscountHandling",
     "EntityType": "Attribute",
     "EntityName": "Discount Handling",
     "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "Notes": "",
     "ApplicabilityCriteria": [
       "COMMITMENT_DISCOUNT_SUPPORTED"
@@ -90,34 +93,35 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "DiscountHandling-A-003-C"
+            "ModelRuleId": "ATT-DiscountHandling-A-003-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "DiscountHandling-A-004-C"
+            "ModelRuleId": "ATT-DiscountHandling-A-004-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "DiscountHandling-A-005-C"
+            "ModelRuleId": "ATT-DiscountHandling-A-005-C"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "DiscountHandling-A-003-C",
-        "DiscountHandling-A-004-C",
-        "DiscountHandling-A-005-C"
+        "ATT-DiscountHandling-A-003-C",
+        "ATT-DiscountHandling-A-004-C",
+        "ATT-DiscountHandling-A-005-C"
       ]
     }
   },
-  "DiscountHandling-A-003-C": {
+  "ATT-DiscountHandling-A-003-C": {
     "Function": "Validation",
     "Reference": "DiscountHandling",
     "EntityType": "Attribute",
     "EntityName": "Discount Handling",
     "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "Notes": "",
     "ApplicabilityCriteria": [
       "COMMITMENT_DISCOUNT_SUPPORTED"
@@ -132,14 +136,15 @@
       "Dependencies": []
     }
   },
-  "DiscountHandling-A-004-C": {
+  "ATT-DiscountHandling-A-004-C": {
     "Function": "Validation",
     "Reference": "DiscountHandling",
     "EntityType": "Attribute",
     "EntityName": "Discount Handling",
     "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "Notes": "",
     "ApplicabilityCriteria": [
       "COMMITMENT_DISCOUNT_SUPPORTED"
@@ -154,14 +159,15 @@
       "Dependencies": []
     }
   },
-  "DiscountHandling-A-005-C": {
+  "ATT-DiscountHandling-A-005-C": {
     "Function": "Composite",
     "Reference": "DiscountHandling",
     "EntityType": "Attribute",
     "EntityName": "Discount Handling",
     "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "Notes": "",
     "ApplicabilityCriteria": [
       "COMMITMENT_DISCOUNT_SUPPORTED"
@@ -176,29 +182,30 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "DiscountHandling-A-006-C"
+            "ModelRuleId": "ATT-DiscountHandling-A-006-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "DiscountHandling-A-007-C"
+            "ModelRuleId": "ATT-DiscountHandling-A-007-C"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "DiscountHandling-A-006-C",
-        "DiscountHandling-A-007-C"
+        "ATT-DiscountHandling-A-006-C",
+        "ATT-DiscountHandling-A-007-C"
       ]
     }
   },
-  "DiscountHandling-A-006-C": {
+  "ATT-DiscountHandling-A-006-C": {
     "Function": "Validation",
     "Reference": "DiscountHandling",
     "EntityType": "Attribute",
     "EntityName": "Discount Handling",
     "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "Notes": "",
     "ApplicabilityCriteria": [
       "COMMITMENT_DISCOUNT_SUPPORTED"
@@ -213,14 +220,15 @@
       "Dependencies": []
     }
   },
-  "DiscountHandling-A-007-C": {
+  "ATT-DiscountHandling-A-007-C": {
     "Function": "Validation",
     "Reference": "DiscountHandling",
     "EntityType": "Attribute",
     "EntityName": "Discount Handling",
     "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "Notes": "",
     "ApplicabilityCriteria": [
       "COMMITMENT_DISCOUNT_SUPPORTED"
@@ -235,14 +243,15 @@
       "Dependencies": []
     }
   },
-  "DiscountHandling-A-008-C": {
+  "ATT-DiscountHandling-A-008-C": {
     "Function": "Composite",
     "Reference": "DiscountHandling",
     "EntityType": "Attribute",
     "EntityName": "Discount Handling",
     "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "Notes": "",
     "ApplicabilityCriteria": [
       "COMMITMENT_DISCOUNT_SUPPORTED"
@@ -257,74 +266,75 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "DiscountHandling-A-009-C"
+            "ModelRuleId": "ATT-DiscountHandling-A-009-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "DiscountHandling-A-010-C"
+            "ModelRuleId": "ATT-DiscountHandling-A-010-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "DiscountHandling-A-011-C"
+            "ModelRuleId": "ATT-DiscountHandling-A-011-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "DiscountHandling-A-012-C"
+            "ModelRuleId": "ATT-DiscountHandling-A-012-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "DiscountHandling-A-013-C"
+            "ModelRuleId": "ATT-DiscountHandling-A-013-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "DiscountHandling-A-014-C"
+            "ModelRuleId": "ATT-DiscountHandling-A-014-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "DiscountHandling-A-015-C"
+            "ModelRuleId": "ATT-DiscountHandling-A-015-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "DiscountHandling-A-016-C"
+            "ModelRuleId": "ATT-DiscountHandling-A-016-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "DiscountHandling-A-017-C"
+            "ModelRuleId": "ATT-DiscountHandling-A-017-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "DiscountHandling-A-018-C"
+            "ModelRuleId": "ATT-DiscountHandling-A-018-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "DiscountHandling-A-019-C"
+            "ModelRuleId": "ATT-DiscountHandling-A-019-C"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "DiscountHandling-A-009-C",
-        "DiscountHandling-A-010-C",
-        "DiscountHandling-A-011-C",
-        "DiscountHandling-A-012-C",
-        "DiscountHandling-A-013-C",
-        "DiscountHandling-A-014-C",
-        "DiscountHandling-A-015-C",
-        "DiscountHandling-A-016-C",
-        "DiscountHandling-A-017-C",
-        "DiscountHandling-A-018-C",
-        "DiscountHandling-A-019-C"
+        "ATT-DiscountHandling-A-009-C",
+        "ATT-DiscountHandling-A-010-C",
+        "ATT-DiscountHandling-A-011-C",
+        "ATT-DiscountHandling-A-012-C",
+        "ATT-DiscountHandling-A-013-C",
+        "ATT-DiscountHandling-A-014-C",
+        "ATT-DiscountHandling-A-015-C",
+        "ATT-DiscountHandling-A-016-C",
+        "ATT-DiscountHandling-A-017-C",
+        "ATT-DiscountHandling-A-018-C",
+        "ATT-DiscountHandling-A-019-C"
       ]
     }
   },
-  "DiscountHandling-A-009-C": {
+  "ATT-DiscountHandling-A-009-C": {
     "Function": "Validation",
     "Reference": "DiscountHandling",
     "EntityType": "Attribute",
     "EntityName": "Discount Handling",
     "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "Notes": "",
     "ApplicabilityCriteria": [
       "COMMITMENT_DISCOUNT_SUPPORTED"
@@ -339,14 +349,15 @@
       "Dependencies": []
     }
   },
-  "DiscountHandling-A-010-C": {
+  "ATT-DiscountHandling-A-010-C": {
     "Function": "Validation",
     "Reference": "DiscountHandling",
     "EntityType": "Attribute",
     "EntityName": "Discount Handling",
     "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "Notes": "",
     "ApplicabilityCriteria": [
       "COMMITMENT_DISCOUNT_SUPPORTED"
@@ -361,14 +372,15 @@
       "Dependencies": []
     }
   },
-  "DiscountHandling-A-011-C": {
+  "ATT-DiscountHandling-A-011-C": {
     "Function": "Validation",
     "Reference": "DiscountHandling",
     "EntityType": "Attribute",
     "EntityName": "Discount Handling",
     "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "Notes": "",
     "ApplicabilityCriteria": [
       "COMMITMENT_DISCOUNT_SUPPORTED"
@@ -383,14 +395,15 @@
       "Dependencies": []
     }
   },
-  "DiscountHandling-A-012-C": {
+  "ATT-DiscountHandling-A-012-C": {
     "Function": "Validation",
     "Reference": "DiscountHandling",
     "EntityType": "Attribute",
     "EntityName": "Discount Handling",
     "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "Notes": "",
     "ApplicabilityCriteria": [
       "COMMITMENT_DISCOUNT_SUPPORTED"
@@ -405,14 +418,15 @@
       "Dependencies": []
     }
   },
-  "DiscountHandling-A-013-C": {
+  "ATT-DiscountHandling-A-013-C": {
     "Function": "Validation",
     "Reference": "DiscountHandling",
     "EntityType": "Attribute",
     "EntityName": "Discount Handling",
     "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "Notes": "",
     "ApplicabilityCriteria": [
       "COMMITMENT_DISCOUNT_SUPPORTED"
@@ -427,14 +441,15 @@
       "Dependencies": []
     }
   },
-  "DiscountHandling-A-014-C": {
+  "ATT-DiscountHandling-A-014-C": {
     "Function": "Validation",
     "Reference": "DiscountHandling",
     "EntityType": "Attribute",
     "EntityName": "Discount Handling",
     "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "Notes": "",
     "ApplicabilityCriteria": [
       "COMMITMENT_DISCOUNT_SUPPORTED"
@@ -449,14 +464,15 @@
       "Dependencies": []
     }
   },
-  "DiscountHandling-A-015-C": {
+  "ATT-DiscountHandling-A-015-C": {
     "Function": "Validation",
     "Reference": "DiscountHandling",
     "EntityType": "Attribute",
     "EntityName": "Discount Handling",
     "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "Notes": "",
     "ApplicabilityCriteria": [
       "COMMITMENT_DISCOUNT_SUPPORTED"
@@ -471,14 +487,15 @@
       "Dependencies": []
     }
   },
-  "DiscountHandling-A-016-C": {
+  "ATT-DiscountHandling-A-016-C": {
     "Function": "Validation",
     "Reference": "DiscountHandling",
     "EntityType": "Attribute",
     "EntityName": "Discount Handling",
     "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "Notes": "",
     "ApplicabilityCriteria": [
       "COMMITMENT_DISCOUNT_SUPPORTED"
@@ -493,14 +510,15 @@
       "Dependencies": []
     }
   },
-  "DiscountHandling-A-017-C": {
+  "ATT-DiscountHandling-A-017-C": {
     "Function": "Validation",
     "Reference": "DiscountHandling",
     "EntityType": "Attribute",
     "EntityName": "Discount Handling",
     "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "Notes": "",
     "ApplicabilityCriteria": [
       "COMMITMENT_DISCOUNT_SUPPORTED"
@@ -515,14 +533,15 @@
       "Dependencies": []
     }
   },
-  "DiscountHandling-A-018-C": {
+  "ATT-DiscountHandling-A-018-C": {
     "Function": "Validation",
     "Reference": "DiscountHandling",
     "EntityType": "Attribute",
     "EntityName": "Discount Handling",
     "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "Notes": "",
     "ApplicabilityCriteria": [
       "COMMITMENT_DISCOUNT_SUPPORTED"
@@ -537,14 +556,15 @@
       "Dependencies": []
     }
   },
-  "DiscountHandling-A-019-C": {
+  "ATT-DiscountHandling-A-019-C": {
     "Function": "Validation",
     "Reference": "DiscountHandling",
     "EntityType": "Attribute",
     "EntityName": "Discount Handling",
     "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "Notes": "",
     "ApplicabilityCriteria": [
       "COMMITMENT_DISCOUNT_SUPPORTED"
@@ -559,14 +579,15 @@
       "Dependencies": []
     }
   },
-  "DiscountHandling-A-020-C": {
+  "ATT-DiscountHandling-A-020-C": {
     "Function": "Validation",
     "Reference": "DiscountHandling",
     "EntityType": "Attribute",
     "EntityName": "Discount Handling",
     "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "Notes": "",
     "ApplicabilityCriteria": [
       "COMMITMENT_DISCOUNT_SUPPORTED"

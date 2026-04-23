@@ -1,5 +1,5 @@
 {
-  "DataGeneratorCalculatedSplitCostAllocationHandling-A-000-C": {
+  "ATT-DataGeneratorCalculatedSplitCostAllocationHandling-A-000-C": {
     "Function": "Composite",
     "Reference": "DataGeneratorCalculatedSplitCostAllocationHandling",
     "EntityType": "Attribute",
@@ -14,74 +14,34 @@
     "Type": "Static",
     "Order": 0,
     "ValidationCriteria": {
-      "MustSatisfy": "DataGeneratorCalculatedSplitCostAllocationHandling adheres to the following requirements:",
+      "MustSatisfy": "Column conforming to DataGeneratorCalculatedSplitCostAllocationHandling attribute MUST adhere to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "DataGeneratorCalculatedSplitCostAllocationHandling-A-001-C"
+            "ModelRuleId": "ATT-DataGeneratorCalculatedSplitCostAllocationHandling-A-012-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "DataGeneratorCalculatedSplitCostAllocationHandling-A-002-C"
+            "ModelRuleId": "ATT-DataGeneratorCalculatedSplitCostAllocationHandling-A-013-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "DataGeneratorCalculatedSplitCostAllocationHandling-A-003-C"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "DataGeneratorCalculatedSplitCostAllocationHandling-A-004-C"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "DataGeneratorCalculatedSplitCostAllocationHandling-A-005-C"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "DataGeneratorCalculatedSplitCostAllocationHandling-A-006-C"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "DataGeneratorCalculatedSplitCostAllocationHandling-A-007-C"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "DataGeneratorCalculatedSplitCostAllocationHandling-A-008-C"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "DataGeneratorCalculatedSplitCostAllocationHandling-A-009-C"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "DataGeneratorCalculatedSplitCostAllocationHandling-A-010-C"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "DataGeneratorCalculatedSplitCostAllocationHandling-A-011-C"
+            "ModelRuleId": "ATT-DataGeneratorCalculatedSplitCostAllocationHandling-A-014-C"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "DataGeneratorCalculatedSplitCostAllocationHandling-A-001-C",
-        "DataGeneratorCalculatedSplitCostAllocationHandling-A-002-C",
-        "DataGeneratorCalculatedSplitCostAllocationHandling-A-003-C",
-        "DataGeneratorCalculatedSplitCostAllocationHandling-A-004-C",
-        "DataGeneratorCalculatedSplitCostAllocationHandling-A-005-C",
-        "DataGeneratorCalculatedSplitCostAllocationHandling-A-006-C",
-        "DataGeneratorCalculatedSplitCostAllocationHandling-A-007-C",
-        "DataGeneratorCalculatedSplitCostAllocationHandling-A-008-C",
-        "DataGeneratorCalculatedSplitCostAllocationHandling-A-009-C",
-        "DataGeneratorCalculatedSplitCostAllocationHandling-A-010-C",
-        "DataGeneratorCalculatedSplitCostAllocationHandling-A-011-C"
+        "ATT-DataGeneratorCalculatedSplitCostAllocationHandling-A-012-C",
+        "ATT-DataGeneratorCalculatedSplitCostAllocationHandling-A-013-C",
+        "ATT-DataGeneratorCalculatedSplitCostAllocationHandling-A-014-C"
       ]
     }
   },
-  "DataGeneratorCalculatedSplitCostAllocationHandling-A-001-C": {
+  "ATT-DataGeneratorCalculatedSplitCostAllocationHandling-A-001-C": {
     "Function": "Presence",
     "Reference": "DataGeneratorCalculatedSplitCostAllocationHandling",
     "EntityType": "Attribute",
@@ -89,12 +49,13 @@
     "EntityId": "DataGeneratorCalculatedSplitCostAllocationHandling",
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "ApplicabilityCriteria": [
       "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
     ],
     "Type": "Dynamic",
-    "Order": 10,
+    "Order": -1,
     "ValidationCriteria": {
       "MustSatisfy": "A FOCUS dataset MUST include the following columns when the data generator supports data generator-calculated split cost allocation: AllocatedMethodId, AllocatedResourceId, AllocatedResourceName, AllocatedTags.",
       "Keyword": "MUST",
@@ -103,7 +64,7 @@
       "Dependencies": []
     }
   },
-  "DataGeneratorCalculatedSplitCostAllocationHandling-A-002-C": {
+  "ATT-DataGeneratorCalculatedSplitCostAllocationHandling-A-002-C": {
     "Function": "Presence",
     "Reference": "DataGeneratorCalculatedSplitCostAllocationHandling",
     "EntityType": "Attribute",
@@ -111,12 +72,13 @@
     "EntityId": "DataGeneratorCalculatedSplitCostAllocationHandling",
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "ApplicabilityCriteria": [
       "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
     ],
     "Type": "Dynamic",
-    "Order": 20,
+    "Order": -1,
     "ValidationCriteria": {
       "MustSatisfy": "A FOCUS dataset SHOULD include the following column when the data generator supports data generator-calculated split cost allocation: AllocatedMethodDetails.",
       "Keyword": "SHOULD",
@@ -125,7 +87,7 @@
       "Dependencies": []
     }
   },
-  "DataGeneratorCalculatedSplitCostAllocationHandling-A-003-C": {
+  "ATT-DataGeneratorCalculatedSplitCostAllocationHandling-A-003-C": {
     "Function": "Validation",
     "Reference": "DataGeneratorCalculatedSplitCostAllocationHandling",
     "EntityType": "Attribute",
@@ -133,12 +95,13 @@
     "EntityId": "DataGeneratorCalculatedSplitCostAllocationHandling",
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "ApplicabilityCriteria": [
       "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
     ],
     "Type": "Dynamic",
-    "Order": 30,
+    "Order": -1,
     "ValidationCriteria": {
       "MustSatisfy": "Allocated charge records in a FOCUS dataset MUST sum up to the origin charge record for all aggregatable metric columns.",
       "Keyword": "MUST",
@@ -147,7 +110,7 @@
       "Dependencies": []
     }
   },
-  "DataGeneratorCalculatedSplitCostAllocationHandling-A-004-C": {
+  "ATT-DataGeneratorCalculatedSplitCostAllocationHandling-A-004-C": {
     "Function": "Validation",
     "Reference": "DataGeneratorCalculatedSplitCostAllocationHandling",
     "EntityType": "Attribute",
@@ -155,12 +118,13 @@
     "EntityId": "DataGeneratorCalculatedSplitCostAllocationHandling",
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "ApplicabilityCriteria": [
       "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
     ],
     "Type": "Dynamic",
-    "Order": 40,
+    "Order": -1,
     "ValidationCriteria": {
       "MustSatisfy": "For each allocated charge records in a FOCUS dataset, all dimension columns and non-aggregatable metric columns MUST match the values of the origin charge record.",
       "Keyword": "MUST",
@@ -169,7 +133,7 @@
       "Dependencies": []
     }
   },
-  "DataGeneratorCalculatedSplitCostAllocationHandling-A-005-C": {
+  "ATT-DataGeneratorCalculatedSplitCostAllocationHandling-A-005-C": {
     "Function": "Validation",
     "Reference": "DataGeneratorCalculatedSplitCostAllocationHandling",
     "EntityType": "Attribute",
@@ -177,12 +141,13 @@
     "EntityId": "DataGeneratorCalculatedSplitCostAllocationHandling",
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "ApplicabilityCriteria": [
       "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
     ],
     "Type": "Dynamic",
-    "Order": 50,
+    "Order": -1,
     "ValidationCriteria": {
       "MustSatisfy": "Allocated charge records MUST include the same keys and values present in the Tags column for the origin charge.",
       "Keyword": "MUST",
@@ -191,7 +156,7 @@
       "Dependencies": []
     }
   },
-  "DataGeneratorCalculatedSplitCostAllocationHandling-A-006-C": {
+  "ATT-DataGeneratorCalculatedSplitCostAllocationHandling-A-006-C": {
     "Function": "Validation",
     "Reference": "DataGeneratorCalculatedSplitCostAllocationHandling",
     "EntityType": "Attribute",
@@ -199,12 +164,13 @@
     "EntityId": "DataGeneratorCalculatedSplitCostAllocationHandling",
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "ApplicabilityCriteria": [
       "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
     ],
     "Type": "Dynamic",
-    "Order": 60,
+    "Order": -1,
     "ValidationCriteria": {
       "MustSatisfy": "Allocated charge records MUST satisfy normative requirements for all columns.",
       "Keyword": "MUST",
@@ -213,7 +179,7 @@
       "Dependencies": []
     }
   },
-  "DataGeneratorCalculatedSplitCostAllocationHandling-A-007-C": {
+  "ATT-DataGeneratorCalculatedSplitCostAllocationHandling-A-007-C": {
     "Function": "Validation",
     "Reference": "DataGeneratorCalculatedSplitCostAllocationHandling",
     "EntityType": "Attribute",
@@ -221,12 +187,13 @@
     "EntityId": "DataGeneratorCalculatedSplitCostAllocationHandling",
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "ApplicabilityCriteria": [
       "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
     ],
     "Type": "Dynamic",
-    "Order": 70,
+    "Order": -1,
     "ValidationCriteria": {
       "MustSatisfy": "The method used for allocating origin charges to create allocated charges MUST be documented by the data generator and accessible to practitioners.",
       "Keyword": "MUST",
@@ -235,7 +202,7 @@
       "Dependencies": []
     }
   },
-  "DataGeneratorCalculatedSplitCostAllocationHandling-A-008-C": {
+  "ATT-DataGeneratorCalculatedSplitCostAllocationHandling-A-008-C": {
     "Function": "Validation",
     "Reference": "DataGeneratorCalculatedSplitCostAllocationHandling",
     "EntityType": "Attribute",
@@ -243,12 +210,13 @@
     "EntityId": "DataGeneratorCalculatedSplitCostAllocationHandling",
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "ApplicabilityCriteria": [
       "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
     ],
     "Type": "Dynamic",
-    "Order": 80,
+    "Order": -1,
     "ValidationCriteria": {
       "MustSatisfy": "A FOCUS dataset MAY contain records for concepts not related to resource usage, if documented in the split cost allocation method.",
       "Keyword": "MAY",
@@ -257,7 +225,7 @@
       "Dependencies": []
     }
   },
-  "DataGeneratorCalculatedSplitCostAllocationHandling-A-009-C": {
+  "ATT-DataGeneratorCalculatedSplitCostAllocationHandling-A-009-C": {
     "Function": "Validation",
     "Reference": "DataGeneratorCalculatedSplitCostAllocationHandling",
     "EntityType": "Attribute",
@@ -265,12 +233,13 @@
     "EntityId": "DataGeneratorCalculatedSplitCostAllocationHandling",
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "ApplicabilityCriteria": [
       "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
     ],
     "Type": "Dynamic",
-    "Order": 90,
+    "Order": -1,
     "ValidationCriteria": {
       "MustSatisfy": "A FOCUS dataset MAY contain records for the unused or unallocated usage from the origin charge as separate allocated charges, if it aligns to the data generator's documented allocation method.",
       "Keyword": "MAY",
@@ -279,7 +248,7 @@
       "Dependencies": []
     }
   },
-  "DataGeneratorCalculatedSplitCostAllocationHandling-A-010-C": {
+  "ATT-DataGeneratorCalculatedSplitCostAllocationHandling-A-010-C": {
     "Function": "Validation",
     "Reference": "DataGeneratorCalculatedSplitCostAllocationHandling",
     "EntityType": "Attribute",
@@ -287,12 +256,13 @@
     "EntityId": "DataGeneratorCalculatedSplitCostAllocationHandling",
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "ApplicabilityCriteria": [
       "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
     ],
     "Type": "Dynamic",
-    "Order": 100,
+    "Order": -1,
     "ValidationCriteria": {
       "MustSatisfy": "Allocated charge records MAY contain apportioned costs for the unused or unallocated usage from the origin charge, if it aligns to the data generator's documented allocation method.",
       "Keyword": "MAY",
@@ -301,7 +271,7 @@
       "Dependencies": []
     }
   },
-  "DataGeneratorCalculatedSplitCostAllocationHandling-A-011-C": {
+  "ATT-DataGeneratorCalculatedSplitCostAllocationHandling-A-011-C": {
     "Function": "Validation",
     "Reference": "DataGeneratorCalculatedSplitCostAllocationHandling",
     "EntityType": "Attribute",
@@ -309,15 +279,82 @@
     "EntityId": "DataGeneratorCalculatedSplitCostAllocationHandling",
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
+    "ApplicabilityCriteria": [
+      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    ],
+    "Type": "Dynamic",
+    "Order": -1,
+    "ValidationCriteria": {
+      "MustSatisfy": "Split cost allocation is RECOMMENDED to be applied to charges on an opt-in basis.",
+      "Keyword": "RECOMMENDED",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-DataGeneratorCalculatedSplitCostAllocationHandling-A-012-C": {
+    "Function": "Validation",
+    "Reference": "DataGeneratorCalculatedSplitCostAllocationHandling",
+    "EntityType": "Attribute",
+    "EntityName": "Data Generator Calculated Split Cost Allocation Handling",
+    "EntityId": "DataGeneratorCalculatedSplitCostAllocationHandling",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
     "Status": "Active",
     "ApplicabilityCriteria": [
       "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
     ],
     "Type": "Dynamic",
-    "Order": 110,
+    "Order": 10,
     "ValidationCriteria": {
-      "MustSatisfy": "Split cost allocation is RECOMMENDED to be applied to charges on an opt-in basis.",
-      "Keyword": "RECOMMENDED",
+      "MustSatisfy": "FOCUS dataset column representing a dimension MUST match the corresponding value in the origin charge when present in an allocated charge.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-DataGeneratorCalculatedSplitCostAllocationHandling-A-013-C": {
+    "Function": "Validation",
+    "Reference": "DataGeneratorCalculatedSplitCostAllocationHandling",
+    "EntityType": "Attribute",
+    "EntityName": "Data Generator Calculated Split Cost Allocation Handling",
+    "EntityId": "DataGeneratorCalculatedSplitCostAllocationHandling",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    ],
+    "Type": "Dynamic",
+    "Order": 20,
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS dataset column representing a non-summable metric (e.g., unit prices) MUST match the corresponding value in the origin charge when present in an allocated charge.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-DataGeneratorCalculatedSplitCostAllocationHandling-A-014-C": {
+    "Function": "Validation",
+    "Reference": "DataGeneratorCalculatedSplitCostAllocationHandling",
+    "EntityType": "Attribute",
+    "EntityName": "Data Generator Calculated Split Cost Allocation Handling",
+    "EntityId": "DataGeneratorCalculatedSplitCostAllocationHandling",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    ],
+    "Type": "Dynamic",
+    "Order": 30,
+    "ValidationCriteria": {
+      "MustSatisfy": "The sum of FOCUS dataset column across allocated charges MUST match the FOCUS dataset column in the corresponding origin charge when the FOCUS dataset column represents a summable metric (e.g., costs and quantities).",
+      "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []

@@ -75,9 +75,7 @@
         "CCT-ContractCommitment-D-037-M",
         "CCT-ContractCommitment-D-038-M",
         "CCT-ContractCommitment-D-039-M",
-        "CCT-ContractCommitment-D-040-M",
-        "NullHandling-A-000-M",
-        "ColumnHandling-A-000-M"
+        "CCT-ContractCommitment-D-040-M"
       ]
     }
   },
@@ -1251,7 +1249,9 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "ATT-CorrectionHandling-A-000-M"
+      ]
     }
   },
   "CCT-ContractCommitment-D-035-M": {
@@ -1274,7 +1274,9 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "ATT-DatasetCompleteness-A-000-M"
+      ]
     }
   },
   "CCT-ContractCommitment-D-036-M": {
@@ -1297,7 +1299,9 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "ATT-DatasetConfiguration-A-000-M"
+      ]
     }
   },
   "CCT-ContractCommitment-D-037-M": {
@@ -1320,7 +1324,9 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "ATT-DeliveryHandling-A-000-M"
+      ]
     }
   },
   "CCT-ContractCommitment-D-038-M": {
@@ -1343,7 +1349,9 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "ATT-FocusColumnHandling-A-000-M"
+      ]
     }
   },
   "CCT-ContractCommitment-D-039-M": {
@@ -1366,7 +1374,9 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "ATT-NullHandling-A-000-C"
+      ]
     }
   },
   "CCT-ContractCommitment-D-040-M": {
@@ -1389,7 +1399,9 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "ATT-CustomColumnHandling-A-000-M"
+      ]
     }
   }
 }

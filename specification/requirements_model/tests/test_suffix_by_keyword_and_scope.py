@@ -7,7 +7,9 @@ KEYWORD_EXCLUDE_PHRASES = [
     "SLA credit details when the credit is already applied",
     "(e.g., when the",
     "where necessary",
-    ", where quantity is a positive integer,"
+    ", where quantity is a positive integer,",
+    "where m is a real number and n",
+    "when required for a decimal value"
 ]
 
 

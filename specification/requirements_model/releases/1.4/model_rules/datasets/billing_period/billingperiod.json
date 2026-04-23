@@ -32,10 +32,6 @@
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "BIP-BillingPeriod-D-010-M"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
             "ModelRuleId": "BIP-BillingPeriod-D-011-M"
           },
           {
@@ -52,6 +48,18 @@
           },
           {
             "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "BIP-BillingPeriod-D-015-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "BIP-BillingPeriod-D-016-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "BIP-BillingPeriod-D-017-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
             "ModelRuleId": "BIP-BillingPeriod-D-003-M"
           }
         ]
@@ -60,14 +68,14 @@
       "Dependencies": [
         "BIP-BillingPeriod-D-001-C",
         "BIP-BillingPeriod-D-002-M",
-        "BIP-BillingPeriod-D-010-M",
         "BIP-BillingPeriod-D-011-M",
         "BIP-BillingPeriod-D-012-M",
         "BIP-BillingPeriod-D-013-M",
         "BIP-BillingPeriod-D-014-M",
-        "BIP-BillingPeriod-D-003-M",
-        "NullHandling-A-000-M",
-        "ColumnHandling-A-000-M"
+        "BIP-BillingPeriod-D-015-M",
+        "BIP-BillingPeriod-D-016-M",
+        "BIP-BillingPeriod-D-017-M",
+        "BIP-BillingPeriod-D-003-M"
       ]
     }
   },
@@ -376,10 +384,11 @@
     "EntityId": "BillingPeriod",
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
-    "Order": 100,
+    "Order": -1,
     "DatasetType": "BIP",
     "DatasetId": "BillingPeriod",
     "DatasetName": "Billing Period",
@@ -388,7 +397,9 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "ATT-ColumnHandling-A-000-M"
+      ]
     }
   },
   "BIP-BillingPeriod-D-011-M": {
@@ -411,7 +422,9 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "ATT-CorrectionHandling-A-000-M"
+      ]
     }
   },
   "BIP-BillingPeriod-D-012-M": {
@@ -434,7 +447,9 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "ATT-DatasetCompleteness-A-000-M"
+      ]
     }
   },
   "BIP-BillingPeriod-D-013-M": {
@@ -457,7 +472,9 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "ATT-DatasetConfiguration-A-000-M"
+      ]
     }
   },
   "BIP-BillingPeriod-D-014-M": {
@@ -480,7 +497,84 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "ATT-DeliveryHandling-A-000-M"
+      ]
+    }
+  },
+  "BIP-BillingPeriod-D-015-M": {
+    "Function": "Validation",
+    "Reference": "BillingPeriod",
+    "EntityType": "Dataset",
+    "EntityName": "Billing Period",
+    "EntityId": "BillingPeriod",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "Order": 150,
+    "DatasetType": "BIP",
+    "DatasetId": "BillingPeriod",
+    "DatasetName": "Billing Period",
+    "ValidationCriteria": {
+      "MustSatisfy": "BillingPeriod FOCUS columns MUST conform to FocusColumnHandling requirements.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": [
+        "ATT-FocusColumnHandling-A-000-M"
+      ]
+    }
+  },
+  "BIP-BillingPeriod-D-016-M": {
+    "Function": "Validation",
+    "Reference": "BillingPeriod",
+    "EntityType": "Dataset",
+    "EntityName": "Billing Period",
+    "EntityId": "BillingPeriod",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "Order": 160,
+    "DatasetType": "BIP",
+    "DatasetId": "BillingPeriod",
+    "DatasetName": "Billing Period",
+    "ValidationCriteria": {
+      "MustSatisfy": "BillingPeriod FOCUS columns MUST conform to NullHandling requirements.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": [
+        "ATT-NullHandling-A-000-C"
+      ]
+    }
+  },
+  "BIP-BillingPeriod-D-017-M": {
+    "Function": "Validation",
+    "Reference": "BillingPeriod",
+    "EntityType": "Dataset",
+    "EntityName": "Billing Period",
+    "EntityId": "BillingPeriod",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "Order": 170,
+    "DatasetType": "BIP",
+    "DatasetId": "BillingPeriod",
+    "DatasetName": "Billing Period",
+    "ValidationCriteria": {
+      "MustSatisfy": "BillingPeriod custom columns MUST conform to CustomColumnHandling requirements.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": [
+        "ATT-CustomColumnHandling-A-000-M"
+      ]
     }
   }
 }

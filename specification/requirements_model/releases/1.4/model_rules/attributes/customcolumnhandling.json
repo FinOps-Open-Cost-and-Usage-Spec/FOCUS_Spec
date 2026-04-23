@@ -1,0 +1,507 @@
+{
+    "ATT-CustomColumnHandling-A-000-M": {
+        "Function": "Composite",
+        "Reference": "CustomColumnHandling",
+        "EntityType": "Attribute",
+        "EntityName": "Custom Column Handling",
+        "EntityId": "CustomColumnHandling",
+        "ModelVersionIntroduced": "1.4",
+        "Status": "Active",
+        "Notes": "Root composite capturing all CustomColumnHandling requirements",
+        "ApplicabilityCriteria": [],
+        "Order": 0,
+        "Type": "Static",
+        "ValidationCriteria": {
+            "MustSatisfy": "Column conforming to CustomColumnHandling attribute MUST adhere to the following requirements:",
+            "Keyword": "MUST",
+            "Requirement": {
+                "CheckFunction": "AND",
+                "Items": [
+                    {
+                        "CheckFunction": "CheckModelRule",
+                        "ModelRuleId": "ATT-CustomColumnHandling-A-001-M"
+                    },
+                    {
+                        "CheckFunction": "CheckModelRule",
+                        "ModelRuleId": "ATT-CustomColumnHandling-A-011-C"
+                    },
+                    {
+                        "CheckFunction": "CheckModelRule",
+                        "ModelRuleId": "ATT-CustomColumnHandling-A-012-O"
+                    },
+                    {
+                        "CheckFunction": "CheckModelRule",
+                        "ModelRuleId": "ATT-CustomColumnHandling-A-013-O"
+                    },
+                    {
+                        "CheckFunction": "CheckModelRule",
+                        "ModelRuleId": "ATT-CustomColumnHandling-A-014-M"
+                    },
+                    {
+                        "CheckFunction": "CheckModelRule",
+                        "ModelRuleId": "ATT-CustomColumnHandling-A-015-M"
+                    },
+                    {
+                        "CheckFunction": "CheckModelRule",
+                        "ModelRuleId": "ATT-CustomColumnHandling-A-016-O"
+                    },
+                    {
+                        "CheckFunction": "CheckModelRule",
+                        "ModelRuleId": "ATT-CustomColumnHandling-A-017-O"
+                    },
+                    {
+                        "CheckFunction": "CheckModelRule",
+                        "ModelRuleId": "ATT-CustomColumnHandling-A-018-O"
+                    },
+                    {
+                        "CheckFunction": "CheckModelRule",
+                        "ModelRuleId": "ATT-CustomColumnHandling-A-019-O"
+                    }
+                ]
+            },
+            "Condition": {},
+            "Dependencies": [
+                "ATT-CustomColumnHandling-A-001-M",
+                "ATT-CustomColumnHandling-A-011-C",
+                "ATT-CustomColumnHandling-A-012-O",
+                "ATT-CustomColumnHandling-A-013-O",
+                "ATT-CustomColumnHandling-A-014-M",
+                "ATT-CustomColumnHandling-A-015-M",
+                "ATT-CustomColumnHandling-A-016-O",
+                "ATT-CustomColumnHandling-A-017-O",
+                "ATT-CustomColumnHandling-A-018-O",
+                "ATT-CustomColumnHandling-A-019-O"
+            ]
+        }
+    },
+    "ATT-CustomColumnHandling-A-001-M": {
+        "Function": "Composite",
+        "Reference": "CustomColumnHandling",
+        "EntityType": "Attribute",
+        "EntityName": "Custom Column Handling",
+        "EntityId": "CustomColumnHandling",
+        "ModelVersionIntroduced": "1.4",
+        "Status": "Active",
+        "Notes": "",
+        "ApplicabilityCriteria": [],
+        "Order": 10,
+        "Type": "Static",
+        "ValidationCriteria": {
+            "MustSatisfy": "Custom column MUST adhere to the following Column ID naming requirements:",
+            "Keyword": "MUST",
+            "Requirement": {
+                "CheckFunction": "AND",
+                "Items": [
+                    {
+                        "CheckFunction": "CheckModelRule",
+                        "ModelRuleId": "ATT-CustomColumnHandling-A-002-M"
+                    },
+                    {
+                        "CheckFunction": "CheckModelRule",
+                        "ModelRuleId": "ATT-CustomColumnHandling-A-003-O"
+                    },
+                    {
+                        "CheckFunction": "CheckModelRule",
+                        "ModelRuleId": "ATT-CustomColumnHandling-A-004-O"
+                    },
+                    {
+                        "CheckFunction": "CheckModelRule",
+                        "ModelRuleId": "ATT-CustomColumnHandling-A-005-O"
+                    },
+                    {
+                        "CheckFunction": "CheckModelRule",
+                        "ModelRuleId": "ATT-CustomColumnHandling-A-006-O"
+                    },
+                    {
+                        "CheckFunction": "CheckModelRule",
+                        "ModelRuleId": "ATT-CustomColumnHandling-A-007-O"
+                    },
+                    {
+                        "CheckFunction": "CheckModelRule",
+                        "ModelRuleId": "ATT-CustomColumnHandling-A-008-O"
+                    },
+                    {
+                        "CheckFunction": "CheckModelRule",
+                        "ModelRuleId": "ATT-CustomColumnHandling-A-009-C"
+                    },
+                    {
+                        "CheckFunction": "CheckModelRule",
+                        "ModelRuleId": "ATT-CustomColumnHandling-A-010-C"
+                    }
+                ]
+            },
+            "Condition": {},
+            "Dependencies": [
+                "ATT-CustomColumnHandling-A-002-M",
+                "ATT-CustomColumnHandling-A-003-O",
+                "ATT-CustomColumnHandling-A-004-O",
+                "ATT-CustomColumnHandling-A-005-O",
+                "ATT-CustomColumnHandling-A-006-O",
+                "ATT-CustomColumnHandling-A-007-O",
+                "ATT-CustomColumnHandling-A-008-O",
+                "ATT-CustomColumnHandling-A-009-C",
+                "ATT-CustomColumnHandling-A-010-C"
+            ]
+        }
+    },
+    "ATT-CustomColumnHandling-A-002-M": {
+        "Function": "Format",
+        "Reference": "CustomColumnHandling",
+        "EntityType": "Attribute",
+        "EntityName": "Custom Column Handling",
+        "EntityId": "CustomColumnHandling",
+        "ModelVersionIntroduced": "1.4",
+        "Status": "Active",
+        "Notes": "",
+        "ApplicabilityCriteria": [],
+        "Order": 20,
+        "Type": "Dynamic",
+        "ValidationCriteria": {
+            "MustSatisfy": "Custom column MUST include the x_ prefix in the Column ID to identify it as an external custom column and to distinguish it from FOCUS columns to avoid conflicts in future releases.",
+            "Keyword": "MUST",
+            "Requirement": {},
+            "Condition": {},
+            "Dependencies": []
+        }
+    },
+    "ATT-CustomColumnHandling-A-003-O": {
+        "Function": "Format",
+        "Reference": "CustomColumnHandling",
+        "EntityType": "Attribute",
+        "EntityName": "Custom Column Handling",
+        "EntityId": "CustomColumnHandling",
+        "ModelVersionIntroduced": "1.4",
+        "Status": "Active",
+        "Notes": "",
+        "ApplicabilityCriteria": [],
+        "Order": 30,
+        "Type": "Dynamic",
+        "ValidationCriteria": {
+            "MustSatisfy": "Custom column SHOULD use PascalCase in the portion of the Column ID following the required x_ prefix.",
+            "Keyword": "SHOULD",
+            "Requirement": {},
+            "Condition": {},
+            "Dependencies": []
+        }
+    },
+    "ATT-CustomColumnHandling-A-004-O": {
+        "Function": "Format",
+        "Reference": "CustomColumnHandling",
+        "EntityType": "Attribute",
+        "EntityName": "Custom Column Handling",
+        "EntityId": "CustomColumnHandling",
+        "ModelVersionIntroduced": "1.4",
+        "Status": "Active",
+        "Notes": "",
+        "ApplicabilityCriteria": [],
+        "Order": 40,
+        "Type": "Dynamic",
+        "ValidationCriteria": {
+            "MustSatisfy": "Custom column SHOULD use only alphanumeric characters in the portion of the Column ID following the required x_ prefix.",
+            "Keyword": "SHOULD",
+            "Requirement": {},
+            "Condition": {},
+            "Dependencies": []
+        }
+    },
+    "ATT-CustomColumnHandling-A-005-O": {
+        "Function": "Format",
+        "Reference": "CustomColumnHandling",
+        "EntityType": "Attribute",
+        "EntityName": "Custom Column Handling",
+        "EntityId": "CustomColumnHandling",
+        "ModelVersionIntroduced": "1.4",
+        "Status": "Active",
+        "Notes": "",
+        "ApplicabilityCriteria": [],
+        "Order": 50,
+        "Type": "Dynamic",
+        "ValidationCriteria": {
+            "MustSatisfy": "Custom column SHOULD NOT include special characters other than the underscore in the required x_ prefix.",
+            "Keyword": "SHOULD NOT",
+            "Requirement": {},
+            "Condition": {},
+            "Dependencies": []
+        }
+    },
+    "ATT-CustomColumnHandling-A-006-O": {
+        "Function": "Format",
+        "Reference": "CustomColumnHandling",
+        "EntityType": "Attribute",
+        "EntityName": "Custom Column Handling",
+        "EntityId": "CustomColumnHandling",
+        "ModelVersionIntroduced": "1.4",
+        "Status": "Active",
+        "Notes": "",
+        "ApplicabilityCriteria": [],
+        "Order": 60,
+        "Type": "Dynamic",
+        "ValidationCriteria": {
+            "MustSatisfy": "Custom column SHOULD NOT use abbreviations other than Id in the Column ID.",
+            "Keyword": "SHOULD NOT",
+            "Requirement": {},
+            "Condition": {},
+            "Dependencies": []
+        }
+    },
+    "ATT-CustomColumnHandling-A-007-O": {
+        "Function": "Format",
+        "Reference": "CustomColumnHandling",
+        "EntityType": "Attribute",
+        "EntityName": "Custom Column Handling",
+        "EntityId": "CustomColumnHandling",
+        "ModelVersionIntroduced": "1.4",
+        "Status": "Active",
+        "Notes": "",
+        "ApplicabilityCriteria": [],
+        "Order": 70,
+        "Type": "Dynamic",
+        "ValidationCriteria": {
+            "MustSatisfy": "Custom column SHOULD NOT use acronyms other than Sku in the Column ID.",
+            "Keyword": "SHOULD NOT",
+            "Requirement": {},
+            "Condition": {},
+            "Dependencies": []
+        }
+    },
+    "ATT-CustomColumnHandling-A-008-O": {
+        "Function": "Format",
+        "Reference": "CustomColumnHandling",
+        "EntityType": "Attribute",
+        "EntityName": "Custom Column Handling",
+        "EntityId": "CustomColumnHandling",
+        "ModelVersionIntroduced": "1.4",
+        "Status": "Active",
+        "Notes": "",
+        "ApplicabilityCriteria": [],
+        "Order": 80,
+        "Type": "Dynamic",
+        "ValidationCriteria": {
+            "MustSatisfy": "Custom column SHOULD NOT exceed 50 characters in the Column ID to accommodate column length restrictions of various data repositories.",
+            "Keyword": "SHOULD NOT",
+            "Requirement": {},
+            "Condition": {},
+            "Dependencies": []
+        }
+    },
+    "ATT-CustomColumnHandling-A-009-C": {
+        "Function": "Format",
+        "Reference": "CustomColumnHandling",
+        "EntityType": "Attribute",
+        "EntityName": "Custom Column Handling",
+        "EntityId": "CustomColumnHandling",
+        "ModelVersionIntroduced": "1.4",
+        "Status": "Active",
+        "Notes": "",
+        "ApplicabilityCriteria": [],
+        "Order": 90,
+        "Type": "Dynamic",
+        "ValidationCriteria": {
+            "MustSatisfy": "Custom column SHOULD include the Id suffix in the Column ID when the custom column represents an identifier.",
+            "Keyword": "SHOULD",
+            "Requirement": {},
+            "Condition": {},
+            "Dependencies": []
+        }
+    },
+    "ATT-CustomColumnHandling-A-010-C": {
+        "Function": "Format",
+        "Reference": "CustomColumnHandling",
+        "EntityType": "Attribute",
+        "EntityName": "Custom Column Handling",
+        "EntityId": "CustomColumnHandling",
+        "ModelVersionIntroduced": "1.4",
+        "Status": "Active",
+        "Notes": "",
+        "ApplicabilityCriteria": [],
+        "Order": 100,
+        "Type": "Dynamic",
+        "ValidationCriteria": {
+            "MustSatisfy": "Custom column SHOULD include the Name suffix in the Column ID when the custom column represents a name.",
+            "Keyword": "SHOULD",
+            "Requirement": {},
+            "Condition": {},
+            "Dependencies": []
+        }
+    },
+    "ATT-CustomColumnHandling-A-011-C": {
+        "Function": "Format",
+        "Reference": "CustomColumnHandling",
+        "EntityType": "Attribute",
+        "EntityName": "Custom Column Handling",
+        "EntityId": "CustomColumnHandling",
+        "ModelVersionIntroduced": "1.4",
+        "Status": "Active",
+        "Notes": "",
+        "ApplicabilityCriteria": [],
+        "Order": 110,
+        "Type": "Dynamic",
+        "ValidationCriteria": {
+            "MustSatisfy": "Custom column SHOULD conform to DataGeneratorCalculatedSplitCostAllocationHandling requirements when the data generator supports data generator-calculated split cost allocation.",
+            "Keyword": "SHOULD",
+            "Requirement": {},
+            "Condition": {},
+            "Dependencies": []
+        }
+    },
+    "ATT-CustomColumnHandling-A-012-O": {
+        "Function": "Format",
+        "Reference": "CustomColumnHandling",
+        "EntityType": "Attribute",
+        "EntityName": "Custom Column Handling",
+        "EntityId": "CustomColumnHandling",
+        "ModelVersionIntroduced": "1.4",
+        "Status": "Active",
+        "Notes": "",
+        "ApplicabilityCriteria": [],
+        "Order": 120,
+        "Type": "Dynamic",
+        "ValidationCriteria": {
+            "MustSatisfy": "Custom column SHOULD conform to NullHandling requirements.",
+            "Keyword": "SHOULD",
+            "Requirement": {},
+            "Condition": {},
+            "Dependencies": []
+        }
+    },
+    "ATT-CustomColumnHandling-A-013-O": {
+        "Function": "Format",
+        "Reference": "CustomColumnHandling",
+        "EntityType": "Attribute",
+        "EntityName": "Custom Column Handling",
+        "EntityId": "CustomColumnHandling",
+        "ModelVersionIntroduced": "1.4",
+        "Status": "Active",
+        "Notes": "",
+        "ApplicabilityCriteria": [],
+        "Order": 130,
+        "Type": "Dynamic",
+        "ValidationCriteria": {
+            "MustSatisfy": "Custom column containing date/time values SHOULD conform to DateTimeFormat requirements.",
+            "Keyword": "SHOULD",
+            "Requirement": {},
+            "Condition": {},
+            "Dependencies": []
+        }
+    },
+    "ATT-CustomColumnHandling-A-014-M": {
+        "Function": "Format",
+        "Reference": "CustomColumnHandling",
+        "EntityType": "Attribute",
+        "EntityName": "Custom Column Handling",
+        "EntityId": "CustomColumnHandling",
+        "ModelVersionIntroduced": "1.4",
+        "Status": "Active",
+        "Notes": "",
+        "ApplicabilityCriteria": [],
+        "Order": 140,
+        "Type": "Dynamic",
+        "ValidationCriteria": {
+            "MustSatisfy": "Custom column containing JSON objects MUST have its object schema documented by the data generator and accessible to practitioners.",
+            "Keyword": "MUST",
+            "Requirement": {},
+            "Condition": {},
+            "Dependencies": []
+        }
+    },
+    "ATT-CustomColumnHandling-A-015-M": {
+        "Function": "Format",
+        "Reference": "CustomColumnHandling",
+        "EntityType": "Attribute",
+        "EntityName": "Custom Column Handling",
+        "EntityId": "CustomColumnHandling",
+        "ModelVersionIntroduced": "1.4",
+        "Status": "Active",
+        "Notes": "",
+        "ApplicabilityCriteria": [],
+        "Order": 150,
+        "Type": "Dynamic",
+        "ValidationCriteria": {
+            "MustSatisfy": "Custom column containing numeric values MUST contain a single numeric value.",
+            "Keyword": "MUST",
+            "Requirement": {},
+            "Condition": {},
+            "Dependencies": []
+        }
+    },
+    "ATT-CustomColumnHandling-A-016-O": {
+        "Function": "Format",
+        "Reference": "CustomColumnHandling",
+        "EntityType": "Attribute",
+        "EntityName": "Custom Column Handling",
+        "EntityId": "CustomColumnHandling",
+        "ModelVersionIntroduced": "1.4",
+        "Status": "Active",
+        "Notes": "",
+        "ApplicabilityCriteria": [],
+        "Order": 160,
+        "Type": "Dynamic",
+        "ValidationCriteria": {
+            "MustSatisfy": "Custom column containing numeric values SHOULD conform to NumericFormat requirements.",
+            "Keyword": "SHOULD",
+            "Requirement": {},
+            "Condition": {},
+            "Dependencies": []
+        }
+    },
+    "ATT-CustomColumnHandling-A-017-O": {
+        "Function": "Format",
+        "Reference": "CustomColumnHandling",
+        "EntityType": "Attribute",
+        "EntityName": "Custom Column Handling",
+        "EntityId": "CustomColumnHandling",
+        "ModelVersionIntroduced": "1.4",
+        "Status": "Active",
+        "Notes": "",
+        "ApplicabilityCriteria": [],
+        "Order": 170,
+        "Type": "Dynamic",
+        "ValidationCriteria": {
+            "MustSatisfy": "Custom column containing string values SHOULD conform to StringHandling requirements.",
+            "Keyword": "SHOULD",
+            "Requirement": {},
+            "Condition": {},
+            "Dependencies": []
+        }
+    },
+    "ATT-CustomColumnHandling-A-018-O": {
+        "Function": "Format",
+        "Reference": "CustomColumnHandling",
+        "EntityType": "Attribute",
+        "EntityName": "Custom Column Handling",
+        "EntityId": "CustomColumnHandling",
+        "ModelVersionIntroduced": "1.4",
+        "Status": "Active",
+        "Notes": "",
+        "ApplicabilityCriteria": [],
+        "Order": 180,
+        "Type": "Dynamic",
+        "ValidationCriteria": {
+            "MustSatisfy": "Custom column representing a national currency SHOULD conform to CurrencyFormat requirements.",
+            "Keyword": "SHOULD",
+            "Requirement": {},
+            "Condition": {},
+            "Dependencies": []
+        }
+    },
+    "ATT-CustomColumnHandling-A-019-O": {
+        "Function": "Format",
+        "Reference": "CustomColumnHandling",
+        "EntityType": "Attribute",
+        "EntityName": "Custom Column Handling",
+        "EntityId": "CustomColumnHandling",
+        "ModelVersionIntroduced": "1.4",
+        "Status": "Active",
+        "Notes": "",
+        "ApplicabilityCriteria": [],
+        "Order": 190,
+        "Type": "Dynamic",
+        "ValidationCriteria": {
+            "MustSatisfy": "Custom column representing a measurement unit SHOULD conform to UnitFormat requirements.",
+            "Keyword": "SHOULD",
+            "Requirement": {},
+            "Condition": {},
+            "Dependencies": []
+        }
+    }
+}

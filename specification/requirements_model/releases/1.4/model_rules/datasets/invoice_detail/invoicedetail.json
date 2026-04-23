@@ -978,7 +978,9 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "ATT-CorrectionHandling-A-000-M"
+      ]
     }
   },
   "IND-InvoiceDetail-D-028-M": {
@@ -1001,7 +1003,9 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "ATT-DatasetCompleteness-A-000-M"
+      ]
     }
   },
   "IND-InvoiceDetail-D-029-M": {
@@ -1024,7 +1028,9 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "ATT-DatasetConfiguration-A-000-M"
+      ]
     }
   },
   "IND-InvoiceDetail-D-030-M": {
@@ -1047,7 +1053,9 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "ATT-DeliveryHandling-A-000-M"
+      ]
     }
   },
   "IND-InvoiceDetail-D-031-M": {
@@ -1093,7 +1101,9 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "ATT-FocusColumnHandling-A-000-M"
+      ]
     }
   },
   "IND-InvoiceDetail-D-033-M": {
@@ -1116,7 +1126,9 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "ATT-NullHandling-A-000-C"
+      ]
     }
   },
   "IND-InvoiceDetail-D-034-M": {
@@ -1139,7 +1151,9 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "ATT-CustomColumnHandling-A-000-M"
+      ]
     }
   },
   "IND-InvoiceDetail-D-035-M": {

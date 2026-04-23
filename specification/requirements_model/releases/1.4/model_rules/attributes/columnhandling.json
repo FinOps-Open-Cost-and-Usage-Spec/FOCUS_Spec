@@ -1,5 +1,5 @@
 {
-  "ColumnHandling-A-000-M": {
+  "ATT-ColumnHandling-A-000-M": {
     "Function": "Composite",
     "Reference": "ColumnHandling",
     "EntityType": "Attribute",
@@ -7,7 +7,8 @@
     "EntityId": "ColumnHandling",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "Order": 0,
@@ -19,68 +20,68 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ColumnHandling-A-001-M"
+            "ModelRuleId": "ATT-ColumnHandling-A-001-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ColumnHandling-A-002-M"
+            "ModelRuleId": "ATT-ColumnHandling-A-002-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ColumnHandling-A-003-M"
+            "ModelRuleId": "ATT-ColumnHandling-A-003-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ColumnHandling-A-004-O"
+            "ModelRuleId": "ATT-ColumnHandling-A-004-O"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ColumnHandling-A-005-O"
+            "ModelRuleId": "ATT-ColumnHandling-A-005-O"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ColumnHandling-A-006-M"
+            "ModelRuleId": "ATT-ColumnHandling-A-006-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ColumnHandling-A-008-M"
+            "ModelRuleId": "ATT-ColumnHandling-A-008-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ColumnHandling-A-009-M"
+            "ModelRuleId": "ATT-ColumnHandling-A-009-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ColumnHandling-A-012-O"
+            "ModelRuleId": "ATT-ColumnHandling-A-012-O"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ColumnHandling-A-013-O"
+            "ModelRuleId": "ATT-ColumnHandling-A-013-O"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ColumnHandling-A-014-O"
+            "ModelRuleId": "ATT-ColumnHandling-A-014-O"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "ColumnHandling-A-001-M",
-        "ColumnHandling-A-002-M",
-        "ColumnHandling-A-003-M",
-        "ColumnHandling-A-004-O",
-        "ColumnHandling-A-005-O",
-        "ColumnHandling-A-006-M",
-        "ColumnHandling-A-015-M",
-        "ColumnHandling-A-008-M",
-        "ColumnHandling-A-009-M",
-        "ColumnHandling-A-012-O",
-        "ColumnHandling-A-013-O",
-        "ColumnHandling-A-014-O"
+        "ATT-ColumnHandling-A-001-M",
+        "ATT-ColumnHandling-A-002-M",
+        "ATT-ColumnHandling-A-003-M",
+        "ATT-ColumnHandling-A-004-O",
+        "ATT-ColumnHandling-A-005-O",
+        "ATT-ColumnHandling-A-006-M",
+        "ATT-ColumnHandling-A-015-M",
+        "ATT-ColumnHandling-A-008-M",
+        "ATT-ColumnHandling-A-009-M",
+        "ATT-ColumnHandling-A-012-O",
+        "ATT-ColumnHandling-A-013-O",
+        "ATT-ColumnHandling-A-014-O"
       ]
     }
   },
-  "ColumnHandling-A-001-M": {
+  "ATT-ColumnHandling-A-001-M": {
     "Function": "Validation",
     "Reference": "ColumnHandling",
     "EntityType": "Attribute",
@@ -88,7 +89,8 @@
     "EntityId": "ColumnHandling",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "Order": 10,
@@ -100,7 +102,7 @@
       "Dependencies": []
     }
   },
-  "ColumnHandling-A-002-M": {
+  "ATT-ColumnHandling-A-002-M": {
     "Function": "Validation",
     "Reference": "ColumnHandling",
     "EntityType": "Attribute",
@@ -108,7 +110,8 @@
     "EntityId": "ColumnHandling",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "Order": 20,
@@ -120,7 +123,7 @@
       "Dependencies": []
     }
   },
-  "ColumnHandling-A-003-M": {
+  "ATT-ColumnHandling-A-003-M": {
     "Function": "Validation",
     "Reference": "ColumnHandling",
     "EntityType": "Attribute",
@@ -128,7 +131,8 @@
     "EntityId": "ColumnHandling",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "Order": 30,
@@ -140,7 +144,7 @@
       "Dependencies": []
     }
   },
-  "ColumnHandling-A-004-O": {
+  "ATT-ColumnHandling-A-004-O": {
     "Function": "Validation",
     "Reference": "ColumnHandling",
     "EntityType": "Attribute",
@@ -148,7 +152,8 @@
     "EntityId": "ColumnHandling",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "Order": 40,
@@ -160,7 +165,7 @@
       "Dependencies": []
     }
   },
-  "ColumnHandling-A-005-O": {
+  "ATT-ColumnHandling-A-005-O": {
     "Function": "Validation",
     "Reference": "ColumnHandling",
     "EntityType": "Attribute",
@@ -168,7 +173,8 @@
     "EntityId": "ColumnHandling",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "Order": 50,
@@ -180,7 +186,7 @@
       "Dependencies": []
     }
   },
-  "ColumnHandling-A-006-M": {
+  "ATT-ColumnHandling-A-006-M": {
     "Function": "Validation",
     "Reference": "ColumnHandling",
     "EntityType": "Attribute",
@@ -188,7 +194,8 @@
     "EntityId": "ColumnHandling",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "Order": 60,
@@ -200,7 +207,7 @@
       "Dependencies": []
     }
   },
-  "ColumnHandling-A-007-O": {
+  "ATT-ColumnHandling-A-007-O": {
     "Function": "Validation",
     "Reference": "ColumnHandling",
     "EntityType": "Attribute",
@@ -221,7 +228,7 @@
       "Dependencies": []
     }
   },
-  "ColumnHandling-A-008-M": {
+  "ATT-ColumnHandling-A-008-M": {
     "Function": "Validation",
     "Reference": "ColumnHandling",
     "EntityType": "Attribute",
@@ -229,7 +236,8 @@
     "EntityId": "ColumnHandling",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "Order": 90,
@@ -241,7 +249,7 @@
       "Dependencies": []
     }
   },
-  "ColumnHandling-A-009-M": {
+  "ATT-ColumnHandling-A-009-M": {
     "Function": "Composite",
     "Reference": "ColumnHandling",
     "EntityType": "Attribute",
@@ -249,7 +257,8 @@
     "EntityId": "ColumnHandling",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "Order": 100,
@@ -261,22 +270,22 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ColumnHandling-A-010-M"
+            "ModelRuleId": "ATT-ColumnHandling-A-010-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ColumnHandling-A-011-O"
+            "ModelRuleId": "ATT-ColumnHandling-A-011-O"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "ColumnHandling-A-010-M",
-        "ColumnHandling-A-011-O"
+        "ATT-ColumnHandling-A-010-M",
+        "ATT-ColumnHandling-A-011-O"
       ]
     }
   },
-  "ColumnHandling-A-010-M": {
+  "ATT-ColumnHandling-A-010-M": {
     "Function": "Validation",
     "Reference": "ColumnHandling",
     "EntityType": "Attribute",
@@ -284,7 +293,8 @@
     "EntityId": "ColumnHandling",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "Order": 110,
@@ -296,7 +306,7 @@
       "Dependencies": []
     }
   },
-  "ColumnHandling-A-011-O": {
+  "ATT-ColumnHandling-A-011-O": {
     "Function": "Validation",
     "Reference": "ColumnHandling",
     "EntityType": "Attribute",
@@ -304,7 +314,8 @@
     "EntityId": "ColumnHandling",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "Order": 120,
@@ -316,7 +327,7 @@
       "Dependencies": []
     }
   },
-  "ColumnHandling-A-012-O": {
+  "ATT-ColumnHandling-A-012-O": {
     "Function": "Validation",
     "Reference": "ColumnHandling",
     "EntityType": "Attribute",
@@ -324,7 +335,8 @@
     "EntityId": "ColumnHandling",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "Order": 130,
@@ -336,7 +348,7 @@
       "Dependencies": []
     }
   },
-  "ColumnHandling-A-013-O": {
+  "ATT-ColumnHandling-A-013-O": {
     "Function": "Validation",
     "Reference": "ColumnHandling",
     "EntityType": "Attribute",
@@ -344,7 +356,8 @@
     "EntityId": "ColumnHandling",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "Order": 140,
@@ -356,7 +369,7 @@
       "Dependencies": []
     }
   },
-  "ColumnHandling-A-014-O": {
+  "ATT-ColumnHandling-A-014-O": {
     "Function": "Validation",
     "Reference": "ColumnHandling",
     "EntityType": "Attribute",
@@ -364,7 +377,8 @@
     "EntityId": "ColumnHandling",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "Order": 150,
@@ -376,7 +390,7 @@
       "Dependencies": []
     }
   },
-  "ColumnHandling-A-015-M": {
+  "ATT-ColumnHandling-A-015-M": {
     "Function": "Validation",
     "Reference": "ColumnHandling",
     "EntityType": "Attribute",
@@ -384,7 +398,8 @@
     "EntityId": "ColumnHandling",
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "Order": 70,

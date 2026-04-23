@@ -1,0 +1,302 @@
+{
+  "ATT-FocusColumnHandling-A-000-M": {
+    "Function": "Composite",
+    "Reference": "FocusColumnHandling",
+    "EntityType": "Attribute",
+    "EntityName": "FOCUS Column Handling",
+    "EntityId": "FocusColumnHandling",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 0,
+    "ValidationCriteria": {
+      "MustSatisfy": "Column conforming to FocusColumnHandling attribute MUST adhere to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-FocusColumnHandling-A-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-FocusColumnHandling-A-002-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-FocusColumnHandling-A-003-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-FocusColumnHandling-A-004-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-FocusColumnHandling-A-005-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-FocusColumnHandling-A-006-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-FocusColumnHandling-A-007-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-FocusColumnHandling-A-008-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-FocusColumnHandling-A-009-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-FocusColumnHandling-A-010-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-FocusColumnHandling-A-011-M"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "ATT-FocusColumnHandling-A-001-M",
+        "ATT-FocusColumnHandling-A-002-M",
+        "ATT-FocusColumnHandling-A-003-M",
+        "ATT-FocusColumnHandling-A-004-M",
+        "ATT-FocusColumnHandling-A-005-M",
+        "ATT-FocusColumnHandling-A-006-O",
+        "ATT-FocusColumnHandling-A-007-O",
+        "ATT-FocusColumnHandling-A-008-M",
+        "ATT-FocusColumnHandling-A-009-M",
+        "ATT-FocusColumnHandling-A-010-M",
+        "ATT-FocusColumnHandling-A-011-M"
+      ]
+    }
+  },
+  "ATT-FocusColumnHandling-A-001-M": {
+    "Function": "Validation",
+    "Reference": "FocusColumnHandling",
+    "EntityType": "Attribute",
+    "EntityName": "FOCUS Column Handling",
+    "EntityId": "FocusColumnHandling",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "Order": 10,
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS column MUST use a Display Name consistent with the Column ID, with spaces inserted between words (e.g., Column ID BillingAccountName and Display Name Billing Account Name, Column ID BillingAccountId and Display Name Billing Account ID).",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-FocusColumnHandling-A-002-M": {
+    "Function": "Validation",
+    "Reference": "FocusColumnHandling",
+    "EntityType": "Attribute",
+    "EntityName": "FOCUS Column Handling",
+    "EntityId": "FocusColumnHandling",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "Order": 20,
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS column MUST use PascalCase in the Column ID.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-FocusColumnHandling-A-003-M": {
+    "Function": "Validation",
+    "Reference": "FocusColumnHandling",
+    "EntityType": "Attribute",
+    "EntityName": "FOCUS Column Handling",
+    "EntityId": "FocusColumnHandling",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "Order": 30,
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS column MUST use only alphanumeric characters in the Column ID.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-FocusColumnHandling-A-004-M": {
+    "Function": "Validation",
+    "Reference": "FocusColumnHandling",
+    "EntityType": "Attribute",
+    "EntityName": "FOCUS Column Handling",
+    "EntityId": "FocusColumnHandling",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "Order": 40,
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS column MUST NOT include special characters in the Column ID.",
+      "Keyword": "MUST NOT",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-FocusColumnHandling-A-005-M": {
+    "Function": "Validation",
+    "Reference": "FocusColumnHandling",
+    "EntityType": "Attribute",
+    "EntityName": "FOCUS Column Handling",
+    "EntityId": "FocusColumnHandling",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "Order": 50,
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS column MUST NOT use abbreviations other than Id in the Column ID.",
+      "Keyword": "MUST NOT",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-FocusColumnHandling-A-006-O": {
+    "Function": "Validation",
+    "Reference": "FocusColumnHandling",
+    "EntityType": "Attribute",
+    "EntityName": "FOCUS Column Handling",
+    "EntityId": "FocusColumnHandling",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "Order": 60,
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS column SHOULD NOT use acronyms other than Sku in the Column ID.",
+      "Keyword": "SHOULD NOT",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-FocusColumnHandling-A-007-O": {
+    "Function": "Validation",
+    "Reference": "FocusColumnHandling",
+    "EntityType": "Attribute",
+    "EntityName": "FOCUS Column Handling",
+    "EntityId": "FocusColumnHandling",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "Order": 70,
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS column SHOULD NOT exceed 50 characters in the Column ID to accommodate column length restrictions of various data repositories.",
+      "Keyword": "SHOULD NOT",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-FocusColumnHandling-A-008-M": {
+    "Function": "Validation",
+    "Reference": "FocusColumnHandling",
+    "EntityType": "Attribute",
+    "EntityName": "FOCUS Column Handling",
+    "EntityId": "FocusColumnHandling",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "Order": 80,
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS column representing an identifier MUST include the Id suffix in the Column ID.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-FocusColumnHandling-A-009-M": {
+    "Function": "Validation",
+    "Reference": "FocusColumnHandling",
+    "EntityType": "Attribute",
+    "EntityName": "FOCUS Column Handling",
+    "EntityId": "FocusColumnHandling",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "Order": 90,
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS column representing a name MUST include the Name suffix in the Column ID.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-FocusColumnHandling-A-010-M": {
+    "Function": "Validation",
+    "Reference": "FocusColumnHandling",
+    "EntityType": "Attribute",
+    "EntityName": "FOCUS Column Handling",
+    "EntityId": "FocusColumnHandling",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "Order": 100,
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS column representing a product offering that incurred a charge MUST include Sku in the Column ID.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-FocusColumnHandling-A-011-M": {
+    "Function": "Validation",
+    "Reference": "FocusColumnHandling",
+    "EntityType": "Attribute",
+    "EntityName": "FOCUS Column Handling",
+    "EntityId": "FocusColumnHandling",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "Order": 110,
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS column that includes the Category suffix in the Column ID and is not null MUST contain one of the FOCUS-defined allowed values.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}

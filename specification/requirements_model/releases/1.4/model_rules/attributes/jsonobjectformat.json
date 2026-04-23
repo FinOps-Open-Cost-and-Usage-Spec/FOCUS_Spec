@@ -1,5 +1,5 @@
 {
-  "JsonObjectFormat-A-000-M": {
+  "ATT-JsonObjectFormat-A-000-M": {
     "Function": "Composite",
     "Reference": "JsonObjectFormat",
     "EntityType": "Attribute",
@@ -12,49 +12,39 @@
     "Type": "Static",
     "Order": 0,
     "ValidationCriteria": {
-      "MustSatisfy": "All complex JSON Object columns defined in the FOCUS specification MUST follow the object formatting requirements listed below.",
+      "MustSatisfy": "Column conforming to JsonObjectFormat attribute MUST adhere to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "JsonObjectFormat-A-001-M"
+            "ModelRuleId": "ATT-JsonObjectFormat-A-001-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "JsonObjectFormat-A-002-M"
+            "ModelRuleId": "ATT-JsonObjectFormat-A-005-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "JsonObjectFormat-A-005-M"
+            "ModelRuleId": "ATT-JsonObjectFormat-A-009-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "JsonObjectFormat-A-009-M"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "JsonObjectFormat-A-010-M"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "JsonObjectFormat-A-011-O"
+            "ModelRuleId": "ATT-JsonObjectFormat-A-011-O"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "JsonObjectFormat-A-001-M",
-        "JsonObjectFormat-A-002-M",
-        "JsonObjectFormat-A-005-M",
-        "JsonObjectFormat-A-009-M",
-        "JsonObjectFormat-A-010-M",
-        "JsonObjectFormat-A-011-O"
+        "ATT-JsonObjectFormat-A-001-M",
+        "ATT-JsonObjectFormat-A-009-M",
+        "ATT-JsonObjectFormat-A-011-O",
+        "ATT-JsonObjectFormat-A-005-M"
       ]
     }
   },
-  "JsonObjectFormat-A-001-M": {
+  "ATT-JsonObjectFormat-A-001-M": {
     "Function": "Format",
     "Reference": "JsonObjectFormat",
     "EntityType": "Attribute",
@@ -74,7 +64,83 @@
       "Dependencies": []
     }
   },
-  "JsonObjectFormat-A-002-M": {
+  "ATT-JsonObjectFormat-A-002-M": {
+    "Function": "Composite",
+    "Reference": "JsonObjectFormat",
+    "EntityType": "Attribute",
+    "EntityName": "Json Object Format",
+    "EntityId": "JsonObjectFormat",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": -1,
+    "ValidationCriteria": {
+      "MustSatisfy": "Objects used within JsonObjectFormat adhere to the following additional requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-JsonObjectFormat-A-003-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-JsonObjectFormat-A-004-M"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "ATT-JsonObjectFormat-A-003-M",
+        "ATT-JsonObjectFormat-A-004-M"
+      ]
+    }
+  },
+  "ATT-JsonObjectFormat-A-003-M": {
+    "Function": "Validation",
+    "Reference": "JsonObjectFormat",
+    "EntityType": "Attribute",
+    "EntityName": "Json Object Format",
+    "EntityId": "JsonObjectFormat",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "Order": 40,
+    "ValidationCriteria": {
+      "MustSatisfy": "Key in Object in FOCUS dataset column MUST be unique.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-JsonObjectFormat-A-004-M": {
+    "Function": "Type",
+    "Reference": "JsonObjectFormat",
+    "EntityType": "Attribute",
+    "EntityName": "Json Object Format",
+    "EntityId": "JsonObjectFormat",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "Order": 50,
+    "ValidationCriteria": {
+      "MustSatisfy": "Key value in Object in FOCUS dataset column MUST be of type number, string, boolean ( true or false ), array, object, or null.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-JsonObjectFormat-A-005-M": {
     "Function": "Composite",
     "Reference": "JsonObjectFormat",
     "EntityType": "Attribute",
@@ -85,31 +151,137 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
-    "Order": 20,
+    "Order": 60,
     "ValidationCriteria": {
-      "MustSatisfy": "Objects used within JsonObjectFormat adhere to the following additional requirements:",
+      "MustSatisfy": "Object in array in FOCUS dataset column MUST adhere to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "JsonObjectFormat-A-003-M"
+            "ModelRuleId": "ATT-JsonObjectFormat-A-006-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "JsonObjectFormat-A-004-M"
+            "ModelRuleId": "ATT-JsonObjectFormat-A-007-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-JsonObjectFormat-A-008-M"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "JsonObjectFormat-A-003-M",
-        "JsonObjectFormat-A-004-M"
+        "ATT-JsonObjectFormat-A-006-M",
+        "ATT-JsonObjectFormat-A-007-M",
+        "ATT-JsonObjectFormat-A-008-M"
       ]
     }
   },
-  "JsonObjectFormat-A-003-M": {
+  "ATT-JsonObjectFormat-A-006-M": {
+    "Function": "Type",
+    "Reference": "JsonObjectFormat",
+    "EntityType": "Attribute",
+    "EntityName": "Json Object Format",
+    "EntityId": "JsonObjectFormat",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "Order": 70,
+    "ValidationCriteria": {
+      "MustSatisfy": "Object in array in FOCUS dataset column MUST be of a consistent type.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-JsonObjectFormat-A-007-M": {
+    "Function": "Validation",
+    "Reference": "JsonObjectFormat",
+    "EntityType": "Attribute",
+    "EntityName": "Json Object Format",
+    "EntityId": "JsonObjectFormat",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "Order": 80,
+    "ValidationCriteria": {
+      "MustSatisfy": "Object in array in FOCUS dataset column MUST NOT be repeated.",
+      "Keyword": "MUST NOT",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-JsonObjectFormat-A-008-M": {
+    "Function": "Nullability",
+    "Reference": "JsonObjectFormat",
+    "EntityType": "Attribute",
+    "EntityName": "Json Object Format",
+    "EntityId": "JsonObjectFormat",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "Order": 90,
+    "ValidationCriteria": {
+      "MustSatisfy": "Object in array in FOCUS dataset column MUST NOT be null.",
+      "Keyword": "MUST NOT",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-JsonObjectFormat-A-009-M": {
+    "Function": "Validation",
+    "Reference": "JsonObjectFormat",
+    "EntityType": "Attribute",
+    "EntityName": "Json Object Format",
+    "EntityId": "JsonObjectFormat",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "Order": 20,
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS dataset column MUST conform to all requirements of the corresponding column definition, which may specify or restrict the shape or contents of the object.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-JsonObjectFormat-A-010-M": {
+    "Function": "Validation",
+    "Reference": "JsonObjectFormat",
+    "EntityType": "Attribute",
+    "EntityName": "Json Object Format",
+    "EntityId": "JsonObjectFormat",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "Order": -1,
+    "ValidationCriteria": {
+      "MustSatisfy": "Data Generator-defined custom columns whose contents contain a JSON object MUST have their object schema documented by the data generator.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-JsonObjectFormat-A-011-O": {
     "Function": "Validation",
     "Reference": "JsonObjectFormat",
     "EntityType": "Attribute",
@@ -122,187 +294,7 @@
     "Type": "Dynamic",
     "Order": 30,
     "ValidationCriteria": {
-      "MustSatisfy": "Object keys MUST be unique within an object.",
-      "Keyword": "MUST",
-      "Requirement": {},
-      "Condition": {},
-      "Dependencies": []
-    }
-  },
-  "JsonObjectFormat-A-004-M": {
-    "Function": "Type",
-    "Reference": "JsonObjectFormat",
-    "EntityType": "Attribute",
-    "EntityName": "Json Object Format",
-    "EntityId": "JsonObjectFormat",
-    "Notes": "",
-    "ModelVersionIntroduced": "1.3",
-    "Status": "Active",
-    "ApplicabilityCriteria": [],
-    "Type": "Dynamic",
-    "Order": 40,
-    "ValidationCriteria": {
-      "MustSatisfy": "Object values MUST be one of the following types: number, string, `true`, `false`, array, object, or `null`.",
-      "Keyword": "MUST",
-      "Requirement": {},
-      "Condition": {},
-      "Dependencies": []
-    }
-  },
-  "JsonObjectFormat-A-005-M": {
-    "Function": "Composite",
-    "Reference": "JsonObjectFormat",
-    "EntityType": "Attribute",
-    "EntityName": "Json Object Format",
-    "EntityId": "JsonObjectFormat",
-    "Notes": "",
-    "ModelVersionIntroduced": "1.3",
-    "Status": "Active",
-    "ApplicabilityCriteria": [],
-    "Type": "Static",
-    "Order": 50,
-    "ValidationCriteria": {
-      "MustSatisfy": "Arrays used within JsonObjectFormat adhere to the following additional requirements:",
-      "Keyword": "MUST",
-      "Requirement": {
-        "CheckFunction": "AND",
-        "Items": [
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "JsonObjectFormat-A-006-M"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "JsonObjectFormat-A-007-M"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "JsonObjectFormat-A-008-M"
-          }
-        ]
-      },
-      "Condition": {},
-      "Dependencies": [
-        "JsonObjectFormat-A-006-M",
-        "JsonObjectFormat-A-007-M",
-        "JsonObjectFormat-A-008-M"
-      ]
-    }
-  },
-  "JsonObjectFormat-A-006-M": {
-    "Function": "Type",
-    "Reference": "JsonObjectFormat",
-    "EntityType": "Attribute",
-    "EntityName": "Json Object Format",
-    "EntityId": "JsonObjectFormat",
-    "Notes": "",
-    "ModelVersionIntroduced": "1.3",
-    "Status": "Active",
-    "ApplicabilityCriteria": [],
-    "Type": "Dynamic",
-    "Order": 60,
-    "ValidationCriteria": {
-      "MustSatisfy": "Array elements MUST all use the same, consistent type.",
-      "Keyword": "MUST",
-      "Requirement": {},
-      "Condition": {},
-      "Dependencies": []
-    }
-  },
-  "JsonObjectFormat-A-007-M": {
-    "Function": "Validation",
-    "Reference": "JsonObjectFormat",
-    "EntityType": "Attribute",
-    "EntityName": "Json Object Format",
-    "EntityId": "JsonObjectFormat",
-    "Notes": "",
-    "ModelVersionIntroduced": "1.3",
-    "Status": "Active",
-    "ApplicabilityCriteria": [],
-    "Type": "Dynamic",
-    "Order": 70,
-    "ValidationCriteria": {
-      "MustSatisfy": "Array elements MUST NOT be repeated.",
-      "Keyword": "MUST NOT",
-      "Requirement": {},
-      "Condition": {},
-      "Dependencies": []
-    }
-  },
-  "JsonObjectFormat-A-008-M": {
-    "Function": "Nullability",
-    "Reference": "JsonObjectFormat",
-    "EntityType": "Attribute",
-    "EntityName": "Json Object Format",
-    "EntityId": "JsonObjectFormat",
-    "Notes": "",
-    "ModelVersionIntroduced": "1.3",
-    "Status": "Active",
-    "ApplicabilityCriteria": [],
-    "Type": "Dynamic",
-    "Order": 80,
-    "ValidationCriteria": {
-      "MustSatisfy": "Array elements MUST NOT be null.",
-      "Keyword": "MUST NOT",
-      "Requirement": {},
-      "Condition": {},
-      "Dependencies": []
-    }
-  },
-  "JsonObjectFormat-A-009-M": {
-    "Function": "Validation",
-    "Reference": "JsonObjectFormat",
-    "EntityType": "Attribute",
-    "EntityName": "Json Object Format",
-    "EntityId": "JsonObjectFormat",
-    "Notes": "",
-    "ModelVersionIntroduced": "1.3",
-    "Status": "Active",
-    "ApplicabilityCriteria": [],
-    "Type": "Dynamic",
-    "Order": 90,
-    "ValidationCriteria": {
-      "MustSatisfy": "JsonObjectFormat columns MUST conform to all requirements of the corresponding column definition, which may specify or restrict the shape or contents of the Object.",
-      "Keyword": "MUST",
-      "Requirement": {},
-      "Condition": {},
-      "Dependencies": []
-    }
-  },
-  "JsonObjectFormat-A-010-M": {
-    "Function": "Validation",
-    "Reference": "JsonObjectFormat",
-    "EntityType": "Attribute",
-    "EntityName": "Json Object Format",
-    "EntityId": "JsonObjectFormat",
-    "Notes": "",
-    "ModelVersionIntroduced": "1.3",
-    "Status": "Active",
-    "ApplicabilityCriteria": [],
-    "Type": "Dynamic",
-    "Order": 100,
-    "ValidationCriteria": {
-      "MustSatisfy": "Data Generator-defined custom columns whose contents contain a JSON object MUST have their object schema documented by the data generator.",
-      "Keyword": "MUST",
-      "Requirement": {},
-      "Condition": {},
-      "Dependencies": []
-    }
-  },
-  "JsonObjectFormat-A-011-O": {
-    "Function": "Validation",
-    "Reference": "JsonObjectFormat",
-    "EntityType": "Attribute",
-    "EntityName": "Json Object Format",
-    "EntityId": "JsonObjectFormat",
-    "Notes": "",
-    "ModelVersionIntroduced": "1.3",
-    "Status": "Active",
-    "ApplicabilityCriteria": [],
-    "Type": "Dynamic",
-    "Order": 110,
-    "ValidationCriteria": {
-      "MustSatisfy": "JsonObjectFormat objects SHOULD NOT exceed 3 levels of nesting.",
+      "MustSatisfy": "Object in FOCUS dataset column SHOULD NOT exceed 3 levels of nesting.",
       "Keyword": "SHOULD NOT",
       "Requirement": {},
       "Condition": {},

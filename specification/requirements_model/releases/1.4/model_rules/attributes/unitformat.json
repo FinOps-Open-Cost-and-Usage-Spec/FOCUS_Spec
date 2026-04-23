@@ -1,5 +1,5 @@
 {
-  "UnitFormat-A-000-M": {
+  "ATT-UnitFormat-A-000-M": {
     "Function": "Composite",
     "Reference": "UnitFormat",
     "EntityType": "Attribute",
@@ -12,49 +12,35 @@
     "Order": 0,
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "All columns defined in FOCUS specifying Unit Format as a value format MUST follow the requirements listed below.",
+      "MustSatisfy": "Column conforming to UnitFormat attribute MUST adhere to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "UnitFormat-A-001-O"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "UnitFormat-A-002-O"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "UnitFormat-A-003-M"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "UnitFormat-A-004-C"
+            "ModelRuleId": "ATT-UnitFormat-A-005-M"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "UnitFormat-A-001-O",
-        "UnitFormat-A-002-O",
-        "UnitFormat-A-003-M",
-        "UnitFormat-A-004-C"
+        "ATT-UnitFormat-A-005-M"
       ]
     }
   },
-  "UnitFormat-A-001-O": {
+  "ATT-UnitFormat-A-001-O": {
     "Function": "Format",
     "Reference": "UnitFormat",
     "EntityType": "Attribute",
     "EntityName": "Unit Format",
     "EntityId": "UnitFormat",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "Notes": "",
     "ApplicabilityCriteria": [],
-    "Order": 10,
+    "Order": -1,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Units SHOULD be expressed as a single unit of measure adhering to one of the following three formats.",
@@ -64,17 +50,18 @@
       "Dependencies": []
     }
   },
-  "UnitFormat-A-002-O": {
+  "ATT-UnitFormat-A-002-O": {
     "Function": "Format",
     "Reference": "UnitFormat",
     "EntityType": "Attribute",
     "EntityName": "Unit Format",
     "EntityId": "UnitFormat",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "Notes": "",
     "ApplicabilityCriteria": [],
-    "Order": 20,
+    "Order": -1,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Units MAY be expressed with a unit quantity or time interval. If a unit quantity or time interval is used, the unit quantity or time interval MUST be expressed as a whole number.",
@@ -84,17 +71,18 @@
       "Dependencies": []
     }
   },
-  "UnitFormat-A-003-M": {
+  "ATT-UnitFormat-A-003-M": {
     "Function": "Format",
     "Reference": "UnitFormat",
     "EntityType": "Attribute",
     "EntityName": "Unit Format",
     "EntityId": "UnitFormat",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "Notes": "",
     "ApplicabilityCriteria": [],
-    "Order": 30,
+    "Order": -1,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Unit values and components of columns using the Unit Format MUST use a capitalization scheme that is consistent with the capitalization scheme used in this attribute if that term is listed in this section.",
@@ -104,20 +92,521 @@
       "Dependencies": []
     }
   },
-  "UnitFormat-A-004-C": {
+  "ATT-UnitFormat-A-004-C": {
     "Function": "Format",
     "Reference": "UnitFormat",
     "EntityType": "Attribute",
     "EntityName": "Unit Format",
     "EntityId": "UnitFormat",
     "ModelVersionIntroduced": "1.2",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Order": -1,
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Units SHOULD be composed of the list of recommended units listed in this section unless the unit value covers a dimension not listed in the recommended unit set, or if the unit covers a count-based unit distinct from recommended values in the count dimension listed in this section.",
+      "Keyword": "SHOULD",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-UnitFormat-A-005-M": {
+    "Function": "Composite",
+    "Reference": "UnitFormat",
+    "EntityType": "Attribute",
+    "EntityName": "Unit Format",
+    "EntityId": "UnitFormat",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Order": 10,
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS dataset column MUST adhere to the following base unit requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-UnitFormat-A-006-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-UnitFormat-A-007-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-UnitFormat-A-008-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-UnitFormat-A-009-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-UnitFormat-A-010-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-UnitFormat-A-011-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-UnitFormat-A-012-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-UnitFormat-A-013-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-UnitFormat-A-014-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-UnitFormat-A-015-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-UnitFormat-A-016-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-UnitFormat-A-017-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-UnitFormat-A-018-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-UnitFormat-A-019-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-UnitFormat-A-020-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-UnitFormat-A-021-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-UnitFormat-A-022-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-UnitFormat-A-023-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-UnitFormat-A-024-O"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "ATT-UnitFormat-A-006-M",
+        "ATT-UnitFormat-A-007-M",
+        "ATT-UnitFormat-A-008-M",
+        "ATT-UnitFormat-A-009-C",
+        "ATT-UnitFormat-A-010-C",
+        "ATT-UnitFormat-A-011-M",
+        "ATT-UnitFormat-A-012-O",
+        "ATT-UnitFormat-A-013-O",
+        "ATT-UnitFormat-A-014-O",
+        "ATT-UnitFormat-A-015-O",
+        "ATT-UnitFormat-A-016-M",
+        "ATT-UnitFormat-A-017-O",
+        "ATT-UnitFormat-A-018-M",
+        "ATT-UnitFormat-A-019-O",
+        "ATT-UnitFormat-A-020-O",
+        "ATT-UnitFormat-A-021-O",
+        "ATT-UnitFormat-A-022-O",
+        "ATT-UnitFormat-A-023-O",
+        "ATT-UnitFormat-A-024-O"
+      ]
+    }
+  },
+  "ATT-UnitFormat-A-006-M": {
+    "Function": "Format",
+    "Reference": "UnitFormat",
+    "EntityType": "Attribute",
+    "EntityName": "Unit Format",
+    "EntityId": "UnitFormat",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Order": 20,
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS dataset column MUST include at least one base unit.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-UnitFormat-A-007-M": {
+    "Function": "Format",
+    "Reference": "UnitFormat",
+    "EntityType": "Attribute",
+    "EntityName": "Unit Format",
+    "EntityId": "UnitFormat",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Order": 30,
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS dataset column MUST use one of the allowed data size unit abbreviations listed below for data size base units.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-UnitFormat-A-008-M": {
+    "Function": "Format",
+    "Reference": "UnitFormat",
+    "EntityType": "Attribute",
+    "EntityName": "Unit Format",
+    "EntityId": "UnitFormat",
+    "ModelVersionIntroduced": "1.4",
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [],
     "Order": 40,
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "Units SHOULD be composed of the list of recommended units listed in this section unless the unit value covers a dimension not listed in the recommended unit set, or if the unit covers a count-based unit distinct from recommended values in the count dimension listed in this section.",
+      "MustSatisfy": "FOCUS dataset column MUST use the allowed data size unit abbreviations in the same form for both singular and plural units.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-UnitFormat-A-009-C": {
+    "Function": "Format",
+    "Reference": "UnitFormat",
+    "EntityType": "Attribute",
+    "EntityName": "Unit Format",
+    "EntityId": "UnitFormat",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Order": 50,
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS dataset column MUST use the allowed abbreviation for exabit, exabyte, exbibit, or exbibyte when representing values exceeding 10^18.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-UnitFormat-A-010-C": {
+    "Function": "Format",
+    "Reference": "UnitFormat",
+    "EntityType": "Attribute",
+    "EntityName": "Unit Format",
+    "EntityId": "UnitFormat",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Order": 60,
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS dataset column MUST use the allowed abbreviation for bit or byte when representing values smaller than one byte.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-UnitFormat-A-011-M": {
+    "Function": "Format",
+    "Reference": "UnitFormat",
+    "EntityType": "Attribute",
+    "EntityName": "Unit Format",
+    "EntityId": "UnitFormat",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Order": 70,
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS dataset column MUST use one of the allowed time-based unit names listed below for time-based base units.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-UnitFormat-A-012-O": {
+    "Function": "Format",
+    "Reference": "UnitFormat",
+    "EntityType": "Attribute",
+    "EntityName": "Unit Format",
+    "EntityId": "UnitFormat",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Order": 80,
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS dataset column SHOULD use one of the recommended count-based unit names listed below for count-based base units.",
+      "Keyword": "SHOULD",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-UnitFormat-A-013-O": {
+    "Function": "Format",
+    "Reference": "UnitFormat",
+    "EntityType": "Attribute",
+    "EntityName": "Unit Format",
+    "EntityId": "UnitFormat",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Order": 90,
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS dataset column SHOULD use capitalized nouns for base units that do not correspond to any of the allowed base unit names listed below.",
+      "Keyword": "SHOULD",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-UnitFormat-A-014-O": {
+    "Function": "Format",
+    "Reference": "UnitFormat",
+    "EntityType": "Attribute",
+    "EntityName": "Unit Format",
+    "EntityId": "UnitFormat",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Order": 100,
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS dataset column MAY include a count-based base unit that is not listed as one of the allowed values.",
+      "Keyword": "MAY",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-UnitFormat-A-015-O": {
+    "Function": "Format",
+    "Reference": "UnitFormat",
+    "EntityType": "Attribute",
+    "EntityName": "Unit Format",
+    "EntityId": "UnitFormat",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Order": 110,
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS dataset column MAY include a unit quantity expressed as a positive integer.",
+      "Keyword": "MAY",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-UnitFormat-A-016-M": {
+    "Function": "Format",
+    "Reference": "UnitFormat",
+    "EntityType": "Attribute",
+    "EntityName": "Unit Format",
+    "EntityId": "UnitFormat",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Order": 120,
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS dataset column expressing a compound unit MUST use a hyphen (-) to separate base units (e.g., GB-Hours).",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-UnitFormat-A-017-O": {
+    "Function": "Format",
+    "Reference": "UnitFormat",
+    "EntityType": "Attribute",
+    "EntityName": "Unit Format",
+    "EntityId": "UnitFormat",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Order": 130,
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS dataset column expressing a compound unit SHOULD use the <singular-base-unit>-<plural-base-unit> format (e.g., GB-Hours, MB-Days, Request-Tokens).",
+      "Keyword": "SHOULD",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-UnitFormat-A-018-M": {
+    "Function": "Format",
+    "Reference": "UnitFormat",
+    "EntityType": "Attribute",
+    "EntityName": "Unit Format",
+    "EntityId": "UnitFormat",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Order": 140,
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS dataset column expressing a ratio unit MUST use a slash (/) to separate the numerator and denominator (e.g., GB/Hour to signify gigabytes per hour).",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-UnitFormat-A-019-O": {
+    "Function": "Format",
+    "Reference": "UnitFormat",
+    "EntityType": "Attribute",
+    "EntityName": "Unit Format",
+    "EntityId": "UnitFormat",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Order": 150,
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS dataset column expressing a ratio unit MAY include a denominator quantity expressed as a positive integer.",
+      "Keyword": "MAY",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-UnitFormat-A-020-O": {
+    "Function": "Format",
+    "Reference": "UnitFormat",
+    "EntityType": "Attribute",
+    "EntityName": "Unit Format",
+    "EntityId": "UnitFormat",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Order": 160,
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS dataset column expressing a ratio unit and including a denominator quantity SHOULD use the <plural-units>/<denominator-quantity> <plural-time-units> format (e.g., Units/3 Months).",
+      "Keyword": "SHOULD",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-UnitFormat-A-021-O": {
+    "Function": "Format",
+    "Reference": "UnitFormat",
+    "EntityType": "Attribute",
+    "EntityName": "Unit Format",
+    "EntityId": "UnitFormat",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Order": 170,
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS dataset column expressing a ratio unit with a compound unit numerator SHOULD use the <compound-unit>/<singular-time-unit> format (e.g., Core-Hours/Day).",
+      "Keyword": "SHOULD",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-UnitFormat-A-022-O": {
+    "Function": "Format",
+    "Reference": "UnitFormat",
+    "EntityType": "Attribute",
+    "EntityName": "Unit Format",
+    "EntityId": "UnitFormat",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Order": 180,
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS dataset column expressing a ratio unit with a time denominator SHOULD use the <plural-units>/<singular-time-unit> format (e.g., GB/Hour, PB/Day).",
+      "Keyword": "SHOULD",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-UnitFormat-A-023-O": {
+    "Function": "Format",
+    "Reference": "UnitFormat",
+    "EntityType": "Attribute",
+    "EntityName": "Unit Format",
+    "EntityId": "UnitFormat",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Order": 190,
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS dataset column expressing a simple unit SHOULD use the <plural-units> format (e.g., GB, Seconds).",
+      "Keyword": "SHOULD",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-UnitFormat-A-024-O": {
+    "Function": "Format",
+    "Reference": "UnitFormat",
+    "EntityType": "Attribute",
+    "EntityName": "Unit Format",
+    "EntityId": "UnitFormat",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Order": 200,
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS dataset column including a unit quantity SHOULD use the <unit-quantity> <plural-units> format (e.g., 1000 Tokens, 1000 Characters).",
       "Keyword": "SHOULD",
       "Requirement": {},
       "Condition": {},

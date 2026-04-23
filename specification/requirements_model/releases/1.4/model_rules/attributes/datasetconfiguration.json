@@ -1,0 +1,127 @@
+{
+  "ATT-DatasetConfiguration-A-000-M": {
+    "Function": "Composite",
+    "Reference": "DatasetConfiguration",
+    "EntityType": "Attribute",
+    "EntityName": "Dataset Configuration",
+    "EntityId": "DatasetConfiguration",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 0,
+    "ValidationCriteria": {
+      "MustSatisfy": "Dataset conforming to DatasetConfiguration attribute MUST adhere to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-DatasetConfiguration-A-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-DatasetConfiguration-A-002-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-DatasetConfiguration-A-003-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-DatasetConfiguration-A-004-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "ATT-DatasetConfiguration-A-001-M",
+        "ATT-DatasetConfiguration-A-002-M",
+        "ATT-DatasetConfiguration-A-003-O",
+        "ATT-DatasetConfiguration-A-004-C"
+      ]
+    }
+  },
+  "ATT-DatasetConfiguration-A-001-M": {
+    "Function": "Validation",
+    "Reference": "DatasetConfiguration",
+    "EntityType": "Attribute",
+    "EntityName": "Dataset Configuration",
+    "EntityId": "DatasetConfiguration",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "Order": 10,
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS dataset MUST be configurable to include only a user-defined selection of columns.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-DatasetConfiguration-A-002-M": {
+    "Function": "Validation",
+    "Reference": "DatasetConfiguration",
+    "EntityType": "Attribute",
+    "EntityName": "Dataset Configuration",
+    "EntityId": "DatasetConfiguration",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "Order": 20,
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS dataset MUST adhere to all column-level specifications defined in the FOCUS schema, regardless of the user's chosen configuration (e.g., column selection).",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-DatasetConfiguration-A-003-O": {
+    "Function": "Validation",
+    "Reference": "DatasetConfiguration",
+    "EntityType": "Attribute",
+    "EntityName": "Dataset Configuration",
+    "EntityId": "DatasetConfiguration",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "Order": 30,
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS dataset MAY offer a default column set.",
+      "Keyword": "MAY",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-DatasetConfiguration-A-004-C": {
+    "Function": "Validation",
+    "Reference": "DatasetConfiguration",
+    "EntityType": "Attribute",
+    "EntityName": "Dataset Configuration",
+    "EntityId": "DatasetConfiguration",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "Order": 40,
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS dataset default column set MUST include all applicable FOCUS columns when a default column set is offered.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}

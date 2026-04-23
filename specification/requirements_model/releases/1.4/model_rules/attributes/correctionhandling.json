@@ -1,0 +1,127 @@
+{
+    "ATT-CorrectionHandling-A-000-M": {
+        "Function": "Composite",
+        "Reference": "CorrectionHandling",
+        "EntityType": "Attribute",
+        "EntityName": "Correction Handling",
+        "EntityId": "CorrectionHandling",
+        "Notes": "",
+        "ModelVersionIntroduced": "1.0",
+        "Status": "Active",
+        "ApplicabilityCriteria": [],
+        "Type": "Static",
+        "Order": 0,
+        "ValidationCriteria": {
+            "MustSatisfy": "Column conforming to CorrectionHandling attribute MUST adhere to the following requirements:",
+            "Keyword": "MUST",
+            "Requirement": {
+                "CheckFunction": "AND",
+                "Items": [
+                    {
+                        "CheckFunction": "CheckModelRule",
+                        "ModelRuleId": "ATT-CorrectionHandling-A-001-M"
+                    },
+                    {
+                        "CheckFunction": "CheckModelRule",
+                        "ModelRuleId": "ATT-CorrectionHandling-A-002-C"
+                    },
+                    {
+                        "CheckFunction": "CheckModelRule",
+                        "ModelRuleId": "ATT-CorrectionHandling-A-003-C"
+                    },
+                    {
+                        "CheckFunction": "CheckModelRule",
+                        "ModelRuleId": "ATT-CorrectionHandling-A-004-C"
+                    }
+                ]
+            },
+            "Condition": {},
+            "Dependencies": [
+                "ATT-CorrectionHandling-A-001-M",
+                "ATT-CorrectionHandling-A-002-C",
+                "ATT-CorrectionHandling-A-003-C",
+                "ATT-CorrectionHandling-A-004-C"
+            ]
+        }
+    },
+    "ATT-CorrectionHandling-A-001-M": {
+        "Function": "Validation",
+        "Reference": "CorrectionHandling",
+        "EntityType": "Attribute",
+        "EntityName": "Correction Handling",
+        "EntityId": "CorrectionHandling",
+        "Notes": "",
+        "ModelVersionIntroduced": "1.0",
+        "Status": "Active",
+        "ApplicabilityCriteria": [],
+        "Type": "Dynamic",
+        "Order": 10,
+        "ValidationCriteria": {
+            "MustSatisfy": "FOCUS dataset MUST have its styles for representing corrections in dataset artifacts documented and accessible to practitioners (including whether Replacement, Delta, or Ledger style is used and under which conditions each style applies).",
+            "Keyword": "MUST",
+            "Requirement": {},
+            "Condition": {},
+            "Dependencies": []
+        }
+    },
+    "ATT-CorrectionHandling-A-002-C": {
+        "Function": "Validation",
+        "Reference": "CorrectionHandling",
+        "EntityType": "Attribute",
+        "EntityName": "Correction Handling",
+        "EntityId": "CorrectionHandling",
+        "Notes": "",
+        "ModelVersionIntroduced": "1.0",
+        "Status": "Active",
+        "ApplicabilityCriteria": [],
+        "Type": "Dynamic",
+        "Order": 20,
+        "ValidationCriteria": {
+            "MustSatisfy": "FOCUS dataset MUST represent a complete snapshot of data for the affected delivery scope when using Replacement correction style.",
+            "Keyword": "MUST",
+            "Requirement": {},
+            "Condition": {},
+            "Dependencies": []
+        }
+    },
+    "ATT-CorrectionHandling-A-003-C": {
+        "Function": "Validation",
+        "Reference": "CorrectionHandling",
+        "EntityType": "Attribute",
+        "EntityName": "Correction Handling",
+        "EntityId": "CorrectionHandling",
+        "Notes": "",
+        "ModelVersionIntroduced": "1.0",
+        "Status": "Active",
+        "ApplicabilityCriteria": [],
+        "Type": "Dynamic",
+        "Order": 30,
+        "ValidationCriteria": {
+            "MustSatisfy": "FOCUS dataset MUST include additive records representing corrections within the same delivery scope when using Delta correction style.",
+            "Keyword": "MUST",
+            "Requirement": {},
+            "Condition": {},
+            "Dependencies": []
+        }
+    },
+    "ATT-CorrectionHandling-A-004-C": {
+        "Function": "Validation",
+        "Reference": "CorrectionHandling",
+        "EntityType": "Attribute",
+        "EntityName": "Correction Handling",
+        "EntityId": "CorrectionHandling",
+        "Notes": "",
+        "ModelVersionIntroduced": "1.0",
+        "Status": "Active",
+        "ApplicabilityCriteria": [],
+        "Type": "Dynamic",
+        "Order": 40,
+        "ValidationCriteria": {
+            "MustSatisfy": "FOCUS dataset MUST include explicit reversal and re-entry additive records representing corrections within the same delivery scope when using Ledger correction style.",
+            "Keyword": "MUST",
+            "Requirement": {},
+            "Condition": {},
+            "Dependencies": []
+        }
+    }
+}

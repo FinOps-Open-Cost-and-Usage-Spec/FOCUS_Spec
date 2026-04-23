@@ -1,5 +1,5 @@
 {
-  "KeyValueFormat-A-000-M": {
+  "ATT-KeyValueFormat-A-000-M": {
     "Function": "Composite",
     "Reference": "KeyValueFormat",
     "EntityType": "Attribute",
@@ -12,39 +12,39 @@
     "Order": 0,
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "All key-value related columns defined in the FOCUS specification MUST follow the key-value formatting requirements listed below.",
+      "MustSatisfy": "Column conforming to KeyValueFormat attribute MUST adhere to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "KeyValueFormat-A-001-M"
+            "ModelRuleId": "ATT-KeyValueFormat-A-001-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "KeyValueFormat-A-002-M"
+            "ModelRuleId": "ATT-KeyValueFormat-A-002-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "KeyValueFormat-A-003-M"
+            "ModelRuleId": "ATT-KeyValueFormat-A-003-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "KeyValueFormat-A-004-M"
+            "ModelRuleId": "ATT-KeyValueFormat-A-004-M"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "KeyValueFormat-A-001-M",
-        "KeyValueFormat-A-002-M",
-        "KeyValueFormat-A-003-M",
-        "KeyValueFormat-A-004-M"
+        "ATT-KeyValueFormat-A-001-M",
+        "ATT-KeyValueFormat-A-002-M",
+        "ATT-KeyValueFormat-A-003-M",
+        "ATT-KeyValueFormat-A-004-M"
       ]
     }
   },
-  "KeyValueFormat-A-001-M": {
+  "ATT-KeyValueFormat-A-001-M": {
     "Function": "Format",
     "Reference": "KeyValueFormat",
     "EntityType": "Attribute",
@@ -57,14 +57,14 @@
     "Order": 10,
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "Key-Value Format columns MUST contain a serialized JSON string, consistent with the ECMA 404 definition of an object.",
+      "MustSatisfy": "FOCUS dataset column MUST be a serialized JSON string, consistent with the ECMA 404 definition of an object.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []
     }
   },
-  "KeyValueFormat-A-002-M": {
+  "ATT-KeyValueFormat-A-002-M": {
     "Function": "Validation",
     "Reference": "KeyValueFormat",
     "EntityType": "Attribute",
@@ -77,15 +77,15 @@
     "Order": 20,
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "Keys in a key-value pair MUST be unique within an object.",
+      "MustSatisfy": "Keys in FOCUS dataset column MUST be unique within the object.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []
     }
   },
-  "KeyValueFormat-A-003-M": {
-    "Function": "Validation",
+  "ATT-KeyValueFormat-A-003-M": {
+    "Function": "Type",
     "Reference": "KeyValueFormat",
     "EntityType": "Attribute",
     "EntityName": "Key Value Format",
@@ -97,14 +97,14 @@
     "Order": 30,
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "Values in a key-value pair MUST be one of the following types: number, string, true, false, or null.",
+      "MustSatisfy": "Key values in FOCUS dataset column MUST be of type number, string, boolean ( true or false ), or null.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []
     }
   },
-  "KeyValueFormat-A-004-M": {
+  "ATT-KeyValueFormat-A-004-M": {
     "Function": "Validation",
     "Reference": "KeyValueFormat",
     "EntityType": "Attribute",
@@ -117,7 +117,7 @@
     "Order": 40,
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "Values in a key-value pair MUST NOT be an object or an array.",
+      "MustSatisfy": "Key values in FOCUS dataset column MUST NOT be objects or arrays.",
       "Keyword": "MUST NOT",
       "Requirement": {},
       "Condition": {},
