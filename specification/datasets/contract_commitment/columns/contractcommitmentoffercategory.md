@@ -19,6 +19,13 @@ ContractCommitmentOfferCategory MUST adhere to the following requirements:
 * ContractCommitmentOfferCategory MUST NOT be null.
 * ContractCommitmentOfferCategory MUST be one of the allowed values.
 
+## Allowed Values
+
+| Value      | Description                                                                                                        | Typical Use Case                                                                                                |
+| ---------- | ------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------- |
+| Public     | Terms that are generally available to all customers via a service provider's standard rate card or portal. | Standard Savings Plans or Reserved Instances purchased via the cloud console without a custom discount. |
+| Negotiated | Terms and pricing that have been specifically modified through an agreement between the customer and the service provider. | Enterprise Agreements (EA), private marketplace offers, or custom SaaS contracts with volume-based discounting. |
+
 ## Column ID
 
 ContractCommitmentOfferCategory
@@ -41,13 +48,6 @@ Indicates whether the pricing and terms of a [*contract commitment*](#glossary:c
 | Allows nulls    | False          |
 | Data type       | String         |
 | Value format    | Allowed values |
-
-Allowed values:
-
-| Value      | Description                                                                                                        | Typical Use Case                                                                                                |
-| ---------- | ------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------- |
-| Public     | Terms that are generally available to all customers via a service provider's standard rate card or portal. | Standard Savings Plans or Reserved Instances purchased via the cloud console without a custom discount. |
-| Negotiated | Terms and pricing that have been specifically modified through an agreement between the customer and the service provider. | Enterprise Agreements (EA), private marketplace offers, or custom SaaS contracts with volume-based discounting. |
 
 ## Introduced (version)
 

@@ -17,7 +17,7 @@ HostProviderName MUST adhere to the following requirements:
 * When HostProviderName is not null, HostProviderName values MUST adhere to the following requirements:
   * HostProviderName MUST reflect the name of the host provider when explicitly selected by the customer.
   * HostProviderName MUST reflect the name of the host provider when the service provider exposes the underlying hosting provider.
-  * HostProviderName MUST equal [ServiceProviderName](#datasets.costandusage.serviceprovidername) in all other cases.
+  * HostProviderName MUST match [ServiceProviderName](#datasets.costandusage.serviceprovidername) in all other cases.
 
 See [Appendix: Participating Entity Identification Examples](#appendix.examples:participatingentityidentification) section for examples of Host Provider values across various use case scenarios.
 
