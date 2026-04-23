@@ -57,12 +57,13 @@ For complete guidance, see [AI Usage Guidelines](guidelines/contributors/ai-usag
 
 ## 4. Contribution Process
 
-1. **Fork this repository** and create a branch for your work:
+1. **Create a branch** in this repository for your work. CLA-signed members have write access and should commit directly to a branch here, not a fork. This ensures GitHub Actions checks (PDF builds, PR status syncs) run on your PR, since repository secrets are not exposed to workflows triggered from forks.
+
 ```bash
-git checkout -b feature/your-change-description
+git checkout -b <issue-number>-<short-description>
 ```
 
-> For further details on how to work with Git and GitHub, refer to the [GitHub Guidelines](guidelines/contributors/github-guidelines.md).
+> External contributors without write access may fork the repository instead. For branch naming conventions and further details on working with Git and GitHub, refer to the [GitHub Guidelines](guidelines/contributors/github-guidelines.md).
 
 2. **Reference existing issues** or create a new one to track your change. Include the issue number in your PR title or description (e.g., Fixes #845).
 
