@@ -18,7 +18,7 @@ pip install -r requirements.txt
 
 ## Available Scripts
 
-### sql_transpile.py
+### Sql_transpile.Py
 
 A Python script that finds SQL code blocks in Markdown files and transpiles them between different SQL dialects using SQLGlot.
 
@@ -33,7 +33,7 @@ A Python script that finds SQL code blocks in Markdown files and transpiles them
 
 #### Usage
 
-##### Linux / macOS (Bash)
+##### Linux / MacOS (Bash)
 
     # List all SQL blocks without transpiling
     ./sql_transpile.py ../*.md --list

@@ -27,6 +27,6 @@ Deprecated
 | Data type       | Boolean          |
 | Value format    | \<not specified> |
 
-## Introduced (version)
+## Version Introduced
 
 1.2

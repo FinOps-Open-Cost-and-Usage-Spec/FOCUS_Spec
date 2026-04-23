@@ -30,6 +30,6 @@ FOCUS Column Handling
 
 Naming conventions for *FOCUS columns* appearing in a *FOCUS dataset*.
 
-## Introduced (version)
+## Introduced (Version)
 
 0.5

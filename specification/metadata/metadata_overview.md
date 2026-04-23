@@ -26,6 +26,6 @@ Metadata
 
 Metadata
 
-<div class='h4-nonindex'>Introduced (version)</div>
+<div class='h4-nonindex'>Version Introduced</div>
 
 1.0

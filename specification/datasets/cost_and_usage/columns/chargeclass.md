@@ -41,6 +41,6 @@ Allowed values:
 | :--------- | :----------------------------------------------------------------------------------------------|
 | Correction | Correction to a previously *closed billing period* (e.g., refunds and credit modifications). |
 
-## Introduced (version)
+## Version Introduced
 
 1.0

@@ -34,6 +34,6 @@ The currency in which the invoice is paid.
 | Data type       | String                          |
 | Value format    | [Currency Format](#attributes.currencyformat) |
 
-## Introduced (version)
+## Introduced (Version)
 
 1.4

@@ -33,6 +33,6 @@ The unique customer-issued identifier for tracking the lifecycle of a purchase.
 | Data type       | String                          |
 | Value format    | \<unspecified>                   |
 
-## Introduced (version)
+## Introduced (Version)
 
 1.4

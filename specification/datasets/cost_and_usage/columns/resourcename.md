@@ -36,6 +36,6 @@ Display name assigned to a *resource*.
 | Data type       | String                                               |
 | Value format    | \<not specified>                                     |
 
-## Introduced (version)
+## Version Introduced
 
 0.5

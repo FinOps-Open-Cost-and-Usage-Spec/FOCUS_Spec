@@ -121,6 +121,6 @@ Allowed values:
 | Web                       | Other (Web)                           | Web services that do not fall into one of the defined subcategories. |
 | Other                     | Other (Other)                         | Services that do not fall into one of the defined categories. |
 
-## Introduced (version)
+## Version Introduced
 
 1.1

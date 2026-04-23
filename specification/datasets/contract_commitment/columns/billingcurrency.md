@@ -36,6 +36,6 @@ Represents the currency of a *contract commitment*.
 | Data type       | String                                               |
 | Value format    | [Currency Format](#attributes.currencyformat)        |
 
-## Introduced (version)
+## Version Introduced
 
 1.3

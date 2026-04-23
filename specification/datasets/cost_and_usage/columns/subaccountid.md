@@ -37,6 +37,6 @@ An ID assigned to a grouping of [*resources*](#glossary:resource) or [*services*
 | Data type       | String                                               |
 | Value format    | \<not specified>                                     |
 
-## Introduced (version)
+## Version Introduced
 
 0.5

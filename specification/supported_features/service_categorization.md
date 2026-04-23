@@ -42,6 +42,6 @@ GROUP BY
   BillingCurrency
 ```
 
-## Introduced (Version)
+## Version Introduced
 
 1.1

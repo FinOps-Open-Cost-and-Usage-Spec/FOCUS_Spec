@@ -42,6 +42,6 @@ Describes the functionality being metered or measured by a particular SKU in a *
 | Data type       | String                                               |
 | Value format    | \<not specified>                                     |
 
-## Introduced (version)
+## Version Introduced
 
 1.1

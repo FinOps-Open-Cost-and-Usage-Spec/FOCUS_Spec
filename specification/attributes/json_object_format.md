@@ -28,6 +28,6 @@ JSON Object Format
 
 Rules and formatting requirements for columns appearing in a [*FOCUS dataset*](#glossary:FOCUS-dataset) that convey data as complex, hierarchical objects.
 
-## Introduced (version)
+## Version Introduced
 
 1.3

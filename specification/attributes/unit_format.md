@@ -90,7 +90,7 @@ The table below lists the valid abbreviations for data size units from a single 
 | Pib (pebibit = 2^50) | PiB (pebibyte = 2^50) |
 | Eib (exbibit = 2^60) | EiB (exbibyte = 2^60) |
 
-### Allowed Time-based Unit Names
+### Allowed Time-Based Unit Names
 
 Time-based units are nouns representing a discrete time period. They can be used alone to indicate duration, combined with another unit to form a compound unit (e.g., `GB-Hours`), or a per-time ratio unit (e.g., `GB/Hour`).
 
@@ -107,7 +107,7 @@ The table below lists allowed time-based base units.
 | Millisecond                | Milliseconds             |
 | Microsecond                | Microseconds             |
 
-### Recommended Count-based Unit Names
+### Recommended Count-Based Unit Names
 
 A count-based unit is a noun representing a discrete number of items, events, or actions. For example, a count-based unit can represent the number of requests, instances, tokens, or connections.
 
@@ -138,6 +138,6 @@ Unit Format
 
 Indicates standards for expressing measurement units in columns appearing in a *FOCUS dataset*.
 
-## Introduced (version)
+## Version Introduced
 
 1.0-preview

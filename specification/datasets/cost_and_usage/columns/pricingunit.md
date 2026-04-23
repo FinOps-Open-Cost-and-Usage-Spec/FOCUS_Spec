@@ -39,6 +39,6 @@ Service-provider-specified measurement unit for determining unit prices, indicat
 | Data type       | String                                               |
 | Value format    | [Unit Format](#attributes.unitformat)                |
 
-## Introduced (version)
+## Version Introduced
 
 1.0-preview

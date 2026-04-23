@@ -36,6 +36,6 @@ A service-provider-specified measurement unit for the amount declared in Contrac
 | Data type       | String                                               |
 | Value format    | [Unit Format](#attributes.unitformat) recommended    |
 
-## Introduced (version)
+## Version Introduced
 
 1.3

@@ -33,6 +33,6 @@ The *inclusive start bound* of a *billing period*.
 | Data type       | Date/Time                            |
 | Value format    | [Date/Time Format](#attributes.date/timeformat) |
 
-## Introduced (version)
+## Introduced (Version)
 
 1.4

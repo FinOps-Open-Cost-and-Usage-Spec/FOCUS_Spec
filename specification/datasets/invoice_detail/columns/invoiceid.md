@@ -34,6 +34,6 @@ The invoice-issuer-assigned identifier for an invoice encapsulating *charges* in
 | Data type       | String           |
 | Value format    | \<not specified> |
 
-## Introduced (version)
+## Introduced (Version)
 
 1.4

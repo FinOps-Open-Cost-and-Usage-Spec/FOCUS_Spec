@@ -36,6 +36,6 @@ A service-provider-assigned identifier for a contract describing the agreed term
 | Data type       | String                                               |
 | Value format    | \<not specified>                                     |
 
-## Introduced (version)
+## Version Introduced
 
 1.3

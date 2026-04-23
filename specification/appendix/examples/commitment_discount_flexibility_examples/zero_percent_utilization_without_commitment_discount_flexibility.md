@@ -1,4 +1,4 @@
-# 0% utilization without commitment discount flexibility
+# 0% Utilization Without Commitment Discount Flexibility
 
 ## Context
 

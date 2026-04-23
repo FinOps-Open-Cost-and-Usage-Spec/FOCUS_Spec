@@ -67,7 +67,7 @@ Key observations:
 
 [**CSV Example**](/specification/data/saas_examples/credit_based_consumption_a.csv)
 
-## Host-Based SaaS Monitoring: Monthly On-Demand Usage
+## Host-Based SaaS Monitoring: Monthly on-Demand Usage
 
 A SaaS observability [*service provider*](#glossary:service%20provider), StackLens, offers multiple monitoring [*services*](#glossary:service) billed on different units: host-based pricing for infrastructure and application performance monitoring, and volume-based pricing for log ingestion.
 

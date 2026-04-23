@@ -39,6 +39,6 @@ The volume of a metered SKU associated with a *resource* or *service* used, base
 | Value format    | [Numeric Format](#attributes.numericformat)          |
 | Number range    | Any valid decimal value                              |
 
-## Introduced (version)
+## Version Introduced
 
 1.0

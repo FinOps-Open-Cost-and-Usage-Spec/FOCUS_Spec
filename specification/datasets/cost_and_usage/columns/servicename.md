@@ -41,6 +41,6 @@ An offering that can be purchased from a service provider (e.g., cloud virtual m
 | Data type       | String                                               |
 | Value format    | \<not specified>                                     |
 
-## Introduced (version)
+## Version Introduced
 
 0.5

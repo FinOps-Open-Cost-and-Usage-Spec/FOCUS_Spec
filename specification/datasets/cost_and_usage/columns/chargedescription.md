@@ -34,6 +34,6 @@ Self-contained summary of the *charge's* purpose and price.
 | Data type       | String                                               |
 | Value format    | \<not specified>                                     |
 
-## Introduced (version)
+## Version Introduced
 
 1.0-preview

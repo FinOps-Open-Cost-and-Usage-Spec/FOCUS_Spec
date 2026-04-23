@@ -51,6 +51,6 @@ Allowed values:
 | Committed | *Charges* with reduced pricing due to the application of the *commitment discount* specified by the Commitment Discount ID. |
 | Other     | *Charges* priced in a way not covered by another pricing category. |
 
-## Introduced (version)
+## Version Introduced
 
 1.0-preview

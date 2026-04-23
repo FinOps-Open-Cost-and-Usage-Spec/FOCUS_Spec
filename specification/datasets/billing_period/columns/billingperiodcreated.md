@@ -33,6 +33,6 @@ The timestamp when the *Billing Period* record was first created.
 | Data type       | Date/Time                        |
 | Value format    | [Date/Time Format](#attributes.date/timeformat) |
 
-## Introduced (version)
+## Introduced (Version)
 
 1.4

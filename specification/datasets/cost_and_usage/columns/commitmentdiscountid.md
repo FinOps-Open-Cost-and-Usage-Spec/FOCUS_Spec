@@ -40,6 +40,6 @@ The identifier assigned to a *commitment discount* by the service provider.
 | Data type       | String                                               |
 | Value format    | \<not specified>                                     |
 
-## Introduced (version)
+## Version Introduced
 
 1.0-preview

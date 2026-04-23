@@ -26,6 +26,6 @@ Recency Last Updated
 | Data type     | Date/Time                                 |
 | Value format  | [Date/Time Format](#attributes.date/timeformat)      |
 
-## Introduced (version)
+## Version Introduced
 
 1.3

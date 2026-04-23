@@ -4,7 +4,7 @@ Many SaaS providers provide simple contract terms, therefore don't need to suppo
 
 The scenarios described below illustrate how a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) should look for simple SaaS agreement scenarios (these scenarios may not be specific to SaaS agreements only).
 
-## Scenario A1: Invoice Up-front for a Purchase of a Service
+## Scenario A1: Invoice up-Front for a Purchase of a Service
 
 ACME Corp allows its customers to purchase their service for a term (in this case, a year) for a $10,000. ACME provides AwesomeCorp with a single invoice for their usage. ACME does not provide detailed cost and usage reports to AwesomeCorp throughout the Charge Period after the initial purchase.
 
@@ -18,7 +18,7 @@ Note the following details in the example dataset:
 * A single charge representing the total payment for the 12-month agreement ($10,000) is charged in the first invoice. BilledCost and EffectiveCost are realized in the same record since detailed usage records will not be provided during the 12-month period to realize amortized portions of this up-front payment.
 * The single charge record does not include a List Unit Price, Pricing Quantity, or SKU-related information. Alternatively, the Pricing Quantity could have been set to 1, and the List Unit Price could be the same as the total charge.
   
-## Scenario A2: Invoice Up-front for a Quantity of a Service
+## Scenario A2: Invoice up-Front for a Quantity of a Service
 
 ACME Corp offers its customer the ability to purchase a fixed quantity of licenses for their service. ACME provides AwesomeCorp with a single invoice for their usage. ACME does not provide detailed cost and usage reports to AwesomeCorp throughout the Charge Period after the initial purchase.
 

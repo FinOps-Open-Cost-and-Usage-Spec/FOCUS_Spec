@@ -299,7 +299,7 @@ Amount to be invoiced for a *charge* by the invoice issuer for a given *billing 
 | Value format    | [Numeric Format](#numericformat) |
 | Number range    | Any valid decimal value |
 
-### Introduced (version)
+### Version Introduced
 
 0.5
 
@@ -386,7 +386,7 @@ Cost of a *charge* based on the actual *resource* or *service* usage or entitlem
 | Value format    | [Numeric Format](#numericformat) |
 | Number range    | Any valid decimal value |
 
-### Introduced (version)
+### Version Introduced
 
 0.5
 

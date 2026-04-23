@@ -51,6 +51,6 @@ The amount of a *commitment discount* purchased or accounted for in *commitment 
 | Value format    | [Numeric Format](#attributes.numericformat)          |
 | Number range    | Any valid decimal value                              |
 
-## Introduced (version)
+## Version Introduced
 
 1.1

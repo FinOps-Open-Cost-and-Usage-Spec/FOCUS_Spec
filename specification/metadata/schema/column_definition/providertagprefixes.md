@@ -25,6 +25,6 @@ Provider Tag Prefixes
 | Data type     | Collection of Strings |
 | Value format  | \<not specified>      |
 
-## Introduced (version)
+## Version Introduced
 
 1.0

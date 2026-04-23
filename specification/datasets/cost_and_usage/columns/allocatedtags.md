@@ -59,6 +59,6 @@ A set of tags assigned to tag sources that are applicable to *allocated charges*
 | Data type       | JSON                                                 |
 | Value format    | [Key-Value Format](#attributes.key-valueformat)      |
 
-## Introduced (version)
+## Version Introduced
 
 1.3

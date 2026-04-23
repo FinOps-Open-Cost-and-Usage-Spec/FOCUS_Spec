@@ -68,6 +68,6 @@ The effective percentage reduction applied to the list price of resources or ser
 | Value format    | [Numeric Format](#attributes.numericformat) |
 | Number range    | 0.0 to 1.0 (inclusive)     |
 
-## Introduced (version)
+## Introduced (Version)
 
 1.4

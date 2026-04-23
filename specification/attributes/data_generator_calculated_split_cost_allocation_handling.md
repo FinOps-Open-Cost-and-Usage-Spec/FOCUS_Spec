@@ -22,6 +22,6 @@ Data Generator-Calculated Split Cost Allocation Handling
 
 An attribute that allows data generators to offer more detailed cost and usage information based on a method defined and documented by the data generator, including support for allocating costs in cases where the usage of a resource might not match the units the resource is measured in.
 
-## Introduced (version)
+## Version Introduced
 
 1.3

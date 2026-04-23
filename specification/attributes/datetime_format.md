@@ -26,6 +26,6 @@ Date/Time Format
 
 Rules and formatting requirements for date/time-related columns appearing in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 
-## Introduced (version)
+## Version Introduced
 
 0.5

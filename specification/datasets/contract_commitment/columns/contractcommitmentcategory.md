@@ -40,6 +40,6 @@ Allowed values:
 | Spend   | Contract commitments that require a predetermined amount of spend. |
 | Usage   | Contract commitments that require a predetermined amount of usage. |
 
-## Introduced (version)
+## Version Introduced
 
 1.3

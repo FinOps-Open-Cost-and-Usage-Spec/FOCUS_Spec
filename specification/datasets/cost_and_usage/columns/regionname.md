@@ -35,6 +35,6 @@ The name of an isolated geographic area where a *resource* is provisioned or a *
 | Data type       | String                                               |
 | Value format    | \<not specified>                                     |
 
-## Introduced (version)
+## Version Introduced
 
 1.0

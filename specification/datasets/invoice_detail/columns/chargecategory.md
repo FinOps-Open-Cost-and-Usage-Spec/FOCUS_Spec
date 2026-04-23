@@ -43,6 +43,6 @@ Represents the highest-level classification of a *charge* based on the nature of
 | Credit     | Positive or negative *charges* granted by the service provider for various scenarios (e.g., promotional credits, corrections to promotional credits). |
 | Adjustment | Positive or negative *charges* the service provider applies that do not fall into other category values. |
 
-## Introduced (version)
+## Introduced (Version)
 
 1.4

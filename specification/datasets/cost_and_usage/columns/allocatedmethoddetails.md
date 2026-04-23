@@ -114,6 +114,6 @@ A set of properties describing how resources are allocated in data generator-def
 | Value format | [JSON Object Format](#attributes.jsonobjectformat) |
 | Object | [AllocatedMethodDetailsObject](#datasets.costandusage.allocatedmethoddetails.allocatedmethoddetailsobject) |
 
-## Introduced (version)
+## Version Introduced
 
 1.3

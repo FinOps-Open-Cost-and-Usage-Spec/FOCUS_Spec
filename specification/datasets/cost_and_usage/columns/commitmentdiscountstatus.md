@@ -18,7 +18,7 @@ CommitmentDiscountStatus MUST adhere to the following requirements:
 
 CommitmentDiscountStatus
 
-## Display name
+## Display Name
 
 Commitment Discount Status
 
@@ -44,6 +44,6 @@ Allowed values:
 | Used   | *Charges* that utilized a specific amount of a commitment discount. |
 | Unused | *Charges* that represent the unused portion of the commitment discount. |
 
-## Introduced (version)
+## Version Introduced
 
 1.0

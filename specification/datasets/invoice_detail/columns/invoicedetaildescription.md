@@ -34,6 +34,6 @@ The invoice-issuer-provided description of an invoice line item.
 | Data type       | String                          |
 | Value format    | \<unspecified>                   |
 
-## Introduced (version)
+## Introduced (Version)
 
 1.4

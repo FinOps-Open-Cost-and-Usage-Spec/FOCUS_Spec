@@ -13,13 +13,13 @@ The following baseline conditions apply to the scenarios described below:
 * AwesomeCorp receives a 20% negotiated discount in return for the commitment
 * Acme Co calculates the spend counted against the agreements after discounts (like the negotiated discounts). Other service providers may use the cost after discounts i.e., using List Cost for calculating the spend commitment.
 
-## Scenario A: Billed in arrears
+## Scenario A: Billed in Arrears
 
 For this scenario A, contract includes the following terms in addition to the baseline scenario mentioned above:
 
 * All charges will be billed in arrears at a monthly frequency
 
-### Scenario A1: Billed in arrears with no minimum spend requirement per month
+### Scenario A1: Billed in Arrears with No Minimum Spend Requirement Per Month
 
 For this scenario, contract additionally includes the following terms:
 
@@ -37,7 +37,7 @@ Note the following details in the example dataset:
 
 * A single charge representing the total unused amount from the 12-month agreement is charged during the final month of the 12-month commitment period
 
-### Scenario A2: Billed in arrears with a minimum spend requirement per month
+### Scenario A2: Billed in Arrears with a Minimum Spend Requirement Per Month
 
 The spend agreement with Acme requires the customer to spend a minimum amount in each Billing Period (monthly). Unused fees are charged per Billing Period when the consumption is below this level (use-it or lose-it). For this scenario, contract additionally includes the following terms:
 
@@ -56,13 +56,13 @@ Note the following details in the example dataset:
 * A monthly charge representing the unused minimum monthly amount is charged during months 4 through 11 of the 12-month commitment period
 * The final month has a charge that captures the overall unmet spend requirement for the 12-month contract. Alternatively, this could be provided as two charges, one for the unused portion of the final month, and one to capture the overall unmet spend requirement.
 
-## Scenario B: Prepaid contract
+## Scenario B: Prepaid Contract
 
 For this scenario B, contract includes the following terms in addition to the baseline scenario mentioned above:
 
 * The charges will be billed in arrears using monthly invoices
 
-### Scenario B1: Prepaid with no minimum spend requirement per month
+### Scenario B1: Prepaid with No Minimum Spend Requirement Per Month
 
 Scenario B1 is similar to scenario A1 with the difference being that it's a pre-paid contract.
 
@@ -75,7 +75,7 @@ Note the following details in the example dataset:
 * The unused charge rows apply to the entire Charge Period the contract was signed for.
 * This scenario shows List Cost and Contracted Cost column double counting dynamic (described here in [ListCost](#datasets.costandusage.listcost) and [ContractedCost](#datasets.costandusage.contractedcost)) where either the [ChargeCategory](#datasets.costandusage.chargecategory) Purchase or Usage rows need to be excluded depending on the reporting scenario.
 
-### Scenario B2: Prepaid with a minimum spend requirement per month
+### Scenario B2: Prepaid with a Minimum Spend Requirement Per Month
 
 Scenario B2 is similar to A2 with the difference being that it's a pre-paid contract.
 
