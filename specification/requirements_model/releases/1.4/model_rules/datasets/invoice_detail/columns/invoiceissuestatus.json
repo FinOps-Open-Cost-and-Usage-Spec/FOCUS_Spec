@@ -153,7 +153,7 @@
     "DatasetId": "InvoiceDetail",
     "DatasetName": "Invoice Detail",
     "ValidationCriteria": {
-      "MustSatisfy": "InvoiceIssueStatus MUST be one of the allowed values defined in the Allowed Values section.",
+      "MustSatisfy": "InvoiceIssueStatus MUST be one of the allowed values.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "OR",
