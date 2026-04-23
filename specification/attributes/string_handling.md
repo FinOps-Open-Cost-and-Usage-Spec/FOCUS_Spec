@@ -1,6 +1,6 @@
 # String Handling
 
-Columns that capture string values conforming to specified requirements foster data integrity, interoperability, and consistency, improve data analysis and reporting, and support reliable data-driven decision-making.
+Columns that capture string values conforming to specified requirements foster data integrity, interoperability, and consistency; improve data analysis and reporting; and support reliable data-driven decision-making.
 
 ## Requirements
 
