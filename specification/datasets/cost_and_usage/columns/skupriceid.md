@@ -9,7 +9,7 @@ The composition of properties associated with the SKU Price ID may differ across
 SkuPriceId MUST adhere to the following requirements:
 
 * SkuPriceId MUST be of type String.
-* SkuPriceId MUST conform to [String Handling](#attributes.stringhandling) requirements.
+* SkuPriceId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * SkuPriceId MUST adhere to the following nullability requirements:
   * SkuPriceId MUST be null when [ChargeCategory](#datasets.costandusage.chargecategory) is "Tax".
   * SkuPriceId MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#datasets.costandusage.chargeclass) is not "Correction".

@@ -6,7 +6,7 @@ Billing data frequently captures data measured in units related to data size, co
 
 Column conforming to UnitFormat attribute MUST adhere to the following requirements:
 
-* [*FOCUS dataset column*](#glossary:FOCUS-dataset-column) MUST adhere to the following [base unit](#attributes.definitions.baseunit) requirements:
+* [*FOCUS dataset column*](#glossary:FOCUS-dataset-column) MUST adhere to the following [base unit](#attributes.unitformat.definitions.baseunit) requirements:
   * *FOCUS dataset column* MUST include at least one base unit.
   * *FOCUS dataset column* MUST use one of the allowed data size unit abbreviations listed below for data size base units.
   * *FOCUS dataset column* MUST use the allowed data size unit abbreviations in the same form for both singular and plural units.
@@ -16,15 +16,15 @@ Column conforming to UnitFormat attribute MUST adhere to the following requireme
   * *FOCUS dataset column* SHOULD use one of the recommended count-based unit names listed below for count-based base units.
   * *FOCUS dataset column* SHOULD use capitalized nouns for base units that do not correspond to any of the allowed base unit names listed below.
   * *FOCUS dataset column* MAY include a count-based base unit that is not listed as one of the allowed values.
-* *FOCUS dataset column* MAY include a [unit quantity](#attributes.definitions.unitquantity) expressed as a positive integer.
-* *FOCUS dataset column* expressing a compound unit MUST use a hyphen (`-`) to separate base units (e.g., `GB-Hours`).
+* *FOCUS dataset column* MAY include a [unit quantity](#attributes.unitformat.definitions.unitquantity) expressed as a positive integer.
+* *FOCUS dataset column* expressing a [compound unit](#attributes.unitformat.definitions.compoundunit) MUST use a hyphen (`-`) to separate base units (e.g., `GB-Hours`).
 * *FOCUS dataset column* expressing a compound unit SHOULD use the `<singular-base-unit>-<plural-base-unit>` format (e.g., `GB-Hours`, `MB-Days`, `Request-Tokens`).
-* *FOCUS dataset column* expressing a ratio unit MUST use a slash (`/`) to separate the numerator and denominator (e.g., `GB/Hour` to signify gigabytes per hour).
-* *FOCUS dataset column* expressing a ratio unit MAY include a [denominator quantity](#attributes.definitions.denominatorquantity) expressed as a positive integer.
+* *FOCUS dataset column* expressing a [ratio unit](#attributes.unitformat.definitions.ratiounit) MUST use a slash (`/`) to separate the numerator and denominator (e.g., `GB/Hour` to signify gigabytes per hour).
+* *FOCUS dataset column* expressing a ratio unit MAY include a [denominator quantity](#attributes.unitformat.definitions.denominatorquantity) expressed as a positive integer.
 * *FOCUS dataset column* expressing a ratio unit and including a denominator quantity SHOULD use the `<plural-units>/<denominator-quantity> <plural-time-units>` format (e.g., `Units/3 Months`).
 * *FOCUS dataset column* expressing a ratio unit with a compound unit numerator SHOULD use the `<compound-unit>/<singular-time-unit>` format (e.g., `Core-Hours/Day`).
 * *FOCUS dataset column* expressing a ratio unit with a time denominator SHOULD use the `<plural-units>/<singular-time-unit>` format (e.g., `GB/Hour`, `PB/Day`).
-* *FOCUS dataset column* expressing a simple unit SHOULD use the `<plural-units>` format (e.g., `GB`, `Seconds`).
+* *FOCUS dataset column* expressing a [simple unit](#attributes.unitformat.definitions.simpleunit) SHOULD use the `<plural-units>` format (e.g., `GB`, `Seconds`).
 * *FOCUS dataset column* including a unit quantity SHOULD use the `<unit-quantity> <plural-units>` format (e.g., `1000 Tokens`, `1000 Characters`).
 
 ## Definitions
@@ -37,27 +37,27 @@ A standardized expression that describes how quantities in a *FOCUS dataset* are
 
 ### Base Unit
 
-An atomic unit that serves as a building block for all [measurement units](#attributes.definitions.measurementunit); can be a data size unit, time-based unit, or count-based unit (e.g., `GB`, `Hour`, `Token`).
+An atomic unit that serves as a building block for all [measurement units](#attributes.unitformat.definitions.measurementunit); can be a data size unit, time-based unit, or count-based unit (e.g., `GB`, `Hour`, `Token`).
 
 ### Simple Unit
 
-A [measurement unit](#attributes.definitions.measurementunit) that contains exactly one [base unit](#attributes.definitions.baseunit), optionally preceded by a [unit quantity](#attributes.definitions.unitquantity) (e.g., `GB`, `Seconds`, `1000 Tokens`).
+A [measurement unit](#attributes.unitformat.definitions.measurementunit) that contains exactly one [base unit](#attributes.unitformat.definitions.baseunit), optionally preceded by a [unit quantity](#attributes.unitformat.definitions.unitquantity) (e.g., `GB`, `Seconds`, `1000 Tokens`).
 
 ### Compound Unit
 
-A [measurement unit](#attributes.definitions.measurementunit) that combines two [base units](#attributes.definitions.baseunit) using a hyphen (`-`), optionally preceded by a [unit quantity](#attributes.definitions.unitquantity) (e.g., `GB-Hours`, `MB-Days`, `Request-Tokens`).
+A [measurement unit](#attributes.unitformat.definitions.measurementunit) that combines two [base units](#attributes.unitformat.definitions.baseunit) using a hyphen (`-`), optionally preceded by a [unit quantity](#attributes.unitformat.definitions.unitquantity) (e.g., `GB-Hours`, `MB-Days`, `Request-Tokens`).
 
 ### Ratio Unit
 
-A [measurement unit](#attributes.definitions.measurementunit) that expresses one [base unit](#attributes.definitions.baseunit) or [compound unit](#attributes.definitions.compoundunit) per another using a slash (`/`), optionally including a [denominator quantity](#attributes.definitions.denominatorquantity) (e.g., `GB/Hour`, `Units/3 Months`, `Core-Hours/Day`).
+A [measurement unit](#attributes.unitformat.definitions.measurementunit) that expresses one [base unit](#attributes.unitformat.definitions.baseunit) or [compound unit](#attributes.unitformat.definitions.compoundunit) per another using a slash (`/`), optionally including a [denominator quantity](#attributes.unitformat.definitions.denominatorquantity) (e.g., `GB/Hour`, `Units/3 Months`, `Core-Hours/Day`).
 
 ### Unit Quantity
 
-A positive integer included in a [measurement unit](#attributes.definitions.measurementunit), indicating the granularity (e.g., `1000` in `1000 Tokens`).
+A positive integer included in a [measurement unit](#attributes.unitformat.definitions.measurementunit), indicating the granularity (e.g., `1000` in `1000 Tokens`).
 
 ### Denominator Quantity
 
-A positive integer included in the denominator of a [ratio unit](#attributes.definitions.ratiounit), indicating the granularity of the denominator (e.g., `3` in `Units/3 Months`).
+A positive integer included in the denominator of a [ratio unit](#attributes.unitformat.definitions.ratiounit), indicating the granularity of the denominator (e.g., `3` in `Units/3 Months`).
 
 ## Base Unit Names
 
