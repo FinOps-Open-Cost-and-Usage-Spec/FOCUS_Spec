@@ -48,7 +48,7 @@ Note: The `CommitmentPrograms` array contains all [*commitment program*](#glossa
 
 ### Identify Eligible Uncovered Spend by Program Type
 
-This query identifies [*charges*](#glossary:charge) that are eligible for [*commitment programs*](#glossary:commitment-program) but are not currently covered by a [*commitment discount*](#glossary:commitment-discount). A practitioner running relevant workloads can use this to quantify the savings opportunity per *commitment program* type (e.g., Flexible Spend Plan vs. Resource Reservation) and per [*service*](#glossary:service).
+This query identifies [*charges*](#glossary:charge) that are eligible for [*commitment programs*](#glossary:commitment-program) but are not currently covered by a [*commitment discount*](#glossary:commitment-discount). A practitioner running relevant workloads can use this to quantify the savings opportunity per *commitment program* type (e.g., "Flexible Spend Plan" vs. "Resource Reservation") and per [*service*](#glossary:service).
 
 The query filters to "Usage" charges where [CommitmentProgramEligibilityDetails](#datasets.costandusage.commitmentprogrameligibilitydetails) is populated (the charge is eligible) and [CommitmentDiscountId](#datasets.costandusage.commitmentdiscountid) is null (no [*commitment*](#glossary:commitment) is applied). It then expands the `CommitmentPrograms` array to aggregate eligible spend per `ProgramType`. This query uses BilledCost rather than EffectiveCost because the charges are uncovered (CommitmentDiscountId IS NULL), so BilledCost reflects the actual amount paid and the savings opportunity.
 
