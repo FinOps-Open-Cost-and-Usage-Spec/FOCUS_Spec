@@ -199,17 +199,14 @@ Each Task Force (TF) group in the FOCUS Working Group is able to have a Maintain
 
 ### Branch Management
 
-Members of the FOCUS project need to be aware that all branches in the [FOCUS\_Spec](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec) repository are owned by the project and that frequent cleanups of stale branches will be performed by the \`Admins\`. This means that any scratch/WIP/ideation work which is not part of any open Action Items/Feature Requests should be moved out to a [fork of the repository](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo) in the individual members own GitHub repository.
+Members of the FOCUS project need to be aware that all branches in the [FOCUS\_Spec](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec) repository are owned by the project and that frequent cleanups of stale branches will be performed by the \`Admins\`. This means that any scratch/WIP/ideation work which is not part of any open Action Items/Feature Requests should be moved out to a [fork of the repository](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo) in the individual members own GitHub repository. Work tied to an open Action Item or Feature Request should use an internal branch, since GitHub Actions workflows triggered by forks do not have access to repository secrets (required for PDF builds and PR status syncs).
 
 When Pull Requests are merged the option to delete the working branch should always be used, with a preference for a new branch to be created for further work.
 
 
 ### Branch Naming
 
-As members of FOCUS you are able to open branches in the GitHub repository. The naming convention of branches must follow one of the following patterns:
-
-1. Start with your name (e.g., flanakin/skuterm)
-2. Start with the Feature Request number (e.g., 636-clarify-guidance-around-refunds)
+As members of FOCUS you are able to open branches in the GitHub repository. Branch names must start with the issue number followed by a short description (e.g., \`636-clarify-guidance-around-refunds\`).
 
 Branches not following this naming convention may be closed without notice.
 
