@@ -334,6 +334,7 @@ All Pull Requests **must go through a formal review and approval process before 
 * All reviewers assigned to the Pull Request must approve before the Pull Request is eligible for merging.
 * If a reviewer becomes inactive or unresponsive, Maintainers may reassign review to an alternate reviewer.
 * At least **one Maintainer** must approve the Pull Request.
+  * If a Pull Request addresses a Feature Request that is outside of the official scope for the current release, this Maintainer approval allows the PR to be considered by the working group, assigned to a Task Force at the discretion of the Working Group Chair.
 * It is not required to have approvals from _all_ FOCUS members, but all active reviewers must approve.
 
 
@@ -345,6 +346,21 @@ A Pull Request is eligible for approval when:
 * The Pull Request fully meets the linked Issue's Definition of Done (DoD).
 * The Pull Request description is complete, including rationale, data examples, links to supporting information, and explanation of key decisions.
 * No unresolved objections remain from reviewers.
+
+#### Post-Approval Changes
+
+To maintain the integrity of the consensus-building process, it is critical that approvals accurately reflect the current state of a Pull Request. Substantial changes introduced after approvals have been granted invalidate those approvals.
+
+When commits are pushed to a branch after an approval has been logged:
+
+* PR author MUST re-request review from all approvers upon any commit that alters the normative requirements.
+* PR author SHOULD re-request review from all approvers upon any commit that alters the informative text of technical design, structure, or implementation of the proposed feature.
+* PR author SHOULD provide a summary comment outlining the specific modifications made since the previous approvals were logged to facilitate an efficient re-review process.
+
+**Enforcement**
+
+* Administrators MUST NOT promote or merge a Pull Request containing post-approval changes to normative text without a full re-review. 
+* Any Pull Request merged in violation of this procedure MUST be immediately reverted by the Administrators.
 
 
 #### Conflict Resolution
