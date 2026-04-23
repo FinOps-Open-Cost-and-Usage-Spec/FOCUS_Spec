@@ -25,7 +25,7 @@
     "  L009: \"InvoiceIssueStatus MUST be of type String.\"",
     "  L010: \"InvoiceIssueStatus MUST conform to [StringHandling](#attributes.stringhandling) requirements.\"",
     "  L011: \"InvoiceIssueStatus MUST NOT be null.\"",
-    "  L012: \"InvoiceIssueStatus MUST be one of the allowed values defined in the [Allowed Values](#datasets.invoicedetail.invoiceissuestatus.allowed-values) section.\"",
+    "  L012: \"InvoiceIssueStatus MUST be one of the allowed values.\"",
     "  L013: \"InvoiceIssueStatus MUST represent the current publication state of the invoice.\"",
     "  L014: \"InvoiceIssueStatus MUST NOT transition from \\\"Issued\\\" to \\\"Open\\\" unless explicitly requested or approved by the customer.\""
   ],
@@ -155,7 +155,7 @@
                 "temp_id": "R005",
                 "order": 5,
                 "ref": "L012",
-                "text": "InvoiceIssueStatus MUST be one of the allowed values defined in the [Allowed Values](#datasets.invoicedetail.invoiceissuestatus.allowed-values) section.",
+                "text": "InvoiceIssueStatus MUST be one of the allowed values.",
                 "keyword": "MUST",
                 "section_path": [
                   "Invoice Issue Status",
