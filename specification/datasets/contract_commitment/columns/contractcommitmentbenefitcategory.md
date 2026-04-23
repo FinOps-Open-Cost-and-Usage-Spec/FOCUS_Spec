@@ -24,6 +24,15 @@ ContractCommitmentBenefitCategory MUST adhere to the following requirements:
 * ContractCommitmentBenefitCategory MUST NOT be null.
 * ContractCommitmentBenefitCategory MUST be one of the allowed values.
 
+## Allowed Values
+
+| Value | Sort Order | Description | Typical Use Case |
+| :--- | :--- | :--- | :--- |
+| Discount | 10 | A financial reduction in the unit price or list rate, whether applied immediately or conditionally upon meeting usage or spend thresholds. | Flat rate negotiated reductions, Savings Plans, growth rebates, or volume-tier discounts. |
+| Entitlement | 20 | The contractual right to access and consume specific products, features, or software tiers that would otherwise be unavailable. | Marketplace SaaS purchases, Enterprise Agreements (e.g., Snowflake), or paid Proof of Concepts. |
+| Availability | 30 | A contractual assurance of resource access and physical capacity. | Capacity reservations or dedicated host guarantees. |
+| Other | 40 | Benefits not captured by standard categories. | Support access, training, or professional services. |
+
 ## Column ID
 
 ContractCommitmentBenefitCategory
@@ -46,15 +55,6 @@ Defines the primary value or advantage received for a [*contract commitment*](#g
 | Allows nulls    | False          |
 | Data type       | String         |
 | Value format    | Allowed values |
-
-Allowed values:
-
-| Value | Sort Order | Description | Typical Use Case |
-| :--- | :--- | :--- | :--- |
-| Discount | 10 | A financial reduction in the unit price or list rate, whether applied immediately or conditionally upon meeting usage or spend thresholds. | Flat rate negotiated reductions, Savings Plans, growth rebates, or volume-tier discounts. |
-| Entitlement | 20 | The contractual right to access and consume specific products, features, or software tiers that would otherwise be unavailable. | Marketplace SaaS purchases, Enterprise Agreements (e.g., Snowflake), or paid Proof of Concepts. |
-| Availability | 30 | A contractual assurance of resource access and physical capacity. | Capacity reservations or dedicated host guarantees. |
-| Other | 40 | Benefits not captured by standard categories. | Support access, training, or professional services. |
 
 ## Introduced (version)
 

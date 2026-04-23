@@ -24,11 +24,11 @@ A service provider's native cost dataset includes a column `internal_project_id`
 
 The native dataset also includes a native billing event reference (`billing_event_id`) that does not directly support analysis but allows practitioners to trace *FOCUS dataset* records back to native records. The *FOCUS dataset* includes this as `x_BillingEventId` to enable correlation between the two datasets.
 
-Even when [Discount Handling](#attributes.discounthandling) splits a single native charge into two FOCUS rows (e.g., separating a commitment discount), *custom columns* like `x_InternalProjectId` and `x_BillingEventId` are preserved on both rows and cost metrics like `BilledCost` are split accurately, maintaining data integrity.
+Even when a single native record results in multiple FOCUS records (e.g., separating discounted and non-discounted portions of a charge in a [Cost and Usage](#datasets.costandusage) [*dataset artifact*](#glossary:dataset-artifact)), *custom columns* like `x_InternalProjectId` and `x_BillingEventId` are preserved in all resulting records and cost metrics like `BilledCost` are split accurately, maintaining data integrity.
 
 *Custom columns* that duplicate newly introduced *FOCUS columns* may be preserved during a documented transitional period to enable migration without breaking changes.
 
-This attribute ensures *custom columns* are fully represented in the *FOCUS dataset* schema. Data generators may require FOCUS consumers to explicitly select these columns when generating a [*dataset artifact*](#glossary:dataset-artifact) (see [Dataset Configuration](#attributes.datasetconfiguration)).
+This attribute ensures *custom columns* are fully represented in the *FOCUS dataset* schema. Data generators may require FOCUS consumers to explicitly select these columns when generating a *dataset artifact* (see [Dataset Configuration](#attributes.datasetconfiguration)).
 
 ## Attribute ID
 

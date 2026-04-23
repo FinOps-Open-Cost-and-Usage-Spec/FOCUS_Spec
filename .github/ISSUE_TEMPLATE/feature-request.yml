@@ -11,9 +11,9 @@ body:
 
         Brief, clear responses are fine. Maintainers will follow up if more detail is needed.
 
-        **Required fields:** Problem Statement, Success Criteria, Type of Request, Organizations Requesting This Feature
+        **Required fields:** Problem Statement, Use Case / User Story, Success Criteria, Type of Request, Organizations Requesting This Feature
 
-        **Optional but helpful:** Use Case / User Story, Data Generator Support, Supporting Documentation, Proposed Solution / Approach, Additional Context
+        **Optional but helpful:** Data Generator Support, Supporting Documentation, Proposed Solution / Approach, Additional Context
 
         ---
 
@@ -40,7 +40,7 @@ body:
         Example: As a FinOps practitioner, I need to group costs by resource groupings within my Sub Account, so that I can align cost reporting with my organization's structure without post-processing.
       placeholder: "As a [role], I need to [capability], so that [outcome]."
     validations:
-      required: false
+      required: true
 
   - type: textarea
     id: success-criteria
