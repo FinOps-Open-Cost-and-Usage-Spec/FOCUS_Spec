@@ -134,16 +134,16 @@ Acme Corp runs compute workloads on Aura Web. Some usage is covered by a Resourc
 
 Three usage rows for a single charge period (2025-04-01):
 
-1. **Uncovered compute** (Row 1): Eligible for FlexibleSpendPlan and ResourceReservation, not currently covered. [BilledCost](#datasets.costandusage.billedcost) and [EffectiveCost](#datasets.costandusage.effectivecost) are both $200.00.
-2. **Covered compute** (Row 2): Covered by a ResourceReservation. CommitmentProgramEligibilityDetails is populated. BilledCost is $0.00; EffectiveCost is $150.00.
-3. **Support fee** (Row 3): Not eligible for any *commitment program*. Both CommitmentProgramEligibilityDetails and CommitmentDiscountId are null. BilledCost and EffectiveCost are both $50.00.
+1. **Uncovered compute** (Row 1): Eligible for FlexibleSpendPlan and ResourceReservation, not currently covered. [BilledCost](#datasets.costandusage.billedcost) and [EffectiveCost](#datasets.costandusage.effectivecost) are both &dollar;200.00.
+2. **Covered compute** (Row 2): Covered by a ResourceReservation. CommitmentProgramEligibilityDetails is populated. BilledCost is &dollar;0.00; EffectiveCost is &dollar;150.00.
+3. **Support fee** (Row 3): Not eligible for any *commitment program*. Both CommitmentProgramEligibilityDetails and CommitmentDiscountId are null. BilledCost and EffectiveCost are both &dollar;50.00.
 
-By filtering the denominator to rows where `CommitmentProgramEligibilityDetails IS NOT NULL`, the $50.00 support fee is correctly excluded from the eligible population:
+By filtering the denominator to rows where `CommitmentProgramEligibilityDetails IS NOT NULL`, the &dollar;50.00 support fee is correctly excluded from the eligible population:
 
 | Metric | Value |
 |:-------|:------|
-| Eligible denominator | Row 1 ($200.00) + Row 2 ($150.00) = $350.00 |
-| Covered numerator | Row 2 ($150.00) |
+| Eligible denominator | Row 1 (&dollar;200.00) + Row 2 (&dollar;150.00) = &dollar;350.00 |
+| Covered numerator | Row 2 (&dollar;150.00) |
 | Coverage rate | `150 / 350` = **42.9%** |
 
 Row 3 (support fee) is correctly excluded because CommitmentProgramEligibilityDetails is null for ineligible charges.
@@ -158,23 +158,23 @@ Acme Corp runs compute workloads on Aura Web and uses StackLens for observabilit
 
 Six usage rows for a single charge period (2025-04-01):
 
-1. **Uncovered compute** (Rows 1-2): Two Aura Web Compute rows eligible for both FlexibleSpendPlan and ResourceReservation. [BilledCost](#datasets.costandusage.billedcost) totals $500.00 across both rows.
+1. **Uncovered compute** (Rows 1-2): Two Aura Web Compute rows eligible for both FlexibleSpendPlan and ResourceReservation. [BilledCost](#datasets.costandusage.billedcost) totals &dollar;500.00 across both rows.
 2. **Covered compute** (Row 3): Aura Web Compute covered by an existing ResourceReservation. Filtered out by the query because [CommitmentDiscountId](#datasets.costandusage.commitmentdiscountid) is populated.
 3. **Ineligible support** (Row 4): Aura Web Support with no CommitmentProgramEligibilityDetails. Filtered out because the column is null.
-4. **Uncovered observability** (Rows 5-6): Two StackLens Observability rows eligible for MonthlyIntervalSpendCommitment and AnnualIntervalSpendCommitment. BilledCost totals $200.00.
+4. **Uncovered observability** (Rows 5-6): Two StackLens Observability rows eligible for MonthlyIntervalSpendCommitment and AnnualIntervalSpendCommitment. BilledCost totals &dollar;200.00.
 
 To evaluate these purchasing options, the `CommitmentPrograms` JSON array must be flattened so each eligible program can be analyzed independently. By expanding the array (e.g., via `CROSS JOIN UNNEST`) and grouping the uncovered costs by `ServiceProviderName`, `ServiceName`, and `EligibleProgramType`, the practitioner gets the summary presented in the table below. A reference implementation is available in the [eligible uncovered spend query](#supportedfeatures.commitmentprogrameligibilitydetails) supported feature.
 
 | ServiceProviderName | ServiceName | EligibleProgramType | EligibleUncoveredCost |
 |:--------------------|:------------|:--------------------|:---------------------------|
-| Aura Web | Compute | FlexibleSpendPlan | $500.00 |
-| Aura Web | Compute | ResourceReservation | $500.00 |
-| StackLens | Observability | MonthlyIntervalSpendCommitment | $200.00 |
-| StackLens | Observability | AnnualIntervalSpendCommitment | $200.00 |
+| Aura Web | Compute | FlexibleSpendPlan | &dollar;500.00 |
+| Aura Web | Compute | ResourceReservation | &dollar;500.00 |
+| StackLens | Observability | MonthlyIntervalSpendCommitment | &dollar;200.00 |
+| StackLens | Observability | AnnualIntervalSpendCommitment | &dollar;200.00 |
 
-Aura Web Compute appears as $500.00 under both FlexibleSpendPlan and ResourceReservation. This does not mean $1,000.00 is uncovered. The $500.00 is the same spend, and each program type represents an independent purchasing opportunity. Purchasing a FlexibleSpendPlan would cover some or all of that $500.00, as would a ResourceReservation. The practitioner must choose between them (or split across both) based on flexibility requirements and discount depth.
+Aura Web Compute appears as &dollar;500.00 under both FlexibleSpendPlan and ResourceReservation. This does not mean &dollar;1,000.00 is uncovered. The &dollar;500.00 is the same spend, and each program type represents an independent purchasing opportunity. Purchasing a FlexibleSpendPlan would cover some or all of that &dollar;500.00, as would a ResourceReservation. The practitioner must choose between them (or split across both) based on flexibility requirements and discount depth.
 
-The same logic applies to StackLens: $200.00 of observability spend could be covered by either a monthly or annual Interval Spend Commitment. The annual option typically offers a deeper discount in exchange for a longer commitment term.
+The same logic applies to StackLens: &dollar;200.00 of observability spend could be covered by either a monthly or annual Interval Spend Commitment. The annual option typically offers a deeper discount in exchange for a longer commitment term.
 
 The query uses BilledCost rather than EffectiveCost because all rows are uncovered (CommitmentDiscountId IS NULL). For uncovered usage, BilledCost equals EffectiveCost and reflects the actual amount paid.
 
