@@ -18,7 +18,7 @@ CommitmentProgramEligibilityDetails MUST adhere to the following requirements:
 
 ## Commitment Program Eligibility Details Object
 
-Commitment Program Eligibility Details consists of a valid JSON object with a top-level property key `CommitmentPrograms` containing an array of objects describing the specific [*commitment programs*](#glossary:commitment-program) available for the usage charge.
+Commitment Program Eligibility Details consists of a valid JSON object with a top-level property key `CommitmentPrograms` containing an array of objects describing the specific *commitment programs* available for the usage charge.
 
 ### Object Requirements
 
@@ -92,7 +92,7 @@ NOTE: The above JSON Type Definition (JTD) is an approximation of the expected c
 
 ## Example Scenarios
 
-The examples below are not exhaustive and may change over time. Service providers are the authoritative source for their [*commitment programs*](#glossary:commitment-program).
+The examples below are not exhaustive and may change over time. Service providers are the authoritative source for their *commitment programs*.
 
 ### Aura Web (Partially Covered Compute Usage)
 
@@ -128,9 +128,9 @@ Scenario: A compute instance type and tenancy that are eligible for both discoun
 
 ### Coverage Rate with Eligibility-Adjusted Denominator
 
-This example demonstrates how to calculate an accurate [*commitment*](#glossary:commitment) coverage rate using [CommitmentProgramEligibilityDetails](#datasets.costandusage.commitmentprogrameligibilitydetails) alongside [CommitmentDiscountId](#datasets.costandusage.commitmentdiscountid).
+This example demonstrates how to calculate an accurate *commitment* coverage rate using [CommitmentProgramEligibilityDetails](#datasets.costandusage.commitmentprogrameligibilitydetails) alongside [CommitmentDiscountId](#datasets.costandusage.commitmentdiscountid).
 
-Acme Corp runs compute workloads on Aura Web. Some usage is covered by a Resource Reservation, some is eligible but uncovered, and a support fee is ineligible for any [*commitment program*](#glossary:commitment-program).
+Acme Corp runs compute workloads on Aura Web. Some usage is covered by a Resource Reservation, some is eligible but uncovered, and a support fee is ineligible for any *commitment program*.
 
 Three usage rows for a single charge period (2025-04-01):
 
@@ -152,14 +152,14 @@ Row 3 (support fee) is correctly excluded because CommitmentProgramEligibilityDe
 
 ### Uncovered Eligible Spend by Program Type
 
-This example demonstrates how to use [CommitmentProgramEligibilityDetails](#datasets.costandusage.commitmentprogrameligibilitydetails) to identify uncovered savings opportunities across [*commitment program*](#glossary:commitment-program) types and providers.
+This example demonstrates how to use CommitmentProgramEligibilityDetails to identify uncovered savings opportunities across *commitment program* types and providers.
 
 Acme Corp runs compute workloads on Aura Web and uses StackLens for observability monitoring. Some Aura Web compute usage is covered by a Resource Reservation. StackLens usage is uncovered but eligible for Interval Spend Commitments at monthly or annual terms. A practitioner wants to answer: "Which *commitment program* and provider should I target for my next purchase?"
 
 Six usage rows for a single charge period (2025-04-01):
 
-1. **Uncovered compute** (Rows 1-2): Two Aura Web Compute rows eligible for both FlexibleSpendPlan and ResourceReservation. [BilledCost](#datasets.costandusage.billedcost) totals &dollar;500.00 across both rows.
-2. **Covered compute** (Row 3): Aura Web Compute covered by an existing ResourceReservation. Filtered out by the query because [CommitmentDiscountId](#datasets.costandusage.commitmentdiscountid) is populated.
+1. **Uncovered compute** (Rows 1-2): Two Aura Web Compute rows eligible for both FlexibleSpendPlan and ResourceReservation. BilledCost totals &dollar;500.00 across both rows.
+2. **Covered compute** (Row 3): Aura Web Compute covered by an existing ResourceReservation. Filtered out by the query because CommitmentDiscountId is populated.
 3. **Ineligible support** (Row 4): Aura Web Support with no CommitmentProgramEligibilityDetails. Filtered out because the column is null.
 4. **Uncovered observability** (Rows 5-6): Two StackLens Observability rows eligible for MonthlyIntervalSpendCommitment and AnnualIntervalSpendCommitment. BilledCost totals &dollar;200.00.
 
@@ -198,7 +198,7 @@ Commitment Program Eligibility Details
 
 ## Description
 
-The types of [*commitment programs*](#glossary:commitment-program) available for a specific usage row.
+The types of *commitment programs* available for a specific usage row.
 
 ## Content Constraints
 
@@ -209,7 +209,7 @@ The types of [*commitment programs*](#glossary:commitment-program) available for
 | Feature level | Conditional                                                                                                                  |
 | Allows nulls  | True                                                                                                                         |
 | Data type     | JSON                                                                                                                         |
-| Value format  | [JsonObjectFormat](#attributes.jsonobjectformat)                                                                             |
+| Value format  | JsonObjectFormat                                                                             |
 | Object        | [CommitmentProgramEligibilityDetailsObject](#datasets.costandusage.commitmentprogrameligibilitydetails.commitmentprogrameligibilitydetailsobject) |
 
 ## Introduced (version)

@@ -40,7 +40,7 @@ The volume of a given *SKU* associated with a *resource* or *service* used or pu
 | Feature level   | Mandatory                                            |
 | Allows nulls    | True                                                 |
 | Data type       | Decimal                                              |
-| Value format    | [Numeric Format](#attributes.numericformat)          |
+| Value format    | Numeric Format          |
 | Number range    | Any valid decimal value                              |
 
 ## Introduced (version)

@@ -32,7 +32,7 @@ The national or virtual currency denomination that a *resource* or *service* was
 | Feature level   | Conditional                                          |
 | Allows nulls    | False                                                |
 | Data type       | String                                               |
-| Value format    | [Currency Format](#attributes.currencyformat)        |
+| Value format    | Currency Format        |
 
 ## Introduced (version)
 

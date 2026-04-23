@@ -34,7 +34,7 @@ Service-provider-specified measurement unit indicating how a service provider me
 | Feature level   | Conditional                                          |
 | Allows nulls    | True                                                 |
 | Data type       | String                                               |
-| Value format    | [Unit Format](#attributes.unitformat) recommended    |
+| Value format    | Unit Format recommended    |
 
 ## Introduced (version)
 

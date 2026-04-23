@@ -34,7 +34,7 @@ Represents the currency of a *contract commitment*.
 | Feature level   | Mandatory                                            |
 | Allows nulls    | True                                                 |
 | Data type       | String                                               |
-| Value format    | [Currency Format](#attributes.currencyformat)        |
+| Value format    | Currency Format        |
 
 ## Introduced (version)
 

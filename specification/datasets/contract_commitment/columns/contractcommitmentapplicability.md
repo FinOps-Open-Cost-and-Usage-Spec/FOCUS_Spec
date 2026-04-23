@@ -178,7 +178,7 @@ A structured definition of the specific entities to which a contract commitment 
 | Feature level | Mandatory |
 | Allows nulls | False |
 | Data type | JSON |
-| Value format | [JSON Object Format](#attributes.jsonobjectformat) |
+| Value format | JSON Object Format |
 | Object          | [ContractCommitmentApplicabilityObject](#datasets.contractcommitment.contractcommitmentapplicability.contractcommitmentapplicabilityobject) |
 
 ## Introduced (version)

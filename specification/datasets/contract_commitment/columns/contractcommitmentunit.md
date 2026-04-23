@@ -34,7 +34,7 @@ A service-provider-specified measurement unit for the amount declared in Contrac
 | Feature level   | Mandatory                                            |
 | Allows nulls    | True                                                 |
 | Data type       | String                                               |
-| Value format    | [Unit Format](#attributes.unitformat) recommended    |
+| Value format    | Unit Format recommended    |
 
 ## Introduced (version)
 
