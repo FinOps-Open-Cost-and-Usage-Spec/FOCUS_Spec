@@ -16,6 +16,14 @@ ContractCommitmentPaymentModel MUST adhere to the following requirements:
 * ContractCommitmentPaymentModel MUST NOT be null.
 * ContractCommitmentPaymentModel MUST be one of the allowed values.
 
+## Allowed Values
+
+| Value           | Sort Order | Description                                                                                  | Typical Use Case                                              |
+| --------------- | ---------- | -------------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
+| No Upfront      | 10         | The obligation is settled entirely through deferred payment(s) (typically multiple recurring charges) with no initial payment. | Pay-as-you-go Savings Plans or monthly-billed SaaS. |
+| Partial Upfront | 20         | The obligation is settled through a combination of an initial payment and deferred payment(s) (typically multiple recurring charges). | Hybrid RIs or EAs with a "Year 1" deposit plus installments. |
+| All Upfront     | 30         | The total obligation is settled via a single payment at the start of the duration. | High-discount RIs or multi-year contracts paid in full Day 1. |
+
 ## Implementation Context
 
 * Settled via Upfront: Refer to the [contract commitment period start](#datasets.contractcommitment.contractcommitmentperiodstart) for the cash event.
@@ -43,14 +51,6 @@ Defines the financial settlement structure of a [*contract commitment*](#glossar
 | Allows nulls    | False          |
 | Data type       | String         |
 | Value format    | Allowed values |
-
-Allowed values:
-
-| Value           | Sort Order | Description                                                                                  | Typical Use Case                                              |
-| --------------- | ---------- | -------------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
-| No Upfront      | 10         | The obligation is settled entirely through deferred payment(s) (typically multiple recurring charges) with no initial payment. | Pay-as-you-go Savings Plans or monthly-billed SaaS. |
-| Partial Upfront | 20         | The obligation is settled through a combination of an initial payment and deferred payment(s) (typically multiple recurring charges). | Hybrid RIs or EAs with a "Year 1" deposit plus installments. |
-| All Upfront     | 30         | The total obligation is settled via a single payment at the start of the duration. | High-discount RIs or multi-year contracts paid in full Day 1. |
 
 ## Introduced (version)
 
