@@ -18,6 +18,10 @@ ContractedUnitPrice MUST adhere to the following requirements:
   * ContractedUnitPrice MUST be a non-negative decimal value.
   * ContractedUnitPrice MUST be denominated in the BillingCurrency.
 
+## Usability Constraints
+
+**Aggregation:** Column values should only be viewed in the context of their row and not aggregated to produce a total.
+
 ## Column ID
 
 ContractedUnitPrice
@@ -29,10 +33,6 @@ Contracted Unit Price
 ## Description
 
 The agreed-upon unit price for a single Pricing Unit of the associated SKU, inclusive of negotiated discounts, if present, while excluding negotiated commitment discounts or any other discounts.
-
-## Usability Constraints
-
-**Aggregation:** Column values should only be viewed in the context of their row and not aggregated to produce a total.
 
 ## Content Constraints
 
