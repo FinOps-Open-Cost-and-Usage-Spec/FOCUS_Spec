@@ -4,13 +4,6 @@ Contract Commitment Duration Type represents the categorical length of a [*contr
 
 This column serves as a stable classifier for the commitment's duration, distinct from the actual lifespan of the specific record. For example, a 3-year commitment that is exchanged or modified may have a calculated duration of only a few months, but its Contract Commitment Duration Type remains "3 Years". This allows for consistent grouping and reporting on commitment durations, regardless of lifecycle events.
 
-## Expected Format
-
-A given Contract Commitment Duration Type value follows a structured format of "[Numeric Value] [Unit]".
-
-* [Numeric Value]: A positive integer.
-* [Unit]: A standardized unit of time, singular or plural (e.g., Hour, Year, Years).
-
 ## Requirements
 
 ContractCommitmentDurationType MUST adhere to the following requirements:
@@ -43,6 +36,13 @@ The following units should be used for the representation of time:
 | Quarters |
 | Year |
 | Years |
+
+## Expected Format
+
+A given Contract Commitment Duration Type value follows a structured format of "[Numeric Value] [Unit]".
+
+* [Numeric Value]: A positive integer.
+* [Unit]: A standardized unit of time, singular or plural (e.g., Hour, Year, Years).
 
 ## Column ID
 
