@@ -13,7 +13,6 @@ The `ProgramType` property identifies *commitment programs* supported by the pro
 * Equal [CommitmentDiscountType](#datasets.costandusage.commitmentdiscounttype) for one object in the CommitmentPrograms array when CommitmentDiscountType is not null.
 * Correspond to terminology disclosed by the service provider in public documentation. This guidance is especially relevant for SaaS providers that do not itemize commitment discount application at the row level, where CommitmentDiscountType is typically not populated.
 * Do not encode period length, payment option, or other commitment attributes (e.g., use "Flexible Spend Plan" rather than "1 Year Flexible Spend Plan No Upfront").
-* Use the provider name as-is where a provider's documented program name inherently includes a period reference (e.g., StackLens's "Monthly Platform Commitment").
 
 ## Directly Dependent Columns
 
