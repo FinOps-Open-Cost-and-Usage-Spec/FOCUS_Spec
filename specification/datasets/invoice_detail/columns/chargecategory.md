@@ -37,6 +37,7 @@ Represents the highest-level classification of a *charge* based on the nature of
 
 | Constraint      | Value          |
 | :-------------- | :------------- |
+| Dataset         | [Invoice Detail](#datasets.invoicedetail)             |
 | Column type     | Dimension      |
 | Feature level   | Mandatory      |
 | Allows nulls    | False          |

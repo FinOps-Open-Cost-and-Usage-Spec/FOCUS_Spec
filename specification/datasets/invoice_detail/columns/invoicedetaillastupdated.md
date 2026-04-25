@@ -28,6 +28,7 @@ The timestamp when the Invoice Detail record was last updated.
 
 |    Constraint    |              Value             |
 |:----------------|:--------------------------------|
+| Dataset         | [Invoice Detail](#datasets.invoicedetail)             |
 | Column type     | Dimension                       |
 | Feature level   | Mandatory                       |
 | Allows nulls    | False                           |

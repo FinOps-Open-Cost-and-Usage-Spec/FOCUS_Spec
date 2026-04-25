@@ -28,6 +28,7 @@ The identifier linking a granular record to the specific [Invoice Detail](#datas
 
 |    Constraint    |              Value             |
 |:----------------|:--------------------------------|
+| Dataset         | [Invoice Detail](#datasets.invoicedetail)             |
 | Column type     | Dimension                       |
 | Feature level   | Conditional                     |
 | Allows nulls    | False                           |

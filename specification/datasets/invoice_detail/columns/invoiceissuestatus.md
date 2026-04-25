@@ -49,6 +49,7 @@ The publication state of the invoice and the reliability of its associated deliv
 
 |    Constraint   |              Value              |
 |:----------------|:--------------------------------|
+| Dataset         | [Invoice Detail](#datasets.invoicedetail)             |
 | Column type     | Dimension                       |
 | Feature level   | Mandatory                       |
 | Allows nulls    | False                           |

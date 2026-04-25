@@ -74,6 +74,7 @@ The [Billed Cost](#datasets.invoicedetail.billedcost) as expressed in [Payment C
 
 |    Constraint   |      Value              |
 |:----------------|:------------------------|
+| Dataset         | [Invoice Detail](#datasets.invoicedetail)             |
 | Column type     | Metric                  |
 | Feature level   | Conditional             |
 | Allows nulls    | False                   |
