@@ -1,8 +1,11 @@
 ## Diff
 
+@@ -1,17 +1,15 @@
+## Requirements
+
 ListUnitPrice [-adheres-]{+MUST adhere+} to the following requirements:
 
-[-* ListUnitPrice MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider publishes unit prices exclusive of discounts.-]
+[-* ListUnitPrice MUST be present in a Cost and Usage *FOCUS dataset* when the service provider publishes unit prices exclusive of discounts.-]
 * ListUnitPrice MUST be of type Decimal.
 * ListUnitPrice MUST conform to NumericFormat requirements.
 * ListUnitPrice {+MUST adhere to the following+} nullability [-is defined as follows:-]{+requirements:+}
@@ -14,5 +17,4 @@ ListUnitPrice [-adheres-]{+MUST adhere+} to the following requirements:
 * When ListUnitPrice is not null, ListUnitPrice [-adheres-]{+MUST adhere+} to the following[-additional-] requirements:
   * ListUnitPrice MUST be a non-negative decimal value.
   * ListUnitPrice MUST be denominated in the BillingCurrency.
-[-* [ListCost](#listcost) MUST equal the product of ListUnitPrice and [PricingQuantity](#pricingquantity) when ListUnitPrice is not null and PricingQuantity is not null.-]
-
+[-* ListCost MUST equal the product of ListUnitPrice and PricingQuantity when ListUnitPrice is not null and PricingQuantity is not null.-]

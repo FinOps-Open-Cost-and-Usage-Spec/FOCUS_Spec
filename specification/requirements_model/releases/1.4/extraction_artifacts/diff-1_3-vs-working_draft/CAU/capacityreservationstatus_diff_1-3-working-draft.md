@@ -1,8 +1,11 @@
 ## Diff
 
+@@ -1,13 +1,12 @@
+## Requirements
+
 CapacityReservationStatus [-adheres-]{+MUST adhere+} to the following requirements:
 
-[-* CapacityReservationStatus MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports *capacity reservations*.-]
+[-* CapacityReservationStatus MUST be present in a Cost and Usage *FOCUS dataset* when the service provider supports *capacity reservations*.-]
 * CapacityReservationStatus MUST be of type String.
 * CapacityReservationStatus {+MUST adhere to the following+} nullability [-is defined as follows:-]{+requirements:+}
   * CapacityReservationStatus MUST be null when CapacityReservationId is null.

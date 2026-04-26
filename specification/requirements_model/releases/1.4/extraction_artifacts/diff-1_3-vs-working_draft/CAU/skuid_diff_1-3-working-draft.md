@@ -17,4 +17,4 @@ SkuId [-adheres-]{+MUST adhere+} to the following requirements:
   * SkuId MUST remain consistent across PricingCategory values.
   * SkuId MUST remain consistent regardless of any other factors that might impact the price but do not affect the functionality of the *SKU*.
 * SkuId MUST be associated with a given *resource* or *service* when ChargeCategory is "Usage" or "Purchase".
-* SkuId MAY equal SkuPriceId.
+* SkuId MAY [-equal-]{+match+} SkuPriceId.
