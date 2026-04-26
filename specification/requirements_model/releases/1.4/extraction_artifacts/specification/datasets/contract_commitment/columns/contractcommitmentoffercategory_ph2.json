@@ -21,10 +21,10 @@
   },
   "0_outline_root": "ROOT: Contract Commitment Offer Category > Requirements",
   "0_outline_lines": [
-    "L016: \"ContractCommitmentOfferCategory MUST adhere to the following requirements:\"",
-    "  L018: \"ContractCommitmentOfferCategory MUST be of type String.\"",
-    "  L019: \"ContractCommitmentOfferCategory MUST NOT be null.\"",
-    "  L020: \"ContractCommitmentOfferCategory MUST be one of the allowed values.\""
+    "L009: \"ContractCommitmentOfferCategory MUST adhere to the following requirements:\"",
+    "  L011: \"ContractCommitmentOfferCategory MUST be of type String.\"",
+    "  L012: \"ContractCommitmentOfferCategory MUST NOT be null.\"",
+    "  L013: \"ContractCommitmentOfferCategory MUST be one of the allowed values.\""
   ],
   "0_outline_summary": {
     "node_count": 4,
@@ -39,7 +39,7 @@
     },
     "lead_ins": [
       {
-        "ref": "L016",
+        "ref": "L009",
         "text_preview": "ContractCommitmentOfferCategory MUST adhere to the following requirements:",
         "children": 3
       }
@@ -56,7 +56,7 @@
           "atom": {
             "temp_id": "R001",
             "order": 1,
-            "ref": "L016",
+            "ref": "L009",
             "text": "ContractCommitmentOfferCategory MUST adhere to the following requirements:",
             "keyword": "MUST",
             "section_path": [
@@ -79,7 +79,7 @@
               "atom": {
                 "temp_id": "R002",
                 "order": 2,
-                "ref": "L018",
+                "ref": "L011",
                 "text": "ContractCommitmentOfferCategory MUST be of type String.",
                 "keyword": "MUST",
                 "section_path": [
@@ -103,7 +103,7 @@
               "atom": {
                 "temp_id": "R003",
                 "order": 3,
-                "ref": "L019",
+                "ref": "L012",
                 "text": "ContractCommitmentOfferCategory MUST NOT be null.",
                 "keyword": "MUST NOT",
                 "section_path": [
@@ -127,7 +127,7 @@
               "atom": {
                 "temp_id": "R004",
                 "order": 4,
-                "ref": "L020",
+                "ref": "L013",
                 "text": "ContractCommitmentOfferCategory MUST be one of the allowed values.",
                 "keyword": "MUST",
                 "section_path": [
