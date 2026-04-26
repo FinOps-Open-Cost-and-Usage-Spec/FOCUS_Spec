@@ -145,7 +145,7 @@
     {
       "temp_id": "R006",
       "order": 6,
-      "text": "InvoiceId MUST uniquely identify the invoice as provided by the invoice issuer.",
+      "text": "InvoiceId MUST uniquely identify the invoice as provided by the [*invoice issuer*](#glossary:invoice-issuer).",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
