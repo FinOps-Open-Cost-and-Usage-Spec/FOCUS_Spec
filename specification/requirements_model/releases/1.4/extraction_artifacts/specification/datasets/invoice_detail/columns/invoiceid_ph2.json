@@ -26,7 +26,7 @@
     "  L010: \"InvoiceId MUST conform to [StringHandling](#attributes.stringhandling) requirements.\"",
     "  L011: \"InvoiceId MUST NOT be null.\"",
     "  L012: \"InvoiceId MAY be generated prior to an invoice being issued.\"",
-    "  L013: \"InvoiceId MUST uniquely identify the invoice as provided by the invoice issuer.\""
+    "  L013: \"InvoiceId MUST uniquely identify the invoice as provided by the [*invoice issuer*](#glossary:invoice-issuer).\""
   ],
   "0_outline_summary": {
     "node_count": 6,
@@ -179,7 +179,7 @@
                 "temp_id": "R006",
                 "order": 6,
                 "ref": "L013",
-                "text": "InvoiceId MUST uniquely identify the invoice as provided by the invoice issuer.",
+                "text": "InvoiceId MUST uniquely identify the invoice as provided by the [*invoice issuer*](#glossary:invoice-issuer).",
                 "keyword": "MUST",
                 "section_path": [
                   "Invoice ID",
