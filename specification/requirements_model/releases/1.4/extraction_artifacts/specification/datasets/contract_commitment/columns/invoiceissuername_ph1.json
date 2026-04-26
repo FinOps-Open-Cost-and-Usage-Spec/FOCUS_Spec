@@ -116,6 +116,31 @@
       },
       "_alignment_status": "confirmed",
       "ref": "L011"
+    },
+    {
+      "temp_id": "R005",
+      "order": 5,
+      "text": "InvoiceIssuerName MUST represent the entity that issues invoices.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Invoice Issuer Name",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 12,
+        "line_end": 12
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L012"
     }
   ],
   "warnings": [],
