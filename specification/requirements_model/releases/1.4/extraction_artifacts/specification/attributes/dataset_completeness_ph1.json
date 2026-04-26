@@ -70,7 +70,7 @@
     {
       "temp_id": "R003",
       "order": 3,
-      "text": "*FOCUS dataset* MUST include *custom columns* (e.g., `x_ChargeSubType`) needed to support [*invoice reconciliation*](#glossary:invoice-reconciliation) when the invoice issuer supports payable invoices, and when *FOCUS columns* are not sufficient.",
+      "text": "*FOCUS dataset* MUST include *custom columns* (e.g., `x_ChargeSubType`) needed to support [*invoice reconciliation*](#glossary:invoice-reconciliation) when the [*invoice issuer*](#glossary:invoice-issuer) supports payable invoices, and when *FOCUS columns* are not sufficient.",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
