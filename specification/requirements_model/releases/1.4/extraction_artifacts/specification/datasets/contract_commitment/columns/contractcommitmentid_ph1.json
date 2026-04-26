@@ -1,0 +1,229 @@
+{
+  "phase": 1,
+  "source": {
+    "path": "specification/datasets/contract_commitment/columns/contractcommitmentid.md",
+    "version": "1.3"
+  },
+  "entity": {
+    "entity_type": "Column",
+    "entity_id": "ContractCommitmentId",
+    "entity_name": "Contract Commitment ID"
+  },
+  "entities_found": [
+    {
+      "entity_type": "Column",
+      "entity_id": "ContractCommitmentId",
+      "entity_name": "Contract Commitment ID"
+    }
+  ],
+  "atoms": [
+    {
+      "temp_id": "R001",
+      "order": 1,
+      "text": "ContractCommitmentId MUST adhere to the following requirements:",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Contract Commitment ID",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "paragraph",
+        "indent_level": 0,
+        "bullet": null
+      },
+      "lead_in": {
+        "ends_with_colon": true
+      },
+      "provenance": {
+        "line_start": 7,
+        "line_end": 7
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L007"
+    },
+    {
+      "temp_id": "R002",
+      "order": 2,
+      "text": "ContractCommitmentId MUST be of type String.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Contract Commitment ID",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 9,
+        "line_end": 9
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L009"
+    },
+    {
+      "temp_id": "R003",
+      "order": 3,
+      "text": "ContractCommitmentId MUST conform to [StringHandling](#attributes.stringhandling) requirements.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Contract Commitment ID",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 10,
+        "line_end": 10
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L010"
+    },
+    {
+      "temp_id": "R004",
+      "order": 4,
+      "text": "ContractCommitmentId MUST NOT be null.",
+      "keyword": "MUST NOT",
+      "role": "requirement",
+      "section_path": [
+        "Contract Commitment ID",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 11,
+        "line_end": 11
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L011"
+    },
+    {
+      "temp_id": "R005",
+      "order": 5,
+      "text": "ContractCommitmentId MUST be a unique identifier within the service provider.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Contract Commitment ID",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 12,
+        "line_end": 12
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L012"
+    },
+    {
+      "temp_id": "R006",
+      "order": 6,
+      "text": "ContractCommitmentId SHOULD be a fully-qualified identifier.",
+      "keyword": "SHOULD",
+      "role": "requirement",
+      "section_path": [
+        "Contract Commitment ID",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 13,
+        "line_end": 13
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L013"
+    },
+    {
+      "temp_id": "R007",
+      "order": 7,
+      "text": "ContractCommitmentId MUST have one and only one parent [ContractId](#datasets.contractcommitment.contractid).",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Contract Commitment ID",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 14,
+        "line_end": 14
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L014"
+    },
+    {
+      "temp_id": "R008",
+      "order": 8,
+      "text": "ContractCommitmentId MAY match ContractId.",
+      "keyword": "MAY",
+      "role": "requirement",
+      "section_path": [
+        "Contract Commitment ID",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 15,
+        "line_end": 15
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L015"
+    }
+  ],
+  "warnings": [],
+  "structural": {
+    "lead_ins": [],
+    "index": {
+      "by_section_path": {},
+      "by_line": {}
+    }
+  }
+}
