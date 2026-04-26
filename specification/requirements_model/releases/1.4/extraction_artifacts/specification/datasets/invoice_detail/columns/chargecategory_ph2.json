@@ -25,7 +25,7 @@
     "  L009: \"ChargeCategory MUST be of type String.\"",
     "  L010: \"ChargeCategory MUST NOT be null.\"",
     "  L011: \"ChargeCategory MUST be one of the allowed values.\"",
-    "  L012: \"ChargeCategory MAY equal \\\"Usage\\\" when the record aggregates *charges* across multiple allowed values other than \\\"Tax\\\" (for example, aggregation of \\\"Usage\\\" and \\\"Credit\\\" is allowed, but not \\\"Usage\\\" and \\\"Tax\\\").\""
+    "  L012: \"ChargeCategory MAY be \\\"Usage\\\" when the record aggregates *charges* across multiple allowed values other than \\\"Tax\\\" (for example, aggregation of \\\"Usage\\\" and \\\"Credit\\\" is allowed, but not \\\"Usage\\\" and \\\"Tax\\\").\""
   ],
   "0_outline_summary": {
     "node_count": 5,
@@ -154,7 +154,7 @@
                 "temp_id": "R005",
                 "order": 5,
                 "ref": "L012",
-                "text": "ChargeCategory MAY equal \"Usage\" when the record aggregates *charges* across multiple allowed values other than \"Tax\" (for example, aggregation of \"Usage\" and \"Credit\" is allowed, but not \"Usage\" and \"Tax\").",
+                "text": "ChargeCategory MAY be \"Usage\" when the record aggregates *charges* across multiple allowed values other than \"Tax\" (for example, aggregation of \"Usage\" and \"Credit\" is allowed, but not \"Usage\" and \"Tax\").",
                 "keyword": "MAY",
                 "section_path": [
                   "Charge Category",
