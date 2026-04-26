@@ -149,7 +149,7 @@ Although applied after the period had ended, these corrections do not introduce 
 
 ### Correction Style
 
-CrestNode (acting as both the data generator and invoice issuer) delivers corrections using Replacement, Delta, and Ledger correction styles, offering varying levels of traceability and auditability.
+CrestNode (acting as both the data generator and [*invoice issuer*](#glossary:invoice-issuer)) delivers corrections using Replacement, Delta, and Ledger correction styles, offering varying levels of traceability and auditability.
 
 ### Scenario 1: Previous Open-Period Correction - Partial Reallocation to Correct Resource
 

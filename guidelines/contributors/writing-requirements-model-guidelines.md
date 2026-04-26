@@ -426,7 +426,7 @@ Unconditional rule (applies to all rows):
 "Condition": {}
 ```
 
-Conditional rule when ChargeCategory equals "Purchase":
+Conditional rule when ChargeCategory is "Purchase":
 ```json
 "Condition": {
   "CheckFunction": "CheckValue",
@@ -435,7 +435,7 @@ Conditional rule when ChargeCategory equals "Purchase":
 }
 ```
 
-Conditional rule when ContractCommitmentCategory equals "Usage":
+Conditional rule when ContractCommitmentCategory is "Usage":
 ```json
 "Condition": {
   "CheckFunction": "CheckValue",
