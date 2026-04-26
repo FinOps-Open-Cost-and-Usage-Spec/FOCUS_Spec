@@ -1,0 +1,264 @@
+{
+  "phase": 2,
+  "source": {
+    "path": "specification/datasets/contract_commitment/columns/contractcommitmentid.md",
+    "version": "1.3"
+  },
+  "entity": {
+    "entity_type": "Column",
+    "entity_id": "ContractCommitmentId",
+    "entity_name": "Contract Commitment ID"
+  },
+  "requirements_scope": {
+    "section_names_allowed": [
+      "Requirements",
+      "Column Requirements",
+      "Object Requirements",
+      "Dataset Requirements",
+      "Attribute Requirements"
+    ],
+    "atoms_in_scope_count": 8
+  },
+  "0_outline_root": "ROOT: Contract Commitment ID > Requirements",
+  "0_outline_lines": [
+    "L007: \"ContractCommitmentId MUST adhere to the following requirements:\"",
+    "  L009: \"ContractCommitmentId MUST be of type String.\"",
+    "  L010: \"ContractCommitmentId MUST conform to [StringHandling](#attributes.stringhandling) requirements.\"",
+    "  L011: \"ContractCommitmentId MUST NOT be null.\"",
+    "  L012: \"ContractCommitmentId MUST be a unique identifier within the service provider.\"",
+    "  L013: \"ContractCommitmentId SHOULD be a fully-qualified identifier.\"",
+    "  L014: \"ContractCommitmentId MUST have one and only one parent [ContractId](#datasets.contractcommitment.contractid).\"",
+    "  L015: \"ContractCommitmentId MAY match ContractId.\""
+  ],
+  "0_outline_summary": {
+    "node_count": 8,
+    "leaf_count": 7,
+    "lead_in_count": 1,
+    "max_depth": 1,
+    "max_indent_level": 0,
+    "root_children_count": 1,
+    "keyword_distribution": {
+      "MUST": 5,
+      "MUST NOT": 1,
+      "SHOULD": 1,
+      "MAY": 1
+    },
+    "lead_ins": [
+      {
+        "ref": "L007",
+        "text_preview": "ContractCommitmentId MUST adhere to the following requirements:",
+        "children": 7
+      }
+    ]
+  },
+  "structure": {
+    "root": {
+      "node_id": "R000",
+      "kind": "root",
+      "children": [
+        {
+          "node_id": "R001",
+          "kind": "atom",
+          "atom": {
+            "temp_id": "R001",
+            "order": 1,
+            "ref": "L007",
+            "text": "ContractCommitmentId MUST adhere to the following requirements:",
+            "keyword": "MUST",
+            "section_path": [
+              "Contract Commitment ID",
+              "Requirements"
+            ],
+            "block": {
+              "block_type": "paragraph",
+              "indent_level": 0,
+              "bullet": null
+            },
+            "lead_in": {
+              "ends_with_colon": true
+            }
+          },
+          "children": [
+            {
+              "node_id": "R002",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R002",
+                "order": 2,
+                "ref": "L009",
+                "text": "ContractCommitmentId MUST be of type String.",
+                "keyword": "MUST",
+                "section_path": [
+                  "Contract Commitment ID",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R003",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R003",
+                "order": 3,
+                "ref": "L010",
+                "text": "ContractCommitmentId MUST conform to [StringHandling](#attributes.stringhandling) requirements.",
+                "keyword": "MUST",
+                "section_path": [
+                  "Contract Commitment ID",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R004",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R004",
+                "order": 4,
+                "ref": "L011",
+                "text": "ContractCommitmentId MUST NOT be null.",
+                "keyword": "MUST NOT",
+                "section_path": [
+                  "Contract Commitment ID",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R005",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R005",
+                "order": 5,
+                "ref": "L012",
+                "text": "ContractCommitmentId MUST be a unique identifier within the service provider.",
+                "keyword": "MUST",
+                "section_path": [
+                  "Contract Commitment ID",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R006",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R006",
+                "order": 6,
+                "ref": "L013",
+                "text": "ContractCommitmentId SHOULD be a fully-qualified identifier.",
+                "keyword": "SHOULD",
+                "section_path": [
+                  "Contract Commitment ID",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R007",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R007",
+                "order": 7,
+                "ref": "L014",
+                "text": "ContractCommitmentId MUST have one and only one parent [ContractId](#datasets.contractcommitment.contractid).",
+                "keyword": "MUST",
+                "section_path": [
+                  "Contract Commitment ID",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R008",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R008",
+                "order": 8,
+                "ref": "L015",
+                "text": "ContractCommitmentId MAY match ContractId.",
+                "keyword": "MAY",
+                "section_path": [
+                  "Contract Commitment ID",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "debug": {
+    "ruleset": "ph2_tree_v1",
+    "parenting_signals": [
+      "section_path_boundary",
+      "lead_in_colon",
+      "indent_level"
+    ],
+    "warnings": []
+  }
+}
