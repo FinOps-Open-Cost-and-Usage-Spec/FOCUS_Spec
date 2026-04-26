@@ -21,11 +21,11 @@
   },
   "0_outline_root": "ROOT: Contract Commitment Model > Requirements",
   "0_outline_lines": [
-    "L020: \"ContractCommitmentModel MUST adhere to the following requirements:\"",
-    "  L022: \"ContractCommitmentModel MUST be of type String.\"",
-    "  L023: \"ContractCommitmentModel MUST NOT be null.\"",
-    "  L024: \"ContractCommitmentModel MUST be one of the allowed values.\"",
-    "  L025: \"ContractCommitmentModel MUST be \\\"Discontinuous\\\" if [ContractCommitmentFulfillmentInterval](#datasets.contractcommitment.contractcommitmentfulfillmentinterval) is \\\"Total Term\\\".\""
+    "L009: \"ContractCommitmentModel MUST adhere to the following requirements:\"",
+    "  L011: \"ContractCommitmentModel MUST be of type String.\"",
+    "  L012: \"ContractCommitmentModel MUST NOT be null.\"",
+    "  L013: \"ContractCommitmentModel MUST be one of the allowed values.\"",
+    "  L014: \"ContractCommitmentModel MUST be \\\"Discontinuous\\\" if [ContractCommitmentFulfillmentInterval](#datasets.contractcommitment.contractcommitmentfulfillmentinterval) is \\\"Total Term\\\".\""
   ],
   "0_outline_summary": {
     "node_count": 5,
@@ -40,7 +40,7 @@
     },
     "lead_ins": [
       {
-        "ref": "L020",
+        "ref": "L009",
         "text_preview": "ContractCommitmentModel MUST adhere to the following requirements:",
         "children": 4
       }
@@ -57,7 +57,7 @@
           "atom": {
             "temp_id": "R001",
             "order": 1,
-            "ref": "L020",
+            "ref": "L009",
             "text": "ContractCommitmentModel MUST adhere to the following requirements:",
             "keyword": "MUST",
             "section_path": [
@@ -80,7 +80,7 @@
               "atom": {
                 "temp_id": "R002",
                 "order": 2,
-                "ref": "L022",
+                "ref": "L011",
                 "text": "ContractCommitmentModel MUST be of type String.",
                 "keyword": "MUST",
                 "section_path": [
@@ -104,7 +104,7 @@
               "atom": {
                 "temp_id": "R003",
                 "order": 3,
-                "ref": "L023",
+                "ref": "L012",
                 "text": "ContractCommitmentModel MUST NOT be null.",
                 "keyword": "MUST NOT",
                 "section_path": [
@@ -128,7 +128,7 @@
               "atom": {
                 "temp_id": "R004",
                 "order": 4,
-                "ref": "L024",
+                "ref": "L013",
                 "text": "ContractCommitmentModel MUST be one of the allowed values.",
                 "keyword": "MUST",
                 "section_path": [
@@ -152,7 +152,7 @@
               "atom": {
                 "temp_id": "R005",
                 "order": 5,
-                "ref": "L025",
+                "ref": "L014",
                 "text": "ContractCommitmentModel MUST be \"Discontinuous\" if [ContractCommitmentFulfillmentInterval](#datasets.contractcommitment.contractcommitmentfulfillmentinterval) is \"Total Term\".",
                 "keyword": "MUST",
                 "section_path": [
