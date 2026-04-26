@@ -24,6 +24,7 @@
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
+        "Billed Cost",
         "Requirements"
       ],
       "block": {
@@ -48,6 +49,7 @@
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
+        "Billed Cost",
         "Requirements"
       ],
       "block": {
@@ -72,6 +74,7 @@
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
+        "Billed Cost",
         "Requirements"
       ],
       "block": {
@@ -96,6 +99,7 @@
       "keyword": "MUST NOT",
       "role": "requirement",
       "section_path": [
+        "Billed Cost",
         "Requirements"
       ],
       "block": {
@@ -120,6 +124,7 @@
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
+        "Billed Cost",
         "Requirements"
       ],
       "block": {
@@ -144,6 +149,7 @@
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
+        "Billed Cost",
         "Requirements"
       ],
       "block": {
@@ -168,6 +174,7 @@
       "keyword": "MUST NOT",
       "role": "requirement",
       "section_path": [
+        "Billed Cost",
         "Requirements"
       ],
       "block": {
@@ -192,6 +199,7 @@
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
+        "Billed Cost",
         "Requirements"
       ],
       "block": {
@@ -212,10 +220,11 @@
     {
       "temp_id": "R009",
       "order": 9,
-      "text": "The sum of BilledCost for a given [InvoiceDetailId](#datasets.invoicedetail.invoicedetailid), [InvoiceId](#datasets.invoicedetail.invoiceid), and [InvoiceIssuerName](#datasets.invoicedetail.invoiceissuername) MUST match the payable amount provided in the corresponding entries on the issued invoice when [InvoiceIssueStatus](#datasets.invoicedetail.invoiceissuestatus) is \"Issued\".",
+      "text": "The sum of BilledCost for a given [InvoiceDetailId](#datasets.invoicedetail.invoicedetailid), [InvoiceId](#datasets.invoicedetail.invoiceid), and [InvoiceIssuerName](#datasets.invoicedetail.invoiceissuername) MUST be equal to the payable amount provided in the corresponding entries on the issued invoice when [InvoiceIssueStatus](#datasets.invoicedetail.invoiceissuestatus) is \"Issued\".",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
+        "Billed Cost",
         "Requirements"
       ],
       "block": {
@@ -240,6 +249,7 @@
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
+        "Billed Cost",
         "Requirements"
       ],
       "block": {
@@ -264,6 +274,7 @@
       "keyword": "MUST NOT",
       "role": "requirement",
       "section_path": [
+        "Billed Cost",
         "Requirements"
       ],
       "block": {
@@ -288,6 +299,7 @@
       "keyword": "MAY",
       "role": "requirement",
       "section_path": [
+        "Billed Cost",
         "Requirements"
       ],
       "block": {
@@ -312,6 +324,7 @@
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
+        "Billed Cost",
         "Requirements"
       ],
       "block": {
@@ -336,6 +349,7 @@
       "keyword": "MUST NOT",
       "role": "requirement",
       "section_path": [
+        "Billed Cost",
         "Requirements"
       ],
       "block": {
@@ -360,6 +374,7 @@
       "keyword": "MAY",
       "role": "requirement",
       "section_path": [
+        "Billed Cost",
         "Requirements"
       ],
       "block": {
