@@ -36,11 +36,11 @@
         "ends_with_colon": true
       },
       "provenance": {
-        "line_start": 18,
-        "line_end": 18
+        "line_start": 13,
+        "line_end": 13
       },
       "_alignment_status": "confirmed",
-      "ref": "L018"
+      "ref": "L013"
     },
     {
       "temp_id": "R002",
@@ -61,11 +61,11 @@
         "ends_with_colon": false
       },
       "provenance": {
-        "line_start": 20,
-        "line_end": 20
+        "line_start": 15,
+        "line_end": 15
       },
       "_alignment_status": "confirmed",
-      "ref": "L020"
+      "ref": "L015"
     },
     {
       "temp_id": "R003",
@@ -86,11 +86,11 @@
         "ends_with_colon": false
       },
       "provenance": {
-        "line_start": 21,
-        "line_end": 21
+        "line_start": 16,
+        "line_end": 16
       },
       "_alignment_status": "confirmed",
-      "ref": "L021"
+      "ref": "L016"
     },
     {
       "temp_id": "R004",
@@ -111,11 +111,11 @@
         "ends_with_colon": false
       },
       "provenance": {
-        "line_start": 22,
-        "line_end": 22
+        "line_start": 17,
+        "line_end": 17
       },
       "_alignment_status": "confirmed",
-      "ref": "L022"
+      "ref": "L017"
     }
   ],
   "warnings": [],
