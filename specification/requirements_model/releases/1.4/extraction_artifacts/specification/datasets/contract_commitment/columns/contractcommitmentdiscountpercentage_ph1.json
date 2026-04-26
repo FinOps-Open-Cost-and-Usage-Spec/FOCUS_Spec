@@ -36,11 +36,11 @@
         "ends_with_colon": true
       },
       "provenance": {
-        "line_start": 34,
-        "line_end": 34
+        "line_start": 7,
+        "line_end": 7
       },
       "_alignment_status": "confirmed",
-      "ref": "L034"
+      "ref": "L007"
     },
     {
       "temp_id": "R002",
@@ -61,11 +61,11 @@
         "ends_with_colon": false
       },
       "provenance": {
-        "line_start": 36,
-        "line_end": 36
+        "line_start": 9,
+        "line_end": 9
       },
       "_alignment_status": "confirmed",
-      "ref": "L036"
+      "ref": "L009"
     },
     {
       "temp_id": "R003",
@@ -86,11 +86,11 @@
         "ends_with_colon": false
       },
       "provenance": {
-        "line_start": 37,
-        "line_end": 37
+        "line_start": 10,
+        "line_end": 10
       },
       "_alignment_status": "confirmed",
-      "ref": "L037"
+      "ref": "L010"
     },
     {
       "temp_id": "R004",
@@ -111,11 +111,11 @@
         "ends_with_colon": true
       },
       "provenance": {
-        "line_start": 38,
-        "line_end": 38
+        "line_start": 11,
+        "line_end": 11
       },
       "_alignment_status": "confirmed",
-      "ref": "L038"
+      "ref": "L011"
     },
     {
       "temp_id": "R005",
@@ -136,11 +136,11 @@
         "ends_with_colon": false
       },
       "provenance": {
-        "line_start": 39,
-        "line_end": 39
+        "line_start": 12,
+        "line_end": 12
       },
       "_alignment_status": "confirmed",
-      "ref": "L039"
+      "ref": "L012"
     },
     {
       "temp_id": "R006",
@@ -161,11 +161,11 @@
         "ends_with_colon": false
       },
       "provenance": {
-        "line_start": 40,
-        "line_end": 40
+        "line_start": 13,
+        "line_end": 13
       },
       "_alignment_status": "confirmed",
-      "ref": "L040"
+      "ref": "L013"
     },
     {
       "temp_id": "R007",
@@ -186,11 +186,11 @@
         "ends_with_colon": false
       },
       "provenance": {
-        "line_start": 41,
-        "line_end": 41
+        "line_start": 14,
+        "line_end": 14
       },
       "_alignment_status": "confirmed",
-      "ref": "L041"
+      "ref": "L014"
     },
     {
       "temp_id": "R008",
@@ -211,11 +211,11 @@
         "ends_with_colon": true
       },
       "provenance": {
-        "line_start": 42,
-        "line_end": 42
+        "line_start": 15,
+        "line_end": 15
       },
       "_alignment_status": "confirmed",
-      "ref": "L042"
+      "ref": "L015"
     },
     {
       "temp_id": "R009",
@@ -236,11 +236,11 @@
         "ends_with_colon": false
       },
       "provenance": {
-        "line_start": 43,
-        "line_end": 43
+        "line_start": 16,
+        "line_end": 16
       },
       "_alignment_status": "confirmed",
-      "ref": "L043"
+      "ref": "L016"
     },
     {
       "temp_id": "R010",
@@ -261,11 +261,11 @@
         "ends_with_colon": false
       },
       "provenance": {
-        "line_start": 44,
-        "line_end": 44
+        "line_start": 17,
+        "line_end": 17
       },
       "_alignment_status": "confirmed",
-      "ref": "L044"
+      "ref": "L017"
     },
     {
       "temp_id": "R011",
@@ -286,11 +286,11 @@
         "ends_with_colon": false
       },
       "provenance": {
-        "line_start": 45,
-        "line_end": 45
+        "line_start": 18,
+        "line_end": 18
       },
       "_alignment_status": "confirmed",
-      "ref": "L045"
+      "ref": "L018"
     }
   ],
   "warnings": [],
@@ -313,30 +313,22 @@
           "ends_with_colon": true
         },
         "provenance": {
-          "line_start": 13,
-          "line_end": 13
+          "line_start": 28,
+          "line_end": 28
         },
-        "ref": "LI013",
-        "next_normative_refs": [
-          "L034",
-          "L036",
-          "L037",
-          "L038",
-          "L041",
-          "L042",
-          "L045"
-        ]
+        "ref": "LI028",
+        "next_normative_refs": []
       }
     ],
     "index": {
       "by_section_path": {
         "Implementation Context > Calculating the Effective Percentage": [
-          "LI013"
+          "LI028"
         ]
       },
       "by_line": {
-        "13": [
-          "LI013"
+        "28": [
+          "LI028"
         ]
       }
     }
