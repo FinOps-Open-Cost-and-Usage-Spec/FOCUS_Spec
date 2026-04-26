@@ -21,14 +21,14 @@
   },
   "0_outline_root": "ROOT: Contract Commitment Duration Type > Requirements",
   "0_outline_lines": [
-    "L016: \"ContractCommitmentDurationType MUST adhere to the following requirements:\"",
-    "  L018: \"ContractCommitmentDurationType MUST be of type String.\"",
-    "  L019: \"ContractCommitmentDurationType MUST conform to [StringHandling](#attributes.stringhandling) requirements.\"",
-    "  L020: \"ContractCommitmentDurationType MUST NOT be null.\"",
-    "  L021: \"ContractCommitmentDurationType SHOULD be expressed with a quantity and time unit, where quantity is a positive integer, and time-unit is a standardized unit of time, either singular or plural (e.g., \\\"1 Day\\\", \\\"1 Year\\\", \\\"3 Months\\\", \\\"3 Years\\\").\"",
-    "  L022: \"ContractCommitmentDurationType SHOULD present the unit of time as one of the allowed values.\"",
-    "  L023: \"ContractCommitmentDurationType SHOULD correspond to the standard duration of the purchased offering (e.g., \\\"1 Year\\\", \\\"3 Years\\\") rather than a precise calculation of days or hours.\"",
-    "  L024: \"ContractCommitmentDurationType MAY differ from the actual duration calculated between [ContractCommitmentPeriodStart](#datasets.contractcommitment.contractcommitmentperiodstart) and [ContractCommitmentPeriodEnd](#datasets.contractcommitment.contractcommitmentperiodend) (e.g., if a 3-year commitment is exchanged in its final month, the resulting record may have a short lifespan but retains a value of \\\"3 Years\\\").\""
+    "L009: \"ContractCommitmentDurationType MUST adhere to the following requirements:\"",
+    "  L011: \"ContractCommitmentDurationType MUST be of type String.\"",
+    "  L012: \"ContractCommitmentDurationType MUST conform to [StringHandling](#attributes.stringhandling) requirements.\"",
+    "  L013: \"ContractCommitmentDurationType MUST NOT be null.\"",
+    "  L014: \"ContractCommitmentDurationType SHOULD be expressed with a quantity and time unit, where quantity is a positive integer, and time-unit is a standardized unit of time, either singular or plural (e.g., \\\"1 Day\\\", \\\"1 Year\\\", \\\"3 Months\\\", \\\"3 Years\\\").\"",
+    "  L015: \"ContractCommitmentDurationType SHOULD present the unit of time as one of the allowed values.\"",
+    "  L016: \"ContractCommitmentDurationType SHOULD correspond to the standard duration of the purchased offering (e.g., \\\"1 Year\\\", \\\"3 Years\\\") rather than a precise calculation of days or hours.\"",
+    "  L017: \"ContractCommitmentDurationType MAY differ from the actual duration calculated between [ContractCommitmentPeriodStart](#datasets.contractcommitment.contractcommitmentperiodstart) and [ContractCommitmentPeriodEnd](#datasets.contractcommitment.contractcommitmentperiodend) (e.g., if a 3-year commitment is exchanged in its final month, the resulting record may have a short lifespan but retains a value of \\\"3 Years\\\").\""
   ],
   "0_outline_summary": {
     "node_count": 8,
@@ -45,7 +45,7 @@
     },
     "lead_ins": [
       {
-        "ref": "L016",
+        "ref": "L009",
         "text_preview": "ContractCommitmentDurationType MUST adhere to the following requirements:",
         "children": 7
       }
@@ -62,7 +62,7 @@
           "atom": {
             "temp_id": "R001",
             "order": 1,
-            "ref": "L016",
+            "ref": "L009",
             "text": "ContractCommitmentDurationType MUST adhere to the following requirements:",
             "keyword": "MUST",
             "section_path": [
@@ -85,7 +85,7 @@
               "atom": {
                 "temp_id": "R002",
                 "order": 2,
-                "ref": "L018",
+                "ref": "L011",
                 "text": "ContractCommitmentDurationType MUST be of type String.",
                 "keyword": "MUST",
                 "section_path": [
@@ -109,7 +109,7 @@
               "atom": {
                 "temp_id": "R003",
                 "order": 3,
-                "ref": "L019",
+                "ref": "L012",
                 "text": "ContractCommitmentDurationType MUST conform to [StringHandling](#attributes.stringhandling) requirements.",
                 "keyword": "MUST",
                 "section_path": [
@@ -133,7 +133,7 @@
               "atom": {
                 "temp_id": "R004",
                 "order": 4,
-                "ref": "L020",
+                "ref": "L013",
                 "text": "ContractCommitmentDurationType MUST NOT be null.",
                 "keyword": "MUST NOT",
                 "section_path": [
@@ -157,7 +157,7 @@
               "atom": {
                 "temp_id": "R005",
                 "order": 5,
-                "ref": "L021",
+                "ref": "L014",
                 "text": "ContractCommitmentDurationType SHOULD be expressed with a quantity and time unit, where quantity is a positive integer, and time-unit is a standardized unit of time, either singular or plural (e.g., \"1 Day\", \"1 Year\", \"3 Months\", \"3 Years\").",
                 "keyword": "SHOULD",
                 "section_path": [
@@ -181,7 +181,7 @@
               "atom": {
                 "temp_id": "R006",
                 "order": 6,
-                "ref": "L022",
+                "ref": "L015",
                 "text": "ContractCommitmentDurationType SHOULD present the unit of time as one of the allowed values.",
                 "keyword": "SHOULD",
                 "section_path": [
@@ -205,7 +205,7 @@
               "atom": {
                 "temp_id": "R007",
                 "order": 7,
-                "ref": "L023",
+                "ref": "L016",
                 "text": "ContractCommitmentDurationType SHOULD correspond to the standard duration of the purchased offering (e.g., \"1 Year\", \"3 Years\") rather than a precise calculation of days or hours.",
                 "keyword": "SHOULD",
                 "section_path": [
@@ -229,7 +229,7 @@
               "atom": {
                 "temp_id": "R008",
                 "order": 8,
-                "ref": "L024",
+                "ref": "L017",
                 "text": "ContractCommitmentDurationType MAY differ from the actual duration calculated between [ContractCommitmentPeriodStart](#datasets.contractcommitment.contractcommitmentperiodstart) and [ContractCommitmentPeriodEnd](#datasets.contractcommitment.contractcommitmentperiodend) (e.g., if a 3-year commitment is exchanged in its final month, the resulting record may have a short lifespan but retains a value of \"3 Years\").",
                 "keyword": "MAY",
                 "section_path": [
