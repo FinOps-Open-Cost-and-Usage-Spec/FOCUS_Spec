@@ -13,5 +13,4 @@ ContractCommitmentId [-adheres-]{+MUST adhere+} to the following requirements:
 [-  *-] ContractCommitmentId MUST be a unique identifier within the service provider.
 * ContractCommitmentId SHOULD be a fully-qualified identifier.
 * ContractCommitmentId MUST have one and only one parent ContractId.
-* ContractCommitmentId MAY be equal to ContractId.
-[-* ContractCommitmentId MUST be unique across the Contract Commitment dataset.-]
+* ContractCommitmentId MAY [-be equal to-]{+match+} ContractId.[-* ContractCommitmentId MUST be unique across the Contract Commitment dataset.-]
