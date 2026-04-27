@@ -111,7 +111,7 @@ A set of properties describing how resources are allocated in data generator-def
 | Feature level | Recommended |
 | Allows nulls | True |
 | Data type | JSON |
-| Value format | JSON Object Format |
+| Value format | [JSON Object Format](#attributes.jsonobjectformat) |
 | Object | [AllocatedMethodDetailsObject](#datasets.costandusage.allocatedmethoddetails.allocatedmethoddetailsobject) |
 
 ## Introduced (version)

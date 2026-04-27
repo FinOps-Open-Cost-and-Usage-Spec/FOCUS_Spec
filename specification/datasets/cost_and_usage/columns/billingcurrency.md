@@ -34,7 +34,7 @@ Represents the currency that a *charge* was billed in.
 | Feature level   | Mandatory                                            |
 | Allows nulls    | False                                                |
 | Data type       | String                                               |
-| Value format    | Currency Format        |
+| Value format    | [Currency Format](#attributes.currencyformat)        |
 
 ## Introduced (version)
 

@@ -29,7 +29,7 @@ Contract Commitment Offer Category
 
 ## Description
 
-Indicates whether the pricing and terms of a *contract commitment* are based on a standard, publicly accessible offering or have been specifically brokered through private negotiation.
+Indicates whether the pricing and terms of a [*contract commitment*](#glossary:contract-commitment) are based on a standard, publicly accessible offering or have been specifically brokered through private negotiation.
 
 ## Content Constraints
 

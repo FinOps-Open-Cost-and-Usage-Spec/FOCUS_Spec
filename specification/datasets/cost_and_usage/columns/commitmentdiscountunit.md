@@ -40,7 +40,7 @@ The service-provider-specified measurement unit indicating how a service provide
 | Feature level   | Conditional                                          |
 | Allows nulls    | True                                                 |
 | Data type       | String                                               |
-| Value format    | Unit Format                |
+| Value format    | [Unit Format](#attributes.unitformat)                |
 
 ## Introduced (version)
 

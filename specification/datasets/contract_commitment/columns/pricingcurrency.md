@@ -32,7 +32,7 @@ The national or virtual currency denomination that the [Contract Commitment Cost
 | Feature level   | Conditional                         |
 | Allows nulls    | False                               |
 | Data type       | String                              |
-| Value format    | Currency Format |
+| Value format    | [Currency Format](#attributes.currencyformat) |
 
 ## Introduced (version)
 

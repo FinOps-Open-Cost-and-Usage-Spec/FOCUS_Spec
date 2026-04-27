@@ -25,7 +25,7 @@ Service Provider Name
 
 ## Description
 
-The name of the entity that provides the *contract commitment*.
+The name of the entity that provides the [*contract commitment*](#glossary:contract-commitment).
 
 ## Content Constraints
 

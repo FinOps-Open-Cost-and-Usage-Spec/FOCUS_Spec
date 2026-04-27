@@ -31,7 +31,7 @@ Contract Commitment Payment Model
 
 ## Description
 
-Defines the financial settlement structure of a *contract commitment*.
+Defines the financial settlement structure of a [*contract commitment*](#glossary:contract-commitment).
 
 ## Content Constraints
 

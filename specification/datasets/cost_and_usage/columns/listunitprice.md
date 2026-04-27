@@ -11,7 +11,7 @@ ListUnitPrice MUST adhere to the following requirements:
 * ListUnitPrice MUST adhere to the following nullability requirements:
   * ListUnitPrice MUST be null when [SkuPriceId](#datasets.costandusage.skupriceid) is null.
   * ListUnitPrice MUST be null when [ChargeCategory](#datasets.costandusage.chargecategory) is "Tax".
-  * ListUnitPrice MUST NOT be null when SkuPriceId is not null.
+  * ListUnitPrice MUST NOT be null when [SkuPriceId](#datasets.costandusage.skupriceid) is not null.
   * ListUnitPrice MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#datasets.costandusage.chargeclass) is not "Correction".
   * ListUnitPrice MAY be null in all other cases.
 * When ListUnitPrice is not null, ListUnitPrice MUST adhere to the following requirements:
@@ -43,7 +43,7 @@ The suggested service-provider-published unit price for a single Pricing Unit of
 | Feature level   | Conditional                                          |
 | Allows nulls    | True                                                 |
 | Data type       | Decimal                                              |
-| Value format    | Numeric Format          |
+| Value format    | [Numeric Format](#attributes.numericformat)          |
 | Number range    | Any valid non-negative decimal value                 |
 
 ## Introduced (version)

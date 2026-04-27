@@ -13,8 +13,8 @@ PricingCurrencyEffectiveCost MUST adhere to the following requirements:
 * PricingCurrencyEffectiveCost MUST be of type Decimal.
 * PricingCurrencyEffectiveCost MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * PricingCurrencyEffectiveCost MUST NOT be null.
-* PricingCurrencyEffectiveCost MUST be denominated in the PricingCurrency.
-* PricingCurrencyEffectiveCost MUST be the PricingCurrency-denominated equivalent of EffectiveCost.
+* PricingCurrencyEffectiveCost MUST be denominated in the [PricingCurrency](#datasets.costandusage.pricingcurrency).
+* PricingCurrencyEffectiveCost MUST be the PricingCurrency-denominated equivalent of [EffectiveCost](#datasets.costandusage.effectivecost).
 
 ## Column ID
 
@@ -37,7 +37,7 @@ The PricingCurrency-denominated equivalent of Effective Cost, representing the c
 | Feature level   | Conditional                                          |
 | Allows nulls    | False                                                |
 | Data type       | Decimal                                              |
-| Value format    | Numeric Format          |
+| Value format    | [Numeric Format](#attributes.numericformat)          |
 | Number range    | Any valid decimal value                              |
 
 ## Introduced (version)

@@ -37,7 +37,7 @@ Service-provider-specified measurement unit for determining unit prices, indicat
 | Feature level   | Mandatory                                            |
 | Allows nulls    | True                                                 |
 | Data type       | String                                               |
-| Value format    | Unit Format                |
+| Value format    | [Unit Format](#attributes.unitformat)                |
 
 ## Introduced (version)
 

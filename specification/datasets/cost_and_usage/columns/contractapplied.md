@@ -56,7 +56,7 @@ The `Elements` array contains one or more objects, each of which contains the fo
 | `ContractId` | String | Yes | A service-provider-assigned identifier for a contract describing the agreed terms between a service provider and a customer. Contracts can include commitment to a certain amount of spend or usage over an agreed period of time. |
 | `ContractCommitmentId` | String | Yes | A service-provider-assigned identifier describing an agreement agreed between a service provider and a customer. |
 | `ContractCommitmentAppliedCost` | Decimal | Conditional | The cost of the *charge* applied to the contract line item. It is associated with the contract line item via Contract Commitment ID, and is commonly used for monitoring progress towards fulfilling contractual commitments that may facilitate discounts for [*resources*](#glossary:resource) or [*services*](#glossary:service) as agreed between a service provider and a customer. <br><br>**Condition:** Must be present if Quantity and Unit are not provided. |
-| `ContractCommitmentAppliedQuantity` | Decimal | Conditional | The quantity of the *charge* applied to the contract line item. It is associated with the contract line item via Contract Commitment ID, and is commonly used for monitoring the progress towards fulfilling contractual commitments that may facilitate discounts for *resources* or *services* as agreed between a service provider and a customer. <br><br>**Condition:** Must be present if Cost is not provided. |
+| `ContractCommitmentAppliedQuantity` | Decimal | Conditional | The quantity of the *charge* applied to the contract line item. It is associated with the contract line item via Contract Commitment ID, and is commonly used for monitoring the progress towards fulfilling contractual commitments that may facilitate discounts for [*resources*](#glossary:resource) or [*services*](#glossary:service) as agreed between a service provider and a customer. <br><br>**Condition:** Must be present if Cost is not provided. |
 | `ContractCommitmentAppliedUnit` | String | Conditional | A service-provider-specified measurement unit for the usage declared in Contract Commitment Applied Quantity. It complements the Contract Commitment Applied Quantity metric. <br><br>**Condition:** Must be present if Contract Commitment Applied Quantity is provided. |
 
 ## Object Example
@@ -108,7 +108,7 @@ Contract Applied
 
 ## Description
 
-A set of properties that associate a *charge* with one or more *contract commitments*.
+A set of properties that associate a *charge* with one or more [*contract commitments*](#glossary:contract-commitment).
 
 ## Content Constraints
 
@@ -119,7 +119,7 @@ A set of properties that associate a *charge* with one or more *contract commitm
 | Feature level | Conditional |
 | Allows nulls | True |
 | Data type | JSON |
-| Value format | JSON Object Format |
+| Value format | [JSON Object Format](#attributes.jsonobjectformat) |
 | Object | [ContractAppliedObject](#datasets.costandusage.contractapplied.contractappliedobject) |
 
 ## Introduced (version)

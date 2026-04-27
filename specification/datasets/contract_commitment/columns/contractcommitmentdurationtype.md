@@ -33,7 +33,7 @@ Contract Commitment Duration Type
 
 ## Description
 
-Represents the categorical length of the *contract commitment* offering.
+Represents the categorical length of the [*contract commitment*](#glossary:contract-commitment) offering.
 
 ## Content Constraints
 
