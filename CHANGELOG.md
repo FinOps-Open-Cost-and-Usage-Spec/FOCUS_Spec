@@ -15,7 +15,7 @@ v1.4 adds 2 datasets (`BillingPeriod`, `InvoiceDetail`), 47 new columns, 6 new a
 #### Compatible Changes
 
 * New Datasets and Columns to support [Invoice Reconciliation](/specification/supported_features/invoice_reconciliation.md)
-* New Columns to support [Commitment Program Eligibility Detail](/specification/supported_features/commitment_program_eligibility_details.md)
+* New Columns to support [Commitment Program Eligibility Details](/specification/supported_features/commitment_program_eligibility_details.md)
 * Revised normative requirements for [`BilledCost`](/specification/datasets/cost_and_usage/columns/billedcost.md) and [`EffectiveCost`](/specification/datasets/cost_and_usage/columns/effectivecost.md), affecting:
   * [Billed Cost and Invoice Alignment](/specification/supported_features/billed_cost_and_invoice_alignment.md)
   * [Effective Cost](/specification/supported_features/effective_cost.md)
@@ -145,6 +145,7 @@ v1.4 adds 2 datasets (`BillingPeriod`, `InvoiceDetail`), 47 new columns, 6 new a
   * `FOCUS Column`
   * `FOCUS Dataset Column`
   * `Invoice`
+  * `Invoice Issuer`
   * `Invoice Reconciliation`
   * `Issued Invoice`
   * `Native Dataset`
