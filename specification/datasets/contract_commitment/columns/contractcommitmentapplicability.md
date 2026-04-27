@@ -4,8 +4,6 @@ Contract Commitment Applicability is a structured definition of the specific ent
 
 ## Requirements
 
-### Column Requirements
-
 ContractCommitmentApplicability MUST adhere to the following requirements:
 
 * ContractCommitmentApplicability MUST be of type JSON Object (serialized as a String where necessary).
@@ -14,13 +12,37 @@ ContractCommitmentApplicability MUST adhere to the following requirements:
 * ContractCommitmentApplicability MUST conform to [ContractCommitmentApplicabilityObject](#datasets.contractcommitment.contractcommitmentapplicability.contractcommitmentapplicabilityobject) requirements.
 * ContractCommitmentApplicability MUST NOT be null.
 
+## Column ID
+
+ContractCommitmentApplicability
+
+## Display Name
+
+Contract Commitment Applicability
+
+## Description
+
+A structured definition of the specific entities to which a contract commitment applies, including inclusion/exclusion logic and applicability percentages.
+
+## Content Constraints
+
+| Constraint | Value |
+| :--- | :--- |
+| Dataset | [Contract Commitment](#datasets.contractcommitment) |
+| Column type | Dimension |
+| Feature level | Mandatory |
+| Allows nulls | False |
+| Data type | JSON |
+| Value format | [JSON Object Format](#attributes.jsonobjectformat) |
+| Object          | [ContractCommitmentApplicabilityObject](#datasets.contractcommitment.contractcommitmentapplicability.contractcommitmentapplicabilityobject) |
+
 ## Contract Commitment Applicability Object
 
 Contract Commitment Applicability consists of a valid JSON object which contains a set of top-level property keys. These keys define entity-based inclusionary and exclusionary logic, as well as the portion of relevant cost and/or usage that is applicable to the *contract commitment*.
 
 The following section details the normative requirements for the ContractCommitmentApplicabilityObject and its nested properties. For a logical overview of the expected content, see the [Schema Structure](#datasets.contractcommitment.contractcommitmentapplicability.schemastructure) and [Object Example](#datasets.contractcommitment.contractcommitmentapplicability.objectexample) sections.
 
-### Object Requirements
+## Object Requirements
 
 ContractCommitmentApplicabilityObject MUST adhere to the following requirements:
 
@@ -36,7 +58,7 @@ ContractCommitmentApplicabilityObject MUST adhere to the following requirements:
 * ContractCommitmentApplicabilityObject.Inclusions[\*].Values MUST contain only the single string "*" if the wildcard is present.
 * ContractCommitmentApplicabilityObject.Exclusions[\*].Values MUST contain only the single string "*" if the wildcard is present.
 
-## Schema Structure
+## Object Schema Structure
 
 ContractCommitmentApplicability contains a structured JSON object defining the logical boundaries and the applicability percentage of a commitment.
 
@@ -96,32 +118,6 @@ ContractCommitmentApplicability uses a reserved string to represent global or un
 2. **Exclusion Logic:** When `["*"]` is used in an Exclusion rule, the rule evaluates to `True` for every entity, effectively excluding all entities (this is typically used only in combination with `ExclusionOperator: "And"` for surgical filtering).
 3. **Implicit Wildcards:** If a Dimension (e.g., `RegionId`) is omitted entirely from the `Inclusions` array, it is treated as an implicit wildcard (unrestricted).
 
-## Object Example
-
-Here is a basic example of the object format, describing organization-wide coverage **except** for Database services running in BillingAccountId 123456789012.
-
-* For more detailed examples, please see this column's entry in the JSON Object Examples appendix entry [here](#appendix.examples:jsonobject.examples:contractcommitmentapplicability).
-* For the JSON schema, please see [Contract Commitment Applicability Object Schema](#schemas.contractcommitment.contractcommitmentapplicabilityobjectschema).
-
-```json
-{
-  "IsGlobalScope": true,
-  "ExclusionOperator": "And",
-  "Exclusions": [
-    {
-      "Dimension": "BillingAccountId",
-      "Operator": "In",
-      "Values": ["123456789012"]
-    },
-    {
-      "Dimension": "ServiceCategory",
-      "Operator": "In",
-      "Values": ["Database"]
-    }
-  ]
-}
-```
-
 ## Implementation Guidance
 
 ### Processing Workflow
@@ -149,37 +145,39 @@ The evaluation of **Applicability** percentages must be contextually aligned wit
 1. **Consistency:** Engines should expect a JSON Object and should not support scalar (Decimal/Float) values for this field to ensure compatibility with typed database schemas.
 2. **Conflict Resolution:** If `IsGlobalScope` or `IsComplexScope` is `true`, the `Inclusions` array must be empty or omitted. Additionally, `IsGlobalScope` and `IsComplexScope` must both not be `true` at the same time. Engines should validate these structural constraints before processing.
 
-### Object ID
+## Object Example
+
+Here is a basic example of the object format, describing organization-wide coverage **except** for Database services running in BillingAccountId 123456789012.
+
+* For more detailed examples, please see this column's entry in the JSON Object Examples appendix entry [here](#appendix.examples:jsonobject.examples:contractcommitmentapplicability).
+* For the JSON schema, please see [Contract Commitment Applicability Object Schema](#schemas.contractcommitment.contractcommitmentapplicabilityobjectschema).
+
+```json
+{
+  "IsGlobalScope": true,
+  "ExclusionOperator": "And",
+  "Exclusions": [
+    {
+      "Dimension": "BillingAccountId",
+      "Operator": "In",
+      "Values": ["123456789012"]
+    },
+    {
+      "Dimension": "ServiceCategory",
+      "Operator": "In",
+      "Values": ["Database"]
+    }
+  ]
+}
+```
+
+## Object ID
 
 ContractCommitmentApplicabilityObject
 
-### Object Display Name
+## Object Display Name
 
 Contract Commitment Applicability Object
-
-## Column ID
-
-ContractCommitmentApplicability
-
-## Display Name
-
-Contract Commitment Applicability
-
-## Description
-
-A structured definition of the specific entities to which a contract commitment applies, including inclusion/exclusion logic and applicability percentages.
-
-## Content Constraints
-
-| Constraint | Value |
-| :--- | :--- |
-| Dataset | [Contract Commitment](#datasets.contractcommitment) |
-| Column type | Dimension |
-| Feature level | Mandatory |
-| Allows nulls | False |
-| Data type | JSON |
-| Value format | [JSON Object Format](#attributes.jsonobjectformat) |
-| Object          | [ContractCommitmentApplicabilityObject](#datasets.contractcommitment.contractcommitmentapplicability.contractcommitmentapplicabilityobject) |
 
 ## Introduced (version)
 

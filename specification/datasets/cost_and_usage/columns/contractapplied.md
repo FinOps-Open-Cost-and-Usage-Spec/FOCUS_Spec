@@ -4,8 +4,6 @@ Contract Applied is a set of properties that associate a [*charge*](#glossary:ch
 
 ## Requirements
 
-### Column Requirements
-
 ContractApplied MUST adhere to the following requirements:
 
 * ContractApplied MUST be of type JSON Object (serialized as a String where necessary).
@@ -14,13 +12,37 @@ ContractApplied MUST adhere to the following requirements:
 * ContractApplied MUST NOT be null when one or more *contract commitments* are applied to the *charge*.
 * ContractApplied MUST conform to [ContractAppliedObject](#datasets.costandusage.contractapplied.contractappliedobject) requirements when ContractApplied is not null.
 
+## Column ID
+
+ContractApplied
+
+## Display Name
+
+Contract Applied
+
+## Description
+
+A set of properties that associate a *charge* with one or more [*contract commitments*](#glossary:contract-commitment).
+
+## Content Constraints
+
+| Constraint | Value |
+| :--- | :--- |
+| Dataset | [Cost and Usage](#datasets.costandusage) |
+| Column type | Dimension and Metric |
+| Feature level | Conditional |
+| Allows nulls | True |
+| Data type | JSON |
+| Value format | [JSON Object Format](#attributes.jsonobjectformat) |
+| Object | [ContractAppliedObject](#datasets.costandusage.contractapplied.contractappliedobject) |
+
 ## Contract Applied Object
 
 Contract Applied Object consists of a valid JSON object which contains an array of key-value objects describing the one or more contract commitments applied to the *charge*. Each object consists of FOCUS-defined property keys but can be extended to provide additional details about the contract application.
 
 The following section details the normative requirements for the ContractAppliedObject and its nested properties. For a logical overview of the expected content, see the [Schema Structure](#datasets.costandusage.contractapplied.schemastructure) and [Object Example](#datasets.costandusage.contractapplied.objectexample) sections.
 
-### Object Requirements
+## Object Requirements
 
 ContractAppliedObject MUST adhere to the following requirements:
 
@@ -37,7 +59,7 @@ ContractAppliedObject MUST adhere to the following requirements:
 * ContractAppliedObject.Elements[\*].ContractCommitmentAppliedQuantity MUST be denominated in the ContractAppliedObject.Elements[\*].ContractCommitmentAppliedUnit.
 * ContractAppliedObject.Elements[\*].ContractCommitmentAppliedUnit SHOULD conform to [UnitFormat](#attributes.unitformat) requirements.
 
-## Schema Structure
+## Object Schema Structure
 
 ContractApplied contains a structured JSON object defining the allocation and application of a *charge* against specific contract commitments.
 
@@ -58,6 +80,12 @@ The `Elements` array contains one or more objects, each of which contains the fo
 | `ContractCommitmentAppliedCost` | Decimal | Conditional | The cost of the *charge* applied to the contract line item. It is associated with the contract line item via Contract Commitment ID, and is commonly used for monitoring progress towards fulfilling contractual commitments that may facilitate discounts for [*resources*](#glossary:resource) or [*services*](#glossary:service) as agreed between a service provider and a customer. <br><br>**Condition:** Must be present if Quantity and Unit are not provided. |
 | `ContractCommitmentAppliedQuantity` | Decimal | Conditional | The quantity of the *charge* applied to the contract line item. It is associated with the contract line item via Contract Commitment ID, and is commonly used for monitoring the progress towards fulfilling contractual commitments that may facilitate discounts for [*resources*](#glossary:resource) or [*services*](#glossary:service) as agreed between a service provider and a customer. <br><br>**Condition:** Must be present if Cost is not provided. |
 | `ContractCommitmentAppliedUnit` | String | Conditional | A service-provider-specified measurement unit for the usage declared in Contract Commitment Applied Quantity. It complements the Contract Commitment Applied Quantity metric. <br><br>**Condition:** Must be present if Contract Commitment Applied Quantity is provided. |
+
+## Implementation Guidance
+
+### Custom Properties
+
+To facilitate querying data across allocations and across service providers, a data generator may include one or more custom properties. These may be placed at the top level of the object (alongside `Elements`) or nested within the individual `Elements` objects. Custom keys must be prefixed with "x_" followed by PascalCase format (e.g., `x_MyCustomKey`) to make them easy to identify as well as prevent collisions with FOCUS-defined keys.
 
 ## Object Example
 
@@ -84,43 +112,13 @@ Here is a basic example of the object format.
 }
 ```
 
-## Implementation Guidance
-
-### Custom Properties
-
-To facilitate querying data across allocations and across service providers, a data generator may include one or more custom properties. These may be placed at the top level of the object (alongside `Elements`) or nested within the individual `Elements` objects. Custom keys must be prefixed with "x_" followed by PascalCase format (e.g., `x_MyCustomKey`) to make them easy to identify as well as prevent collisions with FOCUS-defined keys.
-
-### Object ID
+## Object ID
 
 ContractAppliedObject
 
-### Object Display Name
+## Object Display Name
 
 Contract Applied Object
-
-## Column ID
-
-ContractApplied
-
-## Display Name
-
-Contract Applied
-
-## Description
-
-A set of properties that associate a *charge* with one or more [*contract commitments*](#glossary:contract-commitment).
-
-## Content Constraints
-
-| Constraint | Value |
-| :--- | :--- |
-| Dataset | [Cost and Usage](#datasets.costandusage) |
-| Column type | Dimension and Metric |
-| Feature level | Conditional |
-| Allows nulls | True |
-| Data type | JSON |
-| Value format | [JSON Object Format](#attributes.jsonobjectformat) |
-| Object | [ContractAppliedObject](#datasets.costandusage.contractapplied.contractappliedobject) |
 
 ## Introduced (version)
 
