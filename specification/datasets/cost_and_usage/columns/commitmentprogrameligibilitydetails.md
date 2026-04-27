@@ -57,11 +57,6 @@ Here is a basic example of the object format.
 ``` json
 {
   "CommitmentPrograms": [
-    { "ProgramType": "FlexibleSpendPlan" },
-    { "ProgramType": "ResourceReservation" },
-    { "ProgramType": "AdvanceResourceCommitment" },
-{
-  "CommitmentPrograms": [
     { "ProgramType": "Flexible Spend Plan" },
     { "ProgramType": "Resource Reservation" },
     { "ProgramType": "Advance Resource Commitment" },
