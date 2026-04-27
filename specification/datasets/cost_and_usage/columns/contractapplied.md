@@ -57,7 +57,7 @@ The `Elements` array contains one or more objects, each of which contains the fo
 | `ContractCommitmentAppliedQuantity` | Decimal | Conditional | The quantity of the *charge* applied to the contract line item. It is associated with the contract line item via Contract Commitment ID, and is commonly used for monitoring the progress towards fulfilling contractual commitments that may facilitate discounts for [*resources*](#glossary:resource) or [*services*](#glossary:service) as agreed between a service provider and a customer. <br><br>**Condition:** Must be present if Cost is not provided. |
 | `ContractCommitmentAppliedUnit` | String | Conditional | A service-provider-specified measurement unit for the usage declared in Contract Commitment Applied Quantity. It complements the Contract Commitment Applied Quantity metric. <br><br>**Condition:** Must be present if Contract Commitment Applied Quantity is provided. |
 
-## Implementation Guidance
+## Object Implementation Guidance
 
 ### Custom Properties
 
