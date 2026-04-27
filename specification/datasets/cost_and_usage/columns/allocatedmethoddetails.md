@@ -53,7 +53,7 @@ The `Elements` array contains one or more objects, each of which contains the fo
 | `UsageUnit` | String | Conditional | Communicates the aspect of the documented Allocation Method Id being used to calculate the Allocated Ratio property and what is being measured by Usage Quantity property. <br><br>**Condition:** must be present if Usage Quantity is provided. |
 | `UsageQuantity` | Numeric | False | Communicates the volume that was consumed or used, denominated in the Usage Unit property value. |
 
-## Implementation Guidance
+## Object Implementation Guidance
 
 ### Custom Properties
 
