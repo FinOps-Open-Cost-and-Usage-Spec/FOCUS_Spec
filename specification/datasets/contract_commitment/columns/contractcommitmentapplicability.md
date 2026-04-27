@@ -12,30 +12,6 @@ ContractCommitmentApplicability MUST adhere to the following requirements:
 * ContractCommitmentApplicability MUST conform to [ContractCommitmentApplicabilityObject](#datasets.contractcommitment.contractcommitmentapplicability.contractcommitmentapplicabilityobject) requirements.
 * ContractCommitmentApplicability MUST NOT be null.
 
-## Column ID
-
-ContractCommitmentApplicability
-
-## Display Name
-
-Contract Commitment Applicability
-
-## Description
-
-A structured definition of the specific entities to which a contract commitment applies, including inclusion/exclusion logic and applicability percentages.
-
-## Content Constraints
-
-| Constraint | Value |
-| :--- | :--- |
-| Dataset | [Contract Commitment](#datasets.contractcommitment) |
-| Column type | Dimension |
-| Feature level | Mandatory |
-| Allows nulls | False |
-| Data type | JSON |
-| Value format | [JSON Object Format](#attributes.jsonobjectformat) |
-| Object          | [ContractCommitmentApplicabilityObject](#datasets.contractcommitment.contractcommitmentapplicability.contractcommitmentapplicabilityobject) |
-
 ## Contract Commitment Applicability Object
 
 Contract Commitment Applicability consists of a valid JSON object which contains a set of top-level property keys. These keys define entity-based inclusionary and exclusionary logic, as well as the portion of relevant cost and/or usage that is applicable to the *contract commitment*.
@@ -178,6 +154,30 @@ ContractCommitmentApplicabilityObject
 ## Object Display Name
 
 Contract Commitment Applicability Object
+
+## Column ID
+
+ContractCommitmentApplicability
+
+## Display Name
+
+Contract Commitment Applicability
+
+## Description
+
+A structured definition of the specific entities to which a contract commitment applies, including inclusion/exclusion logic and applicability percentages.
+
+## Content Constraints
+
+| Constraint | Value |
+| :--- | :--- |
+| Dataset | [Contract Commitment](#datasets.contractcommitment) |
+| Column type | Dimension |
+| Feature level | Mandatory |
+| Allows nulls | False |
+| Data type | JSON |
+| Value format | [JSON Object Format](#attributes.jsonobjectformat) |
+| Object | [ContractCommitmentApplicabilityObject](#datasets.contractcommitment.contractcommitmentapplicability.contractcommitmentapplicabilityobject) |
 
 ## Introduced (version)
 

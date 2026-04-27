@@ -12,30 +12,6 @@ ContractApplied MUST adhere to the following requirements:
 * ContractApplied MUST NOT be null when one or more *contract commitments* are applied to the *charge*.
 * ContractApplied MUST conform to [ContractAppliedObject](#datasets.costandusage.contractapplied.contractappliedobject) requirements when ContractApplied is not null.
 
-## Column ID
-
-ContractApplied
-
-## Display Name
-
-Contract Applied
-
-## Description
-
-A set of properties that associate a *charge* with one or more [*contract commitments*](#glossary:contract-commitment).
-
-## Content Constraints
-
-| Constraint | Value |
-| :--- | :--- |
-| Dataset | [Cost and Usage](#datasets.costandusage) |
-| Column type | Dimension and Metric |
-| Feature level | Conditional |
-| Allows nulls | True |
-| Data type | JSON |
-| Value format | [JSON Object Format](#attributes.jsonobjectformat) |
-| Object | [ContractAppliedObject](#datasets.costandusage.contractapplied.contractappliedobject) |
-
 ## Contract Applied Object
 
 Contract Applied Object consists of a valid JSON object which contains an array of key-value objects describing the one or more contract commitments applied to the *charge*. Each object consists of FOCUS-defined property keys but can be extended to provide additional details about the contract application.
@@ -119,6 +95,30 @@ ContractAppliedObject
 ## Object Display Name
 
 Contract Applied Object
+
+## Column ID
+
+ContractApplied
+
+## Display Name
+
+Contract Applied
+
+## Description
+
+A set of properties that associate a *charge* with one or more [*contract commitments*](#glossary:contract-commitment).
+
+## Content Constraints
+
+| Constraint | Value |
+| :--- | :--- |
+| Dataset | [Cost and Usage](#datasets.costandusage) |
+| Column type | Dimension and Metric |
+| Feature level | Conditional |
+| Allows nulls | True |
+| Data type | JSON |
+| Value format | [JSON Object Format](#attributes.jsonobjectformat) |
+| Object | [ContractAppliedObject](#datasets.costandusage.contractapplied.contractappliedobject) |
 
 ## Introduced (version)
 

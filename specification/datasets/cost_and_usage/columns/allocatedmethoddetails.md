@@ -16,30 +16,6 @@ AllocatedMethodDetails MUST adhere to the following requirements:
   * AllocatedMethodDetails SHOULD NOT be null when a charge is related to a data generator-calculated split cost allocation.
 * AllocatedMethodDetails MUST conform to [AllocatedMethodDetailsObject](#datasets.costandusage.allocatedmethoddetails.allocatedmethoddetailsobject) requirements when AllocatedMethodDetails is not null.
 
-## Column ID
-
-AllocatedMethodDetails
-
-## Display Name
-
-Allocated Method Details
-
-## Description
-
-A set of properties describing how resources are allocated in data generator-defined split cost allocation.
-
-## Content Constraints
-
-| Constraint | Value |
-| :--- | :--- |
-| Dataset | [Cost and Usage](#datasets.costandusage) |
-| Column type | Dimension |
-| Feature level | Recommended |
-| Allows nulls | True |
-| Data type | JSON |
-| Value format | [JSON Object Format](#attributes.jsonobjectformat) |
-| Object | [AllocatedMethodDetailsObject](#datasets.costandusage.allocatedmethoddetails.allocatedmethoddetailsobject) |
-
 ## Allocated Method Details Object
 
 Allocated Method Details consists of a valid JSON object with a top level key of Elements containing an Array of entry objects. Each entry object consists of FOCUS-defined property keys but can be extended to provide additional details about the allocation.
@@ -111,6 +87,30 @@ AllocatedMethodDetailsObject
 ## Object Display Name
 
 Allocated Method Details Object
+
+## Column ID
+
+AllocatedMethodDetails
+
+## Display Name
+
+Allocated Method Details
+
+## Description
+
+A set of properties describing how resources are allocated in data generator-defined split cost allocation.
+
+## Content Constraints
+
+| Constraint | Value |
+| :--- | :--- |
+| Dataset | [Cost and Usage](#datasets.costandusage) |
+| Column type | Dimension |
+| Feature level | Recommended |
+| Allows nulls | True |
+| Data type | JSON |
+| Value format | [JSON Object Format](#attributes.jsonobjectformat) |
+| Object | [AllocatedMethodDetailsObject](#datasets.costandusage.allocatedmethoddetails.allocatedmethoddetailsobject) |
 
 ## Introduced (version)
 
