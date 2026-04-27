@@ -3,23 +3,39 @@ MARKDOWNPP=../vendored/bin/markdown-pp
 PYMARKDOWNLNT=python3 ./enhanced_markdown_lint.py
 WKHTMLTOPDF=$(shell which wkhtmltopdf)
 PANDOC_PROJECT_RELATIVE_LINKS=../vendored/pandoc-project-relative-links/pandoc-project-relative-links.py
+
 ifeq ($(STYLE),)
-STYLE="working_draft"
+STYLE=working_draft
 endif
 ifeq ($(BRANCH),)
-BRANCH="working_draft"
+BRANCH=working_draft
 endif
+
 PATH_TO_PROJECT_ROOT=https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/$(BRANCH)
 PDF_MARGINS=--variable margin-top=15 --variable margin-bottom=25 --variable margin-left=0 --variable margin-right=10
 PDF_FOOTER=--pdf-engine-opt="--footer-right" --pdf-engine-opt="[page] of [topage]" --pdf-engine-opt="--footer-font-name" --pdf-engine-opt="Palatino" --pdf-engine-opt="--footer-font-size" --pdf-engine-opt="8"
-SPEC_SOURCE_DIRS=. supported_features attributes appendix datasets metadata
-SPEC_SOURCE_FILES=$(filter-out ./spec.md, $(sort $(foreach dir,$(SPEC_SOURCE_DIRS),$(shell find $(dir) -name "*.md" -o -name "*.mdpp" 2>/dev/null))))
+
+# 1. Define only the subdirectories you want to search recursively
+SPEC_SOURCE_DIRS=supported_features attributes appendix datasets metadata data schemas
+
+# 2. Grab the markdown files in the root folder without recursing
+ROOT_FILES=$(wildcard *.md *.mdpp)
+
+# 3. Grab the markdown files recursively ONLY from the allowed subdirectories
+SUBDIR_FILES=$(shell find $(SPEC_SOURCE_DIRS) -type f \( -name "*.md" -o -name "*.mdpp" \) 2>/dev/null)
+
+# 4. Combine them, sort them, and filter out spec.md
+SPEC_SOURCE_FILES=$(filter-out ./spec.md spec.md, $(sort $(ROOT_FILES) $(SUBDIR_FILES)))
 SPEC_SOURCE_MDFILES=$(filter-out %.mdpp, $(SPEC_SOURCE_FILES))
+
 export TOCDEPTH=2
 OS=$(shell uname)
+
 # Set to 1 to force build even if linter finds errors (e.g., make force=1)
 force?=0
+
 .PHONY: all clean lint
+
 all: spec.md spec.pdf spec.html
 
 spec.html: spec.md
@@ -30,13 +46,26 @@ spec.pdf: spec.html
 	$(WKHTMLTOPDF) --enable-local-file-access --footer-right "[page] of [topage]" --footer-font-name "Palatino" --footer-font-size 8 spec_pdf.html $@
 
 lint:
+	@echo "Running linter on markdown files in the following directories:"
+	@for dir in $$(find $(SPEC_SOURCE_DIRS) -type f \( -name "*.md" -o -name "*.mdpp" \) -exec dirname {} \; | sort -u); do \
+		echo "  - $$dir"; \
+	done
 ifeq ($(force),1)
-	-$(PYMARKDOWNLNT) --config markdownlnt.cfg scan $(SPEC_SOURCE_MDFILES)
+	-@$(PYMARKDOWNLNT) --config markdownlnt.cfg scan $(SPEC_SOURCE_MDFILES)
 else
-	$(PYMARKDOWNLNT) --config markdownlnt.cfg scan $(SPEC_SOURCE_MDFILES)
+	@$(PYMARKDOWNLNT) --config markdownlnt.cfg scan $(SPEC_SOURCE_MDFILES)
 endif
 
-spec.md: lint $(SPEC_SOURCE_FILES)
+spec.md: $(SPEC_SOURCE_FILES)
+	@echo "Running linter on markdown files in the following directories:"
+	@for dir in $$(find $(SPEC_SOURCE_DIRS) -type f \( -name "*.md" -o -name "*.mdpp" \) -exec dirname {} \; | sort -u); do \
+		echo "  - $$dir"; \
+	done
+ifeq ($(force),1)
+	-@$(PYMARKDOWNLNT) --config markdownlnt.cfg scan $(SPEC_SOURCE_MDFILES)
+else
+	@$(PYMARKDOWNLNT) --config markdownlnt.cfg scan $(SPEC_SOURCE_MDFILES)
+endif
 	@if [ "${STYLE}" = "working_draft" ]; then \
 	  cp versions/working_draft.md version.md; \
 	  echo "working draft"; \
@@ -50,44 +79,24 @@ spec.md: lint $(SPEC_SOURCE_FILES)
 	  echo "foo ${STYLE} s";\
 	  cp versions/${STYLE}.md version.md; \
 	fi
-	./validate_includes.py supported_features
-	./validate_includes.py datasets
-	./validate_includes.py datasets/cost_and_usage
-	./validate_includes.py datasets/cost_and_usage/columns
-	./validate_includes.py datasets/invoice_detail
-	./validate_includes.py datasets/invoice_detail/columns
-	./validate_includes.py datasets/billing_period
-	./validate_includes.py datasets/billing_period/columns
-	./validate_includes.py datasets/contract_commitment
-	./validate_includes.py datasets/contract_commitment/columns
-	./validate_includes.py attributes
-	./validate_includes.py metadata
-	./validate_includes.py metadata/data_generator
-	./validate_includes.py metadata/dataset_instance
-	./validate_includes.py metadata/recency
-	./validate_includes.py metadata/schema
-	./validate_includes.py metadata/schema/column_definition
-	./validate_includes.py appendix
-	./validate_includes.py appendix/metadata_examples
-	./validate_includes.py appendix/saas_examples
-	./validate_includes.py appendix/commitment_discounts
-	./validate_includes.py appendix/examples/commitment_discount_flexibility_examples
-	./validate_includes.py appendix/saas_examples
-	./validate_includes.py appendix/json_object_examples
-
-
+	@echo "Validating includes..."
+	@for dir in $$(find $(SPEC_SOURCE_DIRS) -type f \( -name "*.md" -o -name "*.mdpp" \) -exec dirname {} \; | sort -u); do \
+		mdpp_file="$$dir/$$(basename $$dir).mdpp"; \
+		if [ -f "$$mdpp_file" ]; then \
+			./validate_includes.py $$dir || exit 1; \
+		fi; \
+	done
 	@echo "Checking for misaligned code block markers (\`\`\`)..."
-	@find . -type f \( -name "*.md" -o -name "*.mdpp" \) \
-		-exec grep -nH '^[[:space:]][[:space:]]*```$$' {} + 2>/dev/null | \
+	@grep -nH '^[[:space:]][[:space:]]*```$$' $(SPEC_SOURCE_FILES) 2>/dev/null | \
 	while IFS=: read -r file line _; do \
 		echo "WARNING: Found code block escape that is not aligned to the start of the line in file $$file on line $$line"; \
 	done || true
 	PYTHONPATH=../vendored/ $(MARKDOWNPP) spec.mdpp -o $@
 ifeq ($(force),1)
-	-$(PYMARKDOWNLNT) --config markdownlnt.cfg scan $@
+	-@$(PYMARKDOWNLNT) --config markdownlnt.cfg scan $@
 else
-	$(PYMARKDOWNLNT) --config markdownlnt.cfg scan $@
+	@$(PYMARKDOWNLNT) --config markdownlnt.cfg scan $@
 endif
 
 clean:
-	rm -f spec.pdf spec.html spec.md spec_pdf.md version.md
+	rm -f spec.pdf spec.html spec.md spec_pdf.html version.md

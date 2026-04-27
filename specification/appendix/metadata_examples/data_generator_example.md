@@ -15,4 +15,3 @@ The updated Data Generator-related metadata could look like this:
     "DataGenerator": "CrestNode"
 }
 ```
-

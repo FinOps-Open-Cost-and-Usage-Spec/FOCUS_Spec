@@ -31,35 +31,37 @@ A Python script that finds SQL code blocks in Markdown files and transpiles them
 
 #### Usage
 
-#### Usage
-
 ##### Linux / MacOS (Bash)
 
-    # List all SQL blocks without transpiling
-    ./sql_transpile.py ../*.md --list
+```bash
+# List all SQL blocks without transpiling
+./sql_transpile.py ../*.md --list
 
-    # Transpile all SQL blocks in markdown files to T-SQL
-    ./sql_transpile.py ../*.md --to tsql
+# Transpile all SQL blocks in markdown files to T-SQL
+./sql_transpile.py ../*.md --to tsql
 
-    # Transpile with dialect preference for detection
-    ./sql_transpile.py ../*.md --to bigquery --prefer trino
+# Transpile with dialect preference for detection
+./sql_transpile.py ../*.md --to bigquery --prefer trino
 
-    # Process specific files
-    ./sql_transpile.py ../file1.md ../file2.md --to postgres
+# Process specific files
+./sql_transpile.py ../file1.md ../file2.md --to postgres
+```
 
 ##### Windows (PowerShell)
 
-    # List all SQL blocks without transpiling
-    python .\sql_transpile.py (Get-ChildItem ..\*.md).FullName --list
+```powershell
+# List all SQL blocks without transpiling
+python .\sql_transpile.py (Get-ChildItem ..\*.md).FullName --list
 
-    # Transpile all SQL blocks in markdown files to T-SQL
-    python .\sql_transpile.py (Get-ChildItem ..\*.md).FullName --to tsql
+# Transpile all SQL blocks in markdown files to T-SQL
+python .\sql_transpile.py (Get-ChildItem ..\*.md).FullName --to tsql
 
-    # Transpile with dialect preference for detection
-    python .\sql_transpile.py (Get-ChildItem ..\*.md).FullName --to bigquery --prefer trino
+# Transpile with dialect preference for detection
+python .\sql_transpile.py (Get-ChildItem ..\*.md).FullName --to bigquery --prefer trino
 
-    # Process specific files
-    python .\sql_transpile.py (Get-ChildItem ../file1.md).FullName (Get-ChildItem ../file2.md).FullName --to postgres
+# Process specific files
+python .\sql_transpile.py (Get-ChildItem ../file1.md).FullName (Get-ChildItem ../file2.md).FullName --to postgres
+```
 
 #### Options
 
@@ -77,7 +79,7 @@ BigQuery, Trino, Presto, DuckDB, MySQL, PostgreSQL, Snowflake, T-SQL, Spark, Hiv
 You can specify a dialect hint in your SQL code blocks:
 
 ````markdown
-```sql bigquery
+```sql:bigquery
 SELECT * FROM dataset.table
 ```
 

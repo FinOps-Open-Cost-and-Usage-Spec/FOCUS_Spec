@@ -82,4 +82,3 @@ The schema for the data artifact conforming to the dataset FOCUS Contracts.
       ]
 }
 ```
-

@@ -69,4 +69,3 @@ The updated schema-related metadata could look like this:
       ]
 }
 ```
-
