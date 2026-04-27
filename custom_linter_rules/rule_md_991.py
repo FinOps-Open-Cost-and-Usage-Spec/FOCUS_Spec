@@ -26,7 +26,7 @@ class RuleMd991(RulePlugin):
         'a', 'an', 'the',  # articles
         'and', 'but', 'or', 'nor', 'for', 'yet', 'so',  # coordinating conjunctions
         'as', 'at', 'by', 'for', 'in', 'of', 'on', 'to', 'up', 'via', 'with', 'from',  # prepositions
-        'is', 'are', 'vs', 'vs.'  # specific technical exceptions
+        'is', 'are', 'vs'  # specific technical exceptions
     }
 
     # Words that when followed by a single capital letter indicate it's a designation, not an article
