@@ -35,7 +35,7 @@
     "    L019: \"CommitmentProgramEligibilityDetailsObject.CommitmentPrograms.ProgramType MUST be of type String.\"",
     "    L020: \"CommitmentProgramEligibilityDetailsObject.CommitmentPrograms.ProgramType MUST NOT be null.\"",
     "    L021: \"CommitmentProgramEligibilityDetailsObject.CommitmentPrograms.ProgramType MUST correspond to a *commitment program* type supported by the service provider.\"",
-    "    L022: \"CommitmentProgramEligibilityDetailsObject.CommitmentPrograms.ProgramType MUST equal [CommitmentDiscountType](#datasets.costandusage.commitmentdiscounttype) for one object in CommitmentProgramEligibilityDetailsObject.CommitmentPrograms when CommitmentDiscountType is not null.\"",
+    "    L022: \"CommitmentProgramEligibilityDetailsObject.CommitmentPrograms.ProgramType MUST match [CommitmentDiscountType](#datasets.costandusage.commitmentdiscounttype) for one object in CommitmentProgramEligibilityDetailsObject.CommitmentPrograms when CommitmentDiscountType is not null.\"",
     "    L023: \"CommitmentProgramEligibilityDetailsObject.CommitmentPrograms.ProgramType SHOULD correspond to terminology disclosed by the service provider in public documentation.\""
   ],
   "0_outline_summary": {
@@ -410,7 +410,7 @@
                     "temp_id": "R015",
                     "order": 15,
                     "ref": "L022",
-                    "text": "CommitmentProgramEligibilityDetailsObject.CommitmentPrograms.ProgramType MUST equal [CommitmentDiscountType](#datasets.costandusage.commitmentdiscounttype) for one object in CommitmentProgramEligibilityDetailsObject.CommitmentPrograms when CommitmentDiscountType is not null.",
+                    "text": "CommitmentProgramEligibilityDetailsObject.CommitmentPrograms.ProgramType MUST match [CommitmentDiscountType](#datasets.costandusage.commitmentdiscounttype) for one object in CommitmentProgramEligibilityDetailsObject.CommitmentPrograms when CommitmentDiscountType is not null.",
                     "keyword": "MUST",
                     "section_path": [
                       "Commitment Program Eligibility Details Object",
