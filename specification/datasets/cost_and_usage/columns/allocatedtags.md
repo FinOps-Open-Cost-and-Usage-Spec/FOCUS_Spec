@@ -21,7 +21,9 @@ AllocatedTags MUST adhere to the following requirements:
 * User-defined tags MUST adhere to the following requirements:
   * Data generator MUST prefix all user-defined *tag schemes* with a predetermined, data generator-specified tag key prefix that is unique to each corresponding user-defined *tag scheme* when the data generator has more than one user-defined *tag scheme*.
 
-## Data Generator-Defined vs. User-Defined Tags
+## Domain Concepts
+
+### Data Generator-Defined vs. User-Defined Tags
 
 This example illustrates various tags produced from multiple user-defined and data generator-defined *tag schemes*. The first two tags illustrate examples from two different, user-defined *tag schemes*. The second tag is produced from a valueless, user-defined *tag scheme*, so the data generator also applies `true` as its default value.
 
