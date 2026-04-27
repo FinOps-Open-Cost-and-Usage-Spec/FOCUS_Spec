@@ -26,7 +26,9 @@ Tags MUST adhere to the following requirements:
   * Data generator MUST NOT prefix tag keys when the data generator has only one user-defined *tag scheme*.
   * Data generator MUST NOT allow reserved tag key prefixes to be used as prefixes for any user-defined tag keys within a prefixless user-defined *tag scheme*.
 
-## Provider-Defined vs. User-Defined Tags
+## Domain Concepts
+
+### Provider-Defined vs. User-Defined Tags
 
 This example illustrates various tags produced from multiple user-defined and provider-defined *tag schemes*. The first three tags illustrate examples from three different, user-defined *tag schemes*. The data generator predetermined that one user-defined *tag scheme* (i.e., `"foo": "bar"`) does not have a prepended prefix, but the remaining two user-defined *tag schemes* (i.e., `"userDefinedTagScheme2/foo": "bar"`, `"userDefinedTagScheme3/foo": true`) do have provider-defined and reserved prefixes. Additionally, the third tag is produced from a valueless, user-defined *tag scheme*, so the data generator also applies `true` as its default value.
 
@@ -42,7 +44,7 @@ The last two tags illustrate examples from two different, provider-defined *tag 
     }
 ```
 
-## Finalized Tags
+### Finalized Tags
 
 Within a data generator, tag keys may be associated with multiple values, and potentially defined at different levels within the data generator, such as accounts, folders, [*resource*](#glossary:resource) and other *resource* grouping constructs. When finalizing, the *data generator* reduces these multiple levels of definition to a single value where each key is associated with exactly one value. The method by which this is done and the semantics are up to each data generator and are documented within their respective documentation.
 
