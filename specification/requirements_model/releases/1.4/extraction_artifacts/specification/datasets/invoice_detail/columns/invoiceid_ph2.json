@@ -63,7 +63,6 @@
             "text": "InvoiceId MUST adhere to the following requirements:",
             "keyword": "MUST",
             "section_path": [
-              "Invoice ID",
               "Requirements"
             ],
             "block": {
@@ -86,7 +85,6 @@
                 "text": "InvoiceId MUST be of type String.",
                 "keyword": "MUST",
                 "section_path": [
-                  "Invoice ID",
                   "Requirements"
                 ],
                 "block": {
@@ -110,7 +108,6 @@
                 "text": "InvoiceId MUST conform to [StringHandling](#attributes.stringhandling) requirements.",
                 "keyword": "MUST",
                 "section_path": [
-                  "Invoice ID",
                   "Requirements"
                 ],
                 "block": {
@@ -134,7 +131,6 @@
                 "text": "InvoiceId MUST NOT be null.",
                 "keyword": "MUST NOT",
                 "section_path": [
-                  "Invoice ID",
                   "Requirements"
                 ],
                 "block": {
@@ -158,7 +154,6 @@
                 "text": "InvoiceId MAY be generated prior to an invoice being issued.",
                 "keyword": "MAY",
                 "section_path": [
-                  "Invoice ID",
                   "Requirements"
                 ],
                 "block": {
@@ -182,7 +177,6 @@
                 "text": "InvoiceId MUST uniquely identify the invoice as provided by the [*invoice issuer*](#glossary:invoice-issuer).",
                 "keyword": "MUST",
                 "section_path": [
-                  "Invoice ID",
                   "Requirements"
                 ],
                 "block": {
