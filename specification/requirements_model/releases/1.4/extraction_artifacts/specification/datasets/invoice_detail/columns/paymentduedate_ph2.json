@@ -25,7 +25,7 @@
     "  L009: \"PaymentDueDate MUST be of type Date/Time.\"",
     "  L010: \"PaymentDueDate MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.\"",
     "  L011: \"PaymentDueDate MAY be null.\"",
-    "  L012: \"PaymentDueDate MUST be the date specified by the [*invoice issuer*](#glossary:invoice-issuer) as the deadline for payment for the corresponding [InvoiceId](#datasets.invoicedetail.invoiceid).\""
+    "  L012: \"PaymentDueDate MUST be the date specified by the invoice issuer as the deadline for payment for the corresponding [InvoiceId](#datasets.invoicedetail.invoiceid).\""
   ],
   "0_outline_summary": {
     "node_count": 5,
@@ -153,7 +153,7 @@
                 "temp_id": "R005",
                 "order": 5,
                 "ref": "L012",
-                "text": "PaymentDueDate MUST be the date specified by the [*invoice issuer*](#glossary:invoice-issuer) as the deadline for payment for the corresponding [InvoiceId](#datasets.invoicedetail.invoiceid).",
+                "text": "PaymentDueDate MUST be the date specified by the invoice issuer as the deadline for payment for the corresponding [InvoiceId](#datasets.invoicedetail.invoiceid).",
                 "keyword": "MUST",
                 "section_path": [
                   "Payment Due Date",
