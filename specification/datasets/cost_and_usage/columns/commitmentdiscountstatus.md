@@ -14,6 +14,13 @@ CommitmentDiscountStatus MUST adhere to the following requirements:
 * CommitmentDiscountStatus MUST be "Used" when the *charge* utilizes a specific amount of a given CommitmentDiscountId.
 * CommitmentDiscountStatus MUST be "Unused" when the *charge* represents the unused portion of the given CommitmentDiscountId.
 
+## Allowed Values
+
+| Value  | Description                                                             |
+| :----- | :---------------------------------------------------------------------- |
+| Used   | *Charges* that utilized a specific amount of a commitment discount. |
+| Unused | *Charges* that represent the unused portion of the commitment discount. |
+
 ## Column ID
 
 CommitmentDiscountStatus
@@ -36,13 +43,6 @@ Indicates whether the *charge* corresponds with the consumption of a *commitment
 | Allows nulls    | True                                                 |
 | Data type       | String                                               |
 | Value format    | Allowed Values                                       |
-
-Allowed values:
-
-| Value  | Description                                                             |
-| :----- | :---------------------------------------------------------------------- |
-| Used   | *Charges* that utilized a specific amount of a commitment discount. |
-| Unused | *Charges* that represent the unused portion of the commitment discount. |
 
 ## Introduced (version)
 

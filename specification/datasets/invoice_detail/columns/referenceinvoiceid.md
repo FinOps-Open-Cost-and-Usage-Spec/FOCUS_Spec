@@ -9,8 +9,8 @@ ReferenceInvoiceId MUST adhere to the following requirements:
 * ReferenceInvoiceId MUST be of type String.
 * ReferenceInvoiceId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * ReferenceInvoiceId MUST NOT be null.
-* ReferenceInvoiceId MUST equal the [InvoiceId](#datasets.invoicedetail.invoiceid) of the original [*invoice*](#glossary:invoice) if it adjusts another invoice.
-* ReferenceInvoiceId MUST equal the InvoiceId of the current invoice if it does not adjust another invoice.
+* ReferenceInvoiceId MUST match the [InvoiceId](#datasets.invoicedetail.invoiceid) of the original [*invoice*](#glossary:invoice) if it adjusts another invoice.
+* ReferenceInvoiceId MUST match the InvoiceId of the current invoice if it does not adjust another invoice.
 
 ## Column ID
 

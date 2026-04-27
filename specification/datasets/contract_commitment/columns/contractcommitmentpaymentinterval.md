@@ -14,6 +14,17 @@ ContractCommitmentPaymentInterval MUST adhere to the following requirements:
 * ContractCommitmentPaymentInterval MUST be "One-Time" if [ContractCommitmentPaymentModel](#datasets.contractcommitment.contractcommitmentpaymentmodel) is "All Upfront".
 * ContractCommitmentPaymentInterval SHOULD represent a time granularity equal to or lesser than the time granularity represented by [ContractCommitmentDurationType](#datasets.contractcommitment.contractcommitmentdurationtype).
 
+## Allowed Values
+
+| Value       | Sort Order | Description                                                         | Typical Use Case                                  |
+| ----------- | ---------- | ------------------------------------------------------------------- | ------------------------------------------------- |
+| One-Time    | 10         | A single invoice is generated for the entire obligation. | All Upfront models (e.g., 3yr All-Upfront RI) or single-invoice arrears paid at the end of a term. |
+| Monthly     | 20         | Invoices for the deferred balance are generated once per month. | No Upfront Savings Plans or Monthly SaaS. |
+| Quarterly   | 30         | Invoices for the deferred balance are generated every three months. | Partial Upfront deals with 90-day true-ups. |
+| Semi-Annual | 40         | Invoices for the deferred balance are generated every six months. | Split-payment agreements. |
+| Annual      | 50         | Invoices for the deferred balance are generated once per year. | Partial Upfront EAs billed yearly. |
+| Custom      | 60         | Hourly/Daily or other irregular cycles. | Irregular bridge contracts or non-standard terms. |
+
 ## Column ID
 
 ContractCommitmentPaymentInterval
@@ -36,17 +47,6 @@ Represents the frequency by which a [*contract commitment*](#glossary:contract-c
 | Allows nulls    | False          |
 | Data type       | String         |
 | Value format    | Allowed values |
-
-Allowed values:
-
-| Value       | Sort Order | Description                                                         | Typical Use Case                                  |
-| ----------- | ---------- | ------------------------------------------------------------------- | ------------------------------------------------- |
-| One-Time    | 10         | A single invoice is generated for the entire obligation. | All Upfront models (e.g., 3yr All-Upfront RI) or single-invoice arrears paid at the end of a term. |
-| Monthly     | 20         | Invoices for the deferred balance are generated once per month. | No Upfront Savings Plans or Monthly SaaS. |
-| Quarterly   | 30         | Invoices for the deferred balance are generated every three months. | Partial Upfront deals with 90-day true-ups. |
-| Semi-Annual | 40         | Invoices for the deferred balance are generated every six months. | Split-payment agreements. |
-| Annual      | 50         | Invoices for the deferred balance are generated once per year. | Partial Upfront EAs billed yearly. |
-| Custom      | 60         | Hourly/Daily or other irregular cycles. | Irregular bridge contracts or non-standard terms. |
 
 ## Introduced (version)
 

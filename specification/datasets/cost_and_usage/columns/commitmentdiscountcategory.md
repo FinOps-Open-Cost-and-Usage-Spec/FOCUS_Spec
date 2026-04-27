@@ -12,6 +12,13 @@ CommitmentDiscountCategory MUST adhere to the following requirements:
   * CommitmentDiscountCategory MUST NOT be null when CommitmentDiscountId is not null.
 * CommitmentDiscountCategory MUST be one of the allowed values.
 
+## Allowed Values
+
+| Value   | Description                                                              |
+|:--------|:-------------------------------------------------------------------------|
+| Spend   | Commitment discounts that require a predetermined amount of spend. |
+| Usage   | Commitment discounts that require a predetermined amount of usage. |
+
 ## Column ID
 
 CommitmentDiscountCategory
@@ -34,13 +41,6 @@ Indicates whether the *commitment discount* identified in the CommitmentDiscount
 | Allows nulls    | True                                                 |
 | Data type       | String                                               |
 | Value format    | Allowed Values                                       |
-
-Allowed values:
-
-| Value   | Description                                                              |
-|:--------|:-------------------------------------------------------------------------|
-| Spend   | Commitment discounts that require a predetermined amount of spend. |
-| Usage   | Commitment discounts that require a predetermined amount of usage. |
 
 ## Introduced (version)
 

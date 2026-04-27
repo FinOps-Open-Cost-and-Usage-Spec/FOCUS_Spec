@@ -1,6 +1,6 @@
 # Rounding Variance Tolerance
 
-When performing invoice reconciliation between the [Cost and Usage](#datasets.costandusage) dataset and an invoice (either the payable invoice itself, or the [Invoice Detail](#datasets.invoicedetail) dataset), exact matches are not expected due to precision differences (e.g., 6 decimals in detailed cost data vs. 2 decimals in invoice data). The following tolerance formula allows for a maximum rounding error based on the statistical probability of rounding variance, which grows with the square root of the row count.
+When performing invoice reconciliation between the [Cost and Usage](#datasets.costandusage) dataset and an invoice (either the payable invoice itself, or the [Invoice Detail](#datasets.invoicedetail) dataset), the totals may not be perfectly equal due to precision differences (e.g., 6 decimals in detailed cost data vs. 2 decimals in invoice data). The following tolerance formula allows for a maximum rounding error based on the statistical probability of rounding variance, which grows with the square root of the row count.
 
 ## Tolerance Formula
 
