@@ -24,7 +24,6 @@
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
-        "Invoice Issue Status",
         "Requirements"
       ],
       "block": {
@@ -49,7 +48,6 @@
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
-        "Invoice Issue Status",
         "Requirements"
       ],
       "block": {
@@ -74,7 +72,6 @@
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
-        "Invoice Issue Status",
         "Requirements"
       ],
       "block": {
@@ -99,7 +96,6 @@
       "keyword": "MUST NOT",
       "role": "requirement",
       "section_path": [
-        "Invoice Issue Status",
         "Requirements"
       ],
       "block": {
@@ -124,7 +120,6 @@
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
-        "Invoice Issue Status",
         "Requirements"
       ],
       "block": {
@@ -149,7 +144,6 @@
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
-        "Invoice Issue Status",
         "Requirements"
       ],
       "block": {
@@ -174,7 +168,6 @@
       "keyword": "MUST NOT",
       "role": "requirement",
       "section_path": [
-        "Invoice Issue Status",
         "Requirements"
       ],
       "block": {
@@ -191,6 +184,54 @@
       },
       "_alignment_status": "confirmed",
       "ref": "L014"
+    },
+    {
+      "temp_id": "R008",
+      "order": 8,
+      "text": "If needed, a previously issued invoice may be reopened to apply such corrections, but this transition from \"Issued\" to \"Open\" must be explicitly requested or approved by the customer to maintain auditability.",
+      "keyword": "MAY",
+      "role": "requirement",
+      "section_path": [
+        "Implementation Context"
+      ],
+      "block": {
+        "block_type": "paragraph",
+        "indent_level": 0,
+        "bullet": null
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 28,
+        "line_end": 28
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L028"
+    },
+    {
+      "temp_id": "R009",
+      "order": 9,
+      "text": "If needed, a previously issued invoice may be reopened to apply such corrections, but this transition from \"Issued\" to \"Open\" must be explicitly requested or approved by the customer to maintain auditability.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Implementation Context"
+      ],
+      "block": {
+        "block_type": "paragraph",
+        "indent_level": 0,
+        "bullet": null
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 34,
+        "line_end": 34
+      },
+      "_alignment_status": "fallback_original",
+      "ref": "L034"
     }
   ],
   "warnings": [],
