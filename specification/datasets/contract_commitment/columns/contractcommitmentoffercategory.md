@@ -19,7 +19,7 @@ ContractCommitmentOfferCategory MUST adhere to the following requirements:
 | Public     | Terms that are generally available to all customers via a service provider's standard rate card or portal. | Standard Savings Plans or Reserved Instances purchased via the cloud console without a custom discount. |
 | Negotiated | Terms and pricing that have been specifically modified through an agreement between the customer and the service provider. | Enterprise Agreements (EA), private marketplace offers, or custom SaaS contracts with volume-based discounting. |
 
-## Implementation Context
+## Implementation Guidance
 
 * Use Public as your baseline for market comparison.
 * Use Negotiated to track the efficacy of your procurement team's discount efforts.

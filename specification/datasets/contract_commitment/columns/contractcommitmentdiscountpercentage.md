@@ -17,7 +17,7 @@ ContractCommitmentDiscountPercentage MUST adhere to the following requirements:
   * ContractCommitmentDiscountPercentage MUST correspond to only one pricing tier per Contract Commitment row.
 * ContractCommitmentDiscountPercentage SHOULD represent the net effective discount when multiple contractual layers are applicable (e.g., a negotiated discount on top of a standard commitment).
 
-## Implementation Context
+## Implementation Guidance
 
 ### Calculating the Effective Percentage
 

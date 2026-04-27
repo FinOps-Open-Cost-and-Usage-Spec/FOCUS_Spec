@@ -20,7 +20,7 @@ ContractCommitmentModel MUST adhere to the following requirements:
 | Continuous    | A flat, constant "floor" of commitment (e.g., RIs, Savings Plans). Coverage is applied at a fixed rate per [Contract Commitment Fulfillment Interval](#datasets.contractcommitment.contractcommitmentfulfillmentinterval) (usually hourly), and benefits are not carried over to subsequent intervals. |
 | Discontinuous | A flexible, aggregate commitment (e.g., Enterprise Agreements, SaaS Minimum Spend). Coverage is measured over a broad window or against a total monetary value. |
 
-## Implementation Context
+## Implementation Guidance
 
 ### Reporting and Analysis
 
