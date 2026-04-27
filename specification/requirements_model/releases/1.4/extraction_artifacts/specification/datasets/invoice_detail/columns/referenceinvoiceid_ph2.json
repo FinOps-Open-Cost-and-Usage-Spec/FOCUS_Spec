@@ -25,8 +25,8 @@
     "  L009: \"ReferenceInvoiceId MUST be of type String.\"",
     "  L010: \"ReferenceInvoiceId MUST conform to [StringHandling](#attributes.stringhandling) requirements.\"",
     "  L011: \"ReferenceInvoiceId MUST NOT be null.\"",
-    "  L012: \"ReferenceInvoiceId MUST equal the [InvoiceId](#datasets.invoicedetail.invoiceid) of the original [*invoice*](#glossary:invoice) if it adjusts another invoice.\"",
-    "  L013: \"ReferenceInvoiceId MUST equal the InvoiceId of the current invoice if it does not adjust another invoice.\""
+    "  L012: \"ReferenceInvoiceId MUST match the [InvoiceId](#datasets.invoicedetail.invoiceid) of the original [*invoice*](#glossary:invoice) if it adjusts another invoice.\"",
+    "  L013: \"ReferenceInvoiceId MUST match the InvoiceId of the current invoice if it does not adjust another invoice.\""
   ],
   "0_outline_summary": {
     "node_count": 6,
@@ -154,7 +154,7 @@
                 "temp_id": "R005",
                 "order": 5,
                 "ref": "L012",
-                "text": "ReferenceInvoiceId MUST equal the [InvoiceId](#datasets.invoicedetail.invoiceid) of the original [*invoice*](#glossary:invoice) if it adjusts another invoice.",
+                "text": "ReferenceInvoiceId MUST match the [InvoiceId](#datasets.invoicedetail.invoiceid) of the original [*invoice*](#glossary:invoice) if it adjusts another invoice.",
                 "keyword": "MUST",
                 "section_path": [
                   "Reference Invoice ID",
@@ -178,7 +178,7 @@
                 "temp_id": "R006",
                 "order": 6,
                 "ref": "L013",
-                "text": "ReferenceInvoiceId MUST equal the InvoiceId of the current invoice if it does not adjust another invoice.",
+                "text": "ReferenceInvoiceId MUST match the InvoiceId of the current invoice if it does not adjust another invoice.",
                 "keyword": "MUST",
                 "section_path": [
                   "Reference Invoice ID",
