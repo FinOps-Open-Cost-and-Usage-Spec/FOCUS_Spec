@@ -61,7 +61,6 @@
             "text": "InvoiceIssueDate MUST adhere to the following requirements:",
             "keyword": "MUST",
             "section_path": [
-              "Invoice Issue Date",
               "Requirements"
             ],
             "block": {
@@ -84,7 +83,6 @@
                 "text": "InvoiceIssueDate MUST be of type Date/Time.",
                 "keyword": "MUST",
                 "section_path": [
-                  "Invoice Issue Date",
                   "Requirements"
                 ],
                 "block": {
@@ -108,7 +106,6 @@
                 "text": "InvoiceIssueDate MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.",
                 "keyword": "MUST",
                 "section_path": [
-                  "Invoice Issue Date",
                   "Requirements"
                 ],
                 "block": {
@@ -132,7 +129,6 @@
                 "text": "InvoiceIssueDate MAY be null.",
                 "keyword": "MAY",
                 "section_path": [
-                  "Invoice Issue Date",
                   "Requirements"
                 ],
                 "block": {
@@ -156,7 +152,6 @@
                 "text": "InvoiceIssueDate MUST represent the official date of issuance for the corresponding [InvoiceId](#datasets.invoicedetail.invoiceid).",
                 "keyword": "MUST",
                 "section_path": [
-                  "Invoice Issue Date",
                   "Requirements"
                 ],
                 "block": {
