@@ -20,7 +20,7 @@ Invoice Issuer Name
 
 ## Description
 
-The name of the entity responsible for invoicing for the [*contract commitment*](#glossary:contract-commitment).
+The name of the entity responsible for invoicing for the *contract commitment*.
 
 ## Content Constraints
 

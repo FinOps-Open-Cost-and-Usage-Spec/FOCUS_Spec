@@ -11,7 +11,7 @@ ContractCommitmentFulfillmentInterval MUST adhere to the following requirements:
 * ContractCommitmentFulfillmentInterval MUST be of type String.
 * ContractCommitmentFulfillmentInterval MUST NOT be null.
 * ContractCommitmentFulfillmentInterval MUST be one of the allowed values.
-* ContractCommitmentFulfillmentInterval MUST NOT be "Total Term" if [ContractCommitmentModel](#datasets.contractcommitment.contractcommitmentmodel) is "Continuous".
+* ContractCommitmentFulfillmentInterval MUST NOT be "Total Term" if ContractCommitmentModel is "Continuous".
 
 ## Column ID
 
@@ -23,7 +23,7 @@ Contract Commitment Fulfillment Interval
 
 ## Description
 
-Represents the specific [*period*](#glossary:period) used to measure and reset the fulfillment of a [*contract commitment*](#glossary:contract-commitment).
+Represents the specific *period* used to measure and reset the fulfillment of a *contract commitment*.
 
 ## Content Constraints
 

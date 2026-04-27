@@ -34,7 +34,7 @@ Contract Commitment Benefit Category
 
 ## Description
 
-Defines the primary value or advantage received for a [*contract commitment*](#glossary:contract-commitment).
+Defines the primary value or advantage received for a *contract commitment*.
 
 ## Content Constraints
 

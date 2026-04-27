@@ -11,7 +11,7 @@ ContractedUnitPrice MUST adhere to the following requirements:
 * ContractedUnitPrice MUST adhere to the following nullability requirements:
   * ContractedUnitPrice MUST be null when [SkuPriceId](#datasets.costandusage.skupriceid) is null.
   * ContractedUnitPrice MUST be null when [ChargeCategory](#datasets.costandusage.chargecategory) is "Tax".
-  * ContractedUnitPrice MUST NOT be null when [SkuPriceId](#datasets.costandusage.skupriceid) is not null.
+  * ContractedUnitPrice MUST NOT be null when SkuPriceId is not null.
   * ContractedUnitPrice MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#datasets.costandusage.chargeclass) is not "Correction".
   * ContractedUnitPrice MAY be null in all other cases.
 * When ContractedUnitPrice is not null, ContractedUnitPrice MUST adhere to the following requirements:
