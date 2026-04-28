@@ -12,6 +12,12 @@ ChargeClass MUST adhere to the following requirements:
   * ChargeClass MUST NOT be null when the *charge* represents a correction to a previously *closed billing period*.
 * ChargeClass MUST be "Correction" when ChargeClass is not null.
 
+## Allowed Values
+
+| Value      | Description                                                                                    |
+| :--------- | :----------------------------------------------------------------------------------------------|
+| Correction | Correction to a previously *closed billing period* (e.g., refunds and credit modifications). |
+
 ## Column ID
 
 ChargeClass
@@ -34,12 +40,6 @@ Indicates whether a *charge* represents a correction to a previously *closed bil
 | Allows nulls    | True                                                 |
 | Data type       | String                                               |
 | Value format    | Allowed values                                       |
-
-Allowed values:
-
-| Value      | Description                                                                                    |
-| :--------- | :----------------------------------------------------------------------------------------------|
-| Correction | Correction to a previously *closed billing period* (e.g., refunds and credit modifications). |
 
 ## Introduced (version)
 
