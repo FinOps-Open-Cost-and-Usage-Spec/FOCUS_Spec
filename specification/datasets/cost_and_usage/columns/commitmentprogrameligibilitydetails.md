@@ -4,6 +4,8 @@ Commitment Program Eligibility Details identifies the [*commitment programs*](#g
 
 ## Requirements
 
+### Column Requirements
+
 CommitmentProgramEligibilityDetails MUST adhere to the following requirements:
 
 * CommitmentProgramEligibilityDetails MUST be of type JSON Object (serialized as a String where necessary).
@@ -20,7 +22,7 @@ CommitmentProgramEligibilityDetails MUST adhere to the following requirements:
 
 Commitment Program Eligibility Details consists of a valid JSON object with a top-level property key `CommitmentPrograms` containing an array of objects describing the specific [*commitment programs*](#glossary:commitment-program) available for the usage charge.
 
-## Object Requirements
+### Object Requirements
 
 CommitmentProgramEligibilityDetailsObject MUST adhere to the following requirements:
 
@@ -29,15 +31,15 @@ CommitmentProgramEligibilityDetailsObject MUST adhere to the following requireme
 * CommitmentProgramEligibilityDetailsObject.CommitmentPrograms[\*].ProgramType MUST equal [CommitmentDiscountType](#datasets.costandusage.commitmentdiscounttype) for one object in CommitmentProgramEligibilityDetailsObject.CommitmentPrograms when CommitmentDiscountType is not null.
 * CommitmentProgramEligibilityDetailsObject.CommitmentPrograms[\*].ProgramType SHOULD correspond to terminology disclosed by the service provider in public documentation.
 
-## Object Schema Structure
+### Object Schema Structure
 
-### Top-Level Properties
+<div class="h6-nonindex">Top-Level Properties</div>
 
 | Property             | Type  | Required | Description                                                                         |
 |:----------|:----------|:----------|:---------------------------------------|
 | `CommitmentPrograms` | Array | True     | Array of objects identifying *commitment programs* for which the usage is eligible. |
 
-### CommitmentPrograms Object
+<div class="h6-nonindex">CommitmentPrograms Object</div>
 
 The `CommitmentPrograms` array contains one or more objects, each of which contains the following entries:
 
@@ -45,13 +47,13 @@ The `CommitmentPrograms` array contains one or more objects, each of which conta
 |:-------------|:-------------|:-------------|:------------------------------|
 | ProgramType | [String](#attributes.stringhandling) | True     | The specific type of commitment program (e.g., discount or capacity reservation) available for this usage. |
 
-## Object Implementation Guidance
+### Object Implementation Guidance
 
-### Custom Properties
+<div class="h6-nonindex">Custom Properties</div>
 
 To facilitate querying data across allocations and across service providers, a data generator may include one or more custom properties. These may be placed at the top level of the object (alongside `CommitmentPrograms`) or nested within the individual `CommitmentPrograms` objects. Custom keys must be prefixed with "x_" followed by PascalCase format (e.g., `x_MyCustomKey`) to make them easy to identify as well as prevent collisions with FOCUS-defined keys.
 
-## Object Example
+### Object Example
 
 Here is a basic example of the object format.
 
@@ -69,11 +71,11 @@ Here is a basic example of the object format.
 }
 ```
 
-## Object ID
+### Object ID
 
 CommitmentProgramEligibilityDetailsObject
 
-## Object Display Name
+### Object Display Name
 
 Commitment Program Eligibility Details Object
 
