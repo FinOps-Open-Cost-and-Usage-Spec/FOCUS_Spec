@@ -4,6 +4,8 @@ Contract Commitment Applicability is a structured definition of the specific ent
 
 ## Requirements
 
+### Column Requirements
+
 ContractCommitmentApplicability MUST adhere to the following requirements:
 
 * ContractCommitmentApplicability MUST be of type JSON Object (serialized as a String where necessary).
@@ -18,7 +20,7 @@ Contract Commitment Applicability consists of a valid JSON object which contains
 
 The following section details the normative requirements for the ContractCommitmentApplicabilityObject and its nested properties. For a logical overview of the expected content, see the [Schema Structure](#datasets.contractcommitment.contractcommitmentapplicability.schemastructure) and [Object Example](#datasets.contractcommitment.contractcommitmentapplicability.objectexample) sections.
 
-## Object Requirements
+### Object Requirements
 
 ContractCommitmentApplicabilityObject MUST adhere to the following requirements:
 
@@ -34,11 +36,11 @@ ContractCommitmentApplicabilityObject MUST adhere to the following requirements:
 * ContractCommitmentApplicabilityObject.Inclusions[\*].Values MUST contain only the single string "*" if the wildcard is present.
 * ContractCommitmentApplicabilityObject.Exclusions[\*].Values MUST contain only the single string "*" if the wildcard is present.
 
-## Object Schema Structure
+### Object Schema Structure
 
 ContractCommitmentApplicability contains a structured JSON object defining the logical boundaries and the applicability percentage of a commitment.
 
-### Top-Level Properties
+<div class="h6-noindex">Top-Level Properties</div>
 
 | Property | Type | Required | Description |
 | :--- | :--- | :--- | :--- |
@@ -50,7 +52,7 @@ ContractCommitmentApplicability contains a structured JSON object defining the l
 | `ExclusionOperator` | String | Conditional | Required only if `Exclusions` are present. Defines the relationship for `Exclusions`. Valid values: `And`, `Or`. |
 | `Exclusions` | Array | No | List of `Rule` objects defining entities to be removed from the boundary. |
 
-### Rule Object
+<div class="h6-noindex">Rule Object</div>
 
 | Key | Type | Description |
 | :--- | :--- | :--- |
@@ -59,14 +61,14 @@ ContractCommitmentApplicability contains a structured JSON object defining the l
 | `Values` | Array | A list of strings to compare. A value of `["*"]` acts as a global wildcard. |
 | `Applicability` | Object | Optional. The specific fraction of applicability for entities matching this rule. Overrides the top-level `Applicability`. |
 
-### Applicability Object
+<div class="h6-noindex">Applicability Object</div>
 
 | Key | Type | Default | Description |
 | :--- | :--- | :--- | :--- |
 | `Cost` | Decimal | 1.0 | Fraction of an eligible charge's cost applicable to the *contract commitment*. |
 | `Usage` | Decimal | 1.0 | Fraction of an eligible charge's usage applicable to the *contract commitment*. |
 
-### Supported Operators
+<div class="h6-noindex">Supported Operators</div>
 
 | Operator | Logic | Usage Example |
 | :--- | :--- | :--- |
@@ -80,7 +82,7 @@ ContractCommitmentApplicability contains a structured JSON object defining the l
 | `Exists` | Checks if the dimension is present and not null. | `Values` must be `["*"]` |
 | `DoesNotExist` | Checks if the dimension is missing or null. | `Values` must be `["*"]` |
 
-### Wildcard Handling
+<div class="h6-noindex">Wildcard Handling</div>
 
 ContractCommitmentApplicability uses a reserved string to represent global or unrestricted boundaries within a specific Dimension.
 
@@ -88,15 +90,15 @@ ContractCommitmentApplicability uses a reserved string to represent global or un
 | :--- | :--- | :--- |
 | `"*"` | Represents all possible values for the specified Dimension. | `In`, `Contains`, `Exists`, `DoesNotExist` |
 
-### Wildcard Behavior Rules
+<div class="h6-noindex">Wildcard Behavior Rules</div>
 
 1. **Inclusion Logic:** When `["*"]` is used in an Inclusion rule, the rule evaluates to `True` for every entity, effectively making the commitment "Organization-wide" for that specific Dimension.
 2. **Exclusion Logic:** When `["*"]` is used in an Exclusion rule, the rule evaluates to `True` for every entity, effectively excluding all entities (this is typically used only in combination with `ExclusionOperator: "And"` for surgical filtering).
 3. **Implicit Wildcards:** If a Dimension (e.g., `RegionId`) is omitted entirely from the `Inclusions` array, it is treated as an implicit wildcard (unrestricted).
 
-## Object Implementation Guidance
+### Object Implementation Guidance
 
-### Processing Workflow
+<div class="h6-noindex">Processing Workflow</div>
 
 The evaluation of an entity against a commitment applicability must follow a strict linear progression:
 
@@ -109,19 +111,19 @@ The evaluation of an entity against a commitment applicability must follow a str
    * **Rule-level Priority:** Use the `Applicability` from the matching inclusion rule. If multiple rules match under `Or`, the engine must use the highest percentage for each respective metric.
    * **Fallback:** Use the top-level `Applicability` if no rule-level value is provided.
 
-### Integration with Commitment Logic
+<div class="h6-noindex">Integration with Commitment Logic</div>
 
 The evaluation of **Applicability** percentages must be contextually aligned with the [Contract Commitment Model](#datasets.contractcommitment.contractcommitmentmodel) and [Contract Commitment Fulfillment Interval](#datasets.contractcommitment.contractcommitmentfulfillmentinterval):
 
 * **Continuous Models:** Applicability percentages must be applied to each discrete unit of activity (e.g., every hour) within the **Fulfillment Interval**. If the commitment is not fully utilized by eligible entities within that hour, the remaining capacity expires.
 * **Discontinuous Models:** Applicability percentages determine the portion of aggregate activity that counts toward fulfillment over the entire **Interval** (e.g., a full year).
 
-### Dependency Logic
+<div class="h6-noindex">Dependency Logic</div>
 
 1. **Consistency:** Engines should expect a JSON Object and should not support scalar (Decimal/Float) values for this field to ensure compatibility with typed database schemas.
 2. **Conflict Resolution:** If `IsGlobalScope` or `IsComplexScope` is `true`, the `Inclusions` array must be empty or omitted. Additionally, `IsGlobalScope` and `IsComplexScope` must both not be `true` at the same time. Engines should validate these structural constraints before processing.
 
-## Object Example
+### Object Example
 
 Here is a basic example of the object format, describing organization-wide coverage **except** for Database services running in BillingAccountId 123456789012.
 
@@ -147,11 +149,11 @@ Here is a basic example of the object format, describing organization-wide cover
 }
 ```
 
-## Object ID
+### Object ID
 
 ContractCommitmentApplicabilityObject
 
-## Object Display Name
+### Object Display Name
 
 Contract Commitment Applicability Object
 

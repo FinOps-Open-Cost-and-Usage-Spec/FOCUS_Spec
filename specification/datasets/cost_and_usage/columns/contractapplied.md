@@ -4,6 +4,8 @@ Contract Applied is a set of properties that associate a [*charge*](#glossary:ch
 
 ## Requirements
 
+### Column Requirements
+
 ContractApplied MUST adhere to the following requirements:
 
 * ContractApplied MUST be of type JSON Object (serialized as a String where necessary).
@@ -18,7 +20,7 @@ Contract Applied Object consists of a valid JSON object which contains an array 
 
 The following section details the normative requirements for the ContractAppliedObject and its nested properties. For a logical overview of the expected content, see the [Schema Structure](#datasets.costandusage.contractapplied.schemastructure) and [Object Example](#datasets.costandusage.contractapplied.objectexample) sections.
 
-## Object Requirements
+### Object Requirements
 
 ContractAppliedObject MUST adhere to the following requirements:
 
@@ -35,17 +37,17 @@ ContractAppliedObject MUST adhere to the following requirements:
 * ContractAppliedObject.Elements[\*].ContractCommitmentAppliedQuantity MUST be denominated in the ContractAppliedObject.Elements[\*].ContractCommitmentAppliedUnit.
 * ContractAppliedObject.Elements[\*].ContractCommitmentAppliedUnit SHOULD conform to [UnitFormat](#attributes.unitformat) requirements.
 
-## Object Schema Structure
+### Object Schema Structure
 
 ContractApplied contains a structured JSON object defining the allocation and application of a *charge* against specific contract commitments.
 
-### Top-Level Properties
+<div class="h6-noindex">Top-Level Properties</div>
 
 | Property | Type | Required | Description |
 | :--- | :--- | :--- | :--- |
 | `Elements` | Array | True | The parent array containing one or more objects which communicate information about how contract commitments were applied to the *charge*. |
 
-### Elements Object
+<div class="h6-noindex">Elements Object</div>
 
 The `Elements` array contains one or more objects, each of which contains the following entries:
 
@@ -57,13 +59,13 @@ The `Elements` array contains one or more objects, each of which contains the fo
 | `ContractCommitmentAppliedQuantity` | Decimal | Conditional | The quantity of the *charge* applied to the contract line item. It is associated with the contract line item via Contract Commitment ID, and is commonly used for monitoring the progress towards fulfilling contractual commitments that may facilitate discounts for [*resources*](#glossary:resource) or [*services*](#glossary:service) as agreed between a service provider and a customer. <br><br>**Condition:** Must be present if Cost is not provided. |
 | `ContractCommitmentAppliedUnit` | String | Conditional | A service-provider-specified measurement unit for the usage declared in Contract Commitment Applied Quantity. It complements the Contract Commitment Applied Quantity metric. <br><br>**Condition:** Must be present if Contract Commitment Applied Quantity is provided. |
 
-## Object Implementation Guidance
+### Object Implementation Guidance
 
-### Custom Properties
+<div class="h6-noindex">Custom Properties</div>
 
 To facilitate querying data across allocations and across service providers, a data generator may include one or more custom properties. These may be placed at the top level of the object (alongside `Elements`) or nested within the individual `Elements` objects. Custom keys must be prefixed with "x_" followed by PascalCase format (e.g., `x_MyCustomKey`) to make them easy to identify as well as prevent collisions with FOCUS-defined keys.
 
-## Object Example
+### Object Example
 
 Here is a basic example of the object format.
 
@@ -88,11 +90,11 @@ Here is a basic example of the object format.
 }
 ```
 
-## Object ID
+### Object ID
 
 ContractAppliedObject
 
-## Object Display Name
+### Object Display Name
 
 Contract Applied Object
 
