@@ -11,30 +11,7 @@ ServiceSubcategory MUST adhere to the following requirements:
 * ServiceSubcategory MUST be one of the allowed values.
 * ServiceSubcategory MUST have one and only one parent ServiceCategory as specified in the allowed values below.
 
-## Column ID
-
-ServiceSubcategory
-
-## Display Name
-
-Service Subcategory
-
-## Description
-
-Secondary classification of the Service Category for a *service* based on its core function.
-
-## Content Constraints
-
-| Constraint      | Value                                                |
-| :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datasets.costandusage)             |
-| Column type     | Dimension                                            |
-| Feature level   | Recommended                                          |
-| Allows nulls    | False                                                |
-| Data type       | String                                               |
-| Value format    | Allowed Values                                       |
-
-Allowed values:
+## Allowed Values
 
 | Service Category          | Service Subcategory                   | Service Subcategory Description                                                                               |
 | ------------------------- | ------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
@@ -120,6 +97,29 @@ Allowed values:
 | Web                       | Application Platforms                 | Integrated environments that run web applications. |
 | Web                       | Other (Web)                           | Web services that do not fall into one of the defined subcategories. |
 | Other                     | Other (Other)                         | Services that do not fall into one of the defined categories. |
+
+## Column ID
+
+ServiceSubcategory
+
+## Display Name
+
+Service Subcategory
+
+## Description
+
+Secondary classification of the Service Category for a *service* based on its core function.
+
+## Content Constraints
+
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Dimension                                            |
+| Feature level   | Recommended                                          |
+| Allows nulls    | False                                                |
+| Data type       | String                                               |
+| Value format    | Allowed Values                                       |
 
 ## Introduced (version)
 
