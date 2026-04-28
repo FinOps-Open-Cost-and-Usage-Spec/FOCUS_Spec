@@ -15,6 +15,13 @@ CapacityReservationStatus MUST adhere to the following requirements:
   * CapacityReservationStatus MUST be "Unused" when the *charge* represents the unused portion of a *capacity reservation*.
   * CapacityReservationStatus MUST be "Used" when the *charge* represents the used portion of a *capacity reservation*.
 
+## Allowed Values
+
+| Value  | Description                                                                 |
+| :----- | :-------------------------------------------------------------------------- |
+| Used   | *Charges* that utilized a specific amount of a *capacity reservation*. |
+| Unused | *Charges* that represent the unused portion of a *capacity reservation*. |
+
 ## Column ID
 
 CapacityReservationStatus
@@ -37,13 +44,6 @@ Indicates whether the *charge* represents either the consumption of a *capacity 
 | Allows nulls    | True                                                 |
 | Data type       | String                                               |
 | Value format    | Allowed Values                                       |
-
-Allowed values:
-
-| Value  | Description                                                                 |
-| :----- | :-------------------------------------------------------------------------- |
-| Used   | *Charges* that utilized a specific amount of a *capacity reservation*. |
-| Unused | *Charges* that represent the unused portion of a *capacity reservation*. |
 
 ## Introduced (version)
 

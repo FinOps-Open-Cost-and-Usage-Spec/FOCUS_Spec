@@ -58,7 +58,7 @@ The time window for which a charge is effective, inclusive of the start date and
 
 <a name="glossary:closed-billing-period"><b>Closed Billing Period</b></a>
 
-A [*billing period*](#glossary:billing-period) with [Billing Period Status](#datasets.billingperiod.billingperiodstatus) set to "Closed". The period has been financially closed after all anticipated invoices for the period have been [*issued*](#glossary:issued-invoice) by designated invoice issuers and no additional invoices will be associated with this period. Exceptionally, additional invoices may be associated with a closed billing period if explicitly requested or approved by the customer.
+A [*billing period*](#glossary:billing-period) with [Billing Period Status](#datasets.billingperiod.billingperiodstatus) set to "Closed". The period has been financially closed after all anticipated invoices for the period have been [*issued*](#glossary:issued-invoice) by designated [*invoice issuers*](#glossary:invoice-issuer) and no additional invoices will be associated with this period. Exceptionally, additional invoices may be associated with a closed billing period if explicitly requested or approved by the customer.
 
 <a name="glossary:cloud-service-provider"><b>Cloud Service Provider (CSP)</b></a>
 
@@ -185,15 +185,19 @@ A category of compute resources that can be paused or terminated by the CSP with
 
 A document that summarizes the charges for resources or services consumed by a customer.
 
+<a name="glossary:invoice-issuer"><b>Invoice Issuer</b></a>
+
+An entity responsible for issuing payable [*invoices*](#glossary:invoice) for the [*resources*](#glossary:resource) or [*services*](#glossary:service) consumed. Common examples include [*cloud service providers*](#glossary:cloud-service-provider), [*managed service providers*](#glossary:managed-service-provider), or marketplace operators.
+
 <a name="glossary:invoice-reconciliation"><b>Invoice Reconciliation</b></a>
 
-The process of verifying that the costs, quantities, and applied adjustments on an [*invoice*](#glossary:invoice) match the underlying usage records and contracted rates for a specific [*billing period*](#glossary:billing-period).
+The process of verifying that the costs, quantities, and applied adjustments on an [*invoice*](#glossary:invoice) are equal to the underlying usage records and contracted rates for a specific [*billing period*](#glossary:billing-period).
 
 In the context of FOCUS, this process ensures consistency by reconciling cost and usage data across the invoice, the [Invoice Detail](#datasets.invoicedetail) dataset, and the [Cost and Usage](#datasets.costandusage) dataset to identify and resolve any discrepancies.
 
 <a name="glossary:issued-invoice"><b>Issued Invoice</b></a>
 
-An [*invoice*](#glossary:invoice) that has been formally [*reconciled*](#glossary:invoice-reconciliation) and issued by the designated invoice issuer ([Invoice Issue Status](#datasets.invoicedetail.invoiceissuestatus) set to "Issued"). Once issued, the invoice becomes the authoritative financial document and is considered finalized. The financial data presented on the invoice is not expected to change.
+An [*invoice*](#glossary:invoice) that has been formally [*reconciled*](#glossary:invoice-reconciliation) and issued by the designated [*invoice issuer*](#glossary:invoice-issuer) ([Invoice Issue Status](#datasets.invoicedetail.invoiceissuestatus) set to "Issued"). Once issued, the invoice becomes the authoritative financial document and is considered finalized. The financial data presented on the invoice is not expected to change.
 
 <a name="glossary:json"><b>JSON</b></a>
 
@@ -260,7 +264,7 @@ An individual who performs FinOps within an organization to maximize the busines
 
 A comprehensive list of prices offered by a service provider.
 
-<a name="glossary:service provider"><b>Service Provider</b></a>
+<a name="glossary:service-provider"><b>Service Provider</b></a>
 
 An entity that provides the [*resources*](#glossary:resource) or [*services*](#glossary:service) available for usage or purchase.
 
