@@ -1,6 +1,6 @@
 # Commitment Program Eligibility Details
 
-Commitment Program Eligibility Details identifies the [*commitment programs*](#glossary:commitment-program) that could potentially cover [*charges*](#glossary:charge), subject to [*service provider*](#glossary:service-provider) constraints. By distinguishing the pool of spend that was eligible to be covered, Commitment Program Eligibility Details provides the fundamental denominator for calculating precise commitment coverage metrics. This allows FinOps practitioners to accurately size the pool of uncovered spend that could realistically be covered by a future commitment. In this context, *commitment programs* include both [*commitment discounts*](#glossary:commitment-discount) and [*capacity reservations*](#glossary:capacity-reservation), provided the service provider treats them as [*commitments*](#glossary:commitment).
+Commitment Program Eligibility Details identifies the [*commitment programs*](#glossary:commitment-program) that could potentially cover [*charges*](#glossary:charge), subject to [*service provider*](#glossary:service-provider) constraints. By distinguishing the pool of spend that was eligible to be covered, Commitment Program Eligibility Details provides the fundamental denominator for calculating precise commitment coverage metrics. This allows FinOps practitioners to accurately size the pool of uncovered spend that could realistically be covered by a future commitment. In this context, *commitment programs* include discount-bearing programs such as [*commitment discounts*](#glossary:commitment-discount) and [*capacity reservations*](#glossary:capacity-reservation), provided the service provider treats them as [*commitments*](#glossary:commitment).
 
 ## Requirements
 
@@ -28,7 +28,7 @@ CommitmentProgramEligibilityDetailsObject MUST adhere to the following requireme
 
 * CommitmentProgramEligibilityDetailsObject MUST conform to the [CommitmentProgramEligibilityDetailsObjectSchema](#schemas.datasets.costandusage.commitmentprogrameligibilitydetailsobjectschema) JSON Schema.
 * CommitmentProgramEligibilityDetailsObject.CommitmentPrograms[\*].ProgramType MUST correspond to a *commitment program* type supported by the service provider.
-* CommitmentProgramEligibilityDetailsObject.CommitmentPrograms[\*].ProgramType MUST equal [CommitmentDiscountType](#datasets.costandusage.commitmentdiscounttype) for one object in CommitmentProgramEligibilityDetailsObject.CommitmentPrograms when CommitmentDiscountType is not null.
+* CommitmentProgramEligibilityDetailsObject.CommitmentPrograms[\*].ProgramType MUST match [CommitmentDiscountType](#datasets.costandusage.commitmentdiscounttype) for one object in CommitmentProgramEligibilityDetailsObject.CommitmentPrograms when CommitmentDiscountType is not null.
 * CommitmentProgramEligibilityDetailsObject.CommitmentPrograms[\*].ProgramType SHOULD correspond to terminology disclosed by the service provider in public documentation.
 
 ### Object Schema Structure
