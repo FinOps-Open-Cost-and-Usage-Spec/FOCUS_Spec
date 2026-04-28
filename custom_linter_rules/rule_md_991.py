@@ -25,7 +25,7 @@ class RuleMd991(RulePlugin):
     __minor_words = {
         'a', 'an', 'the',  # articles
         'and', 'but', 'or', 'nor', 'for', 'yet', 'so',  # coordinating conjunctions
-        'as', 'at', 'by', 'for', 'in', 'of', 'on', 'to', 'up', 'via', 'with', 'from',  # prepositions
+        'as', 'at', 'by', 'in', 'of', 'on', 'to', 'up', 'via', 'with', 'from',  # prepositions
         'is', 'are', 'vs'  # specific technical exceptions
     }
 
