@@ -20,7 +20,7 @@ Practitioners may perform *invoice reconciliation* independently by verifying th
 
 Once an invoice is issued, it becomes an authoritative financial document, and the information it contains is expected not to change.
 
-[*Corrections*](#glossary:correction) related to *issued invoices* (i.e., updates; additions; or omissions of underlying records in Cost and Usage, Invoice Detail, and Billing Period datasets) are permitted in accordance with the Invoice Issue Status requirements, as well as the Billed Cost requirements in both Invoice Detail and Cost and Usage datasets. In other words, such *corrections* are typically performed upon explicit request or approval by the customer, provided that they do not compromise the integrity of the issued invoice.
+[*Corrections*](#glossary:correction) related to *issued invoices* (i.e., updates, additions, or omissions of underlying records in Cost and Usage, Invoice Detail, and Billing Period datasets) are permitted in accordance with the Invoice Issue Status requirements, as well as the Billed Cost requirements in both Invoice Detail and Cost and Usage datasets. In other words, such *corrections* are typically performed upon explicit request or approval by the customer, provided that they do not compromise the integrity of the issued invoice.
 
 *Corrections* to underlying records that do not impact *invoice reconciliation* are allowed regardless of Invoice Issue Status. However, even in this case, they may reduce auditability and traceability or affect downstream processes (e.g., cost allocation, chargeback, reporting).
 
