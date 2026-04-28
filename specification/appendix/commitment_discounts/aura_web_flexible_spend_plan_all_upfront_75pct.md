@@ -114,7 +114,7 @@ The following critical rules apply to commitment discount data:
 | ConsumedQuantity           | null                                                           | **No resource consumed**                           |
 | CommitmentDiscountQuantity | 52.40                                                          | Commitment wasted                                  |
 | CommitmentDiscountStatus   | Unused                                                         | Commitment not utilized                            |
-| ResourceId                 | auraweb:flexspend::123456789012:flexspendplan/fsp-abc123def456 | must equal CommitmentDiscountId (no resource used) |
+| ResourceId                 | auraweb:flexspend::123456789012:flexspendplan/fsp-abc123def456 | must match CommitmentDiscountId (no resource used) |
 | ResourceName               | Compute Flexible Spend Plan                                      | Carried from Purchase row (no resource consumed)   |
 | ResourceType               | Commitment                                                     | Carried from Purchase row (no resource consumed)   |
 | SkuId                      | AURAWEB-USEAST1-COMPUTE-PURCHASE                                   | must match Purchase row (no resource consumed)     |

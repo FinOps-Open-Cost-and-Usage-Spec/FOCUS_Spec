@@ -8,12 +8,12 @@ The scenarios described below illustrate how a Cost and Usage [*FOCUS dataset*](
 
 The following baseline conditions apply to the scenarios described below:
 
-* AwesomeCorp has signed an agreement with SaaS service provider Acme Co to use their services.
-* Acme Co offers a virtual currency pricing model for their services and requires a purchase of virtual currency in advance of usage. Their denomination of virtual currency is called "tokens".
-* Acme Co requires purchase of additional tokens in the event of usage exceeding purchased tokens.
-* Acme Co publicly lists the cost of their tokens at $2 per token.
-* Acme Co treats token purchases as resources; therefore, charges for token purchases include values for ResourceId, ResourceName, and ResourceType.
-* Acme Co publicly lists their usage to token rates. These rates are as follows:
+* Acme Corp has signed an agreement with SaaS service provider OmniQuery to use their services.
+* OmniQuery offers a virtual currency pricing model for their services and requires a purchase of virtual currency in advance of usage. Their denomination of virtual currency is called "tokens".
+* OmniQuery requires purchase of additional tokens in the event of usage exceeding purchased tokens.
+* OmniQuery publicly lists the cost of their tokens at $2 per token.
+* OmniQuery treats token purchases as resources; therefore, charges for token purchases include values for ResourceId, ResourceName, and ResourceType.
+* OmniQuery publicly lists their usage to token rates. These rates are as follows:
   * 1 Q Widget Execution = 1 token
   * 1 Z Widget Execution = 2 tokens
   * 1 Workflow Operation = 3 tokens
@@ -28,22 +28,22 @@ For this scenario, contract terms include the following terms in addition to the
 
 For this scenario, the initial purchase of virtual currency is executed as follows:
 
-* On April 1, 2025, AwesomeCorp agrees to purchase 100,000 tokens at $2 per token for a total spend $200,000. These tokens are only valid for 12 months.
+* On April 1, 2025, Acme Corp agrees to purchase 100,000 tokens at $2 per token for a total spend $200,000. These tokens are only valid for 12 months.
 
 [**CSV Example**](/specification/data/saas_examples/virtual_currency_pricing_model_a1.csv)
 
 Note the following details in the example dataset:
 
 * The Charge Period is April 1st 2025 - April 1st 2026. The Billing Period is the month of April 2025 (when the tokens were purchased) and therefore will appear in the April invoice.
-* Because Acme Co uses a virtual currency pricing model for usage and publishes their token price in terms of dollars and their usage cost in terms of tokens, their Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) includes the columns PricingCurrency, PricingCurrencyContractedUnitPrice, PricingCurrencyEffectiveCost, and PricingCurrencyListUnitPrice.
+* Because OmniQuery uses a virtual currency pricing model for usage and publishes their token price in terms of dollars and their usage cost in terms of tokens, their Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) includes the columns PricingCurrency, PricingCurrencyContractedUnitPrice, PricingCurrencyEffectiveCost, and PricingCurrencyListUnitPrice.
 * A single charge representing the total payment for the initial token purchase agreement ($200,000) is charged in the first invoice.
   * ListCost, BilledCost, and ContractedCost of the purchase are all represented in this charge, however EffectiveCost is zero since the tokens are not yet consumed.
 * PricingQuantity is set to the total tokens purchased.
-* Because Awesome Corp is paying the list price, ListUnitPrice and ContractedUnitPrice are all set to the same value of $2.
+* Because Acme Corp is paying the list price, ListUnitPrice and ContractedUnitPrice are all set to the same value of $2.
 
 ## Scenario A2: Usage of Virtual Currency Purchased Without a Discount
 
-Awesome Corp uses Acme's services consuming tokens as follows in the first day:
+Acme Corp uses OmniQuery's services consuming tokens as follows in the first day:
 
 * 245 executions of Q Widget
 * 5 executions of Z Widget
@@ -56,7 +56,7 @@ Note the following details in the example dataset:
 * The Charge Period is April 1st 2025 - April 2nd 2025. The Billing Period is the month of April 2025.
 * PricingCurrency for these usage charges reflects the per usage token price of the particular usage.
 * PricingQuantity reflects the amount of usage of the PricingUnit for each charge and is equivalent to ConsumedQuantity. While relevant to this example, there are scenarios including tiered pricing where ConsumedQuantity and PricingQuantity may not be the same.
-* Because Awesome Corp's usage includes no discount on usage to token rates, PricingCurrencyContractedUnitPrice and PricingCurrencyListUnitPrice are equivalent.
+* Because Acme Corp's usage includes no discount on usage to token rates, PricingCurrencyContractedUnitPrice and PricingCurrencyListUnitPrice are equivalent.
 
 ## Scenario B: Virtual Currency Offered at a Discount
 
@@ -68,22 +68,22 @@ For this scenario, contract terms include the following terms in addition to the
 
 For this scenario, the initial purchase of virtual currency is executed as follows:
 
-* On April 1, 2025, AwesomeCorp agrees to purchase 100,000 tokens at discounted cost of $1 per token for a total spend $100,000. These tokens are only valid for 12 months.
+* On April 1, 2025, Acme Corp agrees to purchase 100,000 tokens at discounted cost of $1 per token for a total spend $100,000. These tokens are only valid for 12 months.
 
 [**CSV Example**](/specification/data/saas_examples/virtual_currency_pricing_model_b1.csv)
 
 Note the following details in the example dataset:
 
 * The Charge Period is April 1st 2025 - April 1st 2026. The Billing Period is the month of April 2025 (when the tokens were purchased) and therefore will appear in the April invoice.
-* Because Acme Co uses a virtual currency pricing model for usage and publishes their token price in terms of dollars and their usage cost in terms of tokens, their *FOCUS dataset* includes the columns PricingCurrency, PricingCurrencyContractedUnitPrice, PricingCurrencyEffectiveCost, and PricingCurrencyListUnitPrice.
+* Because OmniQuery uses a virtual currency pricing model for usage and publishes their token price in terms of dollars and their usage cost in terms of tokens, their *FOCUS dataset* includes the columns PricingCurrency, PricingCurrencyContractedUnitPrice, PricingCurrencyEffectiveCost, and PricingCurrencyListUnitPrice.
 * A single charge representing the total payment for the initial token purchase agreement ($100,000) is charged in the first invoice.
   * ListCost, BilledCost, and ContractedCost of the purchase are all represented in this charge, however EffectiveCost is zero, as required for prepaid purchases.
 * PricingQuantity is set to the total tokens purchased.
-* Because Awesome Corp is receiving a discount on the token price, the ListUnitPrice is set to $2 and the ContractedUnitPrice is set to $1. A ListCost of ($200,000) and ContractedCost ($100,000) reflect the cost of the tokens at the list price and contracted price respectively. The BilledCost is set to $100,000 since this is the amount that Awesome Corp will be charged for the purchase of tokens.
+* Because Acme Corp is receiving a discount on the token price, the ListUnitPrice is set to $2 and the ContractedUnitPrice is set to $1. A ListCost of ($200,000) and ContractedCost ($100,000) reflect the cost of the tokens at the list price and contracted price respectively. The BilledCost is set to $100,000 since this is the amount that Acme Corp will be charged for the purchase of tokens.
 
 ## Scenario B2: Usage of Virtual Currency Purchased at a Discount
 
-Awesome Corp uses Acme's services, consuming tokens as follows in the first day:
+Acme Corp uses OmniQuery's services, consuming tokens as follows in the first day:
 
 * 245 executions of Q Widget
 * 5 executions of Z Widget
@@ -94,17 +94,17 @@ Awesome Corp uses Acme's services, consuming tokens as follows in the first day:
 Note the following details in the example dataset:
 
 * PricingQuantity reflects the amount of usage of the PricingUnit for each charge and is equivalent to ConsumedQuantity. While relevant to this example, there are scenarios including tiered pricing where ConsumedQuantity and PricingQuantity may not be the same.
-* Because Awesome Corp's usage includes no discount on usage to token rates, PricingCurrencyContractedUnitPrice and PricingCurrencyListUnitPrice are equivalent.
+* Because Acme Corp's usage includes no discount on usage to token rates, PricingCurrencyContractedUnitPrice and PricingCurrencyListUnitPrice are equivalent.
 
 ## Scenario B3: Usage of Virtual Currency at a Modified Rate
 
-Awesome Corp uses Acme's services consuming tokens as follows in the first day:
+Acme Corp uses OmniQuery's services consuming tokens as follows in the first day:
 
 * 245 executions of Q Widget
 * 5 executions of Z Widget
 * 120 operations of Workflow
 
-Additionally, Acme Co offers a modified usage to token ratio for one of their services as follows:
+Additionally, OmniQuery offers a modified usage to token ratio for one of their services as follows:
 
 * 1 Workflow Operation = 2 tokens
 
@@ -118,10 +118,10 @@ Note the following details in the example dataset:
 
 ## Scenario C: Handling Virtual Currency Usage Overages
 
-For this scenario, Awesome Corp has exceeded their purchased tokens on October 1st 2025 by 1,500 tokens and Acme Co has charged them for the overage. The following conditions apply:
+For this scenario, Acme Corp has exceeded their purchased tokens on October 1st 2025 by 1,500 tokens and OmniQuery has charged them for the overage. The following conditions apply:
 
-* Acme Co has charged Awesome Corp for the cost of tokens at the list price of $2 per token, and this purchase is effective from April 1st 2025 to the date of the purchase, October 1st 2025.
-* Awesome Corp purchases an additional 25,000 tokens to facilitate usage to the end of their contract. These tokens are valid from October 1st 2025 to April 1st 2026.
+* OmniQuery has charged Acme Corp for the cost of tokens at the list price of $2 per token, and this purchase is effective from April 1st 2025 to the date of the purchase, October 1st 2025.
+* Acme Corp purchases an additional 25,000 tokens to facilitate usage to the end of their contract. These tokens are valid from October 1st 2025 to April 1st 2026.
 
 [**CSV Example**](/specification/data/saas_examples/virtual_currency_pricing_model_c.csv)
 

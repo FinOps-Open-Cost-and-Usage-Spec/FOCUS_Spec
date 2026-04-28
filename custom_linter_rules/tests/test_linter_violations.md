@@ -129,4 +129,20 @@ Testing hyphenated compound with minor words - "as" and "a" should be lowercase 
 
 Testing minor words in hyphenated compound - should be lowercase.
 
+## Player Stats for at-Bat Average
+
+Testing hyphenated compound where minor word "at" at start should be capitalized.
+
+## Player Stats for At-bat Average
+
+Testing hyphenated compound where "bat" at end should be capitalized.
+
+## Using x-Ray Technology
+
+Testing hyphenated compound where first part should be capitalized.
+
+## Using X-ray Technology
+
+Testing hyphenated compound where second part should be capitalized.
+
 

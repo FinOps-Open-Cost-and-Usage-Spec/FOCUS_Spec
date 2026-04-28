@@ -18,6 +18,10 @@ PricingCurrencyContractedUnitPrice MUST adhere to the following requirements:
   * PricingCurrencyContractedUnitPrice MUST be a non-negative decimal value.
   * PricingCurrencyContractedUnitPrice MUST be denominated in the PricingCurrency.
 
+## Usability Constraints
+
+**Aggregation:** Column values should only be viewed in the context of their row and not aggregated to produce a total.
+
 ## Column ID
 
 PricingCurrencyContractedUnitPrice
@@ -29,10 +33,6 @@ Pricing Currency Contracted Unit Price
 ## Description
 
 The agreed-upon unit price for a single Pricing Unit of the associated SKU, inclusive of *negotiated discounts*, if present, while excluding negotiated *commitment discounts* or any other discounts, and expressed in Pricing Currency.
-
-## Usability Constraints
-
-**Aggregation:** Column values should only be viewed in the context of their row and not aggregated to produce a total.
 
 ## Content Constraints
 

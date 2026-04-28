@@ -139,13 +139,15 @@ class RuleMd991(RulePlugin):
                 is_designation = (len(word) == 1 and word.isupper() and
                                  prev_word_lower_global in self.__designation_keywords)
 
-                # Check if word is in the middle of a hyphenated compound
-                # e.g., "as" in "Database-as-a-Service"
+                # Check if word is part of a hyphenated compound
+                # This includes words at the start, middle, or end of compounds
+                # e.g., "At" and "Bat" in "At-Bat", "as" in "Database-as-a-Service"
                 word_start = word_match.start()
                 word_end = word_match.end()
                 has_hyphen_before = word_start > 0 and token[word_start - 1] == '-'
                 has_hyphen_after = word_end < len(token) and token[word_end] == '-'
-                in_hyphenated_compound = has_hyphen_before and has_hyphen_after
+                in_hyphenated_compound = has_hyphen_before or has_hyphen_after
+                in_middle_of_hyphenated_compound = has_hyphen_before and has_hyphen_after
 
                 # Determine if this is truly the first or last word in the entire heading
                 is_first_word = is_first and word_index == 0
@@ -159,15 +161,21 @@ class RuleMd991(RulePlugin):
                 elif word_lower in self.__minor_words:
                     # Minor word in middle: should be lowercase
                     # Exception 1: designation letters like "Section A" should stay capital
-                    # Exception 2: minor words in hyphenated compounds should be lowercase
+                    # Exception 2: minor words ONLY in the middle of hyphenated compounds should be lowercase
+                    # Exception 3: minor words at the start or end of hyphenated compounds should be capitalized
                     if is_designation:
                         # This is a designation letter - should stay capital
                         if not word.isupper():
                             return False
-                    elif in_hyphenated_compound:
+                    elif in_middle_of_hyphenated_compound:
                         # Minor word in middle of hyphenated compound - should be lowercase
                         # e.g., "as" in "Database-as-a-Service"
                         if not word.islower():
+                            return False
+                    elif in_hyphenated_compound:
+                        # Minor word at start or end of hyphenated compound - should be capitalized
+                        # e.g., "At" in "At-Bat", "Of" in "Right-Of-Way"
+                        if not word[0].isupper():
                             return False
                     else:
                         # Regular minor word (including article 'a') - should be lowercase
@@ -175,7 +183,6 @@ class RuleMd991(RulePlugin):
                             return False
                 else:
                     # Major word: should be capitalized
-                    # Exception: if it's in the middle of a hyphenated compound AND already capitalized, keep it
                     if not word[0].isupper():
                         return False
 
@@ -234,13 +241,15 @@ class RuleMd991(RulePlugin):
                 is_designation = (len(word) == 1 and word.isupper() and
                                  prev_word_lower_global in self.__designation_keywords)
 
-                # Check if word is in the middle of a hyphenated compound
-                # e.g., "as" in "Database-as-a-Service"
+                # Check if word is part of a hyphenated compound
+                # This includes words at the start, middle, or end of compounds
+                # e.g., "At" and "Bat" in "At-Bat", "as" in "Database-as-a-Service"
                 word_start = word_match.start()
                 word_end = word_match.end()
                 has_hyphen_before = word_start > 0 and token[word_start - 1] == '-'
                 has_hyphen_after = word_end < len(token) and token[word_end] == '-'
-                in_hyphenated_compound = has_hyphen_before and has_hyphen_after
+                in_hyphenated_compound = has_hyphen_before or has_hyphen_after
+                in_middle_of_hyphenated_compound = has_hyphen_before and has_hyphen_after
 
                 # Determine if this is truly the first or last word in the entire heading
                 is_first_word = is_first and word_index == 0
@@ -257,14 +266,19 @@ class RuleMd991(RulePlugin):
                 else:
                     # Minor word in middle
                     # Exception 1: designation letters like "Section A" should stay capital
-                    # Exception 2: minor words in hyphenated compounds should be lowercase
+                    # Exception 2: minor words ONLY in the middle of hyphenated compounds should be lowercase
+                    # Exception 3: minor words at the start or end of hyphenated compounds should be capitalized
                     if is_designation:
                         # Designation letter - keep as capital
                         capitalized_word = word.upper()
-                    elif in_hyphenated_compound:
+                    elif in_middle_of_hyphenated_compound:
                         # Minor word in middle of hyphenated compound - keep lowercase
                         # e.g., "as" in "Database-as-a-Service"
                         capitalized_word = word.lower()
+                    elif in_hyphenated_compound:
+                        # Minor word at start or end of hyphenated compound - capitalize
+                        # e.g., "At" in "At-Bat", "Of" in "Right-Of-Way"
+                        capitalized_word = word.capitalize()
                     else:
                         # Regular minor word (including article 'a'): lowercase
                         capitalized_word = word.lower()

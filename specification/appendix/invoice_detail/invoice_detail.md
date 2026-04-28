@@ -2,7 +2,7 @@
 
 ## Overview
 
-The **Invoice Detail** dataset provides a transactional representation of the financial obligations between a customer and an invoice issuer. While the [Cost and Usage](#datasets.costandusage) dataset tracks granular consumption, the Invoice Detail dataset tracks the financial record of charges as they appear on a physical or electronic billing document.
+The **Invoice Detail** dataset provides a transactional representation of the financial obligations between a customer and an [*invoice issuer*](#glossary:invoice-issuer). While the [Cost and Usage](#datasets.costandusage) dataset tracks granular consumption, the Invoice Detail dataset tracks the financial record of charges as they appear on a physical or electronic billing document.
 
 ### Core Logical Pillars
 
@@ -32,7 +32,7 @@ The following examples demonstrate some common patterns for issuing invoices fro
 
 This example includes a mix of standard consumption, a one-time purchase of a resource reservation, and taxes, all billed and paid in the same currency (USD).
 
-* **Currencies:** Since Billing and Payment currencies are identical, `PaymentCurrencyBilledCost` matches `BilledCost`.
+* **Currencies:** Since Billing and Payment currencies are identical, `PaymentCurrencyBilledCost` equals `BilledCost`.
 * **Aggregate Payment Currency**: Since no aggregate rows are present, `PaymentCurrencyInvoiceDetailId` is different for all rows.
 * **Invoice Lineage:** Since this is an original invoice, `ReferenceInvoiceId` matches `InvoiceId`.
 
