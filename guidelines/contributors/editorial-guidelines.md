@@ -152,13 +152,13 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
 
 ### Linking
 
-* **Linking on First Occurrence:** To avoid excessive linking, entity references (including FOCUS entity IDs, display names, and glossary terms) MUST be linked only on their first occurrence within a given markdown file.
+* **Linking on First Occurrence:** To avoid excessive linking, entity references (including FOCUS entity IDs, display names, and glossary terms) MUST be linked only on their first occurrence within a given source markdown file.
 
 **Exceptions:**
 
-* In **Content Constraints** sections, all entity references MUST be linked, regardless of prior occurrence in the markdown file.
+* In **Content Constraints** sections, all entity references MUST be linked, regardless of prior occurrence in the source markdown file.
 
-* In the **Glossary** file, entity references MUST be linked only on their first occurrence within each glossary entry, rather than once per markdown file.
+* In the **Glossary** file, entity references MUST be linked only on their first occurrence within each glossary entry, rather than once per source markdown file.
 
 ### Entity References
 
