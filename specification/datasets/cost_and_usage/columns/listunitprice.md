@@ -18,6 +18,10 @@ ListUnitPrice MUST adhere to the following requirements:
   * ListUnitPrice MUST be a non-negative decimal value.
   * ListUnitPrice MUST be denominated in the BillingCurrency.
 
+## Usability Constraints
+
+**Aggregation:** Column values should only be viewed in the context of their row and not aggregated to produce a total.
+
 ## Column ID
 
 ListUnitPrice
@@ -29,10 +33,6 @@ List Unit Price
 ## Description
 
 The suggested service-provider-published unit price for a single Pricing Unit of the associated SKU, exclusive of any discounts.
-
-## Usability Constraints
-
-**Aggregation:** Column values should only be viewed in the context of their row and not aggregated to produce a total.
 
 ## Content Constraints
 

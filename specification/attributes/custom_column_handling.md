@@ -32,7 +32,7 @@ Column conforming to CustomColumnHandling attribute MUST adhere to the following
   * *Custom column* SHOULD include the `Name` suffix in the Column ID when the *custom column* represents a name.
 * *Custom column* SHOULD conform to [DataGeneratorCalculatedSplitCostAllocationHandling](#attributes.datagenerator-calculatedsplitcostallocationhandling) requirements when the data generator supports data generator-calculated split cost allocation.
 * *Custom column* SHOULD conform to [NullHandling](#attributes.nullhandling) requirements.
-* *Custom column* containing date/time values SHOULD conform to [DateTimeFormat](#attributes.datetimeformat) requirements.
+* *Custom column* containing date/time values SHOULD conform to [DateTimeFormat](#attributes.date/timeformat) requirements.
 * *Custom column* containing JSON objects MUST have its object schema documented by the data generator and accessible to practitioners.
 * *Custom column* containing numeric values MUST contain a single numeric value.
 * *Custom column* containing numeric values SHOULD conform to [NumericFormat](#attributes.numericformat) requirements.
