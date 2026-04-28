@@ -10,6 +10,7 @@ The FOCUS specification is designed to meet the needs of FinOps practitioners in
 | [Billed Cost and Invoice Alignment](#supportedfeatures.billedcostandinvoicealignment) | Ensures data is consistent with payable invoices regarding total cost and the period of time covered. |
 | [Charge Categorization](#supportedfeatures.chargecategorization) | Supports classification of charges including purchases, usage, tax, credits, and adjustments. |
 | [Commit Usage and Under Usage](#supportedfeatures.commitusageandunderusage) | Tracks the usage and under-usage of commitment discounts and capacity reservations. |
+| [Commitment Program Eligibility Details](#supportedfeatures.commitmentprogrameligibilitydetails) | Identifies which commitment programs each charge qualifies for, supporting coverage rate analysis and uncovered savings identification. |
 | [Contract Commitments](#supportedfeatures.contractcommitments) | Tracks commitments made via contractual agreements using identifiers joined between Cost and Usage and Contract Commitment datasets. |
 | [Cost and Usage Attribution](#supportedfeatures.costandusageattribution) | Facilitates the inclusion of provider-defined or user-defined metadata (tags) at a row level for organizational analysis. |
 | [Cost Comparison](#supportedfeatures.costcomparison) | Supports comparing Billed, Contracted, Effective, and List cost columns to identify savings or amortization. |
@@ -18,6 +19,7 @@ The FOCUS specification is designed to meet the needs of FinOps practitioners in
 | [Data Granularity](#supportedfeatures.datagranularity) | Supports multiple levels of granularity, from high-level account charges down to individual resource-level data. |
 | [Dataset Instance Metadata](#supportedfeatures.datasetinstancemetadata) | Provides metadata describing dataset artifacts, unique identifiers, and alignment with specific FOCUS datasets. |
 | [Effective Cost Analysis](#supportedfeatures.effectivecostanalysis) | Enables analysis of costs after discounts and the amortization of upfront fees to track spending trends. |
+| [Invoice Reconciliation](#supportedfeatures.invoicereconciliation) | Reconciles Cost and Usage records with Invoice Detail line items to validate that usage costs map back to invoiced amounts. |
 | [Location](#supportedfeatures.location) | Provides structured data for regions and availability zones to analyze costs based on deployment geography. |
 | [Marketplace Purchases](#supportedfeatures.marketplacepurchases) | Supports analysis of marketplace purchase data and reporting Effective Cost for service provider usage. |
 | [Participating Entity Identification](#supportedfeatures.participatingentityidentification) | Allows identification of entities involved in hosting, invoicing, and data generation (e.g., Service Provider vs. Host Provider). |
