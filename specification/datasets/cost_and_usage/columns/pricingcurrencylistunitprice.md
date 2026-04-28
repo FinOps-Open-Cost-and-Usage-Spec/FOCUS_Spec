@@ -18,6 +18,10 @@ PricingCurrencyListUnitPrice MUST adhere to the following requirements:
   * PricingCurrencyListUnitPrice MUST be a non-negative decimal value.
   * PricingCurrencyListUnitPrice MUST be denominated in the PricingCurrency.
 
+## Usability Constraints
+
+**Aggregation:** Column values should only be viewed in the context of their row and not aggregated to produce a total.
+
 ## Column ID
 
 PricingCurrencyListUnitPrice
@@ -29,10 +33,6 @@ Pricing Currency List Unit Price
 ## Description
 
 The suggested service-provider-published unit price for a single Pricing Unit of the associated *SKU*, exclusive of any discounts and expressed in Pricing Currency.
-
-## Usability Constraints
-
-**Aggregation:** Column values should only be viewed in the context of their row and not aggregated to produce a total.
 
 ## Content Constraints
 

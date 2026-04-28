@@ -247,7 +247,7 @@ To ensure consistent language when describing relationships and evaluations betw
 
 ### Section Structure
 
-* **Consistent Subsection Order:** Sections for the same entity type SHOULD follow a consistent subsection order (e.g., Title, Requirements, Entity ID, Display Name, Description, Content Constraints, Introduced (version)).
+* **Consistent Subsection Order:** Sections for the same entity type SHOULD follow a consistent subsection order (e.g., Title, Requirements, Entity ID, Display Name, Description, Content Constraints, Version Introduced).
 
 * **Consistent Subsection Titles:** Subsection titles SHOULD match exactly across sections of the same entity type.
 
@@ -404,7 +404,7 @@ To ensure consistent language when describing relationships and evaluations betw
 >
 > <img width="492" alt="image" src="https://github.com/user-attachments/assets/5185cbf9-306d-4663-a1c7-c8b7ab5c5bb8">
 > 
-> **3.1.47.7. Introduced (version)**
+> **3.1.47.7. Version Introduced**
 >
 > 1.0-preview
 
