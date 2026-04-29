@@ -13,7 +13,7 @@ The following individuals are the currently active Maintainers of the FOCUS proj
 | Irena Jurica | [@ijurica](https://github.com/ijurica) | Neos | 0.5 (2023/04/04) | |
 | Joaquin Prado | [@jpradocueva](https://github.com/jpradocueva) | FinOps Foundation | 1.0 (2023/06/25) | |
 | Karl Kraft | [@kk09v](https://github.com/kk09v) | Walmart | 0.5 (2023/04/04) | |
-| Larry Advey | [@ljadvey](https://github.com/ljadvey) | Cloudzero | 1.0 (2023/06/25) | Twilio (1.0 to 1.3) |
+| Larry Advey | [@ljadvey](https://github.com/ljadvey) | CloudZero | 1.0 (2023/06/25) | Twilio (1.0 to 1.3) |
 | Matt Cowsert | [@Matt-Cowsert](https://github.com/Matt-Cowsert) | FinOps Foundation | 1.4 (2025/10/30) | |
 | Michael Flanakin | [@flanakin](https://github.com/flanakin) | Salesforce | 0.5 (2023/04/04) | Microsoft (0.5 to 1.3) |
 | Mike Fuller | [@mike-finopsorg](https://github.com/mike-finopsorg) | FinOps Foundation | 0.5 (2023/04/04) | |
@@ -35,7 +35,7 @@ The following individuals serve in leadership roles for the FOCUS Steering Commi
 
 We thank the following individuals for their past contributions as Maintainers of this project.
 
-| Name | GitHub Handle | Corporate Affiliation | Start Release (Date) | End Release (Date) |
+| Name | GitHub Handle | Corporate Affiliation | Start Release (Date) | End Release (End Date) |
 | :--- | :--- | :--- | :--- | :--- |
 | Alex Hullah | [@ahullah](https://github.com/ahullah) | Goldman Sachs | 1.1 (2024/05/16) | 1.2 (2025/04/24) |
 | Christopher Harris | [@cnharris10](https://github.com/cnharris10) | Datadog | 0.5 (2023/04/04) | 1.3 (2025/10/30) |
@@ -48,6 +48,6 @@ We thank the following individuals for their past contributions as Maintainers o
 
 We thank the following individuals for their leadership and service as previous Chairs.
 
-| Name | GitHub Handle | Corporate Affiliation | Role | Start Release (Date) | End Release (Date) |
+| Name | GitHub Handle | Corporate Affiliation | Role | Start Release (Date) | End Release (End Date) |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | Udam Dewaraja | [@udam-f2](https://github.com/udam-f2) | FinOps Foundation | WG Chair | 0.5 (2023/04/04) | 1.1 (2024/10/08) |
