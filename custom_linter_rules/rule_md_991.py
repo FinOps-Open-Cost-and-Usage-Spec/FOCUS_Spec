@@ -19,6 +19,7 @@ class RuleMd991(RulePlugin):
     - All major words are capitalized
     - Minor words (articles, conjunctions, prepositions) are lowercase unless first/last
     - Words after colons are capitalized
+    - Specific terms retain their exact casing (e.g., macOS, iOS)
     """
 
     # Words that should be lowercase in title case (unless first/last word)
@@ -33,6 +34,12 @@ class RuleMd991(RulePlugin):
     __designation_keywords = {
         'section', 'part', 'chapter', 'appendix', 'figure', 'table', 'step', 'phase',
         'option', 'plan', 'tier', 'level', 'grade', 'class', 'type', 'version', 'scenario'
+    }
+
+    # Words that require exact casing (overrides all other title case rules)
+    __exact_case_words = {
+        'macos': 'macOS',
+        'ios': 'iOS'
     }
 
     def __init__(self) -> None:
@@ -126,6 +133,13 @@ class RuleMd991(RulePlugin):
 
                 # Skip numbers (they have no case)
                 if word.isdigit():
+                    continue
+
+                # Check if this word has an exact casing requirement
+                if word_lower in self.__exact_case_words:
+                    if word != self.__exact_case_words[word_lower]:
+                        return False
+                    prev_word_lower_global = word_lower
                     continue
 
                 # Check if this word follows a colon
@@ -256,7 +270,9 @@ class RuleMd991(RulePlugin):
                 is_last_word = is_last and word_index == len(words_in_token) - 1
 
                 # Determine if this word should be capitalized
-                if is_first_word or is_last_word or word_follows_colon or word_lower not in self.__minor_words:
+                if word_lower in self.__exact_case_words:
+                    capitalized_word = self.__exact_case_words[word_lower]
+                elif is_first_word or is_last_word or word_follows_colon or word_lower not in self.__minor_words:
                     # Major word, first word, last word, or after colon: capitalize
                     # Smart case preservation: keep existing camelCase or ACRONYMS intact
                     if len(word) > 1 and any(c.isupper() for c in word[1:]):
@@ -295,3 +311,4 @@ class RuleMd991(RulePlugin):
             result.append(new_token)
 
         return ' '.join(result)
+        
