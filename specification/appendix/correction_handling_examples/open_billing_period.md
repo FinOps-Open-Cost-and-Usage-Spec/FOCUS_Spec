@@ -164,7 +164,7 @@ CSV Examples:
 
 ### Scenario 2: Previous Open-Period Correction - Late-Arriving Usage
 
-This scenario is nearly identical to *Scenario 2: Current Open-Period Correction - Late-arriving Usage*. The only difference is that the late-arriving usage pertains to the previous billing period (June 2025), which has ended but has not yet been closed. The correction is applied before invoice issuance, using the same correction styles: Replacement, Delta, and Ledger.
+This scenario is nearly identical to *Scenario 2: Current Open-Period Correction - Late-Arriving Usage*. The only difference is that the late-arriving usage pertains to the previous billing period (June 2025), which has ended but has not yet been closed. The correction is applied before invoice issuance, using the same correction styles: Replacement, Delta, and Ledger.
 
 CSV Examples:
 
@@ -174,7 +174,7 @@ CSV Examples:
 
 ### Scenario 3: Previous Open-Period Correction - Itemized Cost-Only Corrections
 
-This scenario is nearly identical to *Scenario 3: Current Open-Period Correction - Itemized Cost-only Corrections*. The only difference is that the original cost discrepancy occurred in the previous billing period (June 2025), which has ended but has not yet been closed. The correction is applied before invoice issuance, using the same correction styles: Replacement, Delta, and Ledger.
+This scenario is nearly identical to *Scenario 3: Current Open-Period Correction - Itemized Cost-Only Corrections*. The only difference is that the original cost discrepancy occurred in the previous billing period (June 2025), which has ended but has not yet been closed. The correction is applied before invoice issuance, using the same correction styles: Replacement, Delta, and Ledger.
 
 CSV Examples:
 
@@ -185,7 +185,7 @@ CSV Examples:
 
 ### Scenario 4: Previous Open-Period Correction - Bulk Cost-Only Corrections
 
-This scenario is nearly identical to *Scenario 4: Current Open-Period Correction - Bulk Cost-only Corrections*. The only difference is that the original cost discrepancy occurred in the previous billing period (June 2025), which has ended but has not yet been closed. The correction is applied before invoice issuance, using the same correction styles: Replacement, Delta, and Ledger.
+This scenario is nearly identical to *Scenario 4: Current Open-Period Correction - Bulk Cost-Only Corrections*. The only difference is that the original cost discrepancy occurred in the previous billing period (June 2025), which has ended but has not yet been closed. The correction is applied before invoice issuance, using the same correction styles: Replacement, Delta, and Ledger.
 
 CSV Examples:
 

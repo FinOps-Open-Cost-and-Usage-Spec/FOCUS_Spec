@@ -311,4 +311,3 @@ class RuleMd991(RulePlugin):
             result.append(new_token)
 
         return ' '.join(result)
-        
