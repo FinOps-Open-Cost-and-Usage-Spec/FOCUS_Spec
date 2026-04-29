@@ -31,7 +31,7 @@ A Python script that finds SQL code blocks in Markdown files and transpiles them
 
 #### Usage
 
-##### Linux / MacOS (Bash)
+##### Linux / macOS (Bash)
 
 ```bash
 # List all SQL blocks without transpiling
