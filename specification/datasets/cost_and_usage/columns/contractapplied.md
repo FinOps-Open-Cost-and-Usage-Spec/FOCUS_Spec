@@ -41,13 +41,13 @@ ContractAppliedObject MUST adhere to the following requirements:
 
 ContractApplied contains a structured JSON object defining the allocation and application of a *charge* against specific contract commitments.
 
-<div class="h6-nonindex">Top-Level Properties</div>
+<div class="h7-nonindex">Top-Level Properties</div>
 
 | Property | Type | Required | Description |
 | :--- | :--- | :--- | :--- |
 | `Elements` | Array | True | The parent array containing one or more objects which communicate information about how contract commitments were applied to the *charge*. |
 
-<div class="h6-nonindex">Elements Object</div>
+<div class="h7-nonindex">Elements Object</div>
 
 The `Elements` array contains one or more objects, each of which contains the following entries:
 
@@ -61,7 +61,7 @@ The `Elements` array contains one or more objects, each of which contains the fo
 
 ### Object Implementation Guidance
 
-<div class="h6-nonindex">Custom Properties</div>
+<div class="h7-nonindex">Custom Properties</div>
 
 To facilitate querying data across allocations and across service providers, a data generator may include one or more custom properties. These may be placed at the top level of the object (alongside `Elements`) or nested within the individual `Elements` objects. Custom keys must be prefixed with "x_" followed by PascalCase format (e.g., `x_MyCustomKey`) to make them easy to identify as well as prevent collisions with FOCUS-defined keys.
 
