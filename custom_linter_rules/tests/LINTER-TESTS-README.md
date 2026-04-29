@@ -59,7 +59,7 @@ From the `specification/` directory, run:
 python3 enhanced_markdown_lint.py --config markdownlnt.cfg scan ../custom_linter_rules/tests/test_linter_violations.md
 ```
 
-**Expected output:** 26 MD991 violations plus some MD012 and MD022 violations, with enhanced error messages showing:
+**Expected output:** 30 MD991 violations plus some MD012 and MD022 violations, with enhanced error messages showing:
 - Actual vs Expected values for title case violations
 - Heading text for MD022 violations
 - Consecutive blank line counts for MD012 violations
@@ -73,7 +73,7 @@ From the `specification/` directory, run:
 pymarkdownlnt --config markdownlnt.cfg scan ../custom_linter_rules/tests/test_linter_violations.md
 ```
 
-**Expected output:** 26 MD991 violations plus some MD012 and MD022 violations, with standard pymarkdownlnt error format.
+**Expected output:** 30 MD991 violations plus some MD012 and MD022 violations, with standard pymarkdownlnt error format.
 
 ### Test Title Case Logic
 
