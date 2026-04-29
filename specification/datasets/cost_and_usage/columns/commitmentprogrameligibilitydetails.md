@@ -33,13 +33,13 @@ CommitmentProgramEligibilityDetailsObject MUST adhere to the following requireme
 
 ### Object Schema Structure
 
-<div class="h6-nonindex">Top-Level Properties</div>
+<div class="h7-nonindex">Top-Level Properties</div>
 
 | Property             | Type  | Required | Description                                                                         |
 |:----------|:----------|:----------|:---------------------------------------|
 | `CommitmentPrograms` | Array | True     | Array of objects identifying *commitment programs* for which the usage is eligible. |
 
-<div class="h6-nonindex">CommitmentPrograms Object</div>
+<div class="h7-nonindex">CommitmentPrograms Object</div>
 
 The `CommitmentPrograms` array contains one or more objects, each of which contains the following entries:
 
@@ -49,7 +49,7 @@ The `CommitmentPrograms` array contains one or more objects, each of which conta
 
 ### Object Implementation Guidance
 
-<div class="h6-nonindex">Custom Properties</div>
+<div class="h7-nonindex">Custom Properties</div>
 
 To facilitate querying data across allocations and across service providers, a data generator may include one or more custom properties. These may be placed at the top level of the object (alongside `CommitmentPrograms`) or nested within the individual `CommitmentPrograms` objects. Custom keys must be prefixed with "x_" followed by PascalCase format (e.g., `x_MyCustomKey`) to make them easy to identify as well as prevent collisions with FOCUS-defined keys.
 
