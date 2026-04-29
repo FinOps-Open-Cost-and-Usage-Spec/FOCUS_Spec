@@ -93,6 +93,6 @@ WHERE InvoiceId = ?
 GROUP BY InvoiceId
 ```
 
-## Introduced (Version)
+## Version Introduced
 
 1.4

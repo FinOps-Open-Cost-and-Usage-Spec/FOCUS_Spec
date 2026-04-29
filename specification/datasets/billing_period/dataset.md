@@ -54,6 +54,6 @@ Billing Period
 
 Describes the time intervals and statuses associated with an invoice issuer's billing cycles.
 
-## Introduced (Version)<!--SkipTOC-->
+## Version Introduced<!--SkipTOC-->
 
 1.4

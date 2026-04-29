@@ -34,6 +34,6 @@ The name of the entity responsible for invoicing for the [*contract commitment*]
 | Data type       | String          |
 | Value format    | \<not specified> |
 
-## Introduced (Version)
+## Version Introduced
 
 1.4

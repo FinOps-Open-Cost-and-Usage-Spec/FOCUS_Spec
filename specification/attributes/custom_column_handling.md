@@ -52,6 +52,6 @@ Custom Column Handling
 
 Column ID naming, formatting, and value requirements for *custom columns* appearing in a *FOCUS dataset*.
 
-## Introduced (Version)
+## Version Introduced
 
 1.4
