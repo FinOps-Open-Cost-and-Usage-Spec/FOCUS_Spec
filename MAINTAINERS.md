@@ -8,13 +8,13 @@ The following individuals are the currently active Maintainers of the FOCUS proj
 
 | Name | GitHub Handle | Current Corporate Affiliation | Start Release (Date) | Previous Corporate Affiliation(s) |
 | :--- | :--- | :--- | :--- | :--- |
-| Andrew Quigley | [@qquigley](https://github.com/qquigley) | Northwestern Mutual | 1.2 (2024/10/08) | |
+| Andrew Quigley | [@qquigley](https://github.com/qquigley) | Northwestern Mutual | 1.4 (2025/10/30) | |
 | Graham Murphy | [@thecloudman](https://github.com/thecloudman) | TechnologyOne | 1.5 (2026/04/30) | |
 | Irena Jurica | [@ijurica](https://github.com/ijurica) | Neos | 0.5 (2023/04/04) | |
 | Joaquin Prado | [@jpradocueva](https://github.com/jpradocueva) | FinOps Foundation | 1.0 (2023/06/25) | |
 | Karl Kraft | [@kk09v](https://github.com/kk09v) | Walmart | 0.5 (2023/04/04) | |
 | Larry Advey | [@ljadvey](https://github.com/ljadvey) | Cloudzero | 1.0 (2023/06/25) | Twilio (1.0 to 1.3) |
-| Matt Cowsert | [@Matt-Cowsert](https://github.com/Matt-Cowsert) | FinOps Foundation | 1.0 (2023/06/25) | |
+| Matt Cowsert | [@Matt-Cowsert](https://github.com/Matt-Cowsert) | FinOps Foundation | 1.4 (2025/10/30) | |
 | Michael Flanakin | [@flanakin](https://github.com/flanakin) | Salesforce | 0.5 (2023/04/04) | Microsoft (0.5 to 1.3) |
 | Mike Fuller | [@mike-finopsorg](https://github.com/mike-finopsorg) | FinOps Foundation | 0.5 (2023/04/04) | |
 | Riley Jenkins | [@rileyjenk](https://github.com/rileyjenk) | Domo | 0.5 (2023/04/04) | |
