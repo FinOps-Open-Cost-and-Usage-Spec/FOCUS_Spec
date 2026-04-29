@@ -119,7 +119,7 @@ Secondary classification of the Service Category for a *service* based on its co
 | Feature level   | Recommended                                          |
 | Allows nulls    | False                                                |
 | Data type       | String                                               |
-| Value format    | Allowed Values                                       |
+| Value format    | Allowed values                                       |
 
 ## Introduced (version)
 

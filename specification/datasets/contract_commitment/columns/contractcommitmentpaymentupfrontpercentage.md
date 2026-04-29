@@ -32,12 +32,12 @@ Represents the portion of the total [Contract Commitment Cost](#datasets.contrac
 
 | Constraint    | Value            |
 | :------------ | :--------------- |
-| Dataset         | [Contract Commitment](#datasets.contractcommitment)  |
-| Column type   | Dimension        |
+| Dataset       | [Contract Commitment](#datasets.contractcommitment) |
+| Column type   | Metric           |
 | Feature level | Conditional      |
 | Allows nulls  | False            |
 | Data type     | Decimal          |
-| Value format  | [Numeric Format](#attributes.numericformat)  |
+| Value format  | [Numeric Format](#attributes.numericformat) |
 | Number range  | 0.0 to 1.0 (inclusive)            |
 
 ## Introduced (version)

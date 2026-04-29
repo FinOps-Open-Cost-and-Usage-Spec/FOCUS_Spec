@@ -107,7 +107,7 @@ A set of properties describing how resources are allocated in data generator-def
 | Constraint | Value |
 | :--- | :--- |
 | Dataset | [Cost and Usage](#datasets.costandusage) |
-| Column type | Dimension |
+| Column type | Dimension / Metric |
 | Feature level | Recommended |
 | Allows nulls | True |
 | Data type | JSON |

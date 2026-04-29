@@ -65,7 +65,7 @@ Represents the categorical length of the [*contract commitment*](#glossary:contr
 | Feature level   | Mandatory      |
 | Allows nulls    | False          |
 | Data type       | String         |
-| Value format    | Expected format |
+| Value format    | [Expected format](#datasets.contractcommitment.contractcommitmentdurationtype.expectedformat) |
 
 ## Introduced (version)
 

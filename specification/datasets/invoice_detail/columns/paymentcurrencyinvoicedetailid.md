@@ -26,13 +26,13 @@ The identifier linking a granular record to the specific [Invoice Detail](#datas
 
 ## Content Constraints
 
-|    Constraint    |              Value             |
+|    Constraint   |              Value              |
 |:----------------|:--------------------------------|
 | Column type     | Dimension                       |
 | Feature level   | Conditional                     |
 | Allows nulls    | False                           |
 | Data type       | String                          |
-| Value format    | \<unspecified>                  |
+| Value format    | \<not specified>                |
 
 ## Introduced (version)
 

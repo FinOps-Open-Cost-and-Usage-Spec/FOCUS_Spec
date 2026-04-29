@@ -7,7 +7,7 @@ The Contract Commitment dataset is a supporting dataset that describes the terms
 | Column | Column Type | Feature Level | Allows Nulls | Data Type |
 | :--- | :--- | :--- | :--- | :--- |
 | [Billing Currency](#datasets.contractcommitment.billingcurrency) | Dimension | Mandatory | True | String |
-| [Contract Commitment Applicability](#datasets.contractcommitment.contractcommitmentapplicability) | Dimension | Mandatory | False | JSON |
+| [Contract Commitment Applicability](#datasets.contractcommitment.contractcommitmentapplicability) | Dimension / Metric | Mandatory | False | JSON |
 | [Contract Commitment Benefit Category](#datasets.contractcommitment.contractcommitmentbenefitcategory) | Dimension | Mandatory | False | String |
 | [Contract Commitment Category](#datasets.contractcommitment.contractcommitmentcategory) | Dimension | Mandatory | False | String |
 | [Contract Commitment Cost](#datasets.contractcommitment.contractcommitmentcost) | Metric | Mandatory | True | Decimal |
