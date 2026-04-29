@@ -1,4 +1,4 @@
-# Project Maintainers
+# Project Maintainers and Chairs
 
 This file lists the official Maintainers and Chairs of the FOCUS project. Maintainers and Chairs are responsible for guiding the technical direction of the project.
 
