@@ -9,7 +9,7 @@ The composition of properties associated with the SKU Price ID may differ across
 SkuPriceId MUST adhere to the following requirements:
 
 * SkuPriceId MUST be of type String.
-* SkuPriceId MUST conform to [String Handling](#attributes.stringhandling) requirements.
+* SkuPriceId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * SkuPriceId MUST adhere to the following nullability requirements:
   * SkuPriceId MUST be null when [ChargeCategory](#datasets.costandusage.chargecategory) is "Tax".
   * SkuPriceId MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#datasets.costandusage.chargeclass) is not "Correction".
@@ -18,8 +18,8 @@ SkuPriceId MUST adhere to the following requirements:
   * SkuPriceId MUST have one and only one parent [SkuId](#datasets.costandusage.skuid).
   * SkuPriceId MUST remain consistent over time.
   * SkuPriceId MUST remain consistent across [*billing accounts*](#glossary:billing-account) or contracts.
-  * SkuPriceId MAY equal SkuId.
-  * SkuPriceId MUST be associated with a given *resource* or *service* when ChargeCategory is "Usage" or "Purchase".
+  * SkuPriceId MAY match SkuId.
+  * SkuPriceId MUST be associated with a given [*resource*](#glossary:resource) or [*service*](#glossary:service) when ChargeCategory is "Usage" or "Purchase".
   * SkuPriceId MUST reference a *SKU Price* in a service-provider-supplied *price list*, enabling the lookup of detailed information about the *SKU Price*.
   * SkuPriceId MUST support the lookup of the [ListUnitPrice](#datasets.costandusage.listunitprice) when the service provider publishes unit prices exclusive of discounts.
   * SkuPriceId MUST support the verification of the given [ContractedUnitPrice](#datasets.costandusage.contractedunitprice) when the service provider supports negotiated pricing concepts.
