@@ -73,6 +73,6 @@ Correction Handling
 
 Defines how *corrections* to previously delivered FOCUS *dataset artifacts* are represented in subsequent deliveries.
 
-## Introduced (version)
+## Version Introduced
 
 1.4

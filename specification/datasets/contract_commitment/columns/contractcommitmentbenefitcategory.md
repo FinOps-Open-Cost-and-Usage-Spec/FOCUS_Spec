@@ -56,6 +56,6 @@ Defines the primary value or advantage received for a *contract commitment*.
 | Data type       | String         |
 | Value format    | Allowed values |
 
-## Introduced (version)
+## Version Introduced
 
 1.4

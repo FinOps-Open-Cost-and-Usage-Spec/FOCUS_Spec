@@ -9,7 +9,14 @@ ChargeCategory MUST adhere to the following requirements:
 * ChargeCategory MUST be of type String.
 * ChargeCategory MUST NOT be null.
 * ChargeCategory MUST be one of the allowed values.
-* ChargeCategory MAY be "Usage" when the record aggregates *charges* across multiple allowed values other than "Tax" (for example, aggregation of "Usage" and "Credit" is allowed, but not "Usage" and "Tax").
+* When the *charge* does not aggregate multiple classifications, ChargeCategory MUST adhere to the following requirements:
+  * ChargeCategory MUST be "Usage" when the *charge* represents consumption of a service or resource.
+  * ChargeCategory MUST be "Purchase" when the *charge* represents acquisition of a service, resource, or *commitment*.
+  * ChargeCategory MUST be "Tax" when the *charge* represents taxes levied by the relevant authorities.
+  * ChargeCategory MUST be "Credit" when the *charge* represents a financial incentive or allowance unrelated to other *charges*.
+  * ChargeCategory MUST be "Adjustment" when the *charge* represents a billing modification that does not fall into other ChargeCategories.
+* When the *charge* aggregates multiple classifications, ChargeCategory MUST adhere to the following requirements:
+  * ChargeCategory MAY be "Usage" when the record aggregates *charges* across multiple allowed values other than "Tax" (for example, aggregation of "Usage" and "Credit" is allowed, but not "Usage" and "Tax").
 
 ## Allowed Values
 
@@ -20,6 +27,10 @@ ChargeCategory MUST adhere to the following requirements:
 | Tax        | Positive or negative applicable taxes that are levied by the relevant authorities including refunds. Tax *charges* may vary depending on factors such as the location, jurisdiction, and local or federal regulations. |
 | Credit     | Positive or negative *charges* granted by the service provider for various scenarios (e.g., promotional credits, corrections to promotional credits). |
 | Adjustment | Positive or negative *charges* the service provider applies that do not fall into other category values. |
+
+## Implementation Guidance
+
+Unlike the [CostAndUsage](#datasets.costandusage) dataset, which requires strict categorization per row, [InvoiceDetail](#datasets.invoicedetail) records are designed to align with physical or electronic invoice line items. When the invoice does not provide an explicit charge category for a line item, a single line item may inherently represent a mix of charge categories (e.g., combining base usage and promotional credits). To accurately reflect the issued invoice without breaking schema validation, the `InvoiceDetail` dataset permits the "Usage" category to represent an aggregate of multiple charge categories, provided that "Tax" charges are kept distinctly separate.
 
 ## Column ID
 
@@ -43,6 +54,6 @@ Represents the highest-level classification of a *charge* based on the nature of
 | Data type       | String         |
 | Value format    | Allowed values |
 
-## Introduced (version)
+## Version Introduced
 
 1.4

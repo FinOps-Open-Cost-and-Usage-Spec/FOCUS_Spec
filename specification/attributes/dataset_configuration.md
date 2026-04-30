@@ -42,6 +42,6 @@ Dataset Configuration
 
 Defines configuration options for controlling the structure and content of a FOCUS dataset.
 
-## Introduced (version)
+## Version Introduced
 
 1.4

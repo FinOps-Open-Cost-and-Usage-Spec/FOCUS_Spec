@@ -33,6 +33,6 @@ The terms (typically focused on timeframe) by which the invoice issuer expects t
 | Data type       | String                          |
 | Value format    | \<not specified>                |
 
-## Introduced (version)
+## Version Introduced
 
 1.4

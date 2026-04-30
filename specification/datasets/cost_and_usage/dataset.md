@@ -197,6 +197,6 @@ Cost and Usage
 
 Describes the cost and usage incurred through using or purchasing a service provider's [*resources*](#glossary:resource) or [*services*](#glossary:service).
 
-## Introduced (version)<!--SkipTOC-->
+## Version Introduced<!--SkipTOC-->
 
 0.5

@@ -42,7 +42,7 @@ Note the following details in the example datasets:
   * A corrected record for `R-111`.
   * A corrected record for `R-222`.
 
-### Scenario 2: Closed-Period Correction - Late-arriving Usage
+### Scenario 2: Closed-Period Correction - Late-Arriving Usage
 
 On July 5th, 2025, CrestNode identified a cost that was incurred during May 2025 (ChargePeriodStart: `2025-05-01`) but was not included in the finalized invoice issued on June 8th, 2025. Since the May billing period was closed, the correction was delivered in the next open billing period (e.g., June or July).
 
@@ -62,7 +62,7 @@ Note the following details in the example datasets:
 * The correction record has ChargeClass set to "Correction", indicating it accounts for usage from a previously closed billing period.
 * Both Delta style and Ledger style corrections use a single increment record to represent the late-arriving usage and associated cost.
 
-### Scenario 3: Closed-Period Correction - Itemized Cost-only Corrections
+### Scenario 3: Closed-Period Correction - Itemized Cost-Only Corrections
 
 On July 5th, 2025, CrestNode detected a minor cost discrepancy caused by accumulated rounding differences across multiple previously invoiced records spanning several different SkuPriceId values. While each individual record was correctly rounded, the aggregated cost differed slightly from the precise total, resulting in a small drift.
 
@@ -87,7 +87,7 @@ Note the following details in the example datasets:
 * Each correction record is itemized and explicitly references the relevant SkuPriceId.
 * Each correction record has ChargeCategory set to "Adjustment". While in this case "Usage" might be more precise and is permitted (since ChargeClass is "Correction"), "Adjustment" was selected to denote a cost-only correction due to a rounding error.
 
-### Scenario 4: Closed-Period Correction - Bulk Cost-only Corrections
+### Scenario 4: Closed-Period Correction - Bulk Cost-Only Corrections
 
 On July 5th, 2025, CrestNode detected a minor cost discrepancy caused by accumulated rounding differences across multiple previously invoiced records spanning several different SkuPriceId values. While each individual record was correctly rounded, the aggregated cost differed slightly from the precise total, resulting in a small drift.
 

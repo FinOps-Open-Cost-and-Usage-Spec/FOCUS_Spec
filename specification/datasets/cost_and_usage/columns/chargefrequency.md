@@ -42,6 +42,6 @@ Indicates how often a *charge* will occur.
 | Data type       | String                                               |
 | Value format    | Allowed values                                       |
 
-## Introduced (version)
+## Version Introduced
 
 1.0-preview

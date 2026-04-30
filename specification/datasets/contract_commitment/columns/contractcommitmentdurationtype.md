@@ -67,6 +67,6 @@ Represents the categorical length of the *contract commitment* offering.
 | Data type       | String         |
 | Value format    | Expected format |
 
-## Introduced (version)
+## Version Introduced
 
 1.4

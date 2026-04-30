@@ -35,6 +35,6 @@ Represents the currency that a *charge* was billed in.
 | Data type       | String                              |
 | Value format    | [Currency Format](#attributes.currencyformat) |
 
-## Introduced (version)
+## Version Introduced
 
 1.4

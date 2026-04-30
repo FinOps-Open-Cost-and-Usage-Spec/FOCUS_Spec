@@ -49,6 +49,6 @@ Indicates whether the pricing and terms of a *contract commitment* are based on 
 | Data type       | String         |
 | Value format    | Allowed values |
 
-## Introduced (version)
+## Version Introduced
 
 1.4

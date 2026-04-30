@@ -28,9 +28,9 @@ The following section details the normative requirements for the AllocatedMethod
 
 The AllocatedMethodDetailsObject MUST adhere to the following requirements:
 
-* AllocatedMethodDetailsObject MUST conform to the [AllocatedMethodDetailsObjectSchema](#schemas.datasets.costandusage.allocatedmethoddetailsobjectschema) JSON Schema.
+* AllocatedMethodDetailsObject MUST conform to the [AllocatedMethodDetailsObjectSchema](#schemas.costandusage.allocatedmethoddetailsobjectschema) JSON Schema.
 * AllocatedMethodDetailsObject.Elements[\*].AllocatedRatio MUST represent the allocated charge's percentage of the origin charge.
-* Values for all AllocatedMethodDetailsObject.Elements[\*].AllocatedRatio properties across all allocated charges related to a single origin charge MUST sum up to 1 (100%).
+* The sum of AllocatedMethodDetailsObject.Elements[\*].AllocatedRatio across all allocated charges related to a single origin charge MUST be equal to 1 (100%).
 * AllocatedMethodDetailsObject.Elements[\*].UsageUnit SHOULD conform to [UnitFormat](#attributes.unitformat) requirements.
 * AllocatedMethodDetailsObject.Elements[\*].UsageUnit MUST represent the unit or component of data generator's documented [AllocationMethod](#datasets.costandusage.allocatedmethodid) which was used to determine the AllocatedMethodDetailsObject.Elements[\*].AllocatedRatio value.
 * AllocatedMethodDetailsObject.Elements[\*].UsageQuantity SHOULD capture the quantity or volume of the AllocatedMethodDetailsObject.Elements[\*].UsageUnit measured by the data generator that was used to determine the AllocatedMethodDetailsObject.Elements[\*].AllocatedRatio value.
@@ -60,7 +60,7 @@ The `Elements` array contains one or more objects, each of which contains the fo
 Here is a basic example of the object format.
 
 * For more detailed examples, please see this column's entry in the JSON Object Examples appendix entry [here](#appendix.examples:jsonobject.examples:allocatedmethoddetails).
-* For the JSON schema, please see [Allocated Method Details Object Schema](#schemas.datasets.costandusage.allocatedmethoddetailsobjectschema).
+* For the JSON schema, please see [Allocated Method Details Object Schema](#schemas.costandusage.allocatedmethoddetailsobjectschema).
 
 ```json
 {
@@ -114,6 +114,6 @@ A set of properties describing how resources are allocated in data generator-def
 | Value format | [JSON Object Format](#attributes.jsonobjectformat) |
 | Object | [AllocatedMethodDetailsObject](#datasets.costandusage.allocatedmethoddetails.allocatedmethoddetailsobject) |
 
-## Introduced (version)
+## Version Introduced
 
 1.3

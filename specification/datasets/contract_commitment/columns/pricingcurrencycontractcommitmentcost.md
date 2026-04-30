@@ -37,6 +37,6 @@ The monetary value of the *contract commitment* in the Pricing Currency.
 | Value format  | [Numeric Format](#attributes.numericformat) |
 | Number range  | Any valid decimal value            |
 
-## Introduced (version)
+## Version Introduced
 
 1.4

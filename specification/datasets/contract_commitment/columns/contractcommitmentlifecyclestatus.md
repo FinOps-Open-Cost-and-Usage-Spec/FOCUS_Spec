@@ -46,6 +46,6 @@ The current lifecycle state of a *contract commitment*.
 | Data type       | String         |
 | Value format    | Allowed values |
 
-## Introduced (version)
+## Version Introduced
 
 1.4

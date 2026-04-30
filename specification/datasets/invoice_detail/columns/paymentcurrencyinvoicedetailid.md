@@ -34,6 +34,6 @@ The identifier linking a granular record to the specific [Invoice Detail](#datas
 | Data type       | String                          |
 | Value format    | \<unspecified>                  |
 
-## Introduced (version)
+## Version Introduced
 
 1.4

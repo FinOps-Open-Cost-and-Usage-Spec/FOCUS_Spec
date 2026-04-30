@@ -48,6 +48,6 @@ Represents the frequency by which a *contract commitment* is invoiced.
 | Data type       | String         |
 | Value format    | Allowed values |
 
-## Introduced (version)
+## Version Introduced
 
 1.4

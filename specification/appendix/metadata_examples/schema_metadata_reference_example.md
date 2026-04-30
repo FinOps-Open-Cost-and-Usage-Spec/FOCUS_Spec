@@ -71,4 +71,3 @@ The new export metadata could look like this:
   ]
 }
 ```
-

@@ -81,6 +81,6 @@ The Billed Cost as expressed in Payment Currency.
 | Value format    | [Numeric Format](#attributes.numericformat) |
 | Number range    | Any valid decimal value |
 
-## Introduced (version)
+## Version Introduced
 
 1.4

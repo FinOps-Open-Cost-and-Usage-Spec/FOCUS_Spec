@@ -33,6 +33,6 @@ The date by which the payment for an invoice is expected to be received by the i
 | Data type       | Date/Time                       |
 | Value format    | [Date/Time Format](#attributes.date/timeformat) |
 
-## Introduced (version)
+## Version Introduced
 
 1.4

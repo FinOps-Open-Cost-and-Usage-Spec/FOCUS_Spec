@@ -45,6 +45,6 @@ Indicates whether the *charge* represents either the consumption of a *capacity 
 | Data type       | String                                               |
 | Value format    | Allowed Values                                       |
 
-## Introduced (version)
+## Version Introduced
 
 1.1

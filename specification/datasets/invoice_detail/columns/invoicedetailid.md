@@ -33,6 +33,6 @@ The invoice-issuer-assigned identifier for an Invoice Detail record encapsulatin
 | Data type       | String                          |
 | Value format    | \<not specified>                |
 
-## Introduced (version)
+## Version Introduced
 
 1.4
