@@ -1,6 +1,7 @@
 ---
 name: Feature Request
 about: Propose a new feature or enhancement to the FOCUS specification
+title: "[FR] "
 labels: feature, needs triage
 assignees: matt-cowsert
 ---

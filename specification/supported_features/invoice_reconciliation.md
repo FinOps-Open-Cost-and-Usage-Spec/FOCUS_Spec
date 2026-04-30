@@ -2,7 +2,7 @@
 
 ## Description
 
-FOCUS supports the reconciliation of granular cloud consumption records with the formal financial documents issued by an invoice issuer. The [Invoice Detail](#datasets.invoicedetail) dataset represents the definitive financial record of [*charges*](#glossary:charge) as they appear on an invoice. By leveraging common identifiers, practitioners can map usage-based costs in the [Cost and Usage](#datasets.costandusage) dataset back to their corresponding line items in the [Invoice Detail](#datasets.invoicedetail) dataset.
+FOCUS supports the reconciliation of granular cloud consumption records with the formal financial documents issued by an [*invoice issuer*](#glossary:invoice-issuer). The [Invoice Detail](#datasets.invoicedetail) dataset represents the definitive financial record of [*charges*](#glossary:charge) as they appear on an invoice. By leveraging common identifiers, practitioners can map usage-based costs in the [Cost and Usage](#datasets.costandusage) dataset back to their corresponding line items in the [Invoice Detail](#datasets.invoicedetail) dataset.
 
 This feature also supports reconciliation across divergent currency grains. When an invoice issuer represents billing and payment currencies at different aggregation levels, the `PaymentCurrencyInvoiceDetailId` provides the necessary lineage to link granular usage records to the aggregate records used for financial settlement.
 
@@ -32,11 +32,11 @@ This feature also supports reconciliation across divergent currency grains. When
 
 ## Example SQL Queries
 
-Reconciliation often requires aggregating granular usage data to match the coarser grain of an invoice. The following queries demonstrate how to validate that usage records match the billed amounts on a legal invoice.
+Reconciliation often requires aggregating granular usage data to match the coarser grain of an invoice. The following queries demonstrate how to validate that usage records equal the billed amounts on a legal invoice.
 
 ### Reconcile Cost and Usage to Invoice Detail by Invoice ID
 
-This query validates that the sum of costs for all service usage in the [CostAndUsage](#datasets.costandusage) dataset matches the total non-tax charges in the [InvoiceDetail](#datasets.invoicedetail) dataset for a specific invoice.
+This query validates that the sum of costs for all service usage in the [CostAndUsage](#datasets.costandusage) dataset equals the total non-tax charges in the [InvoiceDetail](#datasets.invoicedetail) dataset for a specific invoice.
 
 ```sql
 SELECT
