@@ -177,6 +177,6 @@ GROUP BY
 ORDER BY BilledCost DESC
 ```
 
-## Introduced (version)
+## Version Introduced
 
 1.4

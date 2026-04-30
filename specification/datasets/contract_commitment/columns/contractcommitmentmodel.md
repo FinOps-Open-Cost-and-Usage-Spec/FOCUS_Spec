@@ -54,6 +54,6 @@ Represents the operational behavior and consumption flexibility of a [*contract 
 | Data type       | String         |
 | Value format    | Allowed values |
 
-## Introduced (version)
+## Version Introduced
 
 1.4

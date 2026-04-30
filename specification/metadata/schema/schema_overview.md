@@ -40,6 +40,6 @@ Schema
 
 Schema
 
-## Introduced (version)
+## Version Introduced
 
 1.0

@@ -42,6 +42,6 @@ Indicates whether the *commitment discount* identified in the CommitmentDiscount
 | Data type       | String                                               |
 | Value format    | Allowed Values                                       |
 
-## Introduced (version)
+## Version Introduced
 
 1.0-preview

@@ -36,6 +36,6 @@ A service-provider-assigned name to identify the type of *sub account*.
 | Data type       | String                                               |
 | Value format    | \<not specified>                                     |
 
-## Introduced (version)
+## Version Introduced
 
 1.2

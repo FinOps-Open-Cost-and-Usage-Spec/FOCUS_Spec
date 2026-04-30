@@ -55,6 +55,6 @@ The publication state of the invoice and the reliability of its associated deliv
 | Data type       | String                          |
 | Value format    | \<unspecified>                  |
 
-## Introduced (version)
+## Version Introduced
 
 1.4

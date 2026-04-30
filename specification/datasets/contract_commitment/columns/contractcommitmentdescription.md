@@ -34,6 +34,6 @@ The self-contained summary of the *contract commitment's* terms.
 | Data type       | String                                               |
 | Value format    | \<not specified>                                     |
 
-## Introduced (version)
+## Version Introduced
 
 1.3

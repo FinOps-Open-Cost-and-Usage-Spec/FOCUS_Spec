@@ -104,6 +104,6 @@ Contract Commitment
 
 Describes the terms of contracts agreed between a service provider and a customer.
 
-## Introduced (version)<!--SkipTOC-->
+## Version Introduced<!--SkipTOC-->
 
 1.3

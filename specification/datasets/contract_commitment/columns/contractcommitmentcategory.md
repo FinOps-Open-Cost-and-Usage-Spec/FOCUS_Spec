@@ -40,6 +40,6 @@ Represents the highest-level classification of a *contract commitment* based on 
 | Data type       | String                                               |
 | Value format    | Allowed values                                       |
 
-## Introduced (version)
+## Version Introduced
 
 1.3

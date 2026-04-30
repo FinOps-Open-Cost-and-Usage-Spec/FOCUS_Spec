@@ -43,6 +43,6 @@ The volume of a given *SKU* associated with a *resource* or *service* used or pu
 | Value format    | [Numeric Format](#attributes.numericformat)          |
 | Number range    | Any valid decimal value                              |
 
-## Introduced (version)
+## Version Introduced
 
 1.0-preview

@@ -87,6 +87,6 @@ The set of tags assigned to *tag sources* that account for potential provider-de
 | Data type       | JSON                                                 |
 | Value format    | [Key-Value Format](#attributes.key-valueformat)      |
 
-## Introduced (version)
+## Version Introduced
 
 1.0-preview

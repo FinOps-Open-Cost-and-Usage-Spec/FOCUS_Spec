@@ -34,6 +34,6 @@ The invoice-issuer-assigned identifier for an invoice that affects charges as st
 | Data type       | String                          |
 | Value format    | \<unspecified>                   |
 
-## Introduced (version)
+## Version Introduced
 
 1.4

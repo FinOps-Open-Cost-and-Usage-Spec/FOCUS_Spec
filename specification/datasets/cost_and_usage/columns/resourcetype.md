@@ -35,6 +35,6 @@ The kind of *resource* the *charge* applies to.
 | Data type       | String                                               |
 | Value format    | \<not specified>                                     |
 
-## Introduced (version)
+## Version Introduced
 
 1.0-preview

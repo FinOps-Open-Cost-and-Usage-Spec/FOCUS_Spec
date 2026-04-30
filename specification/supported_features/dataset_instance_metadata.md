@@ -11,6 +11,6 @@ FOCUS supports the ability for data generators to provide metadata that describe
   * Dataset Instance Name
   * FOCUS Dataset ID
 
-## Introduced (Version)
+## Version Introduced
 
 1.3

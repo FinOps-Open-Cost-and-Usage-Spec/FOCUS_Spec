@@ -212,6 +212,6 @@ The types of [*commitment programs*](#glossary:commitment-program) available for
 | Value format  | [JsonObjectFormat](#attributes.jsonobjectformat)                                                                             |
 | Object        | [CommitmentProgramEligibilityDetailsObject](#datasets.costandusage.commitmentprogrameligibilitydetails.commitmentprogrameligibilitydetailsobject) |
 
-## Introduced (version)
+## Version Introduced
 
 1.4
