@@ -46,7 +46,9 @@ The keywords **MUST**, **MUST NOT**, **SHOULD**, **SHOULD NOT**, and **MAY** in 
 
 FOCUS restricts normative language to this subset as defined in the project's [Normative Requirements Guidelines](guidelines/contributors/normative-requirements-guidelines.md).
 
-An implementation is considered **conformant** if it satisfies all **MUST** and **MUST NOT** requirements defined in the specification. Failure to meet any of these requirements results in non-conformance.
+Implementations are expected to satisfy the **MUST** and **MUST NOT** requirements defined in the specification. Individual unmet requirements are recorded as deviations and evaluated against per-dataset allowances by the FinOps Certified FOCUS Conformant program for data generators.
+
+For details on certification, see [FinOps Certifications for Organizations](https://www.finops.org/certification-for-organizations/).
 
 ---
 
