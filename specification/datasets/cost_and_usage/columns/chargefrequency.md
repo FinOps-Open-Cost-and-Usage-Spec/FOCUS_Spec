@@ -1,6 +1,6 @@
 # Charge Frequency
 
-Charge Frequency indicates how often a [*charge*](#glossary:charge) will occur. Along with the [charge period](#glossary:chargeperiod) related columns, the Charge Frequency is commonly used to understand recurrence periods (e.g., monthly, yearly), forecast upcoming *charges*, and differentiate between one-time and recurring fees for purchases.
+Charge Frequency indicates how often a [*charge*](#glossary:charge) will occur. Along with the [charge period](#glossary:chargeperiod) related columns, the Charge Frequency is commonly used to understand recurrence periods (e.g., monthly, yearly); forecast upcoming *charges*; and differentiate between one-time and recurring fees for purchases.
 
 ## Requirements
 
