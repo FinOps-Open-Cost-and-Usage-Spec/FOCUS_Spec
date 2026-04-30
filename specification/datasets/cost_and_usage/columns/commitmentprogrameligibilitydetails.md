@@ -31,15 +31,15 @@ CommitmentProgramEligibilityDetailsObject MUST adhere to the following requireme
 * CommitmentProgramEligibilityDetailsObject.CommitmentPrograms[\*].ProgramType MUST match [CommitmentDiscountType](#datasets.costandusage.commitmentdiscounttype) for one object in CommitmentProgramEligibilityDetailsObject.CommitmentPrograms when CommitmentDiscountType is not null.
 * CommitmentProgramEligibilityDetailsObject.CommitmentPrograms[\*].ProgramType SHOULD correspond to terminology disclosed by the service provider in public documentation.
 
-## Schema Structure
+### Object Schema Structure
 
-### Top-Level Properties
+<div class="h7-nonindex">Top-Level Properties</div>
 
 | Property             | Type  | Required | Description                                                                         |
 |:----------|:----------|:----------|:---------------------------------------|
 | `CommitmentPrograms` | Array | True     | Array of objects identifying *commitment programs* for which the usage is eligible. |
 
-### CommitmentPrograms Object
+<div class="h7-nonindex">CommitmentPrograms Object</div>
 
 The `CommitmentPrograms` array contains one or more objects, each of which contains the following entries:
 
@@ -47,7 +47,13 @@ The `CommitmentPrograms` array contains one or more objects, each of which conta
 |:-------------|:-------------|:-------------|:------------------------------|
 | ProgramType | [String](#attributes.stringhandling) | True     | The specific type of commitment program (e.g., discount or capacity reservation) available for this usage. |
 
-## Object Example
+### Object Implementation Guidance
+
+<div class="h7-nonindex">Custom Properties</div>
+
+To facilitate querying data across allocations and across service providers, a data generator may include one or more custom properties. These may be placed at the top level of the object (alongside `CommitmentPrograms`) or nested within the individual `CommitmentPrograms` objects. Custom keys must be prefixed with "x_" followed by PascalCase format (e.g., `x_MyCustomKey`) to make them easy to identify as well as prevent collisions with FOCUS-defined keys.
+
+### Object Example
 
 Here is a basic example of the object format.
 
@@ -64,12 +70,6 @@ Here is a basic example of the object format.
   ]
 }
 ```
-
-## Implementation Guidance
-
-### Custom Properties
-
-To facilitate querying data across allocations and across service providers, a data generator may include one or more custom properties. These may be placed at the top level of the object (alongside `CommitmentPrograms`) or nested within the individual `CommitmentPrograms` objects. Custom keys must be prefixed with "x_" followed by PascalCase format (e.g., `x_MyCustomKey`) to make them easy to identify as well as prevent collisions with FOCUS-defined keys.
 
 ### Object ID
 
