@@ -8,6 +8,12 @@ FOCUS establishes a consistent, vendor-neutral vocabulary for billing and usage 
 
 The project is actively maintained and adopted by a growing ecosystem of cloud providers, SaaS vendors, enterprises, and FinOps tooling platforms. This repository contains the specification releases, source, build and validation tooling, and supporting contributor guidance that help practitioners, platforms, and providers produce and consume data that is consistent, portable, and aligned to FinOps practices.
 
+### Project Naming
+
+* The official project name is **FinOps Open Cost and Usage Specification**
+* The official acronym is **FOCUS**
+* The term **FOCUS Specification** is the accepted shorthand for the project's output
+
 For a deeper overview of FOCUS, its capabilities, and adoption, see the [FOCUS website](https://focus.finops.org).
 
 ## Accessing the Specification
