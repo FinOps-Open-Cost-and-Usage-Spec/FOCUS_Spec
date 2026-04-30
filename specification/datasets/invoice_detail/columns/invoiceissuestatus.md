@@ -53,7 +53,7 @@ The publication state of the invoice and the reliability of its associated deliv
 | Feature level   | Mandatory                       |
 | Allows nulls    | False                           |
 | Data type       | String                          |
-| Value format    | \<not specified>                |
+| Value format    | Allowed values                |
 
 ## Introduced (version)
 
