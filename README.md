@@ -38,8 +38,7 @@ For topic-specific standards, see:
 
 The keywords **MUST**, **MUST NOT**, **SHOULD**, **SHOULD NOT**, and **MAY** in the specification are to be interpreted as described in BCP 14 (RFC2119 and RFC8174), when and only when they appear in all capitals.
 
-FOCUS restricts normative language to this subset as defined in the project's  
-[Normative Requirements Guidelines](guidelines/contributors/normative-requirements-guidelines.md).
+FOCUS restricts normative language to this subset as defined in the project's [Normative Requirements Guidelines](guidelines/contributors/normative-requirements-guidelines.md).
 
 An implementation is considered **conformant** if it satisfies all **MUST** and **MUST NOT** requirements defined in the specification. Failure to meet any of these requirements results in non-conformance.
 
