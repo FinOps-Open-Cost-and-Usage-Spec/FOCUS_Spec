@@ -28,7 +28,7 @@ The following section details the normative requirements for the AllocatedMethod
 
 The AllocatedMethodDetailsObject MUST adhere to the following requirements:
 
-* AllocatedMethodDetailsObject MUST conform to the [AllocatedMethodDetailsObjectSchema](#schemas.datasets.costandusage.allocatedmethoddetailsobjectschema) JSON Schema.
+* AllocatedMethodDetailsObject MUST conform to the [AllocatedMethodDetailsObjectSchema](#schemas.costandusage.allocatedmethoddetailsobjectschema) JSON Schema.
 * AllocatedMethodDetailsObject.Elements[\*].AllocatedRatio MUST represent the allocated charge's percentage of the origin charge.
 * Values for all AllocatedMethodDetailsObject.Elements[\*].AllocatedRatio properties across all allocated charges related to a single origin charge MUST sum up to 1 (100%).
 * AllocatedMethodDetailsObject.Elements[\*].UsageUnit SHOULD conform to [UnitFormat](#attributes.unitformat) requirements.
@@ -60,7 +60,7 @@ The `Elements` array contains one or more objects, each of which contains the fo
 Here is a basic example of the object format.
 
 * For more detailed examples, please see this column's entry in the JSON Object Examples appendix entry [here](#appendix.examples:jsonobject.examples:allocatedmethoddetails).
-* For the JSON schema, please see [Allocated Method Details Object Schema](#schemas.datasets.costandusage.allocatedmethoddetailsobjectschema).
+* For the JSON schema, please see [Allocated Method Details Object Schema](#schemas.costandusage.allocatedmethoddetailsobjectschema).
 
 ```json
 {

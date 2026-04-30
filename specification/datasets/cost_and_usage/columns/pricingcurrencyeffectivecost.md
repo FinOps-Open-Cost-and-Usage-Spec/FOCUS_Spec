@@ -1,6 +1,6 @@
 # Pricing Currency Effective Cost
 
-Pricing Currency Effective Cost represents the [Pricing Currency](#datasets.costandusage.pricingcurrency)-denominated equivalent of [Effective Cost](#datasets.costandusage.effectivecost). It reflects the cost of a [*charge*](#glossary:charge) based on the [*resources*](#glossary:resource) used, [*services*](#glossary:service) used, or [*contract commitments*](#glossary:contract-commitment) recognized in a given [*charge period*](#glossary:charge-period).
+Pricing Currency Effective Cost represents the [Pricing Currency](#datasets.costandusage.pricingcurrency)-denominated equivalent of [Effective Cost](#datasets.costandusage.effectivecost). It reflects the cost of a [*charge*](#glossary:charge) based on the [*resources*](#glossary:resource) used, [*services*](#glossary:service) used, or [*contract commitments*](#glossary:contract-commitment) recognized in a given [*charge period*](#glossary:chargeperiod).
 
 Because Pricing Currency Effective Cost differs from Effective Cost only in denomination, it follows the same pricing adjustments, amortizations, and exclusions. This column provides practitioners with a standardized baseline, allowing them to view costs in a uniform currency, whether converting from a [*virtual currency*](#glossary:virtual-currency) to a [*national currency*](#glossary:national-currency) (e.g., tokens to USD) or from one national currency to another (e.g., EUR to USD).
 

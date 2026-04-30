@@ -24,7 +24,7 @@ The following section details the normative requirements for the ContractApplied
 
 ContractAppliedObject MUST adhere to the following requirements:
 
-* ContractAppliedObject MUST conform to the [ContractAppliedObjectSchema](#schemas.datasets.costandusage.contractappliedobjectschema) JSON Schema.
+* ContractAppliedObject MUST conform to the [ContractAppliedObjectSchema](#schemas.costandusage.contractappliedobjectschema) JSON Schema.
 * ContractAppliedObject.Elements[\*].ContractId MUST be a unique identifier within the service provider.
 * ContractAppliedObject.Elements[\*].ContractId SHOULD be a fully-qualified identifier.
 * ContractAppliedObject.Elements[\*].ContractCommitmentId MUST be a unique identifier within the service provider.
@@ -64,7 +64,7 @@ The `Elements` array contains one or more objects, each of which contains the fo
 Here is a basic example of the object format.
 
 * For more detailed examples, please see this column's entry in the JSON Object Examples appendix entry [here](#appendix.examples:jsonobject.examples:contractapplied).
-* For the JSON schema, please see [Contract Applied Object Schema](#schemas.datasets.costandusage.contractappliedobjectschema).
+* For the JSON schema, please see [Contract Applied Object Schema](#schemas.costandusage.contractappliedobjectschema).
 
 ```json
 {

@@ -1,6 +1,6 @@
 # Contract Commitment Period End
 
-Contract Commitment Period End represents the [*exclusive end bound*](#glossary:exclusiveendbound) of a [*contract commitment period*](#glossary:contractcommitmentperiod). For example, a time period where [Contract Commitment Period Start](#datasets.contractcommitment.contractperiodstart) is '2024-01-01T00:00:00Z' and Contract Commitment Period End is '2024-01-02T00:00:00Z' includes January 1 2024 since Contract Commitment Period Start represents the [*inclusive start bound*](#glossary:inclusivestartbound), but does not include January 1 2025 since Contract Commitment Period End represents the *exclusive end bound*.
+Contract Commitment Period End represents the [*exclusive end bound*](#glossary:exclusiveendbound) of a contract commitment period. For example, a time period where [Contract Commitment Period Start](#datasets.contractcommitment.contractperiodstart) is '2024-01-01T00:00:00Z' and Contract Commitment Period End is '2024-01-02T00:00:00Z' includes January 1 2024 since Contract Commitment Period Start represents the [*inclusive start bound*](#glossary:inclusivestartbound), but does not include January 1 2025 since Contract Commitment Period End represents the *exclusive end bound*.
 
 ## Requirements
 
@@ -21,7 +21,7 @@ Contract Commitment Period End
 
 ## Description
 
-The *exclusive end bound* of a *contract commitment period*.
+The *exclusive end bound* of a contract commitment period.
 
 ## Content Constraints
 
