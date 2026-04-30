@@ -51,6 +51,7 @@ The state of the billing period (i.e., "Open" or "Closed"), indicating whether t
 
 | Constraint    | Value                               |
 | :------------ | :---------------------------------- |
+| Dataset         | [Billing Period](#datasets.billingperiod)             |
 | Column type   | Dimension                           |
 | Feature level | Mandatory                           |
 | Allows nulls  | False                               |

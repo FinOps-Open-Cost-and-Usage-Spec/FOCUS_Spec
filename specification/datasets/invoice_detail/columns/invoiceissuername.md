@@ -29,6 +29,7 @@ The name of the entity responsible for invoicing for the *resources* or *service
 
 | Constraint      | Value           |
 |:----------------|:----------------|
+| Dataset         | [Invoice Detail](#datasets.invoicedetail)             |
 | Column type     | Dimension       |
 | Feature level   | Mandatory       |
 | Allows nulls    | False           |

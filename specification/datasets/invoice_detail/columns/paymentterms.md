@@ -27,6 +27,7 @@ The terms (typically focused on timeframe) by which the invoice issuer expects t
 
 |    Constraint   |              Value              |
 |:----------------|:--------------------------------|
+| Dataset         | [Invoice Detail](#datasets.invoicedetail)             |
 | Column type     | Dimension                       |
 | Feature level   | Mandatory                       |
 | Allows nulls    | False                           |

@@ -74,6 +74,7 @@ The Billed Cost as expressed in Payment Currency.
 
 |    Constraint   |      Value              |
 |:----------------|:------------------------|
+| Dataset         | [Invoice Detail](#datasets.invoicedetail)             |
 | Column type     | Metric                  |
 | Feature level   | Conditional             |
 | Allows nulls    | False                   |
