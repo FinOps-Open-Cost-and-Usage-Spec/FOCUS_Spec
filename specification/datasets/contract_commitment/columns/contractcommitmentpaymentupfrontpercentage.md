@@ -40,6 +40,6 @@ Represents the portion of the total [Contract Commitment Cost](#datasets.contrac
 | Value format  | [Numeric Format](#attributes.numericformat)  |
 | Number range  | 0.0 to 1.0 (inclusive)            |
 
-## Introduced (version)
+## Version Introduced
 
 1.4

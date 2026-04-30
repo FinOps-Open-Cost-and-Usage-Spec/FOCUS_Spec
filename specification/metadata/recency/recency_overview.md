@@ -32,6 +32,6 @@ Example scenarios include but are not limited to:
 
 For an example of the FOCUS recency metadata, please refer to: [Recency Metadata Example](#supportedfeatures.recencymetadata).
 
-## Introduced (version)
+## Version Introduced
 
 1.3

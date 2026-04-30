@@ -76,7 +76,7 @@ This example demonstrates a complex, multi-faceted agreement between a customer 
 * **Commercial Logic:** A **Usage-based**, **Continuous** model. This benefit is "use it or lose it" on an **Hourly** basis.
 * **Eligibility:** Restricted to specific resource types running in the `us-east-1` region.
 
-#### Commitment 3: Marketplace SaaS Add-on
+#### Commitment 3: Marketplace SaaS Add-On
 
 * **Context:** A specialized analytics tool, **OmniQuery**, purchased through the Aura Web marketplace.
 * **Commercial Logic:** A **Spend-based** "pass-through" for financial tracking with an **Annual Fulfillment Interval**.
@@ -123,13 +123,13 @@ This example demonstrates a complex, multi-faceted agreement between a customer 
 
 In this scenario, an enterprise with an existing master agreement with **Aura Web** (`AGR-44-GAMMA`) expands its footprint to include specialized AI training and security licensing. This example highlights how the model handles non-financial units (Seats) and project-based burst windows.
 
-#### Commitment 1: AI Model Training (Usage-based Burst)
+#### Commitment 1: AI Model Training (Usage-Based Burst)
 
 * **Context:** A short-term, intensive commitment to a specific number of GPU-Hours for a specialized AI training run.
 * **Commercial Logic:** A **Usage-based**, **Continuous** model with a short **3-Month** duration. It is paid **All Upfront** to secure priority capacity.
 * **Eligibility:** Restricted to the `AI/ML` service category.
 
-#### Commitment 2: Observability Seat License (Quantity-based)
+#### Commitment 2: Observability Seat License (Quantity-Based)
 
 * **Context:** A commitment to **500 Seats** of an observability and monitoring platform.
 * **Commercial Logic:** A **Quantity-based**, **Discontinuous** model. The unit of measure is **Seats** rather than a currency value.

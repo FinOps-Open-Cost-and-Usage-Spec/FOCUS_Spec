@@ -53,6 +53,6 @@ Represents the specific [*period*](#glossary:period) used to measure and reset t
 | Data type       | String         |
 | Value format    | Allowed values |
 
-## Introduced (version)
+## Version Introduced
 
 1.4

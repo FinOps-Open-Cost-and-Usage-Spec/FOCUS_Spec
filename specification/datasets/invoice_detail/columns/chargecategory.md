@@ -43,6 +43,6 @@ Represents the highest-level classification of a *charge* based on the nature of
 | Data type       | String         |
 | Value format    | Allowed values |
 
-## Introduced (version)
+## Version Introduced
 
 1.4

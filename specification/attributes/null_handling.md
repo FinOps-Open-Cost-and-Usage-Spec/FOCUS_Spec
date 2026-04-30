@@ -22,6 +22,6 @@ Null Handling
 
 Indicates how to handle columns that don't have a value.
 
-## Introduced (version)
+## Version Introduced
 
 0.5

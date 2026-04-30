@@ -54,6 +54,6 @@ Cost of a *charge* as invoiced by the [*invoice issuer*](#glossary:invoice-issue
 | Value format | [Numeric Format](#attributes.numericformat) |
 | Number range | Any valid decimal value |
 
-## Introduced (version)
+## Version Introduced
 
 1.4

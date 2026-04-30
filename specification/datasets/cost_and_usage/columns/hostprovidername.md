@@ -44,6 +44,6 @@ The name of the entity whose *resources* are used by the Service Provider to mak
 | Data type       | String                                               |
 | Value format    | \<not specified>                                     |
 
-## Introduced (version)
+## Version Introduced
 
 1.3

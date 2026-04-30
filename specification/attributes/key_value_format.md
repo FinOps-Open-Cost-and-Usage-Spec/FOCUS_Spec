@@ -23,6 +23,6 @@ Key-Value Format
 
 Rules and formatting requirements for columns appearing in a [*FOCUS dataset*](#glossary:FOCUS-dataset) that convey data as key-value pairs.
 
-## Introduced (version)
+## Version Introduced
 
 1.0-preview

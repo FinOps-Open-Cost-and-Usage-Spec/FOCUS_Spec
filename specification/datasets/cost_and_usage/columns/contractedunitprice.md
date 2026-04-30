@@ -46,6 +46,6 @@ The agreed-upon unit price for a single Pricing Unit of the associated SKU, incl
 | Value format    | [Numeric Format](#attributes.numericformat)          |
 | Number range    | Any valid non-negative decimal value                 |
 
-## Introduced (version)
+## Version Introduced
 
 1.0

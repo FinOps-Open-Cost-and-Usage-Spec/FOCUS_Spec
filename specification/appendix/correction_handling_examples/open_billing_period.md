@@ -51,7 +51,7 @@ Note the following details in the example datasets:
 * Each correction record has ChargeClass set to null, indicating that it pertains to an open billing period and is not a retroactive correction to a previously closed billing period.
 * Each correction record is assigned to the current billing period (July 2025).
 
-### Scenario 2: Current Open-Period Correction - Late-arriving Usage
+### Scenario 2: Current Open-Period Correction - Late-Arriving Usage
 
 On July 5th, 2025, CrestNode identified a cost incurred during the current billing period (ChargePeriodStart: `2025-07-01`) that was not included in the initial dataset.
 
@@ -77,7 +77,7 @@ Note the following details in the example datasets:
 * The correction record has ChargeClass set to null, indicating that it pertains to an open billing period and is not a retroactive correction to a previously closed billing period.
 * The correction record is assigned to the current billing period (July 2025).
 
-### Scenario 3: Current Open-Period Correction - Itemized Cost-only Corrections
+### Scenario 3: Current Open-Period Correction - Itemized Cost-Only Corrections
 
 On July 5th, 2025, CrestNode detected a minor cost discrepancy caused by accumulated rounding differences across multiple records spanning two distinct SkuPriceId values. While each individual record was correctly rounded, the aggregated cost differed slightly from the precise total, resulting in small drifts.
 
@@ -108,7 +108,7 @@ Note the following details in the example datasets:
 * Each correction record has ChargeCategory set to "Adjustment", which is the only valid value when both PricingQuantity and ChargeClass are null, due to the normative requirement that PricingQuantity must not be null when ChargeCategory is "Usage" or "Purchase" and ChargeClass is not "Correction".
 * Each correction record is assigned to the current billing period (July 2025).
 
-### Scenario 4: Current Open-Period Correction - Bulk Cost-only Corrections
+### Scenario 4: Current Open-Period Correction - Bulk Cost-Only Corrections
 
 On July 5th, 2025, CrestNode detected a minor cost discrepancy caused by accumulated rounding differences across multiple records spanning two distinct SkuPriceId values. While each individual record was correctly rounded, the aggregated cost differed slightly from the precise total, resulting in small drifts.
 
@@ -162,9 +162,9 @@ CSV Examples:
 * [Delta Dataset Artifact](/specification/data/correction-handling-examples/open-billing-period-previous/scenario_1_partial_reallocation_delta.csv)
 * [Ledger Dataset Artifact](/specification/data/correction-handling-examples/open-billing-period-previous/scenario_1_partial_reallocation_ledger.csv)
 
-### Scenario 2: Previous Open-Period Correction - Late-arriving Usage
+### Scenario 2: Previous Open-Period Correction - Late-Arriving Usage
 
-This scenario is nearly identical to *Scenario 2: Current Open-Period Correction - Late-arriving Usage*. The only difference is that the late-arriving usage pertains to the previous billing period (June 2025), which has ended but has not yet been closed. The correction is applied before invoice issuance, using the same correction styles: Replacement, Delta, and Ledger.
+This scenario is nearly identical to *Scenario 2: Current Open-Period Correction - Late-Arriving Usage*. The only difference is that the late-arriving usage pertains to the previous billing period (June 2025), which has ended but has not yet been closed. The correction is applied before invoice issuance, using the same correction styles: Replacement, Delta, and Ledger.
 
 CSV Examples:
 
@@ -172,9 +172,9 @@ CSV Examples:
 * [Delta Dataset Artifact](/specification/data/correction-handling-examples/open-billing-period-previous/scenario_2_late_arriving_usage_delta.csv)
 * [Ledger Dataset Artifact](/specification/data/correction-handling-examples/open-billing-period-previous/scenario_2_late_arriving_usage_ledger.csv)
 
-### Scenario 3: Previous Open-Period Correction - Itemized Cost-only Corrections
+### Scenario 3: Previous Open-Period Correction - Itemized Cost-Only Corrections
 
-This scenario is nearly identical to *Scenario 3: Current Open-Period Correction - Itemized Cost-only Corrections*. The only difference is that the original cost discrepancy occurred in the previous billing period (June 2025), which has ended but has not yet been closed. The correction is applied before invoice issuance, using the same correction styles: Replacement, Delta, and Ledger.
+This scenario is nearly identical to *Scenario 3: Current Open-Period Correction - Itemized Cost-Only Corrections*. The only difference is that the original cost discrepancy occurred in the previous billing period (June 2025), which has ended but has not yet been closed. The correction is applied before invoice issuance, using the same correction styles: Replacement, Delta, and Ledger.
 
 CSV Examples:
 
@@ -183,9 +183,9 @@ CSV Examples:
 * [Delta Dataset Artifact](/specification/data/correction-handling-examples/open-billing-period-previous/scenario_3_itemized_cost_only_delta.csv)
 * [Ledger Dataset Artifact](/specification/data/correction-handling-examples/open-billing-period-previous/scenario_3_itemized_cost_only_ledger.csv)
 
-### Scenario 4: Previous Open-Period Correction - Bulk Cost-only Corrections
+### Scenario 4: Previous Open-Period Correction - Bulk Cost-Only Corrections
 
-This scenario is nearly identical to *Scenario 4: Current Open-Period Correction - Bulk Cost-only Corrections*. The only difference is that the original cost discrepancy occurred in the previous billing period (June 2025), which has ended but has not yet been closed. The correction is applied before invoice issuance, using the same correction styles: Replacement, Delta, and Ledger.
+This scenario is nearly identical to *Scenario 4: Current Open-Period Correction - Bulk Cost-Only Corrections*. The only difference is that the original cost discrepancy occurred in the previous billing period (June 2025), which has ended but has not yet been closed. The correction is applied before invoice issuance, using the same correction styles: Replacement, Delta, and Ledger.
 
 CSV Examples:
 

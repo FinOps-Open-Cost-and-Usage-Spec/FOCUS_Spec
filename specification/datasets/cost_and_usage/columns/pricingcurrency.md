@@ -34,6 +34,6 @@ The national or virtual currency denomination that a *resource* or *service* was
 | Data type       | String                                               |
 | Value format    | [Currency Format](#attributes.currencyformat)        |
 
-## Introduced (version)
+## Version Introduced
 
 1.2

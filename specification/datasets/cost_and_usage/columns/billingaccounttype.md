@@ -36,6 +36,6 @@ An invoice-issuer-assigned name to identify the type of *billing account*.
 | Data type       | String                                               |
 | Value format    | \<not specified>                                     |
 
-## Introduced (version)
+## Version Introduced
 
 1.2

@@ -39,9 +39,22 @@ pytest tests/test_schema.py   # Run a single test file
 
 ### Lint Markdown
 
+Linting is automatically run as part of `make`. The build will stop if the linter detects issues and will not create the spec.md, spec.html, or spec.pdf files.
+
+To force the build to continue despite linter errors (useful for previewing changes or CI/CD), use:
+
 ```bash
-pymarkdownlnt --config specification/markdownlnt.cfg scan <file.md>
+make force=1
 ```
+
+To lint individual files:
+
+```bash
+cd specification
+python3 enhanced_markdown_lint.py --config markdownlnt.cfg scan <file.md>
+```
+
+Note: The enhanced linter provides contextual error messages showing actual vs expected values.
 
 ## Architecture
 

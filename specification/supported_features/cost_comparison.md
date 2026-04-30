@@ -101,10 +101,10 @@ GROUP BY
 HAVING ABS(SUM(EffectiveCost) - SUM(BilledCost)) > 0.01
 ```
 
-## Introduced (Version)
+## Version Introduced
 
 0.5
 
-## Updated (Version)
+## Version Updated
 
 1.4

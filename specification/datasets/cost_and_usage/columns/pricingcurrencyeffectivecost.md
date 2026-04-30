@@ -40,6 +40,6 @@ The PricingCurrency-denominated equivalent of Effective Cost, representing the c
 | Value format    | [Numeric Format](#attributes.numericformat)          |
 | Number range    | Any valid decimal value                              |
 
-## Introduced (version)
+## Version Introduced
 
 1.2

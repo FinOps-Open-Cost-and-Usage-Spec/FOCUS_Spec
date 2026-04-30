@@ -41,6 +41,6 @@ Indicates whether a *charge* represents a correction to a previously *closed bil
 | Data type       | String                                               |
 | Value format    | Allowed values                                       |
 
-## Introduced (version)
+## Version Introduced
 
 1.0
