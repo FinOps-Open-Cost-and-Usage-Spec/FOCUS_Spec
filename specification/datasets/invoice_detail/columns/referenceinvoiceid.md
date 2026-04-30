@@ -26,14 +26,14 @@ The invoice-issuer-assigned identifier for an invoice that affects charges as st
 
 ## Content Constraints
 
-|    Constraint    |              Value             |
+|    Constraint   |              Value              |
 |:----------------|:--------------------------------|
 | Dataset         | [Invoice Detail](#datasets.invoicedetail)             |
 | Column type     | Dimension                       |
 | Feature level   | Mandatory                       |
 | Allows nulls    | False                           |
 | Data type       | String                          |
-| Value format    | \<unspecified>                   |
+| Value format    | \<not specified>                |
 
 ## Version Introduced
 

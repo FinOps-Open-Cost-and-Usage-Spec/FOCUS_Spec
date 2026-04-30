@@ -100,7 +100,7 @@ The types of *commitment programs* available for a specific usage row.
 | Feature level | Conditional                                                                                                                  |
 | Allows nulls  | True                                                                                                                         |
 | Data type     | JSON                                                                                                                         |
-| Value format  | [JsonObjectFormat](#attributes.jsonobjectformat)                                                                             |
+| Value format  | [JSON Object Format](#attributes.jsonobjectformat)                                                                           |
 | Object        | [CommitmentProgramEligibilityDetailsObject](#datasets.costandusage.commitmentprogrameligibilitydetails.commitmentprogrameligibilitydetailsobject) |
 
 ## Version Introduced

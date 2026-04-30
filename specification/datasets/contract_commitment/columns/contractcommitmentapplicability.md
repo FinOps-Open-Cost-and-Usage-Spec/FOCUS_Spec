@@ -174,7 +174,7 @@ A structured definition of the specific entities to which a contract commitment 
 | Constraint | Value |
 | :--- | :--- |
 | Dataset | [Contract Commitment](#datasets.contractcommitment) |
-| Column type | Dimension |
+| Column type | Dimension / Metric |
 | Feature level | Mandatory |
 | Allows nulls | False |
 | Data type | JSON |

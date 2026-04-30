@@ -115,7 +115,7 @@ A set of properties that associate a *charge* with one or more *contract commitm
 | Constraint | Value |
 | :--- | :--- |
 | Dataset | [Cost and Usage](#datasets.costandusage) |
-| Column type | Dimension and Metric |
+| Column type | Dimension / Metric |
 | Feature level | Conditional |
 | Allows nulls | True |
 | Data type | JSON |

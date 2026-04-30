@@ -40,7 +40,7 @@ Indicates whether the *commitment discount* identified in the CommitmentDiscount
 | Feature level   | Conditional                                          |
 | Allows nulls    | True                                                 |
 | Data type       | String                                               |
-| Value format    | Allowed Values                                       |
+| Value format    | Allowed values                                       |
 
 ## Version Introduced
 

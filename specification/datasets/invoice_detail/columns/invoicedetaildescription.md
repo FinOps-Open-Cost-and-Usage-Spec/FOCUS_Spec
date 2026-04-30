@@ -26,14 +26,14 @@ The invoice-issuer-provided description of an invoice line item.
 
 ## Content Constraints
 
-|    Constraint    |              Value             |
+|    Constraint   |              Value              |
 |:----------------|:--------------------------------|
 | Dataset         | [Invoice Detail](#datasets.invoicedetail)             |
 | Column type     | Dimension                       |
 | Feature level   | Mandatory                       |
 | Allows nulls    | True                            |
 | Data type       | String                          |
-| Value format    | \<unspecified>                   |
+| Value format    | \<not specified>                |
 
 ## Version Introduced
 

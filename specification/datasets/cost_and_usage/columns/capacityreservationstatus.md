@@ -43,7 +43,7 @@ Indicates whether the *charge* represents either the consumption of a *capacity 
 | Feature level   | Conditional                                          |
 | Allows nulls    | True                                                 |
 | Data type       | String                                               |
-| Value format    | Allowed Values                                       |
+| Value format    | Allowed values                                       |
 
 ## Version Introduced
 
