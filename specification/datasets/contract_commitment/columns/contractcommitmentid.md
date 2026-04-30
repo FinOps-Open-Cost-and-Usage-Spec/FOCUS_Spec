@@ -37,6 +37,6 @@ A service-provider-assigned identifier describing a single contract term agreed 
 | Data type       | String                                               |
 | Value format    | \<not specified>                                     |
 
-## Introduced (version)
+## Version Introduced
 
 1.3

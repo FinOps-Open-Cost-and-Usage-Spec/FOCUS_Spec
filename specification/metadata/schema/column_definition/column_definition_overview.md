@@ -20,6 +20,6 @@ ColumnDefinition
 
 Column Definition
 
-## Introduced (version)
+## Version Introduced
 
 1.0

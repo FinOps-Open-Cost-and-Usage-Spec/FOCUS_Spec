@@ -55,6 +55,6 @@ Service-provider-specified unique identifier that represents a specific *SKU* (e
 | Data type       | String                                               |
 | Value format    | \<not specified>                                     |
 
-## Introduced (version)
+## Version Introduced
 
 1.0-preview

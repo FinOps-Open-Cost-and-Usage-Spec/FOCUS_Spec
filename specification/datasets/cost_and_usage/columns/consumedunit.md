@@ -36,6 +36,6 @@ Service-provider-specified measurement unit indicating how a service provider me
 | Data type       | String                                               |
 | Value format    | [Unit Format](#attributes.unitformat) recommended    |
 
-## Introduced (version)
+## Version Introduced
 
 1.0

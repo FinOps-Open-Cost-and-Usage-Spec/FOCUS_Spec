@@ -121,6 +121,6 @@ Secondary classification of the Service Category for a *service* based on its co
 | Data type       | String                                               |
 | Value format    | Allowed Values                                       |
 
-## Introduced (version)
+## Version Introduced
 
 1.1

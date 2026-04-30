@@ -6,19 +6,19 @@ This report documents the suite of automated tests validating the ModelRules JSO
 
 ### Schema & Structural Compliance
 
-#### test_schema.py
+#### `test_schema.py`
 
 *Purpose*: Validate ModelRules JSON against the official schema.
 
 *Description*: Ensures the built cr-*.json file conforms to model_schema.json. Checks structural integrity, required properties, data types, and schema-defined constraints. Guarantees the final JSON is schema-compliant and stable.
 
-#### test_static_type_requirement.py
+#### `test_static_type_requirement.py`
 
 *Purpose*: Enforce Requirement rules for Static vs Dynamic.
 
 *Description*: Validates that Static rules have a non-empty ValidationCriteria.Requirement, while Dynamic rules must always have {}. Prevents mismatches between type and requirement definition.
 
-#### test_dynamic_type_requirement.py
+#### `test_dynamic_type_requirement.py`
 
 *Purpose*: Explicit check for Dynamic rules.
 
@@ -26,31 +26,31 @@ This report documents the suite of automated tests validating the ModelRules JSO
 
 ### Identifier & Naming Integrity
 
-#### test_unique_ids.py
+#### `test_unique_ids.py`
 
 *Purpose*: Verify unique ConformanceRule IDs in built JSON.
 
 *Description*: Ensures no duplicate rule IDs appear in the final merged JSON output. Prevents accidental overwrites after Python’s JSON merge.
 
-#### test_rule_id_duplicates_in_sources.py
+#### `test_rule_id_duplicates_in_sources.py`
 
 *Purpose*: Detect duplicate IDs at source.
 
 *Description*: Checks all individual JSON source files in model_rules for duplicate keys. Fails early before merge, so no silent overwriting occurs.
 
-#### test_rule_number_sequences.py
+#### `test_rule_number_sequences.py`
 
 *Purpose*: Validate rule numbering is sequential.
 
 *Description*: For each rule prefix (e.g., ChargePeriodEnd-C-), ensures numbering starts at 000 and increments without gaps. Detects missing numbers and enforces consistency in sequence.
 
-#### test_reference_prefix_for_columns.py
+#### `test_reference_prefix_for_columns.py`
 
 *Purpose*: Ensure Column rules align Reference with ID.
 
 *Description*: Validates that for EntityType=Column, the Reference property matches the prefix of the rule ID. Prevents mismatches between identifier and reference.
 
-#### test_entityid_format.py
+#### `test_entityid_format.py`
 
 *Purpose*: Validate EntityType → ID format convention.
 
@@ -58,49 +58,49 @@ This report documents the suite of automated tests validating the ModelRules JSO
 
 ### Dependencies & Connectivity
 
-#### test_ruleid_dependencies.py
+#### `test_ruleid_dependencies.py`
 
 *Purpose*: Ensure Dependencies reference existing rules.
 
 *Description*: Confirms every ID in a rule’s ValidationCriteria.Dependencies exists in ModelRules. Prevents dangling links.
 
-#### test_dependencies_exist.py
+#### `test_dependencies_exist.py`
 
 *Purpose*: Cross-verify dependency integrity.
 
 *Description*: Validates all dependencies resolve to real ModelRules. Redundant with test_ruleid_dependencies but ensures complete coverage of dependency fields.
 
-#### test_dependencies.py
+#### `test_dependencies.py`
 
 *Purpose*: Enforce dependency consistency rules.
 
 *Description*: Ensures dependencies reference valid rule IDs with correct relationships (e.g., Columns depending on matching Datasets). Prevents invalid cross-entity references.
 
-#### test_no_duplicate_dependencies.py
+#### `test_no_duplicate_dependencies.py`
 
 *Purpose*: Prevent duplicate dependencies.
 
 *Description*: Ensures no rule repeats the same dependency in its Dependencies array. Keeps dependency lists clean.
 
-#### test_no_duplicate_checkconformancerule_items.py
+#### `test_no_duplicate_checkconformancerule_items.py`
 
 *Purpose*: Prevent duplicate references inside Composite Items.
 
 *Description*: In Composite rules with AND/OR, ensures the same CheckModelRule is not listed twice in Items. Avoids redundant logic.
 
-#### test_datasets_rules_exist.py
+#### `test_datasets_rules_exist.py`
 
 *Purpose*: Validate Dataset → Rule references.
 
 *Description*: Ensures that every rule ID listed under ModelDatasets.*.ModelRules exists in ModelRules. Prevents dataset stubs pointing to missing rules.
 
-#### test_orphan_rules.py
+#### `test_orphan_rules.py`
 
 *Purpose*: Detect orphaned rules.
 
 *Description*: Finds rules not referenced by other rules or datasets. Allows exceptions for deprecated rules, base rules (-D-000-*), and specific column-to-dataset dependencies. Ensures no “dead” rules remain active.
 
-#### test_orphan_attributes.py
+#### `test_orphan_attributes.py`
 
 *Purpose*: Detect orphaned attributes.
 
@@ -108,7 +108,7 @@ This report documents the suite of automated tests validating the ModelRules JSO
 
 ### Suffix, Scope & Keyword Alignment
 
-#### test_suffix_by_keyword_and_scope.py
+#### `test_suffix_by_keyword_and_scope.py`
 
 *Purpose*: Enforce suffix rules (-C, -M, -O).
 
@@ -121,19 +121,19 @@ Presence deps: MUST/SHOULD ⇒ -M; others ⇒ -O
 Base rules: MUST/MUST NOT ⇒ -M; MAY/RECOMMENDED ⇒ -O.
 Ensures suffix semantics align with scope and intent.
 
-#### test_keyword_in_mustsatisfy.py
+#### `test_keyword_in_mustsatisfy.py`
 
 *Purpose*: Validate Keyword is present in MustSatisfy.
 
 *Description*: Ensures ValidationCriteria.Keyword (MUST, SHOULD, RECOMMENDED, etc.) appears explicitly in MustSatisfy. Excludes false matches like treating “MUST NOT” as “MUST”. Guards against case issues by enforcing uppercase keywords only.
 
-#### test_provider_supports_requires_applicability.py
+#### `test_provider_supports_requires_applicability.py`
 
 *Purpose*: Require Applicability when provider support is implied.
 
 *Description*: If MustSatisfy text mentions “provider supports…”, the rule must include explicit ApplicabilityCriteria. Guarantees textual conditions are codified structurally.
 
-#### test_applicability_criteria.py
+#### `test_applicability_criteria.py`
 
 *Purpose*: Validate ApplicabilityCriteria references.
 
@@ -141,7 +141,7 @@ Ensures suffix semantics align with scope and intent.
 
 ### Function-to-Text Consistency
 
-#### test_type_function.py
+#### `test_type_function.py`
 
 *Purpose*: Enforce semantic consistency for functions.
 
@@ -151,25 +151,25 @@ Ensures suffix semantics align with scope and intent.
 "Type" ⇒ Must include “of type”.
 "Composite" ⇒ Must use AND/OR with at least one CheckModelRule.
 
-#### test_nullability_function.py
+#### `test_nullability_function.py`
 
 *Purpose*: Match Nullability with text.
 
 *Description*: Ensures that any rule text referencing “null” uses Function="Nullability", except for composites.
 
-#### test_format_function.py
+#### `test_format_function.py`
 
 *Purpose*: Match Format with text.
 
 *Description*: Ensures any rule mentioning “format” uses Function="Format".
 
-#### test_composite_when_and_or.py
+#### `test_composite_when_and_or.py`
 
 *Purpose*: Validate composite structure.
 
 *Description*: Requires that rules with Requirement.CheckFunction=AND/OR and CheckModelRule items must declare Function="Composite". Enforces structural correctness of composites.
 
-#### test_no_spurious_composite.py
+#### `test_no_spurious_composite.py`
 
 *Purpose*: Forbid invalid composites.
 
@@ -177,19 +177,19 @@ Ensures suffix semantics align with scope and intent.
 
 ### Function Coverage & Cross-References
 
-#### test_check_functions.py
+#### `test_check_functions.py`
 
 *Purpose*: Validate referenced CheckFunctions.
 
 *Description*: Walks all Requirement/Condition trees to ensure every CheckFunction value is defined in the CheckFunctions dictionary. Prevents use of undefined functions.
 
-#### test_formatattributes_ruleids_exist.py
+#### `test_formatattributes_ruleids_exist.py`
 
 *Purpose*: Verify FormatAttributes references.
 
 *Description*: Ensures all IDs listed in CheckFunctions.FormatAttributes arrays exist in ModelRules. Prevents dangling references.
 
-#### test_unused_checkfunctions.py
+#### `test_unused_checkfunctions.py`
 
 *Purpose*: Ensure no unused CheckFunctions exist.
 
@@ -197,7 +197,7 @@ Ensures suffix semantics align with scope and intent.
 
 ### Column–Dataset Alignment
 
-#### test_c000_d_deps_presence_reference.py
+#### `test_c000_d_deps_presence_reference.py`
 
 *Purpose*: Validate Column-000 rules link to Datasets.
 
@@ -205,7 +205,7 @@ Ensures suffix semantics align with scope and intent.
 
 ### Other Tests
 
-#### test_mustsatisfy_ends_with_colon_or_period
+#### `test_mustsatisfy_ends_with_colon_or_period`
 
 *Purpose*: Validate MustSatisfy punctuation.
 

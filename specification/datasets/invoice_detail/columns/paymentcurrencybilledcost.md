@@ -81,6 +81,6 @@ The [Billed Cost](#datasets.invoicedetail.billedcost) as expressed in [Payment C
 | Value format    | [Numeric Format](#attributes.numericformat) |
 | Number range    | Any valid decimal value |
 
-## Introduced (version)
+## Version Introduced
 
 1.4

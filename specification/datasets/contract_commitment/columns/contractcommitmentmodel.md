@@ -11,7 +11,7 @@ ContractCommitmentModel MUST adhere to the following requirements:
 * ContractCommitmentModel MUST be of type String.
 * ContractCommitmentModel MUST NOT be null.
 * ContractCommitmentModel MUST be one of the allowed values.
-* ContractCommitmentModel MUST be "Discontinuous" if [ContractCommitmentFulfillmentInterval](#datasets.contractcommitment.contractcommitmentfulfillmentinterval) is "Total Term".
+* ContractCommitmentModel MUST be "Discontinuous" if [ContractCommitmentFulfillmentInterval](#datasets.contractcommitment.contractcommitmentfulfillmentinterval) is "Full Period".
 
 ## Allowed Values
 
@@ -29,7 +29,7 @@ ContractCommitmentModel MUST adhere to the following requirements:
 
 ### Relationship with Fulfillment Interval
 
-Because a `Continuous` model dictates a recurring, "use-it-or-lose-it" evaluation window, it cannot logically span an entire, cumulative contract term without a reset. Therefore, if the associated [Contract Commitment Fulfillment Interval](#datasets.contractcommitment.contractcommitmentfulfillmentinterval) is `Total Term`, the Contract Commitment Model must be categorized as `Discontinuous`.
+Because a `Continuous` model dictates a recurring, "use-it-or-lose-it" evaluation window, it cannot logically span an entire, cumulative contract term without a reset. Therefore, if the associated [Contract Commitment Fulfillment Interval](#datasets.contractcommitment.contractcommitmentfulfillmentinterval) is `Full Period`, the Contract Commitment Model must be categorized as `Discontinuous`.
 
 ## Column ID
 
@@ -54,6 +54,6 @@ Represents the operational behavior and consumption flexibility of a [*contract 
 | Data type       | String         |
 | Value format    | Allowed values |
 
-## Introduced (version)
+## Version Introduced
 
 1.4

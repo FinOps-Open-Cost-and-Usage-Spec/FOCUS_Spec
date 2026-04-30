@@ -46,6 +46,6 @@ The suggested service-provider-published unit price for a single Pricing Unit of
 | Value format    | [Numeric Format](#attributes.numericformat)          |
 | Number range    | Any valid non-negative decimal value                 |
 
-## Introduced (version)
+## Version Introduced
 
 1.2

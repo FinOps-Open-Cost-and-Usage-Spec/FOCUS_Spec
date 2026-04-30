@@ -30,11 +30,11 @@ The FOCUS working group will develop an open-source specification for billing da
 
 The following principles were considered while building the specification.
 
-### FOCUS is an iterative, living specification
+### FOCUS is an Iterative, Living Specification
 
 * Incremental iterations of the specification released regularly will provide higher value to practitioners and allow feedback as the specification develops. The goal is not to get to a complete, finished specification in one pass.
 
-### Working backward with ease of adoption
+### Working Backward with Ease of Adoption
 
 * Aim to work backward from essential FinOps capabilities that practitioners need to perform to prioritize the dimensions, metrics and attributes of the cost and usage data that should be defined in the specification to fulfill that capability.
 * Be FinOps scenario-driven. Define columns that answer scenario questions; don't look for scenarios to fit a column, each column must have a use case.
@@ -47,7 +47,7 @@ The following principles were considered while building the specification.
 * Naming and terms used should be carefully considered to avoid using terms for which the definition could be confused by the reader. If a term must be used which has either an unclear or multiple definitions, it should be clarified in the [glossary](#glossary).
 * The specification should provide all of the data elements necessary for the [Capabilities][FODOFC].
 
-### Provider-neutral approach by default
+### Provider-Neutral Approach by Default
 
 * While the schema, naming, terminology, and attributes of many service providers are reviewed during development, this specification aims to be service-provider-neutral.
 * Contributors must take care to ensure the specification examines how each decision relates to each of the major cloud service providers and SaaS vendors, not favoring any single one.
@@ -65,13 +65,13 @@ Future versions of FOCUS will consider including additional FinOps capabilities 
 
 ## Design Notes
 
-### Optimize for data analysis
+### Optimize for Data Analysis
 
 * Optimize columns for data analysis at scale and avoid the requirement of splitting or parsing values.
 * Avoid complex JSON structures when an alternative columnar structure is possible.
 * Facilitate the inclusion of data necessary for a system of record for cost and usage data to consume.
 
-### Consistency helps with clarity
+### Consistency Helps with Clarity
 
 * Where possible, use consistent names that will naturally create associations between related columns in the specification.
 * Column naming must strictly follow the [FOCUS Column Handling](#attributes.focuscolumnhandling) requirements.

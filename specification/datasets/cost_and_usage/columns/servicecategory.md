@@ -57,6 +57,6 @@ Highest-level classification of a *service* based on the core function of the *s
 | Data type       | String                                               |
 | Value format    | Allowed values                                       |
 
-## Introduced (version)
+## Version Introduced
 
 0.5

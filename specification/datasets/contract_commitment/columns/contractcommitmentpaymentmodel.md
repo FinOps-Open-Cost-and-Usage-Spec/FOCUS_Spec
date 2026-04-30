@@ -52,6 +52,6 @@ Defines the financial settlement structure of a [*contract commitment*](#glossar
 | Data type       | String         |
 | Value format    | Allowed values |
 
-## Introduced (version)
+## Version Introduced
 
 1.4

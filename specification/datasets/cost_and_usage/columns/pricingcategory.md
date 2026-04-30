@@ -51,6 +51,6 @@ Describes the pricing model used for a *charge* at the time of use or purchase.
 | Data type       | String                                               |
 | Value format    | Allowed values                                       |
 
-## Introduced (version)
+## Version Introduced
 
 1.0-preview

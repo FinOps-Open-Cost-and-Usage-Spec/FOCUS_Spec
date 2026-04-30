@@ -38,6 +38,6 @@ The name of the entity that provides the [*contract commitment*](#glossary:contr
 | Data type       | String          |
 | Value format    | \<not specified> |
 
-## Introduced (version)
+## Version Introduced
 
 1.4

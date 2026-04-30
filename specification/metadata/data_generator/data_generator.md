@@ -27,6 +27,6 @@ Data Generator
 | Data type       | String           |
 | Value format    | \<not specified> |
 
-## Introduced (version)
+## Version Introduced
 
 1.0

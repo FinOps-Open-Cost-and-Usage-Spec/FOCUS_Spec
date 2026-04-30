@@ -26,6 +26,6 @@ Currency Format
 
 Formatting for currency columns appearing in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 
-## Introduced (version)
+## Version Introduced
 
 0.5

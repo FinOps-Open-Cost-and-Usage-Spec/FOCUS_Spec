@@ -31,6 +31,6 @@ GROUP BY
   InvoiceId
 ```
 
-## Introduced (Version)
+## Version Introduced
 
 0.5

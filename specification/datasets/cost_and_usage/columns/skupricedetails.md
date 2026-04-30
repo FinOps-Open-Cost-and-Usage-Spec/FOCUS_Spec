@@ -10,6 +10,8 @@ SKU Price Details helps practitioners understand and distinguish *SKU Prices*, e
 
 SkuPriceDetails MUST adhere to the following requirements:
 
+* SkuPriceDetails MUST be of type JSON Object (serialized as a String where necessary).
+* SkuPriceDetails MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * SkuPriceDetails MUST conform to [KeyValueFormat](#attributes.key-valueformat) requirements.
 * SkuPriceDetails property keys SHOULD conform to [PascalCase](#glossary:pascalcase) format.
 * SkuPriceDetails MUST adhere to the following nullability requirements:
@@ -92,6 +94,6 @@ A set of properties of a SKU Price ID which are meaningful and common to all ins
 | Data type       | JSON                                                 |
 | Value format    | [Key-Value Format](#attributes.key-valueformat)      |
 
-## Introduced (version)
+## Version Introduced
 
 1.1
