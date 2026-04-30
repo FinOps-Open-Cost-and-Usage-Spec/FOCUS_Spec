@@ -2,7 +2,7 @@
 
 ## Overview
 
-The FinOps Open Cost and Usage Specification (FOCUS) is a community-driven, open specification that defines a common schema for technology cost and usage data across cloud, SaaS, data center, and other technology categories.
+The FinOps Open Cost and Usage Specification (FOCUS) is a community-driven, open specification that defines a common schema for technology cost and usage data across cloud, SaaS, data center, and other [technology categories](https://www.finops.org/framework/technology-categories/).
 
 FOCUS establishes a consistent, vendor-neutral vocabulary for billing and usage data. It defines a collection of standardized datasets, specifying the columns (dimensions and metrics), their associated requirements, and specification-wide attributes needed to enable interoperable, comparable, and analysis-ready data across providers and technology categories.
 
