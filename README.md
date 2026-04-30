@@ -68,10 +68,3 @@ For additional details, see the project repository:
 * [Release Planning](RELEASE-PLANNING.md)
 * [Contribution Process](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/contributing.md)
 
----
-
-## Project Naming
-
-* The official project name is **FinOps Open Cost and Usage Specification**
-* The official acronym is **FOCUS**
-* The term **FOCUS Specification** is the accepted shorthand for the project's output
