@@ -1,9 +1,11 @@
 ## Editorial Style Guidelines
+
 The "Editorial Style Guidelines" section ensures consistency and clarity across all documentation. Adhering to these guidelines is crucial for maintaining a unified style, which enhances readability and reduces misinterpretation. By following the specified standards—whether in formatting, linking, or structuring information—we ensure that all documents are professional, clear, and aligned with our editorial principles. Consistent application of these guidelines contributes to high-quality, user-friendly documentation.
 
 These guidelines can be modified through a Pull Request (PR), which the members must review and agree upon. This process ensures that any changes are thoughtfully considered and maintains the overall integrity of our editorial standards.
 
 ### Normative Requirements
+
 Normative requirements are defined and authored exclusively according to the Normative Requirements Guidelines.
 
 Authors MUST refer to the [Normative Requirements Guidelines](normative-requirements-guidelines.md) when writing or modifying normative requirements.
@@ -150,7 +152,13 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
 
 ### Linking
 
-* **Linking Only the First Time:** To prevent excessive linking within sections, Entity Names and Entity IDs (e.g., Column Names, Attribute IDs, and Glossary) will only be linked to their corresponding section or glossary the first time they appear in a section.
+* **Linking on First Occurrence:** To avoid excessive linking, entity references (including FOCUS entity IDs, display names, and glossary terms) MUST be linked only on their first occurrence within a given source markdown file.
+
+**Exceptions:**
+
+* In **Content Constraints** sections, all entity references MUST be linked, regardless of prior occurrence in the source markdown file.
+
+* In the **Glossary** file, entity references MUST be linked only on their first occurrence within each glossary entry, rather than once per source markdown file.
 
 ### Entity References
 
@@ -166,8 +174,7 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
 
 ### Display Names
 
-
-* **Display Names Usage:** Display Names SHOULD be used in introductory or explanatory sections where natural language context is more appropriate. 
+* **Display Names Usage:** Display Names SHOULD be used in introductory or explanatory sections where natural language context is more appropriate.
 
 * **Display Names Formatting:** Display Names SHOULD follow normal text conventions, including spaces between words (e.g., Commitment Discount ID).
 
