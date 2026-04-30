@@ -183,9 +183,9 @@ This feature automatically:
 All headers appearing after the !TOC directive automatically receive an HTML anchor generated from the header text whereby the following applies:
 
 * Anchor text is normalized to lowercase.
-* Whitespace and the following characters are removed: `,` `-` `(` `)`.
+* Whitespace and the following characters are removed: `,` `(` `)`.
 * Other special characters are preserved.
-* Dots (.) are inserted between header levels to represent the full hierarchy of document sections.
+* Dots (`.`) are inserted between header levels to represent the full hierarchy of document sections.
 * Headers marked with `<!--SkipTOC-->` will appear in the document but will not be included in the Table of Contents, and no anchor will be created.
 
 ***Note:*** *These anchors are generated for the HTML and PDF builds of the specification and differ from how GitHub natively generates anchors for markdown files. Links using these anchors will work in the built specification output but not when viewing the source markdown on GitHub.*
@@ -286,7 +286,9 @@ To ensure predictable Table of Contents (TOC) generation, stable internal links,
 * A single space MUST follow the `#` character(s).
 * Headers MUST NOT use Setext-style headers (`=` or `-` underlines), even though they are technically supported.
 * Headers MUST NOT be empty.
-* Headers MUST be denoted in Title Case, with all words capitalized except articles (a, an, the), coordinating conjunctions (and, but, or), and short prepositions (e.g., in, on, at), unless they begin the subheader.
+* Headers MUST be denoted in Title Case, subject to the following exceptions:
+  * Minor words such as articles (e.g., `a`, `an`, `the`), coordinating conjunctions (e.g., `and`, `but`, `or`), short prepositions (e.g., `in`, `on`, `at`), and short connecting terms (i.e., `is`, `are`, `vs.`) MUST NOT be capitalized unless they begin the subheader.
+  * Acronyms (e.g., `FOCUS`, `SQL`, `SaaS`) and technical identifiers (e.g., PascalCase column names like `BilledCost`) MUST retain their standard casing and are exempt from title-casing transformations.
 * Header text SHOULD only contain alphanumeric characters (`A-Z`, `0-9`), spaces (` `), commas (`,`), and the following special characters: hyphens (`-`), apostrophes (`'`), and parentheses (`(`, `)`).
 * Other special characters SHOULD be avoided.
 

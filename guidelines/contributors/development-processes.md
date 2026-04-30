@@ -41,23 +41,11 @@ Feedback Issues will have a title that starts with \`\[Feedback]\`.
 
 All suggestions and feature requests should be introduced to the FOCUS project via GitHub Issues of the type Feature. The template for these Issues will ensure the needed information is gathered and available for prioritisation processes. Anyone can submit Feature Request Issues within the GitHub repository. 
 
-_Normative guidelines to develop high-quality feature request titles_:
-* **Start with a standard verb**. Choose one or use a verb similar to: Add, Clarify, Standardize, Enable, Define, Remove, Rename
-* **Use correct sentence structure**. Pick whichever reads best between: Verb + Target + Qualifier OR Verb + Qualifier + Target
-(e.g., “Add data generator-calculated shared cost allocation” vs “Standardize tag export across clouds”)
-* **Describe the outcome, not the implementation**. “Add daily amortized cost” > “Create SQL to amortize daily”
-* **Sentence case; acronyms uppercase; no ALL-CAPS words**. “Add RI coverage metric” not “ADD RI COVERAGE METRIC”
-* **Use canonical FOCUS terminology; stay service-provider-agnostic**. Vendor specifics belong in examples, not the title
-* **Express one concept per title**. If you need two independent changes, create two issues. "And" and "or" are indications that multiple issues are needed
-* **Trim filler words unless they improve clarity**. Drop “the,” “of,” “for,” etc., where possible to save space
-* **Keep titles ≤ 75 characters (aim for ~60)**. Short enough to fit in GitHub lists, change logs, and slides without wrapping
-* **Don’t end with a trailing period**
+Feature Request Issues will have a title that starts with `[FR]`. For title quality conventions and triage requirements, see [Feature Request Triage and Improvement Guidelines](feature-request-triage-guidelines.md).
 
 Feature Request Issues will have the Type: "Feature" and Label: "feature", and be associated with the FOCUS WG project.
 
 Everyone is welcome to add comments to further define the Feature Request item, add concerns and/or considerations you would like to see taken into account when developing a solution for the Feature Request. Support for a Feature Request item can also be shown in the form of reactions on the Issue ticket.
-
-Feature Request Issues will have a title that starts with \`\[FR]\`.
 
 #### Action Items
 
@@ -211,17 +199,14 @@ Each Task Force (TF) group in the FOCUS Working Group is able to have a Maintain
 
 ### Branch Management
 
-Members of the FOCUS project need to be aware that all branches in the [FOCUS\_Spec](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec) repository are owned by the project and that frequent cleanups of stale branches will be performed by the \`Admins\`. This means that any scratch/WIP/ideation work which is not part of any open Action Items/Feature Requests should be moved out to a [fork of the repository](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo) in the individual members own GitHub repository.
+Members of the FOCUS project need to be aware that all branches in the [FOCUS\_Spec](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec) repository are owned by the project and that frequent cleanups of stale branches will be performed by the \`Admins\`. This means that any scratch/WIP/ideation work which is not part of any open Action Items/Feature Requests should be moved out to a [fork of the repository](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo) in the individual members own GitHub repository. Work tied to an open Action Item or Feature Request should use an internal branch, since GitHub Actions workflows triggered by forks do not have access to repository secrets (required for PDF builds and PR status syncs).
 
 When Pull Requests are merged the option to delete the working branch should always be used, with a preference for a new branch to be created for further work.
 
 
 ### Branch Naming
 
-As members of FOCUS you are able to open branches in the GitHub repository. The naming convention of branches must follow one of the following patterns:
-
-1. Start with your name (e.g., flanakin/skuterm)
-2. Start with the Feature Request number (e.g., 636-clarify-guidance-around-refunds)
+As members of FOCUS you are able to open branches in the GitHub repository. Branch names must start with the issue number followed by a short description (e.g., \`636-clarify-guidance-around-refunds\`).
 
 Branches not following this naming convention may be closed without notice.
 
@@ -346,6 +331,7 @@ All Pull Requests **must go through a formal review and approval process before 
 * All reviewers assigned to the Pull Request must approve before the Pull Request is eligible for merging.
 * If a reviewer becomes inactive or unresponsive, Maintainers may reassign review to an alternate reviewer.
 * At least **one Maintainer** must approve the Pull Request.
+  * If a Pull Request addresses a Feature Request that is outside of the official scope for the current release, this Maintainer approval allows the PR to be considered by the working group, assigned to a Task Force at the discretion of the Working Group Chair.
 * It is not required to have approvals from _all_ FOCUS members, but all active reviewers must approve.
 
 
@@ -357,6 +343,21 @@ A Pull Request is eligible for approval when:
 * The Pull Request fully meets the linked Issue's Definition of Done (DoD).
 * The Pull Request description is complete, including rationale, data examples, links to supporting information, and explanation of key decisions.
 * No unresolved objections remain from reviewers.
+
+#### Post-Approval Changes
+
+To maintain the integrity of the consensus-building process, it is critical that approvals accurately reflect the current state of a Pull Request. Substantial changes introduced after approvals have been granted invalidate those approvals.
+
+When commits are pushed to a branch after an approval has been logged:
+
+* PR author MUST re-request review from all approvers upon any commit that alters the normative requirements.
+* PR author SHOULD re-request review from all approvers upon any commit that alters the informative text of technical design, structure, or implementation of the proposed feature.
+* PR author SHOULD provide a summary comment outlining the specific modifications made since the previous approvals were logged to facilitate an efficient re-review process.
+
+**Enforcement**
+
+* Administrators MUST NOT promote or merge a Pull Request containing post-approval changes to normative text without a full re-review. 
+* Any Pull Request merged in violation of this procedure MUST be immediately reverted by the Administrators.
 
 
 #### Conflict Resolution

@@ -10,30 +10,7 @@ ServiceCategory MUST adhere to the following requirements:
 * ServiceCategory MUST NOT be null.
 * ServiceCategory MUST be one of the allowed values.
 
-## Column ID
-
-ServiceCategory
-
-## Display Name
-
-Service Category
-
-## Description
-
-Highest-level classification of a *service* based on the core function of the *service*.
-
-## Content Constraints
-
-| Constraint      | Value                                                |
-| :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datasets.costandusage)             |
-| Column type     | Dimension                                            |
-| Feature level   | Mandatory                                            |
-| Allows nulls    | False                                                |
-| Data type       | String                                               |
-| Value format    | Allowed values                                       |
-
-Allowed values:
+## Allowed Values
 
 | Service Category          | Description                                                                                    |
 | :------------------------ | :--------------------------------------------------------------------------------------------- |
@@ -56,6 +33,29 @@ Allowed values:
 | Storage                   | Storage services for structured or unstructured data.                                          |
 | Web                       | Services enabling cloud applications to interact via the Internet.                             |
 | Other                     | New or emerging services that do not align with an existing category.                          |
+
+## Column ID
+
+ServiceCategory
+
+## Display Name
+
+Service Category
+
+## Description
+
+Highest-level classification of a *service* based on the core function of the *service*.
+
+## Content Constraints
+
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Dimension                                            |
+| Feature level   | Mandatory                                            |
+| Allows nulls    | False                                                |
+| Data type       | String                                               |
+| Value format    | Allowed values                                       |
 
 ## Introduced (version)
 

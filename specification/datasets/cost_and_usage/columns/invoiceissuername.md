@@ -9,6 +9,7 @@ InvoiceIssuerName MUST adhere to the following requirements:
 * InvoiceIssuerName MUST be of type String.
 * InvoiceIssuerName MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * InvoiceIssuerName MUST NOT be null.
+* InvoiceIssuerName MUST represent the entity that issues invoices.
 
 See [Appendix: Participating Entity Identification Examples](#appendix.examples:participatingentityidentification) section for examples of Invoice Issuer Name values across various use case scenarios.
 

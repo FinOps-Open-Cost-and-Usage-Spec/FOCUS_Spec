@@ -697,7 +697,7 @@ Here's a comprehensive guide for submitting a Pull Request using GitHub Desktop 
 2. Select your repository from the dropdown
 3. Click "Current branch" at the top
 4. Click "New branch"
-5. Name your branch descriptively (e.g., Start with your name (e.g., `flanakin/skuterm`);  Start with the Work Item number (e.g., `636-clarify-guidance-around-refunds`)
+5. Name your branch starting with the issue number followed by a short description (e.g., `636-clarify-guidance-around-refunds`)
 6. Click "Create branch"
 
 ### 2. Make Your Changes (VSCode)
