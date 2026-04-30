@@ -10,8 +10,8 @@ To ensure interoperability across different data generators, the dataset relies 
 
 1. **Commitment Categorization:** Distinguishes between obligations based on **Spend** (e.g., "I will spend 1M") vs. **Usage** (e.g., "I will use 500 vCPUs"). This determines which metrics —- Cost or Quantity —- are used to measure fulfillment.
 2. **Fulfillment Modeling:** Defines the operational behavior and consumption flexibility of a commitment.
-   * **Continuous** models (like Resource Reservations) are "use-it-or-lose-it", typically within short windows (e.g., Hourly).
-   * **Discontinuous** models (like Enterprise Spend Agreements) allow consumption to be aggregated over a longer duration (e.g., Total Term).
+   * **Continuous** models (like Resource Reservations) are "use-it-or-lose-it", typically within short windows (e.g., `Hourly`).
+   * **Discontinuous** models (like Enterprise Spend Agreements) allow consumption to be aggregated over a longer duration (e.g., `Full Period`).
 3. **Eligibility Boundaries:** Using a structured JSON format, the dataset defines the logical perimeter of a commitment, specifying exactly which accounts, regions, or services are eligible to receive the negotiated benefit.
 
 ### Expected Value Taxonomy
@@ -22,7 +22,7 @@ The following table defines the high-level expectations for key categorical colu
 | :--- | :--- | :--- |
 | **Benefit Category** | The primary economic advantage provided. | `Discount`, `Entitlement`, `Availability`, `Other` |
 | **Model** | How the commitment is consumed. | `Continuous`, `Discontinuous` |
-| **Fulfillment Interval** | The "Use-it-or-lose-it" or "Goal" window for reset. | `Hourly`, `Monthly`, `Annual`, `Total Term` |
+| **Fulfillment Interval** | The "Use-it-or-lose-it" or "Goal" window for reset. | `Hourly`, `Monthly`, `Annual`, `Full Period` |
 | **Lifecycle Status** | The current lifecycle state of the record. | `Active`, `Exhausted`, `Pending`, `Expired`, `Canceled` |
 | **Offer Category** | The "privacy" or source level of the pricing. | `Public`, `Negotiated` |
 | **Payment Model** | The cash-flow timing for the commitment. | `No Upfront`, `Partial Upfront`, `All Upfront` |
@@ -49,11 +49,11 @@ In the below table, CC represents Contract Commitment.
 | **Resource Reservation** | Usage | Continuous | Public | Discount | Hourly | 3 Years | All Upfront | One-Time |
 | **Dynamic Compute Commitment** | Spend | Continuous | Public | Discount | Hourly | 3 Years | No Upfront | Monthly |
 | **Advance Resource Commitment** | Usage | Continuous | Public | Availability | Hourly | 1 Month | No Upfront | Monthly |
-| **Enterprise Spend Agreement** | Spend | Discontinuous | Negotiated | Discount | Total Term | 3 Years | No Upfront | Monthly |
-| **Bulk Capacity Credits** | Spend | Discontinuous | Negotiated | Entitlement | Total Term | 1 Year | All Upfront | One-Time |
-| **Interval Spend Commitment** | Spend | Discontinuous | Public | Entitlement | Total Term | 1 Year | No Upfront | Monthly |
+| **Enterprise Spend Agreement** | Spend | Discontinuous | Negotiated | Discount | Full Period | 3 Years | No Upfront | Monthly |
+| **Bulk Capacity Credits** | Spend | Discontinuous | Negotiated | Entitlement | Full Period | 1 Year | All Upfront | One-Time |
+| **Interval Spend Commitment** | Spend | Discontinuous | Public | Entitlement | Full Period | 1 Year | No Upfront | Monthly |
 | **Seat License** | Usage | Continuous | Negotiated | Discount | Monthly | 1 Year | No Upfront | Monthly |
-| **Multi-Year Pool** | Spend | Discontinuous | Negotiated | Discount | Total Term | 3 Years | All Upfront | One-Time |
+| **Multi-Year Pool** | Spend | Discontinuous | Negotiated | Discount | Full Period | 3 Years | All Upfront | One-Time |
 | **Growth Rebate** | Spend | Discontinuous | Negotiated | Discount | Annual | 2 Years | No Upfront | Annual |
 | **API Credit Pack** | Usage | Discontinuous | Public | Entitlement | Transactional | 2 Years | All Upfront | One-Time |
 | **Marketplace SaaS** | Spend | Discontinuous | Negotiated | Entitlement | Annual | 1 Year | All Upfront | One-Time |
@@ -95,7 +95,7 @@ This example demonstrates a complex, multi-faceted agreement between a customer 
 | **CC Discount %** | `0.15` | `0.40` | `0.10` |
 | **CC Duration Type** | `3 Years` | `1 Year` | `1 Year` |
 | **CC Applicability** | `{"IsGlobalScope": true}` | `{"InclusionOperator": "Or", "Inclusions": [{"Dimension": "RegionId", "Operator": "In", "Values": ["us-east-1"]}]}` | `{"InclusionOperator": "Or", "Inclusions": [{"Dimension": "ServiceCategory", "Operator": "In", "Values": ["Analytics"]}]}` |
-| **CC Fulfillment Interval** | `Total Term` | `Hourly` | `Annual` |
+| **CC Fulfillment Interval** | `Full Period` | `Hourly` | `Annual` |
 | **CC ID** | `CMT-SPEND-001` | `CMT-RR-002` | `CMT-SaaS-003` |
 | **CC Last Updated** | `2026-02-01T10:00:00Z` | `2025-12-01T09:00:00Z` | `2026-01-15T14:30:00Z` |
 | **CC Model** | `Discontinuous` | `Continuous` | `Discontinuous` |
