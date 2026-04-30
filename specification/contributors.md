@@ -36,6 +36,7 @@ Thanks to the following FOCUS members for their contributions to the FOCUS Relea
 * Ramkumar Narla (Adobe)
 * Rich Kreitz (Grafana)
 * Rob Martin (FinOps Foundation)
+* Ruben Vander Stockt (Telenet Group)
 * Rowdy Voss (Oracle)
 * Sai Pydiganta (Amazon Web Services)
 * Sanjna Srivatsa (Broadcom)
