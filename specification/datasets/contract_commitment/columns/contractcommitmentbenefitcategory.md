@@ -19,7 +19,7 @@ ContractCommitmentBenefitCategory MUST adhere to the following requirements:
 | Availability | 30 | A contractual assurance of resource access and physical capacity. | Capacity reservations or dedicated host guarantees. |
 | Other | 40 | Benefits not captured by standard categories. | Support access, training, or professional services. |
 
-## Implementation Context
+## Implementation Guidance
 
 ### Distinguishing Outcomes from Mechanisms
 

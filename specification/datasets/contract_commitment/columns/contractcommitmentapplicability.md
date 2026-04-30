@@ -36,11 +36,11 @@ ContractCommitmentApplicabilityObject MUST adhere to the following requirements:
 * ContractCommitmentApplicabilityObject.Inclusions[\*].Values MUST contain only the single string "*" if the wildcard is present.
 * ContractCommitmentApplicabilityObject.Exclusions[\*].Values MUST contain only the single string "*" if the wildcard is present.
 
-## Schema Structure
+### Object Schema Structure
 
 ContractCommitmentApplicability contains a structured JSON object defining the logical boundaries and the applicability percentage of a commitment.
 
-### Top-Level Properties
+<div class="h7-nonindex">Top-Level Properties</div>
 
 | Property | Type | Required | Description |
 | :--- | :--- | :--- | :--- |
@@ -52,7 +52,7 @@ ContractCommitmentApplicability contains a structured JSON object defining the l
 | `ExclusionOperator` | String | Conditional | Required only if `Exclusions` are present. Defines the relationship for `Exclusions`. Valid values: `And`, `Or`. |
 | `Exclusions` | Array | No | List of `Rule` objects defining entities to be removed from the boundary. |
 
-### Rule Object
+<div class="h7-nonindex">Rule Object</div>
 
 | Key | Type | Description |
 | :--- | :--- | :--- |
@@ -61,14 +61,14 @@ ContractCommitmentApplicability contains a structured JSON object defining the l
 | `Values` | Array | A list of strings to compare. A value of `["*"]` acts as a global wildcard. |
 | `Applicability` | Object | Optional. The specific fraction of applicability for entities matching this rule. Overrides the top-level `Applicability`. |
 
-### Applicability Object
+<div class="h7-nonindex">Applicability Object</div>
 
 | Key | Type | Default | Description |
 | :--- | :--- | :--- | :--- |
 | `Cost` | Decimal | 1.0 | Fraction of an eligible charge's cost applicable to the *contract commitment*. |
 | `Usage` | Decimal | 1.0 | Fraction of an eligible charge's usage applicable to the *contract commitment*. |
 
-### Supported Operators
+<div class="h7-nonindex">Supported Operators</div>
 
 | Operator | Logic | Usage Example |
 | :--- | :--- | :--- |
@@ -82,7 +82,7 @@ ContractCommitmentApplicability contains a structured JSON object defining the l
 | `Exists` | Checks if the dimension is present and not null. | `Values` must be `["*"]` |
 | `DoesNotExist` | Checks if the dimension is missing or null. | `Values` must be `["*"]` |
 
-### Wildcard Handling
+<div class="h7-nonindex">Wildcard Handling</div>
 
 ContractCommitmentApplicability uses a reserved string to represent global or unrestricted boundaries within a specific Dimension.
 
@@ -90,13 +90,40 @@ ContractCommitmentApplicability uses a reserved string to represent global or un
 | :--- | :--- | :--- |
 | `"*"` | Represents all possible values for the specified Dimension. | `In`, `Contains`, `Exists`, `DoesNotExist` |
 
-### Wildcard Behavior Rules
+<div class="h7-nonindex">Wildcard Behavior Rules</div>
 
 1. **Inclusion Logic:** When `["*"]` is used in an Inclusion rule, the rule evaluates to `True` for every entity, effectively making the commitment "Organization-wide" for that specific Dimension.
 2. **Exclusion Logic:** When `["*"]` is used in an Exclusion rule, the rule evaluates to `True` for every entity, effectively excluding all entities (this is typically used only in combination with `ExclusionOperator: "And"` for surgical filtering).
 3. **Implicit Wildcards:** If a Dimension (e.g., `RegionId`) is omitted entirely from the `Inclusions` array, it is treated as an implicit wildcard (unrestricted).
 
-## Object Example
+### Object Implementation Guidance
+
+<div class="h7-nonindex">Processing Workflow</div>
+
+The evaluation of an entity against a commitment applicability must follow a strict linear progression:
+
+1. **Normalization:** Convert the entity attribute and the Scope `Values` to a consistent case (default: lowercase) for comparison.
+2. **Inclusion Evaluation:** Iterate through `Inclusions`. If a match is found, record the rule-level `Applicability` if present. Apply `InclusionOperator`. If result is `False`, terminate.
+3. **Exclusion Evaluation:** Iterate through `Exclusions`. If `True`, terminate evaluation.
+4. **Applicability Resolution:**
+   * **Inheritance:** A matching rule's `Applicability` object takes precedence over the top-level object.
+   * **Defaulting:** If a metric key (`Cost` or `Usage`) is missing within a provided `Applicability` object, the engine must default that specific value to `1.0`.
+   * **Rule-level Priority:** Use the `Applicability` from the matching inclusion rule. If multiple rules match under `Or`, the engine must use the highest percentage for each respective metric.
+   * **Fallback:** Use the top-level `Applicability` if no rule-level value is provided.
+
+<div class="h7-nonindex">Integration with Commitment Logic</div>
+
+The evaluation of **Applicability** percentages must be contextually aligned with the [Contract Commitment Model](#datasets.contractcommitment.contractcommitmentmodel) and [Contract Commitment Fulfillment Interval](#datasets.contractcommitment.contractcommitmentfulfillmentinterval):
+
+* **Continuous Models:** Applicability percentages must be applied to each discrete unit of activity (e.g., every hour) within the **Fulfillment Interval**. If the commitment is not fully utilized by eligible entities within that hour, the remaining capacity expires.
+* **Discontinuous Models:** Applicability percentages determine the portion of aggregate activity that counts toward fulfillment over the entire **Interval** (e.g., a full year).
+
+<div class="h7-nonindex">Dependency Logic</div>
+
+1. **Consistency:** Engines should expect a JSON Object and should not support scalar (Decimal/Float) values for this field to ensure compatibility with typed database schemas.
+2. **Conflict Resolution:** If `IsGlobalScope` or `IsComplexScope` is `true`, the `Inclusions` array must be empty or omitted. Additionally, `IsGlobalScope` and `IsComplexScope` must both not be `true` at the same time. Engines should validate these structural constraints before processing.
+
+### Object Example
 
 Here is a basic example of the object format, describing organization-wide coverage **except** for Database services running in BillingAccountId 123456789012.
 
@@ -121,33 +148,6 @@ Here is a basic example of the object format, describing organization-wide cover
   ]
 }
 ```
-
-## Implementation Guidance
-
-### Processing Workflow
-
-The evaluation of an entity against a commitment applicability must follow a strict linear progression:
-
-1. **Normalization:** Convert the entity attribute and the Scope `Values` to a consistent case (default: lowercase) for comparison.
-2. **Inclusion Evaluation:** Iterate through `Inclusions`. If a match is found, record the rule-level `Applicability` if present. Apply `InclusionOperator`. If result is `False`, terminate.
-3. **Exclusion Evaluation:** Iterate through `Exclusions`. If `True`, terminate evaluation.
-4. **Applicability Resolution:**
-   * **Inheritance:** A matching rule's `Applicability` object takes precedence over the top-level object.
-   * **Defaulting:** If a metric key (`Cost` or `Usage`) is missing within a provided `Applicability` object, the engine must default that specific value to `1.0`.
-   * **Rule-level Priority:** Use the `Applicability` from the matching inclusion rule. If multiple rules match under `Or`, the engine must use the highest percentage for each respective metric.
-   * **Fallback:** Use the top-level `Applicability` if no rule-level value is provided.
-
-### Integration with Commitment Logic
-
-The evaluation of **Applicability** percentages must be contextually aligned with the [Contract Commitment Model](#datasets.contractcommitment.contractcommitmentmodel) and [Contract Commitment Fulfillment Interval](#datasets.contractcommitment.contractcommitmentfulfillmentinterval):
-
-* **Continuous Models:** Applicability percentages must be applied to each discrete unit of activity (e.g., every hour) within the **Fulfillment Interval**. If the commitment is not fully utilized by eligible entities within that hour, the remaining capacity expires.
-* **Discontinuous Models:** Applicability percentages determine the portion of aggregate activity that counts toward fulfillment over the entire **Interval** (e.g., a full year).
-
-### Dependency Logic
-
-1. **Consistency:** Engines should expect a JSON Object and should not support scalar (Decimal/Float) values for this field to ensure compatibility with typed database schemas.
-2. **Conflict Resolution:** If `IsGlobalScope` or `IsComplexScope` is `true`, the `Inclusions` array must be empty or omitted. Additionally, `IsGlobalScope` and `IsComplexScope` must both not be `true` at the same time. Engines should validate these structural constraints before processing.
 
 ### Object ID
 
@@ -179,7 +179,7 @@ A structured definition of the specific entities to which a contract commitment 
 | Allows nulls | False |
 | Data type | JSON |
 | Value format | [JSON Object Format](#attributes.jsonobjectformat) |
-| Object          | [ContractCommitmentApplicabilityObject](#datasets.contractcommitment.contractcommitmentapplicability.contractcommitmentapplicabilityobject) |
+| Object | [ContractCommitmentApplicabilityObject](#datasets.contractcommitment.contractcommitmentapplicability.contractcommitmentapplicabilityobject) |
 
 ## Version Introduced
 

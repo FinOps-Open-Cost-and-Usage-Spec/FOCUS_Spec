@@ -35,17 +35,17 @@ The AllocatedMethodDetailsObject MUST adhere to the following requirements:
 * AllocatedMethodDetailsObject.Elements[\*].UsageUnit MUST represent the unit or component of data generator's documented [AllocationMethod](#datasets.costandusage.allocatedmethodid) which was used to determine the AllocatedMethodDetailsObject.Elements[\*].AllocatedRatio value.
 * AllocatedMethodDetailsObject.Elements[\*].UsageQuantity SHOULD capture the quantity or volume of the AllocatedMethodDetailsObject.Elements[\*].UsageUnit measured by the data generator that was used to determine the AllocatedMethodDetailsObject.Elements[\*].AllocatedRatio value.
 
-## Schema Structure
+### Object Schema Structure
 
 AllocatedMethodDetails contains a structured JSON object defining the allocation properties used to calculate a split cost allocation.
 
-### Top-Level Properties
+<div class="h7-nonindex">Top-Level Properties</div>
 
 | Property | Type | Required | Description |
 | :--- | :--- | :--- | :--- |
 | `Elements` | Array | True | The parent array containing one or more objects which communicate information about how an allocated record was calculated. |
 
-### Elements Object
+<div class="h7-nonindex">Elements Object</div>
 
 The `Elements` array contains one or more objects, each of which contains the following entries:
 
@@ -55,7 +55,13 @@ The `Elements` array contains one or more objects, each of which contains the fo
 | `UsageUnit` | String | Conditional | Communicates the aspect of the documented Allocation Method Id being used to calculate the Allocated Ratio property and what is being measured by Usage Quantity property. <br><br>**Condition:** must be present if Usage Quantity is provided. |
 | `UsageQuantity` | Numeric | False | Communicates the volume that was consumed or used, denominated in the Usage Unit property value. |
 
-## Object Example
+### Object Implementation Guidance
+
+<div class="h7-nonindex">Custom Properties</div>
+
+To facilitate querying data across allocations and across data generators, a data generator may include one or more custom properties. These may be placed at the top level of the object (alongside `Elements`) or nested within the individual `Elements` objects. Custom keys must be prefixed with "x_" followed by PascalCase format (e.g., `x_MyCustomKey`) to make them easy to identify as well as prevent collisions with FOCUS-defined keys.
+
+### Object Example
 
 Here is a basic example of the object format.
 
@@ -75,12 +81,6 @@ Here is a basic example of the object format.
   } ]
 }
 ```
-
-## Implementation Guidance
-
-### Custom Properties
-
-To facilitate querying data across allocations and across data generators, a data generator may include one or more custom properties. These may be placed at the top level of the object (alongside `Elements`) or nested within the individual `Elements` objects. Custom keys must be prefixed with "x_" followed by PascalCase format (e.g., `x_MyCustomKey`) to make them easy to identify as well as prevent collisions with FOCUS-defined keys.
 
 ### Object ID
 
