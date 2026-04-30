@@ -18,7 +18,7 @@ ChargeCategory MUST adhere to the following requirements:
 * When the *charge* aggregates multiple classifications, ChargeCategory MUST adhere to the following requirements:
   * ChargeCategory MAY be "Usage" when the record aggregates *charges* across multiple allowed values other than "Tax" (for example, aggregation of "Usage" and "Credit" is allowed, but not "Usage" and "Tax").
 
-## Implementation Context
+## Implementation Guidance
 
 Unlike the [CostAndUsage](#datasets.costandusage) dataset, which requires strict categorization per row, [InvoiceDetail](#datasets.invoicedetail) records are designed to align with physical or electronic invoice line items. When the invoice does not provide an explicit charge category for a line item, a single line item may inherently represent a mix of charge categories (e.g., combining base usage and promotional credits). To accurately reflect the issued invoice without breaking schema validation, the `InvoiceDetail` dataset permits the "Usage" category to represent an aggregate of multiple charge categories, provided that "Tax" charges are kept distinctly separate.
 
