@@ -22,15 +22,15 @@ Use the following links to access the latest specification artifacts:
 
 Start here:
 
-* [CONTRIBUTING.md](CONTRIBUTING.md)
-* [guidelines/contributors/development-processes.md](guidelines/contributors/development-processes.md)
+* [Contribution Guide](CONTRIBUTING.md)
+* [Development Processes](guidelines/contributors/development-processes.md)
 
 For topic-specific standards, see:
 
-* [guidelines/contributors/editorial-guidelines.md](guidelines/contributors/editorial-guidelines.md)
-* [guidelines/contributors/normative-requirements-guidelines.md](guidelines/contributors/normative-requirements-guidelines.md)
-* [guidelines/contributors/spec-change-guidelines.md](guidelines/contributors/spec-change-guidelines.md)
-* Additional project guidance: [guidelines/](guidelines/)
+* [Editorial Guidelines](guidelines/contributors/editorial-guidelines.md)
+* [Normative Requirements Guidelines](guidelines/contributors/normative-requirements-guidelines.md)
+* [Specification Change Guidelines](guidelines/contributors/spec-change-guidelines.md)
+* See the [Guidelines Directory](guidelines/) for additional project guidance
 
 ---
 
