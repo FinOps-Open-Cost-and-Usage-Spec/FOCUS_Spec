@@ -25,7 +25,6 @@ Thanks to the following FOCUS members for their contributions to the FOCUS Relea
 * Andrew Qu (Everest)
 * Beau Nelford (Anglepoint)
 * David Earney (American Express)
-* Deeja Cruz (Datadog)
 * Erik Norman (Caligo)
 * George Parker (Salesforce)
 * Graham Murphy (TechnologyOne)
