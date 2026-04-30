@@ -21,8 +21,7 @@ For a deeper overview of FOCUS, its capabilities, and adoption, see the [FOCUS w
 Use the following links to access the latest specification artifacts:
 
 * [Latest Public Release](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/releases/latest): Stable release for general implementation and reference.
-* [Latest Working Draft](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/releases/tag/latest-draft): In-progress draft reflecting current working-group development.
-
+* [Latest Working Draft](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/releases/tag/latest-draft): In-progress draft reflecting current working group development.
 
 ## Contributor Getting Started
 
@@ -56,7 +55,7 @@ For details on certification, see [FinOps Certifications for Organizations](http
 
 Changes to the specification are documented in [CHANGELOG.md](CHANGELOG.md).
 
-FOCUS uses a versioning approach inspired by [Semantic Versioning 2.0](https://semver.org/spec/v2.0.0.html), but versions should not be interpreted as strict compatibility guarantees. New versions primarily introduce additive capabilities, clarifications, and expanded coverage while avoiding breaking changes.
+FOCUS uses a versioning approach inspired by [Semantic Versioning 2.0](https://semver.org/spec/v2.0.0.html), but versions should not be interpreted as strict compatibility guarantees. New versions favor additive capabilities, clarifications, and expanded coverage. Breaking changes follow a formal deprecation cycle documented in the [CHANGELOG](CHANGELOG.md) and [Specification Change Guidelines](guidelines/contributors/spec-change-guidelines.md).
 
 Implementations should explicitly declare the version of FOCUS they align to.
 
@@ -74,5 +73,5 @@ For additional details, see the project repository:
 * [Operating Procedures](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/operating_procedures.md)
 * [Steering Committee](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/steering_committee.md)
 * [Release Planning](RELEASE-PLANNING.md)
-* [Contribution Process](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/contributing.md)
+* [Foundation Contribution Process](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/contributing.md)
 
