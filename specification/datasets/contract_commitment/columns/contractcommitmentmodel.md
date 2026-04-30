@@ -29,7 +29,7 @@ ContractCommitmentModel MUST adhere to the following requirements:
 
 ### Relationship with Fulfillment Interval
 
-Because a `Continuous` model dictates a recurring, "use-it-or-lose-it" evaluation window, it cannot logically span an entire, cumulative contract term without a reset. Therefore, if the associated [Contract Commitment Fulfillment Interval](#datasets.contractcommitment.contractcommitmentfulfillmentinterval) is `Full Period`, the Contract Commitment Model must be categorized as `Discontinuous`.
+Because a `Continuous` model dictates a recurring, "use-it-or-lose-it" evaluation window, it cannot logically span an entire, cumulative contract term without a reset. Therefore, if the associated Contract Commitment Fulfillment Interval is `Full Period`, the Contract Commitment Model must be categorized as `Discontinuous`.
 
 ## Column ID
 
@@ -41,7 +41,7 @@ Contract Commitment Model
 
 ## Description
 
-Represents the operational behavior and consumption flexibility of a [*contract commitment*](#glossary:contract-commitment).
+Represents the operational behavior and consumption flexibility of a *contract commitment*.
 
 ## Content Constraints
 

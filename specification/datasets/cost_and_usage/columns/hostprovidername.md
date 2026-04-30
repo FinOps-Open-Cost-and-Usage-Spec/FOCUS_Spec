@@ -31,7 +31,7 @@ Host Provider Name
 
 ## Description
 
-The name of the entity whose *resources* are used by the Service Provider to make their [*resources*](#glossary:resource) or [*services*](#glossary:service) available.
+The name of the entity whose *resources* are used by the Service Provider to make their *resources* or *services* available.
 
 ## Content Constraints
 

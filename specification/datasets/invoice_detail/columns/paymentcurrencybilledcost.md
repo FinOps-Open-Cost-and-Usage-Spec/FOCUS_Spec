@@ -9,10 +9,10 @@ PaymentCurrencyBilledCost MUST adhere to the following requirements:
 * PaymentCurrencyBilledCost MUST be of type Decimal.
 * PaymentCurrencyBilledCost MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * PaymentCurrencyBilledCost MUST NOT be null.
-* PaymentCurrencyBilledCost MUST be denominated in the [PaymentCurrency](#datasets.invoicedetail.paymentcurrency).
-* PaymentCurrencyBilledCost MUST be the PaymentCurrency-denominated equivalent of [BilledCost](#datasets.invoicedetail.billedcost).
-* PaymentCurrencyBilledCost MAY be non-zero while [BilledCost](#datasets.invoicedetail.billedcost) is 0 when PaymentCurrencyBilledCost represents the aggregation of BilledCost amounts (denominated in [PaymentCurrency](#datasets.invoicedetail.paymentcurrency)) stated in other records.
-* PaymentCurrencyBilledCost MAY be 0 while [BilledCost](#datasets.invoicedetail.billedcost) is non-zero when BilledCost (denominated in [PaymentCurrency](#datasets.invoicedetail.paymentcurrency)) is represented in a separate aggregate record.
+* PaymentCurrencyBilledCost MUST be denominated in the PaymentCurrency.
+* PaymentCurrencyBilledCost MUST be the PaymentCurrency-denominated equivalent of BilledCost.
+* PaymentCurrencyBilledCost MAY be non-zero while BilledCost is 0 when PaymentCurrencyBilledCost represents the aggregation of BilledCost amounts (denominated in PaymentCurrency) stated in other records.
+* PaymentCurrencyBilledCost MAY be 0 while BilledCost is non-zero when BilledCost (denominated in PaymentCurrency) is represented in a separate aggregate record.
 
 ## Examples
 
@@ -68,7 +68,7 @@ Payment Currency Billed Cost
 
 ## Description
 
-The [Billed Cost](#datasets.invoicedetail.billedcost) as expressed in [Payment Currency](#datasets.invoicedetail.paymentcurrency).
+The Billed Cost as expressed in Payment Currency.
 
 ## Content Constraints
 

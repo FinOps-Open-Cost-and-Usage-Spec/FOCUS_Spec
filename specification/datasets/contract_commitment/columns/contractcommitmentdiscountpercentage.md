@@ -54,7 +54,7 @@ Contract Commitment Discount Percentage
 
 ## Description
 
-The effective percentage reduction applied to the list price of resources or services covered by a [*contract commitment*](#glossary:contract-commitment).
+The effective percentage reduction applied to the list price of resources or services covered by a *contract commitment*.
 
 ## Content Constraints
 

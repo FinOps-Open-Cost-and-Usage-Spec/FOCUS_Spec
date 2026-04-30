@@ -20,7 +20,7 @@ CommitmentProgramEligibilityDetails MUST adhere to the following requirements:
 
 ## Commitment Program Eligibility Details Object
 
-Commitment Program Eligibility Details consists of a valid JSON object with a top-level property key `CommitmentPrograms` containing an array of objects describing the specific [*commitment programs*](#glossary:commitment-program) available for the usage charge.
+Commitment Program Eligibility Details consists of a valid JSON object with a top-level property key `CommitmentPrograms` containing an array of objects describing the specific *commitment programs* available for the usage charge.
 
 ### Object Requirements
 
@@ -89,7 +89,7 @@ Commitment Program Eligibility Details
 
 ## Description
 
-The types of [*commitment programs*](#glossary:commitment-program) available for a specific usage row.
+The types of *commitment programs* available for a specific usage row.
 
 ## Content Constraints
 

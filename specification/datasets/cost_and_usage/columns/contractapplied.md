@@ -108,7 +108,7 @@ Contract Applied
 
 ## Description
 
-A set of properties that associate a *charge* with one or more [*contract commitments*](#glossary:contract-commitment).
+A set of properties that associate a *charge* with one or more *contract commitments*.
 
 ## Content Constraints
 

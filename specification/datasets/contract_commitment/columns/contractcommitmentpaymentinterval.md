@@ -35,7 +35,7 @@ Contract Commitment Payment Interval
 
 ## Description
 
-Represents the frequency by which a [*contract commitment*](#glossary:contract-commitment) is invoiced.
+Represents the frequency by which a *contract commitment* is invoiced.
 
 ## Content Constraints
 
