@@ -9,7 +9,7 @@ BillingAccountId MUST adhere to the following requirements:
 * BillingAccountId MUST be of type String.
 * BillingAccountId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * BillingAccountId MUST NOT be null.
-* BillingAccountId MUST be a unique identifier within an invoice issuer.
+* BillingAccountId MUST be a unique identifier within an [*invoice issuer*](#glossary:invoice-issuer).
 * BillingAccountId SHOULD be a fully-qualified identifier.
 
 See [Appendix: Grouping constructs for resources or services](#appendix.groupingconstructsforresourcesorservices) for details and examples of the different grouping constructs supported by FOCUS.
