@@ -1,11 +1,12 @@
 ## Diff
 
-@@ -1,19 +1,18 @@
+@@ -1,19 +1,20 @@
 ## Requirements
 
 AllocatedTags [-adheres-]{+MUST adhere+} to the following requirements:
 
-[-* AllocatedTags MUST be present in a Cost and Usage *FOCUS dataset* when the service provider supports Data Generator-Calculated Split Cost Allocation.-]
+* AllocatedTags MUST be [-present in-]{+of type JSON Object (serialized as+} a [-Cost and Usage *FOCUS dataset* when the service provider supports Data Generator-Calculated Split Cost Allocation.-]{+String where necessary).+}
+{+* AllocatedTags MUST conform to StringHandling requirements.+}
 * AllocatedTags MUST conform to KeyValueFormat requirements.
 * AllocatedTags {+MUST adhere to the following+} nullability [-is defined as follows:-]{+requirements:+}
   * AllocatedTags MUST be null when a *charge* is not related to a data generator-calculated split cost allocation.

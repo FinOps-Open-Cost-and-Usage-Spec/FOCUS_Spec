@@ -1,10 +1,14 @@
 ## Diff
 
+@@ -1,28 +1,29 @@
+## Requirements
+
 SkuPriceDetails [-adheres-]{+MUST adhere+} to the following requirements:
 
-* SkuPriceDetails MUST[-be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports unit pricing concepts and publishes [*price lists*](#glossary:price-list), publicly or as part of contracting.-]
-[-* SkuPriceDetails MUST-] conform to KeyValueFormat requirements.
-* SkuPriceDetails property keys SHOULD conform to [PascalCase](#glossary:pascalcase) format.
+* SkuPriceDetails MUST be[-present in a Cost and Usage *FOCUS dataset* when the service provider supports unit pricing concepts and publishes *price lists*, publicly or as part-] of [-contracting.-]{+type JSON Object (serialized as a String where necessary).+}
+{+* SkuPriceDetails MUST conform to StringHandling requirements.+}
+* SkuPriceDetails MUST conform to KeyValueFormat requirements.
+* SkuPriceDetails property keys SHOULD conform to PascalCase format.
 * SkuPriceDetails {+MUST adhere to the following+} nullability [-is defined as follows:-]{+requirements:+}
   * SkuPriceDetails MUST be null when SkuPriceId is null.
   * SkuPriceDetails MAY be null when SkuPriceId is not null.
@@ -26,4 +30,3 @@ SkuPriceDetails [-adheres-]{+MUST adhere+} to the following requirements:
   * Property key MUST match the spelling and casing specified for the FOCUS-defined property.
   * Property value MUST be of the type specified for that property.
   * Property value MUST represent the value for a single PricingUnit, denominated in the unit of measure specified for that property when the property holds a numeric value.
-

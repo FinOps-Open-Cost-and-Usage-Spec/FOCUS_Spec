@@ -1,11 +1,12 @@
 ## Diff
 
-@@ -1,22 +1,21 @@
+@@ -1,22 +1,23 @@
 ## Requirements
 
 Tags [-adheres-]{+MUST adhere+} to the following requirements:
 
-[-* Tags MUST be present in a Cost and Usage *FOCUS dataset* when the data generator supports setting user or provider-defined tags.-]
+* Tags MUST be [-present in-]{+of type JSON Object (serialized as+} a [-Cost and Usage *FOCUS dataset* when the data generator supports setting user or provider-defined tags.-]{+String where necessary).+}
+{+* Tags MUST conform to StringHandling requirements.+}
 * Tags MUST conform to KeyValueFormat requirements.
 * Tags MAY be null.
 * When Tags is not null, Tags [-adheres-]{+MUST adhere+} to the following[-additional-] requirements:
