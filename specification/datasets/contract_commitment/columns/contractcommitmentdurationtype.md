@@ -54,7 +54,7 @@ Contract Commitment Duration Type
 
 ## Description
 
-Represents the categorical length of the [*contract commitment*](#glossary:contract-commitment) offering.
+Represents the categorical length of the *contract commitment* offering.
 
 ## Content Constraints
 
@@ -65,8 +65,8 @@ Represents the categorical length of the [*contract commitment*](#glossary:contr
 | Feature level   | Mandatory      |
 | Allows nulls    | False          |
 | Data type       | String         |
-| Value format    | Expected format |
+| Value format    | [Expected format](#datasets.contractcommitment.contractcommitmentdurationtype.expectedformat) |
 
-## Introduced (version)
+## Version Introduced
 
 1.4

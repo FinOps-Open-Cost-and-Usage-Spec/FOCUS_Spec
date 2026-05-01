@@ -28,12 +28,13 @@ The currency in which the invoice is paid.
 
 |    Constraint    |              Value             |
 |:----------------|:--------------------------------|
+| Dataset         | [Invoice Detail](#datasets.invoicedetail)             |
 | Column type     | Dimension                       |
 | Feature level   | Conditional                     |
 | Allows nulls    | False                           |
 | Data type       | String                          |
 | Value format    | [Currency Format](#attributes.currencyformat) |
 
-## Introduced (version)
+## Version Introduced
 
 1.4

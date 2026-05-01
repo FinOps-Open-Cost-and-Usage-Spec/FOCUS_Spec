@@ -1,6 +1,6 @@
 # Service Provider Name
 
-Service Provider Name is the name of the entity that provides the [*resources*](#glossary:resource) or [*services*](#glossary:service) available for usage or purchase. These services can be built on top of infrastructure provided by a [Host Provider](#datasets.costandusage.hostprovidername), offered as fully integrated solutions, or include complementary offerings such as support, licensing, or consulting. It is commonly used for cost analysis and reporting scenarios.
+Service Provider Name is the name of the entity that provides the [*resources*](#glossary:resource) or [*services*](#glossary:service) available for usage or purchase. These services can be built on top of infrastructure provided by a [Host Provider](#datasets.costandusage.hostprovidername); offered as fully integrated solutions; or include complementary offerings such as support, licensing, or consulting. It is commonly used for cost analysis and reporting scenarios.
 
 **Notes:**
 
@@ -41,6 +41,6 @@ The name of the entity that made the *resources* or *services* available for pur
 | Data type       | String                                               |
 | Value format    | \<not specified>                                     |
 
-## Introduced (version)
+## Version Introduced
 
 1.3 Introduced as a replacement for the removed ProviderName column

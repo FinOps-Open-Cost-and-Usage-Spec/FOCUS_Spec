@@ -12,7 +12,7 @@ jobs:
       image: pandoc/extra:latest-ubuntu
     steps:
       - name: Check out repository code
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@v6
       - name: Install prequirements
         shell: bash
         run: |
@@ -33,13 +33,13 @@ jobs:
           /usr/bin/pip3 install --break-system-packages -r requirements.txt
           ./build_json.py
       - name: Upload on failure
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         if: ${{ failure()}}
         with:
           name: spec.md
           path: specification/spec.md
       - name: Upload Spec
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: FOCUS_specification
           path: |

@@ -34,6 +34,6 @@ A service-provider-assigned name to identify the type of *contract commitment*.
 | Data type       | String                                               |
 | Value format    | \<not specified>                                     |
 
-## Introduced (version)
+## Version Introduced
 
 1.3

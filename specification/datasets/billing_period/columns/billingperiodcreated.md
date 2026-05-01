@@ -27,12 +27,13 @@ The timestamp when the *Billing Period* record was first created.
 
 |    Constraint   |              Value              |
 |:----------------|:--------------------------------|
+| Dataset         | [Billing Period](#datasets.billingperiod)             |
 | Column type     | Dimension                       |
 | Feature level   | Mandatory                       |
 | Allows nulls    | False                           |
 | Data type       | Date/Time                        |
 | Value format    | [Date/Time Format](#attributes.date/timeformat) |
 
-## Introduced (version)
+## Version Introduced
 
 1.4

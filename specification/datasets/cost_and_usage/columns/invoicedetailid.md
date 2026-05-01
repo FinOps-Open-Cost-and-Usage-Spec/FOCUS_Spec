@@ -30,12 +30,13 @@ The invoice-issuer-assigned identifier for an Invoice Detail record encapsulatin
 
 |    Constraint    |              Value             |
 |:----------------|:--------------------------------|
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
 | Column type     | Dimension                       |
 | Feature level   | Conditional                     |
 | Allows nulls    | True                            |
 | Data type       | String                          |
 | Value format    | \<not specified>                |
 
-## Introduced (version)
+## Version Introduced
 
 1.4

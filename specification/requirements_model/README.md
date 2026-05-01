@@ -16,7 +16,7 @@ This foundational stage involves analyzing the **FOCUS v1.2** Technical Specific
 
 The current output for **Stage 1** is **AI-assisted**, with over 85% of rules estimated to be valid. However, member review is critical, as the text of some requirements are complex to formalize in a prompt. The quality and accuracy of this stage directly impact the success of subsequent stages, especially JSON generation and dependency modeling.
 
-### Stage 2 – Convert Extracted Rules into JSON Format  
+### Stage 2 – Convert Extracted Rules Into JSON Format  
 
 **Estimated Effort: 35% of total project time**
 

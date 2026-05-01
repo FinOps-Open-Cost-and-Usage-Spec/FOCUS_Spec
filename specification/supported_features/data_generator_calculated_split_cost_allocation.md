@@ -22,7 +22,7 @@ FOCUS enables tracking of resources split by some internal consumption metrics. 
 * ServiceProviderName
 * ServiceName
 
-## Example SQL Query (Find resources with a shared cost)
+## Example SQL Query (Find Resources with a Shared Cost)
 
 ```sql
 SELECT
@@ -33,7 +33,7 @@ WHERE ChargeCategory='Usage'
   AND AllocatedMethodId IS NOT NULL
 ```
 
-## Example SQL Query (Get total effective cost by ResourceId (ignore shared cost))
+## Example SQL Query (Get Total Effective Cost by ResourceId (Ignore Shared Cost))
 
 ```sql
 SELECT
@@ -47,7 +47,7 @@ GROUP BY
   ResourceId
 ```
 
-## Example SQL Query (Get total effective cost by AllocatedResourceId)
+## Example SQL Query (Get Total Effective Cost by AllocatedResourceId)
 
 ```sql
 SELECT
@@ -61,7 +61,7 @@ GROUP BY
   AllocatedResourceId
 ```
 
-## Example SQL Query (Find total unallocated split costs by resourceId)
+## Example SQL Query (Find Total Unallocated Split Costs by ResourceId)
 
 ```sql
 SELECT
@@ -75,7 +75,7 @@ GROUP BY
   ResourceId
 ```
 
-## Example SQL Query (Find how a single resource has been split)
+## Example SQL Query (Find How a Single Resource Has Been Split)
 
 ```sql
 SELECT
@@ -111,6 +111,6 @@ FROM
   ) AS elements
 ```
 
-## Introduced (Version)
+## Version Introduced
 
 1.3

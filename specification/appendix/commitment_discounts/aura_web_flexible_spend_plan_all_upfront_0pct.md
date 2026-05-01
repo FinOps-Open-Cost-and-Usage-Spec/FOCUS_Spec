@@ -34,7 +34,7 @@ This scenario demonstrates **zero utilization** where the commitment is purchase
 
 Understanding how columns relate to each other is critical for validating FOCUS data. This section explains the key relationships.
 
-### Quantity Columns: PricingQuantity vs ConsumedQuantity vs CommitmentDiscountQuantity
+### Quantity Columns: PricingQuantity vs. ConsumedQuantity vs. CommitmentDiscountQuantity
 
 These three quantity columns serve different purposes and must be understood in context:
 
@@ -46,7 +46,7 @@ These three quantity columns serve different purposes and must be understood in 
 
 **For spend-based commitments:** CommitmentDiscountQuantity represents the dollar amount applied, not a count of resources. For this commitment, the value equals the hourly dollar commitment.
 
-### Pricing Columns: ListUnitPrice vs ContractedUnitPrice
+### Pricing Columns: ListUnitPrice vs. ContractedUnitPrice
 
 | Column                    | Purpose                    | Commitment-Covered        |
 | ------------------------- | -------------------------- | ------------------------- |
@@ -55,7 +55,7 @@ These three quantity columns serve different purposes and must be understood in 
 
 **Why this matters:** ContractedUnitPrice reflects enterprise-negotiated pricing (e.g., enterprise-negotiated rates), not commitment discount savings. In non-negotiated scenarios, ContractedUnitPrice equals ListUnitPrice. Commitment discount savings are reflected in EffectiveCost, not in unit prices. For spend-based purchase and unused rows, PricingUnit is USD and ListUnitPrice is $1.00, because you are fundamentally purchasing a block of dollars.
 
-### Cost Columns: BilledCost vs EffectiveCost vs ListCost
+### Cost Columns: BilledCost vs. EffectiveCost vs. ListCost
 
 | Scenario           | BilledCost         | EffectiveCost   | ListCost           |
 | ------------------ | ------------------ | --------------- | ------------------ |

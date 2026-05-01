@@ -26,20 +26,20 @@ Contract Commitment Payment Upfront Percentage
 
 ## Description
 
-Represents the portion of the total [Contract Commitment Cost](#datasets.contractcommitment.contractcommitmentcost) paid at the start of the duration of a [*contract commitment*](#glossary:contract-commitment).
+Represents the portion of the total Contract Commitment Cost paid at the start of the duration of a *contract commitment*.
 
 ## Content Constraints
 
 | Constraint    | Value            |
 | :------------ | :--------------- |
-| Dataset         | [Contract Commitment](#datasets.contractcommitment)  |
-| Column type   | Dimension        |
+| Dataset       | [Contract Commitment](#datasets.contractcommitment) |
+| Column type   | Metric           |
 | Feature level | Conditional      |
 | Allows nulls  | False            |
 | Data type     | Decimal          |
-| Value format  | [Numeric Format](#attributes.numericformat)  |
+| Value format  | [Numeric Format](#attributes.numericformat) |
 | Number range  | 0.0 to 1.0 (inclusive)            |
 
-## Introduced (version)
+## Version Introduced
 
 1.4

@@ -1,22 +1,22 @@
 # Billing Scenario Examples
 
-The following examples illustrate how [BilledCost](#datasets.costandusage.billedcost) and [EffectiveCost](#datasets.costandusage.effectivecost) behave across common software as a service (SaaS) and platform as a service (PaaS) billing models. Each scenario uses a fictional [*service provider*](#glossary:service%20provider) with illustrative pricing and demonstrates a distinct billing pattern that SaaS or PaaS data generators may implement via the FOCUS specification.
+The following examples illustrate how [BilledCost](#datasets.costandusage.billedcost) and [EffectiveCost](#datasets.costandusage.effectivecost) behave across common software as a service (SaaS) and platform as a service (PaaS) billing models. Each scenario uses a fictional [*service provider*](#glossary:service-provider) with illustrative pricing and demonstrates a distinct billing pattern that SaaS or PaaS data generators may implement via the FOCUS specification.
 
 Each example targets a specific billing pattern. All examples share a consistent column set; columns not applicable to a given scenario contain null values.
 
 | Scenario | Service Provider | What You'll Learn |
 | :--- | :--- | :--- |
-| [Credit-Based Consumption](#credit-based-consumption-on-demand-data-platform-usage) | OmniQuery | Custom consumption units (Credits) with `ChargeFrequency` split between "Usage-Based" (compute) and "Recurring" (storage). No [*commitment discount*](#glossary:commitment-discount); BilledCost = EffectiveCost on all rows. |
-| [Host-Based SaaS Monitoring](#host-based-saas-monitoring-monthly-on-demand-usage) | StackLens | Multiple [*services*](#glossary:service) billed on independent metrics (hosts vs. GB). "Recurring" for host-based charges, "Usage-Based" for log ingestion. No regional billing. |
-| [Seat-Based SaaS Subscription](#seat-based-saas-subscription-annual-upfront-with-commitment-discount) | SprintCanvas | Upfront annual purchase amortized to monthly Usage rows. BilledCost vs. EffectiveCost divergence. Spend-based `CommitmentDiscountCategory`, One-Time `ChargeFrequency`. |
-| [Multi-Unit PaaS Database](#multi-unit-usage-based-paas-database-as-a-service) | StoreStack | Three heterogeneous PricingUnit values (Hours, GB, GB) within one *service provider*. Region-specific billing with RegionId/RegionName populated. |
-| [Flat-Rate SaaS Licensing](#flat-rate-saas-licensing-fixed-monthly-subscription) | CollabChat | Fixed monthly subscription where PricingUnit is "Subscriptions" and PricingQuantity is 1, decoupled from underlying user count. |
-| [Annual Commitment Billed Monthly](#annual-commitment-billed-monthly-seat-based-crm) | PipelCRM | Annual term contract with monthly billing where the billed rate equals list price. No *commitment discount* despite the annual obligation. |
-| [Tiered Pricing with Committed Minimum](#tiered-pricing-with-committed-minimum-email-api-platform) | PulseMail | Plan fee as a usage-denominated *commitment discount* with Used/Unused split and overage pricing. `CommitmentDiscountCategory` = "Usage". Two billing periods showing under- and over-minimum scenarios. |
+| [Credit-Based Consumption](#appendix.examples:saas.billingscenarioexamples.credit-basedconsumption:on-demanddataplatformusage) | OmniQuery | Custom consumption units (Credits) with `ChargeFrequency` split between "Usage-Based" (compute) and "Recurring" (storage). No [*commitment discount*](#glossary:commitment-discount); BilledCost = EffectiveCost on all rows. |
+| [Host-Based SaaS Monitoring](#appendix.examples:saas.billingscenarioexamples.host-basedsaasmonitoring:monthlyon-demandusage) | StackLens | Multiple [*services*](#glossary:service) billed on independent metrics (hosts vs. GB). "Recurring" for host-based charges, "Usage-Based" for log ingestion. No regional billing. |
+| [Seat-Based SaaS Subscription](#appendix.examples:saas.billingscenarioexamples.seat-basedsaassubscription:annualupfrontwithcommitmentdiscount) | SprintCanvas | Upfront annual purchase amortized to monthly Usage rows. BilledCost vs. EffectiveCost divergence. Spend-based `CommitmentDiscountCategory`, One-Time `ChargeFrequency`. |
+| [Multi-Unit PaaS Database](#appendix.examples:saas.billingscenarioexamples.multi-unitusage-basedpaas:database-as-a-service) | StoreStack | Three heterogeneous PricingUnit values (Hours, GB, GB) within one *service provider*. Region-specific billing with RegionId/RegionName populated. |
+| [Flat-Rate SaaS Licensing](#appendix.examples:saas.billingscenarioexamples.flat-ratesaaslicensing:fixedmonthlysubscription) | CollabChat | Fixed monthly subscription where PricingUnit is "Subscriptions" and PricingQuantity is 1, decoupled from underlying user count. |
+| [Annual Commitment Billed Monthly](#appendix.examples:saas.billingscenarioexamples.annualcommitmentbilledmonthly:seat-basedcrm) | PipelCRM | Annual term contract with monthly billing where the billed rate equals list price. No *commitment discount* despite the annual obligation. |
+| [Tiered Pricing with Committed Minimum](#appendix.examples:saas.billingscenarioexamples.tieredpricingwithcommittedminimum:emailapiplatform) | PulseMail | Plan fee as a usage-denominated *commitment discount* with Used/Unused split and overage pricing. `CommitmentDiscountCategory` = "Usage". Two billing periods showing under- and over-minimum scenarios. |
 
 ## Credit-Based Consumption: On-Demand Data Platform Usage
 
-A data platform [*service provider*](#glossary:service%20provider), OmniQuery, uses a credit-based consumption model. Customers consume credits based on warehouse compute activity and pay a fixed per-credit rate determined by their service edition. Storage is billed separately on a per-terabyte basis.
+A data platform [*service provider*](#glossary:service-provider), OmniQuery, uses a credit-based consumption model. Customers consume credits based on warehouse compute activity and pay a fixed per-credit rate determined by their service edition. Storage is billed separately on a per-terabyte basis.
 
 The *service provider*'s on-demand pricing for this example:
 
@@ -69,7 +69,7 @@ Key observations:
 
 ## Host-Based SaaS Monitoring: Monthly On-Demand Usage
 
-A SaaS observability [*service provider*](#glossary:service%20provider), StackLens, offers multiple monitoring [*services*](#glossary:service) billed on different units: host-based pricing for infrastructure and application performance monitoring, and volume-based pricing for log ingestion.
+A SaaS observability [*service provider*](#glossary:service-provider), StackLens, offers multiple monitoring [*services*](#glossary:service) billed on different units: host-based pricing for infrastructure and application performance monitoring, and volume-based pricing for log ingestion.
 
 The *service provider*'s on-demand pricing for this example:
 
@@ -123,7 +123,7 @@ Key observations:
 
 This example illustrates an annual upfront SaaS subscription where the customer receives a discounted per-user rate by committing to a 12-month term. The discounted rate is only available with the annual commitment, making this a [*commitment discount*](#glossary:commitment-discount).
 
-The [*service provider*](#glossary:service%20provider), SprintCanvas, offers a project management platform with the following pricing for 50 users on the Standard plan:
+The [*service provider*](#glossary:service-provider), SprintCanvas, offers a project management platform with the following pricing for 50 users on the Standard plan:
 
 | Billing Option | Unit Price | Monthly Cost (50 users) | Annual Cost |
 | :------------- | ---------: | ----------------------: | ----------: |
@@ -182,7 +182,7 @@ Here is how these charges appear in the data (relevant columns only):
 
 ## Multi-Unit Usage-Based PaaS: Database-as-a-Service
 
-A PaaS database [*service provider*](#glossary:service%20provider), StoreStack, bills different resource types on different units. The *service provider* offers dedicated database clusters with separate charges for compute, storage, and data transfer.
+A PaaS database [*service provider*](#glossary:service-provider), StoreStack, bills different resource types on different units. The *service provider* offers dedicated database clusters with separate charges for compute, storage, and data transfer.
 
 The *service provider*'s on-demand pricing for this example:
 
@@ -238,7 +238,7 @@ Key observations:
 
 ## Flat-Rate SaaS Licensing: Fixed Monthly Subscription
 
-A team communications [*service provider*](#glossary:service%20provider), CollabChat, offers both per-user and flat-rate subscription tiers. This example uses the flat-rate option, where all features and unlimited users are included for a fixed monthly fee with no per-user pricing.
+A team communications [*service provider*](#glossary:service-provider), CollabChat, offers both per-user and flat-rate subscription tiers. This example uses the flat-rate option, where all features and unlimited users are included for a fixed monthly fee with no per-user pricing.
 
 The *service provider*'s pricing for this example:
 
@@ -284,7 +284,7 @@ Key observations:
 
 ## Annual Commitment Billed Monthly: Seat-Based CRM
 
-A CRM [*service provider*](#glossary:service%20provider), PipelCRM, offers a seat-based sales platform requiring an annual commitment. Unlike prepaid annual subscriptions, one billing option charges monthly throughout the contract term. The monthly billed rate equals the list price, so no [*commitment discount*](#glossary:commitment-discount) is applied in FOCUS terms.
+A CRM [*service provider*](#glossary:service-provider), PipelCRM, offers a seat-based sales platform requiring an annual commitment. Unlike prepaid annual subscriptions, one billing option charges monthly throughout the contract term. The monthly billed rate equals the list price, so no [*commitment discount*](#glossary:commitment-discount) is applied in FOCUS terms.
 
 The *service provider*'s pricing for this example (Professional plan, 10 users):
 
@@ -328,7 +328,7 @@ Key observations:
 
 ## Tiered Pricing with Committed Minimum: Email API Platform
 
-A SaaS email API [*service provider*](#glossary:service%20provider), PulseMail, offers tiered plans that include a monthly email allowance. Emails sent within the allowance are covered by the plan fee. Emails exceeding the allowance are billed at a per-email overage rate. The plan minimum functions as a usage-denominated [*commitment discount*](#glossary:commitment-discount) because the customer pays a fixed fee for a quantity of usage units.
+A SaaS email API [*service provider*](#glossary:service-provider), PulseMail, offers tiered plans that include a monthly email allowance. Emails sent within the allowance are covered by the plan fee. Emails exceeding the allowance are billed at a per-email overage rate. The plan minimum functions as a usage-denominated [*commitment discount*](#glossary:commitment-discount) because the customer pays a fixed fee for a quantity of usage units.
 
 The *service provider*'s pricing for this example (Essentials 50K plan):
 

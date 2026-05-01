@@ -12,7 +12,7 @@ The Contract Commitment Applicability Object Schema defines the structure for th
 
 !INCLUDECODE "schemas/datasets/contract_commitment/contractcommitmentapplicabilityobjectschema.json" (json)
 
-## Cost And Usage
+## Cost and Usage
 
 ### Allocated Method Details Object Schema
 
@@ -21,6 +21,14 @@ The Allocated Method Details Object Schema defines the structure for the [Alloca
 [Download from GitHub](/specification/schemas/datasets/cost_and_usage/allocatedmethoddetailsobjectschema.json)
 
 !INCLUDECODE "schemas/datasets/cost_and_usage/allocatedmethoddetailsobjectschema.json" (json)
+
+### Commitment Program Eligibility Details Object Schema
+
+The Commitment Program Eligibility Details Object Schema defines the structure for the [Commitment Program Eligibility Details](#datasets.costandusage.commitmentprogrameligibilitydetails) column.
+
+[Download from GitHub](/specification/schemas/datasets/cost_and_usage/commitmentprogrameligibilitydetailsobjectschema.json)
+
+!INCLUDECODE "schemas/datasets/cost_and_usage/commitmentprogrameligibilitydetailsobjectschema.json" (json)
 
 ### Contract Applied Object Schema
 

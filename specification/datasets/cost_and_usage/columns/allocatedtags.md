@@ -6,6 +6,8 @@ The Allocated Tags column represents the set of [*tags*](#glossary:tag) assigned
 
 AllocatedTags MUST adhere to the following requirements:
 
+* AllocatedTags MUST be of type JSON Object (serialized as a String where necessary).
+* AllocatedTags MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * AllocatedTags MUST conform to [KeyValueFormat](#attributes.key-valueformat) requirements.
 * AllocatedTags MUST adhere to the following nullability requirements:
   * AllocatedTags MUST be null when a *charge* is not related to a data generator-calculated split cost allocation.
@@ -59,6 +61,6 @@ A set of tags assigned to tag sources that are applicable to *allocated charges*
 | Data type       | JSON                                                 |
 | Value format    | [Key-Value Format](#attributes.key-valueformat)      |
 
-## Introduced (version)
+## Version Introduced
 
 1.3

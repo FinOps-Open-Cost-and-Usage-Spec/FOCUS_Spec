@@ -25,7 +25,7 @@ CommitmentDiscountStatus MUST adhere to the following requirements:
 
 CommitmentDiscountStatus
 
-## Display name
+## Display Name
 
 Commitment Discount Status
 
@@ -42,8 +42,8 @@ Indicates whether the *charge* corresponds with the consumption of a *commitment
 | Feature level   | Conditional                                          |
 | Allows nulls    | True                                                 |
 | Data type       | String                                               |
-| Value format    | Allowed Values                                       |
+| Value format    | Allowed values                                       |
 
-## Introduced (version)
+## Version Introduced
 
 1.0

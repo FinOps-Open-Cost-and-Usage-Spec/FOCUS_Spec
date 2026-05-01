@@ -21,7 +21,7 @@ InvoiceIssueStatus MUST adhere to the following requirements:
 | Issued | The invoice has been formally issued by the provider. It represents a valid financial obligation with finalized associated data. |
 | Voided | The invoice was previously issued but has been retracted or nullified. It is not a valid financial obligation. |
 
-## Implementation Context
+## Implementation Guidance
 
 The transition from "Open" to "Issued" typically signifies that an invoice has been finalized, invoice reconciliation has been performed, and the delivered data is accurate. However, when the delivered data is found to be inaccurate or incomplete, it may be necessary to apply corrections to records associated with the issued invoice.
 
@@ -49,12 +49,13 @@ The publication state of the invoice and the reliability of its associated deliv
 
 |    Constraint   |              Value              |
 |:----------------|:--------------------------------|
+| Dataset         | [Invoice Detail](#datasets.invoicedetail)             |
 | Column type     | Dimension                       |
 | Feature level   | Mandatory                       |
 | Allows nulls    | False                           |
 | Data type       | String                          |
-| Value format    | \<unspecified>                  |
+| Value format    | Allowed values                |
 
-## Introduced (version)
+## Version Introduced
 
 1.4

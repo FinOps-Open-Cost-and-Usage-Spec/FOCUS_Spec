@@ -8,24 +8,209 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 <sup>Announced June 2026</sup>
 
+v1.4 adds 2 datasets (`BillingPeriod`, `InvoiceDetail`), 47 new columns, 6 new attributes, 2 new supported features, and 17 new glossary entries.
+
 ### Changes to Supported Features by [Change Impact Classification](/guidelines/contributors/spec-change-guidelines.md)
 
 #### Compatible Changes
 
-* None
+* New Datasets and Columns to support [Invoice Reconciliation](/specification/supported_features/invoice_reconciliation.md)
+* New Columns to support [Commitment Program Eligibility Details](/specification/supported_features/commitment_program_eligibility_details.md)
+* Revised normative requirements for [`BilledCost`](/specification/datasets/cost_and_usage/columns/billedcost.md) and [`EffectiveCost`](/specification/datasets/cost_and_usage/columns/effectivecost.md), affecting:
+  * [Billed Cost and Invoice Alignment](/specification/supported_features/billed_cost_and_invoice_alignment.md)
+  * [Effective Cost](/specification/supported_features/effective_cost.md)
+* Expanded [Cost Comparison](/specification/supported_features/cost_comparison.md) with cash-based vs accrual-based comparison guidance, new dependent columns, and additional example queries.
+* Tightened [`InvoiceId`](/specification/datasets/cost_and_usage/columns/invoiceid.md) Feature level from Recommended to Conditional (MUST when the invoice issuer supports payable invoices).
 
 #### Migration Compatible Changes
 
-* None
+* Revised `ContractApplied` format to use the JSON Object Schema format. Queries that parse the `ContractApplied` JSON structure will need to be updated to the new schema. Affecting:
+  * [Contract Commitments](/specification/supported_features/contract_commitments.md)
+* Removal of the `ColumnHandling` attribute, with requirements shifted to `FocusColumnHandling` and `CustomColumnHandling`.
+* Removal of the `DiscountHandling` attribute, with content moved to the [Discount Handling](/specification/appendix/discount_handling.md) appendix entry.
+* Removal of the `InvoiceHandling` attribute, with requirements shifted to `DeliveryHandling` and `DatasetCompleteness`.
+* Removal of deprecated `ProviderName` and `PublisherName` columns. Use cases were migrated to `ServiceProviderName`, `HostProviderName`, `InvoiceIssuerName`, and `DataGenerator` metadata during the v1.3 cycle. See [Participating Entity Identification](/specification/supported_features/participating_entity_identification.md) for guidance on selecting the correct successor column.
 
 #### Incompatible Changes
 
-* Removal of deprecated ProviderName and PublisherName columns
+* None
+
+### Added
+
+#### New supported features
+
+* [Invoice Reconciliation](/specification/supported_features/invoice_reconciliation.md)
+* [Commitment Program Eligibility Details](/specification/supported_features/commitment_program_eligibility_details.md)
+
+#### New datasets
+
+* [`BillingPeriod`](/specification/datasets/billing_period/dataset.md)
+* [`InvoiceDetail`](/specification/datasets/invoice_detail/dataset.md)
+
+#### New columns
+
+* [`BillingPeriod`](/specification/datasets/billing_period/dataset.md)
+  * [`BillingPeriodCreated`](/specification/datasets/billing_period/columns/billingperiodcreated.md)
+  * [`BillingPeriodEnd`](/specification/datasets/billing_period/columns/billingperiodend.md)
+  * [`BillingPeriodLastUpdated`](/specification/datasets/billing_period/columns/billingperiodlastupdated.md)
+  * [`BillingPeriodStart`](/specification/datasets/billing_period/columns/billingperiodstart.md)
+  * [`BillingPeriodStatus`](/specification/datasets/billing_period/columns/billingperiodstatus.md)
+  * [`InvoiceIssuerName`](/specification/datasets/billing_period/columns/invoiceissuername.md)
+* [`ContractCommitment`](/specification/datasets/contract_commitment/dataset.md)
+  * [`ContractCommitmentApplicability`](/specification/datasets/contract_commitment/columns/contractcommitmentapplicability.md)
+  * [`ContractCommitmentBenefitCategory`](/specification/datasets/contract_commitment/columns/contractcommitmentbenefitcategory.md)
+  * [`ContractCommitmentCreated`](/specification/datasets/contract_commitment/columns/contractcommitmentcreated.md)
+  * [`ContractCommitmentDiscountPercentage`](/specification/datasets/contract_commitment/columns/contractcommitmentdiscountpercentage.md)
+  * [`ContractCommitmentDurationType`](/specification/datasets/contract_commitment/columns/contractcommitmentdurationtype.md)
+  * [`ContractCommitmentFulfillmentInterval`](/specification/datasets/contract_commitment/columns/contractcommitmentfulfillmentinterval.md)
+  * [`ContractCommitmentLastUpdated`](/specification/datasets/contract_commitment/columns/contractcommitmentlastupdated.md)
+  * [`ContractCommitmentLifecycleStatus`](/specification/datasets/contract_commitment/columns/contractcommitmentlifecyclestatus.md)
+  * [`ContractCommitmentModel`](/specification/datasets/contract_commitment/columns/contractcommitmentmodel.md)
+  * [`ContractCommitmentOfferCategory`](/specification/datasets/contract_commitment/columns/contractcommitmentoffercategory.md)
+  * [`ContractCommitmentPaymentInterval`](/specification/datasets/contract_commitment/columns/contractcommitmentpaymentinterval.md)
+  * [`ContractCommitmentPaymentModel`](/specification/datasets/contract_commitment/columns/contractcommitmentpaymentmodel.md)
+  * [`ContractCommitmentPaymentUpfrontPercentage`](/specification/datasets/contract_commitment/columns/contractcommitmentpaymentupfrontpercentage.md)
+  * [`InvoiceIssuerName`](/specification/datasets/contract_commitment/columns/invoiceissuername.md)
+  * [`PricingCurrency`](/specification/datasets/contract_commitment/columns/pricingcurrency.md)
+  * [`PricingCurrencyContractCommitmentCost`](/specification/datasets/contract_commitment/columns/pricingcurrencycontractcommitmentcost.md)
+  * [`ServiceProviderName`](/specification/datasets/contract_commitment/columns/serviceprovidername.md)
+* [`CostAndUsage`](/specification/datasets/cost_and_usage/dataset.md)
+  * [`CommitmentProgramEligibilityDetails`](/specification/datasets/cost_and_usage/columns/commitmentprogrameligibilitydetails.md)
+  * [`InvoiceDetailId`](/specification/datasets/cost_and_usage/columns/invoicedetailid.md)
+* [`InvoiceDetail`](/specification/datasets/invoice_detail/dataset.md)
+  * [`BilledCost`](/specification/datasets/invoice_detail/columns/billedcost.md)
+  * [`BillingAccountId`](/specification/datasets/invoice_detail/columns/billingaccountid.md)
+  * [`BillingCurrency`](/specification/datasets/invoice_detail/columns/billingcurrency.md)
+  * [`BillingPeriodEnd`](/specification/datasets/invoice_detail/columns/billingperiodend.md)
+  * [`BillingPeriodStart`](/specification/datasets/invoice_detail/columns/billingperiodstart.md)
+  * [`ChargeCategory`](/specification/datasets/invoice_detail/columns/chargecategory.md)
+  * [`InvoiceDetailCreated`](/specification/datasets/invoice_detail/columns/invoicedetailcreated.md)
+  * [`InvoiceDetailDescription`](/specification/datasets/invoice_detail/columns/invoicedetaildescription.md)
+  * [`InvoiceDetailGrain`](/specification/datasets/invoice_detail/columns/invoicedetailgrain.md)
+  * [`InvoiceDetailId`](/specification/datasets/invoice_detail/columns/invoicedetailid.md)
+  * [`InvoiceDetailLastUpdated`](/specification/datasets/invoice_detail/columns/invoicedetaillastupdated.md)
+  * [`InvoiceId`](/specification/datasets/invoice_detail/columns/invoiceid.md)
+  * [`InvoiceIssueDate`](/specification/datasets/invoice_detail/columns/invoiceissuedate.md)
+  * [`InvoiceIssueStatus`](/specification/datasets/invoice_detail/columns/invoiceissuestatus.md)
+  * [`InvoiceIssuerName`](/specification/datasets/invoice_detail/columns/invoiceissuername.md)
+  * [`PaymentCurrency`](/specification/datasets/invoice_detail/columns/paymentcurrency.md)
+  * [`PaymentCurrencyBilledCost`](/specification/datasets/invoice_detail/columns/paymentcurrencybilledcost.md)
+  * [`PaymentCurrencyInvoiceDetailId`](/specification/datasets/invoice_detail/columns/paymentcurrencyinvoicedetailid.md)
+  * [`PaymentDueDate`](/specification/datasets/invoice_detail/columns/paymentduedate.md)
+  * [`PaymentTerms`](/specification/datasets/invoice_detail/columns/paymentterms.md)
+  * [`PurchaseOrderNumber`](/specification/datasets/invoice_detail/columns/purchaseordernumber.md)
+  * [`ReferenceInvoiceId`](/specification/datasets/invoice_detail/columns/referenceinvoiceid.md)
+
+#### New attributes
+
+* [`CorrectionHandling`](/specification/attributes/correction_handling.md)
+* [`CustomColumnHandling`](/specification/attributes/custom_column_handling.md)
+* [`DatasetCompleteness`](/specification/attributes/dataset_completeness.md)
+* [`DatasetConfiguration`](/specification/attributes/dataset_configuration.md)
+* [`DeliveryHandling`](/specification/attributes/delivery_handling.md)
+* [`FocusColumnHandling`](/specification/attributes/focus_column_handling.md)
+
+#### New appendix entries
+
+* [Discount Handling](/specification/appendix/discount_handling.md)
+* [Examples: Commitment Program Eligibility Details](/specification/appendix/commitment_program_eligibility_details_examples.md)
+* [Examples: Contract Commitments](/specification/appendix/contract_commitments/contract_commitments.md)
+* [Examples: Correction Handling](/specification/appendix/correction_handling_examples/correction_handling_examples_overview.md)
+* [Examples: Invoice Detail](/specification/appendix/invoice_detail/invoice_detail.md)
+* [Examples: JSON Object](/specification/appendix/json_object_examples/json_object_examples_overview.md)
+* [Invoice and Billing Period Handling](/specification/appendix/invoice_and_billing_period_handling.md)
+* [Rounding Variance Tolerance](/specification/appendix/rounding_variance_tolerance.md)
+
+#### New guidelines
+
+* [AGENTS.md](/AGENTS.md)
+* [AI Usage Guidelines](/guidelines/contributors/ai-usage-guidelines.md)
+* [Dataset Mapping Documentation](/guidelines/data-generators/dataset-mapping-documentation.md)
+* [Decision Brief Guidelines](/guidelines/contributors/decision-brief-guidelines.md)
+* [Editorial Guidelines](/guidelines/contributors/editorial-guidelines.md)
+* [Normative Requirements Guidelines](/guidelines/contributors/normative-requirements-guidelines.md)
+* [Writing Requirements Model Guidelines](/guidelines/contributors/writing-requirements-model-guidelines.md)
+
+#### New glossary entries
+
+* [Glossary](/specification/glossary.md)
+  * `Accrual-Based Accounting`
+  * `Cash-Based Accounting`
+  * `Closed Billing Period`
+  * `Commitment Program`
+  * `Covered Charge`
+  * `Covering Charge`
+  * `Custom Column`
+  * `Delivery Scope`
+  * `FOCUS Column`
+  * `FOCUS Dataset Column`
+  * `Invoice`
+  * `Invoice Issuer`
+  * `Invoice Reconciliation`
+  * `Issued Invoice`
+  * `Native Dataset`
+  * `Open Billing Period`
+  * `Tag Scheme`
+
+#### New requirements model features
+
+* Added `applicability_criteria.json` and `check_functions.json` to define baseline validation functions.
+* Added `Schema` entity type (RMId format `-S-`) to allow reusable JSON Schema definitions across the requirements model. See [Writing Requirements Model Guidelines](/guidelines/contributors/writing-requirements-model-guidelines.md) for authoring details.
+
+### Changed
+
+#### Changed datasets
+
+* [`CostAndUsage`](/specification/datasets/cost_and_usage/dataset.md) and [`ContractCommitment`](/specification/datasets/contract_commitment/dataset.md): Column presence requirements relocated from individual column files to dataset-level requirements, now expressed in dataset-subject form (e.g., `CostAndUsage MUST include ColumnId when Condition`). Promotes the "Column Presence in Dataset" pattern from future-use to active, centralizing presence rules previously scattered across column files. The [Normative Requirements Guidelines](/guidelines/contributors/normative-requirements-guidelines.md) were updated to document the new pattern.
+
+#### Changed columns
+
+* [`CostAndUsage`](/specification/datasets/cost_and_usage/dataset.md)
+  * [`BilledCost`](/specification/datasets/cost_and_usage/columns/billedcost.md): Expanded requirements to clarify handling of pricing adjustments, *covered charges*, non-invoicing entities, and introduced a Rounding Variance Tolerance for invoice matching.
+  * [`ContractApplied`](/specification/datasets/cost_and_usage/columns/contractapplied.md): Revised format to follow new JSON Object Schema format.
+  * [`EffectiveCost`](/specification/datasets/cost_and_usage/columns/effectivecost.md): Heavily revised requirements to detail its exact relationship with `BilledCost` across various charge categories, including strict rules for amortizing *covering charges* and cross-record sum validations.
+  * [`InvoiceId`](/specification/datasets/cost_and_usage/columns/invoiceid.md): Changed Feature level from Recommended to Conditional.
+  * [`PricingCurrencyEffectiveCost`](/specification/datasets/cost_and_usage/columns/pricingcurrencyeffectivecost.md): Description expanded to position it as the `PricingCurrency`-denominated equivalent of `EffectiveCost`. Added a requirement that values MUST equal the `PricingCurrency`-denominated equivalent of `EffectiveCost`.
+
+#### Changed attributes
+
+* [`CurrencyFormat`](/specification/attributes/currency_format.md): Requirements simplified to mandate ISO 4217:2015 three-letter codes for all currency values. Removed the prior allowance for virtual currency values to use `StringHandling` rules.
+* [`JsonObjectFormat`](/specification/attributes/json_object_format.md): Removed the requirement for data generators to document JSON object schemas for custom columns. Retained other requirements.
+* [`NullHandling`](/specification/attributes/null_handling.md): Clarified that empty-string and placeholder-value prohibitions apply to absent-value scenarios, and split into separate rules for string and numeric columns.
+* [`NumericFormat`](/specification/attributes/numeric_format.md): Added normative tables specifying allowed Data Types and Allowed Precisions, replacing the v1.3 pattern that delegated precision to data generator documentation.
+* [`StringHandling`](/specification/attributes/string_handling.md): Restructured rules for mutable versus immutable string values into an explicit set, and added new guidance on handling corrections to previously closed billing periods.
+* [`UnitFormat`](/specification/attributes/unit_format.md): Significantly expanded with normative rules for base units (data size, time-based, count-based), compound units, ratio units, and unit quantities. New definitions section clarifies terminology.
+* All attributes additionally refactored to a consistent structural format shared with datasets, columns, and other entities.
+
+#### Changed guidelines
+
+* Deprecated the normative keyword "RECOMMENDED" in favor of "SHOULD" to align with [BCP-14](https://www.rfc-editor.org/info/bcp14), which treats the two as synonyms. Improves terminology consistency without changing the conformance strength of existing requirements.
+
+#### Changed glossary entries
+
+* [Glossary](/specification/glossary.md)
+  * `Allocated Charge`: Revised definition.
+  * `Allocated Method`: Revised definition.
+  * `Commitment Discount`: Revised definition.
+  * `Contracted Unit Price`: Revised definition.
+  * `Correction`: Revised definition.
+  * `Dataset Instance`: Revised definition.
+  * `Dataset Instance Artifact`: Revised definition.
+  * `List Unit Price`: Revised definition.
+  * `Negotiated Discount`: Revised definition.
+  * `Origin Charge`: Revised definition.
+  * `Service`: Revised definition.
+  * `Term`: Updated definition to apply to agreements specified on a contract *or* invoice.
 
 ### Removed
 
-* ProviderName column (deprecated in v1.3)
-* PublisherName column (deprecated in v1.3)
+* `ProviderName` column (deprecated in v1.3, removed in v1.4)
+* `PublisherName` column (deprecated in v1.3, removed in v1.4)
+* `ColumnHandling` attribute (requirements shifted to `FocusColumnHandling` and `CustomColumnHandling`)
+* `DiscountHandling` attribute (content moved to the [Discount Handling](/specification/appendix/discount_handling.md) appendix entry)
+* `InvoiceHandling` attribute (requirements shifted to `DeliveryHandling` and `DatasetCompleteness`)
+* `Billed Cost` glossary entry
+* `Effective Cost` glossary entry
 
 ## v1.3
 

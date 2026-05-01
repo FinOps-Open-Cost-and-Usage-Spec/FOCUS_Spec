@@ -8,7 +8,7 @@ The specification for the Cost and Usage dataset defines a group of columns that
 
 | Column                                                                        | Column Type        | Feature Level | Allows Nulls | Data Type |
 | ----------------------------------------------------------------------------- | ------------------ | ------------- | ------------ | --------- |
-| [Allocated Method Details](#datasets.costandusage.allocatedmethoddetails)                           | Dimension          | Recommended   | True         | JSON      |
+| [Allocated Method Details](#datasets.costandusage.allocatedmethoddetails)                           | Dimension / Metric | Recommended   | True         | JSON      |
 | [Allocated Method ID](#datasets.costandusage.allocatedmethodid)                                     | Dimension          | Conditional   | True         | String    |
 | [Allocated Resource ID](#datasets.costandusage.allocatedresourceid)                                 | Dimension          | Conditional   | True         | String    |
 | [Allocated Resource Name](#datasets.costandusage.allocatedresourcename)                             | Dimension          | Conditional   | True         | String    |
@@ -159,7 +159,7 @@ CostAndUsage MUST adhere to the following requirements:
   * CostAndUsage SHOULD include [ServiceSubcategory](#datasets.costandusage.servicesubcategory).
   * CostAndUsage MUST include [SkuId](#datasets.costandusage.skuid) when the service provider supports unit pricing concepts and publishes price lists, publicly or as part of contracting.
   * CostAndUsage MUST include [SkuMeter](#datasets.costandusage.skumeter) when the service provider supports unit pricing concepts and publishes [*price lists*](#glossary:price-list), publicly or as part of contracting.
-  * CostAndUsage MUST include [SkuPriceDetails](#datasets.costandusage.skupricedetails) when the service provider supports unit pricing concepts and publishes [*price lists*](#glossary:price-list), publicly or as part of contracting.
+  * CostAndUsage MUST include [SkuPriceDetails](#datasets.costandusage.skupricedetails) when the service provider supports unit pricing concepts and publishes *price lists*, publicly or as part of contracting.
   * CostAndUsage MUST include [SkuPriceId](#datasets.costandusage.skupriceid) when the service provider supports unit pricing concepts and publishes *price lists*, publicly or as part of contracting.
   * CostAndUsage MUST include [SubAccountId](#datasets.costandusage.subaccountid) when the service provider supports a *sub account* construct.
   * CostAndUsage MUST include [SubAccountName](#datasets.costandusage.subaccountname) when the service provider supports a *sub account* construct.
@@ -197,6 +197,6 @@ Cost and Usage
 
 Describes the cost and usage incurred through using or purchasing a service provider's [*resources*](#glossary:resource) or [*services*](#glossary:service).
 
-## Introduced (version)<!--SkipTOC-->
+## Version Introduced<!--SkipTOC-->
 
 0.5
