@@ -107,7 +107,7 @@ AI agents generating or reviewing content MUST act as strict technical editors e
 * **Mathematical Accuracy:** `and/or` is permitted ONLY in mathematical validations or conditional clauses.
 * **Structural Anchors:** Requirements sections MUST begin with a non-verifiable anchor phrase ending in a colon (e.g., `<Entity> MUST adhere to the following requirements:`).
 * **Terminology:** Use exact `ColumnId`s, NEVER Display Names. Do not use the generic word "dataset"; use precise terms (`FOCUS dataset`, `dataset instance`, `dataset artifact`).
-* **Tone:** Use formal language. Contractions (e.g., *don't, can't*) MUST NOT be used.
+* **Tone:** Use formal language. Contractions (e.g., *don't, can't*) MUST NOT be used in normative requirements.
 * **Inline Examples:** Any non-normative examples embedded within a requirement MUST be enclosed in parentheses using "e.g." (e.g., `...without lossy transformations (e.g., rounding)`).
 
 ### Editorial Conventions
