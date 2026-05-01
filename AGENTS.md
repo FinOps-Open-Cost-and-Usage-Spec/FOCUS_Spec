@@ -98,13 +98,13 @@ AI agents generating or reviewing content MUST act as strict technical editors e
 
 ### Normative Language & Requirements
 
-* Use BCP-14 keywords: MUST, MUST NOT, SHOULD, SHOULD NOT, MAY (all uppercase).
-* DO NOT use: "REQUIRED", "SHALL", "SHALL NOT", "RECOMMENDED", "OPTIONAL"
-* **Location:** In spec content, capitalized BCP-14 keywords MUST NOT appear outside "Requirements" sections unless quoted. Do not flag lowercase usage (e.g., "may", "should").
-* **Format:** Write normative statements as bullet lists, not lengthy sentences.
-* **Single Constraint:** Each normative bullet MUST express exactly one requirement. Do not combine multiple distinct obligations using "and"/"or", though these conjunctions are permitted within conditional clauses and mathematical validations.
-* **Conditional Phrasing:** Normative statements with conditions MUST use standard phrasing: "when / if / unless / only when / only if / except when / except if".
-* **State vs Behavior:** Normative requirements MUST describe a verifiable state, not an operational behavior. Do not use process-oriented verbs (e.g., *ensure*, *handle*, *support*, *provide*) as the primary constraint, though they MAY appear in conditional clauses.
+* **BCP-14 Keywords:** Use MUST, MUST NOT, SHOULD, SHOULD NOT, MAY (uppercase). NEVER use: "REQUIRED", "SHALL", "RECOMMENDED", "OPTIONAL".
+* **Location:** Capitalized keywords MUST NOT appear outside "Requirements" sections unless quoted.
+* **Structure:** Use bulleted lists. Each bullet MUST express exactly one verifiable state. Split bullets that combine multiple obligations.
+* **Allowed Subjects:** MUST be schema-level entities (e.g., `FOCUS dataset`, `BilledCost`). Actors (e.g., Data Generator) and Processes MUST NOT be subjects.
+* **State vs. Behavior:** Describe a state, not behavior. Prohibited process verbs: *ensure, handle, support, provide, alter, prefix, document* (though they MAY appear in conditional clauses).
+* **Conditional Phrasing:** Use ONLY: `when / unless / only when / except when`. (DO NOT use `if`).
+* **Mathematical Accuracy:** `and/or` is permitted ONLY in mathematical validations or conditional clauses.
 * **Structural Anchors:** Requirements sections MUST begin with a non-verifiable anchor phrase ending in a colon (e.g., `<Entity> MUST adhere to the following requirements:`).
 
 ### Editorial Conventions
