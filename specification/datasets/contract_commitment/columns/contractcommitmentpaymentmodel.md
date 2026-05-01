@@ -24,7 +24,7 @@ ContractCommitmentPaymentModel MUST adhere to the following requirements:
 | Partial Upfront | 20         | The obligation is settled through a combination of an initial payment and deferred payment(s) (typically multiple recurring charges). | Hybrid RIs or EAs with a "Year 1" deposit plus installments. |
 | All Upfront     | 30         | The total obligation is settled via a single payment at the start of the duration. | High-discount RIs or multi-year contracts paid in full Day 1. |
 
-## Implementation Context
+## Implementation Guidance
 
 * Settled via Upfront: Refer to the [contract commitment period start](#datasets.contractcommitment.contractcommitmentperiodstart) for the cash event.
 * Settled via Recurring Charges: Refer to the [contract commitment payment interval](#datasets.contractcommitment.contractcommitmentpaymentinterval) to understand the frequency of those subsequent cash events.
@@ -39,7 +39,7 @@ Contract Commitment Payment Model
 
 ## Description
 
-Defines the financial settlement structure of a [*contract commitment*](#glossary:contract-commitment).
+Defines the financial settlement structure of a *contract commitment*.
 
 ## Content Constraints
 
@@ -52,6 +52,6 @@ Defines the financial settlement structure of a [*contract commitment*](#glossar
 | Data type       | String         |
 | Value format    | Allowed values |
 
-## Introduced (version)
+## Version Introduced
 
 1.4

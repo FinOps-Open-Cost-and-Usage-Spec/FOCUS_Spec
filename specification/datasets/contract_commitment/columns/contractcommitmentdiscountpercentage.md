@@ -17,7 +17,7 @@ ContractCommitmentDiscountPercentage MUST adhere to the following requirements:
   * ContractCommitmentDiscountPercentage MUST correspond to only one pricing tier per Contract Commitment row.
 * ContractCommitmentDiscountPercentage SHOULD represent the net effective discount when multiple contractual layers are applicable (e.g., a negotiated discount on top of a standard commitment).
 
-## Implementation Context
+## Implementation Guidance
 
 ### Calculating the Effective Percentage
 
@@ -54,20 +54,20 @@ Contract Commitment Discount Percentage
 
 ## Description
 
-The effective percentage reduction applied to the list price of resources or services covered by a [*contract commitment*](#glossary:contract-commitment).
+The effective percentage reduction applied to the list price of resources or services covered by a *contract commitment*.
 
 ## Content Constraints
 
 | Constraint      | Value          |
 | :-------------- | :------------- |
 | Dataset         | [Contract Commitment](#datasets.contractcommitment)  |
-| Column type     | Dimension      |
+| Column type     | Metric         |
 | Feature level   | Mandatory      |
 | Allows nulls    | True           |
 | Data type       | Decimal        |
 | Value format    | [Numeric Format](#attributes.numericformat) |
 | Number range    | 0.0 to 1.0 (inclusive)     |
 
-## Introduced (version)
+## Version Introduced
 
 1.4

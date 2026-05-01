@@ -27,12 +27,13 @@ The date by which the payment for an invoice is expected to be received by the i
 
 |    Constraint    |              Value             |
 |:----------------|:--------------------------------|
+| Dataset         | [Invoice Detail](#datasets.invoicedetail)             |
 | Column type     | Dimension                       |
 | Feature level   | Mandatory                       |
 | Allows nulls    | True                            |
 | Data type       | Date/Time                       |
 | Value format    | [Date/Time Format](#attributes.date/timeformat) |
 
-## Introduced (version)
+## Version Introduced
 
 1.4

@@ -9,8 +9,8 @@ PaymentCurrencyInvoiceDetailId MUST adhere to the following requirements:
 * PaymentCurrencyInvoiceDetailId MUST be of type String.
 * PaymentCurrencyInvoiceDetailId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * PaymentCurrencyInvoiceDetailId MUST NOT be null.
-* PaymentCurrencyInvoiceDetailId MUST match the [InvoiceDetailId](#datasets.invoicedetail.invoicedetailid) of the record representing the [PaymentCurrencyBilledCost](#datasets.invoicedetail.paymentcurrencybilledcost) aggregation for the current row.
-* PaymentCurrencyInvoiceDetailId MUST match [InvoiceDetailId](#datasets.invoicedetail.invoicedetailid) of the current record when [PaymentCurrencyBilledCost](#datasets.invoicedetail.paymentcurrencybilledcost) is non-zero.
+* PaymentCurrencyInvoiceDetailId MUST match the InvoiceDetailId of the record representing the PaymentCurrencyBilledCost aggregation for the current row.
+* PaymentCurrencyInvoiceDetailId MUST match InvoiceDetailId of the current record when PaymentCurrencyBilledCost is non-zero.
 
 ## Column ID
 
@@ -22,18 +22,19 @@ Payment Currency Invoice Detail ID
 
 ## Description
 
-The identifier linking a granular record to the specific [Invoice Detail](#datasets.invoicedetail) record where its [Payment Currency Billed Cost](#datasets.invoicedetail.paymentcurrencybilledcost) is represented or aggregated.
+The identifier linking a granular record to the specific [Invoice Detail](#datasets.invoicedetail) record where its Payment Currency Billed Cost is represented or aggregated.
 
 ## Content Constraints
 
-|    Constraint    |              Value             |
+|    Constraint   |              Value              |
 |:----------------|:--------------------------------|
+| Dataset         | [Invoice Detail](#datasets.invoicedetail)             |
 | Column type     | Dimension                       |
 | Feature level   | Conditional                     |
 | Allows nulls    | False                           |
 | Data type       | String                          |
-| Value format    | \<unspecified>                  |
+| Value format    | \<not specified>                |
 
-## Introduced (version)
+## Version Introduced
 
 1.4

@@ -25,6 +25,6 @@ Numeric Precision
 | Data type     | Integer                          |
 | Value format  | [Numeric Format](#attributes.numericformat) |
 
-## Introduced (version)
+## Version Introduced
 
 1.0

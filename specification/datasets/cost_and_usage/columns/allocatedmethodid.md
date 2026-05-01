@@ -36,6 +36,6 @@ A unique identifier defining the method of data generator-calculated split cost 
 | Data type       | String                                               |
 | Value format    | \<not specified>                                     |
 
-## Introduced (version)
+## Version Introduced
 
 1.3

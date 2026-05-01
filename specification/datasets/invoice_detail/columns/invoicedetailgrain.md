@@ -8,7 +8,8 @@ This gives FinOps practitioners a single point of reference for all possible [In
 
 InvoiceDetailGrain MUST adhere to the following requirements:
 
-* InvoiceDetailGrain MUST be of type JSON.
+* InvoiceDetailGrain MUST be of type JSON Object (serialized as a String where necessary).
+* InvoiceDetailGrain MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * InvoiceDetailGrain MUST conform to [KeyValueFormat](#attributes.key-valueformat) requirements.
 * InvoiceDetailGrain MUST NOT be null when one or more properties uniquely define the granularity of the invoice line item.
 * InvoiceDetailGrain MUST contain the set of all properties that uniquely define the granularity of the invoice line item.
@@ -19,6 +20,20 @@ InvoiceDetailGrain MUST adhere to the following requirements:
 * FOCUS-defined InvoiceDetailGrain properties MUST adhere to the following requirements:
   * Property key MUST match the spelling and casing specified for the FOCUS-defined property.
   * Property value MUST be of the type specified for that property.
+
+## FOCUS-Defined Properties
+
+The following keys should be used when applicable when a relevant concept is represented on an invoice. For more information, see the relevant [Cost and Usage](#datasets.costandusage) column entry.
+
+* Contract ID (element of [ContractApplied](#datasets.costandusage.contractapplied))
+* [Region ID](#datasets.costandusage.regionid)
+* [Resource ID](#datasets.costandusage.resourceid)
+* [Resource Type](#datasets.costandusage.resourcetype)
+* [Service Name](#datasets.costandusage.servicename)
+* [SKU ID](#datasets.costandusage.skuid)
+* [SKU Meter](#datasets.costandusage.skumeter)
+* [SKU Price ID](#datasets.costandusage.skupriceid)
+* [Sub Account ID](#datasets.costandusage.subaccountid)
 
 ## Examples
 
@@ -46,26 +61,13 @@ The set of key-value pairs that defines the granularity of the invoice line item
 
 |    Constraint    |              Value             |
 |:----------------|:--------------------------------|
+| Dataset         | [Invoice Detail](#datasets.invoicedetail)             |
 | Column type     | Dimension                       |
 | Feature level   | Mandatory                       |
 | Allows nulls    | True                            |
 | Data type       | JSON                            |
 | Value format    | [Key-Value Format](#attributes.key-valueformat) |
 
-### FOCUS-Defined Properties
-
-The following keys should be used when applicable when a relevant concept is represented on an invoice. For more information, see the relevant [Cost and Usage](#datasets.costandusage) column entry.
-
-* Contract ID (element of [ContractApplied](#datasets.costandusage.contractapplied))
-* [Region ID](#datasets.costandusage.regionid)
-* [Resource ID](#datasets.costandusage.resourceid)
-* [Resource Type](#datasets.costandusage.resourcetype)
-* [Service Name](#datasets.costandusage.servicename)
-* [SKU ID](#datasets.costandusage.skuid)
-* [SKU Meter](#datasets.costandusage.skumeter)
-* [SKU Price ID](#datasets.costandusage.skupriceid)
-* [Sub Account ID](#datasets.costandusage.subaccountid)
-
-## Introduced (version)
+## Version Introduced
 
 1.4

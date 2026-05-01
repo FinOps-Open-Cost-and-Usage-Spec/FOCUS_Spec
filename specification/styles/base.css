@@ -120,6 +120,7 @@ ul.toc.tocdepth2 li.toc.item a {
   color: #111;
   line-height: 125%;
   margin-top: 2em;
+  margin-bottom: 1em;
 }
 
 .h3-nonindex {
@@ -128,6 +129,7 @@ ul.toc.tocdepth2 li.toc.item a {
   color: #111;
   line-height: 125%;
   margin-top: 2em;
+  margin-bottom: 1em;
 }
 
 .h4-nonindex {
@@ -136,6 +138,7 @@ ul.toc.tocdepth2 li.toc.item a {
   color: #111;
   line-height: 125%;
   margin-top: 2em;
+  margin-bottom: 1em;
 }
 
 .h5-nonindex {
@@ -144,6 +147,7 @@ ul.toc.tocdepth2 li.toc.item a {
   color: #111;
   line-height: 125%;
   margin-top: 2em;
+  margin-bottom: 1em;
 }
 
 .h6-nonindex {
@@ -152,6 +156,16 @@ ul.toc.tocdepth2 li.toc.item a {
   color: #111;
   line-height: 125%;
   margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+.h7-nonindex {
+  font-size: 1em;
+  font-weight: bold;
+  color: #111;
+  line-height: 125%;
+  margin-top: 2em;
+  margin-bottom: 1em;
 }
 
 /* Code styling with explicit font family for cross-platform consistency */

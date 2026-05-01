@@ -25,7 +25,7 @@ For example, if a customer buys a 1-year, spend-based *commitment discount* with
 
 ### Usage
 
-Commitment discounts follow a "use-it-or-lose-it" model where the [*amortization*](#glossary:amortization) of a *commitment discount's* purchase applies evenly to eligible *resources* over each [*charge period*](#glossary:charge-period) of the *period*.
+Commitment discounts follow a "use-it-or-lose-it" model where the [*amortization*](#glossary:amortization) of a *commitment discount's* purchase applies evenly to eligible *resources* over each [*charge period*](#glossary:chargeperiod) of the *period*.
 
 For example, if a customer buys a spend-based *commitment discount* with a $1.00 hourly commit in January (31 days), only $1.00 is eligible for consumption for each hourly *charge period*. If a customer has eligible *resources* running during this *charge period*, an amount of up to $1.00 will be allocated to these *resources*. Conversely, if a customer does not have eligible *resources* running that fully take advantage of this $1.00 during this *charge period*, then some or all of this amount will go to waste.
 
@@ -37,27 +37,27 @@ Below are tables listing some common commitment discount scenarios for a few pro
 
 | Scenario | What You'll Learn |
 | --- | --- |
-| [Resource Reservation - All Upfront](#appendix.commitmentdiscountexamples.aurawebresourcereservation-allupfront-100%utilization) | How a single large upfront purchase amortizes across usage rows. BilledCost=0 on usage rows; EffectiveCost carries the amortized value. Usage-based commitment (`CommitmentDiscountCategory=Usage`). |
-| [Resource Reservation - Partial Upfront](#appendix.commitmentdiscountexamples.aurawebresourcereservation-partialupfront-100%utilization) | How partial upfront splits into two purchase rows: one `One-Time` and one `Recurring`. Demonstrates the hybrid payment model for Resource Reservations (RRs). |
-| [Flexible Spend Plan - All Upfront](#appendix.commitmentdiscountexamples.aurawebflexiblespendplan-allupfront-100%utilization) | How Flexible Spend Plans (FSPs) differ from RRs: `CommitmentDiscountCategory=Spend` (dollar-based) instead of `Usage` (instance-based). Quantities measured in USD, not instance hours. |
-| [Flexible Spend Plan - Partial Upfront](#appendix.commitmentdiscountexamples.aurawebflexiblespendplan-partialupfront-100%utilization) | The partial upfront pattern applied to FSPs. Two purchase rows (one-time + recurring) mirror the RR partial model but with spend-based commitment fields. |
-| [Flexible Spend Plan - No Upfront](#appendix.commitmentdiscountexamples.aurawebflexiblespendplan-noupfront-100%utilization) | The no-upfront model: only a `Recurring` purchase row, no initial capital outlay. Compare the higher effective rate against all-upfront and partial-upfront variants. |
-| [Flexible Spend Plan - 100% Utilization with Overage](#appendix.commitmentdiscountexamples.aurawebflexiblespendplan-allupfront-100%utilizationwithoverage) | What happens when demand exceeds commitment capacity. Committed hours apply the effective unit price; overage hours spill to standard pricing at full list price (`PricingCategory=Standard`). |
-| [Flexible Spend Plan - 75% Utilization](#appendix.commitmentdiscountexamples.aurawebflexiblespendplan-allupfront-75%utilization) | Moderate underutilization: 18 hours `Used`, 6 hours `Unused`. Unused rows carry EffectiveCost with null resource fields, representing wasted spend. |
-| [Flexible Spend Plan - 50% Utilization](#appendix.commitmentdiscountexamples.aurawebflexiblespendplan-allupfront-50%utilization) | Significant underutilization: 12 hours `Used`, 12 hours `Unused`. Half the commitment value is wasted - key pattern for identifying commitment right-sizing opportunities. |
-| [Flexible Spend Plan - 0% Utilization](#appendix.commitmentdiscountexamples.aurawebflexiblespendplan-allupfront-0%utilization) | Worst case: commitment purchased but never applied. All 24 hours show `Unused` status. EffectiveCost accrues entirely as waste. |
+| [Resource Reservation - All Upfront](#appendix.examples:commitmentdiscounts.aurawebresourcereservation-allupfront-100%utilization) | How a single large upfront purchase amortizes across usage rows. BilledCost=0 on usage rows; EffectiveCost carries the amortized value. Usage-based commitment (`CommitmentDiscountCategory=Usage`). |
+| [Resource Reservation - Partial Upfront](#appendix.examples:commitmentdiscounts.aurawebresourcereservation-partialupfront-100%utilization) | How partial upfront splits into two purchase rows: one `One-Time` and one `Recurring`. Demonstrates the hybrid payment model for Resource Reservations (RRs). |
+| [Flexible Spend Plan - All Upfront](#appendix.examples:commitmentdiscounts.aurawebflexiblespendplan-allupfront-100%utilization) | How Flexible Spend Plans (FSPs) differ from RRs: `CommitmentDiscountCategory=Spend` (dollar-based) instead of `Usage` (instance-based). Quantities measured in USD, not instance hours. |
+| [Flexible Spend Plan - Partial Upfront](#appendix.examples:commitmentdiscounts.aurawebflexiblespendplan-partialupfront-100%utilization) | The partial upfront pattern applied to FSPs. Two purchase rows (one-time + recurring) mirror the RR partial model but with spend-based commitment fields. |
+| [Flexible Spend Plan - No Upfront](#appendix.examples:commitmentdiscounts.aurawebflexiblespendplan-noupfront-100%utilization) | The no-upfront model: only a `Recurring` purchase row, no initial capital outlay. Compare the higher effective rate against all-upfront and partial-upfront variants. |
+| [Flexible Spend Plan - 100% Utilization with Overage](#appendix.examples:commitmentdiscounts.aurawebflexiblespendplan-allupfront-100%utilizationwithoverage) | What happens when demand exceeds commitment capacity. Committed hours apply the effective unit price; overage hours spill to standard pricing at full list price (`PricingCategory=Standard`). |
+| [Flexible Spend Plan - 75% Utilization](#appendix.examples:commitmentdiscounts.aurawebflexiblespendplan-allupfront-75%utilization) | Moderate underutilization: 18 hours `Used`, 6 hours `Unused`. Unused rows carry EffectiveCost with null resource fields, representing wasted spend. |
+| [Flexible Spend Plan - 50% Utilization](#appendix.examples:commitmentdiscounts.aurawebflexiblespendplan-allupfront-50%utilization) | Significant underutilization: 12 hours `Used`, 12 hours `Unused`. Half the commitment value is wasted - key pattern for identifying commitment right-sizing opportunities. |
+| [Flexible Spend Plan - 0% Utilization](#appendix.examples:commitmentdiscounts.aurawebflexiblespendplan-allupfront-0%utilization) | Worst case: commitment purchased but never applied. All 24 hours show `Unused` status. EffectiveCost accrues entirely as waste. |
 
 ### Data Generator Scenarios: CrestNode
 
 | Scenario | What You'll Learn |
 | --- | --- |
-| [Resource Reservation - All Upfront](#appendix.commitmentdiscountexamples.crestnoderesourcereservation-allupfront-100%utilization) | CrestNode's usage-based reservation model in FOCUS format. Compare structure and rates against Aura Web Resource Reservations. |
-| [Resource Reservation - No Upfront](#appendix.commitmentdiscountexamples.crestnoderesourcereservation-noupfront-100%utilization) | CrestNode no-upfront reservations with monthly recurring payments only. Note the higher effective rate vs all-upfront, reflecting the deferred-payment premium. |
-| [Flexible Spend Plan - All Upfront](#appendix.commitmentdiscountexamples.crestnodeflexiblespendplan-allupfront-100%utilization) | CrestNode's spend-based Flexible Spend Plan (`CommitmentDiscountCategory=Spend`). Compare against CrestNode Resource Reservations and Aura Web Flexible Spend Plans. |
+| [Resource Reservation - All Upfront](#appendix.examples:commitmentdiscounts.crestnoderesourcereservation-allupfront-100%utilization) | CrestNode's usage-based reservation model in FOCUS format. Compare structure and rates against Aura Web Resource Reservations. |
+| [Resource Reservation - No Upfront](#appendix.examples:commitmentdiscounts.crestnoderesourcereservation-noupfront-100%utilization) | CrestNode no-upfront reservations with monthly recurring payments only. Note the higher effective rate vs all-upfront, reflecting the deferred-payment premium. |
+| [Flexible Spend Plan - All Upfront](#appendix.examples:commitmentdiscounts.crestnodeflexiblespendplan-allupfront-100%utilization) | CrestNode's spend-based Flexible Spend Plan (`CommitmentDiscountCategory=Spend`). Compare against CrestNode Resource Reservations and Aura Web Flexible Spend Plans. |
 
 ### Data Generator Scenarios: LatticeScale
 
 | Scenario | What You'll Learn |
 | --- | --- |
-| [Resource Reservation - No Upfront](#appendix.commitmentdiscountexamples.latticescaleresourcereservation-noupfront-100%utilization) | LatticeScale's usage-based commitment: `CommitmentDiscountCategory=Usage`, quantities in `Hours`. Monthly billing only (no upfront option). Deepest discount. |
-| [Dynamic Compute Commitment - No Upfront](#appendix.commitmentdiscountexamples.latticescaledynamiccomputecommitment-noupfront-100%utilization) | LatticeScale's spend-based commitment: `CommitmentDiscountCategory=Spend`, quantities in `USD`. Monthly recurring billing, no upfront payment. Compare against Aura Web and CrestNode. |
+| [Resource Reservation - No Upfront](#appendix.examples:commitmentdiscounts.latticescaleresourcereservation-noupfront-100%utilization) | LatticeScale's usage-based commitment: `CommitmentDiscountCategory=Usage`, quantities in `Hours`. Monthly billing only (no upfront option). Deepest discount. |
+| [Dynamic Compute Commitment - No Upfront](#appendix.examples:commitmentdiscounts.latticescaledynamiccomputecommitment-noupfront-100%utilization) | LatticeScale's spend-based commitment: `CommitmentDiscountCategory=Spend`, quantities in `USD`. Monthly recurring billing, no upfront payment. Compare against Aura Web and CrestNode. |

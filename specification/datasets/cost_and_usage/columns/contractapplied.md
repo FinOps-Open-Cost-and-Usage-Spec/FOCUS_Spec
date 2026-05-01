@@ -24,7 +24,7 @@ The following section details the normative requirements for the ContractApplied
 
 ContractAppliedObject MUST adhere to the following requirements:
 
-* ContractAppliedObject MUST conform to the [ContractAppliedObjectSchema](#schemas.datasets.costandusage.contractappliedobjectschema) JSON Schema.
+* ContractAppliedObject MUST conform to the [ContractAppliedObjectSchema](#schemas.costandusage.contractappliedobjectschema) JSON Schema.
 * ContractAppliedObject.Elements[\*].ContractId MUST be a unique identifier within the service provider.
 * ContractAppliedObject.Elements[\*].ContractId SHOULD be a fully-qualified identifier.
 * ContractAppliedObject.Elements[\*].ContractCommitmentId MUST be a unique identifier within the service provider.
@@ -37,17 +37,17 @@ ContractAppliedObject MUST adhere to the following requirements:
 * ContractAppliedObject.Elements[\*].ContractCommitmentAppliedQuantity MUST be denominated in the ContractAppliedObject.Elements[\*].ContractCommitmentAppliedUnit.
 * ContractAppliedObject.Elements[\*].ContractCommitmentAppliedUnit SHOULD conform to [UnitFormat](#attributes.unitformat) requirements.
 
-## Schema Structure
+### Object Schema Structure
 
 ContractApplied contains a structured JSON object defining the allocation and application of a *charge* against specific contract commitments.
 
-### Top-Level Properties
+<div class="h7-nonindex">Top-Level Properties</div>
 
 | Property | Type | Required | Description |
 | :--- | :--- | :--- | :--- |
 | `Elements` | Array | True | The parent array containing one or more objects which communicate information about how contract commitments were applied to the *charge*. |
 
-### Elements Object
+<div class="h7-nonindex">Elements Object</div>
 
 The `Elements` array contains one or more objects, each of which contains the following entries:
 
@@ -59,12 +59,18 @@ The `Elements` array contains one or more objects, each of which contains the fo
 | `ContractCommitmentAppliedQuantity` | Decimal | Conditional | The quantity of the *charge* applied to the contract line item. It is associated with the contract line item via Contract Commitment ID, and is commonly used for monitoring the progress towards fulfilling contractual commitments that may facilitate discounts for [*resources*](#glossary:resource) or [*services*](#glossary:service) as agreed between a service provider and a customer. <br><br>**Condition:** Must be present if Cost is not provided. |
 | `ContractCommitmentAppliedUnit` | String | Conditional | A service-provider-specified measurement unit for the usage declared in Contract Commitment Applied Quantity. It complements the Contract Commitment Applied Quantity metric. <br><br>**Condition:** Must be present if Contract Commitment Applied Quantity is provided. |
 
-## Object Example
+### Object Implementation Guidance
+
+<div class="h7-nonindex">Custom Properties</div>
+
+To facilitate querying data across allocations and across service providers, a data generator may include one or more custom properties. These may be placed at the top level of the object (alongside `Elements`) or nested within the individual `Elements` objects. Custom keys must be prefixed with "x_" followed by PascalCase format (e.g., `x_MyCustomKey`) to make them easy to identify as well as prevent collisions with FOCUS-defined keys.
+
+### Object Example
 
 Here is a basic example of the object format.
 
 * For more detailed examples, please see this column's entry in the JSON Object Examples appendix entry [here](#appendix.examples:jsonobject.examples:contractapplied).
-* For the JSON schema, please see [Contract Applied Object Schema](#schemas.datasets.costandusage.contractappliedobjectschema).
+* For the JSON schema, please see [Contract Applied Object Schema](#schemas.costandusage.contractappliedobjectschema).
 
 ```json
 {
@@ -84,12 +90,6 @@ Here is a basic example of the object format.
 }
 ```
 
-## Implementation Guidance
-
-### Custom Properties
-
-To facilitate querying data across allocations and across service providers, a data generator may include one or more custom properties. These may be placed at the top level of the object (alongside `Elements`) or nested within the individual `Elements` objects. Custom keys must be prefixed with "x_" followed by PascalCase format (e.g., `x_MyCustomKey`) to make them easy to identify as well as prevent collisions with FOCUS-defined keys.
-
 ### Object ID
 
 ContractAppliedObject
@@ -108,20 +108,20 @@ Contract Applied
 
 ## Description
 
-A set of properties that associate a *charge* with one or more [*contract commitments*](#glossary:contract-commitment).
+A set of properties that associate a *charge* with one or more *contract commitments*.
 
 ## Content Constraints
 
 | Constraint | Value |
 | :--- | :--- |
 | Dataset | [Cost and Usage](#datasets.costandusage) |
-| Column type | Dimension and Metric |
+| Column type | Dimension / Metric |
 | Feature level | Conditional |
 | Allows nulls | True |
 | Data type | JSON |
 | Value format | [JSON Object Format](#attributes.jsonobjectformat) |
 | Object | [ContractAppliedObject](#datasets.costandusage.contractapplied.contractappliedobject) |
 
-## Introduced (version)
+## Version Introduced
 
 1.3

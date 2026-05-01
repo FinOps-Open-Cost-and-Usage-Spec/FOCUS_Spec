@@ -29,12 +29,13 @@ The name of the entity responsible for invoicing for the *resources* or *service
 
 | Constraint      | Value           |
 |:----------------|:----------------|
+| Dataset         | [Billing Period](#datasets.billingperiod)             |
 | Column type     | Dimension       |
 | Feature level   | Mandatory       |
 | Allows nulls    | False           |
 | Data type       | String          |
 | Value format    | \<not specified> |
 
-## Introduced (version)
+## Version Introduced
 
 1.4

@@ -33,7 +33,7 @@ Contract Commitment Lifecycle Status
 
 ## Description
 
-The current lifecycle state of a [*contract commitment*](#glossary:contract-commitment).
+The current lifecycle state of a *contract commitment*.
 
 ## Content Constraints
 
@@ -46,6 +46,6 @@ The current lifecycle state of a [*contract commitment*](#glossary:contract-comm
 | Data type       | String         |
 | Value format    | Allowed values |
 
-## Introduced (version)
+## Version Introduced
 
 1.4

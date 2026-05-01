@@ -27,6 +27,6 @@ Dataset Instance ID
 | Data type     | String             |
 | Value format  | GUID (recommended) |
 
-## Introduced (version)
+## Version Introduced
 
 1.3

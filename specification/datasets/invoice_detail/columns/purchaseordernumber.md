@@ -25,14 +25,15 @@ The unique customer-issued identifier for tracking the lifecycle of a purchase.
 
 ## Content Constraints
 
-|    Constraint    |              Value             |
+|    Constraint   |              Value              |
 |:----------------|:--------------------------------|
+| Dataset         | [Invoice Detail](#datasets.invoicedetail)             |
 | Column type     | Dimension                       |
 | Feature level   | Conditional                     |
 | Allows nulls    | True                            |
 | Data type       | String                          |
-| Value format    | \<unspecified>                   |
+| Value format    | \<not specified>                |
 
-## Introduced (version)
+## Version Introduced
 
 1.4

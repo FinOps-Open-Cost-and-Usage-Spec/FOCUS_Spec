@@ -35,6 +35,6 @@ The display name assigned to a *billing account*.
 | Data type       | String                                               |
 | Value format    | \<not specified>                                     |
 
-## Introduced (version)
+## Version Introduced
 
 0.5

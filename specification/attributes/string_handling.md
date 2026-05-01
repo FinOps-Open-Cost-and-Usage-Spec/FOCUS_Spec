@@ -1,6 +1,6 @@
 # String Handling
 
-Columns that capture string values conforming to specified requirements foster data integrity, interoperability, and consistency, improve data analysis and reporting, and support reliable data-driven decision-making.
+Columns that capture string values conforming to specified requirements foster data integrity, interoperability, and consistency; improve data analysis and reporting; and support reliable data-driven decision-making.
 
 ## Requirements
 
@@ -30,6 +30,6 @@ String Handling
 
 Requirements for string-capturing columns appearing in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 
-## Introduced (version)
+## Version Introduced
 
 1.0

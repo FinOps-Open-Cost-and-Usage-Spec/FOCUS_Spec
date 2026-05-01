@@ -27,12 +27,13 @@ The invoice-issuer-assigned identifier for an Invoice Detail record encapsulatin
 
 |    Constraint    |              Value             |
 |:----------------|:--------------------------------|
+| Dataset         | [Invoice Detail](#datasets.invoicedetail)             |
 | Column type     | Dimension                       |
 | Feature level   | Mandatory                       |
 | Allows nulls    | False                           |
 | Data type       | String                          |
 | Value format    | \<not specified>                |
 
-## Introduced (version)
+## Version Introduced
 
 1.4
