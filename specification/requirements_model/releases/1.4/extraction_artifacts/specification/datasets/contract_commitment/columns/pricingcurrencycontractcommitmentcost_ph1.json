@@ -170,7 +170,7 @@
     {
       "temp_id": "R007",
       "order": 7,
-      "text": "PricingCurrencyContractCommitmentCost MUST be denominated in the [PricingCurrency](#datasets.contractcommitment.pricingcurrency).",
+      "text": "PricingCurrencyContractCommitmentCost MUST be denominated in the PricingCurrency.",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
