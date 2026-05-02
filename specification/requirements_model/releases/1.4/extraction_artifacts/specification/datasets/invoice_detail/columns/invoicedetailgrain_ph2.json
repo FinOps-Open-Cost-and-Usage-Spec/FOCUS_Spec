@@ -17,32 +17,33 @@
       "Dataset Requirements",
       "Attribute Requirements"
     ],
-    "atoms_in_scope_count": 12
+    "atoms_in_scope_count": 13
   },
   "0_outline_root": "ROOT: Invoice Detail Grain > Requirements",
   "0_outline_lines": [
     "L009: \"InvoiceDetailGrain MUST adhere to the following requirements:\"",
-    "  L011: \"InvoiceDetailGrain MUST be of type JSON.\"",
-    "  L012: \"InvoiceDetailGrain MUST conform to [KeyValueFormat](#attributes.key-valueformat) requirements.\"",
-    "  L013: \"InvoiceDetailGrain MUST NOT be null when one or more properties uniquely define the granularity of the invoice line item.\"",
-    "  L014: \"InvoiceDetailGrain MUST contain the set of all properties that uniquely define the granularity of the invoice line item.\"",
-    "  L015: \"InvoiceDetailGrain SHOULD use the applicable FOCUS-defined Invoice Detail Grain properties listed below to represent the granularity of the invoice line item.\"",
-    "  L016: \"InvoiceDetailGrain MUST include all custom Invoice Detail Grain properties that are applicable to the granularity of the invoice line item when there is no equivalent FOCUS-defined property.\"",
-    "  L017: \"InvoiceDetailGrain property keys SHOULD conform to [PascalCase](#glossary:pascalcase) format.\"",
-    "  L018: \"InvoiceDetailGrain property keys MUST begin with the string \\\"x_\\\" unless it is a FOCUS-defined property.\"",
-    "  L019: \"FOCUS-defined InvoiceDetailGrain properties MUST adhere to the following requirements:\"",
-    "    L020: \"Property key MUST match the spelling and casing specified for the FOCUS-defined property.\"",
-    "    L021: \"Property value MUST be of the type specified for that property.\""
+    "  L011: \"InvoiceDetailGrain MUST be of type JSON Object (serialized as a String where necessary).\"",
+    "  L012: \"InvoiceDetailGrain MUST conform to [StringHandling](#attributes.stringhandling) requirements.\"",
+    "  L013: \"InvoiceDetailGrain MUST conform to [KeyValueFormat](#attributes.key-valueformat) requirements.\"",
+    "  L014: \"InvoiceDetailGrain MUST NOT be null when one or more properties uniquely define the granularity of the invoice line item.\"",
+    "  L015: \"InvoiceDetailGrain MUST contain the set of all properties that uniquely define the granularity of the invoice line item.\"",
+    "  L016: \"InvoiceDetailGrain SHOULD use the applicable FOCUS-defined Invoice Detail Grain properties listed below to represent the granularity of the invoice line item.\"",
+    "  L017: \"InvoiceDetailGrain MUST include all custom Invoice Detail Grain properties that are applicable to the granularity of the invoice line item when there is no equivalent FOCUS-defined property.\"",
+    "  L018: \"InvoiceDetailGrain property keys SHOULD conform to [PascalCase](#glossary:pascalcase) format.\"",
+    "  L019: \"InvoiceDetailGrain property keys MUST begin with the string \\\"x_\\\" unless it is a FOCUS-defined property.\"",
+    "  L020: \"FOCUS-defined InvoiceDetailGrain properties MUST adhere to the following requirements:\"",
+    "    L021: \"Property key MUST match the spelling and casing specified for the FOCUS-defined property.\"",
+    "    L022: \"Property value MUST be of the type specified for that property.\""
   ],
   "0_outline_summary": {
-    "node_count": 12,
-    "leaf_count": 10,
+    "node_count": 13,
+    "leaf_count": 11,
     "lead_in_count": 2,
     "max_depth": 2,
     "max_indent_level": 1,
     "root_children_count": 1,
     "keyword_distribution": {
-      "MUST": 9,
+      "MUST": 10,
       "MUST NOT": 1,
       "SHOULD": 2
     },
@@ -50,10 +51,10 @@
       {
         "ref": "L009",
         "text_preview": "InvoiceDetailGrain MUST adhere to the following requirements:",
-        "children": 9
+        "children": 10
       },
       {
-        "ref": "L019",
+        "ref": "L020",
         "text_preview": "FOCUS-defined InvoiceDetailGrain properties MUST adhere to the following requirements:",
         "children": 2
       }
@@ -94,7 +95,7 @@
                 "temp_id": "R002",
                 "order": 2,
                 "ref": "L011",
-                "text": "InvoiceDetailGrain MUST be of type JSON.",
+                "text": "InvoiceDetailGrain MUST be of type JSON Object (serialized as a String where necessary).",
                 "keyword": "MUST",
                 "section_path": [
                   "Invoice Detail Grain",
@@ -118,7 +119,7 @@
                 "temp_id": "R003",
                 "order": 3,
                 "ref": "L012",
-                "text": "InvoiceDetailGrain MUST conform to [KeyValueFormat](#attributes.key-valueformat) requirements.",
+                "text": "InvoiceDetailGrain MUST conform to [StringHandling](#attributes.stringhandling) requirements.",
                 "keyword": "MUST",
                 "section_path": [
                   "Invoice Detail Grain",
@@ -142,8 +143,8 @@
                 "temp_id": "R004",
                 "order": 4,
                 "ref": "L013",
-                "text": "InvoiceDetailGrain MUST NOT be null when one or more properties uniquely define the granularity of the invoice line item.",
-                "keyword": "MUST NOT",
+                "text": "InvoiceDetailGrain MUST conform to [KeyValueFormat](#attributes.key-valueformat) requirements.",
+                "keyword": "MUST",
                 "section_path": [
                   "Invoice Detail Grain",
                   "Requirements"
@@ -166,8 +167,8 @@
                 "temp_id": "R005",
                 "order": 5,
                 "ref": "L014",
-                "text": "InvoiceDetailGrain MUST contain the set of all properties that uniquely define the granularity of the invoice line item.",
-                "keyword": "MUST",
+                "text": "InvoiceDetailGrain MUST NOT be null when one or more properties uniquely define the granularity of the invoice line item.",
+                "keyword": "MUST NOT",
                 "section_path": [
                   "Invoice Detail Grain",
                   "Requirements"
@@ -190,8 +191,8 @@
                 "temp_id": "R006",
                 "order": 6,
                 "ref": "L015",
-                "text": "InvoiceDetailGrain SHOULD use the applicable FOCUS-defined Invoice Detail Grain properties listed below to represent the granularity of the invoice line item.",
-                "keyword": "SHOULD",
+                "text": "InvoiceDetailGrain MUST contain the set of all properties that uniquely define the granularity of the invoice line item.",
+                "keyword": "MUST",
                 "section_path": [
                   "Invoice Detail Grain",
                   "Requirements"
@@ -214,8 +215,8 @@
                 "temp_id": "R007",
                 "order": 7,
                 "ref": "L016",
-                "text": "InvoiceDetailGrain MUST include all custom Invoice Detail Grain properties that are applicable to the granularity of the invoice line item when there is no equivalent FOCUS-defined property.",
-                "keyword": "MUST",
+                "text": "InvoiceDetailGrain SHOULD use the applicable FOCUS-defined Invoice Detail Grain properties listed below to represent the granularity of the invoice line item.",
+                "keyword": "SHOULD",
                 "section_path": [
                   "Invoice Detail Grain",
                   "Requirements"
@@ -238,8 +239,8 @@
                 "temp_id": "R008",
                 "order": 8,
                 "ref": "L017",
-                "text": "InvoiceDetailGrain property keys SHOULD conform to [PascalCase](#glossary:pascalcase) format.",
-                "keyword": "SHOULD",
+                "text": "InvoiceDetailGrain MUST include all custom Invoice Detail Grain properties that are applicable to the granularity of the invoice line item when there is no equivalent FOCUS-defined property.",
+                "keyword": "MUST",
                 "section_path": [
                   "Invoice Detail Grain",
                   "Requirements"
@@ -262,8 +263,8 @@
                 "temp_id": "R009",
                 "order": 9,
                 "ref": "L018",
-                "text": "InvoiceDetailGrain property keys MUST begin with the string \"x_\" unless it is a FOCUS-defined property.",
-                "keyword": "MUST",
+                "text": "InvoiceDetailGrain property keys SHOULD conform to [PascalCase](#glossary:pascalcase) format.",
+                "keyword": "SHOULD",
                 "section_path": [
                   "Invoice Detail Grain",
                   "Requirements"
@@ -286,6 +287,30 @@
                 "temp_id": "R010",
                 "order": 10,
                 "ref": "L019",
+                "text": "InvoiceDetailGrain property keys MUST begin with the string \"x_\" unless it is a FOCUS-defined property.",
+                "keyword": "MUST",
+                "section_path": [
+                  "Invoice Detail Grain",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R011",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R011",
+                "order": 11,
+                "ref": "L020",
                 "text": "FOCUS-defined InvoiceDetailGrain properties MUST adhere to the following requirements:",
                 "keyword": "MUST",
                 "section_path": [
@@ -303,12 +328,12 @@
               },
               "children": [
                 {
-                  "node_id": "R011",
+                  "node_id": "R012",
                   "kind": "atom",
                   "atom": {
-                    "temp_id": "R011",
-                    "order": 11,
-                    "ref": "L020",
+                    "temp_id": "R012",
+                    "order": 12,
+                    "ref": "L021",
                     "text": "Property key MUST match the spelling and casing specified for the FOCUS-defined property.",
                     "keyword": "MUST",
                     "section_path": [
@@ -327,12 +352,12 @@
                   "children": []
                 },
                 {
-                  "node_id": "R012",
+                  "node_id": "R013",
                   "kind": "atom",
                   "atom": {
-                    "temp_id": "R012",
-                    "order": 12,
-                    "ref": "L021",
+                    "temp_id": "R013",
+                    "order": 13,
+                    "ref": "L022",
                     "text": "Property value MUST be of the type specified for that property.",
                     "keyword": "MUST",
                     "section_path": [
