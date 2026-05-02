@@ -2,7 +2,7 @@
   "phase": 2,
   "source": {
     "path": "specification/attributes/delivery_handling.md",
-    "version": "1.4"
+    "version": "unknown"
   },
   "entity": {
     "entity_type": "Attribute",
