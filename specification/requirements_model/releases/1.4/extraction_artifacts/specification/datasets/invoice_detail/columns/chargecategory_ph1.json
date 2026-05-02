@@ -120,8 +120,8 @@
     {
       "temp_id": "R005",
       "order": 5,
-      "text": "ChargeCategory MAY be \"Usage\" when the record aggregates *charges* across multiple allowed values other than \"Tax\" (for example, aggregation of \"Usage\" and \"Credit\" is allowed, but not \"Usage\" and \"Tax\").",
-      "keyword": "MAY",
+      "text": "When the *charge* does not aggregate multiple classifications, ChargeCategory MUST adhere to the following requirements:",
+      "keyword": "MUST",
       "role": "requirement",
       "section_path": [
         "Charge Category",
@@ -133,7 +133,7 @@
         "bullet": "*"
       },
       "lead_in": {
-        "ends_with_colon": false
+        "ends_with_colon": true
       },
       "provenance": {
         "line_start": 12,
@@ -141,6 +141,181 @@
       },
       "_alignment_status": "confirmed",
       "ref": "L012"
+    },
+    {
+      "temp_id": "R006",
+      "order": 6,
+      "text": "ChargeCategory MUST be \"Usage\" when the *charge* represents consumption of a service or resource.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Charge Category",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 1,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 13,
+        "line_end": 13
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L013"
+    },
+    {
+      "temp_id": "R007",
+      "order": 7,
+      "text": "ChargeCategory MUST be \"Purchase\" when the *charge* represents acquisition of a service, resource, or *commitment*.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Charge Category",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 1,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 14,
+        "line_end": 14
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L014"
+    },
+    {
+      "temp_id": "R008",
+      "order": 8,
+      "text": "ChargeCategory MUST be \"Tax\" when the *charge* represents taxes levied by the relevant authorities.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Charge Category",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 1,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 15,
+        "line_end": 15
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L015"
+    },
+    {
+      "temp_id": "R009",
+      "order": 9,
+      "text": "ChargeCategory MUST be \"Credit\" when the *charge* represents a financial incentive or allowance unrelated to other *charges*.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Charge Category",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 1,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 16,
+        "line_end": 16
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L016"
+    },
+    {
+      "temp_id": "R010",
+      "order": 10,
+      "text": "ChargeCategory MUST be \"Adjustment\" when the *charge* represents a billing modification that does not fall into other ChargeCategories.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Charge Category",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 1,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 17,
+        "line_end": 17
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L017"
+    },
+    {
+      "temp_id": "R011",
+      "order": 11,
+      "text": "When the *charge* aggregates multiple classifications, ChargeCategory MUST adhere to the following requirements:",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Charge Category",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": true
+      },
+      "provenance": {
+        "line_start": 18,
+        "line_end": 18
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L018"
+    },
+    {
+      "temp_id": "R012",
+      "order": 12,
+      "text": "ChargeCategory MAY be \"Usage\" when the record aggregates *charges* across multiple allowed values other than \"Tax\" (for example, aggregation of \"Usage\" and \"Credit\" is allowed, but not \"Usage\" and \"Tax\").",
+      "keyword": "MAY",
+      "role": "requirement",
+      "section_path": [
+        "Charge Category",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 1,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 19,
+        "line_end": 19
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L019"
     }
   ],
   "warnings": [],
