@@ -2,7 +2,7 @@
   "phase": 1,
   "source": {
     "path": "specification/attributes/delivery_handling.md",
-    "version": "unknown"
+    "version": "1.4"
   },
   "entity": {
     "entity_type": "Attribute",
@@ -243,18 +243,7 @@
       "ref": "L055"
     }
   ],
-  "warnings": [
-    {
-      "code": "W_VERSION_INTRODUCED_MISSING_OR_INVALID",
-      "message": "Missing version section heading (\"## Introduced (version)\" or \"## Version (Introduced)\"); version set to \"unknown\".",
-      "details": {
-        "reason": "missing_heading",
-        "found": null,
-        "expected": "A single line like \"1.3\" or \"v1.3\" under the heading \"## Introduced (version)\" or \"## Version (Introduced)\"."
-      },
-      "text": "(document-level)"
-    }
-  ],
+  "warnings": [],
   "structural": {
     "lead_ins": [
       {
