@@ -27,7 +27,7 @@
     "  L011: \"PricingCurrencyContractCommitmentCost MUST adhere to the following nullability requirements:\"",
     "    L012: \"PricingCurrencyContractCommitmentCost MUST NOT be null when [ContractCommitmentCategory](#datasets.contractcommitment.contractcommitmentcategory) is \\\"Spend\\\" and [PricingCurrency](#datasets.contractcommitment.pricingcurrency) is provided.\"",
     "    L013: \"PricingCurrencyContractCommitmentCost MAY be null when ContractCommitmentCategory is \\\"Usage\\\".\"",
-    "  L014: \"PricingCurrencyContractCommitmentCost MUST be denominated in the [PricingCurrency](#datasets.contractcommitment.pricingcurrency).\""
+    "  L014: \"PricingCurrencyContractCommitmentCost MUST be denominated in the PricingCurrency.\""
   ],
   "0_outline_summary": {
     "node_count": 7,
@@ -69,7 +69,6 @@
             "text": "PricingCurrencyContractCommitmentCost MUST adhere to the following requirements:",
             "keyword": "MUST",
             "section_path": [
-              "Pricing Currency Contract Commitment Cost",
               "Requirements"
             ],
             "block": {
@@ -92,7 +91,6 @@
                 "text": "PricingCurrencyContractCommitmentCost MUST be of type Decimal.",
                 "keyword": "MUST",
                 "section_path": [
-                  "Pricing Currency Contract Commitment Cost",
                   "Requirements"
                 ],
                 "block": {
@@ -116,7 +114,6 @@
                 "text": "PricingCurrencyContractCommitmentCost MUST conform to [NumericFormat](#attributes.numericformat) requirements.",
                 "keyword": "MUST",
                 "section_path": [
-                  "Pricing Currency Contract Commitment Cost",
                   "Requirements"
                 ],
                 "block": {
@@ -140,7 +137,6 @@
                 "text": "PricingCurrencyContractCommitmentCost MUST adhere to the following nullability requirements:",
                 "keyword": "MUST",
                 "section_path": [
-                  "Pricing Currency Contract Commitment Cost",
                   "Requirements"
                 ],
                 "block": {
@@ -163,7 +159,6 @@
                     "text": "PricingCurrencyContractCommitmentCost MUST NOT be null when [ContractCommitmentCategory](#datasets.contractcommitment.contractcommitmentcategory) is \"Spend\" and [PricingCurrency](#datasets.contractcommitment.pricingcurrency) is provided.",
                     "keyword": "MUST NOT",
                     "section_path": [
-                      "Pricing Currency Contract Commitment Cost",
                       "Requirements"
                     ],
                     "block": {
@@ -187,7 +182,6 @@
                     "text": "PricingCurrencyContractCommitmentCost MAY be null when ContractCommitmentCategory is \"Usage\".",
                     "keyword": "MAY",
                     "section_path": [
-                      "Pricing Currency Contract Commitment Cost",
                       "Requirements"
                     ],
                     "block": {
@@ -210,10 +204,9 @@
                 "temp_id": "R007",
                 "order": 7,
                 "ref": "L014",
-                "text": "PricingCurrencyContractCommitmentCost MUST be denominated in the [PricingCurrency](#datasets.contractcommitment.pricingcurrency).",
+                "text": "PricingCurrencyContractCommitmentCost MUST be denominated in the PricingCurrency.",
                 "keyword": "MUST",
                 "section_path": [
-                  "Pricing Currency Contract Commitment Cost",
                   "Requirements"
                 ],
                 "block": {
