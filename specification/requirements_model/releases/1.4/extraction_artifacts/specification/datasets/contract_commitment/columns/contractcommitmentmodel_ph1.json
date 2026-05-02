@@ -120,7 +120,7 @@
     {
       "temp_id": "R005",
       "order": 5,
-      "text": "ContractCommitmentModel MUST be \"Discontinuous\" if [ContractCommitmentFulfillmentInterval](#datasets.contractcommitment.contractcommitmentfulfillmentinterval) is \"Total Term\".",
+      "text": "ContractCommitmentModel MUST be \"Discontinuous\" if [ContractCommitmentFulfillmentInterval](#datasets.contractcommitment.contractcommitmentfulfillmentinterval) is \"Full Period\".",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
