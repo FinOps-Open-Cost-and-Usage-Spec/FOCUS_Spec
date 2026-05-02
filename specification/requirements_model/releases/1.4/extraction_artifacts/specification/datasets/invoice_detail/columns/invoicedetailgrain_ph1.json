@@ -45,7 +45,7 @@
     {
       "temp_id": "R002",
       "order": 2,
-      "text": "InvoiceDetailGrain MUST be of type JSON.",
+      "text": "InvoiceDetailGrain MUST be of type JSON Object (serialized as a String where necessary).",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
@@ -70,7 +70,7 @@
     {
       "temp_id": "R003",
       "order": 3,
-      "text": "InvoiceDetailGrain MUST conform to [KeyValueFormat](#attributes.key-valueformat) requirements.",
+      "text": "InvoiceDetailGrain MUST conform to [StringHandling](#attributes.stringhandling) requirements.",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
@@ -95,8 +95,8 @@
     {
       "temp_id": "R004",
       "order": 4,
-      "text": "InvoiceDetailGrain MUST NOT be null when one or more properties uniquely define the granularity of the invoice line item.",
-      "keyword": "MUST NOT",
+      "text": "InvoiceDetailGrain MUST conform to [KeyValueFormat](#attributes.key-valueformat) requirements.",
+      "keyword": "MUST",
       "role": "requirement",
       "section_path": [
         "Invoice Detail Grain",
@@ -120,8 +120,8 @@
     {
       "temp_id": "R005",
       "order": 5,
-      "text": "InvoiceDetailGrain MUST contain the set of all properties that uniquely define the granularity of the invoice line item.",
-      "keyword": "MUST",
+      "text": "InvoiceDetailGrain MUST NOT be null when one or more properties uniquely define the granularity of the invoice line item.",
+      "keyword": "MUST NOT",
       "role": "requirement",
       "section_path": [
         "Invoice Detail Grain",
@@ -145,8 +145,8 @@
     {
       "temp_id": "R006",
       "order": 6,
-      "text": "InvoiceDetailGrain SHOULD use the applicable FOCUS-defined Invoice Detail Grain properties listed below to represent the granularity of the invoice line item.",
-      "keyword": "SHOULD",
+      "text": "InvoiceDetailGrain MUST contain the set of all properties that uniquely define the granularity of the invoice line item.",
+      "keyword": "MUST",
       "role": "requirement",
       "section_path": [
         "Invoice Detail Grain",
@@ -170,8 +170,8 @@
     {
       "temp_id": "R007",
       "order": 7,
-      "text": "InvoiceDetailGrain MUST include all custom Invoice Detail Grain properties that are applicable to the granularity of the invoice line item when there is no equivalent FOCUS-defined property.",
-      "keyword": "MUST",
+      "text": "InvoiceDetailGrain SHOULD use the applicable FOCUS-defined Invoice Detail Grain properties listed below to represent the granularity of the invoice line item.",
+      "keyword": "SHOULD",
       "role": "requirement",
       "section_path": [
         "Invoice Detail Grain",
@@ -195,8 +195,8 @@
     {
       "temp_id": "R008",
       "order": 8,
-      "text": "InvoiceDetailGrain property keys SHOULD conform to [PascalCase](#glossary:pascalcase) format.",
-      "keyword": "SHOULD",
+      "text": "InvoiceDetailGrain MUST include all custom Invoice Detail Grain properties that are applicable to the granularity of the invoice line item when there is no equivalent FOCUS-defined property.",
+      "keyword": "MUST",
       "role": "requirement",
       "section_path": [
         "Invoice Detail Grain",
@@ -220,8 +220,8 @@
     {
       "temp_id": "R009",
       "order": 9,
-      "text": "InvoiceDetailGrain property keys MUST begin with the string \"x_\" unless it is a FOCUS-defined property.",
-      "keyword": "MUST",
+      "text": "InvoiceDetailGrain property keys SHOULD conform to [PascalCase](#glossary:pascalcase) format.",
+      "keyword": "SHOULD",
       "role": "requirement",
       "section_path": [
         "Invoice Detail Grain",
@@ -245,6 +245,31 @@
     {
       "temp_id": "R010",
       "order": 10,
+      "text": "InvoiceDetailGrain property keys MUST begin with the string \"x_\" unless it is a FOCUS-defined property.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Invoice Detail Grain",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 19,
+        "line_end": 19
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L019"
+    },
+    {
+      "temp_id": "R011",
+      "order": 11,
       "text": "FOCUS-defined InvoiceDetailGrain properties MUST adhere to the following requirements:",
       "keyword": "MUST",
       "role": "requirement",
@@ -261,31 +286,6 @@
         "ends_with_colon": true
       },
       "provenance": {
-        "line_start": 19,
-        "line_end": 19
-      },
-      "_alignment_status": "confirmed",
-      "ref": "L019"
-    },
-    {
-      "temp_id": "R011",
-      "order": 11,
-      "text": "Property key MUST match the spelling and casing specified for the FOCUS-defined property.",
-      "keyword": "MUST",
-      "role": "requirement",
-      "section_path": [
-        "Invoice Detail Grain",
-        "Requirements"
-      ],
-      "block": {
-        "block_type": "list_item",
-        "indent_level": 1,
-        "bullet": "*"
-      },
-      "lead_in": {
-        "ends_with_colon": false
-      },
-      "provenance": {
         "line_start": 20,
         "line_end": 20
       },
@@ -295,7 +295,7 @@
     {
       "temp_id": "R012",
       "order": 12,
-      "text": "Property value MUST be of the type specified for that property.",
+      "text": "Property key MUST match the spelling and casing specified for the FOCUS-defined property.",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
@@ -316,6 +316,31 @@
       },
       "_alignment_status": "confirmed",
       "ref": "L021"
+    },
+    {
+      "temp_id": "R013",
+      "order": 13,
+      "text": "Property value MUST be of the type specified for that property.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Invoice Detail Grain",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 1,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 22,
+        "line_end": 22
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L022"
     }
   ],
   "warnings": [],
