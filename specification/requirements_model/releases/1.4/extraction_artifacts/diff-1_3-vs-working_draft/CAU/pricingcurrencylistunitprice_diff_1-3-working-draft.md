@@ -1,11 +1,6 @@
 ## Diff
 
-diff --git a/tmp/pricingcurrencylistunitprice_v13.md b/tmp/pricingcurrencylistunitprice_working.md
-index c815485b..68996d29 100644
---- a/tmp/pricingcurrencylistunitprice_v13.md
-+++ b/tmp/pricingcurrencylistunitprice_working.md
-@@ -4,24 +4,24 @@ The Pricing Currency List Unit Price represents the suggested service-provider-p
-
+@@ -1,19 +1,15 @@
 ## Requirements
 
 PricingCurrencyListUnitPrice [-adheres-]{+MUST adhere+} to the following requirements:

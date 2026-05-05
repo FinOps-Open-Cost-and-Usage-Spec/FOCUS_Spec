@@ -113,7 +113,7 @@
       "DatasetId": "ContractCommitment",
       "DatasetName": "Contract Commitment",
       "ValidationCriteria": {
-        "MustSatisfy": "ContractCommitmentModel MUST be \"Discontinuous\" if ContractCommitmentFulfillmentInterval is \"Total Term\".",
+        "MustSatisfy": "ContractCommitmentModel MUST be \"Discontinuous\" if ContractCommitmentFulfillmentInterval is \"Full Period\".",
         "Keyword": "MUST",
         "Requirement": {},
         "Condition": [],

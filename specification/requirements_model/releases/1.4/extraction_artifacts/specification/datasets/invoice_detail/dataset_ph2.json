@@ -58,7 +58,7 @@
     "  L082: \"InvoiceDetail documentation MUST adhere to the following requirements:\"",
     "    L083: \"InvoiceDetail documentation MUST specify how InvoiceDetail records correspond to invoice line items.\"",
     "    L084: \"InvoiceDetail documentation MUST specify whether invoice line items with BilledCost of 0 are excluded from InvoiceDetail.\"",
-    "    L085: \"InvoiceDetail documentation MUST describe how columns in the CostAndUsage and InvoiceDetail datasets represent the invoice issuer's [*invoice reconciliation*](#glossary:invoice-reconciliation) process.\"",
+    "    L085: \"InvoiceDetail documentation MUST describe how columns in the CostAndUsage and InvoiceDetail [*dataset instances*](#glossary:dataset-instance) represent the invoice issuer's [*invoice reconciliation*](#glossary:invoice-reconciliation) process.\"",
     "    L086: \"InvoiceDetail documentation MUST be freely accessible to FOCUS consumers.\""
   ],
   "0_outline_summary": {
@@ -104,6 +104,7 @@
             "text": "InvoiceDetail MUST adhere to the following requirements:",
             "keyword": "MUST",
             "section_path": [
+              "Invoice Detail",
               "Requirements"
             ],
             "block": {
@@ -126,6 +127,7 @@
                 "text": "InvoiceDetail MUST be present when the invoice issuer supports payable invoices.",
                 "keyword": "MUST",
                 "section_path": [
+                  "Invoice Detail",
                   "Requirements"
                 ],
                 "block": {
@@ -149,6 +151,7 @@
                 "text": "The presence of columns in InvoiceDetail MUST adhere to the following requirements:",
                 "keyword": "MUST",
                 "section_path": [
+                  "Invoice Detail",
                   "Requirements"
                 ],
                 "block": {
@@ -171,6 +174,7 @@
                     "text": "InvoiceDetail MUST include [BilledCost](#datasets.invoicedetail.billedcost).",
                     "keyword": "MUST",
                     "section_path": [
+                      "Invoice Detail",
                       "Requirements"
                     ],
                     "block": {
@@ -194,6 +198,7 @@
                     "text": "InvoiceDetail MUST include [BillingAccountId](#datasets.invoicedetail.billingaccountid).",
                     "keyword": "MUST",
                     "section_path": [
+                      "Invoice Detail",
                       "Requirements"
                     ],
                     "block": {
@@ -217,6 +222,7 @@
                     "text": "InvoiceDetail MUST include [BillingCurrency](#datasets.invoicedetail.billingcurrency).",
                     "keyword": "MUST",
                     "section_path": [
+                      "Invoice Detail",
                       "Requirements"
                     ],
                     "block": {
@@ -240,6 +246,7 @@
                     "text": "InvoiceDetail MUST include [BillingPeriodEnd](#datasets.invoicedetail.billingperiodend).",
                     "keyword": "MUST",
                     "section_path": [
+                      "Invoice Detail",
                       "Requirements"
                     ],
                     "block": {
@@ -263,6 +270,7 @@
                     "text": "InvoiceDetail MUST include [BillingPeriodStart](#datasets.invoicedetail.billingperiodstart).",
                     "keyword": "MUST",
                     "section_path": [
+                      "Invoice Detail",
                       "Requirements"
                     ],
                     "block": {
@@ -286,6 +294,7 @@
                     "text": "InvoiceDetail MUST include [ChargeCategory](#datasets.invoicedetail.chargecategory).",
                     "keyword": "MUST",
                     "section_path": [
+                      "Invoice Detail",
                       "Requirements"
                     ],
                     "block": {
@@ -309,6 +318,7 @@
                     "text": "InvoiceDetail MUST include [InvoiceDetailCreated](#datasets.invoicedetail.invoicedetailcreated).",
                     "keyword": "MUST",
                     "section_path": [
+                      "Invoice Detail",
                       "Requirements"
                     ],
                     "block": {
@@ -332,6 +342,7 @@
                     "text": "InvoiceDetail MUST include [InvoiceDetailDescription](#datasets.invoicedetail.invoicedetaildescription).",
                     "keyword": "MUST",
                     "section_path": [
+                      "Invoice Detail",
                       "Requirements"
                     ],
                     "block": {
@@ -355,6 +366,7 @@
                     "text": "InvoiceDetail MUST include [InvoiceDetailGrain](#datasets.invoicedetail.invoicedetailgrain).",
                     "keyword": "MUST",
                     "section_path": [
+                      "Invoice Detail",
                       "Requirements"
                     ],
                     "block": {
@@ -378,6 +390,7 @@
                     "text": "InvoiceDetail MUST include [InvoiceDetailId](#datasets.invoicedetail.invoicedetailid).",
                     "keyword": "MUST",
                     "section_path": [
+                      "Invoice Detail",
                       "Requirements"
                     ],
                     "block": {
@@ -401,6 +414,7 @@
                     "text": "InvoiceDetail MUST include [InvoiceDetailLastUpdated](#datasets.invoicedetail.invoicedetaillastupdated).",
                     "keyword": "MUST",
                     "section_path": [
+                      "Invoice Detail",
                       "Requirements"
                     ],
                     "block": {
@@ -424,6 +438,7 @@
                     "text": "InvoiceDetail MUST include [InvoiceId](#datasets.invoicedetail.invoiceid).",
                     "keyword": "MUST",
                     "section_path": [
+                      "Invoice Detail",
                       "Requirements"
                     ],
                     "block": {
@@ -447,6 +462,7 @@
                     "text": "InvoiceDetail MUST include [InvoiceIssueDate](#datasets.invoicedetail.invoiceissuedate).",
                     "keyword": "MUST",
                     "section_path": [
+                      "Invoice Detail",
                       "Requirements"
                     ],
                     "block": {
@@ -470,6 +486,7 @@
                     "text": "InvoiceDetail MUST include [InvoiceIssueStatus](#datasets.invoicedetail.invoiceissuestatus).",
                     "keyword": "MUST",
                     "section_path": [
+                      "Invoice Detail",
                       "Requirements"
                     ],
                     "block": {
@@ -493,6 +510,7 @@
                     "text": "InvoiceDetail MUST include [InvoiceIssuerName](#datasets.invoicedetail.invoiceissuername).",
                     "keyword": "MUST",
                     "section_path": [
+                      "Invoice Detail",
                       "Requirements"
                     ],
                     "block": {
@@ -516,6 +534,7 @@
                     "text": "InvoiceDetail MUST include [PaymentCurrency](#datasets.invoicedetail.paymentcurrency) when the invoice issuer supports billing and payment in different currencies.",
                     "keyword": "MUST",
                     "section_path": [
+                      "Invoice Detail",
                       "Requirements"
                     ],
                     "block": {
@@ -539,6 +558,7 @@
                     "text": "InvoiceDetail MUST include [PaymentCurrencyBilledCost](#datasets.invoicedetail.paymentcurrencybilledcost) when the invoice issuer supports billing and payment in different currencies.",
                     "keyword": "MUST",
                     "section_path": [
+                      "Invoice Detail",
                       "Requirements"
                     ],
                     "block": {
@@ -562,6 +582,7 @@
                     "text": "InvoiceDetail MUST include [PaymentCurrencyInvoiceDetailId](#datasets.invoicedetail.paymentcurrencyinvoicedetailid) when the invoice issuer represents billing currency and payment currency at different aggregation levels on payable invoices.",
                     "keyword": "MUST",
                     "section_path": [
+                      "Invoice Detail",
                       "Requirements"
                     ],
                     "block": {
@@ -585,6 +606,7 @@
                     "text": "InvoiceDetail MUST include [PaymentDueDate](#datasets.invoicedetail.paymentduedate).",
                     "keyword": "MUST",
                     "section_path": [
+                      "Invoice Detail",
                       "Requirements"
                     ],
                     "block": {
@@ -608,6 +630,7 @@
                     "text": "InvoiceDetail MUST include [PaymentTerms](#datasets.invoicedetail.paymentterms).",
                     "keyword": "MUST",
                     "section_path": [
+                      "Invoice Detail",
                       "Requirements"
                     ],
                     "block": {
@@ -631,6 +654,7 @@
                     "text": "InvoiceDetail MUST include [PurchaseOrderNumber](#datasets.invoicedetail.purchaseordernumber) when the invoice issuer supports customer input of purchase order numbers.",
                     "keyword": "MUST",
                     "section_path": [
+                      "Invoice Detail",
                       "Requirements"
                     ],
                     "block": {
@@ -654,6 +678,7 @@
                     "text": "InvoiceDetail MUST include [ReferenceInvoiceId](#datasets.invoicedetail.referenceinvoiceid).",
                     "keyword": "MUST",
                     "section_path": [
+                      "Invoice Detail",
                       "Requirements"
                     ],
                     "block": {
@@ -677,6 +702,7 @@
                     "text": "InvoiceDetail MUST include [*custom columns*](#glossary:custom-column) to represent any monetary metric that appears on an invoice issued to a BillingAccountId when there is no equivalent [*FOCUS column*](#glossary:FOCUS-column).",
                     "keyword": "MUST",
                     "section_path": [
+                      "Invoice Detail",
                       "Requirements"
                     ],
                     "block": {
@@ -702,6 +728,7 @@
                 "text": "InvoiceDetail MUST conform to [CorrectionHandling](#attributes.correctionhandling) requirements.",
                 "keyword": "MUST",
                 "section_path": [
+                  "Invoice Detail",
                   "Requirements"
                 ],
                 "block": {
@@ -725,6 +752,7 @@
                 "text": "InvoiceDetail MUST conform to [DatasetCompleteness](#attributes.datasetcompleteness) requirements.",
                 "keyword": "MUST",
                 "section_path": [
+                  "Invoice Detail",
                   "Requirements"
                 ],
                 "block": {
@@ -748,6 +776,7 @@
                 "text": "InvoiceDetail MUST conform to [DatasetConfiguration](#attributes.datasetconfiguration) requirements.",
                 "keyword": "MUST",
                 "section_path": [
+                  "Invoice Detail",
                   "Requirements"
                 ],
                 "block": {
@@ -771,6 +800,7 @@
                 "text": "InvoiceDetail MUST conform to [DeliveryHandling](#attributes.deliveryhandling) requirements.",
                 "keyword": "MUST",
                 "section_path": [
+                  "Invoice Detail",
                   "Requirements"
                 ],
                 "block": {
@@ -794,6 +824,7 @@
                 "text": "InvoiceDetail MUST represent all invoice line items with a non-zero BilledCost on any invoice associated with a BillingAccountId.",
                 "keyword": "MUST",
                 "section_path": [
+                  "Invoice Detail",
                   "Requirements"
                 ],
                 "block": {
@@ -817,6 +848,7 @@
                 "text": "InvoiceDetail [*FOCUS columns*](#glossary:FOCUS-column) MUST conform to [FocusColumnHandling](#attributes.focuscolumnhandling) requirements.",
                 "keyword": "MUST",
                 "section_path": [
+                  "Invoice Detail",
                   "Requirements"
                 ],
                 "block": {
@@ -840,6 +872,7 @@
                 "text": "InvoiceDetail *FOCUS columns* MUST conform to [NullHandling](#attributes.nullhandling) requirements.",
                 "keyword": "MUST",
                 "section_path": [
+                  "Invoice Detail",
                   "Requirements"
                 ],
                 "block": {
@@ -863,6 +896,7 @@
                 "text": "InvoiceDetail *custom columns* MUST conform to [CustomColumnHandling](#attributes.customcolumnhandling) requirements.",
                 "keyword": "MUST",
                 "section_path": [
+                  "Invoice Detail",
                   "Requirements"
                 ],
                 "block": {
@@ -886,6 +920,7 @@
                 "text": "InvoiceDetail documentation MUST adhere to the following requirements:",
                 "keyword": "MUST",
                 "section_path": [
+                  "Invoice Detail",
                   "Requirements"
                 ],
                 "block": {
@@ -908,6 +943,7 @@
                     "text": "InvoiceDetail documentation MUST specify how InvoiceDetail records correspond to invoice line items.",
                     "keyword": "MUST",
                     "section_path": [
+                      "Invoice Detail",
                       "Requirements"
                     ],
                     "block": {
@@ -931,6 +967,7 @@
                     "text": "InvoiceDetail documentation MUST specify whether invoice line items with BilledCost of 0 are excluded from InvoiceDetail.",
                     "keyword": "MUST",
                     "section_path": [
+                      "Invoice Detail",
                       "Requirements"
                     ],
                     "block": {
@@ -951,9 +988,10 @@
                     "temp_id": "R038",
                     "order": 38,
                     "ref": "L085",
-                    "text": "InvoiceDetail documentation MUST describe how columns in the CostAndUsage and InvoiceDetail datasets represent the invoice issuer's [*invoice reconciliation*](#glossary:invoice-reconciliation) process.",
+                    "text": "InvoiceDetail documentation MUST describe how columns in the CostAndUsage and InvoiceDetail [*dataset instances*](#glossary:dataset-instance) represent the invoice issuer's [*invoice reconciliation*](#glossary:invoice-reconciliation) process.",
                     "keyword": "MUST",
                     "section_path": [
+                      "Invoice Detail",
                       "Requirements"
                     ],
                     "block": {
@@ -977,6 +1015,7 @@
                     "text": "InvoiceDetail documentation MUST be freely accessible to FOCUS consumers.",
                     "keyword": "MUST",
                     "section_path": [
+                      "Invoice Detail",
                       "Requirements"
                     ],
                     "block": {

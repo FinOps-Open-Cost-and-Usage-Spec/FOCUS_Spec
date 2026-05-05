@@ -908,7 +908,7 @@
       "DatasetId": "InvoiceDetail",
       "DatasetName": "Invoice Detail",
       "ValidationCriteria": {
-        "MustSatisfy": "InvoiceDetail documentation MUST describe how columns in the CostAndUsage and InvoiceDetail datasets represent the invoice issuer's *invoice reconciliation* process.",
+        "MustSatisfy": "InvoiceDetail documentation MUST describe how columns in the CostAndUsage and InvoiceDetail *dataset instances* represent the invoice issuer's *invoice reconciliation* process.",
         "Keyword": "MUST",
         "Requirement": {},
         "Condition": [],

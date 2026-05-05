@@ -1,11 +1,6 @@
 ## Diff
 
-diff --git a/tmp/pricingcurrencycontractedunitprice_v13.md b/tmp/pricingcurrencycontractedunitprice_working.md
-index 2b7989ed..18edf444 100644
---- a/tmp/pricingcurrencycontractedunitprice_v13.md
-+++ b/tmp/pricingcurrencycontractedunitprice_working.md
-@@ -4,24 +4,24 @@ The Pricing Currency Contracted Unit Price represents the agreed-upon unit price
-
+@@ -1,19 +1,15 @@
 ## Requirements
 
 PricingCurrencyContractedUnitPrice [-adheres-]{+MUST adhere+} to the following requirements:
@@ -25,4 +20,3 @@ PricingCurrencyContractedUnitPrice [-adheres-]{+MUST adhere+} to the following r
 * When PricingCurrencyContractedUnitPrice is not null, PricingCurrencyContractedUnitPrice [-adheres-]{+MUST adhere+} to the following[-additional-] requirements:
   * PricingCurrencyContractedUnitPrice MUST be a non-negative decimal value.
   * PricingCurrencyContractedUnitPrice MUST be denominated in the PricingCurrency.
-

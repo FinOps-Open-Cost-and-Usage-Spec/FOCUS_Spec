@@ -25,7 +25,7 @@
     "  L011: \"ContractCommitmentModel MUST be of type String.\"",
     "  L012: \"ContractCommitmentModel MUST NOT be null.\"",
     "  L013: \"ContractCommitmentModel MUST be one of the allowed values.\"",
-    "  L014: \"ContractCommitmentModel MUST be \\\"Discontinuous\\\" if [ContractCommitmentFulfillmentInterval](#datasets.contractcommitment.contractcommitmentfulfillmentinterval) is \\\"Total Term\\\".\""
+    "  L014: \"ContractCommitmentModel MUST be \\\"Discontinuous\\\" if [ContractCommitmentFulfillmentInterval](#datasets.contractcommitment.contractcommitmentfulfillmentinterval) is \\\"Full Period\\\".\""
   ],
   "0_outline_summary": {
     "node_count": 5,
@@ -153,7 +153,7 @@
                 "temp_id": "R005",
                 "order": 5,
                 "ref": "L014",
-                "text": "ContractCommitmentModel MUST be \"Discontinuous\" if [ContractCommitmentFulfillmentInterval](#datasets.contractcommitment.contractcommitmentfulfillmentinterval) is \"Total Term\".",
+                "text": "ContractCommitmentModel MUST be \"Discontinuous\" if [ContractCommitmentFulfillmentInterval](#datasets.contractcommitment.contractcommitmentfulfillmentinterval) is \"Full Period\".",
                 "keyword": "MUST",
                 "section_path": [
                   "Contract Commitment Model",

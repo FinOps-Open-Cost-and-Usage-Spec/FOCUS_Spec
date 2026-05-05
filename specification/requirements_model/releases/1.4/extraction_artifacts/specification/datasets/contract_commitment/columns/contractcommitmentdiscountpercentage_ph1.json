@@ -301,7 +301,7 @@
         "class": "requirements_list_intro",
         "confidence": "high",
         "section_path": [
-          "Implementation Context",
+          "Implementation Guidance",
           "Calculating the Effective Percentage"
         ],
         "block": {
@@ -322,7 +322,7 @@
     ],
     "index": {
       "by_section_path": {
-        "Implementation Context > Calculating the Effective Percentage": [
+        "Implementation Guidance > Calculating the Effective Percentage": [
           "LI028"
         ]
       },

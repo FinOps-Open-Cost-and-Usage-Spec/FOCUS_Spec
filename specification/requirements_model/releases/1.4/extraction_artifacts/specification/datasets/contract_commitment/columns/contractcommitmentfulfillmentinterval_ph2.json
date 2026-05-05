@@ -25,7 +25,7 @@
     "  L011: \"ContractCommitmentFulfillmentInterval MUST be of type String.\"",
     "  L012: \"ContractCommitmentFulfillmentInterval MUST NOT be null.\"",
     "  L013: \"ContractCommitmentFulfillmentInterval MUST be one of the allowed values.\"",
-    "  L014: \"ContractCommitmentFulfillmentInterval MUST NOT be \\\"Total Term\\\" if [ContractCommitmentModel](#datasets.contractcommitment.contractcommitmentmodel) is \\\"Continuous\\\".\""
+    "  L014: \"ContractCommitmentFulfillmentInterval MUST NOT be \\\"Full Period\\\" if ContractCommitmentModel is \\\"Continuous\\\".\""
   ],
   "0_outline_summary": {
     "node_count": 5,
@@ -61,6 +61,7 @@
             "text": "ContractCommitmentFulfillmentInterval MUST adhere to the following requirements:",
             "keyword": "MUST",
             "section_path": [
+              "Contract Commitment Fulfillment Interval",
               "Requirements"
             ],
             "block": {
@@ -83,6 +84,7 @@
                 "text": "ContractCommitmentFulfillmentInterval MUST be of type String.",
                 "keyword": "MUST",
                 "section_path": [
+                  "Contract Commitment Fulfillment Interval",
                   "Requirements"
                 ],
                 "block": {
@@ -106,6 +108,7 @@
                 "text": "ContractCommitmentFulfillmentInterval MUST NOT be null.",
                 "keyword": "MUST NOT",
                 "section_path": [
+                  "Contract Commitment Fulfillment Interval",
                   "Requirements"
                 ],
                 "block": {
@@ -129,6 +132,7 @@
                 "text": "ContractCommitmentFulfillmentInterval MUST be one of the allowed values.",
                 "keyword": "MUST",
                 "section_path": [
+                  "Contract Commitment Fulfillment Interval",
                   "Requirements"
                 ],
                 "block": {
@@ -149,9 +153,10 @@
                 "temp_id": "R005",
                 "order": 5,
                 "ref": "L014",
-                "text": "ContractCommitmentFulfillmentInterval MUST NOT be \"Total Term\" if [ContractCommitmentModel](#datasets.contractcommitment.contractcommitmentmodel) is \"Continuous\".",
+                "text": "ContractCommitmentFulfillmentInterval MUST NOT be \"Full Period\" if ContractCommitmentModel is \"Continuous\".",
                 "keyword": "MUST NOT",
                 "section_path": [
+                  "Contract Commitment Fulfillment Interval",
                   "Requirements"
                 ],
                 "block": {

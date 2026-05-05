@@ -1,19 +1,10 @@
+## Diff
+
 diff --git a/tmp/contractapplied_v13.md b/tmp/contractapplied_working.md
-index c1291f6e..5b6ea5de 100644
+index c1291f6e..c8795c34 100644
 --- a/tmp/contractapplied_v13.md
 +++ b/tmp/contractapplied_working.md
 @@ -1,300 +1,102 @@
-# Contract Applied
-
-Contract Applied is a set of properties that associate a [-charge-]{+*charge*+} with one or more *contract commitments*, denoted as key-value pairs in a JSON object. Contract Applied allows the practitioner to track the progress of the commitments to which they have agreed with a service provider.[-The FOCUS-defined properties are:-]
-
-[-* `Contract ID`: The unique identifier representing a single contract.-]
-[-* `Contract Commitment ID`: The unique identifier representing a single contract term.-]
-[-* `Contract Commitment Applied Cost`: The value of the charge applied to a single contract term.-]
-[-* `Contract Commitment Applied Quantity`: The usage of the charge applied to a single contract term.-]
-[-* `Contract Commitment Applied Unit`: The unit of measure for the usage of the charge applied to a single contract term.-]
-
-[-In addition to these, a data generator may include one or more custom properties, also denoted as key-value pairs.-]
 
 ## Requirements
 
@@ -106,11 +97,11 @@ Contract Applied is a set of properties that associate a [-charge-]{+*charge*+} 
 * [-"ContractCommitmentAppliedCost"-]{+ContractAppliedObject.Elements[\*].ContractCommitmentAppliedQuantity+} MUST be denominated in the [-BillingCurrency.-]{+ContractAppliedObject.Elements[\*].ContractCommitmentAppliedUnit.+}
 {+* ContractAppliedObject.Elements[\*].ContractCommitmentAppliedUnit SHOULD conform to UnitFormat requirements.+}
 
-[-<b>Contract Commitment Applied Quantity</b>-]{+## Schema Structure+}
+[-<b>Contract Commitment Applied Quantity</b>-]{+### Object Schema Structure+}
 
 [-Contract Commitment Applied Quantity represents the quantity of the charge applied to the contract line item.  Contract Commitment Applied Quantity is associated with the contract line item via Contract Commitment ID.  Contract Commitment Applied Quantity is commonly used for monitoring the progress towards fulfilling contractual commitments that may facilitate discounts for *resources* or *services* as agreed between-]{+ContractApplied contains+} a [-service provider-]{+structured JSON object defining the allocation+} and {+application of+} a [-customer.-]{+*charge* against specific contract commitments.+}
 
-[-The "ContractCommitmentAppliedQuantity" property adheres to the following requirements:-]{+### Top-Level Properties+}
+[-The "ContractCommitmentAppliedQuantity" property adheres to the following requirements:-]{+<div class="h7-nonindex">Top-Level Properties</div>+}
 
 [-* "ContractCommitmentAppliedQuantity" MUST be present in a Cost and Usage *FOCUS dataset* when the service provider associates the *charge's* quantity with-]{+| Property | Type | Required | Description |+}
 {+| :--- | :--- | :--- | :--- |+}
@@ -136,4 +127,3 @@ Contract Applied is a set of properties that associate a [-charge-]{+*charge*+} 
 [-* "ContractCommitmentAppliedUnit" nullability is defined as follows:-]
 [-  * "ContractCommitmentAppliedUnit" MUST be null when "ContractCommitmentAppliedQuantity" is null.-]
 [-  * "ContractCommitmentAppliedUnit" MUST NOT be null when "ContractCommitmentAppliedQuantity" is not null.-]
-
