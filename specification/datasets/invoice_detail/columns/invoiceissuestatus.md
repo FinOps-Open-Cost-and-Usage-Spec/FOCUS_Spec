@@ -11,7 +11,7 @@ InvoiceIssueStatus MUST adhere to the following requirements:
 * InvoiceIssueStatus MUST NOT be null.
 * InvoiceIssueStatus MUST be one of the allowed values.
 * InvoiceIssueStatus MUST represent the current publication state of the invoice.
-* InvoiceIssueStatus MUST NOT transition from "Issued" to "Open" unless explicitly requested or approved by the customer.
+* InvoiceIssueStatus MUST NOT be "Open" when InvoiceIssueStatus was previously "Issued", unless explicitly requested or approved by the customer.
 
 ## Allowed Values
 
