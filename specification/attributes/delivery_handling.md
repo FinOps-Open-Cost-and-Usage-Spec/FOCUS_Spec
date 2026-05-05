@@ -43,7 +43,7 @@ Subsequent *dataset artifacts* using the Append mechanism may include the follow
 
 ## Requirements
 
-DeliveryHandling MUST adhere to the following requirements:
+Dataset conforming to DeliveryHandling attribute MUST adhere to the following requirements:
 
 * *FOCUS dataset* MUST have its mechanism(s) for delivering *dataset artifacts* documented and accessible to practitioners (including whether Overwrite or Append is used and under which conditions).
 * *FOCUS dataset* MUST NOT require practitioners to deduplicate records within or across delivered dataset artifacts.
