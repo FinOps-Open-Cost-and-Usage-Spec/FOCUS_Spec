@@ -31,6 +31,7 @@ Thanks to the following FOCUS members for their contributions to the FOCUS Relea
 * Andrew Qu (Everest)
 * Beau Nelford (Anglepoint)
 * Ben Olson (Adobe)
+* Christopher Harris (Datadog)
 * David Earney (American Express)
 * Deeja Cruz (Datadog)
 * Erik Norman (Caligo)
@@ -48,7 +49,6 @@ Thanks to the following FOCUS members for their contributions to the FOCUS Relea
 * Rowdy Voss (Oracle)
 * Sai Pydiganta (Amazon Web Services)
 * Sanjna Srivatsa (Broadcom)
-* Sarah McMullin (Google)
 * Tim Wright (Google)
 
 <div style="page-break-after: always"></div>
