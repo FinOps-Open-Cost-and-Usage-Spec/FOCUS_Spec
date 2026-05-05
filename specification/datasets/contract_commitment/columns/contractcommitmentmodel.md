@@ -11,13 +11,13 @@ ContractCommitmentModel MUST adhere to the following requirements:
 * ContractCommitmentModel MUST be of type String.
 * ContractCommitmentModel MUST NOT be null.
 * ContractCommitmentModel MUST be one of the allowed values.
-* ContractCommitmentModel MUST be "Discontinuous" if [ContractCommitmentFulfillmentInterval](#datasets.contractcommitment.contractcommitmentfulfillmentinterval) is "Full Period".
+* ContractCommitmentModel MUST be "Discontinuous" when ContractCommitmentFulfillmentInterval is "Full Period".
 
 ## Allowed Values
 
 | Value         | Description                                                                                                                                                     |
 | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Continuous    | A flat, constant "floor" of commitment (e.g., RIs, Savings Plans). Coverage is applied at a fixed rate per [Contract Commitment Fulfillment Interval](#datasets.contractcommitment.contractcommitmentfulfillmentinterval) (usually hourly), and benefits are not carried over to subsequent intervals. |
+| Continuous    | A flat, constant "floor" of commitment (e.g., RIs, Savings Plans). Coverage is applied at a fixed rate per Contract Commitment Fulfillment Interval (usually hourly), and benefits are not carried over to subsequent intervals. |
 | Discontinuous | A flexible, aggregate commitment (e.g., Enterprise Agreements, SaaS Minimum Spend). Coverage is measured over a broad window or against a total monetary value. |
 
 ## Implementation Guidance

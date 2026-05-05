@@ -175,9 +175,9 @@ CostAndUsage MUST adhere to the following requirements:
 * When the data generator supports data generator-calculated split cost allocation, CostAndUsage MUST adhere to the following requirements:
   * CostAndUsage MUST have its data generator-calculated split cost allocation method documented and accessible to practitioners.
   * CostAndUsage SHOULD offer data generator-calculated split cost allocation on an opt-in basis.
-  * CostAndUsage MAY contain records for concepts not related to resource usage, if it aligns with the documented data generator-calculated split cost allocation method.
-  * CostAndUsage MAY contain records for unused or unallocated usage from the *origin charge* as separate *allocated charges*, if it aligns with the documented data generator-calculated split cost allocation method.
-  * CostAndUsage MAY contain *allocated charges* with apportioned costs for unused or unallocated usage, if it aligns with the documented data generator-calculated split cost allocation method.
+  * CostAndUsage MAY contain records for concepts not related to resource usage, when it aligns with the documented data generator-calculated split cost allocation method.
+  * CostAndUsage MAY contain records for unused or unallocated usage from the *origin charge* as separate *allocated charges*, when it aligns with the documented data generator-calculated split cost allocation method.
+  * CostAndUsage MAY contain *allocated charges* with apportioned costs for unused or unallocated usage, when it aligns with the documented data generator-calculated split cost allocation method.
 * CostAndUsage SHOULD reflect all applied discounts in *charges* they pertain to.
 * CostAndUsage SHOULD NOT represent applied discounts as separate negating or offsetting *charges*.
 * CostAndUsage *FOCUS columns* MUST conform to [DataGeneratorCalculatedSplitCostAllocationHandling](#attributes.datagenerator-calculatedsplitcostallocationhandling) requirements when the data generator supports data generator-calculated split cost allocation.
