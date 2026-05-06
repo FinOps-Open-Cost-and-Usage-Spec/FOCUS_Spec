@@ -91,80 +91,80 @@ CostAndUsage MUST adhere to the following requirements:
 
 * CostAndUsage MUST be present.
 * CostAndUsage column presence MUST adhere to the following requirements:
-  * CostAndUsage SHOULD include [AllocatedMethodDetails](#datasets.costandusage.allocatedmethoddetails) when the data generator supports data generator-calculated split cost allocation.
-  * CostAndUsage MUST include [AllocatedMethodId](#datasets.costandusage.allocatedmethodid) when the data generator supports data generator-calculated split cost allocation.
-  * CostAndUsage MUST include [AllocatedResourceId](#datasets.costandusage.allocatedresourceid) when the data generator supports data generator-calculated split cost allocation.
-  * CostAndUsage MUST include [AllocatedResourceName](#datasets.costandusage.allocatedresourcename) when the data generator supports data generator-calculated split cost allocation.
-  * CostAndUsage MUST include [AllocatedTags](#datasets.costandusage.allocatedtags) when the data generator supports data generator-calculated split cost allocation.
-  * CostAndUsage SHOULD include [AvailabilityZone](#datasets.costandusage.availabilityzone) when the host provider supports deploying resources or services within an *availability zone*.
+  * CostAndUsage SHOULD include [AllocatedMethodDetails](#datasets.costandusage.allocatedmethoddetails) when the source operating model [includes data generator-calculated split cost allocation](#presenceconditions.includesdatageneratorcalculatedsplitcostallocation).
+  * CostAndUsage MUST include [AllocatedMethodId](#datasets.costandusage.allocatedmethodid) when the source operating model [includes data generator-calculated split cost allocation](#presenceconditions.includesdatageneratorcalculatedsplitcostallocation).
+  * CostAndUsage MUST include [AllocatedResourceId](#datasets.costandusage.allocatedresourceid) when the source operating model [includes data generator-calculated split cost allocation](#presenceconditions.includesdatageneratorcalculatedsplitcostallocation).
+  * CostAndUsage MUST include [AllocatedResourceName](#datasets.costandusage.allocatedresourcename) when the source operating model [includes data generator-calculated split cost allocation](#presenceconditions.includesdatageneratorcalculatedsplitcostallocation).
+  * CostAndUsage MUST include [AllocatedTags](#datasets.costandusage.allocatedtags) when the source operating model [includes data generator-calculated split cost allocation](#presenceconditions.includesdatageneratorcalculatedsplitcostallocation).
+  * CostAndUsage SHOULD include [AvailabilityZone](#datasets.costandusage.availabilityzone) when the source operating model [includes deploying resources or services within an *availability zone*](#presenceconditions.includesdeployingwithinavailabilityzone).
   * CostAndUsage MUST include [BilledCost](#datasets.costandusage.billedcost).
   * CostAndUsage MUST include [BillingAccountId](#datasets.costandusage.billingaccountid).
   * CostAndUsage MUST include [BillingAccountName](#datasets.costandusage.billingaccountname).
-  * CostAndUsage MUST include [BillingAccountType](#datasets.costandusage.billingaccounttype) when the [*invoice issuer*](#glossary:invoice-issuer) supports more than one possible BillingAccountType value.
+  * CostAndUsage MUST include [BillingAccountType](#datasets.costandusage.billingaccounttype) when the source operating model [defines more than one possible BillingAccountType value](#presenceconditions.definesmultiplebillingaccounttypes).
   * CostAndUsage MUST include [BillingCurrency](#datasets.costandusage.billingcurrency).
   * CostAndUsage MUST include [BillingPeriodEnd](#datasets.costandusage.billingperiodend).
   * CostAndUsage MUST include [BillingPeriodStart](#datasets.costandusage.billingperiodstart).
-  * CostAndUsage MUST include [CapacityReservationId](#datasets.costandusage.capacityreservationid) when the service provider supports *capacity reservations*.
-  * CostAndUsage MUST include [CapacityReservationStatus](#datasets.costandusage.capacityreservationstatus) when the service provider supports *capacity reservations*.
+  * CostAndUsage MUST include [CapacityReservationId](#datasets.costandusage.capacityreservationid) when the source operating model [includes *capacity reservations*](#presenceconditions.includescapacityreservations).
+  * CostAndUsage MUST include [CapacityReservationStatus](#datasets.costandusage.capacityreservationstatus) when the source operating model [includes *capacity reservations*](#presenceconditions.includescapacityreservations).
   * CostAndUsage MUST include [ChargeCategory](#datasets.costandusage.chargecategory).
   * CostAndUsage MUST include [ChargeClass](#datasets.costandusage.chargeclass).
   * CostAndUsage MUST include [ChargeDescription](#datasets.costandusage.chargedescription).
   * CostAndUsage SHOULD include [ChargeFrequency](#datasets.costandusage.chargefrequency).
   * CostAndUsage MUST include [ChargePeriodEnd](#datasets.costandusage.chargeperiodend).
   * CostAndUsage MUST include [ChargePeriodStart](#datasets.costandusage.chargeperiodstart).
-  * CostAndUsage MUST include [CommitmentDiscountCategory](#datasets.costandusage.commitmentdiscountcategory) when the service provider supports *commitment discounts*.
-  * CostAndUsage MUST include [CommitmentDiscountId](#datasets.costandusage.commitmentdiscountid) when the service provider supports *commitment discounts*.
-  * CostAndUsage MUST include [CommitmentDiscountName](#datasets.costandusage.commitmentdiscountname) when the service provider supports *commitment discounts*.
-  * CostAndUsage MUST include [CommitmentDiscountQuantity](#datasets.costandusage.commitmentdiscountquantity) when the service provider supports *commitment discounts*.
-  * CostAndUsage MUST include [CommitmentDiscountStatus](#datasets.costandusage.commitmentdiscountstatus) when the service provider supports *commitment discounts*.
-  * CostAndUsage MUST include [CommitmentDiscountType](#datasets.costandusage.commitmentdiscounttype) when the service provider supports *commitment discounts*.
-  * CostAndUsage MUST include [CommitmentDiscountUnit](#datasets.costandusage.commitmentdiscountunit) when the service provider supports *commitment discounts*.
-  * CostAndUsage MUST include [CommitmentProgramEligibilityDetails](#datasets.costandusage.commitmentprogrameligibilitydetails) when the service provider supports at least one [*commitment program*](#glossary:commitment-program).
-  * CostAndUsage MUST include [ConsumedQuantity](#datasets.costandusage.consumedquantity) when the service provider supports the measurement of usage.
-  * CostAndUsage MUST include [ConsumedUnit](#datasets.costandusage.consumedunit) when the service provider supports the measurement of usage.
-  * CostAndUsage MUST include [ContractApplied](#datasets.costandusage.contractapplied) when the service provider supports *contract commitments*.
+  * CostAndUsage MUST include [CommitmentDiscountCategory](#datasets.costandusage.commitmentdiscountcategory) when the source operating model [includes *commitment discounts*](#presenceconditions.includescommitmentdiscounts).
+  * CostAndUsage MUST include [CommitmentDiscountId](#datasets.costandusage.commitmentdiscountid) when the source operating model [includes *commitment discounts*](#presenceconditions.includescommitmentdiscounts).
+  * CostAndUsage MUST include [CommitmentDiscountName](#datasets.costandusage.commitmentdiscountname) when the source operating model [includes *commitment discounts*](#presenceconditions.includescommitmentdiscounts).
+  * CostAndUsage MUST include [CommitmentDiscountQuantity](#datasets.costandusage.commitmentdiscountquantity) when the source operating model [includes *commitment discounts*](#presenceconditions.includescommitmentdiscounts).
+  * CostAndUsage MUST include [CommitmentDiscountStatus](#datasets.costandusage.commitmentdiscountstatus) when the source operating model [includes *commitment discounts*](#presenceconditions.includescommitmentdiscounts).
+  * CostAndUsage MUST include [CommitmentDiscountType](#datasets.costandusage.commitmentdiscounttype) when the source operating model [includes *commitment discounts*](#presenceconditions.includescommitmentdiscounts).
+  * CostAndUsage MUST include [CommitmentDiscountUnit](#datasets.costandusage.commitmentdiscountunit) when the source operating model [includes *commitment discounts*](#presenceconditions.includescommitmentdiscounts).
+  * CostAndUsage MUST include [CommitmentProgramEligibilityDetails](#datasets.costandusage.commitmentprogrameligibilitydetails) when the source operating model [includes at least one *commitment program*](#presenceconditions.includescommitmentprograms).
+  * CostAndUsage MUST include [ConsumedQuantity](#datasets.costandusage.consumedquantity) when the source operating model [includes the measurement of usage](#presenceconditions.includesmeasurementofusage).
+  * CostAndUsage MUST include [ConsumedUnit](#datasets.costandusage.consumedunit) when the source operating model [includes the measurement of usage](#presenceconditions.includesmeasurementofusage).
+  * CostAndUsage MUST include [ContractApplied](#datasets.costandusage.contractapplied) when the source operating model [includes *contract commitments*](#presenceconditions.includescontractcommitments).
   * CostAndUsage MUST include [ContractedCost](#datasets.costandusage.contractedcost).
-  * CostAndUsage MUST include [ContractedUnitPrice](#datasets.costandusage.contractedunitprice) when the service provider supports negotiated pricing concepts.
+  * CostAndUsage MUST include [ContractedUnitPrice](#datasets.costandusage.contractedunitprice) when the source operating model [includes negotiated pricing concepts](#presenceconditions.includesnegotiatedpricingconcepts).
   * CostAndUsage MUST include [EffectiveCost](#datasets.costandusage.effectivecost).
   * CostAndUsage MUST include [HostProviderName](#datasets.costandusage.hostprovidername).
-  * CostAndUsage MUST include [InvoiceDetailId](#datasets.costandusage.invoicedetailid) when the invoice issuer supports payable invoices.
-  * CostAndUsage MUST include [InvoiceId](#datasets.costandusage.invoiceid) when the invoice issuer supports payable invoices.
+  * CostAndUsage MUST include [InvoiceDetailId](#datasets.costandusage.invoicedetailid) when the source operating model [includes payable invoices](#presenceconditions.includespayableinvoices).
+  * CostAndUsage MUST include [InvoiceId](#datasets.costandusage.invoiceid) when the source operating model [includes payable invoices](#presenceconditions.includespayableinvoices).
   * CostAndUsage MUST include [InvoiceIssuerName](#datasets.costandusage.invoiceissuername).
   * CostAndUsage MUST include [ListCost](#datasets.costandusage.listcost).
-  * CostAndUsage MUST include [ListUnitPrice](#datasets.costandusage.listunitprice) when the service provider publishes unit prices exclusive of discounts.
-  * CostAndUsage MUST include [PricingCategory](#datasets.costandusage.pricingcategory) when the service provider supports more than one pricing category across all [*SKUs*](#glossary:sku).
-  * CostAndUsage MUST include [PricingCurrency](#datasets.costandusage.pricingcurrency) when the service provider supports pricing and billing in different currencies.
+  * CostAndUsage MUST include [ListUnitPrice](#datasets.costandusage.listunitprice) when the source operating model [defines unit prices exclusive of discounts](#presenceconditions.defineslistunitprice).
+  * CostAndUsage MUST include [PricingCategory](#datasets.costandusage.pricingcategory) when the source operating model [includes more than one pricing category across all *SKUs*](#presenceconditions.includesmultiplepricingcategories).
+  * CostAndUsage MUST include [PricingCurrency](#datasets.costandusage.pricingcurrency) when the source operating model [includes pricing and billing in different currencies](#presenceconditions.includesmulticurrencypricing).
   * CostAndUsage MUST adhere to the following [PricingCurrencyContractedUnitPrice](#datasets.costandusage.pricingcurrencycontractedunitprice) presence requirements:
-    * CostAndUsage MUST include PricingCurrencyContractedUnitPrice when the service provider supports prices in virtual currency and publishes unit prices exclusive of discounts.
-    * CostAndUsage SHOULD include PricingCurrencyContractedUnitPrice when the service provider supports pricing and billing in different currencies and publishes unit prices exclusive of discounts.
+    * CostAndUsage MUST include PricingCurrencyContractedUnitPrice when the source operating model [includes prices in virtual currency](#presenceconditions.includesvirtualcurrency) and [defines unit prices exclusive of discounts](#presenceconditions.defineslistunitprice).
+    * CostAndUsage SHOULD include PricingCurrencyContractedUnitPrice when the source operating model [includes pricing and billing in different currencies](#presenceconditions.includesmulticurrencypricing) and [defines unit prices exclusive of discounts](#presenceconditions.defineslistunitprice).
     * CostAndUsage MAY include PricingCurrencyContractedUnitPrice in all other cases.
   * CostAndUsage MUST adhere to the following [PricingCurrencyEffectiveCost](#datasets.costandusage.pricingcurrencyeffectivecost) presence requirements:
-    * CostAndUsage MUST include PricingCurrencyEffectiveCost when the service provider supports prices in virtual currency and publishes unit prices exclusive of discounts.
-    * CostAndUsage SHOULD include PricingCurrencyEffectiveCost when the service provider supports pricing and billing in different currencies and publishes unit prices exclusive of discounts.
+    * CostAndUsage MUST include PricingCurrencyEffectiveCost when the source operating model [includes prices in virtual currency](#presenceconditions.includesvirtualcurrency) and [defines unit prices exclusive of discounts](#presenceconditions.defineslistunitprice).
+    * CostAndUsage SHOULD include PricingCurrencyEffectiveCost when the source operating model [includes pricing and billing in different currencies](#presenceconditions.includesmulticurrencypricing) and [defines unit prices exclusive of discounts](#presenceconditions.defineslistunitprice).
     * CostAndUsage MAY include PricingCurrencyEffectiveCost in all other cases.
   * CostAndUsage MUST adhere to the following [PricingCurrencyListUnitPrice](#datasets.costandusage.pricingcurrencylistunitprice) presence requirements:
-    * CostAndUsage MUST include PricingCurrencyListUnitPrice when the service provider supports prices in virtual currency and publishes unit prices exclusive of discounts.
-    * CostAndUsage SHOULD include PricingCurrencyListUnitPrice when the service provider supports pricing and billing in different currencies and publishes unit prices exclusive of discounts.
+    * CostAndUsage MUST include PricingCurrencyListUnitPrice when the source operating model [includes prices in virtual currency](#presenceconditions.includesvirtualcurrency) and [defines unit prices exclusive of discounts](#presenceconditions.defineslistunitprice).
+    * CostAndUsage SHOULD include PricingCurrencyListUnitPrice when the source operating model [includes pricing and billing in different currencies](#presenceconditions.includesmulticurrencypricing) and [defines unit prices exclusive of discounts](#presenceconditions.defineslistunitprice).
     * CostAndUsage MAY include PricingCurrencyListUnitPrice in all other cases.
   * CostAndUsage MUST include [PricingQuantity](#datasets.costandusage.pricingquantity).
   * CostAndUsage MUST include [PricingUnit](#datasets.costandusage.pricingunit).
-  * CostAndUsage MUST include [RegionId](#datasets.costandusage.regionid) when the host provider supports deploying resources or services within a region.
-  * CostAndUsage MUST include [RegionName](#datasets.costandusage.regionname) when the host provider supports deploying resources or services within a region.
-  * CostAndUsage MUST include [ResourceId](#datasets.costandusage.resourceid) when the service provider supports billing based on provisioned *resources*.
-  * CostAndUsage MUST include [ResourceName](#datasets.costandusage.resourcename) when the service provider supports billing based on provisioned resources.
-  * CostAndUsage MUST include [ResourceType](#datasets.costandusage.resourcetype) when the service provider supports billing based on provisioned *resources* and supports assigning types to *resources*.
+  * CostAndUsage MUST include [RegionId](#datasets.costandusage.regionid) when the source operating model [includes deploying resources or services within a region](#presenceconditions.includesdeployingwithinregion).
+  * CostAndUsage MUST include [RegionName](#datasets.costandusage.regionname) when the source operating model [includes deploying resources or services within a region](#presenceconditions.includesdeployingwithinregion).
+  * CostAndUsage MUST include [ResourceId](#datasets.costandusage.resourceid) when the source operating model [includes provisioned *resources*](#presenceconditions.includesprovisionedresources).
+  * CostAndUsage MUST include [ResourceName](#datasets.costandusage.resourcename) when the source operating model [includes provisioned *resources*](#presenceconditions.includesprovisionedresources).
+  * CostAndUsage MUST include [ResourceType](#datasets.costandusage.resourcetype) when the source operating model [includes provisioned *resources*](#presenceconditions.includesprovisionedresources) and [assigning types to *resources*](#presenceconditions.includesassigningtypestoresources).
   * CostAndUsage MUST include [ServiceCategory](#datasets.costandusage.servicecategory).
   * CostAndUsage MUST include [ServiceName](#datasets.costandusage.servicename).
   * CostAndUsage MUST include [ServiceProviderName](#datasets.costandusage.serviceprovidername).
   * CostAndUsage SHOULD include [ServiceSubcategory](#datasets.costandusage.servicesubcategory).
-  * CostAndUsage MUST include [SkuId](#datasets.costandusage.skuid) when the service provider supports unit pricing concepts and publishes price lists, publicly or as part of contracting.
-  * CostAndUsage MUST include [SkuMeter](#datasets.costandusage.skumeter) when the service provider supports unit pricing concepts and publishes [*price lists*](#glossary:price-list), publicly or as part of contracting.
-  * CostAndUsage MUST include [SkuPriceDetails](#datasets.costandusage.skupricedetails) when the service provider supports unit pricing concepts and publishes *price lists*, publicly or as part of contracting.
-  * CostAndUsage MUST include [SkuPriceId](#datasets.costandusage.skupriceid) when the service provider supports unit pricing concepts and publishes *price lists*, publicly or as part of contracting.
-  * CostAndUsage MUST include [SubAccountId](#datasets.costandusage.subaccountid) when the service provider supports a *sub account* construct.
-  * CostAndUsage MUST include [SubAccountName](#datasets.costandusage.subaccountname) when the service provider supports a *sub account* construct.
-  * CostAndUsage MUST include [SubAccountType](#datasets.costandusage.subaccounttype) when the service provider supports more than one possible SubAccountType value.
-  * CostAndUsage MUST include [Tags](#datasets.costandusage.tags) when the data generator supports setting user or provider-defined tags.
+  * CostAndUsage MUST include [SkuId](#datasets.costandusage.skuid) when the source operating model [includes unit pricing concepts](#presenceconditions.includesunitpricingconcepts) and [publishes *price lists*, publicly or as part of contracting](#presenceconditions.publishespricelists).
+  * CostAndUsage MUST include [SkuMeter](#datasets.costandusage.skumeter) when the source operating model [includes unit pricing concepts](#presenceconditions.includesunitpricingconcepts) and [publishes *price lists*, publicly or as part of contracting](#presenceconditions.publishespricelists).
+  * CostAndUsage MUST include [SkuPriceDetails](#datasets.costandusage.skupricedetails) when the source operating model [includes unit pricing concepts](#presenceconditions.includesunitpricingconcepts) and [publishes *price lists*, publicly or as part of contracting](#presenceconditions.publishespricelists).
+  * CostAndUsage MUST include [SkuPriceId](#datasets.costandusage.skupriceid) when the source operating model [includes unit pricing concepts](#presenceconditions.includesunitpricingconcepts) and [publishes *price lists*, publicly or as part of contracting](#presenceconditions.publishespricelists).
+  * CostAndUsage MUST include [SubAccountId](#datasets.costandusage.subaccountid) when the source operating model [includes a *sub account* construct](#presenceconditions.includessubaccountconstruct).
+  * CostAndUsage MUST include [SubAccountName](#datasets.costandusage.subaccountname) when the source operating model [includes a *sub account* construct](#presenceconditions.includessubaccountconstruct).
+  * CostAndUsage MUST include [SubAccountType](#datasets.costandusage.subaccounttype) when the source operating model [defines more than one possible SubAccountType value](#presenceconditions.definesmultiplesubaccounttypes).
+  * CostAndUsage MUST include [Tags](#datasets.costandusage.tags) when the source operating model [includes user or provider-defined tags](#presenceconditions.includestags).
   * CostAndUsage SHOULD include [*custom columns*](#glossary:custom-column) needed to identify all applied discounts when [*FOCUS columns*](#glossary:FOCUS-column) are not sufficient.
 * CostAndUsage MUST conform to [CorrectionHandling](#attributes.correctionhandling) requirements.
 * CostAndUsage MUST conform to [DatasetCompleteness](#attributes.datasetcompleteness) requirements.
@@ -172,7 +172,7 @@ CostAndUsage MUST adhere to the following requirements:
 * CostAndUsage MUST conform to [DeliveryHandling](#attributes.deliveryhandling) requirements.
 * CostAndUsage MUST include *charges* representing unused portions of a [*commitment*](#glossary:commitment) when the *commitment* is not fully utilized.
 * CostAndUsage MUST include separate *charges* representing discounted and non-discounted portions when a discount applies to only a portion of the originally incurred *charge*.
-* When the data generator supports data generator-calculated split cost allocation, CostAndUsage MUST adhere to the following requirements:
+* When the source operating model [includes data generator-calculated split cost allocation](#presenceconditions.includesdatageneratorcalculatedsplitcostallocation), CostAndUsage MUST adhere to the following requirements:
   * CostAndUsage MUST have its data generator-calculated split cost allocation method documented and accessible to practitioners.
   * CostAndUsage SHOULD offer data generator-calculated split cost allocation on an opt-in basis.
   * CostAndUsage MAY contain records for concepts not related to resource usage, if it aligns with the documented data generator-calculated split cost allocation method.
@@ -180,7 +180,7 @@ CostAndUsage MUST adhere to the following requirements:
   * CostAndUsage MAY contain *allocated charges* with apportioned costs for unused or unallocated usage, if it aligns with the documented data generator-calculated split cost allocation method.
 * CostAndUsage SHOULD reflect all applied discounts in *charges* they pertain to.
 * CostAndUsage SHOULD NOT represent applied discounts as separate negating or offsetting *charges*.
-* CostAndUsage *FOCUS columns* MUST conform to [DataGeneratorCalculatedSplitCostAllocationHandling](#attributes.datagenerator-calculatedsplitcostallocationhandling) requirements when the data generator supports data generator-calculated split cost allocation.
+* CostAndUsage *FOCUS columns* MUST conform to [DataGeneratorCalculatedSplitCostAllocationHandling](#attributes.datagenerator-calculatedsplitcostallocationhandling) requirements when the source operating model [includes data generator-calculated split cost allocation](#presenceconditions.includesdatageneratorcalculatedsplitcostallocation).
 * CostAndUsage *FOCUS columns* MUST conform to [FocusColumnHandling](#attributes.focuscolumnhandling) requirements.
 * CostAndUsage *FOCUS columns* MUST conform to [NullHandling](#attributes.nullhandling) requirements.
 * CostAndUsage *custom columns* MUST conform to [CustomColumnHandling](#attributes.customcolumnhandling) requirements.
