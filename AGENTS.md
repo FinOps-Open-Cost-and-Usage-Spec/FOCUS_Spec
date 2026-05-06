@@ -119,7 +119,7 @@ AI agents generating or reviewing content MUST act as strict technical editors e
 * **Glossary terms:** Link with `[*term*](#glossary:term)` format.
 * **Linking Rule:** Link entity names and Glossary terms ONLY on their first occurrence per source file. Exception: Functional links using different anchor text are exempt.
 * **Lists:** All unordered lists MUST use asterisks (`*`), never dashes (`-`) or plus signs (`+`). Nested bullet points MUST use exactly two spaces per level.
-* **Notes:** Important notes must use the blockquote format (`> Important Consideration`).
+* **Notes:** Important notes must use the blockquote format (`> Note:`).
 * **Anchors:** Pandoc auto-generates custom heading anchors. DO NOT flag missing HTML `<a name="">` tags.
 
 ### Validation & Schema Accuracy
