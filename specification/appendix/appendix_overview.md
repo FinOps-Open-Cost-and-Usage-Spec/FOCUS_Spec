@@ -1,6 +1,6 @@
 # Appendix
 
-*This section is informative. It illustrates the application of normative rules defined elsewhere in this specification and does not introduce additional requirements.*
+> Note: The following section is informative and non-normative. It does not define requirements.
 
 ## Appendix Entries<!--SkipTOC-->
 
