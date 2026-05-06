@@ -15,7 +15,7 @@ pagetitle: FinOps Open Cost and Usage Specification
 
 ## Table of Contents
 
-!TOC 1 1 2 1 2 1 2 1 1 1
+!TOC 1 1 2 1 2 1 2 2 1
 
 <div style="page-break-after: always"></div>
 
@@ -39,19 +39,15 @@ pagetitle: FinOps Open Cost and Usage Specification
 
 <div style="page-break-after: always"></div>
 
-!INCLUDE "glossary.md",1
-
-<div style="page-break-after: always"></div>
-
-!INCLUDE "appendix/appendix.mdpp",1
-
-<div style="page-break-after: always"></div>
-
 !INCLUDE "schemas/schemas.mdpp",1
 
 <div style="page-break-after: always"></div>
 
 !INCLUDE "glossary.md",1
+
+<div style="page-break-after: always"></div>
+
+!INCLUDE "appendix/appendix.mdpp",1
 
 <div style="page-break-after: always"></div>
 
