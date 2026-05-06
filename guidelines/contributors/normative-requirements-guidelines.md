@@ -45,6 +45,8 @@ style ObjectProperty fill:#d4edda,stroke:#666,stroke-width:1px
 
 * `CustomColumnHandling` is a special Attribute that references other Attributes (e.g., `NullHandling`, `DateTimeFormat`) to establish recommended conformance for custom columns. This cross-reference pattern is an exception rather than a general relationship shown in the diagram.
 
+> **Note:** These guidelines do not currently apply to FOCUS Metadata requirements, which are out of scope.
+
 ## Dataset Abstraction and Normative Subject Convention
 
 By glossary definition, the following concepts are used:
