@@ -4,7 +4,7 @@ The name of the column provided in the [*FOCUS dataset*](#glossary:FOCUS-dataset
 
 ColumnName adheres to the following requirements:
 
-* ColumnName MUST be present in an object within the [ColumnDefinition](#columndefinition) collection.
+* ColumnName MUST be present in an object within the [ColumnDefinition](#metadata.schema.columndefinition) collection.
 * ColumnName MUST be of type String.
 * ColumnName MUST NOT be null.
 
@@ -16,7 +16,7 @@ ColumnName
 
 Column Name
 
-## Content constraints
+## Content Constraints
 
 | Constraint      | Value            |
 |:----------------|:-----------------|
@@ -25,6 +25,6 @@ Column Name
 | Data type       | String           |
 | Value format    | \<not specified> |
 
-## Introduced (version)
+## Version Introduced
 
 1.0

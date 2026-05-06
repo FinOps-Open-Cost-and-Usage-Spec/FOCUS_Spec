@@ -1,10 +1,10 @@
 # Deprecated
 
-The deprecation status of a column in a [Dataset Instance](#datasetinstance).
+The deprecation status of a column in a [Dataset Instance](#metadata.datasetinstance).
 
 Deprecated adheres to the following requirements:
 
-* Deprecated MUST be present in an object within the [ColumnDefinition](#columndefinition) collection when the column is planned for removal.
+* Deprecated MUST be present in an object within the [ColumnDefinition](#metadata.schema.columndefinition) collection when the column is planned for removal.
 * Deprecated MUST be of type Boolean.
 * Deprecated MUST NOT contain null values.
 * Deprecated SHOULD only be "true" if the column is deprecated.
@@ -18,7 +18,7 @@ Deprecated
 
 Deprecated
 
-## Content constraints
+## Content Constraints
 
 | Constraint      | Value            |
 |:----------------|:-----------------|
@@ -27,6 +27,6 @@ Deprecated
 | Data type       | Boolean          |
 | Value format    | \<not specified> |
 
-## Introduced (version)
+## Version Introduced
 
 1.2

@@ -1,0 +1,233 @@
+{
+  "CCT-ContractCommitmentUnit-C-000-M": {
+    "Function": "Composite",
+    "Reference": "ContractCommitmentUnit",
+    "EntityType": "Column",
+    "EntityName": "Contract Commitment Unit",
+    "EntityId": "ContractCommitmentUnit",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 0,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitmentUnit adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitmentUnit-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitmentUnit-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitmentUnit-C-003-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitmentUnit-C-004-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CCT-ContractCommitment-D-012-M",
+        "CCT-ContractCommitmentUnit-C-001-M",
+        "CCT-ContractCommitmentUnit-C-002-M",
+        "CCT-ContractCommitmentUnit-C-003-O",
+        "CCT-ContractCommitmentUnit-C-004-C"
+      ]
+    }
+  },
+  "CCT-ContractCommitmentUnit-C-001-M": {
+    "Function": "Type",
+    "Reference": "ContractCommitmentUnit",
+    "EntityName": "Contract Commitment Unit",
+    "EntityId": "ContractCommitmentUnit",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 20,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitmentUnit MUST be of type String.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "TypeString",
+        "ColumnName": "ContractCommitmentUnit"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CCT-ContractCommitmentUnit-C-002-M": {
+    "Function": "Format",
+    "Reference": "ContractCommitmentUnit",
+    "EntityName": "Contract Commitment Unit",
+    "EntityId": "ContractCommitmentUnit",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 30,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitmentUnit MUST conform to StringHandling requirements.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "FormatString",
+        "ColumnName": "ContractCommitmentUnit"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CCT-ContractCommitmentUnit-C-003-O": {
+    "Function": "Format",
+    "Reference": "ContractCommitmentUnit",
+    "EntityName": "Contract Commitment Unit",
+    "EntityId": "ContractCommitmentUnit",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 40,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitmentUnit SHOULD conform to UnitFormat requirements.",
+      "Keyword": "SHOULD",
+      "Requirement": {
+        "CheckFunction": "FormatUnit",
+        "ColumnName": "ContractCommitmentUnit"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CCT-ContractCommitmentUnit-C-004-C": {
+    "Function": "Composite",
+    "Reference": "ContractCommitmentUnit",
+    "EntityName": "Contract Commitment Unit",
+    "EntityId": "ContractCommitmentUnit",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 50,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitmentUnit nullability is defined as follows:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitmentUnit-C-005-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitmentUnit-C-006-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CCT-ContractCommitmentUnit-C-005-C",
+        "CCT-ContractCommitmentUnit-C-006-C"
+      ]
+    }
+  },
+  "CCT-ContractCommitmentUnit-C-005-C": {
+    "Function": "Nullability",
+    "Reference": "ContractCommitmentUnit",
+    "EntityName": "Contract Commitment Unit",
+    "EntityId": "ContractCommitmentUnit",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 60,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitmentUnit MUST be null when ContractCommitmentQuantity is null.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "ContractCommitmentUnit",
+        "Value": null
+      },
+      "Condition": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "ContractCommitmentQuantity",
+        "Value": null
+      },
+      "Dependencies": [
+        "CCT-ContractCommitmentQuantity-C-000-M"
+      ]
+    }
+  },
+  "CCT-ContractCommitmentUnit-C-006-C": {
+    "Function": "Nullability",
+    "Reference": "ContractCommitmentUnit",
+    "EntityName": "Contract Commitment Unit",
+    "EntityId": "ContractCommitmentUnit",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 70,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitmentUnit MUST NOT be null when ContractCommitmentQuantity is not null.",
+      "Keyword": "MUST NOT",
+      "Requirement": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "ContractCommitmentUnit",
+        "Value": null
+      },
+      "Condition": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "ContractCommitmentQuantity",
+        "Value": null
+      },
+      "Dependencies": [
+        "CCT-ContractCommitmentQuantity-C-000-M"
+      ]
+    }
+  }
+}

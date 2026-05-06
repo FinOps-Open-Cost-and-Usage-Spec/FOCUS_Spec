@@ -31,12 +31,12 @@ Current values observed in billing data for various scenarios:
 | GCP       | Not available                                                              |               |
 | Microsoft | ?                                                                          |               |
 
-- Where do you get the following Azure Invoice Issuer values today?
-  - Azure China scenario, is that in the CSP data under PartnerId/PartnerName?
+* Where do you get the following Azure Invoice Issuer values today?
+  * Azure China scenario, is that in the CSP data under PartnerId/PartnerName?
 
 See [Appendix: Origination of cost data](../appendix/origination_of_cost_data.md) section for potential scenarios and proposed values for the Invoice Issuer Name dimension.
 
 ## Discussion / Scratch space
 
-- Within a single well known cloud provider, there may be different entities that do invoicing for usage. For example, in some cases a region may be operated by a different entity / partner even though the overall product is sold as AWS or Azure.
-- Google invoices may show invoice entities such as Google France SarL and Google, Inc. USA (though not available in the BigQuery billing export).
+* Within a single well known cloud provider, there may be different entities that do invoicing for usage. For example, in some cases a region may be operated by a different entity / partner even though the overall product is sold as AWS or Azure.
+* Google invoices may show invoice entities such as Google France SarL and Google, Inc. USA (though not available in the BigQuery billing export).

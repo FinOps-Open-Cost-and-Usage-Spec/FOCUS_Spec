@@ -1,0 +1,268 @@
+{
+  "CAU-InvoiceId-C-000-O": {
+    "Function": "Composite",
+    "Reference": "InvoiceId",
+    "EntityType": "Column",
+    "EntityName": "Invoice Id",
+    "EntityId": "InvoiceId",
+    "Notes": "Root composite for column",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 0,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "InvoiceId adheres to the following requirements:",
+      "Keyword": "SHOULD",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-InvoiceId-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-InvoiceId-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-InvoiceId-C-008-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-InvoiceId-C-003-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-InvoiceId-C-006-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-InvoiceId-C-007-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CAU-CostAndUsage-D-033-O",
+        "CAU-InvoiceId-C-001-M",
+        "CAU-InvoiceId-C-002-M",
+        "CAU-InvoiceId-C-008-M",
+        "CAU-InvoiceId-C-003-C",
+        "CAU-InvoiceId-C-006-O",
+        "CAU-InvoiceId-C-007-C"
+      ]
+    }
+  },
+  "CAU-InvoiceId-C-001-M": {
+    "Function": "Type",
+    "Reference": "InvoiceId",
+    "EntityType": "Column",
+    "EntityName": "Invoice Id",
+    "EntityId": "InvoiceId",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 20,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "InvoiceId MUST be of type String.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "TypeString",
+        "ColumnName": "InvoiceId"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-InvoiceId-C-002-M": {
+    "Function": "Format",
+    "Reference": "InvoiceId",
+    "EntityType": "Column",
+    "EntityName": "Invoice Id",
+    "EntityId": "InvoiceId",
+    "Notes": "Cross-attribute reference: StringHandling",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 30,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "InvoiceId MUST conform to StringHandling requirements.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "FormatString",
+        "ColumnName": "InvoiceId"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-InvoiceId-C-003-C": {
+    "Function": "Composite",
+    "Reference": "InvoiceId",
+    "EntityType": "Column",
+    "EntityName": "Invoice Id",
+    "EntityId": "InvoiceId",
+    "Notes": "Composite for nullability rules",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 50,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "InvoiceId nullability is defined as follows:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "OR",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-InvoiceId-C-004-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-InvoiceId-C-005-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CAU-InvoiceId-C-004-C",
+        "CAU-InvoiceId-C-005-C"
+      ]
+    }
+  },
+  "CAU-InvoiceId-C-004-C": {
+    "Function": "Nullability",
+    "Reference": "InvoiceId",
+    "EntityType": "Column",
+    "EntityName": "Invoice Id",
+    "EntityId": "InvoiceId",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 60,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "InvoiceId MUST be null when the charge is not associated either with an invoice or with a pre-generated provisional invoice.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-InvoiceId-C-005-C": {
+    "Function": "Nullability",
+    "Reference": "InvoiceId",
+    "EntityType": "Column",
+    "EntityName": "Invoice Id",
+    "EntityId": "InvoiceId",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 70,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "InvoiceId MUST NOT be null when the charge is associated with either an issued invoice or a pre-generated provisional invoice.",
+      "Keyword": "MUST NOT",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-InvoiceId-C-006-O": {
+    "Function": "Validation",
+    "Reference": "InvoiceId",
+    "EntityType": "Column",
+    "EntityName": "Invoice Id",
+    "EntityId": "InvoiceId",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 80,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "InvoiceId MAY be generated prior to an invoice being issued.",
+      "Keyword": "MAY",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-InvoiceId-C-007-C": {
+    "Function": "Validation",
+    "Reference": "InvoiceId",
+    "EntityType": "Column",
+    "EntityName": "Invoice Id",
+    "EntityId": "InvoiceId",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 90,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "InvoiceId MUST be associated with the related charge and BillingAccountId when a pre-generated invoice or provisional invoice exists.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": [
+        "CAU-BillingAccountId-C-000-M"
+      ]
+    }
+  },
+  "CAU-InvoiceId-C-008-M": {
+    "Function": "Validation",
+    "Reference": "InvoiceId",
+    "EntityType": "Column",
+    "EntityName": "Invoice Id",
+    "EntityId": "InvoiceId",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 40,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "The sum of BilledCost for a given InvoiceId MUST match the sum of the payable amount provided in the corresponding invoice with the same id generated by the InvoiceIssuerName.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}

@@ -8,6 +8,8 @@ _SKIP_SUFFIXES = (
     "adheres to the following additional requirements:",
     "adhere to the following additional requirements:",
     "is defined as follows:",
+    "values are defined as follows:",
+    "objects are present:"
 )
 
 def _keyword_matches_text(keyword: str, text: str) -> bool:

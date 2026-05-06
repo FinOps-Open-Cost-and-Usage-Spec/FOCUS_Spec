@@ -21,7 +21,7 @@ def test_rule_numbers_start_at_000_and_are_consecutive(cr_json):
         num = int(m.group("num"))
         by_prefix.setdefault(prefix, []).append(num)
 
-    # If you want to fail on unparseable IDs, uncomment this:
+    # If you want to fail on unparsable IDs, uncomment this:
     # assert not invalid_ids, "Rule IDs not matching expected pattern:\n" + "\n".join(f"- {r}" for r in sorted(invalid_ids))
 
     problems = []  # (prefix, present_sorted, expected_range)

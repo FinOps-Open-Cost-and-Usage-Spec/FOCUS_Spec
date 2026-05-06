@@ -4,13 +4,12 @@ Region Name is a host-provider-assigned display name for an isolated geographic 
 
 ## Requirements
 
-RegionName adheres to the following requirements:
+RegionName MUST adhere to the following requirements:
 
-* RegionName MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the host provider supports deploying resources or services within a region.
 * RegionName MUST be of type String.
-* RegionName MUST conform to [StringHandling](#stringhandling) requirements.
-* RegionName nullability is defined as follows:
-  * RegionName MUST be null when [RegionId](#regionid) is null.
+* RegionName MUST conform to [StringHandling](#attributes.stringhandling) requirements.
+* RegionName MUST adhere to the following nullability requirements:
+  * RegionName MUST be null when [RegionId](#datasets.costandusage.regionid) is null.
   * RegionName MUST NOT be null when RegionId is not null.
 
 ## Column ID
@@ -25,16 +24,17 @@ Region Name
 
 The name of an isolated geographic area where a *resource* is provisioned or a *service* is provided.
 
-## Content constraints
+## Content Constraints
 
-| Constraint      | Value           |
-|-----------------|-----------------|
-| Column type     | Dimension       |
-| Feature level   | Conditional     |
-| Allows nulls    | True            |
-| Data type       | String          |
-| Value format    | \<not specified> |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Dimension                                            |
+| Feature level   | Conditional                                          |
+| Allows nulls    | True                                                 |
+| Data type       | String                                               |
+| Value format    | \<not specified>                                     |
 
-## Introduced (version)
+## Version Introduced
 
 1.0

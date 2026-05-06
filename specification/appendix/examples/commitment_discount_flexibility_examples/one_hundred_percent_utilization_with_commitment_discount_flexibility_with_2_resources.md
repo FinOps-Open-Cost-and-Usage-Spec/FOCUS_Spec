@@ -1,8 +1,8 @@
-# 100% utilization with commitment discount flexibility with 2 resources
+# 100% Utilization with Commitment Discount Flexibility with 2 Resources
 
 ## Context
 
-For this example, fictitious service provider, *TinyCloud*, offers the following SKU catalog which is used in the scenario below.
+For this example, fictitious service provider, *LatticeScale*, offers the following SKU catalog which is used in the scenario below.
 
 ## SKU Catalog
 
@@ -21,7 +21,7 @@ For this example, fictitious service provider, *TinyCloud*, offers the following
 | Compute | VM_LARGE  | VM_LARGE_ON_DEMAND_HOUR                 | $3.00                | 3                    |
 | Compute | VM_XLARGE | VM_XLARGE_ON_DEMAND_HOUR                | $4.00                | 4                    |
 
-The above SKU Catalog shows that this service provider only has 1 service that offers 4 virtual machine SKUs at various list rates, *commitment discount* rates, and normalization factors. Each SKU's normalization factor classifies its relative size to its *commitment discount* rate. Usage-based [*commitment discounts*](#glossary:commitmentdiscount) with [*commitment discount flexibility*](#commitmentdiscountflexibility) can fully cover any combination of 1 or more SKUs where the sum of their normalization factor is less than or equal to the normalization factor of the *commitment discount*.
+The above SKU Catalog shows that this service provider only has 1 service that offers 4 virtual machine SKUs at various list rates, *commitment discount* rates, and normalization factors. Each SKU's normalization factor classifies its relative size to its *commitment discount* rate. Usage-based [*commitment discounts*](#glossary:commitment-discount) with [*commitment discount flexibility*](#appendix.examples:commitmentdiscountflexibility) can fully cover any combination of 1 or more SKUs where the sum of their normalization factor is less than or equal to the normalization factor of the *commitment discount*.
 
 ## Scenario
 
@@ -30,8 +30,8 @@ The above SKU Catalog shows that this service provider only has 1 service that o
 
 ## Outcome
 
-* 1 recurring, purchase record exists for 1 eligible "Normalized Hour" for a no upfront, *commitment discount* and incurs a $2.00 [*BilledCost*](#billedcost).
-* With *commitment discount flexibility*, 1 *commitment discount* for a VM_XLARGE covers 2 VM_MEDIUM resources within the corresponding [*charge period*](#glossary:chargeperiod) and incurs a $2.00 total [*EffectiveCost*](#effectivecost).
+* 1 recurring, purchase record exists for 1 eligible "Normalized Hour" for a no upfront, *commitment discount* and incurs a $2.00 [*BilledCost*](#datasets.costandusage.billedcost).
+* With *commitment discount flexibility*, 1 *commitment discount* for a VM_XLARGE covers 2 VM_MEDIUM resources within the corresponding [*charge period*](#glossary:chargeperiod) and incurs a $2.00 total [*EffectiveCost*](#datasets.costandusage.effectivecost).
   * 1 *commitment discount* with a normalization factor of 8 covers 2 resources with normalization factors of 4 (i.e 4 + 4 = 8).
 
 [CSV Example](/specification/data/commitment_discount_flexibility/one_hundred_percent_utilization_with_commitment_discount_flexibility_with_2_resources.csv)

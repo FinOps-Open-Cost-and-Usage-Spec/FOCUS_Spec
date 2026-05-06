@@ -1,15 +1,14 @@
 # Pricing Currency
 
-[*Pricing Currency*](#glossary:pricing-currency) is the national or virtual currency denomination that a [*resource*](#glossary:resource) or [*service*](#glossary:service) was priced in. Pricing Currency is commonly used in scenarios where different currencies are used for pricing and billing.
+Pricing Currency is the [*national*](#glossary:national-currency) or [*virtual currency*](#glossary:virtual-currency) denomination that a [*resource*](#glossary:resource) or [*service*](#glossary:service) was priced in. Pricing Currency is commonly used in scenarios where different currencies are used for pricing and billing.
 
 ## Requirements
 
-PricingCurrency adheres to the following requirements:
+PricingCurrency MUST adhere to the following requirements:
 
-* PricingCurrency MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports pricing and billing in different currencies.
 * PricingCurrency MUST be of type String.
-* PricingCurrency MUST conform to [StringHandling](#stringhandling) requirements.
-* PricingCurrency MUST conform to [CurrencyFormat](#currencyformat) requirements.
+* PricingCurrency MUST conform to [StringHandling](#attributes.stringhandling) requirements.
+* PricingCurrency MUST conform to [CurrencyFormat](#attributes.currencyformat) requirements.
 * PricingCurrency MUST NOT be null.
 
 ## Column ID
@@ -22,18 +21,19 @@ Pricing Currency
 
 ## Description
 
-The national or virtual currency denomination that a *resource* or *service* was priced in.
+The *national* or *virtual currency* denomination that a *resource* or *service* was priced in.
 
 ## Content Constraints
 
-| Constraint      | Value                               |
-|:----------------|:------------------------------------|
-| Column type     | Dimension                           |
-| Feature level   | Conditional                         |
-| Allows nulls    | True                                |
-| Data type       | String                              |
-| Value format    | [Currency Format](#currencyformat) |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Dimension                                            |
+| Feature level   | Conditional                                          |
+| Allows nulls    | False                                                |
+| Data type       | String                                               |
+| Value format    | [Currency Format](#attributes.currencyformat)        |
 
-## Introduced (version)
+## Version Introduced
 
 1.2

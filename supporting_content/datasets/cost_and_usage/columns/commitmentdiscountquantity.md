@@ -18,8 +18,8 @@ AWS Reservation Utilization Rate: (1 - (reservation/UnusedQuantity / reservation
 AWS Savings Plan Utilization Rate: savingsPlan/UsedCommitment / savingsPlan/TotalCommitmentToDate * 100
 
 ## Documentation
-- AWS
-  - Reservation details - https://docs.aws.amazon.com/cur/latest/userguide/reservation-columns.html
-  - Savings Plans details - https://docs.aws.amazon.com/cur/latest/userguide/savingsplans-columns.html
+* AWS
+  * Reservation details - https://docs.aws.amazon.com/cur/latest/userguide/reservation-columns.html
+  * Savings Plans details - https://docs.aws.amazon.com/cur/latest/userguide/savingsplans-columns.html
 
 

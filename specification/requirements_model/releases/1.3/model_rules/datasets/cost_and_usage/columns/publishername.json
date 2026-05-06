@@ -1,0 +1,125 @@
+{
+  "CAU-PublisherName-C-000-M": {
+    "Function": "Composite",
+    "Reference": "PublisherName",
+    "EntityType": "Column",
+    "EntityName": "Publisher Name",
+    "EntityId": "PublisherName",
+    "Notes": "Main composite rule for PublisherName column",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Deprecated",
+    "ApplicabilityCriteria": [],
+    "Order": 0,
+    "Type": "Static",
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "The PublisherName column adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-PublisherName-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-PublisherName-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-PublisherName-C-003-M"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CAU-CostAndUsage-D-021-M",
+        "CAU-PublisherName-C-001-M",
+        "CAU-PublisherName-C-002-M",
+        "CAU-PublisherName-C-003-M"
+      ]
+    }
+  },
+  "CAU-PublisherName-C-001-M": {
+    "Function": "Type",
+    "Reference": "PublisherName",
+    "EntityType": "Column",
+    "EntityName": "Publisher Name",
+    "EntityId": "PublisherName",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Deprecated",
+    "ApplicabilityCriteria": [],
+    "Order": 20,
+    "Type": "Static",
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "PublisherName MUST be of type String.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "TypeString",
+        "ColumnName": "PublisherName"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-PublisherName-C-002-M": {
+    "Function": "Format",
+    "Reference": "PublisherName",
+    "EntityType": "Column",
+    "EntityName": "Publisher Name",
+    "EntityId": "PublisherName",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Deprecated",
+    "ApplicabilityCriteria": [],
+    "Order": 30,
+    "Type": "Static",
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "PublisherName MUST conform to StringHandling requirements.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "FormatString",
+        "ColumnName": "PublisherName"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-PublisherName-C-003-M": {
+    "Function": "Nullability",
+    "Reference": "PublisherName",
+    "EntityType": "Column",
+    "EntityName": "Publisher Name",
+    "EntityId": "PublisherName",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Deprecated",
+    "ApplicabilityCriteria": [],
+    "Order": 40,
+    "Type": "Static",
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "PublisherName MUST NOT be null.",
+      "Keyword": "MUST NOT",
+      "Requirement": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "PublisherName",
+        "Value": null
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}
