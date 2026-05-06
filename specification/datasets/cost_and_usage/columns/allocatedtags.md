@@ -16,12 +16,11 @@ AllocatedTags MUST adhere to the following requirements:
   * AllocatedTags MUST NOT include resource tags already present in [Tags](#datasets.costandusage.tags).
   * AllocatedTags MUST include all applicable user-defined and data generator-defined tags for the [AllocatedResourceId](#datasets.costandusage.allocatedresourceid).
   * Tag keys that do not support corresponding values MUST have a corresponding true (boolean) value set.
-  * Data generator MUST NOT alter tag values unless applying true (boolean) to valueless tags.
+  * Tag values MUST match the original values unless true (boolean) is applied to valueless tags.
 * Data generator-defined tags MUST adhere to the following requirements:
   * Data generator-defined tag keys MUST be prefixed with a predetermined, data generator-specified tag key prefix that is unique to each corresponding provider-specified [*tag scheme*](#glossary:tag-scheme).
-  * Data generator SHOULD publish all data generator-specified tag key prefixes within their respective documentation.
-* User-defined tags MUST adhere to the following requirements:
-  * Data generator MUST prefix all user-defined *tag schemes* with a predetermined, data generator-specified tag key prefix that is unique to each corresponding user-defined *tag scheme* when the data generator has more than one user-defined *tag scheme*.
+  * Data generator-specified tag key prefixes SHOULD be publicly documented.
+* User-defined tag keys in all user-defined *tag schemes* MUST include a predetermined, data generator-specified tag key prefix that is unique to each corresponding user-defined *tag scheme* when the data generator has more than one user-defined *tag scheme*.
 
 ## Data Generator-Defined vs. User-Defined Tags
 

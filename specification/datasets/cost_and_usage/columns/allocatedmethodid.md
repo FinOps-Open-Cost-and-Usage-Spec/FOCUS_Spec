@@ -11,7 +11,7 @@ AllocatedMethodId MUST adhere to the following requirements:
 * AllocatedMethodId MUST adhere to the following nullability requirements:
   * AllocatedMethodId MUST be null when a [*charge*](#glossary:charge) is not related to a data generator-calculated split cost allocation.
   * AllocatedMethodId MUST NOT be null when a *charge* is related to a data generator-calculated split cost allocation.
-* Data generator documentation of a split cost allocation method MUST make reference to a single AllocatedMethodId value.
+* Data generator-calculated split cost allocation method documentation MUST make reference to a single AllocatedMethodId value.
 
 ## Column ID
 
