@@ -1,6 +1,6 @@
 # Includes Tags
 
-The Includes Tags presence condition represents a verifiable state where the source operating model source operating model includes the definition or enrichment of tags.
+The Includes Tags presence condition represents a verifiable state where the [source operating model](#glossary:source-operating-model) includes the definition or enrichment of tags.
 
 ## Requirements
 

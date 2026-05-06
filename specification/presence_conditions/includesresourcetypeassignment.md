@@ -1,6 +1,6 @@
 # Includes Resource Type Assignment
 
-The Includes Resource Type Assignment presence condition represents a verifiable state where the source operating model source operating model includes assigning types to resources.
+The Includes Resource Type Assignment presence condition represents a verifiable state where the [source operating model](#glossary:source-operating-model) includes assigning types to resources.
 
 ## Requirements
 

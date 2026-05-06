@@ -1,6 +1,6 @@
 # Includes Account Naming
 
-The Includes Account Naming presence condition represents a verifiable state where the source operating model source operating model includes assigning a display name for the billing account.
+The Includes Account Naming presence condition represents a verifiable state where the [source operating model](#glossary:source-operating-model) includes assigning a display name for the billing account.
 
 ## Requirements
 

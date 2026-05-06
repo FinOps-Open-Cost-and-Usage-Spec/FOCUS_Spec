@@ -1,6 +1,6 @@
 # Includes Host-Service Provider Differences
 
-The Includes Host-Service Provider Differences presence condition represents a verifiable state where the source operating model source operating model includes public delineation between host and service provider.
+The Includes Host-Service Provider Differences presence condition represents a verifiable state where the [source operating model](#glossary:source-operating-model) includes public delineation between host and service provider.
 
 ## Requirements
 

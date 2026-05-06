@@ -1,6 +1,6 @@
 # Includes Multiple Charge Frequencies
 
-The Includes Multiple Charge Frequencies presence condition represents a verifiable state where the source operating model source operating model includes multiple charge frequencies.
+The Includes Multiple Charge Frequencies presence condition represents a verifiable state where the [source operating model](#glossary:source-operating-model) includes multiple charge frequencies.
 
 ## Requirements
 

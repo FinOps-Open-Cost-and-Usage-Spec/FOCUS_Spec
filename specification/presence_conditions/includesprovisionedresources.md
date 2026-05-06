@@ -1,6 +1,6 @@
 # Includes Provisioned Resources
 
-The Includes Provisioned Resources presence condition represents a verifiable state where the source operating model source operating model includes provisioned resources.
+The Includes Provisioned Resources presence condition represents a verifiable state where the [source operating model](#glossary:source-operating-model) includes provisioned resources.
 
 ## Requirements
 

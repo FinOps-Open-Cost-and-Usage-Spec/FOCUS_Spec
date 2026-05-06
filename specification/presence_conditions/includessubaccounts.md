@@ -1,6 +1,6 @@
 # Includes Sub Accounts
 
-The Includes Sub Accounts presence condition represents a verifiable state where the source operating model source operating model includes a sub account construct.
+The Includes Sub Accounts presence condition represents a verifiable state where the [source operating model](#glossary:source-operating-model) includes a sub account construct.
 
 ## Requirements
 

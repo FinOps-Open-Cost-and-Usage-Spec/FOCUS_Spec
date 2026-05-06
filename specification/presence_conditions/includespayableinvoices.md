@@ -1,6 +1,6 @@
 # Includes Payable Invoices
 
-The Includes Payable Invoices presence condition represents a verifiable state where the source operating model source operating model includes payable invoices.
+The Includes Payable Invoices presence condition represents a verifiable state where the [source operating model](#glossary:source-operating-model) includes payable invoices.
 
 ## Requirements
 

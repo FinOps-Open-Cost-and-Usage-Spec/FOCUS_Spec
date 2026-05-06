@@ -1,6 +1,6 @@
 # Includes Commitment Discounts
 
-The Includes Commitment Discounts presence condition represents a verifiable state where the source operating model source operating model includes commitment discounts.
+The Includes Commitment Discounts presence condition represents a verifiable state where the [source operating model](#glossary:source-operating-model) includes commitment discounts.
 
 ## Requirements
 

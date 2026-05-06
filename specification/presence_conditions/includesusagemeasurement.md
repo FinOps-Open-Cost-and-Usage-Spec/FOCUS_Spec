@@ -1,6 +1,6 @@
 # Includes Usage Measurement
 
-The Includes Usage Measurement presence condition represents a verifiable state where the source operating model source operating model includes the measurement of usage.
+The Includes Usage Measurement presence condition represents a verifiable state where the [source operating model](#glossary:source-operating-model) includes the measurement of usage.
 
 ## Requirements
 

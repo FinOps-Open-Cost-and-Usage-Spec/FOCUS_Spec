@@ -1,6 +1,6 @@
 # Includes Pricing-Billing Currency Differences
 
-The Includes Pricing-Billing Currency Differences presence condition represents a verifiable state where the source operating model source operating model includes pricing and billing in different currencies.
+The Includes Pricing-Billing Currency Differences presence condition represents a verifiable state where the [source operating model](#glossary:source-operating-model) includes pricing and billing in different currencies.
 
 ## Requirements
 

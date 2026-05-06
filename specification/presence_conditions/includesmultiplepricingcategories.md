@@ -1,6 +1,6 @@
 # Includes Multiple Pricing Categories
 
-The Includes Multiple Pricing Categories presence condition represents a verifiable state where the source operating model source operating model includes more than one pricing category across all SKUs.
+The Includes Multiple Pricing Categories presence condition represents a verifiable state where the [source operating model](#glossary:source-operating-model) includes more than one pricing category across all SKUs.
 
 ## Requirements
 

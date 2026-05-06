@@ -1,6 +1,6 @@
 # Includes Multiple Services
 
-The Includes Multiple Services presence condition represents a verifiable state where the source operating model source operating model includes multiple services.
+The Includes Multiple Services presence condition represents a verifiable state where the [source operating model](#glossary:source-operating-model) includes multiple services.
 
 ## Requirements
 

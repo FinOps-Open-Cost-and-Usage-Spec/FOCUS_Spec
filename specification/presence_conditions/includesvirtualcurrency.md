@@ -1,6 +1,6 @@
 # Includes Virtual Currency
 
-The Includes Virtual Currency presence condition represents a verifiable state where the source operating model source operating model includes prices in virtual currency.
+The Includes Virtual Currency presence condition represents a verifiable state where the [source operating model](#glossary:source-operating-model) includes prices in virtual currency.
 
 ## Requirements
 

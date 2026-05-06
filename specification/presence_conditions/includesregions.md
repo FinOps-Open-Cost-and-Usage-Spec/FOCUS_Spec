@@ -1,6 +1,6 @@
 # Includes Regions
 
-The Includes Regions presence condition represents a verifiable state where the source operating model source operating model includes deploying resources or services within a region.
+The Includes Regions presence condition represents a verifiable state where the [source operating model](#glossary:source-operating-model) includes deploying resources or services within a region.
 
 ## Requirements
 

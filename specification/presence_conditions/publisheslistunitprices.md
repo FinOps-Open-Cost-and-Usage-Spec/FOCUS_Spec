@@ -6,7 +6,7 @@ The Publishes List Unit Prices presence condition represents a verifiable state 
 
 PublishesListUnitPrices MUST adhere to the following requirements:
 
-* PublishesListUnitPrices MUST evaluate to false when [IncludesUnitPrices](#presenceconditions.includesunitprices) evaluates to false.
+* PublishesListUnitPrices MUST evaluate to false when [IncludesUnitPricing](#presenceconditions.includesunitpricing) evaluates to false.
 * PublishesListUnitPrices MUST evaluate to true when the source operating model provides predefined "retail" or standard unit rates that anyone can reference (e.g., via a public website or open pricing API) without requiring a negotiated contract.
 * PublishesListUnitPrices MUST evaluate to false when the source operating model restricts its baseline unit pricing entirely to private agreements or lacks baseline unit prices altogether.
 

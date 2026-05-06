@@ -1,6 +1,6 @@
 # Defines Multiple Sub Account Types
 
-The Defines Multiple Sub Account Types presence condition represents a verifiable state where the source operating model source operating model defines more than one possible SubAccountType value.
+The Defines Multiple Sub Account Types presence condition represents a verifiable state where the [source operating model](#glossary:source-operating-model) defines more than one possible SubAccountType value.
 
 ## Requirements
 

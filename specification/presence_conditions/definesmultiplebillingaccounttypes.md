@@ -1,6 +1,6 @@
 # Defines Multiple Billing Account Types
 
-The Defines Multiple Billing Account Types presence condition represents a verifiable state where the source operating model source operating model defines more than one possible BillingAccountType value.
+The Defines Multiple Billing Account Types presence condition represents a verifiable state where the [source operating model](#glossary:source-operating-model) defines more than one possible BillingAccountType value.
 
 ## Requirements
 
