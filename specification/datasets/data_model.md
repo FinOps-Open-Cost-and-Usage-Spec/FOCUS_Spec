@@ -15,7 +15,7 @@ Datasets are sorted first by Feature Level (i.e., Mandatory, then Conditional), 
 
 FOCUS data model MUST adhere to the following requirements:
 
-* [CostAndUsage](#datasets.costandusage) MUST be present.
-* [BillingPeriod](#datasets.billingperiod) MUST be present when the invoice issuer supports payable invoices.
-* [ContractCommitment](#datasets.contractcommitment) MUST be present when the service provider supports *contract commitments*.
-* [InvoiceDetail](#datasets.invoicedetail) MUST be present when the invoice issuer supports payable invoices.
+* FOCUS data model MUST include [CostAndUsage](#datasets.costandusage).
+* FOCUS data model MUST include [BillingPeriod](#datasets.billingperiod) when the invoice issuer supports payable invoices.
+* FOCUS data model MUST include [ContractCommitment](#datasets.contractcommitment) when the service provider supports *contract commitments*.
+* FOCUS data model MUST include [InvoiceDetail](#datasets.invoicedetail) when the invoice issuer supports payable invoices.
