@@ -45,14 +45,17 @@ Subsequent *dataset artifacts* using the Append mechanism may include the follow
 
 Dataset conforming to DeliveryHandling attribute MUST adhere to the following requirements:
 
-* *FOCUS dataset* MUST have its mechanism(s) for delivering *dataset artifacts* documented and accessible to practitioners (including whether Overwrite or Append is used and under which conditions).
 * *FOCUS dataset* MUST NOT require practitioners to deduplicate records within or across delivered dataset artifacts.
 * When using Overwrite delivery mechanism, *FOCUS dataset* MUST adhere to the following additional requirements:
   * *FOCUS dataset* MUST represent a complete snapshot for a given [*delivery scope*](#glossary:delivery-scope).
   * *FOCUS dataset* MUST supersede all previously delivered *dataset artifacts* for the same *delivery scope*.
 * *FOCUS dataset* MUST preserve all previously delivered *dataset artifacts* when using Append delivery mechanism.
 * *FOCUS dataset* SHOULD have delivered *dataset artifacts* accompanied by corresponding [FOCUS Metadata](#metadata).
-* *FOCUS dataset* MUST have its mechanism for correlating *dataset artifact* with the [FOCUS Metadata Schema object](#metadata.schema) documented and accessible to practitioners when the Metadata is delivered.
+* *FOCUS dataset* delivery mechanism documentation MUST adhere to the following requirements:
+  * *FOCUS dataset* delivery mechanism documentation MUST include the delivery mechanism used (Overwrite or Append).
+  * *FOCUS dataset* delivery mechanism documentation MUST include the conditions under which each delivery mechanism applies when more than one delivery mechanism is used.
+  * *FOCUS dataset* delivery mechanism documentation MUST include the mechanism for correlating *dataset artifacts* with the FOCUS Metadata Schema object when the Metadata is delivered.
+  * *FOCUS dataset* delivery mechanism documentation MUST be accessible to practitioners.
 
 ## Attribute ID
 
