@@ -8,6 +8,7 @@ Presence Conditions are sorted alphabetically by name.
 
 | Presence Condition | Presence Type | Description |
 | ------------------ | ------------- | ----------- |
+| [Baseline](#presenceconditions.baseline) | General | All source operating models encompass these foundational attributes. |
 | [Defines Multiple Billing Account Types](#presenceconditions.definesmultiplebillingaccounttypes) | Account | Source operating model defines more than one possible BillingAccountType value. |
 | [Defines Multiple Sub Account Types](#presenceconditions.definesmultiplesubaccounttypes) | Account | Source operating model defines more than one possible SubAccountType value. |
 | [Includes Account Naming](#presenceconditions.includesaccountnaming) | Account | Source operating model includes assigning a display name for the billing account. |
