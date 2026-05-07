@@ -196,7 +196,7 @@
     "DatasetId": "InvoiceDetail",
     "DatasetName": "Invoice Detail",
     "ValidationCriteria": {
-      "MustSatisfy": "BilledCost MUST reflect all applicable pricing adjustments, including but not limited to *negotiated discounts*, *commitment discounts*, and other applicable discount programs.",
+      "MustSatisfy": "BilledCost MUST reflect all applicable pricing adjustments, including but not limited to negotiated discounts, commitment discounts, and other applicable discount programs.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -219,7 +219,7 @@
     "DatasetId": "InvoiceDetail",
     "DatasetName": "Invoice Detail",
     "ValidationCriteria": {
-      "MustSatisfy": "BilledCost MUST NOT include any portion of a *covered charge* that is offset by a *covering charge*.",
+      "MustSatisfy": "BilledCost MUST NOT include any portion of a covered charge that is offset by a covering charge.",
       "Keyword": "MUST NOT",
       "Requirement": {},
       "Condition": {},
@@ -242,7 +242,7 @@
     "DatasetId": "InvoiceDetail",
     "DatasetName": "Invoice Detail",
     "ValidationCriteria": {
-      "MustSatisfy": "BilledCost MUST be 0 for *charges* that are fully *covered* by one or more *covering charges*.",
+      "MustSatisfy": "BilledCost MUST be 0 for charges that are fully covered by one or more covering charges.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -265,7 +265,7 @@
     "DatasetId": "InvoiceDetail",
     "DatasetName": "Invoice Detail",
     "ValidationCriteria": {
-      "MustSatisfy": "The sum of BilledCost for a given InvoiceDetailId, InvoiceId, and InvoiceIssuerName MUST match the payable amount provided in the corresponding entries on the issued invoice when InvoiceIssueStatus is \"Issued\".",
+      "MustSatisfy": "The sum of BilledCost for a given InvoiceDetailId, InvoiceId, and InvoiceIssuerName MUST be equal to the payable amount provided in the corresponding entries on the issued invoice when InvoiceIssueStatus is \"Issued\".",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -326,7 +326,7 @@
     "DatasetId": "InvoiceDetail",
     "DatasetName": "Invoice Detail",
     "ValidationCriteria": {
-      "MustSatisfy": "When ChargeCategory is not \"Tax\" and InvoiceIssueStatus is not \"Open\", the sum of BilledCost MUST NOT differ from the sum of CostAndUsage.BilledCost by more than `MAX(100 \u00d7 Subunit, (SQRT(Rows) \u00d7 0.5) \u00d7 Subunit)` as defined in Rounding Variance Tolerance.",
+      "MustSatisfy": "When ChargeCategory is not \"Tax\" and InvoiceIssueStatus is not \"Open\", the sum of BilledCost MUST NOT differ from the sum of CostAndUsage.BilledCost by more than `MAX(100 × Subunit, (SQRT(Rows) × 0.5) × Subunit)` as defined in Rounding Variance Tolerance.",
       "Keyword": "MUST NOT",
       "Requirement": {},
       "Condition": {
@@ -438,7 +438,7 @@
     "DatasetId": "InvoiceDetail",
     "DatasetName": "Invoice Detail",
     "ValidationCriteria": {
-      "MustSatisfy": "When InvoiceIssueStatus is not \"Open\", the sum of BilledCost MUST NOT differ from the sum of CostAndUsage.BilledCost by more than `MAX(100 * Subunit, (SQRT(Rows) * 0.5) * Subunit)` as defined in Rounding Variance Tolerance.",
+      "MustSatisfy": "When InvoiceIssueStatus is not \"Open\", the sum of BilledCost MUST NOT differ from the sum of CostAndUsage.BilledCost by more than `MAX(100 × Subunit, (SQRT(Rows) × 0.5) × Subunit)` as defined in Rounding Variance Tolerance.",
       "Keyword": "MUST NOT",
       "Requirement": {},
       "Condition": {

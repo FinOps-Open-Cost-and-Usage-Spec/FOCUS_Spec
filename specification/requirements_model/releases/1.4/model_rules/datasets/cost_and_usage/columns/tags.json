@@ -24,6 +24,14 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-Tags-C-018-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-Tags-C-019-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-Tags-C-001-M"
           },
           {
@@ -46,6 +54,8 @@
       },
       "Condition": {},
       "Dependencies": [
+        "CAU-Tags-C-018-M",
+        "CAU-Tags-C-019-M",
         "CAU-Tags-C-001-M",
         "CAU-Tags-C-002-O",
         "CAU-Tags-C-003-C",
@@ -260,7 +270,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "Tags MAY include tag keys with a null value for a given *resource* depending on the data generator's tag finalization process.",
+      "MustSatisfy": "Tags MAY include tag keys with a null value for a given resource depending on the data generator's tag finalization process.",
       "Keyword": "MAY",
       "Requirement": {},
       "Condition": {},
@@ -528,6 +538,67 @@
       "MustSatisfy": "Data generator MUST NOT allow reserved tag key prefixes to be used as prefixes for any user-defined tag keys within a prefixless user-defined tag scheme.",
       "Keyword": "MUST NOT",
       "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-Tags-C-018-M": {
+    "Function": "Type",
+    "Reference": "Tags",
+    "EntityName": "Tags",
+    "EntityId": "Tags",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 10,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "Tags MUST be of type JSON Object (serialized as a String where necessary).",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "OR",
+        "Items": [
+          {
+            "CheckFunction": "TypeString",
+            "ColumnName": "Tags"
+          },
+          {
+            "CheckFunction": "TypeJSON",
+            "ColumnName": "Tags"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-Tags-C-019-M": {
+    "Function": "Format",
+    "Reference": "Tags",
+    "EntityName": "Tags",
+    "EntityId": "Tags",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 15,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "Tags MUST conform to StringHandling requirements.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "FormatString",
+        "ColumnName": "Tags"
+      },
       "Condition": {},
       "Dependencies": []
     }

@@ -143,7 +143,7 @@
     "DatasetId": "BillingPeriod",
     "DatasetName": "Billing Period",
     "ValidationCriteria": {
-      "MustSatisfy": "InvoiceIssuerName MUST represent the entity that issued the invoice.",
+      "MustSatisfy": "InvoiceIssuerName MUST represent the entity that issues invoices.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},

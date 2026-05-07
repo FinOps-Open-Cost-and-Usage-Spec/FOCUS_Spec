@@ -161,7 +161,7 @@
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "AllocatedResourceId MUST be null when a *charge* is not related to a data generator-calculated split cost allocation.",
+      "MustSatisfy": "AllocatedResourceId MUST be null when a charge is not related to a data generator-calculated split cost allocation.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -184,7 +184,7 @@
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "AllocatedResourceId MUST be null when a *charge* represents the unallocated portion of the origin *charge* after split cost allocation.",
+      "MustSatisfy": "AllocatedResourceId MUST be null when a charge represents the unallocated portion of the origin charge after split cost allocation.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -207,7 +207,7 @@
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "AllocatedResourceId MUST NOT be null when a *charge* represents the allocated portion of the origin *charge*.",
+      "MustSatisfy": "AllocatedResourceId MUST NOT be null when a charge represents the allocated portion of the origin charge.",
       "Keyword": "MUST NOT",
       "Requirement": {},
       "Condition": {},

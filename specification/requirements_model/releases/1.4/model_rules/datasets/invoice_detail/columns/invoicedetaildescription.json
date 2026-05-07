@@ -171,7 +171,7 @@
     "DatasetId": "InvoiceDetail",
     "DatasetName": "Invoice Detail",
     "ValidationCriteria": {
-      "MustSatisfy": "InvoiceDetailDescription MUST describe the *charges* represented by the InvoiceDetailId.",
+      "MustSatisfy": "InvoiceDetailDescription MUST describe the charges represented by the InvoiceDetailId.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},

@@ -215,6 +215,10 @@
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-ResourceId-C-008-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ResourceId-C-009-C"
           }
         ]
       },
@@ -225,7 +229,8 @@
       },
       "Dependencies": [
         "CAU-ResourceId-C-007-M",
-        "CAU-ResourceId-C-008-O"
+        "CAU-ResourceId-C-008-O",
+        "CAU-ResourceId-C-009-C"
       ]
     }
   },
@@ -270,6 +275,29 @@
     "ValidationCriteria": {
       "MustSatisfy": "ResourceId SHOULD be a fully-qualified identifier.",
       "Keyword": "SHOULD",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-ResourceId-C-009-C": {
+    "Function": "Validation",
+    "Reference": "ResourceId",
+    "EntityType": "Column",
+    "EntityName": "Resource Id",
+    "EntityId": "ResourceId",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 100,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "ResourceId MUST be the identifier of the resource that received the commitment discount when CommitmentDiscountStatus is \"Used\".",
+      "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []

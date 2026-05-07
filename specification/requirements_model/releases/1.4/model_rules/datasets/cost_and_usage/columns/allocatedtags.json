@@ -24,6 +24,14 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedTags-C-015-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedTags-C-016-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-AllocatedTags-C-001-M"
           },
           {
@@ -46,6 +54,8 @@
       },
       "Condition": {},
       "Dependencies": [
+        "CAU-AllocatedTags-C-015-M",
+        "CAU-AllocatedTags-C-016-M",
         "CAU-AllocatedTags-C-001-M",
         "CAU-AllocatedTags-C-002-M",
         "CAU-AllocatedTags-C-005-C",
@@ -65,7 +75,7 @@
     "ModelVersionIntroduced": "1.3",
     "Status": "Active",
     "ApplicabilityCriteria": [],
-    "Order": 20,
+    "Order": 30,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
@@ -91,7 +101,7 @@
     "ModelVersionIntroduced": "1.3",
     "Status": "Active",
     "ApplicabilityCriteria": [],
-    "Order": 30,
+    "Order": 40,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
@@ -129,13 +139,13 @@
     "ModelVersionIntroduced": "1.3",
     "Status": "Active",
     "ApplicabilityCriteria": [],
-    "Order": 40,
+    "Order": 50,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "AllocatedTags MUST be null when a *charge* is not related to a data generator-calculated split cost allocation.",
+      "MustSatisfy": "AllocatedTags MUST be null when a charge is not related to a data generator-calculated split cost allocation.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -152,7 +162,7 @@
     "ModelVersionIntroduced": "1.3",
     "Status": "Active",
     "ApplicabilityCriteria": [],
-    "Order": 50,
+    "Order": 60,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
@@ -179,7 +189,7 @@
     "ModelVersionIntroduced": "1.3",
     "Status": "Active",
     "ApplicabilityCriteria": [],
-    "Order": 60,
+    "Order": 70,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
@@ -231,7 +241,7 @@
     "ModelVersionIntroduced": "1.3",
     "Status": "Active",
     "ApplicabilityCriteria": [],
-    "Order": 70,
+    "Order": 80,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
@@ -254,7 +264,7 @@
     "ModelVersionIntroduced": "1.3",
     "Status": "Active",
     "ApplicabilityCriteria": [],
-    "Order": 80,
+    "Order": 90,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
@@ -277,7 +287,7 @@
     "ModelVersionIntroduced": "1.3",
     "Status": "Active",
     "ApplicabilityCriteria": [],
-    "Order": 90,
+    "Order": 100,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
@@ -300,7 +310,7 @@
     "ModelVersionIntroduced": "1.3",
     "Status": "Active",
     "ApplicabilityCriteria": [],
-    "Order": 100,
+    "Order": 110,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
@@ -323,7 +333,7 @@
     "ModelVersionIntroduced": "1.3",
     "Status": "Active",
     "ApplicabilityCriteria": [],
-    "Order": 110,
+    "Order": 120,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
@@ -361,7 +371,7 @@
     "ModelVersionIntroduced": "1.3",
     "Status": "Active",
     "ApplicabilityCriteria": [],
-    "Order": 120,
+    "Order": 130,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
@@ -384,7 +394,7 @@
     "ModelVersionIntroduced": "1.3",
     "Status": "Active",
     "ApplicabilityCriteria": [],
-    "Order": 130,
+    "Order": 140,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
@@ -407,7 +417,7 @@
     "ModelVersionIntroduced": "1.3",
     "Status": "Active",
     "ApplicabilityCriteria": [],
-    "Order": 140,
+    "Order": 150,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
@@ -440,15 +450,76 @@
     "ModelVersionIntroduced": "1.3",
     "Status": "Active",
     "ApplicabilityCriteria": [],
-    "Order": 150,
+    "Order": 160,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "Data generator MUST prefix all user-defined tags scheme with a predetermined, data generator-specified tag key prefix that is unique to each corresponding user-defined tag scheme when the data generator has more than one user-defined tag scheme.",
+      "MustSatisfy": "Data generator MUST prefix all user-defined tag schemes with a predetermined, data generator-specified tag key prefix that is unique to each corresponding user-defined tag scheme when the data generator has more than one user-defined tag scheme.",
       "Keyword": "MUST",
       "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedTags-C-015-M": {
+    "Function": "Type",
+    "Reference": "AllocatedTags",
+    "EntityType": "Column",
+    "EntityId": "AllocatedTags",
+    "EntityName": "Allocated Tags",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 10,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "AllocatedTags MUST be of type JSON Object (serialized as a String where necessary).",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "OR",
+        "Items": [
+          {
+            "CheckFunction": "TypeString",
+            "ColumnName": "AllocatedTags"
+          },
+          {
+            "CheckFunction": "TypeJSON",
+            "ColumnName": "AllocatedTags"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedTags-C-016-M": {
+    "Function": "Format",
+    "Reference": "AllocatedTags",
+    "EntityType": "Column",
+    "EntityId": "AllocatedTags",
+    "EntityName": "Allocated Tags",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 20,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "AllocatedTags MUST conform to StringHandling requirements.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "FormatString",
+        "ColumnName": "AllocatedTags"
+      },
       "Condition": {},
       "Dependencies": []
     }

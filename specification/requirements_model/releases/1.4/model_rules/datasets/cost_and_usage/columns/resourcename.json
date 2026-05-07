@@ -119,7 +119,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ResourceName MUST adhere to the nullability requirements:",
+      "MustSatisfy": "ResourceName MUST adhere to the following nullability requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",

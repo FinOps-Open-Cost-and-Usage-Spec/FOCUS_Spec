@@ -9,6 +9,15 @@
       "DatasetName": "Cost and Usage",
       "Schema": "file('datasets/cost_and_usage/allocatedmethoddetailsobjectschema.json')"
     },
+    "CAU-CommitmentProgramEligibilityDetailsObjectSchema-S-001-M": {
+      "EntityType": "Schema",
+      "EntityName": "Commitment Program Eligibility Details Object Schema",
+      "EntityId": "CommitmentProgramEligibilityDetailsObjectSchema",
+      "DatasetType": "CAU",
+      "DatasetId": "CostAndUsage",
+      "DatasetName": "Cost and Usage",
+      "Schema": "file('datasets/cost_and_usage/commitmentprogrameligibilitydetailsobjectschema.json')"
+    },
     "CAU-ContractAppliedObjectSchema-S-001-M": {
       "EntityType": "Schema",
       "EntityName": "Contract Applied Object Schema",

@@ -156,7 +156,7 @@
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "AllocatedMethodId MUST be null when a *charge* is not related to a data generator-calculated split cost allocation.",
+      "MustSatisfy": "AllocatedMethodId MUST be null when a charge is not related to a data generator-calculated split cost allocation.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -179,7 +179,7 @@
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "AllocatedMethodId MUST NOT be null when a *charge* is related to a data generator-calculated split cost allocation.",
+      "MustSatisfy": "AllocatedMethodId MUST NOT be null when a charge is related to a data generator-calculated split cost allocation.",
       "Keyword": "MUST NOT",
       "Requirement": {},
       "Condition": {},

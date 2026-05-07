@@ -332,9 +332,6 @@ def build_markdown(grouped, include_rmids=False, include_order=False):
 
     lines = []
     for ref, items in grouped.items():
-        lines.append(f"# {ref}")
-        lines.append("")
-
         # Treat Order -1 as hidden: include for model logic, but do not render.
         visible_items = [
             item for item in items
@@ -366,9 +363,16 @@ def build_markdown(grouped, include_rmids=False, include_order=False):
                 dependency_stack.append(dep_rule_id)
         visible_items = sorted(section_rule_map.values(), key=render_sort_key)
 
+        # For sections that contain Column rules, exclude dataset-level rules
+        # (e.g. presence rules) so they don't appear in column output.
+        if any(item.get("etype") == "Column" for item in visible_items):
+            visible_items = [item for item in visible_items if item.get("etype") != "Dataset"]
+
         if not visible_items:
-            lines.append("")
             continue
+
+        lines.append(f"# {ref}")
+        lines.append("")
         
         # Build dependency tree to determine proper nesting
         def build_dependency_map(items):

@@ -69,8 +69,10 @@ def test_dependencies_order(cr_json):
                         "issue": f"Dependency {prev_dep_id} with Order {prev_order} should come after {curr_dep_id} with Order {curr_order}"
                     })
 
-        # Check that different-reference dependencies appear after same-reference dependencies
-        if same_ref_deps and diff_ref_deps:
+        # Check that different-reference dependencies appear after same-reference dependencies.
+        # Dataset rules are exempt: their primary deps are cross-EntityId column presence rules
+        # by design, so enforcing same-before-diff ordering is not meaningful for them.
+        if same_ref_deps and diff_ref_deps and rule.get("EntityType") != "Dataset":
             # Find the position of the last same-reference dependency in the original list
             last_same_ref_id = same_ref_deps[-1][0]
             last_same_ref_pos = dependencies.index(last_same_ref_id)

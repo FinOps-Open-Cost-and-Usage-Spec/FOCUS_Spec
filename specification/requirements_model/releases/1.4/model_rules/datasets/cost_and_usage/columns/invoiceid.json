@@ -1,5 +1,5 @@
 {
-  "CAU-InvoiceId-C-000-O": {
+  "CAU-InvoiceId-C-000-M": {
     "Function": "Composite",
     "Reference": "InvoiceId",
     "EntityType": "Column",

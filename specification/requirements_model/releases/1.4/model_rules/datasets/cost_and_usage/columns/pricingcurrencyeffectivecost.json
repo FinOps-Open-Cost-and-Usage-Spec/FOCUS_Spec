@@ -36,11 +36,11 @@
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-PricingCurrencyEffectiveCost-C-005-M"
+            "ModelRuleId": "CAU-PricingCurrencyEffectiveCost-C-006-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-PricingCurrencyEffectiveCost-C-006-M"
+            "ModelRuleId": "CAU-PricingCurrencyEffectiveCost-C-007-M"
           }
         ]
       },
@@ -49,8 +49,8 @@
         "CAU-PricingCurrencyEffectiveCost-C-001-M",
         "CAU-PricingCurrencyEffectiveCost-C-002-M",
         "CAU-PricingCurrencyEffectiveCost-C-003-M",
-        "CAU-PricingCurrencyEffectiveCost-C-005-M",
         "CAU-PricingCurrencyEffectiveCost-C-006-M",
+        "CAU-PricingCurrencyEffectiveCost-C-007-M",
         "CAU-CostAndUsage-D-050-C"
       ]
     }
@@ -170,9 +170,10 @@
     "EntityId": "PricingCurrencyEffectiveCost",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "Status": "Removed",
+    "ModelVersionRemoved": "1.4",
     "ApplicabilityCriteria": [],
-    "Order": 90,
+    "Order": -1,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
@@ -202,6 +203,29 @@
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "PricingCurrencyEffectiveCost MUST be denominated in the PricingCurrency.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-PricingCurrencyEffectiveCost-C-007-M": {
+    "Function": "Validation",
+    "Reference": "PricingCurrencyEffectiveCost",
+    "EntityType": "Column",
+    "EntityName": "Pricing Currency Effective Cost",
+    "EntityId": "PricingCurrencyEffectiveCost",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 110,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCurrencyEffectiveCost MUST be the PricingCurrency-denominated equivalent of EffectiveCost.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},

@@ -26,6 +26,10 @@
           },
           {
             "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "IND-InvoiceDetailGrain-C-012-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
             "ModelRuleId": "IND-InvoiceDetailGrain-C-002-M"
           },
           {
@@ -61,6 +65,7 @@
       "Condition": {},
       "Dependencies": [
         "IND-InvoiceDetailGrain-C-001-M",
+        "IND-InvoiceDetailGrain-C-012-M",
         "IND-InvoiceDetailGrain-C-002-M",
         "IND-InvoiceDetailGrain-C-003-C",
         "IND-InvoiceDetailGrain-C-004-M",
@@ -89,11 +94,20 @@
     "DatasetId": "InvoiceDetail",
     "DatasetName": "Invoice Detail",
     "ValidationCriteria": {
-      "MustSatisfy": "InvoiceDetailGrain MUST be of type JSON.",
+      "MustSatisfy": "InvoiceDetailGrain MUST be of type JSON Object (serialized as a String where necessary).",
       "Keyword": "MUST",
       "Requirement": {
-        "CheckFunction": "TypeJSON",
-        "ColumnName": "InvoiceDetailGrain"
+        "CheckFunction": "OR",
+        "Items": [
+          {
+            "CheckFunction": "TypeString",
+            "ColumnName": "AllocatedMethodDetails"
+          },
+          {
+            "CheckFunction": "TypeJSON",
+            "ColumnName": "AllocatedMethodDetails"
+          }
+        ]
       },
       "Condition": {},
       "Dependencies": []
@@ -343,6 +357,32 @@
       "MustSatisfy": "Property value MUST be of the type specified for that property.",
       "Keyword": "MUST",
       "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "IND-InvoiceDetailGrain-C-012-M": {
+    "Function": "Format",
+    "Reference": "InvoiceDetailGrain",
+    "EntityType": "Column",
+    "EntityName": "Invoice Detail Grain",
+    "EntityId": "InvoiceDetailGrain",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 15,
+    "DatasetType": "IND",
+    "DatasetId": "InvoiceDetail",
+    "DatasetName": "Invoice Detail",
+    "ValidationCriteria": {
+      "MustSatisfy": "InvoiceDetailGrain MUST conform to StringHandling requirements.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "FormatString",
+        "ColumnName": "InvoiceDetailGrain"
+      },
       "Condition": {},
       "Dependencies": []
     }

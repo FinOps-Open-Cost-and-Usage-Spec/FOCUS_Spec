@@ -143,7 +143,7 @@
     "DatasetId": "BillingPeriod",
     "DatasetName": "Billing Period",
     "ValidationCriteria": {
-      "MustSatisfy": "BillingPeriodStart MUST be the *inclusive start bound* of the *billing period*.",
+      "MustSatisfy": "BillingPeriodStart MUST be the inclusive start bound of the billing period.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},

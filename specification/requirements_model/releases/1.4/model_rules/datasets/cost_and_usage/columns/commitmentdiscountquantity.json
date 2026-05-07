@@ -36,10 +36,6 @@
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-CommitmentDiscountQuantity-C-009-C"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-CommitmentDiscountQuantity-C-010-C"
           },
           {
@@ -53,7 +49,6 @@
         "CAU-CommitmentDiscountQuantity-C-001-M",
         "CAU-CommitmentDiscountQuantity-C-002-M",
         "CAU-CommitmentDiscountQuantity-C-003-C",
-        "CAU-CommitmentDiscountQuantity-C-009-C",
         "CAU-CommitmentDiscountQuantity-C-010-C",
         "CAU-CommitmentDiscountQuantity-C-013-C",
         "CAU-CostAndUsage-D-018-C"
@@ -383,10 +378,11 @@
     "EntityId": "CommitmentDiscountQuantity",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "Status": "Removed",
+    "ModelVersionRemoved": "1.4",
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
-    "Order": 100,
+    "Order": -1,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
@@ -528,7 +524,7 @@
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "When CommitmentDiscountQuantity is not null and ChargeCategory is \"Usage\", CommitmentDiscountQuantity adheres to the following additional requirements:",
+      "MustSatisfy": "When CommitmentDiscountQuantity is not null and ChargeCategory is \"Usage\", CommitmentDiscountQuantity MUST adhere to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",

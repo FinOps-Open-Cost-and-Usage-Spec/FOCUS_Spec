@@ -15,7 +15,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractedCost MUST MUST adhere to the following requirements:",
+      "MustSatisfy": "ContractedCost MUST adhere to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -148,7 +148,7 @@
     "ModelVersionRemoved": "1.4",
     "Status": "Removed",
     "ApplicabilityCriteria": [],
-    "Order": 50,
+    "Order": -1,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
@@ -272,7 +272,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractedCost of a charge unrelated to other charges (e.g., when the ChargeCategory is \"Credit\") MUST match the BilledCost.",
+      "MustSatisfy": "ContractedCost of a charge unrelated to other charges (e.g., when the ChargeCategory is \"Credit\") MUST be equal to the BilledCost.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},

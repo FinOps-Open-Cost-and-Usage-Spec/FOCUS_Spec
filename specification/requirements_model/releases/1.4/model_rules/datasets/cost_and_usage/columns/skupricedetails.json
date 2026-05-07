@@ -25,6 +25,14 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-SkuPriceDetails-C-024-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-SkuPriceDetails-C-025-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-SkuPriceDetails-C-001-M"
           },
           {
@@ -47,6 +55,8 @@
       },
       "Condition": {},
       "Dependencies": [
+        "CAU-SkuPriceDetails-C-024-M",
+        "CAU-SkuPriceDetails-C-025-M",
         "CAU-SkuPriceDetails-C-001-M",
         "CAU-SkuPriceDetails-C-002-O",
         "CAU-SkuPriceDetails-C-003-C",
@@ -252,7 +262,7 @@
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-SkuPriceDetails-C-012-O"
+            "ModelRuleId": "CAU-SkuPriceDetails-C-012-M"
           },
           {
             "CheckFunction": "CheckModelRule",
@@ -280,7 +290,7 @@
         "CAU-SkuPriceDetails-C-009-O",
         "CAU-SkuPriceDetails-C-023-C",
         "CAU-SkuPriceDetails-C-011-O",
-        "CAU-SkuPriceDetails-C-012-O",
+        "CAU-SkuPriceDetails-C-012-M",
         "CAU-SkuPriceDetails-C-016-O",
         "CAU-SkuPriceDetails-C-017-C",
         "CAU-SkuPriceDetails-C-018-C"
@@ -402,7 +412,7 @@
       "Dependencies": []
     }
   },
-  "CAU-SkuPriceDetails-C-012-O": {
+  "CAU-SkuPriceDetails-C-012-M": {
     "Function": "Composite",
     "Reference": "SkuPriceDetails",
     "EntityType": "Column",
@@ -418,8 +428,8 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "SkuPriceDetails properties for a given SkuPriceId SHOULD adhere to the following requirements:",
-      "Keyword": "SHOULD",
+      "MustSatisfy": "SkuPriceDetails properties for a given SkuPriceId MUST adhere to the following requirements:",
+      "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
         "Items": [
@@ -714,6 +724,67 @@
       "MustSatisfy": "SkuPriceDetails SHOULD include all custom SKU Price properties that are applicable to the corresponding SkuPriceId when there is no equivalent FOCUS-defined property.",
       "Keyword": "SHOULD",
       "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-SkuPriceDetails-C-024-M": {
+    "Function": "Type",
+    "Reference": "SkuPriceDetails",
+    "EntityName": "Sku Price Details",
+    "EntityId": "SkuPriceDetails",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 10,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "SkuPriceDetails MUST be of type JSON Object (serialized as a String where necessary).",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "OR",
+        "Items": [
+          {
+            "CheckFunction": "TypeString",
+            "ColumnName": "SkuPriceDetails"
+          },
+          {
+            "CheckFunction": "TypeJSON",
+            "ColumnName": "SkuPriceDetails"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-SkuPriceDetails-C-025-M": {
+    "Function": "Format",
+    "Reference": "SkuPriceDetails",
+    "EntityName": "Sku Price Details",
+    "EntityId": "SkuPriceDetails",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 15,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "SkuPriceDetails MUST conform to StringHandling requirements.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "FormatString",
+        "ColumnName": "SkuPriceDetails"
+      },
       "Condition": {},
       "Dependencies": []
     }

@@ -148,7 +148,7 @@
     "DatasetId": "InvoiceDetail",
     "DatasetName": "Invoice Detail",
     "ValidationCriteria": {
-      "MustSatisfy": "BillingPeriodEnd MUST be the *exclusive end bound* of the *billing period*.",
+      "MustSatisfy": "BillingPeriodEnd MUST be the exclusive end bound of the billing period.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},

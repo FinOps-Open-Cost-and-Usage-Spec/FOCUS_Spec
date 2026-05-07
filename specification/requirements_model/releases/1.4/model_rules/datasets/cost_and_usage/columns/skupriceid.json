@@ -416,7 +416,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "SkuPriceId MAY equal SkuId.",
+      "MustSatisfy": "SkuPriceId MAY match SkuId.",
       "Keyword": "MAY",
       "Requirement": {
         "CheckFunction": "CheckSameValue",
@@ -482,7 +482,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "SkuPriceId MUST reference a SKU Price in a provider-supplied price list, enabling the lookup of detailed information about the SKU Price.",
+      "MustSatisfy": "SkuPriceId MUST reference a SKU Price in a service-provider-supplied price list, enabling the lookup of detailed information about the SKU Price.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -507,7 +507,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "SkuPriceId MUST support the lookup of the ListUnitPrice when the provider publishes unit prices exclusive of discounts.",
+      "MustSatisfy": "SkuPriceId MUST support the lookup of the ListUnitPrice when the service provider publishes unit prices exclusive of discounts.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -532,7 +532,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "SkuPriceId MUST support the verification of the given ContractedUnitPrice when the provider supports negotiated pricing concepts.",
+      "MustSatisfy": "SkuPriceId MUST support the verification of the given ContractedUnitPrice when the service provider supports negotiated pricing concepts.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},

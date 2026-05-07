@@ -143,7 +143,7 @@
     "DatasetId": "InvoiceDetail",
     "DatasetName": "Invoice Detail",
     "ValidationCriteria": {
-      "MustSatisfy": "PaymentDueDate MUST be the date specified by the *invoice issuer* as the deadline for payment for the corresponding InvoiceId.",
+      "MustSatisfy": "PaymentDueDate MUST be the date specified by the invoice issuer as the deadline for payment for the corresponding InvoiceId.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},

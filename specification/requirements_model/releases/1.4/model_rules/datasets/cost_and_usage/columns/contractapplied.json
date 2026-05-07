@@ -98,7 +98,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractApplied MUST NOT be null when one or more *contract commitments* are applied to the *charge*.",
+      "MustSatisfy": "ContractApplied MUST NOT be null when one or more contract commitments are applied to the charge.",
       "Keyword": "MUST NOT",
       "Requirement": {},
       "Condition": {},

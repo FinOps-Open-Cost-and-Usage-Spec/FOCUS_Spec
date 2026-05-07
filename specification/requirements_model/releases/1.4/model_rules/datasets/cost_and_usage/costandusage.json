@@ -250,6 +250,10 @@
           },
           {
             "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-098-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-CostAndUsage-D-033-C"
           },
           {
@@ -342,6 +346,10 @@
           },
           {
             "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-096-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-CostAndUsage-D-065-C"
           },
           {
@@ -405,6 +413,7 @@
         "CAU-CostAndUsage-D-013-C",
         "CAU-CostAndUsage-D-014-C",
         "CAU-CostAndUsage-D-015-C",
+        "CAU-CostAndUsage-D-097-C",
         "CAU-CostAndUsage-D-016-C",
         "CAU-CostAndUsage-D-017-C",
         "CAU-CostAndUsage-D-018-C",
@@ -422,6 +431,7 @@
         "CAU-CostAndUsage-D-030-M",
         "CAU-CostAndUsage-D-031-M",
         "CAU-CostAndUsage-D-032-M",
+        "CAU-CostAndUsage-D-098-C",
         "CAU-CostAndUsage-D-033-C",
         "CAU-CostAndUsage-D-034-C",
         "CAU-CostAndUsage-D-035-M",
@@ -445,6 +455,7 @@
         "CAU-CostAndUsage-D-062-C",
         "CAU-CostAndUsage-D-063-C",
         "CAU-CostAndUsage-D-064-C",
+        "CAU-CostAndUsage-D-096-C",
         "CAU-CostAndUsage-D-065-C",
         "CAU-CostAndUsage-D-066-C",
         "CAU-CostAndUsage-D-067-C",
@@ -591,6 +602,10 @@
           },
           {
             "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CommitmentProgramEligibilityDetails-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-CommitmentDiscountQuantity-C-000-C"
           },
           {
@@ -623,7 +638,11 @@
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-InvoiceId-C-000-O"
+            "ModelRuleId": "CAU-InvoiceDetailId-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-InvoiceId-C-000-M"
           },
           {
             "CheckFunction": "CheckModelRule",
@@ -664,14 +683,6 @@
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-PricingUnit-C-000-M"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-ProviderName-C-000-M"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-PublisherName-C-000-M"
           },
           {
             "CheckFunction": "CheckModelRule",
@@ -772,6 +783,7 @@
         "CAU-CommitmentDiscountStatus-C-000-C",
         "CAU-CommitmentDiscountType-C-000-C",
         "CAU-CommitmentDiscountUnit-C-000-C",
+        "CAU-CommitmentProgramEligibilityDetails-C-000-C",
         "CAU-CommitmentDiscountQuantity-C-000-C",
         "CAU-ConsumedUnit-C-000-C",
         "CAU-ConsumedQuantity-C-000-C",
@@ -780,7 +792,8 @@
         "CAU-ContractedUnitPrice-C-000-C",
         "CAU-EffectiveCost-C-000-M",
         "CAU-HostProviderName-C-000-M",
-        "CAU-InvoiceId-C-000-O",
+        "CAU-InvoiceDetailId-C-000-C",
+        "CAU-InvoiceId-C-000-M",
         "CAU-InvoiceIssuerName-C-000-M",
         "CAU-ListCost-C-000-M",
         "CAU-ListUnitPrice-C-000-C",
@@ -791,13 +804,11 @@
         "CAU-PricingCurrencyListUnitPrice-C-000-C",
         "CAU-PricingQuantity-C-000-M",
         "CAU-PricingUnit-C-000-M",
-        "CAU-ProviderName-C-000-M",
         "CAU-RegionId-C-000-C",
         "CAU-RegionName-C-000-C",
         "CAU-ResourceId-C-000-C",
         "CAU-ResourceName-C-000-C",
         "CAU-ResourceType-C-000-C",
-        "CAU-PublisherName-C-000-M",
         "CAU-SubAccountId-C-000-C",
         "CAU-SubAccountName-C-000-C",
         "CAU-ServiceProviderName-C-000-M",
@@ -831,7 +842,7 @@
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage SHOULD include AvailabilityZone when the host provider supports deploying resources or services within an availabilityzone.",
+      "MustSatisfy": "CostAndUsage SHOULD include AvailabilityZone when the host provider supports deploying resources or services within an availability zone.",
       "Keyword": "SHOULD",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -853,7 +864,7 @@
     "ApplicabilityCriteria": [
       "PUBLIC_PRICE_LIST_SUPPORTED"
     ],
-    "Order": 370,
+    "Order": 410,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
@@ -911,7 +922,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "BilledCost MUST be present in a Cost and Usage FOCUS dataset.",
+      "MustSatisfy": "CostAndUsage MUST include BilledCost.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1039,7 +1050,7 @@
     "ApplicabilityCriteria": [
       "USAGE_MEASUREMENT_SUPPORTED"
     ],
-    "Order": 270,
+    "Order": 310,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
@@ -1123,7 +1134,7 @@
     "ApplicabilityCriteria": [
       "COMMITMENT_DISCOUNT_SUPPORTED"
     ],
-    "Order": 480,
+    "Order": 290,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
@@ -1151,13 +1162,13 @@
     "ApplicabilityCriteria": [
       "COMMITMENT_DISCOUNT_SUPPORTED"
     ],
-    "Order": 490,
+    "Order": 300,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CommitmentDiscountUnit MUST be present in a Cost and Usage FOCUS dataset when the service provider supports commitment discounts.",
+      "MustSatisfy": "CostAndUsage MUST include CommitmentDiscountUnit when the service provider supports commitment discounts.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1207,7 +1218,7 @@
     "ApplicabilityCriteria": [
       "COMMITMENT_DISCOUNT_SUPPORTED"
     ],
-    "Order": 470,
+    "Order": 280,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
@@ -1236,7 +1247,7 @@
       "COMMITMENT_DISCOUNT_SUPPORTED"
     ],
     "Type": "Static",
-    "Order": 460,
+    "Order": 270,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
@@ -1345,7 +1356,7 @@
     "ApplicabilityCriteria": [
       "MULTIPLE_PRICING_CATEGORIES_SUPPORTED"
     ],
-    "Order": 380,
+    "Order": 420,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
@@ -1371,7 +1382,7 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
-    "Order": 350,
+    "Order": 390,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
@@ -1481,7 +1492,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage SHOULD to include ChargeFrequency.",
+      "MustSatisfy": "CostAndUsage SHOULD include ChargeFrequency.",
       "Keyword": "SHOULD",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1555,7 +1566,7 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
-    "Order": 300,
+    "Order": 340,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
@@ -1581,7 +1592,7 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
-    "Order": 320,
+    "Order": 360,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
@@ -1607,7 +1618,7 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
-    "Order": 360,
+    "Order": 400,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
@@ -1635,14 +1646,14 @@
     "ApplicabilityCriteria": [
       "INVOICE_ISSUER_PAYABLE_INVOICES_SUPPORTED"
     ],
-    "Order": 340,
+    "Order": 380,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage SHOULD include InvoiceId when the invoice issuer supports payable invoices.",
-      "Keyword": "SHOULD",
+      "MustSatisfy": "CostAndUsage MUST include InvoiceId when the invoice issuer supports payable invoices.",
+      "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
         "ColumnName": "InvoiceId"
@@ -1663,7 +1674,7 @@
     "ApplicabilityCriteria": [
       "NEGOTIATED_PRICING_SUPPORTED"
     ],
-    "Order": 310,
+    "Order": 350,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
@@ -1715,7 +1726,7 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
-    "Order": 590,
+    "Order": 560,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
@@ -1902,7 +1913,7 @@
     "ApplicabilityCriteria": [
       "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED"
     ],
-    "Order": 510,
+    "Order": 600,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
@@ -1930,7 +1941,7 @@
     "ApplicabilityCriteria": [
       "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED"
     ],
-    "Order": 520,
+    "Order": 610,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
@@ -1958,7 +1969,7 @@
     "ApplicabilityCriteria": [
       "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
     ],
-    "Order": 390,
+    "Order": 430,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
@@ -1984,7 +1995,7 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
-    "Order": 400,
+    "Order": 440,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
@@ -2030,7 +2041,7 @@
       "PUBLIC_PRICE_LIST_SUPPORTED",
       "VIRTUAL_CURRENCY_SUPPORTED"
     ],
-    "Order": 410,
+    "Order": 450,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
@@ -2059,13 +2070,13 @@
       "PUBLIC_PRICE_LIST_SUPPORTED",
       "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
     ],
-    "Order": 420,
+    "Order": 460,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage is SHOULD to include PricingCurrencyContractedUnitPrice when the service provider supports pricing and billing in different currencies and publishes unit prices exclusive of discounts.",
+      "MustSatisfy": "CostAndUsage SHOULD include PricingCurrencyContractedUnitPrice when the service provider supports pricing and billing in different currencies and publishes unit prices exclusive of discounts.",
       "Keyword": "SHOULD",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -2088,7 +2099,7 @@
       "PUBLIC_PRICE_LIST_SUPPORTED",
       "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
     ],
-    "Order": 430,
+    "Order": 470,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
@@ -2114,7 +2125,7 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
-    "Order": 440,
+    "Order": 480,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
@@ -2160,7 +2171,7 @@
       "PUBLIC_PRICE_LIST_SUPPORTED",
       "VIRTUAL_CURRENCY_SUPPORTED"
     ],
-    "Order": 450,
+    "Order": 490,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
@@ -2189,13 +2200,13 @@
       "PUBLIC_PRICE_LIST_SUPPORTED",
       "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
     ],
-    "Order": 530,
+    "Order": 500,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage is SHOULD to include PricingCurrencyEffectiveCost when the service provider supports pricing and billing in different currencies and publishes unit prices exclusive of discounts.",
+      "MustSatisfy": "CostAndUsage SHOULD include PricingCurrencyEffectiveCost when the service provider supports pricing and billing in different currencies and publishes unit prices exclusive of discounts.",
       "Keyword": "SHOULD",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -2218,7 +2229,7 @@
       "PUBLIC_PRICE_LIST_SUPPORTED",
       "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
     ],
-    "Order": 540,
+    "Order": 510,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
@@ -2245,7 +2256,7 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
-    "Order": 550,
+    "Order": 520,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
@@ -2291,7 +2302,7 @@
       "VIRTUAL_CURRENCY_SUPPORTED"
     ],
     "Type": "Static",
-    "Order": 560,
+    "Order": 530,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
@@ -2320,7 +2331,7 @@
       "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
     ],
     "Type": "Static",
-    "Order": 570,
+    "Order": 540,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
@@ -2349,7 +2360,7 @@
       "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
     ],
     "Type": "Static",
-    "Order": 580,
+    "Order": 550,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
@@ -2492,7 +2503,7 @@
     "ApplicabilityCriteria": [
       "REGION_SUPPORTED"
     ],
-    "Order": 500,
+    "Order": 590,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
@@ -2520,7 +2531,7 @@
     "ApplicabilityCriteria": [
       "REGION_SUPPORTED"
     ],
-    "Order": 610,
+    "Order": 580,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
@@ -2604,7 +2615,7 @@
     "ApplicabilityCriteria": [
       "USAGE_MEASUREMENT_SUPPORTED"
     ],
-    "Order": 280,
+    "Order": 320,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
@@ -2658,7 +2669,7 @@
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [],
-    "Order": 600,
+    "Order": 570,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
@@ -2692,7 +2703,7 @@
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage SHOULD include AllocatedMethodDetails when the data generator supports Data Generator-Calculated Split Cost Allocation.",
+      "MustSatisfy": "CostAndUsage SHOULD include AllocatedMethodDetails when the data generator supports data generator-calculated split cost allocation.",
       "Keyword": "SHOULD",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -2829,7 +2840,7 @@
     "ApplicabilityCriteria": [
       "CONTRACT_COMMITMENTS_SUPPORTED"
     ],
-    "Order": 290,
+    "Order": 330,
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "CostAndUsage MUST include ContractApplied when the service provider supports contract commitments.",
@@ -2855,7 +2866,7 @@
     "ModelVersionIntroduced": "1.3",
     "Status": "Active",
     "ApplicabilityCriteria": [],
-    "Order": 330,
+    "Order": 370,
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "CostAndUsage MUST include HostProviderName.",
@@ -2930,7 +2941,7 @@
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
     "ApplicabilityCriteria": [],
-    "Order": 1240,
+    "Order": 1250,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "CostAndUsage MUST conform to CorrectionHandling requirements.",
@@ -2953,7 +2964,7 @@
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
     "ApplicabilityCriteria": [],
-    "Order": 1250,
+    "Order": 1260,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "CostAndUsage MUST conform to DatasetCompleteness requirements.",
@@ -2976,7 +2987,7 @@
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
     "ApplicabilityCriteria": [],
-    "Order": 1260,
+    "Order": 1270,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "CostAndUsage MUST conform to DatasetConfiguration requirements.",
@@ -2999,7 +3010,7 @@
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
     "ApplicabilityCriteria": [],
-    "Order": 1270,
+    "Order": 1280,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "CostAndUsage MUST conform to DeliveryHandling requirements.",
@@ -3022,7 +3033,7 @@
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
     "ApplicabilityCriteria": [],
-    "Order": 1280,
+    "Order": 1290,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "CostAndUsage MUST include charges representing unused portions of a commitment when the commitment is not fully utilized.",
@@ -3045,7 +3056,7 @@
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
     "ApplicabilityCriteria": [],
-    "Order": 1290,
+    "Order": 1300,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "CostAndUsage MUST include separate charges representing discounted and non-discounted portions when a discount applies to only a portion of the originally incurred charge.",
@@ -3070,7 +3081,7 @@
     "ApplicabilityCriteria": [
       "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
     ],
-    "Order": 1300,
+    "Order": 1310,
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "When the data generator supports data generator-calculated split cost allocation, CostAndUsage MUST adhere to the following requirements:",
@@ -3125,7 +3136,7 @@
     "ApplicabilityCriteria": [
       "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
     ],
-    "Order": 1310,
+    "Order": 1320,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "CostAndUsage MUST have its data generator-calculated split cost allocation method documented and accessible to practitioners.",
@@ -3150,7 +3161,7 @@
     "ApplicabilityCriteria": [
       "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
     ],
-    "Order": 1320,
+    "Order": 1330,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "CostAndUsage SHOULD offer data generator-calculated split cost allocation on an opt-in basis.",
@@ -3175,7 +3186,7 @@
     "ApplicabilityCriteria": [
       "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
     ],
-    "Order": 1330,
+    "Order": 1340,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "CostAndUsage MAY contain records for concepts not related to resource usage, if it aligns with the documented data generator-calculated split cost allocation method.",
@@ -3200,7 +3211,7 @@
     "ApplicabilityCriteria": [
       "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
     ],
-    "Order": 1340,
+    "Order": 1350,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "CostAndUsage MAY contain records for unused or unallocated usage from the origin charge as separate allocated charges, if it aligns with the documented data generator-calculated split cost allocation method.",
@@ -3225,7 +3236,7 @@
     "ApplicabilityCriteria": [
       "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
     ],
-    "Order": 1350,
+    "Order": 1360,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "CostAndUsage MAY contain allocated charges with apportioned costs for unused or unallocated usage, if it aligns with the documented data generator-calculated split cost allocation method.",
@@ -3248,7 +3259,7 @@
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
     "ApplicabilityCriteria": [],
-    "Order": 1360,
+    "Order": 1370,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "CostAndUsage SHOULD reflect all applied discounts in charges they pertain to.",
@@ -3271,7 +3282,7 @@
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
     "ApplicabilityCriteria": [],
-    "Order": 1370,
+    "Order": 1380,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "CostAndUsage SHOULD NOT represent applied discounts as separate negating or offsetting charges.",
@@ -3296,7 +3307,7 @@
     "ApplicabilityCriteria": [
       "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
     ],
-    "Order": 1380,
+    "Order": 1390,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "CostAndUsage FOCUS columns MUST conform to DataGeneratorCalculatedSplitCostAllocationHandling requirements when the data generator supports data generator-calculated split cost allocation.",
@@ -3321,7 +3332,7 @@
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
     "ApplicabilityCriteria": [],
-    "Order": 1390,
+    "Order": 1400,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "CostAndUsage FOCUS columns MUST conform to FocusColumnHandling requirements.",
@@ -3346,7 +3357,7 @@
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
     "ApplicabilityCriteria": [],
-    "Order": 1400,
+    "Order": 1410,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "CostAndUsage FOCUS columns MUST conform to NullHandling requirements.",
@@ -3371,7 +3382,7 @@
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
     "ApplicabilityCriteria": [],
-    "Order": 1410,
+    "Order": 1420,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "CostAndUsage custom columns MUST conform to CustomColumnHandling requirements.",
@@ -3381,6 +3392,79 @@
       "Dependencies": [
         "ATT-CustomColumnHandling-A-000-M"
       ]
+    }
+  },
+  "CAU-CostAndUsage-D-096-C": {
+    "Function": "Presence",
+    "Reference": "CostAndUsage",
+    "EntityType": "Dataset",
+    "EntityName": "Cost And Usage",
+    "EntityId": "CostAndUsage",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Order": 750,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage SHOULD include custom columns needed to identify all applied discounts when FOCUS columns are not sufficient.",
+      "Keyword": "SHOULD",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-097-C": {
+    "Function": "Presence",
+    "Reference": "CommitmentProgramEligibilityDetails",
+    "EntityType": "Dataset",
+    "EntityName": "Commitment Program Eligibility Details",
+    "EntityId": "CommitmentProgramEligibilityDetails",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [
+      "COMMITMENT_DISCOUNT_SUPPORTED"
+    ],
+    "Order": 305,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include CommitmentProgramEligibilityDetails when the service provider supports at least one commitment program.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-098-C": {
+    "Function": "Presence",
+    "Reference": "InvoiceDetailId",
+    "EntityType": "Dataset",
+    "EntityName": "Invoice Detail ID",
+    "EntityId": "InvoiceDetailId",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [
+      "INVOICE_ISSUER_PAYABLE_INVOICES_SUPPORTED"
+    ],
+    "Order": 375,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include InvoiceDetailId when the invoice issuer supports payable invoices.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
     }
   }
 }

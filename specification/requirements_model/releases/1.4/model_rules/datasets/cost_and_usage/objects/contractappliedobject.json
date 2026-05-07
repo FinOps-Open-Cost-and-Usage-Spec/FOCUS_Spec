@@ -2358,7 +2358,7 @@
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractAppliedObject.Elements[*].ContractCommitmentId MUST be equal to ResourceId when ChargeCategory is \"Purchase\" and the charge represents a purchase of that contract commitment.",
+      "MustSatisfy": "ContractAppliedObject.Elements[*].ContractCommitmentId MUST match ResourceId when ChargeCategory is \"Purchase\" and the charge represents a purchase of that contract commitment.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -2381,7 +2381,7 @@
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractAppliedObject.Elements[*].ContractCommitmentId MUST be equal to ResourceId when ChargeCategory is \"Usage\" and the charge represents an unused portion of that contract commitment.",
+      "MustSatisfy": "ContractAppliedObject.Elements[*].ContractCommitmentId MUST match ResourceId when ChargeCategory is \"Usage\" and the charge represents an unused portion of that contract commitment.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -2404,7 +2404,7 @@
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractAppliedObject.Elements[*].ContractCommitmentId MAY be equal to ContractAppliedObject.Elements[*].ContractId.",
+      "MustSatisfy": "ContractAppliedObject.Elements[*].ContractCommitmentId MAY match ContractAppliedObject.Elements[*].ContractId.",
       "Keyword": "MAY",
       "Requirement": {},
       "Condition": {},

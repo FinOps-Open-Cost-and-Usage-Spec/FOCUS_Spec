@@ -202,7 +202,7 @@
     "DatasetId": "InvoiceDetail",
     "DatasetName": "Invoice Detail",
     "ValidationCriteria": {
-      "MustSatisfy": "BillingCurrency MUST be expressed in *national currency* (e.g., USD, EUR).",
+      "MustSatisfy": "BillingCurrency MUST be expressed in national currency (e.g., USD, EUR).",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "CheckNationalCurrency",

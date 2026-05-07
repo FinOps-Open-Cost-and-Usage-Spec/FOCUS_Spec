@@ -52,9 +52,9 @@
         "CCT-BillingCurrency-C-002-M",
         "CCT-BillingCurrency-C-003-M",
         "CCT-BillingCurrency-C-004-C",
+        "CCT-ContractCommitment-D-003-M",
         "CCT-BillingCurrency-C-005-M",
-        "CCT-BillingCurrency-C-006-M",
-        "CCT-ContractCommitment-D-003-M"
+        "CCT-BillingCurrency-C-006-M"
       ]
     }
   },

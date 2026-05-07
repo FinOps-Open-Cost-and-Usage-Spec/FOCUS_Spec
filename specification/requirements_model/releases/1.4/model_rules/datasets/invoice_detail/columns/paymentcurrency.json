@@ -171,7 +171,7 @@
     "DatasetId": "InvoiceDetail",
     "DatasetName": "Invoice Detail",
     "ValidationCriteria": {
-      "MustSatisfy": "PaymentCurrency MUST be expressed in *national currency* (e.g., USD, EUR).",
+      "MustSatisfy": "PaymentCurrency MUST be expressed in national currency (e.g., USD, EUR).",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "CheckNationalCurrency",

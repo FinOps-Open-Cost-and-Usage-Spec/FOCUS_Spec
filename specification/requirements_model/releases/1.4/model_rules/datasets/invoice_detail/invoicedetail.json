@@ -951,7 +951,7 @@
     "DatasetId": "InvoiceDetail",
     "DatasetName": "Invoice Detail",
     "ValidationCriteria": {
-      "MustSatisfy": "InvoiceDetail MUST include *custom columns* to represent any monetary metric that appears on an invoice issued to a BillingAccountId when there is no equivalent *FOCUS column*.",
+      "MustSatisfy": "InvoiceDetail MUST include custom columns to represent any monetary metric that appears on an invoice issued to a BillingAccountId when there is no equivalent FOCUS column.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -1097,7 +1097,7 @@
     "DatasetId": "InvoiceDetail",
     "DatasetName": "Invoice Detail",
     "ValidationCriteria": {
-      "MustSatisfy": "InvoiceDetail *FOCUS columns* MUST conform to FocusColumnHandling requirements.",
+      "MustSatisfy": "InvoiceDetail FOCUS columns MUST conform to FocusColumnHandling requirements.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -1122,7 +1122,7 @@
     "DatasetId": "InvoiceDetail",
     "DatasetName": "Invoice Detail",
     "ValidationCriteria": {
-      "MustSatisfy": "InvoiceDetail *FOCUS columns* MUST conform to NullHandling requirements.",
+      "MustSatisfy": "InvoiceDetail FOCUS columns MUST conform to NullHandling requirements.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -1147,7 +1147,7 @@
     "DatasetId": "InvoiceDetail",
     "DatasetName": "Invoice Detail",
     "ValidationCriteria": {
-      "MustSatisfy": "InvoiceDetail *custom columns* MUST conform to CustomColumnHandling requirements.",
+      "MustSatisfy": "InvoiceDetail custom columns MUST conform to CustomColumnHandling requirements.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -1266,7 +1266,7 @@
     "DatasetId": "InvoiceDetail",
     "DatasetName": "Invoice Detail",
     "ValidationCriteria": {
-      "MustSatisfy": "InvoiceDetail documentation MUST describe how columns in the CostAndUsage and InvoiceDetail datasets represent the invoice issuer's *invoice reconciliation* process.",
+      "MustSatisfy": "InvoiceDetail documentation MUST describe how columns in the CostAndUsage and InvoiceDetail dataset instances represent the invoice issuer's invoice reconciliation process.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
