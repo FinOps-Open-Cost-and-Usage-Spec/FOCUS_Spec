@@ -25,7 +25,7 @@ Tags MUST adhere to the following requirements:
 * User-defined tags MUST adhere to the following requirements:
   * User-defined tag keys in all but one user-defined *tag scheme* MUST include a predetermined, provider-specified tag key prefix that is unique to each corresponding user-defined *tag scheme* when the data generator has more than one user-defined *tag scheme*.
   * User-defined tag keys MUST NOT include a *tag scheme*-specific prefix when the data generator has only one user-defined *tag scheme*.
-  * Reserved tag key prefixes MUST NOT be used as prefixes for any user-defined tag keys within a prefixless user-defined *tag scheme*.
+  * Reserved tag key prefixes MUST be prevented from being used as prefixes for any user-defined tag keys within a prefixless user-defined *tag scheme*.
 * Tag finalization documentation MUST adhere to the following requirements:
   * Tag finalization documentation SHOULD include tag finalization methods and semantics.
   * Tag finalization documentation SHOULD be accessible to practitioners.
