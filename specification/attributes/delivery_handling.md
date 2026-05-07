@@ -54,7 +54,7 @@ Dataset conforming to DeliveryHandling attribute MUST adhere to the following re
 * *FOCUS dataset* delivery mechanism documentation MUST adhere to the following requirements:
   * *FOCUS dataset* delivery mechanism documentation MUST include the delivery mechanism used (Overwrite or Append).
   * *FOCUS dataset* delivery mechanism documentation MUST include the conditions under which each delivery mechanism applies when more than one delivery mechanism is used.
-  * *FOCUS dataset* delivery mechanism documentation MUST include the mechanism for correlating *dataset artifacts* with the FOCUS Metadata Schema object when the Metadata is delivered.
+  * *FOCUS dataset* delivery mechanism documentation MUST include the mechanism for correlating *dataset artifacts* with the [FOCUS Metadata Schema object](#metadata.schema) when the Metadata is delivered.
   * *FOCUS dataset* delivery mechanism documentation MUST be accessible to practitioners.
 
 ## Attribute ID
