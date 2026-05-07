@@ -14,6 +14,7 @@ Presence Conditions are sorted alphabetically by name.
 | [Includes Availability Zones](#presenceconditions.includesavailabilityzones) | Resource | Source operating model includes deploying resources or services within an availability zone. |
 | [Includes Capacity Reservations](#presenceconditions.includescapacityreservations) | Commitment | Source operating model includes capacity reservations. |
 | [Includes Commitment Discounts](#presenceconditions.includescommitmentdiscounts) | Commitment | Source operating model includes commitment discounts. |
+| [Includes Commitment Programs](#presenceconditions.includescommitmentprograms) | Commitment | Source operating model includes at least one commitment program. |
 | [Includes Contracted Pricing](#presenceconditions.includescontractedpricing) | Pricing | Source operating model includes formal contracts, spend commitments, or negotiated pricing. |
 | [Includes Host-Service Provider Differences](#presenceconditions.includeshostserviceproviderdifferences) | Service | Source operating model includes public delineation between host and service provider. |
 | [Includes Multiple Charge Frequencies](#presenceconditions.includesmultiplechargefrequencies) | Billing | Source operating model includes multiple charge frequencies. |
