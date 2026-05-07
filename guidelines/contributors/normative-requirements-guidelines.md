@@ -412,7 +412,7 @@ Use standardized phrasing and terminology, and apply common requirement patterns
 * <DatasetId> MUST conform to <BusinessAttributeId> requirements.
 ```
 
-##### Documentation Requirements
+##### Other Requirements: Documentation
 
 ```markdown
 * <DatasetId> documentation MUST <verifiable state>.
