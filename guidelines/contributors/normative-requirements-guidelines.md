@@ -999,7 +999,7 @@ Attributes may include requirements that apply to one or more intended normative
 5. **Custom Column Attribute Requirements:**
    1. **Global Custom Column Requirements:** Applicable to all Custom columns, regardless of their structure or purpose.
    1. **Qualified Custom Column Requirements:** Applicable to a subset of Custom columns, identified through a qualifier.
-6. **Other Attribute Requirements**
+6. **Other Attribute Requirements:**
    1. **Documentation:** Defines requirements for documentation associated with entities conforming to the Attribute.
    1. **Other:** Captures requirements that do not fall into the above categories.
 
