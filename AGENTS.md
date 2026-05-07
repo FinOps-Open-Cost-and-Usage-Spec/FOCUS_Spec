@@ -98,7 +98,7 @@ AI agents generating or reviewing content MUST act as strict technical editors e
 
 ### Normative Language & Requirements
 
-* **BCP-14 Keywords:** Use MUST, MUST NOT, SHOULD, SHOULD NOT, MAY (uppercase). NEVER use: "REQUIRED", "SHALL", "RECOMMENDED", "OPTIONAL".
+* **BCP-14 Keywords:** Use MUST, MUST NOT, SHOULD, SHOULD NOT, MAY (uppercase). NEVER use: "REQUIRED", "SHALL", "SHALL NOT", "RECOMMENDED", "NOT RECOMMENDED", "OPTIONAL".
 * **Location:** Capitalized keywords MUST NOT appear outside "Requirements" sections unless quoted.
 * **Structure:** Use bulleted lists. Each bullet MUST express exactly one verifiable state. Split bullets that combine multiple obligations.
 * **Allowed Subjects:** MUST be schema-level entities (e.g., `FOCUS dataset`, `BilledCost`). Actors (e.g., Data Generator) and Processes MUST NOT be subjects.
