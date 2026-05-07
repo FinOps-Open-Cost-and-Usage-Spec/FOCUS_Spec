@@ -18,7 +18,7 @@ Tags MUST adhere to the following requirements:
   * Tags SHOULD include tag keys with corresponding non-null values for a given [*resource*](#glossary:resource).
   * Tags MAY include tag keys with a null value for a given *resource* depending on the data generator's tag finalization process.
   * Tag keys that do not support corresponding values, MUST have a corresponding true (boolean) value set.
-  * Tag values MUST match the original values unless true (boolean) is applied to valueless tags.
+  * Tag values MUST match the provided values unless true (boolean) is applied to valueless tags.
 * Provider-defined tags MUST adhere to the following requirements:
   * Provider-defined tag keys MUST be prefixed with a predetermined, provider-specified tag key prefix that is unique to each corresponding provider-specified [*tag scheme*](#glossary:tag-scheme).
   * Provider-specified tag key prefixes SHOULD be publicly documented.
