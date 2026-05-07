@@ -15,7 +15,6 @@ Presence Conditions are sorted alphabetically by name.
 | [Includes Capacity Reservations](#presenceconditions.includescapacityreservations) | Commitment | Source operating model includes capacity reservations. |
 | [Includes Commitment Discounts](#presenceconditions.includescommitmentdiscounts) | Commitment | Source operating model includes commitment discounts. |
 | [Includes Contracted Pricing](#presenceconditions.includescontractedpricing) | Pricing | Source operating model includes formal contracts, spend commitments, or negotiated pricing. |
-| [Includes Data Generator-Calculated Split Cost Allocation](#presenceconditions.includesdatageneratorcalculatedsplitcostallocation) | Allocation | Source operating model includes data generator-calculated split cost allocation. |
 | [Includes Host-Service Provider Differences](#presenceconditions.includeshostserviceproviderdifferences) | Service | Source operating model includes public delineation between host and service provider. |
 | [Includes Multiple Charge Frequencies](#presenceconditions.includesmultiplechargefrequencies) | Billing | Source operating model includes multiple charge frequencies. |
 | [Includes Multiple Pricing Categories](#presenceconditions.includesmultiplepricingcategories) | Pricing | Source operating model includes more than one pricing category across all SKUs. |
@@ -26,6 +25,7 @@ Presence Conditions are sorted alphabetically by name.
 | [Includes Regions](#presenceconditions.includesregions) | Resource | Source operating model includes deploying resources or services within a region. |
 | [Includes Resource Type Assignment](#presenceconditions.includesresourcetypeassignment) | Resource | Source operating model includes assigning types to resources. |
 | [Includes Service Hierarchy](#presenceconditions.includesservicehierarchy) | Service | Source operating model includes more than one level of service categorization. |
+| [Includes Split Cost Allocation](#presenceconditions.includessplitcostallocation) | Allocation | Source operating model includes split cost allocation. |
 | [Includes Sub Accounts](#presenceconditions.includessubaccounts) | Account | Source operating model includes a sub account construct. |
 | [Includes Tags](#presenceconditions.includestags) | Allocation | Source operating model includes the definition or enrichment of tags. |
 | [Includes Unit Pricing](#presenceconditions.includesunitpricing) | Pricing | Source operating model includes unit pricing concepts. |
