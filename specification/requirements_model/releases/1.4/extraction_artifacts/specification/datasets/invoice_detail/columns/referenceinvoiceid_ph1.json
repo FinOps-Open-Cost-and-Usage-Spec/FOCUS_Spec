@@ -120,7 +120,7 @@
     {
       "temp_id": "R005",
       "order": 5,
-      "text": "ReferenceInvoiceId MUST equal the [InvoiceId](#datasets.invoicedetail.invoiceid) of the original [*invoice*](#glossary:invoice) if it adjusts another invoice.",
+      "text": "ReferenceInvoiceId MUST match the [InvoiceId](#datasets.invoicedetail.invoiceid) of the original [*invoice*](#glossary:invoice) if it adjusts another invoice.",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
@@ -145,7 +145,7 @@
     {
       "temp_id": "R006",
       "order": 6,
-      "text": "ReferenceInvoiceId MUST equal the InvoiceId of the current invoice if it does not adjust another invoice.",
+      "text": "ReferenceInvoiceId MUST match the InvoiceId of the current invoice if it does not adjust another invoice.",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [

@@ -25,7 +25,7 @@
     "  L009: \"BillingAccountId MUST be of type String.\"",
     "  L010: \"BillingAccountId MUST conform to [StringHandling](#attributes.stringhandling) requirements.\"",
     "  L011: \"BillingAccountId MUST NOT be null.\"",
-    "  L012: \"BillingAccountId MUST be a unique identifier within an invoice issuer.\"",
+    "  L012: \"BillingAccountId MUST be a unique identifier within an [*invoice issuer*](#glossary:invoice-issuer).\"",
     "  L013: \"BillingAccountId SHOULD be a fully-qualified identifier.\""
   ],
   "0_outline_summary": {
@@ -155,7 +155,7 @@
                 "temp_id": "R005",
                 "order": 5,
                 "ref": "L012",
-                "text": "BillingAccountId MUST be a unique identifier within an invoice issuer.",
+                "text": "BillingAccountId MUST be a unique identifier within an [*invoice issuer*](#glossary:invoice-issuer).",
                 "keyword": "MUST",
                 "section_path": [
                   "Billing Account ID",

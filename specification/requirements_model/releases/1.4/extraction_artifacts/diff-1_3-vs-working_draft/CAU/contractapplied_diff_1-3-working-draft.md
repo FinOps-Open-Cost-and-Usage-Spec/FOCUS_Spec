@@ -1,6 +1,11 @@
 ## Diff
 
-@@ -1,115 +1,11 @@
+diff --git a/tmp/contractapplied_v13.md b/tmp/contractapplied_working.md
+index c1291f6e..c8795c34 100644
+--- a/tmp/contractapplied_v13.md
++++ b/tmp/contractapplied_working.md
+@@ -1,300 +1,102 @@
+
 ## Requirements
 
 ### Column Requirements
@@ -56,8 +61,7 @@
 
 [-<b>Contract Commitment ID</b>-]
 
-[-A Contract Commitment ID is a service-provider-assigned identifier describing an agreement agreed between a service provider and a customer.  Contracts can include commitment to a certain 
-amount of spend or usage over an agreed period of time.-]
+[-A Contract Commitment ID is a service-provider-assigned identifier describing an agreement agreed between a service provider and a customer.  Contracts can include commitment to a certain amount of spend or usage over an agreed period of time.-]
 
 [-The "ContractCommitmentID" property adheres to the following requirements:-]{+Object+}
 
@@ -84,12 +88,42 @@ amount of spend or usage over an agreed period of time.-]
 {+* ContractAppliedObject.Elements[\*].ContractId+} MUST be[-present in-] a [-Cost and Usage *FOCUS dataset* when-]{+unique identifier within+} the service [-provider associates the *charge's* value with one or more *contract commitments*.-]{+provider.+}
 {+* ContractAppliedObject.Elements[\*].ContractId SHOULD be a fully-qualified identifier.+}
 * [-"ContractCommitmentAppliedCost"-]{+ContractAppliedObject.Elements[\*].ContractCommitmentId+} MUST be [-of type Decimal.-]{+a unique identifier within the service provider.+}
-{+* ContractAppliedObject.Elements[\*].ContractCommitmentId SHOULD be a fully-qualified identifier.+}
-* [-"ContractCommitmentAppliedCost"-]{+ContractAppliedObject.Elements[\*].ContractCommitmentId+} MUST [-conform to NumericFormat requirements.-]{+have one and only one parent ContractAppliedObject.Elements[\*].ContractId.+}
-* [-"ContractCommitmentAppliedCost" nullability-]{+ContractAppliedObject.Elements[\*].ContractCommitmentId MUST be equal to ResourceId when ChargeCategory+} is [-defined as follows:-]{+"Purchase" and the *charge* represents a purchase of that *contract commitment*.+}
-* [-"ContractCommitmentAppliedCost"-]{+ContractAppliedObject.Elements[\*].ContractCommitmentId+} MUST[-NOT-] be [-null-]{+equal to ResourceId+} when [-"ContractCommitmentAppliedQuantity"-]{+ChargeCategory+} is [-null.-]{+"Usage" and the *charge* represents an unused portion of that *contract commitment*.+}
-* [-"ContractCommitmentAppliedCost"-]{+ContractAppliedObject.Elements[\*].ContractCommitmentId+} MAY be [-null in all other cases.-]{+equal to ContractAppliedObject.Elements[\*].ContractId.+
-}
+* [-"ContractCommitmentAppliedCost"-]{+ContractAppliedObject.Elements[\*].ContractCommitmentId SHOULD be a fully-qualified identifier.+}
+{+* ContractAppliedObject.Elements[\*].ContractCommitmentId+} MUST [-conform to NumericFormat requirements.-]{+have one and only one parent ContractAppliedObject.Elements[\*].ContractId.+}
+* [-"ContractCommitmentAppliedCost" nullability-]{+ContractAppliedObject.Elements[\*].ContractCommitmentId MUST match ResourceId when ChargeCategory+} is [-defined as follows:-]{+"Purchase" and the *charge* represents a purchase of that *contract commitment*.+}
+* [-"ContractCommitmentAppliedCost"-]{+ContractAppliedObject.Elements[\*].ContractCommitmentId+} MUST [-NOT be null-]{+match ResourceId+} when [-"ContractCommitmentAppliedQuantity"-]{+ChargeCategory+} is [-null.-]{+"Usage" and the *charge* represents an unused portion of that *contract commitment*.+}
+* [-"ContractCommitmentAppliedCost"-]{+ContractAppliedObject.Elements[\*].ContractCommitmentId+} MAY [-be null in all other cases.-]{+match ContractAppliedObject.Elements[\*].ContractId.+}
 * [-"ContractCommitmentAppliedCost"-]{+ContractAppliedObject.Elements[\*].ContractCommitmentAppliedCost+} MUST be [-a valid decimal value.-]{+denominated in the BillingCurrency.+}
 * [-"ContractCommitmentAppliedCost"-]{+ContractAppliedObject.Elements[\*].ContractCommitmentAppliedQuantity+} MUST be denominated in the [-BillingCurrency.-]{+ContractAppliedObject.Elements[\*].ContractCommitmentAppliedUnit.+}
 {+* ContractAppliedObject.Elements[\*].ContractCommitmentAppliedUnit SHOULD conform to UnitFormat requirements.+}
+
+[-<b>Contract Commitment Applied Quantity</b>-]{+### Object Schema Structure+}
+
+[-Contract Commitment Applied Quantity represents the quantity of the charge applied to the contract line item.  Contract Commitment Applied Quantity is associated with the contract line item via Contract Commitment ID.  Contract Commitment Applied Quantity is commonly used for monitoring the progress towards fulfilling contractual commitments that may facilitate discounts for *resources* or *services* as agreed between-]{+ContractApplied contains+} a [-service provider-]{+structured JSON object defining the allocation+} and {+application of+} a [-customer.-]{+*charge* against specific contract commitments.+}
+
+[-The "ContractCommitmentAppliedQuantity" property adheres to the following requirements:-]{+<div class="h7-nonindex">Top-Level Properties</div>+}
+
+[-* "ContractCommitmentAppliedQuantity" MUST be present in a Cost and Usage *FOCUS dataset* when the service provider associates the *charge's* quantity with-]{+| Property | Type | Required | Description |+}
+{+| :--- | :--- | :--- | :--- |+}
+{+| `Elements` | Array | True | The parent array containing+} one or more [-*contract commitments*.-]
+[-* "ContractCommitmentAppliedQuantity" MUST be of type Decimal.-]
+[-* "ContractCommitmentAppliedQuantity" MUST conform-]{+objects which communicate information about how contract commitments were applied+} to[-NumericFormat requirements.-]
+[-* "ContractCommitmentAppliedQuantity" nullability is defined as follows:-]
+[-  * "ContractCommitmentAppliedQuantity" MUST NOT be null when "ContractCommitmentAppliedCost" is null.-]
+[-  * "ContractCommitmentAppliedQuantity" MAY be null in all other cases.-]
+[-* "ContractCommitmentAppliedQuantity" MUST be a valid decimal value.-]
+[-* "ContractCommitmentAppliedQuantity" MUST be denominated in-] the [-"ContractCommitmentAppliedUnit".-]{+*charge*. |+}
+
+[-<b>Contract Commitment Applied Unit</b>-]
+
+[-The Contract Commitment Applied Unit represents a service-provider-specified measurement unit for the usage declared in Contract Commitment Applied Quantity. Contract Commitment Applied Unit complements the Contract Commitment Applied Quantity metric.-]
+
+[-The "ContractCommitmentAppliedUnit" property adheres to the following requirements:-]
+
+[-* "ContractCommitmentAppliedUnit" MUST be present in a Cost and Usage *FOCUS dataset* when the service provider associates the *charge's* quantity with one or more *contract commitments*.-]
+[-* "ContractCommitmentAppliedUnit" MUST be of type String.-]
+[-* "ContractCommitmentAppliedUnit" MUST conform to StringHandling requirements.-]
+[-* "ContractCommitmentAppliedUnit" SHOULD conform to UnitFormat requirements.-]
+[-* "ContractCommitmentAppliedUnit" nullability is defined as follows:-]
+[-  * "ContractCommitmentAppliedUnit" MUST be null when "ContractCommitmentAppliedQuantity" is null.-]
+[-  * "ContractCommitmentAppliedUnit" MUST NOT be null when "ContractCommitmentAppliedQuantity" is not null.-]

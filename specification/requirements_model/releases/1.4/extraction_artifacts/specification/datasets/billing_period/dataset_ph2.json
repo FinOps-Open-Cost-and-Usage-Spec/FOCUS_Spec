@@ -34,7 +34,7 @@
     "  L038: \"BillingPeriod MUST conform to [DatasetCompleteness](#attributes.datasetcompleteness) requirements.\"",
     "  L039: \"BillingPeriod MUST conform to [DatasetConfiguration](#attributes.datasetconfiguration) requirements.\"",
     "  L040: \"BillingPeriod MUST conform to [DeliveryHandling](#attributes.deliveryhandling) requirements.\"",
-    "  L041: \"BillingPeriod [*FOCUS columns*](#glossary:focus-column) MUST conform to [FocusColumnHandling](#attributes.focuscolumnhandling) requirements.\"",
+    "  L041: \"BillingPeriod [*FOCUS columns*](#glossary:FOCUS-column) MUST conform to [FocusColumnHandling](#attributes.focuscolumnhandling) requirements.\"",
     "  L042: \"BillingPeriod *FOCUS columns* MUST conform to [NullHandling](#attributes.nullhandling) requirements.\"",
     "  L043: \"BillingPeriod [*custom columns*](#glossary:custom-column) MUST conform to [CustomColumnHandling](#attributes.customcolumnhandling) requirements.\""
   ],
@@ -76,7 +76,6 @@
             "text": "BillingPeriod MUST adhere to the following requirements:",
             "keyword": "MUST",
             "section_path": [
-              "Billing Period",
               "Requirements"
             ],
             "block": {
@@ -99,7 +98,6 @@
                 "text": "BillingPeriod MUST be present when the invoice issuer supports payable invoices.",
                 "keyword": "MUST",
                 "section_path": [
-                  "Billing Period",
                   "Requirements"
                 ],
                 "block": {
@@ -123,7 +121,6 @@
                 "text": "The presence of columns in BillingPeriod MUST adhere to the following requirements:",
                 "keyword": "MUST",
                 "section_path": [
-                  "Billing Period",
                   "Requirements"
                 ],
                 "block": {
@@ -146,7 +143,6 @@
                     "text": "BillingPeriod MUST include [BillingPeriodCreated](#datasets.billingperiod.billingperiodcreated).",
                     "keyword": "MUST",
                     "section_path": [
-                      "Billing Period",
                       "Requirements"
                     ],
                     "block": {
@@ -170,7 +166,6 @@
                     "text": "BillingPeriod MUST include [BillingPeriodEnd](#datasets.billingperiod.billingperiodend).",
                     "keyword": "MUST",
                     "section_path": [
-                      "Billing Period",
                       "Requirements"
                     ],
                     "block": {
@@ -194,7 +189,6 @@
                     "text": "BillingPeriod MUST include [BillingPeriodLastUpdated](#datasets.billingperiod.billingperiodlastupdated).",
                     "keyword": "MUST",
                     "section_path": [
-                      "Billing Period",
                       "Requirements"
                     ],
                     "block": {
@@ -218,7 +212,6 @@
                     "text": "BillingPeriod MUST include [BillingPeriodStart](#datasets.billingperiod.billingperiodstart).",
                     "keyword": "MUST",
                     "section_path": [
-                      "Billing Period",
                       "Requirements"
                     ],
                     "block": {
@@ -242,7 +235,6 @@
                     "text": "BillingPeriod MUST include [BillingPeriodStatus](#datasets.billingperiod.billingperiodstatus).",
                     "keyword": "MUST",
                     "section_path": [
-                      "Billing Period",
                       "Requirements"
                     ],
                     "block": {
@@ -266,7 +258,6 @@
                     "text": "BillingPeriod MUST include [InvoiceIssuerName](#datasets.billingperiod.invoiceissuername).",
                     "keyword": "MUST",
                     "section_path": [
-                      "Billing Period",
                       "Requirements"
                     ],
                     "block": {
@@ -292,7 +283,6 @@
                 "text": "BillingPeriod MUST conform to [CorrectionHandling](#attributes.correctionhandling) requirements.",
                 "keyword": "MUST",
                 "section_path": [
-                  "Billing Period",
                   "Requirements"
                 ],
                 "block": {
@@ -316,7 +306,6 @@
                 "text": "BillingPeriod MUST conform to [DatasetCompleteness](#attributes.datasetcompleteness) requirements.",
                 "keyword": "MUST",
                 "section_path": [
-                  "Billing Period",
                   "Requirements"
                 ],
                 "block": {
@@ -340,7 +329,6 @@
                 "text": "BillingPeriod MUST conform to [DatasetConfiguration](#attributes.datasetconfiguration) requirements.",
                 "keyword": "MUST",
                 "section_path": [
-                  "Billing Period",
                   "Requirements"
                 ],
                 "block": {
@@ -364,7 +352,6 @@
                 "text": "BillingPeriod MUST conform to [DeliveryHandling](#attributes.deliveryhandling) requirements.",
                 "keyword": "MUST",
                 "section_path": [
-                  "Billing Period",
                   "Requirements"
                 ],
                 "block": {
@@ -385,10 +372,9 @@
                 "temp_id": "R014",
                 "order": 14,
                 "ref": "L041",
-                "text": "BillingPeriod [*FOCUS columns*](#glossary:focus-column) MUST conform to [FocusColumnHandling](#attributes.focuscolumnhandling) requirements.",
+                "text": "BillingPeriod [*FOCUS columns*](#glossary:FOCUS-column) MUST conform to [FocusColumnHandling](#attributes.focuscolumnhandling) requirements.",
                 "keyword": "MUST",
                 "section_path": [
-                  "Billing Period",
                   "Requirements"
                 ],
                 "block": {
@@ -412,7 +398,6 @@
                 "text": "BillingPeriod *FOCUS columns* MUST conform to [NullHandling](#attributes.nullhandling) requirements.",
                 "keyword": "MUST",
                 "section_path": [
-                  "Billing Period",
                   "Requirements"
                 ],
                 "block": {
@@ -436,7 +421,6 @@
                 "text": "BillingPeriod [*custom columns*](#glossary:custom-column) MUST conform to [CustomColumnHandling](#attributes.customcolumnhandling) requirements.",
                 "keyword": "MUST",
                 "section_path": [
-                  "Billing Period",
                   "Requirements"
                 ],
                 "block": {

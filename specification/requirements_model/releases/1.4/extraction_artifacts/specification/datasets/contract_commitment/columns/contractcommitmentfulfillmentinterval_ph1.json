@@ -24,6 +24,7 @@
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
+        "Contract Commitment Fulfillment Interval",
         "Requirements"
       ],
       "block": {
@@ -48,6 +49,7 @@
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
+        "Contract Commitment Fulfillment Interval",
         "Requirements"
       ],
       "block": {
@@ -72,6 +74,7 @@
       "keyword": "MUST NOT",
       "role": "requirement",
       "section_path": [
+        "Contract Commitment Fulfillment Interval",
         "Requirements"
       ],
       "block": {
@@ -96,6 +99,7 @@
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
+        "Contract Commitment Fulfillment Interval",
         "Requirements"
       ],
       "block": {
@@ -116,10 +120,11 @@
     {
       "temp_id": "R005",
       "order": 5,
-      "text": "ContractCommitmentFulfillmentInterval MUST NOT be \"Total Term\" if [ContractCommitmentModel](#datasets.contractcommitment.contractcommitmentmodel) is \"Continuous\".",
+      "text": "ContractCommitmentFulfillmentInterval MUST NOT be \"Full Period\" if ContractCommitmentModel is \"Continuous\".",
       "keyword": "MUST NOT",
       "role": "requirement",
       "section_path": [
+        "Contract Commitment Fulfillment Interval",
         "Requirements"
       ],
       "block": {

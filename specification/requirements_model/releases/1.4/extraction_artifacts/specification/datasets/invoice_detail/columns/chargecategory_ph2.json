@@ -17,7 +17,7 @@
       "Dataset Requirements",
       "Attribute Requirements"
     ],
-    "atoms_in_scope_count": 5
+    "atoms_in_scope_count": 12
   },
   "0_outline_root": "ROOT: Charge Category > Requirements",
   "0_outline_lines": [
@@ -25,17 +25,24 @@
     "  L009: \"ChargeCategory MUST be of type String.\"",
     "  L010: \"ChargeCategory MUST NOT be null.\"",
     "  L011: \"ChargeCategory MUST be one of the allowed values.\"",
-    "  L012: \"ChargeCategory MAY equal \\\"Usage\\\" when the record aggregates *charges* across multiple allowed values other than \\\"Tax\\\" (for example, aggregation of \\\"Usage\\\" and \\\"Credit\\\" is allowed, but not \\\"Usage\\\" and \\\"Tax\\\").\""
+    "  L012: \"When the *charge* does not aggregate multiple classifications, ChargeCategory MUST adhere to the following requirements:\"",
+    "    L013: \"ChargeCategory MUST be \\\"Usage\\\" when the *charge* represents consumption of a service or resource.\"",
+    "    L014: \"ChargeCategory MUST be \\\"Purchase\\\" when the *charge* represents acquisition of a service, resource, or *commitment*.\"",
+    "    L015: \"ChargeCategory MUST be \\\"Tax\\\" when the *charge* represents taxes levied by the relevant authorities.\"",
+    "    L016: \"ChargeCategory MUST be \\\"Credit\\\" when the *charge* represents a financial incentive or allowance unrelated to other *charges*.\"",
+    "    L017: \"ChargeCategory MUST be \\\"Adjustment\\\" when the *charge* represents a billing modification that does not fall into other ChargeCategories.\"",
+    "  L018: \"When the *charge* aggregates multiple classifications, ChargeCategory MUST adhere to the following requirements:\"",
+    "    L019: \"ChargeCategory MAY be \\\"Usage\\\" when the record aggregates *charges* across multiple allowed values other than \\\"Tax\\\" (for example, aggregation of \\\"Usage\\\" and \\\"Credit\\\" is allowed, but not \\\"Usage\\\" and \\\"Tax\\\").\""
   ],
   "0_outline_summary": {
-    "node_count": 5,
-    "leaf_count": 4,
-    "lead_in_count": 1,
-    "max_depth": 1,
-    "max_indent_level": 0,
+    "node_count": 12,
+    "leaf_count": 9,
+    "lead_in_count": 3,
+    "max_depth": 2,
+    "max_indent_level": 1,
     "root_children_count": 1,
     "keyword_distribution": {
-      "MUST": 3,
+      "MUST": 10,
       "MUST NOT": 1,
       "MAY": 1
     },
@@ -43,7 +50,17 @@
       {
         "ref": "L007",
         "text_preview": "ChargeCategory MUST adhere to the following requirements:",
-        "children": 4
+        "children": 5
+      },
+      {
+        "ref": "L012",
+        "text_preview": "When the *charge* does not aggregate multiple classifications, ChargeCategory MUST adhere to the following requirements:",
+        "children": 5
+      },
+      {
+        "ref": "L018",
+        "text_preview": "When the *charge* aggregates multiple classifications, ChargeCategory MUST adhere to the following requirements:",
+        "children": 1
       }
     ]
   },
@@ -154,8 +171,8 @@
                 "temp_id": "R005",
                 "order": 5,
                 "ref": "L012",
-                "text": "ChargeCategory MAY equal \"Usage\" when the record aggregates *charges* across multiple allowed values other than \"Tax\" (for example, aggregation of \"Usage\" and \"Credit\" is allowed, but not \"Usage\" and \"Tax\").",
-                "keyword": "MAY",
+                "text": "When the *charge* does not aggregate multiple classifications, ChargeCategory MUST adhere to the following requirements:",
+                "keyword": "MUST",
                 "section_path": [
                   "Charge Category",
                   "Requirements"
@@ -166,10 +183,180 @@
                   "bullet": "*"
                 },
                 "lead_in": {
-                  "ends_with_colon": false
+                  "ends_with_colon": true
                 }
               },
-              "children": []
+              "children": [
+                {
+                  "node_id": "R006",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R006",
+                    "order": 6,
+                    "ref": "L013",
+                    "text": "ChargeCategory MUST be \"Usage\" when the *charge* represents consumption of a service or resource.",
+                    "keyword": "MUST",
+                    "section_path": [
+                      "Charge Category",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R007",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R007",
+                    "order": 7,
+                    "ref": "L014",
+                    "text": "ChargeCategory MUST be \"Purchase\" when the *charge* represents acquisition of a service, resource, or *commitment*.",
+                    "keyword": "MUST",
+                    "section_path": [
+                      "Charge Category",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R008",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R008",
+                    "order": 8,
+                    "ref": "L015",
+                    "text": "ChargeCategory MUST be \"Tax\" when the *charge* represents taxes levied by the relevant authorities.",
+                    "keyword": "MUST",
+                    "section_path": [
+                      "Charge Category",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R009",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R009",
+                    "order": 9,
+                    "ref": "L016",
+                    "text": "ChargeCategory MUST be \"Credit\" when the *charge* represents a financial incentive or allowance unrelated to other *charges*.",
+                    "keyword": "MUST",
+                    "section_path": [
+                      "Charge Category",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R010",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R010",
+                    "order": 10,
+                    "ref": "L017",
+                    "text": "ChargeCategory MUST be \"Adjustment\" when the *charge* represents a billing modification that does not fall into other ChargeCategories.",
+                    "keyword": "MUST",
+                    "section_path": [
+                      "Charge Category",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "R011",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R011",
+                "order": 11,
+                "ref": "L018",
+                "text": "When the *charge* aggregates multiple classifications, ChargeCategory MUST adhere to the following requirements:",
+                "keyword": "MUST",
+                "section_path": [
+                  "Charge Category",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": true
+                }
+              },
+              "children": [
+                {
+                  "node_id": "R012",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R012",
+                    "order": 12,
+                    "ref": "L019",
+                    "text": "ChargeCategory MAY be \"Usage\" when the record aggregates *charges* across multiple allowed values other than \"Tax\" (for example, aggregation of \"Usage\" and \"Credit\" is allowed, but not \"Usage\" and \"Tax\").",
+                    "keyword": "MAY",
+                    "section_path": [
+                      "Charge Category",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                }
+              ]
             }
           ]
         }

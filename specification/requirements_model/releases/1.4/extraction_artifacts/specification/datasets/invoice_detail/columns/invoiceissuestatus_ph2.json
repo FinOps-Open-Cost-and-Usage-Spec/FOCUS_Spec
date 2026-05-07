@@ -63,7 +63,6 @@
             "text": "InvoiceIssueStatus MUST adhere to the following requirements:",
             "keyword": "MUST",
             "section_path": [
-              "Invoice Issue Status",
               "Requirements"
             ],
             "block": {
@@ -86,7 +85,6 @@
                 "text": "InvoiceIssueStatus MUST be of type String.",
                 "keyword": "MUST",
                 "section_path": [
-                  "Invoice Issue Status",
                   "Requirements"
                 ],
                 "block": {
@@ -110,7 +108,6 @@
                 "text": "InvoiceIssueStatus MUST conform to [StringHandling](#attributes.stringhandling) requirements.",
                 "keyword": "MUST",
                 "section_path": [
-                  "Invoice Issue Status",
                   "Requirements"
                 ],
                 "block": {
@@ -134,7 +131,6 @@
                 "text": "InvoiceIssueStatus MUST NOT be null.",
                 "keyword": "MUST NOT",
                 "section_path": [
-                  "Invoice Issue Status",
                   "Requirements"
                 ],
                 "block": {
@@ -158,7 +154,6 @@
                 "text": "InvoiceIssueStatus MUST be one of the allowed values.",
                 "keyword": "MUST",
                 "section_path": [
-                  "Invoice Issue Status",
                   "Requirements"
                 ],
                 "block": {
@@ -182,7 +177,6 @@
                 "text": "InvoiceIssueStatus MUST represent the current publication state of the invoice.",
                 "keyword": "MUST",
                 "section_path": [
-                  "Invoice Issue Status",
                   "Requirements"
                 ],
                 "block": {
@@ -206,7 +200,6 @@
                 "text": "InvoiceIssueStatus MUST NOT transition from \"Issued\" to \"Open\" unless explicitly requested or approved by the customer.",
                 "keyword": "MUST NOT",
                 "section_path": [
-                  "Invoice Issue Status",
                   "Requirements"
                 ],
                 "block": {

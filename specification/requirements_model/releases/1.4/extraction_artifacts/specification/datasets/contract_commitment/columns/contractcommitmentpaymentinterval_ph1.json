@@ -24,6 +24,7 @@
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
+        "Contract Commitment Payment Interval",
         "Requirements"
       ],
       "block": {
@@ -48,6 +49,7 @@
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
+        "Contract Commitment Payment Interval",
         "Requirements"
       ],
       "block": {
@@ -72,6 +74,7 @@
       "keyword": "MUST NOT",
       "role": "requirement",
       "section_path": [
+        "Contract Commitment Payment Interval",
         "Requirements"
       ],
       "block": {
@@ -96,6 +99,7 @@
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
+        "Contract Commitment Payment Interval",
         "Requirements"
       ],
       "block": {
@@ -120,6 +124,7 @@
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
+        "Contract Commitment Payment Interval",
         "Requirements"
       ],
       "block": {
@@ -144,6 +149,7 @@
       "keyword": "SHOULD",
       "role": "requirement",
       "section_path": [
+        "Contract Commitment Payment Interval",
         "Requirements"
       ],
       "block": {

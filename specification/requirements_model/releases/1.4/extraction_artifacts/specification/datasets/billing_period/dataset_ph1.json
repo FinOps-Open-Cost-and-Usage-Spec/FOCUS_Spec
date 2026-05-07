@@ -24,7 +24,6 @@
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
-        "Billing Period",
         "Requirements"
       ],
       "block": {
@@ -49,7 +48,6 @@
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
-        "Billing Period",
         "Requirements"
       ],
       "block": {
@@ -74,7 +72,6 @@
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
-        "Billing Period",
         "Requirements"
       ],
       "block": {
@@ -99,7 +96,6 @@
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
-        "Billing Period",
         "Requirements"
       ],
       "block": {
@@ -124,7 +120,6 @@
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
-        "Billing Period",
         "Requirements"
       ],
       "block": {
@@ -149,7 +144,6 @@
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
-        "Billing Period",
         "Requirements"
       ],
       "block": {
@@ -174,7 +168,6 @@
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
-        "Billing Period",
         "Requirements"
       ],
       "block": {
@@ -199,7 +192,6 @@
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
-        "Billing Period",
         "Requirements"
       ],
       "block": {
@@ -224,7 +216,6 @@
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
-        "Billing Period",
         "Requirements"
       ],
       "block": {
@@ -249,7 +240,6 @@
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
-        "Billing Period",
         "Requirements"
       ],
       "block": {
@@ -274,7 +264,6 @@
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
-        "Billing Period",
         "Requirements"
       ],
       "block": {
@@ -299,7 +288,6 @@
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
-        "Billing Period",
         "Requirements"
       ],
       "block": {
@@ -324,7 +312,6 @@
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
-        "Billing Period",
         "Requirements"
       ],
       "block": {
@@ -345,11 +332,10 @@
     {
       "temp_id": "R014",
       "order": 14,
-      "text": "BillingPeriod [*FOCUS columns*](#glossary:focus-column) MUST conform to [FocusColumnHandling](#attributes.focuscolumnhandling) requirements.",
+      "text": "BillingPeriod [*FOCUS columns*](#glossary:FOCUS-column) MUST conform to [FocusColumnHandling](#attributes.focuscolumnhandling) requirements.",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
-        "Billing Period",
         "Requirements"
       ],
       "block": {
@@ -374,7 +360,6 @@
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
-        "Billing Period",
         "Requirements"
       ],
       "block": {
@@ -399,7 +384,6 @@
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
-        "Billing Period",
         "Requirements"
       ],
       "block": {

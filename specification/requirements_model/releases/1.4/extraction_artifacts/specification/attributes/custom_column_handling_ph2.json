@@ -34,7 +34,7 @@
     "    L032: \"*Custom column* SHOULD include the `Name` suffix in the Column ID when the *custom column* represents a name.\"",
     "  L033: \"*Custom column* SHOULD conform to [DataGeneratorCalculatedSplitCostAllocationHandling](#attributes.datagenerator-calculatedsplitcostallocationhandling) requirements when the data generator supports data generator-calculated split cost allocation.\"",
     "  L034: \"*Custom column* SHOULD conform to [NullHandling](#attributes.nullhandling) requirements.\"",
-    "  L035: \"*Custom column* containing date/time values SHOULD conform to [DateTimeFormat](#attributes.datetimeformat) requirements.\"",
+    "  L035: \"*Custom column* containing date/time values SHOULD conform to [DateTimeFormat](#attributes.date/timeformat) requirements.\"",
     "  L036: \"*Custom column* containing JSON objects MUST have its object schema documented by the data generator and accessible to practitioners.\"",
     "  L037: \"*Custom column* containing numeric values MUST contain a single numeric value.\"",
     "  L038: \"*Custom column* containing numeric values SHOULD conform to [NumericFormat](#attributes.numericformat) requirements.\"",
@@ -391,7 +391,7 @@
                 "temp_id": "R014",
                 "order": 14,
                 "ref": "L035",
-                "text": "*Custom column* containing date/time values SHOULD conform to [DateTimeFormat](#attributes.datetimeformat) requirements.",
+                "text": "*Custom column* containing date/time values SHOULD conform to [DateTimeFormat](#attributes.date/timeformat) requirements.",
                 "keyword": "SHOULD",
                 "section_path": [
                   "Custom Column Handling",

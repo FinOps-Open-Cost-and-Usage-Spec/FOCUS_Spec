@@ -95,7 +95,7 @@
     {
       "temp_id": "R004",
       "order": 4,
-      "text": "BillingPeriodStatus MUST be one of the [allowed values](#datasets.billingperiod.billingperiodstatus.allowed-values).",
+      "text": "BillingPeriodStatus MUST be one of the allowed values.",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
@@ -187,22 +187,22 @@
           "ends_with_colon": true
         },
         "provenance": {
-          "line_start": 17,
-          "line_end": 17
+          "line_start": 24,
+          "line_end": 24
         },
-        "ref": "LI017",
+        "ref": "LI024",
         "next_normative_refs": []
       }
     ],
     "index": {
       "by_section_path": {
         "Implementation Context": [
-          "LI017"
+          "LI024"
         ]
       },
       "by_line": {
-        "17": [
-          "LI017"
+        "24": [
+          "LI024"
         ]
       }
     }

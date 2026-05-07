@@ -120,7 +120,7 @@
     {
       "temp_id": "R005",
       "order": 5,
-      "text": "InvoiceIssuerName MUST represent the entity that issued the invoice.",
+      "text": "InvoiceIssuerName MUST represent the entity that issues invoices.",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [

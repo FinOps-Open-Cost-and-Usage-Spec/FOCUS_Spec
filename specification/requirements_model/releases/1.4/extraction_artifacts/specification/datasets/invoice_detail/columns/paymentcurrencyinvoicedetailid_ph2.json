@@ -25,8 +25,8 @@
     "  L009: \"PaymentCurrencyInvoiceDetailId MUST be of type String.\"",
     "  L010: \"PaymentCurrencyInvoiceDetailId MUST conform to [StringHandling](#attributes.stringhandling) requirements.\"",
     "  L011: \"PaymentCurrencyInvoiceDetailId MUST NOT be null.\"",
-    "  L012: \"PaymentCurrencyInvoiceDetailId MUST match the [InvoiceDetailId](#datasets.invoicedetail.invoicedetailid) of the record representing the [PaymentCurrencyBilledCost](#datasets.invoicedetail.paymentcurrencybilledcost) aggregation for the current row.\"",
-    "  L013: \"PaymentCurrencyInvoiceDetailId MUST match [InvoiceDetailId](#datasets.invoicedetail.invoicedetailid) of the current record when [PaymentCurrencyBilledCost](#datasets.invoicedetail.paymentcurrencybilledcost) is non-zero.\""
+    "  L012: \"PaymentCurrencyInvoiceDetailId MUST match the InvoiceDetailId of the record representing the PaymentCurrencyBilledCost aggregation for the current row.\"",
+    "  L013: \"PaymentCurrencyInvoiceDetailId MUST match InvoiceDetailId of the current record when PaymentCurrencyBilledCost is non-zero.\""
   ],
   "0_outline_summary": {
     "node_count": 6,
@@ -154,7 +154,7 @@
                 "temp_id": "R005",
                 "order": 5,
                 "ref": "L012",
-                "text": "PaymentCurrencyInvoiceDetailId MUST match the [InvoiceDetailId](#datasets.invoicedetail.invoicedetailid) of the record representing the [PaymentCurrencyBilledCost](#datasets.invoicedetail.paymentcurrencybilledcost) aggregation for the current row.",
+                "text": "PaymentCurrencyInvoiceDetailId MUST match the InvoiceDetailId of the record representing the PaymentCurrencyBilledCost aggregation for the current row.",
                 "keyword": "MUST",
                 "section_path": [
                   "Payment Currency Invoice Detail ID",
@@ -178,7 +178,7 @@
                 "temp_id": "R006",
                 "order": 6,
                 "ref": "L013",
-                "text": "PaymentCurrencyInvoiceDetailId MUST match [InvoiceDetailId](#datasets.invoicedetail.invoicedetailid) of the current record when [PaymentCurrencyBilledCost](#datasets.invoicedetail.paymentcurrencybilledcost) is non-zero.",
+                "text": "PaymentCurrencyInvoiceDetailId MUST match InvoiceDetailId of the current record when PaymentCurrencyBilledCost is non-zero.",
                 "keyword": "MUST",
                 "section_path": [
                   "Payment Currency Invoice Detail ID",

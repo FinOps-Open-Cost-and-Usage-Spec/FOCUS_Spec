@@ -345,7 +345,7 @@
     {
       "temp_id": "R014",
       "order": 14,
-      "text": "*Custom column* containing date/time values SHOULD conform to [DateTimeFormat](#attributes.datetimeformat) requirements.",
+      "text": "*Custom column* containing date/time values SHOULD conform to [DateTimeFormat](#attributes.date/timeformat) requirements.",
       "keyword": "SHOULD",
       "role": "requirement",
       "section_path": [

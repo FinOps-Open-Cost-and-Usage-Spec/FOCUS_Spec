@@ -120,7 +120,7 @@
     {
       "temp_id": "R005",
       "order": 5,
-      "text": "PaymentDueDate MUST be the date specified by the [*invoice issuer*](#glossary:invoice-issuer) as the deadline for payment for the corresponding [InvoiceId](#datasets.invoicedetail.invoiceid).",
+      "text": "PaymentDueDate MUST be the date specified by the invoice issuer as the deadline for payment for the corresponding [InvoiceId](#datasets.invoicedetail.invoiceid).",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [

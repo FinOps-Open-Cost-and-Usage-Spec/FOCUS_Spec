@@ -21,10 +21,10 @@
   },
   "0_outline_root": "ROOT: Contract Commitment Benefit Category > Requirements",
   "0_outline_lines": [
-    "L021: \"ContractCommitmentBenefitCategory MUST adhere to the following requirements:\"",
-    "  L023: \"ContractCommitmentBenefitCategory MUST be of type String.\"",
-    "  L024: \"ContractCommitmentBenefitCategory MUST NOT be null.\"",
-    "  L025: \"ContractCommitmentBenefitCategory MUST be one of the allowed values.\""
+    "L007: \"ContractCommitmentBenefitCategory MUST adhere to the following requirements:\"",
+    "  L009: \"ContractCommitmentBenefitCategory MUST be of type String.\"",
+    "  L010: \"ContractCommitmentBenefitCategory MUST NOT be null.\"",
+    "  L011: \"ContractCommitmentBenefitCategory MUST be one of the allowed values.\""
   ],
   "0_outline_summary": {
     "node_count": 4,
@@ -39,7 +39,7 @@
     },
     "lead_ins": [
       {
-        "ref": "L021",
+        "ref": "L007",
         "text_preview": "ContractCommitmentBenefitCategory MUST adhere to the following requirements:",
         "children": 3
       }
@@ -56,7 +56,7 @@
           "atom": {
             "temp_id": "R001",
             "order": 1,
-            "ref": "L021",
+            "ref": "L007",
             "text": "ContractCommitmentBenefitCategory MUST adhere to the following requirements:",
             "keyword": "MUST",
             "section_path": [
@@ -79,7 +79,7 @@
               "atom": {
                 "temp_id": "R002",
                 "order": 2,
-                "ref": "L023",
+                "ref": "L009",
                 "text": "ContractCommitmentBenefitCategory MUST be of type String.",
                 "keyword": "MUST",
                 "section_path": [
@@ -103,7 +103,7 @@
               "atom": {
                 "temp_id": "R003",
                 "order": 3,
-                "ref": "L024",
+                "ref": "L010",
                 "text": "ContractCommitmentBenefitCategory MUST NOT be null.",
                 "keyword": "MUST NOT",
                 "section_path": [
@@ -127,7 +127,7 @@
               "atom": {
                 "temp_id": "R004",
                 "order": 4,
-                "ref": "L025",
+                "ref": "L011",
                 "text": "ContractCommitmentBenefitCategory MUST be one of the allowed values.",
                 "keyword": "MUST",
                 "section_path": [

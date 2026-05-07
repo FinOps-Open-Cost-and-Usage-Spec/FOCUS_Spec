@@ -1,8 +1,11 @@
 ## Diff
 
+@@ -1,17 +1,16 @@
+## Requirements
+
 HostProviderName [-adheres-]{+MUST adhere+} to the following requirements:
 
-[-* HostProviderName MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset).-]
+[-* HostProviderName MUST be present in a Cost and Usage *FOCUS dataset*.-]
 * HostProviderName MUST be of type String.
 * HostProviderName MUST conform to StringHandling requirements.
 * HostProviderName {+MUST adhere to the following+} nullability [-is defined as follows:-]{+requirements:+}
@@ -12,5 +15,6 @@ HostProviderName [-adheres-]{+MUST adhere+} to the following requirements:
 * When HostProviderName is not null, HostProviderName values [-are defined as follows:-]{+MUST adhere to the following requirements:+}
   * HostProviderName MUST reflect the name of the host provider when explicitly selected by the customer.
   * HostProviderName MUST reflect the name of the host provider when the service provider exposes the underlying hosting provider.
-  * HostProviderName MUST equal ServiceProviderName in all other cases.
+  * HostProviderName MUST [-equal-]{+match+} ServiceProviderName in all other cases.
 
+See Appendix: Participating Entity Identification Examples section for examples of Host Provider values across various use case scenarios.

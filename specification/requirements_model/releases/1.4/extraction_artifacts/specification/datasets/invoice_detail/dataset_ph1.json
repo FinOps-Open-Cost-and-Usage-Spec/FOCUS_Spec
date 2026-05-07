@@ -945,7 +945,7 @@
     {
       "temp_id": "R038",
       "order": 38,
-      "text": "InvoiceDetail documentation MUST describe how columns in the CostAndUsage and InvoiceDetail datasets represent the invoice issuer's [*invoice reconciliation*](#glossary:invoice-reconciliation) process.",
+      "text": "InvoiceDetail documentation MUST describe how columns in the CostAndUsage and InvoiceDetail [*dataset instances*](#glossary:dataset-instance) represent the invoice issuer's [*invoice reconciliation*](#glossary:invoice-reconciliation) process.",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [

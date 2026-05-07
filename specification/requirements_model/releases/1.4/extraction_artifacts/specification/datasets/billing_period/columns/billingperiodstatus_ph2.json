@@ -24,7 +24,7 @@
     "L007: \"BillingPeriodStatus MUST adhere to the following requirements:\"",
     "  L009: \"BillingPeriodStatus MUST be of type String.\"",
     "  L010: \"BillingPeriodStatus MUST NOT be null.\"",
-    "  L011: \"BillingPeriodStatus MUST be one of the [allowed values](#datasets.billingperiod.billingperiodstatus.allowed-values).\"",
+    "  L011: \"BillingPeriodStatus MUST be one of the allowed values.\"",
     "  L012: \"BillingPeriodStatus MUST represent the state of the billing period identified by [BillingPeriodStart](#datasets.billingperiod.billingperiodstart) and [BillingPeriodEnd](#datasets.billingperiod.billingperiodend).\"",
     "  L013: \"BillingPeriodStatus MUST NOT transition from \\\"Closed\\\" to \\\"Open\\\" unless explicitly requested or approved by the customer.\""
   ],
@@ -130,7 +130,7 @@
                 "temp_id": "R004",
                 "order": 4,
                 "ref": "L011",
-                "text": "BillingPeriodStatus MUST be one of the [allowed values](#datasets.billingperiod.billingperiodstatus.allowed-values).",
+                "text": "BillingPeriodStatus MUST be one of the allowed values.",
                 "keyword": "MUST",
                 "section_path": [
                   "Billing Period Status",

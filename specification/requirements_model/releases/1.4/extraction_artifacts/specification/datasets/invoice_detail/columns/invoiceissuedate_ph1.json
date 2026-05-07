@@ -24,7 +24,6 @@
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
-        "Invoice Issue Date",
         "Requirements"
       ],
       "block": {
@@ -49,7 +48,6 @@
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
-        "Invoice Issue Date",
         "Requirements"
       ],
       "block": {
@@ -74,7 +72,6 @@
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
-        "Invoice Issue Date",
         "Requirements"
       ],
       "block": {
@@ -99,7 +96,6 @@
       "keyword": "MAY",
       "role": "requirement",
       "section_path": [
-        "Invoice Issue Date",
         "Requirements"
       ],
       "block": {
@@ -124,7 +120,6 @@
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
-        "Invoice Issue Date",
         "Requirements"
       ],
       "block": {

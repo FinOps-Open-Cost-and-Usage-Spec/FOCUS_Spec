@@ -9,7 +9,6 @@
       "Notes": "",
       "ModelVersionIntroduced": "1.4",
       "Status": "Active",
-      "ModelVersionRemoved": "",
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "Order": 0,
@@ -24,7 +23,8 @@
         "Dependencies": [
           "CCT-InvoiceIssuerName-C-001-M",
           "CCT-InvoiceIssuerName-C-002-M",
-          "CCT-InvoiceIssuerName-C-003-M"
+          "CCT-InvoiceIssuerName-C-003-M",
+          "CCT-InvoiceIssuerName-C-004-M"
         ]
       }
     },
@@ -37,7 +37,6 @@
       "Notes": "",
       "ModelVersionIntroduced": "1.4",
       "Status": "Active",
-      "ModelVersionRemoved": "",
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "Order": 10,
@@ -61,7 +60,6 @@
       "Notes": "",
       "ModelVersionIntroduced": "1.4",
       "Status": "Active",
-      "ModelVersionRemoved": "",
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "Order": 20,
@@ -85,7 +83,6 @@
       "Notes": "",
       "ModelVersionIntroduced": "1.4",
       "Status": "Active",
-      "ModelVersionRemoved": "",
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "Order": 30,
@@ -95,6 +92,29 @@
       "ValidationCriteria": {
         "MustSatisfy": "InvoiceIssuerName MUST NOT be null.",
         "Keyword": "MUST NOT",
+        "Requirement": {},
+        "Condition": [],
+        "Dependencies": []
+      }
+    },
+    "CCT-InvoiceIssuerName-C-004-M": {
+      "Function": "Validation",
+      "Reference": "InvoiceIssuerName",
+      "EntityType": "Column",
+      "EntityName": "Invoice Issuer Name",
+      "EntityId": "InvoiceIssuerName",
+      "Notes": "",
+      "ModelVersionIntroduced": "1.4",
+      "Status": "Active",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "Order": 40,
+      "DatasetType": "CCT",
+      "DatasetId": "ContractCommitment",
+      "DatasetName": "Contract Commitment",
+      "ValidationCriteria": {
+        "MustSatisfy": "InvoiceIssuerName MUST represent the entity that issues invoices.",
+        "Keyword": "MUST",
         "Requirement": {},
         "Condition": [],
         "Dependencies": []

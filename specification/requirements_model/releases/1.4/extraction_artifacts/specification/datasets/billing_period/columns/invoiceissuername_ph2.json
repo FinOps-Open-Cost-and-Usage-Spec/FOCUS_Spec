@@ -25,7 +25,7 @@
     "  L009: \"InvoiceIssuerName MUST be of type String.\"",
     "  L010: \"InvoiceIssuerName MUST conform to [StringHandling](#attributes.stringhandling) requirements.\"",
     "  L011: \"InvoiceIssuerName MUST NOT be null.\"",
-    "  L012: \"InvoiceIssuerName MUST represent the entity that issued the invoice.\""
+    "  L012: \"InvoiceIssuerName MUST represent the entity that issues invoices.\""
   ],
   "0_outline_summary": {
     "node_count": 5,
@@ -153,7 +153,7 @@
                 "temp_id": "R005",
                 "order": 5,
                 "ref": "L012",
-                "text": "InvoiceIssuerName MUST represent the entity that issued the invoice.",
+                "text": "InvoiceIssuerName MUST represent the entity that issues invoices.",
                 "keyword": "MUST",
                 "section_path": [
                   "Invoice Issuer Name",

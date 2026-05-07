@@ -25,7 +25,8 @@
       "role": "requirement",
       "section_path": [
         "Commitment Program Eligibility Details",
-        "Requirements"
+        "Requirements",
+        "Column Requirements"
       ],
       "block": {
         "block_type": "paragraph",
@@ -36,31 +37,6 @@
         "ends_with_colon": true
       },
       "provenance": {
-        "line_start": 7,
-        "line_end": 7
-      },
-      "_alignment_status": "confirmed",
-      "ref": "L007"
-    },
-    {
-      "temp_id": "R002",
-      "order": 2,
-      "text": "CommitmentProgramEligibilityDetails MUST be of type String.",
-      "keyword": "MUST",
-      "role": "requirement",
-      "section_path": [
-        "Commitment Program Eligibility Details",
-        "Requirements"
-      ],
-      "block": {
-        "block_type": "list_item",
-        "indent_level": 0,
-        "bullet": "*"
-      },
-      "lead_in": {
-        "ends_with_colon": false
-      },
-      "provenance": {
         "line_start": 9,
         "line_end": 9
       },
@@ -68,39 +44,15 @@
       "ref": "L009"
     },
     {
-      "temp_id": "R003",
-      "order": 3,
-      "text": "CommitmentProgramEligibilityDetails MUST conform to [StringHandling](#attributes.stringhandling) requirements.",
+      "temp_id": "R002",
+      "order": 2,
+      "text": "CommitmentProgramEligibilityDetails MUST be of type JSON Object (serialized as a String where necessary).",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
         "Commitment Program Eligibility Details",
-        "Requirements"
-      ],
-      "block": {
-        "block_type": "list_item",
-        "indent_level": 0,
-        "bullet": "*"
-      },
-      "lead_in": {
-        "ends_with_colon": false
-      },
-      "provenance": {
-        "line_start": 10,
-        "line_end": 10
-      },
-      "_alignment_status": "confirmed",
-      "ref": "L010"
-    },
-    {
-      "temp_id": "R004",
-      "order": 4,
-      "text": "CommitmentProgramEligibilityDetails MUST conform to [JsonObjectFormat](#attributes.jsonobjectformat) requirements.",
-      "keyword": "MUST",
-      "role": "requirement",
-      "section_path": [
-        "Commitment Program Eligibility Details",
-        "Requirements"
+        "Requirements",
+        "Column Requirements"
       ],
       "block": {
         "block_type": "list_item",
@@ -118,14 +70,15 @@
       "ref": "L011"
     },
     {
-      "temp_id": "R005",
-      "order": 5,
-      "text": "CommitmentProgramEligibilityDetails MUST NOT be null when a charge is eligible for a [*commitment program*](#glossary:commitment-program), regardless of whether a [*commitment*](#glossary:commitment) was actually applied to the charge.",
-      "keyword": "MUST NOT",
+      "temp_id": "R003",
+      "order": 3,
+      "text": "CommitmentProgramEligibilityDetails MUST conform to [StringHandling](#attributes.stringhandling) requirements.",
+      "keyword": "MUST",
       "role": "requirement",
       "section_path": [
         "Commitment Program Eligibility Details",
-        "Requirements"
+        "Requirements",
+        "Column Requirements"
       ],
       "block": {
         "block_type": "list_item",
@@ -143,14 +96,15 @@
       "ref": "L012"
     },
     {
-      "temp_id": "R006",
-      "order": 6,
-      "text": "CommitmentProgramEligibilityDetails MUST NOT reflect restrictions (e.g., transient account configurations, quotas) that might temporarily prevent purchase or participation in a *commitment program*.",
-      "keyword": "MUST NOT",
+      "temp_id": "R004",
+      "order": 4,
+      "text": "CommitmentProgramEligibilityDetails MUST conform to [JsonObjectFormat](#attributes.jsonobjectformat) requirements.",
+      "keyword": "MUST",
       "role": "requirement",
       "section_path": [
         "Commitment Program Eligibility Details",
-        "Requirements"
+        "Requirements",
+        "Column Requirements"
       ],
       "block": {
         "block_type": "list_item",
@@ -168,14 +122,15 @@
       "ref": "L013"
     },
     {
-      "temp_id": "R007",
-      "order": 7,
-      "text": "CommitmentProgramEligibilityDetails MUST include all publicly available *commitment programs* for which the usage is eligible.",
-      "keyword": "MUST",
+      "temp_id": "R005",
+      "order": 5,
+      "text": "CommitmentProgramEligibilityDetails MUST NOT be null when a charge is eligible for a [*commitment program*](#glossary:commitment-program), regardless of whether a [*commitment*](#glossary:commitment) was actually applied to the charge.",
+      "keyword": "MUST NOT",
       "role": "requirement",
       "section_path": [
         "Commitment Program Eligibility Details",
-        "Requirements"
+        "Requirements",
+        "Column Requirements"
       ],
       "block": {
         "block_type": "list_item",
@@ -193,14 +148,15 @@
       "ref": "L014"
     },
     {
-      "temp_id": "R008",
-      "order": 8,
-      "text": "CommitmentProgramEligibilityDetails MAY include negotiated *commitment programs* when the usage is eligible and the program is not broadly applicable across the service provider's service catalog.",
-      "keyword": "MAY",
+      "temp_id": "R006",
+      "order": 6,
+      "text": "CommitmentProgramEligibilityDetails MUST NOT reflect restrictions (e.g., transient account configurations, quotas) that might temporarily prevent purchase or participation in a *commitment program*.",
+      "keyword": "MUST NOT",
       "role": "requirement",
       "section_path": [
         "Commitment Program Eligibility Details",
-        "Requirements"
+        "Requirements",
+        "Column Requirements"
       ],
       "block": {
         "block_type": "list_item",
@@ -218,14 +174,15 @@
       "ref": "L015"
     },
     {
-      "temp_id": "R009",
-      "order": 9,
-      "text": "CommitmentProgramEligibilityDetails MUST NOT include data related to *commitment* [*periods*](#glossary:period) or payment options.",
-      "keyword": "MUST NOT",
+      "temp_id": "R007",
+      "order": 7,
+      "text": "CommitmentProgramEligibilityDetails MUST include all publicly available *commitment programs* for which the usage is eligible.",
+      "keyword": "MUST",
       "role": "requirement",
       "section_path": [
         "Commitment Program Eligibility Details",
-        "Requirements"
+        "Requirements",
+        "Column Requirements"
       ],
       "block": {
         "block_type": "list_item",
@@ -243,14 +200,15 @@
       "ref": "L016"
     },
     {
-      "temp_id": "R010",
-      "order": 10,
-      "text": "CommitmentProgramEligibilityDetails MUST conform to [CommitmentProgramEligibilityDetailsObject](#datasets.costandusage.commitmentprogrameligibilitydetails.commitmentprogrameligibilitydetailsobject) requirements when CommitmentProgramEligibilityDetails is not null.",
-      "keyword": "MUST",
+      "temp_id": "R008",
+      "order": 8,
+      "text": "CommitmentProgramEligibilityDetails MAY include negotiated *commitment programs* when the usage is eligible and the program is not broadly applicable across the service provider's service catalog.",
+      "keyword": "MAY",
       "role": "requirement",
       "section_path": [
         "Commitment Program Eligibility Details",
-        "Requirements"
+        "Requirements",
+        "Column Requirements"
       ],
       "block": {
         "block_type": "list_item",
@@ -266,6 +224,58 @@
       },
       "_alignment_status": "confirmed",
       "ref": "L017"
+    },
+    {
+      "temp_id": "R009",
+      "order": 9,
+      "text": "CommitmentProgramEligibilityDetails MUST NOT include data related to *commitment* [*periods*](#glossary:period) or payment options.",
+      "keyword": "MUST NOT",
+      "role": "requirement",
+      "section_path": [
+        "Commitment Program Eligibility Details",
+        "Requirements",
+        "Column Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 18,
+        "line_end": 18
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L018"
+    },
+    {
+      "temp_id": "R010",
+      "order": 10,
+      "text": "CommitmentProgramEligibilityDetails MUST conform to [CommitmentProgramEligibilityDetailsObject](#datasets.costandusage.commitmentprogrameligibilitydetails.commitmentprogrameligibilitydetailsobject) requirements when CommitmentProgramEligibilityDetails is not null.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Commitment Program Eligibility Details",
+        "Requirements",
+        "Column Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 19,
+        "line_end": 19
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L019"
     }
   ],
   "warnings": [],
