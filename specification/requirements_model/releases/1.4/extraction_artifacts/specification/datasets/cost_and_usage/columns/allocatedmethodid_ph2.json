@@ -1,0 +1,243 @@
+{
+  "phase": 2,
+  "source": {
+    "path": "specification/datasets/cost_and_usage/columns/allocatedmethodid.md",
+    "version": "1.3"
+  },
+  "entity": {
+    "entity_type": "Column",
+    "entity_id": "AllocatedMethodId",
+    "entity_name": "Allocated Method ID"
+  },
+  "requirements_scope": {
+    "section_names_allowed": [
+      "Requirements",
+      "Column Requirements",
+      "Object Requirements",
+      "Dataset Requirements",
+      "Attribute Requirements"
+    ],
+    "atoms_in_scope_count": 7
+  },
+  "0_outline_root": "ROOT: Allocated Method ID > Requirements",
+  "0_outline_lines": [
+    "L007: \"AllocatedMethodId MUST adhere to the following requirements:\"",
+    "  L009: \"AllocatedMethodId MUST be of type String.\"",
+    "  L010: \"AllocatedMethodId MUST conform to [StringHandling](#attributes.stringhandling) requirements.\"",
+    "  L011: \"AllocatedMethodId MUST adhere to the following nullability requirements:\"",
+    "    L012: \"AllocatedMethodId MUST be null when a [*charge*](#glossary:charge) is not related to a data generator-calculated split cost allocation.\"",
+    "    L013: \"AllocatedMethodId MUST NOT be null when a *charge* is related to a data generator-calculated split cost allocation.\"",
+    "  L014: \"Data generator-calculated split cost allocation method documentation MUST reference a single AllocatedMethodId value.\""
+  ],
+  "0_outline_summary": {
+    "node_count": 7,
+    "leaf_count": 5,
+    "lead_in_count": 2,
+    "max_depth": 2,
+    "max_indent_level": 1,
+    "root_children_count": 1,
+    "keyword_distribution": {
+      "MUST": 6,
+      "MUST NOT": 1
+    },
+    "lead_ins": [
+      {
+        "ref": "L007",
+        "text_preview": "AllocatedMethodId MUST adhere to the following requirements:",
+        "children": 4
+      },
+      {
+        "ref": "L011",
+        "text_preview": "AllocatedMethodId MUST adhere to the following nullability requirements:",
+        "children": 2
+      }
+    ]
+  },
+  "structure": {
+    "root": {
+      "node_id": "R000",
+      "kind": "root",
+      "children": [
+        {
+          "node_id": "R001",
+          "kind": "atom",
+          "atom": {
+            "temp_id": "R001",
+            "order": 1,
+            "ref": "L007",
+            "text": "AllocatedMethodId MUST adhere to the following requirements:",
+            "keyword": "MUST",
+            "section_path": [
+              "Allocated Method ID",
+              "Requirements"
+            ],
+            "block": {
+              "block_type": "paragraph",
+              "indent_level": 0,
+              "bullet": null
+            },
+            "lead_in": {
+              "ends_with_colon": true
+            }
+          },
+          "children": [
+            {
+              "node_id": "R002",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R002",
+                "order": 2,
+                "ref": "L009",
+                "text": "AllocatedMethodId MUST be of type String.",
+                "keyword": "MUST",
+                "section_path": [
+                  "Allocated Method ID",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R003",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R003",
+                "order": 3,
+                "ref": "L010",
+                "text": "AllocatedMethodId MUST conform to [StringHandling](#attributes.stringhandling) requirements.",
+                "keyword": "MUST",
+                "section_path": [
+                  "Allocated Method ID",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R004",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R004",
+                "order": 4,
+                "ref": "L011",
+                "text": "AllocatedMethodId MUST adhere to the following nullability requirements:",
+                "keyword": "MUST",
+                "section_path": [
+                  "Allocated Method ID",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": true
+                }
+              },
+              "children": [
+                {
+                  "node_id": "R005",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R005",
+                    "order": 5,
+                    "ref": "L012",
+                    "text": "AllocatedMethodId MUST be null when a [*charge*](#glossary:charge) is not related to a data generator-calculated split cost allocation.",
+                    "keyword": "MUST",
+                    "section_path": [
+                      "Allocated Method ID",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R006",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R006",
+                    "order": 6,
+                    "ref": "L013",
+                    "text": "AllocatedMethodId MUST NOT be null when a *charge* is related to a data generator-calculated split cost allocation.",
+                    "keyword": "MUST NOT",
+                    "section_path": [
+                      "Allocated Method ID",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "R007",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R007",
+                "order": 7,
+                "ref": "L014",
+                "text": "Data generator-calculated split cost allocation method documentation MUST reference a single AllocatedMethodId value.",
+                "keyword": "MUST",
+                "section_path": [
+                  "Allocated Method ID",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "debug": {
+    "ruleset": "ph2_tree_v1",
+    "parenting_signals": [
+      "section_path_boundary",
+      "lead_in_colon",
+      "indent_level"
+    ],
+    "warnings": []
+  }
+}
