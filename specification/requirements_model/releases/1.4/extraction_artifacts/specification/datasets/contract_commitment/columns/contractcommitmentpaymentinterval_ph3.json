@@ -114,7 +114,7 @@
       "DatasetId": "ContractCommitment",
       "DatasetName": "Contract Commitment",
       "ValidationCriteria": {
-        "MustSatisfy": "ContractCommitmentPaymentInterval MUST be \"One-Time\" if ContractCommitmentPaymentModel is \"All Upfront\".",
+        "MustSatisfy": "ContractCommitmentPaymentInterval MUST be \"One-Time\" when ContractCommitmentPaymentModel is \"All Upfront\".",
         "Keyword": "MUST",
         "Requirement": {},
         "Condition": [],
