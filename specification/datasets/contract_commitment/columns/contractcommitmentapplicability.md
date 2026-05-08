@@ -18,7 +18,7 @@ ContractCommitmentApplicability MUST adhere to the following requirements:
 
 Contract Commitment Applicability consists of a valid JSON object which contains a set of top-level property keys. These keys define entity-based inclusionary and exclusionary logic, as well as the portion of relevant cost and/or usage that is applicable to the *contract commitment*.
 
-The following section details the normative requirements for the ContractCommitmentApplicabilityObject and its nested properties. For a logical overview of the expected content, see the [Schema Structure](#datasets.contractcommitment.contractcommitmentapplicability.schemastructure) and [Object Example](#datasets.contractcommitment.contractcommitmentapplicability.objectexample) sections.
+The following section details the normative requirements for the ContractCommitmentApplicabilityObject and its nested properties. For a logical overview of the expected content, see the [Schema Structure](#datasets.contractcommitment.contractcommitmentapplicability.contractcommitmentapplicabilityobject.objectschemastructure) and [Object Example](#datasets.contractcommitment.contractcommitmentapplicability.contractcommitmentapplicabilityobject.objectexample) sections.
 
 ### Object Requirements
 
