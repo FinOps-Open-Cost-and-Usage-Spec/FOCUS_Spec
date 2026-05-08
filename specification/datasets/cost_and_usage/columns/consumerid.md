@@ -29,7 +29,7 @@ Consumer ID
 
 ## Description
 
-Unique identifier of the downstream entity or end-actor consuming the resource or service.
+Unique identifier of the downstream entity or end-actor consuming the *resource* or *service*.
 
 ## Content Constraints
 
