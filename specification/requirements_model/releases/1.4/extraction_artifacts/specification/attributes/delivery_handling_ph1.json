@@ -20,7 +20,7 @@
     {
       "temp_id": "R001",
       "order": 1,
-      "text": "DeliveryHandling MUST adhere to the following requirements:",
+      "text": "Dataset conforming to DeliveryHandling attribute MUST adhere to the following requirements:",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
@@ -45,8 +45,8 @@
     {
       "temp_id": "R002",
       "order": 2,
-      "text": "*FOCUS dataset* MUST have its mechanism(s) for delivering *dataset artifacts* documented and accessible to practitioners (including whether Overwrite or Append is used and under which conditions).",
-      "keyword": "MUST",
+      "text": "*FOCUS dataset* MUST NOT require practitioners to deduplicate records within or across delivered dataset artifacts.",
+      "keyword": "MUST NOT",
       "role": "requirement",
       "section_path": [
         "Delivery Handling",
@@ -70,31 +70,6 @@
     {
       "temp_id": "R003",
       "order": 3,
-      "text": "*FOCUS dataset* MUST NOT require practitioners to deduplicate records within or across delivered dataset artifacts.",
-      "keyword": "MUST NOT",
-      "role": "requirement",
-      "section_path": [
-        "Delivery Handling",
-        "Requirements"
-      ],
-      "block": {
-        "block_type": "list_item",
-        "indent_level": 0,
-        "bullet": "*"
-      },
-      "lead_in": {
-        "ends_with_colon": false
-      },
-      "provenance": {
-        "line_start": 49,
-        "line_end": 49
-      },
-      "_alignment_status": "confirmed",
-      "ref": "L049"
-    },
-    {
-      "temp_id": "R004",
-      "order": 4,
       "text": "When using Overwrite delivery mechanism, *FOCUS dataset* MUST adhere to the following additional requirements:",
       "keyword": "MUST",
       "role": "requirement",
@@ -111,6 +86,31 @@
         "ends_with_colon": true
       },
       "provenance": {
+        "line_start": 49,
+        "line_end": 49
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L049"
+    },
+    {
+      "temp_id": "R004",
+      "order": 4,
+      "text": "*FOCUS dataset* MUST represent a complete snapshot for a given [*delivery scope*](#glossary:delivery-scope).",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Delivery Handling",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 1,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
         "line_start": 50,
         "line_end": 50
       },
@@ -120,7 +120,7 @@
     {
       "temp_id": "R005",
       "order": 5,
-      "text": "*FOCUS dataset* MUST represent a complete snapshot for a given [*delivery scope*](#glossary:delivery-scope).",
+      "text": "*FOCUS dataset* MUST supersede all previously delivered *dataset artifacts* for the same *delivery scope*.",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
@@ -145,7 +145,7 @@
     {
       "temp_id": "R006",
       "order": 6,
-      "text": "*FOCUS dataset* MUST supersede all previously delivered *dataset artifacts* for the same *delivery scope*.",
+      "text": "*FOCUS dataset* MUST preserve all previously delivered *dataset artifacts* when using Append delivery mechanism.",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
@@ -154,7 +154,7 @@
       ],
       "block": {
         "block_type": "list_item",
-        "indent_level": 1,
+        "indent_level": 0,
         "bullet": "*"
       },
       "lead_in": {
@@ -170,8 +170,8 @@
     {
       "temp_id": "R007",
       "order": 7,
-      "text": "*FOCUS dataset* MUST preserve all previously delivered *dataset artifacts* when using Append delivery mechanism.",
-      "keyword": "MUST",
+      "text": "*FOCUS dataset* SHOULD have delivered *dataset artifacts* accompanied by corresponding [FOCUS Metadata](#metadata).",
+      "keyword": "SHOULD",
       "role": "requirement",
       "section_path": [
         "Delivery Handling",
@@ -195,32 +195,7 @@
     {
       "temp_id": "R008",
       "order": 8,
-      "text": "*FOCUS dataset* SHOULD have delivered *dataset artifacts* accompanied by corresponding [FOCUS Metadata](#metadata).",
-      "keyword": "SHOULD",
-      "role": "requirement",
-      "section_path": [
-        "Delivery Handling",
-        "Requirements"
-      ],
-      "block": {
-        "block_type": "list_item",
-        "indent_level": 0,
-        "bullet": "*"
-      },
-      "lead_in": {
-        "ends_with_colon": false
-      },
-      "provenance": {
-        "line_start": 54,
-        "line_end": 54
-      },
-      "_alignment_status": "confirmed",
-      "ref": "L054"
-    },
-    {
-      "temp_id": "R009",
-      "order": 9,
-      "text": "*FOCUS dataset* MUST have its mechanism for correlating *dataset artifact* with the [FOCUS Metadata Schema object](#metadata.schema) documented and accessible to practitioners when the Metadata is delivered.",
+      "text": "*FOCUS dataset* delivery mechanism documentation MUST adhere to the following requirements:",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
@@ -233,6 +208,31 @@
         "bullet": "*"
       },
       "lead_in": {
+        "ends_with_colon": true
+      },
+      "provenance": {
+        "line_start": 54,
+        "line_end": 54
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L054"
+    },
+    {
+      "temp_id": "R009",
+      "order": 9,
+      "text": "*FOCUS dataset* delivery mechanism documentation MUST include the delivery mechanism used (Overwrite or Append).",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Delivery Handling",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 1,
+        "bullet": "*"
+      },
+      "lead_in": {
         "ends_with_colon": false
       },
       "provenance": {
@@ -241,6 +241,81 @@
       },
       "_alignment_status": "confirmed",
       "ref": "L055"
+    },
+    {
+      "temp_id": "R010",
+      "order": 10,
+      "text": "*FOCUS dataset* delivery mechanism documentation MUST include the conditions under which each delivery mechanism applies when more than one delivery mechanism is used.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Delivery Handling",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 1,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 56,
+        "line_end": 56
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L056"
+    },
+    {
+      "temp_id": "R011",
+      "order": 11,
+      "text": "*FOCUS dataset* delivery mechanism documentation MUST include the mechanism for correlating *dataset artifacts* with the [FOCUS Metadata Schema object](#metadata.schema) when the Metadata is delivered.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Delivery Handling",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 1,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 57,
+        "line_end": 57
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L057"
+    },
+    {
+      "temp_id": "R012",
+      "order": 12,
+      "text": "*FOCUS dataset* delivery mechanism documentation MUST be accessible to practitioners.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Delivery Handling",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 1,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 58,
+        "line_end": 58
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L058"
     }
   ],
   "warnings": [],
@@ -272,10 +347,9 @@
           "L046",
           "L048",
           "L049",
-          "L050",
+          "L052",
           "L053",
-          "L054",
-          "L055"
+          "L054"
         ]
       },
       {
@@ -304,10 +378,9 @@
           "L046",
           "L048",
           "L049",
-          "L050",
+          "L052",
           "L053",
-          "L054",
-          "L055"
+          "L054"
         ]
       }
     ],
