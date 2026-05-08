@@ -113,12 +113,6 @@ A count-based unit is a noun representing a discrete number of items, events, or
 
 The table below lists recommended names for count-based base units.
 
-### Recommended Count-Based Unit Names
-
-A count-based unit is a noun representing a discrete number of items, events, or actions. For example, a count-based unit can represent the number of requests, instances, tokens, or connections.
-
-The table below lists recommended names for count-based base units.
-
 | Count-based Unit (Singular) | Count-based Unit (Plural) | Description |
 |:----------------------------|:--------------------------|:------------|
 | Count                       | Counts                    | Generic tally of items or occurrences. |
