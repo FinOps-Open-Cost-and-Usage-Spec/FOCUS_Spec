@@ -27,7 +27,7 @@
     "  L011: \"InvoiceIssueStatus MUST NOT be null.\"",
     "  L012: \"InvoiceIssueStatus MUST be one of the allowed values.\"",
     "  L013: \"InvoiceIssueStatus MUST represent the current publication state of the invoice.\"",
-    "  L014: \"InvoiceIssueStatus MUST NOT transition from \\\"Issued\\\" to \\\"Open\\\" unless explicitly requested or approved by the customer.\""
+    "  L014: \"InvoiceIssueStatus MUST NOT be \\\"Open\\\" following a previous status of \\\"Issued\\\", except when explicitly requested or approved by the customer.\""
   ],
   "0_outline_summary": {
     "node_count": 7,
@@ -63,6 +63,7 @@
             "text": "InvoiceIssueStatus MUST adhere to the following requirements:",
             "keyword": "MUST",
             "section_path": [
+              "Invoice Issue Status",
               "Requirements"
             ],
             "block": {
@@ -85,6 +86,7 @@
                 "text": "InvoiceIssueStatus MUST be of type String.",
                 "keyword": "MUST",
                 "section_path": [
+                  "Invoice Issue Status",
                   "Requirements"
                 ],
                 "block": {
@@ -108,6 +110,7 @@
                 "text": "InvoiceIssueStatus MUST conform to [StringHandling](#attributes.stringhandling) requirements.",
                 "keyword": "MUST",
                 "section_path": [
+                  "Invoice Issue Status",
                   "Requirements"
                 ],
                 "block": {
@@ -131,6 +134,7 @@
                 "text": "InvoiceIssueStatus MUST NOT be null.",
                 "keyword": "MUST NOT",
                 "section_path": [
+                  "Invoice Issue Status",
                   "Requirements"
                 ],
                 "block": {
@@ -154,6 +158,7 @@
                 "text": "InvoiceIssueStatus MUST be one of the allowed values.",
                 "keyword": "MUST",
                 "section_path": [
+                  "Invoice Issue Status",
                   "Requirements"
                 ],
                 "block": {
@@ -177,6 +182,7 @@
                 "text": "InvoiceIssueStatus MUST represent the current publication state of the invoice.",
                 "keyword": "MUST",
                 "section_path": [
+                  "Invoice Issue Status",
                   "Requirements"
                 ],
                 "block": {
@@ -197,9 +203,10 @@
                 "temp_id": "R007",
                 "order": 7,
                 "ref": "L014",
-                "text": "InvoiceIssueStatus MUST NOT transition from \"Issued\" to \"Open\" unless explicitly requested or approved by the customer.",
+                "text": "InvoiceIssueStatus MUST NOT be \"Open\" following a previous status of \"Issued\", except when explicitly requested or approved by the customer.",
                 "keyword": "MUST NOT",
                 "section_path": [
+                  "Invoice Issue Status",
                   "Requirements"
                 ],
                 "block": {
