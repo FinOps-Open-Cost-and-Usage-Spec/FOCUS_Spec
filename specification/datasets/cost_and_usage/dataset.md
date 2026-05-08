@@ -57,6 +57,7 @@ The specification for the Cost and Usage dataset defines a group of columns that
 | [Pricing Currency List Unit Price](#datasets.costandusage.pricingcurrencylistunitprice)             | Metric             | Conditional   | True         | Decimal   |
 | [Pricing Quantity](#datasets.costandusage.pricingquantity)                                          | Metric             | Mandatory     | True         | Decimal   |
 | [Pricing Unit](#datasets.costandusage.pricingunit)                                                  | Dimension          | Mandatory     | True         | String    |
+| [Principal ID](#datasets.costandusage.principalid)                                                  | Dimension          | Conditional   | True         | String    |
 | [Region ID](#datasets.costandusage.regionid)                                                        | Dimension          | Conditional   | True         | String    |
 | [Region Name](#datasets.costandusage.regionname)                                                    | Dimension          | Conditional   | True         | String    |
 | [Resource ID](#datasets.costandusage.resourceid)                                                    | Dimension          | Conditional   | True         | String    |
@@ -123,7 +124,7 @@ CostAndUsage MUST adhere to the following requirements:
   * CostAndUsage MUST include [CommitmentProgramEligibilityDetails](#datasets.costandusage.commitmentprogrameligibilitydetails) when the service provider supports at least one [*commitment program*](#glossary:commitment-program).
   * CostAndUsage MUST include [ConsumedQuantity](#datasets.costandusage.consumedquantity) when the service provider supports the measurement of usage.
   * CostAndUsage MUST include [ConsumedUnit](#datasets.costandusage.consumedunit) when the service provider supports the measurement of usage.
-  * CostAndUsage MUST include [ConsumerId](#datasets.costandusage.consumerid) when the service provider supports consumer-level usage attribution.
+  * CostAndUsage MUST include [ConsumerId](#datasets.costandusage.consumerid) when the service provider supports usage attribution to a [*consumer*](#glossary:consumer).
   * CostAndUsage MUST include [ContractApplied](#datasets.costandusage.contractapplied) when the service provider supports *contract commitments*.
   * CostAndUsage MUST include [ContractedCost](#datasets.costandusage.contractedcost).
   * CostAndUsage MUST include [ContractedUnitPrice](#datasets.costandusage.contractedunitprice) when the service provider supports negotiated pricing concepts.
@@ -150,6 +151,7 @@ CostAndUsage MUST adhere to the following requirements:
     * CostAndUsage MAY include PricingCurrencyListUnitPrice in all other cases.
   * CostAndUsage MUST include [PricingQuantity](#datasets.costandusage.pricingquantity).
   * CostAndUsage MUST include [PricingUnit](#datasets.costandusage.pricingunit).
+  * CostAndUsage MUST include [PrincipalId](#datasets.costandusage.principalid) when the service provider supports usage attribution to a [*principal*](#glossary:principal).
   * CostAndUsage MUST include [RegionId](#datasets.costandusage.regionid) when the host provider supports deploying resources or services within a region.
   * CostAndUsage MUST include [RegionName](#datasets.costandusage.regionname) when the host provider supports deploying resources or services within a region.
   * CostAndUsage MUST include [ResourceId](#datasets.costandusage.resourceid) when the service provider supports billing based on provisioned *resources*.

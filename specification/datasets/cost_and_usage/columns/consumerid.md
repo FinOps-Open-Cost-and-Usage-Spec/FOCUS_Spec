@@ -1,6 +1,8 @@
 # Consumer ID
 
-A Consumer ID is an identifier representing the discrete entity (such as an end-user, application, autonomous agent, or service principal) that consumed a [*resource*](#glossary:resource) or [*service*](#glossary:service). The Consumer ID is commonly used for user-level cost allocation, showback, and unit economics calculations without exposing raw identity data in the central billing dataset.
+A Consumer ID is an identifier representing the [*consumer*](#glossary:consumer): a discrete downstream entity (e.g, end-user, tenant, application, autonomous agent, human actor) that consumed a [*resource*](#glossary:resource) or [*service*](#glossary:service). The Consumer ID is commonly used for user-level cost allocation, showback, and unit economics calculations without exposing raw identity data in the central billing dataset.
+
+Consumer ID works in conjunction with [Principal ID](#datasets.costandusage.principalid) to resolve asymmetric identity granularity. While Principal ID captures the authenticated system or service role that initiated a request at the infrastructure layer, Consumer ID captures the logical downstream actor at the application layer.
 
 > Note: While Consumer ID is designed to capture opaque identifiers rather than plain-text names or email addresses, these values may still be classified as Personal Data or Personally Identifiable Information (PII) under privacy frameworks such as GDPR or CCPA (e.g., as pseudonymized data). Organizations must ensure that the ingestion, storage, and processing of datasets containing this column comply with their internal data privacy, security, and retention policies.
 
@@ -27,7 +29,7 @@ Consumer ID
 
 ## Description
 
-Unique identifier of the entity consuming the resource or service.
+Unique identifier of the downstream entity or end-actor consuming the resource or service.
 
 ## Content Constraints
 

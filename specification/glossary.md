@@ -89,6 +89,10 @@ A feature of [*commitment discounts*](#glossary:commitment-discount) that may fu
 
 A service-provider offering that allows a customer to enter into a [*commitment*](#glossary:commitment). Commitment programs include [*commitment discounts*](#glossary:commitment-discount), [*capacity reservations*](#glossary:capacity-reservation), and other constructs that require advance spend or usage agreements.
 
+<a name="glossary:consumer"><b>Consumer</b></a>
+
+An entity (e.g., end-user, tenant, application, autonomous agent) that utilizes a resource or service. This is an application-layer actor benefiting from the usage, which may be distinct from the [*principal*](#glossary-principal) that initiated the request.
+
 <a name="glossary:contract"><b>Contract</b></a>
 
 A collection of agreed terms between a service provider and a customer.
@@ -263,6 +267,10 @@ An individual who performs FinOps within an organization to maximize the busines
 <a name="glossary:price-list"><b>Price List</b></a>
 
 A comprehensive list of prices offered by a service provider.
+
+<a name="glossary:principal"><b>Principal</b></a>
+
+An authenticated entity (e.g., service account, access role) that directly initiates a request to a service provider to use or manage a resource or service. It represents the infrastructure-layer identity that authorized a charge, which may be distinct from the downstream [*consumer*](#glossary:consumer) that utilizes the service.
 
 <a name="glossary:service-provider"><b>Service Provider</b></a>
 
