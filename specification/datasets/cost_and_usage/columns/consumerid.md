@@ -1,8 +1,8 @@
 # Consumer ID
 
-A Consumer ID is an identifier representing the [*consumer*](#glossary:consumer): a discrete downstream entity (e.g., end-user, tenant, application, autonomous agent, human actor) that consumed a [*resource*](#glossary:resource) or [*service*](#glossary:service). The Consumer ID is commonly used for user-level cost allocation, showback, and unit economics calculations without exposing raw identity data in the central billing dataset.
+A Consumer ID is an identifier representing the [*consumer*](#glossary:consumer): a discrete downstream entity (e.g., end-user, tenant, application, autonomous agent, human actor) that consumed a [*resource*](#glossary:resource) or [*service*](#glossary:service). The Consumer ID is commonly used for user-level cost allocation, showback, and unit economics calculations without exposing raw actor data in the central billing dataset.
 
-Consumer ID works in conjunction with [Principal ID](#datasets.costandusage.principalid) to resolve asymmetric identity granularity. While Principal ID captures the authenticated system or service role that initiated a request at the infrastructure layer, Consumer ID captures the logical downstream actor at the application layer.
+Consumer ID works in conjunction with [Principal ID](#datasets.costandusage.principalid) to resolve asymmetric actor granularity. While Principal ID captures the authenticated system or service role that initiated a request at the infrastructure layer, Consumer ID captures the logical downstream actor at the application layer.
 
 > Note: While Consumer ID is designed to capture opaque identifiers rather than plain-text names or email addresses, these values may still be classified as Personal Data or Personally Identifiable Information (PII) under privacy frameworks such as GDPR or CCPA (e.g., as pseudonymized data). Organizations need to separately ensure that the ingestion, storage, and processing of datasets containing this column comply with their internal data privacy, security, and retention policies.
 
@@ -13,7 +13,7 @@ ConsumerId MUST adhere to the following requirements:
 * ConsumerId MUST be of type String.
 * ConsumerId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * ConsumerId MUST adhere to the following nullability requirements:
-  * ConsumerId MUST be null when a [*charge*](#glossary:charge) is not attributed to a specific *consumer* identity by the service provider.
+  * ConsumerId MUST be null when a [*charge*](#glossary:charge) is not attributed to a specific *consumer* by the service provider.
   * ConsumerId MUST NOT be null when a *charge* is attributed to a specific *consumer* by the service provider.
 * When ConsumerId is not null, ConsumerId MUST adhere to the following requirements:
   * ConsumerId MUST be a unique identifier within the context of the service provider.

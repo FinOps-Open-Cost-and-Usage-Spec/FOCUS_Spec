@@ -1,8 +1,8 @@
 # Principal ID
 
-A Principal ID is an identifier representing the [*principal*](#glossary:principal): an authenticated system identity, service account, access role, or user that initiated the request to the infrastructure provider or service provider. The Principal ID is commonly used to audit which infrastructure credential authorized a [*charge*](#glossary:charge).
+A Principal ID is an identifier representing the [*principal*](#glossary:principal): an authenticated system actor, service account, access role, or user that initiated the request to the infrastructure provider or service provider. The Principal ID is commonly used to audit which infrastructure credential authorized a [*charge*](#glossary:charge).
 
-Principal ID works in conjunction with [Consumer ID](#datasets.costandusage.consumerid) to resolve asymmetric identity granularity.  While Principal ID captures the system identity that authorized the transaction with the provider, Consumer ID captures the logical downstream actor (such as an end-user or tenant) that ultimately utilized the service at the application layer.
+Principal ID works in conjunction with [Consumer ID](#datasets.costandusage.consumerid) to resolve asymmetric actor granularity.  While Principal ID captures the system actor that authorized the transaction with the provider, Consumer ID captures the logical downstream actor (such as an end-user or tenant) that ultimately utilized the service at the application layer.
 
 ## Requirements
 
@@ -26,7 +26,7 @@ Principal ID
 
 ## Description
 
-Identifier of the authenticated system identity or role that initiated the request to the service provider.
+Identifier of the authenticated system actor or role that initiated the request to the service provider.
 
 ## Content Constraints
 
