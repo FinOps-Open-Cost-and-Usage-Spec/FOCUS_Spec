@@ -23,16 +23,16 @@
   "0_outline_lines": [
     "L009: \"ContractCommitmentApplicabilityObject MUST adhere to the following requirements:\"",
     "  L011: \"ContractCommitmentApplicabilityObject MUST conform to the [ContractCommitmentApplicabilityObjectSchema](#schemas.contractcommitment.contractcommitmentapplicabilityobjectschema) JSON Schema.\"",
-    "  L012: \"ContractCommitmentApplicabilityObject.IsGlobalScope MUST be `true` if the *contract commitment* applies to all entities.\"",
-    "  L013: \"ContractCommitmentApplicabilityObject.IsComplexScope MUST be `true` if the *contract commitment's* applicability logic exceeds schema capabilities.\"",
+    "  L012: \"ContractCommitmentApplicabilityObject.IsGlobalScope MUST be `true` when the *contract commitment* applies to all entities.\"",
+    "  L013: \"ContractCommitmentApplicabilityObject.IsComplexScope MUST be `true` when the *contract commitment's* applicability logic exceeds schema capabilities.\"",
     "  L014: \"ContractCommitmentApplicabilityObject.Applicability.Cost MUST represent the fraction of an eligible charge's cost that is applicable to the commitment (0.0 to 1.0).\"",
     "  L015: \"ContractCommitmentApplicabilityObject.Applicability.Usage MUST represent the fraction of an eligible charge's usage that is applicable to the commitment (0.0 to 1.0).\"",
-    "  L016: \"ContractCommitmentApplicabilityObject.Inclusions[\\\\*].Applicability.Cost MUST represent the fraction of an eligible charge's cost that is applicable to the commitment (0.0 to 1.0).\"",
-    "  L017: \"ContractCommitmentApplicabilityObject.Inclusions[\\\\*].Applicability.Usage MUST represent the fraction of an eligible charge's usage that is applicable to the commitment (0.0 to 1.0).\"",
-    "  L018: \"ContractCommitmentApplicabilityObject.Inclusions[\\\\*].Dimension SHOULD represent a column in [Cost and Usage](#datasets.costandusage).\"",
-    "  L019: \"ContractCommitmentApplicabilityObject.Exclusions[\\\\*].Dimension SHOULD represent a column in [Cost and Usage](#datasets.costandusage).\"",
-    "  L020: \"ContractCommitmentApplicabilityObject.Inclusions[\\\\*].Values MUST contain only the single string \\\"*\\\" if the wildcard is present.\"",
-    "  L021: \"ContractCommitmentApplicabilityObject.Exclusions[\\\\*].Values MUST contain only the single string \\\"*\\\" if the wildcard is present.\""
+    "  L016: \"ContractCommitmentApplicabilityObject.Inclusions[*].Applicability.Cost MUST represent the fraction of an eligible charge's cost that is applicable to the commitment (0.0 to 1.0).\"",
+    "  L017: \"ContractCommitmentApplicabilityObject.Inclusions[*].Applicability.Usage MUST represent the fraction of an eligible charge's usage that is applicable to the commitment (0.0 to 1.0).\"",
+    "  L018: \"ContractCommitmentApplicabilityObject.Inclusions[*].Dimension SHOULD represent a column in [Cost and Usage](#datasets.costandusage).\"",
+    "  L019: \"ContractCommitmentApplicabilityObject.Exclusions[*].Dimension SHOULD represent a column in [Cost and Usage](#datasets.costandusage).\"",
+    "  L020: \"ContractCommitmentApplicabilityObject.Inclusions[*].Values MUST contain only the single string \\\"*\\\" when the wildcard is present.\"",
+    "  L021: \"ContractCommitmentApplicabilityObject.Exclusions[*].Values MUST contain only the single string \\\"*\\\" when the wildcard is present.\""
   ],
   "0_outline_summary": {
     "node_count": 12,
@@ -112,7 +112,7 @@
                 "temp_id": "R003",
                 "order": 3,
                 "ref": "L012",
-                "text": "ContractCommitmentApplicabilityObject.IsGlobalScope MUST be `true` if the *contract commitment* applies to all entities.",
+                "text": "ContractCommitmentApplicabilityObject.IsGlobalScope MUST be `true` when the *contract commitment* applies to all entities.",
                 "keyword": "MUST",
                 "section_path": [
                   "Contract Commitment Applicability Object",
@@ -136,7 +136,7 @@
                 "temp_id": "R004",
                 "order": 4,
                 "ref": "L013",
-                "text": "ContractCommitmentApplicabilityObject.IsComplexScope MUST be `true` if the *contract commitment's* applicability logic exceeds schema capabilities.",
+                "text": "ContractCommitmentApplicabilityObject.IsComplexScope MUST be `true` when the *contract commitment's* applicability logic exceeds schema capabilities.",
                 "keyword": "MUST",
                 "section_path": [
                   "Contract Commitment Applicability Object",
@@ -208,7 +208,7 @@
                 "temp_id": "R007",
                 "order": 7,
                 "ref": "L016",
-                "text": "ContractCommitmentApplicabilityObject.Inclusions[\\*].Applicability.Cost MUST represent the fraction of an eligible charge's cost that is applicable to the commitment (0.0 to 1.0).",
+                "text": "ContractCommitmentApplicabilityObject.Inclusions[*].Applicability.Cost MUST represent the fraction of an eligible charge's cost that is applicable to the commitment (0.0 to 1.0).",
                 "keyword": "MUST",
                 "section_path": [
                   "Contract Commitment Applicability Object",
@@ -232,7 +232,7 @@
                 "temp_id": "R008",
                 "order": 8,
                 "ref": "L017",
-                "text": "ContractCommitmentApplicabilityObject.Inclusions[\\*].Applicability.Usage MUST represent the fraction of an eligible charge's usage that is applicable to the commitment (0.0 to 1.0).",
+                "text": "ContractCommitmentApplicabilityObject.Inclusions[*].Applicability.Usage MUST represent the fraction of an eligible charge's usage that is applicable to the commitment (0.0 to 1.0).",
                 "keyword": "MUST",
                 "section_path": [
                   "Contract Commitment Applicability Object",
@@ -256,7 +256,7 @@
                 "temp_id": "R009",
                 "order": 9,
                 "ref": "L018",
-                "text": "ContractCommitmentApplicabilityObject.Inclusions[\\*].Dimension SHOULD represent a column in [Cost and Usage](#datasets.costandusage).",
+                "text": "ContractCommitmentApplicabilityObject.Inclusions[*].Dimension SHOULD represent a column in [Cost and Usage](#datasets.costandusage).",
                 "keyword": "SHOULD",
                 "section_path": [
                   "Contract Commitment Applicability Object",
@@ -280,7 +280,7 @@
                 "temp_id": "R010",
                 "order": 10,
                 "ref": "L019",
-                "text": "ContractCommitmentApplicabilityObject.Exclusions[\\*].Dimension SHOULD represent a column in [Cost and Usage](#datasets.costandusage).",
+                "text": "ContractCommitmentApplicabilityObject.Exclusions[*].Dimension SHOULD represent a column in [Cost and Usage](#datasets.costandusage).",
                 "keyword": "SHOULD",
                 "section_path": [
                   "Contract Commitment Applicability Object",
@@ -304,7 +304,7 @@
                 "temp_id": "R011",
                 "order": 11,
                 "ref": "L020",
-                "text": "ContractCommitmentApplicabilityObject.Inclusions[\\*].Values MUST contain only the single string \"*\" if the wildcard is present.",
+                "text": "ContractCommitmentApplicabilityObject.Inclusions[*].Values MUST contain only the single string \"*\" when the wildcard is present.",
                 "keyword": "MUST",
                 "section_path": [
                   "Contract Commitment Applicability Object",
@@ -328,7 +328,7 @@
                 "temp_id": "R012",
                 "order": 12,
                 "ref": "L021",
-                "text": "ContractCommitmentApplicabilityObject.Exclusions[\\*].Values MUST contain only the single string \"*\" if the wildcard is present.",
+                "text": "ContractCommitmentApplicabilityObject.Exclusions[*].Values MUST contain only the single string \"*\" when the wildcard is present.",
                 "keyword": "MUST",
                 "section_path": [
                   "Contract Commitment Applicability Object",
