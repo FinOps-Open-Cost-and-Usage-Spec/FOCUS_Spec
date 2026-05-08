@@ -45,6 +45,8 @@ style ObjectProperty fill:#d4edda,stroke:#666,stroke-width:1px
 
 * `CustomColumnHandling` is a special Attribute that references other Attributes (e.g., `NullHandling`, `DateTimeFormat`) to establish recommended conformance for custom columns. This cross-reference pattern is an exception rather than a general relationship shown in the diagram.
 
+> **Note:** These guidelines do not currently apply to FOCUS Metadata requirements, which are out of scope.
+
 ## Dataset Abstraction and Normative Subject Convention
 
 By glossary definition, the following concepts are used:
@@ -72,7 +74,7 @@ The convention above applies exclusively to the normative subject position. When
 * `dataset instance` — when referring to a specific implementation of a FOCUS dataset provided by a data generator.
 * `dataset artifact` — when referring to a physical representation of a specific dataset instance delivered by a data generator.
 
-Generic terms such as "dataset" or "datasets" MUST NOT be used in non-subject positions where the precise abstraction level is known.
+Generic terms such as `dataset` or `datasets` MUST NOT be used in non-subject positions where the precise abstraction level is known.
 
 * Example of attribute-level requirement (subject: `FOCUS dataset`, body: `dataset artifacts`):
 
@@ -167,7 +169,7 @@ See [Section Structural Anchor Requirement for Attributes](#structural-anchor-re
 
 #### Allowed Subjects
 
-The normative subject MUST be a schema-level entity, such as:
+The normative subject MUST be a schema-level entity or specific documentation, such as:
 
 * **FOCUS Dataset**, whereby use of:  
   * `FOCUS dataset` keyword represents any FOCUS dataset  
@@ -203,6 +205,11 @@ The normative subject MUST be a schema-level entity, such as:
     * `<ObjectId>.<PropertyPath>` for JSON Object property-level requirements (e.g., `ContractCommitmentApplicabilityObject.Applicability.Cost`)
     * `<ObjectId>.<PropertyPath>[*].<PropertyPath>` for properties within arrays (e.g., `ContractAppliedObject.Elements[*].ContractId`, `ContractCommitmentApplicabilityObject.Inclusions[*].Dimension`)
 
+* **Documentation**, whereby use of:
+  * `FOCUS dataset documentation` keyword represents documentation of any FOCUS dataset
+  * `{DatasetId} documentation` represents documentation of a specific dataset (e.g., `InvoiceDetail documentation`)
+  * `{Qualifier} documentation` represents documentation identified by a specific qualifier (e.g., `FOCUS dataset delivery mechanism documentation`, `Custom column JSON object schema documentation`, `Data generator-calculated split cost allocation method documentation`)
+
 The subject SHOULD be explicit and unambiguous.
 
 **Exception for Aggregate Expressions:** When a requirement describes an aggregate or derived value (e.g., sums, products, counts), the aggregate expression (e.g., `The sum of`, `The product of`) MAY be used as the grammatical subject when it improves readability. The column or metric being constrained MUST still be clearly identifiable within the requirement.
@@ -211,8 +218,10 @@ The subject SHOULD be explicit and unambiguous.
 
 The following MUST NOT be used as normative subjects:
 
-* Actors (e.g., data generator, service provider, consumer)
-* Processes or mechanisms (e.g., Delivery Handling, Correction Handling, etc.)
+* Actors (e.g., `data generator`, `service provider`, `consumer`)
+* Processes or mechanisms (e.g., `Delivery Handling`, `Correction Handling`, etc.)
+
+> **Note:** Actors and processes/mechanisms can appear as part of a documentation qualifier without violating this rule. In such cases, the normative subject is the documentation itself, not the actor or mechanism. For example, in `Data generator-calculated split cost allocation method documentation`, the subject is the documentation, not the data generator; in `FOCUS dataset delivery mechanism documentation`, the subject is the documentation, not the delivery mechanism.
 
 ### FOCUS Entity Reference Conventions
 
@@ -226,10 +235,31 @@ Normative requirements MUST describe a **verifiable state**, not an operational 
 
 Specifically:
 
-* Process-oriented verbs such as *ensure*, *handle*, *support*, or *provide* MUST NOT be used.
-* If a requirement refers to actor behavior, it MUST be expressed as:
-  * a constraint on the resulting dataset state, or
-  * a constraint on a schema-defined artifact.
+* The primary verb of the obligation (i.e., the verb that directly follows the BCP-14 keyword) MUST define a verifiable state.
+* Process-oriented verbs (e.g., `ensure`, `handle`, `support`, `provide`) MUST NOT be used as the primary verb of the obligation.
+* Process-oriented verbs MAY be used in non-normative or explanatory clauses (e.g., to describe intent or rationale).
+* When a requirement refers to actor behavior, it MUST be expressed as:
+  * a constraint on the resulting state of a schema-level entity (e.g., dataset, column, object), or
+  * a constraint on documentation.
+
+#### Common non-compliant verbs (non-exhaustive)
+
+The following verbs are commonly used in a process-oriented way when defining requirements:
+
+* `ensure`
+* `handle`
+* `support`
+* `provide`
+* `allow`
+* `enable`
+* `manage`
+* `process`
+* `enforce`
+* `prefix`
+* `alter`
+* `document`
+
+> **Note:** This list is not exhaustive. Any verb that describes an action, responsibility, or implementation behavior rather than a verifiable state is considered non-compliant in the normative position.
 
 ### Tone and Grammar
 
@@ -286,7 +316,7 @@ While normative requirements MUST focus on **enforceable constraints** and **ver
 * **Complex Logic:** If an informative or normative clause is complex or applies to multiple requirements, it SHOULD be placed in the **Implementation Context** section to maintain the clarity of the core requirement.
 * **Normative Authority:** To ensure consistency, BCP 14 keywords MUST ONLY be used within the **Requirements** section. The content in the **Glossary**, preamble, or **Implementation Context** MUST NOT contain BCP 14 keywords.
 
-#### Non-Normative Examples:
+#### Non-Normative Examples
 
 * **Incorporation:** Examples incorporated in requirements MUST be clearly identified using "e.g." and placed within parentheses `(e.g., ...)` to distinguish them from the normative constraint.
 
@@ -383,6 +413,17 @@ Use standardized phrasing and terminology, and apply common requirement patterns
 
 ```markdown
 * <DatasetId> MUST conform to <BusinessAttributeId> requirements.
+```
+
+##### Other Requirements: Documentation
+
+```markdown
+* <DatasetId> documentation MUST <verifiable state>.
+```
+
+```markdown
+* <DatasetId> documentation MUST adhere to the following requirements:
+  * <DatasetId> documentation MUST <verifiable state>.
 ```
 
 ### Dataset Normative Requirements Examples
@@ -720,6 +761,17 @@ To ensure clarity and consistency across columns and corresponding requirements,
 * <CostColumnId> MUST equal the product of <UnitPriceColumnId> and PricingQuantity when <UnitPriceColumnId> is not null and PricingQuantity is not null.
 ```
 
+##### Other Requirements: Documentation
+
+```markdown
+* <Qualifier> documentation MUST <verifiable state>.
+```
+
+```markdown
+* <Qualifier> documentation MUST adhere to the following requirements:
+  * <Qualifier> documentation MUST <verifiable state>.
+```
+
 #### Column Requirement Standardized Terminology
 
 ##### Identifiers and Uniqueness within Scope
@@ -879,6 +931,7 @@ The following table provides an overview of anchor subject types and requirement
 | Anchor Subject Type | Requirement Subject |
 |---|---|
 | Dataset | FOCUS dataset |
+| Dataset | [Qualifier] documentation |
 | Column | FOCUS dataset column |
 | Column | FOCUS column |
 | Column | Custom column |
@@ -888,6 +941,7 @@ The following table provides an overview of anchor subject types and requirement
 | Column | Key value in Object in FOCUS dataset column |
 | Column | Key in FOCUS dataset column |
 | Column | Key value in FOCUS dataset column |
+| Column | [Qualifier] documentation |
 
 ### FOCUS Dataset Column vs FOCUS Column vs Custom Column Requirements
 
@@ -945,6 +999,9 @@ Attributes may include requirements that apply to one or more intended normative
 5. **Custom Column Attribute Requirements:**
    1. **Global Custom Column Requirements:** Applicable to all Custom columns, regardless of their structure or purpose.
    1. **Qualified Custom Column Requirements:** Applicable to a subset of Custom columns, identified through a qualifier.
+6. **Other Attribute Requirements:**
+   1. **Documentation:** Defines requirements for documentation associated with entities conforming to the Attribute.
+   1. **Other:** Captures requirements that do not fall into the above categories.
 
 ### Ordering of Attribute Requirements within Groups
 
@@ -1021,8 +1078,6 @@ Dataset conforming to DatasetCompleteness attribute MUST adhere to the following
 
 * *FOCUS dataset* MUST include *custom columns* for all corresponding *native dataset* columns except those explicitly listed as exclusions with justification (e.g., deprecated fields, overlap with *FOCUS columns*) in publicly-available documentation.
 * *FOCUS dataset* MUST have all included *custom columns* documented in publicly-available documentation, including description, purpose, and relationship to *native dataset* columns.
-* *FOCUS dataset* MUST ensure *custom columns* retain the fidelity of corresponding *native dataset* values without lossy transformations (e.g., rounding or truncation).
-* *FOCUS dataset* MUST NOT alter the aggregated values of summable [*metrics*](#glossary:metric) (e.g., costs and quantities) due to the inclusion of *custom columns*.
 * ...
 * *FOCUS dataset* MUST adhere to the following column ordering requirements:
   * *FOCUS dataset* SHOULD list all *FOCUS columns* before all *custom columns*.
