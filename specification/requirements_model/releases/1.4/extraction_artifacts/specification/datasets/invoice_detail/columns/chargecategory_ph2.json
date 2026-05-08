@@ -32,7 +32,7 @@
     "    L016: \"ChargeCategory MUST be \\\"Credit\\\" when the *charge* represents a financial incentive or allowance unrelated to other *charges*.\"",
     "    L017: \"ChargeCategory MUST be \\\"Adjustment\\\" when the *charge* represents a billing modification that does not fall into other ChargeCategories.\"",
     "  L018: \"When the *charge* aggregates multiple classifications, ChargeCategory MUST adhere to the following requirements:\"",
-    "    L019: \"ChargeCategory MAY be \\\"Usage\\\" when the record aggregates *charges* across multiple allowed values other than \\\"Tax\\\" (for example, aggregation of \\\"Usage\\\" and \\\"Credit\\\" is allowed, but not \\\"Usage\\\" and \\\"Tax\\\").\""
+    "    L019: \"ChargeCategory MAY be \\\"Usage\\\" when the record aggregates *charges* across multiple allowed values other than \\\"Tax\\\" (e.g., aggregation of \\\"Usage\\\" and \\\"Credit\\\" is allowed, but not \\\"Usage\\\" and \\\"Tax\\\").\""
   ],
   "0_outline_summary": {
     "node_count": 12,
@@ -339,7 +339,7 @@
                     "temp_id": "R012",
                     "order": 12,
                     "ref": "L019",
-                    "text": "ChargeCategory MAY be \"Usage\" when the record aggregates *charges* across multiple allowed values other than \"Tax\" (for example, aggregation of \"Usage\" and \"Credit\" is allowed, but not \"Usage\" and \"Tax\").",
+                    "text": "ChargeCategory MAY be \"Usage\" when the record aggregates *charges* across multiple allowed values other than \"Tax\" (e.g., aggregation of \"Usage\" and \"Credit\" is allowed, but not \"Usage\" and \"Tax\").",
                     "keyword": "MAY",
                     "section_path": [
                       "Charge Category",
