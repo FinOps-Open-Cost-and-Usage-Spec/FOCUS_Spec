@@ -120,7 +120,7 @@
     {
       "temp_id": "R005",
       "order": 5,
-      "text": "ContractCommitmentPaymentInterval MUST be \"One-Time\" if [ContractCommitmentPaymentModel](#datasets.contractcommitment.contractcommitmentpaymentmodel) is \"All Upfront\".",
+      "text": "ContractCommitmentPaymentInterval MUST be \"One-Time\" when [ContractCommitmentPaymentModel](#datasets.contractcommitment.contractcommitmentpaymentmodel) is \"All Upfront\".",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
