@@ -11,7 +11,7 @@ TimeSectors adheres to the following requirements:
 * TimeSectors MUST NOT be null.
 * TimeSectors collection MUST contain at least one object.
 * TimeSectors collection MUST NOT contain null objects.
-* TimeSectors collection object MUST be updated, if already present, or added to the collection whenever the data generator updates or provides new dataset artifacts.
+* TimeSectors collection object MUST be updated, when already present, or added to the collection whenever the data generator updates or provides new dataset artifacts.
 
 ## Metadata ID
 
