@@ -19,7 +19,7 @@ SkuPriceId [-adheres-]{+MUST adhere+} to the following requirements:
   * SkuPriceId MAY [-equal-]{+match+} SkuId.
   * SkuPriceId MUST be associated with a given *resource* or *service* when ChargeCategory is "Usage" or "Purchase".
   * SkuPriceId MUST reference a *SKU Price* in a service-provider-supplied *price list*, enabling the lookup of detailed information about the *SKU Price*.
-  * SkuPriceId MUST support the lookup of the ListUnitPrice when the service provider publishes unit prices exclusive of discounts.
-  * SkuPriceId MUST support the verification of the given ContractedUnitPrice when the service provider supports negotiated pricing concepts.
+  * SkuPriceId MUST [-support the lookup of-]{+be a valid reference to+} the ListUnitPrice when the service provider publishes unit prices exclusive of discounts.
+  * SkuPriceId MUST [-support the verification of-]{+be a valid reference to+} the[-given-] ContractedUnitPrice when the service provider supports negotiated pricing concepts.
 
 See Examples: Commitment Discount Flexibility for more details around *commitment discount flexibility*.
