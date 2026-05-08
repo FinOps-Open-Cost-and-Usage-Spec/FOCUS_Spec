@@ -9,7 +9,13 @@
     "entity_id": "ContractCommitmentApplicabilityObject",
     "entity_name": "Contract Commitment Applicability Object"
   },
-  "entities_found": [],
+  "entities_found": [
+    {
+      "entity_type": "Object",
+      "entity_id": "ContractCommitmentApplicabilityObject",
+      "entity_name": "Contract Commitment Applicability Object"
+    }
+  ],
   "atoms": [
     {
       "temp_id": "R001",
@@ -64,7 +70,7 @@
     {
       "temp_id": "R003",
       "order": 3,
-      "text": "ContractCommitmentApplicabilityObject.IsGlobalScope MUST be `true` if the *contract commitment* applies to all entities.",
+      "text": "ContractCommitmentApplicabilityObject.IsGlobalScope MUST be `true` when the *contract commitment* applies to all entities.",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
@@ -89,7 +95,7 @@
     {
       "temp_id": "R004",
       "order": 4,
-      "text": "ContractCommitmentApplicabilityObject.IsComplexScope MUST be `true` if the *contract commitment's* applicability logic exceeds schema capabilities.",
+      "text": "ContractCommitmentApplicabilityObject.IsComplexScope MUST be `true` when the *contract commitment's* applicability logic exceeds schema capabilities.",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
@@ -164,7 +170,7 @@
     {
       "temp_id": "R007",
       "order": 7,
-      "text": "ContractCommitmentApplicabilityObject.Inclusions[\\*].Applicability.Cost MUST represent the fraction of an eligible charge's cost that is applicable to the commitment (0.0 to 1.0).",
+      "text": "ContractCommitmentApplicabilityObject.Inclusions[*].Applicability.Cost MUST represent the fraction of an eligible charge's cost that is applicable to the commitment (0.0 to 1.0).",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
@@ -189,7 +195,7 @@
     {
       "temp_id": "R008",
       "order": 8,
-      "text": "ContractCommitmentApplicabilityObject.Inclusions[\\*].Applicability.Usage MUST represent the fraction of an eligible charge's usage that is applicable to the commitment (0.0 to 1.0).",
+      "text": "ContractCommitmentApplicabilityObject.Inclusions[*].Applicability.Usage MUST represent the fraction of an eligible charge's usage that is applicable to the commitment (0.0 to 1.0).",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
@@ -214,7 +220,7 @@
     {
       "temp_id": "R009",
       "order": 9,
-      "text": "ContractCommitmentApplicabilityObject.Inclusions[\\*].Dimension SHOULD represent a column in [Cost and Usage](#datasets.costandusage).",
+      "text": "ContractCommitmentApplicabilityObject.Inclusions[*].Dimension SHOULD represent a column in [Cost and Usage](#datasets.costandusage).",
       "keyword": "SHOULD",
       "role": "requirement",
       "section_path": [
@@ -239,7 +245,7 @@
     {
       "temp_id": "R010",
       "order": 10,
-      "text": "ContractCommitmentApplicabilityObject.Exclusions[\\*].Dimension SHOULD represent a column in [Cost and Usage](#datasets.costandusage).",
+      "text": "ContractCommitmentApplicabilityObject.Exclusions[*].Dimension SHOULD represent a column in [Cost and Usage](#datasets.costandusage).",
       "keyword": "SHOULD",
       "role": "requirement",
       "section_path": [
@@ -264,7 +270,7 @@
     {
       "temp_id": "R011",
       "order": 11,
-      "text": "ContractCommitmentApplicabilityObject.Inclusions[\\*].Values MUST contain only the single string \"*\" if the wildcard is present.",
+      "text": "ContractCommitmentApplicabilityObject.Inclusions[*].Values MUST contain only the single string \"*\" when the wildcard is present.",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
@@ -289,7 +295,7 @@
     {
       "temp_id": "R012",
       "order": 12,
-      "text": "ContractCommitmentApplicabilityObject.Exclusions[\\*].Values MUST contain only the single string \"*\" if the wildcard is present.",
+      "text": "ContractCommitmentApplicabilityObject.Exclusions[*].Values MUST contain only the single string \"*\" when the wildcard is present.",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
@@ -314,58 +320,6 @@
     {
       "temp_id": "R013",
       "order": 13,
-      "text": "Values` must be `[\"*\"]`",
-      "keyword": "MUST",
-      "role": "requirement",
-      "section_path": [
-        "Contract Commitment Applicability Object",
-        "Schema Structure",
-        "Supported Operators"
-      ],
-      "block": {
-        "block_type": "paragraph",
-        "indent_level": 0,
-        "bullet": null
-      },
-      "lead_in": {
-        "ends_with_colon": false
-      },
-      "provenance": {
-        "line_start": 66,
-        "line_end": 66
-      },
-      "_alignment_status": "confirmed",
-      "ref": "L066"
-    },
-    {
-      "temp_id": "R014",
-      "order": 14,
-      "text": "Values` must be `[\"*\"]`",
-      "keyword": "MUST",
-      "role": "requirement",
-      "section_path": [
-        "Contract Commitment Applicability Object",
-        "Schema Structure",
-        "Supported Operators"
-      ],
-      "block": {
-        "block_type": "paragraph",
-        "indent_level": 0,
-        "bullet": null
-      },
-      "lead_in": {
-        "ends_with_colon": false
-      },
-      "provenance": {
-        "line_start": 67,
-        "line_end": 67
-      },
-      "_alignment_status": "confirmed",
-      "ref": "L067"
-    },
-    {
-      "temp_id": "R015",
-      "order": 15,
       "text": "The evaluation of an entity against a commitment applicability must follow a strict linear progression:",
       "keyword": "MUST",
       "role": "requirement",
@@ -390,8 +344,8 @@
       "ref": "L113"
     },
     {
-      "temp_id": "R016",
-      "order": 16,
+      "temp_id": "R014",
+      "order": 14,
       "text": "If a metric key (`Cost` or `Usage`) is missing within a provided `Applicability` object, the engine must default that specific value to `1.0`.",
       "keyword": "MUST",
       "role": "requirement",
@@ -416,9 +370,9 @@
       "ref": "L120"
     },
     {
-      "temp_id": "R017",
-      "order": 17,
-      "text": "Use the `Applicability` from the matching inclusion rule. If multiple rules match under `Or`, the engine must use the highest percentage for each respective metric.",
+      "temp_id": "R015",
+      "order": 15,
+      "text": "If multiple rules match under `Or`, the engine must use the highest percentage for each respective metric.",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
@@ -442,8 +396,8 @@
       "ref": "L121"
     },
     {
-      "temp_id": "R018",
-      "order": 18,
+      "temp_id": "R016",
+      "order": 16,
       "text": "The evaluation of **Applicability** percentages must be contextually aligned with the [Contract Commitment Model](#datasets.contractcommitment.contractcommitmentmodel) and [Contract Commitment Fulfillment Interval](#datasets.contractcommitment.contractcommitmentfulfillmentinterval):",
       "keyword": "MUST",
       "role": "requirement",
@@ -468,9 +422,9 @@
       "ref": "L126"
     },
     {
-      "temp_id": "R019",
-      "order": 19,
-      "text": "Applicability percentages must be applied to each discrete unit of activity (e.g., every hour) within the **Fulfillment Interval**. If the commitment is not fully utilized by eligible entities within that hour, the remaining capacity expires.",
+      "temp_id": "R017",
+      "order": 17,
+      "text": "Applicability percentages must be applied to each discrete unit of activity (e.g., every hour) within the **Fulfillment Interval**.",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
@@ -494,8 +448,8 @@
       "ref": "L128"
     },
     {
-      "temp_id": "R020",
-      "order": 20,
+      "temp_id": "R018",
+      "order": 18,
       "text": "Engines should expect a JSON Object and should not support scalar (Decimal/Float) values for this field to ensure compatibility with typed database schemas.",
       "keyword": "SHOULD",
       "role": "requirement",
@@ -520,8 +474,8 @@
       "ref": "L133"
     },
     {
-      "temp_id": "R021",
-      "order": 21,
+      "temp_id": "R019",
+      "order": 19,
       "text": "Engines should expect a JSON Object and should not support scalar (Decimal/Float) values for this field to ensure compatibility with typed database schemas.",
       "keyword": "SHOULD NOT",
       "role": "requirement",
@@ -539,15 +493,15 @@
         "ends_with_colon": false
       },
       "provenance": {
-        "line_start": 123,
-        "line_end": 123
+        "line_start": 112,
+        "line_end": 112
       },
       "_alignment_status": "fallback_original",
-      "ref": "L123"
+      "ref": "L112"
     },
     {
-      "temp_id": "R022",
-      "order": 22,
+      "temp_id": "R020",
+      "order": 20,
       "text": "If `IsGlobalScope` or `IsComplexScope` is `true`, the `Inclusions` array must be empty or omitted.",
       "keyword": "MUST",
       "role": "requirement",
@@ -572,9 +526,9 @@
       "ref": "L134"
     },
     {
-      "temp_id": "R023",
-      "order": 23,
-      "text": "`IsGlobalScope` and `IsComplexScope` must both not be `true` at the same time.",
+      "temp_id": "R021",
+      "order": 21,
+      "text": "Additionally, `IsGlobalScope` and `IsComplexScope` must both not be `true` at the same time.",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
@@ -591,15 +545,15 @@
         "ends_with_colon": false
       },
       "provenance": {
-        "line_start": 124,
-        "line_end": 124
+        "line_start": 113,
+        "line_end": 113
       },
       "_alignment_status": "fallback_original",
-      "ref": "L124"
+      "ref": "L113"
     },
     {
-      "temp_id": "R024",
-      "order": 24,
+      "temp_id": "R022",
+      "order": 22,
       "text": "Engines should validate these structural constraints before processing.",
       "keyword": "SHOULD",
       "role": "requirement",
@@ -617,14 +571,27 @@
         "ends_with_colon": false
       },
       "provenance": {
-        "line_start": 124,
-        "line_end": 124
+        "line_start": 113,
+        "line_end": 113
       },
       "_alignment_status": "fallback_original",
-      "ref": "L124"
+      "ref": "L113"
     }
   ],
-  "warnings": [],
+  "warnings": [
+    {
+      "code": "W_ENTITY_NAME_CONFLICT",
+      "message": "Both an entity name heading and a display name heading are present for the same entity type.",
+      "details": {
+        "entity_type": "Object",
+        "name_heading_expected": "### Object Name",
+        "name_heading_present": true,
+        "display_name_heading_expected": "### Object Display Name",
+        "display_name_heading_present": true
+      },
+      "text": "(document-level)"
+    }
+  ],
   "structural": {
     "lead_ins": [],
     "index": {
