@@ -137,7 +137,7 @@
       "DatasetId": "BillingPeriod",
       "DatasetName": "Billing Period",
       "ValidationCriteria": {
-        "MustSatisfy": "BillingPeriodStatus MUST NOT transition from \"Closed\" to \"Open\" unless explicitly requested or approved by the customer.",
+        "MustSatisfy": "BillingPeriodStatus MUST NOT be \"Open\" following a previous status of \"Closed\", except when explicitly requested or approved by the customer.",
         "Keyword": "MUST NOT",
         "Requirement": {},
         "Condition": [],
