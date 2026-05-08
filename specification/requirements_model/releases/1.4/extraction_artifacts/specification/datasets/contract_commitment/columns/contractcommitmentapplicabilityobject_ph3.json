@@ -1,6 +1,6 @@
 {
   "ModelRules": {
-    "CCT-ContractCommitmentApplicabilityObject-C-000-M": {
+    "CCT-ContractCommitmentApplicabilityObject-O-000-M": {
       "Function": "Composite",
       "Reference": "ContractCommitmentApplicabilityObject",
       "EntityType": "Object",
@@ -9,7 +9,6 @@
       "Notes": "",
       "ModelVersionIntroduced": "1.4",
       "Status": "Active",
-      "ModelVersionRemoved": "",
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "Order": 0,
@@ -22,21 +21,21 @@
         "Requirement": {},
         "Condition": [],
         "Dependencies": [
-          "CCT-ContractCommitmentApplicabilityObject-C-001-M",
-          "CCT-ContractCommitmentApplicabilityObject-C-002-C",
-          "CCT-ContractCommitmentApplicabilityObject-C-003-C",
-          "CCT-ContractCommitmentApplicabilityObject-C-004-M",
-          "CCT-ContractCommitmentApplicabilityObject-C-005-M",
-          "CCT-ContractCommitmentApplicabilityObject-C-006-M",
-          "CCT-ContractCommitmentApplicabilityObject-C-007-M",
-          "CCT-ContractCommitmentApplicabilityObject-C-008-O",
-          "CCT-ContractCommitmentApplicabilityObject-C-009-O",
-          "CCT-ContractCommitmentApplicabilityObject-C-010-C",
-          "CCT-ContractCommitmentApplicabilityObject-C-011-C"
+          "CCT-ContractCommitmentApplicabilityObject-O-001-M",
+          "CCT-ContractCommitmentApplicabilityObject-O-002-C",
+          "CCT-ContractCommitmentApplicabilityObject-O-003-C",
+          "CCT-ContractCommitmentApplicabilityObject-O-004-M",
+          "CCT-ContractCommitmentApplicabilityObject-O-005-M",
+          "CCT-ContractCommitmentApplicabilityObject-O-006-M",
+          "CCT-ContractCommitmentApplicabilityObject-O-007-M",
+          "CCT-ContractCommitmentApplicabilityObject-O-008-O",
+          "CCT-ContractCommitmentApplicabilityObject-O-009-O",
+          "CCT-ContractCommitmentApplicabilityObject-O-010-C",
+          "CCT-ContractCommitmentApplicabilityObject-O-011-C"
         ]
       }
     },
-    "CCT-ContractCommitmentApplicabilityObject-C-001-M": {
+    "CCT-ContractCommitmentApplicabilityObject-O-001-M": {
       "Function": "Format",
       "Reference": "ContractCommitmentApplicabilityObject",
       "EntityType": "Object",
@@ -45,7 +44,6 @@
       "Notes": "",
       "ModelVersionIntroduced": "1.4",
       "Status": "Active",
-      "ModelVersionRemoved": "",
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "Order": 10,
@@ -60,7 +58,7 @@
         "Dependencies": []
       }
     },
-    "CCT-ContractCommitmentApplicabilityObject-C-002-C": {
+    "CCT-ContractCommitmentApplicabilityObject-O-002-C": {
       "Function": "Validation",
       "Reference": "ContractCommitmentApplicabilityObject",
       "EntityType": "Object",
@@ -69,7 +67,6 @@
       "Notes": "",
       "ModelVersionIntroduced": "1.4",
       "Status": "Active",
-      "ModelVersionRemoved": "",
       "ApplicabilityCriteria": [],
       "Type": "Dynamic",
       "Order": 20,
@@ -77,14 +74,14 @@
       "DatasetId": "ContractCommitment",
       "DatasetName": "Contract Commitment",
       "ValidationCriteria": {
-        "MustSatisfy": "ContractCommitmentApplicabilityObject.IsGlobalScope MUST be `true` if the *contract commitment* applies to all entities.",
+        "MustSatisfy": "ContractCommitmentApplicabilityObject.IsGlobalScope MUST be `true` when the *contract commitment* applies to all entities.",
         "Keyword": "MUST",
         "Requirement": {},
         "Condition": [],
         "Dependencies": []
       }
     },
-    "CCT-ContractCommitmentApplicabilityObject-C-003-C": {
+    "CCT-ContractCommitmentApplicabilityObject-O-003-C": {
       "Function": "Validation",
       "Reference": "ContractCommitmentApplicabilityObject",
       "EntityType": "Object",
@@ -93,7 +90,6 @@
       "Notes": "",
       "ModelVersionIntroduced": "1.4",
       "Status": "Active",
-      "ModelVersionRemoved": "",
       "ApplicabilityCriteria": [],
       "Type": "Dynamic",
       "Order": 30,
@@ -101,14 +97,14 @@
       "DatasetId": "ContractCommitment",
       "DatasetName": "Contract Commitment",
       "ValidationCriteria": {
-        "MustSatisfy": "ContractCommitmentApplicabilityObject.IsComplexScope MUST be `true` if the *contract commitment's* applicability logic exceeds schema capabilities.",
+        "MustSatisfy": "ContractCommitmentApplicabilityObject.IsComplexScope MUST be `true` when the *contract commitment's* applicability logic exceeds schema capabilities.",
         "Keyword": "MUST",
         "Requirement": {},
         "Condition": [],
         "Dependencies": []
       }
     },
-    "CCT-ContractCommitmentApplicabilityObject-C-004-M": {
+    "CCT-ContractCommitmentApplicabilityObject-O-004-M": {
       "Function": "Validation",
       "Reference": "ContractCommitmentApplicabilityObject",
       "EntityType": "Object",
@@ -117,7 +113,6 @@
       "Notes": "",
       "ModelVersionIntroduced": "1.4",
       "Status": "Active",
-      "ModelVersionRemoved": "",
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "Order": 40,
@@ -132,7 +127,7 @@
         "Dependencies": []
       }
     },
-    "CCT-ContractCommitmentApplicabilityObject-C-005-M": {
+    "CCT-ContractCommitmentApplicabilityObject-O-005-M": {
       "Function": "Validation",
       "Reference": "ContractCommitmentApplicabilityObject",
       "EntityType": "Object",
@@ -141,7 +136,6 @@
       "Notes": "",
       "ModelVersionIntroduced": "1.4",
       "Status": "Active",
-      "ModelVersionRemoved": "",
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "Order": 50,
@@ -156,7 +150,7 @@
         "Dependencies": []
       }
     },
-    "CCT-ContractCommitmentApplicabilityObject-C-006-M": {
+    "CCT-ContractCommitmentApplicabilityObject-O-006-M": {
       "Function": "Validation",
       "Reference": "ContractCommitmentApplicabilityObject",
       "EntityType": "Object",
@@ -165,7 +159,6 @@
       "Notes": "",
       "ModelVersionIntroduced": "1.4",
       "Status": "Active",
-      "ModelVersionRemoved": "",
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "Order": 60,
@@ -173,14 +166,14 @@
       "DatasetId": "ContractCommitment",
       "DatasetName": "Contract Commitment",
       "ValidationCriteria": {
-        "MustSatisfy": "ContractCommitmentApplicabilityObject.Inclusions[\\*].Applicability.Cost MUST represent the fraction of an eligible charge's cost that is applicable to the commitment (0.0 to 1.0).",
+        "MustSatisfy": "ContractCommitmentApplicabilityObject.Inclusions[*].Applicability.Cost MUST represent the fraction of an eligible charge's cost that is applicable to the commitment (0.0 to 1.0).",
         "Keyword": "MUST",
         "Requirement": {},
         "Condition": [],
         "Dependencies": []
       }
     },
-    "CCT-ContractCommitmentApplicabilityObject-C-007-M": {
+    "CCT-ContractCommitmentApplicabilityObject-O-007-M": {
       "Function": "Validation",
       "Reference": "ContractCommitmentApplicabilityObject",
       "EntityType": "Object",
@@ -189,7 +182,6 @@
       "Notes": "",
       "ModelVersionIntroduced": "1.4",
       "Status": "Active",
-      "ModelVersionRemoved": "",
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "Order": 70,
@@ -197,14 +189,14 @@
       "DatasetId": "ContractCommitment",
       "DatasetName": "Contract Commitment",
       "ValidationCriteria": {
-        "MustSatisfy": "ContractCommitmentApplicabilityObject.Inclusions[\\*].Applicability.Usage MUST represent the fraction of an eligible charge's usage that is applicable to the commitment (0.0 to 1.0).",
+        "MustSatisfy": "ContractCommitmentApplicabilityObject.Inclusions[*].Applicability.Usage MUST represent the fraction of an eligible charge's usage that is applicable to the commitment (0.0 to 1.0).",
         "Keyword": "MUST",
         "Requirement": {},
         "Condition": [],
         "Dependencies": []
       }
     },
-    "CCT-ContractCommitmentApplicabilityObject-C-008-O": {
+    "CCT-ContractCommitmentApplicabilityObject-O-008-O": {
       "Function": "Validation",
       "Reference": "ContractCommitmentApplicabilityObject",
       "EntityType": "Object",
@@ -213,7 +205,6 @@
       "Notes": "",
       "ModelVersionIntroduced": "1.4",
       "Status": "Active",
-      "ModelVersionRemoved": "",
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "Order": 80,
@@ -221,14 +212,14 @@
       "DatasetId": "ContractCommitment",
       "DatasetName": "Contract Commitment",
       "ValidationCriteria": {
-        "MustSatisfy": "ContractCommitmentApplicabilityObject.Inclusions[\\*].Dimension SHOULD represent a column in Cost and Usage.",
+        "MustSatisfy": "ContractCommitmentApplicabilityObject.Inclusions[*].Dimension SHOULD represent a column in Cost and Usage.",
         "Keyword": "SHOULD",
         "Requirement": {},
         "Condition": [],
         "Dependencies": []
       }
     },
-    "CCT-ContractCommitmentApplicabilityObject-C-009-O": {
+    "CCT-ContractCommitmentApplicabilityObject-O-009-O": {
       "Function": "Validation",
       "Reference": "ContractCommitmentApplicabilityObject",
       "EntityType": "Object",
@@ -237,7 +228,6 @@
       "Notes": "",
       "ModelVersionIntroduced": "1.4",
       "Status": "Active",
-      "ModelVersionRemoved": "",
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "Order": 90,
@@ -245,14 +235,14 @@
       "DatasetId": "ContractCommitment",
       "DatasetName": "Contract Commitment",
       "ValidationCriteria": {
-        "MustSatisfy": "ContractCommitmentApplicabilityObject.Exclusions[\\*].Dimension SHOULD represent a column in Cost and Usage.",
+        "MustSatisfy": "ContractCommitmentApplicabilityObject.Exclusions[*].Dimension SHOULD represent a column in Cost and Usage.",
         "Keyword": "SHOULD",
         "Requirement": {},
         "Condition": [],
         "Dependencies": []
       }
     },
-    "CCT-ContractCommitmentApplicabilityObject-C-010-C": {
+    "CCT-ContractCommitmentApplicabilityObject-O-010-C": {
       "Function": "Validation",
       "Reference": "ContractCommitmentApplicabilityObject",
       "EntityType": "Object",
@@ -261,7 +251,6 @@
       "Notes": "",
       "ModelVersionIntroduced": "1.4",
       "Status": "Active",
-      "ModelVersionRemoved": "",
       "ApplicabilityCriteria": [],
       "Type": "Dynamic",
       "Order": 100,
@@ -269,14 +258,14 @@
       "DatasetId": "ContractCommitment",
       "DatasetName": "Contract Commitment",
       "ValidationCriteria": {
-        "MustSatisfy": "ContractCommitmentApplicabilityObject.Inclusions[\\*].Values MUST contain only the single string \"*\" if the wildcard is present.",
+        "MustSatisfy": "ContractCommitmentApplicabilityObject.Inclusions[*].Values MUST contain only the single string \"*\" when the wildcard is present.",
         "Keyword": "MUST",
         "Requirement": {},
         "Condition": [],
         "Dependencies": []
       }
     },
-    "CCT-ContractCommitmentApplicabilityObject-C-011-C": {
+    "CCT-ContractCommitmentApplicabilityObject-O-011-C": {
       "Function": "Validation",
       "Reference": "ContractCommitmentApplicabilityObject",
       "EntityType": "Object",
@@ -285,7 +274,6 @@
       "Notes": "",
       "ModelVersionIntroduced": "1.4",
       "Status": "Active",
-      "ModelVersionRemoved": "",
       "ApplicabilityCriteria": [],
       "Type": "Dynamic",
       "Order": 110,
@@ -293,7 +281,7 @@
       "DatasetId": "ContractCommitment",
       "DatasetName": "Contract Commitment",
       "ValidationCriteria": {
-        "MustSatisfy": "ContractCommitmentApplicabilityObject.Exclusions[\\*].Values MUST contain only the single string \"*\" if the wildcard is present.",
+        "MustSatisfy": "ContractCommitmentApplicabilityObject.Exclusions[*].Values MUST contain only the single string \"*\" when the wildcard is present.",
         "Keyword": "MUST",
         "Requirement": {},
         "Condition": [],
