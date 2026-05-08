@@ -113,16 +113,28 @@ A count-based unit is a noun representing a discrete number of items, events, or
 
 The table below lists recommended names for count-based base units.
 
-| Count-based Unit (Singular) | Count-based Unit (Plural) |
-|:----------------------------|:--------------------------|
-| Count                       | Counts                    |
-| Unit                        | Units                     |
-| Request                     | Requests                  |
-| Token                       | Tokens                    |
-| Connection                  | Connections               |
-| Certificate                 | Certificates              |
-| Domain                      | Domains                   |
-| Core                        | Cores                     |
+### Recommended Count-Based Unit Names
+
+A count-based unit is a noun representing a discrete number of items, events, or actions. For example, a count-based unit can represent the number of requests, instances, tokens, or connections.
+
+The table below lists recommended names for count-based base units.
+
+| Count-based Unit (Singular) | Count-based Unit (Plural) | Description |
+|:----------------------------|:--------------------------|:------------|
+| Count                       | Counts                    | Generic tally of items or occurrences. |
+| Unit                        | Units                     | Generic standardized measure of consumption. |
+| Request                     | Requests                  | API or service invocations. |
+| Token                       | Tokens                    | Text or data fragments processed by models. |
+| Connection                  | Connections               | Active network or database links. |
+| Certificate                 | Certificates              | Issued digital security certificates. |
+| Domain                      | Domains                   | Registered web or network domains. |
+| Core                        | Cores                     | Allocated compute processing cores. |
+| Character                   | Characters                | Text processing length (e.g., translation, text-to-speech). |
+| Image                       | Images                    | Generated or processed visual media. |
+| Job                         | Jobs                      | Asynchronous or batch processing tasks (e.g., fine-tuning). |
+| Message                     | Messages                  | Conversational turns or queue items. |
+| Page                        | Pages                     | Document pages analyzed or processed. |
+| Session                     | Sessions                  | Continuous interactive usage periods (e.g., agentic workflows). |
 
 *Note: If a count-based base unit is not covered by the recommended values, a new value may be used as long as it is capitalized.*
 
