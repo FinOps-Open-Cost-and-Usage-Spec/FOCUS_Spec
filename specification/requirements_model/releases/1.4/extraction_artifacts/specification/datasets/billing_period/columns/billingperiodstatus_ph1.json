@@ -145,7 +145,7 @@
     {
       "temp_id": "R006",
       "order": 6,
-      "text": "BillingPeriodStatus MUST NOT transition from \"Closed\" to \"Open\" unless explicitly requested or approved by the customer.",
+      "text": "BillingPeriodStatus MUST NOT be \"Open\" following a previous status of \"Closed\", except when explicitly requested or approved by the customer.",
       "keyword": "MUST NOT",
       "role": "requirement",
       "section_path": [
@@ -176,7 +176,7 @@
         "class": "requirements_list_intro",
         "confidence": "high",
         "section_path": [
-          "Implementation Context"
+          "Implementation Guidance"
         ],
         "block": {
           "block_type": "paragraph",
@@ -196,7 +196,7 @@
     ],
     "index": {
       "by_section_path": {
-        "Implementation Context": [
+        "Implementation Guidance": [
           "LI024"
         ]
       },
