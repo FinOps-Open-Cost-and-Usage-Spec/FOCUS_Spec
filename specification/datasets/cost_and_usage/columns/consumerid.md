@@ -4,7 +4,7 @@ A Consumer ID is an identifier representing the [*consumer*](#glossary:consumer)
 
 Consumer ID works in conjunction with [Principal ID](#datasets.costandusage.principalid) to resolve asymmetric identity granularity. While Principal ID captures the authenticated system or service role that initiated a request at the infrastructure layer, Consumer ID captures the logical downstream actor at the application layer.
 
-> Note: While Consumer ID is designed to capture opaque identifiers rather than plain-text names or email addresses, these values may still be classified as Personal Data or Personally Identifiable Information (PII) under privacy frameworks such as GDPR or CCPA (e.g., as pseudonymized data). Organizations must ensure that the ingestion, storage, and processing of datasets containing this column comply with their internal data privacy, security, and retention policies.
+> Note: While Consumer ID is designed to capture opaque identifiers rather than plain-text names or email addresses, these values may still be classified as Personal Data or Personally Identifiable Information (PII) under privacy frameworks such as GDPR or CCPA (e.g., as pseudonymized data). Organizations need to separately ensure that the ingestion, storage, and processing of datasets containing this column comply with their internal data privacy, security, and retention policies.
 
 ## Requirements
 
