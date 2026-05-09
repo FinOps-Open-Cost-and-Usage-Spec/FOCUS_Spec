@@ -126,7 +126,7 @@
     "DatasetId": "ContractCommitment",
     "DatasetName": "Contract Commitment",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractCommitmentApplicabilityObject.IsGlobalScope MUST be true if the contract commitment applies to all entities.",
+      "MustSatisfy": "ContractCommitmentApplicabilityObject.IsGlobalScope MUST be true when the contract commitment applies to all entities.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -149,7 +149,7 @@
     "DatasetId": "ContractCommitment",
     "DatasetName": "Contract Commitment",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractCommitmentApplicabilityObject.IsComplexScope MUST be true if the contract commitment's applicability logic exceeds schema capabilities.",
+      "MustSatisfy": "ContractCommitmentApplicabilityObject.IsComplexScope MUST be true when the contract commitment's applicability logic exceeds schema capabilities.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -310,7 +310,7 @@
     "DatasetId": "ContractCommitment",
     "DatasetName": "Contract Commitment",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractCommitmentApplicabilityObject.Inclusions[*].Values MUST contain only the single string \"*\" if the wildcard is present.",
+      "MustSatisfy": "ContractCommitmentApplicabilityObject.Inclusions[*].Values MUST contain only the single string \"*\" when the wildcard is present.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -333,7 +333,7 @@
     "DatasetId": "ContractCommitment",
     "DatasetName": "Contract Commitment",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractCommitmentApplicabilityObject.Exclusions[*].Values MUST contain only the single string \"*\" if the wildcard is present.",
+      "MustSatisfy": "ContractCommitmentApplicabilityObject.Exclusions[*].Values MUST contain only the single string \"*\" when the wildcard is present.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
