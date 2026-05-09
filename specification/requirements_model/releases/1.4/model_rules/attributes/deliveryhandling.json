@@ -12,7 +12,7 @@
         "Type": "Static",
         "Order": 0,
         "ValidationCriteria": {
-            "MustSatisfy": "DeliveryHandling MUST adhere to the following requirements:",
+            "MustSatisfy": "Dataset conforming to DeliveryHandling attributes MUST adhere to the following requirements:",
             "Keyword": "MUST",
             "Requirement": {
                 "CheckFunction": "AND",
