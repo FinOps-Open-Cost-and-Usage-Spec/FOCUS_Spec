@@ -13,9 +13,11 @@ Datasets are sorted first by Feature Level (i.e., Mandatory, then Conditional), 
 | [Contract Commitment](#datasets.contractcommitment) | Reference    | Conditional   | Describes the terms of contracts agreed between a service provider and a customer. |
 | [Invoice Detail](#datasets.invoicedetail)           | Transaction  | Conditional   | Describes the cost and usage issued on invoices. |
 
+## Requirements<!--SkipTOC-->
+
 FOCUS data model MUST adhere to the following requirements:
 
 * FOCUS data model MUST include [CostAndUsage](#datasets.costandusage).
 * FOCUS data model MUST include [BillingPeriod](#datasets.billingperiod) when the invoice issuer supports payable invoices.
-* FOCUS data model MUST include [ContractCommitment](#datasets.contractcommitment) when the service provider supports *contract commitments*.
+* FOCUS data model MUST include [ContractCommitment](#datasets.contractcommitment) when the service provider supports [*contract commitments*](#glossary:contract-commitment).
 * FOCUS data model MUST include [InvoiceDetail](#datasets.invoicedetail) when the invoice issuer supports payable invoices.
