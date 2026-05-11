@@ -120,14 +120,14 @@ The table below lists recommended names for count-based base units.
 | Request                     | Requests                  | API or service invocations. |
 | Token                       | Tokens                    | Text or data fragments processed by models. |
 | Connection                  | Connections               | Active network or database links. |
-| Certificate                 | Certificates              | Issued digital security certificates. |
-| Domain                      | Domains                   | Registered web or network domains. |
-| Core                        | Cores                     | Allocated compute processing cores. |
+| Certificate                 | Certificates              | Issued digital security credentials for authentication or encryption. |
+| Domain                      | Domains                   | Registered web or network namespaces. |
+| Core                        | Cores                     | Allocated processing units within a compute resource. |
 | Character                   | Characters                | Text processing length (e.g., translation, text-to-speech). |
 | Image                       | Images                    | Generated or processed visual media. |
 | Job                         | Jobs                      | Asynchronous or batch processing tasks (e.g., fine-tuning). |
 | Message                     | Messages                  | Conversational turns or queue items. |
-| Page                        | Pages                     | Document pages analyzed or processed. |
+| Page                        | Pages                     | Discrete document units analyzed or processed. |
 | Session                     | Sessions                  | Continuous interactive usage periods (e.g., agentic workflows). |
 
 *Note: If a count-based base unit is not covered by the recommended values, a new value may be used as long as it is capitalized.*
