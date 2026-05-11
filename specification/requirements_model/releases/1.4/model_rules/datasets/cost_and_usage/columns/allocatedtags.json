@@ -45,10 +45,6 @@
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-AllocatedTags-C-010-M"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-AllocatedTags-C-013-C"
           }
         ]
       },
@@ -60,8 +56,7 @@
         "CAU-AllocatedTags-C-002-M",
         "CAU-AllocatedTags-C-005-C",
         "CAU-CostAndUsage-D-073-C",
-        "CAU-AllocatedTags-C-010-M",
-        "CAU-AllocatedTags-C-013-C"
+        "CAU-AllocatedTags-C-010-M"
       ]
     }
   },
@@ -317,7 +312,7 @@
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Tag values MUST match the provided values unless true (boolean) is applied to valueless tags.",
-      "Keyword": "MUST NOT",
+      "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []
@@ -416,9 +411,9 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
     "ModelVersionRemoved": "1.4",
-    "Status": "Active",
+    "Status": "Removed",
     "ApplicabilityCriteria": [],
-    "Order": 150,
+    "Order": -1,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
@@ -450,9 +445,9 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
     "ModelVersionRemoved": "1.4",
-    "Status": "Active",
+    "Status": "Removed",
     "ApplicabilityCriteria": [],
-    "Order": 160,
+    "Order": -1,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
@@ -526,7 +521,7 @@
       "Dependencies": []
     }
   },
-   "CAU-AllocatedTags-C-017-M": {
+  "CAU-AllocatedTags-C-017-M": {
     "Function": "Validation",
     "Reference": "AllocatedTags",
     "EntityType": "Column",
@@ -548,5 +543,5 @@
       "Condition": {},
       "Dependencies": []
     }
-  } 
+  }
 }

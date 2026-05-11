@@ -354,31 +354,6 @@
       "Dependencies": []
     }
   },
-  "CAU-Tags-C-020-M": {
-    "Function": "Validation",
-    "Reference": "Tags",
-    "EntityType": "Column",
-    "EntityName": "Tags",
-    "EntityId": "Tags",
-    "Notes": "",
-    "ModelVersionIntroduced": "1.4",
-    "Status": "Active",
-    "ApplicabilityCriteria": [],
-    "Order": 190,
-    "DatasetType": "CAU",
-    "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost and Usage",
-    "Type": "Static",
-    "ValidationCriteria": {
-      "MustSatisfy": "Tag values MUST match the provided values unless true (boolean) is applied to valueless tags.",
-      "Keyword": "MUST",
-      "Requirement": {
-
-      },
-      "Condition": {},
-      "Dependencies": []
-    }
-  },
   "CAU-Tags-C-011-M": {
     "Function": "Composite",
     "Reference": "Tags",
@@ -569,7 +544,7 @@
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Reserved tag key prefixes MUST be prevented from being used as prefixes for any user-defined tag keys within a prefixless user-defined tag scheme.",
-      "Keyword": "MUST NOT",
+      "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []
@@ -632,6 +607,29 @@
         "CheckFunction": "FormatString",
         "ColumnName": "Tags"
       },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-Tags-C-020-C": {
+    "Function": "Validation",
+    "Reference": "Tags",
+    "EntityType": "Column",
+    "EntityName": "Tags",
+    "EntityId": "Tags",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 190,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Tag values MUST match the provided values unless true (boolean) is applied to valueless tags.",
+      "Keyword": "MUST",
+      "Requirement": {},
       "Condition": {},
       "Dependencies": []
     }
@@ -719,5 +717,5 @@
       "Condition": {},
       "Dependencies": []
     }
-  }  
+  }
 }
