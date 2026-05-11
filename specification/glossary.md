@@ -294,7 +294,7 @@ A pricing construct that encompasses SKU properties (e.g., functionality and tec
 
 <a name="glossary:source-operating-model"><b>Source Operating Model</b></a>
 
-A system of record and its associated logic, processes, and entities—encompassing both the original provider-sourced data and any subsequent metadata enrichment—used by a data generator to produce a FOCUS-compliant dataset. The source operating model represents the verifiable state of capabilities and information available to the generator at the time of dataset creation.
+A system of record and its associated logic, processes, and entities - encompassing both the original provider-sourced data and any subsequent metadata enrichment - used by a data generator to produce a FOCUS-compliant dataset. The source operating model represents the verifiable state of capabilities and information available to the generator at the time of dataset creation.
 
 <a name="glossary:sub-account"><b>Sub Account</b></a>
 
