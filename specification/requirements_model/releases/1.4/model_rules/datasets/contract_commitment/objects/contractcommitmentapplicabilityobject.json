@@ -58,11 +58,11 @@
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CCT-ContractCommitmentApplicabilityObject-O-011-M"
+            "ModelRuleId": "CCT-ContractCommitmentApplicabilityObject-O-011-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CCT-ContractCommitmentApplicabilityObject-O-012-M"
+            "ModelRuleId": "CCT-ContractCommitmentApplicabilityObject-O-012-C"
           }
         ]
       },
@@ -77,8 +77,8 @@
         "CCT-ContractCommitmentApplicabilityObject-O-008-M",
         "CCT-ContractCommitmentApplicabilityObject-O-009-O",
         "CCT-ContractCommitmentApplicabilityObject-O-010-O",
-        "CCT-ContractCommitmentApplicabilityObject-O-011-M",
-        "CCT-ContractCommitmentApplicabilityObject-O-012-M"
+        "CCT-ContractCommitmentApplicabilityObject-O-011-C",
+        "CCT-ContractCommitmentApplicabilityObject-O-012-C"
       ]
     }
   },
@@ -294,7 +294,7 @@
       "Dependencies": []
     }
   },
-  "CCT-ContractCommitmentApplicabilityObject-O-011-M": {
+  "CCT-ContractCommitmentApplicabilityObject-O-011-C": {
     "Function": "Validation",
     "Reference": "ContractCommitmentApplicabilityObject",
     "EntityType": "Object",
@@ -317,7 +317,7 @@
       "Dependencies": []
     }
   },
-  "CCT-ContractCommitmentApplicabilityObject-O-012-M": {
+  "CCT-ContractCommitmentApplicabilityObject-O-012-C": {
     "Function": "Validation",
     "Reference": "ContractCommitmentApplicabilityObject",
     "EntityType": "Object",
