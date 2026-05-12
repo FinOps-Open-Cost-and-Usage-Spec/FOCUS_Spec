@@ -270,7 +270,7 @@ A comprehensive list of prices offered by a service provider.
 
 <a name="glossary:principal"><b>Principal</b></a>
 
-An authenticated entity (e.g., service account, access role) that directly initiates a request to a service provider to use or manage a resource or service. It represents the infrastructure-layer actor that authorized a charge, which may be distinct from the downstream [*consumer*](#glossary:consumer) that utilizes the service.
+An authenticated entity (e.g., user, service account, application credential) that directly initiates a request to a service provider to use or manage a resource or service. It represents the infrastructure-layer actor that authorized a charge, which may be distinct from the downstream [*consumer*](#glossary:consumer) that utilizes the service.
 
 <a name="glossary:service-provider"><b>Service Provider</b></a>
 
