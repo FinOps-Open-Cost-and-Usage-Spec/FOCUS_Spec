@@ -542,7 +542,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "User-defined tag keys in all user-defined *tag schemes* MUST include a predetermined, data generator-specified tag key prefix that is unique to each corresponding user-defined *tag scheme* when the data generator has more than one user-defined *tag scheme*.",
+      "MustSatisfy": "User-defined tag keys in all user-defined tag schemes MUST include a predetermined, data generator-specified tag key prefix that is unique to each corresponding user-defined tag scheme when the data generator has more than one user-defined tag scheme.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
