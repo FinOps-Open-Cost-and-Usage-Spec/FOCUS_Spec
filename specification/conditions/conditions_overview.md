@@ -6,7 +6,7 @@ Conditions represent verifiable states of a [operating model](#glossary:operatin
 
 Conditions are sorted alphabetically by name.
 
-| Condition | Presence Type | Description |
+| Condition | Category | Description |
 | ------------------ | ------------- | ----------- |
 | [Baseline](#conditions.baseline) | General | All operating models encompass these foundational attributes. |
 | [Defines Multiple Billing Account Types](#conditions.definesmultiplebillingaccounttypes) | Account | Operating model defines more than one possible BillingAccountType value. |
