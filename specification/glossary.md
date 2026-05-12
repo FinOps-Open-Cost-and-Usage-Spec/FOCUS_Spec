@@ -91,7 +91,7 @@ A service-provider offering that allows a customer to enter into a [*commitment*
 
 <a name="glossary:consumer"><b>Consumer</b></a>
 
-An entity (e.g., end-user, tenant, application, autonomous agent) that utilizes a resource or service. This is an application-layer actor benefiting from the usage, which may be distinct from the [*principal*](#glossary:principal) that initiated the request.
+An authenticated actor (e.g., end-user, tenant, application, autonomous agent) that utilizes a [*resource*](#glossary:resource) or [*service*](#glossary:service). This is an application-layer actor benefiting from the usage, which may be distinct from the infrastructure-layer [*principal*](#glossary:principal) that initiated the request.
 
 <a name="glossary:contract"><b>Contract</b></a>
 
@@ -270,7 +270,7 @@ A comprehensive list of prices offered by a service provider.
 
 <a name="glossary:principal"><b>Principal</b></a>
 
-An authenticated entity (e.g., user, service account, application credential) that directly initiates a request to a service provider to use or manage a resource or service. It represents the infrastructure-layer actor that authorized a charge, which may be distinct from the downstream [*consumer*](#glossary:consumer) that utilizes the service.
+An authenticated actor (e.g., user, service account, application credential) that directly initiates a request to a [*service provider*](#glossary:service-provider) to use or manage a [*resource*](#glossary:resource) or [*service*](#glossary:service). It represents the infrastructure-layer actor that authorized a charge, which may be distinct from the downstream [*consumer*](#glossary:consumer) that utilizes the *resource* or *service*.
 
 <a name="glossary:service-provider"><b>Service Provider</b></a>
 
