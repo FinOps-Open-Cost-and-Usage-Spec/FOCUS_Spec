@@ -45,6 +45,10 @@
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-AllocatedTags-C-010-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedTags-C-017-C"
           }
         ]
       },
@@ -56,7 +60,8 @@
         "CAU-AllocatedTags-C-002-M",
         "CAU-AllocatedTags-C-005-C",
         "CAU-CostAndUsage-D-073-C",
-        "CAU-AllocatedTags-C-010-M"
+        "CAU-AllocatedTags-C-010-M",
+        "CAU-AllocatedTags-C-017-C"
       ]
     }
   },
@@ -521,7 +526,7 @@
       "Dependencies": []
     }
   },
-  "CAU-AllocatedTags-C-017-M": {
+  "CAU-AllocatedTags-C-017-C": {
     "Function": "Validation",
     "Reference": "AllocatedTags",
     "EntityType": "Column",
