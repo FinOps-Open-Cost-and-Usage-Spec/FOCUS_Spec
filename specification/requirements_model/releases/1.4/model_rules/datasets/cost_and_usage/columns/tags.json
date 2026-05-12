@@ -171,6 +171,10 @@
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-Tags-C-010-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-Tags-C-020-C"
           }
         ]
       },
@@ -315,9 +319,9 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "ModelVersionRemoved": "1.4",
-    "Status": "Active",
+    "Status": "Removed",
     "ApplicabilityCriteria": [],
-    "Order": 100,
+    "Order": -1,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
@@ -339,9 +343,9 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "ModelVersionRemoved": "1.4",
-    "Status": "Active",
+    "Status": "Removed",
     "ApplicabilityCriteria": [],
-    "Order": 110,
+    "Order": -1,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
