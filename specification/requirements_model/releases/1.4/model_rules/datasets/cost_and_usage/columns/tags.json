@@ -166,14 +166,6 @@
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-Tags-C-009-O"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-Tags-C-010-C"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-Tags-C-020-C"
           }
         ]
@@ -189,8 +181,6 @@
         "CAU-Tags-C-006-O",
         "CAU-Tags-C-007-O",
         "CAU-Tags-C-008-M",
-        "CAU-Tags-C-009-O",
-        "CAU-Tags-C-010-C",
         "CAU-Tags-C-020-C"
       ]
     }
