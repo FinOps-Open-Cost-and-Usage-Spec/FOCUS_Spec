@@ -91,11 +91,11 @@ CostAndUsage MUST adhere to the following requirements:
 
 * CostAndUsage MUST be present.
 * CostAndUsage column presence MUST adhere to the following requirements:
-  * CostAndUsage SHOULD include [AllocatedMethodDetails](#datasets.costandusage.allocatedmethoddetails) when the [source operating model](#glossary:source-operating-model) [includes data generator-calculated split cost allocation](#presenceconditions.includesdatageneratorcalculatedsplitcostallocation).
-  * CostAndUsage MUST include [AllocatedMethodId](#datasets.costandusage.allocatedmethodid) when the *source operating model* [includes data generator-calculated split cost allocation](#presenceconditions.includesdatageneratorcalculatedsplitcostallocation).
-  * CostAndUsage MUST include [AllocatedResourceId](#datasets.costandusage.allocatedresourceid) when the *source operating model* [includes data generator-calculated split cost allocation](#presenceconditions.includesdatageneratorcalculatedsplitcostallocation).
-  * CostAndUsage MUST include [AllocatedResourceName](#datasets.costandusage.allocatedresourcename) when the *source operating model* [includes data generator-calculated split cost allocation](#presenceconditions.includesdatageneratorcalculatedsplitcostallocation).
-  * CostAndUsage MUST include [AllocatedTags](#datasets.costandusage.allocatedtags) when the *source operating model* [includes data generator-calculated split cost allocation](#presenceconditions.includesdatageneratorcalculatedsplitcostallocation).
+  * CostAndUsage SHOULD include [AllocatedMethodDetails](#datasets.costandusage.allocatedmethoddetails) when the [source operating model](#glossary:source-operating-model) [includes split cost allocation](#presenceconditions.includessplitcostallocation).
+  * CostAndUsage MUST include [AllocatedMethodId](#datasets.costandusage.allocatedmethodid) when the *source operating model* [includes split cost allocation](#presenceconditions.includessplitcostallocation).
+  * CostAndUsage MUST include [AllocatedResourceId](#datasets.costandusage.allocatedresourceid) when the *source operating model* [includes split cost allocation](#presenceconditions.includessplitcostallocation).
+  * CostAndUsage MUST include [AllocatedResourceName](#datasets.costandusage.allocatedresourcename) when the *source operating model* [includes split cost allocation](#presenceconditions.includessplitcostallocation).
+  * CostAndUsage MUST include [AllocatedTags](#datasets.costandusage.allocatedtags) when the *source operating model* [includes split cost allocation](#presenceconditions.includessplitcostallocation).
   * CostAndUsage SHOULD include [AvailabilityZone](#datasets.costandusage.availabilityzone) when the *source operating model* [includes availability zones](#presenceconditions.includesavailabilityzones).
   * CostAndUsage MUST include [BilledCost](#datasets.costandusage.billedcost).
   * CostAndUsage MUST include [BillingAccountId](#datasets.costandusage.billingaccountid).
@@ -172,15 +172,15 @@ CostAndUsage MUST adhere to the following requirements:
 * CostAndUsage MUST conform to [DeliveryHandling](#attributes.deliveryhandling) requirements.
 * CostAndUsage MUST include *charges* representing unused portions of a [*commitment*](#glossary:commitment) when the *commitment* is not fully utilized.
 * CostAndUsage MUST include separate *charges* representing discounted and non-discounted portions when a discount applies to only a portion of the originally incurred *charge*.
-* When the *source operating model* [includes data generator-calculated split cost allocation](#presenceconditions.includesdatageneratorcalculatedsplitcostallocation), CostAndUsage MUST adhere to the following requirements:
-  * CostAndUsage MUST have its data generator-calculated split cost allocation method documented and accessible to practitioners.
-  * CostAndUsage SHOULD offer data generator-calculated split cost allocation on an opt-in basis.
-  * CostAndUsage MAY contain records for concepts not related to resource usage, if it aligns with the documented data generator-calculated split cost allocation method.
-  * CostAndUsage MAY contain records for unused or unallocated usage from the *origin charge* as separate *allocated charges*, if it aligns with the documented data generator-calculated split cost allocation method.
-  * CostAndUsage MAY contain *allocated charges* with apportioned costs for unused or unallocated usage, if it aligns with the documented data generator-calculated split cost allocation method.
+* When the *source operating model* [includes split cost allocation](#presenceconditions.includessplitcostallocation), CostAndUsage MUST adhere to the following requirements:
+  * CostAndUsage MUST have its split cost allocation method documented and accessible to practitioners.
+  * CostAndUsage SHOULD offer split cost allocation on an opt-in basis.
+  * CostAndUsage MAY contain records for concepts not related to resource usage, if it aligns with the documented split cost allocation method.
+  * CostAndUsage MAY contain records for unused or unallocated usage from the *origin charge* as separate *allocated charges*, if it aligns with the documented split cost allocation method.
+  * CostAndUsage MAY contain *allocated charges* with apportioned costs for unused or unallocated usage, if it aligns with the documented split cost allocation method.
 * CostAndUsage SHOULD reflect all applied discounts in *charges* they pertain to.
 * CostAndUsage SHOULD NOT represent applied discounts as separate negating or offsetting *charges*.
-* CostAndUsage *FOCUS columns* MUST conform to [DataGeneratorCalculatedSplitCostAllocationHandling](#attributes.datagenerator-calculatedsplitcostallocationhandling) requirements when the *source operating model* [includes data generator-calculated split cost allocation](#presenceconditions.includesdatageneratorcalculatedsplitcostallocation).
+* CostAndUsage *FOCUS columns* MUST conform to [DataGeneratorCalculatedSplitCostAllocationHandling](#attributes.datagenerator-calculatedsplitcostallocationhandling) requirements when the *source operating model* [includes split cost allocation](#presenceconditions.includessplitcostallocation).
 * CostAndUsage *FOCUS columns* MUST conform to [FocusColumnHandling](#attributes.focuscolumnhandling) requirements.
 * CostAndUsage *FOCUS columns* MUST conform to [NullHandling](#attributes.nullhandling) requirements.
 * CostAndUsage *custom columns* MUST conform to [CustomColumnHandling](#attributes.customcolumnhandling) requirements.
