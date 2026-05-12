@@ -76,7 +76,7 @@
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ATT-DatasetCompleteness-A-005-O"
+            "ModelRuleId": "ATT-DatasetCompleteness-A-005-C"
           },
           {
             "CheckFunction": "CheckModelRule",
@@ -89,7 +89,7 @@
         "ATT-DatasetCompleteness-A-002-C",
         "ATT-DatasetCompleteness-A-003-M",
         "ATT-DatasetCompleteness-A-004-M",
-        "ATT-DatasetCompleteness-A-005-O",
+        "ATT-DatasetCompleteness-A-005-C",
         "ATT-DatasetCompleteness-A-006-O"
       ]
     }
@@ -154,7 +154,7 @@
       "Dependencies": []
     }
   },
-  "ATT-DatasetCompleteness-A-005-O": {
+  "ATT-DatasetCompleteness-A-005-C": {
     "Function": "Validation",
     "Reference": "DatasetCompleteness",
     "EntityType": "Attribute",
