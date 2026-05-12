@@ -1,14 +1,14 @@
 # Baseline
 
-The Baseline presence condition represents a foundational state encompassing the common data elements inherently present across all [source operating models](#glossary:source-operating-model).
+The Baseline condition represents a foundational state encompassing the common data elements inherently present across all [operating models](#glossary:operating-model).
 
 ## Requirements
 
 Baseline MUST adhere to the following requirements:
 
-* Baseline MUST evaluate to true for all *source operating models*.
+* Baseline MUST evaluate to true for all *operating models*.
 
-## Presence Condition ID
+## Condition ID
 
 Baseline
 
@@ -18,7 +18,7 @@ Baseline
 
 ## Description
 
-A foundational state representing the common attributes encompassed by all *source operating models*.
+A foundational state representing the common attributes encompassed by all *operating models*.
 
 ## Version Introduced
 

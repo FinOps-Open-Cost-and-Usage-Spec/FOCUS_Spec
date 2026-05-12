@@ -1,15 +1,15 @@
 # Includes Virtual Currency
 
-The Includes Virtual Currency presence condition represents a verifiable state where the [source operating model](#glossary:source-operating-model) includes prices in virtual currency.
+The Includes Virtual Currency condition represents a verifiable state where the [operating model](#glossary:operating-model) includes prices in virtual currency.
 
 ## Requirements
 
 IncludesVirtualCurrency MUST adhere to the following requirements:
 
-* IncludesVirtualCurrency MUST evaluate to true when the source operating model allows pricing or billing in a non-fiat virtual currency.
-* IncludesVirtualCurrency MUST evaluate to false when the source operating model uses only fiat currencies.
+* IncludesVirtualCurrency MUST evaluate to true when the operating model allows pricing or billing in a non-fiat virtual currency.
+* IncludesVirtualCurrency MUST evaluate to false when the operating model uses only fiat currencies.
 
-## Presence Condition ID
+## Condition ID
 
 IncludesVirtualCurrency
 
@@ -19,7 +19,7 @@ Includes Virtual Currency
 
 ## Description
 
-A verifiable state indicating whether the source operating model includes prices in virtual currency.
+A verifiable state indicating whether the operating model includes prices in virtual currency.
 
 ## Version Introduced
 

@@ -292,9 +292,9 @@ A construct composed of the common properties of a product offering associated w
 
 A pricing construct that encompasses SKU properties (e.g., functionality and technical specifications), along with core stable pricing details for a particular SKU, while excluding dynamic or negotiable pricing elements such as unit price amounts; currency (and related exchange rates); temporal validity (e.g., effective dates); and contract- or negotiation-specific factors (e.g., contract or account identifiers and negotiable discounts).
 
-<a name="glossary:source-operating-model"><b>Source Operating Model</b></a>
+<a name="glossary:operating-model"><b>Operating Model</b></a>
 
-A system of record and its associated logic, processes, and entities - encompassing both the original provider-sourced data and any subsequent metadata enrichment - used by a data generator to produce a FOCUS-compliant dataset. The source operating model represents the verifiable state of capabilities and information available to the generator at the time of dataset creation.
+A system of record and its associated logic, processes, and entities - encompassing both the original provider-sourced data and any subsequent metadata enrichment - used by a data generator to produce a FOCUS-compliant dataset. The operating model represents the verifiable state of capabilities and information available to the generator at the time of dataset creation.
 
 <a name="glossary:sub-account"><b>Sub Account</b></a>
 
