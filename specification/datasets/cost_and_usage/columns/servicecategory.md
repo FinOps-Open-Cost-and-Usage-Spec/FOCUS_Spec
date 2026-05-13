@@ -18,9 +18,9 @@ ServiceCategory MUST adhere to the following requirements:
 | Analytics                 | Data processing, analytics, and visualization capabilities.                                                                 |
 | Business Applications     | Business and productivity applications and services.                                                                        |
 | Compute                   | Computing infrastructure and services, including physical, virtual, containerized, serverless, or high-performance.         |
-| Data Providers            | Subscriptions to third-party data sets, market intelligence, or external API feeds.                                         |
 | Databases                 | Database platforms and services that allow for storage and querying of data.                                                |
 | Developer Tools           | Software development and delivery tools and services.                                                                       |
+| External Data             | Subscriptions to third-party data sets, market intelligence, or external API feeds.                                         |
 | Facilities                | Physical space, rent, power, cooling, and colocation services.                                                              |
 | Hardware                  | Physical IT equipment including servers, racks, switches, and storage arrays.                                               |
 | Identity                  | Identity and access management services.                                                                                    |
