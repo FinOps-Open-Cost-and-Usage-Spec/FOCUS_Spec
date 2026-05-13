@@ -22,7 +22,7 @@ DataModel MUST adhere to the following requirements:
 * DataModel MUST include [ContractCommitment](#datasets.contractcommitment) when the service provider supports [*contract commitments*](#glossary:contract-commitment).
 * DataModel MUST include [InvoiceDetail](#datasets.invoicedetail) when the invoice issuer supports payable invoices.
 
-## Dataset ID<!--SkipTOC-->
+## Data Model ID<!--SkipTOC-->
 
 DataModel
 
@@ -37,4 +37,3 @@ The datasets that comprise the FOCUS schema.
 ## Version Introduced<!--SkipTOC-->
 
 0.5
-
