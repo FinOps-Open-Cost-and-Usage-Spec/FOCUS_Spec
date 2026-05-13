@@ -1,8 +1,10 @@
 # Principal ID
 
-A Principal ID is an identifier representing the [*principal*](#glossary:principal): an authenticated actor (e.g., user, service account, application credential) that initiated the request to the [host provider](#datasets.costandusage.hostprovidername) or [service provider](#datasets.costandusage.serviceprovidername). The Principal ID is commonly used to audit which infrastructure actor authorized a [*charge*](#glossary:charge).
+A Principal ID is an identifier representing the [*principal*](#glossary:principal): an authenticated and authorized actor (e.g., user account, service account, application) that initiated a request for a [*resource*](#glossary:resource) or [*service*](#glossary:service).  The Principal ID is commonly used in auditing to determine which actor initiated a [*charge*](#glossary:charge).
 
-Principal ID works in conjunction with [Consumer ID](#datasets.costandusage.consumerid) to resolve asymmetric actor granularity. While Principal ID captures the authenticated actor that authorized the transaction with the provider, Consumer ID captures the logical downstream actor (e.g., end user, tenant) that ultimately utilized a [*resource*](#glossary:resource) or [*service*](#glossary:service) at the application layer. For scenarios demonstrating how these columns are populated across different technology categories, see [Examples: Actor Attribution](#appendix.examples:actorattribution).
+Principal ID is used in conjunction with [Consumer ID](#datasets.costandusage.consumerid) to resolve asymmetric actor granularity. While Principal ID represents the authenticated and authorized actor that initiated a request, Consumer ID represents the downstream actor that consumed the *resource* or *service*.
+
+For scenarios demonstrating how these columns are populated across different technology categories, see [Examples: Actor Attribution](#appendix.examples:actorattribution).
 
 > Note: While Principal ID is designed to capture opaque identifiers rather than plain-text names or email addresses, these values may still be classified as Personal Data or Personally Identifiable Information (PII) under privacy frameworks such as GDPR or CCPA (e.g., as pseudonymized data). Organizations need to separately ensure that the ingestion, storage, and processing of datasets containing this column comply with their internal data privacy, security, and retention policies.
 

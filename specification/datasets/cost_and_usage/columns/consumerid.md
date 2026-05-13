@@ -1,8 +1,10 @@
 # Consumer ID
 
-A Consumer ID is an identifier representing the [*consumer*](#glossary:consumer): a discrete downstream entity (e.g., end-user, tenant, application, autonomous agent, human actor) that consumed a [*resource*](#glossary:resource) or [*service*](#glossary:service). The Consumer ID is commonly used for user-level cost allocation, showback, and unit economics calculations without exposing raw actor data in the central billing dataset.
+A Consumer ID is an identifier representing the [*consumer*](#glossary:consumer): a discrete downstream actor (e.g., end-user, application, autonomous agent) that consumed a [*resource*](#glossary:resource) or [*service*](#glossary:service). The Consumer ID is commonly used for cost allocation, showback/chargeback, and unit economics calculations without exposing raw actor data.
 
-Consumer ID works in conjunction with [Principal ID](#datasets.costandusage.principalid) to resolve asymmetric actor granularity. While Principal ID captures the authenticated actor that initiated a request at the infrastructure layer, Consumer ID captures the logical downstream actor at the application layer. For scenarios demonstrating how these columns are populated across different technology categories, see [Examples: Actor Attribution](#appendix.examples:actorattribution).
+Consumer ID is used in conjunction with [Principal ID](#datasets.costandusage.principalid) to resolve asymmetric actor granularity. While Consumer ID represents the downstream actor that consumed the resource or service, Principal ID represents the authenticated and authorized actor that initiated a request.
+
+For scenarios demonstrating how these columns are populated across different technology categories, see [Examples: Actor Attribution](#appendix.examples:actorattribution).
 
 > Note: While Consumer ID is designed to capture opaque identifiers rather than plain-text names or email addresses, these values may still be classified as Personal Data or Personally Identifiable Information (PII) under privacy frameworks such as GDPR or CCPA (e.g., as pseudonymized data). Organizations need to separately ensure that the ingestion, storage, and processing of datasets containing this column comply with their internal data privacy, security, and retention policies.
 
