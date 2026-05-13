@@ -116,7 +116,7 @@ Secondary classification of the Service Category for a *service* based on its co
 | :-------------- | :--------------------------------------------------- |
 | Dataset         | [Cost and Usage](#datasets.costandusage)             |
 | Column type     | Dimension                                            |
-| Feature level   | Recommended                                          |
+| Feature level   | Conditional                                          |
 | Allows nulls    | False                                                |
 | Data type       | String                                               |
 | Value format    | Allowed values                                       |

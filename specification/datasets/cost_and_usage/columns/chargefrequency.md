@@ -37,7 +37,7 @@ Indicates how often a *charge* will occur.
 | :-------------- | :--------------------------------------------------- |
 | Dataset         | [Cost and Usage](#datasets.costandusage)             |
 | Column type     | Dimension                                            |
-| Feature level   | Recommended                                          |
+| Feature level   | Conditional                                          |
 | Allows nulls    | False                                                |
 | Data type       | String                                               |
 | Value format    | Allowed values                                       |
