@@ -37,7 +37,7 @@ Cost calculated by multiplying List Unit Price and the corresponding Pricing Qua
 | :-------------- | :--------------------------------------------------- |
 | Dataset         | [Cost and Usage](#datasets.costandusage)             |
 | Column type     | Metric                                               |
-| Feature level   | Mandatory                                            |
+| Feature level   | Conditional                                          |
 | Allows nulls    | False                                                |
 | Data type       | Decimal                                              |
 | Value format    | [Numeric Format](#attributes.numericformat)          |

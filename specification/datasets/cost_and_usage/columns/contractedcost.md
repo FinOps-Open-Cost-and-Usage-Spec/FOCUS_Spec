@@ -37,7 +37,7 @@ Cost calculated by multiplying *contracted unit price* and the corresponding Pri
 | :-------------- | :--------------------------------------------------- |
 | Dataset         | [Cost and Usage](#datasets.costandusage)             |
 | Column type     | Metric                                               |
-| Feature level   | Mandatory                                            |
+| Feature level   | Conditional                                          |
 | Allows nulls    | False                                                |
 | Data type       | Decimal                                              |
 | Value format    | [Numeric Format](#attributes.numericformat)          |

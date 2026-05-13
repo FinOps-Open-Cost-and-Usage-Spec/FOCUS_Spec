@@ -37,7 +37,7 @@ The volume of a given *SKU* associated with a *resource* or *service* used or pu
 | :-------------- | :--------------------------------------------------- |
 | Dataset         | [Cost and Usage](#datasets.costandusage)             |
 | Column type     | Metric                                               |
-| Feature level   | Mandatory                                            |
+| Feature level   | Conditional                                          |
 | Allows nulls    | True                                                 |
 | Data type       | Decimal                                              |
 | Value format    | [Numeric Format](#attributes.numericformat)          |

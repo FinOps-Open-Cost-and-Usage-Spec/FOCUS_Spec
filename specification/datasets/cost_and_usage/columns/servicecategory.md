@@ -52,7 +52,7 @@ Highest-level classification of a *service* based on the core function of the *s
 | :-------------- | :--------------------------------------------------- |
 | Dataset         | [Cost and Usage](#datasets.costandusage)             |
 | Column type     | Dimension                                            |
-| Feature level   | Mandatory                                            |
+| Feature level   | Conditional                                          |
 | Allows nulls    | False                                                |
 | Data type       | String                                               |
 | Value format    | Allowed values                                       |
