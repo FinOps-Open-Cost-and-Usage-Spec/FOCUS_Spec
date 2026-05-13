@@ -42,7 +42,7 @@ The specification for the Cost and Usage dataset defines a group of columns that
 | [Contract Applied](#datasets.costandusage.contractapplied)                                          | Dimension / Metric | Conditional   | True         | JSON      |
 | [Contracted Cost](#datasets.costandusage.contractedcost)                                            | Metric             | Mandatory     | False        | Decimal   |
 | [Contracted Unit Price](#datasets.costandusage.contractedunitprice)                                 | Metric             | Conditional   | True         | Decimal   |
-| [Data Generator Name](#datasets.costandusage.datageneratorname)                                     | Dimension             | Mandatory   | True        | String    |
+| [Data Generator Name](#datasets.costandusage.datageneratorname)                                     | Dimension             | Mandatory   | False       | String    |
 | [Effective Cost](#datasets.costandusage.effectivecost)                                              | Metric             | Mandatory     | False        | Decimal   |
 | [Host Provider Name](#datasets.costandusage.hostprovidername)                                       | Dimension          | Mandatory     | False        | String    |
 | [Invoice Detail ID](#datasets.costandusage.invoicedetailid)                                         | Dimension          | Conditional   | True         | String    |
