@@ -11,8 +11,8 @@ Conditions are sorted alphabetically by name.
 | [Baseline](#conditions.baseline) | General | All operating models encompass these foundational attributes. |
 | [Defines Multiple Billing Account Types](#conditions.definesmultiplebillingaccounttypes) | Account | Operating model defines more than one possible BillingAccountType value. |
 | [Defines Multiple Sub Account Types](#conditions.definesmultiplesubaccounttypes) | Account | Operating model defines more than one possible SubAccountType value. |
-| [Includes Account Naming](#conditions.includesaccountnaming) | Account | Operating model includes assigning a display name for the billing account. |
 | [Includes Availability Zones](#conditions.includesavailabilityzones) | Resource | Operating model includes deploying resources or services within an availability zone. |
+| [Includes Billing Account Naming](#conditions.includesaccountnaming) | Account | Operating model includes assigning a display name for the billing account. |
 | [Includes Capacity Reservations](#conditions.includescapacityreservations) | Commitment | Operating model includes capacity reservations. |
 | [Includes Commitment Discounts](#conditions.includescommitmentdiscounts) | Commitment | Operating model includes commitment discounts. |
 | [Includes Commitment Programs](#conditions.includescommitmentprograms) | Commitment | Operating model includes at least one commitment program. |
