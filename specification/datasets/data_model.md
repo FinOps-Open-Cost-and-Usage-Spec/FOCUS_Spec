@@ -1,8 +1,8 @@
-# Datasets
+# Data Model
 
-FOCUS defines many individual datasets made up of a selected set of columns which abide by the attributes outlined in this FOCUS Specification.
+The FOCUS data model defines many individual datasets, each comprised of a set of columns, which abide by the attributes outlined in this FOCUS Specification.
 
-## Dataset List<!--SkipTOC-->
+## Datasets<!--SkipTOC-->
 
 Datasets are sorted first by Feature Level (i.e., Mandatory, then Conditional), then alphabetically by name.
 
@@ -15,9 +15,26 @@ Datasets are sorted first by Feature Level (i.e., Mandatory, then Conditional), 
 
 ## Requirements<!--SkipTOC-->
 
-FOCUS data model MUST adhere to the following requirements:
+DataModel MUST adhere to the following requirements:
 
-* FOCUS data model MUST include [CostAndUsage](#datasets.costandusage).
-* FOCUS data model MUST include [BillingPeriod](#datasets.billingperiod) when the invoice issuer supports payable invoices.
-* FOCUS data model MUST include [ContractCommitment](#datasets.contractcommitment) when the service provider supports [*contract commitments*](#glossary:contract-commitment).
-* FOCUS data model MUST include [InvoiceDetail](#datasets.invoicedetail) when the invoice issuer supports payable invoices.
+* DataModel MUST include [CostAndUsage](#datasets.costandusage).
+* DataModel MUST include [BillingPeriod](#datasets.billingperiod) when the invoice issuer supports payable invoices.
+* DataModel MUST include [ContractCommitment](#datasets.contractcommitment) when the service provider supports [*contract commitments*](#glossary:contract-commitment).
+* DataModel MUST include [InvoiceDetail](#datasets.invoicedetail) when the invoice issuer supports payable invoices.
+
+## Dataset ID<!--SkipTOC-->
+
+DataModel
+
+## Display Name<!--SkipTOC-->
+
+Data Model
+
+## Description<!--SkipTOC-->
+
+The datasets that comprise the FOCUS schema.
+
+## Version Introduced<!--SkipTOC-->
+
+0.5
+
