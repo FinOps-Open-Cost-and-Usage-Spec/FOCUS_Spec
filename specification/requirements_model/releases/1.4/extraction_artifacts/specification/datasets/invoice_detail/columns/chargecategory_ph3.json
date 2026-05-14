@@ -283,7 +283,7 @@
       "DatasetId": "InvoiceDetail",
       "DatasetName": "Invoice Detail",
       "ValidationCriteria": {
-        "MustSatisfy": "ChargeCategory MAY be \"Usage\" when the record aggregates *charges* across multiple allowed values other than \"Tax\" (for example, aggregation of \"Usage\" and \"Credit\" is allowed, but not \"Usage\" and \"Tax\").",
+        "MustSatisfy": "ChargeCategory MAY be \"Usage\" when the record aggregates *charges* across multiple allowed values other than \"Tax\" (e.g., aggregation of \"Usage\" and \"Credit\" is allowed, but not \"Usage\" and \"Tax\").",
         "Keyword": "MAY",
         "Requirement": {},
         "Condition": [],

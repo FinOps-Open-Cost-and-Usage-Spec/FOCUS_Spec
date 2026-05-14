@@ -114,7 +114,7 @@
       "DatasetId": "InvoiceDetail",
       "DatasetName": "Invoice Detail",
       "ValidationCriteria": {
-        "MustSatisfy": "ReferenceInvoiceId MUST match the InvoiceId of the original *invoice* if it adjusts another invoice.",
+        "MustSatisfy": "ReferenceInvoiceId MUST match the InvoiceId of the original *invoice* when it adjusts another invoice.",
         "Keyword": "MUST",
         "Requirement": {},
         "Condition": [],
@@ -137,7 +137,7 @@
       "DatasetId": "InvoiceDetail",
       "DatasetName": "Invoice Detail",
       "ValidationCriteria": {
-        "MustSatisfy": "ReferenceInvoiceId MUST match the InvoiceId of the current invoice if it does not adjust another invoice.",
+        "MustSatisfy": "ReferenceInvoiceId MUST match the InvoiceId of the current invoice when it does not adjust another invoice.",
         "Keyword": "MUST",
         "Requirement": {},
         "Condition": [],

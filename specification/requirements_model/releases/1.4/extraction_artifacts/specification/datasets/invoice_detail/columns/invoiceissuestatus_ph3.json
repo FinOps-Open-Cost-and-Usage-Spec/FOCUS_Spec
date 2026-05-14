@@ -161,7 +161,7 @@
       "DatasetId": "InvoiceDetail",
       "DatasetName": "Invoice Detail",
       "ValidationCriteria": {
-        "MustSatisfy": "InvoiceIssueStatus MUST NOT transition from \"Issued\" to \"Open\" unless explicitly requested or approved by the customer.",
+        "MustSatisfy": "InvoiceIssueStatus MUST NOT be \"Open\" following a previous status of \"Issued\", except when explicitly requested or approved by the customer.",
         "Keyword": "MUST NOT",
         "Requirement": {},
         "Condition": [],

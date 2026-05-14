@@ -507,7 +507,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "SkuPriceId MUST support the lookup of the ListUnitPrice when the service provider publishes unit prices exclusive of discounts.",
+      "MustSatisfy": "SkuPriceId MUST be a valid reference to the ListUnitPrice when the service provider publishes unit prices exclusive of discounts.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -532,7 +532,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "SkuPriceId MUST support the verification of the given ContractedUnitPrice when the service provider supports negotiated pricing concepts.",
+      "MustSatisfy": "SkuPriceId MUST be a valid reference to the ContractedUnitPrice when the service provider supports negotiated pricing concepts.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},

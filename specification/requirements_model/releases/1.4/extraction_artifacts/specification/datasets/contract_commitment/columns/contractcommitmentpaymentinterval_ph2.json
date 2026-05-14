@@ -25,7 +25,7 @@
     "  L011: \"ContractCommitmentPaymentInterval MUST be of type String.\"",
     "  L012: \"ContractCommitmentPaymentInterval MUST NOT be null.\"",
     "  L013: \"ContractCommitmentPaymentInterval MUST be one of the allowed values.\"",
-    "  L014: \"ContractCommitmentPaymentInterval MUST be \\\"One-Time\\\" if [ContractCommitmentPaymentModel](#datasets.contractcommitment.contractcommitmentpaymentmodel) is \\\"All Upfront\\\".\"",
+    "  L014: \"ContractCommitmentPaymentInterval MUST be \\\"One-Time\\\" when [ContractCommitmentPaymentModel](#datasets.contractcommitment.contractcommitmentpaymentmodel) is \\\"All Upfront\\\".\"",
     "  L015: \"ContractCommitmentPaymentInterval SHOULD represent a time granularity equal to or lesser than the time granularity represented by [ContractCommitmentDurationType](#datasets.contractcommitment.contractcommitmentdurationtype).\""
   ],
   "0_outline_summary": {
@@ -155,7 +155,7 @@
                 "temp_id": "R005",
                 "order": 5,
                 "ref": "L014",
-                "text": "ContractCommitmentPaymentInterval MUST be \"One-Time\" if [ContractCommitmentPaymentModel](#datasets.contractcommitment.contractcommitmentpaymentmodel) is \"All Upfront\".",
+                "text": "ContractCommitmentPaymentInterval MUST be \"One-Time\" when [ContractCommitmentPaymentModel](#datasets.contractcommitment.contractcommitmentpaymentmodel) is \"All Upfront\".",
                 "keyword": "MUST",
                 "section_path": [
                   "Contract Commitment Payment Interval",

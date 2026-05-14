@@ -26,7 +26,7 @@
     "  L010: \"BillingPeriodStatus MUST NOT be null.\"",
     "  L011: \"BillingPeriodStatus MUST be one of the allowed values.\"",
     "  L012: \"BillingPeriodStatus MUST represent the state of the billing period identified by [BillingPeriodStart](#datasets.billingperiod.billingperiodstart) and [BillingPeriodEnd](#datasets.billingperiod.billingperiodend).\"",
-    "  L013: \"BillingPeriodStatus MUST NOT transition from \\\"Closed\\\" to \\\"Open\\\" unless explicitly requested or approved by the customer.\""
+    "  L013: \"BillingPeriodStatus MUST NOT be \\\"Open\\\" following a previous status of \\\"Closed\\\", except when explicitly requested or approved by the customer.\""
   ],
   "0_outline_summary": {
     "node_count": 6,
@@ -178,7 +178,7 @@
                 "temp_id": "R006",
                 "order": 6,
                 "ref": "L013",
-                "text": "BillingPeriodStatus MUST NOT transition from \"Closed\" to \"Open\" unless explicitly requested or approved by the customer.",
+                "text": "BillingPeriodStatus MUST NOT be \"Open\" following a previous status of \"Closed\", except when explicitly requested or approved by the customer.",
                 "keyword": "MUST NOT",
                 "section_path": [
                   "Billing Period Status",

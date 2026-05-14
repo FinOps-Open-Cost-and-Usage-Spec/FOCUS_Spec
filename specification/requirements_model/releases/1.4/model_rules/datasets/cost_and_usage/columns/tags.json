@@ -49,6 +49,10 @@
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-Tags-C-014-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-Tags-C-021-M"
           }
         ]
       },
@@ -61,6 +65,7 @@
         "CAU-Tags-C-003-C",
         "CAU-Tags-C-011-M",
         "CAU-Tags-C-014-M",
+        "CAU-Tags-C-021-M",
         "CAU-CostAndUsage-D-064-C"
       ]
     }
@@ -161,11 +166,7 @@
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-Tags-C-009-O"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-Tags-C-010-C"
+            "ModelRuleId": "CAU-Tags-C-020-C"
           }
         ]
       },
@@ -180,8 +181,7 @@
         "CAU-Tags-C-006-O",
         "CAU-Tags-C-007-O",
         "CAU-Tags-C-008-M",
-        "CAU-Tags-C-009-O",
-        "CAU-Tags-C-010-C"
+        "CAU-Tags-C-020-C"
       ]
     }
   },
@@ -308,9 +308,10 @@
     "EntityId": "Tags",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "ApplicabilityCriteria": [],
-    "Order": 100,
+    "Order": -1,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
@@ -331,9 +332,10 @@
     "EntityId": "Tags",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
     "ApplicabilityCriteria": [],
-    "Order": 110,
+    "Order": -1,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
@@ -423,7 +425,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "Data generator SHOULD publish all provider-specified tag key prefixes within their respective documentation.",
+      "MustSatisfy": "Provider-specified tag key prefixes SHOULD be publicly documented.",
       "Keyword": "SHOULD",
       "Requirement": {},
       "Condition": {},
@@ -489,7 +491,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "Data generator MUST prefix all but one user-defined tag scheme with a predetermined, provider-specified tag key prefix that is unique to each corresponding user-defined tag scheme when the data generator has more than one user-defined tag scheme.",
+      "MustSatisfy": "User-defined tag keys in all but one user-defined *tag scheme* MUST include a predetermined, provider-specified tag key prefix that is unique to each corresponding user-defined tag scheme when the data generator has more than one user-defined tag scheme.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -512,7 +514,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "Data generator MUST NOT prefix tag keys when the data generator has only one user-defined tag scheme.",
+      "MustSatisfy": "User-defined tag keys  MUST NOT include a *tag scheme*-specific prefix when the data generator has only one user-defined *tag scheme*.",
       "Keyword": "MUST NOT",
       "Requirement": {},
       "Condition": {},
@@ -535,8 +537,8 @@
     "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "Data generator MUST NOT allow reserved tag key prefixes to be used as prefixes for any user-defined tag keys within a prefixless user-defined tag scheme.",
-      "Keyword": "MUST NOT",
+      "MustSatisfy": "Reserved tag key prefixes MUST be prevented from being used as prefixes for any user-defined tag keys within a prefixless user-defined tag scheme.",
+      "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []
@@ -599,6 +601,113 @@
         "CheckFunction": "FormatString",
         "ColumnName": "Tags"
       },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-Tags-C-020-C": {
+    "Function": "Validation",
+    "Reference": "Tags",
+    "EntityType": "Column",
+    "EntityName": "Tags",
+    "EntityId": "Tags",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 190,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Tag values MUST match the provided values unless true (boolean) is applied to valueless tags.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-Tags-C-021-M": {
+    "Function": "Composite",
+    "Reference": "Tags",
+    "EntityType": "Column",
+    "EntityName": "Tags",
+    "EntityId": "Tags",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 200,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "Tag finalization documentation MUST adhere to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-Tags-C-022-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-Tags-C-023-O"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CAU-Tags-C-022-O",
+        "CAU-Tags-C-023-O"
+      ]
+    }
+  },
+  "CAU-Tags-C-022-O": {
+    "Function": "Validation",
+    "Reference": "Tags",
+    "EntityType": "Column",
+    "EntityName": "Tags",
+    "EntityId": "Tags",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 210,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Tag finalization documentation SHOULD include tag finalization methods and semantics.",
+      "Keyword": "SHOULD",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-Tags-C-023-O": {
+    "Function": "Validation",
+    "Reference": "Tags",
+    "EntityType": "Column",
+    "EntityName": "Tags",
+    "EntityId": "Tags",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 220,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Tag finalization documentation SHOULD be accessible to practitioners.",
+      "Keyword": "SHOULD",
+      "Requirement": {},
       "Condition": {},
       "Dependencies": []
     }

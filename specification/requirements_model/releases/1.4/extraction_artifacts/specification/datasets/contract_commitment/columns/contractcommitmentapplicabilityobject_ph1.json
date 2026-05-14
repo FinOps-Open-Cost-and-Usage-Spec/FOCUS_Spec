@@ -9,7 +9,13 @@
     "entity_id": "ContractCommitmentApplicabilityObject",
     "entity_name": "Contract Commitment Applicability Object"
   },
-  "entities_found": [],
+  "entities_found": [
+    {
+      "entity_type": "Object",
+      "entity_id": "ContractCommitmentApplicabilityObject",
+      "entity_name": "Contract Commitment Applicability Object"
+    }
+  ],
   "atoms": [
     {
       "temp_id": "R001",
@@ -19,7 +25,7 @@
       "role": "requirement",
       "section_path": [
         "Contract Commitment Applicability Object",
-        "Requirements"
+        "Object Requirements"
       ],
       "block": {
         "block_type": "paragraph",
@@ -44,7 +50,7 @@
       "role": "requirement",
       "section_path": [
         "Contract Commitment Applicability Object",
-        "Requirements"
+        "Object Requirements"
       ],
       "block": {
         "block_type": "list_item",
@@ -64,12 +70,12 @@
     {
       "temp_id": "R003",
       "order": 3,
-      "text": "ContractCommitmentApplicabilityObject.IsGlobalScope MUST be `true` if the *contract commitment* applies to all entities.",
+      "text": "ContractCommitmentApplicabilityObject.IsGlobalScope MUST be `true` when the *contract commitment* applies to all entities.",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
         "Contract Commitment Applicability Object",
-        "Requirements"
+        "Object Requirements"
       ],
       "block": {
         "block_type": "list_item",
@@ -89,12 +95,12 @@
     {
       "temp_id": "R004",
       "order": 4,
-      "text": "ContractCommitmentApplicabilityObject.IsComplexScope MUST be `true` if the *contract commitment's* applicability logic exceeds schema capabilities.",
+      "text": "ContractCommitmentApplicabilityObject.IsComplexScope MUST be `true` when the *contract commitment's* applicability logic exceeds schema capabilities.",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
         "Contract Commitment Applicability Object",
-        "Requirements"
+        "Object Requirements"
       ],
       "block": {
         "block_type": "list_item",
@@ -119,7 +125,7 @@
       "role": "requirement",
       "section_path": [
         "Contract Commitment Applicability Object",
-        "Requirements"
+        "Object Requirements"
       ],
       "block": {
         "block_type": "list_item",
@@ -144,7 +150,7 @@
       "role": "requirement",
       "section_path": [
         "Contract Commitment Applicability Object",
-        "Requirements"
+        "Object Requirements"
       ],
       "block": {
         "block_type": "list_item",
@@ -169,7 +175,7 @@
       "role": "requirement",
       "section_path": [
         "Contract Commitment Applicability Object",
-        "Requirements"
+        "Object Requirements"
       ],
       "block": {
         "block_type": "list_item",
@@ -194,7 +200,7 @@
       "role": "requirement",
       "section_path": [
         "Contract Commitment Applicability Object",
-        "Requirements"
+        "Object Requirements"
       ],
       "block": {
         "block_type": "list_item",
@@ -219,7 +225,7 @@
       "role": "requirement",
       "section_path": [
         "Contract Commitment Applicability Object",
-        "Requirements"
+        "Object Requirements"
       ],
       "block": {
         "block_type": "list_item",
@@ -244,7 +250,7 @@
       "role": "requirement",
       "section_path": [
         "Contract Commitment Applicability Object",
-        "Requirements"
+        "Object Requirements"
       ],
       "block": {
         "block_type": "list_item",
@@ -264,12 +270,12 @@
     {
       "temp_id": "R011",
       "order": 11,
-      "text": "ContractCommitmentApplicabilityObject.Inclusions[\\*].Values MUST contain only the single string \"*\" if the wildcard is present.",
+      "text": "ContractCommitmentApplicabilityObject.Inclusions[\\*].Values MUST contain only the single string \"*\" when the wildcard is present.",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
         "Contract Commitment Applicability Object",
-        "Requirements"
+        "Object Requirements"
       ],
       "block": {
         "block_type": "list_item",
@@ -289,12 +295,12 @@
     {
       "temp_id": "R012",
       "order": 12,
-      "text": "ContractCommitmentApplicabilityObject.Exclusions[\\*].Values MUST contain only the single string \"*\" if the wildcard is present.",
+      "text": "ContractCommitmentApplicabilityObject.Exclusions[\\*].Values MUST contain only the single string \"*\" when the wildcard is present.",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
         "Contract Commitment Applicability Object",
-        "Requirements"
+        "Object Requirements"
       ],
       "block": {
         "block_type": "list_item",
@@ -314,65 +320,12 @@
     {
       "temp_id": "R013",
       "order": 13,
-      "text": "Values` must be `[\"*\"]`",
-      "keyword": "MUST",
-      "role": "requirement",
-      "section_path": [
-        "Contract Commitment Applicability Object",
-        "Schema Structure",
-        "Supported Operators"
-      ],
-      "block": {
-        "block_type": "paragraph",
-        "indent_level": 0,
-        "bullet": null
-      },
-      "lead_in": {
-        "ends_with_colon": false
-      },
-      "provenance": {
-        "line_start": 66,
-        "line_end": 66
-      },
-      "_alignment_status": "confirmed",
-      "ref": "L066"
-    },
-    {
-      "temp_id": "R014",
-      "order": 14,
-      "text": "Values` must be `[\"*\"]`",
-      "keyword": "MUST",
-      "role": "requirement",
-      "section_path": [
-        "Contract Commitment Applicability Object",
-        "Schema Structure",
-        "Supported Operators"
-      ],
-      "block": {
-        "block_type": "paragraph",
-        "indent_level": 0,
-        "bullet": null
-      },
-      "lead_in": {
-        "ends_with_colon": false
-      },
-      "provenance": {
-        "line_start": 67,
-        "line_end": 67
-      },
-      "_alignment_status": "confirmed",
-      "ref": "L067"
-    },
-    {
-      "temp_id": "R015",
-      "order": 15,
       "text": "The evaluation of an entity against a commitment applicability must follow a strict linear progression:",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
         "Contract Commitment Applicability Object",
-        "Implementation Guidance",
-        "Processing Workflow"
+        "Object Implementation Guidance"
       ],
       "block": {
         "block_type": "paragraph",
@@ -383,22 +336,21 @@
         "ends_with_colon": true
       },
       "provenance": {
-        "line_start": 113,
-        "line_end": 113
+        "line_start": 87,
+        "line_end": 87
       },
       "_alignment_status": "confirmed",
-      "ref": "L113"
+      "ref": "L087"
     },
     {
-      "temp_id": "R016",
-      "order": 16,
+      "temp_id": "R014",
+      "order": 14,
       "text": "If a metric key (`Cost` or `Usage`) is missing within a provided `Applicability` object, the engine must default that specific value to `1.0`.",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
         "Contract Commitment Applicability Object",
-        "Implementation Guidance",
-        "Processing Workflow"
+        "Object Implementation Guidance"
       ],
       "block": {
         "block_type": "list_item",
@@ -409,22 +361,21 @@
         "ends_with_colon": false
       },
       "provenance": {
-        "line_start": 120,
-        "line_end": 120
+        "line_start": 94,
+        "line_end": 94
       },
       "_alignment_status": "confirmed",
-      "ref": "L120"
+      "ref": "L094"
     },
     {
-      "temp_id": "R017",
-      "order": 17,
-      "text": "Use the `Applicability` from the matching inclusion rule. If multiple rules match under `Or`, the engine must use the highest percentage for each respective metric.",
+      "temp_id": "R015",
+      "order": 15,
+      "text": "Use the `Applicability` from the matching inclusion rule.",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
         "Contract Commitment Applicability Object",
-        "Implementation Guidance",
-        "Processing Workflow"
+        "Object Implementation Guidance"
       ],
       "block": {
         "block_type": "list_item",
@@ -435,22 +386,46 @@
         "ends_with_colon": false
       },
       "provenance": {
-        "line_start": 121,
-        "line_end": 121
+        "line_start": 95,
+        "line_end": 95
       },
       "_alignment_status": "confirmed",
-      "ref": "L121"
+      "ref": "L095"
     },
     {
-      "temp_id": "R018",
-      "order": 18,
+      "temp_id": "R016",
+      "order": 16,
+      "text": "If multiple rules match under `Or`, the engine must use the highest percentage for each respective metric.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Contract Commitment Applicability Object",
+        "Object Implementation Guidance"
+      ],
+      "block": {
+        "block_type": "paragraph",
+        "indent_level": 0,
+        "bullet": null
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 87,
+        "line_end": 87
+      },
+      "_alignment_status": "fallback_original",
+      "ref": "L087"
+    },
+    {
+      "temp_id": "R017",
+      "order": 17,
       "text": "The evaluation of **Applicability** percentages must be contextually aligned with the [Contract Commitment Model](#datasets.contractcommitment.contractcommitmentmodel) and [Contract Commitment Fulfillment Interval](#datasets.contractcommitment.contractcommitmentfulfillmentinterval):",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
         "Contract Commitment Applicability Object",
-        "Implementation Guidance",
-        "Integration with Commitment Logic"
+        "Object Implementation Guidance"
       ],
       "block": {
         "block_type": "paragraph",
@@ -461,48 +436,21 @@
         "ends_with_colon": true
       },
       "provenance": {
-        "line_start": 126,
-        "line_end": 126
+        "line_start": 100,
+        "line_end": 100
       },
       "_alignment_status": "confirmed",
-      "ref": "L126"
+      "ref": "L100"
     },
     {
-      "temp_id": "R019",
-      "order": 19,
-      "text": "Applicability percentages must be applied to each discrete unit of activity (e.g., every hour) within the **Fulfillment Interval**. If the commitment is not fully utilized by eligible entities within that hour, the remaining capacity expires.",
-      "keyword": "MUST",
-      "role": "requirement",
-      "section_path": [
-        "Contract Commitment Applicability Object",
-        "Implementation Guidance",
-        "Integration with Commitment Logic"
-      ],
-      "block": {
-        "block_type": "list_item",
-        "indent_level": 0,
-        "bullet": "*"
-      },
-      "lead_in": {
-        "ends_with_colon": false
-      },
-      "provenance": {
-        "line_start": 128,
-        "line_end": 128
-      },
-      "_alignment_status": "confirmed",
-      "ref": "L128"
-    },
-    {
-      "temp_id": "R020",
-      "order": 20,
+      "temp_id": "R018",
+      "order": 18,
       "text": "Engines should expect a JSON Object and should not support scalar (Decimal/Float) values for this field to ensure compatibility with typed database schemas.",
       "keyword": "SHOULD",
       "role": "requirement",
       "section_path": [
         "Contract Commitment Applicability Object",
-        "Implementation Guidance",
-        "Dependency Logic"
+        "Object Implementation Guidance"
       ],
       "block": {
         "block_type": "list_item",
@@ -513,22 +461,21 @@
         "ends_with_colon": false
       },
       "provenance": {
-        "line_start": 133,
-        "line_end": 133
+        "line_start": 107,
+        "line_end": 107
       },
       "_alignment_status": "confirmed",
-      "ref": "L133"
+      "ref": "L107"
     },
     {
-      "temp_id": "R021",
-      "order": 21,
+      "temp_id": "R019",
+      "order": 19,
       "text": "Engines should expect a JSON Object and should not support scalar (Decimal/Float) values for this field to ensure compatibility with typed database schemas.",
       "keyword": "SHOULD NOT",
       "role": "requirement",
       "section_path": [
         "Contract Commitment Applicability Object",
-        "Implementation Guidance",
-        "Dependency Logic"
+        "Object Implementation Guidance"
       ],
       "block": {
         "block_type": "paragraph",
@@ -539,22 +486,21 @@
         "ends_with_colon": false
       },
       "provenance": {
-        "line_start": 123,
-        "line_end": 123
+        "line_start": 99,
+        "line_end": 99
       },
       "_alignment_status": "fallback_original",
-      "ref": "L123"
+      "ref": "L099"
     },
     {
-      "temp_id": "R022",
-      "order": 22,
+      "temp_id": "R020",
+      "order": 20,
       "text": "If `IsGlobalScope` or `IsComplexScope` is `true`, the `Inclusions` array must be empty or omitted.",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
         "Contract Commitment Applicability Object",
-        "Implementation Guidance",
-        "Dependency Logic"
+        "Object Implementation Guidance"
       ],
       "block": {
         "block_type": "list_item",
@@ -565,22 +511,21 @@
         "ends_with_colon": false
       },
       "provenance": {
-        "line_start": 134,
-        "line_end": 134
+        "line_start": 108,
+        "line_end": 108
       },
       "_alignment_status": "confirmed",
-      "ref": "L134"
+      "ref": "L108"
     },
     {
-      "temp_id": "R023",
-      "order": 23,
-      "text": "`IsGlobalScope` and `IsComplexScope` must both not be `true` at the same time.",
+      "temp_id": "R021",
+      "order": 21,
+      "text": "Additionally, `IsGlobalScope` and `IsComplexScope` must both not be `true` at the same time.",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
         "Contract Commitment Applicability Object",
-        "Implementation Guidance",
-        "Dependency Logic"
+        "Object Implementation Guidance"
       ],
       "block": {
         "block_type": "paragraph",
@@ -591,22 +536,21 @@
         "ends_with_colon": false
       },
       "provenance": {
-        "line_start": 124,
-        "line_end": 124
+        "line_start": 100,
+        "line_end": 100
       },
       "_alignment_status": "fallback_original",
-      "ref": "L124"
+      "ref": "L100"
     },
     {
-      "temp_id": "R024",
-      "order": 24,
+      "temp_id": "R022",
+      "order": 22,
       "text": "Engines should validate these structural constraints before processing.",
       "keyword": "SHOULD",
       "role": "requirement",
       "section_path": [
         "Contract Commitment Applicability Object",
-        "Implementation Guidance",
-        "Dependency Logic"
+        "Object Implementation Guidance"
       ],
       "block": {
         "block_type": "paragraph",
@@ -617,11 +561,11 @@
         "ends_with_colon": false
       },
       "provenance": {
-        "line_start": 124,
-        "line_end": 124
+        "line_start": 100,
+        "line_end": 100
       },
       "_alignment_status": "fallback_original",
-      "ref": "L124"
+      "ref": "L100"
     }
   ],
   "warnings": [],

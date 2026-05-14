@@ -20,7 +20,7 @@
     {
       "temp_id": "R001",
       "order": 1,
-      "text": "CorrectionHandling MUST adhere to the following requirements:",
+      "text": "Dataset conforming to CorrectionHandling attribute MUST adhere to the following requirements:",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [

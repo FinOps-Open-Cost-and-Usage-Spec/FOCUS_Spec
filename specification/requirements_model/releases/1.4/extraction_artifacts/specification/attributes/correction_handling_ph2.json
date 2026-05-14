@@ -21,7 +21,7 @@
   },
   "0_outline_root": "ROOT: Correction Handling > Requirements",
   "0_outline_lines": [
-    "L057: \"CorrectionHandling MUST adhere to the following requirements:\"",
+    "L057: \"Dataset conforming to CorrectionHandling attribute MUST adhere to the following requirements:\"",
     "  L059: \"*FOCUS dataset* MUST have its styles for representing corrections in *dataset artifacts* documented and accessible to practitioners (including whether Replacement, Delta, or Ledger style is used and under which conditions each style applies).\"",
     "  L060: \"*FOCUS dataset* MUST represent a complete snapshot of data for the affected [*delivery scope*](#glossary:delivery-scope) when using [Replacement correction style](#attributes.correctionhandling.overview.correctionstyles.replacementcorrections).\"",
     "  L061: \"*FOCUS dataset* MUST include additive records representing corrections within the same *delivery scope* when using [Delta correction style](#attributes.correctionhandling.overview.correctionstyles.deltacorrections).\"",
@@ -40,7 +40,7 @@
     "lead_ins": [
       {
         "ref": "L057",
-        "text_preview": "CorrectionHandling MUST adhere to the following requirements:",
+        "text_preview": "Dataset conforming to CorrectionHandling attribute MUST adhere to the following requirements:",
         "children": 4
       }
     ]
@@ -57,7 +57,7 @@
             "temp_id": "R001",
             "order": 1,
             "ref": "L057",
-            "text": "CorrectionHandling MUST adhere to the following requirements:",
+            "text": "Dataset conforming to CorrectionHandling attribute MUST adhere to the following requirements:",
             "keyword": "MUST",
             "section_path": [
               "Correction Handling",

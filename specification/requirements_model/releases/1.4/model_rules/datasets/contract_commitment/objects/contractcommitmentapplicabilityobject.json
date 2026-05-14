@@ -1,5 +1,5 @@
 {
-  "CCT-ContractCommitmentApplicabilityObject-O-001-M": {
+  "CCT-ContractCommitmentApplicabilityObject-O-000-M": {
     "Function": "Composite",
     "Reference": "ContractCommitmentApplicabilityObject",
     "EntityType": "Object",
@@ -22,11 +22,15 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CCT-ContractCommitmentApplicabilityObject-O-002-M"
+            "ModelRuleId": "CCT-ContractCommitmentApplicabilityObject-O-001-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CCT-ContractCommitmentApplicabilityObject-O-003-M"
+            "ModelRuleId": "CCT-ContractCommitmentApplicabilityObject-O-002-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitmentApplicabilityObject-O-003-C"
           },
           {
             "CheckFunction": "CheckModelRule",
@@ -46,7 +50,7 @@
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CCT-ContractCommitmentApplicabilityObject-O-008-M"
+            "ModelRuleId": "CCT-ContractCommitmentApplicabilityObject-O-008-O"
           },
           {
             "CheckFunction": "CheckModelRule",
@@ -54,35 +58,31 @@
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CCT-ContractCommitmentApplicabilityObject-O-010-O"
+            "ModelRuleId": "CCT-ContractCommitmentApplicabilityObject-O-010-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CCT-ContractCommitmentApplicabilityObject-O-011-M"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CCT-ContractCommitmentApplicabilityObject-O-012-M"
+            "ModelRuleId": "CCT-ContractCommitmentApplicabilityObject-O-011-C"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "CCT-ContractCommitmentApplicabilityObject-O-002-M",
-        "CCT-ContractCommitmentApplicabilityObject-O-003-M",
+        "CCT-ContractCommitmentApplicabilityObject-O-001-M",
+        "CCT-ContractCommitmentApplicabilityObject-O-002-C",
+        "CCT-ContractCommitmentApplicabilityObject-O-003-C",
         "CCT-ContractCommitmentApplicabilityObject-O-004-M",
         "CCT-ContractCommitmentApplicabilityObject-O-005-M",
         "CCT-ContractCommitmentApplicabilityObject-O-006-M",
         "CCT-ContractCommitmentApplicabilityObject-O-007-M",
-        "CCT-ContractCommitmentApplicabilityObject-O-008-M",
+        "CCT-ContractCommitmentApplicabilityObject-O-008-O",
         "CCT-ContractCommitmentApplicabilityObject-O-009-O",
-        "CCT-ContractCommitmentApplicabilityObject-O-010-O",
-        "CCT-ContractCommitmentApplicabilityObject-O-011-M",
-        "CCT-ContractCommitmentApplicabilityObject-O-012-M"
+        "CCT-ContractCommitmentApplicabilityObject-O-010-C",
+        "CCT-ContractCommitmentApplicabilityObject-O-011-C"
       ]
     }
   },
-  "CCT-ContractCommitmentApplicabilityObject-O-002-M": {
+  "CCT-ContractCommitmentApplicabilityObject-O-001-M": {
     "Function": "Validation",
     "Reference": "ContractCommitmentApplicabilityObject",
     "EntityType": "Object",
@@ -110,7 +110,7 @@
       "Dependencies": []
     }
   },
-  "CCT-ContractCommitmentApplicabilityObject-O-003-M": {
+  "CCT-ContractCommitmentApplicabilityObject-O-002-C": {
     "Function": "Validation",
     "Reference": "ContractCommitmentApplicabilityObject",
     "EntityType": "Object",
@@ -126,14 +126,14 @@
     "DatasetId": "ContractCommitment",
     "DatasetName": "Contract Commitment",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractCommitmentApplicabilityObject.IsGlobalScope MUST be true if the contract commitment applies to all entities.",
+      "MustSatisfy": "ContractCommitmentApplicabilityObject.IsGlobalScope MUST be true when the contract commitment applies to all entities.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []
     }
   },
-  "CCT-ContractCommitmentApplicabilityObject-O-004-M": {
+  "CCT-ContractCommitmentApplicabilityObject-O-003-C": {
     "Function": "Validation",
     "Reference": "ContractCommitmentApplicabilityObject",
     "EntityType": "Object",
@@ -149,14 +149,14 @@
     "DatasetId": "ContractCommitment",
     "DatasetName": "Contract Commitment",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractCommitmentApplicabilityObject.IsComplexScope MUST be true if the contract commitment's applicability logic exceeds schema capabilities.",
+      "MustSatisfy": "ContractCommitmentApplicabilityObject.IsComplexScope MUST be true when the contract commitment's applicability logic exceeds schema capabilities.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []
     }
   },
-  "CCT-ContractCommitmentApplicabilityObject-O-005-M": {
+  "CCT-ContractCommitmentApplicabilityObject-O-004-M": {
     "Function": "Validation",
     "Reference": "ContractCommitmentApplicabilityObject",
     "EntityType": "Object",
@@ -179,7 +179,7 @@
       "Dependencies": []
     }
   },
-  "CCT-ContractCommitmentApplicabilityObject-O-006-M": {
+  "CCT-ContractCommitmentApplicabilityObject-O-005-M": {
     "Function": "Validation",
     "Reference": "ContractCommitmentApplicabilityObject",
     "EntityType": "Object",
@@ -202,7 +202,7 @@
       "Dependencies": []
     }
   },
-  "CCT-ContractCommitmentApplicabilityObject-O-007-M": {
+  "CCT-ContractCommitmentApplicabilityObject-O-006-M": {
     "Function": "Validation",
     "Reference": "ContractCommitmentApplicabilityObject",
     "EntityType": "Object",
@@ -225,7 +225,7 @@
       "Dependencies": []
     }
   },
-  "CCT-ContractCommitmentApplicabilityObject-O-008-M": {
+  "CCT-ContractCommitmentApplicabilityObject-O-007-M": {
     "Function": "Validation",
     "Reference": "ContractCommitmentApplicabilityObject",
     "EntityType": "Object",
@@ -248,7 +248,7 @@
       "Dependencies": []
     }
   },
-  "CCT-ContractCommitmentApplicabilityObject-O-009-O": {
+  "CCT-ContractCommitmentApplicabilityObject-O-008-O": {
     "Function": "Validation",
     "Reference": "ContractCommitmentApplicabilityObject",
     "EntityType": "Object",
@@ -271,7 +271,7 @@
       "Dependencies": []
     }
   },
-  "CCT-ContractCommitmentApplicabilityObject-O-010-O": {
+  "CCT-ContractCommitmentApplicabilityObject-O-009-O": {
     "Function": "Validation",
     "Reference": "ContractCommitmentApplicabilityObject",
     "EntityType": "Object",
@@ -294,7 +294,7 @@
       "Dependencies": []
     }
   },
-  "CCT-ContractCommitmentApplicabilityObject-O-011-M": {
+  "CCT-ContractCommitmentApplicabilityObject-O-010-C": {
     "Function": "Validation",
     "Reference": "ContractCommitmentApplicabilityObject",
     "EntityType": "Object",
@@ -310,14 +310,14 @@
     "DatasetId": "ContractCommitment",
     "DatasetName": "Contract Commitment",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractCommitmentApplicabilityObject.Inclusions[*].Values MUST contain only the single string \"*\" if the wildcard is present.",
+      "MustSatisfy": "ContractCommitmentApplicabilityObject.Inclusions[*].Values MUST contain only the single string \"*\" when the wildcard is present.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []
     }
   },
-  "CCT-ContractCommitmentApplicabilityObject-O-012-M": {
+  "CCT-ContractCommitmentApplicabilityObject-O-011-C": {
     "Function": "Validation",
     "Reference": "ContractCommitmentApplicabilityObject",
     "EntityType": "Object",
@@ -333,7 +333,7 @@
     "DatasetId": "ContractCommitment",
     "DatasetName": "Contract Commitment",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractCommitmentApplicabilityObject.Exclusions[*].Values MUST contain only the single string \"*\" if the wildcard is present.",
+      "MustSatisfy": "ContractCommitmentApplicabilityObject.Exclusions[*].Values MUST contain only the single string \"*\" when the wildcard is present.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},

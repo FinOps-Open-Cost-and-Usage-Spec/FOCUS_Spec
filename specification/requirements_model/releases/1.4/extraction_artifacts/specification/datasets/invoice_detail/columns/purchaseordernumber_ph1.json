@@ -120,7 +120,7 @@
     {
       "temp_id": "R005",
       "order": 5,
-      "text": "PurchaseOrderNumber MUST represent the identifier used by the customer to unique identify the purchase order responsible for the charge.",
+      "text": "PurchaseOrderNumber MUST represent the identifier used by the customer to uniquely identify the purchase order responsible for the charge.",
       "keyword": "MUST",
       "role": "requirement",
       "section_path": [
