@@ -31,6 +31,10 @@
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-InvoiceIssuerName-C-003-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-InvoiceIssuerName-C-004-M"
           }
         ]
       },
@@ -39,6 +43,7 @@
         "CAU-InvoiceIssuerName-C-001-M",
         "CAU-InvoiceIssuerName-C-002-M",
         "CAU-InvoiceIssuerName-C-003-M",
+        "CAU-InvoiceIssuerName-C-004-M",
         "CAU-CostAndUsage-D-023-M"
       ]
     }
@@ -118,6 +123,29 @@
         "ColumnName": "InvoiceIssuerName",
         "Value": null
       },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-InvoiceIssuerName-C-004-M": {
+    "Function": "Validation",
+    "Reference": "InvoiceIssuerName",
+    "EntityType": "Column",
+    "EntityName": "Invoice Issuer Name",
+    "EntityId": "InvoiceIssuerName",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 50,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "InvoiceIssuerName MUST represent the entity that issues invoices.",
+      "Keyword": "MUST",
+      "Requirement": {},
       "Condition": {},
       "Dependencies": []
     }
