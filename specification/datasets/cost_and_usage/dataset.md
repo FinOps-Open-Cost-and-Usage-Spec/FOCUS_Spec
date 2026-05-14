@@ -89,7 +89,6 @@ The Cost and Usage dataset can be joined to the Contract Commitment dataset thro
 
 CostAndUsage MUST adhere to the following requirements:
 
-* CostAndUsage MUST be present.
 * CostAndUsage column presence MUST adhere to the following requirements:
   * CostAndUsage SHOULD include [AllocatedMethodDetails](#datasets.costandusage.allocatedmethoddetails) when the data generator supports data generator-calculated split cost allocation.
   * CostAndUsage MUST include [AllocatedMethodId](#datasets.costandusage.allocatedmethodid) when the data generator supports data generator-calculated split cost allocation.
