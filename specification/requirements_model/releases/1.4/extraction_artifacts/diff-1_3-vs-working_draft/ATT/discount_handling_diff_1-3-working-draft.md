@@ -1,3 +1,0 @@
-## Diff
-
-No differences found.
