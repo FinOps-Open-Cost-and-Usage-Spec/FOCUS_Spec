@@ -3189,7 +3189,7 @@
     "Order": 1340,
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage MAY contain records for concepts not related to resource usage, if it aligns with the documented data generator-calculated split cost allocation method.",
+      "MustSatisfy": "CostAndUsage MAY contain records for concepts not related to resource usage, when it aligns with the documented data generator-calculated split cost allocation method.",
       "Keyword": "MAY",
       "Requirement": {},
       "Condition": {},
@@ -3214,7 +3214,7 @@
     "Order": 1350,
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage MAY contain records for unused or unallocated usage from the origin charge as separate allocated charges, if it aligns with the documented data generator-calculated split cost allocation method.",
+      "MustSatisfy": "CostAndUsage MAY contain records for unused or unallocated usage from the origin charge as separate allocated charges, when it aligns with the documented data generator-calculated split cost allocation method.",
       "Keyword": "MAY",
       "Requirement": {},
       "Condition": {},
@@ -3239,7 +3239,7 @@
     "Order": 1360,
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage MAY contain allocated charges with apportioned costs for unused or unallocated usage, if it aligns with the documented data generator-calculated split cost allocation method.",
+      "MustSatisfy": "CostAndUsage MAY contain allocated charges with apportioned costs for unused or unallocated usage, when it aligns with the documented data generator-calculated split cost allocation method.",
       "Keyword": "MAY",
       "Requirement": {},
       "Condition": {},

@@ -22,7 +22,7 @@ AllocatedMethodDetails MUST adhere to the following requirements:
 
 Allocated Method Details consists of a valid JSON object with a top level key of Elements containing an Array of entry objects. Each entry object consists of FOCUS-defined property keys but can be extended to provide additional details about the allocation.
 
-The following section details the normative requirements for the AllocatedMethodDetailsObject and its nested properties. For a logical overview of the expected content, see the [Schema Structure](#datasets.costandusage.allocatedmethoddetails.schemastructure) and [Object Example](#datasets.costandusage.allocatedmethoddetails.objectexample) sections.
+The following section details the normative requirements for the AllocatedMethodDetailsObject and its nested properties. For a logical overview of the expected content, see the [Schema Structure](#datasets.costandusage.allocatedmethoddetails.allocatedmethoddetailsobject.objectschemastructure) and [Object Example](#datasets.costandusage.allocatedmethoddetails.allocatedmethoddetailsobject.objectexample) sections.
 
 ### Object Requirements
 

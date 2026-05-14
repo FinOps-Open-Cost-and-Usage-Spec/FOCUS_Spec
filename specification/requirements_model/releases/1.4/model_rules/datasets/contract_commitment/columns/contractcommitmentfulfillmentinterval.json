@@ -194,7 +194,7 @@
     "DatasetId": "ContractCommitment",
     "DatasetName": "Contract Commitment",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractCommitmentFulfillmentInterval MUST NOT be \"Full Period\" if ContractCommitmentModel is \"Continuous\".",
+      "MustSatisfy": "ContractCommitmentFulfillmentInterval MUST NOT be \"Full Period\" when ContractCommitmentModel is \"Continuous\".",
       "Keyword": "MUST NOT",
       "Requirement": {
         "CheckFunction": "CheckNotValue",

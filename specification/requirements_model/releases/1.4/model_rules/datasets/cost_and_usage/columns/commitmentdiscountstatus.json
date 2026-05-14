@@ -138,7 +138,7 @@
       "MustSatisfy": "CommitmentDiscountStatus MUST be null when CommitmentDiscountId is null.",
       "Keyword": "MUST",
       "Requirement": {
-        "CheckFunction": "CheckNotValue",
+        "CheckFunction": "CheckValue",
         "ColumnName": "CommitmentDiscountStatus",
         "Value": null
       },
@@ -176,9 +176,19 @@
         "Value": null
       },
       "Condition": {
-        "CheckFunction": "CheckValue",
-        "ColumnName": "CommitmentDiscountId",
-        "Value": null
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckNotValue",
+            "ColumnName": "CommitmentDiscountId",
+            "Value": null
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ChargeCategory",
+            "Value": "Usage"
+          }
+        ]
       },
       "Dependencies": [
         "CAU-CommitmentDiscountId-C-000-C"

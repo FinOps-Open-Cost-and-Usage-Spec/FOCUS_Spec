@@ -143,7 +143,7 @@
     "DatasetId": "InvoiceDetail",
     "DatasetName": "Invoice Detail",
     "ValidationCriteria": {
-      "MustSatisfy": "PurchaseOrderNumber MUST represent the identifier used by the customer to unique identify the purchase order responsible for the charge.",
+      "MustSatisfy": "PurchaseOrderNumber MUST represent the identifier used by the customer to uniquely identify the purchase order responsible for the charge.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
