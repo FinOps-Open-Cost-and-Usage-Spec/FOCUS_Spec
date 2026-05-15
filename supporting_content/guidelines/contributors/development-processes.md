@@ -129,19 +129,32 @@ Guideline complexity increases friction. AI capability is uneven across contribu
 
 #### Proposed Change
 
-Contributors can engage through multiple paths without requiring immediate specification-level participation:
+Contributors can engage at two levels, both of which require basic interaction with GitHub:
+
+**Low-friction contribution paths** — do not require familiarity with specification structure, editorial guidelines, requirements authoring guidelines, or requirements-model expectations:
 
 * Task Force discussion and evaluation
 * Supporting Content creation (GitHub `/supporting_content` or Google Drive)
 * GitHub comments on PRs
+
+**Specification-level contribution paths** — require familiarity with the above:
+
 * Specification PR authoring (content under `/specification` or `/guidelines`)
+
+Low-friction paths are not preliminary steps toward specification authoring. They are valued contribution modes in their own right. Contributors who engage exclusively through low-friction paths are making meaningful contributions to the development of the specification.
 
 #### Impact
 
-* Lowers entry barriers for contributors
-* Avoids forcing early specification-level compliance
-* Preserves SME participation and domain expertise
+* Lowers entry barriers for contributors with domain expertise
+* Preserves SME participation without requiring specification-level compliance as a starting point
+
+#### Key Principle
+
+Basic GitHub interaction is required across all paths. The distinction is not between GitHub and non-GitHub contribution, but between contribution that requires specification-level editorial and structural knowledge and contribution that does not.
+
+Low-friction contribution paths include the ability to initiate TF consideration via the **Supporting Content-Based Entry** (see *2. Champion Scope Intake*), without requiring a specification-level Pull Request.
 
 #### Relationship to Scope Proposal
 
 The Scope Proposal Section 3 describes the Open Forum as a space where "Working group members can bring and discuss whatever they wish." The SME Contribution Path formalizes structured ways to contribute between the Open Forum and the specification-based Champion Scope intake, without requiring specification-level participation as a starting point.
+
