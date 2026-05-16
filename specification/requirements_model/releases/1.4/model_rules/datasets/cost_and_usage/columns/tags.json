@@ -615,7 +615,7 @@
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
     "ApplicabilityCriteria": [],
-    "Order": 190,
+    "Order": 100,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
