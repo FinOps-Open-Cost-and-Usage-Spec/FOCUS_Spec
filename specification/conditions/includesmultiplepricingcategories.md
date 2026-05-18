@@ -6,7 +6,7 @@ The Includes Multiple Pricing Categories condition represents a verifiable state
 
 IncludesMultiplePricingCategories MUST adhere to the following requirements:
 
-* IncludesMultiplePricingCategories MUST evaluate to true when the operating model supports more than one pricing category (e.g., On-Demand, Reservation, Spot).
+* IncludesMultiplePricingCategories MUST evaluate to true when the operating model supports more than one pricing category (e.g., Standard, Dynamic, Committed).
 * IncludesMultiplePricingCategories MUST evaluate to false when the operating model supports only a single pricing category.
 
 ## Condition ID

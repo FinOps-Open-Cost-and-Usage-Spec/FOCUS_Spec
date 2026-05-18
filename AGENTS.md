@@ -98,25 +98,28 @@ AI agents generating or reviewing content MUST act as strict technical editors e
 
 ### Normative Language & Requirements
 
-* Use BCP-14 keywords: MUST, MUST NOT, SHOULD, SHOULD NOT, MAY (all uppercase).
-* DO NOT use: "REQUIRED", "SHALL", "SHALL NOT", "RECOMMENDED", "OPTIONAL"
-* **Location:** In spec content, capitalized BCP-14 keywords MUST NOT appear outside "Requirements" sections unless quoted. Do not flag lowercase usage (e.g., "may", "should").
-* **Format:** Write normative statements as bullet lists, not lengthy sentences.
-* **Single Constraint:** Each normative bullet MUST express exactly one requirement. Do not combine multiple distinct obligations using "and"/"or", though these conjunctions are permitted within conditional clauses and mathematical validations.
-* **Conditional Phrasing:** Normative statements with conditions MUST use standard phrasing: "when / if / unless / only when / only if / except when / except if".
-* **State vs Behavior:** Normative requirements MUST describe a verifiable state, not an operational behavior. Do not use process-oriented verbs (e.g., *ensure*, *handle*, *support*, *provide*) as the primary constraint, though they MAY appear in conditional clauses.
+* **BCP-14 Keywords:** Use MUST, MUST NOT, SHOULD, SHOULD NOT, MAY (uppercase). NEVER use: "REQUIRED", "SHALL", "SHALL NOT", "RECOMMENDED", "NOT RECOMMENDED", "OPTIONAL".
+* **Location:** Capitalized keywords MUST NOT appear outside "Requirements" sections unless quoted.
+* **Structure:** Use bulleted lists. Each bullet MUST express exactly one verifiable state. Split bullets that combine multiple obligations.
+* **Allowed Subjects:** MUST be schema-level entities (e.g., `FOCUS dataset`, `BilledCost`). Actors (e.g., Data Generator) and Processes MUST NOT be subjects.
+* **State vs. Behavior:** Describe a state, not behavior. Prohibited process verbs: *ensure, handle, support, provide, alter, prefix, document* (though they MAY appear in conditional clauses).
+* **Conditional Phrasing:** Use ONLY: `when / unless / only when / except when`. (DO NOT use `if`).
+* **Mathematical Accuracy:** `and/or` is permitted ONLY in mathematical validations or conditional clauses.
 * **Structural Anchors:** Requirements sections MUST begin with a non-verifiable anchor phrase ending in a colon (e.g., `<Entity> MUST adhere to the following requirements:`).
+* **Terminology:** Normative text MUST use `ColumnId`s, NEVER Display Names. The subject for dataset requirements MUST be `FOCUS dataset`. Elsewhere, specify the exact abstraction (e.g., `FOCUS dataset`, `dataset instance`, `dataset artifact`).
+* **Tone:** Use formal language. Contractions (e.g., *don't, can't*) MUST NOT be used in normative requirements.
+* **Inline Examples:** Any non-normative examples embedded within a requirement MUST be enclosed in parentheses using "e.g." (e.g., `...without lossy transformations (e.g., rounding)`).
 
 ### Editorial Conventions
 
-* **Column/Attribute IDs:** PascalCase without spaces (e.g., PricingQuantity). Entity IDs SHOULD be used in normative text sections.
+* **Column/Attribute IDs:** PascalCase without spaces (e.g., PricingQuantity). Entity IDs MUST be used in normative text sections.
 * **Column/Attribute Display Names:** Normal text with spaces (e.g., "Pricing Quantity"). These SHOULD be used in introductory or explanatory non-normative text.
 * **No Mixing:** Do not mix Entity IDs and Display Names within the same normative requirement.
 * **Column values:** Enclosed in double quotes (e.g., `"Usage"`, `"Tax"`).
 * **Glossary terms:** Link with `[*term*](#glossary:term)` format.
 * **Linking Rule:** Link entity names and Glossary terms ONLY on their first occurrence per source file. Exception: Functional links using different anchor text are exempt.
 * **Lists:** All unordered lists MUST use asterisks (`*`), never dashes (`-`) or plus signs (`+`). Nested bullet points MUST use exactly two spaces per level.
-* **Notes:** Important notes must use the blockquote format (`> Important Consideration`).
+* **Notes:** Important notes must use the blockquote format (`> **Note:**`).
 * **Anchors:** Pandoc auto-generates custom heading anchors. DO NOT flag missing HTML `<a name="">` tags.
 
 ### Validation & Schema Accuracy

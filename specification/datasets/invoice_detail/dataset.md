@@ -46,8 +46,7 @@ For more information, see the [Invoice Reconciliation](#supportedfeatures.invoic
 
 InvoiceDetail MUST adhere to the following requirements:
 
-* InvoiceDetail MUST be present when the invoice issuer supports payable invoices.
-* The presence of columns in InvoiceDetail MUST adhere to the following requirements:
+* InvoiceDetail column presence MUST adhere to the following requirements:
   * InvoiceDetail MUST include [BilledCost](#datasets.invoicedetail.billedcost).
   * InvoiceDetail MUST include [BillingAccountId](#datasets.invoicedetail.billingaccountid).
   * InvoiceDetail MUST include [BillingCurrency](#datasets.invoicedetail.billingcurrency).
