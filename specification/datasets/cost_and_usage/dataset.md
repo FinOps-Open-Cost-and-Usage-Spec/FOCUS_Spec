@@ -129,6 +129,7 @@ CostAndUsage MUST adhere to the following requirements:
   * CostAndUsage MUST include [InvoiceDetailId](#datasets.costandusage.invoicedetailid) when the *operating model* [includes payable invoices](#conditions.includespayableinvoices).
   * CostAndUsage MUST include [InvoiceId](#datasets.costandusage.invoiceid) when the *operating model* [includes payable invoices](#conditions.includespayableinvoices).
   * CostAndUsage MUST include [InvoiceIssuerName](#datasets.costandusage.invoiceissuername) when the *operating model* [includes payable invoices](#conditions.includespayableinvoices).
+  * CostAndUsage MUST include [ListCost](#datasets.costandusage.listcost).
   * CostAndUsage MUST include [ListUnitPrice](#datasets.costandusage.listunitprice) when the *operating model* [includes list unit prices](#conditions.includeslistunitprices).
   * CostAndUsage MUST include [PricingCategory](#datasets.costandusage.pricingcategory) when the *operating model* [includes multiple pricing categories](#conditions.includesmultiplepricingcategories).
   * CostAndUsage MUST include [PricingCurrency](#datasets.costandusage.pricingcurrency) when the *operating model* [includes pricing and billing currency differences](#conditions.includespricingbillingcurrencydifferences).
