@@ -18,7 +18,6 @@ Conditions are sorted alphabetically by name.
 | [Includes Host-Service Provider Differences](#conditions.includeshostserviceproviderdifferences) | Service | Operating model includes public delineation between host and service provider. |
 | [Includes List Unit Prices](#conditions.includeslistunitprices) | Pricing | Operating model includes standard, non-discounted baseline unit prices. |
 | [Includes Multiple Billing Account Types](#conditions.includesmultiplebillingaccounttypes) | Account | Operating model includes more than one possible BillingAccountType value. |
-| [Includes Multiple Charge Frequencies](#conditions.includesmultiplechargefrequencies) | Billing | Operating model includes multiple charge frequencies. |
 | [Includes Multiple Pricing Categories](#conditions.includesmultiplepricingcategories) | Pricing | Operating model includes more than one pricing category across all SKUs. |
 | [Includes Multiple Services](#conditions.includesmultipleservices) | Service | Operating model includes multiple services. |
 | [Includes Multiple Sub Account Types](#conditions.includesmultiplesubaccounttypes) | Account | Operating model includes more than one possible SubAccountType value. |
@@ -28,7 +27,6 @@ Conditions are sorted alphabetically by name.
 | [Includes Provisioned Resources](#conditions.includesprovisionedresources) | Resource | Operating model includes provisioned resources. |
 | [Includes Regions](#conditions.includesregions) | Resource | Operating model includes deploying resources or services within a region. |
 | [Includes Resource Type Assignment](#conditions.includesresourcetypeassignment) | Resource | Operating model includes assigning types to resources. |
-| [Includes Service Hierarchy](#conditions.includesservicehierarchy) | Service | Operating model includes more than one level of service categorization. |
 | [Includes Split Cost Allocation](#conditions.includessplitcostallocation) | Allocation | Operating model includes split cost allocation. |
 | [Includes Sub Accounts](#conditions.includessubaccounts) | Account | Operating model includes a sub account construct. |
 | [Includes Tags](#conditions.includestags) | Allocation | Operating model includes the definition or enrichment of tags. |
