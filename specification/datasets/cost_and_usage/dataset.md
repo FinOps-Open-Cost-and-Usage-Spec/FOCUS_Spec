@@ -12,6 +12,8 @@ The specification for the Cost and Usage dataset defines a group of columns that
 | [Allocated Method ID](#datasets.costandusage.allocatedmethodid)                                     | Dimension          | Conditional   | True         | String    |
 | [Allocated Resource ID](#datasets.costandusage.allocatedresourceid)                                 | Dimension          | Conditional   | True         | String    |
 | [Allocated Resource Name](#datasets.costandusage.allocatedresourcename)                             | Dimension          | Conditional   | True         | String    |
+| [Allocated Service Category](#datasets.costandusage.allocatedservicecategory)                       | Dimension          | Conditional   | True         | String    |
+| [Allocated Service Name](#datasets.costandusage.allocatedservicename)                               | Dimension          | Conditional   | True         | String    |
 | [Allocated Tags](#datasets.costandusage.allocatedtags)                                              | Dimension          | Conditional   | True         | JSON      |
 | [Availability Zone](#datasets.costandusage.availabilityzone)                                        | Dimension          | Recommended   | True         | String    |
 | [Billed Cost](#datasets.costandusage.billedcost)                                                    | Metric             | Mandatory     | False        | Decimal   |
@@ -95,6 +97,8 @@ CostAndUsage MUST adhere to the following requirements:
   * CostAndUsage MUST include [AllocatedMethodId](#datasets.costandusage.allocatedmethodid) when the data generator supports data generator-calculated split cost allocation.
   * CostAndUsage MUST include [AllocatedResourceId](#datasets.costandusage.allocatedresourceid) when the data generator supports data generator-calculated split cost allocation.
   * CostAndUsage MUST include [AllocatedResourceName](#datasets.costandusage.allocatedresourcename) when the data generator supports data generator-calculated split cost allocation.
+  * CostAndUsage MUST include [AllocatedServiceCategory](#datasets.costandusage.allocatedservicecategory) when the data generator supports data generator-calculated split cost allocation and allocates cost to a *service* other than the *service* of the *origin charge*.
+  * CostAndUsage MUST include [AllocatedServiceName](#datasets.costandusage.allocatedservicename) when the data generator supports data generator-calculated split cost allocation and allocates cost to a *service* other than the *service* of the *origin charge*.
   * CostAndUsage MUST include [AllocatedTags](#datasets.costandusage.allocatedtags) when the data generator supports data generator-calculated split cost allocation.
   * CostAndUsage SHOULD include [AvailabilityZone](#datasets.costandusage.availabilityzone) when the host provider supports deploying resources or services within an *availability zone*.
   * CostAndUsage MUST include [BilledCost](#datasets.costandusage.billedcost).

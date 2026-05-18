@@ -1,0 +1,295 @@
+{
+  "CAU-AllocatedServiceName-C-000-C": {
+    "Function": "Composite",
+    "Reference": "AllocatedServiceName",
+    "EntityType": "Column",
+    "EntityName": "Allocated Service Name",
+    "EntityId": "AllocatedServiceName",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    ],
+    "Type": "Static",
+    "Order": 0,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "The AllocatedServiceName column adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedServiceName-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedServiceName-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedServiceName-C-003-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedServiceName-C-006-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CAU-CostAndUsage-D-078-C",
+        "CAU-AllocatedServiceName-C-001-M",
+        "CAU-AllocatedServiceName-C-002-M",
+        "CAU-AllocatedServiceName-C-003-C",
+        "CAU-AllocatedServiceName-C-006-C"
+      ]
+    }
+  },
+  "CAU-AllocatedServiceName-C-001-M": {
+    "Function": "Type",
+    "Reference": "AllocatedServiceName",
+    "EntityName": "Allocated Service Name",
+    "EntityId": "AllocatedServiceName",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 20,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "AllocatedServiceName MUST be of type String.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "TypeString",
+        "ColumnName": "AllocatedServiceName"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedServiceName-C-002-M": {
+    "Function": "Format",
+    "Reference": "AllocatedServiceName",
+    "EntityName": "Allocated Service Name",
+    "EntityId": "AllocatedServiceName",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 30,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "AllocatedServiceName MUST conform to StringHandling requirements.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "FormatString",
+        "ColumnName": "AllocatedServiceName"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedServiceName-C-003-C": {
+    "Function": "Composite",
+    "Reference": "AllocatedServiceName",
+    "EntityName": "Allocated Service Name",
+    "EntityId": "AllocatedServiceName",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 40,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "AllocatedServiceName nullability is defined as follows:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedServiceName-C-004-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedServiceName-C-005-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CAU-AllocatedServiceName-C-004-C",
+        "CAU-AllocatedServiceName-C-005-C"
+      ]
+    }
+  },
+  "CAU-AllocatedServiceName-C-004-C": {
+    "Function": "Nullability",
+    "Reference": "AllocatedServiceName",
+    "EntityName": "Allocated Service Name",
+    "EntityId": "AllocatedServiceName",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 50,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "AllocatedServiceName MUST be null when AllocatedResourceId is null.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "AllocatedServiceName",
+        "Value": null
+      },
+      "Condition": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "AllocatedResourceId",
+        "Value": null
+      },
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedServiceName-C-005-C": {
+    "Function": "Nullability",
+    "Reference": "AllocatedServiceName",
+    "EntityName": "Allocated Service Name",
+    "EntityId": "AllocatedServiceName",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 60,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "AllocatedServiceName MUST NOT be null when AllocatedResourceId is not null.",
+      "Keyword": "MUST NOT",
+      "Requirement": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "AllocatedServiceName",
+        "Value": null
+      },
+      "Condition": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "AllocatedResourceId",
+        "Value": null
+      },
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedServiceName-C-006-C": {
+    "Function": "Composite",
+    "Reference": "AllocatedServiceName",
+    "EntityName": "Allocated Service Name",
+    "EntityId": "AllocatedServiceName",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 70,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "The relationship between AllocatedServiceName and AllocatedServiceCategory is defined as follows:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedServiceName-C-007-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedServiceName-C-008-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CAU-AllocatedServiceName-C-007-C",
+        "CAU-AllocatedServiceName-C-008-C",
+        "CAU-AllocatedServiceCategory-C-000-C"
+      ]
+    }
+  },
+  "CAU-AllocatedServiceName-C-007-C": {
+    "Function": "Validation",
+    "Reference": "AllocatedServiceName",
+    "EntityName": "Allocated Service Name",
+    "EntityId": "AllocatedServiceName",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 80,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "AllocatedServiceName MUST have one and only one AllocatedServiceCategory that best aligns with its primary purpose, except when no suitable AllocatedServiceCategory is available.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "CheckDistinctCount",
+        "ColumnAName": "AllocatedServiceName",
+        "ColumnBName": "AllocatedServiceCategory",
+        "ExpectedCount": 1
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedServiceName-C-008-C": {
+    "Function": "Validation",
+    "Reference": "AllocatedServiceName",
+    "EntityName": "Allocated Service Name",
+    "EntityId": "AllocatedServiceName",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "Order": 90,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "AllocatedServiceName MUST be associated with the AllocatedServiceCategory \"Other\" when no suitable AllocatedServiceCategory is available.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}
