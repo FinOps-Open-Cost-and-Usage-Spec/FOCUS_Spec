@@ -18,15 +18,17 @@ Tags MUST adhere to the following requirements:
   * Tags SHOULD include tag keys with corresponding non-null values for a given [*resource*](#glossary:resource).
   * Tags MAY include tag keys with a null value for a given *resource* depending on the data generator's tag finalization process.
   * Tag keys that do not support corresponding values, MUST have a corresponding true (boolean) value set.
-  * Data generator SHOULD publish tag finalization methods and semantics within their respective documentation.
-  * Data generator MUST NOT alter tag values unless applying true (boolean) to valueless tags.
+  * Tag values MUST match the provided values unless true (boolean) is applied to valueless tags.
 * Provider-defined tags MUST adhere to the following requirements:
   * Provider-defined tag keys MUST be prefixed with a predetermined, provider-specified tag key prefix that is unique to each corresponding provider-specified [*tag scheme*](#glossary:tag-scheme).
-  * Data generator SHOULD publish all provider-specified tag key prefixes within their respective documentation.
+  * Provider-specified tag key prefixes SHOULD be publicly documented.
 * User-defined tags MUST adhere to the following requirements:
-  * Data generator MUST prefix all but one user-defined *tag scheme* with a predetermined, provider-specified tag key prefix that is unique to each corresponding user-defined *tag scheme* when the data generator has more than one user-defined *tag scheme*.
-  * Data generator MUST NOT prefix tag keys when the data generator has only one user-defined *tag scheme*.
-  * Data generator MUST NOT allow reserved tag key prefixes to be used as prefixes for any user-defined tag keys within a prefixless user-defined *tag scheme*.
+  * User-defined tag keys in all but one user-defined *tag scheme* MUST include a predetermined, provider-specified tag key prefix that is unique to each corresponding user-defined *tag scheme* when the data generator has more than one user-defined *tag scheme*.
+  * User-defined tag keys MUST NOT include a *tag scheme*-specific prefix when the data generator has only one user-defined *tag scheme*.
+  * Reserved tag key prefixes MUST be prevented from being used as prefixes for any user-defined tag keys within a prefixless user-defined *tag scheme*.
+* Tag finalization documentation MUST adhere to the following requirements:
+  * Tag finalization documentation SHOULD include tag finalization methods and semantics.
+  * Tag finalization documentation SHOULD be accessible to practitioners.
 
 ## Provider-Defined vs. User-Defined Tags
 

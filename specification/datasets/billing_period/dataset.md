@@ -26,8 +26,7 @@ The Billing Period dataset is primarily used to provide context for the [Cost an
 
 BillingPeriod MUST adhere to the following requirements:
 
-* BillingPeriod MUST be present when the invoice issuer supports payable invoices.
-* The presence of columns in BillingPeriod MUST adhere to the following requirements:
+* BillingPeriod column presence MUST adhere to the following requirements:
   * BillingPeriod MUST include [BillingPeriodCreated](#datasets.billingperiod.billingperiodcreated).
   * BillingPeriod MUST include [BillingPeriodEnd](#datasets.billingperiod.billingperiodend).
   * BillingPeriod MUST include [BillingPeriodLastUpdated](#datasets.billingperiod.billingperiodlastupdated).
