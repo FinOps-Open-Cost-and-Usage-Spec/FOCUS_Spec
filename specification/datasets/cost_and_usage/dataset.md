@@ -108,7 +108,7 @@ CostAndUsage MUST adhere to the following requirements:
   * CostAndUsage MUST include [ChargeCategory](#datasets.costandusage.chargecategory).
   * CostAndUsage MUST include [ChargeClass](#datasets.costandusage.chargeclass).
   * CostAndUsage MUST include [ChargeDescription](#datasets.costandusage.chargedescription).
-  * CostAndUsage SHOULD include [ChargeFrequency](#datasets.costandusage.chargefrequency) when the *operating model* [includes multiple charge frequencies](#conditions.includesmultiplechargefrequencies).
+  * CostAndUsage SHOULD include [ChargeFrequency](#datasets.costandusage.chargefrequency).
   * CostAndUsage MUST include [ChargePeriodEnd](#datasets.costandusage.chargeperiodend).
   * CostAndUsage MUST include [ChargePeriodStart](#datasets.costandusage.chargeperiodstart).
   * CostAndUsage MUST include [CommitmentDiscountCategory](#datasets.costandusage.commitmentdiscountcategory) when the *operating model* [includes commitment discounts](#conditions.includescommitmentdiscounts).
