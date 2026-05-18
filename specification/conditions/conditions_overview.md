@@ -9,8 +9,6 @@ Conditions are sorted alphabetically by name.
 | Condition | Category | Description |
 | ------------------ | ------------- | ----------- |
 | [Baseline](#conditions.baseline) | General | All operating models encompass these foundational attributes. |
-| [Defines Multiple Billing Account Types](#conditions.definesmultiplebillingaccounttypes) | Account | Operating model defines more than one possible BillingAccountType value. |
-| [Defines Multiple Sub Account Types](#conditions.definesmultiplesubaccounttypes) | Account | Operating model defines more than one possible SubAccountType value. |
 | [Includes Availability Zones](#conditions.includesavailabilityzones) | Resource | Operating model includes deploying resources or services within an availability zone. |
 | [Includes Billing Account Naming](#conditions.includesaccountnaming) | Account | Operating model includes assigning a display name for the billing account. |
 | [Includes Capacity Reservations](#conditions.includescapacityreservations) | Commitment | Operating model includes capacity reservations. |
@@ -18,9 +16,12 @@ Conditions are sorted alphabetically by name.
 | [Includes Commitment Programs](#conditions.includescommitmentprograms) | Commitment | Operating model includes at least one commitment program. |
 | [Includes Contracted Pricing](#conditions.includescontractedpricing) | Pricing | Operating model includes formal contracts, spend commitments, or negotiated pricing. |
 | [Includes Host-Service Provider Differences](#conditions.includeshostserviceproviderdifferences) | Service | Operating model includes public delineation between host and service provider. |
+| [Includes List Unit Prices](#conditions.publisheslistunitprices) | Pricing | Operating model publishes baseline unit prices. |
+| [Includes Multiple Billing Account Types](#conditions.includesmultiplebillingaccounttypes) | Account | Operating model includes more than one possible BillingAccountType value. |
 | [Includes Multiple Charge Frequencies](#conditions.includesmultiplechargefrequencies) | Billing | Operating model includes multiple charge frequencies. |
 | [Includes Multiple Pricing Categories](#conditions.includesmultiplepricingcategories) | Pricing | Operating model includes more than one pricing category across all SKUs. |
 | [Includes Multiple Services](#conditions.includesmultipleservices) | Service | Operating model includes multiple services. |
+| [Includes Multiple Sub Account Types](#conditions.includesmultiplesubaccounttypes) | Account | Operating model includes more than one possible SubAccountType value. |
 | [Includes Payable Invoices](#conditions.includespayableinvoices) | Billing | Operating model includes payable invoices. |
 | [Includes Pricing-Billing Currency Differences](#conditions.includespricingbillingcurrencydifferences) | Pricing | Operating model includes pricing and billing in different currencies. |
 | [Includes Provisioned Resources](#conditions.includesprovisionedresources) | Resource | Operating model includes provisioned resources. |
@@ -33,4 +34,3 @@ Conditions are sorted alphabetically by name.
 | [Includes Unit Pricing](#conditions.includesunitpricing) | Pricing | Operating model includes unit pricing concepts. |
 | [Includes Usage Measurement](#conditions.includesusagemeasurement) | Billing | Operating model includes the measurement of usage. |
 | [Includes Virtual Currency](#conditions.includesvirtualcurrency) | Pricing | Operating model includes prices in virtual currency. |
-| [Publishes List Unit Prices](#conditions.publisheslistunitprices) | Pricing | Operating model publishes baseline unit prices that are universally accessible. |
