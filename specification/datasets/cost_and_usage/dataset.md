@@ -129,7 +129,7 @@ CostAndUsage MUST adhere to the following requirements:
   * CostAndUsage MUST include [InvoiceDetailId](#datasets.costandusage.invoicedetailid) when the *operating model* [includes payable invoices](#conditions.includespayableinvoices).
   * CostAndUsage MUST include [InvoiceId](#datasets.costandusage.invoiceid) when the *operating model* [includes payable invoices](#conditions.includespayableinvoices).
   * CostAndUsage MUST include [InvoiceIssuerName](#datasets.costandusage.invoiceissuername) when the *operating model* [includes payable invoices](#conditions.includespayableinvoices).
-  * CostAndUsage MUST include [ListCost](#datasets.costandusage.listcost).
+  * CostAndUsage MUST include [ListCost](#datasets.costandusage.listcost) when the *operating model* [includes list unit prices](#conditions.includeslistunitprices).
   * CostAndUsage MUST include [ListUnitPrice](#datasets.costandusage.listunitprice) when the *operating model* [includes list unit prices](#conditions.includeslistunitprices).
   * CostAndUsage MUST include [PricingCategory](#datasets.costandusage.pricingcategory) when the *operating model* [includes multiple pricing categories](#conditions.includesmultiplepricingcategories).
   * CostAndUsage MUST include [PricingCurrency](#datasets.costandusage.pricingcurrency) when the *operating model* [includes pricing and billing currency differences](#conditions.includespricingbillingcurrencydifferences).
@@ -152,7 +152,7 @@ CostAndUsage MUST adhere to the following requirements:
   * CostAndUsage MUST include [ResourceId](#datasets.costandusage.resourceid) when the *operating model* [includes provisioned resources](#conditions.includesprovisionedresources).
   * CostAndUsage MUST include [ResourceName](#datasets.costandusage.resourcename) when the *operating model* [includes provisioned resources](#conditions.includesprovisionedresources).
   * CostAndUsage MUST include [ResourceType](#datasets.costandusage.resourcetype) when the *operating model* [includes provisioned resources](#conditions.includesprovisionedresources) and [includes resource type assignment](#conditions.includesresourcetypeassignment).
-  * CostAndUsage MUST include [ServiceCategory](#datasets.costandusage.servicecategory) when the *operating model* [includes a service hierarchy](#conditions.includesservicehierarchy).
+  * CostAndUsage MUST include [ServiceCategory](#datasets.costandusage.servicecategory) when the *operating model* [includes multiple services](#conditions.includesmultipleservices).
   * CostAndUsage MUST include [ServiceName](#datasets.costandusage.servicename).
   * CostAndUsage MUST include [ServiceProviderName](#datasets.costandusage.serviceprovidername).
   * CostAndUsage SHOULD include [ServiceSubcategory](#datasets.costandusage.servicesubcategory).
