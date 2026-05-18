@@ -26,7 +26,7 @@ Commitment Program Eligibility Details consists of a valid JSON object with a to
 
 CommitmentProgramEligibilityDetailsObject MUST adhere to the following requirements:
 
-* CommitmentProgramEligibilityDetailsObject MUST conform to the [CommitmentProgramEligibilityDetailsObjectSchema](#schemas.datasets.costandusage.commitmentprogrameligibilitydetailsobjectschema) JSON Schema.
+* CommitmentProgramEligibilityDetailsObject MUST conform to the [CommitmentProgramEligibilityDetailsObjectSchema](#schemas.costandusage.commitmentprogrameligibilitydetailsobjectschema) JSON Schema.
 * CommitmentProgramEligibilityDetailsObject.CommitmentPrograms[\*].ProgramType MUST correspond to a *commitment program* type supported by the service provider.
 * CommitmentProgramEligibilityDetailsObject.CommitmentPrograms[\*].ProgramType MUST match [CommitmentDiscountType](#datasets.costandusage.commitmentdiscounttype) for one object in CommitmentProgramEligibilityDetailsObject.CommitmentPrograms when CommitmentDiscountType is not null.
 * CommitmentProgramEligibilityDetailsObject.CommitmentPrograms[\*].ProgramType SHOULD correspond to terminology disclosed by the service provider in public documentation.
@@ -58,7 +58,7 @@ To facilitate querying data across allocations and across service providers, a d
 Here is a basic example of the object format.
 
 * For more detailed examples, please see this column's entry in the JSON Object Examples appendix entry [here](#appendix.examples:jsonobject.examples:commitmentprogrameligibilitydetails).
-* For the JSON schema, please see [Commitment Program Eligibility Details Object Schema](#schemas.datasets.costandusage.commitmentprogrameligibilitydetailsobjectschema).
+* For the JSON schema, please see [Commitment Program Eligibility Details Object Schema](#schemas.costandusage.commitmentprogrameligibilitydetailsobjectschema).
 
 ``` json
 {

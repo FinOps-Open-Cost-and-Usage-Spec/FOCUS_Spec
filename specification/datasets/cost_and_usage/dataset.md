@@ -89,7 +89,6 @@ The Cost and Usage dataset can be joined to the Contract Commitment dataset thro
 
 CostAndUsage MUST adhere to the following requirements:
 
-* CostAndUsage MUST be present.
 * CostAndUsage column presence MUST adhere to the following requirements:
   * CostAndUsage SHOULD include [AllocatedMethodDetails](#datasets.costandusage.allocatedmethoddetails) when the [operating model](#glossary:operating-model) [includes split cost allocation](#conditions.includessplitcostallocation).
   * CostAndUsage MUST include [AllocatedMethodId](#datasets.costandusage.allocatedmethodid) when the *operating model* [includes split cost allocation](#conditions.includessplitcostallocation).
@@ -175,9 +174,9 @@ CostAndUsage MUST adhere to the following requirements:
 * When the *operating model* [includes split cost allocation](#conditions.includessplitcostallocation), CostAndUsage MUST adhere to the following requirements:
   * CostAndUsage MUST have its split cost allocation method documented and accessible to practitioners.
   * CostAndUsage SHOULD offer split cost allocation on an opt-in basis.
-  * CostAndUsage MAY contain records for concepts not related to resource usage, if it aligns with the documented split cost allocation method.
-  * CostAndUsage MAY contain records for unused or unallocated usage from the *origin charge* as separate *allocated charges*, if it aligns with the documented split cost allocation method.
-  * CostAndUsage MAY contain *allocated charges* with apportioned costs for unused or unallocated usage, if it aligns with the documented split cost allocation method.
+  * CostAndUsage MAY contain records for concepts not related to resource usage, when it aligns with the documented split cost allocation method.
+  * CostAndUsage MAY contain records for unused or unallocated usage from the *origin charge* as separate *allocated charges*, when it aligns with the documented split cost allocation method.
+  * CostAndUsage MAY contain *allocated charges* with apportioned costs for unused or unallocated usage, when it aligns with the documented split cost allocation method.
 * CostAndUsage SHOULD reflect all applied discounts in *charges* they pertain to.
 * CostAndUsage SHOULD NOT represent applied discounts as separate negating or offsetting *charges*.
 * CostAndUsage *FOCUS columns* MUST conform to [DataGeneratorCalculatedSplitCostAllocationHandling](#attributes.datagenerator-calculatedsplitcostallocationhandling) requirements when the *operating model* [includes split cost allocation](#conditions.includessplitcostallocation).
