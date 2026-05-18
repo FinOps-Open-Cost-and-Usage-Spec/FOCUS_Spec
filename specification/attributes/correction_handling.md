@@ -54,7 +54,7 @@ Given that the entire change history is presented, the Ledger correction style p
 
 ## Requirements
 
-CorrectionHandling MUST adhere to the following requirements:
+Dataset conforming to CorrectionHandling attribute MUST adhere to the following requirements:
 
 * *FOCUS dataset* MUST have its styles for representing corrections in *dataset artifacts* documented and accessible to practitioners (including whether Replacement, Delta, or Ledger style is used and under which conditions each style applies).
 * *FOCUS dataset* MUST represent a complete snapshot of data for the affected [*delivery scope*](#glossary:delivery-scope) when using [Replacement correction style](#attributes.correctionhandling.overview.correctionstyles.replacementcorrections).
