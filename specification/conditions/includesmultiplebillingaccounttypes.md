@@ -7,7 +7,7 @@ The Includes Multiple Billing Account Types condition represents a verifiable st
 IncludesMultipleBillingAccountTypes MUST adhere to the following requirements:
 
 * IncludesMultipleBillingAccountTypes MUST evaluate to true when the operating model includes more than one possible BillingAccountType value.
-* IncludesMultipleBillingAccountTypes MUST evaluate to false when the operating model includes only a single BillingAccountType value.
+* IncludesMultipleBillingAccountTypes MAY evaluate to false when the operating model includes only a single BillingAccountType value.
 
 ## Condition ID
 
