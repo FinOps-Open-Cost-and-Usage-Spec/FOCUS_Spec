@@ -1,17 +1,13 @@
 !INCLUDE "conditions_overview.md",0
 !INCLUDE "baseline.md",1
 !INCLUDE "includesavailabilityzones.md",1
-!INCLUDE "includesbillingaccountnaming.md",1
 !INCLUDE "includescapacityreservations.md",1
 !INCLUDE "includescommitmentdiscounts.md",1
 !INCLUDE "includescommitmentprograms.md",1
 !INCLUDE "includescontractcommitments.md",1
-!INCLUDE "includeshostserviceproviderdifferences.md",1
 !INCLUDE "includeslistunitprices.md",1
 !INCLUDE "includesmultiplebillingaccounttypes.md",1
-!INCLUDE "includesmultiplechargefrequencies.md",1
 !INCLUDE "includesmultiplepricingcategories.md",1
-!INCLUDE "includesmultipleservices.md",1
 !INCLUDE "includesmultiplesubaccounttypes.md",1
 !INCLUDE "includesnegotiatedpricing.md",1
 !INCLUDE "includespayableinvoices.md",1
@@ -19,7 +15,6 @@
 !INCLUDE "includesprovisionedresources.md",1
 !INCLUDE "includesregions.md",1
 !INCLUDE "includesresourcetypeassignment.md",1
-!INCLUDE "includesservicehierarchy.md",1
 !INCLUDE "includessplitcostallocation.md",1
 !INCLUDE "includessubaccounts.md",1
 !INCLUDE "includestags.md",1
