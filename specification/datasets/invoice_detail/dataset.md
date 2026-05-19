@@ -62,7 +62,7 @@ InvoiceDetail MUST adhere to the following requirements:
   * InvoiceDetail MUST include [InvoiceIssueDate](#datasets.invoicedetail.invoiceissuedate).
   * InvoiceDetail MUST include [InvoiceIssueStatus](#datasets.invoicedetail.invoiceissuestatus).
   * InvoiceDetail MUST include [InvoiceIssuerName](#datasets.invoicedetail.invoiceissuername).
-  * InvoiceDetail MUST include [PaymentCurrency](#datasets.invoicedetail.paymentcurrency) when the *operating model* [includes billing and payment currency differences](#conditions.includesbillingpaymentcurrencydifferences).
+  * InvoiceDetail MUST include [PaymentCurrency](#datasets.invoicedetail.paymentcurrency) when the [*operating model*](#glossary:operating-model) [includes billing and payment currency differences](#conditions.includesbillingpaymentcurrencydifferences).
   * InvoiceDetail MUST include [PaymentCurrencyBilledCost](#datasets.invoicedetail.paymentcurrencybilledcost) when the *operating model* [includes billing and payment currency differences](#conditions.includesbillingpaymentcurrencydifferences).
   * InvoiceDetail MUST include [PaymentCurrencyInvoiceDetailId](#datasets.invoicedetail.paymentcurrencyinvoicedetailid) when the *operating model* [includes aggregation level currency differences](#conditions.includesaggregationlevelcurrencydifferences).
   * InvoiceDetail MUST include [PaymentDueDate](#datasets.invoicedetail.paymentduedate).

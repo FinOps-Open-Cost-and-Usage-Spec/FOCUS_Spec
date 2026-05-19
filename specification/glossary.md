@@ -240,6 +240,10 @@ A service that is available and provided immediately or as needed, without requi
 
 A [*billing period*](#glossary:billing-period) with [Billing Period Status](#datasets.billingperiod.billingperiodstatus) set to "Open". Billing activities are ongoing, and the period remains subject to updates until formally closed.
 
+<a name="glossary:operating-model"><b>Operating Model</b></a>
+
+A system of record and its associated logic, processes, and entities - encompassing both the original provider-sourced data and any subsequent metadata enrichment - used by a data generator to produce a FOCUS-compliant dataset. The operating model represents the verifiable state of capabilities and information available to the generator at the time of dataset creation.
+
 <a name="glossary:origin-charge"><b>Origin Charge</b></a>
 
 The [charge](#glossary:charge) that existed prior to an operation. This is used in the context of [Data Generator-Calculated Split Cost Allocation](#supportedfeatures.datagenerator-calculatedsplitcostallocation) to identify the charge that existed prior to the application of Data Generator-Calculated Split Cost Allocation to produce [allocated charges](#glossary:allocated-charge).
@@ -291,10 +295,6 @@ A construct composed of the common properties of a product offering associated w
 <a name="glossary:sku-price"><b>SKU Price</b></a>
 
 A pricing construct that encompasses SKU properties (e.g., functionality and technical specifications), along with core stable pricing details for a particular SKU, while excluding dynamic or negotiable pricing elements such as unit price amounts; currency (and related exchange rates); temporal validity (e.g., effective dates); and contract- or negotiation-specific factors (e.g., contract or account identifiers and negotiable discounts).
-
-<a name="glossary:operating-model"><b>Operating Model</b></a>
-
-A system of record and its associated logic, processes, and entities - encompassing both the original provider-sourced data and any subsequent metadata enrichment - used by a data generator to produce a FOCUS-compliant dataset. The operating model represents the verifiable state of capabilities and information available to the generator at the time of dataset creation.
 
 <a name="glossary:sub-account"><b>Sub Account</b></a>
 
