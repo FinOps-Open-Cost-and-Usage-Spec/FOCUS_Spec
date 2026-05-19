@@ -8,7 +8,7 @@ The examples below illustrate how [Principal ID](#datasets.costandusage.principa
 4. **Seat-Based SaaS:** **Acme Corp** pays for SprintCanvas project management licenses. The provider does not attribute an infrastructure actor, but the opaque `ConsumerId` allows safe user-level chargeback.
 5. **Direct PaaS Usage:** A data scientist at **Acme Corp** logs into a LatticeScale managed notebook using their individual SSO credential. Because the user authenticated directly to the platform and is the sole consumer of the compute, the same opaque identifier is populated in both columns.
 
-| Scenario | Technology Category | Data Generator | PrincipalId | ConsumerId |
+| # | Scenario | Data Generator | PrincipalId | ConsumerId |
 | :--- | :--- | :--- | :--- | :--- |
 | 1 | **Generative AI API** | LatticeScale | `svc-acme-docbot-prod` | `emp_hash_84729x` |
 | 2 | **Multi-Tenant PaaS** | OmniQuery | `svc-bi-reporting-engine` | `client_gearpeak_001` |
