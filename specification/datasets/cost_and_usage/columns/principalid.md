@@ -30,7 +30,7 @@ Principal ID
 
 ## Description
 
-Identifier of the authenticated actor that initiated the request to the service provider.
+Identifier representing the authorized actor that initiated a request for a *resource* or *service*.
 
 ## Content Constraints
 
