@@ -70,7 +70,7 @@ ContractCommitment MUST adhere to the following requirements:
   * ContractCommitment MUST include [ContractCommitmentOfferCategory](#datasets.contractcommitment.contractcommitmentoffercategory).
   * ContractCommitment MUST include [ContractCommitmentPaymentInterval](#datasets.contractcommitment.contractcommitmentpaymentinterval).
   * ContractCommitment MUST include [ContractCommitmentPaymentModel](#datasets.contractcommitment.contractcommitmentpaymentmodel).
-  * ContractCommitment MUST include [ContractCommitmentPaymentUpfrontPercentage](#datasets.contractcommitment.contractcommitmentpaymentupfrontpercentage) when the service provider offers "Partial Upfront" [payment models](#datasets.contractcommitment.contractcommitmentpaymentmodel).
+  * ContractCommitment MUST include [ContractCommitmentPaymentUpfrontPercentage](#datasets.contractcommitment.contractcommitmentpaymentupfrontpercentage) when the *operating model* [includes partial upfront payments](#conditions.includespartialupfrontpayments).
   * ContractCommitment MUST include [ContractCommitmentPeriodEnd](#datasets.contractcommitment.contractcommitmentperiodend).
   * ContractCommitment MUST include [ContractCommitmentPeriodStart](#datasets.contractcommitment.contractcommitmentperiodstart).
   * ContractCommitment MUST include [ContractCommitmentQuantity](#datasets.contractcommitment.contractcommitmentquantity).
@@ -80,8 +80,8 @@ ContractCommitment MUST adhere to the following requirements:
   * ContractCommitment MUST include [ContractPeriodEnd](#datasets.contractcommitment.contractperiodend).
   * ContractCommitment MUST include [ContractPeriodStart](#datasets.contractcommitment.contractperiodstart).
   * ContractCommitment MUST include [InvoiceIssuerName](#datasets.contractcommitment.invoiceissuername).
-  * ContractCommitment MUST include [PricingCurrency](#datasets.contractcommitment.pricingcurrency) when the service provider supports pricing and billing in different currencies.
-  * ContractCommitment MUST include [PricingCurrencyContractCommitmentCost](#datasets.contractcommitment.pricingcurrencycontractcommitmentcost) when the service provider supports pricing and billing in different currencies.
+  * ContractCommitment MUST include [PricingCurrency](#datasets.contractcommitment.pricingcurrency) when the *operating model* [includes pricing and billing currency differences](#conditions.includespricingbillingcurrencydifferences).
+  * ContractCommitment MUST include [PricingCurrencyContractCommitmentCost](#datasets.contractcommitment.pricingcurrencycontractcommitmentcost) when the *operating model* [includes pricing and billing currency differences](#conditions.includespricingbillingcurrencydifferences).
   * ContractCommitment MUST include [ServiceProviderName](#datasets.contractcommitment.serviceprovidername).
 * ContractCommitment MUST conform to [CorrectionHandling](#attributes.correctionhandling) requirements.
 * ContractCommitment MUST conform to [DatasetCompleteness](#attributes.datasetcompleteness) requirements.

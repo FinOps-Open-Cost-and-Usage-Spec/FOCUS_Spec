@@ -62,12 +62,12 @@ InvoiceDetail MUST adhere to the following requirements:
   * InvoiceDetail MUST include [InvoiceIssueDate](#datasets.invoicedetail.invoiceissuedate).
   * InvoiceDetail MUST include [InvoiceIssueStatus](#datasets.invoicedetail.invoiceissuestatus).
   * InvoiceDetail MUST include [InvoiceIssuerName](#datasets.invoicedetail.invoiceissuername).
-  * InvoiceDetail MUST include [PaymentCurrency](#datasets.invoicedetail.paymentcurrency) when the invoice issuer supports billing and payment in different currencies.
-  * InvoiceDetail MUST include [PaymentCurrencyBilledCost](#datasets.invoicedetail.paymentcurrencybilledcost) when the invoice issuer supports billing and payment in different currencies.
-  * InvoiceDetail MUST include [PaymentCurrencyInvoiceDetailId](#datasets.invoicedetail.paymentcurrencyinvoicedetailid) when the invoice issuer represents billing currency and payment currency at different aggregation levels on payable invoices.
+  * InvoiceDetail MUST include [PaymentCurrency](#datasets.invoicedetail.paymentcurrency) when the *operating model* [includes billing and payment currency differences](#conditions.includesbillingpaymentcurrencydifferences).
+  * InvoiceDetail MUST include [PaymentCurrencyBilledCost](#datasets.invoicedetail.paymentcurrencybilledcost) when the *operating model* [includes billing and payment currency differences](#conditions.includesbillingpaymentcurrencydifferences).
+  * InvoiceDetail MUST include [PaymentCurrencyInvoiceDetailId](#datasets.invoicedetail.paymentcurrencyinvoicedetailid) when the *operating model* [includes aggregation level currency differences](#conditions.includesaggregationlevelcurrencydifferences).
   * InvoiceDetail MUST include [PaymentDueDate](#datasets.invoicedetail.paymentduedate).
   * InvoiceDetail MUST include [PaymentTerms](#datasets.invoicedetail.paymentterms).
-  * InvoiceDetail MUST include [PurchaseOrderNumber](#datasets.invoicedetail.purchaseordernumber) when the invoice issuer supports customer input of purchase order numbers.
+  * InvoiceDetail MUST include [PurchaseOrderNumber](#datasets.invoicedetail.purchaseordernumber) when the *operating model* [includes purchase order numbers](#conditions.includespurchaseordernumbers).
   * InvoiceDetail MUST include [ReferenceInvoiceId](#datasets.invoicedetail.referenceinvoiceid).
   * InvoiceDetail MUST include [*custom columns*](#glossary:custom-column) to represent any monetary metric that appears on an invoice issued to a BillingAccountId when there is no equivalent [*FOCUS column*](#glossary:FOCUS-column).
 * InvoiceDetail MUST conform to [CorrectionHandling](#attributes.correctionhandling) requirements.
