@@ -91,7 +91,7 @@ A service-provider offering that allows a customer to enter into a [*commitment*
 
 <a name="glossary:consumer"><b>Consumer</b></a>
 
-An authenticated actor (e.g., end-user, tenant, application, autonomous agent) that utilizes a [*resource*](#glossary:resource) or [*service*](#glossary:service). This is an application-layer actor benefiting from the usage, which may be distinct from the infrastructure-layer [*principal*](#glossary:principal) that initiated the request.
+A downstream actor (e.g., end-user, application, autonomous agent) that consumes [*resources*](#glossary:resource) or [*services*](#glossary:service). The consumer may be distinct from the [*principal*](#glossary:principal) that initiates requests for *resources* or *services*.
 
 <a name="glossary:contract"><b>Contract</b></a>
 
