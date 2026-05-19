@@ -118,17 +118,17 @@ The table below lists recommended names for count-based base units.
 | Count                       | Counts                    | Generic tally of items or occurrences. |
 | Unit                        | Units                     | Generic standardized measure of consumption. |
 | Request                     | Requests                  | API or service invocations. |
-| Token                       | Tokens                    | Text or data fragments processed by models. |
+| Token                       | Tokens                    | Discrete data elements exchanged or processed. |
 | Connection                  | Connections               | Active network or database links. |
 | Certificate                 | Certificates              | Issued digital security credentials for authentication or encryption. |
 | Domain                      | Domains                   | Registered web or network namespaces. |
 | Core                        | Cores                     | Allocated processing units within a compute resource. |
 | Character                   | Characters                | Text processing length (e.g., translation, text-to-speech). |
 | Image                       | Images                    | Generated or processed visual media. |
-| Job                         | Jobs                      | Asynchronous or batch processing tasks (e.g., fine-tuning). |
+| Job                         | Jobs                      | Asynchronous or batch processing tasks. |
 | Message                     | Messages                  | Conversational turns or queue items. |
 | Page                        | Pages                     | Discrete document units analyzed or processed. |
-| Session                     | Sessions                  | Continuous interactive usage periods (e.g., agentic workflows). |
+| Session                     | Sessions                  | Continuous interactive usage periods. |
 
 *Note: If a count-based base unit is not covered by the recommended values, a new value may be used as long as it is capitalized.*
 
