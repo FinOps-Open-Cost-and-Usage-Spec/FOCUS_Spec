@@ -23,7 +23,7 @@ The Contract Commitment dataset is a supporting dataset that describes the terms
 | [Contract Commitment Offer Category](#datasets.contractcommitment.contractcommitmentoffercategory) | Dimension | Mandatory | False | String |
 | [Contract Commitment Payment Interval](#datasets.contractcommitment.contractcommitmentpaymentinterval) | Dimension | Mandatory | False | String |
 | [Contract Commitment Payment Model](#datasets.contractcommitment.contractcommitmentpaymentmodel) | Dimension | Mandatory | False | String |
-| [Contract Commitment Payment Upfront Percentage](#datasets.contractcommitment.contractcommitmentpaymentupfrontpercentage) | Metric | Conditional | False | Decimal |
+| [Contract Commitment Payment Upfront Percentage](#datasets.contractcommitment.contractcommitmentpaymentupfrontpercentage) | Metric | [Conditional](#conditions.includespartialupfrontpayments) | False | Decimal |
 | [Contract Commitment Period End](#datasets.contractcommitment.contractcommitmentperiodend) | Dimension | Mandatory | False | Date/Time |
 | [Contract Commitment Period Start](#datasets.contractcommitment.contractcommitmentperiodstart) | Dimension | Mandatory | False | Date/Time |
 | [Contract Commitment Quantity](#datasets.contractcommitment.contractcommitmentquantity) | Metric | Mandatory | True | Decimal |
@@ -33,8 +33,8 @@ The Contract Commitment dataset is a supporting dataset that describes the terms
 | [Contract Period End](#datasets.contractcommitment.contractperiodend) | Dimension | Mandatory | False | Date/Time |
 | [Contract Period Start](#datasets.contractcommitment.contractperiodstart) | Dimension | Mandatory | False | Date/Time |
 | [Invoice Issuer Name](#datasets.contractcommitment.invoiceissuername) | Dimension | Mandatory | False | String |
-| [Pricing Currency](#datasets.contractcommitment.pricingcurrency) | Dimension | Conditional | False | String |
-| [Pricing Currency Contract Commitment Cost](#datasets.contractcommitment.pricingcurrencycontractcommitmentcost) | Metric | Conditional | True | Decimal |
+| [Pricing Currency](#datasets.contractcommitment.pricingcurrency) | Dimension | [Conditional](#conditions.includespricingbillingcurrencydifferences) | False | String |
+| [Pricing Currency Contract Commitment Cost](#datasets.contractcommitment.pricingcurrencycontractcommitmentcost) | Metric | [Conditional](#conditions.includespricingbillingcurrencydifferences) | True | Decimal |
 | [Service Provider Name](#datasets.contractcommitment.serviceprovidername) | Dimension | Mandatory | False | String |
 
 ## Relationships<!--SkipTOC-->

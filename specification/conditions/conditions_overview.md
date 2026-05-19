@@ -8,7 +8,6 @@ Conditions are sorted alphabetically by name.
 
 | Condition | Category | Description |
 | ------------------ | ------------- | ----------- |
-| [Baseline](#conditions.baseline) | General | All operating models encompass these foundational attributes. |
 | [Includes Aggregation Level Currency Differences](#conditions.includesaggregationlevelcurrencydifferences) | Billing | Operating model represents billing currency and payment currency at different aggregation levels on payable invoices. |
 | [Includes Availability Zones](#conditions.includesavailabilityzones) | Resource | Operating model includes deploying resources or services within an availability zone. |
 | [Includes Billing and Payment Currency Differences](#conditions.includesbillingpaymentcurrencydifferences) | Billing | Operating model includes billing and payment in different currencies. |

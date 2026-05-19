@@ -1,5 +1,4 @@
 !INCLUDE "conditions_overview.md",0
-!INCLUDE "baseline.md",1
 !INCLUDE "includesaggregationlevelcurrencydifferences.md",1
 !INCLUDE "includesavailabilityzones.md",1
 !INCLUDE "includesbillingpaymentcurrencydifferences.md",1
