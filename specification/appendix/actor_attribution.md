@@ -1,6 +1,6 @@
 # Examples: Actor Attribution
 
-The examples below illustrate how [Principal ID](#datasets.costandusage.principalid) and [Consumer ID](#datasets.costandusage.consumerid) in the [Cost and Usage](#datasets.costandusage) dataset are populated across different data generators and technology categories to resolve asymmetric actor granularity. Comparing these scenarios demonstrates how FOCUS handles attribution when the infrastructure actor and application actor are distinct, identical, or mutually exclusive.
+The examples below illustrate how [Principal ID](#datasets.costandusage.principalid) and [Consumer ID](#datasets.costandusage.consumerid) in the [Cost and Usage](#datasets.costandusage) dataset resolve asymmetric actor granularity. These scenarios demonstrate how FOCUS represents the [*principal*](#glossary:principal) and [*consumer*](#glossary:consumer) of a [*resource*](#glossary:resource) or [*service*](#glossary:service) when these actors are distinct, identical, or omitted.
 
 1. **Generative AI API:** **Acme Corp** uses an internal bot to summarize notes via a LatticeScale API. Security audits the service account (`PrincipalId`), while FinOps allocates token costs to the employee (`ConsumerId`).
 2. **Multi-Tenant PaaS:** A shared BI engine runs a query on OmniQuery for a specific client of **GearPeak Outdoors**. Capturing the downstream client (`ConsumerId`) prevents costs from pooling in overhead.
