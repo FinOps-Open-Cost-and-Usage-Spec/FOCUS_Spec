@@ -270,7 +270,7 @@ A comprehensive list of prices offered by a service provider.
 
 <a name="glossary:principal"><b>Principal</b></a>
 
-An authenticated actor (e.g., user, service account, application credential) that directly initiates a request to a [*service provider*](#glossary:service-provider) to use or manage a [*resource*](#glossary:resource) or [*service*](#glossary:service). It represents the infrastructure-layer actor that authorized a charge, which may be distinct from the downstream [*consumer*](#glossary:consumer) that utilizes the *resource* or *service*.
+An authorized actor (e.g., user account, service account, application) that initiates requests for [*resources*](#glossary:resource) or [*services*](#glossary:service). The principal may be distinct from the downstream [*consumer*](#glossary:consumer) that consumes *resources* or *services*.
 
 <a name="glossary:service-provider"><b>Service Provider</b></a>
 
