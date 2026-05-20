@@ -17,12 +17,12 @@ ServiceCategory MUST adhere to the following requirements:
 | AI and Machine Learning   | Artificial Intelligence and Machine Learning related technologies.                                                          |
 | Analytics                 | Data processing, analytics, and visualization capabilities.                                                                 |
 | Business Applications     | Business and productivity applications and services.                                                                        |
-| Compute                   | Computing infrastructure and services, including physical, virtual, containerized, serverless, or high-performance.         |
+| Compute                   | Computing infrastructure and services, including virtual, containerized, serverless, bare-metal, or high-performance.       |
 | Databases                 | Database platforms and services that allow for storage and querying of data.                                                |
 | Developer Tools           | Software development and delivery tools and services.                                                                       |
 | External Data             | Subscriptions to third-party data sets, market intelligence, or external API feeds.                                         |
 | Facilities                | Physical space, rent, power, cooling, and colocation services.                                                              |
-| Hardware                  | Physical IT equipment including servers, racks, switches, and storage arrays.                                               |
+| Hardware                  | Purchased or leased physical IT assets, including servers, racks, switches, and storage arrays.                                               |
 | Identity                  | Identity and access management services.                                                                                    |
 | Integration               | Services that allow applications to interact with one another.                                                              |
 | Internet of Things        | Development and management of IoT devices and networks.                                                                     |
@@ -30,14 +30,14 @@ ServiceCategory MUST adhere to the following requirements:
 | Media                     | Media and entertainment streaming and processing services.                                                                  |
 | Migration                 | Moving applications and data between environments or providers.                                                             |
 | Mobile                    | Services enabling applications to interact via mobile technologies.                                                         |
-| Multicloud                | Support for the interworking of multiple discrete provider and/or on-premises environments.                                 |
-| Networking                | Network connectivity and management.                                                                                        |
+| Multicloud                | Support for the interworking of multiple distinct environments across different service providers or physical infrastructures.                                 |
+| Networking                | Network connectivity, network management, and data transmission circuits, including WAN and physical interconnects.                                                                                       |
 | Professional Services     | Consulting, implementation, architectural guidance, and managed service engagements.                                         |
 | Security                  | Security monitoring and compliance services.                                                                                |
 | Software Licensing        | Standalone software licenses, operating systems, hypervisors, and software subscriptions procured independently. |
 | Storage                   | Storage services for structured or unstructured data.                                                                       |
 | Support                   | Premium customer support plans, technical assistance, and maintenance contracts.                                            |
-| Telecommunications        | External voice and data transmission lines, circuits, and physical connectivity.                                            |
+| Telecommunications        | Externally provisioned carrier and voice services, such as telephony and mobile plans.                                            |
 | Web                       | Services enabling applications to interact via the Internet.                                                                |
 | Other                     | New or emerging services that do not align with an existing category.                                                       |
 
