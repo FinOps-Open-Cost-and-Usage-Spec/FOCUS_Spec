@@ -1,6 +1,6 @@
 # Includes Commitment Programs
 
-The Includes Commitment Programs condition represents a verifiable state where the operating model includes at least one [*commitment program*](#glossary:commitment-program).
+The Includes Commitment Programs condition represents a verifiable state where the [*operating model*](#glossary:operating-model) includes at least one [*commitment program*](#glossary:commitment-program).
 
 ## Requirements
 

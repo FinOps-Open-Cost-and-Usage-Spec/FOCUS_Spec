@@ -6,8 +6,8 @@ The Includes Commitment Discounts condition represents a verifiable state where 
 
 IncludesCommitmentDiscounts MUST adhere to the following requirements:
 
-* IncludesCommitmentDiscounts MUST evaluate to true when the operating model includes one or more programs where a customer commits to a level of usage or spend in exchange for reduced rates.
-* IncludesCommitmentDiscounts MUST evaluate to false when the operating model does not include any commitment-based pricing or discount programs.
+* IncludesCommitmentDiscounts MUST evaluate to true when the operating model includes contract commitments that provide discounted pricing on preselected SKUs in exchange for specific spend or usage goals.
+* IncludesCommitmentDiscounts MUST evaluate to false when the operating model does not include any commitment discounts.
 
 ## Condition ID
 
