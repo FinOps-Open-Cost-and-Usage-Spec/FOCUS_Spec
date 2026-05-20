@@ -101,11 +101,11 @@
         "Items": [
           {
             "CheckFunction": "TypeString",
-            "ColumnName": "AllocatedMethodDetails"
+            "ColumnName": "InvoiceDetailGrain"
           },
           {
             "CheckFunction": "TypeJSON",
-            "ColumnName": "AllocatedMethodDetails"
+            "ColumnName": "InvoiceDetailGrain"
           }
         ]
       },
