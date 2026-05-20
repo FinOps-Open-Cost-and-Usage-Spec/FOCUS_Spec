@@ -9,71 +9,71 @@ The specification for the Cost and Usage dataset defines a group of columns that
 | Column                                                                        | Column Type        | Feature Level | Allows Nulls | Data Type |
 | ----------------------------------------------------------------------------- | ------------------ | ------------- | ------------ | --------- |
 | [Allocated Method Details](#datasets.costandusage.allocatedmethoddetails)                           | Dimension / Metric | Recommended   | True         | JSON      |
-| [Allocated Method ID](#datasets.costandusage.allocatedmethodid)                                     | Dimension          | Conditional   | True         | String    |
-| [Allocated Resource ID](#datasets.costandusage.allocatedresourceid)                                 | Dimension          | Conditional   | True         | String    |
-| [Allocated Resource Name](#datasets.costandusage.allocatedresourcename)                             | Dimension          | Conditional   | True         | String    |
-| [Allocated Tags](#datasets.costandusage.allocatedtags)                                              | Dimension          | Conditional   | True         | JSON      |
+| [Allocated Method ID](#datasets.costandusage.allocatedmethodid)                                     | Dimension          | [Conditional](#conditions.includessplitcostallocation) | True         | String    |
+| [Allocated Resource ID](#datasets.costandusage.allocatedresourceid)                                 | Dimension          | [Conditional](#conditions.includessplitcostallocation) | True         | String    |
+| [Allocated Resource Name](#datasets.costandusage.allocatedresourcename)                             | Dimension          | [Conditional](#conditions.includessplitcostallocation) | True         | String    |
+| [Allocated Tags](#datasets.costandusage.allocatedtags)                                              | Dimension          | [Conditional](#conditions.includessplitcostallocation) | True         | JSON      |
 | [Availability Zone](#datasets.costandusage.availabilityzone)                                        | Dimension          | Recommended   | True         | String    |
 | [Billed Cost](#datasets.costandusage.billedcost)                                                    | Metric             | Mandatory     | False        | Decimal   |
 | [Billing Account ID](#datasets.costandusage.billingaccountid)                                       | Dimension          | Mandatory     | False        | String    |
 | [Billing Account Name](#datasets.costandusage.billingaccountname)                                   | Dimension          | Mandatory     | True         | String    |
-| [Billing Account Type](#datasets.costandusage.billingaccounttype)                                   | Dimension          | Conditional   | False        | String    |
+| [Billing Account Type](#datasets.costandusage.billingaccounttype)                                   | Dimension          | [Conditional](#conditions.includesmultiplebillingaccounttypes) | False        | String    |
 | [Billing Currency](#datasets.costandusage.billingcurrency)                                          | Dimension          | Mandatory     | False        | String    |
 | [Billing Period End](#datasets.costandusage.billingperiodend)                                       | Dimension          | Mandatory     | False        | Date/Time |
 | [Billing Period Start](#datasets.costandusage.billingperiodstart)                                   | Dimension          | Mandatory     | False        | Date/Time |
-| [Capacity Reservation ID](#datasets.costandusage.capacityreservationid)                             | Dimension          | Conditional   | True         | String    |
-| [Capacity Reservation Status](#datasets.costandusage.capacityreservationstatus)                     | Dimension          | Conditional   | True         | String    |
+| [Capacity Reservation ID](#datasets.costandusage.capacityreservationid)                             | Dimension          | [Conditional](#conditions.includescapacityreservations) | True         | String    |
+| [Capacity Reservation Status](#datasets.costandusage.capacityreservationstatus)                     | Dimension          | [Conditional](#conditions.includescapacityreservations) | True         | String    |
 | [Charge Category](#datasets.costandusage.chargecategory)                                            | Dimension          | Mandatory     | False        | String    |
 | [Charge Class](#datasets.costandusage.chargeclass)                                                  | Dimension          | Mandatory     | True         | String    |
 | [Charge Description](#datasets.costandusage.chargedescription)                                      | Dimension          | Mandatory     | True         | String    |
 | [Charge Frequency](#datasets.costandusage.chargefrequency)                                          | Dimension          | Recommended   | False        | String    |
 | [Charge Period End](#datasets.costandusage.chargeperiodend)                                         | Dimension          | Mandatory     | False        | Date/Time |
 | [Charge Period Start](#datasets.costandusage.chargeperiodstart)                                     | Dimension          | Mandatory     | False        | Date/Time |
-| [Commitment Discount Category](#datasets.costandusage.commitmentdiscountcategory)                   | Dimension          | Conditional   | True         | String    |
-| [Commitment Discount ID](#datasets.costandusage.commitmentdiscountid)                               | Dimension          | Conditional   | True         | String    |
-| [Commitment Discount Name](#datasets.costandusage.commitmentdiscountname)                           | Dimension          | Conditional   | True         | String    |
-| [Commitment Discount Quantity](#datasets.costandusage.commitmentdiscountquantity)                   | Metric             | Conditional   | True         | Decimal   |
-| [Commitment Discount Status](#datasets.costandusage.commitmentdiscountstatus)                       | Dimension          | Conditional   | True         | String    |
-| [Commitment Discount Type](#datasets.costandusage.commitmentdiscounttype)                           | Dimension          | Conditional   | True         | String    |
-| [Commitment Discount Unit](#datasets.costandusage.commitmentdiscountunit)                           | Dimension          | Conditional   | True         | String    |
-| [Commitment Program Eligibility Details](#datasets.costandusage.commitmentprogrameligibilitydetails)            | Dimension          | Conditional   | True         | JSON    |
-| [Consumed Quantity](#datasets.costandusage.consumedquantity)                                        | Metric             | Conditional   | True         | Decimal   |
-| [Consumed Unit](#datasets.costandusage.consumedunit)                                                | Dimension          | Conditional   | True         | String    |
-| [Contract Applied](#datasets.costandusage.contractapplied)                                          | Dimension / Metric | Conditional   | True         | JSON      |
+| [Commitment Discount Category](#datasets.costandusage.commitmentdiscountcategory)                   | Dimension          | [Conditional](#conditions.includescommitmentdiscounts) | True         | String    |
+| [Commitment Discount ID](#datasets.costandusage.commitmentdiscountid)                               | Dimension          | [Conditional](#conditions.includescommitmentdiscounts) | True         | String    |
+| [Commitment Discount Name](#datasets.costandusage.commitmentdiscountname)                           | Dimension          | [Conditional](#conditions.includescommitmentdiscounts) | True         | String    |
+| [Commitment Discount Quantity](#datasets.costandusage.commitmentdiscountquantity)                   | Metric             | [Conditional](#conditions.includescommitmentdiscounts) | True         | Decimal   |
+| [Commitment Discount Status](#datasets.costandusage.commitmentdiscountstatus)                       | Dimension          | [Conditional](#conditions.includescommitmentdiscounts) | True         | String    |
+| [Commitment Discount Type](#datasets.costandusage.commitmentdiscounttype)                           | Dimension          | [Conditional](#conditions.includescommitmentdiscounts) | True         | String    |
+| [Commitment Discount Unit](#datasets.costandusage.commitmentdiscountunit)                           | Dimension          | [Conditional](#conditions.includescommitmentdiscounts) | True         | String    |
+| [Commitment Program Eligibility Details](#datasets.costandusage.commitmentprogrameligibilitydetails)            | Dimension          | [Conditional](#conditions.includescommitmentprograms) | True         | JSON    |
+| [Consumed Quantity](#datasets.costandusage.consumedquantity)                                        | Metric             | [Conditional](#conditions.includesusagemeasurement) | True         | Decimal   |
+| [Consumed Unit](#datasets.costandusage.consumedunit)                                                | Dimension          | [Conditional](#conditions.includesusagemeasurement) | True         | String    |
+| [Contract Applied](#datasets.costandusage.contractapplied)                                          | Dimension / Metric | [Conditional](#conditions.includescontractcommitments) | True         | JSON      |
 | [Contracted Cost](#datasets.costandusage.contractedcost)                                            | Metric             | Mandatory     | False        | Decimal   |
-| [Contracted Unit Price](#datasets.costandusage.contractedunitprice)                                 | Metric             | Conditional   | True         | Decimal   |
+| [Contracted Unit Price](#datasets.costandusage.contractedunitprice)                                 | Metric             | [Conditional](#conditions.includesnegotiatedpricing) | True         | Decimal   |
 | [Data Generator Name](#datasets.costandusage.datageneratorname)                                     | Dimension             | Mandatory   | False       | String    |
 | [Effective Cost](#datasets.costandusage.effectivecost)                                              | Metric             | Mandatory     | False        | Decimal   |
 | [Host Provider Name](#datasets.costandusage.hostprovidername)                                       | Dimension          | Mandatory     | False        | String    |
-| [Invoice Detail ID](#datasets.costandusage.invoicedetailid)                                         | Dimension          | Conditional   | True         | String    |
-| [Invoice ID](#datasets.costandusage.invoiceid)                                                      | Dimension          | Conditional   | True         | String    |
+| [Invoice Detail ID](#datasets.costandusage.invoicedetailid)                                         | Dimension          | [Conditional](#conditions.includespayableinvoices) | True         | String    |
+| [Invoice ID](#datasets.costandusage.invoiceid)                                                      | Dimension          | [Conditional](#conditions.includespayableinvoices) | True         | String    |
 | [Invoice Issuer Name](#datasets.costandusage.invoiceissuername)                                     | Dimension          | Mandatory     | False        | String    |
 | [List Cost](#datasets.costandusage.listcost)                                                        | Metric             | Mandatory     | False        | Decimal   |
-| [List Unit Price](#datasets.costandusage.listunitprice)                                             | Metric             | Conditional   | True         | Decimal   |
-| [Pricing Category](#datasets.costandusage.pricingcategory)                                          | Dimension          | Conditional   | True         | String    |
-| [Pricing Currency](#datasets.costandusage.pricingcurrency)                                          | Dimension          | Conditional   | False        | String    |
-| [Pricing Currency Contracted Unit Price](#datasets.costandusage.pricingcurrencycontractedunitprice) | Metric             | Conditional   | True         | Decimal   |
-| [Pricing Currency Effective Cost](#datasets.costandusage.pricingcurrencyeffectivecost)              | Metric             | Conditional   | False        | Decimal   |
-| [Pricing Currency List Unit Price](#datasets.costandusage.pricingcurrencylistunitprice)             | Metric             | Conditional   | True         | Decimal   |
+| [List Unit Price](#datasets.costandusage.listunitprice)                                             | Metric             | [Conditional](#conditions.includeslistunitprices) | True         | Decimal   |
+| [Pricing Category](#datasets.costandusage.pricingcategory)                                          | Dimension          | [Conditional](#conditions.includesmultiplepricingcategories) | True         | String    |
+| [Pricing Currency](#datasets.costandusage.pricingcurrency)                                          | Dimension          | [Conditional](#conditions.includespricingbillingcurrencydifferences) | False        | String    |
+| [Pricing Currency Contracted Unit Price](#datasets.costandusage.pricingcurrencycontractedunitprice) | Metric             | [Conditional](#conditions.includespricingbillingcurrencydifferences) | True         | Decimal   |
+| [Pricing Currency Effective Cost](#datasets.costandusage.pricingcurrencyeffectivecost)              | Metric             | [Conditional](#conditions.includespricingbillingcurrencydifferences) | False        | Decimal   |
+| [Pricing Currency List Unit Price](#datasets.costandusage.pricingcurrencylistunitprice)             | Metric             | [Conditional](#conditions.includespricingbillingcurrencydifferences) | True         | Decimal   |
 | [Pricing Quantity](#datasets.costandusage.pricingquantity)                                          | Metric             | Mandatory     | True         | Decimal   |
 | [Pricing Unit](#datasets.costandusage.pricingunit)                                                  | Dimension          | Mandatory     | True         | String    |
-| [Region ID](#datasets.costandusage.regionid)                                                        | Dimension          | Conditional   | True         | String    |
-| [Region Name](#datasets.costandusage.regionname)                                                    | Dimension          | Conditional   | True         | String    |
-| [Resource ID](#datasets.costandusage.resourceid)                                                    | Dimension          | Conditional   | True         | String    |
-| [Resource Name](#datasets.costandusage.resourcename)                                                | Dimension          | Conditional   | True         | String    |
-| [Resource Type](#datasets.costandusage.resourcetype)                                                | Dimension          | Conditional   | True         | String    |
+| [Region ID](#datasets.costandusage.regionid)                                                        | Dimension          | [Conditional](#conditions.includesregions) | True         | String    |
+| [Region Name](#datasets.costandusage.regionname)                                                    | Dimension          | [Conditional](#conditions.includesregions) | True         | String    |
+| [Resource ID](#datasets.costandusage.resourceid)                                                    | Dimension          | [Conditional](#conditions.includesprovisionedresources) | True         | String    |
+| [Resource Name](#datasets.costandusage.resourcename)                                                | Dimension          | [Conditional](#conditions.includesprovisionedresources) | True         | String    |
+| [Resource Type](#datasets.costandusage.resourcetype)                                                | Dimension          | [Conditional](#conditions.includesprovisionedresources) | True         | String    |
 | [Service Category](#datasets.costandusage.servicecategory)                                          | Dimension          | Mandatory     | False        | String    |
 | [Service Name](#datasets.costandusage.servicename)                                                  | Dimension          | Mandatory     | False        | String    |
 | [Service Provider Name](#datasets.costandusage.serviceprovidername)                                 | Dimension          | Mandatory     | False        | String    |
 | [Service Subcategory](#datasets.costandusage.servicesubcategory)                                    | Dimension          | Recommended   | False        | String    |
-| [SKU ID](#datasets.costandusage.skuid)                                                              | Dimension          | Conditional   | True         | String    |
-| [SKU Meter](#datasets.costandusage.skumeter)                                                        | Dimension          | Conditional   | True         | String    |
-| [SKU Price Details](#datasets.costandusage.skupricedetails)                                         | Dimension          | Conditional   | True         | JSON      |
-| [SKU Price ID](#datasets.costandusage.skupriceid)                                                   | Dimension          | Conditional   | True         | String    |
-| [Sub Account ID](#datasets.costandusage.subaccountid)                                               | Dimension          | Conditional   | True         | String    |
-| [Sub Account Name](#datasets.costandusage.subaccountname)                                           | Dimension          | Conditional   | True         | String    |
-| [Sub Account Type](#datasets.costandusage.subaccounttype)                                           | Dimension          | Conditional   | True         | String    |
-| [Tags](#datasets.costandusage.tags)                                                                 | Dimension          | Conditional   | True         | JSON      |
+| [SKU ID](#datasets.costandusage.skuid)                                                              | Dimension          | [Conditional](#conditions.includesunitpricing) | True         | String    |
+| [SKU Meter](#datasets.costandusage.skumeter)                                                        | Dimension          | [Conditional](#conditions.includesunitpricing) | True         | String    |
+| [SKU Price Details](#datasets.costandusage.skupricedetails)                                         | Dimension          | [Conditional](#conditions.includesunitpricing) | True         | JSON      |
+| [SKU Price ID](#datasets.costandusage.skupriceid)                                                   | Dimension          | [Conditional](#conditions.includesunitpricing) | True         | String    |
+| [Sub Account ID](#datasets.costandusage.subaccountid)                                               | Dimension          | [Conditional](#conditions.includessubaccounts) | True         | String    |
+| [Sub Account Name](#datasets.costandusage.subaccountname)                                           | Dimension          | [Conditional](#conditions.includessubaccounts) | True         | String    |
+| [Sub Account Type](#datasets.costandusage.subaccounttype)                                           | Dimension          | [Conditional](#conditions.includesmultiplesubaccounttypes) | True         | String    |
+| [Tags](#datasets.costandusage.tags)                                                                 | Dimension          | [Conditional](#conditions.includestags) | True         | JSON      |
 
 ## Relationships<!--SkipTOC-->
 
@@ -91,7 +91,7 @@ The Cost and Usage dataset can be joined to the Contract Commitment dataset thro
 CostAndUsage MUST adhere to the following requirements:
 
 * CostAndUsage column presence MUST adhere to the following requirements:
-  * CostAndUsage SHOULD include [AllocatedMethodDetails](#datasets.costandusage.allocatedmethoddetails) when the [operating model](#glossary:operating-model) [includes split cost allocation](#conditions.includessplitcostallocation).
+  * CostAndUsage SHOULD include [AllocatedMethodDetails](#datasets.costandusage.allocatedmethoddetails) when the [*operating model*](#glossary:operating-model) [includes split cost allocation](#conditions.includessplitcostallocation).
   * CostAndUsage MUST include [AllocatedMethodId](#datasets.costandusage.allocatedmethodid) when the *operating model* [includes split cost allocation](#conditions.includessplitcostallocation).
   * CostAndUsage MUST include [AllocatedResourceId](#datasets.costandusage.allocatedresourceid) when the *operating model* [includes split cost allocation](#conditions.includessplitcostallocation).
   * CostAndUsage MUST include [AllocatedResourceName](#datasets.costandusage.allocatedresourcename) when the *operating model* [includes split cost allocation](#conditions.includessplitcostallocation).
