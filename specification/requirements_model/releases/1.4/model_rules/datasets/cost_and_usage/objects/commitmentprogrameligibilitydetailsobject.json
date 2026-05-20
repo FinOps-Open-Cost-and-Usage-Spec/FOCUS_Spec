@@ -67,7 +67,7 @@
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "CheckJSONSchema",
-        "ColumnName": "CommitmentProgramEligibilityDetailsObject",
+        "ColumnName": "CommitmentProgramEligibilityDetails",
         "Path": "$",
         "SchemaId": "CAU-CommitmentProgramEligibilityDetailsObjectSchema-S-001-M"
       },
