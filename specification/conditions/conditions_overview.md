@@ -1,6 +1,6 @@
 # Conditions
 
-Conditions represent verifiable states of an [operating model](#glossary:operating-model) that determine the requirement for specific data elements to be present in a FOCUS-compliant dataset.
+Conditions represent verifiable states of an [*operating model*](#glossary:operating-model) that determine the requirement for specific data elements to be present in a FOCUS-compliant dataset.
 
 ## Condition List
 

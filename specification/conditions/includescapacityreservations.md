@@ -6,8 +6,8 @@ The Includes Capacity Reservations condition represents a verifiable state where
 
 IncludesCapacityReservations MUST adhere to the following requirements:
 
-* IncludesCapacityReservations MUST evaluate to true when the operating model contains a mechanism to reserve capacity.
-* IncludesCapacityReservations MUST evaluate to false when the operating model lacks any commercial or technical construct for reserving capacity.
+* IncludesCapacityReservations MUST evaluate to true when the *operating model* contains a mechanism to reserve capacity.
+* IncludesCapacityReservations MUST evaluate to false when the *operating model* lacks any commercial or technical construct for reserving capacity.
 
 ## Condition ID
 
@@ -19,7 +19,7 @@ Includes Capacity Reservations
 
 ## Description
 
-A verifiable state indicating whether the operating model supports or includes the use of capacity reservations.
+A verifiable state indicating whether the *operating model* supports or includes the use of capacity reservations.
 
 ## Version Introduced
 
