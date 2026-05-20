@@ -179,7 +179,7 @@
     "DatasetId": "ContractCommitment",
     "DatasetName": "Contract Commitment",
     "ValidationCriteria": {
-      "MustSatisfy": "When a contract commitment record is modified in a way that requires a new ContractCommitmentID, ContractCommitmentLifecycleStatus for the previous record MUST be \"Superseded\".",
+      "MustSatisfy": "When a contract commitment record is modified in a way that requires a new ContractCommitmentId, ContractCommitmentLifecycleStatus for the previous record MUST be \"Superseded\".",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
