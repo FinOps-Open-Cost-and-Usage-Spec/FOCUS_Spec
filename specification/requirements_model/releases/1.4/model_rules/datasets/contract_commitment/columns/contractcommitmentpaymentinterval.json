@@ -145,11 +145,6 @@
           {
             "CheckFunction": "CheckValue",
             "ColumnName": "ContractCommitmentPaymentInterval",
-            "Value": "Quarterly"
-          },
-          {
-            "CheckFunction": "CheckValue",
-            "ColumnName": "ContractCommitmentPaymentInterval",
             "Value": "Semi-Annual"
           },
           {

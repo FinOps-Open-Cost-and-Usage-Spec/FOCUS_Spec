@@ -68,8 +68,7 @@
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "TypeDateTime",
-        "ColumnName": "ChargePeriodStart",
-        "ExpectedType": "DateTime"
+        "ColumnName": "ChargePeriodStart"
       },
       "Condition": {},
       "Dependencies": []

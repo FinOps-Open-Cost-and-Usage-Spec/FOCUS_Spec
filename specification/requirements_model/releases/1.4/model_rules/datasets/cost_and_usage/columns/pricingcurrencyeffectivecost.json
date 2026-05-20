@@ -155,9 +155,8 @@
       "MustSatisfy": "PricingCurrencyEffectiveCost MUST be a valid decimal value.",
       "Keyword": "MUST",
       "Requirement": {
-        "CheckFunction": "CheckGreaterOrEqualThanValue",
-        "ColumnName": "PricingCurrencyEffectiveCost",
-        "Value": 0
+        "CheckFunction": "CheckDecimalValue",
+        "ColumnName": "PricingCurrencyEffectiveCost"
       },
       "Condition": {},
       "Dependencies": []
