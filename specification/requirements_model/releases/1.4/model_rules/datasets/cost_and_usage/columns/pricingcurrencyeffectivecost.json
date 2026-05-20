@@ -156,7 +156,7 @@
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "CheckGreaterOrEqualThanValue",
-        "ColumnName": "PricingCurrencyListUnitPrice",
+        "ColumnName": "PricingCurrencyEffectiveCost",
         "Value": 0
       },
       "Condition": {},

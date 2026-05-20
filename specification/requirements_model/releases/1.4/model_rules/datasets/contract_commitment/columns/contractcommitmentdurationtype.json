@@ -109,7 +109,7 @@
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "FormatString",
-        "ColumnName": "BillingAccountId"
+        "ColumnName": "ContractCommitmentDurationType"
       },
       "Condition": {},
       "Dependencies": []
