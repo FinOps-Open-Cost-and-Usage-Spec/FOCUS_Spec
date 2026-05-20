@@ -642,7 +642,7 @@
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-InvoiceId-C-000-M"
+            "ModelRuleId": "CAU-InvoiceId-C-000-C"
           },
           {
             "CheckFunction": "CheckModelRule",
@@ -793,7 +793,7 @@
         "CAU-EffectiveCost-C-000-M",
         "CAU-HostProviderName-C-000-M",
         "CAU-InvoiceDetailId-C-000-C",
-        "CAU-InvoiceId-C-000-M",
+        "CAU-InvoiceId-C-000-C",
         "CAU-InvoiceIssuerName-C-000-M",
         "CAU-ListCost-C-000-M",
         "CAU-ListUnitPrice-C-000-C",
@@ -1994,7 +1994,10 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "ApplicabilityCriteria": [
+      "PUBLIC_PRICE_LIST_SUPPORTED",
+      "VIRTUAL_CURRENCY_SUPPORTED"
+    ],
     "Order": 440,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
@@ -2124,7 +2127,10 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "ApplicabilityCriteria": [
+      "PUBLIC_PRICE_LIST_SUPPORTED",
+      "VIRTUAL_CURRENCY_SUPPORTED"
+    ],
     "Order": 480,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
@@ -2254,7 +2260,10 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "ApplicabilityCriteria": [
+      "PUBLIC_PRICE_LIST_SUPPORTED",
+      "VIRTUAL_CURRENCY_SUPPORTED"
+    ],
     "Type": "Static",
     "Order": 520,
     "DatasetType": "CAU",

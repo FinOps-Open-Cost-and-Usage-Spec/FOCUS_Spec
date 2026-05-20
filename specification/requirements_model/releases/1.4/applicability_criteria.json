@@ -57,6 +57,9 @@
     "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED": {
       "Description": "Provider supports pricing and billing in different currencies"
     },
+    "PRICING_BILLING_AGGREGATION_DIFFERENCES_SUPPORTED": {
+      "Description": "Provider supports differences in aggregation between pricing and billing (e.g. hourly vs daily)"
+    },
     "VIRTUAL_CURRENCY_SUPPORTED": {
       "Description": "Provider supports prices in virtual currency"
     },

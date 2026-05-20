@@ -121,7 +121,7 @@
       "Requirement": {
         "CheckFunction": "CheckValue",
         "ColumnName": "PurchaseOrderNumber",
-        "ExpectedValue": null
+        "Value": null
       },
       "Condition": {},
       "Dependencies": []

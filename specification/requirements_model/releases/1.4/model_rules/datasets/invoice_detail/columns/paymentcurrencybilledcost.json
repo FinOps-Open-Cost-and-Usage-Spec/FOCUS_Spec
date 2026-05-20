@@ -1,5 +1,5 @@
 {
-  "IND-PaymentCurrencyBilledCost-C-000-M": {
+  "IND-PaymentCurrencyBilledCost-C-000-C": {
     "Function": "Composite",
     "Reference": "PaymentCurrencyBilledCost",
     "EntityType": "Column",
@@ -8,7 +8,9 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "ApplicabilityCriteria": [
+      "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
+    ],
     "Type": "Static",
     "Order": 0,
     "DatasetType": "IND",

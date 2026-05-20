@@ -9,8 +9,7 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [
-      "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED",
-      "RESOURCE_TYPE_ASSIGNMENT_SUPPORTED"
+      "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED"
     ],
     "Order": 0,
     "DatasetType": "CAU",
@@ -224,7 +223,7 @@
       },
       "Condition": {
         "CheckFunction": "CheckNotValue",
-        "CheckCondition": "ResourceId",
+        "ColumnName": "ResourceId",
         "Value": null
       },
       "Dependencies": [

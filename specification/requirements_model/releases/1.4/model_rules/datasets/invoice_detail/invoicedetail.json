@@ -308,15 +308,15 @@
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "IND-PaymentCurrency-C-000-M"
+            "ModelRuleId": "IND-PaymentCurrency-C-000-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "IND-PaymentCurrencyBilledCost-C-000-M"
+            "ModelRuleId": "IND-PaymentCurrencyBilledCost-C-000-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "IND-PaymentCurrencyInvoiceDetailId-C-000-M"
+            "ModelRuleId": "IND-PaymentCurrencyInvoiceDetailId-C-000-C"
           },
           {
             "CheckFunction": "CheckModelRule",
@@ -353,9 +353,9 @@
         "IND-InvoiceIssueDate-C-000-M",
         "IND-InvoiceIssuerName-C-000-M",
         "IND-InvoiceIssueStatus-C-000-M",
-        "IND-PaymentCurrency-C-000-M",
-        "IND-PaymentCurrencyBilledCost-C-000-M",
-        "IND-PaymentCurrencyInvoiceDetailId-C-000-M",
+        "IND-PaymentCurrency-C-000-C",
+        "IND-PaymentCurrencyBilledCost-C-000-C",
+        "IND-PaymentCurrencyInvoiceDetailId-C-000-C",
         "IND-PaymentDueDate-C-000-M",
         "IND-PaymentTerms-C-000-M",
         "IND-PurchaseOrderNumber-C-000-M",
@@ -762,7 +762,9 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "ApplicabilityCriteria": [
+      "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
+    ],
     "Type": "Static",
     "Order": 180,
     "DatasetType": "IND",
@@ -788,7 +790,9 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "ApplicabilityCriteria": [
+      "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
+    ],
     "Type": "Static",
     "Order": 190,
     "DatasetType": "IND",
@@ -814,7 +818,9 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "ApplicabilityCriteria": [
+      "PRICING_BILLING_AGGREGATION_DIFFERENCES_SUPPORTED"
+    ],
     "Type": "Static",
     "Order": 200,
     "DatasetType": "IND",

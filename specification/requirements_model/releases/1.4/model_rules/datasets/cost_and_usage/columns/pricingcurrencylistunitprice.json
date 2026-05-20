@@ -9,7 +9,8 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [
-      "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
+      "PUBLIC_PRICE_LIST_SUPPORTED",
+      "VIRTUAL_CURRENCY_SUPPORTED"
     ],
     "Type": "Static",
     "Order": 0,

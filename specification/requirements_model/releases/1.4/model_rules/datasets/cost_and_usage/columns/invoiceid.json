@@ -1,5 +1,5 @@
 {
-  "CAU-InvoiceId-C-000-M": {
+  "CAU-InvoiceId-C-000-C": {
     "Function": "Composite",
     "Reference": "InvoiceId",
     "EntityType": "Column",
@@ -8,7 +8,9 @@
     "Notes": "Root composite for column",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "ApplicabilityCriteria": [
+      "INVOICE_ISSUER_PAYABLE_INVOICES_SUPPORTED"
+    ],
     "Order": 0,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",

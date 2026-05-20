@@ -1,5 +1,5 @@
 {
-  "IND-PaymentCurrencyInvoiceDetailId-C-000-M": {
+  "IND-PaymentCurrencyInvoiceDetailId-C-000-C": {
     "Function": "Composite",
     "Reference": "PaymentCurrencyInvoiceDetailId",
     "EntityType": "Column",
@@ -8,7 +8,9 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "ApplicabilityCriteria": [
+      "PRICING_BILLING_AGGREGATION_DIFFERENCES_SUPPORTED"
+    ],
     "Type": "Static",
     "Order": 0,
     "DatasetType": "IND",
@@ -179,7 +181,7 @@
         "ColumnBName": "InvoiceDetailId"
       },
       "Condition": {
-        "CheckFunction": "CheckGreaterThanValue",
+        "CheckFunction": "CheckNotValue",
         "ColumnName": "PaymentCurrencyBilledCost",
         "Value": 0
       },

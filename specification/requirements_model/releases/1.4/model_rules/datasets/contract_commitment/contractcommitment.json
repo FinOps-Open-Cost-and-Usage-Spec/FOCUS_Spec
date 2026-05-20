@@ -388,11 +388,11 @@
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CCT-PricingCurrency-C-000-M"
+            "ModelRuleId": "CCT-PricingCurrency-C-000-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CCT-PricingCurrencyContractCommitmentCost-C-000-M"
+            "ModelRuleId": "CCT-PricingCurrencyContractCommitmentCost-C-000-C"
           },
           {
             "CheckFunction": "CheckModelRule",
@@ -429,8 +429,8 @@
         "CCT-ContractPeriodEnd-C-000-M",
         "CCT-ContractPeriodStart-C-000-M",
         "CCT-InvoiceIssuerName-C-000-M",
-        "CCT-PricingCurrency-C-000-M",
-        "CCT-PricingCurrencyContractCommitmentCost-C-000-M",
+        "CCT-PricingCurrency-C-000-C",
+        "CCT-PricingCurrencyContractCommitmentCost-C-000-C",
         "CCT-ServiceProviderName-C-000-M"
       ]
     }

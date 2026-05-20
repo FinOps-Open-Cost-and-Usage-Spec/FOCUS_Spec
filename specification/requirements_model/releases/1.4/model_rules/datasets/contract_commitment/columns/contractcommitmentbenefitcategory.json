@@ -119,18 +119,22 @@
         "Items": [
           {
             "CheckFunction": "CheckValue",
+            "ColumnName": "ContractCommitmentBenefitCategory",
             "Value": "Discount"
           },
           {
             "CheckFunction": "CheckValue",
+            "ColumnName": "ContractCommitmentBenefitCategory",
             "Value": "Entitlement"
           },
           {
             "CheckFunction": "CheckValue",
+            "ColumnName": "ContractCommitmentBenefitCategory",
             "Value": "Availability"
           },
           {
             "CheckFunction": "CheckValue",
+            "ColumnName": "ContractCommitmentBenefitCategory",
             "Value": "Other"
           }
         ]

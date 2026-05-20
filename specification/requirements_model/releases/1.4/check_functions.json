@@ -40,14 +40,6 @@
       ],
       "FormatAttributes": []
     },
-    "CheckGreaterThanValue": {
-      "Description": "Check if column has value greater than a value",
-      "Arguments": [
-        "ColumnName",
-        "Value"
-      ],
-      "FormatAttributes": []
-    },
     "CheckJSONSchema": {
       "Description": "Check column (and path) has a JSON that meets a specific JSON schema",
       "Arguments": [
