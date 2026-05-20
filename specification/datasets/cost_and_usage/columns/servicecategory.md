@@ -32,7 +32,7 @@ ServiceCategory MUST adhere to the following requirements:
 | Mobile                    | Services enabling applications to interact via mobile technologies.                                                         |
 | Multicloud                | Support for the interworking of multiple discrete provider and/or on-premises environments.                                 |
 | Networking                | Network connectivity and management.                                                                                        |
-| Professional Services     | Consulting, implementation, architectural guidance, and managed services.                                                   |
+| Professional Services     | Consulting, implementation, architectural guidance, and managed service engagements.                                         |
 | Security                  | Security monitoring and compliance services.                                                                                |
 | Software Licensing        | Standalone software licenses, operating systems, hypervisors, and software subscriptions procured independently. |
 | Storage                   | Storage services for structured or unstructured data.                                                                       |
