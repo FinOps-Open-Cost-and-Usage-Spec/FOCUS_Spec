@@ -34,7 +34,7 @@ ServiceCategory MUST adhere to the following requirements:
 | Networking                | Network connectivity and management.                                                                                        |
 | Professional Services     | Consulting, implementation, architectural guidance, and managed services.                                                   |
 | Security                  | Security monitoring and compliance services.                                                                                |
-| Software Licensing        | Standalone software licenses, operating systems, hypervisors, and subscriptions not inherently bundled with hosted compute. |
+| Software Licensing        | Standalone software licenses, operating systems, hypervisors, and software subscriptions procured independently. |
 | Storage                   | Storage services for structured or unstructured data.                                                                       |
 | Support                   | Premium customer support plans, technical assistance, and maintenance contracts.                                            |
 | Telecommunications        | External voice and data transmission lines, circuits, and physical connectivity.                                            |
