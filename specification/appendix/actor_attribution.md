@@ -5,7 +5,7 @@ The examples below illustrate how [Principal ID](#datasets.costandusage.principa
 1. **Generative AI API:** **Acme Corp** uses an internal bot to summarize notes via a LatticeScale API. Security audits the service account (`PrincipalId`), while FinOps allocates token costs to the employee (`ConsumerId`).
 2. **Multi-Tenant PaaS:** A shared BI engine (`PrincipalId`) runs a query on OmniQuery for a specific client of **GearPeak Outdoors**. Capturing the downstream client (`ConsumerId`) prevents costs from pooling in overhead.
 3. **Network Edge Processing:** At **Acme Corp**, traffic routed through an Aura Web edge network is authenticated at the gateway (`PrincipalId`), but downstream consumers (`ConsumerId`) are unknown due to aggregated network traffic.
-4. **Seat-Based SaaS:** **Acme Corp** pays for SprintCanvas project management licenses. The provider does not attribute an infrastructure actor, but the opaque `ConsumerId` allows safe user-level chargeback.
+4. **Seat-Based SaaS:** An IT administrator at **Acme Corp** purchases SprintCanvas project management licenses. At purchase time, the administrator (`PrincipalId`) initiated the transaction, but the seats have not yet been assigned to specific end-users (`ConsumerId`). For subsequent usage charges, the employee who logs in (`PrincipalId`) and uses the seat (`ConsumerId`) is the same actor.
 5. **Direct PaaS Usage:** A data scientist at **Acme Corp** logs into a LatticeScale managed notebook using their individual SSO credential (`PrincipalId`). Because the user authenticated directly to the platform and is the sole consumer of the compute (`ConsumerId`), the same opaque identifier is populated in both columns.
 
 | # | Scenario | Data Generator | PrincipalId | ConsumerId |
@@ -13,5 +13,7 @@ The examples below illustrate how [Principal ID](#datasets.costandusage.principa
 | 1 | **Generative AI API** | LatticeScale | `svc-acme-docbot-prod` | `emp_hash_84729x` |
 | 2 | **Multi-Tenant PaaS** | OmniQuery | `svc-bi-reporting-engine` | `client_gearpeak_001` |
 | 3 | **Network Edge Processing** | AuraWeb | `svc-edge-gateway-prod` | `null` |
-| 4 | **Seat-Based SaaS** | SprintCanvas | `null` | `user_uuid_554321` |
+| 4a | **Seat-Based SaaS (Purchase)** | SprintCanvas | `svc-it-admin-acme` | `null` |
+| 4b | **Seat-Based SaaS (Usage)** | SprintCanvas | `user_uuid_554321` | `user_uuid_554321` |
 | 5 | **Direct PaaS Usage** | LatticeScale | `dev_uuid_112233` | `dev_uuid_112233` |
+| 6 | **Generative AI API Correction** | LatticeScale | `null` | `emp_hash_84729x` |
