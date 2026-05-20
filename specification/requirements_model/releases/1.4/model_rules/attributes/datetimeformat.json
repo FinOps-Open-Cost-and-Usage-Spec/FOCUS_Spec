@@ -137,7 +137,7 @@
     "Order": 50,
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "FOCUS dataset column MUST include both the date and time components, separated with the letter ‘T’.",
+      "MustSatisfy": "FOCUS dataset column MUST include both the date and time components, separated with the letter `T`.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -177,7 +177,7 @@
     "Order": 70,
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "FOCUS dataset column MUST end with the ISO 8601 UTC designator ‘Z‘.",
+      "MustSatisfy": "FOCUS dataset column MUST end with the ISO 8601 UTC designator `Z`.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},

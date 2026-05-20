@@ -12,7 +12,7 @@
         "Type": "Static",
         "Order": 0,
         "ValidationCriteria": {
-            "MustSatisfy": "Dataset conforming to conforming to CorrectionHandling attribute MUST adhere to the following requirements:",
+            "MustSatisfy": "Dataset conforming to CorrectionHandling attribute MUST adhere to the following requirements:",
             "Keyword": "MUST",
             "Requirement": {
                 "CheckFunction": "AND",

@@ -126,7 +126,7 @@
     "DatasetId": "ContractCommitment",
     "DatasetName": "Contract Commitment",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractCommitmentApplicabilityObject.IsGlobalScope MUST be true when the contract commitment applies to all entities.",
+      "MustSatisfy": "ContractCommitmentApplicabilityObject.IsGlobalScope MUST be `true` when the contract commitment applies to all entities.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -149,7 +149,7 @@
     "DatasetId": "ContractCommitment",
     "DatasetName": "Contract Commitment",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractCommitmentApplicabilityObject.IsComplexScope MUST be true when the contract commitment's applicability logic exceeds schema capabilities.",
+      "MustSatisfy": "ContractCommitmentApplicabilityObject.IsComplexScope MUST be `true` when the contract commitment's applicability logic exceeds schema capabilities.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},

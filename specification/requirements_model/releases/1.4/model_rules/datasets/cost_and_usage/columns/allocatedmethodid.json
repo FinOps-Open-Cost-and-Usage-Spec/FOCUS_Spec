@@ -202,7 +202,7 @@
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "Data generator-calculated split cost allocation method documentation MUST make reference to a single AllocatedMethodId value.",
+      "MustSatisfy": "Data generator-calculated split cost allocation method documentation MUST reference a single AllocatedMethodId value.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
