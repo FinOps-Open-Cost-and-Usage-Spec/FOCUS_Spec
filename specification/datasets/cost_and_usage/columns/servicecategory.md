@@ -30,7 +30,7 @@ ServiceCategory MUST adhere to the following requirements:
 | Media                     | Media and entertainment streaming and processing services.                                                                  |
 | Migration                 | Moving applications and data between environments or providers.                                                             |
 | Mobile                    | Services enabling applications to interact via mobile technologies.                                                         |
-| Multicloud                | Support for the interworking of multiple distinct environments across different service providers or physical infrastructures.                                 |
+| Multicloud                | Support for the interworking of multiple distinct environments across different service providers or on-premises infrastructure.                              |
 | Networking                | Network connectivity, network management, and data transmission circuits, including WAN and physical interconnects.                                                                                       |
 | Professional Services     | Consulting, implementation, architectural guidance, and managed service engagements.                                         |
 | Security                  | Security monitoring and compliance services.                                                                                |
