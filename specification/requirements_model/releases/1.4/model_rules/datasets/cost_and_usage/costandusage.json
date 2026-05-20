@@ -3427,7 +3427,7 @@
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [
-      "COMMITMENT_DISCOUNT_SUPPORTED"
+      "COMMITMENT_PROGRAMS_SUPPORTED"
     ],
     "Order": 305,
     "DatasetType": "CAU",

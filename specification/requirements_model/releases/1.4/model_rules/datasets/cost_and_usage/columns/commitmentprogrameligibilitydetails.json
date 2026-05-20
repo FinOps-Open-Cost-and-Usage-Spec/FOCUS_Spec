@@ -9,7 +9,7 @@
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
     "ApplicabilityCriteria": [
-      "COMMITMENT_DISCOUNT_SUPPORTED"
+      "COMMITMENT_PROGRAMS_SUPPORTED"
     ],
     "Type": "Static",
     "Order": 0,

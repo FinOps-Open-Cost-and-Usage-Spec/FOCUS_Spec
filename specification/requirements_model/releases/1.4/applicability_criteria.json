@@ -9,6 +9,9 @@
     "CAPACITY_RESERVATION_SUPPORTED": {
       "Description": "Provider supports capacity reservations"
     },
+    "COMMITMENT_PROGRAMS_SUPPORTED": {
+      "Description": "Provider supports commitment programs"
+    },
     "COMMITMENT_DISCOUNT_SUPPORTED": {
       "Description": "Provider supports commitment discounts"
     },
