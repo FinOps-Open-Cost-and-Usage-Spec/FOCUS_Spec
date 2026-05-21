@@ -65,6 +65,10 @@
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "IND-InvoiceDetail-D-035-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "IND-InvoiceDetail-D-003-M"
           }
         ]
       },
@@ -194,6 +198,34 @@
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "IND-InvoiceDetail-D-019-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "IND-InvoiceDetail-D-020-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "IND-InvoiceDetail-D-021-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "IND-InvoiceDetail-D-022-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "IND-InvoiceDetail-D-023-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "IND-InvoiceDetail-D-024-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "IND-InvoiceDetail-D-025-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "IND-InvoiceDetail-D-026-C"
           }
         ]
       },

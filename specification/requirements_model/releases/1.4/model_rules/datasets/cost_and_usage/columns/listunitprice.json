@@ -151,8 +151,7 @@
         "CAU-ListUnitPrice-C-004-C",
         "CAU-ListUnitPrice-C-013-C",
         "CAU-ListUnitPrice-C-005-C",
-        "CAU-ListUnitPrice-C-006-O",
-        "CAU-ChargeCategory-C-000-M"
+        "CAU-ListUnitPrice-C-006-O"
       ]
     }
   },
@@ -308,8 +307,7 @@
       },
       "Dependencies": [
         "CAU-ListUnitPrice-C-008-M",
-        "CAU-ListUnitPrice-C-009-M",
-        "CAU-ChargeCategory-C-000-M"
+        "CAU-ListUnitPrice-C-009-M"
       ]
     }
   },

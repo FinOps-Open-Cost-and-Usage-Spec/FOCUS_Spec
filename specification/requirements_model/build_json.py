@@ -47,6 +47,10 @@ def _resolve_schema_file_refs(node, base_dir):
                             f"Schema file reference not found in json_schemas folder: {schema_path}"
                         )
                     node[key] = _load_json_file(schema_path)
+                else:
+                    raise ValueError(
+                        f"Schema value is a string but does not match file(...) syntax: {value!r}"
+                    )
             else:
                 _resolve_schema_file_refs(value, base_dir)
     elif isinstance(node, list):
@@ -69,11 +73,24 @@ def build_version(version):
         'model_datasets.json'
     ]
 
+    # Determine model version for version-gated checks.
+    model_details_path = os.path.join(version_dir, 'model_details.json')
+    try:
+        with open(model_details_path, 'rb') as f:
+            _md = json.loads(f.read())
+        _ver_str = _md.get('Details', {}).get('ModelVersion', '0')
+        model_version_tuple = tuple(int(x) for x in _ver_str.split('.')[:2])
+    except Exception:
+        model_version_tuple = (0, 0)
+
     json_schemas_dir = os.path.join(version_dir, 'json_schemas')
     json_schemas_file = os.path.join(json_schemas_dir, 'json_schemas.json')
     if os.path.isdir(json_schemas_dir):
         if os.path.exists(json_schemas_file):
             files.append('json_schemas/json_schemas.json')
+        elif model_version_tuple >= (1, 4):
+            logger.error(f'❌ json_schemas folder exists but json_schemas.json not found: {json_schemas_file}')
+            return False
         else:
             logger.warning(f'⚠️  json_schemas folder exists but file not found: {json_schemas_file}')
     

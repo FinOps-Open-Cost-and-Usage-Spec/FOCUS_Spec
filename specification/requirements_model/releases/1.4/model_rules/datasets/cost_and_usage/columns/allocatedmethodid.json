@@ -4,7 +4,7 @@
     "Reference": "AllocatedMethodId",
     "EntityType": "Column",
     "EntityId": "AllocatedMethodId",
-    "EntityName": "Allocated Resource Id",
+    "EntityName": "Allocated Method ID",
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
     "Status": "Active",
@@ -53,7 +53,7 @@
   "CAU-AllocatedMethodId-C-001-M": {
     "Function": "Type",
     "Reference": "AllocatedMethodId",
-    "EntityName": "Allocated Method Id",
+    "EntityName": "Allocated Method ID",
     "EntityId": "AllocatedMethodId",
     "EntityType": "Column",
     "Notes": "",
@@ -79,7 +79,7 @@
   "CAU-AllocatedMethodId-C-002-M": {
     "Function": "Format",
     "Reference": "AllocatedMethodId",
-    "EntityName": "Allocated Method Id",
+    "EntityName": "Allocated Method ID",
     "EntityId": "AllocatedMethodId",
     "EntityType": "Column",
     "Notes": "",
@@ -105,7 +105,7 @@
   "CAU-AllocatedMethodId-C-003-C": {
     "Function": "Composite",
     "Reference": "AllocatedMethodId",
-    "EntityName": "Allocated Method Id",
+    "EntityName": "Allocated Method ID",
     "EntityId": "AllocatedMethodId",
     "EntityType": "Column",
     "Notes": "",
@@ -143,7 +143,7 @@
   "CAU-AllocatedMethodId-C-004-C": {
     "Function": "Nullability",
     "Reference": "AllocatedMethodId",
-    "EntityName": "Allocated Method Id",
+    "EntityName": "Allocated Method ID",
     "EntityId": "AllocatedMethodId",
     "EntityType": "Column",
     "Notes": "",
@@ -166,7 +166,7 @@
   "CAU-AllocatedMethodId-C-005-C": {
     "Function": "Nullability",
     "Reference": "AllocatedMethodId",
-    "EntityName": "Allocated Method Id",
+    "EntityName": "Allocated Method ID",
     "EntityId": "AllocatedMethodId",
     "EntityType": "Column",
     "Notes": "",
@@ -189,7 +189,7 @@
   "CAU-AllocatedMethodId-C-006-M": {
     "Function": "Type",
     "Reference": "AllocatedMethodId",
-    "EntityName": "Allocated Method Id",
+    "EntityName": "Allocated Method ID",
     "EntityId": "AllocatedMethodId",
     "EntityType": "Column",
     "Notes": "",
