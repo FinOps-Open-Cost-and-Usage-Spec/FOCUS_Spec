@@ -97,7 +97,7 @@
     "Order": 30,
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "Key values in FOCUS dataset column MUST be of type number, string, boolean ( true or false ), or null.",
+      "MustSatisfy": "Key values in FOCUS dataset column MUST be of type number, string, boolean (true or false), or null.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},

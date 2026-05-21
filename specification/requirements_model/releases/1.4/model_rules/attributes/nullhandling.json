@@ -72,7 +72,7 @@
     "Order": 20,
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "FOCUS dataset column MUST NOT contain empty strings or placeholder strings (e.g., Not Applicable ) for absent values when the FOCUS dataset column contains string values.",
+      "MustSatisfy": "FOCUS dataset column MUST NOT contain empty strings or placeholder strings (e.g., Not Applicable) for absent values when the FOCUS dataset column contains string values.",
       "Keyword": "MUST NOT",
       "Requirement": {},
       "Condition": {},
@@ -92,7 +92,7 @@
     "Order": 30,
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "FOCUS dataset column MUST NOT contain placeholder numeric values (e.g., 0 ) for absent values when the FOCUS dataset column contains numeric values.",
+      "MustSatisfy": "FOCUS dataset column MUST NOT contain placeholder numeric values (e.g., 0) for absent values when the FOCUS dataset column contains numeric values.",
       "Keyword": "MUST NOT",
       "Requirement": {},
       "Condition": {},

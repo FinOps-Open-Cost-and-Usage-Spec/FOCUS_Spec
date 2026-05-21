@@ -218,7 +218,7 @@
     "Order": 40,
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "FOCUS dataset column MUST use the extended ISO 8601 format with UTC offset (YYYY-MM-DDTHH:mm:ssZ ).",
+      "MustSatisfy": "FOCUS dataset column MUST use the extended ISO 8601 format with UTC offset (YYYY-MM-DDTHH:mm:ssZ).",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
