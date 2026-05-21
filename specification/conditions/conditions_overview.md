@@ -8,7 +8,7 @@ Conditions are sorted alphabetically by name.
 
 | Condition | Category | Description |
 | ------------------ | ------------- | ----------- |
-| [Includes Aggregation Level Currency Differences](#conditions.includesaggregationlevelcurrencydifferences) | Billing | Operating model represents billing currency and payment currency at different aggregation levels on payable invoices. |
+| [Includes Aggregation Level Currency Differences](#conditions.includesaggregationlevelcurrencydifferences) | Billing | Operating model includes billing currency and payment currency at different aggregation levels on payable invoices. |
 | [Includes Availability Zones](#conditions.includesavailabilityzones) | Resource | Operating model includes deploying resources or services within an availability zone. |
 | [Includes Billing and Payment Currency Differences](#conditions.includesbillingpaymentcurrencydifferences) | Billing | Operating model includes billing and payment in different currencies. |
 | [Includes Capacity Reservations](#conditions.includescapacityreservations) | Commitment | Operating model includes capacity reservations. |
@@ -24,7 +24,7 @@ Conditions are sorted alphabetically by name.
 | [Includes Payable Invoices](#conditions.includespayableinvoices) | Billing | Operating model includes payable invoices. |
 | [Includes Pricing-Billing Currency Differences](#conditions.includespricingbillingcurrencydifferences) | Pricing | Operating model includes pricing and billing in different currencies. |
 | [Includes Provisioned Resources](#conditions.includesprovisionedresources) | Resource | Operating model includes provisioned resources. |
-| [Includes Purchase Order Numbers](#conditions.includespurchaseordernumbers) | Billing | Operating model supports customer input of purchase order numbers. |
+| [Includes Purchase Order Numbers](#conditions.includespurchaseordernumbers) | Billing | Operating model includes customer input of purchase order numbers. |
 | [Includes Regions](#conditions.includesregions) | Resource | Operating model includes deploying resources or services within a region. |
 | [Includes Resource Type Assignment](#conditions.includesresourcetypeassignment) | Resource | Operating model includes assigning types to resources. |
 | [Includes Split Cost Allocation](#conditions.includessplitcostallocation) | Allocation | Operating model includes split cost allocation. |
