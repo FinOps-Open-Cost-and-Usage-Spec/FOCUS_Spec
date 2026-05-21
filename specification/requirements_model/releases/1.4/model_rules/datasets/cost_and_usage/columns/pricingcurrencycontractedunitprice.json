@@ -237,7 +237,10 @@
           }
         ]
       },
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-ChargeCategory-C-002-M",
+        "CAU-ChargeClass-C-002-C"
+      ]
     }
   },
   "CAU-PricingCurrencyContractedUnitPrice-C-006-O": {
@@ -360,7 +363,9 @@
         "ColumnName": "PricingCurrencyContractedUnitPrice",
         "Value": null
       },
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-PricingCurrency-C-004-M"
+      ]
     }
   },
   "CAU-PricingCurrencyContractedUnitPrice-C-010-C": {

@@ -468,7 +468,10 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-ContractedCost-C-003-M",
+        "CAU-ContractedUnitPrice-C-004-M"
+      ]
     }
   }
 }

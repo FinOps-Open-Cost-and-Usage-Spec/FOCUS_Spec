@@ -188,7 +188,10 @@
           }
         ]
       },
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-ChargeCategory-C-002-M",
+        "CAU-CommitmentDiscountStatus-C-002-C"
+      ]
     }
   },
   "CAU-ConsumedQuantity-C-005-C": {
@@ -239,7 +242,9 @@
       },
       "Dependencies": [
         "CAU-ConsumedQuantity-C-006-C",
-        "CAU-ConsumedQuantity-C-007-C"
+        "CAU-ConsumedQuantity-C-007-C",
+        "CAU-ChargeCategory-C-002-M",
+        "CAU-CommitmentDiscountStatus-C-002-C"
       ]
     }
   },
@@ -271,7 +276,9 @@
         "ColumnName": "ChargeClass",
         "Value": "Correction"
       },
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-ChargeClass-C-002-C"
+      ]
     }
   },
   "CAU-ConsumedQuantity-C-007-C": {
@@ -363,7 +370,9 @@
         "ColumnName": "SkuPriceId",
         "Value": null
       },
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-SkuPriceId-C-003-M"
+      ]
     }
   }
 }

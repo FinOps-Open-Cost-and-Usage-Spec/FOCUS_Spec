@@ -176,7 +176,9 @@
         "ColumnName": "ContractCommitmentBenefitCategory",
         "Value": "Discount"
       },
-      "Dependencies": []
+      "Dependencies": [
+        "CCT-ContractCommitmentBenefitCategory-C-002-M"
+      ]
     }
   },
   "CCT-ContractCommitmentDiscountPercentage-C-005-C": {
@@ -207,7 +209,9 @@
         "ColumnName": "ContractCommitmentBenefitCategory",
         "Value": "Availability"
       },
-      "Dependencies": []
+      "Dependencies": [
+        "CCT-ContractCommitmentBenefitCategory-C-002-M"
+      ]
     }
   },
   "CCT-ContractCommitmentDiscountPercentage-C-006-M": {

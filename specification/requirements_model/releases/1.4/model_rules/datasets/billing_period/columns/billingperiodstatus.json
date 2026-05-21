@@ -163,7 +163,10 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "BIP-BillingPeriodStart-C-003-M",
+        "BIP-BillingPeriodEnd-C-003-M"
+      ]
     }
   },
   "BIP-BillingPeriodStatus-C-005-C": {

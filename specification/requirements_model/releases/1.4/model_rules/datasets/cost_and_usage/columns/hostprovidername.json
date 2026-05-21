@@ -163,7 +163,9 @@
       "Keyword": "MAY",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-ServiceName-C-003-M"
+      ]
     }
   },
   "CAU-HostProviderName-C-005-C": {
@@ -186,7 +188,9 @@
       "Keyword": "MAY",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-ChargeCategory-C-002-M"
+      ]
     }
   },
   "CAU-HostProviderName-C-006-M": {
@@ -325,7 +329,9 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-ServiceProviderName-C-003-M"
+      ]
     }
   }
 }

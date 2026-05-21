@@ -164,7 +164,9 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "IND-PaymentCurrency-C-003-M"
+      ]
     }
   },
   "IND-PaymentCurrencyBilledCost-C-005-M": {
@@ -187,7 +189,10 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "IND-BilledCost-C-003-M",
+        "IND-PaymentCurrency-C-003-M"
+      ]
     }
   },
   "IND-PaymentCurrencyBilledCost-C-006-C": {
@@ -210,7 +215,10 @@
       "Keyword": "MAY",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "IND-BilledCost-C-003-M",
+        "IND-PaymentCurrency-C-003-M"
+      ]
     }
   },
   "IND-PaymentCurrencyBilledCost-C-007-C": {
@@ -233,7 +241,10 @@
       "Keyword": "MAY",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "IND-BilledCost-C-003-M",
+        "IND-PaymentCurrency-C-003-M"
+      ]
     }
   }
 }

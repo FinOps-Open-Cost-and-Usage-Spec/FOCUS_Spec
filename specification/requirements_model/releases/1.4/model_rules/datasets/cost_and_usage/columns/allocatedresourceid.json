@@ -276,7 +276,11 @@
       "Keyword": "SHOULD",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-ResourceId-C-003-C",
+        "CAU-ChargePeriodStart-C-003-M",
+        "CAU-ChargePeriodEnd-C-003-M"
+      ]
     }
   },
   "CAU-AllocatedResourceId-C-009-O": {
@@ -299,7 +303,11 @@
       "Keyword": "MAY",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-ResourceId-C-003-C",
+        "CAU-ChargePeriodStart-C-003-M",
+        "CAU-ChargePeriodEnd-C-003-M"
+      ]
     }
   }
 }

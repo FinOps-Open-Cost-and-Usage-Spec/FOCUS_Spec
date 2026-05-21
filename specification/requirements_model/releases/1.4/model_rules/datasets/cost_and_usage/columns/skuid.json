@@ -184,7 +184,9 @@
         "ColumnName": "ChargeCategory",
         "Value": "Tax"
       },
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-ChargeCategory-C-002-M"
+      ]
     }
   },
   "CAU-SkuId-C-005-C": {
@@ -235,7 +237,10 @@
           }
         ]
       },
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-ChargeCategory-C-002-M",
+        "CAU-ChargeClass-C-002-C"
+      ]
     }
   },
   "CAU-SkuId-C-006-O": {
@@ -347,7 +352,9 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-PricingCategory-C-002-M"
+      ]
     }
   },
   "CAU-SkuId-C-010-M": {
@@ -432,7 +439,9 @@
       "Keyword": "MAY",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-SkuPriceId-C-003-M"
+      ]
     }
   }
 }

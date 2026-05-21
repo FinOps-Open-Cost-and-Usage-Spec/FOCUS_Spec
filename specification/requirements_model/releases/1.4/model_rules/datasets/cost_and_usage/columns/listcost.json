@@ -253,7 +253,9 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-ChargeCategory-C-002-M"
+      ]
     }
   },
   "CAU-ListCost-C-008-M": {
@@ -276,7 +278,10 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-BilledCost-C-003-M",
+        "CAU-ChargeCategory-C-002-M"
+      ]
     }
   },
   "CAU-ListCost-C-009-C": {

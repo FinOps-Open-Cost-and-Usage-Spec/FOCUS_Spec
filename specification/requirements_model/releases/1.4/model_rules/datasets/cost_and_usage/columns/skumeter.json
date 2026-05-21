@@ -169,7 +169,9 @@
         "ColumnName": "SkuId",
         "Value": null
       },
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-SkuId-C-003-M"
+      ]
     }
   },
   "CAU-SkuMeter-C-005-C": {
@@ -200,7 +202,9 @@
         "ColumnName": "SkuId",
         "Value": null
       },
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-SkuId-C-003-M"
+      ]
     }
   },
   "CAU-SkuMeter-C-006-O": {
@@ -223,7 +227,9 @@
       "Keyword": "SHOULD",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-SkuId-C-003-M"
+      ]
     }
   }
 }

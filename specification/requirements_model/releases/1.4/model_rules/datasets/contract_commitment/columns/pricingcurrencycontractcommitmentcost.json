@@ -178,7 +178,10 @@
           }
         ]
       },
-      "Dependencies": []
+      "Dependencies": [
+        "CCT-ContractCommitmentCategory-C-002-M",
+        "CCT-PricingCurrency-C-004-M"
+      ]
     }
   },
   "CCT-PricingCurrencyContractCommitmentCost-C-005-C": {
@@ -209,7 +212,9 @@
         "ColumnName": "ContractCommitmentCategory",
         "Value": "Usage"
       },
-      "Dependencies": []
+      "Dependencies": [
+        "CCT-ContractCommitmentCategory-C-002-M"
+      ]
     }
   },
   "CCT-PricingCurrencyContractCommitmentCost-C-006-M": {
@@ -232,7 +237,9 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CCT-PricingCurrency-C-004-M"
+      ]
     }
   }
 }

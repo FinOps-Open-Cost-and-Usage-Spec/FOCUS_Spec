@@ -216,7 +216,9 @@
       "Keyword": "SHOULD",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CCT-ContractCommitmentDurationType-C-003-M"
+      ]
     }
   }
 }

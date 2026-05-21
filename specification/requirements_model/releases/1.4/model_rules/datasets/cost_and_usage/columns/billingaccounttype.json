@@ -168,7 +168,9 @@
         "ColumnName": "BillingAccountId",
         "Value": null
       },
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-BillingAccountId-C-001-M"
+      ]
     }
   },
   "CAU-BillingAccountType-C-005-C": {
@@ -199,7 +201,9 @@
         "ColumnName": "BillingAccountId",
         "Value": null
       },
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-BillingAccountId-C-001-M"
+      ]
     }
   },
   "CAU-BillingAccountType-C-006-M": {

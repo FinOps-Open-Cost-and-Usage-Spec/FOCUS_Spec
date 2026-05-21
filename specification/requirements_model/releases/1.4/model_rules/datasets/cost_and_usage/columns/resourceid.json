@@ -299,7 +299,9 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-CommitmentDiscountStatus-C-002-C"
+      ]
     }
   }
 }

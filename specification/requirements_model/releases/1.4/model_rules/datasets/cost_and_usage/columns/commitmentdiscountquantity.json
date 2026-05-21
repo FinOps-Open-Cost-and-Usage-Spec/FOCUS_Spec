@@ -210,7 +210,8 @@
         "CAU-CommitmentDiscountQuantity-C-005-C",
         "CAU-CommitmentDiscountQuantity-C-006-C",
         "CAU-CommitmentDiscountId-C-000-C",
-        "CAU-ChargeCategory-C-000-M"
+        "CAU-ChargeCategory-C-000-M",
+        "CAU-CommitmentDiscountId-C-003-C"
       ]
     }
   },
@@ -242,7 +243,9 @@
         "ColumnName": "ChargeClass",
         "Value": "Correction"
       },
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-ChargeClass-C-002-C"
+      ]
     }
   },
   "CAU-CommitmentDiscountQuantity-C-006-C": {
@@ -273,7 +276,9 @@
         "ColumnName": "ChargeClass",
         "Value": "Correction"
       },
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-ChargeClass-C-002-C"
+      ]
     }
   },
   "CAU-CommitmentDiscountQuantity-C-007-C": {
@@ -329,7 +334,11 @@
           }
         ]
       },
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-ChargeCategory-C-002-M",
+        "CAU-CommitmentDiscountId-C-003-C",
+        "CAU-ChargeClass-C-002-C"
+      ]
     }
   },
   "CAU-CommitmentDiscountQuantity-C-008-C": {
@@ -446,7 +455,8 @@
       },
       "Dependencies": [
         "CAU-CommitmentDiscountQuantity-C-011-C",
-        "CAU-CommitmentDiscountQuantity-C-012-C"
+        "CAU-CommitmentDiscountQuantity-C-012-C",
+        "CAU-ChargeCategory-C-002-M"
       ]
     }
   },
@@ -475,7 +485,8 @@
         "Value": "One-Time"
       },
       "Dependencies": [
-        "CAU-ChargeFrequency-C-003-M"
+        "CAU-ChargeFrequency-C-003-M",
+        "CAU-CommitmentDiscountUnit-C-004-C"
       ]
     }
   },
@@ -504,7 +515,8 @@
         "Value": "Recurring"
       },
       "Dependencies": [
-        "CAU-ChargeFrequency-C-003-M"
+        "CAU-ChargeFrequency-C-003-M",
+        "CAU-CommitmentDiscountUnit-C-004-C"
       ]
     }
   },
@@ -556,7 +568,8 @@
       },
       "Dependencies": [
         "CAU-CommitmentDiscountQuantity-C-014-C",
-        "CAU-CommitmentDiscountQuantity-C-015-C"
+        "CAU-CommitmentDiscountQuantity-C-015-C",
+        "CAU-ChargeCategory-C-002-M"
       ]
     }
   },
@@ -594,7 +607,10 @@
           }
         ]
       },
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-CommitmentDiscountUnit-C-004-C",
+        "CAU-CommitmentDiscountStatus-C-002-C"
+      ]
     }
   },
   "CAU-CommitmentDiscountQuantity-C-015-C": {
@@ -631,7 +647,10 @@
           }
         ]
       },
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-CommitmentDiscountUnit-C-004-C",
+        "CAU-CommitmentDiscountStatus-C-002-C"
+      ]
     }
   },
   "CAU-CommitmentDiscountQuantity-C-016-C": {

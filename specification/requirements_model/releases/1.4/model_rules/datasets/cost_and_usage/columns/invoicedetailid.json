@@ -234,7 +234,9 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-InvoiceId-C-003-C"
+      ]
     }
   }
 }

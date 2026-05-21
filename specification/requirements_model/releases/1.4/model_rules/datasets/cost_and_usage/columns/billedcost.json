@@ -232,7 +232,9 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-BillingCurrency-C-004-M"
+      ]
     }
   },
   "CAU-BilledCost-C-007-C": {
@@ -255,7 +257,10 @@
       "Keyword": "MUST NOT",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-InvoiceId-C-003-C",
+        "CAU-InvoiceIssuerName-C-003-M"
+      ]
     }
   },
   "CAU-BilledCost-C-008-C": {
@@ -370,7 +375,9 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-InvoiceIssuerName-C-003-M"
+      ]
     }
   }
 }

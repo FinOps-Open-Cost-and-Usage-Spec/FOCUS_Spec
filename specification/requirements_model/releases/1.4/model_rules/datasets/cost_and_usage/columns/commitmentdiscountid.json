@@ -309,6 +309,7 @@
         "Value": "Purchase"
       },
       "Dependencies": [
+        "CAU-ResourceId-C-003-C",
         "CAU-ChargeCategory-C-000-M"
       ]
     }
@@ -338,6 +339,7 @@
         "Value": "Usage"
       },
       "Dependencies": [
+        "CAU-ResourceId-C-003-C",
         "CAU-ChargeCategory-C-000-M"
       ]
     }

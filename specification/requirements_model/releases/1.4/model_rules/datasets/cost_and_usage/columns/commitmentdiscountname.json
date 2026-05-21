@@ -163,7 +163,9 @@
         "ColumnName": "CommitmentDiscountId",
         "Value": null
       },
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-CommitmentDiscountId-C-003-C"
+      ]
     }
   },
   "CAU-CommitmentDiscountName-C-005-C": {
@@ -204,7 +206,8 @@
       },
       "Dependencies": [
         "CAU-CommitmentDiscountName-C-006-C",
-        "CAU-CommitmentDiscountName-C-007-C"
+        "CAU-CommitmentDiscountName-C-007-C",
+        "CAU-CommitmentDiscountId-C-003-C"
       ]
     }
   },

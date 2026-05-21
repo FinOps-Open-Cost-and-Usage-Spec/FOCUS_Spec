@@ -154,7 +154,10 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "IND-InvoiceDetailId-C-003-M",
+        "IND-PaymentCurrencyBilledCost-C-003-M"
+      ]
     }
   },
   "IND-PaymentCurrencyInvoiceDetailId-C-005-C": {
@@ -185,7 +188,10 @@
         "ColumnName": "PaymentCurrencyBilledCost",
         "Value": 0
       },
-      "Dependencies": []
+      "Dependencies": [
+        "IND-InvoiceDetailId-C-003-M",
+        "IND-PaymentCurrencyBilledCost-C-003-M"
+      ]
     }
   }
 }

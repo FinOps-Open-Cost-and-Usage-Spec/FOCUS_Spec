@@ -147,7 +147,9 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "IND-InvoiceId-C-003-M"
+      ]
     }
   }
 }

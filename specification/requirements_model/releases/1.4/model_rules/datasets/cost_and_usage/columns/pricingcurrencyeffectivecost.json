@@ -206,7 +206,9 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-PricingCurrency-C-004-M"
+      ]
     }
   },
   "CAU-PricingCurrencyEffectiveCost-C-007-M": {
@@ -229,7 +231,10 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-EffectiveCost-C-003-M",
+        "CAU-PricingCurrency-C-004-M"
+      ]
     }
   }
 }

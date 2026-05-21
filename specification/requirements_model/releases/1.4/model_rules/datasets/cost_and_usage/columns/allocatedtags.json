@@ -251,7 +251,9 @@
       "Keyword": "MUST NOT",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-Tags-C-000-C"
+      ]
     }
   },
   "CAU-AllocatedTags-C-007-M": {
@@ -274,7 +276,9 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-AllocatedResourceId-C-003-C"
+      ]
     }
   },
   "CAU-AllocatedTags-C-008-M": {

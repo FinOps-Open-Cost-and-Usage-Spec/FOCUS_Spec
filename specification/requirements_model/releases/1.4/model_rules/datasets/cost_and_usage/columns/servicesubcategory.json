@@ -1792,7 +1792,9 @@
         ]
       },
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-ServiceCategory-C-002-M"
+      ]
     }
   }
 }

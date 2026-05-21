@@ -309,7 +309,10 @@
       "Keyword": "MAY",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CCT-ContractCommitmentPeriodEnd-C-003-M",
+        "CCT-ContractCommitmentPeriodStart-C-003-M"
+      ]
     }
   }
 }

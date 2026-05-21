@@ -168,7 +168,9 @@
         "ColumnName": "AllocatedResourceId",
         "Value": null
       },
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-AllocatedResourceId-C-003-C"
+      ]
     }
   },
   "CAU-AllocatedResourceName-C-005-C": {
@@ -199,7 +201,9 @@
         "ColumnName": "AllocatedResourceId",
         "Value": null
       },
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-AllocatedResourceId-C-003-C"
+      ]
     }
   },
   "CAU-AllocatedResourceName-C-006-C": {
@@ -222,7 +226,9 @@
       "Keyword": "MAY",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-AllocatedResourceId-C-003-C"
+      ]
     }
   }
 }

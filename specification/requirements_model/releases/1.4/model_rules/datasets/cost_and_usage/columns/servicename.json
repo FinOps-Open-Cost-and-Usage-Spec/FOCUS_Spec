@@ -196,7 +196,9 @@
         "ExpectedCount": 1
       },
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-ServiceCategory-C-002-M"
+      ]
     }
   },
   "CAU-ServiceName-C-006-C": {
@@ -219,7 +221,9 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-ServiceCategory-C-002-M"
+      ]
     }
   },
   "CAU-ServiceName-C-007-C": {
@@ -286,7 +290,9 @@
         "ExpectedCount": 1
       },
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-ServiceSubcategory-C-002-M"
+      ]
     }
   },
   "CAU-ServiceName-C-009-C": {
@@ -309,7 +315,9 @@
       "Keyword": "SHOULD",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-ServiceSubcategory-C-002-M"
+      ]
     }
   }
 }

@@ -251,7 +251,9 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CCT-BillingCurrency-C-004-C"
+      ]
     }
   }
 }

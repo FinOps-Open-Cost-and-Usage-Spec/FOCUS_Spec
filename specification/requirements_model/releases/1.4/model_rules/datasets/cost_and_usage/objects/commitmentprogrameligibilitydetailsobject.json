@@ -118,7 +118,9 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-CommitmentDiscountType-C-003-C"
+      ]
     }
   },
   "CAU-CommitmentProgramEligibilityDetailsObject-O-004-O": {

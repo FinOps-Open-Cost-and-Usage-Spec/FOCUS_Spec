@@ -197,7 +197,9 @@
         "ColumnName": "PricingQuantity",
         "Value": null
       },
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-PricingQuantity-C-003-M"
+      ]
     }
   },
   "CAU-PricingUnit-C-006-C": {
@@ -228,7 +230,9 @@
         "ColumnName": "PricingQuantity",
         "Value": null
       },
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-PricingQuantity-C-003-M"
+      ]
     }
   },
   "CAU-PricingUnit-C-007-C": {

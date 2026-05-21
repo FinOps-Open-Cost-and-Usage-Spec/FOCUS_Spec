@@ -183,7 +183,9 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CCT-ContractCommitmentId-C-003-M"
+      ]
     }
   }
 }

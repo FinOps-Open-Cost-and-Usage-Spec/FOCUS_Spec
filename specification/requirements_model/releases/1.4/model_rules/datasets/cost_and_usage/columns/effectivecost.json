@@ -729,7 +729,8 @@
         "Value": "Purchase"
       },
       "Dependencies": [
-        "CAU-ChargeCategory-C-000-M"
+        "CAU-ChargeCategory-C-000-M",
+        "CAU-ServiceProviderName-C-003-M"
       ]
     }
   },

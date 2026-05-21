@@ -152,7 +152,9 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "IND-InvoiceDetailId-C-003-M"
+      ]
     }
   },
   "IND-InvoiceDetailLastUpdated-C-005-M": {

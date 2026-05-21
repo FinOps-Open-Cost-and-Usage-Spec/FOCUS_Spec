@@ -252,7 +252,9 @@
         "ExpectedCount": 1
       },
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CCT-ContractId-C-003-M"
+      ]
     }
   },
   "CCT-ContractCommitmentId-C-008-O": {
@@ -275,7 +277,9 @@
       "Keyword": "MAY",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CCT-ContractId-C-003-M"
+      ]
     }
   },
   "CCT-ContractCommitmentId-C-009-M": {

@@ -2362,7 +2362,10 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-ChargeCategory-C-002-M",
+        "CAU-ResourceId-C-003-C"
+      ]
     }
   },
   "CAU-ContractAppliedObject-O-074-C": {
@@ -2385,7 +2388,10 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-ChargeCategory-C-002-M",
+        "CAU-ResourceId-C-003-C"
+      ]
     }
   },
   "CAU-ContractAppliedObject-O-075-O": {
@@ -2431,7 +2437,9 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-BillingCurrency-C-004-M"
+      ]
     }
   },
   "CAU-ContractAppliedObject-O-077-M": {

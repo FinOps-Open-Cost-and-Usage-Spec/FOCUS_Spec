@@ -175,7 +175,10 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "IND-BillingPeriodStart-C-003-M",
+        "IND-InvoiceIssuerName-C-003-M"
+      ]
     }
   }
 }

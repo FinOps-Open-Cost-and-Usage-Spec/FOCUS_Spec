@@ -148,7 +148,7 @@
         "Value": null
       },
       "Dependencies": [
-        "CAU-CommitmentDiscountId-C-000-C"
+        "CAU-CommitmentDiscountId-C-003-C"
       ]
     }
   },
@@ -191,7 +191,8 @@
         ]
       },
       "Dependencies": [
-        "CAU-CommitmentDiscountId-C-000-C"
+        "CAU-CommitmentDiscountId-C-003-C",
+        "CAU-ChargeCategory-C-002-M"
       ]
     }
   },
@@ -257,7 +258,9 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-CommitmentDiscountId-C-003-C"
+      ]
     }
   },
   "CAU-CommitmentDiscountStatus-C-007-C": {
@@ -280,7 +283,9 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-CommitmentDiscountId-C-003-C"
+      ]
     }
   }
 }

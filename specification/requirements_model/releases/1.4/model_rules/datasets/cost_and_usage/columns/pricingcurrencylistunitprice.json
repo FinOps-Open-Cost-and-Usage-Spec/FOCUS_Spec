@@ -184,7 +184,9 @@
         "ColumnName": "ChargeCategory",
         "Value": "Tax"
       },
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-ChargeCategory-C-002-M"
+      ]
     }
   },
   "CAU-PricingCurrencyListUnitPrice-C-005-C": {
@@ -235,7 +237,10 @@
           }
         ]
       },
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-ChargeCategory-C-002-M",
+        "CAU-ChargeClass-C-002-C"
+      ]
     }
   },
   "CAU-PricingCurrencyListUnitPrice-C-006-O": {
@@ -350,7 +355,9 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-PricingCurrency-C-004-M"
+      ]
     }
   },
   "CAU-PricingCurrencyListUnitPrice-C-010-C": {
@@ -410,7 +417,9 @@
         "ColumnName": "SkuPriceId",
         "Value": null
       },
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-SkuPriceId-C-003-M"
+      ]
     }
   },
   "CAU-PricingCurrencyListUnitPrice-C-012-C": {
@@ -441,7 +450,9 @@
         "ColumnName": "SkuPriceId",
         "Value": null
       },
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-SkuPriceId-C-003-M"
+      ]
     }
   }
 }

@@ -181,7 +181,9 @@
         "ColumnName": "SkuPriceId",
         "Value": null
       },
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-SkuPriceId-C-003-M"
+      ]
     }
   },
   "CAU-SkuPriceDetails-C-005-C": {
@@ -212,7 +214,9 @@
         "ColumnName": "SkuPriceId",
         "Value": null
       },
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-SkuPriceId-C-003-M"
+      ]
     }
   },
   "CAU-SkuPriceDetails-C-006-C": {
@@ -317,7 +321,9 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-SkuPriceId-C-003-M"
+      ]
     }
   },
   "CAU-SkuPriceDetails-C-008-M": {
@@ -340,7 +346,9 @@
       "Keyword": "MUST NOT",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-SkuPriceId-C-003-M"
+      ]
     }
   },
   "CAU-SkuPriceDetails-C-009-O": {
@@ -363,7 +371,9 @@
       "Keyword": "SHOULD",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-SkuPriceId-C-003-M"
+      ]
     }
   },
   "CAU-SkuPriceDetails-C-010-C": {
@@ -451,7 +461,8 @@
       "Dependencies": [
         "CAU-SkuPriceDetails-C-013-O",
         "CAU-SkuPriceDetails-C-014-O",
-        "CAU-SkuPriceDetails-C-015-O"
+        "CAU-SkuPriceDetails-C-015-O",
+        "CAU-SkuPriceId-C-003-M"
       ]
     }
   },
@@ -590,7 +601,9 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-PricingUnit-C-004-C"
+      ]
     }
   },
   "CAU-SkuPriceDetails-C-019-M": {
@@ -702,7 +715,9 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-PricingUnit-C-004-C"
+      ]
     }
   },
   "CAU-SkuPriceDetails-C-023-C": {
@@ -725,7 +740,9 @@
       "Keyword": "SHOULD",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-SkuPriceId-C-003-M"
+      ]
     }
   },
   "CAU-SkuPriceDetails-C-024-M": {
