@@ -101,7 +101,7 @@ Construct a unique identifier for the rule using the appropriate format based on
 **For Datasets, Columns, and Objects:**  
 `DatasetType-EntityId-EntityType-NNN-Level`
 
-**For Schemas entries:**  
+**For Schemas:**  
 `DatasetType-EntityId-S-NNN-Level`
 
 ##### RMId Component Definitions
@@ -791,9 +791,9 @@ Object rules are stored in: `specification/requirements_model/releases/X.Y/model
 Schema entity types define reusable JSON Schema documents used to validate JSON content through model checks.
 
 **What They Represent:**
-- Formal JSON Schema definitions (Draft 2020-12 or other supported drafts)
-- Reusable schema artifacts that can be referenced by validation rules
-- Structured validation logic decoupled from per-rule inline JSON path checks
+* Formal JSON Schema definitions (Draft 2020-12 or other supported drafts)
+* Reusable schema artifacts that can be referenced by validation rules
+* Structured validation logic decoupled from per-rule inline JSON path checks
 
 **Key Characteristics:**
 
@@ -1001,10 +1001,10 @@ Use this template when registering a reusable JSON Schema in `json_schemas/json_
 ```
 
 Notes:
-- The schema entry ID should follow the `DatasetType-EntityId-S-NNN-Level` pattern.
-- `EntityType` must be `Schema`.
-- The `Schema` path must be relative to `releases/X.Y/json_schemas/`.
-- During build, `file('...')` is dereferenced and replaced with the JSON content in `build/model-X.Y.json`.
+* The schema entry ID should follow the `DatasetType-EntityId-S-NNN-Level` pattern.
+* `EntityType` must be `Schema`.
+* The `Schema` path must be relative to `releases/X.Y/json_schemas/`.
+* During build, `file('...')` is dereferenced and replaced with the JSON content in `build/model-X.Y.json`.
 
 ### Base column composite rule
 
