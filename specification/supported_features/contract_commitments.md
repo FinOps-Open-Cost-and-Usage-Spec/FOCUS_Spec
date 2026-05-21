@@ -36,14 +36,14 @@ Because ANSI SQL does not inherently support the parsing of JSON, the following 
 
 ### Report on Initial Contract Commitment
 
-This query takes inputs of a time range via ChargePeriodStart and ChargePeriodEnd, then presents the aggregation of initial contract commitments from the CostAndUsage dataset per ServiceProviderName and ContractCommitmentID by filtering on the specified time range, along with ChargeCategory of `Purchase`.
+This query takes inputs of a time range via ChargePeriodStart and ChargePeriodEnd, then presents the aggregation of initial contract commitments from the CostAndUsage dataset per ServiceProviderName and ContractCommitmentId by filtering on the specified time range, along with ChargeCategory of `Purchase`.
 
 ```sql
 SELECT
   MIN(CU.ChargePeriodStart) AS ChargePeriodStart,
   MAX(CU.ChargePeriodEnd) AS ChargePeriodEnd,
   CU.ServiceProviderName,
-  JSON_VALUE(CA, '$.ContractCommitmentID') AS ContractCommitmentId,
+  JSON_VALUE(CA, '$.ContractCommitmentId') AS ContractCommitmentId,
   SUM(CAST(JSON_VALUE(CA, '$.ContractCommitmentAppliedCost') AS FLOAT64)) AS ContractCommitmentAppliedCost
 FROM CostAndUsage CU
 CROSS JOIN
@@ -57,14 +57,14 @@ ORDER BY ServiceProviderName, ContractCommitmentId
 
 ### Report on Usage Against Contract Commitment
 
-This query takes inputs of a time range via ChargePeriodStart and ChargePeriodEnd, then presents the aggregation of the application of contract commitments from the CostAndUsage dataset per ServiceProviderName and ContractCommitmentID by filtering on the specified time range, along with ChargeCategory of `Usage`.
+This query takes inputs of a time range via ChargePeriodStart and ChargePeriodEnd, then presents the aggregation of the application of contract commitments from the CostAndUsage dataset per ServiceProviderName and ContractCommitmentId by filtering on the specified time range, along with ChargeCategory of `Usage`.
 
 ```sql
 SELECT
   MIN(CU.ChargePeriodStart) AS ChargePeriodStart,
   MAX(CU.ChargePeriodEnd) AS ChargePeriodEnd,
   CU.ServiceProviderName,
-  JSON_VALUE(CA, '$.ContractCommitmentID') AS ContractCommitmentId,
+  JSON_VALUE(CA, '$.ContractCommitmentId') AS ContractCommitmentId,
   SUM(CAST(JSON_VALUE(CA, '$.ContractCommitmentAppliedCost') AS FLOAT64)) AS ContractCommitmentAppliedCost
 FROM CostAndUsage CU
 CROSS JOIN
@@ -78,14 +78,14 @@ ORDER BY ServiceProviderName, ContractCommitmentId
 
 ### Report on Usage Against Contract Commitment by Category
 
-This query takes inputs of a time range via ChargePeriodStart and ChargePeriodEnd, then presents the aggregation of the application of contract commitments from the CostAndUsage dataset per ServiceProviderName and ContractCommitmentID by filtering on the specified time range, along with ChargeCategory of `Usage`. It also joins in the ContractCommitment dataset to provide further information about each contract commitment (in this case, the start and end date/time).
+This query takes inputs of a time range via ChargePeriodStart and ChargePeriodEnd, then presents the aggregation of the application of contract commitments from the CostAndUsage dataset per ServiceProviderName and ContractCommitmentId by filtering on the specified time range, along with ChargeCategory of `Usage`. It also joins in the ContractCommitment dataset to provide further information about each contract commitment (in this case, the start and end date/time).
 
 ```sql
 SELECT
   MIN(CU.ChargePeriodStart) AS ChargePeriodStart,
   MAX(CU.ChargePeriodEnd) AS ChargePeriodEnd,
   CU.ServiceProviderName,
-  JSON_VALUE(CA, '$.ContractCommitmentID') AS ContractCommitmentId,
+  JSON_VALUE(CA, '$.ContractCommitmentId') AS ContractCommitmentId,
   CC.ContractCommitmentPeriodStart,
   CC.ContractCommitmentPeriodEnd,
   SUM(CAST(JSON_VALUE(CA, '$.ContractCommitmentAppliedCost') AS FLOAT64)) AS ContractCommitmentAppliedCost
@@ -95,7 +95,7 @@ CROSS JOIN
 INNER JOIN
   ContractCommitment CC
 ON
-  JSON_VALUE(CA, '$.ContractCommitmentID') = CC.ContractCommitmentID
+  JSON_VALUE(CA, '$.ContractCommitmentId') = CC.ContractCommitmentId
 WHERE JSON_VALUE(CA, '$.ContractCommitmentAppliedCost') IS NOT NULL
   AND ChargePeriodStart >= ? AND ChargePeriodEnd < ?
   AND ChargeCategory = 'Usage'
