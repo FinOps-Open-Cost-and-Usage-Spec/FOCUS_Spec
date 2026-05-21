@@ -16,5 +16,4 @@ The examples below illustrate how [Principal ID](#datasets.costandusage.principa
 | 3 | **Direct IaaS** | Aura Web | `user_d_engineer_993` | `null` |
 | 4 | **Seat-Based SaaS** | SprintCanvas | `null` | `user_uuid_554321` |
 | 5 | **Direct PaaS Usage** | LatticeScale | `dev_uuid_112233` | `dev_uuid_112233` |
-| 6a | **Seat-Plus-Token SaaS** (seat license) | PipelCRM | `null` | `user_uuid_887766` |
-| 6b | **Seat-Plus-Token SaaS** (token usage) | PipelCRM | `null` | `user_uuid_887766` |
+| 6 | **Seat-Plus-Token SaaS** | PipelCRM | `null` | `user_uuid_887766` |
