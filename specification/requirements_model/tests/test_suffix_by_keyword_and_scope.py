@@ -5,7 +5,11 @@ from conftest import requires_version
 # Phrases to exclude from keyword matching to avoid false positives
 KEYWORD_EXCLUDE_PHRASES = [
     "SLA credit details when the credit is already applied",
-    "(e.g., when the"
+    "(e.g., when the",
+    "where necessary",
+    ", where quantity is a positive integer,",
+    "where m is a real number and n",
+    "when required for a decimal value"
 ]
 
 
@@ -26,8 +30,8 @@ def _text_has_keywords(text, keywords=None) -> bool:
     if not isinstance(text, str):
         return False
     if keywords is None:
-        keywords = ["when", "unless", "where"]
-    
+        keywords = ["when", "unless", "where", "if it"]
+
     # Remove excluded phrases before checking for keywords
     s = text.lower()
     for phrase in KEYWORD_EXCLUDE_PHRASES:
@@ -41,7 +45,7 @@ def _rule_has_scope(rule: dict) -> bool:
     cond = vc.get("Condition")
     ms = vc.get("MustSatisfy")
     has_app = isinstance(app, list) and len(app) > 0
-    has_cond = isinstance(cond, dict) and len(cond) > 0
+    has_cond = (isinstance(cond, dict) or isinstance(cond, list)) and len(cond) > 0
     has_ms_scope = _text_has_keywords(ms)
     return has_app or has_cond or has_ms_scope
 
@@ -101,7 +105,7 @@ def test_suffixes_unified(cr_json, model_version):
         pytest.skip(reason)
     
     """
-    Scope = non-empty ApplicabilityCriteria OR non-empty Condition OR 'when'/'unless' in MustSatisfy
+    Scope = non-empty ApplicabilityCriteria OR non-empty Condition OR 'when'/'unless'/'where'/'if it' in MustSatisfy
     • If scope: require '-C' (skip '-M'/'-O').
 
     Otherwise (no scope):
