@@ -360,7 +360,7 @@
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "IND-PurchaseOrderNumber-C-000-M"
+            "ModelRuleId": "IND-PurchaseOrderNumber-C-000-C"
           },
           {
             "CheckFunction": "CheckModelRule",
@@ -390,7 +390,7 @@
         "IND-PaymentCurrencyInvoiceDetailId-C-000-C",
         "IND-PaymentDueDate-C-000-M",
         "IND-PaymentTerms-C-000-M",
-        "IND-PurchaseOrderNumber-C-000-M",
+        "IND-PurchaseOrderNumber-C-000-C",
         "IND-ReferenceInvoiceId-C-000-M"
       ]
     }
@@ -795,7 +795,7 @@
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
     "ApplicabilityCriteria": [
-      "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
+      "BILLING_PAYMENT_CURRENCY_DIFFERENCES_SUPPORTED"
     ],
     "Type": "Static",
     "Order": 180,
@@ -823,7 +823,7 @@
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
     "ApplicabilityCriteria": [
-      "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
+      "BILLING_PAYMENT_CURRENCY_DIFFERENCES_SUPPORTED"
     ],
     "Type": "Static",
     "Order": 190,
@@ -851,7 +851,7 @@
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
     "ApplicabilityCriteria": [
-      "PRICING_BILLING_AGGREGATION_DIFFERENCES_SUPPORTED"
+      "BILLING_PAYMENT_AGGREGATION_DIFFERENCES_SUPPORTED"
     ],
     "Type": "Static",
     "Order": 200,
@@ -930,7 +930,9 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "ApplicabilityCriteria": [
+      "PURCHASE_ORDER_NUMBERS_SUPPORTED"
+    ],
     "Type": "Static",
     "Order": 230,
     "DatasetType": "IND",

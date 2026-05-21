@@ -1,5 +1,5 @@
 {
-  "CCT-ContractCommitmentPaymentUpfrontPercentage-C-000-M": {
+  "CCT-ContractCommitmentPaymentUpfrontPercentage-C-000-C": {
     "Function": "Composite",
     "Reference": "ContractCommitmentPaymentUpfrontPercentage",
     "EntityType": "Column",
@@ -8,7 +8,9 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "ApplicabilityCriteria": [
+      "PARTIAL_UPFRONT_PAYMENT_MODELS_SUPPORTED"
+    ],
     "Type": "Static",
     "Order": 0,
     "DatasetType": "CCT",

@@ -6,6 +6,12 @@
     "AVAILABILITY_ZONE_SUPPORTED": {
       "Description": "Provider supports deploying resources or services within an availability zone"
     },
+    "BILLING_PAYMENT_CURRENCY_DIFFERENCES_SUPPORTED": {
+      "Description": "Provider supports billing and payments in different currencies"
+    },
+    "BILLING_PAYMENT_AGGREGATION_DIFFERENCES_SUPPORTED": {
+      "Description": "Provider supports differences in aggregation between billing and payment (e.g. hourly vs daily)"
+    },
     "CAPACITY_RESERVATION_SUPPORTED": {
       "Description": "Provider supports capacity reservations"
     },
@@ -54,11 +60,17 @@
     "RESOURCE_TYPE_ASSIGNMENT_SUPPORTED": {
       "Description": "Provider supports assigning types to resources"
     },
+    "PARTIAL_UPFRONT_PAYMENT_MODELS_SUPPORTED": {
+      "Description": "Provider supports partial upfront payment models (e.g. partial upfront reserved instances)"
+    },
     "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED": {
       "Description": "Provider supports pricing and billing in different currencies"
     },
     "PRICING_BILLING_AGGREGATION_DIFFERENCES_SUPPORTED": {
       "Description": "Provider supports differences in aggregation between pricing and billing (e.g. hourly vs daily)"
+    },
+    "PURCHASE_ORDER_NUMBERS_SUPPORTED": {
+      "Description": "Provider supports purchase order numbers for billing or payment"
     },
     "VIRTUAL_CURRENCY_SUPPORTED": {
       "Description": "Provider supports prices in virtual currency"

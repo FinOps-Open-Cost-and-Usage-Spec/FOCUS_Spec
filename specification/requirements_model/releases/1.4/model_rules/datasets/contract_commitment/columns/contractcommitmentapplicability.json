@@ -86,7 +86,7 @@
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
     "ApplicabilityCriteria": [],
-    "Type": "Dynamic",
+    "Type": "Static",
     "Order": 20,
     "DatasetType": "CCT",
     "DatasetId": "ContractCommitment",
@@ -94,7 +94,10 @@
     "ValidationCriteria": {
       "MustSatisfy": "ContractCommitmentApplicability MUST conform to StringHandling requirements.",
       "Keyword": "MUST",
-      "Requirement": {},
+      "Requirement": {
+        "CheckFunction": "FormatString",
+        "ColumnName": "ContractCommitmentApplicability"
+      },
       "Condition": {},
       "Dependencies": []
     }
@@ -109,7 +112,7 @@
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
     "ApplicabilityCriteria": [],
-    "Type": "Dynamic",
+    "Type": "Static",
     "Order": 30,
     "DatasetType": "CCT",
     "DatasetId": "ContractCommitment",
@@ -117,7 +120,11 @@
     "ValidationCriteria": {
       "MustSatisfy": "ContractCommitmentApplicability MUST conform to JsonObjectFormat requirements.",
       "Keyword": "MUST",
-      "Requirement": {},
+      "Requirement": {
+        "CheckFunction": "FormatJSON",
+        "ColumnName": "ContractCommitmentApplicability",
+        "Path": "$"
+      },
       "Condition": {},
       "Dependencies": []
     }

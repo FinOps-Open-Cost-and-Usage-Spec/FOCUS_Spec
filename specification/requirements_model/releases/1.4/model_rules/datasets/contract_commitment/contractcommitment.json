@@ -348,7 +348,7 @@
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CCT-ContractCommitmentPaymentUpfrontPercentage-C-000-M"
+            "ModelRuleId": "CCT-ContractCommitmentPaymentUpfrontPercentage-C-000-C"
           },
           {
             "CheckFunction": "CheckModelRule",
@@ -419,7 +419,7 @@
         "CCT-ContractCommitmentOfferCategory-C-000-M",
         "CCT-ContractCommitmentPaymentInterval-C-000-M",
         "CCT-ContractCommitmentPaymentModel-C-000-M",
-        "CCT-ContractCommitmentPaymentUpfrontPercentage-C-000-M",
+        "CCT-ContractCommitmentPaymentUpfrontPercentage-C-000-C",
         "CCT-ContractCommitmentPeriodEnd-C-000-M",
         "CCT-ContractCommitmentPeriodStart-C-000-M",
         "CCT-ContractCommitmentQuantity-C-000-M",
@@ -1119,7 +1119,9 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "ApplicabilityCriteria": [
+      "PARTIAL_UPFRONT_PAYMENT_MODELS_SUPPORTED"
+    ],
     "Type": "Static",
     "Order": 220,
     "DatasetType": "CCT",

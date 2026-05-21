@@ -103,7 +103,9 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "ApplicabilityCriteria": [
+      "INVOICE_ISSUER_PAYABLE_INVOICES_SUPPORTED"
+    ],
     "Type": "Dynamic",
     "Order": 20,
     "ValidationCriteria": {

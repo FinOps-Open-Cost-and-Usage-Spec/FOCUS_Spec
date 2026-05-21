@@ -333,7 +333,9 @@
         "ModelVersionIntroduced": "1.4",
         "Status": "Active",
         "Notes": "",
-        "ApplicabilityCriteria": [],
+        "ApplicabilityCriteria": [
+            "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+        ],
         "Order": 110,
         "Type": "Dynamic",
         "ValidationCriteria": {

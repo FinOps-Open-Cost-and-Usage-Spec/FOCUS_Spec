@@ -9,7 +9,7 @@
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
     "ApplicabilityCriteria": [
-      "PRICING_BILLING_AGGREGATION_DIFFERENCES_SUPPORTED"
+      "BILLING_PAYMENT_AGGREGATION_DIFFERENCES_SUPPORTED"
     ],
     "Type": "Static",
     "Order": 0,

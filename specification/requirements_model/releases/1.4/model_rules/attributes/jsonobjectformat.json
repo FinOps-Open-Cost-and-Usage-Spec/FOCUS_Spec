@@ -23,6 +23,14 @@
           },
           {
             "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-JsonObjectFormat-A-003-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-JsonObjectFormat-A-004-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
             "ModelRuleId": "ATT-JsonObjectFormat-A-005-M"
           },
           {
@@ -40,6 +48,8 @@
         "ATT-JsonObjectFormat-A-001-M",
         "ATT-JsonObjectFormat-A-009-M",
         "ATT-JsonObjectFormat-A-011-O",
+        "ATT-JsonObjectFormat-A-003-M",
+        "ATT-JsonObjectFormat-A-004-M",
         "ATT-JsonObjectFormat-A-005-M"
       ]
     }

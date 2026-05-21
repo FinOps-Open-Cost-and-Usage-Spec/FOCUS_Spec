@@ -20,12 +20,62 @@
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "ATT-UnitFormat-A-005-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-UnitFormat-A-015-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-UnitFormat-A-016-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-UnitFormat-A-017-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-UnitFormat-A-018-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-UnitFormat-A-019-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-UnitFormat-A-020-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-UnitFormat-A-021-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-UnitFormat-A-022-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-UnitFormat-A-023-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-UnitFormat-A-024-O"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "ATT-UnitFormat-A-005-M"
+        "ATT-UnitFormat-A-005-M",
+        "ATT-UnitFormat-A-015-O",
+        "ATT-UnitFormat-A-016-M",
+        "ATT-UnitFormat-A-017-O",
+        "ATT-UnitFormat-A-018-M",
+        "ATT-UnitFormat-A-019-O",
+        "ATT-UnitFormat-A-020-O",
+        "ATT-UnitFormat-A-021-O",
+        "ATT-UnitFormat-A-022-O",
+        "ATT-UnitFormat-A-023-O",
+        "ATT-UnitFormat-A-024-O"
       ]
     }
   },
@@ -166,46 +216,6 @@
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "ATT-UnitFormat-A-014-O"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ATT-UnitFormat-A-015-O"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ATT-UnitFormat-A-016-M"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ATT-UnitFormat-A-017-O"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ATT-UnitFormat-A-018-M"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ATT-UnitFormat-A-019-O"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ATT-UnitFormat-A-020-O"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ATT-UnitFormat-A-021-O"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ATT-UnitFormat-A-022-O"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ATT-UnitFormat-A-023-O"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ATT-UnitFormat-A-024-O"
           }
         ]
       },
@@ -219,17 +229,7 @@
         "ATT-UnitFormat-A-011-M",
         "ATT-UnitFormat-A-012-O",
         "ATT-UnitFormat-A-013-O",
-        "ATT-UnitFormat-A-014-O",
-        "ATT-UnitFormat-A-015-O",
-        "ATT-UnitFormat-A-016-M",
-        "ATT-UnitFormat-A-017-O",
-        "ATT-UnitFormat-A-018-M",
-        "ATT-UnitFormat-A-019-O",
-        "ATT-UnitFormat-A-020-O",
-        "ATT-UnitFormat-A-021-O",
-        "ATT-UnitFormat-A-022-O",
-        "ATT-UnitFormat-A-023-O",
-        "ATT-UnitFormat-A-024-O"
+        "ATT-UnitFormat-A-014-O"
       ]
     }
   },
