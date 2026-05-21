@@ -5,9 +5,12 @@ and ValidationCriteria.Condition:
   2. Contains no keys beyond CheckFunction and its declared Arguments.
 
 AND/OR are handled by recursing into their Items[] array.
+
+Applies to version 1.4 and later.
 """
 import json
 import pytest
+from conftest import requires_version
 
 
 def _validate_node(node, check_functions, rule_id, path, errors, extra_errors):
@@ -51,8 +54,12 @@ def _validate_node(node, check_functions, rule_id, path, errors, extra_errors):
             )
 
 
-def test_checkfunction_required_args_present(version_dir, cr_json):
+def test_checkfunction_required_args_present(model_version, version_dir, cr_json):
     """All Arguments for each CheckFunction invocation must be present."""
+    should_skip, reason = requires_version(model_version, min_version="1.4")
+    if should_skip:
+        pytest.skip(reason)
+
     cf_path = version_dir / "check_functions.json"
     with open(cf_path, encoding="utf-8") as f:
         check_functions = json.load(f).get("CheckFunctions", {})
