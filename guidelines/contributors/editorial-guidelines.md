@@ -119,7 +119,7 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
         <td><strong>Important Text</strong></td>
         <td> <img width="492" alt="image" src="https://github.com/user-attachments/assets/c6f60ff9-1503-43a3-8229-004595b334d2"></td>
         <td>> Important Consideration</td>
-        <td>- It is added as a note.</td>
+        <td>* It is added as a note.</td>
     </tr>
     <tr>
         <td><strong>Key-Value Format</strong></td>
@@ -136,13 +136,13 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
 ```
             </pre>
         </td>
-        <td>- Monospace font</td>
+        <td>* Monospace font</td>
     </tr>
     <tr>
       <td><strong>Tables</strong></td>
       <td><img width="492" alt="image" src="https://github.com/user-attachments/assets/5185cbf9-306d-4663-a1c7-c8b7ab5c5bb8"></td>
       <td><img width="492" alt="image" src="https://github.com/user-attachments/assets/83d0977f-a731-4def-93e3-b3e5f5dedb72"></td>
-      <td> - Tables: Simple tables can be created using markdown, but for more complex tables, it is recommended to use HTML elements. See the example below. </td>
+      <td> * Tables: Simple tables can be created using markdown, but for more complex tables, it is recommended to use HTML elements. See the example below. </td>
     </tr>
 </table>
 
@@ -230,7 +230,7 @@ To ensure consistent language when describing relationships and evaluations betw
 
 ### Formatting
 
-* * **Structural Anchor Requirements:** Normative bullet lists MUST be preceded by a structural anchor requirement. See [Normative Requirements Guidelines](normative-requirements-guidelines.md#structural-anchor-requirement) for details..
+* **Structural Anchor Requirements:** Normative bullet lists MUST be preceded by a structural anchor requirement. See [Normative Requirements Guidelines](normative-requirements-guidelines.md#structural-anchor-requirement) for details..
 
 > **Note:** Validation of structural anchor requirements may require contextual editorial judgment and is not always suitable for deterministic editorial validation.
 
