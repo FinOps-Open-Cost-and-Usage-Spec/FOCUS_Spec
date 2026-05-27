@@ -6,8 +6,8 @@ The Includes Regions condition represents a verifiable state indicating whether 
 
 IncludesRegions MUST adhere to the following requirements:
 
-* IncludesRegions MUST evaluate to true when the *operating model* supports deploying resources or services within distinct geographic regions.
-* IncludesRegions MUST evaluate to false when the *operating model* does not support region-based deployment.
+* IncludesRegions MUST evaluate to true when the *operating model* supports deploying resources or services within a region.
+* IncludesRegions MUST evaluate to false when the *operating model* does not support deploying resources or services within a region.
 
 ## Condition ID
 

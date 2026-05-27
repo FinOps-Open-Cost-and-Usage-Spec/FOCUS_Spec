@@ -6,8 +6,8 @@ The Includes Tags condition represents a verifiable state indicating whether the
 
 IncludesTags MUST adhere to the following requirements:
 
-* IncludesTags MUST evaluate to true when the *operating model* supports *tags*.
-* IncludesTags MUST evaluate to false when the *operating model* does not support *tags*.
+* IncludesTags MUST evaluate to true when the *operating model* includes *tags*.
+* IncludesTags MUST evaluate to false when the *operating model* does not include *tags*.
 
 ## Condition ID
 
