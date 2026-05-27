@@ -83,7 +83,7 @@ The keywords `MUST`, `MUST NOT`, `SHOULD`, `SHOULD NOT`, and `MAY` in this speci
 
 ## FOCUS Feature Level
 
-Under each column defined in the FOCUS specification, there exists a 'Feature level' designation that describes the column as `Mandatory`, `Conditional`, or `Optional`. 
+Under each column defined in the FOCUS specification, there exists a 'Feature level' designation that describes the column as `Mandatory`, `Conditional`, or `Optional`.
 
 Feature level is designated based on the following criteria described in the dataset-level normative requirements:
 
@@ -94,7 +94,7 @@ Feature level is designated based on the following criteria described in the dat
 
 ## Delivery Grain
 
-Under each column defined in the FOCUS specification, there exists a 'Delivery grain' designation that describes the column as `Default` or `Opt-in`. This property describes the data contract between the data generator and the customer regarding whether the data is delivered at a particular granularity. 
+Under each column defined in the FOCUS specification, there exists a 'Delivery grain' designation that describes the column as `Default` or `Opt-in`. This property describes the data contract between the data generator and the customer regarding whether the data is delivered at a particular granularity.
 
 Delivery grain is designated based on the following criteria described in the dataset-level normative requirements:
 
