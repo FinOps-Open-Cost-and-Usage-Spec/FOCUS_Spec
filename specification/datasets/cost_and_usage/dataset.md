@@ -125,10 +125,6 @@ CostAndUsage MUST adhere to the following requirements:
   * CostAndUsage MUST include [ConsumedQuantity](#datasets.costandusage.consumedquantity) when the service provider supports the measurement of usage.
   * CostAndUsage MUST include [ConsumedUnit](#datasets.costandusage.consumedunit) when the service provider supports the measurement of usage.
   * CostAndUsage MUST include [ConsumerId](#datasets.costandusage.consumerid) in at least one [*dataset instance*](#glossary:dataset-instance) when the service provider supports usage attribution to a [*consumer*](#glossary:consumer) and the customer has opted in to receive data at the consumer grain.
-  * CostAndUsage MUST include [ConsumerId](#datasets.costandusage.consumerid) when all of the following conditions are met:
-    * The service provider supports usage attribution to a [*consumer*](#glossary:consumer).
-    * The data generator provides this data in at least one [*dataset instance*](#glossary:dataset-instance).
-    * The customer has opted in to receive data at the consumer grain.
   * CostAndUsage MUST include [ContractApplied](#datasets.costandusage.contractapplied) when the service provider supports *contract commitments*.
   * CostAndUsage MUST include [ContractedCost](#datasets.costandusage.contractedcost).
   * CostAndUsage MUST include [ContractedUnitPrice](#datasets.costandusage.contractedunitprice) when the service provider supports negotiated pricing concepts.

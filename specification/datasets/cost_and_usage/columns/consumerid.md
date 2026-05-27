@@ -21,21 +21,6 @@ ConsumerId MUST adhere to the following requirements:
   * ConsumerId MUST be a unique identifier within the context of the service provider.
   * ConsumerId MUST NOT contain plain-text personally identifiable information (PII) if the service provider supplies an alternative opaque identifier.
 
-## Requirements
-
-ConsumerId MUST adhere to the following requirements:
-
-* ConsumerId MUST be of type String.
-* ConsumerId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* ConsumerId MUST adhere to the following delivery grain and nullability requirements:
-  * When the data generator and customer have **not** agreed to an Opt-In delivery grain for consumer attribution, ConsumerId MUST be null.
-  * When the data generator and customer **have** agreed to an Opt-In delivery grain for consumer attribution:
-    * ConsumerId MUST be null when a [*charge*](#glossary:charge) is not attributed to a specific *consumer* by the service provider.
-    * ConsumerId MUST NOT be null when a *charge* is attributed to a specific *consumer* by the service provider.
-* When ConsumerId is not null, ConsumerId MUST adhere to the following requirements:
-  * ConsumerId MUST be a unique identifier within the context of the service provider.
-  * ConsumerId MUST NOT contain plain-text personally identifiable information (PII) if the service provider supplies an alternative opaque identifier.
-
 ## Column ID
 
 ConsumerId
