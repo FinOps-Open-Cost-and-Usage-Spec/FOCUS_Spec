@@ -242,7 +242,7 @@ A [*billing period*](#glossary:billing-period) with [Billing Period Status](#dat
 
 <a name="glossary:operating-model"><b>Operating Model</b></a>
 
-A system of record and its associated logic, processes, and entities (encompassing both the original provider-sourced data and any subsequent metadata enrichment) used by a [*data generator*](#metadata.datagenerator) to produce a FOCUS-compliant dataset. The operating model represents the verifiable state of capabilities and information available to the *data generator* at the time of dataset creation.
+The collective set of capabilities, business concepts, and data constructs underlying a FOCUS-compliant dataset. It encompasses features and metadata enrichments supported across participating entities (e.g., [*service providers*](#glossary:service-provider), host providers, [*invoice issuers*](#glossary:invoice-issuer), and [*data generators*](#glossary:data-generator)), reflecting the verifiable state of these elements at the time of dataset creation.
 
 <a name="glossary:origin-charge"><b>Origin Charge</b></a>
 
