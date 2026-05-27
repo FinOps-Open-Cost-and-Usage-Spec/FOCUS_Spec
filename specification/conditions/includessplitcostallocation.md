@@ -1,6 +1,6 @@
 # Includes Split Cost Allocation
 
-The Includes Split Cost Allocation condition represents a verifiable state indicating whether the [*operating model*](#glossary:operating-model) includes includes [*split cost allocation*](#glossary:split-cost-allocation).
+The Includes Split Cost Allocation condition represents a verifiable state indicating whether the [*operating model*](#glossary:operating-model) includes [*split cost allocation*](#glossary:split-cost-allocation).
 
 ## Requirements
 
