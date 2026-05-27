@@ -1,6 +1,6 @@
 # Includes Tags
 
-The Includes Tags condition represents a verifiable state where the [*operating model*](#glossary:operating-model) includes the definition or enrichment of tags.
+The Includes Tags condition represents a verifiable state indicating whether the [*operating model*](#glossary:operating-model) includes the definition or enrichment of tags.
 
 ## Requirements
 

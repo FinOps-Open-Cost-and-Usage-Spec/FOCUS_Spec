@@ -1,6 +1,6 @@
 # Includes Payable Invoices
 
-The Includes Payable Invoices condition represents a verifiable state where the [*operating model*](#glossary:operating-model) includes payable invoices.
+The Includes Payable Invoices condition represents a verifiable state indicating whether the [*operating model*](#glossary:operating-model) includes payable invoices.
 
 ## Requirements
 

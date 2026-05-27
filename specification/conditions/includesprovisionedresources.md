@@ -1,6 +1,6 @@
 # Includes Provisioned Resources
 
-The Includes Provisioned Resources condition represents a verifiable state where the [*operating model*](#glossary:operating-model) includes provisioned resources.
+The Includes Provisioned Resources condition represents a verifiable state indicating whether the [*operating model*](#glossary:operating-model) includes provisioned resources.
 
 ## Requirements
 

@@ -1,6 +1,6 @@
 # Includes Virtual Currency
 
-The Includes Virtual Currency condition represents a verifiable state where the [*operating model*](#glossary:operating-model) includes prices in virtual currency.
+The Includes Virtual Currency condition represents a verifiable state indicating whether the [*operating model*](#glossary:operating-model) includes prices in virtual currency.
 
 ## Requirements
 

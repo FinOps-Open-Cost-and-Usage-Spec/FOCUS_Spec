@@ -1,6 +1,6 @@
 # Includes Capacity Reservations
 
-The Includes Capacity Reservations condition represents a verifiable state where the [*operating model*](#glossary:operating-model) encompasses the procurement, allocation, or billing of infrastructure or service [*capacity reservations*](#glossary:capacity-reservation).
+The Includes Capacity Reservations condition represents a verifiable state indicating whether the [*operating model*](#glossary:operating-model) includes [*capacity reservations*](#glossary:capacity-reservation).
 
 ## Requirements
 
@@ -19,7 +19,7 @@ Includes Capacity Reservations
 
 ## Description
 
-A verifiable state indicating whether the *operating model* supports or includes the use of capacity reservations.
+A verifiable state indicating whether the *operating model* includes *capacity reservations*.
 
 ## Version Introduced
 

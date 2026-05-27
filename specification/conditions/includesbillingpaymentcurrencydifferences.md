@@ -1,6 +1,6 @@
 # Includes Billing and Payment Currency Differences
 
-The Includes Billing and Payment Currency Differences condition represents a verifiable state where the [*operating model*](#glossary:operating-model) includes billing and payment in different currencies.
+The Includes Billing and Payment Currency Differences condition represents a verifiable state indicating whether the [*operating model*](#glossary:operating-model) includes billing and payment in different currencies.
 
 ## Requirements
 

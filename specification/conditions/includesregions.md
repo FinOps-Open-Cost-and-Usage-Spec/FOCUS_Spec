@@ -1,6 +1,6 @@
 # Includes Regions
 
-The Includes Regions condition represents a verifiable state where the [*operating model*](#glossary:operating-model) includes deploying resources or services within a region.
+The Includes Regions condition represents a verifiable state indicating whether the [*operating model*](#glossary:operating-model) includes deploying resources or services within a region.
 
 ## Requirements
 

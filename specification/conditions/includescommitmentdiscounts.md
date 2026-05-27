@@ -1,6 +1,6 @@
 # Includes Commitment Discounts
 
-The Includes Commitment Discounts condition represents a verifiable state where the [*operating model*](#glossary:operating-model) includes commitment discounts.
+The Includes Commitment Discounts condition represents a verifiable state indicating whether the [*operating model*](#glossary:operating-model) includes commitment discounts.
 
 ## Requirements
 

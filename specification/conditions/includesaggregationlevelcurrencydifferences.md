@@ -1,6 +1,6 @@
 # Includes Aggregation Level Currency Differences
 
-The Includes Aggregation Level Currency Differences condition represents a verifiable state where the [*operating model*](#glossary:operating-model) includes billing currency and payment currency at different aggregation levels on payable invoices.
+The Includes Aggregation Level Currency Differences condition represents a verifiable state indicating whether the [*operating model*](#glossary:operating-model) includes billing currency and payment currency at different aggregation levels on payable invoices.
 
 ## Requirements
 

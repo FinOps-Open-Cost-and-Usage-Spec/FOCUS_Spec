@@ -1,6 +1,6 @@
 # Includes Unit Pricing
 
-The Includes Unit Pricing condition represents a verifiable state where the [*operating model*](#glossary:operating-model) calculates charges based on a measured quantity multiplied by a predefined rate.
+The Includes Unit Pricing condition represents a verifiable state indicating whether the [*operating model*](#glossary:operating-model) includes unit pricing concepts.
 
 ## Requirements
 

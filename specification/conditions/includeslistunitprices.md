@@ -1,6 +1,6 @@
 # Includes List Unit Prices
 
-The Includes List Unit Prices condition represents a verifiable state where the [*operating model*](#glossary:operating-model) includes standard, non-discounted baseline unit prices, regardless of whether that price list is public or private.
+The Includes List Unit Prices condition represents a verifiable state indicating whether the [*operating model*](#glossary:operating-model) includes standard, non-discounted baseline unit prices.
 
 ## Requirements
 

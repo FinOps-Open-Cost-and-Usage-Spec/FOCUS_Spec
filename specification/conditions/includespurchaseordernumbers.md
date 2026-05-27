@@ -1,6 +1,6 @@
 # Includes Purchase Order Numbers
 
-The Includes Purchase Order Numbers condition represents a verifiable state where the [*operating model*](#glossary:operating-model) supports customer input of purchase order numbers.
+The Includes Purchase Order Numbers condition represents a verifiable state indicating whether the [*operating model*](#glossary:operating-model) includes customer input of purchase order numbers.
 
 ## Requirements
 
@@ -19,7 +19,7 @@ Includes Purchase Order Numbers
 
 ## Description
 
-A verifiable state indicating whether the *operating model* supports customer input of purchase order numbers.
+A verifiable state indicating whether the *operating model* includes customer input of purchase order numbers.
 
 ## Version Introduced
 

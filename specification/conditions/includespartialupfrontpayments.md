@@ -1,6 +1,6 @@
 # Includes Partial Upfront Payments
 
-The Includes Partial Upfront Payments condition represents a verifiable state where the [*operating model*](#glossary:operating-model) includes contract commitments that require a partial upfront payment.
+The Includes Partial Upfront Payments condition represents a verifiable state indicating whether the [*operating model*](#glossary:operating-model) includes partial upfront payment model for contract commitments.
 
 ## Requirements
 
@@ -19,7 +19,7 @@ Includes Partial Upfront Payments
 
 ## Description
 
-A verifiable state indicating whether the *operating model* includes partial upfront payment models for contract commitments.
+A verifiable state indicating whether the *operating model* includes partial upfront payment model for contract commitments.
 
 ## Version Introduced
 

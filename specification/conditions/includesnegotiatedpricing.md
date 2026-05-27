@@ -1,6 +1,6 @@
 # Includes Negotiated Pricing
 
-The Includes Negotiated Pricing condition represents a verifiable state where the [*operating model*](#glossary:operating-model) includes negotiated pricing concepts.
+The Includes Negotiated Pricing condition represents a verifiable state indicating whether the [*operating model*](#glossary:operating-model) includes negotiated pricing concepts.
 
 ## Requirements
 
