@@ -19,7 +19,7 @@ Includes Partial Upfront Payments
 
 ## Description
 
-A verifiable state indicating whether the *operating model* includes partial upfront payment model for contract commitments.
+A verifiable state indicating whether the *operating model* includes a partial upfront payment model for contract commitments.
 
 ## Version Introduced
 
