@@ -298,7 +298,7 @@ A pricing construct that encompasses SKU properties (e.g., functionality and tec
 
 <a name="glossary:split-cost-allocation"><b>Split Cost Allocation</b></a>
 
-A mechanism that splits a single [*origin charge*](#glossary:origin-charge) into multiple [*allocated charges*](#glossary:allocated-charge) to distribute cost or usage across [*resources*](#glossary:resource) at a more granular level, using a defined [*allocated method*](#glossary:allocated-method).
+A mechanism that splits a single [*origin charge*](#glossary:origin-charge) into multiple [*allocated charges*](#glossary:allocated-charge) to distribute cost and usage across [*resources*](#glossary:resource) at a more granular level, using a defined [*allocated method*](#glossary:allocated-method).
 
 <a name="glossary:sub-account"><b>Sub Account</b></a>
 
