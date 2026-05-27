@@ -6,7 +6,7 @@ The Includes Sub Accounts condition represents a verifiable state indicating whe
 
 IncludesSubAccounts MUST adhere to the following requirements:
 
-* IncludesSubAccounts MUST evaluate to true when the *operating model* supports the use of sub accounts under a main billing account.
+* IncludesSubAccounts MUST evaluate to true when the *operating model* supports a sub account construct.
 * IncludesSubAccounts MUST evaluate to false when the *operating model* does not support a sub account construct.
 
 ## Condition ID
