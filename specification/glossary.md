@@ -296,6 +296,10 @@ A construct composed of the common properties of a product offering associated w
 
 A pricing construct that encompasses SKU properties (e.g., functionality and technical specifications), along with core stable pricing details for a particular SKU, while excluding dynamic or negotiable pricing elements such as unit price amounts; currency (and related exchange rates); temporal validity (e.g., effective dates); and contract- or negotiation-specific factors (e.g., contract or account identifiers and negotiable discounts).
 
+<a name="glossary:split-cost-allocation"><b>Split Cost Allocation</b></a>
+
+A mechanism that splits a single [*origin charge*](#glossary:origin-charge) into multiple [*allocated charges*](#glossary:allocated-charge) to distribute cost or usage across [*resources*](#glossary:resource) at a more granular level, using a defined [*allocated method*](#glossary:allocated-method).
+
 <a name="glossary:sub-account"><b>Sub Account</b></a>
 
 A sub account is an optional service-provider-supported construct for organizing resources and/or services connected to a billing account. Sub accounts must be associated with a billing account as they do not receive invoices.
