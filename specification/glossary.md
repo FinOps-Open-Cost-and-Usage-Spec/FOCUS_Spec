@@ -316,6 +316,10 @@ A Resource or Service-Provider-defined construct for grouping resources and/or o
 
 An agreement specified on a [*contract*](#glossary:contract) or [*invoice*](#glossary:invoice).
 
+<a name="glossary:unit-pricing"><b>Unit Pricing</b></a>
+
+A billing concept where the cost of a [*charge*](#glossary:charge) is deterministically derived as the product of a unit price (defined per [*SKU Price*](#glossary:sku-price)) and the corresponding [Pricing Quantity](#datasets.costandusage.pricingquantity), representing purchased or consumed volume of a [*SKU*](#glossary:sku).
+
 <a name="glossary:virtual-currency"><b>Virtual Currency</b></a>
 
 A proprietary currency (e.g., credits, tokens) issued by service providers and independent of government regulation.
