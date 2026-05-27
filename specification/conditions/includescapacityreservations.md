@@ -6,8 +6,8 @@ The Includes Capacity Reservations condition represents a verifiable state indic
 
 IncludesCapacityReservations MUST adhere to the following requirements:
 
-* IncludesCapacityReservations MUST evaluate to true when the *operating model* contains a mechanism to reserve capacity.
-* IncludesCapacityReservations MUST evaluate to false when the *operating model* lacks any commercial or technical construct for reserving capacity.
+* IncludesCapacityReservations MUST evaluate to true when the *operating model* supports *capacity reservations*.
+* IncludesCapacityReservations MUST evaluate to false when the *operating model* does not support *capacity reservations*.
 
 ## Condition ID
 
