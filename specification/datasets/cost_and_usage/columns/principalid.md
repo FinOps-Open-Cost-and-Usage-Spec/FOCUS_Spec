@@ -42,6 +42,7 @@ Identifier representing the authorized actor that initiated a request for a *res
 | Allows nulls    | True                                                 |
 | Data type       | String                                               |
 | Value format    | \<not specified>                                     |
+| Delivery grain  | Opt-in                                               |
 
 ## Version Introduced
 
