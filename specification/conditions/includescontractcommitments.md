@@ -6,8 +6,8 @@ The Includes Contract Commitments condition represents a verifiable state indica
 
 IncludesContractCommitments MUST adhere to the following requirements:
 
-* IncludesContractCommitments MUST evaluate to true when the *operating model* includes formal contract commitments.
-* IncludesContractCommitments MUST evaluate to false when the *operating model* does not support contract commitments.
+* IncludesContractCommitments MUST evaluate to true when the *operating model* supports *contract commitments*.
+* IncludesContractCommitments MUST evaluate to false when the *operating model* does not support *contract commitments*.
 
 ## Condition ID
 
