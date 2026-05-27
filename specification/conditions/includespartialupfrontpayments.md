@@ -6,8 +6,8 @@ The Includes Partial Upfront Payments condition represents a verifiable state in
 
 IncludesPartialUpfrontPayments MUST adhere to the following requirements:
 
-* IncludesPartialUpfrontPayments MUST evaluate to true when the *operating model* offers a "Partial Upfront" payment model for commitments.
-* IncludesPartialUpfrontPayments MUST evaluate to false when the *operating model* strictly uses "All Upfront" or "No Upfront" payment models.
+* IncludesPartialUpfrontPayments MUST evaluate to true when the *operating model* includes a partial upfront payment model for *contract commitments*.
+* IncludesPartialUpfrontPayments MUST evaluate to false when the *operating model* does not include a partial upfront payment model for *contract commitments*.
 
 ## Condition ID
 

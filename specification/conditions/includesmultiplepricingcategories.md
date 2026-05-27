@@ -1,13 +1,13 @@
 # Includes Multiple Pricing Categories
 
-The Includes Multiple Pricing Categories condition represents a verifiable state indicating whether the [*operating model*](#glossary:operating-model) includes more than one pricing category across all SKUs.
+The Includes Multiple Pricing Categories condition represents a verifiable state indicating whether the [*operating model*](#glossary:operating-model) includes multiple pricing categories.
 
 ## Requirements
 
 IncludesMultiplePricingCategories MUST adhere to the following requirements:
 
-* IncludesMultiplePricingCategories MUST evaluate to true when the *operating model* supports more than one pricing category (e.g., Standard, Dynamic, Committed).
-* IncludesMultiplePricingCategories MUST evaluate to false when the *operating model* supports only a single pricing category.
+* IncludesMultiplePricingCategories MUST evaluate to true when the *operating model* supports multiple pricing categories.
+* IncludesMultiplePricingCategories MUST evaluate to false when the *operating model* does not support multiple pricing categories.
 
 ## Condition ID
 
@@ -19,7 +19,7 @@ Includes Multiple Pricing Categories
 
 ## Description
 
-A verifiable state indicating whether the *operating model* includes more than one pricing category across all SKUs.
+A verifiable state indicating whether the *operating model* includes multiple pricing categories.
 
 ## Version Introduced
 
