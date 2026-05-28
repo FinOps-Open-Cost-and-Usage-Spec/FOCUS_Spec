@@ -6,8 +6,8 @@ The Includes Payable Invoices condition represents a verifiable state indicating
 
 IncludesPayableInvoices MUST adhere to the following requirements:
 
-* IncludesPayableInvoices MUST evaluate to true when the *operating model* generates formal payable invoices.
-* IncludesPayableInvoices MUST evaluate to false when the *operating model* does not generate formal payable invoices.
+* IncludesPayableInvoices MUST evaluate to true when the *operating model* includes payable invoices.
+* IncludesPayableInvoices MUST evaluate to false when the *operating model* does not include payable invoices.
 
 ## Condition ID
 
