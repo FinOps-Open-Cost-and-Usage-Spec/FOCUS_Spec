@@ -6,8 +6,8 @@ The Includes Provisioned Resources condition represents a verifiable state indic
 
 IncludesProvisionedResources MUST adhere to the following requirements:
 
-* IncludesProvisionedResources MUST evaluate to true when the *operating model* identifies and tracks individual provisioned resources.
-* IncludesProvisionedResources MUST evaluate to false when the *operating model* does not track individual provisioned resources.
+* IncludesProvisionedResources MUST evaluate to true when the *operating model* supports provisioned resources.
+* IncludesProvisionedResources MUST evaluate to false when the *operating model* does not support provisioned resources.
 
 ## Condition ID
 

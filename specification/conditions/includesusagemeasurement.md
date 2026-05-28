@@ -6,8 +6,8 @@ The Includes Usage Measurement condition represents a verifiable state indicatin
 
 IncludesUsageMeasurement MUST adhere to the following requirements:
 
-* IncludesUsageMeasurement MUST evaluate to true when the *operating model* measures and reports resource or service usage.
-* IncludesUsageMeasurement MUST evaluate to false when the *operating model* does not measure or report usage.
+* IncludesUsageMeasurement MUST evaluate to true when the *operating model* supports the measurement of resource or service usage.
+* IncludesUsageMeasurement MUST evaluate to false when the *operating model* does not support the measurement of resource or service usage
 
 ## Condition ID
 
