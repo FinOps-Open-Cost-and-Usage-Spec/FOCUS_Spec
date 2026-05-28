@@ -5,6 +5,7 @@
 !INCLUDE "includescapacityreservations.md",1
 !INCLUDE "includescommitmentdiscounts.md",1
 !INCLUDE "includescommitmentprograms.md",1
+!INCLUDE "includesconsumers.md",1
 !INCLUDE "includescontractcommitments.md",1
 !INCLUDE "includeslistunitprices.md",1
 !INCLUDE "includesmultiplebillingaccounttypes.md",1
@@ -14,6 +15,7 @@
 !INCLUDE "includespartialupfrontpayments.md",1
 !INCLUDE "includespayableinvoices.md",1
 !INCLUDE "includespricingbillingcurrencydifferences.md",1
+!INCLUDE "includesprincipals.md",1
 !INCLUDE "includesprovisionedresources.md",1
 !INCLUDE "includespurchaseordernumbers.md",1
 !INCLUDE "includesregions.md",1

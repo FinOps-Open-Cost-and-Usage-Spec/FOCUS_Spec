@@ -123,7 +123,7 @@ CostAndUsage MUST adhere to the following requirements:
   * CostAndUsage MUST include [CommitmentProgramEligibilityDetails](#datasets.costandusage.commitmentprogrameligibilitydetails) when the *operating model* [includes commitment programs](#conditions.includescommitmentprograms).
   * CostAndUsage MUST include [ConsumedQuantity](#datasets.costandusage.consumedquantity) when the *operating model* [includes usage measurement](#conditions.includesusagemeasurement).
   * CostAndUsage MUST include [ConsumedUnit](#datasets.costandusage.consumedunit) when the *operating model* [includes usage measurement](#conditions.includesusagemeasurement).
-  * CostAndUsage MUST include [ConsumerId](#datasets.costandusage.consumerid) in at least one [*dataset instance*](#glossary:dataset-instance) when the service provider supports usage attribution to a [*consumer*](#glossary:consumer) and the customer has opted in to receive data at the consumer grain.
+  * CostAndUsage MUST include [ConsumerId](#datasets.costandusage.consumerid) in at least one [*dataset instance*](#glossary:dataset-instance) when the *operating model* [includes principals](#conditions.includesprincipals) and the customer has opted in to receive data at the consumer grain.
   * CostAndUsage MUST include [ContractApplied](#datasets.costandusage.contractapplied) when the *operating model* [includes contract commitments](#conditions.includescontractcommitments).
   * CostAndUsage MUST include [ContractedCost](#datasets.costandusage.contractedcost).
   * CostAndUsage MUST include [ContractedUnitPrice](#datasets.costandusage.contractedunitprice) when the *operating model* [includes negotiated pricing](#conditions.includesnegotiatedpricing).
@@ -150,7 +150,7 @@ CostAndUsage MUST adhere to the following requirements:
     * CostAndUsage MAY include PricingCurrencyListUnitPrice in all other cases.
   * CostAndUsage MUST include [PricingQuantity](#datasets.costandusage.pricingquantity).
   * CostAndUsage MUST include [PricingUnit](#datasets.costandusage.pricingunit).
-  * CostAndUsage MUST include [PrincipalId](#datasets.costandusage.principalid) in at least one [*dataset instance*](#glossary:dataset-instance) when the service provider supports usage attribution to a [*principal*](#glossary:principal) and the customer has opted in to receive data at the principal grain.
+  * CostAndUsage MUST include [PrincipalId](#datasets.costandusage.principalid) in at least one [*dataset instance*](#glossary:dataset-instance) when the *operating model* [includes principals](#conditions.includesprincipals) and the customer has opted in to receive data at the principal grain.
   * CostAndUsage MUST include [RegionId](#datasets.costandusage.regionid) when the *operating model* [includes regions](#conditions.includesregions).
   * CostAndUsage MUST include [RegionName](#datasets.costandusage.regionname) when the *operating model* [includes regions](#conditions.includesregions).
   * CostAndUsage MUST include [ResourceId](#datasets.costandusage.resourceid) when the *operating model* [includes provisioned resources](#conditions.includesprovisionedresources).

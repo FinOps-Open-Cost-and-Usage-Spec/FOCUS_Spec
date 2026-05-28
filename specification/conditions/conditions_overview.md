@@ -14,6 +14,7 @@ Conditions are sorted alphabetically by name.
 | [Includes Capacity Reservations](#conditions.includescapacityreservations) | Commitment | Operating model includes capacity reservations. |
 | [Includes Commitment Discounts](#conditions.includescommitmentdiscounts) | Commitment | Operating model includes commitment discounts. |
 | [Includes Commitment Programs](#conditions.includescommitmentprograms) | Commitment | Operating model includes commitment programs. |
+| [Includes Consumers](#conditions.includesconsumers) | Resource | Operating model includes consumers. |
 | [Includes Contract Commitments](#conditions.includescontractcommitments) | Commitment | Operating model includes contract commitments. |
 | [Includes List Unit Prices](#conditions.includeslistunitprices) | Pricing | Operating model includes standard, non-discounted unit prices. |
 | [Includes Multiple Billing Account Types](#conditions.includesmultiplebillingaccounttypes) | Account | Operating model includes multiple Billing Account Types. |
@@ -23,6 +24,7 @@ Conditions are sorted alphabetically by name.
 | [Includes Partial Upfront Payments](#conditions.includespartialupfrontpayments) | Commitment | Operating model includes a partial upfront payment model for contract commitments. |
 | [Includes Payable Invoices](#conditions.includespayableinvoices) | Billing | Operating model includes payable invoices. |
 | [Includes Pricing-Billing Currency Differences](#conditions.includespricingbillingcurrencydifferences) | Pricing | Operating model includes pricing and billing in different currencies. |
+| [Includes Principals](#conditions.includesprincipals) | Account | Operating model includes principals. |
 | [Includes Provisioned Resources](#conditions.includesprovisionedresources) | Resource | Operating model includes provisioned resources. |
 | [Includes Purchase Order Numbers](#conditions.includespurchaseordernumbers) | Billing | Operating model includes purchase order numbers. |
 | [Includes Regions](#conditions.includesregions) | Resource | Operating model includes deploying resources or services within a region. |
