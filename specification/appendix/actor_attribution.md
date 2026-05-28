@@ -19,4 +19,3 @@ The examples below illustrate how [Principal ID](#datasets.costandusage.principa
 | 5 | **Seat-Plus-Token SaaS** | PipelCRM | `null` | `user_uuid_887766` |
 | 6 | **Direct PaaS Usage** | LatticeScale | `dev_uuid_112233` | `dev_uuid_112233` |
 | 7 | **Billing System Charge** | LatticeScale | `null` | `null` |
-
