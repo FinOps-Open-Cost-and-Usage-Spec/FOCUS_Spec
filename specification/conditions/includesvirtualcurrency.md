@@ -6,8 +6,8 @@ The Includes Virtual Currency condition represents a verifiable state indicating
 
 IncludesVirtualCurrency MUST adhere to the following requirements:
 
-* IncludesVirtualCurrency MUST evaluate to true when the *operating model* supports prices in *virtual currency*.
-* IncludesVirtualCurrency MUST evaluate to false when the *operating model* does not support prices in *virtual currency*.
+* IncludesVirtualCurrency MUST evaluate to true when the *operating model* includes prices in *virtual currency*.
+* IncludesVirtualCurrency MUST evaluate to false when the *operating model* does not include prices in *virtual currency*.
 
 ## Condition ID
 

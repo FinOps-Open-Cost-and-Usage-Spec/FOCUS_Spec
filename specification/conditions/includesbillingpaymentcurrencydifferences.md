@@ -6,8 +6,8 @@ The Includes Billing and Payment Currency Differences condition represents a ver
 
 IncludesBillingPaymentCurrencyDifferences MUST adhere to the following requirements:
 
-* IncludesBillingPaymentCurrencyDifferences MUST evaluate to true when the *operating model* supports billing and payment in different currencies.
-* IncludesBillingPaymentCurrencyDifferences MUST evaluate to false when the *operating model* does not support billing and payment in different currencies.
+* IncludesBillingPaymentCurrencyDifferences MUST evaluate to true when the *operating model* includes billing and payment in different currencies.
+* IncludesBillingPaymentCurrencyDifferences MUST evaluate to false when the *operating model* does not include billing and payment in different currencies.
 
 ## Condition ID
 

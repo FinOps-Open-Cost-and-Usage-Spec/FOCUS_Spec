@@ -6,8 +6,8 @@ The Includes Multiple Pricing Categories condition represents a verifiable state
 
 IncludesMultiplePricingCategories MUST adhere to the following requirements:
 
-* IncludesMultiplePricingCategories MUST evaluate to true when the *operating model* supports multiple pricing categories.
-* IncludesMultiplePricingCategories MUST evaluate to false when the *operating model* does not support multiple pricing categories.
+* IncludesMultiplePricingCategories MUST evaluate to true when the *operating model* includes multiple pricing categories.
+* IncludesMultiplePricingCategories MUST evaluate to false when the *operating model* does not include multiple pricing categories.
 
 ## Condition ID
 

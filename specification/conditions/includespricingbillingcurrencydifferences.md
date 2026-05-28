@@ -6,8 +6,8 @@ The Includes Pricing-Billing Currency Differences condition represents a verifia
 
 IncludesPricingBillingCurrencyDifferences MUST adhere to the following requirements:
 
-* IncludesPricingBillingCurrencyDifferences MUST evaluate to true when the *operating model* supports pricing and billing in different currencies.
-* IncludesPricingBillingCurrencyDifferences MUST evaluate to false when the *operating model* does not support pricing and billing in different currencies.
+* IncludesPricingBillingCurrencyDifferences MUST evaluate to true when the *operating model* includes pricing and billing in different currencies.
+* IncludesPricingBillingCurrencyDifferences MUST evaluate to false when the *operating model* does not include pricing and billing in different currencies.
 
 ## Condition ID
 

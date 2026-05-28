@@ -6,8 +6,8 @@ The Includes Multiple Sub Account Types condition represents a verifiable state 
 
 IncludesMultipleSubAccountTypes MUST adhere to the following requirements:
 
-* IncludesMultipleSubAccountTypes MUST evaluate to true when the *operating model* supports multiple SubAccountTypes.
-* IncludesMultipleSubAccountTypes MUST evaluate to false when the *operating model* does not support multiple SubAccountTypes.
+* IncludesMultipleSubAccountTypes MUST evaluate to true when the *operating model* includes multiple SubAccountTypes.
+* IncludesMultipleSubAccountTypes MUST evaluate to false when the *operating model* does not include multiple SubAccountTypes.
 
 ## Condition ID
 

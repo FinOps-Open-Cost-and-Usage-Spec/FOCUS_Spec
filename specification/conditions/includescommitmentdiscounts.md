@@ -6,8 +6,8 @@ The Includes Commitment Discounts condition represents a verifiable state indica
 
 IncludesCommitmentDiscounts MUST adhere to the following requirements:
 
-* IncludesCommitmentDiscounts MUST evaluate to true when the *operating model* supports *commitment discounts*.
-* IncludesCommitmentDiscounts MUST evaluate to false when the *operating model* does not support *commitment discounts*.
+* IncludesCommitmentDiscounts MUST evaluate to true when the *operating model* includes *commitment discounts*.
+* IncludesCommitmentDiscounts MUST evaluate to false when the *operating model* does not include *commitment discounts*.
 
 ## Condition ID
 

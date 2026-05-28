@@ -6,8 +6,8 @@ The Includes Split Cost Allocation condition represents a verifiable state indic
 
 IncludesSplitCostAllocation MUST adhere to the following requirements:
 
-* IncludesSplitCostAllocation MUST evaluate to true when the *operating model* supports *split cost allocation*.
-* IncludesSplitCostAllocation MUST evaluate to false when the *operating model* does not support *split cost allocation*.
+* IncludesSplitCostAllocation MUST evaluate to true when the *operating model* includes *split cost allocation*.
+* IncludesSplitCostAllocation MUST evaluate to false when the *operating model* does not include *split cost allocation*.
 
 ## Condition ID
 

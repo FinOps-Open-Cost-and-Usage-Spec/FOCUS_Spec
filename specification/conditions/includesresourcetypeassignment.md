@@ -6,8 +6,8 @@ The Includes Resource Type Assignment condition represents a verifiable state in
 
 IncludesResourceTypeAssignment MUST adhere to the following requirements:
 
-* IncludesResourceTypeAssignment MUST evaluate to true when the *operating model* supports categorizing resources by type.
-* IncludesResourceTypeAssignment MUST evaluate to false when the *operating model* does not support categorizing resources by type.
+* IncludesResourceTypeAssignment MUST evaluate to true when the *operating model* includes categorizing resources by type.
+* IncludesResourceTypeAssignment MUST evaluate to false when the *operating model* does not include categorizing resources by type.
 
 ## Condition ID
 
