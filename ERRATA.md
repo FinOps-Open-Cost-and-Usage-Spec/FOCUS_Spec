@@ -10,7 +10,7 @@ These updates serve as the basis for revising FOCUS enablement artifacts, such a
 
 This section outlines minor discrepancies found in the 1.3 release of the FOCUS specification. 
 
-All issues are considered clarifications to intended language and are not meant to represent material changes. The working group has implemented checks going forward that will prevent the introduction of similar issues. Most issues were introduced in version 1.3 and addressed in version 1.4; where a discrepancy originated in an earlier release or was addressed later, the individual entry notes this.
+All issues are considered clarifications to intended language and are not meant to represent material changes. The working group has implemented checks going forward that will prevent the introduction of similar issues. These issues have been addressed in version 1.4.
 
 ### A. Schema & Validation Logic Corrections
 *The following corrections address schema definitions and validation rules to ensure automated tooling and JSON parsers function correctly.*
