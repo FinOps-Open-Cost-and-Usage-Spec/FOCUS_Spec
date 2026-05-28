@@ -1,0 +1,119 @@
+{
+  "ATT-CurrencyFormat-A-000-M": {
+    "Function": "Composite",
+    "Reference": "CurrencyFormat",
+    "EntityType": "Attribute",
+    "EntityName": "Currency Format",
+    "EntityId": "CurrencyFormat",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 0,
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "Column conforming to CurrencyFormat attribute MUST adhere to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-CurrencyFormat-A-004-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-CurrencyFormat-A-001-M"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "ATT-CurrencyFormat-A-004-M",
+        "ATT-CurrencyFormat-A-001-M"
+      ]
+    }
+  },
+  "ATT-CurrencyFormat-A-001-M": {
+    "Function": "Validation",
+    "Reference": "CurrencyFormat",
+    "EntityType": "Attribute",
+    "EntityName": "Currency Format",
+    "EntityId": "CurrencyFormat",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 20,
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS dataset column MUST use the three-letter alphabetic code defined in ISO 4217:2015 (e.g., USD, EUR).",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-CurrencyFormat-A-002-C": {
+    "Function": "Validation",
+    "Reference": "CurrencyFormat",
+    "EntityType": "Attribute",
+    "EntityName": "Currency Format",
+    "EntityId": "CurrencyFormat",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
+    "ApplicabilityCriteria": [],
+    "Order": -1,
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Currency-related columns MUST conform to StringHandling requirements when the value is presented in virtual currency (e.g., credits, tokens).",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-CurrencyFormat-A-003-O": {
+    "Function": "Validation",
+    "Reference": "CurrencyFormat",
+    "EntityType": "Attribute",
+    "EntityName": "Currency Format",
+    "EntityId": "CurrencyFormat",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
+    "ApplicabilityCriteria": [],
+    "Order": -1,
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Custom currency-related columns SHOULD also follow the same formatting requirements.",
+      "Keyword": "SHOULD",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-CurrencyFormat-A-004-M": {
+    "Function": "Validation",
+    "Reference": "CurrencyFormat",
+    "EntityType": "Attribute",
+    "EntityName": "Currency Format",
+    "EntityId": "CurrencyFormat",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 10,
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS dataset column MUST conform to ISO 4217:2015 standard.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}

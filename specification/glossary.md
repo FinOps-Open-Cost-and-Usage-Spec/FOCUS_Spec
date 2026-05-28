@@ -240,6 +240,10 @@ A service that is available and provided immediately or as needed, without requi
 
 A [*billing period*](#glossary:billing-period) with [Billing Period Status](#datasets.billingperiod.billingperiodstatus) set to "Open". Billing activities are ongoing, and the period remains subject to updates until formally closed.
 
+<a name="glossary:operating-model"><b>Operating Model</b></a>
+
+The collective set of capabilities, business concepts, and data constructs underlying a FOCUS-compliant dataset. It encompasses features and metadata enrichments supported across participating entities (e.g., [*service providers*](#glossary:service-provider), host providers, [*invoice issuers*](#glossary:invoice-issuer), and [*data generators*](#glossary:data-generator)), reflecting the verifiable state of these elements at the time of dataset creation.
+
 <a name="glossary:origin-charge"><b>Origin Charge</b></a>
 
 The [charge](#glossary:charge) that existed prior to an operation. This is used in the context of [Data Generator-Calculated Split Cost Allocation](#supportedfeatures.datagenerator-calculatedsplitcostallocation) to identify the charge that existed prior to the application of Data Generator-Calculated Split Cost Allocation to produce [allocated charges](#glossary:allocated-charge).
@@ -292,6 +296,10 @@ A construct composed of the common properties of a product offering associated w
 
 A pricing construct that encompasses SKU properties (e.g., functionality and technical specifications), along with core stable pricing details for a particular SKU, while excluding dynamic or negotiable pricing elements such as unit price amounts; currency (and related exchange rates); temporal validity (e.g., effective dates); and contract- or negotiation-specific factors (e.g., contract or account identifiers and negotiable discounts).
 
+<a name="glossary:split-cost-allocation"><b>Split Cost Allocation</b></a>
+
+A mechanism that splits a single [*origin charge*](#glossary:origin-charge) into multiple [*allocated charges*](#glossary:allocated-charge) to distribute cost and usage across [*resources*](#glossary:resource) at a more granular level, using a defined [*allocated method*](#glossary:allocated-method).
+
 <a name="glossary:sub-account"><b>Sub Account</b></a>
 
 A sub account is an optional service-provider-supported construct for organizing resources and/or services connected to a billing account. Sub accounts must be associated with a billing account as they do not receive invoices.
@@ -311,6 +319,10 @@ A Resource or Service-Provider-defined construct for grouping resources and/or o
 <a name="glossary:term"><b>Term</b></a>
 
 An agreement specified on a [*contract*](#glossary:contract) or [*invoice*](#glossary:invoice).
+
+<a name="glossary:unit-pricing"><b>Unit Pricing</b></a>
+
+A billing concept where the cost of a [*charge*](#glossary:charge) is deterministically derived as the product of a unit price (defined per [*SKU Price*](#glossary:sku-price)) and the corresponding [Pricing Quantity](#datasets.costandusage.pricingquantity), representing purchased or consumed volume of a [*SKU*](#glossary:sku).
 
 <a name="glossary:virtual-currency"><b>Virtual Currency</b></a>
 

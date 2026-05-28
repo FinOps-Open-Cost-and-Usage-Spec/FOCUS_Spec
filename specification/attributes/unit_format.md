@@ -130,7 +130,7 @@ The table below lists recommended names for count-based base units.
 | Page                        | Pages                     | Discrete document units analyzed or processed. |
 | Session                     | Sessions                  | Continuous interactive usage periods. |
 
-*Note: If a count-based base unit is not covered by the recommended values, a new value may be used as long as it is capitalized.*
+*Note: When a count-based base unit is not covered by the recommended values, a new value can be used as long as it is capitalized.*
 
 ## Attribute ID
 

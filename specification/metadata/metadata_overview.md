@@ -15,7 +15,7 @@ The metadata includes the following sections:
 
 Metadata adheres to the following requirements:
 
-* Data generators SHOULD provide FOCUS metadata in a format that is accessible programmatically, such as a file, website, API, or table.
+* Data generators SHOULD provide FOCUS metadata in a format that is accessible programmatically (e.g., file, website, API, or table).
 * Data generators SHOULD provide documentation on their implementation of the FOCUS metadata.
 
 <div class='h4-nonindex'>Metadata ID</div>
