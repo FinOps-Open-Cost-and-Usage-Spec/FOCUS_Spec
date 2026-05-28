@@ -18,23 +18,23 @@ ContractCommitmentApplicability MUST adhere to the following requirements:
 
 Contract Commitment Applicability consists of a valid JSON object which contains a set of top-level property keys. These keys define entity-based inclusionary and exclusionary logic, as well as the portion of relevant cost and/or usage that is applicable to the *contract commitment*.
 
-The following section details the normative requirements for the ContractCommitmentApplicabilityObject and its nested properties. For a logical overview of the expected content, see the [Schema Structure](#datasets.contractcommitment.contractcommitmentapplicability.schemastructure) and [Object Example](#datasets.contractcommitment.contractcommitmentapplicability.objectexample) sections.
+The following section details the normative requirements for the ContractCommitmentApplicabilityObject and its nested properties. For a logical overview of the expected content, see the [Schema Structure](#datasets.contractcommitment.contractcommitmentapplicability.contractcommitmentapplicabilityobject.objectschemastructure) and [Object Example](#datasets.contractcommitment.contractcommitmentapplicability.contractcommitmentapplicabilityobject.objectexample) sections.
 
 ### Object Requirements
 
 ContractCommitmentApplicabilityObject MUST adhere to the following requirements:
 
 * ContractCommitmentApplicabilityObject MUST conform to the [ContractCommitmentApplicabilityObjectSchema](#schemas.contractcommitment.contractcommitmentapplicabilityobjectschema) JSON Schema.
-* ContractCommitmentApplicabilityObject.IsGlobalScope MUST be `true` if the *contract commitment* applies to all entities.
-* ContractCommitmentApplicabilityObject.IsComplexScope MUST be `true` if the *contract commitment's* applicability logic exceeds schema capabilities.
+* ContractCommitmentApplicabilityObject.IsGlobalScope MUST be `true` when the *contract commitment* applies to all entities.
+* ContractCommitmentApplicabilityObject.IsComplexScope MUST be `true` when the *contract commitment's* applicability logic exceeds schema capabilities.
 * ContractCommitmentApplicabilityObject.Applicability.Cost MUST represent the fraction of an eligible charge's cost that is applicable to the commitment (0.0 to 1.0).
 * ContractCommitmentApplicabilityObject.Applicability.Usage MUST represent the fraction of an eligible charge's usage that is applicable to the commitment (0.0 to 1.0).
 * ContractCommitmentApplicabilityObject.Inclusions[\*].Applicability.Cost MUST represent the fraction of an eligible charge's cost that is applicable to the commitment (0.0 to 1.0).
 * ContractCommitmentApplicabilityObject.Inclusions[\*].Applicability.Usage MUST represent the fraction of an eligible charge's usage that is applicable to the commitment (0.0 to 1.0).
 * ContractCommitmentApplicabilityObject.Inclusions[\*].Dimension SHOULD represent a column in [Cost and Usage](#datasets.costandusage).
 * ContractCommitmentApplicabilityObject.Exclusions[\*].Dimension SHOULD represent a column in [Cost and Usage](#datasets.costandusage).
-* ContractCommitmentApplicabilityObject.Inclusions[\*].Values MUST contain only the single string "*" if the wildcard is present.
-* ContractCommitmentApplicabilityObject.Exclusions[\*].Values MUST contain only the single string "*" if the wildcard is present.
+* ContractCommitmentApplicabilityObject.Inclusions[\*].Values MUST contain only the single string "*" when the wildcard is present.
+* ContractCommitmentApplicabilityObject.Exclusions[\*].Values MUST contain only the single string "*" when the wildcard is present.
 
 ### Object Schema Structure
 
