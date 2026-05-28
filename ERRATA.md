@@ -10,7 +10,7 @@ These updates serve as the basis for revising FOCUS enablement artifacts, such a
 
 This section outlines minor discrepancies found in the 1.3 release of the FOCUS specification. 
 
-All issues are considered clarifications to intended language and are not meant to represent material changes. The working group has implemented checks going forward that will prevent the introduction of similar issues. All issues were introduced in version 1.3 of the specification and have been addressed in version 1.4.
+All issues are considered clarifications to intended language and are not meant to represent material changes. The working group has implemented checks going forward that will prevent the introduction of similar issues. Most issues were introduced in version 1.3 and addressed in version 1.4; where a discrepancy originated in an earlier release or was addressed later, the individual entry notes this.
 
 ### A. Schema & Validation Logic Corrections
 *The following corrections address schema definitions and validation rules to ensure automated tooling and JSON parsers function correctly.*
@@ -45,6 +45,7 @@ All issues are considered clarifications to intended language and are not meant 
 | :--- | :--- | :--- | :--- | :--- |
 | **#7: Missing Ignored Key** | `contractappliedobject.json` | The `IgnoreKeys` array omitted `"ContractId"`, causing valid custom key checks to fail. | `"ContractId"` was added to the `IgnoreKeys` array. | Issue: [#2048](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pull/2048)<br>PR: [#2052](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pull/2052) |
 | **#8: Incorrect JSON Path targets** | `contractappliedobject.json` | The `Path` targeted `"$.Elements[*].ContractCommitmentId"` for all three metric presence checks. | The `Path` was corrected to target the respective `Cost`, `Quantity`, and `Unit` JSON properties. | Issue: [#2048](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pull/2048)<br>PR: [#2052](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pull/2052) |
+| **#11: Incorrect CommitmentDiscountStatus allowed values**<br><br>*(Defect carried over from the 1.2 Requirements Model)* | `commitmentdiscountstatus.json` | `CAU-CommitmentDiscountStatus-C-005-M` listed the allowed values as `Active`, `Expired`, and `Pending`, none of which appear in the specification. | Corrected to the spec-defined values `Used` and `Unused` (matching the column's Allowed Values table and the sibling `CapacityReservationStatus` rule). | Issue: [#2418](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2418)<br>PR: [#2422](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pull/2422) |
 
 ---
 
@@ -68,3 +69,4 @@ This section outlines discrepancies found in the enablement artifacts (Requireme
 | :--- | :--- | :--- | :--- | :--- |
 | **#1: Incorrect argument name** | `resourcetype.json` | The condition function incorrectly used the argument `"CheckCondition": "ResourceId"`. | The argument was corrected to the standard `"ColumnName": "ResourceId"`. | Issue: [#1824](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/1824)<br>PR: [#1956](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pull/1956) |
 | **#2: Incorrect nullability function** | `commitmentdiscountstatus.json` | The requirement used `CheckNotValue` to ensure the status was null, which caused valid nulls to fail. | The function was corrected to `CheckValue` to properly enforce the `MUST be null` requirement. | Issue: [#1825](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/1825)<br>PR: [#1956](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pull/1956) |
+| **#3: Incorrect CommitmentDiscountStatus allowed values** | `commitmentdiscountstatus.json` | `CommitmentDiscountStatus-C-005-M` listed the allowed values as `Active`, `Expired`, and `Pending`, none of which appear in the specification. | Corrected to the spec-defined values `Used` and `Unused` (matching the column's Allowed Values table and the sibling `CapacityReservationStatus` rule). | Issue: [#2418](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2418)<br>PR: [#2422](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pull/2422) |
