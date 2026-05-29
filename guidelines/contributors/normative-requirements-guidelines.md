@@ -172,10 +172,14 @@ See [Section Structural Anchor Requirement for Attributes](#structural-anchor-re
 
 The normative subject MUST be a schema-level entity or specific documentation, such as:
 
+##### Dataset Subjects
+
 * **FOCUS Dataset**, whereby use of:  
   * `FOCUS dataset` keyword represents any FOCUS dataset  
   * `FOCUS dataset` keyword with a qualifier represents a qualified subset of FOCUS datasets  
   * A single FOCUS dataset explicitly identified by `<FOCUS Dataset ID>` (e.g., `CostAndUsage`)
+
+##### Dataset Column Subjects
 
 * **FOCUS Dataset Column**, whereby use of:  
   * `FOCUS dataset column` keyword represents any column in a FOCUS dataset (either a FOCUS column or a custom column)  
@@ -189,6 +193,8 @@ The normative subject MUST be a schema-level entity or specific documentation, s
 * **Custom Column**, whereby use of:  
   * `Custom column` keyword represents any custom column  
   * `Custom column` keyword with a qualifier represents a qualified subset of custom columns (e.g., `Custom column containing numeric values`)
+
+##### Sub-element Subjects
 
 * **Structural sub-elements within Columns** (objects, keys, key values):
   * `object`, `key`, or `value` keywords MUST NOT be used alone. Always reference them in context.
@@ -205,6 +211,8 @@ The normative subject MUST be a schema-level entity or specific documentation, s
     * `<ObjectId>` for JSON Object-level requirements (e.g., `ContractAppliedObject`)
     * `<ObjectId>.<PropertyPath>` for JSON Object property-level requirements (e.g., `ContractCommitmentApplicabilityObject.Applicability.Cost`)
     * `<ObjectId>.<PropertyPath>[*].<PropertyPath>` for properties within arrays (e.g., `ContractAppliedObject.Elements[*].ContractId`, `ContractCommitmentApplicabilityObject.Inclusions[*].Dimension`)
+
+##### Documentation Subjects
 
 * **Documentation**, whereby use of:
   * `FOCUS dataset documentation` keyword represents documentation of any FOCUS dataset
