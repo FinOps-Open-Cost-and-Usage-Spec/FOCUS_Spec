@@ -303,6 +303,20 @@ A requirement MUST be split into multiple bullets if it:
 * contains a hidden constraint expressed as a definition (e.g., `ColumnA MUST be Z, where Z is defined as Y`),
 * applies constraints to multiple subjects, even with a single BCP 14 keyword (e.g., `ColumnA and ColumnB MUST be X`).
 
+* **Example** (illustrative):
+
+  * Incorrect: `ColumnA and ColumnB MUST be non-null when ColumnC is true and ColumnD is not "X".`
+  
+  * Compliant:
+    * `ColumnA MUST be non-null when ColumnC is true and ColumnD is not "X".`
+    * `ColumnB MUST be non-null when ColumnC is true and ColumnD is not "X".`
+
+  * Compliant:
+
+    * `PricingQuantity MUST be null when ChargeCategory is "Tax" or "Adjustment".`
+    
+    * `BillingPeriodStart MUST be less than or equal to BillingPeriodEnd.`
+
 ### Composite Requirements
 
 Composite (parent + nested) requirements MAY be used to group related constraints under a shared condition, context, or subject.
