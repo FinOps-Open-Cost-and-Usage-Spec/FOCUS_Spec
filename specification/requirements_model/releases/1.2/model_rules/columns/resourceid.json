@@ -178,7 +178,7 @@
       },
       "Condition": {
         "CheckFunction": "CheckNotValue",
-        "CheckCondition": "ResourceId",
+        "ColumnName": "ResourceId",
         "Value": null
       },
       "Dependencies": [

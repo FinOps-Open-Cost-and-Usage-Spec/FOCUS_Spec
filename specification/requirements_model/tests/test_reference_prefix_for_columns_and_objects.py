@@ -2,13 +2,7 @@ import pytest
 import re
 from conftest import requires_version
 
-@pytest.mark.dependency(name="reference_matches_rule_key_prefix_for_columns_and_objects", scope="session")
-def test_reference_matches_rule_key_prefix_for_columns_and_objects(cr_json, model_version):
-    # This test only applies to model version 1.3 and above
-    should_skip, reason = requires_version(model_version, min_version="1.3")
-    if should_skip:
-        pytest.skip(reason)
-    
+def _collect_reference_prefix_violations(cr_json, expect_att_attribute_prefix: bool):
     rules = cr_json.get("ModelRules") or {}
     violations = []
 
@@ -27,6 +21,18 @@ def test_reference_matches_rule_key_prefix_for_columns_and_objects(cr_json, mode
         if new_pattern_match:
             # Rule uses new format - validate it properly
             prefix, reference_part, entity_letter = new_pattern_match.groups()
+
+            # For 1.4+, Attribute rules must use ATT-<EntityId>-A-<Number>-<Severity>.
+            if expect_att_attribute_prefix and entity_type == "Attribute":
+                if prefix != "ATT":
+                    violations.append((rid, ref, "Attribute rules must use ATT prefix"))
+                    continue
+                if entity_letter != "A":
+                    violations.append((rid, ref, "Attribute rules must use entity letter 'A'"))
+                    continue
+                if reference_part != ref:
+                    violations.append((rid, ref, f"Expected reference '{reference_part}' to match EntityId field"))
+                continue
 
             # Validate entity type is Dataset, Column, or Object for new format
             if entity_type not in ["Dataset", "Column", "Object"]:
@@ -53,9 +59,42 @@ def test_reference_matches_rule_key_prefix_for_columns_and_objects(cr_json, mode
             if entity_type in ["Dataset", "Column", "Object"]:
                 violations.append((rid, ref, f"{entity_type} rules must use 3-letter prefix format: <PREFIX>-<Reference>-{entity_type[0]}-<Number>-<Severity>"))
             else:
-                # For non-Dataset/Column rules, validate old format
-                if not rid.startswith(ref):
-                    violations.append((rid, ref, "Rule ID should start with Reference"))
+                # For Attribute rules in 1.4+, validate ATT-prefixed format.
+                if expect_att_attribute_prefix and entity_type == "Attribute":
+                    attribute_pattern = rf'^ATT-{re.escape(ref)}-A-\d+-[A-Z]$'
+                    if not re.match(attribute_pattern, rid):
+                        violations.append((rid, ref, "Attribute rules must use ATT prefix format: ATT-<EntityId>-A-<Number>-<Severity>"))
+                # For non-Dataset/Column rules before 1.4, validate legacy format.
+                elif not expect_att_attribute_prefix:
+                    if not rid.startswith(ref):
+                        violations.append((rid, ref, "Rule ID should start with Reference"))
+
+    return violations
+
+
+@pytest.mark.dependency(name="reference_matches_rule_key_prefix_for_columns_and_objects_pre_1_4", scope="session")
+def test_reference_matches_rule_key_prefix_for_columns_and_objects_pre_1_4(cr_json, model_version):
+    # This test applies to version 1.3 only.
+    should_skip, reason = requires_version(model_version, min_version="1.3", max_version="1.3")
+    if should_skip:
+        pytest.skip(reason)
+
+    violations = _collect_reference_prefix_violations(cr_json, expect_att_attribute_prefix=False)
+
+    assert not violations, (
+        "ModelRules.EntityId must match the expected pattern in the rule key:\n"
+        + "\n".join(f"- Rule {rid}: EntityId='{ref}' - {issue}" for rid, ref, issue in violations)
+    )
+
+
+@pytest.mark.dependency(name="reference_matches_rule_key_prefix_for_columns_and_objects_1_4_plus", scope="session")
+def test_reference_matches_rule_key_prefix_for_columns_and_objects_1_4_plus(cr_json, model_version):
+    # This test applies to version 1.4 and above.
+    should_skip, reason = requires_version(model_version, min_version="1.4")
+    if should_skip:
+        pytest.skip(reason)
+
+    violations = _collect_reference_prefix_violations(cr_json, expect_att_attribute_prefix=True)
 
     assert not violations, (
         "ModelRules.EntityId must match the expected pattern in the rule key:\n"
