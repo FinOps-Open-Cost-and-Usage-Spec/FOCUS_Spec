@@ -21,6 +21,7 @@
 !INCLUDE "includessplitcostallocation.md",1
 !INCLUDE "includessubaccounts.md",1
 !INCLUDE "includestags.md",1
+!INCLUDE "includestieredpricing.md",1
 !INCLUDE "includesunitpricing.md",1
 !INCLUDE "includesusagemeasurement.md",1
 !INCLUDE "includesvirtualcurrency.md",1

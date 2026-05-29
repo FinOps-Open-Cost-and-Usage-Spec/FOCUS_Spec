@@ -12,6 +12,8 @@ Datasets are sorted first by Feature Level (i.e., Mandatory, then Conditional), 
 | [Billing Period](#datasets.billingperiod)           | Reference    | Conditional   | Describes the billing periods by which cost and usage is invoiced. |
 | [Contract Commitment](#datasets.contractcommitment) | Reference    | Conditional   | Describes the terms of contracts agreed between a service provider and a customer. |
 | [Invoice Detail](#datasets.invoicedetail)           | Transaction  | Conditional   | Describes the cost and usage issued on invoices. |
+| [SKU Price](#datasets.skuprice)                     | Transaction  | Conditional   | Describes the cost and usage issued on invoices. |
+
 
 ## Requirements<!--SkipTOC-->
 
@@ -21,6 +23,7 @@ DataModel MUST adhere to the following requirements:
 * DataModel MUST include [BillingPeriod](#datasets.billingperiod) when the invoice issuer supports payable invoices.
 * DataModel MUST include [ContractCommitment](#datasets.contractcommitment) when the service provider supports [*contract commitments*](#glossary:contract-commitment).
 * DataModel MUST include [InvoiceDetail](#datasets.invoicedetail) when the invoice issuer supports payable invoices.
+* DataModel MUST include [SkuPrice](#datasets.skuprice) when the operating model [includes unit pricing](#conditions.includesunitpricing).
 
 ## Data Model ID<!--SkipTOC-->
 
