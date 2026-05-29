@@ -268,6 +268,13 @@ The following verbs are commonly used in a process-oriented way when defining re
 * `alter`
 * `document`
 
+* These verbs are prohibited when applied as obligations on actors or processes but may be used when defining verifiable states of documentation. 
+
+* **Example:** (illustrative)
+
+  * `Document X MUST provide Y` is non-compliant because it describes a behavior of the documentation process rather than a verifiable state of the documentation itself. 
+  * However, `Documentation for X MUST include Y` is compliant because it describes a verifiable state of the documentation.
+
 > **Note:** This list is not exhaustive. Any verb that describes an action, responsibility, or implementation behavior rather than a verifiable state is considered non-compliant in the normative position.
 
 ### Tone and Grammar
