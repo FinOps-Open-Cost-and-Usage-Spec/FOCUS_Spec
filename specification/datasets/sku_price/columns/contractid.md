@@ -1,0 +1,42 @@
+# Contract ID
+
+Contract ID is a service-provider-assigned identifier for a contract describing the agreed terms between a service provider and a customer. Contracts can include commitment to a certain amount of spend or usage over an agreed period of time.
+
+## Requirements
+
+ContractId MUST adhere to the following requirements:
+
+* ContractId MUST be of type String.
+* ContractId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
+* ContractId MUST NOT be null when the unit price is associated with a [*contract*](#glossary:contract).
+* When ContractId is not null, ContractId MUST adhere to the following requirements:
+  * ContractId MUST be a unique identifier within the service provider.
+  * ContractId SHOULD be a fully-qualified identifier.
+
+## Column ID
+
+ContractId
+
+## Display Name
+
+Contract ID
+
+## Description
+
+A service-provider-assigned identifier for a contract describing the agreed terms between a service provider and a customer.
+
+## Content Constraints
+
+| Constraint      | Value                                                                                      |
+|:----------------|:-------------------------------------------------------------------------------------------|
+| Dataset         | [SKU Price](#datasets.skuprice)                                                            |
+| Column type     | Dimension                                                                                  |
+| Feature level   | Conditional                                                                                |
+| Condition       | [Includes contract commitments](#conditions.includescontractcommitments)                   |
+| Allows nulls    | True                                                                                       |
+| Data type       | String                                                                                     |
+| Value format    | \<not specified>                                                                           |
+
+## Version Introduced
+
+1.5
