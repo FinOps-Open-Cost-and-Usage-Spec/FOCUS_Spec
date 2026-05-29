@@ -20,8 +20,8 @@
 !INCLUDE "skupriceid.md",1
 !INCLUDE "skupricelastupdated.md",1
 !INCLUDE "skupricelifecyclestatus.md",1
-!INCLUDE "tiermaximum.md",1
-!INCLUDE "tierminimum.md",1
-!INCLUDE "tiername.md",1
 !INCLUDE "unitprice.md",1
 !INCLUDE "unitpricecategory.md",1
+!INCLUDE "volumetiermaximum.md",1
+!INCLUDE "volumetierminimum.md",1
+!INCLUDE "volumetiername.md",1

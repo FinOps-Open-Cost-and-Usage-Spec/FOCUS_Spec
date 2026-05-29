@@ -25,3 +25,4 @@
 !INCLUDE "includesunitpricing.md",1
 !INCLUDE "includesusagemeasurement.md",1
 !INCLUDE "includesvirtualcurrency.md",1
+!INCLUDE "includesvolumetierpricing.md",1

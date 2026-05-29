@@ -34,3 +34,4 @@ Conditions are sorted alphabetically by name.
 | [Includes Unit Pricing](#conditions.includesunitpricing) | Pricing | Operating model includes unit pricing. |
 | [Includes Usage Measurement](#conditions.includesusagemeasurement) | Billing | Operating model includes the measurement of usage. |
 | [Includes Virtual Currency](#conditions.includesvirtualcurrency) | Pricing | Operating model includes prices in virtual currency. |
+| [Includes Volume Tier Pricing](#conditions.includesvolumetierpricing) | Pricing | Operating model includes volume-based tier pricing. |
