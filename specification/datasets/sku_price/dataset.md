@@ -1,10 +1,12 @@
 # SKU Price
 
-The SKU Price dataset is the primary dataset for standardizing [*service provider*](#glossary:service-provider) catalog rates, multipliers, and negotiated prices. This dataset enables practitioners to perform precise rate lookups, analyze commitment discounts, and understand the cost mechanics of payable vs consumable prices. 
+The SKU Price dataset is the primary dataset for standardizing [*service provider*](#glossary:service-provider) catalog rates, multipliers, and negotiated prices. This dataset enables practitioners to perform precise rate lookups, analyze commitment discounts, and understand the cost mechanics of payable vs consumable prices.
 
 The columns are presented in alphabetical order.
 
-## Columns| Column                                                                        | Column Type        | Feature Level | Allows Nulls | Data Type |
+## Columns
+
+| Column                                                                        | Column Type        | Feature Level | Allows Nulls | Data Type |
 | ----------------------------------------------------------------------------- | ------------------ | ------------- | ------------ | --------- |
 | [Charge Frequency](#datasets.skuprice.chargefrequency)                                              | Dimension          | [Conditional](#conditions.includesmultiplechargefrequencies) | False        | String    |
 | [Contract Commitment Discount Percentage](#datasets.skuprice.contractcommitmentdiscountpercentage)    | Metric             | [Conditional](#conditions.includescontractcommitments) | True         | Decimal   |
@@ -93,7 +95,7 @@ SKU Price
 
 ## Description
 
-Describes the catalog rates, internal multipliers, and negotiated unit prices for resources or services offered by a service provider. 
+Describes the catalog rates, internal multipliers, and negotiated unit prices for resources or services offered by a service provider.
 
 ## Version Introduced
 
