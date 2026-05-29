@@ -21,7 +21,7 @@ The Invoice Detail dataset is a transactional dataset that represents the financ
 | [Invoice Issue Date](#datasets.invoicedetail.invoiceissuedate)                   | Dimension   | Mandatory     | True        | Date/Time |
 | [Invoice Issue Status](#datasets.invoicedetail.invoiceissuestatus)             | Dimension   | Mandatory     | False        | String    |
 | [Invoice Issuer Name](#datasets.invoicedetail.invoiceissuername)                 | Dimension   | Mandatory     | False        | String    |
-| [Payment Currency](#datasets.invoicedetail.paymentcurrency)                     | Dimension   | Mandatory     | False        | String    |
+| [Payment Currency](#datasets.invoicedetail.paymentcurrency)                     | Dimension   | [Conditional](#conditions.includesbillingpaymentcurrencydifferences)   | False        | String    |
 | [Payment Currency Billed Cost](#datasets.invoicedetail.paymentcurrencybilledcost) | Metric      | [Conditional](#conditions.includesbillingpaymentcurrencydifferences)   | False        | Decimal   |
 | [Payment Currency Invoice Detail ID](#datasets.invoicedetail.paymentcurrencyinvoicedetailid) | Dimension | [Conditional](#conditions.includesaggregationlevelcurrencydifferences) | False | String |
 | [Payment Due Date](#datasets.invoicedetail.paymentduedate)               | Dimension   | Mandatory     | True         | Date/Time |
