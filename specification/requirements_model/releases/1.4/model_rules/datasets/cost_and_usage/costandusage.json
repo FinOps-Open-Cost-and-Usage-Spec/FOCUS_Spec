@@ -1,0 +1,3483 @@
+{
+  "CAU-CostAndUsage-D-000-M": {
+    "Function": "Composite",
+    "Reference": "CostAndUsage",
+    "EntityType": "Dataset",
+    "EntityName": "Cost and Usage",
+    "EntityId": "CostAndUsage",
+    "Notes": "Main dataset composite rule",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 0,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST adhere to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-077-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-078-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-079-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-080-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-081-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-082-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-083-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-084-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-090-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-091-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-092-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-093-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-094-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-095-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-002-M"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CAU-CostAndUsage-D-077-M",
+        "CAU-CostAndUsage-D-001-M",
+        "CAU-CostAndUsage-D-078-M",
+        "CAU-CostAndUsage-D-079-M",
+        "CAU-CostAndUsage-D-080-M",
+        "CAU-CostAndUsage-D-081-M",
+        "CAU-CostAndUsage-D-082-C",
+        "CAU-CostAndUsage-D-083-C",
+        "CAU-CostAndUsage-D-084-C",
+        "CAU-CostAndUsage-D-090-O",
+        "CAU-CostAndUsage-D-091-O",
+        "CAU-CostAndUsage-D-092-C",
+        "CAU-CostAndUsage-D-093-M",
+        "CAU-CostAndUsage-D-094-M",
+        "CAU-CostAndUsage-D-095-M",
+        "CAU-CostAndUsage-D-002-M"
+      ]
+    }
+  },
+  "CAU-CostAndUsage-D-001-M": {
+    "Function": "Composite",
+    "Reference": "CostAndUsage",
+    "EntityType": "Dataset",
+    "EntityName": "Cost and Usage",
+    "EntityId": "CostAndUsage",
+    "Notes": "Columns present composite rule",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 20,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage column presence MUST adhere to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-003-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-004-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-005-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-006-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-007-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-008-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-009-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-010-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-011-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-012-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-013-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-014-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-015-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-016-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-017-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-018-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-019-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-020-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-021-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-022-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-023-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-024-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-025-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-026-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-027-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-028-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-029-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-030-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-031-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-032-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-098-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-033-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-034-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-035-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-036-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-037-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-038-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-039-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-040-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-041-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-042-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-043-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-044-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-045-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-046-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-050-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-054-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-058-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-059-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-060-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-061-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-062-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-063-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-064-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-096-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-065-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-066-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-067-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-068-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-069-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-070-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-071-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-072-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-073-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-074-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-075-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-076-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-097-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CAU-CostAndUsage-D-003-C",
+        "CAU-CostAndUsage-D-004-C",
+        "CAU-CostAndUsage-D-005-M",
+        "CAU-CostAndUsage-D-006-M",
+        "CAU-CostAndUsage-D-007-C",
+        "CAU-CostAndUsage-D-008-M",
+        "CAU-CostAndUsage-D-009-M",
+        "CAU-CostAndUsage-D-010-M",
+        "CAU-CostAndUsage-D-011-C",
+        "CAU-CostAndUsage-D-012-C",
+        "CAU-CostAndUsage-D-013-C",
+        "CAU-CostAndUsage-D-014-C",
+        "CAU-CostAndUsage-D-015-C",
+        "CAU-CostAndUsage-D-097-C",
+        "CAU-CostAndUsage-D-016-C",
+        "CAU-CostAndUsage-D-017-C",
+        "CAU-CostAndUsage-D-018-C",
+        "CAU-CostAndUsage-D-019-C",
+        "CAU-CostAndUsage-D-020-C",
+        "CAU-CostAndUsage-D-021-M",
+        "CAU-CostAndUsage-D-022-C",
+        "CAU-CostAndUsage-D-023-M",
+        "CAU-CostAndUsage-D-024-M",
+        "CAU-CostAndUsage-D-025-M",
+        "CAU-CostAndUsage-D-026-M",
+        "CAU-CostAndUsage-D-027-O",
+        "CAU-CostAndUsage-D-028-M",
+        "CAU-CostAndUsage-D-029-C",
+        "CAU-CostAndUsage-D-030-M",
+        "CAU-CostAndUsage-D-031-M",
+        "CAU-CostAndUsage-D-032-M",
+        "CAU-CostAndUsage-D-098-C",
+        "CAU-CostAndUsage-D-033-C",
+        "CAU-CostAndUsage-D-034-C",
+        "CAU-CostAndUsage-D-035-M",
+        "CAU-CostAndUsage-D-036-M",
+        "CAU-CostAndUsage-D-037-M",
+        "CAU-CostAndUsage-D-038-M",
+        "CAU-CostAndUsage-D-039-C",
+        "CAU-CostAndUsage-D-040-M",
+        "CAU-CostAndUsage-D-041-M",
+        "CAU-CostAndUsage-D-042-O",
+        "CAU-CostAndUsage-D-043-C",
+        "CAU-CostAndUsage-D-044-C",
+        "CAU-CostAndUsage-D-045-C",
+        "CAU-CostAndUsage-D-046-C",
+        "CAU-CostAndUsage-D-050-C",
+        "CAU-CostAndUsage-D-054-C",
+        "CAU-CostAndUsage-D-058-C",
+        "CAU-CostAndUsage-D-059-C",
+        "CAU-CostAndUsage-D-060-C",
+        "CAU-CostAndUsage-D-061-C",
+        "CAU-CostAndUsage-D-062-C",
+        "CAU-CostAndUsage-D-063-C",
+        "CAU-CostAndUsage-D-064-C",
+        "CAU-CostAndUsage-D-096-C",
+        "CAU-CostAndUsage-D-065-C",
+        "CAU-CostAndUsage-D-066-C",
+        "CAU-CostAndUsage-D-067-C",
+        "CAU-CostAndUsage-D-068-M",
+        "CAU-CostAndUsage-D-069-C",
+        "CAU-CostAndUsage-D-070-C",
+        "CAU-CostAndUsage-D-071-C",
+        "CAU-CostAndUsage-D-072-C",
+        "CAU-CostAndUsage-D-073-C",
+        "CAU-CostAndUsage-D-074-C",
+        "CAU-CostAndUsage-D-075-M",
+        "CAU-CostAndUsage-D-076-M"
+      ]
+    }
+  },
+  "CAU-CostAndUsage-D-002-M": {
+    "Function": "Composite",
+    "Reference": "CostAndUsage",
+    "EntityType": "Dataset",
+    "EntityName": "Cost and Usage",
+    "EntityId": "CostAndUsage",
+    "Notes": "Columns composite rule",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": -1,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST adhere to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedMethodId-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedMethodDetails-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedResourceId-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedResourceName-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedTags-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AvailabilityZone-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-BilledCost-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-BillingAccountId-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-BillingAccountName-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-BillingAccountType-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-BillingCurrency-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-BillingPeriodEnd-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-BillingPeriodStart-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CapacityReservationId-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CapacityReservationStatus-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ChargeCategory-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ChargeClass-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ChargeFrequency-C-000-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ChargeDescription-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ChargePeriodEnd-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ChargePeriodStart-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CommitmentDiscountCategory-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CommitmentDiscountId-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CommitmentDiscountName-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CommitmentDiscountStatus-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CommitmentDiscountType-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CommitmentDiscountUnit-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CommitmentProgramEligibilityDetails-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CommitmentDiscountQuantity-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ConsumedUnit-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ConsumedQuantity-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ContractApplied-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ContractedCost-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ContractedUnitPrice-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-EffectiveCost-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-HostProviderName-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-InvoiceDetailId-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-InvoiceId-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-InvoiceIssuerName-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ListCost-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ListUnitPrice-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-PricingCategory-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-PricingCurrency-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-PricingCurrencyContractedUnitPrice-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-PricingCurrencyEffectiveCost-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-PricingCurrencyListUnitPrice-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-PricingQuantity-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-PricingUnit-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-RegionId-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-RegionName-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ResourceId-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ResourceName-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ResourceType-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-SubAccountId-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-SubAccountName-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ServiceProviderName-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ServiceCategory-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ServiceName-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ServiceSubcategory-C-000-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-SkuId-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-SkuMeter-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-SkuPriceDetails-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-SkuPriceId-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-SubAccountType-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-Tags-C-000-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CAU-AllocatedMethodId-C-000-C",
+        "CAU-AllocatedMethodDetails-C-000-C",
+        "CAU-AllocatedResourceId-C-000-C",
+        "CAU-AllocatedResourceName-C-000-C",
+        "CAU-AllocatedTags-C-000-C",
+        "CAU-AvailabilityZone-C-000-C",
+        "CAU-BilledCost-C-000-M",
+        "CAU-BillingAccountId-C-000-M",
+        "CAU-BillingAccountName-C-000-M",
+        "CAU-BillingAccountType-C-000-C",
+        "CAU-BillingCurrency-C-000-M",
+        "CAU-BillingPeriodEnd-C-000-M",
+        "CAU-BillingPeriodStart-C-000-M",
+        "CAU-CapacityReservationId-C-000-C",
+        "CAU-CapacityReservationStatus-C-000-C",
+        "CAU-ChargeCategory-C-000-M",
+        "CAU-ChargeClass-C-000-M",
+        "CAU-ChargeFrequency-C-000-O",
+        "CAU-ChargeDescription-C-000-M",
+        "CAU-ChargePeriodEnd-C-000-M",
+        "CAU-ChargePeriodStart-C-000-M",
+        "CAU-CommitmentDiscountCategory-C-000-C",
+        "CAU-CommitmentDiscountId-C-000-C",
+        "CAU-CommitmentDiscountName-C-000-C",
+        "CAU-CommitmentDiscountStatus-C-000-C",
+        "CAU-CommitmentDiscountType-C-000-C",
+        "CAU-CommitmentDiscountUnit-C-000-C",
+        "CAU-CommitmentProgramEligibilityDetails-C-000-C",
+        "CAU-CommitmentDiscountQuantity-C-000-C",
+        "CAU-ConsumedUnit-C-000-C",
+        "CAU-ConsumedQuantity-C-000-C",
+        "CAU-ContractApplied-C-000-C",
+        "CAU-ContractedCost-C-000-M",
+        "CAU-ContractedUnitPrice-C-000-C",
+        "CAU-EffectiveCost-C-000-M",
+        "CAU-HostProviderName-C-000-M",
+        "CAU-InvoiceDetailId-C-000-C",
+        "CAU-InvoiceId-C-000-C",
+        "CAU-InvoiceIssuerName-C-000-M",
+        "CAU-ListCost-C-000-M",
+        "CAU-ListUnitPrice-C-000-C",
+        "CAU-PricingCategory-C-000-C",
+        "CAU-PricingCurrency-C-000-C",
+        "CAU-PricingCurrencyContractedUnitPrice-C-000-C",
+        "CAU-PricingCurrencyEffectiveCost-C-000-C",
+        "CAU-PricingCurrencyListUnitPrice-C-000-C",
+        "CAU-PricingQuantity-C-000-M",
+        "CAU-PricingUnit-C-000-M",
+        "CAU-RegionId-C-000-C",
+        "CAU-RegionName-C-000-C",
+        "CAU-ResourceId-C-000-C",
+        "CAU-ResourceName-C-000-C",
+        "CAU-ResourceType-C-000-C",
+        "CAU-SubAccountId-C-000-C",
+        "CAU-SubAccountName-C-000-C",
+        "CAU-ServiceProviderName-C-000-M",
+        "CAU-ServiceCategory-C-000-M",
+        "CAU-ServiceName-C-000-M",
+        "CAU-ServiceSubcategory-C-000-O",
+        "CAU-SkuId-C-000-C",
+        "CAU-SkuMeter-C-000-C",
+        "CAU-SkuPriceDetails-C-000-C",
+        "CAU-SkuPriceId-C-000-C",
+        "CAU-SubAccountType-C-000-C",
+        "CAU-Tags-C-000-C"
+      ]
+    }
+  },
+  "CAU-CostAndUsage-D-003-C": {
+    "Function": "Presence",
+    "Reference": "AvailabilityZone",
+    "EntityType": "Dataset",
+    "EntityName": "Availability Zone",
+    "EntityId": "AvailabilityZone",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "AVAILABILITY_ZONE_SUPPORTED"
+    ],
+    "Type": "Static",
+    "Order": 80,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage SHOULD include AvailabilityZone when the host provider supports deploying resources or services within an availability zone.",
+      "Keyword": "SHOULD",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "AvailabilityZone"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-004-C": {
+    "Function": "Presence",
+    "Reference": "ListUnitPrice",
+    "EntityType": "Dataset",
+    "EntityName": "List Unit Price",
+    "EntityId": "ListUnitPrice",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "PUBLIC_PRICE_LIST_SUPPORTED"
+    ],
+    "Order": 410,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include ListUnitPrice when the service provider publishes unit prices exclusive of discounts.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ListUnitPrice"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-005-M": {
+    "Function": "Presence",
+    "Reference": "BillingAccountName",
+    "EntityType": "Dataset",
+    "EntityName": "Billing Account Name",
+    "EntityId": "BillingAccountName",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 110,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include BillingAccountName.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "BillingAccountName"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-006-M": {
+    "Function": "Presence",
+    "Reference": "BilledCost",
+    "EntityType": "Dataset",
+    "EntityName": "Billed Cost",
+    "EntityId": "BilledCost",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 90,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include BilledCost.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "BilledCost"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-007-C": {
+    "Function": "Presence",
+    "Reference": "BillingAccountType",
+    "EntityType": "Dataset",
+    "EntityName": "Billing Account Type",
+    "EntityId": "BillingAccountType",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "MULTIPLE_BILLING_ACCOUNT_TYPES_SUPPORTED"
+    ],
+    "Order": 120,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include BillingAccountType when the invoice issuer supports more than one possible BillingAccountType value.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "BillingAccountType"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-008-M": {
+    "Function": "Presence",
+    "Reference": "ChargeCategory",
+    "EntityType": "Dataset",
+    "EntityName": "Charge Category",
+    "EntityId": "ChargeCategory",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 180,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include ChargeCategory.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ChargeCategory"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-009-M": {
+    "Function": "Presence",
+    "Reference": "BillingPeriodStart",
+    "EntityType": "Dataset",
+    "EntityName": "Billing Period Start",
+    "EntityId": "BillingPeriodStart",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 150,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include BillingPeriodStart.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "BillingPeriodStart"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-010-M": {
+    "Function": "Presence",
+    "Reference": "BillingPeriodEnd",
+    "EntityType": "Dataset",
+    "EntityName": "Billing Period End",
+    "EntityId": "BillingPeriodEnd",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 140,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include BillingPeriodEnd.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "BillingPeriodEnd"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-011-C": {
+    "Function": "Presence",
+    "Reference": "ConsumedQuantity",
+    "EntityType": "Dataset",
+    "EntityName": "Consumed Quantity",
+    "EntityId": "ConsumedQuantity",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "USAGE_MEASUREMENT_SUPPORTED"
+    ],
+    "Order": 310,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include ConsumedQuantity when the service provider supports the measurement of usage.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ConsumedQuantity"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-012-C": {
+    "Function": "Presence",
+    "Reference": "CommitmentDiscountName",
+    "EntityType": "Dataset",
+    "EntityName": "Commitment Discount Name",
+    "EntityId": "CommitmentDiscountName",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "COMMITMENT_DISCOUNT_SUPPORTED"
+    ],
+    "Order": 260,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include CommitmentDiscountName when the service provider supports commitment discounts.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "CommitmentDiscountName"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-013-C": {
+    "Function": "Presence",
+    "Reference": "CommitmentDiscountId",
+    "EntityType": "Dataset",
+    "EntityName": "Commitment Discount ID",
+    "EntityId": "CommitmentDiscountId",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "COMMITMENT_DISCOUNT_SUPPORTED"
+    ],
+    "Order": 250,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include CommitmentDiscountId when the service provider supports commitment discounts.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "CommitmentDiscountId"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-014-C": {
+    "Function": "Presence",
+    "Reference": "CommitmentDiscountType",
+    "EntityType": "Dataset",
+    "EntityName": "Commitment Discount Type",
+    "EntityId": "CommitmentDiscountType",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "COMMITMENT_DISCOUNT_SUPPORTED"
+    ],
+    "Order": 290,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include CommitmentDiscountType when the service provider supports commitment discounts.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "CommitmentDiscountType"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-015-C": {
+    "Function": "Presence",
+    "Reference": "CommitmentDiscountUnit",
+    "EntityType": "Dataset",
+    "EntityName": "Commitment Discount Unit",
+    "EntityId": "CommitmentDiscountUnit",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "COMMITMENT_DISCOUNT_SUPPORTED"
+    ],
+    "Order": 300,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include CommitmentDiscountUnit when the service provider supports commitment discounts.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "CommitmentDiscountUnit"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-016-C": {
+    "Function": "Presence",
+    "Reference": "CommitmentDiscountCategory",
+    "EntityType": "Dataset",
+    "EntityName": "Commitment Discount Category",
+    "EntityId": "CommitmentDiscountCategory",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "COMMITMENT_DISCOUNT_SUPPORTED"
+    ],
+    "Order": 240,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include CommitmentDiscountCategory when the service provider supports commitment discounts.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "CommitmentDiscountCategory"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-017-C": {
+    "Function": "Presence",
+    "Reference": "CommitmentDiscountStatus",
+    "EntityType": "Dataset",
+    "EntityName": "Commitment Discount Status",
+    "EntityId": "CommitmentDiscountStatus",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "COMMITMENT_DISCOUNT_SUPPORTED"
+    ],
+    "Order": 280,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include CommitmentDiscountStatus when the service provider supports commitment discounts.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "CommitmentDiscountStatus"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-018-C": {
+    "Function": "Presence",
+    "Reference": "CommitmentDiscountQuantity",
+    "EntityType": "Dataset",
+    "EntityName": "Commitment Discount Quantity",
+    "EntityId": "CommitmentDiscountQuantity",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "COMMITMENT_DISCOUNT_SUPPORTED"
+    ],
+    "Type": "Static",
+    "Order": 270,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include CommitmentDiscountQuantity when the service provider supports commitment discounts.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "CommitmentDiscountQuantity"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-019-C": {
+    "Function": "Presence",
+    "Reference": "SubAccountId",
+    "EntityType": "Dataset",
+    "EntityName": "Sub Account ID",
+    "EntityId": "SubAccountId",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "SUB_ACCOUNT_SUPPORTED"
+    ],
+    "Order": 710,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include SubAccountId when the service provider supports a sub account construct.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "SubAccountId"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-020-C": {
+    "Function": "Presence",
+    "Reference": "CapacityReservationStatus",
+    "EntityType": "Dataset",
+    "EntityName": "Capacity Reservation Status",
+    "EntityId": "CapacityReservationStatus",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [
+      "CAPACITY_RESERVATION_SUPPORTED"
+    ],
+    "Order": 170,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include CapacityReservationStatus when the service provider supports capacity reservations.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "CapacityReservationStatus"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-021-M": {
+    "Function": "Presence",
+    "Reference": "PublisherName",
+    "EntityType": "Dataset",
+    "EntityName": "Publisher Name",
+    "EntityId": "PublisherName",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Deprecated",
+    "ApplicabilityCriteria": [],
+    "Order": -1,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include PublisherName.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "PublisherName"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-022-C": {
+    "Function": "Presence",
+    "Reference": "PricingCategory",
+    "EntityType": "Dataset",
+    "EntityName": "Pricing Category",
+    "EntityId": "PricingCategory",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "MULTIPLE_PRICING_CATEGORIES_SUPPORTED"
+    ],
+    "Order": 420,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include PricingCategory when the service provider supports more than one pricing category across all SKUs.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "PricingCategory"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-023-M": {
+    "Function": "Presence",
+    "Reference": "InvoiceIssuerName",
+    "EntityType": "Dataset",
+    "EntityName": "Invoice Issuer Name",
+    "EntityId": "InvoiceIssuerName",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 390,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include InvoiceIssuerName.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "InvoiceIssuerName"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-024-M": {
+    "Function": "Presence",
+    "Reference": "BillingAccountId",
+    "EntityType": "Dataset",
+    "EntityName": "Billing Account ID",
+    "EntityId": "BillingAccountId",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 100,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include BillingAccountId.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "BillingAccountId"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-025-M": {
+    "Function": "Presence",
+    "Reference": "ChargeDescription",
+    "EntityType": "Dataset",
+    "EntityName": "Charge Description",
+    "EntityId": "ChargeDescription",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 200,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include ChargeDescription.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ChargeDescription"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-026-M": {
+    "Function": "Presence",
+    "Reference": "ChargeClass",
+    "EntityType": "Dataset",
+    "EntityName": "Charge Class",
+    "EntityId": "ChargeClass",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 190,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include ChargeClass.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ChargeClass"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-027-O": {
+    "Function": "Presence",
+    "Reference": "ChargeFrequency",
+    "EntityType": "Dataset",
+    "EntityName": "Charge Frequency",
+    "EntityId": "ChargeFrequency",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 210,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage SHOULD include ChargeFrequency.",
+      "Keyword": "SHOULD",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ChargeFrequency"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-028-M": {
+    "Function": "Presence",
+    "Reference": "ChargePeriodEnd",
+    "EntityType": "Dataset",
+    "EntityName": "Charge Period End",
+    "EntityId": "ChargePeriodEnd",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Order": 220,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include ChargePeriodEnd.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ChargePeriodEnd"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-029-C": {
+    "Function": "Presence",
+    "Reference": "SubAccountName",
+    "EntityType": "Dataset",
+    "EntityName": "Sub Account Name",
+    "EntityId": "SubAccountName",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [
+      "SUB_ACCOUNT_SUPPORTED"
+    ],
+    "Order": 720,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include SubAccountName when the service provider supports a sub account construct.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "SubAccountName"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-030-M": {
+    "Function": "Presence",
+    "Reference": "ContractedCost",
+    "EntityType": "Dataset",
+    "EntityName": "Contracted Cost",
+    "EntityId": "ContractedCost",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 340,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include ContractedCost.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ContractedCost"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-031-M": {
+    "Function": "Presence",
+    "Reference": "EffectiveCost",
+    "EntityType": "Dataset",
+    "EntityName": "Effective Cost",
+    "EntityId": "EffectiveCost",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 360,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include EffectiveCost.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "EffectiveCost"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-032-M": {
+    "Function": "Presence",
+    "Reference": "ListCost",
+    "EntityType": "Dataset",
+    "EntityName": "List Cost",
+    "EntityId": "ListCost",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 400,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include ListCost.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ListCost"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-033-C": {
+    "Function": "Presence",
+    "Reference": "InvoiceId",
+    "EntityType": "Dataset",
+    "EntityName": "Invoice ID",
+    "EntityId": "InvoiceId",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "INVOICE_ISSUER_PAYABLE_INVOICES_SUPPORTED"
+    ],
+    "Order": 380,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include InvoiceId when the invoice issuer supports payable invoices.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "InvoiceId"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-034-C": {
+    "Function": "Presence",
+    "Reference": "ContractedUnitPrice",
+    "EntityType": "Dataset",
+    "EntityName": "Contracted Unit Price",
+    "EntityId": "ContractedUnitPrice",
+    "Notes": "Presence rule",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "NEGOTIATED_PRICING_SUPPORTED"
+    ],
+    "Order": 350,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include ContractedUnitPrice when the service provider supports negotiated pricing concepts.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ContractedUnitPrice"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-035-M": {
+    "Function": "Presence",
+    "Reference": "BillingCurrency",
+    "EntityType": "Dataset",
+    "EntityName": "Billing Currency",
+    "EntityId": "BillingCurrency",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 130,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include BillingCurrency.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "BillingCurrency"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-036-M": {
+    "Function": "Presence",
+    "Reference": "PricingQuantity",
+    "EntityType": "Dataset",
+    "EntityName": "Pricing Quantity",
+    "EntityId": "PricingQuantity",
+    "Notes": "PricingQuantity must be present in dataset",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 560,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include PricingQuantity.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "PricingQuantity"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-037-M": {
+    "Function": "Presence",
+    "Reference": "ChargePeriodStart",
+    "EntityType": "Dataset",
+    "EntityName": "Charge Period Start",
+    "EntityId": "ChargePeriodStart",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Order": 230,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include ChargePeriodStart.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ChargePeriodStart"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-038-M": {
+    "Function": "Presence",
+    "Reference": "ProviderName",
+    "EntityType": "Dataset",
+    "EntityName": "Provider Name",
+    "EntityId": "ProviderName",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Deprecated",
+    "ApplicabilityCriteria": [],
+    "Order": -1,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include ProviderName.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ProviderName"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-039-C": {
+    "Function": "Presence",
+    "Reference": "ResourceType",
+    "EntityType": "Dataset",
+    "EntityName": "Resource Type",
+    "EntityId": "ResourceType",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED",
+      "RESOURCE_TYPE_ASSIGNMENT_SUPPORTED"
+    ],
+    "Order": 620,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include ResourceType when the service provider supports billing based on provisioned resources and supports assigning types to resources.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ResourceType"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-040-M": {
+    "Function": "Presence",
+    "Reference": "ServiceCategory",
+    "EntityType": "Dataset",
+    "EntityName": "Service Category",
+    "EntityId": "ServiceCategory",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 630,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include ServiceCategory.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ServiceCategory"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-041-M": {
+    "Function": "Presence",
+    "Reference": "ServiceName",
+    "EntityType": "Dataset",
+    "EntityName": "Service Name",
+    "EntityId": "ServiceName",
+    "Notes": "ServiceName must be present in dataset",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 640,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include ServiceName.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ServiceName"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-042-O": {
+    "Function": "Presence",
+    "Reference": "ServiceSubcategory",
+    "EntityType": "Dataset",
+    "EntityName": "Service Subcategory",
+    "EntityId": "ServiceSubcategory",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 660,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage SHOULD include ServiceSubcategory.",
+      "Keyword": "SHOULD",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ServiceSubcategory"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-043-C": {
+    "Function": "Presence",
+    "Reference": "ResourceId",
+    "EntityType": "Dataset",
+    "EntityName": "Resource ID",
+    "EntityId": "ResourceId",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED"
+    ],
+    "Order": 600,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include ResourceId when the service provider supports billing based on provisioned resources.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ResourceId"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-044-C": {
+    "Function": "Presence",
+    "Reference": "ResourceName",
+    "EntityType": "Dataset",
+    "EntityName": "Resource Name",
+    "EntityId": "ResourceName",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED"
+    ],
+    "Order": 610,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include ResourceName when the service provider supports billing based on provisioned resources.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ResourceName"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-045-C": {
+    "Function": "Presence",
+    "Reference": "PricingCurrency",
+    "EntityType": "Dataset",
+    "EntityName": "Pricing Currency",
+    "EntityId": "PricingCurrency",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
+    ],
+    "Order": 430,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include PricingCurrency when the service provider supports pricing and billing in different currencies.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "PricingCurrency"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-046-C": {
+    "Function": "Composite",
+    "Reference": "PricingCurrencyContractedUnitPrice",
+    "EntityType": "Dataset",
+    "EntityName": "Pricing Currency Contracted Unit Price",
+    "EntityId": "PricingCurrencyContractedUnitPrice",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "PUBLIC_PRICE_LIST_SUPPORTED",
+      "VIRTUAL_CURRENCY_SUPPORTED"
+    ],
+    "Order": 440,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST adhere to the following PricingCurrencyContractedUnitPrice presence requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-047-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-048-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-049-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CAU-CostAndUsage-D-047-C",
+        "CAU-CostAndUsage-D-048-C",
+        "CAU-CostAndUsage-D-049-C"
+      ]
+    }
+  },
+  "CAU-CostAndUsage-D-047-C": {
+    "Function": "Presence",
+    "Reference": "PricingCurrencyContractedUnitPrice",
+    "EntityType": "Dataset",
+    "EntityName": "Pricing Currency Contracted Unit Price",
+    "EntityId": "PricingCurrencyContractedUnitPrice",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "PUBLIC_PRICE_LIST_SUPPORTED",
+      "VIRTUAL_CURRENCY_SUPPORTED"
+    ],
+    "Order": 450,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include PricingCurrencyContractedUnitPrice when the service provider supports prices in virtual currency and publishes unit prices exclusive of discounts.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "PricingCurrencyContractedUnitPrice"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-048-C": {
+    "Function": "Presence",
+    "Reference": "PricingCurrencyContractedUnitPrice",
+    "EntityType": "Dataset",
+    "EntityName": "Pricing Currency Contracted Unit Price",
+    "EntityId": "PricingCurrencyContractedUnitPrice",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "PUBLIC_PRICE_LIST_SUPPORTED",
+      "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
+    ],
+    "Order": 460,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage SHOULD include PricingCurrencyContractedUnitPrice when the service provider supports pricing and billing in different currencies and publishes unit prices exclusive of discounts.",
+      "Keyword": "SHOULD",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "PricingCurrencyContractedUnitPrice"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-049-C": {
+    "Function": "Presence",
+    "Reference": "PricingCurrencyContractedUnitPrice",
+    "EntityType": "Dataset",
+    "EntityName": "Pricing Currency Contracted Unit Price",
+    "EntityId": "PricingCurrencyContractedUnitPrice",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "PUBLIC_PRICE_LIST_SUPPORTED",
+      "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
+    ],
+    "Order": 470,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MAY include PricingCurrencyContractedUnitPrice in all other cases.",
+      "Keyword": "MAY",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "PricingCurrencyContractedUnitPrice"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-050-C": {
+    "Function": "Composite",
+    "Reference": "PricingCurrencyEffectiveCost",
+    "EntityType": "Dataset",
+    "EntityName": "Pricing Currency Effective Cost",
+    "EntityId": "PricingCurrencyEffectiveCost",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "PUBLIC_PRICE_LIST_SUPPORTED",
+      "VIRTUAL_CURRENCY_SUPPORTED"
+    ],
+    "Order": 480,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST adhere to the following PricingCurrencyEffectiveCost presence requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-051-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-052-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-053-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CAU-CostAndUsage-D-051-C",
+        "CAU-CostAndUsage-D-052-C",
+        "CAU-CostAndUsage-D-053-C"
+      ]
+    }
+  },
+  "CAU-CostAndUsage-D-051-C": {
+    "Function": "Presence",
+    "Reference": "PricingCurrencyEffectiveCost",
+    "EntityType": "Dataset",
+    "EntityName": "Pricing Currency Effective Cost",
+    "EntityId": "PricingCurrencyEffectiveCost",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "PUBLIC_PRICE_LIST_SUPPORTED",
+      "VIRTUAL_CURRENCY_SUPPORTED"
+    ],
+    "Order": 490,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include PricingCurrencyEffectiveCost when the service provider supports prices in virtual currency and publishes unit prices exclusive of discounts.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "PricingCurrencyEffectiveCost"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-052-C": {
+    "Function": "Presence",
+    "Reference": "PricingCurrencyEffectiveCost",
+    "EntityType": "Dataset",
+    "EntityName": "Pricing Currency Effective Cost",
+    "EntityId": "PricingCurrencyEffectiveCost",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "PUBLIC_PRICE_LIST_SUPPORTED",
+      "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
+    ],
+    "Order": 500,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage SHOULD include PricingCurrencyEffectiveCost when the service provider supports pricing and billing in different currencies and publishes unit prices exclusive of discounts.",
+      "Keyword": "SHOULD",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "PricingCurrencyEffectiveCost"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-053-C": {
+    "Function": "Presence",
+    "Reference": "PricingCurrencyEffectiveCost",
+    "EntityType": "Dataset",
+    "EntityName": "Pricing Currency Effective Cost",
+    "EntityId": "PricingCurrencyEffectiveCost",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "PUBLIC_PRICE_LIST_SUPPORTED",
+      "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
+    ],
+    "Order": 510,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MAY include PricingCurrencyEffectiveCost in all other cases.",
+      "Keyword": "MAY",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "PricingCurrencyEffectiveCost"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-054-C": {
+    "Function": "Composite",
+    "Reference": "PricingCurrencyListUnitPrice",
+    "EntityType": "Dataset",
+    "EntityName": "Pricing Currency List Unit Price",
+    "EntityId": "PricingCurrencyListUnitPrice",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "PUBLIC_PRICE_LIST_SUPPORTED",
+      "VIRTUAL_CURRENCY_SUPPORTED"
+    ],
+    "Type": "Static",
+    "Order": 520,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST adhere to the following PricingCurrencyListUnitPrice presence requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-055-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-056-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-057-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CAU-CostAndUsage-D-055-C",
+        "CAU-CostAndUsage-D-056-C",
+        "CAU-CostAndUsage-D-057-C"
+      ]
+    }
+  },
+  "CAU-CostAndUsage-D-055-C": {
+    "Function": "Presence",
+    "Reference": "PricingCurrencyListUnitPrice",
+    "EntityType": "Dataset",
+    "EntityName": "Pricing Currency List Unit Price",
+    "EntityId": "PricingCurrencyListUnitPrice",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "PUBLIC_PRICE_LIST_SUPPORTED",
+      "VIRTUAL_CURRENCY_SUPPORTED"
+    ],
+    "Type": "Static",
+    "Order": 530,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include PricingCurrencyListUnitPrice when the service provider supports prices in virtual currency and publishes unit prices exclusive of discounts.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "PricingCurrencyListUnitPrice"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-056-C": {
+    "Function": "Presence",
+    "Reference": "PricingCurrencyListUnitPrice",
+    "EntityType": "Dataset",
+    "EntityName": "Pricing Currency List Unit Price",
+    "EntityId": "PricingCurrencyListUnitPrice",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "PUBLIC_PRICE_LIST_SUPPORTED",
+      "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
+    ],
+    "Type": "Static",
+    "Order": 540,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage SHOULD include PricingCurrencyListUnitPrice when the service provider supports pricing and billing in different currencies and publishes unit prices exclusive of discounts.",
+      "Keyword": "SHOULD",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "PricingCurrencyListUnitPrice"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-057-C": {
+    "Function": "Presence",
+    "Reference": "PricingCurrencyListUnitPrice",
+    "EntityType": "Dataset",
+    "EntityName": "Pricing Currency List Unit Price",
+    "EntityId": "PricingCurrencyListUnitPrice",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "PUBLIC_PRICE_LIST_SUPPORTED",
+      "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
+    ],
+    "Type": "Static",
+    "Order": 550,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MAY include PricingCurrencyListUnitPrice in all other cases.",
+      "Keyword": "MAY",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "PricingCurrencyListUnitPrice"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-058-C": {
+    "Function": "Presence",
+    "Reference": "SkuPriceId",
+    "EntityType": "Dataset",
+    "EntityName": "Sku Price ID",
+    "EntityId": "SkuPriceId",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "PUBLIC_PRICE_LIST_SUPPORTED",
+      "UNIT_PRICING_SUPPORTED"
+    ],
+    "Order": 700,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include SkuPriceId when the service provider supports unit pricing concepts and publishes price lists, publicly or as part of contracting.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "SkuPriceId"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-059-C": {
+    "Function": "Presence",
+    "Reference": "SkuMeter",
+    "EntityType": "Dataset",
+    "EntityName": "Sku Meter",
+    "EntityId": "SkuMeter",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "PUBLIC_PRICE_LIST_SUPPORTED",
+      "UNIT_PRICING_SUPPORTED"
+    ],
+    "Order": 680,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include SkuMeter when the service provider supports unit pricing concepts and publishes price lists, publicly or as part of contracting.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "SkuMeter"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-060-C": {
+    "Function": "Presence",
+    "Reference": "SkuId",
+    "EntityType": "Dataset",
+    "EntityName": "Sku ID",
+    "EntityId": "SkuId",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "PUBLIC_PRICE_LIST_SUPPORTED",
+      "UNIT_PRICING_SUPPORTED"
+    ],
+    "Order": 670,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include SkuId when the service provider supports unit pricing concepts and publishes price lists, publicly or as part of contracting.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "SkuId"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-061-C": {
+    "Function": "Presence",
+    "Reference": "SkuPriceDetails",
+    "EntityType": "Dataset",
+    "EntityName": "Sku Price Details",
+    "EntityId": "SkuPriceDetails",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "PUBLIC_PRICE_LIST_SUPPORTED",
+      "UNIT_PRICING_SUPPORTED"
+    ],
+    "Order": 690,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include SkuPriceDetails when the service provider supports unit pricing concepts and publishes price lists, publicly or as part of contracting.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "SkuPriceDetails"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-062-C": {
+    "Function": "Presence",
+    "Reference": "RegionName",
+    "EntityType": "Dataset",
+    "EntityName": "Region Name",
+    "EntityId": "RegionName",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "REGION_SUPPORTED"
+    ],
+    "Order": 590,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include RegionName when the host provider supports deploying resources or services within a region.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "RegionName"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-063-C": {
+    "Function": "Presence",
+    "Reference": "RegionId",
+    "EntityType": "Dataset",
+    "EntityName": "Region ID",
+    "EntityId": "RegionId",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "REGION_SUPPORTED"
+    ],
+    "Order": 580,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include RegionId when the host provider supports deploying resources or services within a region.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "RegionId"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-064-C": {
+    "Function": "Presence",
+    "Reference": "Tags",
+    "EntityType": "Dataset",
+    "EntityName": "Tags",
+    "EntityId": "Tags",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "TAGGING_SUPPORTED"
+    ],
+    "Order": 740,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include Tags when the data generator supports setting user or provider-defined tags.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "Tags"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-065-C": {
+    "Function": "Presence",
+    "Reference": "CapacityReservationId",
+    "EntityType": "Dataset",
+    "EntityName": "Capacity Reservation ID",
+    "EntityId": "CapacityReservationId",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [
+      "CAPACITY_RESERVATION_SUPPORTED"
+    ],
+    "Order": 160,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include CapacityReservationId when the service provider supports capacity reservations.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "CapacityReservationId"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-066-C": {
+    "Function": "Presence",
+    "Reference": "ConsumedUnit",
+    "EntityType": "Dataset",
+    "EntityName": "Consumed Unit",
+    "EntityId": "ConsumedUnit",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [
+      "USAGE_MEASUREMENT_SUPPORTED"
+    ],
+    "Order": 320,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include ConsumedUnit when the service provider supports the measurement of usage.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ConsumedUnit"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-067-C": {
+    "Function": "Presence",
+    "Reference": "SubAccountType",
+    "EntityType": "Dataset",
+    "EntityName": "Sub Account Type",
+    "EntityId": "SubAccountType",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [
+      "MULTIPLE_SUB_ACCOUNT_TYPES_SUPPORTED"
+    ],
+    "Order": 730,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include SubAccountType when the service provider supports more than one possible SubAccountType value.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "SubAccountType"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-068-M": {
+    "Function": "Presence",
+    "Reference": "PricingUnit",
+    "EntityType": "Dataset",
+    "EntityName": "Pricing Unit",
+    "EntityId": "PricingUnit",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Order": 570,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include PricingUnit.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "PricingUnit"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-069-C": {
+    "Function": "Presence",
+    "Reference": "AllocatedMethodDetails",
+    "EntityType": "Dataset",
+    "EntityName": "Allocated Method Details",
+    "EntityId": "AllocatedMethodDetails",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    ],
+    "Type": "Static",
+    "Order": 30,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage SHOULD include AllocatedMethodDetails when the data generator supports data generator-calculated split cost allocation.",
+      "Keyword": "SHOULD",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "AllocatedMethodDetails"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-070-C": {
+    "Function": "Presence",
+    "Reference": "AllocatedMethodId",
+    "EntityType": "Dataset",
+    "EntityName": "Allocated Method ID",
+    "EntityId": "AllocatedMethodId",
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    ],
+    "Order": 40,
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include AllocatedMethodId when the data generator supports data generator-calculated split cost allocation.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "AllocatedMethodId"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-071-C": {
+    "Function": "Presence",
+    "Reference": "AllocatedResourceId",
+    "EntityType": "Dataset",
+    "EntityName": "Allocated Resource ID",
+    "EntityId": "AllocatedResourceId",
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    ],
+    "Order": 50,
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include AllocatedResourceId when the data generator supports data generator-calculated split cost allocation.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "AllocatedResourceId"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-072-C": {
+    "Function": "Presence",
+    "Reference": "AllocatedResourceName",
+    "EntityType": "Dataset",
+    "EntityName": "Allocated Resource Name",
+    "EntityId": "AllocatedResourceName",
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    ],
+    "Order": 60,
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include AllocatedResourceName when the data generator supports data generator-calculated split cost allocation.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "AllocatedResourceName"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-073-C": {
+    "Function": "Presence",
+    "Reference": "AllocatedTags",
+    "EntityType": "Dataset",
+    "EntityName": "Allocated Tags",
+    "EntityId": "AllocatedTags",
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    ],
+    "Order": 70,
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include AllocatedTags when the data generator supports data generator-calculated split cost allocation.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "AllocatedTags"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-074-C": {
+    "Function": "Presence",
+    "Reference": "ContractApplied",
+    "EntityType": "Dataset",
+    "EntityName": "Contract Applied",
+    "EntityId": "ContractApplied",
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "CONTRACT_COMMITMENTS_SUPPORTED"
+    ],
+    "Order": 330,
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include ContractApplied when the service provider supports contract commitments.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ContractApplied"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-075-M": {
+    "Function": "Presence",
+    "Reference": "HostProviderName",
+    "EntityType": "Dataset",
+    "EntityName": "Host Provider Name",
+    "EntityId": "HostProviderName",
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 370,
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include HostProviderName.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "HostProviderName"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-076-M": {
+    "Function": "Presence",
+    "Reference": "ServiceProviderName",
+    "EntityType": "Dataset",
+    "EntityName": "Service Provider Name",
+    "EntityId": "ServiceProviderName",
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 650,
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include ServiceProviderName.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ServiceProviderName"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-077-M": {
+    "Function": "Presence",
+    "Reference": "CostAndUsage",
+    "EntityType": "Dataset",
+    "EntityName": "Cost and Usage",
+    "EntityId": "CostAndUsage",
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 10,
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST be present.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-078-M": {
+    "Function": "Format",
+    "Reference": "CostAndUsage",
+    "EntityType": "Dataset",
+    "EntityName": "Cost and Usage",
+    "EntityId": "CostAndUsage",
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 1250,
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST conform to CorrectionHandling requirements.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-079-M": {
+    "Function": "Format",
+    "Reference": "CostAndUsage",
+    "EntityType": "Dataset",
+    "EntityName": "Cost and Usage",
+    "EntityId": "CostAndUsage",
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 1260,
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST conform to DatasetCompleteness requirements.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-080-M": {
+    "Function": "Format",
+    "Reference": "CostAndUsage",
+    "EntityType": "Dataset",
+    "EntityName": "Cost and Usage",
+    "EntityId": "CostAndUsage",
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 1270,
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST conform to DatasetConfiguration requirements.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-081-M": {
+    "Function": "Format",
+    "Reference": "CostAndUsage",
+    "EntityType": "Dataset",
+    "EntityName": "Cost and Usage",
+    "EntityId": "CostAndUsage",
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 1280,
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST conform to DeliveryHandling requirements.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-082-C": {
+    "Function": "Validation",
+    "Reference": "CostAndUsage",
+    "EntityType": "Dataset",
+    "EntityName": "Cost and Usage",
+    "EntityId": "CostAndUsage",
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 1290,
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include charges representing unused portions of a commitment when the commitment is not fully utilized.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-083-C": {
+    "Function": "Validation",
+    "Reference": "CostAndUsage",
+    "EntityType": "Dataset",
+    "EntityName": "Cost and Usage",
+    "EntityId": "CostAndUsage",
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 1300,
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include separate charges representing discounted and non-discounted portions when a discount applies to only a portion of the originally incurred charge.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-084-C": {
+    "Function": "Composite",
+    "Reference": "CostAndUsage",
+    "EntityType": "Dataset",
+    "EntityName": "Cost and Usage",
+    "EntityId": "CostAndUsage",
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    ],
+    "Order": 1310,
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "When the data generator supports data generator-calculated split cost allocation, CostAndUsage MUST adhere to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-085-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-086-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-087-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-088-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-089-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CAU-CostAndUsage-D-085-C",
+        "CAU-CostAndUsage-D-086-C",
+        "CAU-CostAndUsage-D-087-C",
+        "CAU-CostAndUsage-D-088-C",
+        "CAU-CostAndUsage-D-089-C"
+      ]
+    }
+  },
+  "CAU-CostAndUsage-D-085-C": {
+    "Function": "Validation",
+    "Reference": "CostAndUsage",
+    "EntityType": "Dataset",
+    "EntityName": "Cost and Usage",
+    "EntityId": "CostAndUsage",
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    ],
+    "Order": 1320,
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST have its data generator-calculated split cost allocation method documented and accessible to practitioners.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-086-C": {
+    "Function": "Validation",
+    "Reference": "CostAndUsage",
+    "EntityType": "Dataset",
+    "EntityName": "Cost and Usage",
+    "EntityId": "CostAndUsage",
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    ],
+    "Order": 1330,
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage SHOULD offer data generator-calculated split cost allocation on an opt-in basis.",
+      "Keyword": "SHOULD",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-087-C": {
+    "Function": "Validation",
+    "Reference": "CostAndUsage",
+    "EntityType": "Dataset",
+    "EntityName": "Cost and Usage",
+    "EntityId": "CostAndUsage",
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    ],
+    "Order": 1340,
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MAY contain records for concepts not related to resource usage, when it aligns with the documented data generator-calculated split cost allocation method.",
+      "Keyword": "MAY",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-088-C": {
+    "Function": "Validation",
+    "Reference": "CostAndUsage",
+    "EntityType": "Dataset",
+    "EntityName": "Cost and Usage",
+    "EntityId": "CostAndUsage",
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    ],
+    "Order": 1350,
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MAY contain records for unused or unallocated usage from the origin charge as separate allocated charges, when it aligns with the documented data generator-calculated split cost allocation method.",
+      "Keyword": "MAY",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-089-C": {
+    "Function": "Validation",
+    "Reference": "CostAndUsage",
+    "EntityType": "Dataset",
+    "EntityName": "Cost and Usage",
+    "EntityId": "CostAndUsage",
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    ],
+    "Order": 1360,
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MAY contain allocated charges with apportioned costs for unused or unallocated usage, when it aligns with the documented data generator-calculated split cost allocation method.",
+      "Keyword": "MAY",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-090-O": {
+    "Function": "Validation",
+    "Reference": "CostAndUsage",
+    "EntityType": "Dataset",
+    "EntityName": "Cost and Usage",
+    "EntityId": "CostAndUsage",
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 1370,
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage SHOULD reflect all applied discounts in charges they pertain to.",
+      "Keyword": "SHOULD",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-091-O": {
+    "Function": "Validation",
+    "Reference": "CostAndUsage",
+    "EntityType": "Dataset",
+    "EntityName": "Cost and Usage",
+    "EntityId": "CostAndUsage",
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 1380,
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage SHOULD NOT represent applied discounts as separate negating or offsetting charges.",
+      "Keyword": "SHOULD NOT",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-092-C": {
+    "Function": "Format",
+    "Reference": "CostAndUsage",
+    "EntityType": "Dataset",
+    "EntityName": "Cost and Usage",
+    "EntityId": "CostAndUsage",
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    ],
+    "Order": 1390,
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage FOCUS columns MUST conform to DataGeneratorCalculatedSplitCostAllocationHandling requirements when the data generator supports data generator-calculated split cost allocation.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": [
+        "ATT-DataGeneratorCalculatedSplitCostAllocationHandling-A-000-C"
+      ]
+    }
+  },
+  "CAU-CostAndUsage-D-093-M": {
+    "Function": "Format",
+    "Reference": "CostAndUsage",
+    "EntityType": "Dataset",
+    "EntityName": "Cost and Usage",
+    "EntityId": "CostAndUsage",
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 1400,
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage FOCUS columns MUST conform to FocusColumnHandling requirements.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": [
+        "ATT-FocusColumnHandling-A-000-M"
+      ]
+    }
+  },
+  "CAU-CostAndUsage-D-094-M": {
+    "Function": "Format",
+    "Reference": "CostAndUsage",
+    "EntityType": "Dataset",
+    "EntityName": "Cost and Usage",
+    "EntityId": "CostAndUsage",
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 1410,
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage FOCUS columns MUST conform to NullHandling requirements.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": [
+        "ATT-NullHandling-A-000-C"
+      ]
+    }
+  },
+  "CAU-CostAndUsage-D-095-M": {
+    "Function": "Format",
+    "Reference": "CostAndUsage",
+    "EntityType": "Dataset",
+    "EntityName": "Cost and Usage",
+    "EntityId": "CostAndUsage",
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 1420,
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage custom columns MUST conform to CustomColumnHandling requirements.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": [
+        "ATT-CustomColumnHandling-A-000-M"
+      ]
+    }
+  },
+  "CAU-CostAndUsage-D-096-C": {
+    "Function": "Presence",
+    "Reference": "CostAndUsage",
+    "EntityType": "Dataset",
+    "EntityName": "Cost and Usage",
+    "EntityId": "CostAndUsage",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Order": 750,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage SHOULD include custom columns needed to identify all applied discounts when FOCUS columns are not sufficient.",
+      "Keyword": "SHOULD",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-097-C": {
+    "Function": "Presence",
+    "Reference": "CommitmentProgramEligibilityDetails",
+    "EntityType": "Dataset",
+    "EntityName": "Commitment Program Eligibility Details",
+    "EntityId": "CommitmentProgramEligibilityDetails",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [
+      "COMMITMENT_PROGRAMS_SUPPORTED"
+    ],
+    "Order": 305,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include CommitmentProgramEligibilityDetails when the service provider supports at least one commitment program.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-098-C": {
+    "Function": "Presence",
+    "Reference": "InvoiceDetailId",
+    "EntityType": "Dataset",
+    "EntityName": "Invoice Detail ID",
+    "EntityId": "InvoiceDetailId",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [
+      "INVOICE_ISSUER_PAYABLE_INVOICES_SUPPORTED"
+    ],
+    "Order": 375,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include InvoiceDetailId when the invoice issuer supports payable invoices.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}
