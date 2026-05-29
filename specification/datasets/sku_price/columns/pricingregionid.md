@@ -15,10 +15,10 @@ PricingRegionId MUST adhere to the following requirements:
 
 ## Implementation Guidance
 
-Practitioners are encouraged to carefully distinguish between **Pricing Region ID** and **Region ID**. 
+Practitioners are encouraged to carefully distinguish between **Pricing Region ID** and **Region ID**.
 
-* **Pricing Region ID** defines the geographic boundary for which the *rate itself* is valid. 
-* **Region ID** defines the physical location where a specific *resource* is provisioned. 
+* **Pricing Region ID** defines the geographic boundary for which the *rate itself* is valid.
+* **Region ID** defines the physical location where a specific *resource* is provisioned.
 
 In many cases these will be identical. However, if a pricing rate is global but still applies to specific regional deployments, or if the provider rate card dictates a resource deployment region that differs from the pricing boundary, `Pricing Region ID` reflects the pricing boundary. The set of `Region ID` values can instead be represented as key-value pairs within [SKU Price Eligibility](#datasets.skuprice.skupriceeligibility) to capture the resource location without conflating the rate card logic.
 

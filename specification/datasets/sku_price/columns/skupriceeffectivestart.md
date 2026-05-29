@@ -1,6 +1,6 @@
 # SKU Price Effective Start
 
-SKU Price Effective Start represents the inclusive date and time when the specified unit price and its associated pricing properties become active and applicable for a given [*SKU Price ID*](#datasets.skuprice.skupriceid). 
+SKU Price Effective Start represents the inclusive date and time when the specified unit price and its associated pricing properties become active and applicable for a given [*SKU Price ID*](#datasets.skuprice.skupriceid).
 
 When combined with [SKU Price Effective End](#datasets.skuprice.skupriceeffectiveend), this column defines the precise validity window of a rate card entry. This column allows practitioners to correctly map historical or future usage to the exact unit price that was valid at the time the consumption occurred, enabling accurate cost rating and temporal price variation analysis.
 

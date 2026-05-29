@@ -1,6 +1,6 @@
 # Pricing Service Name
 
-Pricing Service Name represents an offering that can be purchased from a [*service provider*](#glossary:service-provider) (e.g., virtual machine, database, professional service). A *service* offering can include various types of usage or other [*charges*](#glossary:charge). 
+Pricing Service Name represents an offering that can be purchased from a [*service provider*](#glossary:service-provider) (e.g., virtual machine, database, professional service). A *service* offering can include various types of usage or other [*charges*](#glossary:charge).
 
 Pricing Service Name is a display name for the offering to which the specified unit price applies. The Pricing Service Name is commonly used for scenarios like analyzing unit price variations across services or filtering rate cards to find specific offerings.
 
@@ -15,7 +15,7 @@ PricingServiceName MUST adhere to the following requirements:
 
 ## Implementation Guidance
 
-Practitioners are encouraged to carefully distinguish between **Pricing Service Name** and **Service Name**. 
+Practitioners are encouraged to carefully distinguish between **Pricing Service Name** and **Service Name**.
 
 * **Pricing Service Name** defines the name of the service as explicitly published in the provider's rate card or pricing catalog.
 * **Service Name** defines the name of the service associated with the actual usage or provisioned resource in the cost and usage data.
@@ -32,7 +32,7 @@ Pricing Service Name
 
 ## Description
 
-A display name for the offering to which the specified unit price applies (e.g., cloud virtual machine, SaaS database).
+A display name for the offering to which the specified unit price applies.
 
 ## Content Constraints
 

@@ -6,35 +6,35 @@ The columns are presented in alphabetical order.
 
 ## Columns
 
-| Column                                                                        | Column Type        | Feature Level | Allows Nulls | Data Type |
-| ----------------------------------------------------------------------------- | ------------------ | ------------- | ------------ | --------- |
-| [Charge Frequency](#datasets.skuprice.chargefrequency)                                              | Dimension          | [Conditional](#conditions.includesmultiplechargefrequencies) | False        | String    |
-| [Contract Commitment Discount Percentage](#datasets.skuprice.contractcommitmentdiscountpercentage)    | Metric             | [Conditional](#conditions.includescontractcommitments) | True         | Decimal   |
-| [Contract Commitment Duration Type](#datasets.skuprice.contractcommitmentdurationtype)              | Dimension          | [Conditional](#conditions.includescontractcommitments) | True         | String    |
-| [Contract Commitment Payment Model](#datasets.skuprice.contractcommitmentpaymentmodel)              | Dimension          | [Conditional](#conditions.includescontractcommitments) | True         | String    |
-| [Contract ID](#datasets.skuprice.contractid)                                                        | Dimension          | [Conditional](#conditions.includescontractcommitments) | True         | String    |
-| [Currency Category](#datasets.skuprice.currencycategory)                                            | Dimension          | Mandatory     | False        | String    |
-| [Pricing Category](#datasets.skuprice.pricingcategory)                                              | Dimension          | Mandatory     | False        | String    |
-| [Pricing Currency](#datasets.skuprice.pricingcurrency)                                              | Dimension          | Mandatory     | False        | String    |
-| [Pricing Region ID](#datasets.skuprice.pricingregionid)                                             | Dimension          | [Conditional](#conditions.includesregions) | False        | String    |
-| [Pricing Service Name](#datasets.skuprice.pricingservicename)                                       | Dimension          | Mandatory     | False        | String    |
-| [Pricing Unit](#datasets.skuprice.pricingunit)                                                      | Dimension          | Mandatory     | False        | String    |
-| [Service Provider Name](#datasets.skuprice.serviceprovidername)                                     | Dimension          | Mandatory     | False        | String    |
-| [SKU ID](#datasets.skuprice.skuid)                                                                  | Dimension          | Mandatory     | False        | String    |
-| [SKU Price Created](#datasets.skuprice.skupricecreated)                                             | Dimension          | Mandatory     | False        | Date/Time |
-| [SKU Price Description](#datasets.skuprice.skupricedescription)                                     | Dimension          | Mandatory     | False        | String    |
-| [SKU Price Details](#datasets.skuprice.skupricedetails)                                             | Dimension          | Mandatory     | True         | JSON      |
-| [SKU Price Effective End](#datasets.skuprice.skupriceeffectiveend)                                  | Dimension          | Mandatory     | True         | Date/Time |
-| [SKU Price Effective Start](#datasets.skuprice.skupriceeffectivestart)                              | Dimension          | Mandatory     | False        | Date/Time |
-| [SKU Price Eligibility](#datasets.skuprice.skupriceeligibility)                                     | Dimension          | Mandatory     | True         | JSON      |
-| [SKU Price ID](#datasets.skuprice.skupriceid)                                                       | Dimension          | Mandatory     | False        | String    |
-| [SKU Price Last Updated](#datasets.skuprice.skupricelastupdated)                                    | Dimension          | Mandatory     | False        | Date/Time |
-| [SKU Price Lifecycle Status](#datasets.skuprice.skupricelifecyclestatus)                            | Dimension          | Mandatory     | False        | String    |
-| [Tier Maximum](#datasets.skuprice.tiermaximum)                                                      | Metric             | [Conditional](#conditions.includestieredpricing) | True         | Decimal   |
-| [Tier Minimum](#datasets.skuprice.tierminimum)                                                      | Metric             | [Conditional](#conditions.includestieredpricing) | False        | Decimal   |
-| [Tier Name](#datasets.skuprice.tiername)                                                            | Dimension          | [Conditional](#conditions.includestieredpricing) | True         | String    |
-| [Unit Price](#datasets.skuprice.unitprice)                                                          | Metric             | Mandatory     | False        | Decimal   |
-| [Unit Price Category](#datasets.skuprice.unitpricecategory)                                         | Dimension          | Mandatory     | False        | String    |
+| Column                                                                              | Column Type | Feature Level                                                  | Allows Nulls | Data Type |
+| ----------------------------------------------------------------------------------- | ----------- | -------------------------------------------------------------- | ------------ | --------- |
+| [Charge Frequency](#datasets.skuprice.chargefrequency)                              | Dimension   | [Conditional](#conditions.includesmultiplechargefrequencies)   | False        | String    |
+| [Contract Commitment Discount Percentage](#datasets.skuprice.contractcommitmentdiscountpercentage) | Metric      | [Conditional](#conditions.includescontractcommitments)         | True         | Decimal   |
+| [Contract Commitment Duration Type](#datasets.skuprice.contractcommitmentdurationtype) | Dimension   | [Conditional](#conditions.includescontractcommitments)         | True         | String    |
+| [Contract Commitment Payment Model](#datasets.skuprice.contractcommitmentpaymentmodel) | Dimension   | [Conditional](#conditions.includescontractcommitments)         | True         | String    |
+| [Contract ID](#datasets.skuprice.contractid)                                        | Dimension   | [Conditional](#conditions.includescontractcommitments)         | True         | String    |
+| [Currency Category](#datasets.skuprice.currencycategory)                            | Dimension   | Mandatory                                                      | False        | String    |
+| [Pricing Category](#datasets.skuprice.pricingcategory)                              | Dimension   | Mandatory                                                      | False        | String    |
+| [Pricing Currency](#datasets.skuprice.pricingcurrency)                              | Dimension   | Mandatory                                                      | False        | String    |
+| [Pricing Region ID](#datasets.skuprice.pricingregionid)                             | Dimension   | [Conditional](#conditions.includesregions)                     | False        | String    |
+| [Pricing Service Name](#datasets.skuprice.pricingservicename)                       | Dimension   | Mandatory                                                      | False        | String    |
+| [Pricing Unit](#datasets.skuprice.pricingunit)                                      | Dimension   | Mandatory                                                      | False        | String    |
+| [Service Provider Name](#datasets.skuprice.serviceprovidername)                     | Dimension   | Mandatory                                                      | False        | String    |
+| [SKU ID](#datasets.skuprice.skuid)                                                  | Dimension   | Mandatory                                                      | False        | String    |
+| [SKU Price Created](#datasets.skuprice.skupricecreated)                             | Dimension   | Mandatory                                                      | False        | Date/Time |
+| [SKU Price Description](#datasets.skuprice.skupricedescription)                     | Dimension   | Mandatory                                                      | False        | String    |
+| [SKU Price Details](#datasets.skuprice.skupricedetails)                             | Dimension   | Mandatory                                                      | False        | JSON      |
+| [SKU Price Effective End](#datasets.skuprice.skupriceeffectiveend)                  | Dimension   | Mandatory                                                      | True         | Date/Time |
+| [SKU Price Effective Start](#datasets.skuprice.skupriceeffectivestart)              | Dimension   | Mandatory                                                      | False        | Date/Time |
+| [SKU Price Eligibility](#datasets.skuprice.skupriceeligibility)                     | Dimension   | Mandatory                                                      | True         | JSON      |
+| [SKU Price ID](#datasets.skuprice.skupriceid)                                       | Dimension   | Mandatory                                                      | False        | String    |
+| [SKU Price Last Updated](#datasets.skuprice.skupricelastupdated)                    | Dimension   | Mandatory                                                      | False        | Date/Time |
+| [SKU Price Lifecycle Status](#datasets.skuprice.skupricelifecyclestatus)            | Dimension   | Mandatory                                                      | False        | String    |
+| [Unit Price](#datasets.skuprice.unitprice)                                          | Metric      | Mandatory                                                      | False        | Decimal   |
+| [Unit Price Category](#datasets.skuprice.unitpricecategory)                         | Dimension   | Mandatory                                                      | False        | String    |
+| [Volume Tier Maximum](#datasets.skuprice.volumetiermaximum)                         | Metric      | [Conditional](#conditions.includesvolumetierpricing)           | True         | Decimal   |
+| [Volume Tier Minimum](#datasets.skuprice.volumetierminimum)                         | Metric      | [Conditional](#conditions.includesvolumetierpricing)           | False        | Decimal   |
+| [Volume Tier Name](#datasets.skuprice.volumetiername)                               | Dimension   | [Conditional](#conditions.includesvolumetierpricing)           | True         | String    |
 
 ## Relationships
 
@@ -72,15 +72,15 @@ SkuPrice MUST adhere to the following requirements:
   * SkuPrice MUST include [SkuPriceId](#datasets.skuprice.skupriceid).
   * SkuPrice MUST include [SkuPriceLastUpdated](#datasets.skuprice.skupricelastupdated).
   * SkuPrice MUST include [SkuPriceLifecycleStatus](#datasets.skuprice.skupricelifecyclestatus).
-  * SkuPrice MUST include [TierMaximum](#datasets.skuprice.tiermaximum) when the *operating model* [includes tiered pricing](#conditions.includestieredpricing).
-  * SkuPrice MUST include [TierMinimum](#datasets.skuprice.tierminimum) when the *operating model* [includes tiered pricing](#conditions.includestieredpricing).
-  * SkuPrice MUST include [TierName](#datasets.skuprice.tiername) when the *operating model* [includes tiered pricing](#conditions.includestieredpricing).
   * SkuPrice MUST include [UnitPrice](#datasets.skuprice.unitprice).
   * SkuPrice MUST include [UnitPriceCategory](#datasets.skuprice.unitpricecategory).
+  * SkuPrice MUST include [VolumeTierMaximum](#datasets.skuprice.volumetiermaximum) when the *operating model* [includes volume tier pricing](#conditions.includesvolumetierpricing).
+  * SkuPrice MUST include [VolumeTierMinimum](#datasets.skuprice.volumetierminimum) when the *operating model* [includes volume tier pricing](#conditions.includesvolumetierpricing).
+  * SkuPrice MUST include [VolumeTierName](#datasets.skuprice.volumetiername) when the *operating model* [includes volume tier pricing](#conditions.includesvolumetierpricing).
   * SkuPrice SHOULD include [*custom columns*](#glossary:custom-column) needed to identify specific rate card routing logic when [*FOCUS columns*](#glossary:FOCUS-column) are not sufficient.
 * SkuPrice MUST conform to [DatasetCompleteness](#attributes.datasetcompleteness) requirements.
 * SkuPrice MUST conform to [DatasetConfiguration](#attributes.datasetconfiguration) requirements.
-* SkuPrice MUST maintain row uniqueness across the composite key of SkuPriceId, ContractId, TierMinimum, SkuPriceEffectiveStart, PricingCurrency, and UnitPriceCategory.
+* SkuPrice MUST maintain row uniqueness across the composite key of SkuPriceId, ContractId, VolumeTierMinimum, SkuPriceEffectiveStart, PricingCurrency, and UnitPriceCategory.
 * SkuPrice *FOCUS columns* MUST conform to [FocusColumnHandling](#attributes.focuscolumnhandling) requirements.
 * SkuPrice *FOCUS columns* MUST conform to [NullHandling](#attributes.nullhandling) requirements.
 * SkuPrice *custom columns* MUST conform to [CustomColumnHandling](#attributes.customcolumnhandling) requirements.

@@ -1,6 +1,6 @@
 # Volume Tier Name
 
-Volume Tier Name represents a service-provider-specified display name or label for a specific volume-based pricing tier associated with a [*SKU Price*](#glossary:sku-price). 
+Volume Tier Name represents a service-provider-specified display name or label for a specific volume-based pricing tier associated with a [*SKU Price*](#glossary:sku-price).
 
 While [Volume Tier Minimum](#datasets.skuprice.volumetierminimum) and [Volume Tier Maximum](#datasets.skuprice.volumetiermaximum) define the strict mathematical boundaries of the volume envelope, Volume Tier Name provides a human-readable identifier. This column is commonly used for displaying rate cards in reports, reconciling against vendor pricing pages, or understanding the sequential order of tiers (e.g., "First 1000 Units", "Tier 1", "Over 50 TB").
 

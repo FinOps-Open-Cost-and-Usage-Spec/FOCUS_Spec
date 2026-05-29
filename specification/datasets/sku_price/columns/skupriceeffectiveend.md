@@ -1,6 +1,6 @@
 # SKU Price Effective End
 
-SKU Price Effective End represents the exclusive date and time when the specified unit price and its associated pricing properties are no longer active or applicable for a given [*SKU Price ID*](#datasets.skuprice.skupriceid). 
+SKU Price Effective End represents the exclusive date and time when the specified unit price and its associated pricing properties are no longer active or applicable for a given [*SKU Price ID*](#datasets.skuprice.skupriceid).
 
 When combined with [SKU Price Effective Start](#datasets.skuprice.skupriceeffectivestart), this column defines the precise validity window of a rate card entry. If a unit price is currently active and has no scheduled expiration or deprecation date, this value remains null.
 
