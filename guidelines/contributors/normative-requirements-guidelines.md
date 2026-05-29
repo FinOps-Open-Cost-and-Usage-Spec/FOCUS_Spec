@@ -142,7 +142,7 @@ The structural anchor requirement:
 * introduces the scope of the subsequent normative requirements,
 * MUST appear as the first normative statement in the section,
 * exists to support automated parsing and validation, and
-* is non-verifiable and does not introduce an enforceable constraint.
+* is not evaluated as a conformance requirement and does not introduce a constraint on datasets, columns, attributes, or other normative subjects.
 
 The canonical form of a structural anchor requirement is:
 
