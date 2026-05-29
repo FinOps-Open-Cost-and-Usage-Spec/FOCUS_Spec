@@ -20,7 +20,7 @@ Practitioners are encouraged to carefully distinguish between **Pricing Service 
 * **Pricing Service Name** defines the name of the service as explicitly published in the provider's rate card or pricing catalog.
 * **Service Name** defines the name of the service associated with the actual usage or provisioned resource in the cost and usage data.
 
-In many cases, these will be identical. However, if a *service provider* abstracts or groups rate card offerings differently than their provisioned resources (e.g., pricing multiple distinct database engines under a single generic rate card service name), `Pricing Service Name` reflects the exact service name designated by the rate card. The set of `Service Name` values can instead be represented as key-value pairs within [SKU Price Details](#datasets.skuprice.skupricedetails) to capture the service names without conflating the rate card logic.
+In many cases, these will be identical. However, if a *service provider* abstracts or groups rate card offerings differently than their provisioned resources (e.g., pricing multiple distinct database engines under a single generic rate card service name), `Pricing Service Name` reflects the exact service name designated by the rate card. The set of `Service Name` values can instead be represented as key-value pairs within [SKU Price Eligibility](#datasets.skuprice.skupriceeligibility) to capture the service names without conflating the rate card logic.
 
 ## Column ID
 
