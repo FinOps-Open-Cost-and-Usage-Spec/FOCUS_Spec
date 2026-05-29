@@ -1,13 +1,13 @@
 # Includes Split Cost Allocation
 
-The Includes Split Cost Allocation condition represents a verifiable state where the [*operating model*](#glossary:operating-model) includes logic for distributing the cost or usage of a single origin charge across multiple entities.
+The Includes Split Cost Allocation condition represents a verifiable state indicating whether the [*operating model*](#glossary:operating-model) includes [*split cost allocation*](#glossary:split-cost-allocation).
 
 ## Requirements
 
 IncludesSplitCostAllocation MUST adhere to the following requirements:
 
-* IncludesSplitCostAllocation MUST evaluate to true when the *operating model* contains a mechanism to distribute shared costs across distinct resources, tags, or accounts.
-* IncludesSplitCostAllocation MUST evaluate to false when the *operating model* lacks any native mechanism for cost or usage apportionment.
+* IncludesSplitCostAllocation MUST evaluate to true when the *operating model* includes *split cost allocation*.
+* IncludesSplitCostAllocation MUST evaluate to false when the *operating model* does not include *split cost allocation*.
 
 ## Condition ID
 
