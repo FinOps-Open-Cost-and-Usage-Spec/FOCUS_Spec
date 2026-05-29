@@ -307,14 +307,15 @@ A requirement MUST be split into multiple bullets if it:
 
   * Incorrect: `ColumnA and ColumnB MUST be non-null when ColumnC is true and ColumnD is not "X".`
   
-  * Compliant:
+  * Correct:
+
     * `ColumnA MUST be non-null when ColumnC is true and ColumnD is not "X".`
     * `ColumnB MUST be non-null when ColumnC is true and ColumnD is not "X".`
 
-  * Compliant:
+  * Correct:
 
     * `PricingQuantity MUST be null when ChargeCategory is "Tax" or "Adjustment".`
-    
+
     * `BillingPeriodStart MUST be less than or equal to BillingPeriodEnd.`
 
 ### Composite Requirements
@@ -326,6 +327,25 @@ Composite requirements MUST adhere to the following guidelines:
 * **Nuanced Obligation:** When a parent bullet uses a BCP 14 keyword (e.g., MUST), it establishes a mandatory requirement to evaluate the nested constraints. Each nested bullet then defines the specific nuance of that obligation for its respective subject or condition using its own BCP 14 keyword.
 * **Shared Conditionality:** Nested bullets MUST share the same condition if defined by the parent bullet.
 * **Context and Subject Consistency:** Nested bullets SHOULD maintain a consistent business context. While nested bullets SHOULD NOT introduce a different subject type, they MAY reference different subjects (e.g., a FOCUS dataset and its custom columns) provided they all relate to the same primary business context defined by the parent bullet.
+
+* **Example** (illustrative):
+
+```markdown
+
+✘ Incorrect:
+
+* When ChargeCategory is "Purchase", CostAndUsage MUST adhere to the following requirements:
+  * BillingCurrency MUST conform to CurrencyCodeFormat requirements.
+  * ResourceId MUST be a unique identifier within a service provider.
+  * InvoiceDetail documentation MUST describe invoice reconciliation methodology.
+
+✔ Correct:
+
+* When ChargeCategory is "Purchase", CommitmentDiscountQuantity MUST adhere to the following requirements:
+  * CommitmentDiscountQuantity MUST NOT be null when ChargeClass is not "Correction".
+  * CommitmentDiscountQuantity MAY be null when ChargeClass is "Correction".
+  * CommitmentDiscountQuantity MUST be expressed in CommitmentDiscountUnit when not null.  
+```
 
 **Exception for Conformance Recommendations:** When a parent bullet uses a SHOULD keyword to establish recommended conformance to a set of requirements (e.g., in `CustomColumnHandling` or when a column declares conformance to an attribute like `UnitFormat`), the weakest keyword in the hierarchy applies to the overall conformance.
 
