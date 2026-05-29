@@ -370,6 +370,9 @@ While normative requirements MUST focus on **enforceable constraints** and **ver
 
 * **Incorporation:** Examples incorporated in requirements MUST be clearly identified using "e.g." and placed within parentheses `(e.g., ...)` to distinguish them from the normative constraint.
 
+> **Note:** Formatting and presentation requirements for examples, notes, links, and other editorial constructs are defined in the Editorial Guidelines.
+
+
 ### DRY (Don't Repeat Yourself) Principle
 
 Each normative requirement MUST be defined in exactly one place across the specification. The following rules determine where a requirement belongs:
@@ -383,8 +386,6 @@ Each normative requirement MUST be defined in exactly one place across the speci
 * If a requirement spans multiple datasets, it MUST be defined on the column in the dataset that is the primary owner of the validation. Other datasets involved MUST NOT restate it as a normative requirement but MAY reference it in their introductory description.
 
 *  **Example:** A cross-dataset sum validation comparing `BilledCost` aggregated by `InvoiceId` and `InvoiceIssuerName` between `InvoiceDetail` and `CostAndUsage` is defined on `InvoiceDetail.BilledCost`, as `InvoiceDetail` is the primary owner of invoice-level validation. `CostAndUsage` MAY reference it in its introductory description but MUST NOT restate it as a normative requirement.
-
-> > **Note:** Formatting and presentation requirements for examples, notes, links, and other editorial constructs are defined in the Editorial Guidelines.
 
 ## Dataset Requirements
 
