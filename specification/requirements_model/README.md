@@ -227,7 +227,7 @@ The `output_normative_text_from_model.py` script extracts human-readable normati
 ### Usage
 
 ```bash
-# Print all normative text to console
+# Print all normative text to console (clean format, Rule Model IDs hidden by default)
 python output_normative_text_from_model.py
 
 # Save all normative text to a file
@@ -236,11 +236,14 @@ python output_normative_text_from_model.py --filename requirements_output.md
 # Show only requirements for a specific reference entity
 python output_normative_text_from_model.py --reference "BilledCost"
 
-# Show requirements without Rule Model IDs (clean format)
-python output_normative_text_from_model.py --exclude-rmids
+# Combine options: specific reference, save to file
+python output_normative_text_from_model.py --reference "BilledCost" --filename billedcost_requirements.md
 
-# Combine options: specific reference, clean format, save to file
-python output_normative_text_from_model.py --reference "BilledCost" --exclude-rmids --filename billedcost_requirements.md
+# Show requirements with Rule Model IDs included
+python output_normative_text_from_model.py --include-rmids
+
+# Combine options: specific reference, with Rule Model IDs, save to file
+python output_normative_text_from_model.py --reference "BilledCost" --include-rmids --filename billedcost_requirements.md
 ```
 
 ### Options
@@ -249,7 +252,7 @@ python output_normative_text_from_model.py --reference "BilledCost" --exclude-rm
 |--------|-------------|
 | `--filename <file>` | Save output to specified filename instead of printing to console |
 | `--reference <name>` | Only display normative text for the specified reference entity |
-| `--exclude-rmids` | Exclude Rule Model IDs from output (show only MustSatisfy text) |
+| `--include-rmids` | Include Rule Model IDs in output (hidden by default) |
 
 ### Output Format
 
