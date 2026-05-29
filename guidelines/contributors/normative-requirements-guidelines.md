@@ -119,7 +119,8 @@ The recommended pattern for a normative requirement is:
 * Each normative requirement MUST:
   * identify exactly one **normative subject** to which the requirement applies
   * contain exactly one **BCP 14 keyword** (MUST, SHOULD, MAY, MUST NOT, etc.), indicating the obligation level
-  * express exactly one **verifiable constraint**
+  * express exactly one **verifiable constraint**. 
+    * For purposes of this rule, each nested bullet is considered an individual normative requirement. Structural grouping bullets do not introduce additional verifiable constraints.
   * be split into multiple bullets if it introduces multiple independent constraints.
 * Each normative requirement SHOULD describe a **verifiable state** of the object rather than behavior
 
