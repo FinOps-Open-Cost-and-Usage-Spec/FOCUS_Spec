@@ -15,7 +15,7 @@ The columns are presented in alphabetical order.
 | [Pricing Category](#datasets.skuprice.pricingcategory)                              | Dimension   | Mandatory                                                      | False        | String    |
 | [Pricing Currency](#datasets.skuprice.pricingcurrency)                              | Dimension   | Mandatory                                                      | False        | String    |
 | [Pricing Currency Category](#datasets.skuprice.pricingcurrencycategory)                            | Dimension   | Mandatory                                                      | False        | String    |
-| [Pricing Region ID](#datasets.skuprice.pricingregionid)                             | Dimension   | [Conditional](#conditions.includesregions)                     | False        | String    |
+| [Pricing Region ID](#datasets.skuprice.pricingregionid)                             | Dimension   | [Conditional](#conditions.includesregions)                     | True        | String    |
 | [Pricing Service Name](#datasets.skuprice.pricingservicename)                       | Dimension   | Mandatory                                                      | False        | String    |
 | [Pricing Unit](#datasets.skuprice.pricingunit)                                      | Dimension   | Mandatory                                                      | False        | String    |
 | [Service Provider Name](#datasets.skuprice.serviceprovidername)                     | Dimension   | Mandatory                                                      | False        | String    |
