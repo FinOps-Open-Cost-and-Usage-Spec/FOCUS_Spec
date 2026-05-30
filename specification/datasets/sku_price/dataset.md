@@ -12,9 +12,9 @@ The columns are presented in alphabetical order.
 | [Contract Commitment Duration Type](#datasets.skuprice.contractcommitmentdurationtype) | Dimension   | [Conditional](#conditions.includescontractcommitments)         | True         | String    |
 | [Contract Commitment Payment Model](#datasets.skuprice.contractcommitmentpaymentmodel) | Dimension   | [Conditional](#conditions.includescontractcommitments)         | True         | String    |
 | [Contract ID](#datasets.skuprice.contractid)                                        | Dimension   | [Conditional](#conditions.includescontractcommitments)         | True         | String    |
-| [Currency Category](#datasets.skuprice.currencycategory)                            | Dimension   | Mandatory                                                      | False        | String    |
 | [Pricing Category](#datasets.skuprice.pricingcategory)                              | Dimension   | Mandatory                                                      | False        | String    |
 | [Pricing Currency](#datasets.skuprice.pricingcurrency)                              | Dimension   | Mandatory                                                      | False        | String    |
+| [Pricing Currency Category](#datasets.skuprice.pricingcurrencycategory)                            | Dimension   | Mandatory                                                      | False        | String    |
 | [Pricing Region ID](#datasets.skuprice.pricingregionid)                             | Dimension   | [Conditional](#conditions.includesregions)                     | False        | String    |
 | [Pricing Service Name](#datasets.skuprice.pricingservicename)                       | Dimension   | Mandatory                                                      | False        | String    |
 | [Pricing Unit](#datasets.skuprice.pricingunit)                                      | Dimension   | Mandatory                                                      | False        | String    |
@@ -22,7 +22,7 @@ The columns are presented in alphabetical order.
 | [SKU ID](#datasets.skuprice.skuid)                                                  | Dimension   | Mandatory                                                      | False        | String    |
 | [SKU Price Created](#datasets.skuprice.skupricecreated)                             | Dimension   | Mandatory                                                      | False        | Date/Time |
 | [SKU Price Description](#datasets.skuprice.skupricedescription)                     | Dimension   | Mandatory                                                      | False        | String    |
-| [SKU Price Details](#datasets.skuprice.skupricedetails)                             | Dimension   | Mandatory                                                      | False        | JSON      |
+| [SKU Price Details](#datasets.skuprice.skupricedetails)                             | Dimension   | Mandatory                                                      | True         | JSON      |
 | [SKU Price Effective End](#datasets.skuprice.skupriceeffectiveend)                  | Dimension   | Mandatory                                                      | True         | Date/Time |
 | [SKU Price Effective Start](#datasets.skuprice.skupriceeffectivestart)              | Dimension   | Mandatory                                                      | False        | Date/Time |
 | [SKU Price Eligibility](#datasets.skuprice.skupriceeligibility)                     | Dimension   | Mandatory                                                      | True         | JSON      |

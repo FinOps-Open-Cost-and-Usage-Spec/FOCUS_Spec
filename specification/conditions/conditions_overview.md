@@ -30,7 +30,6 @@ Conditions are sorted alphabetically by name.
 | [Includes Split Cost Allocation](#conditions.includessplitcostallocation) | Allocation | Operating model includes split cost allocation. |
 | [Includes Sub Accounts](#conditions.includessubaccounts) | Account | Operating model includes a sub account construct. |
 | [Includes Tags](#conditions.includestags) | Allocation | Operating model includes tags. |
-| [Includes Tiered Pricing](#conditions.includestieredpricing) | Pricing | Operating model includes tiered pricing. |
 | [Includes Unit Pricing](#conditions.includesunitpricing) | Pricing | Operating model includes unit pricing. |
 | [Includes Usage Measurement](#conditions.includesusagemeasurement) | Billing | Operating model includes the measurement of usage. |
 | [Includes Virtual Currency](#conditions.includesvirtualcurrency) | Pricing | Operating model includes prices in virtual currency. |
