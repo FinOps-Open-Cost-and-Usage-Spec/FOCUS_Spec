@@ -510,6 +510,8 @@ ContractCommitment MUST adhere to the following requirements:
 * ...
 ```
 
+> **Note:**Column presence groups are structural groupings and not normative subjects.
+
 #### **Cost and Usage**
 
 ```markdown
@@ -533,6 +535,9 @@ CostAndUsage MUST adhere to the following requirements:
 * CostAndUsage [*custom columns*](#glossary:custom-column) MUST conform to [CustomColumnHandling](#attributes.customcolumnhandling) requirements.
 * ...
 ```
+
+> **Note:**Column presence groups are structural groupings and not normative subjects.
+
 
 ## Column Requirements
 
