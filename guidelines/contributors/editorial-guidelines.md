@@ -311,6 +311,8 @@ To ensure consistent language when describing relationships and evaluations betw
 
 * **Example Note Requirement:** Example sections MUST include a note indicating that the content is informative and non-normative.
 
+  * **Exception:** This requirement does not apply to guideline documents, training materials, or authoring guidance where examples are inherently illustrative.
+
 * **Example** (Markdown, illustrative):
 
   ```md
@@ -340,6 +342,10 @@ To ensure consistent language when describing relationships and evaluations betw
 * **Multiple Notes:** When multiple notes are present in the same context, they SHOULD be grouped within a single blockquote and expressed as bullet points.
 
 * **Bullet Usage in Notes:** When using bullets inside a note, the bullets MUST follow standard bullet formatting rules defined in this document.
+
+* **Informative Notes:** Important notes MUST NOT contain normative keywords.
+
+  * **Exception:** This restriction does not apply to guideline documents that discuss normative authoring terminology.
 
 * **Example** (Markdown, illustrative):
 
@@ -392,8 +398,6 @@ To ensure consistent language when describing relationships and evaluations betw
   ```
 
 ### Important Text
-
-* **Informative Notes:** Important notes MUST NOT contain normative keywords.
 
 * **Currency and Dollar Signs:** The `$` symbol SHOULD be used for currency values in prose and tables. For build-pipeline behavior and troubleshooting related to dollar-sign parsing, see [MarkdownPP Guidelines](markdownpp-guidelines.md#currency-and-dollar-sign-handling).
 
