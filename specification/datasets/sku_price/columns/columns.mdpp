@@ -1,5 +1,4 @@
 !INCLUDE "chargefrequency.md",1
-!INCLUDE "contractcommitmentdiscountpercentage.md",1
 !INCLUDE "contractcommitmentdurationtype.md",1
 !INCLUDE "contractcommitmentpaymentmodel.md",1
 !INCLUDE "contractid.md",1
