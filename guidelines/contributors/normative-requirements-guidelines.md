@@ -221,7 +221,7 @@ The normative subject MUST be a schema-level entity or specific documentation, s
 
 The subject SHOULD be explicit and unambiguous.
 
-**Exception for Aggregate Expressions:** When a requirement describes an aggregate or derived value (e.g., sums, products, counts), the aggregate expression (e.g., `The sum of`, `The product of`) MAY be used as the grammatical subject when it improves readability. The column or metric being constrained MUST still be clearly identifiable within the requirement.
+**Exception:** When a requirement describes an aggregate or derived value (e.g., sums, products, counts), the aggregate expression (e.g., `The sum of`, `The product of`) MAY be used as the grammatical subject when it improves readability. The column or metric being constrained MUST still be clearly identifiable within the requirement.
 
 #### Disallowed Subjects
 
@@ -287,7 +287,7 @@ In order to maintain a formal, professional tone throughout the specification, c
 * A bullet containing more than one normative keyword MUST be split (see [Splitting Requirements](#splitting-requirements) section).
 * The following BCP 14 keywords MUST NOT be used: `REQUIRED`, `SHALL`, `SHALL NOT`, `RECOMMENDED`, `NOT RECOMMENDED`, `OPTIONAL`.
 
-* **Exception for Composite Requirements:** While each individual bullet (parent or nested) MUST contain only one BCP 14 keyword, a Composite Requirement as a whole MAY contain multiple keywords to express nuanced obligations. In such cases, the logical strength of the requirement is governed by the hierarchy defined in section [Composite Requirements](#composite-requirements).
+* **Exception:** While each individual bullet (parent or nested) MUST contain only one BCP 14 keyword, a Composite Requirement as a whole MAY contain multiple keywords to express nuanced obligations. In such cases, the logical strength of the requirement is governed by the hierarchy defined in section [Composite Requirements](#composite-requirements).
 
 > **Note:** The keyword `RECOMMENDED` was previously used for presence-related normative requirements with the meaning "recommended but not mandatory." This usage is deprecated as of December 2025.
 
@@ -347,7 +347,7 @@ Composite requirements MUST adhere to the following guidelines:
   * CommitmentDiscountQuantity MUST be expressed in CommitmentDiscountUnit when not null.  
 ```
 
-**Exception for Conformance Recommendations:** When a parent bullet uses a SHOULD keyword to establish recommended conformance to a set of requirements (e.g., in `CustomColumnHandling` or when a column declares conformance to an attribute like `UnitFormat`), the weakest keyword in the hierarchy applies to the overall conformance.
+**Exception:** When a parent bullet uses a SHOULD keyword to establish recommended conformance to a set of requirements (e.g., in `CustomColumnHandling` or when a column declares conformance to an attribute like `UnitFormat`), the weakest keyword in the hierarchy applies to the overall conformance.
 
 Composite requirements SHOULD be used when grouping improves readability and:
 
@@ -437,7 +437,7 @@ To further enhance readability, individual requirements within each group SHOULD
 
 * This ordering groups requirements by obligation strength to improve reviewability and consistency across specifications.
 
-**Exception for Column Presence:** Requirements within the **Column Presence in Dataset** group MUST be ordered alphabetically by the referenced Column ID, taking precedence over the BCP 14 keyword ordering.
+**Exception:** Requirements within the **Column Presence in Dataset** group MUST be ordered alphabetically by the referenced Column ID, taking precedence over the BCP 14 keyword ordering.
 
 ### Consistent Wording and Patterns in Dataset Requirements
 
@@ -660,7 +660,7 @@ FOCUS defines two JSON-based value formats for columns: Key-Value Format and JSO
 
 * **Singular Form for Object Properties**: Use singular (dot-notation path with `[*]`) when defining requirements for individual property values, with the understanding that `[*]` applies the requirement to all elements in the array (e.g., `ContractAppliedObject.Elements[*].ContractId MUST be a unique identifier within the service provider.`).
 
-* **Aggregate Expressions for Object Properties**: For aggregate requirements over object properties, the **Exception for Aggregate Expressions** in the [Normative Subject](#normative-subject) section applies (e.g., `The sum of AllocatedMethodDetailsObject.Elements[*].AllocatedRatio across all allocated charges related to a single origin charge MUST equal 1 (100%).`).
+* **Aggregate Expressions for Object Properties**: For aggregate requirements over object properties, the **Exception** in the [Normative Subject](#normative-subject) section applies (e.g., `The sum of AllocatedMethodDetailsObject.Elements[*].AllocatedRatio across all allocated charges related to a single origin charge MUST equal 1 (100%).`).
 
 ### Grouping of Nullability-Related and Subsequent Column Requirements
 
