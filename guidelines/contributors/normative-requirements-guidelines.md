@@ -591,6 +591,8 @@ To further enhance readability, individual requirements within each group SHOULD
 * `SHOULD NOT` – discouraged but not strictly prohibited
 * `MAY` – optional
 
+* This ordering groups requirements by obligation strength to improve reviewability and consistency across specifications.
+
 ### Additional Guidelines for Columns in JSON Format
 
 FOCUS defines two JSON-based value formats for columns: Key-Value Format and JSON Object Format. Each has distinct conventions for structuring requirements. The guidelines below are organized by format type.
@@ -738,6 +740,10 @@ To ensure clarity and consistency across columns and corresponding requirements,
 * <ColumnId> MUST conform to <FormatAttributeId> requirements.
 ```
 
+* Value Format requirements define conformance to formatting or representation-related attributes. 
+
+* **Examples**: include `StringHandling`, `JsonObjectFormat`, and `CurrencyCodeFormat`.
+
 ##### Technical Requirements: Nullability
 
 ```markdown
@@ -883,9 +889,7 @@ To ensure clarity and consistency across columns and corresponding requirements,
 
 ##### Preferred Terminology for Numerical References
 
-* Patterns: When specifying quantities in normative requirements, follow these conventions:
-  * Use `one` instead of `1`.
-  * Use `more than one` instead of `2 or more`.
+* For numerical references in normative requirements, follow the Editorial Guidelines [number-formatting](/editorial-guidelines#formatting) rules.
 
 * Examples:
 
