@@ -50,13 +50,12 @@ SkuPrice MUST adhere to the following requirements:
 
 * SkuPrice column presence MUST adhere to the following requirements:
   * SkuPrice MUST include [ChargeFrequency](#datasets.skuprice.chargefrequency) when the *operating model* [includes multiple charge frequencies](#conditions.includesmultiplechargefrequencies).
-  * SkuPrice MUST include [ContractCommitmentDiscountPercentage](#datasets.skuprice.contractcommitmentdiscountpercentage) when the *operating model* [includes contract commitments](#conditions.includescontractcommitments).
   * SkuPrice MUST include [ContractCommitmentDurationType](#datasets.skuprice.contractcommitmentdurationtype) when the *operating model* [includes contract commitments](#conditions.includescontractcommitments).
   * SkuPrice MUST include [ContractCommitmentPaymentModel](#datasets.skuprice.contractcommitmentpaymentmodel) when the *operating model* [includes contract commitments](#conditions.includescontractcommitments).
   * SkuPrice MUST include [ContractId](#datasets.skuprice.contractid) when the *operating model* [includes contract commitments](#conditions.includescontractcommitments).
-  * SkuPrice MUST include [CurrencyCategory](#datasets.skuprice.currencycategory).
   * SkuPrice MUST include [PricingCategory](#datasets.skuprice.pricingcategory).
   * SkuPrice MUST include [PricingCurrency](#datasets.skuprice.pricingcurrency).
+  * SkuPrice MUST include [PricingCurrencyCategory](#datasets.skuprice.pricingcurrencycategory).
   * SkuPrice MUST include [PricingRegionId](#datasets.skuprice.pricingregionid) when the *operating model* [includes regions](#conditions.includesregions).
   * SkuPrice MUST include [PricingServiceName](#datasets.skuprice.pricingservicename).
   * SkuPrice MUST include [PricingUnit](#datasets.skuprice.pricingunit).
