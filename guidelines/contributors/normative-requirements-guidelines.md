@@ -396,7 +396,7 @@ Each normative requirement MUST be defined in exactly one place across the speci
 Grouping and ordering of dataset-level normative requirements ensures clarity, consistency, and maintainability across all FOCUS datasets, making related or similar requirements easy to identify and follow.
 
 1. **Dataset Requirements** (subject: `{DatasetId}`)
-   1. **Dataset Presence:** Defines whether, and under what conditions, a dataset must be present in the FOCUS delivery.
+   1. **Dataset Presence:** Defines whether, and under what conditions, a dataset must be present in a FOCUS-compliant delivery.
    1. **Column Presence in Dataset:** Defines which columns must or are recommended to be present within a dataset, and under which conditions. FOCUS columns are listed first, followed by custom columns.
    1. **Dataset Attribute Conformance:** Defines requirements where a dataset MUST conform to one or more FOCUS-defined Attributes (e.g., `DatasetCompleteness`, `DatasetConfiguration`).
    1. **Other:** Captures requirements with `{DatasetId}` as subject that do not fall into the above categories.
