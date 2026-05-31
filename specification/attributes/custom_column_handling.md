@@ -24,7 +24,6 @@ Column conforming to CustomColumnHandling attribute MUST adhere to the following
   * *Custom column* SHOULD use [*Pascal case*](#glossary:pascalcase) in the portion of the Column ID following the required `x_` prefix.
   * *Custom column* SHOULD use only alphanumeric characters in the portion of the Column ID following the required `x_` prefix.
   * *Custom column* SHOULD NOT include special characters other than the underscore in the required `x_` prefix.
-
   * *Custom column* SHOULD NOT use abbreviations other than `Id` in the Column ID.
   * *Custom column* SHOULD NOT use acronyms other than `Sku` in the Column ID.
   * *Custom column* SHOULD NOT exceed 50 characters in the Column ID to accommodate column length restrictions of various data repositories.

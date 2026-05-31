@@ -18,7 +18,7 @@ ContractApplied MUST adhere to the following requirements:
 
 Contract Applied Object consists of a valid JSON object which contains an array of key-value objects describing the one or more contract commitments applied to the *charge*. Each object consists of FOCUS-defined property keys but can be extended to provide additional details about the contract application.
 
-The following section details the normative requirements for the ContractAppliedObject and its nested properties. For a logical overview of the expected content, see the [Schema Structure](#datasets.costandusage.contractapplied.schemastructure) and [Object Example](#datasets.costandusage.contractapplied.objectexample) sections.
+The following section details the normative requirements for the ContractAppliedObject and its nested properties. For a logical overview of the expected content, see the [Schema Structure](#datasets.costandusage.contractapplied.contractappliedobject.objectschemastructure) and [Object Example](#datasets.costandusage.contractapplied.contractappliedobject.objectexample) sections.
 
 ### Object Requirements
 
