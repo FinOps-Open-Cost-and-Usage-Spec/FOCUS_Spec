@@ -113,16 +113,22 @@ A count-based unit is a noun representing a discrete number of items, events, or
 
 The table below lists recommended names for count-based base units.
 
-| Count-based Unit (Singular) | Count-based Unit (Plural) |
-|:----------------------------|:--------------------------|
-| Count                       | Counts                    |
-| Unit                        | Units                     |
-| Request                     | Requests                  |
-| Token                       | Tokens                    |
-| Connection                  | Connections               |
-| Certificate                 | Certificates              |
-| Domain                      | Domains                   |
-| Core                        | Cores                     |
+| Count-based Unit (Singular) | Count-based Unit (Plural) | Description |
+|:----------------------------|:--------------------------|:------------|
+| Count                       | Counts                    | Generic tally of items or occurrences. |
+| Unit                        | Units                     | Generic standardized measure of consumption. |
+| Request                     | Requests                  | API or service invocations. |
+| Token                       | Tokens                    | Discrete data elements exchanged or processed. |
+| Connection                  | Connections               | Active network or database links. |
+| Certificate                 | Certificates              | Issued digital security credentials for authentication or encryption. |
+| Domain                      | Domains                   | Registered web or network namespaces. |
+| Core                        | Cores                     | Allocated processing units within a compute resource. |
+| Character                   | Characters                | Text processing length (e.g., translation, text-to-speech). |
+| Image                       | Images                    | Generated or processed visual media. |
+| Job                         | Jobs                      | Asynchronous or batch processing tasks. |
+| Message                     | Messages                  | Conversational turns or queue items. |
+| Page                        | Pages                     | Discrete document units analyzed or processed. |
+| Session                     | Sessions                  | Continuous interactive usage periods. |
 
 *Note: When a count-based base unit is not covered by the recommended values, a new value can be used as long as it is capitalized.*
 

@@ -16,7 +16,7 @@ PDF_MARGINS=--variable margin-top=15 --variable margin-bottom=25 --variable marg
 PDF_FOOTER=--pdf-engine-opt="--footer-right" --pdf-engine-opt="[page] of [topage]" --pdf-engine-opt="--footer-font-name" --pdf-engine-opt="Palatino" --pdf-engine-opt="--footer-font-size" --pdf-engine-opt="8"
 
 # 1. Define only the subdirectories you want to search recursively
-SPEC_SOURCE_DIRS=supported_features attributes appendix datasets metadata data schemas
+SPEC_SOURCE_DIRS=supported_features attributes appendix datasets metadata data schemas conditions
 
 # 2. Grab the markdown files in the root folder without recursing
 ROOT_FILES=$(wildcard *.md *.mdpp)
