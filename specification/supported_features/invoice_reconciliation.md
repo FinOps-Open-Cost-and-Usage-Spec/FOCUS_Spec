@@ -43,7 +43,7 @@ SELECT
   COALESCE(ID.InvoiceId, CU.InvoiceId) AS InvoiceId,
   ID.TotalBilledCost_InvoiceDetail,
   CU.TotalBilledCost_CostAndUsage,
-  (ID.TotalBilledCost_InvoiceDetail - CU.TotalBilledCost_CostAndUsage) AS Variance
+  (COALESCE(ID.TotalBilledCost_InvoiceDetail, 0) - COALESCE(CU.TotalBilledCost_CostAndUsage, 0)) AS Variance
 FROM (
   SELECT
     InvoiceId,
@@ -57,8 +57,10 @@ FULL OUTER JOIN (
     InvoiceId,
     SUM(BilledCost) AS TotalBilledCost_CostAndUsage
   FROM CostAndUsage
+  WHERE ChargeCategory != 'Tax'
+  GROUP BY InvoiceId
 ) CU ON ID.InvoiceId = CU.InvoiceId
-WHERE ID.InvoiceId = ?
+WHERE COALESCE(ID.InvoiceId, CU.InvoiceId) = ?
 ```
 
 ### Reconcile Multi-Currency Settlement Using Lineage IDs
