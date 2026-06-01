@@ -13,7 +13,7 @@ Contract Commitment Payment Model has three possible values: **No Upfront**, **P
 ContractCommitmentPaymentModel MUST adhere to the following requirements:
 
 * ContractCommitmentPaymentModel MUST be of type String.
-* ContractCommitmentPaymentModel MUST NOT be null when [Pricing Category](#datasets.skuprice.pricingcategory) is "Committed".
+* ContractCommitmentPaymentModel MUST NOT be null when [PricingCategory](#datasets.skuprice.pricingcategory) is "Committed".
 * ContractCommitmentPaymentModel MUST be one of the allowed values when present.
 
 ## Allowed Values
