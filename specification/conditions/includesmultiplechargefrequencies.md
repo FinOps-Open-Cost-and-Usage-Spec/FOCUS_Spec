@@ -1,6 +1,6 @@
 # Includes Multiple Charge Frequencies
 
-The Includes Multiple Charge Frequencies condition represents a verifiable state where the [operating model](#glossary:operating-model) includes multiple charge frequencies.
+The Includes Multiple Charge Frequencies condition represents a verifiable state indicating whether the [*operating model*](#glossary:operating-model) includes multiple charge frequencies.
 
 ## Requirements
 

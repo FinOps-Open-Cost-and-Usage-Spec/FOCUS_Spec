@@ -8,8 +8,8 @@ When combined with [SKU Price Effective Start](#datasets.skuprice.skupriceeffect
 
 SkuPriceEffectiveEnd MUST adhere to the following requirements:
 
-* SkuPriceEffectiveEnd MUST be of type DateTime.
-* SkuPriceEffectiveEnd MUST conform to [DateTimeFormat](#attributes.datetimeformat) requirements (e.g., UTC).
+* SkuPriceEffectiveEnd MUST be of type Date/Time.
+* SkuPriceEffectiveEnd MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements (e.g., UTC).
 * SkuPriceEffectiveEnd MUST adhere to the following nullability requirements:
   * SkuPriceEffectiveEnd MUST be null when the unit price is currently active and does not have a defined expiration or deprecation timestamp.
   * SkuPriceEffectiveEnd MUST NOT be null when the unit price has expired, been superseded, or has a scheduled termination timestamp.
@@ -36,8 +36,8 @@ The exclusive date and time when the specified unit price and associated pricing
 | Column type     | Dimension                                            |
 | Feature level   | Mandatory                                            |
 | Allows nulls    | True                                                 |
-| Data type       | DateTime                                             |
-| Value format    | [DateTime Format](#attributes.datetimeformat)        |
+| Data type       | Date/Time                                            |
+| Value format    | [Date/Time Format](#attributes.date/timeformat)      |
 
 ## Version Introduced
 

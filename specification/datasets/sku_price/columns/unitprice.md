@@ -1,6 +1,6 @@
 # Unit Price
 
-The Unit Price represents the service-provider-published unit price for a single [Pricing Unit](#datasets.skuprice.pricingunit) of the associated [*SKU Price*](#glossary:sku-price). This price is denominated in the [Currency](#datasets.skuprice.currency). The Unit Price provides the exact base rate for a catalog offering and is used as the foundational metric for calculating expected costs, comparing catalog rates, and performing rate optimization analyses.
+The Unit Price represents the service-provider-published unit price for a single [Pricing Unit](#datasets.skuprice.pricingunit) of the associated [*SKU Price*](#glossary:sku-price). This price is denominated in the [Pricing Currency](#datasets.skuprice.pricingcurrency). The Unit Price provides the exact base rate for a catalog offering and is used as the foundational metric for calculating expected costs, comparing catalog rates, and performing rate optimization analyses.
 
 ## Requirements
 
