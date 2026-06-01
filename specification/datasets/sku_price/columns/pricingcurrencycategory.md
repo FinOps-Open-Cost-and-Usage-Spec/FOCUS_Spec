@@ -1,6 +1,6 @@
 # Pricing Currency Category
 
-Pricing Currency Category categorizes the nature of the [Pricing Currency](#datasets.skuprice.pricingcurrency) as either a financial instrument paid by the customer or a proprietary consumption currency issued by the [*service provider*](#glossary:service-provider). This column defines whether multiplying a usage amount by the unit price results in a final financial cost (`Payable`) or a virtual cost balance that requires a secondary lookup to determine the actual financial cost (`Consumable`).
+Pricing Currency Category categorizes the nature of the [Pricing Currency](#datasets.skuprice.pricingcurrency) as either a financial instrument paid by the customer or a proprietary [*consumption currency*](#glossary:consumption-currency) issued by the [*service provider*](#glossary:service-provider). This column defines whether multiplying a usage amount by the unit price results in a final financial cost ("Payable") or a virtual cost balance that requires a secondary lookup to determine the actual financial cost ("Consumable").
 
 ## Requirements
 

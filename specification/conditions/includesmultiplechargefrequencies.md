@@ -6,8 +6,8 @@ The Includes Multiple Charge Frequencies condition represents a verifiable state
 
 IncludesMultipleChargeFrequencies MUST adhere to the following requirements:
 
-* IncludesMultipleChargeFrequencies MUST evaluate to true when the operating model includes multiple charge frequencies.
-* IncludesMultipleChargeFrequencies MUST evaluate to false when the operating model does not includes multiple charge frequencies.
+* IncludesMultipleChargeFrequencies MUST evaluate to true when the *operating model* includes multiple charge frequencies.
+* IncludesMultipleChargeFrequencies MUST evaluate to false when the *operating model* does not include multiple charge frequencies.
 
 ## Condition ID
 
@@ -19,7 +19,7 @@ Includes Multiple Charge Frequencies
 
 ## Description
 
-A verifiable state indicating whether the operating model includes multiple charge frequencies.
+A verifiable state indicating whether the *operating model* includes multiple charge frequencies.
 
 ## Version Introduced
 

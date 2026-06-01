@@ -34,7 +34,7 @@ The inclusive lower boundary of a volume-based pricing tier, measured in the des
 | Feature level   | Conditional                                          |
 | Condition       | [Includes volume tier pricing](#conditions.includesvolumetierpricing) |
 | Allows nulls    | False                                                |
-| Data type       | Numeric                                              |
+| Data type       | Decimal                                              |
 | Value format    | \<not specified>                                     |
 
 ## Version Introduced
