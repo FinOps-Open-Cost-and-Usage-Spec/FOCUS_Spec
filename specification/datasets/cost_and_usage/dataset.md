@@ -43,7 +43,7 @@ The specification for the Cost and Usage dataset defines a group of columns that
 | [Contracted Cost](#datasets.costandusage.contractedcost)                                            | Metric             | Mandatory     | False        | Decimal   |
 | [Contracted Unit Price](#datasets.costandusage.contractedunitprice)                                 | Metric             | Conditional   | True         | Decimal   |
 | [Effective Cost](#datasets.costandusage.effectivecost)                                              | Metric             | Mandatory     | False        | Decimal   |
-| [Host Provider Name](#datasets.costandusage.hostprovidername)                                       | Dimension          | Mandatory     | False        | String    |
+| [Host Provider Name](#datasets.costandusage.hostprovidername)                                       | Dimension          | Mandatory     | True         | String    |
 | [Invoice Detail ID](#datasets.costandusage.invoicedetailid)                                         | Dimension          | Conditional   | True         | String    |
 | [Invoice ID](#datasets.costandusage.invoiceid)                                                      | Dimension          | Conditional   | True         | String    |
 | [Invoice Issuer Name](#datasets.costandusage.invoiceissuername)                                     | Dimension          | Mandatory     | False        | String    |
