@@ -40,3 +40,4 @@ The value for each of these may vary depending on how *resources* or *services* 
 | 7.1 | Usage records from a CSP, ingested, processed, and delivered by a 3rd-party FinOps platform or CMP. | CSP | CSP | CSP | CSP | FinOps Platform |
 | 7.2 | Usage records from a CSP, retrieved and delivered by an internal centralized IT team without modifying the underlying financial records. | CSP | CSP | CSP | CSP | Internal Team Name |
 | 7.3 | Net-new financial records (e.g., custom shared support fees or IT taxes) injected into a dataset by an internal centralized IT team. | Internal Team Name | Internal Team Name | \<null> | Internal Team Name | Internal Team Name |
+| 7.4 | A single CSP usage record is split into multiple rows by a 3rd-party FinOps platform for internal cost allocation (total cost equals the original CSP charge). | CSP | CSP | CSP | CSP | FinOps Platform |
