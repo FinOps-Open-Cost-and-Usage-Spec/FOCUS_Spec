@@ -8,7 +8,7 @@ When combined with [Volume Tier Maximum](#datasets.skuprice.volumetiermaximum), 
 
 VolumeTierMinimum MUST adhere to the following requirements:
 
-* VolumeTierMinimum MUST be of type Numeric.
+* VolumeTierMinimum MUST be of type Decimal.
 * VolumeTierMinimum MUST NOT be null.
 * VolumeTierMinimum MUST represent a quantity denominated in the [PricingUnit](#datasets.skuprice.pricingunit).
 * VolumeTierMinimum MUST be strictly less than [VolumeTierMaximum](#datasets.skuprice.volumetiermaximum) when VolumeTierMaximum is not null.

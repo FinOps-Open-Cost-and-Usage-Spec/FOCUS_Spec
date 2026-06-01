@@ -8,8 +8,8 @@ When combined with [SKU Price Effective End](#datasets.skuprice.skupriceeffectiv
 
 SkuPriceEffectiveStart MUST adhere to the following requirements:
 
-* SkuPriceEffectiveStart MUST be of type DateTime.
-* SkuPriceEffectiveStart MUST conform to [DateTimeFormat](#attributes.datetimeformat) requirements (e.g., UTC).
+* SkuPriceEffectiveStart MUST be of type Date/Time.
+* SkuPriceEffectiveStart MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements (e.g., UTC).
 * SkuPriceEffectiveStart MUST NOT be null.
 * SkuPriceEffectiveStart MUST represent the exact timestamp designated by the *service provider* when the specific pricing rate card row is effective.
 
@@ -33,8 +33,8 @@ The inclusive date and time when the specified unit price and associated pricing
 | Column type     | Dimension                                            |
 | Feature level   | Mandatory                                            |
 | Allows nulls    | False                                                |
-| Data type       | DateTime                                             |
-| Value format    | [DateTime Format](#attributes.datetimeformat)        |
+| Data type       | Date/Time                                            |
+| Value format    | [Date/Time Format](#attributes.date/timeformat)      |
 
 ## Version Introduced
 

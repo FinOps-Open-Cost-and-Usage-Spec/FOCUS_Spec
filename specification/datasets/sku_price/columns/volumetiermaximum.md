@@ -8,7 +8,7 @@ When combined with [Volume Tier Minimum](#datasets.skuprice.volumetierminimum), 
 
 VolumeTierMaximum MUST adhere to the following requirements:
 
-* VolumeTierMaximum MUST be of type Numeric.
+* VolumeTierMaximum MUST be of type Decimal.
 * VolumeTierMaximum MUST adhere to the following nullability requirements:
   * VolumeTierMaximum MUST be null when there is no upper limit for the pricing tier.
   * VolumeTierMaximum MUST NOT be null when a subsequent, higher-volume pricing tier exists for the same offering.
@@ -42,7 +42,7 @@ The upper boundary of a volume-based pricing tier, measured in the designated Pr
 | Feature level   | Conditional                                          |
 | Condition       | [Includes volume tier pricing](#conditions.includesvolumetierpricing) |
 | Allows nulls    | True                                                 |
-| Data type       | Numeric                                              |
+| Data type       | Decimal                                              |
 | Value format    | \<not specified>                                     |
 
 ## Version Introduced
