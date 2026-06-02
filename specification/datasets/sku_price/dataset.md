@@ -22,7 +22,6 @@ The columns are presented in alphabetical order.
 | [SKU ID](#datasets.skuprice.skuid)                                                  | Dimension   | Mandatory                                                      | False        | String    |
 | [SKU Price Created](#datasets.skuprice.skupricecreated)                             | Dimension   | Mandatory                                                      | False        | Date/Time |
 | [SKU Price Description](#datasets.skuprice.skupricedescription)                     | Dimension   | Mandatory                                                      | False        | String    |
-| [SKU Price Details](#datasets.skuprice.skupricedetails)                             | Dimension   | Mandatory                                                      | True         | JSON      |
 | [SKU Price Effective End](#datasets.skuprice.skupriceeffectiveend)                  | Dimension   | Mandatory                                                      | True         | Date/Time |
 | [SKU Price Effective Start](#datasets.skuprice.skupriceeffectivestart)              | Dimension   | Mandatory                                                      | False        | Date/Time |
 | [SKU Price Eligibility](#datasets.skuprice.skupriceeligibility)                     | Dimension   | Mandatory                                                      | True         | JSON      |
@@ -63,7 +62,6 @@ SkuPrice MUST adhere to the following requirements:
   * SkuPrice MUST include [SkuId](#datasets.skuprice.skuid).
   * SkuPrice MUST include [SkuPriceCreated](#datasets.skuprice.skupricecreated).
   * SkuPrice MUST include [SkuPriceDescription](#datasets.skuprice.skupricedescription).
-  * SkuPrice MUST include [SkuPriceDetails](#datasets.skuprice.skupricedetails).
   * SkuPrice MUST include [SkuPriceEffectiveEnd](#datasets.skuprice.skupriceeffectiveend).
   * SkuPrice MUST include [SkuPriceEffectiveStart](#datasets.skuprice.skupriceeffectivestart).
   * SkuPrice MUST include [SkuPriceEligibility](#datasets.skuprice.skupriceeligibility).
