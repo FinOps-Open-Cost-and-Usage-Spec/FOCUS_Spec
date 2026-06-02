@@ -9,6 +9,8 @@ ChargeFrequency MUST adhere to the following requirements:
 * ChargeFrequency MUST be of type String.
 * ChargeFrequency MUST NOT be null.
 * ChargeFrequency MUST be one of the allowed values.
+* ChargeFrequency MUST be "Usage-Based" when [ChargeCategory](#datasets.skuprice.chargecategory) is "Usage".
+* ChargeFrequency MUST be "One-Time" or "Recurring" when ChargeCategory is "Purchase".
 
 ## Allowed Values
 

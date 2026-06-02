@@ -8,6 +8,7 @@ The columns are presented in alphabetical order.
 
 | Column                                                                              | Column Type | Feature Level                                                  | Allows Nulls | Data Type |
 | ----------------------------------------------------------------------------------- | ----------- | -------------------------------------------------------------- | ------------ | --------- |
+| [Charge Category](#datasets.skuprice.chargecategory)                              | Dimension   | Mandatory   | False        | String    |
 | [Charge Frequency](#datasets.skuprice.chargefrequency)                              | Dimension   | [Conditional](#conditions.includesmultiplechargefrequencies)   | False        | String    |
 | [Contract Commitment Duration Type](#datasets.skuprice.contractcommitmentdurationtype) | Dimension   | [Conditional](#conditions.includescontractcommitments)         | True         | String    |
 | [Contract Commitment Payment Model](#datasets.skuprice.contractcommitmentpaymentmodel) | Dimension   | [Conditional](#conditions.includescontractcommitments)         | True         | String    |
