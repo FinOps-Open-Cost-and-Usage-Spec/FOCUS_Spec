@@ -332,7 +332,7 @@ Composite requirements MUST adhere to the following guidelines:
 
 ```markdown
 
-✘ Incorrect:
+Incorrect:
 
 * When ChargeCategory is "Purchase", CostAndUsage MUST adhere to the following requirements:
   * BillingCurrency MUST conform to CurrencyCodeFormat requirements.
