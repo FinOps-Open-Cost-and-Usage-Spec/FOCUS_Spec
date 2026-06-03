@@ -343,10 +343,6 @@ To ensure consistent language when describing relationships and evaluations betw
 
 * **Bullet Usage in Notes:** When using bullets inside a note, the bullets MUST follow standard bullet formatting rules defined in this document.
 
-* **Informative Notes:** Important notes MUST NOT contain normative keywords.
-
-  * **Exception:** This restriction does not apply to guideline documents that discuss normative authoring terminology.
-
 * **Example** (Markdown, illustrative):
 
   ```md
