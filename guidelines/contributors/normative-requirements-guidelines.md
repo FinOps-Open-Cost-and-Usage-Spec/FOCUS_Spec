@@ -889,7 +889,7 @@ To ensure clarity and consistency across columns and corresponding requirements,
 
 ##### Preferred Terminology for Numerical References
 
-* For numerical references in normative requirements, follow the Editorial Guidelines [number-formatting](/editorial-guidelines#formatting) rules.
+* For numerical references in normative requirements, follow the Editorial Guidelines [number formatting](editorial-guidelines.md#formatting) rules.
 
 * Examples:
 
