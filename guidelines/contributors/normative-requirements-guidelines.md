@@ -339,7 +339,7 @@ Incorrect:
   * ResourceId MUST be a unique identifier within a service provider.
   * InvoiceDetail documentation MUST describe invoice reconciliation methodology.
 
-✔ Correct:
+Correct:
 
 * When ChargeCategory is "Purchase", CommitmentDiscountQuantity MUST adhere to the following requirements:
   * CommitmentDiscountQuantity MUST NOT be null when ChargeClass is not "Correction".
