@@ -220,7 +220,7 @@ The normative subject MUST be a schema-level entity or specific documentation, s
 
 The subject SHOULD be explicit and unambiguous.
 
-**Exception:** When a requirement describes an aggregate or derived value (e.g., sums, products, counts), the aggregate expression (e.g., `The sum of`, `The product of`) MAY be used as the grammatical subject when it improves readability. The column or metric being constrained MUST still be clearly identifiable within the requirement.
+**Exception for Aggregate Expressions:** When a requirement describes an aggregate or derived value (e.g., sums, products, counts), the aggregate expression (e.g., `The sum of`, `The product of`) MAY be used as the grammatical subject when it improves readability. The column or metric being constrained MUST still be clearly identifiable within the requirement.
 
 #### Disallowed Subjects
 
