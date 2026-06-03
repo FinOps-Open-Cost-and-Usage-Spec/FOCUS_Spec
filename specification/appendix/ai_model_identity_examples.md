@@ -15,7 +15,7 @@ The following conditions apply to the scenarios below:
 For this scenario, Acme Corp purchases the model directly from the model provider, Solora AI:
 
 * Input tokens are priced at $3.00 per 1,000,000 tokens, and output tokens at $15.00 per 1,000,000 tokens.
-* During the charge period, the workload consumes 5,000,000 input tokens and 1,500,000 output tokens.
+* During the [*charge period*](#glossary:chargeperiod), the workload consumes 5,000,000 input tokens and 1,500,000 output tokens.
 
 [**CSV Example**](/specification/data/ai_model_identity/ai_model_identity_a.csv)
 
@@ -28,7 +28,7 @@ Note the following details in the example dataset:
 
 ## Scenario B: Same Model Served by a Cloud Provider
 
-For this scenario, the same underlying model is served by a cloud provider, LatticeScale, as its own first-party service:
+For this scenario, the same underlying model is served by a cloud provider, LatticeScale, as its own first-party [*service*](#glossary:service):
 
 * Every participating entity (ServiceProviderName, HostProviderName, and InvoiceIssuerName) is LatticeScale, the seller.
 * The model maker, Solora AI, is not the seller, and is carried in the ModelProvider property.
