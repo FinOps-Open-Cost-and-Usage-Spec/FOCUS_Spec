@@ -284,12 +284,12 @@ To ensure consistent language when describing relationships and evaluations betw
 * **Example** (Markdown, illustrative):
 
 ```md
- ✔ Correct:
+ Correct:
   ## Requirements
   ...
   * PricingQuantity MUST be greater than 0.
   
- ✘ Incorrect:
+ Incorrect:
   ## Description
   ...
   * PricingQuantity MUST be greater than 0.
