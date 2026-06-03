@@ -660,7 +660,7 @@ FOCUS defines two JSON-based value formats for columns: Key-Value Format and JSO
 
 * **Singular Form for Object Properties**: Use singular (dot-notation path with `[*]`) when defining requirements for individual property values, with the understanding that `[*]` applies the requirement to all elements in the array (e.g., `ContractAppliedObject.Elements[*].ContractId MUST be a unique identifier within the service provider.`).
 
-* **Aggregate Expressions for Object Properties**: For aggregate requirements over object properties, the **Exception** in the [Normative Subject](#normative-subject) section applies (e.g., `The sum of AllocatedMethodDetailsObject.Elements[*].AllocatedRatio across all allocated charges related to a single origin charge MUST equal 1 (100%).`).
+* **Aggregate Expressions for Object Properties**: For aggregate requirements over object properties, the **Exception for Aggregate Expressions** in the [Normative Subject](#normative-subject) section applies (e.g., `The sum of AllocatedMethodDetailsObject.Elements[*].AllocatedRatio across all allocated charges related to a single origin charge MUST equal 1 (100%).`).
 
 ### Grouping of Nullability-Related and Subsequent Column Requirements
 
