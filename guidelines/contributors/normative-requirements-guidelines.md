@@ -739,9 +739,7 @@ To ensure clarity and consistency across columns and corresponding requirements,
 * <ColumnId> MUST conform to <FormatAttributeId> requirements.
 ```
 
-* Value Format requirements define conformance to formatting or representation-related attributes. 
-
-* **Examples:** `StringHandling`, `JsonObjectFormat`, and `CurrencyCodeFormat`.
+* Value Format requirements define conformance to formatting or representation-related attributes (e.g., `StringHandling`, `JsonObjectFormat`, and `CurrencyCodeFormat`).
 
 ##### Technical Requirements: Nullability
 
