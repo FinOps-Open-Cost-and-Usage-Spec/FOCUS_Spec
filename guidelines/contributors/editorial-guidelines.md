@@ -242,7 +242,7 @@ To ensure consistent language when describing relationships and evaluations betw
 
 * **Consistent Introductory Phrases:** Introductory phrases for normative lists SHOULD be consistent within a section.
 
-> **Note:** Authors SHOULD prefer stable introductory patterns such as “... MUST adhere to the following requirements:” within the same section unless contextual variation improves readability.
+> **Note:** Authors SHOULD prefer stable introductory patterns such as "... MUST adhere to the following requirements:" within the same section unless contextual variation improves readability.
 
 * **Sentence Spacing:** Sentences within paragraphs MUST be delineated with a single space.
 
