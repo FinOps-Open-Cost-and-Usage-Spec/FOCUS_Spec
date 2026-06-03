@@ -742,7 +742,7 @@ To ensure clarity and consistency across columns and corresponding requirements,
 
 * Value Format requirements define conformance to formatting or representation-related attributes. 
 
-* **Examples**: include `StringHandling`, `JsonObjectFormat`, and `CurrencyCodeFormat`.
+* **Examples:** `StringHandling`, `JsonObjectFormat`, and `CurrencyCodeFormat`.
 
 ##### Technical Requirements: Nullability
 
