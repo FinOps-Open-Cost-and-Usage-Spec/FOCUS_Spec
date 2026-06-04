@@ -51,7 +51,7 @@ The following keys should be used when applicable to facilitate cross-SKU and cr
 | InstanceSeries           | Common name for the series and/or generation of the instance             | String           | Examples: "M5", "Dadv5", "N2D"                        |
 | MemorySize               | RAM allocated for processing                                             | Numeric          | Measure: Gibibytes (GiB<sup>2</sup>)                  |
 | ModelFamily              | Grouping of related models offered by a model provider                   | String           | Examples: "Solora Reasoning", "ModelMesh General"     |
-| ModelId                  | The model provider's identifier for the model as billed                  | String           | Examples: "solora-reasoning-pro", "modelmesh-general-7b" |
+| ModelId                  | Identifier for the model as it appears in billing                        | String           | Examples: "solora-reasoning-pro", "modelmesh-general-7b" |
 | ModelProvider            | Name of the entity that created or trained the model                     | String           | Examples: "Solora AI", "ModelMesh"                    |
 | ModelVariant             | Named tier or edition within a model family with its own pricing         | String           | Examples: "Pro", "Lite"                               |
 | ModelVersion             | Version of the model within its family                                   | String           | Examples: "3.0", "2.5"                                |

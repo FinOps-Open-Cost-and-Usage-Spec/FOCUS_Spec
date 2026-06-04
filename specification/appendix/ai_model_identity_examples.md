@@ -22,15 +22,15 @@ For this scenario, Acme Corp purchases the model directly from the model provide
 Note the following details in the example dataset:
 
 * Model identity is carried in SkuPriceDetails using the FOCUS-defined properties ModelProvider, ModelFamily, ModelId, ModelVariant, and ModelVersion. These values are common to both rows because both describe the same model.
-* The split between input and output tokens is structural. Each is a separate [*SKU*](#glossary:sku) with its own SkuId and SkuPriceId, distinguished by [SkuMeter](#datasets.costandusage.skumeter) values of "Input Tokens" and "Output Tokens". No separate token-type property is used.
+* The split between input and output tokens is structural. Each is a separate [*SKU*](#glossary:sku) with its own [SkuId](#datasets.costandusage.skuid) and [SkuPriceId](#datasets.costandusage.skupriceid), distinguished by [SkuMeter](#datasets.costandusage.skumeter) values of "Input Tokens" and "Output Tokens". No separate token-type property is used.
 * [ConsumedQuantity](#datasets.costandusage.consumedquantity) holds the raw token count and [ConsumedUnit](#datasets.costandusage.consumedunit) is "Tokens", while [PricingQuantity](#datasets.costandusage.pricingquantity) holds the priced volume and [PricingUnit](#datasets.costandusage.pricingunit) is "1000000 Tokens".
-* Because Acme Corp pays the list price, ListUnitPrice and ContractedUnitPrice are equal, so ListCost, ContractedCost, BilledCost, and EffectiveCost are equal.
+* Because Acme Corp pays the list price, [ListUnitPrice](#datasets.costandusage.listunitprice) and [ContractedUnitPrice](#datasets.costandusage.contractedunitprice) are equal, so [ListCost](#datasets.costandusage.listcost), [ContractedCost](#datasets.costandusage.contractedcost), [BilledCost](#datasets.costandusage.billedcost), and [EffectiveCost](#datasets.costandusage.effectivecost) are equal.
 
 ## Scenario B: Same Model Served by a Cloud Provider
 
 For this scenario, the same underlying model is served by a cloud provider, LatticeScale, as its own first-party [*service*](#glossary:service):
 
-* Every participating entity (ServiceProviderName, HostProviderName, and InvoiceIssuerName) is LatticeScale, the seller.
+* Every participating entity ([ServiceProviderName](#datasets.costandusage.serviceprovidername), [HostProviderName](#datasets.costandusage.hostprovidername), and [InvoiceIssuerName](#datasets.costandusage.invoiceissuername)) is LatticeScale, the seller.
 * The model maker, Solora AI, is not the seller, and is carried in the ModelProvider property.
 
 [**CSV Example**](/specification/data/ai_model_identity/ai_model_identity_b.csv)
