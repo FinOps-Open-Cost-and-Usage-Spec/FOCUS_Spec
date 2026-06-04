@@ -4,18 +4,12 @@ Contract Commitment Category represents the highest-level classification of a [*
 
 ## Requirements
 
-ContractCommitmentCategory MUST adhere to the following requirements:
+ContractCommitmentCategory adheres to the following requirements:
 
+* ContractCommitmentCategory MUST be present in a Contract Commitment [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ContractCommitmentCategory MUST be of type String.
 * ContractCommitmentCategory MUST NOT be null.
 * ContractCommitmentCategory MUST be one of the allowed values.
-
-## Allowed Values
-
-| Value   | Description                                                              |
-|:--------|:-------------------------------------------------------------------------|
-| Spend   | Contract commitments that require a predetermined amount of spend. |
-| Usage   | Contract commitments that require a predetermined amount of usage. |
 
 ## Column ID
 
@@ -31,15 +25,21 @@ Represents the highest-level classification of a *contract commitment* based on 
 
 ## Content Constraints
 
-| Constraint      | Value                                                |
-| :-------------- | :----------------------------------------------------|
-| Dataset         | [Contract Commitment](#datasets.contractcommitment)  |
-| Column type     | Dimension                                            |
-| Feature level   | Mandatory                                            |
-| Allows nulls    | False                                                |
-| Data type       | String                                               |
-| Value format    | Allowed values                                       |
+| Constraint      | Value          |
+| :-------------- | :------------- |
+| Column type     | Dimension      |
+| Feature level   | Mandatory      |
+| Allows nulls    | False          |
+| Data type       | String         |
+| Value format    | Allowed values |
 
-## Version Introduced
+Allowed values:
+
+| Value   | Description                                                              |
+|:--------|:-------------------------------------------------------------------------|
+| Spend   | Contract commitments that require a predetermined amount of spend.       |
+| Usage   | Contract commitments that require a predetermined amount of usage.       |
+
+## Introduced (version)
 
 1.3

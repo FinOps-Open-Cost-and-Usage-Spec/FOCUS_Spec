@@ -7,7 +7,7 @@ RecencyLastUpdated adheres to the following requirements:
 * RecencyLastUpdated MUST be present in the metadata.
 * RecencyLastUpdated MUST be of type Date/Time.
 * RecencyLastUpdated MUST NOT be null.
-* RecencyLastUpdated MUST conform to [DateTimeFormat](#attributes.date/timeformat).
+* RecencyLastUpdated MUST conform to [DateTimeFormat](#datetimeformat).
 
 ## Metadata ID
 
@@ -17,15 +17,15 @@ RecencyLastUpdated
 
 Recency Last Updated
 
-## Content Constraints
+## Content constraints
 
 | Constraint    | Value                                     |
 |:--------------|:------------------------------------------|
 | Feature level | Mandatory                                 |
 | Allows nulls  | False                                     |
 | Data type     | Date/Time                                 |
-| Value format  | [Date/Time Format](#attributes.date/timeformat)      |
+| Value format  | [Date/Time Format](#date/timeformat)      |
 
-## Version Introduced
+## Introduced (version)
 
 1.3

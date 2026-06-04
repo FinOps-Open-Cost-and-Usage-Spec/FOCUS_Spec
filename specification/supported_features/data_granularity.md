@@ -36,6 +36,6 @@ Group by
   ResourceId
 ```
 
-## Version Introduced
+## Introduced (Version)
 
 0.5

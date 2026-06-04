@@ -38,6 +38,6 @@ GROUP BY
   SubAccountId
 ```
 
-## Version Introduced
+## Introduced (Version)
 
 0.5

@@ -1,62 +1,59 @@
-# Credits
+## Working Group
 
-## Maintainers
+### Maintainers
 
-Thanks to the following FOCUS Maintainers for their leadership and contributions to the FOCUS Release **v1.4** specification.
+Thanks to the following FOCUS Maintainers for their leadership and contributions to the FOCUS Release **v1.3** specification.
 
-* Andrew Quigley (Northwestern Mutual)
+* Christopher Harris (Datadog)
 * Irena Jurica (Neos)
 * Joaquin Prado (FinOps Foundation)
 * Karl Kraft (Walmart)
-* Larry Advey (CloudZero)
-* Matt Cowsert (FinOps Foundation)
-* Michael Flanakin (Salesforce)
+* Larry Advey (Twilio / CloudZero)
+* Michael Flanakin (Microsoft / Salesforce)
 * Mike Fuller (FinOps Foundation)
 * Riley Jenkins (Domo)
 * Shawn Alpay (FinOps Foundation)
 * Udam Dewaraja (StitcherAI)
 
-## Contributors
+### Contributors
 
-Thanks to the following FOCUS members for their contributions to the FOCUS Release **v1.4** specification.
+Thanks to the following FOCUS members for their contributions to the FOCUS Release **v1.3** specification.
 
 * Alexandra McCoy (A.M. Tech)
-* Alfred Francis (thecloudx.co)
 * Andrew Qu (Everest)
+* Andrew Quigley (Northwestern Mutual)
 * Beau Nelford (Anglepoint)
+* David Dinh (Google)
 * David Earney (American Express)
+* Deeja Cruz (Datadog)
 * Erik Norman (Caligo)
 * George Parker (Salesforce)
-* Graham Murphy (TechnologyOne)
 * Greg Kroleski (Databricks)
-* Justin Grinstead (MongoDB)
+* James Deloid (Oracle)
+* Jason Wu (Amazon Web Services)
 * Justin Marks (Amazon Web Services)
 * Marc Perreaut (Amadeus)
+* Matt Cowsert (FinOps Foundation)
 * Nan Braun (Thavron Solutions)
 * Ramkumar Narla (Adobe)
 * Rich Kreitz (Grafana)
 * Rob Martin (FinOps Foundation)
-* Ruben Vander Stockt (Telenet Group)
-* Rowdy Voss (Oracle)
-* Sai Pydiganta (Amazon Web Services)
+* Robert Reeves (Mavvrik)
+* Satya Vandrangi (Amazon Web Services)
 * Sanjna Srivatsa (Broadcom)
 * Tim Wright (Google)
 
-<div style="page-break-after: always"></div>
-
 ## Steering Committee Members
 
-Thanks to the following FOCUS Steering Committee members for their leadership on the FOCUS Release **v1.4** specification.
+Thanks to the following FOCUS Steering Committee members for their leadership on the FOCUS specification.
 
 * Ben Olson (Adobe)
-* Casey Doran (IBM Cloudability)
-* Christopher Harris (Datadog) (term ended 2026/03/30)
-* Deeja Cruz (Datadog)
-* Jerzy Grzywinski (Capital One) (term ended 2026/03/03)
-* John Ely (Capital One)
-* Karl Kraft (Walmart)
+* Christopher Harris (Datadog)
+* Jerzy Grzywinski (Capital One)
 * Letian Feng (Amazon Web Services)
+* Michael Flanakin (Microsoft) (term ended 2025/08/01)
 * Mike Fuller (FinOps Foundation)
+* Richard Steck (Adobe) (term ended 2025/10/03)
 * Sarah McMullin (Google)
-* Tim O'Brien (Walmart) (term ended 2025/11/10)
+* Tim O'Brien (Walmart)
 * Vikram Desai (Microsoft)

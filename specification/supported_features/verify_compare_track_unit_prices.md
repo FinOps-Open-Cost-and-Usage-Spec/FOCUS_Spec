@@ -43,6 +43,6 @@ WHERE
   AND ChargePeriodEnd < ?
 ```
 
-## Version Introduced
+## Introduced (Version)
 
 1.0

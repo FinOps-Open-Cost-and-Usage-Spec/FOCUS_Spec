@@ -44,12 +44,12 @@ Current scenarios considered include:
 | Value      | Description                          |
 | :--------- | :------------------------------------|
 | Refund     | Any adjustments that are applied after the original usage or purchase row. Adjustments may be related to multiple charges. (NOTE: Tax excluded)   |
-| Credit     | Credits associated with promotional usage or incentives   |
+| Credit     | Credits assoicated with promotional usage or incentives   |
 | Purchase   | Charges for the acquisition of a service or resource bought upfront or on a recurring basis.              |
 | Tax        | Applicable taxes that are levied by the relevant authorities. Tax charges may vary depending on factors such as the location, jurisdiction, and local or federal regulations. |
 | Usage      | Charges based on the quantity of a service or resource that was consumed over a given period of time.     |
 
-ISSUE: Tax cannot be classified correctly, assuming refunds and purchases have a tax implication then we would need to look for negative tax values matching the refund line in order to ascertain the total value of the refund.
+ISSUE: Tax cannot be classified correctly, assuming refunds and purchases have a tax implication then we would need to look for negative tax values matching the refund line in order ot acertain the total value of the refund.
 
 ### Option 2:
 
@@ -64,7 +64,7 @@ New Column: Adjustment Category
 
 | Value      | Description                          |
 | :--------- | :------------------------------------|
-| NULL       | Default value for all incoming charges.             |
+| NULL       | Default value for all incomming charges.             |
 | Refund     | Refunded related to usage or purchase specific activities (expects a matching 'tax' transaction) |
 | Credit     | Promotional / negotiated / incentive credits provided at providers discression (does NOT expect a matching 'tax' transaction)       |
 
@@ -86,7 +86,7 @@ Permutations:
 
 | Value      | Description                          |
 | :--------- | :------------------------------------|
-| Credit     | Credits associated with promotional usage or incentives   |
+| Credit     | Credits assoicated with promotional usage or incentives   |
 | Purchase   | Charges for the acquisition of a service or resource bought upfront or on a recurring basis.              |
 | Tax        | Applicable taxes that are levied by the relevant authorities. Tax charges may vary depending on factors such as the location, jurisdiction, and local or federal regulations. |
 | Usage      | Charges based on the quantity of a service or resource that was consumed over a given period of time.     |
@@ -95,7 +95,7 @@ New Column: Adjustment Category
 
 | Value      | Description                          |
 | :--------- | :------------------------------------|
-| NULL       | Default value for all incoming charges.             |
+| NULL       | Default value for all incomming charges.             |
 | Refund     | Refunded related to usage or purchase specific activities (expects a matching 'tax' transaction) |
 | Bulk Refund     | General refund (expects a matching 'tax' transaction) |
 | Rounding Error     | Small corrections - Applicable to current billing period only |
@@ -117,27 +117,27 @@ Permutations:
 
 ## Discussion / Scratch space
 
-* What are the different types of spend that we want to group?
-* This work is to group the different values providers use to differentiate the spend. The plan is to introduce a ‘normalized’ dimension for this in v1.0
-  * Should this be prefixed with ‘Provider’ since we want to normalize this as well? If not, we have to come up with another name for the normalized column
-    * Decided that this should be a normalized column from v0.5.
-    * Given the mis-alignment of current vendor data, its not going to be much value to create a dimension where we put different vendor values in a single column so practitioners can use the vendor provided value using a single column rather than doing n different where clauses when looking for the vendor native value (not our normalized value).
-* This dimension may be referred to in other contexts - e.g., data granularity requirements (attribute) may change based on if its usage data vs tax or fees. For example, Should ResourceId be required based on if something is a ‘usage’ cost vs a ‘purchase’?
-* Use cases:
-  * Usage for cost reporting use cases / driving accountability
-  * Tax needs to be filterable for special accounting treatments within companies
-  * Fees are important for cost allocation / amortization - needs to be isolated from other cost
-  * Refunds - $s coming back after the original charge
-  * Credits are typically based on agreements for migration of workloads
-  * AWS handling for SPs: Anniversary charge (BillType) Savings Plan for $1 and a negation for UsageType (for -0.50)
-* Is it Recurring or not? (Attribute about the Purchase?)
-* What Charge Category values can BE recurring?
-* What Charge Category values for "Free Tier" with usage limits and "Free Trial" offers?
-* What adjustment categories do we need to group?
-* Do we need to normalize adjustment categories?
-* Refunds - $s coming back after the original charge
-* Credits are typically based on agreements for migration of workloads, or promotional items negotiated with the provider
-* Balance transfers - how do you show what a balance transfer is if in the unliely event you close an account with a positive value and open a new account
+- What are the different types of spend that we want to group?
+- This work is to group the different values providers use to differentiate the spend. The plan is to introduce a ‘normalized’ dimension for this in v1.0
+  - Should this be prefixed with ‘Provider’ since we want to normalize this as well? If not, we have to come up with another name for the normalized column
+    - Decided that this should be a normalized column from v0.5.
+    - Given the mis-alignment of current vendor data, its not going to be much value to create a dimension where we put different vendor values in a single column so practitioners can use the vendor provided value using a single column rather than doing n different where clauses when looking for the vendor native value (not our normalized value).
+- This dimension may be referred to in other contexts - e.g. data granularity requirements (attribute) may change based on if its usage data vs tax or fees. For example, Should ResourceId be required based on if something is a ‘usage’ cost vs a ‘purchase’?
+- Use cases:
+  - Usage for cost reporting use cases / driving accountability
+  - Tax needs to be filterable for special accounting treatments within companies
+  - Fees are important for cost allocation / amortization - needs to be isolated from other cost
+  - Refunds - $s coming back after the original charge
+  - Credits are typically based on agreements for migration of workloads
+  - AWS handling for SPs: Anniversary charge (BillType) Savings Plan for $1 and a negation for UsageType (for -0.50)
+- Is it Recurring or not? (Attribute about the Purchase?)
+- What Charge Category values can BE recurring?
+- What Charge Category values for "Free Tier" with usage limits and "Free Trial" offers?
+- What adjustment categories do we need to group?
+- Do we need to normalize adjustment categories?
+- Refunds - $s coming back after the original charge
+- Credits are typically based on agreements for migration of workloads, or promotional items negotiated with the provider
+- Balance transfers - how do you show what a balance transfer is if in the unliely event you close an account with a positive value and open a new account
 
 ### Example mappings for normalized values
 

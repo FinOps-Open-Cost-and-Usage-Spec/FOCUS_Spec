@@ -4,7 +4,7 @@ The Dataset Instance ID is a unique identifier for the specific dataset instance
 
 DatasetInstanceId adheres to the following requirements:
 
-* DatasetInstanceId MUST be present in an object within the [Schema](#metadata.schema) collection.
+* DatasetInstanceId MUST be present in an object within the [Schema](#schema) collection.
 * DatasetInstanceID MUST be of type String.
 * DatasetInstanceID MUST NOT be null.
 * DatasetInstanceID MUST be a unique identifier within a data generator.
@@ -17,7 +17,7 @@ DatasetInstanceId
 
 Dataset Instance ID
 
-## Content Constraints
+## Content constraints
 
 | Constraint    | Value              |
 |:--------------|:-------------------|
@@ -26,6 +26,6 @@ Dataset Instance ID
 | Data type     | String             |
 | Value format  | GUID (recommended) |
 
-## Version Introduced
+## Introduced (version)
 
 1.3

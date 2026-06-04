@@ -1,0 +1,5 @@
+BillingPeriodStart,BillingPeriodEnd,ChargePeriodStart,ChargePeriodEnd,ChargeCategory,ChargeFrequency,PricingCategory,ResourceId,BilledCost,EffectiveCost,CommitmentDiscountId,CommitmentDiscountQuantity,CommitmentDiscountUnit
+2023-01-01T00:00:00Z,2023-02-01T00:00:00Z,2023-01-01T00:00:00Z,2024-01-01T00:00:00Z,Purchase,One-Time,Standard,<my-commitment-discount-id>,4380.00,0.00,<my-commitment-discount-id>,4380.00,USD
+2023-01-01T00:00:00Z,2023-02-01T00:00:00Z,2023-01-01T00:00:00Z,2023-02-01T10:00:00Z,Purchase,Recurring,Standard,<my-commitment-discount-id>,0.50,0.00,<my-commitment-discount-id>,0.50,USD
+2023-01-01T00:00:00Z,2023-02-01T00:00:00Z,2023-01-01T10:00:00Z,2023-02-01T20:00:00Z,Purchase,Recurring,Standard,<my-commitment-discount-id>,0.50,0.00,<my-commitment-discount-id>,0.50,USD
+2023-01-01T00:00:00Z,2023-02-01T00:00:00Z,2023-01-01T20:00:00Z,2023-02-01T30:00:00Z,Purchase,Recurring,Standard,<my-commitment-discount-id>,0.50,0.00,<my-commitment-discount-id>,0.50,USD

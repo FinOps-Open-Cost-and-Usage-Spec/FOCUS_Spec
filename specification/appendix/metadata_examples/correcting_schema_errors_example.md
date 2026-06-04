@@ -2,7 +2,7 @@
 
 ## Scenario
 
-CrestNode has discovered that while their export includes the column x_awesome_column3, the [Schema](#metadata.schema) metadata does not include this column. In this case, the data generator fixes the metadata in the existing schema object and does not need to create a new schema object. Reference metadata remains the same.
+ACME has discovered that while their export includes the column x_awesome_column3, the [Schema](#schema) metadata does not include this column. In this case, the data generator fixes the metadata in the existing schema object and does not need to create a new schema object. Reference metadata remains the same.
 
 ## Supplied Metadata
 
@@ -52,7 +52,7 @@ The updated schema-related metadata could look like this:
           {
                 "ColumnName": "Tags",
                 "DataType": "JSON",
-                "ProviderTagPrefixes": ["crestnode", "cn"]
+                "ProviderTagPrefixes": ["acme", "ac"]
           },
           {
                 "ColumnName": "x_awesome_column1",
@@ -69,3 +69,4 @@ The updated schema-related metadata could look like this:
       ]
 }
 ```
+

@@ -4,7 +4,7 @@ The Dataset Instance ID provides the reference item to associate which Dataset I
 
 DatasetInstanceId adheres to the following requirements:
 
-* DatasetInstanceId MUST be present in an object within the [Recency](#metadata.recency) collection.
+* DatasetInstanceId MUST be present in an object within the [Recency](#recency) collection.
 * DatasetInstanceId MUST be of type String.
 * DatasetInstanceId MUST NOT be null.
 * DatasetInstanceId SHOULD be a Globally Unique Identifier (GUID).
@@ -17,7 +17,7 @@ DatasetInstanceId
 
 Dataset Instance ID
 
-## Content Constraints
+## Content constraints
 
 | Constraint    | Value              |
 |:--------------|:-------------------|
@@ -26,6 +26,6 @@ Dataset Instance ID
 | Data type     | String             |
 | Value format  | GUID (recommended) |
 
-## Version Introduced
+## Introduced (version)
 
 1.3

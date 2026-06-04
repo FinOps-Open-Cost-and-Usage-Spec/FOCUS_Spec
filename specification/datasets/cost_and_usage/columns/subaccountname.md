@@ -4,15 +4,16 @@ A Sub Account Name is a display name assigned to a [*sub account*](#glossary:sub
 
 ## Requirements
 
-SubAccountName MUST adhere to the following requirements:
+SubAccountName adheres to the following requirements:
 
+* SubAccountName MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports a *sub account* construct.
 * SubAccountName MUST be of type String.
-* SubAccountName MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* SubAccountName MUST adhere to the following nullability requirements:
-  * SubAccountName MUST be null when [SubAccountId](#datasets.costandusage.subaccountid) is null.
+* SubAccountName MUST conform to [StringHandling](#stringhandling) requirements.
+* SubAccountName nullability is defined as follows:
+  * SubAccountName MUST be null when [SubAccountId](#subaccountid) is null.
   * SubAccountName MUST NOT be null when SubAccountId is not null.
 
-See [Appendix: Grouping constructs for resources or services](#appendix.groupingconstructsforresourcesorservices) for details and examples of the different grouping constructs supported by FOCUS.
+See [Appendix: Grouping constructs for resources or services](#groupingconstructsforresourcesorservices) for details and examples of the different grouping constructs supported by FOCUS.
 
 ## Column ID
 
@@ -26,17 +27,16 @@ Sub Account Name
 
 A name assigned to a grouping of [*resources*](#glossary:resource) or [*services*](#glossary:service), often used to manage access and/or cost.
 
-## Content Constraints
+## Content constraints
 
-| Constraint      | Value                                                |
-| :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datasets.costandusage)             |
-| Column type     | Dimension                                            |
-| Feature level   | Conditional                                          |
-| Allows nulls    | True                                                 |
-| Data type       | String                                               |
-| Value format    | \<not specified>                                     |
+| Constraint      | Value           |
+|:----------------|:----------------|
+| Column type     | Dimension       |
+| Feature level   | Conditional     |
+| Allows nulls    | True            |
+| Data type       | String          |
+| Value format    | \<not specified> |
 
-## Version Introduced
+## Introduced (version)
 
 0.5

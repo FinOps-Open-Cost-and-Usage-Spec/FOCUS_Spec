@@ -3,11 +3,12 @@ Module to implement a plugin that looks for smart characters in the files.
 """
 from typing import cast
 
-from pymarkdown.tokens.inline_markdown_token import InlineMarkdownToken
-from pymarkdown.tokens.markdown_token import MarkdownToken
-from pymarkdown.general.parser_helper import ParserHelper
+from pymarkdown.inline_markdown_token import TextMarkdownToken
+from pymarkdown.markdown_token import MarkdownToken
+from pymarkdown.parser_helper import ParserHelper
 from pymarkdown.plugin_manager.plugin_details import PluginDetails
-from pymarkdown.plugin_manager.rule_plugin import PluginScanContext, RulePlugin
+from pymarkdown.plugin_manager.plugin_scan_context import PluginScanContext
+from pymarkdown.plugin_manager.rule_plugin import RulePlugin
 
 
 class RuleMd990(RulePlugin):
@@ -40,7 +41,7 @@ class RuleMd990(RulePlugin):
         if (
             token.is_text
         ):
-            text_token = cast(InlineMarkdownToken, token)
+            text_token = cast(TextMarkdownToken, token)
             for smart_char_item in RuleMd990.__smart_char_items:
                 start_index = 0
                 found_index = text_token.token_text.find(smart_char_item, start_index)
@@ -57,6 +58,8 @@ class RuleMd990(RulePlugin):
                     )
                     start_index = found_index + len(smart_char_item)
                     found_index = text_token.token_text.find(smart_char_item, start_index)
+
+
         elif token.is_code_block:
             self.__in_code_block = True
         elif token.is_code_block_end:
@@ -69,3 +72,4 @@ class RuleMd990(RulePlugin):
             self.__in_link = True
         elif token.is_inline_link_end:
             self.__in_link = False
+

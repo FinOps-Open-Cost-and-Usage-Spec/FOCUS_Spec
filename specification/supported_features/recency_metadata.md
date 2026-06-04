@@ -17,6 +17,6 @@ FOCUS supports the ability for data generators to provide metadata indicating 1)
     * Time Sector Complete
     * Time Sector Last Updated
 
-## Version Introduced
+## Introduced (Version)
 
 1.3
