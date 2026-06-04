@@ -1,0 +1,542 @@
+{
+  "CAU-SkuPriceId-C-000-C": {
+    "Function": "Composite",
+    "Reference": "SkuPriceId",
+    "EntityType": "Column",
+    "EntityName": "Sku Price Id",
+    "EntityId": "SkuPriceId",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "PUBLIC_PRICE_LIST_SUPPORTED",
+      "UNIT_PRICING_SUPPORTED"
+    ],
+    "Order": 0,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "SkuPriceId adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-SkuPriceId-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-SkuPriceId-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-SkuPriceId-C-003-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-SkuPriceId-C-007-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CAU-CostAndUsage-D-058-C",
+        "CAU-SkuPriceId-C-001-M",
+        "CAU-SkuPriceId-C-002-M",
+        "CAU-SkuPriceId-C-003-M",
+        "CAU-SkuPriceId-C-007-C"
+      ]
+    }
+  },
+  "CAU-SkuPriceId-C-001-M": {
+    "Function": "Type",
+    "Reference": "SkuPriceId",
+    "EntityType": "Column",
+    "EntityName": "Sku Price Id",
+    "EntityId": "SkuPriceId",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 20,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "SkuPriceId MUST be of type String.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "TypeString",
+        "ColumnName": "SkuPriceId"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-SkuPriceId-C-002-M": {
+    "Function": "Format",
+    "Reference": "SkuPriceId",
+    "EntityType": "Column",
+    "EntityName": "Sku Price Id",
+    "EntityId": "SkuPriceId",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 30,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "SkuPriceId MUST conform to StringHandling requirements.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "FormatString",
+        "ColumnName": "SkuPriceId"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-SkuPriceId-C-003-M": {
+    "Function": "Composite",
+    "Reference": "SkuPriceId",
+    "EntityType": "Column",
+    "EntityName": "Sku Price Id",
+    "EntityId": "SkuPriceId",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 40,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "SkuPriceId nullability is defined as follows:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-SkuPriceId-C-004-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-SkuPriceId-C-005-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-SkuPriceId-C-006-O"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CAU-SkuPriceId-C-004-C",
+        "CAU-SkuPriceId-C-005-C",
+        "CAU-SkuPriceId-C-006-O"
+      ]
+    }
+  },
+  "CAU-SkuPriceId-C-004-C": {
+    "Function": "Nullability",
+    "Reference": "SkuPriceId",
+    "EntityType": "Column",
+    "EntityName": "Sku Price Id",
+    "EntityId": "SkuPriceId",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 50,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "SkuPriceId MUST be null when ChargeCategory is \"Tax\".",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "SkuPriceId",
+        "Value": null
+      },
+      "Condition": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "ChargeCategory",
+        "Value": "Tax"
+      },
+      "Dependencies": []
+    }
+  },
+  "CAU-SkuPriceId-C-005-C": {
+    "Function": "Nullability",
+    "Reference": "SkuPriceId",
+    "EntityType": "Column",
+    "EntityName": "Sku Price Id",
+    "EntityId": "SkuPriceId",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 60,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "SkuPriceId MUST NOT be null when ChargeCategory is \"Usage\" or \"Purchase\" and ChargeClass is not \"Correction\".",
+      "Keyword": "MUST NOT",
+      "Requirement": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "SkuPriceId",
+        "Value": null
+      },
+      "Condition": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "OR",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ChargeCategory",
+                "Value": "Usage"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ChargeCategory",
+                "Value": "Purchase"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "CheckNotValue",
+            "ColumnName": "ChargeClass",
+            "Value": "Correction"
+          }
+        ]
+      },
+      "Dependencies": [
+        "CAU-ChargeClass-C-000-M",
+        "CAU-ChargeCategory-C-000-M"
+      ]
+    }
+  },
+  "CAU-SkuPriceId-C-006-O": {
+    "Function": "Nullability",
+    "Reference": "SkuPriceId",
+    "EntityType": "Column",
+    "EntityName": "Sku Price Id",
+    "EntityId": "SkuPriceId",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 70,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "SkuPriceId MAY be null in all other cases.",
+      "Keyword": "MAY",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-SkuPriceId-C-007-C": {
+    "Function": "Composite",
+    "Reference": "SkuPriceId",
+    "EntityType": "Column",
+    "EntityName": "Sku Price Id",
+    "EntityId": "SkuPriceId",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 80,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "When SkuPriceId is not null, SkuPriceId adheres to the following additional requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-SkuPriceId-C-008-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-SkuPriceId-C-009-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-SkuPriceId-C-010-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-SkuPriceId-C-011-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-SkuPriceId-C-012-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-SkuPriceId-C-013-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-SkuPriceId-C-014-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-SkuPriceId-C-015-C"
+          }
+        ]
+      },
+      "Condition": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "SkuPriceId",
+        "Value": null
+      },
+      "Dependencies": [
+        "CAU-SkuPriceId-C-008-M",
+        "CAU-SkuPriceId-C-009-M",
+        "CAU-SkuPriceId-C-010-M",
+        "CAU-SkuPriceId-C-011-O",
+        "CAU-SkuPriceId-C-012-C",
+        "CAU-SkuPriceId-C-013-M",
+        "CAU-SkuPriceId-C-014-C",
+        "CAU-SkuPriceId-C-015-C"
+      ]
+    }
+  },
+  "CAU-SkuPriceId-C-008-M": {
+    "Function": "Validation",
+    "Reference": "SkuPriceId",
+    "EntityType": "Column",
+    "EntityName": "Sku Price Id",
+    "EntityId": "SkuPriceId",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 90,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "SkuPriceId MUST have one and only one parent SkuId.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "CheckDistinctCount",
+        "ColumnAName": "SkuPriceId",
+        "ColumnBName": "SkuId",
+        "ExpectedCount": 1
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-SkuPriceId-C-009-M": {
+    "Function": "Validation",
+    "Reference": "SkuPriceId",
+    "EntityType": "Column",
+    "EntityName": "Sku Price Id",
+    "EntityId": "SkuPriceId",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 100,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "SkuPriceId MUST remain consistent over time.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-SkuPriceId-C-010-M": {
+    "Function": "Validation",
+    "Reference": "SkuPriceId",
+    "EntityType": "Column",
+    "EntityName": "Sku Price Id",
+    "EntityId": "SkuPriceId",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 110,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "SkuPriceId MUST remain consistent across billing accounts or contracts.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-SkuPriceId-C-011-O": {
+    "Function": "Validation",
+    "Reference": "SkuPriceId",
+    "EntityType": "Column",
+    "EntityName": "Sku Price Id",
+    "EntityId": "SkuPriceId",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 120,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "SkuPriceId MAY equal SkuId.",
+      "Keyword": "MAY",
+      "Requirement": {
+        "CheckFunction": "CheckSameValue",
+        "ColumnAName": "SkuPriceId",
+        "ColumnBName": "SkuId"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-SkuPriceId-C-012-C": {
+    "Function": "Validation",
+    "Reference": "SkuPriceId",
+    "EntityType": "Column",
+    "EntityName": "Sku Price Id",
+    "EntityId": "SkuPriceId",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 130,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "SkuPriceId MUST be associated with a given resource or service when ChargeCategory is \"Usage\" or \"Purchase\".",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {
+        "CheckFunction": "OR",
+        "Items": [
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ChargeCategory",
+            "Value": "Usage"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ChargeCategory",
+            "Value": "Purchase"
+          }
+        ]
+      },
+      "Dependencies": [
+        "CAU-ChargeCategory-C-003-M"
+      ]
+    }
+  },
+  "CAU-SkuPriceId-C-013-M": {
+    "Function": "Validation",
+    "Reference": "SkuPriceId",
+    "EntityType": "Column",
+    "EntityName": "Sku Price Id",
+    "EntityId": "SkuPriceId",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 140,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "SkuPriceId MUST reference a SKU Price in a provider-supplied price list, enabling the lookup of detailed information about the SKU Price.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-SkuPriceId-C-014-C": {
+    "Function": "Validation",
+    "Reference": "SkuPriceId",
+    "EntityType": "Column",
+    "EntityName": "Sku Price Id",
+    "EntityId": "SkuPriceId",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "PUBLIC_PRICE_LIST_SUPPORTED"
+    ],
+    "Order": 150,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "SkuPriceId MUST support the lookup of the ListUnitPrice when the provider publishes unit prices exclusive of discounts.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-SkuPriceId-C-015-C": {
+    "Function": "Validation",
+    "Reference": "SkuPriceId",
+    "EntityType": "Column",
+    "EntityName": "Sku Price Id",
+    "EntityId": "SkuPriceId",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "NEGOTIATED_PRICING_SUPPORTED"
+    ],
+    "Order": 160,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "SkuPriceId MUST support the verification of the given ContractedUnitPrice when the provider supports negotiated pricing concepts.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}

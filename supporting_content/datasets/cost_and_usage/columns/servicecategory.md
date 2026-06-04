@@ -15,14 +15,14 @@ Current column mappings found in available data sets:
 
 Principles behind Service Category, granularity, when to add, when to split etc.
 
-- Every category must represent a single technology. Do not "and" multiple categories together unless they are synonymous.
-- Each category should be unique and should not be a logical child of another category (e.g., Containers are a subclassification of Compute).
-- Categories are used for cost classification purposes only. Do not create new categories for marketing differentiation (e.g., Containers).
-- Avoid unnecessary words. Prefer short, concise names.
-- Each service should have 1 and only 1 category that best aligns to its purpose.
-- Each category should have around 3-10 services for the major cloud providers. Avoid categories with only 1 or with over 20 services. No category should have more than 20% of services.
-- Do not create categories that describe traits of the service that could be applied to many categories (e.g., "serverless").
-- Beyond purely cost categorization purposes, the category is based on the primary function the service intends to solve.
+* Every category must represent a single technology. Do not "and" multiple categories together unless they are synonymous.
+* Each category should be unique and should not be a logical child of another category (e.g., Containers are a subclassification of Compute).
+* Categories are used for cost classification purposes only. Do not create new categories for marketing differentiation (e.g., Containers).
+* Avoid unnecessary words. Prefer short, concise names.
+* Each service should have 1 and only 1 category that best aligns to its purpose.
+* Each category should have around 3-10 services for the major cloud providers. Avoid categories with only 1 or with over 20 services. No category should have more than 20% of services.
+* Do not create categories that describe traits of the service that could be applied to many categories (e.g., "serverless").
+* Beyond purely cost categorization purposes, the category is based on the primary function the service intends to solve.
 
 Note: While a service can only be in one category, usage/cost for that service may include charges related to another category. For example, resources under the Databases category can have storage and compute cost - however, the primary function of the overall service is to provide database functionality therefore it’s considered to be under the database category.
 

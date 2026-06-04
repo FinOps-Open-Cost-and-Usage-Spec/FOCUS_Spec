@@ -1,10 +1,10 @@
 # Time Sector Complete
 
-Time Sector Complete provides a boolean value to indicate that the time sector is considered complete by the DataGenerator.  The definition of complete is determined by the DataGenerator and should be provided in documentation provided by the DataGenerator.
+Time Sector Complete provides a boolean value to indicate that the time sector is considered complete by the DataGenerator. The definition of complete is determined by the DataGenerator and should be provided in documentation provided by the DataGenerator.
 
 TimeSectorComplete adheres to the following requirements:
 
-* TimeSectorComplete MUST be present in the [TimeSectors](#timesectors) subsection of the [Recency](#recency) metadata section.
+* TimeSectorComplete MUST be present in the [TimeSectors](#metadata.recency.timesectors) subsection of the [Recency](#metadata.recency) metadata section.
 * TimeSectorComplete MUST be of type Boolean.
 * TimeSectorComplete MUST not be null.
 
@@ -16,7 +16,7 @@ TimeSectorComplete
 
 Time Sector Complete
 
-## Content constraints
+## Content Constraints
 
 | Constraint    | Value             |
 |:--------------|:------------------|
@@ -25,6 +25,6 @@ Time Sector Complete
 | Data type     | Boolean           |
 | Value format  | \<not specified>  |
 
-## Introduced (version)
+## Version Introduced
 
 1.3

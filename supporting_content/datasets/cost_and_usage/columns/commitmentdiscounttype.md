@@ -24,10 +24,10 @@ Examples of found in available data sets:
 
 ## Discussion topics
 
-- Alternative names discussed:
-  - Commitment Discount Program
-  - Commitment Discount Plan
-  - Commitment Discount Plan Name
-  - Decided to use "Type" to be consistent with "ResourceType"
+* Alternative names discussed:
+  * Commitment Discount Program
+  * Commitment Discount Plan
+  * Commitment Discount Plan Name
+  * Decided to use "Type" to be consistent with "ResourceType"
 
   Note: See [Supporting Content for CommitmentDiscountCategory](commitmentdiscountcategory.md) for further explanation

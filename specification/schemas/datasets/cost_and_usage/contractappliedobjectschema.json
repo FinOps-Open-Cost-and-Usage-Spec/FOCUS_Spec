@@ -1,0 +1,104 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://focus.finops.org/schemas/contractappliedobject.json",
+    "title": "Contract Applied Object",
+    "description": "Schema for validating the Contract Applied column JSON object structure in FOCUS datasets",
+    "type": "object",
+    "required": [
+        "Elements"
+    ],
+    "properties": {
+        "Elements": {
+            "type": "array",
+            "description": "Array containing one or more objects describing contract commitments applied to the charge",
+            "minItems": 1,
+            "items": {
+                "type": "object",
+                "required": [
+                    "ContractId",
+                    "ContractCommitmentId"
+                ],
+                "properties": {
+                    "ContractId": {
+                        "type": "string",
+                        "description": "Unique identifier for the contract"
+                    },
+                    "ContractCommitmentId": {
+                        "type": "string",
+                        "description": "Unique identifier for the contract commitment term"
+                    },
+                    "ContractCommitmentAppliedCost": {
+                        "type": [
+                            "number",
+                            "null"
+                        ],
+                        "description": "Cost value of the charge applied to the contract commitment"
+                    },
+                    "ContractCommitmentAppliedQuantity": {
+                        "type": [
+                            "number",
+                            "null"
+                        ],
+                        "description": "Quantity of usage applied to the contract commitment"
+                    },
+                    "ContractCommitmentAppliedUnit": {
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "description": "Unit of measure for the applied quantity"
+                    }
+                },
+                "oneOf": [
+                    {
+                        "description": "Scenario 1: Cost has a value. Quantity and Unit MUST be absent or explicitly null.",
+                        "required": [
+                            "ContractCommitmentAppliedCost"
+                        ],
+                        "properties": {
+                            "ContractCommitmentAppliedCost": {
+                                "type": "number"
+                            },
+                            "ContractCommitmentAppliedQuantity": {
+                                "type": "null"
+                            },
+                            "ContractCommitmentAppliedUnit": {
+                                "type": "null"
+                            }
+                        }
+                    },
+                    {
+                        "description": "Scenario 2: Quantity and Unit have values. Cost MUST be absent or explicitly null.",
+                        "required": [
+                            "ContractCommitmentAppliedQuantity",
+                            "ContractCommitmentAppliedUnit"
+                        ],
+                        "properties": {
+                            "ContractCommitmentAppliedCost": {
+                                "type": "null"
+                            },
+                            "ContractCommitmentAppliedQuantity": {
+                                "type": "number"
+                            },
+                            "ContractCommitmentAppliedUnit": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                ],
+                "patternProperties": {
+                    "^x_[A-Z][a-zA-Z0-9]*$": {
+                        "description": "Custom data generator-defined properties prefixed with x_ in PascalCase format"
+                    }
+                },
+                "additionalProperties": false
+            }
+        }
+    },
+    "patternProperties": {
+        "^x_[A-Z][a-zA-Z0-9]*$": {
+            "description": "Custom data generator-defined top-level properties prefixed with x_ in PascalCase format"
+        }
+    },
+    "additionalProperties": false
+}

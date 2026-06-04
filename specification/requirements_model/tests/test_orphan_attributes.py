@@ -15,14 +15,14 @@ def _iter_rule_ids_in_requirement(node):
             yield from _iter_rule_ids_in_requirement(item)
 
 
-def test_no_orphan_attributes_excluding_formatattributes_and_deprecated(cr_json):
+def test_no_orphan_attributes_excluding_formatattributes_and_removed(cr_json):
     """
     Attribute-type rules are considered 'referenced' if they appear:
       • in any rule's ValidationCriteria.Dependencies, OR
       • in any Requirement/Condition tree via ModelRuleId, OR
       • in any CheckFunctions.*.FormatAttributes array.
 
-    Attributes with Status='Deprecated' are ignored (allowed to be orphaned).
+    Attributes with Status='Removed' are ignored (allowed to be orphaned).
     """
     rules = cr_json.get("ModelRules") or {}
     checkfuncs = cr_json.get("CheckFunctions") or {}
@@ -56,13 +56,13 @@ def test_no_orphan_attributes_excluding_formatattributes_and_deprecated(cr_json)
                     if isinstance(rid, str):
                         referenced.add(rid)
 
-    # 3) Find orphaned Attributes (excluding Deprecated)
+    # 3) Find orphaned Attributes (excluding Removed)
     orphaned = []
     for rid, rule in rules.items():
         if (rule.get("EntityType") or "").strip() != "Attribute":
             continue
-        if (rule.get("Status") or "").strip() == "Deprecated":
-            continue  # deprecated attributes are allowed to be orphaned
+        if (rule.get("Status") or "").strip() == "Removed":
+            continue  # removed attributes are allowed to be orphaned
         if rid not in referenced:
             orphaned.append(rid)
 

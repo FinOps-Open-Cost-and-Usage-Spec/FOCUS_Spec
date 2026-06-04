@@ -2,7 +2,7 @@
 
 ## Description
 
-FOCUS supports the inclusion of custom columns to facilitate reporting capability that is not covered by the columns included in the specification.
+FOCUS supports the inclusion of custom columns to facilitate reporting capability that is not covered by the columns included in the specification. See [Dataset Completeness](#attributes.datasetcompleteness) for requirements on when custom columns should be included.
 
 ## Directly Dependent Columns
 
@@ -24,6 +24,6 @@ GROUP BY
 ORDER BY MonthlyCost DESC
 ```
 
-## Introduced (Version)
+## Version Introduced
 
 0.5

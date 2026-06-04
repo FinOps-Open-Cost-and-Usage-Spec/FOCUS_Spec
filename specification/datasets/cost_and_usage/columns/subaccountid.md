@@ -4,16 +4,15 @@ A Sub Account ID is a service-provider-assigned identifier assigned to a [*sub a
 
 ## Requirements
 
-SubAccountId adheres to the following requirements:
+SubAccountId MUST adhere to the following requirements:
 
-* SubAccountId MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports a *sub account* construct.
 * SubAccountId MUST be of type String.
-* SubAccountId MUST conform to [StringHandling](#stringhandling) requirements.
-* SubAccountId nullability is defined as follows:
+* SubAccountId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
+* SubAccountId MUST adhere to the following nullability requirements:
   * SubAccountId MUST be null when a [*charge*](#glossary:charge) is not related to a *sub account*.
   * SubAccountId MUST NOT be null when a *charge* is related to a *sub account*.
 
-See [Appendix: Grouping constructs for resources or services](#groupingconstructsforresourcesorservices) for details and examples of the different grouping constructs supported by FOCUS.
+See [Appendix: Grouping constructs for resources or services](#appendix.groupingconstructsforresourcesorservices) for details and examples of the different grouping constructs supported by FOCUS.
 
 ## Column ID
 
@@ -27,16 +26,17 @@ Sub Account ID
 
 An ID assigned to a grouping of [*resources*](#glossary:resource) or [*services*](#glossary:service), often used to manage access and/or cost.
 
-## Content constraints
+## Content Constraints
 
-|    Constraint   |      Value      |
-|:----------------|:----------------|
-| Column type     | Dimension       |
-| Feature level   | Conditional     |
-| Allows nulls    | True            |
-| Data type       | String          |
-| Value format    | \<not specified> |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Dimension                                            |
+| Feature level   | Conditional                                          |
+| Allows nulls    | True                                                 |
+| Data type       | String                                               |
+| Value format    | \<not specified>                                     |
 
-## Introduced (version)
+## Version Introduced
 
 0.5

@@ -38,10 +38,10 @@ Given that this is a free-form text field, it may be difficult for providers to 
 
 We deliberated if we should be more specific and define the minimum required information for this column?
 
-- A list of FOCUS columns which we believe provide this high-level context without the need for additional discovery and thus must be included (concatenated) as part of the Charge description? (Irena)
-- Are these enough? Region/location? Qty? (Larry)
-  - What: lineItem/LineItemDescription
-  - Where: Region
-  - How (many): Qty
+* A list of FOCUS columns which we believe provide this high-level context without the need for additional discovery and thus must be included (concatenated) as part of the Charge description? (Irena)
+* Are these enough? Region/location? Qty? (Larry)
+  * What: lineItem/LineItemDescription
+  * Where: Region
+  * How (many): Qty
 
 Considering a variable landscape across cloud, SaaS, etc. we decided to keep it open-ended.

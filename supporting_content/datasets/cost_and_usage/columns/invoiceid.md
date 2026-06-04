@@ -1,10 +1,10 @@
-Request is to make avaialble an invoice ID column that will be updated at invoice generation time to add the invoice ID to the rows of data for easier reconcilliation of spend to invoice ID
+Request is to make available an invoice ID column that will be updated at invoice generation time to add the invoice ID to the rows of data for easier reconciliation of spend to invoice ID
 
 ## The Problem:
 
-Without Invoice ID there are situations like when an account is moved between different Billing Accounts, where you loose track and are unable to properly match those.
+Without Invoice ID there are situations like when an account is moved between different Billing Accounts, where you lose track and are unable to properly match those.
 
-Invoice reconcilliation is harder to achieve when practiioners are not able to determine which charges in a month relate to the invoice for the invoie month.
+Invoice reconciliation is harder to achieve when practitioners are not able to determine which charges in a month relate to the invoice for the invoice month.
 
 Credits are hard to allocate as each credit or refund will receive a new credit memo and is not linked to previous invoices or invoice months.
 
@@ -21,7 +21,7 @@ The sum of the invoices for a given Billing Account ID and Invoice Issuer Name m
 Adding a new column called InvoiceID
 Allow nulls in the column and require vendors you create an invoiceID to add it to the row
 Have cloud providers update the data at invoice generation to include the invoiceID
-This option is probably less complex than option 2 but requires providers to do an update on millions and millions of rows of data at the end of each period to inlcude the relevant invoiceID for the billing period. 
+This option is probably less complex than option 2 but requires providers to do an update on millions and millions of rows of data at the end of each period to include the relevant invoiceID for the billing period. 
 It may increase data sizes and doubles the export requirements for practitioners at the end of each month.
 We will need to work through how to determine the InvoiceID or Invoice section ID and how to links to the specific rows of data for the billing period noting we may have some invoice month items land in a different billing period outside the invoice month.
 After TF2 last week and a discussion with Mike today, there seems to be support for this option. I would like to know more from cloud providers on their views of this.
@@ -29,7 +29,7 @@ After TF2 last week and a discussion with Mike today, there seems to be support 
 ## Option 2 - Create an invoice Schema outside of FOCUS - post release 1.2
 Discussing this option with Riley, it sounds like a very suitable option for linking InvoiceID back to billed rows of data for a billing period. 
 We would create a new schema for Invoice data which can be updated at the end of each month and would use dimension data to provide a unique link back to each row of data the invoice was associated to
-Examples of this can eb found here: https://docs.google.com/spreadsheets/d/1fzLutxkXWoxDifz8YgGHQxbEyO67lA_6_EHr-E5Jlzk/edit?gid=1540478077#gid=1540478077
+Examples of this can be found here: https://docs.google.com/spreadsheets/d/1fzLutxkXWoxDifz8YgGHQxbEyO67lA_6_EHr-E5Jlzk/edit?gid=1540478077#gid=1540478077
 
 # Provider information on invoice handling
 ## Google

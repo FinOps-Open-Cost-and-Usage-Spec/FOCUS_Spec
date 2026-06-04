@@ -12,9 +12,9 @@ Current column mappings found in available data sets:
 
 ## Documentation
 
-- AWS: [Reserved Instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-reserved-instances.html), [Savings Plans](https://docs.aws.amazon.com/savingsplans/latest/userguide/what-is-savings-plans.html)
-- GCP: [Structure of Standard data export](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/standard-usage), [Committed Use Discounts](https://cloud.google.com/docs/cuds)
-- Microsoft: [Azure Savings Plans](https://learn.microsoft.com/azure/cost-management-billing/savings-plan/savings-plan-compute-overview), [Azure Reservations](https://learn.microsoft.com/azure/cost-management-billing/reservations/save-compute-costs-reservations)
+* AWS: [Reserved Instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-reserved-instances.html), [Savings Plans](https://docs.aws.amazon.com/savingsplans/latest/userguide/what-is-savings-plans.html)
+* GCP: [Structure of Standard data export](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/standard-usage), [Committed Use Discounts](https://cloud.google.com/docs/cuds)
+* Microsoft: [Azure Savings Plans](https://learn.microsoft.com/azure/cost-management-billing/savings-plan/savings-plan-compute-overview), [Azure Reservations](https://learn.microsoft.com/azure/cost-management-billing/reservations/save-compute-costs-reservations)
 
 ## Example usage scenarios
 
@@ -31,12 +31,12 @@ Current values observed in billing data for various scenarios:
 
 ## Discussion / Scratch space:
 
-- Column names considered:
-  - CommitmentBasedDiscountId
-  - CommitmentId
-  - CommitmentDiscountId
-  - DiscountId
-  - BenefitId
-- In AWS, includes RI and SP, commitments that don’t map 1:1 with a single resource, capacity reservations (i.e. DynamoDB).
-- Only commitments were identified to require an explicit id/name.
-- The name “commitment” was agreed upon. Applies to both id and name.
+* Column names considered:
+  * CommitmentBasedDiscountId
+  * CommitmentId
+  * CommitmentDiscountId
+  * DiscountId
+  * BenefitId
+* In AWS, includes RI and SP, commitments that don’t map 1:1 with a single resource, capacity reservations (i.e. DynamoDB).
+* Only commitments were identified to require an explicit id/name.
+* The name “commitment” was agreed upon. Applies to both id and name.
