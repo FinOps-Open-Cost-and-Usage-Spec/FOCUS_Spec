@@ -1,4 +1,16 @@
 import pytest
+from conftest import requires_version
+
+
+# Phrases to exclude from keyword matching to avoid false positives
+KEYWORD_EXCLUDE_PHRASES = [
+    "SLA credit details when the credit is already applied",
+    "(e.g., when the",
+    "where necessary",
+    ", where quantity is a positive integer,",
+    "where m is a real number and n",
+    "when required for a decimal value"
+]
 
 
 def _iter_rule_ids_in_requirement(node):
@@ -18,8 +30,13 @@ def _text_has_keywords(text, keywords=None) -> bool:
     if not isinstance(text, str):
         return False
     if keywords is None:
-        keywords = ["when", "unless"]
+        keywords = ["when", "unless", "where", "if it"]
+
+    # Remove excluded phrases before checking for keywords
     s = text.lower()
+    for phrase in KEYWORD_EXCLUDE_PHRASES:
+        s = s.replace(phrase.lower(), "")
+    
     return any(kw in s for kw in keywords)
 
 def _rule_has_scope(rule: dict) -> bool:
@@ -28,7 +45,7 @@ def _rule_has_scope(rule: dict) -> bool:
     cond = vc.get("Condition")
     ms = vc.get("MustSatisfy")
     has_app = isinstance(app, list) and len(app) > 0
-    has_cond = isinstance(cond, dict) and len(cond) > 0
+    has_cond = (isinstance(cond, dict) or isinstance(cond, list)) and len(cond) > 0
     has_ms_scope = _text_has_keywords(ms)
     return has_app or has_cond or has_ms_scope
 
@@ -46,7 +63,7 @@ def _all_requirement_refs_have_scope(rule: dict, rules: dict) -> bool:
 def _deps_presence_keywords(rule: dict, rules: dict):
     """
     Return two booleans:
-      has_presence_must_or_should: any dep is Presence with Keyword in {'MUST','SHOULD'}
+      has_presence_must: any dep is Presence with Keyword in {'MUST'}
       has_presence_other:          any dep is Presence with other keyword
     (Dependencies only.)
     """
@@ -55,7 +72,7 @@ def _deps_presence_keywords(rule: dict, rules: dict):
     if not isinstance(deps, list):
         return (False, False)
 
-    has_must_should = False
+    has_must = False
     has_other = False
 
     for dep_id in deps:
@@ -65,12 +82,12 @@ def _deps_presence_keywords(rule: dict, rules: dict):
         if linked.get("Function") != "Presence":
             continue
         kw = ((linked.get("ValidationCriteria") or {}).get("Keyword") or "").strip().upper()
-        if kw in {"MUST", "SHOULD"}:
-            has_must_should = True
+        if kw in {"MUST"}:
+            has_must = True
         else:
             has_other = True
 
-    return has_must_should, has_other
+    return has_must, has_other
 
 
 
@@ -81,9 +98,14 @@ def _deps_presence_keywords(rule: dict, rules: dict):
     depends=["provider_supports_requires_applicabilitycriteria"],
     scope="session",
 )
-def test_suffixes_unified(cr_json):
+def test_suffixes_unified(cr_json, model_version):
+    # This test only applies to model version 1.3 and above
+    should_skip, reason = requires_version(model_version, min_version="1.3")
+    if should_skip:
+        pytest.skip(reason)
+    
     """
-    Scope = non-empty ApplicabilityCriteria OR non-empty Condition OR 'when'/'unless' in MustSatisfy
+    Scope = non-empty ApplicabilityCriteria OR non-empty Condition OR 'when'/'unless'/'where'/'if it' in MustSatisfy
     • If scope: require '-C' (skip '-M'/'-O').
 
     Otherwise (no scope):
@@ -99,7 +121,7 @@ def test_suffixes_unified(cr_json):
     rules = cr_json.get("ModelRules") or {}
 
     need_c, need_m, need_o = [], [], []
-    O_KEYWORDS = {"MAY", "MAY NOT", "RECOMMENDED", "NOT RECOMMENDED"}
+    O_KEYWORDS = {"MAY", "MAY NOT", "SHOULD", "SHOULD NOT","RECOMMENDED", "NOT RECOMMENDED"}
 
     for rid, rule in rules.items():
         if (rule.get("Status") or "").strip() != "Active":

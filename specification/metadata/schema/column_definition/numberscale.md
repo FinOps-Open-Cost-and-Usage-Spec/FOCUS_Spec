@@ -4,9 +4,9 @@ The number scale of the data provides the maximum number of digits after the dec
 
 NumberScale adheres to the following requirements:
 
-* NumberScale SHOULD be present in an object within the [ColumnDefinition](#columndefinition) collection when the column is of Decimal data type.
+* NumberScale SHOULD be present in an object within the [ColumnDefinition](#metadata.schema.columndefinition) collection when the column is of Decimal data type.
 * NumberScale MUST be of type Integer.
-* NumberScale MUST conform to [NumericFormat](#numericformat) requirements.
+* NumberScale MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * NumberScale MUST NOT be null.
 
 ## Metadata ID
@@ -17,15 +17,15 @@ NumberScale
 
 Number Scale
 
-## Content constraints
+## Content Constraints
 
 | Constraint    | Value                            |
 |:--------------|:---------------------------------|
 | Feature level | Recommended                      |
 | Allows nulls  | False                            |
 | Data type     | Integer                          |
-| Value format  | [Numeric Format](#numericformat) |
+| Value format  | [Numeric Format](#attributes.numericformat) |
 
-## Introduced (version)
+## Version Introduced
 
 1.0

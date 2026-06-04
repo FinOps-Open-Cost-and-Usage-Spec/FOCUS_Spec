@@ -1,0 +1,220 @@
+{
+  "CAU-CommitmentDiscountStatus-C-000-C": {
+    "Function": "Composite",
+    "Reference": "CommitmentDiscountStatus",
+    "EntityType": "Column",
+    "EntityName": "Commitment Discount Status",
+    "EntityId": "CommitmentDiscountStatus",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "COMMITMENT_DISCOUNT_SUPPORTED"
+    ],
+    "Order": 0,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CommitmentDiscountStatus adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CommitmentDiscountStatus-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CommitmentDiscountStatus-C-002-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CommitmentDiscountStatus-C-005-M"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CAU-CostAndUsage-D-017-C",
+        "CAU-CommitmentDiscountStatus-C-001-M",
+        "CAU-CommitmentDiscountStatus-C-002-C",
+        "CAU-CommitmentDiscountStatus-C-005-M"
+      ]
+    }
+  },
+  "CAU-CommitmentDiscountStatus-C-001-M": {
+    "Function": "Type",
+    "Reference": "CommitmentDiscountStatus",
+    "EntityType": "Column",
+    "EntityName": "Commitment Discount Status",
+    "EntityId": "CommitmentDiscountStatus",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 20,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CommitmentDiscountStatus MUST be of type String.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "TypeString",
+        "ColumnName": "CommitmentDiscountStatus"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CommitmentDiscountStatus-C-002-C": {
+    "Function": "Composite",
+    "Reference": "CommitmentDiscountStatus",
+    "EntityType": "Column",
+    "EntityName": "Commitment Discount Status",
+    "EntityId": "CommitmentDiscountStatus",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 30,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CommitmentDiscountStatus nullability is defined as follows:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CommitmentDiscountStatus-C-003-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CommitmentDiscountStatus-C-004-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CAU-CommitmentDiscountStatus-C-003-C",
+        "CAU-CommitmentDiscountStatus-C-004-C"
+      ]
+    }
+  },
+  "CAU-CommitmentDiscountStatus-C-003-C": {
+    "Function": "Nullability",
+    "Reference": "CommitmentDiscountStatus",
+    "EntityType": "Column",
+    "EntityName": "Commitment Discount Status",
+    "EntityId": "CommitmentDiscountStatus",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 40,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CommitmentDiscountStatus MUST be null when CommitmentDiscountId is null.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "CommitmentDiscountStatus",
+        "Value": null
+      },
+      "Condition": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "CommitmentDiscountId",
+        "Value": null
+      },
+      "Dependencies": [
+        "CAU-CommitmentDiscountId-C-000-C"
+      ]
+    }
+  },
+  "CAU-CommitmentDiscountStatus-C-004-C": {
+    "Function": "Nullability",
+    "Reference": "CommitmentDiscountStatus",
+    "EntityType": "Column",
+    "EntityName": "Commitment Discount Status",
+    "EntityId": "CommitmentDiscountStatus",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 50,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CommitmentDiscountStatus MUST NOT be null when CommitmentDiscountId is not null and Charge Category is \"Usage\".",
+      "Keyword": "MUST NOT",
+      "Requirement": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "CommitmentDiscountStatus",
+        "Value": null
+      },
+      "Condition": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "CommitmentDiscountId",
+        "Value": null
+      },
+      "Dependencies": [
+        "CAU-CommitmentDiscountId-C-000-C"
+      ]
+    }
+  },
+  "CAU-CommitmentDiscountStatus-C-005-M": {
+    "Function": "Validation",
+    "Reference": "CommitmentDiscountStatus",
+    "EntityType": "Column",
+    "EntityName": "Commitment Discount Status",
+    "EntityId": "CommitmentDiscountStatus",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 60,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CommitmentDiscountStatus MUST be one of the allowed values.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "OR",
+        "Items": [
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "CommitmentDiscountStatus",
+            "Value": "Active"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "CommitmentDiscountStatus",
+            "Value": "Expired"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "CommitmentDiscountStatus",
+            "Value": "Pending"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}

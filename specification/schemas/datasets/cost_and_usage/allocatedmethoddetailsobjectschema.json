@@ -1,0 +1,82 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://focus.finops.org/schemas/allocatedmethoddetailsobject.json",
+    "title": "Allocated Method Details Object",
+    "description": "Schema for validating the Allocated Method Details column JSON object structure in FOCUS datasets",
+    "type": "object",
+    "required": [
+        "Elements"
+    ],
+    "properties": {
+        "Elements": {
+            "type": "array",
+            "description": "Array containing one or more objects describing allocation properties",
+            "minItems": 1,
+            "items": {
+                "type": "object",
+                "required": [
+                    "AllocatedRatio"
+                ],
+                "properties": {
+                    "AllocatedRatio": {
+                        "type": "number",
+                        "description": "Percentage of overall cost derived from corresponding method and metric",
+                        "minimum": 0,
+                        "maximum": 1
+                    },
+                    "UsageUnit": {
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "description": "Unit being measured used to calculate allocation"
+                    },
+                    "UsageQuantity": {
+                        "type": [
+                            "number",
+                            "null"
+                        ],
+                        "description": "Volume of UsageUnit consumed or used"
+                    }
+                },
+                "anyOf": [
+                    {
+                        "description": "Scenario 1: UsageQuantity is absent or explicitly null. UsageUnit can be anything (or absent).",
+                        "properties": {
+                            "UsageQuantity": {
+                                "type": "null"
+                            }
+                        }
+                    },
+                    {
+                        "description": "Scenario 2: UsageQuantity is provided and is a number. UsageUnit MUST be provided and MUST be a string.",
+                        "required": [
+                            "UsageQuantity",
+                            "UsageUnit"
+                        ],
+                        "properties": {
+                            "UsageQuantity": {
+                                "type": "number"
+                            },
+                            "UsageUnit": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                ],
+                "patternProperties": {
+                    "^x_[A-Z][a-zA-Z0-9]*$": {
+                        "description": "Custom data generator-defined properties prefixed with x_ in PascalCase format"
+                    }
+                },
+                "additionalProperties": false
+            }
+        }
+    },
+    "patternProperties": {
+        "^x_[A-Z][a-zA-Z0-9]*$": {
+            "description": "Custom data generator-defined top-level properties prefixed with x_ in PascalCase format"
+        }
+    },
+    "additionalProperties": false
+}

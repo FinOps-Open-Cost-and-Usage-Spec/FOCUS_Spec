@@ -2,7 +2,7 @@
 
 ## Scenario
 
-ACME provides recency metadata to accompany its FOCUS data export. ACME updates its FOCUS Cost and Usage dataset (time series) every hour; however, the data lags by two days. Here, the most recent update to the recency data indicates the previous time sectors are now TimeSectorComplete. It also indicates that previous time sectors have been updated in the dataset. New time sectors have also been added.
+CrestNode provides recency metadata to accompany its FOCUS data export. CrestNode updates its FOCUS Cost and Usage dataset (time series) every hour; however, the data lags by two days. Here, the most recent update to the recency data indicates the previous time sectors are now TimeSectorComplete. It also indicates that previous time sectors have been updated in the dataset. New time sectors have also been added.
 
 ## Supplied Metadata
 

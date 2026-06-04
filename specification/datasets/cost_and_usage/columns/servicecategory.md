@@ -4,36 +4,13 @@ The Service Category is the highest-level classification of a [*service*](#gloss
 
 ## Requirements
 
-ServiceCategory adheres to the following requirements:
+ServiceCategory MUST adhere to the following requirements:
 
-* ServiceCategory MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ServiceCategory MUST be of type String.
 * ServiceCategory MUST NOT be null.
 * ServiceCategory MUST be one of the allowed values.
 
-## Column ID
-
-ServiceCategory
-
-## Display Name
-
-Service Category
-
-## Description
-
-Highest-level classification of a *service* based on the core function of the *service*.
-
-## Content Constraints
-
-| Constraint      | Value          |
-| :-------------- | :------------- |
-| Column type     | Dimension      |
-| Feature level   | Mandatory      |
-| Allows nulls    | False          |
-| Data type       | String         |
-| Value format    | Allowed Values |
-
-Allowed values:
+## Allowed Values
 
 | Service Category          | Description                                                                                    |
 | :------------------------ | :--------------------------------------------------------------------------------------------- |
@@ -57,6 +34,29 @@ Allowed values:
 | Web                       | Services enabling cloud applications to interact via the Internet.                             |
 | Other                     | New or emerging services that do not align with an existing category.                          |
 
-## Introduced (version)
+## Column ID
+
+ServiceCategory
+
+## Display Name
+
+Service Category
+
+## Description
+
+Highest-level classification of a *service* based on the core function of the *service*.
+
+## Content Constraints
+
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Dimension                                            |
+| Feature level   | Mandatory                                            |
+| Allows nulls    | False                                                |
+| Data type       | String                                               |
+| Value format    | Allowed values                                       |
+
+## Version Introduced
 
 0.5

@@ -1,0 +1,175 @@
+name: Sync PR Review Counts
+
+on:
+  schedule:
+    - cron: '0 */4 * * *'  # Runs every 4 hours
+  pull_request:
+    types: 
+      - opened
+      - reopened
+  pull_request_review:
+    types: 
+      - submitted
+      - dismissed
+  workflow_dispatch:
+    inputs:
+      pr_number:
+        description: 'PR number (leave blank to sync all OPEN PRs)'
+        required: false
+
+jobs:
+  sync_reviews:
+    name: Sync PR Review Counts
+    if: >
+      github.event_name == 'workflow_dispatch' ||
+      github.event_name == 'schedule' ||
+      (github.event_name == 'pull_request' && (github.event.action == 'opened' || github.event.action == 'reopened')) || 
+      (github.event_name == 'pull_request_review' && github.event.review.state != 'commented')
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.PROJECT_PAT }}
+      ORG: "FinOps-Open-Cost-and-Usage-Spec"
+      PROJECT_NUM: 5
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Sync and Dispatch
+        run: |
+          set -e
+
+          # 1. Identify PRs
+          if [ "${{ github.event_name }}" == "workflow_dispatch" ] && [ -n "${{ github.event.inputs.pr_number }}" ]; then
+            PR_LIST=("${{ github.event.inputs.pr_number }}")
+          elif [ "${{ github.event_name }}" == "workflow_dispatch" ] || [ "${{ github.event_name }}" == "schedule" ]; then
+            PR_LIST=($(gh pr list --state open --json number --jq '.[].number'))
+          else
+            PR_LIST=("${{ github.event.pull_request.number }}")
+          fi
+
+          if [ ${#PR_LIST[@]} -eq 0 ]; then
+            exit 0
+          fi
+
+          # 2. Fetch Project Metadata
+          PROJ_DATA=$(gh api graphql -f query='
+            query($org: String!, $num: Int!) {
+              organization(login: $org) {
+                projectV2(number: $num) {
+                  id
+                  fields(first: 50) { nodes { ... on ProjectV2Field { id name } } }
+                }
+              }
+            }' -f org="$ORG" -F num=$PROJECT_NUM)
+
+          PROJECT_ID=$(echo "$PROJ_DATA" | jq -r '.data.organization.projectV2.id')
+          APP_FIELD_ID=$(echo "$PROJ_DATA" | jq -r '.data.organization.projectV2.fields.nodes[] | select(.name == "PR Approvals") | .id')
+          REQ_FIELD_ID=$(echo "$PROJ_DATA" | jq -r '.data.organization.projectV2.fields.nodes[] | select(.name == "PR Change Requests") | .id')
+
+          # 3. Loop through identified PRs
+          for PR_NUM in "${PR_LIST[@]}"; do
+            echo "--- Processing PR #$PR_NUM ---"
+
+            PR_BASE=$(gh pr view "$PR_NUM" --json id,createdAt)
+            PR_NODE_ID=$(echo "$PR_BASE" | jq -r '.id')
+            CREATED_AT=$(echo "$PR_BASE" | jq -r '.createdAt')
+
+            REVIEWS_RAW=$(gh api "repos/${{ github.repository }}/pulls/$PR_NUM/reviews" --paginate)
+
+            REVIEWS_JSON=$(echo "$REVIEWS_RAW" | jq -s -c '
+              add 
+              | map({state: .state, author: {login: .user.login}, submittedAt: .submitted_at}) 
+              | map(select(.state != "COMMENTED")) 
+              | group_by(.author.login) 
+              | map(sort_by(.submittedAt) | .[-1])')
+
+            APP_COUNT=$(echo "$REVIEWS_JSON" | jq 'map(select(.state == "APPROVED")) | length')
+            REQ_COUNT=$(echo "$REVIEWS_JSON" | jq 'map(select(.state == "CHANGES_REQUESTED")) | length')
+
+            ITEM_QUERY=$(gh api graphql -f query='
+              query($node: ID!) {
+                node(id: $node) {
+                  ... on PullRequest {
+                    projectItems(first: 10) {
+                      nodes {
+                        project { id }
+                        id
+                        app_val: fieldValueByName(name: "PR Approvals") { ... on ProjectV2ItemFieldNumberValue { number } }
+                        req_val: fieldValueByName(name: "PR Change Requests") { ... on ProjectV2ItemFieldNumberValue { number } }
+                      }
+                    }
+                  }
+                }
+              }' -f node="$PR_NODE_ID")
+
+            ITEM_DATA=$(echo "$ITEM_QUERY" | jq -r --arg PROJ "$PROJECT_ID" '.data.node.projectItems.nodes[] | select(.project.id == $PROJ)')
+            ITEM_ID=$(echo "$ITEM_DATA" | jq -r '.id // empty')
+            
+            # Use jq conditional to floor the number if it exists, otherwise return "null" string
+            RAW_OLD_APP=$(echo "$ITEM_DATA" | jq -r 'if .app_val.number != null then (.app_val.number | floor) else "null" end')
+            RAW_OLD_REQ=$(echo "$ITEM_DATA" | jq -r 'if .req_val.number != null then (.req_val.number | floor) else "null" end')
+
+            OLD_APP=$(echo "$ITEM_DATA" | jq -r '.app_val.number // 0 | floor')
+            OLD_REQ=$(echo "$ITEM_DATA" | jq -r '.req_val.number // 0 | floor')
+
+            echo "Debug PR #$PR_NUM: Board[App:$RAW_OLD_APP, Req:$RAW_OLD_REQ] -> Actual[App:$APP_COUNT, Req:$REQ_COUNT]"
+
+            # 4. Add/Update Item if missing
+            if [ -z "$ITEM_ID" ] || [ "$ITEM_ID" == "null" ]; then
+              ITEM_ID=$(gh api graphql -f query='
+                mutation($project: ID!, $content: ID!) {
+                  addProjectV2ItemById(input: {projectId: $project, contentId: $content}) { item { id } }
+                }' -f project="$PROJECT_ID" -f content="$PR_NODE_ID" | jq -r '.data.addProjectV2ItemById.item.id')
+              IS_NEW_ITEM=true
+            else
+              IS_NEW_ITEM=false
+            fi
+
+            # 5. Sync Fields (Force update if blank or count changed)
+            if [ "$IS_NEW_ITEM" = true ] || [ "$RAW_OLD_APP" = "null" ] || [ "$RAW_OLD_REQ" = "null" ] || [ "$OLD_APP" != "$APP_COUNT" ] || [ "$OLD_REQ" != "$REQ_COUNT" ]; then
+              gh api graphql -f query='
+                mutation($p: ID!, $i: ID!, $f: ID!, $v: Float!) {
+                  updateProjectV2ItemFieldValue(input: { projectId: $p, itemId: $i, fieldId: $f, value: { number: $v } }) { clientMutationId }
+                }' -f p="$PROJECT_ID" -f i="$ITEM_ID" -f f="$APP_FIELD_ID" -F v=$APP_COUNT
+
+              gh api graphql -f query='
+                mutation($p: ID!, $i: ID!, $f: ID!, $v: Float!) {
+                  updateProjectV2ItemFieldValue(input: { projectId: $p, itemId: $i, fieldId: $f, value: { number: $v } }) { clientMutationId }
+                }' -f p="$PROJECT_ID" -f i="$ITEM_ID" -f f="$REQ_FIELD_ID" -F v=$REQ_COUNT
+            fi
+
+            # 6. Dispatches (Trigger if count changed OR if we are initializing from blank to 0)
+            HAS_DISPATCHED=false
+
+            if [ "$RAW_OLD_APP" = "null" ] || [ "$OLD_APP" != "$APP_COUNT" ]; then
+              echo "Dispatching PR Approvals update for #$PR_NUM..."
+              gh api /repos/${{ github.repository }}/dispatches \
+                -f event_type="project_field_updated" \
+                -f client_payload[field_name]="PR Approvals" \
+                -f client_payload[old_value]="${RAW_OLD_APP:-null}" \
+                -f client_payload[new_value]="$APP_COUNT" \
+                -f client_payload[content_node_id]="$PR_NODE_ID" \
+                -f client_payload[created_at]="$CREATED_AT" \
+                -f client_payload[changed_by]="Review Bot"
+              HAS_DISPATCHED=true
+            fi
+            
+            if [ "$RAW_OLD_REQ" = "null" ] || [ "$OLD_REQ" != "$REQ_COUNT" ]; then
+              if [ "$HAS_DISPATCHED" = true ]; then
+                sleep 6
+              fi
+
+              echo "Dispatching PR Change Requests update for #$PR_NUM..."
+              gh api /repos/${{ github.repository }}/dispatches \
+                -f event_type="project_field_updated" \
+                -f client_payload[field_name]="PR Change Requests" \
+                -f client_payload[old_value]="${RAW_OLD_REQ:-null}" \
+                -f client_payload[new_value]="$REQ_COUNT" \
+                -f client_payload[content_node_id]="$PR_NODE_ID" \
+                -f client_payload[created_at]="$CREATED_AT" \
+                -f client_payload[changed_by]="Review Bot"
+            fi
+            
+            sleep 1
+          done

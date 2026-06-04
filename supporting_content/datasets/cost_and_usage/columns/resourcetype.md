@@ -27,8 +27,8 @@ The following is a list of potential Resource Type values that AWS, Azure, and G
 
 ## Discussion / Scratch space
 
-- Too much effort to ask for Resource Type normalization across clouds.
-- Provider-based Resource Type is the first step towards potentially normalizing across clouds.
-- Happy medium is a provider-based ResourceType
-- It should be a required field that is nullable
+* Too much effort to ask for Resource Type normalization across clouds.
+* Provider-based Resource Type is the first step towards potentially normalizing across clouds.
+* Happy medium is a provider-based ResourceType
+* It should be a required field that is nullable
 

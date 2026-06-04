@@ -23,11 +23,11 @@ Current values observed in billing data for various scenarios:
 | Microsoft | Cost details             | Virtual Machines, Azure App Service, Azure Monitor |
 | OCI       | Cost reports             | OBJECTSTORE, COMPUTE, BLOCK_STORAGE                |
 
-- Microsoft: [understand-usage-details-fields](https://learn.microsoft.com/en-us/azure/cost-management-billing/automate/understand-usage-details-fields)
-- AWS: The code of the product measured
-- GCP: The service.description column contains the name of the service.
-- OCI: [Cost Report Schema](https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/usagereportsoverview.htm#Cost_and_Usage_Reports_Overview__cost_report_schema)
+* Microsoft: [understand-usage-details-fields](https://learn.microsoft.com/en-us/azure/cost-management-billing/automate/understand-usage-details-fields)
+* AWS: The code of the product measured
+* GCP: The service.description column contains the name of the service.
+* OCI: [Cost Report Schema](https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/usagereportsoverview.htm#Cost_and_Usage_Reports_Overview__cost_report_schema)
 
 ## Discussion / Scratch space
 
-- Definition for ‘Service’ to come from the glossary
+* Definition for ‘Service’ to come from the glossary

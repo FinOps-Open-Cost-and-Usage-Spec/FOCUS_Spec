@@ -19,12 +19,12 @@ See [Date/Time Format](../attributes/datetime_format.md) for examples
 
 ## Discussion Topics
 
-- How does this relate to the billing period?
-  - Billing period is the time period where you get billed. Usage start period will be in the billing period range.
-  - Can you pre-pay for something where you don't start the usage for future periods
-    - Is there a term even when the provider is being flexible with the start/end
-    - Check with Tim / Tatiana for examples
-- Is Charge Period End required?
-  - Yes, clearer if they are both specified. Otherwise it depends on granularity of the billing data per provider (some might be hourly, others monthly etc.)
-- Dates in UTC format?
-  - Yes, reference the attribute for date/time format
+* How does this relate to the billing period?
+  * Billing period is the time period where you get billed. Usage start period will be in the billing period range.
+  * Can you pre-pay for something where you don't start the usage for future periods
+    * Is there a term even when the provider is being flexible with the start/end
+    * Check with Tim / Tatiana for examples
+* Is Charge Period End required?
+  * Yes, clearer if they are both specified. Otherwise it depends on granularity of the billing data per provider (some might be hourly, others monthly etc.)
+* Dates in UTC format?
+  * Yes, reference the attribute for date/time format

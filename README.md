@@ -2,50 +2,76 @@
 
 ## Overview
 
-The FinOps Open Cost and Usage Specification (FOCUS) is a community-driven effort to develop a standard schema for cloud, SaaS, and other billing data. The primary goal of the FOCUS specification is to make it easier to understand, report on, and manage cloud costs. The FOCUS specification is intended to be adaptable across a variety of cloud service provider and SaaS product sources and defines columns (dimensions and metrics), column-specific requirements, and attributes (spec-wide requirements).  This repo also provides supporting content that includes example mappings between well-known provider datasets and what's defined in the FOCUS specification.
+The FinOps Open Cost and Usage Specification (FOCUS) is a community-driven, open specification that defines a common schema for technology cost and usage data across cloud, SaaS, data center, and other [technology categories](https://www.finops.org/framework/technology-categories/).
 
-The vision of the FOCUS project is to help the cloud and SaaS industry move toward a common vocabulary around usage and billing data.  This will not only help FinOps professionals in the analysis of billing data from disparate sources but will also help software engineering teams by providing a target format for the usage and billing data that their products will generate.
+FOCUS establishes a consistent, vendor-neutral vocabulary for billing and usage data. It defines a collection of standardized datasets, specifying the columns (dimensions and metrics), their associated requirements, and specification-wide attributes needed to enable interoperable, comparable, and analysis-ready data across providers and technology categories.
 
-Some of the use cases this capability can enable:
+The project is actively maintained and adopted by a growing ecosystem of cloud providers, SaaS vendors, enterprises, and FinOps tooling platforms. This repository contains the specification releases, source, build and validation tooling, and supporting contributor guidance that help practitioners, platforms, and providers produce and consume data that is consistent, portable, and aligned to FinOps practices.
 
-- The FOCUS spec will make it easier for FinOps practitioners to approach a new billing data source, as common concepts have been mapped to the common vocabulary of the spec.
-- The FOCUS spec will make it easier to merge multiple billing data sources together, and perform cross-cloud and cross-vendor analysis and cost reporting.
-- The FOCUS spec should make it easier to open source more FinOps visibility tools, and to accelerate the FinOps framework capability of data ingestion and normalization.
+### Project Naming
 
-## Notation Conventions and Compliance
+* The official project name is **FinOps Open Cost and Usage Specification**
+* The official acronym is **FOCUS**
+* The term **FOCUS Specification** is the accepted shorthand for the project's output
 
-The keywords "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
-"SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in the
-[specification][] are to be interpreted as described in [BCP
-14](https://tools.ietf.org/html/bcp14)
-[[RFC2119](https://tools.ietf.org/html/rfc2119)]
-[[RFC8174](https://tools.ietf.org/html/rfc8174)] when, and only when, they
-appear in all capitals, as shown here.
+For a deeper overview of FOCUS, its capabilities, and adoption, see the [FOCUS website](https://focus.finops.org).
 
-An implementation of the specification is not compliant if it fails to
-satisfy one or more of the "MUST", "MUST NOT", "REQUIRED", "SHALL", or "SHALL
-NOT" requirements defined in the specification. Conversely, an
-implementation of the specification is compliant if it satisfies all the
-"MUST", "MUST NOT", "REQUIRED", "SHALL", and "SHALL NOT" requirements defined in
-the specification.
+## Accessing the Specification
+
+Use the following links to access the latest specification artifacts:
+
+* [Latest Public Release](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/releases/latest): Stable release for general implementation and reference.
+* [Latest Working Draft](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/releases/tag/latest-draft): In-progress draft reflecting current working group development.
+
+## Contributor Getting Started
+
+Start here:
+
+* [Contribution Guide](CONTRIBUTING.md)
+* [Development Processes](guidelines/contributors/development-processes.md)
+
+For topic-specific standards, see:
+
+* [Editorial Guidelines](guidelines/contributors/editorial-guidelines.md)
+* [Normative Requirements Guidelines](guidelines/contributors/normative-requirements-guidelines.md)
+* [Specification Change Guidelines](guidelines/contributors/spec-change-guidelines.md)
+* See the [Guidelines Directory](guidelines/) for additional project guidance
+
+---
+
+## Normative Language and Conformance
+
+The keywords **MUST**, **MUST NOT**, **SHOULD**, **SHOULD NOT**, and **MAY** in the specification are to be interpreted as described in BCP 14 (RFC2119 and RFC8174), when and only when they appear in all capitals.
+
+FOCUS restricts normative language to this subset as defined in the project's [Normative Requirements Guidelines](guidelines/contributors/normative-requirements-guidelines.md).
+
+Implementations are expected to satisfy the **MUST** and **MUST NOT** requirements defined in the specification. Individual unmet requirements are recorded as deviations and evaluated against per-dataset allowances by the FinOps Certified FOCUS Conformant program for data generators.
+
+For details on certification, see [FinOps Certifications for Organizations](https://www.finops.org/certification-for-organizations/).
+
+---
 
 ## Versioning the Specification
 
-Changes to the [specification](./specification/overview.md) are described in [CHANGELOG.md](CHANGELOG.md) and versioned based on [Semantic Versioning 2.0](https://semver.org/spec/v2.0.0.html). However, versioning does not strictly follow SemVer in terms of implied compatibility via major, minor, and patch versions. Layout changes are not versioned. Specific implementations of the specification should specify which version they implement.
+Changes to the specification are documented in [CHANGELOG.md](CHANGELOG.md).
 
-## Project Naming
+FOCUS uses a versioning approach inspired by [Semantic Versioning 2.0](https://semver.org/spec/v2.0.0.html), but versions should not be interpreted as strict compatibility guarantees. New versions favor additive capabilities, clarifications, and expanded coverage. Breaking changes follow a formal deprecation cycle documented in the [CHANGELOG](CHANGELOG.md) and [Specification Change Guidelines](guidelines/contributors/spec-change-guidelines.md).
 
-- The official project name is "FinOps Open Cost and Usage Specification".
-- The official acronym used by the FinOps Open Cost and Usage Specification project is "FOCUS".
-- While the official acronym includes the word "Specification", it is still acceptable to refer to this working group's output as the "FOCUS Specification".
+Implementations should explicitly declare the version of FOCUS they align to.
 
-## About the project
+For release process details and version planning context, see [RELEASE-PLANNING.md](RELEASE-PLANNING.md).
 
-See the [project repository](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation) for information about the following, and more:
+---
 
-- [Project Charter](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/FOCUS_-_Membership_Agreement_Package_for_use.pdf)
-- [Operating Procedures](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/operating_procedures.md)
-- [Steering Committee](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/steering_committee.md)
-- [Release Planning](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/working_draft/RELEASE-PLANNING.md)
-- [Change / contribution process](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/contributing.md)
+## About the Project
+
+FOCUS is developed under an open governance model with participation from providers, vendors, and practitioners across the ecosystem.
+
+For additional details, see the project repository:
+
+* [Project Charter](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/FOCUS_-_Membership_Agreement_Package_for_use.pdf)
+* [Operating Procedures](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/operating_procedures.md)
+* [Steering Committee](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/steering_committee.md)
+* [Release Planning](RELEASE-PLANNING.md)
+* [Foundation Contribution Process](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/contributing.md)
 

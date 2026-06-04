@@ -1,0 +1,179 @@
+{
+  "CAU-ChargeFrequency-C-000-O": {
+    "Function": "Composite",
+    "Reference": "ChargeFrequency",
+    "EntityType": "Column",
+    "EntityName": "Charge Frequency",
+    "EntityId": "ChargeFrequency",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 0,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ChargeFrequency adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ChargeFrequency-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ChargeFrequency-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ChargeFrequency-C-003-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ChargeFrequency-C-004-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CAU-CostAndUsage-D-027-O",
+        "CAU-ChargeFrequency-C-001-M",
+        "CAU-ChargeFrequency-C-002-M",
+        "CAU-ChargeFrequency-C-003-M",
+        "CAU-ChargeFrequency-C-004-C"
+      ]
+    }
+  },
+  "CAU-ChargeFrequency-C-001-M": {
+    "Function": "Type",
+    "Reference": "ChargeFrequency",
+    "EntityType": "Column",
+    "EntityName": "Charge Frequency",
+    "EntityId": "ChargeFrequency",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 20,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ChargeFrequency MUST be of type String.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "TypeString",
+        "ColumnName": "ChargeFrequency"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-ChargeFrequency-C-002-M": {
+    "Function": "Nullability",
+    "Reference": "ChargeFrequency",
+    "EntityType": "Column",
+    "EntityName": "Charge Frequency",
+    "EntityId": "ChargeFrequency",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 30,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ChargeFrequency MUST NOT be null.",
+      "Keyword": "MUST NOT",
+      "Requirement": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "ChargeFrequency",
+        "Value": null
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-ChargeFrequency-C-003-M": {
+    "Function": "Validation",
+    "Reference": "ChargeFrequency",
+    "EntityType": "Column",
+    "EntityName": "Charge Frequency",
+    "EntityId": "ChargeFrequency",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 40,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ChargeFrequency MUST be one of the allowed values.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "OR",
+        "Items": [
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ChargeFrequency",
+            "Value": "One-Time"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ChargeFrequency",
+            "Value": "Recurring"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ChargeFrequency",
+            "Value": "Usage-Based"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-ChargeFrequency-C-004-C": {
+    "Function": "Validation",
+    "Reference": "ChargeFrequency",
+    "EntityType": "Column",
+    "EntityName": "Charge Frequency",
+    "EntityId": "ChargeFrequency",
+    "Notes": "Cross-column reference to ChargeCategory",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 50,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ChargeFrequency MUST NOT be \"Usage-Based\" when ChargeCategory is \"Purchase\".",
+      "Keyword": "MUST NOT",
+      "Requirement": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "ChargeFrequency",
+        "Value": "Usage-Based"
+      },
+      "Condition": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "ChargeCategory",
+        "Value": "Purchase"
+      },
+      "Dependencies": [
+        "CAU-ChargeCategory-C-000-M"
+      ]
+    }
+  }
+}

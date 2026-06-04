@@ -1,0 +1,221 @@
+{
+  "CAU-ServiceCategory-C-000-M": {
+    "Function": "Composite",
+    "Reference": "ServiceCategory",
+    "EntityType": "Column",
+    "EntityName": "Service Category",
+    "EntityId": "ServiceCategory",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 0,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ServiceCategory adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ServiceCategory-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ServiceCategory-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ServiceCategory-C-003-M"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CAU-CostAndUsage-D-040-M",
+        "CAU-ServiceCategory-C-001-M",
+        "CAU-ServiceCategory-C-002-M",
+        "CAU-ServiceCategory-C-003-M"
+      ]
+    }
+  },
+  "CAU-ServiceCategory-C-001-M": {
+    "Function": "Type",
+    "Reference": "ServiceCategory",
+    "EntityType": "Column",
+    "EntityName": "Service Category",
+    "EntityId": "ServiceCategory",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 20,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ServiceCategory MUST be of type String.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "TypeString",
+        "ColumnName": "ServiceCategory"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-ServiceCategory-C-002-M": {
+    "Function": "Nullability",
+    "Reference": "ServiceCategory",
+    "EntityType": "Column",
+    "EntityName": "Service Category",
+    "EntityId": "ServiceCategory",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 30,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ServiceCategory MUST NOT be null.",
+      "Keyword": "MUST NOT",
+      "Requirement": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "ServiceCategory",
+        "Value": null
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-ServiceCategory-C-003-M": {
+    "Function": "Validation",
+    "Reference": "ServiceCategory",
+    "EntityType": "Column",
+    "EntityName": "Service Category",
+    "EntityId": "ServiceCategory",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 40,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ServiceCategory MUST be one of the allowed values.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "OR",
+        "Items": [
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceCategory",
+            "Value": "AI and Machine Learning"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceCategory",
+            "Value": "Analytics"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceCategory",
+            "Value": "Business Applications"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceCategory",
+            "Value": "Compute"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceCategory",
+            "Value": "Databases"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceCategory",
+            "Value": "Developer Tools"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceCategory",
+            "Value": "Multicloud"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceCategory",
+            "Value": "Identity"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceCategory",
+            "Value": "Integration"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceCategory",
+            "Value": "Internet of Things"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceCategory",
+            "Value": "Management and Governance"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceCategory",
+            "Value": "Media"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceCategory",
+            "Value": "Migration"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceCategory",
+            "Value": "Mobile"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceCategory",
+            "Value": "Networking"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceCategory",
+            "Value": "Security"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceCategory",
+            "Value": "Storage"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceCategory",
+            "Value": "Web"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceCategory",
+            "Value": "Other"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}
