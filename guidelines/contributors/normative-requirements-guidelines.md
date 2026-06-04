@@ -368,7 +368,7 @@ While normative requirements MUST focus on **enforceable constraints** and **ver
 
 * **Incorporation:** Examples incorporated in requirements MUST be clearly identified using "e.g." and placed within parentheses `(e.g., ...)` to distinguish them from the normative constraint.
 
-> **Note:** Formatting and presentation requirements for examples, notes, links, and other editorial constructs are defined in the Editorial Guidelines.
+> **Note:** Formatting and presentation requirements for examples, notes, links, and other editorial constructs are defined in the [Editorial Guidelines](editorial-guidelines.md).
 
 
 ### DRY (Don't Repeat Yourself) Principle
