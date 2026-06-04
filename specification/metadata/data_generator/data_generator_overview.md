@@ -20,8 +20,8 @@ Data Generator
 
 ## Examples
 
-For an example of the FOCUS Data Generator metadata please refer to: [Data Generator Example](#appendix.examples:metadata.datageneratormetadata).
+For an example of the FOCUS Data Generator metadata please refer to: [Data Generator Example](#datageneratormetadata).
 
-## Version Introduced
+## Introduced (version)
 
 1.0

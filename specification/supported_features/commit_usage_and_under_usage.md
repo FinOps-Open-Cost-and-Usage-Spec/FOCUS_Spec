@@ -62,6 +62,6 @@ GROUP BY
   CapacityReservationStatus
 ```
 
-## Version Introduced
+## Introduced (Version)
 
 1.0

@@ -1,4 +1,4 @@
-## Release Planning
+## Release Planning 
 
 This section outlines the planned release schedule and key milestones for the FOCUS project. It includes the scope and high-level system requirements for each version, as well as detailed timelines for the development and review processes for each present and past releases.
 
@@ -11,22 +11,70 @@ This section outlines the planned release schedule and key milestones for the FO
         <th>Scope | High-Level System Requirements</th>
     </tr>
     <tr>
-        <td>v1.5</td>
-        <td>Dec 2026</td>
+        <td>v1.3</td>
+        <td>Dec 2025</td>
         <td>
-<strong>Introducing the SKU-Price Reference Dataset (Price Sheet)</strong>
+<strong>Augment support for Public Cloud scope</strong>
     <ul>
-      <li>Add a standardized dataset for cross-provider price comparison and pre-consumption cost estimation</li>
+      <li>Shared cost allocation</li>
+      <li>Coverage eligibility</li>
+      <li>Pre-discount amortized cost</li>
     </ul>
-  <strong>Support for Artificial Intelligence (AI)</strong>
+  <strong>Augment support for SaaS/PaaS scope</strong>
     <ul>
-      <li>Surface AI model identity and token consumption in FOCUS</li>
-      <li>Add worked examples for token and generation-based AI billing</li>
+      <li>Host Provider (and clarification of related terms)</li>
     </ul>
-  <strong>Specification maintenance and tooling</strong>
+  <strong>Support for concepts applicable to all scopes</strong>
     <ul>
-      <li>Add 1.3 to 1.4 Version Migration Guide</li>
-      <li>Add 1.5 Specification revisions to Requirements Model</li>
+      <li>Contractual commitments</li>
+      <li>Distinguish between vendor and marketplace purchases</li>
+    </ul>
+  <strong>Addition of metadata / non-functional requirements</strong>
+    <ul>
+      <li>Static conformance requirements</li>
+      <li>Conformance program beta</li>
+      <li>Recency and completeness of data</li>  
+    </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>v1.4</td>
+        <td>Jun 2026</td>
+        <td>
+<strong>Multi-dataset FOCUS Standardization</strong>
+    <ul>
+      <li>Extend support for contract commitment dataset</li>
+      <li>Add FOCUS Invoice Dataset</li>
+    </ul>
+  <strong>Improving FOCUS adoption and implementation</strong>
+    <ul>
+      <li>Add column selection as a non-functional requirement</li>
+      <li>Add non-FOCUS columns to FOCUS datasets as a non-functional requirement</li>
+      <li>Add the ability to understand provider resource tagging eligibility</li>
+      <li>Add granularity level between sub account and resource</li>    
+      <li>Add provider column mappings as a non-functional requirement</li>  
+      <li>Add output formats as a non-functional requirement</li>
+      <li>Add commitment eligibility indicator for on-demand charges</li>
+      <li>Use adoption to prioritize the working group's efforts</li>  
+      <li>Add non-negotiated discount eligibility indicator for on-demand charges</li>  
+    </ul>
+  <strong>Carry-over from 1.3</strong>
+    <ul>
+      <li>Augment requirements for correction-handling scenarios</li>
+      <li>Clarify definitions of EffectiveCost vs BilledCost across providers</li>
+      <li>Clarify commitment concepts and glossary entries</li>    
+    </ul>
+ <strong>Other Important Improvements</strong>
+    <ul>
+      <li>Provide guidance for generating data center / on-prem FOCUS datasets</li>
+      <li>Establish FOCUS attribute-specification guidelines</li>
+      <li>Establish FOCUS metadata-specification guidelines</li>
+      <li>Handle for HTML/PDF anchor links for columns used in multiple datasets</li>
+      <li>Revise the table of contents generator to handle for dataset-level headers</li>
+      <li>Relocate all normative requirements that apply to the dataset level to the dataset section of the document</li> 
+      <li>Add 1.3 Specification revisions to Requirements Model</li>
+      <li>Add 1.4 Specification revisions to Requirements Model</li>
+      <li>Add Line-Item Examples for Non-Negotiated Commitment Scenarios</li> 
     </ul>
         </td>
     </tr>
@@ -95,7 +143,7 @@ This section outlines the planned release schedule and key milestones for the FO
                 <li>Addition of Invoice ID to support invoice reconciliation use cases
                 </li>
                 <li>Addition of SKU properties that are prominent / common across providers
-                </li>
+                </li>                
             </ul>
             <strong>Fixes and clarifications</strong>
             <ul>
@@ -103,169 +151,9 @@ This section outlines the planned release schedule and key milestones for the FO
             </ul>
         </td>
     </tr>
-    <tr>
-        <td>v1.3</td>
-        <td>Dec 2025</td>
-        <td>
-<strong>Augment support for Public Cloud scope</strong>
-    <ul>
-      <li>Shared cost allocation</li>
-      <li>Coverage eligibility</li>
-      <li>Pre-discount amortized cost</li>
-    </ul>
-  <strong>Augment support for SaaS/PaaS scope</strong>
-    <ul>
-      <li>Host Provider (and clarification of related terms)</li>
-    </ul>
-  <strong>Support for concepts applicable to all scopes</strong>
-    <ul>
-      <li>Contractual commitments</li>
-      <li>Distinguish between vendor and marketplace purchases</li>
-    </ul>
-  <strong>Addition of metadata / non-functional requirements</strong>
-    <ul>
-      <li>Static conformance requirements</li>
-      <li>Conformance program beta</li>
-      <li>Recency and completeness of data</li>
-    </ul>
-        </td>
-    </tr>
-    <tr>
-        <td>v1.4</td>
-        <td>Jun 2026</td>
-        <td>
-<strong>Multi-dataset FOCUS Standardization</strong>
-    <ul>
-      <li>Extend support for ContractCommitment dataset</li>
-      <li>Add InvoiceDetail and BillingPeriod datasets</li>
-    </ul>
-  <strong>Improving FOCUS adoption and implementation</strong>
-    <ul>
-      <li>Add column selection as a non-functional requirement</li>
-      <li>Add non-FOCUS columns to FOCUS datasets as a non-functional requirement</li>
-      <li>Add provider column mappings as a non-functional requirement</li>
-      <li>Add Commitment Program Eligibility Details</li>
-      <li>Use adoption to prioritize the working group's efforts</li>
-    </ul>
-  <strong>Carry-over from 1.3</strong>
-    <ul>
-      <li>Augment requirements for correction-handling scenarios</li>
-      <li>Clarify definitions of EffectiveCost vs BilledCost across providers</li>
-      <li>Clarify commitment concepts and glossary entries</li>
-    </ul>
-  <strong>Other Important Improvements</strong>
-    <ul>
-      <li>Provide guidance for generating data center / on-prem FOCUS datasets</li>
-      <li>Establish FOCUS attribute-specification guidelines</li>
-      <li>Handle for HTML/PDF anchor links for columns used in multiple datasets</li>
-      <li>Revise the table of contents generator to handle for dataset-level headers</li>
-      <li>Relocate all normative requirements that apply to the dataset level to the dataset section of the document</li>
-      <li>Add 1.2 to 1.3 Version Migration Guide</li>
-      <li>Add 1.3 Specification revisions to Requirements Model</li>
-      <li>Add 1.4 Specification revisions to Requirements Model</li>
-      <li>Add Line-Item Examples for Non-Negotiated Commitment Scenarios</li>
-    </ul>
-        </td>
-    </tr>
-</table>
-
-### Estimated Timeline for v1.5
-
-This table displays key milestones and dates related to the development of FOCUS Release v1.5.
-
-<table>
-  <thead>
-    <tr>
-      <th>Final Date</th>
-      <th>Interim Date</th>
-      <th>Milestone</th>
-      <th>Comments</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td rowspan="2"><strong>30-Oct-25 to 30-Apr-26</strong></td>
-      <td><strong>Thu Oct 30</strong></td>
-      <td>1.5 Scope Starts</td>
-      <td rowspan="2">
-        Scope definition and prioritization for v1.5.<br/>
-        Runs in parallel with v1.4 Development and Final Consistency Review.
-      </td>
-    </tr>
-    <tr>
-      <td><strong>Thu Apr 30</strong></td>
-      <td>1.5 Scope Ends</td>
-    </tr>
-    <tr>
-      <td rowspan="6"><strong>30-Apr-26 to 8-Oct-26</strong></td>
-      <td><strong>Thu Apr 30</strong></td>
-      <td>1.5 Development Starts</td>
-      <td rowspan="6">
-        Development begins immediately after v1.4 Final Consistency Review (30 Apr 2026).<br/>
-        Interim milestones occur on Thursdays (Members meeting cadence).
-      </td>
-    </tr>
-    <tr>
-      <td><strong>Thu Aug 13</strong><br/>(15 weeks)</td>
-      <td>Deadline to Create PR Drafts</td>
-    </tr>
-    <tr>
-      <td><strong>Thu Aug 27</strong><br/>(2 weeks)</td>
-      <td>Deadline to Complete PR Drafts</td>
-    </tr>
-    <tr>
-      <td><strong>Thu Sep 10</strong><br/>(2 weeks)</td>
-      <td>Deadline to Start TF Review</td>
-    </tr>
-    <tr>
-      <td><strong>Thu Sep 24</strong><br/>(2 weeks)</td>
-      <td>Deadline to Start Member Review</td>
-    </tr>
-    <tr>
-      <td><strong>Thu Oct 8</strong><br/>(2 weeks)</td>
-      <td>Deadline to Approve Member Review PRs</td>
-    </tr>
-    <tr>
-      <td><strong>8-29-Oct-26</strong></td>
-      <td>(3 weeks)</td>
-      <td>Start / End Final Consistency Review v1.5</td>
-      <td>
-        Fixed three-week consistency review period (Thursday-to-Thursday). <br/> End of Consistency Review is followed by baseline preparation time for IPR Review.
-      </td>
-    </tr>
-    <tr>
-      <td><strong>2-Nov-26 to 1-Dec-26</strong></td>
-      <td></td>
-      <td>Start / End IPR Review v1.5</td>
-      <td>
-        Start of IPR Review begins after baseline prep.<br/>
-        IPR Review duration is at least 30 days.<br/>
-        End of IPR Review completes at least 3 days before Final Approval (approval package preparation).
-      </td>
-    </tr>
-    <tr>
-      <td><strong>3-Dec-26</strong></td>
-      <td></td>
-      <td>Working Group (WG) Approval of v1.5</td>
-      <td>WG approves the v1.5 Release Candidate.</td>
-    </tr>
-    <tr>
-      <td><strong>3-Dec-26</strong></td>
-      <td></td>
-      <td>SC Ratification of v1.5</td>
-      <td>Steering Committee ratifies the v1.5 release on the same day.</td>
-    </tr>
-    <tr>
-      <td><strong>XX-Dec-26</strong></td>
-      <td></td>
-      <td>Public Announcement</td>
-      <td>Final publication date to be confirmed in December.</td>
-    </tr>
-  </tbody>
 </table>
 
 ### Estimated Timeline for v1.4
-
 This table displays key milestones and dates related to the development of FOCUS Release v1.4.
 
 <table>
@@ -360,7 +248,6 @@ This table displays key milestones and dates related to the development of FOCUS
 </table>
 
 ### Estimated Timeline for v1.3
-
 This table displays key milestones and dates related to the development of FOCUS Release v1.3.
 
   <table>

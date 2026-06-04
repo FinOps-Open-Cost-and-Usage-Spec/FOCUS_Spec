@@ -1,13 +1,7 @@
 import pytest
-from conftest import requires_version
 
 @pytest.mark.dependency(name="reference_matches_rule_key_prefix_for_columns", scope="session")
-def test_reference_matches_rule_key_prefix_for_columns(cr_json, model_version):
-    # This test only applies to model versions before 1.3
-    should_skip, reason = requires_version(model_version, max_version="1.2.999")
-    if should_skip:
-        pytest.skip(reason)
-    
+def test_reference_matches_rule_key_prefix_for_columns(cr_json):
     rules = cr_json.get("ModelRules") or {}
     violations = []
 

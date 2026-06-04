@@ -17,20 +17,21 @@ SKU ID should be consistent across pricing variations of a good or service to fa
 
 ## Requirements
 
-SkuId MUST adhere to the following requirements:
+SkuId adheres to the following requirements:
 
+* SkuId MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports unit pricing concepts and publishes price lists, publicly or as part of contracting.
 * SkuId MUST be of type String.
-* SkuId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* SkuId MUST adhere to the following nullability requirements:
-  * SkuId MUST be null when [ChargeCategory](#datasets.costandusage.chargecategory) is "Tax".
-  * SkuId MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#datasets.costandusage.chargeclass) is not "Correction".
+* SkuId MUST conform to [StringHandling](#stringhandling) requirements.
+* SkuId nullability is defined as follows:
+  * SkuId MUST be null when [ChargeCategory](#chargecategory) is "Tax".
+  * SkuId MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#chargeclass) is not "Correction".
   * SkuId MAY be null in all other cases.
-* SkuId for a given *SKU* MUST adhere to the following requirements:
+* SkuId for a given *SKU* adheres to the following additional requirements:
   * SkuId MUST remain consistent across [*billing accounts*](#glossary:billing-account) or contracts.
-  * SkuId MUST remain consistent across [PricingCategory](#datasets.costandusage.pricingcategory) values.
+  * SkuId MUST remain consistent across [PricingCategory](#pricingcategory) values.
   * SkuId MUST remain consistent regardless of any other factors that might impact the price but do not affect the functionality of the *SKU*.
 * SkuId MUST be associated with a given [*resource*](#glossary:resource) or [*service*](#glossary:service) when ChargeCategory is "Usage" or "Purchase".
-* SkuId MAY match [SkuPriceId](#datasets.costandusage.skupriceid).
+* SkuId MAY equal [SkuPriceId](#skupriceid).
 
 ## Column ID
 
@@ -44,17 +45,16 @@ SKU ID
 
 Service-provider-specified unique identifier that represents a specific *SKU* (e.g., a quantifiable good or service offering).
 
-## Content Constraints
+## Content constraints
 
-| Constraint      | Value                                                |
-| :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datasets.costandusage)             |
-| Column type     | Dimension                                            |
-| Feature level   | Conditional                                          |
-| Allows nulls    | True                                                 |
-| Data type       | String                                               |
-| Value format    | \<not specified>                                     |
+| Constraint    | Value            |
+| :------------ | :--------------- |
+| Column type   | Dimension        |
+| Feature level | Conditional      |
+| Allows nulls  | True             |
+| Data type     | String           |
+| Value format  | \<not specified> |
 
-## Version Introduced
+## Introduced (version)
 
 1.0-preview

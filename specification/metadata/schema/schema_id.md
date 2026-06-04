@@ -4,7 +4,7 @@ The Schema ID provides the reference item to associate which Schema was used for
 
 SchemaId adheres to the following requirements:
 
-* SchemaId MUST be present in an object within the [Schema](#metadata.schema) collection.
+* SchemaId MUST be present in an object within the [Schema](#schema) collection.
 * SchemaId MUST be of type String.
 * SchemaID MUST NOT be null.
 * SchemaId SHOULD be a Globally Unique Identifier (GUID).
@@ -17,7 +17,7 @@ SchemaId
 
 Schema ID
 
-## Content Constraints
+## Content constraints
 
 | Constraint    | Value              |
 |:--------------|:-------------------|
@@ -26,6 +26,6 @@ Schema ID
 | Data type     | String             |
 | Value format  | GUID (recommended) |
 
-## Version Introduced
+## Introduced (version)
 
 1.0

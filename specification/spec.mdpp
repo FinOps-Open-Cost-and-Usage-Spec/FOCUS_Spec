@@ -7,15 +7,21 @@ pagetitle: FinOps Open Cost and Usage Specification
 
 !INCLUDE "version.md",0
 
+!INCLUDE "license.md",0
+
+## Abstract
+
 !INCLUDE "spec_abstract.md",0
 
-!INCLUDE "license.md",0
+<div style="page-break-after: always"></div>
+
+!INCLUDE "contributors.md",0
 
 <div style="page-break-after: always"></div>
 
 ## Table of Contents
 
-!TOC 1 1 2 1 2 1 2 2 1
+!TOC 2 2 3 2 2 2 2 2
 
 <div style="page-break-after: always"></div>
 
@@ -29,8 +35,6 @@ pagetitle: FinOps Open Cost and Usage Specification
 
 !INCLUDE "datasets/datasets.mdpp",1
 
-<div style="page-break-after: always"></div>
-
 !INCLUDE "attributes/attributes.mdpp",1
 
 <div style="page-break-after: always"></div>
@@ -39,7 +43,7 @@ pagetitle: FinOps Open Cost and Usage Specification
 
 <div style="page-break-after: always"></div>
 
-!INCLUDE "schemas/schemas.mdpp",1
+!INCLUDE "use_case_library.md",1
 
 <div style="page-break-after: always"></div>
 
@@ -48,7 +52,3 @@ pagetitle: FinOps Open Cost and Usage Specification
 <div style="page-break-after: always"></div>
 
 !INCLUDE "appendix/appendix.mdpp",1
-
-<div style="page-break-after: always"></div>
-
-!INCLUDE "contributors.md",1

@@ -32,6 +32,6 @@ GROUP BY
   AvailabilityZone
 ```
 
-## Version Introduced
+## Introduced (Version)
 
 1.0

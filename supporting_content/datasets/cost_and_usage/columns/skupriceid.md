@@ -7,8 +7,8 @@ Current column mappings found in available data sets:
 | Provider | Data set                | Column                             |
 | ------------ | --------------------------- | -------------------------------------- |
 | AWS          | CUR                         | pricing/rate\_code \| pricing/rate\_id |
-| Azure        | Cost details export or API  | Not publicly available                              |
-| GCP          | BigQuery Billing Export            | Not publicly available, but can be derived from sku.id and price.tier_start_amount                                 |
+| Azure        | Cost details export or API  | Not publically available                              |
+| GCP          | BigQuery Billing Export            | Not publically available, but can be derived from sku.id and price.tier_start_amount                                 |
 | OCI          | Cost Reports                | Not available (no price level ID)    |
 
 ## Example scenarios for current provider data
@@ -18,7 +18,7 @@ Current values observed in billing data for various scenarios:
 | Provider | Scenario               | Pattern                                                              |
 | ------------ | -------------------------- | ------------------------------------------------------------------------ |
 | AWS          | CUR                        | rate\_code: KF338J7FCKZPUBD9.JRTCKXETXF.6YS6EN2CT7 rate\_id: 20457007287 |
-| Azure        | Cost Details export or API | Not publicly available                                                                         |
+| Azure        | Cost Details export or API | Not publically available                                                                         |
 | GCP          | BigQuery Billing Export                  | sku.id: 947D-3B46-7781 price.tier_start_amount: 10                                                          |
 | OCI          | Cost Reports               | Not available (no price level ID)                                                |
 
@@ -167,7 +167,7 @@ The following table serves as the basis for reviewing the SkuPriceId spec, as we
   * OLD:
     * A SKU Price ID is a unique identifier that defines the unit price used to calculate the charge. SKU Price ID **can be referenced** on a price list published by a provider to look up detailed information, including a corresponding list unit price. The composition of the properties associated with the SKU Price ID may differ across providers. SKU Price ID is commonly used **for analyzing cost** based on pricing properties such as Terms and Tiers.
   * NEW:
-    * A SKU Price ID is a unique identifier that defines the unit price used to calculate the charge. It **can serve as a key reference** to a price list published by a provider, allowing **practitioners** to look up detailed information, including the associated list unit prices and pricing properties. **Although** the composition of properties associated with the SKU Price ID may differ across providers, **the SKU Price ID is designed to represent the core, stable properties of a SKU Price, excluding dynamic or negotiable properties such as unit price amount; currency (and related exchange rates); temporal validity (e.g., effective dates); and contract- or negotiation-specific elements (e.g., contract or account identifiers, and negotiable discounts). This ensures that the SKU Price ID remains consistent across different pricing scenarios, even though variable aspects (e.g., unit price, currency, effective dates) might fluctuate, facilitating the filtering of charges with the same stable SKU Price properties and allowing for tracking price fluctuations (e.g., changes in unit price amount) over time — for both list unit prices and contracted prices.** **The** SKU Price ID is **also** commonly used **to analyze** costs based on pricing properties such as Terms and Tiers.
+    * A SKU Price ID is a unique identifier that defines the unit price used to calculate the charge. It **can serve as a key reference** to a price list published by a provider, allowing **practitioners** to look up detailed information, including the associated list unit prices and pricing properties. **Although** the composition of properties associated with the SKU Price ID may differ across providers, **the SKU Price ID is designed to represent the core, stable properties of a SKU Price, excluding dynamic or negotiable properties such as unit price amount, currency (and related exchange rates), temporal validity (e.g., effective dates), and contract- or negotiation-specific elements (e.g., contract or account identifiers, and negotiable discounts). This ensures that the SKU Price ID remains consistent across different pricing scenarios, even though variable aspects (e.g., unit price, currency, effective dates) might fluctuate, facilitating the filtering of charges with the same stable SKU Price properties and allowing for tracking price fluctuations (e.g., changes in unit price amount) over time — for both list unit prices and contracted prices.** **The** SKU Price ID is **also** commonly used **to analyze** costs based on pricing properties such as Terms and Tiers.
 
 * Normative requirements Breakdown:
   * OLD:

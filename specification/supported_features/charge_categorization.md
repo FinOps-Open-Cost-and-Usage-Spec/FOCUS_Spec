@@ -94,6 +94,6 @@ GROUP BY
   ChargeFrequency
 ```
 
-## Version Introduced
+## Introduced (Version)
 
 1.0

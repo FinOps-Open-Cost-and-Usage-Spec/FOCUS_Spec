@@ -1,6 +1,6 @@
 name: Maintenance Task
 description: Create tasks related to work on the GitHub Repository or GitHub Actions.
-title: "[Maintenance] "
+title: "[MAINTENANCE]: "
 labels: ["repo maintenance"]
 type: "Maintenance"
 assignees: ["shawnalpay"]

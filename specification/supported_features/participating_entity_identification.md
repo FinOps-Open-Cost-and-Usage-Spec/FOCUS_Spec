@@ -38,10 +38,10 @@ GROUP BY
   BillingCurrency
 ```
 
-## Version Introduced
+## Introduced (Version)
 
 1.1
 
-## Version Updated
+## Updated (Version)
 
 1.3

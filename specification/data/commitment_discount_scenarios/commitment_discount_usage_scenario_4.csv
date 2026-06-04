@@ -1,0 +1,3 @@
+BillingPeriodStart,BillingPeriodEnd,ChargePeriodStart,ChargePeriodEnd,ChargeCategory,ChargeFrequency,PricingCategory,ResourceId,BilledCost,EffectiveCost,ConsumedQuantity,ConsumedUnit,CommitmentDiscountId,CommitmentDiscountQuantity,CommitmentDiscountStatus,CommitmentDiscountUnit
+2023-01-01T00:00:00Z,2023-02-01T00:00:00Z,2023-01-01T00:00:00Z,2023-01-01T01:00:00Z,Usage,Usage-Based,Committed,<my-resource-id>,0.00,1.00,1.00,Hour,<my-commitment-discount-id>,1.00,Used,USD
+2023-01-01T00:00:00Z,2023-02-01T00:00:00Z,2023-01-01T00:00:00Z,2023-01-01T01:00:00Z,Usage,Usage-Based,Standard,<my-resource-id>,0.50,0.50,1.00,Hour,null,null,null,null

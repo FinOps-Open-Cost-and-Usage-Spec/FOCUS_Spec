@@ -6,10 +6,10 @@ The metadata includes the following sections:
 
 | Metadata Section                     | Description                                                         |
 | ------------------------------------ | ------------------------------------------------------------------- |
-| [Data Generator](#metadata.datagenerator)     | Describes the entity delivering the dataset artifact. |
-| [Dataset Instance](#metadata.datasetinstance) | Describes the nature of the dataset artifact. |
-| [Recency](#metadata.recency)                  | Describes the recency and completeness of data within the artifact. |
-| [Schema](#metadata.schema)                    | Describes the schema of data within the artifact. |
+| [Data Generator](#datagenerator)     | Describes the entity delivering the dataset artifact.               |
+| [Dataset Instance](#datasetinstance) | Describes the nature of the dataset artifact.                       |
+| [Recency](#recency)                  | Describes the recency and completeness of data within the artifact. |
+| [Schema](#schema)                    | Describes the schema of data within the artifact.                   |
 
 <div class='h4-nonindex'>Requirements</div>
 
@@ -26,6 +26,6 @@ Metadata
 
 Metadata
 
-<div class='h4-nonindex'>Version Introduced</div>
+<div class='h4-nonindex'>Introduced (version)</div>
 
 1.0
