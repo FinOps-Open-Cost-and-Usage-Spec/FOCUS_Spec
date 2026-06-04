@@ -1,8 +1,8 @@
 # Principal ID
 
-A Principal ID is an identifier representing the [*principal*](#glossary:principal): an authenticated and authorized actor (e.g., user account, service account, application) that initiated a request for a [*resource*](#glossary:resource) or [*service*](#glossary:service).  The Principal ID is commonly used in auditing to determine which actor initiated a [*charge*](#glossary:charge).
+A Principal ID is an identifier representing the [*principal*](#glossary:principal): an authorized actor (e.g., user account, service account, application) that initiated a request for a [*resource*](#glossary:resource) or [*service*](#glossary:service).  The Principal ID is commonly used in auditing to determine which actor initiated a [*charge*](#glossary:charge).
 
-Principal ID is used in conjunction with [Consumer ID](#datasets.costandusage.consumerid) to resolve asymmetric actor granularity. While Principal ID represents the authenticated and authorized actor that initiated a request, Consumer ID represents the downstream actor that consumed the *resource* or *service*.
+Principal ID is used in conjunction with [Consumer ID](#datasets.costandusage.consumerid) to resolve asymmetric actor granularity. While Principal ID represents the authorized actor that initiated a request, Consumer ID represents the downstream actor that consumed the *resource* or *service*.
 
 For scenarios demonstrating how these columns are populated across different technology categories, see [Examples: Actor Attribution](#appendix.examples:actorattribution).
 
