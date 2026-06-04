@@ -534,8 +534,6 @@ CostAndUsage MUST adhere to the following requirements:
 ```
 
 > **Note:** Column presence groups are structural groupings and not normative subjects.
-
-
 ## Column Requirements
 
 ### Logical Grouping of Column Requirements
