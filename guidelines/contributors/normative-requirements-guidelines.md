@@ -370,7 +370,6 @@ While normative requirements MUST focus on **enforceable constraints** and **ver
 
 > **Note:** Formatting and presentation requirements for examples, notes, links, and other editorial constructs are defined in the [Editorial Guidelines](editorial-guidelines.md).
 
-
 ### DRY (Don't Repeat Yourself) Principle
 
 Each normative requirement MUST be defined in exactly one place across the specification. The following rules determine where a requirement belongs:
