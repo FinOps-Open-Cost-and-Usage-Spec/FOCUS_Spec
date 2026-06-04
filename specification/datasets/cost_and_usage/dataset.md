@@ -123,7 +123,7 @@ CostAndUsage MUST adhere to the following requirements:
   * CostAndUsage MUST include [CommitmentProgramEligibilityDetails](#datasets.costandusage.commitmentprogrameligibilitydetails) when the *operating model* [includes commitment programs](#conditions.includescommitmentprograms).
   * CostAndUsage MUST include [ConsumedQuantity](#datasets.costandusage.consumedquantity) when the *operating model* [includes usage measurement](#conditions.includesusagemeasurement).
   * CostAndUsage MUST include [ConsumedUnit](#datasets.costandusage.consumedunit) when the *operating model* [includes usage measurement](#conditions.includesusagemeasurement).
-  * CostAndUsage MUST include [ConsumerId](#datasets.costandusage.consumerid) in at least one [*dataset instance*](#glossary:dataset-instance) when the *operating model* [includes principals](#conditions.includesprincipals) and the customer has opted in to receive data at the consumer grain.
+  * CostAndUsage MUST include [ConsumerId](#datasets.costandusage.consumerid) in at least one [*dataset instance*](#glossary:dataset-instance) when the *operating model* [includes consumers](#conditions.includesconsumers) and the customer has opted in to receive data at the consumer grain.
   * CostAndUsage MUST include [ContractApplied](#datasets.costandusage.contractapplied) when the *operating model* [includes contract commitments](#conditions.includescontractcommitments).
   * CostAndUsage MUST include [ContractedCost](#datasets.costandusage.contractedcost).
   * CostAndUsage MUST include [ContractedUnitPrice](#datasets.costandusage.contractedunitprice) when the *operating model* [includes negotiated pricing](#conditions.includesnegotiatedpricing).
