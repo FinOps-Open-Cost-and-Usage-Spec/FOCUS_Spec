@@ -125,7 +125,7 @@ The recommended pattern for a normative requirement is:
 
 ### Explicit Conditions in Normative Requirements
 
-* A requirement MUST include an explicit condition when applicability cannot be inferred from the normative subject and any associated qualifiers.
+* A requirement MUST include an explicit condition when applicability is conditional and cannot be inferred from the normative subject and any associated qualifiers.
 * Conditional logic MUST be expressed using one of the following approved conditional keywords:
   * `when`
   * `unless`
