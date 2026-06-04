@@ -403,7 +403,7 @@ Grouping and ordering of dataset-level normative requirements ensures clarity, c
 3. **Custom Column Requirements** (subject: `{DatasetId} custom columns`)
    1. **Custom Column Attribute Conformance:** Defines requirements where custom columns within a dataset MUST conform to `CustomColumnHandling`.
    1. **Other:** Captures requirements with `{DatasetId} custom columns` as subject that do not fall into the above categories.
-4. **Dataset Support Requirements** (subject: varies)
+4. **Other Dataset-Level Requirements** (subject: varies)
    1. **Documentation:** Defines requirements for dataset documentation.
    1. **Other:** Captures requirements that do not fall into the above categories.
 
