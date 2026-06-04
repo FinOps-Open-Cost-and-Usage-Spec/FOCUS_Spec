@@ -314,7 +314,6 @@ A requirement MUST be split into multiple bullets if it:
   * Correct:
 
     * `PricingQuantity MUST be null when ChargeCategory is "Tax" or "Adjustment".`
-
     * `BillingPeriodStart MUST be less than or equal to BillingPeriodEnd.`
 
 ### Composite Requirements
