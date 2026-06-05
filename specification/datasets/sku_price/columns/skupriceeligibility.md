@@ -12,8 +12,8 @@ SkuPriceEligibility MUST adhere to the following requirements:
 * SkuPriceEligibility MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * SkuPriceEligibility MUST conform to [JsonObjectFormat](#attributes.jsonobjectformat) requirements.
 * SkuPriceEligibility MUST conform to [SkuPriceEligibilityObject](#datasets.skuprice.skupriceeligibility.skupriceeligibilityobject) requirements.
-* SkuPriceEligibility MAY be null.
-* SkuPriceEligibility MUST be interpreted as generally available to all entities (equivalent to `IsGlobalScope: true`) when the value is null.
+* SkuPriceEligibility MUST NOT be null.
+* SkuPriceEligibilityObject.IsGlobalScope MUST be true when the SKU Price applies to all entities without eligibility restrictions.
 
 ## SKU Price Eligibility Object
 
@@ -148,7 +148,7 @@ A structured definition of the specific entities, accounts, or contexts eligible
 | Dataset | [SKU Price](#datasets.skuprice) |
 | Column type | Dimension |
 | Feature level | Mandatory |
-| Allows nulls | True |
+| Allows nulls | False |
 | Data type | JSON |
 | Value format | [JSON Object Format](#attributes.jsonobjectformat) |
 | Object | [SkuPriceEligibilityObject](#datasets.skuprice.skupriceeligibility.skupriceeligibilityobject) |

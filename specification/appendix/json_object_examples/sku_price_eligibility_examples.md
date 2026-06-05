@@ -4,17 +4,7 @@ This section describes examples for the [SKU Price Eligibility](#datasets.skupri
 
 ## Global Scope
 
-### Implicit Global Scope
-
-When a unit price is generally available to all entities without restriction (e.g., standard public list prices), the column value can be left empty (`null`). This is logically equivalent to explicitly declaring `IsGlobalScope: true` and is the most efficient method for representing unrestricted prices in a large dataset.
-
-```json
-null
-```
-
-### Explicit Global Scope
-
-If the data generator chooses to explicitly declare an unrestricted scope rather than using `null`, it is represented as a global scope.
+When a unit price is generally available to all entities without restriction (e.g., standard public list prices), the value for `IsGlobalScope` is set to `true`.
 
 ```json
 {
