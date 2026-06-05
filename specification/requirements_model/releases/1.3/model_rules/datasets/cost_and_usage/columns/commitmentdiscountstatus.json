@@ -199,17 +199,12 @@
           {
             "CheckFunction": "CheckValue",
             "ColumnName": "CommitmentDiscountStatus",
-            "Value": "Active"
+            "Value": "Used"
           },
           {
             "CheckFunction": "CheckValue",
             "ColumnName": "CommitmentDiscountStatus",
-            "Value": "Expired"
-          },
-          {
-            "CheckFunction": "CheckValue",
-            "ColumnName": "CommitmentDiscountStatus",
-            "Value": "Pending"
+            "Value": "Unused"
           }
         ]
       },
