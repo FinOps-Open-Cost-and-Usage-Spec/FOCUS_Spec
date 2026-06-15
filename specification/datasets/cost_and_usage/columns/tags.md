@@ -71,7 +71,7 @@ Because the Virtual Machine Resource did not have an `env` tag, it inherited tag
 
 ## Tag Key Representation
 
-User-defined tag keys in Tags are a faithful representation of the keys entered at the source, aside from any *tag scheme*-specific prefix the data generator prepends. A data generator does not normalize the casing or otherwise transform the characters of a user-defined tag key.
+User-defined tag keys in Tags are a faithful representation of the keys entered at the source, aside from any *tag scheme*-specific prefix the data generator prepends. A data generator does not normalize the casing or otherwise transform the characters of a user-defined tag key but may define constraints on the tag keys set. E.g., data generator may limit the number of characters or set of characters supported, as long as these limitations are applied prior to setting the tags.
 
 Tag key casing reflects the source rather than a data generator convention, and the representation a data generator surfaces depends on the source platform. For example:
 
