@@ -49,6 +49,7 @@ The SKU Price dataset can be joined to the Cost and Usage dataset through the us
 SkuPrice MUST adhere to the following requirements:
 
 * SkuPrice column presence MUST adhere to the following requirements:
+  * SkuPrice MUST include [ChargeCategory](#datasets.skuprice.chargecategory).
   * SkuPrice MUST include [ChargeFrequency](#datasets.skuprice.chargefrequency) when the *operating model* [includes multiple charge frequencies](#conditions.includesmultiplechargefrequencies).
   * SkuPrice MUST include [ContractCommitmentDurationType](#datasets.skuprice.contractcommitmentdurationtype) when the *operating model* [includes contract commitments](#conditions.includescontractcommitments).
   * SkuPrice MUST include [ContractCommitmentPaymentModel](#datasets.skuprice.contractcommitmentpaymentmodel) when the *operating model* [includes contract commitments](#conditions.includescontractcommitments).

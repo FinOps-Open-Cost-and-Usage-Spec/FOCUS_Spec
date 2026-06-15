@@ -10,7 +10,7 @@ ChargeCategory MUST adhere to the following requirements:
 * ChargeCategory MUST NOT be null.
 * ChargeCategory MUST be one of the allowed values.
 * ChargeCategory MUST be "Usage" when the *SKU Price* represents the rate for consumption of a service or resource.
-* ChargeCategory MUST be "Purchase" when the *SKU Price* represents a fee for the acquisition of a service, resource, or *commitment*.
+* ChargeCategory MUST be "Purchase" when the *SKU Price* represents a fee for the acquisition of a service, resource, or [*commitment*](#glossary:commitment).
 
 ## Allowed Values
 

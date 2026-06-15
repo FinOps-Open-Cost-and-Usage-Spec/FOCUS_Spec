@@ -13,7 +13,6 @@ SkuPriceEligibility MUST adhere to the following requirements:
 * SkuPriceEligibility MUST conform to [JsonObjectFormat](#attributes.jsonobjectformat) requirements.
 * SkuPriceEligibility MUST conform to [SkuPriceEligibilityObject](#datasets.skuprice.skupriceeligibility.skupriceeligibilityobject) requirements.
 * SkuPriceEligibility MUST NOT be null.
-* SkuPriceEligibilityObject.IsGlobalScope MUST be true when the SKU Price applies to all entities without eligibility restrictions.
 
 ## SKU Price Eligibility Object
 

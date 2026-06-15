@@ -38,7 +38,7 @@ The upper boundary of a volume-based pricing tier, measured in the designated Pr
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
 | Dataset         | [SKU Price](#datasets.skuprice)                      |
-| Column type     | Dimension                                            |
+| Column type     | Metric                                               |
 | Feature level   | Conditional                                          |
 | Condition       | [Includes volume tier pricing](#conditions.includesvolumetierpricing) |
 | Allows nulls    | True                                                 |

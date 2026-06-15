@@ -2,11 +2,11 @@
 
 Contract Commitment Payment Model defines the financial settlement structure of a [*contract commitment*](#glossary:contract-commitment). It identifies whether the financial obligation is settled via a single upfront payment, distributed recurring charges, or a combination of both over the [contract commitment duration type](#datasets.skuprice.contractcommitmentdurationtype).
 
-Contract Commitment Payment Model has three possible values: **No Upfront**, **Partial Upfront**, and **All Upfront**.
+Contract Commitment Payment Model has three possible values: "No Upfront", "Partial Upfront", and "All Upfront".
 
-* No Upfront denotes that the obligation is settled entirely through recurring charges with no initial payment.
-* Partial Upfront denotes that the obligation is settled through a combination of an initial payment and recurring charges.
-* All Upfront denotes that the obligation is settled via a single payment at the start of the duration.
+* "No Upfront" denotes that the obligation is settled entirely through recurring charges with no initial payment.
+* "Partial Upfront" denotes that the obligation is settled through a combination of an initial payment and recurring charges.
+* "All Upfront" denotes that the obligation is settled via a single payment at the start of the duration.
 
 ## Requirements
 
