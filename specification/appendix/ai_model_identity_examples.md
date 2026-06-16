@@ -38,5 +38,5 @@ For this scenario, the same underlying model is served by a cloud provider, Latt
 Note the following details in the example dataset:
 
 * ModelProvider ("Solora AI") differs from ServiceProviderName ("LatticeScale"). The model maker is not represented by any existing participating-entity column, which is why model identity is carried as its own property.
-* The served ModelId is namespaced by the cloud provider ("latticescale.solora-reasoning-pro"), so ModelFamily and ModelProvider are what associate the charge with the underlying model across sellers.
+* The served ModelId is namespaced by the cloud provider ("latticescale.solora-reasoning-pro"), so the other model-identity properties (ModelProvider, ModelFamily, ModelVariant, and ModelVersion) are what associate the charge with the underlying model across sellers.
 * As in Scenario A, the input and output split is structural, and the model-identity properties are common to both rows.
