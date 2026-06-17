@@ -328,17 +328,20 @@ Composite requirements MUST adhere to the following guidelines:
 
 * **Example** (illustrative):
 
-```markdown
+> **Note:** A suggested reformatting is included below as a comment rather than a code suggestion, as nested code blocks do not render reliably in GitHub.
 
 Incorrect:
 
+```markdown
 * When ChargeCategory is "Purchase", CostAndUsage MUST adhere to the following requirements:
   * BillingCurrency MUST conform to CurrencyCodeFormat requirements.
   * ResourceId MUST be a unique identifier within a service provider.
   * InvoiceDetail documentation MUST describe invoice reconciliation methodology.
+```
 
 Correct:
 
+```markdown
 * When ChargeCategory is "Purchase", CommitmentDiscountQuantity MUST adhere to the following requirements:
   * CommitmentDiscountQuantity MUST NOT be null when ChargeClass is not "Correction".
   * CommitmentDiscountQuantity MAY be null when ChargeClass is "Correction".
