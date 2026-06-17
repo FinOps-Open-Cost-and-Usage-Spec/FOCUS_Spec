@@ -4,14 +4,14 @@
 
 The following requirements were developed as part of the Dataset Configuration attribute but deferred from the initial specification to keep the scope focused on column selection (#1091). These may be integrated as normative requirements in a separate change.
 
-### Row aggregation
+### Row Aggregation
 
 * A FOCUS dataset SHOULD sum metric columns by default when the selected dimension columns result in rows with identical values.
 * A FOCUS dataset SHOULD allow opting in or out of row aggregation (summing metrics).
   * A FOCUS dataset MUST sum metric column values when rows are aggregated.
   * A FOCUS dataset SHOULD use case-insensitive matching when aggregating rows.
 
-### Time granularity
+### Time Granularity
 
 * A FOCUS dataset MUST allow selecting the time granularity based on ChargePeriodStart, when available.
   * A FOCUS dataset MUST allow selecting daily granularity.
@@ -19,12 +19,12 @@ The following requirements were developed as part of the Dataset Configuration a
   * A FOCUS dataset SHOULD allow selecting monthly granularity.
   * A FOCUS dataset MUST sum metric columns based on selected dimension columns with identical values when time granularity is changed.
 
-### FOCUS version selection
+### FOCUS Version Selection
 
 * A FOCUS dataset SHOULD allow selecting the FOCUS version.
   * A FOCUS dataset MUST NOT add or remove columns when a specific FOCUS version is selected.
 
-### Row filtering
+### Row Filtering
 
 * A FOCUS dataset SHOULD allow filtering rows by column values.
   * A FOCUS dataset MUST use case-insensitive matching when filtering rows.
@@ -82,17 +82,18 @@ Based on applicability, configuration options may be split into separate attribu
 
 | Attribute | Options | Feature Level |
 |-----------|---------|---------------|
-| **DatasetConfiguration** | Column selection, row aggregation, time granularity, schema versioning, row filtering | None (all datasets) |
+| **DatasetConfiguration** | Column selection, granularity configuration, row aggregation, time granularity, schema versioning, row filtering | None (all datasets) |
 | **DatasetDelivery** | Scheduling, incremental refresh, overwrite vs append, partitioning | Files or Tables |
 | **DatasetFileHandling** | File format, compression | Files only |
 
 ### Developed for 1.4
 
-The following options were developed for the Dataset Configuration attribute. Column selection is included in the initial specification. The remaining options are deferred to a separate change.
+The following options were developed for the Dataset Configuration attribute. Column selection and granularity configuration are included in the specification. The remaining options are deferred to a separate change.
 
 | Option            | Status   | Description                                         |
 |-------------------|----------|-----------------------------------------------------|
 | Column selection  | Included | Choose which columns to include                     |
+| Granularity configuration | Included | Choose configured levels of detail for records matching an applicability filter |
 | Row aggregation   | Deferred | Sum metric columns when dimensions are identical    |
 | Time granularity  | Deferred | Choose temporal resolution (daily, monthly, hourly) |
 | Schema versioning | Deferred | Select which schema version to use                  |
@@ -225,6 +226,80 @@ When introduced, time granularity will allow practitioners to choose temporal re
 * **Monthly**: Will be recommended (SHOULD) - useful for executive reporting and billing reconciliation
 * **Hourly**: Will be required when applicable (MUST) - when the dataset includes costs priced at an hourly or lower grain, hourly granularity will need to be available to preserve pricing accuracy
 
+## Dataset Instance Granularities
+
+Dataset instance granularities identify the levels of detail represented by records in a dataset instance. A granularity configuration specifies the level of detail for an applicability scope. The applicability filter identifies which records in a dataset instance are in that scope and may reference multiple columns.
+
+One dataset instance can contain more than one granularity configuration. For example, a CostAndUsage dataset instance could include Service-A records at `PrincipalId` plus `ConsumerId`, Service-B records at `PrincipalId`, and records for other services without actor-level columns. In a wide-file representation, the schema contains the union of selected columns and records outside a column's configured granularity have null values for that column.
+
+Applicability filters for configured granularities in the same delivered dataset instance should be mutually exclusive. This prevents one record from matching more than one granularity configuration. Separate delivered dataset instances can still represent the same underlying usage or charges, such as when a more granular dataset instance supplements a standard dataset instance, but that relationship needs documentation so practitioners can avoid double-counting.
+
+Dataset instance granularities are related to column selection, but the two configuration choices serve different purposes. Column selection controls which columns are present in a dataset instance artifact. Granularity configuration controls the level of usage detail reported for records matching an applicability filter, which can affect record counts, metric representation, and the columns needed to express that level of detail.
+
+Common reasons to offer multiple granularity configurations include:
+
+* **Managing high-cardinality detail**: Actor, session, request, trace, container, pod, cluster, and workload identifiers can multiply record counts.
+* **Limiting scope by service**: A practitioner may need actor-level detail for Service-A without enabling Service-B detail.
+* **Managing privacy exposure**: Actor-level dataset instances may include identifiers that require different access controls, retention policies, or review processes.
+* **Preserving analytical intent**: Service-level reporting, resource-level reporting, and actor-level chargeback can require different levels of detail.
+
+### Example Granularity Configurations
+
+| Applicability Filter | Granularity-Defining Columns | Notes |
+|----------------------|------------------------------|-------|
+| Service-A usage records with actor attribution | PrincipalId, ConsumerId | Usage attributed to the principal and downstream consumer. |
+| Service-B usage records with principal attribution | PrincipalId | Usage attributed to the principal only. |
+| All other records | None | Default granularity configuration. |
+
+### Default Granularity Configurations
+
+Default granularity configurations should be conservative. When more than one granularity configuration is offered for the same applicability filter, the default configuration should be the least granular option. This keeps default exports smaller and easier to interpret, while allowing practitioners to intentionally select higher-cardinality detail when they need it.
+
+A default that varies unpredictably across services would make it difficult for practitioners to understand what was delivered. A default that selects the most granular option would expose high-cardinality data and increase dataset size without an intentional selection.
+
+### Granularity Representation Modes
+
+More granular detail can be represented in multiple ways. The working term for these patterns is granularity representation mode.
+
+| Mode       | Description                                                                                     | Example                                                                 |
+|------------|-------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------|
+| Expanded   | More granular detail is represented as multiple CostAndUsage records.                       | One AI usage charge represented as multiple consumer-level records.      |
+| Embedded   | More granular detail is represented in a JSON column within a CostAndUsage record.          | One cost record contains a JSON array of consumer identifiers and costs. |
+| Referenced | More granular detail is represented in a supporting dataset or file referenced from CostAndUsage. | One CostAndUsage record links to many request-detail records.            |
+
+Expanded records are the most compatible with the current CostAndUsage model because dimensions and metrics remain directly queryable. Embedded JSON and Referenced detail can reduce top-level row growth, but they require additional schemas, lineage keys, and rules for element-level metrics.
+
+Split cost allocation is a specialized Expanded pattern when more granular records are derived from an origin charge using an allocation method. Split cost allocation should remain distinct because it carries additional semantics for origin charges, allocated charges, allocation methods, and metric conservation.
+
+### Metric Behavior
+
+Changing a granularity configuration does not imply every metric can be split across the more granular dimensions.
+
+Summable metrics such as cost and quantity can be measured or allocated at a more granular level when the data generator can represent them accurately. When a more granular dataset instance supplements another dataset instance that represents the same underlying usage or charges, the data generator documentation should explain how practitioners avoid double-counting.
+
+Non-summable metrics such as unit prices and rates usually remain tied to SKU-level pricing terms. When more granular records share a SKU context, the same rate can apply to all more granular records. Documentation should explain whether these metrics are repeated, omitted, or represented by another mechanism.
+
+### Actor-Level Granularity
+
+Actor-level granularity is relevant for shared platforms and pass-through services where the principal that initiates usage may not be the entity benefiting from usage. For example, an AI gateway service account may initiate requests while costs are attributed to consumers, teams, applications, or other downstream actors.
+
+An actor-level granularity configuration can support this use case without requiring split cost allocation when the data generator natively measures usage at the actor granularity. Split cost allocation becomes relevant when the data generator starts from a coarser origin charge and allocates it to more granular actors or workloads.
+
+Cluster identifiers usually behave like grouping dimensions or tags when each CostAndUsage record has one cluster value. A cluster identifier becomes part of a breakdown structure only when one CostAndUsage record needs to carry multiple cluster, namespace, pod, workload, or similar more granular elements.
+
+### Representation Tradeoffs
+
+| Consideration                  | Expanded | Embedded | Referenced |
+|--------------------------------|----------|----------|------------|
+| Query simplicity               | High     | Low      | Medium     |
+| Top-level row growth           | High     | Low      | Low        |
+| Works with first-class columns | High     | Low      | Medium     |
+| Supports deeply nested detail  | Low      | Medium   | High       |
+| Requires additional schema work| Low      | High     | High       |
+| Privacy isolation              | Low      | Medium   | High       |
+
+For the first specification change, Expanded dataset instances are the simplest model because they fit the existing CostAndUsage schema and allow actor columns to remain reusable first-class dimensions. Embedded and Referenced modes should remain open for future design work, especially for session, trace, or request details that may not belong directly in CostAndUsage.
+
 ## Future Configuration Options
 
 ### Format Selection
@@ -259,7 +334,7 @@ Major cloud providers support various configuration options:
 
 ## Configuration Metadata
 
-The Dataset Configuration attribute requires that FOCUS datasets include metadata describing the selected configuration options (`DatasetConfiguration-A-003-M`). This section evaluates what changes would be needed to support this requirement within the existing metadata structure.
+The Dataset Configuration attribute requires documentation for offered granularity configurations, but it does not yet define structured metadata for all selected configuration options. This section evaluates what changes would be needed to support structured configuration metadata within the existing metadata structure.
 
 ### Current Metadata Structure
 
@@ -274,13 +349,14 @@ The FOCUS metadata system has four sections:
 
 None of these sections currently capture dataset configuration selections.
 
-### What Needs to be Tracked
+### What Needs to Be Tracked
 
 Configuration metadata should describe the options applied when generating a dataset artifact:
 
 | Configuration Option | Metadata Needed                                                |
 |----------------------|----------------------------------------------------------------|
 | Column selection | List of included columns (or excluded columns) |
+| Granularity configuration | Selected level of detail, selection method, applicability filter, representation mode, privacy-sensitive identifier columns, and relationship to dataset instances representing the same underlying usage or charges |
 | Row aggregation | Whether aggregation is enabled |
 | Time granularity | Selected granularity (hourly, daily, monthly) |
 | FOCUS version | Selected version (already captured in Schema as FocusVersion) |
@@ -288,21 +364,66 @@ Configuration metadata should describe the options applied when generating a dat
 
 ### Possible Approaches
 
-#### Option A: Extend Dataset Instance metadata
+#### Option A: Extend Dataset Instance Metadata
 
 Add a `Configuration` object to DatasetInstance containing the selected options. This is the most natural fit since DatasetInstance already describes the nature of the dataset artifact, and configuration options directly shape what the artifact contains.
 
-#### Option B: New metadata section
+#### Option B: New Metadata Section
 
 Create a dedicated `Configuration` metadata section alongside Data Generator, Dataset Instance, Recency, and Schema. This provides clear separation but adds a new top-level concept.
 
-#### Option C: Extend Schema metadata
+#### Option C: Extend Schema Metadata
 
 Since Schema already tracks structural information (columns, data types) and triggers a new entry when the dataset structure changes, configuration changes could be captured alongside. However, Schema is focused on the data structure, not on what subset was selected.
 
 ### Recommendation
 
 Option A (extending Dataset Instance) is the most natural fit. The configuration options describe how a specific dataset artifact was shaped, which aligns with Dataset Instance's purpose. FOCUS version selection is already partially addressed by Schema's `FocusVersion` property.
+
+### Example Granularity Configuration Metadata
+
+The following example illustrates one possible shape for structured granularity configuration metadata. The field names are illustrative and would need task force review before becoming part of the formal metadata schema.
+
+```json
+{
+  "DatasetInstanceId": "178151-dbad145e-178151-dbad145e-178151",
+  "Configuration": {
+    "GranularityConfigurations": [
+      {
+        "GranularityConfigurationId": "genai-session-actor-detail",
+        "ApplicabilityFilter": {
+          "Service": "genai-service"
+        },
+        "GranularityDefiningColumns": [
+          "PrincipalId",
+          "ConsumerId",
+          "SessionId"
+        ],
+        "RepresentationMode": "Expanded",
+        "SelectionMethod": "Explicit",
+        "PrivacySensitiveIdentifierColumns": [
+          "PrincipalId",
+          "ConsumerId",
+          "SessionId"
+        ],
+        "RelationshipToRelatedDatasetInstances": "Replace"
+      },
+      {
+        "GranularityConfigurationId": "default-detail-for-example-scope",
+        "ApplicabilityFilter": {
+          "SomeColumn": "value-1",
+          "AnotherColumn": "value-2"
+        },
+        "GranularityDefiningColumns": [],
+        "RepresentationMode": "Expanded",
+        "SelectionMethod": "Default",
+        "PrivacySensitiveIdentifierColumns": [],
+        "RelationshipToRelatedDatasetInstances": "None"
+      }
+    ]
+  }
+}
+```
 
 ### Estimated Scope
 
