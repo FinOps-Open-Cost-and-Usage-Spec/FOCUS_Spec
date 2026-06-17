@@ -586,7 +586,7 @@ To further enhance readability, individual requirements within each group SHOULD
 * `SHOULD NOT` – discouraged but not strictly prohibited
 * `MAY` – optional
 
-* This ordering groups requirements by obligation strength to improve reviewability and consistency across specifications.
+**Exception for Semantic Ordering:** Obligation strength ordering is intended to improve reviewability, readability, and consistency, but is overridden in contexts where ordering carries semantic meaning, such as in nullability requirements (see [Grouping of Nullability-Related and Subsequent Column Requirements](#grouping-of-nullability-related-and-subsequent-column-requirements) for details).
 
 ### Additional Guidelines for Columns in JSON Format
 
