@@ -11,7 +11,7 @@
     "DatasetId": null,
     "DatasetName": null,
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Type": "Static",
     "Order": 0,
     "ValidationCriteria": {
@@ -59,7 +59,7 @@
     "DatasetId": null,
     "DatasetName": null,
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Type": "Dynamic",
     "Order": 10,
     "ValidationCriteria": {
@@ -82,7 +82,7 @@
     "DatasetId": null,
     "DatasetName": null,
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Type": "Dynamic",
     "Order": 20,
     "ValidationCriteria": {
@@ -105,7 +105,7 @@
     "DatasetId": null,
     "DatasetName": null,
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Type": "Dynamic",
     "Order": 30,
     "ValidationCriteria": {
@@ -128,7 +128,7 @@
     "DatasetId": null,
     "DatasetName": null,
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Type": "Dynamic",
     "Order": 40,
     "ValidationCriteria": {

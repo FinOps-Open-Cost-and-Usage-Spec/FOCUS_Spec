@@ -11,7 +11,7 @@
     "DatasetId": null,
     "DatasetName": null,
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Type": "Static",
     "Order": 0,
     "ValidationCriteria": {
@@ -69,7 +69,7 @@
     "DatasetId": null,
     "DatasetName": null,
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Type": "Dynamic",
     "Order": 10,
     "ValidationCriteria": {
@@ -93,7 +93,7 @@
     "DatasetId": null,
     "DatasetName": null,
     "Status": "Removed",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Type": "Static",
     "Order": -1,
     "ValidationCriteria": {
@@ -131,7 +131,7 @@
     "DatasetId": null,
     "DatasetName": null,
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Type": "Dynamic",
     "Order": 40,
     "ValidationCriteria": {
@@ -154,7 +154,7 @@
     "DatasetId": null,
     "DatasetName": null,
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Type": "Dynamic",
     "Order": 50,
     "ValidationCriteria": {
@@ -177,7 +177,7 @@
     "DatasetId": null,
     "DatasetName": null,
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Type": "Static",
     "Order": 60,
     "ValidationCriteria": {
@@ -220,7 +220,7 @@
     "DatasetId": null,
     "DatasetName": null,
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Type": "Dynamic",
     "Order": 70,
     "ValidationCriteria": {
@@ -243,7 +243,7 @@
     "DatasetId": null,
     "DatasetName": null,
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Type": "Dynamic",
     "Order": 80,
     "ValidationCriteria": {
@@ -266,7 +266,7 @@
     "DatasetId": null,
     "DatasetName": null,
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Type": "Dynamic",
     "Order": 90,
     "ValidationCriteria": {
@@ -289,7 +289,7 @@
     "DatasetId": null,
     "DatasetName": null,
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Type": "Dynamic",
     "Order": 20,
     "ValidationCriteria": {
@@ -313,7 +313,7 @@
     "DatasetId": null,
     "DatasetName": null,
     "Status": "Removed",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Type": "Dynamic",
     "Order": -1,
     "ValidationCriteria": {
@@ -336,7 +336,7 @@
     "DatasetId": null,
     "DatasetName": null,
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Type": "Dynamic",
     "Order": 30,
     "ValidationCriteria": {

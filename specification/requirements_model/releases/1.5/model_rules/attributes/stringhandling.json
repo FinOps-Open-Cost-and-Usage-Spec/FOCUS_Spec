@@ -11,7 +11,7 @@
     "DatasetName": null,
     "Status": "Active",
     "Notes": "Root composite capturing all StringHandling requirements",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": 0,
     "Type": "Static",
     "ValidationCriteria": {
@@ -70,7 +70,7 @@
     "DatasetName": null,
     "Status": "Removed",
     "Notes": "",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": -1,
     "Type": "Dynamic",
     "ValidationCriteria": {
@@ -94,7 +94,7 @@
     "DatasetName": null,
     "Status": "Removed",
     "Notes": "",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": -1,
     "Type": "Dynamic",
     "ValidationCriteria": {
@@ -117,7 +117,7 @@
     "DatasetName": null,
     "Status": "Active",
     "Notes": "",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": 10,
     "Type": "Dynamic",
     "ValidationCriteria": {
@@ -140,7 +140,7 @@
     "DatasetName": null,
     "Status": "Active",
     "Notes": "",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": 60,
     "Type": "Dynamic",
     "ValidationCriteria": {
@@ -164,7 +164,7 @@
     "DatasetName": null,
     "Status": "Removed",
     "Notes": "",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": -1,
     "Type": "Dynamic",
     "ValidationCriteria": {
@@ -188,7 +188,7 @@
     "DatasetName": null,
     "Status": "Removed",
     "Notes": "",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": -1,
     "Type": "Dynamic",
     "ValidationCriteria": {
@@ -211,7 +211,7 @@
     "DatasetName": null,
     "Status": "Active",
     "Notes": "",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": 100,
     "Type": "Dynamic",
     "ValidationCriteria": {
@@ -234,7 +234,7 @@
     "DatasetName": null,
     "Status": "Active",
     "Notes": "",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": 80,
     "Type": "Dynamic",
     "ValidationCriteria": {
@@ -257,7 +257,7 @@
     "DatasetName": null,
     "Status": "Active",
     "Notes": "",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": 20,
     "Type": "Dynamic",
     "ValidationCriteria": {
@@ -280,7 +280,7 @@
     "DatasetName": null,
     "Status": "Active",
     "Notes": "",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": 30,
     "Type": "Dynamic",
     "ValidationCriteria": {
@@ -303,7 +303,7 @@
     "DatasetName": null,
     "Status": "Active",
     "Notes": "",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": 40,
     "Type": "Dynamic",
     "ValidationCriteria": {
@@ -326,7 +326,7 @@
     "DatasetName": null,
     "Status": "Active",
     "Notes": "",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": 50,
     "Type": "Static",
     "ValidationCriteria": {
@@ -369,7 +369,7 @@
     "DatasetName": null,
     "Status": "Active",
     "Notes": "",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": 70,
     "Type": "Dynamic",
     "ValidationCriteria": {
@@ -392,7 +392,7 @@
     "DatasetName": null,
     "Status": "Active",
     "Notes": "",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": 90,
     "Type": "Static",
     "ValidationCriteria": {
@@ -430,7 +430,7 @@
     "DatasetName": null,
     "Status": "Active",
     "Notes": "",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": 110,
     "Type": "Dynamic",
     "ValidationCriteria": {

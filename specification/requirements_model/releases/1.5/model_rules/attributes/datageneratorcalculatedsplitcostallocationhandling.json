@@ -11,8 +11,8 @@
     "DatasetId": null,
     "DatasetName": null,
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    "Conditions": [
+      "IncludesSplitCostAllocation"
     ],
     "Type": "Static",
     "Order": 0,
@@ -57,8 +57,8 @@
     "DatasetId": null,
     "DatasetName": null,
     "Status": "Removed",
-    "ApplicabilityCriteria": [
-      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    "Conditions": [
+      "IncludesSplitCostAllocation"
     ],
     "Type": "Dynamic",
     "Order": -1,
@@ -83,8 +83,8 @@
     "DatasetId": null,
     "DatasetName": null,
     "Status": "Removed",
-    "ApplicabilityCriteria": [
-      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    "Conditions": [
+      "IncludesSplitCostAllocation"
     ],
     "Type": "Dynamic",
     "Order": -1,
@@ -109,8 +109,8 @@
     "DatasetId": null,
     "DatasetName": null,
     "Status": "Removed",
-    "ApplicabilityCriteria": [
-      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    "Conditions": [
+      "IncludesSplitCostAllocation"
     ],
     "Type": "Dynamic",
     "Order": -1,
@@ -135,8 +135,8 @@
     "DatasetId": null,
     "DatasetName": null,
     "Status": "Removed",
-    "ApplicabilityCriteria": [
-      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    "Conditions": [
+      "IncludesSplitCostAllocation"
     ],
     "Type": "Dynamic",
     "Order": -1,
@@ -161,8 +161,8 @@
     "DatasetId": null,
     "DatasetName": null,
     "Status": "Removed",
-    "ApplicabilityCriteria": [
-      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    "Conditions": [
+      "IncludesSplitCostAllocation"
     ],
     "Type": "Dynamic",
     "Order": -1,
@@ -187,8 +187,8 @@
     "DatasetId": null,
     "DatasetName": null,
     "Status": "Removed",
-    "ApplicabilityCriteria": [
-      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    "Conditions": [
+      "IncludesSplitCostAllocation"
     ],
     "Type": "Dynamic",
     "Order": -1,
@@ -213,8 +213,8 @@
     "DatasetId": null,
     "DatasetName": null,
     "Status": "Removed",
-    "ApplicabilityCriteria": [
-      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    "Conditions": [
+      "IncludesSplitCostAllocation"
     ],
     "Type": "Dynamic",
     "Order": -1,
@@ -239,8 +239,8 @@
     "DatasetId": null,
     "DatasetName": null,
     "Status": "Removed",
-    "ApplicabilityCriteria": [
-      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    "Conditions": [
+      "IncludesSplitCostAllocation"
     ],
     "Type": "Dynamic",
     "Order": -1,
@@ -265,8 +265,8 @@
     "DatasetId": null,
     "DatasetName": null,
     "Status": "Removed",
-    "ApplicabilityCriteria": [
-      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    "Conditions": [
+      "IncludesSplitCostAllocation"
     ],
     "Type": "Dynamic",
     "Order": -1,
@@ -291,8 +291,8 @@
     "DatasetId": null,
     "DatasetName": null,
     "Status": "Removed",
-    "ApplicabilityCriteria": [
-      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    "Conditions": [
+      "IncludesSplitCostAllocation"
     ],
     "Type": "Dynamic",
     "Order": -1,
@@ -317,8 +317,8 @@
     "DatasetId": null,
     "DatasetName": null,
     "Status": "Removed",
-    "ApplicabilityCriteria": [
-      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    "Conditions": [
+      "IncludesSplitCostAllocation"
     ],
     "Type": "Dynamic",
     "Order": -1,
@@ -342,8 +342,8 @@
     "DatasetId": null,
     "DatasetName": null,
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    "Conditions": [
+      "IncludesSplitCostAllocation"
     ],
     "Type": "Dynamic",
     "Order": 10,
@@ -367,8 +367,8 @@
     "DatasetId": null,
     "DatasetName": null,
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    "Conditions": [
+      "IncludesSplitCostAllocation"
     ],
     "Type": "Dynamic",
     "Order": 20,
@@ -392,8 +392,8 @@
     "DatasetId": null,
     "DatasetName": null,
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    "Conditions": [
+      "IncludesSplitCostAllocation"
     ],
     "Type": "Dynamic",
     "Order": 30,

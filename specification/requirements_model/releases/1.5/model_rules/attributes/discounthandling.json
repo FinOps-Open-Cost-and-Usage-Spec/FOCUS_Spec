@@ -12,8 +12,8 @@
     "DatasetName": null,
     "Status": "Removed",
     "Notes": "",
-    "ApplicabilityCriteria": [
-      "COMMITMENT_DISCOUNT_SUPPORTED"
+    "Conditions": [
+      "IncludesCommitmentDiscounts"
     ],
     "Order": 0,
     "Type": "Static",
@@ -63,8 +63,8 @@
     "DatasetName": null,
     "Status": "Removed",
     "Notes": "",
-    "ApplicabilityCriteria": [
-      "COMMITMENT_DISCOUNT_SUPPORTED"
+    "Conditions": [
+      "IncludesCommitmentDiscounts"
     ],
     "Order": 10,
     "Type": "Dynamic",
@@ -89,8 +89,8 @@
     "DatasetName": null,
     "Status": "Removed",
     "Notes": "",
-    "ApplicabilityCriteria": [
-      "COMMITMENT_DISCOUNT_SUPPORTED"
+    "Conditions": [
+      "IncludesCommitmentDiscounts"
     ],
     "Order": 20,
     "Type": "Static",
@@ -135,8 +135,8 @@
     "DatasetName": null,
     "Status": "Removed",
     "Notes": "",
-    "ApplicabilityCriteria": [
-      "COMMITMENT_DISCOUNT_SUPPORTED"
+    "Conditions": [
+      "IncludesCommitmentDiscounts"
     ],
     "Order": 30,
     "Type": "Dynamic",
@@ -161,8 +161,8 @@
     "DatasetName": null,
     "Status": "Removed",
     "Notes": "",
-    "ApplicabilityCriteria": [
-      "COMMITMENT_DISCOUNT_SUPPORTED"
+    "Conditions": [
+      "IncludesCommitmentDiscounts"
     ],
     "Order": 40,
     "Type": "Dynamic",
@@ -187,8 +187,8 @@
     "DatasetName": null,
     "Status": "Removed",
     "Notes": "",
-    "ApplicabilityCriteria": [
-      "COMMITMENT_DISCOUNT_SUPPORTED"
+    "Conditions": [
+      "IncludesCommitmentDiscounts"
     ],
     "Order": 50,
     "Type": "Static",
@@ -228,8 +228,8 @@
     "DatasetName": null,
     "Status": "Removed",
     "Notes": "",
-    "ApplicabilityCriteria": [
-      "COMMITMENT_DISCOUNT_SUPPORTED"
+    "Conditions": [
+      "IncludesCommitmentDiscounts"
     ],
     "Order": 60,
     "Type": "Dynamic",
@@ -254,8 +254,8 @@
     "DatasetName": null,
     "Status": "Removed",
     "Notes": "",
-    "ApplicabilityCriteria": [
-      "COMMITMENT_DISCOUNT_SUPPORTED"
+    "Conditions": [
+      "IncludesCommitmentDiscounts"
     ],
     "Order": 70,
     "Type": "Dynamic",
@@ -280,8 +280,8 @@
     "DatasetName": null,
     "Status": "Removed",
     "Notes": "",
-    "ApplicabilityCriteria": [
-      "COMMITMENT_DISCOUNT_SUPPORTED"
+    "Conditions": [
+      "IncludesCommitmentDiscounts"
     ],
     "Order": 80,
     "Type": "Static",
@@ -366,8 +366,8 @@
     "DatasetName": null,
     "Status": "Removed",
     "Notes": "",
-    "ApplicabilityCriteria": [
-      "COMMITMENT_DISCOUNT_SUPPORTED"
+    "Conditions": [
+      "IncludesCommitmentDiscounts"
     ],
     "Order": 90,
     "Type": "Dynamic",
@@ -392,8 +392,8 @@
     "DatasetName": null,
     "Status": "Removed",
     "Notes": "",
-    "ApplicabilityCriteria": [
-      "COMMITMENT_DISCOUNT_SUPPORTED"
+    "Conditions": [
+      "IncludesCommitmentDiscounts"
     ],
     "Order": 100,
     "Type": "Dynamic",
@@ -418,8 +418,8 @@
     "DatasetName": null,
     "Status": "Removed",
     "Notes": "",
-    "ApplicabilityCriteria": [
-      "COMMITMENT_DISCOUNT_SUPPORTED"
+    "Conditions": [
+      "IncludesCommitmentDiscounts"
     ],
     "Order": 110,
     "Type": "Dynamic",
@@ -444,8 +444,8 @@
     "DatasetName": null,
     "Status": "Removed",
     "Notes": "",
-    "ApplicabilityCriteria": [
-      "COMMITMENT_DISCOUNT_SUPPORTED"
+    "Conditions": [
+      "IncludesCommitmentDiscounts"
     ],
     "Order": 120,
     "Type": "Dynamic",
@@ -470,8 +470,8 @@
     "DatasetName": null,
     "Status": "Removed",
     "Notes": "",
-    "ApplicabilityCriteria": [
-      "COMMITMENT_DISCOUNT_SUPPORTED"
+    "Conditions": [
+      "IncludesCommitmentDiscounts"
     ],
     "Order": 130,
     "Type": "Dynamic",
@@ -496,8 +496,8 @@
     "DatasetName": null,
     "Status": "Removed",
     "Notes": "",
-    "ApplicabilityCriteria": [
-      "COMMITMENT_DISCOUNT_SUPPORTED"
+    "Conditions": [
+      "IncludesCommitmentDiscounts"
     ],
     "Order": 140,
     "Type": "Dynamic",
@@ -522,8 +522,8 @@
     "DatasetName": null,
     "Status": "Removed",
     "Notes": "",
-    "ApplicabilityCriteria": [
-      "COMMITMENT_DISCOUNT_SUPPORTED"
+    "Conditions": [
+      "IncludesCommitmentDiscounts"
     ],
     "Order": 150,
     "Type": "Dynamic",
@@ -548,8 +548,8 @@
     "DatasetName": null,
     "Status": "Removed",
     "Notes": "",
-    "ApplicabilityCriteria": [
-      "COMMITMENT_DISCOUNT_SUPPORTED"
+    "Conditions": [
+      "IncludesCommitmentDiscounts"
     ],
     "Order": 160,
     "Type": "Dynamic",
@@ -574,8 +574,8 @@
     "DatasetName": null,
     "Status": "Removed",
     "Notes": "",
-    "ApplicabilityCriteria": [
-      "COMMITMENT_DISCOUNT_SUPPORTED"
+    "Conditions": [
+      "IncludesCommitmentDiscounts"
     ],
     "Order": 170,
     "Type": "Dynamic",
@@ -600,8 +600,8 @@
     "DatasetName": null,
     "Status": "Removed",
     "Notes": "",
-    "ApplicabilityCriteria": [
-      "COMMITMENT_DISCOUNT_SUPPORTED"
+    "Conditions": [
+      "IncludesCommitmentDiscounts"
     ],
     "Order": 180,
     "Type": "Dynamic",
@@ -626,8 +626,8 @@
     "DatasetName": null,
     "Status": "Removed",
     "Notes": "",
-    "ApplicabilityCriteria": [
-      "COMMITMENT_DISCOUNT_SUPPORTED"
+    "Conditions": [
+      "IncludesCommitmentDiscounts"
     ],
     "Order": 190,
     "Type": "Dynamic",
@@ -652,8 +652,8 @@
     "DatasetName": null,
     "Status": "Removed",
     "Notes": "",
-    "ApplicabilityCriteria": [
-      "COMMITMENT_DISCOUNT_SUPPORTED"
+    "Conditions": [
+      "IncludesCommitmentDiscounts"
     ],
     "Order": 200,
     "Type": "Dynamic",
