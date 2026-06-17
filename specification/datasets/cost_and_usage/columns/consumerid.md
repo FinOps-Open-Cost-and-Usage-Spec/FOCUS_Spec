@@ -19,7 +19,7 @@ ConsumerId MUST adhere to the following requirements:
   * ConsumerId MUST NOT be null when a *charge* is attributed to a specific *consumer* by the service provider.
 * When ConsumerId is not null, ConsumerId MUST adhere to the following requirements:
   * ConsumerId MUST be a unique identifier within the context of the service provider.
-  * ConsumerId MUST NOT contain plain-text personally identifiable information (PII) if the service provider supplies an alternative opaque identifier.
+  * ConsumerId MUST NOT contain plain-text personally identifiable information (PII) when the service provider supplies an alternative opaque identifier.
 
 ## Column ID
 
