@@ -432,9 +432,9 @@ To further enhance readability, individual requirements within each group SHOULD
 * `SHOULD NOT` – discouraged but not strictly prohibited
 * `MAY` – optional
 
-* This ordering groups requirements by obligation strength to improve reviewability and consistency across specifications.
+**Exception for Column Presence:** Requirements within the **Column Presence in Dataset** group MUST be ordered alphabetically by the referenced Column ID, taking precedence over the obligation strength ordering.
 
-**Exception:** Requirements within the **Column Presence in Dataset** group MUST be ordered alphabetically by the referenced Column ID, taking precedence over the BCP 14 keyword ordering.
+> **Note:** This ordering is intended to improve reviewability and consistency but can be overridden where ordering carries semantic meaning.
 
 ### Consistent Wording and Patterns in Dataset Requirements
 
