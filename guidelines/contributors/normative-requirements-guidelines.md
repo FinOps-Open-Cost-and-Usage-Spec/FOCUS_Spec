@@ -328,8 +328,6 @@ Composite requirements MUST adhere to the following guidelines:
 
 * **Example** (illustrative):
 
-> **Note:** A suggested reformatting is included below as a comment rather than a code suggestion, as nested code blocks do not render reliably in GitHub.
-
 Incorrect:
 
 ```markdown
@@ -537,6 +535,7 @@ CostAndUsage MUST adhere to the following requirements:
 ```
 
 > **Note:** Column presence groups are structural groupings and not normative subjects.
+
 ## Column Requirements
 
 ### Logical Grouping of Column Requirements
