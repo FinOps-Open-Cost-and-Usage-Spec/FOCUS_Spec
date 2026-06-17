@@ -116,10 +116,16 @@
               "pattern": "^[A-Z]{3}$"
             },
             "DatasetId": {
-              "type": "string"
+              "type": [
+                "string",
+                "null"
+              ]
             },
             "DatasetName": {
-              "type": "string"
+              "type": [
+                "string",
+                "null"
+              ]
             },
             "Schema": {
               "type": "object"
@@ -189,10 +195,16 @@
               "pattern": "^[A-Z]{3}$"
             },
             "DatasetId": {
-              "type": "string"
+              "type": [
+                "string",
+                "null"
+              ]
             },
             "DatasetName": {
-              "type": "string"
+              "type": [
+                "string",
+                "null"
+              ]
             },
             "ModelVersionIntroduced": {
               "type": "string"
@@ -275,6 +287,9 @@
             "EntityId",
             "EntityName",
             "EntityType",
+            "DatasetType",
+            "DatasetId",
+            "DatasetName",
             "ModelVersionIntroduced",
             "Status",
             "ApplicabilityCriteria",
@@ -333,7 +348,18 @@
                   "DatasetType",
                   "DatasetId",
                   "DatasetName"
-                ]
+                ],
+                "properties": {
+                  "DatasetType": {
+                    "type": "string"
+                  },
+                  "DatasetId": {
+                    "type": "string"
+                  },
+                  "DatasetName": {
+                    "type": "string"
+                  }
+                }
               }
             }
           ],

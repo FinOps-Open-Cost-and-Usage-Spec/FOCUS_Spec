@@ -7,6 +7,9 @@
     "EntityId": "DataGeneratorCalculatedSplitCostAllocationHandling",
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
+    "DatasetType": "ATT",
+    "DatasetId": null,
+    "DatasetName": null,
     "Status": "Active",
     "ApplicabilityCriteria": [
       "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
@@ -50,6 +53,9 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
     "ModelVersionRemoved": "1.4",
+    "DatasetType": "ATT",
+    "DatasetId": null,
+    "DatasetName": null,
     "Status": "Removed",
     "ApplicabilityCriteria": [
       "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
@@ -73,6 +79,9 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
     "ModelVersionRemoved": "1.4",
+    "DatasetType": "ATT",
+    "DatasetId": null,
+    "DatasetName": null,
     "Status": "Removed",
     "ApplicabilityCriteria": [
       "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
@@ -96,6 +105,9 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
     "ModelVersionRemoved": "1.4",
+    "DatasetType": "ATT",
+    "DatasetId": null,
+    "DatasetName": null,
     "Status": "Removed",
     "ApplicabilityCriteria": [
       "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
@@ -119,6 +131,9 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
     "ModelVersionRemoved": "1.4",
+    "DatasetType": "ATT",
+    "DatasetId": null,
+    "DatasetName": null,
     "Status": "Removed",
     "ApplicabilityCriteria": [
       "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
@@ -142,6 +157,9 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
     "ModelVersionRemoved": "1.4",
+    "DatasetType": "ATT",
+    "DatasetId": null,
+    "DatasetName": null,
     "Status": "Removed",
     "ApplicabilityCriteria": [
       "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
@@ -165,6 +183,9 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
     "ModelVersionRemoved": "1.4",
+    "DatasetType": "ATT",
+    "DatasetId": null,
+    "DatasetName": null,
     "Status": "Removed",
     "ApplicabilityCriteria": [
       "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
@@ -188,6 +209,9 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
     "ModelVersionRemoved": "1.4",
+    "DatasetType": "ATT",
+    "DatasetId": null,
+    "DatasetName": null,
     "Status": "Removed",
     "ApplicabilityCriteria": [
       "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
@@ -211,6 +235,9 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
     "ModelVersionRemoved": "1.4",
+    "DatasetType": "ATT",
+    "DatasetId": null,
+    "DatasetName": null,
     "Status": "Removed",
     "ApplicabilityCriteria": [
       "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
@@ -234,6 +261,9 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
     "ModelVersionRemoved": "1.4",
+    "DatasetType": "ATT",
+    "DatasetId": null,
+    "DatasetName": null,
     "Status": "Removed",
     "ApplicabilityCriteria": [
       "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
@@ -257,6 +287,9 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
     "ModelVersionRemoved": "1.4",
+    "DatasetType": "ATT",
+    "DatasetId": null,
+    "DatasetName": null,
     "Status": "Removed",
     "ApplicabilityCriteria": [
       "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
@@ -280,6 +313,9 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
     "ModelVersionRemoved": "1.4",
+    "DatasetType": "ATT",
+    "DatasetId": null,
+    "DatasetName": null,
     "Status": "Removed",
     "ApplicabilityCriteria": [
       "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
@@ -302,6 +338,9 @@
     "EntityId": "DataGeneratorCalculatedSplitCostAllocationHandling",
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
+    "DatasetType": "ATT",
+    "DatasetId": null,
+    "DatasetName": null,
     "Status": "Active",
     "ApplicabilityCriteria": [
       "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
@@ -324,6 +363,9 @@
     "EntityId": "DataGeneratorCalculatedSplitCostAllocationHandling",
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
+    "DatasetType": "ATT",
+    "DatasetId": null,
+    "DatasetName": null,
     "Status": "Active",
     "ApplicabilityCriteria": [
       "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
@@ -346,6 +388,9 @@
     "EntityId": "DataGeneratorCalculatedSplitCostAllocationHandling",
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
+    "DatasetType": "ATT",
+    "DatasetId": null,
+    "DatasetName": null,
     "Status": "Active",
     "ApplicabilityCriteria": [
       "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
