@@ -252,20 +252,19 @@ Specifically:
 
 #### Common non-compliant verbs (non-exhaustive)
 
-The following verbs are commonly used in a process-oriented way when defining requirements:
-
-* `ensure`
-* `handle`
-* `support`
-* `provide`
-* `allow`
-* `enable`
-* `manage`
-* `process`
-* `enforce`
-* `prefix`
-* `alter`
-* `document`
+* The following verbs are commonly used in a process-oriented way when defining requirements:
+  * `ensure`
+  * `handle`
+  * `support`
+  * `provide`
+  * `allow`
+  * `enable`
+  * `manage`
+  * `process`
+  * `enforce`
+  * `prefix`
+  * `alter`
+  * `document`
 
 * These verbs are prohibited when applied as obligations on actors or processes but may be used when defining verifiable states of documentation. 
 
@@ -1076,6 +1075,8 @@ To further enhance readability, individual requirements within each group SHOULD
   * `SHOULD` – recommended but not mandatory
   * `SHOULD NOT` – discouraged but not strictly prohibited
   * `MAY` – optional
+
+> **Note:** This ordering is intended to improve reviewability and consistency but can be overridden where ordering carries semantic meaning.
 
 ### Attribute Normative Requirements Examples
 
