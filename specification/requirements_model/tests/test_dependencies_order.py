@@ -6,6 +6,7 @@ def test_dependencies_order(cr_json):
     """
     Test that Dependencies arrays are ordered according to the Order field of referenced rules.
     Rules without an Order field are ignored for ordering purposes.
+    Rules with Order == -1 are treated as hidden and ignored for ordering purposes.
     Only dependencies with the same Reference as the parent rule are checked for ordering.
     Dependencies with different References should appear last (in any order).
     """
@@ -24,13 +25,17 @@ def test_dependencies_order(cr_json):
 
     # Check each rule's Dependencies array for proper ordering
     for rule_id, rule in rules.items():
+        if (rule.get("Status") or "").strip() == "Removed":
+            continue
+
         dependencies = rule.get("ValidationCriteria", {}).get("Dependencies", [])
         parent_entity_id = rule.get("EntityId")
         
         if not dependencies or len(dependencies) <= 1:
             continue  # Nothing to order
 
-        # Separate dependencies into same-entity_id and different-entity_id groups
+        # Separate dependencies into same-entity_id and different-entity_id groups.
+        # Same-EntityId dependencies with Order == -1 are hidden and ignored entirely.
         same_ref_deps = []
         diff_ref_deps = []
         
@@ -41,8 +46,12 @@ def test_dependencies_order(cr_json):
             dep_info = rule_info_map[dep_id]
             dep_entity_id = dep_info["entity_id"]
             dep_order = dep_info["order"]
+
+            # Hidden same-entity dependencies are ignored for all ordering checks.
+            if dep_entity_id == parent_entity_id and dep_order == -1:
+                continue
             
-            if dep_entity_id == parent_entity_id and dep_order is not None:
+            if dep_entity_id == parent_entity_id and dep_order is not None and dep_order != -1:
                 same_ref_deps.append((dep_id, dep_order))
             else:
                 diff_ref_deps.append(dep_id)
@@ -60,8 +69,10 @@ def test_dependencies_order(cr_json):
                         "issue": f"Dependency {prev_dep_id} with Order {prev_order} should come after {curr_dep_id} with Order {curr_order}"
                     })
 
-        # Check that different-reference dependencies appear after same-reference dependencies
-        if same_ref_deps and diff_ref_deps:
+        # Check that different-reference dependencies appear after same-reference dependencies.
+        # Dataset rules are exempt: their primary deps are cross-EntityId column presence rules
+        # by design, so enforcing same-before-diff ordering is not meaningful for them.
+        if same_ref_deps and diff_ref_deps and rule.get("EntityType") != "Dataset":
             # Find the position of the last same-reference dependency in the original list
             last_same_ref_id = same_ref_deps[-1][0]
             last_same_ref_pos = dependencies.index(last_same_ref_id)
@@ -73,8 +84,8 @@ def test_dependencies_order(cr_json):
                     dep_reference = rule_info_map[diff_ref_id]["entity_id"]
                     violations.append({
                         "rule_id": rule_id,
-                        "dependency_pair": f"{diff_ref_id} (EntityId: {dep_reference})",
-                        "issue": f"Dependency {diff_ref_id} with different EntityId '{dep_reference}' should appear after all same-EntityId dependencies"
+                            "dependency_pair": f"{diff_ref_id} (EntityId: {dep_reference})",
+                            "issue": f"Dependency {diff_ref_id} with different EntityId '{dep_reference}' should appear after all same-EntityId dependencies"
                     })
 
     assert not violations, (
@@ -97,6 +108,9 @@ def test_no_duplicate_order_values(cr_json):
     entity_groups = defaultdict(list)
     
     for rule_id, rule in rules.items():
+        if (rule.get("Status") or "").strip() == "Removed":
+            continue
+
         entity_id = rule.get("EntityId")
         entity_type = rule.get("EntityType")
         dataset_id = rule.get("DatasetId")

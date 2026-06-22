@@ -1,0 +1,810 @@
+{
+  "CAU-EffectiveCost-C-000-M": {
+    "Function": "Composite",
+    "Reference": "EffectiveCost",
+    "EntityType": "Column",
+    "EntityName": "Effective Cost",
+    "EntityId": "EffectiveCost",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 0,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "EffectiveCost MUST adhere to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-EffectiveCost-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-EffectiveCost-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-EffectiveCost-C-003-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-EffectiveCost-C-006-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-EffectiveCost-C-014-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-EffectiveCost-C-015-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-EffectiveCost-C-016-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-EffectiveCost-C-017-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-EffectiveCost-C-018-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-EffectiveCost-C-019-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-EffectiveCost-C-020-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-EffectiveCost-C-021-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-EffectiveCost-C-022-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-EffectiveCost-C-023-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CAU-EffectiveCost-C-001-M",
+        "CAU-EffectiveCost-C-002-M",
+        "CAU-EffectiveCost-C-003-M",
+        "CAU-EffectiveCost-C-006-M",
+        "CAU-EffectiveCost-C-014-M",
+        "CAU-EffectiveCost-C-015-C",
+        "CAU-EffectiveCost-C-016-C",
+        "CAU-EffectiveCost-C-017-C",
+        "CAU-EffectiveCost-C-018-C",
+        "CAU-EffectiveCost-C-019-M",
+        "CAU-EffectiveCost-C-020-C",
+        "CAU-EffectiveCost-C-021-C",
+        "CAU-EffectiveCost-C-022-C",
+        "CAU-EffectiveCost-C-023-C",
+        "CAU-CostAndUsage-D-031-M"
+      ]
+    }
+  },
+  "CAU-EffectiveCost-C-001-M": {
+    "Function": "Type",
+    "Reference": "EffectiveCost",
+    "EntityType": "Column",
+    "EntityName": "Effective Cost",
+    "EntityId": "EffectiveCost",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 20,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "EffectiveCost MUST be of type Decimal.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "TypeDecimal",
+        "ColumnName": "EffectiveCost"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-EffectiveCost-C-002-M": {
+    "Function": "Format",
+    "Reference": "EffectiveCost",
+    "EntityType": "Column",
+    "EntityName": "Effective Cost",
+    "EntityId": "EffectiveCost",
+    "Notes": "Cross-attribute reference: NumericFormat",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 30,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "EffectiveCost MUST conform to NumericFormat requirements.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "FormatNumeric",
+        "ColumnName": "EffectiveCost"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-EffectiveCost-C-003-M": {
+    "Function": "Nullability",
+    "Reference": "EffectiveCost",
+    "EntityType": "Column",
+    "EntityName": "Effective Cost",
+    "EntityId": "EffectiveCost",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 40,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "EffectiveCost MUST NOT be null.",
+      "Keyword": "MUST NOT",
+      "Requirement": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "EffectiveCost",
+        "Value": null
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-EffectiveCost-C-004-M": {
+    "Function": "Validation",
+    "Reference": "EffectiveCost",
+    "EntityType": "Column",
+    "EntityName": "Effective Cost",
+    "EntityId": "EffectiveCost",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
+    "ApplicabilityCriteria": [],
+    "Order": 50,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "EffectiveCost MUST be a valid decimal value.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "EffectiveCost",
+        "Value": null
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-EffectiveCost-C-005-C": {
+    "Function": "Validation",
+    "Reference": "EffectiveCost",
+    "EntityType": "Column",
+    "EntityName": "Effective Cost",
+    "EntityId": "EffectiveCost",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
+    "ApplicabilityCriteria": [],
+    "Order": 60,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "EffectiveCost MUST be 0 when ChargeCategory is \"Purchase\" and the purchase is intended to cover future eligible charges.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "EffectiveCost",
+        "Value": 0
+      },
+      "Condition": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "ChargeCategory",
+        "Value": "Purchase"
+      },
+      "Dependencies": [
+        "CAU-ChargeCategory-C-000-M"
+      ]
+    }
+  },
+  "CAU-EffectiveCost-C-006-M": {
+    "Function": "Validation",
+    "Reference": "EffectiveCost",
+    "EntityType": "Column",
+    "EntityName": "Effective Cost",
+    "EntityId": "EffectiveCost",
+    "Notes": "Cross-column reference: BillingCurrency",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 70,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "EffectiveCost MUST be denominated in the BillingCurrency.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": [
+        "CAU-BillingCurrency-C-000-M"
+      ]
+    }
+  },
+  "CAU-EffectiveCost-C-007-O": {
+    "Function": "Validation",
+    "Reference": "EffectiveCost",
+    "EntityType": "Column",
+    "EntityName": "Effective Cost",
+    "EntityId": "EffectiveCost",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
+    "ApplicabilityCriteria": [],
+    "Order": 80,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "The sum of EffectiveCost in a given billing period MAY differ from the sum of the invoices received for the same billing period for a billing account.",
+      "Keyword": "MAY",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-EffectiveCost-C-008-C": {
+    "Function": "Composite",
+    "Reference": "EffectiveCost",
+    "EntityType": "Column",
+    "EntityName": "Effective Cost",
+    "EntityId": "EffectiveCost",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
+    "ApplicabilityCriteria": [],
+    "Order": 90,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "When ChargeCategory is not \"Usage\" or \"Purchase\", EffectiveCost adheres to the following additional requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-EffectiveCost-C-009-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-EffectiveCost-C-010-M"
+          }
+        ]
+      },
+      "Condition": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckNotValue",
+            "ColumnName": "ChargeCategory",
+            "Value": "Usage"
+          },
+          {
+            "CheckFunction": "CheckNotValue",
+            "ColumnName": "ChargeCategory",
+            "Value": "Purchase"
+          }
+        ]
+      },
+      "Dependencies": [
+        "CAU-EffectiveCost-C-009-M",
+        "CAU-EffectiveCost-C-010-M",
+        "CAU-ChargeCategory-C-000-M"
+      ]
+    }
+  },
+  "CAU-EffectiveCost-C-009-M": {
+    "Function": "Validation",
+    "Reference": "EffectiveCost",
+    "EntityType": "Column",
+    "EntityName": "Effective Cost",
+    "EntityId": "EffectiveCost",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
+    "ApplicabilityCriteria": [],
+    "Order": 100,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "EffectiveCost of a charge calculated based on other charges (e.g., when the ChargeCategory is \"Tax\") MUST be calculated based on the EffectiveCost of those related charges.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-EffectiveCost-C-010-M": {
+    "Function": "Validation",
+    "Reference": "EffectiveCost",
+    "EntityType": "Column",
+    "EntityName": "Effective Cost",
+    "EntityId": "EffectiveCost",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
+    "ApplicabilityCriteria": [],
+    "Order": 110,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "EffectiveCost of a charge unrelated to other charges (e.g., when the ChargeCategory is \"Credit\") MUST match the BilledCost.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": [
+        "CAU-ChargeCategory-C-000-M",
+        "CAU-BilledCost-C-000-M"
+      ]
+    }
+  },
+  "CAU-EffectiveCost-C-011-C": {
+    "Function": "Composite",
+    "Reference": "EffectiveCost",
+    "EntityType": "Column",
+    "EntityName": "Effective Cost",
+    "EntityId": "EffectiveCost",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
+    "ApplicabilityCriteria": [],
+    "Order": 120,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "Charges for a given CommitmentDiscountId adhere to the following additional requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-EffectiveCost-C-012-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-EffectiveCost-C-013-C"
+          }
+        ]
+      },
+      "Condition": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "CommitmentDiscountId",
+        "Value": null
+      },
+      "Dependencies": [
+        "CAU-EffectiveCost-C-012-C",
+        "CAU-EffectiveCost-C-013-C",
+        "CAU-CommitmentDiscountId-C-000-C"
+      ]
+    }
+  },
+  "CAU-EffectiveCost-C-012-C": {
+    "Function": "Validation",
+    "Reference": "EffectiveCost",
+    "EntityType": "Column",
+    "EntityName": "Effective Cost",
+    "EntityId": "EffectiveCost",
+    "Notes": "Scope alignment by CommitmentDiscountId",
+    "ModelVersionIntroduced": "1.2",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
+    "ApplicabilityCriteria": [],
+    "Order": 130,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "The sum of EffectiveCost where ChargeCategory is \"Usage\" MUST equal the sum of BilledCost where ChargeCategory is \"Purchase\".",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ChargeCategory",
+            "Value": "Usage"
+          },
+          {
+            "CheckFunction": "CheckNotValue",
+            "ColumnName": "CommitmentDiscountId",
+            "Value": null
+          }
+        ]
+      },
+      "Dependencies": [
+        "CAU-BilledCost-C-000-M",
+        "CAU-ChargeCategory-C-000-M",
+        "CAU-CommitmentDiscountId-C-000-C"
+      ]
+    }
+  },
+  "CAU-EffectiveCost-C-013-C": {
+    "Function": "Validation",
+    "Reference": "EffectiveCost",
+    "EntityType": "Column",
+    "EntityName": "Effective Cost",
+    "EntityId": "EffectiveCost",
+    "Notes": "Scope alignment by CommitmentDiscountId; no external CR dependency on EffectiveCost",
+    "ModelVersionIntroduced": "1.2",
+    "ModelVersionRemoved": "1.4",
+    "Status": "Removed",
+    "ApplicabilityCriteria": [],
+    "Order": 140,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "The sum of EffectiveCost where ChargeCategory is \"Usage\" MUST equal the sum of EffectiveCost where ChargeCategory is \"Usage\" and CommitmentDiscountStatus is \"Used\", plus the sum of EffectiveCost where ChargeCategory is \"Usage\" and CommitmentDiscountStatus is \"Unused\".",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ChargeCategory",
+            "Value": "Usage"
+          },
+          {
+            "CheckFunction": "CheckNotValue",
+            "ColumnName": "CommitmentDiscountId",
+            "Value": null
+          }
+        ]
+      },
+      "Dependencies": [
+        "CAU-CommitmentDiscountStatus-C-000-C",
+        "CAU-ChargeCategory-C-000-M",
+        "CAU-CommitmentDiscountId-C-000-C"
+      ]
+    }
+  },
+  "CAU-EffectiveCost-C-014-M": {
+    "Function": "Validation",
+    "Reference": "EffectiveCost",
+    "EntityType": "Column",
+    "EntityName": "Effective Cost",
+    "EntityId": "EffectiveCost",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 150,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "EffectiveCost MUST reflect all applicable pricing adjustments, including but not limited to negotiated discounts, commitment discounts, and other applicable discount programs.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-EffectiveCost-C-015-C": {
+    "Function": "Validation",
+    "Reference": "EffectiveCost",
+    "EntityType": "Column",
+    "EntityName": "Effective Cost",
+    "EntityId": "EffectiveCost",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 160,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "EffectiveCost MUST equal BilledCost when ChargeCategory is \"Usage\" and the charge is not covered by other eligible charges.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "ChargeCategory",
+        "Value": "Usage"
+      },
+      "Dependencies": [
+        "CAU-BilledCost-C-000-M",
+        "CAU-ChargeCategory-C-000-M"
+      ]
+    }
+  },
+  "CAU-EffectiveCost-C-016-C": {
+    "Function": "Validation",
+    "Reference": "EffectiveCost",
+    "EntityType": "Column",
+    "EntityName": "Effective Cost",
+    "EntityId": "EffectiveCost",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 170,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "EffectiveCost MUST equal BilledCost when ChargeCategory is \"Purchase\" and the charge is neither intended to cover other eligible charges nor covered by other eligible charges.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "ChargeCategory",
+        "Value": "Purchase"
+      },
+      "Dependencies": [
+        "CAU-BilledCost-C-000-M",
+        "CAU-ChargeCategory-C-000-M"
+      ]
+    }
+  },
+  "CAU-EffectiveCost-C-017-C": {
+    "Function": "Validation",
+    "Reference": "EffectiveCost",
+    "EntityType": "Column",
+    "EntityName": "Effective Cost",
+    "EntityId": "EffectiveCost",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 180,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "EffectiveCost MUST equal BilledCost when ChargeCategory is \"Tax\" or \"Credit\".",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "CheckSameValue",
+        "ColumnAName": "EffectiveCost",
+        "ColumnBName": "BilledCost"
+      },
+      "Condition": {
+        "CheckFunction": "OR",
+        "Items": [
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ChargeCategory",
+            "Value": "Tax"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ChargeCategory",
+            "Value": "Credit"
+          }
+        ]
+      },
+      "Dependencies": [
+        "CAU-BilledCost-C-000-M",
+        "CAU-ChargeCategory-C-000-M"
+      ]
+    }
+  },
+  "CAU-EffectiveCost-C-018-C": {
+    "Function": "Validation",
+    "Reference": "EffectiveCost",
+    "EntityType": "Column",
+    "EntityName": "Effective Cost",
+    "EntityId": "EffectiveCost",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 190,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "EffectiveCost MAY differ from BilledCost when ChargeCategory is \"Adjustment\".",
+      "Keyword": "MAY",
+      "Requirement": {},
+      "Condition": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "ChargeCategory",
+        "Value": "Adjustment"
+      },
+      "Dependencies": [
+        "CAU-BilledCost-C-000-M",
+        "CAU-ChargeCategory-C-000-M"
+      ]
+    }
+  },
+  "CAU-EffectiveCost-C-019-M": {
+    "Function": "Validation",
+    "Reference": "EffectiveCost",
+    "EntityType": "Column",
+    "EntityName": "Effective Cost",
+    "EntityId": "EffectiveCost",
+    "Notes": "Cross-column reference: BilledCost; cross-row reference: covering purchase charges",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 200,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "EffectiveCost MUST include any portion of the BilledCost of covering purchase charges (i.e., ChargeCategory is \"Purchase\") that is applied to this charge.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": [
+        "CAU-BilledCost-C-000-M",
+        "CAU-ChargeCategory-C-000-M"
+      ]
+    }
+  },
+  "CAU-EffectiveCost-C-020-C": {
+    "Function": "Validation",
+    "Reference": "EffectiveCost",
+    "EntityType": "Column",
+    "EntityName": "Effective Cost",
+    "EntityId": "EffectiveCost",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 210,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "EffectiveCost MUST be 0 when ChargeCategory is \"Purchase\" and the purchase is intended to cover related eligible charges. This requirement applies even when the covered charges originate from different CostAndUsage dataset instances, possibly from a different ServiceProviderName.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "ChargeCategory",
+        "Value": "Purchase"
+      },
+      "Dependencies": [
+        "CAU-ChargeCategory-C-000-M",
+        "CAU-ServiceProviderName-C-003-M"
+      ]
+    }
+  },
+  "CAU-EffectiveCost-C-021-C": {
+    "Function": "Validation",
+    "Reference": "EffectiveCost",
+    "EntityType": "Column",
+    "EntityName": "Effective Cost",
+    "EntityId": "EffectiveCost",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 220,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "EffectiveCost MUST be 0 for charges generated by entities that do not originate the cost and usage data, to avoid double-counting when merging multiple dataset instances.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-EffectiveCost-C-022-C": {
+    "Function": "Validation",
+    "Reference": "EffectiveCost",
+    "EntityType": "Column",
+    "EntityName": "Effective Cost",
+    "EntityId": "EffectiveCost",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 230,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "The sum of EffectiveCost across all related covering and covered charges MUST equal the sum of BilledCost across the same set of charges, within the charge period of the covering charges, when both the covering and covered charges are present in the dataset instance.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": [
+        "CAU-BilledCost-C-000-M"
+      ]
+    }
+  },
+  "CAU-EffectiveCost-C-023-C": {
+    "Function": "Validation",
+    "Reference": "EffectiveCost",
+    "EntityType": "Column",
+    "EntityName": "Effective Cost",
+    "EntityId": "EffectiveCost",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 240,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "The sum of EffectiveCost for a given billing period MAY differ from the sum of BilledCost when covered and covering charges span multiple billing periods or billing accounts, or when only one side of a covering relationship is present in the dataset instance.",
+      "Keyword": "MAY",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": [
+        "CAU-BilledCost-C-000-M"
+      ]
+    }
+  }
+}
