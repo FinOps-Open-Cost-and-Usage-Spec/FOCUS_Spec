@@ -322,14 +322,6 @@
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-CostAndUsage-D-076-M"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-CostAndUsage-D-077-C"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-CostAndUsage-D-078-C"
           }
         ]
       },
@@ -399,9 +391,7 @@
         "CAU-CostAndUsage-D-073-C",
         "CAU-CostAndUsage-D-074-C",
         "CAU-CostAndUsage-D-075-M",
-        "CAU-CostAndUsage-D-076-M",
-        "CAU-CostAndUsage-D-077-C",
-        "CAU-CostAndUsage-D-078-C"
+        "CAU-CostAndUsage-D-076-M"
       ]
     }
   },
@@ -441,14 +431,6 @@
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-AllocatedResourceName-C-000-C"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-AllocatedServiceCategory-C-000-C"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-AllocatedServiceName-C-000-C"
           },
           {
             "CheckFunction": "CheckModelRule",
@@ -702,8 +684,6 @@
         "CAU-AllocatedMethodDetails-C-000-C",
         "CAU-AllocatedResourceId-C-000-C",
         "CAU-AllocatedResourceName-C-000-C",
-        "CAU-AllocatedServiceCategory-C-000-C",
-        "CAU-AllocatedServiceName-C-000-C",
         "CAU-AllocatedTags-C-000-C",
         "CAU-AvailabilityZone-C-000-C",
         "CAU-BilledCost-C-000-M",
@@ -2842,62 +2822,6 @@
       "Requirement": {
         "CheckFunction": "ColumnPresent",
         "ColumnName": "ServiceProviderName"
-      },
-      "Condition": {},
-      "Dependencies": []
-    }
-  },
-  "CAU-CostAndUsage-D-077-C": {
-    "Function": "Presence",
-    "Reference": "AllocatedServiceCategory",
-    "EntityType": "Dataset",
-    "EntityName": "Allocated Service Category",
-    "EntityId": "AllocatedServiceCategory",
-    "DatasetType": "CAU",
-    "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost and Usage",
-    "Notes": "",
-    "ModelVersionIntroduced": "1.5",
-    "Status": "Active",
-    "ApplicabilityCriteria": [
-      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
-    ],
-    "Order": 10,
-    "Type": "Static",
-    "ValidationCriteria": {
-      "MustSatisfy": "AllocatedServiceCategory MUST be present in a Cost and Usage *FOCUS dataset* when the data generator supports data generator-calculated split cost allocation and allocates cost to a service other than the service of the origin charge.",
-      "Keyword": "MUST",
-      "Requirement": {
-        "CheckFunction": "ColumnPresent",
-        "ColumnName": "AllocatedServiceCategory"
-      },
-      "Condition": {},
-      "Dependencies": []
-    }
-  },
-  "CAU-CostAndUsage-D-078-C": {
-    "Function": "Presence",
-    "Reference": "AllocatedServiceName",
-    "EntityType": "Dataset",
-    "EntityName": "Allocated Service Name",
-    "EntityId": "AllocatedServiceName",
-    "DatasetType": "CAU",
-    "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost and Usage",
-    "Notes": "",
-    "ModelVersionIntroduced": "1.5",
-    "Status": "Active",
-    "ApplicabilityCriteria": [
-      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
-    ],
-    "Order": 10,
-    "Type": "Static",
-    "ValidationCriteria": {
-      "MustSatisfy": "AllocatedServiceName MUST be present in a Cost and Usage *FOCUS dataset* when the data generator supports data generator-calculated split cost allocation and allocates cost to a service other than the service of the origin charge.",
-      "Keyword": "MUST",
-      "Requirement": {
-        "CheckFunction": "ColumnPresent",
-        "ColumnName": "AllocatedServiceName"
       },
       "Condition": {},
       "Dependencies": []
