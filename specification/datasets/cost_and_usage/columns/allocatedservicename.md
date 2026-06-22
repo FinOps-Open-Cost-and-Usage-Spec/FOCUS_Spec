@@ -22,7 +22,7 @@ Allocated Service Name
 
 ## Description
 
-A display name for the *service* to which cost is allocated in data generator-calculated split cost allocation, identifying the consuming *service* independently of the origin Service Name.
+The display name of the *service* to which cost is allocated in data generator-calculated split cost allocation.
 
 ## Content Constraints
 
