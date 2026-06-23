@@ -2,7 +2,7 @@
 
 The Recommendation dataset is a supporting dataset that describes cost optimization recommendations generated for a [*practitioner*](#glossary:practitioner) by a [*service provider*](#glossary:service-provider). The dataset focuses on recommendations that reduce the monetary cost of [*resources*](#glossary:resource) or [*services*](#glossary:service).
 
-## Columns
+## Columns<!--SkipTOC-->
 
 | Column | Column Type | Feature Level | Allows Nulls | Data Type |
 | :--- | :--- | :--- | :--- | :--- |
