@@ -26,7 +26,7 @@ The data generator emits one origin charge row and three *allocated charge* rows
 
 Rows for the period:
 
-1. **Origin charge** (Row 1): The full host cost. AllocatedResourceId is null, AllocatedServiceName is null. ServiceName is "Aura Container Runtime", ServiceCategory is "Compute". EffectiveCost is $100.00.
+1. **Origin charge** (Row 1): The origin charge row carrying the preserved origin dimensions. AllocatedResourceId is null, AllocatedServiceName is null. ServiceName is "Aura Container Runtime", ServiceCategory is "Compute". EffectiveCost is $0.00, since the full $100.00 host cost is sliced across the three allocated charge rows below.
 2. **Allocated charge — Orders Service** (Row 2): 40% of the origin charge allocated to `pod-acme-orders-01`. ServiceName remains "Aura Container Runtime" (preserved from the origin charge). AllocatedResourceId is `pod-acme-orders-01`, AllocatedServiceName is "StoreStack DB". EffectiveCost is $40.00.
 3. **Allocated charge — ML Inference Service** (Row 3): 35% allocated to `pod-acme-scoring-01`. ServiceName remains "Aura Container Runtime". AllocatedResourceId is `pod-acme-scoring-01`, AllocatedServiceName is "Aura ML Inference". EffectiveCost is $35.00.
 4. **Allocated charge — Web Frontend Service** (Row 4): 25% allocated to `pod-acme-frontend-01`. ServiceName remains "Aura Container Runtime". AllocatedResourceId is `pod-acme-frontend-01`, AllocatedServiceName is "Aura Edge Delivery". EffectiveCost is $25.00.
