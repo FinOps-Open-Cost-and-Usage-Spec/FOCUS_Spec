@@ -1,0 +1,32 @@
+{
+  "DatasetTypes": {
+    "BillingPeriod": "BIP"
+  },
+  "DataModel": {
+    "Location": "specification/datasets/data_model.md",
+    "EntityType": "DataModel",
+    "ArtifactType": "M",
+    "Headings": {
+      "Requirements": "Requirements",
+      "Id": "Data Model ID"
+    }
+  },
+  "Datasets": {
+    "Location": "specification/datasets/",
+    "EntityType": "Dataset",
+    "ArtifactType": "D",
+    "Headings": {
+      "Requirements": "Requirements",
+      "Id": "Dataset ID"
+    }
+  },
+  "Columns": {
+    "Location": "specification/datasets/<dataset_name>/",
+    "EntityType": "Column",
+    "ArtifactType": "C",
+    "Headings": {
+      "Requirements": "Requirements",
+      "Id": "Column ID"
+    }
+  }
+}
