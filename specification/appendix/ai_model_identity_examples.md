@@ -8,7 +8,7 @@ The following conditions apply to the scenarios below:
 
 * Acme Corp uses a per-token foundation model API to run a generative AI workload.
 * The model is priced separately for input and output tokens, denominated per 1,000,000 tokens.
-* The model identity (provider, family, identifier, variant, and version) is stable for a given [*SKU Price*](#glossary:sku-price), so it is carried in SkuPriceDetails.
+* The model identity (developer, family, identifier, variant, and version) is stable for a given [*SKU Price*](#glossary:sku-price), so it is carried in SkuPriceDetails.
 
 ## Scenario A: Foundation Model Purchased Directly
 
