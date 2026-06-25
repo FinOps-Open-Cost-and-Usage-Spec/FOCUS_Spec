@@ -27,16 +27,16 @@ The data generator emits one origin charge row and three *allocated charge* rows
 Rows for the period:
 
 1. **Origin charge** (Row 1): The origin charge row carrying the preserved origin dimensions. AllocatedResourceId is null, AllocatedServiceName is null. ServiceName is "Aura Container Runtime", ServiceCategory is "Compute". EffectiveCost is $0.00, since the full $100.00 host cost is sliced across the three allocated charge rows below.
-2. **Allocated charge — Orders Service** (Row 2): 40% of the origin charge allocated to `pod-acme-orders-01`. ServiceName remains "Aura Container Runtime" (preserved from the origin charge). AllocatedResourceId is `pod-acme-orders-01`, AllocatedServiceName is "StoreStack DB". EffectiveCost is $40.00.
+2. **Allocated charge — Orders Service** (Row 2): 40% of the origin charge allocated to `pod-acme-orders-01`. ServiceName remains "Aura Container Runtime" (preserved from the origin charge). AllocatedResourceId is `pod-acme-orders-01`, AllocatedServiceName is "Aura Order Management". EffectiveCost is $40.00.
 3. **Allocated charge — ML Inference Service** (Row 3): 35% allocated to `pod-acme-scoring-01`. ServiceName remains "Aura Container Runtime". AllocatedResourceId is `pod-acme-scoring-01`, AllocatedServiceName is "Aura ML Inference". EffectiveCost is $35.00.
 4. **Allocated charge — Web Frontend Service** (Row 4): 25% allocated to `pod-acme-frontend-01`. ServiceName remains "Aura Container Runtime". AllocatedResourceId is `pod-acme-frontend-01`, AllocatedServiceName is "Aura Edge Delivery". EffectiveCost is $25.00.
 
-The four EffectiveCost values sum to $100.00 (origin) + $40.00 + $35.00 + $25.00 = $200.00. To preserve invoice totals, the data generator also emits correction rows that offset the origin charge by the allocated amounts so the net sum equals the $100.00 invoice total. Correction rows are omitted from the table below for readability; see [Correction Handling](#appendix.examples:correctionhandling) for the full offset mechanics.
+The three allocated charge EffectiveCost values sum to $40.00 + $35.00 + $25.00 = $100.00, matching the origin charge total. Per DataGeneratorCalculatedSplitCostAllocationHandling, the sum of a summable metric across the allocated charges equals the corresponding origin charge, so the cost is sliced out of the origin charge rather than added alongside it. The origin charge row keeps its preserved dimensions with EffectiveCost reduced to $0.00, and no separate offsetting rows are needed.
 
 | Row | ResourceId                  | ServiceName             | ServiceCategory | AllocatedResourceId      | AllocatedServiceName   | EffectiveCost |
 | :-- | :-------------------------- | :---------------------- | :-------------- | :----------------------- | :--------------------- | ------------: |
-| 1   | `cluster-acme-shared-01`    | Aura Container Runtime  | Compute         | *(null)*                 | *(null)*               |       $100.00 |
-| 2   | `cluster-acme-shared-01`    | Aura Container Runtime  | Compute         | `pod-acme-orders-01`     | StoreStack DB          |        $40.00 |
+| 1   | `cluster-acme-shared-01`    | Aura Container Runtime  | Compute         | *(null)*                 | *(null)*               |         $0.00 |
+| 2   | `cluster-acme-shared-01`    | Aura Container Runtime  | Compute         | `pod-acme-orders-01`     | Aura Order Management  |        $40.00 |
 | 3   | `cluster-acme-shared-01`    | Aura Container Runtime  | Compute         | `pod-acme-scoring-01`    | Aura ML Inference      |        $35.00 |
 | 4   | `cluster-acme-shared-01`    | Aura Container Runtime  | Compute         | `pod-acme-frontend-01`   | Aura Edge Delivery     |        $25.00 |
 
@@ -45,6 +45,6 @@ The four EffectiveCost values sum to $100.00 (origin) + $40.00 + $35.00 + $25.00
 Practitioners can now answer two distinct questions against the same dataset without external lookups:
 
 * **Origin-side analysis** (grouped by ServiceName): The full $100.00 remains attributed to "Aura Container Runtime", preserving the *origin charge* perspective needed for invoice reconciliation and platform team cost tracking.
-* **Consumer-side analysis** (grouped by AllocatedServiceName, filtered to rows where AllocatedResourceId is not null): $40.00 is attributed to "StoreStack DB", $35.00 to "Aura ML Inference", and $25.00 to "Aura Edge Delivery", enabling showback and chargeback by the *service* that consumed the shared resource.
+* **Consumer-side analysis** (grouped by AllocatedServiceName, filtered to rows where AllocatedResourceId is not null): $40.00 is attributed to "Aura Order Management", $35.00 to "Aura ML Inference", and $25.00 to "Aura Edge Delivery", enabling showback and chargeback by the *service* that consumed the shared resource.
 
 Without AllocatedServiceName, the consuming *service* is inferable only by joining AllocatedResourceId to an external pod-to-service mapping maintained outside the dataset.

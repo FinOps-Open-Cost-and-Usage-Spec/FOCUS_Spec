@@ -9,14 +9,10 @@ The specification for the Cost and Usage dataset defines a group of columns that
 | Column                                                                        | Column Type        | Feature Level | Allows Nulls | Data Type |
 | ----------------------------------------------------------------------------- | ------------------ | ------------- | ------------ | --------- |
 | [Allocated Method Details](#datasets.costandusage.allocatedmethoddetails)                           | Dimension / Metric | Recommended   | True         | JSON      |
-| [Allocated Method ID](#datasets.costandusage.allocatedmethodid)                                     | Dimension          | Conditional   | True         | String    |
-| [Allocated Resource ID](#datasets.costandusage.allocatedresourceid)                                 | Dimension          | Conditional   | True         | String    |
-| [Allocated Resource Name](#datasets.costandusage.allocatedresourcename)                             | Dimension          | Conditional   | True         | String    |
-| [Allocated Service Name](#datasets.costandusage.allocatedservicename)                               | Dimension          | Conditional   | True         | String    |
-| [Allocated Tags](#datasets.costandusage.allocatedtags)                                              | Dimension          | Conditional   | True         | JSON      |
 | [Allocated Method ID](#datasets.costandusage.allocatedmethodid)                                     | Dimension          | [Conditional](#conditions.includessplitcostallocation) | True         | String    |
 | [Allocated Resource ID](#datasets.costandusage.allocatedresourceid)                                 | Dimension          | [Conditional](#conditions.includessplitcostallocation) | True         | String    |
 | [Allocated Resource Name](#datasets.costandusage.allocatedresourcename)                             | Dimension          | [Conditional](#conditions.includessplitcostallocation) | True         | String    |
+| [Allocated Service Name](#datasets.costandusage.allocatedservicename)                               | Dimension          | [Conditional](#conditions.includessplitcostallocation) | True         | String    |
 | [Allocated Tags](#datasets.costandusage.allocatedtags)                                              | Dimension          | [Conditional](#conditions.includessplitcostallocation) | True         | JSON      |
 | [Availability Zone](#datasets.costandusage.availabilityzone)                                        | Dimension          | Recommended   | True         | String    |
 | [Billed Cost](#datasets.costandusage.billedcost)                                                    | Metric             | Mandatory     | False        | Decimal   |
