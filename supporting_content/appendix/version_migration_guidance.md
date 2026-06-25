@@ -26,7 +26,7 @@ FOCUS 1.4 introduces changes across the categories defined by the [Change Impact
 | **Migration Compatible** | Removal of the deprecated `ProviderName` and `PublisherName` columns, a revised `ContractApplied` format, and removal of three attributes whose requirements moved to successor attributes and an appendix entry. Queries or implementations referencing these require updates. |
 | **Incompatible** | None |
 
-FOCUS 1.4 is a larger release than FOCUS 1.3, but most changes are additive and compatible. The items requiring migration are concentrated in a few areas, including the removal of columns deprecated during the 1.3 cycle. Practitioners should review the What Requires Migration summary and the Practitioner Guidance below; data generators should review the Data Generator Guidance.
+FOCUS 1.4 is a larger release than FOCUS 1.3, but most changes are additive and compatible, with no incompatible changes. The items requiring migration are concentrated in a few areas, including the removal of columns deprecated during the 1.3 cycle. Practitioners should review the What Requires Migration summary and the Practitioner Guidance below; data generators should review the Data Generator Guidance.
 
 ### What's Unchanged
 
@@ -38,7 +38,8 @@ The following additive changes do not require migration but may affect data pipe
 
 | Change Type | Summary |
 |-------------|---------|
-| **New Datasets** | [`BillingPeriod`](/specification/datasets/billing_period/dataset.md) and [`InvoiceDetail`](/specification/datasets/invoice_detail/dataset.md) track billing period and invoice details separately from usage rows |
+| **New Datasets** | [`BillingPeriod`](/specification/datasets/billing_period/dataset.md) provides invoice-issuer-aware billing period boundaries and status; [`InvoiceDetail`](/specification/datasets/invoice_detail/dataset.md) carries the financial record of charges as they appear on issued invoices (payment currency, terms, due date, purchase order number). Together they support reconciling usage to issued invoices |
+| **Expanded Dataset** | The [`ContractCommitment`](/specification/datasets/contract_commitment/dataset.md) dataset grows from 13 to 30 columns, covering identification, lifecycle and periods, commitment structure, and cost and quantity |
 | **New Supported Features** | [Invoice Reconciliation](/specification/supported_features/invoice_reconciliation.md) and [Commitment Program Eligibility Details](/specification/supported_features/commitment_program_eligibility_details.md) |
 | **New Cost and Usage Columns** | [`CommitmentProgramEligibilityDetails`](/specification/datasets/cost_and_usage/columns/commitmentprogrameligibilitydetails.md) and [`InvoiceDetailId`](/specification/datasets/cost_and_usage/columns/invoicedetailid.md) |
 | **New Attributes** | [`CorrectionHandling`](/specification/attributes/correction_handling.md), [`CustomColumnHandling`](/specification/attributes/custom_column_handling.md), [`DatasetCompleteness`](/specification/attributes/dataset_completeness.md), [`DatasetConfiguration`](/specification/attributes/dataset_configuration.md), [`DeliveryHandling`](/specification/attributes/delivery_handling.md), and [`FocusColumnHandling`](/specification/attributes/focus_column_handling.md) |
@@ -74,8 +75,8 @@ Practitioners whose queries parse the `ContractApplied` value should update thei
 
 These changes are classified as Compatible and do not require query changes, but they refine how core cost values are defined. Practitioners performing invoice reconciliation or commitment amortization analysis should review the updated definitions:
 
-* [`BilledCost`](/specification/datasets/cost_and_usage/columns/billedcost.md) and [`EffectiveCost`](/specification/datasets/cost_and_usage/columns/effectivecost.md) requirements were revised to clarify the treatment of pricing adjustments, covered and covering charges, and cross-record sum validation.
-* [`InvoiceId`](/specification/datasets/cost_and_usage/columns/invoiceid.md) changed from a Recommended to a Conditional feature level, present when the invoice issuer supports payable invoices.
+* [`BilledCost`](/specification/datasets/cost_and_usage/columns/billedcost.md) and [`EffectiveCost`](/specification/datasets/cost_and_usage/columns/effectivecost.md) requirements were revised to clarify the treatment of pricing adjustments, covered and covering charges, and cross-record sum validation. Across a covering charge (a purchase that pays for other charges, such as a reserved instance prepayment) and the charges it covers, `EffectiveCost` and `BilledCost` sum to the same total within the covering charge's charge period.
+* [`InvoiceId`](/specification/datasets/cost_and_usage/columns/invoiceid.md) changed from a Recommended to a Conditional feature level. Values are populated for charges associated with an issued or pre-generated provisional invoice.
 
 ### Data Generator Guidance
 
