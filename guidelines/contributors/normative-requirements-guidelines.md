@@ -1,29 +1,39 @@
 # Normative Requirements Guidelines
 
-This section defines guidelines for authoring normative requirements in the FOCUS specification. These guidelines define **how** to write normative requirements to ensure clarity, consistency, and testability. It does not define the requirements themselves (the "what") but concentrates on their **structure, subjects, and verifiability**.
+This section defines guidelines for authoring normative requirements in the FOCUS specification. These guidelines define **how** to write normative requirements to ensure clarity, consistency, and testability. It does not define the requirements themselves (the "what"), but instead specify the  **structure, subjects, and verifiability** of normative requirements.
 
 The guidelines cover authoring of normative requirements for the following entities:
 
+* **FOCUS Data Models** — collections of one or more FOCUS datasets that define a particular representation of FOCUS data. Data Models may define normative requirements governing the composition of datasets and the conditions under which specific datasets are required or optional.
 * **FOCUS datasets** — the primary containers of structured data as defined in FOCUS.
-* **FOCUS columns** — individual columns within FOCUS datasets, defined by FOCUS (may contain nested objects and object properties, which can have additional normative rules).
-* **Custom columns** — individual columns within FOCUS datasets, not defined by FOCUS.
-* **FOCUS attributes** — reusable sets of normative constraints that datasets, columns, or column sub-elements (such as objects and object properties) conform to; guidelines cover how to author requirements within Attribute sections.
+* **FOCUS columns** — individual columns within FOCUS datasets, defined by FOCUS. Columns may contain nested objects and object properties, which can have additional normative requirements through reusable attributes.
+* **Custom columns** — individual columns within FOCUS datasets, not defined by FOCUS. These guidelines describe how normative requirements should be authored for custom extensions while preserving interoperability.
+* **FOCUS attributes** — reusable sets of normative constraints that datasets, columns, or column sub-elements (such as objects and object properties) conform to. These guidelines define how normative requirements are authored within Attribute sections and subsequently reused throughout the specification.
+* **FOCUS conditions** — reusable applicability expressions that define the circumstances under which normative requirements apply. Data Models, datasets, and columns may conform to Conditions to express when specific normative requirements become applicable.
 
-The diagram below illustrates the relationships among these entities and shows where normative requirements apply:
+The diagram below illustrates the relationships among these entities and identifies where normative requirements may be authored and applied throughout the FOCUS specification:
 
 ```mermaid
 erDiagram
+DataModel ||--|{ Dataset : has
 Dataset ||--|{ Column : has
 Column ||--o{ Object : contains
 Object ||--|{ ObjectProperty : has
+
+DataModel }|..|| Condition : conforms-to
+Dataset }|..|| Condition : conforms-to
+Column }|..|| Condition : conforms-to
+
 Dataset }|..|| Attribute : conforms-to
 Column }|..|| Attribute : conforms-to
 ObjectProperty }|..|| Attribute : conforms-to
 
-%% Attribute
+%% Normative reusable entities
 style Attribute fill:#f8d7da,stroke:#666,stroke-width:1px
+style Condition fill:#f8d7da,stroke:#666,stroke-width:1px
 
 %% Schema-level entities
+style DataModel fill:#d4edda,stroke:#666,stroke-width:1px
 style Dataset fill:#d4edda,stroke:#666,stroke-width:1px
 style Column fill:#d4edda,stroke:#666,stroke-width:1px
 style Object fill:#d4edda,stroke:#666,stroke-width:1px
