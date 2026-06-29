@@ -114,14 +114,14 @@ The recommended pattern for a normative requirement is:
 <Subject (+qualifier)> + <BCP 14 Keyword> + <Verifiable State Descriptor> + <Object (+qualifier)> [+ Conditions]
 ```
 
-* Each normative requirement MUST be expressed as an individual bullet point, except for structural anchor requirements (see [Structural Anchor Requirement](#structural-anchor-requirement)).
-* Each bullet MUST represent exactly one normative requirement expressing a single constraint.
+* Each normative requirement MUST be expressed as a standalone bullet point or as part of a composite requirement (see [Composite Requirements](#composite-requirements)).
+* Each normative requirement MUST express exactly one constraint.
 * Each normative requirement MUST:
-  * identify exactly one **normative subject** to which the requirement applies
-  * contain exactly one **BCP 14 keyword** (MUST, SHOULD, MAY, MUST NOT, etc.), indicating the obligation level
-  * express exactly one **verifiable constraint**
-  * be split into multiple bullets if it introduces multiple independent constraints.
-* Each normative requirement SHOULD describe a **verifiable state** of the object rather than behavior
+  * Identify exactly one **normative subject** to which the requirement applies
+  * Express exactly one **verifiable constraint**
+  * Be split into multiple bullets if it introduces multiple independent constraints.
+* Each normative requirement SHOULD describe a **verifiable state** of the object rather than behavior.
+* Each normative bullet MUST contain exactly one **BCP 14 keyword** (MUST, SHOULD, MAY, MUST NOT, etc.) indicating the obligation level. In composite requirements, the overall obligation level is determined by the bullet hierarchy as defined in [Composite Requirements](#composite-requirements).
 
 ### Explicit Conditions in Normative Requirements
 
@@ -172,6 +172,45 @@ When <Condition>, <Subject> MUST adhere to the following requirements:
 ```
 
 * **Example** (illustrative): `When ListUnitPrice is not null, ListUnitPrice MUST adhere to the following requirements:`
+
+### Composite Requirements
+
+Composite (parent + nested) requirements MAY be used to group related constraints under a shared condition, context, or subject.
+
+Composite requirements MUST adhere to the following guidelines:
+
+* **Nuanced Obligation:** When a parent bullet uses a BCP 14 keyword (e.g., MUST), it establishes a mandatory requirement to evaluate the nested constraints. Each nested bullet then defines the specific nuance of that obligation for its respective subject or condition using its own BCP 14 keyword.
+* **Shared Conditionality:** Nested bullets MUST share the same condition if defined by the parent bullet.
+* **Context and Subject Consistency:** Nested bullets SHOULD maintain a consistent business context. While nested bullets SHOULD NOT introduce a different subject type, they MAY reference different subjects (e.g., a FOCUS dataset and its custom columns) provided they all relate to the same primary business context defined by the parent bullet.
+
+* **Example** (illustrative):
+
+Incorrect:
+
+```markdown
+* When ChargeCategory is "Purchase", CostAndUsage MUST adhere to the following requirements:
+  * BillingCurrency MUST conform to CurrencyCodeFormat requirements.
+  * ResourceId MUST be a unique identifier within a service provider.
+  * InvoiceDetail documentation MUST describe invoice reconciliation methodology.
+```
+
+Correct:
+
+```markdown
+* When ChargeCategory is "Purchase", CommitmentDiscountQuantity MUST adhere to the following requirements:
+  * CommitmentDiscountQuantity MUST NOT be null when ChargeClass is not "Correction".
+  * CommitmentDiscountQuantity MAY be null when ChargeClass is "Correction".
+  * CommitmentDiscountQuantity MUST be expressed in CommitmentDiscountUnit when not null.  
+```
+
+**Exception for Recommended Conformance:** When a parent bullet uses a SHOULD keyword to establish recommended conformance to a set of requirements (e.g., in `CustomColumnHandling` or when a column declares conformance to an attribute like `UnitFormat`), the weakest keyword in the hierarchy applies to the overall conformance.
+
+Composite requirements SHOULD be used when grouping improves readability and:
+
+* Multiple requirements share the same Business Context.
+* Multiple requirements share the same subject.
+
+Flat parallel bullets SHOULD be preferred when ordering keywords alone is sufficient for clarity and readability.
 
 #### Context Variant
 
@@ -351,45 +390,6 @@ A requirement MUST be split into multiple bullets if it:
     * `PricingQuantity MUST be null when ChargeCategory is "Tax" or "Adjustment".`
     * `BillingPeriodStart MUST be less than or equal to BillingPeriodEnd.`
 
-### Composite Requirements
-
-Composite (parent + nested) requirements MAY be used to group related constraints under a shared condition, context, or subject.
-
-Composite requirements MUST adhere to the following guidelines:
-
-* **Nuanced Obligation:** When a parent bullet uses a BCP 14 keyword (e.g., MUST), it establishes a mandatory requirement to evaluate the nested constraints. Each nested bullet then defines the specific nuance of that obligation for its respective subject or condition using its own BCP 14 keyword.
-* **Shared Conditionality:** Nested bullets MUST share the same condition if defined by the parent bullet.
-* **Context and Subject Consistency:** Nested bullets SHOULD maintain a consistent business context. While nested bullets SHOULD NOT introduce a different subject type, they MAY reference different subjects (e.g., a FOCUS dataset and its custom columns) provided they all relate to the same primary business context defined by the parent bullet.
-
-* **Example** (illustrative):
-
-Incorrect:
-
-```markdown
-* When ChargeCategory is "Purchase", CostAndUsage MUST adhere to the following requirements:
-  * BillingCurrency MUST conform to CurrencyCodeFormat requirements.
-  * ResourceId MUST be a unique identifier within a service provider.
-  * InvoiceDetail documentation MUST describe invoice reconciliation methodology.
-```
-
-Correct:
-
-```markdown
-* When ChargeCategory is "Purchase", CommitmentDiscountQuantity MUST adhere to the following requirements:
-  * CommitmentDiscountQuantity MUST NOT be null when ChargeClass is not "Correction".
-  * CommitmentDiscountQuantity MAY be null when ChargeClass is "Correction".
-  * CommitmentDiscountQuantity MUST be expressed in CommitmentDiscountUnit when not null.  
-```
-
-**Exception for Recommended Conformance:** When a parent bullet uses a SHOULD keyword to establish recommended conformance to a set of requirements (e.g., in `CustomColumnHandling` or when a column declares conformance to an attribute like `UnitFormat`), the weakest keyword in the hierarchy applies to the overall conformance.
-
-Composite requirements SHOULD be used when grouping improves readability and:
-
-* Multiple requirements share the same Business Context.
-* Multiple requirements share the same subject.
-
-Flat parallel bullets SHOULD be preferred when ordering keywords alone is sufficient for clarity and readability.
-
 ### Contextual Information (e.g., Definitions, Examples) and Normative Authority (Requirements)
 
 While normative requirements MUST focus on **enforceable constraints** and **verifiable states**, definitions, informative clauses, and examples MAY be included within a requirement where necessary to provide essential context and ensure unambiguous interpretation.
@@ -543,7 +543,7 @@ ContractCommitment MUST adhere to the following requirements:
 * ...
 ```
 
-> **Note:** Column presence groups are structural groupings and not normative subjects.
+> **Note:** The dataset presence-related bullet is a structural parent bullet (context variant). It is not, in itself, a normative requirement and does not define a normative constraint. It serves only as a grouping context. See [Structural Parent Bullet](#structural-parent-bullet) and [Composite Requirements](#composite-requirements) sections for details.
 
 #### **Cost and Usage**
 
@@ -569,7 +569,7 @@ CostAndUsage MUST adhere to the following requirements:
 * ...
 ```
 
-> **Note:** Column presence groups are structural groupings and not normative subjects.
+> **Note:** The column presence-related bullet is a structural parent bullet (context variant). It is not, in itself, a normative requirement and does not define a normative constraint. It serves only as a grouping context. See [Structural Parent Bullet](#structural-parent-bullet) and [Composite Requirements](#composite-requirements) sections for details.
 
 ## Column Requirements
 
@@ -696,7 +696,7 @@ FOCUS defines two JSON-based value formats for columns: Key-Value Format and JSO
 
 ### Grouping of Nullability-Related and Subsequent Column Requirements
 
-* When there is only one nullability-related requirement, state it directly. If there are multiple, list them as nested bullets under the introductory bullet 'ColumnId nullability is defined as follows:'
+* When there is only one nullability-related requirement, state it directly. If there are multiple, list them as nested bullets under a structural parent bullet (context variant) (see [Structural Parent Bullet](#structural-parent-bullet)) using the following pattern:
 
 ```markdown
 * <ColumnId> MUST adhere to the following nullability requirements:
@@ -720,6 +720,8 @@ FOCUS defines two JSON-based value formats for columns: Key-Value Format and JSO
     * <ColumnId> MUST NOT be null when <Condition>.
     * <ColumnId> MAY be null when <Condition>.
 ```
+
+> **Note:** The column nullability-related bullet is a structural parent bullet (context variant). It is not, in itself, a normative requirement and does not define a normative constraint. It serves only as a grouping context. See [Structural Parent Bullet](#structural-parent-bullet) and [Composite Requirements](#composite-requirements) sections for details.
 
 ### Grouping of Column Requirements Based on Specific Conditions
 
