@@ -11,6 +11,7 @@ FOCUS enables tracking of resources split by some internal consumption metrics. 
 * BilledCost
 * AllocatedResourceId
 * AllocatedResourceName
+* AllocatedServiceName
 * AllocatedMethodDetails
 * AllocatedMethodId
 
@@ -19,8 +20,9 @@ FOCUS enables tracking of resources split by some internal consumption metrics. 
 * ChargeCategory
 * ChargePeriodEnd
 * ChargePeriodStart
-* ServiceProviderName
+* ServiceCategory
 * ServiceName
+* ServiceProviderName
 
 ## Example SQL Query (Find Resources with a Shared Cost)
 
@@ -59,6 +61,20 @@ WHERE ChargeCategory='Usage'
   AND AllocatedMethodId IS NOT NULL
 GROUP BY
   AllocatedResourceId
+```
+
+## Example SQL Query (Get Total Effective Cost by AllocatedServiceName)
+
+```sql
+SELECT
+  AllocatedServiceName,
+  SUM(EffectiveCost) AS TotalEffectiveCost
+FROM focus_data_table
+WHERE ChargeCategory='Usage'
+  AND ChargePeriodStart >= ? AND ChargePeriodEnd <= ?
+  AND AllocatedResourceId IS NOT NULL
+GROUP BY
+  AllocatedServiceName
 ```
 
 ## Example SQL Query (Find Total Unallocated Split Costs by ResourceId)
