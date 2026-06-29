@@ -157,6 +157,42 @@ For **Attribute Requirements** sections, a different canonical form applies:
 
 See [Section Structural Anchor Requirement for Attributes](#structural-anchor-requirement-for-attributes) for details.
 
+### Structural Parent Bullet
+
+A **structural parent bullet** defines the scope for a set of nested normative requirements but is not itself a normative requirement. The verifiable constraints are carried exclusively by the nested bullets. A structural parent bullet appears in two variants: a condition variant and a context variant.
+
+See [Composite Requirements](#composite-requirements) for the rules governing the full parent + nested structure.
+
+#### Condition Variant
+
+A condition variant introduces a shared condition that applies to all nested bullets. It uses the following canonical form:
+
+``` markdown
+When <Condition>, <Subject> MUST adhere to the following requirements:
+```
+
+* **Example** (illustrative): `When ListUnitPrice is not null, ListUnitPrice MUST adhere to the following requirements:`
+
+#### Context Variant
+
+A context variant introduces a shared context that groups related nested bullets for readability purposes, without introducing a shared condition. Structural grouping bullets are used in the following contexts - **Column presence groupings** and **Nullability groupings**
+
+* **Column presence groupings** in dataset requirements, where the context precedes the BCP 14 keyword. It uses the following canonical form:
+
+``` markdown
+<Subject> <context> MUST adhere to the following requirements:
+```
+
+* **Example** (illustrative): `ContractCommitment column presence MUST adhere to the following requirements:`
+
+* **Nullability groupings** in column requirements, where the context follows the BCP 14 keyword. It uses the following canonical form:
+
+``` markdown
+<Subject> MUST adhere to the following <context> requirements:
+```
+
+* **Example** (illustrative): `CommitmentDiscountQuantity MUST adhere to the following nullability requirements:`
+
 ### Normative Subject
 
 * Each normative requirement MUST clearly identify the subject being constrained.
