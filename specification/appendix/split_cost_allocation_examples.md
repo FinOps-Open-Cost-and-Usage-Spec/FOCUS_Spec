@@ -1,6 +1,6 @@
 # Examples: Data Generator-Calculated Split Cost Allocation
 
-> Note: The following examples are informative and non-normative. They do not define requirements.
+> Note: The following section is informative and non-normative. It does not define requirements.
 
 This section demonstrates how [AllocatedServiceName](#datasets.costandusage.allocatedservicename) enables consumer *service* identification on [*allocated charges*](#glossary:allocated-charge) when a data generator preserves origin dimensions in accordance with [DataGeneratorCalculatedSplitCostAllocationHandling](#attributes.datagenerator-calculatedsplitcostallocationhandling) requirements.
 
