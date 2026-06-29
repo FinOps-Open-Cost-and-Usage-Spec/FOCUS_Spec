@@ -6,7 +6,7 @@ This section demonstrates how [AllocatedServiceName](#datasets.costandusage.allo
 
 ## Origin Preservation and the Consumer Service Identity Gap
 
-[DataGeneratorCalculatedSplitCostAllocationHandling](#attributes.datagenerator-calculatedsplitcostallocationhandling) requires that the origin [ServiceName](#datasets.costandusage.servicename) and [ServiceCategory](#datasets.costandusage.servicecategory) are preserved on all *allocated charge* rows so that the dataset reconciles to the invoice on the origin *service*. This means a practitioner can always filter by origin ServiceName to obtain the correct invoice-reconciled total.
+DataGeneratorCalculatedSplitCostAllocationHandling requires that the origin [ServiceName](#datasets.costandusage.servicename) and [ServiceCategory](#datasets.costandusage.servicecategory) are preserved on all *allocated charge* rows so that the dataset reconciles to the invoice on the origin *service*. This means a practitioner can always filter by origin ServiceName to obtain the correct invoice-reconciled total.
 
 The side-effect of this requirement is that the consuming *service* identity is not expressed in ServiceName on *allocated charge* rows. Without AllocatedServiceName, the consuming *service* can only be inferred from [AllocatedResourceId](#datasets.costandusage.allocatedresourceid) through an external lookup maintained by the practitioner.
 
