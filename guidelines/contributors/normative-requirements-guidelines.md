@@ -345,7 +345,7 @@ Correct:
   * CommitmentDiscountQuantity MUST be expressed in CommitmentDiscountUnit when not null.  
 ```
 
-**Exception:** When a parent bullet uses a SHOULD keyword to establish recommended conformance to a set of requirements (e.g., in `CustomColumnHandling` or when a column declares conformance to an attribute like `UnitFormat`), the weakest keyword in the hierarchy applies to the overall conformance.
+**Exception for Recommended Conformance:** When a parent bullet uses a SHOULD keyword to establish recommended conformance to a set of requirements (e.g., in `CustomColumnHandling` or when a column declares conformance to an attribute like `UnitFormat`), the weakest keyword in the hierarchy applies to the overall conformance.
 
 Composite requirements SHOULD be used when grouping improves readability and:
 
