@@ -36,14 +36,28 @@ All columns, attributes, and behaviors from FOCUS 1.3 carry forward into FOCUS 1
 
 The following additive changes do not require migration but may affect data pipelines expecting a fixed schema:
 
-| Change Type | Summary |
-|-------------|---------|
-| **New Datasets** | [`BillingPeriod`](/specification/datasets/billing_period/dataset.md) provides invoice-issuer-aware billing period boundaries and status; [`InvoiceDetail`](/specification/datasets/invoice_detail/dataset.md) carries the financial record of charges as they appear on issued invoices (payment currency, terms, due date, purchase order number). Together they support reconciling usage to issued invoices |
-| **Expanded Dataset** | The [`ContractCommitment`](/specification/datasets/contract_commitment/dataset.md) dataset grows from 13 to 30 columns, covering identification, lifecycle and periods, commitment structure, and cost and quantity |
-| **New Supported Features** | [Invoice Reconciliation](/specification/supported_features/invoice_reconciliation.md) and [Commitment Program Eligibility Details](/specification/supported_features/commitment_program_eligibility_details.md) |
-| **New Cost and Usage Columns** | [`CommitmentProgramEligibilityDetails`](/specification/datasets/cost_and_usage/columns/commitmentprogrameligibilitydetails.md) and [`InvoiceDetailId`](/specification/datasets/cost_and_usage/columns/invoicedetailid.md) |
-| **New Attributes** | [`CorrectionHandling`](/specification/attributes/correction_handling.md), [`CustomColumnHandling`](/specification/attributes/custom_column_handling.md), [`DatasetCompleteness`](/specification/attributes/dataset_completeness.md), [`DatasetConfiguration`](/specification/attributes/dataset_configuration.md), [`DeliveryHandling`](/specification/attributes/delivery_handling.md), and [`FocusColumnHandling`](/specification/attributes/focus_column_handling.md) |
-| **New Appendix Entries** | [Discount Handling](/specification/appendix/discount_handling.md), [Rounding Variance Tolerance](/specification/appendix/rounding_variance_tolerance.md), [Invoice and Billing Period Handling](/specification/appendix/invoice_and_billing_period_handling.md), and worked examples for commitment program eligibility details, contract commitments, correction handling, invoice detail, and JSON objects |
+* **New Datasets** (together, they support reconciling usage to issued invoices):
+  * [`BillingPeriod`](/specification/datasets/billing_period/dataset.md) provides invoice-issuer-aware billing period boundaries and status.
+  * [`InvoiceDetail`](/specification/datasets/invoice_detail/dataset.md) carries the financial record of charges as they appear on issued invoices (payment currency, terms, due date, purchase order number).
+* **Expanded Dataset:** the [`ContractCommitment`](/specification/datasets/contract_commitment/dataset.md) dataset grows from 13 to 30 columns, covering identification, lifecycle and periods, commitment structure, and cost and quantity.
+* **New Supported Features:**
+  * [Invoice Reconciliation](/specification/supported_features/invoice_reconciliation.md)
+  * [Commitment Program Eligibility Details](/specification/supported_features/commitment_program_eligibility_details.md)
+* **New Cost and Usage Columns:**
+  * [`CommitmentProgramEligibilityDetails`](/specification/datasets/cost_and_usage/columns/commitmentprogrameligibilitydetails.md)
+  * [`InvoiceDetailId`](/specification/datasets/cost_and_usage/columns/invoicedetailid.md)
+* **New Attributes:**
+  * [`CorrectionHandling`](/specification/attributes/correction_handling.md)
+  * [`CustomColumnHandling`](/specification/attributes/custom_column_handling.md)
+  * [`DatasetCompleteness`](/specification/attributes/dataset_completeness.md)
+  * [`DatasetConfiguration`](/specification/attributes/dataset_configuration.md)
+  * [`DeliveryHandling`](/specification/attributes/delivery_handling.md)
+  * [`FocusColumnHandling`](/specification/attributes/focus_column_handling.md)
+* **New Appendix Entries:**
+  * [Discount Handling](/specification/appendix/discount_handling.md)
+  * [Rounding Variance Tolerance](/specification/appendix/rounding_variance_tolerance.md)
+  * [Invoice and Billing Period Handling](/specification/appendix/invoice_and_billing_period_handling.md)
+  * Worked examples for commitment program eligibility details, contract commitments, correction handling, invoice detail, and JSON objects
 
 See the [CHANGELOG](/CHANGELOG.md) for complete details.
 
