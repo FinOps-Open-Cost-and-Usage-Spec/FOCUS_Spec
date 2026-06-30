@@ -39,6 +39,7 @@ The specification for the Cost and Usage dataset defines a group of columns that
 | [Commitment Program Eligibility Details](#datasets.costandusage.commitmentprogrameligibilitydetails)            | Dimension          | [Conditional](#conditions.includescommitmentprograms) | True         | JSON    |
 | [Consumed Quantity](#datasets.costandusage.consumedquantity)                                        | Metric             | [Conditional](#conditions.includesusagemeasurement) | True         | Decimal   |
 | [Consumed Unit](#datasets.costandusage.consumedunit)                                                | Dimension          | [Conditional](#conditions.includesusagemeasurement) | True         | String    |
+| [Consumer ID](#datasets.costandusage.consumerid)                                                    | Dimension          | [Conditional](#conditions.includesconsumers) | True         | String    |
 | [Contract Applied](#datasets.costandusage.contractapplied)                                          | Dimension / Metric | [Conditional](#conditions.includescontractcommitments) | True         | JSON      |
 | [Contracted Cost](#datasets.costandusage.contractedcost)                                            | Metric             | Mandatory     | False        | Decimal   |
 | [Contracted Unit Price](#datasets.costandusage.contractedunitprice)                                 | Metric             | [Conditional](#conditions.includesnegotiatedpricing) | True         | Decimal   |
@@ -122,6 +123,7 @@ CostAndUsage MUST adhere to the following requirements:
   * CostAndUsage MUST include [CommitmentProgramEligibilityDetails](#datasets.costandusage.commitmentprogrameligibilitydetails) when the *operating model* [includes commitment programs](#conditions.includescommitmentprograms).
   * CostAndUsage MUST include [ConsumedQuantity](#datasets.costandusage.consumedquantity) when the *operating model* [includes usage measurement](#conditions.includesusagemeasurement).
   * CostAndUsage MUST include [ConsumedUnit](#datasets.costandusage.consumedunit) when the *operating model* [includes usage measurement](#conditions.includesusagemeasurement).
+  * CostAndUsage MUST include [ConsumerId](#datasets.costandusage.consumerid) when the *operating model* [includes consumers](#conditions.includesconsumers).
   * CostAndUsage MUST include [ContractApplied](#datasets.costandusage.contractapplied) when the *operating model* [includes contract commitments](#conditions.includescontractcommitments).
   * CostAndUsage MUST include [ContractedCost](#datasets.costandusage.contractedcost).
   * CostAndUsage MUST include [ContractedUnitPrice](#datasets.costandusage.contractedunitprice) when the *operating model* [includes negotiated pricing](#conditions.includesnegotiatedpricing).
