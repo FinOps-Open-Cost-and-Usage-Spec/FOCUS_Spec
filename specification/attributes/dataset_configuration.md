@@ -19,6 +19,7 @@ Dataset conforming to DatasetConfiguration attribute MUST adhere to the followin
 * *FOCUS dataset* MAY offer configurable detail levels for provider-defined detail scopes.
 * *FOCUS dataset* detail-level configuration MUST be a mapping of provider-defined scope keys to detail level values when configurable detail levels are offered.
 * *FOCUS dataset* detail-level value MUST be either a string identifying the requested level or an object containing a `level` property (string) and an optional `delivery-type` property (string).
+* *FOCUS dataset* MUST include dimension columns required by a selected detail level even when those columns are not present in the selected column list.
 * *FOCUS dataset* detail-level documentation MUST adhere to the following requirements when configurable detail levels are offered:
   * *FOCUS dataset* detail-level documentation MUST include all offered scope keys and their allowed level values.
   * *FOCUS dataset* detail-level documentation MUST include the effect of each detail level on dataset records, including columns added, effect on row counts, and relationship to other delivered dataset instances that represent the same underlying usage or charges.

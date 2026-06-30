@@ -237,7 +237,7 @@ When introduced, time granularity will allow practitioners to choose temporal re
 
 Detail level configuration allows practitioners to request finer-grained records for specific areas of cost data. Providers often omit certain dimensions from default exports because they would significantly increase row counts or expose privacy-sensitive data. Practitioners can opt into those dimensions for the cost areas where they need them through the `detail-level` configuration.
 
-Detail level configuration is related to column selection, but the two serve different purposes. Column selection controls which columns appear in the dataset. Detail level configuration controls which records carry finer-grained dimension values, which can change both the columns present and the number of records.
+Detail level configuration is related to column selection, but the two serve different purposes. Column selection controls which columns appear in the dataset. Detail level configuration controls which records carry finer-grained dimension values, which can change both the columns present and the number of records. Dimension columns required by a selected detail level are included in the dataset even when they are not listed in the selected column list.
 
 ### Provider-Defined Scope Keys
 
