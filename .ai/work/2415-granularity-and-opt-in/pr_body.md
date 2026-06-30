@@ -6,8 +6,8 @@ The current spec models column selection as a practitioner-facing request: a lis
 
 The two value forms are:
 
-* Shorthand: `"detail-level": {"llm-costs": "user-level"}`
-* Extended with delivery type: `"detail-level": {"llm-costs": {"level": "user-level", "delivery-type": "detail-file"}}`
+* Shorthand: `"DetailLevel": {"llm-costs": "user-level"}`
+* Extended with delivery type: `"DetailLevel": {"llm-costs": {"Level": "user-level", "DeliveryType": "detail-file"}}`
 
 Scope keys are provider-defined strings and do not have to match column values such as `ServiceName`. Level values are also provider-defined. Providers must document all offered scope keys, their allowed level values, the effect of each level on records, and any available delivery types.
 
@@ -31,8 +31,8 @@ The supporting content covers:
 Open questions for task force review:
 
 * Should delivery type values (`inline`, `added-lines`, `detail-file`) be enumerated as FOCUS-defined terms or remain fully provider-defined?
-* Should scope keys be allowed to reference column values (e.g., `ServiceName` values), or must they be provider-defined opaque strings?
-* Should the configuration key name be hyphenated (`detail-level`) or camelCase (`detailLevel`) for consistency with other configuration keys?
+* ~~Should scope keys be allowed to reference column values (e.g., `ServiceName` values), or must they be provider-defined opaque strings?~~ Resolved: scope keys are opaque provider-defined identifiers; the name of a scope key does not imply anything about the data it covers.
+* ~~Should the configuration key name be hyphenated (`detail-level`) or camelCase (`detailLevel`) for consistency with other configuration keys?~~ Resolved: FOCUS uses PascalCase for all JSON keys; configuration keys are `Columns`, `DetailLevel`, `Level`, `DeliveryType`.
 * How does this interact with actor columns such as `PrincipalId` and `ConsumerId` from PR #2360? Those columns would appear in expanded records at actor-level detail.
 * Should structured metadata eventually capture the applied detail level configuration per dataset instance, or is provider documentation sufficient for the first iteration?
 

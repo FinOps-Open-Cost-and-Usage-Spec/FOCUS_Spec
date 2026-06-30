@@ -18,12 +18,12 @@ Dataset conforming to DatasetConfiguration attribute MUST adhere to the followin
 * *FOCUS dataset* MUST adhere to all column-level specifications defined in the FOCUS schema, regardless of the selected or default configuration (e.g., column selection, detail level).
 * *FOCUS dataset* MAY offer configurable detail levels for provider-defined detail scopes.
 * *FOCUS dataset* detail-level configuration MUST be a mapping of provider-defined scope keys to detail level values when configurable detail levels are offered.
-* *FOCUS dataset* detail-level value MUST be either a string identifying the requested level or an object containing a `level` property (string) and an optional `delivery-type` property (string).
+* *FOCUS dataset* detail-level value MUST be either a string identifying the requested level or an object containing a `Level` property (string) and an optional `DeliveryType` property (string).
 * *FOCUS dataset* MUST include dimension columns required by a selected detail level even when those columns are not present in the selected column list.
 * *FOCUS dataset* detail-level documentation MUST adhere to the following requirements when configurable detail levels are offered:
   * *FOCUS dataset* detail-level documentation MUST include all offered scope keys and their allowed level values.
   * *FOCUS dataset* detail-level documentation MUST include the effect of each detail level on dataset records, including columns added, effect on row counts, and relationship to other delivered dataset instances that represent the same underlying usage or charges.
-  * *FOCUS dataset* detail-level documentation MUST include available `delivery-type` values and their behavior when `delivery-type` configuration is supported.
+  * *FOCUS dataset* detail-level documentation MUST include available `DeliveryType` values and their behavior when `DeliveryType` configuration is supported.
 * *FOCUS dataset* MAY offer a default detail level for each scope key when more than one level is offered for that scope key.
 * *FOCUS dataset* default detail level MUST be the least granular level offered for that scope key when a default detail level is offered.
 * *FOCUS dataset* MAY offer a default column set.
@@ -45,8 +45,8 @@ A practitioner whose provider offers configurable detail levels requests user-le
 
 ```json
 {
-  "columns": ["BillingAccountId", "ServiceName", "BilledCost", "EffectiveCost"],
-  "detail-level": {
+  "Columns": ["BillingAccountId", "ServiceName", "BilledCost", "EffectiveCost"],
+  "DetailLevel": {
     "llm-costs": "user-level"
   }
 }
@@ -58,8 +58,8 @@ A practitioner who also wants to control how the detailed records are delivered 
 
 ```json
 {
-  "detail-level": {
-    "llm-costs": {"level": "user-level", "delivery-type": "detail-file"}
+  "DetailLevel": {
+    "llm-costs": {"Level": "user-level", "DeliveryType": "detail-file"}
   }
 }
 ```

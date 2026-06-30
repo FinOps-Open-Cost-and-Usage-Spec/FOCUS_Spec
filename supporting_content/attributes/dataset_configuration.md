@@ -235,53 +235,47 @@ When introduced, time granularity will allow practitioners to choose temporal re
 
 ## Detail Level Configuration
 
-Detail level configuration allows practitioners to request finer-grained records for specific areas of cost data. Providers often omit certain dimensions from default exports because they would significantly increase row counts or expose privacy-sensitive data. Practitioners can opt into those dimensions for the cost areas where they need them through the `detail-level` configuration.
+Detail level configuration allows practitioners to request finer-grained records for specific areas of cost data. Providers often omit certain dimensions from default exports because they would significantly increase row counts or expose privacy-sensitive data. Practitioners can opt into those dimensions for the cost areas where they need them through the `DetailLevel` configuration.
 
 Detail level configuration is related to column selection, but the two serve different purposes. Column selection controls which columns appear in the dataset. Detail level configuration controls which records carry finer-grained dimension values, which can change both the columns present and the number of records. Dimension columns required by a selected detail level are included in the dataset even when they are not listed in the selected column list.
 
 ### Provider-Defined Scope Keys
 
-A scope key is a provider-defined string that identifies a set of charges to which a detail level applies. Scope keys do not have to match column values such as ServiceName; they may represent any grouping the provider defines, such as a usage category, a billing component, a named platform, or a service tier.
-
-Example scope keys a provider might offer:
-
-* `"llm-costs"` — AI inference charges where requests can be traced to a calling user or principal
-* `"shared-platform"` — charges for a shared internal service where consumers inject tags identifying their product or feature
-* `"compute"` — compute instance charges where the provider can attribute cost to a specific workload
+A scope key is a provider-defined opaque string that identifies a set of charges to which a detail level applies. The name of a scope key does not describe the charges it covers; the provider's documentation defines what each scope key means and what level values are available for it. Scope keys do not have to match column values such as ServiceName or any other FOCUS-defined term.
 
 The provider's documentation must define every available scope key and the level values allowed for each.
 
 ### Detail Level Values
 
-The `detail-level` configuration maps scope keys to level values. A level value is a provider-defined string identifying the granularity the practitioner is requesting.
+The `DetailLevel` configuration maps scope keys to level values. A level value is a provider-defined string identifying the granularity the practitioner is requesting.
 
 **Shorthand form** — the value is the level name:
 
 ```json
 {
-  "detail-level": {
+  "DetailLevel": {
     "llm-costs": "user-level",
     "shared-platform": "feature"
   }
 }
 ```
 
-**Extended form** — the value is an object with a `level` property and an optional `delivery-type` property:
+**Extended form** — the value is an object with a `Level` property and an optional `DeliveryType` property:
 
 ```json
 {
-  "detail-level": {
-    "llm-costs": {"level": "user-level", "delivery-type": "detail-file"},
-    "shared-platform": {"level": "feature", "delivery-type": "inline"}
+  "DetailLevel": {
+    "llm-costs": {"Level": "user-level", "DeliveryType": "detail-file"},
+    "shared-platform": {"Level": "feature", "DeliveryType": "inline"}
   }
 }
 ```
 
-Both forms may appear together in the same `detail-level` configuration.
+Both forms may appear together in the same `DetailLevel` configuration.
 
 ### Delivery Types
 
-A `delivery-type` value tells the provider how the practitioner wants more granular records delivered. Delivery types are provider-defined, but common patterns include:
+A `DeliveryType` value tells the provider how the practitioner wants more granular records delivered. Delivery types are provider-defined, but common patterns include:
 
 | Delivery Type | Description |
 |---------------|-------------|
@@ -403,12 +397,12 @@ The following example illustrates one possible shape for recording the applied d
   "Configuration": {
     "DetailLevel": {
       "llm-costs": {
-        "level": "user-level",
-        "delivery-type": "inline"
+        "Level": "user-level",
+        "DeliveryType": "inline"
       },
       "shared-platform": {
-        "level": "default",
-        "delivery-type": "inline"
+        "Level": "default",
+        "DeliveryType": "inline"
       }
     }
   }
