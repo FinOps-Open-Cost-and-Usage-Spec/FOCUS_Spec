@@ -173,7 +173,7 @@ When <Condition>, <Subject> MUST adhere to the following requirements:
 
 #### Context Variant
 
-A context variant introduces a shared context that groups related nested bullets for readability purposes, without introducing a shared condition. Structural grouping bullets are used in the following contexts - **Column presence groupings** and **Nullability groupings**
+A context variant introduces a shared context that groups related nested bullets for readability purposes, without introducing a shared condition. Structural grouping bullets are used in the following contexts: **Column presence groupings** and **Nullability groupings**.
 
 * **Column presence groupings** in dataset requirements, where the context precedes the BCP 14 keyword. It uses the following canonical form:
 
