@@ -9,7 +9,7 @@ The guidelines cover authoring of normative requirements for the following entit
 * **FOCUS columns** — individual columns within FOCUS datasets, defined by FOCUS. Columns may contain nested objects and object properties, which can have additional normative requirements through reusable attributes.
 * **Custom columns** — individual columns within FOCUS datasets, not defined by FOCUS. These guidelines describe how normative requirements should be authored for custom extensions while preserving interoperability.
 * **FOCUS attributes** — reusable sets of normative constraints that datasets, columns, or column sub-elements (such as objects and object properties) conform to. These guidelines define how normative requirements are authored within Attribute sections and subsequently reused throughout the specification.
-* **FOCUS conditions** — reusable applicability expressions that define the circumstances under which normative requirements apply. Data Models, datasets, and columns may conform to Conditions to express when specific normative requirements become applicable.
+* **FOCUS Conditions** — reusable applicability expressions that define the circumstances under which normative requirements apply. Data Models, datasets, and columns may conform to Conditions to express when specific normative requirements become applicable.
 
 The diagram below illustrates the relationships among these entities and identifies where normative requirements may be authored and applied throughout the FOCUS specification:
 
