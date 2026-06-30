@@ -218,7 +218,7 @@ Correct:
 * When ChargeCategory is "Purchase", CommitmentDiscountQuantity MUST adhere to the following requirements:
   * CommitmentDiscountQuantity MUST NOT be null when ChargeClass is not "Correction".
   * CommitmentDiscountQuantity MAY be null when ChargeClass is "Correction".
-  * CommitmentDiscountQuantity MUST be expressed in CommitmentDiscountUnit when not null.  
+  * CommitmentDiscountQuantity MUST be expressed in CommitmentDiscountUnit when not null.
 ```
 
 **Exception for Recommended Conformance:** When a parent bullet uses a SHOULD keyword to establish recommended conformance to a set of requirements (e.g., in `CustomColumnHandling` or when a column declares conformance to an attribute like `UnitFormat`), the weakest keyword in the hierarchy applies to the overall conformance.
