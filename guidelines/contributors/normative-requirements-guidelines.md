@@ -173,6 +173,26 @@ When <Condition>, <Subject> MUST adhere to the following requirements:
 
 * **Example** (illustrative): `When ListUnitPrice is not null, ListUnitPrice MUST adhere to the following requirements:`
 
+#### Context Variant
+
+A context variant introduces a shared context that groups related nested bullets for readability purposes, without introducing a shared condition. Structural grouping bullets are used in the following contexts - **Column presence groupings** and **Nullability groupings**
+
+* **Column presence groupings** in dataset requirements, where the context precedes the BCP 14 keyword. It uses the following canonical form:
+
+``` markdown
+<Subject> <context> MUST adhere to the following requirements:
+```
+
+* **Example** (illustrative): `ContractCommitment column presence MUST adhere to the following requirements:`
+
+* **Nullability groupings** in column requirements, where the context follows the BCP 14 keyword. It uses the following canonical form:
+
+``` markdown
+<Subject> MUST adhere to the following <context> requirements:
+```
+
+* **Example** (illustrative): `CommitmentDiscountQuantity MUST adhere to the following nullability requirements:`
+
 ### Composite Requirements
 
 Composite (parent + nested) requirements MAY be used to group related constraints under a shared condition, context, or subject.
@@ -211,26 +231,6 @@ Composite requirements SHOULD be used when grouping improves readability and:
 * Multiple requirements share the same subject.
 
 Flat parallel bullets SHOULD be preferred when ordering keywords alone is sufficient for clarity and readability.
-
-#### Context Variant
-
-A context variant introduces a shared context that groups related nested bullets for readability purposes, without introducing a shared condition. Structural grouping bullets are used in the following contexts - **Column presence groupings** and **Nullability groupings**
-
-* **Column presence groupings** in dataset requirements, where the context precedes the BCP 14 keyword. It uses the following canonical form:
-
-``` markdown
-<Subject> <context> MUST adhere to the following requirements:
-```
-
-* **Example** (illustrative): `ContractCommitment column presence MUST adhere to the following requirements:`
-
-* **Nullability groupings** in column requirements, where the context follows the BCP 14 keyword. It uses the following canonical form:
-
-``` markdown
-<Subject> MUST adhere to the following <context> requirements:
-```
-
-* **Example** (illustrative): `CommitmentDiscountQuantity MUST adhere to the following nullability requirements:`
 
 ### Normative Subject
 
