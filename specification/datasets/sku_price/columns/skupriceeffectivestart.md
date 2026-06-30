@@ -1,6 +1,6 @@
 # SKU Price Effective Start
 
-SKU Price Effective Start represents the inclusive date and time when the specified unit price and its associated pricing properties become active and applicable for a given [*SKU Price ID*](#datasets.skuprice.skupriceid).
+SKU Price Effective Start represents the inclusive date and time when the specified unit price and its associated pricing properties become applicable for a given [*SKU Price ID*](#datasets.skuprice.skupriceid). It reflects when the price becomes contractually or publicly applicable, not when a practitioner first uses the SKU. A charge in Cost and Usage falls under this price when its charge period start is on or after SKU Price Effective Start.
 
 When combined with [SKU Price Effective End](#datasets.skuprice.skupriceeffectiveend), this column defines the precise validity window of a rate card entry. This column allows practitioners to correctly map historical or future usage to the exact unit price that was valid at the time the consumption occurred, enabling accurate cost rating and temporal price variation analysis.
 
@@ -10,8 +10,8 @@ SkuPriceEffectiveStart MUST adhere to the following requirements:
 
 * SkuPriceEffectiveStart MUST be of type Date/Time.
 * SkuPriceEffectiveStart MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements (e.g., UTC).
-* SkuPriceEffectiveStart MUST NOT be null.
-* SkuPriceEffectiveStart MUST represent the exact timestamp designated by the *service provider* when the specific pricing rate card row is effective.
+* SkuPriceEffectiveStart MAY be null when the *service provider* does not specify the date from which the unit price became applicable, in which case the unit price is treated as applicable from the earliest available time.
+* When SkuPriceEffectiveStart is not null, SkuPriceEffectiveStart MUST represent the exact timestamp designated by the *service provider* from which the unit price is applicable.
 
 ## Column ID
 
@@ -32,7 +32,7 @@ The inclusive date and time when the specified unit price and associated pricing
 | Dataset         | [SKU Price](#datasets.skuprice)                      |
 | Column type     | Dimension                                            |
 | Feature level   | Mandatory                                            |
-| Allows nulls    | False                                                |
+| Allows nulls    | True                                                 |
 | Data type       | Date/Time                                            |
 | Value format    | [Date/Time Format](#attributes.date/timeformat)      |
 
