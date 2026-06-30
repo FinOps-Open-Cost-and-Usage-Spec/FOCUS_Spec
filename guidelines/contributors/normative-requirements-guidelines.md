@@ -115,11 +115,9 @@ The recommended pattern for a normative requirement is:
 ```
 
 * Each normative requirement MUST be expressed as a standalone bullet point or as part of a composite requirement (see [Composite Requirements](#composite-requirements)).
-* Each normative requirement MUST express exactly one constraint.
-* Each normative requirement MUST:
-  * Identify exactly one **normative subject** to which the requirement applies
-  * Express exactly one **verifiable constraint**
-  * Be split into multiple bullets if it introduces multiple independent constraints.
+* Each normative requirement MUST identify exactly one **normative subject** to which the requirement applies.
+* Each normative requirement MUST express exactly one **verifiable constraint**.
+* Each normative requirement MUST be split into multiple bullets if it introduces multiple independent constraints.
 * Each normative requirement SHOULD describe a **verifiable state** of the object rather than behavior.
 * Each normative bullet MUST contain exactly one **BCP 14 keyword** (MUST, SHOULD, MAY, MUST NOT, etc.) indicating the obligation level. In composite requirements, the overall obligation level is determined by the bullet hierarchy as defined in [Composite Requirements](#composite-requirements).
 
