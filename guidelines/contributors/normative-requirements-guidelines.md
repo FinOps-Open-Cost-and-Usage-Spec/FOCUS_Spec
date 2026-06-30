@@ -4,7 +4,7 @@ This section defines guidelines for authoring normative requirements in the FOCU
 
 The guidelines cover authoring of normative requirements for the following entities:
 
-* **FOCUS Data Models** — collections of one or more FOCUS datasets that define a particular representation of FOCUS data. Data Models may define normative requirements governing the composition of datasets and the conditions under which specific datasets are required or optional.
+* **FOCUS Data Model** — a collection of one or more FOCUS datasets that define a particular representation of FOCUS data. Data Model defines normative requirements governing dataset composition and the conditions under which specific datasets are required or optional.
 * **FOCUS datasets** — the primary containers of structured data as defined in FOCUS.
 * **FOCUS columns** — individual columns within FOCUS datasets, defined by FOCUS. Columns may contain nested objects and object properties, which can have additional normative requirements through reusable attributes.
 * **Custom columns** — individual columns within FOCUS datasets, not defined by FOCUS. These guidelines describe how normative requirements should be authored for custom extensions while preserving interoperability.
