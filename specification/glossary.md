@@ -89,10 +89,6 @@ A feature of [*commitment discounts*](#glossary:commitment-discount) that may fu
 
 A service-provider offering that allows a customer to enter into a [*commitment*](#glossary:commitment). Commitment programs include [*commitment discounts*](#glossary:commitment-discount), [*capacity reservations*](#glossary:capacity-reservation), and other constructs that require advance spend or usage agreements.
 
-<a name="glossary:consumer"><b>Consumer</b></a>
-
-A downstream actor (e.g., end-user, application, autonomous agent) that consumes [*resources*](#glossary:resource) or [*services*](#glossary:service). The consumer may be distinct from the [*principal*](#glossary:principal) that initiates requests for *resources* or *services*.
-
 <a name="glossary:contract"><b>Contract</b></a>
 
 A collection of agreed terms between a service provider and a customer.
@@ -274,7 +270,7 @@ A comprehensive list of prices offered by a service provider.
 
 <a name="glossary:principal"><b>Principal</b></a>
 
-An authorized actor (e.g., user account, service account, application) that initiates requests for [*resources*](#glossary:resource) or [*services*](#glossary:service). The principal may be distinct from the downstream [*consumer*](#glossary:consumer) that consumes *resources* or *services*.
+An authorized actor (e.g., user account, service account, application) that initiates requests for [*resources*](#glossary:resource) or [*services*](#glossary:service).
 
 <a name="glossary:service-provider"><b>Service Provider</b></a>
 

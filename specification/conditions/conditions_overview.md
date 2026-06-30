@@ -14,7 +14,6 @@ Conditions are sorted alphabetically by name.
 | [Includes Capacity Reservations](#conditions.includescapacityreservations) | Commitment | Operating model includes capacity reservations. |
 | [Includes Commitment Discounts](#conditions.includescommitmentdiscounts) | Commitment | Operating model includes commitment discounts. |
 | [Includes Commitment Programs](#conditions.includescommitmentprograms) | Commitment | Operating model includes commitment programs. |
-| [Includes Consumers](#conditions.includesconsumers) | Resource | Operating model includes consumers. |
 | [Includes Contract Commitments](#conditions.includescontractcommitments) | Commitment | Operating model includes contract commitments. |
 | [Includes List Unit Prices](#conditions.includeslistunitprices) | Pricing | Operating model includes standard, non-discounted unit prices. |
 | [Includes Multiple Billing Account Types](#conditions.includesmultiplebillingaccounttypes) | Account | Operating model includes multiple Billing Account Types. |
