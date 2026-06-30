@@ -148,7 +148,7 @@ CostAndUsage MUST adhere to the following requirements:
     * CostAndUsage MAY include PricingCurrencyListUnitPrice in all other cases.
   * CostAndUsage MUST include [PricingQuantity](#datasets.costandusage.pricingquantity).
   * CostAndUsage MUST include [PricingUnit](#datasets.costandusage.pricingunit).
-  * CostAndUsage MUST include [PrincipalId](#datasets.costandusage.principalid) in at least one [*dataset instance*](#glossary:dataset-instance) when the *operating model* [includes principals](#conditions.includesprincipals) and the customer has opted in to receive data at the principal grain.
+  * CostAndUsage MUST include [PrincipalId](#datasets.costandusage.principalid) when the *operating model* [includes principals](#conditions.includesprincipals).
   * CostAndUsage MUST include [RegionId](#datasets.costandusage.regionid) when the *operating model* [includes regions](#conditions.includesregions).
   * CostAndUsage MUST include [RegionName](#datasets.costandusage.regionname) when the *operating model* [includes regions](#conditions.includesregions).
   * CostAndUsage MUST include [ResourceId](#datasets.costandusage.resourceid) when the *operating model* [includes provisioned resources](#conditions.includesprovisionedresources).

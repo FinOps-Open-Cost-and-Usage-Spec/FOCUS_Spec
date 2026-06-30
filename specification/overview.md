@@ -92,15 +92,6 @@ Feature level is designated based on the following criteria described in the dat
 * If the existence of a column is described as `SHOULD`, then the feature level is designated as `Recommended`.
 * If the existence of a column is described as `MAY`, then the feature level is designated as `Optional`.
 
-## Delivery Grain
-
-Under each column defined in the FOCUS specification, there exists a 'Delivery grain' designation that describes the column as `Default` or `Opt-in`. This property describes the data contract between the data generator and the customer regarding whether the data is delivered at a particular granularity.
-
-Delivery grain is designated based on the following criteria described in the dataset-level normative requirements:
-
-* **Default:** The data for this column is provided natively as part of the data generator's standard dataset export. No additional configuration is required by the customer to receive this data if the charge naturally supports it.
-* **Opt-in:** The data for this column requires the customer to explicitly agree that the data generator provides data at this granularity. If so, the data generator provides data at this granularity in at least one [*dataset instance*](#glossary:dataset-instance).
-
 ## Conformance Checkers and Validators
 
 Validation tools may be employed to determine conformance of data and implementations per this specification.
