@@ -21,9 +21,9 @@ Practitioners are encouraged to carefully distinguish between **Pricing Unit** f
 * **Pricing Unit** defines the physical, volumetric, or logical measurement of the service itself (e.g., `Hours`, `GB`, `Tokens`).
 * **Pricing Currency** defines the financial or consumable medium of exchange used to pay for that unit (e.g., `USD`, `Platform Credits`).
 
-When a *service provider* abstracts billing into a proprietary [*consumption currency*](#glossary:consumption-currency) (e.g., "Normalized Billing Units"), `Pricing Unit` represents the volumetric measurement tied to the unit price rate, not the monetary instrument used to pay for it.
+When a *service provider* abstracts billing into a proprietary [*consumption currency*](#glossary:consumption-currency) (e.g., "Normalized Billing Units"), Pricing Unit represents the volumetric measurement tied to the unit price rate, not the monetary instrument used to pay for it.
 
-Notably, in the context of Artificial Intelligence and API services, a "Token" (e.g., LLM prompt or completion tokens) represents a volumetric unit of processing measurement (i.e., `Pricing Unit`), not a financial instrument to be exchanged (i.e., `Pricing Currency`).
+Notably, in the context of Artificial Intelligence and API services, a "Token" (e.g., LLM prompt or completion tokens) represents a volumetric unit of processing measurement (i.e., Pricing Unit), not a financial instrument to be exchanged (i.e., Pricing Currency).
 
 ## Column ID
 

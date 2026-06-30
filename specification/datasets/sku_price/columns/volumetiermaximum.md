@@ -19,7 +19,7 @@ VolumeTierMaximum MUST adhere to the following requirements:
 
 ## Implementation Guidance
 
-Because `Volume Tier Minimum` is the inclusive lower bound and `Volume Tier Maximum` is the exclusive upper bound, the two columns define a half-open volume interval. Practitioners route a usage quantity to the tier where the quantity is greater than or equal to `Volume Tier Minimum` and strictly less than `Volume Tier Maximum`. The highest tier carries a null `Volume Tier Maximum` and has no upper bound, and adjacent tiers meet at a shared boundary value with no gap or overlap.
+Because Volume Tier Minimum is the inclusive lower bound and Volume Tier Maximum is the exclusive upper bound, the two columns define a half-open volume interval. Practitioners route a usage quantity to the tier where the quantity is greater than or equal to Volume Tier Minimum and strictly less than Volume Tier Maximum. The highest tier carries a null Volume Tier Maximum and has no upper bound, and adjacent tiers meet at a shared boundary value with no gap or overlap.
 
 ## Column ID
 

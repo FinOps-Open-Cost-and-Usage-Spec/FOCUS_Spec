@@ -9,7 +9,7 @@ SkuPriceCreated MUST adhere to the following requirements:
 * SkuPriceCreated MUST be of type Date/Time.
 * SkuPriceCreated MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.
 * SkuPriceCreated MUST NOT be null.
-* SkuPriceCreated MUST represent the moment in time the SKU Price record was instantiated.
+* SkuPriceCreated MUST represent the moment in time the *SKU Price* record was instantiated.
 
 ## Column ID
 

@@ -4,7 +4,7 @@ The SKU Price dataset is the primary dataset for standardizing [*service provide
 
 The SKU Price dataset represents prices as of the date the dataset is captured. Providing a historical record of prior prices is the practitioner's responsibility rather than a guaranteed delivery; practitioners can reconstruct price history by retaining successive snapshots and comparing them using [SKU Price Effective Start](#datasets.skuprice.skupriceeffectivestart) and [SKU Price Effective End](#datasets.skuprice.skupriceeffectiveend). The dataset reflects the prices a *service provider* offers, independent of whether a price was used, and is not derived from Cost and Usage data.
 
-The dataset describes the full price list a *service provider* offers, not only the SKUs that appear in Cost and Usage. To manage the size of a complete price list, a *service provider* MAY partition delivery, for example by region, service, or SKU category, and is encouraged to do so where publishing a complete list in a single delivery would otherwise be impractical.
+The dataset describes the full price list a *service provider* offers, not only the SKUs that appear in Cost and Usage. To manage the size of a complete price list, a *service provider* may partition delivery, for example by region, service, or SKU category, and is encouraged to do so where publishing a complete list in a single delivery would otherwise be impractical.
 
 The columns are presented in alphabetical order.
 
@@ -40,7 +40,7 @@ The columns are presented in alphabetical order.
 
 ## Relationships
 
-The SKU Price dataset relates to the Cost and Usage dataset through the SKU Price ID, enabling the attribution of catalog rates to incurred usage. This is a one-to-many relationship: a single SKU Price ID corresponds to multiple SKU Price records, because a SKU's price varies by effective period, contract, volume tier, pricing currency, and unit price type. Resolving the price that applies to a Cost and Usage charge therefore requires more than the SKU Price ID alone. The charge must also be aligned to the SKU Price record whose effective period contains the charge period, whose Contract ID matches the agreement under which the charge was incurred, and whose volume tier contains the charged quantity. The SKU Price dataset can also optionally join to the Contract Commitment dataset to relate a specific contracted price to an overarching negotiated agreement.
+The SKU Price dataset relates to the Cost and Usage dataset through the SKU Price ID, enabling the attribution of catalog rates to incurred usage. This is a one-to-many relationship: a single SKU Price ID corresponds to multiple SKU Price records, because a SKU's price varies by effective period, contract, volume tier, pricing currency, and unit price type. Resolving the price that applies to a Cost and Usage charge therefore requires more than the SKU Price ID alone. The charge must also be aligned to the SKU Price record whose effective period contains the charge period, whose Contract ID matches the agreement under which the charge was incurred (or is null for a public list price), whose volume tier contains the charged quantity, whose pricing currency matches the currency in which the charge is denominated, and whose unit price category matches the price type applied to the charge. The SKU Price dataset can also optionally join to the Contract Commitment dataset to relate a specific contracted price to an overarching negotiated agreement.
 
 | Dataset A           | Dataset A Column  | Dataset B           | Dataset B Column       |
 | ------------------- | ----------------- | ------------------- | ---------------------- |
@@ -81,7 +81,8 @@ SkuPrice MUST adhere to the following requirements:
 * SkuPrice MUST conform to [DatasetCompleteness](#attributes.datasetcompleteness) requirements.
 * SkuPrice MUST conform to [DatasetConfiguration](#attributes.datasetconfiguration) requirements.
 * SkuPrice MUST maintain row uniqueness across the composite key of ServiceProviderName, SkuPriceId, ContractId, VolumeTierMinimum, SkuPriceEffectiveStart, PricingCurrency, and UnitPriceCategory.
-* For a given combination of ServiceProviderName, SkuPriceId, ContractId, VolumeTierMinimum, PricingCurrency, and UnitPriceCategory, the validity periods defined by SkuPriceEffectiveStart and SkuPriceEffectiveEnd MUST NOT overlap.
+* SkuPrice MUST treat two records with a null value in the same composite-key member as equal in that member when evaluating row uniqueness.
+* SkuPrice MUST NOT contain records whose validity periods, defined by SkuPriceEffectiveStart and SkuPriceEffectiveEnd, overlap for the same combination of ServiceProviderName, SkuPriceId, ContractId, VolumeTierMinimum, PricingCurrency, and UnitPriceCategory.
 * SkuPrice MUST contain at least one record for every [SkuPriceId](#datasets.skuprice.skupriceid) referenced in the [CostAndUsage](#datasets.costandusage) dataset.
 * SkuPrice *FOCUS columns* MUST conform to [FocusColumnHandling](#attributes.focuscolumnhandling) requirements.
 * SkuPrice *FOCUS columns* MUST conform to [NullHandling](#attributes.nullhandling) requirements.

@@ -25,7 +25,7 @@ SkuId MUST adhere to the following requirements:
 * SkuId for a given *SKU* MUST adhere to the following requirements:
   * SkuId MUST remain consistent across contracts or billing agreements.
   * SkuId MUST remain consistent regardless of any other factors that might impact the price but do not affect the functionality of the *SKU*.
-  * SkuId SHOULD be consistent across pricing variations of a good or service to facilitate price comparisons for the same functionality, like where the functionality is provided or how it is paid for.
+  * SkuId SHOULD be consistent across pricing variations of a good or service.
 
 ## Column ID
 

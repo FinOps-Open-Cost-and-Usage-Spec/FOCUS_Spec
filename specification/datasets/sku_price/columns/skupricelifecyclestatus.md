@@ -10,7 +10,7 @@ SkuPriceLifecycleStatus MUST adhere to the following requirements:
 * SkuPriceLifecycleStatus MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * SkuPriceLifecycleStatus MUST NOT be null.
 * SkuPriceLifecycleStatus MUST be one of the allowed values.
-* SkuPriceLifecycleStatus MUST be "Active" when the *SKU Price* is currently effective and generally available.
+* SkuPriceLifecycleStatus MUST be "Active" when the *SKU Price* is currently effective and available for use or purchase.
 * SkuPriceLifecycleStatus MUST be "Preview" when the *SKU Price* applies to an offering in a pre-release, beta, or early access state.
 * SkuPriceLifecycleStatus MUST be "Deprecated" when the *SKU Price* is still valid for existing deployments but is slated for retirement or no longer available for new consumption.
 * SkuPriceLifecycleStatus MUST be "Inactive" when the *SKU Price* is temporarily suspended or disabled but not permanently retired.
@@ -38,7 +38,7 @@ SKU Price Lifecycle Status
 
 ## Description
 
-The current publication and availability state of the specified unit price.
+The current publication and availability state of the specified SKU Price.
 
 ## Content Constraints
 

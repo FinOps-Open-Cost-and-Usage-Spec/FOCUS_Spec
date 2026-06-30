@@ -40,11 +40,11 @@ SkuPriceEligibility contains a structured JSON object defining the logical bound
 
 | Property | Type | Required | Description |
 | :--- | :--- | :--- | :--- |
-| `IsGlobalScope` | Boolean | No | If `true`, the price applies to all entities. Defaults to `false`. |
-| `IsComplexScope` | Boolean | No | If `true`, indicates logic exceeds schema capabilities. Defaults to `false`. |
-| `InclusionOperator` | String | Conditional | Required only if `IsGlobalScope` and `IsComplexScope` are both `false` or null. Valid values: `And`, `Or`. Must be omitted if Global or Complex scope is true. |
-| `Inclusions` | Array | Conditional | Required only if `IsGlobalScope` and `IsComplexScope` are both `false` or null. List of `Rule` objects defining the boundary. Must be omitted if Global or Complex scope is true. |
-| `ExclusionOperator` | String | Conditional | Required only if `Exclusions` are present. Defines the relationship for `Exclusions`. Valid values: `And`, `Or`. |
+| `IsGlobalScope` | Boolean | No | When `true`, the price applies to all entities. Defaults to `false`. |
+| `IsComplexScope` | Boolean | No | When `true`, indicates logic exceeds schema capabilities. Defaults to `false`. |
+| `InclusionOperator` | String | Conditional | Required only when `IsGlobalScope` and `IsComplexScope` are both `false`. Valid values: `And`, `Or`. Omitted when Global or Complex scope is `true`. |
+| `Inclusions` | Array | Conditional | Required only when `IsGlobalScope` and `IsComplexScope` are both `false`. List of `Rule` objects defining the boundary. Omitted when Global or Complex scope is `true`. |
+| `ExclusionOperator` | String | Conditional | Required only when `Exclusions` are present. Defines the relationship for `Exclusions`. Valid values: `And`, `Or`. |
 | `Exclusions` | Array | No | List of `Rule` objects defining entities to be removed from the boundary. |
 
 <div class="h7-nonindex">Rule Object</div>
@@ -97,7 +97,7 @@ The evaluation of an entity's usage against a rate card's eligibility rules must
 <div class="h7-nonindex">Dependency Logic</div>
 
 1. **Consistency:** Engines should expect a JSON Object and should not support scalar values for this field to ensure compatibility with typed database schemas.
-2. **Conflict Resolution:** If `IsGlobalScope` or `IsComplexScope` is `true`, the `Inclusions` array must be empty or omitted. Additionally, `IsGlobalScope` and `IsComplexScope` must both not be `true` at the same time. Engines should validate these structural constraints before processing.
+2. **Conflict Resolution:** When `IsGlobalScope` or `IsComplexScope` is `true`, the `Inclusions` array must be empty or omitted. Additionally, `IsGlobalScope` and `IsComplexScope` must both not be `true` at the same time. Engines should validate these structural constraints before processing.
 
 ### Object Example
 
