@@ -82,7 +82,7 @@ These changes are classified as Compatible and do not require query changes, but
 
 #### Attribute Restructuring
 
-Three attributes were removed in FOCUS 1.4. Their requirements moved to the successor attributes and appendix entry shown below:
+Three attributes were broken down and their requirements moved to other attributes and one appendix entry in FOCUS 1.4:
 
 | Removed Attribute | Requirements Moved To |
 |-------------------|-----------------------|
@@ -104,7 +104,7 @@ During staggered adoption, practitioners may receive FOCUS 1.3 and FOCUS 1.4 dat
 
 ### Affected Supported Features
 
-The following supported features reference columns, attributes, or behaviors changed in FOCUS 1.4 and may require documentation or query updates:
+The following supported features reference columns, attributes, or behaviors changed in FOCUS 1.4. Most reflect additive or clarifying changes and require no query updates; only the `ContractApplied` format change and the removed `ProviderName`/`PublisherName` columns require action (see What Requires Migration above):
 
 * [Participating Entity Identification](/specification/supported_features/participating_entity_identification.md), for the successor columns to the removed `ProviderName` and `PublisherName`
 * [Contract Commitments](/specification/supported_features/contract_commitments.md), for the revised `ContractApplied` format
