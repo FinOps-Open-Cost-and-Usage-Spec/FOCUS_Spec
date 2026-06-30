@@ -23,9 +23,9 @@ ChargeCategory MUST adhere to the following requirements:
 
 While the Charge Category column is shared between the [Cost and Usage](#datasets.costandusage) dataset and the [SKU Price](#datasets.skuprice) dataset, practitioners should note that the allowed values differ significantly by design.
 
-The Cost and Usage dataset acts as a financial ledger that tracks post-facto financial events. Therefore, it requires values like `Tax`, `Credit`, and `Adjustment` to accurately balance a final invoice.
+The Cost and Usage dataset acts as a financial ledger that tracks post-facto financial events. Therefore, it requires values like "Tax", "Credit", and "Adjustment" to accurately balance a final invoice.
 
-Conversely, the SKU Price dataset acts as a pre-facto catalog of available unit rates. Because taxes are calculated dynamically based on jurisdiction and entity, and credits or adjustments are account-level ledger corrections, service providers do not publish catalog unit prices for these events. Therefore, the allowed values for Charge Category in the SKU Price dataset are strictly limited to catalog pricing constructs: `Usage` (the published rate to consume a resource) and `Purchase` (the published fee to acquire a commitment or service).
+Conversely, the SKU Price dataset acts as a pre-facto catalog of available unit rates. Because taxes are calculated dynamically based on jurisdiction and entity, and credits or adjustments are account-level ledger corrections, service providers do not publish catalog unit prices for these events. Therefore, the allowed values for Charge Category in the SKU Price dataset are strictly limited to catalog pricing constructs: "Usage" (the published rate to consume a resource) and "Purchase" (the published fee to acquire a commitment or service).
 
 ## Column ID
 

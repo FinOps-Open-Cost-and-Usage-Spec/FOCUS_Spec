@@ -27,7 +27,7 @@ Pricing Currency Category
 
 ## Description
 
-Categorizes the nature of the Pricing Currency as either a financial instrument paid by the customer (`Payable`) or a proprietary consumption currency issued by the *service provider* (`Consumable`).
+Categorizes the nature of the Pricing Currency as either a financial instrument paid by the customer ("Payable") or a proprietary consumption currency issued by the *service provider* ("Consumable").
 
 ## Content Constraints
 
