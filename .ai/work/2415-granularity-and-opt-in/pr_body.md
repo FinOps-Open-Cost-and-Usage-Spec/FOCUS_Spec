@@ -1,33 +1,40 @@
 ## Summary
 
-This draft extends the Dataset Configuration attribute to cover granularity configurations, so high-cardinality detail can be modeled as a scoped dataset configuration choice instead of a per-column "opt-in" flag.
+This draft extends the Dataset Configuration attribute with a `detail-level` configuration that allows practitioners to opt into finer-grained records for specific cost areas. It is scoped to FOCUS 1.5.
 
-The draft treats dataset instance granularities as the levels of detail represented by records in a dataset instance. A single dataset instance can contain multiple granularity configurations, each scoped by an applicability filter.
+The current spec models column selection as a practitioner-facing request: a list of columns to include in the export. This PR adds a parallel request field — `detail-level` — that maps provider-defined scope keys to provider-defined level values. Where column selection controls which columns appear, detail level controls which records carry additional dimension columns and at what grain.
 
-The change adds requirements for documentation when more than one granularity configuration is offered:
+The two value forms are:
 
-* columns and applicability filters that define a granularity configuration
-* mutually exclusive applicability filters within a delivered dataset instance
-* whether delivered dataset instances replace or supplement other delivered dataset instances that represent the same underlying usage or charges
-* how summable and non-summable metrics are represented across delivered dataset instances that represent the same underlying usage or charges
-* whether a granularity includes privacy-sensitive identifiers, such as actor-level identifiers
+* Shorthand: `"detail-level": {"llm-costs": "user-level"}`
+* Extended with delivery type: `"detail-level": {"llm-costs": {"level": "user-level", "delivery-type": "detail-file"}}`
 
-The change also allows a default granularity configuration for an applicability filter, with the constraint that the default is the least granular option for that applicability filter. This keeps higher-cardinality exports intentional.
+Scope keys are provider-defined strings and do not have to match column values such as `ServiceName`. Level values are also provider-defined. Providers must document all offered scope keys, their allowed level values, the effect of each level on records, and any available delivery types.
 
-The supporting content captures the current design recommendation:
+The normative requirements establish:
 
-* Use expanded CostAndUsage dataset instances as the first representation model because first-class dimensions and metrics remain directly queryable.
-* Keep split cost allocation as a specialized expanded pattern when more granular records are derived from an origin charge using an allocation method.
-* Keep embedded JSON breakdowns and referenced detail datasets open for future design work where session, trace, request, or other deeply nested detail does not naturally belong in CostAndUsage.
+* `detail-level` configuration is a mapping of provider-defined scope keys to detail level values
+* Detail level values are either a string (the level name) or an object with a required `level` property and an optional `delivery-type` property
+* Dimension columns required by a selected detail level are included even when not present in the selected column list
+* Documentation requirements for offered scope keys, level behavior, and delivery types
+* Default detail level must be the least granular level offered for a given scope key
+
+The supporting content covers:
+
+* What scope keys are and why they are provider-defined strings (not tied to `ServiceName` or other columns)
+* The two JSON value forms with examples
+* Common delivery type patterns: `inline`, `added-lines`, `detail-file`
+* Cardinality trade-offs and why defaults should be conservative
+* Hierarchical levels (e.g., `default` → `product` → `feature`)
+* Actor attribution as a primary use case: services where the calling principal is not the entity that should bear cost
 
 Open questions for task force review:
 
-* Should the representation names be formalized as `Expanded`, `Embedded`, and `Referenced`, or should they remain explanatory guidance for now?
-* Is `granularity configuration` the right term for a configured level of detail for an applicability scope?
-* Should future actor columns such as `PrincipalId` and `ConsumerId` reference DatasetConfiguration rather than define a separate "Delivery grain" row in their column files?
-* Should structured metadata eventually capture selected granularity configurations, applicability filters, and relationships to dataset instances representing the same underlying usage or charges, or is provider documentation sufficient for the first iteration?
-* Should the least-granular default be defined by the fewest granularity-defining columns, or does the task force want a more precise definition?
-* Should applicability filters be required to be clearly non-overlapping from the filter definitions alone, without inspecting delivered records, to avoid exponential fanout from overlapping higher-granularity configurations?
+* Should delivery type values (`inline`, `added-lines`, `detail-file`) be enumerated as FOCUS-defined terms or remain fully provider-defined?
+* Should scope keys be allowed to reference column values (e.g., `ServiceName` values), or must they be provider-defined opaque strings?
+* Should the configuration key name be hyphenated (`detail-level`) or camelCase (`detailLevel`) for consistency with other configuration keys?
+* How does this interact with actor columns such as `PrincipalId` and `ConsumerId` from PR #2360? Those columns would appear in expanded records at actor-level detail.
+* Should structured metadata eventually capture the applied detail level configuration per dataset instance, or is provider documentation sufficient for the first iteration?
 
 ### Type of Change
 * [ ] Bug fix
