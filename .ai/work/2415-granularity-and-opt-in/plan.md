@@ -2,40 +2,65 @@
 
 ## Goal
 
-Draft a PR under FR #2358 that models configurable dataset granularity for high-cardinality actor dimensions and keeps PR #2360 unblocked.
+Draft a PR under FR #2358 that models configurable detail levels in the DatasetConfiguration request, enabling practitioners to opt into finer-grained records for specific cost areas.
 
-## Recommended Implementation Plan
+## Approach
 
-1. Expand `DatasetConfiguration` rather than adding a column-level `Delivery grain` field.
-2. Add requirements for documented granularity configurations.
-3. Preserve `PrincipalId` and `ConsumerId` as normal reusable CostAndUsage columns.
-4. Recommend PR #2360 update its actor conditions to attribution-specific names.
-5. Add documentation expectations for configurations that may include actor-level or privacy-sensitive identifiers.
-6. Add documentation expectations for metric behavior across configured grains, including summable metrics, non-summable metrics such as unit prices/rates, and supplement/double-counting behavior across delivered dataset instances.
-7. Add supporting content with examples showing service-scoped opt-in for Service-A, Service-B, and future session/trace grains.
-8. Add a proposed `granularity representation mode` taxonomy: `Expanded`, `Embedded`, and `Referenced`.
-9. Add PR open questions comparing expanded CostAndUsage dataset instances, embedded JSON breakdown columns, and referenced one-to-many detail datasets/files.
-10. Update requirements model JSON for the normative DatasetConfiguration changes.
+Extend `DatasetConfiguration` with a `detail-level` configuration key that maps provider-defined scope keys to provider-defined level values. This is a request-side model: practitioners specify what detail they want in their configuration request; providers document what is available.
 
-## Draft PR Scope
+This replaces the earlier "granularity configurations" / "applicability filter" approach, which was framed as documentation requirements on providers rather than as a concrete request schema for practitioners.
 
-In scope:
+## Implementation
 
-* Attribute language for configurable granularity configurations.
-* Documentation requirements for configured granularities.
-* Documentation requirements or guidance for privacy-sensitive / actor-level granularity.
-* Documentation requirements or guidance for metric representation across granular configurations.
-* Proposed representation-mode terminology for lower-grain detail.
-* Non-normative examples for service-specific opt-in and multiple grain levels.
-* PR description open question on expanded rows versus embedded JSON versus referenced detail dataset/file.
-* PR description documenting the dependency on PR #2360.
+1. Update `specification/attributes/dataset_configuration.md`:
+   * Replace "granularity configuration" / "applicability filter" language with `detail-level` / "scope key" language
+   * Add normative requirements for the `detail-level` key, its two value forms (string and object), and provider documentation obligations
+   * Add JSON examples showing both shorthand and extended forms
 
-Out of scope:
+2. Update `supporting_content/attributes/dataset_configuration.md`:
+   * Replace "Dataset Instance Granularities" section with "Detail Level Configuration" section
+   * Document scope keys, level values, delivery types, cardinality trade-offs, hierarchical levels, and actor attribution
+   * Update metadata example to use the `detail-level` shape
+   * Update "Developed for 1.4" table
+
+3. Update requirements model JSON if normative requirements are finalized.
+
+## JSON Shapes
+
+Shorthand (level only):
+```json
+{
+  "detail-level": {
+    "llm-costs": "user-level",
+    "shared-platform": "feature"
+  }
+}
+```
+
+Extended (level + delivery-type):
+```json
+{
+  "detail-level": {
+    "llm-costs": {"level": "user-level", "delivery-type": "detail-file"},
+    "shared-platform": {"level": "feature", "delivery-type": "inline"}
+  }
+}
+```
+
+Both forms may appear together in the same `detail-level` object.
+
+## Open Questions
+
+* Should delivery types (`inline`, `added-lines`, `detail-file`) be enumerated as FOCUS-defined values or remain fully provider-defined?
+* Should scope keys be allowed to reference column values (e.g., ServiceName values) or must they be provider-defined opaque strings?
+* Should the configuration key name be hyphenated (`detail-level`) or camelCase (`detailLevel`) to be consistent with other configuration keys?
+* How does this interact with PR #2360 (`PrincipalId` / `ConsumerId`)? Actor columns would appear in expanded records at actor-level detail.
+
+## Out of Scope
 
 * Adding `SessionId`, `TraceId`, or other future high-cardinality columns.
 * Reworking split cost allocation.
-* Defining a general PII compliance regime or resolving plain-text PII rules for `PrincipalId` / `ConsumerId`.
-* Creating a new supporting actor/session/trace detail dataset in the initial PR.
-* Creating a new JSON breakdown column or object schema in the initial PR.
-* Requiring metadata schema changes, unless maintainers want that in the same PR.
-* Changing all column content-constraint tables.
+* Defining a general PII compliance regime for actor identifiers.
+* Creating a new supporting actor/session/trace detail dataset.
+* Creating a new JSON breakdown column or object schema.
+* Requiring metadata schema changes (metadata example is illustrative only).

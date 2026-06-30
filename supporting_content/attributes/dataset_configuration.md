@@ -88,16 +88,16 @@ Based on applicability, configuration options may be split into separate attribu
 
 ### Developed for 1.4
 
-The following options were developed for the Dataset Configuration attribute. Column selection and granularity configuration are included in the specification. The remaining options are deferred to a separate change.
+The following options were developed for the Dataset Configuration attribute. Column selection and detail level configuration are included in the specification. The remaining options are deferred to a separate change.
 
-| Option            | Status   | Description                                         |
-|-------------------|----------|-----------------------------------------------------|
-| Column selection  | Included | Choose which columns to include                     |
-| Granularity configuration | Included | Choose configured levels of detail for records matching an applicability filter |
-| Row aggregation   | Deferred | Sum metric columns when dimensions are identical    |
-| Time granularity  | Deferred | Choose temporal resolution (daily, monthly, hourly) |
-| Schema versioning | Deferred | Select which schema version to use                  |
-| Row filtering     | Deferred | Filter rows by column values                        |
+| Option                     | Status   | Description                                                          |
+|----------------------------|----------|----------------------------------------------------------------------|
+| Column selection           | Included | Choose which columns to include                                      |
+| Detail level configuration | Included | Request finer-grained records for provider-defined detail scopes     |
+| Row aggregation            | Deferred | Sum metric columns when dimensions are identical                     |
+| Time granularity           | Deferred | Choose temporal resolution (daily, monthly, hourly)                  |
+| Schema versioning          | Deferred | Select which schema version to use                                   |
+| Row filtering              | Deferred | Filter rows by column values                                         |
 
 ### Future Options
 
@@ -226,79 +226,85 @@ When introduced, time granularity will allow practitioners to choose temporal re
 * **Monthly**: Will be recommended (SHOULD) - useful for executive reporting and billing reconciliation
 * **Hourly**: Will be required when applicable (MUST) - when the dataset includes costs priced at an hourly or lower grain, hourly granularity will need to be available to preserve pricing accuracy
 
-## Dataset Instance Granularities
+## Detail Level Configuration
 
-Dataset instance granularities identify the levels of detail represented by records in a dataset instance. A granularity configuration specifies the level of detail for an applicability scope. The applicability filter identifies which records in a dataset instance are in that scope and may reference multiple columns.
+Detail level configuration allows practitioners to request finer-grained records for specific areas of cost data. Providers often omit certain dimensions from default exports because they would significantly increase row counts or expose privacy-sensitive data. Practitioners can opt into those dimensions for the cost areas where they need them through the `detail-level` configuration.
 
-One dataset instance can contain more than one granularity configuration. For example, a CostAndUsage dataset instance could include Service-A records at `PrincipalId` plus `ConsumerId`, Service-B records at `PrincipalId`, and records for other services without actor-level columns. In a wide-file representation, the schema contains the union of selected columns and records outside a column's configured granularity have null values for that column.
+Detail level configuration is related to column selection, but the two serve different purposes. Column selection controls which columns appear in the dataset. Detail level configuration controls which records carry finer-grained dimension values, which can change both the columns present and the number of records.
 
-Applicability filters for configured granularities in the same delivered dataset instance should be mutually exclusive. This prevents one record from matching more than one granularity configuration. Separate delivered dataset instances can still represent the same underlying usage or charges, such as when a more granular dataset instance supplements a standard dataset instance, but that relationship needs documentation so practitioners can avoid double-counting.
+### Provider-Defined Scope Keys
 
-Dataset instance granularities are related to column selection, but the two configuration choices serve different purposes. Column selection controls which columns are present in a dataset instance artifact. Granularity configuration controls the level of usage detail reported for records matching an applicability filter, which can affect record counts, metric representation, and the columns needed to express that level of detail.
+A scope key is a provider-defined string that identifies a set of charges to which a detail level applies. Scope keys do not have to match column values such as ServiceName; they may represent any grouping the provider defines, such as a usage category, a billing component, a named platform, or a service tier.
 
-Common reasons to offer multiple granularity configurations include:
+Example scope keys a provider might offer:
 
-* **Managing high-cardinality detail**: Actor, session, request, trace, container, pod, cluster, and workload identifiers can multiply record counts.
-* **Limiting scope by service**: A practitioner may need actor-level detail for Service-A without enabling Service-B detail.
-* **Managing privacy exposure**: Actor-level dataset instances may include identifiers that require different access controls, retention policies, or review processes.
-* **Preserving analytical intent**: Service-level reporting, resource-level reporting, and actor-level chargeback can require different levels of detail.
+* `"llm-costs"` — AI inference charges where requests can be traced to a calling user or principal
+* `"shared-platform"` — charges for a shared internal service where consumers inject tags identifying their product or feature
+* `"compute"` — compute instance charges where the provider can attribute cost to a specific workload
 
-### Example Granularity Configurations
+The provider's documentation must define every available scope key and the level values allowed for each.
 
-| Applicability Filter | Granularity-Defining Columns | Notes |
-|----------------------|------------------------------|-------|
-| Service-A usage records with actor attribution | PrincipalId, ConsumerId | Usage attributed to the principal and downstream consumer. |
-| Service-B usage records with principal attribution | PrincipalId | Usage attributed to the principal only. |
-| All other records | None | Default granularity configuration. |
+### Detail Level Values
 
-### Default Granularity Configurations
+The `detail-level` configuration maps scope keys to level values. A level value is a provider-defined string identifying the granularity the practitioner is requesting.
 
-Default granularity configurations should be conservative. When more than one granularity configuration is offered for the same applicability filter, the default configuration should be the least granular option. This keeps default exports smaller and easier to interpret, while allowing practitioners to intentionally select higher-cardinality detail when they need it.
+**Shorthand form** — the value is the level name:
 
-A default that varies unpredictably across services would make it difficult for practitioners to understand what was delivered. A default that selects the most granular option would expose high-cardinality data and increase dataset size without an intentional selection.
+```json
+{
+  "detail-level": {
+    "llm-costs": "user-level",
+    "shared-platform": "feature"
+  }
+}
+```
 
-### Granularity Representation Modes
+**Extended form** — the value is an object with a `level` property and an optional `delivery-type` property:
 
-More granular detail can be represented in multiple ways. The working term for these patterns is granularity representation mode.
+```json
+{
+  "detail-level": {
+    "llm-costs": {"level": "user-level", "delivery-type": "detail-file"},
+    "shared-platform": {"level": "feature", "delivery-type": "inline"}
+  }
+}
+```
 
-| Mode       | Description                                                                                     | Example                                                                 |
-|------------|-------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------|
-| Expanded   | More granular detail is represented as multiple CostAndUsage records.                       | One AI usage charge represented as multiple consumer-level records.      |
-| Embedded   | More granular detail is represented in a JSON column within a CostAndUsage record.          | One cost record contains a JSON array of consumer identifiers and costs. |
-| Referenced | More granular detail is represented in a supporting dataset or file referenced from CostAndUsage. | One CostAndUsage record links to many request-detail records.            |
+Both forms may appear together in the same `detail-level` configuration.
 
-Expanded records are the most compatible with the current CostAndUsage model because dimensions and metrics remain directly queryable. Embedded JSON and Referenced detail can reduce top-level row growth, but they require additional schemas, lineage keys, and rules for element-level metrics.
+### Delivery Types
 
-Split cost allocation is a specialized Expanded pattern when more granular records are derived from an origin charge using an allocation method. Split cost allocation should remain distinct because it carries additional semantics for origin charges, allocated charges, allocation methods, and metric conservation.
+A `delivery-type` value tells the provider how the practitioner wants more granular records delivered. Delivery types are provider-defined, but common patterns include:
 
-### Metric Behavior
+| Delivery Type | Description |
+|---------------|-------------|
+| `inline` | More granular detail is included in the same records as additional columns. Records outside the scope have null values for scope-specific columns. |
+| `added-lines` | More granular detail is delivered as additional rows within the same dataset instance, replacing or supplementing the aggregate records that would otherwise appear. |
+| `detail-file` | More granular detail is delivered in a separate dataset instance or file linked to records in the main dataset instance. |
 
-Changing a granularity configuration does not imply every metric can be split across the more granular dimensions.
+Providers must document which delivery types they support for each scope key and level. Providers must also document the relationship between detail delivery and any other delivered dataset instances that represent the same underlying usage or charges, so that practitioners can avoid double-counting.
 
-Summable metrics such as cost and quantity can be measured or allocated at a more granular level when the data generator can represent them accurately. When a more granular dataset instance supplements another dataset instance that represents the same underlying usage or charges, the data generator documentation should explain how practitioners avoid double-counting.
+### Cardinality and Default Levels
 
-Non-summable metrics such as unit prices and rates usually remain tied to SKU-level pricing terms. When more granular records share a SKU context, the same rate can apply to all more granular records. Documentation should explain whether these metrics are repeated, omitted, or represented by another mechanism.
+More granular detail typically increases row counts. A provider that tracks LLM requests by user may have thousands of users per service account per day, which multiplies cost records significantly. Practitioners should request detail levels only for the cost areas where the attribution is needed.
 
-### Actor-Level Granularity
+When a provider offers more than one level for a scope key, it should designate a default. The default should be the least granular level, which keeps default exports smaller and avoids unintended exposure of high-cardinality or privacy-sensitive dimensions. A practitioner who does not specify a level for a scope key receives the default level for that scope key.
 
-Actor-level granularity is relevant for shared platforms and pass-through services where the principal that initiates usage may not be the entity benefiting from usage. For example, an AI gateway service account may initiate requests while costs are attributed to consumers, teams, applications, or other downstream actors.
+### Hierarchical Levels
 
-An actor-level granularity configuration can support this use case without requiring split cost allocation when the data generator natively measures usage at the actor granularity. Split cost allocation becomes relevant when the data generator starts from a coarser origin charge and allocates it to more granular actors or workloads.
+Some providers offer levels that represent a dimension hierarchy. For example, a shared platform might define:
 
-Cluster identifiers usually behave like grouping dimensions or tags when each CostAndUsage record has one cluster value. A cluster identifier becomes part of a breakdown structure only when one CostAndUsage record needs to carry multiple cluster, namespace, pod, workload, or similar more granular elements.
+* `"default"` — records grouped at the service level with no consumer attribution
+* `"product"` — records include a product dimension injected by the consumer via a tag or request header
+* `"feature"` — records include both product and feature dimensions, where each feature is scoped within a product
 
-### Representation Tradeoffs
+Selecting `"feature"` adds both `product` and `feature` dimensions. The provider must document what columns each level adds and how the levels relate to each other.
 
-| Consideration                  | Expanded | Embedded | Referenced |
-|--------------------------------|----------|----------|------------|
-| Query simplicity               | High     | Low      | Medium     |
-| Top-level row growth           | High     | Low      | Low        |
-| Works with first-class columns | High     | Low      | Medium     |
-| Supports deeply nested detail  | Low      | Medium   | High       |
-| Requires additional schema work| Low      | High     | High       |
-| Privacy isolation              | Low      | Medium   | High       |
+### Actor Attribution
 
-For the first specification change, Expanded dataset instances are the simplest model because they fit the existing CostAndUsage schema and allow actor columns to remain reusable first-class dimensions. Embedded and Referenced modes should remain open for future design work, especially for session, trace, or request details that may not belong directly in CostAndUsage.
+Actor-level detail is useful for shared platforms and pass-through services where the service account that initiates usage is not the entity that should bear the cost. For example, an AI gateway service account may initiate all LLM requests while costs should be attributed to the calling team, application, or user.
+
+A provider that natively measures usage at the actor grain can offer an actor-level detail scope without requiring split cost allocation. Split cost allocation is a separate concept used when a provider starts from a coarser origin charge and must distribute it across actors or workloads using an allocation method.
 
 ## Future Configuration Options
 
@@ -380,47 +386,24 @@ Since Schema already tracks structural information (columns, data types) and tri
 
 Option A (extending Dataset Instance) is the most natural fit. The configuration options describe how a specific dataset artifact was shaped, which aligns with Dataset Instance's purpose. FOCUS version selection is already partially addressed by Schema's `FocusVersion` property.
 
-### Example Granularity Configuration Metadata
+### Example Detail Level Configuration Metadata
 
-The following example illustrates one possible shape for structured granularity configuration metadata. The field names are illustrative and would need task force review before becoming part of the formal metadata schema.
+The following example illustrates one possible shape for recording the applied detail level configuration in dataset instance metadata. The field names are illustrative and would need task force review before becoming part of the formal metadata schema.
 
 ```json
 {
   "DatasetInstanceId": "178151-dbad145e-178151-dbad145e-178151",
   "Configuration": {
-    "GranularityConfigurations": [
-      {
-        "GranularityConfigurationId": "genai-session-actor-detail",
-        "ApplicabilityFilter": {
-          "Service": "genai-service"
-        },
-        "GranularityDefiningColumns": [
-          "PrincipalId",
-          "ConsumerId",
-          "SessionId"
-        ],
-        "RepresentationMode": "Expanded",
-        "SelectionMethod": "Explicit",
-        "PrivacySensitiveIdentifierColumns": [
-          "PrincipalId",
-          "ConsumerId",
-          "SessionId"
-        ],
-        "RelationshipToRelatedDatasetInstances": "Replace"
+    "DetailLevel": {
+      "llm-costs": {
+        "level": "user-level",
+        "delivery-type": "inline"
       },
-      {
-        "GranularityConfigurationId": "default-detail-for-example-scope",
-        "ApplicabilityFilter": {
-          "SomeColumn": "value-1",
-          "AnotherColumn": "value-2"
-        },
-        "GranularityDefiningColumns": [],
-        "RepresentationMode": "Expanded",
-        "SelectionMethod": "Default",
-        "PrivacySensitiveIdentifierColumns": [],
-        "RelationshipToRelatedDatasetInstances": "None"
+      "shared-platform": {
+        "level": "default",
+        "delivery-type": "inline"
       }
-    ]
+    }
   }
 }
 ```
