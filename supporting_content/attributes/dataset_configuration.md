@@ -82,22 +82,29 @@ Based on applicability, configuration options may be split into separate attribu
 
 | Attribute | Options | Feature Level |
 |-----------|---------|---------------|
-| **DatasetConfiguration** | Column selection, granularity configuration, row aggregation, time granularity, schema versioning, row filtering | None (all datasets) |
+| **DatasetConfiguration** | Column selection, detail level configuration, row aggregation, time granularity, schema versioning, row filtering | None (all datasets) |
 | **DatasetDelivery** | Scheduling, incremental refresh, overwrite vs append, partitioning | Files or Tables |
 | **DatasetFileHandling** | File format, compression | Files only |
 
 ### Developed for 1.4
 
-The following options were developed for the Dataset Configuration attribute. Column selection and detail level configuration are included in the specification. The remaining options are deferred to a separate change.
+The following options were developed for the Dataset Configuration attribute for 1.4. Column selection is included in the specification. The remaining options are deferred to a separate change.
 
-| Option                     | Status   | Description                                                          |
-|----------------------------|----------|----------------------------------------------------------------------|
-| Column selection           | Included | Choose which columns to include                                      |
-| Detail level configuration | Included | Request finer-grained records for provider-defined detail scopes     |
-| Row aggregation            | Deferred | Sum metric columns when dimensions are identical                     |
-| Time granularity           | Deferred | Choose temporal resolution (daily, monthly, hourly)                  |
-| Schema versioning          | Deferred | Select which schema version to use                                   |
-| Row filtering              | Deferred | Filter rows by column values                                         |
+| Option            | Status   | Description                                      |
+|-------------------|----------|--------------------------------------------------|
+| Column selection  | Included | Choose which columns to include                  |
+| Row aggregation   | Deferred | Sum metric columns when dimensions are identical |
+| Time granularity  | Deferred | Choose temporal resolution (daily, monthly, hourly) |
+| Schema versioning | Deferred | Select which schema version to use               |
+| Row filtering     | Deferred | Filter rows by column values                     |
+
+### Developed for 1.5
+
+The following options were developed for the Dataset Configuration attribute for 1.5.
+
+| Option                     | Status   | Description                                                      |
+|----------------------------|----------|------------------------------------------------------------------|
+| Detail level configuration | Included | Request finer-grained records for provider-defined detail scopes |
 
 ### Future Options
 

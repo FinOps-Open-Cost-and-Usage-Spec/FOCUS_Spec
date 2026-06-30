@@ -77,4 +77,4 @@ Defines configuration options for controlling the structure, content, and level 
 
 ## Version Introduced
 
-1.4
+1.4 (column selection); 1.5 (detail level configuration)
