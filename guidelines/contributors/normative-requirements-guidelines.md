@@ -44,7 +44,7 @@ style ObjectProperty fill:#d4edda,stroke:#666,stroke-width:1px
 
 > Editor Note: (to be removed before publication) Consideration of adding a OperatingModel.
 
-```mermdaid
+```mermaid
 erDiagram
 DataModel ||--|{ Dataset : has
 Dataset ||--|{ Column : has
@@ -78,9 +78,9 @@ style ObjectProperty fill:#d4edda,stroke:#666,stroke-width:1px
 
 **Nodes:**
 
-🟦 Blue — What exists in the provider's business (Operating Model)
-🟥 Red — What the specification says (Conditions and Attributes)
-🟩 Green — How the specification is represented (Data Model, Datasets, Columns, Objects, and Object Properties)
+* 🟦 Blue — What exists in the provider's business (Operating Model)
+* 🟥 Red — What the specification says (Conditions and Attributes)
+* 🟩 Green — How the specification is represented (Data Model, Datasets, Columns, Objects, and Object Properties)
 
 === END
 
