@@ -53,9 +53,9 @@ Object ||--|{ ObjectProperty : has
 
 OperatingModel ||..|{ Condition : has-verifiable-state
 
-Condition ||..|{ DataModel : applies-to
-Condition ||..|{ Dataset : applies-to
-Condition ||..|{ Column : applies-to
+Condition ||..|{ DataModel : conditions
+Condition ||..|{ Dataset : conditions
+Condition ||..|{ Column : conditions
 
 Dataset }|..|| Attribute : conforms-to
 Column }|..|| Attribute : conforms-to
