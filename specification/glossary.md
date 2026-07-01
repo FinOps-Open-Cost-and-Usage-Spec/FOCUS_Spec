@@ -270,7 +270,7 @@ A comprehensive list of prices offered by a service provider.
 
 <a name="glossary:principal"><b>Principal</b></a>
 
-An authorized actor (e.g., user account, service account, application) that initiates requests for [*resources*](#glossary:resource) or [*services*](#glossary:service).
+The initiating or authorizing actor requesting [*resources*](#glossary:resource) or [*services*](#glossary:service). The Principal can differ from the downstream consumer or end-user on whose behalf the request is made (e.g., a gateway or proxy role acting for many end-users behind it).
 
 <a name="glossary:service-provider"><b>Service Provider</b></a>
 
