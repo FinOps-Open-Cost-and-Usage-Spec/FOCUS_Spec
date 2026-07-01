@@ -44,6 +44,8 @@ style ObjectProperty fill:#d4edda,stroke:#666,stroke-width:1px
 
 > Editor Note: (to be removed before publication) Consideration of adding a OperatingModel.
 
+* **FOCUS Operating Model** — a conceptual representation of the provider's business, billing, pricing, resource, and operational concepts that are standardized by FOCUS. The Operating Model defines the business states and relationships from which reusable Conditions are derived. These Conditions determine when normative requirements become applicable within the FOCUS Data Model.
+
 ```mermaid
 erDiagram
 DataModel ||--|{ Dataset : has
@@ -53,9 +55,9 @@ Object ||--|{ ObjectProperty : has
 
 OperatingModel ||..|{ Condition : has-verifiable-state
 
-Condition ||..|{ DataModel : conditions
-Condition ||..|{ Dataset : conditions
-Condition ||..|{ Column : conditions
+Condition ||..|{ DataModel : determines-applicability-for
+Condition ||..|{ Dataset : determines-applicability-for
+Condition ||..|{ Column : determines-applicability-for
 
 Dataset }|..|| Attribute : conforms-to
 Column }|..|| Attribute : conforms-to
