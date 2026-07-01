@@ -40,6 +40,50 @@ style Object fill:#d4edda,stroke:#666,stroke-width:1px
 style ObjectProperty fill:#d4edda,stroke:#666,stroke-width:1px
 ```
 
+=== START
+
+> Editor Note: (to be removed before publication) Consideration of adding a OperatingModel.
+
+```mermdaid
+erDiagram
+DataModel ||--|{ Dataset : has
+Dataset ||--|{ Column : has
+Column ||--o{ Object : contains
+Object ||--|{ ObjectProperty : has
+
+OperatingModel ||..|{ Condition : has-verifiable-state
+
+Condition ||..|{ DataModel : applies-to
+Condition ||..|{ Dataset : applies-to
+Condition ||..|{ Column : applies-to
+
+Dataset }|..|| Attribute : conforms-to
+Column }|..|| Attribute : conforms-to
+ObjectProperty }|..|| Attribute : conforms-to
+
+%% Business Domain
+style OperatingModel fill:#cfe2ff,stroke:#666,stroke-width:1px
+
+%% Normative entities
+style Condition fill:#f8d7da,stroke:#666,stroke-width:1px
+style Attribute fill:#f8d7da,stroke:#666,stroke-width:1px
+
+%% Schema entities
+style DataModel fill:#d4edda,stroke:#666,stroke-width:1px
+style Dataset fill:#d4edda,stroke:#666,stroke-width:1px
+style Column fill:#d4edda,stroke:#666,stroke-width:1px
+style Object fill:#d4edda,stroke:#666,stroke-width:1px
+style ObjectProperty fill:#d4edda,stroke:#666,stroke-width:1px
+```
+
+**Nodes:**
+
+🟦 Blue — What exists in the provider's business (Operating Model)
+🟥 Red — What the specification says (Conditions and Attributes)
+🟩 Green — How the specification is represented (Data Model, Datasets, Columns, Objects, and Object Properties)
+
+=== END
+
 **Nodes:**
 
 * 🟩 FOCUS schema-level entity (normative subject)
