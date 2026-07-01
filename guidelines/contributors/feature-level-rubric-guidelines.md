@@ -65,6 +65,28 @@ Every leveling decision answers four questions.
 
 The one judgment call left is in input 1: Recommended versus Optional. Every other input has an answerable test.
 
+The four inputs route a proposed column to a level, while producibility sets its nullability on a separate axis:
+
+```mermaid
+flowchart TD
+    A["Proposed column, within a dataset"] --> B{"Input 1 Necessity: needed on a use-case OR dataset-structural basis?"}
+    B -->|"No: useful but not needed"| C{"Helps a Supported Feature across many operating models?"}
+    C -->|"Many"| R["Recommended"]
+    C -->|"Few, or a tie"| O["Optional"]
+    B -->|"Yes: needed"| D{"Input 4 Derivability: fully derivable from existing Mandatory columns?"}
+    D -->|"Yes: redundant"| RO["Recommended or Optional"]
+    D -->|"No"| E{"Input 2 Applicability variance: concept absent for at least one operating model?"}
+    E -->|"Yes"| CD["Conditional, gated on the operating-model Condition"]
+    E -->|"No: live for all"| M["Mandatory"]
+    subgraph NUL["Nullability, a separate axis, set by Input 3"]
+        direction TB
+        P{"Producibility: meaningful value always available where present?"} -->|"Yes"| NF["Allows nulls = False"]
+        P -->|"No"| NT["Allows nulls = True"]
+    end
+```
+
+Borderline applicability, where the concept is live for most operating models and dead for a few, is settled by the data-driven test in the companion mechanics guideline rather than by the binary shown here.
+
 ## Recording Why a Column is Conditional
 
 When a column is Conditional, record which kind of gate makes it so. This is rationale, not a new label.
