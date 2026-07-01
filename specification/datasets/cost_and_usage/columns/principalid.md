@@ -1,6 +1,6 @@
 # Principal ID
 
-A Principal ID is an identifier representing the [*principal*](#glossary:principal): an authorized actor (e.g., user account, service account, application) that initiated a request for a [*resource*](#glossary:resource) or [*service*](#glossary:service).  The Principal ID is commonly used in auditing to determine which actor initiated a [*charge*](#glossary:charge).
+A Principal ID is an identifier representing the [*principal*](#glossary:principal): an initiating or authorizing actor requesting [*resources*](#glossary:resource) or [*services*](#glossary:service). The Principal can differ from the downstream consumer or end-user on whose behalf the request is made (e.g., a gateway or proxy role acting for many end-users behind it). The Principal ID is commonly used in auditing to determine which actor initiated a [*charge*](#glossary:charge).
 
 > Note: While Principal ID is designed to capture opaque identifiers rather than plain-text names or email addresses, these values may still be classified as Personal Data or Personally Identifiable Information (PII) under privacy frameworks such as GDPR or CCPA (e.g., as pseudonymized data). Organizations need to separately ensure that the ingestion, storage, and processing of datasets containing this column comply with their internal data privacy, security, and retention policies.
 
