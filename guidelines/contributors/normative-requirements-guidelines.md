@@ -14,15 +14,14 @@ The guidelines cover authoring of normative requirements for the following entit
 The diagram below illustrates the relationships among these entities and identifies where normative requirements may be authored and applied throughout the FOCUS specification:
 
 ```mermaid
-erDiagram
 DataModel ||--|{ Dataset : has
 Dataset ||--|{ Column : has
 Column ||--o{ Object : contains
 Object ||--|{ ObjectProperty : has
 
-DataModel }|..|| Condition : conforms-to
-Dataset }|..|| Condition : conforms-to
-Column }|..|| Condition : conforms-to
+Condition ||..|{ DataModel : applies-to
+Condition ||..|{ Dataset : applies-to
+Condition ||..|{ Column : applies-to
 
 Dataset }|..|| Attribute : conforms-to
 Column }|..|| Attribute : conforms-to
