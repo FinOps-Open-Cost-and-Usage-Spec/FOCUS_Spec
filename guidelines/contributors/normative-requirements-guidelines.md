@@ -14,6 +14,7 @@ The guidelines cover authoring of normative requirements for the following entit
 The diagram below illustrates the relationships among these entities and identifies where normative requirements may be authored and applied throughout the FOCUS specification:
 
 ```mermaid
+erDiagram
 DataModel ||--|{ Dataset : has
 Dataset ||--|{ Column : has
 Column ||--o{ Object : contains
