@@ -42,7 +42,7 @@ style ObjectProperty fill:#d4edda,stroke:#666,stroke-width:1px
 
 === START
 
-> Editor Note: (to be removed before publication) Consideration of adding a OperatingModel.
+> Editor Note: (to be removed before submission to the group) Consideration of adding an Operating Model.
 
 * **FOCUS Operating Model** — a conceptual representation of the provider's business, billing, pricing, resource, and operational concepts that are standardized by FOCUS. The Operating Model defines the business states and relationships from which reusable Conditions are derived. These Conditions determine when normative requirements become applicable within the FOCUS Data Model.
 
