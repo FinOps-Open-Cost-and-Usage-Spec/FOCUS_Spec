@@ -8,6 +8,8 @@ It is the first of two parts: this part covers the principles, and a companion g
 
 The bar is simple. Two people applying these principles to the same new column should reach the same level, without the author in the room. They apply to existing and net-new columns alike.
 
+The unit of leveling is a column within a dataset, not a Column ID in the abstract. The same Column ID may appear in more than one dataset and carry a different level, nullability, or set of Conditions in each, because its necessity and applicability are judged per dataset.
+
 ## The Problem This Addresses
 
 Today a column's feature level is an output, not a choice. The level falls out of how the presence requirement happens to be written: an unconditional `MUST` gives Mandatory, a conditional `MUST` gives Conditional, a `SHOULD` gives Recommended, and a `MAY` gives Optional. Nothing decides what the requirement should be in the first place, so each column is leveled on its own.
@@ -24,11 +26,11 @@ These principles set the level on purpose, and keep the two questions apart.
 
 3. **Two axes, kept apart.** Level and nullability are decided separately. Level says whether the column is present, and when. Nullability says whether the value may be null when the column is present.
 
-4. **Honest nulls, never fabrication.** When a value is not meaningful or not available, it is null. FOCUS never asks a data generator to invent a placeholder value.
+4. **Honest nulls, never fabrication.** When a value is not meaningful or not available, it is null. FOCUS never asks a data generator to invent a placeholder value. A column that must always carry a value stays honest when a truthful value is always available, including one supplied by a defined fallback or derivation (for example, a cost that falls back to another cost when its unit price is null). That is not fabrication; fabrication is inventing a value where the truthful answer is null.
 
 5. **Derived-pair symmetry.** When a column and the column it derives from are both carried, they take the same level. A cost and the unit price it derives from are leveled together. This settles the cost-versus-price split by principle, not column by column.
 
-> **Note:** "Condition" here means an operating-model gate in the requirements model, where its schema key is `ApplicabilityCriteria`. This is a different thing from the per-rule `Condition` validation field that also appears in the model.
+> **Note:** "Condition" here means an operating-model gate in the requirements model, where its schema key is `ApplicabilityCriteria`. This is a different thing from the per-rule `Condition` validation field that also appears in the model. One Condition may gate a column's presence (feeding input 2, and making the column Conditional) or its nullability (feeding input 3, leaving the level unchanged). These are two roles for the same registry entry; only the presence role bears on the level.
 
 ## The Two Axes
 
@@ -52,10 +54,14 @@ Input 2 below decides which of these applies. The companion guideline gives the 
 
 Every leveling decision answers four questions.
 
-1. **Necessity.** Is the data needed for a FinOps use case in the FOCUS Supported Features, so that without it the use case breaks rather than just degrades? Needed routes to the `MUST` family (Mandatory or Conditional). Useful but not needed routes to `SHOULD` or `MAY` (Recommended or Optional). In that second branch, choose Recommended when the column helps a Supported Feature across many operating models, and Optional when it helps only a few. When the call is genuinely even, default to Optional.
-2. **Applicability variance.** Does the column apply to some operating models but not others? When at least one real operating model would have the column null on every row because the concept does not exist for it, the column is Conditional, gated on the Condition that marks the models where the concept is live. When the concept exists for every operating model and only some values are missing, the column is Mandatory, and input 3 sets its nullability. Cases in between, where the concept is live for most models and dead for a few, are settled by the data-driven test in the companion guideline, not by debate.
+1. **Necessity.** Is the data needed, so that without it something breaks rather than just degrades? A column is needed on either of two bases:
+    * **Use-case necessity.** The column is needed for a FinOps use case in the FOCUS Supported Features. Operationally, this shows up as the column appearing in a Supported Feature's Directly Dependent Columns list. Appearing only in a feature's Supporting Columns list is the useful-but-not-needed signal, not a necessity signal.
+    * **Dataset-structural necessity.** The column is needed for the dataset's own integrity rather than a downstream use case, such as a primary or foreign identifier, a period boundary, or record provenance. Supplemental and metadata datasets carry these, and the metadata Supported Features intentionally list their applicable metadata rather than dependent columns. A column needed on this basis takes the `MUST` family even though no feature depends on it.
+
+    Needed on either basis routes to the `MUST` family (Mandatory or Conditional). Useful but not needed routes to `SHOULD` or `MAY` (Recommended or Optional). In that second branch, choose Recommended when the column helps a Supported Feature across many operating models, and Optional when it helps only a few. When the call is genuinely even, default to Optional. A Mandatory or Conditional column that satisfies neither necessity basis is a signal to re-level, not to reverse-engineer a use case for it.
+2. **Applicability variance.** Does the column apply to some operating models but not others? When at least one real operating model would have the column null on every row because the concept does not exist for it, the column is Conditional, gated on the Condition that marks the models where the concept is live. When the concept exists for every operating model and only some values are missing, the column is Mandatory, and input 3 sets its nullability. Cases in between, where the concept is live for most models and dead for a few, are settled by the data-driven test in the companion guideline, not by debate. Read only the Conditions that gate the column's presence for this test. A Condition that instead gates nullability (whether the value may be null when the column is present) leaves the level Mandatory and feeds input 3, not this one; do not read a nullability gate as an applicability gate.
 3. **Producibility.** When the column applies, can the operating model produce a meaningful value, or is the honest answer null? Set Allows nulls = False only when a meaningful value is always available on every row where the column is present. Otherwise set Allows nulls = True, and use null wherever the value is not meaningful or not available. This sets nullability, never the level, and never licenses fabrication.
-4. **Derivability.** Can the column already be computed from existing Mandatory columns? A fully derivable column is not made a Mandatory obligation, since that is redundant work for the producer; when it is carried at all, it is Recommended or Optional. This holds even when the data is needed (input 1): the need is already met by the Mandatory columns the value derives from, so the derived column is not itself Mandatory. This does not clash with derived-pair symmetry (principle 5): derivability keeps a redundant column below Mandatory, while symmetry levels two columns that are both kept.
+4. **Derivability.** Can the column already be computed from existing Mandatory columns? A fully derivable column is not made a Mandatory obligation, since that is redundant work for the producer; when it is carried at all, it is Recommended or Optional. This holds even when the data is needed (input 1): the need is already met by the Mandatory columns the value derives from, so the derived column is not itself Mandatory. This does not clash with derived-pair symmetry (principle 5): derivability keeps a redundant column below Mandatory, while symmetry levels two columns that are both kept. Derivability covers more than arithmetic: a value produced by lookup from another column (a display name from its identifier) or by conversion (a cost expressed in another currency) is derivable too. The companion guideline supplies the machine-readable derivation source that records, per column, what it derives from and by what kind of relation.
 
 The one judgment call left is in input 1: Recommended versus Optional. Every other input has an answerable test.
 
@@ -92,10 +98,26 @@ This example is informative. It runs the four inputs for one column, RegionId.
 
 Result: RegionId is Conditional, gated on the regions Condition, Allows nulls = True. The companion guideline confirms the borderline cases with its data-driven test.
 
+A second example, for a dataset-structural column, ContractCommitmentId.
+
+* **Necessity.** No Supported Feature lists ContractCommitmentId as a dependent column, but the Contract Commitment dataset cannot function without its primary identifier, since rows cannot be joined or de-duplicated without it. It is needed on the dataset-structural basis, so it is in the `MUST` family even though no feature depends on it.
+* **Applicability variance.** Every Contract Commitment dataset has commitments to identify, so the concept is live for every operating model that produces the dataset. The column is Mandatory, not Conditional.
+* **Producibility.** An identifier is always available where the dataset exists, so Allows nulls = False.
+* **Derivability.** It cannot be computed from another column, so derivability does not apply.
+
+Result: ContractCommitmentId is Mandatory, Allows nulls = False, on the dataset-structural necessity basis, with no Supported Feature dependency required.
+
 ## Scope of This Guidance
 
 In scope here: the principles, the two axes, the four decision inputs, the gate taxonomy, and the two-layer output.
 
-In the companion mechanics guideline: the step-by-step procedure, the data-driven test for applicability variance (the matrix and flip criterion), the back-test against current columns, and the machine-readable check.
+In the companion mechanics guideline: the step-by-step procedure, the data-driven test for applicability variance (the matrix and flip criterion), the back-test against current columns, and the machine-readable check. The machine-readable check in particular must:
+
+* **Read every surface a gate can live on.** A column's presence requirement can sit in the dataset requirements ("MUST include X when the operating model includes Y"), its applicability Conditions on the composite and dataset-level model rules, and its intrinsic nullability in the column requirements. Reading only the column file yields false negatives.
+* **Consume a machine-readable derivation source.** Input 4 needs a per-column record of what each column derives from and by what relation (arithmetic, lookup, or conversion), rather than prose equalities scattered across column files.
+* **Resolve to a single Conditions registry of record.** As the registry becomes a first-class list, the check names the canonical registry, requires each Conditional column to be wired to a Condition in it, and carries the crosswalk from any legacy criteria keys.
+* **Plan the back-test's re-leveling output.** The back-test will flag existing Mandatory columns that satisfy neither necessity basis (administrative and audit columns are the common case). The guidance says how to handle them: re-level, or record the dataset-structural basis that keeps them Mandatory.
+
+Before the back-test can run, the Supported Features must actually name the columns each use case depends on. A column needed on the use-case basis but absent from every Directly Dependent Columns list has nothing for input 1 to point at, so completing that coverage, especially for the supplemental datasets, is a prerequisite the mechanics guideline calls out rather than assumes.
 
 The principles stand on their own. A team can adopt them without waiting for the mechanics.
