@@ -4,13 +4,13 @@
 
 This guideline gives the principles for setting a FOCUS column's feature level and nullability. Apply them when a column is proposed, so the level is decided up front instead of argued out after the column ships.
 
-It is the first of two parts. This part covers the principles, the two axes, the four decision inputs, the gate taxonomy, and the two-layer output. A companion guideline covers the mechanics: the step-by-step procedure, the data-driven test for whether a column is universal, the back-test, and the machine-readable check.
+It is the first of two parts: this part covers the principles, and a companion guideline covers the mechanics. Scope of This Guidance, at the end, lists what falls in each part.
 
 The bar is simple. Two people applying these principles to the same new column should reach the same level, without the author in the room. They apply to existing and net-new columns alike.
 
 ## The Problem This Addresses
 
-Today a column's feature level is an output, not a choice. The level falls out of how the presence requirement happens to be written: an unconditional `MUST` gives Mandatory, a conditional `MUST` gives Conditional, a `SHOULD` gives Recommended, and a `MAY` gives Optional. Nothing decides what the requirement should be in the first place, so each column was leveled on its own.
+Today a column's feature level is an output, not a choice. The level falls out of how the presence requirement happens to be written: an unconditional `MUST` gives Mandatory, a conditional `MUST` gives Conditional, a `SHOULD` gives Recommended, and a `MAY` gives Optional. Nothing decides what the requirement should be in the first place, so each column is leveled on its own.
 
 Two problems followed. First, two separate questions got treated as one: whether a column is present (the level), and whether its value may be null (nullability). "Always present, value may be null" is not the same as "present only when it applies." Second, similar columns drifted to different levels with no rule to settle it, such as the split between cost and price columns and the different handling of Account and Provider columns.
 
@@ -28,7 +28,7 @@ These principles set the level on purpose, and keep the two questions apart.
 
 5. **Derived-pair symmetry.** When a column and the column it derives from are both carried, they take the same level. A cost and the unit price it derives from are leveled together. This settles the cost-versus-price split by principle, not column by column.
 
-> **Note:** "Condition" here means an operating-model gate in the requirements model. Its current schema key is `ApplicabilityCriteria`, and the rename to Condition is in progress. This is a different thing from the per-rule `Condition` validation field that also appears in the model.
+> **Note:** "Condition" here means an operating-model gate in the requirements model, where its schema key is `ApplicabilityCriteria`. This is a different thing from the per-rule `Condition` validation field that also appears in the model.
 
 ## The Two Axes
 
@@ -53,9 +53,9 @@ Input 2 below decides which of these applies. The companion guideline gives the 
 Every leveling decision answers four questions.
 
 1. **Necessity.** Is the data needed for a FinOps use case in the FOCUS Supported Features, so that without it the use case breaks rather than just degrades? Needed routes to the `MUST` family (Mandatory or Conditional). Useful but not needed routes to `SHOULD` or `MAY` (Recommended or Optional). In that second branch, choose Recommended when the column helps a Supported Feature across many operating models, and Optional when it helps only a few. When the call is genuinely even, default to Optional.
-2. **Applicability variance.** Does the column apply to some operating models but not others? If at least one real operating model would have the column null on every row because the concept does not exist for it, the column is Conditional, gated on the Condition that marks the models where the concept is live. If the concept exists for every operating model and only some values are missing, the column is Mandatory, and input 3 sets its nullability. Cases in between, where the concept is live for most models and dead for a few, are settled by the data-driven test in the companion guideline, not by debate.
+2. **Applicability variance.** Does the column apply to some operating models but not others? When at least one real operating model would have the column null on every row because the concept does not exist for it, the column is Conditional, gated on the Condition that marks the models where the concept is live. When the concept exists for every operating model and only some values are missing, the column is Mandatory, and input 3 sets its nullability. Cases in between, where the concept is live for most models and dead for a few, are settled by the data-driven test in the companion guideline, not by debate.
 3. **Producibility.** When the column applies, can the operating model produce a meaningful value, or is the honest answer null? Set Allows nulls = False only when a meaningful value is always available on every row where the column is present. Otherwise set Allows nulls = True, and use null wherever the value is not meaningful or not available. This sets nullability, never the level, and never licenses fabrication.
-4. **Derivability.** Can the column already be computed from existing Mandatory columns? A fully derivable net-new column is not added as a Mandatory obligation, since that is redundant work for the producer; if it is carried at all, it is Recommended or Optional. This does not clash with derived-pair symmetry (principle 5): derivability keeps a redundant net-new column below Mandatory, while symmetry levels two columns that are both kept.
+4. **Derivability.** Can the column already be computed from existing Mandatory columns? A fully derivable column is not made a Mandatory obligation, since that is redundant work for the producer; when it is carried at all, it is Recommended or Optional. This holds even when the data is needed (input 1): the need is already met by the Mandatory columns the value derives from, so the derived column is not itself Mandatory. This does not clash with derived-pair symmetry (principle 5): derivability keeps a redundant column below Mandatory, while symmetry levels two columns that are both kept.
 
 The one judgment call left is in input 1: Recommended versus Optional. Every other input has an answerable test.
 
@@ -85,7 +85,7 @@ Keeping the normative layer free of categories is what lets a level be tested fo
 
 This example is informative. It runs the four inputs for one column, RegionId.
 
-* **Necessity.** Region is needed for use cases such as latency-aware placement and regional cost allocation, so it is in the `MUST` family.
+* **Necessity.** Region is needed for the Location supported feature (for example, allocating cost by region), so without it that use case breaks rather than just degrades. That places it in the `MUST` family.
 * **Applicability variance.** Some operating models have no customer-visible region (a flat-rate business SaaS, say) and would have RegionId null on every row. Applicability varies, so the column is Conditional, gated on the Condition that the model includes regions.
 * **Producibility.** When the model includes regions, a region is available, though not always on every row, so Allows nulls = True.
 * **Derivability.** Region cannot be computed from another Mandatory column, so derivability does not apply.
