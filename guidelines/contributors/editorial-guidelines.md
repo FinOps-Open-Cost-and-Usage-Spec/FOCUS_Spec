@@ -366,10 +366,11 @@ To ensure consistent language when describing relationships and evaluations betw
 
 * **No Header Usage:** Exceptions MUST NOT use Markdown headers (e.g., `#### Exceptions`).
 
-* **Exception Label:**
-  * Exceptions MUST begin with the inline label `**Exception:**` or `**Exceptions:**` (the term `Exception` or `Exceptions`, followed by a colon and formatted in bold).
-  * In Guidelines, a semantic qualifier MAY be included as part of the label using the format `**Exception for <Topic>:**` or `**Exceptions for <Topic>:**` to support cross-referencing and automated processing. When used, semantic qualifiers SHOULD be applied consistently throughout the document.
-  * In Normative Requirements Guidelines, a semantic qualifier MUST be included using the format `**Exception for <Topic>:**` or `**Exceptions for <Topic>:**`.
+* **Exception Label:** Exceptions MUST begin with the inline label `**Exception [for <Topic>]:**` or `**Exceptions [for <Topic>]:**` (the term `Exception` or `Exceptions`, with or without a semantic qualifier `for <Topic>`, followed by a colon, formatted in bold).
+  * A semantic qualifier SHOULD be included in Normative Requirements Guidelines to support cross-referencing and automated processing.
+  * A semantic qualifier MAY be included in other guidelines.
+  * When used, semantic qualifiers SHOULD be applied consistently throughout the document.
+
 * **Consistent Terminology:** Only the term `Exception` or `Exceptions` MUST be used. Variants such as `Special Case`, `Caveat`, or similar terms MUST NOT be used.
 
 * **Structural Relationship:** Exceptions MUST be directly associated with the content they modify and SHOULD appear immediately after the relevant content.
@@ -383,7 +384,7 @@ To ensure consistent language when describing relationships and evaluations betw
 * **Example** (Markdown, illustrative):
 
   ```md
-  **Exceptions:** This is a single-line exception.
+  **Exception:** This is a single-line exception.
   ```
 
 * **Example** (Markdown, illustrative):
