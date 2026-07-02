@@ -95,7 +95,7 @@ GROUP BY
 
 ```sql
 SELECT
-  resource_id,
+  ResourceId,
   elements.allocated_ratio,
   elements.usage_unit,
   elements.usage_quantity

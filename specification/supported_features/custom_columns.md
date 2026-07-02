@@ -21,7 +21,7 @@ WHERE ServiceName = ?
 GROUP BY
   BillingPeriodStart,
   x_CustomColumn
-ORDER BY MonthlyCost DESC
+ORDER BY TotalBilledCost DESC
 ```
 
 ## Version Introduced

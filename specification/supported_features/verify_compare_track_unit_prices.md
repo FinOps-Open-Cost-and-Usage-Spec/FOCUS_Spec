@@ -30,7 +30,7 @@ SELECT DISTINCT
   SkuId,
   SkuPriceId,
   SkuPriceDetails,
-  BillingPeriodId,
+  BillingPeriodStart,
   ChargePeriodStart,
   ChargePeriodEnd,
   BillingCurrency,
