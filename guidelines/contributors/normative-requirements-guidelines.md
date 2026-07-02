@@ -541,7 +541,7 @@ ContractCommitment MUST adhere to the following requirements:
 * ...
 ```
 
-> **Note:** The dataset presence-related bullet is a structural parent bullet (context variant). It is not, in itself, a normative requirement and does not define a normative constraint. It serves only as a grouping context. See [Structural Parent Bullet](#structural-parent-bullet) and [Composite Requirements](#composite-requirements) sections for details.
+> **Note:** The column presence-related bullet is a structural parent bullet (context variant). It is not, in itself, a normative requirement and does not define a normative constraint. It serves only as a grouping context. See [Structural Parent Bullet](#structural-parent-bullet) and [Composite Requirements](#composite-requirements) sections for details.
 
 #### **Cost and Usage**
 
