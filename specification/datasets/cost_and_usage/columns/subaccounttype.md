@@ -9,7 +9,7 @@ SubAccountType MUST adhere to the following requirements:
 * SubAccountType MUST be of type String.
 * SubAccountType MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * SubAccountType MUST adhere to the following nullability requirements:
-  * SubAccountType MUST be null when [SubAccountId](#datasets.costandusage.subaccountid) is null.
+  * SubAccountType MUST be null when [SubAccountId](#datamodel.costandusage.subaccountid) is null.
   * SubAccountType MUST NOT be null when SubAccountId is not null.
 * SubAccountType MUST be a consistent, readable display value.
 
@@ -29,7 +29,7 @@ A service-provider-assigned name to identify the type of *sub account*.
 
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Dataset         | [Cost and Usage](#datamodel.costandusage)             |
 | Column type     | Dimension                                            |
 | Feature level   | Conditional                                          |
 | Allows nulls    | True                                                 |

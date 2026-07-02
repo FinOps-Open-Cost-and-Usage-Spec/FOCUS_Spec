@@ -29,7 +29,7 @@ A service-provider-specified measurement unit for the amount declared in Contrac
 
 | Constraint      | Value                                                |
 |:----------------|:-----------------------------------------------------|
-| Dataset         | [Contract Commitment](#datasets.contractcommitment)  |
+| Dataset         | [Contract Commitment](#datamodel.contractcommitment)  |
 | Column type     | Dimension                                            |
 | Feature level   | Mandatory                                            |
 | Allows nulls    | True                                                 |

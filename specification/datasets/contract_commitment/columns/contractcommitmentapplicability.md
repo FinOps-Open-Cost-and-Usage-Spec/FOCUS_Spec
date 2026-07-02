@@ -11,14 +11,14 @@ ContractCommitmentApplicability MUST adhere to the following requirements:
 * ContractCommitmentApplicability MUST be of type JSON Object (serialized as a String where necessary).
 * ContractCommitmentApplicability MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * ContractCommitmentApplicability MUST conform to [JsonObjectFormat](#attributes.jsonobjectformat) requirements.
-* ContractCommitmentApplicability MUST conform to [ContractCommitmentApplicabilityObject](#datasets.contractcommitment.contractcommitmentapplicability.contractcommitmentapplicabilityobject) requirements.
+* ContractCommitmentApplicability MUST conform to [ContractCommitmentApplicabilityObject](#datamodel.contractcommitment.contractcommitmentapplicability.contractcommitmentapplicabilityobject) requirements.
 * ContractCommitmentApplicability MUST NOT be null.
 
 ## Contract Commitment Applicability Object
 
 Contract Commitment Applicability consists of a valid JSON object which contains a set of top-level property keys. These keys define entity-based inclusionary and exclusionary logic, as well as the portion of relevant cost and/or usage that is applicable to the *contract commitment*.
 
-The following section details the normative requirements for the ContractCommitmentApplicabilityObject and its nested properties. For a logical overview of the expected content, see the [Schema Structure](#datasets.contractcommitment.contractcommitmentapplicability.contractcommitmentapplicabilityobject.objectschemastructure) and [Object Example](#datasets.contractcommitment.contractcommitmentapplicability.contractcommitmentapplicabilityobject.objectexample) sections.
+The following section details the normative requirements for the ContractCommitmentApplicabilityObject and its nested properties. For a logical overview of the expected content, see the [Schema Structure](#datamodel.contractcommitment.contractcommitmentapplicability.contractcommitmentapplicabilityobject.objectschemastructure) and [Object Example](#datamodel.contractcommitment.contractcommitmentapplicability.contractcommitmentapplicabilityobject.objectexample) sections.
 
 ### Object Requirements
 
@@ -31,8 +31,8 @@ ContractCommitmentApplicabilityObject MUST adhere to the following requirements:
 * ContractCommitmentApplicabilityObject.Applicability.Usage MUST represent the fraction of an eligible charge's usage that is applicable to the commitment (0.0 to 1.0).
 * ContractCommitmentApplicabilityObject.Inclusions[\*].Applicability.Cost MUST represent the fraction of an eligible charge's cost that is applicable to the commitment (0.0 to 1.0).
 * ContractCommitmentApplicabilityObject.Inclusions[\*].Applicability.Usage MUST represent the fraction of an eligible charge's usage that is applicable to the commitment (0.0 to 1.0).
-* ContractCommitmentApplicabilityObject.Inclusions[\*].Dimension SHOULD represent a column in [Cost and Usage](#datasets.costandusage).
-* ContractCommitmentApplicabilityObject.Exclusions[\*].Dimension SHOULD represent a column in [Cost and Usage](#datasets.costandusage).
+* ContractCommitmentApplicabilityObject.Inclusions[\*].Dimension SHOULD represent a column in [Cost and Usage](#datamodel.costandusage).
+* ContractCommitmentApplicabilityObject.Exclusions[\*].Dimension SHOULD represent a column in [Cost and Usage](#datamodel.costandusage).
 * ContractCommitmentApplicabilityObject.Inclusions[\*].Values MUST contain only the single string "*" when the wildcard is present.
 * ContractCommitmentApplicabilityObject.Exclusions[\*].Values MUST contain only the single string "*" when the wildcard is present.
 
@@ -113,7 +113,7 @@ The evaluation of an entity against a commitment applicability must follow a str
 
 <div class="h7-nonindex">Integration with Commitment Logic</div>
 
-The evaluation of **Applicability** percentages must be contextually aligned with the [Contract Commitment Model](#datasets.contractcommitment.contractcommitmentmodel) and [Contract Commitment Fulfillment Interval](#datasets.contractcommitment.contractcommitmentfulfillmentinterval):
+The evaluation of **Applicability** percentages must be contextually aligned with the [Contract Commitment Model](#datamodel.contractcommitment.contractcommitmentmodel) and [Contract Commitment Fulfillment Interval](#datamodel.contractcommitment.contractcommitmentfulfillmentinterval):
 
 * **Continuous Models:** Applicability percentages must be applied to each discrete unit of activity (e.g., every hour) within the **Fulfillment Interval**. If the commitment is not fully utilized by eligible entities within that hour, the remaining capacity expires.
 * **Discontinuous Models:** Applicability percentages determine the portion of aggregate activity that counts toward fulfillment over the entire **Interval** (e.g., a full year).
@@ -173,13 +173,13 @@ A structured definition of the specific entities to which a contract commitment 
 
 | Constraint | Value |
 | :--- | :--- |
-| Dataset | [Contract Commitment](#datasets.contractcommitment) |
+| Dataset | [Contract Commitment](#datamodel.contractcommitment) |
 | Column type | Dimension / Metric |
 | Feature level | Mandatory |
 | Allows nulls | False |
 | Data type | JSON |
 | Value format | [JSON Object Format](#attributes.jsonobjectformat) |
-| Object | [ContractCommitmentApplicabilityObject](#datasets.contractcommitment.contractcommitmentapplicability.contractcommitmentapplicabilityobject) |
+| Object | [ContractCommitmentApplicabilityObject](#datamodel.contractcommitment.contractcommitmentapplicability.contractcommitmentapplicabilityobject) |
 
 ## Version Introduced
 
