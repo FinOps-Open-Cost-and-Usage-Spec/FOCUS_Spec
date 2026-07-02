@@ -1,6 +1,8 @@
 # Contracted Unit Price
 
-The Contracted Unit Price represents the agreed-upon unit price for a single [Pricing Unit](#datasets.costandusage.pricingunit) of the associated SKU, inclusive of [*negotiated discounts*](#glossary:negotiated-discount), if present, while excluding negotiated [*commitment discounts*](#glossary:commitment-discount) or any other discounts. This price is denominated in the [Billing Currency](#datasets.costandusage.billingcurrency). The Contracted Unit Price is commonly used for calculating savings based on negotiation activities. If negotiated discounts are not applicable, the Contracted Unit Price defaults to the [List Unit Price](#datasets.costandusage.listunitprice).
+Contracted Unit Price represents the agreed-upon unit price for a single [Pricing Unit](#datasets.costandusage.pricingunit) of the associated SKU, inclusive of all pricing adjustments unconditionally guaranteed by the governing contract, while excluding pricing adjustments contingent on the active status, activation, or remaining balance of a discount-bearing commitment program. For SKUs with volume-based or time-based tiered pricing, it reflects the applicable unit price per tier under any custom tier configuration specific to the customer's contract. If no negotiated pricing adjustments unconditionally guaranteed by the governing contract are applicable, the Contracted Unit Price defaults to the [List Unit Price](#datasets.costandusage.listunitprice).
+
+Contracted Unit Price is denominated in the [Billing Currency](#datasets.costandusage.billingcurrency). Contracted Unit Price is commonly used for calculating savings based on negotiation activities.
 
 ## Requirements
 
@@ -32,7 +34,7 @@ Contracted Unit Price
 
 ## Description
 
-The agreed-upon unit price for a single Pricing Unit of the associated SKU, inclusive of negotiated discounts, if present, while excluding negotiated commitment discounts or any other discounts.
+The agreed-upon unit price for a single Pricing Unit of the associated SKU, inclusive of all pricing adjustments unconditionally guaranteed by the governing contract and excluding pricing adjustments contingent on the active status, activation, or remaining balance of a discount-bearing commitment program, reflecting the applicable unit price per tier for SKUs with volume-based or time-based tiered pricing.
 
 ## Content Constraints
 

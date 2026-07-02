@@ -1,6 +1,8 @@
 # List Unit Price
 
-The List Unit Price represents the suggested service-provider-published unit price for a single [Pricing Unit](#datasets.costandusage.pricingunit) of the associated SKU, exclusive of any discounts. This price is denominated in the [Billing Currency](#datasets.costandusage.billingcurrency). The List Unit Price is commonly used for calculating savings based on various rate optimization activities.
+List Unit Price represents the suggested service-provider-published unit price for a single [Pricing Unit](#datasets.costandusage.pricingunit) of the associated SKU, exclusive of any discounts. For SKUs with volume-based or time-based tiered pricing, it reflects the applicable published unit price per tier, which may be reduced at higher consumption or duration tiers.
+
+List Unit Price is denominated in the [Billing Currency](#datasets.costandusage.billingcurrency). List Unit Price is commonly used for calculating savings based on various rate optimization activities.
 
 ## Requirements
 
@@ -32,7 +34,7 @@ List Unit Price
 
 ## Description
 
-The suggested service-provider-published unit price for a single Pricing Unit of the associated SKU, exclusive of any discounts.
+The suggested service-provider-published unit price for a single Pricing Unit of the associated SKU, exclusive of any discounts, reflecting the applicable published unit price per tier for SKUs with volume-based or time-based tiered pricing.
 
 ## Content Constraints
 
