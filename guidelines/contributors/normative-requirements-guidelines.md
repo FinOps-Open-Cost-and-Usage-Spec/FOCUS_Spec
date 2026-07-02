@@ -749,6 +749,8 @@ FOCUS defines two JSON-based value formats for columns: Key-Value Format and JSO
     * <ColumnId> MUST be <SpecificRequirement>.
 ```
 
+> **Note:** The condition-related parent bullet is a structural parent bullet (condition variant). It is not, in itself, a normative requirement and does not define a normative constraint. It serves only as a shared condition for its nested requirements. See [Structural Parent Bullet](#structural-parent-bullet) and [Composite Requirements](#composite-requirements) sections for details.
+
 ### Consistent Wording and Patterns in Column Requirements
 
 To ensure clarity and consistency across columns and corresponding requirements, it is important to:
