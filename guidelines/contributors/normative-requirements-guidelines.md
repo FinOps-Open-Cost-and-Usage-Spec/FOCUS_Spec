@@ -155,9 +155,9 @@ For **Attribute Requirements** sections, a different canonical form applies:
 
 See [Section Structural Anchor Requirement for Attributes](#structural-anchor-requirement-for-attributes) for details.
 
-### Structural Parent Bullet
+### Structural Grouping Bullet
 
-A **structural parent bullet** defines the scope for a set of nested normative requirements but is not itself a normative requirement. The verifiable constraints are carried exclusively by the nested bullets. A structural parent bullet appears in two variants: a condition variant and a context variant.
+A **structural grouping bullet** defines the scope for a set of nested normative requirements but is not itself a normative requirement. The verifiable constraints are carried exclusively by the nested bullets. A structural grouping bullet appears in two variants: a condition variant and a context variant.
 
 See [Composite Requirements](#composite-requirements) for the rules governing the full parent + nested structure.
 
@@ -173,7 +173,7 @@ When <Condition>, <Subject> MUST adhere to the following requirements:
 
 #### Context Variant
 
-A context variant introduces a shared context that groups related nested bullets for readability purposes, without introducing a shared condition. Structural grouping bullets are used in the following contexts: **Column presence groupings** and **Nullability groupings**.
+A context variant introduces a shared context that groups related nested bullets for readability purposes, without introducing a shared condition. Context variant structural grouping bullets are used in the following contexts: **Column presence groupings** and **Nullability groupings**.
 
 * **Column presence groupings** in dataset requirements, where the context precedes the BCP 14 keyword. It uses the following canonical form:
 
@@ -541,7 +541,7 @@ ContractCommitment MUST adhere to the following requirements:
 * ...
 ```
 
-> **Note:** The column presence-related bullet is a structural parent bullet (context variant). It is not, in itself, a normative requirement and does not define a normative constraint. It serves only as a grouping context. See [Structural Parent Bullet](#structural-parent-bullet) and [Composite Requirements](#composite-requirements) sections for details.
+> **Note:** The column presence-related bullet is a structural grouping bullet (context variant). It is not, in itself, a normative requirement and does not define a normative constraint. It serves only as a grouping context. See [Structural Grouping Bullet](#structural-grouping-bullet) and [Composite Requirements](#composite-requirements) sections for details.
 
 #### **Cost and Usage**
 
@@ -567,7 +567,7 @@ CostAndUsage MUST adhere to the following requirements:
 * ...
 ```
 
-> **Note:** The column presence-related bullet is a structural parent bullet (context variant). It is not, in itself, a normative requirement and does not define a normative constraint. It serves only as a grouping context. See [Structural Parent Bullet](#structural-parent-bullet) and [Composite Requirements](#composite-requirements) sections for details.
+> **Note:** The column presence-related bullet is a structural grouping bullet (context variant). It is not, in itself, a normative requirement and does not define a normative constraint. It serves only as a grouping context. See [Structural Grouping Bullet](#structural-grouping-bullet) and [Composite Requirements](#composite-requirements) sections for details.
 
 ## Column Requirements
 
@@ -694,7 +694,7 @@ FOCUS defines two JSON-based value formats for columns: Key-Value Format and JSO
 
 ### Grouping of Nullability-Related and Subsequent Column Requirements
 
-* When there is only one nullability-related requirement, state it directly. If there are multiple, list them as nested bullets under a structural parent bullet (context variant) (see [Structural Parent Bullet](#structural-parent-bullet)) using the following pattern:
+* When there is only one nullability-related requirement, state it directly. If there are multiple, list them as nested bullets under a structural grouping bullet (context variant) (see [Structural Grouping Bullet](#structural-grouping-bullet)) using the following pattern:
 
 ```markdown
 * <ColumnId> MUST adhere to the following nullability requirements:
@@ -719,7 +719,7 @@ FOCUS defines two JSON-based value formats for columns: Key-Value Format and JSO
     * <ColumnId> MAY be null when <Condition>.
 ```
 
-> **Note:** The column nullability-related bullet is a structural parent bullet (context variant). It is not, in itself, a normative requirement and does not define a normative constraint. It serves only as a grouping context. See [Structural Parent Bullet](#structural-parent-bullet) and [Composite Requirements](#composite-requirements) sections for details.
+> **Note:** The column nullability-related bullet is a structural grouping bullet (context variant). It is not, in itself, a normative requirement and does not define a normative constraint. It serves only as a grouping context. See [Structural Grouping Bullet](#structural-grouping-bullet) and [Composite Requirements](#composite-requirements) sections for details.
 
 ### Grouping of Column Requirements Based on Specific Conditions
 
