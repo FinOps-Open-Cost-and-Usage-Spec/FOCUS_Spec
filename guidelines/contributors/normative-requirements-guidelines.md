@@ -194,7 +194,7 @@ A context variant introduces a shared context that groups related nested bullets
 
 ### Standalone Requirements
 
-In a standalone requirement, the bullet and the normative requirement have a one-to-one correspondence. Standalone normative requirement use the following canonical form:
+In a standalone requirement, the bullet and the normative requirement have a one-to-one correspondence. Standalone normative requirements use the following canonical form:
 
 ``` markdown
 * <Subject> <BCP 14 Keyword> <Verifiable State Descriptor> [+ Conditions]
@@ -1067,7 +1067,7 @@ When an Attribute uses `*FOCUS dataset column*` as the subject:
 * Typically references other attributes (e.g., `NullHandling`, `DateTimeFormat`, `NumericFormat`) with `SHOULD conform` to establish recommended conformance for custom columns.
 * Lists specific requirements that must remain mandatory for custom columns (e.g., documented schema for JSON objects, single numeric value for numeric columns).
 
-Datasets declare conformance to `CustomColumnHandling` for custom columns using the pattern:
+Datasets declare conformance to `CustomColumnHandling` for custom columns using the following pattern:
 
 ```markdown
 * <DatasetId> *custom columns* MUST conform to CustomColumnHandling requirements.
