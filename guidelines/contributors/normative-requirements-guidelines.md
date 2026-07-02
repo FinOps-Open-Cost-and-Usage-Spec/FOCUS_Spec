@@ -167,10 +167,10 @@ See [Composite Requirements](#composite-requirements) for the rules governing th
 A condition variant introduces a shared condition that applies to all nested bullets. It uses the following canonical form:
 
 ``` markdown
-When <Condition>, <Subject> MUST adhere to the following requirements:
+* When <Condition>, <Subject> MUST adhere to the following requirements:
 ```
 
-* **Example** (illustrative): `When ListUnitPrice is not null, ListUnitPrice MUST adhere to the following requirements:`
+* **Example** (illustrative): `* When ListUnitPrice is not null, ListUnitPrice MUST adhere to the following requirements:`
 
 #### Context Variant
 
@@ -179,27 +179,25 @@ A context variant introduces a shared context that groups related nested bullets
 * **Column presence groupings** in dataset requirements, where the context precedes the BCP 14 keyword. It uses the following canonical form:
 
 ``` markdown
-<Subject> <context> MUST adhere to the following requirements:
+* <Subject> <context> MUST adhere to the following requirements:
 ```
 
-* **Example** (illustrative): `ContractCommitment column presence MUST adhere to the following requirements:`
+* **Example** (illustrative): `* ContractCommitment column presence MUST adhere to the following requirements:`
 
 * **Nullability groupings** in column requirements, where the context follows the BCP 14 keyword. It uses the following canonical form:
 
 ``` markdown
-<Subject> MUST adhere to the following <context> requirements:
+* <Subject> MUST adhere to the following <context> requirements:
 ```
 
-* **Example** (illustrative): `CommitmentDiscountQuantity MUST adhere to the following nullability requirements:`
+* **Example** (illustrative): `* CommitmentDiscountQuantity MUST adhere to the following nullability requirements:`
 
 ### Standalone Requirements
 
-In a standalone requirement, the bullet and the normative requirement have a one-to-one correspondence. 
-
-The recommended pattern for a standalone normative requirement is:
+In a standalone requirement, the bullet and the normative requirement have a one-to-one correspondence. Standalone normative requirement use the following canonical form:
 
 ``` markdown
-<Subject [+qualifier]> <BCP 14 Keyword> <Verifiable State Descriptor> [+ Conditions]
+* <Subject> <BCP 14 Keyword> <Verifiable State Descriptor> [+ Conditions]
 ```
 
 ### Composite Requirements
