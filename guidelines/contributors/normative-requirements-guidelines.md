@@ -197,7 +197,7 @@ A context variant introduces a shared context that groups related nested bullets
 In a standalone requirement, the bullet and the normative requirement have a one-to-one correspondence. Standalone normative requirements use the following canonical form:
 
 ``` markdown
-* <Subject> <BCP 14 Keyword> <Verifiable State Descriptor> [+ Conditions]
+* <Subject> <BCP 14 Keyword> <Verifiable State Descriptor>[ Conditions].
 ```
 
 ### Composite Requirements
@@ -255,24 +255,24 @@ The normative subject MUST be a schema-level entity or specific documentation, s
 
 ##### Dataset Subjects
 
-* **FOCUS Dataset**, whereby use of:  
-  * `FOCUS dataset` keyword represents any FOCUS dataset  
-  * `FOCUS dataset` keyword with a qualifier represents a qualified subset of FOCUS datasets  
+* **FOCUS Dataset**, whereby use of:
+  * `FOCUS dataset` keyword represents any FOCUS dataset
+  * `FOCUS dataset` keyword with a qualifier represents a qualified subset of FOCUS datasets
   * A single FOCUS dataset explicitly identified by `<FOCUS Dataset ID>` (e.g., `CostAndUsage`)
 
 ##### Dataset Column Subjects
 
-* **FOCUS Dataset Column**, whereby use of:  
-  * `FOCUS dataset column` keyword represents any column in a FOCUS dataset (either a FOCUS column or a custom column)  
+* **FOCUS Dataset Column**, whereby use of:
+  * `FOCUS dataset column` keyword represents any column in a FOCUS dataset (either a FOCUS column or a custom column)
   * `FOCUS dataset column` keyword with a qualifier represents a qualified subset of FOCUS dataset columns (e.g., `FOCUS dataset column containing numeric values`)
 
-* **FOCUS Column**, whereby use of:  
-  * `FOCUS column` keyword represents any FOCUS column  
-  * `FOCUS column` keyword with a qualifier represents a qualified subset of FOCUS columns (e.g., `FOCUS column containing numeric values`)  
+* **FOCUS Column**, whereby use of:
+  * `FOCUS column` keyword represents any FOCUS column
+  * `FOCUS column` keyword with a qualifier represents a qualified subset of FOCUS columns (e.g., `FOCUS column containing numeric values`)
   * A single FOCUS column explicitly identified by `<FOCUS Column ID>` (e.g., `BilledCost`)
 
-* **Custom Column**, whereby use of:  
-  * `Custom column` keyword represents any custom column  
+* **Custom Column**, whereby use of:
+  * `Custom column` keyword represents any custom column
   * `Custom column` keyword with a qualifier represents a qualified subset of custom columns (e.g., `Custom column containing numeric values`)
 
 ##### Sub-element Subjects
@@ -348,11 +348,11 @@ Specifically:
   * `alter`
   * `document`
 
-* These verbs are prohibited when applied as obligations on actors or processes but may be used when defining verifiable states of documentation. 
+* These verbs are prohibited when applied as obligations on actors or processes but may be used when defining verifiable states of documentation.
 
 * **Example** (illustrative):
 
-  * `Document X MUST provide Y` is non-compliant because it describes a behavior of the documentation process rather than a verifiable state of the documentation itself. 
+  * `Document X MUST provide Y` is non-compliant because it describes a behavior of the documentation process rather than a verifiable state of the documentation itself.
   * However, `Documentation for X MUST include Y` is compliant because it describes a verifiable state of the documentation.
 
 > **Note:** This list is not exhaustive. Any verb that describes an action, responsibility, or implementation behavior rather than a verifiable state is considered non-compliant in the normative position.
@@ -386,7 +386,7 @@ A requirement MUST be split into multiple bullets if it:
 * **Example** (illustrative):
 
   * Incorrect: `ColumnA and ColumnB MUST be non-null when ColumnC is true and ColumnD is not "X".`
-  
+
   * Correct:
 
     * `ColumnA MUST be non-null when ColumnC is true and ColumnD is not "X".`
@@ -420,7 +420,7 @@ Each normative requirement MUST be defined in exactly one place across the speci
 * If a requirement applies broadly to multiple datasets, columns, or column sub-elements (e.g., objects within columns), it SHOULD be defined as an Attribute requirement, with conformance declared by those entities.
 
 * If a requirement involves multiple columns within a single dataset, it MUST be defined on the primary column it describes. Other columns involved MUST NOT restate it as a normative requirement but MAY reference it in their introductory description.
-  
+
   * The primary owner is the entity whose conformance would fail if the requirement is violated.
 
   * **Example:** `ListCost MUST equal the product of ListUnitPrice and PricingQuantity when ListUnitPrice is not null and PricingQuantity is not null.` — this requirement is defined on `ListCost`. `ListUnitPrice` and `PricingQuantity` MAY reference it in their introductory description but MUST NOT restate it as a normative requirement.
@@ -740,7 +740,7 @@ FOCUS defines two JSON-based value formats for columns: Key-Value Format and JSO
 ```markdown
 * When <Condition(s)>, <ColumnId> MUST adhere to the following requirements:
 ```
-  
+
 ```markdown
 * When <Condition>, <ColumnId> MUST adhere to the following requirements:
   * <ColumnId> MUST NOT be null when <Condition>.

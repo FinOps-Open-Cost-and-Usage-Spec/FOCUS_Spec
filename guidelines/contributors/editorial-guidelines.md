@@ -46,11 +46,11 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
         <td><strong>Column &amp; Attribute IDs:</strong></td>
         <td>
            <strong>Columns IDs</strong>:<br>
-            * PricingQuantity<br> 
-            * PricingUnit<br> 
+            * PricingQuantity<br>
+            * PricingUnit<br>
             * ServiceProviderName<br><br>
           <strong>Attributes IDs</strong>:<br>
-            * CurrencyCodeFormat <br> 
+            * CurrencyCodeFormat <br>
             * DateTimeFormat <br>
         </td>
         <td>
@@ -191,7 +191,7 @@ To ensure consistent language when describing relationships and evaluations betw
 * **Numeric Values:** Use "equal" or "be equal to" when comparing numeric values, costs, quantities, or mathematical sums (e.g., "ContractedCost MUST be equal to BilledCost"). Do not use "match".
 * **Identifiers and Strings:** Use "match" when comparing strings, IDs, or names (e.g., "HostProviderName MUST match ServiceProviderName"). Do not use "equal".
 * **State and Conditions:** Use forms of the verb "to be" (e.g., "is", "are", "be") when evaluating if a column contains a specific value or state (e.g., "when ChargeCategory is `Purchase`" or "ChargeCategory MAY be `Usage`"). Do not use "equals" or "equal", **except** when evaluating inequalities (e.g., "greater than or equal to").
-* **Inequalities:** When expressing range or directional limits, the standard phrases "greater than or equal to" and "less than or equal to" MUST be used, even for non-numeric data types like timestamps or dates (e.g., "BillingPeriodLastUpdated MUST be greater than or equal to BillingPeriodCreated"). 
+* **Inequalities:** When expressing range or directional limits, the standard phrases "greater than or equal to" and "less than or equal to" MUST be used, even for non-numeric data types like timestamps or dates (e.g., "BillingPeriodLastUpdated MUST be greater than or equal to BillingPeriodCreated").
 * **Semantic Comparisons:** When comparing concepts, formats, or values that share the same meaning but may not be strictly identical strings, use "equivalent" or "semantically equivalent" (e.g., "PricingUnit MUST be semantically equivalent to the corresponding pricing measurement unit..."). Do not use "equal".
 
 > **Note:** Validation of comparison terminology may require contextual understanding of value types, identifiers, semantic equivalence, or domain-specific meaning and may not always be suitable for deterministic editorial validation.
@@ -251,7 +251,7 @@ To ensure consistent language when describing relationships and evaluations betw
     * Incorrect: `The columns foster data integrity, interoperability, and consistency, improve data analysis and reporting, and support reliable decision-making.`
     * Correct: `The columns foster data integrity, interoperability, and consistency; improve data analysis and reporting; and support reliable decision-making.`
 
-* **Spelling Out Numbers**: In standard prose, numbers zero through nine MUST be spelled out as words (e.g., "one", "two", "nine"), while numbers 10 and above MUST be written as numerals (e.g., "10", "42"). 
+* **Spelling Out Numbers**: In standard prose, numbers zero through nine MUST be spelled out as words (e.g., "one", "two", "nine"), while numbers 10 and above MUST be written as numerals (e.g., "10", "42").
   * **Exception:** This rule DOES NOT apply to technical values, mathematical formulas, JSON examples, or explicit column constraints (e.g., write `BilledCost MUST be 0`, not `BilledCost MUST be zero`).
 
 * **Dash Formatting:**
@@ -307,7 +307,7 @@ To ensure consistent language when describing relationships and evaluations betw
 
 > **Note:** Validation of terminology consistency may require comparison against the approved glossary and specification entity definitions.
 
-* **Informative Examples:** Examples MUST be considered informative and non-normative, and MUST NOT define requirements. 
+* **Informative Examples:** Examples MUST be considered informative and non-normative, and MUST NOT define requirements.
 
 * **Example Note Requirement:** Example sections MUST include a note indicating that the content is informative and non-normative.
 
@@ -366,7 +366,7 @@ To ensure consistent language when describing relationships and evaluations betw
 
 * **No Header Usage:** Exceptions MUST NOT use Markdown headers (e.g., `#### Exceptions`).
 
-* **Exception Label:** Exceptions MUST begin with the inline label `**Exception [for <Topic>]:**` or `**Exceptions [for <Topic>]:**` (the term `Exception` or `Exceptions`, with or without a semantic qualifier `for <Topic>`, followed by a colon, formatted in bold).
+* **Exception Label:** Exceptions MUST begin with the inline label `**Exception[for <Topic>]:**` or `**Exceptions[for <Topic>]:**` (the term `Exception` or `Exceptions`, with or without a semantic qualifier `for <Topic>`, followed by a colon, formatted in bold).
   * A semantic qualifier SHOULD be included in Normative Requirements Guidelines to support cross-referencing and automated processing.
   * A semantic qualifier MAY be included in other guidelines.
   * When used, semantic qualifiers SHOULD be applied consistently throughout the document.
@@ -438,7 +438,7 @@ To ensure consistent language when describing relationships and evaluations betw
 > **3.1.47.6. Content Constraints**
 >
 > <img width="492" alt="image" src="https://github.com/user-attachments/assets/5185cbf9-306d-4663-a1c7-c8b7ab5c5bb8">
-> 
+>
 > **3.1.47.7. Version Introduced**
 >
 > 1.0-preview
@@ -450,6 +450,7 @@ To ensure consistent language when describing relationships and evaluations betw
   * When a markdown table has a maximum row width of 120 characters or more, the table SHOULD use exactly one space after values without additional padding.
 
 ### Example HTML Table
+
 This is an example of a complex table with merged rows and columns, along with an additional header row.
 
 <table  border="1" cellpadding="8" cellspacing="0">
@@ -482,6 +483,7 @@ This is an example of a complex table with merged rows and columns, along with a
 </table>
 
 This is how it is written in HTML:
+
 ```html
 <table  border="1" cellpadding="8" cellspacing="0">
   <tr>
