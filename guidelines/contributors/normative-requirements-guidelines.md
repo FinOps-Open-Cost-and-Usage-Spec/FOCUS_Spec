@@ -108,13 +108,14 @@ This document uses the following notation conventions in requirement patterns an
 
 ### Normative Requirement Structure
 
-The recommended pattern for a normative requirement is:
+A normative requirement can be expressed in one of two forms:
 
-``` markdown
-<Subject (+qualifier)> + <BCP 14 Keyword> + <Verifiable State Descriptor> + <Object (+qualifier)> [+ Conditions]
-```
+* as a **standalone requirement**, represented by a single normative bullet (see [Standalone Requirements](#standalone-requirements)), or
+* as a **composite requirement**, represented by a hierarchy of nested normative bullets (see [Composite Requirements](#composite-requirements)).
 
-* Each normative requirement MUST be expressed as a standalone bullet point or as part of a composite requirement (see [Composite Requirements](#composite-requirements)).
+The following rules define normative requirement-level semantics and normative bullet-level representation constraints:
+
+* Each normative requirement MUST be expressed as either a standalone requirement or a composite requirement.
 * Each normative requirement MUST identify exactly one **normative subject** to which the requirement applies.
 * Each normative requirement MUST express exactly one **verifiable constraint**.
 * Each normative requirement MUST be split into multiple bullets if it introduces multiple independent constraints.
@@ -190,6 +191,16 @@ A context variant introduces a shared context that groups related nested bullets
 ```
 
 * **Example** (illustrative): `CommitmentDiscountQuantity MUST adhere to the following nullability requirements:`
+
+### Standalone Requirements
+
+In a standalone requirement, the bullet and the normative requirement have a one-to-one correspondence. 
+
+The recommended pattern for a standalone normative requirement is:
+
+``` markdown
+<Subject [+qualifier]> <BCP 14 Keyword> <Verifiable State Descriptor> [+ Conditions]
+```
 
 ### Composite Requirements
 
@@ -369,8 +380,8 @@ For detailed interpretation of BCP 14 keywords, see [BCP14](https://tools.ietf.o
 A requirement MUST be split into multiple bullets if it:
 
 * contains more than one BCP 14 keyword,
-* combines multiple obligations (e.g., multiple verifiable state descriptors, multiple objects, or multiple conditions that result in distinct constraints),
-* combines multiple independent conditions using “and” or “or” that result in distinct constraints
+* combines multiple obligations (e.g., multiple verifiable state descriptors for one or more objects, or multiple conditions that result in distinct constraints),
+* combines multiple independent conditions using “and” or “or” that result in distinct constraints,
 * contains a hidden constraint expressed as a definition (e.g., `ColumnA MUST be Z, where Z is defined as Y`),
 * applies constraints to multiple subjects, even with a single BCP 14 keyword (e.g., `ColumnA and ColumnB MUST be X`).
 
