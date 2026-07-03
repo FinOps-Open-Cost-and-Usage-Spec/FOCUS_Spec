@@ -1,19 +1,25 @@
 # Supporting Analysis: Revising Intro / Description of ListUnitPrice and ContractedUnitPrice
 
-**Scope:** Intro and Description sections of `ListUnitPrice` and `ContractedUnitPrice`.
-**Related issues:** Ambiguous discount inclusion/exclusion in ContractedUnitPrice; Volume and time-based tiering not explicitly addressed.
+## Revise ambiguous discounts inclusion/exclusion in Contracted and List Unit Price intro
+
+* **Scope:** Intro and Description sections of `ListUnitPrice` and `ContractedUnitPrice`.
+* **Related issues:**
+  * Ambiguous discount inclusion/exclusion in ContractedUnitPrice;
+  * Volume and time-based tiering not explicitly addressed.
+
+> **Notes:** The full list of issues is available [here](https://docs.google.com/spreadsheets/d/19ezQml4YRSIEn2Pz3ijUghTLq3q-3YnJKZoRjQimqb0/edit?gid=0#gid=0).
 
 ---
 
-## Current Text and Identified Gaps
+### Current Text and Identified Gaps
 
-### ListUnitPrice
+#### ListUnitPrice
 
 > *"The List Unit Price represents the suggested service-provider-published unit price for a single Pricing Unit of the associated SKU, exclusive of any discounts. This price is denominated in the Billing Currency. The List Unit Price is commonly used for calculating savings based on various rate optimization activities."*
 
 **Gap:** The definition is silent on how volume-based or time-based tiered pricing is expected to be reflected. The phrase "exclusive of any discounts" can be read as excluding tiered pricing adjustments, although tiered pricing is part of the service-provider-published pricing configuration for the SKU, not a discount applied on top of it.
 
-### ContractedUnitPrice
+#### ContractedUnitPrice
 
 > *"The Contracted Unit Price represents the agreed-upon unit price for a single Pricing Unit of the associated SKU, inclusive of negotiated discounts, if present, while excluding negotiated commitment discounts or any other discounts. This price is denominated in the Billing Currency. The Contracted Unit Price is commonly used for calculating savings based on negotiation activities. If negotiated discounts are not applicable, the Contracted Unit Price defaults to the List Unit Price."*
 
@@ -26,7 +32,7 @@
 
 ---
 
-## Cost Column Trio
+### Cost Column Trio
 
 FOCUS defines three cost columns that together cover the full savings spectrum:
 
@@ -49,7 +55,21 @@ Any definition of `ContractedUnitPrice` must preserve this separation. If *commi
 
 ---
 
-## Discount Taxonomy
+### Discount Taxonomy
+
+To determine what belongs in `ListUnitPrice` and/or `ContractedUnitPrice`, all identified discount types (price reduction mechanisms) should be taken into account and classified. The analysis is currently organized along the following dimensions:
+
+* **Contract Role**: whether the discount is part of the primary commercial contract or a separately acquired instrument
+* **Acquisition Channel**: the commercial relationship through which the discount is obtained
+* **CC Offer Category**: Public (standard terms) or Negotiated (privately agreed)
+* **Discounting Mechanism**: how the discount is operationally applied (Tiering, Flat Unconditional, Burn-Down, Build-Up)
+* **Contingency**: whether the discount depends on the status or consumption of a commitment instrument
+
+The list of dimensions (aspects) and discount mechanisms is non-exhaustive and may be extended as needed.
+
+#### Taxonomy table
+
+The taxonomy table is available in the [accompanying spreadsheet](https://docs.google.com/spreadsheets/d/19ezQml4YRSIEn2Pz3ijUghTLq3q-3YnJKZoRjQimqb0/edit?gid=1676640405#gid=1676640405) (sheet: *Contracts and Discounts*).
 
 | ID | Acquisition Channel | Contract Role | CC Offer Category | Summary | Discounting Mechanism | Discount independent of Commitment Instrument | Included in ContractedUnitPrice | Visible in ListUnitPrice | Covering / Covered Charge Mechanism |
 |---|---|---|---|---|---|---|---|---|---|
@@ -74,7 +94,7 @@ Any definition of `ContractedUnitPrice` must preserve this separation. If *commi
 | F-1 | Additional Negotiated Contract – Third-Party Provider | Additional | Negotiated | Negotiated Burn-Down Commitment Discount – Separate Contract, Third-Party Provider | Burn-Down (covered) | No | TBD | No | Yes |
 | F-2 | Additional Negotiated Contract – Third-Party Provider | Additional | Negotiated | Negotiated Build-Up Commitment Discount – Separate Contract, Third-Party Provider | Build-Up (covered) | No | TBD | No | No |
 
-### Out of scope: BYOL and Dynamic pricing
+#### Out of scope: BYOL and Dynamic pricing
 
 Two pricing constructs sometimes perceived as discounts — BYOL (Bring Your Own License) and Spot / preemptible pricing — are excluded from this taxonomy on the basis of the FOCUS SKU model.
 
@@ -87,7 +107,7 @@ Both are treated as separate SKU or SKU Price variants and are not discounts rel
 
 ---
 
-## Proposed Criterion
+### Proposed Criterion
 
 The proposed revision replaces the source-based framing (*negotiated discounts* / *negotiated commitment discounts*) with a criterion based on the conditionality of the pricing adjustment:
 
@@ -101,13 +121,13 @@ A pricing adjustment is excluded from `ContractedUnitPrice` if its application d
 
 The criterion is agnostic to whether the discount is publicly available or negotiated, whether it was established within a primary or additional contract, and whether the instrument is operated by the same provider or a third-party provider. The distinction is purely about the conditionality of the pricing adjustment at the *charge* level.
 
-### Note on terminology
+#### Note on terminology
 
 Two candidate terms were considered for expressing the criterion: **contract commitment** and **discount-bearing commitment program**. The term used above is *discount-bearing commitment program*. The reasoning:
 
 *Contract commitment* is known to cover negotiated commitments, but the specification does not yet explicitly state that it also covers *commitment discounts* (i.e., the public variant). This can be inferred from examples in the spec, but the specification itself is still somewhat vague on this point. *Discount-bearing commitment program* avoids this ambiguity by explicitly narrowing to the discount-bearing subset, which is what the criterion is intended to exclude.
 
-### Application to the taxonomy
+#### Application to the taxonomy
 
 | Included | Excluded |
 |---|---|
@@ -117,7 +137,7 @@ Two candidate terms were considered for expressing the criterion: **contract com
 
 ---
 
-## Tiered Pricing
+### Tiered Pricing
 
 Volume-based and time-based tiered pricing is a discount type classified in the taxonomy above as A-0 (Primary Non-Negotiated Contract) and E-0 (Additional Non-Negotiated Contract – Third-Party Provider). Its distinguishing characteristic is that the unit price is reduced at higher consumption or duration tiers based on published tier configuration, independent of any discount-bearing commitment program. Per the proposed criterion, it is included in `ContractedUnitPrice`.
 
@@ -128,31 +148,31 @@ Under the working assumption:
 
 ---
 
-## Proposed Revised Text
+### Proposed Revised Text
 
 Two variants are presented for working group consideration. They differ in how they treat tiered pricing terminologically: Variant A treats tiering as a discount type explicitly, while Variant B avoids the discount terminology for tiering and describes it as an applicable unit price per tier that may be reduced at higher tiers.
 
 ---
 
-### Variant A — Tiering treated as a discount type
+#### Variant A — Tiering treated as a discount type
 
-#### ListUnitPrice — Intro (Variant A)
+##### ListUnitPrice — Intro (Variant A)
 
 > The List Unit Price represents the suggested service-provider-published unit price for a single [Pricing Unit](#datasets.costandusage.pricingunit) of the associated SKU, exclusive of any discounts other than volume-based or time-based tiering reflected in the SKU's published pricing configuration. This price is denominated in the [Billing Currency](#datasets.costandusage.billingcurrency). The List Unit Price is commonly used for calculating savings based on various rate optimization activities.
 
-#### ListUnitPrice — Description (Variant A)
+##### ListUnitPrice — Description (Variant A)
 
 > The suggested service-provider-published unit price for a single Pricing Unit of the associated SKU, exclusive of any discounts other than volume-based or time-based tiering reflected in the SKU's published pricing configuration.
 
-#### ContractedUnitPrice — Intro (Variant A)
+##### ContractedUnitPrice — Intro (Variant A)
 
 > The Contracted Unit Price represents the agreed-upon unit price for a single [Pricing Unit](#datasets.costandusage.pricingunit) of the associated SKU, inclusive of all pricing adjustments unconditionally guaranteed by the governing contract, including any custom volume-based or time-based tiering configuration specific to the customer's contract, while excluding pricing adjustments contingent on the active status, activation, or remaining balance of a discount-bearing commitment program. This price is denominated in the [Billing Currency](#datasets.costandusage.billingcurrency). The Contracted Unit Price is commonly used for calculating savings based on negotiation activities. If no such pricing adjustments are applicable, the Contracted Unit Price defaults to the [List Unit Price](#datasets.costandusage.listunitprice).
 
-#### ContractedUnitPrice — Description (Variant A)
+##### ContractedUnitPrice — Description (Variant A)
 
 > The agreed-upon unit price for a single Pricing Unit of the associated SKU, inclusive of all pricing adjustments unconditionally guaranteed by the governing contract, including any custom volume-based or time-based tiering configuration specific to the customer's contract, while excluding pricing adjustments contingent on the active status, activation, or remaining balance of a discount-bearing commitment program.
 
-#### Side-by-Side — ListUnitPrice (Variant A)
+##### Side-by-Side — ListUnitPrice (Variant A)
 
 | Section | Current (1.4) | Proposal |
 |---|---|---|
@@ -161,7 +181,7 @@ Two variants are presented for working group consideration. They differ in how t
 | Intro | The List Unit Price is commonly used for calculating savings based on various rate optimization activities. | The List Unit Price is commonly used for calculating savings based on various rate optimization activities. |
 | Description | The suggested service-provider-published unit price for a single Pricing Unit of the associated SKU, exclusive of any discounts. | The suggested service-provider-published unit price for a single Pricing Unit of the associated SKU, exclusive of any discounts other than volume-based or time-based tiering reflected in the SKU's published pricing configuration. |
 
-#### Side-by-Side — ContractedUnitPrice (Variant A)
+##### Side-by-Side — ContractedUnitPrice (Variant A)
 
 | Section | Current (1.4) | Proposal |
 |---|---|---|
@@ -173,31 +193,31 @@ Two variants are presented for working group consideration. They differ in how t
 
 ---
 
-### Variant B — Tiering described as applicable unit price per tier
+#### Variant B — Tiering described as applicable unit price per tier
 
 *Rationale: Although tiered pricing meets the definition of a discount in the sense that the unit price is reduced at higher tiers, it differs operationally from other discount types: it is structured through the SKU's published pricing configuration itself, with distinct `SkuPriceId` values per tier, rather than being applied as an adjustment on top of a single published price. Variant B reflects this by avoiding discount terminology for tiering and describing it as the applicable unit price per tier, which may be reduced at higher consumption or duration tiers.*
 
-#### ListUnitPrice — Intro (Variant B)
+##### ListUnitPrice — Intro (Variant B)
 
 > List Unit Price represents the suggested service-provider-published unit price for a single [Pricing Unit](#datasets.costandusage.pricingunit) of the associated SKU, exclusive of any discounts. For SKUs with volume-based or time-based tiered pricing, it reflects the applicable published unit price per tier, which may be reduced at higher consumption or duration tiers.
 >
 > List Unit Price is denominated in the [Billing Currency](#datasets.costandusage.billingcurrency). List Unit Price is commonly used for calculating savings based on various rate optimization activities.
 
-#### ListUnitPrice — Description (Variant B)
+##### ListUnitPrice — Description (Variant B)
 
 > The suggested service-provider-published unit price for a single Pricing Unit of the associated SKU, exclusive of any discounts, reflecting the applicable published unit price per tier for SKUs with volume-based or time-based tiered pricing.
 
-#### ContractedUnitPrice — Intro (Variant B)
+##### ContractedUnitPrice — Intro (Variant B)
 
 > Contracted Unit Price represents the agreed-upon unit price for a single [Pricing Unit](#datasets.costandusage.pricingunit) of the associated SKU, inclusive of all negotiated pricing adjustments unconditionally guaranteed by the governing contract, while excluding pricing adjustments contingent on the active status, activation, or remaining balance of a discount-bearing commitment program. For SKUs with volume-based or time-based tiered pricing, it reflects the applicable unit price per tier under any custom tier configuration specific to the customer's contract. If no negotiated pricing adjustments unconditionally guaranteed by the governing contract are applicable, the Contracted Unit Price defaults to the [List Unit Price](#datasets.costandusage.listunitprice).
 >
 > Contracted Unit Price is denominated in the [Billing Currency](#datasets.costandusage.billingcurrency). Contracted Unit Price is commonly used for calculating savings based on negotiation activities.
 
-#### ContractedUnitPrice — Description (Variant B)
+##### ContractedUnitPrice — Description (Variant B)
 
 > The agreed-upon unit price for a single Pricing Unit of the associated SKU, inclusive of all pricing adjustments unconditionally guaranteed by the governing contract and excluding pricing adjustments contingent on the active status, activation, or remaining balance of a discount-bearing commitment program, reflecting the applicable unit price per tier for SKUs with volume-based or time-based tiered pricing.
 
-#### Side-by-Side — ListUnitPrice (Variant B)
+##### Side-by-Side — ListUnitPrice (Variant B)
 
 | Section | Current (1.4) | Proposal |
 |---|---|---|
@@ -207,7 +227,7 @@ Two variants are presented for working group consideration. They differ in how t
 | Intro | The List Unit Price is commonly used for calculating savings based on various rate optimization activities. | The List Unit Price is commonly used for calculating savings based on various rate optimization activities. |
 | Description | The suggested service-provider-published unit price for a single Pricing Unit of the associated SKU, exclusive of any discounts. | The suggested service-provider-published unit price for a single Pricing Unit of the associated SKU, exclusive of any discounts, reflecting the applicable published unit price per tier for SKUs with volume-based or time-based tiered pricing. |
 
-#### Side-by-Side — ContractedUnitPrice (Variant B)
+##### Side-by-Side — ContractedUnitPrice (Variant B)
 
 | Section | Current (1.4) | Proposal |
 |---|---|---|
