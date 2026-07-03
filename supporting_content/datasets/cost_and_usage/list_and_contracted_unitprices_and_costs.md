@@ -7,7 +7,7 @@
   * Ambiguous discount inclusion/exclusion in ContractedUnitPrice;
   * Volume and time-based tiering not explicitly addressed.
 
-> **Notes:** The full list of issues is available [here](https://docs.google.com/spreadsheets/d/19ezQml4YRSIEn2Pz3ijUghTLq3q-3YnJKZoRjQimqb0/edit?gid=0#gid=0).
+> **Note:** The full list of issues is available [here](https://docs.google.com/spreadsheets/d/19ezQml4YRSIEn2Pz3ijUghTLq3q-3YnJKZoRjQimqb0/edit?gid=0#gid=0).
 
 ---
 
