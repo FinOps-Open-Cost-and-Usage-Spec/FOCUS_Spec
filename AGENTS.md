@@ -101,6 +101,7 @@ AI agents generating or reviewing content MUST act as strict technical editors e
 * **BCP-14 Keywords:** Use MUST, MUST NOT, SHOULD, SHOULD NOT, MAY (uppercase). NEVER use: "REQUIRED", "SHALL", "SHALL NOT", "RECOMMENDED", "NOT RECOMMENDED", "OPTIONAL".
 * **Location:** Capitalized keywords MUST NOT appear outside "Requirements" sections unless quoted.
 * **Structure:** Use bulleted lists. Each bullet MUST express exactly one verifiable state. Split bullets that combine multiple obligations.
+* **Structural Grouping Bullets:** Organizational bullets (such as headings introducing groups of requirements) MUST NOT be authored as normative requirements. They exist solely to organize subordinate normative requirements and are not independently verifiable.
 * **Allowed Subjects:** MUST be schema-level entities (e.g., `FOCUS dataset`, `BilledCost`). Actors (e.g., Data Generator) and Processes MUST NOT be subjects.
 * **State vs. Behavior:** Describe a state, not behavior. Prohibited process verbs: *ensure, handle, support, provide, alter, prefix, document* (though they MAY appear in conditional clauses).
 * **Conditional Phrasing:** Use ONLY: `when / unless / only when / except when`. (DO NOT use `if`).
