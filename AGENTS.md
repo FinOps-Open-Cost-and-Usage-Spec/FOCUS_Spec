@@ -101,6 +101,7 @@ AI agents generating or reviewing content MUST act as strict technical editors e
 * **BCP-14 Keywords:** Use MUST, MUST NOT, SHOULD, SHOULD NOT, MAY (uppercase). NEVER use: "REQUIRED", "SHALL", "SHALL NOT", "RECOMMENDED", "NOT RECOMMENDED", "OPTIONAL".
 * **Location:** Capitalized keywords MUST NOT appear outside "Requirements" sections unless quoted.
 * **Structure:** Use bulleted lists. Each bullet MUST express exactly one verifiable state. Split bullets that combine multiple obligations.
+* **Nested Requirements:** Introduce nested bullets only when expressing composite requirements. Preserve the established indentation hierarchy and never skip nesting levels.
 * **Requirement Ownership (DRY):** Each normative requirement MUST be defined exactly once. When the same normative behavior applies in multiple locations, authors MUST reference the existing requirement or reusable Attribute rather than duplicating the requirement text.
 * **Structural Grouping Bullets:** Organizational bullets (such as headings introducing groups of requirements) MUST NOT be authored as normative requirements. They exist solely to organize subordinate normative requirements and are not independently verifiable.
 * **Composite Requirements:** When a requirement introduces multiple subordinate requirements, the parent requirement MUST establish the applicability or scope while nested requirements define the independently verifiable normative obligations. Each nested bullet MUST remain independently verifiable.
@@ -117,6 +118,7 @@ AI agents generating or reviewing content MUST act as strict technical editors e
 * **Terminology:** Normative text MUST use `ColumnId`s, NEVER Display Names. The subject for dataset requirements MUST be `FOCUS dataset`. Elsewhere, authors MUST use the abstraction that precisely matches the requirement (e.g., `FOCUS dataset`, `dataset instance`, or `dataset artifact`) and MUST avoid using `FOCUS dataset` when a narrower abstraction is intended.
 * **Tone:** Use formal language. Contractions (e.g., *don't, can't*) MUST NOT be used in normative requirements.
 * **Inline Examples:** Any non-normative examples embedded within a requirement MUST be enclosed in parentheses using "e.g." (e.g., `...without lossy transformations (e.g., rounding)`).
+* **Subsection Ordering:** When generating new specification entities, preserve the subsection ordering already established for that entity type within the specification. Do not invent alternative subsection sequences.
 
 ### Editorial Conventions
 
@@ -125,10 +127,17 @@ AI agents generating or reviewing content MUST act as strict technical editors e
 * **No Mixing:** Do not mix Entity IDs and Display Names within the same normative requirement.
 * **Column values:** Enclosed in double quotes (e.g., `"Usage"`, `"Tax"`).
 * **Glossary terms:** Link with `[*term*](#glossary:term)` format.
-* **Linking Rule:** Link entity names and Glossary terms ONLY on their first occurrence per source file. Exception: Functional links using different anchor text are exempt.
+* **Linking Rule:** Link entity names and Glossary terms ONLY on their first occurrence per source file. Exceptions:
+  * Functional links using different anchor text are exempt.
+  * Content Constraints sections always link entity references.
+  * Glossary entries evaluate first occurrence independently for each glossary entry.
 * **Lists:** All unordered lists MUST use asterisks (`*`), never dashes (`-`) or plus signs (`+`). Nested bullet points MUST use exactly two spaces per level.
 * **Notes:** Important notes must use the blockquote format (`> **Note:**`).
+* **Notes versus Exceptions:** Use Notes only for informative or explanatory material. Normative conditions and exceptions MUST be expressed as requirements rather than embedded inside Notes.
 * **Anchors:** Pandoc auto-generates custom heading anchors. DO NOT flag missing HTML `<a name="">` tags.
+* **Markdown Tables:** Format Markdown tables for readability. Align compact tables where practical and prefer compact formatting for wide tables.
+* **Numbers in Prose:** In explanatory prose, spell out numbers zero through nine and use numerals beginning at 10. Preserve numeric notation in JSON, mathematics, schema constraints, identifiers, and technical examples.
+* **Dash Usage:** Use hyphens for compound modifiers and spaced dashes only for parenthetical interruptions. Apply each form consistently according to its purpose.
 
 ### Validation & Schema Accuracy
 
