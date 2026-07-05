@@ -101,13 +101,15 @@ AI agents generating or reviewing content MUST act as strict technical editors e
 * **BCP-14 Keywords:** Use MUST, MUST NOT, SHOULD, SHOULD NOT, MAY (uppercase). NEVER use: "REQUIRED", "SHALL", "SHALL NOT", "RECOMMENDED", "NOT RECOMMENDED", "OPTIONAL".
 * **Location:** Capitalized keywords MUST NOT appear outside "Requirements" sections unless quoted.
 * **Structure:** Use bulleted lists. Each bullet MUST express exactly one verifiable state. Split bullets that combine multiple obligations.
+* **Requirement Ownership (DRY):** Each normative requirement MUST be defined exactly once. When the same normative behavior applies in multiple locations, authors MUST reference the existing requirement or reusable Attribute rather than duplicating the requirement text.
 * **Structural Grouping Bullets:** Organizational bullets (such as headings introducing groups of requirements) MUST NOT be authored as normative requirements. They exist solely to organize subordinate normative requirements and are not independently verifiable.
+* **Composite Requirements:** When a requirement introduces multiple subordinate requirements, the parent requirement MUST establish the applicability or scope while nested requirements define the independently verifiable normative obligations. Each nested bullet MUST remain independently verifiable.
 * **Allowed Subjects:** MUST be schema-level entities (e.g., `FOCUS dataset`, `BilledCost`). Actors (e.g., Data Generator) and Processes MUST NOT be subjects.
 * **State vs. Behavior:** Describe a state, not behavior. Prohibited process verbs: *ensure, handle, support, provide, alter, prefix, document* (though they MAY appear in conditional clauses).
 * **Conditional Phrasing:** Use ONLY: `when / unless / only when / except when`. (DO NOT use `if`).
 * **Mathematical Accuracy:** `and/or` is permitted ONLY in mathematical validations or conditional clauses.
-* **Structural Anchors:** Requirements sections MUST begin with a non-verifiable anchor phrase ending in a colon (e.g., `<Entity> MUST adhere to the following requirements:`).
-* **Terminology:** Normative text MUST use `ColumnId`s, NEVER Display Names. The subject for dataset requirements MUST be `FOCUS dataset`. Elsewhere, specify the exact abstraction (e.g., `FOCUS dataset`, `dataset instance`, `dataset artifact`).
+* **Structural Anchors:** Requirements sections, including reusable Attribute requirement sections, MUST begin with a non-verifiable anchor phrase ending in a colon (e.g., `<Entity> MUST adhere to the following requirements:`). Anchor requirements exist solely to establish the parsing structure of subordinate requirements and MUST NOT be interpreted as independently verifiable normative requirements.
+* **Terminology:** Normative text MUST use `ColumnId`s, NEVER Display Names. The subject for dataset requirements MUST be `FOCUS dataset`. Elsewhere, authors MUST use the abstraction that precisely matches the requirement (e.g., `FOCUS dataset`, `dataset instance`, or `dataset artifact`) and MUST avoid using `FOCUS dataset` when a narrower abstraction is intended.
 * **Tone:** Use formal language. Contractions (e.g., *don't, can't*) MUST NOT be used in normative requirements.
 * **Inline Examples:** Any non-normative examples embedded within a requirement MUST be enclosed in parentheses using "e.g." (e.g., `...without lossy transformations (e.g., rounding)`).
 
@@ -127,6 +129,7 @@ AI agents generating or reviewing content MUST act as strict technical editors e
 
 * **Mathematical & Schema Accuracy:** AI reviewers MUST rigorously calculate, parse, and verify all data within examples (especially JSON snippets and tables). Flag any mathematical inconsistencies or hallucinated data.
 * **JSON Formatting:** JSON blocks MUST use double quotation marks for keys. Verify that the JSON is structurally valid.
+* **JSON Object Requirements:** Requirements governing a JSON object MUST be authored with the object definition. Column-level requirements MUST remain with the column definition. Requirements for object properties SHOULD reference properties using dot notation where appropriate to distinguish object-level constraints from property-level constraints.
 * **Example Disclaimer:** Top-level sections with examples and no normative requirements MUST begin with: `> Note: The following section is informative and non-normative. It does not define requirements.` Enforce ONLY on Level-2 headings in `spec.md` or major section overview files (e.g., `appendix_overview.md`). Ignore nested .md files.
 
 ### File Organization
