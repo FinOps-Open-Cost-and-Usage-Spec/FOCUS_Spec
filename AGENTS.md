@@ -108,6 +108,11 @@ AI agents generating or reviewing content MUST act as strict technical editors e
 * **State vs. Behavior:** Describe a state, not behavior. Prohibited process verbs: *ensure, handle, support, provide, alter, prefix, document* (though they MAY appear in conditional clauses).
 * **Conditional Phrasing:** Use ONLY: `when / unless / only when / except when`. (DO NOT use `if`).
 * **Mathematical Accuracy:** `and/or` is permitted ONLY in mathematical validations or conditional clauses.
+* **Comparison Terminology:** Select comparison terminology according to the semantics of the comparison:
+  * use `equal` for numeric comparisons;
+  * use `match` for identifiers and string values;
+  * use `be` when evaluating states or enumerated values; and
+  * use `equivalent` for semantic equivalence.
 * **Structural Anchors:** Requirements sections, including reusable Attribute requirement sections, MUST begin with a non-verifiable anchor phrase ending in a colon (e.g., `<Entity> MUST adhere to the following requirements:`). Anchor requirements exist solely to establish the parsing structure of subordinate requirements and MUST NOT be interpreted as independently verifiable normative requirements.
 * **Terminology:** Normative text MUST use `ColumnId`s, NEVER Display Names. The subject for dataset requirements MUST be `FOCUS dataset`. Elsewhere, authors MUST use the abstraction that precisely matches the requirement (e.g., `FOCUS dataset`, `dataset instance`, or `dataset artifact`) and MUST avoid using `FOCUS dataset` when a narrower abstraction is intended.
 * **Tone:** Use formal language. Contractions (e.g., *don't, can't*) MUST NOT be used in normative requirements.
