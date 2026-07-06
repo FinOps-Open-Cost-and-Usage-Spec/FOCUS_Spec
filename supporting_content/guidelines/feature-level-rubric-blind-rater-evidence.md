@@ -1,6 +1,6 @@
 # Feature-Level Rubric: Blind-Rater Evidence
 
-This document records the blind-rater testing behind the [feature-level rubric principles guideline](../../guidelines/contributors/feature-level-rubric-guidelines.md) (PR 2507, FR 2335). It is development evidence, not specification content.
+This document records the blind-rater testing behind the [feature-level rubric principles guideline](../../guidelines/contributors/feature-level-rubric-guidelines.md) (PR 2507, FR 2335). It is development evidence, not specification content. Companion document: [design notes](feature-level-rubric-design-notes.md), which record the thought process and method behind the guideline itself.
 
 **What the levels in this document are.** Every level shown here is a rater's output produced under the draft guideline with published levels removed. They measure whether the guideline text determines an answer; they are not proposed levels for any column. Level changes to existing columns are adjudicated separately, through the working group's review of the guideline and of the open level-change pull requests.
 
