@@ -1,6 +1,6 @@
 # Contract ID
 
-Contract ID is a service-provider-assigned identifier for a contract describing the agreed terms between a service provider and a customer. Contracts can include commitment to a certain amount of spend or usage over an agreed period of time. A null Contract ID indicates a public list price that is not tied to a specific contract; a non-null Contract ID indicates a contracted price. The terms of a contract, including its duration, are described in the [Contract Commitment](#datasets.contractcommitment) dataset, while the SKU Price dataset carries the contracted unit price itself.
+Contract ID is a service-provider-assigned identifier for a [*contract*](#glossary:contract) describing the agreed terms between a service provider and a customer. Contracts can include commitment to a certain amount of spend or usage over an agreed period of time. A null Contract ID indicates a public list price that is not tied to a specific contract; a non-null Contract ID indicates a contracted price. The terms of a contract, including its duration, are described in the [Contract Commitment](#datasets.contractcommitment) dataset, while the SKU Price dataset carries the contracted unit price itself.
 
 ## Requirements
 
@@ -8,7 +8,7 @@ ContractId MUST adhere to the following requirements:
 
 * ContractId MUST be of type String.
 * ContractId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* ContractId MUST NOT be null when the unit price is associated with a [*contract*](#glossary:contract).
+* ContractId MUST NOT be null when [UnitPriceCategory](#datasets.skuprice.unitpricecategory) is "Contracted".
 * When ContractId is not null, ContractId MUST adhere to the following requirements:
   * ContractId MUST be a unique identifier within the service provider.
   * ContractId SHOULD be a fully-qualified identifier.

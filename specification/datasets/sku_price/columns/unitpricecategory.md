@@ -1,6 +1,6 @@
 # Unit Price Category
 
-Unit Price Category describes the type of unit price represented by the [*SKU Price*](#glossary:sku-price) record. This column is useful for distinguishing between standard public catalog rates, historical rates frozen by an agreement, and custom negotiated rates specific to a billing account.
+Unit Price Category describes the type of unit price represented by the [*SKU Price*](#glossary:sku-price) record. This column is useful for distinguishing between standard public catalog rates and custom negotiated rates specific to a billing account.
 
 ## Requirements
 
@@ -11,15 +11,14 @@ UnitPriceCategory MUST adhere to the following requirements:
 * UnitPriceCategory MUST NOT be null.
 * UnitPriceCategory MUST be one of the allowed values.
 * UnitPriceCategory MUST be "List" when the unit price is the standard, current public rate offered by the service provider.
-* UnitPriceCategory MUST be "Fixed List" when the unit price is a standard public rate that has been locked or frozen for a specific agreement or timeframe.
 * UnitPriceCategory MUST be "Contracted" when the unit price is a negotiated or custom rate specific to a billing account or agreement.
+* UnitPriceCategory MUST be "List" when [ContractId](#datasets.skuprice.contractid) is null.
 
 ## Allowed Values
 
 | Value      | Description                                                                                                                                                             |
 | :--------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | List       | The standard, publicly available unit price published by the service provider.                                                                                          |
-| Fixed List | A publicly available unit price that has been locked or fixed for a specific duration or agreement, protecting it from standard catalog price fluctuations.             |
 | Contracted | A custom or negotiated unit price specifically established for a given billing account or agreement.                                                                    |
 
 ## Column ID
