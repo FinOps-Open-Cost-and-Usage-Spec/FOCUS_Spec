@@ -12,34 +12,27 @@ ServiceCategory MUST adhere to the following requirements:
 
 ## Allowed Values
 
-| Service Category          | Description                                                                                                                              |
-| :------------------------ | :--------------------------------------------------------------------------------------------------------------------------------------- |
-| AI and Machine Learning   | Artificial Intelligence and Machine Learning related technologies.                                                                       |
-| Analytics                 | Data processing, analytics, and visualization capabilities.                                                                              |
-| Business Applications     | Business and productivity applications and services.                                                                                     |
-| Compute                   | Computing infrastructure and services, including physical servers, virtual, containerized, serverless, bare-metal, or high-performance.  |
-| Databases                 | Database platforms and services that allow for storage and querying of data.                                                             |
-| Developer Tools           | Software development and delivery tools and services.                                                                                    |
-| End User Computing        | Physical devices and virtual workspaces provisioned for individual users, including laptops, mobile phones, peripherals, and virtual desktops. |
-| External Data             | Subscriptions to third-party data sets, market intelligence, or external API feeds.                                                      |
-| Facilities                | Physical space, racks, rent, power, cooling, and colocation services.                                                                    |
-| Identity                  | Identity and access management services.                                                                                                 |
-| Integration               | Services that allow applications to interact with one another.                                                                           |
-| Internet of Things        | Development and management of IoT devices and networks.                                                                                  |
-| Management and Governance | Management, logging, and observability of a customer's infrastructure, applications, and services.                                       |
-| Media                     | Media and entertainment streaming and processing services.                                                                               |
-| Migration                 | Moving applications and data between environments or providers.                                                                          |
-| Mobile                    | Services enabling applications to interact via mobile technologies.                                                                      |
-| Multicloud                | Support for the interworking of multiple distinct environments across different service providers or on-premises infrastructure.         |
-| Networking                | Network connectivity, traffic management, physical networking equipment, and data transmission circuits, including WAN and physical interconnects. |
-| Professional Services     | Consulting, implementation, architectural guidance, and managed service engagements.                                                     |
-| Security                  | Security monitoring and compliance services.                                                                                             |
-| Software Licensing        | Standalone software licenses, operating systems, hypervisors, and software subscriptions procured independently.                         |
-| Storage                   | Storage services and physical equipment for structured or unstructured data.                                                             |
-| Support                   | Premium customer support plans, technical assistance, and maintenance contracts.                                                         |
-| Telecommunications        | Externally provisioned carrier and voice services, such as telephony and mobile plans.                                                   |
-| Web                       | Services enabling applications to interact via the Internet.                                                                             |
-| Other                     | New or emerging services that do not align with an existing category.                                                                    |
+| Service Category          | Description                                                                                                                      |
+| :------------------------ | :------------------------------------------------------------------------------------------------------------------------------- |
+| AI and Machine Learning   | Artificial Intelligence and Machine Learning related technologies.                                                               |
+| Analytics                 | Data processing, analytics, and visualization capabilities.                                                                      |
+| Business Applications     | Business and productivity applications and services.                                                                             |
+| Compute                   | Virtual, containerized, serverless, or high-performance computing infrastructure and services.                                   |
+| Databases                 | Database platforms and services that allow for storage and querying of data.                                                     |
+| Developer Tools           | Software development and delivery tools and services.                                                                            |
+| Identity                  | Identity and access management services.                                                                                         |
+| Integration               | Services that allow applications to interact with one another.                                                                   |
+| Internet of Things        | Development and management of IoT devices and networks.                                                                          |
+| Management and Governance | Management, logging, and observability of a customer's infrastructure, applications, and services.                               |
+| Media                     | Media and entertainment streaming and processing services.                                                                       |
+| Migration                 | Moving applications and data between environments or providers.                                                                  |
+| Mobile                    | Services enabling applications to interact via mobile technologies.                                                              |
+| Multicloud                | Support for the interworking of multiple distinct environments across different service providers or on-premises infrastructure. |
+| Networking                | Network connectivity and management.                                                                                             |
+| Security                  | Security monitoring and compliance services.                                                                                     |
+| Storage                   | Storage services for structured or unstructured data.                                                                            |
+| Web                       | Services enabling applications to interact via the Internet.                                                                     |
+| Other                     | New or emerging services that do not align with an existing category.                                                            |
 
 ## Column ID
 
