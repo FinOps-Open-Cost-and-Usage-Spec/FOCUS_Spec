@@ -16,6 +16,7 @@ PrincipalId MUST adhere to the following requirements:
 * When PrincipalId is not null, PrincipalId MUST adhere to the following requirements:
   * PrincipalId MUST be a unique identifier within the context of the service provider.
   * PrincipalId MUST NOT contain plain-text personally identifiable information (PII) when the service provider supplies an alternative opaque identifier.
+  * PrincipalId MAY contain plain-text personally identifiable information (PII) when the service provider does not supply an alternative opaque identifier.
 
 ## Column ID
 
