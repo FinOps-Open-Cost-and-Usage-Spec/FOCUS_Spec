@@ -100,9 +100,9 @@ Three attributes were broken down and their requirements moved to other attribut
 
 | Removed Attribute | Requirements Moved To |
 |-------------------|-----------------------|
-| `ColumnHandling` | `FocusColumnHandling` and `CustomColumnHandling` |
-| `DiscountHandling` | Discount Handling appendix entry |
-| `InvoiceHandling` | `DeliveryHandling` and `DatasetCompleteness` |
+| `ColumnHandling` | `FocusColumnHandling` and `CustomColumnHandling` attributes |
+| `DiscountHandling` | `CostAndUsage` dataset and its specific columns; see the Discount Handling appendix for more details |
+| `InvoiceHandling` | `DeliveryHandling` and `DatasetCompleteness` attributes, and the `CostAndUsage`/`InvoiceDetail`/`BillingPeriod` datasets and their specific columns; see the Invoice and Billing Period Handling appendix for more details |
 
 Data generators applying these attributes should map their existing implementation to the successor requirements.
 
