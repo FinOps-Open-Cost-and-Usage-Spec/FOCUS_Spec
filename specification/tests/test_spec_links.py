@@ -6,7 +6,12 @@ Runs as part of the spec build (see the Makefile). Two checks:
   somewhere in the document.
 * Relative file links (e.g. ``styles/foo.css``, ``../../data/x.csv``) point
   at a file that exists on disk, resolved relative to spec.html's location
-  (the same way a browser resolves them).
+  (the same way a browser resolves them). Root-absolute links
+  (e.g. ``/specification/data/x.csv``) resolve against the repository root
+  (the site root), matching how a browser resolves a leading-slash path.
+  (The pandoc project-relative-links filter currently rewrites such links to
+  absolute GitHub URLs before this test runs, so this branch is defensive
+  against source links that reach spec.html unrewritten.)
 
 Absolute URLs (``https://``), ``mailto:`` links, and empty hrefs are ignored.
 """
@@ -94,7 +99,16 @@ def test_relative_file_links_exist():
         path_part = urldefrag(href).url  # strip any trailing #fragment
         if not path_part:
             continue
-        target = (SPEC_DIR / unquote(path_part)).resolve()
+        decoded = unquote(path_part)
+        # A leading slash is a root-absolute URL: a browser resolves it against
+        # the site root, not spec.html's directory. Path's / operator discards
+        # the left side when the right side is absolute, so join against the
+        # repository root (SPEC_DIR.parent) with the leading slash stripped.
+        # Defensive: the pandoc filter usually externalizes these before we run.
+        if decoded.startswith("/"):
+            target = (SPEC_DIR.parent / decoded.lstrip("/")).resolve()
+        else:
+            target = (SPEC_DIR / decoded).resolve()
         if not target.exists():
             broken.setdefault(href, line)
 
