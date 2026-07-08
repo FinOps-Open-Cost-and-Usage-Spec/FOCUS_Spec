@@ -57,7 +57,9 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CON-IncludesUnitPricing-N-001-C"
+      ]
     }
   },
   "CON-IncludesListUnitPrices-N-002-C": {
@@ -80,7 +82,9 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CON-IncludesUnitPricing-N-002-C"
+      ]
     }
   }
 }
