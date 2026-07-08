@@ -32,13 +32,13 @@ Note the following details in the example dataset:
 
 For this scenario, the same underlying model is served by a cloud provider, LatticeScale, as its own first-party [*service*](#glossary:service):
 
-* Every participating entity ([ServiceProviderName](#datasets.costandusage.serviceprovidername), [HostProviderName](#datasets.costandusage.hostprovidername), and [InvoiceIssuerName](#datasets.costandusage.invoiceissuername)) is LatticeScale, the seller.
-* The model developer, Solora AI, is not the seller, and is carried in the ModelDeveloper property.
+* Every participating entity ([ServiceProviderName](#datasets.costandusage.serviceprovidername), [HostProviderName](#datasets.costandusage.hostprovidername), and [InvoiceIssuerName](#datasets.costandusage.invoiceissuername)) is LatticeScale, the service provider.
+* The model developer, Solora AI, is not the service provider, and is carried in the ModelDeveloper property.
 
 [**CSV Example**](/specification/data/ai_model_identity/ai_model_identity_b.csv)
 
 Note the following details in the example dataset:
 
 * ModelDeveloper ("Solora AI") differs from ServiceProviderName ("LatticeScale"). The model developer is not represented by any existing participating-entity column, which is why model identity is carried as its own property.
-* The served ModelId is namespaced by the cloud provider ("latticescale.solora-reasoning-pro"), so the other model-identity properties (ModelDeveloper, ModelFamily, and ModelVersion) are what associate the charge with the underlying model across sellers.
+* The served ModelId is namespaced by the cloud provider ("latticescale.solora-reasoning-pro"), so the other model-identity properties (ModelDeveloper, ModelFamily, and ModelVersion) are what associate the charge with the underlying model across service providers.
 * As in Scenario A, the input and output split is structural, and the model-identity properties are common to both rows.
