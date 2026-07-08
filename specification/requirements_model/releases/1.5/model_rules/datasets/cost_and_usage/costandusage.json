@@ -1808,7 +1808,8 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [
-      "IncludesProvisionedResources"
+      "IncludesProvisionedResources",
+      "IncludesResourceTypeAssignment"
     ],
     "Order": 620,
     "DatasetType": "CAU",
@@ -2022,7 +2023,7 @@
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-CostAndUsage-D-049-C"
+            "ModelRuleId": "CAU-CostAndUsage-D-049-O"
           }
         ]
       },
@@ -2030,7 +2031,7 @@
       "Dependencies": [
         "CAU-CostAndUsage-D-047-C",
         "CAU-CostAndUsage-D-048-C",
-        "CAU-CostAndUsage-D-049-C"
+        "CAU-CostAndUsage-D-049-O"
       ]
     }
   },
@@ -2092,7 +2093,7 @@
       "Dependencies": []
     }
   },
-  "CAU-CostAndUsage-D-049-C": {
+  "CAU-CostAndUsage-D-049-O": {
     "Function": "Presence",
     "Reference": "PricingCurrencyContractedUnitPrice",
     "EntityType": "Dataset",
@@ -2152,7 +2153,7 @@
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-CostAndUsage-D-053-C"
+            "ModelRuleId": "CAU-CostAndUsage-D-053-O"
           }
         ]
       },
@@ -2160,7 +2161,7 @@
       "Dependencies": [
         "CAU-CostAndUsage-D-051-C",
         "CAU-CostAndUsage-D-052-C",
-        "CAU-CostAndUsage-D-053-C"
+        "CAU-CostAndUsage-D-053-O"
       ]
     }
   },
@@ -2222,7 +2223,7 @@
       "Dependencies": []
     }
   },
-  "CAU-CostAndUsage-D-053-C": {
+  "CAU-CostAndUsage-D-053-O": {
     "Function": "Presence",
     "Reference": "PricingCurrencyEffectiveCost",
     "EntityType": "Dataset",
@@ -2282,7 +2283,7 @@
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-CostAndUsage-D-057-C"
+            "ModelRuleId": "CAU-CostAndUsage-D-057-O"
           }
         ]
       },
@@ -2290,7 +2291,7 @@
       "Dependencies": [
         "CAU-CostAndUsage-D-055-C",
         "CAU-CostAndUsage-D-056-C",
-        "CAU-CostAndUsage-D-057-C"
+        "CAU-CostAndUsage-D-057-O"
       ]
     }
   },
@@ -2352,7 +2353,7 @@
       "Dependencies": []
     }
   },
-  "CAU-CostAndUsage-D-057-C": {
+  "CAU-CostAndUsage-D-057-O": {
     "Function": "Presence",
     "Reference": "PricingCurrencyListUnitPrice",
     "EntityType": "Dataset",
