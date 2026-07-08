@@ -23,7 +23,7 @@ FOCUS 1.4 introduces changes across the categories defined by the [Change Impact
 | Classification | Summary |
 |----------------|---------|
 | **Compatible** | Two new datasets, new columns, six new attributes, two new supported features, and revised requirements for existing cost columns. No changes required to existing queries. |
-| **Migration Compatible** | Removal of the deprecated `ProviderName` and `PublisherName` columns, a revised `ContractApplied` format, and removal of three attributes whose requirements moved to successor attributes and an appendix entry. Queries or implementations referencing these require updates. |
+| **Migration Compatible** | Removal of the deprecated `ProviderName` and `PublisherName` columns, a revised `ContractApplied` format, and removal of three attributes whose requirements moved to successor attributes, datasets, and columns. Queries or implementations referencing these require updates. |
 | **Incompatible** | None |
 
 FOCUS 1.4 is a larger release than FOCUS 1.3, but most changes are additive and compatible, with no incompatible changes. The items requiring migration are concentrated in a few areas, including the removal of columns deprecated during the 1.3 cycle. Practitioners should review the What Requires Migration summary and the Practitioner Guidance below; data generators should review the Data Generator Guidance.
@@ -69,7 +69,7 @@ The following changes require action. Each is detailed in the Practitioner Guida
 |--------|----------|--------|
 | `ProviderName` and `PublisherName` removed | Practitioners | Migrate any remaining queries to the successor columns identified during the 1.3 cycle. |
 | `ContractApplied` format revised to the JSON Object Schema format | Practitioners | Update queries that parse the `ContractApplied` JSON structure. |
-| `ColumnHandling`, `DiscountHandling`, and `InvoiceHandling` attributes removed | Data Generators | Apply the requirements that moved to successor attributes and an appendix entry. |
+| `ColumnHandling`, `DiscountHandling`, and `InvoiceHandling` attributes removed | Data Generators | Apply the requirements that moved to successor attributes, datasets, and columns. |
 
 ### Practitioner Guidance
 
@@ -96,7 +96,7 @@ These changes are classified as Compatible and do not require query changes, but
 
 #### Attribute Restructuring
 
-Three attributes were broken down and their requirements moved to other attributes and one appendix entry in FOCUS 1.4:
+Three attributes were broken down and their requirements moved to other attributes, datasets, and columns in FOCUS 1.4:
 
 | Removed Attribute | Requirements Moved To |
 |-------------------|-----------------------|
