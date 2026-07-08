@@ -56,7 +56,7 @@ The specification for the Cost and Usage dataset defines a group of columns that
 | [Pricing Currency List Unit Price](#datasets.costandusage.pricingcurrencylistunitprice)             | Metric             | [Conditional](#conditions.includespricingbillingcurrencydifferences) | True         | Decimal   |
 | [Pricing Quantity](#datasets.costandusage.pricingquantity)                                          | Metric             | Mandatory     | True         | Decimal   |
 | [Pricing Unit](#datasets.costandusage.pricingunit)                                                  | Dimension          | Mandatory     | True         | String    |
-| [Principal ID](#datasets.costandusage.principalid)                                                  | Dimension          | Conditional   | True         | String    |
+| [Principal ID](#datasets.costandusage.principalid)                                                  | Dimension          | [Conditional](#conditions.includesprincipals) | True         | String    |
 | [Region ID](#datasets.costandusage.regionid)                                                        | Dimension          | [Conditional](#conditions.includesregions) | True         | String    |
 | [Region Name](#datasets.costandusage.regionname)                                                    | Dimension          | [Conditional](#conditions.includesregions) | True         | String    |
 | [Resource ID](#datasets.costandusage.resourceid)                                                    | Dimension          | [Conditional](#conditions.includesprovisionedresources) | True         | String    |
