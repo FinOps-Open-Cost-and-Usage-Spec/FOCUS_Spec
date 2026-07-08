@@ -9,6 +9,7 @@ BillingCurrency MUST adhere to the following requirements:
 * BillingCurrency MUST be of type String.
 * BillingCurrency MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * BillingCurrency MUST conform to [CurrencyFormat](#attributes.currencyformat) requirements.
+* BillingCurrency MUST be null when [EstimatedCostSavings](#datasets.recommendation.estimatedcostsavings) is null.
 * BillingCurrency MUST NOT be null when [EstimatedCostSavings](#datasets.recommendation.estimatedcostsavings) is not null.
 * BillingCurrency MUST be expressed in [*national currency*](#glossary:national-currency) (e.g., USD, EUR).
 
