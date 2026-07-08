@@ -48,10 +48,6 @@
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-AllocatedTags-C-018-M"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-AllocatedTags-C-017-C"
           }
         ]
@@ -65,7 +61,6 @@
         "CAU-AllocatedTags-C-005-C",
         "CAU-CostAndUsage-D-073-C",
         "CAU-AllocatedTags-C-010-M",
-        "CAU-AllocatedTags-C-018-M",
         "CAU-AllocatedTags-C-017-C"
       ]
     }
@@ -552,29 +547,6 @@
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "User-defined tag keys in all user-defined tag schemes MUST include a predetermined, data generator-specified tag key prefix that is unique to each corresponding user-defined tag scheme when the data generator has more than one user-defined tag scheme.",
-      "Keyword": "MUST",
-      "Requirement": {},
-      "Condition": {},
-      "Dependencies": []
-    }
-  },
-  "CAU-AllocatedTags-C-018-M": {
-    "Function": "Validation",
-    "Reference": "AllocatedTags",
-    "EntityType": "Column",
-    "EntityId": "AllocatedTags",
-    "EntityName": "Allocated Tags",
-    "Notes": "",
-    "ModelVersionIntroduced": "1.5",
-    "Status": "Active",
-    "ApplicabilityCriteria": [],
-    "Order": 160,
-    "DatasetType": "CAU",
-    "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost and Usage",
-    "Type": "Dynamic",
-    "ValidationCriteria": {
-      "MustSatisfy": "User-defined tag keys MUST match the keys provided at the source, except for any tag scheme-specific prefix.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
