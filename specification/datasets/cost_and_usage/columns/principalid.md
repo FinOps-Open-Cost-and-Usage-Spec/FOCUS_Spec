@@ -28,7 +28,7 @@ Principal ID
 
 ## Description
 
-Identifier representing the initiating or authorizing actor requesting a *resource* or *service*.
+Identifier representing the actor that initiates or is authorized to request a *resource* or *service*.
 
 ## Content Constraints
 
