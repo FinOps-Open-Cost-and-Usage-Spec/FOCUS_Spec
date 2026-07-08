@@ -53,7 +53,6 @@ The following keys should be used when applicable to facilitate cross-SKU and cr
 | ModelDeveloper           | Name of the entity that created, trained, or fine-tuned the model                     | String           | Examples: "Solora AI", "ModelMesh"                    |
 | ModelFamily              | Grouping of related models offered by a model developer                  | String           | Examples: "Solora Reasoning", "ModelMesh General"     |
 | ModelId                  | Identifier for the model as it appears in billing, which may be namespaced by the seller and is not guaranteed to match across sellers                        | String           | Examples: "solora-reasoning-pro", "modelmesh-general-7b" |
-| ModelVariant             | Named tier or edition within a model family, typically priced separately         | String           | Examples: "Pro", "Lite"                               |
 | ModelVersion             | Version of the model within a given model family                                   | String           | Examples: "3.0", "2.5"                                |
 | NetworkMaxIops           | Network maximum sustained input/output operations per second<sup>1</sup> | Numeric          | Measure: Input/Output Operations per Second (IOPS)    |
 | NetworkMaxThroughput     | Network maximum sustained throughput for data transfer<sup>1</sup>       | Numeric          | Measure: Megabits per second (Mbps)                   |

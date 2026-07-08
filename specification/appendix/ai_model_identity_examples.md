@@ -8,7 +8,9 @@ The following conditions apply to the scenarios below:
 
 * Acme Corp uses a per-token foundation model API to run a generative AI workload.
 * The model is priced separately for input and output tokens, denominated per 1,000,000 tokens.
-* The model identity (developer, family, identifier, variant, and version) is stable for a given [*SKU Price*](#glossary:sku-price), so it is carried in SkuPriceDetails.
+* The model identity (developer, family, identifier, and version) is stable for a given [*SKU Price*](#glossary:sku-price), so it is carried in SkuPriceDetails.
+
+> **Note:** The FOCUS-defined model-identity properties are listed in alphabetical order; the ordering is presentational and does not imply precedence.
 
 ## Scenario A: Foundation Model Purchased Directly
 
@@ -21,7 +23,7 @@ For this scenario, Acme Corp purchases the model directly from the model develop
 
 Note the following details in the example dataset:
 
-* Model identity is carried in SkuPriceDetails using the FOCUS-defined properties ModelDeveloper, ModelFamily, ModelId, ModelVariant, and ModelVersion. These values are common to both rows because both describe the same model.
+* Model identity is carried in SkuPriceDetails using the FOCUS-defined properties ModelDeveloper, ModelFamily, ModelId, and ModelVersion. These values are common to both rows because both describe the same model.
 * The split between input and output tokens is structural. Each is a separate [*SKU*](#glossary:sku) with its own [SkuId](#datasets.costandusage.skuid) and [SkuPriceId](#datasets.costandusage.skupriceid), distinguished by [SkuMeter](#datasets.costandusage.skumeter) values of "Input Tokens" and "Output Tokens". No separate token-type property is used.
 * [ConsumedQuantity](#datasets.costandusage.consumedquantity) holds the raw token count and [ConsumedUnit](#datasets.costandusage.consumedunit) is "Tokens", while [PricingQuantity](#datasets.costandusage.pricingquantity) holds the priced volume and [PricingUnit](#datasets.costandusage.pricingunit) is "1000000 Tokens".
 * Because Acme Corp pays the list price, [ListUnitPrice](#datasets.costandusage.listunitprice) and [ContractedUnitPrice](#datasets.costandusage.contractedunitprice) are equal, so [ListCost](#datasets.costandusage.listcost), [ContractedCost](#datasets.costandusage.contractedcost), [BilledCost](#datasets.costandusage.billedcost), and [EffectiveCost](#datasets.costandusage.effectivecost) are equal.
@@ -38,5 +40,5 @@ For this scenario, the same underlying model is served by a cloud provider, Latt
 Note the following details in the example dataset:
 
 * ModelDeveloper ("Solora AI") differs from ServiceProviderName ("LatticeScale"). The model developer is not represented by any existing participating-entity column, which is why model identity is carried as its own property.
-* The served ModelId is namespaced by the cloud provider ("latticescale.solora-reasoning-pro"), so the other model-identity properties (ModelDeveloper, ModelFamily, ModelVariant, and ModelVersion) are what associate the charge with the underlying model across sellers.
+* The served ModelId is namespaced by the cloud provider ("latticescale.solora-reasoning-pro"), so the other model-identity properties (ModelDeveloper, ModelFamily, and ModelVersion) are what associate the charge with the underlying model across sellers.
 * As in Scenario A, the input and output split is structural, and the model-identity properties are common to both rows.
