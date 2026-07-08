@@ -1998,7 +1998,8 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [
-      "IncludesPricingBillingCurrencyDifferences"
+      "IncludesVirtualCurrency",
+      "IncludesListUnitPrices"
     ],
     "Order": 440,
     "DatasetType": "CAU",
@@ -2043,7 +2044,8 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [
-      "IncludesPricingBillingCurrencyDifferences"
+      "IncludesVirtualCurrency",
+      "IncludesListUnitPrices"
     ],
     "Order": 450,
     "DatasetType": "CAU",
@@ -2071,7 +2073,8 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [
-      "IncludesPricingBillingCurrencyDifferences"
+      "IncludesPricingBillingCurrencyDifferences",
+      "IncludesListUnitPrices"
     ],
     "Order": 460,
     "DatasetType": "CAU",
@@ -2098,9 +2101,7 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "Conditions": [
-      "IncludesPricingBillingCurrencyDifferences"
-    ],
+    "Conditions": [],
     "Order": 470,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
@@ -2127,7 +2128,8 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [
-      "IncludesPricingBillingCurrencyDifferences"
+      "IncludesVirtualCurrency",
+      "IncludesListUnitPrices"
     ],
     "Order": 480,
     "DatasetType": "CAU",
@@ -2172,7 +2174,8 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [
-      "IncludesPricingBillingCurrencyDifferences"
+      "IncludesVirtualCurrency",
+      "IncludesListUnitPrices"
     ],
     "Order": 490,
     "DatasetType": "CAU",
@@ -2200,7 +2203,8 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [
-      "IncludesPricingBillingCurrencyDifferences"
+      "IncludesPricingBillingCurrencyDifferences",
+      "IncludesListUnitPrices"
     ],
     "Order": 500,
     "DatasetType": "CAU",
@@ -2227,9 +2231,7 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "Conditions": [
-      "IncludesPricingBillingCurrencyDifferences"
-    ],
+    "Conditions": [],
     "Order": 510,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
@@ -2256,7 +2258,8 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [
-      "IncludesPricingBillingCurrencyDifferences"
+      "IncludesVirtualCurrency",
+      "IncludesListUnitPrices"
     ],
     "Type": "Static",
     "Order": 520,
@@ -2301,7 +2304,8 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [
-      "IncludesPricingBillingCurrencyDifferences"
+      "IncludesVirtualCurrency",
+      "IncludesListUnitPrices"
     ],
     "Type": "Static",
     "Order": 530,
@@ -2329,7 +2333,8 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [
-      "IncludesPricingBillingCurrencyDifferences"
+      "IncludesPricingBillingCurrencyDifferences",
+      "IncludesListUnitPrices"
     ],
     "Type": "Static",
     "Order": 540,
@@ -2356,9 +2361,7 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "Conditions": [
-      "IncludesPricingBillingCurrencyDifferences"
-    ],
+    "Conditions": [],
     "Type": "Static",
     "Order": 550,
     "DatasetType": "CAU",

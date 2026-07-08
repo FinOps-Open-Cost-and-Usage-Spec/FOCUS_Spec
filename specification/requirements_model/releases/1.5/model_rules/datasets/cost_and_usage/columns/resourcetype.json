@@ -9,7 +9,8 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [
-      "IncludesProvisionedResources"
+      "IncludesProvisionedResources",
+      "IncludesResourceTypeAssignment"
     ],
     "Order": 0,
     "DatasetType": "CAU",
