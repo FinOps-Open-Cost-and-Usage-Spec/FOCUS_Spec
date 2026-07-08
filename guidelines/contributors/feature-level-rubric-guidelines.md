@@ -6,11 +6,25 @@ This guideline gives the principles for setting a FOCUS column's feature level a
 
 It is the first of two parts: this part covers the principles, and a companion guideline covers the mechanics. [Scope of This Guidance](#scope-of-this-guidance), at the end, lists what falls in each part.
 
-The document reads in order: [Terms](#terms) defines the vocabulary, [Core Principles](#core-principles) states what governs every decision, [The Interim Boundary Rule](#the-interim-boundary-rule) settles the Mandatory-versus-Conditional boundary until the companion guideline's data-driven test exists, and [The Four Decision Inputs](#the-four-decision-inputs) turns the principles into four answerable questions. The sections after those cover how gates are recorded, the rubric's two output layers, and worked examples.
+The document reads in order: [The Rubric in Brief](#the-rubric-in-brief) gives the plain-language summary, [Terms](#terms) defines the vocabulary, [Core Principles](#core-principles) states what governs every decision, [The Interim Boundary Rule](#the-interim-boundary-rule) settles the Mandatory-versus-Conditional boundary until the companion guideline's data-driven test exists, and [The Four Decision Inputs](#the-four-decision-inputs) turns the principles into four answerable questions. The sections after those cover how gates are recorded, the rubric's two output layers, and worked examples.
 
 The bar is simple. Two people applying these principles to the same column should reach the same level, without the author in the room. The principles apply to existing and net-new columns alike.
 
 The unit of leveling is a column within a dataset, not a Column ID in the abstract. The same Column ID may appear in more than one dataset and take a different level, nullability, or set of operating model Conditions in each, because its necessity and applicability are judged per dataset.
+
+## The Rubric in Brief
+
+This summary orients; it is not a second rulebook. The linked sections state the tests and govern on any difference; the vocabulary lives in [Terms](#terms).
+
+* Level and nullability are two separate questions, decided apart ([Core Principles](#core-principles)).
+* Leveling goes by the operating model, never by technology category ([Core Principles](#core-principles), [Two-Layer Output](#two-layer-output)).
+* Mandatory is a high bar a column earns, never the default; boundary cases default to Conditional, with a narrow recorded-exception path ([Core Principles](#core-principles), [The Interim Boundary Rule](#the-interim-boundary-rule)).
+* When a value is not meaningful or not available, it is null; producing the representation of a concept the operating model does have is not fabrication ([Core Principles](#core-principles)).
+* No level rests on a fill value ([Core Principles](#core-principles)).
+* When a dataset includes a derived column together with the source columns it is computed from, they are leveled together ([Core Principles](#core-principles)).
+* Four inputs: necessity, then derivability, then applicability variance; producibility sets nullability on its own axis; each test's qualifiers live in [The Four Decision Inputs](#the-four-decision-inputs).
+* An interim rule settles boundary cases until the companion guideline calibrates the threshold ([The Interim Boundary Rule](#the-interim-boundary-rule)).
+* A Conditional column's gates are recorded with the leveling decision ([Recording Why a Column is Conditional](#recording-why-a-column-is-conditional)).
 
 ## The Problem This Addresses
 
