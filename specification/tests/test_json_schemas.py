@@ -39,6 +39,16 @@ def test_json_schema_is_valid(schema_path):
     if error is not None:
         pytest.fail(error, pytrace=False)
 
+    # A JSON Schema document must be an object or a boolean. Any other JSON
+    # value (array, string, number) parses fine but is not a valid schema and
+    # would crash validator_for with an opaque error.
+    if not isinstance(schema, (dict, bool)):
+        pytest.fail(
+            f"{schema_path} is not a valid JSON Schema "
+            "(must be an object or boolean)",
+            pytrace=False,
+        )
+
     # Select the validator class for the schema's declared $schema dialect
     # (falls back to the latest draft when $schema is absent).
     validator_cls = validator_for(schema)
