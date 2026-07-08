@@ -22,6 +22,7 @@ import pytest
 import sqlglot
 from sqlglot import exp
 from sqlglot.errors import ParseError
+from sqlglot.tokens import Tokenizer, TokenType
 
 SPEC_DIR = Path(__file__).resolve().parent.parent
 DATASETS_DIR = SPEC_DIR / "datasets"
@@ -78,6 +79,46 @@ def _collect_sql_blocks():
 
 SQL_BLOCKS = _collect_sql_blocks()
 
+# Token types that legally terminate a comma-separated expression list. A comma
+# sitting immediately before one of these (or before the end of a statement) is
+# a dangling trailing comma. sqlglot parses trailing commas without complaint,
+# since some dialects (e.g. BigQuery, DuckDB) permit them, so they are caught
+# here explicitly.
+_TRAILING_COMMA_TERMINATORS = {
+    TokenType.R_PAREN,
+    TokenType.SEMICOLON,
+    TokenType.FROM,
+    TokenType.WHERE,
+    TokenType.GROUP_BY,
+    TokenType.ORDER_BY,
+    TokenType.HAVING,
+    TokenType.LIMIT,
+    TokenType.OFFSET,
+    TokenType.WINDOW,
+    TokenType.QUALIFY,
+    TokenType.FETCH,
+    TokenType.UNION,
+    TokenType.EXCEPT,
+    TokenType.INTERSECT,
+}
+
+
+def _trailing_comma(sql):
+    """Return the 1-based line of the first dangling trailing comma, or None.
+
+    A trailing comma is a ``,`` immediately followed by a list-terminating token
+    (e.g. ``FROM``, ``)``, ``GROUP BY``) or by the end of a statement.
+    """
+    tokens = Tokenizer().tokenize(sql)
+    for current, following in zip(tokens, tokens[1:]):
+        if current.token_type is TokenType.COMMA and (
+            following.token_type in _TRAILING_COMMA_TERMINATORS
+        ):
+            return current.line
+    if tokens and tokens[-1].token_type is TokenType.COMMA:
+        return tokens[-1].line
+    return None
+
 # Parametrize over discovered blocks; fall back to a single clean skip when the
 # datasets docs contain no SQL blocks yet.
 _PARAMS = [pytest.param(sql, id=block_id) for block_id, sql in SQL_BLOCKS] or [
@@ -101,6 +142,11 @@ def test_sql_block_is_valid(sql):
 
     if error is None and (not statements or any(s is None for s in statements)):
         error = "SQL did not parse into any statement"
+
+    if error is None:
+        comma_line = _trailing_comma(sql)
+        if comma_line is not None:
+            error = f"dangling trailing comma (line {comma_line} of block)"
 
     if error is not None:
         pytest.fail(f"Invalid SQL in block:\n{sql}\n\n{error}", pytrace=False)

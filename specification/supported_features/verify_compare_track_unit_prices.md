@@ -19,7 +19,7 @@ When a service provider supports unit pricing concepts, FOCUS allows practitione
 ## Supporting Columns
 
 * BillingCurrency
-* BillingPeriodId
+* BillingPeriodStart
 * ChargePeriodEnd
 * ChargePeriodStart
 
