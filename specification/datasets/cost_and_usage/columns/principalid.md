@@ -11,7 +11,7 @@ PrincipalId MUST adhere to the following requirements:
 * PrincipalId MUST be of type String.
 * PrincipalId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * PrincipalId MUST adhere to the following nullability requirements:
-  * PrincipalId MUST be null the service provider cannot determine the *principal* that initiated or authorized the *charge*.
+  * PrincipalId MUST be null when the service provider cannot determine the *principal* that initiated or authorized the *charge*.
   * PrincipalId MUST NOT be null when the service provider can determine the *principal* that initiated or authorized the *charge*.
 * When PrincipalId is not null, PrincipalId MUST adhere to the following requirements:
   * PrincipalId MUST be a unique identifier within the *service provider* context.
@@ -28,7 +28,7 @@ Principal ID
 
 ## Description
 
-Identifier representing the authorized actor that initiated a request for a *resource* or *service*.
+Identifier representing the initiating or authorizing actor requesting a *resource* or *service*.
 
 ## Content Constraints
 
