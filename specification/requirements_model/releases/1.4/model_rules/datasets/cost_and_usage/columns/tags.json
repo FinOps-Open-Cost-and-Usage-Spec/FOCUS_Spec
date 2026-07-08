@@ -455,10 +455,6 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-Tags-C-024-M"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-Tags-C-015-C"
           },
           {
@@ -473,7 +469,6 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CAU-Tags-C-024-M",
         "CAU-Tags-C-015-C",
         "CAU-Tags-C-016-C",
         "CAU-Tags-C-017-M"
@@ -712,29 +707,6 @@
     "ValidationCriteria": {
       "MustSatisfy": "Tag finalization documentation SHOULD be accessible to practitioners.",
       "Keyword": "SHOULD",
-      "Requirement": {},
-      "Condition": {},
-      "Dependencies": []
-    }
-  },
-  "CAU-Tags-C-024-M": {
-    "Function": "Validation",
-    "Reference": "Tags",
-    "EntityType": "Column",
-    "EntityName": "Tags",
-    "EntityId": "Tags",
-    "Notes": "",
-    "ModelVersionIntroduced": "1.5",
-    "Status": "Active",
-    "ApplicabilityCriteria": [],
-    "Order": 155,
-    "DatasetType": "CAU",
-    "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost and Usage",
-    "Type": "Dynamic",
-    "ValidationCriteria": {
-      "MustSatisfy": "User-defined tag keys MUST match the keys provided at the source, except for any tag scheme-specific prefix.",
-      "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []
