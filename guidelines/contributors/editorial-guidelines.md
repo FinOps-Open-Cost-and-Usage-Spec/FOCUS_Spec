@@ -366,7 +366,7 @@ To ensure consistent language when describing relationships and evaluations betw
 
 * **No Header Usage:** Exceptions MUST NOT use Markdown headers (e.g., `#### Exceptions`).
 
-* **Exception Label:** Exceptions MUST begin with the inline label `**Exception[for <Topic>]:**` or `**Exceptions[for <Topic>]:**` (the term `Exception` or `Exceptions`, with or without a semantic qualifier `for <Topic>`, followed by a colon, formatted in bold).
+* **Exception Label:** Exceptions MUST begin with the inline label `**Exception[ for <Topic>]:**` or `**Exceptions[ for <Topic>]:**` (the term `Exception` or `Exceptions`, with or without a semantic qualifier `for <Topic>`, followed by a colon, formatted in bold).
   * A semantic qualifier SHOULD be included in Normative Requirements Guidelines to support cross-referencing and automated processing.
   * A semantic qualifier MAY be included in other guidelines.
   * When used, semantic qualifiers SHOULD be applied consistently throughout the document.
