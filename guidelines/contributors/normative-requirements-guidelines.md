@@ -43,13 +43,14 @@ style ObjectProperty fill:#d4edda,stroke:#666,stroke-width:1px
 **Nodes:**
 
 * 🟩 FOCUS schema-level entity (normative subject)
-* 🟥 FOCUS normative rule set (not a normative subject)
+* 🟥 FOCUS reusable normative entity (not a normative subject)
 
 **Relationships:**
 
 * `|| -- has -- |{` : one parent to one-or-more enumerated structural members
 * `|| -- contains -- o{` : one parent to zero-or-more child entities (array of objects)
 * `}| .. conforms-to .. ||` : many children to one parent conformance relationship
+* `}| .. applies-to .. |{` : e.g., many Conditions apply to many target entities
 
 **Exceptions:**
 
