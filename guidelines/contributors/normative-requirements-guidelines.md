@@ -20,13 +20,13 @@ Dataset ||--|{ Column : has
 Column ||--o{ Object : contains
 Object ||--|{ ObjectProperty : has
 
-Condition ||..|{ DataModel : applies-to
-Condition ||..|{ Dataset : applies-to
-Condition ||..|{ Column : applies-to
+Condition }|..|| DataModel : applies-to
+Condition }|..|{ Dataset : applies-to
+Condition }|..|{ Column : applies-to
 
-Dataset }|..|| Attribute : conforms-to
-Column }|..|| Attribute : conforms-to
-ObjectProperty }|..|| Attribute : conforms-to
+Dataset }|..|{ Attribute : conforms-to
+Column }|..|{ Attribute : conforms-to
+ObjectProperty }|..|{ Attribute : conforms-to
 
 %% Normative reusable entities
 style Attribute fill:#f8d7da,stroke:#666,stroke-width:1px
@@ -39,52 +39,6 @@ style Column fill:#d4edda,stroke:#666,stroke-width:1px
 style Object fill:#d4edda,stroke:#666,stroke-width:1px
 style ObjectProperty fill:#d4edda,stroke:#666,stroke-width:1px
 ```
-
-=== START
-
-> Editor Note: (to be removed before submission to the group) Consideration of adding an Operating Model.
-
-* **FOCUS Operating Model** — a conceptual representation of the provider's business, billing, pricing, resource, and operational concepts that are standardized by FOCUS. The Operating Model defines the business states and relationships from which reusable Conditions are derived. These Conditions determine when normative requirements become applicable within the FOCUS Data Model.
-
-```mermaid
-erDiagram
-DataModel ||--|{ Dataset : has
-Dataset ||--|{ Column : has
-Column ||--o{ Object : contains
-Object ||--|{ ObjectProperty : has
-
-OperatingModel ||..|{ Condition : has-verifiable-state
-
-Condition ||..|{ DataModel : determines-applicability-for
-Condition ||..|{ Dataset : determines-applicability-for
-Condition ||..|{ Column : determines-applicability-for
-
-Dataset }|..|| Attribute : conforms-to
-Column }|..|| Attribute : conforms-to
-ObjectProperty }|..|| Attribute : conforms-to
-
-%% Business Domain
-style OperatingModel fill:#cfe2ff,stroke:#666,stroke-width:1px
-
-%% Normative entities
-style Condition fill:#f8d7da,stroke:#666,stroke-width:1px
-style Attribute fill:#f8d7da,stroke:#666,stroke-width:1px
-
-%% Schema entities
-style DataModel fill:#d4edda,stroke:#666,stroke-width:1px
-style Dataset fill:#d4edda,stroke:#666,stroke-width:1px
-style Column fill:#d4edda,stroke:#666,stroke-width:1px
-style Object fill:#d4edda,stroke:#666,stroke-width:1px
-style ObjectProperty fill:#d4edda,stroke:#666,stroke-width:1px
-```
-
-**Nodes:**
-
-* 🟦 Blue — What exists in the provider's business (Operating Model)
-* 🟥 Red — What the specification says (Conditions and Attributes)
-* 🟩 Green — How the specification is represented (Data Model, Datasets, Columns, Objects, and Object Properties)
-
-=== END
 
 **Nodes:**
 
