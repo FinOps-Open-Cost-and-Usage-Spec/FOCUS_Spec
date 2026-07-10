@@ -237,3 +237,53 @@ Two variants are presented for working group consideration. They differ in how t
 | Intro | The Contracted Unit Price is commonly used for calculating savings based on negotiation activities. | The Contracted Unit Price is commonly used for calculating savings based on negotiation activities. |
 | Intro | If negotiated discounts are not applicable, the Contracted Unit Price defaults to the [List Unit Price](#datasets.costandusage.listunitprice). | If no such pricing adjustments are applicable, the Contracted Unit Price defaults to the [List Unit Price](#datasets.costandusage.listunitprice). |
 | Description | The agreed-upon unit price for a single Pricing Unit of the associated SKU, inclusive of negotiated discounts, if present, while excluding negotiated commitment discounts or any other discounts. | The agreed-upon unit price for a single Pricing Unit of the associated SKU, inclusive of all pricing adjustments unconditionally guaranteed by the governing contract and excluding pricing adjustments contingent on the active status, activation, or remaining balance of a discount-bearing commitment program, reflecting the applicable unit price per tier for SKUs with volume-based or time-based tiered pricing. |
+
+---
+
+# Proposed Glossary Definitions
+
+## Threshold-Based Tiered Pricing
+
+A pricing model where the applicable unit price is determined based on reaching predefined thresholds within a defined aggregation scope and aggregation interval.
+
+Thresholds may be based on different threshold categories, including quantity, duration, or spend.
+
+## Pricing Tier
+
+A pricing level associated with a predefined threshold range and corresponding pricing rule.
+
+A pricing tier becomes applicable when the measured quantity satisfies the associated threshold criteria.
+
+## Tier Threshold
+
+A predefined boundary that determines when a pricing tier becomes applicable.
+
+Thresholds may be defined based on different tier threshold categories, including quantity, duration, or spend.
+
+## Quantity-Based Pricing Tier
+
+A pricing tier where the associated thresholds are defined based on accumulated billable quantity within a defined aggregation scope and aggregation interval.
+
+## Duration-Based Pricing Tier
+
+A pricing tier where the associated thresholds are defined based on accumulated usage duration within a defined aggregation scope and aggregation interval.
+
+## Spend-Based Pricing Tier
+
+A pricing tier where the associated thresholds are defined based on accumulated customer spend within a defined aggregation scope and aggregation interval.
+
+## Aggregation Scope
+
+The entity across which quantity, duration, or spend is accumulated for the purpose of determining the applicable pricing tier.
+
+## Aggregation Interval
+
+The period over which quantity, duration, or spend is accumulated for the purpose of determining the applicable pricing tier.
+
+## Graduated Pricing
+
+A tier application model where each portion of usage is priced according to the pricing tier applicable to that portion of usage.
+
+## Retroactive Volume Pricing
+
+A tier application model where reaching a higher pricing tier causes the applicable unit price for all usage within the aggregation interval to be adjusted to the newly reached tier.
