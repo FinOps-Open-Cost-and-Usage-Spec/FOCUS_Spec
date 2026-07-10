@@ -10,29 +10,20 @@ Threshold-based tiered pricing is based on achieved usage, duration, or spend an
 
 ## Threshold Categories
 
-Thresholds may be based on different measures:
+Thresholds may be based on different metrics:
 
-* **Quantity-based thresholds**
-
-  Thresholds based on accumulated billable quantity during the aggregation interval.
-
+* **Quantity-based thresholds:** Thresholds based on accumulated billable quantity during the aggregation interval.
   Examples:
   * storage capacity consumed (for example, GB-months)
   * number of API requests
   * compute usage hours
 
-* **Duration-based thresholds**
-
-  Thresholds based on accumulated usage duration during the aggregation interval.
-
+* **Duration-based thresholds:** Thresholds based on accumulated usage duration during the aggregation interval.
   Examples:
   * sustained usage over a billing period
   * continuous resource utilization duration
 
-* **Spend-based thresholds**
-
-  Thresholds based on accumulated customer spend during the aggregation interval.
-
+* **Spend-based thresholds:** Thresholds based on accumulated customer spend during the aggregation interval.
   Examples:
   * cumulative spend reaching predefined levels during a billing period
 
@@ -42,25 +33,19 @@ Threshold-based tiered pricing requires defining the scope and interval over whi
 
 Typical aggregation dimensions include:
 
-* **Aggregation scope**
-
-  The entity across which quantity, duration, or spend is accumulated to determine the applicable pricing tier.
-
+* **Aggregation scope:** The entity across which quantity, duration, or spend is accumulated to determine the applicable pricing tier.
   Examples:
   * billing account
   * customer account
   * subscription
   * project
 
-* **Aggregation interval**
-
-  The period over which quantity, duration, or spend is accumulated for the purpose of determining the applicable pricing tier.
-
+* **Aggregation interval:** The period over which quantity, duration, or spend is accumulated for the purpose of determining the applicable pricing tier.
   Examples:
   * daily billing interval
   * monthly billing interval
 
-For cloud billing models, aggregation is commonly performed at the billing account level over a monthly billing interval aligned with the billing cycle.
+Aggregation is commonly performed at the billing account level over a monthly billing interval aligned with the billing cycle.
 
 ## Tier Application Models
 
