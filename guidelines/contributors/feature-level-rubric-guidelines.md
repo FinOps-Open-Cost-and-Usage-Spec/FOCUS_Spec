@@ -99,14 +99,18 @@ flowchart TD
 
 Borderline applicability, the concept present for most models and absent for a few, is settled by the companion's test; until then such a column takes the Conditional default from the Interim Boundary Rule.
 
-## Two-Layer Output
+## Normative Content Defined by the Rubric
 
-The rubric produces two layers; only one is normative.
+The rubric provides guidance for defining the normative content related to feature leveling and column nullability.
 
-1. **Normative (no categories).** Per column: a level, a nullability, and zero or more operating model Conditions. Always *Conditional, gated on the operating model Condition that the model includes regions*, never *Mandatory for cloud, Optional for SaaS*.
-2. **Informative (categories, non-binding).** Per category: the operating model Conditions typically met in that category today. These are defaults, not ceilings; a generator may exceed them (principle 2). This layer belongs outside the specification, in educational materials; where it is recorded is settled by the companion.
+The rubric helps identify:
+- applicable operating model Conditions,
+- Feature Levels for FOCUS datasets and FOCUS columns,
+- Nullability for FOCUS columns.
 
-A category-free normative layer is what lets a level be conformance-tested and stay valid as operating models change. The informative layer records today's expectations without binding tomorrow's generators.
+Feature Levels are defined independently of category. Conditional columns are expressed through operating model Conditions rather than category-specific rules such as "Mandatory for cloud" or "Optional for SaaS".
+
+> **Note:** Category-based expectations are informative only and are out of scope for this rubric. They should be addressed separately, potentially in the companion guideline or other guidance material.
 
 ## Applying the Principles: A Worked Example
 
