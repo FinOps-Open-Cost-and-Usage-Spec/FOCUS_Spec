@@ -12,4 +12,4 @@ Datasets are sorted first by Feature Level (i.e., Mandatory, then Conditional), 
 | [Billing Period](#datasets.billingperiod)           | Reference    | Conditional   | Describes the billing periods by which cost and usage is invoiced. |
 | [Contract Commitment](#datasets.contractcommitment) | Reference    | Conditional   | Describes the terms of contracts agreed between a service provider and a customer. |
 | [Invoice Detail](#datasets.invoicedetail)           | Transaction  | Conditional   | Describes the cost and usage issued on invoices. |
-| [Recommendation](#datasets.recommendation)         | Reference    | Conditional   | Describes optimization recommendation by a data generator. |
+| [Recommendation](#datasets.recommendation)         | Reference    | Conditional   | Describes optimization recommendations generated for a practitioner by a service provider or other tooling. |

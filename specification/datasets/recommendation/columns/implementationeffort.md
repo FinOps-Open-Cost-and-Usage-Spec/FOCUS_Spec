@@ -1,6 +1,6 @@
 # Implementation Effort
 
-Implementation Effort represents the relative level of effort to act on a recommendation, as assessed by the [Data Generator Name](#datasets.recommendation.datageneratorname). Implementation Effort is commonly used to balance [EstimatedCostSavings](#datasets.recommendation.estimatedcostsavings) against the work needed to realize it.
+Implementation Effort represents the relative level of effort to act on a recommendation, as assessed by the [Data Generator Name](#datasets.recommendation.datageneratorname). Implementation Effort is commonly used to balance [Estimated Monthly Cost Impact](#datasets.recommendation.estimatedmonthlycostimpact) against the work needed to realize it.
 
 ## Requirements
 

@@ -1,6 +1,6 @@
 # Contract Commitment Duration Type
 
-Contract Commitment Duration Type represents the categorical length of the [*contract commitment*](#glossary:contract-commitment) a recommendation proposes to purchase (e.g., "1 Year", "3 Years", 100 DPUs).
+Contract Commitment Duration Type represents the categorical length of the [*contract commitment*](#glossary:contract-commitment) a recommendation proposes to purchase (e.g., "1 Year", "3 Years", "100 DPUs").
 
 ## Requirements
 
