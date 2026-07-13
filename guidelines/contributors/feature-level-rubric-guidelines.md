@@ -8,7 +8,17 @@ Level and nullability are two axes, decided separately. Level says whether the c
 
 This is the first of two parts: the principles here, the mechanics (procedure, data-driven tests, machine-readable check) in a companion guideline. The bar to meet: two people applying these principles to the same column reach the same level, without the author in the room.
 
-**Contents:** [The Problem This Addresses](#the-problem-this-addresses) · [Terms](#terms) · [Core Principles](#core-principles) · [The Interim Boundary Rule](#the-interim-boundary-rule) · [The Four Decision Inputs](#the-four-decision-inputs) · [Recording Why a Column is Conditional](#recording-why-a-column-is-conditional) · [Two-Layer Output](#two-layer-output) · [Applying the Principles: A Worked Example](#applying-the-principles-a-worked-example) · [Scope of This Guidance](#scope-of-this-guidance)
+**Contents:** 
+
+* [The Problem This Addresses](#the-problem-this-addresses)
+* [Terms](#terms) 
+* [Core Principles](#core-principles)
+* [The Interim Boundary Rule](#the-interim-boundary-rule)
+* [The Four Decision Inputs](#the-four-decision-inputs)
+* [Recording Why a Column is Conditional](#recording-why-a-column-is-conditional)
+* [Two-Layer Output](#two-layer-output)
+* [Applying the Principles: A Worked Example](#applying-the-principles-a-worked-example)
+* [Scope of This Guidance](#scope-of-this-guidance)
 
 ## The Problem This Addresses
 
