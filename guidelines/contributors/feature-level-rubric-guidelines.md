@@ -6,11 +6,12 @@ These principles set a FOCUS column's feature level and nullability when the col
 
 Level and nullability are two axes, decided separately. Level says whether the column is present, and when. Nullability says whether the value may be null when the column is present. Mandatory is a bar a column earns by applying to every operating model, not the default it starts from.
 
-Applied as intended, the rubric keeps three outcomes true:
+Applied as intended, the rubric keeps four outcomes true:
 
 * A column whose concept exists only for some operating models is never universally required; it takes Conditional, not Mandatory.
 * Nullability never substitutes for the applicability decision; a column is not held Mandatory on the reasoning that generators lacking its concept can leave it null or fill it from another column.
 * Derivation relationships never set a feature level by themselves; a derived column and its source columns are each leveled on their own inputs.
+* A column enters or remains in the schema only by earning Mandatory or Conditional; one that cannot is held out, not admitted at Recommended or Optional. Those two levels persist only as exceptions: existing columns that carry them pending re-leveling.
 
 This is the first of two parts: the principles here, the mechanics (procedure, data-driven tests, machine-readable check) in a companion guideline. The bar to meet: two people applying these principles to the same column reach the same level, without the author in the room.
 
@@ -20,7 +21,7 @@ This is the first of two parts: the principles here, the mechanics (procedure, d
 * [Core Principles](#core-principles)
 * [The Interim Boundary Rule](#the-interim-boundary-rule)
 * [The Four Decision Inputs](#the-four-decision-inputs)
-* [Two-Layer Output](#two-layer-output)
+* [Normative Content Defined by the Rubric](#normative-content-defined-by-the-rubric)
 * [Applying the Principles: A Worked Example](#applying-the-principles-a-worked-example)
 * [Relationship to the Companion Guideline](#relationship-to-the-companion-guideline)
 
@@ -36,7 +37,7 @@ This is the first of two parts: the principles here, the mechanics (procedure, d
 | Feature level | Mandatory, Conditional, Recommended, Optional | Whether the column is present, and when |
 | Nullability | Allows nulls = True / False | Whether the value may be null when present |
 
-The four levels and their `MUST`/`SHOULD`/`MAY` obligations are already defined in the [FOCUS Feature Level](../../specification/overview.md#focus-feature-level) section; this rubric changes how a level is chosen, not what it means.
+The four levels and their `MUST`/`SHOULD`/`MAY` obligations are already defined in the [FOCUS Feature Level](../../specification/overview.md#focus-feature-level) section; this rubric changes how a level is chosen, not what it means. Of the four, the rubric assigns only Mandatory and Conditional. Recommended and Optional stay in the table because existing columns still carry them; input 1 treats those columns as exceptions to retire, not outcomes to produce.
 
 ## Core Principles
 
@@ -70,7 +71,7 @@ Every leveling decision answers four questions. They are numbered for reference;
    * **Use-case necessity.** The column appears in a Supported Feature's Directly Dependent Columns list. That membership is a signal, not proof; the test is whether the use case breaks or only degrades without it. A column that only refines a result a Mandatory column already delivers degrades, so it is useful-but-not-needed even when listed as directly dependent. This carve-out applies only when the primary it refines is itself Mandatory; a column refining a Conditional primary is leveled by inputs 2 and 4, typically inheriting the primary's Condition. Appearing only in a Supporting Columns list is the useful-but-not-needed signal.
    * **Dataset-structural necessity.** The column is needed for the dataset's own integrity: a primary or foreign identifier, a period boundary, record provenance. The datasets beyond Cost and Usage and the metadata sections carry these, and take the `MUST` family though no feature depends on them.
 
-     Needed on either basis goes to `MUST` (Mandatory or Conditional). Useful-but-not-needed is held out of the schema rather than admitted at a weaker level: a consumer cannot build on a column that may never arrive, so a column worth carrying is worth leveling as Mandatory or Conditional. Recommended is not a target level, and Optional is not an outcome this rubric produces (`MAY` obligations remain on the nullability axis, not for presence). The Recommended and Optional columns already in the specification are the exception this stance retires over time: each is re-leveled to Mandatory or Conditional, or removed, as the working group reaches it. A Mandatory or Conditional column meeting neither basis is a signal to re-level, not to invent a use case for it.
+     Needed on either basis goes to `MUST` (Mandatory or Conditional). Useful-but-not-needed is held out of the schema rather than admitted at a weaker level: a consumer cannot build on a column that may never arrive, so a column worth carrying is worth leveling as Mandatory or Conditional. Recommended is not a target level, and Optional is not an outcome this rubric produces (`MAY` obligations remain on the nullability axis, not for presence). A leveling discussion that leans toward Recommended is itself a signal: there is not yet enough conviction in the column's utility, and the resolution is to hold the column out of the schema until that conviction exists, not to admit it at a weaker level. The Recommended and Optional columns already in the specification are the exception this stance retires over time: each is re-leveled to Mandatory or Conditional, or removed, as the working group reaches it. A Mandatory or Conditional column meeting neither basis is a signal to re-level, not to invent a use case for it.
 
      **Net-new columns.** No Supported Feature can list one yet, so judge its necessity from the use case it serves, not current lists; its absence from them is not the useful-but-not-needed signal. Missing feature coverage is the gap to close, not evidence the column is unneeded. A needed net-new column is then leveled by inputs 2 and 4, so one whose concept is absent for some models is Conditional, not Optional.
 2. **Applicability variance.** Does the column apply to some operating models but not others? Test the concept fixed by the column's Description and glossary term, not a broader or narrower one. When a reasonable model would have it null on every row because the concept does not exist for it, the column is Conditional, gated on the operating model Condition marking where the concept exists. When the concept exists for every model, the column is Mandatory and input 3 sets nullability.
@@ -104,9 +105,10 @@ Borderline applicability, the concept present for most models and absent for a f
 The rubric provides guidance for defining the normative content related to feature leveling and column nullability.
 
 The rubric helps identify:
-- applicable operating model Conditions,
-- Feature Levels for FOCUS datasets and FOCUS columns,
-- Nullability for FOCUS columns.
+
+* applicable operating model Conditions,
+* Feature Levels for FOCUS datasets and FOCUS columns,
+* Nullability for FOCUS columns.
 
 Feature Levels are defined independently of category. Conditional columns are expressed through operating model Conditions rather than category-specific rules such as "Mandatory for cloud" or "Optional for SaaS".
 
@@ -144,7 +146,7 @@ The following topics should be considered for the companion guideline:
 * The applicability test, including the matrix and the threshold at which a column moves between Mandatory and Conditional.
 * The disposition of variance that does not map to an operating model Condition.
 * The back-test against current columns.
-* Where the informative layer is recorded.
+* Where informative category-based expectations are recorded.
 * The machine-readable check, including:
   * Reading all relevant requirement surfaces.
   * Consuming a machine-readable derivation source.
