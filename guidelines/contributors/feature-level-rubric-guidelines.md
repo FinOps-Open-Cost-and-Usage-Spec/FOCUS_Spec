@@ -22,12 +22,12 @@ This is the first of two parts: the principles here, the mechanics (procedure, d
 * [The Four Decision Inputs](#the-four-decision-inputs)
 * [Two-Layer Output](#two-layer-output)
 * [Applying the Principles: A Worked Example](#applying-the-principles-a-worked-example)
-* [Scope of This Guidance](#scope-of-this-guidance)
+* [Relationship to the Companion Guideline](#relationship-to-the-companion-guideline)
 
 ## Key Concepts
 
 * **Operating model.** The collective set of business concepts underlying a FOCUS-compliant dataset. For leveling, read it as the characteristics that decide which FOCUS concepts apply to a generator (regions, commitment discounts, virtual currency, and so on), independent of category.
-* **Operating model Condition.** A named entry in the specification's Conditions section (specification/conditions/), each reading "the operating model includes X" (includes regions, includes commitment discounts). The Conditions section is the single list, and every Conditional column links to one.
+* **Operating model Condition.** A named entry in the specification's Conditions section (specification/conditions/), each reading "the operating model includes X" (includes regions, includes commitment discounts). The Conditions section is the single list, and every Conditional column links to one or more of its entries; a single column's presence may be gated by more than one Condition.
 * **Leveling unit.** A column within a dataset, not a Column ID in the abstract. The same Column ID may take a different level, nullability, or set of Conditions in each dataset, judged per dataset.
 * **The two axes.**
 
@@ -128,15 +128,23 @@ A second example, the dataset-structural column ContractCommitmentId:
 
 Result: ContractCommitmentId is Mandatory, Allows nulls = False, on the dataset-structural basis, with no Supported Feature dependency required.
 
-## Scope of This Guidance
+## Relationship to the Companion Guideline
 
-In scope: the terms, the principles, the interim boundary rule, the four decision inputs, the two kinds of gate, and the two-layer output.
+This guideline defines the principles for assigning feature levels and nullability. The companion guideline is intended to define the mechanics needed to apply these principles consistently and support conformance validation.
 
-In the companion mechanics guideline: the step-by-step procedure; how a generator's asserted operating model Conditions are recorded; the necessity-boundary test between refining and breaking; the applicability test (the matrix, and the threshold at which a column flips between Mandatory and Conditional); the disposition of variance that fits no operating model Condition; the back-test against current columns; where the informative layer is recorded; and the machine-readable check. That check must:
+The following topics should be considered for the companion guideline:
 
-* **Read every gate surface.** A presence requirement can live in the dataset requirements, in the composite and dataset-level rules' `ApplicabilityCriteria` field, or in the column's own nullability rule. Reading only the column file misses the others.
-* **Consume a machine-readable derivation source.** Input 4 needs a per-column record of what each column derives from and by what relation (arithmetic, lookup, or conversion).
-* **Point every Conditional column at the Conditions section.** Require each Conditional column to link to a Condition there, and map the older `ApplicabilityCriteria` keys (for example `REGION_SUPPORTED`) onto the matching Condition IDs (for example `IncludesRegions`).
-* **Plan the back-test's re-leveling.** It will flag existing Mandatory columns meeting neither necessity basis (administrative and audit columns are the common case); the guidance says whether to re-level or record the dataset-structural basis that keeps them Mandatory.
+* The step-by-step leveling procedure.
+* How a generator's asserted operating model Conditions are recorded.
+* The necessity-boundary test between refining and breaking.
+* The applicability test, including the matrix and the threshold at which a column moves between Mandatory and Conditional.
+* The disposition of variance that does not map to an operating model Condition.
+* The back-test against current columns.
+* Where the informative layer is recorded.
+* The machine-readable check, including:
+  * Reading all relevant requirement surfaces.
+  * Consuming a machine-readable derivation source.
+  * Linking Conditional columns to the Conditions section.
+  * Planning the re-leveling of existing columns.
 
-The back-test needs the Supported Features to name the columns each use case depends on: a column needed on the use-case basis but absent from every Directly Dependent Columns list has nothing for input 1 to point at. The principles stand on their own, and a team can adopt them without waiting for the mechanics.
+The principles stand on their own, and a team can adopt them without waiting for the mechanics.
