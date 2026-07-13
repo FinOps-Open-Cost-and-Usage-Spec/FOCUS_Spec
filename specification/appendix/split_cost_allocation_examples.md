@@ -14,31 +14,31 @@ AllocatedServiceName closes this gap: the data generator populates it with the c
 
 ## Shared Infrastructure Split Across Multiple Consumer Services
 
-Acme Corp runs a shared Aura Web container cluster (`cluster-acme-shared-01`) for a single charge period (2026-04-01). The cluster hosts workloads belonging to three distinct consuming *services*. The data generator is configured to split the cluster host cost across the consuming workloads by measured vCPU-hour consumption.
+Acme Corp runs a shared Aura Web container cluster (`cluster-aura-shared-01`) for a single charge period (2026-04-01). The cluster hosts workloads belonging to three distinct consuming *services*. The data generator is configured to split the cluster host cost across the consuming workloads by measured vCPU-hour consumption.
 
 The origin charge EffectiveCost for the period is $100.00. The data generator measures consumer utilization as:
 
-* `pod-acme-orders-01` (Orders Service): 40 vCPU-hours (40%)
-* `pod-acme-scoring-01` (ML Inference Service): 35 vCPU-hours (35%)
-* `pod-acme-frontend-01` (Web Frontend Service): 25 vCPU-hours (25%)
+* `pod-aura-orders-01` (Orders Service): 40 vCPU-hours (40%)
+* `pod-aura-scoring-01` (ML Inference Service): 35 vCPU-hours (35%)
+* `pod-aura-frontend-01` (Web Frontend Service): 25 vCPU-hours (25%)
 
 The data generator emits one origin charge row and three *allocated charge* rows. Per DataGeneratorCalculatedSplitCostAllocationHandling, the origin dimensions (ServiceName, ServiceCategory, ResourceId) are preserved across all four rows. AllocatedServiceName identifies the consuming *service* on each *allocated charge* row.
 
 Rows for the period:
 
 1. **Origin charge** (Row 1): The origin charge row carrying the preserved origin dimensions. AllocatedResourceId is null, AllocatedServiceName is null. ServiceName is "Aura Container Runtime", ServiceCategory is "Compute". EffectiveCost is $0.00, since the full $100.00 host cost is sliced across the three allocated charge rows below.
-2. **Allocated charge — Orders Service** (Row 2): 40% of the origin charge allocated to `pod-acme-orders-01`. ServiceName remains "Aura Container Runtime" (preserved from the origin charge). AllocatedResourceId is `pod-acme-orders-01`, AllocatedServiceName is "Aura Order Management". EffectiveCost is $40.00.
-3. **Allocated charge — ML Inference Service** (Row 3): 35% allocated to `pod-acme-scoring-01`. ServiceName remains "Aura Container Runtime". AllocatedResourceId is `pod-acme-scoring-01`, AllocatedServiceName is "Aura ML Inference". EffectiveCost is $35.00.
-4. **Allocated charge — Web Frontend Service** (Row 4): 25% allocated to `pod-acme-frontend-01`. ServiceName remains "Aura Container Runtime". AllocatedResourceId is `pod-acme-frontend-01`, AllocatedServiceName is "Aura Edge Delivery". EffectiveCost is $25.00.
+2. **Allocated charge — Orders Service** (Row 2): 40% of the origin charge allocated to `pod-aura-orders-01`. ServiceName remains "Aura Container Runtime" (preserved from the origin charge). AllocatedResourceId is `pod-aura-orders-01`, AllocatedServiceName is "Aura Order Management". EffectiveCost is $40.00.
+3. **Allocated charge — ML Inference Service** (Row 3): 35% allocated to `pod-aura-scoring-01`. ServiceName remains "Aura Container Runtime". AllocatedResourceId is `pod-aura-scoring-01`, AllocatedServiceName is "Aura ML Inference". EffectiveCost is $35.00.
+4. **Allocated charge — Web Frontend Service** (Row 4): 25% allocated to `pod-aura-frontend-01`. ServiceName remains "Aura Container Runtime". AllocatedResourceId is `pod-aura-frontend-01`, AllocatedServiceName is "Aura Edge Delivery". EffectiveCost is $25.00.
 
 The three allocated charge EffectiveCost values sum to $40.00 + $35.00 + $25.00 = $100.00, matching the origin charge total. Per DataGeneratorCalculatedSplitCostAllocationHandling, the sum of a summable metric across the allocated charges equals the corresponding origin charge, so the cost is sliced out of the origin charge rather than added alongside it. The origin charge row keeps its preserved dimensions with EffectiveCost reduced to $0.00, and no separate offsetting rows are needed.
 
 | Row | ResourceId                  | ServiceName             | ServiceCategory | AllocatedResourceId      | AllocatedServiceName   | EffectiveCost |
 | :-- | :-------------------------- | :---------------------- | :-------------- | :----------------------- | :--------------------- | ------------: |
-| 1   | `cluster-acme-shared-01`    | Aura Container Runtime  | Compute         | *(null)*                 | *(null)*               |         $0.00 |
-| 2   | `cluster-acme-shared-01`    | Aura Container Runtime  | Compute         | `pod-acme-orders-01`     | Aura Order Management  |        $40.00 |
-| 3   | `cluster-acme-shared-01`    | Aura Container Runtime  | Compute         | `pod-acme-scoring-01`    | Aura ML Inference      |        $35.00 |
-| 4   | `cluster-acme-shared-01`    | Aura Container Runtime  | Compute         | `pod-acme-frontend-01`   | Aura Edge Delivery     |        $25.00 |
+| 1   | `cluster-aura-shared-01`    | Aura Container Runtime  | Compute         | *(null)*                 | *(null)*               |         $0.00 |
+| 2   | `cluster-aura-shared-01`    | Aura Container Runtime  | Compute         | `pod-aura-orders-01`     | Aura Order Management  |        $40.00 |
+| 3   | `cluster-aura-shared-01`    | Aura Container Runtime  | Compute         | `pod-aura-scoring-01`    | Aura ML Inference      |        $35.00 |
+| 4   | `cluster-aura-shared-01`    | Aura Container Runtime  | Compute         | `pod-aura-frontend-01`   | Aura Edge Delivery     |        $25.00 |
 
 ## Analysis Queries Enabled by AllocatedServiceName
 
