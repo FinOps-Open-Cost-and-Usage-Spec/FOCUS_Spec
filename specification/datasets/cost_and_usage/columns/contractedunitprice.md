@@ -38,7 +38,7 @@ Contracted Unit Price
 
 ## Description
 
-The agreed-upon unit price for a single Pricing Unit of the associated *SKU*, inclusive of all pricing adjustments unconditionally guaranteed by the governing contracts applicable to the charge, while excluding pricing adjustments contingent on the active status, activation, or remaining balance of a discount-bearing commitment program, reflecting the applicable unit price per pricing tier for *SKUs* with threshold-based tiered pricing.
+The agreed-upon unit price for a single Pricing Unit of the associated *SKU*, inclusive of all pricing adjustments unconditionally guaranteed by the governing contracts applicable to the charge, while excluding pricing adjustments contingent on the status or remaining balance of a discount-bearing commitment program, reflecting the applicable unit price per pricing tier for *SKUs* with threshold-based tiered pricing.
 
 ## Content Constraints
 
