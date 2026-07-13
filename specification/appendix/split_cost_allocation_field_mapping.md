@@ -8,11 +8,11 @@ Practitioners who generate FOCUS data from Aura Web native exports (or any provi
 
 ## Scenario
 
-Acme Corp runs a shared Aura Web container host (`host-acme-prod-07`) — a single compute instance that provides capacity for multiple application workloads. For the charge period 2026-06-01 to 2026-06-02, the instance runs three consuming workloads. Aura Web's billing export records the full instance cost on a single row with allocation detail in native extension columns. The FOCUS output must split this into four rows — one [*origin charge*](#glossary:origin-charge) row and one *allocated charge* row per consumer — with summable metrics distributed proportionally and all dimension columns preserved.
+Acme Corp runs a shared Aura Web container host (`host-aura-prod-07`) — a single compute instance that provides capacity for multiple application workloads. For the charge period 2026-06-01 to 2026-06-02, the instance runs three consuming workloads. Aura Web's billing export records the full instance cost on a single row with allocation detail in native extension columns. The FOCUS output must split this into four rows — one [*origin charge*](#glossary:origin-charge) row and one *allocated charge* row per consumer — with summable metrics distributed proportionally and all dimension columns preserved.
 
 The origin charge for the period is:
 
-* Resource: `host-acme-prod-07` (a compute instance)
+* Resource: `host-aura-prod-07` (a compute instance)
 * Aura Web service: "Aura Compute Engine" (fictitious equivalent: Amazon EC2)
 * EffectiveCost: $240.00 (full 24-hour period at $10.00/hr)
 * BilledCost: $240.00
@@ -24,9 +24,9 @@ The three consuming workloads and their measured allocation ratios for the perio
 
 | Workload Pod              | Display Name              | Consuming Service       | vCPU-Hours | Allocation Ratio |
 | :------------------------ | :------------------------ | :---------------------- | ---------: | ---------------: |
-| `pod-acme-api-gateway-01` | acme-api-gateway-01       | Aura App Platform       |         60 |             0.50 |
-| `pod-acme-data-ingest-01` | acme-data-ingest-01       | Aura Stream Processing  |         36 |             0.30 |
-| `pod-acme-ml-train-01`    | acme-ml-train-01          | LatticeScale ML Runtime |         24 |             0.20 |
+| `pod-aura-api-gateway-01` | aura-api-gateway-01       | Aura App Platform       |         60 |             0.50 |
+| `pod-aura-data-ingest-01` | aura-data-ingest-01       | Aura Stream Processing  |         36 |             0.30 |
+| `pod-aura-ml-train-01`    | aura-ml-train-01          | LatticeScale ML Runtime |         24 |             0.20 |
 
 ## Native Input: Aura Web Billing Export
 
@@ -59,8 +59,8 @@ Native input row:
 
 | native column                   | value                          |
 | :------------------------------ | :----------------------------- |
-| `resource_id`                   | `host-acme-prod-07`            |
-| `resource_name`                 | `acme-prod-07`                 |
+| `resource_id`                   | `host-aura-prod-07`            |
+| `resource_name`                 | `aura-prod-07`                 |
 | `product_name`                  | `Aura Compute Engine`          |
 | `product_category`              | `Compute`                      |
 | `charge_period_start`           | `2026-06-01T00:00:00Z`         |
@@ -70,18 +70,18 @@ Native input row:
 | `usage_quantity`                | `24`                           |
 | `list_unit_price`               | `12.00`                        |
 | `contracted_unit_price`         | `10.00`                        |
-| `split_resource_id_1`           | `pod-acme-api-gateway-01`      |
-| `split_resource_name_1`         | `acme-api-gateway-01`          |
+| `split_resource_id_1`           | `pod-aura-api-gateway-01`      |
+| `split_resource_name_1`         | `aura-api-gateway-01`          |
 | `split_service_name_1`          | `Aura App Platform`            |
 | `split_allocation_ratio_1`      | `0.50`                         |
 | `split_usage_quantity_1`        | `60`                           |
-| `split_resource_id_2`           | `pod-acme-data-ingest-01`      |
-| `split_resource_name_2`         | `acme-data-ingest-01`          |
+| `split_resource_id_2`           | `pod-aura-data-ingest-01`      |
+| `split_resource_name_2`         | `aura-data-ingest-01`          |
 | `split_service_name_2`          | `Aura Stream Processing`       |
 | `split_allocation_ratio_2`      | `0.30`                         |
 | `split_usage_quantity_2`        | `36`                           |
-| `split_resource_id_3`           | `pod-acme-ml-train-01`         |
-| `split_resource_name_3`         | `acme-ml-train-01`             |
+| `split_resource_id_3`           | `pod-aura-ml-train-01`         |
+| `split_resource_name_3`         | `aura-ml-train-01`             |
 | `split_service_name_3`          | `LatticeScale ML Runtime`      |
 | `split_allocation_ratio_3`      | `0.20`                         |
 | `split_usage_quantity_3`        | `24`                           |
@@ -112,8 +112,8 @@ The data generator emits four FOCUS rows from this single native input row. The 
 | ServiceProviderName     | `"Aura Web"`                                                                                   | Provider identity                                   |
 | ServiceName             | `"Aura Compute Engine"`                                                                        | `product_name`                                      |
 | ServiceCategory         | `"Compute"`                                                                                    | `product_category`                                  |
-| ResourceId              | `"host-acme-prod-07"`                                                                          | `resource_id`                                       |
-| ResourceName            | `"acme-prod-07"`                                                                               | `resource_name`                                     |
+| ResourceId              | `"host-aura-prod-07"`                                                                          | `resource_id`                                       |
+| ResourceName            | `"aura-prod-07"`                                                                               | `resource_name`                                     |
 | ListUnitPrice           | `12.00`                                                                                        | `list_unit_price`                                   |
 | ContractedUnitPrice     | `10.00`                                                                                        | `contracted_unit_price`                             |
 | ConsumedQuantity        | `0`                                                                                            | Origin zeroed — full quantity distributed below     |
@@ -135,8 +135,8 @@ The data generator emits four FOCUS rows from this single native input row. The 
 | ServiceProviderName     | `"Aura Web"`                                                                                   | Provider identity                                   |
 | ServiceName             | `"Aura Compute Engine"`                                                                        | `product_name` — preserved from origin              |
 | ServiceCategory         | `"Compute"`                                                                                    | `product_category` — preserved from origin          |
-| ResourceId              | `"host-acme-prod-07"`                                                                          | `resource_id` — preserved from origin               |
-| ResourceName            | `"acme-prod-07"`                                                                               | `resource_name` — preserved from origin             |
+| ResourceId              | `"host-aura-prod-07"`                                                                          | `resource_id` — preserved from origin               |
+| ResourceName            | `"aura-prod-07"`                                                                               | `resource_name` — preserved from origin             |
 | ListUnitPrice           | `12.00`                                                                                        | `list_unit_price` — preserved from origin           |
 | ContractedUnitPrice     | `10.00`                                                                                        | `contracted_unit_price` — preserved from origin     |
 | ConsumedQuantity        | `12`                                                                                           | `24 × 0.50`                                         |
@@ -144,8 +144,8 @@ The data generator emits four FOCUS rows from this single native input row. The 
 | EffectiveCost           | `120.00`                                                                                       | `240.00 × 0.50`                                     |
 | AllocatedMethodId       | `"aura-vcpu-proportional-v1"`                                                                  | `split_method_id`                                   |
 | AllocatedMethodDetails  | `{"Elements":[{"AllocatedRatio":0.50,"UsageUnit":"vCPU-Hours","UsageQuantity":60}]}`           | `split_allocation_ratio_1`, `split_usage_quantity_1` |
-| AllocatedResourceId     | `"pod-acme-api-gateway-01"`                                                                    | `split_resource_id_1`                               |
-| AllocatedResourceName   | `"acme-api-gateway-01"`                                                                        | `split_resource_name_1`                             |
+| AllocatedResourceId     | `"pod-aura-api-gateway-01"`                                                                    | `split_resource_id_1`                               |
+| AllocatedResourceName   | `"aura-api-gateway-01"`                                                                        | `split_resource_name_1`                             |
 | AllocatedServiceName    | `"Aura App Platform"`                                                                          | `split_service_name_1`                              |
 
 ### Row 3 — Allocated Charge: Aura Stream Processing (30%)
@@ -158,8 +158,8 @@ The data generator emits four FOCUS rows from this single native input row. The 
 | ServiceProviderName     | `"Aura Web"`                                                                                   | Provider identity                                   |
 | ServiceName             | `"Aura Compute Engine"`                                                                        | `product_name` — preserved from origin              |
 | ServiceCategory         | `"Compute"`                                                                                    | `product_category` — preserved from origin          |
-| ResourceId              | `"host-acme-prod-07"`                                                                          | `resource_id` — preserved from origin               |
-| ResourceName            | `"acme-prod-07"`                                                                               | `resource_name` — preserved from origin             |
+| ResourceId              | `"host-aura-prod-07"`                                                                          | `resource_id` — preserved from origin               |
+| ResourceName            | `"aura-prod-07"`                                                                               | `resource_name` — preserved from origin             |
 | ListUnitPrice           | `12.00`                                                                                        | `list_unit_price` — preserved from origin           |
 | ContractedUnitPrice     | `10.00`                                                                                        | `contracted_unit_price` — preserved from origin     |
 | ConsumedQuantity        | `7.2`                                                                                          | `24 × 0.30`                                         |
@@ -167,8 +167,8 @@ The data generator emits four FOCUS rows from this single native input row. The 
 | EffectiveCost           | `72.00`                                                                                        | `240.00 × 0.30`                                     |
 | AllocatedMethodId       | `"aura-vcpu-proportional-v1"`                                                                  | `split_method_id`                                   |
 | AllocatedMethodDetails  | `{"Elements":[{"AllocatedRatio":0.30,"UsageUnit":"vCPU-Hours","UsageQuantity":36}]}`           | `split_allocation_ratio_2`, `split_usage_quantity_2` |
-| AllocatedResourceId     | `"pod-acme-data-ingest-01"`                                                                    | `split_resource_id_2`                               |
-| AllocatedResourceName   | `"acme-data-ingest-01"`                                                                        | `split_resource_name_2`                             |
+| AllocatedResourceId     | `"pod-aura-data-ingest-01"`                                                                    | `split_resource_id_2`                               |
+| AllocatedResourceName   | `"aura-data-ingest-01"`                                                                        | `split_resource_name_2`                             |
 | AllocatedServiceName    | `"Aura Stream Processing"`                                                                     | `split_service_name_2`                              |
 
 ### Row 4 — Allocated Charge: LatticeScale ML Runtime (20%)
@@ -181,8 +181,8 @@ The data generator emits four FOCUS rows from this single native input row. The 
 | ServiceProviderName     | `"Aura Web"`                                                                                   | Provider identity                                   |
 | ServiceName             | `"Aura Compute Engine"`                                                                        | `product_name` — preserved from origin              |
 | ServiceCategory         | `"Compute"`                                                                                    | `product_category` — preserved from origin          |
-| ResourceId              | `"host-acme-prod-07"`                                                                          | `resource_id` — preserved from origin               |
-| ResourceName            | `"acme-prod-07"`                                                                               | `resource_name` — preserved from origin             |
+| ResourceId              | `"host-aura-prod-07"`                                                                          | `resource_id` — preserved from origin               |
+| ResourceName            | `"aura-prod-07"`                                                                               | `resource_name` — preserved from origin             |
 | ListUnitPrice           | `12.00`                                                                                        | `list_unit_price` — preserved from origin           |
 | ContractedUnitPrice     | `10.00`                                                                                        | `contracted_unit_price` — preserved from origin     |
 | ConsumedQuantity        | `4.8`                                                                                          | `24 × 0.20`                                         |
@@ -190,8 +190,8 @@ The data generator emits four FOCUS rows from this single native input row. The 
 | EffectiveCost           | `48.00`                                                                                        | `240.00 × 0.20`                                     |
 | AllocatedMethodId       | `"aura-vcpu-proportional-v1"`                                                                  | `split_method_id`                                   |
 | AllocatedMethodDetails  | `{"Elements":[{"AllocatedRatio":0.20,"UsageUnit":"vCPU-Hours","UsageQuantity":24}]}`           | `split_allocation_ratio_3`, `split_usage_quantity_3` |
-| AllocatedResourceId     | `"pod-acme-ml-train-01"`                                                                       | `split_resource_id_3`                               |
-| AllocatedResourceName   | `"acme-ml-train-01"`                                                                           | `split_resource_name_3`                             |
+| AllocatedResourceId     | `"pod-aura-ml-train-01"`                                                                       | `split_resource_id_3`                               |
+| AllocatedResourceName   | `"aura-ml-train-01"`                                                                           | `split_resource_name_3`                             |
 | AllocatedServiceName    | `"LatticeScale ML Runtime"`                                                                    | `split_service_name_3`                              |
 
 ## Metric Reconciliation
