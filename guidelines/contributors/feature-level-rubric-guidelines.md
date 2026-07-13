@@ -6,12 +6,17 @@ These principles set a FOCUS column's feature level and nullability when the col
 
 Level and nullability are two axes, decided separately. Level says whether the column is present, and when. Nullability says whether the value may be null when the column is present. Mandatory is a bar a column earns by applying to every operating model, not the default it starts from.
 
+Applied as intended, the rubric keeps three outcomes true:
+
+* A column whose concept exists only for some operating models is never universally required; it takes Conditional, not Mandatory.
+* Nullability never substitutes for the applicability decision; a column is not held Mandatory on the reasoning that generators lacking its concept can leave it null or fill it from another column.
+* Derivation relationships never set a feature level by themselves; a derived column and its source columns are each leveled on their own inputs.
+
 This is the first of two parts: the principles here, the mechanics (procedure, data-driven tests, machine-readable check) in a companion guideline. The bar to meet: two people applying these principles to the same column reach the same level, without the author in the room.
 
-**Contents:** 
+**Contents:**
 
-* [The Problem This Addresses](#the-problem-this-addresses)
-* [Terms](#terms) 
+* [Terms](#terms)
 * [Core Principles](#core-principles)
 * [The Interim Boundary Rule](#the-interim-boundary-rule)
 * [The Four Decision Inputs](#the-four-decision-inputs)
@@ -19,17 +24,6 @@ This is the first of two parts: the principles here, the mechanics (procedure, d
 * [Two-Layer Output](#two-layer-output)
 * [Applying the Principles: A Worked Example](#applying-the-principles-a-worked-example)
 * [Scope of This Guidance](#scope-of-this-guidance)
-
-## The Problem This Addresses
-
-Today a column's feature level is an output, not a choice. It falls out of how the presence requirement is written: an unconditional `MUST` gives Mandatory, a conditional `MUST` gives Conditional, a `SHOULD` gives Recommended, a `MAY` gives Optional. Nothing decides what the requirement should be.
-
-So Mandatory became the default rather than a high bar, and columns only some operating models can produce were mandated anyway. Forcing those generators to emit an empty or padded column is the adoption barrier this guideline targets.
-
-Two habits sustain it:
-
-* **Level and nullability get argued as one question.** They are separate, and the specification already stores them as separate fields. Conflating them keeps a column Mandatory for models that lack its concept, on the reasoning that those generators can leave it null or fill it from another column, so the presence question is never asked.
-* **Derivation has no leveling rule.** Columns linked by derivation are leveled independently, so a derived column can be mandated redundantly, or a source column dragged to the level of something computed from it.
 
 ## Terms
 
