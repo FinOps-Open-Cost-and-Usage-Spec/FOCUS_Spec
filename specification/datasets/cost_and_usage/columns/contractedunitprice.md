@@ -1,6 +1,6 @@
 # Contracted Unit Price
 
-Contracted Unit Price represents the agreed-upon unit price for a single [Pricing Unit](#datasets.costandusage.pricingunit) of the associated [*SKU*](#glossary:sku), inclusive of all pricing adjustments unconditionally guaranteed by the governing contracts applicable to the charge, while excluding pricing adjustments contingent on the active status, activation, or remaining balance of a discount-bearing commitment program.
+Contracted Unit Price represents the agreed-upon unit price for a single [Pricing Unit](#datasets.costandusage.pricingunit) of the associated [*SKU*](#glossary:sku), inclusive of all pricing adjustments unconditionally guaranteed by the governing contracts applicable to the charge, while excluding pricing adjustments contingent on the status or remaining balance of a discount-bearing commitment program.
 
 For *SKUs* with [threshold-based tiered pricing](#appendix.thresholdbasedtieredpricing), it reflects the applicable unit price per pricing tier, which may be based on quantity, duration, or spend within a defined aggregation scope and aggregation interval. Contracted Unit Price also reflects any customer-specific pricing tier configuration defined by the governing contracts applicable to the charge, where such configuration exists.
 
