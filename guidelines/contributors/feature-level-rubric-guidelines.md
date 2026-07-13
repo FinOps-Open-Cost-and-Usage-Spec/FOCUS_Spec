@@ -20,7 +20,6 @@ This is the first of two parts: the principles here, the mechanics (procedure, d
 * [Core Principles](#core-principles)
 * [The Interim Boundary Rule](#the-interim-boundary-rule)
 * [The Four Decision Inputs](#the-four-decision-inputs)
-* [Recording Why a Column is Conditional](#recording-why-a-column-is-conditional)
 * [Two-Layer Output](#two-layer-output)
 * [Applying the Principles: A Worked Example](#applying-the-principles-a-worked-example)
 * [Scope of This Guidance](#scope-of-this-guidance)
@@ -28,7 +27,7 @@ This is the first of two parts: the principles here, the mechanics (procedure, d
 ## Key Concepts
 
 * **Operating model.** The collective set of business concepts underlying a FOCUS-compliant dataset. For leveling, read it as the characteristics that decide which FOCUS concepts apply to a generator (regions, commitment discounts, virtual currency, and so on), independent of category.
-* **Operating model Condition.** A named entry in the specification's Conditions section (specification/conditions/), each reading "the operating model includes X" (includes regions, includes commitment discounts). The Conditions section is the single list, and every Conditional column links to one. 
+* **Operating model Condition.** A named entry in the specification's Conditions section (specification/conditions/), each reading "the operating model includes X" (includes regions, includes commitment discounts). The Conditions section is the single list, and every Conditional column links to one.
 * **Leveling unit.** A column within a dataset, not a Column ID in the abstract. The same Column ID may take a different level, nullability, or set of Conditions in each dataset, judged per dataset.
 * **The two axes.**
 
@@ -84,16 +83,16 @@ Every leveling decision answers four questions. They are numbered for reference;
 
 ```mermaid
 flowchart TD
-    A["Proposed column, in a dataset"] --> B{"1 Necessity: needed, or only useful?"}
-    B -->|"Only useful"| R["Recommended (Optional only if discretionary)"]
-    B -->|"Needed"| D{"4 Derivability: derivable from Mandatory columns?"}
-    D -->|"Yes: redundant"| RO["Recommended, not Optional"]
-    D -->|"No"| E{"2 Applicability: concept absent for some operating models?"}
-    E -->|"Yes"| CD["Conditional, gated on an operating model Condition"]
+    A["Proposed column,<br/>in a dataset"] --> B{"1 Necessity:<br/>needed, or only useful?"}
+    B -->|"Only useful"| R["Recommended<br/>(Optional only if discretionary)"]
+    B -->|"Needed"| D{"4 Derivability:<br/>derivable from<br/>Mandatory columns?"}
+    D -->|"Yes: redundant"| RO["Recommended,<br/>not Optional"]
+    D -->|"No"| E{"2 Applicability:<br/>concept absent for some<br/>operating models?"}
+    E -->|"Yes"| CD["Conditional, gated on an<br/>operating model Condition"]
     E -->|"No: exists for all"| M["Mandatory"]
-    subgraph NUL["Nullability, a separate axis, set by Input 3"]
+    subgraph NUL["Nullability, a separate axis"]
         direction TB
-        P{"3 Producibility: meaningful value always available where present?"} -->|"Yes"| NF["Allows nulls = False"]
+        P{"3 Producibility:<br/>meaningful value always<br/>available where present?"} -->|"Yes"| NF["Allows nulls = False"]
         P -->|"No"| NT["Allows nulls = True"]
     end
 ```
