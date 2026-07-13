@@ -100,18 +100,6 @@ flowchart TD
 
 Borderline applicability, the concept present for most models and absent for a few, is settled by the companion's test; until then such a column takes the Conditional default from the Interim Boundary Rule.
 
-## Recording Why a Column is Conditional
-
-Record every gate that applies: the operating model gate that sets the level, and any intrinsic gate for which rows within an applicable model carry a value. The two gates are defined in [Terms](#terms).
-
-Identifiers commonly have both: an operating model gate for whether the concept exists (a commitment discount, a resource), and an intrinsic gate for which rows carry a value. Record both. The operating model gate alone loses the row rule; the intrinsic gate alone hides the variation that sets the level.
-
-When a Conditional column needs a Condition not yet in the Conditions section, propose it, worded "the operating model includes X", with the leveling decision; do not encode a category in its place. A proposed Condition must name a model characteristic identifiable without reference to the column it gates: one that merely restates that the generator produces the column is circular and not admissible.
-
-Some variance fits no operating model Condition, such as which entity issues the invoice or whether a host provider is customer-visible. Do not force an ill-fitting Condition; record it as a boundary case for the companion, with the leveling decision. This concerns how the variance is expressed, not the level: at the boundary the column still takes the interim level now.
-
-The phrasing rule keeps this honest: never write a level as a category rule. Not *SaaS does not populate RegionId*, but *SaaS models usually do not include regions, and those that do populate RegionId*. The first hides a category inside a rule; the second names the Condition and treats the category as a default.
-
 ## Two-Layer Output
 
 The rubric produces two layers; only one is normative.
