@@ -25,7 +25,7 @@ This is the first of two parts: the principles here, the mechanics (procedure, d
 * [Applying the Principles: A Worked Example](#applying-the-principles-a-worked-example)
 * [Scope of This Guidance](#scope-of-this-guidance)
 
-## Terms
+## Key Concepts
 
 * **Operating model.** A specification glossary term. For leveling, read it as the characteristics that decide which FOCUS concepts apply to a generator (regions, commitment discounts, virtual currency, and so on), independent of category.
 * **Operating model Condition.** A named entry in the specification's Conditions section (specification/conditions/), each reading "the operating model includes X" (includes regions, includes commitment discounts). The Conditions section is the single list, and every Conditional column links to one. The qualified term is always written, so it is never confused with the per-rule `Condition` field in the requirements model, which gates one validation rule, or with lowercase conditions in requirement text. One operating model Condition may gate a column's presence (making it Conditional) or its nullability (level unchanged); only the presence role bears on the level.
