@@ -28,9 +28,9 @@ ContractCommitmentPaymentModel MUST adhere to the following requirements:
 
 Within the SKU Price dataset, the Contract Commitment Payment Model helps practitioners understand how a committed rate is structured across different catalog rows:
 
-* **All Upfront:** The corresponding SKU Price record typically has a [Charge Frequency](#datasets.skuprice.chargefrequency) of "One-Time".
-* **No Upfront:** The corresponding SKU Price record typically has a [Charge Frequency](#datasets.skuprice.chargefrequency) of "Recurring" or "Usage-Based".
-* **Partial Upfront:** This pricing model typically requires multiple associated SKU Price records to accurately represent the cost (e.g., one record for the "One-Time" upfront fee, and a separate record for the "Recurring" or "Usage-Based" discounted rate).
+* **All Upfront:** The obligation is settled in a single payment, typically represented by one SKU Price record for the upfront amount.
+* **No Upfront:** The obligation is settled through recurring charges, typically represented by one SKU Price record for the recurring rate.
+* **Partial Upfront:** The obligation combines an initial payment and recurring charges, so it is typically represented by multiple SKU Price records, one for the upfront amount and one for the recurring rate, each a distinct price component with its own SKU Price ID.
 
 ## Column ID
 

@@ -6,6 +6,8 @@ The SKU Price dataset represents prices as of the date the dataset is captured. 
 
 The dataset describes the full price list a *service provider* offers, not only the SKUs that appear in Cost and Usage. To manage the size of a complete price list, a *service provider* may partition delivery, for example by region, service, or SKU category, and is encouraged to do so where publishing a complete list in a single delivery would otherwise be impractical.
 
+Each SKU Price record represents a single price component. A commercial arrangement composed of multiple price components (e.g., a commitment purchased with an upfront fee and a recurring rate) is represented as multiple SKU Price records, each with its own SKU Price ID, rather than as a single record spanning several components.
+
 The columns are presented in alphabetical order.
 
 ## Columns
@@ -13,7 +15,6 @@ The columns are presented in alphabetical order.
 | Column                                                                              | Column Type | Feature Level                                                  | Allows Nulls | Data Type |
 | ----------------------------------------------------------------------------------- | ----------- | -------------------------------------------------------------- | ------------ | --------- |
 | [Charge Category](#datasets.skuprice.chargecategory)                              | Dimension   | Mandatory   | False        | String    |
-| [Charge Frequency](#datasets.skuprice.chargefrequency)                              | Dimension   | [Conditional](#conditions.includesmultiplechargefrequencies)   | False        | String    |
 | [Contract Commitment Duration Type](#datasets.skuprice.contractcommitmentdurationtype) | Dimension   | [Conditional](#conditions.includescontractcommitments)         | True         | String    |
 | [Contract Commitment Payment Model](#datasets.skuprice.contractcommitmentpaymentmodel) | Dimension   | [Conditional](#conditions.includescontractcommitments)         | True         | String    |
 | [Contract ID](#datasets.skuprice.contractid)                                        | Dimension   | [Conditional](#conditions.includescontractcommitments)         | True         | String    |
@@ -53,7 +54,6 @@ SkuPrice MUST adhere to the following requirements:
 
 * SkuPrice column presence MUST adhere to the following requirements:
   * SkuPrice MUST include [ChargeCategory](#datasets.skuprice.chargecategory).
-  * SkuPrice MUST include [ChargeFrequency](#datasets.skuprice.chargefrequency) when the *operating model* [includes multiple charge frequencies](#conditions.includesmultiplechargefrequencies).
   * SkuPrice MUST include [ContractCommitmentDurationType](#datasets.skuprice.contractcommitmentdurationtype) when the *operating model* [includes contract commitments](#conditions.includescontractcommitments).
   * SkuPrice MUST include [ContractCommitmentPaymentModel](#datasets.skuprice.contractcommitmentpaymentmodel) when the *operating model* [includes contract commitments](#conditions.includescontractcommitments).
   * SkuPrice MUST include [ContractId](#datasets.skuprice.contractid) when the *operating model* [includes contract commitments](#conditions.includescontractcommitments).
