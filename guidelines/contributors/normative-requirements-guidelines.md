@@ -1,5 +1,7 @@
 # Normative Requirements Guidelines
 
+## Overview and Purpose
+
 This section defines guidelines for authoring normative requirements in the FOCUS specification. These guidelines define **how** to write normative requirements to ensure clarity, consistency, and testability. It does not define the requirements themselves (the "what") but concentrates on their **structure, subjects, and verifiability**.
 
 The guidelines cover authoring of normative requirements for the following entities:
@@ -47,7 +49,25 @@ style ObjectProperty fill:#d4edda,stroke:#666,stroke-width:1px
 
 > **Note:** These guidelines do not currently apply to FOCUS Metadata requirements, which are out of scope.
 
-## Dataset Abstraction and Normative Subject Convention
+## Notation Conventions
+
+This document uses the following notation conventions in requirement patterns and examples:
+
+* `<placeholder>` — a named placeholder to be replaced with a specific value (used in code block patterns)
+* `{placeholder}` — a named placeholder to be replaced with a specific value (used in prose and tables)
+* `[optional element]` — an optional element that applies only under certain conditions
+* `[A|B]` — a choice between two alternatives (e.g., `[Dataset|Column]`)
+* `...` — indicates that additional content exists but is not shown in the example
+
+## Dataset Abstraction and Terminology Conventions
+
+The FOCUS specification uses precise dataset terminology to distinguish between the abstract dataset concept, its implementations, and its physical representations. This section establishes:
+
+* the abstraction levels defined for the dataset concept,
+* the convention that applies when a dataset concept appears in the normative subject position, and
+* the terminology rules that apply when a dataset concept appears in non-subject positions.
+
+### Dataset Abstraction Levels
 
 By glossary definition, the following concepts are used:
 
@@ -55,7 +75,9 @@ By glossary definition, the following concepts are used:
 * **Dataset Instance** — represents a specific implementation of a **FOCUS Dataset** provided by a data generator.
 * **Dataset Artifact** — represents a physical representation of a specific **FOCUS Dataset Instance** delivered by a data generator.
 
-However, by design decision, the specification adopts the following normative conventions:
+### Dataset Terminology in Normative Subject Position
+
+By design decision, the specification adopts the following normative conventions for the subject position:
 
 * **FOCUS Dataset is used as the canonical normative subject** for dataset-level requirements.
 * Normative requirements are intentionally written against **FOCUS Dataset**, even when the constraint applies to:
@@ -68,7 +90,7 @@ This choice is intentional and overrides interpretations based solely on abstrac
 
 ### Dataset Terminology in Non-Subject Positions
 
-The convention above applies exclusively to the normative subject position. When a normative requirement references a dataset concept in a non-subject position (e.g., in conditions, scope clauses, or explanatory context within the requirement body), the precise glossary term MUST be used:
+The subject-position convention applies exclusively to the normative subject position. When a normative requirement references a dataset concept in a non-subject position (e.g., in conditions, scope clauses, or explanatory context within the requirement body), the precise glossary term MUST be used:
 
 * `FOCUS dataset` — when referring to the abstract dataset definition established by FOCUS.
 * `dataset instance` — when referring to a specific implementation of a FOCUS dataset provided by a data generator.
@@ -94,55 +116,41 @@ Generic terms such as `dataset` or `datasets` MUST NOT be used in non-subject po
 * EffectiveCost MUST be 0 when ChargeCategory is "Purchase" and the purchase is intended to cover related eligible *charges*. This requirement applies even when the *covered charges* originate from different CostAndUsage *dataset instances*, possibly from a different ServiceProviderName.
 ```
 
-## Notation Conventions
+## FOCUS Entity Reference Conventions
 
-This document uses the following notation conventions in requirement patterns and examples:
-
-* `<placeholder>` — a named placeholder to be replaced with a specific value (used in code block patterns)
-* `{placeholder}` — a named placeholder to be replaced with a specific value (used in prose and tables)
-* `[optional element]` — an optional element that applies only under certain conditions
-* `[A|B]` — a choice between two alternatives (e.g., `[Dataset|Column]`)
-* `...` — indicates that additional content exists but is not shown in the example
+* References to FOCUS entities in normative requirements MUST use their canonical identifiers (e.g., `{DatasetId}`, `{ColumnId}`, `{AttributeId}`) or canonical object/property reference paths (e.g., `Object.Property[*].Field`).
+* References to FOCUS entities in normative requirements MUST NOT use their Display Names.
+* References SHOULD default to singular form, with the understanding that the requirement applies to all applicable instances, values, or elements of the referenced entity unless otherwise specified.
 
 ## Core Normative Authoring Rules
 
-### Normative Requirement Structure
+### Normative Requirement Model
 
-A normative requirement can be expressed in one of two forms:
+A normative requirement is a conformance statement that defines a verifiable constraint.
 
-* as a **standalone requirement**, represented by a single normative bullet (see [Standalone Requirements](#standalone-requirements)), or
-* as a **composite requirement**, represented by a hierarchy of nested normative bullets (see [Composite Requirements](#composite-requirements)).
+A normative requirement may be represented as either:
 
-The following rules define normative requirement-level semantics and normative bullet-level representation constraints:
+* a [standalone requirement](#standalone-requirements), represented by a single normative bullet, or
+* a [composite requirement](#composite-requirements), represented by a hierarchy of nested normative bullets.
 
-* Each normative requirement MUST be expressed as either a standalone requirement or a composite requirement.
-* Each normative requirement MUST identify exactly one **normative subject** to which the requirement applies.
-* Each normative requirement MUST express exactly one **verifiable constraint**.
-* Each normative requirement MUST be split into multiple bullets if it introduces multiple independent constraints.
-* Each normative requirement SHOULD describe a **verifiable state** of the object rather than behavior.
-* Each normative bullet MUST contain exactly one **BCP 14 keyword** (MUST, SHOULD, MAY, MUST NOT, etc.) indicating the obligation level. In composite requirements, the overall obligation level is determined by the bullet hierarchy as defined in [Composite Requirements](#composite-requirements).
+A normative requirement resolves into one or more [atomic requirements](#atomic-requirements). A standalone requirement resolves into exactly one atomic requirement. A composite requirement resolves into multiple atomic requirements.
 
-### Explicit Conditions in Normative Requirements
+The requirement structure uses structural constructs that provide scope, shared conditions, or organizational context but do not introduce conformance constraints.
 
-* A requirement MUST include an explicit condition when applicability is conditional and cannot be inferred from the normative subject and any associated qualifiers.
-* Conditional logic MUST be expressed using one of the following approved conditional keywords:
-  * `when`
-  * `unless`
-  * `only when`
-  * `except when`
+* A [structural anchor](#structural-anchor) defines the scope of a Requirements section.
+* A [condition variant structural grouping bullet](#condition-variant) defines a shared condition inherited by nested normative requirements.
+* A [context variant structural grouping bullet](#context-variant) provides organizational context for related normative requirements.
 
-### Structural Anchor Requirement
+### Structural Anchor
 
-Each Requirements section for a schema-level construct MUST begin with a single **structural anchor requirement**.
+A structural anchor is a structural construct that defines the scope of a Requirements section for a schema-level construct. It supports automated parsing and validation, does not introduce a verifiable constraint, and is not resolved into an atomic requirement.
 
-The structural anchor requirement:
+A Requirements section for a schema-level construct MUST satisfy the following structural rules:
 
-* introduces the scope of the subsequent normative requirements,
-* MUST appear as the first normative statement in the section,
-* exists to support automated parsing and validation, and
-* is not evaluated as a conformance requirement and does not introduce a constraint on datasets, columns, attributes, or other normative subjects.
+* Each Requirements section MUST begin with a single structural anchor.
+* The structural anchor MUST appear as the first normative statement in the section.
 
-The canonical form of a structural anchor requirement is:
+The canonical form of a structural anchor is:
 
 ``` markdown
 <Entity> MUST adhere to the following requirements:
@@ -154,61 +162,50 @@ For **Attribute Requirements** sections, a different canonical form applies:
 [Dataset|Column] conforming to <AttributeId> attribute MUST adhere to the following requirements:
 ```
 
-See [Section Structural Anchor Requirement for Attributes](#structural-anchor-requirement-for-attributes) for details.
-
-### Structural Grouping Bullet
-
-A **structural grouping bullet** defines the scope for a set of nested normative requirements but is not itself a normative requirement. The verifiable constraints are carried exclusively by the nested bullets. A structural grouping bullet appears in two variants: a condition variant and a context variant.
-
-See [Composite Requirements](#composite-requirements) for the rules governing the full parent + nested structure.
-
-#### Condition Variant
-
-A condition variant introduces a shared condition that applies to all nested bullets. It uses the following canonical form:
-
-``` markdown
-* When <Condition>, <Subject> MUST adhere to the following requirements:
-```
-
-* **Example** (illustrative): `* When ListUnitPrice is not null, ListUnitPrice MUST adhere to the following requirements:`
-
-#### Context Variant
-
-A context variant introduces a shared context that groups related nested bullets for readability purposes, without introducing a shared condition. Context variant structural grouping bullets are used in the following contexts: **Column presence groupings** and **Nullability groupings**.
-
-* **Column presence groupings** in dataset requirements, where the context precedes the BCP 14 keyword. It uses the following canonical form:
-
-``` markdown
-* <Subject> <context> MUST adhere to the following requirements:
-```
-
-* **Example** (illustrative): `* ContractCommitment column presence MUST adhere to the following requirements:`
-
-* **Nullability groupings** in column requirements, where the context follows the BCP 14 keyword. It uses the following canonical form:
-
-``` markdown
-* <Subject> MUST adhere to the following <context> requirements:
-```
-
-* **Example** (illustrative): `* CommitmentDiscountQuantity MUST adhere to the following nullability requirements:`
+See [Structural Anchor for Attributes](#structural-anchor-for-attributes) section for details.
 
 ### Standalone Requirements
 
-In a standalone requirement, the bullet and the normative requirement have a one-to-one correspondence. Standalone normative requirements use the following canonical form:
+A standalone requirement is a normative requirement represented by a single normative bullet. The normative bullet and the requirement have a one-to-one correspondence, and the requirement resolves into exactly one atomic requirement.
+
+A standalone requirement MUST adhere to the following rules:
+
+* A standalone requirement MUST identify exactly one normative subject.
+* A standalone requirement MUST express exactly one verifiable constraint.
+* A standalone requirement MUST contain exactly one BCP 14 keyword indicating the obligation level.
+
+Standalone normative requirements use the following canonical form:
 
 ``` markdown
 * <Subject> <BCP 14 Keyword> <Verifiable State Descriptor>[ Conditions].
 ```
 
+* **Example** (illustrative):
+
+``` markdown
+* CommitmentDiscountQuantity MUST be of type Decimal.
+```
+
 ### Composite Requirements
 
-Composite (parent + nested) requirements MAY be used to group related constraints under a shared condition, context, or subject.
+A composite requirement is a normative requirement represented by a hierarchy of normative bullets. Parent bullets establish scope, conditions, or obligations for their nested bullets, while lowest-level normative bullets define individual constraints.
+
+Composite requirements SHOULD be used to group related requirements when hierarchical grouping improves readability, particularly when multiple requirements share a common business context, such as when:
+
+* multiple requirements share the same conditions or scope; or
+* multiple requirements share the same subject.
+
+Flat parallel bullets SHOULD be preferred when the ordering of requirements alone is sufficient for clarity and readability.
+
+Atomic requirements are derived from the lowest-level normative bullets together with all applicable constraints established by their ancestor bullets. Parent bullets used solely for structural grouping do not define atomic requirements.
 
 Composite requirements MUST adhere to the following guidelines:
 
-* **Nuanced Obligation:** When a parent bullet uses a BCP 14 keyword (e.g., MUST), it establishes a mandatory requirement to evaluate the nested constraints. Each nested bullet then defines the specific nuance of that obligation for its respective subject or condition using its own BCP 14 keyword.
-* **Shared Conditionality:** Nested bullets MUST share the same condition if defined by the parent bullet.
+* **Hierarchical Obligation:** When a parent bullet uses a BCP 14 keyword (e.g., MUST), it establishes an obligation to evaluate the nested constraints. Each nested bullet then defines the specific requirement for its respective subject or condition using its own BCP 14 keyword.
+* **Shared Conditionality:** Nested bullets MUST inherit any condition established by the parent bullet.
 * **Context and Subject Consistency:** Nested bullets SHOULD maintain a consistent business context. While nested bullets SHOULD NOT introduce a different subject type, they MAY reference different subjects (e.g., a FOCUS dataset and its custom columns) provided they all relate to the same primary business context defined by the parent bullet.
+
+**Exception for Recommended Conformance:** When a parent bullet uses a SHOULD keyword to establish recommended conformance to a set of requirements (e.g., in `CustomColumnHandling` or when a column declares conformance to an attribute like `UnitFormat`), the weakest keyword in the hierarchy applies to the overall conformance.
 
 * **Example** (illustrative):
 
@@ -230,14 +227,80 @@ Correct:
   * CommitmentDiscountQuantity MUST be expressed in CommitmentDiscountUnit when not null.
 ```
 
-**Exception for Recommended Conformance:** When a parent bullet uses a SHOULD keyword to establish recommended conformance to a set of requirements (e.g., in `CustomColumnHandling` or when a column declares conformance to an attribute like `UnitFormat`), the weakest keyword in the hierarchy applies to the overall conformance.
+### Atomic Requirements
 
-Composite requirements SHOULD be used when grouping improves readability and:
+An atomic requirement is the smallest resolved conformance unit derived from a normative requirement.
 
-* Multiple requirements share the same Business Context.
-* Multiple requirements share the same subject.
+Atomic requirements represent the individual constraints evaluated during conformance validation.
 
-Flat parallel bullets SHOULD be preferred when ordering keywords alone is sufficient for clarity and readability.
+Atomic requirements are not authored independently. They are derived from standalone or composite requirements for conformance evaluation and validation purposes.
+
+A standalone normative bullet corresponds to one atomic requirement. A lowest-level normative bullet within a composite requirement corresponds to one atomic requirement after applying all applicable constraints inherited from its ancestor bullets.
+
+An atomic requirement MUST adhere to the following rules:
+
+* An atomic requirement MUST identify exactly one normative subject to which the requirement applies.
+* An atomic requirement MUST express exactly one verifiable constraint.
+* An atomic requirement MUST resolve to exactly one obligation level defined by a BCP 14 keyword.
+* An atomic requirement SHOULD describe a verifiable state of the object rather than behavior.
+
+Structural anchors and structural grouping bullets do not represent atomic requirements because they do not define verifiable constraints.
+
+### Structural Grouping Bullets
+
+A **structural grouping bullet** is a parent bullet within a [composite requirement](#composite-requirements) that groups related nested normative bullets under a shared condition or context.
+
+Structural grouping bullets appear in two variants: condition grouping bullets and context grouping bullets. The effect on [atomic requirements](#atomic-requirements) derived from the composite requirement depends on the grouping variant.
+
+#### Condition Grouping Bullets
+
+A condition grouping bullet introduces a shared condition that applies to all nested bullets. The condition is inherited when resolving nested normative bullets into atomic requirements.
+
+It uses the following canonical form:
+
+``` markdown
+* When <Condition>, <Subject> MUST adhere to the following requirements:
+```
+
+* **Example** (illustrative):
+
+``` markdown
+* When ListUnitPrice is not null, ListUnitPrice MUST adhere to the following requirements:
+```
+
+#### Context Grouping Bullets
+
+A context grouping bullet introduces a shared context for a group of related nested bullets without introducing a shared condition. The context is used for structural organization and does not add constraints to the resolved atomic requirements.
+
+Context grouping bullets may be used for different requirement contexts, such as **column presence** and **nullability**.
+
+##### Column Presence Grouping Bullets
+
+Column presence grouping bullets are used in dataset requirements. They use the following canonical form:
+
+``` markdown
+* <Subject> <context> MUST adhere to the following requirements:
+```
+
+* **Example** (illustrative):
+
+``` markdown
+* ContractCommitment column presence MUST adhere to the following requirements:
+```
+
+##### Nullability Grouping Bullets
+
+Nullability grouping bullets are used in column requirements. They use the following canonical form:
+
+``` markdown
+* <Subject> MUST adhere to the following <context> requirements:
+```
+
+* **Example** (illustrative):
+
+``` markdown
+* CommitmentDiscountQuantity MUST adhere to the following nullability requirements:
+```
 
 ### Normative Subject
 
@@ -313,13 +376,16 @@ The following MUST NOT be used as normative subjects:
 
 > **Note:** Actors and processes/mechanisms can appear as part of a documentation qualifier without violating this rule. In such cases, the normative subject is the documentation itself, not the actor or mechanism. For example, in `Data generator-calculated split cost allocation method documentation`, the subject is the documentation, not the data generator; in `FOCUS dataset delivery mechanism documentation`, the subject is the documentation, not the delivery mechanism.
 
-### FOCUS Entity Reference Conventions
+### Explicit Conditions in Normative Requirements
 
-* References to FOCUS entities in normative requirements MUST use their canonical identifiers (e.g., `{DatasetId}`, `{ColumnId}`, `{AttributeId}`) or canonical object/property reference paths (e.g., `Object.Property[*].Field`).
-* References to FOCUS entities in normative requirements MUST NOT use their Display Names.
-* References SHOULD default to singular form, with the understanding that the requirement applies to all applicable instances, values, or elements of the referenced entity unless otherwise specified.
+* A requirement MUST include an explicit condition when applicability is conditional and cannot be inferred from the normative subject and any associated qualifiers.
+* Conditional logic MUST be expressed using one of the following approved conditional keywords:
+  * `when`
+  * `unless`
+  * `only when`
+  * `except when`
 
-### State, Not Behavior
+### Verifiable State Descriptor — State, Not Behavior
 
 Normative requirements MUST describe a **verifiable state**, not an operational process or behavior.
 
@@ -357,17 +423,13 @@ Specifically:
 
 > **Note:** This list is not exhaustive. Any verb that describes an action, responsibility, or implementation behavior rather than a verifiable state is considered non-compliant in the normative position.
 
-### Tone and Grammar
-
-In order to maintain a formal, professional tone throughout the specification, contractions MUST NOT be used in normative requirements (e.g., use "do not" instead of "don't").
-
 ### Use of BCP 14 Keywords
 
 * Each normative bullet MUST contain exactly one of the following BCP 14 keywords: `MUST`, `MUST NOT`, `SHOULD`, `SHOULD NOT`, `MAY`.
 * A bullet containing more than one normative keyword MUST be split (see [Splitting Requirements](#splitting-requirements) section).
 * The following BCP 14 keywords MUST NOT be used: `REQUIRED`, `SHALL`, `SHALL NOT`, `RECOMMENDED`, `NOT RECOMMENDED`, `OPTIONAL`.
 
-* **Exception for Composite Requirements:** While each individual bullet (parent or nested) MUST contain only one BCP 14 keyword, a Composite Requirement as a whole MAY contain multiple keywords to express nuanced obligations. In such cases, the logical strength of the requirement is governed by the hierarchy defined in section [Composite Requirements](#composite-requirements).
+**Exception for Composite Requirements:** While each individual bullet (parent or nested) MUST contain only one BCP 14 keyword, a Composite Requirement as a whole MAY contain multiple keywords to express nuanced obligations. In such cases, the logical strength of the requirement is governed by the hierarchy defined in section [Composite Requirements](#composite-requirements).
 
 > **Note:** The keyword `RECOMMENDED` was previously used for presence-related normative requirements with the meaning "recommended but not mandatory." This usage is deprecated as of December 2025.
 
@@ -428,6 +490,10 @@ Each normative requirement MUST be defined in exactly one place across the speci
 * If a requirement spans multiple datasets, it MUST be defined on the column in the dataset that is the primary owner of the validation. Other datasets involved MUST NOT restate it as a normative requirement but MAY reference it in their introductory description.
 
   * **Example:** A cross-dataset sum validation comparing `BilledCost` aggregated by `InvoiceId` and `InvoiceIssuerName` between `InvoiceDetail` and `CostAndUsage` is defined on `InvoiceDetail.BilledCost`, as `InvoiceDetail` is the primary owner of invoice-level validation. `CostAndUsage` MAY reference it in its introductory description but MUST NOT restate it as a normative requirement.
+
+### Tone and Grammar
+
+In order to maintain a formal, professional tone throughout the specification, contractions MUST NOT be used in normative requirements (e.g., use "do not" instead of "don't").
 
 ## Dataset Requirements
 
@@ -999,11 +1065,11 @@ Conformance to an Attribute can be declared at:
 
 Normative requirements defined in an Attribute section are evaluated within the scope of conforming entities but apply only to the subjects explicitly defined by each requirement. Conformance determines the set of entities in scope, while the requirement subject determines which of those entities are targeted.
 
-### Structural Anchor Requirement for Attributes
+### Structural Anchor for Attributes
 
-Each Attribute Requirements section MUST begin with a structural anchor requirement.
+Each Attribute Requirements section MUST begin with a structural anchor.
 
-The structural anchor requirement:
+The structural anchor:
 
 * uses the primary schema-level entity as the subject,
 * references the Attribute ID to establish the conformance context,
@@ -1011,15 +1077,15 @@ The structural anchor requirement:
 * is non-verifiable and non-enforceable,
 * exists solely for structural consistency and automated parsing.
 
-The canonical form of the structural anchor requirement is:
+The canonical form of the structural anchor is:
 
 ```markdown
 [Dataset|Column] conforming to <AttributeId> attribute MUST adhere to the following requirements:
 ```
 
-Where `[Dataset|Column]` is the primary schema-level entity targeted by the Attribute — either Dataset or Column. Most Attributes target either datasets or columns, but not both. When an Attribute targets both datasets and columns, a separate structural anchor requirement MUST be used for each entity type.
+Where `[Dataset|Column]` is the primary schema-level entity targeted by the Attribute — either Dataset or Column. Most Attributes target either datasets or columns, but not both. When an Attribute targets both datasets and columns, a separate structural anchor MUST be used for each entity type.
 
-When an Attribute is applicable only under specific conditions, the structural anchor requirement MAY be preceded by an applicability criteria condition:
+When an Attribute is applicable only under specific conditions, the structural anchor MAY be preceded by an applicability criteria condition:
 
 ```markdown
 When <actor> <applicability-criteria-condition>, [Dataset|Column] conforming to <AttributeId> attribute MUST adhere to the following requirements:
@@ -1081,11 +1147,11 @@ Structured grouping and ordering of Attribute requirements improves clarity, con
 
 The groups defined here represent an ordering convention, not a structural requirement. Requirements within each group MAY be expressed as flat parallel bullets or as composite (parent + nested) bullets — whichever improves clarity and readability.
 
-The only **exception** is the **Structural Attribute Anchor Requirement** (group 0), which by its nature always acts as a parent composite requirement.
+The only **exception** is the **Structural Attribute Anchor** (group 0), which by its nature always acts as a parent composite requirement.
 
 Attributes may include requirements that apply to one or more intended normative subjects. To make the applicability of each Attribute, and each of its individual requirements, as transparent as possible, intended normative subjects serve as the basis for grouping. This ensures that readers can readily determine whether a requirement applies to a dataset, a subset of datasets, FOCUS columns, or custom columns.
 
-0. **Structural Attribute Anchor Requirement:** Introduces the scope of the Attribute and provides a stable parsing entry point; it does not introduce a verifiable constraint.
+0. **Structural Attribute Anchor:** Introduces the scope of the Attribute and provides a stable parsing entry point; it does not introduce a verifiable constraint.
 1. **FOCUS Dataset-level Attribute Requirements:**
    1. **Global FOCUS Dataset Requirements:** Applicable to all FOCUS datasets that declare conformance to the Attribute, regardless of their structure, specific role or context.
    1. **Qualified FOCUS Dataset Requirements:** Applicable to a subset of FOCUS datasets that declare conformance to the Attribute and are identified through a qualifier.
