@@ -38,7 +38,7 @@ Represents the relative level of effort to act on a recommendation.
 | :-------------- | :--------------------------------------------- |
 | Dataset         | [Recommendation](#datasets.recommendation)     |
 | Column type     | Dimension                                      |
-| Feature level   | Conditional                                    |
+| Feature level   | Optional                                       |
 | Allows nulls    | True                                           |
 | Data type       | String                                         |
 | Value format    | Allowed values                                 |
