@@ -126,20 +126,20 @@ Generic terms such as `dataset` or `datasets` MUST NOT be used in non-subject po
 
 ### Normative Requirement Model
 
-A normative requirement is a conformance statement that defines a verifiable constraint.
-
-A normative requirement may be represented as either:
+A normative requirement is an authored construct that may be represented as either:
 
 * a [standalone requirement](#standalone-requirements), represented by a single normative bullet, or
 * a [composite requirement](#composite-requirements), represented by a hierarchy of nested normative bullets.
 
-A normative requirement resolves into one or more [atomic requirements](#atomic-requirements). A standalone requirement resolves into exactly one atomic requirement. A composite requirement resolves into multiple atomic requirements.
+Each normative requirement resolves into one or more [atomic requirements](#atomic-requirements): a standalone requirement resolves into exactly one atomic requirement, and a composite requirement resolves into multiple atomic requirements.
 
-The requirement structure uses structural constructs that provide scope, shared conditions, or organizational context but do not introduce conformance constraints.
+An atomic requirement is the smallest resolved conformance unit derived from a normative requirement and each atomic requirement defines exactly one verifiable constraint.
+
+The requirement structure uses structural elements that provide scope, shared conditions, or organizational context but do not introduce conformance constraints:
 
 * A [structural anchor](#structural-anchor) defines the scope of a Requirements section.
-* A [condition variant structural grouping bullet](#condition-variant) defines a shared condition inherited by nested normative requirements.
-* A [context variant structural grouping bullet](#context-variant) provides organizational context for related normative requirements.
+* A [condition grouping bullet](#condition-grouping-bullets) defines a shared condition inherited by nested normative requirements.
+* A [context grouping bullet](#context-grouping-bullets) provides organizational context for related normative requirements.
 
 ### Structural Anchor
 
@@ -170,9 +170,10 @@ A standalone requirement is a normative requirement represented by a single norm
 
 A standalone requirement MUST adhere to the following rules:
 
-* A standalone requirement MUST identify exactly one normative subject.
-* A standalone requirement MUST express exactly one verifiable constraint.
+* A standalone requirement MUST contain exactly one normative subject.
 * A standalone requirement MUST contain exactly one BCP 14 keyword indicating the obligation level.
+* A standalone requirement MUST express exactly one constraint.
+* A standalone requirement SHOULD describe a verifiable state of the object rather than behavior.
 
 Standalone normative requirements use the following canonical form:
 
@@ -239,9 +240,9 @@ A standalone normative bullet corresponds to one atomic requirement. A lowest-le
 
 An atomic requirement MUST adhere to the following rules:
 
-* An atomic requirement MUST identify exactly one normative subject to which the requirement applies.
-* An atomic requirement MUST express exactly one verifiable constraint.
+* An atomic requirement MUST resolve to exactly one normative subject to which the requirement applies.
 * An atomic requirement MUST resolve to exactly one obligation level defined by a BCP 14 keyword.
+* An atomic requirement MUST express exactly one constraint.
 * An atomic requirement SHOULD describe a verifiable state of the object rather than behavior.
 
 Structural anchors and structural grouping bullets do not represent atomic requirements because they do not define verifiable constraints.
@@ -616,7 +617,7 @@ ContractCommitment MUST adhere to the following requirements:
 * ...
 ```
 
-> **Note:** The column presence-related bullet is a structural grouping bullet (context variant). It is not, in itself, a normative requirement and does not define a normative constraint. It serves only as a grouping context. See [Structural Grouping Bullet](#structural-grouping-bullet) and [Composite Requirements](#composite-requirements) sections for details.
+> **Note:** The column presence-related bullet is a context grouping bullet. It is not, in itself, a normative requirement and does not define a normative constraint. It serves only as a grouping context. See [Structural Grouping Bullets](#structural-grouping-bullets) and [Composite Requirements](#composite-requirements) sections for details.
 
 #### **Cost and Usage**
 
@@ -642,7 +643,7 @@ CostAndUsage MUST adhere to the following requirements:
 * ...
 ```
 
-> **Note:** The column presence-related bullet is a structural grouping bullet (context variant). It is not, in itself, a normative requirement and does not define a normative constraint. It serves only as a grouping context. See [Structural Grouping Bullet](#structural-grouping-bullet) and [Composite Requirements](#composite-requirements) sections for details.
+> **Note:** The column presence-related bullet is a context grouping bullet. It is not, in itself, a normative requirement and does not define a normative constraint. It serves only as a grouping context. See [Structural Grouping Bullets](#structural-grouping-bullets) and [Composite Requirements](#composite-requirements) sections for details.
 
 ## Column Requirements
 
@@ -769,7 +770,7 @@ FOCUS defines two JSON-based value formats for columns: Key-Value Format and JSO
 
 ### Grouping of Nullability-Related and Subsequent Column Requirements
 
-* When there is only one nullability-related requirement, state it directly. If there are multiple, list them as nested bullets under a structural grouping bullet (context variant) (see [Structural Grouping Bullet](#structural-grouping-bullet)) using the following pattern:
+* When there is only one nullability-related requirement, state it directly. If there are multiple, list them as nested bullets under a context grouping bullet (see [Structural Grouping Bullets](#structural-grouping-bullets)) using the following pattern:
 
 ```markdown
 * <ColumnId> MUST adhere to the following nullability requirements:
@@ -794,7 +795,7 @@ FOCUS defines two JSON-based value formats for columns: Key-Value Format and JSO
     * <ColumnId> MAY be null when <Condition>.
 ```
 
-> **Note:** The column nullability-related bullet is a structural grouping bullet (context variant). It is not, in itself, a normative requirement and does not define a normative constraint. It serves only as a grouping context. See [Structural Grouping Bullet](#structural-grouping-bullet) and [Composite Requirements](#composite-requirements) sections for details.
+> **Note:** The column nullability-related bullet is a context grouping bullet. It is not, in itself, a normative requirement and does not define a normative constraint. It serves only as a grouping context. See [Structural Grouping Bullets](#structural-grouping-bullets) and [Composite Requirements](#composite-requirements) sections for details.
 
 ### Grouping of Column Requirements Based on Specific Conditions
 
@@ -824,7 +825,7 @@ FOCUS defines two JSON-based value formats for columns: Key-Value Format and JSO
     * <ColumnId> MUST be <SpecificRequirement>.
 ```
 
-> **Note:** The condition-related parent bullet is a structural grouping bullet (condition variant). It is not, in itself, a normative requirement and does not define a normative constraint. It serves only as a shared condition for its nested requirements. See [Structural Grouping Bullet](#structural-grouping-bullet) and [Composite Requirements](#composite-requirements) sections for details.
+> **Note:** The condition-related parent bullet is a condition grouping bullet. It is not, in itself, a normative requirement and does not define a normative constraint. It serves only as a shared condition for its nested requirements. See [Structural Grouping Bullets](#structural-grouping-bullets) and [Composite Requirements](#composite-requirements) sections for details.
 
 ### Consistent Wording and Patterns in Column Requirements
 
