@@ -9,19 +9,24 @@ RecommendationSubcategory MUST adhere to the following requirements:
 * RecommendationSubcategory MUST be of type String.
 * RecommendationSubcategory MUST NOT be null.
 * RecommendationSubcategory MUST be one of the allowed values.
-* Each RecommendationSubcategory other than "Other" MUST have one and only one parent RecommendationCategory as specified in the allowed values below.
-* RecommendationSubcategory "Other" MAY be used with any RecommendationCategory.
+* RecommendationSubcategory MUST have one and only one parent RecommendationCategory as specified in the allowed values below.
 
 ## Allowed Values
 
-| Recommendation Category | Recommendation Subcategory | Description                                                                         |
-| ----------------------- | -------------------------- | ----------------------------------------------------------------------------------- |
-| Cost                    | Rightsizing                | Adjusting the configuration or capacity of a resource to better match utilization.  |
-| Cost                    | Scaling                    | Adjusting the number of running instances of a resource to match demand.            |
-| Cost                    | Commitment Purchase        | Purchasing a commitment-based discount to reduce the rate paid for usage.           |
-| Cost                    | Idle Resource Removal      | Stopping or deleting a resource that is idle or unused.                             |
-| Cost                    | Modernization              | Migrating a resource or service to a newer or more efficient alternative.           |
-| Any                     | Other                      | A recommendation that does not fall into one of the defined subcategories.          |
+| Recommendation Category | Recommendation Subcategory     | Description                                                                                    |
+| ----------------------- | ------------------------------ | ---------------------------------------------------------------------------------------------- |
+| Cost                    | Rightsizing                    | Adjusting the configuration or capacity of a resource to better match utilization.             |
+| Cost                    | Scaling                        | Adjusting the number of running instances of a resource to match demand.                       |
+| Cost                    | Commitment Purchase            | Purchasing a commitment-based discount to reduce the rate paid for usage.                      |
+| Cost                    | Idle Resource Removal          | Stopping or deleting a resource that is idle or unused.                                        |
+| Cost                    | Modernization                  | Migrating a resource or service to a newer or more efficient alternative.                      |
+| Cost                    | Other (Cost)                   | Cost recommendations that do not fall into one of the defined subcategories.                   |
+| Performance             | Other (Performance)            | Performance recommendations that do not fall into one of the defined subcategories.            |
+| Reliability             | Other (Reliability)            | Reliability recommendations that do not fall into one of the defined subcategories.            |
+| Security                | Other (Security)               | Security recommendations that do not fall into one of the defined subcategories.               |
+| Sustainability          | Other (Sustainability)         | Sustainability recommendations that do not fall into one of the defined subcategories.         |
+| Operational Excellence  | Other (Operational Excellence) | Operational Excellence recommendations that do not fall into one of the defined subcategories. |
+| Other                   | Other (Other)                  | Recommendations that do not fall into one of the defined categories.                           |
 
 ## Column ID
 
