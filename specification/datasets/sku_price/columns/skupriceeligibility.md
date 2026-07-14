@@ -87,7 +87,7 @@ SkuPriceEligibility uses a reserved string to represent global or unrestricted b
 
 <div class="h7-nonindex">Processing Workflow</div>
 
-The evaluation of an entity's usage against a rate card's eligibility rules must follow a strict linear progression:
+The evaluation of an entity's usage against a rate card's eligibility rules proceeds in the following order:
 
 1. **Normalization:** Convert the entity attribute and the Scope `Values` to a consistent case (default: lowercase) for comparison.
 2. **Inclusion Evaluation:** Iterate through `Inclusions`. Apply `InclusionOperator`. If result is `False`, the entity is not eligible for this unit price; terminate evaluation.
@@ -96,8 +96,8 @@ The evaluation of an entity's usage against a rate card's eligibility rules must
 
 <div class="h7-nonindex">Dependency Logic</div>
 
-1. **Consistency:** Engines should expect a JSON Object and should not support scalar values for this field to ensure compatibility with typed database schemas.
-2. **Conflict Resolution:** When `IsGlobalScope` or `IsComplexScope` is `true`, the `Inclusions` array must be empty or omitted. Additionally, `IsGlobalScope` and `IsComplexScope` must both not be `true` at the same time. Engines should validate these structural constraints before processing.
+1. **Consistency:** Engines are expected to accept a JSON Object and to reject scalar values for this field, for compatibility with typed database schemas.
+2. **Conflict Resolution:** When `IsGlobalScope` or `IsComplexScope` is `true`, the `Inclusions` array is empty or omitted, and `IsGlobalScope` and `IsComplexScope` are not both `true`. Engines are expected to validate these structural constraints before processing.
 
 ### Object Example
 
