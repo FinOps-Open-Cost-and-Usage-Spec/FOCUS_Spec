@@ -16,7 +16,7 @@ PricingUnit MUST adhere to the following requirements:
 
 ## Implementation Guidance
 
-Practitioners are encouraged to carefully distinguish between **Pricing Unit** from **Pricing Currency**.
+Practitioners are encouraged to carefully distinguish between **Pricing Unit** and [Pricing Currency](#datasets.skuprice.pricingcurrency).
 
 * **Pricing Unit** defines the physical, volumetric, or logical measurement of the service itself (e.g., `Hours`, `GB`, `Tokens`).
 * **Pricing Currency** defines the financial or consumable medium of exchange used to pay for that unit (e.g., `USD`, `Platform Credits`).

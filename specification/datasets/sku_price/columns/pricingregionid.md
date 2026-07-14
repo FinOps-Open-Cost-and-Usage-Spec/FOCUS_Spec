@@ -8,14 +8,14 @@ PricingRegionId MUST adhere to the following requirements:
 
 * PricingRegionId MUST be of type String.
 * PricingRegionId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* PricingRegionId MUST represent the geographic boundary or regional construct explicitly defined by the *service provider* for the unit price, even if this represents a global or macro-region scope.
+* PricingRegionId MUST represent the geographic boundary or regional construct explicitly defined by the *service provider* for the unit price, even when this represents a global or macro-region scope.
 * PricingRegionId MUST adhere to the following nullability requirements:
   * PricingRegionId MUST NOT be null when the unit price is specific to a distinct region.
   * PricingRegionId MAY be null when the unit price applies globally or is not regionally scoped.
 
 ## Implementation Guidance
 
-Practitioners are encouraged to carefully distinguish between **Pricing Region ID** and **Region ID**.
+Practitioners are encouraged to carefully distinguish between **Pricing Region ID** and [Region ID](#datasets.costandusage.regionid).
 
 * **Pricing Region ID** defines the geographic boundary for which the *rate itself* is valid.
 * **Region ID** defines the physical location where a specific *resource* is provisioned.

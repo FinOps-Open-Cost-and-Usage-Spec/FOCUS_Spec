@@ -10,12 +10,12 @@ PricingServiceName MUST adhere to the following requirements:
 
 * PricingServiceName MUST be of type String.
 * PricingServiceName MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* PricingServiceName MUST represent the service offering explicitly defined by the *service provider* for the unit price, even if this represents a grouping or abstraction of multiple distinct underlying services.
+* PricingServiceName MUST represent the service offering explicitly defined by the *service provider* for the unit price, even when this represents a grouping or abstraction of multiple distinct underlying services.
 * PricingServiceName MUST NOT be null.
 
 ## Implementation Guidance
 
-Practitioners are encouraged to carefully distinguish between **Pricing Service Name** and **Service Name**.
+Practitioners are encouraged to carefully distinguish between **Pricing Service Name** and [Service Name](#datasets.costandusage.servicename).
 
 * **Pricing Service Name** defines the name of the service as explicitly published in the provider's rate card or pricing catalog.
 * **Service Name** defines the name of the service associated with the actual usage or provisioned resource in the cost and usage data.
