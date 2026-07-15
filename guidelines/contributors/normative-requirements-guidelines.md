@@ -166,6 +166,62 @@ For **Attribute Requirements** sections, a different canonical form applies:
 
 See [Structural Anchor for Attributes](#structural-anchor-for-attributes) section for details.
 
+### Structural Grouping Bullets
+
+A **structural grouping bullet** is a parent bullet within a [composite requirement](#composite-requirements) that groups related nested normative bullets under a shared condition or context.
+
+Structural grouping bullets appear in two variants: condition grouping bullets and context grouping bullets. The effect on [atomic requirements](#atomic-requirements) derived from the composite requirement depends on the grouping variant.
+
+#### Condition Grouping Bullets
+
+A condition grouping bullet introduces a shared condition that applies to all nested bullets. The condition is inherited when resolving nested normative bullets into atomic requirements.
+
+It uses the following canonical form:
+
+``` markdown
+* When <Condition>, <Subject> MUST adhere to the following requirements:
+```
+
+* **Example** (illustrative):
+
+``` markdown
+* When ListUnitPrice is not null, ListUnitPrice MUST adhere to the following requirements:
+```
+
+#### Context Grouping Bullets
+
+A context grouping bullet introduces a shared context for a group of related nested bullets without introducing a shared condition. The context is used for structural organization and does not add constraints to the resolved atomic requirements.
+
+Context grouping bullets may be used for different requirement contexts, such as **column presence** and **nullability**.
+
+##### Column Presence Grouping Bullets
+
+Column presence grouping bullets are used in dataset requirements. They use the following canonical form:
+
+``` markdown
+* <Subject> <context> MUST adhere to the following requirements:
+```
+
+* **Example** (illustrative):
+
+``` markdown
+* ContractCommitment column presence MUST adhere to the following requirements:
+```
+
+##### Nullability Grouping Bullets
+
+Nullability grouping bullets are used in column requirements. They use the following canonical form:
+
+``` markdown
+* <Subject> MUST adhere to the following <context> requirements:
+```
+
+* **Example** (illustrative):
+
+``` markdown
+* CommitmentDiscountQuantity MUST adhere to the following nullability requirements:
+```
+
 ### Standalone Requirements
 
 A standalone requirement is a normative requirement represented by a single normative bullet. The normative bullet and the requirement have a one-to-one correspondence, and the requirement resolves into exactly one atomic requirement.
@@ -175,7 +231,7 @@ Standalone requirement MUST adhere to the following rules:
 * Standalone requirement MUST contain exactly one normative subject.
 * Standalone requirement MUST contain exactly one BCP 14 keyword indicating the obligation level.
 * Standalone requirement MUST express exactly one constraint.
-* Standalone requirement SHOULD describe a verifiable state of the object rather than behavior.
+* Standalone requirement MUST describe a verifiable state of the object rather than behavior.
 
 Standalone normative requirements use the following canonical form:
 
@@ -248,62 +304,6 @@ Atomic requirement MUST adhere to the following rules:
 * Atomic requirement MUST describe a verifiable state of the object, not behavior.
 
 Structural anchors and structural grouping bullets do not represent atomic requirements because they do not define verifiable constraints.
-
-### Structural Grouping Bullets
-
-A **structural grouping bullet** is a parent bullet within a [composite requirement](#composite-requirements) that groups related nested normative bullets under a shared condition or context.
-
-Structural grouping bullets appear in two variants: condition grouping bullets and context grouping bullets. The effect on [atomic requirements](#atomic-requirements) derived from the composite requirement depends on the grouping variant.
-
-#### Condition Grouping Bullets
-
-A condition grouping bullet introduces a shared condition that applies to all nested bullets. The condition is inherited when resolving nested normative bullets into atomic requirements.
-
-It uses the following canonical form:
-
-``` markdown
-* When <Condition>, <Subject> MUST adhere to the following requirements:
-```
-
-* **Example** (illustrative):
-
-``` markdown
-* When ListUnitPrice is not null, ListUnitPrice MUST adhere to the following requirements:
-```
-
-#### Context Grouping Bullets
-
-A context grouping bullet introduces a shared context for a group of related nested bullets without introducing a shared condition. The context is used for structural organization and does not add constraints to the resolved atomic requirements.
-
-Context grouping bullets may be used for different requirement contexts, such as **column presence** and **nullability**.
-
-##### Column Presence Grouping Bullets
-
-Column presence grouping bullets are used in dataset requirements. They use the following canonical form:
-
-``` markdown
-* <Subject> <context> MUST adhere to the following requirements:
-```
-
-* **Example** (illustrative):
-
-``` markdown
-* ContractCommitment column presence MUST adhere to the following requirements:
-```
-
-##### Nullability Grouping Bullets
-
-Nullability grouping bullets are used in column requirements. They use the following canonical form:
-
-``` markdown
-* <Subject> MUST adhere to the following <context> requirements:
-```
-
-* **Example** (illustrative):
-
-``` markdown
-* CommitmentDiscountQuantity MUST adhere to the following nullability requirements:
-```
 
 ### Normative Subject
 
