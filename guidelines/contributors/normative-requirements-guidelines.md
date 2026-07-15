@@ -126,10 +126,12 @@ Generic terms such as `dataset` or `datasets` MUST NOT be used in non-subject po
 
 ### Normative Requirement Model
 
-A normative requirement is an authored construct that may be represented as either:
+A normative requirement is an authored construct expressed in one of two forms:
 
 * a [standalone requirement](#standalone-requirements), represented by a single normative bullet, or
 * a [composite requirement](#composite-requirements), represented by a hierarchy of nested normative bullets.
+
+A normative bullet is a bullet that contains a BCP 14 keyword.
 
 Each normative requirement resolves into one or more [atomic requirements](#atomic-requirements): a standalone requirement resolves into exactly one atomic requirement, and a composite requirement resolves into multiple atomic requirements.
 
@@ -145,10 +147,10 @@ The requirement structure uses structural elements that provide scope, shared co
 
 A structural anchor is a structural construct that defines the scope of a Requirements section for a schema-level construct. It supports automated parsing and validation, does not introduce a verifiable constraint, and is not resolved into an atomic requirement.
 
-A Requirements section for a schema-level construct MUST satisfy the following structural rules:
+Requirements section for a schema-level construct MUST satisfy the following structural rules:
 
-* Each Requirements section MUST begin with a single structural anchor.
-* The structural anchor MUST appear as the first normative statement in the section.
+* Requirements section MUST begin with a single structural anchor.
+* Structural anchor MUST appear as the first normative statement in the section.
 
 The canonical form of a structural anchor is:
 
@@ -168,12 +170,12 @@ See [Structural Anchor for Attributes](#structural-anchor-for-attributes) sectio
 
 A standalone requirement is a normative requirement represented by a single normative bullet. The normative bullet and the requirement have a one-to-one correspondence, and the requirement resolves into exactly one atomic requirement.
 
-A standalone requirement MUST adhere to the following rules:
+Standalone requirement MUST adhere to the following rules:
 
-* A standalone requirement MUST contain exactly one normative subject.
-* A standalone requirement MUST contain exactly one BCP 14 keyword indicating the obligation level.
-* A standalone requirement MUST express exactly one constraint.
-* A standalone requirement SHOULD describe a verifiable state of the object rather than behavior.
+* Standalone requirement MUST contain exactly one normative subject.
+* Standalone requirement MUST contain exactly one BCP 14 keyword indicating the obligation level.
+* Standalone requirement MUST express exactly one constraint.
+* Standalone requirement SHOULD describe a verifiable state of the object rather than behavior.
 
 Standalone normative requirements use the following canonical form:
 
@@ -238,12 +240,12 @@ Atomic requirements are not authored independently. They are derived from standa
 
 A standalone normative bullet corresponds to one atomic requirement. A lowest-level normative bullet within a composite requirement corresponds to one atomic requirement after applying all applicable constraints inherited from its ancestor bullets.
 
-An atomic requirement MUST adhere to the following rules:
+Atomic requirement MUST adhere to the following rules:
 
-* An atomic requirement MUST resolve to exactly one normative subject to which the requirement applies.
-* An atomic requirement MUST resolve to exactly one obligation level defined by a BCP 14 keyword.
-* An atomic requirement MUST express exactly one constraint.
-* An atomic requirement SHOULD describe a verifiable state of the object rather than behavior.
+* Atomic requirement MUST resolve to exactly one normative subject to which the requirement applies.
+* Atomic requirement MUST resolve to exactly one obligation level defined by a BCP 14 keyword.
+* Atomic requirement MUST express exactly one constraint.
+* Atomic requirement MUST describe a verifiable state of the object, not behavior.
 
 Structural anchors and structural grouping bullets do not represent atomic requirements because they do not define verifiable constraints.
 
