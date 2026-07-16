@@ -336,13 +336,15 @@ Correct:
 
 ### Atomic Requirements
 
-An atomic requirement is the smallest resolved conformance unit derived from a normative requirement.
+An atomic requirement is the smallest resolved conformance unit derived from a normative requirement. Atomic requirements are not authored independently; they are derived from standalone or composite requirements and represent the individual constraints evaluated during conformance validation.
 
-Atomic requirements represent the individual constraints evaluated during conformance validation.
+A standalone normative bullet corresponds to one atomic requirement.
 
-Atomic requirements are not authored independently. They are derived from standalone or composite requirements for conformance evaluation and validation purposes.
+![Standalone requirement resolves into one atomic requirement](./images/nrg-standalone-to-atomic-resolution.svg)
 
-A standalone normative bullet corresponds to one atomic requirement. A lowest-level normative bullet within a composite requirement corresponds to one atomic requirement after applying all applicable constraints inherited from its ancestor bullets.
+A lowest-level normative bullet within a composite requirement corresponds to one atomic requirement after applying all applicable constraints inherited from its ancestor bullets.
+
+![Composite requirement resolves into multiple atomic requirements, with conditions inherited from ancestor bullets](.images/nrg-composite-to-atomic-resolution.svg)
 
 Atomic requirement MUST adhere to the following rules:
 
