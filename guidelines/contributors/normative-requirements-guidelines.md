@@ -344,7 +344,7 @@ A standalone normative bullet corresponds to one atomic requirement.
 
 A lowest-level normative bullet within a composite requirement corresponds to one atomic requirement after applying all applicable constraints inherited from its ancestor bullets.
 
-![Composite requirement resolves into multiple atomic requirements, with conditions inherited from ancestor bullets](.images/nrg-composite-to-atomic-resolution.svg)
+![Composite requirement resolves into multiple atomic requirements, with conditions inherited from ancestor bullets](./images/nrg-composite-to-atomic-resolution.svg)
 
 Atomic requirement MUST adhere to the following rules:
 
