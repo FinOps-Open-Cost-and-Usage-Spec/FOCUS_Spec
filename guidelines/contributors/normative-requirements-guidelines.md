@@ -49,7 +49,7 @@ style ObjectProperty fill:#d4edda,stroke:#666,stroke-width:1px
 
 * `|| -- has -- |{` : one parent to one-or-more enumerated structural members
 * `|| -- contains -- o{` : one parent to zero-or-more child entities (array of objects)
-* `}| .. conforms-to .. ||` : many children to one parent conformance relationship
+* `}| .. conforms-to .. |{` : many children to one-or-more parents conformance relationship
 * `}| .. applies-to .. |{` : e.g., many Conditions apply to many target entities
 
 **Exceptions:**
