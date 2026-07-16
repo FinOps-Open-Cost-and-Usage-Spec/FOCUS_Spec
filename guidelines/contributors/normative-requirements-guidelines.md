@@ -357,7 +357,7 @@ Structural anchors and structural grouping bullets do not represent atomic requi
 
 ### Normative Subject
 
-* Each normative requirement MUST clearly identify the subject being constrained.
+A normative subject identifies the entity being constrained by an atomic requirement. The following subsections define the allowed and disallowed subject forms.
 
 #### Terminology Usage in Normative Requirements
 
