@@ -42,7 +42,7 @@
   * [FOCUS Dataset Column vs FOCUS Column vs Custom Column Requirements](#focus-dataset-column-vs-focus-column-vs-custom-column-requirements)
   * [`CustomColumnHandling` Attribute](#customcolumnhandling-attribute)
   * [Grouping of Attribute Requirements](#grouping-of-attribute-requirements)
-  * [Ordering of Attribute Requirements within Groups](#ordering-of-attribute-requirements-within-groups)
+  * [Ordering of Attribute Requirements Within Groups](#ordering-of-attribute-requirements-within-groups)
   * [Attribute Normative Requirements Examples](#attribute-normative-requirements-examples)
 
 ## Overview and Purpose
@@ -260,7 +260,7 @@ Composite requirements MUST adhere to the following guidelines:
 
 **Examples** (illustrative):
 
-Incorrect:
+* Incorrect:
 
 ```markdown
 * When ChargeCategory is "Purchase", CostAndUsage MUST adhere to the following requirements:
@@ -269,7 +269,7 @@ Incorrect:
   * InvoiceDetail documentation MUST describe invoice reconciliation methodology.
 ```
 
-Correct:
+* Correct:
 
 ```markdown
 * When ChargeCategory is "Purchase", CommitmentDiscountQuantity MUST adhere to the following requirements:
@@ -380,7 +380,7 @@ The normative subject MUST be a schema-level entity or specific documentation, s
   * `Custom column` keyword represents any custom column
   * `Custom column` keyword with a qualifier represents a qualified subset of custom columns (e.g., `Custom column containing numeric values`)
 
-##### Sub-element Subjects
+##### Sub-Element Subjects
 
 * **Structural sub-elements within Columns** (objects, keys, key values):
   * `object`, `key`, or `value` keywords MUST NOT be used alone. Always reference them in context.
@@ -440,7 +440,7 @@ Specifically:
   * a constraint on the resulting state of a schema-level entity (e.g., dataset, column, object), or
   * a constraint on documentation.
 
-#### Common non-compliant verbs (non-exhaustive)
+#### Common Non-Compliant Verbs (Non-Exhaustive)
 
 * The following verbs are commonly used in a process-oriented way when defining requirements:
   * `ensure`
@@ -479,27 +479,65 @@ For detailed interpretation of BCP 14 keywords, see [BCP14](https://tools.ietf.o
 
 ### Splitting Requirements
 
-A requirement MUST be split into multiple bullets if it:
+#### Splitting Normative Bullets
 
-* contains more than one BCP 14 keyword,
-* combines multiple obligations (e.g., multiple verifiable state descriptors for one or more objects, or multiple conditions that result in distinct constraints),
-* combines multiple independent conditions using “and” or “or” that result in distinct constraints,
-* contains a hidden constraint expressed as a definition (e.g., `ColumnA MUST be Z, where Z is defined as Y`),
-* applies constraints to multiple subjects, even with a single BCP 14 keyword (e.g., `ColumnA and ColumnB MUST be X`).
+A normative requirement is composed of one or more normative bullets (see [Normative Requirement Model](#normative-requirement-model)). The following rules define when a normative bullet MUST be split into multiple bullets:
 
-* **Example** (illustrative):
+* Normative bullet MUST be split if it contains more than one normative subject (e.g., `ColumnA and ColumnB MUST be X`).
+* Normative bullet MUST be split if it contains more than one BCP 14 keyword (e.g., a bullet containing both `MUST` and `SHOULD`).
+* Normative bullet MUST be split if it combines more than one constraint (e.g., multiple verifiable state descriptors, or multiple independent conditions using "and" or "or" that produce distinct constraints).
+* Normative bullet MUST be split if it contains a hidden constraint expressed as a non-normative definition (e.g., `ColumnA MUST be a valid Y, where a valid Y satisfies condition Z`). The hidden constraint MUST be extracted into its own bullet so that each constraint is expressed explicitly.
 
-  * Incorrect: `ColumnA and ColumnB MUST be non-null when ColumnC is true and ColumnD is not "X".`
 
-  * Correct:
+**Examples** (illustrative):
 
-    * `ColumnA MUST be non-null when ColumnC is true and ColumnD is not "X".`
-    * `ColumnB MUST be non-null when ColumnC is true and ColumnD is not "X".`
+* Incorrect:
 
-  * Correct:
+```markdown
+ColumnA and ColumnB MUST be non-null when ColumnC is true and ColumnD is not "X".
+```
 
-    * `PricingQuantity MUST be null when ChargeCategory is "Tax" or "Adjustment".`
-    * `BillingPeriodStart MUST be less than or equal to BillingPeriodEnd.`
+* Correct:
+
+```markdown
+* ColumnA MUST be non-null when ColumnC is true and ColumnD is not "X".
+```
+
+```markdown
+* ColumnB MUST be non-null when ColumnC is true and ColumnD is not "X".
+```
+
+```markdown
+* PricingQuantity MUST be null when ChargeCategory is "Tax" or "Adjustment".
+```
+
+```markdown
+* BillingPeriodStart MUST be less than or equal to BillingPeriodEnd.
+```
+
+#### Applying Splitting Rules
+
+The splitting rules above are authoring rules that apply to individual normative bullets.
+
+For a [standalone requirement](#standalone-requirements), these rules are sufficient because a standalone requirement is authored as a single normative bullet.
+
+For a [composite requirement](#composite-requirements), the splitting rules apply independently to each normative bullet, whether the bullet is a parent or nested bullet.
+
+Composite requirements intentionally allow variation across bullets. A nested bullet MAY:
+
+* use a different BCP 14 keyword than its parent or siblings (see Exception for Composite Requirements in [Use of BCP 14 Keywords](#use-of-bcp-14-keywords));
+* reference a different normative subject than its parent or siblings (see Context and Subject Consistency in [Composite Requirements](#composite-requirements)).
+
+Such variation across parent and nested bullets is not itself a splitting trigger. Splitting rules apply only to the contents of an individual normative bullet.
+
+However, inherited context within a composite requirement MAY introduce additional constraints that are only visible after resolution. Therefore, every resolved [atomic requirement](#atomic-requirements) MUST also satisfy the rules defined for atomic requirements.
+
+If a resolved atomic requirement violates those rules, the authored requirement MUST be rephrased, typically by splitting one or more normative bullets.
+
+The following conditions indicate that the authored requirement MUST be rephrased:
+
+* A resolved atomic requirement would express more than one constraint (e.g., multiple verifiable state descriptors, or multiple independent conditions using "and" or "or" that produce distinct constraints).
+* A resolved atomic requirement would contain a hidden constraint expressed as a definition (e.g., `ColumnA MUST be Z, where Z is defined as Y`). The hidden constraint MUST be extracted into its own normative bullet so that each constraint is expressed explicitly.
 
 ### Separation of Normative and Non-Normative Content
 
@@ -701,7 +739,7 @@ Grouping and ordering of requirements ensure clarity, logical flow, and consiste
      1. **Nullability**: Clarifies when the value can or cannot exist, ensuring all subsequent rules align with column nullability.
      1. **Values and Value Ranges**: Further constrains valid values, assuming the format is already correct.
      1. **Column-to-Column Relationships**: Defines dependencies and consistency rules between related columns.
-  2. **Business & Contextual Requirements**
+  2. **Business and Contextual Requirements**
      1. **Unit/Denomination**: Ensures consistency in measurement or currency.
      1. **Uniqueness**: Defines uniqueness constraints for data integrity.
      1. **Fallback/Substitute Values**: Specifies what alternative values may be used if the expected value is missing.
@@ -946,26 +984,26 @@ To ensure clarity and consistency across columns and corresponding requirements,
 * <ColumnId> SHOULD/MUST remain consistent over time for a given <OtherColumnId>.
 ```
 
-##### Business & Contextual Requirements: Unit/Denomination
+##### Business and Contextual Requirements: Unit/Denomination
 
 ```markdown
 * <ColumnId> MUST be denominated in the BillingCurrency.
 * <ColumnId> MUST be expressed in the <OtherColumnId>.
 ```
 
-##### Business & Contextual Requirements: Uniqueness
+##### Business and Contextual Requirements: Uniqueness
 
 ```markdown
 * <ColumnId> MUST be a unique identifier within <Scope>.
 ```
 
-##### Business & Contextual Requirements: Fallback/Substitute Values
+##### Business and Contextual Requirements: Fallback/Substitute Values
 
 ```markdown
 * <ColumnId> MUST NOT duplicate <OtherColumnId> when <Condition>
 ```
 
-##### Business & Contextual Requirements: Relationships Outside the Spec
+##### Business and Contextual Requirements: Relationships Outside the Spec
 
 ```markdown
 * The sum of <ColumnId>[ for a given <Scope>] MUST equal ...
@@ -973,7 +1011,7 @@ To ensure clarity and consistency across columns and corresponding requirements,
 * The sum of <ColumnId>[ for a given <Scope>] MAY differ from ...
 ```
 
-##### Business & Contextual Requirements: Cost Validation
+##### Business and Contextual Requirements: Cost Validation
 
 ```markdown
 * <CostColumnId> MUST equal the product of <UnitPriceColumnId> and PricingQuantity when <UnitPriceColumnId> is not null and PricingQuantity is not null.
@@ -992,7 +1030,7 @@ To ensure clarity and consistency across columns and corresponding requirements,
 
 #### Column Requirement Standardized Terminology
 
-##### Identifiers and Uniqueness within Scope
+##### Identifiers and Uniqueness Within Scope
 
 * Patterns:
 
@@ -1219,7 +1257,7 @@ Attributes may include requirements that apply to one or more intended normative
    1. **Documentation:** Defines requirements for documentation associated with entities conforming to the Attribute.
    1. **Other:** Captures requirements that do not fall into the above categories.
 
-### Ordering of Attribute Requirements within Groups
+### Ordering of Attribute Requirements Within Groups
 
 To further enhance readability, individual requirements within each group SHOULD be ordered as follows:
 
