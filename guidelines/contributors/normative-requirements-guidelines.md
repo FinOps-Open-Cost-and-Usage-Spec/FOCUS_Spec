@@ -18,7 +18,7 @@
   * [Verifiable State Descriptor — State, Not Behavior](#verifiable-state-descriptor--state-not-behavior)
   * [Use of BCP 14 Keywords](#use-of-bcp-14-keywords)
   * [Splitting Requirements](#splitting-requirements)
-  * [Contextual Information (e.g., Definitions, Examples) and Normative Authority (Requirements)](#contextual-information-eg-definitions-examples-and-normative-authority-requirements)
+  * [Separation of Normative and Non-Normative Content](#separation-of-normative-and-non-normative-content)
   * [DRY (Don't Repeat Yourself) Principle](#dry-dont-repeat-yourself-principle)
   * [Tone and Grammar](#tone-and-grammar)
 * [Dataset Requirements](#dataset-requirements)
@@ -420,7 +420,7 @@ The following MUST NOT be used as normative subjects:
 
 ### Explicit Conditions in Normative Requirements
 
-* A requirement MUST include an explicit condition when applicability is conditional and cannot be inferred from the normative subject and any associated qualifiers.
+* Requirement MUST include an explicit condition when applicability is conditional and cannot be inferred from the normative subject and any associated qualifiers.
 * Conditional logic MUST be expressed using one of the following approved conditional keywords:
   * `when`
   * `unless`
@@ -467,9 +467,9 @@ Specifically:
 
 ### Use of BCP 14 Keywords
 
-* Each normative bullet MUST contain exactly one of the following BCP 14 keywords: `MUST`, `MUST NOT`, `SHOULD`, `SHOULD NOT`, `MAY`.
-* A bullet containing more than one normative keyword MUST be split (see [Splitting Requirements](#splitting-requirements) section).
-* The following BCP 14 keywords MUST NOT be used: `REQUIRED`, `SHALL`, `SHALL NOT`, `RECOMMENDED`, `NOT RECOMMENDED`, `OPTIONAL`.
+* Normative bullet MUST contain exactly one of the following BCP 14 keywords: `MUST`, `MUST NOT`, `SHOULD`, `SHOULD NOT`, `MAY`.
+* Normative bullet MUST NOT contain any of the following BCP 14 keywords: `REQUIRED`, `SHALL`, `SHALL NOT`, `RECOMMENDED`, `NOT RECOMMENDED`, `OPTIONAL`.
+* Normative bullet containing more than one BCP 14 keyword MUST be split (see [Splitting Requirements](#splitting-requirements) section).
 
 **Exception for Composite Requirements:** While each individual bullet (parent or nested) MUST contain only one BCP 14 keyword, a Composite Requirement as a whole MAY contain multiple keywords to express nuanced obligations. In such cases, the logical strength of the requirement is governed by the hierarchy defined in section [Composite Requirements](#composite-requirements).
 
@@ -501,7 +501,7 @@ A requirement MUST be split into multiple bullets if it:
     * `PricingQuantity MUST be null when ChargeCategory is "Tax" or "Adjustment".`
     * `BillingPeriodStart MUST be less than or equal to BillingPeriodEnd.`
 
-### Contextual Information (e.g., Definitions, Examples) and Normative Authority (Requirements)
+### Separation of Normative and Non-Normative Content
 
 While normative requirements MUST focus on **enforceable constraints** and **verifiable states**, definitions, informative clauses, and examples MAY be included within a requirement where necessary to provide essential context and ensure unambiguous interpretation.
 
@@ -535,7 +535,8 @@ Each normative requirement MUST be defined in exactly one place across the speci
 
 ### Tone and Grammar
 
-In order to maintain a formal, professional tone throughout the specification, contractions MUST NOT be used in normative requirements (e.g., use "do not" instead of "don't").
+* Normative requirements MUST NOT contain contractions (e.g., use "do not" instead of "don't") to maintain a formal, professional tone throughout the specification.
+* Normative bullets MUST NOT begin with an article ("A"/"An"/"The") to ensure conciseness and universal applicability; "each" is implicit.
 
 ## Dataset Requirements
 
