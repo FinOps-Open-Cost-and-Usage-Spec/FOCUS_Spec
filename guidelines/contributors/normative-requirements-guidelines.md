@@ -132,7 +132,7 @@ An atomic requirement is the smallest resolved conformance unit derived from a n
 The requirement structure uses structural elements that provide scope, shared conditions, or organizational context but do not introduce conformance constraints:
 
 * A [structural anchor](#structural-anchor) defines the scope of a Requirements section.
-* A [condition grouping bullet](#condition-grouping-bullets) defines a shared condition inherited by nested normative requirements.
+* A [condition grouping bullet](#condition-grouping-bullets) defines a shared condition inherited by nested normative bullets.
 * A [context grouping bullet](#context-grouping-bullets) provides organizational context for related normative requirements.
 
 ### Structural Anchor
@@ -223,7 +223,7 @@ Standalone requirement MUST adhere to the following rules:
 * Standalone requirement MUST contain exactly one normative subject.
 * Standalone requirement MUST contain exactly one BCP 14 keyword indicating the obligation level.
 * Standalone requirement MUST express exactly one constraint.
-* Standalone requirement MUST describe a verifiable state of the object rather than behavior.
+* Standalone requirement MUST describe a verifiable state of the object, not behavior.
 
 Standalone normative requirements use the following canonical form:
 
@@ -486,7 +486,7 @@ A normative requirement is composed of one or more normative bullets (see [Norma
 * Normative bullet MUST be split if it contains more than one normative subject (e.g., `ColumnA and ColumnB MUST be X`).
 * Normative bullet MUST be split if it contains more than one BCP 14 keyword (e.g., a bullet containing both `MUST` and `SHOULD`).
 * Normative bullet MUST be split if it combines more than one constraint (e.g., multiple verifiable state descriptors, or multiple independent conditions using "and" or "or" that produce distinct constraints).
-* Normative bullet MUST be split if it contains a hidden constraint expressed as a non-normative definition (e.g., `ColumnA MUST be a valid Y, where a valid Y satisfies condition Z`). The hidden constraint MUST be extracted into its own bullet so that each constraint is expressed explicitly.
+* Normative bullet MUST be split if it contains a hidden constraint expressed as a non-normative definition (e.g., `ColumnA MUST be a valid Y, where a valid Y satisfies condition Z.`). The hidden constraint MUST be extracted into its own normative bullet so that each constraint is expressed explicitly.
 
 
 **Examples** (illustrative):
@@ -494,7 +494,7 @@ A normative requirement is composed of one or more normative bullets (see [Norma
 * Incorrect:
 
 ```markdown
-ColumnA and ColumnB MUST be non-null when ColumnC is true and ColumnD is not "X".
+* ColumnA and ColumnB MUST be non-null when ColumnC is true and ColumnD is not "X".
 ```
 
 * Correct:
@@ -530,14 +530,9 @@ Composite requirements intentionally allow variation across bullets. A nested bu
 
 Such variation across parent and nested bullets is not itself a splitting trigger. Splitting rules apply only to the contents of an individual normative bullet.
 
-However, inherited context within a composite requirement MAY introduce additional constraints that are only visible after resolution. Therefore, every resolved [atomic requirement](#atomic-requirements) MUST also satisfy the rules defined for atomic requirements.
+However, inherited context within a composite requirement MAY introduce additional constraints that are only visible after resolution — for example, a nested bullet may appear well-formed in isolation but, combined with inherited conditions or scope, may resolve into an atomic requirement containing a hidden constraint. Therefore, every resolved [atomic requirement](#atomic-requirements) MUST also satisfy the rules defined for atomic requirements.
 
 If a resolved atomic requirement violates those rules, the authored requirement MUST be rephrased, typically by splitting one or more normative bullets.
-
-The following conditions indicate that the authored requirement MUST be rephrased:
-
-* A resolved atomic requirement would express more than one constraint (e.g., multiple verifiable state descriptors, or multiple independent conditions using "and" or "or" that produce distinct constraints).
-* A resolved atomic requirement would contain a hidden constraint expressed as a definition (e.g., `ColumnA MUST be Z, where Z is defined as Y`). The hidden constraint MUST be extracted into its own normative bullet so that each constraint is expressed explicitly.
 
 ### Separation of Normative and Non-Normative Content
 
