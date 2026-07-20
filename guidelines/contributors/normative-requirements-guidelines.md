@@ -118,22 +118,20 @@ The FOCUS glossary defines the following dataset concepts:
 
 ### Normative Requirement Model
 
-A normative requirement is an authored construct expressed in one of two forms:
+The following core concepts define the structure of normative content in the FOCUS specification:
 
-* a [standalone requirement](#standalone-requirements), represented by a single normative bullet, or
-* a [composite requirement](#composite-requirements), represented by a hierarchy of nested normative bullets.
+* **Normative bullet** — a bullet that contains a BCP 14 keyword.
+* **Normative requirement** — an authored construct expressed in one of two forms:
+  * a [standalone requirement](#standalone-requirements), represented by a single normative bullet, or
+  * a [composite requirement](#composite-requirements), represented by a hierarchy of nested normative bullets.
+* **Atomic requirement** — the smallest resolved conformance unit derived from a normative requirement.Each atomic requirement defines exactly one verifiable constraint. A standalone requirement resolves into exactly one atomic requirement; a composite requirement resolves into multiple atomic requirements.
 
-A normative bullet is a bullet that contains a BCP 14 keyword.
-
-Each normative requirement resolves into one or more [atomic requirements](#atomic-requirements): a standalone requirement resolves into exactly one atomic requirement, and a composite requirement resolves into multiple atomic requirements.
-
-An atomic requirement is the smallest resolved conformance unit derived from a normative requirement, and each atomic requirement defines exactly one verifiable constraint.
-
-The requirement structure uses structural elements that provide scope, shared conditions, or organizational context but do not introduce conformance constraints:
+In addition to normative bullets, the requirement structure uses structural elements that provide scope, shared conditions, or organizational context but do not introduce conformance constraints:
 
 * A [structural anchor](#structural-anchor) defines the scope of a Requirements section.
 * A [condition grouping bullet](#condition-grouping-bullets) defines a shared condition inherited by nested normative bullets.
 * A [context grouping bullet](#context-grouping-bullets) provides organizational context for nested normative bullets.
+
 
 ### Structural Anchor
 
