@@ -127,7 +127,7 @@ A normative bullet is a bullet that contains a BCP 14 keyword.
 
 Each normative requirement resolves into one or more [atomic requirements](#atomic-requirements): a standalone requirement resolves into exactly one atomic requirement, and a composite requirement resolves into multiple atomic requirements.
 
-An atomic requirement is the smallest resolved conformance unit derived from a normative requirement and each atomic requirement defines exactly one verifiable constraint.
+An atomic requirement is the smallest resolved conformance unit derived from a normative requirement, and each atomic requirement defines exactly one verifiable constraint.
 
 The requirement structure uses structural elements that provide scope, shared conditions, or organizational context but do not introduce conformance constraints:
 
@@ -487,7 +487,6 @@ A normative requirement is composed of one or more normative bullets (see [Norma
 * Normative bullet MUST be split if it contains more than one BCP 14 keyword (e.g., a bullet containing both `MUST` and `SHOULD`).
 * Normative bullet MUST be split if it combines more than one constraint (e.g., multiple verifiable state descriptors, or multiple independent conditions using "and" or "or" that produce distinct constraints).
 * Normative bullet MUST be split if it contains a hidden constraint expressed as a non-normative definition (e.g., `ColumnA MUST be a valid Y, where a valid Y satisfies condition Z.`). The hidden constraint MUST be extracted into its own normative bullet so that each constraint is expressed explicitly.
-
 
 **Examples** (illustrative):
 
