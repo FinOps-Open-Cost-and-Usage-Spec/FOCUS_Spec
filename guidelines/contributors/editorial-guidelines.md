@@ -230,9 +230,9 @@ To ensure consistent language when describing relationships and evaluations betw
 
 ### Formatting
 
-* **Structural Anchor Requirements:** Normative bullet lists MUST be preceded by a structural anchor requirement. See [Normative Requirements Guidelines](normative-requirements-guidelines.md#structural-anchor-requirement) for details.
+* **Structural Anchors:** Normative bullet lists MUST be preceded by a structural anchor. See [Normative Requirements Guidelines](normative-requirements-guidelines.md#structural-anchor) for details.
 
-> **Note:** Validation of structural anchor requirements may require contextual editorial judgment and is not always suitable for deterministic editorial validation.
+> **Note:** Validation of structural anchors may require contextual editorial judgment and is not always suitable for deterministic editorial validation.
 
 * **Example** (Markdown, illustrative):
 

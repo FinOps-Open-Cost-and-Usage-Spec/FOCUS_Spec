@@ -133,7 +133,7 @@ The requirement structure uses structural elements that provide scope, shared co
 
 * A [structural anchor](#structural-anchor) defines the scope of a Requirements section.
 * A [condition grouping bullet](#condition-grouping-bullets) defines a shared condition inherited by nested normative bullets.
-* A [context grouping bullet](#context-grouping-bullets) provides organizational context for related normative requirements.
+* A [context grouping bullet](#context-grouping-bullets) provides organizational context for nested normative bullets.
 
 ### Structural Anchor
 
