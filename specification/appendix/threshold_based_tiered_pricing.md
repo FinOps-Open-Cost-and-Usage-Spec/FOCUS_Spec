@@ -82,13 +82,13 @@ When the 1000-unit threshold is reached, all usage within the aggregation interv
 
 Threshold-based tiered pricing should not be confused with commitment-based pricing.
 
-Threshold-based tiered pricing determines pricing based on achieved quantity, duration, or spend during a defined aggregation interval. The customer does not need to make a prior commitment to obtain the applicable pricing tier.
+Threshold-based tiered pricing determines pricing based on purchased or consumed quantity, duration, or spend during a defined aggregation interval. The customer does not need to make a prior commitment to obtain the applicable pricing tier.
 
 Commitment pricing determines pricing based on a customer's prior commitment to a specified level of usage, capacity, or spend over a defined commitment period.
 
 The key distinction is:
 
-* Threshold-based tiered pricing rewards achieved quantity, duration, or spend.
+* Threshold-based tiered pricing rewards purchased or consumed quantity, duration, or spend.
 * Commitment pricing rewards committed usage, capacity, or spend.
 
-A commitment may influence the applicable unit price, but it is not itself a pricing tier determined by crossing an achieved threshold.
+A commitment may influence the applicable unit price, but it is not itself a pricing tier determined by crossing a predefined threshold.
