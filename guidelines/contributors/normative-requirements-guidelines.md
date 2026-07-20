@@ -252,7 +252,7 @@ Atomic requirements are derived from the lowest-level normative bullets together
 
 Composite requirements MUST adhere to the following guidelines:
 
-* **Hierarchical Obligation:** When a parent bullet uses a BCP 14 keyword (e.g., MUST), it establishes an obligation to evaluate the nested constraints. Each nested bullet then defines the specific requirement for its respective subject or condition using its own BCP 14 keyword.
+* **Hierarchical Obligation:** When a parent bullet uses a BCP 14 keyword (e.g., MUST), it establishes an obligation to evaluate the nested constraints. Each nested bullet then defines the specific requirement for its respective subject or condition using its own BCP 14 keyword. The applicable obligation for each nested bullet is determined by its own BCP 14 keyword, not by an aggregate of the hierarchy — except as noted in `Exception for Recommended Conformance` below.
 * **Shared Conditionality:** Nested bullets MUST inherit any condition established by the parent bullet.
 * **Context and Subject Consistency:** Nested bullets SHOULD maintain a consistent business context. While nested bullets SHOULD NOT introduce a different subject type, they MAY reference different subjects (e.g., a FOCUS dataset and its custom columns) provided they all relate to the same primary business context defined by the parent bullet.
 
@@ -471,7 +471,7 @@ Specifically:
 * Normative bullet MUST NOT contain any of the following BCP 14 keywords: `REQUIRED`, `SHALL`, `SHALL NOT`, `RECOMMENDED`, `NOT RECOMMENDED`, `OPTIONAL`.
 * Normative bullet containing more than one BCP 14 keyword MUST be split (see [Splitting Requirements](#splitting-requirements) section).
 
-**Exception for Composite Requirements:** While each individual bullet (parent or nested) MUST contain only one BCP 14 keyword, a Composite Requirement as a whole MAY contain multiple keywords to express nuanced obligations. In such cases, the logical strength of the requirement is governed by the hierarchy defined in section [Composite Requirements](#composite-requirements).
+**Exception for Composite Requirements:** While each individual bullet (parent or nested) MUST contain only one BCP 14 keyword, a Composite Requirement as a whole MAY contain multiple keywords to express nuanced obligations. In such cases, the applicable obligation for each nested bullet is governed by the rules defined in [Composite Requirements](#composite-requirements).
 
 > **Note:** The keyword `RECOMMENDED` was previously used for presence-related normative requirements with the meaning "recommended but not mandatory." This usage is deprecated as of December 2025.
 
@@ -899,7 +899,7 @@ FOCUS defines two JSON-based value formats for columns: Key-Value Format and JSO
     * <ColumnId> MUST be <SpecificRequirement>.
 ```
 
-> **Note:** The condition-related parent bullet is a condition grouping bullet. It is not, in itself, a normative requirement and does not define a normative constraint. It serves only as a shared condition for its nested requirements. See [Structural Grouping Bullets](#structural-grouping-bullets) and [Composite Requirements](#composite-requirements) sections for details.
+> **Note:** The condition-related parent bullet is a condition grouping bullet. It is not, in itself, a normative requirement and does not define a normative constraint. It serves only as a shared condition for its nested bullets. See [Structural Grouping Bullets](#structural-grouping-bullets) and [Composite Requirements](#composite-requirements) sections for details.
 
 ### Consistent Wording and Patterns in Column Requirements
 
