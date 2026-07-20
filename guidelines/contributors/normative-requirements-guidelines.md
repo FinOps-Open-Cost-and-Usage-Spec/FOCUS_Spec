@@ -8,8 +8,8 @@
 * [Core Normative Authoring Rules](#core-normative-authoring-rules)
   * [Normative Requirement Model](#normative-requirement-model)
   * [Structural Anchor](#structural-anchor)
-  * [Structural Grouping Bullets](#structural-grouping-bullets)
   * [Standalone Requirements](#standalone-requirements)
+  * [Structural Grouping Bullets](#structural-grouping-bullets)
   * [Composite Requirements](#composite-requirements)
   * [Atomic Requirements](#atomic-requirements)
   * [FOCUS Entity Reference Conventions](#focus-entity-reference-conventions)
@@ -156,6 +156,29 @@ For **Attribute Requirements** sections, a different canonical form applies:
 
 See [Structural Anchor for Attributes](#structural-anchor-for-attributes) section for details.
 
+### Standalone Requirements
+
+A standalone requirement is a normative requirement represented by a single normative bullet. The normative bullet and the requirement have a one-to-one correspondence, and the requirement resolves into exactly one atomic requirement.
+
+Standalone requirement MUST adhere to the following rules:
+
+* Standalone requirement MUST contain exactly one normative subject.
+* Standalone requirement MUST contain exactly one BCP 14 keyword indicating the obligation level.
+* Standalone requirement MUST express exactly one constraint.
+* Standalone requirement MUST describe a verifiable state of the object, not behavior.
+
+Standalone normative requirements use the following canonical form:
+
+``` markdown
+* <Subject> <BCP 14 Keyword> <Verifiable State Descriptor>[ Conditions].
+```
+
+* **Example** (illustrative):
+
+``` markdown
+* CommitmentDiscountQuantity MUST be of type Decimal.
+```
+
 ### Structural Grouping Bullets
 
 A **structural grouping bullet** is a parent bullet within a [composite requirement](#composite-requirements) that groups related nested normative bullets under a shared condition or context.
@@ -210,29 +233,6 @@ Nullability grouping bullets are used in column requirements. They use the follo
 
 ``` markdown
 * CommitmentDiscountQuantity MUST adhere to the following nullability requirements:
-```
-
-### Standalone Requirements
-
-A standalone requirement is a normative requirement represented by a single normative bullet. The normative bullet and the requirement have a one-to-one correspondence, and the requirement resolves into exactly one atomic requirement.
-
-Standalone requirement MUST adhere to the following rules:
-
-* Standalone requirement MUST contain exactly one normative subject.
-* Standalone requirement MUST contain exactly one BCP 14 keyword indicating the obligation level.
-* Standalone requirement MUST express exactly one constraint.
-* Standalone requirement MUST describe a verifiable state of the object, not behavior.
-
-Standalone normative requirements use the following canonical form:
-
-``` markdown
-* <Subject> <BCP 14 Keyword> <Verifiable State Descriptor>[ Conditions].
-```
-
-* **Example** (illustrative):
-
-``` markdown
-* CommitmentDiscountQuantity MUST be of type Decimal.
 ```
 
 ### Composite Requirements
