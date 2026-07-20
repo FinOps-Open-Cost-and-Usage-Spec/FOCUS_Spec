@@ -15,7 +15,7 @@
   * [FOCUS Entity Reference Conventions](#focus-entity-reference-conventions)
   * [Normative Subject](#normative-subject)
   * [Explicit Conditions in Normative Requirements](#explicit-conditions-in-normative-requirements)
-  * [Verifiable State Descriptor — State, Not Behavior](#verifiable-state-descriptor--state-not-behavior)
+  * [Verifiable State Descriptor: State, Not Behavior](#verifiable-state-descriptor-state-not-behavior)
   * [Use of BCP 14 Keywords](#use-of-bcp-14-keywords)
   * [Splitting Requirements](#splitting-requirements)
   * [Separation of Normative and Non-Normative Content](#separation-of-normative-and-non-normative-content)
@@ -424,7 +424,7 @@ The following MUST NOT be used as normative subjects:
   * `only when`
   * `except when`
 
-### Verifiable State Descriptor — State, Not Behavior
+### Verifiable State Descriptor: State, Not Behavior
 
 Normative requirements MUST describe a **verifiable state**, not an operational process or behavior.
 
