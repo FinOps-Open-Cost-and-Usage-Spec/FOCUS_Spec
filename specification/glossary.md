@@ -268,6 +268,10 @@ An individual who performs FinOps within an organization to maximize the busines
 
 A comprehensive list of prices offered by a service provider.
 
+<a name="glossary:quantity-based-tier-pricing"><b>Quantity-Based Tiered Pricing</b></a>
+
+A [*threshold-based tiered pricing*](#glossary:threshold-based-tier-pricing) model in which the applicable unit price is determined by predefined quantity thresholds reached within a defined aggregation scope and aggregation interval, without requiring a prior customer commitment. Pricing may be applied either by pricing each tier range independently (graduated pricing) or by repricing all usage within the aggregation interval when a higher threshold is reached (retroactive pricing).
+
 <a name="glossary:service-provider"><b>Service Provider</b></a>
 
 An entity that provides the [*resources*](#glossary:resource) or [*services*](#glossary:service) available for usage or purchase.
@@ -319,6 +323,10 @@ A Resource or Service-Provider-defined construct for grouping resources and/or o
 <a name="glossary:term"><b>Term</b></a>
 
 An agreement specified on a [*contract*](#glossary:contract) or [*invoice*](#glossary:invoice).
+
+<a name="glossary:threshold-based-tier-pricing"><b>Threshold-Based Tiered Pricing</b></a>
+
+A pricing model in which the applicable unit price is determined by predefined quantity, duration, or spend thresholds reached within a defined aggregation scope and aggregation interval, without requiring a prior customer commitment. Pricing may be applied either by pricing each tier range independently (graduated pricing) or by repricing all usage within the aggregation interval when a higher threshold is reached (retroactive pricing). [*Quantity-based tiered pricing*](#glossary:quantity-based-tier-pricing) is a common form of threshold-based tiered pricing.
 
 <a name="glossary:unit-pricing"><b>Unit Pricing</b></a>
 
