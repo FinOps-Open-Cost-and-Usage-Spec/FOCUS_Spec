@@ -1,5 +1,4 @@
 !INCLUDE "chargecategory.md",1
-!INCLUDE "chargefrequency.md",1
 !INCLUDE "contractid.md",1
 !INCLUDE "pricingcurrency.md",1
 !INCLUDE "pricingcurrencycategory.md",1

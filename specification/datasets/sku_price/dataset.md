@@ -13,7 +13,6 @@ The columns are presented in alphabetical order.
 | Column                                                                              | Column Type | Feature Level                                                  | Allows Nulls | Data Type |
 | ----------------------------------------------------------------------------------- | ----------- | -------------------------------------------------------------- | ------------ | --------- |
 | [Charge Category](#datasets.skuprice.chargecategory)                              | Dimension   | Mandatory   | False        | String    |
-| [Charge Frequency](#datasets.skuprice.chargefrequency)                              | Dimension   | [Conditional](#conditions.includesmultiplechargefrequencies)   | False        | String    |
 | [Contract ID](#datasets.skuprice.contractid)                                        | Dimension   | [Conditional](#conditions.includescontractcommitments)         | True         | String    |
 | [Pricing Currency](#datasets.skuprice.pricingcurrency)                              | Dimension   | Mandatory                                                      | False        | String    |
 | [Pricing Currency Category](#datasets.skuprice.pricingcurrencycategory)                            | Dimension   | Mandatory                                                      | False        | String    |
@@ -53,7 +52,6 @@ SkuPrice MUST adhere to the following requirements:
 
 * SkuPrice column presence MUST adhere to the following requirements:
   * SkuPrice MUST include [ChargeCategory](#datasets.skuprice.chargecategory).
-  * SkuPrice MUST include [ChargeFrequency](#datasets.skuprice.chargefrequency) when the *operating model* [includes multiple charge frequencies](#conditions.includesmultiplechargefrequencies).
   * SkuPrice MUST include [ContractId](#datasets.skuprice.contractid) when the *operating model* [includes contract commitments](#conditions.includescontractcommitments).
   * SkuPrice MUST include [PricingCurrency](#datasets.skuprice.pricingcurrency).
   * SkuPrice MUST include [PricingCurrencyCategory](#datasets.skuprice.pricingcurrencycategory).
