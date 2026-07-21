@@ -56,6 +56,7 @@ The specification for the Cost and Usage dataset defines a group of columns that
 | [Pricing Currency List Unit Price](#datasets.costandusage.pricingcurrencylistunitprice)             | Metric             | [Conditional](#conditions.includespricingbillingcurrencydifferences) | True         | Decimal   |
 | [Pricing Quantity](#datasets.costandusage.pricingquantity)                                          | Metric             | Mandatory     | True         | Decimal   |
 | [Pricing Unit](#datasets.costandusage.pricingunit)                                                  | Dimension          | Mandatory     | True         | String    |
+| [Principal Details](#datasets.costandusage.principaldetails)                                        | Dimension          | [Conditional](#conditions.includesidentityattribution) | True         | JSON      |
 | [Principal ID](#datasets.costandusage.principalid)                                                  | Dimension          | [Conditional](#conditions.includesidentityattribution) | True         | String    |
 | [Region ID](#datasets.costandusage.regionid)                                                        | Dimension          | [Conditional](#conditions.includesregions) | True         | String    |
 | [Region Name](#datasets.costandusage.regionname)                                                    | Dimension          | [Conditional](#conditions.includesregions) | True         | String    |
@@ -148,6 +149,7 @@ CostAndUsage MUST adhere to the following requirements:
     * CostAndUsage MAY include PricingCurrencyListUnitPrice in all other cases.
   * CostAndUsage MUST include [PricingQuantity](#datasets.costandusage.pricingquantity).
   * CostAndUsage MUST include [PricingUnit](#datasets.costandusage.pricingunit).
+  * CostAndUsage MUST include [PrincipalDetails](#datasets.costandusage.principaldetails) when the *operating model* [includes identity attribution](#conditions.includesidentityattribution).
   * CostAndUsage MUST include [PrincipalId](#datasets.costandusage.principalid) when the *operating model* [includes identity attribution](#conditions.includesidentityattribution).
   * CostAndUsage MUST include [RegionId](#datasets.costandusage.regionid) when the *operating model* [includes regions](#conditions.includesregions).
   * CostAndUsage MUST include [RegionName](#datasets.costandusage.regionname) when the *operating model* [includes regions](#conditions.includesregions).

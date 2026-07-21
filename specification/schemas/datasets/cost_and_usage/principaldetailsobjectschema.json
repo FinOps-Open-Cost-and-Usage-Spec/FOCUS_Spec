@@ -1,0 +1,77 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://focus.finops.org/schemas/principaldetailsobject.json",
+    "title": "Principal Details Object",
+    "description": "Schema for validating the Principal Details column JSON object structure in FOCUS datasets",
+    "type": "object",
+    "minProperties": 1,
+    "properties": {
+        "PrincipalName": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "Readable display name for the principal identified by Principal ID"
+        },
+        "PrincipalEmail": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "Email address associated with the principal identified by Principal ID"
+        },
+        "PrincipalType": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "The kind of principal identified by Principal ID (e.g., User, Service Account, Application)"
+        },
+        "Intermediates": {
+            "type": [
+                "array",
+                "null"
+            ],
+            "description": "Identities through which the request passed before reaching the principal identified by Principal ID, ordered from the identity nearest the service provider boundary to the identity nearest that principal",
+            "minItems": 1,
+            "items": {
+                "type": "object",
+                "required": [
+                    "PrincipalType"
+                ],
+                "properties": {
+                    "PrincipalType": {
+                        "type": "string",
+                        "description": "The kind of intermediate identity (e.g., API Key, Session, Delegated Role)"
+                    },
+                    "PrincipalId": {
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "description": "Identifier of the intermediate identity"
+                    },
+                    "PrincipalName": {
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "description": "Readable display name for the intermediate identity"
+                    }
+                },
+                "patternProperties": {
+                    "^x_[A-Z][a-zA-Z0-9]*$": {
+                        "description": "Custom data generator-defined properties prefixed with x_ in PascalCase format"
+                    }
+                },
+                "additionalProperties": false
+            }
+        }
+    },
+    "patternProperties": {
+        "^x_[A-Z][a-zA-Z0-9]*$": {
+            "description": "Custom data generator-defined top-level properties prefixed with x_ in PascalCase format"
+        }
+    },
+    "additionalProperties": false
+}
