@@ -14,14 +14,14 @@ The columns are presented in alphabetical order.
 | ----------------------------------------------------------------------------------- | ----------- | -------------------------------------------------------------- | ------------ | --------- |
 | [Charge Category](#datasets.skuprice.chargecategory)                              | Dimension   | Mandatory   | False        | String    |
 | [Charge Frequency](#datasets.skuprice.chargefrequency)                              | Dimension   | [Conditional](#conditions.includesmultiplechargefrequencies)   | False        | String    |
-| [Contract Commitment Duration Type](#datasets.skuprice.contractcommitmentdurationtype) | Dimension   | [Conditional](#conditions.includescontractcommitments)         | True         | String    |
-| [Contract Commitment Payment Model](#datasets.skuprice.contractcommitmentpaymentmodel) | Dimension   | [Conditional](#conditions.includescontractcommitments)         | True         | String    |
 | [Contract ID](#datasets.skuprice.contractid)                                        | Dimension   | [Conditional](#conditions.includescontractcommitments)         | True         | String    |
 | [Pricing Currency](#datasets.skuprice.pricingcurrency)                              | Dimension   | Mandatory                                                      | False        | String    |
 | [Pricing Currency Category](#datasets.skuprice.pricingcurrencycategory)                            | Dimension   | Mandatory                                                      | False        | String    |
 | [Pricing Region ID](#datasets.skuprice.pricingregionid)                             | Dimension   | [Conditional](#conditions.includesregions)                     | True        | String    |
 | [Pricing Service Name](#datasets.skuprice.pricingservicename)                       | Dimension   | Mandatory                                                      | False        | String    |
 | [Pricing Unit](#datasets.skuprice.pricingunit)                                      | Dimension   | Mandatory                                                      | False        | String    |
+| [Purchase Duration Type](#datasets.skuprice.purchasedurationtype)                   | Dimension   | [Conditional](#conditions.includespurchases)                   | True         | String    |
+| [Purchase Payment Model](#datasets.skuprice.purchasepaymentmodel)                   | Dimension   | [Conditional](#conditions.includespurchases)                   | True         | String    |
 | [Service Provider Name](#datasets.skuprice.serviceprovidername)                     | Dimension   | Mandatory                                                      | False        | String    |
 | [SKU ID](#datasets.skuprice.skuid)                                                  | Dimension   | Mandatory                                                      | False        | String    |
 | [SKU Price Created](#datasets.skuprice.skupricecreated)                             | Dimension   | Mandatory                                                      | False        | Date/Time |
@@ -54,14 +54,14 @@ SkuPrice MUST adhere to the following requirements:
 * SkuPrice column presence MUST adhere to the following requirements:
   * SkuPrice MUST include [ChargeCategory](#datasets.skuprice.chargecategory).
   * SkuPrice MUST include [ChargeFrequency](#datasets.skuprice.chargefrequency) when the *operating model* [includes multiple charge frequencies](#conditions.includesmultiplechargefrequencies).
-  * SkuPrice MUST include [ContractCommitmentDurationType](#datasets.skuprice.contractcommitmentdurationtype) when the *operating model* [includes contract commitments](#conditions.includescontractcommitments).
-  * SkuPrice MUST include [ContractCommitmentPaymentModel](#datasets.skuprice.contractcommitmentpaymentmodel) when the *operating model* [includes contract commitments](#conditions.includescontractcommitments).
   * SkuPrice MUST include [ContractId](#datasets.skuprice.contractid) when the *operating model* [includes contract commitments](#conditions.includescontractcommitments).
   * SkuPrice MUST include [PricingCurrency](#datasets.skuprice.pricingcurrency).
   * SkuPrice MUST include [PricingCurrencyCategory](#datasets.skuprice.pricingcurrencycategory).
   * SkuPrice MUST include [PricingRegionId](#datasets.skuprice.pricingregionid) when the *operating model* [includes regions](#conditions.includesregions).
   * SkuPrice MUST include [PricingServiceName](#datasets.skuprice.pricingservicename).
   * SkuPrice MUST include [PricingUnit](#datasets.skuprice.pricingunit).
+  * SkuPrice MUST include [PurchaseDurationType](#datasets.skuprice.purchasedurationtype) when the *operating model* [includes purchases](#conditions.includespurchases).
+  * SkuPrice MUST include [PurchasePaymentModel](#datasets.skuprice.purchasepaymentmodel) when the *operating model* [includes purchases](#conditions.includespurchases).
   * SkuPrice MUST include [ServiceProviderName](#datasets.skuprice.serviceprovidername).
   * SkuPrice MUST include [SkuId](#datasets.skuprice.skuid).
   * SkuPrice MUST include [SkuPriceCreated](#datasets.skuprice.skupricecreated).

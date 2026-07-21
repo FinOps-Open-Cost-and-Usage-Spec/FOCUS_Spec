@@ -1,8 +1,8 @@
-# Contract Commitment Payment Model
+# Purchase Payment Model
 
-Contract Commitment Payment Model defines the financial settlement structure of a [*contract commitment*](#glossary:contract-commitment). It identifies whether the financial obligation is settled via a single upfront payment, distributed recurring charges, or a combination of both over the [contract commitment duration type](#datasets.skuprice.contractcommitmentdurationtype).
+Purchase Payment Model defines the financial settlement structure of a purchase. It identifies whether the financial obligation is settled via a single upfront payment, distributed recurring charges, or a combination of both over the [Purchase Duration Type](#datasets.skuprice.purchasedurationtype). When a rate is provided by a [*commitment discount*](#glossary:commitment-discount), this column represents the settlement structure of that *commitment discount*.
 
-Contract Commitment Payment Model has three possible values: "No Upfront", "Partial Upfront", and "All Upfront".
+Purchase Payment Model has three possible values: "No Upfront", "Partial Upfront", and "All Upfront".
 
 * "No Upfront" denotes that the obligation is settled entirely through recurring charges with no initial payment.
 * "Partial Upfront" denotes that the obligation is settled through a combination of an initial payment and recurring charges.
@@ -10,11 +10,14 @@ Contract Commitment Payment Model has three possible values: "No Upfront", "Part
 
 ## Requirements
 
-ContractCommitmentPaymentModel MUST adhere to the following requirements:
+PurchasePaymentModel MUST adhere to the following requirements:
 
-* ContractCommitmentPaymentModel MUST be of type String.
-* ContractCommitmentPaymentModel MAY be null.
-* ContractCommitmentPaymentModel MUST be one of the allowed values when present.
+* PurchasePaymentModel MUST be of type String.
+* PurchasePaymentModel MUST adhere to the following nullability requirements:
+  * PurchasePaymentModel MUST NOT be null when the rate is subject to an existing *commitment discount* and is not the purchase of that *commitment discount*.
+  * PurchasePaymentModel MUST NOT be null when [ChargeCategory](#datasets.skuprice.chargecategory) is "Purchase".
+  * PurchasePaymentModel MUST be null when ChargeCategory is "Usage" and the rate is not subject to an existing *commitment discount*.
+* PurchasePaymentModel MUST be one of the allowed values when present.
 
 ## Allowed Values
 
@@ -26,23 +29,23 @@ ContractCommitmentPaymentModel MUST adhere to the following requirements:
 
 ## Implementation Guidance
 
-Within the SKU Price dataset, the Contract Commitment Payment Model helps practitioners understand how a committed rate is structured across different catalog rows:
+Within the SKU Price dataset, the Purchase Payment Model describes how the fee for a purchase is settled, across purchase constructs such as reservations, prepaid licenses, and commitment discounts:
 
-* **All Upfront:** The corresponding SKU Price record typically has a [Charge Frequency](#datasets.skuprice.chargefrequency) of "One-Time".
-* **No Upfront:** The corresponding SKU Price record typically has a [Charge Frequency](#datasets.skuprice.chargefrequency) of "Recurring" or "Usage-Based".
-* **Partial Upfront:** This pricing model typically requires multiple associated SKU Price records to accurately represent the cost (e.g., one record for the "One-Time" upfront fee, and a separate record for the "Recurring" or "Usage-Based" discounted rate).
+* **All Upfront:** The full obligation is settled by a single fee at the start of the term.
+* **No Upfront:** The obligation is settled through periodic fees over the term, with no initial payment.
+* **Partial Upfront:** The obligation combines an initial fee and periodic fees, typically represented across multiple SKU Price records (e.g., one record for the upfront fee and a separate record for the recurring fee).
 
 ## Column ID
 
-ContractCommitmentPaymentModel
+PurchasePaymentModel
 
 ## Display Name
 
-Contract Commitment Payment Model
+Purchase Payment Model
 
 ## Description
 
-Defines the financial settlement structure of a *contract commitment*.
+Defines the financial settlement structure of a purchase.
 
 ## Content Constraints
 
@@ -51,7 +54,7 @@ Defines the financial settlement structure of a *contract commitment*.
 | Dataset         | [SKU Price](#datasets.skuprice)                                                            |
 | Column type     | Dimension                                                                                  |
 | Feature level   | Conditional                                                                                |
-| Condition       | [Includes contract commitments](#conditions.includescontractcommitments)                   |
+| Condition       | [Includes purchases](#conditions.includespurchases)                                        |
 | Allows nulls    | True                                                                                       |
 | Data type       | String                                                                                     |
 | Value format    | Allowed values                                                                             |
