@@ -36,9 +36,7 @@ Typical aggregation dimensions include:
 * **Aggregation scope:** The entity across which quantity, duration, or spend is accumulated to determine the applicable pricing tier.
   Examples:
   * billing account
-  * customer account
-  * subscription
-  * project
+  * subaccount
 
 * **Aggregation interval:** The period over which quantity, duration, or spend is accumulated for the purpose of determining the applicable pricing tier.
   Examples:
@@ -65,9 +63,9 @@ Example:
 
 When a higher threshold is reached, only the usage within that tier range is priced using the corresponding tier unit price.
 
-### Retroactive Volume Pricing
+### Retroactive Pricing
 
-Retroactive volume pricing is a tier application model where reaching a higher threshold causes the applicable unit price for all usage within the aggregation interval to be adjusted to the newly reached tier.
+Retroactive pricing is a tier application model where reaching a higher threshold causes the applicable unit price for all usage within the aggregation interval to be adjusted to the newly reached tier.
 
 Example:
 

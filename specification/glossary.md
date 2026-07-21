@@ -270,7 +270,7 @@ A comprehensive list of prices offered by a service provider.
 
 <a name="glossary:quantity-based-tier-pricing"><b>Quantity-Based Tiered Pricing</b></a>
 
-A [*threshold-based tiered pricing*](#glossary:threshold-based-tier-pricing) model in which the applicable unit price is determined by predefined quantity thresholds reached within a defined aggregation scope and aggregation interval, without requiring a prior customer commitment. Pricing may be applied either by pricing each tier range independently (graduated pricing) or by repricing all usage within the aggregation interval when a higher threshold is reached (retroactive pricing).
+A form of [*threshold-based tiered pricing*](#glossary:threshold-based-tier-pricing) in which the applicable unit price is determined by predefined quantity thresholds reached within a defined aggregation scope and aggregation interval, without requiring a prior customer commitment. Pricing may be applied either by pricing each tier range independently (graduated pricing) or by repricing all usage within the aggregation interval when a higher threshold is reached (retroactive pricing).
 
 <a name="glossary:service-provider"><b>Service Provider</b></a>
 
