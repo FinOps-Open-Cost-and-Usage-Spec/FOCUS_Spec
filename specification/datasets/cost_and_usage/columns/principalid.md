@@ -28,7 +28,7 @@ Principal ID
 
 ## Description
 
-Identifier representing the entity to which access to a *resource* or *service* is granted.
+Identifier representing the *principal* to which access to a *resource* or *service* is granted.
 
 ## Content Constraints
 
