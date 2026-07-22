@@ -4,8 +4,6 @@ List Cost represents the cost of a [*charge*](#glossary:charge) prior to the app
 
 When [List Unit Price](##datasets.costandusage.listunitprice) and [Pricing Quantity](#datasets.costandusage.pricingquantity) are provided for the *charge*, List Cost is calculated by multiplying the List Unit Price by the corresponding Pricing Quantity.
 
-For *charges* associated with [*SKUs*](#glossary:sku) with [threshold-based tiered pricing](#appendix.thresholdbasedtieredpricing), it reflects the applicable cost per pricing tier, which may be based on quantity, duration, or spend within a defined aggregation scope and aggregation interval.
-
 List Cost is denominated in the [Billing Currency](#datasets.costandusage.billingcurrency). List Cost is commonly used for calculating savings based on various rate optimization activities by comparing it with [Contracted Cost](#datasets.costandusage.contractedcost), [Billed Cost](#datasets.costandusage.billedcost), and [Effective Cost](#datasets.costandusage.effectivecost).
 
 ## Requirements
