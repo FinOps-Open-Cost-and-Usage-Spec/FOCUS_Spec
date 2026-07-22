@@ -270,7 +270,7 @@ A comprehensive list of prices offered by a service provider.
 
 <a name="glossary:principal"><b>Principal</b></a>
 
-The actor that initiates or is authorized to request [*resources*](#glossary:resource) or [*services*](#glossary:service). The Principal can differ from the downstream consumer or end-user on whose behalf the request is made (e.g., a gateway or proxy role acting for many end-users behind it).
+An entity defined in a service provider identity and access management model (e.g., user, role, service account) to which access to [*resources*](#glossary:resource) or [*services*](#glossary:service) is granted. A *principal* is distinct from the credential (e.g., API key, access token) presented with an individual request, and the same *principal* may be associated with multiple credentials.
 
 <a name="glossary:service-provider"><b>Service Provider</b></a>
 

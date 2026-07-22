@@ -1,6 +1,6 @@
 # Principal ID
 
-A Principal ID is an identifier representing the [*principal*](#glossary:principal): an actor that initiates or is authorized to request [*resources*](#glossary:resource) or [*services*](#glossary:service). The Principal can differ from the downstream consumer or end-user on whose behalf the request is made (e.g., a gateway or proxy role acting for many end-users behind it). The Principal ID is commonly used in auditing to determine which actor initiated a [*charge*](#glossary:charge).
+A Principal ID is an identifier representing the [*principal*](#glossary:principal): an entity defined in a service provider identity and access management model (e.g., user, role, service account) to which access to [*resources*](#glossary:resource) or [*services*](#glossary:service) is granted. A *principal* is distinct from the credential (e.g., API key, access token) presented with an individual request, and the same *principal* may be associated with multiple credentials. The Principal ID is commonly used in auditing to determine which *principal* is associated with a [*charge*](#glossary:charge).
 
 > **Note:** While Principal ID is designed to capture opaque identifiers rather than plain-text names or email addresses, these values may still be classified as Personal Data or Personally Identifiable Information (PII) under privacy frameworks such as GDPR or CCPA (e.g., as pseudonymized data). Organizations need to separately ensure that the ingestion, storage, and processing of datasets containing this column comply with their internal data privacy, security, and retention policies.
 
@@ -11,10 +11,10 @@ PrincipalId MUST adhere to the following requirements:
 * PrincipalId MUST be of type String.
 * PrincipalId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * PrincipalId MUST adhere to the following nullability requirements:
-  * PrincipalId MUST be null when the service provider cannot determine the *principal* that initiated or authorized the *charge*.
-  * PrincipalId MUST NOT be null when the service provider can determine the *principal* that initiated or authorized the *charge*.
+  * PrincipalId MUST be null when the service provider cannot determine the *principal* associated with the *charge*.
+  * PrincipalId MUST NOT be null when the service provider can determine the *principal* associated with the *charge*.
 * When PrincipalId is not null, PrincipalId MUST adhere to the following requirements:
-  * PrincipalId MUST be a unique identifier within the *service provider* context.
+  * PrincipalId MUST be a unique identifier within the service provider.
   * PrincipalId MUST NOT contain plain-text personally identifiable information (PII) when the service provider supplies an alternative opaque identifier.
   * PrincipalId MAY contain plain-text personally identifiable information (PII) when the service provider does not supply an alternative opaque identifier.
 
@@ -28,7 +28,7 @@ Principal ID
 
 ## Description
 
-Identifier representing the actor that initiates or is authorized to request a *resource* or *service*.
+Identifier representing the entity to which access to a *resource* or *service* is granted.
 
 ## Content Constraints
 
