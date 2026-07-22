@@ -54,7 +54,7 @@ To contextualize the billing and cost allocation examples, this appendix utilize
 | **AeroScale** | Cloud-Native Startup | A fast-growing tech startup operating entirely in the cloud. They heavily utilize serverless architectures, managed databases, and agile deployment pipelines. |
 | **GearPeak Outdoors** | Mid-Market Retailer | An outdoor apparel and equipment brand with massive seasonal traffic spikes. They leverage auto-scaling infrastructure for their e-commerce storefront and a heavy mix of SaaS for supply chain and CRM. |
 
-> **Note:** Resource, host, and pod-level identifiers in appendix examples should avoid using a fictitious customer name (e.g., "Acme") as a prefix or token. A customer name token placed alongside a fictitious *data generator* brand token (e.g., "Aura") in the same example reads as a second, unintended data generator. Use a neutral, brand-free label instead (e.g., `host-prod-07`, `pod-orders-01`); reserve fictitious customer names for narrative context only.
+> **Note:** Resource, host, and pod-level identifiers in appendix examples use neutral, brand-free labels (e.g., `host-prod-07`, `pod-orders-01`) rather than labels derived from fictitious customer or data generator names, so that an identifier does not read as an additional, unintended entity in the example.
 
 ## Fictitious Commitment Program Reference<!--SkipTOC-->
 
