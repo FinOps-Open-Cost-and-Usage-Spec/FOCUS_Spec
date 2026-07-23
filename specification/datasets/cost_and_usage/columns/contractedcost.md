@@ -1,6 +1,12 @@
 # Contracted Cost
 
-Contracted Cost represents the cost calculated by multiplying [*contracted unit price*](#glossary:contracted-unit-price) and the corresponding [Pricing Quantity](#datasets.costandusage.pricingquantity). Contracted Cost is denominated in the [Billing Currency](#datasets.costandusage.billingcurrency) and is commonly used for calculating savings based on negotiation activities, by comparing it with [List Cost](#datasets.costandusage.listcost). If [*negotiated discounts*](#glossary:negotiated-discount) are not applicable, the Contracted Cost defaults to the List Cost.
+Contracted Cost represents the cost of a [*charge*](#glossary:charge) based on the agreed-upon pricing.
+
+When [Contracted Unit Price](#datasets.costandusage.contractedunitprice) and [Pricing Quantity](#datasets.costandusage.pricingquantity) are provided for the *charge*, Contracted Cost is calculated by multiplying the Contracted Unit Price by the corresponding Pricing Quantity. Contracted Cost reflects negotiated pricing adjustments that directly modify the unit price of the associated [*SKU Price*](glossary:sku-price), but excludes pricing adjustments resulting from [*commitment discounts*](#glossary:commitment-discount) or other discount programs applied to the *charge*.
+
+When negotiated pricing concepts are not included, or when no negotiated pricing adjustments are applied, Contracted Cost defaults to the [List Cost](#datasets.costandusage.listcost).
+
+Contracted Cost is denominated in the [Billing Currency](#datasets.costandusage.billingcurrency). Contracted Cost is commonly used for calculating savings based on negotiation activities by comparing it with [List Cost](#datasets.costandusage.listcost), [Billed Cost](#datasets.costandusage.billedcost), and [Effective Cost](#datasets.costandusage.effectivecost).
 
 ## Requirements
 
@@ -29,7 +35,7 @@ Contracted Cost
 
 ## Description
 
-Cost calculated by multiplying *contracted unit price* and the corresponding Pricing Quantity.
+Cost of a *charge* based on the agreed-upon pricing.
 
 ## Content Constraints
 

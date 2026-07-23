@@ -1,8 +1,8 @@
 # List Cost
 
-List Cost represents the cost of a [*charge*](#glossary:charge) prior to the application of any discounts.
+List Cost represents the cost of a [*charge*](#glossary:charge) based on the service-provider-suggested pricing.
 
-When [List Unit Price](##datasets.costandusage.listunitprice) and [Pricing Quantity](#datasets.costandusage.pricingquantity) are provided for the *charge*, List Cost is calculated by multiplying the List Unit Price by the corresponding Pricing Quantity.
+When [List Unit Price](#datasets.costandusage.listunitprice) and [Pricing Quantity](#datasets.costandusage.pricingquantity) are provided for the *charge*, List Cost is calculated by multiplying the List Unit Price by the corresponding Pricing Quantity. List Cost reflects the service-provider-suggested pricing prior to the application of any discounts.
 
 List Cost is denominated in the [Billing Currency](#datasets.costandusage.billingcurrency). List Cost is commonly used for calculating savings based on various rate optimization activities by comparing it with [Contracted Cost](#datasets.costandusage.contractedcost), [Billed Cost](#datasets.costandusage.billedcost), and [Effective Cost](#datasets.costandusage.effectivecost).
 
@@ -33,7 +33,7 @@ List Cost
 
 ## Description
 
-Cost of a *charge* prior to the application of any discounts.
+Cost of a *charge* based on the service-provider-suggested pricing.
 
 ## Content Constraints
 
