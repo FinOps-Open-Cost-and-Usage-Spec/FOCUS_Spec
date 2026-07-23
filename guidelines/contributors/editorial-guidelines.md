@@ -299,6 +299,8 @@ To ensure consistent language when describing relationships and evaluations betw
 
 > **Note:** Authors should consult the actual FOCUS attribute specification files as the source of truth, as these guidelines do not necessarily reflect the latest version.
 
+* **Brand-Free Identifiers:** Resource, host, and pod-level identifiers in appendix examples MUST use neutral, brand-free labels (e.g., `host-prod-07`, `pod-orders-01`) rather than labels derived from fictitious customer or data generator names, so that an identifier does not read as an additional, unintended entity in the example.
+
 * **Valid Examples:** Examples MUST reflect valid combinations of values defined in the specification.
 
 > **Note:** Validation of example correctness may require schema, glossary, or domain-specific review beyond editorial validation.
