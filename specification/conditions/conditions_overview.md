@@ -14,6 +14,7 @@ Conditions are sorted alphabetically by name.
 | [Includes Capacity Reservations](#conditions.includescapacityreservations) | Commitment | Operating model includes capacity reservations. |
 | [Includes Commitment Discounts](#conditions.includescommitmentdiscounts) | Commitment | Operating model includes commitment discounts. |
 | [Includes Commitment Programs](#conditions.includescommitmentprograms) | Commitment | Operating model includes commitment programs. |
+| [Includes Contract Commitment Recommendations](#conditions.includescontractcommitmentrecommendations) | Commitment | Operating model includes recommendations to purchase contract commitments. |
 | [Includes Contract Commitments](#conditions.includescontractcommitments) | Commitment | Operating model includes contract commitments. |
 | [Includes List Unit Prices](#conditions.includeslistunitprices) | Pricing | Operating model includes standard, non-discounted unit prices. |
 | [Includes Multiple Billing Account Types](#conditions.includesmultiplebillingaccounttypes) | Account | Operating model includes multiple Billing Account Types. |
@@ -26,6 +27,7 @@ Conditions are sorted alphabetically by name.
 | [Includes Provisioned Resources](#conditions.includesprovisionedresources) | Resource | Operating model includes provisioned resources. |
 | [Includes Purchase Order Numbers](#conditions.includespurchaseordernumbers) | Billing | Operating model includes purchase order numbers. |
 | [Includes Regions](#conditions.includesregions) | Resource | Operating model includes deploying resources or services within a region. |
+| [Includes Resource Configuration Recommendations](#conditions.includesresourceconfigurationrecommendations) | Resource | Operating model includes recommendations to change the configuration of a resource. |
 | [Includes Resource Type Assignment](#conditions.includesresourcetypeassignment) | Resource | Operating model includes categorizing resources by type. |
 | [Includes Split Cost Allocation](#conditions.includessplitcostallocation) | Allocation | Operating model includes split cost allocation. |
 | [Includes Sub Accounts](#conditions.includessubaccounts) | Account | Operating model includes a sub account construct. |
