@@ -1,6 +1,6 @@
 # Resource Type
 
-Resource Type describes the kind of [*resource*](#glossary:resource) a recommendation applies to (ie: Virtual Machine, Data Warehouse, Load Balancer).
+Resource Type describes the kind of [*resource*](#glossary:resource) a recommendation applies to (e.g., Virtual Machine, Data Warehouse, Load Balancer).
 
 ## Requirements
 
