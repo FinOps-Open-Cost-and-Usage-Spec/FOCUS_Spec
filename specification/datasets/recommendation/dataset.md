@@ -7,11 +7,11 @@ The Recommendation dataset is a supporting dataset that describes optimization r
 | Column | Column Type | Feature Level | Allows Nulls | Data Type |
 | :--- | :--- | :--- | :--- | :--- |
 | [Billing Account ID](#datasets.recommendation.billingaccountid) | Dimension | Mandatory | True | String |
+| [Billing Account Name](#datasets.recommendation.billingaccountname) | Dimension | Mandatory | True | String |
 | [Contract Commitment Duration Type](#datasets.recommendation.contractcommitmentdurationtype) | Dimension | [Conditional](#conditions.includescontractcommitmentrecommendations) | True | String |
 | [Contract Commitment Payment Model](#datasets.recommendation.contractcommitmentpaymentmodel) | Dimension | [Conditional](#conditions.includescontractcommitmentrecommendations) | True | String |
 | [Contract Commitment Type](#datasets.recommendation.contractcommitmenttype) | Dimension | [Conditional](#conditions.includescontractcommitmentrecommendations) | True | String |
 | [Currency](#datasets.recommendation.currency) | Dimension | Mandatory | True | String |
-| [Current Resource Configuration](#datasets.recommendation.currentresourceconfiguration) | Dimension | [Conditional](#conditions.includesresourceconfigurationrecommendations) | True | String |
 | [Data Generator Name](#datasets.recommendation.datageneratorname) | Dimension | Mandatory | False | String |
 | [Estimated Monthly Cost Impact](#datasets.recommendation.estimatedmonthlycostimpact) | Metric | Mandatory | True | Decimal |
 | [Implementation Effort](#datasets.recommendation.implementationeffort) | Dimension | Optional | True | String |
@@ -23,13 +23,19 @@ The Recommendation dataset is a supporting dataset that describes optimization r
 | [Recommendation Last Updated](#datasets.recommendation.recommendationlastupdated) | Dimension | Mandatory | False | Date/Time |
 | [Recommendation Status](#datasets.recommendation.recommendationstatus) | Dimension | Mandatory | False | String |
 | [Recommendation Subcategory](#datasets.recommendation.recommendationsubcategory) | Dimension | Mandatory | False | String |
-| [Recommended Resource Configuration](#datasets.recommendation.recommendedresourceconfiguration) | Dimension | [Conditional](#conditions.includesresourceconfigurationrecommendations) | True | String |
+| [Region ID](#datasets.recommendation.regionid) | Dimension | [Conditional](#conditions.includesregions) | True | String |
+| [Region Name](#datasets.recommendation.regionname) | Dimension | [Conditional](#conditions.includesregions) | True | String |
+| [Resource Configuration Details Current](#datasets.recommendation.resourceconfigurationdetailscurrent) | Dimension | [Conditional](#conditions.includesresourceconfigurationrecommendations) | True | JSON |
+| [Resource Configuration Details Recommended](#datasets.recommendation.resourceconfigurationdetailsrecommended) | Dimension | [Conditional](#conditions.includesresourceconfigurationrecommendations) | True | JSON |
 | [Resource ID](#datasets.recommendation.resourceid) | Dimension | Mandatory | True | String |
 | [Resource Name](#datasets.recommendation.resourcename) | Dimension | Mandatory | True | String |
 | [Resource Type](#datasets.recommendation.resourcetype) | Dimension | [Conditional](#conditions.includesresourcetypeassignment) | True | String |
+| [Service Category](#datasets.recommendation.servicecategory) | Dimension | Mandatory | True | String |
 | [Service Name](#datasets.recommendation.servicename) | Dimension | Mandatory | True | String |
 | [Service Provider Name](#datasets.recommendation.serviceprovidername) | Dimension | Mandatory | False | String |
+| [Service Subcategory](#datasets.recommendation.servicesubcategory) | Dimension | Recommended | True | String |
 | [Sub Account ID](#datasets.recommendation.subaccountid) | Dimension | [Conditional](#conditions.includessubaccounts) | True | String |
+| [Sub Account Name](#datasets.recommendation.subaccountname) | Dimension | [Conditional](#conditions.includessubaccounts) | True | String |
 
 ## Relationships<!--SkipTOC-->
 
@@ -49,11 +55,11 @@ Recommendation MUST adhere to the following requirements:
 
 * Recommendation column presence MUST adhere to the following requirements:
   * Recommendation MUST include [BillingAccountId](#datasets.recommendation.billingaccountid).
+  * Recommendation MUST include [BillingAccountName](#datasets.recommendation.billingaccountname).
   * Recommendation MUST include [ContractCommitmentDurationType](#datasets.recommendation.contractcommitmentdurationtype) when the [*operating model*](#glossary:operating-model) [includes contract commitment recommendations](#conditions.includescontractcommitmentrecommendations).
   * Recommendation MUST include [ContractCommitmentPaymentModel](#datasets.recommendation.contractcommitmentpaymentmodel) when the *operating model* [includes contract commitment recommendations](#conditions.includescontractcommitmentrecommendations).
   * Recommendation MUST include [ContractCommitmentType](#datasets.recommendation.contractcommitmenttype) when the *operating model* [includes contract commitment recommendations](#conditions.includescontractcommitmentrecommendations).
   * Recommendation MUST include [Currency](#datasets.recommendation.currency).
-  * Recommendation MUST include [CurrentResourceConfiguration](#datasets.recommendation.currentresourceconfiguration) when the *operating model* [includes resource configuration recommendations](#conditions.includesresourceconfigurationrecommendations).
   * Recommendation MUST include [DataGeneratorName](#datasets.recommendation.datageneratorname).
   * Recommendation MUST include [EstimatedMonthlyCostImpact](#datasets.recommendation.estimatedmonthlycostimpact).
   * Recommendation MAY include [ImplementationEffort](#datasets.recommendation.implementationeffort).
@@ -65,13 +71,19 @@ Recommendation MUST adhere to the following requirements:
   * Recommendation MUST include [RecommendationLastUpdated](#datasets.recommendation.recommendationlastupdated).
   * Recommendation MUST include [RecommendationStatus](#datasets.recommendation.recommendationstatus).
   * Recommendation MUST include [RecommendationSubcategory](#datasets.recommendation.recommendationsubcategory).
-  * Recommendation MUST include [RecommendedResourceConfiguration](#datasets.recommendation.recommendedresourceconfiguration) when the *operating model* [includes resource configuration recommendations](#conditions.includesresourceconfigurationrecommendations).
+  * Recommendation MUST include [RegionId](#datasets.recommendation.regionid) when the *operating model* [includes regions](#conditions.includesregions).
+  * Recommendation MUST include [RegionName](#datasets.recommendation.regionname) when the *operating model* [includes regions](#conditions.includesregions).
+  * Recommendation MUST include [ResourceConfigurationDetailsCurrent](#datasets.recommendation.resourceconfigurationdetailscurrent) when the *operating model* [includes resource configuration recommendations](#conditions.includesresourceconfigurationrecommendations).
+  * Recommendation MUST include [ResourceConfigurationDetailsRecommended](#datasets.recommendation.resourceconfigurationdetailsrecommended) when the *operating model* [includes resource configuration recommendations](#conditions.includesresourceconfigurationrecommendations).
   * Recommendation MUST include [ResourceId](#datasets.recommendation.resourceid).
   * Recommendation MUST include [ResourceName](#datasets.recommendation.resourcename).
   * Recommendation MUST include [ResourceType](#datasets.recommendation.resourcetype) when the *operating model* [includes resource type assignment](#conditions.includesresourcetypeassignment).
+  * Recommendation MUST include [ServiceCategory](#datasets.recommendation.servicecategory).
   * Recommendation MUST include [ServiceName](#datasets.recommendation.servicename).
   * Recommendation MUST include [ServiceProviderName](#datasets.recommendation.serviceprovidername).
+  * Recommendation SHOULD include [ServiceSubcategory](#datasets.recommendation.servicesubcategory).
   * Recommendation MUST include [SubAccountId](#datasets.recommendation.subaccountid) when the *operating model* [includes sub accounts](#conditions.includessubaccounts).
+  * Recommendation MUST include [SubAccountName](#datasets.recommendation.subaccountname) when the *operating model* [includes sub accounts](#conditions.includessubaccounts).
 * Recommendation MUST conform to [CorrectionHandling](#attributes.correctionhandling) requirements.
 * Recommendation MUST conform to [DatasetCompleteness](#attributes.datasetcompleteness) requirements.
 * Recommendation MUST conform to [DatasetConfiguration](#attributes.datasetconfiguration) requirements.

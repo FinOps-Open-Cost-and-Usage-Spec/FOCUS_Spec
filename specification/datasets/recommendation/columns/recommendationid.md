@@ -10,6 +10,7 @@ RecommendationId MUST adhere to the following requirements:
 * RecommendationId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * RecommendationId MUST NOT be null.
 * RecommendationId MUST be a unique identifier within the DataGeneratorName.
+* RecommendationId MUST remain consistent over time for the same recommendation.
 * RecommendationId SHOULD be a fully-qualified identifier.
 
 ## Column ID

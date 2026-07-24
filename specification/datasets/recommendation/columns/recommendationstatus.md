@@ -15,6 +15,7 @@ RecommendationStatus MUST adhere to the following requirements:
 | Value       | Description                                                                          |
 |:------------|:-------------------------------------------------------------------------------------|
 | Open        | The recommendation is active and available to be acted upon.                         |
+| Deferred    | The recommendation is valid but action has been postponed to a later date.           |
 | Dismissed   | The recommendation has been reviewed and a decision was made not to act upon it.     |
 | Implemented | The action described by the recommendation has been performed.                       |
 | Expired     | The recommendation is no longer valid.                                               |
