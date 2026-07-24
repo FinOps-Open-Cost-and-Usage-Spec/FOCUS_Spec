@@ -1,6 +1,6 @@
 # List Unit Price
 
-List Unit Price represents the service-provider-suggested unit price per [Pricing Unit](#datasets.costandusage.pricingunit) for the for the [*SKU Price*](#glossary:sku-price) identified by the given [SKU Price ID](#datasets.costandusage.skupriceid).
+List Unit Price represents the service-provider-suggested unit price per [Pricing Unit](#datasets.costandusage.pricingunit) for the [*SKU Price*](#glossary:sku-price) identified by the given [SKU Price ID](#datasets.costandusage.skupriceid).
 
 List Unit Price is exclusive of any discounts.
 
@@ -36,7 +36,7 @@ List Unit Price
 
 ## Description
 
-The service-provider-suggested unit price per Pricing Unit for the for the *SKU Price* identified by the given SKU Price ID.
+The service-provider-suggested unit price per Pricing Unit for the *SKU Price* identified by the given SKU Price ID.
 
 ## Content Constraints
 

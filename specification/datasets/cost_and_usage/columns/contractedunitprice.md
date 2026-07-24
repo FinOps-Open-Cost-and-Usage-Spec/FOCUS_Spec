@@ -38,7 +38,7 @@ Contracted Unit Price
 
 ## Description
 
-Contracted Unit Price represents the agreed-upon unit price per Pricing Unit for the given SKU Price ID, inclusive of negotiated pricing adjustments that directly modify the unit price of the associated *SKU Price* and exclusive of pricing adjustments resulting from *commitment discounts* or other discount programs applied to the *charge*.
+The agreed-upon unit price per Pricing Unit for the *SKU Price* identified by the given SKU Price ID.
 
 ## Content Constraints
 
