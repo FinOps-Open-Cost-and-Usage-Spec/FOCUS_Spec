@@ -17,6 +17,7 @@ Conditions are sorted alphabetically by name.
 | [Includes Contract Commitments](#conditions.includescontractcommitments) | Commitment | Operating model includes contract commitments. |
 | [Includes List Unit Prices](#conditions.includeslistunitprices) | Pricing | Operating model includes standard, non-discounted unit prices. |
 | [Includes Multiple Billing Account Types](#conditions.includesmultiplebillingaccounttypes) | Account | Operating model includes multiple Billing Account Types. |
+| [Includes Multiple Charge Frequencies](#conditions.includesmultiplechargefrequencies) | Billing | Operating model includes multiple charge frequencies. |
 | [Includes Multiple Pricing Categories](#conditions.includesmultiplepricingcategories) | Pricing | Operating model includes multiple pricing categories. |
 | [Includes Multiple Sub Account Types](#conditions.includesmultiplesubaccounttypes) | Account | Operating model includes multiple Sub Account Types. |
 | [Includes Negotiated Pricing](#conditions.includesnegotiatedpricing) | Pricing | Operating model includes negotiated pricing concepts. |
@@ -27,6 +28,7 @@ Conditions are sorted alphabetically by name.
 | [Includes Purchase Order Numbers](#conditions.includespurchaseordernumbers) | Billing | Operating model includes purchase order numbers. |
 | [Includes Regions](#conditions.includesregions) | Resource | Operating model includes deploying resources or services within a region. |
 | [Includes Resource Type Assignment](#conditions.includesresourcetypeassignment) | Resource | Operating model includes categorizing resources by type. |
+| [Includes Service Hierarchy](#conditions.includesservicehierarchy) | Service | Operating model includes more than one level of service categorization. |
 | [Includes Split Cost Allocation](#conditions.includessplitcostallocation) | Allocation | Operating model includes split cost allocation. |
 | [Includes Sub Accounts](#conditions.includessubaccounts) | Account | Operating model includes a sub account construct. |
 | [Includes Tags](#conditions.includestags) | Allocation | Operating model includes tags. |

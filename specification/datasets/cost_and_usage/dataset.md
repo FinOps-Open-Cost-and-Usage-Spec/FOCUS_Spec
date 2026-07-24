@@ -13,7 +13,7 @@ The specification for the Cost and Usage dataset defines a group of columns that
 | [Allocated Resource ID](#datasets.costandusage.allocatedresourceid)                                 | Dimension          | [Conditional](#conditions.includessplitcostallocation) | True         | String    |
 | [Allocated Resource Name](#datasets.costandusage.allocatedresourcename)                             | Dimension          | [Conditional](#conditions.includessplitcostallocation) | True         | String    |
 | [Allocated Tags](#datasets.costandusage.allocatedtags)                                              | Dimension          | [Conditional](#conditions.includessplitcostallocation) | True         | JSON      |
-| [Availability Zone](#datasets.costandusage.availabilityzone)                                        | Dimension          | Recommended   | True         | String    |
+| [Availability Zone](#datasets.costandusage.availabilityzone)                                        | Dimension          | [Conditional](#conditions.includesavailabilityzones)   | True         | String    |
 | [Billed Cost](#datasets.costandusage.billedcost)                                                    | Metric             | Mandatory     | False        | Decimal   |
 | [Billing Account ID](#datasets.costandusage.billingaccountid)                                       | Dimension          | Mandatory     | False        | String    |
 | [Billing Account Name](#datasets.costandusage.billingaccountname)                                   | Dimension          | Mandatory     | True         | String    |
@@ -26,7 +26,7 @@ The specification for the Cost and Usage dataset defines a group of columns that
 | [Charge Category](#datasets.costandusage.chargecategory)                                            | Dimension          | Mandatory     | False        | String    |
 | [Charge Class](#datasets.costandusage.chargeclass)                                                  | Dimension          | Mandatory     | True         | String    |
 | [Charge Description](#datasets.costandusage.chargedescription)                                      | Dimension          | Mandatory     | True         | String    |
-| [Charge Frequency](#datasets.costandusage.chargefrequency)                                          | Dimension          | Recommended   | False        | String    |
+| [Charge Frequency](#datasets.costandusage.chargefrequency)                                          | Dimension          | Conditional   | False        | String    |
 | [Charge Period End](#datasets.costandusage.chargeperiodend)                                         | Dimension          | Mandatory     | False        | Date/Time |
 | [Charge Period Start](#datasets.costandusage.chargeperiodstart)                                     | Dimension          | Mandatory     | False        | Date/Time |
 | [Commitment Discount Category](#datasets.costandusage.commitmentdiscountcategory)                   | Dimension          | [Conditional](#conditions.includescommitmentdiscounts) | True         | String    |
@@ -64,7 +64,7 @@ The specification for the Cost and Usage dataset defines a group of columns that
 | [Service Category](#datasets.costandusage.servicecategory)                                          | Dimension          | Mandatory     | False        | String    |
 | [Service Name](#datasets.costandusage.servicename)                                                  | Dimension          | Mandatory     | False        | String    |
 | [Service Provider Name](#datasets.costandusage.serviceprovidername)                                 | Dimension          | Mandatory     | False        | String    |
-| [Service Subcategory](#datasets.costandusage.servicesubcategory)                                    | Dimension          | Recommended   | False        | String    |
+| [Service Subcategory](#datasets.costandusage.servicesubcategory)                                    | Dimension          | [Conditional](#conditions.includesservicehierarchy)   | False        | String    |
 | [SKU ID](#datasets.costandusage.skuid)                                                              | Dimension          | [Conditional](#conditions.includesunitpricing) | True         | String    |
 | [SKU Meter](#datasets.costandusage.skumeter)                                                        | Dimension          | [Conditional](#conditions.includesunitpricing) | True         | String    |
 | [SKU Price Details](#datasets.costandusage.skupricedetails)                                         | Dimension          | [Conditional](#conditions.includesunitpricing) | True         | JSON      |
@@ -95,7 +95,7 @@ CostAndUsage MUST adhere to the following requirements:
   * CostAndUsage MUST include [AllocatedResourceId](#datasets.costandusage.allocatedresourceid) when the *operating model* [includes split cost allocation](#conditions.includessplitcostallocation).
   * CostAndUsage MUST include [AllocatedResourceName](#datasets.costandusage.allocatedresourcename) when the *operating model* [includes split cost allocation](#conditions.includessplitcostallocation).
   * CostAndUsage MUST include [AllocatedTags](#datasets.costandusage.allocatedtags) when the *operating model* [includes split cost allocation](#conditions.includessplitcostallocation).
-  * CostAndUsage SHOULD include [AvailabilityZone](#datasets.costandusage.availabilityzone) when the *operating model* [includes availability zones](#conditions.includesavailabilityzones).
+  * CostAndUsage MUST include [AvailabilityZone](#datasets.costandusage.availabilityzone) when the *operating model* [includes availability zones](#conditions.includesavailabilityzones).
   * CostAndUsage MUST include [BilledCost](#datasets.costandusage.billedcost).
   * CostAndUsage MUST include [BillingAccountId](#datasets.costandusage.billingaccountid).
   * CostAndUsage MUST include [BillingAccountName](#datasets.costandusage.billingaccountname).
@@ -108,7 +108,7 @@ CostAndUsage MUST adhere to the following requirements:
   * CostAndUsage MUST include [ChargeCategory](#datasets.costandusage.chargecategory).
   * CostAndUsage MUST include [ChargeClass](#datasets.costandusage.chargeclass).
   * CostAndUsage MUST include [ChargeDescription](#datasets.costandusage.chargedescription).
-  * CostAndUsage SHOULD include [ChargeFrequency](#datasets.costandusage.chargefrequency).
+  * CostAndUsage MUST include [ChargeFrequency](#datasets.costandusage.chargefrequency) when the *operating model* [includes multiple charge frequencies](#conditions.includesmultiplechargefrequencies).
   * CostAndUsage MUST include [ChargePeriodEnd](#datasets.costandusage.chargeperiodend).
   * CostAndUsage MUST include [ChargePeriodStart](#datasets.costandusage.chargeperiodstart).
   * CostAndUsage MUST include [CommitmentDiscountCategory](#datasets.costandusage.commitmentdiscountcategory) when the *operating model* [includes commitment discounts](#conditions.includescommitmentdiscounts).
@@ -155,7 +155,7 @@ CostAndUsage MUST adhere to the following requirements:
   * CostAndUsage MUST include [ServiceCategory](#datasets.costandusage.servicecategory).
   * CostAndUsage MUST include [ServiceName](#datasets.costandusage.servicename).
   * CostAndUsage MUST include [ServiceProviderName](#datasets.costandusage.serviceprovidername).
-  * CostAndUsage SHOULD include [ServiceSubcategory](#datasets.costandusage.servicesubcategory).
+  * CostAndUsage MUST include [ServiceSubcategory](#datasets.costandusage.servicesubcategory) when the *operating model* [includes a service hierarchy](#conditions.includesservicehierarchy).
   * CostAndUsage MUST include [SkuId](#datasets.costandusage.skuid) when the *operating model* [includes unit pricing](#conditions.includesunitpricing).
   * CostAndUsage MUST include [SkuMeter](#datasets.costandusage.skumeter) when the *operating model* [includes unit pricing](#conditions.includesunitpricing).
   * CostAndUsage MUST include [SkuPriceDetails](#datasets.costandusage.skupricedetails) when the *operating model* [includes unit pricing](#conditions.includesunitpricing).
