@@ -1,8 +1,6 @@
 # List Unit Price
 
-List Unit Price represents the service-provider-suggested unit price per [Pricing Unit](#datasets.costandusage.pricingunit) for the [*SKU Price*](#glossary:sku-price) applied to the charge.
-
-> **Note:** For [*SKUs*](#glossary:sku) with [*tiered pricing*](#glossary:tiered-pricing) where customer-specific pricing tier configurations are defined by the governing contracts, the *SKU Price* from which List Unit Price is derived may need to be resolved using the applicable list pricing configuration rather than identified by the given [SKU Price ID](#datasets.costandusage.
+List Unit Price represents the service-provider-suggested unit price per [Pricing Unit](#datasets.costandusage.pricingunit) for the for the [*SKU Price*](#glossary:sku-price) identified by the given [SKU Price ID](#datasets.costandusage.skupriceid).
 
 List Unit Price is exclusive of any discounts.
 
@@ -38,7 +36,7 @@ List Unit Price
 
 ## Description
 
-The service-provider-suggested unit price for a single Pricing Unit of the associated *SKU*, exclusive of any discounts, reflecting the applicable unit price per pricing tier for *SKUs* with threshold-based tiered pricing.
+The service-provider-suggested unit price per Pricing Unit for the for the *SKU Price* identified by the given SKU Price ID.
 
 ## Content Constraints
 
