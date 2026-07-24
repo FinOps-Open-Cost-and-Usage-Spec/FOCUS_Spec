@@ -42,6 +42,8 @@ The specification for the Cost and Usage dataset defines a group of columns that
 | [Contract Applied](#datasets.costandusage.contractapplied)                                          | Dimension / Metric | [Conditional](#conditions.includescontractcommitments) | True         | JSON      |
 | [Contracted Cost](#datasets.costandusage.contractedcost)                                            | Metric             | Mandatory     | False        | Decimal   |
 | [Contracted Unit Price](#datasets.costandusage.contractedunitprice)                                 | Metric             | [Conditional](#conditions.includesnegotiatedpricing) | True         | Decimal   |
+| [Data Originator Name](#datasets.costandusage.dataoriginatorname)                                   | Dimension          | Mandatory     | False        | String    |
+| [Data Provider Name](#datasets.costandusage.dataprovidername)                                       | Dimension          | Mandatory     | False        | String    |
 | [Effective Cost](#datasets.costandusage.effectivecost)                                              | Metric             | Mandatory     | False        | Decimal   |
 | [Host Provider Name](#datasets.costandusage.hostprovidername)                                       | Dimension          | Mandatory     | False        | String    |
 | [Invoice Detail ID](#datasets.costandusage.invoicedetailid)                                         | Dimension          | [Conditional](#conditions.includespayableinvoices) | True         | String    |
@@ -124,6 +126,8 @@ CostAndUsage MUST adhere to the following requirements:
   * CostAndUsage MUST include [ContractApplied](#datasets.costandusage.contractapplied) when the *operating model* [includes contract commitments](#conditions.includescontractcommitments).
   * CostAndUsage MUST include [ContractedCost](#datasets.costandusage.contractedcost).
   * CostAndUsage MUST include [ContractedUnitPrice](#datasets.costandusage.contractedunitprice) when the *operating model* [includes negotiated pricing](#conditions.includesnegotiatedpricing).
+  * CostAndUsage MUST include [DataOriginatorName](#datasets.costandusage.dataoriginatorname).
+  * CostAndUsage MUST include [DataProviderName](#datasets.costandusage.dataprovidername).
   * CostAndUsage MUST include [EffectiveCost](#datasets.costandusage.effectivecost).
   * CostAndUsage MUST include [HostProviderName](#datasets.costandusage.hostprovidername).
   * CostAndUsage MUST include [InvoiceDetailId](#datasets.costandusage.invoicedetailid) when the *operating model* [includes payable invoices](#conditions.includespayableinvoices).
