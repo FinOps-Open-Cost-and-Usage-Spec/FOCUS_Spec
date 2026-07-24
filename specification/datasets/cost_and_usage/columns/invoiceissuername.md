@@ -31,7 +31,7 @@ The name of the entity responsible for invoicing for the *resources* or *service
 | :-------------- | :--------------------------------------------------- |
 | Dataset         | [Cost and Usage](#datasets.costandusage)             |
 | Column type     | Dimension                                            |
-| Feature level   | Mandatory                                            |
+| Feature level   | Conditional                                          |
 | Allows nulls    | False                                                |
 | Data type       | String                                               |
 | Value format    | \<not specified>                                     |
