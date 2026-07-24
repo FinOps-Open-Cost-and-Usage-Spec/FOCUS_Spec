@@ -7,6 +7,7 @@
 | Topic | Description |
 | :--- | :--- |
 | [Discount Handling](#appendix.discounthandling) | Explains how discounts are represented and applied to charges in a FOCUS dataset. |
+| [Examples: AI Model Identity](#appendix.examples:aimodelidentity) | Illustrates how to represent the identity of an AI model in a Cost and Usage FOCUS dataset, including a directly purchased foundation model and the same model served by a cloud provider as a first-party service. |
 | [Examples: Commitment Discounts](#appendix.examples:commitmentdiscounts) | Explains the purchasing, usage, and amortization of commitment discounts in a FOCUS dataset. |
 | [Examples: Commitment Discount Flexibility](#appendix.examples:commitmentdiscountflexibility) | Demonstrates scenarios for usage-based commitment discounts with and without commitment discount flexibility. |
 | [Examples: Commitment Program Eligibility Details](#appendix.examples:commitmentprogrameligibilitydetails) | Demonstrates how commitment program eligibility details interact with capacity reservation columns for capacity reservation programs. |
@@ -34,6 +35,7 @@ The table below outlines the fictitious *data generators* used throughout the ap
 | **Aura Web** | Cloud Service Provider | A highly scalable, market-leading cloud infrastructure provider offering extensive compute, storage, and serverless options. | Amazon Web Services (AWS) |
 | **CrestNode** | Cloud Service Provider | An enterprise-focused cloud platform with deep integrations into existing corporate software ecosystems and directory services. | Microsoft Azure |
 | **LatticeScale** | Cloud Service Provider | A cloud provider heavily optimized for machine learning, data analytics, and containerized Kubernetes workloads. | Google Cloud Platform (GCP) |
+| **Solora AI** | Foundation Model Developer | An AI lab that develops and trains foundation models that are sold directly and served by cloud providers as a first-party offering. | OpenAI, Anthropic |
 | **OmniQuery** | Data Platform | A centralized hub for storing, processing, and analyzing massive datasets to drive business intelligence. | Snowflake, Databricks |
 | **StackLens** | SaaS Observability | A monitoring tool that tracks application performance, logs, and system health in real-time to prevent downtime. | Datadog, New Relic |
 | **SprintCanvas** | Project Management | A collaborative workspace for planning, assigning, and tracking team tasks and agile workflows. | Jira, Asana, Trello |
