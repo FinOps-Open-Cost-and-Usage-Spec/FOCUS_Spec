@@ -228,33 +228,34 @@ Before requesting review for example updates, contributors SHOULD validate the a
 
 * Validate all tracked example groups:
 
-  ```bash
-  python specification/data/validate_examples.py --validate-version 1.2 --applicability-criteria ALL
-  ```
+```bash
+python specification/data/validate_examples.py --validate-version 1.2 --applicability-criteria ALL
+```
 
 * Validate a specific group:
 
-  ```bash
-  python specification/data/validate_examples.py --group commitment_discount_flexibility --validate-version 1.2 --applicability-criteria ALL
-  ```
+```bash
+python specification/data/validate_examples.py --group commitment_discount_flexibility --validate-version 1.2 --applicability-criteria ALL
+```
 
 * Validate a specific rule family (for focused remediation):
 
-  ```bash
-  python specification/data/validate_examples.py --group commitment_discount_flexibility --filter-rules CommitmentDiscount --validate-version 1.2 --applicability-criteria ALL
-  ```
+```bash
+python specification/data/validate_examples.py --group commitment_discount_flexibility --filter-rules CommitmentDiscount --validate-version 1.2 --applicability-criteria ALL
+```
 
 * Run adjusted validation when a workstream has approved, documented OR-composite false-negatives:
 
-  ```bash
-  python specification/data/validate_examples.py --group commitment_discount_flexibility --validate-version 1.2 --applicability-criteria ALL --exclude-rules-file specification/data/commitment_discount_flexibility_excluded_rules_v1_2.txt
-  ```
+```bash
+python specification/data/validate_examples.py --group commitment_discount_flexibility --validate-version 1.2 --applicability-criteria ALL --exclude-rules-file specification/data/commitment_discount_flexibility_excluded_rules_v1_2.txt
+```
 
-  Notes:
-
-  * `Fail` is the raw validator output.
-  * `AdjustedFail` excludes only the explicitly listed Rule IDs and is the value used for the threshold check.
-  * Exclusion lists MUST be version-scoped, narrowly targeted, and reviewed with the Task Force before merge.
+> **Note:**
+> `Fail` is the raw validator output.
+>
+> `AdjustedFail` excludes only the explicitly listed Rule IDs and is the value used for the threshold check.
+>
+> Exclusion lists MUST be version-scoped, narrowly targeted, and reviewed with the Task Force before merge.
 
 ## Pull Requests
 
