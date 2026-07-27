@@ -13,7 +13,7 @@ There are two decisions here, not one:
 
 "Make it Mandatory, and generators without the data can just leave it null" answers the first question with the second, and that is how columns end up mandated for generators that cannot fill them.
 
-Mandatory is not where a column starts. It is something a column earns by applying to every operating model.
+A column earns Mandatory by applying to every operating model.
 
 This is the principles part. The mechanics (the step-by-step procedure, the data-driven tests, the machine-readable check) come in a companion guideline, and the criteria this revision defers come in a later revision of this one. The bar to meet: two people applying these principles to the same column reach the same level, without the author in the room.
 
