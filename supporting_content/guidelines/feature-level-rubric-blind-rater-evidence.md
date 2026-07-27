@@ -26,6 +26,8 @@ Each rater receives a single packet file and may read nothing else:
 * **Part C.** A roster of other Cost and Usage columns and their current levels, for the derivability input, with all columns under test removed.
 * **Part D.** The columns to classify, each as a redacted evidence pack: overview, description, and content constraints kept; feature level, nullability, and normative requirements removed.
 
+Parts B and C served the necessity and derivability inputs, which the narrowed guideline no longer has. Round 9 ran on a reduced packet without them.
+
 Protocol rules: every classification carries verbatim quotes of the Part A sentences that governed each decision input, so memorized answers are separable from grounded ones; a rater who finds no governing sentence records an empty quote and describes the missing sentence; raters flag any column whose level could flip on the boundary threshold the guideline defers to the companion mechanics guideline. BilledCost is carried as a canary in every round: a rater or a revision that moves it off Mandatory fails the round.
 
 ## Rounds
@@ -69,6 +71,8 @@ Six of seven columns were unanimous and matched the expected outcomes. Raters qu
 | InvoiceId | Conditional, 4 of 6 | Conditional |
 | BillingAccountName | Recommended, 5 of 6 | open question, no derivability demotion |
 | ListCost | split: 2 Mandatory, 3 Conditional, 1 Recommended | see family note |
+
+The three cost and price family probes (ContractedCost, ListUnitPrice, ContractedUnitPrice) are covered in the family note below rather than in the table, because they did not resolve to a per-column tally this round.
 
 Six of the nine sentinels held unanimously across all six runs, and every load-bearing quote verified verbatim against the simplified text; no rater cited the removed summary section or the removed symmetry sentences. InvoiceId repeated round 6's known behavior: Conditional in four of six runs, with one rater choosing Mandatory over the interim rule's Conditional default while acknowledging the boundary, and one stray Recommended. BillingAccountName reached Recommended in five of six runs, all through the necessity refinement carve-out; this is the first round in which one reading has dominated, the derivability demotion stayed closed for every rater, and round 5's open question stands, sharpened.
 
