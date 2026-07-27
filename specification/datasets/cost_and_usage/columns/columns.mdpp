@@ -34,6 +34,7 @@
 !INCLUDE "contractedunitprice.md",1
 !INCLUDE "effectivecost.md",1
 !INCLUDE "hostprovidername.md",1
+!INCLUDE "identitydetails.md",1
 !INCLUDE "invoicedetailid.md",1
 !INCLUDE "invoiceid.md",1
 !INCLUDE "invoiceissuername.md",1
@@ -46,7 +47,6 @@
 !INCLUDE "pricingcurrencylistunitprice.md",1
 !INCLUDE "pricingquantity.md",1
 !INCLUDE "pricingunit.md",1
-!INCLUDE "principaldetails.md",1
 !INCLUDE "principalid.md",1
 !INCLUDE "regionid.md",1
 !INCLUDE "regionname.md",1

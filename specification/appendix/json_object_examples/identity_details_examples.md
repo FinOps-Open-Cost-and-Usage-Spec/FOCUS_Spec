@@ -1,4 +1,4 @@
-# Examples: Principal Details
+# Examples: Identity Details
 
 The examples below are not exhaustive and may change over time. Service providers are the authoritative source for the identity attributes they publish.
 
@@ -6,31 +6,31 @@ The examples below are not exhaustive and may change over time. Service provider
 
 Scenario: A generative AI inference charge authenticated with an API key that acts under a named user. The named user is the [*principal*](#glossary:principal), so the user's attributes sit at the top level and the API key is recorded as an intermediate identity.
 
-| ServiceProviderName | ServiceName | PrincipalDetails |
+| ServiceProviderName | ServiceName | IdentityDetails |
 |---------------------|-------------|------------------|
-| Aura Web | Inference | {"PrincipalName": "Alex Rivera", "PrincipalEmail": "alex.rivera@example.com", "PrincipalType": "User", "Intermediates": [{"PrincipalType": "API Key", "PrincipalId": "key_01HQZX3M8N", "PrincipalName": "prod-ingest-key"}]} |
+| Aura Web | Inference | {"Name": "Alex Rivera", "Email": "alex.rivera@example.com", "Type": "User", "Intermediates": [{"Type": "API Key", "Id": "key_01HQZX3M8N", "Name": "prod-ingest-key"}]} |
 
 ## Aura Web (Scheduled Job Under a Service Account)
 
-Scenario: A compute charge initiated by a service account. A service account has no email address, so PrincipalEmail is omitted and PrincipalType distinguishes the *principal* from a human user.
+Scenario: A compute charge initiated by a service account. A service account has no email address, so Email is omitted and Type distinguishes the *principal* from a human user.
 
-| ServiceProviderName | ServiceName | PrincipalDetails |
+| ServiceProviderName | ServiceName | IdentityDetails |
 |---------------------|-------------|------------------|
-| Aura Web | Compute | {"PrincipalName": "svc-nightly-etl", "PrincipalType": "Service Account"} |
+| Aura Web | Compute | {"Name": "svc-nightly-etl", "Type": "Service Account"} |
 
 ## LatticeScale (Direct Console Access)
 
 Scenario: An object storage charge initiated by a user authenticating directly, with no intermediate identity between the user and the [*service provider*](#glossary:service-provider). The `Intermediates` array is omitted.
 
-| ServiceProviderName | ServiceName | PrincipalDetails |
+| ServiceProviderName | ServiceName | IdentityDetails |
 |---------------------|-------------|------------------|
-| LatticeScale | ObjectStorage | {"PrincipalName": "Jordan Lee", "PrincipalEmail": "jordan.lee@example.com", "PrincipalType": "User"} |
+| LatticeScale | ObjectStorage | {"Name": "Jordan Lee", "Email": "jordan.lee@example.com", "Type": "User"} |
 
 ## StackLens (No Determinable Principal)
 
-Scenario: A platform subscription billed at the account level, with no entity in the *service provider's* identity and access management model associated with it. The *service provider* cannot determine a *principal*, so [PrincipalId](#datasets.costandusage.principalid) is null and PrincipalDetails is null.
+Scenario: A platform subscription billed at the account level, with no entity in the *service provider's* identity and access management model associated with it. The *service provider* cannot determine a *principal*, so [PrincipalId](#datasets.costandusage.principalid) is null and IdentityDetails is null.
 
-| ServiceProviderName | ServiceName | PrincipalId | PrincipalDetails |
+| ServiceProviderName | ServiceName | PrincipalId | IdentityDetails |
 |---------------------|-------------|-------------|------------------|
 | StackLens | Observability | null | null |
 
@@ -38,9 +38,9 @@ Scenario: A platform subscription billed at the account level, with no entity in
 
 Scenario: A *service provider* publishes an identity attribute that has no FOCUS-defined property. The attribute is carried as a custom property prefixed with "x_".
 
-| ServiceProviderName | ServiceName | PrincipalDetails |
+| ServiceProviderName | ServiceName | IdentityDetails |
 |---------------------|-------------|------------------|
-| Aura Web | Inference | {"PrincipalName": "Alex Rivera", "PrincipalEmail": "alex.rivera@example.com", "PrincipalType": "User", "x_DirectoryGroup": "platform-engineering"} |
+| Aura Web | Inference | {"Name": "Alex Rivera", "Email": "alex.rivera@example.com", "Type": "User", "x_DirectoryGroup": "platform-engineering"} |
 
 ## Cost Attribution by Principal
 
@@ -53,9 +53,9 @@ Acme Corp runs generative AI inference and scheduled compute on Aura Web. Four c
 3. **Inference via an API key** (Row 3): Jordan Lee, reached through `batch-key`. BilledCost is $75.00.
 4. **Scheduled compute** (Row 4): the `svc-nightly-etl` service account, which has no email address. BilledCost is $45.00.
 
-Because PrincipalEmail is a top-level property, grouping by it reads the value directly from each row and counts every charge once:
+Because Email is a top-level property, grouping by it reads the value directly from each row and counts every charge once:
 
-| PrincipalEmail | BilledCost |
+| Email | BilledCost |
 |:---------------|:-----------|
 | alex.rivera@example.com | $150.00 |
 | jordan.lee@example.com | $75.00 |

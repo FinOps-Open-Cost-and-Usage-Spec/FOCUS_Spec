@@ -1,26 +1,26 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://focus.finops.org/schemas/principaldetailsobject.json",
-    "title": "Principal Details Object",
-    "description": "Schema for validating the Principal Details column JSON object structure in FOCUS datasets",
+    "$id": "https://focus.finops.org/schemas/identitydetailsobject.json",
+    "title": "Identity Details Object",
+    "description": "Schema for validating the Identity Details column JSON object structure in FOCUS datasets",
     "type": "object",
     "minProperties": 1,
     "properties": {
-        "PrincipalName": {
+        "Name": {
             "type": [
                 "string",
                 "null"
             ],
             "description": "Readable display name for the principal identified by Principal ID"
         },
-        "PrincipalEmail": {
+        "Email": {
             "type": [
                 "string",
                 "null"
             ],
             "description": "Email address associated with the principal identified by Principal ID"
         },
-        "PrincipalType": {
+        "Type": {
             "type": [
                 "string",
                 "null"
@@ -37,21 +37,21 @@
             "items": {
                 "type": "object",
                 "required": [
-                    "PrincipalType"
+                    "Type"
                 ],
                 "properties": {
-                    "PrincipalType": {
+                    "Type": {
                         "type": "string",
                         "description": "The kind of intermediate identity (e.g., API Key, Session, Delegated Role)"
                     },
-                    "PrincipalId": {
+                    "Id": {
                         "type": [
                             "string",
                             "null"
                         ],
                         "description": "Identifier of the intermediate identity"
                     },
-                    "PrincipalName": {
+                    "Name": {
                         "type": [
                             "string",
                             "null"

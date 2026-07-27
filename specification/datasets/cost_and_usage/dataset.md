@@ -44,6 +44,7 @@ The specification for the Cost and Usage dataset defines a group of columns that
 | [Contracted Unit Price](#datasets.costandusage.contractedunitprice)                                 | Metric             | [Conditional](#conditions.includesnegotiatedpricing) | True         | Decimal   |
 | [Effective Cost](#datasets.costandusage.effectivecost)                                              | Metric             | Mandatory     | False        | Decimal   |
 | [Host Provider Name](#datasets.costandusage.hostprovidername)                                       | Dimension          | Mandatory     | False        | String    |
+| [Identity Details](#datasets.costandusage.identitydetails)                                          | Dimension          | [Conditional](#conditions.includesidentityattribution) | True         | JSON      |
 | [Invoice Detail ID](#datasets.costandusage.invoicedetailid)                                         | Dimension          | [Conditional](#conditions.includespayableinvoices) | True         | String    |
 | [Invoice ID](#datasets.costandusage.invoiceid)                                                      | Dimension          | [Conditional](#conditions.includespayableinvoices) | True         | String    |
 | [Invoice Issuer Name](#datasets.costandusage.invoiceissuername)                                     | Dimension          | Mandatory     | False        | String    |
@@ -56,7 +57,6 @@ The specification for the Cost and Usage dataset defines a group of columns that
 | [Pricing Currency List Unit Price](#datasets.costandusage.pricingcurrencylistunitprice)             | Metric             | [Conditional](#conditions.includespricingbillingcurrencydifferences) | True         | Decimal   |
 | [Pricing Quantity](#datasets.costandusage.pricingquantity)                                          | Metric             | Mandatory     | True         | Decimal   |
 | [Pricing Unit](#datasets.costandusage.pricingunit)                                                  | Dimension          | Mandatory     | True         | String    |
-| [Principal Details](#datasets.costandusage.principaldetails)                                        | Dimension          | [Conditional](#conditions.includesidentityattribution) | True         | JSON      |
 | [Principal ID](#datasets.costandusage.principalid)                                                  | Dimension          | [Conditional](#conditions.includesidentityattribution) | True         | String    |
 | [Region ID](#datasets.costandusage.regionid)                                                        | Dimension          | [Conditional](#conditions.includesregions) | True         | String    |
 | [Region Name](#datasets.costandusage.regionname)                                                    | Dimension          | [Conditional](#conditions.includesregions) | True         | String    |
@@ -128,6 +128,7 @@ CostAndUsage MUST adhere to the following requirements:
   * CostAndUsage MUST include [ContractedUnitPrice](#datasets.costandusage.contractedunitprice) when the *operating model* [includes negotiated pricing](#conditions.includesnegotiatedpricing).
   * CostAndUsage MUST include [EffectiveCost](#datasets.costandusage.effectivecost).
   * CostAndUsage MUST include [HostProviderName](#datasets.costandusage.hostprovidername).
+  * CostAndUsage MUST include [IdentityDetails](#datasets.costandusage.identitydetails) when the *operating model* [includes identity attribution](#conditions.includesidentityattribution).
   * CostAndUsage MUST include [InvoiceDetailId](#datasets.costandusage.invoicedetailid) when the *operating model* [includes payable invoices](#conditions.includespayableinvoices).
   * CostAndUsage MUST include [InvoiceId](#datasets.costandusage.invoiceid) when the *operating model* [includes payable invoices](#conditions.includespayableinvoices).
   * CostAndUsage MUST include [InvoiceIssuerName](#datasets.costandusage.invoiceissuername).
@@ -149,7 +150,6 @@ CostAndUsage MUST adhere to the following requirements:
     * CostAndUsage MAY include PricingCurrencyListUnitPrice in all other cases.
   * CostAndUsage MUST include [PricingQuantity](#datasets.costandusage.pricingquantity).
   * CostAndUsage MUST include [PricingUnit](#datasets.costandusage.pricingunit).
-  * CostAndUsage MUST include [PrincipalDetails](#datasets.costandusage.principaldetails) when the *operating model* [includes identity attribution](#conditions.includesidentityattribution).
   * CostAndUsage MUST include [PrincipalId](#datasets.costandusage.principalid) when the *operating model* [includes identity attribution](#conditions.includesidentityattribution).
   * CostAndUsage MUST include [RegionId](#datasets.costandusage.regionid) when the *operating model* [includes regions](#conditions.includesregions).
   * CostAndUsage MUST include [RegionName](#datasets.costandusage.regionname) when the *operating model* [includes regions](#conditions.includesregions).

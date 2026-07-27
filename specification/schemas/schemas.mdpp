@@ -38,10 +38,10 @@ The Contract Applied Object Schema defines the structure for the [Contract Appli
 
 !INCLUDECODE "schemas/datasets/cost_and_usage/contractappliedobjectschema.json" (json)
 
-### Principal Details Object Schema
+### Identity Details Object Schema
 
-The Principal Details Object Schema defines the structure for the [Principal Details](#datasets.costandusage.principaldetails) column.
+The Identity Details Object Schema defines the structure for the [Identity Details](#datasets.costandusage.identitydetails) column.
 
-[Download from GitHub](/specification/schemas/datasets/cost_and_usage/principaldetailsobjectschema.json)
+[Download from GitHub](/specification/schemas/datasets/cost_and_usage/identitydetailsobjectschema.json)
 
-!INCLUDECODE "schemas/datasets/cost_and_usage/principaldetailsobjectschema.json" (json)
+!INCLUDECODE "schemas/datasets/cost_and_usage/identitydetailsobjectschema.json" (json)
