@@ -28,7 +28,7 @@ Scenario: An object storage charge initiated by a user authenticating directly, 
 
 ## StackLens (No Determinable Principal)
 
-Scenario: A subscription charge that accrues without an initiating request. The *service provider* cannot determine a *principal*, so [PrincipalId](#datasets.costandusage.principalid) is null and PrincipalDetails is null.
+Scenario: A platform subscription billed at the account level, with no entity in the *service provider's* identity and access management model associated with it. The *service provider* cannot determine a *principal*, so [PrincipalId](#datasets.costandusage.principalid) is null and PrincipalDetails is null.
 
 | ServiceProviderName | ServiceName | PrincipalId | PrincipalDetails |
 |---------------------|-------------|-------------|------------------|
