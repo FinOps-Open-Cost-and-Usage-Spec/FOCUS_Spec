@@ -577,6 +577,8 @@ Each normative requirement MUST be defined in exactly one place across the speci
 * Normative requirements MUST NOT contain contractions (e.g., use "do not" instead of "don't") to maintain a formal, professional tone throughout the specification.
 * Normative bullets MUST NOT begin with an article ("A"/"An"/"The") to ensure conciseness and universal applicability; "each" is implicit.
 
+**Exception for Aggregate Expression Subjects:** Normative bullets whose subject is an aggregate expression MAY begin with "The" (e.g., `The sum of <ColumnId> ... MUST equal ...`), as permitted in [Normative Subject](#normative-subject).
+
 ## Dataset Requirements
 
 ### Logical Grouping of Dataset Requirements
