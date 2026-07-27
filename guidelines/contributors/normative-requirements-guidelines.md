@@ -501,22 +501,24 @@ A normative requirement is composed of one or more normative bullets (see [Norma
 * Incorrect:
 
 ```markdown
-* ColumnA and ColumnB MUST be non-null when ColumnC is true and ColumnD is not "X".
+* ContractAppliedObject.Elements[*].ContractId and ContractAppliedObject.Elements[*].ContractCommitmentId MUST be a unique identifier within the service provider.
 ```
 
 * Correct:
 
 ```markdown
-* ColumnA MUST be non-null when ColumnC is true and ColumnD is not "X".
+* ContractAppliedObject.Elements[*].ContractId MUST be a unique identifier within the service provider.
+* ...
+* ContractAppliedObject.Elements[*].ContractCommitmentId MUST be a unique identifier within the service provider.
 ```
 
-```markdown
-* ColumnB MUST be non-null when ColumnC is true and ColumnD is not "X".
-```
+* Correct:
 
 ```markdown
 * PricingQuantity MUST be null when ChargeCategory is "Tax" or "Adjustment".
 ```
+
+* Correct:
 
 ```markdown
 * BillingPeriodStart MUST be less than or equal to BillingPeriodEnd.
