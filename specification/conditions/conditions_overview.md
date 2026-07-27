@@ -26,6 +26,7 @@ Conditions are sorted alphabetically by name.
 | [Includes Provisioned Resources](#conditions.includesprovisionedresources) | Resource | Operating model includes provisioned resources. |
 | [Includes Purchase Order Numbers](#conditions.includespurchaseordernumbers) | Billing | Operating model includes purchase order numbers. |
 | [Includes Purchases](#conditions.includespurchases) | Pricing | Operating model includes purchases. |
+| [Includes Quantity Tier Pricing](#conditions.includesquantitytierpricing) | Pricing | Operating model includes quantity-based tier pricing. |
 | [Includes Regions](#conditions.includesregions) | Resource | Operating model includes deploying resources or services within a region. |
 | [Includes Resource Type Assignment](#conditions.includesresourcetypeassignment) | Resource | Operating model includes categorizing resources by type. |
 | [Includes Split Cost Allocation](#conditions.includessplitcostallocation) | Allocation | Operating model includes split cost allocation. |
@@ -34,4 +35,3 @@ Conditions are sorted alphabetically by name.
 | [Includes Unit Pricing](#conditions.includesunitpricing) | Pricing | Operating model includes unit pricing. |
 | [Includes Usage Measurement](#conditions.includesusagemeasurement) | Billing | Operating model includes the measurement of usage. |
 | [Includes Virtual Currency](#conditions.includesvirtualcurrency) | Pricing | Operating model includes prices in virtual currency. |
-| [Includes Volume Tier Pricing](#conditions.includesvolumetierpricing) | Pricing | Operating model includes volume-based tier pricing. |

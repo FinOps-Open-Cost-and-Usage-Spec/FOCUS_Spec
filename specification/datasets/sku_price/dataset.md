@@ -21,6 +21,9 @@ The columns are presented in alphabetical order.
 | [Pricing Unit](#datasets.skuprice.pricingunit)                                      | Dimension   | Mandatory                                                      | False        | String    |
 | [Purchase Duration Type](#datasets.skuprice.purchasedurationtype)                   | Dimension   | [Conditional](#conditions.includespurchases)                   | True         | String    |
 | [Purchase Payment Model](#datasets.skuprice.purchasepaymentmodel)                   | Dimension   | [Conditional](#conditions.includespurchases)                   | True         | String    |
+| [Quantity Tier Maximum](#datasets.skuprice.quantitytiermaximum)                     | Metric      | [Conditional](#conditions.includesquantitytierpricing)         | True         | Decimal   |
+| [Quantity Tier Minimum](#datasets.skuprice.quantitytierminimum)                     | Metric      | [Conditional](#conditions.includesquantitytierpricing)         | False        | Decimal   |
+| [Quantity Tier Name](#datasets.skuprice.quantitytiername)                           | Dimension   | [Conditional](#conditions.includesquantitytierpricing)         | True         | String    |
 | [Service Provider Name](#datasets.skuprice.serviceprovidername)                     | Dimension   | Mandatory                                                      | False        | String    |
 | [SKU ID](#datasets.skuprice.skuid)                                                  | Dimension   | Mandatory                                                      | False        | String    |
 | [SKU Price Created](#datasets.skuprice.skupricecreated)                             | Dimension   | Mandatory                                                      | False        | Date/Time |
@@ -33,13 +36,10 @@ The columns are presented in alphabetical order.
 | [SKU Price Lifecycle Status](#datasets.skuprice.skupricelifecyclestatus)            | Dimension   | Mandatory                                                      | False        | String    |
 | [Unit Price](#datasets.skuprice.unitprice)                                          | Metric      | Mandatory                                                      | False        | Decimal   |
 | [Unit Price Category](#datasets.skuprice.unitpricecategory)                         | Dimension   | Mandatory                                                      | False        | String    |
-| [Volume Tier Maximum](#datasets.skuprice.volumetiermaximum)                         | Metric      | [Conditional](#conditions.includesvolumetierpricing)           | True         | Decimal   |
-| [Volume Tier Minimum](#datasets.skuprice.volumetierminimum)                         | Metric      | [Conditional](#conditions.includesvolumetierpricing)           | False        | Decimal   |
-| [Volume Tier Name](#datasets.skuprice.volumetiername)                               | Dimension   | [Conditional](#conditions.includesvolumetierpricing)           | True         | String    |
 
 ## Relationships<!--SkipTOC-->
 
-The SKU Price dataset relates to the Cost and Usage dataset through the SKU Price ID, enabling the attribution of catalog rates to incurred usage. This is a one-to-many relationship: a single SKU Price ID corresponds to multiple SKU Price records, because a SKU's price varies by effective period, contract, volume tier, pricing currency, and unit price category. Resolving the price that applies to a Cost and Usage charge therefore requires more than the SKU Price ID alone. The charge must also be aligned to the SKU Price record whose effective period contains the charge period, whose Contract ID matches the agreement under which the charge was incurred (or is null for a public list price), whose volume tier contains the charged quantity, whose pricing currency matches the currency in which the charge is denominated, and whose unit price category matches the price type applied to the charge. The SKU Price dataset can also optionally join to the Contract Commitment dataset to relate a specific contracted price to an overarching negotiated agreement.
+The SKU Price dataset relates to the Cost and Usage dataset through the SKU Price ID, enabling the attribution of catalog rates to incurred usage. This is a one-to-many relationship: a single SKU Price ID corresponds to multiple SKU Price records, because a SKU's price varies by effective period, contract, quantity tier, pricing currency, and unit price category. Resolving the price that applies to a Cost and Usage charge therefore requires more than the SKU Price ID alone. The charge must also be aligned to the SKU Price record whose effective period contains the charge period, whose Contract ID matches the agreement under which the charge was incurred (or is null for a public list price), whose quantity tier contains the charged quantity, whose pricing currency matches the currency in which the charge is denominated, and whose unit price category matches the price type applied to the charge. The SKU Price dataset can also optionally join to the Contract Commitment dataset to relate a specific contracted price to an overarching negotiated agreement.
 
 | Dataset A           | Dataset A Column  | Dataset B           | Dataset B Column       |
 | ------------------- | ----------------- | ------------------- | ---------------------- |
@@ -60,6 +60,9 @@ SkuPrice MUST adhere to the following requirements:
   * SkuPrice MUST include [PricingUnit](#datasets.skuprice.pricingunit).
   * SkuPrice MUST include [PurchaseDurationType](#datasets.skuprice.purchasedurationtype) when the *operating model* [includes purchases](#conditions.includespurchases).
   * SkuPrice MUST include [PurchasePaymentModel](#datasets.skuprice.purchasepaymentmodel) when the *operating model* [includes purchases](#conditions.includespurchases).
+  * SkuPrice MUST include [QuantityTierMaximum](#datasets.skuprice.quantitytiermaximum) when the *operating model* [includes quantity tier pricing](#conditions.includesquantitytierpricing).
+  * SkuPrice MUST include [QuantityTierMinimum](#datasets.skuprice.quantitytierminimum) when the *operating model* [includes quantity tier pricing](#conditions.includesquantitytierpricing).
+  * SkuPrice MUST include [QuantityTierName](#datasets.skuprice.quantitytiername) when the *operating model* [includes quantity tier pricing](#conditions.includesquantitytierpricing).
   * SkuPrice MUST include [ServiceProviderName](#datasets.skuprice.serviceprovidername).
   * SkuPrice MUST include [SkuId](#datasets.skuprice.skuid).
   * SkuPrice MUST include [SkuPriceCreated](#datasets.skuprice.skupricecreated).
@@ -72,15 +75,12 @@ SkuPrice MUST adhere to the following requirements:
   * SkuPrice MUST include [SkuPriceLifecycleStatus](#datasets.skuprice.skupricelifecyclestatus).
   * SkuPrice MUST include [UnitPrice](#datasets.skuprice.unitprice).
   * SkuPrice MUST include [UnitPriceCategory](#datasets.skuprice.unitpricecategory).
-  * SkuPrice MUST include [VolumeTierMaximum](#datasets.skuprice.volumetiermaximum) when the *operating model* [includes volume tier pricing](#conditions.includesvolumetierpricing).
-  * SkuPrice MUST include [VolumeTierMinimum](#datasets.skuprice.volumetierminimum) when the *operating model* [includes volume tier pricing](#conditions.includesvolumetierpricing).
-  * SkuPrice MUST include [VolumeTierName](#datasets.skuprice.volumetiername) when the *operating model* [includes volume tier pricing](#conditions.includesvolumetierpricing).
   * SkuPrice SHOULD include [*custom columns*](#glossary:custom-column) needed to identify specific rate card routing logic when [*FOCUS columns*](#glossary:FOCUS-column) are not sufficient.
 * SkuPrice MUST conform to [DatasetCompleteness](#attributes.datasetcompleteness) requirements.
 * SkuPrice MUST conform to [DatasetConfiguration](#attributes.datasetconfiguration) requirements.
-* SkuPrice MUST maintain row uniqueness across the composite key of ServiceProviderName, SkuPriceId, ContractId, VolumeTierMinimum, SkuPriceEffectiveStart, PricingCurrency, and UnitPriceCategory.
+* SkuPrice MUST maintain row uniqueness across the composite key of ServiceProviderName, SkuPriceId, ContractId, QuantityTierMinimum, SkuPriceEffectiveStart, PricingCurrency, and UnitPriceCategory.
 * SkuPrice MUST treat two records with a null value in the same composite-key member as equal in that member when evaluating row uniqueness.
-* SkuPrice MUST NOT contain records whose validity periods, defined by SkuPriceEffectiveStart and SkuPriceEffectiveEnd, overlap for the same combination of ServiceProviderName, SkuPriceId, ContractId, VolumeTierMinimum, PricingCurrency, and UnitPriceCategory.
+* SkuPrice MUST NOT contain records whose validity periods, defined by SkuPriceEffectiveStart and SkuPriceEffectiveEnd, overlap for the same combination of ServiceProviderName, SkuPriceId, ContractId, QuantityTierMinimum, PricingCurrency, and UnitPriceCategory.
 * SkuPrice MUST contain at least one record for every [SkuPriceId](#datasets.skuprice.skupriceid) referenced in the [CostAndUsage](#datasets.costandusage) dataset.
 * SkuPrice *FOCUS columns* MUST conform to [FocusColumnHandling](#attributes.focuscolumnhandling) requirements.
 * SkuPrice *FOCUS columns* MUST conform to [NullHandling](#attributes.nullhandling) requirements.

@@ -9,7 +9,7 @@ A SKU ID is a service-provider-specified unique identifier that represents a spe
 
 Each SKU ID represents a unique set of features that can be sold at different price points or [*SKU Prices*](#glossary:sku-price). SKU ID is consistent across all pricing variations, which may differ based on multiple factors beyond the common functionality and technical specifications. Examples include but are not limited to:
 
-* Pricing tiers (e.g., free tier or volume-based tiers).
+* Pricing tiers (e.g., free tier or quantity-based tiers).
 * Commitment discount pricing [*period*](#glossary:period) (e.g., 1 year, 3 years).
 * Negotiated discounts or other contractual terms or conditions.
 
