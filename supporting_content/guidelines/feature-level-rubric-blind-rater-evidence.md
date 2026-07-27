@@ -13,7 +13,7 @@ Rounds 1 through 8 tested a fuller draft than the current guideline. That draft 
 * **One unresolved observation is in scope and stands.** Raters repeatedly acknowledged a boundary case and then chose Mandatory over the interim rule's Conditional default, first in round 6 and again in round 7. That default sits in the current guideline unchanged, and whether it needs reinforcing is a live question.
 * **The narrowed text was tested separately, in round 9.** Rounds 1 through 8 should be read as evidence about the surviving passages rather than as validation of this revision. Round 9 tested the narrowed text directly, under a reduced packet, and is the round to read for this revision's own determinacy. One round-8 observation is now moot: the ambiguity flagged in AvailabilityZone's Condition name came from an inheritance sentence that no longer exists, so that column is decided directly by applicability.
 
-Principle numbers below are the ones in force at the time of each round. A later simplification pass merged the two fabrication principles, so the current guideline carries six principles where rounds 5 through 9 saw seven: what those rounds call principle 6 is now part of principle 5, and derivation moved from 7 to 6.
+Principle numbers below are the ones in force at the time of each round. Later passes merged the two fabrication principles and added a Supported Features write-back, so the current guideline still carries seven, but not the same seven: what these rounds call principle 6 is now part of principle 5, derivation moved from 7 to 6, and principle 7 is new and has not been tested.
 
 ## Why Blind Raters
 
