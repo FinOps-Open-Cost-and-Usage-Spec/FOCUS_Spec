@@ -34,4 +34,4 @@ Conditions are sorted alphabetically by name.
 | [Includes Tags](#conditions.includestags) | Allocation | Operating model includes tags. |
 | [Includes Unit Pricing](#conditions.includesunitpricing) | Pricing | Operating model includes unit pricing. |
 | [Includes Usage Measurement](#conditions.includesusagemeasurement) | Billing | Operating model includes the measurement of usage. |
-| [Includes Virtual Currency](#conditions.includesvirtualcurrency) | Pricing | Operating model includes prices in virtual currency. |
+| [Includes Virtual Currency](#conditions.includesvirtualcurrency) | Pricing | Operating model includes prices in a consumption currency. |
