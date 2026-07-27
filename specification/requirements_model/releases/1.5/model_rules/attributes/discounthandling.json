@@ -7,10 +7,13 @@
     "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
     "ModelVersionRemoved": "1.4",
+    "DatasetType": "ATT",
+    "DatasetId": null,
+    "DatasetName": null,
     "Status": "Removed",
     "Notes": "",
-    "ApplicabilityCriteria": [
-      "COMMITMENT_DISCOUNT_SUPPORTED"
+    "Conditions": [
+      "IncludesCommitmentDiscounts"
     ],
     "Order": 0,
     "Type": "Static",
@@ -55,10 +58,13 @@
     "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
     "ModelVersionRemoved": "1.4",
+    "DatasetType": "ATT",
+    "DatasetId": null,
+    "DatasetName": null,
     "Status": "Removed",
     "Notes": "",
-    "ApplicabilityCriteria": [
-      "COMMITMENT_DISCOUNT_SUPPORTED"
+    "Conditions": [
+      "IncludesCommitmentDiscounts"
     ],
     "Order": 10,
     "Type": "Dynamic",
@@ -78,10 +84,13 @@
     "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
     "ModelVersionRemoved": "1.4",
+    "DatasetType": "ATT",
+    "DatasetId": null,
+    "DatasetName": null,
     "Status": "Removed",
     "Notes": "",
-    "ApplicabilityCriteria": [
-      "COMMITMENT_DISCOUNT_SUPPORTED"
+    "Conditions": [
+      "IncludesCommitmentDiscounts"
     ],
     "Order": 20,
     "Type": "Static",
@@ -121,10 +130,13 @@
     "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
     "ModelVersionRemoved": "1.4",
+    "DatasetType": "ATT",
+    "DatasetId": null,
+    "DatasetName": null,
     "Status": "Removed",
     "Notes": "",
-    "ApplicabilityCriteria": [
-      "COMMITMENT_DISCOUNT_SUPPORTED"
+    "Conditions": [
+      "IncludesCommitmentDiscounts"
     ],
     "Order": 30,
     "Type": "Dynamic",
@@ -144,10 +156,13 @@
     "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
     "ModelVersionRemoved": "1.4",
+    "DatasetType": "ATT",
+    "DatasetId": null,
+    "DatasetName": null,
     "Status": "Removed",
     "Notes": "",
-    "ApplicabilityCriteria": [
-      "COMMITMENT_DISCOUNT_SUPPORTED"
+    "Conditions": [
+      "IncludesCommitmentDiscounts"
     ],
     "Order": 40,
     "Type": "Dynamic",
@@ -167,10 +182,13 @@
     "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
     "ModelVersionRemoved": "1.4",
+    "DatasetType": "ATT",
+    "DatasetId": null,
+    "DatasetName": null,
     "Status": "Removed",
     "Notes": "",
-    "ApplicabilityCriteria": [
-      "COMMITMENT_DISCOUNT_SUPPORTED"
+    "Conditions": [
+      "IncludesCommitmentDiscounts"
     ],
     "Order": 50,
     "Type": "Static",
@@ -205,10 +223,13 @@
     "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
     "ModelVersionRemoved": "1.4",
+    "DatasetType": "ATT",
+    "DatasetId": null,
+    "DatasetName": null,
     "Status": "Removed",
     "Notes": "",
-    "ApplicabilityCriteria": [
-      "COMMITMENT_DISCOUNT_SUPPORTED"
+    "Conditions": [
+      "IncludesCommitmentDiscounts"
     ],
     "Order": 60,
     "Type": "Dynamic",
@@ -228,10 +249,13 @@
     "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
     "ModelVersionRemoved": "1.4",
+    "DatasetType": "ATT",
+    "DatasetId": null,
+    "DatasetName": null,
     "Status": "Removed",
     "Notes": "",
-    "ApplicabilityCriteria": [
-      "COMMITMENT_DISCOUNT_SUPPORTED"
+    "Conditions": [
+      "IncludesCommitmentDiscounts"
     ],
     "Order": 70,
     "Type": "Dynamic",
@@ -251,10 +275,13 @@
     "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
     "ModelVersionRemoved": "1.4",
+    "DatasetType": "ATT",
+    "DatasetId": null,
+    "DatasetName": null,
     "Status": "Removed",
     "Notes": "",
-    "ApplicabilityCriteria": [
-      "COMMITMENT_DISCOUNT_SUPPORTED"
+    "Conditions": [
+      "IncludesCommitmentDiscounts"
     ],
     "Order": 80,
     "Type": "Static",
@@ -334,10 +361,13 @@
     "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
     "ModelVersionRemoved": "1.4",
+    "DatasetType": "ATT",
+    "DatasetId": null,
+    "DatasetName": null,
     "Status": "Removed",
     "Notes": "",
-    "ApplicabilityCriteria": [
-      "COMMITMENT_DISCOUNT_SUPPORTED"
+    "Conditions": [
+      "IncludesCommitmentDiscounts"
     ],
     "Order": 90,
     "Type": "Dynamic",
@@ -357,10 +387,13 @@
     "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
     "ModelVersionRemoved": "1.4",
+    "DatasetType": "ATT",
+    "DatasetId": null,
+    "DatasetName": null,
     "Status": "Removed",
     "Notes": "",
-    "ApplicabilityCriteria": [
-      "COMMITMENT_DISCOUNT_SUPPORTED"
+    "Conditions": [
+      "IncludesCommitmentDiscounts"
     ],
     "Order": 100,
     "Type": "Dynamic",
@@ -380,10 +413,13 @@
     "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
     "ModelVersionRemoved": "1.4",
+    "DatasetType": "ATT",
+    "DatasetId": null,
+    "DatasetName": null,
     "Status": "Removed",
     "Notes": "",
-    "ApplicabilityCriteria": [
-      "COMMITMENT_DISCOUNT_SUPPORTED"
+    "Conditions": [
+      "IncludesCommitmentDiscounts"
     ],
     "Order": 110,
     "Type": "Dynamic",
@@ -403,10 +439,13 @@
     "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
     "ModelVersionRemoved": "1.4",
+    "DatasetType": "ATT",
+    "DatasetId": null,
+    "DatasetName": null,
     "Status": "Removed",
     "Notes": "",
-    "ApplicabilityCriteria": [
-      "COMMITMENT_DISCOUNT_SUPPORTED"
+    "Conditions": [
+      "IncludesCommitmentDiscounts"
     ],
     "Order": 120,
     "Type": "Dynamic",
@@ -426,10 +465,13 @@
     "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
     "ModelVersionRemoved": "1.4",
+    "DatasetType": "ATT",
+    "DatasetId": null,
+    "DatasetName": null,
     "Status": "Removed",
     "Notes": "",
-    "ApplicabilityCriteria": [
-      "COMMITMENT_DISCOUNT_SUPPORTED"
+    "Conditions": [
+      "IncludesCommitmentDiscounts"
     ],
     "Order": 130,
     "Type": "Dynamic",
@@ -449,10 +491,13 @@
     "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
     "ModelVersionRemoved": "1.4",
+    "DatasetType": "ATT",
+    "DatasetId": null,
+    "DatasetName": null,
     "Status": "Removed",
     "Notes": "",
-    "ApplicabilityCriteria": [
-      "COMMITMENT_DISCOUNT_SUPPORTED"
+    "Conditions": [
+      "IncludesCommitmentDiscounts"
     ],
     "Order": 140,
     "Type": "Dynamic",
@@ -472,10 +517,13 @@
     "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
     "ModelVersionRemoved": "1.4",
+    "DatasetType": "ATT",
+    "DatasetId": null,
+    "DatasetName": null,
     "Status": "Removed",
     "Notes": "",
-    "ApplicabilityCriteria": [
-      "COMMITMENT_DISCOUNT_SUPPORTED"
+    "Conditions": [
+      "IncludesCommitmentDiscounts"
     ],
     "Order": 150,
     "Type": "Dynamic",
@@ -495,10 +543,13 @@
     "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
     "ModelVersionRemoved": "1.4",
+    "DatasetType": "ATT",
+    "DatasetId": null,
+    "DatasetName": null,
     "Status": "Removed",
     "Notes": "",
-    "ApplicabilityCriteria": [
-      "COMMITMENT_DISCOUNT_SUPPORTED"
+    "Conditions": [
+      "IncludesCommitmentDiscounts"
     ],
     "Order": 160,
     "Type": "Dynamic",
@@ -518,10 +569,13 @@
     "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
     "ModelVersionRemoved": "1.4",
+    "DatasetType": "ATT",
+    "DatasetId": null,
+    "DatasetName": null,
     "Status": "Removed",
     "Notes": "",
-    "ApplicabilityCriteria": [
-      "COMMITMENT_DISCOUNT_SUPPORTED"
+    "Conditions": [
+      "IncludesCommitmentDiscounts"
     ],
     "Order": 170,
     "Type": "Dynamic",
@@ -541,10 +595,13 @@
     "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
     "ModelVersionRemoved": "1.4",
+    "DatasetType": "ATT",
+    "DatasetId": null,
+    "DatasetName": null,
     "Status": "Removed",
     "Notes": "",
-    "ApplicabilityCriteria": [
-      "COMMITMENT_DISCOUNT_SUPPORTED"
+    "Conditions": [
+      "IncludesCommitmentDiscounts"
     ],
     "Order": 180,
     "Type": "Dynamic",
@@ -564,10 +621,13 @@
     "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
     "ModelVersionRemoved": "1.4",
+    "DatasetType": "ATT",
+    "DatasetId": null,
+    "DatasetName": null,
     "Status": "Removed",
     "Notes": "",
-    "ApplicabilityCriteria": [
-      "COMMITMENT_DISCOUNT_SUPPORTED"
+    "Conditions": [
+      "IncludesCommitmentDiscounts"
     ],
     "Order": 190,
     "Type": "Dynamic",
@@ -587,10 +647,13 @@
     "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
     "ModelVersionRemoved": "1.4",
+    "DatasetType": "ATT",
+    "DatasetId": null,
+    "DatasetName": null,
     "Status": "Removed",
     "Notes": "",
-    "ApplicabilityCriteria": [
-      "COMMITMENT_DISCOUNT_SUPPORTED"
+    "Conditions": [
+      "IncludesCommitmentDiscounts"
     ],
     "Order": 200,
     "Type": "Dynamic",
