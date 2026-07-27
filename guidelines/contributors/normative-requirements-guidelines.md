@@ -137,11 +137,14 @@ The following core concepts define the structure of normative content in the FOC
   * a [composite requirement](#composite-requirements), represented by a hierarchy of nested normative bullets.
 * **Atomic requirement** — the smallest resolved conformance unit derived from a normative requirement. Each atomic requirement defines exactly one verifiable constraint. A standalone requirement resolves into exactly one atomic requirement; a composite requirement resolves into multiple atomic requirements.
 
-In addition to normative bullets, the requirement structure uses structural elements that provide scope, shared conditions, or organizational context but do not introduce conformance constraints:
+Although every normative bullet contains a BCP 14 keyword, not every normative bullet introduces a conformance constraint. Some normative bullets serve solely to group nested normative bullets under a shared condition or context:
 
-* A [structural anchor](#structural-anchor) defines the scope of a Requirements section.
 * A [condition grouping bullet](#condition-grouping-bullets) defines a shared condition inherited by nested normative bullets.
 * A [context grouping bullet](#context-grouping-bullets) provides organizational context for nested normative bullets.
+
+In addition to normative bullets, the requirement structure includes a structural anchor that provides scope but does not introduce a conformance constraint:
+
+* A [structural anchor](#structural-anchor) defines the scope of a Requirements section.
 
 ### Structural Anchor
 
