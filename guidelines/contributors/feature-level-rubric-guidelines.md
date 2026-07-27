@@ -4,7 +4,7 @@
 
 This guideline answers one question. When FOCUS adds a column, does every data generator have to publish it, or only the generators it actually applies to?
 
-The first answer is Mandatory. The second is Conditional. This guideline decides which of the two a column takes, and whether its value is allowed to be null. It applies to columns already in the specification and to new ones.
+The first answer is Mandatory. The second is Conditional. This guideline decides which of the two a column takes, and whether its value is allowed to be null. It applies to columns already in the specification and to new ones the working group has decided to carry.
 
 There are two decisions here, not one:
 
@@ -79,7 +79,7 @@ The four levels, and the `MUST`, `SHOULD`, and `MAY` obligations attached to the
 
 This is the hardest split in the guideline, and it gets its own section. Two outcomes look similar and are not:
 
-* **Mandatory, Allows nulls = True.** The concept exists for every operating model, so the column is always there. A truthful value simply is not on every row. (An ordinary charge carries a null ChargeClass.) The nulls are row by row, never one generator's whole dataset at once. Because the column is always present, consumers and joins can count on it.
+* **Mandatory, Allows nulls = True.** The concept exists for every operating model, so the column is always there. A truthful value simply is not on every row. (An ordinary charge carries a null ChargeClass.) The nulls are row by row, and no operating model is null throughout, though an individual generator may not yet have produced a value. Because the column is always present, consumers and joins can count on it.
 * **Conditional.** The column is there only when it applies, and is fully mandatory when it does. Which columns appear varies from one dataset to the next. Conditional does not mean optional. And a column that is absent tells a consumer more than one that is null for an entire generator.
 
 The rule:
@@ -97,7 +97,7 @@ Every leveling decision answers two questions, one per axis. Applicability sets 
    * **Having to substitute is a sign the concept is not universal.** When the only way to fill the column for the models that lack the concept is to substitute or derive some other value, the concept is not universal, and the column is Conditional.
    * **A rule for everyone, or a patch for the models missing the concept?** Some columns are defined in terms of another column, and which of these two it is decides the level. When the definition applies in every operating model, the concept stays universal and the column is Mandatory. That holds even where the two values differ from row to row. EffectiveCost works this way: it is defined against BilledCost for every generator, equal to it for ordinary charges, and computed from it where commitments amortize, never standing in for a concept the generator lacks. When the value is supplied only for the models that lack the concept, it is a patch, the concept is not universal, and the column is Conditional. Having a fallback settles nothing by itself. Which of the two kinds it is settles it.
    * **Missing concept, or just never happened yet?** When the concept is absent for a whole class of models, Conditional. A flat-rate SaaS has no region concept to populate. When the concept exists for every model but a generator has simply never produced an instance of it, Mandatory, with input 2 setting nullability. Every generator marks a correction to a closed billing period with ChargeClass, so a generator that has never issued such a correction still carries the column, null on its rows. The test is whether the concept exists, not whether a value has been produced yet.
-   * **Only presence gates belong here.** A Condition that gates nullability leaves the level Mandatory and feeds input 2 instead. Tell the two apart by scope. A presence gate means a model can lack the characteristic outright, so no row ever carries a value and the whole column is absent (a model with no regions). A gate that still leaves values on some rows for every model is row-level nullability, however it is worded. No model can lack corrections to closed billing periods, so ChargeClass's null rule is nullability, not a Condition. Whether something is one odd exception or a real pattern is settled by the Interim Boundary Rule.
+   * **Only presence gates belong here.** An operating model Condition that gates nullability leaves the level Mandatory and feeds input 2 instead. Tell the two apart by scope. A presence gate means a model can lack the characteristic outright, so no row ever carries a value and the whole column is absent (a model with no regions). A gate that still leaves values on some rows for every model is row-level nullability, however it is worded. No operating model lacks the concept of a correction to a closed billing period, so ChargeClass's null rule is nullability, not an operating model Condition. Whether something is one odd exception or a real pattern is settled by the Interim Boundary Rule.
 2. **Producibility: can a real value be produced?** Where the column applies, can the operating model produce a meaningful value, or is null the honest answer? Judge against the operating model, not against today's export (principle 5). Set Allows nulls = False only when a meaningful value is available on every row where the column is present. Otherwise set Allows nulls = True. This sets nullability only. It never sets the level, and it never licenses inventing a value.
 
 ```mermaid
@@ -110,6 +110,8 @@ flowchart TD
         P{"2 Producibility:<br/>is a real value always<br/>available where present?"} -->|"Yes"| NF["Allows nulls = False"]
         P -->|"No"| NT["Allows nulls = True"]
     end
+    CD -.-> P
+    M -.-> P
 ```
 
 When applicability is borderline, with the concept present for most models and absent for a few, the companion guideline's test settles it. Until that test exists, such a column takes the Conditional default from the Interim Boundary Rule.
@@ -121,7 +123,7 @@ The rubric provides guidance for defining the normative content related to featu
 The rubric helps identify:
 
 * applicable operating model Conditions,
-* Feature Levels for FOCUS datasets and FOCUS columns,
+* Feature Levels for FOCUS columns,
 * Nullability for FOCUS columns.
 
 Feature Levels are defined independently of category. Conditional columns are expressed through operating model Conditions rather than category-specific rules such as "Mandatory for cloud" or "Optional for SaaS".
