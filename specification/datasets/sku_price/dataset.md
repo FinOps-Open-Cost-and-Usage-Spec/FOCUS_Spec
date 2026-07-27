@@ -8,7 +8,7 @@ The dataset describes the full price list a *service provider* offers, not only 
 
 The columns are presented in alphabetical order.
 
-## Columns
+## Columns<!--SkipTOC-->
 
 | Column                                                                              | Column Type | Feature Level                                                  | Allows Nulls | Data Type |
 | ----------------------------------------------------------------------------------- | ----------- | -------------------------------------------------------------- | ------------ | --------- |
@@ -37,7 +37,7 @@ The columns are presented in alphabetical order.
 | [Volume Tier Minimum](#datasets.skuprice.volumetierminimum)                         | Metric      | [Conditional](#conditions.includesvolumetierpricing)           | False        | Decimal   |
 | [Volume Tier Name](#datasets.skuprice.volumetiername)                               | Dimension   | [Conditional](#conditions.includesvolumetierpricing)           | True         | String    |
 
-## Relationships
+## Relationships<!--SkipTOC-->
 
 The SKU Price dataset relates to the Cost and Usage dataset through the SKU Price ID, enabling the attribution of catalog rates to incurred usage. This is a one-to-many relationship: a single SKU Price ID corresponds to multiple SKU Price records, because a SKU's price varies by effective period, contract, volume tier, pricing currency, and unit price category. Resolving the price that applies to a Cost and Usage charge therefore requires more than the SKU Price ID alone. The charge must also be aligned to the SKU Price record whose effective period contains the charge period, whose Contract ID matches the agreement under which the charge was incurred (or is null for a public list price), whose volume tier contains the charged quantity, whose pricing currency matches the currency in which the charge is denominated, and whose unit price category matches the price type applied to the charge. The SKU Price dataset can also optionally join to the Contract Commitment dataset to relate a specific contracted price to an overarching negotiated agreement.
 
@@ -46,7 +46,7 @@ The SKU Price dataset relates to the Cost and Usage dataset through the SKU Pric
 | Cost and Usage      | SKU Price ID      | SKU Price           | SKU Price ID           |
 | Contract Commitment | Contract ID       | SKU Price           | Contract ID            |
 
-## Requirements
+## Requirements<!--SkipTOC-->
 
 SkuPrice MUST adhere to the following requirements:
 
@@ -86,18 +86,18 @@ SkuPrice MUST adhere to the following requirements:
 * SkuPrice *FOCUS columns* MUST conform to [NullHandling](#attributes.nullhandling) requirements.
 * SkuPrice *custom columns* MUST conform to [CustomColumnHandling](#attributes.customcolumnhandling) requirements.
 
-## Dataset ID
+## Dataset ID<!--SkipTOC-->
 
 SkuPrice
 
-## Display Name
+## Display Name<!--SkipTOC-->
 
 SKU Price
 
-## Description
+## Description<!--SkipTOC-->
 
 Describes the catalog rates, internal multipliers, and negotiated unit prices for resources or services offered by a service provider.
 
-## Version Introduced
+## Version Introduced<!--SkipTOC-->
 
 1.5
