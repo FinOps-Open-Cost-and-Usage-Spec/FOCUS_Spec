@@ -47,6 +47,7 @@
 
 ## Overview and Purpose
 
+This section defines guidelines for authoring normative requirements in the FOCUS specification. These guidelines define **how** to write normative requirements to ensure clarity, consistency, and testability. It does not define the requirements themselves (the "what"), but instead specifies the **structure, subjects, and verifiability** of normative requirements.
 
 The guidelines cover authoring of normative requirements for the following entities:
 
