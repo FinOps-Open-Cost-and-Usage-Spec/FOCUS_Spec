@@ -89,6 +89,10 @@ A feature of [*commitment discounts*](#glossary:commitment-discount) that may fu
 
 A service-provider offering that allows a customer to enter into a [*commitment*](#glossary:commitment). Commitment programs include [*commitment discounts*](#glossary:commitment-discount), [*capacity reservations*](#glossary:capacity-reservation), and other constructs that require advance spend or usage agreements.
 
+<a name="glossary:consumer"><b>Consumer</b></a>
+
+The party to which a [*charge*](#glossary:charge) is attributed for allocation, chargeback, or showback (e.g., end-user, application, autonomous agent). A consumer is distinct from the [*principal*](#glossary:principal) to which a service provider grants access to [*resources*](#glossary:resource) or [*services*](#glossary:service), and need not be an entity in a service provider identity and access management model.
+
 <a name="glossary:contract"><b>Contract</b></a>
 
 A collection of agreed terms between a service provider and a customer.
