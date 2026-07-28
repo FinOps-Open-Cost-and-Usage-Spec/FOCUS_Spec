@@ -8,7 +8,7 @@
     "Notes": "Main dataset composite rule",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Type": "Static",
     "Order": 0,
     "DatasetType": "CAU",
@@ -116,7 +116,7 @@
     "Notes": "Columns present composite rule",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": 20,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
@@ -484,7 +484,7 @@
     "Notes": "Columns composite rule",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": -1,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
@@ -837,8 +837,8 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "AVAILABILITY_ZONE_SUPPORTED"
+    "Conditions": [
+      "IncludesAvailabilityZones"
     ],
     "Type": "Static",
     "Order": 80,
@@ -865,8 +865,8 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "PUBLIC_PRICE_LIST_SUPPORTED"
+    "Conditions": [
+      "IncludesListUnitPrices"
     ],
     "Order": 410,
     "DatasetType": "CAU",
@@ -893,7 +893,7 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": 110,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
@@ -919,7 +919,7 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": 90,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
@@ -945,8 +945,8 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "MULTIPLE_BILLING_ACCOUNT_TYPES_SUPPORTED"
+    "Conditions": [
+      "IncludesMultipleBillingAccountTypes"
     ],
     "Order": 120,
     "DatasetType": "CAU",
@@ -973,7 +973,7 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": 180,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
@@ -999,7 +999,7 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": 150,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
@@ -1025,7 +1025,7 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": 140,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
@@ -1051,8 +1051,8 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "USAGE_MEASUREMENT_SUPPORTED"
+    "Conditions": [
+      "IncludesUsageMeasurement"
     ],
     "Order": 310,
     "DatasetType": "CAU",
@@ -1079,8 +1079,8 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "COMMITMENT_DISCOUNT_SUPPORTED"
+    "Conditions": [
+      "IncludesCommitmentDiscounts"
     ],
     "Order": 260,
     "DatasetType": "CAU",
@@ -1107,8 +1107,8 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "COMMITMENT_DISCOUNT_SUPPORTED"
+    "Conditions": [
+      "IncludesCommitmentDiscounts"
     ],
     "Order": 250,
     "DatasetType": "CAU",
@@ -1135,8 +1135,8 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "COMMITMENT_DISCOUNT_SUPPORTED"
+    "Conditions": [
+      "IncludesCommitmentDiscounts"
     ],
     "Order": 290,
     "DatasetType": "CAU",
@@ -1163,8 +1163,8 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "COMMITMENT_DISCOUNT_SUPPORTED"
+    "Conditions": [
+      "IncludesCommitmentDiscounts"
     ],
     "Order": 300,
     "DatasetType": "CAU",
@@ -1191,8 +1191,8 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "COMMITMENT_DISCOUNT_SUPPORTED"
+    "Conditions": [
+      "IncludesCommitmentDiscounts"
     ],
     "Order": 240,
     "DatasetType": "CAU",
@@ -1219,8 +1219,8 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "COMMITMENT_DISCOUNT_SUPPORTED"
+    "Conditions": [
+      "IncludesCommitmentDiscounts"
     ],
     "Order": 280,
     "DatasetType": "CAU",
@@ -1247,8 +1247,8 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "COMMITMENT_DISCOUNT_SUPPORTED"
+    "Conditions": [
+      "IncludesCommitmentDiscounts"
     ],
     "Type": "Static",
     "Order": 270,
@@ -1275,8 +1275,8 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "SUB_ACCOUNT_SUPPORTED"
+    "Conditions": [
+      "IncludesSubAccounts"
     ],
     "Order": 710,
     "DatasetType": "CAU",
@@ -1303,8 +1303,8 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
-    "ApplicabilityCriteria": [
-      "CAPACITY_RESERVATION_SUPPORTED"
+    "Conditions": [
+      "IncludesCapacityReservations"
     ],
     "Order": 170,
     "DatasetType": "CAU",
@@ -1331,7 +1331,7 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Deprecated",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": -1,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
@@ -1357,8 +1357,8 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "MULTIPLE_PRICING_CATEGORIES_SUPPORTED"
+    "Conditions": [
+      "IncludesMultiplePricingCategories"
     ],
     "Order": 420,
     "DatasetType": "CAU",
@@ -1385,7 +1385,7 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": 390,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
@@ -1411,7 +1411,7 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": 100,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
@@ -1437,7 +1437,7 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": 200,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
@@ -1463,7 +1463,7 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": 190,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
@@ -1489,7 +1489,7 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": 210,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
@@ -1515,7 +1515,7 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": 220,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
@@ -1541,8 +1541,8 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
-    "ApplicabilityCriteria": [
-      "SUB_ACCOUNT_SUPPORTED"
+    "Conditions": [
+      "IncludesSubAccounts"
     ],
     "Order": 720,
     "DatasetType": "CAU",
@@ -1569,7 +1569,7 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": 340,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
@@ -1595,7 +1595,7 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": 360,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
@@ -1621,7 +1621,7 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": 400,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
@@ -1647,8 +1647,8 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "INVOICE_ISSUER_PAYABLE_INVOICES_SUPPORTED"
+    "Conditions": [
+      "IncludesPayableInvoices"
     ],
     "Order": 380,
     "DatasetType": "CAU",
@@ -1675,8 +1675,8 @@
     "Notes": "Presence rule",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "NEGOTIATED_PRICING_SUPPORTED"
+    "Conditions": [
+      "IncludesNegotiatedPricing"
     ],
     "Order": 350,
     "DatasetType": "CAU",
@@ -1703,7 +1703,7 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": 130,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
@@ -1729,7 +1729,7 @@
     "Notes": "PricingQuantity must be present in dataset",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": 560,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
@@ -1755,7 +1755,7 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": 230,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
@@ -1781,7 +1781,7 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Deprecated",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": -1,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
@@ -1807,9 +1807,9 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED",
-      "RESOURCE_TYPE_ASSIGNMENT_SUPPORTED"
+    "Conditions": [
+      "IncludesProvisionedResources",
+      "IncludesResourceTypeAssignment"
     ],
     "Order": 620,
     "DatasetType": "CAU",
@@ -1836,7 +1836,7 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": 630,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
@@ -1862,7 +1862,7 @@
     "Notes": "ServiceName must be present in dataset",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": 640,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
@@ -1888,7 +1888,7 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": 660,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
@@ -1914,8 +1914,8 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED"
+    "Conditions": [
+      "IncludesProvisionedResources"
     ],
     "Order": 600,
     "DatasetType": "CAU",
@@ -1942,8 +1942,8 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED"
+    "Conditions": [
+      "IncludesProvisionedResources"
     ],
     "Order": 610,
     "DatasetType": "CAU",
@@ -1970,8 +1970,8 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
+    "Conditions": [
+      "IncludesPricingBillingCurrencyDifferences"
     ],
     "Order": 430,
     "DatasetType": "CAU",
@@ -1998,9 +1998,9 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "PUBLIC_PRICE_LIST_SUPPORTED",
-      "VIRTUAL_CURRENCY_SUPPORTED"
+    "Conditions": [
+      "IncludesVirtualCurrency",
+      "IncludesListUnitPrices"
     ],
     "Order": 440,
     "DatasetType": "CAU",
@@ -2023,7 +2023,7 @@
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-CostAndUsage-D-049-C"
+            "ModelRuleId": "CAU-CostAndUsage-D-049-O"
           }
         ]
       },
@@ -2031,7 +2031,7 @@
       "Dependencies": [
         "CAU-CostAndUsage-D-047-C",
         "CAU-CostAndUsage-D-048-C",
-        "CAU-CostAndUsage-D-049-C"
+        "CAU-CostAndUsage-D-049-O"
       ]
     }
   },
@@ -2044,9 +2044,9 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "PUBLIC_PRICE_LIST_SUPPORTED",
-      "VIRTUAL_CURRENCY_SUPPORTED"
+    "Conditions": [
+      "IncludesVirtualCurrency",
+      "IncludesListUnitPrices"
     ],
     "Order": 450,
     "DatasetType": "CAU",
@@ -2073,9 +2073,9 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "PUBLIC_PRICE_LIST_SUPPORTED",
-      "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
+    "Conditions": [
+      "IncludesPricingBillingCurrencyDifferences",
+      "IncludesListUnitPrices"
     ],
     "Order": 460,
     "DatasetType": "CAU",
@@ -2093,7 +2093,7 @@
       "Dependencies": []
     }
   },
-  "CAU-CostAndUsage-D-049-C": {
+  "CAU-CostAndUsage-D-049-O": {
     "Function": "Presence",
     "Reference": "PricingCurrencyContractedUnitPrice",
     "EntityType": "Dataset",
@@ -2102,10 +2102,7 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "PUBLIC_PRICE_LIST_SUPPORTED",
-      "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
-    ],
+    "Conditions": [],
     "Order": 470,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
@@ -2131,9 +2128,9 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "PUBLIC_PRICE_LIST_SUPPORTED",
-      "VIRTUAL_CURRENCY_SUPPORTED"
+    "Conditions": [
+      "IncludesVirtualCurrency",
+      "IncludesListUnitPrices"
     ],
     "Order": 480,
     "DatasetType": "CAU",
@@ -2156,7 +2153,7 @@
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-CostAndUsage-D-053-C"
+            "ModelRuleId": "CAU-CostAndUsage-D-053-O"
           }
         ]
       },
@@ -2164,7 +2161,7 @@
       "Dependencies": [
         "CAU-CostAndUsage-D-051-C",
         "CAU-CostAndUsage-D-052-C",
-        "CAU-CostAndUsage-D-053-C"
+        "CAU-CostAndUsage-D-053-O"
       ]
     }
   },
@@ -2177,9 +2174,9 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "PUBLIC_PRICE_LIST_SUPPORTED",
-      "VIRTUAL_CURRENCY_SUPPORTED"
+    "Conditions": [
+      "IncludesVirtualCurrency",
+      "IncludesListUnitPrices"
     ],
     "Order": 490,
     "DatasetType": "CAU",
@@ -2206,9 +2203,9 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "PUBLIC_PRICE_LIST_SUPPORTED",
-      "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
+    "Conditions": [
+      "IncludesPricingBillingCurrencyDifferences",
+      "IncludesListUnitPrices"
     ],
     "Order": 500,
     "DatasetType": "CAU",
@@ -2226,7 +2223,7 @@
       "Dependencies": []
     }
   },
-  "CAU-CostAndUsage-D-053-C": {
+  "CAU-CostAndUsage-D-053-O": {
     "Function": "Presence",
     "Reference": "PricingCurrencyEffectiveCost",
     "EntityType": "Dataset",
@@ -2235,10 +2232,7 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "PUBLIC_PRICE_LIST_SUPPORTED",
-      "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
-    ],
+    "Conditions": [],
     "Order": 510,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
@@ -2264,9 +2258,9 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "PUBLIC_PRICE_LIST_SUPPORTED",
-      "VIRTUAL_CURRENCY_SUPPORTED"
+    "Conditions": [
+      "IncludesVirtualCurrency",
+      "IncludesListUnitPrices"
     ],
     "Type": "Static",
     "Order": 520,
@@ -2289,7 +2283,7 @@
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-CostAndUsage-D-057-C"
+            "ModelRuleId": "CAU-CostAndUsage-D-057-O"
           }
         ]
       },
@@ -2297,7 +2291,7 @@
       "Dependencies": [
         "CAU-CostAndUsage-D-055-C",
         "CAU-CostAndUsage-D-056-C",
-        "CAU-CostAndUsage-D-057-C"
+        "CAU-CostAndUsage-D-057-O"
       ]
     }
   },
@@ -2310,9 +2304,9 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "PUBLIC_PRICE_LIST_SUPPORTED",
-      "VIRTUAL_CURRENCY_SUPPORTED"
+    "Conditions": [
+      "IncludesVirtualCurrency",
+      "IncludesListUnitPrices"
     ],
     "Type": "Static",
     "Order": 530,
@@ -2339,9 +2333,9 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "PUBLIC_PRICE_LIST_SUPPORTED",
-      "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
+    "Conditions": [
+      "IncludesPricingBillingCurrencyDifferences",
+      "IncludesListUnitPrices"
     ],
     "Type": "Static",
     "Order": 540,
@@ -2359,7 +2353,7 @@
       "Dependencies": []
     }
   },
-  "CAU-CostAndUsage-D-057-C": {
+  "CAU-CostAndUsage-D-057-O": {
     "Function": "Presence",
     "Reference": "PricingCurrencyListUnitPrice",
     "EntityType": "Dataset",
@@ -2368,10 +2362,7 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "PUBLIC_PRICE_LIST_SUPPORTED",
-      "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
-    ],
+    "Conditions": [],
     "Type": "Static",
     "Order": 550,
     "DatasetType": "CAU",
@@ -2397,9 +2388,8 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "PUBLIC_PRICE_LIST_SUPPORTED",
-      "UNIT_PRICING_SUPPORTED"
+    "Conditions": [
+      "IncludesUnitPricing"
     ],
     "Order": 700,
     "DatasetType": "CAU",
@@ -2426,9 +2416,8 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "PUBLIC_PRICE_LIST_SUPPORTED",
-      "UNIT_PRICING_SUPPORTED"
+    "Conditions": [
+      "IncludesUnitPricing"
     ],
     "Order": 680,
     "DatasetType": "CAU",
@@ -2455,9 +2444,8 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "PUBLIC_PRICE_LIST_SUPPORTED",
-      "UNIT_PRICING_SUPPORTED"
+    "Conditions": [
+      "IncludesUnitPricing"
     ],
     "Order": 670,
     "DatasetType": "CAU",
@@ -2484,9 +2472,8 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "PUBLIC_PRICE_LIST_SUPPORTED",
-      "UNIT_PRICING_SUPPORTED"
+    "Conditions": [
+      "IncludesUnitPricing"
     ],
     "Order": 690,
     "DatasetType": "CAU",
@@ -2513,8 +2500,8 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "REGION_SUPPORTED"
+    "Conditions": [
+      "IncludesRegions"
     ],
     "Order": 590,
     "DatasetType": "CAU",
@@ -2541,8 +2528,8 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "REGION_SUPPORTED"
+    "Conditions": [
+      "IncludesRegions"
     ],
     "Order": 580,
     "DatasetType": "CAU",
@@ -2569,8 +2556,8 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "TAGGING_SUPPORTED"
+    "Conditions": [
+      "IncludesTags"
     ],
     "Order": 740,
     "DatasetType": "CAU",
@@ -2597,8 +2584,8 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
-    "ApplicabilityCriteria": [
-      "CAPACITY_RESERVATION_SUPPORTED"
+    "Conditions": [
+      "IncludesCapacityReservations"
     ],
     "Order": 160,
     "DatasetType": "CAU",
@@ -2625,8 +2612,8 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
-    "ApplicabilityCriteria": [
-      "USAGE_MEASUREMENT_SUPPORTED"
+    "Conditions": [
+      "IncludesUsageMeasurement"
     ],
     "Order": 320,
     "DatasetType": "CAU",
@@ -2653,8 +2640,8 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
-    "ApplicabilityCriteria": [
-      "MULTIPLE_SUB_ACCOUNT_TYPES_SUPPORTED"
+    "Conditions": [
+      "IncludesMultipleSubAccountTypes"
     ],
     "Order": 730,
     "DatasetType": "CAU",
@@ -2681,7 +2668,7 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": 570,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
@@ -2707,8 +2694,8 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    "Conditions": [
+      "IncludesSplitCostAllocation"
     ],
     "Type": "Static",
     "Order": 30,
@@ -2738,8 +2725,8 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    "Conditions": [
+      "IncludesSplitCostAllocation"
     ],
     "Order": 40,
     "Type": "Static",
@@ -2766,8 +2753,8 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    "Conditions": [
+      "IncludesSplitCostAllocation"
     ],
     "Order": 50,
     "Type": "Static",
@@ -2794,8 +2781,8 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    "Conditions": [
+      "IncludesSplitCostAllocation"
     ],
     "Order": 60,
     "Type": "Static",
@@ -2822,8 +2809,8 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    "Conditions": [
+      "IncludesSplitCostAllocation"
     ],
     "Order": 70,
     "Type": "Static",
@@ -2850,8 +2837,8 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "CONTRACT_COMMITMENTS_SUPPORTED"
+    "Conditions": [
+      "IncludesContractCommitments"
     ],
     "Order": 330,
     "Type": "Static",
@@ -2878,7 +2865,7 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": 370,
     "Type": "Static",
     "ValidationCriteria": {
@@ -2904,7 +2891,7 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": 650,
     "Type": "Static",
     "ValidationCriteria": {
@@ -2930,7 +2917,7 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": 10,
     "Type": "Dynamic",
     "ValidationCriteria": {
@@ -2953,7 +2940,7 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": 1250,
     "Type": "Dynamic",
     "ValidationCriteria": {
@@ -2976,7 +2963,7 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": 1260,
     "Type": "Dynamic",
     "ValidationCriteria": {
@@ -2999,7 +2986,7 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": 1270,
     "Type": "Dynamic",
     "ValidationCriteria": {
@@ -3022,7 +3009,7 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": 1280,
     "Type": "Dynamic",
     "ValidationCriteria": {
@@ -3045,7 +3032,7 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": 1290,
     "Type": "Dynamic",
     "ValidationCriteria": {
@@ -3068,7 +3055,7 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": 1300,
     "Type": "Dynamic",
     "ValidationCriteria": {
@@ -3091,8 +3078,8 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    "Conditions": [
+      "IncludesSplitCostAllocation"
     ],
     "Order": 1310,
     "Type": "Static",
@@ -3146,8 +3133,8 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    "Conditions": [
+      "IncludesSplitCostAllocation"
     ],
     "Order": 1320,
     "Type": "Dynamic",
@@ -3171,8 +3158,8 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    "Conditions": [
+      "IncludesSplitCostAllocation"
     ],
     "Order": 1330,
     "Type": "Dynamic",
@@ -3196,8 +3183,8 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    "Conditions": [
+      "IncludesSplitCostAllocation"
     ],
     "Order": 1340,
     "Type": "Dynamic",
@@ -3221,8 +3208,8 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    "Conditions": [
+      "IncludesSplitCostAllocation"
     ],
     "Order": 1350,
     "Type": "Dynamic",
@@ -3246,8 +3233,8 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    "Conditions": [
+      "IncludesSplitCostAllocation"
     ],
     "Order": 1360,
     "Type": "Dynamic",
@@ -3271,7 +3258,7 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": 1370,
     "Type": "Dynamic",
     "ValidationCriteria": {
@@ -3294,7 +3281,7 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": 1380,
     "Type": "Dynamic",
     "ValidationCriteria": {
@@ -3317,8 +3304,8 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    "Conditions": [
+      "IncludesSplitCostAllocation"
     ],
     "Order": 1390,
     "Type": "Dynamic",
@@ -3344,7 +3331,7 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": 1400,
     "Type": "Dynamic",
     "ValidationCriteria": {
@@ -3369,7 +3356,7 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": 1410,
     "Type": "Dynamic",
     "ValidationCriteria": {
@@ -3394,7 +3381,7 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": 1420,
     "Type": "Dynamic",
     "ValidationCriteria": {
@@ -3416,7 +3403,7 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": 750,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
@@ -3439,8 +3426,8 @@
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
     "Notes": "",
-    "ApplicabilityCriteria": [
-      "COMMITMENT_PROGRAMS_SUPPORTED"
+    "Conditions": [
+      "IncludesCommitmentPrograms"
     ],
     "Order": 305,
     "DatasetType": "CAU",
@@ -3464,8 +3451,8 @@
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
     "Notes": "",
-    "ApplicabilityCriteria": [
-      "INVOICE_ISSUER_PAYABLE_INVOICES_SUPPORTED"
+    "Conditions": [
+      "IncludesPayableInvoices"
     ],
     "Order": 375,
     "DatasetType": "CAU",
