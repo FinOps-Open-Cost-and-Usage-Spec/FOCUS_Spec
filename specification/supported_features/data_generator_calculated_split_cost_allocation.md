@@ -72,8 +72,9 @@ SELECT
 FROM focus_data_table
 WHERE ChargeCategory='Usage'
   AND ChargePeriodStart >= ? AND ChargePeriodEnd <= ?
+  AND AllocatedMethodId IS NOT NULL
   AND AllocatedResourceId IS NOT NULL
-GROUP BY
+  AND AllocatedServiceName IS NOT NULL
   AllocatedServiceName
 ```
 
