@@ -4,13 +4,20 @@
 
 > **Note on "volume-based":** this phrase is not used consistently even among the sources checked. FOCUS and AWS/Azure use it for the **threshold dimension** (a quantity of Pricing Unit). Stripe and Oracle NetSuite use "Volume(-based) pricing" for a completely different axis — the **tier application model** (the whole quantity repriced at the tier reached, as opposed to "Graduated," where only the portion within each tier is repriced). Same word, two unrelated meanings, depending on source.
 
-| Concept | Candidate Term | FOCUS Usage | Same Meaning Elsewhere | Different Meaning Elsewhere | Pros | Cons |
-|---|---|---|---|---|---|---|
-| Tiered Pricing (umbrella) | **Threshold-Based Tiered Pricing** | None found | None found | — | Explicit umbrella covering quantity/spend/duration | No external precedent |
-| | **Tiered Pricing** (bare) | "tiered pricing" ×8 | AWS, Azure, Stripe | — | Strong external precedent | Not used as an umbrella anywhere; quantity-only bias |
-| Quantity-Based sub-type | **Volume-Based Tiered Pricing** | ×3 "volume-based tier(s)" + existing (unratified) columns `VolumeTier*` | AWS, Azure | Stripe, NetSuite (different axis — see note above) | Matches unratified column names; matches AWS/Azure | Collides with Stripe/NetSuite meaning; not self-explanatory |
-| | **Quantity-Based Tiered Pricing** | "quantity-based" ×3, but unrelated context (Contract Commitment, not tiering) | None found | — | Self-explanatory; matches `PricingQuantity`/`PricingUnit`; lowest rename cost (dataset unratified) | No external precedent |
-| | **Usage-Based Tiered Pricing** | "usage-based" ×56 (general); `ContractCommitmentCategory` = "Usage"/"Spend" is FOCUS's closest ratified dichotomy | Industry-wide, but for consumption pricing generally | "Usage-based" already means "any metered pricing" elsewhere in FOCUS/industry | Reuses FOCUS's own Usage/Spend dichotomy | Not applicable for Purchase assuming tiered pricing is not limited to Usage |
+### Tiered Pricing (umbrella)
+
+| Candidate Term | FOCUS Usage | Same Meaning Elsewhere | Different Meaning Elsewhere | Pros | Cons |
+|---|---|---|---|---|---|
+| **Tiered Pricing** (bare) | "tiered pricing" ×8 | AWS, Azure, Stripe | — | Strong external precedent | Not used as an umbrella anywhere; quantity-only bias |
+| **Threshold-Based Tiered Pricing** | None found | None found | — | Explicit umbrella covering quantity/spend/duration | No external precedent |
+
+### Quantity-Based sub-type
+
+| Candidate Term | FOCUS Usage | Same Meaning Elsewhere | Different Meaning Elsewhere | Pros | Cons |
+|---|---|---|---|---|---|
+| **Quantity-Based Tiered Pricing** | "quantity-based" ×3, but unrelated context (Contract Commitment, not tiering) | None found | — | Self-explanatory; matches `PricingQuantity`/`PricingUnit`; lowest rename cost (dataset unratified) | No external precedent |
+| **Volume-Based Tiered Pricing** | ×3 "volume-based tier(s)" + existing (unratified) columns `VolumeTier*` | AWS, Azure | Stripe, NetSuite (different axis — see note above) | Matches unratified column names; matches AWS/Azure | Collides with Stripe/NetSuite meaning; not self-explanatory |
+| **Usage-Based Tiered Pricing** | "usage-based" ×56 (general); `ContractCommitmentCategory` = "Usage"/"Spend" is FOCUS's closest ratified dichotomy | Industry-wide, but for consumption pricing generally | "Usage-based" already means "any metered pricing" elsewhere in FOCUS/industry | Reuses FOCUS's own Usage/Spend dichotomy | Not applicable for Purchase assuming tiered pricing is not limited to Usage |```
 
 ---
 
