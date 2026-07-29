@@ -1,6 +1,6 @@
 # Contracted Cost
 
-Contracted Cost represents the cost of a [*charge*](#glossary:charge) based on the agreed-upon pricing.
+Contracted Cost represents the cost of a [*charge*](#glossary:charge) based on negotiated unit pricing.
 
 When [Contracted Unit Price](#datasets.costandusage.contractedunitprice) and [Pricing Quantity](#datasets.costandusage.pricingquantity) are provided for the *charge*, Contracted Cost is calculated by multiplying the Contracted Unit Price by the corresponding Pricing Quantity. Contracted Cost reflects negotiated pricing adjustments that modify the unit price of the associated [*SKU Price*](#glossary:sku-price), but excludes pricing adjustments resulting from [*commitment discounts*](#glossary:commitment-discount) or other discount programs applied to the *charge*.
 
@@ -34,7 +34,7 @@ Contracted Cost
 
 ## Description
 
-Cost of a *charge* based on the agreed-upon pricing.
+Cost of a *charge* based on negotiated unit pricing.
 
 ## Content Constraints
 
