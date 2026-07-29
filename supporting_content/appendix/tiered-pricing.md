@@ -6,7 +6,7 @@
 
 | Concept | Candidate Term | FOCUS Usage | Same Meaning Elsewhere | Different Meaning Elsewhere | Pros | Cons |
 |---|---|---|---|---|---|---|
-| Threshold-Based Tiered Pricing (umbrella) | **Threshold-Based Tiered Pricing** | None found | None found | — | Explicit umbrella covering quantity/spend/duration | No external precedent |
+| Tiered Pricing (umbrella) | **Threshold-Based Tiered Pricing** | None found | None found | — | Explicit umbrella covering quantity/spend/duration | No external precedent |
 | | **Tiered Pricing** (bare) | "tiered pricing" ×8 | AWS, Azure, Stripe | — | Strong external precedent | Not used as an umbrella anywhere; quantity-only bias |
 | Quantity-Based sub-type | **Volume-Based Tiered Pricing** | ×3 "volume-based tier(s)" + existing (unratified) columns `VolumeTier*` | AWS, Azure | Stripe, NetSuite (different axis — see note above) | Matches unratified column names; matches AWS/Azure | Collides with Stripe/NetSuite meaning; not self-explanatory |
 | | **Quantity-Based Tiered Pricing** | "quantity-based" ×3, but unrelated context (Contract Commitment, not tiering) | None found | — | Self-explanatory; matches `PricingQuantity`/`PricingUnit`; lowest rename cost (dataset unratified) | No external precedent |
