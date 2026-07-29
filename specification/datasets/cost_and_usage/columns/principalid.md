@@ -17,6 +17,7 @@ PrincipalId MUST adhere to the following requirements:
   * PrincipalId MUST NOT be null when the service provider can determine the *principal* associated with the *charge*.
 * When PrincipalId is not null, PrincipalId MUST adhere to the following requirements:
   * PrincipalId MUST be a unique identifier within the service provider.
+* PrincipalId documentation MUST include the use cases for which PrincipalId is provided.
 
 ## Column ID
 
