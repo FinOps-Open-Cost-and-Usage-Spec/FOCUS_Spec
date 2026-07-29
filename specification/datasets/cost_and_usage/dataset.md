@@ -4,6 +4,8 @@ The Cost and Usage dataset is the primary dataset for FOCUS cost and usage data.
 
 The specification for the Cost and Usage dataset defines a group of columns that provide qualitative values (such as dates, resource, and service provider information) categorized as "dimensions" and quantitative values (numeric values) categorized as "metrics" that can be used for performing various [FinOps capabilities][FODOFC]. Metrics are commonly used for aggregations (sum, multiplication, averaging etc.) and statistical operations within the dataset. Dimensions are commonly used to categorize, filter, and reveal details in your data when combined with metrics. The columns are presented in alphabetical order.
 
+> **Note:** A Cost and Usage dataset may carry values that are classified as Personal Data or Personally Identifiable Information (PII) under privacy regulations such as GDPR or CCPA, including values that are pseudonymized rather than plain-text. Identity attributes and customer-defined values such as [Tags](#datasets.costandusage.tags) are the most common sources. Which of these values a dataset carries is a matter for the data generator and the data consumer to settle between them. Organizations need to separately ensure that the ingestion, storage, and processing of a dataset comply with the privacy regulations applicable to them and with their internal data privacy, security, and retention policies. Cost and usage data is commonly retained for multi-year trend analysis, which extends the period over which those obligations apply.
+
 ## Columns<!--SkipTOC-->
 
 | Column                                                                        | Column Type        | Feature Level | Allows Nulls | Data Type |

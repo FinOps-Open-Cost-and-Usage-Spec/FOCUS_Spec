@@ -1,12 +1,10 @@
 # Identity Details
 
-Identity Details represents a set of properties describing the [*principal*](#glossary:principal) identified by [Principal ID](#datasets.costandusage.principalid). Where Principal ID provides a single opaque identifier suited to grouping and joining, Identity Details carries the descriptive attributes a [*service provider*](#glossary:service-provider) publishes alongside that identifier, such as a display name, an email address, and the kind of *principal* the identifier represents.
+Identity Details represents a set of properties describing the identities involved in the access that produced a [*charge*](#glossary:charge). A [*service provider*](#glossary:service-provider) commonly records more than one: the [*principal*](#glossary:principal) to which access to a [*resource*](#glossary:resource) or [*service*](#glossary:service) is granted, and the credentials or sessions through which a request reached that *principal*. Identity Details describes the *principal* identified by [Principal ID](#datasets.costandusage.principalid) through its top-level properties, and records the remaining identities in a nested array.
 
-A *service provider* commonly exposes more than one identity element for a single request. A request may be authenticated with an API key acting under a named user, or with a workload identity acting under a service account. Identity Details describes the *principal* named in Principal ID through its top-level properties, and records any intermediate identities through which the request passed in a nested array. Keeping the descriptive attributes at the top level means the most common analyses (e.g., grouping [*charges*](#glossary:charge) by principal name or email) read directly from those properties rather than traversing nested structures.
+Where Principal ID provides a single opaque identifier suited to grouping and joining, the top-level properties carry the descriptive attributes a *service provider* publishes alongside that identifier, such as a display name, an email address, and the kind of *principal* the identifier represents. A request may be authenticated with an API key acting under a named user, or with a workload identity acting under a service account; in each case the named user or service account is the *principal*, and the API key or workload identity is an intermediate identity. Keeping the descriptive attributes at the top level means the most common analyses (e.g., grouping *charges* by principal name or email) read directly from those properties rather than traversing nested structures.
 
 Identity Details helps practitioners attribute cost to a recognizable actor while preserving Principal ID as a stable, opaque key, and gives *service providers* a defined location for identity attributes that would otherwise appear as custom columns.
-
-> **Note:** Identity Details may carry properties that are classified as Personal Data or Personally Identifiable Information (PII) under privacy frameworks such as GDPR or CCPA, including values that are pseudonymized. Which of these properties a dataset carries is a matter for the data generator and the data consumer to settle between them. Organizations need to separately ensure that the ingestion, storage, and processing of datasets containing this column comply with their internal data privacy, security, and retention policies.
 
 ## Requirements
 
@@ -35,7 +33,6 @@ IdentityDetailsObject MUST adhere to the following requirements:
 * IdentityDetailsObject MUST conform to the [IdentityDetailsObjectSchema](#schemas.costandusage.identitydetailsobjectschema) JSON Schema.
 * IdentityDetailsObject MUST include at least one property.
 * IdentityDetailsObject MUST NOT include properties that are not applicable to the corresponding PrincipalId.
-* IdentityDetailsObject MAY include properties that contain personally identifiable information (PII).
 * IdentityDetailsObject.Name MUST represent a readable display name for the *principal* identified by PrincipalId.
 * IdentityDetailsObject.Email MUST represent an email address associated with the *principal* identified by PrincipalId.
 * IdentityDetailsObject.Type MUST represent the kind of *principal* identified by PrincipalId.
@@ -117,7 +114,7 @@ Identity Details
 
 ## Description
 
-A set of properties describing the *principal* identified by Principal ID.
+A set of properties describing the identities involved in the access that produced a *charge*.
 
 ## Content Constraints
 

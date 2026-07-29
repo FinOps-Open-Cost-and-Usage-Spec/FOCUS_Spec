@@ -4,8 +4,6 @@ A Principal ID is an identifier representing the [*principal*](#glossary:princip
 
 For scenarios demonstrating how Principal ID is populated across different technology categories, see [Examples: Actor Attribution](#appendix.examples:actorattribution).
 
-> **Note:** While Principal ID is designed to capture opaque identifiers rather than plain-text names or email addresses, these values may still be classified as Personal Data or Personally Identifiable Information (PII) under privacy frameworks such as GDPR or CCPA (e.g., as pseudonymized data). Organizations need to separately ensure that the ingestion, storage, and processing of datasets containing this column comply with their internal data privacy, security, and retention policies.
-
 ## Requirements
 
 PrincipalId MUST adhere to the following requirements:
