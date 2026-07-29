@@ -1,40 +1,26 @@
 ## Summary
 
-This draft extends the Dataset Configuration attribute with a `detail-level` configuration that allows practitioners to opt into finer-grained records for specific cost areas. It is scoped to FOCUS 1.5.
+This draft extends the Dataset Configuration attribute with service-specific detail configuration for FOCUS 1.5.
 
-The current spec models column selection as a practitioner-facing request: a list of columns to include in the export. This PR adds a parallel request field — `detail-level` — that maps provider-defined scope keys to provider-defined level values. Where column selection controls which columns appear, detail level controls which records carry additional dimension columns and at what grain.
-
-The two value forms are:
-
-* Shorthand: `"DetailLevel": {"llm-costs": "user-level"}`
-* Extended with delivery type: `"DetailLevel": {"llm-costs": {"Level": "user-level", "DeliveryType": "detail-file"}}`
-
-Scope keys are provider-defined strings and do not have to match column values such as `ServiceName`. Level values are also provider-defined. Providers must document all offered scope keys, their allowed level values, the effect of each level on records, and any available delivery types.
+Data generators can make optional, higher-cardinality detail available for documented areas of a FOCUS dataset. Practitioners can select the detail needed for those areas without FOCUS defining a request payload, property name, or transport mechanism. A provider can expose the selection through an API parameter, export setting, query interface, or another access mechanism.
 
 The normative requirements establish:
 
-* `detail-level` configuration is a mapping of provider-defined scope keys to detail level values
-* Detail level values are either a string (the level name) or an object with a required `level` property and an optional `delivery-type` property
-* Dimension columns required by a selected detail level are included even when not present in the selected column list
-* Documentation requirements for offered scope keys, level behavior, and delivery types
-* Default detail level must be the least granular level offered for a given scope key
+* A FOCUS dataset is configurable to select a detail level when the same documented data coverage can be delivered at more than one detail level.
+* Detail-scope documentation identifies data coverage using FOCUS dimension criteria, such as `ServiceName` and `ResourceType`.
+* Detail-scope documentation identifies the offered detail levels and the columns populated for each level. Those columns can be FOCUS columns or custom columns.
+* A FOCUS dataset is configurable to select a delivery method at the dataset level or detail-scope level when a selected detail level has more than one delivery method.
+* Detail-scope documentation identifies available delivery methods and their relationship to other delivered dataset artifacts that represent the same usage or charges.
+* When detailed records are delivered in a separate dataset artifact, the documentation identifies the column or columns used to relate that artifact to the corresponding less-detailed dataset artifact.
+* Records with identical delivered dimensions and non-summable metrics should be represented as a single record while preserving aggregate summable-metric values.
 
-The supporting content covers:
+The supporting content describes illustrative delivery methods:
 
-* What scope keys are and why they are provider-defined strings (not tied to `ServiceName` or other columns)
-* The two JSON value forms with examples
-* Common delivery type patterns: `inline`, `added-lines`, `detail-file`
-* Cardinality trade-offs and why defaults should be conservative
-* Hierarchical levels (e.g., `default` → `product` → `feature`)
-* Actor attribution as a primary use case: services where the calling principal is not the entity that should bear cost
+* Inline detail in the same records
+* Replacement of less-detailed records with detailed records
+* Detail delivered in a separate dataset artifact, such as a separate file
 
-Open questions for task force review:
-
-* Should delivery type values (`inline`, `added-lines`, `detail-file`) be enumerated as FOCUS-defined terms or remain fully provider-defined?
-* ~~Should scope keys be allowed to reference column values (e.g., `ServiceName` values), or must they be provider-defined opaque strings?~~ Resolved: scope keys are opaque provider-defined identifiers; the name of a scope key does not imply anything about the data it covers.
-* ~~Should the configuration key name be hyphenated (`detail-level`) or camelCase (`detailLevel`) for consistency with other configuration keys?~~ Resolved: FOCUS uses PascalCase for all JSON keys; configuration keys are `Columns`, `DetailLevel`, `Level`, `DeliveryType`.
-* How does this interact with actor columns such as `PrincipalId` and `ConsumerId` from PR #2360? Those columns would appear in expanded records at actor-level detail.
-* Should structured metadata eventually capture the applied detail level configuration per dataset instance, or is provider documentation sufficient for the first iteration?
+It also explains that the record-minimization guidance does not replace column-specific aggregation guidance, including the guidance for `PricingQuantity`, `ListCost`, and `ContractedCost`.
 
 ### Type of Change
 * [ ] Bug fix
