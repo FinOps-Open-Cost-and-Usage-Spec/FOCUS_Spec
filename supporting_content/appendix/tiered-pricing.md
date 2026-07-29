@@ -2,7 +2,12 @@
 
 ## Candidate Terms Comparison
 
-> **Note on "volume-based":** this phrase is not used consistently even among the sources checked. FOCUS and AWS/Azure use it for the **threshold dimension** (a quantity of Pricing Unit). Stripe and Oracle NetSuite use "Volume(-based) pricing" for a completely different axis — the **tier application model** (the whole quantity repriced at the tier reached, as opposed to "Graduated," where only the portion within each tier is repriced). Same word, two unrelated meanings, depending on source.
+> **Note on "volume-based":** this phrase is not used consistently even among the sources checked.
+>
+> * AWS, Azure use it for the threshold dimension (a Quantity denominated in Pricing Unit), where Graduated Pricing tier application model is assumed (each charge priced at tier reached).
+> * Stripe, Oracle NetSuite use "Volume(-based) pricing" for the Retroactive Pricing tier application model (all charges within the aggregation interval repriced to the tier reached)
+>
+> Same word, two unrelated meanings, depending on source.
 
 ### Tiered Pricing (umbrella)
 
@@ -17,11 +22,12 @@
 |---|---|---|---|---|---|
 | **Quantity-Based Tiered Pricing** | "quantity-based" ×3, but unrelated context (Contract Commitment, not tiering) | None found | — | Self-explanatory; matches `PricingQuantity`/`PricingUnit`; lowest rename cost (dataset unratified) | No external precedent |
 | **Volume-Based Tiered Pricing** | ×3 "volume-based tier(s)" + existing (unratified) columns `VolumeTier*` | AWS, Azure | Stripe, NetSuite (different axis — see note above) | Matches unratified column names; matches AWS/Azure | Collides with Stripe/NetSuite meaning; not self-explanatory |
-| **Usage-Based Tiered Pricing** | "usage-based" ×56 (general); `ContractCommitmentCategory` = "Usage"/"Spend" is FOCUS's closest ratified dichotomy | Industry-wide, but for consumption pricing generally | "Usage-based" already means "any metered pricing" elsewhere in FOCUS/industry | Reuses FOCUS's own Usage/Spend dichotomy | Not applicable for Purchase assuming tiered pricing is not limited to Usage |```
 
 ---
 
-## Overview
+## Tiered Pricing Context
+
+### Overview
 
 Tiered pricing is a pricing model in which the unit price applied to a charge is determined by the applicable pricing tier.
 
@@ -60,7 +66,7 @@ Tiered Pricing Model
 
 For example, in quantity-based tiered pricing, threshold ranges represent accumulated billable quantity levels. Other tiered pricing models may define threshold ranges based on duration or spend.
 
-## Pricing Tiers
+### Pricing Tiers
 
 A pricing tier is a predefined pricing level within a tiered pricing model.
 
@@ -71,7 +77,7 @@ Each pricing tier defines:
 
 The threshold range defines the range of quantity, duration, or spend values for which the pricing tier may become applicable. The associated unit price defines the unit price applied when that pricing tier is applicable.
 
-## Threshold Categories
+### Threshold Categories
 
 Pricing tiers may define threshold ranges using different measurement dimensions.
 
@@ -92,7 +98,7 @@ Pricing tiers may define threshold ranges using different measurement dimensions
 
 Quantity-based tiered pricing is a common form of tiered pricing.
 
-## Aggregation Scope and Aggregation Interval
+### Aggregation Scope and Aggregation Interval
 
 Tiered pricing requires defining the aggregation scope and aggregation interval used to determine the applicable pricing tier.
 
@@ -110,11 +116,11 @@ Typical aggregation dimensions include:
 
 Aggregation is commonly performed at the billing account level over a monthly billing interval aligned with the billing cycle.
 
-## Tier Application Models
+### Tier Application Models
 
 The pricing tier application model defines how the applicable pricing tier is determined and applied.
 
-### Graduated Pricing
+#### Graduated Pricing
 
 Graduated pricing is a tier application model in which the applicable pricing tier is determined independently for each threshold range.
 
@@ -128,7 +134,7 @@ Example:
 
 Each threshold range is priced using the unit price associated with its applicable pricing tier.
 
-### Retroactive Pricing
+#### Retroactive Pricing
 
 Retroactive pricing is a tier application model in which reaching a higher threshold causes a higher pricing tier to be applied retroactively to all charges within the aggregation interval.
 
@@ -141,7 +147,7 @@ Example:
 
 When the higher threshold is reached, the higher pricing tier is applied to all charges within the aggregation interval.
 
-## Relationship to Commitment Pricing
+### Relationship to Commitment Pricing
 
 Tiered pricing should not be confused with commitment pricing.
 
