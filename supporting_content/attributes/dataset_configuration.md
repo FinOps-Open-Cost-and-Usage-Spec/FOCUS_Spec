@@ -6,7 +6,8 @@ The following requirements were developed as part of the Dataset Configuration a
 
 ### Row Aggregation
 
-* A FOCUS dataset SHOULD sum metric columns by default when the selected dimension columns result in rows with identical values.
+The Dataset Configuration requirements establish a default expectation that duplicate records are aggregated after the delivered detail is determined. The ability to select an alternative aggregation behavior remains deferred.
+
 * A FOCUS dataset SHOULD allow opting in or out of row aggregation (summing metrics).
   * A FOCUS dataset MUST sum metric column values when rows are aggregated.
   * A FOCUS dataset SHOULD use case-insensitive matching when aggregating rows.
@@ -82,7 +83,7 @@ Based on applicability, configuration options may be split into separate attribu
 
 | Attribute | Options | Feature Level |
 |-----------|---------|---------------|
-| **DatasetConfiguration** | Column selection, detail level configuration, row aggregation, time granularity, schema versioning, row filtering | None (all datasets) |
+| **DatasetConfiguration** | Column selection, service-specific detail configuration, row aggregation, time granularity, schema versioning, row filtering | None (all datasets) |
 | **DatasetDelivery** | Scheduling, incremental refresh, overwrite vs append, partitioning | Files or Tables |
 | **DatasetFileHandling** | File format, compression | Files only |
 
@@ -104,7 +105,7 @@ The following options were developed for the Dataset Configuration attribute for
 
 | Option                     | Status   | Description                                                      |
 |----------------------------|----------|------------------------------------------------------------------|
-| Detail level configuration | Included | Request finer-grained records for provider-defined detail scopes |
+| Service-specific detail configuration | Included | Select optional detail for documented data coverage |
 
 ### Future Options
 
@@ -233,79 +234,41 @@ When introduced, time granularity will allow practitioners to choose temporal re
 * **Monthly**: Will be recommended (SHOULD) - useful for executive reporting and billing reconciliation
 * **Hourly**: Will be required when applicable (MUST) - when the dataset includes costs priced at an hourly or lower grain, hourly granularity will need to be available to preserve pricing accuracy
 
-## Detail Level Configuration
+## Service-Specific Detail Configuration
 
-Detail level configuration allows practitioners to request finer-grained records for specific areas of cost data. Providers often omit certain dimensions from default exports because they would significantly increase row counts or expose privacy-sensitive data. Practitioners can opt into those dimensions for the cost areas where they need them through the `DetailLevel` configuration.
+Service-specific detail configuration allows practitioners to include optional detail for documented areas of cost data. Data generators often omit high-cardinality or privacy-sensitive columns from a default dataset. When such data is available, the data generator documents the data coverage and the columns that are populated, then the practitioner elects to include that detail.
 
-Detail level configuration is related to column selection, but the two serve different purposes. Column selection controls which columns appear in the dataset. Detail level configuration controls which records carry finer-grained dimension values, which can change both the columns present and the number of records. Dimension columns required by a selected detail level are included in the dataset even when they are not listed in the selected column list.
+The requirements define the resulting dataset and the documentation needed to assess it. They deliberately do not define a request payload, property name, or transport mechanism. A provider can expose the selection through an API parameter, an export setting, a query interface, or another access mechanism.
 
-### Provider-Defined Scope Keys
+### Detail Scopes and Data Coverage
 
-A scope key is a provider-defined opaque string that identifies a set of charges to which a detail level applies. The name of a scope key does not describe the charges it covers; the provider's documentation defines what each scope key means and what level values are available for it. Scope keys do not have to match column values such as ServiceName or any other FOCUS-defined term.
+A detail scope is a documented area of a FOCUS dataset for which a practitioner can select an offered detail level. Its data coverage is expressed using FOCUS dimension criteria so that a practitioner can evaluate the documented coverage against the delivered data. For example, a provider might describe the coverage of an AI user-attribution detail scope as records where ServiceName is `"Example AI Service"` and ResourceType is `"ModelInference"`.
 
-The provider's documentation must define every available scope key and the level values allowed for each.
+A detail scope can contain more than one offered detail level, but a configured dataset selects one detail level for that scope. Each detail level documents the columns that are populated when it is selected. Those columns can be FOCUS columns or custom columns. A custom column is appropriate when the detail is not standardized by FOCUS.
 
-### Detail Level Values
+### Delivery Methods
 
-The `DetailLevel` configuration maps scope keys to level values. A level value is a provider-defined string identifying the granularity the practitioner is requesting.
+A delivery method describes how records at a selected detail level are delivered. When a detail level can be delivered through more than one method, the practitioner can select one method either for the complete dataset or separately for each detail scope. The selection mechanism and names for delivery methods are provider-defined.
 
-**Shorthand form** — the value is the level name:
+Common delivery methods include:
 
-```json
-{
-  "DetailLevel": {
-    "llm-costs": "user-level",
-    "shared-platform": "feature"
-  }
-}
-```
+* **Inline**: The selected detail is included in the same dataset records as additional populated columns.
+* **Replacement**: Detailed records replace the less detailed records that represent the same underlying usage or charges.
+* **Separate dataset artifact**: Detailed records are delivered in a separate [*dataset artifact*](#glossary:dataset-artifact), such as a separate file.
 
-**Extended form** — the value is an object with a `Level` property and an optional `DeliveryType` property:
+The documentation for each method identifies its relationship to other delivered dataset artifacts that represent the same underlying usage or charges. When a detail dataset artifact is delivered separately, the documentation identifies the column or columns used to relate it to the corresponding less-detailed dataset artifact. This enables practitioners to determine whether records replace one another or must be combined without double-counting.
 
-```json
-{
-  "DetailLevel": {
-    "llm-costs": {"Level": "user-level", "DeliveryType": "detail-file"},
-    "shared-platform": {"Level": "feature", "DeliveryType": "inline"}
-  }
-}
-```
+### Record Minimization
 
-Both forms may appear together in the same `DetailLevel` configuration.
+Additional detail can increase the number of records substantially. After the delivered dimensions and non-summable metrics are determined, records with identical values in those columns can be represented by one record whose summable metrics preserve the aggregate values of the represented records. This minimizes the dataset without removing the selected detail.
 
-### Delivery Types
-
-A `DeliveryType` value tells the provider how the practitioner wants more granular records delivered. Delivery types are provider-defined, but common patterns include:
-
-| Delivery Type | Description |
-|---------------|-------------|
-| `inline` | More granular detail is included in the same records as additional columns. Records outside the scope have null values for scope-specific columns. |
-| `added-lines` | More granular detail is delivered as additional rows within the same dataset instance, replacing or supplementing the aggregate records that would otherwise appear. |
-| `detail-file` | More granular detail is delivered in a separate dataset instance or file linked to records in the main dataset instance. |
-
-Providers must document which delivery types they support for each scope key and level. Providers must also document the relationship between detail delivery and any other delivered dataset instances that represent the same underlying usage or charges, so that practitioners can avoid double-counting.
-
-### Cardinality and Default Levels
-
-More granular detail typically increases row counts. A provider that tracks LLM requests by user may have thousands of users per service account per day, which multiplies cost records significantly. Practitioners should request detail levels only for the cost areas where the attribution is needed.
-
-When a provider offers more than one level for a scope key, it should designate a default. The default should be the least granular level, which keeps default exports smaller and avoids unintended exposure of high-cardinality or privacy-sensitive dimensions. A practitioner who does not specify a level for a scope key receives the default level for that scope key.
-
-### Hierarchical Levels
-
-Some providers offer levels that represent a dimension hierarchy. For example, a shared platform might define:
-
-* `"default"` — records grouped at the service level with no consumer attribution
-* `"product"` — records include a product dimension injected by the consumer via a tag or request header
-* `"feature"` — records include both product and feature dimensions, where each feature is scoped within a product
-
-Selecting `"feature"` adds both `product` and `feature` dimensions. The provider must document what columns each level adds and how the levels relate to each other.
+This aggregation guidance does not replace the aggregation guidance for individual columns. Practitioners must continue to apply the documented aggregation treatment for columns such as PricingQuantity, ListCost, and ContractedCost when calculating a use-case-specific total.
 
 ### Actor Attribution
 
 Actor-level detail is useful for shared platforms and pass-through services where the service account that initiates usage is not the entity that should bear the cost. For example, an AI gateway service account may initiate all LLM requests while costs should be attributed to the calling team, application, or user.
 
-A provider that natively measures usage at the actor grain can offer an actor-level detail scope without requiring split cost allocation. Split cost allocation is a separate concept used when a provider starts from a coarser origin charge and must distribute it across actors or workloads using an allocation method.
+A provider that natively measures usage at the actor grain can offer actor attribution as service-specific detail without requiring split cost allocation. Split cost allocation is a separate concept used when a provider starts from a coarser origin charge and must distribute it across actors or workloads using an allocation method.
 
 ## Future Configuration Options
 
@@ -341,7 +304,7 @@ Major cloud providers support various configuration options:
 
 ## Configuration Metadata
 
-The Dataset Configuration attribute requires documentation for offered granularity configurations, but it does not yet define structured metadata for all selected configuration options. This section evaluates what changes would be needed to support structured configuration metadata within the existing metadata structure.
+The Dataset Configuration attribute requires documentation for offered service-specific detail configurations, but it does not yet define structured metadata for all selected configuration options. This section evaluates what changes would be needed to support structured configuration metadata within the existing metadata structure.
 
 ### Current Metadata Structure
 
@@ -363,7 +326,7 @@ Configuration metadata should describe the options applied when generating a dat
 | Configuration Option | Metadata Needed                                                |
 |----------------------|----------------------------------------------------------------|
 | Column selection | List of included columns (or excluded columns) |
-| Granularity configuration | Selected level of detail, selection method, applicability filter, representation mode, privacy-sensitive identifier columns, and relationship to dataset instances representing the same underlying usage or charges |
+| Service-specific detail configuration | Selected detail levels, documented data coverage, populated columns, relationship to related dataset artifacts, and columns used to relate separately delivered detail |
 | Row aggregation | Whether aggregation is enabled |
 | Time granularity | Selected granularity (hourly, daily, monthly) |
 | FOCUS version | Selected version (already captured in Schema as FocusVersion) |
@@ -387,24 +350,23 @@ Since Schema already tracks structural information (columns, data types) and tri
 
 Option A (extending Dataset Instance) is the most natural fit. The configuration options describe how a specific dataset artifact was shaped, which aligns with Dataset Instance's purpose. FOCUS version selection is already partially addressed by Schema's `FocusVersion` property.
 
-### Example Detail Level Configuration Metadata
+### Example Service-Specific Detail Metadata
 
-The following example illustrates one possible shape for recording the applied detail level configuration in dataset instance metadata. The field names are illustrative and would need task force review before becoming part of the formal metadata schema.
+The following example illustrates one possible shape for recording selected service-specific detail in dataset instance metadata. The field names are illustrative and would need task force review before becoming part of the formal metadata schema.
 
 ```json
 {
   "DatasetInstanceId": "178151-dbad145e-178151-dbad145e-178151",
   "Configuration": {
-    "DetailLevel": {
-      "llm-costs": {
-        "Level": "user-level",
-        "DeliveryType": "inline"
-      },
-      "shared-platform": {
-        "Level": "default",
-        "DeliveryType": "inline"
+    "ServiceSpecificDetail": [
+      {
+        "DataCoverage": {
+          "ServiceName": "Example AI Service",
+          "ResourceType": "ModelInference"
+        },
+        "DetailLevel": "user"
       }
-    }
+    ]
   }
 }
 ```
