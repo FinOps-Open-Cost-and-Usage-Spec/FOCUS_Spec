@@ -48,14 +48,14 @@ The specification for the Cost and Usage dataset defines a group of columns that
 | [Invoice ID](#datasets.costandusage.invoiceid)                                                      | Dimension          | [Conditional](#conditions.includespayableinvoices) | True         | String    |
 | [Invoice Issuer Name](#datasets.costandusage.invoiceissuername)                                     | Dimension          | Mandatory     | False        | String    |
 | [List Cost](#datasets.costandusage.listcost)                                                        | Metric             | Mandatory     | False        | Decimal   |
-| [List Unit Price](#datasets.costandusage.listunitprice)                                             | Metric             | [Conditional](#conditions.includeslistunitprices) | True         | Decimal   |
+| [List Unit Price](#datasets.costandusage.listunitprice)                                             | Metric             | [Conditional](#conditions.includesunitpricing) | True         | Decimal   |
 | [Pricing Category](#datasets.costandusage.pricingcategory)                                          | Dimension          | [Conditional](#conditions.includesmultiplepricingcategories) | True         | String    |
 | [Pricing Currency](#datasets.costandusage.pricingcurrency)                                          | Dimension          | [Conditional](#conditions.includespricingbillingcurrencydifferences) | False        | String    |
 | [Pricing Currency Contracted Unit Price](#datasets.costandusage.pricingcurrencycontractedunitprice) | Metric             | [Conditional](#conditions.includespricingbillingcurrencydifferences) | True         | Decimal   |
 | [Pricing Currency Effective Cost](#datasets.costandusage.pricingcurrencyeffectivecost)              | Metric             | [Conditional](#conditions.includespricingbillingcurrencydifferences) | False        | Decimal   |
 | [Pricing Currency List Unit Price](#datasets.costandusage.pricingcurrencylistunitprice)             | Metric             | [Conditional](#conditions.includespricingbillingcurrencydifferences) | True         | Decimal   |
-| [Pricing Quantity](#datasets.costandusage.pricingquantity)                                          | Metric             | Mandatory     | True         | Decimal   |
-| [Pricing Unit](#datasets.costandusage.pricingunit)                                                  | Dimension          | Mandatory     | True         | String    |
+| [Pricing Quantity](#datasets.costandusage.pricingquantity)                                          | Metric             | [Conditional](#conditions.includesunitpricing) | True         | Decimal   |
+| [Pricing Unit](#datasets.costandusage.pricingunit)                                                  | Dimension          | [Conditional](#conditions.includesunitpricing) | True         | String    |
 | [Region ID](#datasets.costandusage.regionid)                                                        | Dimension          | [Conditional](#conditions.includesregions) | True         | String    |
 | [Region Name](#datasets.costandusage.regionname)                                                    | Dimension          | [Conditional](#conditions.includesregions) | True         | String    |
 | [Resource ID](#datasets.costandusage.resourceid)                                                    | Dimension          | [Conditional](#conditions.includesprovisionedresources) | True         | String    |
@@ -130,23 +130,23 @@ CostAndUsage MUST adhere to the following requirements:
   * CostAndUsage MUST include [InvoiceId](#datasets.costandusage.invoiceid) when the *operating model* [includes payable invoices](#conditions.includespayableinvoices).
   * CostAndUsage MUST include [InvoiceIssuerName](#datasets.costandusage.invoiceissuername).
   * CostAndUsage MUST include [ListCost](#datasets.costandusage.listcost).
-  * CostAndUsage MUST include [ListUnitPrice](#datasets.costandusage.listunitprice) when the *operating model* [includes list unit prices](#conditions.includeslistunitprices).
+  * CostAndUsage MUST include [ListUnitPrice](#datasets.costandusage.listunitprice) when the *operating model* [includes unit pricing](#conditions.includesunitpricing).
   * CostAndUsage MUST include [PricingCategory](#datasets.costandusage.pricingcategory) when the *operating model* [includes multiple pricing categories](#conditions.includesmultiplepricingcategories).
   * CostAndUsage MUST include [PricingCurrency](#datasets.costandusage.pricingcurrency) when the *operating model* [includes pricing and billing currency differences](#conditions.includespricingbillingcurrencydifferences).
   * CostAndUsage MUST adhere to the following [PricingCurrencyContractedUnitPrice](#datasets.costandusage.pricingcurrencycontractedunitprice) requirements:
-    * CostAndUsage MUST include PricingCurrencyContractedUnitPrice when the *operating model* [includes virtual currency](#conditions.includesvirtualcurrency) and [includes list unit prices](#conditions.includeslistunitprices).
-    * CostAndUsage SHOULD include PricingCurrencyContractedUnitPrice when the *operating model* [includes pricing and billing currency differences](#conditions.includespricingbillingcurrencydifferences) and [includes list unit prices](#conditions.includeslistunitprices).
+    * CostAndUsage MUST include PricingCurrencyContractedUnitPrice when the *operating model* [includes virtual currency](#conditions.includesvirtualcurrency) and [includes negotiated pricing](#conditions.includesnegotiatedpricing).
+    * CostAndUsage SHOULD include PricingCurrencyContractedUnitPrice when the *operating model* [includes pricing and billing currency differences](#conditions.includespricingbillingcurrencydifferences).
     * CostAndUsage MAY include PricingCurrencyContractedUnitPrice in all other cases.
   * CostAndUsage MUST adhere to the following [PricingCurrencyEffectiveCost](#datasets.costandusage.pricingcurrencyeffectivecost) requirements:
-    * CostAndUsage MUST include PricingCurrencyEffectiveCost when the *operating model* [includes virtual currency](#conditions.includesvirtualcurrency) and [includes list unit prices](#conditions.includeslistunitprices).
-    * CostAndUsage SHOULD include PricingCurrencyEffectiveCost when the *operating model* [includes pricing and billing currency differences](#conditions.includespricingbillingcurrencydifferences) and [includes list unit prices](#conditions.includeslistunitprices).
+    * CostAndUsage MUST include PricingCurrencyEffectiveCost when the *operating model* [includes virtual currency](#conditions.includesvirtualcurrency).
+    * CostAndUsage SHOULD include PricingCurrencyEffectiveCost when the *operating model* [includes pricing and billing currency differences](#conditions.includespricingbillingcurrencydifferences).
     * CostAndUsage MAY include PricingCurrencyEffectiveCost in all other cases.
   * CostAndUsage MUST adhere to the following [PricingCurrencyListUnitPrice](#datasets.costandusage.pricingcurrencylistunitprice) requirements:
-    * CostAndUsage MUST include PricingCurrencyListUnitPrice when the *operating model* [includes virtual currency](#conditions.includesvirtualcurrency) and [includes list unit prices](#conditions.includeslistunitprices).
-    * CostAndUsage SHOULD include PricingCurrencyListUnitPrice when the *operating model* [includes pricing and billing currency differences](#conditions.includespricingbillingcurrencydifferences) and [includes list unit prices](#conditions.includeslistunitprices).
+    * CostAndUsage MUST include PricingCurrencyListUnitPrice when the *operating model* [includes virtual currency](#conditions.includesvirtualcurrency) and [includes unit pricing](#conditions.includesunitpricing).
+    * CostAndUsage SHOULD include PricingCurrencyListUnitPrice when the *operating model* [includes pricing and billing currency differences](#conditions.includespricingbillingcurrencydifferences).
     * CostAndUsage MAY include PricingCurrencyListUnitPrice in all other cases.
-  * CostAndUsage MUST include [PricingQuantity](#datasets.costandusage.pricingquantity).
-  * CostAndUsage MUST include [PricingUnit](#datasets.costandusage.pricingunit).
+  * CostAndUsage MUST include [PricingQuantity](#datasets.costandusage.pricingquantity) when the *operating model* [includes unit pricing](#conditions.includesunitpricing).
+  * CostAndUsage MUST include [PricingUnit](#datasets.costandusage.pricingunit) when the *operating model* [includes unit pricing](#conditions.includesunitpricing).
   * CostAndUsage MUST include [RegionId](#datasets.costandusage.regionid) when the *operating model* [includes regions](#conditions.includesregions).
   * CostAndUsage MUST include [RegionName](#datasets.costandusage.regionname) when the *operating model* [includes regions](#conditions.includesregions).
   * CostAndUsage MUST include [ResourceId](#datasets.costandusage.resourceid) when the *operating model* [includes provisioned resources](#conditions.includesprovisionedresources).
