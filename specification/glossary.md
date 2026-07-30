@@ -99,7 +99,7 @@ A specific term within a [*contract*](#glossary:contract) that defines a measura
 
 <a name="glossary:contracted-unit-price"><b>Contracted Unit Price</b></a>
 
-The agreed-upon unit price for a single [Pricing Unit](#datasets.costandusage.pricingunit) of the associated SKU, inclusive of negotiated discounts, if present, and exclusive of any other discounts. This price is denominated in the [Billing Currency](#glossary:billing-currency).
+The negotiated unit price per [Pricing Unit](#datasets.costandusage.pricingunit) for the [*SKU Price*](#glossary:sku-price) identified by the given [SKU Price ID](#datasets.costandusage.skupriceid). Contracted Unit Price is inclusive of negotiated pricing adjustments that modify the unit price of the associated [*SKU Price*](#glossary:sku-price) and exclusive of pricing adjustments resulting from [*commitment discounts*](#glossary:commitment-discount) or other discount programs applied to the charge.
 
 <a name="glossary:correction"><b>Correction</b></a>
 
@@ -205,7 +205,7 @@ A common acronym for JavaScript Object Notation, a data format codified in [ECMA
 
 <a name="glossary:list-unit-price"><b>List Unit Price</b></a>
 
-The suggested service-provider-published unit price for a single [Pricing Unit](#datasets.costandusage.pricingunit) of the associated [SKU](#glossary:sku), exclusive of any discounts. This price is denominated in the [Billing Currency](#glossary:billing-currency).
+The service-provider-suggested unit price per [Pricing Unit](#datasets.costandusage.pricingunit) for the [*SKU Price*](#glossary:sku-price) identified by the given [SKU Price ID](#datasets.costandusage.skupriceid). List Unit Price is exclusive of any discounts.
 
 <a name="glossary:managed-service-provider"><b>Managed Service Provider (MSP)</b></a>
 
