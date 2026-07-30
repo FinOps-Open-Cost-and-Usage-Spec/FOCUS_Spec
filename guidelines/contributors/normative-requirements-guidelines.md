@@ -585,6 +585,8 @@ Each normative requirement MUST be defined in exactly one place across the speci
 
 **Exception for Aggregate Expression Subjects:** Normative bullets whose subject is an aggregate expression MAY begin with "The" (e.g., `The sum of <ColumnId> ... MUST equal ...`), as permitted in [Normative Subject](#normative-subject).
 
+> **Note:** The rules in this document apply to normative requirements authored in the FOCUS specification. They do not govern the bullets that state the rules themselves.
+
 ## Dataset Requirements
 
 ### Logical Grouping of Dataset Requirements
