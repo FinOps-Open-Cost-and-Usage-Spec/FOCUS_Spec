@@ -6,7 +6,7 @@ When [Contracted Unit Price](#datasets.costandusage.contractedunitprice) and [Pr
 
 When the [*operating model*](#glossary:operating-model) does not include negotiated pricing, or when no negotiated pricing adjustments are applied, Contracted Cost equals [List Cost](#datasets.costandusage.listcost).
 
-Contracted Cost is denominated in the [Billing Currency](#datasets.costandusage.billingcurrency). Contracted Cost is commonly used for calculating savings based on negotiation activities by comparing it with [List Cost](#datasets.costandusage.listcost).
+Contracted Cost is denominated in the [Billing Currency](#datasets.costandusage.billingcurrency). Contracted Cost is commonly used for calculating savings based on negotiation activities by comparing it with List Cost.
 
 ## Requirements
 
