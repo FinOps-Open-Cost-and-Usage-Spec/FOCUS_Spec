@@ -2,7 +2,7 @@
 
 ## Overview
 
-The **Invoice Detail** dataset provides a transactional representation of the financial obligations between a customer and an [*invoice issuer*](#glossary:invoice-issuer). While the [Cost and Usage](#datasets.costandusage) dataset tracks granular consumption, the Invoice Detail dataset tracks the financial record of charges as they appear on a physical or electronic billing document.
+The **Invoice Detail** dataset provides a transactional representation of the financial obligations between a customer and an [*invoice issuer*](#glossary:invoice-issuer). While the [Cost and Usage](#datamodel.costandusage) dataset tracks granular consumption, the Invoice Detail dataset tracks the financial record of charges as they appear on a physical or electronic billing document.
 
 ### Core Logical Pillars
 
@@ -63,7 +63,7 @@ This example includes a mix of standard consumption, a one-time purchase of a re
 | **Purchase Order Number** | `PO-998877` | `PO-998877` | `PO-998877` |
 | **Reference Invoice ID** | `INV-2025-001` | `INV-2025-001` | `INV-2025-001` |
 
-[CSV Example](../../data/invoice_detail/invoice_detail_scenario_1.csv)
+[CSV Example](/specification/data/invoice_detail/invoice_detail_scenario_1.csv)
 
 ### Scenario 2: Multi-Currency Settlement
 
@@ -101,7 +101,7 @@ This example demonstrates the "Divergent Grain" model, where usage is tracked in
 | **Purchase Order Number** | `null` | `null` | `null` |
 | **Reference Invoice ID** | `AUIN25-1286479` | `AUIN25-1286479` | `AUIN25-1286479` |
 
-[CSV Example](../../data/invoice_detail/invoice_detail_scenario_2.csv)
+[CSV Example](/specification/data/invoice_detail/invoice_detail_scenario_2.csv)
 
 ### Scenario 3: Billing Error Correction
 
@@ -137,4 +137,4 @@ This example demonstrates the lineage of a billing error correction.
 | **Purchase Order Number** | `PO-554433` | `PO-554433` |
 | **Reference Invoice ID** | `INV-JAN` | `INV-JAN` |
 
-[CSV Example](../../data/invoice_detail/invoice_detail_scenario_3.csv)
+[CSV Example](/specification/data/invoice_detail/invoice_detail_scenario_3.csv)

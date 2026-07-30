@@ -29,7 +29,7 @@ A service-provider-assigned identifier for a contract describing the agreed term
 
 | Constraint      | Value                                                |
 |:----------------|:-----------------------------------------------------|
-| Dataset         | [Contract Commitment](#datasets.contractcommitment)  |
+| Dataset         | [Contract Commitment](#datamodel.contractcommitment)  |
 | Column type     | Dimension                                            |
 | Feature level   | Mandatory                                            |
 | Allows nulls    | False                                                |

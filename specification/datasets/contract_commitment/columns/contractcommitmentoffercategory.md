@@ -42,7 +42,7 @@ Indicates whether the pricing and terms of a *contract commitment* are based on 
 
 | Constraint      | Value          |
 | :-------------- | :------------- |
-| Dataset         | [Contract Commitment](#datasets.contractcommitment)  |
+| Dataset         | [Contract Commitment](#datamodel.contractcommitment)  |
 | Column type     | Dimension      |
 | Feature level   | Mandatory      |
 | Allows nulls    | False          |

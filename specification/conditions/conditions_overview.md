@@ -10,7 +10,7 @@ Conditions are sorted alphabetically by name.
 | ------------------ | ------------- | ----------- |
 | [Includes Aggregation Level Currency Differences](#conditions.includesaggregationlevelcurrencydifferences) | Billing | Operating model includes the representation of billing currency and payment currency at different aggregation levels on payable invoices. |
 | [Includes Availability Zones](#conditions.includesavailabilityzones) | Resource | Operating model includes deploying resources or services within an availability zone. |
-| [Includes Billing and Payment Currency Differences](#conditions.includesbillingpaymentcurrencydifferences) | Billing | Operating model includes billing and payment in different currencies. |
+| [Includes Billing and Payment Currency Differences](#conditions.includesbillingandpaymentcurrencydifferences) | Billing | Operating model includes billing and payment in different currencies. |
 | [Includes Capacity Reservations](#conditions.includescapacityreservations) | Commitment | Operating model includes capacity reservations. |
 | [Includes Commitment Discounts](#conditions.includescommitmentdiscounts) | Commitment | Operating model includes commitment discounts. |
 | [Includes Commitment Programs](#conditions.includescommitmentprograms) | Commitment | Operating model includes commitment programs. |
@@ -22,7 +22,7 @@ Conditions are sorted alphabetically by name.
 | [Includes Negotiated Pricing](#conditions.includesnegotiatedpricing) | Pricing | Operating model includes negotiated pricing concepts. |
 | [Includes Partial Upfront Payments](#conditions.includespartialupfrontpayments) | Commitment | Operating model includes a partial upfront payment model for contract commitments. |
 | [Includes Payable Invoices](#conditions.includespayableinvoices) | Billing | Operating model includes payable invoices. |
-| [Includes Pricing-Billing Currency Differences](#conditions.includespricingbillingcurrencydifferences) | Pricing | Operating model includes pricing and billing in different currencies. |
+| [Includes Pricing-Billing Currency Differences](#conditions.includespricing-billingcurrencydifferences) | Pricing | Operating model includes pricing and billing in different currencies. |
 | [Includes Provisioned Resources](#conditions.includesprovisionedresources) | Resource | Operating model includes provisioned resources. |
 | [Includes Purchase Order Numbers](#conditions.includespurchaseordernumbers) | Billing | Operating model includes purchase order numbers. |
 | [Includes Regions](#conditions.includesregions) | Resource | Operating model includes deploying resources or services within a region. |

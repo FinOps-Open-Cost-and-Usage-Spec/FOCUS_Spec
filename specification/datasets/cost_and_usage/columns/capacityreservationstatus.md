@@ -9,7 +9,7 @@ CapacityReservationStatus MUST adhere to the following requirements:
 * CapacityReservationStatus MUST be of type String.
 * CapacityReservationStatus MUST adhere to the following nullability requirements:
   * CapacityReservationStatus MUST be null when CapacityReservationId is null.
-  * CapacityReservationStatus MUST NOT be null when CapacityReservationId is not null and [ChargeCategory](#datasets.costandusage.chargecategory) is "Usage".
+  * CapacityReservationStatus MUST NOT be null when CapacityReservationId is not null and [ChargeCategory](#datamodel.costandusage.chargecategory) is "Usage".
 * When CapacityReservationStatus is not null, CapacityReservationStatus MUST adhere to the following requirements:
   * CapacityReservationStatus MUST be one of the allowed values.
   * CapacityReservationStatus MUST be "Unused" when the *charge* represents the unused portion of a *capacity reservation*.
@@ -38,7 +38,7 @@ Indicates whether the *charge* represents either the consumption of a *capacity 
 
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Dataset         | [Cost and Usage](#datamodel.costandusage)             |
 | Column type     | Dimension                                            |
 | Feature level   | Conditional                                          |
 | Allows nulls    | True                                                 |
