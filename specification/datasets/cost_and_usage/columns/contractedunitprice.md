@@ -26,7 +26,7 @@ ContractedUnitPrice MUST adhere to the following requirements:
 
 ## Usability Constraints
 
-**Aggregation:** Column values should only be viewed in the context of their row and not aggregated to produce a total.
+**Aggregation:** Column values should only be viewed in the context of their row and not aggregated to produce a total
 
 ## Column ID
 
