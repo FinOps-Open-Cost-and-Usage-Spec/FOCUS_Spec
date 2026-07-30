@@ -2,7 +2,7 @@
 
 Contracted Unit Price represents the negotiated unit price per [Pricing Unit](#datasets.costandusage.pricingunit) for the [*SKU Price*](#glossary:sku-price) identified by the given [SKU Price ID](#datasets.costandusage.skupriceid).
 
-Contracted Unit Price is inclusive of negotiated pricing adjustments that modify the unit price of the associated [*SKU Price*](#glossary:sku-price) and exclusive of pricing adjustments resulting from [*commitment discounts*](#glossary:commitment-discount) or other discount programs applied to the charge.
+Contracted Unit Price is inclusive of negotiated pricing adjustments that modify the unit price of the associated *SKU Price* and exclusive of pricing adjustments resulting from [*commitment discounts*](#glossary:commitment-discount) or other discount programs applied to the [*charge*](#glossary:charge).
 
 When no negotiated pricing adjustments are applied, Contracted Unit Price equals [List Unit Price](#datasets.costandusage.listunitprice).
 
