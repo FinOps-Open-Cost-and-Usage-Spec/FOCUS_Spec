@@ -20,7 +20,6 @@
 | [Grouping Constructs for Resources or Services](#appendix.groupingconstructsforresourcesorservices) | Outlines and compares the two distinct levels of resource or service grouping mechanisms supported by FOCUS: billing accounts and sub accounts. |
 | [Invoice and Billing Period Handling](#appendix.invoiceandbillingperiodhandling) | Outlines invoice reconciliation, invoice issuance, and open vs. closed billing periods across FOCUS datasets, including correction handling. |
 | [Rounding Variance Tolerance](#appendix.roundingvariancetolerance) | Defines the statistical tolerance formula and provides scenarios for handling precision differences during invoice reconciliation between detailed cost data and invoices. |
-| [Threshold-Based Tiered Pricing](#appendix.thresholdbasedtieredpricing) | Explains pricing models where the applicable pricing is determined based on predefined thresholds, including threshold categories (quantity, duration, and spend), aggregation scope, aggregation intervals, and tier application approaches. |
 
 ## Fictitious Data Generator Reference<!--SkipTOC-->
 
