@@ -268,13 +268,9 @@ An individual who performs FinOps within an organization to maximize the busines
 
 A comprehensive list of prices offered by a service provider.
 
-<a name="glossary:pricing-tier"><b>Pricing Tier</b></a>
+<a name="glossary:service-provider"><b>Service Provider</b></a>
 
-A predefined pricing level within a [*tiered pricing*](#glossary:tiered-pricing) model, consisting of a threshold range and an associated unit price. The threshold range may be based on quantity, duration, or spend depending on the *tiered pricing* model.
-
-<a name="glossary:quantity-based-tiered-pricing"><b>Quantity-Based Tiered Pricing</b></a>
-
-A form of [*tiered pricing*](#glossary:tiered-pricing) in which [*pricing tiers*](#glossary:pricing-tier) are defined by quantity threshold ranges.
+An entity that provides the [*resources*](#glossary:resource) or [*services*](#glossary:service) available for usage or purchase.
 
 <a name="glossary:refund"><b>Refund</b></a>
 
@@ -291,10 +287,6 @@ A row in a FOCUS-compatible cost and usage dataset.
 <a name="glossary:service"><b>Service</b></a>
 
 An offering that can be purchased from a service provider, and can include many types of usage or other charges; e.g., a cloud database service may include compute, storage, and networking charges.
-
-<a name="glossary:service-provider"><b>Service Provider</b></a>
-
-An entity that provides the [*resources*](#glossary:resource) or [*services*](#glossary:service) available for usage or purchase.
 
 <a name="glossary:sku"><b>SKU</b></a>
 
@@ -327,14 +319,6 @@ A Resource or Service-Provider-defined construct for grouping resources and/or o
 <a name="glossary:term"><b>Term</b></a>
 
 An agreement specified on a [*contract*](#glossary:contract) or [*invoice*](#glossary:invoice).
-
-<a name="glossary:tiered-pricing"><b>Tiered Pricing</b></a>
-
-A pricing model in which the unit price applied to a charge is determined by the applicable [*pricing tier*](#glossary:pricing-tier).
-
-The applicable *pricing tier* is determined based on quantity, duration, or spend within a defined aggregation scope and aggregation interval according to the pricing tier application model, without requiring a prior customer commitment. The pricing tier application model defines whether the applicable pricing tier is determined independently for each threshold range (graduated pricing) or whether reaching a higher threshold causes a higher pricing tier to be applied retroactively to all charges within the aggregation interval (retroactive pricing).
-
-[*Quantity-based tiered pricing*](#glossary:quantity-based-tiered-pricing) is a common form of tiered pricing.
 
 <a name="glossary:unit-pricing"><b>Unit Pricing</b></a>
 
