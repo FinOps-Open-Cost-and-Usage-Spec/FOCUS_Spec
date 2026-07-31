@@ -13,8 +13,8 @@ AllocatedTags MUST adhere to the following requirements:
   * AllocatedTags MUST be null when a *charge* is not related to a data generator-calculated split cost allocation.
   * AllocatedTags MAY be null in all other cases.
 * When AllocatedTags is not null, AllocatedTags MUST adhere to the following requirements:
-  * AllocatedTags MUST NOT include resource tags already present in [Tags](#datasets.costandusage.tags).
-  * AllocatedTags MUST include all applicable user-defined and data generator-defined tags for the [AllocatedResourceId](#datasets.costandusage.allocatedresourceid).
+  * AllocatedTags MUST NOT include resource tags already present in [Tags](#datamodel.costandusage.tags).
+  * AllocatedTags MUST include all applicable user-defined and data generator-defined tags for the [AllocatedResourceId](#datamodel.costandusage.allocatedresourceid).
   * Tag keys that do not support corresponding values MUST have a corresponding true (boolean) value set.
   * Tag values MUST match the provided values unless true (boolean) is applied to valueless tags.
 * Data generator-defined tags MUST adhere to the following requirements:
@@ -53,7 +53,7 @@ A set of tags assigned to tag sources that are applicable to *allocated charges*
 
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Dataset         | [Cost and Usage](#datamodel.costandusage)             |
 | Column type     | Dimension                                            |
 | Feature level   | Conditional                                          |
 | Allows nulls    | True                                                 |

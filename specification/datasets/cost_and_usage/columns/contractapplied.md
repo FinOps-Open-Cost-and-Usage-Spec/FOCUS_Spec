@@ -12,13 +12,13 @@ ContractApplied MUST adhere to the following requirements:
 * ContractApplied MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * ContractApplied MUST conform to [JsonObjectFormat](#attributes.jsonobjectformat) requirements.
 * ContractApplied MUST NOT be null when one or more *contract commitments* are applied to the *charge*.
-* ContractApplied MUST conform to [ContractAppliedObject](#datasets.costandusage.contractapplied.contractappliedobject) requirements when ContractApplied is not null.
+* ContractApplied MUST conform to [ContractAppliedObject](#datamodel.costandusage.contractapplied.contractappliedobject) requirements when ContractApplied is not null.
 
 ## Contract Applied Object
 
 Contract Applied Object consists of a valid JSON object which contains an array of key-value objects describing the one or more contract commitments applied to the *charge*. Each object consists of FOCUS-defined property keys but can be extended to provide additional details about the contract application.
 
-The following section details the normative requirements for the ContractAppliedObject and its nested properties. For a logical overview of the expected content, see the [Schema Structure](#datasets.costandusage.contractapplied.contractappliedobject.objectschemastructure) and [Object Example](#datasets.costandusage.contractapplied.contractappliedobject.objectexample) sections.
+The following section details the normative requirements for the ContractAppliedObject and its nested properties. For a logical overview of the expected content, see the [Schema Structure](#datamodel.costandusage.contractapplied.contractappliedobject.objectschemastructure) and [Object Example](#datamodel.costandusage.contractapplied.contractappliedobject.objectexample) sections.
 
 ### Object Requirements
 
@@ -30,10 +30,10 @@ ContractAppliedObject MUST adhere to the following requirements:
 * ContractAppliedObject.Elements[\*].ContractCommitmentId MUST be a unique identifier within the service provider.
 * ContractAppliedObject.Elements[\*].ContractCommitmentId SHOULD be a fully-qualified identifier.
 * ContractAppliedObject.Elements[\*].ContractCommitmentId MUST have one and only one parent ContractAppliedObject.Elements[\*].ContractId.
-* ContractAppliedObject.Elements[\*].ContractCommitmentId MUST match [ResourceId](#datasets.costandusage.resourceid) when [ChargeCategory](#datasets.costandusage.chargecategory) is "Purchase" and the *charge* represents a purchase of that *contract commitment*.
+* ContractAppliedObject.Elements[\*].ContractCommitmentId MUST match [ResourceId](#datamodel.costandusage.resourceid) when [ChargeCategory](#datamodel.costandusage.chargecategory) is "Purchase" and the *charge* represents a purchase of that *contract commitment*.
 * ContractAppliedObject.Elements[\*].ContractCommitmentId MUST match ResourceId when ChargeCategory is "Usage" and the *charge* represents an unused portion of that *contract commitment*.
 * ContractAppliedObject.Elements[\*].ContractCommitmentId MAY match ContractAppliedObject.Elements[\*].ContractId.
-* ContractAppliedObject.Elements[\*].ContractCommitmentAppliedCost MUST be denominated in the [BillingCurrency](#datasets.costandusage.billingcurrency).
+* ContractAppliedObject.Elements[\*].ContractCommitmentAppliedCost MUST be denominated in the [BillingCurrency](#datamodel.costandusage.billingcurrency).
 * ContractAppliedObject.Elements[\*].ContractCommitmentAppliedQuantity MUST be denominated in the ContractAppliedObject.Elements[\*].ContractCommitmentAppliedUnit.
 * ContractAppliedObject.Elements[\*].ContractCommitmentAppliedUnit SHOULD conform to [UnitFormat](#attributes.unitformat) requirements.
 
@@ -114,13 +114,13 @@ A set of properties that associate a *charge* with one or more *contract commitm
 
 | Constraint | Value |
 | :--- | :--- |
-| Dataset | [Cost and Usage](#datasets.costandusage) |
+| Dataset | [Cost and Usage](#datamodel.costandusage) |
 | Column type | Dimension / Metric |
 | Feature level | Conditional |
 | Allows nulls | True |
 | Data type | JSON |
 | Value format | [JSON Object Format](#attributes.jsonobjectformat) |
-| Object | [ContractAppliedObject](#datasets.costandusage.contractapplied.contractappliedobject) |
+| Object | [ContractAppliedObject](#datamodel.costandusage.contractapplied.contractappliedobject) |
 
 ## Version Introduced
 

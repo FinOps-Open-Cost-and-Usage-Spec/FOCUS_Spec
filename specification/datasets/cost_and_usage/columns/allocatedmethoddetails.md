@@ -16,13 +16,13 @@ AllocatedMethodDetails MUST adhere to the following requirements:
 * AllocatedMethodDetails MUST adhere to the following nullability requirements:
   * AllocatedMethodDetails MUST be null when a charge is not related to a data generator-calculated split cost allocation.
   * AllocatedMethodDetails SHOULD NOT be null when a charge is related to a data generator-calculated split cost allocation.
-* AllocatedMethodDetails MUST conform to [AllocatedMethodDetailsObject](#datasets.costandusage.allocatedmethoddetails.allocatedmethoddetailsobject) requirements when AllocatedMethodDetails is not null.
+* AllocatedMethodDetails MUST conform to [AllocatedMethodDetailsObject](#datamodel.costandusage.allocatedmethoddetails.allocatedmethoddetailsobject) requirements when AllocatedMethodDetails is not null.
 
 ## Allocated Method Details Object
 
 Allocated Method Details consists of a valid JSON object with a top level key of Elements containing an Array of entry objects. Each entry object consists of FOCUS-defined property keys but can be extended to provide additional details about the allocation.
 
-The following section details the normative requirements for the AllocatedMethodDetailsObject and its nested properties. For a logical overview of the expected content, see the [Schema Structure](#datasets.costandusage.allocatedmethoddetails.allocatedmethoddetailsobject.objectschemastructure) and [Object Example](#datasets.costandusage.allocatedmethoddetails.allocatedmethoddetailsobject.objectexample) sections.
+The following section details the normative requirements for the AllocatedMethodDetailsObject and its nested properties. For a logical overview of the expected content, see the [Schema Structure](#datamodel.costandusage.allocatedmethoddetails.allocatedmethoddetailsobject.objectschemastructure) and [Object Example](#datamodel.costandusage.allocatedmethoddetails.allocatedmethoddetailsobject.objectexample) sections.
 
 ### Object Requirements
 
@@ -32,7 +32,7 @@ The AllocatedMethodDetailsObject MUST adhere to the following requirements:
 * AllocatedMethodDetailsObject.Elements[\*].AllocatedRatio MUST represent the allocated charge's percentage of the origin charge.
 * The sum of AllocatedMethodDetailsObject.Elements[\*].AllocatedRatio across all allocated charges related to a single origin charge MUST be equal to 1 (100%).
 * AllocatedMethodDetailsObject.Elements[\*].UsageUnit SHOULD conform to [UnitFormat](#attributes.unitformat) requirements.
-* AllocatedMethodDetailsObject.Elements[\*].UsageUnit MUST represent the unit or component of data generator's documented [AllocationMethod](#datasets.costandusage.allocatedmethodid) which was used to determine the AllocatedMethodDetailsObject.Elements[\*].AllocatedRatio value.
+* AllocatedMethodDetailsObject.Elements[\*].UsageUnit MUST represent the unit or component of data generator's documented [AllocationMethod](#datamodel.costandusage.allocatedmethodid) which was used to determine the AllocatedMethodDetailsObject.Elements[\*].AllocatedRatio value.
 * AllocatedMethodDetailsObject.Elements[\*].UsageQuantity SHOULD capture the quantity or volume of the AllocatedMethodDetailsObject.Elements[\*].UsageUnit measured by the data generator that was used to determine the AllocatedMethodDetailsObject.Elements[\*].AllocatedRatio value.
 
 ### Object Schema Structure
@@ -51,7 +51,7 @@ The `Elements` array contains one or more objects, each of which contains the fo
 
 | Key | Type | Required | Description |
 | :--- | :--- | :--- | :--- |
-| `AllocatedRatio` | Numeric | True | Communicates the percentage of the [*Origin Charge*](#glossary:origin-charge) that this [*Allocated Charge*](#glossary:allocated-charge) derived from the corresponding [Allocated Method Id](#datasets.costandusage.allocatedmethodid) and Usage Unit property. |
+| `AllocatedRatio` | Numeric | True | Communicates the percentage of the [*Origin Charge*](#glossary:origin-charge) that this [*Allocated Charge*](#glossary:allocated-charge) derived from the corresponding [Allocated Method Id](#datamodel.costandusage.allocatedmethodid) and Usage Unit property. |
 | `UsageUnit` | String | Conditional | Communicates the aspect of the documented Allocation Method Id being used to calculate the Allocated Ratio property and what is being measured by Usage Quantity property. <br><br>**Condition:** must be present if Usage Quantity is provided. |
 | `UsageQuantity` | Numeric | False | Communicates the volume that was consumed or used, denominated in the Usage Unit property value. |
 
@@ -106,13 +106,13 @@ A set of properties describing how resources are allocated in data generator-def
 
 | Constraint | Value |
 | :--- | :--- |
-| Dataset | [Cost and Usage](#datasets.costandusage) |
+| Dataset | [Cost and Usage](#datamodel.costandusage) |
 | Column type | Dimension / Metric |
 | Feature level | Recommended |
 | Allows nulls | True |
 | Data type | JSON |
 | Value format | [JSON Object Format](#attributes.jsonobjectformat) |
-| Object | [AllocatedMethodDetailsObject](#datasets.costandusage.allocatedmethoddetails.allocatedmethoddetailsobject) |
+| Object | [AllocatedMethodDetailsObject](#datamodel.costandusage.allocatedmethoddetails.allocatedmethoddetailsobject) |
 
 ## Version Introduced
 

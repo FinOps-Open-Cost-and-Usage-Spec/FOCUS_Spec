@@ -1,6 +1,6 @@
 # Pricing Unit
 
-The Pricing Unit represents a service-provider-specified measurement unit for determining unit prices, indicating how the service provider rates measured usage and purchase quantities after applying pricing rules like [*block pricing*](#glossary:block-pricing). Common examples include the number of hours for compute appliance runtime (e.g., `Hours`), gigabyte-hours for a storage appliance (e.g., `GB-Hours`), or an accumulated count of requests for a network appliance or API service (e.g., `1000 Requests`). Pricing Unit complements the [Pricing Quantity](#datasets.costandusage.pricingquantity) metric. Distinct from the [Consumed Unit](#datasets.costandusage.consumedunit), it focuses on pricing and cost, not [*resource*](#glossary:resource) and [*service*](#glossary:service) consumption, often at a coarser granularity.
+The Pricing Unit represents a service-provider-specified measurement unit for determining unit prices, indicating how the service provider rates measured usage and purchase quantities after applying pricing rules like [*block pricing*](#glossary:block-pricing). Common examples include the number of hours for compute appliance runtime (e.g., `Hours`), gigabyte-hours for a storage appliance (e.g., `GB-Hours`), or an accumulated count of requests for a network appliance or API service (e.g., `1000 Requests`). Pricing Unit complements the [Pricing Quantity](#datamodel.costandusage.pricingquantity) metric. Distinct from the [Consumed Unit](#datamodel.costandusage.consumedunit), it focuses on pricing and cost, not [*resource*](#glossary:resource) and [*service*](#glossary:service) consumption, often at a coarser granularity.
 
 ## Requirements
 
@@ -32,7 +32,7 @@ Service-provider-specified measurement unit for determining unit prices, indicat
 
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Dataset         | [Cost and Usage](#datamodel.costandusage)             |
 | Column type     | Dimension                                            |
 | Feature level   | Mandatory                                            |
 | Allows nulls    | True                                                 |

@@ -13,10 +13,10 @@ ListUnitPrice MUST adhere to the following requirements:
 * ListUnitPrice MUST be of type Decimal.
 * ListUnitPrice MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * ListUnitPrice MUST adhere to the following nullability requirements:
-  * ListUnitPrice MUST be null when [SkuPriceId](#datasets.costandusage.skupriceid) is null.
-  * ListUnitPrice MUST be null when [ChargeCategory](#datasets.costandusage.chargecategory) is "Tax".
+  * ListUnitPrice MUST be null when [SkuPriceId](#datamodel.costandusage.skupriceid) is null.
+  * ListUnitPrice MUST be null when [ChargeCategory](#datamodel.costandusage.chargecategory) is "Tax".
   * ListUnitPrice MUST NOT be null when SkuPriceId is not null.
-  * ListUnitPrice MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#datasets.costandusage.chargeclass) is not "Correction".
+  * ListUnitPrice MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#datamodel.costandusage.chargeclass) is not "Correction".
   * ListUnitPrice MAY be null in all other cases.
 * When ListUnitPrice is not null, ListUnitPrice MUST adhere to the following requirements:
   * ListUnitPrice MUST be a non-negative decimal value.
@@ -42,7 +42,7 @@ The service-provider-suggested unit price per Pricing Unit for the *SKU Price* i
 
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Dataset         | [Cost and Usage](#datamodel.costandusage)             |
 | Column type     | Metric                                               |
 | Feature level   | Conditional                                          |
 | Allows nulls    | True                                                 |

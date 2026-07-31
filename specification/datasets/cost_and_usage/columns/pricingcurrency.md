@@ -27,7 +27,7 @@ The *national* or *virtual currency* denomination that a *resource* or *service*
 
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Dataset         | [Cost and Usage](#datamodel.costandusage)             |
 | Column type     | Dimension                                            |
 | Feature level   | Conditional                                          |
 | Allows nulls    | False                                                |
