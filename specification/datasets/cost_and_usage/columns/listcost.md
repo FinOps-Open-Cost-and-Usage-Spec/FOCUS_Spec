@@ -2,9 +2,9 @@
 
 List Cost represents the cost of a [*charge*](#glossary:charge) based on the service-provider-suggested pricing.
 
-When [List Unit Price](#datasets.costandusage.listunitprice) and [Pricing Quantity](#datasets.costandusage.pricingquantity) are provided for the *charge*, List Cost is calculated by multiplying the List Unit Price by the corresponding Pricing Quantity. List Cost reflects the service-provider-suggested pricing prior to the application of any discounts.
+When [List Unit Price](#datamodel.costandusage.listunitprice) and [Pricing Quantity](#datamodel.costandusage.pricingquantity) are provided for the *charge*, List Cost is calculated by multiplying the List Unit Price by the corresponding Pricing Quantity. List Cost reflects the service-provider-suggested pricing prior to the application of any discounts.
 
-List Cost is denominated in the [Billing Currency](#datasets.costandusage.billingcurrency). List Cost is commonly used to calculate savings from various negotiated and rate optimization activities by comparing it with [Contracted Cost](#datasets.costandusage.contractedcost), [Billed Cost](#datasets.costandusage.billedcost), and [Effective Cost](#datasets.costandusage.effectivecost).
+List Cost is denominated in the [Billing Currency](#datamodel.costandusage.billingcurrency). List Cost is commonly used to calculate savings from various negotiated and rate optimization activities by comparing it with [Contracted Cost](#datamodel.costandusage.contractedcost), [Billed Cost](#datamodel.costandusage.billedcost), and [Effective Cost](#datamodel.costandusage.effectivecost).
 
 ## Requirements
 
@@ -14,7 +14,7 @@ ListCost MUST adhere to the following requirements:
 * ListCost MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * ListCost MUST NOT be null.
 * ListCost MUST be denominated in the BillingCurrency.
-* ListCost MUST equal BilledCost when [ChargeCategory](#datasets.costandusage.chargecategory) is "Tax" or "Credit".
+* ListCost MUST equal BilledCost when [ChargeCategory](#datamodel.costandusage.chargecategory) is "Tax" or "Credit".
 * ListCost MAY differ from BilledCost when ChargeCategory is "Adjustment".
 * ListCost MUST equal the product of ListUnitPrice and PricingQuantity when ListUnitPrice is not null and PricingQuantity is not null.
 
