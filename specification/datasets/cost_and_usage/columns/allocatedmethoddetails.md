@@ -106,6 +106,7 @@ A set of properties describing how resources are allocated in data generator-def
 
 | Constraint | Value |
 | :--- | :--- |
+| Conditions | [includes split cost allocation](#conditions.includessplitcostallocation) |
 | Dataset | [Cost and Usage](#datamodel.costandusage) |
 | Column type | Dimension / Metric |
 | Feature level | Recommended |
