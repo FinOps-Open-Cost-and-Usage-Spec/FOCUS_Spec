@@ -27,7 +27,7 @@ The self-contained summary of the *contract commitment's* terms.
 
 |    Constraint   |      Value                                           |
 |:----------------|:-----------------------------------------------------|
-| Dataset         | [Contract Commitment](#datasets.contractcommitment)  |
+| Dataset         | [Contract Commitment](#datamodel.contractcommitment)  |
 | Column type     | Dimension                                            |
 | Feature level   | Mandatory                                            |
 | Allows nulls    | True                                                 |

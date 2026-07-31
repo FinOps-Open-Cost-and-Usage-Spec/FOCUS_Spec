@@ -16,7 +16,7 @@ CommitmentProgramEligibilityDetails MUST adhere to the following requirements:
 * CommitmentProgramEligibilityDetails MUST include all publicly available *commitment programs* for which the usage is eligible.
 * CommitmentProgramEligibilityDetails MAY include negotiated *commitment programs* when the usage is eligible and the program is not broadly applicable across the service provider's service catalog.
 * CommitmentProgramEligibilityDetails MUST NOT include data related to *commitment* [*periods*](#glossary:period) or payment options.
-* CommitmentProgramEligibilityDetails MUST conform to [CommitmentProgramEligibilityDetailsObject](#datasets.costandusage.commitmentprogrameligibilitydetails.commitmentprogrameligibilitydetailsobject) requirements when CommitmentProgramEligibilityDetails is not null.
+* CommitmentProgramEligibilityDetails MUST conform to [CommitmentProgramEligibilityDetailsObject](#datamodel.costandusage.commitmentprogrameligibilitydetails.commitmentprogrameligibilitydetailsobject) requirements when CommitmentProgramEligibilityDetails is not null.
 
 ## Commitment Program Eligibility Details Object
 
@@ -28,7 +28,7 @@ CommitmentProgramEligibilityDetailsObject MUST adhere to the following requireme
 
 * CommitmentProgramEligibilityDetailsObject MUST conform to the [CommitmentProgramEligibilityDetailsObjectSchema](#schemas.costandusage.commitmentprogrameligibilitydetailsobjectschema) JSON Schema.
 * CommitmentProgramEligibilityDetailsObject.CommitmentPrograms[\*].ProgramType MUST correspond to a *commitment program* type supported by the service provider.
-* CommitmentProgramEligibilityDetailsObject.CommitmentPrograms[\*].ProgramType MUST match [CommitmentDiscountType](#datasets.costandusage.commitmentdiscounttype) for one object in CommitmentProgramEligibilityDetailsObject.CommitmentPrograms when CommitmentDiscountType is not null.
+* CommitmentProgramEligibilityDetailsObject.CommitmentPrograms[\*].ProgramType MUST match [CommitmentDiscountType](#datamodel.costandusage.commitmentdiscounttype) for one object in CommitmentProgramEligibilityDetailsObject.CommitmentPrograms when CommitmentDiscountType is not null.
 * CommitmentProgramEligibilityDetailsObject.CommitmentPrograms[\*].ProgramType SHOULD correspond to terminology disclosed by the service provider in public documentation.
 
 ### Object Schema Structure
@@ -95,13 +95,13 @@ The types of *commitment programs* available for a specific usage row.
 
 | Constraint    | Value                                                                                                                        |
 |:-------------------------------------|:---------------------------------|
-| Dataset       | [Cost and Usage](#datasets.costandusage)                                                                                     |
+| Dataset       | [Cost and Usage](#datamodel.costandusage)                                                                                     |
 | Column type   | Dimension                                                                                                                    |
 | Feature level | Conditional                                                                                                                  |
 | Allows nulls  | True                                                                                                                         |
 | Data type     | JSON                                                                                                                         |
 | Value format  | [JSON Object Format](#attributes.jsonobjectformat)                                                                           |
-| Object        | [CommitmentProgramEligibilityDetailsObject](#datasets.costandusage.commitmentprogrameligibilitydetails.commitmentprogrameligibilitydetailsobject) |
+| Object        | [CommitmentProgramEligibilityDetailsObject](#datamodel.costandusage.commitmentprogrameligibilitydetails.commitmentprogrameligibilitydetailsobject) |
 
 ## Version Introduced
 

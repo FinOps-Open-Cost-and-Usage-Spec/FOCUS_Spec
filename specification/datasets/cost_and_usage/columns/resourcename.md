@@ -9,7 +9,7 @@ ResourceName MUST adhere to the following requirements:
 * ResourceName MUST be of type String.
 * ResourceName MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * ResourceName MUST adhere to the following nullability requirements:
-  * ResourceName MUST be null when [ResourceId](#datasets.costandusage.resourceid) is null or when the *resource* does not have an assigned display name.
+  * ResourceName MUST be null when [ResourceId](#datamodel.costandusage.resourceid) is null or when the *resource* does not have an assigned display name.
   * ResourceName MUST NOT be null when ResourceId is not null and the *resource* has an assigned display name.
 * ResourceName MUST NOT duplicate ResourceId when the *resource* is not provisioned interactively or only has a system-generated ResourceId.
 
@@ -29,7 +29,7 @@ Display name assigned to a *resource*.
 
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Dataset         | [Cost and Usage](#datamodel.costandusage)             |
 | Column type     | Dimension                                            |
 | Feature level   | Conditional                                          |
 | Allows nulls    | True                                                 |

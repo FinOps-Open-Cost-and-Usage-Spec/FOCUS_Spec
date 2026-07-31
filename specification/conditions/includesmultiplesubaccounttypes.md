@@ -1,6 +1,6 @@
 # Includes Multiple Sub Account Types
 
-The Includes Multiple Sub Account Types condition represents a verifiable state indicating whether the [*operating model*](#glossary:operating-model) includes multiple [Sub Account Types](#datasets.costandusage.subaccounttype).
+The Includes Multiple Sub Account Types condition represents a verifiable state indicating whether the [*operating model*](#glossary:operating-model) includes multiple [Sub Account Types](#datamodel.costandusage.subaccounttype).
 
 ## Requirements
 

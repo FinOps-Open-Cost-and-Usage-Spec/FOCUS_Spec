@@ -1,6 +1,6 @@
 # Host Provider Name
 
-Host Provider Name is the name of the entity that provides the underlying infrastructure on which the [*resources*](#glossary:resource) or [*services*](#glossary:service) of the [Service Provider](#datasets.costandusage.serviceprovidername) are deployed.
+Host Provider Name is the name of the entity that provides the underlying infrastructure on which the [*resources*](#glossary:resource) or [*services*](#glossary:service) of the [Service Provider](#datamodel.costandusage.serviceprovidername) are deployed.
 
 In some instances, the host provider and the service provider are the same entity: the provider hosts their own services. In other instances, the host provider and the service provider are separate entities, though the service provider may or may not expose the host provider and/or allow the customer to select the host provider.
 
@@ -11,13 +11,13 @@ HostProviderName MUST adhere to the following requirements:
 * HostProviderName MUST be of type String.
 * HostProviderName MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * HostProviderName MUST adhere to the following nullability requirements:
-  * HostProviderName MAY be NULL when the associated [ServiceName](#datasets.costandusage.servicename) does not involve deployment on any underlying infrastructure (e.g., professional services, software licenses).
-  * HostProviderName MAY be NULL when the information about the entity providing the underlying infrastructure cannot be uniquely determined (e.g., when the [ChargeCategory](#datasets.costandusage.chargecategory) is "Tax" or "Adjustment").
+  * HostProviderName MAY be NULL when the associated [ServiceName](#datamodel.costandusage.servicename) does not involve deployment on any underlying infrastructure (e.g., professional services, software licenses).
+  * HostProviderName MAY be NULL when the information about the entity providing the underlying infrastructure cannot be uniquely determined (e.g., when the [ChargeCategory](#datamodel.costandusage.chargecategory) is "Tax" or "Adjustment").
   * HostProviderName MUST NOT be null in all other cases.
 * When HostProviderName is not null, HostProviderName values MUST adhere to the following requirements:
   * HostProviderName MUST reflect the name of the host provider when explicitly selected by the customer.
   * HostProviderName MUST reflect the name of the host provider when the service provider exposes the underlying hosting provider.
-  * HostProviderName MUST match [ServiceProviderName](#datasets.costandusage.serviceprovidername) in all other cases.
+  * HostProviderName MUST match [ServiceProviderName](#datamodel.costandusage.serviceprovidername) in all other cases.
 
 See [Appendix: Participating Entity Identification Examples](#appendix.examples:participatingentityidentification) section for examples of Host Provider values across various use case scenarios.
 
@@ -37,7 +37,7 @@ The name of the entity whose *resources* are used by the Service Provider to mak
 
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Dataset         | [Cost and Usage](#datamodel.costandusage)             |
 | Column type     | Dimension                                            |
 | Feature level   | Mandatory                                            |
 | Allows nulls    | True                                                 |
