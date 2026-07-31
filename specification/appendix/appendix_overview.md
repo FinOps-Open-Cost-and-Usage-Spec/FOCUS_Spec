@@ -48,7 +48,7 @@ The table below outlines the fictitious *data generators* used throughout the sp
 
 ## Fictitious Customer Reference<!--SkipTOC-->
 
-To contextualize the billing and cost allocation examples, this appendix utilizes fictitious customer profiles. These profiles represent common organizational structures and cloud adoption patterns.
+To contextualize the billing and cost allocation examples, this appendix utilizes fictitious customer profiles. These profiles represent common organizational structures and cloud adoption patterns, listed alphabetically by name:
 
 | Fictitious Customer | Company Profile | Customer Description |
 | :--- | :--- | :--- |
@@ -58,14 +58,14 @@ To contextualize the billing and cost allocation examples, this appendix utilize
 
 ## Fictitious Commitment Program Reference<!--SkipTOC-->
 
-To illustrate commitment program application and amortization without relying on vendor-specific terminology, the examples in this appendix use standardized fictitious commitment instruments. These constructs abstract the common commitment mechanisms used by major cloud and SaaS providers.
+To illustrate commitment program application and amortization without relying on vendor-specific terminology, the examples in this appendix use standardized fictitious commitment instruments. These constructs abstract the common commitment mechanisms used by major cloud and SaaS providers, listed alphabetically by name:
 
 | Fictitious Commitment Program | Acronym | Category | Fictitious Commitment Program Description | Similar Real-World Programs |
 | :--- | :--- | :--- | :--- | :--- |
-| **Resource Reservation** | RR | Usage | An upfront commitment to use a specific resource type, family, and region for a set term (e.g., 1 or 3 years) in exchange for a significantly reduced hourly rate. | Reserved Instances (AWS/Azure), Resource-based CUDs (GCP) |
-| **Flexible Spend Plan** | FSP | Spend | A commitment to spend a specific monetary amount per hour across a broad category of compute or service offerings, providing high flexibility as workloads shift. | Savings Plans (AWS) |
+| **Advance Resource Commitment** | ARC | Usage | An advance reservation of specific compute capacity in a region or availability zone, guaranteeing resource availability without necessarily providing a unit discount. Distinct from Resource Reservations, which are commitment discounts. | Capacity Reservations (AWS), On-demand Capacity Reservations (Azure), Zonal reservations (GCP) |
+| **Bulk Capacity Credit** | BCC | Spend | A pre-purchased pool of platform-specific credits or capacity units, consumed against usage over a contract period. Common among data and analytics platforms. | Capacity Commitments (Snowflake), Committed Use Discounts (Databricks) |
 | **Dynamic Compute Commitment** | DCC | Spend | A spend-based commitment covering aggregate compute resources (such as vCPU and memory) across multiple regions and machine families, converting the hourly spend into a usage discount. | Flexible CUDs (GCP) |
 | **Enterprise Spend Agreement** | ESA | Spend | An overarching, contractual agreement where an organization commits to a minimum aggregate spend across a provider's portfolio over a set term (e.g., 1-3 years) in exchange for a blanket percentage discount. | Enterprise Discount Programs (AWS), MACC (Azure) |
+| **Flexible Spend Plan** | FSP | Spend | A commitment to spend a specific monetary amount per hour across a broad category of compute or service offerings, providing high flexibility as workloads shift. | Savings Plans (AWS) |
 | **Interval Spend Commitment** | ISC | Spend | A recurring minimum-spend or minimum-usage agreement at fixed intervals (e.g., monthly, annual), common among SaaS observability and infrastructure monitoring providers. Program names inherently include the period reference. | Monthly/Annual Commitments (Datadog) |
-| **Bulk Capacity Credit** | BCC | Spend | A pre-purchased pool of platform-specific credits or capacity units, consumed against usage over a contract period. Common among data and analytics platforms. | Capacity Commitments (Snowflake), Committed Use Discounts (Databricks) |
-| **Advance Resource Commitment** | ARC | Usage | An advance reservation of specific compute capacity in a region or availability zone, guaranteeing resource availability without necessarily providing a unit discount. Distinct from Resource Reservations, which are commitment discounts. | Capacity Reservations (AWS), On-demand Capacity Reservations (Azure), Zonal reservations (GCP) |
+| **Resource Reservation** | RR | Usage | An upfront commitment to use a specific resource type, family, and region for a set term (e.g., 1 or 3 years) in exchange for a significantly reduced hourly rate. | Reserved Instances (AWS/Azure), Resource-based CUDs (GCP) |
