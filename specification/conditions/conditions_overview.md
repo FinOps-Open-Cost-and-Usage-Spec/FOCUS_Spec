@@ -26,6 +26,7 @@ Conditions are sorted alphabetically by name.
 | [Includes Pricing-Billing Currency Differences](#conditions.includespricingbillingcurrencydifferences) | Pricing | Operating model includes pricing and billing in different currencies. |
 | [Includes Provisioned Resources](#conditions.includesprovisionedresources) | Resource | Operating model includes provisioned resources. |
 | [Includes Purchase Order Numbers](#conditions.includespurchaseordernumbers) | Billing | Operating model includes purchase order numbers. |
+| [Includes Recommendations](#conditions.includesrecommendations) | Recommendation | Operating model includes recommendations for resources or services. |
 | [Includes Regions](#conditions.includesregions) | Resource | Operating model includes deploying resources or services within a region. |
 | [Includes Resource Configuration Recommendations](#conditions.includesresourceconfigurationrecommendations) | Resource | Operating model includes recommendations to change the configuration of a resource. |
 | [Includes Resource Type Assignment](#conditions.includesresourcetypeassignment) | Resource | Operating model includes categorizing resources by type. |
