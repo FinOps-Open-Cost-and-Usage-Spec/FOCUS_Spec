@@ -268,6 +268,10 @@ An individual who performs FinOps within an organization to maximize the busines
 
 A comprehensive list of prices offered by a service provider.
 
+<a name="glossary:post-pricing-discount"><b>Post-Pricing Discount</b></a>
+
+A provider-defined discount mechanism applied after pricing determination that reduces the applicable invoiced cost of a [*charge*](#glossary:charge) (i.e.,[Billed Cost](#datamodel.costandusage.billedcost)) and/or recognized cost of a *charge* (i.e., [Effective Cost](#datamodel.costandusage.effectivecost)) without modifying the applicable unit price for the *charge's* [*SKU Price*](#glossary:sku-price) or the cost derived from that unit price.
+
 <a name="glossary:service-provider"><b>Service Provider</b></a>
 
 An entity that provides the [*resources*](#glossary:resource) or [*services*](#glossary:service) available for usage or purchase.
