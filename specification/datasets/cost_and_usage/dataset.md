@@ -48,7 +48,7 @@ The specification for the Cost and Usage dataset defines a group of columns that
 | [Invoice ID](#datamodel.costandusage.invoiceid)                                                      | Dimension          | [Conditional](#conditions.includespayableinvoices) | True         | String    |
 | [Invoice Issuer Name](#datamodel.costandusage.invoiceissuername)                                     | Dimension          | Mandatory     | False        | String    |
 | [List Cost](#datamodel.costandusage.listcost)                                                        | Metric             | Mandatory     | False        | Decimal   |
-| [List Unit Price](#datamodel.costandusage.listunitprice)                                             | Metric             | [Conditional](#conditions.includeslistunitprices) | True         | Decimal   |
+| [List Unit Price](#datamodel.costandusage.listunitprice)                                             | Metric             | [Conditional](#conditions.includesunitpricing) | True         | Decimal   |
 | [Pricing Category](#datamodel.costandusage.pricingcategory)                                          | Dimension          | [Conditional](#conditions.includesmultiplepricingcategories) | True         | String    |
 | [Pricing Currency](#datamodel.costandusage.pricingcurrency)                                          | Dimension          | [Conditional](#conditions.includespricing-billingcurrencydifferences) | False        | String    |
 | [Pricing Currency Contracted Unit Price](#datamodel.costandusage.pricingcurrencycontractedunitprice) | Metric             | [Conditional](#conditions.includespricing-billingcurrencydifferences) | True         | Decimal   |
