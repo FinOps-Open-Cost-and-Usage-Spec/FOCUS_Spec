@@ -6,7 +6,7 @@ When [Contracted Unit Price](#datamodel.costandusage.contractedunitprice) and [P
 
 Contracted Cost reflects negotiated [*unit price adjustments*](#glossary:unit-price-adjustment) that modify the unit price of the associated [*SKU Price*](#glossary:sku-price), but excludes cost impacts resulting from [*commitment discounts*](#glossary:commitment-discount) or other [*post-pricing discount*](#glossary:post-pricing-discount) mechanisms applied to the *charge*.
 
-When the [*operating model*](#glossary:operating-model) does not include negotiated pricing, or when no negotiated pricing adjustments are applied, Contracted Cost equals [List Cost](#datamodel.costandusage.listcost).
+When the [*operating model*](#glossary:operating-model) does not [include negotiated pricing](#conditions.includesnegotiatedpricing), or when no negotiated *unit price adjustments* are applied, Contracted Cost equals [List Cost](#datamodel.costandusage.listcost).
 
 Contracted Cost is denominated in the [Billing Currency](#datamodel.costandusage.billingcurrency). Contracted Cost is commonly used for calculating savings based on negotiation activities by comparing it with List Cost.
 
