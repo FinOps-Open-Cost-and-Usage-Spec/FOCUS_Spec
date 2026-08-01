@@ -270,7 +270,9 @@ A comprehensive list of prices offered by a service provider.
 
 <a name="glossary:post-pricing-discount"><b>Post-Pricing Discount</b></a>
 
-A provider-defined discount mechanism applied after pricing determination that reduces the applicable invoiced cost of a [*charge*](#glossary:charge) (i.e.,[Billed Cost](#datamodel.costandusage.billedcost)) and/or recognized cost of a *charge* (i.e., [Effective Cost](#datamodel.costandusage.effectivecost)) without modifying the applicable unit price for the *charge's* [*SKU Price*](#glossary:sku-price) or the cost derived from that unit price.
+A provider-defined discount mechanism applied after pricing determination that reduces the applicable invoiced cost of a [*charge*](#glossary:charge) (e.g., [Billed Cost](#datamodel.costandusage.billedcost)) and/or recognized cost of a *charge* (e.g., [Effective Cost](#datamodel.costandusage.effectivecost)) without modifying the applicable unit price of the [*SKU Price*](#glossary:sku-price) associated with the *charge* or the cost derived from that unit price (e.g., [Contracted Cost](#datamodel.costandusage.contractedcost)).
+
+Post-pricing discounts are distinct from [*unit price adjustments*](#glossary:unit-price-adjustment), which modify the applicable unit price of the *SKU Price* associated with the *charge*.
 
 <a name="glossary:service-provider"><b>Service Provider</b></a>
 
@@ -323,6 +325,10 @@ A Resource or Service-Provider-defined construct for grouping resources and/or o
 <a name="glossary:term"><b>Term</b></a>
 
 An agreement specified on a [*contract*](#glossary:contract) or [*invoice*](#glossary:invoice).
+
+<a name="glossary:unit-price-adjustment"><b>Unit Price Adjustment</b></a>
+
+A pricing adjustment that modifies the applicable unit price of the [*SKU Price*](#glossary:sku-price) associated with a [*charge*](#glossary:charge).
 
 <a name="glossary:unit-pricing"><b>Unit Pricing</b></a>
 
