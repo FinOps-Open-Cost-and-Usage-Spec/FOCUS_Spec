@@ -2,7 +2,9 @@
 
 List Cost represents the cost of a [*charge*](#glossary:charge) based on the service-provider-suggested pricing.
 
-When [List Unit Price](#datamodel.costandusage.listunitprice) and [Pricing Quantity](#datamodel.costandusage.pricingquantity) are provided for the *charge*, List Cost is calculated by multiplying the List Unit Price by the corresponding Pricing Quantity. List Cost reflects the service-provider-suggested pricing prior to the application of any discounts.
+When [List Unit Price](#datamodel.costandusage.listunitprice) and [Pricing Quantity](#datamodel.costandusage.pricingquantity) are provided for the *charge*, List Cost is calculated by multiplying the List Unit Price by the corresponding Pricing Quantity.
+
+List Cost does not reflect impacts resulting from negotiated [*unit price adjustments*](#glossary:unit-price-adjustment), [*commitment discounts*](#glossary:commitment-discount), or other [*post-pricing discount*](#glossary:post-pricing-discount) mechanisms applied to the *charge*.
 
 List Cost is denominated in the [Billing Currency](#datamodel.costandusage.billingcurrency). List Cost is commonly used to calculate savings from various negotiated and rate optimization activities by comparing it with [Contracted Cost](#datamodel.costandusage.contractedcost), [Billed Cost](#datamodel.costandusage.billedcost), and [Effective Cost](#datamodel.costandusage.effectivecost).
 
