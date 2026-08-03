@@ -49,7 +49,14 @@ To ensure consistency, ease of maintenance, and portability, all Markdown and Ma
   * File names for files defining FOCUS entities (e.g., FOCUS datasets, FOCUS columns, FOCUS attributes) MUST NOT use any word separator, so that the file name matches the FOCUS entity identifier in lowercase.
   * All other file names MUST use hyphens (`-`) as the word separator (i.e., kebab-case).
 
-This document does not currently cover naming conventions for other file types (e.g., Python scripts, configuration files). These may be added in the future as needed.
+### Other File Types
+
+Files that are not Markdown or MarkdownPP MUST follow these naming conventions:
+
+* Python files (`.py`) and Python-adjacent JSON files consumed as Python test fixtures or package data MUST use `snake_case`, per [PEP 8](https://peps.python.org/pep-0008/#package-and-module-names).
+* JSON files that define a FOCUS entity's requirements model rules MUST match the FOCUS entity identifier in lowercase, consistent with the [FOCUS-defined Markdown and MarkdownPP files](#focus-defined-markdown-and-markdownpp-files) rule.
+* Configuration files owned by a specific tool (e.g., `.github/workflows`, `.gemini`, linters, formatters) MUST follow that tool's expected file naming convention, even when it conflicts with the rules above.
+* All other JSON, YAML, CSS, CSV, and image files MUST use kebab-case with hyphens (`-`) as the word separator.
 
 ### Key Repository Files
 
@@ -73,6 +80,35 @@ The following examples illustrate correct and incorrect file names based on the 
 |-----------------------------|----------------------------------------------------------|
 | `supported-features.mdpp`   | `supported_features.mdpp`, `supportedFeatures.mdpp`      |
 | `spec-change-guidelines.md` | `spec_change_guidelines.md`, `spec change guidelines.md` |
+
+**Python and Python-adjacent files** (`snake_case`):
+
+| Correct           | Incorrect                                       |
+|--------------------|----------------------------------------------------|
+| `build_json.py`   | `build-json.py`, `buildJson.py`, `BuildJson.py` |
+| `test_schema.py`  | `test-schema.py`, `testSchema.py`               |
+
+**Requirements model rule JSON files defining FOCUS entities** (no word separator):
+
+| Correct                | Incorrect                                      |
+|--------------------------|---------------------------------------------------|
+| `numericformat.json`   | `numeric-format.json`, `numeric_format.json`   |
+| `stringhandling.json`  | `string-handling.json`, `string_handling.json` |
+
+**Tool-owned configuration files** (align to tooling convention):
+
+| Correct                                | Notes                                            |
+|-------------------------------------------|------------------------------------------------------|
+| `.github/workflows/working_draft.yml`  | Follows GitHub Actions workflow file conventions |
+| `.gemini/config.yaml`                  | Follows Gemini CLI configuration file conventions |
+
+**Other JSON, YAML, CSS, CSV, and image files** (kebab-case):
+
+| Correct                   | Incorrect                                         |
+|-----------------------------|------------------------------------------------------|
+| `model-schema.json`       | `model_schema.json`, `modelSchema.json`           |
+| `all-upfront-100pct.csv`  | `all_upfront_100pct.csv`, `AllUpfront100pct.csv`  |
+| `spec-styles.css`         | `spec_styles.css`, `SpecStyles.css`               |
 
 ## Renaming Directories or Files After Publication
 
