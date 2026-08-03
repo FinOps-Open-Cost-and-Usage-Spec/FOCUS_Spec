@@ -39,11 +39,12 @@ The data generator emits four FOCUS rows for this charge period. The column-augm
 * **ListCost, ContractedCost, EffectiveCost, ConsumedQuantity**: zeroed on the origin row; distributed across the three *allocated charge* rows in proportion to each consumer's allocation ratio. The sum across all four rows equals the pre-split origin total for each metric.
 * **BilledCost**: `$0.00` on all four rows. The origin charge is fully covered by the Resource Reservation's purchase charge (not shown in this example), and each *allocated charge* inherits that covered status since it represents a portion of the same covered usage.
 * **ConsumedUnit**: `"Hours"` on every row, since ConsumedQuantity (including the origin row's zeroed value) is populated on all four rows.
-* **AllocatedResourceId, AllocatedResourceName, AllocatedServiceName**: null on the origin row; populated with each consumer's identifier, display name, and service name on the corresponding *allocated charge* row.
-* **AllocatedMethodId, AllocatedMethodDetails**: null on the origin row; set to the allocation method identifier and to the consumer's allocation ratio and measured utilization, respectively, on each *allocated charge* row.
+* **AllocatedResourceId, AllocatedResourceName, AllocatedServiceName**: null on the origin row, since no *allocation* was made *to* the origin row itself; populated with each consumer's identifier, display name, and service name on the corresponding *allocated charge* row.
+* **AllocatedMethodId**: set to the allocation method identifier on every row, including the origin row — the origin row is *related to* the data generator-calculated split cost allocation even though it is not itself an *allocated charge*.
+* **AllocatedMethodDetails**: present (non-null) on every row. On the origin row, `Elements` is an empty array, since there is no allocated portion to describe on that row; on each *allocated charge* row, it carries that consumer's allocation ratio and measured utilization.
 * **ChargeCategory**: `"Usage"` on all rows.
 
-> Note: This example treats the retained, zeroed origin row as not "related to" the data generator-calculated split cost allocation for AllocatedMethodId/AllocatedMethodDetails nullability purposes, so both are left null on that row. Whether a zeroed origin row should instead carry AllocatedMethodId is an open question under task force discussion; this example will be updated to match once that question is resolved.
+> Note: AllocatedMethodId's nullability is keyed on a charge being "related to" a data generator-calculated split cost allocation, not on being an *allocated charge* itself. This example treats the origin row as related (it is part of the same split operation, even though nothing was allocated to it) and therefore populates AllocatedMethodId on it — consistent with the "Find Total Unallocated Split Costs by ResourceId" query in Data Generator-Calculated Split Cost Allocation, whose `AllocatedMethodId IS NOT NULL AND AllocatedResourceId IS NULL` predicate only returns rows under this reading. This question is tracked for the specification text itself in issue #2578.
 
 ### Origin Charge Row Details
 
@@ -65,8 +66,8 @@ The data generator emits four FOCUS rows for this charge period. The column-augm
 | ContractedCost          | `0.00`                                                                               | Zeroed — full cost distributed across allocated charge rows        |
 | BilledCost              | `0.00`                                                                               | Fully covered by the Resource Reservation purchase (not shown)     |
 | EffectiveCost           | `0.00`                                                                               | Zeroed — full cost distributed across allocated charge rows        |
-| AllocatedMethodId       | *(null)*                                                                             | Not related to the split cost allocation (see note above)          |
-| AllocatedMethodDetails  | *(null)*                                                                             | Not related to the split cost allocation (see note above)          |
+| AllocatedMethodId       | `"aura-vcpu-proportional-v1"`                                                        | Related to the split cost allocation (see note above)               |
+| AllocatedMethodDetails  | `{"Elements":[]}`                                                                    | Related to the split, but no allocated portion to describe here     |
 | AllocatedResourceId     | *(null)*                                                                             | Not an *allocated charge*                                          |
 | AllocatedResourceName   | *(null)*                                                                             | Not an *allocated charge*                                          |
 | AllocatedServiceName    | *(null)*                                                                             | Not an *allocated charge*                                          |
