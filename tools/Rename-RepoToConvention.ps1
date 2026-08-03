@@ -23,8 +23,8 @@ content across sibling directories (e.g. scenario CSVs), which corrupts
 reference updates if trusted as ground truth.
 
 Usage:
-  ./rename-to-convention.ps1 -Phase 1
-  ./rename-to-convention.ps1 -Phase all -SkipValidation
+  ./Rename-RepoToConvention.ps1 -Phase 1
+  ./Rename-RepoToConvention.ps1 -Phase all -SkipValidation
 #>
 
 [CmdletBinding()]
