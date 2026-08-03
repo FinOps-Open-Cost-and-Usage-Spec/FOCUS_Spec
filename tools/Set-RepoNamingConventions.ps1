@@ -23,18 +23,54 @@ Set-Location $RepoRoot
 # Phase 1: no open-PR conflicts, safe to run immediately.
 # Phase 2: gated on PRs touching these paths merging first.
 # Phase 3: gated on the 1.5 Consistency Review starting.
-# cleanup: everything else needing a rename outside specification/.
+# cleanup: computed below as everything 1-3 don't already claim - not
+# hardcoded, so it can't silently drift out of sync as the repo changes.
 $PhaseManifest = @{
-    '1'       = @('specification/attributes', 'specification/appendix', 'specification/supported_features', 'specification/data')
-    '2'       = @('specification/datasets', 'specification/metadata', 'specification/requirements_model')
-    '3'       = @('specification/schemas', 'specification/conditions', 'specification/styles', 'specification/images')
-    'cleanup' = @('specification/versions', 'guidelines', 'supporting_content', 'custom_linter_rules')
+    '1' = @('specification/attributes', 'specification/appendix', 'specification/supported_features', 'specification/data')
+    '2' = @('specification/datasets', 'specification/metadata', 'specification/requirements_model')
+    '3' = @('specification/schemas', 'specification/conditions', 'specification/styles', 'specification/images')
+}
+# Repo-level entries that are never rename targets: dotfiles/dotdirs (git
+# internals, tool config, .ai/ working files - excluded per repository-naming-conventions.md's
+# GitHub-directory carve-out and AGENTS.md's description of .ai/ as live scratch content),
+# vendored code, this script's own home, and key repository files (README.md etc.,
+# exempted by the same guideline's "Key Repository Files" section).
+$ExcludeFromCleanup = @('vendored', 'tools')
+$KeyRepoFiles = @('README.md', 'CHANGELOG.md', 'CONTRIBUTING.md', 'MAINTAINERS.md', 'AGENTS.md',
+    'CLAUDE.md', 'GEMINI.md', 'ERRATA.md', 'OUTPUTS.md', 'RELEASE-PLANNING.md', 'license.md',
+    'ipr.md', 'scope.md', 'requirements.txt', '.gitignore', '.cursorrules')
+
+function Get-CleanupRoots {
+    $claimed = $PhaseManifest.Values | ForEach-Object { $_ }
+    $allTopLevel = Get-ChildItem -Path $RepoRoot -Force |
+        Where-Object { -not $_.Name.StartsWith('.') } |
+        Where-Object { $_.Name -notin $ExcludeFromCleanup } |
+        Where-Object { $_.Name -notin $KeyRepoFiles } |
+        ForEach-Object { $_.Name }
+    $roots = foreach ($entry in $allTopLevel) {
+        # If a phase claims a path INSIDE this top-level entry (e.g. specification/attributes),
+        # descend one level so the claimed subdirectory is excluded but siblings still get covered.
+        $claimsInside = $claimed | Where-Object { $_ -like "$entry/*" }
+        if ($claimsInside) {
+            Get-ChildItem -Path (Join-Path $RepoRoot $entry) |
+                ForEach-Object { "$entry/$($_.Name)" } |
+                Where-Object { $_ -notin $claimed }
+        }
+        elseif ($entry -notin $claimed) {
+            $entry
+        }
+    }
+    return $roots
 }
 
 function Get-ScopedRoots {
     param([string]$Phase)
+    if ($Phase -eq 'cleanup') {
+        return Get-CleanupRoots | Where-Object { Test-Path $_ }
+    }
     if ($Phase -eq 'all') {
-        return $PhaseManifest.Values | ForEach-Object { $_ } | Where-Object { Test-Path $_ }
+        $all = ($PhaseManifest.Values | ForEach-Object { $_ }) + (Get-CleanupRoots)
+        return $all | Where-Object { Test-Path $_ }
     }
     return $PhaseManifest[$Phase] | Where-Object { Test-Path $_ }
 }
@@ -83,9 +119,11 @@ function Rename-Directories {
     $currentRoots = $Roots
 
     do {
-        # Symlinks (e.g. releases/latest) are excluded: -Recurse follows them and double-visits the target.
+        # Roots can be individual files (cleanup phase computes roots generically), so
+        # only seed $root itself when it's actually a directory. Symlinks (e.g.
+        # releases/latest) are excluded: -Recurse follows them and double-visits the target.
         $dirs = foreach ($root in $currentRoots) {
-            if (Test-Path $root) {
+            if (Test-Path $root -PathType Container) {
                 Get-Item -Path $root
                 Get-ChildItem -Path $root -Recurse -Directory -ErrorAction SilentlyContinue |
                     Where-Object { -not ($_.Attributes -band [IO.FileAttributes]::ReparsePoint) }
@@ -122,7 +160,12 @@ function Rename-Files {
 
     $renames = [ordered]@{}
     $files = foreach ($root in $Roots) {
-        if (Test-Path $root) { Get-ChildItem -Path $root -Recurse -File -ErrorAction SilentlyContinue }
+        if (Test-Path $root -PathType Leaf) {
+            Get-Item -Path $root
+        }
+        elseif (Test-Path $root -PathType Container) {
+            Get-ChildItem -Path $root -Recurse -File -ErrorAction SilentlyContinue
+        }
     }
 
     foreach ($file in $files) {
