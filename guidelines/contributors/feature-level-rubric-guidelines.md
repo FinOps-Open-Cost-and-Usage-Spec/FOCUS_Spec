@@ -1,170 +1,258 @@
-# Column Feature-Level Rubric: Mandatory and Conditional
+# Column Feature Level Rubric: Mandatory and Conditional
 
-## Overview
+## Purpose
 
-This guideline answers one question. When FOCUS adds a column, does every data generator have to publish it, or only the generators it applies to?
+When FOCUS adds a column to a dataset, its **feature level** decides whether every *data generator* has to publish the column, or only the ones it applies to. This guideline decides that, for the levels `Mandatory` and `Conditional`. It applies to columns the working group has decided to add, and to columns already defined in the specification when their level is revisited.
 
-The first answer is Mandatory. The second is Conditional. This guideline decides which of the two a column takes, and whether its value is allowed to be null. It applies to columns already in the specification and to new ones the working group has decided to add.
+A column earns `Mandatory` by applying to every *operating model*.
 
-There are two decisions here, not one:
+**Why nullability appears in a guideline about feature level.** Nullability decides whether the value may be null once the column is present. It is a separate axis, and it is here for two reasons:
 
-* **Level** decides whether the column is there.
-* **Nullability** decides whether the value may be empty once the column is there.
+* **It is how the feature level gets bypassed.** "Make it `Mandatory`, and *data generators* without the data can leave it null" answers the presence question with the nullability question, and mandates a column for *data generators* whose *operating model* cannot produce it. This is the failure the guideline exists to prevent.
+* **It is where a missing Condition shows itself.** A null rule written in terms of what an *operating model* includes or supports is not a null rule. It is a presence rule in the wrong place, and it names the Condition the column should have been gated on.
 
-"Make it Mandatory, and generators without the data can just leave it null" answers the first question with the second, and that is how columns end up mandated for generators that cannot fill them.
+Nullability is therefore decided here, but as the second axis and as a diagnostic, not as the subject.
 
-A column earns Mandatory by applying to every operating model.
+**Output of the decision.** A leveling decision is not an annotation. It produces:
 
-This is the principles part. The mechanics (the step-by-step procedure, the data-driven tests, the machine-readable check) come in a companion guideline, and the criteria this revision defers come in a later revision of this one. The bar to meet: two people applying these principles to the same column reach the same level, without the author in the room.
+1. a column presence requirement in the dataset's normative requirements,
+2. the `Feature level` and `Allows nulls` values in the column's Content Constraints table,
+3. where the level is `Conditional`, an *operating model* Condition that the presence requirement references.
+
+[Decision Procedure](#decision-procedure) produces all three.
+
+The goal of this guideline is that two reviewers applying these principles independently reach the same feature level without requiring the author of the column definition to explain the decision.
 
 **Contents:**
 
-* [Scope of This Revision](#scope-of-this-revision)
-* [Key Concepts](#key-concepts)
-* [Core Principles](#core-principles)
-* [The Interim Boundary Rule](#the-interim-boundary-rule)
-* [The Two Decision Inputs](#the-two-decision-inputs)
-* [Normative Content Defined by the Rubric](#normative-content-defined-by-the-rubric)
-* [Applying the Principles: Worked Examples](#applying-the-principles-worked-examples)
-* [Relationship to the Companion Guideline](#relationship-to-the-companion-guideline)
+* [Purpose](#purpose)
+* [Scope](#scope)
+* [Terms Used](#terms-used)
+* [Principles](#principles)
+* [Decision Procedure](#decision-procedure)
+* [Applicability Signals](#applicability-signals)
+* [Tie-Breakers and Defaults](#tie-breakers-and-defaults)
+* [Worked Example](#worked-example)
+* [Deferred Topics](#deferred-topics)
 
-## Scope of This Revision
+## Scope
 
-FOCUS has four feature levels: Mandatory, Conditional, Recommended, and Optional. This revision covers two of them.
+This revision covers the `Mandatory` and `Conditional` feature levels, and the nullability of columns holding them. It starts once the working group has decided that a column belongs in a dataset.
 
-Start here once the working group has already decided a column belongs in a dataset. This guideline then picks which of Mandatory or Conditional that column takes, and whether its value may be null.
+Two constraints follow:
 
-Two questions sit outside this revision and wait for a later one:
+* **It does not change the meaning of any feature level.** Each level, and the `MUST`, `SHOULD`, or `MAY` wording that expresses it, is defined in [FOCUS Feature Level](#introduction.focusfeaturelevel). This guideline changes how a level is chosen, not what it means.
+* **It does not reopen levels the specification already ships.** Adopting it does not oblige a review of published columns.
 
-* **What the criteria for Recommended and Optional should be.** How a column reaches either level, and what happens to the columns holding them today, is not settled here. This revision takes no position either way. It does not change what those levels mean, and it does not change the level of any column that currently holds one.
-* **Whether a proposed column belongs in the schema.** Two tests would answer that: whether the data is genuinely needed rather than merely useful, and whether a column that can already be calculated from other columns earns a place of its own. Neither is part of this revision. Nor is the related question of where to draw the line between a column whose absence breaks a use case and one that only sharpens a result another column already delivers.
+Topics left to a later revision or to the companion guideline are listed in [Deferred Topics](#deferred-topics).
 
-One further question sits alongside these rather than inside them. Principle 7 requires a Conditional column's dependent Supported Features to account for its absence, but what they should do about it, whether a substitute, a narrower stated population, or a per-feature requirement, is not settled here. That choice belongs with the Supported Features work and is recorded in the design notes.
+## Terms Used
 
-That obligation is prospective. Adopting this guideline does not reopen the levels the specification already ships, and many columns already leveled Conditional are directly dependent columns of a Supported Feature that does not yet account for their absence. Closing that gap is separate work that travels with the Supported Features decision rather than with this guideline. The design notes record its current size.
+| Term | Meaning |
+| :--- | :--- |
+| *Operating model* | How a *data generator*'s business works, described through the billing concepts it uses: regions, commitment discounts, unit pricing, and so on. It determines whether a FOCUS concept applies to a *data generator*, and it is not the same thing as the category of company the *data generator* is. |
+| *Operating model* Condition | A verifiable state of an *operating model*, defined in the [Conditions](#conditions) section. Every `Conditional` column references one or more of them through its presence requirement. |
+| Leveling unit | A column within a dataset, not a Column ID in the abstract. The same Column ID may take a different feature level, a different nullability, or a different set of Conditions in each dataset that defines it. Decide per dataset. |
+| Feature level | `Mandatory`, `Conditional`, `Recommended`, or `Optional`. Decides whether the column is present, and when. This revision assigns only the first two. |
+| Nullability | `Allows nulls` = `True` or `False`. Decides whether the value may be null where the column is present. |
 
-The same holds for the variance gates input 1 describes. Columns the specification levels through such a gate today are not revisited here, and when to apply these criteria to already-published columns is its own decision.
+## Principles
 
-Two things drove the narrowing.
+These hold for every column and do not depend on which column is being decided.
 
-The problem that blocks adoption lives entirely in these two levels. A generator whose operating model cannot produce a column is hurt by a Mandatory obligation, not by a Recommended one. Getting the Mandatory-versus-Conditional line right is what opens FOCUS to generators that do not look like cloud providers.
+1. **Level by *operating model*, not by category of *data generator*.** Cloud, SaaS, PaaS, data center, and AI describe the *data generator*, not the schema, and they have no bearing on the level. Where a column applies to some *data generators* and not others, name an *operating model* Condition.
 
-These are also the two criteria that currently meet this guideline's own bar, which is that two reviewers reach the same answer without the author present. A test that would do the same for Recommended has not been written yet, and writing one under time pressure would produce a rule the working group could not apply consistently.
+   **Example:** A SaaS provider whose *operating model* includes regions takes on the region obligation. Being SaaS does not exempt it.
 
-## Key Concepts
+2. **A *data generator* asserts its own Conditions, and category expectations are not ceilings.** Any *data generator* may meet any *operating model* Condition, and asserting one takes on the matching obligation. Conformance then evaluates that assertion like any other requirement. Expectations about what a category of *data generator* commonly asserts are informative, never limiting, and exceeding one is never non-conformant.
 
-* **Operating model.** How a provider's business works, described through the billing concepts it uses. Does it have regions? Commitment discounts? Virtual currency? For leveling, this is what decides whether a FOCUS concept applies to a generator, and it is not the same thing as what kind of company the generator is.
-* **Operating model Condition.** A named entry in the specification's Conditions section (specification/conditions/). Each entry reads "the operating model includes X": includes regions, includes commitment discounts. That section is the single list. Every Conditional column points at one or more of its entries, and one column's presence may be gated by more than one Condition.
-* **Leveling unit.** A column within a dataset, not a Column ID in the abstract. The same Column ID may take a different level, a different nullability, or a different set of Conditions in each dataset that defines it. Judge it per dataset.
-* **The two axes.**
+   **Example:** A data center *data generator* whose *operating model* includes commitment discounts asserts that Condition and publishes the commitment columns.
 
-| Axis | Values | Decides |
-|---|---|---|
-| Feature level | Mandatory, Conditional, Recommended, Optional | Whether the column is present, and when |
-| Nullability | Allows nulls = True / False | Whether the value may be null when present |
+3. **Decide the two axes separately.** Feature level and nullability are independent. Settle one, then the other.
 
-Each of the four levels, and the `MUST`, `SHOULD`, or `MAY` wording that expresses it, is defined in the [FOCUS Feature Level](../../specification/overview.md#focus-feature-level) section. This guideline changes how a level gets chosen, not what a level means. Recommended and Optional appear in the table because the specification defines them and columns still hold them. They stay as they are: writing criteria for them is deferred work, not work this revision has done.
+   **Example:** `ChargeClass` is `Mandatory` on the level axis and `Allows nulls` = `True` on the nullability axis.
 
-## Core Principles
+4. **Null is the correct value for an absent value; a placeholder is not.** Where a value is not meaningful or not available, it is null. FOCUS never requires a *data generator* to invent a value, and no feature level may depend on one.
 
-1. **Level by operating model, not by what kind of generator it is.** Cloud, SaaS, PaaS, data center, AI: these labels describe the generator, not the schema, and they get no say in the level. When a column applies to some generators and not others, name an operating model Condition instead. *(A SaaS provider whose operating model includes regions takes on the region obligation. Being SaaS does not exempt it.)*
-2. **Generators assert their own Conditions, and category defaults are not ceilings.** Any generator may meet any operating model Condition, whatever kind of company it is, and asserting one takes on the matching obligation. Conformance then checks that assertion like any other requirement. Category defaults only describe what is common today. They never cap a generator, and exceeding one is never non-conformant. How a generator records what it has asserted is mechanics for the companion. *(A data center generator whose model includes commitment discounts asserts that Condition and publishes the commitment columns, even though its category default would not.)*
-3. **Keep the two axes apart.** Decide them one at a time. *(ChargeClass is Mandatory on the level axis and still Allows nulls = True on the nullability axis.)*
-4. **Mandatory has to be earned.** A column is Mandatory only when two things hold: its concept exists for every operating model, and a value can be produced naturally. Together those mean no reasonable generator would publish the column null on every single row. A column that a reasonable operating model would leave null throughout is Conditional instead, gated on the operating model Condition where the concept lives. The default between them is Conditional. A column can move up to Mandatory later, once adoption shows the concept is universal. *(BilledCost clears the bar. RegionId does not: a flat-rate SaaS has no region, so it is Conditional.)*
-5. **Nulls are honest; invented values are not. No level may rest on one.** When a value is not meaningful, or is not available, it is null. FOCUS never asks a generator to invent a placeholder, and any level that forces one has to change. Fabrication means inventing a value for a concept the operating model does not have. Producing a value for a concept the model does have is not fabrication. Judge availability against the operating model, not against whatever the generator's billing export happens to contain today. A model that uses unit pricing has SKUs, so producing SkuId is identifying them rather than inventing them. A value that would be genuinely null for a whole class of models makes the column Conditional, not Mandatory with those models inventing a value. A value a generator can report truthfully still counts as truthful, even when it is a single value that holds across its entire dataset. And where the model leaves only one correct answer (BillingAccountType), populating it is a matter of conformance.
-6. **Derivation runs one way.** When a column is calculated from other columns, that calculation has a direction: sources go in, the derived column comes out. A derived column can never be more present than its sources, so when a source is absent the derived column is absent too. The reverse never holds. A derived column that is absent, or that applies more narrowly, does not drag its sources down, and each source is leveled on its own. That is why a source can be Mandatory while a column derived from it is Conditional, when the derived concept applies to fewer models. *(A cost restated in a second currency is derived from the billing-currency cost. It is absent whenever that cost is absent. But a generator that does not restate omits it, and the source cost stands on its own.)*
-7. **A Conditional level is not complete until the features that depend on the column account for its absence.** Making a column Conditional means it can be missing from a dataset instance, so every Supported Feature that lists it as a directly dependent column has to still hold when it is not there. Absent is not null: what such a feature needs is a rule for combining dataset instances, not per-row null handling. What that rule should be, whether a substitute, a narrower stated population, or naming the column as required for that feature, is the feature's decision and not this guideline's. The obligation attaches to a leveling decision made under this rubric, and does not on its own reopen a level the specification already ships. Until the companion says where the record belongs, it lives with the leveling decision itself, in the pull request or issue. *(Cost Comparison lists ContractedCost among its directly dependent columns. Leveling ContractedCost Conditional obliges that feature to say what it does for a generator whose model has no contracted pricing.)*
+   Fabrication means producing a value for a concept the *operating model* does not have. Producing a value for a concept the *operating model* does have is not fabrication.
 
-## The Interim Boundary Rule
+   The distinction is:
 
-Two outcomes look similar and are not:
+   * **Absent concept:** the *operating model* does not have the concept. This affects feature level.
+   * **Absent value:** the concept exists, but a specific row does not have a value. This affects nullability.
 
-* **Mandatory, Allows nulls = True.** The concept exists for every operating model, so the column is always there. A truthful value is not on every row. (An ordinary charge has a null ChargeClass.) The nulls are row by row, and no operating model is null throughout, though an individual generator may not yet have produced a value. Because the column is always present, consumers and joins can count on it.
-* **Conditional.** The column is there only when it applies, and is fully mandatory when it does. Which columns appear varies from one dataset to the next. Conditional does not mean optional. And a column that is absent tells a consumer more than one that is null for an entire generator.
+   Judge against the *operating model*, not against whatever a *data generator*'s current billing export happens to contain.
 
-The rule:
+   A truthful constant value is not fabricated. A value that is always the same remains a valid value when the *operating model* defines that value.
 
-* Input 1 decides, following principle 4. A single unusual operating model that lacks the column may be an exception that keeps the column Mandatory. A pattern of models leaving it null makes it Conditional.
-* Until the companion guideline calibrates that line against real generator data, anything sitting at the boundary is Conditional.
-* Calling a model an exception only holds when the working group writes down which operating model is being judged exceptional, and why. Until the companion says where that record belongs, it lives with the leveling decision itself, in the pull request or issue.
-* A value that is present and truthful for every model never reaches this boundary, even when it is always the same value, and stays Mandatory. ServiceProviderName may repeat on every row of a single-provider dataset and is still Mandatory.
+   Where the *operating model* permits only one correct value, publishing that value is conformance, not fabrication.
 
-## The Two Decision Inputs
+   **Example:** An *operating model* that uses unit pricing has SKUs, so producing `SkuId` identifies them rather than inventing them.
 
-Every leveling decision answers two questions, one per axis. Applicability sets the level. Producibility sets nullability.
+   **Example:** A single-provider dataset may contain the same `ServiceProviderName` value on every row. The repeated value remains truthful and does not make the column inapplicable.
 
-1. **Applicability: does this concept exist for everyone?** Ask whether the column applies to some operating models but not others. Test the exact concept that the column's Description and glossary term fix, not a broader or narrower one. When a reasonable model would have the column null on every row because the concept does not exist for it, the column is Conditional, gated on the operating model Condition that marks where the concept does exist. When the concept exists for every model, the column is Mandatory, and input 2 sets its nullability. Five things sharpen this test:
-   * **Having to substitute is a sign the concept is not universal.** When the only way to fill the column for the models that lack the concept is to substitute or derive some other value, the concept is not universal, and the column is Conditional.
-   * **A rule for everyone, or a patch for the models missing the concept?** Some columns are defined in terms of another column, and which of these two it is decides the level. When the definition applies in every operating model, the concept stays universal and the column is Mandatory. That holds even where the two values differ from row to row. EffectiveCost works this way: it is defined against BilledCost for every generator, equal to it for ordinary charges, and computed from it where commitments amortize, never standing in for a concept the generator lacks. When the value is supplied only for the models that lack the concept, it is a patch, the concept is not universal, and the column is Conditional. Having a fallback settles nothing by itself. Which of the two kinds it is settles it.
-   * **Missing concept, or just never happened yet?** When the concept is absent for a whole class of models, Conditional. A flat-rate SaaS has no region concept to populate. When the concept exists for every model but a generator has never produced an instance of it, Mandatory, with input 2 setting nullability. Every generator marks a correction to a closed billing period with ChargeClass, so a generator that has never issued such a correction still publishes the column, null on its rows. The test is whether the concept exists, not whether a value has been produced yet.
-   * **Presence gates, not nullability gates.** An operating model Condition that gates nullability leaves the level Mandatory and feeds input 2 instead. Tell the two apart by scope. A presence gate means a model can lack the characteristic outright, so no row ever has a value and the whole column is absent (a model with no regions). A gate that still leaves values on some rows for every model is row-level nullability, however it is worded. No operating model lacks the concept of a correction to a closed billing period, so ChargeClass's null rule is nullability, not an operating model Condition. Whether something is one odd exception or a real pattern is settled by the Interim Boundary Rule.
-   * **A gate on variance, not absence.** Some Conditions gate on two values differing, or on more than one value occurring, rather than on whether the concept exists at all. The concept is universal either way, so applicability alone returns Mandatory. Such a gate is admissible when the column's value is fully determined by another column in the same dataset wherever the Condition is false, because publishing it then restates something the dataset already carries, and the column is Conditional on that Condition. Where the value is not recoverable that way, a constant is still a truthful value and the column stays Mandatory. *(A model that prices and bills in one currency has a pricing currency equal to its billing currency, so gating on the difference is admissible. A single billing account type is not recoverable from any other column, so that gate is not.)*
-2. **Producibility: can a real value be produced?** Where the column applies, can the operating model produce a meaningful value, or is null the honest answer? Judge against the operating model, not against today's export (principle 5). Set Allows nulls = False only when a meaningful value is available on every row where the column is present. Otherwise set Allows nulls = True. This sets nullability only, row by row. Whether a model can produce the value at all is the dataset-wide question in principle 4, and it belongs to input 1. Input 2 never sets the level, and it never licenses inventing a value.
+5. **Derivation runs one way.** Where a column is calculated from other columns, the derived column can never be more present than its sources: when a source is absent, the derived column is absent. The reverse does not hold. The absence of a derived column, or a narrower applicability of the derived concept, does not lower the feature level of its source columns, and each source column is leveled on its own terms.
 
-```mermaid
-flowchart TD
-    A["A column the group<br/>has decided to add"] --> E{"1 Applicability:<br/>does every operating<br/>model have this concept?"}
-    E -->|"No: some lack it"| CD["Conditional, gated on an<br/>operating model Condition"]
-    E -->|"Yes: every model"| M["Mandatory"]
-    subgraph NUL["Nullability, a separate axis"]
-        direction TB
-        P{"2 Producibility:<br/>is a real value always<br/>available where present?"} -->|"Yes"| NF["Allows nulls = False"]
-        P -->|"No"| NT["Allows nulls = True"]
-    end
-    CD -.-> P
-    M -.-> P
-```
+   **Example:** A cost restated in a second currency is derived from the billing currency cost and is absent whenever that cost is absent. A *data generator* that does not restate omits the derived column, and the source cost keeps its own level.
 
-When applicability is borderline, with the concept present for most models and absent for a few, the companion guideline's test settles it. Until that test exists, such a column takes the Conditional default from the Interim Boundary Rule.
+## Decision Procedure
 
-## Normative Content Defined by the Rubric
+Five steps. Step 3 applies only where Step 2 returns `Conditional`.
 
-The rubric provides guidance for defining the normative content related to feature leveling and column nullability.
+### Step 1: Fix the concept
 
-The rubric helps identify:
+Write down the exact concept the column carries, as its Description and its glossary term define it. Every later step tests that concept, not a broader or narrower one.
 
-* applicable operating model Conditions,
-* feature levels for FOCUS columns,
-* nullability for FOCUS columns.
+### Step 2: Applicability Test — sets the feature level
 
-Feature levels are defined independently of category. Conditional columns are expressed through operating model Conditions rather than category-specific rules such as "Mandatory for cloud" or "Optional for SaaS".
+**Before the test: the Supported Feature floor.** Where the column appears among the Directly Dependent Columns of a Supported Feature, that feature cannot be exercised without it. Such a column is `Mandatory` or `Conditional`, and the test below decides which. `Recommended` and `Optional` are not available to it.
 
-> **Note:** Category-based expectations are informative only and are out of scope for this rubric. They should be addressed separately, potentially in the companion guideline or other guidance material.
+Where a directly dependent column would nonetheless land at `Recommended` or `Optional`, one of the two is wrong: either the level, or the feature's dependency list. Resolve that before the column ships, and record which of the two was changed.
 
-## Applying the Principles: Worked Examples
+**Question:** does this concept exist in every *operating model*?
 
-This section is informative. Here are the two inputs worked through on two columns.
+* **Yes** → `Mandatory`. Proceed to Step 4.
+* **No: at least one *operating model* lacks the concept entirely, so no row in its dataset could ever carry a value** → `Conditional`. Proceed to Step 3.
 
-**RegionId**, in the Cost and Usage dataset:
+Two properties must both hold for `Mandatory`:
 
-* **Applicability.** Some operating models have no customer-visible region. A flat-rate SaaS would have RegionId null on every row. So applicability varies, which makes the column Conditional, gated on the operating model Condition that the model includes regions.
-* **Producibility.** Where the model does include regions, a region is available, though not on every single row. So Allows nulls = True.
+* the concept exists in every *operating model*, and
+* a value can be produced without substituting or deriving something else in its place.
 
-Result: RegionId is Conditional, gated on the model includes regions, Allows nulls = True.
+Together, these mean that no reasonable operating model would have a dataset instance where the column carries no value on any row.
 
-**ContractCommitmentId**, in the Contract Commitment dataset:
+A fallback value does not make a concept universal. The question is whether the column carries the concept itself, or whether it fills a gap for an *operating model* that does not have that concept.
 
-* **Applicability.** Every Contract Commitment dataset has commitments in it to identify, so the concept exists for every model that has this dataset. Mandatory.
-* **Producibility.** An identifier is always available wherever the dataset exists. So Allows nulls = False.
+Where the only way to populate the column for an *operating model* that lacks the concept is to substitute, approximate, or derive another concept in its place, the column is `Conditional`.
 
-Result: ContractCommitmentId is Mandatory, Allows nulls = False. The same Column ID is leveled on its own terms in each dataset that defines it.
+Where the concept exists across operating models but a value has not yet occurred for a particular *data generator*, the column is not `Conditional`. Nullability handles that case.
 
-## Relationship to the Companion Guideline
+Where either the concept test or the value test fails, the column is `Conditional`. The default between the two levels is `Conditional`; a column may move to `Mandatory` in a later version once adoption shows the concept is universal.
 
-This guideline defines the principles for assigning feature levels and nullability. The companion guideline is intended to define the mechanics needed to apply these principles consistently and support conformance validation.
+[Applicability Signals](#applicability-signals) decides the cases where this is not obvious. [Tie-Breakers and Defaults](#tie-breakers-and-defaults) settles the rest.
 
-The following topics should be considered for the companion guideline:
+### Step 3: Identify or propose the *operating model* Condition
 
-* The step-by-step leveling procedure.
-* How a generator's asserted operating model Conditions are recorded.
-* The applicability test, including the matrix and the threshold at which a column moves between Mandatory and Conditional.
-* The disposition of variance that does not map to an operating model Condition.
-* Where the Supported Features write-back required by principle 7 is recorded.
-* The back-test against current columns.
-* Where informative category-based expectations are recorded.
-* The machine-readable check, including:
-  * Reading all relevant requirement surfaces.
-  * Consuming a machine-readable derivation source.
-  * Linking Conditional columns to the Conditions section.
+A `Conditional` level is expressed through one or more *operating model* Conditions. Never through a category of *data generator*, and never through prose in the column description alone.
 
-The principles stand on their own, and a team can adopt them without waiting for the mechanics.
+An *operating model* Condition MUST describe a characteristic of the *operating model*, not a category of *data generator*. Categories such as Cloud, SaaS, PaaS, or data center are not valid Conditions because they describe who the generator is rather than what concepts its operating model includes.
+
+1. **Look for an existing Condition** that marks exactly where the concept exists. Reusing one is preferred over adding a near-duplicate.
+2. **Where none exists, propose one** in the same pull request as the column: Condition ID, Display Name, Description, requirements stating when it evaluates to true and when to false, Version Introduced, and a row in the Condition List with its category.
+3. **Where more than one applies**, decide which shape fits:
+   * **Conjunction** — the column requires two independent characteristics. State both in the presence requirement.
+
+     **Example:** `CostAndUsage MUST include [ResourceType](#datamodel.costandusage.resourcetype) when the *operating model* [includes provisioned resources](#conditions.includesprovisionedresources) and [includes resource type assignment](#conditions.includesresourcetypeassignment).`
+   * **Nesting** — one Condition presupposes another. Express the dependency in the narrower Condition's own requirements rather than repeating it on every column.
+
+     **Example:** `IncludesListUnitPrices` evaluates to true only when `IncludesUnitPricing` is true.
+
+A Condition must remain a verifiable state of the *operating model*. A Condition that can only be evaluated by inspecting the dataset contents is not admissible.
+
+### Step 4: Nullability Test — sets `Allows nulls`
+
+**Question:** where the column is present, is a meaningful value available on every row?
+
+This question starts only after applicability has been decided. It does not revisit whether the concept exists.
+
+Two sub-questions, either of which is enough to set `Allows nulls` = `True`:
+
+1. **Row-level applicability.** Does the concept apply to every row, or only to some? Where it applies only to some, the remaining rows are null.
+
+   **Example:** `CommitmentDiscountStatus` is null on rows that carry no commitment discount.
+2. **Availability.** On the rows where the concept applies, can the *operating model* always produce the value?
+
+Set `Allows nulls` = `False` only when a meaningful value is available on every row where the column is present. Otherwise set `Allows nulls` = `True`.
+
+This step never changes the feature level, and it never licenses inventing a value (Principle 4).
+
+Whether an *operating model* can produce the concept at all is the dataset-wide question and belongs to Step 2. Whether a particular row has a value is the row-level question and belongs to this step.
+
+**Diagnostic: a null rule that names the *operating model*.** A nullability requirement whose condition names a characteristic of the *operating model*, rather than a state of another column in the same row, is not a null rule. Return to Step 2: the characteristic it names is the Condition the column should be gated on, and the level is `Conditional` rather than `Mandatory`.
+
+**Example:** `MUST be null when the operating model does not include regions` is a presence rule written as a null rule. `MUST be null when CommitmentDiscountId is null` is a null rule.
+
+### Step 5: Record the outcome
+
+**Column presence requirement**, in the dataset's normative requirements:
+
+* `Mandatory`:
+
+  ```markdown
+  {DatasetId} MUST include [{ColumnId}](#datamodel.{datasetid}.{columnid}).
+  ```
+
+  **Example:** `CostAndUsage MUST include [BilledCost](#datamodel.costandusage.billedcost).`
+
+* `Conditional`:
+
+  ```markdown
+  {DatasetId} MUST include [{ColumnId}](#datamodel.{datasetid}.{columnid}) when the *operating model* [{condition display name}](#conditions.{conditionid}).
+  ```
+
+  **Example:** `CostAndUsage MUST include [RegionId](#datamodel.costandusage.regionid) when the *operating model* [includes regions](#conditions.includesregions).`
+
+**Content Constraints**, in the column definition: `Feature level` set to the Step 2 result, linked to the Condition where the level is `Conditional`; `Allows nulls` set to the Step 4 result.
+
+**Nullability requirements**, in the column definition, where Step 4 returned `True` for the row-level applicability reason: state when the column is null and when it is not, rather than leaving the null rule implicit.
+
+**Rationale**, where the decision was not obvious: which *operating model* was judged to lack or hold the concept, and why. Until the companion guideline says where this record belongs, it lives with the leveling decision itself, in the pull request or issue.
+
+## Applicability Signals
+
+Five distinctions decide Step 2 where it is not obvious. Each is a question about the concept, not about any one *data generator*.
+
+| Signal | Question | Verdict | Example |
+| :--- | :--- | :--- | :--- |
+| **Substitution** | Is the only way to fill the column for the *operating models* that lack the concept to substitute or derive some other value? | Substitution needed → `Conditional`. The concept is not universal. | — |
+| **Rule or patch** | Where the column is defined in terms of another column, does that definition apply in every *operating model*, or only in those lacking the concept? | Applies to all → `Mandatory`. Supplied only for those lacking the concept → `Conditional`. Having a fallback settles nothing by itself; which of the two kinds it is settles it. | EffectiveCost is defined against BilledCost for every *operating model*, equal to it for ordinary charges and computed from it where commitments amortize. It never stands in for a concept the *operating model* lacks, so it is a rule, not a patch. |
+| **Absent or not yet occurred** | Is the concept missing from the *operating model*, or present but not yet instantiated by a given *data generator*? | Concept missing → `Conditional`. Concept present, instance not yet produced → `Mandatory`, with Step 4 setting nullability. | Every *operating model* has the concept of a correction to a closed billing period, so a *data generator* that has never issued one still publishes ChargeClass, null on its rows. |
+| **Presence gate or nullability gate** | Does the gate remove the column from the dataset entirely, or only leave some rows without a value? | Whole column absent for some *operating model* → presence gate, so `Conditional`. Values on some rows in every *operating model* → nullability, so `Mandatory` with Step 4 setting `Allows nulls` = `True`, however the gate is worded. | An *operating model* with no regions has no row that could carry RegionId. Every *operating model* has rows that carry a ChargeClass value. |
+| **Variance gate** | Does the Condition gate on two values differing, or on more than one value occurring, rather than on whether the concept exists? | The concept is universal, so applicability alone returns `Mandatory`. The gate is admissible, making the column `Conditional`, only where the column's value is fully determined by another column in the same dataset wherever the Condition is false. Where the value is not recoverable that way, a constant is still a truthful value and the column stays `Mandatory`. | An *operating model* that prices and bills in one currency has a pricing currency equal to its billing currency, so gating on the difference is admissible: the value is recoverable from the billing currency column. |
+
+## Tie-Breakers and Defaults
+
+* **The default is `Conditional`.** Where Step 2 does not clearly return `Mandatory`, the column is `Conditional`.
+
+* **Anything at the boundary is `Conditional`** until the companion guideline calibrates the boundary against real *data generator* data.
+
+* **Calling a model an exception requires an explicit decision.** A single unusual *operating model* that lacks the concept may be treated as an exception only when the working group records:
+  * which *operating model* is being treated as exceptional,
+  * why the concept is still considered universal,
+  * why the exception does not represent a broader pattern.
+
+  Until the companion guideline defines where this record belongs, it lives with the leveling decision itself, in the pull request or issue.
+
+* **A constant value is a truthful value.** A column whose value is present and correct for every *operating model* stays `Mandatory` even where it repeats on every row.
+
+  **Example:** `ServiceProviderName` repeats on every row of a single-provider dataset and is `Mandatory`.
+
+* **`Conditional` does not mean optional.** Where the Condition holds, the column is fully mandatory. What varies is which columns a dataset contains, not how strongly they are required.
+
+## Worked Example
+
+> **Note:** This section is informative.
+
+**RegionId, in the Cost and Usage dataset:**
+
+* **Step 1, Concept.** The isolated geographic area a *resource* or *service* is deployed in.
+* **Step 2, Applicability.** An *operating model* without customer-visible regions has no row that could carry a value. Presence gate, so `Conditional`.
+* **Step 3, Condition.** [Includes Regions](#conditions.includesregions) exists and marks exactly where the concept exists. No new Condition needed.
+* **Step 4, Nullability.** Where the *operating model* includes regions, a region is available on many rows but not all, so `Allows nulls` = `True`.
+* **Step 5, Record.** `CostAndUsage MUST include [RegionId](#datamodel.costandusage.regionid) when the *operating model* [includes regions](#conditions.includesregions).` Content Constraints: `Feature level` = `Conditional`, linked to Includes Regions; `Allows nulls` = `True`.
+
+The same Column ID is leveled on its own terms in each dataset that defines it.
+
+## Deferred Topics
+
+| Topic | Position of this revision |
+| :--- | :--- |
+| Criteria for `Recommended` and `Optional` | Not settled here. This revision takes no position, does not change what those levels mean, and does not change the level of any column that currently holds one. |
+| Whether a proposed column belongs in the schema | Not part of this revision. Two tests would answer it: whether the data is needed rather than merely useful, and whether a column calculable from other columns earns a place of its own. |
+| What a Supported Feature does about a column that can be absent | Belongs to the Supported Features work. The obligation is prospective: adopting this guideline does not reopen levels of existing columns. What a feature does once a column it depends on is `Conditional`, and therefore absent from some *FOCUS datasets*, is not decided here. Existing Conditional columns that are already dependencies of Supported Features are handled through the Supported Features work. |
+| Applying these criteria to published columns | A separate decision. |
+| The threshold at which a column moves between `Mandatory` and `Conditional` | Companion guideline. Until then, [Tie-Breakers and Defaults](#tie-breakers-and-defaults) applies. |
+| Where the leveling rationale is recorded | Companion guideline. Until then, the pull request or issue. |
+| Informative category-based expectations | Out of scope here, and never expressed as a feature level. |
+
+The principles and the procedure stand on their own, and can be adopted without waiting for the companion guideline.
