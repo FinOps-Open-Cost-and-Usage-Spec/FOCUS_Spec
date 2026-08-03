@@ -13,6 +13,7 @@ ContractCommitmentDurationType MUST adhere to the following requirements:
 * ContractCommitmentDurationType MUST NOT be null.
 * ContractCommitmentDurationType SHOULD be expressed with a quantity and time unit, where quantity is a positive integer, and time-unit is a standardized unit of time, either singular or plural (e.g., "1 Day", "1 Year", "3 Months", "3 Years").
 * ContractCommitmentDurationType SHOULD present the unit of time as one of the allowed values.
+* ContractCommitmentDurationType MUST use the largest allowed unit of time that expresses the purchased term as a whole number (e.g., "1 Year" rather than "12 Months", "1 Week" rather than "7 Days").
 * ContractCommitmentDurationType SHOULD correspond to the standard duration of the purchased offering (e.g., "1 Year", "3 Years") rather than a precise calculation of days or hours.
 * ContractCommitmentDurationType MAY differ from the actual duration calculated between [ContractCommitmentPeriodStart](#datamodel.contractcommitment.contractcommitmentperiodstart) and [ContractCommitmentPeriodEnd](#datamodel.contractcommitment.contractcommitmentperiodend) (e.g., if a 3-year commitment is exchanged in its final month, the resulting record may have a short lifespan but retains a value of "3 Years").
 
@@ -43,6 +44,10 @@ A given Contract Commitment Duration Type value follows a structured format of "
 
 * [Numeric Value]: A positive integer.
 * [Unit]: A standardized unit of time, singular or plural (e.g., Hour, Year, Years).
+
+A single purchased term can be written more than one way in this format. A one-year term could be expressed as "1 Year" or "12 Months", and a one-week term as "1 Week" or "7 Days". Contract Commitment Duration Type resolves this by selecting the largest allowed unit that still expresses the term as a whole number, so a one-year term is always "1 Year" and a one-week term is always "1 Week". Terms that no larger unit divides evenly keep their natural form, so a four-month term remains "4 Months" and a ten-day term remains "10 Days".
+
+The conversions that trigger this selection are the exact ones between adjacent units: 60 minutes to an hour, 24 hours to a day, 7 days to a week, 12 months to a year, and 4 quarters to a year. Units that do not convert exactly are left alone. A year is not always 365 days and a month is not a fixed number of days, so "365 Days" is not treated as a restatement of a one-year term; the recommendation to reflect the standard duration of the purchased offering covers that case instead.
 
 ## Column ID
 
