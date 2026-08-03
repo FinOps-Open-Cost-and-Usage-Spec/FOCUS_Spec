@@ -1,23 +1,23 @@
-# Recommendation Created
+# Recommendation Create Date
 
-Recommendation Created is the timestamp when the recommendation was generated. This timestamp facilitates analysis of how recommendations and their estimated savings change over time.
+Recommendation Create Date is the timestamp when the recommendation was generated. This timestamp facilitates analysis of how recommendations and their estimated savings change over time.
 
 ## Requirements
 
-RecommendationCreated MUST adhere to the following requirements:
+RecommendationCreateDate MUST adhere to the following requirements:
 
-* RecommendationCreated MUST be of type Date/Time.
-* RecommendationCreated MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.
-* RecommendationCreated MUST NOT be null.
-* RecommendationCreated MUST represent the moment in time the recommendation was generated.
+* RecommendationCreateDate MUST be of type Date/Time.
+* RecommendationCreateDate MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.
+* RecommendationCreateDate MUST NOT be null.
+* RecommendationCreateDate MUST represent the moment in time the recommendation was generated.
 
 ## Column ID
 
-RecommendationCreated
+RecommendationCreateDate
 
 ## Display Name
 
-Recommendation Created
+Recommendation Create Date
 
 ## Description
 
