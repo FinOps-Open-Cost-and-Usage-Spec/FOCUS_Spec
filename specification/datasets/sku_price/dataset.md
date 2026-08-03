@@ -14,6 +14,8 @@ The columns are presented in alphabetical order.
 | ----------------------------------------------------------------------------------- | ----------- | -------------------------------------------------------------- | ------------ | --------- |
 | [Charge Category](#datasets.skuprice.chargecategory)                              | Dimension   | Mandatory   | False        | String    |
 | [Contract ID](#datasets.skuprice.contractid)                                        | Dimension   | [Conditional](#conditions.includescontractcommitments)         | True         | String    |
+| [Contracted Unit Price](#datasets.skuprice.contractedunitprice)                     | Metric      | [Conditional](#conditions.includescontractcommitments)         | True         | Decimal   |
+| [List Unit Price](#datasets.skuprice.listunitprice)                                 | Metric      | Mandatory                                                      | True         | Decimal   |
 | [Pricing Currency](#datasets.skuprice.pricingcurrency)                              | Dimension   | Mandatory                                                      | False        | String    |
 | [Pricing Currency Category](#datasets.skuprice.pricingcurrencycategory)                            | Dimension   | Mandatory                                                      | False        | String    |
 | [Pricing Region ID](#datasets.skuprice.pricingregionid)                             | Dimension   | [Conditional](#conditions.includesregions)                     | True        | String    |
@@ -34,8 +36,6 @@ The columns are presented in alphabetical order.
 | [SKU Price ID](#datasets.skuprice.skupriceid)                                       | Dimension   | Mandatory                                                      | False        | String    |
 | [SKU Price Last Updated](#datasets.skuprice.skupricelastupdated)                    | Dimension   | Mandatory                                                      | False        | Date/Time |
 | [SKU Price Lifecycle Status](#datasets.skuprice.skupricelifecyclestatus)            | Dimension   | Mandatory                                                      | False        | String    |
-| [Unit Price](#datasets.skuprice.unitprice)                                          | Metric      | Mandatory                                                      | False        | Decimal   |
-| [Unit Price Category](#datasets.skuprice.unitpricecategory)                         | Dimension   | Mandatory                                                      | False        | String    |
 
 ## Relationships<!--SkipTOC-->
 
@@ -53,6 +53,8 @@ SkuPrice MUST adhere to the following requirements:
 * SkuPrice column presence MUST adhere to the following requirements:
   * SkuPrice MUST include [ChargeCategory](#datasets.skuprice.chargecategory).
   * SkuPrice MUST include [ContractId](#datasets.skuprice.contractid) when the *operating model* [includes contract commitments](#conditions.includescontractcommitments).
+  * SkuPrice MUST include [ContractedUnitPrice](#datasets.skuprice.contractedunitprice) when the *operating model* [includes contract commitments](#conditions.includescontractcommitments).
+  * SkuPrice MUST include [ListUnitPrice](#datasets.skuprice.listunitprice).
   * SkuPrice MUST include [PricingCurrency](#datasets.skuprice.pricingcurrency).
   * SkuPrice MUST include [PricingCurrencyCategory](#datasets.skuprice.pricingcurrencycategory).
   * SkuPrice MUST include [PricingRegionId](#datasets.skuprice.pricingregionid) when the *operating model* [includes regions](#conditions.includesregions).
@@ -73,14 +75,12 @@ SkuPrice MUST adhere to the following requirements:
   * SkuPrice MUST include [SkuPriceId](#datasets.skuprice.skupriceid).
   * SkuPrice MUST include [SkuPriceLastUpdated](#datasets.skuprice.skupricelastupdated).
   * SkuPrice MUST include [SkuPriceLifecycleStatus](#datasets.skuprice.skupricelifecyclestatus).
-  * SkuPrice MUST include [UnitPrice](#datasets.skuprice.unitprice).
-  * SkuPrice MUST include [UnitPriceCategory](#datasets.skuprice.unitpricecategory).
   * SkuPrice SHOULD include [*custom columns*](#glossary:custom-column) needed to identify specific rate card routing logic when [*FOCUS columns*](#glossary:FOCUS-column) are not sufficient.
 * SkuPrice MUST conform to [DatasetCompleteness](#attributes.datasetcompleteness) requirements.
 * SkuPrice MUST conform to [DatasetConfiguration](#attributes.datasetconfiguration) requirements.
-* SkuPrice MUST maintain row uniqueness across the composite key of ServiceProviderName, SkuPriceId, ContractId, QuantityTierMinimum, SkuPriceEffectiveStart, PricingCurrency, and UnitPriceCategory.
+* SkuPrice MUST maintain row uniqueness across the composite key of ServiceProviderName, SkuPriceId, ContractId, QuantityTierMinimum, SkuPriceEffectiveStart, and PricingCurrency.
 * SkuPrice MUST treat two records with a null value in the same composite-key member as equal in that member when evaluating row uniqueness.
-* SkuPrice MUST NOT contain records whose validity periods, defined by SkuPriceEffectiveStart and SkuPriceEffectiveEnd, overlap for the same combination of ServiceProviderName, SkuPriceId, ContractId, QuantityTierMinimum, PricingCurrency, and UnitPriceCategory.
+* SkuPrice MUST NOT contain records whose validity periods, defined by SkuPriceEffectiveStart and SkuPriceEffectiveEnd, overlap for the same combination of ServiceProviderName, SkuPriceId, ContractId, QuantityTierMinimum, and PricingCurrency.
 * SkuPrice MUST contain at least one record for every [SkuPriceId](#datasets.skuprice.skupriceid) referenced in the [CostAndUsage](#datasets.costandusage) dataset.
 * SkuPrice *FOCUS columns* MUST conform to [FocusColumnHandling](#attributes.focuscolumnhandling) requirements.
 * SkuPrice *FOCUS columns* MUST conform to [NullHandling](#attributes.nullhandling) requirements.

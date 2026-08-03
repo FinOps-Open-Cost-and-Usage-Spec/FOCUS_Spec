@@ -1,5 +1,7 @@
 !INCLUDE "chargecategory.md",1
 !INCLUDE "contractid.md",1
+!INCLUDE "contractedunitprice.md",1
+!INCLUDE "listunitprice.md",1
 !INCLUDE "pricingcurrency.md",1
 !INCLUDE "pricingcurrencycategory.md",1
 !INCLUDE "pricingregionid.md",1
@@ -20,5 +22,3 @@
 !INCLUDE "skupriceid.md",1
 !INCLUDE "skupricelastupdated.md",1
 !INCLUDE "skupricelifecyclestatus.md",1
-!INCLUDE "unitprice.md",1
-!INCLUDE "unitpricecategory.md",1
