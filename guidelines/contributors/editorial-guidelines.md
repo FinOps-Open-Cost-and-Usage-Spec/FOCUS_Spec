@@ -164,6 +164,8 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
 
 * In the **Glossary** file, entity references MUST be linked only on their first occurrence within each glossary entry, rather than once per source markdown file.
 
+* In **Requirements** sections, FOCUS Condition references MAY be linked in every normative requirement bullet, even when the Condition was linked earlier in the source markdown file. This exception allows each normative requirement to remain independently navigable and applies only to references to FOCUS Conditions.
+
 ### Entity References
 
 * **Entity ID References:** Formatting and usage conventions for normative requirements are defined in the Normative Requirements Guidelines.

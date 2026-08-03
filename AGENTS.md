@@ -132,6 +132,7 @@ AI agents generating or reviewing content MUST act as strict technical editors e
   * Functional links using different anchor text are exempt.
   * Content Constraints sections always link entity references.
   * Glossary entries evaluate first occurrence independently for each glossary entry.
+  * FOCUS Condition references in normative requirement bullets MAY be linked on every occurrence, even when the Condition was linked earlier in the source file. This keeps each requirement independently navigable.
 * **Lists:** All unordered lists MUST use asterisks (`*`), never dashes (`-`) or plus signs (`+`). Nested bullet points MUST use exactly two spaces per level.
 * **Notes:** Important notes must use the blockquote format (`> **Note:**`).
 * **Notes versus Exceptions:** Use Notes only for informative or explanatory material. Normative conditions and exceptions MUST be expressed as requirements rather than embedded inside Notes.
