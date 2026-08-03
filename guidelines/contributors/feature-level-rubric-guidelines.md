@@ -25,7 +25,7 @@ This is the principles part. The mechanics (the step-by-step procedure, the data
 * [The Interim Boundary Rule](#the-interim-boundary-rule)
 * [The Two Decision Inputs](#the-two-decision-inputs)
 * [Normative Content Defined by the Rubric](#normative-content-defined-by-the-rubric)
-* [Applying the Principles: A Worked Example](#applying-the-principles-a-worked-example)
+* [Applying the Principles: Worked Examples](#applying-the-principles-worked-examples)
 * [Relationship to the Companion Guideline](#relationship-to-the-companion-guideline)
 
 ## Scope of This Revision
@@ -40,6 +40,8 @@ Two questions sit outside this revision and wait for a later one:
 * **Whether a proposed column belongs in the schema.** Two tests would answer that: whether the data is genuinely needed rather than merely useful, and whether a column that can already be calculated from other columns earns a place of its own. Neither is part of this revision. Nor is the related question of where to draw the line between a column whose absence breaks a use case and one that only sharpens a result another column already delivers.
 
 One further question sits alongside these rather than inside them. Principle 7 requires a Conditional column's dependent Supported Features to account for its absence, but what they should do about it, whether a substitute, a narrower stated population, or a per-feature requirement, is not settled here. That choice belongs with the Supported Features work and is recorded in the design notes.
+
+That obligation is prospective. Adopting this guideline does not reopen the levels the specification already ships, and many columns already leveled Conditional are directly dependent columns of a Supported Feature that does not yet account for their absence. Closing that gap is separate work that travels with the Supported Features decision rather than with this guideline. The design notes record its current size.
 
 Two things drove the narrowing.
 
@@ -59,7 +61,7 @@ These are also the two criteria that currently meet this guideline's own bar, wh
 | Feature level | Mandatory, Conditional, Recommended, Optional | Whether the column is present, and when |
 | Nullability | Allows nulls = True / False | Whether the value may be null when present |
 
-The four levels, and the `MUST`, `SHOULD`, and `MAY` obligations attached to them, are already defined in the [FOCUS Feature Level](../../specification/overview.md#focus-feature-level) section. This guideline changes how a level gets chosen, not what a level means. Recommended and Optional appear in the table because the specification defines them and columns still hold them. They stay as they are: writing criteria for them is deferred work, not work this revision has done.
+Each of the four levels, and the `MUST`, `SHOULD`, or `MAY` wording that expresses it, is defined in the [FOCUS Feature Level](../../specification/overview.md#focus-feature-level) section. This guideline changes how a level gets chosen, not what a level means. Recommended and Optional appear in the table because the specification defines them and columns still hold them. They stay as they are: writing criteria for them is deferred work, not work this revision has done.
 
 ## Core Principles
 
@@ -69,7 +71,7 @@ The four levels, and the `MUST`, `SHOULD`, and `MAY` obligations attached to the
 4. **Mandatory has to be earned.** A column is Mandatory only when two things hold: its concept exists for every operating model, and a value can be produced naturally. Together those mean no reasonable generator would publish the column null on every single row. A column that a reasonable operating model would leave null throughout is Conditional instead, gated on the operating model Condition where the concept lives. The default between them is Conditional. A column can move up to Mandatory later, once adoption shows the concept is universal. *(BilledCost clears the bar. RegionId does not: a flat-rate SaaS has no region, so it is Conditional.)*
 5. **Nulls are honest; invented values are not. No level may rest on one.** When a value is not meaningful, or is not available, it is null. FOCUS never asks a generator to invent a placeholder, and any level that forces one has to change. Fabrication means inventing a value for a concept the operating model does not have. Producing a value for a concept the model does have is not fabrication. Judge availability against the operating model, not against whatever the generator's billing export happens to contain today. A model that uses unit pricing has SKUs, so producing SkuId is identifying them rather than inventing them. A value that would be genuinely null for a whole class of models makes the column Conditional, not Mandatory with those models inventing a value. A value a generator can report truthfully still counts as truthful, even when it is a single value that holds across its entire dataset. And where the model leaves only one correct answer (BillingAccountType), populating it is a matter of conformance.
 6. **Derivation runs one way.** When a column is calculated from other columns, that calculation has a direction: sources go in, the derived column comes out. A derived column can never be more present than its sources, so when a source is absent the derived column is absent too. The reverse never holds. A derived column that is absent, or that applies more narrowly, does not drag its sources down, and each source is leveled on its own. That is why a source can be Mandatory while a column derived from it is Conditional, when the derived concept applies to fewer models. *(A cost restated in a second currency is derived from the billing-currency cost. It is absent whenever that cost is absent. But a generator that does not restate omits it, and the source cost stands on its own.)*
-7. **A Conditional level is not complete until the features that depend on the column account for its absence.** Making a column Conditional means it can be missing from a dataset instance, so every Supported Feature that lists it as a directly dependent column has to still hold when it is not there. Absent is not null: what such a feature needs is a rule for combining dataset instances, not per-row null handling. What that rule should be, whether a substitute, a narrower stated population, or naming the column as required for that feature, is the feature's decision and not this guideline's. Until the companion says where the record belongs, it lives with the leveling decision itself, in the pull request or issue. *(Cost Comparison lists ContractedCost among its directly dependent columns. Leveling ContractedCost Conditional obliges that feature to say what it does for a generator whose model has no contracted pricing.)*
+7. **A Conditional level is not complete until the features that depend on the column account for its absence.** Making a column Conditional means it can be missing from a dataset instance, so every Supported Feature that lists it as a directly dependent column has to still hold when it is not there. Absent is not null: what such a feature needs is a rule for combining dataset instances, not per-row null handling. What that rule should be, whether a substitute, a narrower stated population, or naming the column as required for that feature, is the feature's decision and not this guideline's. The obligation attaches to a leveling decision made under this rubric, and does not on its own reopen a level the specification already ships. Until the companion says where the record belongs, it lives with the leveling decision itself, in the pull request or issue. *(Cost Comparison lists ContractedCost among its directly dependent columns. Leveling ContractedCost Conditional obliges that feature to say what it does for a generator whose model has no contracted pricing.)*
 
 ## The Interim Boundary Rule
 
@@ -119,14 +121,14 @@ The rubric provides guidance for defining the normative content related to featu
 The rubric helps identify:
 
 * applicable operating model Conditions,
-* Feature Levels for FOCUS columns,
-* Nullability for FOCUS columns.
+* feature levels for FOCUS columns,
+* nullability for FOCUS columns.
 
-Feature Levels are defined independently of category. Conditional columns are expressed through operating model Conditions rather than category-specific rules such as "Mandatory for cloud" or "Optional for SaaS".
+Feature levels are defined independently of category. Conditional columns are expressed through operating model Conditions rather than category-specific rules such as "Mandatory for cloud" or "Optional for SaaS".
 
 > **Note:** Category-based expectations are informative only and are out of scope for this rubric. They should be addressed separately, potentially in the companion guideline or other guidance material.
 
-## Applying the Principles: A Worked Example
+## Applying the Principles: Worked Examples
 
 This section is informative. Here are the two inputs worked through on two columns.
 
