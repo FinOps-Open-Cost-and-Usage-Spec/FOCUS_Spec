@@ -1,30 +1,11 @@
 <#
-Applies FOCUS repository naming conventions (guidelines/contributors/repository-naming-conventions.md)
-to files and directories, updates known references, and validates the result.
-
-Throwaway migration tool for issue #1868 - not intended to live long-term.
-
-Rules encoded:
-  - FOCUS entity files/dirs (matched via requirements_model EntityId) -> match entity id, no separator
-  - Python (.py) files -> left untouched, already snake_case by convention
-  - requirements_model rule JSON files -> match entity id (handled by entity map)
-  - Tool-owned config (.github, .gemini, etc.) -> left untouched
-  - Everything else (.md, .mdpp, .json, .yaml, .css, .csv, images) -> kebab-case
-
-Directories are renamed shallowest-first in one pass, then the tree is
-re-walked fresh for files, since a directory rename changes every path
-beneath it - renaming files first (or deepest-dir-first) corrupts paths
-mid-run.
-
-Rename pairs are tracked explicitly as they're performed, rather than
-re-derived from `git status` afterwards - git's rename detection is
-content-similarity based and mis-pairs same-named files with similar
-content across sibling directories (e.g. scenario CSVs), which corrupts
-reference updates if trusted as ground truth.
+Applies guidelines/contributors/repository-naming-conventions.md to files
+and directories via git mv, updates known references, and validates the
+result. Throwaway migration tool for issue #1868.
 
 Usage:
-  ./Rename-RepoToConvention.ps1 -Phase 1
-  ./Rename-RepoToConvention.ps1 -Phase all -SkipValidation
+  ./Set-RepoNamingConventions.ps1 -Phase 1
+  ./Set-RepoNamingConventions.ps1 -Phase all -SkipValidation
 #>
 
 [CmdletBinding()]
@@ -39,17 +20,15 @@ $ErrorActionPreference = 'Stop'
 $RepoRoot = (git rev-parse --show-toplevel).Trim()
 Set-Location $RepoRoot
 
-# --- Phase manifest -----------------------------------------------------
-# Paths (relative to repo root) in scope per phase. 'all' unions every phase.
 # Phase 1: no open-PR conflicts, safe to run immediately.
 # Phase 2: gated on PRs touching these paths merging first.
 # Phase 3: gated on the 1.5 Consistency Review starting.
-# cleanup: leftover top-level / misc paths, run last.
+# cleanup: everything else needing a rename outside specification/.
 $PhaseManifest = @{
     '1'       = @('specification/attributes', 'specification/appendix', 'specification/supported_features', 'specification/data')
     '2'       = @('specification/datasets', 'specification/metadata', 'specification/requirements_model')
     '3'       = @('specification/schemas', 'specification/conditions', 'specification/styles', 'specification/images')
-    'cleanup' = @('guidelines', 'supporting_content')
+    'cleanup' = @('specification/versions', 'guidelines', 'supporting_content', 'custom_linter_rules')
 }
 
 function Get-ScopedRoots {
@@ -60,9 +39,7 @@ function Get-ScopedRoots {
     return $PhaseManifest[$Phase] | Where-Object { Test-Path $_ }
 }
 
-# --- Entity map -----------------------------------------------------------
-# Ground truth for "this file/dir defines a FOCUS entity": EntityId fields
-# in requirements_model rule JSON. Lowercased EntityId is the target name.
+# Ground truth for FOCUS entity names: EntityId fields in requirements_model rule JSON.
 function Get-EntityMap {
     $map = @{}
     $ruleFiles = Get-ChildItem -Path 'specification/requirements_model' -Recurse -Filter '*.json' -File -ErrorAction SilentlyContinue
@@ -79,11 +56,9 @@ function Get-EntityMap {
 
 function ConvertTo-KebabCase {
     param([string]$Name)
-    # snake_case / camelCase / space separated -> kebab-case, extension preserved
     $ext = [System.IO.Path]::GetExtension($Name)
     $base = [System.IO.Path]::GetFileNameWithoutExtension($Name)
-    # case-sensitive replace: PowerShell -replace is case-insensitive by default,
-    # which would match [A-Z] against lowercase letters too and hyphenate everything
+    # -creplace: case-sensitive, else [A-Z] also matches lowercase and hyphenates everything
     $kebab = $base -creplace '([a-z0-9])([A-Z])', '$1-$2'
     $kebab = $kebab -replace '_', '-' -replace ' ', '-'
     $kebab = $kebab -replace '-+', '-'
@@ -100,10 +75,7 @@ function Get-TargetName {
     return ConvertTo-KebabCase $Name
 }
 
-# --- Directory rename (shallowest first) -----------------------------------------------------
-# Returns @{ Roots = <updated root paths>; Renames = <ordered old->new pairs> }.
-# Roots are returned because a root itself (e.g. supported_features) may be
-# renamed, and callers need the new location to walk for files.
+# Renames directories shallowest-first; returns updated roots (a root itself may get renamed) + old->new pairs.
 function Rename-Directories {
     param([string[]]$Roots, [hashtable]$EntityMap)
 
@@ -111,11 +83,7 @@ function Rename-Directories {
     $currentRoots = $Roots
 
     do {
-        # Roots are rename candidates too (e.g. specification/supported_features
-        # itself), not just their contents, so seed them into the same walk.
-        # Symlinks (e.g. requirements_model/releases/latest -> 1.5) are
-        # excluded: -Recurse follows them, which double-visits the target
-        # subtree under two different logical paths and corrupts git mv.
+        # Symlinks (e.g. releases/latest) are excluded: -Recurse follows them and double-visits the target.
         $dirs = foreach ($root in $currentRoots) {
             if (Test-Path $root) {
                 Get-Item -Path $root
@@ -127,31 +95,28 @@ function Rename-Directories {
 
         $didRename = $false
         foreach ($dir in $dirs) {
-            if (-not (Test-Path $dir.FullName)) { continue }  # renamed already via an ancestor
+            if (-not (Test-Path $dir.FullName)) { continue }
             $target = Get-TargetName -Name $dir.Name -Extension '' -EntityMap $EntityMap
             if ($target -ne $dir.Name) {
                 $relPath = (Resolve-Path -Relative $dir.FullName) -replace '^\.[/\\]', ''
-                $newPath = Join-Path (Split-Path $relPath -Parent) $target
+                $parent = Split-Path $relPath -Parent
+                $newPath = if ($parent) { Join-Path $parent $target } else { $target }
                 Write-Host "  $relPath -> $newPath"
                 git mv -- $relPath $newPath
                 $renames[$relPath] = $newPath
                 $didRename = $true
-
-                # If a root itself just got renamed, update it in place so the
-                # next iteration (and the final return) reflects the new path.
-                # Resolve-Path prefixes relative paths with "./", so both sides
-                # must be normalized before comparing or this silently no-ops.
+                # Resolve-Path prefixes "./"; normalize both sides or this silently no-ops.
                 $currentRoots = $currentRoots | ForEach-Object {
                     if (($_ -replace '^\.[/\\]', '') -eq $relPath) { $newPath } else { $_ }
                 }
             }
         }
-    } while ($didRename)  # re-walk: renaming a shallow dir changes its children's discoverable paths
+    } while ($didRename)  # re-walk: a rename changes its children's discoverable paths
 
     return @{ Roots = $currentRoots; Renames = $renames }
 }
 
-# --- File rename (fresh walk, after all directory renames) -----------------------------------------------------
+# Fresh file walk after all directory renames complete.
 function Rename-Files {
     param([string[]]$Roots, [hashtable]$EntityMap)
 
@@ -162,13 +127,14 @@ function Rename-Files {
 
     foreach ($file in $files) {
         $ext = $file.Extension.ToLower()
-        if ($ext -eq '.py') { continue }  # snake_case already, leave alone
+        if ($ext -eq '.py') { continue }  # already snake_case
         if ($file.FullName -match '[\\/]\.github[\\/]|[\\/]\.gemini[\\/]|[\\/]\.claude[\\/]|[\\/]\.cursor[\\/]') { continue }  # tool-owned config
 
         $target = Get-TargetName -Name $file.Name -Extension $ext -EntityMap $EntityMap
         if ($target -ne $file.Name) {
             $relPath = Resolve-Path -Relative $file.FullName
-            $newPath = Join-Path (Split-Path $relPath -Parent) $target
+            $parent = Split-Path $relPath -Parent
+            $newPath = if ($parent) { Join-Path $parent $target } else { $target }
             Write-Host "  $relPath -> $newPath"
             git mv -- $relPath $newPath
             $renames[$relPath] = $newPath
@@ -178,12 +144,9 @@ function Rename-Files {
     return $renames
 }
 
-# --- Reference updaters -----------------------------------------------------
 function Update-References {
     param([System.Collections.Specialized.OrderedDictionary]$Renames)
 
-    # Text files likely to reference paths that just moved: spec markdown/mdpp,
-    # the Makefile, and the requirements_model Python test/build sources.
     $searchFiles = Get-ChildItem -Path 'specification', 'guidelines' -Recurse -File -ErrorAction SilentlyContinue |
         Where-Object { $_.Extension -in '.md', '.mdpp', '.py' -or $_.Name -eq 'Makefile' }
 
@@ -194,17 +157,9 @@ function Update-References {
         $newName = Split-Path $newRel -Leaf
         if ($oldName -eq $newName) { continue }
 
-        # References use relative paths of varying depth (bare basename in a
-        # sibling !INCLUDE, "dir/name" from one level up, deeper paths from
-        # further away), so the old full path can't be matched as one fixed
-        # string. Instead try progressively shorter trailing-path suffixes of
-        # oldRel (full path first, down to bare basename) against each file's
-        # content. Every variant's START must sit at a real token boundary
-        # (quote/paren/whitespace/start-of-string) - never mid-path, right
-        # after an unrelated "/" - otherwise a short suffix like
-        # "datasets/contract_commitment" would false-match inside a
-        # different, out-of-scope tree that happens to share that tail
-        # (e.g. schemas/datasets/contract_commitment).
+        # Try trailing-path suffixes of oldRel, longest first, so a short suffix
+        # (e.g. "datasets/contract_commitment") can't false-match a different,
+        # out-of-scope tree sharing that tail (e.g. schemas/datasets/contract_commitment).
         $oldSegments = $oldRel -split '[/\\]'
         $newSegments = $newRel -split '[/\\]'
         $variants = for ($i = 0; $i -lt $oldSegments.Count; $i++) {
@@ -213,15 +168,8 @@ function Update-References {
                 New = ($newSegments[$i..($newSegments.Count - 1)] -join '/')
             }
         }
-        # Longest (most specific) suffix first.
         $variants = $variants | Sort-Object { $_.Old.Length } -Descending
-        # A variant's start must be a genuine token boundary: quote, paren,
-        # whitespace, or start-of-string/line - NOT a "/" (which would mean
-        # the variant is a mid-path tail of some longer, possibly unrelated,
-        # path). Only the single longest (full-relative-path) variant is
-        # allowed to start right after a "/" mid-token, since that case is
-        # covered separately by the token-start anchor already matching its
-        # own leading segment.
+        # Must start at a real token boundary (quote/paren/whitespace/start), never mid-path after an unrelated "/".
         $tokenStartBoundary = '(?<=["''(\s]|^)'
 
         foreach ($file in $searchFiles) {
@@ -229,13 +177,8 @@ function Update-References {
             $content = Get-Content $file.FullName -Raw -ErrorAction SilentlyContinue
             if ($null -eq $content) { continue }
 
-            # Python source reuses directory/file basenames as plain
-            # identifiers constantly (e.g. a "model_rules" dict variable,
-            # unrelated to the model_rules/ directory), so a bare word-boundary
-            # match is not enough to prove it's a path reference. Restrict .py
-            # files to rewriting only inside quoted string literals, which is
-            # how this codebase spells path segments
-            # (os.path.join(x, 'model_rules'), 'json_schemas/json_schemas.json').
+            # .py identifiers reuse path basenames constantly (e.g. a model_rules dict var);
+            # restrict to whole quoted-string matches so bare identifiers are never touched.
             $requireQuoted = $file.Extension -eq '.py'
 
             $updated = $content
@@ -245,39 +188,23 @@ function Update-References {
                 $endBoundary = '(?![\w.-])'
 
                 if ($requireQuoted) {
-                    # Match ONLY a whole quoted string literal that is
-                    # exactly the old name/path, bounded by matching quotes on
-                    # both sides ('model_rules' or "model_rules.json"). This
-                    # deliberately does not try to reach into a compound
-                    # string like 'json_schemas/json_schemas.json' where only
-                    # part of it is the old name - a regex can't reliably tell
-                    # "inside an open string" from "after a closed string"
-                    # (e.g. model['ModelRules'] = model_rules has a same-line
-                    # closed 'ModelRules' string immediately before the bare
-                    # identifier, which a prefix-scanning approach mistakes
-                    # for still being inside quotes). Being conservative here
-                    # means a same-file compound path may need a manual
-                    # follow-up fix; it will surface via the validation step.
+                    # Whole-string match only; won't reach into a compound string like
+                    # 'json_schemas/json_schemas.json' - regex can't reliably tell "inside an
+                    # open string" from "after a closed string" earlier on the same line.
                     $pattern = "(?<=['""])$escOld(?=['""])"
                     $patternBackslash = "(?<=['""])$escOldBackslash(?=['""])"
-                    $replacement = $variant.New
-                    $replacementBackslash = $variant.New -replace '/', '\'
                 }
                 else {
-                    # The match must start at a genuine token boundary
-                    # (quote/paren/whitespace/start-of-string), never mid-path
-                    # right after an unrelated "/" - see $tokenStartBoundary
-                    # comment above for why.
                     $pattern = "$tokenStartBoundary$escOld$endBoundary"
                     $patternBackslash = "$tokenStartBoundary$escOldBackslash$endBoundary"
-                    $replacement = $variant.New
-                    $replacementBackslash = $variant.New -replace '/', '\'
                 }
+                $replacement = $variant.New
+                $replacementBackslash = $variant.New -replace '/', '\'
 
                 if ($updated -cmatch $pattern -or $updated -cmatch $patternBackslash) {
                     $updated = $updated -creplace $pattern, $replacement
                     $updated = $updated -creplace $patternBackslash, $replacementBackslash
-                    if (-not $requireQuoted) { break }  # non-.py: most specific variant matched, stop
+                    if (-not $requireQuoted) { break }
                 }
             }
 
@@ -289,7 +216,6 @@ function Update-References {
     }
 }
 
-# --- Validation -----------------------------------------------------------
 function Invoke-Validation {
     Write-Host "`n--- Validating build ---" -ForegroundColor Cyan
     $ok = $true
@@ -300,9 +226,11 @@ function Invoke-Validation {
         python3 -m pytest requirements_model/tests/ -q
         if ($LASTEXITCODE -ne 0) { $ok = $false; Write-Host 'pytest FAILED' -ForegroundColor Red }
 
+        Push-Location requirements_model
         Write-Host 'Running build_json.py --build-only...'
-        python3 requirements_model/build_json.py --build-only
+        python3 build_json.py --build-only
         if ($LASTEXITCODE -ne 0) { $ok = $false; Write-Host 'build_json.py FAILED' -ForegroundColor Red }
+        Pop-Location
 
         Write-Host 'Running make force=1...'
         make force=1
@@ -353,7 +281,7 @@ Update-References -Renames $allRenames
 if (-not $SkipValidation) {
     $passed = Invoke-Validation
     if (-not $passed) {
-        Write-Host "`nValidation failed. Working tree left dirty for inspection - fix and re-run validation, or revert with 'git reset --hard' (NOT 'git clean -fd', which would also delete this script if it's untracked)." -ForegroundColor Yellow
+        Write-Host "`nValidation failed. Working tree left dirty for inspection - fix and re-run, or 'git reset --hard' (NOT 'git clean -fd', which deletes this script if untracked)." -ForegroundColor Yellow
         exit 1
     }
     Write-Host "`nValidation passed." -ForegroundColor Green
