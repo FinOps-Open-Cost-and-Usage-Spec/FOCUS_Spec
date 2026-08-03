@@ -101,7 +101,36 @@ These hold for every column and do not depend on which column is being decided.
 
 Five steps. Step 3 applies only where Step 2 returns `Conditional`.
 
-### Step 1: Fix the concept
+```mermaid
+flowchart TD
+    A["A column the working group<br/>has decided to add"] --> S1["Step 1<br/>State the concept"]
+    S1 --> F{"Step 2 floor<br/>Is the column a Directly Dependent<br/>Column of a Supported Feature?"}
+    F -->|"Yes"| FL["Recommended and Optional<br/>are not available"]
+    F -->|"No"| S2{"Step 2 Applicability<br/>Does the concept exist in<br/>every operating model?"}
+    FL --> S2
+    S2 -->|"Yes"| M["Mandatory"]
+    S2 -->|"No: at least one<br/>lacks the concept"| C["Conditional"]
+    C --> S3["Step 3<br/>Identify or propose the<br/>operating model Condition"]
+    M --> S4{"Step 4 Nullability<br/>Is a meaningful value available<br/>on every row where present?"}
+    S3 --> S4
+    S4 -->|"Yes"| NF["Allows nulls = False"]
+    S4 -->|"No"| NT["Allows nulls = True"]
+    NT --> D{"Does the null rule name a<br/>characteristic of the<br/>operating model?"}
+    D -->|"Yes: it is a presence rule"| S2
+    D -->|"No"| S5["Step 5<br/>Record the presence requirement,<br/>Content Constraints, and rationale"]
+    NF --> S5
+
+    classDef level fill:#DDEBF7,stroke:#2E5C8A,color:#10243B
+    classDef nulls fill:#E2EFDA,stroke:#548235,color:#1B3312
+    classDef note fill:#FFF2CC,stroke:#BF8F00,color:#3B2E00
+    classDef out fill:#E4DFEC,stroke:#6B5B95,color:#241C33
+    class M,C level
+    class NF,NT nulls
+    class FL note
+    class S5 out
+```
+
+### Step 1: State the concept
 
 Write down the exact concept the column carries, as its Description and its glossary term define it. Every later step tests that concept, not a broader or narrower one.
 
