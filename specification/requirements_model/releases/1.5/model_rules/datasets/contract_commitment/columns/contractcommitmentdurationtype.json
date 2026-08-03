@@ -326,7 +326,7 @@
     "EntityType": "Column",
     "EntityName": "Contract Commitment Duration Type",
     "EntityId": "ContractCommitmentDurationType",
-    "Notes": "Canonical form requirement. Typed Dynamic because confirming the value uses the largest whole unit requires the purchased term from the commercial offering, which is not derivable from the dataset alone. Requirement is left empty for the same reason the adjacent Dynamic rules are: the divisibility test against the next larger allowed unit (60 Minutes to an Hour, 24 Hours to a Day, 7 Days to a Week, 12 Months to a Year, 4 Quarters to a Year) is not expressible with the available CheckFunctions for an unbounded quantity.",
+    "Notes": "Typed Dynamic because confirming the value uses the largest whole unit requires the purchased term from the commercial offering, which is not derivable from the dataset alone.",
     "ModelVersionIntroduced": "1.5",
     "Status": "Active",
     "Conditions": [],
@@ -336,7 +336,7 @@
     "DatasetId": "ContractCommitment",
     "DatasetName": "Contract Commitment",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractCommitmentDurationType MUST use the largest allowed unit of time that expresses the purchased term as a whole number (e.g., \"1 Year\" rather than \"12 Months\", \"1 Week\" rather than \"7 Days\").",
+      "MustSatisfy": "ContractCommitmentDurationType MUST use the largest unit of time that expresses the duration as a whole number (e.g., \"1 Year\" rather than \"12 Months\", \"1 Week\" rather than \"7 Days\").",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
