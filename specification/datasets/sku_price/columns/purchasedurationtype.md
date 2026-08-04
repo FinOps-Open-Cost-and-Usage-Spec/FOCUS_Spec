@@ -12,7 +12,7 @@ PurchaseDurationType MUST adhere to the following requirements:
 * PurchaseDurationType MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * PurchaseDurationType MUST adhere to the following nullability requirements:
   * PurchaseDurationType MUST be null when [ChargeCategory](#datasets.skuprice.chargecategory) is "Usage".
-  * PurchaseDurationType MUST NOT be null when ChargeCategory is "Purchase".
+  * PurchaseDurationType MAY be null when ChargeCategory is "Purchase".
 * PurchaseDurationType SHOULD use the "[Numeric Value] [Unit]" format (e.g., "1 Day", "1 Year", "3 Months", "3 Years").
 * PurchaseDurationType SHOULD present the unit of time as one of the allowed values.
 * PurchaseDurationType SHOULD correspond to the standard duration of the purchased offering (e.g., "1 Year", "3 Years") rather than a precise calculation of days or hours.
