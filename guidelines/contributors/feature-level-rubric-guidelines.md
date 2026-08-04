@@ -51,7 +51,7 @@ Topics left to a later revision or to the companion guideline are listed in [Def
 | Term | Meaning |
 | :--- | :--- |
 | *Operating model* | How a *data generator*'s business works, described through the billing concepts it uses: regions, commitment discounts, unit pricing, and so on. It determines whether a FOCUS concept applies to a *data generator*, and it is not the same thing as the category of company the *data generator* is. |
-| *Operating model* Condition | A verifiable state of an *operating model*, defined in the [Conditions](#conditions) section. Every `Conditional` column references one or more of them through its presence requirement. |
+| *Operating model* Condition | A verifiable state of an *operating model*, defined in the [Conditions](../../specification/conditions/conditions_overview.md) section. Every `Conditional` column references one or more of them through its presence requirement. |
 | Leveling unit | A column within a dataset, not a Column ID in the abstract. The same Column ID may take a different feature level, a different nullability, or a different set of Conditions in each dataset that defines it. Decide per dataset. |
 | Feature level | `Mandatory`, `Conditional`, `Recommended`, or `Optional`. Decides whether the column is present, and when. This revision assigns only the first two. |
 | Nullability | `Allows nulls` = `True` or `False`. Decides whether the value may be null where the column is present. |
