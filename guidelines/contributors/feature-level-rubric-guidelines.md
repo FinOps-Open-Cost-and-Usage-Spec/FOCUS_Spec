@@ -106,10 +106,12 @@ flowchart TD
     A["A column the working group<br/>has decided to add"] --> S1["Step 1<br/>State the concept"]
     S1 --> F{"Step 2 floor<br/>Is the column a Directly Dependent<br/>Column of a Supported Feature?"}
     F -->|"Yes"| FL["Recommended and Optional<br/>are not available"]
-    F -->|"No"| S2{"Step 2 Applicability<br/>Does the concept exist in<br/>every operating model?"}
+    F -->|"No"| S2{"Step 2 Applicability<br/>Does the concept exist in every<br/>operating model, and can a value be<br/>produced without substituting<br/>something else for it?"}
     FL --> S2
-    S2 -->|"Yes"| M["Mandatory"]
-    S2 -->|"No: at least one<br/>lacks the concept"| C["Conditional"]
+    S2 -->|"No to either"| C["Conditional"]
+    S2 -->|"Yes to both"| VG{"Does a Condition gate on variance<br/>rather than on absence?"}
+    VG -->|"Yes, and another column in the<br/>dataset determines the value"| C
+    VG -->|"No, or the value is<br/>not recoverable"| M["Mandatory"]
     C --> S3["Step 3<br/>Identify or propose the<br/>operating model Condition"]
     M --> S4{"Step 4 Nullability<br/>Is a meaningful value available<br/>on every row where present?"}
     S3 --> S4
@@ -129,6 +131,8 @@ flowchart TD
     class FL note
     class S5 out
 ```
+
+> **Note:** The diagram shows the decision spine. [Applicability Signals](#applicability-signals) and [Tie-Breakers and Defaults](#tie-breakers-and-defaults) govern the cases where a step is not obvious, including the derivation rule in Principle 5 and the `Conditional` default at the boundary.
 
 ### Step 1: State the concept
 
