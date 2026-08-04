@@ -247,12 +247,12 @@ Five distinctions decide Step 2 where it is not obvious. Each is a question abou
 
 * **Anything at the boundary is `Conditional`** until the companion guideline calibrates the boundary against real *data generator* data.
 
-* **Calling a model an exception requires an explicit decision.** A single unusual *operating model* that lacks the concept may be treated as an exception only when the working group records:
+* **Calling a model an exception requires an explicit decision.** A single unusual *operating model* that lacks the concept may be treated as an exception, keeping the column `Mandatory`, only when the working group records:
   * which *operating model* is being treated as exceptional,
   * why the concept is still considered universal,
   * why the exception does not represent a broader pattern.
 
-  Until the companion guideline defines where this record belongs, it lives with the leveling decision itself, in the pull request or issue.
+  A recorded exception takes precedence over the boundary default above. Until the companion guideline defines where this record belongs, it lives with the leveling decision itself, in the pull request or issue.
 
 * **A constant value is a truthful value.** A column whose value is present and correct for every *operating model* stays `Mandatory` even where it repeats on every row.
 
