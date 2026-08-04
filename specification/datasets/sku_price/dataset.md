@@ -35,7 +35,6 @@ The columns are presented in alphabetical order.
 | [SKU Price Eligibility](#datasets.skuprice.skupriceeligibility)                     | Dimension   | Mandatory                                                      | False        | JSON      |
 | [SKU Price ID](#datasets.skuprice.skupriceid)                                       | Dimension   | Mandatory                                                      | False        | String    |
 | [SKU Price Last Updated](#datasets.skuprice.skupricelastupdated)                    | Dimension   | Mandatory                                                      | False        | Date/Time |
-| [SKU Price Lifecycle Status](#datasets.skuprice.skupricelifecyclestatus)            | Dimension   | Mandatory                                                      | False        | String    |
 
 ## Relationships<!--SkipTOC-->
 
@@ -74,7 +73,6 @@ SkuPrice MUST adhere to the following requirements:
   * SkuPrice MUST include [SkuPriceEligibility](#datasets.skuprice.skupriceeligibility).
   * SkuPrice MUST include [SkuPriceId](#datasets.skuprice.skupriceid).
   * SkuPrice MUST include [SkuPriceLastUpdated](#datasets.skuprice.skupricelastupdated).
-  * SkuPrice MUST include [SkuPriceLifecycleStatus](#datasets.skuprice.skupricelifecyclestatus).
   * SkuPrice SHOULD include [*custom columns*](#glossary:custom-column) needed to identify specific rate card routing logic when [*FOCUS columns*](#glossary:FOCUS-column) are not sufficient.
 * SkuPrice MUST conform to [DatasetCompleteness](#attributes.datasetcompleteness) requirements.
 * SkuPrice MUST conform to [DatasetConfiguration](#attributes.datasetconfiguration) requirements.
