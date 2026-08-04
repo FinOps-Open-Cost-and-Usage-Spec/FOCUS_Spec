@@ -41,7 +41,7 @@ This revision covers the `Mandatory` and `Conditional` feature levels, and the n
 
 Two constraints follow:
 
-* **It does not change the meaning of any feature level.** Each level, and the `MUST`, `SHOULD`, or `MAY` wording that expresses it, is defined in [FOCUS Feature Level](#introduction.focusfeaturelevel). This guideline changes how a level is chosen, not what it means.
+* **It does not change the meaning of any feature level.** Each level, and the `MUST`, `SHOULD`, or `MAY` wording that expresses it, is defined in [FOCUS Feature Level](../../specification/overview.md#focus-feature-level). This guideline changes how a level is chosen, not what it means.
 * **It does not reopen levels the specification already ships.** Adopting it does not oblige a review of published columns.
 
 Topics left to a later revision or to the companion guideline are listed in [Deferred Topics](#deferred-topics).
