@@ -30,7 +30,7 @@ The identifier assigned to a *billing account* by the invoice issuer.
 
 |    Constraint   |      Value       |
 |:----------------|:-----------------|
-| Dataset         | [Invoice Detail](#datasets.invoicedetail)             |
+| Dataset         | [Invoice Detail](#datamodel.invoicedetail)             |
 | Column type     | Dimension        |
 | Feature level   | Mandatory        |
 | Allows nulls    | False            |

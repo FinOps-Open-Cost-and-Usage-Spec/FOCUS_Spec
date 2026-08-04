@@ -27,7 +27,7 @@ The *national* or *virtual currency* denomination that a *resource* or *service*
 
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
-| Dataset         | [SKU Price](#datasets.skuprice)                      |
+| Dataset         | [SKU Price](#datamodel.skuprice)                      |
 | Column type     | Dimension                                            |
 | Feature level   | Mandatory                                            |
 | Allows nulls    | False                                                |

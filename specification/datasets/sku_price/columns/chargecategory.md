@@ -21,7 +21,7 @@ ChargeCategory MUST adhere to the following requirements:
 
 ## Implementation Guidance
 
-While the Charge Category column is shared between the [Cost and Usage](#datasets.costandusage) dataset and the [SKU Price](#datasets.skuprice) dataset, practitioners should note that the allowed values differ significantly by design.
+While the Charge Category column is shared between the [Cost and Usage](#datamodel.costandusage) dataset and the [SKU Price](#datamodel.skuprice) dataset, practitioners should note that the allowed values differ significantly by design.
 
 The Cost and Usage dataset acts as a financial ledger that tracks post-facto financial events. Therefore, it requires values like "Tax", "Credit", and "Adjustment" to accurately balance a final invoice.
 
@@ -43,7 +43,7 @@ Represents the highest-level classification of a *SKU Price* based on whether it
 
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
-| Dataset         | [SKU Price](#datasets.skuprice)                      |
+| Dataset         | [SKU Price](#datamodel.skuprice)                      |
 | Column type     | Dimension                                            |
 | Feature level   | Mandatory                                            |
 | Allows nulls    | False                                                |

@@ -27,7 +27,7 @@ Self-contained summary of the *SKU Price's* purpose and offering.
 
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
-| Dataset         | [SKU Price](#datasets.skuprice)                      |
+| Dataset         | [SKU Price](#datamodel.skuprice)                      |
 | Column type     | Dimension                                            |
 | Feature level   | Mandatory                                            |
 | Allows nulls    | False                                                |

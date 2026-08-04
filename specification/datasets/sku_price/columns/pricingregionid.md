@@ -15,12 +15,12 @@ PricingRegionId MUST adhere to the following requirements:
 
 ## Implementation Guidance
 
-Practitioners are encouraged to carefully distinguish between **Pricing Region ID** and [Region ID](#datasets.costandusage.regionid).
+Practitioners are encouraged to carefully distinguish between **Pricing Region ID** and [Region ID](#datamodel.costandusage.regionid).
 
 * **Pricing Region ID** defines the geographic boundary for which the *rate itself* is valid.
 * **Region ID** defines the physical location where a specific *resource* is provisioned.
 
-In many cases these will be identical. However, if a pricing rate is global but still applies to specific regional deployments, or if the provider rate card dictates a resource deployment region that differs from the pricing boundary, `Pricing Region ID` reflects the pricing boundary. The set of `Region ID` values can instead be represented as inclusion criteria within [SKU Price Eligibility](#datasets.skuprice.skupriceeligibility) to capture the resource location without conflating the rate card logic.
+In many cases these will be identical. However, if a pricing rate is global but still applies to specific regional deployments, or if the provider rate card dictates a resource deployment region that differs from the pricing boundary, `Pricing Region ID` reflects the pricing boundary. The set of `Region ID` values can instead be represented as inclusion criteria within [SKU Price Eligibility](#datamodel.skuprice.skupriceeligibility) to capture the resource location without conflating the rate card logic.
 
 ## Column ID
 
@@ -38,7 +38,7 @@ Service-provider-assigned identifier for an isolated geographic area where the s
 
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
-| Dataset         | [SKU Price](#datasets.skuprice)                      |
+| Dataset         | [SKU Price](#datamodel.skuprice)                      |
 | Column type     | Dimension                                            |
 | Feature level   | Conditional                                          |
 | Condition       | [Includes regions](#conditions.includesregions)      |
