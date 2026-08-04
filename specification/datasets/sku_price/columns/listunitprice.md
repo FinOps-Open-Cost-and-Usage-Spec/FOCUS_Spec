@@ -10,7 +10,6 @@ ListUnitPrice MUST adhere to the following requirements:
 * ListUnitPrice MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * ListUnitPrice MUST adhere to the following nullability requirements:
   * ListUnitPrice MUST NOT be null when the *SKU Price* is offered at a publicly published rate.
-  * ListUnitPrice MUST be null when the *SKU Price* is offered only under a [*contract*](#glossary:contract).
 * When ListUnitPrice is not null, ListUnitPrice MUST adhere to the following requirements:
   * ListUnitPrice MUST be a non-negative decimal value.
   * ListUnitPrice MUST be denominated in the [PricingCurrency](#datamodel.skuprice.pricingcurrency).
