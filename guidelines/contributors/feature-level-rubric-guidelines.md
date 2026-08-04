@@ -41,8 +41,8 @@ This revision covers the `Mandatory` and `Conditional` feature levels, and the n
 
 Two constraints follow:
 
-* **It does not change the meaning of any feature level.** Each level, and the `MUST`, `SHOULD`, or `MAY` wording that expresses it, is defined in [FOCUS Feature Level](#introduction.focusfeaturelevel). This guideline changes how a level is chosen, not what it means.
-* **It does not reopen levels the specification already ships.** Adopting it does not oblige a review of published columns.
+* **It does not change the meaning of any feature level.** Each level, and the `MUST`, `SHOULD`, or `MAY` wording that expresses it, is defined in [FOCUS Feature Level](../../specification/overview.md#focus-feature-level). This guideline changes how a level is chosen, not what it means.
+* **It applies to decisions made under it, and records the backlog it leaves.** Adopting it does not change the level of any published column. A published column's level is reopened when the working group schedules the backlog, or when the column is revisited for another reason. Columns that predate this guideline and do not meet its criteria are recorded rather than grandfathered.
 
 Topics left to a later revision or to the companion guideline are listed in [Deferred Topics](#deferred-topics).
 
@@ -51,7 +51,7 @@ Topics left to a later revision or to the companion guideline are listed in [Def
 | Term | Meaning |
 | :--- | :--- |
 | *Operating model* | How a *data generator*'s business works, described through the billing concepts it uses: regions, commitment discounts, unit pricing, and so on. It determines whether a FOCUS concept applies to a *data generator*, and it is not the same thing as the category of company the *data generator* is. |
-| *Operating model* Condition | A verifiable state of an *operating model*, defined in the [Conditions](#conditions) section. Every `Conditional` column references one or more of them through its presence requirement. |
+| *Operating model* Condition | A verifiable state of an *operating model*, defined in the [Conditions](../../specification/conditions/conditions_overview.md) section. Every `Conditional` column references one or more of them through its presence requirement. |
 | Leveling unit | A column within a dataset, not a Column ID in the abstract. The same Column ID may take a different feature level, a different nullability, or a different set of Conditions in each dataset that defines it. Decide per dataset. |
 | Feature level | `Mandatory`, `Conditional`, `Recommended`, or `Optional`. Decides whether the column is present, and when. This revision assigns only the first two. |
 | Nullability | `Allows nulls` = `True` or `False`. Decides whether the value may be null where the column is present. |
@@ -106,10 +106,12 @@ flowchart TD
     A["A column the working group<br/>has decided to add"] --> S1["Step 1<br/>State the concept"]
     S1 --> F{"Step 2 floor<br/>Is the column a Directly Dependent<br/>Column of a Supported Feature?"}
     F -->|"Yes"| FL["Recommended and Optional<br/>are not available"]
-    F -->|"No"| S2{"Step 2 Applicability<br/>Does the concept exist in<br/>every operating model?"}
+    F -->|"No"| S2{"Step 2 Applicability<br/>Does the concept exist in every<br/>operating model, and can a value be<br/>produced without substituting<br/>something else for it?"}
     FL --> S2
-    S2 -->|"Yes"| M["Mandatory"]
-    S2 -->|"No: at least one<br/>lacks the concept"| C["Conditional"]
+    S2 -->|"No to either"| C["Conditional"]
+    S2 -->|"Yes to both"| VG{"Does a Condition gate on variance<br/>rather than on absence?"}
+    VG -->|"Yes, and another column in the<br/>dataset determines the value"| C
+    VG -->|"No, or the value is<br/>not recoverable"| M["Mandatory"]
     C --> S3["Step 3<br/>Identify or propose the<br/>operating model Condition"]
     M --> S4{"Step 4 Nullability<br/>Is a meaningful value available<br/>on every row where present?"}
     S3 --> S4
@@ -129,6 +131,8 @@ flowchart TD
     class FL note
     class S5 out
 ```
+
+> **Note:** The diagram shows the decision spine. [Applicability Signals](#applicability-signals) and [Tie-Breakers and Defaults](#tie-breakers-and-defaults) govern the cases where a step is not obvious, including the derivation rule in Principle 5 and the `Conditional` default at the boundary.
 
 ### Step 1: State the concept
 
@@ -247,12 +251,12 @@ Five distinctions decide Step 2 where it is not obvious. Each is a question abou
 
 * **Anything at the boundary is `Conditional`** until the companion guideline calibrates the boundary against real *data generator* data.
 
-* **Calling a model an exception requires an explicit decision.** A single unusual *operating model* that lacks the concept may be treated as an exception only when the working group records:
+* **Calling a model an exception requires an explicit decision.** A single unusual *operating model* that lacks the concept may be treated as an exception, keeping the column `Mandatory`, only when the working group records:
   * which *operating model* is being treated as exceptional,
   * why the concept is still considered universal,
   * why the exception does not represent a broader pattern.
 
-  Until the companion guideline defines where this record belongs, it lives with the leveling decision itself, in the pull request or issue.
+  A recorded exception takes precedence over the boundary default above. Until the companion guideline defines where this record belongs, it lives with the leveling decision itself, in the pull request or issue.
 
 * **A constant value is a truthful value.** A column whose value is present and correct for every *operating model* stays `Mandatory` even where it repeats on every row.
 
@@ -281,7 +285,7 @@ The same Column ID is leveled on its own terms in each dataset that defines it.
 | Criteria for `Recommended` and `Optional` | Not settled here. This revision takes no position, does not change what those levels mean, and does not change the level of any column that currently holds one. |
 | Whether a proposed column belongs in the schema | Not part of this revision. Two tests would answer it: whether the data is needed rather than merely useful, and whether a column calculable from other columns earns a place of its own. |
 | What a Supported Feature does about a column that can be absent | Belongs to the Supported Features work. The obligation is prospective: adopting this guideline does not reopen levels of existing columns. What a feature does once a column it depends on is `Conditional`, and therefore absent from some *FOCUS datasets*, is not decided here. Existing Conditional columns that are already dependencies of Supported Features are handled through the Supported Features work. |
-| Applying these criteria to published columns | A separate decision. Conditions that gate on variance rather than on absence should be re-tested against the recoverability rule when that review happens, since such a gate is admissible only where the value is recoverable from another column in the same dataset. |
+| Applying these criteria to published columns | Scheduled, not settled here. A published column enters the backlog when it is a Directly Dependent Column of a Supported Feature and its presence requirement is a `SHOULD` or a `MAY`. Conditions that gate on variance rather than on absence are re-tested against the recoverability rule in the same pass, since such a gate is admissible only where the value is recoverable from another column in the same dataset. The working group sets the release that takes the backlog. |
 | The threshold at which a column moves between `Mandatory` and `Conditional` | Companion guideline. Until then, [Tie-Breakers and Defaults](#tie-breakers-and-defaults) applies. |
 | Where the leveling rationale is recorded | Companion guideline. Until then, the pull request or issue. |
 | Informative category-based expectations | Out of scope here, and never expressed as a feature level. |
