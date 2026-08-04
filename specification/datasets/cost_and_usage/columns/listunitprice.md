@@ -38,9 +38,9 @@ The suggested service-provider-published unit price for a single Pricing Unit of
 
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datamodel.costandusage)             |
+| Dataset         | [Cost and Usage](#datamodel.costandusage)            |
 | Column type     | Metric                                               |
-| Feature level   | Conditional                                          |
+| Feature level   | Mandatory                                            |
 | Allows nulls    | True                                                 |
 | Data type       | Decimal                                              |
 | Value format    | [Numeric Format](#attributes.numericformat)          |
