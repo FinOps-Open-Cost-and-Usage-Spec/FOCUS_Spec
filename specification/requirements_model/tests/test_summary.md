@@ -82,6 +82,12 @@ This report documents the suite of automated tests validating the ModelRules JSO
 
 *Description*: Ensures no rule repeats the same dependency in its Dependencies array. Keeps dependency lists clean.
 
+#### `test_no_dependency_cycles.py`
+
+*Purpose*: Prevent circular dependencies.
+
+*Description*: Follows each rule's Dependencies entries and its CheckModelRule references inside Requirement and Condition, and fails when a rule ends up depending on itself, directly or through other rules. Reports the full chain so the offending link is easy to find.
+
 #### `test_no_duplicate_checkconformancerule_items.py`
 
 *Purpose*: Prevent duplicate references inside Composite Items.
@@ -227,6 +233,7 @@ Ensures suffix semantics align with scope and intent.
 | **test\_dependencies\_exist.py**                         | Check dependencies exist               | Cross-checks all dependency IDs to guarantee they resolve to valid rules. |
 | **test\_dependencies.py**                                | Dependency consistency                 | Enforces dependency rules (e.g., correct entity type relationships). |
 | **test\_no\_duplicate\_dependencies.py**                 | Prevent duplicate deps                 | Ensures no rule lists the same dependency more than once. |
+| **test\_no\_dependency\_cycles.py**                      | Prevent circular dependencies          | Ensures no rule depends on itself, directly or through the rules it depends on. |
 | **test\_no\_duplicate\_checkconformancerule\_items.py**  | Prevent duplicate Items                | Ensures Composite `AND/OR` lists don’t include the same `CheckModelRule` twice. |
 | **test\_datasets\_rules\_exist.py**                      | Validate dataset references            | Ensures all rule IDs listed in `ModelDatasets` are present in `ModelRules`. |
 | **test\_orphan\_rules.py**                               | Detect orphaned rules                  | Flags rules not referenced elsewhere, allowing exceptions for deprecations and base rules. |

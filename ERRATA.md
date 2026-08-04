@@ -6,6 +6,28 @@ These updates serve as the basis for revising FOCUS enablement artifacts, such a
 
 ---
 
+## Version 1.4
+
+This section outlines discrepancies found in the enablement artifacts (Requirements Model) for the 1.4 release of the FOCUS specification. The underlying specification text for version 1.4 remains accurate and unchanged.
+
+### A. Schema & Validation Logic Corrections
+*No errata reported for this release.*
+
+### B. Terminology & Reference Corrections
+*No errata reported for this release.*
+
+### C. Typographical Errors
+*No errata reported for this release.*
+
+### D. Requirements Model Corrections
+*The following corrections address bugs found strictly within the FOCUS 1.4 Requirements Model validation rules.*
+
+| Issue | File | Original | Corrected | Tracking |
+| :--- | :--- | :--- | :--- | :--- |
+| **#1: Circular dependency between `CommitmentDiscountUnit` and `CommitmentDiscountQuantity`** | `commitmentdiscountunit.json` | `CAU-CommitmentDiscountUnit-C-005-C` and `CAU-CommitmentDiscountUnit-C-006-C` each depended on `CAU-CommitmentDiscountQuantity-C-000-C`, the top-level rule covering everything required of `CommitmentDiscountQuantity`. That rule reaches the requirements that describe the quantity in terms of `CommitmentDiscountUnit`, and those depend on `CAU-CommitmentDiscountUnit-C-004-C`, the parent of the two rules. Each rule therefore depended on itself. | Both dependencies now point to `CAU-CommitmentDiscountQuantity-C-003-C`, the rule covering whether `CommitmentDiscountQuantity` is null. That is the only thing either rule tests. | Issue: [#2536](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2536) |
+
+---
+
 ## Version 1.3
 
 This section outlines minor discrepancies found in the 1.3 release of the FOCUS specification. 
