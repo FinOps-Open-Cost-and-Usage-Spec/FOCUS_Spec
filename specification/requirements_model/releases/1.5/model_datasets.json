@@ -1,0 +1,24 @@
+{
+  "ModelDatasets": {
+    "BillingPeriod": {
+      "ModelRules": [
+        "BIP-BillingPeriod-D-000-M"
+      ]
+    },
+    "CostAndUsage": {
+      "ModelRules": [
+        "CAU-CostAndUsage-D-000-M"
+      ]
+    },
+    "ContractCommitment": {
+      "ModelRules": [
+        "CCT-ContractCommitment-D-000-M"
+      ]
+    },
+    "InvoiceDetail": {
+      "ModelRules": [
+        "IND-InvoiceDetail-D-000-M"
+      ]
+    }
+  }
+}

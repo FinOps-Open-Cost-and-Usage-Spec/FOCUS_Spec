@@ -1,6 +1,6 @@
 # Contracted Unit Price
 
-The Contracted Unit Price represents the agreed-upon unit price for a single [Pricing Unit](#datasets.costandusage.pricingunit) of the associated SKU, inclusive of [*negotiated discounts*](#glossary:negotiated-discount), if present, while excluding negotiated [*commitment discounts*](#glossary:commitment-discount) or any other discounts. This price is denominated in the [Billing Currency](#datasets.costandusage.billingcurrency). The Contracted Unit Price is commonly used for calculating savings based on negotiation activities. If negotiated discounts are not applicable, the Contracted Unit Price defaults to the [List Unit Price](#datasets.costandusage.listunitprice).
+The Contracted Unit Price represents the agreed-upon unit price for a single [Pricing Unit](#datamodel.costandusage.pricingunit) of the associated SKU, inclusive of [*negotiated discounts*](#glossary:negotiated-discount), if present, while excluding negotiated [*commitment discounts*](#glossary:commitment-discount) or any other discounts. This price is denominated in the [Billing Currency](#datamodel.costandusage.billingcurrency). The Contracted Unit Price is commonly used for calculating savings based on negotiation activities. If negotiated discounts are not applicable, the Contracted Unit Price defaults to the [List Unit Price](#datamodel.costandusage.listunitprice).
 
 ## Requirements
 
@@ -9,10 +9,10 @@ ContractedUnitPrice MUST adhere to the following requirements:
 * ContractedUnitPrice MUST be of type Decimal.
 * ContractedUnitPrice MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * ContractedUnitPrice MUST adhere to the following nullability requirements:
-  * ContractedUnitPrice MUST be null when [SkuPriceId](#datasets.costandusage.skupriceid) is null.
-  * ContractedUnitPrice MUST be null when [ChargeCategory](#datasets.costandusage.chargecategory) is "Tax".
+  * ContractedUnitPrice MUST be null when [SkuPriceId](#datamodel.costandusage.skupriceid) is null.
+  * ContractedUnitPrice MUST be null when [ChargeCategory](#datamodel.costandusage.chargecategory) is "Tax".
   * ContractedUnitPrice MUST NOT be null when SkuPriceId is not null.
-  * ContractedUnitPrice MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#datasets.costandusage.chargeclass) is not "Correction".
+  * ContractedUnitPrice MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#datamodel.costandusage.chargeclass) is not "Correction".
   * ContractedUnitPrice MAY be null in all other cases.
 * When ContractedUnitPrice is not null, ContractedUnitPrice MUST adhere to the following requirements:
   * ContractedUnitPrice MUST be a non-negative decimal value.
@@ -38,7 +38,7 @@ The agreed-upon unit price for a single Pricing Unit of the associated SKU, incl
 
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Dataset         | [Cost and Usage](#datamodel.costandusage)             |
 | Column type     | Metric                                               |
 | Feature level   | Conditional                                          |
 | Allows nulls    | True                                                 |
