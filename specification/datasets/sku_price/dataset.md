@@ -25,7 +25,6 @@ The columns are presented in alphabetical order.
 | [Purchase Payment Model](#datasets.skuprice.purchasepaymentmodel)                   | Dimension   | [Conditional](#conditions.includespurchases)                   | True         | String    |
 | [Quantity Tier Maximum](#datasets.skuprice.quantitytiermaximum)                     | Metric      | [Conditional](#conditions.includesquantitytierpricing)         | True         | Decimal   |
 | [Quantity Tier Minimum](#datasets.skuprice.quantitytierminimum)                     | Metric      | [Conditional](#conditions.includesquantitytierpricing)         | False        | Decimal   |
-| [Quantity Tier Name](#datasets.skuprice.quantitytiername)                           | Dimension   | [Conditional](#conditions.includesquantitytierpricing)         | True         | String    |
 | [Service Provider Name](#datasets.skuprice.serviceprovidername)                     | Dimension   | Mandatory                                                      | False        | String    |
 | [SKU ID](#datasets.skuprice.skuid)                                                  | Dimension   | Mandatory                                                      | False        | String    |
 | [SKU Price Created](#datasets.skuprice.skupricecreated)                             | Dimension   | Mandatory                                                      | False        | Date/Time |
@@ -63,7 +62,6 @@ SkuPrice MUST adhere to the following requirements:
   * SkuPrice MUST include [PurchasePaymentModel](#datasets.skuprice.purchasepaymentmodel) when the *operating model* [includes purchases](#conditions.includespurchases).
   * SkuPrice MUST include [QuantityTierMaximum](#datasets.skuprice.quantitytiermaximum) when the *operating model* [includes quantity tier pricing](#conditions.includesquantitytierpricing).
   * SkuPrice MUST include [QuantityTierMinimum](#datasets.skuprice.quantitytierminimum) when the *operating model* [includes quantity tier pricing](#conditions.includesquantitytierpricing).
-  * SkuPrice MUST include [QuantityTierName](#datasets.skuprice.quantitytiername) when the *operating model* [includes quantity tier pricing](#conditions.includesquantitytierpricing).
   * SkuPrice MUST include [ServiceProviderName](#datasets.skuprice.serviceprovidername).
   * SkuPrice MUST include [SkuId](#datasets.skuprice.skuid).
   * SkuPrice MUST include [SkuPriceCreated](#datasets.skuprice.skupricecreated).
