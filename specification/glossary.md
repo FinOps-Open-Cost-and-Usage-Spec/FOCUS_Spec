@@ -334,6 +334,8 @@ A pricing model in which the unit price applied to a charge is determined by the
 
 The applicable *pricing tier* is determined based on quantity, duration, or spend within a defined aggregation scope and aggregation interval according to the pricing tier application model, without requiring a prior customer commitment. The pricing tier application model defines whether the applicable pricing tier is determined independently for each threshold range (graduated pricing) or whether reaching a higher threshold causes a higher pricing tier to be applied retroactively to all charges within the aggregation interval (retroactive pricing).
 
+Tiered pricing is not considered a discount mechanism because pricing tiers determine the applicable unit price rather than apply a reduction to an existing unit price.
+
 [*Quantity-based tiered pricing*](#glossary:quantity-based-tiered-pricing) is a common form of tiered pricing.
 
 <a name="glossary:unit-pricing"><b>Unit Pricing</b></a>
