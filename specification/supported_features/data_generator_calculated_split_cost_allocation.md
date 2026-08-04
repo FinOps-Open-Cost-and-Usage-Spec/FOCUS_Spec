@@ -54,16 +54,22 @@ GROUP BY
 ```sql
 SELECT
   AllocatedResourceId,
+  ServiceName,
+  ServiceCategory,
+  ServiceProviderName,
   SUM(EffectiveCost) AS TotalEffectiveCost
 FROM focus_data_table
 WHERE ChargeCategory='Usage'
   AND ChargePeriodStart >= ? AND ChargePeriodEnd <= ?
   AND AllocatedMethodId IS NOT NULL
 GROUP BY
-  AllocatedResourceId
+  AllocatedResourceId,
+  ServiceName,
+  ServiceCategory,
+  ServiceProviderName
 ```
 
-## Example SQL Query (Get Total Effective Cost by AllocatedServiceName)
+## Example SQL Query (Get Total Effective Cost by Allocated Service Name)
 
 ```sql
 SELECT
@@ -73,8 +79,8 @@ FROM focus_data_table
 WHERE ChargeCategory='Usage'
   AND ChargePeriodStart >= ? AND ChargePeriodEnd <= ?
   AND AllocatedMethodId IS NOT NULL
-  AND AllocatedResourceId IS NOT NULL
   AND AllocatedServiceName IS NOT NULL
+GROUP BY
   AllocatedServiceName
 ```
 
