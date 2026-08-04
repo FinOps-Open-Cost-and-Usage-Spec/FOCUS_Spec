@@ -196,6 +196,27 @@ To ensure consistent language when describing relationships and evaluations betw
 
 > **Note:** Validation of comparison terminology may require contextual understanding of value types, identifiers, semantic equivalence, or domain-specific meaning and may not always be suitable for deterministic editorial validation.
 
+### Domain Terminology
+
+To ensure clarity and prevent ambiguity between distinct domain concepts, normative requirements and standard prose MUST use domain-qualified terms rather than standalone terms whose meaning is context-dependent.
+
+* **Tier Terms:** Terms containing `tier` MUST NOT be used without a domain-specific qualifier that identifies the intended concept. The standalone terms `tier` and `tiered pricing` MUST NOT be used.
+
+  * **Example** (illustrative):
+
+    * Correct:
+      * Storage Tier
+      * Threshold-Based Pricing Tier
+      * Quantity-Based Pricing Tier
+      * Threshold-Based Tiered Pricing
+      * Quantity-Based Tiered Pricing
+    * Incorrect:
+      * Tier
+      * Pricing Tier
+      * Tiered Pricing
+
+> **Note:** Validation of domain terminology may require contextual understanding of the intended concept and may not always be suitable for deterministic editorial validation.
+
 ### Bullet Structure
 
 * **Unordered List Style:** All unordered lists in Markdown MUST use asterisks (`*`) rather than dashes (`-`) or plus signs (`+`). This maintains visual consistency across the specification and aligns with our automated linting standards.
