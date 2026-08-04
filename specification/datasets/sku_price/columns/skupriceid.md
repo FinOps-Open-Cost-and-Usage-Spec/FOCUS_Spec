@@ -11,7 +11,7 @@ SkuPriceId MUST adhere to the following requirements:
 * SkuPriceId MUST be of type String.
 * SkuPriceId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * SkuPriceId MUST NOT be null.
-* SkuPriceId MUST have one and only one parent [SkuId](#datasets.skuprice.skuid).
+* SkuPriceId MUST have one and only one parent [SkuId](#datamodel.skuprice.skuid).
 * SkuPriceId MUST remain consistent over time.
 * SkuPriceId MUST remain consistent across contracts or billing agreements.
 * SkuPriceId MAY match SkuId.
@@ -32,7 +32,7 @@ A service-provider-specified unique identifier that represents a specific *SKU P
 
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
-| Dataset         | [SKU Price](#datasets.skuprice)                      |
+| Dataset         | [SKU Price](#datamodel.skuprice)                      |
 | Column type     | Dimension                                            |
 | Feature level   | Mandatory                                            |
 | Allows nulls    | False                                                |

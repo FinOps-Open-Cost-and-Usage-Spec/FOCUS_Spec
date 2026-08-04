@@ -1,8 +1,8 @@
 # SKU Price Effective Start
 
-SKU Price Effective Start represents the inclusive date and time when the specified unit price and its associated pricing properties become applicable for a given [*SKU Price ID*](#datasets.skuprice.skupriceid). It reflects when the price becomes contractually or publicly applicable, not when a practitioner first uses the SKU. A charge in Cost and Usage falls under this price when its charge period start is on or after SKU Price Effective Start. When SKU Price Effective Start is null, the unit price is treated as applicable from the earliest available time.
+SKU Price Effective Start represents the inclusive date and time when the specified unit price and its associated pricing properties become applicable for a given [*SKU Price ID*](#datamodel.skuprice.skupriceid). It reflects when the price becomes contractually or publicly applicable, not when a practitioner first uses the SKU. A charge in Cost and Usage falls under this price when its charge period start is on or after SKU Price Effective Start. When SKU Price Effective Start is null, the unit price is treated as applicable from the earliest available time.
 
-When combined with [SKU Price Effective End](#datasets.skuprice.skupriceeffectiveend), this column defines the precise validity window of a rate card entry. This column allows practitioners to correctly map historical or future usage to the exact unit price that was valid at the time the consumption occurred, enabling accurate cost rating and temporal price variation analysis.
+When combined with [SKU Price Effective End](#datamodel.skuprice.skupriceeffectiveend), this column defines the precise validity window of a rate card entry. This column allows practitioners to correctly map historical or future usage to the exact unit price that was valid at the time the consumption occurred, enabling accurate cost rating and temporal price variation analysis.
 
 ## Requirements
 
@@ -29,7 +29,7 @@ The inclusive date and time when the specified unit price and associated pricing
 
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
-| Dataset         | [SKU Price](#datasets.skuprice)                      |
+| Dataset         | [SKU Price](#datamodel.skuprice)                      |
 | Column type     | Dimension                                            |
 | Feature level   | Mandatory                                            |
 | Allows nulls    | True                                                 |

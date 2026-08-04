@@ -1,6 +1,6 @@
 # SKU Price Created
 
-SKU Price Created is the timestamp when the [SKU Price](#datasets.skuprice) record was first created. This timestamp facilitates auditability of the rate card publication lifecycle, allowing the FinOps practitioner to distinguish between the time a unit price becomes effective (i.e., [SKU Price Effective Start](#datasets.skuprice.skupriceeffectivestart)) and the time the provider actually generated the pricing record.
+SKU Price Created is the timestamp when the [SKU Price](#datamodel.skuprice) record was first created. This timestamp facilitates auditability of the rate card publication lifecycle, allowing the FinOps practitioner to distinguish between the time a unit price becomes effective (i.e., [SKU Price Effective Start](#datamodel.skuprice.skupriceeffectivestart)) and the time the provider actually generated the pricing record.
 
 ## Requirements
 
@@ -27,7 +27,7 @@ The timestamp when the SKU Price record was first created.
 
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
-| Dataset         | [SKU Price](#datasets.skuprice)                      |
+| Dataset         | [SKU Price](#datamodel.skuprice)                      |
 | Column type     | Dimension                                            |
 | Feature level   | Mandatory                                            |
 | Allows nulls    | False                                                |

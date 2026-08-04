@@ -11,14 +11,14 @@ SkuPriceEligibility MUST adhere to the following requirements:
 * SkuPriceEligibility MUST be of type JSON Object (serialized as a String where necessary).
 * SkuPriceEligibility MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * SkuPriceEligibility MUST conform to [JsonObjectFormat](#attributes.jsonobjectformat) requirements.
-* SkuPriceEligibility MUST conform to [SkuPriceEligibilityObject](#datasets.skuprice.skupriceeligibility.skupriceeligibilityobject) requirements.
+* SkuPriceEligibility MUST conform to [SkuPriceEligibilityObject](#datamodel.skuprice.skupriceeligibility.skupriceeligibilityobject) requirements.
 * SkuPriceEligibility MUST NOT be null.
 
 ## SKU Price Eligibility Object
 
 SKU Price Eligibility consists of a valid JSON object which contains a set of top-level property keys. These keys define entity-based inclusionary and exclusionary logic for the *SKU Price*.
 
-The following section details the normative requirements for the SkuPriceEligibilityObject and its nested properties. For a logical overview of the expected content, see the [Schema Structure](#datasets.skuprice.skupriceeligibility.skupriceeligibilityobject.objectschemastructure) and [Object Example](#datasets.skuprice.skupriceeligibility.skupriceeligibilityobject.objectexample) sections.
+The following section details the normative requirements for the SkuPriceEligibilityObject and its nested properties. For a logical overview of the expected content, see the [Schema Structure](#datamodel.skuprice.skupriceeligibility.skupriceeligibilityobject.objectschemastructure) and [Object Example](#datamodel.skuprice.skupriceeligibility.skupriceeligibilityobject.objectexample) sections.
 
 ### Object Requirements
 
@@ -27,8 +27,8 @@ SkuPriceEligibilityObject MUST adhere to the following requirements:
 * SkuPriceEligibilityObject MUST conform to the [SkuPriceEligibilityObjectSchema](#schemas.skuprice.skupriceeligibilityobjectschema) JSON Schema.
 * SkuPriceEligibilityObject.IsGlobalScope MUST be `true` when the *SKU Price* applies to all entities without restriction (e.g., a standard public list price).
 * SkuPriceEligibilityObject.IsComplexScope MUST be `true` when the *SKU Price's* eligibility logic exceeds schema capabilities.
-* SkuPriceEligibilityObject.Inclusions[\*].Dimension SHOULD represent a column in [Cost and Usage](#datasets.costandusage).
-* SkuPriceEligibilityObject.Exclusions[\*].Dimension SHOULD represent a column in [Cost and Usage](#datasets.costandusage).
+* SkuPriceEligibilityObject.Inclusions[\*].Dimension SHOULD represent a column in [Cost and Usage](#datamodel.costandusage).
+* SkuPriceEligibilityObject.Exclusions[\*].Dimension SHOULD represent a column in [Cost and Usage](#datamodel.costandusage).
 * SkuPriceEligibilityObject.Inclusions[\*].Values MUST contain only the single string "*" when the wildcard is present.
 * SkuPriceEligibilityObject.Exclusions[\*].Values MUST contain only the single string "*" when the wildcard is present.
 
@@ -144,13 +144,13 @@ A structured definition of the specific entities, accounts, or contexts eligible
 
 | Constraint | Value |
 | :--- | :--- |
-| Dataset | [SKU Price](#datasets.skuprice) |
+| Dataset | [SKU Price](#datamodel.skuprice) |
 | Column type | Dimension |
 | Feature level | Mandatory |
 | Allows nulls | False |
 | Data type | JSON |
 | Value format | [JSON Object Format](#attributes.jsonobjectformat) |
-| Object | [SkuPriceEligibilityObject](#datasets.skuprice.skupriceeligibility.skupriceeligibilityobject) |
+| Object | [SkuPriceEligibilityObject](#datamodel.skuprice.skupriceeligibility.skupriceeligibilityobject) |
 
 ## Version Introduced
 

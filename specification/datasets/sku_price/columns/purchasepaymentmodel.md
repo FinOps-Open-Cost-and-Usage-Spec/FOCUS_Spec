@@ -1,6 +1,6 @@
 # Purchase Payment Model
 
-Purchase Payment Model defines the financial settlement structure of a purchase. It identifies whether the financial obligation is settled via a single upfront payment, distributed recurring charges, or a combination of both over the [Purchase Duration Type](#datasets.skuprice.purchasedurationtype). When the purchase is a [*commitment discount*](#glossary:commitment-discount), this column represents the settlement structure of that *commitment discount*.
+Purchase Payment Model defines the financial settlement structure of a purchase. It identifies whether the financial obligation is settled via a single upfront payment, distributed recurring charges, or a combination of both over the [Purchase Duration Type](#datamodel.skuprice.purchasedurationtype). When the purchase is a [*commitment discount*](#glossary:commitment-discount), this column represents the settlement structure of that *commitment discount*.
 
 Purchase Payment Model has three possible values: "No Upfront", "Partial Upfront", and "All Upfront".
 
@@ -14,7 +14,7 @@ PurchasePaymentModel MUST adhere to the following requirements:
 
 * PurchasePaymentModel MUST be of type String.
 * PurchasePaymentModel MUST adhere to the following nullability requirements:
-  * PurchasePaymentModel MUST be null when [ChargeCategory](#datasets.skuprice.chargecategory) is "Usage".
+  * PurchasePaymentModel MUST be null when [ChargeCategory](#datamodel.skuprice.chargecategory) is "Usage".
   * PurchasePaymentModel MUST NOT be null when ChargeCategory is "Purchase".
 * PurchasePaymentModel MUST be one of the allowed values when present.
 
@@ -50,7 +50,7 @@ Defines the financial settlement structure of a purchase.
 
 | Constraint      | Value                                                                                      |
 | :-------------- | :----------------------------------------------------------------------------------------- |
-| Dataset         | [SKU Price](#datasets.skuprice)                                                            |
+| Dataset         | [SKU Price](#datamodel.skuprice)                                                            |
 | Column type     | Dimension                                                                                  |
 | Feature level   | Conditional                                                                                |
 | Condition       | [Includes purchases](#conditions.includespurchases)                                        |

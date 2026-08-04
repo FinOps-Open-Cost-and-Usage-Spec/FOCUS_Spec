@@ -1,6 +1,6 @@
 # Examples: SKU Price Eligibility
 
-This section describes examples for the [SKU Price Eligibility](#datasets.skuprice.skupriceeligibility) column in the [SKU Price](#datasets.skuprice) dataset.
+This section describes examples for the [SKU Price Eligibility](#datamodel.skuprice.skupriceeligibility) column in the [SKU Price](#datamodel.skuprice) dataset.
 
 ## Global Scope
 

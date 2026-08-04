@@ -1,6 +1,6 @@
 # Pricing Currency Category
 
-Pricing Currency Category categorizes the nature of the [Pricing Currency](#datasets.skuprice.pricingcurrency) as either a financial instrument the customer can pay in or a proprietary [*consumption currency*](#glossary:consumption-currency) issued by the [*service provider*](#glossary:service-provider). This column defines whether multiplying a usage amount by the unit price results in a base financial cost ("Payable") or a virtual cost balance ("Consumable"). For a "Consumable" rate, a mandatory secondary lookup is required to determine the actual financial cost. For a "Payable" rate, a secondary currency conversion is only required if the customer's billed currency differs from the pricing currency.
+Pricing Currency Category categorizes the nature of the [Pricing Currency](#datamodel.skuprice.pricingcurrency) as either a financial instrument the customer can pay in or a proprietary [*consumption currency*](#glossary:consumption-currency) issued by the [*service provider*](#glossary:service-provider). This column defines whether multiplying a usage amount by the unit price results in a base financial cost ("Payable") or a virtual cost balance ("Consumable"). For a "Consumable" rate, a mandatory secondary lookup is required to determine the actual financial cost. For a "Payable" rate, a secondary currency conversion is only required if the customer's billed currency differs from the pricing currency.
 
 ## Requirements
 
@@ -33,7 +33,7 @@ Categorizes the nature of the Pricing Currency as either a financial instrument 
 
 | Constraint      | Value                           |
 | :-------------- | :------------------------------ |
-| Dataset         | [SKU Price](#datasets.skuprice) |
+| Dataset         | [SKU Price](#datamodel.skuprice) |
 | Column type     | Dimension                       |
 | Feature level   | Mandatory                       |
 | Allows nulls    | False                           |

@@ -1,8 +1,8 @@
 # Quantity Tier Maximum
 
-Quantity Tier Maximum represents the inclusive upper boundary of a quantity-based pricing tier for the specified [*SKU Price*](#glossary:sku-price). This value is measured in the quantity of the designated [Pricing Unit](#datasets.skuprice.pricingunit).
+Quantity Tier Maximum represents the inclusive upper boundary of a quantity-based pricing tier for the specified [*SKU Price*](#glossary:sku-price). This value is measured in the quantity of the designated [Pricing Unit](#datamodel.skuprice.pricingunit).
 
-When combined with [Quantity Tier Minimum](#datasets.skuprice.quantitytierminimum), this column defines the exact quantity envelope for which a specific unit price applies. When a unit price represents the highest quantity tier, or the offering uses a flat-rate pricing model with no quantity limits, this value remains null to indicate there is no upper bound.
+When combined with [Quantity Tier Minimum](#datamodel.skuprice.quantitytierminimum), this column defines the exact quantity envelope for which a specific unit price applies. When a unit price represents the highest quantity tier, or the offering uses a flat-rate pricing model with no quantity limits, this value remains null to indicate there is no upper bound.
 
 ## Requirements
 
@@ -13,8 +13,8 @@ QuantityTierMaximum MUST adhere to the following requirements:
   * QuantityTierMaximum MUST be null when there is no upper limit for the pricing tier.
   * QuantityTierMaximum MUST NOT be null when a subsequent, higher-quantity pricing tier exists for the same offering.
 * When QuantityTierMaximum is not null, QuantityTierMaximum MUST adhere to the following requirements:
-  * QuantityTierMaximum MUST represent a quantity denominated in the [PricingUnit](#datasets.skuprice.pricingunit).
-  * QuantityTierMaximum MUST be strictly greater than [QuantityTierMinimum](#datasets.skuprice.quantitytierminimum).
+  * QuantityTierMaximum MUST represent a quantity denominated in the [PricingUnit](#datamodel.skuprice.pricingunit).
+  * QuantityTierMaximum MUST be strictly greater than [QuantityTierMinimum](#datamodel.skuprice.quantitytierminimum).
   * QuantityTierMaximum MUST be the inclusive upper bound of the quantity-based pricing tier.
 
 ## Implementation Guidance
@@ -37,7 +37,7 @@ The inclusive upper boundary of a quantity-based pricing tier, measured in the d
 
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
-| Dataset         | [SKU Price](#datasets.skuprice)                      |
+| Dataset         | [SKU Price](#datamodel.skuprice)                      |
 | Column type     | Metric                                               |
 | Feature level   | Conditional                                          |
 | Condition       | [Includes quantity tier pricing](#conditions.includesquantitytierpricing) |

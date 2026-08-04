@@ -15,12 +15,12 @@ PricingServiceName MUST adhere to the following requirements:
 
 ## Implementation Guidance
 
-Practitioners are encouraged to carefully distinguish between **Pricing Service Name** and [Service Name](#datasets.costandusage.servicename).
+Practitioners are encouraged to carefully distinguish between **Pricing Service Name** and [Service Name](#datamodel.costandusage.servicename).
 
 * **Pricing Service Name** defines the name of the service as explicitly published in the provider's rate card or pricing catalog.
 * **Service Name** defines the name of the service associated with the actual usage or provisioned resource in the cost and usage data.
 
-In many cases, these will be identical. However, if a *service provider* abstracts or groups rate card offerings differently than their provisioned resources (e.g., pricing multiple distinct database engines under a single generic rate card service name), `Pricing Service Name` reflects the exact service name designated by the rate card. The set of `Service Name` values can instead be represented as inclusion criteria within [SKU Price Eligibility](#datasets.skuprice.skupriceeligibility) to capture the service names without conflating the rate card logic.
+In many cases, these will be identical. However, if a *service provider* abstracts or groups rate card offerings differently than their provisioned resources (e.g., pricing multiple distinct database engines under a single generic rate card service name), `Pricing Service Name` reflects the exact service name designated by the rate card. The set of `Service Name` values can instead be represented as inclusion criteria within [SKU Price Eligibility](#datamodel.skuprice.skupriceeligibility) to capture the service names without conflating the rate card logic.
 
 ## Column ID
 
@@ -38,7 +38,7 @@ A display name for the offering to which the specified unit price applies.
 
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
-| Dataset         | [SKU Price](#datasets.skuprice)                      |
+| Dataset         | [SKU Price](#datamodel.skuprice)                      |
 | Column type     | Dimension                                            |
 | Feature level   | Mandatory                                            |
 | Allows nulls    | False                                                |
