@@ -6,36 +6,36 @@ The Contract Commitment dataset is a supporting dataset that describes the terms
 
 | Column | Column Type | Feature Level | Allows Nulls | Data Type |
 | :--- | :--- | :--- | :--- | :--- |
-| [Billing Currency](#datasets.contractcommitment.billingcurrency) | Dimension | Mandatory | True | String |
-| [Contract Commitment Applicability](#datasets.contractcommitment.contractcommitmentapplicability) | Dimension / Metric | Mandatory | False | JSON |
-| [Contract Commitment Benefit Category](#datasets.contractcommitment.contractcommitmentbenefitcategory) | Dimension | Mandatory | False | String |
-| [Contract Commitment Category](#datasets.contractcommitment.contractcommitmentcategory) | Dimension | Mandatory | False | String |
-| [Contract Commitment Cost](#datasets.contractcommitment.contractcommitmentcost) | Metric | Mandatory | True | Decimal |
-| [Contract Commitment Created](#datasets.contractcommitment.contractcommitmentcreated) | Dimension | Mandatory | False | Date/Time |
-| [Contract Commitment Description](#datasets.contractcommitment.contractcommitmentdescription) | Dimension | Mandatory | True | String |
-| [Contract Commitment Discount Percentage](#datasets.contractcommitment.contractcommitmentdiscountpercentage) | Metric | Mandatory | True | Decimal |
-| [Contract Commitment Duration Type](#datasets.contractcommitment.contractcommitmentdurationtype) | Dimension | Mandatory | False | String |
-| [Contract Commitment Fulfillment Interval](#datasets.contractcommitment.contractcommitmentfulfillmentinterval) | Dimension | Mandatory | False | String |
-| [Contract Commitment ID](#datasets.contractcommitment.contractcommitmentid) | Dimension | Mandatory | False | String |
-| [Contract Commitment Last Updated](#datasets.contractcommitment.contractcommitmentlastupdated) | Dimension | Mandatory | False | Date/Time |
-| [Contract Commitment Lifecycle Status](#datasets.contractcommitment.contractcommitmentlifecyclestatus) | Dimension | Mandatory | False | String |
-| [Contract Commitment Model](#datasets.contractcommitment.contractcommitmentmodel) | Dimension | Mandatory | False | String |
-| [Contract Commitment Offer Category](#datasets.contractcommitment.contractcommitmentoffercategory) | Dimension | Mandatory | False | String |
-| [Contract Commitment Payment Interval](#datasets.contractcommitment.contractcommitmentpaymentinterval) | Dimension | Mandatory | False | String |
-| [Contract Commitment Payment Model](#datasets.contractcommitment.contractcommitmentpaymentmodel) | Dimension | Mandatory | False | String |
-| [Contract Commitment Payment Upfront Percentage](#datasets.contractcommitment.contractcommitmentpaymentupfrontpercentage) | Metric | Conditional | False | Decimal |
-| [Contract Commitment Period End](#datasets.contractcommitment.contractcommitmentperiodend) | Dimension | Mandatory | False | Date/Time |
-| [Contract Commitment Period Start](#datasets.contractcommitment.contractcommitmentperiodstart) | Dimension | Mandatory | False | Date/Time |
-| [Contract Commitment Quantity](#datasets.contractcommitment.contractcommitmentquantity) | Metric | Mandatory | True | Decimal |
-| [Contract Commitment Type](#datasets.contractcommitment.contractcommitmenttype) | Dimension | Mandatory | False | String |
-| [Contract Commitment Unit](#datasets.contractcommitment.contractcommitmentunit) | Dimension | Mandatory | True | String |
-| [Contract ID](#datasets.contractcommitment.contractid) | Dimension | Mandatory | False | String |
-| [Contract Period End](#datasets.contractcommitment.contractperiodend) | Dimension | Mandatory | False | Date/Time |
-| [Contract Period Start](#datasets.contractcommitment.contractperiodstart) | Dimension | Mandatory | False | Date/Time |
-| [Invoice Issuer Name](#datasets.contractcommitment.invoiceissuername) | Dimension | Mandatory | False | String |
-| [Pricing Currency](#datasets.contractcommitment.pricingcurrency) | Dimension | Conditional | False | String |
-| [Pricing Currency Contract Commitment Cost](#datasets.contractcommitment.pricingcurrencycontractcommitmentcost) | Metric | Conditional | True | Decimal |
-| [Service Provider Name](#datasets.contractcommitment.serviceprovidername) | Dimension | Mandatory | False | String |
+| [Billing Currency](#datamodel.contractcommitment.billingcurrency) | Dimension | Mandatory | True | String |
+| [Contract Commitment Applicability](#datamodel.contractcommitment.contractcommitmentapplicability) | Dimension / Metric | Mandatory | False | JSON |
+| [Contract Commitment Benefit Category](#datamodel.contractcommitment.contractcommitmentbenefitcategory) | Dimension | Mandatory | False | String |
+| [Contract Commitment Category](#datamodel.contractcommitment.contractcommitmentcategory) | Dimension | Mandatory | False | String |
+| [Contract Commitment Cost](#datamodel.contractcommitment.contractcommitmentcost) | Metric | Mandatory | True | Decimal |
+| [Contract Commitment Created](#datamodel.contractcommitment.contractcommitmentcreated) | Dimension | Mandatory | False | Date/Time |
+| [Contract Commitment Description](#datamodel.contractcommitment.contractcommitmentdescription) | Dimension | Mandatory | True | String |
+| [Contract Commitment Discount Percentage](#datamodel.contractcommitment.contractcommitmentdiscountpercentage) | Metric | Mandatory | True | Decimal |
+| [Contract Commitment Duration Type](#datamodel.contractcommitment.contractcommitmentdurationtype) | Dimension | Mandatory | False | String |
+| [Contract Commitment Fulfillment Interval](#datamodel.contractcommitment.contractcommitmentfulfillmentinterval) | Dimension | Mandatory | False | String |
+| [Contract Commitment ID](#datamodel.contractcommitment.contractcommitmentid) | Dimension | Mandatory | False | String |
+| [Contract Commitment Last Updated](#datamodel.contractcommitment.contractcommitmentlastupdated) | Dimension | Mandatory | False | Date/Time |
+| [Contract Commitment Lifecycle Status](#datamodel.contractcommitment.contractcommitmentlifecyclestatus) | Dimension | Mandatory | False | String |
+| [Contract Commitment Model](#datamodel.contractcommitment.contractcommitmentmodel) | Dimension | Mandatory | False | String |
+| [Contract Commitment Offer Category](#datamodel.contractcommitment.contractcommitmentoffercategory) | Dimension | Mandatory | False | String |
+| [Contract Commitment Payment Interval](#datamodel.contractcommitment.contractcommitmentpaymentinterval) | Dimension | Mandatory | False | String |
+| [Contract Commitment Payment Model](#datamodel.contractcommitment.contractcommitmentpaymentmodel) | Dimension | Mandatory | False | String |
+| [Contract Commitment Payment Upfront Percentage](#datamodel.contractcommitment.contractcommitmentpaymentupfrontpercentage) | Metric | [Conditional](#conditions.includespartialupfrontpayments) | False | Decimal |
+| [Contract Commitment Period End](#datamodel.contractcommitment.contractcommitmentperiodend) | Dimension | Mandatory | False | Date/Time |
+| [Contract Commitment Period Start](#datamodel.contractcommitment.contractcommitmentperiodstart) | Dimension | Mandatory | False | Date/Time |
+| [Contract Commitment Quantity](#datamodel.contractcommitment.contractcommitmentquantity) | Metric | Mandatory | True | Decimal |
+| [Contract Commitment Type](#datamodel.contractcommitment.contractcommitmenttype) | Dimension | Mandatory | False | String |
+| [Contract Commitment Unit](#datamodel.contractcommitment.contractcommitmentunit) | Dimension | Mandatory | True | String |
+| [Contract ID](#datamodel.contractcommitment.contractid) | Dimension | Mandatory | False | String |
+| [Contract Period End](#datamodel.contractcommitment.contractperiodend) | Dimension | Mandatory | False | Date/Time |
+| [Contract Period Start](#datamodel.contractcommitment.contractperiodstart) | Dimension | Mandatory | False | Date/Time |
+| [Invoice Issuer Name](#datamodel.contractcommitment.invoiceissuername) | Dimension | Mandatory | False | String |
+| [Pricing Currency](#datamodel.contractcommitment.pricingcurrency) | Dimension | [Conditional](#conditions.includespricing-billingcurrencydifferences) | False | String |
+| [Pricing Currency Contract Commitment Cost](#datamodel.contractcommitment.pricingcurrencycontractcommitmentcost) | Metric | [Conditional](#conditions.includespricing-billingcurrencydifferences) | True | Decimal |
+| [Service Provider Name](#datamodel.contractcommitment.serviceprovidername) | Dimension | Mandatory | False | String |
 
 ## Relationships<!--SkipTOC-->
 
@@ -52,38 +52,37 @@ The Contract Commitment dataset can be joined to the Cost and Usage dataset thro
 
 ContractCommitment MUST adhere to the following requirements:
 
-* ContractCommitment MUST be present when the service provider supports *contract commitments*.
 * ContractCommitment column presence MUST adhere to the following requirements:
-  * ContractCommitment MUST include [BillingCurrency](#datasets.contractcommitment.billingcurrency).
-  * ContractCommitment MUST include [ContractCommitmentApplicability](#datasets.contractcommitment.contractcommitmentapplicability).
-  * ContractCommitment MUST include [ContractCommitmentBenefitCategory](#datasets.contractcommitment.contractcommitmentbenefitcategory).
-  * ContractCommitment MUST include [ContractCommitmentCategory](#datasets.contractcommitment.contractcommitmentcategory).
-  * ContractCommitment MUST include [ContractCommitmentCost](#datasets.contractcommitment.contractcommitmentcost).
-  * ContractCommitment MUST include [ContractCommitmentCreated](#datasets.contractcommitment.contractcommitmentcreated).
-  * ContractCommitment MUST include [ContractCommitmentDescription](#datasets.contractcommitment.contractcommitmentdescription).
-  * ContractCommitment MUST include [ContractCommitmentDiscountPercentage](#datasets.contractcommitment.contractcommitmentdiscountpercentage).
-  * ContractCommitment MUST include [ContractCommitmentDurationType](#datasets.contractcommitment.contractcommitmentdurationtype).
-  * ContractCommitment MUST include [ContractCommitmentFulfillmentInterval](#datasets.contractcommitment.contractcommitmentfulfillmentinterval).
-  * ContractCommitment MUST include [ContractCommitmentId](#datasets.contractcommitment.contractcommitmentid).
-  * ContractCommitment MUST include [ContractCommitmentLastUpdated](#datasets.contractcommitment.contractcommitmentlastupdated).
-  * ContractCommitment MUST include [ContractCommitmentLifecycleStatus](#datasets.contractcommitment.contractcommitmentlifecyclestatus).
-  * ContractCommitment MUST include [ContractCommitmentModel](#datasets.contractcommitment.contractcommitmentmodel).
-  * ContractCommitment MUST include [ContractCommitmentOfferCategory](#datasets.contractcommitment.contractcommitmentoffercategory).
-  * ContractCommitment MUST include [ContractCommitmentPaymentInterval](#datasets.contractcommitment.contractcommitmentpaymentinterval).
-  * ContractCommitment MUST include [ContractCommitmentPaymentModel](#datasets.contractcommitment.contractcommitmentpaymentmodel).
-  * ContractCommitment MUST include [ContractCommitmentPaymentUpfrontPercentage](#datasets.contractcommitment.contractcommitmentpaymentupfrontpercentage) when the service provider offers "Partial Upfront" [payment models](#datasets.contractcommitment.contractcommitmentpaymentmodel).
-  * ContractCommitment MUST include [ContractCommitmentPeriodEnd](#datasets.contractcommitment.contractcommitmentperiodend).
-  * ContractCommitment MUST include [ContractCommitmentPeriodStart](#datasets.contractcommitment.contractcommitmentperiodstart).
-  * ContractCommitment MUST include [ContractCommitmentQuantity](#datasets.contractcommitment.contractcommitmentquantity).
-  * ContractCommitment MUST include [ContractCommitmentType](#datasets.contractcommitment.contractcommitmenttype).
-  * ContractCommitment MUST include [ContractCommitmentUnit](#datasets.contractcommitment.contractcommitmentunit).
-  * ContractCommitment MUST include [ContractId](#datasets.contractcommitment.contractid).
-  * ContractCommitment MUST include [ContractPeriodEnd](#datasets.contractcommitment.contractperiodend).
-  * ContractCommitment MUST include [ContractPeriodStart](#datasets.contractcommitment.contractperiodstart).
-  * ContractCommitment MUST include [InvoiceIssuerName](#datasets.contractcommitment.invoiceissuername).
-  * ContractCommitment MUST include [PricingCurrency](#datasets.contractcommitment.pricingcurrency) when the service provider supports pricing and billing in different currencies.
-  * ContractCommitment MUST include [PricingCurrencyContractCommitmentCost](#datasets.contractcommitment.pricingcurrencycontractcommitmentcost) when the service provider supports pricing and billing in different currencies.
-  * ContractCommitment MUST include [ServiceProviderName](#datasets.contractcommitment.serviceprovidername).
+  * ContractCommitment MUST include [BillingCurrency](#datamodel.contractcommitment.billingcurrency).
+  * ContractCommitment MUST include [ContractCommitmentApplicability](#datamodel.contractcommitment.contractcommitmentapplicability).
+  * ContractCommitment MUST include [ContractCommitmentBenefitCategory](#datamodel.contractcommitment.contractcommitmentbenefitcategory).
+  * ContractCommitment MUST include [ContractCommitmentCategory](#datamodel.contractcommitment.contractcommitmentcategory).
+  * ContractCommitment MUST include [ContractCommitmentCost](#datamodel.contractcommitment.contractcommitmentcost).
+  * ContractCommitment MUST include [ContractCommitmentCreated](#datamodel.contractcommitment.contractcommitmentcreated).
+  * ContractCommitment MUST include [ContractCommitmentDescription](#datamodel.contractcommitment.contractcommitmentdescription).
+  * ContractCommitment MUST include [ContractCommitmentDiscountPercentage](#datamodel.contractcommitment.contractcommitmentdiscountpercentage).
+  * ContractCommitment MUST include [ContractCommitmentDurationType](#datamodel.contractcommitment.contractcommitmentdurationtype).
+  * ContractCommitment MUST include [ContractCommitmentFulfillmentInterval](#datamodel.contractcommitment.contractcommitmentfulfillmentinterval).
+  * ContractCommitment MUST include [ContractCommitmentId](#datamodel.contractcommitment.contractcommitmentid).
+  * ContractCommitment MUST include [ContractCommitmentLastUpdated](#datamodel.contractcommitment.contractcommitmentlastupdated).
+  * ContractCommitment MUST include [ContractCommitmentLifecycleStatus](#datamodel.contractcommitment.contractcommitmentlifecyclestatus).
+  * ContractCommitment MUST include [ContractCommitmentModel](#datamodel.contractcommitment.contractcommitmentmodel).
+  * ContractCommitment MUST include [ContractCommitmentOfferCategory](#datamodel.contractcommitment.contractcommitmentoffercategory).
+  * ContractCommitment MUST include [ContractCommitmentPaymentInterval](#datamodel.contractcommitment.contractcommitmentpaymentinterval).
+  * ContractCommitment MUST include [ContractCommitmentPaymentModel](#datamodel.contractcommitment.contractcommitmentpaymentmodel).
+  * ContractCommitment MUST include [ContractCommitmentPaymentUpfrontPercentage](#datamodel.contractcommitment.contractcommitmentpaymentupfrontpercentage) when the [*operating model*](#glossary:operating-model) [includes partial upfront payments](#conditions.includespartialupfrontpayments).
+  * ContractCommitment MUST include [ContractCommitmentPeriodEnd](#datamodel.contractcommitment.contractcommitmentperiodend).
+  * ContractCommitment MUST include [ContractCommitmentPeriodStart](#datamodel.contractcommitment.contractcommitmentperiodstart).
+  * ContractCommitment MUST include [ContractCommitmentQuantity](#datamodel.contractcommitment.contractcommitmentquantity).
+  * ContractCommitment MUST include [ContractCommitmentType](#datamodel.contractcommitment.contractcommitmenttype).
+  * ContractCommitment MUST include [ContractCommitmentUnit](#datamodel.contractcommitment.contractcommitmentunit).
+  * ContractCommitment MUST include [ContractId](#datamodel.contractcommitment.contractid).
+  * ContractCommitment MUST include [ContractPeriodEnd](#datamodel.contractcommitment.contractperiodend).
+  * ContractCommitment MUST include [ContractPeriodStart](#datamodel.contractcommitment.contractperiodstart).
+  * ContractCommitment MUST include [InvoiceIssuerName](#datamodel.contractcommitment.invoiceissuername).
+  * ContractCommitment MUST include [PricingCurrency](#datamodel.contractcommitment.pricingcurrency) when the *operating model* [includes pricing and billing currency differences](#conditions.includespricing-billingcurrencydifferences).
+  * ContractCommitment MUST include [PricingCurrencyContractCommitmentCost](#datamodel.contractcommitment.pricingcurrencycontractcommitmentcost) when the *operating model* [includes pricing and billing currency differences](#conditions.includespricing-billingcurrencydifferences).
+  * ContractCommitment MUST include [ServiceProviderName](#datamodel.contractcommitment.serviceprovidername).
 * ContractCommitment MUST conform to [CorrectionHandling](#attributes.correctionhandling) requirements.
 * ContractCommitment MUST conform to [DatasetCompleteness](#attributes.datasetcompleteness) requirements.
 * ContractCommitment MUST conform to [DatasetConfiguration](#attributes.datasetconfiguration) requirements.

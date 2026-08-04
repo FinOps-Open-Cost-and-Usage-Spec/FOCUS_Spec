@@ -1,6 +1,7 @@
 PANDOC=$(shell which pandoc)
 MARKDOWNPP=../vendored/bin/markdown-pp
 PYMARKDOWNLNT=python3 ./enhanced_markdown_lint.py
+PYTEST=python3 -m pytest
 WKHTMLTOPDF=$(shell which wkhtmltopdf)
 PANDOC_PROJECT_RELATIVE_LINKS=../vendored/pandoc-project-relative-links/pandoc-project-relative-links.py
 
@@ -16,7 +17,7 @@ PDF_MARGINS=--variable margin-top=15 --variable margin-bottom=25 --variable marg
 PDF_FOOTER=--pdf-engine-opt="--footer-right" --pdf-engine-opt="[page] of [topage]" --pdf-engine-opt="--footer-font-name" --pdf-engine-opt="Palatino" --pdf-engine-opt="--footer-font-size" --pdf-engine-opt="8"
 
 # 1. Define only the subdirectories you want to search recursively
-SPEC_SOURCE_DIRS=supported_features attributes appendix datasets metadata data schemas
+SPEC_SOURCE_DIRS=supported_features attributes appendix datasets metadata data schemas conditions
 
 # 2. Grab the markdown files in the root folder without recursing
 ROOT_FILES=$(wildcard *.md *.mdpp)
@@ -34,9 +35,19 @@ OS=$(shell uname)
 # Set to 1 to force build even if linter finds errors (e.g., make force=1)
 force?=0
 
-.PHONY: all clean lint
+.PHONY: all clean lint test
 
-all: spec.md spec.pdf spec.html
+all: spec.md spec.pdf spec.html test
+
+# Validate the specification components and build outputs. Runs after all
+# artifacts (spec.md, spec.html, spec.pdf) are built.
+test: spec.md spec.pdf spec.html
+	@echo "Validating specification components..."
+ifeq ($(force),1)
+	-@$(PYTEST) tests
+else
+	@$(PYTEST) tests
+endif
 
 spec.html: spec.md
 	$(PANDOC) spec.md -o $@ -f gfm-tex_math_dollars -F $(PANDOC_PROJECT_RELATIVE_LINKS) -M pathToProjectRoot=$(PATH_TO_PROJECT_ROOT) -s --css=styles/${STYLE}_html.css

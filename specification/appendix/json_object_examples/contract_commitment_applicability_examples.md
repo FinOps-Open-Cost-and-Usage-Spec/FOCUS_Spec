@@ -1,6 +1,6 @@
 # Examples: Contract Commitment Applicability
 
-This section describes examples for the [Contract Commitment Applicability](#datasets.contractcommitment.contractcommitmentapplicability) column in the [Contract Commitment](#datasets.contractcommitment) dataset.
+This section describes examples for the [Contract Commitment Applicability](#datamodel.contractcommitment.contractcommitmentapplicability) column in the [Contract Commitment](#datamodel.contractcommitment) dataset.
 
 ## Global Scope and Applicability
 
