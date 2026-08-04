@@ -2,11 +2,11 @@
 
 ## Description
 
-FOCUS supports the evaluation of the rate an organization pays against the rates a [*service provider*](#glossary:service-provider) offers. The [SKU Price](#datasets.skuprice) dataset carries the public rate and the negotiated rate as two columns on the same record, List Unit Price and Contracted Unit Price, so the difference between them is read directly rather than inferred from what was billed or reassembled from two rows. Joining SKU Price to [Cost and Usage](#datasets.costandusage) on SKU Price ID then places recorded consumption against the price list it was drawn from, which is what turns a rate difference into a quantified amount.
+FOCUS supports the evaluation of the rate an organization pays against the rates a [*service provider*](#glossary:service-provider) offers. The [SKU Price](#datamodel.skuprice) dataset carries the public rate and the negotiated rate as two columns on the same record, List Unit Price and Contracted Unit Price, so the difference between them is read directly rather than inferred from what was billed or reassembled from two rows. Joining SKU Price to [Cost and Usage](#datamodel.costandusage) on SKU Price ID then places recorded consumption against the price list it was drawn from, which is what turns a rate difference into a quantified amount.
 
 Three optimization questions follow from that pairing. The first is what an agreement is worth: subtracting Contracted Unit Price from List Unit Price on a record yields the reduction per unit, and Contract ID names the [*contract*](#glossary:contract) the negotiated rate belongs to.
 
-The second is whether consumption sits in the right quantity tier. Quantity Tier Minimum and Quantity Tier Maximum bound the quantity envelope a rate applies to, measured in the Pricing Unit. Quantity Tier Minimum is the exclusive lower bound and Quantity Tier Maximum is the inclusive upper bound, so a quantity falls in a tier when it is strictly greater than the minimum and no greater than the maximum. The highest tier carries a null Quantity Tier Maximum. Because adjacent tiers meet at a shared boundary with no gap, the tier above a given tier is the one whose Quantity Tier Minimum equals that tier's Quantity Tier Maximum, which is what allows the distance to the next rate to be measured. Quantity Tier Name carries the label the *service provider* publishes for the tier, for reconciliation against a public pricing page.
+The second is whether consumption sits in the right quantity tier. Quantity Tier Minimum and Quantity Tier Maximum bound the quantity envelope a rate applies to, measured in the Pricing Unit. Quantity Tier Minimum is the exclusive lower bound and Quantity Tier Maximum is the inclusive upper bound, so a quantity falls in a tier when it is strictly greater than the minimum and no greater than the maximum. The highest tier carries a null Quantity Tier Maximum. Because adjacent tiers meet at a shared boundary with no gap, the tier above a given tier is the one whose Quantity Tier Minimum equals that tier's Quantity Tier Maximum, which is what allows the distance to the next rate to be measured. A tier is identified by its boundaries rather than by a published label, so reconciliation against a public pricing page matches on the quantity range the rate applies to.
 
 The third is which purchase term to commit to. Purchase Duration Type gives the categorical term of a purchase, and Purchase Payment Model gives how the obligation is settled across "No Upfront", "Partial Upfront", and "All Upfront". Both are populated where Charge Category is "Purchase" and are null where it is "Usage", so the fees for each available term and settlement structure can be listed side by side and weighed against the consumption that would run under them.
 
@@ -25,14 +25,14 @@ This feature applies wherever a *service provider* publishes a SKU Price dataset
 Each of the three capabilities above rests on a conditional column, and each narrows independently:
 
 * Comparing negotiated rates against public rates uses Contracted Unit Price and Contract ID, present when the [*operating model*](#glossary:operating-model) [includes contract commitments](#conditions.includescontractcommitments). Where they are absent, every published price is a public rate carried in List Unit Price, so there is no negotiated rate to evaluate and this capability does not apply.
-* Quantity tier analysis uses Quantity Tier Minimum, Quantity Tier Maximum, and Quantity Tier Name, present when the *operating model* [includes quantity tier pricing](#conditions.includesquantitytierpricing). Where they are absent, a SKU Price ID carries one rate that applies at any quantity, so consumption cannot sit in the wrong tier and this capability does not apply.
+* Quantity tier analysis uses Quantity Tier Minimum and Quantity Tier Maximum, present when the *operating model* [includes quantity tier pricing](#conditions.includesquantitytierpricing). Where they are absent, a SKU Price ID carries one rate that applies at any quantity, so consumption cannot sit in the wrong tier and this capability does not apply.
 * Purchase term evaluation uses Purchase Duration Type and Purchase Payment Model, present when the *operating model* [includes purchases](#conditions.includespurchases). Where they are absent, the catalog prices consumption only, Charge Category carries the value "Usage" on every row, and this capability does not apply.
 
 List Unit Price is present in every SKU Price dataset instance, so reading and comparing public rates over time holds regardless of which of the three conditions a *service provider* meets.
 
 ## Directly Dependent Columns
 
-* [SkuPrice](#datasets.skuprice)
+* [SkuPrice](#datamodel.skuprice)
   * ContractedUnitPrice
   * ContractId
   * ListUnitPrice
@@ -40,11 +40,10 @@ List Unit Price is present in every SKU Price dataset instance, so reading and c
   * PurchasePaymentModel
   * QuantityTierMaximum
   * QuantityTierMinimum
-  * QuantityTierName
 
 ## Supporting Columns
 
-* [SkuPrice](#datasets.skuprice)
+* [SkuPrice](#datamodel.skuprice)
   * ChargeCategory
   * PricingCurrency
   * PricingUnit
@@ -54,7 +53,7 @@ List Unit Price is present in every SKU Price dataset instance, so reading and c
   * SkuPriceEffectiveEnd
   * SkuPriceEffectiveStart
   * SkuPriceId
-* [CostAndUsage](#datasets.costandusage)
+* [CostAndUsage](#datamodel.costandusage)
   * ChargeCategory
   * ChargePeriodEnd
   * ChargePeriodStart
@@ -124,7 +123,6 @@ SELECT
   PQ.PricingUnit,
   PQ.TotalPricingQuantity,
   PQ.TotalEffectiveCost,
-  SP.QuantityTierName,
   SP.QuantityTierMinimum,
   SP.QuantityTierMaximum,
   SP.ListUnitPrice,
@@ -149,11 +147,10 @@ SELECT
   CURRENT_TIER.SkuPriceId,
   CURRENT_TIER.PricingUnit,
   CURRENT_TIER.PricingCurrency,
-  CURRENT_TIER.QuantityTierName AS CurrentTierName,
   CURRENT_TIER.QuantityTierMinimum AS CurrentTierMinimum,
   CURRENT_TIER.QuantityTierMaximum AS CurrentTierMaximum,
   CURRENT_TIER.ListUnitPrice AS CurrentListUnitPrice,
-  NEXT_TIER.QuantityTierName AS NextTierName,
+  NEXT_TIER.QuantityTierMaximum AS NextTierMaximum,
   NEXT_TIER.ListUnitPrice AS NextListUnitPrice,
   CURRENT_TIER.ListUnitPrice - NEXT_TIER.ListUnitPrice AS ListUnitPriceReduction,
   CURRENT_TIER.QuantityTierMaximum - CURRENT_TIER.QuantityTierMinimum AS TierWidth

@@ -2,7 +2,7 @@
 
 ## Description
 
-FOCUS supports the discovery of the prices a [*service provider*](#glossary:service-provider) offers, and the estimation of cost for consumption that has not happened yet. Prices are carried in the [SKU Price](#datasets.skuprice) dataset, which describes the full [*price list*](#glossary:price-list) a *service provider* publishes rather than only the [*SKUs*](#glossary:sku) that already appear in [Cost and Usage](#datasets.costandusage) data. A [*practitioner*](#glossary:practitioner) sizing a net-new architecture can therefore price it from the same schema across every *service provider*, without reading one catalog format per provider.
+FOCUS supports the discovery of the prices a [*service provider*](#glossary:service-provider) offers, and the estimation of cost for consumption that has not happened yet. Prices are carried in the [SKU Price](#datamodel.skuprice) dataset, which describes the full [*price list*](#glossary:price-list) a *service provider* publishes rather than only the [*SKUs*](#glossary:sku) that already appear in [Cost and Usage](#datamodel.costandusage) data. A [*practitioner*](#glossary:practitioner) sizing a net-new architecture can therefore price it from the same schema across every *service provider*, without reading one catalog format per provider.
 
 List Unit Price is the public rate for a single Pricing Unit, denominated in the Pricing Currency, so an estimate is the planned quantity in that Pricing Unit multiplied by List Unit Price. Pricing Currency Category states whether that product is a financial amount or a balance in a [*consumption currency*](#glossary:consumption-currency) the *service provider* issues. A "Consumable" rate yields a virtual balance and needs a further conversion before it can be read as money, so an estimate that mixes the two categories without converting is not a monetary total.
 
@@ -31,7 +31,7 @@ One capability narrows. Pricing Region ID is present when the [*operating model*
 
 ## Directly Dependent Columns
 
-* [SkuPrice](#datasets.skuprice)
+* [SkuPrice](#datamodel.skuprice)
   * ChargeCategory
   * ListUnitPrice
   * PricingCurrency
@@ -48,7 +48,7 @@ One capability narrows. Pricing Region ID is present when the [*operating model*
 
 ## Supporting Columns
 
-* [SkuPrice](#datasets.skuprice)
+* [SkuPrice](#datamodel.skuprice)
   * PricingRegionId
   * SkuPriceCreated
   * SkuPriceLastUpdated
