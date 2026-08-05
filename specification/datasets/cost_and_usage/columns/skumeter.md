@@ -35,9 +35,9 @@ Describes the functionality being metered or measured by a particular SKU in a *
 
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datamodel.costandusage)             |
+| Dataset         | [Cost and Usage](#datamodel.costandusage)            |
 | Column type     | Dimension                                            |
-| Feature level   | Conditional                                          |
+| Feature level   | Mandatory                                            |
 | Allows nulls    | True                                                 |
 | Data type       | String                                               |
 | Value format    | \<not specified>                                     |

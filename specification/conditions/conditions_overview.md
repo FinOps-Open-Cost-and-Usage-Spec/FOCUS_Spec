@@ -15,7 +15,6 @@ Conditions are sorted alphabetically by name.
 | [Includes Commitment Discounts](#conditions.includescommitmentdiscounts) | Commitment | Operating model includes commitment discounts. |
 | [Includes Commitment Programs](#conditions.includescommitmentprograms) | Commitment | Operating model includes commitment programs. |
 | [Includes Contract Commitments](#conditions.includescontractcommitments) | Commitment | Operating model includes contract commitments. |
-| [Includes List Unit Prices](#conditions.includeslistunitprices) | Pricing | Operating model includes standard, non-discounted unit prices. |
 | [Includes Multiple Billing Account Types](#conditions.includesmultiplebillingaccounttypes) | Account | Operating model includes multiple Billing Account Types. |
 | [Includes Multiple Pricing Categories](#conditions.includesmultiplepricingcategories) | Pricing | Operating model includes multiple pricing categories. |
 | [Includes Multiple Sub Account Types](#conditions.includesmultiplesubaccounttypes) | Account | Operating model includes multiple Sub Account Types. |
@@ -30,6 +29,5 @@ Conditions are sorted alphabetically by name.
 | [Includes Split Cost Allocation](#conditions.includessplitcostallocation) | Allocation | Operating model includes split cost allocation. |
 | [Includes Sub Accounts](#conditions.includessubaccounts) | Account | Operating model includes a sub account construct. |
 | [Includes Tags](#conditions.includestags) | Allocation | Operating model includes tags. |
-| [Includes Unit Pricing](#conditions.includesunitpricing) | Pricing | Operating model includes unit pricing. |
 | [Includes Usage Measurement](#conditions.includesusagemeasurement) | Billing | Operating model includes the measurement of usage. |
 | [Includes Virtual Currency](#conditions.includesvirtualcurrency) | Pricing | Operating model includes prices in virtual currency. |

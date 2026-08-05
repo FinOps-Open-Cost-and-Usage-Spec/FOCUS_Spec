@@ -42,9 +42,9 @@ The service-provider-suggested unit price per Pricing Unit for the *SKU Price* i
 
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datamodel.costandusage)             |
+| Dataset         | [Cost and Usage](#datamodel.costandusage)            |
 | Column type     | Metric                                               |
-| Feature level   | Conditional                                          |
+| Feature level   | Mandatory                                            |
 | Allows nulls    | True                                                 |
 | Data type       | Decimal                                              |
 | Value format    | [Numeric Format](#attributes.numericformat)          |
