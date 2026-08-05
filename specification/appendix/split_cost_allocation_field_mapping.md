@@ -163,7 +163,7 @@ The summable metrics across the four FOCUS rows sum to the pre-split origin tota
 | EffectiveCost   | $0.00      | $120.00 | $72.00 | $48.00 | $240.00  | $240.00 ✓        |
 | ConsumedQuantity | 0         | 12      | 7.2    | 4.8    | 24       | 24 ✓             |
 
-ListCost and ContractedCost are numerically identical in this scenario because ContractedUnitPrice defaults to ListUnitPrice: Resource Reservation is a commitment discount, and commitment discounts affect EffectiveCost (through amortization) but not ContractedUnitPrice, which excludes them by definition. BilledCost is $0.00 across all four rows because this usage is fully covered by the Resource Reservation's purchase charge — a *covering charge* not itself shown in this example — leaving EffectiveCost as the only metric that reflects the $240.00 amortized cost of the reservation.
+ListCost and ContractedCost are numerically identical in this scenario because ContractedUnitPrice defaults to ListUnitPrice: Resource Reservation is a commitment discount, and commitment discounts affect EffectiveCost (through amortization) but not ContractedUnitPrice, which excludes them by definition. BilledCost is $0.00 across all four rows because this usage is fully covered by the Resource Reservation's purchase charge — a [*covering charge*](#glossary:covering-charge) not itself shown in this example — leaving EffectiveCost as the only metric that reflects the $240.00 amortized cost of the reservation.
 
 Non-summable metrics (ListUnitPrice `$12.00`, ContractedUnitPrice `$12.00`, ConsumedUnit `"Hours"`) are identical across all four rows.
 
