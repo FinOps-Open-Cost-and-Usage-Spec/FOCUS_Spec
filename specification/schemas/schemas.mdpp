@@ -38,10 +38,10 @@ The Contract Applied Object Schema defines the structure for the [Contract Appli
 
 !INCLUDECODE "schemas/datasets/cost_and_usage/contractappliedobjectschema.json" (json)
 
-### Identity Details Object Schema
+### Credential Details Object Schema
 
-The Identity Details Object Schema defines the structure for the [Identity Details](#datasets.costandusage.identitydetails) column.
+The Credential Details Object Schema defines the structure for the [Credential Details](#datasets.costandusage.credentialdetails) column.
 
-[Download from GitHub](/specification/schemas/datasets/cost_and_usage/identitydetailsobjectschema.json)
+[Download from GitHub](/specification/schemas/datasets/cost_and_usage/credentialdetailsobjectschema.json)
 
-!INCLUDECODE "schemas/datasets/cost_and_usage/identitydetailsobjectschema.json" (json)
+!INCLUDECODE "schemas/datasets/cost_and_usage/credentialdetailsobjectschema.json" (json)

@@ -117,6 +117,10 @@ A [*charge*](#glossary:charge) whose [Billed Cost](#datasets.costandusage.billed
 
 A purchase [*charge*](#glossary:charge) whose cost is applied against one or more [*covered charges*](#glossary:covered-charge), offsetting their [Billed Cost](#datasets.costandusage.billedcost). Common examples include [*commitment discount*](#glossary:commitment-discount) purchases, prepayment charges, and marketplace purchases that cover consumption-based usage.
 
+<a name="glossary:credential"><b>Credential</b></a>
+
+The means by which a [*principal*](#glossary:principal) authenticates to a service provider on an individual request (e.g., API key, access token, session). A credential is distinct from the principal that presents it, and the same principal may present different credentials on different requests. Where a service provider does not distinguish the credential presented from the principal that presented it, the principal is the credential.
+
 <a name="glossary:credit"><b>Credit</b></a>
 
 A financial incentive or allowance granted by a service provider unrelated to other past/current/future charges.
