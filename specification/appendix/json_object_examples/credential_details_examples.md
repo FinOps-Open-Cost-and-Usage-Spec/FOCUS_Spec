@@ -56,7 +56,7 @@ This example demonstrates how the two identifier columns support different attri
 
 Acme Corp runs generative AI inference and scheduled compute on Aura Web. Four charges land in a single charge period (2025-04-01):
 
-1. **Inference via an API key** (Row 1): Alex Rivera, presenting `prod-ingest-key`. [BilledCost](#datasets.costandusage.billedcost) is $120.00.
+1. **Inference via an API key** (Row 1): Alex Rivera, presenting `prod-ingest-key`. [BilledCost](#datamodel.costandusage.billedcost) is $120.00.
 2. **Inference, direct** (Row 2): Alex Rivera, with no *credential* the *service provider* distinguishes from the user. BilledCost is $30.00.
 3. **Inference via an API key** (Row 3): Jordan Lee, presenting `batch-key`. BilledCost is $75.00.
 4. **Scheduled compute** (Row 4): the `svc-nightly-etl` service account, which has no email address. BilledCost is $45.00.

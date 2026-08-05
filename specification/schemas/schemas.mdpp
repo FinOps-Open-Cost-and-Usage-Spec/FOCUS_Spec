@@ -6,7 +6,7 @@ This section provides machine-readable JSON Schema definitions for validating th
 
 ### Contract Commitment Applicability Object Schema
 
-The Contract Commitment Applicability Object Schema defines the structure for the [Contract Commitment Applicability](#datasets.contractcommitment.contractcommitmentapplicability) column.
+The Contract Commitment Applicability Object Schema defines the structure for the [Contract Commitment Applicability](#datamodel.contractcommitment.contractcommitmentapplicability) column.
 
 [Download from GitHub](/specification/schemas/datasets/contract_commitment/contractcommitmentapplicabilityobjectschema.json)
 
@@ -16,7 +16,7 @@ The Contract Commitment Applicability Object Schema defines the structure for th
 
 ### Allocated Method Details Object Schema
 
-The Allocated Method Details Object Schema defines the structure for the [Allocated Method Details](#datasets.costandusage.allocatedmethoddetails) column.
+The Allocated Method Details Object Schema defines the structure for the [Allocated Method Details](#datamodel.costandusage.allocatedmethoddetails) column.
 
 [Download from GitHub](/specification/schemas/datasets/cost_and_usage/allocatedmethoddetailsobjectschema.json)
 
@@ -24,7 +24,7 @@ The Allocated Method Details Object Schema defines the structure for the [Alloca
 
 ### Commitment Program Eligibility Details Object Schema
 
-The Commitment Program Eligibility Details Object Schema defines the structure for the [Commitment Program Eligibility Details](#datasets.costandusage.commitmentprogrameligibilitydetails) column.
+The Commitment Program Eligibility Details Object Schema defines the structure for the [Commitment Program Eligibility Details](#datamodel.costandusage.commitmentprogrameligibilitydetails) column.
 
 [Download from GitHub](/specification/schemas/datasets/cost_and_usage/commitmentprogrameligibilitydetailsobjectschema.json)
 
@@ -32,7 +32,7 @@ The Commitment Program Eligibility Details Object Schema defines the structure f
 
 ### Contract Applied Object Schema
 
-The Contract Applied Object Schema defines the structure for the [Contract Applied](#datasets.costandusage.contractapplied) column.
+The Contract Applied Object Schema defines the structure for the [Contract Applied](#datamodel.costandusage.contractapplied) column.
 
 [Download from GitHub](/specification/schemas/datasets/cost_and_usage/contractappliedobjectschema.json)
 
@@ -40,7 +40,7 @@ The Contract Applied Object Schema defines the structure for the [Contract Appli
 
 ### Credential Details Object Schema
 
-The Credential Details Object Schema defines the structure for the [Credential Details](#datasets.costandusage.credentialdetails) column.
+The Credential Details Object Schema defines the structure for the [Credential Details](#datamodel.costandusage.credentialdetails) column.
 
 [Download from GitHub](/specification/schemas/datasets/cost_and_usage/credentialdetailsobjectschema.json)
 

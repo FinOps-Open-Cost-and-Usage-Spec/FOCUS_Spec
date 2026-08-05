@@ -1,6 +1,6 @@
 # Billing Period Status
 
-Billing Period Status represents the state of the billing period (i.e., "Open" or "Closed"). This status helps FinOps practitioners determine if the [Cost and Usage](#datasets.costandusage) and [Invoice Detail](#datasets.invoicedetail) data for a given period is preliminary and subject to change, or if all anticipated invoices have been issued and the delivered data is finalized and ready for formal financial reporting and showback/chargeback processes.
+Billing Period Status represents the state of the billing period (i.e., "Open" or "Closed"). This status helps FinOps practitioners determine if the [Cost and Usage](#datamodel.costandusage) and [Invoice Detail](#datamodel.invoicedetail) data for a given period is preliminary and subject to change, or if all anticipated invoices have been issued and the delivered data is finalized and ready for formal financial reporting and showback/chargeback processes.
 
 ## Requirements
 
@@ -9,7 +9,7 @@ BillingPeriodStatus MUST adhere to the following requirements:
 * BillingPeriodStatus MUST be of type String.
 * BillingPeriodStatus MUST NOT be null.
 * BillingPeriodStatus MUST be one of the allowed values.
-* BillingPeriodStatus MUST represent the state of the billing period identified by [BillingPeriodStart](#datasets.billingperiod.billingperiodstart) and [BillingPeriodEnd](#datasets.billingperiod.billingperiodend).
+* BillingPeriodStatus MUST represent the state of the billing period identified by [BillingPeriodStart](#datamodel.billingperiod.billingperiodstart) and [BillingPeriodEnd](#datamodel.billingperiod.billingperiodend).
 * BillingPeriodStatus MUST NOT be "Open" following a previous status of "Closed", except when explicitly requested or approved by the customer.
 
 ## Allowed Values
@@ -51,7 +51,7 @@ The state of the billing period (i.e., "Open" or "Closed"), indicating whether t
 
 | Constraint    | Value                               |
 | :------------ | :---------------------------------- |
-| Dataset         | [Billing Period](#datasets.billingperiod)             |
+| Dataset         | [Billing Period](#datamodel.billingperiod)             |
 | Column type   | Dimension                           |
 | Feature level | Mandatory                           |
 | Allows nulls  | False                               |

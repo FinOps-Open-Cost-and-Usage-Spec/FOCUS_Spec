@@ -1,6 +1,6 @@
 # Credential ID
 
-A Credential ID is an identifier representing the [*credential*](#glossary:credential) presented to a [*service provider*](#glossary:service-provider) on the request that produced a [*charge*](#glossary:charge). A *credential* is the means by which a [*principal*](#glossary:principal) authenticates to a *service provider* (e.g., API key, access token, session), and is distinct from the *principal* itself. Where a *service provider* exposes only one level, the *principal* is the *credential* presented, and Credential ID carries the same value as [Principal ID](#datasets.costandusage.principalid). The Credential ID is commonly used to distinguish *charges* that share a *principal* but originate from different *credentials*.
+A Credential ID is an identifier representing the [*credential*](#glossary:credential) presented to a [*service provider*](#glossary:service-provider) on the request that produced a [*charge*](#glossary:charge). A *credential* is the means by which a [*principal*](#glossary:principal) authenticates to a *service provider* (e.g., API key, access token, session), and is distinct from the *principal* itself. Where a *service provider* exposes only one level, the *principal* is the *credential* presented, and Credential ID carries the same value as [Principal ID](#datamodel.costandusage.principalid). The Credential ID is commonly used to distinguish *charges* that share a *principal* but originate from different *credentials*.
 
 For scenarios demonstrating how Credential ID is populated across different technology categories, see [Examples: Actor Attribution](#appendix.examples:actorattribution).
 
@@ -33,7 +33,7 @@ Identifier representing the *credential* presented on the request that produced 
 
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Dataset         | [Cost and Usage](#datamodel.costandusage)             |
 | Column type     | Dimension                                            |
 | Feature level   | Conditional                                          |
 | Allows nulls    | True                                                 |

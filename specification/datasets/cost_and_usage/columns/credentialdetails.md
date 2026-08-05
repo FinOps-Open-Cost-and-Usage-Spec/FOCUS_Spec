@@ -1,6 +1,6 @@
 # Credential Details
 
-Credential Details represents a set of properties describing the [*principal*](#glossary:principal) that initiated a request and the [*credential*](#glossary:credential) that credentialed the request to the [*service provider*](#glossary:service-provider). A *service provider* commonly records both: the *principal* to which access to a [*resource*](#glossary:resource) or [*service*](#glossary:service) is granted, and the *credential* that *principal* presented on the request that produced the [*charge*](#glossary:charge). Credential Details describes the *principal* identified by [Principal ID](#datasets.costandusage.principalid) through its top-level properties, and describes the *credential* identified by [Credential ID](#datasets.costandusage.credentialid) in a nested `Credential` property.
+Credential Details represents a set of properties describing the [*principal*](#glossary:principal) that initiated a request and the [*credential*](#glossary:credential) that credentialed the request to the [*service provider*](#glossary:service-provider). A *service provider* commonly records both: the *principal* to which access to a [*resource*](#glossary:resource) or [*service*](#glossary:service) is granted, and the *credential* that *principal* presented on the request that produced the [*charge*](#glossary:charge). Credential Details describes the *principal* identified by [Principal ID](#datamodel.costandusage.principalid) through its top-level properties, and describes the *credential* identified by [Credential ID](#datamodel.costandusage.credentialid) in a nested `Credential` property.
 
 Where Principal ID and Credential ID provide opaque identifiers suited to grouping and joining, Credential Details carries the descriptive attributes a *service provider* publishes alongside those identifiers, such as a display name, an email address, and the kind of *principal* or *credential* the identifier represents. A request may be authenticated with an API key acting under a named user, or with a workload identity acting under a service account; in each case the named user or service account is the *principal*, and the API key or workload identity is the *credential*. Keeping the descriptive attributes of the *principal* at the top level means the most common analyses (e.g., grouping *charges* by principal name or email) read directly from those properties.
 
@@ -18,13 +18,13 @@ CredentialDetails MUST adhere to the following requirements:
 * CredentialDetails MUST adhere to the following nullability requirements:
   * CredentialDetails MUST be null when the *service provider* cannot determine the *principal* or the *credential* associated with the *charge*.
   * CredentialDetails MAY be null when the *service provider* can determine the *principal* or the *credential* associated with the *charge*.
-* CredentialDetails MUST conform to [CredentialDetailsObject](#datasets.costandusage.credentialdetails.credentialdetailsobject) requirements when CredentialDetails is not null.
+* CredentialDetails MUST conform to [CredentialDetailsObject](#datamodel.costandusage.credentialdetails.credentialdetailsobject) requirements when CredentialDetails is not null.
 
 ## Credential Details Object
 
 Credential Details consists of a valid JSON object whose top-level properties describe the *principal* identified by PrincipalId. An optional `Credential` property describes the *credential* identified by CredentialId.
 
-The following section details the normative requirements for the CredentialDetailsObject and its nested properties. For a logical overview of the expected content, see the [Schema Structure](#datasets.costandusage.credentialdetails.credentialdetailsobject.objectschemastructure) and [Object Example](#datasets.costandusage.credentialdetails.credentialdetailsobject.objectexample) sections.
+The following section details the normative requirements for the CredentialDetailsObject and its nested properties. For a logical overview of the expected content, see the [Schema Structure](#datamodel.costandusage.credentialdetails.credentialdetailsobject.objectschemastructure) and [Object Example](#datamodel.costandusage.credentialdetails.credentialdetailsobject.objectexample) sections.
 
 ### Object Requirements
 
@@ -120,13 +120,13 @@ A set of properties describing the *principal* that initiated a request and the 
 
 | Constraint | Value |
 | :--- | :--- |
-| Dataset | [Cost and Usage](#datasets.costandusage) |
+| Dataset | [Cost and Usage](#datamodel.costandusage) |
 | Column type | Dimension |
 | Feature level | Conditional |
 | Allows nulls | True |
 | Data type | JSON |
 | Value format | [JSON Object Format](#attributes.jsonobjectformat) |
-| Object | [CredentialDetailsObject](#datasets.costandusage.credentialdetails.credentialdetailsobject) |
+| Object | [CredentialDetailsObject](#datamodel.costandusage.credentialdetails.credentialdetailsobject) |
 
 ## Version Introduced
 

@@ -15,6 +15,7 @@ PrincipalId MUST adhere to the following requirements:
   * PrincipalId MUST NOT be null when the service provider can determine the *principal* associated with the *charge*.
 * When PrincipalId is not null, PrincipalId MUST adhere to the following requirements:
   * PrincipalId MUST be a unique identifier within the service provider.
+* PrincipalId documentation MUST include the use cases for which PrincipalId is provided.
 
 ## Column ID
 
@@ -32,7 +33,7 @@ Identifier representing the *principal* to which access to a *resource* or *serv
 
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Dataset         | [Cost and Usage](#datamodel.costandusage)             |
 | Column type     | Dimension                                            |
 | Feature level   | Conditional                                          |
 | Allows nulls    | True                                                 |

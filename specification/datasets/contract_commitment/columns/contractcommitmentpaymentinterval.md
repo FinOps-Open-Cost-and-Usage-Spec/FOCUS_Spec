@@ -1,8 +1,8 @@
 # Contract Commitment Payment Interval
 
-Contract Commitment Payment Interval represents the frequency by which a [*contract commitment*](#glossary:contract-commitment) is invoiced. For [payment models](#datasets.contractcommitment.contractcommitmentpaymentmodel) involving deferred financial obligations, the Payment Interval denotes the ongoing billing cycle. For models paid upfront, the Payment Interval denotes the single settlement event.
+Contract Commitment Payment Interval represents the frequency by which a [*contract commitment*](#glossary:contract-commitment) is invoiced. For [payment models](#datamodel.contractcommitment.contractcommitmentpaymentmodel) involving deferred financial obligations, the Payment Interval denotes the ongoing billing cycle. For models paid upfront, the Payment Interval denotes the single settlement event.
 
-Note: Do not confuse the Contract Commitment Payment Interval with the [Contract Commitment Fulfillment Interval](#datasets.contractcommitment.contractcommitmentfulfillmentinterval). For example, a spend-based commitment discount may have an Hourly Fulfillment Interval (usage reset) but a Monthly Payment Interval (billing cycle).
+Note: Do not confuse the Contract Commitment Payment Interval with the [Contract Commitment Fulfillment Interval](#datamodel.contractcommitment.contractcommitmentfulfillmentinterval). For example, a spend-based commitment discount may have an Hourly Fulfillment Interval (usage reset) but a Monthly Payment Interval (billing cycle).
 
 ## Requirements
 
@@ -11,8 +11,8 @@ ContractCommitmentPaymentInterval MUST adhere to the following requirements:
 * ContractCommitmentPaymentInterval MUST be of type String.
 * ContractCommitmentPaymentInterval MUST NOT be null.
 * ContractCommitmentPaymentInterval MUST be one of the allowed values.
-* ContractCommitmentPaymentInterval MUST be "One-Time" when [ContractCommitmentPaymentModel](#datasets.contractcommitment.contractcommitmentpaymentmodel) is "All Upfront".
-* ContractCommitmentPaymentInterval SHOULD represent a time granularity equal to or lesser than the time granularity represented by [ContractCommitmentDurationType](#datasets.contractcommitment.contractcommitmentdurationtype).
+* ContractCommitmentPaymentInterval MUST be "One-Time" when [ContractCommitmentPaymentModel](#datamodel.contractcommitment.contractcommitmentpaymentmodel) is "All Upfront".
+* ContractCommitmentPaymentInterval SHOULD represent a time granularity equal to or lesser than the time granularity represented by [ContractCommitmentDurationType](#datamodel.contractcommitment.contractcommitmentdurationtype).
 
 ## Allowed Values
 
@@ -41,7 +41,7 @@ Represents the frequency by which a *contract commitment* is invoiced.
 
 | Constraint      | Value          |
 | :-------------- | :------------- |
-| Dataset         | [Contract Commitment](#datasets.contractcommitment)  |
+| Dataset         | [Contract Commitment](#datamodel.contractcommitment)  |
 | Column type     | Dimension      |
 | Feature level   | Mandatory      |
 | Allows nulls    | False          |
