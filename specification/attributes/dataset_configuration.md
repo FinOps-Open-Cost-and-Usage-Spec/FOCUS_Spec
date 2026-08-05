@@ -22,9 +22,10 @@ FOCUS dataset conforming to DatasetConfiguration attribute MUST adhere to the fo
 * *FOCUS dataset* detail-scope documentation MUST include FOCUS dimension criteria that identify the data coverage of each offered detail scope.
 * *FOCUS dataset* detail-scope documentation MUST include all offered detail levels for each offered detail scope.
 * *FOCUS dataset* detail-scope documentation MUST include the columns populated for each offered detail level.
+* *FOCUS dataset* detail-scope documentation MUST include whether each offered detail level uses [DataGeneratorCalculatedSplitCostAllocationHandling](#attributes.datagenerator-calculatedsplitcostallocationhandling).
 * *FOCUS dataset* detail-scope documentation MUST include the available delivery methods for each offered detail level.
-* *FOCUS dataset* detail-scope documentation MUST include the relationship of each delivery method to other delivered [*dataset artifacts*](#glossary:dataset-artifact) that represent the same underlying usage or charges.
-* *FOCUS dataset* detail-scope documentation MUST include the columns used to relate a detail dataset artifact to the corresponding less-detailed dataset artifact when the detail is delivered in a separate dataset artifact.
+* *FOCUS dataset* detail-scope documentation MUST include the relationship of each delivery method to other delivered [*dataset artifacts*](#glossary:dataset-artifact) or provider-defined companion artifacts that represent the same underlying usage or charges.
+* *FOCUS dataset* detail-scope documentation MUST include the columns used to relate a provider-defined companion artifact to the corresponding less-detailed dataset artifact when the detail is delivered outside the corresponding dataset artifact.
 * *FOCUS dataset* SHOULD represent records with identical values in all delivered dimension columns and non-summable metric columns as a single record.
 * *FOCUS dataset* SHOULD preserve the aggregate value of each summable metric when records are represented as a single record.
 * *FOCUS dataset* MAY offer a default column set.

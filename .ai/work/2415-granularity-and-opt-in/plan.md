@@ -2,65 +2,34 @@
 
 ## Goal
 
-Draft a PR under FR #2358 that models configurable detail levels in the DatasetConfiguration request, enabling practitioners to opt into finer-grained records for specific cost areas.
+Draft a PR under FR #2358 that models service-specific detail configuration in DatasetConfiguration, enabling practitioners to opt into optional higher-cardinality detail for documented areas of a FOCUS dataset.
 
 ## Approach
 
-Extend `DatasetConfiguration` with a `detail-level` configuration key that maps provider-defined scope keys to provider-defined level values. This is a request-side model: practitioners specify what detail they want in their configuration request; providers document what is available.
+Extend `DatasetConfiguration` with requirements for the resulting dataset and detail-scope documentation. The specification does not define a request payload, property name, or transport mechanism. Providers can expose selection through an API parameter, export setting, query interface, or another access mechanism.
 
-This replaces the earlier "granularity configurations" / "applicability filter" approach, which was framed as documentation requirements on providers rather than as a concrete request schema for practitioners.
+Service-specific detail configuration is broader than split cost allocation. Data Generator-Calculated Split Cost Allocation Handling is treated as a defined subset for detail levels that split an origin charge into allocated charges.
 
 ## Implementation
 
 1. Update `specification/attributes/dataset_configuration.md`:
-   * Replace "granularity configuration" / "applicability filter" language with `detail-level` / "scope key" language
-   * Add normative requirements for the `detail-level` key, its two value forms (string and object), and provider documentation obligations
-   * Add JSON examples showing both shorthand and extended forms
+   * Add requirements for selecting one detail level per detail scope when multiple levels are offered.
+   * Add requirements for selecting one delivery method when a selected detail level has multiple delivery methods.
+   * Require detail-scope documentation to identify FOCUS dimension criteria, offered detail levels, populated columns, split cost allocation usage, available delivery methods, related artifacts, and relationship columns for separately delivered detail.
+   * Add record-minimization guidance for records with identical delivered dimensions and non-summable metrics.
 
 2. Update `supporting_content/attributes/dataset_configuration.md`:
-   * Replace "Dataset Instance Granularities" section with "Detail Level Configuration" section
-   * Document scope keys, level values, delivery types, cardinality trade-offs, hierarchical levels, and actor attribution
-   * Update metadata example to use the `detail-level` shape
-   * Update "Developed for 1.4" table
+   * Explain detail scopes, data coverage, delivery methods, record minimization, actor attribution, and split cost allocation relationship.
+   * Clarify that separately delivered detail is provider-defined unless FOCUS defines a standard dataset for that detail.
+   * Keep metadata changes illustrative and deferred to a separate PR.
 
-3. Update requirements model JSON if normative requirements are finalized.
-
-## JSON Shapes
-
-Shorthand (level only):
-```json
-{
-  "detail-level": {
-    "llm-costs": "user-level",
-    "shared-platform": "feature"
-  }
-}
-```
-
-Extended (level + delivery-type):
-```json
-{
-  "detail-level": {
-    "llm-costs": {"level": "user-level", "delivery-type": "detail-file"},
-    "shared-platform": {"level": "feature", "delivery-type": "inline"}
-  }
-}
-```
-
-Both forms may appear together in the same `detail-level` object.
-
-## Open Questions
-
-* Should delivery types (`inline`, `added-lines`, `detail-file`) be enumerated as FOCUS-defined values or remain fully provider-defined?
-* Should scope keys be allowed to reference column values (e.g., ServiceName values) or must they be provider-defined opaque strings?
-* Should the configuration key name be hyphenated (`detail-level`) or camelCase (`detailLevel`) to be consistent with other configuration keys?
-* How does this interact with PR #2360 (`PrincipalId` / `ConsumerId`)? Actor columns would appear in expanded records at actor-level detail.
+3. Update `specification/attributes/attributes_overview.md`:
+   * Describe DatasetConfiguration as covering schema and level of detail.
 
 ## Out of Scope
 
-* Adding `SessionId`, `TraceId`, or other future high-cardinality columns.
-* Reworking split cost allocation.
-* Defining a general PII compliance regime for actor identifiers.
-* Creating a new supporting actor/session/trace detail dataset.
-* Creating a new JSON breakdown column or object schema.
-* Requiring metadata schema changes (metadata example is illustrative only).
+* Defining `PrincipalId`, `ConsumerId`, `SessionId`, `TraceId`, or other future high-cardinality columns.
+* Defining a request payload, field names, or transport mechanism for selection.
+* Defining metadata schema changes for selected service-specific detail.
+* Defining a new standard detail dataset.
+* Updating requirements model JSON before the task force settles the normative wording.

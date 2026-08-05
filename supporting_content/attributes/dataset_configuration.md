@@ -254,9 +254,9 @@ Common delivery methods include:
 
 * **Inline**: The selected detail is included in the same dataset records as additional populated columns.
 * **Replacement**: Detailed records replace the less detailed records that represent the same underlying usage or charges.
-* **Separate dataset artifact**: Detailed records are delivered in a separate [*dataset artifact*](#glossary:dataset-artifact), such as a separate file.
+* **Separate companion artifact**: Detailed records are delivered outside the less detailed [*dataset artifact*](#glossary:dataset-artifact), such as in a provider-defined file or table.
 
-The documentation for each method identifies its relationship to other delivered dataset artifacts that represent the same underlying usage or charges. When a detail dataset artifact is delivered separately, the documentation identifies the column or columns used to relate it to the corresponding less-detailed dataset artifact. This enables practitioners to determine whether records replace one another or must be combined without double-counting.
+The documentation for each method identifies its relationship to other delivered dataset artifacts or provider-defined companion artifacts that represent the same underlying usage or charges. When detail is delivered outside the corresponding FOCUS dataset artifact, the companion artifact is provider-defined unless FOCUS defines a standard dataset for that detail. The documentation identifies the column or columns used to relate the companion artifact to the corresponding less-detailed dataset artifact. This enables practitioners to determine whether records replace one another or must be combined without double-counting.
 
 ### Record Minimization
 
@@ -268,7 +268,13 @@ This aggregation guidance does not replace the aggregation guidance for individu
 
 Actor-level detail is useful for shared platforms and pass-through services where the service account that initiates usage is not the entity that should bear the cost. For example, an AI gateway service account may initiate all LLM requests while costs should be attributed to the calling team, application, or user.
 
-A provider that natively measures usage at the actor grain can offer actor attribution as service-specific detail without requiring split cost allocation. Split cost allocation is a separate concept used when a provider starts from a coarser origin charge and must distribute it across actors or workloads using an allocation method.
+A provider that natively measures usage at the actor grain can offer actor attribution as service-specific detail without requiring split cost allocation. When a provider starts from a coarser [*origin charge*](#glossary:origin-charge) and distributes it across actors or workloads using an allocation method, the actor-attribution detail uses [Data Generator-Calculated Split Cost Allocation Handling](#attributes.datagenerator-calculatedsplitcostallocationhandling).
+
+### Relationship to Split Cost Allocation
+
+Service-specific detail configuration is the broader opt-in and documentation mechanism for selecting additional detail. Data Generator-Calculated Split Cost Allocation Handling is a defined subset of that pattern for detail levels that split an origin charge into [*allocated charges*](#glossary:allocated-charge). A detail level can add service-specific detail without split cost allocation when the provider already measures the underlying usage or charges at that detail level.
+
+Detail-scope documentation identifies whether each offered detail level uses Data Generator-Calculated Split Cost Allocation Handling. This disclosure helps practitioners understand when records are allocated charges and apply the split cost allocation requirements for matching dimensions, matching non-summable metrics, and preserving the sum of summable metrics across the corresponding origin charge.
 
 ## Future Configuration Options
 
@@ -326,7 +332,7 @@ Configuration metadata should describe the options applied when generating a dat
 | Configuration Option | Metadata Needed                                                |
 |----------------------|----------------------------------------------------------------|
 | Column selection | List of included columns (or excluded columns) |
-| Service-specific detail configuration | Selected detail levels, documented data coverage, populated columns, relationship to related dataset artifacts, and columns used to relate separately delivered detail |
+| Service-specific detail configuration | Selected detail levels, documented data coverage, populated columns, split cost allocation disclosure, relationship to related dataset artifacts or provider-defined companion artifacts, and columns used to relate separately delivered detail |
 | Row aggregation | Whether aggregation is enabled |
 | Time granularity | Selected granularity (hourly, daily, monthly) |
 | FOCUS version | Selected version (already captured in Schema as FocusVersion) |
