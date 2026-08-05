@@ -15,7 +15,7 @@ The columns are presented in alphabetical order.
 | [Charge Category](#datamodel.skuprice.chargecategory)                              | Dimension   | Mandatory   | False        | String    |
 | [Contract ID](#datamodel.skuprice.contractid)                                        | Dimension   | [Conditional](#conditions.includescontractcommitments)         | True         | String    |
 | [Contracted Unit Price](#datamodel.skuprice.contractedunitprice)                     | Metric      | [Conditional](#conditions.includescontractcommitments)         | True         | Decimal   |
-| [List Unit Price](#datamodel.skuprice.listunitprice)                                 | Metric      | Mandatory                                                      | True         | Decimal   |
+| [List Unit Price](#datamodel.skuprice.listunitprice)                                 | Metric      | Mandatory                                                      | False        | Decimal   |
 | [Pricing Currency](#datamodel.skuprice.pricingcurrency)                              | Dimension   | Mandatory                                                      | False        | String    |
 | [Pricing Currency Category](#datamodel.skuprice.pricingcurrencycategory)                            | Dimension   | Mandatory                                                      | False        | String    |
 | [Pricing Region ID](#datamodel.skuprice.pricingregionid)                             | Dimension   | [Conditional](#conditions.includesregions)                     | True        | String    |
