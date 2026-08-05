@@ -68,7 +68,7 @@ The data generator emits four FOCUS rows for this charge period. The column-augm
 | BilledCost              | `0.00`                                                                               | Fully covered by the Resource Reservation purchase (not shown)     |
 | EffectiveCost           | `0.00`                                                                               | Zeroed — full cost distributed across allocated charge rows        |
 | AllocatedMethodId       | `"aura-vcpu-proportional-v1"`                                                        | Related to the split cost allocation (see note above)               |
-| AllocatedMethodDetails  | `{"Elements":[]}`                                                                    | Related to the split, but no allocated portion to describe here     |
+| AllocatedMethodDetails  | *(null)*                                                                             | No allocated portion to describe on this row                        |
 | AllocatedResourceId     | *(null)*                                                                             | Not an *allocated charge*                                          |
 | AllocatedResourceName   | *(null)*                                                                             | Not an *allocated charge*                                          |
 | AllocatedServiceName    | *(null)*                                                                             | Not an *allocated charge*                                          |
