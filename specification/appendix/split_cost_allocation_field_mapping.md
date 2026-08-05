@@ -44,6 +44,9 @@ The data generator emits four FOCUS rows for this charge period. The column-augm
 * **AllocatedMethodId**: set to the allocation method identifier on every row, including the origin row — the origin row is *related to* the data generator-calculated split cost allocation even though it is not itself an *allocated charge*.
 * **AllocatedMethodDetails**: null on the origin row, since there is no allocated portion to describe there; on each *allocated charge* row, it carries that consumer's allocation ratio and measured utilization.
 * **ChargeCategory**: `"Usage"` on all rows.
+* **PricingCategory**: `"Committed"` on every output row, since ChargeCategory is `"Usage"` on all rows and the usage is subject to the Resource Reservation commitment discount.
+* **CommitmentDiscountId**: set to the Resource Reservation's identifier on every output row, since all four rows are related to the same commitment discount.
+* **CommitmentDiscountStatus**: `"Used"` on every output row, since CommitmentDiscountId is populated and ChargeCategory is `"Usage"` on all rows.
 
 > Note: AllocatedMethodId's nullability is keyed on a charge being "related to" a data generator-calculated split cost allocation, not on being an *allocated charge* itself. This example treats the origin row as related (it is part of the same split operation, even though nothing was allocated to it) and therefore populates AllocatedMethodId on it — consistent with the "Find Total Unallocated Split Costs by ResourceId" query in Data Generator-Calculated Split Cost Allocation, whose `AllocatedMethodId IS NOT NULL AND AllocatedResourceId IS NULL` predicate only returns rows under this reading. This question is tracked for the specification text itself in issue #2578.
 
@@ -67,6 +70,9 @@ The data generator emits four FOCUS rows for this charge period. The column-augm
 | ContractedCost          | `0.00`                                                                               | Zeroed — full cost distributed across allocated charge rows        |
 | BilledCost              | `0.00`                                                                               | Fully covered by the Resource Reservation purchase (not shown)     |
 | EffectiveCost           | `0.00`                                                                               | Zeroed — full cost distributed across allocated charge rows        |
+| PricingCategory         | `"Committed"`                                                                        | Subject to the Resource Reservation commitment discount             |
+| CommitmentDiscountId    | `"aura-resource-reservation-01"`                                                     | Identifier of the Resource Reservation commitment discount           |
+| CommitmentDiscountStatus | `"Used"`                                                                            | CommitmentDiscountId is populated and ChargeCategory is `"Usage"`    |
 | AllocatedMethodId       | `"aura-vcpu-proportional-v1"`                                                        | Related to the split cost allocation (see note above)               |
 | AllocatedMethodDetails  | *(null)*                                                                             | No allocated portion to describe on this row                        |
 | AllocatedResourceId     | *(null)*                                                                             | Not an *allocated charge*                                          |
@@ -93,6 +99,9 @@ The data generator emits four FOCUS rows for this charge period. The column-augm
 | ContractedCost          | `144.00`                                                                             | 50% of the origin's $288.00 pre-split ContractedCost            |
 | BilledCost              | `0.00`                                                                               | Fully covered — inherits the origin's covered status            |
 | EffectiveCost           | `120.00`                                                                             | 50% of the origin's $240.00 pre-split EffectiveCost             |
+| PricingCategory         | `"Committed"`                                                                        | Subject to the Resource Reservation commitment discount        |
+| CommitmentDiscountId    | `"aura-resource-reservation-01"`                                                     | Identifier of the Resource Reservation commitment discount     |
+| CommitmentDiscountStatus | `"Used"`                                                                            | CommitmentDiscountId is populated and ChargeCategory is `"Usage"` |
 | AllocatedMethodId       | `"aura-vcpu-proportional-v1"`                                                        | Allocation method identifier                                   |
 | AllocatedMethodDetails  | `{"Elements":[{"AllocatedRatio":0.50,"UsageUnit":"vCPU-Hours","UsageQuantity":60}]}` | Allocation ratio and measured utilization for this consumer    |
 | AllocatedResourceId     | `"pod-aura-api-gateway-01"`                                                          | Consumer identifier                                             |
@@ -119,6 +128,9 @@ The data generator emits four FOCUS rows for this charge period. The column-augm
 | ContractedCost          | `86.40`                                                                              | 30% of the origin's $288.00 pre-split ContractedCost            |
 | BilledCost              | `0.00`                                                                               | Fully covered — inherits the origin's covered status            |
 | EffectiveCost           | `72.00`                                                                              | 30% of the origin's $240.00 pre-split EffectiveCost             |
+| PricingCategory         | `"Committed"`                                                                        | Subject to the Resource Reservation commitment discount        |
+| CommitmentDiscountId    | `"aura-resource-reservation-01"`                                                     | Identifier of the Resource Reservation commitment discount     |
+| CommitmentDiscountStatus | `"Used"`                                                                            | CommitmentDiscountId is populated and ChargeCategory is `"Usage"` |
 | AllocatedMethodId       | `"aura-vcpu-proportional-v1"`                                                        | Allocation method identifier                                   |
 | AllocatedMethodDetails  | `{"Elements":[{"AllocatedRatio":0.30,"UsageUnit":"vCPU-Hours","UsageQuantity":36}]}` | Allocation ratio and measured utilization for this consumer    |
 | AllocatedResourceId     | `"pod-aura-data-ingest-01"`                                                          | Consumer identifier                                             |
@@ -145,6 +157,9 @@ The data generator emits four FOCUS rows for this charge period. The column-augm
 | ContractedCost          | `57.60`                                                                              | 20% of the origin's $288.00 pre-split ContractedCost            |
 | BilledCost              | `0.00`                                                                               | Fully covered — inherits the origin's covered status            |
 | EffectiveCost           | `48.00`                                                                              | 20% of the origin's $240.00 pre-split EffectiveCost             |
+| PricingCategory         | `"Committed"`                                                                        | Subject to the Resource Reservation commitment discount        |
+| CommitmentDiscountId    | `"aura-resource-reservation-01"`                                                     | Identifier of the Resource Reservation commitment discount     |
+| CommitmentDiscountStatus | `"Used"`                                                                            | CommitmentDiscountId is populated and ChargeCategory is `"Usage"` |
 | AllocatedMethodId       | `"aura-vcpu-proportional-v1"`                                                        | Allocation method identifier                                   |
 | AllocatedMethodDetails  | `{"Elements":[{"AllocatedRatio":0.20,"UsageUnit":"vCPU-Hours","UsageQuantity":24}]}` | Allocation ratio and measured utilization for this consumer    |
 | AllocatedResourceId     | `"pod-aura-ml-train-01"`                                                             | Consumer identifier                                             |
