@@ -1,6 +1,6 @@
 ## Summary
 
-This draft extends the Dataset Configuration attribute with service-specific detail configuration for FOCUS 1.5.
+This draft extends the Dataset Configuration attribute with scoped detail configuration for FOCUS 1.5.
 
 Data generators can make optional, higher-cardinality detail available for documented areas of a FOCUS dataset. Practitioners can select the detail needed for those areas without FOCUS defining a request payload, property name, or transport mechanism. A provider can expose the selection through an API parameter, export setting, query interface, or another access mechanism.
 
@@ -21,7 +21,7 @@ The supporting content describes illustrative delivery methods:
 * Replacement of less-detailed records with detailed records
 * Detail delivered in a separate provider-defined companion artifact, such as a separate file
 
-It also explains that Data Generator-Calculated Split Cost Allocation Handling is a defined subset of service-specific detail configuration, and that record-minimization guidance does not replace column-specific aggregation guidance, including the guidance for `PricingQuantity`, `ListCost`, and `ContractedCost`.
+It also explains that Data Generator-Calculated Split Cost Allocation Handling is a defined subset of scoped detail configuration, and that record-minimization guidance does not replace column-specific aggregation guidance, including the guidance for `PricingQuantity`, `ListCost`, and `ContractedCost`.
 
 ### Type of Change
 

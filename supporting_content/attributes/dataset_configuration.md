@@ -83,7 +83,7 @@ Based on applicability, configuration options may be split into separate attribu
 
 | Attribute | Options | Feature Level |
 |-----------|---------|---------------|
-| **DatasetConfiguration** | Column selection, service-specific detail configuration, row aggregation, time granularity, schema versioning, row filtering | None (all datasets) |
+| **DatasetConfiguration** | Column selection, scoped detail configuration, row aggregation, time granularity, schema versioning, row filtering | None (all datasets) |
 | **DatasetDelivery** | Scheduling, incremental refresh, overwrite vs append, partitioning | Files or Tables |
 | **DatasetFileHandling** | File format, compression | Files only |
 
@@ -105,7 +105,7 @@ The following options were developed for the Dataset Configuration attribute for
 
 | Option                     | Status   | Description                                                      |
 |----------------------------|----------|------------------------------------------------------------------|
-| Service-specific detail configuration | Included | Select optional detail for documented data coverage |
+| Scoped detail configuration | Included | Select optional detail for documented data coverage |
 
 ### Future Options
 
@@ -234,15 +234,15 @@ When introduced, time granularity will allow practitioners to choose temporal re
 * **Monthly**: Will be recommended (SHOULD) - useful for executive reporting and billing reconciliation
 * **Hourly**: Will be required when applicable (MUST) - when the dataset includes costs priced at an hourly or lower grain, hourly granularity will need to be available to preserve pricing accuracy
 
-## Service-Specific Detail Configuration
+## Scoped Detail Configuration
 
-Service-specific detail configuration allows practitioners to include optional detail for documented areas of cost data. Data generators often omit high-cardinality or privacy-sensitive columns from a default dataset. When such data is available, the data generator documents the data coverage and the columns that are populated, then the practitioner elects to include that detail.
+Scoped detail configuration allows practitioners to include optional detail for documented areas of cost data. Data generators often omit high-cardinality or privacy-sensitive columns from a default dataset. When such data is available, the data generator documents the data coverage and the columns that are populated, then the practitioner elects to include that detail.
 
 The requirements define the resulting dataset and the documentation needed to assess it. They deliberately do not define a request payload, property name, or transport mechanism. A provider can expose the selection through an API parameter, an export setting, a query interface, or another access mechanism.
 
 ### Detail Scopes and Data Coverage
 
-A detail scope is a documented area of a FOCUS dataset for which a practitioner can select an offered detail level. Its data coverage is expressed using FOCUS dimension criteria so that a practitioner can evaluate the documented coverage against the delivered data. For example, a provider might describe the coverage of an AI user-attribution detail scope as records where ServiceName is `"Example AI Service"` and ResourceType is `"ModelInference"`.
+A detail scope is a documented area of a FOCUS dataset for which a practitioner can select an offered detail level. Its data coverage is expressed using FOCUS dimension criteria so that a practitioner can evaluate the documented coverage against the delivered data. A detail scope can apply to one service, multiple services, or records defined by non-service dimension criteria. For example, a provider might describe the coverage of an AI user-attribution detail scope as records where ServiceName is `"Example AI Service"` and ResourceType is `"ModelInference"`.
 
 A detail scope can contain more than one offered detail level, but a configured dataset selects one detail level for that scope. Each detail level documents the columns that are populated when it is selected. Those columns can be FOCUS columns or custom columns. A custom column is appropriate when the detail is not standardized by FOCUS.
 
@@ -268,11 +268,11 @@ This aggregation guidance does not replace the aggregation guidance for individu
 
 Actor-level detail is useful for shared platforms and pass-through services where the service account that initiates usage is not the entity that should bear the cost. For example, an AI gateway service account may initiate all LLM requests while costs should be attributed to the calling team, application, or user.
 
-A provider that natively measures usage at the actor grain can offer actor attribution as service-specific detail without requiring split cost allocation. When a provider starts from a coarser [*origin charge*](#glossary:origin-charge) and distributes it across actors or workloads using an allocation method, the actor-attribution detail uses [Data Generator-Calculated Split Cost Allocation Handling](#attributes.datagenerator-calculatedsplitcostallocationhandling).
+A provider that natively measures usage at the actor grain can offer actor attribution as scoped detail without requiring split cost allocation. When a provider starts from a coarser [*origin charge*](#glossary:origin-charge) and distributes it across actors or workloads using an allocation method, the actor-attribution detail uses [Data Generator-Calculated Split Cost Allocation Handling](#attributes.datagenerator-calculatedsplitcostallocationhandling).
 
 ### Relationship to Split Cost Allocation
 
-Service-specific detail configuration is the broader opt-in and documentation mechanism for selecting additional detail. Data Generator-Calculated Split Cost Allocation Handling is a defined subset of that pattern for detail levels that split an origin charge into [*allocated charges*](#glossary:allocated-charge). A detail level can add service-specific detail without split cost allocation when the provider already measures the underlying usage or charges at that detail level.
+Scoped detail configuration is the broader opt-in and documentation mechanism for selecting additional detail. Data Generator-Calculated Split Cost Allocation Handling is a defined subset of that pattern for detail levels that split an origin charge into [*allocated charges*](#glossary:allocated-charge). A detail level can add scoped detail without split cost allocation when the provider already measures the underlying usage or charges at that detail level.
 
 Detail-scope documentation identifies whether each offered detail level uses Data Generator-Calculated Split Cost Allocation Handling. This disclosure helps practitioners understand when records are allocated charges and apply the split cost allocation requirements for matching dimensions, matching non-summable metrics, and preserving the sum of summable metrics across the corresponding origin charge.
 
@@ -310,7 +310,7 @@ Major cloud providers support various configuration options:
 
 ## Configuration Metadata
 
-The Dataset Configuration attribute requires documentation for offered service-specific detail configurations, but it does not yet define structured metadata for all selected configuration options. This section evaluates what changes would be needed to support structured configuration metadata within the existing metadata structure.
+The Dataset Configuration attribute requires documentation for offered scoped detail configurations, but it does not yet define structured metadata for all selected configuration options. This section evaluates what changes would be needed to support structured configuration metadata within the existing metadata structure.
 
 ### Current Metadata Structure
 
@@ -332,7 +332,7 @@ Configuration metadata should describe the options applied when generating a dat
 | Configuration Option | Metadata Needed                                                |
 |----------------------|----------------------------------------------------------------|
 | Column selection | List of included columns (or excluded columns) |
-| Service-specific detail configuration | Selected detail levels, documented data coverage, populated columns, split cost allocation disclosure, relationship to related dataset artifacts or provider-defined companion artifacts, and columns used to relate separately delivered detail |
+| Scoped detail configuration | Selected detail levels, documented data coverage, populated columns, split cost allocation disclosure, relationship to related dataset artifacts or provider-defined companion artifacts, and columns used to relate separately delivered detail |
 | Row aggregation | Whether aggregation is enabled |
 | Time granularity | Selected granularity (hourly, daily, monthly) |
 | FOCUS version | Selected version (already captured in Schema as FocusVersion) |
@@ -356,15 +356,15 @@ Since Schema already tracks structural information (columns, data types) and tri
 
 Option A (extending Dataset Instance) is the most natural fit. The configuration options describe how a specific dataset artifact was shaped, which aligns with Dataset Instance's purpose. FOCUS version selection is already partially addressed by Schema's `FocusVersion` property.
 
-### Example Service-Specific Detail Metadata
+### Example Scoped Detail Metadata
 
-The following example illustrates one possible shape for recording selected service-specific detail in dataset instance metadata. The field names are illustrative and would need task force review before becoming part of the formal metadata schema.
+The following example illustrates one possible shape for recording selected scoped detail in dataset instance metadata. The field names are illustrative and would need task force review before becoming part of the formal metadata schema.
 
 ```json
 {
   "DatasetInstanceId": "178151-dbad145e-178151-dbad145e-178151",
   "Configuration": {
-    "ServiceSpecificDetail": [
+    "ScopedDetail": [
       {
         "DataCoverage": {
           "ServiceName": "Example AI Service",

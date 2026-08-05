@@ -2,13 +2,13 @@
 
 ## Goal
 
-Draft a PR under FR #2358 that models service-specific detail configuration in DatasetConfiguration, enabling practitioners to opt into optional higher-cardinality detail for documented areas of a FOCUS dataset.
+Draft a PR under FR #2358 that models scoped detail configuration in DatasetConfiguration, enabling practitioners to opt into optional higher-cardinality detail for documented areas of a FOCUS dataset.
 
 ## Approach
 
 Extend `DatasetConfiguration` with requirements for the resulting dataset and detail-scope documentation. The specification does not define a request payload, property name, or transport mechanism. Providers can expose selection through an API parameter, export setting, query interface, or another access mechanism.
 
-Service-specific detail configuration is broader than split cost allocation. Data Generator-Calculated Split Cost Allocation Handling is treated as a defined subset for detail levels that split an origin charge into allocated charges.
+Scoped detail configuration is broader than split cost allocation. Data Generator-Calculated Split Cost Allocation Handling is treated as a defined subset for detail levels that split an origin charge into allocated charges.
 
 ## Implementation
 
@@ -30,6 +30,6 @@ Service-specific detail configuration is broader than split cost allocation. Dat
 
 * Defining `PrincipalId`, `ConsumerId`, `SessionId`, `TraceId`, or other future high-cardinality columns.
 * Defining a request payload, field names, or transport mechanism for selection.
-* Defining metadata schema changes for selected service-specific detail.
+* Defining metadata schema changes for selected scoped detail.
 * Defining a new standard detail dataset.
 * Updating requirements model JSON before the task force settles the normative wording.

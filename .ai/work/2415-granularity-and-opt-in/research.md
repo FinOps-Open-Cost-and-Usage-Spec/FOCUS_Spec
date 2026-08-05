@@ -47,7 +47,7 @@ The current `DatasetConfiguration` attribute already says:
 
 That is necessary but insufficient for the actor use case. It does not explain:
 
-* service-specific opt-in, such as Service-A actor granularity without Service-B actor granularity;
+* scoped opt-in, such as Service-A actor granularity without Service-B actor granularity;
 * multiple granularity levels, such as principal, consumer, session, trace;
 * whether granular dataset instances replace or supplement other dataset instances that represent the same underlying usage or charges;
 * how practitioners avoid double-counting when multiple dataset instances represent the same underlying charges.
@@ -318,7 +318,7 @@ Files likely changed:
 * `specification/attributes/attributes_overview.md` if the description changes materially
 * `specification/requirements_model/releases/1.4/model_rules/attributes/datasetconfiguration.json` for machine-readable requirements
 * `specification/datasets/cost_and_usage/dataset.md` only if a specific CostAndUsage requirement is needed
-* `supporting_content/attributes/dataset_configuration.md` for design rationale, service-specific examples, and deferred metadata details
+* `supporting_content/attributes/dataset_configuration.md` for design rationale, scoped examples, and deferred metadata details
 
 The PR should explain that it expands the existing `DatasetConfiguration` attribute from column selection only to column selection plus granularity configuration.
 
@@ -351,7 +351,7 @@ This separates the concept cleanly but creates a second configuration-oriented a
 
 ### Avoid: Column Content Constraint Field
 
-Avoid adding `Delivery grain | Opt-in` to individual columns unless the group wants to modify the column definition format across the spec. It does not solve the service-specific and multi-level granularity cases.
+Avoid adding `Delivery grain | Opt-in` to individual columns unless the group wants to modify the column definition format across the spec. It does not solve the scoped and multi-level detail cases.
 
 ## Suggested Normative Direction
 
@@ -381,7 +381,7 @@ Dataset conforming to DatasetConfiguration attribute MUST adhere to the followin
 Open editorial questions:
 
 * "FOCUS dataset granularity configuration documentation" is probably a better normative subject than "Dataset configuration documentation" because it avoids implying that the provider must publish a full catalog of configuration choices.
-* "User-defined" may not be right for provider-managed service-specific grain options. "Configured" might be better.
+* "User-defined" may not be right for provider-managed scoped detail options. "Configured" might be better.
 * "Applicability boundaries" needs glossary review if it becomes a formal term.
 
 ## How This Supports PrincipalId and ConsumerId
