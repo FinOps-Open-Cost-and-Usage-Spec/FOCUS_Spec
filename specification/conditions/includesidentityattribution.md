@@ -1,6 +1,6 @@
 # Includes Identity Attribution
 
-The Includes Identity Attribution condition represents a verifiable state indicating whether the [*operating model*](#glossary:operating-model) includes attributing usage or purchase of [*resources*](#glossary:resource) or [*services*](#glossary:service) to [*principals*](#glossary:principal).
+The Includes Identity Attribution condition represents a verifiable state indicating whether the [*operating model*](#glossary:operating-model) includes usage or purchase of [*resources*](#glossary:resource) or [*services*](#glossary:service) initiated by a [*principal*](#glossary:principal).
 
 ## Requirements
 
