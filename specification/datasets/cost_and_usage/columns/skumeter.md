@@ -11,7 +11,7 @@ SkuMeter MUST adhere to the following requirements:
 * SkuMeter MUST be of type String.
 * SkuMeter MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * SkuMeter MUST adhere to the following nullability requirements:
-  * SkuMeter MUST be null when [SkuId](#datasets.costandusage.skuid) is null.
+  * SkuMeter MUST be null when [SkuId](#datamodel.costandusage.skuid) is null.
   * SkuMeter SHOULD NOT be null when SkuId is not null.
 * SkuMeter SHOULD remain consistent over time for a given SkuId.
 
@@ -35,7 +35,7 @@ Describes the functionality being metered or measured by a particular SKU in a *
 
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Dataset         | [Cost and Usage](#datamodel.costandusage)             |
 | Column type     | Dimension                                            |
 | Feature level   | Conditional                                          |
 | Allows nulls    | True                                                 |

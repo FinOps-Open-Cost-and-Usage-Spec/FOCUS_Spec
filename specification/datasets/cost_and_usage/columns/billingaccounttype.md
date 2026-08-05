@@ -9,7 +9,7 @@ BillingAccountType MUST adhere to the following requirements:
 * BillingAccountType MUST be of type String.
 * BillingAccountType MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * BillingAccountType MUST adhere to the following nullability requirements:
-  * BillingAccountType MUST be null when [BillingAccountId](#datasets.costandusage.billingaccountid) is null.
+  * BillingAccountType MUST be null when [BillingAccountId](#datamodel.costandusage.billingaccountid) is null.
   * BillingAccountType MUST NOT be null when BillingAccountId is not null.
 * BillingAccountType MUST be a consistent, readable display value.
 
@@ -29,7 +29,7 @@ An invoice-issuer-assigned name to identify the type of *billing account*.
 
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Dataset         | [Cost and Usage](#datamodel.costandusage)             |
 | Column type     | Dimension                                            |
 | Feature level   | Conditional                                          |
 | Allows nulls    | False                                                |

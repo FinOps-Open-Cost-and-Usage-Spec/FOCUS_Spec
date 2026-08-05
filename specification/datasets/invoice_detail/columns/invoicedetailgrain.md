@@ -2,7 +2,7 @@
 
 Invoice Detail Grain represents the set of key-value pairs that defines the granularity of an invoice line item. The grain may vary from one record to the next, both within a single invoice and across [*invoice issuers*](#glossary:invoice-issuer), and key-value pairs are used instead of separate columns to accommodate this variability.
 
-This gives FinOps practitioners a single point of reference for all possible [Invoice Detail](#datasets.invoicedetail) granularities (e.g., SKU, service, resource, custom dimension), supporting downstream data transformations such as reconciliation and cost allocation.
+This gives FinOps practitioners a single point of reference for all possible [Invoice Detail](#datamodel.invoicedetail) granularities (e.g., SKU, service, resource, custom dimension), supporting downstream data transformations such as reconciliation and cost allocation.
 
 ## Requirements
 
@@ -23,17 +23,17 @@ InvoiceDetailGrain MUST adhere to the following requirements:
 
 ## FOCUS-Defined Properties
 
-The following keys should be used when applicable when a relevant concept is represented on an invoice. For more information, see the relevant [Cost and Usage](#datasets.costandusage) column entry.
+The following keys should be used when applicable when a relevant concept is represented on an invoice. For more information, see the relevant [Cost and Usage](#datamodel.costandusage) column entry.
 
-* Contract ID (element of [ContractApplied](#datasets.costandusage.contractapplied))
-* [Region ID](#datasets.costandusage.regionid)
-* [Resource ID](#datasets.costandusage.resourceid)
-* [Resource Type](#datasets.costandusage.resourcetype)
-* [Service Name](#datasets.costandusage.servicename)
-* [SKU ID](#datasets.costandusage.skuid)
-* [SKU Meter](#datasets.costandusage.skumeter)
-* [SKU Price ID](#datasets.costandusage.skupriceid)
-* [Sub Account ID](#datasets.costandusage.subaccountid)
+* Contract ID (element of [ContractApplied](#datamodel.costandusage.contractapplied))
+* [Region ID](#datamodel.costandusage.regionid)
+* [Resource ID](#datamodel.costandusage.resourceid)
+* [Resource Type](#datamodel.costandusage.resourcetype)
+* [Service Name](#datamodel.costandusage.servicename)
+* [SKU ID](#datamodel.costandusage.skuid)
+* [SKU Meter](#datamodel.costandusage.skumeter)
+* [SKU Price ID](#datamodel.costandusage.skupriceid)
+* [Sub Account ID](#datamodel.costandusage.subaccountid)
 
 ## Examples
 
@@ -61,7 +61,7 @@ The set of key-value pairs that defines the granularity of the invoice line item
 
 |    Constraint    |              Value             |
 |:----------------|:--------------------------------|
-| Dataset         | [Invoice Detail](#datasets.invoicedetail)             |
+| Dataset         | [Invoice Detail](#datamodel.invoicedetail)             |
 | Column type     | Dimension                       |
 | Feature level   | Mandatory                       |
 | Allows nulls    | True                            |

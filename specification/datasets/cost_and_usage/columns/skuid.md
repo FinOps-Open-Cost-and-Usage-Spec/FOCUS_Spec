@@ -22,15 +22,15 @@ SkuId MUST adhere to the following requirements:
 * SkuId MUST be of type String.
 * SkuId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * SkuId MUST adhere to the following nullability requirements:
-  * SkuId MUST be null when [ChargeCategory](#datasets.costandusage.chargecategory) is "Tax".
-  * SkuId MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#datasets.costandusage.chargeclass) is not "Correction".
+  * SkuId MUST be null when [ChargeCategory](#datamodel.costandusage.chargecategory) is "Tax".
+  * SkuId MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#datamodel.costandusage.chargeclass) is not "Correction".
   * SkuId MAY be null in all other cases.
 * SkuId for a given *SKU* MUST adhere to the following requirements:
   * SkuId MUST remain consistent across [*billing accounts*](#glossary:billing-account) or contracts.
-  * SkuId MUST remain consistent across [PricingCategory](#datasets.costandusage.pricingcategory) values.
+  * SkuId MUST remain consistent across [PricingCategory](#datamodel.costandusage.pricingcategory) values.
   * SkuId MUST remain consistent regardless of any other factors that might impact the price but do not affect the functionality of the *SKU*.
 * SkuId MUST be associated with a given [*resource*](#glossary:resource) or [*service*](#glossary:service) when ChargeCategory is "Usage" or "Purchase".
-* SkuId MAY match [SkuPriceId](#datasets.costandusage.skupriceid).
+* SkuId MAY match [SkuPriceId](#datamodel.costandusage.skupriceid).
 
 ## Column ID
 
@@ -48,7 +48,7 @@ Service-provider-specified unique identifier that represents a specific *SKU* (e
 
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Dataset         | [Cost and Usage](#datamodel.costandusage)             |
 | Column type     | Dimension                                            |
 | Feature level   | Conditional                                          |
 | Allows nulls    | True                                                 |
