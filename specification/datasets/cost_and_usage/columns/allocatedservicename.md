@@ -9,8 +9,10 @@ AllocatedServiceName MUST adhere to the following requirements:
 * AllocatedServiceName MUST be of type String.
 * AllocatedServiceName MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * AllocatedServiceName MUST adhere to the following nullability requirements:
-  * AllocatedServiceName MUST be null when [AllocatedResourceId](#datasets.costandusage.allocatedresourceid) is null.
-  * AllocatedServiceName MUST NOT be null when AllocatedResourceId is not null.
+  * AllocatedServiceName MUST be null when a [*charge*](#glossary:charge) is not related to a data generator-calculated split cost allocation.
+  * AllocatedServiceName MUST be null when a *charge* represents the unallocated portion of the origin *charge* after split cost allocation.
+  * AllocatedServiceName MUST NOT be null when a *charge* represents the allocated portion of the origin *charge*.
+  * AllocatedServiceName SHOULD match the ServiceName used by the data generator for the equivalent stand-alone *service*.
 
 ## Column ID
 
