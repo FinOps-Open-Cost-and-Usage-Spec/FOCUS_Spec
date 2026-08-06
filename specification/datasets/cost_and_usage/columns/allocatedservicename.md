@@ -9,7 +9,7 @@ AllocatedServiceName MUST adhere to the following requirements:
 * AllocatedServiceName MUST be of type String.
 * AllocatedServiceName MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * AllocatedServiceName MUST adhere to the following nullability requirements:
-  * AllocatedServiceName MUST be null when [AllocatedResourceId](#datasets.costandusage.allocatedresourceid) is null.
+  * AllocatedServiceName MUST be null when [AllocatedResourceId](#datamodel.costandusage.allocatedresourceid) is null.
   * AllocatedServiceName MUST NOT be null when AllocatedResourceId is not null.
 
 ## Column ID
