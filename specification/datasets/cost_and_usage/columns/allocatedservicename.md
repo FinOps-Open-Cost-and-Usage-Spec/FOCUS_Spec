@@ -12,7 +12,7 @@ AllocatedServiceName MUST adhere to the following requirements:
   * AllocatedServiceName MUST be null when a [*charge*](#glossary:charge) is not related to a data generator-calculated split cost allocation.
   * AllocatedServiceName MUST be null when a *charge* represents the unallocated portion of the origin *charge* after split cost allocation.
   * AllocatedServiceName MUST NOT be null when a *charge* represents the allocated portion of the origin *charge*.
-  * AllocatedServiceName SHOULD match the ServiceName used by the data generator for the equivalent stand-alone *service*.
+* AllocatedServiceName SHOULD match the ServiceName used by the data generator for the equivalent stand-alone *service*.
 
 ## Column ID
 
