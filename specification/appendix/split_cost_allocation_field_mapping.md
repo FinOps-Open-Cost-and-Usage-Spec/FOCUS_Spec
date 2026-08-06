@@ -30,7 +30,7 @@ The three consuming workloads and their measured allocation ratios for the perio
 
 ## FOCUS Output: Four-Row Transformation
 
-The data generator emits four FOCUS rows for this charge period. The column-augmentation structure (all consumers on one native row) is dissolved: each consumer becomes a separate *allocated charge* row, and the origin row carries the preserved instance dimensions with all summable metrics zeroed. Retaining a zeroed origin row is the representation chosen for this example; DataGeneratorCalculatedSplitCostAllocationHandling requires only that summable metrics across the *allocated charges* reconcile to the origin total, not that the origin row be retained, omitted, or zeroed in any particular way.
+The data generator emits four FOCUS rows for this charge period. The column-augmentation structure (all consumers on one native row) is dissolved: each consumer becomes a separate *allocated charge* row, and the origin row carries the preserved instance dimensions with all summable metrics zeroed. Retaining a zeroed origin row is the representation chosen for this example; DataGeneratorCalculatedSplitCostAllocationHandling requires only that summable metrics across the *allocated charges* reconcile to the origin total, not that the origin row be retained, omitted, or zeroed in any particular way. The row tables below show the columns that participate in the split transformation rather than the complete set of columns each row carries.
 
 ### Column Interactions
 
