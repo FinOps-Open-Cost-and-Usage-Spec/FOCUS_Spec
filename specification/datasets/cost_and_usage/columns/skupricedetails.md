@@ -65,7 +65,7 @@ Notes
 <br><sup>1</sup> In the case of "burstable" SKUs offering variable levels of performance, the baseline or guaranteed value should be used.
 <br><sup>2</sup> Memory manufacturers still commonly uses "GB" to refer to 2<sup>30</sup> bytes, which is known as GiB in other contexts.
 <br><sup>3</sup> This is the operating system family of the SKU, if it's included with the SKU or the SKU only supports one type of operating system.
-<br><sup>4</sup> "Uncached" identifies content processed without a cache, "Read" identifies content served from a cache, and "Write" identifies content placed into a cache. This property distinguishes price points for the same metered operation, so it applies where a service provider prices cache reads or cache writes differently from uncached processing. Charges for retaining cached content over time are a separate metered operation and are not identified by this property.
+<br><sup>4</sup> "Uncached" identifies content processed without a cache, "Read" identifies content served from a cache, and "Write" identifies content placed into a cache. Service providers commonly meter these as separate SKUs, but the meter names they use vary and are not drawn from a defined value set, so this property identifies the role independently of how a given service provider names or structures its meters. It applies only where a service provider prices the role as its own charge. Charges for retaining cached content over time are a separate metered operation and are not identified by this property.
 
 ## Examples
 
