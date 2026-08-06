@@ -1,12 +1,12 @@
 # Examples: Data Generator-Calculated Split Cost Allocation
 
-This section demonstrates how [AllocatedServiceName](#datasets.costandusage.allocatedservicename) enables consumer *service* identification on [*allocated charges*](#glossary:allocated-charge) when a data generator preserves origin dimensions in accordance with [DataGeneratorCalculatedSplitCostAllocationHandling](#attributes.datagenerator-calculatedsplitcostallocationhandling) requirements.
+This section demonstrates how [AllocatedServiceName](#datamodel.costandusage.allocatedservicename) enables consumer *service* identification on [*allocated charges*](#glossary:allocated-charge) when a data generator preserves origin dimensions in accordance with [DataGeneratorCalculatedSplitCostAllocationHandling](#attributes.datagenerator-calculatedsplitcostallocationhandling) requirements.
 
 ## Origin Preservation and the Consumer Service Identity Gap
 
-DataGeneratorCalculatedSplitCostAllocationHandling requires that the origin [ServiceName](#datasets.costandusage.servicename) and [ServiceCategory](#datasets.costandusage.servicecategory) are preserved on all *allocated charge* rows so that the dataset reconciles to the invoice on the origin *service*. This means a practitioner can always filter by origin ServiceName to obtain the correct invoice-reconciled total.
+DataGeneratorCalculatedSplitCostAllocationHandling requires that the origin [ServiceName](#datamodel.costandusage.servicename) and [ServiceCategory](#datamodel.costandusage.servicecategory) are preserved on all *allocated charge* rows so that the dataset reconciles to the invoice on the origin *service*. This means a practitioner can always filter by origin ServiceName to obtain the correct invoice-reconciled total.
 
-The side-effect of this requirement is that the consuming *service* identity is not expressed in ServiceName on *allocated charge* rows. Without AllocatedServiceName, the consuming *service* can only be inferred from [AllocatedResourceId](#datasets.costandusage.allocatedresourceid) through an external lookup maintained by the practitioner.
+The side-effect of this requirement is that the consuming *service* identity is not expressed in ServiceName on *allocated charge* rows. Without AllocatedServiceName, the consuming *service* can only be inferred from [AllocatedResourceId](#datamodel.costandusage.allocatedresourceid) through an external lookup maintained by the practitioner.
 
 AllocatedServiceName closes this gap: the data generator populates it with the consuming *service* display name on each *allocated charge* row, leaving the origin ServiceName intact.
 
