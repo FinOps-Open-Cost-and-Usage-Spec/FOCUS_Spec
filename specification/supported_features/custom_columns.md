@@ -14,14 +14,14 @@ FOCUS supports the inclusion of custom columns to facilitate reporting capabilit
 SELECT
   BillingPeriodStart,
   x_CustomColumn,
-  SUM(BilledCost) AS TotalBilledCost,
+  SUM(BilledCost) AS TotalBilledCost
 FROM focus_data_table
 WHERE ServiceName = ?
   AND BillingPeriodStart >= ? AND BillingPeriodStart < ?
 GROUP BY
   BillingPeriodStart,
   x_CustomColumn
-ORDER BY MonthlyCost DESC
+ORDER BY TotalBilledCost DESC
 ```
 
 ## Version Introduced

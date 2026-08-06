@@ -1,6 +1,6 @@
 # Contract Commitment Period Start
 
-Contract Commitment Period Start represents the [*inclusive start bound*](#glossary:inclusivestartbound) of a contract commitment period. For example, a time period where Contract Commitment Period Start is '2024-01-01T00:00:00Z' and [Contract Commitment End](#datasets.contractcommitment.contractcommitmentperiodend) is '2025-01-01T00:00:00Z' includes January 1 2024 since Contract Commitment Period Start represents the *inclusive start bound*, but does not include *charges* for January 2 2025 since Contract Commitment Period End represents the [*exclusive end bound*](#glossary:exclusiveendbound).
+Contract Commitment Period Start represents the [*inclusive start bound*](#glossary:inclusivestartbound) of a contract commitment period. For example, a time period where Contract Commitment Period Start is '2024-01-01T00:00:00Z' and [Contract Commitment End](#datamodel.contractcommitment.contractcommitmentperiodend) is '2025-01-01T00:00:00Z' includes January 1 2024 since Contract Commitment Period Start represents the *inclusive start bound*, but does not include *charges* for January 2 2025 since Contract Commitment Period End represents the [*exclusive end bound*](#glossary:exclusiveendbound).
 
 ## Requirements
 
@@ -27,7 +27,7 @@ The *inclusive start bound* of a contract commitment period.
 
 | Constraint      | Value                                                |
 |:----------------|:-----------------------------------------------------|
-| Dataset         | [Contract Commitment](#datasets.contractcommitment)  |
+| Dataset         | [Contract Commitment](#datamodel.contractcommitment)  |
 | Column type     | Dimension                                            |
 | Feature level   | Mandatory                                            |
 | Allows nulls    | False                                                |

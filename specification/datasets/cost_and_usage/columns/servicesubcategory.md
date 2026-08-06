@@ -1,6 +1,6 @@
 # Service Subcategory
 
-The Service Subcategory is a secondary classification of the [Service Category](#datasets.costandusage.servicecategory) for a [*service*](#glossary:service) based on its core function. The Service Subcategory (in conjunction with the Service Category) is commonly used for scenarios like analyzing spend and usage for specific workload types across service providers and tracking the migration of workloads across fundamentally different architectures.
+The Service Subcategory is a secondary classification of the [Service Category](#datamodel.costandusage.servicecategory) for a [*service*](#glossary:service) based on its core function. The Service Subcategory (in conjunction with the Service Category) is commonly used for scenarios like analyzing spend and usage for specific workload types across service providers and tracking the migration of workloads across fundamentally different architectures.
 
 ## Requirements
 
@@ -114,7 +114,7 @@ Secondary classification of the Service Category for a *service* based on its co
 
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Dataset         | [Cost and Usage](#datamodel.costandusage)             |
 | Column type     | Dimension                                            |
 | Feature level   | Recommended                                          |
 | Allows nulls    | False                                                |
