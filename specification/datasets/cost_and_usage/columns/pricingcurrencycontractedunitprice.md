@@ -38,8 +38,8 @@ The agreed-upon unit price for a single Pricing Unit of the associated SKU, incl
 
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
-| Conditions      | [includes virtual currency](#conditions.includesvirtualcurrency) and [includes list unit prices](#conditions.includeslistunitprices) |
 | Dataset         | [Cost and Usage](#datamodel.costandusage)            |
+| Conditions      | [Includes Virtual Currency](#conditions.includesvirtualcurrency) and [Includes List Unit Prices](#conditions.includeslistunitprices) |
 | Column type     | Metric                                               |
 | Feature level   | Conditional                                          |
 | Allows nulls    | True                                                 |

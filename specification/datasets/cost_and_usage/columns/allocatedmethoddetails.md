@@ -104,16 +104,16 @@ A set of properties describing how resources are allocated in data generator-def
 
 ## Content Constraints
 
-| Constraint | Value |
-| :--- | :--- |
-| Conditions | [includes split cost allocation](#conditions.includessplitcostallocation) |
-| Dataset | [Cost and Usage](#datamodel.costandusage) |
-| Column type | Dimension / Metric |
-| Feature level | Recommended |
-| Allows nulls | True |
-| Data type | JSON |
-| Value format | [JSON Object Format](#attributes.jsonobjectformat) |
-| Object | [AllocatedMethodDetailsObject](#datamodel.costandusage.allocatedmethoddetails.allocatedmethoddetailsobject) |
+| Constraint     | Value                                                                                                 |
+| :------------- | :---------------------------------------------------------------------------------------------------- |
+| Dataset        | [Cost and Usage](#datamodel.costandusage)                                                             |
+| Conditions     | [Includes Split Cost Allocation](#conditions.includessplitcostallocation)                             |
+| Column type    | Dimension / Metric                                                                                    |
+| Feature level  | Recommended                                                                                           |
+| Allows nulls   | True                                                                                                  |
+| Data type      | JSON                                                                                                  |
+| Value format   | [JSON Object Format](#attributes.jsonobjectformat)                                                    |
+| Object         | [AllocatedMethodDetailsObject](#datamodel.costandusage.allocatedmethoddetails.allocatedmethoddetailsobject) |
 
 ## Version Introduced
 
