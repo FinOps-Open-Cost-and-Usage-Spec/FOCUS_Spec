@@ -1,6 +1,6 @@
 # Consumed Quantity
 
-The Consumed Quantity represents the volume of a metered SKU associated with a [*resource*](#glossary:resource) or [*service*](#glossary:service) used, based on the [Consumed Unit](#datasets.costandusage.consumedunit). Consumed Quantity is often derived at a finer granularity or over a different time interval when compared to the [Pricing Quantity](#datasets.costandusage.pricingquantity) (complementary to [Pricing Unit](#datasets.costandusage.pricingunit)) and focuses on *resource* and *service* consumption, not pricing and cost.
+The Consumed Quantity represents the volume of a metered SKU associated with a [*resource*](#glossary:resource) or [*service*](#glossary:service) used, based on the [Consumed Unit](#datamodel.costandusage.consumedunit). Consumed Quantity is often derived at a finer granularity or over a different time interval when compared to the [Pricing Quantity](#datamodel.costandusage.pricingquantity) (complementary to [Pricing Unit](#datamodel.costandusage.pricingunit)) and focuses on *resource* and *service* consumption, not pricing and cost.
 
 ## Requirements
 
@@ -9,10 +9,10 @@ ConsumedQuantity MUST adhere to the following requirements:
 * ConsumedQuantity MUST be of type Decimal.
 * ConsumedQuantity MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * ConsumedQuantity MUST adhere to the following nullability requirements:
-  * ConsumedQuantity MUST be null when [SkuPriceId](#datasets.costandusage.skupriceid) is null.
-  * ConsumedQuantity MUST be null when [ChargeCategory](#datasets.costandusage.chargecategory) is not "Usage", or when ChargeCategory is "Usage" and [CommitmentDiscountStatus](#datasets.costandusage.commitmentdiscountstatus) is "Unused".
+  * ConsumedQuantity MUST be null when [SkuPriceId](#datamodel.costandusage.skupriceid) is null.
+  * ConsumedQuantity MUST be null when [ChargeCategory](#datamodel.costandusage.chargecategory) is not "Usage", or when ChargeCategory is "Usage" and [CommitmentDiscountStatus](#datamodel.costandusage.commitmentdiscountstatus) is "Unused".
   * When ChargeCategory is "Usage" and CommitmentDiscountStatus is not "Unused", ConsumedQuantity MUST adhere to the following requirements:
-    * ConsumedQuantity MUST NOT be null when [ChargeClass](#datasets.costandusage.chargeclass) is not "Correction".
+    * ConsumedQuantity MUST NOT be null when [ChargeClass](#datamodel.costandusage.chargeclass) is not "Correction".
     * ConsumedQuantity MAY be null when ChargeClass is "Correction".
 
 ## Column ID
@@ -31,7 +31,7 @@ The volume of a metered SKU associated with a *resource* or *service* used, base
 
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Dataset         | [Cost and Usage](#datamodel.costandusage)             |
 | Column type     | Metric                                               |
 | Feature level   | Conditional                                          |
 | Allows nulls    | True                                                 |
