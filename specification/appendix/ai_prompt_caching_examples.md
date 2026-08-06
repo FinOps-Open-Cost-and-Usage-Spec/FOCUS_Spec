@@ -1,8 +1,8 @@
 # Examples: AI Prompt Caching
 
-The following examples illustrate how a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) distinguishes cached from uncached token [*charges*](#glossary:charge) using the FOCUS-defined [SkuPriceDetails](#datamodel.costandusage.skupricedetails) property CacheRole, and how charges for retaining cached content over time remain a separate metered operation. Provider and model names below are illustrative.
+The following examples illustrate how a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) distinguishes cached from uncached token [*charges*](#glossary:charge) using the FOCUS-defined [SkuPriceDetails](#datamodel.costandusage.skupricedetails) property TokenType, and how charges for retaining cached content over time remain a separate metered operation. Provider and model names below are illustrative.
 
-Prompt caching lets a workload reuse previously processed input content across requests. *Service providers* meter this differently from one another. Some charge for placing content into a cache, some do not. Some charge separately for retaining it, some price retention into another charge. Where a charge exists, it typically appears as its own [SkuMeter](#datamodel.costandusage.skumeter), but the wording of that meter varies across *service providers* and is not drawn from a defined value set. CacheRole identifies the role a [*SKU Price*](#glossary:sku-price) plays in the cache lifecycle independently of how a given *service provider* names or structures its meters, so that cached and uncached charges can be compared across a multi-provider [*FOCUS dataset*](#glossary:FOCUS-dataset).
+Prompt caching lets a workload reuse previously processed input content across requests. *Service providers* meter this differently from one another. Some charge for placing content into a cache, some do not. Some charge separately for retaining it, some price retention into another charge. Where a charge exists, it typically appears as its own [SkuMeter](#datamodel.costandusage.skumeter), but the wording of that meter varies across *service providers* and is not drawn from a defined value set. TokenType identifies the kind of token a [*SKU Price*](#glossary:sku-price) meters independently of how a given *service provider* names its meters, so that cached and uncached charges can be compared across a multi-provider *FOCUS dataset*.
 
 ## Baseline Scenario
 
@@ -28,10 +28,10 @@ For this scenario, Acme Corp purchases the model directly from the model develop
 
 Note the following details in the example dataset:
 
-* Each token type is its own [*SKU*](#glossary:sku), with its own [SkuId](#datamodel.costandusage.skuid), [SkuPriceId](#datamodel.costandusage.skupriceid), and SkuMeter. The three input-side rows are distinguished structurally by SkuMeter values of "Input Tokens", "Cache Write Input Tokens", and "Cache Read Input Tokens".
-* CacheRole does not create that distinction; it normalizes it. The property carries "Uncached", "Write", and "Read" on those same three rows, so a query can select cache reads without matching on the SkuMeter text.
-* The uncached row carries CacheRole "Uncached" explicitly rather than omitting the property. Omission would be indistinguishable from a *service provider* that does not offer caching at all.
-* The output row omits CacheRole because the property is not applicable to generated tokens, consistent with the SkuPriceDetails requirement that properties not applicable to the corresponding SkuPriceId are excluded.
+* Each kind of token is its own [*SKU*](#glossary:sku), with its own [SkuId](#datamodel.costandusage.skuid), [SkuPriceId](#datamodel.costandusage.skupriceid), and SkuMeter. The three input-side rows are distinguished structurally by SkuMeter values of "Input Tokens", "Cache Write Input Tokens", and "Cache Read Input Tokens".
+* TokenType does not create that distinction; it normalizes it. The property carries "Input", "CacheWrite", and "CacheRead" on those same three rows, so a query can select cache reads without matching on the SkuMeter text.
+* Every token-metered row carries a TokenType, including the output row, so grouping the dataset by TokenType produces a breakdown that sums to the total token cost.
+* An input row processed without a cache carries "Input" rather than a distinct uncached value. Cache reads and cache writes are identified by their own values, so the remaining input tokens are the uncached ones.
 * Model identity properties are common to all four rows because all four describe the same model.
 * [ConsumedQuantity](#datamodel.costandusage.consumedquantity) holds the raw token count and [ConsumedUnit](#datamodel.costandusage.consumedunit) is "Tokens", while [PricingQuantity](#datamodel.costandusage.pricingquantity) holds the priced volume and [PricingUnit](#datamodel.costandusage.pricingunit) is "1000000 Tokens".
 
@@ -53,11 +53,11 @@ For this scenario, the same model is served by a cloud provider, LatticeScale, w
 
 Note the following details in the example dataset:
 
-* The SkuMeter wording differs from Scenario A for the same conceptual charge. Cache reads appear on a meter named "Cached Input Tokens" here and "Cache Read Input Tokens" in Scenario A, while both rows carry CacheRole "Read". Matching on CacheRole selects both; matching on SkuMeter text selects neither consistently.
-* No row carries CacheRole "Write". This *service provider* does not price cache writes, so no *SKU Price* holds that role, and the property is omitted rather than applied to a charge that does not exist.
+* The SkuMeter wording differs from Scenario A for the same conceptual charge. Cache reads appear on a meter named "Cached Input Tokens" here and "Cache Read Input Tokens" in Scenario A, while both rows carry TokenType "CacheRead". Matching on TokenType selects both; matching on SkuMeter text selects neither consistently.
+* No row carries TokenType "CacheWrite". This *service provider* does not meter cache writes as their own charge, so no *SKU Price* holds that value.
 * The "Input Tokens" row covers 2,500,000 tokens, comprising both the tokens that populated the cache and those processed without caching. The *service provider* does not meter them separately, so the dataset cannot separate them either. The cost of populating the cache is not separable on this *service provider*, which is a property of its billing model rather than of the dataset.
-* The context cache storage row has its own SkuId and a SkuMeter value of "Context Cache Storage", and omits CacheRole. Retaining content over time is a different metered operation from processing tokens, so it is identified structurally rather than by this property.
-* The context cache storage row is denominated in token-hours, so ConsumedUnit is "Token-Hours" and PricingUnit is "1000000 Token-Hours", both conforming to [UnitFormat](#attributes.unitformat) compound unit requirements.
+* The context cache storage row has its own SkuId and a SkuMeter value of "Context Cache Storage", and omits TokenType. It is denominated in token-hours rather than tokens, so it does not describe a kind of token consumed.
+* The context cache storage row conforms to [UnitFormat](#attributes.unitformat) compound unit requirements, with ConsumedUnit "Token-Hours" and PricingUnit "1000000 Token-Hours".
 
 The same analysis applied to this scenario yields a different result:
 
