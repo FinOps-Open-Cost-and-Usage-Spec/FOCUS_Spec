@@ -4,11 +4,11 @@ The examples below are not exhaustive and may change over time. Service provider
 
 ## Aura Web (Inference Request via an API Key)
 
-Scenario: A generative AI inference charge authenticated with an API key that acts under a named user. The named user is the [*principal*](#glossary:principal), so the user's attributes sit at the top level, and the API key is the [*credential*](#glossary:credential) recorded in the `Credential` property.
+Scenario: A generative AI inference charge authenticated with an API key that acts under a named user. The named user is the [*principal*](#glossary:principal), so the user's attributes sit at the top level, and the API key is the [*credential*](#glossary:credential) recorded in the `Credential` property. The `Credential` object repeats the CredentialId value in its `Id` key, which is optional; the examples that follow omit it.
 
 | ServiceProviderName | ServiceName | PrincipalId | CredentialId | CredentialDetails |
 |---------------------|-------------|-------------|--------------|-------------------|
-| Aura Web | Inference | user_8842 | key_01HQZX3M8N | {"Name": "Alex Rivera", "Email": "alex.rivera@example.com", "Type": "User", "Credential": {"Type": "API Key", "Name": "prod-ingest-key"}} |
+| Aura Web | Inference | user_8842 | key_01HQZX3M8N | {"Name": "Alex Rivera", "Email": "alex.rivera@example.com", "Type": "User", "Credential": {"Id": "key_01HQZX3M8N", "Type": "API Key", "Name": "prod-ingest-key"}} |
 
 ## LatticeScale (Direct Console Access)
 

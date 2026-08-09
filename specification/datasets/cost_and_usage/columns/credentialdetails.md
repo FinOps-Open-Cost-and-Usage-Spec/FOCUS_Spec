@@ -39,6 +39,7 @@ CredentialDetailsObject MUST adhere to the following requirements:
 * CredentialDetailsObject.Type MUST be a consistent, readable display value.
 * CredentialDetailsObject SHOULD include Type when the *service provider* distinguishes kinds of *principals*.
 * CredentialDetailsObject.Credential MUST represent the *credential* identified by CredentialId.
+* CredentialDetailsObject.Credential.Id MUST equal CredentialId.
 * CredentialDetailsObject.Credential.Type MUST represent the kind of *credential* identified by CredentialId.
 * CredentialDetailsObject.Credential.Type MUST be a consistent, readable display value.
 * CredentialDetailsObject.Credential.Name MUST represent a readable display name for the *credential* identified by CredentialId.
@@ -62,6 +63,7 @@ The `Credential` property contains an object with the following entries:
 
 | Key | Type | Required | Description |
 | :--- | :--- | :--- | :--- |
+| `Id` | String | False | The value of Credential ID for the *credential* described by this object. |
 | `Type` | String | True | The kind of *credential* identified by Credential ID (e.g., "API Key", "Session", "Delegated Role"). |
 | `Name` | String | False | Readable display name for the *credential* identified by Credential ID. |
 
@@ -74,6 +76,8 @@ To facilitate querying data across *principals* and across *service providers*, 
 <div class="h7-nonindex">Property Placement</div>
 
 Attributes describing the *principal* identified by PrincipalId belong at the top level of the object. Attributes describing the *credential* identified by CredentialId belong in the `Credential` object. Placing the descriptive attributes of the *principal* at the top level allows analyses that group or filter on those attributes to read them directly.
+
+`Credential.Id` repeats the value carried in CredentialId. A *service provider* that publishes the *credential* identifier alongside its descriptive attributes has a FOCUS-defined key available for it rather than a custom property. Analyses that group or filter on the *credential* read CredentialId, which is available without parsing the object.
 
 Where a *service provider* exposes only one level, PrincipalId and CredentialId carry the same value, and the attributes describing that identifier belong at the top level.
 
