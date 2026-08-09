@@ -1,6 +1,6 @@
 # Examples: AI Model Identity
 
-The following examples illustrate how a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) represents the identity of an AI model using FOCUS-defined [SkuPriceDetails](#datamodel.costandusage.skupricedetails) properties, and how the split between input (prompt) and output (generated) tokens is carried structurally rather than through a dedicated property. Provider and model names below are illustrative.
+The following examples illustrate how a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) represents the identity of an AI model using FOCUS-defined [SkuPriceDetails](#datamodel.costandusage.skupricedetails) properties, and how the split between input (prompt) and output (generated) tokens is carried structurally and labeled by the TokenType property. Provider and model names below are illustrative.
 
 ## Baseline Scenario
 
@@ -10,7 +10,7 @@ The following conditions apply to the scenarios below:
 * The model is priced separately for input and output tokens, denominated per 1,000,000 tokens.
 * The model identity (developer, family, identifier, and version) is stable for a given [*SKU Price*](#glossary:sku-price), so it is carried in SkuPriceDetails.
 
-> **Note:** The FOCUS-defined model-identity properties are listed in alphabetical order; the ordering is presentational and does not imply precedence.
+> **Note:** The FOCUS-defined SkuPriceDetails properties are listed in alphabetical order; the ordering is presentational and does not imply precedence.
 
 ## Scenario A: Foundation Model Purchased Directly
 
@@ -24,7 +24,7 @@ For this scenario, Acme Corp purchases the model directly from the model develop
 Note the following details in the example dataset:
 
 * Model identity is carried in SkuPriceDetails using the FOCUS-defined properties ModelDeveloper, ModelFamily, ModelId, and ModelVersion. These values are common to both rows because both describe the same model.
-* The split between input and output tokens is structural. Each is a separate [*SKU*](#glossary:sku) with its own [SkuId](#datamodel.costandusage.skuid) and [SkuPriceId](#datamodel.costandusage.skupriceid), distinguished by [SkuMeter](#datamodel.costandusage.skumeter) values of "Input Tokens" and "Output Tokens". No separate token-type property is used.
+* The split between input and output tokens is structural. Each is a separate [*SKU*](#glossary:sku) with its own [SkuId](#datamodel.costandusage.skuid) and [SkuPriceId](#datamodel.costandusage.skupriceid), distinguished by [SkuMeter](#datamodel.costandusage.skumeter) values of "Input Tokens" and "Output Tokens". The TokenType property labels each row with the kind of token its *SKU* meters, so rows can be grouped by token type even where meter names differ.
 * [ConsumedQuantity](#datamodel.costandusage.consumedquantity) holds the raw token count and [ConsumedUnit](#datamodel.costandusage.consumedunit) is "Tokens", while [PricingQuantity](#datamodel.costandusage.pricingquantity) holds the priced volume and [PricingUnit](#datamodel.costandusage.pricingunit) is "1000000 Tokens".
 * Because Acme Corp pays the list price, [ListUnitPrice](#datamodel.costandusage.listunitprice) and [ContractedUnitPrice](#datamodel.costandusage.contractedunitprice) are equal, so [ListCost](#datamodel.costandusage.listcost), [ContractedCost](#datamodel.costandusage.contractedcost), [BilledCost](#datamodel.costandusage.billedcost), and [EffectiveCost](#datamodel.costandusage.effectivecost) are equal.
 
