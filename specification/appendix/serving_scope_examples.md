@@ -1,8 +1,10 @@
-# Examples: AI Serving Scope
+# Examples: Serving Scope
 
-The following examples illustrate how a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) distinguishes model serving that is routed across a broad geographic area from serving that is pinned to a narrower one, using the FOCUS-defined ServingScope property of [SkuPriceDetails](#datamodel.costandusage.skupricedetails). Provider, model, and region names below are illustrative.
+The following examples illustrate how a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) distinguishes serving that is routed across a broad geographic area from serving that is pinned to a narrower one, using the FOCUS-defined ServingScope property of [SkuPriceDetails](#datamodel.costandusage.skupricedetails). Provider, model, and region names below are illustrative.
 
-Serving scope is a property of the *SKU Price* rather than of the individual charge, because a [*service provider*](#glossary:service-provider) prices each scope separately. It is not specific to AI; the same distinction appears wherever a provider offers the same capability at more than one geographic breadth.
+Serving scope is a property of the *SKU Price* rather than of the individual charge, because a [*service provider*](#glossary:service-provider) prices each scope separately. The dimension is not specific to AI; the same distinction applies wherever a *service provider* offers the same capability at more than one geographic breadth. AI model serving is where *service providers* price it most distinctly today, which is why both scenarios below use AI *SKUs*. Other offerings that vary geographic breadth commonly bundle it with replication, which the Redundancy property describes instead.
+
+ServingScope is populated when a *service provider* prices more than one serving scope for the same capability. Its absence does not indicate that a [*charge*](#glossary:charge) was globally routed, so an analysis measuring the share of spend at a given scope treats rows without ServingScope as unclassified rather than folding them into either scope.
 
 ## Baseline Scenario
 
@@ -23,7 +25,7 @@ For this scenario, Acme Corp runs the model on Aura Web under two serving scopes
 * Region-pinned serving of the same model is priced 20% higher, at $3.00 and $15.00 respectively.
 * The globally routed workload consumes 4,000,000 input tokens and 1,000,000 output tokens. The region-pinned workload consumes 2,000,000 input tokens and 500,000 output tokens.
 
-[**CSV Example**](/specification/data/ai_serving_scope/ai_serving_scope_a.csv)
+[**CSV Example**](/specification/data/serving_scope/serving_scope_a.csv)
 
 Note the following details in the example dataset:
 
@@ -40,7 +42,7 @@ For this scenario, the same model is served by CrestNode, which offers a third s
 * Global deployment is priced at $2.40 per 1,000,000 input tokens, data zone deployment 10% higher at $2.64, and regional deployment 20% higher at $2.88.
 * Only input tokens are shown, since the input and output split is already illustrated in Scenario A.
 
-[**CSV Example**](/specification/data/ai_serving_scope/ai_serving_scope_b.csv)
+[**CSV Example**](/specification/data/serving_scope/serving_scope_b.csv)
 
 Note the following details in the example dataset:
 
