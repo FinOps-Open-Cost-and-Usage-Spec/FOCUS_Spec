@@ -244,7 +244,7 @@ python specification/data/validate_examples.py --group commitment_discount_flexi
 python specification/data/validate_examples.py --group commitment_discount_flexibility --filter-rules CommitmentDiscount --validate-version 1.2 --applicability-criteria ALL
 ```
 
-* Run adjusted validation when a workstream has approved, documented OR-composite false-negatives:
+* Run adjusted validation when a workstream has approved and documented OR-composite false negatives:
 
 ```bash
 python specification/data/validate_examples.py --group commitment_discount_flexibility --validate-version 1.2 --applicability-criteria ALL --exclude-rules-file specification/data/commitment_discount_flexibility_excluded_rules_v1_2.txt
@@ -255,7 +255,11 @@ python specification/data/validate_examples.py --group commitment_discount_flexi
 >
 > `AdjustedFail` excludes only the explicitly listed Rule IDs and is the value used for the threshold check.
 >
-> Exclusion lists MUST be version-scoped, narrowly targeted, and reviewed with the Task Force before merge.
+> Exclusion list MUST be version-scoped.
+>
+> Exclusion lists MUST be narrowly targeted.
+>
+> Exclusion lists MUST have Task Force approval before merge.
 
 ## Pull Requests
 
