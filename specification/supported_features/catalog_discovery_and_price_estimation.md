@@ -10,6 +10,8 @@ Charge Category separates the rate to consume something ("Usage") from the fee t
 
 SKU Price Eligibility carries the inclusion and exclusion logic that determines which entities may receive a given price. A published catalog commonly contains prices an organization cannot obtain, so evaluating eligibility before pricing an architecture is what separates an achievable estimate from a theoretical one.
 
+An estimate built this way is a pre-commitment estimate. List Unit Price is the public rate, and no rate in the SKU Price dataset reflects a [*commitment discount*](#glossary:commitment-discount) having been applied to consumption. An organization holding commitments that would cover the planned architecture pays less than this estimate shows. Sizing that difference is done against recorded consumption in Cost and Usage, through the [Cost Comparison](#supportedfeatures.costcomparison) supported feature, rather than against the price list.
+
 ### Reading the Effective Date Columns
 
 SKU Price Effective Start and SKU Price Effective End carry meaning only as a pair, and a query that tests one without the other returns the wrong prices. SKU Price Effective Start is inclusive and SKU Price Effective End is exclusive, and either may be null:

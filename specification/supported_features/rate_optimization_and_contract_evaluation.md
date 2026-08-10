@@ -4,7 +4,7 @@
 
 FOCUS supports the evaluation of the rate an organization pays against the rates a [*service provider*](#glossary:service-provider) offers. The [SKU Price](#datamodel.skuprice) dataset carries the public rate and the negotiated rate as two columns on the same record, List Unit Price and Contracted Unit Price, so the difference between them is read directly rather than inferred from what was billed or reassembled from two rows. Joining SKU Price to [Cost and Usage](#datamodel.costandusage) on SKU Price ID then places recorded consumption against the price list it was drawn from, which is what turns a rate difference into a quantified amount.
 
-Three optimization questions follow from that pairing. The first is what an agreement is worth: subtracting Contracted Unit Price from List Unit Price on a record yields the reduction per unit, and Contract ID names the [*contract*](#glossary:contract) the negotiated rate belongs to.
+Three optimization questions follow from that pairing. The first is what negotiation reduced the rate by: subtracting Contracted Unit Price from List Unit Price on a record yields the reduction per unit, and Contract ID names the [*contract*](#glossary:contract) the negotiated rate belongs to. That difference is the negotiated portion of an agreement rather than its full effect, because the reduction from applying a [*commitment discount*](#glossary:commitment-discount) to a charge is recognized in Effective Cost on the Cost and Usage side. The [Cost Comparison](#supportedfeatures.costcomparison) supported feature covers reading the two together.
 
 The second is whether consumption sits in the right quantity tier. Quantity Tier Minimum and Quantity Tier Maximum bound the quantity envelope a rate applies to, measured in the Pricing Unit. Quantity Tier Minimum is the exclusive lower bound and Quantity Tier Maximum is the inclusive upper bound, so a quantity falls in a tier when it is strictly greater than the minimum and no greater than the maximum. The highest tier carries a null Quantity Tier Maximum. Because adjacent tiers meet at a shared boundary with no gap, the tier above a given tier is the one whose Quantity Tier Minimum equals that tier's Quantity Tier Maximum, which is what allows the distance to the next rate to be measured. A tier is identified by its boundaries rather than by a published label, so reconciliation against a public pricing page matches on the quantity range the rate applies to.
 
@@ -20,7 +20,7 @@ SKU Price Effective Start is inclusive and SKU Price Effective End is exclusive,
 
 ### Scope When Conditional Columns are Absent
 
-This feature applies wherever a *service provider* publishes a SKU Price dataset, and the data model states when that dataset is present. Measuring consumption against a rate additionally uses SKU Price ID in Cost and Usage; where that column is absent, the SKU Price dataset still supports rate and tier comparison on its own, and only the queries that join the two datasets do not apply.
+This feature applies wherever a *service provider* publishes a SKU Price dataset, and the data model states when that dataset is present. Measuring consumption against a rate additionally uses SKU Price ID in Cost and Usage; where that column is absent, the SKU Price dataset still supports rate and tier comparison on its own, and only the queries that join the two datasets do not apply. Repricing recorded consumption further uses Commitment Discount ID, present when the *operating model* [includes commitment discounts](#conditions.includescommitmentdiscounts); where it is absent, no consumption is covered by a *commitment discount*, so the exclusion that query applies is unnecessary and its result is unchanged.
 
 Each of the three capabilities above rests on a conditional column, and each narrows independently:
 
@@ -57,6 +57,7 @@ List Unit Price is present in every SKU Price dataset instance, so reading and c
   * ChargeCategory
   * ChargePeriodEnd
   * ChargePeriodStart
+  * CommitmentDiscountId
   * EffectiveCost
   * PricingQuantity
   * PricingUnit
@@ -70,9 +71,9 @@ The following queries use ANSI SQL and run against any major database engine wit
 
 > Important Consideration: The following queries assume FOCUS-conformant dataset artifacts. Practitioners should verify provider conformance before relying on these queries. Non-conformant dataset artifacts may produce inaccurate results.
 
-### Measure What Each Agreement Reduces the Rate By
+### Measure What Negotiation Reduces the Rate By
 
-This query takes an input of a point in time and reports, for each agreement, how far the negotiated rate sits below the public rate. Both prices are properties of the same record, so no self-join is needed and no reassembly step can pair the wrong rows.
+This query takes an input of a point in time and reports, for each agreement, how far the negotiated rate sits below the public rate. Both prices are properties of the same record, so no self-join is needed and no reassembly step can pair the wrong rows. What it returns is the reduction attributable to negotiation, not the total reduction an organization realizes on that SKU, since any further reduction from applying a *commitment discount* is recognized in Effective Cost.
 
 Records where List Unit Price is null are excluded, since a SKU offered only under a contract has no public rate to measure the reduction against.
 
@@ -190,7 +191,9 @@ ORDER BY PurchaseDurationType, PurchasePaymentModel, SkuPriceId
 
 ### Project the Effect of Moving Consumption to a Contracted Rate
 
-This query takes inputs of a time range via Charge Period Start and Charge Period End and a Contract ID, aggregates the consumption recorded over that range, and reprices it at the negotiated rate carried under that agreement. The difference between what the consumption cost and what it would cost at the contracted rate is the amount at stake in the agreement, which is what a purchase fee returned by the preceding query is weighed against.
+This query takes inputs of a time range via Charge Period Start and Charge Period End and a Contract ID, aggregates the consumption recorded over that range that no *commitment discount* covered, and reprices it at the negotiated rate carried under that agreement. The difference between what that consumption cost and what it would cost at the contracted rate is the amount at stake in the agreement, which is what a purchase fee returned by the preceding query is weighed against.
+
+Consumption already covered by a *commitment discount* is excluded. Its Effective Cost already reflects that commitment while Contracted Unit Price does not, so including it would subtract the two against different baselines and report the agreement as raising cost rather than lowering it.
 
 ```sql
 WITH ObservedUsage AS (
@@ -204,6 +207,7 @@ WITH ObservedUsage AS (
   WHERE ChargePeriodStart >= ? AND ChargePeriodEnd < ?
     AND ChargeCategory = 'Usage'
     AND SkuPriceId IS NOT NULL
+    AND CommitmentDiscountId IS NULL
   GROUP BY SkuPriceId, PricingUnit
 )
 SELECT
