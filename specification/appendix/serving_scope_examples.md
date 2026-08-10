@@ -41,12 +41,14 @@ For this scenario, the same model is served by CrestNode, which offers a third s
 
 * Global deployment is priced at $2.40 per 1,000,000 input tokens, data zone deployment 10% higher at $2.64, and regional deployment 20% higher at $2.88.
 * Only input tokens are shown, since the input and output split is already illustrated in Scenario A.
+* A fourth row covers a second model, Solora Reasoning Lite, which CrestNode offers at a single serving scope and therefore prices without a scope distinction.
 
 [**CSV Example**](/specification/data/serving_scope/serving_scope_b.csv)
 
 Note the following details in the example dataset:
 
-* The SkuMeter values ("Glbl Std Inp Tokens", "DZ Std Inp Tokens", and "Rgnl Std Inp Tokens") are abbreviated in a way specific to this *service provider*, and they do not match the meter names Aura Web uses in Scenario A. SkuMeter has no FOCUS-defined value set, so it cannot be matched across *service providers*. ServingScope is what makes the two datasets comparable.
+* The SkuMeter values ("Glbl Std Inp Tokens", "DZ Std Inp Tokens", and "Rgnl Std Inp Tokens") are abbreviated in a way specific to this *service provider*, and they do not match the meter names Aura Web uses in Scenario A. SkuMeter has no FOCUS-defined value set, so it cannot be matched across *service providers*. ServingScope is what makes the serving scopes comparable across the two datasets.
 * "DataZone" shows that the value set is not limited to the global and regional pair. A data zone is narrower than global serving and broader than a single region.
 * The data zone row carries a RegionId of "eu", a macro-region the *service provider* names, while the regional row carries "westeurope". Both are region identifiers; the ServingScope value is what distinguishes a price that applies across the whole data zone from one pinned to a single region.
-* Comparing the two scenarios, globally routed serving of the same model costs $2.50 per 1,000,000 input tokens on Aura Web and $2.40 on CrestNode. That comparison requires no parsing of *service-provider*-specific *SKU* identifiers.
+* The Solora Reasoning Lite row carries no ServingScope, because CrestNode prices that model without a scope distinction. It is not a globally routed charge; it is a charge to which the scope distinction does not apply. Measuring the share of spend at each scope counts it as unclassified rather than assigning it to a scope, which is why the three scoped rows sum to $48.48 against a scenario total of $51.48.
+* Comparing the two scenarios, globally routed serving of the same model costs $2.50 per 1,000,000 input tokens on Aura Web and $2.40 on CrestNode. ServingScope establishes that both rows describe global serving, and the model-identity properties establish that both describe the same model, so neither fact requires interpreting a *service-provider*-specific *SKU* identifier. Pairing the rows as input token prices relies on SkuMeter, which carries the metered dimension as *service-provider*-specific text; a FOCUS-defined property for that dimension would remove the remaining interpretation step from this comparison.
