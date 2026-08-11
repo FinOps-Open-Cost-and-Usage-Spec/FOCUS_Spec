@@ -35,7 +35,7 @@ python3 "$issue_work/tools/validate_manifest.py" \
   "$issue_work/evidence/applied_manifest.tsv"
 ```
 
-The allowlisted contributor files contain reviewed, render-safe examples and guidance changes that are not mechanical quote substitutions. The working folder contains the audit evidence itself.
+The allowlisted contributor files contain reviewed, render-safe examples and guidance changes that are not mechanical quote substitutions. In particular, the raw HTML table in `guidelines/contributors/editorial-guidelines.md` uses `<code>...</code>` instead of literal Markdown backticks because inline Markdown is not reliably parsed inside raw HTML table blocks. The HTML element renders the same inline-code presentation without exposing backtick characters in the preview; normal Markdown prose continues to use backticks. The working folder contains the audit evidence itself.
 
 ## Inspect or Regenerate an Inventory
 

@@ -36,6 +36,7 @@ The illustrative invoice line-item labels `Enterprise Support` and `Storage` wer
 
 * Metadata string examples such as `FOCUS Cost and Usage` and `FOCUS Contract` use backticks because they are example values of a string property.
 * Historical design values use backticks because this makes proposed and previously considered column values clear in Markdown.
+* The raw HTML table in `guidelines/contributors/editorial-guidelines.md` uses `<code>Usage</code>` rather than literal Markdown backticks. Inline Markdown is not parsed reliably inside a raw HTML table block, so `<code>` provides the equivalent rendered inline-code presentation without exposing backtick characters in the preview. The accompanying guidance still says to use backticks because that is the source convention for normal Markdown prose; the HTML tags are a render-safe implementation of the same convention.
 * The nested wildcard is retained as the quoted code literal `"*"`, including in the reserved-value table, because the surrounding object and array examples require quoted string syntax.
 * The `"x_"` custom-column prefix remains quoted because it is prefix notation rather than a string data value.
 * Code-like property assignments such as `Function="Nullability"` retain their double quotes as required string syntax.
