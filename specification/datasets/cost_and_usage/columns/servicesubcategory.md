@@ -29,7 +29,7 @@ ServiceSubcategory MUST adhere to the following requirements:
 | Analytics                 | Other (Analytics)                     | Analytics services that do not fall into one of the defined subcategories. |
 | Business Applications     | Productivity and Collaboration        | Tools that facilitate individuals managing tasks and working together. |
 | Business Applications     | Other (Business Applications)         | Business Applications services that do not fall into one of the defined subcategories. |
-| Compute                   | Bare Metal                            | Computing environments provisioned as dedicated physical servers with direct access to the underlying hardware. |
+| Compute                   | Bare Metal                            | Computing environments provisioned as physical servers with direct access to the underlying hardware. |
 | Compute                   | Containers                            | Management and orchestration of containerized compute platforms. |
 | Compute                   | End User Computing                    | Virtualized desktop infrastructure and device / endpoint management. |
 | Compute                   | Quantum Compute                       | Resources and simulators that leverage the principles of quantum mechanics. |
