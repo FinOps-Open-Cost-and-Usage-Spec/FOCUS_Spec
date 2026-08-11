@@ -4,7 +4,7 @@ Contracted Cost represents the cost of a [*charge*](#glossary:charge) based on n
 
 When [Contracted Unit Price](#datamodel.costandusage.contractedunitprice) and [Pricing Quantity](#datamodel.costandusage.pricingquantity) are provided for the *charge*, Contracted Cost is calculated by multiplying the Contracted Unit Price by the corresponding Pricing Quantity.
 
-Contracted Cost reflects negotiated unit price adjustments for the associated [*SKU Price*](#glossary:sku-price), independent of whether a discount-bearing [*commitment programs*](#glossary:commitment-program) (e.g., [*commitment discount*](#glossary:commitment-discount)) is actually applied to a given charge. It does not reflect cost impact that is conditional on the application of a discount-bearing *commitment program*.
+Contracted Cost reflects negotiated unit price adjustments for the associated [*SKU Price*](#glossary:sku-price), independent of any discount-bearing [*commitment program*](#glossary:commitment-program) (e.g., [*commitment discount*](#glossary:commitment-discount)) being applied to the charge. Contracted Cost does not reflect cost impact conditional on the application of a discount-bearing *commitment program*.
 
 When the [*operating model*](#glossary:operating-model) does not [include negotiated pricing](#conditions.includesnegotiatedpricing), or when no negotiated unit price adjustments are applied, Contracted Cost equals [List Cost](#datamodel.costandusage.listcost).
 
@@ -18,7 +18,7 @@ ContractedCost MUST adhere to the following requirements:
 * ContractedCost MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * ContractedCost MUST NOT be null.
 * ContractedCost MUST be denominated in the BillingCurrency.
-* ContractedCost MUST reflect negotiated unit price adjustments for the *SKU Price* identified by the given [SkuPriceId](#datamodel.costandusage.skupriceid), independent of whether a discount-bearing *commitment program* is actually applied to the *charge*.
+* ContractedCost MUST reflect negotiated unit price adjustments for the *SKU Price* identified by the given [SkuPriceId](#datamodel.costandusage.skupriceid), independent of any discount-bearing *commitment programs* being applied to the *charge*.
 * ContractedCost MUST NOT reflect any cost impact conditional on a discount-bearing *commitment program* being applied to the *charge*.
 * ContractedCost MUST equal ListCost when the *operating model* does not include negotiated pricing, or when no negotiated unit price adjustments are applied to the *charge*.
 * ContractedCost MUST equal [BilledCost](#datamodel.costandusage.billedcost) when [ChargeCategory](#datamodel.costandusage.chargecategory) is "Tax" or "Credit".
