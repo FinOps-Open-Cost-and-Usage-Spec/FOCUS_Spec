@@ -99,7 +99,7 @@ A specific term within a [*contract*](#glossary:contract) that defines a measura
 
 <a name="glossary:contracted-unit-price"><b>Contracted Unit Price</b></a>
 
-The negotiated unit price per [Pricing Unit](#datamodel.costandusage.pricingunit) for the [*SKU Price*](#glossary:sku-price) identified by the given [SKU Price ID](#datamodel.costandusage.skupriceid). Contracted Unit Price is inclusive of negotiated pricing adjustments that modify the unit price of the associated [*SKU Price*](#glossary:sku-price) and exclusive of pricing adjustments resulting from [*commitment discounts*](#glossary:commitment-discount) or other discount programs applied to the charge.
+The negotiated unit price per [Pricing Unit](#datamodel.costandusage.pricingunit) for the [*SKU Price*](#glossary:sku-price) identified by the given [SKU Price ID](#datamodel.costandusage.skupriceid). Contracted Unit Price is inclusive of negotiated unit price adjustments for the associated *SKU Price*, independent of whether a discount-bearing [*commitment programs*](#glossary:commitment-program) (e.g., [*commitment discount*](#glossary:commitment-discount)) is actually applied to a given charge. It does not reflect the unit price impact that is conditional on the application of a discount-bearing *commitment program*.
 
 <a name="glossary:correction"><b>Correction</b></a>
 
@@ -205,7 +205,7 @@ A common acronym for JavaScript Object Notation, a data format codified in [ECMA
 
 <a name="glossary:list-unit-price"><b>List Unit Price</b></a>
 
-The service-provider-suggested unit price per [Pricing Unit](#datamodel.costandusage.pricingunit) for the [*SKU Price*](#glossary:sku-price) identified by the given [SKU Price ID](#datamodel.costandusage.skupriceid). List Unit Price is exclusive of any discounts.
+The service-provider-suggested unit price per [Pricing Unit](#datamodel.costandusage.pricingunit) for the [*SKU Price*](#glossary:sku-price) identified by the given [SKU Price ID](#datamodel.costandusage.skupriceid). List Unit Price is exclusive of both negotiated unit price adjustments for the associated *SKU Price* and any unit price impact that is conditional on the application of a discount-bearing [*commitment program*](#glossary:commitment-program) (e.g., [*commitment discount*](#glossary:commitment-discount)) to the charge.
 
 <a name="glossary:managed-service-provider"><b>Managed Service Provider (MSP)</b></a>
 
@@ -268,12 +268,6 @@ An individual who performs FinOps within an organization to maximize the busines
 
 A comprehensive list of prices offered by a service provider.
 
-<a name="glossary:post-pricing-discount"><b>Post-Pricing Discount</b></a>
-
-A provider-defined discount mechanism applied after pricing determination that reduces the applicable invoiced cost of a [*charge*](#glossary:charge) (e.g., [Billed Cost](#datamodel.costandusage.billedcost)) and/or recognized cost of a *charge* (e.g., [Effective Cost](#datamodel.costandusage.effectivecost)) without modifying the applicable unit price of the [*SKU Price*](#glossary:sku-price) associated with the *charge* or the cost derived from that unit price (e.g., [Contracted Cost](#datamodel.costandusage.contractedcost)).
-
-Post-pricing discounts are distinct from [*unit price adjustments*](#glossary:unit-price-adjustment), which modify the applicable unit price of the *SKU Price* associated with the *charge*.
-
 <a name="glossary:service-provider"><b>Service Provider</b></a>
 
 An entity that provides the [*resources*](#glossary:resource) or [*services*](#glossary:service) available for usage or purchase.
@@ -325,10 +319,6 @@ A Resource or Service-Provider-defined construct for grouping resources and/or o
 <a name="glossary:term"><b>Term</b></a>
 
 An agreement specified on a [*contract*](#glossary:contract) or [*invoice*](#glossary:invoice).
-
-<a name="glossary:unit-price-adjustment"><b>Unit Price Adjustment</b></a>
-
-A pricing adjustment that modifies the applicable unit price of the [*SKU Price*](#glossary:sku-price) associated with a [*charge*](#glossary:charge).
 
 <a name="glossary:unit-pricing"><b>Unit Pricing</b></a>
 

@@ -4,9 +4,9 @@ Contracted Cost represents the cost of a [*charge*](#glossary:charge) based on n
 
 When [Contracted Unit Price](#datamodel.costandusage.contractedunitprice) and [Pricing Quantity](#datamodel.costandusage.pricingquantity) are provided for the *charge*, Contracted Cost is calculated by multiplying the Contracted Unit Price by the corresponding Pricing Quantity.
 
-Contracted Cost reflects negotiated [*unit price adjustments*](#glossary:unit-price-adjustment) that modify the unit price of the associated [*SKU Price*](#glossary:sku-price), but does not reflect cost impacts resulting from [*commitment discounts*](#glossary:commitment-discount) or other [*post-pricing discount*](#glossary:post-pricing-discount) mechanisms applied to the *charge*.
+Contracted Cost reflects negotiated unit price adjustments for the associated [*SKU Price*](#glossary:sku-price), independent of whether a discount-bearing [*commitment programs*](#glossary:commitment-program) (e.g., [*commitment discount*](#glossary:commitment-discount)) is actually applied to a given charge. It does not reflect cost impact that is conditional on the application of a discount-bearing *commitment program*.
 
-When the [*operating model*](#glossary:operating-model) does not [include negotiated pricing](#conditions.includesnegotiatedpricing), or when no negotiated *unit price adjustments* are applied, Contracted Cost equals [List Cost](#datamodel.costandusage.listcost).
+When the [*operating model*](#glossary:operating-model) does not [include negotiated pricing](#conditions.includesnegotiatedpricing), or when no negotiated unit price adjustments are applied, Contracted Cost equals [List Cost](#datamodel.costandusage.listcost).
 
 Contracted Cost is denominated in the [Billing Currency](#datamodel.costandusage.billingcurrency). Contracted Cost is commonly used for calculating savings based on negotiation activities by comparing it with List Cost.
 
