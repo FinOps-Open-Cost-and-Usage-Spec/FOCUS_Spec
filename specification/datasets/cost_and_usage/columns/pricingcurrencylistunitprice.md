@@ -39,7 +39,7 @@ The suggested service-provider-published unit price for a single Pricing Unit of
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
 | Dataset         | [Cost and Usage](#datamodel.costandusage)             |
-| Conditions      | [Includes Virtual Currency](#conditions.includesvirtualcurrency) and [Includes List Unit Prices](#conditions.includeslistunitprices) |
+| Conditions      | Required when: [Includes Virtual Currency](#conditions.includesvirtualcurrency) and [Includes List Unit Prices](#conditions.includeslistunitprices); Recommended when: [Includes Pricing-Billing Currency Differences](#conditions.includespricing-billingcurrencydifferences) and [Includes List Unit Prices](#conditions.includeslistunitprices) |
 | Column type     | Metric                                               |
 | Feature level   | Conditional                                          |
 | Allows nulls    | True                                                 |

@@ -51,9 +51,9 @@ The specification for the Cost and Usage dataset defines a group of columns that
 | [List Unit Price](#datamodel.costandusage.listunitprice)                                             | Metric             | [Conditional](#conditions.includeslistunitprices) | True         | Decimal   |
 | [Pricing Category](#datamodel.costandusage.pricingcategory)                                          | Dimension          | [Conditional](#conditions.includesmultiplepricingcategories) | True         | String    |
 | [Pricing Currency](#datamodel.costandusage.pricingcurrency)                                          | Dimension          | [Conditional](#conditions.includespricing-billingcurrencydifferences) | False        | String    |
-| [Pricing Currency Contracted Unit Price](#datamodel.costandusage.pricingcurrencycontractedunitprice) | Metric             | [Conditional](#conditions.includespricing-billingcurrencydifferences) | True         | Decimal   |
-| [Pricing Currency Effective Cost](#datamodel.costandusage.pricingcurrencyeffectivecost)              | Metric             | [Conditional](#conditions.includespricing-billingcurrencydifferences) | False        | Decimal   |
-| [Pricing Currency List Unit Price](#datamodel.costandusage.pricingcurrencylistunitprice)             | Metric             | [Conditional](#conditions.includespricing-billingcurrencydifferences) | True         | Decimal   |
+| [Pricing Currency Contracted Unit Price](#datamodel.costandusage.pricingcurrencycontractedunitprice) | Metric             | [Conditional](#conditions.includesvirtualcurrency) | True         | Decimal   |
+| [Pricing Currency Effective Cost](#datamodel.costandusage.pricingcurrencyeffectivecost)              | Metric             | [Conditional](#conditions.includesvirtualcurrency) | False        | Decimal   |
+| [Pricing Currency List Unit Price](#datamodel.costandusage.pricingcurrencylistunitprice)             | Metric             | [Conditional](#conditions.includesvirtualcurrency) | True         | Decimal   |
 | [Pricing Quantity](#datamodel.costandusage.pricingquantity)                                          | Metric             | Mandatory     | True         | Decimal   |
 | [Pricing Unit](#datamodel.costandusage.pricingunit)                                                  | Dimension          | Mandatory     | True         | String    |
 | [Region ID](#datamodel.costandusage.regionid)                                                        | Dimension          | [Conditional](#conditions.includesregions) | True         | String    |
