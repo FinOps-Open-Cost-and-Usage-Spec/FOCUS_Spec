@@ -16,6 +16,8 @@ ListCost MUST adhere to the following requirements:
 * ListCost MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * ListCost MUST NOT be null.
 * ListCost MUST be denominated in the BillingCurrency.
+* ListCost MUST NOT reflect the impact of negotiated unit price adjustments for the associated [*SKU Price*](#glossary:sku-price).
+* ListCost MUST NOT reflect any cost impact conditional on a discount-bearing *commitment program* being applied to the *charge*.
 * ListCost MUST equal BilledCost when [ChargeCategory](#datamodel.costandusage.chargecategory) is "Tax" or "Credit".
 * ListCost MAY differ from BilledCost when ChargeCategory is "Adjustment".
 * ListCost MUST equal the product of ListUnitPrice and PricingQuantity when ListUnitPrice is not null and PricingQuantity is not null.

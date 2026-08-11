@@ -21,6 +21,8 @@ ListUnitPrice MUST adhere to the following requirements:
 * When ListUnitPrice is not null, ListUnitPrice MUST adhere to the following requirements:
   * ListUnitPrice MUST be a non-negative decimal value.
   * ListUnitPrice MUST be denominated in the BillingCurrency.
+  * ListUnitPrice MUST NOT reflect the impact of negotiated unit price adjustments for the associated *SKU Price*.
+  * ListUnitPrice MUST NOT reflect any unit price impact conditional on a discount-bearing *commitment program* being applied to the *charge*.
 
 ## Usability Constraints
 
