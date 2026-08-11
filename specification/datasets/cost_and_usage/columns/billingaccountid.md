@@ -31,6 +31,7 @@ The identifier assigned to a *billing account* by the invoice issuer.
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
 | Dataset         | [Cost and Usage](#datamodel.costandusage)             |
+| Conditions      | Not applicable                                        |
 | Column type     | Dimension                                            |
 | Feature level   | Mandatory                                            |
 | Allows nulls    | False                                                |

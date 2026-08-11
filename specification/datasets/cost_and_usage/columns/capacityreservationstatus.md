@@ -39,6 +39,7 @@ Indicates whether the *charge* represents either the consumption of a *capacity 
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
 | Dataset         | [Cost and Usage](#datamodel.costandusage)             |
+| Conditions      | [Includes Capacity Reservations](#conditions.includescapacityreservations) |
 | Column type     | Dimension                                            |
 | Feature level   | Conditional                                          |
 | Allows nulls    | True                                                 |

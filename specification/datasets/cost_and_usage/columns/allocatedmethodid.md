@@ -30,6 +30,7 @@ A unique identifier defining the method of data generator-calculated split cost 
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
 | Dataset         | [Cost and Usage](#datamodel.costandusage)             |
+| Conditions      | [Includes Split Cost Allocation](#conditions.includessplitcostallocation) |
 | Column type     | Dimension                                            |
 | Feature level   | Conditional                                          |
 | Allows nulls    | True                                                 |

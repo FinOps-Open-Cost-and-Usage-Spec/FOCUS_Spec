@@ -36,6 +36,7 @@ Indicates whether the *commitment discount* identified in the CommitmentDiscount
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
 | Dataset         | [Cost and Usage](#datamodel.costandusage)             |
+| Conditions      | [Includes Commitment Discounts](#conditions.includescommitmentdiscounts) |
 | Column type     | Dimension                                            |
 | Feature level   | Conditional                                          |
 | Allows nulls    | True                                                 |

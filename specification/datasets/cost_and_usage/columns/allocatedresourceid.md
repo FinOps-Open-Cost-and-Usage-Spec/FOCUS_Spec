@@ -33,6 +33,7 @@ The identifier of the object to which cost is allocated in data generator-calcul
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
 | Dataset         | [Cost and Usage](#datamodel.costandusage)             |
+| Conditions      | [Includes Split Cost Allocation](#conditions.includessplitcostallocation) |
 | Column type     | Dimension                                            |
 | Feature level   | Conditional                                          |
 | Allows nulls    | True                                                 |

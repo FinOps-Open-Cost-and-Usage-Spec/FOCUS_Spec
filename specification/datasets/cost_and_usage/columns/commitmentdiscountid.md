@@ -34,6 +34,7 @@ The identifier assigned to a *commitment discount* by the service provider.
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
 | Dataset         | [Cost and Usage](#datamodel.costandusage)             |
+| Conditions      | [Includes Commitment Discounts](#conditions.includescommitmentdiscounts) |
 | Column type     | Dimension                                            |
 | Feature level   | Conditional                                          |
 | Allows nulls    | True                                                 |

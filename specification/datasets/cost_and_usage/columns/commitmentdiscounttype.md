@@ -29,6 +29,7 @@ A service-provider-assigned identifier for the type of *commitment discount* app
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
 | Dataset         | [Cost and Usage](#datamodel.costandusage)             |
+| Conditions      | [Includes Commitment Discounts](#conditions.includescommitmentdiscounts) |
 | Column type     | Dimension                                            |
 | Feature level   | Conditional                                          |
 | Allows nulls    | True                                                 |

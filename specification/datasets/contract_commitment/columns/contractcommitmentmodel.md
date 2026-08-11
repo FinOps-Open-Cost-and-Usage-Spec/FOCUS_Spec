@@ -48,6 +48,7 @@ Represents the operational behavior and consumption flexibility of a *contract c
 | Constraint      | Value          |
 | :-------------- | :------------- |
 | Dataset         | [Contract Commitment](#datamodel.contractcommitment)  |
+| Conditions      | Not applicable                                        |
 | Column type     | Dimension      |
 | Feature level   | Mandatory      |
 | Allows nulls    | False          |

@@ -28,6 +28,7 @@ The national or virtual currency denomination that the [Contract Commitment Cost
 | Constraint      | Value                               |
 |:----------------|:------------------------------------|
 | Dataset         | [Contract Commitment](#datamodel.contractcommitment)  |
+| Conditions      | [Includes Pricing-Billing Currency Differences](#conditions.includespricing-billingcurrencydifferences) |
 | Column type     | Dimension                           |
 | Feature level   | Conditional                         |
 | Allows nulls    | False                               |

@@ -38,6 +38,7 @@ Indicates whether the *charge* corresponds with the consumption of a *commitment
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
 | Dataset         | [Cost and Usage](#datamodel.costandusage)             |
+| Conditions      | [Includes Commitment Discounts](#conditions.includescommitmentdiscounts) |
 | Column type     | Dimension                                            |
 | Feature level   | Conditional                                          |
 | Allows nulls    | True                                                 |

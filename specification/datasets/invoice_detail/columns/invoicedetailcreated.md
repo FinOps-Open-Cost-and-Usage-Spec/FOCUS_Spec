@@ -29,6 +29,7 @@ The timestamp when the Invoice Detail record was first created.
 |    Constraint    |              Value              |
 |:----------------|:--------------------------------|
 | Dataset         | [Invoice Detail](#datamodel.invoicedetail)             |
+| Conditions      | Not applicable                                         |
 | Column type     | Dimension                       |
 | Feature level   | Mandatory                       |
 | Allows nulls    | False                           |

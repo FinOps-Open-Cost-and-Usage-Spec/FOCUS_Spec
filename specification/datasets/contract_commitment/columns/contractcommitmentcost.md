@@ -30,6 +30,7 @@ The monetary value of the *contract commitment*.
 | Constraint    | Value                                                |
 | :------------ | :--------------------------------------------------- |
 | Dataset       | [Contract Commitment](#datamodel.contractcommitment)  |
+| Conditions    | Not applicable                                        |
 | Column type   | Metric                                               |
 | Feature level | Mandatory                                            |
 | Allows nulls  | True                                                 |

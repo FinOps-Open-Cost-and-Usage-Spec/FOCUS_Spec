@@ -29,6 +29,7 @@ The *inclusive start bound* of a *billing period*.
 | Constraint      | Value                                |
 |:----------------|:-------------------------------------|
 | Dataset         | [Invoice Detail](#datamodel.invoicedetail)             |
+| Conditions      | Not applicable                                         |
 | Column type     | Dimension                            |
 | Feature level   | Mandatory                            |
 | Allows nulls    | False                                |

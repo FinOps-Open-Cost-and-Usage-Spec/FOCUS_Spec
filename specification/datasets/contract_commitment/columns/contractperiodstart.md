@@ -28,6 +28,7 @@ The *inclusive start bound* of a contract period.
 | Constraint      | Value                                                |
 |:----------------|:-----------------------------------------------------|
 | Dataset         | [Contract Commitment](#datamodel.contractcommitment)  |
+| Conditions      | Not applicable                                        |
 | Column type     | Dimension                                            |
 | Feature level   | Mandatory                                            |
 | Allows nulls    | False                                                |

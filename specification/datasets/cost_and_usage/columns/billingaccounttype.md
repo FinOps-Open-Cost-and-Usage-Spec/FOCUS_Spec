@@ -30,6 +30,7 @@ An invoice-issuer-assigned name to identify the type of *billing account*.
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
 | Dataset         | [Cost and Usage](#datamodel.costandusage)             |
+| Conditions      | [Includes Multiple Billing Account Types](#conditions.includesmultiplebillingaccounttypes) |
 | Column type     | Dimension                                            |
 | Feature level   | Conditional                                          |
 | Allows nulls    | False                                                |

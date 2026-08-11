@@ -36,6 +36,7 @@ The volume of a given *SKU* associated with a *resource* or *service* used or pu
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
 | Dataset         | [Cost and Usage](#datamodel.costandusage)             |
+| Conditions      | Not applicable                                        |
 | Column type     | Metric                                               |
 | Feature level   | Mandatory                                            |
 | Allows nulls    | True                                                 |

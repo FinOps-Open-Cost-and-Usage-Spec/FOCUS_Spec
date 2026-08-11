@@ -42,6 +42,7 @@ Cost of a *charge* based on the *resources* used, *services* used, or *contract 
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
 | Dataset         | [Cost and Usage](#datamodel.costandusage)             |
+| Conditions      | Not applicable                                        |
 | Column type     | Metric                                               |
 | Feature level   | Mandatory                                            |
 | Allows nulls    | False                                                |

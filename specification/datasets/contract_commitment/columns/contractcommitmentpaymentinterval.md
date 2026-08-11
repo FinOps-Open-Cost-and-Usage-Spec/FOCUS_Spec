@@ -42,6 +42,7 @@ Represents the frequency by which a *contract commitment* is invoiced.
 | Constraint      | Value          |
 | :-------------- | :------------- |
 | Dataset         | [Contract Commitment](#datamodel.contractcommitment)  |
+| Conditions      | Not applicable                                        |
 | Column type     | Dimension      |
 | Feature level   | Mandatory      |
 | Allows nulls    | False          |

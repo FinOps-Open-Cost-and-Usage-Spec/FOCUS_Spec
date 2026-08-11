@@ -27,6 +27,7 @@ A host-provider-assigned identifier for a physically separated and isolated area
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
 | Dataset         | [Cost and Usage](#datamodel.costandusage)             |
+| Conditions      | [Includes Availability Zones](#conditions.includesavailabilityzones) |
 | Column type     | Dimension                                            |
 | Feature level   | Recommended                                          |
 | Allows nulls    | True                                                 |

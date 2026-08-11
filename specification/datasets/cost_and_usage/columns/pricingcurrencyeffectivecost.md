@@ -33,6 +33,7 @@ The PricingCurrency-denominated equivalent of Effective Cost, representing the c
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
 | Dataset         | [Cost and Usage](#datamodel.costandusage)             |
+| Conditions      | [Includes Virtual Currency](#conditions.includesvirtualcurrency) and [Includes List Unit Prices](#conditions.includeslistunitprices) |
 | Column type     | Metric                                               |
 | Feature level   | Conditional                                          |
 | Allows nulls    | False                                                |

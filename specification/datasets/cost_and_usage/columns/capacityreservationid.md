@@ -33,6 +33,7 @@ The identifier assigned to a *capacity reservation* by the service provider.
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
 | Dataset         | [Cost and Usage](#datamodel.costandusage)             |
+| Conditions      | [Includes Capacity Reservations](#conditions.includescapacityreservations) |
 | Column type     | Dimension                                            |
 | Feature level   | Conditional                                          |
 | Allows nulls    | True                                                 |

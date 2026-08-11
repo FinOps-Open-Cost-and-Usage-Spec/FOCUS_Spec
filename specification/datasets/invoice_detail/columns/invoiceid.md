@@ -29,6 +29,7 @@ The invoice-issuer-assigned identifier for an invoice encapsulating *charges* in
 |    Constraint   |      Value       |
 |:----------------|:-----------------|
 | Dataset         | [Invoice Detail](#datamodel.invoicedetail)             |
+| Conditions      | Not applicable                                         |
 | Column type     | Dimension        |
 | Feature level   | Mandatory        |
 | Allows nulls    | False            |

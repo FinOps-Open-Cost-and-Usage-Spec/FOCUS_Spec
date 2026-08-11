@@ -29,6 +29,7 @@ Host-provider-assigned identifier for an isolated geographic area where a *resou
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
 | Dataset         | [Cost and Usage](#datamodel.costandusage)             |
+| Conditions      | [Includes Regions](#conditions.includesregions)       |
 | Column type     | Dimension                                            |
 | Feature level   | Conditional                                          |
 | Allows nulls    | True                                                 |

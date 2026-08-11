@@ -40,6 +40,7 @@ The current lifecycle state of a *contract commitment*.
 | Constraint      | Value          |
 | :-------------- | :------------- |
 | Dataset         | [Contract Commitment](#datamodel.contractcommitment)  |
+| Conditions      | Not applicable                                        |
 | Column type     | Dimension      |
 | Feature level   | Mandatory      |
 | Allows nulls    | False          |

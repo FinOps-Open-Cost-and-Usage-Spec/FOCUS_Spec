@@ -29,6 +29,7 @@ The timestamp when the contract commitment record was last updated.
 |    Constraint    |              Value             |
 |:----------------|:--------------------------------|
 | Dataset         | [Contract Commitment](#datamodel.contractcommitment)  |
+| Conditions      | Not applicable                                        |
 | Column type     | Dimension                       |
 | Feature level   | Mandatory                       |
 | Allows nulls    | False                           |
