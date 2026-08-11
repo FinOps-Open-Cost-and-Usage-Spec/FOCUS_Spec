@@ -29,11 +29,12 @@ ServiceSubcategory MUST adhere to the following requirements:
 | Analytics                 | Other (Analytics)                     | Analytics services that do not fall into one of the defined subcategories. |
 | Business Applications     | Productivity and Collaboration        | Tools that facilitate individuals managing tasks and working together. |
 | Business Applications     | Other (Business Applications)         | Business Applications services that do not fall into one of the defined subcategories. |
+| Compute                   | Bare Metal                            | Computing environments provisioned as dedicated physical servers with direct access to the underlying hardware. |
 | Compute                   | Containers                            | Management and orchestration of containerized compute platforms. |
 | Compute                   | End User Computing                    | Virtualized desktop infrastructure and device / endpoint management. |
 | Compute                   | Quantum Compute                       | Resources and simulators that leverage the principles of quantum mechanics. |
 | Compute                   | Serverless Compute                    | Enablement of compute capabilities without provisioning or managing servers. |
-| Compute                   | Virtual Machines                      | Computing environments ranging from hosts with abstracted operating systems to bare-metal servers. |
+| Compute                   | Virtual Machines                      | Computing environments provisioned as virtualized hosts with customer-managed operating systems running on abstracted hardware. |
 | Compute                   | Other (Compute)                       | Compute services that do not fall into one of the defined subcategories. |
 | Databases                 | Caching                               | Low-latency and high-throughput access to frequently accessed data. |
 | Databases                 | Data Warehouses                       | Big data storage and querying capabilities. |

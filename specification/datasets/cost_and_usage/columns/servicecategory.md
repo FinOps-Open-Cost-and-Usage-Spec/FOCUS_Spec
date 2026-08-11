@@ -17,7 +17,7 @@ ServiceCategory MUST adhere to the following requirements:
 | AI and Machine Learning   | Artificial Intelligence and Machine Learning related technologies.                                                               |
 | Analytics                 | Data processing, analytics, and visualization capabilities.                                                                      |
 | Business Applications     | Business and productivity applications and services.                                                                             |
-| Compute                   | Virtual, containerized, serverless, or high-performance computing infrastructure and services.                                   |
+| Compute                   | Physical, virtual, containerized, serverless, or high-performance computing infrastructure and services.                         |
 | Databases                 | Database platforms and services that allow for storage and querying of data.                                                     |
 | Developer Tools           | Software development and delivery tools and services.                                                                            |
 | Identity                  | Identity and access management services.                                                                                         |
