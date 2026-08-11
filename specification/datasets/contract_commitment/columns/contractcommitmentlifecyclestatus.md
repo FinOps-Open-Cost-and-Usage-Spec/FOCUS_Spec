@@ -9,7 +9,7 @@ ContractCommitmentLifecycleStatus MUST adhere to the following requirements:
 * ContractCommitmentLifecycleStatus MUST be of type String.
 * ContractCommitmentLifecycleStatus MUST NOT be null.
 * ContractCommitmentLifecycleStatus MUST be one of the allowed values.
-* When a contract commitment record is modified in a way that requires a new [ContractCommitmentID](#datamodel.contractcommitment.contractcommitmentid), ContractCommitmentLifecycleStatus for the previous record MUST be "Superseded".
+* When a contract commitment record is modified in a way that requires a new [ContractCommitmentID](#datamodel.contractcommitment.contractcommitmentid), ContractCommitmentLifecycleStatus for the previous record MUST be `Superseded`.
 
 ## Allowed Values
 

@@ -24,8 +24,8 @@ For this scenario, Acme Corp purchases the model directly from the model develop
 Note the following details in the example dataset:
 
 * Model identity is carried in SkuPriceDetails using the FOCUS-defined properties ModelDeveloper, ModelFamily, ModelId, and ModelVersion. These values are common to both rows because both describe the same model.
-* The split between input and output tokens is structural. Each is a separate [*SKU*](#glossary:sku) with its own [SkuId](#datamodel.costandusage.skuid) and [SkuPriceId](#datamodel.costandusage.skupriceid), distinguished by [SkuMeter](#datamodel.costandusage.skumeter) values of "Input Tokens" and "Output Tokens". No separate token-type property is used.
-* [ConsumedQuantity](#datamodel.costandusage.consumedquantity) holds the raw token count and [ConsumedUnit](#datamodel.costandusage.consumedunit) is "Tokens", while [PricingQuantity](#datamodel.costandusage.pricingquantity) holds the priced volume and [PricingUnit](#datamodel.costandusage.pricingunit) is "1000000 Tokens".
+* The split between input and output tokens is structural. Each is a separate [*SKU*](#glossary:sku) with its own [SkuId](#datamodel.costandusage.skuid) and [SkuPriceId](#datamodel.costandusage.skupriceid), distinguished by [SkuMeter](#datamodel.costandusage.skumeter) values of `Input Tokens` and `Output Tokens`. No separate token-type property is used.
+* [ConsumedQuantity](#datamodel.costandusage.consumedquantity) holds the raw token count and [ConsumedUnit](#datamodel.costandusage.consumedunit) is `Tokens`, while [PricingQuantity](#datamodel.costandusage.pricingquantity) holds the priced volume and [PricingUnit](#datamodel.costandusage.pricingunit) is `1000000 Tokens`.
 * Because Acme Corp pays the list price, [ListUnitPrice](#datamodel.costandusage.listunitprice) and [ContractedUnitPrice](#datamodel.costandusage.contractedunitprice) are equal, so [ListCost](#datamodel.costandusage.listcost), [ContractedCost](#datamodel.costandusage.contractedcost), [BilledCost](#datamodel.costandusage.billedcost), and [EffectiveCost](#datamodel.costandusage.effectivecost) are equal.
 
 ## Scenario B: Same Model Served by a Cloud Provider
@@ -39,6 +39,6 @@ For this scenario, the same underlying model is served by a cloud provider, Latt
 
 Note the following details in the example dataset:
 
-* ModelDeveloper ("Solora AI") differs from ServiceProviderName ("LatticeScale"). The model developer is not represented by any existing participating-entity column, which is why model identity is carried as its own property.
-* The served ModelId is namespaced by the *service provider* ("latticescale.solora-reasoning-pro"), so the other model-identity properties (ModelDeveloper, ModelFamily, and ModelVersion) are what associate the charge with the underlying model across *service providers*.
+* ModelDeveloper (`Solora AI`) differs from ServiceProviderName (`LatticeScale`). The model developer is not represented by any existing participating-entity column, which is why model identity is carried as its own property.
+* The served ModelId is namespaced by the *service provider* (`latticescale.solora-reasoning-pro`), so the other model-identity properties (ModelDeveloper, ModelFamily, and ModelVersion) are what associate the charge with the underlying model across *service providers*.
 * As in Scenario A, the input and output split is structural, and the model-identity properties are common to both rows.

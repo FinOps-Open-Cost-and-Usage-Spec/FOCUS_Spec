@@ -8,7 +8,7 @@ These scenarios address discrepancies related to charges from the May 2025 billi
 
 ### Billing Period Alignment
 
-Corrections are applied to the open billing period rather than modifying the closed one. The ChargeClass is set to "Correction", and the BillingPeriodStart/End reflect the current open period (June). However, the ChargePeriodStart/End remain mapped to the original timeframe (May) to preserve the historical accuracy of when the cost was incurred.
+Corrections are applied to the open billing period rather than modifying the closed one. The ChargeClass is set to `Correction`, and the BillingPeriodStart/End reflect the current open period (June). However, the ChargePeriodStart/End remain mapped to the original timeframe (May) to preserve the historical accuracy of when the cost was incurred.
 
 ### Correction Style
 
@@ -31,7 +31,7 @@ CSV Examples:
 Note the following details in the example datasets:
 
 * The original dataset was delivered before the billing period was closed and includes a charge record that was part of the finalized invoice for May 2025.
-* Correction records have ChargeClass set to "Correction", indicating they reallocate cost from a previously closed billing period.
+* Correction records have ChargeClass set to `Correction`, indicating they reallocate cost from a previously closed billing period.
 * Original Dataset includes:
   * A charge record attributed entirely to ResourceId `R-111`.
 * Delta style correction includes:
@@ -59,7 +59,7 @@ Note the following details in the example datasets:
 * The late-arriving cost was incurred during May 2025 but was not captured in the original dataset and was therefore not reflected in the invoice for May 2025, issued on June 8th, 2025.
 * The correction introduces a new charge record to account for this previously omitted cost.
 * The correction record is assigned to the next open billing period (e.g., June 2025).
-* The correction record has ChargeClass set to "Correction", indicating it accounts for usage from a previously closed billing period.
+* The correction record has ChargeClass set to `Correction`, indicating it accounts for usage from a previously closed billing period.
 * Both Delta style and Ledger style corrections use a single increment record to represent the late-arriving usage and associated cost.
 
 ### Scenario 3: Closed-Period Correction - Itemized Cost-Only Corrections
@@ -83,9 +83,9 @@ Note the following details in the example datasets:
 * The discrepancies were not captured in the original dataset and therefore were not reflected in the invoice for May 2025, issued on June 8th, 2025.
 * Both Delta style and Ledger style corrections introduce two itemized increment records representing cost-only adjustments.
 * Each correction record is assigned to the next open billing period (e.g., June 2025).
-* Each correction record has ChargeClass set to "Correction", indicating it reconciles cost discrepancies from a previously closed billing period.
+* Each correction record has ChargeClass set to `Correction`, indicating it reconciles cost discrepancies from a previously closed billing period.
 * Each correction record is itemized and explicitly references the relevant SkuPriceId.
-* Each correction record has ChargeCategory set to "Adjustment". While in this case "Usage" might be more precise and is permitted (since ChargeClass is "Correction"), "Adjustment" was selected to denote a cost-only correction due to a rounding error.
+* Each correction record has ChargeCategory set to `Adjustment`. While in this case `Usage` might be more precise and is permitted (since ChargeClass is `Correction`), `Adjustment` was selected to denote a cost-only correction due to a rounding error.
 
 ### Scenario 4: Closed-Period Correction - Bulk Cost-Only Corrections
 
@@ -106,6 +106,6 @@ Note the following details in the example datasets:
 * The discrepancies were not captured in the original dataset and therefore were not reflected in the invoice for May 2025, issued on June 8th, 2025.
 * Both Delta style and Ledger style corrections introduce a bulk cost-only record to reconcile the total drift and ensure invoice accuracy.
 * The correction record is assigned to the next open billing period (e.g., June 2025).
-* The correction record has ChargeClass set to "Correction", indicating it reconciles cost discrepancies from a previously closed billing period.
+* The correction record has ChargeClass set to `Correction`, indicating it reconciles cost discrepancies from a previously closed billing period.
 * The correction record does not specify a SkuPriceId, as it spans multiple SKU Price IDs.
-* The correction record has ChargeCategory set to "Adjustment". While in this case "Usage" might be more precise and is permitted (since ChargeClass is "Correction"), "Adjustment" was selected to denote a cost-only correction due to a rounding error.
+* The correction record has ChargeCategory set to `Adjustment`. While in this case `Usage` might be more precise and is permitted (since ChargeClass is `Correction`), `Adjustment` was selected to denote a cost-only correction due to a rounding error.

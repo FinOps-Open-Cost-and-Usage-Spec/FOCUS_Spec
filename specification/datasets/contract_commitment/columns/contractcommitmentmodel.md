@@ -11,7 +11,7 @@ ContractCommitmentModel MUST adhere to the following requirements:
 * ContractCommitmentModel MUST be of type String.
 * ContractCommitmentModel MUST NOT be null.
 * ContractCommitmentModel MUST be one of the allowed values.
-* ContractCommitmentModel MUST be "Discontinuous" when ContractCommitmentFulfillmentInterval is "Full Period".
+* ContractCommitmentModel MUST be `Discontinuous` when ContractCommitmentFulfillmentInterval is `Full Period`.
 
 ## Allowed Values
 

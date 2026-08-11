@@ -146,10 +146,10 @@ Ensures suffix semantics align with scope and intent.
 *Purpose*: Enforce semantic consistency for functions.
 
 *Description*:
-"Nullability" ⇒ Must reference null-related conditions in text.
-"Format" ⇒ Must reference format.
-"Type" ⇒ Must include “of type”.
-"Composite" ⇒ Must use AND/OR with at least one CheckModelRule.
+`Nullability` ⇒ Must reference null-related conditions in text.
+`Format` ⇒ Must reference format.
+`Type` ⇒ Must include “of type”.
+`Composite` ⇒ Must use AND/OR with at least one CheckModelRule.
 
 #### `test_nullability_function.py`
 

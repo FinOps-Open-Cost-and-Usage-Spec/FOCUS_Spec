@@ -9,7 +9,7 @@ The scenarios described below illustrate how a Cost and Usage [*FOCUS dataset*](
 The following baseline conditions apply to the scenarios described below:
 
 * Acme Corp has signed an agreement with SaaS service provider OmniQuery to use their services.
-* OmniQuery offers a virtual currency pricing model for their services and requires a purchase of virtual currency in advance of usage. Their denomination of virtual currency is called "tokens".
+* OmniQuery offers a virtual currency pricing model for their services and requires a purchase of virtual currency in advance of usage. Their denomination of virtual currency is called `tokens`.
 * OmniQuery requires purchase of additional tokens in the event of usage exceeding purchased tokens.
 * OmniQuery publicly lists the cost of their tokens at $2 per token.
 * OmniQuery treats token purchases as resources; therefore, charges for token purchases include values for ResourceId, ResourceName, and ResourceType.

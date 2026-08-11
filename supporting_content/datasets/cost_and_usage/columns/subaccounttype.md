@@ -22,11 +22,11 @@ Current terms used by providers:
 
 | Provider  | Value            |
 | --------- | ---------------- |
-| AWS       | "Membership Account" |
-| GCP       | "Project"        |
-| Microsoft | "Subscription"   |
-| OCI       | "Tenancy"        |
-| OCI       | "Child Tenancy"  |
+| AWS       | `Membership Account` |
+| GCP       | `Project`        |
+| Microsoft | `Subscription`   |
+| OCI       | `Tenancy`        |
+| OCI       | `Child Tenancy`  |
 
 ## Discussion / scratch space
 

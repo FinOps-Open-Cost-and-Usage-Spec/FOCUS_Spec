@@ -9,7 +9,7 @@ The **Invoice Detail** dataset provides a transactional representation of the fi
 To ensure interoperability across different billing systems, the dataset relies on three core logical pillars:
 
 1. **Reconciliation & Lineage:** The dataset links every charge back to a specific document (`InvoiceId`) and allows for auditable corrections. If a charge is refunded or adjusted, the `ReferenceInvoiceId` connects the adjustment back to the original invoice, preserving the financial narrative.
-2. **Granularity Definition:** Unlike standard datasets with fixed schemas, invoice line items vary wildly in detail (e.g., a single line for "Enterprise Support" vs. millions of lines for "Storage"). The `InvoiceDetailGrain` column uses a flexible JSON structure to capture the specific dimensions (SKU, Region, Project) relevant to that specific line item without breaking the schema.
+2. **Granularity Definition:** Unlike standard datasets with fixed schemas, invoice line items vary wildly in detail (e.g., a single line for `Enterprise Support` vs. millions of lines for `Storage`). The `InvoiceDetailGrain` column uses a flexible JSON structure to capture the specific dimensions (SKU, Region, Project) relevant to that specific line item without breaking the schema.
 3. **Currency Duality:** The dataset explicitly separates the currency of measurement (`BillingCurrency`) from the currency of settlement (`PaymentCurrency`). This allows organizations to validate usage costs in the original currency (e.g., USD) while reconciling the final cash outflow in their local currency (e.g., EUR, AUD).
 
 ### Expected Value Taxonomy

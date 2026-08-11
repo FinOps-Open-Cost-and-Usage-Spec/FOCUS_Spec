@@ -10,7 +10,7 @@ ChargeClass MUST adhere to the following requirements:
 * ChargeClass MUST adhere to the following nullability requirements:
   * ChargeClass MUST be null when the *charge* does not represent a correction to a previously *closed billing period*.
   * ChargeClass MUST NOT be null when the *charge* represents a correction to a previously *closed billing period*.
-* ChargeClass MUST be "Correction" when ChargeClass is not null.
+* ChargeClass MUST be `Correction` when ChargeClass is not null.
 
 ## Allowed Values
 

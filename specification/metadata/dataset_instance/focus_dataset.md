@@ -1,6 +1,6 @@
 # FOCUS Dataset ID
 
-The identifier of the FOCUS dataset for which the schema and its data conform to. This indicates which FOCUS dataset the data artifact aligns with, such as "FOCUS Cost and Usage" or "FOCUS Contract."
+The identifier of the FOCUS dataset for which the schema and its data conform to. This indicates which FOCUS dataset the data artifact aligns with, such as `FOCUS Cost and Usage` or `FOCUS Contract`.
 
 The FocusDatasetId property adheres to the following requirements:
 

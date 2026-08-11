@@ -30,8 +30,8 @@ ContractAppliedObject MUST adhere to the following requirements:
 * ContractAppliedObject.Elements[\*].ContractCommitmentId MUST be a unique identifier within the service provider.
 * ContractAppliedObject.Elements[\*].ContractCommitmentId SHOULD be a fully-qualified identifier.
 * ContractAppliedObject.Elements[\*].ContractCommitmentId MUST have one and only one parent ContractAppliedObject.Elements[\*].ContractId.
-* ContractAppliedObject.Elements[\*].ContractCommitmentId MUST match [ResourceId](#datamodel.costandusage.resourceid) when [ChargeCategory](#datamodel.costandusage.chargecategory) is "Purchase" and the *charge* represents a purchase of that *contract commitment*.
-* ContractAppliedObject.Elements[\*].ContractCommitmentId MUST match ResourceId when ChargeCategory is "Usage" and the *charge* represents an unused portion of that *contract commitment*.
+* ContractAppliedObject.Elements[\*].ContractCommitmentId MUST match [ResourceId](#datamodel.costandusage.resourceid) when [ChargeCategory](#datamodel.costandusage.chargecategory) is `Purchase` and the *charge* represents a purchase of that *contract commitment*.
+* ContractAppliedObject.Elements[\*].ContractCommitmentId MUST match ResourceId when ChargeCategory is `Usage` and the *charge* represents an unused portion of that *contract commitment*.
 * ContractAppliedObject.Elements[\*].ContractCommitmentId MAY match ContractAppliedObject.Elements[\*].ContractId.
 * ContractAppliedObject.Elements[\*].ContractCommitmentAppliedCost MUST be denominated in the [BillingCurrency](#datamodel.costandusage.billingcurrency).
 * ContractAppliedObject.Elements[\*].ContractCommitmentAppliedQuantity MUST be denominated in the ContractAppliedObject.Elements[\*].ContractCommitmentAppliedUnit.

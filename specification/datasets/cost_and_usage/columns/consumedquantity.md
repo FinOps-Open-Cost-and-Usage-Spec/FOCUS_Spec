@@ -10,10 +10,10 @@ ConsumedQuantity MUST adhere to the following requirements:
 * ConsumedQuantity MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * ConsumedQuantity MUST adhere to the following nullability requirements:
   * ConsumedQuantity MUST be null when [SkuPriceId](#datamodel.costandusage.skupriceid) is null.
-  * ConsumedQuantity MUST be null when [ChargeCategory](#datamodel.costandusage.chargecategory) is not "Usage", or when ChargeCategory is "Usage" and [CommitmentDiscountStatus](#datamodel.costandusage.commitmentdiscountstatus) is "Unused".
-  * When ChargeCategory is "Usage" and CommitmentDiscountStatus is not "Unused", ConsumedQuantity MUST adhere to the following requirements:
-    * ConsumedQuantity MUST NOT be null when [ChargeClass](#datamodel.costandusage.chargeclass) is not "Correction".
-    * ConsumedQuantity MAY be null when ChargeClass is "Correction".
+  * ConsumedQuantity MUST be null when [ChargeCategory](#datamodel.costandusage.chargecategory) is not `Usage`, or when ChargeCategory is `Usage` and [CommitmentDiscountStatus](#datamodel.costandusage.commitmentdiscountstatus) is `Unused`.
+  * When ChargeCategory is `Usage` and CommitmentDiscountStatus is not `Unused`, ConsumedQuantity MUST adhere to the following requirements:
+    * ConsumedQuantity MUST NOT be null when [ChargeClass](#datamodel.costandusage.chargeclass) is not `Correction`.
+    * ConsumedQuantity MAY be null when ChargeClass is `Correction`.
 
 ## Column ID
 

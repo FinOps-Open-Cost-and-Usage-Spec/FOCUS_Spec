@@ -102,7 +102,7 @@ Generic terms such as `dataset` or `datasets` MUST NOT be used in non-subject po
 * Example of column-level requirement (subject: `EffectiveCost`, body: specific `{DatasetId}` + `dataset instances`):
 
 ```markdown
-* EffectiveCost MUST be 0 when ChargeCategory is "Purchase" and the purchase is intended to cover related eligible *charges*. This requirement applies even when the *covered charges* originate from different CostAndUsage *dataset instances*, possibly from a different ServiceProviderName.
+* EffectiveCost MUST be 0 when ChargeCategory is `Purchase` and the purchase is intended to cover related eligible *charges*. This requirement applies even when the *covered charges* originate from different CostAndUsage *dataset instances*, possibly from a different ServiceProviderName.
 ```
 
 ## Notation Conventions
@@ -341,7 +341,7 @@ Composite requirements MUST adhere to the following guidelines:
 Incorrect:
 
 ```markdown
-* When ChargeCategory is "Purchase", CostAndUsage MUST adhere to the following requirements:
+* When ChargeCategory is `Purchase`, CostAndUsage MUST adhere to the following requirements:
   * BillingCurrency MUST conform to CurrencyCodeFormat requirements.
   * ResourceId MUST be a unique identifier within a service provider.
   * InvoiceDetail documentation MUST describe invoice reconciliation methodology.
@@ -350,9 +350,9 @@ Incorrect:
 Correct:
 
 ```markdown
-* When ChargeCategory is "Purchase", CommitmentDiscountQuantity MUST adhere to the following requirements:
-  * CommitmentDiscountQuantity MUST NOT be null when ChargeClass is not "Correction".
-  * CommitmentDiscountQuantity MAY be null when ChargeClass is "Correction".
+* When ChargeCategory is `Purchase`, CommitmentDiscountQuantity MUST adhere to the following requirements:
+  * CommitmentDiscountQuantity MUST NOT be null when ChargeClass is not `Correction`.
+  * CommitmentDiscountQuantity MAY be null when ChargeClass is `Correction`.
   * CommitmentDiscountQuantity MUST be expressed in CommitmentDiscountUnit when not null.  
 ```
 
@@ -919,9 +919,9 @@ ListUnitPrice MUST adhere to the following requirements:
 * ListUnitPrice MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * ListUnitPrice MUST adhere to the following nullability requirements:
   * ListUnitPrice MUST be null when [SkuPriceId](#datasets.costandusage.skupriceid) is null.
-  * ListUnitPrice MUST be null when [ChargeCategory](#datasets.costandusage.chargecategory) is "Tax".
+  * ListUnitPrice MUST be null when [ChargeCategory](#datasets.costandusage.chargecategory) is `Tax`.
   * ListUnitPrice MUST NOT be null when [SkuPriceId](#datasets.costandusage.skupriceid) is not null.
-  * ListUnitPrice MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#datasets.costandusage.chargeclass) is not "Correction".
+  * ListUnitPrice MUST NOT be null when ChargeCategory is `Usage` or `Purchase` and [ChargeClass](#datasets.costandusage.chargeclass) is not `Correction`.
   * ListUnitPrice MAY be null in all other cases.
 * When ListUnitPrice is not null, ListUnitPrice MUST adhere to the following requirements:
   * ListUnitPrice MUST be a non-negative decimal value.
@@ -937,13 +937,13 @@ CommitmentDiscountQuantity MUST adhere to the following requirements:
 * CommitmentDiscountQuantity MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * CommitmentDiscountQuantity MUST adhere to the following nullability requirements:
   * CommitmentDiscountQuantity MUST be null when [SkuPriceId](#datasets.costandusage.skupriceid) is null.
-  * When ChargeCategory is "Usage" or "Purchase" and CommitmentDiscountId is not null, CommitmentDiscountQuantity MUST adhere to the following requirements:
-    * CommitmentDiscountQuantity MUST NOT be null when [ChargeClass](#datasets.costandusage.chargeclass) is not "Correction".
-    * CommitmentDiscountQuantity MAY be null when ChargeClass is "Correction".
+  * When ChargeCategory is `Usage` or `Purchase` and CommitmentDiscountId is not null, CommitmentDiscountQuantity MUST adhere to the following requirements:
+    * CommitmentDiscountQuantity MUST NOT be null when [ChargeClass](#datasets.costandusage.chargeclass) is not `Correction`.
+    * CommitmentDiscountQuantity MAY be null when ChargeClass is `Correction`.
   * CommitmentDiscountQuantity MUST be null in all other cases.
 * CommitmentDiscountQuantity MUST be a valid decimal value when not null.
-* When CommitmentDiscountQuantity is not null and ChargeCategory is "Purchase", CommitmentDiscountQuantity MUST adhere to the following requirements:
-  * CommitmentDiscountQuantity MUST be the quantity of CommitmentDiscountUnit, paid fully or partially upfront, that is eligible for consumption over the *commitment discount's* *term* when [ChargeFrequency](#datasets.costandusage.chargefrequency) is "One-Time".
+* When CommitmentDiscountQuantity is not null and ChargeCategory is `Purchase`, CommitmentDiscountQuantity MUST adhere to the following requirements:
+  * CommitmentDiscountQuantity MUST be the quantity of CommitmentDiscountUnit, paid fully or partially upfront, that is eligible for consumption over the *commitment discount's* *term* when [ChargeFrequency](#datasets.costandusage.chargefrequency) is `One-Time`.
   * ...
 ```
 

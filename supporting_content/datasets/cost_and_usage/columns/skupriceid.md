@@ -77,7 +77,7 @@ The following table serves as the basis for reviewing the SkuPriceId spec, as we
       * **SkuShape** (String) - SKU property
       * **SkuMeter** (String) - SKU property
   * **Prices** (Array)
-    * **CurrencyCode** (String) - Currency code (e.g., "USD", "EUR")
+    * **CurrencyCode** (String) - Currency code (e.g., `USD`, `EUR`)
       * **PricesPerCurrency** (Array)
         * **ContractId** (String or null) - Contract ID (null for ListUnitPrice; non-null for ContractedUnitPrice)
         * **EffectiveStartDate** (Date) - Price start date
@@ -174,7 +174,7 @@ The following table serves as the basis for reviewing the SkuPriceId spec, as we
     * SkuPriceId MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider publishes a SKU price list and MUST be of type String.
     * SkuPriceId MUST define a single unit price used for calculating the charge.
     * [ListUnitPrice](#listunitprice) MUST be associated with the SkuPriceId in the provider published price list.
-    * SkuPriceId MUST NOT be null when [ChargeClass](#chargeclass) is not "Correction" and [ChargeCategory](#chargecategory) is "Usage" or "Purchase", MUST be null when ChargeCategory is "Tax", and MAY be null for all other combinations of ChargeClass and ChargeCategory.
+    * SkuPriceId MUST NOT be null when [ChargeClass](#chargeclass) is not `Correction` and [ChargeCategory](#chargecategory) is `Usage` or `Purchase`, MUST be null when ChargeCategory is `Tax`, and MAY be null for all other combinations of ChargeClass and ChargeCategory.
     * A given value of SkuPriceId MUST be associated with one and only one [SkuId](#skuid), except in cases of [commitment discount flexibility](#glossary:commitment-discount-flexibility).
     * If a provider does not have a SkuPriceId and wants to include information in columns linked to SkuPriceId such as ListUnitPrice or [SkuPriceDetails](#skupricedetails), the SkuId MAY be used in the SkuPriceId column as long as it adheres to the above conditions.
 
@@ -182,7 +182,7 @@ The following table serves as the basis for reviewing the SkuPriceId spec, as we
     * SkuPriceId MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider publishes a SKU price list and MUST be of type String.
     * SkuPriceId MUST define a single unit price used for calculating the charge, **reflecting a stable grouping of core properties of a SKU Price while excluding fluctuations in dynamic or negotiable properties such as unit price amount, currency, temporal validity (e.g., effective dates), and contract- or negotiation-specific elements.**
     * [ListUnitPrice](#listunitprice) MUST be associated with the SkuPriceId in the provider published price list **but is not inherently part of the SkuPriceId itself**.
-    * SkuPriceId MUST NOT be null when [ChargeClass](#chargeclass) is not "Correction" and [ChargeCategory](#chargecategory) is "Usage" or "Purchase", MUST be null when ChargeCategory is "Tax", and MAY be null for all other combinations of ChargeClass and ChargeCategory.
+    * SkuPriceId MUST NOT be null when [ChargeClass](#chargeclass) is not `Correction` and [ChargeCategory](#chargecategory) is `Usage` or `Purchase`, MUST be null when ChargeCategory is `Tax`, and MAY be null for all other combinations of ChargeClass and ChargeCategory.
     * A given value of SkuPriceId MUST be associated with one and only one [SkuId](#skuid), except in cases of [commitment discount flexibility](#glossary:commitment-discount-flexibility).
     * If a provider does not have a SkuPriceId and wants to include information in columns linked to SkuPriceId such as ListUnitPrice or [SkuPriceDetails](#skupricedetails), the SkuId MAY be used in the SkuPriceId column as long as it adheres to the above conditions.
 
