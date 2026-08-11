@@ -28,7 +28,7 @@ The *exclusive end bound* of a *billing period*.
 | Constraint      | Value                                |
 |:----------------|:-------------------------------------|
 | Dataset         | [Billing Period](#datamodel.billingperiod)             |
-| Conditions      | Not applicable                                         |
+| Operating Model Conditions      | Not applicable                                         |
 | Column type     | Dimension                            |
 | Feature level   | Mandatory                            |
 | Allows nulls    | False                                |

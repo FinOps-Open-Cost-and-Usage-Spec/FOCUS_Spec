@@ -61,7 +61,7 @@ The effective percentage reduction applied to the list price of resources or ser
 | Constraint      | Value          |
 | :-------------- | :------------- |
 | Dataset         | [Contract Commitment](#datamodel.contractcommitment)  |
-| Conditions      | Not applicable                                        |
+| Operating Model Conditions      | Not applicable                                        |
 | Column type     | Metric         |
 | Feature level   | Mandatory      |
 | Allows nulls    | True           |

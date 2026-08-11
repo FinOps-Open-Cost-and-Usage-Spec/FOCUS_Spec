@@ -33,7 +33,7 @@ Identifier assigned to a *resource* by the service provider.
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
 | Dataset         | [Cost and Usage](#datamodel.costandusage)             |
-| Conditions      | [Includes Provisioned Resources](#conditions.includesprovisionedresources) |
+| Operating Model Conditions      | [Includes Provisioned Resources](#operatingmodelconditions.includesprovisionedresources) |
 | Column type     | Dimension                                            |
 | Feature level   | Conditional                                          |
 | Allows nulls    | True                                                 |

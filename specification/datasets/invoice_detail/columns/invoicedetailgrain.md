@@ -62,7 +62,7 @@ The set of key-value pairs that defines the granularity of the invoice line item
 |    Constraint    |              Value             |
 |:----------------|:--------------------------------|
 | Dataset         | [Invoice Detail](#datamodel.invoicedetail)             |
-| Conditions      | Not applicable                                         |
+| Operating Model Conditions      | Not applicable                                         |
 | Column type     | Dimension                       |
 | Feature level   | Mandatory                       |
 | Allows nulls    | True                            |

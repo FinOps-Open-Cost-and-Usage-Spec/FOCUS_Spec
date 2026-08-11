@@ -30,7 +30,7 @@ Service-provider-specified measurement unit indicating how a service provider me
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
 | Dataset         | [Cost and Usage](#datamodel.costandusage)             |
-| Conditions      | [Includes Usage Measurement](#conditions.includesusagemeasurement) |
+| Operating Model Conditions      | [Includes Usage Measurement](#operatingmodelconditions.includesusagemeasurement) |
 | Column type     | Dimension                                            |
 | Feature level   | Conditional                                          |
 | Allows nulls    | True                                                 |

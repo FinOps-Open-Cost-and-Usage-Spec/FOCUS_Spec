@@ -35,7 +35,7 @@ An offering that can be purchased from a service provider (e.g., cloud virtual m
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
 | Dataset         | [Cost and Usage](#datamodel.costandusage)             |
-| Conditions      | Not applicable                                        |
+| Operating Model Conditions      | Not applicable                                        |
 | Column type     | Dimension                                            |
 | Feature level   | Mandatory                                            |
 | Allows nulls    | False                                                |

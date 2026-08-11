@@ -31,7 +31,7 @@ A name assigned to a grouping of [*resources*](#glossary:resource) or [*services
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
 | Dataset         | [Cost and Usage](#datamodel.costandusage)             |
-| Conditions      | [Includes Sub Accounts](#conditions.includessubaccounts) |
+| Operating Model Conditions      | [Includes Sub Accounts](#operatingmodelconditions.includessubaccounts) |
 | Column type     | Dimension                                            |
 | Feature level   | Conditional                                          |
 | Allows nulls    | True                                                 |

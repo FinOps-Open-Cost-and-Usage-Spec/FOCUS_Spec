@@ -47,7 +47,7 @@ Represents the specific *period* used to measure and reset the fulfillment of a 
 | Constraint      | Value          |
 | :-------------- | :------------- |
 | Dataset         | [Contract Commitment](#datamodel.contractcommitment)  |
-| Conditions      | Not applicable                                        |
+| Operating Model Conditions      | Not applicable                                        |
 | Column type     | Dimension      |
 | Feature level   | Mandatory      |
 | Allows nulls    | False          |

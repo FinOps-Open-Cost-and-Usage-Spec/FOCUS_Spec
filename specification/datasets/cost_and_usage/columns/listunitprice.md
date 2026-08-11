@@ -39,7 +39,7 @@ The suggested service-provider-published unit price for a single Pricing Unit of
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
 | Dataset         | [Cost and Usage](#datamodel.costandusage)             |
-| Conditions      | [Includes List Unit Prices](#conditions.includeslistunitprices) |
+| Operating Model Conditions      | [Includes List Unit Prices](#operatingmodelconditions.includeslistunitprices) |
 | Column type     | Metric                                               |
 | Feature level   | Conditional                                          |
 | Allows nulls    | True                                                 |

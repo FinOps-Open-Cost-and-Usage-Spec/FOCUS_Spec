@@ -28,7 +28,7 @@ The timestamp when the *Billing Period* record was first created.
 |    Constraint   |              Value                              |
 |:----------------|:------------------------------------------------|
 | Dataset         | [Billing Period](#datamodel.billingperiod)      |
-| Conditions      | Not applicable                                  |
+| Operating Model Conditions      | Not applicable                                  |
 | Column type     | Dimension                                       |
 | Feature level   | Mandatory                                       |
 | Allows nulls    | False                                           |

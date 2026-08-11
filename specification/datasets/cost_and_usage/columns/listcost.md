@@ -36,7 +36,7 @@ Cost calculated by multiplying List Unit Price and the corresponding Pricing Qua
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
 | Dataset         | [Cost and Usage](#datamodel.costandusage)             |
-| Conditions      | Not applicable                                        |
+| Operating Model Conditions      | Not applicable                                        |
 | Column type     | Metric                                               |
 | Feature level   | Mandatory                                            |
 | Allows nulls    | False                                                |

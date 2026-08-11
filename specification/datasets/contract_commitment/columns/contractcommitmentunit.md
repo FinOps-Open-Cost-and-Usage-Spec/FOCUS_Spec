@@ -30,7 +30,7 @@ A service-provider-specified measurement unit for the amount declared in Contrac
 | Constraint      | Value                                                |
 |:----------------|:-----------------------------------------------------|
 | Dataset         | [Contract Commitment](#datamodel.contractcommitment)  |
-| Conditions      | Not applicable                                        |
+| Operating Model Conditions      | Not applicable                                        |
 | Column type     | Dimension                                            |
 | Feature level   | Mandatory                                            |
 | Allows nulls    | True                                                 |

@@ -29,7 +29,7 @@ The amount associated with the *contract commitment*.
 | Constraint      | Value                                                |
 |:----------------|:-----------------------------------------------------|
 | Dataset         | [Contract Commitment](#datamodel.contractcommitment)  |
-| Conditions      | Not applicable                                        |
+| Operating Model Conditions      | Not applicable                                        |
 | Column type     | Metric                                               |
 | Feature level   | Mandatory                                            |
 | Allows nulls    | True                                                 |

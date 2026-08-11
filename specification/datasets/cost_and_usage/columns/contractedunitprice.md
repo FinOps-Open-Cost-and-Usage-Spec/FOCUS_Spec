@@ -39,7 +39,7 @@ The agreed-upon unit price for a single Pricing Unit of the associated SKU, incl
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
 | Dataset         | [Cost and Usage](#datamodel.costandusage)             |
-| Conditions      | [Includes Negotiated Pricing](#conditions.includesnegotiatedpricing) |
+| Operating Model Conditions      | [Includes Negotiated Pricing](#operatingmodelconditions.includesnegotiatedpricing) |
 | Column type     | Metric                                               |
 | Feature level   | Conditional                                          |
 | Allows nulls    | True                                                 |

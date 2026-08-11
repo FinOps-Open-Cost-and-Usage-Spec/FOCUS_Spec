@@ -75,7 +75,7 @@ The Billed Cost as expressed in Payment Currency.
 |    Constraint   |      Value              |
 |:----------------|:------------------------|
 | Dataset         | [Invoice Detail](#datamodel.invoicedetail)             |
-| Conditions      | [Includes Billing and Payment Currency Differences](#conditions.includesbillingandpaymentcurrencydifferences) |
+| Operating Model Conditions      | [Includes Billing and Payment Currency Differences](#operatingmodelconditions.includesbillingandpaymentcurrencydifferences) |
 | Column type     | Metric                  |
 | Feature level   | Conditional             |
 | Allows nulls    | False                   |

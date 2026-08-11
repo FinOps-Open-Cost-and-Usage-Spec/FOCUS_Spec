@@ -29,7 +29,7 @@ The kind of *resource* the *charge* applies to.
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
 | Dataset         | [Cost and Usage](#datamodel.costandusage)             |
-| Conditions      | [Includes Provisioned Resources](#conditions.includesprovisionedresources) and [Includes Resource Type Assignment](#conditions.includesresourcetypeassignment) |
+| Operating Model Conditions      | [Includes Provisioned Resources](#operatingmodelconditions.includesprovisionedresources) and [Includes Resource Type Assignment](#operatingmodelconditions.includesresourcetypeassignment) |
 | Column type     | Dimension                                            |
 | Feature level   | Conditional                                          |
 | Allows nulls    | True                                                 |

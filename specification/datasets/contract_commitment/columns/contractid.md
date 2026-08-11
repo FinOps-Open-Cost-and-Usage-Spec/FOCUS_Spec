@@ -30,7 +30,7 @@ A service-provider-assigned identifier for a contract describing the agreed term
 | Constraint      | Value                                                |
 |:----------------|:-----------------------------------------------------|
 | Dataset         | [Contract Commitment](#datamodel.contractcommitment)  |
-| Conditions      | Not applicable                                        |
+| Operating Model Conditions      | Not applicable                                        |
 | Column type     | Dimension                                            |
 | Feature level   | Mandatory                                            |
 | Allows nulls    | False                                                |

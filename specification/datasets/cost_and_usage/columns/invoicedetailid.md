@@ -31,7 +31,7 @@ The invoice-issuer-assigned identifier for an Invoice Detail record encapsulatin
 |    Constraint    |              Value             |
 |:----------------|:--------------------------------|
 | Dataset         | [Cost and Usage](#datamodel.costandusage)             |
-| Conditions      | [Includes Payable Invoices](#conditions.includespayableinvoices) |
+| Operating Model Conditions      | [Includes Payable Invoices](#operatingmodelconditions.includespayableinvoices) |
 | Column type     | Dimension                       |
 | Feature level   | Conditional                     |
 | Allows nulls    | True                            |

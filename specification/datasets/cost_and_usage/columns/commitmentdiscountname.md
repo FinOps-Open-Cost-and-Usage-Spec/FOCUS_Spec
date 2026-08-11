@@ -31,7 +31,7 @@ The display name assigned to a *commitment discount*.
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
 | Dataset         | [Cost and Usage](#datamodel.costandusage)             |
-| Conditions      | [Includes Commitment Discounts](#conditions.includescommitmentdiscounts) |
+| Operating Model Conditions      | [Includes Commitment Discounts](#operatingmodelconditions.includescommitmentdiscounts) |
 | Column type     | Dimension                                            |
 | Feature level   | Conditional                                          |
 | Allows nulls    | True                                                 |

@@ -45,7 +45,7 @@ Describes the pricing model used for a *charge* at the time of use or purchase.
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
 | Dataset         | [Cost and Usage](#datamodel.costandusage)             |
-| Conditions      | [Includes Multiple Pricing Categories](#conditions.includesmultiplepricingcategories) |
+| Operating Model Conditions      | [Includes Multiple Pricing Categories](#operatingmodelconditions.includesmultiplepricingcategories) |
 | Column type     | Dimension                                            |
 | Feature level   | Conditional                                          |
 | Allows nulls    | True                                                 |

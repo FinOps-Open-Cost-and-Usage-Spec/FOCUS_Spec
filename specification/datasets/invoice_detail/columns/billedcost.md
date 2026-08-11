@@ -48,7 +48,7 @@ Cost of a *charge* as invoiced by the [*invoice issuer*](#glossary:invoice-issue
 | Constraint | Value |
 | :--- | :--- |
 | Dataset         | [Invoice Detail](#datamodel.invoicedetail)             |
-| Conditions      | Not applicable                                         |
+| Operating Model Conditions      | Not applicable                                         |
 | Column type | Metric |
 | Feature level | Mandatory |
 | Allows nulls | False |

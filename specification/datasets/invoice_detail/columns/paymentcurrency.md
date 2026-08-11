@@ -29,7 +29,7 @@ The currency in which the invoice is paid.
 |    Constraint    |              Value             |
 |:----------------|:--------------------------------|
 | Dataset         | [Invoice Detail](#datamodel.invoicedetail)             |
-| Conditions      | [Includes Billing and Payment Currency Differences](#conditions.includesbillingandpaymentcurrencydifferences) |
+| Operating Model Conditions      | [Includes Billing and Payment Currency Differences](#operatingmodelconditions.includesbillingandpaymentcurrencydifferences) |
 | Column type     | Dimension                       |
 | Feature level   | Conditional                     |
 | Allows nulls    | False                           |

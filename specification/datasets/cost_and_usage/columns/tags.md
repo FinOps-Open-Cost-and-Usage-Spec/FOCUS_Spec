@@ -85,7 +85,7 @@ The set of tags assigned to *tag sources* that account for potential provider-de
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
 | Dataset         | [Cost and Usage](#datamodel.costandusage)             |
-| Conditions      | [Includes Tags](#conditions.includestags)             |
+| Operating Model Conditions      | [Includes Tags](#operatingmodelconditions.includestags)             |
 | Column type     | Dimension                                            |
 | Feature level   | Conditional                                          |
 | Allows nulls    | True                                                 |

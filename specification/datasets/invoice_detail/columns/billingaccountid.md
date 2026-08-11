@@ -31,7 +31,7 @@ The identifier assigned to a *billing account* by the invoice issuer.
 |    Constraint   |      Value       |
 |:----------------|:-----------------|
 | Dataset         | [Invoice Detail](#datamodel.invoicedetail)             |
-| Conditions      | Not applicable                                         |
+| Operating Model Conditions      | Not applicable                                         |
 | Column type     | Dimension        |
 | Feature level   | Mandatory        |
 | Allows nulls    | False            |

@@ -28,7 +28,7 @@ The date by which the payment for an invoice is expected to be received by the i
 |    Constraint    |              Value             |
 |:----------------|:--------------------------------|
 | Dataset         | [Invoice Detail](#datamodel.invoicedetail)             |
-| Conditions      | Not applicable                                         |
+| Operating Model Conditions      | Not applicable                                         |
 | Column type     | Dimension                       |
 | Feature level   | Mandatory                       |
 | Allows nulls    | True                            |

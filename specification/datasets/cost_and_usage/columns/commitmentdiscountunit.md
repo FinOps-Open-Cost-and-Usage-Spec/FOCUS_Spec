@@ -36,7 +36,7 @@ The service-provider-specified measurement unit indicating how a service provide
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
 | Dataset         | [Cost and Usage](#datamodel.costandusage)             |
-| Conditions      | [Includes Commitment Discounts](#conditions.includescommitmentdiscounts) |
+| Operating Model Conditions      | [Includes Commitment Discounts](#operatingmodelconditions.includescommitmentdiscounts) |
 | Column type     | Dimension                                            |
 | Feature level   | Conditional                                          |
 | Allows nulls    | True                                                 |

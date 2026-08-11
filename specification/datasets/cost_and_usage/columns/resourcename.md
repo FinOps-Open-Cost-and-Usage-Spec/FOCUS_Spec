@@ -30,7 +30,7 @@ Display name assigned to a *resource*.
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
 | Dataset         | [Cost and Usage](#datamodel.costandusage)             |
-| Conditions      | [Includes Provisioned Resources](#conditions.includesprovisionedresources) |
+| Operating Model Conditions      | [Includes Provisioned Resources](#operatingmodelconditions.includesprovisionedresources) |
 | Column type     | Dimension                                            |
 | Feature level   | Conditional                                          |
 | Allows nulls    | True                                                 |

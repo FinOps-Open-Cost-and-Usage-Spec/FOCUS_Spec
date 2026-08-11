@@ -39,9 +39,9 @@ The agreed-upon unit price for a single Pricing Unit of the associated SKU, incl
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
 | Dataset         | [Cost and Usage](#datamodel.costandusage)            |
-| Conditions      |                                                      |
-| ├─ Required     | [Includes Virtual Currency](#conditions.includesvirtualcurrency) and [Includes List Unit Prices](#conditions.includeslistunitprices) |
-| └─ Recommended  | [Includes Pricing-Billing Currency Differences](#conditions.includespricing-billingcurrencydifferences) and [Includes List Unit Prices](#conditions.includeslistunitprices) |
+| Operating Model Conditions      |                                                      |
+| ├─ Required     | [Includes Virtual Currency](#operatingmodelconditions.includesvirtualcurrency) and [Includes List Unit Prices](#operatingmodelconditions.includeslistunitprices) |
+| └─ Recommended  | [Includes Pricing-Billing Currency Differences](#operatingmodelconditions.includespricing-billingcurrencydifferences) and [Includes List Unit Prices](#operatingmodelconditions.includeslistunitprices) |
 | Column type     | Metric                                               |
 | Feature level   | Conditional                                          |
 | Allows nulls    | True                                                 |
