@@ -58,7 +58,7 @@ The time window for which a charge is effective, inclusive of the start date and
 
 <a name="glossary:closed-billing-period"><b>Closed Billing Period</b></a>
 
-A [*billing period*](#glossary:billing-period) with [Billing Period Status](#datamodel.billingperiod.billingperiodstatus) set to "Closed". The period has been financially closed after all anticipated invoices for the period have been [*issued*](#glossary:issued-invoice) by designated [*invoice issuers*](#glossary:invoice-issuer) and no additional invoices will be associated with this period. Exceptionally, additional invoices may be associated with a closed billing period if explicitly requested or approved by the customer.
+A [*billing period*](#glossary:billing-period) with [Billing Period Status](#datamodel.billingperiod.billingperiodstatus) set to `Closed`. The period has been financially closed after all anticipated invoices for the period have been [*issued*](#glossary:issued-invoice) by designated [*invoice issuers*](#glossary:invoice-issuer) and no additional invoices will be associated with this period. Exceptionally, additional invoices may be associated with a closed billing period if explicitly requested or approved by the customer.
 
 <a name="glossary:cloud-service-provider"><b>Cloud Service Provider (CSP)</b></a>
 
@@ -76,9 +76,9 @@ This term has been used in the past by FinOps teams managing Public Cloud to ref
 
 Commitment discounts are classified with the following designations:
 
-* [Contract Commitment Offer Category](#datamodel.contractcommitment.contractcommitmentoffercategory): "Public"
-* [Contract Commitment Benefit Category](#datamodel.contractcommitment.contractcommitmentbenefitcategory): "Discount"
-* [Contract Commitment Model](#datamodel.contractcommitment.contractcommitmentmodel): "Continuous"
+* [Contract Commitment Offer Category](#datamodel.contractcommitment.contractcommitmentoffercategory): `Public`
+* [Contract Commitment Benefit Category](#datamodel.contractcommitment.contractcommitmentbenefitcategory): `Discount`
+* [Contract Commitment Model](#datamodel.contractcommitment.contractcommitmentmodel): `Continuous`
 * Unused benefits cannot be carried over to subsequent Contract Commitment Fulfillment Intervals
 
 <a name="glossary:commitment-discount-flexibility"><b>Commitment Discount Flexibility</b></a>
@@ -107,7 +107,7 @@ Any modification (including updates, additions, or omissions) to previously deli
 
 A correction (lowercase) may consist of one or more simultaneous changes, including updates to or omission of previously delivered records, or the addition of new records that supplement previously delivered data within the affected *delivery scope*. This concept applies across all FOCUS datasets.
 
-In contrast to the broader concept of correction (lowercase), the term "Correction" (capitalized) refers to a specific allowed value in the [Charge Class](#datamodel.costandusage.chargeclass) column in Cost and Usage datasets. It designates [*charges*](#glossary:charge) used to correct cost or usage data from a previously [*closed billing period*](#glossary:closed-billing-period).
+In contrast to the broader concept of correction (lowercase), the term `Correction` (capitalized) refers to a specific allowed value in the [Charge Class](#datamodel.costandusage.chargeclass) column in Cost and Usage datasets. It designates [*charges*](#glossary:charge) used to correct cost or usage data from a previously [*closed billing period*](#glossary:closed-billing-period).
 
 <a name="glossary:covered-charge"><b>Covered Charge</b></a>
 
@@ -197,7 +197,7 @@ In the context of FOCUS, this process ensures consistency by reconciling cost an
 
 <a name="glossary:issued-invoice"><b>Issued Invoice</b></a>
 
-An [*invoice*](#glossary:invoice) that has been formally [*reconciled*](#glossary:invoice-reconciliation) and issued by the designated [*invoice issuer*](#glossary:invoice-issuer) ([Invoice Issue Status](#datamodel.invoicedetail.invoiceissuestatus) set to "Issued"). Once issued, the invoice becomes the authoritative financial document and is considered finalized. The financial data presented on the invoice is not expected to change.
+An [*invoice*](#glossary:invoice) that has been formally [*reconciled*](#glossary:invoice-reconciliation) and issued by the designated [*invoice issuer*](#glossary:invoice-issuer) ([Invoice Issue Status](#datamodel.invoicedetail.invoiceissuestatus) set to `Issued`). Once issued, the invoice becomes the authoritative financial document and is considered finalized. The financial data presented on the invoice is not expected to change.
 
 <a name="glossary:json"><b>JSON</b></a>
 
@@ -229,8 +229,8 @@ A privately agreed [*contract commitment*](#glossary:contract-commitment) that p
 
 Negotiated discounts are classified with the following designations:
 
-* [Contract Commitment Offer Category](#datamodel.contractcommitment.contractcommitmentoffercategory): "Negotiated"
-* [Contract Commitment Benefit Category](#datamodel.contractcommitment.contractcommitmentbenefitcategory): "Discount"
+* [Contract Commitment Offer Category](#datamodel.contractcommitment.contractcommitmentoffercategory): `Negotiated`
+* [Contract Commitment Benefit Category](#datamodel.contractcommitment.contractcommitmentbenefitcategory): `Discount`
 
 <a name="glossary:on-demand"><b>On-Demand</b></a>
 
@@ -238,7 +238,7 @@ A service that is available and provided immediately or as needed, without requi
 
 <a name="glossary:open-billing-period"><b>Open Billing Period</b></a>
 
-A [*billing period*](#glossary:billing-period) with [Billing Period Status](#datamodel.billingperiod.billingperiodstatus) set to "Open". Billing activities are ongoing, and the period remains subject to updates until formally closed.
+A [*billing period*](#glossary:billing-period) with [Billing Period Status](#datamodel.billingperiod.billingperiodstatus) set to `Open`. Billing activities are ongoing, and the period remains subject to updates until formally closed.
 
 <a name="glossary:operating-model"><b>Operating Model</b></a>
 

@@ -11,7 +11,7 @@ InvoiceIssueStatus MUST adhere to the following requirements:
 * InvoiceIssueStatus MUST NOT be null.
 * InvoiceIssueStatus MUST be one of the allowed values.
 * InvoiceIssueStatus MUST represent the current publication state of the invoice.
-* InvoiceIssueStatus MUST NOT be "Open" following a previous status of "Issued", except when explicitly requested or approved by the customer.
+* InvoiceIssueStatus MUST NOT be `Open` following a previous status of `Issued`, except when explicitly requested or approved by the customer.
 
 ## Allowed Values
 
@@ -23,9 +23,9 @@ InvoiceIssueStatus MUST adhere to the following requirements:
 
 ## Implementation Guidance
 
-The transition from "Open" to "Issued" typically signifies that an invoice has been finalized, invoice reconciliation has been performed, and the delivered data is accurate. However, when the delivered data is found to be inaccurate or incomplete, it may be necessary to apply corrections to records associated with the issued invoice.
+The transition from `Open` to `Issued` typically signifies that an invoice has been finalized, invoice reconciliation has been performed, and the delivered data is accurate. However, when the delivered data is found to be inaccurate or incomplete, it may be necessary to apply corrections to records associated with the issued invoice.
 
-If needed, a previously issued invoice may be reopened to apply such corrections, but this transition from "Issued" to "Open" must be explicitly requested or approved by the customer to maintain auditability.
+If needed, a previously issued invoice may be reopened to apply such corrections, but this transition from `Issued` to `Open` must be explicitly requested or approved by the customer to maintain auditability.
 
 Corrections to underlying records that do not impact invoice reconciliation are allowed regardless of Invoice Issue Status, but may reduce auditability and traceability or affect downstream processes (e.g., cost allocation, chargeback, reporting).
 
@@ -43,7 +43,7 @@ Invoice Issue Status
 
 ## Description
 
-The publication state of the invoice and the reliability of its associated delivered data, indicating if it is provisional ("Open"), issued ("Issued"), or voided ("Voided").
+The publication state of the invoice and the reliability of its associated delivered data, indicating if it is provisional (`Open`), issued (`Issued`), or voided (`Voided`).
 
 ## Content Constraints
 

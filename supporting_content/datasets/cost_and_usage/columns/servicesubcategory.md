@@ -178,7 +178,7 @@ _Outcome_: No Category additions or changes at this time.
 
 #### What shall we call the "unsubcategorized" Subcategory?
 
-Each Category carries an "Other" Subcategory to allow the providers to provide a Category without a Subcategory.  A vote was issued via Slack on Aug 13 with the following options:
+Each Category carries an `Other` Subcategory to allow the providers to provide a Category without a Subcategory.  A vote was issued via Slack on Aug 13 with the following options:
 
 :one: `Uncategorized (<Category Name>)`  
 :two: `Other (<Category Name>)`  
@@ -193,7 +193,7 @@ The following considerations were included:
 
 _Outcome_: Option :two: was chosen.
 
-#### Why do some of the Categories lack Subcategories beyond "Other"?
+#### Why do some of the Categories lack Subcategories beyond `Other`?
 
 Per the principles and some of the outcomes described above, we have leaned towards subcategorizing only those Categories on which we had broad consensus and/or could target significant usage.  Several of the existing Categories do not have sufficient Service counts and/or activity to allow designating Subcategories at a high degree of confidence, and future FOCUS versions can add such groupings if and when requested by the community.
 

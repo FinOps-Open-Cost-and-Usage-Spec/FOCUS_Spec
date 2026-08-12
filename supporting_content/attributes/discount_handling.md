@@ -35,7 +35,7 @@ Explanation of the unused commitment row:
 2. This is **$0.50** list _and_ on-demand since the negotiated discount doesn't apply on this row for the sake of the example (see Foo5 for stacked discounts).
 3. The billed cost is nothing, since this $0.50 was covered by the spend commitment.
 4. Since the spend commitment was for $1/hour, this means there's $0.50 left that was not used.
-5. The "Unused commitment" row is for that unused amount.
+5. The `Unused commitment` row is for that unused amount.
    * List, billed, and on-demand costs are nothing since there was no usage and nothing was billed.
    * Effective cost is the unused amount of the spend commitment ($0.50 in this case).
    * Since spend commitments don't have a unit or a price, they won't have a quantity, so the unused amount doesn't have a quantity.

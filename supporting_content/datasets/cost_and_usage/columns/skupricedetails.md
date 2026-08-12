@@ -35,9 +35,9 @@
 | -------------- | ------------- | ------------ | ---------- | -------------- |
 | P50            | 4096          | Zonal        | SSD        | Premium SSD    |
 
-* Azure refers to multiple groupings of Virtual Machine SKUs as series. [This page](https://azure.microsoft.com/en-us/pricing/details/virtual-machines/series/#d-series) refers to "D-series," "Dplds VM series," and "Dpdsv5 VM series" whereas [this page](https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/general-purpose/d-family) calls these the D-family.
+* Azure refers to multiple groupings of Virtual Machine SKUs as series. [This page](https://azure.microsoft.com/en-us/pricing/details/virtual-machines/series/#d-series) refers to `D-series`, `Dplds VM series`, and `Dpdsv5 VM series` whereas [this page](https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/general-purpose/d-family) calls these the D-family.
   * To remove ambiguity, the InstanceSeries Focus-defined property value will refer to the subset of [Azure Virtual Machine naming convention](https://learn.microsoft.com/en-us/azure/virtual-machines/vm-naming-conventions) excluding the "# of vCPUs" and "*Constrained vCPUs" components, as shown in the [Virtual Machine name breakdowns structure](https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/overview#name-structure-breakdown)
-  * Referencing the above examples, this approach aligns to how Azure lists the series which are part of the D-family, would match the "Dpdsv5 VM series" example, and generally aligns the information in the Instance Series dropdown of the [Azure Pricing Calculator](https://azure.microsoft.com/en-us/pricing/calculator/) when Virtual Machines are selected (without the appended "-series" and without using whitespace characters).
+  * Referencing the above examples, this approach aligns to how Azure lists the series which are part of the D-family, would match the `Dpdsv5 VM series` example, and generally aligns the information in the Instance Series dropdown of the [Azure Pricing Calculator](https://azure.microsoft.com/en-us/pricing/calculator/) when Virtual Machines are selected (without the appended "-series" and without using whitespace characters).
 
 ## Example Usecases
 

@@ -33,8 +33,8 @@ ContractCommitmentApplicabilityObject MUST adhere to the following requirements:
 * ContractCommitmentApplicabilityObject.Inclusions[\*].Applicability.Usage MUST represent the fraction of an eligible charge's usage that is applicable to the commitment (0.0 to 1.0).
 * ContractCommitmentApplicabilityObject.Inclusions[\*].Dimension SHOULD represent a column in [Cost and Usage](#datamodel.costandusage).
 * ContractCommitmentApplicabilityObject.Exclusions[\*].Dimension SHOULD represent a column in [Cost and Usage](#datamodel.costandusage).
-* ContractCommitmentApplicabilityObject.Inclusions[\*].Values MUST contain only the single string "*" when the wildcard is present.
-* ContractCommitmentApplicabilityObject.Exclusions[\*].Values MUST contain only the single string "*" when the wildcard is present.
+* ContractCommitmentApplicabilityObject.Inclusions[\*].Values MUST contain only the single string `"*"` when the wildcard is present.
+* ContractCommitmentApplicabilityObject.Exclusions[\*].Values MUST contain only the single string `"*"` when the wildcard is present.
 
 ### Object Schema Structure
 

@@ -30,7 +30,7 @@ The above SKU Catalog shows that this service provider only has 1 service that o
 
 ## Outcome
 
-* 1 recurring, purchase record exists for 1 eligible "Hour" of the no upfront, *commitment discount* and incurs a $1.50 [*BilledCost*](#datamodel.costandusage.billedcost).
+* 1 recurring, purchase record exists for 1 eligible `Hour` of the no upfront, *commitment discount* and incurs a $1.50 [*BilledCost*](#datamodel.costandusage.billedcost).
 * The VM_LARGE *commitment discount* is unused for the corresponding [*charge period*](#glossary:chargeperiod) because no VM_LARGE resources are running and incurs a $1.50 [*EffectiveCost*](#datamodel.costandusage.effectivecost).
 * 1 hour of on-demand usage is incurred by the VM_MEDIUM resource and incurs a $2.00 *BilledCost* and *EffectiveCost*.
 

@@ -10,7 +10,7 @@ InvoiceDetailCreated MUST adhere to the following requirements:
 * InvoiceDetailCreated MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.
 * InvoiceDetailCreated MUST NOT be null.
 * InvoiceDetailCreated MUST represent the moment in time the Invoice Detail record was instantiated.
-* InvoiceDetailCreated for a given [BillingPeriodStart](#datamodel.invoicedetail.billingperiodstart) and [InvoiceIssuerName](#datamodel.invoicedetail.invoiceissuername) MUST be earlier than or equal to [BillingPeriod.BillingPeriodLastUpdated](#datamodel.billingperiod.billingperiodlastupdated) for the same [BillingPeriod.BillingPeriodStart](#datamodel.billingperiod.billingperiodstart) and [BillingPeriod.InvoiceIssuerName](#datamodel.billingperiod.invoiceissuername) when [BillingPeriod.BillingPeriodStatus](#datamodel.billingperiod.billingperiodstatus) is "Closed".
+* InvoiceDetailCreated for a given [BillingPeriodStart](#datamodel.invoicedetail.billingperiodstart) and [InvoiceIssuerName](#datamodel.invoicedetail.invoiceissuername) MUST be earlier than or equal to [BillingPeriod.BillingPeriodLastUpdated](#datamodel.billingperiod.billingperiodlastupdated) for the same [BillingPeriod.BillingPeriodStart](#datamodel.billingperiod.billingperiodstart) and [BillingPeriod.InvoiceIssuerName](#datamodel.billingperiod.invoiceissuername) when [BillingPeriod.BillingPeriodStatus](#datamodel.billingperiod.billingperiodstatus) is `Closed`.
 
 ## Column ID
 

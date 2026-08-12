@@ -105,7 +105,7 @@ Note the following details in the example datasets:
 * All three correction styles (Replacement, Delta, and Ledger) introduce two itemized increment records representing cost-only adjustments.
 * Each correction record explicitly references the affected SkuPriceId.
 * Each correction record has ChargeClass set to null, indicating that it pertains to an open billing period and is not a retroactive correction to a previously closed billing period.
-* Each correction record has ChargeCategory set to "Adjustment", which is the only valid value when both PricingQuantity and ChargeClass are null, due to the normative requirement that PricingQuantity must not be null when ChargeCategory is "Usage" or "Purchase" and ChargeClass is not "Correction".
+* Each correction record has ChargeCategory set to `Adjustment`, which is the only valid value when both PricingQuantity and ChargeClass are null, due to the normative requirement that PricingQuantity must not be null when ChargeCategory is `Usage` or `Purchase` and ChargeClass is not `Correction`.
 * Each correction record is assigned to the current billing period (July 2025).
 
 ### Scenario 4: Current Open-Period Correction - Bulk Cost-Only Corrections
@@ -136,7 +136,7 @@ Note the following details in the example datasets:
 * All three correction styles (Replacement, Delta, and Ledger) introduce a single increment record representing the bulk cost-only adjustment to reconcile the total drift.
 * The correction record does not specify a SkuPriceId, as it spans multiple SKU Price IDs.
 * The correction record has ChargeClass set to null, indicating that it pertains to an open billing period and is not a retroactive correction to a previously closed billing period.
-* The correction record has ChargeCategory set to "Adjustment", which is the only valid value when both PricingQuantity and ChargeClass are null, due to the normative requirement that PricingQuantity must not be null when ChargeCategory is "Usage" or "Purchase" and ChargeClass is not "Correction".
+* The correction record has ChargeCategory set to `Adjustment`, which is the only valid value when both PricingQuantity and ChargeClass are null, due to the normative requirement that PricingQuantity must not be null when ChargeCategory is `Usage` or `Purchase` and ChargeClass is not `Correction`.
 * The correction record is assigned to the current billing period (July 2025).
 
 ## Previous Open-Period Correction Scenarios

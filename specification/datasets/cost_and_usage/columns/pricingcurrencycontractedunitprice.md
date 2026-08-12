@@ -10,9 +10,9 @@ PricingCurrencyContractedUnitPrice MUST adhere to the following requirements:
 * PricingCurrencyContractedUnitPrice MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * PricingCurrencyContractedUnitPrice MUST adhere to the following nullability requirements:
   * PricingCurrencyContractedUnitPrice MUST be null when [SkuPriceId](#datamodel.costandusage.skupriceid) is null.
-  * PricingCurrencyContractedUnitPrice MUST be null when [ChargeCategory](#datamodel.costandusage.chargecategory) is "Tax".
+  * PricingCurrencyContractedUnitPrice MUST be null when [ChargeCategory](#datamodel.costandusage.chargecategory) is `Tax`.
   * PricingCurrencyContractedUnitPrice MUST NOT be null when SkuPriceId is not null.
-  * PricingCurrencyContractedUnitPrice MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#datamodel.costandusage.chargeclass) is not "Correction".
+  * PricingCurrencyContractedUnitPrice MUST NOT be null when ChargeCategory is `Usage` or `Purchase` and [ChargeClass](#datamodel.costandusage.chargeclass) is not `Correction`.
   * PricingCurrencyContractedUnitPrice MAY be null in all other cases.
 * When PricingCurrencyContractedUnitPrice is not null, PricingCurrencyContractedUnitPrice MUST adhere to the following requirements:
   * PricingCurrencyContractedUnitPrice MUST be a non-negative decimal value.
