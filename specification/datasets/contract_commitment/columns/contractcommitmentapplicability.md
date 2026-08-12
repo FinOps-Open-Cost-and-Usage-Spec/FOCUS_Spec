@@ -171,15 +171,15 @@ A structured definition of the specific entities to which a contract commitment 
 
 ## Content Constraints
 
-| Constraint                 | Value                                                                                                                                        |
-| :------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------- |
-| Dataset                    | [Contract Commitment](#datamodel.contractcommitment)                                                                                         |
-| Operating Model Conditions | Not applicable                                                                                                                               |
-| Column type                | Dimension / Metric                                                                                                                           |
-| Feature level              | Mandatory                                                                                                                                    |
-| Allows nulls               | False                                                                                                                                        |
-| Data type                  | JSON                                                                                                                                         |
-| Value format               | [JSON Object Format](#attributes.jsonobjectformat)                                                                                           |
+| Constraint                 | Value                                                |
+| :------------------------- | :--------------------------------------------------- |
+| Dataset                    | [Contract Commitment](#datamodel.contractcommitment) |
+| Operating Model Conditions | Not applicable                                       |
+| Column type                | Dimension / Metric                                   |
+| Feature level              | Mandatory                                            |
+| Allows nulls               | False                                                |
+| Data type                  | JSON                                                 |
+| Value format               | [JSON Object Format](#attributes.jsonobjectformat)   |
 | Object                     | [ContractCommitmentApplicabilityObject](#datamodel.contractcommitment.contractcommitmentapplicability.contractcommitmentapplicabilityobject) |
 
 ## Version Introduced

@@ -112,15 +112,15 @@ A set of properties that associate a *charge* with one or more *contract commitm
 
 ## Content Constraints
 
-| Constraint                 | Value                                                                                  |
-| :------------------------- | :------------------------------------------------------------------------------------- |
-| Dataset                    | [Cost and Usage](#datamodel.costandusage)                                              |
+| Constraint                 | Value                                              |
+| :------------------------- | :------------------------------------------------- |
+| Dataset                    | [Cost and Usage](#datamodel.costandusage)          |
 | Operating Model Conditions | [Includes Contract Commitments](#operatingmodelconditions.includescontractcommitments) |
-| Column type                | Dimension / Metric                                                                     |
-| Feature level              | Conditional                                                                            |
-| Allows nulls               | True                                                                                   |
-| Data type                  | JSON                                                                                   |
-| Value format               | [JSON Object Format](#attributes.jsonobjectformat)                                     |
+| Column type                | Dimension / Metric                                 |
+| Feature level              | Conditional                                        |
+| Allows nulls               | True                                               |
+| Data type                  | JSON                                               |
+| Value format               | [JSON Object Format](#attributes.jsonobjectformat) |
 | Object                     | [ContractAppliedObject](#datamodel.costandusage.contractapplied.contractappliedobject) |
 
 ## Version Introduced

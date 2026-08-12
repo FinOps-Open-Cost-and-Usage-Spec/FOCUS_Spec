@@ -58,14 +58,14 @@ Represents the categorical length of the *contract commitment* offering.
 
 ## Content Constraints
 
-| Constraint                 | Value                                                                                          |
-| :------------------------- | :--------------------------------------------------------------------------------------------- |
-| Dataset                    | [Contract Commitment](#datamodel.contractcommitment)                                           |
-| Operating Model Conditions | Not applicable                                                                                 |
-| Column type                | Dimension                                                                                      |
-| Feature level              | Mandatory                                                                                      |
-| Allows nulls               | False                                                                                          |
-| Data type                  | String                                                                                         |
+| Constraint                 | Value                                                |
+| :------------------------- | :--------------------------------------------------- |
+| Dataset                    | [Contract Commitment](#datamodel.contractcommitment) |
+| Operating Model Conditions | Not applicable                                       |
+| Column type                | Dimension                                            |
+| Feature level              | Mandatory                                            |
+| Allows nulls               | False                                                |
+| Data type                  | String                                               |
 | Value format               | [Expected format](#datamodel.contractcommitment.contractcommitmentdurationtype.expectedformat) |
 
 ## Version Introduced
