@@ -2,7 +2,7 @@
 
 ## Candidate Terms Comparison
 
-> **Note on "volume-based":** this phrase is not used consistently even among the sources checked.
+> **Note:** The phrase "volume-based" is not used consistently even among the sources checked.
 >
 > * AWS, Azure use it for the threshold dimension (a Quantity denominated in Pricing Unit), where the graduated pricing threshold-based tier application model is assumed (each charge priced at the threshold-based pricing tier reached).
 > * Stripe, Oracle NetSuite use "Volume(-based) pricing" for the retroactive pricing threshold-based tier application model (all charges within the aggregation interval repriced to the threshold-based pricing tier reached)
