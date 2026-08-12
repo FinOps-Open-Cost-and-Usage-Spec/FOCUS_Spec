@@ -210,12 +210,15 @@ To ensure clarity and prevent ambiguity between distinct domain concepts, normat
       * Storage Tier
       * Threshold-Based Pricing Tier
       * Quantity-Based Pricing Tier
+      * Quantity Tier Minimum
+      * Quantity Tier Maximum
       * Threshold-Based Tiered Pricing
       * Quantity-Based Tiered Pricing
     * Incorrect:
       * Tier
       * Pricing Tier
       * Tiered Pricing
+      * Quantity Tier
 
 > **Note:** Validation of domain terminology requires contextual understanding of the intended concept; the terminology alone is not always sufficient to determine compliance.
 
