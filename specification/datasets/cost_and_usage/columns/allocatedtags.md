@@ -13,14 +13,17 @@ AllocatedTags MUST adhere to the following requirements:
   * AllocatedTags MUST be null when a *charge* is not related to a data generator-calculated split cost allocation.
   * AllocatedTags MAY be null in all other cases.
 * When AllocatedTags is not null, AllocatedTags MUST adhere to the following requirements:
-  * AllocatedTags MUST NOT include resource tags already present in [Tags](#datasets.costandusage.tags).
-  * AllocatedTags MUST include all applicable user-defined and data generator-defined tags for the [AllocatedResourceId](#datasets.costandusage.allocatedresourceid).
+  * AllocatedTags MUST NOT include resource tags already present in [Tags](#datamodel.costandusage.tags).
+  * AllocatedTags MUST include all applicable user-defined and data generator-defined tags for the [AllocatedResourceId](#datamodel.costandusage.allocatedresourceid).
   * Tag keys that do not support corresponding values MUST have a corresponding true (boolean) value set.
   * Tag values MUST match the provided values unless true (boolean) is applied to valueless tags.
 * Data generator-defined tags MUST adhere to the following requirements:
   * Data generator-defined tag keys MUST be prefixed with a predetermined, data generator-specified tag key prefix that is unique to each corresponding provider-specified [*tag scheme*](#glossary:tag-scheme).
   * Data generator-specified tag key prefixes SHOULD be publicly documented.
-* User-defined tag keys in all user-defined *tag schemes* MUST include a predetermined, data generator-specified tag key prefix that is unique to each corresponding user-defined *tag scheme* when the data generator has more than one user-defined *tag scheme*.
+* User-defined tags MUST adhere to the following requirements:
+  * User-defined tag keys MUST match the tag keys assigned to the *tag source* when no *tag scheme*-specific prefix is prepended.
+  * User-defined tag keys MUST match the *tag scheme*-specific prefix followed by the tag key assigned to the *tag source* when a *tag scheme*-specific prefix is prepended.
+  * User-defined tag keys in all user-defined *tag schemes* MUST include a predetermined, data generator-specified tag key prefix that is unique to each corresponding user-defined *tag scheme* when the data generator has more than one user-defined *tag scheme*.
 
 ## Data Generator-Defined vs. User-Defined Tags
 
@@ -53,7 +56,7 @@ A set of tags assigned to tag sources that are applicable to *allocated charges*
 
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Dataset         | [Cost and Usage](#datamodel.costandusage)             |
 | Column type     | Dimension                                            |
 | Feature level   | Conditional                                          |
 | Allows nulls    | True                                                 |

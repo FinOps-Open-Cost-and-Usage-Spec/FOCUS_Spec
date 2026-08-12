@@ -30,7 +30,7 @@ ChargeCategory MUST adhere to the following requirements:
 
 ## Implementation Guidance
 
-Unlike the [CostAndUsage](#datasets.costandusage) dataset, which requires strict categorization per row, [InvoiceDetail](#datasets.invoicedetail) records are designed to align with physical or electronic invoice line items. When the invoice does not provide an explicit charge category for a line item, a single line item may inherently represent a mix of charge categories (e.g., combining base usage and promotional credits). To accurately reflect the issued invoice without breaking schema validation, the `InvoiceDetail` dataset permits the "Usage" category to represent an aggregate of multiple charge categories, provided that "Tax" charges are kept distinctly separate.
+Unlike the [CostAndUsage](#datamodel.costandusage) dataset, which requires strict categorization per row, [InvoiceDetail](#datamodel.invoicedetail) records are designed to align with physical or electronic invoice line items. When the invoice does not provide an explicit charge category for a line item, a single line item may inherently represent a mix of charge categories (e.g., combining base usage and promotional credits). To accurately reflect the issued invoice without breaking schema validation, the `InvoiceDetail` dataset permits the "Usage" category to represent an aggregate of multiple charge categories, provided that "Tax" charges are kept distinctly separate.
 
 ## Column ID
 
@@ -48,7 +48,7 @@ Represents the highest-level classification of a *charge* based on the nature of
 
 | Constraint      | Value          |
 | :-------------- | :------------- |
-| Dataset         | [Invoice Detail](#datasets.invoicedetail)             |
+| Dataset         | [Invoice Detail](#datamodel.invoicedetail)             |
 | Column type     | Dimension      |
 | Feature level   | Mandatory      |
 | Allows nulls    | False          |

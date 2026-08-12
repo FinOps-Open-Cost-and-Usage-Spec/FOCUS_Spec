@@ -14,7 +14,7 @@ ContractCommitmentDurationType MUST adhere to the following requirements:
 * ContractCommitmentDurationType SHOULD be expressed with a quantity and time unit, where quantity is a positive integer, and time-unit is a standardized unit of time, either singular or plural (e.g., "1 Day", "1 Year", "3 Months", "3 Years").
 * ContractCommitmentDurationType SHOULD present the unit of time as one of the allowed values.
 * ContractCommitmentDurationType SHOULD correspond to the standard duration of the purchased offering (e.g., "1 Year", "3 Years") rather than a precise calculation of days or hours.
-* ContractCommitmentDurationType MAY differ from the actual duration calculated between [ContractCommitmentPeriodStart](#datasets.contractcommitment.contractcommitmentperiodstart) and [ContractCommitmentPeriodEnd](#datasets.contractcommitment.contractcommitmentperiodend) (e.g., if a 3-year commitment is exchanged in its final month, the resulting record may have a short lifespan but retains a value of "3 Years").
+* ContractCommitmentDurationType MAY differ from the actual duration calculated between [ContractCommitmentPeriodStart](#datamodel.contractcommitment.contractcommitmentperiodstart) and [ContractCommitmentPeriodEnd](#datamodel.contractcommitment.contractcommitmentperiodend) (e.g., if a 3-year commitment is exchanged in its final month, the resulting record may have a short lifespan but retains a value of "3 Years").
 
 ## Allowed Values
 
@@ -60,12 +60,12 @@ Represents the categorical length of the *contract commitment* offering.
 
 | Constraint      | Value          |
 | :-------------- | :------------- |
-| Dataset         | [Contract Commitment](#datasets.contractcommitment)  |
+| Dataset         | [Contract Commitment](#datamodel.contractcommitment)  |
 | Column type     | Dimension      |
 | Feature level   | Mandatory      |
 | Allows nulls    | False          |
 | Data type       | String         |
-| Value format    | [Expected format](#datasets.contractcommitment.contractcommitmentdurationtype.expectedformat) |
+| Value format    | [Expected format](#datamodel.contractcommitment.contractcommitmentdurationtype.expectedformat) |
 
 ## Version Introduced
 
