@@ -39,7 +39,7 @@ CredentialDetailsObject MUST adhere to the following requirements:
 * CredentialDetailsObject.Type MUST be a consistent, readable display value.
 * CredentialDetailsObject SHOULD include Type when the *service provider* distinguishes kinds of *principals*.
 * CredentialDetailsObject.Credential MUST represent the *credential* identified by CredentialId.
-* CredentialDetailsObject.Credential.Id MUST equal CredentialId.
+* CredentialDetailsObject.Credential.Id MUST match CredentialId.
 * CredentialDetailsObject.Credential.Type MUST represent the kind of *credential* identified by CredentialId.
 * CredentialDetailsObject.Credential.Type MUST be a consistent, readable display value.
 * CredentialDetailsObject.Credential.Name MUST represent a readable display name for the *credential* identified by CredentialId.

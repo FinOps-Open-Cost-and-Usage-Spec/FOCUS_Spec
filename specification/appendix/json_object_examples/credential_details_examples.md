@@ -4,7 +4,7 @@ The examples below are not exhaustive and may change over time. Service provider
 
 ## Aura Web (Inference Request via an API Key)
 
-Scenario: A generative AI inference charge authenticated with an API key that acts under a named user. The named user is the [*principal*](#glossary:principal), so the user's attributes sit at the top level, and the API key is the [*credential*](#glossary:credential) recorded in the `Credential` property. The `Credential` object repeats the CredentialId value in its `Id` key, which is optional; the examples that follow omit it.
+Scenario: A generative AI inference [*charge*](#glossary:charge) authenticated with an API key that acts under a named user. The named user is the [*principal*](#glossary:principal), so the user's attributes sit at the top level, and the API key is the [*credential*](#glossary:credential) recorded in the `Credential` property. The `Credential` object repeats the CredentialId value in its `Id` key, which is optional; the examples that follow omit it.
 
 | ServiceProviderName | ServiceName | PrincipalId | CredentialId | CredentialDetails |
 |---------------------|-------------|-------------|--------------|-------------------|

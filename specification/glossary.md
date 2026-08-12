@@ -119,7 +119,7 @@ A purchase [*charge*](#glossary:charge) whose cost is applied against one or mor
 
 <a name="glossary:credential"><b>Credential</b></a>
 
-The means by which a [*principal*](#glossary:principal) is authenticated on an individual request (e.g., API key, access token, session). A credential is distinct from the principal that presents it, and the same principal may present different credentials on different requests. Where a service provider does not distinguish the credential presented from the principal that presented it, the principal is the credential.
+The means by which a [*principal*](#glossary:principal) is authenticated on an individual request (e.g., API key, access token, session). A credential is distinct from the principal that presents it, and the same principal may present different credentials on different requests. A credential is separate from any published identifier that references it; a credential with no such identifier cannot be represented in a FOCUS dataset.
 
 <a name="glossary:credit"><b>Credit</b></a>
 
