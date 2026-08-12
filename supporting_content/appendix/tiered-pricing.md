@@ -1,53 +1,59 @@
-# Tiered Pricing
+# Threshold-Based Tiered Pricing
 
 ## Candidate Terms Comparison
 
 > **Note on "volume-based":** this phrase is not used consistently even among the sources checked.
 >
-> * AWS, Azure use it for the threshold dimension (a Quantity denominated in Pricing Unit), where Graduated Pricing tier application model is assumed (each charge priced at tier reached).
-> * Stripe, Oracle NetSuite use "Volume(-based) pricing" for the Retroactive Pricing tier application model (all charges within the aggregation interval repriced to the tier reached)
+> * AWS, Azure use it for the threshold dimension (a Quantity denominated in Pricing Unit), where the graduated pricing threshold-based tier application model is assumed (each charge priced at the threshold-based pricing tier reached).
+> * Stripe, Oracle NetSuite use "Volume(-based) pricing" for the retroactive pricing threshold-based tier application model (all charges within the aggregation interval repriced to the threshold-based pricing tier reached)
 >
 > Same word, two unrelated meanings, depending on source.
 
-### Tiered Pricing (umbrella)
+### Umbrella Term
 
 | Candidate Term | FOCUS Usage | Same Meaning Elsewhere | Different Meaning Elsewhere | Pros | Cons |
 |---|---|---|---|---|---|
-| **Tiered Pricing** (bare) | "tiered pricing" ×8 | AWS, Azure, Stripe | — | Strong external precedent | Not used as an umbrella anywhere; quantity-only bias |
-| **Threshold-Based Tiered Pricing** | None found | None found | — | Explicit umbrella covering quantity/spend/duration | No external precedent |
+| **Tiered Pricing** (bare) | "tiered pricing" ×8 | AWS, Azure, Stripe | SaaS subscription/feature tiers | Strong external precedent | Not used as an umbrella anywhere; quantity-only bias; collides with SaaS offering tiers |
+| **Threshold-Based Tiered Pricing** | None found | None found | — | Explicit umbrella covering quantity/spend/duration; unambiguous against SaaS offering tiers | No external precedent |
 
-### Quantity-Based sub-type
+### Quantity-Based Sub-Type
 
 | Candidate Term | FOCUS Usage | Same Meaning Elsewhere | Different Meaning Elsewhere | Pros | Cons |
 |---|---|---|---|---|---|
 | **Quantity-Based Tiered Pricing** | "quantity-based" ×3, but unrelated context (Contract Commitment, not tiering) | None found | — | Self-explanatory; matches `PricingQuantity`/`PricingUnit`; lowest rename cost (dataset unratified) | No external precedent |
 | **Volume-Based Tiered Pricing** | ×3 "volume-based tier(s)" + existing (unratified) columns `VolumeTier*` | AWS, Azure | Stripe, NetSuite (different axis — see note above) | Matches unratified column names; matches AWS/Azure | Collides with Stripe/NetSuite meaning; not self-explanatory |
 
+### Decision
+
+**Threshold-Based Tiered Pricing** and **Threshold-Based Pricing Tier** are adopted as the FOCUS terms.
+
+SaaS providers also use "tier" for their offerings (e.g., subscription or feature tiers), which is easily confused with a pricing level in the threshold-based sense. Qualifying the term with a prefix is the only reliable way to prevent that misinterpretation, so bare `Tier`, `Pricing Tier`, and `Tiered Pricing` are not used. See the [Domain Terminology](../../guidelines/contributors/editorial-guidelines.md) editorial guideline.
+
 ---
 
-## Tiered Pricing Context
+## Threshold-Based Tiered Pricing Context
 
 ### Overview
 
-Tiered pricing is a pricing model in which the unit price applied to a charge is determined by the applicable pricing tier.
+Threshold-based tiered pricing is a pricing model in which the unit price applied to a charge is determined by the applicable threshold-based pricing tier.
 
-A tiered pricing model consists of one or more pricing tiers. Each pricing tier defines a threshold range and an associated unit price. The applicable pricing tier is determined based on quantity, duration, or spend within a defined aggregation scope and aggregation interval according to the pricing tier application model.
+A threshold-based tiered pricing model consists of one or more threshold-based pricing tiers. Each threshold-based pricing tier defines a threshold range and an associated unit price. The applicable threshold-based pricing tier is determined based on quantity, duration, or spend within a defined aggregation scope and aggregation interval according to the threshold-based tier application model.
 
-Tiered pricing does not require a prior customer commitment or contractual obligation.
+Threshold-based tiered pricing does not require a prior customer commitment or contractual obligation.
 
 ``` text
-Tiered Pricing Model
+Threshold-Based Tiered Pricing Model
 │
-├── Pricing Tiers
-│     ├── Pricing Tier 1
+├── Threshold-Based Pricing Tiers
+│     ├── Threshold-Based Pricing Tier 1
 │     │     ├── Threshold Range
 │     │     └── Unit Price
 │     │
-│     ├── Pricing Tier 2
+│     ├── Threshold-Based Pricing Tier 2
 │     │     ├── Threshold Range
 │     │     └── Unit Price
 │     │
-│     └── Pricing Tier N
+│     └── Threshold-Based Pricing Tier N
 │           ├── Threshold Range
 │           └── Unit Price
 │
@@ -55,31 +61,31 @@ Tiered Pricing Model
 │
 ├── Aggregation Interval
 │
-└── Pricing Tier Application Model
+└── Threshold-Based Tier Application Model
               │
               ▼
- Determines Applicable Pricing Tier
+ Determines Applicable Threshold-Based Pricing Tier
               │
               ▼
-    Applicable Unit Price
+        Applicable Unit Price
 ```
 
-For example, in quantity-based tiered pricing, threshold ranges represent accumulated billable quantity levels. Other tiered pricing models may define threshold ranges based on duration or spend.
+For example, in quantity-based tiered pricing, threshold ranges represent accumulated billable quantity levels. Other threshold-based tiered pricing models may define threshold ranges based on duration or spend.
 
-### Pricing Tiers
+### Threshold-Based Pricing Tiers
 
-A pricing tier is a predefined pricing level within a tiered pricing model.
+A threshold-based pricing tier is a predefined pricing level within a threshold-based tiered pricing model.
 
-Each pricing tier defines:
+Each threshold-based pricing tier defines:
 
 * a threshold range
 * an associated unit price
 
-The threshold range defines the range of quantity, duration, or spend values for which the pricing tier may become applicable. The associated unit price defines the unit price applied when that pricing tier is applicable.
+The threshold range defines the range of quantity, duration, or spend values for which the threshold-based pricing tier may become applicable. The associated unit price defines the unit price applied when that threshold-based pricing tier is applicable.
 
 ### Threshold Categories
 
-Pricing tiers may define threshold ranges using different measurement dimensions.
+Threshold-based pricing tiers may define threshold ranges using different measurement dimensions.
 
 * **Quantity-based thresholds:** Thresholds based on accumulated billable quantity during the aggregation interval.
   Examples:
@@ -96,33 +102,33 @@ Pricing tiers may define threshold ranges using different measurement dimensions
   Examples:
   * cumulative spend reaching predefined levels during a billing period
 
-Quantity-based tiered pricing is a common form of tiered pricing.
+Quantity-based tiered pricing is a common form of threshold-based tiered pricing.
 
 ### Aggregation Scope and Aggregation Interval
 
-Tiered pricing requires defining the aggregation scope and aggregation interval used to determine the applicable pricing tier.
+Threshold-based tiered pricing requires defining the aggregation scope and aggregation interval used to determine the applicable threshold-based pricing tier.
 
 Typical aggregation dimensions include:
 
-* **Aggregation scope:** The entity across which quantity, duration, or spend is accumulated to determine the applicable pricing tier.
+* **Aggregation scope:** The entity across which quantity, duration, or spend is accumulated to determine the applicable threshold-based pricing tier.
   Examples:
   * billing account
   * subaccount
 
-* **Aggregation interval:** The period over which quantity, duration, or spend is accumulated for the purpose of determining the applicable pricing tier.
+* **Aggregation interval:** The period over which quantity, duration, or spend is accumulated for the purpose of determining the applicable threshold-based pricing tier.
   Examples:
   * daily billing interval
   * monthly billing interval
 
 Aggregation is commonly performed at the billing account level over a monthly billing interval aligned with the billing cycle.
 
-### Tier Application Models
+### Threshold-Based Tier Application Models
 
-The pricing tier application model defines how the applicable pricing tier is determined and applied.
+The threshold-based tier application model defines how the applicable threshold-based pricing tier is determined and applied.
 
 #### Graduated Pricing
 
-Graduated pricing is a tier application model in which the applicable pricing tier is determined independently for each threshold range.
+Graduated pricing is a threshold-based tier application model in which the applicable threshold-based pricing tier is determined independently for each threshold range.
 
 Example:
 
@@ -132,11 +138,11 @@ Example:
 | Next 900 units | Price B |
 | Above 1000 units | Price C |
 
-Each threshold range is priced using the unit price associated with its applicable pricing tier.
+Each threshold range is priced using the unit price associated with its applicable threshold-based pricing tier.
 
 #### Retroactive Pricing
 
-Retroactive pricing is a tier application model in which reaching a higher threshold causes a higher pricing tier to be applied retroactively to all charges within the aggregation interval.
+Retroactive pricing is a threshold-based tier application model in which reaching a higher threshold causes a higher threshold-based pricing tier to be applied retroactively to all charges within the aggregation interval.
 
 Example:
 
@@ -145,19 +151,19 @@ Example:
 | Up to 1000 units | Price A |
 | Above 1000 units | Price B |
 
-When the higher threshold is reached, the higher pricing tier is applied to all charges within the aggregation interval.
+When the higher threshold is reached, the higher threshold-based pricing tier is applied to all charges within the aggregation interval.
 
 ### Relationship to Commitment Pricing
 
-Tiered pricing should not be confused with commitment pricing.
+Threshold-based tiered pricing should not be confused with commitment pricing.
 
-In tiered pricing, the applicable pricing tier is determined based on quantity, duration, or spend within a defined aggregation scope and aggregation interval.
+In threshold-based tiered pricing, the applicable threshold-based pricing tier is determined based on quantity, duration, or spend within a defined aggregation scope and aggregation interval.
 
 In commitment pricing, the applicable unit price is determined based on a customer's prior commitment to a specified level of usage, capacity, or spend over a defined commitment period.
 
 The key distinction is:
 
-* Tiered pricing determines the applicable pricing tier based on quantity, duration, or spend evaluated within a defined aggregation scope and aggregation interval.
+* Threshold-based tiered pricing determines the applicable threshold-based pricing tier based on quantity, duration, or spend evaluated within a defined aggregation scope and aggregation interval.
 * Commitment pricing determines the applicable unit price based on committed usage, capacity, or spend.
 
-A customer commitment may influence the applicable unit price, but it does not determine the applicable pricing tier.
+A customer commitment may influence the applicable unit price, but it does not determine the applicable threshold-based pricing tier.
