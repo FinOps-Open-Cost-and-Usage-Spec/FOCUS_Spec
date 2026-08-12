@@ -69,32 +69,32 @@ The following critical rules apply to commitment discount data:
 
 ## Purchase Row Details
 
-| Column                     | Value                                 | Explanation                                                                           |
-| -------------------------- | ------------------------------------- | ------------------------------------------------------------------------------------- |
-| ChargeCategory             | Purchase                              | Commitment purchase transaction                                                       |
-| ChargeFrequency            | One-Time                              | One-time upfront payment                                                              |
-| BilledCost                 | $358,021.20                    | Full annual commitment payment                                                        |
-| EffectiveCost              | $0.00                          | **must be 0** - cost is amortized to usage rows                                       |
-| PricingQuantity            | 1                                     | One commitment unit purchased                                                         |
-| CommitmentDiscountStatus   | null                                  | Status only applies to usage rows                                                     |
-| CommitmentDiscountQuantity | 8760.00                               | Total commitment capacity for the 1-year term (1 instance-hr/hr &times; 8,760 hrs/yr) |
-| CommitmentDiscountUnit     | Hours                                 | Unit of commitment capacity (usage-based)                                             |
-| SkuId                      | CRESTNODE-EASTUS-COMPUTE-PURCHASE            | Commitment purchase SKU                                                               |
-| SkuPriceId                 | CRESTNODE-EASTUS-COMPUTE-PURCHASE-UPFRONT    | Price point for upfront purchase                                                      |
+| Column                     | Value                                                     | Explanation                                                                           |
+| -------------------------- | --------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| ChargeCategory             | Purchase                                                  | Commitment purchase transaction                                                       |
+| ChargeFrequency            | One-Time                                                  | One-time upfront payment                                                              |
+| BilledCost                 | $358,021.20                                               | Full annual commitment payment                                                        |
+| EffectiveCost              | $0.00                                                     | **must be 0** - cost is amortized to usage rows                                       |
+| PricingQuantity            | 1                                                         | One commitment unit purchased                                                         |
+| CommitmentDiscountStatus   | null                                                      | Status only applies to usage rows                                                     |
+| CommitmentDiscountQuantity | 8760.00                                                   | Total commitment capacity for the 1-year term (1 instance-hr/hr &times; 8,760 hrs/yr) |
+| CommitmentDiscountUnit     | Hours                                                     | Unit of commitment capacity (usage-based)                                             |
+| SkuId                      | CRESTNODE-EASTUS-COMPUTE-PURCHASE                         | Commitment purchase SKU                                                               |
+| SkuPriceId                 | CRESTNODE-EASTUS-COMPUTE-RESERVATION-PURCHASE-ALL-UPFRONT | Price point for the all upfront purchase fee                                          |
 
 ## Usage Row Details (Commitment-Covered)
 
-| Column                     | Value                                                 | Explanation                                |
-| -------------------------- | ----------------------------------------------------- | ------------------------------------------ |
-| ChargeCategory             | Usage                                                 | Compute resource consumption               |
-| PricingCategory            | Committed                                             | Priced under commitment discount           |
-| BilledCost                 | $0.00                                          | **must be 0** - covered by commitment      |
-| EffectiveCost              | $40.87                                         | Amortized cost (annual / hours)            |
-| ListCost                   | $61.31                                         | What you would have paid at list price     |
-| PricingQuantity            | 1                                                     | Units priced                               |
-| ConsumedQuantity           | 1                                                     | Hours used                                 |
-| CommitmentDiscountQuantity | 1                                                     | Commitment units applied                   |
-| CommitmentDiscountStatus   | Used                                                  | Commitment applied                         |
-| CommitmentDiscountId       | crestnode:compute:eastus:f0e9d8c7-b6a5-4321-0987-654321...   | Links usage to purchase                    |
-| SkuId                      | CRESTNODE-EASTUS-COMPUTE-USAGE                               | Resource usage SKU (differs from Purchase) |
-| SkuPriceId                 | CRESTNODE-EASTUS-COMPUTE-USAGE-COMMITTED                     | Price point for committed usage            |
+| Column                     | Value                                                      | Explanation                                                       |
+| -------------------------- | ---------------------------------------------------------- | ----------------------------------------------------------------- |
+| ChargeCategory             | Usage                                                      | Compute resource consumption                                      |
+| PricingCategory            | Committed                                                  | Priced under commitment discount                                  |
+| BilledCost                 | $0.00                                                      | **must be 0** - covered by commitment                             |
+| EffectiveCost              | $40.87                                                     | Amortized cost (annual / hours)                                   |
+| ListCost                   | $61.31                                                     | What you would have paid at list price                            |
+| PricingQuantity            | 1                                                          | Units priced                                                      |
+| ConsumedQuantity           | 1                                                          | Hours used                                                        |
+| CommitmentDiscountQuantity | 1                                                          | Commitment units applied                                          |
+| CommitmentDiscountStatus   | Used                                                       | Commitment applied                                                |
+| CommitmentDiscountId       | crestnode:compute:eastus:f0e9d8c7-b6a5-4321-0987-654321... | Links usage to purchase                                           |
+| SkuId                      | CRESTNODE-EASTUS-COMPUTE-USAGE                             | Resource usage SKU (differs from Purchase)                        |
+| SkuPriceId                 | CRESTNODE-EASTUS-COMPUTE-USAGE-RESERVATION-ALL-UPFRONT     | Price point for committed usage under the all upfront reservation |
