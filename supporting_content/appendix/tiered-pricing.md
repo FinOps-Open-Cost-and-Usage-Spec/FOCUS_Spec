@@ -20,8 +20,8 @@
 
 | Candidate Term | FOCUS Usage | Same Meaning Elsewhere | Different Meaning Elsewhere | Pros | Cons |
 |---|---|---|---|---|---|
-| **Quantity-Based Tiered Pricing** | "quantity-based" ×3, but unrelated context (Contract Commitment, not tiering) | None found | — | Self-explanatory; matches `PricingQuantity`/`PricingUnit`; lowest rename cost (dataset unratified) | No external precedent |
-| **Volume-Based Tiered Pricing** | ×3 "volume-based tier(s)" + existing (unratified) columns `VolumeTier*` | AWS, Azure | Stripe, NetSuite (different axis — see note above) | Matches unratified column names; matches AWS/Azure | Collides with Stripe/NetSuite meaning; not self-explanatory |
+| **Quantity-Based Tiered Pricing** | "quantity-based" ×2, but unrelated context (Contract Commitment, not tiering) | None found | — | Self-explanatory; matches `PricingQuantity`/`PricingUnit`; matches the `QuantityTier*` columns and `IncludesQuantityTierPricing` condition drafted in #2424 | No external precedent |
+| **Volume-Based Tiered Pricing** | ×1 "volume-based tiers" (`SkuId`); no columns carry this name | AWS, Azure | Stripe, NetSuite (different axis — see note above) | Matches AWS/Azure | Collides with Stripe/NetSuite meaning; not self-explanatory |
 
 ---
 
