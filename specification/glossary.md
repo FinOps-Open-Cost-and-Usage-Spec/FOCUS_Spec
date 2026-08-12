@@ -268,10 +268,6 @@ An individual who performs FinOps within an organization to maximize the busines
 
 A comprehensive list of prices offered by a service provider.
 
-<a name="glossary:threshold-based-pricing-tier"><b>Threshold-Based Pricing Tier</b></a>
-
-A predefined pricing level within a [*threshold-based tiered pricing model*](#glossary:threshold-based-tiered-pricing), consisting of a threshold range and an associated unit price. The threshold range may be based on quantity, duration, or spend depending on the *threshold-based tiered pricing* model.
-
 <a name="glossary:quantity-based-tiered-pricing"><b>Quantity-Based Tiered Pricing</b></a>
 
 A form of [*threshold-based tiered pricing model*](#glossary:threshold-based-tiered-pricing) in which pricing levels are defined by quantity threshold ranges.
@@ -327,6 +323,10 @@ A Resource or Service-Provider-defined construct for grouping resources and/or o
 <a name="glossary:term"><b>Term</b></a>
 
 An agreement specified on a [*contract*](#glossary:contract) or [*invoice*](#glossary:invoice).
+
+<a name="glossary:threshold-based-pricing-tier"><b>Threshold-Based Pricing Tier</b></a>
+
+A predefined pricing level within a [*threshold-based tiered pricing model*](#glossary:threshold-based-tiered-pricing), consisting of a threshold range and an associated unit price. The threshold range may be based on quantity, duration, or spend depending on the *threshold-based tiered pricing* model.
 
 <a name="glossary:threshold-based-tiered-pricing"><b>Threshold-Based Tiered Pricing</b></a>
 
