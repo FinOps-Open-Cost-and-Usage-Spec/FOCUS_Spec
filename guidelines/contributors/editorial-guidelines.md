@@ -217,7 +217,7 @@ To ensure clarity and prevent ambiguity between distinct domain concepts, normat
       * Pricing Tier
       * Tiered Pricing
 
-> **Note:** Validation of domain terminology may require contextual understanding of the intended concept and may not always be suitable for deterministic editorial validation.
+> **Note:** Validation of domain terminology requires contextual understanding of the intended concept; the terminology alone is not always sufficient to determine compliance.
 
 ### Bullet Structure
 
