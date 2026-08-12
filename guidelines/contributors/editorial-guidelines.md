@@ -200,7 +200,9 @@ To ensure consistent language when describing relationships and evaluations betw
 
 To ensure clarity and prevent ambiguity between distinct domain concepts, normative requirements and standard prose MUST use the following domain-qualified terminology:
 
-* **Tier Terms:** Terms containing `tier` MUST NOT be used without a qualifier that distinguishes the intended concept from other tier concepts. A qualifier that fits more than one tier concept does not satisfy this requirement (e.g., `Pricing` fits both a threshold range and a subscription level, so `Pricing Tier` stays ambiguous).
+* **Tier Terms:**
+  * Terms containing `tier` and `tiered` MUST NOT be used without a qualifier that distinguishes the intended concept from other tier concepts.
+  * The qualifier MUST uniquely identify the intended tier concept by distinguishing it from other tier concepts (e.g., `Pricing` fits both a threshold range and a subscription level, so `Pricing Tier` remains ambiguous).
 
   * **Example** (illustrative):
 
