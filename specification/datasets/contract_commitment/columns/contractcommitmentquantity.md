@@ -26,16 +26,16 @@ The amount associated with the *contract commitment*.
 
 ## Content Constraints
 
-| Constraint      | Value                                                |
-|:----------------|:-----------------------------------------------------|
-| Dataset         | [Contract Commitment](#datamodel.contractcommitment)  |
-| Operating Model Conditions      | Not applicable                                        |
-| Column type     | Metric                                               |
-| Feature level   | Mandatory                                            |
-| Allows nulls    | True                                                 |
-| Data type       | Decimal                                              |
-| Value format    | [Numeric Format](#attributes.numericformat)          |
-| Number range    | Any valid decimal value                              |
+| Constraint                 | Value                                                |
+| :------------------------- | :--------------------------------------------------- |
+| Dataset                    | [Contract Commitment](#datamodel.contractcommitment) |
+| Operating Model Conditions | Not applicable                                       |
+| Column type                | Metric                                               |
+| Feature level              | Mandatory                                            |
+| Allows nulls               | True                                                 |
+| Data type                  | Decimal                                              |
+| Value format               | [Numeric Format](#attributes.numericformat)          |
+| Number range               | Any valid decimal value                              |
 
 ## Version Introduced
 

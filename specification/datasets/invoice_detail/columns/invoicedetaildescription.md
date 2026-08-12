@@ -26,15 +26,15 @@ The invoice-issuer-provided description of an invoice line item.
 
 ## Content Constraints
 
-|    Constraint   |              Value              |
-|:----------------|:--------------------------------|
-| Dataset         | [Invoice Detail](#datamodel.invoicedetail)             |
-| Operating Model Conditions      | Not applicable                                         |
-| Column type     | Dimension                       |
-| Feature level   | Mandatory                       |
-| Allows nulls    | True                            |
-| Data type       | String                          |
-| Value format    | \<not specified>                |
+| Constraint                 | Value                                      |
+| :------------------------- | :----------------------------------------- |
+| Dataset                    | [Invoice Detail](#datamodel.invoicedetail) |
+| Operating Model Conditions | Not applicable                             |
+| Column type                | Dimension                                  |
+| Feature level              | Mandatory                                  |
+| Allows nulls               | True                                       |
+| Data type                  | String                                     |
+| Value format               | \<not specified>                           |
 
 ## Version Introduced
 

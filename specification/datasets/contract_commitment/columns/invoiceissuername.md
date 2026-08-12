@@ -25,15 +25,15 @@ The name of the entity responsible for invoicing for the *contract commitment*.
 
 ## Content Constraints
 
-| Constraint      | Value           |
-|:----------------|:----------------|
-| Dataset         | [Contract Commitment](#datamodel.contractcommitment)  |
-| Operating Model Conditions      | Not applicable                                        |
-| Column type     | Dimension       |
-| Feature level   | Mandatory       |
-| Allows nulls    | False           |
-| Data type       | String          |
-| Value format    | \<not specified> |
+| Constraint                 | Value                                                |
+| :------------------------- | :--------------------------------------------------- |
+| Dataset                    | [Contract Commitment](#datamodel.contractcommitment) |
+| Operating Model Conditions | Not applicable                                       |
+| Column type                | Dimension                                            |
+| Feature level              | Mandatory                                            |
+| Allows nulls               | False                                                |
+| Data type                  | String                                               |
+| Value format               | \<not specified>                                     |
 
 ## Version Introduced
 

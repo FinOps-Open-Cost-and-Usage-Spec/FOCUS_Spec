@@ -25,15 +25,15 @@ The self-contained summary of the *contract commitment's* terms.
 
 ## Content Constraints
 
-|    Constraint   |      Value                                           |
-|:----------------|:-----------------------------------------------------|
-| Dataset         | [Contract Commitment](#datamodel.contractcommitment)  |
-| Operating Model Conditions      | Not applicable                                        |
-| Column type     | Dimension                                            |
-| Feature level   | Mandatory                                            |
-| Allows nulls    | True                                                 |
-| Data type       | String                                               |
-| Value format    | \<not specified>                                     |
+| Constraint                 | Value                                                |
+| :------------------------- | :--------------------------------------------------- |
+| Dataset                    | [Contract Commitment](#datamodel.contractcommitment) |
+| Operating Model Conditions | Not applicable                                       |
+| Column type                | Dimension                                            |
+| Feature level              | Mandatory                                            |
+| Allows nulls               | True                                                 |
+| Data type                  | String                                               |
+| Value format               | \<not specified>                                     |
 
 ## Version Introduced
 

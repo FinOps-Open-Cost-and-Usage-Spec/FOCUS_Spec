@@ -25,15 +25,15 @@ The *inclusive start bound* of a *billing period*.
 
 ## Content Constraints
 
-| Constraint      | Value                                |
-|:----------------|:-------------------------------------|
-| Dataset         | [Billing Period](#datamodel.billingperiod)             |
-| Operating Model Conditions      | Not applicable                                         |
-| Column type     | Dimension                            |
-| Feature level   | Mandatory                            |
-| Allows nulls    | False                                |
-| Data type       | Date/Time                            |
-| Value format    | [Date/Time Format](#attributes.date/timeformat) |
+| Constraint                 | Value                                           |
+| :------------------------- | :---------------------------------------------- |
+| Dataset                    | [Billing Period](#datamodel.billingperiod)      |
+| Operating Model Conditions | Not applicable                                  |
+| Column type                | Dimension                                       |
+| Feature level              | Mandatory                                       |
+| Allows nulls               | False                                           |
+| Data type                  | Date/Time                                       |
+| Value format               | [Date/Time Format](#attributes.date/timeformat) |
 
 ## Version Introduced
 

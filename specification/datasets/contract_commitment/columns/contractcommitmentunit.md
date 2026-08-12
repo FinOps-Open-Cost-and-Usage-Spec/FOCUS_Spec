@@ -27,15 +27,15 @@ A service-provider-specified measurement unit for the amount declared in Contrac
 
 ## Content Constraints
 
-| Constraint      | Value                                                |
-|:----------------|:-----------------------------------------------------|
-| Dataset         | [Contract Commitment](#datamodel.contractcommitment)  |
-| Operating Model Conditions      | Not applicable                                        |
-| Column type     | Dimension                                            |
-| Feature level   | Mandatory                                            |
-| Allows nulls    | True                                                 |
-| Data type       | String                                               |
-| Value format    | [Unit Format](#attributes.unitformat) recommended    |
+| Constraint                 | Value                                                |
+| :------------------------- | :--------------------------------------------------- |
+| Dataset                    | [Contract Commitment](#datamodel.contractcommitment) |
+| Operating Model Conditions | Not applicable                                       |
+| Column type                | Dimension                                            |
+| Feature level              | Mandatory                                            |
+| Allows nulls               | True                                                 |
+| Data type                  | String                                               |
+| Value format               | [Unit Format](#attributes.unitformat) recommended    |
 
 ## Version Introduced
 

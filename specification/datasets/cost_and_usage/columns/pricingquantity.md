@@ -33,16 +33,16 @@ The volume of a given *SKU* associated with a *resource* or *service* used or pu
 
 ## Content Constraints
 
-| Constraint      | Value                                                |
-| :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datamodel.costandusage)             |
-| Operating Model Conditions      | Not applicable                                        |
-| Column type     | Metric                                               |
-| Feature level   | Mandatory                                            |
-| Allows nulls    | True                                                 |
-| Data type       | Decimal                                              |
-| Value format    | [Numeric Format](#attributes.numericformat)          |
-| Number range    | Any valid decimal value                              |
+| Constraint                 | Value                                       |
+| :------------------------- | :------------------------------------------ |
+| Dataset                    | [Cost and Usage](#datamodel.costandusage)   |
+| Operating Model Conditions | Not applicable                              |
+| Column type                | Metric                                      |
+| Feature level              | Mandatory                                   |
+| Allows nulls               | True                                        |
+| Data type                  | Decimal                                     |
+| Value format               | [Numeric Format](#attributes.numericformat) |
+| Number range               | Any valid decimal value                     |
 
 ## Version Introduced
 

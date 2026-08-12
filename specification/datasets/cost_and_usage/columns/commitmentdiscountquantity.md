@@ -41,16 +41,16 @@ The amount of a *commitment discount* purchased or accounted for in *commitment 
 
 ## Content Constraints
 
-| Constraint      | Value                                                |
-| :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datamodel.costandusage)             |
-| Operating Model Conditions      | [Includes Commitment Discounts](#operatingmodelconditions.includescommitmentdiscounts) |
-| Column type     | Metric                                               |
-| Feature level   | Conditional                                          |
-| Allows nulls    | True                                                 |
-| Data type       | Decimal                                              |
-| Value format    | [Numeric Format](#attributes.numericformat)          |
-| Number range    | Any valid decimal value                              |
+| Constraint                 | Value                                       |
+| :------------------------- | :------------------------------------------ |
+| Dataset                    | [Cost and Usage](#datamodel.costandusage)   |
+| Operating Model Conditions | [Includes Commitment Discounts](#operatingmodelconditions.includescommitmentdiscounts) |
+| Column type                | Metric                                      |
+| Feature level              | Conditional                                 |
+| Allows nulls               | True                                        |
+| Data type                  | Decimal                                     |
+| Value format               | [Numeric Format](#attributes.numericformat) |
+| Number range               | Any valid decimal value                     |
 
 ## Version Introduced
 

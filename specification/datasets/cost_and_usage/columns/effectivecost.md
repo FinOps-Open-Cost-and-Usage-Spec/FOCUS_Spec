@@ -39,16 +39,16 @@ Cost of a *charge* based on the *resources* used, *services* used, or *contract 
 
 ## Content Constraints
 
-| Constraint      | Value                                                |
-| :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datamodel.costandusage)             |
-| Operating Model Conditions      | Not applicable                                        |
-| Column type     | Metric                                               |
-| Feature level   | Mandatory                                            |
-| Allows nulls    | False                                                |
-| Data type       | Decimal                                              |
-| Value format    | [Numeric Format](#attributes.numericformat)          |
-| Number range    | Any valid decimal value                              |
+| Constraint                 | Value                                       |
+| :------------------------- | :------------------------------------------ |
+| Dataset                    | [Cost and Usage](#datamodel.costandusage)   |
+| Operating Model Conditions | Not applicable                              |
+| Column type                | Metric                                      |
+| Feature level              | Mandatory                                   |
+| Allows nulls               | False                                       |
+| Data type                  | Decimal                                     |
+| Value format               | [Numeric Format](#attributes.numericformat) |
+| Number range               | Any valid decimal value                     |
 
 ## Version Introduced
 

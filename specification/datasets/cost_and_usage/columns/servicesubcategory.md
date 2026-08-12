@@ -112,15 +112,15 @@ Secondary classification of the Service Category for a *service* based on its co
 
 ## Content Constraints
 
-| Constraint      | Value                                                |
-| :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datamodel.costandusage)             |
-| Operating Model Conditions      | Not applicable                                        |
-| Column type     | Dimension                                            |
-| Feature level   | Recommended                                          |
-| Allows nulls    | False                                                |
-| Data type       | String                                               |
-| Value format    | Allowed values                                       |
+| Constraint                 | Value                                     |
+| :------------------------- | :---------------------------------------- |
+| Dataset                    | [Cost and Usage](#datamodel.costandusage) |
+| Operating Model Conditions | Not applicable                            |
+| Column type                | Dimension                                 |
+| Feature level              | Recommended                               |
+| Allows nulls               | False                                     |
+| Data type                  | String                                    |
+| Value format               | Allowed values                            |
 
 ## Version Introduced
 

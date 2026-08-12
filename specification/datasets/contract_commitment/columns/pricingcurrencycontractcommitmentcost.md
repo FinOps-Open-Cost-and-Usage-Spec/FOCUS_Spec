@@ -27,16 +27,16 @@ The monetary value of the *contract commitment* in the Pricing Currency.
 
 ## Content Constraints
 
-| Constraint    | Value                              |
-| :------------ | :--------------------------------- |
-| Dataset         | [Contract Commitment](#datamodel.contractcommitment)  |
-| Operating Model Conditions      | [Includes Pricing-Billing Currency Differences](#operatingmodelconditions.includespricing-billingcurrencydifferences) |
-| Column type   | Metric                             |
-| Feature level | Conditional                        |
-| Allows nulls  | True                               |
-| Data type     | Decimal                            |
-| Value format  | [Numeric Format](#attributes.numericformat) |
-| Number range  | Any valid decimal value            |
+| Constraint                 | Value                                                |
+| :------------------------- | :--------------------------------------------------- |
+| Dataset                    | [Contract Commitment](#datamodel.contractcommitment) |
+| Operating Model Conditions | [Includes Pricing-Billing Currency Differences](#operatingmodelconditions.includespricing-billingcurrencydifferences) |
+| Column type                | Metric                                               |
+| Feature level              | Conditional                                          |
+| Allows nulls               | True                                                 |
+| Data type                  | Decimal                                              |
+| Value format               | [Numeric Format](#attributes.numericformat)          |
+| Number range               | Any valid decimal value                              |
 
 ## Version Introduced
 

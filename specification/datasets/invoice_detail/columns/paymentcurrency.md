@@ -26,15 +26,15 @@ The currency in which the invoice is paid.
 
 ## Content Constraints
 
-|    Constraint    |              Value             |
-|:----------------|:--------------------------------|
-| Dataset         | [Invoice Detail](#datamodel.invoicedetail)             |
-| Operating Model Conditions      | [Includes Billing and Payment Currency Differences](#operatingmodelconditions.includesbillingandpaymentcurrencydifferences) |
-| Column type     | Dimension                       |
-| Feature level   | Conditional                     |
-| Allows nulls    | False                           |
-| Data type       | String                          |
-| Value format    | [Currency Format](#attributes.currencyformat) |
+| Constraint                 | Value                                         |
+| :------------------------- | :-------------------------------------------- |
+| Dataset                    | [Invoice Detail](#datamodel.invoicedetail)    |
+| Operating Model Conditions | [Includes Billing and Payment Currency Differences](#operatingmodelconditions.includesbillingandpaymentcurrencydifferences) |
+| Column type                | Dimension                                     |
+| Feature level              | Conditional                                   |
+| Allows nulls               | False                                         |
+| Data type                  | String                                        |
+| Value format               | [Currency Format](#attributes.currencyformat) |
 
 ## Version Introduced
 
