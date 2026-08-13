@@ -9,11 +9,11 @@ A SKU ID is a service-provider-specified unique identifier that represents a spe
 Each SKU ID represents a unique set of features that can be sold at different price points or [*SKU Prices*](#glossary:sku-price). SKU ID is consistent across all pricing variations, which may differ based on multiple factors beyond the common functionality and technical specifications. Examples include but are not limited to:
 
 * Date the [*charge*](#glossary:charge) was incurred.
-* Pricing tiers (e.g., free tier or volume-based tiers).
+* Threshold-based pricing tiers (e.g., free tier or quantity-based tiers).
 * Commitment discount pricing [*period*](#glossary:period) (e.g., 1 year, 3 years).
 * Negotiated discounts or other contractual terms or conditions.
 
-SKU ID should be consistent across pricing variations of a good or service to facilitate price comparisons for the same functionality, like where the functionality is provided or how it's paid for. SKU ID can be referenced on a catalog or [*price list*](#glossary:price-list) published by a service provider to look up detailed information about the *SKU*. The composition of the properties associated with the SKU ID may differ across service providers. SKU ID is commonly used for analyzing and comparing costs for the same SKU across different price details (e.g., *period*, tier, location).
+SKU ID should be consistent across pricing variations of a good or service to facilitate price comparisons for the same functionality, like where the functionality is provided or how it's paid for. SKU ID can be referenced on a catalog or [*price list*](#glossary:price-list) published by a service provider to look up detailed information about the *SKU*. The composition of the properties associated with the SKU ID may differ across service providers. SKU ID is commonly used for analyzing and comparing costs for the same SKU across different price details (e.g., *period*, threshold-based pricing tier, location).
 
 ## Requirements
 

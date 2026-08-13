@@ -12,9 +12,9 @@ ContractCommitmentDiscountPercentage MUST adhere to the following requirements:
   * ContractCommitmentDiscountPercentage MUST NOT be null when [ContractCommitmentBenefitCategory](#datamodel.contractcommitment.contractcommitmentbenefitcategory) is "Discount".
   * ContractCommitmentDiscountPercentage MUST be null when ContractCommitmentBenefitCategory is "Availability".
 * ContractCommitmentDiscountPercentage MUST be a value between 0.0 and 1.0, inclusive.
-* For contracts with multiple tiers (e.g., 5% discount up to 1M, 10% above 1M), ContractCommitmentDiscountPercentage MUST adhere to the following additional requirements:
-  * ContractCommitmentDiscountPercentage MUST reflect the discount percentage defined for the specific pricing tier represented by the Contract Commitment row.
-  * ContractCommitmentDiscountPercentage MUST correspond to only one pricing tier per Contract Commitment row.
+* For contracts with multiple [*commitment tiers*](#glossary:commitment-tier) (e.g., 5% discount up to 1M, 10% above 1M), ContractCommitmentDiscountPercentage MUST adhere to the following additional requirements:
+  * ContractCommitmentDiscountPercentage MUST reflect the discount percentage defined for the specific *commitment tier* represented by the Contract Commitment row.
+  * ContractCommitmentDiscountPercentage MUST correspond to only one *commitment tier* per Contract Commitment row.
 * ContractCommitmentDiscountPercentage SHOULD represent the net effective discount when multiple contractual layers are applicable (e.g., a negotiated discount on top of a standard commitment).
 
 ## Implementation Guidance
@@ -40,9 +40,9 @@ In this scenario, ContractCommitmentDiscountPercentage should be reported as 28%
 
 This field provides the magnitude for the **Discount** category. While `ContractCommitmentCost` tracks the financial obligation (what you pay), `ContractCommitmentDiscountPercentage` tracks the benefit rate (what you save).
 
-### Tiered Incentives
+### Tiered Commitment Discounts
 
-For commitments with multiple tiers (e.g., 5% discount up to 1M, 10% above 1M), this column should represent the **active** or **base** discount percentage applicable to the current contract row.
+For commitments with multiple [*commitment tiers*](#glossary:commitment-tier) (e.g., 5% discount up to 1M, 10% above 1M), this column should represent the **active** or **base** discount percentage applicable to the current contract row.
 
 ## Column ID
 

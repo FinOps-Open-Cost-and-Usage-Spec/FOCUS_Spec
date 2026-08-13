@@ -55,7 +55,7 @@ Note the following details in the example dataset:
 
 * The Charge Period is April 1st 2025 - April 2nd 2025. The Billing Period is the month of April 2025.
 * PricingCurrency for these usage charges reflects the per usage token price of the particular usage.
-* PricingQuantity reflects the amount of usage of the PricingUnit for each charge and is equivalent to ConsumedQuantity. While relevant to this example, there are scenarios including tiered pricing where ConsumedQuantity and PricingQuantity may not be the same.
+* PricingQuantity reflects the amount of usage of the PricingUnit for each charge and is equivalent to ConsumedQuantity. While relevant to this example, there are scenarios including threshold-based tiered pricing where ConsumedQuantity and PricingQuantity may not be the same.
 * Because Acme Corp's usage includes no discount on usage to token rates, PricingCurrencyContractedUnitPrice and PricingCurrencyListUnitPrice are equivalent.
 
 ## Scenario B: Virtual Currency Offered at a Discount
@@ -93,7 +93,7 @@ Acme Corp uses OmniQuery's services, consuming tokens as follows in the first da
 
 Note the following details in the example dataset:
 
-* PricingQuantity reflects the amount of usage of the PricingUnit for each charge and is equivalent to ConsumedQuantity. While relevant to this example, there are scenarios including tiered pricing where ConsumedQuantity and PricingQuantity may not be the same.
+* PricingQuantity reflects the amount of usage of the PricingUnit for each charge and is equivalent to ConsumedQuantity. While relevant to this example, there are scenarios including threshold-based tiered pricing where ConsumedQuantity and PricingQuantity may not be the same.
 * Because Acme Corp's usage includes no discount on usage to token rates, PricingCurrencyContractedUnitPrice and PricingCurrencyListUnitPrice are equivalent.
 
 ## Scenario B3: Usage of Virtual Currency at a Modified Rate

@@ -1,10 +1,10 @@
 # SKU Price Details
 
-SKU Price Details represent a list of [*SKU Price*](#glossary:sku-price) properties (key-value pairs) associated with a specific [SKU Price ID](#datamodel.costandusage.skupriceid). These properties include qualitative and quantitative properties of a [*SKUs*](#glossary:sku) (e.g., functionality and technical specifications), along with core stable pricing properties (e.g., pricing [*periods*](#glossary:period), tiers, etc.), excluding dynamic or negotiable pricing elements such as unit price amounts; currency (and related exchange rates); temporal validity (e.g., effective dates); and contract- or negotiation-specific factors (e.g., contract or account identifiers, and negotiable discounts).
+SKU Price Details represent a list of [*SKU Price*](#glossary:sku-price) properties (key-value pairs) associated with a specific [SKU Price ID](#datamodel.costandusage.skupriceid). These properties include qualitative and quantitative properties of a [*SKUs*](#glossary:sku) (e.g., functionality and technical specifications), along with core stable pricing properties (e.g., pricing [*periods*](#glossary:period), threshold-based pricing tiers, etc.), excluding dynamic or negotiable pricing elements such as unit price amounts; currency (and related exchange rates); temporal validity (e.g., effective dates); and contract- or negotiation-specific factors (e.g., contract or account identifiers, and negotiable discounts).
 
 The composition of properties associated with a specific *SKU Price* may differ across service providers and across *SKUs* within the same service provider. However, the exclusion of dynamic or negotiable pricing properties should ensure that all [*charges*](#glossary:charge) with the same SKU Price ID share the same SKU Price Details, i.e., that SKU Price Details remains consistent across different [*billing periods*](#glossary:billing-period) and [*billing accounts*](#glossary:billing-account) within a service provider.
 
-SKU Price Details helps practitioners understand and distinguish *SKU Prices*, each identified by a SKU Price ID and associated with a used or purchased [*resource*](#glossary:resource) or [*service*](#glossary:service). It can also help determine the quantity of units for a property when it holds a numeric value (e.g., CoreCount), even when its unit differs from the one in which the *SKU* is priced and charged, thus supporting FinOps capabilities such as unit economics. Additionally, the SKU Price Details may be used to analyze costs based on pricing properties such as *periods* and tiers.
+SKU Price Details helps practitioners understand and distinguish *SKU Prices*, each identified by a SKU Price ID and associated with a used or purchased [*resource*](#glossary:resource) or [*service*](#glossary:service). It can also help determine the quantity of units for a property when it holds a numeric value (e.g., CoreCount), even when its unit differs from the one in which the *SKU* is priced and charged, thus supporting FinOps capabilities such as unit economics. Additionally, the SKU Price Details may be used to analyze costs based on pricing properties such as *periods* and threshold-based pricing tiers.
 
 ## Requirements
 
@@ -58,7 +58,7 @@ The following keys should be used when applicable to facilitate cross-SKU and cr
 | NetworkMaxThroughput     | Network maximum sustained throughput for data transfer<sup>1</sup>       | Numeric          | Measure: Megabits per second (Mbps)                   |
 | OperatingSystem          | Operating system family<sup>3</sup>                                      | String           | Examples: "Linux", "MacOS", "Windows"                 |
 | Redundancy               | Level of redundancy offered by the SKU                                   | String           | Examples: "Local", "Zonal", "Global"                  |
-| StorageClass             | Class or tier of storage provided                                        | String           | Examples: "Hot", "Archive", "Nearline"                |
+| StorageClass             | Storage class or storage tier provided                                   | String           | Examples: "Hot", "Archive", "Nearline"                |
 
 Notes
 <br><sup>1</sup> In the case of "burstable" SKUs offering variable levels of performance, the baseline or guaranteed value should be used.
