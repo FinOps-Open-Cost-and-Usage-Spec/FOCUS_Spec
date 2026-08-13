@@ -356,6 +356,7 @@
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
+    "Order": -1,
     "ValidationCriteria": {
       "MustSatisfy": "When CommitmentDiscountQuantity is not null, CommitmentDiscountQuantity MUST adhere to the following requirements:",
       "Keyword": "MUST",

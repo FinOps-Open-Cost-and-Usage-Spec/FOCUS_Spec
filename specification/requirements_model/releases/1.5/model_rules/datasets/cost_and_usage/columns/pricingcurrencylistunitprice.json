@@ -375,6 +375,7 @@
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
+    "Order": -1,
     "ValidationCriteria": {
       "MustSatisfy": "Discrepancies in PricingCurrencyListUnitPrice, ListCost, or PricingQuantity MAY be addressed independently when ChargeClass is \"Correction\".",
       "Keyword": "MAY",

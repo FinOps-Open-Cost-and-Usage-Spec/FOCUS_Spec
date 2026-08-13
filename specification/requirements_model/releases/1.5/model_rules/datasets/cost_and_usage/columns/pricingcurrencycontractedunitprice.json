@@ -379,7 +379,7 @@
     "Status": "Removed",
     "ModelVersionRemoved": "1.3",
     "Conditions": [],
-    "Order": 160,
+    "Order": -1,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",

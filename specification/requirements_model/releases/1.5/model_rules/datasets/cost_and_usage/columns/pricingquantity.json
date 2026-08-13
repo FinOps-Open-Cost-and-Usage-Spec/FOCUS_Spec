@@ -273,6 +273,7 @@
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
+    "Order": -1,
     "ValidationCriteria": {
       "MustSatisfy": "When PricingQuantity is not null, PricingQuantity MUST adhere to the following requirements:",
       "Keyword": "MUST",
@@ -320,6 +321,7 @@
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
+    "Order": -1,
     "ValidationCriteria": {
       "MustSatisfy": "PricingQuantity MUST be a valid decimal value.",
       "Keyword": "MUST",
@@ -347,6 +349,7 @@
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
+    "Order": -1,
     "ValidationCriteria": {
       "MustSatisfy": "The product of PricingQuantity and a unit price (e.g., ContractedUnitPrice) MUST match the corresponding cost metric (e.g., ContractedCost) when the unit price is not null and ChargeClass is not \"Correction\".",
       "Keyword": "MUST",
@@ -370,6 +373,7 @@
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
+    "Order": -1,
     "ValidationCriteria": {
       "MustSatisfy": "Discrepancies in PricingQuantity, unit prices (e.g., ContractedUnitPrice), or costs (e.g., ContractedCost) MAY exist when ChargeClass is \"Correction\".",
       "Keyword": "MAY",
@@ -428,7 +432,7 @@
     "ModelVersionRemoved": "1.4",
     "Status": "Removed",
     "Conditions": [],
-    "Order": 90,
+    "Order": -1,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",

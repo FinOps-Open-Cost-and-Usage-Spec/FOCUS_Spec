@@ -15,7 +15,7 @@
     "Conditions": [
       "IncludesCommitmentDiscounts"
     ],
-    "Order": 0,
+    "Order": -1,
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "The DiscountHandling attribute adheres to the following requirements:",
@@ -66,7 +66,7 @@
     "Conditions": [
       "IncludesCommitmentDiscounts"
     ],
-    "Order": 10,
+    "Order": -1,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "All applicable discounts SHOULD be applied to each row they pertain to and SHOULD NOT be negated in a separate row.",
@@ -92,7 +92,7 @@
     "Conditions": [
       "IncludesCommitmentDiscounts"
     ],
-    "Order": 20,
+    "Order": -1,
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "All discounts applied to a row MUST apply to the entire charge.",
@@ -138,7 +138,7 @@
     "Conditions": [
       "IncludesCommitmentDiscounts"
     ],
-    "Order": 30,
+    "Order": -1,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Multiple discounts MAY apply to a row, but they MUST apply to the entire charge covered by that row.",
@@ -164,7 +164,7 @@
     "Conditions": [
       "IncludesCommitmentDiscounts"
     ],
-    "Order": 40,
+    "Order": -1,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "If a discount only applies to a portion of a charge, then the discounted portion of the charge MUST be split into a separate row.",
@@ -190,7 +190,7 @@
     "Conditions": [
       "IncludesCommitmentDiscounts"
     ],
-    "Order": 50,
+    "Order": -1,
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "Each discount MUST be identifiable using existing FOCUS columns.",
@@ -231,7 +231,7 @@
     "Conditions": [
       "IncludesCommitmentDiscounts"
     ],
-    "Order": 60,
+    "Order": -1,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Rows with a commitment discount applied to them MUST include a CommitmentDiscountId.",
@@ -257,7 +257,7 @@
     "Conditions": [
       "IncludesCommitmentDiscounts"
     ],
-    "Order": 70,
+    "Order": -1,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "If a service provider applies a discount that cannot be represented by a FOCUS column, they SHOULD include additional columns to identify the source of the discount.",
@@ -283,7 +283,7 @@
     "Conditions": [
       "IncludesCommitmentDiscounts"
     ],
-    "Order": 80,
+    "Order": -1,
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "Purchased discounts (e.g., commitment discounts) MUST be amortized.",
@@ -369,7 +369,7 @@
     "Conditions": [
       "IncludesCommitmentDiscounts"
     ],
-    "Order": 90,
+    "Order": -1,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "The BilledCost MUST be 0 for any row where the commitment covers the entire cost for the charge period.",
@@ -395,7 +395,7 @@
     "Conditions": [
       "IncludesCommitmentDiscounts"
     ],
-    "Order": 100,
+    "Order": -1,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "The EffectiveCost MUST include the portion of the amortized purchase cost that applies to this row.",
@@ -421,7 +421,7 @@
     "Conditions": [
       "IncludesCommitmentDiscounts"
     ],
-    "Order": 110,
+    "Order": -1,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "The sum of the EffectiveCost for all rows where CommitmentDiscountStatus is \"Used\" or \"Unused\" for each CommitmentDiscountId over the entire commitment period MUST be the same as the total BilledCost of the commitment discount.",
@@ -447,7 +447,7 @@
     "Conditions": [
       "IncludesCommitmentDiscounts"
     ],
-    "Order": 120,
+    "Order": -1,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "The CommitmentDiscountId and ResourceId MUST be set to the ID assigned to the commitment discount.",
@@ -473,7 +473,7 @@
     "Conditions": [
       "IncludesCommitmentDiscounts"
     ],
-    "Order": 130,
+    "Order": -1,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "ChargeCategory MUST be set to \"Purchase\" on rows that represent a purchase of a commitment discount.",
@@ -499,7 +499,7 @@
     "Conditions": [
       "IncludesCommitmentDiscounts"
     ],
-    "Order": 140,
+    "Order": -1,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "CommitmentDiscountStatus MUST be \"Used\" for ChargeCategory \"Usage\" rows that received a reduced price from a commitment.",
@@ -525,7 +525,7 @@
     "Conditions": [
       "IncludesCommitmentDiscounts"
     ],
-    "Order": 150,
+    "Order": -1,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "CommitmentDiscountId MUST be set to the ID assigned to the discount.",
@@ -551,7 +551,7 @@
     "Conditions": [
       "IncludesCommitmentDiscounts"
     ],
-    "Order": 160,
+    "Order": -1,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "ResourceId MUST be set to the ID of the resource that received the discount.",
@@ -577,7 +577,7 @@
     "Conditions": [
       "IncludesCommitmentDiscounts"
     ],
-    "Order": 170,
+    "Order": -1,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "If a commitment is not fully utilized, the service provider MUST include a row that represents the unused portion of the commitment for that charge period.",
@@ -603,7 +603,7 @@
     "Conditions": [
       "IncludesCommitmentDiscounts"
     ],
-    "Order": 180,
+    "Order": -1,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "These rows MUST be represented with CommitmentDiscountStatus set to \"Unused\" and ChargeCategory set to \"Usage\".",
@@ -629,7 +629,7 @@
     "Conditions": [
       "IncludesCommitmentDiscounts"
     ],
-    "Order": 190,
+    "Order": -1,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Such rows MUST have their CommitmentDiscountId and ResourceId set to the ID assigned to the commitment discount.",
@@ -655,7 +655,7 @@
     "Conditions": [
       "IncludesCommitmentDiscounts"
     ],
-    "Order": 200,
+    "Order": -1,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Credits that are applied after the fact MUST use a ChargeCategory of \"Credit\".",

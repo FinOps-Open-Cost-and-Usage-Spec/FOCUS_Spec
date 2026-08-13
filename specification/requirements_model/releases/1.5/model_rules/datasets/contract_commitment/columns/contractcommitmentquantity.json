@@ -211,7 +211,7 @@
     "Status": "Removed",
     "Conditions": [],
     "Type": "Static",
-    "Order": 70,
+    "Order": -1,
     "DatasetType": "CCT",
     "DatasetId": "ContractCommitment",
     "DatasetName": "Contract Commitment",

@@ -378,6 +378,7 @@
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
+    "Order": -1,
     "ValidationCriteria": {
       "MustSatisfy": "The product of ListUnitPrice and PricingQuantity MUST match the ListCost when PricingQuantity is not null and ChargeClass is not \"Correction\".",
       "Keyword": "MUST",
@@ -422,6 +423,7 @@
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
+    "Order": -1,
     "ValidationCriteria": {
       "MustSatisfy": "Discrepancies in ListUnitPrice, ListCost, or PricingQuantity MAY exist when ChargeClass is \"Correction\".",
       "Keyword": "MAY",
@@ -513,7 +515,7 @@
     "ModelVersionRemoved": "1.4",
     "Status": "Removed",
     "Conditions": [],
-    "Order": 130,
+    "Order": -1,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",

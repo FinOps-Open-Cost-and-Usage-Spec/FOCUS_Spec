@@ -14,7 +14,7 @@
     "Status": "Removed",
     "Conditions": [],
     "Type": "Static",
-    "Order": 0,
+    "Order": -1,
     "ValidationCriteria": {
       "MustSatisfy": "All columns defined by FOCUS MUST follow the following rules:",
       "Keyword": "MUST",
@@ -99,7 +99,7 @@
     "Status": "Removed",
     "Conditions": [],
     "Type": "Dynamic",
-    "Order": 10,
+    "Order": -1,
     "ValidationCriteria": {
       "MustSatisfy": "Column IDs MUST use Pascal case.",
       "Keyword": "MUST",
@@ -123,7 +123,7 @@
     "Status": "Removed",
     "Conditions": [],
     "Type": "Dynamic",
-    "Order": 20,
+    "Order": -1,
     "ValidationCriteria": {
       "MustSatisfy": "Column IDs MUST NOT use abbreviations.",
       "Keyword": "MUST NOT",
@@ -147,7 +147,7 @@
     "Status": "Removed",
     "Conditions": [],
     "Type": "Dynamic",
-    "Order": 30,
+    "Order": -1,
     "ValidationCriteria": {
       "MustSatisfy": "Column IDs MUST be alphanumeric with no special characters.",
       "Keyword": "MUST",
@@ -171,7 +171,7 @@
     "Status": "Removed",
     "Conditions": [],
     "Type": "Dynamic",
-    "Order": 40,
+    "Order": -1,
     "ValidationCriteria": {
       "MustSatisfy": "Column IDs SHOULD NOT use acronyms.",
       "Keyword": "SHOULD NOT",
@@ -195,7 +195,7 @@
     "Status": "Removed",
     "Conditions": [],
     "Type": "Dynamic",
-    "Order": 50,
+    "Order": -1,
     "ValidationCriteria": {
       "MustSatisfy": "Column IDs SHOULD NOT exceed 50 characters to accommodate column length restrictions of various data repositories.",
       "Keyword": "SHOULD NOT",
@@ -219,7 +219,7 @@
     "Status": "Removed",
     "Conditions": [],
     "Type": "Dynamic",
-    "Order": 60,
+    "Order": -1,
     "ValidationCriteria": {
       "MustSatisfy": "Columns that have an ID and a Name MUST have the Id or Name suffix in the Column ID.",
       "Keyword": "MUST",
@@ -242,7 +242,7 @@
     "DatasetName": null,
     "Status": "Removed",
     "Conditions": [],
-    "Order": 80,
+    "Order": -1,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Column display names MAY avoid the Name suffix if there are no other columns with the same name prefix.",
@@ -267,7 +267,7 @@
     "Status": "Removed",
     "Conditions": [],
     "Type": "Dynamic",
-    "Order": 90,
+    "Order": -1,
     "ValidationCriteria": {
       "MustSatisfy": "Columns with the Category suffix MUST be normalized.",
       "Keyword": "MUST",
@@ -291,7 +291,7 @@
     "Status": "Removed",
     "Conditions": [],
     "Type": "Static",
-    "Order": 100,
+    "Order": -1,
     "ValidationCriteria": {
       "MustSatisfy": "Custom (e.g., service-provider-defined) columns that are not defined by FOCUS but included in a FOCUS dataset MUST follow the following rules:",
       "Keyword": "MUST",
@@ -330,7 +330,7 @@
     "Status": "Removed",
     "Conditions": [],
     "Type": "Dynamic",
-    "Order": 110,
+    "Order": -1,
     "ValidationCriteria": {
       "MustSatisfy": "Custom columns MUST be prefixed with a consistent x_ prefix to identify them as external, custom columns and distinguish them from FOCUS columns to avoid conflicts in future releases.",
       "Keyword": "MUST",
@@ -354,7 +354,7 @@
     "Status": "Removed",
     "Conditions": [],
     "Type": "Dynamic",
-    "Order": 120,
+    "Order": -1,
     "ValidationCriteria": {
       "MustSatisfy": "Custom columns SHOULD follow the same rules listed above for FOCUS columns.",
       "Keyword": "SHOULD",
@@ -378,7 +378,7 @@
     "Status": "Removed",
     "Conditions": [],
     "Type": "Dynamic",
-    "Order": 130,
+    "Order": -1,
     "ValidationCriteria": {
       "MustSatisfy": "All FOCUS columns SHOULD be first in the provided dataset.",
       "Keyword": "SHOULD",
@@ -402,7 +402,7 @@
     "Status": "Removed",
     "Conditions": [],
     "Type": "Dynamic",
-    "Order": 140,
+    "Order": -1,
     "ValidationCriteria": {
       "MustSatisfy": "Custom columns SHOULD be listed after all FOCUS columns and SHOULD NOT be intermixed.",
       "Keyword": "SHOULD",
@@ -426,7 +426,7 @@
     "Status": "Removed",
     "Conditions": [],
     "Type": "Dynamic",
-    "Order": 150,
+    "Order": -1,
     "ValidationCriteria": {
       "MustSatisfy": "Columns MAY be sorted alphabetically, but custom columns SHOULD be after all FOCUS columns.",
       "Keyword": "MAY",
@@ -450,7 +450,7 @@
     "Status": "Removed",
     "Conditions": [],
     "Type": "Dynamic",
-    "Order": 70,
+    "Order": -1,
     "ValidationCriteria": {
       "MustSatisfy": "Column display names MUST be consistent with their Column IDs, with spaces inserted between words (e.g., Column ID \"BillingAccountName\" and display name \"Billing Account Name\").",
       "Keyword": "MUST",
