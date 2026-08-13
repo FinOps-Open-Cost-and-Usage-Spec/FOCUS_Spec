@@ -13,7 +13,7 @@
 
 | Candidate Term | FOCUS Usage | Same Meaning Elsewhere | Different Meaning Elsewhere | Pros | Cons |
 |---|---|---|---|---|---|
-| **Tiered Pricing** (bare) | "tiered pricing" ×8 | AWS, Azure, Stripe | SaaS subscription/feature tiers | Strong external precedent | Not used as an umbrella anywhere; quantity-only bias; collides with SaaS offering tiers |
+| **Tiered Pricing** (bare) | "tiered pricing" ×8 | AWS, Azure, Stripe | SaaS subscription/feature tiers | Strong external precedent | Rarely used as an umbrella; quantity-only bias; collides with SaaS offering tiers |
 | **Threshold-Based Tiered Pricing** | None found | None found | — | Explicit umbrella covering quantity/spend/duration; unambiguous against SaaS offering tiers | No external precedent |
 
 ### Quantity-Based Sub-Type
