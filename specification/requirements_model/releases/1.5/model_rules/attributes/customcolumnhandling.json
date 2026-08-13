@@ -189,7 +189,7 @@
     "Order": 30,
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "Custom column SHOULD use PascalCase in the portion of the Column ID following the required x_ prefix.",
+      "MustSatisfy": "Custom column SHOULD use Pascal case in the portion of the Column ID following the required x_ prefix.",
       "Keyword": "SHOULD",
       "Requirement": {},
       "Condition": {},

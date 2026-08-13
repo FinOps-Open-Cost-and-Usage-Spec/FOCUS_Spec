@@ -96,13 +96,13 @@
     "EntityName": "Invoice Detail",
     "EntityId": "InvoiceDetail",
     "Notes": "",
-    "ModelVersionIntroduced": "1.4",
-    "Status": "Active",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Removed",
     "Conditions": [
       "IncludesPayableInvoices"
     ],
     "Type": "Dynamic",
-    "Order": 10,
+    "Order": -1,
     "DatasetType": "IND",
     "DatasetId": "InvoiceDetail",
     "DatasetName": "Invoice Detail",
@@ -130,7 +130,7 @@
     "DatasetId": "InvoiceDetail",
     "DatasetName": "Invoice Detail",
     "ValidationCriteria": {
-      "MustSatisfy": "The presence of columns in InvoiceDetail MUST adhere to the following requirements:",
+      "MustSatisfy": "InvoiceDetail column presence MUST adhere to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -396,11 +396,11 @@
     }
   },
   "IND-InvoiceDetail-D-004-M": {
-    "Function": "Validation",
+    "Function": "Presence",
     "Reference": "InvoiceDetail",
     "EntityType": "Dataset",
-    "EntityName": "Invoice Detail",
-    "EntityId": "InvoiceDetail",
+    "EntityName": "Billed Cost",
+    "EntityId": "BilledCost",
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
@@ -422,11 +422,11 @@
     }
   },
   "IND-InvoiceDetail-D-005-M": {
-    "Function": "Validation",
+    "Function": "Presence",
     "Reference": "InvoiceDetail",
     "EntityType": "Dataset",
-    "EntityName": "Invoice Detail",
-    "EntityId": "InvoiceDetail",
+    "EntityName": "Billing Account ID",
+    "EntityId": "BillingAccountId",
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
@@ -448,11 +448,11 @@
     }
   },
   "IND-InvoiceDetail-D-006-M": {
-    "Function": "Validation",
+    "Function": "Presence",
     "Reference": "InvoiceDetail",
     "EntityType": "Dataset",
-    "EntityName": "Invoice Detail",
-    "EntityId": "InvoiceDetail",
+    "EntityName": "Billing Currency",
+    "EntityId": "BillingCurrency",
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
@@ -474,11 +474,11 @@
     }
   },
   "IND-InvoiceDetail-D-007-M": {
-    "Function": "Validation",
+    "Function": "Presence",
     "Reference": "InvoiceDetail",
     "EntityType": "Dataset",
-    "EntityName": "Invoice Detail",
-    "EntityId": "InvoiceDetail",
+    "EntityName": "Billing Period End",
+    "EntityId": "BillingPeriodEnd",
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
@@ -500,11 +500,11 @@
     }
   },
   "IND-InvoiceDetail-D-008-M": {
-    "Function": "Validation",
+    "Function": "Presence",
     "Reference": "InvoiceDetail",
     "EntityType": "Dataset",
-    "EntityName": "Invoice Detail",
-    "EntityId": "InvoiceDetail",
+    "EntityName": "Billing Period Start",
+    "EntityId": "BillingPeriodStart",
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
@@ -526,11 +526,11 @@
     }
   },
   "IND-InvoiceDetail-D-009-M": {
-    "Function": "Validation",
+    "Function": "Presence",
     "Reference": "InvoiceDetail",
     "EntityType": "Dataset",
-    "EntityName": "Invoice Detail",
-    "EntityId": "InvoiceDetail",
+    "EntityName": "Charge Category",
+    "EntityId": "ChargeCategory",
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
@@ -552,11 +552,11 @@
     }
   },
   "IND-InvoiceDetail-D-010-M": {
-    "Function": "Validation",
+    "Function": "Presence",
     "Reference": "InvoiceDetail",
     "EntityType": "Dataset",
-    "EntityName": "Invoice Detail",
-    "EntityId": "InvoiceDetail",
+    "EntityName": "Invoice Detail Created",
+    "EntityId": "InvoiceDetailCreated",
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
@@ -578,11 +578,11 @@
     }
   },
   "IND-InvoiceDetail-D-011-M": {
-    "Function": "Validation",
+    "Function": "Presence",
     "Reference": "InvoiceDetail",
     "EntityType": "Dataset",
-    "EntityName": "Invoice Detail",
-    "EntityId": "InvoiceDetail",
+    "EntityName": "Invoice Detail Description",
+    "EntityId": "InvoiceDetailDescription",
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
@@ -604,11 +604,11 @@
     }
   },
   "IND-InvoiceDetail-D-012-M": {
-    "Function": "Validation",
+    "Function": "Presence",
     "Reference": "InvoiceDetail",
     "EntityType": "Dataset",
-    "EntityName": "Invoice Detail",
-    "EntityId": "InvoiceDetail",
+    "EntityName": "Invoice Detail Grain",
+    "EntityId": "InvoiceDetailGrain",
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
@@ -630,11 +630,11 @@
     }
   },
   "IND-InvoiceDetail-D-013-M": {
-    "Function": "Validation",
+    "Function": "Presence",
     "Reference": "InvoiceDetail",
     "EntityType": "Dataset",
-    "EntityName": "Invoice Detail",
-    "EntityId": "InvoiceDetail",
+    "EntityName": "Invoice Detail ID",
+    "EntityId": "InvoiceDetailId",
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
@@ -656,11 +656,11 @@
     }
   },
   "IND-InvoiceDetail-D-014-M": {
-    "Function": "Validation",
+    "Function": "Presence",
     "Reference": "InvoiceDetail",
     "EntityType": "Dataset",
-    "EntityName": "Invoice Detail",
-    "EntityId": "InvoiceDetail",
+    "EntityName": "Invoice Detail Last Updated",
+    "EntityId": "InvoiceDetailLastUpdated",
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
@@ -682,11 +682,11 @@
     }
   },
   "IND-InvoiceDetail-D-015-M": {
-    "Function": "Validation",
+    "Function": "Presence",
     "Reference": "InvoiceDetail",
     "EntityType": "Dataset",
-    "EntityName": "Invoice Detail",
-    "EntityId": "InvoiceDetail",
+    "EntityName": "Invoice",
+    "EntityId": "InvoiceId",
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
@@ -708,11 +708,11 @@
     }
   },
   "IND-InvoiceDetail-D-016-M": {
-    "Function": "Validation",
+    "Function": "Presence",
     "Reference": "InvoiceDetail",
     "EntityType": "Dataset",
-    "EntityName": "Invoice Detail",
-    "EntityId": "InvoiceDetail",
+    "EntityName": "Invoice Issue Date",
+    "EntityId": "InvoiceIssueDate",
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
@@ -734,11 +734,11 @@
     }
   },
   "IND-InvoiceDetail-D-017-M": {
-    "Function": "Validation",
+    "Function": "Presence",
     "Reference": "InvoiceDetail",
     "EntityType": "Dataset",
-    "EntityName": "Invoice Detail",
-    "EntityId": "InvoiceDetail",
+    "EntityName": "Invoice Issue Status",
+    "EntityId": "InvoiceIssueStatus",
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
@@ -760,11 +760,11 @@
     }
   },
   "IND-InvoiceDetail-D-018-M": {
-    "Function": "Validation",
+    "Function": "Presence",
     "Reference": "InvoiceDetail",
     "EntityType": "Dataset",
-    "EntityName": "Invoice Detail",
-    "EntityId": "InvoiceDetail",
+    "EntityName": "Invoice Issuer Name",
+    "EntityId": "InvoiceIssuerName",
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
@@ -786,11 +786,11 @@
     }
   },
   "IND-InvoiceDetail-D-019-C": {
-    "Function": "Validation",
+    "Function": "Presence",
     "Reference": "InvoiceDetail",
     "EntityType": "Dataset",
-    "EntityName": "Invoice Detail",
-    "EntityId": "InvoiceDetail",
+    "EntityName": "Payment Currency",
+    "EntityId": "PaymentCurrency",
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
@@ -814,11 +814,11 @@
     }
   },
   "IND-InvoiceDetail-D-020-C": {
-    "Function": "Validation",
+    "Function": "Presence",
     "Reference": "InvoiceDetail",
     "EntityType": "Dataset",
-    "EntityName": "Invoice Detail",
-    "EntityId": "InvoiceDetail",
+    "EntityName": "Payment Currency Billed Cost",
+    "EntityId": "PaymentCurrencyBilledCost",
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
@@ -842,11 +842,11 @@
     }
   },
   "IND-InvoiceDetail-D-021-C": {
-    "Function": "Validation",
+    "Function": "Presence",
     "Reference": "InvoiceDetail",
     "EntityType": "Dataset",
-    "EntityName": "Invoice Detail",
-    "EntityId": "InvoiceDetail",
+    "EntityName": "Payment Currency Invoice Detail ID",
+    "EntityId": "PaymentCurrencyInvoiceDetailId",
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
@@ -870,11 +870,11 @@
     }
   },
   "IND-InvoiceDetail-D-022-M": {
-    "Function": "Validation",
+    "Function": "Presence",
     "Reference": "InvoiceDetail",
     "EntityType": "Dataset",
-    "EntityName": "Invoice Detail",
-    "EntityId": "InvoiceDetail",
+    "EntityName": "Payment Due Date",
+    "EntityId": "PaymentDueDate",
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
@@ -896,11 +896,11 @@
     }
   },
   "IND-InvoiceDetail-D-023-M": {
-    "Function": "Validation",
+    "Function": "Presence",
     "Reference": "InvoiceDetail",
     "EntityType": "Dataset",
-    "EntityName": "Invoice Detail",
-    "EntityId": "InvoiceDetail",
+    "EntityName": "Payment Terms",
+    "EntityId": "PaymentTerms",
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
@@ -922,11 +922,11 @@
     }
   },
   "IND-InvoiceDetail-D-024-C": {
-    "Function": "Validation",
+    "Function": "Presence",
     "Reference": "InvoiceDetail",
     "EntityType": "Dataset",
-    "EntityName": "Invoice Detail",
-    "EntityId": "InvoiceDetail",
+    "EntityName": "Purchase Order Number",
+    "EntityId": "PurchaseOrderNumber",
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
@@ -950,11 +950,11 @@
     }
   },
   "IND-InvoiceDetail-D-025-M": {
-    "Function": "Validation",
+    "Function": "Presence",
     "Reference": "InvoiceDetail",
     "EntityType": "Dataset",
-    "EntityName": "Invoice Detail",
-    "EntityId": "InvoiceDetail",
+    "EntityName": "Reference Invoice ID",
+    "EntityId": "ReferenceInvoiceId",
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
@@ -999,7 +999,7 @@
     }
   },
   "IND-InvoiceDetail-D-027-M": {
-    "Function": "Format",
+    "Function": "Validation",
     "Reference": "InvoiceDetail",
     "EntityType": "Dataset",
     "EntityName": "Invoice Detail",
@@ -1024,7 +1024,7 @@
     }
   },
   "IND-InvoiceDetail-D-028-M": {
-    "Function": "Format",
+    "Function": "Validation",
     "Reference": "InvoiceDetail",
     "EntityType": "Dataset",
     "EntityName": "Invoice Detail",
@@ -1049,7 +1049,7 @@
     }
   },
   "IND-InvoiceDetail-D-029-M": {
-    "Function": "Format",
+    "Function": "Validation",
     "Reference": "InvoiceDetail",
     "EntityType": "Dataset",
     "EntityName": "Invoice Detail",
@@ -1074,7 +1074,7 @@
     }
   },
   "IND-InvoiceDetail-D-030-M": {
-    "Function": "Format",
+    "Function": "Validation",
     "Reference": "InvoiceDetail",
     "EntityType": "Dataset",
     "EntityName": "Invoice Detail",
@@ -1122,7 +1122,7 @@
     }
   },
   "IND-InvoiceDetail-D-032-M": {
-    "Function": "Format",
+    "Function": "Validation",
     "Reference": "InvoiceDetail",
     "EntityType": "Dataset",
     "EntityName": "Invoice Detail",
@@ -1147,7 +1147,7 @@
     }
   },
   "IND-InvoiceDetail-D-033-M": {
-    "Function": "Format",
+    "Function": "Validation",
     "Reference": "InvoiceDetail",
     "EntityType": "Dataset",
     "EntityName": "Invoice Detail",
@@ -1172,7 +1172,7 @@
     }
   },
   "IND-InvoiceDetail-D-034-M": {
-    "Function": "Format",
+    "Function": "Validation",
     "Reference": "InvoiceDetail",
     "EntityType": "Dataset",
     "EntityName": "Invoice Detail",

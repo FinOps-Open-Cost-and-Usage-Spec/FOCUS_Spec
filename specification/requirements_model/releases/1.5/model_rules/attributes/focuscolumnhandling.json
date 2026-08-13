@@ -121,7 +121,7 @@
     "Type": "Dynamic",
     "Order": 20,
     "ValidationCriteria": {
-      "MustSatisfy": "FOCUS column MUST use PascalCase in the Column ID.",
+      "MustSatisfy": "FOCUS column MUST use Pascal case in the Column ID.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},

@@ -1,0 +1,17 @@
+{
+    "FakeID1": {
+        "Reference": "BillingPeriod", //derefernce["Id"]
+        "EntityType": "Dataset", //derefernce["EntityType"]
+        "EntityName": "Billing Period", //Display Name
+        "EntityId": "BillingPeriod", //derefernce["Id"]
+        "Notes": "", //empty for now
+        "Status": "Active", //always active for now
+        "ApplicabilityCriteria": [], //empty for now
+        "Type": "Static", //always static for now
+        "Order": 0, //order of extraction, 0 for now
+        "ValidationCriteria": {
+            "MustSatisfy": "BillingPeriod MUST adhere to the following requirements:", //reference["Keyword"][0]
+            "Keyword": "MUST" //BCP14 term from MustSatisfy
+        }
+    }
+}
