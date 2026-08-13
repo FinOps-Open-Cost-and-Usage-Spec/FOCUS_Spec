@@ -89,6 +89,10 @@ A feature of [*commitment discounts*](#glossary:commitment-discount) that may fu
 
 A service-provider offering that allows a customer to enter into a [*commitment*](#glossary:commitment). Commitment programs include [*commitment discounts*](#glossary:commitment-discount), [*capacity reservations*](#glossary:capacity-reservation), and other constructs that require advance spend or usage agreements.
 
+<a name="glossary:commitment-tier"><b>Commitment Tier</b></a>
+
+A predefined level of commitment benefit determined by a usage or spend threshold in relation to a prior [*contract commitment*](glossary:contract-commitment), with a corresponding benefit.
+
 <a name="glossary:contract"><b>Contract</b></a>
 
 A collection of agreed terms between a service provider and a customer.
@@ -335,6 +339,10 @@ A pricing model in which the unit price applied to a charge is determined by the
 The applicable *threshold-based pricing tier* is determined based on quantity, duration, or spend within a defined aggregation scope and aggregation interval according to the threshold-based tier application model, without requiring a prior customer commitment. The threshold-based tier application model defines whether the applicable *threshold-based pricing tier* is determined independently for each threshold range (graduated pricing) or whether reaching a higher threshold causes a higher *threshold-based pricing tier* to be applied retroactively to all charges within the aggregation interval (retroactive pricing).
 
 [*Quantity-based tiered pricing*](#glossary:quantity-based-tiered-pricing) is a common form of threshold-based tiered pricing.
+
+<a name="glossary:tiered-commitment-discount"><b>Tiered Commitment Discount</b></a>
+
+A discount mechanism in which the discount applied to a charge is determined by the applicable [*commitment tier*](#glossary:commitment-tier) reached.
 
 <a name="glossary:unit-pricing"><b>Unit Pricing</b></a>
 
