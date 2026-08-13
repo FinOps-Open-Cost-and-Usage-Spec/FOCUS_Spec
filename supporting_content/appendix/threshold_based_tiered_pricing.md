@@ -37,6 +37,8 @@ SaaS providers also use "tier" for their offerings (e.g., subscription or featur
 
 Threshold-based tiered pricing is a pricing model in which the unit price applied to a charge is determined by the applicable threshold-based pricing tier.
 
+Under flat-rate pricing, each pricing unit is assigned a fixed unit price regardless of the quantity consumed, which makes costs straightforward to forecast. Threshold-based tiered pricing differs in that the unit price is not fixed — it depends on which threshold-based pricing tier applies.
+
 A threshold-based tiered pricing model consists of one or more threshold-based pricing tiers. Each threshold-based pricing tier defines a threshold range and an associated unit price. The applicable threshold-based pricing tier is determined based on quantity, duration, or spend within a defined aggregation scope and aggregation interval according to the threshold-based tier application model.
 
 Threshold-based tiered pricing does not require a prior customer commitment or contractual obligation.
@@ -83,6 +85,10 @@ Each threshold-based pricing tier defines:
 
 The threshold range defines the range of quantity, duration, or spend values for which the threshold-based pricing tier may become applicable. The associated unit price defines the unit price applied when that threshold-based pricing tier is applicable.
 
+Unit prices commonly decrease as higher threshold ranges are reached, so that accumulated usage lowers the effective unit cost. This is a common pattern rather than a requirement — overage pricing, for example, associates a higher unit price with the higher threshold range.
+
+A free tier is a threshold-based pricing tier whose associated unit price is zero, typically covering an introductory usage level at the lowest threshold range.
+
 ### Threshold Categories
 
 Threshold-based pricing tiers may define threshold ranges using different measurement dimensions.
@@ -120,6 +126,8 @@ Typical aggregation dimensions include:
   * daily billing interval
   * monthly billing interval
 
+Accumulated quantity, duration, or spend resets at the start of each aggregation interval; the applicable threshold-based pricing tier is therefore determined anew in each interval.
+
 Aggregation is commonly performed at the billing account level over a monthly billing interval aligned with the billing cycle.
 
 ### Threshold-Based Tier Application Models
@@ -152,6 +160,30 @@ Example:
 | Above 1000 units | Price B |
 
 When the higher threshold is reached, the higher threshold-based pricing tier is applied to all charges within the aggregation interval.
+
+#### Worked Example
+
+The same threshold-based tiered pricing model produces different charges depending on the threshold-based tier application model applied.
+
+Threshold-based pricing tier configuration:
+
+|  | Lower threshold-based pricing tier | Higher threshold-based pricing tier |
+| --- | --- | --- |
+| Threshold range start (inclusive) | 0 GB | 10 GB |
+| Threshold range end (exclusive) | 10 GB | 100 GB |
+| List Unit Price | 1.00 | 0.50 |
+| Pricing Unit | 1 GB | 1 GB |
+| Pricing Currency | USD | USD |
+
+Scenario: 12 GB consumed within a single aggregation interval.
+
+| Threshold-based tier application model | PricingQuantity | PricingUnit | ListUnitPrice | ListCost |
+| --- | ---: | --- | ---: | ---: |
+| Graduated pricing | 10 | 1 GB | 1.00 | 10.00 |
+| Graduated pricing | 2 | 1 GB | 0.50 | 1.00 |
+| Retroactive pricing | 12 | 1 GB | 0.50 | 6.00 |
+
+Under graduated pricing, the 12 GB spans two threshold ranges, each priced at its own unit price, resulting in two charge rows totaling 11.00. Under retroactive pricing, reaching the higher threshold reprices all 12 GB at the higher threshold-based pricing tier's unit price, resulting in a single charge row totaling 6.00.
 
 ### Relationship to Commitment Pricing
 
