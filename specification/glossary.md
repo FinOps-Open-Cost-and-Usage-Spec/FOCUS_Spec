@@ -270,7 +270,7 @@ A comprehensive list of prices offered by a service provider.
 
 <a name="glossary:quantity-based-tiered-pricing"><b>Quantity-Based Tiered Pricing</b></a>
 
-A form of [*threshold-based tiered pricing model*](#glossary:threshold-based-tiered-pricing) in which pricing levels are defined by quantity threshold ranges.
+A form of [*threshold-based tiered pricing model*](#glossary:threshold-based-tiered-pricing) in which pricing levels are defined by threshold ranges based on [Pricing Quantity](#datamodel.costandusage.pricingquantity).
 
 <a name="glossary:refund"><b>Refund</b></a>
 
