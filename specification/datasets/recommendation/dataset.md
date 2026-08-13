@@ -17,14 +17,14 @@ The Recommendation dataset is a supporting dataset that describes optimization r
 | [Estimated Monthly Cost Impact](#datasets.recommendation.estimatedmonthlycostimpact) | Metric | Mandatory | True | Decimal |
 | [Implementation Effort](#datasets.recommendation.implementationeffort) | Dimension | Optional | True | String |
 | [Implementation Risk](#datasets.recommendation.implementationrisk) | Dimension | Optional | True | String |
-| [Lookback Period End](#datasets.recommendation.lookbackperiodend) | Dimension | Optional | True | Date/Time |
-| [Lookback Period Start](#datasets.recommendation.lookbackperiodstart) | Dimension | Optional | True | Date/Time |
+| [Evaluation Period End](#datasets.recommendation.evaluationperiodend) | Dimension | Optional | True | Date/Time |
+| [Evaluation Period Start](#datasets.recommendation.evaluationperiodstart) | Dimension | Optional | True | Date/Time |
 | [Recommendation Category](#datasets.recommendation.recommendationcategory) | Dimension | Mandatory | False | String |
-| [Recommendation Create Date](#datasets.recommendation.recommendationcreatedate) | Dimension | Mandatory | False | Date/Time |
+| [Recommendation Created](#datasets.recommendation.recommendationcreated) | Dimension | Mandatory | False | Date/Time |
 | [Recommendation Description](#datasets.recommendation.recommendationdescription) | Dimension | Mandatory | True | String |
 | [Recommendation Details](#datasets.recommendation.recommendationdetails) | Dimension | Mandatory | True | JSON |
 | [Recommendation ID](#datasets.recommendation.recommendationid) | Dimension | Mandatory | False | String |
-| [Recommendation Update Date](#datasets.recommendation.recommendationupdatedate) | Dimension | Mandatory | False | Date/Time |
+| [Recommendation Last Updated](#datasets.recommendation.recommendationlastupdated) | Dimension | Mandatory | False | Date/Time |
 | [Recommendation Status](#datasets.recommendation.recommendationstatus) | Dimension | Mandatory | False | String |
 | [Recommendation Subcategory](#datasets.recommendation.recommendationsubcategory) | Dimension | Mandatory | False | String |
 | [Region ID](#datasets.recommendation.regionid) | Dimension | [Conditional](#conditions.includesregions) | True | String |
@@ -69,14 +69,14 @@ Recommendation MUST adhere to the following requirements:
   * Recommendation MUST include [EstimatedMonthlyCostImpact](#datasets.recommendation.estimatedmonthlycostimpact).
   * Recommendation MAY include [ImplementationEffort](#datasets.recommendation.implementationeffort).
   * Recommendation MAY include [ImplementationRisk](#datasets.recommendation.implementationrisk).
-  * Recommendation MAY include [LookbackPeriodEnd](#datasets.recommendation.lookbackperiodend).
-  * Recommendation MAY include [LookbackPeriodStart](#datasets.recommendation.lookbackperiodstart).
+  * Recommendation MAY include [EvaluationPeriodEnd](#datasets.recommendation.evaluationperiodend).
+  * Recommendation MAY include [EvaluationPeriodStart](#datasets.recommendation.evaluationperiodstart).
   * Recommendation MUST include [RecommendationCategory](#datasets.recommendation.recommendationcategory).
-  * Recommendation MUST include [RecommendationCreateDate](#datasets.recommendation.recommendationcreatedate).
+  * Recommendation MUST include [RecommendationCreated](#datasets.recommendation.recommendationcreated).
   * Recommendation MUST include [RecommendationDescription](#datasets.recommendation.recommendationdescription).
   * Recommendation MUST include [RecommendationDetails](#datasets.recommendation.recommendationdetails).
   * Recommendation MUST include [RecommendationId](#datasets.recommendation.recommendationid).
-  * Recommendation MUST include [RecommendationUpdateDate](#datasets.recommendation.recommendationupdatedate).
+  * Recommendation MUST include [RecommendationLastUpdated](#datasets.recommendation.recommendationlastupdated).
   * Recommendation MUST include [RecommendationStatus](#datasets.recommendation.recommendationstatus).
   * Recommendation MUST include [RecommendationSubcategory](#datasets.recommendation.recommendationsubcategory).
   * Recommendation MUST include [RegionId](#datasets.recommendation.regionid) when the *operating model* [includes regions](#conditions.includesregions).
