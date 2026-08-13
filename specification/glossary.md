@@ -91,7 +91,7 @@ A service-provider offering that allows a customer to enter into a [*commitment*
 
 <a name="glossary:commitment-tier"><b>Commitment Tier</b></a>
 
-A predefined level of commitment benefit determined by a usage or spend threshold in relation to a prior [*contract commitment*](glossary:contract-commitment), with a corresponding benefit.
+A predefined level within a [*tiered commitment discount*](#glossary:tiered-commitment-discount), consisting of a usage or spend threshold range and an associated benefit.
 
 <a name="glossary:contract"><b>Contract</b></a>
 
@@ -336,13 +336,15 @@ A predefined pricing level within a [*threshold-based tiered pricing model*](#gl
 
 A pricing model in which the unit price applied to a charge is determined by the applicable [*threshold-based pricing tier*](#glossary:threshold-based-pricing-tier).
 
-The applicable *threshold-based pricing tier* is determined based on quantity, duration, or spend within a defined aggregation scope and aggregation interval according to the threshold-based tier application model, without requiring a prior customer commitment. The threshold-based tier application model defines whether the applicable *threshold-based pricing tier* is determined independently for each threshold range (graduated pricing) or whether reaching a higher threshold causes a higher *threshold-based pricing tier* to be applied retroactively to all charges within the aggregation interval (retroactive pricing).
+The applicable *threshold-based pricing tier* is determined based on quantity, duration, or spend within a defined aggregation scope and aggregation interval according to the threshold-based tier application model, without requiring a prior [*contract commitment*](#glossary:contract-commitment). The threshold-based tier application model defines whether the applicable *threshold-based pricing tier* is determined independently for each threshold range (graduated pricing) or whether reaching a higher threshold causes a higher *threshold-based pricing tier* to be applied retroactively to all charges within the aggregation interval (retroactive pricing).
+
+Threshold-based tiered pricing should not be confused with a [*tiered commitment discount*](#glossary:tiered-commitment-discount), which requires a prior *contract commitment*.
 
 [*Quantity-based tiered pricing*](#glossary:quantity-based-tiered-pricing) is a common form of threshold-based tiered pricing.
 
 <a name="glossary:tiered-commitment-discount"><b>Tiered Commitment Discount</b></a>
 
-A discount mechanism in which the discount applied to a charge is determined by the applicable [*commitment tier*](#glossary:commitment-tier) reached.
+A discount mechanism defined in relation to a prior [*contract commitment*](#glossary:contract-commitment), in which the discount applied to a charge is determined by the applicable [*commitment tier*](#glossary:commitment-tier) reached.
 
 <a name="glossary:unit-pricing"><b>Unit Pricing</b></a>
 
