@@ -18,12 +18,12 @@ RecommendationDetails MUST adhere to the following requirements:
   * Property key MUST begin with the string "x_" unless it is a FOCUS-defined property.
   * Property key SHOULD remain consistent across comparable recommendations having that property, and the values for this key SHOULD remain in a consistent format.
   * RecommendationDetails MUST include the FOCUS-defined recommendation property when an equivalent property is included as a custom property.
-  * RecommendationDetails SHOULD include all FOCUS-defined recommendation properties listed below that are applicable to the recommendation.
-  * Property key SHOULD remain consistent across comparable recommendations having that property, and the values for this key SHOULD remain in a consistent format.
-  * Property key MUST begin with the string "x_" unless it is a FOCUS-defined property.
+  * RecommendationDetails SHOULD include all FOCUS-defined recommendation properties that are applicable to the recommendation.
+  * RecommendationDetails MAY include FOCUS-defined [SkuPriceDetails](#datasets.costandusage.skupricedetails) properties describing the *SKU* a recommendation proposes.
 * FOCUS-defined recommendation properties MUST adhere to the following requirements:
   * Property key MUST match the spelling and casing specified for the FOCUS-defined property.
   * Property value MUST be of the type specified for that property.
+  * Property value MUST be denominated in the unit of measure specified for that property when the property holds a numeric value.
 
 ## FOCUS-Defined Properties
 
@@ -33,20 +33,27 @@ The following keys should be used when applicable to facilitate cross-service-pr
 | :------------------------- | :----------------------------------------------------------------------------------------- | :-------- | :--------------------------------------------------- |
 | CommitmentDiscountQuantity | Amount of the [*commitment discount*](#glossary:commitment-discount) proposed for purchase | Numeric   | Measure: Commitment Discount Unit                    |
 | CommitmentDiscountUnit     | Unit of measurement for the proposed Commitment Discount Quantity                          | String    | Examples: "Hours", "USD", "DPUs"                     |
-| ObservedMetricName         | Name of the metric a recommendation was derived from                                       | String    | Examples: "CpuUtilization", "MemoryUtilization"      |
-| ObservedMetricUnit         | Unit of measurement for the Observed Metric Value                                          | String    | Examples: "Percent", "GiB", "Requests"               |
-| ObservedMetricValue        | Value of the metric a recommendation was derived from                                      | Numeric   | Measure: Observed Metric Unit                        |
+| CpuUtilizationAverage      | Mean processor utilization observed over the evaluation period                             | Numeric   | Measure: Percent                                     |
+| CpuUtilizationPeak         | Maximum processor utilization observed over the evaluation period                          | Numeric   | Measure: Percent                                     |
+| MemoryUtilizationAverage   | Mean memory utilization observed over the evaluation period                                | Numeric   | Measure: Percent                                     |
+| MemoryUtilizationPeak      | Maximum memory utilization observed over the evaluation period                             | Numeric   | Measure: Percent                                     |
+| NetworkThroughputAverage   | Mean network throughput observed over the evaluation period                                | Numeric   | Measure: Megabits per second (Mbps)                  |
+| NetworkThroughputPeak      | Maximum network throughput observed over the evaluation period                             | Numeric   | Measure: Megabits per second (Mbps)                  |
 | SkuId                      | [SKU](#datasets.costandusage.skuid) proposed by a recommendation                           | String    | Examples: "m5d.2xlarge", "NC24rs_v3"                 |
 | SkuPriceId                 | [SKU Price](#datasets.costandusage.skupriceid) proposed by a recommendation                | String    | Examples: "AB12CD34EF56"                             |
+
+In addition to the keys above, any FOCUS-defined [SKU Price](#datasets.costandusage.skupricedetails) property MAY be included to describe the *SKU* a recommendation proposes (e.g., CoreCount, MemorySize, InstanceType).
 
 ## Examples
 
 ```json
 {
-    "SkuId": "m5d.2xlarge",
-    "ObservedMetricName": "CpuUtilization",
-    "ObservedMetricValue": 4.2,
-    "ObservedMetricUnit": "Percent",
+    "SkuId": "m5d.large",
+    "CoreCount": 2,
+    "MemorySize": 8,
+    "CpuUtilizationAverage": 4.2,
+    "CpuUtilizationPeak": 11.5,
+    "MemoryUtilizationAverage": 18.3,
     "x_ConfidenceScore": 0.87
 }
 ```
