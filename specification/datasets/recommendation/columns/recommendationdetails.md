@@ -24,6 +24,14 @@ RecommendationDetails MUST adhere to the following requirements:
   * Property key MUST match the spelling and casing specified for the FOCUS-defined property.
   * Property value MUST be of the type specified for that property.
   * Property value MUST be denominated in the unit of measure specified for that property when the property holds a numeric value.
+* Observed metric properties MUST adhere to the following requirements:
+  * Property key MUST combine a metric name and a calculation in the `<MetricName><Calculation>` format.
+  * Property key SHOULD use one of the recommended metric names listed below.
+  * Property key SHOULD use one of the recommended calculations listed below.
+  * Property key MUST express a metric name that is not listed as one of the recommended metric names in PascalCase format.
+  * Property key MUST express a calculation that is not listed as one of the recommended calculations in PascalCase format.
+  * Property value MUST be of type Numeric.
+  * Property value MUST be denominated in the unit of measure specified for that metric name.
 
 ## FOCUS-Defined Properties
 
@@ -33,16 +41,37 @@ The following keys should be used when applicable to facilitate cross-service-pr
 | :------------------------- | :----------------------------------------------------------------------------------------- | :-------- | :--------------------------------------------------- |
 | CommitmentDiscountQuantity | Amount of the [*commitment discount*](#glossary:commitment-discount) proposed for purchase | Numeric   | Measure: Commitment Discount Unit                    |
 | CommitmentDiscountUnit     | Unit of measurement for the proposed Commitment Discount Quantity                          | String    | Examples: "Hours", "USD", "DPUs"                     |
-| CpuUtilizationAverage      | Mean processor utilization observed over the evaluation period                             | Numeric   | Measure: Percent                                     |
-| CpuUtilizationPeak         | Maximum processor utilization observed over the evaluation period                          | Numeric   | Measure: Percent                                     |
-| MemoryUtilizationAverage   | Mean memory utilization observed over the evaluation period                                | Numeric   | Measure: Percent                                     |
-| MemoryUtilizationPeak      | Maximum memory utilization observed over the evaluation period                             | Numeric   | Measure: Percent                                     |
-| NetworkThroughputAverage   | Mean network throughput observed over the evaluation period                                | Numeric   | Measure: Megabits per second (Mbps)                  |
-| NetworkThroughputPeak      | Maximum network throughput observed over the evaluation period                             | Numeric   | Measure: Megabits per second (Mbps)                  |
 | SkuId                      | [SKU](#datasets.costandusage.skuid) proposed by a recommendation                           | String    | Examples: "m5d.2xlarge", "NC24rs_v3"                 |
 | SkuPriceId                 | [SKU Price](#datasets.costandusage.skupriceid) proposed by a recommendation                | String    | Examples: "AB12CD34EF56"                             |
 
 In addition to the keys above, any FOCUS-defined [SKU Price](#datasets.costandusage.skupricedetails) property MAY be included to describe the *SKU* a recommendation proposes (e.g., CoreCount, MemorySize, InstanceType).
+
+### Observed Metric Properties
+
+A recommendation is commonly derived from one or more metrics observed over the [evaluation period](#datasets.recommendation.evaluationperiodstart). Observed metric property keys combine a metric name and a calculation in the `<MetricName><Calculation>` format (e.g., `CpuUtilizationAverage`, `MemoryUtilizationP95`), so a recommendation derived from several metrics can convey each one, and each is directly queryable.
+
+The table below lists recommended metric names. A metric name that is not listed can be used as long as it is expressed in [PascalCase](#glossary:pascalcase) format.
+
+| Metric Name       | Description                                | Unit of Measure                    |
+| :---------------- | :----------------------------------------- | :--------------------------------- |
+| CpuUtilization    | Processor utilization                      | Percent                            |
+| DiskUtilization   | Storage capacity utilization               | Percent                            |
+| DiskIops          | Storage input/output operations per second | Input/Output Operations per Second |
+| MemoryUtilization | Memory utilization                         | Percent                            |
+| NetworkThroughput | Network throughput for data transfer       | Megabits per second (Mbps)         |
+| RequestCount      | Requests processed                         | Requests                           |
+
+The table below lists recommended calculations. A calculation that is not listed can be used as long as it is expressed in PascalCase format.
+
+| Calculation | Description                                                                                                                                              |
+| :---------- | :------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Average     | Arithmetic mean of the values observed over the evaluation period.                                                                                       |
+| Count       | Number of observations recorded over the evaluation period.                                                                                              |
+| Max         | Largest value observed over the evaluation period.                                                                                                       |
+| Median      | Middle value of the observations recorded over the evaluation period.                                                                                    |
+| Min         | Smallest value observed over the evaluation period.                                                                                                      |
+| P*p*        | Value at the *p*th percentile of the observations recorded over the evaluation period, where *p* is an integer from 1 to 99 (e.g., `P50`, `P95`, `P99`). |
+| Total       | Sum of the values observed over the evaluation period.                                                                                                   |
 
 ## Examples
 
@@ -52,8 +81,9 @@ In addition to the keys above, any FOCUS-defined [SKU Price](#datasets.costandus
     "CoreCount": 2,
     "MemorySize": 8,
     "CpuUtilizationAverage": 4.2,
-    "CpuUtilizationPeak": 11.5,
+    "CpuUtilizationP95": 11.5,
     "MemoryUtilizationAverage": 18.3,
+    "MemoryUtilizationMax": 31.7,
     "x_ConfidenceScore": 0.87
 }
 ```
@@ -72,14 +102,14 @@ Additional properties of a recommendation that are not expressed in other column
 
 ## Content Constraints
 
-| Constraint      | Value                                           |
-| :-------------- | :---------------------------------------------- |
-| Dataset         | [Recommendation](#datasets.recommendation)      |
-| Column type     | Dimension                                       |
-| Feature level   | Mandatory                                       |
-| Allows nulls    | True                                            |
-| Data type       | JSON                                            |
-| Value format    | [Key-Value Format](#attributes.key-valueformat) |
+| Constraint    | Value                                           |
+| :------------ | :---------------------------------------------- |
+| Dataset       | [Recommendation](#datasets.recommendation)      |
+| Column type   | Dimension                                       |
+| Feature level | Mandatory                                       |
+| Allows nulls  | True                                            |
+| Data type     | JSON                                            |
+| Value format  | [Key-Value Format](#attributes.key-valueformat) |
 
 ## Version Introduced
 
