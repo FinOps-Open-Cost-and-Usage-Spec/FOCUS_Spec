@@ -19,6 +19,8 @@ RecommendationDetails MUST adhere to the following requirements:
   * Property key SHOULD remain consistent across comparable recommendations having that property, and the values for this key SHOULD remain in a consistent format.
   * RecommendationDetails MUST include the FOCUS-defined recommendation property when an equivalent property is included as a custom property.
   * RecommendationDetails SHOULD include all FOCUS-defined recommendation properties listed below that are applicable to the recommendation.
+  * Property key SHOULD remain consistent across comparable recommendations having that property, and the values for this key SHOULD remain in a consistent format.
+  * Property key MUST begin with the string "x_" unless it is a FOCUS-defined property.
 * FOCUS-defined recommendation properties MUST adhere to the following requirements:
   * Property key MUST match the spelling and casing specified for the FOCUS-defined property.
   * Property value MUST be of the type specified for that property.
