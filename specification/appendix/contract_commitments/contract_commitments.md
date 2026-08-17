@@ -135,7 +135,7 @@ In this scenario, an enterprise with an existing master agreement with **Aura We
 * **Commercial Logic:** A **Quantity-based**, **Discontinuous** model. The unit of measure is **Seats** rather than a currency value.
 * **Invoice/Provider Alignment:** Unlike the Marketplace example, this is billed directly by the vendor (**StackLens**), yet remains logically associated with the broader Cloud Transformation contract.
 
-#### Commitment 3: Cross-Cloud Data Connector (Tiered Commitment Discount)
+#### Commitment 3: Cross-Cloud Data Connector (Tiered Usage Commitment)
 
 * **Context:** A commitment based on **Data Volume (TB)** specifically for egress traffic between cloud providers.
 * **Commercial Logic:** A **Usage-based**, **Continuous** model tracked on a **Monthly Fulfillment Interval**.
@@ -166,7 +166,7 @@ In this scenario, an enterprise with an existing master agreement with **Aura We
 | **CC Period Start** | `2026-02-01` | `2026-02-01` | `2026-02-01` |
 | **CC Quantity** | `5000.00` | `500.00` | `100.00` |
 | **CC Lifecycle Status** | `Active` | `Active` | `Active` |
-| **CC Type** | `Resource Reservation` | `SaaS Subscription` | `Usage Tier` |
+| **CC Type** | `Resource Reservation` | `SaaS Subscription` | `Tiered Usage Commitment` |
 | **CC Unit** | `GPU-Hours` | `Seats` | `Terabytes` |
 | **Contract ID** | `AGR-44-GAMMA` | `AGR-44-GAMMA` | `AGR-44-GAMMA` |
 | **Contract Period End** | `2029-02-01` | `2029-02-01` | `2029-02-01` |
@@ -219,7 +219,7 @@ This scenario focuses on how the model handles growth beyond initial estimates. 
 | **CC Period Start** | `2026-02-01` | `2026-02-01` | `2026-02-01` |
 | **CC Quantity** | `100.00` | `0.00` | `1000.00` |
 | **CC Lifecycle Status** | `Active` | `Active` | `Exhausted` |
-| **CC Type** | `Usage Tier` | `Usage Tier` | `Volume Commitment` |
+| **CC Type** | `Tiered Usage Commitment` | `Tiered Usage Commitment` | `Volume Commitment` |
 | **CC Unit** | `Terabytes` | `Terabytes` | `Terabytes` |
 | **Contract ID** | `AGR-11-DELTA` | `AGR-11-DELTA` | `AGR-11-DELTA` |
 | **Contract Period End** | `2029-02-01` | `2029-02-01` | `2029-02-01` |
