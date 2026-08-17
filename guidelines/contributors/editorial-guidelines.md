@@ -201,23 +201,25 @@ To ensure consistent language when describing relationships and evaluations betw
 To ensure clarity and prevent ambiguity between distinct domain concepts, normative requirements and standard prose MUST use the following domain-qualified terminology:
 
 * **Tier Terms:**
-  * Terms containing `tier` and `tiered` MUST NOT be used without a qualifier that distinguishes the intended concept from other tier concepts.
-  * The qualifier MUST uniquely identify the intended tier concept by distinguishing it from other tier concepts (e.g., `Pricing` fits both a threshold range and a subscription level, so `Pricing Tier` remains ambiguous).
+  * Terms containing `tier` and `tiered` SHOULD NOT be used without a qualifier that distinguishes the intended concept from other tier concepts.
+  * The qualifier SHOULD uniquely identify the intended tier concept by distinguishing it from other tier concepts (e.g., `Pricing` fits both a threshold range and a subscription level, so `Pricing Tier` remains ambiguous).
 
   * **Example** (illustrative):
 
     * Correct:
-      * Storage Tier
       * Threshold-Based Pricing Tier
-      * Quantity-Based Pricing Tier
-      * Quantity Tier Minimum
-      * Quantity Tier Maximum
       * Threshold-Based Tiered Pricing
       * Quantity-Based Tiered Pricing
+      * Quantity-Based Pricing Tier
+      * Quantity Tier Maximum
+      * Quantity Tier Minimum
+      * Commitment Tier
+      * Tiered Commitment
+      * Storage Tier
     * Incorrect:
       * Tier
-      * Pricing Tier
       * Tiered Pricing
+      * Pricing Tier
       * Quantity Tier
 
 > **Note:** Validation of domain terminology requires contextual understanding of the intended concept; the terminology alone is not always sufficient to determine compliance.
