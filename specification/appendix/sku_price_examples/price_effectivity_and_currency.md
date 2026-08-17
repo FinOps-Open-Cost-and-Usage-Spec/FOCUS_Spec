@@ -18,7 +18,7 @@ Note the following details in the example dataset:
 
 ## Effective Period Boundaries
 
-The two effectivity columns carry meaning as a pair. Either may be null, and a null states that the interval is unbounded on that side, not that the boundary is unknown. Reading either column on its own, or treating a null as missing data, resolves a charge to the wrong price.
+The two effectivity columns carry meaning as a pair. Either may be null, and a null states that the interval is unbounded on that side, not that the boundary is unknown. Reading either column on its own, or treating a null as missing data, may result in misinterpretation of the row.
 
 | SkuPriceEffectiveStart | SkuPriceEffectiveEnd | Validity period | A charge resolves to the record when | Position in the record chain |
 | :--------------------- | :------------------- | :-------------- | :----------------------------------- | :--------------------------- |
@@ -33,7 +33,7 @@ Aura Web offers a burstable virtual machine whose rate changes at the start of 2
 
 Note the following details in the example dataset:
 
-* The burstable virtual machine carries two records. The one in effect today runs from 2026-01-01 to 2027-01-01 and carries a populated SkuPriceEffectiveEnd. The one carrying a null SkuPriceEffectiveEnd does not begin until 2027-01-01. Selecting the record with a null end to read the current price returns the announced rate of 0.088000 rather than the rate of 0.096000 actually in effect. The current price is the record whose interval contains the moment being asked about, which is a different test.
+* The burstable virtual machine carries two records. One record specifies the rate prior to the rate change and therefore has a SkuPriceEffectiveStart of null and a SkuPriceEffectiveEnd of 2027-01-01. This row has a rate of 0.096000.  The second record specifies the rate  after the price change. It's SkuPriceEffectiveStart is 2027-01-01 and its SkuPriceEffectiveEnd is null. Its rate is set to 0.088000. 
 * The 2027 record was created on 2026-07-15T10:22:00Z, and the 2026 record carries that same timestamp in SkuPriceLastUpdated because its end was written when the successor was announced. A record already in effect can acquire an end timestamp without its price changing.
 * The legacy storage tier carries a null SkuPriceEffectiveStart on its earlier record. That rate applied before the rate card's history begins and Aura Web publishes no origin date for it, so the record has no lower boundary and any charge before 2026-04-01 resolves to it.
 * A null SkuPriceEffectiveStart is not a restatement of when the catalog entry was written. The legacy record was created on 2024-03-04T08:15:00Z and still carries no start timestamp. SkuPriceCreated records when the entry was written, and the effectivity columns record when the price applies.
