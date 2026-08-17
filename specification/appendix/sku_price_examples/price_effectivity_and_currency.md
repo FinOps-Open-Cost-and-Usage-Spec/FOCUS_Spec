@@ -33,14 +33,26 @@ Aura Web offers a burstable virtual machine whose rate changes at the start of 2
 
 Note the following details in the example dataset:
 
-* The burstable virtual machine carries two records. One record specifies the rate prior to the rate change and therefore has a SkuPriceEffectiveStart of null and a SkuPriceEffectiveEnd of 2027-01-01. This row has a rate of 0.096000.  The second record specifies the rate  after the price change. It's SkuPriceEffectiveStart is 2027-01-01 and its SkuPriceEffectiveEnd is null. Its rate is set to 0.088000. 
-* The 2027 record was created on 2026-07-15T10:22:00Z, and the 2026 record carries that same timestamp in SkuPriceLastUpdated because its end was written when the successor was announced. A record already in effect can acquire an end timestamp without its price changing.
+* The burstable virtual machine carries two records. One record specifies the rate prior to the rate change and therefore has a SkuPriceEffectiveStart of null and a SkuPriceEffectiveEnd of 2027-01-01. This row has a rate of 0.096000. The second record specifies the rate after the price change. Its SkuPriceEffectiveStart is 2027-01-01 and its SkuPriceEffectiveEnd is null. Its rate is set to 0.088000.
+* The 2027 record was created on 2026-07-15T10:22:00Z, and the current record carries that same timestamp in SkuPriceLastUpdated because its end was written when the successor was announced. A record already in effect can acquire an end timestamp without its price changing.
 * The legacy storage tier carries a null SkuPriceEffectiveStart on its earlier record. That rate applied before the rate card's history begins and Aura Web publishes no origin date for it, so the record has no lower boundary and any charge before 2026-04-01 resolves to it.
 * A null SkuPriceEffectiveStart is not a restatement of when the catalog entry was written. The legacy record was created on 2024-03-04T08:15:00Z and still carries no start timestamp. SkuPriceCreated records when the entry was written, and the effectivity columns record when the price applies.
 * The legacy tier's final record ends at 2026-10-01 with nothing following it, which is how a withdrawal appears. A supersession is identical on the record itself, and the two are separated only by whether another record for the same [SkuId](#datamodel.skuprice.skuid) begins at that timestamp. A [*service provider*](#glossary:service-provider) may partition delivery by region, service, or SKU category, so the absence of a successor within one delivery is not on its own evidence that a SKU was withdrawn.
 * Resolving a charge against these records needs a predicate that tolerates a null on either side. Comparing [ChargePeriodStart](#datamodel.costandusage.chargeperiodstart) against a null boundary yields an undefined result rather than a match, so writing the interval test as a single pair of comparisons silently drops every record that is unbounded on either side. Each side needs its own test: the record matches when its start is null or the charge period start is at or after it, and when its end is null or the charge period start is before it.
 * Because records sharing a combination of ServiceProviderName, SkuPriceId, ContractId, QuantityTierMinimum, and PricingCurrency must not overlap, the null pattern fixes where a record can sit. A record unbounded on both sides is the only record that combination can hold, since any second record would overlap it.
-* The rate card holds no record that is unbounded on both sides. Aura Web dates every price it publishes, so that combination appears in the table above rather than in the data. It describes a *service provider* that publishes no effectivity at all, in which case each combination of the key members carries exactly one record.
+* The rate card holds no record that is unbounded on both sides. Aura Web bounds at least one side of every price it publishes, so that combination appears in the table above rather than in the data. It describes a *service provider* that publishes no effectivity at all, in which case each combination of the key members carries exactly one record.
+
+## Temporary Pricing
+
+A promotional rate applies for a bounded interval and then reverts. Aura Web halved the rate on its managed database for the first quarter of 2026, and the standing rate resumed afterward.
+
+[**CSV Example**](/specification/data/sku_price_examples/sku_price_promotional.csv)
+
+Note the following details in the example dataset:
+
+* Three records describe one price point over time. The standing rate of 0.500000 carries a null SkuPriceEffectiveStart and an end of 2026-01-01, the promotional rate of 0.250000 is closed on both sides at 2026-01-01 and 2026-04-01, and the resumed rate of 0.500000 carries a start of 2026-04-01 and a null SkuPriceEffectiveEnd.
+* The bounded promotional record is what a temporary price looks like: a closed interval sitting between two records that are each open on one side. A rate that has simply always applied carries a null SkuPriceEffectiveStart instead, so existence and a temporary price are not the same shape and do not read the same way.
+* The pre-promotion and resumed records carry the same 0.500000 rate but are distinct records, separated by SkuPriceEffectiveStart, which is a member of the composite key. A charge before 2026-01-01 and a charge on or after 2026-04-01 resolve to different records that happen to agree on price.
 
 ## Multiple Pricing Currencies
 
