@@ -3,3 +3,4 @@
 !INCLUDE "quantity_tier_pricing.md",1
 !INCLUDE "purchase_fees_and_commitment_rates.md",1
 !INCLUDE "price_effectivity_and_currency.md",1
+!INCLUDE "custom_columns.md",1
