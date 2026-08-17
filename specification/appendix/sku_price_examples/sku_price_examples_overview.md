@@ -1,5 +1,7 @@
 # Examples: SKU Price
 
+> Note: The following section is informative and non-normative. It does not define requirements.
+
 The following section contains examples of how a [*service provider*](#glossary:service-provider) may represent a published [*price list*](#glossary:price-list) as a [SKU Price](#datamodel.skuprice) [*FOCUS dataset*](#glossary:FOCUS-dataset). The scenarios use a fictitious service provider, Aura Web, and a fictitious customer, Acme Corp. Provider, service, and identifier names are illustrative.
 
 The scenarios draw on a single rate card rather than a separate dataset per scenario, because several SKU Price constructs are only visible when the records sit side by side. Row uniqueness, tier boundaries, and price effectivity each depend on how a record relates to its neighbors.
