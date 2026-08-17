@@ -344,7 +344,7 @@ Threshold-based tiered pricing should not be confused with a [*tiered commitment
 
 <a name="glossary:tiered-commitment-discount"><b>Tiered Commitment Discount</b></a>
 
-A discount mechanism defined in relation to a prior [*contract commitment*](#glossary:contract-commitment), in which the discount applied to a charge is determined by the applicable [*commitment tier*](#glossary:commitment-tier) reached.
+A discount mechanism defined in relation to a [*contract commitment*](#glossary:contract-commitment), in which the discount applied to a charge is determined by the applicable [*commitment tier*](#glossary:commitment-tier) reached.
 
 <a name="glossary:unit-pricing"><b>Unit Pricing</b></a>
 
