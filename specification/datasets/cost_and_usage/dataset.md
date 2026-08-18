@@ -12,7 +12,7 @@ The specification for the Cost and Usage dataset defines a group of columns that
 | [Allocated Method ID](#datamodel.costandusage.allocatedmethodid)                                     | Dimension          | Conditional | True         | String    |
 | [Allocated Resource ID](#datamodel.costandusage.allocatedresourceid)                                 | Dimension          | Conditional | True         | String    |
 | [Allocated Resource Name](#datamodel.costandusage.allocatedresourcename)                             | Dimension          | Conditional | True         | String    |
-| [Allocated Service Name](#datamodel.costandusage.allocatedservicename)                               | Dimension          | [Conditional](#conditions.includessplitcostallocation) | True         | String    |
+| [Allocated Service Name](#datamodel.costandusage.allocatedservicename)                               | Dimension          | Conditional | True         | String    |
 | [Allocated Tags](#datamodel.costandusage.allocatedtags)                                              | Dimension          | Conditional | True         | JSON      |
 | [Availability Zone](#datamodel.costandusage.availabilityzone)                                        | Dimension          | Recommended   | True         | String    |
 | [Billed Cost](#datamodel.costandusage.billedcost)                                                    | Metric             | Mandatory     | False        | Decimal   |
@@ -49,7 +49,7 @@ The specification for the Cost and Usage dataset defines a group of columns that
 | [Invoice ID](#datamodel.costandusage.invoiceid)                                                      | Dimension          | Conditional | True         | String    |
 | [Invoice Issuer Name](#datamodel.costandusage.invoiceissuername)                                     | Dimension          | Mandatory     | False        | String    |
 | [List Cost](#datamodel.costandusage.listcost)                                                        | Metric             | Mandatory     | False        | Decimal   |
-| [List Unit Price](#datamodel.costandusage.listunitprice)                                             | Metric             | [Conditional](#conditions.includeslistunitprices) | True         | Decimal   |
+| [List Unit Price](#datamodel.costandusage.listunitprice)                                             | Metric             | Conditional | True         | Decimal   |
 | [Pricing Category](#datamodel.costandusage.pricingcategory)                                          | Dimension          | Conditional | True         | String    |
 | [Pricing Currency](#datamodel.costandusage.pricingcurrency)                                          | Dimension          | Conditional | False        | String    |
 | [Pricing Currency Contracted Unit Price](#datamodel.costandusage.pricingcurrencycontractedunitprice) | Metric             | Conditional | True         | Decimal   |
@@ -66,10 +66,10 @@ The specification for the Cost and Usage dataset defines a group of columns that
 | [Service Name](#datamodel.costandusage.servicename)                                                  | Dimension          | Mandatory     | False        | String    |
 | [Service Provider Name](#datamodel.costandusage.serviceprovidername)                                 | Dimension          | Mandatory     | False        | String    |
 | [Service Subcategory](#datamodel.costandusage.servicesubcategory)                                    | Dimension          | Recommended   | False        | String    |
-| [SKU ID](#datamodel.costandusage.skuid)                                                              | Dimension          | [Conditional](#conditions.includesunitpricing) | True         | String    |
-| [SKU Meter](#datamodel.costandusage.skumeter)                                                        | Dimension          | [Conditional](#conditions.includesunitpricing) | True         | String    |
-| [SKU Price Details](#datamodel.costandusage.skupricedetails)                                         | Dimension          | [Conditional](#conditions.includesunitpricing) | True         | JSON      |
-| [SKU Price ID](#datamodel.costandusage.skupriceid)                                                   | Dimension          | [Conditional](#conditions.includesunitpricing) | True         | String    |
+| [SKU ID](#datamodel.costandusage.skuid)                                                              | Dimension          | Conditional | True         | String    |
+| [SKU Meter](#datamodel.costandusage.skumeter)                                                        | Dimension          | Conditional | True         | String    |
+| [SKU Price Details](#datamodel.costandusage.skupricedetails)                                         | Dimension          | Conditional | True         | JSON      |
+| [SKU Price ID](#datamodel.costandusage.skupriceid)                                                   | Dimension          | Conditional | True         | String    |
 | [Sub Account ID](#datamodel.costandusage.subaccountid)                                               | Dimension          | Conditional | True         | String    |
 | [Sub Account Name](#datamodel.costandusage.subaccountname)                                           | Dimension          | Conditional | True         | String    |
 | [Sub Account Type](#datamodel.costandusage.subaccounttype)                                           | Dimension          | Conditional | True         | String    |
