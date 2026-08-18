@@ -36,6 +36,8 @@ The boundary covers more than numbering. Where a round describes the guideline's
 
 **One tested item is not carried forward.** The Supported Features write-back, added as principle 7 by the passes that followed round 9 and tested in round 10, is not a principle in the current guideline. What stands in its place is narrower: Step 2 states a Supported Feature floor that bars `Recommended` and `Optional` for a Directly Dependent Column, and what a Supported Feature does about a column that can be absent is listed as a Deferred Topic belonging to the Supported Features work. Round 10's observations about principle 7 are therefore findings about text the guideline no longer contains, and are retained as history rather than as current state.
 
+**The variance rule has since changed shape.** Round 10 tested a sub-bullet that had two branches, one of which it found unstated, and recorded the completion of that sentence. The guideline no longer has two branches to state: a gate on variance does not lower the level, so the Variance gate signal returns `Mandatory` in every case. Round 10's findings about the admissible branch, and the PricingCurrency split that exposed it, describe a rule the guideline no longer contains.
+
 **No round has run against the restructured text.** Rounds 1 through 10 are evidence about the passages that survive, not validation of the current structure.
 
 ## Why Blind Raters

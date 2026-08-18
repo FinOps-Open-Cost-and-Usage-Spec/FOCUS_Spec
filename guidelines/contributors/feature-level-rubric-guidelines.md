@@ -87,7 +87,7 @@ These hold for every column and do not depend on which column is being decided.
 
    Where the *operating model* permits only one correct value, publishing that value is conformance, not fabrication.
 
-   A value that does not vary is still information. Where it cannot be reconstructed from another column, omitting the column removes that information from the *FOCUS dataset* entirely, and no Condition makes that omission recoverable.
+   A value that does not vary is still information. Omitting the column removes that information from the *FOCUS dataset*, and no Condition makes that omission recoverable.
 
    **Example:** An *operating model* that uses unit pricing has SKUs, so producing `SkuId` identifies them rather than inventing them.
 
@@ -109,9 +109,7 @@ flowchart TD
     F -->|"No"| S2{"Step 2 Applicability<br/>Does the concept exist in every<br/>operating model, and can a value be<br/>produced without substituting<br/>something else for it?"}
     FL --> S2
     S2 -->|"No to either"| C["Conditional"]
-    S2 -->|"Yes to both"| VG{"Does a Condition gate on variance<br/>rather than on absence?"}
-    VG -->|"Yes, and another column in the<br/>dataset determines the value"| C
-    VG -->|"No, or the value is<br/>not recoverable"| M["Mandatory"]
+    S2 -->|"Yes to both"| M["Mandatory"]
     C --> S3["Step 3<br/>Identify or propose the<br/>operating model Condition"]
     M --> S4{"Step 4 Nullability<br/>Is a meaningful value available<br/>on every row where present?"}
     S3 --> S4
@@ -146,8 +144,7 @@ Where a directly dependent column would nonetheless land at `Recommended` or `Op
 
 **Question:** does this concept exist in every *operating model*, and can a value be produced without substituting something else in its place?
 
-* **Yes to both, and no admissible variance gate applies** → `Mandatory`. Proceed to Step 4.
-* **Yes to both, and an admissible variance gate applies** → `Conditional`. Proceed to Step 3. The Variance gate signal in [Applicability Signals](#applicability-signals) decides when such a gate is admissible.
+* **Yes to both** → `Mandatory`. Proceed to Step 4. A Condition that gates on variance does not change this; see the Variance gate signal in [Applicability Signals](#applicability-signals).
 * **No to either** → `Conditional`. Proceed to Step 3. The concept test fails where at least one *operating model* lacks the concept entirely, so no row in its dataset could ever carry a value. The value test fails where the only way to populate the column for such an *operating model* is to substitute something else in its place.
 
 Two properties must both hold for `Mandatory`:
@@ -238,13 +235,15 @@ Where the level is `Conditional`:
 
 Five distinctions decide Step 2 where it is not obvious. Each is a question about the concept, not about any one *data generator*.
 
+The last two work together. The Presence gate or nullability gate signal decides whether a Condition legitimately removes the column. The Variance gate signal names the case where a Condition looks like it does and does not.
+
 | Signal | Question | Verdict | Example |
 | :--- | :--- | :--- | :--- |
 | **Substitution** | Is the only way to fill the column for the *operating models* that lack the concept to substitute or derive some other value? | Substitution needed → `Conditional`. The concept is not universal. | — |
 | **Rule or patch** | Where the column is defined in terms of another column, does that definition apply in every *operating model*, or only in those lacking the concept? | Applies to all → `Mandatory`. Supplied only for those lacking the concept → `Conditional`. Having a fallback settles nothing by itself; which of the two kinds it is settles it. | EffectiveCost is defined against BilledCost for every *operating model*, equal to it for ordinary charges and computed from it where commitments amortize. It never stands in for a concept the *operating model* lacks, so it is a rule, not a patch. |
 | **Absent or not yet occurred** | Is the concept missing from the *operating model*, or present but not yet instantiated by a given *data generator*? | Concept missing → `Conditional`. Concept present, instance not yet produced → `Mandatory`, with Step 4 setting nullability. | Every *operating model* has the concept of a correction to a closed billing period, so a *data generator* that has never issued one still publishes ChargeClass, null on its rows. |
-| **Presence gate or nullability gate** | Does the gate remove the column from the dataset entirely, or only leave some rows without a value? | Whole column absent for some *operating model* → presence gate, so `Conditional`. Values on some rows in every *operating model* → nullability, so `Mandatory` with Step 4 setting `Allows nulls` = `True`, however the gate is worded. | An *operating model* with no regions has no row that could carry RegionId. Every *operating model* has rows that carry a ChargeClass value. |
-| **Variance gate** | Does the Condition gate on two values differing, or on more than one value occurring, rather than on whether the concept exists? | The concept is universal, so applicability alone returns `Mandatory`. The gate is admissible, making the column `Conditional`, only where the column's value is fully determined by another column in the same dataset wherever the Condition is false. Where the value is not recoverable that way, a constant is still a truthful value and the column stays `Mandatory`. | An *operating model* that prices and bills in one currency has a pricing currency equal to its billing currency, so gating on the difference is admissible: the value is recoverable from the billing currency column. **Counter-example:** Where a *FOCUS dataset* carries no other column from which the value could be reconstructed, gating on variance removes information the dataset cannot otherwise convey, and the column stays `Mandatory`. |
+| **Presence gate or nullability gate** | Does the Condition remove the column from the dataset, or leave the column present with no value on some of its rows? | Column removed for some *operating model* → presence gate, so `Conditional`. Column present in every *operating model*, with values missing on some rows → nullability gate, so `Mandatory` with Step 4 setting `Allows nulls` = `True`. Judge a gate by what it does to the column, not by how its Condition is worded. | An *operating model* with no regions has no row that could carry RegionId, so the Condition removes the column. Every *operating model* has rows that carry a ChargeClass value, so the column stays and only its rows vary. |
+| **Variance gate** | Does the Condition gate on two values differing, or on more than one value occurring, rather than on whether the concept exists? | The concept is universal, so applicability returns `Mandatory`, and the gate does not lower it. Where the Condition is false the column carries a constant, and a constant is a truthful value, so the column is present and populated in every *operating model*. A variance gate is therefore not a presence gate. | An *operating model* that prices and bills in one currency has a pricing currency on every row that equals its billing currency. The repeated value is still the pricing currency, so the concept is present and the gate does not make the column absent. |
 
 ## Tie-Breakers and Defaults
 
@@ -286,7 +285,7 @@ The same Column ID is leveled on its own terms in each dataset that defines it.
 | Criteria for `Recommended` and `Optional` | Not settled here. This revision takes no position, does not change what those levels mean, and does not change the level of any column that currently holds one. |
 | Whether a proposed column belongs in the schema | Not part of this revision. Two tests would answer it: whether the data is needed rather than merely useful, and whether a column calculable from other columns earns a place of its own. |
 | What a Supported Feature does about a column that can be absent | Belongs to the Supported Features work. The obligation is prospective: adopting this guideline does not reopen levels of existing columns. What a feature does once a column it depends on is `Conditional`, and therefore absent from some *FOCUS datasets*, is not decided here. Existing Conditional columns that are already dependencies of Supported Features are handled through the Supported Features work. |
-| Applying these criteria to published columns | Scheduled, not settled here. A published column enters the backlog when it is a Directly Dependent Column of a Supported Feature and its presence requirement is a `SHOULD` or a `MAY`. Conditions that gate on variance rather than on absence are re-tested against the recoverability rule in the same pass, since such a gate is admissible only where the value is recoverable from another column in the same dataset. The working group sets the release that takes the backlog. |
+| Applying these criteria to published columns | Scheduled, not settled here. A published column enters the backlog when it is a Directly Dependent Column of a Supported Feature and its presence requirement is a `SHOULD` or a `MAY`. Conditions that gate on variance rather than on absence are re-tested in the same pass, since the Variance gate signal returns `Mandatory` for every column such a Condition currently gates. The working group sets the release that takes the backlog. |
 | The threshold at which a column moves between `Mandatory` and `Conditional` | Companion guideline. Until then, [Tie-Breakers and Defaults](#tie-breakers-and-defaults) applies. |
 | Where the leveling rationale is recorded | Companion guideline. Until then, the pull request or issue. |
 | Informative category-based expectations | Out of scope here, and never expressed as a feature level. |
