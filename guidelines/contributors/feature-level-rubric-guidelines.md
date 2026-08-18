@@ -146,7 +146,8 @@ Where a directly dependent column would nonetheless land at `Recommended` or `Op
 
 **Question:** does this concept exist in every *operating model*?
 
-* **Yes** → `Mandatory`. Proceed to Step 4.
+* **Yes, and no admissible variance gate applies** → `Mandatory`. Proceed to Step 4.
+* **Yes, and an admissible variance gate applies** → `Conditional`. Proceed to Step 3. The Variance gate signal in [Applicability Signals](#applicability-signals) decides when such a gate is admissible.
 * **No: at least one *operating model* lacks the concept entirely, so no row in its dataset could ever carry a value** → `Conditional`. Proceed to Step 3.
 
 Two properties must both hold for `Mandatory`:
@@ -209,23 +210,23 @@ Whether an *operating model* can produce the concept at all is the dataset-wide 
 
 ### Step 5: Record the outcome
 
-**Column presence requirement**, in the dataset's normative requirements:
+**Column presence requirement**, in the dataset's normative requirements.
 
-* `Mandatory`:
+Where the level is `Mandatory`:
 
-  ```markdown
-  {DatasetId} MUST include [{ColumnId}](#datamodel.{datasetid}.{columnid}).
-  ```
+```markdown
+{DatasetId} MUST include [{ColumnId}](#datamodel.{datasetid}.{columnid}).
+```
 
-  **Example:** `CostAndUsage MUST include [BilledCost](#datamodel.costandusage.billedcost).`
+**Example:** `CostAndUsage MUST include [BilledCost](#datamodel.costandusage.billedcost).`
 
-* `Conditional`:
+Where the level is `Conditional`:
 
-  ```markdown
-  {DatasetId} MUST include [{ColumnId}](#datamodel.{datasetid}.{columnid}) when the *operating model* [{condition display name}](#conditions.{conditionid}).
-  ```
+```markdown
+{DatasetId} MUST include [{ColumnId}](#datamodel.{datasetid}.{columnid}) when the *operating model* [{condition display name}](#conditions.{conditionid}).
+```
 
-  **Example:** `CostAndUsage MUST include [RegionId](#datamodel.costandusage.regionid) when the *operating model* [includes regions](#conditions.includesregions).`
+**Example:** `CostAndUsage MUST include [RegionId](#datamodel.costandusage.regionid) when the *operating model* [includes regions](#conditions.includesregions).`
 
 **Content Constraints**, in the column definition: `Feature level` set to the Step 2 result, linked to the Condition where the level is `Conditional`; `Allows nulls` set to the Step 4 result.
 
