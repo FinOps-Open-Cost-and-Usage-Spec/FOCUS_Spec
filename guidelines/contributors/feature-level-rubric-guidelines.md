@@ -132,7 +132,7 @@ flowchart TD
     class S5 out
 ```
 
-> **Note:** The diagram shows the decision spine. [Applicability Signals](#applicability-signals) and [Tie-Breakers and Defaults](#tie-breakers-and-defaults) govern the cases where a step is not obvious, including the derivation rule in Principle 5 and the `Conditional` default at the boundary.
+> **Note:** The diagram shows the decision spine, and does not carry every rule that can change the outcome. Principle 5 constrains a derived column against its sources, [Applicability Signals](#applicability-signals) governs the cases where Step 2 is not obvious, and [Tie-Breakers and Defaults](#tie-breakers-and-defaults) settles the boundary. A column can reach a different level from the diagram alone than from the full text, and the text governs.
 
 ### Step 1: State the concept
 
@@ -144,11 +144,11 @@ Write down the exact concept the column carries, as its Description and its glos
 
 Where a directly dependent column would nonetheless land at `Recommended` or `Optional`, one of the two is wrong: either the level, or the feature's dependency list. Resolve that before the column ships, and record which of the two was changed.
 
-**Question:** does this concept exist in every *operating model*?
+**Question:** does this concept exist in every *operating model*, and can a value be produced without substituting something else in its place?
 
-* **Yes, and no admissible variance gate applies** → `Mandatory`. Proceed to Step 4.
-* **Yes, and an admissible variance gate applies** → `Conditional`. Proceed to Step 3. The Variance gate signal in [Applicability Signals](#applicability-signals) decides when such a gate is admissible.
-* **No: at least one *operating model* lacks the concept entirely, so no row in its dataset could ever carry a value** → `Conditional`. Proceed to Step 3.
+* **Yes to both, and no admissible variance gate applies** → `Mandatory`. Proceed to Step 4.
+* **Yes to both, and an admissible variance gate applies** → `Conditional`. Proceed to Step 3. The Variance gate signal in [Applicability Signals](#applicability-signals) decides when such a gate is admissible.
+* **No to either** → `Conditional`. Proceed to Step 3. The concept test fails where at least one *operating model* lacks the concept entirely, so no row in its dataset could ever carry a value. The value test fails where the only way to populate the column for such an *operating model* is to substitute something else in its place.
 
 Two properties must both hold for `Mandatory`:
 
@@ -248,7 +248,7 @@ Five distinctions decide Step 2 where it is not obvious. Each is a question abou
 
 ## Tie-Breakers and Defaults
 
-* **The default is `Conditional`.** Where Step 2 does not clearly return `Mandatory`, the column is `Conditional`.
+* **The default is `Conditional`.** Where Step 2 does not return `Mandatory`, the column is `Conditional`.
 
 * **Anything at the boundary is `Conditional`** until the companion guideline calibrates the boundary against real *data generator* data.
 
@@ -273,7 +273,7 @@ Five distinctions decide Step 2 where it is not obvious. Each is a question abou
 
 * **Step 1, Concept.** The isolated geographic area a *resource* or *service* is deployed in.
 * **Step 2, Applicability.** An *operating model* without customer-visible regions has no row that could carry a value. Presence gate, so `Conditional`.
-* **Step 3, Condition.** [Includes Regions](#conditions.includesregions) exists and marks exactly where the concept exists. No new Condition needed.
+* **Step 3, Condition.** [Includes Regions](../../specification/conditions/includesregions.md) exists and marks exactly where the concept exists. No new Condition needed.
 * **Step 4, Nullability.** Where the *operating model* includes regions, a region is available on many rows but not all, so `Allows nulls` = `True`.
 * **Step 5, Record.** `CostAndUsage MUST include [RegionId](#datamodel.costandusage.regionid) when the *operating model* [includes regions](#conditions.includesregions).` Content Constraints: `Feature level` = `Conditional`, linked to Includes Regions; `Allows nulls` = `True`.
 
