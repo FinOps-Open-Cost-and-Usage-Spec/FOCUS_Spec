@@ -8,9 +8,11 @@ Three optimization questions follow from that pairing. The first is what negotia
 
 The second is whether consumption sits in the right quantity tier. Quantity Tier Minimum and Quantity Tier Maximum bound the quantity envelope a rate applies to, measured in the Pricing Unit. Quantity Tier Minimum is the exclusive lower bound and Quantity Tier Maximum is the inclusive upper bound, so a quantity falls in a tier when it is strictly greater than the minimum and no greater than the maximum. The highest tier carries a null Quantity Tier Maximum. Because adjacent tiers meet at a shared boundary with no gap, the tier above a given tier is the one whose Quantity Tier Minimum equals that tier's Quantity Tier Maximum, which is what allows the distance to the next rate to be measured. A tier is identified by its boundaries rather than by a published label, so reconciliation against a public pricing page matches on the quantity range the rate applies to.
 
-The third is which purchase term to commit to. Purchase Duration Type gives the categorical term of a purchase, and Purchase Payment Model gives how the obligation is settled across "No Upfront", "Partial Upfront", and "All Upfront". Both are populated where Charge Category is "Purchase" and are null where it is "Usage", so the fees for each available term and settlement structure can be listed side by side and weighed against the consumption that would run under them.
+The third is which purchase term to commit to. Purchase Duration Type gives the categorical term of a purchase, and Purchase Payment Model gives how the obligation is settled across "No Upfront", "Partial Upfront", and "All Upfront". Purchase Payment Model is populated where Charge Category is "Purchase", and Purchase Duration Type may be null there when the *service provider* publishes no standard term. Both are null where Charge Category is "Usage" or "Credit". The fees for each available term and settlement structure can therefore be listed side by side and weighed against the consumption that would run under them.
 
 > **Note:** A "Partial Upfront" purchase is typically represented across more than one SKU Price record, one for the upfront fee and a separate record for the recurring fee. Summing the price across the records for a single purchase, rather than reading a single record, is what produces the total obligation for that term.
+
+The [Verification, Comparison, and Fluctuation Tracking of Unit Prices](#supportedfeatures.verificationcomparisonandfluctuationtrackingofunitprices) supported feature reads List Unit Price and Contracted Unit Price as recorded on a charge in Cost and Usage. This feature reads them from the published catalog, so the two answer different questions: what an organization was charged, against what a *service provider* offers.
 
 ### Reading SKU Price ID and the Effective Date Columns
 
@@ -25,8 +27,8 @@ This feature applies wherever a *service provider* publishes a SKU Price dataset
 Each of the three capabilities above rests on a conditional column, and each narrows independently:
 
 * Comparing negotiated rates against public rates uses Contracted Unit Price and Contract ID, present when the [*operating model*](#glossary:operating-model) [includes contract commitments](#conditions.includescontractcommitments). Where they are absent, every published price is a public rate carried in List Unit Price, so there is no negotiated rate to evaluate and this capability does not apply.
-* Quantity tier analysis uses Quantity Tier Minimum and Quantity Tier Maximum, present when the *operating model* [includes quantity tier pricing](#conditions.includesquantitytierpricing). Where they are absent, a SKU Price ID carries one rate that applies at any quantity, so consumption cannot sit in the wrong tier and this capability does not apply.
-* Purchase term evaluation uses Purchase Duration Type and Purchase Payment Model, present when the *operating model* [includes purchases](#conditions.includespurchases). Where they are absent, the catalog prices consumption only, Charge Category carries the value "Usage" on every row, and this capability does not apply.
+* Quantity tier analysis uses Quantity Tier Minimum and Quantity Tier Maximum, present when the *operating model* [includes quantity tier pricing](#conditions.includesquantitytierpricing). Where they are absent, a SKU Price ID carries one rate that applies at any quantity, so consumption cannot sit in the wrong tier and this capability does not apply. Repricing consumption at a contracted rate resolves the tier through the same two columns; where they are absent, an agreement carries one rate per SKU Price ID and the tier predicates drop out.
+* Purchase term evaluation uses Purchase Duration Type and Purchase Payment Model, present when the *operating model* [includes purchases](#conditions.includespurchases). Where they are absent, the catalog publishes no acquisition fees, no row carries a Charge Category of "Purchase", and this capability does not apply.
 
 List Unit Price is present in every SKU Price dataset instance, so reading and comparing public rates over time holds regardless of which of the three conditions a *service provider* meets.
 
@@ -75,8 +77,6 @@ The following queries use ANSI SQL and run against any major database engine wit
 
 This query takes an input of a point in time and reports, for each agreement, how far the negotiated rate sits below the public rate. Both prices are properties of the same record, so no self-join is needed and no reassembly step can pair the wrong rows. What it returns is the reduction attributable to negotiation, not the total reduction an organization realizes on that SKU, since any further reduction from applying a *commitment discount* is recognized in Effective Cost.
 
-Records where List Unit Price is null are excluded, since a SKU offered only under a contract has no public rate to measure the reduction against.
-
 ```sql
 SELECT
   ServiceProviderName,
@@ -90,7 +90,6 @@ SELECT
   (ListUnitPrice - ContractedUnitPrice) / NULLIF(ListUnitPrice, 0) AS DiscountRate
 FROM SkuPrice
 WHERE ContractedUnitPrice IS NOT NULL
-  AND ListUnitPrice IS NOT NULL
   AND ChargeCategory = 'Usage'
   AND (SkuPriceEffectiveStart IS NULL OR SkuPriceEffectiveStart <= ?)
   AND (SkuPriceEffectiveEnd IS NULL OR SkuPriceEffectiveEnd > ?)
@@ -101,7 +100,7 @@ ORDER BY DiscountRate DESC
 
 This query takes inputs of a time range via Charge Period Start and Charge Period End, aggregates consumption per SKU Price ID over that range, and returns the tier each aggregated quantity falls within. The quantity is aggregated before the tier is resolved, because a tier boundary is evaluated against the quantity accumulated over the pricing period rather than against the quantity on a single charge.
 
-The join carries the effective date window so that consumption matches the price that applied during the range, not every price ever published under that SKU Price ID.
+The join carries the effective date window so that consumption matches the price that applied during the range, not every price ever published under that SKU Price ID. A SKU Price ID that also carries a negotiated rate on the resolved tier returns one row per agreement, and Contract ID is null on the public record.
 
 > **Note:** Whether the resolved rate applies only to the units inside that tier or retroactively to all units consumed is a property of the published pricing terms for the offering rather than of the tier boundaries, so the tier returned here identifies the applicable rate rather than recalculating the charge.
 
@@ -124,6 +123,7 @@ SELECT
   PQ.PricingUnit,
   PQ.TotalPricingQuantity,
   PQ.TotalEffectiveCost,
+  SP.ContractId,
   SP.QuantityTierMinimum,
   SP.QuantityTierMaximum,
   SP.ListUnitPrice,
@@ -143,9 +143,12 @@ ORDER BY PQ.TotalEffectiveCost DESC
 
 This query takes an input of a point in time and reports, for each tier that has a tier above it, how much additional quantity separates the two and what the rate becomes on the other side. Adjacent tiers meet at a shared boundary value, so the next tier is the record whose Quantity Tier Minimum equals the current record's Quantity Tier Maximum. A tier with a null Quantity Tier Maximum is the highest tier and has no successor, so it does not appear.
 
+The two records are matched on Contract ID as well as on the boundary, so a public tier pairs with the public tier above it and a negotiated tier with the negotiated tier above it. The same point in time is supplied to the bounds of both records, so a superseded or forward-dated tier is not returned as the successor of a tier in force.
+
 ```sql
 SELECT
   CURRENT_TIER.SkuPriceId,
+  CURRENT_TIER.ContractId,
   CURRENT_TIER.PricingUnit,
   CURRENT_TIER.PricingCurrency,
   CURRENT_TIER.QuantityTierMinimum AS CurrentTierMinimum,
@@ -157,9 +160,16 @@ SELECT
   CURRENT_TIER.QuantityTierMaximum - CURRENT_TIER.QuantityTierMinimum AS TierWidth
 FROM SkuPrice CURRENT_TIER
 INNER JOIN SkuPrice NEXT_TIER
-  ON CURRENT_TIER.SkuPriceId = NEXT_TIER.SkuPriceId
+  ON CURRENT_TIER.ServiceProviderName = NEXT_TIER.ServiceProviderName
+  AND CURRENT_TIER.SkuPriceId = NEXT_TIER.SkuPriceId
   AND CURRENT_TIER.PricingCurrency = NEXT_TIER.PricingCurrency
   AND CURRENT_TIER.QuantityTierMaximum = NEXT_TIER.QuantityTierMinimum
+  AND (
+    CURRENT_TIER.ContractId = NEXT_TIER.ContractId
+    OR (CURRENT_TIER.ContractId IS NULL AND NEXT_TIER.ContractId IS NULL)
+  )
+  AND (NEXT_TIER.SkuPriceEffectiveStart IS NULL OR NEXT_TIER.SkuPriceEffectiveStart <= ?)
+  AND (NEXT_TIER.SkuPriceEffectiveEnd IS NULL OR NEXT_TIER.SkuPriceEffectiveEnd > ?)
 WHERE CURRENT_TIER.QuantityTierMaximum IS NOT NULL
   AND (CURRENT_TIER.SkuPriceEffectiveStart IS NULL OR CURRENT_TIER.SkuPriceEffectiveStart <= ?)
   AND (CURRENT_TIER.SkuPriceEffectiveEnd IS NULL OR CURRENT_TIER.SkuPriceEffectiveEnd > ?)
@@ -195,6 +205,8 @@ This query takes inputs of a time range via Charge Period Start and Charge Perio
 
 Consumption already covered by a *commitment discount* is excluded. Its Effective Cost already reflects that commitment while Contracted Unit Price does not, so including it would subtract the two against different baselines and report the agreement as raising cost rather than lowering it.
 
+The join resolves the quantity tier the aggregated consumption falls into, so an agreement that negotiated several tiers reprices at the one rate that applies rather than once per tier.
+
 ```sql
 WITH ObservedUsage AS (
   SELECT
@@ -216,6 +228,8 @@ SELECT
   OU.PricingUnit,
   OU.TotalPricingQuantity,
   OU.TotalEffectiveCost,
+  SP.QuantityTierMinimum,
+  SP.QuantityTierMaximum,
   SP.ContractedUnitPrice,
   SP.PricingCurrency,
   OU.TotalPricingQuantity * SP.ContractedUnitPrice AS ProjectedContractedAmount,
@@ -224,6 +238,8 @@ FROM ObservedUsage OU
 INNER JOIN SkuPrice SP
   ON OU.SkuPriceId = SP.SkuPriceId
   AND OU.PricingUnit = SP.PricingUnit
+  AND OU.TotalPricingQuantity > SP.QuantityTierMinimum
+  AND (SP.QuantityTierMaximum IS NULL OR OU.TotalPricingQuantity <= SP.QuantityTierMaximum)
   AND (SP.SkuPriceEffectiveStart IS NULL OR OU.EarliestChargePeriodStart >= SP.SkuPriceEffectiveStart)
   AND (SP.SkuPriceEffectiveEnd IS NULL OR OU.EarliestChargePeriodStart < SP.SkuPriceEffectiveEnd)
 WHERE SP.ContractId = ?

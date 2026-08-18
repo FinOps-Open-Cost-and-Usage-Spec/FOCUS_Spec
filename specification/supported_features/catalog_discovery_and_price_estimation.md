@@ -6,7 +6,7 @@ FOCUS supports the discovery of the prices a [*service provider*](#glossary:serv
 
 List Unit Price is the public rate for a single Pricing Unit, denominated in the Pricing Currency, so an estimate is the planned quantity in that Pricing Unit multiplied by List Unit Price. Pricing Currency Category states whether that product is a financial amount or a balance in a [*consumption currency*](#glossary:consumption-currency) the *service provider* issues. A "Consumable" rate yields a virtual balance and needs a further conversion before it can be read as money, so an estimate that mixes the two categories without converting is not a monetary total.
 
-Charge Category separates the rate to consume something ("Usage") from the fee to acquire it ("Purchase"), so a forecast keeps recurring consumption apart from acquisition fees rather than summing the two.
+Charge Category separates the rate to consume something ("Usage") from the fee to acquire it ("Purchase") and from the unit value of a granted credit ("Credit"), so a forecast keeps recurring consumption apart from acquisition fees rather than summing them.
 
 SKU Price Eligibility carries the inclusion and exclusion logic that determines which entities may receive a given price. A published catalog commonly contains prices an organization cannot obtain, so evaluating eligibility before pricing an architecture is what separates an achievable estimate from a theoretical one.
 
@@ -80,7 +80,6 @@ FROM SkuPrice
 WHERE ServiceProviderName = ?
   AND PricingServiceName = ?
   AND ChargeCategory = 'Usage'
-  AND ListUnitPrice IS NOT NULL
   AND (SkuPriceEffectiveStart IS NULL OR SkuPriceEffectiveStart <= ?)
   AND (SkuPriceEffectiveEnd IS NULL OR SkuPriceEffectiveEnd > ?)
 ORDER BY SkuId, ListUnitPrice
@@ -108,8 +107,7 @@ SELECT
 FROM PlannedUsage PU
 INNER JOIN SkuPrice SP
   ON PU.SkuPriceId = SP.SkuPriceId
-WHERE SP.ListUnitPrice IS NOT NULL
-  AND (SP.SkuPriceEffectiveStart IS NULL OR SP.SkuPriceEffectiveStart <= ?)
+WHERE (SP.SkuPriceEffectiveStart IS NULL OR SP.SkuPriceEffectiveStart <= ?)
   AND (SP.SkuPriceEffectiveEnd IS NULL OR SP.SkuPriceEffectiveEnd > ?)
 ORDER BY EstimatedAmount DESC
 ```
@@ -145,9 +143,9 @@ WHERE ServiceProviderName = ?
 ORDER BY SkuPriceId
 ```
 
-### Separate Recurring Usage Rates from Purchase Fees
+### Separate Usage Rates from Purchase Fees and Credit Values
 
-This query takes inputs of a service provider and a point in time, then reports the catalog split between rates that price consumption and fees that price acquisition. A forecast built only on "Usage" rates omits the acquisition fees an architecture also incurs, so the two are counted separately rather than summed.
+This query takes inputs of a service provider and a point in time, then reports how the catalog divides across Charge Category. A forecast built only on "Usage" rates omits the acquisition fees an architecture also incurs, so each category is counted separately rather than summed.
 
 ```sql
 SELECT
@@ -159,7 +157,6 @@ SELECT
   MAX(ListUnitPrice) AS HighestListUnitPrice
 FROM SkuPrice
 WHERE ServiceProviderName = ?
-  AND ListUnitPrice IS NOT NULL
   AND (SkuPriceEffectiveStart IS NULL OR SkuPriceEffectiveStart <= ?)
   AND (SkuPriceEffectiveEnd IS NULL OR SkuPriceEffectiveEnd > ?)
 GROUP BY ChargeCategory, PricingUnit, PricingCurrency
@@ -204,7 +201,6 @@ SELECT
 FROM SkuPrice
 WHERE PricingServiceName = ?
   AND ChargeCategory = 'Usage'
-  AND ListUnitPrice IS NOT NULL
   AND (SkuPriceEffectiveStart IS NULL OR SkuPriceEffectiveStart <= ?)
   AND (SkuPriceEffectiveEnd IS NULL OR SkuPriceEffectiveEnd > ?)
 ORDER BY SkuPriceId, ListUnitPrice
