@@ -150,7 +150,7 @@ Where a directly dependent column would nonetheless land at `Recommended` or `Op
 Two properties must both hold for `Mandatory`:
 
 * the concept exists in every *operating model*, and
-* a value can be produced without substituting or deriving something else in its place.
+* a value can be produced without substituting something else in its place.
 
 Together, these mean that no reasonable operating model would have a dataset instance where the column carries no value on any row.
 
