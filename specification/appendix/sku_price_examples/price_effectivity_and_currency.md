@@ -27,7 +27,7 @@ The two effectivity columns carry meaning as a pair. Either may be null, and a n
 | Null | Populated | Up to the end timestamp | The charge period start is before the end timestamp | The first record |
 | Populated | Populated | A closed interval | The charge period start is at or after the start timestamp and before the end timestamp | Any position |
 
-Aura Web offers a burstable virtual machine whose rate changes at the start of 2027, and a legacy object storage tier it is withdrawing.
+Aura Web offers a burstable virtual machine whose rate changes at the start of 2027, a legacy object storage tier it is withdrawing, and a shared-core virtual machine it has offered at one rate since the catalog began.
 
 [**CSV Example**](/specification/data/sku_price_examples/sku_price_boundaries.csv)
 
@@ -40,7 +40,7 @@ Note the following details in the example dataset:
 * The legacy tier's final record ends at 2026-10-01 with nothing following it, which is how a withdrawal appears. A supersession is identical on the record itself, and the two are separated only by whether another record for the same [SkuId](#datamodel.skuprice.skuid) begins at that timestamp. A [*service provider*](#glossary:service-provider) may partition delivery by region, service, or SKU category, so the absence of a successor within one delivery is not on its own evidence that a SKU was withdrawn.
 * Resolving a charge against these records needs a predicate that tolerates a null on either side. Comparing [ChargePeriodStart](#datamodel.costandusage.chargeperiodstart) against a null boundary yields an undefined result rather than a match, so writing the interval test as a single pair of comparisons silently drops every record that is unbounded on either side. Each side needs its own test: the record matches when its start is null or the charge period start is at or after it, and when its end is null or the charge period start is before it.
 * Because records sharing a combination of ServiceProviderName, SkuPriceId, ContractId, QuantityTierMinimum, and PricingCurrency must not overlap, the null pattern fixes where a record can sit. A record unbounded on both sides is the only record that combination can hold, since any second record would overlap it. That combination is the composite key without SkuPriceEffectiveStart, so records sharing it stay distinct on their start timestamps while their validity periods are barred from overlapping.
-* The rate card holds no record that is unbounded on both sides. Aura Web bounds at least one side of every price it publishes, so that combination appears in the table above rather than in the data. It describes a *service provider* that publishes no effectivity at all, in which case each combination of the key members carries exactly one record.
+* The shared-core virtual machine completes the set. Its single record carries a null SkuPriceEffectiveStart and a null SkuPriceEffectiveEnd, priced at 0.012000 since the catalog began, so it applies to every charge and is the only record its key combination can hold. This is what a *service provider* that publishes no effectivity at all looks like: one record for each combination of the key members, unbounded on both sides.
 
 ## Temporary Pricing
 
