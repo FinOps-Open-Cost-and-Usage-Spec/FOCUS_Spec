@@ -1,6 +1,6 @@
 # SKU Price
 
-The SKU Price dataset is the primary dataset for standardizing [*service provider*](#glossary:service-provider) catalog rates, multipliers, and negotiated prices. This dataset enables practitioners to perform precise rate lookups, analyze commitment discounts, and understand the cost mechanics of payable vs consumable prices.
+The SKU Price dataset is the primary dataset for standardizing [*service provider*](#glossary:service-provider) catalog rates, multipliers, and negotiated prices. This dataset enables practitioners to perform precise rate lookups, analyze commitment discounts, and understand the cost mechanics of payable and consumable prices.
 
 The SKU Price dataset represents prices as of the date the dataset is captured. Providing a historical record of prior prices is the practitioner's responsibility rather than a guaranteed delivery; practitioners can reconstruct price history by retaining successive snapshots and comparing them using [SKU Price Effective Start](#datamodel.skuprice.skupriceeffectivestart) and [SKU Price Effective End](#datamodel.skuprice.skupriceeffectiveend). The dataset reflects the prices a *service provider* offers, independent of whether a price was used, and is not derived from Cost and Usage data.
 
@@ -15,7 +15,7 @@ The columns are presented in alphabetical order.
 | [Charge Category](#datamodel.skuprice.chargecategory)                              | Dimension   | Mandatory   | False        | String    |
 | [Contract ID](#datamodel.skuprice.contractid)                                        | Dimension   | [Conditional](#conditions.includescontractcommitments)         | True         | String    |
 | [Contracted Unit Price](#datamodel.skuprice.contractedunitprice)                     | Metric      | [Conditional](#conditions.includescontractcommitments)         | True         | Decimal   |
-| [List Unit Price](#datamodel.skuprice.listunitprice)                                 | Metric      | Mandatory                                                      | True         | Decimal   |
+| [List Unit Price](#datamodel.skuprice.listunitprice)                                 | Metric      | Mandatory                                                      | False        | Decimal   |
 | [Pricing Currency](#datamodel.skuprice.pricingcurrency)                              | Dimension   | Mandatory                                                      | False        | String    |
 | [Pricing Currency Category](#datamodel.skuprice.pricingcurrencycategory)                            | Dimension   | Mandatory                                                      | False        | String    |
 | [Pricing Region ID](#datamodel.skuprice.pricingregionid)                             | Dimension   | [Conditional](#conditions.includesregions)                     | True        | String    |
@@ -74,8 +74,8 @@ SkuPrice MUST adhere to the following requirements:
   * SkuPrice SHOULD include [*custom columns*](#glossary:custom-column) needed to identify specific rate card routing logic when [*FOCUS columns*](#glossary:FOCUS-column) are not sufficient.
 * SkuPrice MUST conform to [DatasetCompleteness](#attributes.datasetcompleteness) requirements.
 * SkuPrice MUST conform to [DatasetConfiguration](#attributes.datasetconfiguration) requirements.
-* SkuPrice MUST maintain row uniqueness across the composite key of ServiceProviderName, SkuPriceId, ContractId, QuantityTierMinimum, SkuPriceEffectiveStart, and PricingCurrency.
-* SkuPrice MUST treat two records with a null value in the same composite-key member as equal in that member when evaluating row uniqueness.
+* SkuPrice MUST NOT contain more than one record with the same combination of ServiceProviderName, SkuPriceId, ContractId, QuantityTierMinimum, SkuPriceEffectiveStart, and PricingCurrency.
+* SkuPrice MUST NOT contain more than one record in which the same members of that combination are null and all remaining members are equal.
 * SkuPrice MUST NOT contain records whose validity periods, defined by SkuPriceEffectiveStart and SkuPriceEffectiveEnd, overlap for the same combination of ServiceProviderName, SkuPriceId, ContractId, QuantityTierMinimum, and PricingCurrency.
 * SkuPrice MUST contain at least one record for every [SkuPriceId](#datamodel.skuprice.skupriceid) referenced in the [CostAndUsage](#datamodel.costandusage) dataset.
 * SkuPrice *FOCUS columns* MUST conform to [FocusColumnHandling](#attributes.focuscolumnhandling) requirements.
