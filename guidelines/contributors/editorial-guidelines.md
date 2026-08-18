@@ -198,31 +198,30 @@ To ensure consistent language when describing relationships and evaluations betw
 
 ### Domain Terminology
 
-To ensure clarity and prevent ambiguity between distinct domain concepts, normative requirements and standard prose MUST use the following domain-qualified terminology:
+To ensure clarity and prevent ambiguity between distinct domain concepts, normative requirements and standard prose MUST use sufficiently domain-qualified terminology.
 
 * **Tier Terms:**
-  * Terms containing `tier` and `tiered` SHOULD NOT be used without a qualifier that distinguishes the intended concept from other tier concepts.
-  * The qualifier SHOULD uniquely identify the intended tier concept by distinguishing it from other tier concepts (e.g., `Pricing` fits both a threshold range and a subscription level, so `Pricing Tier` remains ambiguous).
+  * Terms containing `tier` or `tiered` SHOULD be qualified sufficiently to distinguish the intended concept from other tier concepts (e.g., `Pricing` may refer to both threshold-based pricing and subscription levels, so `Pricing Tier` remains ambiguous).
+  * Schema and column names MAY use abbreviated tier terminology when the schema context makes the intended concept unambiguous (e.g., `Quantity Tier Maximum`, `Quantity Tier Minimum`).
 
   * **Example** (illustrative):
-
     * Correct:
-      * Threshold-Based Pricing Tier
-      * Threshold-Based Tiered Pricing
-      * Quantity-Based Tiered Pricing
-      * Quantity-Based Pricing Tier
-      * Quantity Tier Maximum
-      * Quantity Tier Minimum
-      * Commitment Tier
-      * Tiered Commitment
-      * Storage Tier
+      * `Threshold-Based Pricing Tier`
+      * `Threshold-Based Tiered Pricing`
+      * `Quantity-Based Tiered Pricing`
+      * `Quantity-Based Pricing Tier`
+      * `Quantity Tier Maximum`
+      * `Quantity Tier Minimum`
+      * `Commitment Tier`
+      * `Tiered Commitment Discount`
+      * `Storage Service Tier`
     * Incorrect:
-      * Tier
-      * Tiered Pricing
-      * Pricing Tier
-      * Quantity Tier
+      * `Tier`
+      * `Tiered Pricing`
+      * `Pricing Tier`
+      * `Quantity Tier`
 
-> **Note:** Validation of domain terminology requires contextual understanding of the intended concept; the terminology alone is not always sufficient to determine compliance.
+> **Note:** The appropriate qualification depends on the intended domain concept and context; terminology alone is not always sufficient to determine compliance.
 
 ### Bullet Structure
 

@@ -58,7 +58,7 @@ The following keys should be used when applicable to facilitate cross-SKU and cr
 | NetworkMaxThroughput     | Network maximum sustained throughput for data transfer<sup>1</sup>       | Numeric          | Measure: Megabits per second (Mbps)                   |
 | OperatingSystem          | Operating system family<sup>3</sup>                                      | String           | Examples: "Linux", "MacOS", "Windows"                 |
 | Redundancy               | Level of redundancy offered by the SKU                                   | String           | Examples: "Local", "Zonal", "Global"                  |
-| StorageClass             | Storage class or storage tier provided                                   | String           | Examples: "Hot", "Archive", "Nearline"                |
+| StorageClass             | Storage class or storage service tier provided                           | String           | Examples: "Hot", "Archive", "Nearline"                |
 
 Notes
 <br><sup>1</sup> In the case of "burstable" SKUs offering variable levels of performance, the baseline or guaranteed value should be used.
