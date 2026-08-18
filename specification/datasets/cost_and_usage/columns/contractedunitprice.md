@@ -23,6 +23,7 @@ ContractedUnitPrice MUST adhere to the following requirements:
 * When ContractedUnitPrice is not null, ContractedUnitPrice MUST adhere to the following requirements:
   * ContractedUnitPrice MUST be a non-negative decimal value.
   * ContractedUnitPrice MUST be denominated in the BillingCurrency.
+  * ContractedUnitPrice MUST represent the negotiated unit price per PricingUnit for the SKU Price identified by the given SkuPriceId when negotiated unit price adjustments exist for that SKU Price.
   * ContractedUnitPrice MUST reflect negotiated unit price adjustments for the *SKU Price* identified by the given SkuPriceId, independent of any discount-bearing *commitment programs* being applied to the *charge*.
   * ContractedUnitPrice MUST NOT reflect any unit price impact conditional on a discount-bearing *commitment program* being applied to the *charge*.
   * ContractedUnitPrice MUST equal ListUnitPrice when no negotiated unit price adjustments apply to the *charge*.
