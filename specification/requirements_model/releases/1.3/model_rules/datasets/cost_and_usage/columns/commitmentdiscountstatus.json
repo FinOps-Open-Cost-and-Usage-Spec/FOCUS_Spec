@@ -181,7 +181,8 @@
         ]
       },
       "Dependencies": [
-        "CAU-CommitmentDiscountId-C-000-C"
+        "CAU-CommitmentDiscountId-C-000-C",
+        "CAU-ChargeCategory-C-002-M"
       ]
     }
   },

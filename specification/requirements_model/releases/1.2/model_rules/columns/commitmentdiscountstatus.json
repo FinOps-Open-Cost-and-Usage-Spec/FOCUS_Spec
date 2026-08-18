@@ -151,7 +151,8 @@
         ]
       },
       "Dependencies": [
-        "CommitmentDiscountId-C-000-C"
+        "CommitmentDiscountId-C-000-C",
+        "ChargeCategory-C-002-M"
       ]
     }
   },
