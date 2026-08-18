@@ -18,7 +18,6 @@ Conditions are sorted alphabetically by name.
 | [Includes Multiple Billing Account Types](#conditions.includesmultiplebillingaccounttypes) | Account | Operating model includes multiple Billing Account Types. |
 | [Includes Multiple Pricing Categories](#conditions.includesmultiplepricingcategories) | Pricing | Operating model includes multiple pricing categories. |
 | [Includes Multiple Sub Account Types](#conditions.includesmultiplesubaccounttypes) | Account | Operating model includes multiple Sub Account Types. |
-| [Includes Negotiated Pricing](#conditions.includesnegotiatedpricing) | Pricing | Operating model includes negotiated pricing concepts. |
 | [Includes Partial Upfront Payments](#conditions.includespartialupfrontpayments) | Commitment | Operating model includes a partial upfront payment model for contract commitments. |
 | [Includes Payable Invoices](#conditions.includespayableinvoices) | Billing | Operating model includes payable invoices. |
 | [Includes Pricing-Billing Currency Differences](#conditions.includespricing-billingcurrencydifferences) | Pricing | Operating model includes pricing and billing in different currencies. |

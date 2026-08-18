@@ -4,7 +4,7 @@ List Cost represents the cost of a [*charge*](#glossary:charge) based on the ser
 
 When [List Unit Price](#datamodel.costandusage.listunitprice) and [Pricing Quantity](#datamodel.costandusage.pricingquantity) are provided for the *charge*, List Cost is calculated by multiplying the List Unit Price by the corresponding Pricing Quantity.
 
-List Cost reflects neither the impact of negotiated unit price adjustments for the associated [*SKU Price*](#glossary:sku-price) nor any cost impact that is conditional on the application of a discount-bearing commitment program (e.g., commitment discount) to the charge.  
+List Cost does not reflect negotiated unit price adjustments for the associated [*SKU Price*](#glossary:sku-price) or any cost impact conditional on a discount-bearing [*commitment program*](#glossary:commitment-program) (e.g., [*commitment discount*](#glossary:commitment-discount)) being applied to the *charge*.
 
 List Cost is denominated in the [Billing Currency](#datamodel.costandusage.billingcurrency). List Cost is commonly used to calculate savings from various negotiated and rate optimization activities by comparing it with [Contracted Cost](#datamodel.costandusage.contractedcost), [Billed Cost](#datamodel.costandusage.billedcost), and [Effective Cost](#datamodel.costandusage.effectivecost).
 
@@ -16,7 +16,7 @@ ListCost MUST adhere to the following requirements:
 * ListCost MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * ListCost MUST NOT be null.
 * ListCost MUST be denominated in the BillingCurrency.
-* ListCost MUST NOT reflect the impact of negotiated unit price adjustments for the associated [*SKU Price*](#glossary:sku-price).
+* ListCost MUST NOT reflect negotiated unit price adjustments for the associated *SKU Price*.
 * ListCost MUST NOT reflect any cost impact conditional on a discount-bearing *commitment program* being applied to the *charge*.
 * ListCost MUST equal BilledCost when [ChargeCategory](#datamodel.costandusage.chargecategory) is "Tax" or "Credit".
 * ListCost MAY differ from BilledCost when ChargeCategory is "Adjustment".

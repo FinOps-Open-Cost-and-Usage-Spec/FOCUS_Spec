@@ -99,7 +99,7 @@ A specific term within a [*contract*](#glossary:contract) that defines a measura
 
 <a name="glossary:contracted-unit-price"><b>Contracted Unit Price</b></a>
 
-The negotiated unit price per [Pricing Unit](#datamodel.costandusage.pricingunit) for the [*SKU Price*](#glossary:sku-price) identified by the given [SKU Price ID](#datamodel.costandusage.skupriceid). Contracted Unit Price is inclusive of negotiated unit price adjustments for the associated *SKU Price*, independent of whether a discount-bearing [*commitment programs*](#glossary:commitment-program) (e.g., [*commitment discount*](#glossary:commitment-discount)) is actually applied to a given charge. It does not reflect the unit price impact that is conditional on the application of a discount-bearing *commitment program*.
+The negotiated unit price per [Pricing Unit](#datamodel.costandusage.pricingunit) for the [*SKU Price*](#glossary:sku-price) identified by the given [SKU Price ID](#datamodel.costandusage.skupriceid). Contracted Unit Price reflects negotiated unit price adjustments for the associated *SKU Price*, independent of any discount-bearing [*commitment programs*](#glossary:commitment-program) (e.g., [*commitment discount*](#glossary:commitment-discount)) being applied to the charge. It does not reflect any unit price impact conditional on a discount-bearing *commitment program* being applied to the *charge*.
 
 <a name="glossary:correction"><b>Correction</b></a>
 
@@ -205,7 +205,7 @@ A common acronym for JavaScript Object Notation, a data format codified in [ECMA
 
 <a name="glossary:list-unit-price"><b>List Unit Price</b></a>
 
-The service-provider-suggested unit price per [Pricing Unit](#datamodel.costandusage.pricingunit) for the [*SKU Price*](#glossary:sku-price) identified by the given [SKU Price ID](#datamodel.costandusage.skupriceid). List Unit Price is exclusive of both negotiated unit price adjustments for the associated *SKU Price* and any unit price impact that is conditional on the application of a discount-bearing [*commitment program*](#glossary:commitment-program) (e.g., [*commitment discount*](#glossary:commitment-discount)) to the charge.
+The service-provider-suggested unit price per [Pricing Unit](#datamodel.costandusage.pricingunit) for the [*SKU Price*](#glossary:sku-price) identified by the given [SKU Price ID](#datamodel.costandusage.skupriceid). List Unit Price does not reflect negotiated unit price adjustments for the associated *SKU Price* or any unit price impact conditional on a discount-bearing [*commitment program*](#glossary:commitment-program) (e.g., [*commitment discount*](#glossary:commitment-discount)) being applied to the [*charge*](#glossary:charge).
 
 <a name="glossary:managed-service-provider"><b>Managed Service Provider (MSP)</b></a>
 
