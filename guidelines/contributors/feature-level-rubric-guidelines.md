@@ -50,7 +50,7 @@ Topics left to a later revision or to the companion guideline are listed in [Def
 
 | Term | Meaning |
 | :--- | :--- |
-| *Operating model* | How a *data generator*'s business works, described through the billing concepts it uses: regions, commitment discounts, unit pricing, and so on. It determines whether a FOCUS concept applies to a *data generator*, and it is not the same thing as the category of company the *data generator* is. |
+| *Operating model* | The collective set of capabilities, business concepts, and data constructs underlying a *FOCUS dataset*, as the [Glossary](../../specification/glossary.md) defines it. It covers both the billing concepts a *data generator* uses (regions, commitment discounts, unit pricing, and so on) and the participating entities involved (*service providers*, host providers, *invoice issuers*, and *data generators*). It determines whether a FOCUS concept applies to a *data generator*, and it is not the same thing as the category of company the *data generator* is. |
 | *Operating model* Condition | A verifiable state of an *operating model*, defined in the [Conditions](../../specification/conditions/conditions_overview.md) section. Every `Conditional` column references one or more of them through its presence requirement. |
 | Leveling unit | A column within a dataset, not a Column ID in the abstract. The same Column ID may take a different feature level, a different nullability, or a different set of Conditions in each dataset that defines it. Decide per dataset. |
 | Feature level | `Mandatory`, `Conditional`, `Recommended`, or `Optional`. Decides whether the column is present, and when. This revision assigns only the first two. |
@@ -251,12 +251,11 @@ The last two work together. The Presence gate or nullability gate signal decides
 
 * **Anything at the boundary is `Conditional`** until the companion guideline calibrates the boundary against real *data generator* data.
 
-* **Calling a model an exception requires an explicit decision.** A single unusual *operating model* that lacks the concept may be treated as an exception, keeping the column `Mandatory`, only when the working group records:
-  * which *operating model* is being treated as exceptional,
-  * why the concept is still considered universal,
-  * why the exception does not represent a broader pattern.
+* **Setting aside a purported counterexample requires an explicit decision.** Where an *operating model* is offered as lacking the concept, the working group may set that counterexample aside, leaving the column `Mandatory`, only when it records one of:
+  * that the purported *operating model* is not admissible, and why, or
+  * that the *operating model* holds the concept after all, and where.
 
-  A recorded exception takes precedence over the boundary default above. Until the companion guideline defines where this record belongs, it lives with the leveling decision itself, in the pull request or issue.
+  Setting a counterexample aside does not override Step 2. An admissible *operating model* that genuinely lacks the concept makes the column `Conditional`. Where applicability turns on a participating entity, such as which entity issues the invoice or whether a host provider is exposed to the customer, Step 3 names the Condition rather than recording a counterexample. Until the companion guideline defines where this record belongs, it lives with the leveling decision itself, in the pull request or issue.
 
 * **A constant value is a truthful value.** A column whose value is present and correct for every *operating model* stays `Mandatory` even where it repeats on every row.
 
@@ -285,7 +284,7 @@ The same Column ID is leveled on its own terms in each dataset that defines it.
 | Criteria for `Recommended` and `Optional` | Not settled here. This revision takes no position, does not change what those levels mean, and does not change the level of any column that currently holds one. |
 | Whether a proposed column belongs in the schema | Not part of this revision. Two tests would answer it: whether the data is needed rather than merely useful, and whether a column calculable from other columns earns a place of its own. |
 | What a Supported Feature does about a column that can be absent | Belongs to the Supported Features work. The obligation is prospective: adopting this guideline does not reopen levels of existing columns. What a feature does once a column it depends on is `Conditional`, and therefore absent from some *FOCUS datasets*, is not decided here. Existing Conditional columns that are already dependencies of Supported Features are handled through the Supported Features work. |
-| Applying these criteria to published columns | Scheduled, not settled here. A published column enters the backlog when it is a Directly Dependent Column of a Supported Feature and its presence requirement is a `SHOULD` or a `MAY`. Conditions that gate on variance rather than on absence are re-tested in the same pass, since the Variance gate signal returns `Mandatory` for every column such a Condition currently gates. The working group sets the release that takes the backlog. |
+| Applying these criteria to published columns | Scheduled, not settled here. A published column enters the backlog when the [Decision Procedure](#decision-procedure) returns a feature level or nullability different from the one the column currently holds. Four classes are already known to qualify: a Directly Dependent Column of a Supported Feature whose presence requirement is a `SHOULD` or a `MAY`; a column whose presence requirement is unconditional, where the concept is absent from an *operating model* or the value can only be produced by substitution; a `Conditional` column whose Condition gates on variance rather than on absence, since the Variance gate signal returns `Mandatory` for every column such a Condition currently gates; and a `Conditional` column whose Condition gates on a value domain or on row-level nullability rather than on the concept's absence. The working group sets the release that takes the backlog. |
 | The threshold at which a column moves between `Mandatory` and `Conditional` | Companion guideline. Until then, [Tie-Breakers and Defaults](#tie-breakers-and-defaults) applies. |
 | Where the leveling rationale is recorded | Companion guideline. Until then, the pull request or issue. |
 | Informative category-based expectations | Out of scope here, and never expressed as a feature level. |
