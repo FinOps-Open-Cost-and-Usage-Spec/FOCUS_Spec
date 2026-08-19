@@ -115,6 +115,7 @@ AI agents generating or reviewing content MUST act as strict technical editors e
   * use `match` for identifiers and string values;
   * use `be` when evaluating states or enumerated values; and
   * use `equivalent` for semantic equivalence.
+  * use `remain consistent` when requiring a value to be stable across time, records, or another defined scope.
 * **Structural Anchors:** Requirements sections, including reusable Attribute requirement sections, MUST begin with a non-verifiable anchor phrase ending in a colon (e.g., `<Entity> MUST adhere to the following requirements:`). Anchor requirements exist solely to establish the parsing structure of subordinate requirements and MUST NOT be interpreted as independently verifiable normative requirements.
 * **Terminology:** Normative text MUST use `ColumnId`s, NEVER Display Names. The subject for dataset requirements MUST be `FOCUS dataset`. Elsewhere, authors MUST use the abstraction that precisely matches the requirement (e.g., `FOCUS dataset`, `dataset instance`, or `dataset artifact`) and MUST avoid using `FOCUS dataset` when a narrower abstraction is intended.
 * **Tone:** Use formal language. Contractions (e.g., *don't, can't*) MUST NOT be used in normative requirements.
