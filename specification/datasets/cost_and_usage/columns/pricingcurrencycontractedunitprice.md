@@ -1,6 +1,6 @@
 # Pricing Currency Contracted Unit Price
 
-The Pricing Currency Contracted Unit Price represents the agreed-upon unit price for a single [Pricing Unit](#datasets.costandusage.pricingunit) of the associated [*SKU*](#glossary:sku), inclusive of [*negotiated discounts*](#glossary:negotiated-discount), if present, while excluding negotiated [*commitment discounts*](#glossary:commitment-discount) or any other discounts. This price is denominated in the [Pricing Currency](#datasets.costandusage.pricingcurrency). When negotiated discounts do not apply to unit prices and instead are applied to exchange rates, the Pricing Currency Contracted Unit Price defaults to the [Pricing Currency List Unit Price](#datasets.costandusage.pricingcurrencylistunitprice). The Pricing Currency Contracted Unit Price is commonly used to calculate savings based on negotiation activities.
+The Pricing Currency Contracted Unit Price represents the agreed-upon unit price for a single [Pricing Unit](#datamodel.costandusage.pricingunit) of the associated [*SKU*](#glossary:sku), inclusive of [*negotiated discounts*](#glossary:negotiated-discount), if present, while excluding negotiated [*commitment discounts*](#glossary:commitment-discount) or any other discounts. This price is denominated in the [Pricing Currency](#datamodel.costandusage.pricingcurrency). When negotiated discounts do not apply to unit prices and instead are applied to exchange rates, the Pricing Currency Contracted Unit Price defaults to the [Pricing Currency List Unit Price](#datamodel.costandusage.pricingcurrencylistunitprice). The Pricing Currency Contracted Unit Price is commonly used to calculate savings based on negotiation activities.
 
 ## Requirements
 
@@ -9,10 +9,10 @@ PricingCurrencyContractedUnitPrice MUST adhere to the following requirements:
 * PricingCurrencyContractedUnitPrice MUST be of type Decimal.
 * PricingCurrencyContractedUnitPrice MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * PricingCurrencyContractedUnitPrice MUST adhere to the following nullability requirements:
-  * PricingCurrencyContractedUnitPrice MUST be null when [SkuPriceId](#datasets.costandusage.skupriceid) is null.
-  * PricingCurrencyContractedUnitPrice MUST be null when [ChargeCategory](#datasets.costandusage.chargecategory) is "Tax".
+  * PricingCurrencyContractedUnitPrice MUST be null when [SkuPriceId](#datamodel.costandusage.skupriceid) is null.
+  * PricingCurrencyContractedUnitPrice MUST be null when [ChargeCategory](#datamodel.costandusage.chargecategory) is "Tax".
   * PricingCurrencyContractedUnitPrice MUST NOT be null when SkuPriceId is not null.
-  * PricingCurrencyContractedUnitPrice MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#datasets.costandusage.chargeclass) is not "Correction".
+  * PricingCurrencyContractedUnitPrice MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#datamodel.costandusage.chargeclass) is not "Correction".
   * PricingCurrencyContractedUnitPrice MAY be null in all other cases.
 * When PricingCurrencyContractedUnitPrice is not null, PricingCurrencyContractedUnitPrice MUST adhere to the following requirements:
   * PricingCurrencyContractedUnitPrice MUST be a non-negative decimal value.
@@ -38,7 +38,7 @@ The agreed-upon unit price for a single Pricing Unit of the associated SKU, incl
 
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Dataset         | [Cost and Usage](#datamodel.costandusage)             |
 | Column type     | Metric                                               |
 | Feature level   | Conditional                                          |
 | Allows nulls    | True                                                 |
