@@ -16,7 +16,7 @@ CredentialDetails MUST adhere to the following requirements:
 * CredentialDetails MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * CredentialDetails MUST conform to [JsonObjectFormat](#attributes.jsonobjectformat) requirements.
 * CredentialDetails MUST adhere to the following nullability requirements:
-  * CredentialDetails MUST be null when the *service provider* cannot determine the *principal* or the *credential* associated with the *charge*.
+  * CredentialDetails MUST be null when the *service provider* cannot determine the *principal* and cannot determine the *credential* associated with the *charge*.
   * CredentialDetails MAY be null when the *service provider* can determine the *principal* or the *credential* associated with the *charge*.
 * CredentialDetails MUST conform to [CredentialDetailsObject](#datamodel.costandusage.credentialdetails.credentialdetailsobject) requirements when CredentialDetails is not null.
 
@@ -79,7 +79,7 @@ Attributes describing the *principal* identified by PrincipalId belong at the to
 
 `Credential.Id` repeats the value carried in CredentialId. A *service provider* that publishes the *credential* identifier alongside its descriptive attributes has a FOCUS-defined key available for it rather than a custom property. Analyses that group or filter on the *credential* read CredentialId, which is available without parsing the object.
 
-Where a *service provider* exposes only one level, PrincipalId and CredentialId carry the same value, and the attributes describing that identifier belong at the top level.
+Where a *service provider* publishes no identifier for the *credential* presented, CredentialId is null and the `Credential` property is omitted. The attributes describing the *principal* remain at the top level.
 
 ### Object Example
 
