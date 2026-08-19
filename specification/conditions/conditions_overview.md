@@ -15,7 +15,6 @@ Conditions are sorted alphabetically by name.
 | [Includes Commitment Discounts](#conditions.includescommitmentdiscounts) | Commitment | Operating model includes commitment discounts. |
 | [Includes Commitment Programs](#conditions.includescommitmentprograms) | Commitment | Operating model includes commitment programs. |
 | [Includes Contract Commitments](#conditions.includescontractcommitments) | Commitment | Operating model includes contract commitments. |
-| [Includes Identity Attribution](#conditions.includesidentityattribution) | Account | Operating model includes attributing usage or purchase of resources or services to principals. |
 | [Includes List Unit Prices](#conditions.includeslistunitprices) | Pricing | Operating model includes standard, non-discounted unit prices. |
 | [Includes Multiple Billing Account Types](#conditions.includesmultiplebillingaccounttypes) | Account | Operating model includes multiple Billing Account Types. |
 | [Includes Multiple Pricing Categories](#conditions.includesmultiplepricingcategories) | Pricing | Operating model includes multiple pricing categories. |
@@ -24,6 +23,7 @@ Conditions are sorted alphabetically by name.
 | [Includes Partial Upfront Payments](#conditions.includespartialupfrontpayments) | Commitment | Operating model includes a partial upfront payment model for contract commitments. |
 | [Includes Payable Invoices](#conditions.includespayableinvoices) | Billing | Operating model includes payable invoices. |
 | [Includes Pricing-Billing Currency Differences](#conditions.includespricing-billingcurrencydifferences) | Pricing | Operating model includes pricing and billing in different currencies. |
+| [Includes Principal Attribution](#conditions.includesprincipalattribution) | Account | Operating model includes attributing usage or purchase of resources or services to principals. |
 | [Includes Provisioned Resources](#conditions.includesprovisionedresources) | Resource | Operating model includes provisioned resources. |
 | [Includes Purchase Order Numbers](#conditions.includespurchaseordernumbers) | Billing | Operating model includes purchase order numbers. |
 | [Includes Regions](#conditions.includesregions) | Resource | Operating model includes deploying resources or services within a region. |
