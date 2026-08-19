@@ -166,7 +166,7 @@ The data generator emits four FOCUS rows for this charge period. The column-augm
 
 ## Metric Reconciliation
 
-The summable metrics across the four FOCUS rows sum to the pre-split origin totals:
+The summable metrics across the four records in the FOCUS dataset artifact sum to the pre-split origin totals:
 
 | Metric          | Origin Row | Row 2   | Row 3  | Row 4  | Total    | Pre-Split Origin |
 | :-------------- | ---------: | ------: | -----: | -----: | -------: | ---------------: |
