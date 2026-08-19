@@ -9,8 +9,8 @@ BillingAccountName MUST adhere to the following requirements:
 * BillingAccountName MUST be of type String.
 * BillingAccountName MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * BillingAccountName MUST adhere to the following nullability requirements:
-  * BillingAccountName MUST NOT be null when the *billing account* has a display name that is assigned by the [*invoice issuer*](#glossary:invoice-issuer) and available to the *data generator*.
-  * BillingAccountName MAY be null when the *billing account* has no display name assigned by the *invoice issuer*, or when the display name is not available to the *data generator*.
+  * BillingAccountName MUST NOT be null when the *billing account* has a display name that is assigned by the [*invoice issuer*](#glossary:invoice-issuer) and available to the [data generator](#metadata.datagenerator).
+  * BillingAccountName MAY be null when the *billing account* has no display name assigned by the *invoice issuer*, or when the display name is not available to the data generator.
 
 ## Column ID
 

@@ -2,7 +2,7 @@
 
 Recommendation Details represents additional properties of a recommendation that are not expressed in other columns, capturing supporting detail a [*practitioner*](#glossary:practitioner) needs to evaluate a recommendation. Details vary by [*service provider*](#glossary:service-provider), [*service*](#glossary:service), and recommendation type, so properties are conveyed as key-value pairs rather than as a fixed set of columns. Recommendation Details complements [Resource Configuration Details Current](#datasets.recommendation.resourceconfigurationdetailscurrent) and [Resource Configuration Details Recommended](#datasets.recommendation.resourceconfigurationdetailsrecommended), which convey resource configuration specifically, by carrying detail that is not resource configuration, such as pricing properties of a proposed [*SKU*](#glossary:sku) or the metrics a recommendation is derived from.
 
-FOCUS does not define recommendation property names in this release. All properties are defined by the *data generator* and prefixed with "x_" to prevent collisions with FOCUS-defined properties introduced in a future release.
+FOCUS does not define recommendation property names in this release. All properties are defined by the [data generator](#metadata.datagenerator) and prefixed with "x_" to prevent collisions with FOCUS-defined properties introduced in a future release.
 
 ## Requirements
 
