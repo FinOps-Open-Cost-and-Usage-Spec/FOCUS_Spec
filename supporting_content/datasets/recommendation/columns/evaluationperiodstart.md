@@ -10,7 +10,7 @@ The representation question remains open. Consensus in review was to look at dur
 
 ## Problem
 
-Recommendation engines derive a recommendation from an evaluation covering some preceding period of time. Two recommendations with identical estimated cost impact are not equally trustworthy when one is based on 7 days of observation and the other on 90 days. Without the evaluation period in the dataset, a [*practitioner*](#glossary:practitioner) cannot judge the confidence of a recommendation, and cannot compare recommendations across [data generators](#metadata.datagenerator) that use different default periods.
+Recommendation engines derive a recommendation from an evaluation covering some preceding period of time. Two recommendations with identical estimated cost impact are not equally trustworthy when one is based on seven days of observation and the other on 90 days. Without the evaluation period in the dataset, a [*practitioner*](#glossary:practitioner) cannot judge the confidence of a recommendation, and cannot compare recommendations across [data generators](#metadata.datagenerator) that use different default periods.
 
 There is currently no column in the Recommendation dataset expressing the period a recommendation was derived from.
 
