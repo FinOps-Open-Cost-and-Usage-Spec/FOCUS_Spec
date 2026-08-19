@@ -40,7 +40,7 @@ The data generator emits four FOCUS rows for this charge period. The column-augm
 * **ConsumedUnit**: `"Hours"` on every row, since ConsumedQuantity (including the origin row's zeroed value) is populated on all four rows.
 * **AllocatedResourceId, AllocatedResourceName, AllocatedServiceName**: null on the origin row, since no *allocation* was made *to* the origin row itself; populated with each consumer's identifier, display name, and service name on the corresponding *allocated charge* row.
 * **AllocatedMethodId**: set to the allocation method identifier on every row, including the origin row — the origin row is *related to* the data generator-calculated split cost allocation even though it is not itself an *allocated charge*.
-* **AllocatedMethodDetails**: null on the origin row, since there is no allocated portion to describe there; on each *allocated charge* row, it carries that consumer's allocation ratio and measured utilization.
+* **AllocatedMethodDetails**: null on the origin row, since there is no allocated portion to describe there; on each *allocated charge* row, it carries that allocated resource's allocation ratio and measured utilization.
 * **ChargeCategory**: `"Usage"` on all rows.
 * **PricingCategory**: `"Committed"` on every output row, since ChargeCategory is `"Usage"` on all rows and the usage is subject to the Resource Reservation commitment discount.
 * **CommitmentDiscountId**: set to the Resource Reservation's identifier on every output row, since all four rows are related to the same commitment discount.
