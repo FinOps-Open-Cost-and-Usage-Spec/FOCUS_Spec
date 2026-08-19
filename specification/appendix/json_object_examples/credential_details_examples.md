@@ -16,15 +16,15 @@ Scenario: An object storage charge initiated by a user authenticating directly t
 
 | ServiceProviderName | ServiceName | PrincipalId | CredentialId | CredentialDetails |
 |---------------------|-------------|-------------|--------------|-------------------|
-| LatticeScale | ObjectStorage | user_4417 | sess_9KD2LM4T | {"Name": "Jordan Lee", "Email": "jordan.lee@example.com", "Type": "User", "Credential": {"Type": "Session"}} |
+| LatticeScale | ObjectStorage | user_4417 | sess_6BN3XR8P | {"Name": "Jordan Lee", "Email": "jordan.lee@example.com", "Type": "User", "Credential": {"Type": "Session"}} |
 
 ## Aura Web (Scheduled Job Under a Service Account)
 
-Scenario: A compute charge initiated by a service account, where the *service provider* does not distinguish the *credential* presented from the *principal* that presented it. PrincipalId and CredentialId carry the same value, and the `Credential` property is omitted. A service account has no email address, so Email is omitted and Type distinguishes the *principal* from a human user.
+Scenario: A compute charge initiated by a service account, where the *service provider* publishes no identifier for the *credential* the service account presented. CredentialId is null and the `Credential` property is omitted. A service account has no email address, so Email is omitted and Type distinguishes the *principal* from a human user.
 
 | ServiceProviderName | ServiceName | PrincipalId | CredentialId | CredentialDetails |
 |---------------------|-------------|-------------|--------------|-------------------|
-| Aura Web | Compute | svc_nightly_etl | svc_nightly_etl | {"Name": "svc-nightly-etl", "Type": "Service Account"} |
+| Aura Web | Compute | svc_nightly_etl | null | {"Name": "svc-nightly-etl", "Type": "Service Account"} |
 
 ## Meridian AI (Credential Without a Determinable Principal)
 
@@ -48,7 +48,7 @@ Scenario: A *service provider* publishes an identity attribute that has no FOCUS
 
 | ServiceProviderName | ServiceName | PrincipalId | CredentialId | CredentialDetails |
 |---------------------|-------------|-------------|--------------|-------------------|
-| Aura Web | Inference | user_8842 | user_8842 | {"Name": "Alex Rivera", "Email": "alex.rivera@example.com", "Type": "User", "x_DirectoryGroup": "platform-engineering"} |
+| Aura Web | Inference | user_8842 | null | {"Name": "Alex Rivera", "Email": "alex.rivera@example.com", "Type": "User", "x_DirectoryGroup": "platform-engineering"} |
 
 ## Cost Attribution by Principal and by Credential
 
@@ -57,9 +57,9 @@ This example demonstrates how the two identifier columns support different attri
 Acme Corp runs generative AI inference and scheduled compute on Aura Web. Four charges land in a single charge period (2025-04-01):
 
 1. **Inference via an API key** (Row 1): Alex Rivera, presenting `prod-ingest-key`. [BilledCost](#datamodel.costandusage.billedcost) is $120.00.
-2. **Inference, direct** (Row 2): Alex Rivera, with no *credential* the *service provider* distinguishes from the user. BilledCost is $30.00.
+2. **Inference via a console session** (Row 2): Alex Rivera, working in the Aura Web console, which identifies the session separately from the user. BilledCost is $30.00.
 3. **Inference via an API key** (Row 3): Jordan Lee, presenting `batch-key`. BilledCost is $75.00.
-4. **Scheduled compute** (Row 4): the `svc-nightly-etl` service account, which has no email address. BilledCost is $45.00.
+4. **Scheduled compute** (Row 4): the `svc-nightly-etl` service account, which has no email address and for which Aura Web publishes no *credential* identifier. BilledCost is $45.00.
 
 Grouping by PrincipalId answers which actor incurred the cost, and combines a user's charges regardless of which *credential* was presented:
 
@@ -75,9 +75,9 @@ Grouping by CredentialId answers which *credential* incurred the cost, and separ
 | CredentialId | Credential Type | BilledCost |
 |:---|:---|:---|
 | key_01HQZX3M8N | API Key | $120.00 |
-| user_8842 | null (no distinct credential) | $30.00 |
+| sess_AW7C2K91 | Session | $30.00 |
 | key_04KTMP7B2Q | API Key | $75.00 |
-| svc_nightly_etl | null (no distinct credential) | $45.00 |
+| null | null | $45.00 |
 | **Total** | | **$270.00** |
 
-Rows 1 and 2 combine to $150.00 for Alex Rivera under PrincipalId and separate into $120.00 and $30.00 under CredentialId. Both groupings count every *charge* once and total $270.00, because each identifier appears once per row.
+Rows 1 and 2 combine to $150.00 for Alex Rivera under PrincipalId and separate into $120.00 and $30.00 under CredentialId. Row 4 carries no CredentialId, so grouping on that column collects it under null rather than attributing it to a *credential*. Both groupings count every *charge* once and total $270.00, because each identifier appears once per row.

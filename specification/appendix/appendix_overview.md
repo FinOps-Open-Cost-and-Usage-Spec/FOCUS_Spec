@@ -36,6 +36,7 @@ The table below outlines the fictitious *data generators* used throughout the ap
 | **CrestNode** | Cloud Service Provider | An enterprise-focused cloud platform with deep integrations into existing corporate software ecosystems and directory services. | Microsoft Azure |
 | **LatticeScale** | Cloud Service Provider | A cloud provider heavily optimized for machine learning, data analytics, and containerized Kubernetes workloads. | Google Cloud Platform (GCP) |
 | **Solora AI** | Foundation Model Developer | An AI lab that develops and trains foundation models that are sold directly and served by cloud providers as a first-party offering. | OpenAI, Anthropic |
+| **Meridian AI** | AI Inference Provider | An AI provider offering hosted inference endpoints, sold directly and through cloud marketplaces. | Cohere, Mistral AI |
 | **OmniQuery** | Data Platform | A centralized hub for storing, processing, and analyzing massive datasets to drive business intelligence. | Snowflake, Databricks |
 | **StackLens** | SaaS Observability | A monitoring tool that tracks application performance, logs, and system health in real-time to prevent downtime. | Datadog, New Relic |
 | **SprintCanvas** | Project Management | A collaborative workspace for planning, assigning, and tracking team tasks and agile workflows. | Jira, Asana, Trello |
