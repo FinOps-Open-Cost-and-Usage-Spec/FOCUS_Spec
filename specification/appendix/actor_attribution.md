@@ -1,6 +1,6 @@
 # Examples: Actor Attribution
 
-The examples below illustrate how [Principal ID](#datamodel.costandusage.principalid) and [Credential ID](#datamodel.costandusage.credentialid) are populated in the [Cost and Usage](#datamodel.costandusage) dataset across technology categories. Each scenario identifies the [*principal*](#glossary:principal) to which access to a [*resource*](#glossary:resource) or [*service*](#glossary:service) is granted and the [*credential*](#glossary:credential) presented on the request that produced the [*charge*](#glossary:charge). Provider, customer, and identifier values below are illustrative.
+The examples below illustrate how [Principal ID](#datamodel.costandusage.principalid) and [Credential ID](#datamodel.costandusage.credentialid) are populated in the [Cost and Usage](#datamodel.costandusage) dataset across technology environments. Each scenario identifies the [*principal*](#glossary:principal) to which access to a [*resource*](#glossary:resource) or [*service*](#glossary:service) is granted and the [*credential*](#glossary:credential) presented on the request that produced the [*charge*](#glossary:charge). Provider, customer, and identifier values below are illustrative.
 
 ## Attribution Roles
 
@@ -13,7 +13,7 @@ Both columns identify the identity under which the usage that incurred a *charge
 
 Credential ID carries an identifier that references a *credential*, never the *credential* itself. Secret or permanent *credential* material (e.g., a key string, a bearer token, a session cookie) does not appear in the column. Where a *service provider* authenticates a request but publishes no identifier for the *credential* presented, Credential ID is null, as in Scenario 8.
 
-Either identifier is null when the *charge* is not associated with an entity of that kind, or when the *service provider* publishes no identifier for it. The two columns are independent: a *charge* may carry a *principal* with no *credential* identifier (Scenarios 7 through 10), a *credential* with no *principal* (Scenario 12), both (Scenarios 1 through 6, and 11), or neither (Scenario 13). Neither column repeats the other's value.
+Either identifier is null when the *charge* is not associated with an entity of that kind. Credential ID is also null when the *service provider* publishes no identifier for the *credential* presented. The two columns are independent: a *charge* may carry a *principal* with no *credential* identifier (Scenarios 7 through 10), a *credential* with no *principal* (Scenario 12), both (Scenarios 1 through 6, and 11), or neither (Scenario 13). Neither column repeats the other's value.
 
 > **Note:** A *credential* is what the request carries, not the factor used to log in. A password or a single sign-on assertion is exchanged at login for a session, and the request that produces a *charge* carries that session, so the identifier a *service provider* assigns to that session is what Credential ID records. Where a *service provider* establishes no session that it identifies separately from the *principal*, Credential ID is null. Scenarios 6 and 7 show the same login path for *service providers* that differ on this point. Session identifiers are commonly reissued on each login, so Credential ID is expected to be higher-cardinality and shorter-lived than Principal ID.
 
