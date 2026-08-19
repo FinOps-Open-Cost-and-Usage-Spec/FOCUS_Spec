@@ -46,8 +46,6 @@ The data generator emits four FOCUS rows for this charge period. The column-augm
 * **CommitmentDiscountId**: set to the Resource Reservation's identifier on every output row, since all four rows are related to the same commitment discount.
 * **CommitmentDiscountStatus**: `"Used"` on every output row, since CommitmentDiscountId is populated and ChargeCategory is `"Usage"` on all rows.
 
-> Note: AllocatedMethodId's nullability is keyed on a charge being "related to" a data generator-calculated split cost allocation, not on being an *allocated charge* itself. This example treats the origin row as related (it is part of the same split operation, even though nothing was allocated to it) and therefore populates AllocatedMethodId on it — consistent with the "Find Total Unallocated Split Costs by ResourceId" query in Data Generator-Calculated Split Cost Allocation, whose `AllocatedMethodId IS NOT NULL AND AllocatedResourceId IS NULL` predicate only returns rows under this reading. This question is tracked for the specification text itself in issue #2578.
-
 ### Origin Charge Row Details
 
 | Column                 | Value                                                                                | Explanation                                                      |
