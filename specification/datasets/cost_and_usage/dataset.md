@@ -44,8 +44,8 @@ The specification for the Cost and Usage dataset defines a group of columns that
 | [Contract Applied](#datamodel.costandusage.contractapplied)                                          | Dimension / Metric | [Conditional](#conditions.includescontractcommitments) | True         | JSON      |
 | [Contracted Cost](#datamodel.costandusage.contractedcost)                                            | Metric             | Mandatory     | False        | Decimal   |
 | [Contracted Unit Price](#datamodel.costandusage.contractedunitprice)                                 | Metric             | [Conditional](#conditions.includesnegotiatedpricing) | True         | Decimal   |
-| [Credential Details](#datamodel.costandusage.credentialdetails)                                      | Dimension          | [Conditional](#conditions.includesidentityattribution) | True         | JSON      |
-| [Credential ID](#datamodel.costandusage.credentialid)                                                | Dimension          | [Conditional](#conditions.includesidentityattribution) | True         | String    |
+| [Credential Details](#datamodel.costandusage.credentialdetails)                                      | Dimension          | [Conditional](#conditions.includesprincipalattribution) | True         | JSON      |
+| [Credential ID](#datamodel.costandusage.credentialid)                                                | Dimension          | [Conditional](#conditions.includesprincipalattribution) | True         | String    |
 | [Effective Cost](#datamodel.costandusage.effectivecost)                                              | Metric             | Mandatory     | False        | Decimal   |
 | [Host Provider Name](#datamodel.costandusage.hostprovidername)                                       | Dimension          | Mandatory     | False        | String    |
 | [Invoice Detail ID](#datamodel.costandusage.invoicedetailid)                                         | Dimension          | [Conditional](#conditions.includespayableinvoices) | True         | String    |
@@ -129,8 +129,8 @@ CostAndUsage MUST adhere to the following requirements:
   * CostAndUsage MUST include [ContractApplied](#datamodel.costandusage.contractapplied) when the *operating model* [includes contract commitments](#conditions.includescontractcommitments).
   * CostAndUsage MUST include [ContractedCost](#datamodel.costandusage.contractedcost).
   * CostAndUsage MUST include [ContractedUnitPrice](#datamodel.costandusage.contractedunitprice) when the *operating model* [includes negotiated pricing](#conditions.includesnegotiatedpricing).
-  * CostAndUsage MUST include [CredentialDetails](#datamodel.costandusage.credentialdetails) when the *operating model* [includes identity attribution](#conditions.includesidentityattribution).
-  * CostAndUsage MUST include [CredentialId](#datamodel.costandusage.credentialid) when the *operating model* [includes identity attribution](#conditions.includesidentityattribution).
+  * CostAndUsage MUST include [CredentialDetails](#datamodel.costandusage.credentialdetails) when the *operating model* [includes principal attribution](#conditions.includesprincipalattribution).
+  * CostAndUsage MUST include [CredentialId](#datamodel.costandusage.credentialid) when the *operating model* [includes principal attribution](#conditions.includesprincipalattribution).
   * CostAndUsage MUST include [EffectiveCost](#datamodel.costandusage.effectivecost).
   * CostAndUsage MUST include [HostProviderName](#datamodel.costandusage.hostprovidername).
   * CostAndUsage MUST include [InvoiceDetailId](#datamodel.costandusage.invoicedetailid) when the *operating model* [includes payable invoices](#conditions.includespayableinvoices).
