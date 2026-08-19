@@ -12,7 +12,7 @@ Common scenarios where dataset configuration is valuable include:
 
 ## Requirements
 
-FOCUS dataset conforming to DatasetConfiguration attribute MUST adhere to the following requirements:
+Dataset conforming to DatasetConfiguration attribute MUST adhere to the following requirements:
 
 * *FOCUS dataset* MUST be configurable to include only a user-defined selection of columns.
 * *FOCUS dataset* MUST adhere to all column-level specifications defined in the FOCUS schema, regardless of the selected configuration (e.g., column selection or detail level).
