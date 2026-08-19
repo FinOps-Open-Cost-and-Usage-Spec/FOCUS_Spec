@@ -7,10 +7,10 @@
 !INCLUDE "currency.md",1
 !INCLUDE "datageneratorname.md",1
 !INCLUDE "estimatedmonthlycostimpact.md",1
-!INCLUDE "implementationeffort.md",1
-!INCLUDE "implementationrisk.md",1
 !INCLUDE "evaluationperiodend.md",1
 !INCLUDE "evaluationperiodstart.md",1
+!INCLUDE "implementationeffort.md",1
+!INCLUDE "implementationrisk.md",1
 !INCLUDE "recommendationcategory.md",1
 !INCLUDE "recommendationcreated.md",1
 !INCLUDE "recommendationdescription.md",1

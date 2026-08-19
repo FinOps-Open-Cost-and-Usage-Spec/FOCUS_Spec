@@ -1,6 +1,6 @@
 # Commitment Discount Category
 
-Commitment Discount Category indicates whether the [*commitment discount*](#glossary:commitment-discount) a recommendation proposes to purchase is based on usage quantity or cost (aka "spend"). Commitment Discount Category provides a programmatically referenceable classification of a proposed *contract commitment*, whereas [Contract Commitment Type](#datasets.recommendation.contractcommitmenttype) values differ across [*service providers*](#glossary:service-provider). Commitment Discount Category uses the same allowed values as [Commitment Discount Category](#datasets.costandusage.commitmentdiscountcategory) in the [Cost and Usage](#datasets.costandusage) dataset, which supports comparison of proposed commitment discounts against existing ones.
+Commitment Discount Category indicates whether the [*commitment discount*](#glossary:commitment-discount) a recommendation proposes to purchase is based on usage quantity or cost (aka "spend"). Commitment Discount Category provides a programmatically referenceable classification of a proposed [*contract commitment*](#glossary:contract-commitment), whereas [Contract Commitment Type](#datasets.recommendation.contractcommitmenttype) values differ across [*service providers*](#glossary:service-provider). Commitment Discount Category uses the same allowed values as [Commitment Discount Category](#datasets.costandusage.commitmentdiscountcategory) in the [Cost and Usage](#datasets.costandusage) dataset, which supports comparison of proposed commitment discounts against existing ones.
 
 ## Requirements
 
@@ -8,7 +8,7 @@ CommitmentDiscountCategory MUST adhere to the following requirements:
 
 * CommitmentDiscountCategory MUST be of type String.
 * CommitmentDiscountCategory MUST adhere to the following nullability requirements:
-  * CommitmentDiscountCategory MUST NOT be null when a recommendation proposes the purchase of a [*contract commitment*](#glossary:contract-commitment).
+  * CommitmentDiscountCategory MUST NOT be null when a recommendation proposes the purchase of a *contract commitment*.
   * CommitmentDiscountCategory MUST be null when a recommendation does not propose the purchase of a *contract commitment*.
 * CommitmentDiscountCategory MUST be one of the allowed values.
 
