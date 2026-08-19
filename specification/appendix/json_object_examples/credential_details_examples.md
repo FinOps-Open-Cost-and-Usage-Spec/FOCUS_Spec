@@ -1,6 +1,6 @@
 # Examples: Credential Details
 
-The examples below are not exhaustive and may change over time. Service providers are the authoritative source for the identity attributes they publish.
+The examples below are not exhaustive and may change over time. [*Service providers*](#glossary:service-provider) are the authoritative source for the identity attributes they publish.
 
 ## Aura Web (Inference Request via an API Key)
 
@@ -12,7 +12,7 @@ Scenario: A generative AI inference [*charge*](#glossary:charge) authenticated w
 
 ## LatticeScale (Direct Console Access)
 
-Scenario: An object storage charge initiated by a user authenticating directly through a console session that the [*service provider*](#glossary:service-provider) identifies separately from the user.
+Scenario: An object storage charge initiated by a user authenticating directly through a console session that the *service provider* identifies separately from the user.
 
 | ServiceProviderName | ServiceName | PrincipalId | CredentialId | CredentialDetails |
 |---------------------|-------------|-------------|--------------|-------------------|
