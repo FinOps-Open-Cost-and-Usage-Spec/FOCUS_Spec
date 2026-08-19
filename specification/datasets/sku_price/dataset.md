@@ -13,8 +13,8 @@ The columns are presented in alphabetical order.
 | Column                                                                              | Column Type | Feature Level                                                  | Allows Nulls | Data Type |
 | ----------------------------------------------------------------------------------- | ----------- | -------------------------------------------------------------- | ------------ | --------- |
 | [Charge Category](#datamodel.skuprice.chargecategory)                              | Dimension   | Mandatory   | False        | String    |
-| [Contract ID](#datamodel.skuprice.contractid)                                        | Dimension   | [Conditional](#conditions.includescontractcommitments)         | True         | String    |
-| [Contracted Unit Price](#datamodel.skuprice.contractedunitprice)                     | Metric      | [Conditional](#conditions.includescontractcommitments)         | True         | Decimal   |
+| [Contract ID](#datamodel.skuprice.contractid)                                        | Dimension   | Mandatory                                                      | True         | String    |
+| [Contracted Unit Price](#datamodel.skuprice.contractedunitprice)                     | Metric      | Mandatory                                                      | False        | Decimal   |
 | [List Unit Price](#datamodel.skuprice.listunitprice)                                 | Metric      | Mandatory                                                      | False        | Decimal   |
 | [Pricing Currency](#datamodel.skuprice.pricingcurrency)                              | Dimension   | Mandatory                                                      | False        | String    |
 | [Pricing Currency Category](#datamodel.skuprice.pricingcurrencycategory)                            | Dimension   | Mandatory                                                      | False        | String    |
@@ -37,7 +37,7 @@ The columns are presented in alphabetical order.
 
 ## Relationships<!--SkipTOC-->
 
-The SKU Price dataset relates to the Cost and Usage dataset through the SKU Price ID, enabling the attribution of catalog rates to incurred usage. This is a one-to-many relationship: a single SKU Price ID corresponds to multiple SKU Price records, because a SKU's price varies by effective period, contract, quantity tier, and pricing currency. Resolving the price that applies to a Cost and Usage charge therefore requires more than the SKU Price ID alone. The charge must also be aligned to the SKU Price record whose effective period contains the charge period, whose Contract ID matches the agreement under which the charge was incurred (or is null for a public list price), whose quantity tier contains the charged quantity, and whose pricing currency matches the currency in which the charge is denominated. The resolved record carries both the List Unit Price and the Contracted Unit Price for that combination, so no further join is needed to compare the public rate against the negotiated rate. The SKU Price dataset can also optionally join to the Contract Commitment dataset to relate a specific contracted price to an overarching negotiated agreement.
+The SKU Price dataset relates to the Cost and Usage dataset through the SKU Price ID, enabling the attribution of catalog rates to incurred usage. This is a one-to-many relationship: a single SKU Price ID corresponds to multiple SKU Price records, because a SKU's price varies by effective period, contract, quantity tier, and pricing currency. Resolving the price that applies to a Cost and Usage charge therefore requires more than the SKU Price ID alone. The charge must also be aligned to the SKU Price record whose effective period contains the charge period, whose Contract ID matches the agreement under which the charge was incurred (or is null for a public list price), whose quantity tier contains the charged quantity, and whose pricing currency matches the currency in which the charge is denominated. The resolved record carries both the List Unit Price and the Contracted Unit Price for that combination, so no further join is needed to compare the public rate against the negotiated rate. Contracted Unit Price resolves the same way in both datasets. Where no negotiation applies, a Cost and Usage charge reports a Contracted Unit Price equal to its List Unit Price, and the SKU Price record it resolves to, whose Contract ID is null, carries that same equality. Comparing a billed contracted rate against its published catalog rate therefore requires no allowance for a null on either side. The SKU Price dataset can also optionally join to the Contract Commitment dataset to relate a specific contracted price to an overarching negotiated agreement.
 
 | Dataset A           | Dataset A Column  | Dataset B           | Dataset B Column       |
 | ------------------- | ----------------- | ------------------- | ---------------------- |
@@ -50,8 +50,8 @@ SkuPrice MUST adhere to the following requirements:
 
 * SkuPrice column presence MUST adhere to the following requirements:
   * SkuPrice MUST include [ChargeCategory](#datamodel.skuprice.chargecategory).
-  * SkuPrice MUST include [ContractId](#datamodel.skuprice.contractid) when the *operating model* [includes contract commitments](#conditions.includescontractcommitments).
-  * SkuPrice MUST include [ContractedUnitPrice](#datamodel.skuprice.contractedunitprice) when the *operating model* [includes contract commitments](#conditions.includescontractcommitments).
+  * SkuPrice MUST include [ContractId](#datamodel.skuprice.contractid).
+  * SkuPrice MUST include [ContractedUnitPrice](#datamodel.skuprice.contractedunitprice).
   * SkuPrice MUST include [ListUnitPrice](#datamodel.skuprice.listunitprice).
   * SkuPrice MUST include [PricingCurrency](#datamodel.skuprice.pricingcurrency).
   * SkuPrice MUST include [PricingCurrencyCategory](#datamodel.skuprice.pricingcurrencycategory).

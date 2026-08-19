@@ -30,8 +30,7 @@ A service-provider-assigned identifier for a contract describing the agreed term
 |:----------------|:-------------------------------------------------------------------------------------------|
 | Dataset         | [SKU Price](#datamodel.skuprice)                                                            |
 | Column type     | Dimension                                                                                  |
-| Feature level   | Conditional                                                                                |
-| Condition       | [Includes contract commitments](#conditions.includescontractcommitments)                   |
+| Feature level   | Mandatory                                                                                  |
 | Allows nulls    | True                                                                                       |
 | Data type       | String                                                                                     |
 | Value format    | \<not specified>                                                                           |
