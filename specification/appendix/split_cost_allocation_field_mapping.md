@@ -1,7 +1,5 @@
 # Examples: Split Cost Allocation Field Mapping
 
-> Note: The following section is informative and non-normative. It does not define requirements.
-
 [DataGeneratorCalculatedSplitCostAllocationHandling](#attributes.datagenerator-calculatedsplitcostallocationhandling)  defines the requirements for split cost allocation, but does not show how a data generator gets there from its own native billing data. This is a non-obvious step for data generators whose native export uses a column-augmentation format — a single row carrying per-consumer allocation detail in extension columns, rather than a separate row per consumer. Without a worked example, data generators using this format have had to reverse-engineer the transformation independently. This section closes that gap with a worked example showing how such a native input transforms into FOCUS [*allocated charge*](#glossary:allocated-charge) rows. It shows the resulting [*origin charge*](#glossary:origin-charge) and *allocated charge* rows, including the [Allocated*](#datamodel.costandusage) columns used in this scenario, and verifies that summable metrics reconcile across the split.
 
 Data generators that produce FOCUS data from a column-augmentation allocation format should read this section alongside DataGeneratorCalculatedSplitCostAllocationHandling requirements and the worked example in [Examples: Data Generator-Calculated Split Cost Allocation](#appendix.examples:datagenerator-calculatedsplitcostallocation).
@@ -181,5 +179,3 @@ The summable metrics across the four FOCUS rows sum to the pre-split origin tota
 ListCost and ContractedCost are numerically identical in this scenario because ContractedUnitPrice defaults to ListUnitPrice: Resource Reservation is a commitment discount, and commitment discounts affect EffectiveCost (through amortization) but not ContractedUnitPrice, which excludes them by definition. BilledCost is $0.00 across all four rows because this usage is fully covered by the Resource Reservation's purchase charge — a [*covering charge*](#glossary:covering-charge) not itself shown in this example — leaving EffectiveCost as the only metric that reflects the $240.00 amortized cost of the reservation.
 
 Non-summable metrics (ListUnitPrice `$12.00`, ContractedUnitPrice `$12.00`, ConsumedUnit `"Hours"`) are identical across all four rows.
-
-> Note: ListCost and ContractedCost use ConsumedQuantity in place of PricingQuantity in this scenario. Pricing Unit and Consumed Unit are both instance-hours here, so the two quantities are numerically equivalent; a data generator whose Pricing Unit differs from its Consumed Unit would compute these metrics from PricingQuantity instead.
