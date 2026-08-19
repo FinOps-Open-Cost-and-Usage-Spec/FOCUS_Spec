@@ -33,7 +33,7 @@ The data generator emits four FOCUS rows for this charge period. The column-augm
 ### Column Interactions
 
 * **ResourceId, ResourceName, ServiceName, ServiceCategory**: preserved unchanged from the native data on every output row — origin and all *allocated charges* — since these dimensions describe the shared instance, not the individual consumer.
-* **ServiceProviderName**: set to the identity of the provider that produced the native export (e.g., "Aura Web") on every output row.
+* **ServiceProviderName**: set to the identity of the provider that produced the native dataset artifact (e.g., "Aura Web") on every output row.
 * **ListUnitPrice, ContractedUnitPrice**: preserved unchanged on every output row (non-summable metrics are preserved per DataGeneratorCalculatedSplitCostAllocationHandling). ContractedUnitPrice defaults to ListUnitPrice here because Resource Reservation is a commitment discount, not a negotiated discount, so it does not reduce ContractedUnitPrice.
 * **ListCost, ContractedCost, EffectiveCost, ConsumedQuantity**: zeroed on the origin row; distributed across the three *allocated charge* rows in proportion to each consumer's allocation ratio. The sum across all four rows equals the pre-split origin total for each metric.
 * **BilledCost**: `$0.00` on all four rows. The origin charge is fully covered by the Resource Reservation's purchase charge (not shown in this example), and each *allocated charge* inherits that covered status since it represents a portion of the same covered usage.
