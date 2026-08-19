@@ -2,7 +2,7 @@
 
 A Credential ID is an identifier representing the [*credential*](#glossary:credential) presented on the request that produced a [*charge*](#glossary:charge). A *credential* is the means by which a [*principal*](#glossary:principal) is authenticated (e.g., API key, access token, session), and is distinct from the *principal* itself. Credential ID is an identifier that references a *credential* rather than the *credential* itself, so a *credential* with no published identifier has no value to include in the column. Credential ID is commonly used to distinguish *charges* that share a *principal* but originate from different *credentials*.
 
-For scenarios demonstrating how Credential ID is populated across different technology categories, see [Examples: Actor Attribution](#appendix.examples:actorattribution).
+For scenarios demonstrating how Credential ID is populated across different technology environments, see [Examples: Actor Attribution](#appendix.examples:actorattribution).
 
 ## Requirements
 

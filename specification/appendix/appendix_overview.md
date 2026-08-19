@@ -7,6 +7,7 @@
 | Topic | Description |
 | :--- | :--- |
 | [Discount Handling](#appendix.discounthandling) | Explains how discounts are represented and applied to charges in a FOCUS dataset. |
+| [Examples: Actor Attribution](#appendix.examples:actorattribution) | Illustrates how Principal ID and Credential ID are populated across different technology environments, including where a charge carries one identifier but not the other, and why neither column identifies the party that benefits from a charge. |
 | [Examples: AI Model Identity](#appendix.examples:aimodelidentity) | Illustrates how to represent the identity of an AI model in a Cost and Usage FOCUS dataset, including a directly purchased foundation model and the same model served by a cloud provider as a first-party service. |
 | [Examples: Commitment Discounts](#appendix.examples:commitmentdiscounts) | Explains the purchasing, usage, and amortization of commitment discounts in a FOCUS dataset. |
 | [Examples: Commitment Discount Flexibility](#appendix.examples:commitmentdiscountflexibility) | Demonstrates scenarios for usage-based commitment discounts with and without commitment discount flexibility. |
