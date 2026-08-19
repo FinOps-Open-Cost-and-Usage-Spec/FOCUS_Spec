@@ -71,7 +71,7 @@ The data generator emits four FOCUS rows for this charge period. The column-augm
 | PricingCategory         | `"Committed"`                                                                        | Subject to the Resource Reservation commitment discount             |
 | CommitmentDiscountId    | `"aura-resource-reservation-01"`                                                     | Identifier of the Resource Reservation commitment discount           |
 | CommitmentDiscountStatus | `"Used"`                                                                            | CommitmentDiscountId is populated and ChargeCategory is `"Usage"`    |
-| AllocatedMethodId       | `"aura-vcpu-proportional-v1"`                                                        | Related to the split cost allocation (see note above)               |
+| AllocatedMethodId       | `"aura-vcpu-proportional-v1"`                                                        | Related to the split cost allocation, though nothing was allocated to this row |
 | AllocatedMethodDetails  | *(null)*                                                                             | No allocated portion to describe on this row                        |
 | AllocatedResourceId     | *(null)*                                                                             | Not an *allocated charge*                                          |
 | AllocatedResourceName   | *(null)*                                                                             | Not an *allocated charge*                                          |
