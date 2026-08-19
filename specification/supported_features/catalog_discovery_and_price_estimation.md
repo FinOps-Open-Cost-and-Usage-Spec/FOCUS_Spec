@@ -21,7 +21,7 @@ SKU Price Effective Start and SKU Price Effective End carry meaning only as a pa
 * End only: the price applies from the earliest available time through that date.
 * Both populated: the price applies within that finite window.
 
-A point-in-time lookup therefore treats a null bound as unbounded in that direction, which is the `(bound IS NULL OR comparison)` pattern every query below uses. Rating a charge follows the same rule against Charge Period Start: a charge falls under a price when its charge period start is on or after SKU Price Effective Start and before SKU Price Effective End.
+A point-in-time lookup therefore treats a null bound as unbounded in that direction, which is the `(bound IS NULL OR comparison)` pattern the point-in-time queries below use. Finding announced changes is the exception: it tests the bounds directly, because it looks for prices whose applicability changes rather than for prices in force. Rating a charge follows the same rule against Charge Period Start: a charge falls under a price when its charge period start is on or after SKU Price Effective Start and before SKU Price Effective End.
 
 > **Note:** A dataset instance may hold only the prices in force today, or it may also carry forward-dated changes and superseded prices. The specification does not require a *service provider* to publish pricing history, and carries no signal distinguishing the two, so the same query can return one row per SKU Price ID from one *service provider* and several from another. Filtering to a point in time rather than assuming one row per SKU Price ID is what makes a query portable.
 
