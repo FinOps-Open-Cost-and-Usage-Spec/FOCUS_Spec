@@ -13,7 +13,7 @@ The columns are presented in alphabetical order.
 | Column                                                                              | Column Type | Feature Level                                                  | Allows Nulls | Data Type |
 | ----------------------------------------------------------------------------------- | ----------- | -------------------------------------------------------------- | ------------ | --------- |
 | [Charge Category](#datamodel.skuprice.chargecategory)                              | Dimension   | Mandatory   | False        | String    |
-| [Contract ID](#datamodel.skuprice.contractid)                                        | Dimension   | [Conditional](#conditions.includescontractcommitments)         | True         | String    |
+| [Contract ID](#datamodel.skuprice.contractid)                                        | Dimension   | Mandatory                                                      | True         | String    |
 | [Contracted Unit Price](#datamodel.skuprice.contractedunitprice)                     | Metric      | Mandatory                                                      | False        | Decimal   |
 | [List Unit Price](#datamodel.skuprice.listunitprice)                                 | Metric      | Mandatory                                                      | False        | Decimal   |
 | [Pricing Currency](#datamodel.skuprice.pricingcurrency)                              | Dimension   | Mandatory                                                      | False        | String    |
@@ -50,7 +50,7 @@ SkuPrice MUST adhere to the following requirements:
 
 * SkuPrice column presence MUST adhere to the following requirements:
   * SkuPrice MUST include [ChargeCategory](#datamodel.skuprice.chargecategory).
-  * SkuPrice MUST include [ContractId](#datamodel.skuprice.contractid) when the *operating model* [includes contract commitments](#conditions.includescontractcommitments).
+  * SkuPrice MUST include [ContractId](#datamodel.skuprice.contractid).
   * SkuPrice MUST include [ContractedUnitPrice](#datamodel.skuprice.contractedunitprice).
   * SkuPrice MUST include [ListUnitPrice](#datamodel.skuprice.listunitprice).
   * SkuPrice MUST include [PricingCurrency](#datamodel.skuprice.pricingcurrency).
