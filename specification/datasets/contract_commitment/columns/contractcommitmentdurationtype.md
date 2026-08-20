@@ -37,6 +37,8 @@ The following units should be used for the representation of time:
 | Year |
 | Years |
 
+> **Note:** These time units express the duration of a *contract commitment* and are not measurement units. They intentionally differ from the time-based units in [Unit Format](#attributes.unitformat), which govern how the unit of measure for a quantity is expressed. Contract Commitment Duration Type includes "Week" and "Quarter" because they are common commitment terms.
+
 ## Expected Format
 
 A given Contract Commitment Duration Type value follows a structured format of "[Numeric Value] [Unit]".
