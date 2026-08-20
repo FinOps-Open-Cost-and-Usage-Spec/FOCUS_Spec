@@ -154,9 +154,13 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
 
 ### Linking
 
-* **Linking on First Occurrence:** To avoid excessive linking, entity references (including FOCUS entity IDs, display names, and glossary terms) MUST be linked only on their first occurrence within a given source markdown file.
+Body content includes paragraphs, list items, table cells, and requirement bullets.
 
-> **Note:** Unless otherwise specified, first-occurrence linking is evaluated relative to the containing source markdown file.
+* **First Occurrence:** Entity references—including entity IDs, Display Names, and glossary terms—MUST be linked only on their first occurrence in body content within each source Markdown file.
+
+* **Titles and Headings:** Document titles and section headings do not count as body content and MUST NOT be linked solely to satisfy this rule.
+
+> **Note:** Ignore heading occurrences when determining the first occurrence. Link the first occurrence in body content instead. A term used only in headings does not require a link.
 
 **Exceptions:**
 
