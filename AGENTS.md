@@ -129,11 +129,16 @@ AI agents generating or reviewing content MUST act as strict technical editors e
 * **No Mixing:** Do not mix Entity IDs and Display Names within the same normative requirement.
 * **Column values:** When a column value appears in prose or normative text, enclose it in double quotation marks (e.g., `"Usage"`, `"Tax"`). In an Allowed Values table, list values without quotation marks because the `Value` column identifies them as literals, unless quotation marks are part of the value itself.
 * **Glossary terms:** Link with `[*term*](#glossary:term)` format.
-* **Linking Rule:** Link entity names and Glossary terms ONLY on their first meaningful occurrence in body content per source file. Body content includes paragraphs, list items, table cells, and normative requirement bullets. Document titles and headings do not count as occurrences and MUST NOT be linked solely to satisfy this rule. When a term first appears in a title or heading, link its first occurrence in the body content that follows. When the term does not occur in body content, no link is required. Exceptions:
-  * Functional links using different anchor text are exempt.
-  * Content Constraints sections always link entity references.
-  * Glossary entries evaluate first occurrence independently for each glossary entry.
-  * FOCUS Condition references in normative requirement bullets MAY be linked on every occurrence, even when the Condition was linked earlier in the source file. This keeps each requirement independently navigable.
+* **Linking Rule:** For each distinct entity or glossary destination in a source Markdown file:
+  * Ignore occurrences in document titles and section headings.
+  * Link the first remaining occurrence in reading order.
+  * Leave all later occurrences unlinked.
+  * When no remaining occurrence exists, no link is required.
+  Exceptions:
+  * A link whose anchor text is not an entity name or glossary term does not count toward first occurrence.
+  * Content Constraints sections link every entity reference.
+  * Glossary entries apply this rule independently within each entry.
+  * Each normative requirement bullet links its first reference to each FOCUS Condition, even when that Condition was linked earlier in the file.
 * **Lists:** All unordered lists MUST use asterisks (`*`), never dashes (`-`) or plus signs (`+`). Nested bullet points MUST use exactly two spaces per level.
 * **Notes:** Important notes must use the blockquote format (`> **Note:**`).
 * **Notes versus Exceptions:** Use Notes only for informative or explanatory material. Normative conditions and exceptions MUST be expressed as requirements rather than embedded inside Notes.
