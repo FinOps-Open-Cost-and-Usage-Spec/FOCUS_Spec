@@ -27,7 +27,7 @@ To illustrate how FOCUS normalizes the presentation of data across diverse techn
 
 Disclaimer: *The fictitious entities (data generators, customers, and commitment programs) listed in this appendix are intended solely for illustrative purposes to resemble real-world services and organizations. They do not reflect, represent, or imply the actual current or future FOCUS implementations, billing schemas, or data formats of any real-world companies or equivalents listed herein.*
 
-The table below outlines the fictitious *data generators* used throughout the specification, their primary functions, and their real-world counterparts for context, listed alphabetically by name:
+The table below outlines the fictitious *data generators* used throughout the specification, their primary functions, and their real-world counterparts for context. Entries are listed alphabetically by data generator name:
 
 | Fictitious Data Generator | Service Offering | Fictitious Data Generator Description | Similar Real-World Examples |
 | :--- | :--- | :--- | :--- |
@@ -48,7 +48,7 @@ The table below outlines the fictitious *data generators* used throughout the sp
 
 ## Fictitious Customer Reference<!--SkipTOC-->
 
-To contextualize the billing and cost allocation examples, this appendix utilizes fictitious customer profiles. These profiles represent common organizational structures and cloud adoption patterns, listed alphabetically by name:
+To contextualize the billing and cost allocation examples, this appendix utilizes fictitious customer profiles. These profiles represent common organizational structures and cloud adoption patterns. Entries are listed alphabetically by customer name:
 
 | Fictitious Customer | Company Profile | Customer Description |
 | :--- | :--- | :--- |
@@ -58,7 +58,7 @@ To contextualize the billing and cost allocation examples, this appendix utilize
 
 ## Fictitious Commitment Program Reference<!--SkipTOC-->
 
-To illustrate commitment program application and amortization without relying on vendor-specific terminology, the examples in this appendix use standardized fictitious commitment instruments. These constructs abstract the common commitment mechanisms used by major cloud and SaaS providers, listed alphabetically by name:
+To illustrate commitment program application and amortization without relying on vendor-specific terminology, the examples in this appendix use standardized fictitious commitment instruments. These constructs abstract the common commitment mechanisms used by major cloud and SaaS providers. Entries are listed alphabetically by commitment program name:
 
 | Fictitious Commitment Program | Acronym | Category | Fictitious Commitment Program Description | Similar Real-World Programs |
 | :--- | :--- | :--- | :--- | :--- |
