@@ -129,7 +129,7 @@ AI agents generating or reviewing content MUST act as strict technical editors e
 * **No Mixing:** Do not mix Entity IDs and Display Names within the same normative requirement.
 * **Column values:** When a column value appears in prose or normative text, enclose it in double quotation marks (e.g., `"Usage"`, `"Tax"`). In an Allowed Values table, list values without quotation marks because the `Value` column identifies them as literals, unless quotation marks are part of the value itself.
 * **Glossary terms:** Link with `[*term*](#glossary:term)` format.
-* **Linking Rule:** Link entity names and Glossary terms ONLY on their first occurrence per source file. Exceptions:
+* **Linking Rule:** Link entity names and Glossary terms ONLY on their first meaningful occurrence in body content per source file. Body content includes paragraphs, list items, table cells, and normative requirement bullets. Document titles and headings do not count as occurrences and MUST NOT be linked solely to satisfy this rule. When a term first appears in a title or heading, link its first occurrence in the body content that follows. When the term does not occur in body content, no link is required. Exceptions:
   * Functional links using different anchor text are exempt.
   * Content Constraints sections always link entity references.
   * Glossary entries evaluate first occurrence independently for each glossary entry.
