@@ -12,7 +12,9 @@ ContractCommitmentDurationType MUST adhere to the following requirements:
   * ContractCommitmentDurationType MUST NOT be null when a recommendation proposes the purchase of a *contract commitment*.
   * ContractCommitmentDurationType MUST be null when a recommendation does not propose the purchase of a *contract commitment*.
 * When ContractCommitmentDurationType is not null, ContractCommitmentDurationType MUST adhere to the following requirements:
-  * ContractCommitmentDurationType SHOULD be expressed with a quantity and unit, where quantity is a positive integer and unit is a standardized unit of time or usage, either singular or plural (e.g., "1 Year", "3 Years", "100 DPUs").
+  * ContractCommitmentDurationType SHOULD be expressed with a quantity and a unit (e.g., "1 Year", "3 Years", "100 DPUs").
+  * The quantity SHOULD be a positive integer.
+  * The unit SHOULD be a standardized unit of time or usage, either singular or plural.
   * When the unit is a unit of time, ContractCommitmentDurationType MUST use the largest unit of time that expresses the duration as a whole number (e.g., "1 Year" rather than "12 Months", "1 Week" rather than "7 Days").
 
 ## Expected Format

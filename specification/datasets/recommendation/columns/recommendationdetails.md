@@ -12,7 +12,9 @@ RecommendationDetails MUST adhere to the following requirements:
 * RecommendationDetails MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * RecommendationDetails MUST conform to [KeyValueFormat](#attributes.key-valueformat) requirements.
 * RecommendationDetails property keys SHOULD conform to [PascalCase](#glossary:pascalcase) format.
-* RecommendationDetails MUST be null when a recommendation has no additional properties.
+* RecommendationDetails MUST adhere to the following nullability requirements:
+  * RecommendationDetails MUST NOT be null when a recommendation has supporting detail that is not expressed in other columns.
+  * RecommendationDetails MUST be null when a recommendation has no supporting detail that is not expressed in other columns.
 * When RecommendationDetails is not null, RecommendationDetails MUST adhere to the following requirements:
   * RecommendationDetails MUST NOT include a property that duplicates the value of another [*FOCUS column*](#glossary:FOCUS-column) in the same [*row*](#glossary:row).
   * Property key MUST begin with the string "x_" unless it is a FOCUS-defined property.

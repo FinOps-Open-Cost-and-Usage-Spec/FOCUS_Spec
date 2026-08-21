@@ -21,7 +21,7 @@ ResourceConfigurationDetailsRecommended MUST adhere to the following requirement
 
 ## FOCUS-Defined Properties
 
-FOCUS does not define resource configuration property names in this release. All properties are defined by the *data generator* and prefixed with "x_" to prevent collisions with FOCUS-defined properties introduced in a future release.
+FOCUS does not define resource configuration property names in this release. All properties are defined by the [data generator](#metadata.datagenerator) and prefixed with "x_" to prevent collisions with FOCUS-defined properties introduced in a future release.
 
 ## Examples
 

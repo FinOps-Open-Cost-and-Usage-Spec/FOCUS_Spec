@@ -1,6 +1,6 @@
 # Implementation Risk
 
-Implementation Risk represents the relative level of risk associated with acting on a recommendation, as assessed by the [Data Generator Name](#datasets.recommendation.datageneratorname). Implementation Risk is commonly used alongside [Implementation Effort](#datasets.recommendation.implementationeffort) and [Estimated Monthly Cost Impact](#datasets.recommendation.estimatedmonthlycostimpact) to prioritize recommendations against possible disruptions they may cause.
+Implementation Risk represents the relative level of risk associated with acting on a recommendation, as assessed by the [Recommendation Provider Name](#datasets.recommendation.recommendationprovidername). Implementation Risk is commonly used alongside [Implementation Effort](#datasets.recommendation.implementationeffort) and [Estimated Monthly Cost Impact](#datasets.recommendation.estimatedmonthlycostimpact) to prioritize recommendations against possible disruptions they may cause.
 
 ## Requirements
 

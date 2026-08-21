@@ -1,6 +1,6 @@
 # Evaluation Period Start
 
-Evaluation Period Start represents the [*inclusive start bound*](#glossary:inclusivestartbound) of the period a recommendation was derived from. For example, a recommendation derived from 30 days of observed utilization where Evaluation Period Start is '2024-01-01T00:00:00Z' and Evaluation Period End is '2024-01-31T00:00:00Z' includes behavior observed on January 1 since Evaluation Period Start represents the *inclusive start bound*, but does not include behavior observed on January 31 since Evaluation Period End represents the [*exclusive end bound*](#glossary:exclusiveendbound). A recommendation derived from the configuration of a *resource* rather than from behavior over time has an evaluation period covering the moment the configuration was assessed. Evaluation Period Start, together with Evaluation Period End, allows a [*practitioner*](#glossary:practitioner) to assess the confidence of a recommendation and to compare recommendations produced by data generators that evaluate different periods.
+Evaluation Period Start represents the [*inclusive start bound*](#glossary:inclusivestartbound) of the period a recommendation was derived from. For example, a recommendation derived from 30 days of observed utilization where Evaluation Period Start is '2024-01-01T00:00:00Z' and [Evaluation Period End](#datasets.recommendation.evaluationperiodend) is '2024-01-31T00:00:00Z' includes behavior observed on January 1 since Evaluation Period Start represents the *inclusive start bound*, but does not include behavior observed on January 31 since Evaluation Period End represents the [*exclusive end bound*](#glossary:exclusiveendbound). A recommendation derived from the configuration of a [*resource*](#glossary:resource) rather than from behavior over time has an evaluation period covering the moment the configuration was assessed. Evaluation Period Start, together with Evaluation Period End, allows a [*practitioner*](#glossary:practitioner) to assess the confidence of a recommendation and to compare recommendations produced by [data generators](#metadata.datagenerator) that evaluate different periods.
 
 ## Requirements
 
@@ -13,7 +13,7 @@ EvaluationPeriodStart MUST adhere to the following requirements:
   * EvaluationPeriodStart MUST NOT be null when a recommendation is derived from a period of evaluation.
   * EvaluationPeriodStart MUST be null when a recommendation is not derived from a period of evaluation.
 * When EvaluationPeriodStart is not null, EvaluationPeriodStart MUST adhere to the following requirements:
-  * EvaluationPeriodStart MUST be less than [EvaluationPeriodEnd](#datasets.recommendation.evaluationperiodend).
+  * EvaluationPeriodStart MUST be less than EvaluationPeriodEnd.
   * EvaluationPeriodStart MUST be less than [RecommendationCreated](#datasets.recommendation.recommendationcreated).
 
 ## Column ID
