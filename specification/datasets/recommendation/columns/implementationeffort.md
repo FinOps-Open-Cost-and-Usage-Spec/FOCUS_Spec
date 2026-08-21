@@ -7,7 +7,9 @@ Implementation Effort represents the relative level of effort to act on a recomm
 ImplementationEffort MUST adhere to the following requirements:
 
 * ImplementationEffort MUST be of type String.
-* ImplementationEffort MAY be null when the level of effort to act on a recommendation is not available.
+* ImplementationEffort MUST adhere to the following nullability requirements:
+  * ImplementationEffort SHOULD NOT be null when the level of effort to act on a recommendation is known to the [data generator](#metadata.datagenerator).
+  * ImplementationEffort MAY be null when the level of effort to act on a recommendation is not known to the data generator.
 * ImplementationEffort MUST be one of the allowed values when not null.
 
 ## Allowed Values

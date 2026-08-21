@@ -7,7 +7,9 @@ Implementation Risk represents the relative level of risk associated with acting
 ImplementationRisk MUST adhere to the following requirements:
 
 * ImplementationRisk MUST be of type String.
-* ImplementationRisk MAY be null when the level of risk associated with a recommendation is not available.
+* ImplementationRisk MUST adhere to the following nullability requirements:
+  * ImplementationRisk SHOULD NOT be null when the level of risk associated with a recommendation is known to the [data generator](#metadata.datagenerator).
+  * ImplementationRisk MAY be null when the level of risk associated with a recommendation is not known to the data generator.
 * ImplementationRisk MUST be one of the allowed values when not null.
 
 ## Allowed Values
