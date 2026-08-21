@@ -9,8 +9,8 @@ SubAccountName MUST adhere to the following requirements:
 * SubAccountName MUST be of type String.
 * SubAccountName MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * SubAccountName MUST adhere to the following nullability requirements:
-  * SubAccountName MUST NOT be null when a display name is assigned to the *sub account* and available to the *data generator*.
-  * SubAccountName MAY be null when no display name is assigned to the *sub account*, or when the display name is not available to the *data generator*.
+  * SubAccountName MUST NOT be null when a display name is assigned to the *sub account* and available to the [data generator](#metadata.datagenerator).
+  * SubAccountName MAY be null when no display name is assigned to the *sub account*, or when the display name is not available to the data generator.
 
 ## Column ID
 

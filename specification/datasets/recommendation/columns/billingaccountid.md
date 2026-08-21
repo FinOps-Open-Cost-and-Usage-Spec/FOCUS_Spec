@@ -11,7 +11,7 @@ BillingAccountId MUST adhere to the following requirements:
 * BillingAccountId MUST adhere to the following nullability requirements:
   * BillingAccountId MUST be null when a recommendation is not associated with a single *billing account*.
   * BillingAccountId SHOULD NOT be null when a recommendation is associated with a single *billing account*.
-  * BillingAccountId MAY be null when the associated *billing account* is not known to the *data generator*.
+  * BillingAccountId MAY be null when the associated *billing account* is not known to the data generator.
 * When BillingAccountId is not null, BillingAccountId MUST adhere to the following requirements:
   * BillingAccountId MUST be a unique identifier within an [*invoice issuer*](#glossary:invoice-issuer).
   * BillingAccountId SHOULD be a fully-qualified identifier.

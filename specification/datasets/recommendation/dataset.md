@@ -8,6 +8,7 @@ The Recommendation dataset is a supporting dataset that describes optimization r
 | :--- | :--- | :--- | :--- | :--- |
 | [Billing Account ID](#datasets.recommendation.billingaccountid) | Dimension | Mandatory | True | String |
 | [Billing Account Name](#datasets.recommendation.billingaccountname) | Dimension | Mandatory | True | String |
+| [Commitment Discount Category](#datasets.recommendation.commitmentdiscountcategory) | Dimension | [Conditional](#conditions.includescontractcommitmentrecommendations) | True | String |
 | [Contract Commitment Duration Type](#datasets.recommendation.contractcommitmentdurationtype) | Dimension | [Conditional](#conditions.includescontractcommitmentrecommendations) | True | String |
 | [Contract Commitment Payment Model](#datasets.recommendation.contractcommitmentpaymentmodel) | Dimension | [Conditional](#conditions.includescontractcommitmentrecommendations) | True | String |
 | [Contract Commitment Type](#datasets.recommendation.contractcommitmenttype) | Dimension | [Conditional](#conditions.includescontractcommitmentrecommendations) | True | String |
@@ -15,9 +16,12 @@ The Recommendation dataset is a supporting dataset that describes optimization r
 | [Estimated Monthly Cost Impact](#datasets.recommendation.estimatedmonthlycostimpact) | Metric | Mandatory | True | Decimal |
 | [Implementation Effort](#datasets.recommendation.implementationeffort) | Dimension | Optional | True | String |
 | [Implementation Risk](#datasets.recommendation.implementationrisk) | Dimension | Optional | True | String |
+| [Evaluation Period End](#datasets.recommendation.evaluationperiodend) | Dimension | Optional | True | Date/Time |
+| [Evaluation Period Start](#datasets.recommendation.evaluationperiodstart) | Dimension | Optional | True | Date/Time |
 | [Recommendation Category](#datasets.recommendation.recommendationcategory) | Dimension | Mandatory | False | String |
 | [Recommendation Created](#datasets.recommendation.recommendationcreated) | Dimension | Mandatory | False | Date/Time |
 | [Recommendation Description](#datasets.recommendation.recommendationdescription) | Dimension | Mandatory | True | String |
+| [Recommendation Details](#datasets.recommendation.recommendationdetails) | Dimension | Mandatory | True | JSON |
 | [Recommendation ID](#datasets.recommendation.recommendationid) | Dimension | Mandatory | False | String |
 | [Recommendation Last Updated](#datasets.recommendation.recommendationlastupdated) | Dimension | Mandatory | False | Date/Time |
 | [Recommendation Provider Name](#datasets.recommendation.recommendationprovidername) | Dimension | Mandatory | False | String |
@@ -56,16 +60,20 @@ Recommendation MUST adhere to the following requirements:
 * Recommendation column presence MUST adhere to the following requirements:
   * Recommendation MUST include [BillingAccountId](#datasets.recommendation.billingaccountid).
   * Recommendation MUST include [BillingAccountName](#datasets.recommendation.billingaccountname).
-  * Recommendation MUST include [ContractCommitmentDurationType](#datasets.recommendation.contractcommitmentdurationtype) when the [*operating model*](#glossary:operating-model) [includes contract commitment recommendations](#conditions.includescontractcommitmentrecommendations).
+  * Recommendation MUST include [CommitmentDiscountCategory](#datasets.recommendation.commitmentdiscountcategory) when the [*operating model*](#glossary:operating-model) [includes contract commitment recommendations](#conditions.includescontractcommitmentrecommendations).
+  * Recommendation MUST include [ContractCommitmentDurationType](#datasets.recommendation.contractcommitmentdurationtype) when the *operating model* [includes contract commitment recommendations](#conditions.includescontractcommitmentrecommendations).
   * Recommendation MUST include [ContractCommitmentPaymentModel](#datasets.recommendation.contractcommitmentpaymentmodel) when the *operating model* [includes contract commitment recommendations](#conditions.includescontractcommitmentrecommendations).
   * Recommendation MUST include [ContractCommitmentType](#datasets.recommendation.contractcommitmenttype) when the *operating model* [includes contract commitment recommendations](#conditions.includescontractcommitmentrecommendations).
   * Recommendation MUST include [Currency](#datasets.recommendation.currency).
   * Recommendation MUST include [EstimatedMonthlyCostImpact](#datasets.recommendation.estimatedmonthlycostimpact).
   * Recommendation MAY include [ImplementationEffort](#datasets.recommendation.implementationeffort).
   * Recommendation MAY include [ImplementationRisk](#datasets.recommendation.implementationrisk).
+  * Recommendation MAY include [EvaluationPeriodEnd](#datasets.recommendation.evaluationperiodend).
+  * Recommendation MAY include [EvaluationPeriodStart](#datasets.recommendation.evaluationperiodstart).
   * Recommendation MUST include [RecommendationCategory](#datasets.recommendation.recommendationcategory).
   * Recommendation MUST include [RecommendationCreated](#datasets.recommendation.recommendationcreated).
   * Recommendation MUST include [RecommendationDescription](#datasets.recommendation.recommendationdescription).
+  * Recommendation MUST include [RecommendationDetails](#datasets.recommendation.recommendationdetails).
   * Recommendation MUST include [RecommendationId](#datasets.recommendation.recommendationid).
   * Recommendation MUST include [RecommendationLastUpdated](#datasets.recommendation.recommendationlastupdated).
   * Recommendation MUST include [RecommendationProviderName](#datasets.recommendation.recommendationprovidername).
