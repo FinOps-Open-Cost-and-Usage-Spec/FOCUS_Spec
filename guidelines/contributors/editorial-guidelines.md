@@ -152,6 +152,21 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
 
 > **Note:** Examples are illustrative, informative, and non-normative. They do not define requirements and do not override the rules in this section.
 
+### Column and Attribute References
+
+* Normative requirements MUST use canonical Column IDs and Attribute IDs.
+* Conceptual, reader-facing references in non-normative content SHOULD use Display Names.
+* Schema-facing references in non-normative content MAY use canonical IDs.
+
+A reference is schema-facing when it satisfies at least one of the following conditions:
+
+* It identifies a field in code, JSON, SQL, a schema, or a table header.
+* It is an object or property path.
+* The surrounding sentence describes the field being populated, omitted, null, serialized, validated, matched, compared, grouped, filtered, joined, aggregated, or repeated.
+* Exact correspondence with an adjacent table, code block, schema fragment, or query expression is required.
+
+When none of these conditions applies, the reference is conceptual.
+
 ### Linking
 
 Body content includes paragraphs, list items, table cells, and requirement bullets.
