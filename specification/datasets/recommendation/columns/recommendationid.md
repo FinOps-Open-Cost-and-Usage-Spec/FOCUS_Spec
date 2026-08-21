@@ -1,6 +1,6 @@
 # Recommendation ID
 
-A Recommendation ID is an identifier assigned to a recommendation by the [Data Generator Name](#datasets.recommendation.datageneratorname). The Recommendation ID is commonly used to track a recommendation over time and to deduplicate recommendations that are reported across multiple refreshes.
+A Recommendation ID is an identifier assigned to a recommendation by the [Recommendation Provider Name](#datasets.recommendation.recommendationprovidername). The Recommendation ID is commonly used to track a recommendation over time and to deduplicate recommendations that are reported across multiple refreshes.
 
 ## Requirements
 
@@ -9,7 +9,7 @@ RecommendationId MUST adhere to the following requirements:
 * RecommendationId MUST be of type String.
 * RecommendationId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * RecommendationId MUST NOT be null.
-* RecommendationId MUST be a unique identifier within the DataGeneratorName.
+* RecommendationId MUST be a unique identifier within the RecommendationProviderName.
 * RecommendationId MUST remain consistent over time for the same recommendation.
 * RecommendationId SHOULD be a fully-qualified identifier.
 

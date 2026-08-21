@@ -5,7 +5,6 @@
 !INCLUDE "contractcommitmentpaymentmodel.md",1
 !INCLUDE "contractcommitmenttype.md",1
 !INCLUDE "currency.md",1
-!INCLUDE "datageneratorname.md",1
 !INCLUDE "estimatedmonthlycostimpact.md",1
 !INCLUDE "evaluationperiodend.md",1
 !INCLUDE "evaluationperiodstart.md",1
@@ -17,6 +16,7 @@
 !INCLUDE "recommendationdetails.md",1
 !INCLUDE "recommendationid.md",1
 !INCLUDE "recommendationlastupdated.md",1
+!INCLUDE "recommendationprovidername.md",1
 !INCLUDE "recommendationstatus.md",1
 !INCLUDE "recommendationsubcategory.md",1
 !INCLUDE "regionid.md",1
