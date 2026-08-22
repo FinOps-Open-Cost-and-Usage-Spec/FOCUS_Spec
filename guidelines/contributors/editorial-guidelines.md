@@ -195,8 +195,6 @@ Body content includes paragraphs, list items, table cells, and requirement bulle
 
 * **Entity ID Naming:** Entity IDs MUST match the exact naming conventions used in the schema (e.g., CommitmentDiscountId).
 
-* **Entity Display Name References:** References to FOCUS entities in non-normative content (i.e., outside Requirements sections) MUST use Display Names when available.
-
 * **Entity Scope:** These rules apply to all entities defined in the FOCUS specification (e.g., Columns, Attributes, Datasets, Objects).
 
 ### Display Names
