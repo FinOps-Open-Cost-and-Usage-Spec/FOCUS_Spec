@@ -173,7 +173,7 @@ AI agents generating or reviewing content MUST act as strict technical editors e
 * **Self-contained comments:** Every review comment or suggestion MUST include all context needed for the author to evaluate it independently. Do not reference other comments (e.g., "same as above" or "see my comment on line X").
 * **Diff-scope discipline:** Only flag issues on lines changed or added by the PR. Pre-existing problems are out of scope unless they create a direct inconsistency with new content in the same PR.
 * **Deduplication:** If your tooling can read PR threads, do not flag already-raised issues or post competing suggestions. To add details, reply to the existing thread.
-* **Path-based applicability:** When reviewing a file under `guidelines/` folder, do not apply the BCP-14 keyword location rule. Continue applying all other relevant Markdown, editorial, example-accuracy, and review-conduct rules.
+* **BCP-14 rule applicability:** When the BCP-14 keyword location rule does not apply, continue applying all other relevant Markdown, editorial, example-accuracy, and review-conduct rules.
 
 ### Issue and Pull Request Templates
 
