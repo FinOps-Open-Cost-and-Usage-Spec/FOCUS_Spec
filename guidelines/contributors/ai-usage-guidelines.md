@@ -69,15 +69,19 @@ The FOCUS project does not mandate a specific attribution format. This aligns wi
 
 This repository includes configuration files for AI coding assistants:
 
-* `AGENTS.md` - Project context and conventions (at root for tool compatibility)
+* `AGENTS.md` - Model-independent entry point that routes agents to activity-specific instructions (at root for tool compatibility)
+* `.agents/` - Activity-specific instruction files (writing, reviewing, building and testing, requirements model, project workflow)
 * `.ai/commands/` - Reusable workflow definitions
 * `.ai/memory/` - Persistent learnings across sessions
 * `.ai/<branch-name>/` - Working files for active issues (deleted after PR merge)
 
 Tool-specific wrapper files reference the centralized configuration:
 
-* `CLAUDE.md`, `.cursorrules`, `.github/copilot-instructions.md` - Symlinks to `AGENTS.md`
+* `CLAUDE.md`, `.cursorrules` - Symlinks to `AGENTS.md`
+* `.gemini/styleguide.md`, `.github/copilot-instructions.md` - Generated from `AGENTS.md` and `.agents/` files for tools that inject instructions verbatim (regenerate with `python3 .agents/generate_entry_points.py`)
 * `.claude/commands/`, `.cursor/commands/`, `.github/prompts/` - Tool-specific wrappers for interactive use
+
+New agent guidance belongs in `AGENTS.md` (routing and orientation) or the matching `.agents/` instruction file, never in the tool-specific wrapper files.
 
 ### Creating Shared Commands
 

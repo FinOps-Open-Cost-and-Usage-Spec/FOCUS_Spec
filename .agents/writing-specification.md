@@ -1,50 +1,3 @@
-<!-- GENERATED FILE - DO NOT EDIT.
-     This file is generated for AI tools that inject instructions verbatim
-     and cannot follow file references. Edit the sources instead:
-     AGENTS.md, .agents/writing-specification.md, .agents/reviewing-changes.md
-     Then regenerate with: python3 .agents/generate_entry_points.py -->
-
-# AGENTS.md
-
-This file is the model-independent entry point for AI coding assistants working with this repository. It provides a short project orientation and directs agents to the activity-specific instruction files under `.agents/`.
-
-## Project Overview
-
-This is the FinOps Open Cost and Usage Specification (FOCUS) repository - a technical specification for standardizing cloud, SaaS, and billing data schemas. The repository contains both human-readable specification documents (Markdown to HTML/PDF) and machine-readable validation rules (JSON).
-
-FOCUS defines datasets for billing data from cloud providers (AWS, Azure, GCP), SaaS vendors, and on-premises systems. The primary dataset is **Cost and Usage**, which can be joined with the supplemental **Contract Commitment** dataset. Key concepts include account hierarchies (billing accounts, sub-accounts, resources) and service hierarchies (categories, names, SKUs). For detailed schema information, read the specification files in `specification/`.
-
-## Activity Instructions
-
-Before making any change, agents MUST read the instruction file(s) matching the requested activity. Read multiple files when an activity spans several areas (e.g., writing content and then building the spec to verify it). When no activity matches or the classification is unclear, read `.agents/writing-specification.md` and `.agents/project-workflow.md` as the default set.
-
-| Activity | Instruction File |
-|---|---|
-| Building the spec, running tests, linting markdown | `.agents/build-and-test.md` |
-| Writing or editing specification content | `.agents/writing-specification.md` |
-| Reviewing pull requests or specification changes | `.agents/reviewing-changes.md` |
-| Working with the requirements model (specification validation) | `.agents/requirements-model.md` |
-| Creating issues or PRs, managing working files | `.agents/project-workflow.md` |
-
-Guidance that applies to a single activity lives only in its instruction file. Do not duplicate guidance from `.agents/` files into this file or into model-specific entry files.
-
-## Repository Map
-
-* `specification/` - Specification source files and build tooling
-* `specification/requirements_model/` - Machine-readable validation rules (JSON) and tests
-* `guidelines/` - Development processes and conventions
-* `supporting_content/` - Background info from spec development
-* `.agents/` - Activity-specific instruction files for AI agents
-* `.ai/` - Per-issue working files (`.ai/work/`) and persistent memory (`.ai/memory/`)
-
-## Model-Specific Entry Points
-
-`CLAUDE.md` and `.cursorrules` are symbolic links to this file. `.gemini/styleguide.md` and `.github/copilot-instructions.md` are generated files for tools that inject instructions verbatim and cannot follow file references (e.g., automated PR review bots); they concatenate this file with `.agents/writing-specification.md` and `.agents/reviewing-changes.md`. Regenerate them with `python3 .agents/generate_entry_points.py` after editing any source file. All guidance is owned by this file and the `.agents/` instruction files; model-specific entry points MUST NOT carry their own guidance.
-
-## AI Usage Policy
-
-AI-assisted contributions are permitted and follow the same review standards as human-authored content. See [AI Usage Guidelines](guidelines/contributors/ai-usage-guidelines.md) for details.
-
 # Writing Specification Content
 
 Instructions for generating or editing specification content. AI agents generating content MUST act as strict technical editors enforcing the FOCUS standards. Focus entirely on specification documents, schema definitions, and markdown formatting.
@@ -132,17 +85,3 @@ These content rules also apply when reviewing specification changes; see `.agent
 * **JSON Formatting:** JSON blocks MUST use double quotation marks for keys. Verify that the JSON is structurally valid.
 * **JSON Object Requirements:** Requirements governing a JSON object MUST be authored with the object definition. Column-level requirements MUST remain with the column definition. Requirements for object properties SHOULD reference properties using dot notation where appropriate to distinguish object-level constraints from property-level constraints.
 * **Example Disclaimer:** Top-level sections with examples and no normative requirements MUST begin with: `> Note: The following section is informative and non-normative. It does not define requirements.` Enforce ONLY on Level-2 headings in `spec.md` or major section overview files (e.g., `appendix_overview.md`). Ignore nested .md files.
-
-# Reviewing Specification Changes
-
-Instructions for reviewing pull requests and specification changes. AI agents reviewing content MUST act as strict technical editors enforcing the FOCUS standards.
-
-When evaluating specification content, apply all content rules in `.agents/writing-specification.md`. The rules below govern how findings are reported.
-
-## Review Conduct
-
-* **Suggestion-first feedback:** When a concrete fix exists, post it as a GitHub `suggestion` block so the author can accept with one click. Use plain-text comments only when the feedback requires discussion rather than a specific replacement.
-* **Self-contained comments:** Every review comment or suggestion MUST include all context needed for the author to evaluate it independently. Do not reference other comments (e.g., "same as above" or "see my comment on line X").
-* **Diff-scope discipline:** Only flag issues on lines changed or added by the PR. Pre-existing problems are out of scope unless they create a direct inconsistency with new content in the same PR.
-* **Deduplication:** If your tooling can read PR threads, do not flag already-raised issues or post competing suggestions. To add details, reply to the existing thread.
-* **BCP-14 rule applicability:** When the BCP-14 keyword location rule does not apply, continue applying all other relevant Markdown, editorial, example-accuracy, and review-conduct rules.
