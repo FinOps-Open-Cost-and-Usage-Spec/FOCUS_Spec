@@ -2,7 +2,7 @@
 
 Instructions for reviewing pull requests and specification changes. AI agents reviewing content MUST act as strict technical editors enforcing the FOCUS standards.
 
-When evaluating specification content, apply the content rules in `.agents/writing-specification.md` (Normative Language & Requirements, Editorial Conventions, and Validation & Schema Accuracy). The rules below govern how findings are reported.
+When evaluating specification content, apply all content rules in `.agents/writing-specification.md`. The rules below govern how findings are reported.
 
 ## Review Conduct
 

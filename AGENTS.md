@@ -10,7 +10,7 @@ FOCUS defines datasets for billing data from cloud providers (AWS, Azure, GCP), 
 
 ## Activity Instructions
 
-Read the instruction file that matches the requested activity before starting work. Read multiple files when an activity spans several areas (e.g., writing content and then building the spec to verify it).
+Before making any change, agents MUST read the instruction file(s) matching the requested activity. Read multiple files when an activity spans several areas (e.g., writing content and then building the spec to verify it). When no activity matches or the classification is unclear, read `.agents/writing-specification.md` and `.agents/project-workflow.md` as the default set.
 
 | Activity | Instruction File |
 |---|---|
@@ -33,7 +33,7 @@ Guidance that applies to a single activity lives only in its instruction file. D
 
 ## Model-Specific Entry Points
 
-`CLAUDE.md`, `.cursorrules`, `.gemini/styleguide.md`, and `.github/copilot-instructions.md` are symbolic links to this file. All AI models share this single entry point; model-specific files MUST NOT carry their own guidance.
+`CLAUDE.md` and `.cursorrules` are symbolic links to this file. `.gemini/styleguide.md` and `.github/copilot-instructions.md` are generated files for tools that inject instructions verbatim and cannot follow file references (e.g., automated PR review bots); they concatenate this file with `.agents/writing-specification.md` and `.agents/reviewing-changes.md`. Regenerate them with `python3 .agents/generate_entry_points.py` after editing any source file. All guidance is owned by this file and the `.agents/` instruction files; model-specific entry points MUST NOT carry their own guidance.
 
 ## AI Usage Policy
 
