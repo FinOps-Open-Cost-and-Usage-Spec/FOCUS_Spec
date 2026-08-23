@@ -10,7 +10,8 @@ SubAccountId MUST adhere to the following requirements:
 * SubAccountId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * SubAccountId MUST adhere to the following nullability requirements:
   * SubAccountId MUST be null when a recommendation is not associated with a single *sub account*.
-  * SubAccountId MUST NOT be null when a recommendation is associated with a single *sub account*.
+  * SubAccountId SHOULD NOT be null when a recommendation is associated with a single *sub account*.
+  * SubAccountId MAY be null when the associated *sub account* is not known to the [data generator](#metadata.datagenerator).
 
 ## Column ID
 
