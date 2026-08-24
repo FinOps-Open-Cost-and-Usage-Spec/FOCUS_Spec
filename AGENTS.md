@@ -150,7 +150,9 @@ AI agents generating or reviewing content MUST act as strict technical editors e
   * A canonical ID used for a conceptual non-normative reference MAY produce a suggestion. 
   * A canonical ID used for a conceptual non-normative reference MUST NOT produce an error or warning.
 * **No Mixing:** Do not mix Entity IDs and Display Names within the same normative requirement.
-* **Column values:** When a column value appears in prose or normative text, enclose it in double quotation marks (e.g., `"Usage"`, `"Tax"`). In an Allowed Values table, list values without quotation marks because the `Value` column identifies them as literals, unless quotation marks are part of the value itself.
+* **Column values:** Apply the following rules:
+  * When a column value appears in prose or normative text, enclose it in double quotation marks (e.g., `"Usage"`, `"Tax"`). 
+  * In an Allowed Values table, list values without quotation marks because the `Value` column identifies them as literals, unless quotation marks are part of the value itself.
 * **Glossary terms:** Link with `[*term*](#glossary:term)` format.
 * **Linking Rule:** For each distinct entity or glossary destination in a source Markdown file:
   * Ignore occurrences in document titles and section headings.
