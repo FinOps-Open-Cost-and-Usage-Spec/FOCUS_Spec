@@ -19,8 +19,8 @@ Example Data
 
 Data files and the narrative that accompanies them:
 * must agree with each other, so every figure quoted in prose or a table matches the referenced data file
-* must give each identifier a single meaning across the example set, so one SkuPriceId names one price point rather than several
-* must use separate identifiers for prices that differ in payment option, term, unit of measure, or the role a charge plays, because those variations are distinguishable only by the identifier
+* must give each identifier a single meaning across the example set, so one identifier names one thing rather than several (e.g., one SkuPriceId names one price point)
+* must use separate identifiers for prices that differ in payment option, term, unit of measure, or the role a charge plays, because a SKU Price is resolved from SkuPriceId alone```
 * should reuse the fictitious service providers and identifier patterns of neighboring examples so readers can compare scenarios side by side
 
 Document Design
