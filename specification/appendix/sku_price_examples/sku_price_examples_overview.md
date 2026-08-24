@@ -8,14 +8,14 @@ The scenarios draw on a single rate card rather than a separate dataset per scen
 
 [**CSV Example: complete rate card**](/specification/data/sku_price_examples/aura_web_rate_card_full.csv)
 
-The rate card contains 17 records across six SKUs:
+The rate card contains 18 records across six SKUs:
 
 * A general purpose virtual machine offered at an on-demand rate, at a negotiated rate, and at three reservation rates.
 * A one-year virtual machine reservation, offered under two payment models.
 * A one-year flexible spend plan, offered under two payment models.
 * Object storage priced across three quantity tiers, with one negotiated tier.
 * An analytics service priced in a [*consumption currency*](#glossary:consumption-currency).
-* A purchasable balance of that consumption currency.
+* A purchasable balance of that consumption currency, and the published unit value of a granted promotional credit.
 
 Each scenario below links a CSV extract containing the records from the rate card that the scenario discusses. The extracts are subsets of the complete rate card, not separate datasets.
 
