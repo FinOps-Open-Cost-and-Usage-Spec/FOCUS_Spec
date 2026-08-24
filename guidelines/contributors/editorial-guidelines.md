@@ -172,7 +172,7 @@ When none of these conditions applies, the reference is conceptual.
 
 Body content includes paragraphs, list items, table cells, and requirement bullets.
 
-* **First Occurrence:** Entity references—including entity IDs, Display Names, and glossary terms—MUST be linked only on their first occurrence in body content within each source Markdown file.
+* **First Occurrence:** Entity references, including entity IDs, Display Names, and glossary terms, MUST be linked only on their first occurrence in body content within each source Markdown file.
 
 * **Titles and Headings:** Document titles and section headings do not count as body content and MUST NOT be linked solely to satisfy this rule.
 
