@@ -113,8 +113,9 @@ AI agents generating or reviewing content MUST act as strict technical editors e
 * **Comparison Terminology:** Select comparison terminology according to the semantics of the comparison:
   * use `equal` for numeric comparisons;
   * use `match` for identifiers and string values;
-  * use `be` when evaluating states or enumerated values; and
-  * use `equivalent` for semantic equivalence.
+  * use `be` when evaluating states or enumerated values;
+  * use `greater than or equal to` or `less than or equal to` for inequalities;
+  * use `equivalent` for semantic equivalence; and
   * use `remain consistent` when requiring a value to be stable across time, records, or another defined scope.
 * **Structural Anchors:** Requirements sections, including reusable Attribute requirement sections, MUST begin with a non-verifiable anchor phrase ending in a colon (e.g., `<Entity> MUST adhere to the following requirements:`). Anchor requirements exist solely to establish the parsing structure of subordinate requirements and MUST NOT be interpreted as independently verifiable normative requirements.
 * **Terminology:** Normative references to columns MUST use `ColumnId`s, never column Display Names. Requirements governing a specific dataset MUST use its `DatasetId` as the subject (e.g., `SkuPrice`). Requirements applying generically to all FOCUS datasets MUST use `FOCUS dataset`. Otherwise, authors MUST use the abstraction that precisely matches the requirement (e.g., `dataset instance` or `dataset artifact`) and MUST avoid using `FOCUS dataset` when a narrower abstraction is intended.
