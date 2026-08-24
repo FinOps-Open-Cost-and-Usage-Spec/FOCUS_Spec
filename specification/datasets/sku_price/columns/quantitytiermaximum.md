@@ -38,9 +38,9 @@ The inclusive upper boundary of a quantity-based pricing tier, measured in the d
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
 | Dataset         | [SKU Price](#datamodel.skuprice)                      |
+| Conditions      | [Includes Quantity Tier Pricing](#conditions.includesquantitytierpricing) |
 | Column type     | Metric                                               |
 | Feature level   | Conditional                                          |
-| Condition       | [Includes quantity tier pricing](#conditions.includesquantitytierpricing) |
 | Allows nulls    | True                                                 |
 | Data type       | Decimal                                              |
 | Value format    | \<not specified>                                     |

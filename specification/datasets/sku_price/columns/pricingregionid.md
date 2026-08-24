@@ -39,9 +39,9 @@ Service-provider-assigned identifier for an isolated geographic area where the s
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
 | Dataset         | [SKU Price](#datamodel.skuprice)                      |
+| Conditions      | [Includes Regions](#conditions.includesregions)      |
 | Column type     | Dimension                                            |
 | Feature level   | Conditional                                          |
-| Condition       | [Includes regions](#conditions.includesregions)      |
 | Allows nulls    | True                                                 |
 | Data type       | String                                               |
 | Value format    | \<not specified>                                     |

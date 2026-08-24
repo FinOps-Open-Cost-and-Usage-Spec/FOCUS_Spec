@@ -52,9 +52,9 @@ Defines the financial settlement structure of a purchase.
 | Constraint      | Value                                                                                      |
 | :-------------- | :----------------------------------------------------------------------------------------- |
 | Dataset         | [SKU Price](#datamodel.skuprice)                                                            |
+| Conditions      | [Includes Purchases](#conditions.includespurchases)                                        |
 | Column type     | Dimension                                                                                  |
 | Feature level   | Conditional                                                                                |
-| Condition       | [Includes purchases](#conditions.includespurchases)                                        |
 | Allows nulls    | True                                                                                       |
 | Data type       | String                                                                                     |
 | Value format    | Allowed values                                                                             |
