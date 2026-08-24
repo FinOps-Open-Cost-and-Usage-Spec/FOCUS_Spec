@@ -38,10 +38,10 @@ The Contract Applied Object Schema defines the structure for the [Contract Appli
 
 !INCLUDECODE "schemas/datasets/cost_and_usage/contractappliedobjectschema.json" (json)
 
-### Credential Details Object Schema
+### Requester Details Object Schema
 
-The Credential Details Object Schema defines the structure for the [Credential Details](#datamodel.costandusage.credentialdetails) column.
+The Requester Details Object Schema defines the structure for the [Requester Details](#datamodel.costandusage.requesterdetails) column.
 
-[Download from GitHub](/specification/schemas/datasets/cost_and_usage/credentialdetailsobjectschema.json)
+[Download from GitHub](/specification/schemas/datasets/cost_and_usage/requesterdetailsobjectschema.json)
 
-!INCLUDECODE "schemas/datasets/cost_and_usage/credentialdetailsobjectschema.json" (json)
+!INCLUDECODE "schemas/datasets/cost_and_usage/requesterdetailsobjectschema.json" (json)

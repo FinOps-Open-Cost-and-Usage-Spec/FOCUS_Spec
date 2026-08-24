@@ -1,8 +1,8 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://focus.finops.org/schemas/credentialdetailsobject.json",
-    "title": "Credential Details Object",
-    "description": "Schema for validating the Credential Details column JSON object structure in FOCUS datasets",
+    "$id": "https://focus.finops.org/schemas/requesterdetailsobject.json",
+    "title": "Requester Details Object",
+    "description": "Schema for validating the Requester Details column JSON object structure in FOCUS datasets",
     "type": "object",
     "minProperties": 1,
     "properties": {
@@ -66,7 +66,7 @@
     },
     "patternProperties": {
         "^x_[A-Z][a-zA-Z0-9]*$": {
-            "description": "Custom data generator-defined top-level properties prefixed with x_ in PascalCase format"
+            "description": "Custom data generator-defined top-level properties prefixed with x_ in PascalCase format. A property whose value is an object may describe a further level of the requester, using the same Id, Type, and Name entries as the Credential object."
         }
     },
     "additionalProperties": false

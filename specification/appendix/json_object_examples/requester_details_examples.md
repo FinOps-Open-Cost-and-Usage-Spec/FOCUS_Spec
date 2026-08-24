@@ -1,4 +1,4 @@
-# Examples: Credential Details
+# Examples: Requester Details
 
 The examples below are not exhaustive and may change over time. [*Service providers*](#glossary:service-provider) are the authoritative source for the identity attributes they publish.
 
@@ -6,7 +6,7 @@ The examples below are not exhaustive and may change over time. [*Service provid
 
 Scenario: A generative AI inference [*charge*](#glossary:charge) authenticated with an API key that acts under a named user. The named user is the [*principal*](#glossary:principal), so the user's attributes sit at the top level, and the API key is the [*credential*](#glossary:credential) recorded in the `Credential` property. The `Credential` object repeats the CredentialId value in its `Id` key, which is optional; the examples that follow omit it.
 
-| ServiceProviderName | ServiceName | PrincipalId | CredentialId | CredentialDetails |
+| ServiceProviderName | ServiceName | PrincipalId | CredentialId | RequesterDetails |
 |---------------------|-------------|-------------|--------------|-------------------|
 | Aura Web | Inference | user_8842 | key_01HQZX3M8N | {"Name": "Alex Rivera", "Email": "alex.rivera@example.com", "Type": "User", "Credential": {"Id": "key_01HQZX3M8N", "Type": "API Key", "Name": "prod-ingest-key"}} |
 
@@ -14,7 +14,7 @@ Scenario: A generative AI inference [*charge*](#glossary:charge) authenticated w
 
 Scenario: An object storage charge initiated by a user authenticating directly through a console session that the *service provider* identifies separately from the user.
 
-| ServiceProviderName | ServiceName | PrincipalId | CredentialId | CredentialDetails |
+| ServiceProviderName | ServiceName | PrincipalId | CredentialId | RequesterDetails |
 |---------------------|-------------|-------------|--------------|-------------------|
 | LatticeScale | ObjectStorage | user_4417 | sess_6BN3XR8P | {"Name": "Jordan Lee", "Email": "jordan.lee@example.com", "Type": "User", "Credential": {"Type": "Session"}} |
 
@@ -22,7 +22,7 @@ Scenario: An object storage charge initiated by a user authenticating directly t
 
 Scenario: A compute charge initiated by a service account, where the *service provider* publishes no identifier for the *credential* the service account presented. CredentialId is null and the `Credential` property is omitted. A service account has no email address, so Email is omitted and Type distinguishes the *principal* from a human user.
 
-| ServiceProviderName | ServiceName | PrincipalId | CredentialId | CredentialDetails |
+| ServiceProviderName | ServiceName | PrincipalId | CredentialId | RequesterDetails |
 |---------------------|-------------|-------------|--------------|-------------------|
 | Aura Web | Compute | svc_nightly_etl | null | {"Name": "svc-nightly-etl", "Type": "Service Account"} |
 
@@ -30,15 +30,15 @@ Scenario: A compute charge initiated by a service account, where the *service pr
 
 Scenario: An inference charge authenticated with an API key that the *service provider* cannot map to an entity in its identity and access management model. The *service provider* cannot determine a *principal*, so PrincipalId is null, while the *credential* it does know is recorded.
 
-| ServiceProviderName | ServiceName | PrincipalId | CredentialId | CredentialDetails |
+| ServiceProviderName | ServiceName | PrincipalId | CredentialId | RequesterDetails |
 |---------------------|-------------|-------------|--------------|-------------------|
 | Meridian AI | Inference | null | key_07PQXR2W9F | {"Credential": {"Type": "API Key", "Name": "eval-sandbox"}} |
 
 ## StackLens (No Determinable Principal or Credential)
 
-Scenario: A platform subscription billed at the account level, with no entity in the *service provider's* identity and access management model associated with it and no *credential* presented. PrincipalId, CredentialId, and CredentialDetails are all null.
+Scenario: A platform subscription billed at the account level, with no entity in the *service provider's* identity and access management model associated with it and no *credential* presented. PrincipalId, CredentialId, and RequesterDetails are all null.
 
-| ServiceProviderName | ServiceName | PrincipalId | CredentialId | CredentialDetails |
+| ServiceProviderName | ServiceName | PrincipalId | CredentialId | RequesterDetails |
 |---------------------|-------------|-------------|--------------|-------------------|
 | StackLens | Observability | null | null | null |
 
@@ -46,7 +46,7 @@ Scenario: A platform subscription billed at the account level, with no entity in
 
 Scenario: A *service provider* publishes an identity attribute that has no FOCUS-defined property. The attribute is carried as a custom property prefixed with "x_".
 
-| ServiceProviderName | ServiceName | PrincipalId | CredentialId | CredentialDetails |
+| ServiceProviderName | ServiceName | PrincipalId | CredentialId | RequesterDetails |
 |---------------------|-------------|-------------|--------------|-------------------|
 | Aura Web | Inference | user_8842 | null | {"Name": "Alex Rivera", "Email": "alex.rivera@example.com", "Type": "User", "x_DirectoryGroup": "platform-engineering"} |
 
@@ -61,7 +61,7 @@ Acme Corp runs generative AI inference and scheduled compute on Aura Web. Four c
 3. **Inference via an API key** (Row 3): Jordan Lee, presenting `batch-key`. BilledCost is $75.00.
 4. **Scheduled compute** (Row 4): the `svc-nightly-etl` service account, which has no email address and for which Aura Web publishes no *credential* identifier. BilledCost is $45.00.
 
-Grouping by PrincipalId answers which actor incurred the cost, and combines a user's charges regardless of which *credential* was presented:
+Grouping by PrincipalId answers which *requester* incurred the cost, and combines a user's charges regardless of which *credential* was presented:
 
 | PrincipalId | Email | BilledCost |
 |:---|:---|:---|

@@ -53,4 +53,4 @@ Either identifier is null when the *charge* is not associated with an entity of 
 
 Every CredentialId value above is an identifier a *service provider* assigns to a *credential* and publishes, not the *credential* itself. Scenarios 7 through 10 show the distinct reasons the column is null: no session identified separately from the *principal*, no published identifier for the *credential* presented, and no *credential* associated with the *charge* at all.
 
-The Credential Type column is not a FOCUS column. It shows the value a data generator would carry in the `Type` key of the `Credential` property in [Credential Details](#datamodel.costandusage.credentialdetails), and is included here to make the kind of *credential* in each scenario explicit.
+The Credential Type column is not a FOCUS column. It shows the value a data generator would carry in the `Type` key of the `Credential` property in [Requester Details](#datamodel.costandusage.requesterdetails), and is included here to make the kind of *credential* in each scenario explicit.
