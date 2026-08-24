@@ -155,8 +155,9 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
 ### Column and Attribute References
 
 * Normative requirements MUST use canonical Column IDs and Attribute IDs.
-* Conceptual, reader-facing references in non-normative content SHOULD use Display Names.
-* Schema-facing references in non-normative content MAY use canonical IDs.
+* **Non-Normative Entity References:** Select terminology according to context:
+  * Conceptual, reader-facing references to FOCUS entities SHOULD use Display Names when available.
+  * Schema-facing references to FOCUS entities MAY use canonical Entity IDs.
 
 A reference is schema-facing when it satisfies at least one of the following conditions:
 
