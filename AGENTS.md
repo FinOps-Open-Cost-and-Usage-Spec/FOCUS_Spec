@@ -151,7 +151,9 @@ AI agents generating or reviewing content MUST act as strict technical editors e
 * **Notes:** Important notes must use the blockquote format (`> **Note:**`).
 * **Notes versus Exceptions:** Use Notes only for informative or explanatory material. Normative conditions and exceptions MUST be expressed as requirements rather than embedded inside Notes.
 * **Anchors:** Pandoc auto-generates custom heading anchors. DO NOT flag missing HTML `<a name="">` tags.
-* **Markdown Tables:** Format Markdown tables for readability. Align compact tables where practical and prefer compact formatting for wide tables.
+* **Markdown Tables:** Select spacing by maximum row width:
+  * Below 120 characters, prefer padding cells to align the vertical pipes.
+  * At 120 characters or more, prefer one space after each cell value without alignment padding.
 * **Numbers in Prose:** In explanatory prose, spell out numbers zero through nine and use numerals beginning at 10. Preserve numeric notation in JSON, mathematics, schema constraints, identifiers, and technical examples.
 * **Dash Usage:** Use hyphens for compound modifiers and spaced dashes only for parenthetical interruptions. Apply each form consistently according to its purpose.
 
