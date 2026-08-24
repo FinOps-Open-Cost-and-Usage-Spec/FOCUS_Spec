@@ -18,13 +18,13 @@ The columns are presented in alphabetical order.
 | [List Unit Price](#datamodel.skuprice.listunitprice)                                 | Metric      | Mandatory                                                      | False        | Decimal   |
 | [Pricing Currency](#datamodel.skuprice.pricingcurrency)                              | Dimension   | Mandatory                                                      | False        | String    |
 | [Pricing Currency Category](#datamodel.skuprice.pricingcurrencycategory)                            | Dimension   | Mandatory                                                      | False        | String    |
-| [Pricing Region ID](#datamodel.skuprice.pricingregionid)                             | Dimension   | [Conditional](#conditions.includesregions)                     | True        | String    |
+| [Pricing Region ID](#datamodel.skuprice.pricingregionid)                             | Dimension   | Conditional                     | True        | String    |
 | [Pricing Service Name](#datamodel.skuprice.pricingservicename)                       | Dimension   | Mandatory                                                      | False        | String    |
 | [Pricing Unit](#datamodel.skuprice.pricingunit)                                      | Dimension   | Mandatory                                                      | False        | String    |
-| [Purchase Duration Type](#datamodel.skuprice.purchasedurationtype)                   | Dimension   | [Conditional](#conditions.includespurchases)                   | True         | String    |
-| [Purchase Payment Model](#datamodel.skuprice.purchasepaymentmodel)                   | Dimension   | [Conditional](#conditions.includespurchases)                   | True         | String    |
-| [Quantity Tier Maximum](#datamodel.skuprice.quantitytiermaximum)                     | Metric      | [Conditional](#conditions.includesquantitytierpricing)         | True         | Decimal   |
-| [Quantity Tier Minimum](#datamodel.skuprice.quantitytierminimum)                     | Metric      | [Conditional](#conditions.includesquantitytierpricing)         | False        | Decimal   |
+| [Purchase Duration Type](#datamodel.skuprice.purchasedurationtype)                   | Dimension   | Conditional                   | True         | String    |
+| [Purchase Payment Model](#datamodel.skuprice.purchasepaymentmodel)                   | Dimension   | Conditional                   | True         | String    |
+| [Quantity Tier Maximum](#datamodel.skuprice.quantitytiermaximum)                     | Metric      | Conditional         | True         | Decimal   |
+| [Quantity Tier Minimum](#datamodel.skuprice.quantitytierminimum)                     | Metric      | Conditional         | False        | Decimal   |
 | [Service Provider Name](#datamodel.skuprice.serviceprovidername)                     | Dimension   | Mandatory                                                      | False        | String    |
 | [SKU ID](#datamodel.skuprice.skuid)                                                  | Dimension   | Mandatory                                                      | False        | String    |
 | [SKU Price Created](#datamodel.skuprice.skupricecreated)                             | Dimension   | Mandatory                                                      | False        | Date/Time |
@@ -55,13 +55,13 @@ SkuPrice MUST adhere to the following requirements:
   * SkuPrice MUST include [ListUnitPrice](#datamodel.skuprice.listunitprice).
   * SkuPrice MUST include [PricingCurrency](#datamodel.skuprice.pricingcurrency).
   * SkuPrice MUST include [PricingCurrencyCategory](#datamodel.skuprice.pricingcurrencycategory).
-  * SkuPrice MUST include [PricingRegionId](#datamodel.skuprice.pricingregionid) when the *operating model* [includes regions](#conditions.includesregions).
+  * SkuPrice MUST include [PricingRegionId](#datamodel.skuprice.pricingregionid) when the *operating model* includes regions.
   * SkuPrice MUST include [PricingServiceName](#datamodel.skuprice.pricingservicename).
   * SkuPrice MUST include [PricingUnit](#datamodel.skuprice.pricingunit).
-  * SkuPrice MUST include [PurchaseDurationType](#datamodel.skuprice.purchasedurationtype) when the *operating model* [includes purchases](#conditions.includespurchases).
-  * SkuPrice MUST include [PurchasePaymentModel](#datamodel.skuprice.purchasepaymentmodel) when the *operating model* [includes purchases](#conditions.includespurchases).
-  * SkuPrice MUST include [QuantityTierMaximum](#datamodel.skuprice.quantitytiermaximum) when the *operating model* [includes quantity tier pricing](#conditions.includesquantitytierpricing).
-  * SkuPrice MUST include [QuantityTierMinimum](#datamodel.skuprice.quantitytierminimum) when the *operating model* [includes quantity tier pricing](#conditions.includesquantitytierpricing).
+  * SkuPrice MUST include [PurchaseDurationType](#datamodel.skuprice.purchasedurationtype) when the *operating model* includes purchases.
+  * SkuPrice MUST include [PurchasePaymentModel](#datamodel.skuprice.purchasepaymentmodel) when the *operating model* includes purchases.
+  * SkuPrice MUST include [QuantityTierMaximum](#datamodel.skuprice.quantitytiermaximum) when the *operating model* includes quantity tier pricing.
+  * SkuPrice MUST include [QuantityTierMinimum](#datamodel.skuprice.quantitytierminimum) when the *operating model* includes quantity tier pricing.
   * SkuPrice MUST include [ServiceProviderName](#datamodel.skuprice.serviceprovidername).
   * SkuPrice MUST include [SkuId](#datamodel.skuprice.skuid).
   * SkuPrice MUST include [SkuPriceCreated](#datamodel.skuprice.skupricecreated).
