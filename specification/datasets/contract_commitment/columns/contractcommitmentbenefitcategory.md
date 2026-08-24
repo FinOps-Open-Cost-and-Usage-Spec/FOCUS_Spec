@@ -49,7 +49,7 @@ Defines the primary value or advantage received for a *contract commitment*.
 
 | Constraint      | Value          |
 | :-------------- | :------------- |
-| Dataset         | [Contract Commitment](#datasets.contractcommitment)  |
+| Dataset         | [Contract Commitment](#datamodel.contractcommitment)  |
 | Column type     | Dimension      |
 | Feature level   | Mandatory      |
 | Allows nulls    | False          |

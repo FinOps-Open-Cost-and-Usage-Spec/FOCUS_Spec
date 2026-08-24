@@ -1,6 +1,6 @@
 # Provider Tag Prefixes
 
-The Provider Tag Prefixes define the list of prefixes used in the tag name of provider-defined [tags](#datasets.costandusage.tags). This metadata is useful for the consumer to identify which tags are provider-defined vs user-defined.
+The Provider Tag Prefixes define the list of prefixes used in the tag name of provider-defined [tags](#datamodel.costandusage.tags). This metadata is useful for the consumer to identify which tags are provider-defined vs user-defined.
 
 ProviderTagPrefixes adheres to the following requirements:
 
