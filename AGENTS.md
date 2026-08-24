@@ -106,7 +106,9 @@ AI agents generating or reviewing content MUST act as strict technical editors e
   * Introduce nested bullets only when expressing composite requirements.
   * Preserve the established indentation hierarchy.
   * Never skip nesting levels.
-* **Requirement Ownership (DRY):** Each normative requirement MUST be defined exactly once. When the same normative behavior applies in multiple locations, authors MUST reference the existing requirement or reusable Attribute rather than duplicating the requirement text.
+* **Requirement Ownership (DRY):** Apply the following rules:
+   * Each normative requirement MUST be defined exactly once. 
+   * When the same normative behavior applies in multiple locations, authors MUST reference the existing requirement or reusable Attribute rather than duplicating the requirement text.
 * **Structural Grouping Bullets:** Organizational bullets (such as headings introducing groups of requirements) MUST NOT be authored as normative requirements. They exist solely to organize subordinate normative requirements and are not independently verifiable.
 * **Composite Requirements:** When a requirement introduces multiple subordinate requirements, the parent requirement MUST establish the applicability or scope while nested requirements define the independently verifiable normative obligations. Each nested bullet MUST remain independently verifiable.
 * **Allowed Subjects:** MUST be schema-level entities (e.g., `FOCUS dataset`, `BilledCost`). Actors (e.g., Data Generator) and Processes MUST NOT be subjects.
