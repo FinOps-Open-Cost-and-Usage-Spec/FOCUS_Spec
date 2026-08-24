@@ -147,7 +147,8 @@ AI agents generating or reviewing content MUST act as strict technical editors e
   * A reference is schema-facing when it identifies a field in code, JSON, SQL, a schema, a table header, or an object/property path, or when the surrounding sentence describes that field being populated, omitted, null, serialized, validated, matched, compared, grouped, filtered, joined, aggregated, or repeated.
   * When none of the schema-facing conditions above applies, treat the reference as conceptual.
   * Reviewers MUST NOT create a finding solely because a schema-facing non-normative reference uses its canonical ID.
-  * A canonical ID used for a conceptual non-normative reference MAY produce a suggestion, but MUST NOT produce an error or warning.
+  * A canonical ID used for a conceptual non-normative reference MAY produce a suggestion. 
+  * A canonical ID used for a conceptual non-normative reference MUST NOT produce an error or warning.
 * **No Mixing:** Do not mix Entity IDs and Display Names within the same normative requirement.
 * **Column values:** When a column value appears in prose or normative text, enclose it in double quotation marks (e.g., `"Usage"`, `"Tax"`). In an Allowed Values table, list values without quotation marks because the `Value` column identifies them as literals, unless quotation marks are part of the value itself.
 * **Glossary terms:** Link with `[*term*](#glossary:term)` format.
