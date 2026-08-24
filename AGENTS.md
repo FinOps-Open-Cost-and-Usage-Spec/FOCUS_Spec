@@ -99,7 +99,7 @@ AI agents generating or reviewing content MUST act as strict technical editors e
 ### Normative Language & Requirements
 
 * **BCP-14 Keywords:** Use MUST, MUST NOT, SHOULD, SHOULD NOT, MAY (uppercase). NEVER use: "REQUIRED", "SHALL", "SHALL NOT", "RECOMMENDED", "NOT RECOMMENDED", "OPTIONAL".
-* **Location:** Capitalized BCP-14 keywords MUST NOT appear outside "Requirements" sections unless quoted. Do not apply this rule to files under `guidelines/` folder, where BCP-14 keywords may be used to describe authoring policies, requirement patterns, and examples.
+* **Location:** Capitalized BCP-14 keywords MUST NOT appear outside "Requirements" sections in files under `specification/attributes/`, `specification/conditions/`, and `specification/datasets/` unless quoted. 
 
 * **Structure:** Use bulleted lists. Each bullet MUST express exactly one verifiable state. Split bullets that combine multiple obligations.
 * **Nested Requirements:** Introduce nested bullets only when expressing composite requirements. Preserve the established indentation hierarchy and never skip nesting levels.
