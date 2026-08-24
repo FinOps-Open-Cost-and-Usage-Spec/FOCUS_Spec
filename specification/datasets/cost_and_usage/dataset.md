@@ -60,7 +60,7 @@ The specification for the Cost and Usage dataset defines a group of columns that
 | [Pricing Currency List Unit Price](#datamodel.costandusage.pricingcurrencylistunitprice)             | Metric             | [Conditional](#conditions.includespricing-billingcurrencydifferences) | True         | Decimal   |
 | [Pricing Quantity](#datamodel.costandusage.pricingquantity)                                          | Metric             | Mandatory     | True         | Decimal   |
 | [Pricing Unit](#datamodel.costandusage.pricingunit)                                                  | Dimension          | Mandatory     | True         | String    |
-| [Principal ID](#datamodel.costandusage.principalid)                                                  | Dimension          | [Conditional](#conditions.includesprincipalattribution) | True         | String    |
+| [Principal ID](#datamodel.costandusage.principalid)                                                  | Dimension          | [Conditional](#conditions.includesrequesterattribution) | True         | String    |
 | [Region ID](#datamodel.costandusage.regionid)                                                        | Dimension          | [Conditional](#conditions.includesregions) | True         | String    |
 | [Region Name](#datamodel.costandusage.regionname)                                                    | Dimension          | [Conditional](#conditions.includesregions) | True         | String    |
 | [Resource ID](#datamodel.costandusage.resourceid)                                                    | Dimension          | [Conditional](#conditions.includesprovisionedresources) | True         | String    |
@@ -154,7 +154,7 @@ CostAndUsage MUST adhere to the following requirements:
     * CostAndUsage MAY include PricingCurrencyListUnitPrice in all other cases.
   * CostAndUsage MUST include [PricingQuantity](#datamodel.costandusage.pricingquantity).
   * CostAndUsage MUST include [PricingUnit](#datamodel.costandusage.pricingunit).
-  * CostAndUsage MUST include [PrincipalId](#datamodel.costandusage.principalid) when the *operating model* [includes principal attribution](#conditions.includesprincipalattribution).
+  * CostAndUsage MUST include [PrincipalId](#datamodel.costandusage.principalid) when the *operating model* [includes requester attribution](#conditions.includesrequesterattribution).
   * CostAndUsage MUST include [RegionId](#datamodel.costandusage.regionid) when the *operating model* [includes regions](#conditions.includesregions).
   * CostAndUsage MUST include [RegionName](#datamodel.costandusage.regionname) when the *operating model* [includes regions](#conditions.includesregions).
   * CostAndUsage MUST include [ResourceId](#datamodel.costandusage.resourceid) when the *operating model* [includes provisioned resources](#conditions.includesprovisionedresources).

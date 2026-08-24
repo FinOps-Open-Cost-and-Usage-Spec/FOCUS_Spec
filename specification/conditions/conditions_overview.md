@@ -23,10 +23,10 @@ Conditions are sorted alphabetically by name.
 | [Includes Partial Upfront Payments](#conditions.includespartialupfrontpayments) | Commitment | Operating model includes a partial upfront payment model for contract commitments. |
 | [Includes Payable Invoices](#conditions.includespayableinvoices) | Billing | Operating model includes payable invoices. |
 | [Includes Pricing-Billing Currency Differences](#conditions.includespricing-billingcurrencydifferences) | Pricing | Operating model includes pricing and billing in different currencies. |
-| [Includes Principal Attribution](#conditions.includesprincipalattribution) | Account | Operating model includes attributing usage or purchase of resources or services to principals. |
 | [Includes Provisioned Resources](#conditions.includesprovisionedresources) | Resource | Operating model includes provisioned resources. |
 | [Includes Purchase Order Numbers](#conditions.includespurchaseordernumbers) | Billing | Operating model includes purchase order numbers. |
 | [Includes Regions](#conditions.includesregions) | Resource | Operating model includes deploying resources or services within a region. |
+| [Includes Requester Attribution](#conditions.includesrequesterattribution) | Account | Operating model includes attributing usage or purchase of resources or services to requesters. |
 | [Includes Resource Type Assignment](#conditions.includesresourcetypeassignment) | Resource | Operating model includes categorizing resources by type. |
 | [Includes Split Cost Allocation](#conditions.includessplitcostallocation) | Allocation | Operating model includes split cost allocation. |
 | [Includes Sub Accounts](#conditions.includessubaccounts) | Account | Operating model includes a sub account construct. |
