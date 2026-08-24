@@ -19,7 +19,6 @@ RequesterDetails MUST adhere to the following requirements:
   * RequesterDetails MUST be null when the *service provider* cannot determine the *principal* and cannot determine the *credential* associated with the *charge*.
   * RequesterDetails MAY be null when the *service provider* can determine the *principal* or the *credential* associated with the *charge*.
 * RequesterDetails MUST conform to [RequesterDetailsObject](#datamodel.costandusage.requesterdetails.requesterdetailsobject) requirements when RequesterDetails is not null.
-* RequesterDetails documentation MUST include the use cases for which RequesterDetails is provided.
 
 ## Requester Details Object
 

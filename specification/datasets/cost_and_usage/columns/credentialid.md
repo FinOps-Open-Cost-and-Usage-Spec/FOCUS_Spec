@@ -18,7 +18,6 @@ CredentialId MUST adhere to the following requirements:
   * CredentialId MUST be a unique identifier within the service provider.
   * CredentialId MUST be an identifier that references a *credential*.
   * CredentialId MUST NOT contain a *credential* value that authenticates a request (e.g., an API key string, an access token, a password).
-* CredentialId documentation MUST include the use cases for which CredentialId is provided.
 
 ## Column ID
 
