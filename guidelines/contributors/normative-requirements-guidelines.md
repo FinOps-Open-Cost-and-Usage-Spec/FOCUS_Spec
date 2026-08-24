@@ -165,7 +165,8 @@ See [Section Structural Anchor Requirement for Attributes](#structural-anchor-re
 
 * Column references in normative requirements MUST use the ColumnId.
 * Display Names MUST NOT be used in normative requirements.
-* Terminology in non-normative content is governed exclusively by the Editorial Guidelines. The normative identifier rules in this section MUST NOT be applied to non-normative content.
+* Terminology in non-normative content is governed exclusively by the Editorial Guidelines. 
+* The normative identifier rules in this section MUST NOT be applied to non-normative content.
 
 #### Allowed Subjects
 
