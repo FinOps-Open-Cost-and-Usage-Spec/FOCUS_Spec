@@ -1,4 +1,4 @@
-# Examples: Actor Attribution
+# Examples: Requester Attribution
 
 The examples below illustrate how [Principal ID](#datamodel.costandusage.principalid) and [Credential ID](#datamodel.costandusage.credentialid) are populated in the [Cost and Usage](#datamodel.costandusage) dataset across technology environments. Each scenario identifies the [*principal*](#glossary:principal) to which access to a [*resource*](#glossary:resource) or [*service*](#glossary:service) is granted and the [*credential*](#glossary:credential) presented on the request that produced the [*charge*](#glossary:charge). Provider, customer, and identifier values below are illustrative.
 
