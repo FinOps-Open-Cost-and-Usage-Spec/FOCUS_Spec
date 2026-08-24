@@ -167,7 +167,9 @@ AI agents generating or reviewing content MUST act as strict technical editors e
   * Each normative requirement bullet MAY link its first reference to each distinct FOCUS entity, glossary term, or FOCUS Condition, even when the same destination was linked earlier in the file. Do not link later references to that destination within the same bullet.
 * **Lists:** All unordered lists MUST use asterisks (`*`), never dashes (`-`) or plus signs (`+`). Nested bullet points MUST use exactly two spaces per level.
 * **Notes:** Important notes must use the blockquote format (`> **Note:**`).
-* **Notes versus Exceptions:** Use Notes only for informative or explanatory material. Normative conditions and exceptions MUST be expressed as requirements rather than embedded inside Notes.
+* **Notes versus Exceptions:** Apply the following rules:
+  * Notes MUST contain only informative or explanatory material. 
+  * Normative conditions and exceptions MUST be expressed as requirements.
 * **Anchors:** Pandoc auto-generates custom heading anchors. DO NOT flag missing HTML `<a name="">` tags.
 * **Markdown Tables:** Select spacing by maximum row width:
   * Below 120 characters, prefer padding cells to align the vertical pipes.
