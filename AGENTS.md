@@ -175,7 +175,10 @@ AI agents generating or reviewing content MUST act as strict technical editors e
 * **Markdown Tables:** Select spacing by maximum row width:
   * Below 120 characters, prefer padding cells to align the vertical pipes.
   * At 120 characters or more, prefer one space after each cell value without alignment padding.
-* **Numbers in Prose:** In explanatory prose, spell out numbers zero through nine and use numerals beginning at 10. Preserve numeric notation in JSON, mathematics, schema constraints, identifiers, and technical examples.
+* **Numbers in Prose: Apply the following rules:** 
+  * In explanatory prose, spell out numbers zero through nine.
+  * In explanatory prose, use numerals beginning at 10. 
+  * Preserve numeric notation in JSON, mathematics, schema constraints, identifiers, and technical examples.
 * **Dash Usage:** Apply dash formatting by purpose:
   * Use an unspaced hyphen (`-`) for compound words and ranges.
   * Use a spaced hyphen (` - `) to set off parenthetical phrases.
