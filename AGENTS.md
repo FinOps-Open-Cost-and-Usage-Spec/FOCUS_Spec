@@ -124,7 +124,10 @@ AI agents generating or reviewing content MUST act as strict technical editors e
   * use `greater than or equal to` or `less than or equal to` for inequalities;
   * use `equivalent` for semantic equivalence; and
   * use `remain consistent` when requiring a value to be stable across time, records, or another defined scope.
-* **Structural Anchors:** Requirements sections, including reusable Attribute requirement sections, MUST begin with a non-verifiable anchor phrase ending in a colon (e.g., `<Entity> MUST adhere to the following requirements:`). Anchor requirements exist solely to establish the parsing structure of subordinate requirements and MUST NOT be interpreted as independently verifiable normative requirements.
+* **Structural Anchors:** Apply the following rules: 
+   * Requirements sections, including reusable Attribute requirement sections, MUST begin with a non-verifiable anchor phrase ending in a colon (e.g., `<Entity> MUST adhere to the following requirements:`). 
+   * Anchor requirements exist solely to establish the parsing structure of subordinate requirements 
+   * Anchor requirements MUST NOT be interpreted as independently verifiable normative requirements.
 * **Terminology:** Normative references to columns MUST use `ColumnId`s, never column Display Names. Requirements governing a specific dataset MUST use its `DatasetId` as the subject (e.g., `SkuPrice`). Requirements applying generically to all FOCUS datasets MUST use `FOCUS dataset`. Otherwise, authors MUST use the abstraction that precisely matches the requirement (e.g., `dataset instance` or `dataset artifact`) and MUST avoid using `FOCUS dataset` when a narrower abstraction is intended.
 * **Tone:** Use formal language. Contractions (e.g., *don't, can't*) MUST NOT be used in normative requirements.
 * **Inline Examples:** Any non-normative examples embedded within a requirement MUST be enclosed in parentheses using "e.g." (e.g., `...without lossy transformations (e.g., rounding)`).
