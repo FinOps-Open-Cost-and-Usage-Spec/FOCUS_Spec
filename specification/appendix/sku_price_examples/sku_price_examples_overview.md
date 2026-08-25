@@ -10,7 +10,7 @@ The scenarios draw on a single rate card rather than a separate dataset per scen
 
 The rate card contains 26 records across ten SKUs:
 
-* A general purpose virtual machine offered at an on-demand rate, at a negotiated rate, and at three reservation rates.
+* A general purpose virtual machine offered at a current and a superseded on-demand rate, at a second on-demand rate in another currency, at a negotiated rate, and at three reservation rates.
 * A burstable virtual machine whose on-demand rate changes at the start of 2027, announced ahead of taking effect.
 * A shared-core virtual machine offered at a single rate that carries no effective start or end date.
 * A one-year virtual machine reservation, offered under two payment models.

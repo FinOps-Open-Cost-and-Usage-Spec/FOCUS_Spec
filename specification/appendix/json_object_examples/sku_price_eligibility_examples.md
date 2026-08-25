@@ -4,7 +4,7 @@ This section describes examples for the [SKU Price Eligibility](#datamodel.skupr
 
 ## Global Scope
 
-When a unit price is generally available to all entities without restriction (e.g., standard public list prices), the value for `IsGlobalScope` is set to `true`.
+When a unit price is not restricted to an enumerated set of entities (e.g., standard public list prices), the value for `IsGlobalScope` is set to `true`.
 
 ```json
 {

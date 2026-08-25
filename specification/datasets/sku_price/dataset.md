@@ -55,12 +55,12 @@ SkuPrice MUST adhere to the following requirements:
   * SkuPrice MUST include [ListUnitPrice](#datamodel.skuprice.listunitprice).
   * SkuPrice MUST include [PricingCurrency](#datamodel.skuprice.pricingcurrency).
   * SkuPrice MUST include [PricingCurrencyCategory](#datamodel.skuprice.pricingcurrencycategory).
-  * SkuPrice MUST include [PricingRegionId](#datamodel.skuprice.pricingregionid) when the *operating model* includes regions.
+  * SkuPrice MUST include [PricingRegionId](#datamodel.skuprice.pricingregionid) when the *operating model* [includes regions](#conditions.includesregions).
   * SkuPrice MUST include [PricingServiceName](#datamodel.skuprice.pricingservicename).
   * SkuPrice MUST include [PricingUnit](#datamodel.skuprice.pricingunit).
-  * SkuPrice MUST include [PurchaseDurationType](#datamodel.skuprice.purchasedurationtype) when the *operating model* includes purchases.
+  * SkuPrice MUST include [PurchaseDurationType](#datamodel.skuprice.purchasedurationtype) when the *operating model* [includes purchases](#conditions.includespurchases).
   * SkuPrice MUST include [PurchasePaymentModel](#datamodel.skuprice.purchasepaymentmodel) when the *operating model* includes purchases.
-  * SkuPrice MUST include [QuantityTierMaximum](#datamodel.skuprice.quantitytiermaximum) when the *operating model* includes quantity tier pricing.
+  * SkuPrice MUST include [QuantityTierMaximum](#datamodel.skuprice.quantitytiermaximum) when the *operating model* [includes quantity tier pricing](#conditions.includesquantitytierpricing).
   * SkuPrice MUST include [QuantityTierMinimum](#datamodel.skuprice.quantitytierminimum) when the *operating model* includes quantity tier pricing.
   * SkuPrice MUST include [ServiceProviderName](#datamodel.skuprice.serviceprovidername).
   * SkuPrice MUST include [SkuId](#datamodel.skuprice.skuid).

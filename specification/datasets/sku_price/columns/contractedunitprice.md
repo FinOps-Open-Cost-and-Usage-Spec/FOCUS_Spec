@@ -36,6 +36,7 @@ The agreed-upon unit price for a single Pricing Unit of the associated SKU Price
 | Constraint      | Value                                                                                      |
 | :-------------- | :----------------------------------------------------------------------------------------- |
 | Dataset         | [SKU Price](#datamodel.skuprice)                                                            |
+| Conditions      | Not applicable                                                                              |
 | Column type     | Metric                                                                                     |
 | Feature level   | Mandatory                                                                                  |
 | Allows nulls    | False                                                                                      |
