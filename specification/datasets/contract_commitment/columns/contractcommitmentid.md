@@ -11,7 +11,7 @@ ContractCommitmentId MUST adhere to the following requirements:
 * ContractCommitmentId MUST NOT be null.
 * ContractCommitmentId MUST be a unique identifier within the service provider.
 * ContractCommitmentId SHOULD be a fully-qualified identifier.
-* ContractCommitmentId MUST have one and only one parent [ContractId](#datasets.contractcommitment.contractid).
+* ContractCommitmentId MUST have one and only one parent [ContractId](#datamodel.contractcommitment.contractid).
 * ContractCommitmentId MAY match ContractId.
 
 ## Column ID
@@ -30,7 +30,7 @@ A service-provider-assigned identifier describing a single contract term agreed 
 
 |    Constraint   |      Value                                           |
 |:----------------|:-----------------------------------------------------|
-| Dataset         | [Contract Commitment](#datasets.contractcommitment)  |
+| Dataset         | [Contract Commitment](#datamodel.contractcommitment)  |
 | Column type     | Dimension                                            |
 | Feature level   | Mandatory                                            |
 | Allows nulls    | False                                                |
