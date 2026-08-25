@@ -6,10 +6,10 @@ Aura Web publishes a public rate for its standard virtual machine and separately
 
 Note the following details in the example dataset:
 
-* The public rate carries a null [ContractId](#datamodel.skuprice.contractid), which is what identifies it as a list price available to any customer. Its [ContractedUnitPrice](#datamodel.skuprice.contractedunitprice) is null as a consequence, because a record with no contract has no contracted price. [ListUnitPrice](#datamodel.skuprice.listunitprice) carries the published rate of 0.384000 per hour.
+* The public rate carries a null [ContractId](#datamodel.skuprice.contractid), which is what identifies it as a list price available to any customer. [ListUnitPrice](#datamodel.skuprice.listunitprice) carries the published rate of 0.384000 per hour, and [ContractedUnitPrice](#datamodel.skuprice.contractedunitprice) carries the same 0.384000, because no negotiation applies to a record with no contract. A query comparing the two columns across the catalog reads a rate on every record rather than a null.
 * The negotiated rate carries a ContractId of "auraweb:contract::ACCT-123456789012:agreements/ctr-7f3a91b2c4d5", so its ContractedUnitPrice is populated at 0.326400 per hour, a 15 percent reduction. Its ListUnitPrice remains 0.384000, the rate the reduction was negotiated against. Carrying both prices on one record means comparing a negotiated rate to its public equivalent requires no join.
 * The two records share a SkuPriceId. A SKU Price ID stays consistent across contracts, so the negotiated rate is the same price point under different terms rather than a different price point. ContractId is a member of the composite key, which is what allows the two records to coexist.
-* [SkuPriceEligibility](#datamodel.skuprice.skupriceeligibility) is where the two records differ in reach. The public rate uses `IsGlobalScope`, which states that the price applies to all entities without restriction:
+* [SkuPriceEligibility](#datamodel.skuprice.skupriceeligibility) is where the two records differ in reach. The public rate uses `IsGlobalScope`, which states that its eligibility is not restricted to an enumerated set of entities:
 
 ```json
 {

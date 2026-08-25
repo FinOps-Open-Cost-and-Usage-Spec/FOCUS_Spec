@@ -99,7 +99,7 @@
   "properties": {
     "IsGlobalScope": {
       "type": "boolean",
-      "description": "If true, price applies to all entities",
+      "description": "If true, price eligibility is not restricted to an enumerated set of entities",
       "default": false
     },
     "IsComplexScope": {

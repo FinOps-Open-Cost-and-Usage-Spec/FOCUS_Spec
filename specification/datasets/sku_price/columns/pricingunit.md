@@ -12,7 +12,7 @@ PricingUnit MUST adhere to the following requirements:
 * PricingUnit MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * PricingUnit SHOULD conform to [UnitFormat](#attributes.unitformat) requirements.
 * PricingUnit MUST NOT be null.
-* PricingUnit MUST be semantically equivalent to the corresponding pricing measurement unit provided in the service-provider-published [*price list*](#glossary:price-list).
+* PricingUnit MUST be semantically equivalent to the corresponding pricing measurement unit in the service-provider-published [*price list*](#glossary:price-list).
 
 ## Implementation Guidance
 
@@ -42,6 +42,7 @@ Service-provider-specified measurement unit used to define the unit price of an 
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
 | Dataset         | [SKU Price](#datamodel.skuprice)                      |
+| Conditions      | Not applicable                                        |
 | Column type     | Dimension                                            |
 | Feature level   | Mandatory                                            |
 | Allows nulls    | False                                                |

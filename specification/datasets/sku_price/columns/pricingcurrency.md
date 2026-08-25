@@ -1,6 +1,6 @@
 # Pricing Currency
 
-Pricing Currency is the [*national currency*](#glossary:national-currency) or [*virtual currency*](#glossary:virtual-currency) denomination that a [*resource*](#glossary:resource) or [*service*](#glossary:service) is priced in. This represents the foundational currency denomination for the provided rate, regardless of what currency it may ultimately be billed in.
+Pricing Currency is the [*national currency*](#glossary:national-currency) or [*consumption currency*](#glossary:consumption-currency) denomination that a [*resource*](#glossary:resource) or [*service*](#glossary:service) is priced in. This represents the foundational currency denomination for the provided rate, regardless of what currency it may ultimately be billed in.
 
 ## Requirements
 
@@ -21,13 +21,14 @@ Pricing Currency
 
 ## Description
 
-The *national currency* or *virtual currency* denomination that a *resource* or *service* is priced in.
+The *national currency* or *consumption currency* denomination that a *resource* or *service* is priced in.
 
 ## Content Constraints
 
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
 | Dataset         | [SKU Price](#datamodel.skuprice)                      |
+| Conditions      | Not applicable                                        |
 | Column type     | Dimension                                            |
 | Feature level   | Mandatory                                            |
 | Allows nulls    | False                                                |

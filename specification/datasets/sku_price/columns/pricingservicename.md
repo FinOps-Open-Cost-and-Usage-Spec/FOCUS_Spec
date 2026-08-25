@@ -39,6 +39,7 @@ A display name for the offering to which the specified unit price applies.
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
 | Dataset         | [SKU Price](#datamodel.skuprice)                      |
+| Conditions      | Not applicable                                        |
 | Column type     | Dimension                                            |
 | Feature level   | Mandatory                                            |
 | Allows nulls    | False                                                |

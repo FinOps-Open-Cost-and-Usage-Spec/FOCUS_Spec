@@ -25,10 +25,10 @@ The following section details the normative requirements for the SkuPriceEligibi
 SkuPriceEligibilityObject MUST adhere to the following requirements:
 
 * SkuPriceEligibilityObject MUST conform to the [SkuPriceEligibilityObjectSchema](#schemas.skuprice.skupriceeligibilityobjectschema) JSON Schema.
-* SkuPriceEligibilityObject.IsGlobalScope MUST be `true` when the *SKU Price* applies to all entities without restriction (e.g., a standard public list price).
+* SkuPriceEligibilityObject.IsGlobalScope MUST be `true` when the *SKU Price's* eligibility is not restricted to an enumerated set of entities (e.g., a standard public list price).
 * SkuPriceEligibilityObject.IsComplexScope MUST be `true` when the *SKU Price's* eligibility logic exceeds schema capabilities.
 * SkuPriceEligibilityObject.Inclusions[\*].Dimension SHOULD represent a column in [Cost and Usage](#datamodel.costandusage).
-* SkuPriceEligibilityObject.Exclusions[\*].Dimension SHOULD represent a column in [Cost and Usage](#datamodel.costandusage).
+* SkuPriceEligibilityObject.Exclusions[\*].Dimension SHOULD represent a column in Cost and Usage.
 * SkuPriceEligibilityObject.Inclusions[\*].Values MUST contain only the single string "*" when the wildcard is present.
 * SkuPriceEligibilityObject.Exclusions[\*].Values MUST contain only the single string "*" when the wildcard is present.
 
@@ -40,7 +40,7 @@ SkuPriceEligibility contains a structured JSON object defining the logical bound
 
 | Property | Type | Required | Description |
 | :--- | :--- | :--- | :--- |
-| `IsGlobalScope` | Boolean | No | When `true`, the price applies to all entities. Defaults to `false`. |
+| `IsGlobalScope` | Boolean | No | When `true`, the price applies to all entities except those matched by `Exclusions`. Defaults to `false`. |
 | `IsComplexScope` | Boolean | No | When `true`, indicates logic exceeds schema capabilities. Defaults to `false`. |
 | `InclusionOperator` | String | Conditional | Required only when `IsGlobalScope` and `IsComplexScope` are both `false`. Valid values: `And`, `Or`. Omitted when Global or Complex scope is `true`. |
 | `Inclusions` | Array | Conditional | Required only when `IsGlobalScope` and `IsComplexScope` are both `false`. List of `Rule` objects defining the boundary. Omitted when Global or Complex scope is `true`. |
@@ -90,9 +90,10 @@ SkuPriceEligibility uses a reserved string to represent global or unrestricted b
 The evaluation of an entity's usage against a rate card's eligibility rules proceeds in the following order:
 
 1. **Normalization:** Convert the entity attribute and the Scope `Values` to a consistent case (default: lowercase) for comparison.
-2. **Inclusion Evaluation:** Iterate through `Inclusions`. Apply `InclusionOperator`. If result is `False`, the entity is not eligible for this unit price; terminate evaluation.
-3. **Exclusion Evaluation:** Iterate through `Exclusions`. If `True`, the entity is explicitly excluded from this unit price; terminate evaluation.
-4. **Resolution:** If the entity passes Inclusions and is not caught by Exclusions, the `SKU Price` is valid for that entity.
+2. **Scope Check:** If `IsGlobalScope` is `true`, the entity passes inclusion; proceed to Exclusion Evaluation. If `IsComplexScope` is `true`, the object does not determine eligibility; terminate evaluation.
+3. **Inclusion Evaluation:** Iterate through `Inclusions`. Apply `InclusionOperator`. If result is `False`, the entity is not eligible for this unit price; terminate evaluation.
+4. **Exclusion Evaluation:** Iterate through `Exclusions`. If `True`, the entity is explicitly excluded from this unit price; terminate evaluation.
+5. **Resolution:** If the entity passes the Scope Check or Inclusion Evaluation and is not caught by Exclusions, the `SKU Price` is valid for that entity.
 
 <div class="h7-nonindex">Dependency Logic</div>
 
@@ -145,6 +146,7 @@ A structured definition of the specific entities, accounts, or contexts eligible
 | Constraint | Value |
 | :--- | :--- |
 | Dataset | [SKU Price](#datamodel.skuprice) |
+| Conditions | Not applicable |
 | Column type | Dimension |
 | Feature level | Mandatory |
 | Allows nulls | False |
