@@ -34,7 +34,7 @@ ServiceSubcategory MUST adhere to the following requirements:
 | Compute                   | End User Computing                    | Virtualized desktop infrastructure and device / endpoint management. |
 | Compute                   | Quantum Compute                       | Resources and simulators that leverage the principles of quantum mechanics. |
 | Compute                   | Serverless Compute                    | Enablement of compute capabilities without provisioning or managing servers. |
-| Compute                   | Virtual Machines                      | Computing environments provisioned as virtualized hosts with customer-managed operating systems running on abstracted hardware. |
+| Compute                   | Virtual Machines                      | Computing environments provisioned as virtualized hosts running on abstracted hardware. |
 | Compute                   | Other (Compute)                       | Compute services that do not fall into one of the defined subcategories. |
 | Databases                 | Caching                               | Low-latency and high-throughput access to frequently accessed data. |
 | Databases                 | Data Warehouses                       | Big data storage and querying capabilities. |
