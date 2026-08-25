@@ -1,6 +1,6 @@
-# Virtual Currency Pricing Model
+# Consumption Currency Pricing Model
 
-Many SaaS service providers support pricing models that utilize virtual currencies such as credits, tokens, or points. Charges may be provided using a virtual currency, which can subsequently be converted to a national currency such as USD or EUR at an advertised or agreed-upon conversion rate.
+Many SaaS service providers support pricing models that utilize a [*consumption currency*](#glossary:consumption-currency) such as credits, tokens, or points. Charges may be provided using a consumption currency, which can subsequently be converted to a [*national currency*](#glossary:national-currency) such as USD or EUR at an advertised or agreed-upon conversion rate.
 
 The scenarios described below illustrate how a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) should look for various scenarios where a provider utilizes this pricing model.
 
@@ -9,7 +9,7 @@ The scenarios described below illustrate how a Cost and Usage [*FOCUS dataset*](
 The following baseline conditions apply to the scenarios described below:
 
 * Acme Corp has signed an agreement with SaaS service provider OmniQuery to use their services.
-* OmniQuery offers a virtual currency pricing model for their services and requires a purchase of virtual currency in advance of usage. Their denomination of virtual currency is called "tokens".
+* OmniQuery offers a consumption currency pricing model for their services and requires a purchase of consumption currency in advance of usage. Their denomination of consumption currency is called "tokens".
 * OmniQuery requires purchase of additional tokens in the event of usage exceeding purchased tokens.
 * OmniQuery publicly lists the cost of their tokens at $2 per token.
 * OmniQuery treats token purchases as resources; therefore, charges for token purchases include values for ResourceId, ResourceName, and ResourceType.
@@ -18,15 +18,15 @@ The following baseline conditions apply to the scenarios described below:
   * 1 Z Widget Execution = 2 tokens
   * 1 Workflow Operation = 3 tokens
 
-## Scenario A: Virtual Currency Not Offered at a Discount
+## Scenario A: Consumption Currency Not Offered at a Discount
 
 For this scenario, contract terms include the following terms in addition to the baseline scenario mentioned above:
 
 * Acme Corp offers no discount for purchased tokens.
 
-## Scenario A1: Purchase of Virtual Currency Without a Discount
+## Scenario A1: Purchase of Consumption Currency Without a Discount
 
-For this scenario, the initial purchase of virtual currency is executed as follows:
+For this scenario, the initial purchase of consumption currency is executed as follows:
 
 * On April 1, 2025, Acme Corp agrees to purchase 100,000 tokens at $2 per token for a total spend $200,000. These tokens are only valid for 12 months.
 
@@ -35,13 +35,13 @@ For this scenario, the initial purchase of virtual currency is executed as follo
 Note the following details in the example dataset:
 
 * The Charge Period is April 1st 2025 - April 1st 2026. The Billing Period is the month of April 2025 (when the tokens were purchased) and therefore will appear in the April invoice.
-* Because OmniQuery uses a virtual currency pricing model for usage and publishes their token price in terms of dollars and their usage cost in terms of tokens, their Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) includes the columns PricingCurrency, PricingCurrencyContractedUnitPrice, PricingCurrencyEffectiveCost, and PricingCurrencyListUnitPrice.
+* Because OmniQuery uses a consumption currency pricing model for usage and publishes their token price in terms of dollars and their usage cost in terms of tokens, their Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) includes the columns PricingCurrency, PricingCurrencyContractedUnitPrice, PricingCurrencyEffectiveCost, and PricingCurrencyListUnitPrice.
 * A single charge representing the total payment for the initial token purchase agreement ($200,000) is charged in the first invoice.
   * ListCost, BilledCost, and ContractedCost of the purchase are all represented in this charge, however EffectiveCost is zero since the tokens are not yet consumed.
 * PricingQuantity is set to the total tokens purchased.
 * Because Acme Corp is paying the list price, ListUnitPrice and ContractedUnitPrice are all set to the same value of $2.
 
-## Scenario A2: Usage of Virtual Currency Purchased Without a Discount
+## Scenario A2: Usage of Consumption Currency Purchased Without a Discount
 
 Acme Corp uses OmniQuery's services consuming tokens as follows in the first day:
 
@@ -58,15 +58,15 @@ Note the following details in the example dataset:
 * PricingQuantity reflects the amount of usage of the PricingUnit for each charge and is equivalent to ConsumedQuantity. While relevant to this example, there are scenarios including tiered pricing where ConsumedQuantity and PricingQuantity may not be the same.
 * Because Acme Corp's usage includes no discount on usage to token rates, PricingCurrencyContractedUnitPrice and PricingCurrencyListUnitPrice are equivalent.
 
-## Scenario B: Virtual Currency Offered at a Discount
+## Scenario B: Consumption Currency Offered at a Discount
 
 For this scenario, contract terms include the following terms in addition to the baseline scenario mentioned above:
 
 * Acme Corp offers a discount for purchased tokens.
 
-## Scenario B1: Purchase of Virtual Currency at a Discount
+## Scenario B1: Purchase of Consumption Currency at a Discount
 
-For this scenario, the initial purchase of virtual currency is executed as follows:
+For this scenario, the initial purchase of consumption currency is executed as follows:
 
 * On April 1, 2025, Acme Corp agrees to purchase 100,000 tokens at discounted cost of $1 per token for a total spend $100,000. These tokens are only valid for 12 months.
 
@@ -75,13 +75,13 @@ For this scenario, the initial purchase of virtual currency is executed as follo
 Note the following details in the example dataset:
 
 * The Charge Period is April 1st 2025 - April 1st 2026. The Billing Period is the month of April 2025 (when the tokens were purchased) and therefore will appear in the April invoice.
-* Because OmniQuery uses a virtual currency pricing model for usage and publishes their token price in terms of dollars and their usage cost in terms of tokens, their *FOCUS dataset* includes the columns PricingCurrency, PricingCurrencyContractedUnitPrice, PricingCurrencyEffectiveCost, and PricingCurrencyListUnitPrice.
+* Because OmniQuery uses a consumption currency pricing model for usage and publishes their token price in terms of dollars and their usage cost in terms of tokens, their *FOCUS dataset* includes the columns PricingCurrency, PricingCurrencyContractedUnitPrice, PricingCurrencyEffectiveCost, and PricingCurrencyListUnitPrice.
 * A single charge representing the total payment for the initial token purchase agreement ($100,000) is charged in the first invoice.
   * ListCost, BilledCost, and ContractedCost of the purchase are all represented in this charge, however EffectiveCost is zero, as required for prepaid purchases.
 * PricingQuantity is set to the total tokens purchased.
 * Because Acme Corp is receiving a discount on the token price, the ListUnitPrice is set to $2 and the ContractedUnitPrice is set to $1. A ListCost of ($200,000) and ContractedCost ($100,000) reflect the cost of the tokens at the list price and contracted price respectively. The BilledCost is set to $100,000 since this is the amount that Acme Corp will be charged for the purchase of tokens.
 
-## Scenario B2: Usage of Virtual Currency Purchased at a Discount
+## Scenario B2: Usage of Consumption Currency Purchased at a Discount
 
 Acme Corp uses OmniQuery's services, consuming tokens as follows in the first day:
 
@@ -96,7 +96,7 @@ Note the following details in the example dataset:
 * PricingQuantity reflects the amount of usage of the PricingUnit for each charge and is equivalent to ConsumedQuantity. While relevant to this example, there are scenarios including tiered pricing where ConsumedQuantity and PricingQuantity may not be the same.
 * Because Acme Corp's usage includes no discount on usage to token rates, PricingCurrencyContractedUnitPrice and PricingCurrencyListUnitPrice are equivalent.
 
-## Scenario B3: Usage of Virtual Currency at a Modified Rate
+## Scenario B3: Usage of Consumption Currency at a Modified Rate
 
 Acme Corp uses OmniQuery's services consuming tokens as follows in the first day:
 
@@ -116,7 +116,7 @@ Note the following details in the example dataset:
 * The PricingCurrencyEffectiveCost is 240 tokens for this charge, which is less than example B2 above due to the modified rate.
 * ListCost reflects the cost of the charge at both the list cost of the tokens and the list rate for which the usage consumes tokens.
 
-## Scenario C: Handling Virtual Currency Usage Overages
+## Scenario C: Handling Consumption Currency Usage Overages
 
 For this scenario, Acme Corp has exceeded their purchased tokens on October 1st 2025 by 1,500 tokens and OmniQuery has charged them for the overage. The following conditions apply:
 
