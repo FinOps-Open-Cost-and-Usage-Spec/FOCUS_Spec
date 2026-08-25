@@ -15,7 +15,7 @@ ContractedUnitPrice MUST adhere to the following requirements:
 * ContractedUnitPrice MUST be of type Decimal.
 * ContractedUnitPrice MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * ContractedUnitPrice MUST adhere to the following nullability requirements:
-  * ContractedUnitPrice MUST be null when [SkuPriceId](#datamodel.costandusage.skupriceid) is null.
+  * ContractedUnitPrice MUST be null when SkuPriceId is null.
   * ContractedUnitPrice MUST be null when [ChargeCategory](#datamodel.costandusage.chargecategory) is "Tax".
   * ContractedUnitPrice MUST NOT be null when SkuPriceId is not null.
   * ContractedUnitPrice MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#datamodel.costandusage.chargeclass) is not "Correction".
