@@ -65,9 +65,9 @@ Represents the categorical length of the term of a purchase.
 | Constraint      | Value                                                                                      |
 | :-------------- | :----------------------------------------------------------------------------------------- |
 | Dataset         | [SKU Price](#datamodel.skuprice)                                                            |
+| Conditions      | [Includes Purchases](#conditions.includespurchases)                                        |
 | Column type     | Dimension                                                                                  |
 | Feature level   | Conditional                                                                                |
-| Condition       | [Includes purchases](#conditions.includespurchases)                                        |
 | Allows nulls    | True                                                                                       |
 | Data type       | String                                                                                     |
 | Value format    | [Expected format](#datamodel.skuprice.purchasedurationtype.expectedformat)                  |

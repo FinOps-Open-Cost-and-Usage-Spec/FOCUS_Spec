@@ -25,7 +25,7 @@ QuantityTierName MUST adhere to the following requirements:
 * QuantityTierName MUST be of type String.
 * QuantityTierName MUST conform to StringHandling requirements.
 * QuantityTierName MAY be null.
-* QuantityTierName MUST be semantically equivalent to the tier name or label published in the service-provider-published *price list*.
+* QuantityTierName MUST be semantically equivalent to the tier name or label in the service-provider-published *price list*.
 
 ### Content constraints as designed
 
