@@ -29,6 +29,7 @@ A service-provider-assigned identifier for a contract describing the agreed term
 | Constraint      | Value                                                                                      |
 |:----------------|:-------------------------------------------------------------------------------------------|
 | Dataset         | [SKU Price](#datamodel.skuprice)                                                            |
+| Conditions      | Not applicable                                                                              |
 | Column type     | Dimension                                                                                  |
 | Feature level   | Mandatory                                                                                  |
 | Allows nulls    | True                                                                                       |

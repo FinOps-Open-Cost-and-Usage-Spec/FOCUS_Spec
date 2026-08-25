@@ -33,6 +33,7 @@ The suggested service-provider-published unit price for a single Pricing Unit of
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
 | Dataset         | [SKU Price](#datamodel.skuprice)                      |
+| Conditions      | Not applicable                                        |
 | Column type     | Metric                                               |
 | Feature level   | Mandatory                                            |
 | Allows nulls    | False                                                |

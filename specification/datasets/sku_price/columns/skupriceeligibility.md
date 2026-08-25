@@ -146,6 +146,7 @@ A structured definition of the specific entities, accounts, or contexts eligible
 | Constraint | Value |
 | :--- | :--- |
 | Dataset | [SKU Price](#datamodel.skuprice) |
+| Conditions | Not applicable |
 | Column type | Dimension |
 | Feature level | Mandatory |
 | Allows nulls | False |
