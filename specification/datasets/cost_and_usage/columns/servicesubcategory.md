@@ -29,12 +29,12 @@ ServiceSubcategory MUST adhere to the following requirements:
 | Analytics                 | Other (Analytics)                     | Analytics services that do not fall into one of the defined subcategories. |
 | Business Applications     | Productivity and Collaboration        | Tools that facilitate individuals managing tasks and working together. |
 | Business Applications     | Other (Business Applications)         | Business Applications services that do not fall into one of the defined subcategories. |
-| Compute                   | Bare Metal                            | Computing environments provisioned as physical servers with direct access to the underlying hardware. |
+| Compute                   | Bare Metal                            | Computing environments provisioned as physical servers without a provider-managed hypervisor, giving direct access to the underlying hardware. |
 | Compute                   | Containers                            | Management and orchestration of containerized compute platforms. |
 | Compute                   | End User Computing                    | Virtualized desktop infrastructure and device / endpoint management. |
 | Compute                   | Quantum Compute                       | Resources and simulators that leverage the principles of quantum mechanics. |
 | Compute                   | Serverless Compute                    | Enablement of compute capabilities without provisioning or managing servers. |
-| Compute                   | Virtual Machines                      | Computing environments provisioned as virtualized hosts running on abstracted hardware. |
+| Compute                   | Virtual Machines                      | Computing environments where a provider-managed hypervisor abstracts the underlying hardware, whether shared or single-tenant. |
 | Compute                   | Other (Compute)                       | Compute services that do not fall into one of the defined subcategories. |
 | Databases                 | Caching                               | Low-latency and high-throughput access to frequently accessed data. |
 | Databases                 | Data Warehouses                       | Big data storage and querying capabilities. |
