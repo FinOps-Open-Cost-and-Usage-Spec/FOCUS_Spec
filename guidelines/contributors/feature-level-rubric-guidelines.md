@@ -2,9 +2,9 @@
 
 ## Purpose
 
-When FOCUS adds a column to a dataset, its **feature level** decides whether every *data generator* has to publish the column, or only the ones it applies to. This guideline decides that, for the levels `Mandatory` and `Conditional`. It applies to columns the working group has decided to add, and to columns already defined in the specification when their level is revisited.
+When FOCUS adds a column to a dataset, its **feature level** decides whether every [*data generator*](../../specification/metadata/data_generator/data_generator_overview.md) has to publish the column, or only the ones it applies to. This guideline decides that, for the levels `Mandatory` and `Conditional`. It applies to columns the working group has decided to add, and to columns already defined in the specification when their level is revisited.
 
-A column earns `Mandatory` by applying to every *operating model*.
+A column earns `Mandatory` by applying to every [*operating model*](../../specification/glossary.md#glossary:operating-model).
 
 **Why nullability appears in a guideline about feature level.** Nullability decides whether the value may be null once the column is present. It is a separate axis, and it is here for two reasons:
 
@@ -50,7 +50,7 @@ Topics left to a later revision or to the companion guideline are listed in [Def
 
 | Term | Meaning |
 | :--- | :--- |
-| *Operating model* | The collective set of capabilities, business concepts, and data constructs underlying a *FOCUS dataset*, as the [Glossary](../../specification/glossary.md) defines it. It covers both the billing concepts a *data generator* uses (regions, commitment discounts, unit pricing, and so on) and the participating entities involved (*service providers*, host providers, *invoice issuers*, and *data generators*). It determines whether a FOCUS concept applies to a *data generator*, and it is not the same thing as the category of company the *data generator* is. |
+| *Operating model* | The collective set of capabilities, business concepts, and data constructs underlying a [*FOCUS dataset*](../../specification/glossary.md#glossary:FOCUS-dataset), as the [Glossary](../../specification/glossary.md) defines it. It covers both the billing concepts a *data generator* uses (regions, commitment discounts, unit pricing, and so on) and the participating entities involved ([*service providers*](../../specification/glossary.md#glossary:service-provider), host providers, [*invoice issuers*](../../specification/glossary.md#glossary:invoice-issuer), and *data generators*). It determines whether a FOCUS concept applies to a *data generator*, and it is not the same thing as the category of company the *data generator* is. |
 | *Operating model* Condition | A verifiable state of an *operating model*, defined in the [Conditions](../../specification/conditions/conditions_overview.md) section. Every `Conditional` column references one or more of them through its presence requirement. |
 | Leveling unit | A column within a dataset, not a Column ID in the abstract. The same Column ID may take a different feature level, a different nullability, or a different set of Conditions in each dataset that defines it. Decide per dataset. |
 | Feature level | `Mandatory`, `Conditional`, `Recommended`, or `Optional`. Decides whether the column is present, and when. This revision assigns only the first two. |
@@ -132,15 +132,15 @@ flowchart TD
 
 > **Note:** The diagram shows the decision spine, and does not carry every rule that can change the outcome. Principle 5 constrains a derived column against its sources, [Applicability Signals](#applicability-signals) governs the cases where Step 2 is not obvious, and [Tie-Breakers and Defaults](#tie-breakers-and-defaults) settles the boundary. A column can reach a different level from the diagram alone than from the full text, and the text governs.
 
-### Step 1: State the concept
+### Step 1: State the Concept
 
 Write down the exact concept the column carries, as its Description and its glossary term define it. Every later step tests that concept, not a broader or narrower one.
 
-### Step 2: Applicability Test — sets the feature level
+### Step 2: Applicability Test — Sets the Feature Level
 
 **Before the test: the Supported Feature floor.** Where the column appears among the Directly Dependent Columns of a Supported Feature, that feature cannot be exercised without it. Such a column is `Mandatory` or `Conditional`, and the test below decides which. `Recommended` and `Optional` are not available to it.
 
-Where a directly dependent column would nonetheless land at `Recommended` or `Optional`, one of the two is wrong: either the level, or the feature's dependency list. Resolve that before the column ships, and record which of the two was changed.
+The floor tests a level that arrives from outside this procedure, since Step 2 itself returns only `Mandatory` or `Conditional`. Where a directly dependent column is proposed at `Recommended` or `Optional`, or already holds one of them, one of two things is wrong: either the level, or the feature's dependency list. Resolve that before the column ships, and record which of the two was changed.
 
 **Question:** does this concept exist in every *operating model*, and can a value be produced without substituting something else in its place?
 
@@ -164,7 +164,7 @@ Where either the concept test or the value test fails, the column is `Conditiona
 
 [Applicability Signals](#applicability-signals) decides the cases where this is not obvious. [Tie-Breakers and Defaults](#tie-breakers-and-defaults) settles the rest.
 
-### Step 3: Identify or propose the *operating model* Condition
+### Step 3: Identify or Propose the *Operating Model* Condition
 
 A `Conditional` level is expressed through one or more *operating model* Conditions. Never through a category of *data generator*, and never through prose in the column description alone.
 
@@ -182,7 +182,7 @@ An *operating model* Condition MUST describe a characteristic of the *operating 
 
 A Condition must remain a verifiable state of the *operating model*. A Condition that can only be evaluated by inspecting the dataset contents is not admissible.
 
-### Step 4: Nullability Test — sets `Allows nulls`
+### Step 4: Nullability Test — Sets `Allows nulls`
 
 **Question:** where the column is present, is a meaningful value available on every row?
 
@@ -205,7 +205,7 @@ Whether an *operating model* can produce the concept at all is the dataset-wide 
 
 **Example:** `MUST be null when the operating model does not include regions` is a presence rule written as a null rule. `MUST be null when CommitmentDiscountId is null` is a null rule.
 
-### Step 5: Record the outcome
+### Step 5: Record the Outcome
 
 **Column presence requirement**, in the dataset's normative requirements.
 
@@ -239,10 +239,10 @@ The last two work together. The Presence gate or nullability gate signal decides
 
 | Signal | Question | Verdict | Example |
 | :--- | :--- | :--- | :--- |
-| **Substitution** | Is the only way to fill the column for the *operating models* that lack the concept to substitute or derive some other value? | Substitution needed → `Conditional`. The concept is not universal. | — |
-| **Rule or patch** | Where the column is defined in terms of another column, does that definition apply in every *operating model*, or only in those lacking the concept? | Applies to all → `Mandatory`. Supplied only for those lacking the concept → `Conditional`. Having a fallback settles nothing by itself; which of the two kinds it is settles it. | EffectiveCost is defined against BilledCost for every *operating model*, equal to it for ordinary charges and computed from it where commitments amortize. It never stands in for a concept the *operating model* lacks, so it is a rule, not a patch. |
-| **Absent or not yet occurred** | Is the concept missing from the *operating model*, or present but not yet instantiated by a given *data generator*? | Concept missing → `Conditional`. Concept present, instance not yet produced → `Mandatory`, with Step 4 setting nullability. | Every *operating model* has the concept of a correction to a closed billing period, so a *data generator* that has never issued one still publishes ChargeClass, null on its rows. |
-| **Presence gate or nullability gate** | Does the Condition remove the column from the dataset, or leave the column present with no value on some of its rows? | Column removed for some *operating model* → presence gate, so `Conditional`. Column present in every *operating model*, with values missing on some rows → nullability gate, so `Mandatory` with Step 4 setting `Allows nulls` = `True`. Judge a gate by what it does to the column, not by how its Condition is worded. | An *operating model* with no regions has no row that could carry RegionId, so the Condition removes the column. Every *operating model* has rows that carry a ChargeClass value, so the column stays and only its rows vary. |
+| **Substitution** | Is the only way to fill the column for the *operating models* that lack the concept to substitute or derive some other value? | Substitution needed → `Conditional`. The concept is not universal. | No worked example. The cost columns are where this signal bites hardest, and whether their fallback rules stand in for a whole *operating model* or only for some rows in every one is not decided here. |
+| **Rule or patch** | Where the column is defined in terms of another column, does that definition apply in every *operating model*, or only in those lacking the concept? | Applies to all → `Mandatory`. Supplied only for those lacking the concept → `Conditional`. Having a fallback settles nothing by itself; which of the two kinds it is settles it. | [EffectiveCost](../../specification/datasets/cost_and_usage/columns/effectivecost.md) is defined against [BilledCost](../../specification/datasets/cost_and_usage/columns/billedcost.md) for every *operating model*, equal to it for ordinary charges and computed from it where commitments amortize. It never stands in for a concept the *operating model* lacks, so it is a rule, not a patch. |
+| **Absent or not yet occurred** | Is the concept missing from the *operating model*, or present but not yet instantiated by a given *data generator*? | Concept missing → `Conditional`. Concept present, instance not yet produced → `Mandatory`, with Step 4 setting nullability. | Every *operating model* has the concept of a correction to a closed billing period, so a *data generator* that has never issued one still publishes [ChargeClass](../../specification/datasets/cost_and_usage/columns/chargeclass.md), null on its rows. |
+| **Presence gate or nullability gate** | Does the Condition remove the column from the dataset, or leave the column present with no value on some of its rows? | Column removed for some *operating model* → presence gate, so `Conditional`. Column present in every *operating model*, with values missing on some rows → nullability gate, so `Mandatory` with Step 4 setting `Allows nulls` = `True`. Judge a gate by what it does to the column, not by how its Condition is worded. | An *operating model* with no regions has no row that could carry [RegionId](../../specification/datasets/cost_and_usage/columns/regionid.md), so the Condition removes the column. Every *operating model* has rows that carry a ChargeClass value, so the column stays and only its rows vary. |
 | **Variance gate** | Does the Condition gate on two values differing, or on more than one value occurring, rather than on whether the concept exists? | The concept is universal, so applicability returns `Mandatory`, and the gate does not lower it. Where the Condition is false the column carries a constant, and a constant is a truthful value, so the column is present and populated in every *operating model*. A variance gate is therefore not a presence gate. | An *operating model* that prices and bills in one currency has a pricing currency on every row that equals its billing currency. The repeated value is still the pricing currency, so the concept is present and the gate does not make the column absent. |
 
 ## Tie-Breakers and Defaults
@@ -269,7 +269,7 @@ The last two work together. The Presence gate or nullability gate signal decides
 
 **RegionId, in the Cost and Usage dataset:**
 
-* **Step 1, Concept.** The isolated geographic area a *resource* or *service* is deployed in.
+* **Step 1, Concept.** The isolated geographic area a [*resource*](../../specification/glossary.md#glossary:resource) or [*service*](../../specification/glossary.md#glossary:service) is deployed in.
 * **Step 2, Applicability.** An *operating model* without customer-visible regions has no row that could carry a value. Presence gate, so `Conditional`.
 * **Step 3, Condition.** [Includes Regions](../../specification/conditions/includesregions.md) exists and marks exactly where the concept exists. No new Condition needed.
 * **Step 4, Nullability.** Where the *operating model* includes regions, a region is available on many rows but not all, so `Allows nulls` = `True`.
