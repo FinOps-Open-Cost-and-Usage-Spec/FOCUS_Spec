@@ -90,7 +90,7 @@ SkuPriceEligibility uses a reserved string to represent global or unrestricted b
 The evaluation of an entity's usage against a rate card's eligibility rules proceeds in the following order:
 
 1. **Normalization:** Convert the entity attribute and the Scope `Values` to a consistent case (default: lowercase) for comparison.
-2. **Scope Check:** If `IsGlobalScope` is `true`, the entity passes inclusion; proceed to Exclusion Evaluation. If `IsComplexScope` is `true`, the object does not determine eligibility.
+2. **Scope Check:** If `IsGlobalScope` is `true`, the entity passes inclusion; proceed to Exclusion Evaluation. If `IsComplexScope` is `true`, the object does not determine eligibility; terminate evaluation.
 3. **Inclusion Evaluation:** Iterate through `Inclusions`. Apply `InclusionOperator`. If result is `False`, the entity is not eligible for this unit price; terminate evaluation.
 4. **Exclusion Evaluation:** Iterate through `Exclusions`. If `True`, the entity is explicitly excluded from this unit price; terminate evaluation.
 5. **Resolution:** If the entity passes the Scope Check or Inclusion Evaluation and is not caught by Exclusions, the `SKU Price` is valid for that entity.
