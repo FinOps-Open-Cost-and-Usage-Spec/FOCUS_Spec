@@ -6,7 +6,7 @@ Contracted Unit Price reflects negotiated unit price adjustments for the associa
 
 When no negotiated unit price adjustments apply to the *charge*, Contracted Unit Price equals [List Unit Price](#datamodel.costandusage.listunitprice).
 
-Contracted Unit Price is denominated in the [Billing Currency](#datamodel.costandusage.billingcurrency). Contracted Unit Price is commonly used for calculating savings based on negotiation activities.
+Contracted Unit Price is denominated in the [Billing Currency](#datamodel.costandusage.billingcurrency). Contracted Unit Price is commonly used for  negotiation activities.
 
 ## Requirements
 
