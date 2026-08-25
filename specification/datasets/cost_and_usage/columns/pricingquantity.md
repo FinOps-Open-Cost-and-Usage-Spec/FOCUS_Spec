@@ -13,7 +13,6 @@ PricingQuantity MUST adhere to the following requirements:
   * PricingQuantity MUST be null when [ChargeCategory](#datamodel.costandusage.chargecategory) is "Tax".
   * PricingQuantity MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#datamodel.costandusage.chargeclass) is not "Correction".
   * PricingQuantity MAY be null in all other cases.
-* Cost metric (e.g., [ContractedCost](#datamodel.costandusage.contractedcost)) MUST equal the product of the corresponding unit price (e.g., [ContractedUnitPrice](#datamodel.costandusage.contractedunitprice)) and PricingQuantity when the unit price is not null and PricingQuantity is not null.
 
 ## Usability Constraints
 
