@@ -152,13 +152,13 @@ Two properties must both hold for `Mandatory`:
 * the concept exists in every *operating model*, and
 * a value can be produced without substituting something else in its place.
 
-Together, these mean that no reasonable operating model would have a dataset instance where the column carries no value on any row.
+Together, these mean that no reasonable *operating model* would have a dataset instance where the column carries no value on any row.
 
 A fallback value does not make a concept universal. The question is whether the column carries the concept itself, or whether it fills a gap for an *operating model* that does not have that concept.
 
 Where the only way to populate the column for an *operating model* that lacks the concept is to substitute, approximate, or derive another concept in its place, the column is `Conditional`.
 
-Where the concept exists across operating models but a value has not yet occurred for a particular *data generator*, the column is not `Conditional`. Nullability handles that case.
+Where the concept exists across *operating models* but a value has not yet occurred for a particular *data generator*, the column is not `Conditional`. Nullability handles that case.
 
 Where either the concept test or the value test fails, the column is `Conditional`. The default between the two levels is `Conditional`; a column may move to `Mandatory` in a later version once adoption shows the concept is universal.
 
