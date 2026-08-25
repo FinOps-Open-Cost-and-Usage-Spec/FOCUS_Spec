@@ -14,6 +14,7 @@ The specification for the Cost and Usage dataset defines a group of columns that
 | [Allocated Method ID](#datamodel.costandusage.allocatedmethodid)                                     | Dimension          | [Conditional](#conditions.includessplitcostallocation) | True         | String    |
 | [Allocated Resource ID](#datamodel.costandusage.allocatedresourceid)                                 | Dimension          | [Conditional](#conditions.includessplitcostallocation) | True         | String    |
 | [Allocated Resource Name](#datamodel.costandusage.allocatedresourcename)                             | Dimension          | [Conditional](#conditions.includessplitcostallocation) | True         | String    |
+| [Allocated Service Name](#datamodel.costandusage.allocatedservicename)                               | Dimension          | [Conditional](#conditions.includessplitcostallocation) | True         | String    |
 | [Allocated Tags](#datamodel.costandusage.allocatedtags)                                              | Dimension          | [Conditional](#conditions.includessplitcostallocation) | True         | JSON      |
 | [Availability Zone](#datamodel.costandusage.availabilityzone)                                        | Dimension          | Recommended   | True         | String    |
 | [Billed Cost](#datamodel.costandusage.billedcost)                                                    | Metric             | Mandatory     | False        | Decimal   |
@@ -99,6 +100,7 @@ CostAndUsage MUST adhere to the following requirements:
   * CostAndUsage MUST include [AllocatedMethodId](#datamodel.costandusage.allocatedmethodid) when the *operating model* [includes split cost allocation](#conditions.includessplitcostallocation).
   * CostAndUsage MUST include [AllocatedResourceId](#datamodel.costandusage.allocatedresourceid) when the *operating model* [includes split cost allocation](#conditions.includessplitcostallocation).
   * CostAndUsage MUST include [AllocatedResourceName](#datamodel.costandusage.allocatedresourcename) when the *operating model* [includes split cost allocation](#conditions.includessplitcostallocation).
+  * CostAndUsage MUST include [AllocatedServiceName](#datamodel.costandusage.allocatedservicename) when the *operating model* [includes split cost allocation](#conditions.includessplitcostallocation).
   * CostAndUsage MUST include [AllocatedTags](#datamodel.costandusage.allocatedtags) when the *operating model* [includes split cost allocation](#conditions.includessplitcostallocation).
   * CostAndUsage SHOULD include [AvailabilityZone](#datamodel.costandusage.availabilityzone) when the *operating model* [includes availability zones](#conditions.includesavailabilityzones).
   * CostAndUsage MUST include [BilledCost](#datamodel.costandusage.billedcost).
