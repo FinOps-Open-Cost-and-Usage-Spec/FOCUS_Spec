@@ -126,7 +126,7 @@ AI agents generating or reviewing content MUST act as strict technical editors e
   * use `remain consistent` when requiring a value to be stable across time, records, or another defined scope.
 * **Structural Anchors:** Apply the following rules: 
   * Requirements sections, including reusable Attribute requirement sections, MUST begin with a non-verifiable anchor phrase ending in a colon (e.g., `<Entity> MUST adhere to the following requirements:`). 
-  * Anchor requirements exist solely to establish the parsing structure of subordinate requirements 
+  * Anchor requirements exist solely to establish the parsing structure of subordinate requirements.
   * Anchor requirements MUST NOT be interpreted as independently verifiable normative requirements.
 * **Terminology:** Apply the following rules:
   * Normative references to columns MUST use `ColumnId`s, never column Display Names. 
