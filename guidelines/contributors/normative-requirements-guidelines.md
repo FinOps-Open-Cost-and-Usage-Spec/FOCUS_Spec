@@ -196,7 +196,7 @@ Standalone requirement MUST adhere to the following rules:
 Standalone normative requirements use the following canonical form:
 
 ``` markdown
-* <Subject> <BCP 14 Keyword> <Verifiable State Descriptor>[ Conditions].
+* <GrammaticalSubject> <BCP-14-Keyword> <VerifiableStateDescriptor>[ Conditions].
 ```
 
 * **Example** (illustrative):
@@ -261,7 +261,7 @@ A condition grouping bullet introduces a shared condition that applies to all ne
 It uses the following canonical form:
 
 ``` markdown
-* When <Condition>, <Subject> MUST adhere to the following requirements:
+* When <Condition>, <GrammaticalSubject> MUST adhere to the following requirements:
 ```
 
 * **Example** (illustrative):
@@ -281,7 +281,7 @@ Context grouping bullets may be used for different requirement contexts, such as
 Column presence grouping bullets are used in dataset requirements. They use the following canonical form:
 
 ``` markdown
-* <Subject> <context> MUST adhere to the following requirements:
+* <GrammaticalSubject> <ContextLabel> MUST adhere to the following requirements:
 ```
 
 * **Example** (illustrative):
@@ -295,7 +295,7 @@ Column presence grouping bullets are used in dataset requirements. They use the 
 Nullability grouping bullets are used in column requirements. They use the following canonical form:
 
 ``` markdown
-* <Subject> MUST adhere to the following <context> requirements:
+* <GrammaticalSubject> MUST adhere to the following <ContextLabel> requirements:
 ```
 
 * **Example** (illustrative):
@@ -705,12 +705,12 @@ Use standardized phrasing and terminology, and apply common requirement patterns
 ##### Other Requirements: Documentation
 
 ```markdown
-* <DatasetId> documentation MUST <verifiable state>.
+* <DatasetId> documentation MUST <VerifiableStateDescriptor>.
 ```
 
 ```markdown
 * <DatasetId> documentation MUST adhere to the following requirements:
-  * <DatasetId> documentation MUST <verifiable state>.
+  * <DatasetId> documentation MUST <VerifiableStateDescriptor>.
 ```
 
 ### Dataset Normative Requirements Examples
@@ -1063,12 +1063,12 @@ To ensure clarity and consistency across columns and corresponding requirements,
 ##### Other Requirements: Documentation
 
 ```markdown
-* <Qualifier> documentation MUST <verifiable state>.
+* <ColumnId> documentation MUST <VerifiableStateDescriptor>.
 ```
 
 ```markdown
-* <Qualifier> documentation MUST adhere to the following requirements:
-  * <Qualifier> documentation MUST <verifiable state>.
+* <ColumnId> documentation MUST adhere to the following requirements:
+  * <ColumnId> documentation MUST <VerifiableStateDescriptor>.
 ```
 
 #### Column Requirement Standardized Terminology
@@ -1209,10 +1209,10 @@ The canonical form of the structural anchor is:
 
 Where `[Dataset|Column]` is the primary schema-level entity targeted by the Attribute — either Dataset or Column. Most Attributes target either datasets or columns, but not both. When an Attribute targets both datasets and columns, a separate structural anchor MUST be used for each entity type.
 
-When an Attribute is applicable only under specific conditions, the structural anchor MAY be preceded by an applicability criteria condition:
+When an Attribute is applicable only under specific conditions, the structural anchor MAY be preceded by an operating model condition:
 
 ```markdown
-When <actor> <applicability-criteria-condition>, [Dataset|Column] conforming to <AttributeId> attribute MUST adhere to the following requirements:
+When <Actor> <OperatingModelCondition>, [Dataset|Column] conforming to <AttributeId> attribute MUST adhere to the following requirements:
 ```
 
 ### Constrainable Entities in Attribute Requirements
