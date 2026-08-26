@@ -132,7 +132,7 @@ AI agents generating or reviewing content MUST act as strict technical editors e
   * Normative references to columns MUST use `ColumnId`s, never column Display Names. 
   * Requirements governing a specific dataset MUST use its `DatasetId` as the subject (e.g., `SkuPrice`). 
   * Requirements applying generically to all FOCUS datasets MUST use `FOCUS dataset`. 
-  * Otherwise, authors MUST use the abstraction that precisely matches the requirement (e.g., `dataset instance` or `dataset artifact`) 
+  * Otherwise, authors MUST use the abstraction that precisely matches the requirement (e.g., `dataset instance` or `dataset artifact`).
   * When a narrower abstraction is intended, authors MUST avoid using `FOCUS dataset`.
 * **Tone:** Use formal language. Contractions (e.g., *don't, can't*) MUST NOT be used in normative requirements.
 * **Inline Examples:** Any non-normative examples embedded within a requirement MUST be enclosed in parentheses using "e.g." (e.g., `...without lossy transformations (e.g., rounding)`).
