@@ -445,6 +445,14 @@ A Constrainable Entity MUST be a schema-level FOCUS Entity. The subsections belo
     * `<ObjectId>.<PropertyPath>` for JSON Object property-level requirements (e.g., `ContractCommitmentApplicabilityObject.Applicability.Cost`)
     * `<ObjectId>.<PropertyPath>[*].<PropertyPath>` for properties within arrays (e.g., `ContractAppliedObject.Elements[*].ContractId`, `ContractCommitmentApplicabilityObject.Inclusions[*].Dimension`)
 
+##### Documentation Qualifier Forms
+
+The `documentation` qualifier specifies the documentation aspect of a Constrainable Entity enumerated above. Documentation qualifiers use the following conventional forms:
+
+* `<Entity keyword> documentation` — documentation of any entity of that type (e.g., `FOCUS dataset documentation`, `FOCUS column documentation`, `Custom column documentation`)
+* `<Entity ID> documentation` — documentation of a specific entity (e.g., `InvoiceDetail documentation`, `BilledCost documentation`)
+* `<Entity reference> <SubQualifier> documentation` — documentation of a specific aspect of an entity (e.g., `FOCUS dataset delivery mechanism documentation`, `Custom column JSON object schema documentation`)
+
 #### Disallowed Constrainable Entities
 
 The following MUST NOT be used as Constrainable Entities or as the grammatical subjects of normative requirements:
