@@ -2,7 +2,7 @@
 
 Purchase Duration Type represents the categorical length of the term of a purchase (e.g., "1 Year", "3 Years"), based on the commercial agreement or pricing model. When the purchase is a [*commitment discount*](#glossary:commitment-discount), this column represents the term of that *commitment discount*.
 
-This column serves as a stable classifier for the purchase's term, distinct from the actual lifespan of the specific record. For example, a 3-year purchase term that is exchanged or modified may have a calculated active duration of only a few months, but its Purchase Duration Type remains "3 Years". This allows for consistent grouping and reporting on purchase durations, regardless of lifecycle events.
+This column serves as a stable classifier for the purchase's term, distinct from the actual lifespan of the specific record. For example, a three-year purchase term that is exchanged or modified may have a calculated active duration of only a few months, but its Purchase Duration Type remains "3 Years". This allows for consistent grouping and reporting on purchase durations, regardless of lifecycle events.
 
 ## Requirements
 
