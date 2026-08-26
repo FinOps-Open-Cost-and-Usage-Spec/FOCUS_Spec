@@ -437,8 +437,6 @@ A Constrainable Entity MUST be a schema-level FOCUS Entity, such as:
 
 The subject SHOULD be explicit and unambiguous.
 
-> **Note:** Specific documentation remains permitted as a constraint target to preserve existing normative intent and authoring patterns. The current repository architecture does not establish whether documentation is a FOCUS Entity. Its classification as a Constrainable Entity therefore remains unresolved; the documentation forms above are retained as an explicit exception pending an architectural decision.
-
 **Exception for Aggregate Expressions:** When a requirement describes an aggregate or derived value (e.g., sums, products, counts), the aggregate expression (e.g., `The sum of`, `The product of`) MAY be used as the grammatical subject when it improves readability. The aggregate expression is not itself a Constrainable Entity; the column or metric being constrained MUST still be clearly identifiable within the requirement.
 
 #### Disallowed Constrainable Entities
