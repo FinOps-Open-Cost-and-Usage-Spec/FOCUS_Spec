@@ -12,13 +12,13 @@ FOCUS defines datasets for billing data from cloud providers (AWS, Azure, GCP), 
 
 Before making any change, agents MUST read the instruction file(s) matching the requested activity. Read multiple files when an activity spans several areas (e.g., writing content and then building the spec to verify it). When no activity matches or the classification is unclear, read `.agents/writing-specification.md` and `.agents/project-workflow.md` as the default set.
 
-| Activity | Instruction File |
-|---|---|
-| Building the spec, running tests, linting markdown | `.agents/build-and-test.md` |
-| Writing or editing specification content | `.agents/writing-specification.md` |
-| Reviewing pull requests or specification changes | `.agents/reviewing-changes.md` |
+| Activity                                           | Instruction File                            |
+|----------------------------------------------------|---------------------------------------------|
+| Building the spec, running tests, linting markdown | `.agents/build-and-test.md`                 |
+| Writing or editing specification content           | `.agents/writing-specification.md`          |
+| Reviewing pull requests or specification changes   | `.agents/reviewing-changes.md`              |
 | Working with the requirements model (specification validation) | `.agents/requirements-model.md` |
-| Creating issues or PRs, managing working files | `.agents/project-workflow.md` |
+| Creating issues or PRs, managing working files     | `.agents/project-workflow.md`               |
 
 Guidance that applies to a single activity lives only in its instruction file. Do not duplicate guidance from `.agents/` files into this file or into model-specific entry files.
 
