@@ -48,7 +48,7 @@ Scenario: A *service provider* publishes an identity attribute that has no FOCUS
 
 | ServiceProviderName | ServiceName | PrincipalId | CredentialId | RequesterDetails |
 |---------------------|-------------|-------------|--------------|-------------------|
-| Aura Web | Inference | user_8842 | null | {"Name": "Alex Rivera", "Email": "alex.rivera@example.com", "Type": "User", "x_DirectoryGroup": "platform-engineering"} |
+| Aura Web | Inference | user_8842 | key_01HQZX3M8N | {"Name": "Alex Rivera", "Email": "alex.rivera@example.com", "Type": "User", "Credential": {"Type": "API Key", "Name": "prod-ingest-key"}, "x_DirectoryGroup": "platform-engineering"} |
 
 ## Cost Attribution by Principal and by Credential
 

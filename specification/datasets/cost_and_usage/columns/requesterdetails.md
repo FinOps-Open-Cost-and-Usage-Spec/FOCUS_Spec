@@ -31,7 +31,6 @@ The following section details the normative requirements for the RequesterDetail
 RequesterDetailsObject MUST adhere to the following requirements:
 
 * RequesterDetailsObject MUST conform to the [RequesterDetailsObjectSchema](#schemas.costandusage.requesterdetailsobjectschema) JSON Schema.
-* RequesterDetailsObject MUST include at least one property.
 * RequesterDetailsObject MUST NOT include properties that are not applicable to the *requester* associated with the *charge*.
 * RequesterDetailsObject.Name MUST represent a readable display name for the *principal* identified by PrincipalId.
 * RequesterDetailsObject.Email MUST represent an email address associated with the *principal* identified by PrincipalId.
@@ -126,7 +125,7 @@ Requester Details
 
 ## Description
 
-A set of properties describing the *principal* that initiated a request and the *credential* that credentialed the request.
+A set of properties describing the *requester* on whose behalf a request that produced a *charge* was made.
 
 ## Content Constraints
 
