@@ -14,13 +14,13 @@ PR bodies MUST complete `.github/pull_request_template.md`, including the summar
 
 Issue templates are `.yml` form definitions in `.github/ISSUE_TEMPLATE/`. Use the correct title prefix and fill all fields marked required in the template.
 
-| Type | Title Prefix | Template |
-|---|---|---|
-| Action Item | `[AI] ` | `action-item.yml` |
-| Feature Request | `[FR] ` | `feature-request.yml` |
-| Feedback | `[Feedback] ` | `feedback.yml` |
-| Maintenance | `[Maintenance] ` | `maintenance.yml` |
-| Work Item | `[WI]` | `work-item.yml` |
+| Type            | Title Prefix     | Template              |
+|-----------------|------------------|-----------------------|
+| Action Item     | `[AI] `          | `action-item.yml`     |
+| Feature Request | `[FR] `          | `feature-request.yml` |
+| Feedback        | `[Feedback] `    | `feedback.yml`        |
+| Maintenance     | `[Maintenance] ` | `maintenance.yml`.    |
+| Work Item       | `[WI]`           | `work-item.yml`       |
 
 ## Context Files
 
