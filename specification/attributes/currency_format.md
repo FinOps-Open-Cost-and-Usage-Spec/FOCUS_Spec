@@ -14,11 +14,11 @@ Column conforming to CurrencyFormat attribute MUST adhere to the following requi
 * [*FOCUS dataset column*](#glossary:FOCUS-dataset-column) MUST conform to [ISO 4217:2015](https://www.iso.org/standard/64758.html) standard, except when the value is presented in a *consumption currency*.
 * *FOCUS dataset column* MUST use the three-letter alphabetic code defined in ISO 4217:2015 (e.g., USD, EUR), except when the value is presented in a *consumption currency*.
 * *FOCUS dataset column* MUST conform to [StringHandling](#attributes.stringhandling) requirements when the value is presented in a *consumption currency*.
-* *FOCUS dataset column* MUST NOT use a three-letter alphabetic code defined in ISO 4217:2015 when the value is presented in a *consumption currency*.
+* *FOCUS dataset column* MUST NOT use a code defined in ISO 4217:2015 when the value is presented in a *consumption currency*.
 
 ## Implementation Context
 
-A *consumption currency* is the [*virtual currency*](#glossary:virtual-currency) subtype a [*service provider*](#glossary:service-provider) issues to price consumption within its own platform. Other forms of *virtual currency*, such as a cryptocurrency, have no code defined in ISO 4217:2015 and no allowed value under this attribute.
+A *consumption currency* is one subtype of [*virtual currency*](#glossary:virtual-currency). Other subtypes, such as a cryptocurrency, have no code defined in ISO 4217:2015 and no allowed value under this attribute.
 
 Columns that carry a national currency by their own definition are unaffected by the *consumption currency* exception. BillingCurrency, for example, separately constrains its values to *national currency* in each dataset that includes it.
 
