@@ -1,6 +1,6 @@
 # Consumption Currency Pricing Model
 
-Many SaaS service providers support pricing models that utilize a [*consumption currency*](#glossary:consumption-currency) such as credits, tokens, or points. Charges may be provided using a consumption currency, which can subsequently be converted to a [*national currency*](#glossary:national-currency) such as USD or EUR at an advertised or agreed-upon conversion rate.
+Many SaaS service providers support pricing models that utilize a [*consumption currency*](#glossary:consumption-currency) such as platform credits or normalized billing units. Charges may be provided using a consumption currency, which can subsequently be converted to a [*national currency*](#glossary:national-currency) such as USD or EUR at an advertised or agreed-upon conversion rate.
 
 The scenarios described below illustrate how a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) should look for various scenarios where a provider utilizes this pricing model.
 
@@ -9,7 +9,7 @@ The scenarios described below illustrate how a Cost and Usage [*FOCUS dataset*](
 The following baseline conditions apply to the scenarios described below:
 
 * Acme Corp has signed an agreement with SaaS service provider OmniQuery to use their services.
-* OmniQuery offers a consumption currency pricing model for their services and requires a purchase of consumption currency in advance of usage. Their denomination of consumption currency is called "tokens".
+* OmniQuery offers a consumption currency pricing model for their services and requires a purchase of consumption currency in advance of usage. Their denomination of consumption currency is called "Token".
 * OmniQuery requires purchase of additional tokens in the event of usage exceeding purchased tokens.
 * OmniQuery publicly lists the cost of their tokens at $2 per token.
 * OmniQuery treats token purchases as resources; therefore, charges for token purchases include values for ResourceId, ResourceName, and ResourceType.
@@ -35,7 +35,7 @@ For this scenario, the initial purchase of consumption currency is executed as f
 Note the following details in the example dataset:
 
 * The Charge Period is April 1st 2025 - April 1st 2026. The Billing Period is the month of April 2025 (when the tokens were purchased) and therefore will appear in the April invoice.
-* Because OmniQuery uses a consumption currency pricing model for usage and publishes their token price in terms of dollars and their usage cost in terms of tokens, their Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) includes the columns PricingCurrency, PricingCurrencyContractedUnitPrice, PricingCurrencyEffectiveCost, and PricingCurrencyListUnitPrice.
+* Because OmniQuery uses a consumption currency pricing model for usage and publishes their token price in terms of dollars and their usage cost in terms of tokens, their Cost and Usage *FOCUS dataset* includes the columns PricingCurrency, PricingCurrencyContractedUnitPrice, PricingCurrencyEffectiveCost, and PricingCurrencyListUnitPrice.
 * A single charge representing the total payment for the initial token purchase agreement ($200,000) is charged in the first invoice.
   * ListCost, BilledCost, and ContractedCost of the purchase are all represented in this charge, however EffectiveCost is zero since the tokens are not yet consumed.
 * PricingQuantity is set to the total tokens purchased.
