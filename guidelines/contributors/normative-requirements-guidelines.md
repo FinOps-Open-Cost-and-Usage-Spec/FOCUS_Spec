@@ -144,9 +144,9 @@ The following core concepts define the structure of normative content in the FOC
 
 The conceptual model is:
 
-> Normative Requirement = Constrainable Entity + Obligation + Constraint + Condition
+> Atomic Requirement = Constrainable Entity + Obligation + Constraint [+ Condition]
 
-At the atomic conformance-unit level, each normative requirement constrains one Constrainable Entity. A composite authored construct can resolve into multiple atomic requirements, each of which independently satisfies this model. The Condition component is present only when applicability is conditional.
+At the atomic conformance-unit level, each atomic requirement constrains one Constrainable Entity. A composite authored construct can resolve into multiple atomic requirements, each of which independently satisfies this model. The Condition component is present only when applicability is conditional.
 
 Although every normative bullet contains a BCP 14 keyword, not every normative bullet introduces a conformance constraint. Some normative bullets serve solely to group nested normative bullets under a shared condition or context:
 
