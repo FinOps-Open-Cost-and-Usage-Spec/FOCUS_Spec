@@ -461,7 +461,7 @@ The following MUST NOT be used as Constrainable Entities or as the grammatical s
 * Actors (e.g., `data generator`, `service provider`, `consumer`)
 * Processes or mechanisms (e.g., `Delivery Handling`, `Correction Handling`, etc.)
 
-> **Note:** Actors and processes/mechanisms MUST NOT be Constrainable Entities, but they MAY appear inside a qualifier — most commonly inside a documentation qualifier that describes what the documentation is about. In such cases the Constrainable Entity is the FOCUS entity being documented (typically a FOCUS dataset or column), and the actor or mechanism appears only within the qualifier chain, never as the entity reference itself. For example, in `FOCUS dataset delivery mechanism documentation`, the Constrainable Entity is `FOCUS dataset` and `delivery mechanism documentation` is the qualifier chain that narrows to the documentation of the delivery mechanism aspect.
+> **Note:** Actors and processes/mechanisms can appear inside a qualifier (most commonly inside a documentation qualifier that describes what the documentation is about). In such cases the Constrainable Entity is the FOCUS entity being documented (typically a FOCUS dataset or column), and the actor or mechanism appears only within the qualifier chain, never as the entity reference itself. For example, in `FOCUS dataset delivery mechanism documentation`, the Constrainable Entity is `FOCUS dataset` and `delivery mechanism documentation` is the qualifier chain that narrows to the documentation of the delivery mechanism aspect.
 
 ### Explicit Conditions in Normative Requirements
 
