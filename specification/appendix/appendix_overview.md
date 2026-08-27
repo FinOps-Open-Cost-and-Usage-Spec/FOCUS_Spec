@@ -27,29 +27,30 @@
 
 To illustrate how FOCUS normalizes the presentation of data across diverse technology environments, the appendix uses a standardized set of fictitious [*data generators*](#metadata.datagenerator). These represent common architectural components, ranging from core cloud infrastructure to SaaS platforms. Using these examples demonstrates cross-vendor cost allocation, standardized billing schemas, and multi-cloud reporting without relying on proprietary vendor data.
 
-Disclaimer: *The fictitious entities (data generators, customers, and commitment programs) referenced in this appendix are intended solely for illustrative purposes to resemble real-world services and organizations. They do not reflect, represent, or imply the actual current or future FOCUS implementations, billing schemas, or data formats of any real-world companies or equivalents listed herein.*
+Disclaimer: *The fictitious entities (data generators, customers, and commitment programs) listed in this appendix are intended solely for illustrative purposes to resemble real-world services and organizations. They do not reflect, represent, or imply the actual current or future FOCUS implementations, billing schemas, or data formats of any real-world companies or equivalents listed herein.*
 
-The table below outlines the fictitious *data generators* used throughout the appendix, their primary functions, and their real-world counterparts for context:
+The table below outlines the fictitious *data generators* used throughout the specification, their primary functions, and their real-world counterparts for context. Entries are listed alphabetically by data generator name:
 
 | Fictitious Data Generator | Service Offering | Fictitious Data Generator Description | Similar Real-World Examples |
 | :--- | :--- | :--- | :--- |
 | **Aura Web** | Cloud Service Provider | A highly scalable, market-leading cloud infrastructure provider offering extensive compute, storage, and serverless options. | Amazon Web Services (AWS) |
+| **Budget Beacon** | Cost Management | A cloud cost-optimization platform that shines a spotlight on overspending, waste, and savings opportunities across multi-cloud environments. | Cloudability, CloudHealth, ProsperOps |
+| **CollabChat** | Team Communications | A messaging platform offering organized chat channels, direct messaging, and secure file sharing for remote teams. | Slack |
 | **CrestNode** | Cloud Service Provider | An enterprise-focused cloud platform with deep integrations into existing corporate software ecosystems and directory services. | Microsoft Azure |
 | **LatticeScale** | Cloud Service Provider | A cloud provider heavily optimized for machine learning, data analytics, and containerized Kubernetes workloads. | Google Cloud Platform (GCP) |
-| **Solora AI** | Foundation Model Developer | An AI lab that develops and trains foundation models that are sold directly and served by cloud providers as a first-party offering. | OpenAI, Anthropic |
+| **ModelMesh** | Foundation Model Developer | An AI lab that develops and trains open-weight foundation models, which are self-hosted or served by cloud providers and inference platforms. | Meta (Llama), Mistral AI |
 | **OmniQuery** | Data Platform | A centralized hub for storing, processing, and analyzing massive datasets to drive business intelligence. | Snowflake, Databricks |
-| **StackLens** | SaaS Observability | A monitoring tool that tracks application performance, logs, and system health in real-time to prevent downtime. | Datadog, New Relic |
-| **SprintCanvas** | Project Management | A collaborative workspace for planning, assigning, and tracking team tasks and agile workflows. | Jira, Asana, Trello |
-| **StoreStack** | Database as a Service | A fully managed, scalable cloud database solution that handles provisioning, backups, and routine maintenance. | MongoDB Atlas |
-| **CollabChat** | Team Communications | A messaging platform offering organized chat channels, direct messaging, and secure file sharing for remote teams. | Slack |
-| **PulseMail** | Email API | A developer-friendly service for reliably routing, sending, and tracking both transactional and marketing emails. | SendGrid, Mailgun |
 | **PipelCRM** | CRM | A customer relationship management platform designed to track sales pipelines, manage contacts, and optimize lead conversion. | Salesforce, HubSpot |
-| **Budget Beacon** | Cost Management | A cloud cost-optimization platform that shines a spotlight on overspending, waste, and savings opportunities across multi-cloud environments. | Cloudability, CloudHealth, ProsperOps |
+| **PulseMail** | Email API | A developer-friendly service for reliably routing, sending, and tracking both transactional and marketing emails. | SendGrid, Mailgun |
 | **SchemaWeaver** | Open Source Library | An open-source tool that refines raw cloud cost and usage data, normalizing it into FOCUS-compliant schemas for downstream analytics and reporting. Not a public service. | OpenCost, Cloud Intelligence Dashboards, FinOps toolkit |
+| **Solora AI** | Foundation Model Developer | An AI lab that develops and trains foundation models that are sold directly and served by cloud providers as a first-party offering. | OpenAI, Anthropic |
+| **SprintCanvas** | Project Management | A collaborative workspace for planning, assigning, and tracking team tasks and agile workflows. | Jira, Asana, Trello |
+| **StackLens** | SaaS Observability | A monitoring tool that tracks application performance, logs, and system health in real-time to prevent downtime. | Datadog, New Relic |
+| **StoreStack** | Database as a Service | A fully managed, scalable cloud database solution that handles provisioning, backups, and routine maintenance. | MongoDB Atlas |
 
 ## Fictitious Customer Reference<!--SkipTOC-->
 
-To contextualize the billing and cost allocation examples, this appendix utilizes fictitious customer profiles. These profiles represent common organizational structures and cloud adoption patterns.
+To contextualize the billing and cost allocation examples, this appendix utilizes fictitious customer profiles. These profiles represent common organizational structures and cloud adoption patterns. Entries are listed alphabetically by customer name:
 
 | Fictitious Customer | Company Profile | Customer Description |
 | :--- | :--- | :--- |
@@ -59,14 +60,14 @@ To contextualize the billing and cost allocation examples, this appendix utilize
 
 ## Fictitious Commitment Program Reference<!--SkipTOC-->
 
-To illustrate commitment program application and amortization without relying on vendor-specific terminology, the examples in this appendix use standardized fictitious commitment instruments. These constructs abstract the common commitment mechanisms used by major cloud and SaaS providers.
+To illustrate commitment program application and amortization without relying on vendor-specific terminology, the examples in this appendix use standardized fictitious commitment instruments. These constructs abstract the common commitment mechanisms used by major cloud and SaaS providers. Entries are listed alphabetically by commitment program name:
 
 | Fictitious Commitment Program | Acronym | Category | Fictitious Commitment Program Description | Similar Real-World Programs |
 | :--- | :--- | :--- | :--- | :--- |
-| **Resource Reservation** | RR | Usage | An upfront commitment to use a specific resource type, family, and region for a set term (e.g., 1 or 3 years) in exchange for a significantly reduced hourly rate. | Reserved Instances (AWS/Azure), Resource-based CUDs (GCP) |
-| **Flexible Spend Plan** | FSP | Spend | A commitment to spend a specific monetary amount per hour across a broad category of compute or service offerings, providing high flexibility as workloads shift. | Savings Plans (AWS) |
+| **Advance Resource Commitment** | ARC | Usage | An advance reservation of specific compute capacity in a region or availability zone, guaranteeing resource availability without necessarily providing a unit discount. Distinct from Resource Reservations, which are commitment discounts. | Capacity Reservations (AWS), On-demand Capacity Reservations (Azure), Zonal reservations (GCP) |
+| **Bulk Capacity Credit** | BCC | Spend | A pre-purchased pool of platform-specific credits or capacity units, consumed against usage over a contract period. Common among data and analytics platforms. | Capacity Commitments (Snowflake), Committed Use Discounts (Databricks) |
 | **Dynamic Compute Commitment** | DCC | Spend | A spend-based commitment covering aggregate compute resources (such as vCPU and memory) across multiple regions and machine families, converting the hourly spend into a usage discount. | Flexible CUDs (GCP) |
 | **Enterprise Spend Agreement** | ESA | Spend | An overarching, contractual agreement where an organization commits to a minimum aggregate spend across a provider's portfolio over a set term (e.g., 1-3 years) in exchange for a blanket percentage discount. | Enterprise Discount Programs (AWS), MACC (Azure) |
+| **Flexible Spend Plan** | FSP | Spend | A commitment to spend a specific monetary amount per hour across a broad category of compute or service offerings, providing high flexibility as workloads shift. | Savings Plans (AWS) |
 | **Interval Spend Commitment** | ISC | Spend | A recurring minimum-spend or minimum-usage agreement at fixed intervals (e.g., monthly, annual), common among SaaS observability and infrastructure monitoring providers. Program names inherently include the period reference. | Monthly/Annual Commitments (Datadog) |
-| **Bulk Capacity Credit** | BCC | Spend | A pre-purchased pool of platform-specific credits or capacity units, consumed against usage over a contract period. Common among data and analytics platforms. | Capacity Commitments (Snowflake), Committed Use Discounts (Databricks) |
-| **Advance Resource Commitment** | ARC | Usage | An advance reservation of specific compute capacity in a region or availability zone, guaranteeing resource availability without necessarily providing a unit discount. Distinct from Resource Reservations, which are commitment discounts. | Capacity Reservations (AWS), On-demand Capacity Reservations (Azure), Zonal reservations (GCP) |
+| **Resource Reservation** | RR | Usage | An upfront commitment to use a specific resource type, family, and region for a set term (e.g., 1 or 3 years) in exchange for a significantly reduced hourly rate. | Reserved Instances (AWS/Azure), Resource-based CUDs (GCP) |
