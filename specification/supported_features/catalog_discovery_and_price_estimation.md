@@ -92,25 +92,24 @@ This query takes a set of planned quantities, each paired with the SKU Price ID 
 Pricing Currency Category is returned alongside the total because a "Consumable" rate produces a balance in a consumption currency rather than a financial amount. Rows carrying different Pricing Currency values, or a mix of "Payable" and "Consumable", are not additive without a conversion step the SKU Price dataset does not carry.
 
 ```sql
-WITH PlannedUsage AS (
-  SELECT ? AS SkuPriceId, ? AS PlannedQuantity
+WITH PlannedUsage (SkuPriceId, PlannedQuantity, PlannedDate) AS (
+  VALUES (?, ?, ?)
 )
 SELECT
-  SP.SkuPriceId,
+  PU.SkuPriceId,
   SP.SkuPriceDescription,
   SP.PricingUnit,
   PU.PlannedQuantity,
   SP.ListUnitPrice,
   SP.PricingCurrency,
   SP.PricingCurrencyCategory,
-  PU.PlannedQuantity * SP.ListUnitPrice AS EstimatedAmount
+  PU.PlannedQuantity * SP.ListUnitPrice AS EstimatedListAmount
 FROM PlannedUsage PU
-INNER JOIN SkuPrice SP
-  ON PU.SkuPriceId = SP.SkuPriceId
-WHERE (SP.SkuPriceEffectiveStart IS NULL OR SP.SkuPriceEffectiveStart <= ?)
-  AND (SP.SkuPriceEffectiveEnd IS NULL OR SP.SkuPriceEffectiveEnd > ?)
-ORDER BY EstimatedAmount DESC
-```
+LEFT JOIN SkuPrice SP
+  ON SP.SkuPriceId = PU.SkuPriceId
+  AND SP.SkuPriceEffectiveStart <= PU.PlannedDate
+  AND SP.SkuPriceEffectiveEnd > PU.PlannedDate
+ORDER BY SP.PricingCurrencyCategory, SP.PricingCurrency, EstimatedListAmount DESC
 
 ### Identify the Prices a Billing Account is Eligible For
 
