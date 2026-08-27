@@ -2,58 +2,63 @@
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "https://focus.finops.org/schemas/requesterdetailsobject.json",
     "title": "Requester Details Object",
-    "description": "Schema for validating the Requester Details column JSON object structure in FOCUS datasets",
-    "type": "object",
-    "minProperties": 1,
-    "properties": {
-        "Name": {
-            "type": [
-                "string",
-                "null"
-            ],
-            "description": "Readable display name for the principal identified by Principal ID"
+    "description": "Schema for validating the Requester Details column structure in FOCUS datasets. The column is an array of key-value entries, where each entry's value is an object of FOCUS-defined descriptive properties (Type, Name, Email) plus optional custom properties.",
+    "type": "array",
+    "minItems": 1,
+    "items": {
+        "type": "object",
+        "required": [
+            "key",
+            "value"
+        ],
+        "properties": {
+            "key": {
+                "type": "string",
+                "description": "Names the requester level the entry describes: \"Principal\", \"Credential\", or a custom key",
+                "anyOf": [
+                    {
+                        "enum": [
+                            "Principal",
+                            "Credential"
+                        ]
+                    },
+                    {
+                        "pattern": "^x_[A-Z][a-zA-Z0-9]*$"
+                    }
+                ]
+            },
+            "value": {
+                "$ref": "#/$defs/entryValue"
+            }
         },
-        "Email": {
-            "type": [
-                "string",
-                "null"
-            ],
-            "description": "Email address associated with the principal identified by Principal ID"
-        },
-        "Type": {
-            "type": [
-                "string",
-                "null"
-            ],
-            "description": "The kind of principal identified by Principal ID (e.g., User, Service Account, Application)"
-        },
-        "Credential": {
-            "type": [
-                "object",
-                "null"
-            ],
-            "description": "The credential identified by Credential ID",
-            "required": [
-                "Type"
-            ],
+        "additionalProperties": false
+    },
+    "$defs": {
+        "entryValue": {
+            "type": "object",
+            "minProperties": 1,
+            "description": "Descriptive attributes of the requester level named by the entry key",
             "properties": {
-                "Id": {
+                "Type": {
                     "type": [
                         "string",
                         "null"
                     ],
-                    "description": "The value of Credential ID for the credential described by this object"
-                },
-                "Type": {
-                    "type": "string",
-                    "description": "The kind of credential identified by Credential ID (e.g., API Key, Session, Delegated Role)"
+                    "description": "The kind of entity the entry describes (e.g., User, Service Account, API Key, Session)"
                 },
                 "Name": {
                     "type": [
                         "string",
                         "null"
                     ],
-                    "description": "Readable display name for the credential identified by Credential ID"
+                    "description": "Readable display name for the entity the entry describes"
+                },
+                "Email": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "description": "Email address associated with the entity the entry describes"
                 }
             },
             "patternProperties": {
@@ -63,11 +68,5 @@
             },
             "additionalProperties": false
         }
-    },
-    "patternProperties": {
-        "^x_[A-Z][a-zA-Z0-9]*$": {
-            "description": "Custom data generator-defined top-level properties prefixed with x_ in PascalCase format. A property whose value is an object may describe a further level of the requester, using the same Id, Type, and Name entries as the Credential object."
-        }
-    },
-    "additionalProperties": false
+    }
 }
