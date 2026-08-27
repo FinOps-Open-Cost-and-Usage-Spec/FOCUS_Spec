@@ -196,7 +196,7 @@ Standalone requirement MUST adhere to the following rules:
 Standalone normative requirements use the following canonical form:
 
 ``` markdown
-* <Subject> <BCP 14 Keyword> <Verifiable State Descriptor>[ Conditions].
+* <GrammaticalSubject> <BCP-14-Keyword> <VerifiableStateDescriptor>[ Conditions].
 ```
 
 * **Example** (illustrative):
@@ -261,7 +261,7 @@ A condition grouping bullet introduces a shared condition that applies to all ne
 It uses the following canonical form:
 
 ``` markdown
-* When <Condition>, <Subject> MUST adhere to the following requirements:
+* When <Condition>, <GrammaticalSubject> MUST adhere to the following requirements:
 ```
 
 * **Example** (illustrative):
@@ -281,7 +281,7 @@ Context grouping bullets may be used for different requirement contexts, such as
 Column presence grouping bullets are used in dataset requirements. They use the following canonical form:
 
 ``` markdown
-* <Subject> <context> MUST adhere to the following requirements:
+* <GrammaticalSubject> <ContextLabel> MUST adhere to the following requirements:
 ```
 
 * **Example** (illustrative):
@@ -295,7 +295,7 @@ Column presence grouping bullets are used in dataset requirements. They use the 
 Nullability grouping bullets are used in column requirements. They use the following canonical form:
 
 ``` markdown
-* <Subject> MUST adhere to the following <context> requirements:
+* <GrammaticalSubject> MUST adhere to the following <ContextLabel> requirements:
 ```
 
 * **Example** (illustrative):
@@ -376,15 +376,32 @@ When a FOCUS dataset concept appears in a **non-subject position** (e.g., in con
 
 ### Constrainable Entity
 
-A Constrainable Entity is a FOCUS Entity whose conformance can be directly evaluated through normative requirements and to which an obligation and constraint can be applied. Reference conventions for a Constrainable Entity in the grammatical subject position (use of IDs, prohibition on Display Names, singular form) are defined in the [FOCUS Entity Reference Conventions](#focus-entity-reference-conventions) section.
+This section defines allowed and disallowed forms of Constrainable Entity in normative requirements, and the grammatical subject forms used to reference them. Reference conventions (use of IDs, prohibition on Display Names, singular form) are defined in the [FOCUS Entity Reference Conventions](#focus-entity-reference-conventions) section.
 
-The following subsections define the allowed and disallowed Constrainable Entities and their grammatical subject forms.
+#### Grammatical Subject Structure
+
+A normative bullet references its Constrainable Entity through the **grammatical subject**, i.e., the text at the subject position of the bullet. The grammatical subject consists of:
+
+* a **reference to a Constrainable Entity** (using an ID, generic keyword, or dot-notation path per [FOCUS Entity Reference Conventions](#focus-entity-reference-conventions)), and
+* optionally, one or more **qualifiers** that specify a subset, aspect, or context of the Constrainable Entity.
+
+Common qualifier types are:
+
+* **content or type** (e.g., `FOCUS column containing numeric values`)
+* **structural context** (e.g., `Key in Object in FOCUS dataset column`)
+* **aspect** (e.g., `InvoiceDetail documentation`, `FOCUS dataset delivery mechanism documentation`)
+
+Rules in this document that refer to what a requirement **constrains** apply to the Constrainable Entity. Rules that refer to the **wording or position** of the reference apply to the grammatical subject.
+
+The grammatical subject SHOULD be explicit and unambiguous.
+
+**Exception for Aggregate Expressions:** When a requirement describes an aggregate or derived value (e.g., sums, products, counts), the aggregate expression (e.g., `The sum of`, `The product of`) MAY be used as the grammatical subject when it improves readability. The aggregate expression is not itself a Constrainable Entity; the column or metric being constrained MUST still be clearly identifiable within the requirement.
 
 #### Allowed Constrainable Entities
 
-A Constrainable Entity MUST be a schema-level FOCUS Entity, such as:
+A Constrainable Entity MUST be a schema-level FOCUS Entity. The subsections below enumerate the allowed categories.
 
-##### Data Model Entities
+##### Data Model Entity
 
 * **FOCUS Data Model**, whereby `DataModel` identifies the FOCUS Data Model.
 
@@ -428,16 +445,14 @@ A Constrainable Entity MUST be a schema-level FOCUS Entity, such as:
     * `<ObjectId>.<PropertyPath>` for JSON Object property-level requirements (e.g., `ContractCommitmentApplicabilityObject.Applicability.Cost`)
     * `<ObjectId>.<PropertyPath>[*].<PropertyPath>` for properties within arrays (e.g., `ContractAppliedObject.Elements[*].ContractId`, `ContractCommitmentApplicabilityObject.Inclusions[*].Dimension`)
 
-##### Documentation Constraint Targets
+##### Documentation Qualifier Forms
 
-* **Documentation**, whereby use of:
-  * `FOCUS dataset documentation` keyword represents documentation of any FOCUS dataset
-  * `{DatasetId} documentation` represents documentation of a specific dataset (e.g., `InvoiceDetail documentation`)
-  * `{Qualifier} documentation` represents documentation identified by a specific qualifier (e.g., `FOCUS dataset delivery mechanism documentation`, `Custom column JSON object schema documentation`, `Data generator-calculated split cost allocation method documentation`)
+The `documentation` qualifier specifies the documentation aspect of a Constrainable Entity enumerated above.
 
-The subject SHOULD be explicit and unambiguous.
-
-**Exception for Aggregate Expressions:** When a requirement describes an aggregate or derived value (e.g., sums, products, counts), the aggregate expression (e.g., `The sum of`, `The product of`) MAY be used as the grammatical subject when it improves readability. The aggregate expression is not itself a Constrainable Entity; the column or metric being constrained MUST still be clearly identifiable within the requirement.
+* **Documentation aspect qualifier**, whereby use of:
+  * `<Entity keyword> documentation` represents documentation of any entity of that type (e.g., `FOCUS dataset documentation`, `FOCUS column documentation`, `Custom column documentation`)
+  * `<Entity ID> documentation` represents documentation of a specific entity (e.g., `InvoiceDetail documentation`, `BilledCost documentation`)
+  * `<Entity reference> <SubQualifier> documentation` represents documentation of a specific aspect of an entity (e.g., `FOCUS dataset delivery mechanism documentation`, `Custom column JSON object schema documentation`)
 
 #### Disallowed Constrainable Entities
 
@@ -446,7 +461,7 @@ The following MUST NOT be used as Constrainable Entities or as the grammatical s
 * Actors (e.g., `data generator`, `service provider`, `consumer`)
 * Processes or mechanisms (e.g., `Delivery Handling`, `Correction Handling`, etc.)
 
-> **Note:** Actors and processes/mechanisms can appear as part of a documentation qualifier without violating this rule. In such cases, the constraint target and grammatical subject are the documentation itself, not the actor or mechanism. For example, in `Data generator-calculated split cost allocation method documentation`, the subject is the documentation, not the data generator; in `FOCUS dataset delivery mechanism documentation`, the subject is the documentation, not the delivery mechanism.
+> **Note:** Actors and processes/mechanisms can appear inside a qualifier (most commonly inside a documentation qualifier that describes what the documentation is about). In such cases the Constrainable Entity is the FOCUS entity being documented (typically a FOCUS dataset or column), and the actor or mechanism appears only within the qualifier chain, never as the entity reference itself. For example, in `FOCUS dataset delivery mechanism documentation`, the Constrainable Entity is `FOCUS dataset` and `delivery mechanism documentation` is the qualifier chain that narrows to the documentation of the delivery mechanism aspect.
 
 ### Explicit Conditions in Normative Requirements
 
@@ -466,9 +481,7 @@ Specifically:
 * The primary verb of the obligation (i.e., the verb that directly follows the BCP-14 keyword) MUST define a verifiable state.
 * Process-oriented verbs (e.g., `ensure`, `handle`, `support`, `provide`) MUST NOT be used as the primary verb of the obligation.
 * Process-oriented verbs MAY be used in non-normative or explanatory clauses (e.g., to describe intent or rationale).
-* When a requirement refers to actor behavior, it MUST be expressed as:
-  * a constraint on the resulting state of a schema-level entity (e.g., dataset, column, object), or
-  * a constraint on documentation.
+* When a requirement refers to actor behavior, it MUST be expressed as a constraint on the resulting state of a schema-level entity (e.g., dataset, column, object), including its documentation aspect where applicable.
 
 #### Common Non-Compliant Verbs (Non-Exhaustive)
 
@@ -692,12 +705,12 @@ Use standardized phrasing and terminology, and apply common requirement patterns
 ##### Other Requirements: Documentation
 
 ```markdown
-* <DatasetId> documentation MUST <verifiable state>.
+* <DatasetId> documentation MUST <VerifiableStateDescriptor>.
 ```
 
 ```markdown
 * <DatasetId> documentation MUST adhere to the following requirements:
-  * <DatasetId> documentation MUST <verifiable state>.
+  * <DatasetId> documentation MUST <VerifiableStateDescriptor>.
 ```
 
 ### Dataset Normative Requirements Examples
@@ -1050,12 +1063,12 @@ To ensure clarity and consistency across columns and corresponding requirements,
 ##### Other Requirements: Documentation
 
 ```markdown
-* <Qualifier> documentation MUST <verifiable state>.
+* <ColumnId> documentation MUST <VerifiableStateDescriptor>.
 ```
 
 ```markdown
-* <Qualifier> documentation MUST adhere to the following requirements:
-  * <Qualifier> documentation MUST <verifiable state>.
+* <ColumnId> documentation MUST adhere to the following requirements:
+  * <ColumnId> documentation MUST <VerifiableStateDescriptor>.
 ```
 
 #### Column Requirement Standardized Terminology
@@ -1164,7 +1177,7 @@ CommitmentDiscountQuantity MUST adhere to the following requirements:
 
 ### Role of Attributes in the Specification
 
-Attributes define reusable sets of normative constraints applicable to FOCUS datasets, columns (both FOCUS and custom), and column sub-elements (e.g., objects, keys, key values). Although Attributes are FOCUS Entities, they serve only as containers for these constraints and are not Constrainable Entities.
+Attributes define reusable sets of normative constraints applicable to FOCUS datasets, columns (both FOCUS and custom), and column sub-elements (e.g., objects and object properties, including keys and key values). Although Attributes are FOCUS Entities, they serve only as containers for these constraints and are not Constrainable Entities.
 
 An entity is considered conforming to an Attribute if it explicitly declares conformance or inherits it from a parent entity. For example, when a dataset declares conformance to `NullHandling`, all columns within that dataset are considered conforming to that Attribute.
 
@@ -1196,10 +1209,10 @@ The canonical form of the structural anchor is:
 
 Where `[Dataset|Column]` is the primary schema-level entity targeted by the Attribute — either Dataset or Column. Most Attributes target either datasets or columns, but not both. When an Attribute targets both datasets and columns, a separate structural anchor MUST be used for each entity type.
 
-When an Attribute is applicable only under specific conditions, the structural anchor MAY be preceded by an applicability criteria condition:
+When an Attribute is applicable only under specific conditions, the structural anchor MAY be preceded by an operating model condition:
 
 ```markdown
-When <actor> <applicability-criteria-condition>, [Dataset|Column] conforming to <AttributeId> attribute MUST adhere to the following requirements:
+When <Actor> <OperatingModelCondition>, [Dataset|Column] conforming to <AttributeId> attribute MUST adhere to the following requirements:
 ```
 
 ### Constrainable Entities in Attribute Requirements
@@ -1210,12 +1223,12 @@ These Constrainable Entities define the targets of individual requirements withi
 
 When an Attribute's requirements do not apply to all entities within scope but only to a subset, a qualifier condition narrows the scope by describing that subset (e.g., `When FOCUS column contains numeric values, FOCUS column MUST adhere to the following requirements`). This ensures that the applicability of each requirement is explicit and does not rely solely on the conformance declaration.
 
-The following table provides an overview of anchor subject types and requirement targets used across all Attributes, with each Attribute typically targeting only a subset of these targets.
+The following table provides an overview of anchor subject types and grammatical subject forms used across all Attributes. Each grammatical subject form identifies a Constrainable Entity, optionally accompanied by a qualifier. Each Attribute typically targets only a subset of these Constrainable Entities.
 
-| Anchor Subject Type | Constrainable Entity or Documentation Constraint Target |
+| Anchor Subject Type | Constrainable Entity (with optional qualifier) |
 |---|---|
 | Dataset | FOCUS dataset |
-| Dataset | [Qualifier] documentation |
+| Dataset | FOCUS dataset with documentation qualifier |
 | Column | FOCUS dataset column |
 | Column | FOCUS column |
 | Column | Custom column |
@@ -1225,7 +1238,7 @@ The following table provides an overview of anchor subject types and requirement
 | Column | Key value in Object in FOCUS dataset column |
 | Column | Key in FOCUS dataset column |
 | Column | Key value in FOCUS dataset column |
-| Column | [Qualifier] documentation |
+| Column | FOCUS dataset column with documentation qualifier |
 
 ### FOCUS Dataset Column vs FOCUS Column vs Custom Column Requirements
 
