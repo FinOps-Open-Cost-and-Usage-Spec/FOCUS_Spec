@@ -389,7 +389,7 @@ Common qualifier types are:
 
 * **content or type** (e.g., `FOCUS column containing numeric values`)
 * **structural context** (e.g., `Key in Object in FOCUS dataset column`)
-* **aspect** (e.g., `InvoiceDetail documentation` — the `documentation` qualifier specifies the InvoiceDetail dataset's documentation aspect; `FOCUS dataset delivery mechanism documentation` — specifies documentation about the dataset's delivery mechanism)
+* **aspect** (e.g., `InvoiceDetail documentation`, `FOCUS dataset delivery mechanism documentation`)
 
 Rules in this document that refer to what a requirement **constrains** apply to the Constrainable Entity. Rules that refer to the **wording or position** of the reference apply to the grammatical subject.
 
