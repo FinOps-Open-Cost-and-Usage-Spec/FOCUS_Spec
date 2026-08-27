@@ -38,7 +38,7 @@ The time window that an organization receives an invoice for, inclusive of the s
 
 <a name="glossary:block-pricing"><b>Block Pricing</b></a>
 
-A pricing approach where the cost of a particular resource or service is determined based on predefined quantities or tiers of usage. In these scenarios, the Pricing Unit and the corresponding Pricing Quantity can be different from the Consumed Unit and Consumed Quantity.
+A pricing approach where the cost of a particular resource or service is determined based on predefined quantities or blocks of usage or purchase. In these scenarios, the Pricing Unit and the corresponding Pricing Quantity can be different from the Consumed Unit and Consumed Quantity.
 
 <a name="glossary:cash-based-accounting"><b>Cash-Based Accounting</b></a>
 
@@ -88,6 +88,10 @@ A feature of [*commitment discounts*](#glossary:commitment-discount) that may fu
 <a name="glossary:commitment-program"><b>Commitment Program</b></a>
 
 A service-provider offering that allows a customer to enter into a [*commitment*](#glossary:commitment). Commitment programs include [*commitment discounts*](#glossary:commitment-discount), [*capacity reservations*](#glossary:capacity-reservation), and other constructs that require advance spend or usage agreements.
+
+<a name="glossary:commitment-tier"><b>Commitment Tier</b></a>
+
+A predefined level within a [*tiered commitment discount*](#glossary:tiered-commitment-discount), consisting of a usage or spend threshold range and an associated benefit.
 
 <a name="glossary:contract"><b>Contract</b></a>
 
@@ -268,9 +272,9 @@ An individual who performs FinOps within an organization to maximize the busines
 
 A comprehensive list of prices offered by a service provider.
 
-<a name="glossary:service-provider"><b>Service Provider</b></a>
+<a name="glossary:quantity-based-tiered-pricing"><b>Quantity-Based Tiered Pricing</b></a>
 
-An entity that provides the [*resources*](#glossary:resource) or [*services*](#glossary:service) available for usage or purchase.
+A form of [*threshold-based tiered pricing model*](#glossary:threshold-based-tiered-pricing) in which pricing levels are defined by threshold ranges based on [Pricing Quantity](#datamodel.costandusage.pricingquantity).
 
 <a name="glossary:refund"><b>Refund</b></a>
 
@@ -287,6 +291,10 @@ A row in a FOCUS-compatible cost and usage dataset.
 <a name="glossary:service"><b>Service</b></a>
 
 An offering that can be purchased from a service provider, and can include many types of usage or other charges; e.g., a cloud database service may include compute, storage, and networking charges.
+
+<a name="glossary:service-provider"><b>Service Provider</b></a>
+
+An entity that provides the [*resources*](#glossary:resource) or [*services*](#glossary:service) available for usage or purchase.
 
 <a name="glossary:sku"><b>SKU</b></a>
 
@@ -319,6 +327,24 @@ A Resource or Service-Provider-defined construct for grouping resources and/or o
 <a name="glossary:term"><b>Term</b></a>
 
 An agreement specified on a [*contract*](#glossary:contract) or [*invoice*](#glossary:invoice).
+
+<a name="glossary:threshold-based-pricing-tier"><b>Threshold-Based Pricing Tier</b></a>
+
+A predefined pricing level within a [*threshold-based tiered pricing model*](#glossary:threshold-based-tiered-pricing), consisting of a threshold range and an associated unit price. The threshold range may be based on quantity, duration, or spend depending on the *threshold-based tiered pricing* model.
+
+<a name="glossary:threshold-based-tiered-pricing"><b>Threshold-Based Tiered Pricing</b></a>
+
+A pricing model in which the unit price applied to a charge is determined by the applicable [*threshold-based pricing tier*](#glossary:threshold-based-pricing-tier).
+
+The applicable *threshold-based pricing tier* is determined based on quantity, duration, or spend within a defined aggregation scope and aggregation interval according to the threshold-based tier application model, without requiring a prior [*contract commitment*](#glossary:contract-commitment). The threshold-based tier application model defines whether the applicable *threshold-based pricing tier* is determined independently for each threshold range (graduated pricing) or whether reaching a higher threshold causes a higher *threshold-based pricing tier* to be applied retroactively to all charges within the aggregation interval (retroactive pricing).
+
+Threshold-based tiered pricing should not be confused with a [*tiered commitment discount*](#glossary:tiered-commitment-discount), which requires a prior *contract commitment*.
+
+[*Quantity-based tiered pricing*](#glossary:quantity-based-tiered-pricing) is a common form of threshold-based tiered pricing.
+
+<a name="glossary:tiered-commitment-discount"><b>Tiered Commitment Discount</b></a>
+
+A discount mechanism defined in relation to a [*contract commitment*](#glossary:contract-commitment), in which the discount applied to a charge is determined by the applicable [*commitment tier*](#glossary:commitment-tier) reached.
 
 <a name="glossary:unit-pricing"><b>Unit Pricing</b></a>
 

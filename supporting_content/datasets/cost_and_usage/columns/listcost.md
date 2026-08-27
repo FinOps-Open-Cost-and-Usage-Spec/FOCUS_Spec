@@ -40,9 +40,9 @@ Current column mappings found in available data sets:
 * Being inclusive of the impacts of free-tier, volume/tier-based, BYOL-based and dynamically priced SKU rates, the **List Cost cannot** be used for calculating savings based on volume/tier-based pricing, the use of pre-owned software licenses (BYOL - Bring Your Own License), leveraging interruptible resources and/or services, or optimizing usage to take advantage of dynamic pricing models.
 
 
-### Quantity-Driven Pricing strategies
+### Threshold-Based Tiered Pricing
 
-* See [Appendix: Quantity-Driven Pricing strategies](../appendix/quantity_driven_pricing_strategies.md) section for more information on Quantity-Driven Pricing strategies (such as flat-rate, volume-based rates and tier-based rating) and related UC scenarios
+* See [Appendix: Threshold-Based Tiered Pricing](../appendix/threshold_based_tiered_pricing.md) section for more information on threshold-based tiered pricing, the graduated pricing and retroactive pricing threshold-based tier application models, and a worked example showing how each affects ListCost
 
 ### Current data sources
 

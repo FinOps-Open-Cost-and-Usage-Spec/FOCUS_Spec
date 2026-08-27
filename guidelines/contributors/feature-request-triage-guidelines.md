@@ -68,7 +68,7 @@ The problem statement describes a gap in what FOCUS can do today. It does not pr
 > Practitioners cannot determine the order in which discounts were applied to a given charge in the current specification. When a commitment discount and one or more negotiated discounts apply to the same charge, FOCUS exposes the net effect through pricing columns but does not signal the application sequence, so reports that reconstruct the pricing derivation cannot be built from FOCUS data alone.
 
 > Fails (solution-embedded):
-> FOCUS should add a `x_DiscountClassification` column with values for "Committed Use" and "Volume Tier."
+> FOCUS should add a `x_DiscountClassification` column with values for "Commitment Discount" and "Negotiated Discount".
 
 > Fails (too vague):
 > Discount handling in FOCUS is inconsistent and needs improvement.
