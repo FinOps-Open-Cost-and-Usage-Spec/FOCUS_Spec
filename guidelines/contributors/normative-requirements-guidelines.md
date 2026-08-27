@@ -380,7 +380,7 @@ This section defines allowed and disallowed forms of Constrainable Entity in nor
 
 #### Grammatical Subject Structure
 
-A normative bullet references its Constrainable Entity through the **grammatical subject** — the text at the subject position of the bullet. The grammatical subject consists of:
+A normative bullet references its Constrainable Entity through the **grammatical subject**, i.e., the text at the subject position of the bullet. The grammatical subject consists of:
 
 * a **reference to a Constrainable Entity** (using an ID, generic keyword, or dot-notation path per [FOCUS Entity Reference Conventions](#focus-entity-reference-conventions)), and
 * optionally, one or more **qualifiers** that specify a subset, aspect, or context of the Constrainable Entity.
