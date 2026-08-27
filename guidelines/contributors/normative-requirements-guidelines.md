@@ -376,7 +376,7 @@ When a FOCUS dataset concept appears in a **non-subject position** (e.g., in con
 
 ### Constrainable Entity
 
-This section defines allowed and disallowed forms of [Constrainable Entity](#normative-requirement-model) in normative requirements, and the grammatical subject forms used to reference them. Reference conventions (use of IDs, prohibition on Display Names, singular form) are defined in the [FOCUS Entity Reference Conventions](#focus-entity-reference-conventions) section.
+This section defines allowed and disallowed forms of Constrainable Entity in normative requirements, and the grammatical subject forms used to reference them. Reference conventions (use of IDs, prohibition on Display Names, singular form) are defined in the [FOCUS Entity Reference Conventions](#focus-entity-reference-conventions) section.
 
 #### Grammatical Subject Structure
 
