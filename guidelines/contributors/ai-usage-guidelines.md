@@ -73,7 +73,7 @@ This repository includes configuration files for AI coding assistants:
 * `.agents/` - Activity-specific instruction files (writing, reviewing, building and testing, requirements model, project workflow)
 * `.ai/commands/` - Reusable workflow definitions
 * `.ai/memory/` - Persistent learnings across sessions
-* `.ai/<branch-name>/` - Working files for active issues (deleted after PR merge)
+* `.ai/work/<issue-number>-<kebab-case-name>/` - Working files for active issues (deleted after approval and before PR merge)
 
 Tool-specific wrapper files reference the centralized configuration:
 
