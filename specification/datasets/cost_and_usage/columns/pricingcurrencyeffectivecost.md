@@ -34,8 +34,8 @@ The PricingCurrency-denominated equivalent of Effective Cost, representing the c
 | :-------------- | :--------------------------------------------------- |
 | Dataset         | [Cost and Usage](#datamodel.costandusage)             |
 | Conditions      |                                                       |
-| ├─ Required     | [Includes Virtual Currency](#conditions.includesvirtualcurrency) and [Includes List Unit Prices](#conditions.includeslistunitprices) |
-| └─ Recommended  | [Includes Pricing-Billing Currency Differences](#conditions.includespricing-billingcurrencydifferences) and [Includes List Unit Prices](#conditions.includeslistunitprices) |
+| ├─ Must         | [Includes Virtual Currency](#conditions.includesvirtualcurrency) and [Includes List Unit Prices](#conditions.includeslistunitprices) |
+| └─ Should       | [Includes Pricing-Billing Currency Differences](#conditions.includespricing-billingcurrencydifferences) and [Includes List Unit Prices](#conditions.includeslistunitprices) |
 | Column type     | Metric                                               |
 | Feature level   | Conditional                                          |
 | Allows nulls    | False                                                |
