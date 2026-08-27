@@ -48,7 +48,7 @@ cd specification
 python3 enhanced_markdown_lint.py --config markdownlnt.cfg scan <file.md>
 ```
 
-Note: The enhanced linter provides contextual error messages showing actual vs expected values.
+> **Note:** The enhanced linter provides contextual error messages showing actual vs expected values.
 
 ## Document Build Pipeline
 
