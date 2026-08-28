@@ -12,44 +12,44 @@ Requester Details helps practitioners attribute cost to a recognizable *requeste
 
 RequesterDetails MUST adhere to the following requirements:
 
-* RequesterDetails MUST be of type JSON Object (serialized as a String where necessary).
+* RequesterDetails MUST be a valid JSON value (serialized as a String where necessary).
 * RequesterDetails MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * RequesterDetails MUST conform to [JsonObjectFormat](#attributes.jsonobjectformat) requirements.
 * RequesterDetails MUST adhere to the following nullability requirements:
   * RequesterDetails MAY be null when PrincipalId is null and CredentialId is null.
   * RequesterDetails MUST NOT be null when PrincipalId is not null or CredentialId is not null.
-* RequesterDetails MUST conform to [RequesterDetailsObject](#datamodel.costandusage.requesterdetails.requesterdetailsobject) requirements when RequesterDetails is not null.
+* RequesterDetails MUST conform to [RequesterDetailsValue](#datamodel.costandusage.requesterdetails.requesterdetailsvalue) requirements when RequesterDetails is not null.
 
-## Requester Details Object
+## Requester Details Value
 
-Requester Details consists of an array of entries, where each entry is an object carrying a `key` property naming what the entry describes and a `value` property carrying its attributes. The `Principal` entry describes the *principal* identified by PrincipalId, and the `Credential` entry describes the *credential* identified by CredentialId.
+Requester Details consists of a JSON array of entries, where each entry is an object carrying a `key` property naming what the entry describes and a `value` property carrying its attributes. The `Principal` entry describes the *principal* identified by PrincipalId, and the `Credential` entry describes the *credential* identified by CredentialId.
 
-The following section details the normative requirements for the RequesterDetailsObject and its nested properties. For a logical overview of the expected content, see the [Schema Structure](#datamodel.costandusage.requesterdetails.requesterdetailsobject.objectschemastructure) and [Object Example](#datamodel.costandusage.requesterdetails.requesterdetailsobject.objectexample) sections.
+The following section details the normative requirements for the RequesterDetailsValue and its nested properties. For a logical overview of the expected content, see the [Schema Structure](#datamodel.costandusage.requesterdetails.requesterdetailsvalue.valueschemastructure) and [Value Example](#datamodel.costandusage.requesterdetails.requesterdetailsvalue.valueexample) sections.
 
-### Object Requirements
+### Value Requirements
 
-RequesterDetailsObject MUST adhere to the following requirements:
+RequesterDetailsValue MUST adhere to the following requirements:
 
-* RequesterDetailsObject MUST conform to the [RequesterDetailsObjectSchema](#schemas.costandusage.requesterdetailsobjectschema) JSON Schema.
-* RequesterDetailsObject MUST be an array of entries.
-* RequesterDetailsObject MUST include at least one entry.
-* RequesterDetailsObject MUST NOT include entries that are not applicable to the *requester* associated with the *charge*.
+* RequesterDetailsValue MUST conform to the [RequesterDetailsValueSchema](#schemas.costandusage.requesterdetailsvalueschema) JSON Schema.
+* RequesterDetailsValue MUST be an array of entries.
+* RequesterDetailsValue MUST include at least one entry.
+* RequesterDetailsValue MUST NOT include entries that are not applicable to the *requester* associated with the *charge*.
 
-RequesterDetailsObject entries MUST adhere to the following requirements:
+RequesterDetailsValue entries MUST adhere to the following requirements:
 
-* Entry in RequesterDetailsObject MUST include a `key` property.
-* Entry in RequesterDetailsObject MUST include a `value` property.
-* Entry.key in RequesterDetailsObject MUST be "Principal", "Credential", or a custom key.
-* Entry.key in RequesterDetailsObject MUST be unique within RequesterDetailsObject.
-* Entry.value in RequesterDetailsObject MUST be an object carrying the descriptive attributes of the *requester* level named by Entry.key.
+* Entry in RequesterDetailsValue MUST include a `key` property.
+* Entry in RequesterDetailsValue MUST include a `value` property.
+* Entry.key in RequesterDetailsValue MUST be "Principal", "Credential", or a custom key.
+* Entry.key in RequesterDetailsValue MUST be unique within RequesterDetailsValue.
+* Entry.value in RequesterDetailsValue MUST be an object carrying the descriptive attributes of the *requester* level named by Entry.key.
 * Entry.value.Type MUST represent the kind of entity described by the entry.
 * Entry.value.Name MUST represent a readable display name for the entity described by the entry.
 * Entry.value.Email MUST represent an email address associated with the entity described by the entry.
-* Custom entry in RequesterDetailsObject MUST represent a level of the *requester* that is neither the *principal* nor the *credential*.
-* Custom Entry.key in RequesterDetailsObject MUST begin with the string "x_" followed by PascalCase.
-* Custom property name in Entry.value in RequesterDetailsObject MUST begin with the string "x_" followed by PascalCase.
+* Custom entry in RequesterDetailsValue MUST represent a level of the *requester* that is neither the *principal* nor the *credential*.
+* Custom Entry.key in RequesterDetailsValue MUST begin with the string "x_" followed by PascalCase.
+* Custom property name in Entry.value in RequesterDetailsValue MUST begin with the string "x_" followed by PascalCase.
 
-### Object Schema Structure
+### Value Schema Structure
 
 RequesterDetails contains an array of key-value entries describing the *principal* identified by PrincipalId and the *credential* identified by CredentialId.
 
@@ -79,7 +79,7 @@ The `value` of each entry is an object. FOCUS supports the properties below for 
 | `Name` | String | False | Readable display name for the entity the entry describes. |
 | `Email` | String | False | Email address associated with the entity the entry describes. |
 
-### Object Implementation Guidance
+### Value Implementation Guidance
 
 <div class="h7-nonindex">Custom Keys and Properties</div>
 
@@ -95,12 +95,12 @@ This specification defines the *principal* and the *credential* because they are
 
 Attributes describing the *principal* identified by PrincipalId belong in the `value` of the `Principal` entry. Attributes describing the *credential* identified by CredentialId belong in the `value` of the `Credential` entry. An entry is present only when attributes for it are published, so a *charge* with a *principal* and no identified *credential* carries a `Principal` entry alone.
 
-### Object Example
+### Value Example
 
-Here is an example of the object format.
+Here is an example of the value format.
 
 * For more detailed examples, please see this column's entry in the JSON Object Examples appendix entry [here](#appendix.examples:jsonobject.examples:requesterdetails).
-* For the JSON schema, please see [Requester Details Object Schema](#schemas.costandusage.requesterdetailsobjectschema).
+* For the JSON schema, please see [Requester Details Value Schema](#schemas.costandusage.requesterdetailsvalueschema).
 
 ```json
 [
@@ -122,13 +122,13 @@ Here is an example of the object format.
 ]
 ```
 
-### Object ID
+### Value ID
 
-RequesterDetailsObject
+RequesterDetailsValue
 
-### Object Display Name
+### Value Display Name
 
-Requester Details Object
+Requester Details Value
 
 ## Column ID
 
@@ -152,7 +152,7 @@ A set of properties describing the *requester* on whose behalf a request that pr
 | Allows nulls | True |
 | Data type | JSON |
 | Value format | [JSON Object Format](#attributes.jsonobjectformat) |
-| Object | [RequesterDetailsObject](#datamodel.costandusage.requesterdetails.requesterdetailsobject) |
+| Value | [RequesterDetailsValue](#datamodel.costandusage.requesterdetails.requesterdetailsvalue) |
 
 ## Version Introduced
 

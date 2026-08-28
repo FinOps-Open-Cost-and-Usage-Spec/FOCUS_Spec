@@ -1,7 +1,7 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://focus.finops.org/schemas/requesterdetailsobject.json",
-    "title": "Requester Details Object",
+    "$id": "https://focus.finops.org/schemas/requesterdetailsvalue.json",
+    "title": "Requester Details Value",
     "description": "Schema for validating the Requester Details column structure in FOCUS datasets. The column is an array of key-value entries, where each entry's value is an object of FOCUS-defined descriptive properties (Type, Name, Email) plus optional custom properties.",
     "type": "array",
     "minItems": 1,
