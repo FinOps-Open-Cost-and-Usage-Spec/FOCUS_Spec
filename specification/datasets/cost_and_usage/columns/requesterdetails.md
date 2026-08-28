@@ -83,7 +83,7 @@ The `value` of each entry is an object. FOCUS supports the properties below for 
 
 <div class="h7-nonindex">Custom Keys and Properties</div>
 
-To facilitate querying data across *principals* and across [*service providers*](#glossary:service-provider), a data generator may include one or more custom entries, or custom properties within the `value` of a FOCUS-defined entry. Custom entry keys and custom property names MUST be prefixed with "x_" followed by PascalCase format (e.g., `x_MyCustomKey`) to make them easy to identify as well as prevent collisions with FOCUS-defined keys.
+To facilitate querying data across *principals* and across [*service providers*](#glossary:service-provider), a data generator may include one or more custom entries, or custom properties within the `value` of a FOCUS-defined entry. The "x_" prefix followed by PascalCase format (e.g., `x_MyCustomKey`) makes custom keys easy to identify and prevents collisions with FOCUS-defined keys.
 
 <div class="h7-nonindex">Additional Levels</div>
 
