@@ -46,6 +46,8 @@ RequesterDetailsObject entries MUST adhere to the following requirements:
 * Entry.value.Name MUST represent a readable display name for the entity described by the entry.
 * Entry.value.Email MUST represent an email address associated with the entity described by the entry.
 * Custom entry in RequesterDetailsObject MUST represent a level of the *requester* that is neither the *principal* nor the *credential*.
+* Custom Entry.key in RequesterDetailsObject MUST begin with the string "x_" followed by PascalCase.
+* Custom property name in Entry.value in RequesterDetailsObject MUST begin with the string "x_" followed by PascalCase.
 
 ### Object Schema Structure
 
