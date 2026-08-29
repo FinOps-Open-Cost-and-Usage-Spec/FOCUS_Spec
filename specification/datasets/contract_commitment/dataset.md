@@ -23,7 +23,7 @@ The Contract Commitment dataset is a supporting dataset that describes the terms
 | [Contract Commitment Offer Category](#datasets.contractcommitment.contractcommitmentoffercategory) | Dimension | Mandatory | False | String |
 | [Contract Commitment Payment Interval](#datasets.contractcommitment.contractcommitmentpaymentinterval) | Dimension | Mandatory | False | String |
 | [Contract Commitment Payment Model](#datasets.contractcommitment.contractcommitmentpaymentmodel) | Dimension | Mandatory | False | String |
-| [Contract Commitment Payment Upfront Percentage](#datasets.contractcommitment.contractcommitmentpaymentupfrontpercentage) | Metric | Conditional | False | Decimal |
+| [Contract Commitment Payment Upfront Percentage](#datasets.contractcommitment.contractcommitmentpaymentupfrontpercentage) | Metric | [Conditional](#conditions.includespartialupfrontpayments) | False | Decimal |
 | [Contract Commitment Period End](#datasets.contractcommitment.contractcommitmentperiodend) | Dimension | Mandatory | False | Date/Time |
 | [Contract Commitment Period Start](#datasets.contractcommitment.contractcommitmentperiodstart) | Dimension | Mandatory | False | Date/Time |
 | [Contract Commitment Quantity](#datasets.contractcommitment.contractcommitmentquantity) | Metric | Mandatory | True | Decimal |
@@ -33,8 +33,8 @@ The Contract Commitment dataset is a supporting dataset that describes the terms
 | [Contract Period End](#datasets.contractcommitment.contractperiodend) | Dimension | Mandatory | False | Date/Time |
 | [Contract Period Start](#datasets.contractcommitment.contractperiodstart) | Dimension | Mandatory | False | Date/Time |
 | [Invoice Issuer Name](#datasets.contractcommitment.invoiceissuername) | Dimension | Mandatory | False | String |
-| [Pricing Currency](#datasets.contractcommitment.pricingcurrency) | Dimension | Conditional | False | String |
-| [Pricing Currency Contract Commitment Cost](#datasets.contractcommitment.pricingcurrencycontractcommitmentcost) | Metric | Conditional | True | Decimal |
+| [Pricing Currency](#datasets.contractcommitment.pricingcurrency) | Dimension | [Conditional](#conditions.includespricingbillingcurrencydifferences) | False | String |
+| [Pricing Currency Contract Commitment Cost](#datasets.contractcommitment.pricingcurrencycontractcommitmentcost) | Metric | [Conditional](#conditions.includespricingbillingcurrencydifferences) | True | Decimal |
 | [Service Provider Name](#datasets.contractcommitment.serviceprovidername) | Dimension | Mandatory | False | String |
 
 ## Relationships<!--SkipTOC-->
@@ -52,7 +52,6 @@ The Contract Commitment dataset can be joined to the Cost and Usage dataset thro
 
 ContractCommitment MUST adhere to the following requirements:
 
-* ContractCommitment MUST be present when the service provider supports *contract commitments*.
 * ContractCommitment column presence MUST adhere to the following requirements:
   * ContractCommitment MUST include [BillingCurrency](#datasets.contractcommitment.billingcurrency).
   * ContractCommitment MUST include [ContractCommitmentApplicability](#datasets.contractcommitment.contractcommitmentapplicability).
@@ -71,7 +70,7 @@ ContractCommitment MUST adhere to the following requirements:
   * ContractCommitment MUST include [ContractCommitmentOfferCategory](#datasets.contractcommitment.contractcommitmentoffercategory).
   * ContractCommitment MUST include [ContractCommitmentPaymentInterval](#datasets.contractcommitment.contractcommitmentpaymentinterval).
   * ContractCommitment MUST include [ContractCommitmentPaymentModel](#datasets.contractcommitment.contractcommitmentpaymentmodel).
-  * ContractCommitment MUST include [ContractCommitmentPaymentUpfrontPercentage](#datasets.contractcommitment.contractcommitmentpaymentupfrontpercentage) when the service provider offers "Partial Upfront" [payment models](#datasets.contractcommitment.contractcommitmentpaymentmodel).
+  * ContractCommitment MUST include [ContractCommitmentPaymentUpfrontPercentage](#datasets.contractcommitment.contractcommitmentpaymentupfrontpercentage) when the [*operating model*](#glossary:operating-model) [includes partial upfront payments](#conditions.includespartialupfrontpayments).
   * ContractCommitment MUST include [ContractCommitmentPeriodEnd](#datasets.contractcommitment.contractcommitmentperiodend).
   * ContractCommitment MUST include [ContractCommitmentPeriodStart](#datasets.contractcommitment.contractcommitmentperiodstart).
   * ContractCommitment MUST include [ContractCommitmentQuantity](#datasets.contractcommitment.contractcommitmentquantity).
@@ -81,8 +80,8 @@ ContractCommitment MUST adhere to the following requirements:
   * ContractCommitment MUST include [ContractPeriodEnd](#datasets.contractcommitment.contractperiodend).
   * ContractCommitment MUST include [ContractPeriodStart](#datasets.contractcommitment.contractperiodstart).
   * ContractCommitment MUST include [InvoiceIssuerName](#datasets.contractcommitment.invoiceissuername).
-  * ContractCommitment MUST include [PricingCurrency](#datasets.contractcommitment.pricingcurrency) when the service provider supports pricing and billing in different currencies.
-  * ContractCommitment MUST include [PricingCurrencyContractCommitmentCost](#datasets.contractcommitment.pricingcurrencycontractcommitmentcost) when the service provider supports pricing and billing in different currencies.
+  * ContractCommitment MUST include [PricingCurrency](#datasets.contractcommitment.pricingcurrency) when the *operating model* [includes pricing and billing currency differences](#conditions.includespricingbillingcurrencydifferences).
+  * ContractCommitment MUST include [PricingCurrencyContractCommitmentCost](#datasets.contractcommitment.pricingcurrencycontractcommitmentcost) when the *operating model* [includes pricing and billing currency differences](#conditions.includespricingbillingcurrencydifferences).
   * ContractCommitment MUST include [ServiceProviderName](#datasets.contractcommitment.serviceprovidername).
 * ContractCommitment MUST conform to [CorrectionHandling](#attributes.correctionhandling) requirements.
 * ContractCommitment MUST conform to [DatasetCompleteness](#attributes.datasetcompleteness) requirements.
