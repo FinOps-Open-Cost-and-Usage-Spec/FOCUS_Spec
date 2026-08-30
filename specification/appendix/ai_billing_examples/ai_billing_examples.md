@@ -18,7 +18,7 @@ Note the following column usage common to the scenarios below:
 * [ServiceCategory](#datamodel.costandusage.servicecategory) is "AI and Machine Learning" and [ServiceSubcategory](#datamodel.costandusage.servicesubcategory) is "Generative AI".
 * Model identity is carried in [SkuPriceDetails](#datamodel.costandusage.skupricedetails) using the properties described in the [Examples: AI Model Identity](#appendix.examples:aimodelidentity) section, which are not restated here.
 
-> **Note:** The examples in this section populate a `PrincipalId` column to identify the actor associated with each charge. That column is proposed and not yet part of the specification. See [PR #2360](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pull/2360).
+> **Note:** The examples in this section populate a `PrincipalId` column to identify the actor associated with each charge. That column is proposed and not yet part of the specification.
 
 The following examples illustrate three foundation model billing scenarios. A model served by a cloud provider as its own first-party service is covered in the *Examples: AI Model Identity* section. Charges for a model and its underlying infrastructure appearing on the same invoice are outside the scope of this section.
 
