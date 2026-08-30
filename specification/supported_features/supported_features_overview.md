@@ -9,7 +9,7 @@ The FOCUS specification is designed to meet the needs of FinOps practitioners in
 | Feature | Description |
 | :--- | :--- |
 | [Account Structures](#supportedfeatures.accountstructures) | Supports breaking costs down by billing and sub-accounts to facilitate chargeback and budgeting scenarios. |
-| [AI Billing](#supportedfeatures.aibilling) | Supports normalization of usage-based billing for AI and machine learning services, including token consumption by SKU and token type. |
+| [AI Billing](#supportedfeatures.aibilling) | Supports tracking token consumption and cost for AI and machine learning services by SKU and token type, to compare rates across models and attribute AI spend. |
 | [Billed Cost and Invoice Alignment](#supportedfeatures.billedcostandinvoicealignment) | Ensures data is consistent with payable invoices regarding total cost and the period of time covered. |
 | [Charge Categorization](#supportedfeatures.chargecategorization) | Supports classification of charges including purchases, usage, tax, credits, and adjustments. |
 | [Commit Usage and Under Usage](#supportedfeatures.commitusageandunderusage) | Tracks the usage and under-usage of commitment discounts and capacity reservations. |
