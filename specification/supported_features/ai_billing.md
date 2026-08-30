@@ -55,6 +55,8 @@ GROUP BY
   BillingCurrency
 ```
 
+### Token Consumption Volume Over Time
+
 Token consumption volume over time, by service and token type:
 
 ```sql
