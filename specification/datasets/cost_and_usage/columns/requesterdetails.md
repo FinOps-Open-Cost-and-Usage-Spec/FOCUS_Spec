@@ -16,8 +16,8 @@ RequesterDetails MUST adhere to the following requirements:
 * RequesterDetails MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * RequesterDetails MUST conform to [JsonObjectFormat](#attributes.jsonobjectformat) requirements.
 * RequesterDetails MUST adhere to the following nullability requirements:
-  * RequesterDetails MAY be null when PrincipalId is null and CredentialId is null.
   * RequesterDetails MUST NOT be null when PrincipalId is not null or CredentialId is not null.
+  * RequesterDetails MAY be null when PrincipalId is null and CredentialId is null.
 * RequesterDetails MUST conform to [RequesterDetailsValue](#datamodel.costandusage.requesterdetails.requesterdetailsvalue) requirements when RequesterDetails is not null.
 
 ## Requester Details Value
