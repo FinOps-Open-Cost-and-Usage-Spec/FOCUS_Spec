@@ -156,6 +156,7 @@ Here is how these charges appear in the data (relevant columns only):
 | PricingCategory | Standard | Committed |
 
 **Purchase Charge:** [ChargeCategory](#datamodel.costandusage.chargecategory) is "Purchase" with [ChargeFrequency](#datamodel.costandusage.chargefrequency) "One-Time". The full annual amount is invoiced in a single payment.
+
 * The [*charge period*](#glossary:chargeperiod) spans the entire commitment term: April 1, 2025 through April 1, 2026.
 * [BilledCost](#datamodel.costandusage.billedcost) is $4,550.00. This is the [*cash-based*](#glossary:cash-based-accounting) invoiced amount for the annual subscription.
 * [EffectiveCost](#datamodel.costandusage.effectivecost) is $0.00. The purchase covers future usage. Cost is recognized on an [*accrual basis*](#glossary:accrual-based-accounting) as usage occurs.
@@ -167,6 +168,7 @@ Here is how these charges appear in the data (relevant columns only):
 * [PricingCategory](#datamodel.costandusage.pricingcategory) is "Standard". The purchase of the [*commitment discount*](#glossary:commitment-discount) is at the agreed-upon rate.
 
 **Usage Charge (April 2025):** [ChargeCategory](#datamodel.costandusage.chargecategory) is "Usage" with [PricingCategory](#datamodel.costandusage.pricingcategory) "Committed". The usage is covered by the annual purchase.
+
 * [BilledCost](#datamodel.costandusage.billedcost) is $0.00. No additional invoiced amount. The usage is covered by the purchase charge.
 * [EffectiveCost](#datamodel.costandusage.effectivecost) is $379.00. This is the [*accrual-based*](#glossary:accrual-based-accounting) recognized portion of the annual commitment: `$7.58/user x 50 users`.
 * [ListCost](#datamodel.costandusage.listcost) is $452.50 (`50 users x $9.05/user`). The monthly list cost without the annual discount.
