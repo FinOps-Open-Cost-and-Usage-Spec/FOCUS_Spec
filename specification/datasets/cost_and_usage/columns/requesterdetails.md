@@ -31,23 +31,16 @@ The following section details the normative requirements for the RequesterDetail
 RequesterDetailsValue MUST adhere to the following requirements:
 
 * RequesterDetailsValue MUST conform to the [RequesterDetailsValueSchema](#schemas.costandusage.requesterdetailsvalueschema) JSON Schema.
-* RequesterDetailsValue MUST be an array of entries.
-* RequesterDetailsValue MUST include at least one entry.
 * RequesterDetailsValue MUST NOT include entries that are not applicable to the *requester* associated with the *charge*.
 
 RequesterDetailsValue entries MUST adhere to the following requirements:
 
-* Entry in RequesterDetailsValue MUST include a `key` property.
-* Entry in RequesterDetailsValue MUST include a `value` property.
-* Entry.key in RequesterDetailsValue MUST be "Principal", "Credential", or a custom key.
 * Entry.key in RequesterDetailsValue MUST be unique within RequesterDetailsValue.
 * Entry.value in RequesterDetailsValue MUST be an object carrying the descriptive attributes of the *requester* level named by Entry.key.
 * Entry.value.Type MUST represent the kind of entity described by the entry.
 * Entry.value.Name MUST represent a readable display name for the entity described by the entry.
 * Entry.value.Email MUST represent an email address associated with the entity described by the entry.
 * Custom entry in RequesterDetailsValue MUST represent a level of the *requester* that is neither the *principal* nor the *credential*.
-* Custom Entry.key in RequesterDetailsValue MUST begin with the string "x_" followed by PascalCase.
-* Custom property name in Entry.value in RequesterDetailsValue MUST begin with the string "x_" followed by PascalCase.
 
 ### Value Schema Structure
 
