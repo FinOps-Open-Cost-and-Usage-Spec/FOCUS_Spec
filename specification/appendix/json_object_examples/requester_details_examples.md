@@ -52,7 +52,7 @@ Scenario: An identity attribute is published that has no FOCUS-defined property.
 
 ## Aura Web (Assumed Role with a Delegating Identity)
 
-Scenario: An engineer assumes a deployment role to run a compute job. Access on the request is granted to the role, so the role is the *principal*, and the assumed-role session is the *credential*. The delegating user is a level of the [*requester*](#glossary:requester) that is neither the *principal* nor the *credential*, so it is carried as a custom entry whose `value` uses the same properties as the FOCUS-defined entries.
+Scenario: An engineer assumes a deployment role to run a compute job. Access to the [*resource*](#glossary:resource) is granted to the role, so the role is the *principal*, and the assumed-role session is the *credential*. The delegating user is a level of the [*requester*](#glossary:requester) that is neither the *principal* nor the *credential*, so it is carried as a custom entry whose `value` uses the same properties as the FOCUS-defined entries.
 
 | ServiceProviderName | ServiceName | PrincipalId | CredentialId | RequesterDetails |
 |---------------------|-------------|-------------|--------------|-------------------|

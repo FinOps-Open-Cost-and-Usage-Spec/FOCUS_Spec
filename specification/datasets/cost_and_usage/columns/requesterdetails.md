@@ -88,7 +88,7 @@ This specification defines the *principal* and the *credential* because they are
 
 Attributes describing the *principal* identified by PrincipalId belong in the `value` of the `Principal` entry. Attributes describing the *credential* identified by CredentialId belong in the `value` of the `Credential` entry. An entry is present only when attributes for it are published, so a *charge* with a *principal* and no identified *credential* carries a `Principal` entry alone.
 
-A *requester* level whose identifier column is populated always has at least one publishable attribute: the kind of entity the identifier references, which the identity and access management model that issued the identifier defines. A data generator that publishes opaque identifiers without display names or email addresses carries a `Principal` or `Credential` entry whose `value` holds `Type` alone (e.g., `{"Type": "Service Account"}`).
+When PrincipalId or CredentialId is populated but few descriptive attributes are published, the corresponding entry carries the attributes that are available. The kind of entity an identifier references is commonly defined by the identity and access management model that issued it, so a data generator publishing opaque identifiers without display names or email addresses can carry a `Principal` or `Credential` entry whose `value` holds `Type` alone (e.g., `{"Type": "Service Account"}`).
 
 ### Value Example
 
