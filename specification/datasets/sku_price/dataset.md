@@ -1,6 +1,6 @@
 # SKU Price
 
-The SKU Price dataset is the primary dataset for standardizing [*service provider*](#glossary:service-provider) catalog unit prices and negotiated prices. This dataset enables practitioners to perform precise unit price lookups, analyze commitment discounts, and understand the cost mechanics of payable and consumable prices.
+The SKU Price dataset is the primary dataset for standardizing [*price lists*](#glossary:price-list) offered by a [*service provider*](#glossary:service-provider). This dataset enables practitioners to perform precise [*SKU Price*](#glossary:sku-price) lookups, analyze commitment discounts, and understand the cost mechanics of payable and consumable prices.
 
 The SKU Price dataset represents prices as of the date the dataset is captured. Providing a historical record of prior prices is the practitioner's responsibility rather than a guaranteed delivery; practitioners can reconstruct price history by retaining successive snapshots and comparing them using [SKU Price Effective Start](#datamodel.skuprice.skupriceeffectivestart) and [SKU Price Effective End](#datamodel.skuprice.skupriceeffectiveend). The dataset reflects the prices a *service provider* offers, independent of whether a price was used, and is not derived from Cost and Usage data.
 
@@ -91,7 +91,7 @@ SKU Price
 
 ## Description<!--SkipTOC-->
 
-Describes the catalog unit prices and negotiated unit prices for resources or services offered by a service provider.
+Describes *price lists* for *resources* or *services* offered by a *service provider*.
 
 ## Version Introduced<!--SkipTOC-->
 
