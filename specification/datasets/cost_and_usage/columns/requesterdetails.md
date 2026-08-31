@@ -36,7 +36,7 @@ RequesterDetailsValue MUST adhere to the following requirements:
 RequesterDetailsValue entries MUST adhere to the following requirements:
 
 * Entry.key in RequesterDetailsValue MUST be unique within RequesterDetailsValue.
-* Entry.value in RequesterDetailsValue MUST be an object carrying the descriptive attributes of the *requester* level named by Entry.key.
+* Entry.value in RequesterDetailsValue MUST carry the descriptive attributes of the *requester* level named by Entry.key.
 * Entry.value.Type MUST represent the kind of entity described by the entry.
 * Entry.value.Name MUST represent a readable display name for the entity described by the entry.
 * Entry.value.Email MUST represent an email address associated with the entity described by the entry.
@@ -88,7 +88,7 @@ This specification defines the *principal* and the *credential* because they are
 
 Attributes describing the *principal* identified by PrincipalId belong in the `value` of the `Principal` entry. Attributes describing the *credential* identified by CredentialId belong in the `value` of the `Credential` entry. An entry is present only when attributes for it are published, so a *charge* with a *principal* and no identified *credential* carries a `Principal` entry alone.
 
-When PrincipalId or CredentialId is populated but few descriptive attributes are published, the corresponding entry carries the attributes that are available. The kind of entity an identifier references is commonly defined by the identity and access management model that issued it, so a data generator publishing opaque identifiers without display names or email addresses can carry a `Principal` or `Credential` entry whose `value` holds `Type` alone (e.g., `{"Type": "Service Account"}`).
+When PrincipalId or CredentialId is populated but few descriptive attributes are published, the corresponding entry carries the attributes that are available. The identity and access management model that defines an entity also defines what kind of entity it is, so a data generator publishing opaque identifiers without display names or email addresses carries a `Principal` or `Credential` entry whose `value` holds `Type` alone (e.g., `{"Type": "Service Account"}`).
 
 ### Value Example
 
