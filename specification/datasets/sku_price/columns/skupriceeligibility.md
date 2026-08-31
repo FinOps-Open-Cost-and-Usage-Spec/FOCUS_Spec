@@ -102,7 +102,7 @@ The evaluation of an entity's usage against a price list's eligibility rules pro
 
 ### Object Example
 
-Here is a basic example of the object format, describing a custom contracted unit price that is only eligible for two specific Billing Accounts.
+Here is a basic example of the object format, defining *SKU Price* eligibility restricted to two specific [*billing accounts*](#glossary:billing-account).
 
 ```json
 {
