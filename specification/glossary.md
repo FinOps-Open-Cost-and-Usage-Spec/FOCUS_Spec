@@ -278,7 +278,7 @@ An entity defined in an identity and access management model (e.g., user, role, 
 
 <a name="glossary:requester"><b>Requester</b></a>
 
-The entity on whose behalf a request that produces a [*charge*](#glossary:charge) is made, as represented in an identity and access management model. A [*service provider*](#glossary:service-provider) commonly represents a requester at more than one level, such as the [*principal*](#glossary:principal) to which access to [*resources*](#glossary:resource) or [*services*](#glossary:service) is granted and the [*credential*](#glossary:credential) presented on the request. A requester is distinct from the party that benefits from the usage or purchase, which a FOCUS dataset does not identify.
+The entity on whose behalf a request that produces a [*charge*](#glossary:charge) is made, as represented in an identity and access management model. A service provider commonly represents a requester at more than one level, such as the [*principal*](#glossary:principal) to which access to [*resources*](#glossary:resource) or [*services*](#glossary:service) is granted and the [*credential*](#glossary:credential) presented on the request. A requester is distinct from the party that benefits from the usage or purchase, which a FOCUS dataset does not identify.
 
 <a name="glossary:service-provider"><b>Service Provider</b></a>
 
