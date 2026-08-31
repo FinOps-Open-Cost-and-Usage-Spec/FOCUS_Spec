@@ -12,7 +12,8 @@ PrincipalId MUST adhere to the following requirements:
 * PrincipalId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * PrincipalId MUST adhere to the following nullability requirements:
   * PrincipalId MUST be null when a *charge* is not associated with a *principal*.
-  * PrincipalId MUST NOT be null when a *charge* is associated with a *principal*.
+  * PrincipalId MUST be null when the *principal* associated with a *charge* has no published identifier.
+  * PrincipalId MUST NOT be null when the *principal* associated with a *charge* has a published identifier.
 * When PrincipalId is not null, PrincipalId MUST adhere to the following requirements:
   * PrincipalId MUST be a unique identifier within the service provider.
 
