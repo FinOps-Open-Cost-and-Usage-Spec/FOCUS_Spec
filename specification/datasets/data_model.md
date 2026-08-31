@@ -22,6 +22,31 @@ DataModel MUST adhere to the following requirements:
 * DataModel MUST include [BillingPeriod](#datasets.billingperiod) when the [*operating model*](#glossary:operating-model) [includes payable invoices](#conditions.includespayableinvoices).
 * DataModel MUST include [ContractCommitment](#datasets.contractcommitment) when the *operating model* [includes contract commitments](#conditions.includescontractcommitments).
 * DataModel MUST include [InvoiceDetail](#datasets.invoicedetail) when the *operating model* [includes payable invoices](#conditions.includespayableinvoices).
+
+## Data Model ID<!--SkipTOC-->
+
+DataModel
+
+## Display Name<!--SkipTOC-->
+
+Data Model
+
+## Description<!--SkipTOC-->
+
+The datasets that comprise the FOCUS schema.
+
+## Version Introduced<!--SkipTOC-->
+
+0.5
+
+## Requirements<!--SkipTOC-->
+
+DataModel MUST adhere to the following requirements:
+
+* DataModel MUST include [CostAndUsage](#datasets.costandusage).
+* DataModel MUST include [BillingPeriod](#datasets.billingperiod) when the [*operating model*](#glossary:operating-model) [includes payable invoices](#conditions.includespayableinvoices).
+* DataModel MUST include [ContractCommitment](#datasets.contractcommitment) when the *operating model* [includes contract commitments](#conditions.includescontractcommitments).
+* DataModel MUST include [InvoiceDetail](#datasets.invoicedetail) when the *operating model* [includes payable invoices](#conditions.includespayableinvoices).
 * DataModel MUST include [Recommendation](#datasets.recommendation) when the *operating model* [includes recommendations](#conditions.includesrecommendations).
 
 ## Data Model ID<!--SkipTOC-->
