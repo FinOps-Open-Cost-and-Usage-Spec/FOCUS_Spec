@@ -50,6 +50,14 @@ Scenario: An identity attribute is published that has no FOCUS-defined property.
 |---------------------|-------------|-------------|--------------|-------------------|
 | Aura Web | Inference | user_8842 | key_01HQZX3M8N | [{"key": "Principal", "value": {"Name": "Alex Rivera", "Email": "alex.rivera@example.com", "Type": "User", "x_DirectoryGroup": "platform-engineering"}}, {"key": "Credential", "value": {"Type": "API Key", "Name": "prod-ingest-key"}}] |
 
+## Aura Web (Assumed Role with a Delegating Identity)
+
+Scenario: An engineer assumes a deployment role to run a compute job. Access on the request is granted to the role, so the role is the *principal*, and the assumed-role session is the *credential*. The delegating user is a level of the [*requester*](#glossary:requester) that is neither the *principal* nor the *credential*, so it is carried as a custom entry whose `value` uses the same properties as the FOCUS-defined entries.
+
+| ServiceProviderName | ServiceName | PrincipalId | CredentialId | RequesterDetails |
+|---------------------|-------------|-------------|--------------|-------------------|
+| Aura Web | Compute | role_deploy_prod | sess_R7D3PK5V | [{"key": "Principal", "value": {"Name": "deploy-prod", "Type": "Role"}}, {"key": "Credential", "value": {"Type": "Session"}}, {"key": "x_DelegatingIdentity", "value": {"Name": "Priya Nair", "Email": "priya.nair@example.com", "Type": "User"}}] |
+
 ## Cost Attribution by Principal and by Credential
 
 This example demonstrates how the two identifier columns support different attribution questions.
