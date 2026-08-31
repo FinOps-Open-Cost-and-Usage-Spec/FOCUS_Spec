@@ -1,6 +1,6 @@
 # Service Provider Name
 
-Service Provider Name is the name of the entity that provides the [*resources*](#glossary:resource) or [*services*](#glossary:service) to which the specified unit price applies. These offerings can range from foundational infrastructure to fully integrated software solutions, or include complementary offerings such as support, licensing, or consulting. This column is commonly used to filter rate cards by the publishing vendor or to compare prices across different providers.
+Service Provider Name is the name of the entity that provides the [*resources*](#glossary:resource) or [*services*](#glossary:service) to which the specified unit price applies. These offerings can range from foundational infrastructure to fully integrated software solutions, or include complementary offerings such as support, licensing, or consulting. This column is commonly used to filter price lists by the publishing vendor or to compare prices across different providers.
 
 **Notes:**
 

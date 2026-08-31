@@ -1,6 +1,6 @@
 # Pricing Region ID
 
-Pricing Region ID is a service-provider-assigned identifier for an isolated geographic area where the specified price for a [*resource*](#glossary:resource) or [*service*](#glossary:service) applies. This column is commonly used to join pricing rates against actual usage or to analyze unit price variations across different geographical deployments.
+Pricing Region ID is a service-provider-assigned identifier for an isolated geographic area where the specified price for a [*resource*](#glossary:resource) or [*service*](#glossary:service) applies. This column is commonly used to join unit prices against actual usage or to analyze unit price variations across different geographical deployments.
 
 ## Requirements
 
@@ -17,10 +17,10 @@ PricingRegionId MUST adhere to the following requirements:
 
 Practitioners are encouraged to carefully distinguish between **Pricing Region ID** and [Region ID](#datamodel.costandusage.regionid).
 
-* **Pricing Region ID** defines the geographic boundary for which the *rate itself* is valid.
+* **Pricing Region ID** defines the geographic boundary for which the *unit price itself* is valid.
 * **Region ID** defines the physical location where a specific *resource* is provisioned.
 
-In many cases these will be identical. However, if a pricing rate is global but still applies to specific regional deployments, or if the provider rate card dictates a resource deployment region that differs from the pricing boundary, `Pricing Region ID` reflects the pricing boundary. The set of `Region ID` values can instead be represented as inclusion criteria within [SKU Price Eligibility](#datamodel.skuprice.skupriceeligibility) to capture the resource location without conflating the rate card logic.
+In many cases these will be identical. However, if a unit price is global but still applies to specific regional deployments, or if the provider price list dictates a resource deployment region that differs from the pricing boundary, `Pricing Region ID` reflects the pricing boundary. The set of `Region ID` values can instead be represented as inclusion criteria within [SKU Price Eligibility](#datamodel.skuprice.skupriceeligibility) to capture the resource location without conflating the price list logic.
 
 ## Column ID
 

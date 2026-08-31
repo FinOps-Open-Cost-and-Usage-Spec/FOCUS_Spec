@@ -29,11 +29,11 @@ PurchasePaymentModel MUST adhere to the following requirements:
 
 ## Implementation Guidance
 
-Within the SKU Price dataset, the Purchase Payment Model describes how the fee for a purchase is settled, across purchase constructs such as reservations, prepaid licenses, and commitment discounts:
+Within the SKU Price dataset, the Purchase Payment Model describes how the unit price for a purchase is settled, across purchase constructs such as reservations, prepaid licenses, and commitment discounts:
 
-* **All Upfront:** The full obligation is settled by a single fee at the start of the term.
-* **No Upfront:** The obligation is settled through periodic fees over the term, with no initial payment.
-* **Partial Upfront:** The obligation combines an initial fee and periodic fees, typically represented across multiple SKU Price records (e.g., one record for the upfront fee and a separate record for the recurring fee).
+* **All Upfront:** The full obligation is settled by a single purchase at the start of the term.
+* **No Upfront:** The obligation is settled through periodic purchases over the term, with no initial payment.
+* **Partial Upfront:** The obligation combines an initial purchase and periodic purchases, typically represented across multiple SKU Price records (e.g., one record for the upfront purchase and a separate record for the recurring purchase).
 
 ## Column ID
 

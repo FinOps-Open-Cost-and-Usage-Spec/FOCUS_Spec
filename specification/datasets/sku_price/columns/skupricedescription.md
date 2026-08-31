@@ -1,6 +1,6 @@
 # SKU Price Description
 
-A SKU Price Description provides a high-level context of a [*SKU Price*](#glossary:sku-price) without requiring additional discovery. This column is a self-contained summary of the catalog offering's purpose and unit price. It typically covers a select group of corresponding details across a rate card dataset or provides information not otherwise available.
+A SKU Price Description provides a high-level context of a [*SKU Price*](#glossary:sku-price) without requiring additional discovery. This column is a self-contained summary of the catalog offering's purpose and unit price. It typically covers a select group of corresponding details across a price list dataset or provides information not otherwise available.
 
 ## Requirements
 
