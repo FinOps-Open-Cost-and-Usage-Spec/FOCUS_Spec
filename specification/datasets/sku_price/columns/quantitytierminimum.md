@@ -2,7 +2,7 @@
 
 Quantity Tier Minimum represents the exclusive lower boundary of a quantity-based pricing tier for the specified [*SKU Price*](#glossary:sku-price). This value is measured in the quantity of the designated [Pricing Unit](#datamodel.skuprice.pricingunit).
 
-When combined with [Quantity Tier Maximum](#datamodel.skuprice.quantitytiermaximum), this column defines the exact quantity envelope for which a specific unit price applies. Service providers frequently vary the unit price by the quantity consumed, and Quantity Tier Minimum defines the quantity threshold above which the specified unit price becomes applicable. For flat or non-tiered pricing models, this value is typically zero.
+When combined with [Quantity Tier Maximum](#datamodel.skuprice.quantitytiermaximum), this column defines the exact quantity envelope for which a specific unit price applies. Service providers frequently vary the unit price by the quantity consumed, and Quantity Tier Minimum defines the quantity threshold above which the specified unit price becomes applicable. For flat-rate or non-tiered pricing models, this value is typically zero.
 
 ## Requirements
 
