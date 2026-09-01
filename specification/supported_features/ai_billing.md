@@ -2,7 +2,7 @@
 
 ## Description
 
-FOCUS enables normalization of usage-based billing data from artificial intelligence and machine learning services, including token consumption for foundation model APIs. Token quantities are represented through consumption and pricing columns, allowing consumption and cost to be tracked by SKU and token type without provider-specific schemas, with model identity available in SkuPriceDetails.
+FOCUS enables normalization of usage-based billing data from artificial intelligence and machine learning services, including token consumption for foundation model APIs. Token quantities are represented through consumption and pricing columns, allowing consumption and cost to be tracked by [*SKU*](#glossary:sku) and token type without provider-specific schemas, with model identity available in [SkuPriceDetails](#datamodel.costandusage.skupricedetails).
 
 ## Directly Dependent Columns
 
