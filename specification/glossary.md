@@ -272,7 +272,7 @@ An individual who performs FinOps within an organization to maximize the busines
 
 <a name="glossary:price-list"><b>Price List</b></a>
 
-A comprehensive list of prices offered by a service provider.
+A comprehensive, standing list of prices offered by a service provider.
 
 <a name="glossary:service-provider"><b>Service Provider</b></a>
 
@@ -328,7 +328,7 @@ An agreement specified on a [*contract*](#glossary:contract) or [*invoice*](#glo
 
 <a name="glossary:unit-pricing"><b>Unit Pricing</b></a>
 
-A billing concept where the cost of a [*charge*](#glossary:charge) is deterministically derived as the product of a unit price (defined per [*SKU Price*](#glossary:sku-price)) and the corresponding [Pricing Quantity](#datamodel.costandusage.pricingquantity), representing purchased or consumed volume of a [*SKU*](#glossary:sku).
+A billing concept where the cost of a [*charge*](#glossary:charge) is deterministically derived as the product of a unit price (defined per [*SKU Price*](#glossary:sku-price), where the [*operating model*](#glossary:operating-model) includes *SKU Prices*) and the corresponding [Pricing Quantity](#datamodel.costandusage.pricingquantity), representing purchased or consumed volume of a [*SKU*](#glossary:sku).
 
 <a name="glossary:virtual-currency"><b>Virtual Currency</b></a>
 
