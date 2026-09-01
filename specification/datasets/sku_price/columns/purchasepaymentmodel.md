@@ -1,6 +1,6 @@
 # Purchase Payment Model
 
-Purchase Payment Model defines the financial settlement structure of a purchase. It identifies whether the financial obligation is settled via a single upfront payment, distributed recurring charges, or a combination of both over the [Purchase Duration Type](#datamodel.skuprice.purchasedurationtype). When the purchase is a [*commitment discount*](#glossary:commitment-discount), this column represents the settlement structure of that *commitment discount*.
+Purchase Payment Model defines the financial settlement structure of a purchase. It identifies whether the financial obligation is settled via a single upfront payment, distributed recurring charges, or a combination of both over the term of a purchase. When the purchase is a [*commitment discount*](#glossary:commitment-discount), this column represents the settlement structure of that *commitment discount*.
 
 Purchase Payment Model has three possible values: "No Upfront", "Partial Upfront", and "All Upfront".
 
