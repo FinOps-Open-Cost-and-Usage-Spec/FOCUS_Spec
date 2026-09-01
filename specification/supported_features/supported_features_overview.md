@@ -26,6 +26,7 @@ The FOCUS specification is designed to meet the needs of FinOps practitioners in
 | [Marketplace Purchases](#supportedfeatures.marketplacepurchases) | Supports analysis of marketplace purchase data and reporting Effective Cost for service provider usage. |
 | [Participating Entity Identification](#supportedfeatures.participatingentityidentification) | Allows identification of entities involved in hosting, invoicing, and data generation (e.g., Service Provider vs. Host Provider). |
 | [Recency Metadata](#supportedfeatures.recencymetadata) | Indicates what portion of a dataset is complete and how recently it was updated to inform FinOps functions like chargeback. |
+| [Recommendations](#supportedfeatures.recommendations) | Normalizes optimization recommendations from service providers and third-party tooling so they can be prioritized and joined to cost and usage data. |
 | [Resource Usage](#supportedfeatures.resourceusage) | Enables tracking consumption by providing information on which resources were used, in what quantities, and with what units. |
 | [Schema Metadata](#supportedfeatures.schemametadata) | Communicates important attributes about data structure, types, and versions to facilitate structure changes. |
 | [Service Categorization](#supportedfeatures.servicecategorization) | Standardizes the classification of services into high-level functional categories and granular subcategories. |
