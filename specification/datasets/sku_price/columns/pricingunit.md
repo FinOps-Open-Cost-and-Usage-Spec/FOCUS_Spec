@@ -2,7 +2,7 @@
 
 Pricing Unit represents the service-provider-specified measurement unit used to define the unit price of an offering. Common examples include the number of hours for compute runtime (e.g., `Hours`), data volume for storage (e.g., `GB-Mo`), or an accumulated count of API requests or AI interactions (e.g., `1K Requests`, `1K Tokens`).
 
-Distinct from the [Consumed Unit](#datamodel.costandusage.consumedunit) in [Cost and Usage](#datamodel.costandusage) data, Pricing Unit focuses strictly on the measurement standard dictated by the [*service provider*](#glossary:service-provider) in their price list, which is often at a coarser granularity than the raw usage measurement.
+Distinct from the [Consumed Unit](#datamodel.costandusage.consumedunit) in [Cost and Usage](#datamodel.costandusage) data, Pricing Unit focuses strictly on the measurement standard dictated by the [*service provider*](#glossary:service-provider) in their [*price list*](#glossary:price-list), which is often at a coarser granularity than the raw usage measurement.
 
 ## Requirements
 
@@ -12,7 +12,7 @@ PricingUnit MUST adhere to the following requirements:
 * PricingUnit MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * PricingUnit SHOULD conform to [UnitFormat](#attributes.unitformat) requirements.
 * PricingUnit MUST NOT be null.
-* PricingUnit MUST be semantically equivalent to the corresponding pricing measurement unit in the service-provider-published [*price list*](#glossary:price-list).
+* PricingUnit MUST be semantically equivalent to the corresponding pricing measurement unit in the service-provider-published *price list*.
 
 ## Implementation Guidance
 

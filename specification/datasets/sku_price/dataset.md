@@ -4,7 +4,7 @@ The SKU Price dataset is the primary dataset for standardizing [*price lists*](#
 
 The SKU Price dataset represents prices as of the date the dataset is captured. Providing a historical record of prior prices is the practitioner's responsibility rather than a guaranteed delivery; practitioners can reconstruct price history by retaining successive snapshots and comparing them using [SKU Price Effective Start](#datamodel.skuprice.skupriceeffectivestart) and [SKU Price Effective End](#datamodel.skuprice.skupriceeffectiveend). The dataset reflects the prices a *service provider* offers, independent of whether a price was used, and is not derived from Cost and Usage data.
 
-The dataset describes the full price list a *service provider* offers, not only the SKUs that appear in Cost and Usage. To manage the size of a complete price list, a *service provider* may partition delivery, for example by region, service, or SKU category, and is encouraged to do so where publishing a complete list in a single delivery would otherwise be impractical.
+The dataset describes the full *price list* a *service provider* offers, not only the SKUs that appear in Cost and Usage. To manage the size of a complete *price list*, a *service provider* may partition delivery, for example by region, service, or SKU category, and is encouraged to do so where publishing a complete list in a single delivery would otherwise be impractical.
 
 The columns are presented in alphabetical order.
 
@@ -71,7 +71,7 @@ SkuPrice MUST adhere to the following requirements:
   * SkuPrice MUST include [SkuPriceEligibility](#datamodel.skuprice.skupriceeligibility).
   * SkuPrice MUST include [SkuPriceId](#datamodel.skuprice.skupriceid).
   * SkuPrice MUST include [SkuPriceLastUpdated](#datamodel.skuprice.skupricelastupdated).
-  * SkuPrice SHOULD include [*custom columns*](#glossary:custom-column) needed to identify specific price list routing logic when [*FOCUS columns*](#glossary:FOCUS-column) are not sufficient.
+  * SkuPrice SHOULD include [*custom columns*](#glossary:custom-column) needed to identify specific *price list* routing logic when [*FOCUS columns*](#glossary:FOCUS-column) are not sufficient.
 * SkuPrice MUST conform to [DatasetCompleteness](#attributes.datasetcompleteness) requirements.
 * SkuPrice MUST conform to [DatasetConfiguration](#attributes.datasetconfiguration) requirements.
 * SkuPrice MUST contain at least one record for every [SkuPriceId](#datamodel.skuprice.skupriceid) referenced in the [CostAndUsage](#datamodel.costandusage) dataset.

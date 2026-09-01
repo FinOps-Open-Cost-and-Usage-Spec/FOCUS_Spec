@@ -1,6 +1,6 @@
 # SKU Price Last Updated
 
-SKU Price Last Updated is the timestamp when the [SKU Price](#datamodel.skuprice) record was last updated. This timestamp helps FinOps practitioners ensure that they are working with the most current version of a price list record, particularly if corrections or metadata updates have been applied to the record after its initial creation.
+SKU Price Last Updated is the timestamp when the [SKU Price](#datamodel.skuprice) record was last updated. This timestamp helps FinOps practitioners ensure that they are working with the most current version of a [*price list*](#glossary:price-list) record, particularly if corrections or metadata updates have been applied to the record after its initial creation.
 
 ## Requirements
 
