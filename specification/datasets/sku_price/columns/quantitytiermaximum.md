@@ -2,7 +2,7 @@
 
 Quantity Tier Maximum represents the inclusive upper boundary of a quantity-based pricing tier for the specified [*SKU Price*](#glossary:sku-price). This value is measured in the quantity of the designated [Pricing Unit](#datamodel.skuprice.pricingunit).
 
-When combined with [Quantity Tier Minimum](#datamodel.skuprice.quantitytierminimum), this column defines the exact quantity envelope for which a specific unit price applies. When a unit price represents the highest quantity tier, or the offering uses a flat pricing model with no quantity limits, this value remains null to indicate there is no upper bound.
+When combined with [Quantity Tier Minimum](#datamodel.skuprice.quantitytierminimum), this column defines the exact quantity envelope for which a specific unit price applies. When a unit price represents the highest quantity tier, or the offering uses a flat-rate pricing model with no quantity limits, this value remains null to indicate there is no upper bound.
 
 ## Requirements
 
