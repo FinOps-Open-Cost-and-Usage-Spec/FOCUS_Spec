@@ -39,7 +39,7 @@ List Unit Price
 
 ## Description
 
-The service-provider-suggested unit price per Pricing Unit for the *SKU Price* identified by the given SKU Price ID.
+The provider-suggested unit price per Pricing Unit for the *SKU Price* identified by the given SKU Price ID.
 
 ## Content Constraints
 
