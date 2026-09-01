@@ -1,4 +1,4 @@
-# Commitment Purchases and Committed Usage
+# Commitment Pricing
 
 A [*commitment discount*](#glossary:commitment-discount) appears in a [*price list*](#glossary:price-list) as two different kinds of record: the commitment purchase to acquire it, and the committed usage unit price at which covered consumption is priced. [ChargeCategory](#datamodel.skuprice.chargecategory) separates them, and it governs which of the purchase-describing columns carry values.
 

@@ -1,5 +1,5 @@
 !INCLUDE "sku_price_examples_overview.md",0
 !INCLUDE "standard_and_negotiated_prices.md",1
 !INCLUDE "quantity_tier_pricing.md",1
-!INCLUDE "commitment_purchases_and_committed_usage.md",1
+!INCLUDE "commitment_pricing.md",1
 !INCLUDE "price_effectivity_and_currency.md",1
