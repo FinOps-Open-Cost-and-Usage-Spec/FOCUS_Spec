@@ -30,7 +30,7 @@ FOCUS enables normalization of usage-based billing data from artificial intellig
 
 ## Example SQL Queries
 
-### Effective Cost per Million Tokens
+### Effective Cost Per Million Tokens
 
 Effective cost per one million tokens, by SKU and token type:
 
