@@ -12,7 +12,6 @@ PricingUnit MUST adhere to the following requirements:
 * PricingUnit MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * PricingUnit SHOULD conform to [UnitFormat](#attributes.unitformat) requirements.
 * PricingUnit MUST NOT be null.
-* PricingUnit MUST be semantically equivalent to the corresponding pricing measurement unit in the service-provider-published [*price list*](#glossary:price-list).
 
 ## Implementation Guidance
 

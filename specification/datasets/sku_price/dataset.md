@@ -74,6 +74,7 @@ SkuPrice MUST adhere to the following requirements:
   * SkuPrice SHOULD include [*custom columns*](#glossary:custom-column) needed to identify specific rate card routing logic when [*FOCUS columns*](#glossary:FOCUS-column) are not sufficient.
 * SkuPrice MUST conform to [DatasetCompleteness](#attributes.datasetcompleteness) requirements.
 * SkuPrice MUST conform to [DatasetConfiguration](#attributes.datasetconfiguration) requirements.
+* SkuPrice MUST conform to [DeliveryHandling](#attributes.deliveryhandling) requirements.
 * SkuPrice MUST contain at least one record for every [SkuPriceId](#datamodel.skuprice.skupriceid) referenced in the [CostAndUsage](#datamodel.costandusage) dataset.
 * SkuPrice MUST NOT contain more than one record for a given ServiceProviderName, SkuPriceId, ContractId, SkuPriceEffectiveStart, and PricingCurrency, with two null values in the same column considered equal.
 * SkuPrice validity periods, defined by SkuPriceEffectiveStart and SkuPriceEffectiveEnd, MUST NOT overlap for a given ServiceProviderName, SkuPriceId, ContractId, and PricingCurrency, with two null values in the same column considered equal.
