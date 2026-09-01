@@ -116,7 +116,7 @@ flowchart TD
     S4 -->|"Yes"| NF["Allows nulls = False"]
     S4 -->|"No"| NT["Allows nulls = True"]
     NT --> D{"Does the null rule name a<br/>characteristic of the<br/>operating model?"}
-    D -->|"Yes: it is a presence rule"| S2
+    D -->|"Yes: it is a presence rule"| C
     D -->|"No"| S5["Step 5<br/>Record the presence requirement,<br/>Content Constraints, and rationale"]
     NF --> S5
 
@@ -140,7 +140,7 @@ Write down the exact concept the column carries, as its Description and its glos
 
 **Before the test: the Supported Feature floor.** Where the column appears among the Directly Dependent Columns of a Supported Feature, that feature cannot be exercised without it. Such a column is `Mandatory` or `Conditional`, and the test below decides which. `Recommended` and `Optional` are not available to it.
 
-The floor tests a level that arrives from outside this procedure, since Step 2 itself returns only `Mandatory` or `Conditional`. Where a directly dependent column is proposed at `Recommended` or `Optional`, or already holds one of them, one of two things is wrong: either the level, or the feature's dependency list. Resolve that before the column ships, and record which of the two was changed.
+The floor tests a level that arrives from outside this procedure, since Step 2 itself returns only `Mandatory` or `Conditional`. Where a directly dependent column is proposed at `Recommended` or `Optional`, or already holds one of them, one of two things is wrong: either the level, or the feature's dependency list. Resolve that before the column ships, and record which of the two was changed. Where the column is already published, the backlog in [Deferred Topics](#deferred-topics) records it instead.
 
 **Question:** does this concept exist in every *operating model*, and can a value be produced without substituting something else in its place?
 
@@ -152,7 +152,7 @@ Two properties must both hold for `Mandatory`:
 * the concept exists in every *operating model*, and
 * a value can be produced without substituting something else in its place.
 
-Together, these mean that no reasonable *operating model* would have a dataset instance where the column carries no value on any row.
+Together, these mean that no reasonable *operating model* lacks rows that could carry a value.
 
 A fallback value does not make a concept universal. The question is whether the column carries the concept itself, or whether it fills a gap for an *operating model* that does not have that concept.
 
@@ -201,7 +201,7 @@ This step never changes the feature level, and it never licenses inventing a val
 
 Whether an *operating model* can produce the concept at all is the dataset-wide question and belongs to Step 2. Whether a particular row has a value is the row-level question and belongs to this step.
 
-**Diagnostic: a null rule that names the *operating model*.** A nullability requirement whose condition names a characteristic of the *operating model*, rather than a state of another column in the same row, is not a null rule. Return to Step 2: the characteristic it names is the Condition the column should be gated on, and the level is `Conditional` rather than `Mandatory`.
+**Diagnostic: a null rule that names the *operating model*.** A nullability requirement whose condition names a characteristic of the *operating model*, rather than a state of another column in the same row, is not a null rule. The characteristic it names is the Condition the column should be gated on: the level is `Conditional` rather than `Mandatory`, and Step 3 names the Condition.
 
 **Example:** `MUST be null when the operating model does not include regions` is a presence rule written as a null rule. `MUST be null when CommitmentDiscountId is null` is a null rule.
 
@@ -220,10 +220,12 @@ Where the level is `Mandatory`:
 Where the level is `Conditional`:
 
 ```markdown
-{DatasetId} MUST include [{ColumnId}](#datamodel.{datasetid}.{columnid}) when the *operating model* [{condition display name}](#conditions.{conditionid}).
+{DatasetId} MUST include [{ColumnId}](#datamodel.{datasetid}.{columnid}) when the *operating model* [{condition display name, lowercase}](#conditions.{condition anchor}).
 ```
 
 **Example:** `CostAndUsage MUST include [RegionId](#datamodel.costandusage.regionid) when the *operating model* [includes regions](#conditions.includesregions).`
+
+The Condition's anchor is generated from its Display Name and can differ from its Condition ID (e.g., `#conditions.includespricing-billingcurrencydifferences`).
 
 **Content Constraints**, in the column definition: `Feature level` set to the Step 2 result, linked to the Condition where the level is `Conditional`; `Allows nulls` set to the Step 4 result.
 
@@ -243,7 +245,7 @@ The last two work together. The Presence gate or nullability gate signal decides
 | **Rule or patch** | Where the column is defined in terms of another column, does that definition apply in every *operating model*, or only in those lacking the concept? | Applies to all → `Mandatory`. Supplied only for those lacking the concept → `Conditional`. Having a fallback settles nothing by itself; which of the two kinds it is settles it. | [EffectiveCost](../../specification/datasets/cost_and_usage/columns/effectivecost.md) is defined against [BilledCost](../../specification/datasets/cost_and_usage/columns/billedcost.md) for every *operating model*, equal to it for ordinary charges and computed from it where commitments amortize. It never stands in for a concept the *operating model* lacks, so it is a rule, not a patch. |
 | **Absent or not yet occurred** | Is the concept missing from the *operating model*, or present but not yet instantiated by a given *data generator*? | Concept missing → `Conditional`. Concept present, instance not yet produced → `Mandatory`, with Step 4 setting nullability. | Every *operating model* has the concept of a correction to a closed billing period, so a *data generator* that has never issued one still publishes [ChargeClass](../../specification/datasets/cost_and_usage/columns/chargeclass.md), null on its rows. |
 | **Presence gate or nullability gate** | Does the Condition remove the column from the dataset, or leave the column present with no value on some of its rows? | Column removed for some *operating model* → presence gate, so `Conditional`. Column present in every *operating model*, with values missing on some rows → nullability gate, so `Mandatory` with Step 4 setting `Allows nulls` = `True`. Judge a gate by what it does to the column, not by how its Condition is worded. | An *operating model* with no regions has no row that could carry [RegionId](../../specification/datasets/cost_and_usage/columns/regionid.md), so the Condition removes the column. Every *operating model* has rows that carry a ChargeClass value, so the column stays and only its rows vary. |
-| **Variance gate** | Does the Condition gate on two values differing, or on more than one value occurring, rather than on whether the concept exists? | The concept is universal, so applicability returns `Mandatory`, and the gate does not lower it. Where the Condition is false the column carries a constant, and a constant is a truthful value, so the column is present and populated in every *operating model*. A variance gate is therefore not a presence gate. | An *operating model* that prices and bills in one currency has a pricing currency on every row that equals its billing currency. The repeated value is still the pricing currency, so the concept is present and the gate does not make the column absent. |
+| **Variance gate** | Does the Condition gate on two values differing, or on more than one value occurring, rather than on whether the concept exists? | Where the gated concept itself exists in every *operating model*, applicability returns `Mandatory`, and the gate does not lower it: where the Condition is false the column carries a constant, and a constant is a truthful value, so the column is present and populated. A variance gate is therefore not a presence gate. Confirm universality first: a column whose null rule tracks a column that another Condition gates on absence presupposes that concept, fails the concept test on its own terms, and is `Conditional` through Step 2 whatever the shape of its Condition. | An *operating model* that prices and bills in one currency has a pricing currency on every row that equals its billing currency. The repeated value is still the pricing currency, so the concept is present and the gate does not make the column absent. |
 
 ## Tie-Breakers and Defaults
 
@@ -270,7 +272,7 @@ The last two work together. The Presence gate or nullability gate signal decides
 **RegionId, in the Cost and Usage dataset:**
 
 * **Step 1, Concept.** The isolated geographic area a [*resource*](../../specification/glossary.md#glossary:resource) or [*service*](../../specification/glossary.md#glossary:service) is deployed in.
-* **Step 2, Applicability.** An *operating model* without customer-visible regions has no row that could carry a value. Presence gate, so `Conditional`.
+* **Step 2, Applicability.** An *operating model* without regions has no row that could carry a value. Presence gate, so `Conditional`.
 * **Step 3, Condition.** [Includes Regions](../../specification/conditions/includesregions.md) exists and marks exactly where the concept exists. No new Condition needed.
 * **Step 4, Nullability.** Where the *operating model* includes regions, a region is available on many rows but not all, so `Allows nulls` = `True`.
 * **Step 5, Record.** `CostAndUsage MUST include [RegionId](#datamodel.costandusage.regionid) when the *operating model* [includes regions](#conditions.includesregions).` Content Constraints: `Feature level` = `Conditional`, linked to Includes Regions; `Allows nulls` = `True`.
@@ -284,7 +286,7 @@ The same Column ID is leveled on its own terms in each dataset that defines it.
 | Criteria for `Recommended` and `Optional` | Not settled here. This revision takes no position, does not change what those levels mean, and does not change the level of any column that currently holds one. |
 | Whether a proposed column belongs in the schema | Not part of this revision. Two tests would answer it: whether the data is needed rather than merely useful, and whether a column calculable from other columns earns a place of its own. |
 | What a Supported Feature does about a column that can be absent | Belongs to the Supported Features work. The obligation is prospective: adopting this guideline does not reopen levels of existing columns. What a feature does once a column it depends on is `Conditional`, and therefore absent from some *FOCUS datasets*, is not decided here. Existing Conditional columns that are already dependencies of Supported Features are handled through the Supported Features work. |
-| Applying these criteria to published columns | Scheduled, not settled here. A published column enters the backlog when the [Decision Procedure](#decision-procedure) returns a feature level or nullability different from the one the column currently holds. Four classes are already known to qualify: a Directly Dependent Column of a Supported Feature whose presence requirement is a `SHOULD` or a `MAY`; a column whose presence requirement is unconditional, where the concept is absent from an *operating model* or the value can only be produced by substitution; a `Conditional` column whose Condition gates on variance rather than on absence, since the Variance gate signal returns `Mandatory` for every column such a Condition currently gates; and a `Conditional` column whose Condition gates on a value domain or on row-level nullability rather than on the concept's absence. The working group sets the release that takes the backlog. |
+| Applying these criteria to published columns | Scheduled, not settled here. A published column enters the backlog when the [Decision Procedure](#decision-procedure) returns a feature level or nullability different from the one the column currently holds. Four classes are already known to qualify: a Directly Dependent Column of a Supported Feature whose presence requirement is a `SHOULD` or a `MAY`; a column whose presence requirement is unconditional, where the concept is absent from an *operating model* or the value can only be produced by substitution; a `Conditional` column whose Condition gates on variance rather than on absence, since the Variance gate signal returns `Mandatory` for every such column whose concept is itself universal, while a column that presupposes an absence-gated concept fails the concept test instead and keeps `Conditional`; and a `Conditional` column whose Condition gates on a value domain or on row-level nullability rather than on the concept's absence. The working group sets the release that takes the backlog. |
 | The threshold at which a column moves between `Mandatory` and `Conditional` | Companion guideline. Until then, [Tie-Breakers and Defaults](#tie-breakers-and-defaults) applies. |
 | Where the leveling rationale is recorded | Companion guideline. Until then, the pull request or issue. |
 | Informative category-based expectations | Out of scope here, and never expressed as a feature level. |
