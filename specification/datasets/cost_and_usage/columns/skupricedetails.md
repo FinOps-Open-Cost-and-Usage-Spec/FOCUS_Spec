@@ -1,6 +1,6 @@
 # SKU Price Details
 
-SKU Price Details represent a list of [*SKU Price*](#glossary:sku-price) properties (key-value pairs) associated with a specific [SKU Price ID](#datasets.costandusage.skupriceid). These properties include qualitative and quantitative properties of a [*SKUs*](#glossary:sku) (e.g., functionality and technical specifications), along with core stable pricing properties (e.g., pricing [*periods*](#glossary:period), tiers, etc.), excluding dynamic or negotiable pricing elements such as unit price amounts; currency (and related exchange rates); temporal validity (e.g., effective dates); and contract- or negotiation-specific factors (e.g., contract or account identifiers, and negotiable discounts).
+SKU Price Details represent a list of [*SKU Price*](#glossary:sku-price) properties (key-value pairs) associated with a specific [SKU Price ID](#datamodel.costandusage.skupriceid). These properties include qualitative and quantitative properties of a [*SKUs*](#glossary:sku) (e.g., functionality and technical specifications), along with core stable pricing properties (e.g., pricing [*periods*](#glossary:period), tiers, etc.), excluding dynamic or negotiable pricing elements such as unit price amounts; currency (and related exchange rates); temporal validity (e.g., effective dates); and contract- or negotiation-specific factors (e.g., contract or account identifiers, and negotiable discounts).
 
 The composition of properties associated with a specific *SKU Price* may differ across service providers and across *SKUs* within the same service provider. However, the exclusion of dynamic or negotiable pricing properties should ensure that all [*charges*](#glossary:charge) with the same SKU Price ID share the same SKU Price Details, i.e., that SKU Price Details remains consistent across different [*billing periods*](#glossary:billing-period) and [*billing accounts*](#glossary:billing-account) within a service provider.
 
@@ -30,7 +30,7 @@ SkuPriceDetails MUST adhere to the following requirements:
     * Additional SkuPriceDetails properties MAY be added over time.
   * Property key SHOULD remain consistent across comparable *SKUs* having that property, and the values for this key SHOULD remain in a consistent format.
   * Property key MUST begin with the string "x_" unless it is a FOCUS-defined property.
-  * Property value MUST represent the value for a single [PricingUnit](#datasets.costandusage.pricingunit) when the property holds a numeric value.
+  * Property value MUST represent the value for a single [PricingUnit](#datamodel.costandusage.pricingunit) when the property holds a numeric value.
 * FOCUS-defined SKU Price properties MUST adhere to the following requirements:
   * Property key MUST match the spelling and casing specified for the FOCUS-defined property.
   * Property value MUST be of the type specified for that property.
@@ -50,6 +50,10 @@ The following keys should be used when applicable to facilitate cross-SKU and cr
 | InstanceType             | Common name of the instance including size, shape, series, etc.          | String           | Examples: "m5d.2xlarge", "NC24rs_v3", "P50"           |
 | InstanceSeries           | Common name for the series and/or generation of the instance             | String           | Examples: "M5", "Dadv5", "N2D"                        |
 | MemorySize               | RAM allocated for processing                                             | Numeric          | Measure: Gibibytes (GiB<sup>2</sup>)                  |
+| ModelDeveloper           | Name of the entity that created the model                                | String           | Examples: "Solora AI", "ModelMesh"                    |
+| ModelFamily              | Grouping of related models as defined by the model developer             | String           | Examples: "Solora Reasoning", "ModelMesh General"     |
+| ModelId                  | Identifier for the model as it appears in billing, which may be namespaced by the service provider and is not guaranteed to match across service providers | String           | Examples: "solora-reasoning-pro", "modelmesh-general-7b" |
+| ModelVersion             | Version of the model within a given model family, as defined by the model developer | String           | Examples: "3.0", "2.5"                                |
 | NetworkMaxIops           | Network maximum sustained input/output operations per second<sup>1</sup> | Numeric          | Measure: Input/Output Operations per Second (IOPS)    |
 | NetworkMaxThroughput     | Network maximum sustained throughput for data transfer<sup>1</sup>       | Numeric          | Measure: Megabits per second (Mbps)                   |
 | OperatingSystem          | Operating system family<sup>3</sup>                                      | String           | Examples: "Linux", "MacOS", "Windows"                 |
@@ -87,7 +91,7 @@ A set of properties of a SKU Price ID which are meaningful and common to all ins
 
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Dataset         | [Cost and Usage](#datamodel.costandusage)             |
 | Column type     | Dimension                                            |
 | Feature level   | Conditional                                          |
 | Allows nulls    | True                                                 |

@@ -20,19 +20,24 @@
       ],
       "additionalProperties": false
     },
-    "ApplicabilityCriteria": {
+    "Conditions": {
       "type": "object",
-      "description": "A dictionary of flags used to determine rule applicability based on the data generators supported features.",
+      "description": "A registry of condition entities, keyed by EntityId, each linking to the Condition (CON-) model rule that defines it.",
       "patternProperties": {
-        "^[A-Z0-9_]+$": {
+        "^[A-Za-z0-9]+$": {
           "type": "object",
           "properties": {
             "Description": {
               "type": "string"
+            },
+            "ModelRuleId": {
+              "type": "string",
+              "pattern": "^CON-[A-Za-z0-9]+-N-\\d{3}-[MOC]$"
             }
           },
           "required": [
-            "Description"
+            "Description",
+            "ModelRuleId"
           ],
           "additionalProperties": false
         }
@@ -116,10 +121,16 @@
               "pattern": "^[A-Z]{3}$"
             },
             "DatasetId": {
-              "type": "string"
+              "type": [
+                "string",
+                "null"
+              ]
             },
             "DatasetName": {
-              "type": "string"
+              "type": [
+                "string",
+                "null"
+              ]
             },
             "Schema": {
               "type": "object"
@@ -143,7 +154,7 @@
       "type": "object",
       "description": "The list of all rules, each containing logic, reference metadata, and criteria.",
       "patternProperties": {
-        "^([A-Za-z0-9]{3}-)?[A-Za-z0-9]+-[CADO]{1}-\\d{3}-[MOC]$": {
+        "^([A-Za-z0-9]{3}-)?[A-Za-z0-9]+-[CADON]{1}-\\d{3}-[MOC]$": {
           "type": "object",
           "properties": {
             "Function": {
@@ -166,7 +177,8 @@
                 "Dataset",
                 "Column",
                 "Attribute",
-                "Object"
+                "Object",
+                "Condition"
               ]
             },
             "EntityId": {
@@ -189,10 +201,16 @@
               "pattern": "^[A-Z]{3}$"
             },
             "DatasetId": {
-              "type": "string"
+              "type": [
+                "string",
+                "null"
+              ]
             },
             "DatasetName": {
-              "type": "string"
+              "type": [
+                "string",
+                "null"
+              ]
             },
             "ModelVersionIntroduced": {
               "type": "string"
@@ -208,7 +226,7 @@
                 "Removed"
               ]
             },
-            "ApplicabilityCriteria": {
+            "Conditions": {
               "type": "array",
               "items": {
                 "type": "string"
@@ -275,9 +293,12 @@
             "EntityId",
             "EntityName",
             "EntityType",
+            "DatasetType",
+            "DatasetId",
+            "DatasetName",
             "ModelVersionIntroduced",
             "Status",
-            "ApplicabilityCriteria",
+            "Conditions",
             "Type",
             "ValidationCriteria"
           ],
@@ -323,7 +344,10 @@
                 "not": {
                   "properties": {
                     "EntityType": {
-                      "const": "Attribute"
+                      "enum": [
+                        "Attribute",
+                        "Condition"
+                      ]
                     }
                   }
                 }
@@ -333,7 +357,18 @@
                   "DatasetType",
                   "DatasetId",
                   "DatasetName"
-                ]
+                ],
+                "properties": {
+                  "DatasetType": {
+                    "type": "string"
+                  },
+                  "DatasetId": {
+                    "type": "string"
+                  },
+                  "DatasetName": {
+                    "type": "string"
+                  }
+                }
               }
             }
           ],
@@ -345,7 +380,7 @@
   },
   "required": [
     "Details",
-    "ApplicabilityCriteria",
+    "Conditions",
     "CheckFunctions",
     "ModelDatasets",
     "Schemas",

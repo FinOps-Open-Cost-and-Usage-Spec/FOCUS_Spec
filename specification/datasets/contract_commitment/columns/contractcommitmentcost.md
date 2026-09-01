@@ -9,9 +9,9 @@ ContractCommitmentCost MUST adhere to the following requirements:
 * ContractCommitmentCost MUST be of type Decimal.
 * ContractCommitmentCost MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * ContractCommitmentCost MUST adhere to the following nullability requirements:
-  * ContractCommitmentCost MUST NOT be null when [ContractCommitmentCategory](#datasets.contractcommitment.contractcommitmentcategory) is "Spend".
+  * ContractCommitmentCost MUST NOT be null when [ContractCommitmentCategory](#datamodel.contractcommitment.contractcommitmentcategory) is "Spend".
   * ContractCommitmentCost MAY be null when ContractCommitmentCategory is "Usage".
-* ContractCommitmentCost MUST be denominated in the [BillingCurrency](#datasets.contractcommitment.billingcurrency).
+* ContractCommitmentCost MUST be denominated in the [BillingCurrency](#datamodel.contractcommitment.billingcurrency).
 
 ## Column ID
 
@@ -29,7 +29,7 @@ The monetary value of the *contract commitment*.
 
 | Constraint    | Value                                                |
 | :------------ | :--------------------------------------------------- |
-| Dataset       | [Contract Commitment](#datasets.contractcommitment)  |
+| Dataset       | [Contract Commitment](#datamodel.contractcommitment)  |
 | Column type   | Metric                                               |
 | Feature level | Mandatory                                            |
 | Allows nulls  | True                                                 |

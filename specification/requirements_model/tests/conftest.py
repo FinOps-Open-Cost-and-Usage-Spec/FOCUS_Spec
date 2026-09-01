@@ -45,8 +45,29 @@ def requires_version(current_version: str, min_version: str = None, max_version:
         maximum = parse_version(max_version)
         if current > maximum:
             return True, f"Requires version <= {max_version} (current: {current_version})"
-    
+
     return False, ""
+
+def conditions_key(model_version: str):
+    """Return the key used for rule applicability conditions for a given model version.
+
+    Renamed from "ApplicabilityCriteria" to "Conditions" in 1.5. Versions prior to
+    1.5 continue to use "ApplicabilityCriteria".
+    """
+    if parse_version(model_version) >= parse_version("1.5"):
+        return "Conditions"
+    return "ApplicabilityCriteria"
+
+def get_conditions(rule: dict, model_version: str):
+    """Read a rule's applicability conditions using the version-appropriate key.
+
+    Always returns a list (empty when the key is absent or null).
+    """
+    return rule.get(conditions_key(model_version)) or []
+
+def get_conditions_catalog(cr_json: dict, model_version: str):
+    """Read the top-level conditions/applicability-criteria catalog (flag definitions)."""
+    return cr_json.get(conditions_key(model_version)) or {}
 
 def get_all_versions():
     """Get all version directories, excluding symlinks."""
