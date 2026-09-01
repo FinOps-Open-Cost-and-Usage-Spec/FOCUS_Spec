@@ -19,7 +19,7 @@ Issue templates are `.yml` form definitions in `.github/ISSUE_TEMPLATE/`. Use th
 | Action Item     | `[AI] `          | `action-item.yml`     |
 | Feature Request | `[FR] `          | `feature-request.yml` |
 | Feedback        | `[Feedback] `    | `feedback.yml`        |
-| Maintenance     | `[Maintenance] ` | `maintenance.yml`.    |
+| Maintenance     | `[Maintenance] ` | `maintenance.yml`     |
 | Work Item       | `[WI]`           | `work-item.yml`       |
 
 ## Context Files
