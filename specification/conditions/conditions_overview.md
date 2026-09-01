@@ -25,11 +25,14 @@ Conditions are sorted alphabetically by name.
 | [Includes Pricing-Billing Currency Differences](#conditions.includespricing-billingcurrencydifferences) | Pricing | Operating model includes pricing and billing in different currencies. |
 | [Includes Provisioned Resources](#conditions.includesprovisionedresources) | Resource | Operating model includes provisioned resources. |
 | [Includes Purchase Order Numbers](#conditions.includespurchaseordernumbers) | Billing | Operating model includes purchase order numbers. |
+| [Includes Purchases](#conditions.includespurchases) | Pricing | Operating model includes purchases. |
+| [Includes Quantity Tier Pricing](#conditions.includesquantitytierpricing) | Pricing | Operating model includes quantity-based tier pricing. |
 | [Includes Regions](#conditions.includesregions) | Resource | Operating model includes deploying resources or services within a region. |
 | [Includes Resource Type Assignment](#conditions.includesresourcetypeassignment) | Resource | Operating model includes categorizing resources by type. |
+| [Includes SKU Prices](#conditions.includesskuprices) | Pricing | Operating model includes SKU prices. |
 | [Includes Split Cost Allocation](#conditions.includessplitcostallocation) | Allocation | Operating model includes split cost allocation. |
 | [Includes Sub Accounts](#conditions.includessubaccounts) | Account | Operating model includes a sub account construct. |
 | [Includes Tags](#conditions.includestags) | Allocation | Operating model includes tags. |
 | [Includes Unit Pricing](#conditions.includesunitpricing) | Pricing | Operating model includes unit pricing. |
 | [Includes Usage Measurement](#conditions.includesusagemeasurement) | Billing | Operating model includes the measurement of usage. |
-| [Includes Virtual Currency](#conditions.includesvirtualcurrency) | Pricing | Operating model includes prices in virtual currency. |
+| [Includes Virtual Currency](#conditions.includesvirtualcurrency) | Pricing | Operating model includes prices in a consumption currency. |

@@ -16,8 +16,11 @@
 !INCLUDE "includespricingbillingcurrencydifferences.md",1
 !INCLUDE "includesprovisionedresources.md",1
 !INCLUDE "includespurchaseordernumbers.md",1
+!INCLUDE "includespurchases.md",1
+!INCLUDE "includesquantitytierpricing.md",1
 !INCLUDE "includesregions.md",1
 !INCLUDE "includesresourcetypeassignment.md",1
+!INCLUDE "includesskuprices.md",1
 !INCLUDE "includessplitcostallocation.md",1
 !INCLUDE "includessubaccounts.md",1
 !INCLUDE "includestags.md",1
