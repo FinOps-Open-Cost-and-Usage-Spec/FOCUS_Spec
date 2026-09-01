@@ -133,10 +133,12 @@ AI agents generating or reviewing content MUST act as strict technical editors e
   * use `greater than or equal to` or `less than or equal to` for inequalities;
   * use `equivalent` for semantic equivalence; and
   * use `remain consistent` when requiring a value to be stable across time, records, or another defined scope.
-* **Structural Anchors:** Apply the following rules: 
-  * Requirements sections, including reusable Attribute requirement sections, MUST begin with a non-verifiable anchor phrase ending in a colon (e.g., `<Entity> MUST adhere to the following requirements:`). 
-  * Anchor requirements exist solely to establish the parsing structure of subordinate requirements.
-  * Anchor requirements MUST NOT be interpreted as independently verifiable normative requirements.
+* **Structural Anchors:** Apply the following rules:
+  * Each Requirements section, including a reusable Attribute Requirements section, MUST begin with a structural anchor.
+  * A structural anchor establishes the scope of the Requirements section.
+  * A structural anchor supports automated parsing and validation.
+  * A structural anchor does not introduce a verifiable constraint.
+  * A structural anchor does not resolve into an atomic requirement.
 * **Terminology:** Apply the following rules:
   * Normative references to columns MUST use `ColumnId`s, never column Display Names. 
   * Requirements governing a specific dataset MUST use its `DatasetId` as the subject (e.g., `SkuPrice`). 
