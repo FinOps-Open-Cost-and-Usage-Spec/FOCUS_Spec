@@ -87,7 +87,7 @@ SkuPriceEligibility uses a reserved string to represent global or unrestricted b
 
 <div class="h7-nonindex">Processing Workflow</div>
 
-The evaluation of an entity's usage against a rate card's eligibility rules proceeds in the following order:
+The evaluation of an entity's usage against a price list's eligibility rules proceeds in the following order:
 
 1. **Normalization:** Convert the entity attribute and the Scope `Values` to a consistent case (default: lowercase) for comparison.
 2. **Scope Check:** If `IsGlobalScope` is `true`, the entity passes inclusion; proceed to Exclusion Evaluation. If `IsComplexScope` is `true`, the object does not determine eligibility; terminate evaluation.
@@ -102,7 +102,7 @@ The evaluation of an entity's usage against a rate card's eligibility rules proc
 
 ### Object Example
 
-Here is a basic example of the object format, describing a custom contracted rate that is only eligible for two specific Billing Accounts.
+Here is a basic example of the object format, defining *SKU Price* eligibility restricted to two specific [*billing accounts*](#glossary:billing-account).
 
 ```json
 {

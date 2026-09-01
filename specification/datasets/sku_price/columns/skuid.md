@@ -13,7 +13,7 @@ Each SKU ID represents a unique set of features that can be sold at different pr
 * Commitment discount pricing [*period*](#glossary:period) (e.g., 1 year, 3 years).
 * Negotiated discounts or other contractual terms or conditions.
 
-SKU ID is the primary identifier used to look up detailed information about the *SKU* within a catalog or [*price list*](#glossary:price-list) published by a service provider. SKU ID is commonly used to join rate card data with actual usage or to analyze price variations for the same SKU across different price details (e.g., *period*, tier, location).
+SKU ID is the primary identifier used to look up detailed information about the *SKU* within a catalog or [*price list*](#glossary:price-list) published by a service provider. SKU ID is commonly used to join *price list* data with actual usage or to analyze price variations for the same SKU across different price details (e.g., *period*, tier, location).
 
 ## Requirements
 

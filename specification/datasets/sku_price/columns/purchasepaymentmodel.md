@@ -1,6 +1,6 @@
 # Purchase Payment Model
 
-Purchase Payment Model defines the financial settlement structure of a purchase. It identifies whether the financial obligation is settled via a single upfront payment, distributed recurring charges, or a combination of both over the [Purchase Duration Type](#datamodel.skuprice.purchasedurationtype). When the purchase is a [*commitment discount*](#glossary:commitment-discount), this column represents the settlement structure of that *commitment discount*.
+Purchase Payment Model defines the financial settlement structure of a purchase. It identifies whether the financial obligation is settled via a single upfront payment, distributed recurring charges, or a combination of both over the term of a purchase. When the purchase is a [*commitment discount*](#glossary:commitment-discount), this column represents the settlement structure of that *commitment discount*.
 
 Purchase Payment Model has three possible values: "No Upfront", "Partial Upfront", and "All Upfront".
 
@@ -29,11 +29,11 @@ PurchasePaymentModel MUST adhere to the following requirements:
 
 ## Implementation Guidance
 
-Within the SKU Price dataset, the Purchase Payment Model describes how the fee for a purchase is settled, across purchase constructs such as reservations, prepaid licenses, and commitment discounts:
+Within the SKU Price dataset, the Purchase Payment Model classifies how the total obligation of a purchase construct (e.g., reservation, prepaid license, or commitment discount) is represented:
 
-* **All Upfront:** The full obligation is settled by a single fee at the start of the term.
-* **No Upfront:** The obligation is settled through periodic fees over the term, with no initial payment.
-* **Partial Upfront:** The obligation combines an initial fee and periodic fees, typically represented across multiple SKU Price records (e.g., one record for the upfront fee and a separate record for the recurring fee).
+* **All Upfront:** The full obligation is represented by a single [*SKU Price*](#glossary:sku-price) record for the one-time upfront payment.
+* **No Upfront:** The obligation is represented by a single *SKU Price* record for the deferred payment, with no upfront record.
+* **Partial Upfront:** The obligation is represented by two *SKU Price* records — one for the upfront payment and one for the deferred payment.
 
 ## Column ID
 

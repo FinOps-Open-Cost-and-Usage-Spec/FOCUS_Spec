@@ -1,10 +1,10 @@
 # SKU Price
 
-The SKU Price dataset is the primary dataset for standardizing [*service provider*](#glossary:service-provider) catalog rates, multipliers, and negotiated prices. This dataset enables practitioners to perform precise rate lookups, analyze commitment discounts, and understand the cost mechanics of payable and consumable prices.
+The SKU Price dataset is the primary dataset for standardizing [*price lists*](#glossary:price-list) offered by a [*service provider*](#glossary:service-provider). This dataset enables practitioners to perform precise [*SKU Price*](#glossary:sku-price) lookups, analyze commitment discounts, and understand the cost mechanics of payable and consumable prices.
 
 The SKU Price dataset represents prices as of the date the dataset is captured. Providing a historical record of prior prices is the practitioner's responsibility rather than a guaranteed delivery; practitioners can reconstruct price history by retaining successive snapshots and comparing them using [SKU Price Effective Start](#datamodel.skuprice.skupriceeffectivestart) and [SKU Price Effective End](#datamodel.skuprice.skupriceeffectiveend). The dataset reflects the prices a *service provider* offers, independent of whether a price was used, and is not derived from Cost and Usage data.
 
-The dataset describes the full price list a *service provider* offers, not only the SKUs that appear in Cost and Usage. To manage the size of a complete price list, a *service provider* may partition delivery, for example by region, service, or SKU category, and is encouraged to do so where publishing a complete list in a single delivery would otherwise be impractical.
+The dataset describes the full *price list* a *service provider* offers, not only the SKUs that appear in Cost and Usage. To manage the size of a complete *price list*, a *service provider* may partition delivery, for example by region, service, or SKU category, and is encouraged to do so where publishing a complete list in a single delivery would otherwise be impractical.
 
 The columns are presented in alphabetical order.
 
@@ -37,7 +37,7 @@ The columns are presented in alphabetical order.
 
 ## Relationships<!--SkipTOC-->
 
-The SKU Price dataset relates to the Cost and Usage dataset through the SKU Price ID, enabling the attribution of catalog rates to incurred usage. This is a one-to-many relationship: a single SKU Price ID corresponds to multiple SKU Price records, because a SKU's price varies by effective period, contract, quantity tier, and pricing currency. Resolving the price that applies to a Cost and Usage charge therefore requires more than the SKU Price ID alone. The charge must also be aligned to the SKU Price record whose effective period contains the charge period, whose Contract ID matches the agreement under which the charge was incurred (or is null for a public list price), whose quantity tier contains the charged quantity, and whose pricing currency matches the currency in which the charge is denominated. The resolved record carries both the List Unit Price and the Contracted Unit Price for that combination, so no further join is needed to compare the public rate against the negotiated rate. Contracted Unit Price resolves the same way in both datasets. Where no negotiation applies, a Cost and Usage charge reports a Contracted Unit Price equal to its List Unit Price, and the SKU Price record it resolves to, whose Contract ID is null, carries that same equality. Comparing a billed contracted rate against its published catalog rate therefore requires no allowance for a null on either side. The SKU Price dataset can also optionally join to the Contract Commitment dataset to relate a specific contracted price to an overarching negotiated agreement.
+The SKU Price dataset relates to the Cost and Usage dataset through the SKU Price ID, enabling the attribution of catalog unit prices to incurred usage. This is a one-to-many relationship: a single SKU Price ID corresponds to multiple SKU Price records, because a SKU's price varies by effective period, contract, and pricing currency. Resolving the price that applies to a Cost and Usage charge therefore requires more than the SKU Price ID alone. The charge must also be aligned to the SKU Price record whose effective period contains the charge period, whose Contract ID matches the agreement under which the charge was incurred (or is null for a public list price), and whose pricing currency matches the currency in which the charge is denominated. The resolved record carries both the List Unit Price and the Contracted Unit Price for that combination, so no further join is needed to compare the public unit price against the negotiated unit price. Contracted Unit Price resolves the same way in both datasets. Where no negotiation applies, a Cost and Usage charge reports a Contracted Unit Price equal to its List Unit Price, and the SKU Price record it resolves to, whose Contract ID is null, carries that same equality. Comparing a billed contracted unit price against its published catalog unit price therefore requires no allowance for a null on either side. The SKU Price dataset can also optionally join to the Contract Commitment dataset to relate a specific contracted price to an overarching negotiated agreement.
 
 | Dataset A           | Dataset A Column  | Dataset B           | Dataset B Column       |
 | ------------------- | ----------------- | ------------------- | ---------------------- |
@@ -71,7 +71,7 @@ SkuPrice MUST adhere to the following requirements:
   * SkuPrice MUST include [SkuPriceEligibility](#datamodel.skuprice.skupriceeligibility).
   * SkuPrice MUST include [SkuPriceId](#datamodel.skuprice.skupriceid).
   * SkuPrice MUST include [SkuPriceLastUpdated](#datamodel.skuprice.skupricelastupdated).
-  * SkuPrice SHOULD include [*custom columns*](#glossary:custom-column) needed to identify specific rate card routing logic when [*FOCUS columns*](#glossary:FOCUS-column) are not sufficient.
+  * SkuPrice SHOULD include [*custom columns*](#glossary:custom-column) needed to identify specific *price list* routing logic when [*FOCUS columns*](#glossary:FOCUS-column) are not sufficient.
 * SkuPrice MUST conform to [DatasetCompleteness](#attributes.datasetcompleteness) requirements.
 * SkuPrice MUST conform to [DatasetConfiguration](#attributes.datasetconfiguration) requirements.
 * SkuPrice MUST contain at least one record for every [SkuPriceId](#datamodel.skuprice.skupriceid) referenced in the [CostAndUsage](#datamodel.costandusage) dataset.
@@ -91,7 +91,7 @@ SKU Price
 
 ## Description<!--SkipTOC-->
 
-Describes the catalog rates, internal multipliers, and negotiated unit prices for resources or services offered by a service provider.
+Describes *price lists* for *resources* or *services* offered by a *service provider*.
 
 ## Version Introduced<!--SkipTOC-->
 
