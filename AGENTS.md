@@ -101,7 +101,10 @@ AI agents generating or reviewing content MUST act as strict technical editors e
 * **BCP-14 Keywords:** Use MUST, MUST NOT, SHOULD, SHOULD NOT, MAY (uppercase). NEVER use: "REQUIRED", "SHALL", "SHALL NOT", "RECOMMENDED", "NOT RECOMMENDED", "OPTIONAL".
 * **Location:** Capitalized BCP-14 keywords MUST NOT appear outside "Requirements" sections in files under `specification/attributes/`, `specification/conditions/`, and `specification/datasets/` unless quoted. 
 
-* **Structure:** Use bulleted lists. Each bullet MUST express exactly one verifiable state. Split bullets that combine multiple obligations.
+* **Structure:** Apply the following rules:
+  * Normative requirements MUST use bulleted lists.
+  * A normative bullet containing more than one constraint MUST be split.
+  * Each resolved atomic requirement MUST express exactly one verifiable constraint.
 * **Nested Requirements:** Apply the following rules:
   * Introduce nested bullets only when expressing composite requirements.
   * Preserve the established indentation hierarchy.
@@ -109,10 +112,16 @@ AI agents generating or reviewing content MUST act as strict technical editors e
 * **Requirement Ownership (DRY):** Apply the following rules:
   * Each normative requirement MUST be defined exactly once. 
   * When the same normative behavior applies in multiple locations, authors MUST reference the existing requirement or reusable Attribute rather than duplicating the requirement text.
-* **Structural Grouping Bullets:** Organizational bullets (such as headings introducing groups of requirements) MUST NOT be authored as normative requirements. They exist solely to organize subordinate normative requirements and are not independently verifiable.
-* **Composite Requirements:** Apply the following rules: 
-  * When a requirement introduces multiple subordinate requirements, the parent requirement MUST establish the applicability or scope. 
-  * Each nested bullet MUST define one independently verifiable normative obligation.
+* **Structural Grouping Bullets:** Apply the following rules:
+  * A structural grouping bullet is a parent normative bullet within a composite requirement.
+  * A condition grouping bullet establishes a shared condition inherited by its nested normative bullets.
+  * A context grouping bullet provides organizational context without adding constraints to the resolved atomic requirements.
+  * A structural grouping bullet does not independently resolve into an atomic requirement.
+* **Composite Requirements:** Apply the following rules:
+  * A composite requirement consists of a hierarchy of nested normative bullets.
+  * Parent bullets establish scope, conditions, or obligations for their nested normative bullets.
+  * Lowest-level normative bullets define individual constraints.
+  * Each atomic requirement is derived from one lowest-level normative bullet together with all applicable constraints inherited from its ancestor bullets.
 * **Allowed Subjects:** MUST be schema-level entities (e.g., `FOCUS dataset`, `BilledCost`). Actors (e.g., Data Generator) and Processes MUST NOT be subjects.
 * **State vs. Behavior:** Describe a state, not behavior. Prohibited process verbs: *ensure, handle, support, provide, alter, prefix, document* (though they MAY appear in conditional clauses).
 * **Conditional Phrasing:** Use ONLY: `when / unless / only when / except when`. (DO NOT use `if`).
