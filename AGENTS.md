@@ -140,11 +140,11 @@ AI agents generating or reviewing content MUST act as strict technical editors e
   * A structural anchor does not introduce a verifiable constraint.
   * A structural anchor does not resolve into an atomic requirement.
 * **Terminology:** Apply the following rules:
-  * Normative references to columns MUST use `ColumnId`s, never column Display Names. 
-  * Requirements governing a specific dataset MUST use its `DatasetId` as the subject (e.g., `SkuPrice`). 
-  * Requirements applying generically to all FOCUS datasets MUST use `FOCUS dataset`. 
-  * Otherwise, authors MUST use the abstraction that precisely matches the requirement (e.g., `dataset instance` or `dataset artifact`).
-  * When a narrower abstraction is intended, authors MUST avoid using `FOCUS dataset`.
+  * Normative references to FOCUS entities MUST use a generic keyword, canonical Entity ID, or dot-notation reference path.
+  * Normative references to FOCUS entities MUST NOT use Display Names.
+  * Requirements governing a specific dataset MUST use its `DatasetId` as the subject (e.g., `SkuPrice`).
+  * All other normative subjects referring to a FOCUS dataset concept MUST use `FOCUS dataset`, including when the constraint applies to a dataset specification, dataset instance, or dataset artifact.
+  * In non-subject positions, references to dataset concepts MUST use `FOCUS dataset`, `dataset instance`, or `dataset artifact`, according to the precise abstraction intended.
 * **Tone:** Use formal language. Contractions (e.g., *don't, can't*) MUST NOT be used in normative requirements.
 * **Inline Examples:** Any non-normative examples embedded within a requirement MUST be enclosed in parentheses using "e.g." (e.g., `...without lossy transformations (e.g., rounding)`).
 * **Subsection Ordering:** When generating new specification entities, preserve the subsection ordering already established for that entity type within the specification. Do not invent alternative subsection sequences.
