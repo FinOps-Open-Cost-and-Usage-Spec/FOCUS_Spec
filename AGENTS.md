@@ -155,7 +155,11 @@ AI agents generating or reviewing content MUST act as strict technical editors e
 * **Column/Attribute References in Non-Normative Content:**
   * Display Names SHOULD be used for conceptual, reader-facing references.
   * Canonical IDs MAY be used for schema-facing references.
-  * A reference is schema-facing when it identifies a field in code, JSON, SQL, a schema, a table header, or an object/property path, or when the surrounding sentence describes that field being populated, omitted, null, serialized, validated, matched, compared, grouped, filtered, joined, aggregated, or repeated.
+  * A reference is schema-facing when any of the following applies:
+    * it identifies a field in code, JSON, SQL, a schema, or a table header;
+    * it is an object or property path;
+    * the surrounding sentence describes the field being populated, omitted, null, serialized, validated, matched, compared, grouped, filtered, joined, aggregated, or repeated; or
+    * exact correspondence with an adjacent table, code block, schema fragment, or query expression is required.
   * When none of the schema-facing conditions above applies, treat the reference as conceptual.
   * Reviewers MUST NOT create a finding solely because a schema-facing non-normative reference uses its canonical ID.
   * A canonical ID used for a conceptual non-normative reference MAY produce a suggestion. 
