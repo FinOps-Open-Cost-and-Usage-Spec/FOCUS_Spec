@@ -10,7 +10,7 @@ In the scenarios below, ServingScope appears only on rows for a capability the *
 
 The following conditions apply to the scenarios below:
 
-* Acme Corp runs the same foundation model, Solora Reasoning Pro, on two [*service providers*](#glossary:service-provider).
+* Acme Corp runs the same foundation model, Solora Reasoning Pro, on two *service providers*.
 * Each *service provider* offers the model at more than one serving scope, and prices each scope separately.
 * Each serving scope is a distinct *SKU* with its own [SkuId](#datamodel.costandusage.skuid) and [SkuPriceId](#datamodel.costandusage.skupriceid), so the price difference between scopes is visible as a difference in [ListUnitPrice](#datamodel.costandusage.listunitprice) across rows.
 * Acme Corp pays list price, so [ListCost](#datamodel.costandusage.listcost), [ContractedCost](#datamodel.costandusage.contractedcost), [BilledCost](#datamodel.costandusage.billedcost), and [EffectiveCost](#datamodel.costandusage.effectivecost) are equal on every row.
