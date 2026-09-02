@@ -106,7 +106,7 @@ AI agents generating or reviewing content MUST act as strict technical editors e
   * A normative bullet containing more than one constraint MUST be split.
   * Each resolved atomic requirement MUST express exactly one verifiable constraint.
 * **Nested Requirements:** Apply the following rules:
-  * Introduce nested bullets only when expressing composite requirements.
+  * Introduce nested normative bullets only when expressing composite requirements.
   * Preserve the established indentation hierarchy.
   * Never skip nesting levels.
 * **Requirement Ownership (DRY):** Apply the following rules:
