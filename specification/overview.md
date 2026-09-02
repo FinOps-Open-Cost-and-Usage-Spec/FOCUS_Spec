@@ -83,7 +83,9 @@ The keywords `MUST`, `MUST NOT`, `SHOULD`, `SHOULD NOT`, and `MAY` in this speci
 
 ## FOCUS Feature Level
 
-Under each column defined in the FOCUS specification, there exists a 'Feature level' designation that describes the column as `Mandatory`, `Conditional`, or `Optional`. Feature level is designated based on the following criteria described in the normative requirements in each column definition:
+Under each column defined in the FOCUS specification, there exists a 'Feature level' designation that describes the column as `Mandatory`, `Conditional`, `Recommended`, or `Optional`.
+
+Feature level is designated based on the following criteria described in the dataset-level normative requirements:
 
 * If the existence of a column is described with `MUST` with no conditions of when it applies, then the feature level is designated as `Mandatory`.
 * If the existence of a column is described as `MUST` with conditions of when it applies, then the feature level is designated as `Conditional`.
