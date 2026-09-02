@@ -4,6 +4,8 @@ The Cost and Usage dataset is the primary dataset for FOCUS cost and usage data.
 
 The specification for the Cost and Usage dataset defines a group of columns that provide qualitative values (such as dates, resource, and service provider information) categorized as "dimensions" and quantitative values (numeric values) categorized as "metrics" that can be used for performing various [FinOps capabilities][FODOFC]. Metrics are commonly used for aggregations (sum, multiplication, averaging etc.) and statistical operations within the dataset. Dimensions are commonly used to categorize, filter, and reveal details in your data when combined with metrics. The columns are presented in alphabetical order.
 
+> **Note:** A Cost and Usage dataset may carry values that are classified as Personal Data or Personally Identifiable Information (PII) under privacy regulations such as GDPR or CCPA, including values that are pseudonymized rather than plain-text. Identity attributes and customer-defined values such as [Tags](#datamodel.costandusage.tags) are the most common sources. Which of these values a dataset carries is a matter for the data generator and the data consumer to settle between them. Organizations need to separately ensure that the ingestion, storage, and processing of a dataset comply with the privacy regulations applicable to them and with their internal data privacy, security, and retention policies. Cost and usage data is commonly retained for multi-year trend analysis, which extends the period over which those obligations apply.
+
 ## Columns<!--SkipTOC-->
 
 | Column                                                                        | Column Type        | Feature Level | Allows Nulls | Data Type |
@@ -43,6 +45,7 @@ The specification for the Cost and Usage dataset defines a group of columns that
 | [Contract Applied](#datamodel.costandusage.contractapplied)                                          | Dimension / Metric | [Conditional](#conditions.includescontractcommitments) | True         | JSON      |
 | [Contracted Cost](#datamodel.costandusage.contractedcost)                                            | Metric             | Mandatory     | False        | Decimal   |
 | [Contracted Unit Price](#datamodel.costandusage.contractedunitprice)                                 | Metric             | [Conditional](#conditions.includesnegotiatedpricing) | True         | Decimal   |
+| [Credential ID](#datamodel.costandusage.credentialid)                                                | Dimension          | [Conditional](#conditions.includesrequesterattribution) | True         | String    |
 | [Effective Cost](#datamodel.costandusage.effectivecost)                                              | Metric             | Mandatory     | False        | Decimal   |
 | [Host Provider Name](#datamodel.costandusage.hostprovidername)                                       | Dimension          | Mandatory     | False        | String    |
 | [Invoice Detail ID](#datamodel.costandusage.invoicedetailid)                                         | Dimension          | [Conditional](#conditions.includespayableinvoices) | True         | String    |
@@ -60,6 +63,7 @@ The specification for the Cost and Usage dataset defines a group of columns that
 | [Principal ID](#datamodel.costandusage.principalid)                                                  | Dimension          | [Conditional](#conditions.includesrequesterattribution) | True         | String    |
 | [Region ID](#datamodel.costandusage.regionid)                                                        | Dimension          | [Conditional](#conditions.includesregions) | True         | String    |
 | [Region Name](#datamodel.costandusage.regionname)                                                    | Dimension          | [Conditional](#conditions.includesregions) | True         | String    |
+| [Requester Details](#datamodel.costandusage.requesterdetails)                                        | Dimension          | [Conditional](#conditions.includesrequesterattribution) | True         | JSON      |
 | [Resource ID](#datamodel.costandusage.resourceid)                                                    | Dimension          | [Conditional](#conditions.includesprovisionedresources) | True         | String    |
 | [Resource Name](#datamodel.costandusage.resourcename)                                                | Dimension          | [Conditional](#conditions.includesprovisionedresources) | True         | String    |
 | [Resource Type](#datamodel.costandusage.resourcetype)                                                | Dimension          | [Conditional](#conditions.includesprovisionedresources) | True         | String    |
@@ -127,6 +131,7 @@ CostAndUsage MUST adhere to the following requirements:
   * CostAndUsage MUST include [ContractApplied](#datamodel.costandusage.contractapplied) when the *operating model* [includes contract commitments](#conditions.includescontractcommitments).
   * CostAndUsage MUST include [ContractedCost](#datamodel.costandusage.contractedcost).
   * CostAndUsage MUST include [ContractedUnitPrice](#datamodel.costandusage.contractedunitprice) when the *operating model* [includes negotiated pricing](#conditions.includesnegotiatedpricing).
+  * CostAndUsage MUST include [CredentialId](#datamodel.costandusage.credentialid) when the *operating model* [includes requester attribution](#conditions.includesrequesterattribution).
   * CostAndUsage MUST include [EffectiveCost](#datamodel.costandusage.effectivecost).
   * CostAndUsage MUST include [HostProviderName](#datamodel.costandusage.hostprovidername).
   * CostAndUsage MUST include [InvoiceDetailId](#datamodel.costandusage.invoicedetailid) when the *operating model* [includes payable invoices](#conditions.includespayableinvoices).
@@ -153,6 +158,7 @@ CostAndUsage MUST adhere to the following requirements:
   * CostAndUsage MUST include [PrincipalId](#datamodel.costandusage.principalid) when the *operating model* [includes requester attribution](#conditions.includesrequesterattribution).
   * CostAndUsage MUST include [RegionId](#datamodel.costandusage.regionid) when the *operating model* [includes regions](#conditions.includesregions).
   * CostAndUsage MUST include [RegionName](#datamodel.costandusage.regionname) when the *operating model* [includes regions](#conditions.includesregions).
+  * CostAndUsage MUST include [RequesterDetails](#datamodel.costandusage.requesterdetails) when the *operating model* [includes requester attribution](#conditions.includesrequesterattribution).
   * CostAndUsage MUST include [ResourceId](#datamodel.costandusage.resourceid) when the *operating model* [includes provisioned resources](#conditions.includesprovisionedresources).
   * CostAndUsage MUST include [ResourceName](#datamodel.costandusage.resourcename) when the *operating model* [includes provisioned resources](#conditions.includesprovisionedresources).
   * CostAndUsage MUST include [ResourceType](#datamodel.costandusage.resourcetype) when the *operating model* [includes provisioned resources](#conditions.includesprovisionedresources) and [includes resource type assignment](#conditions.includesresourcetypeassignment).
@@ -187,6 +193,10 @@ CostAndUsage MUST adhere to the following requirements:
 * CostAndUsage *FOCUS columns* MUST conform to [FocusColumnHandling](#attributes.focuscolumnhandling) requirements.
 * CostAndUsage *FOCUS columns* MUST conform to [NullHandling](#attributes.nullhandling) requirements.
 * CostAndUsage *custom columns* MUST conform to [CustomColumnHandling](#attributes.customcolumnhandling) requirements.
+* CostAndUsage documentation MUST adhere to the following requirements:
+  * CostAndUsage documentation MUST include the use cases in which [CredentialId](#datamodel.costandusage.credentialid) is not null.
+  * CostAndUsage documentation MUST include the use cases in which [PrincipalId](#datamodel.costandusage.principalid) is not null.
+  * CostAndUsage documentation MUST include the use cases in which [RequesterDetails](#datamodel.costandusage.requesterdetails) is not null.
 
 ## Dataset ID<!--SkipTOC-->
 

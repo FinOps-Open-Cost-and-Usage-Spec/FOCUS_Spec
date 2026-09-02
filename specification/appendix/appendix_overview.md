@@ -17,6 +17,7 @@
 | [Examples: JSON Object](#appendix.examples:jsonobject) | Provides examples for columns using the JSON Object Format, such as Contract Commitment Applicability. |
 | [Examples: Metadata](#appendix.examples:metadata) | Contains JSON payload examples for updating Data Generator, Dataset, Schema, and Recency metadata. |
 | [Examples: Participating Entity Identification](#appendix.examples:participatingentityidentification) | Illustrates how to identify the roles of participating entities (e.g., Service Provider, Invoice Issuer, Host Provider, Data Generator) across various supply chain scenarios. |
+| [Examples: Requester Attribution](#appendix.examples:requesterattribution) | Illustrates how Principal ID and Credential ID are populated across different technology environments, including where a charge carries one identifier but not the other, and why neither column identifies the party that benefits from a charge. |
 | [Examples: SaaS](#appendix.examples:saas) | Illustrates how to model SaaS billing scenarios, including simple SaaS agreements, SaaS spend agreements, and virtual currency pricing models. |
 | [Grouping Constructs for Resources or Services](#appendix.groupingconstructsforresourcesorservices) | Outlines and compares the two distinct levels of resource or service grouping mechanisms supported by FOCUS: billing accounts and sub accounts. |
 | [Invoice and Billing Period Handling](#appendix.invoiceandbillingperiodhandling) | Outlines invoice reconciliation, invoice issuance, and open vs. closed billing periods across FOCUS datasets, including correction handling. |
@@ -36,6 +37,7 @@ The table below outlines the fictitious *data generators* used throughout the ap
 | **CrestNode** | Cloud Service Provider | An enterprise-focused cloud platform with deep integrations into existing corporate software ecosystems and directory services. | Microsoft Azure |
 | **LatticeScale** | Cloud Service Provider | A cloud provider heavily optimized for machine learning, data analytics, and containerized Kubernetes workloads. | Google Cloud Platform (GCP) |
 | **Solora AI** | Foundation Model Developer | An AI lab that develops and trains foundation models that are sold directly and served by cloud providers as a first-party offering. | OpenAI, Anthropic |
+| **Meridian AI** | AI Inference Provider | An AI provider offering hosted inference endpoints, sold directly and through cloud marketplaces. | Cohere, Mistral AI |
 | **OmniQuery** | Data Platform | A centralized hub for storing, processing, and analyzing massive datasets to drive business intelligence. | Snowflake, Databricks |
 | **StackLens** | SaaS Observability | A monitoring tool that tracks application performance, logs, and system health in real-time to prevent downtime. | Datadog, New Relic |
 | **SprintCanvas** | Project Management | A collaborative workspace for planning, assigning, and tracking team tasks and agile workflows. | Jira, Asana, Trello |
