@@ -320,10 +320,14 @@ A Resource or Service-Provider-defined construct for grouping resources and/or o
 
 An agreement specified on a [*contract*](#glossary:contract) or [*invoice*](#glossary:invoice).
 
+<a name="glossary:token"><b>Token</b></a>
+
+A unit of measure representing a discrete quantity of content processed by a model. The amount of content a single token represents is determined by the model, so token counts are not directly comparable across models. Distinct from a token issued as a [*virtual currency*](#glossary:virtual-currency), which denominates value rather than measuring consumption.
+
 <a name="glossary:unit-pricing"><b>Unit Pricing</b></a>
 
 A billing concept where the cost of a [*charge*](#glossary:charge) is deterministically derived as the product of a unit price (defined per [*SKU Price*](#glossary:sku-price)) and the corresponding [Pricing Quantity](#datamodel.costandusage.pricingquantity), representing purchased or consumed volume of a [*SKU*](#glossary:sku).
 
 <a name="glossary:virtual-currency"><b>Virtual Currency</b></a>
 
-A proprietary currency (e.g., credits, tokens) issued by service providers and independent of government regulation.
+A proprietary currency (e.g., credits, prepaid tokens) issued by service providers and independent of government regulation. Distinct from a [*token*](#glossary:token) as a unit of measure for content processed by a model.
