@@ -21,8 +21,8 @@ SkuPriceId MUST adhere to the following requirements:
   * SkuPriceId MAY match SkuId.
   * SkuPriceId MUST be associated with a given [*resource*](#glossary:resource) or [*service*](#glossary:service) when ChargeCategory is "Usage" or "Purchase".
   * SkuPriceId MUST reference a *SKU Price* in a service-provider-supplied *price list*, enabling the lookup of detailed information about the *SKU Price*.
-  * SkuPriceId MUST be a valid reference to the [ListUnitPrice](#datamodel.costandusage.listunitprice) when the service provider publishes unit prices exclusive of discounts.
-  * SkuPriceId MUST be a valid reference to the [ContractedUnitPrice](#datamodel.costandusage.contractedunitprice) when the service provider supports negotiated pricing concepts.
+  * SkuPriceId MUST be a valid reference to the [ListUnitPrice](#datamodel.costandusage.listunitprice).
+  * SkuPriceId MUST be a valid reference to the [ContractedUnitPrice](#datamodel.costandusage.contractedunitprice).
 
 See [Examples: Commitment Discount Flexibility](#appendix.examples:commitmentdiscountflexibility) for more details around *commitment discount flexibility*.
 
@@ -42,9 +42,9 @@ A service-provider-specified unique identifier that represents a specific *SKU P
 
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datamodel.costandusage)             |
+| Dataset         | [Cost and Usage](#datamodel.costandusage)            |
 | Column type     | Dimension                                            |
-| Feature level   | Conditional                                          |
+| Feature level   | Mandatory                                            |
 | Allows nulls    | True                                                 |
 | Data type       | String                                               |
 | Value format    | \<not specified>                                     |

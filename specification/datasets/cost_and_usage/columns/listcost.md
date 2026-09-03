@@ -1,6 +1,12 @@
 # List Cost
 
-List Cost represents the cost calculated by multiplying the [*list unit price*](#glossary:list-unit-price) and the corresponding [Pricing Quantity](#datamodel.costandusage.pricingquantity). List Cost is denominated in the [Billing Currency](#datamodel.costandusage.billingcurrency) and is commonly used for calculating savings based on various rate optimization activities by comparing it with [Contracted Cost](#datamodel.costandusage.contractedcost), [Billed Cost](#datamodel.costandusage.billedcost) and [Effective Cost](#datamodel.costandusage.effectivecost).
+List Cost represents the cost of a [*charge*](#glossary:charge) based on the service-provider-suggested pricing.
+
+When [List Unit Price](#datamodel.costandusage.listunitprice) and [Pricing Quantity](#datamodel.costandusage.pricingquantity) are provided for the *charge*, List Cost is calculated by multiplying the List Unit Price by the corresponding Pricing Quantity.
+
+List Cost does not reflect negotiated unit price adjustments for the associated [*SKU Price*](#glossary:sku-price) or any cost impact conditional on a discount-bearing [*commitment program*](#glossary:commitment-program) (e.g., [*commitment discount*](#glossary:commitment-discount)) being applied to the *charge*.
+
+List Cost is denominated in the [Billing Currency](#datamodel.costandusage.billingcurrency). List Cost is commonly used to calculate savings from various negotiated and rate optimization activities by comparing it with [Contracted Cost](#datamodel.costandusage.contractedcost), [Billed Cost](#datamodel.costandusage.billedcost), and [Effective Cost](#datamodel.costandusage.effectivecost).
 
 ## Requirements
 
@@ -10,14 +16,16 @@ ListCost MUST adhere to the following requirements:
 * ListCost MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * ListCost MUST NOT be null.
 * ListCost MUST be denominated in the BillingCurrency.
-* When [ListUnitPrice](#datamodel.costandusage.listunitprice) is null, ListCost MUST adhere to the following requirements:
-  * ListCost of a [*charge*](#glossary:charge) calculated based on other *charges* (e.g., when the [ChargeCategory](#datamodel.costandusage.chargecategory) is "Tax") MUST be calculated based on the ListCost of those related *charges*.
-  * ListCost of a *charge* unrelated to other *charges* (e.g., when the ChargeCategory is "Credit") MUST be equal to the [BilledCost](#datamodel.costandusage.billedcost).
+* ListCost MUST NOT reflect negotiated unit price adjustments for the associated *SKU Price*.
+* ListCost MUST NOT reflect any cost impact conditional on a discount-bearing *commitment program* being applied to the *charge*.
+* ListCost MUST equal BilledCost when [ChargeCategory](#datamodel.costandusage.chargecategory) is "Credit".
+* ListCost MUST be calculated based on the ListCost of the related *charges* when ChargeCategory is "Tax".
+* ListCost MAY differ from BilledCost when ChargeCategory is "Adjustment".
 * ListCost MUST equal the product of ListUnitPrice and PricingQuantity when ListUnitPrice is not null and PricingQuantity is not null.
 
 ## Usability Constraints
 
-**Aggregation:** When aggregating List Cost for savings calculations, it is important to exclude either [Charge Category](#datamodel.costandusage.chargecategory) "Purchase" *charges* (one-time and recurring) that are paid to cover future eligible *charges* (e.g., [commitment discount](#glossary:commitment-discount)) or the covered [Charge Category](#datamodel.costandusage.chargecategory) "Usage" *charges* themselves. This exclusion helps prevent double counting of these *charges* in the aggregation. Which set of *charges* to exclude depends on whether costs are aggregated on a billed basis (exclude covered *charges*) or accrual basis (exclude Purchases for future *charges*). For instance, *charges* categorized as [Charge Category](#datamodel.costandusage.chargecategory) "Purchase" and their related [Charge Category](#datamodel.costandusage.chargecategory) "Tax" *charges* for a Commitment Discount might be excluded from an accrual basis cost aggregation of List Cost. This is because the "Usage" and "Tax" charge records provided during the term of the commitment discount already specify the List Cost. Purchase *charges* that cover future eligible *charges* can be identified by filtering for [Charge Category](#datamodel.costandusage.chargecategory) "Purchase" records with a [Billed Cost](#datamodel.costandusage.billedcost) greater than 0 and an [Effective Cost](#datamodel.costandusage.effectivecost) equal to 0.
+**Aggregation:** When aggregating List Cost for savings calculations, exclude either the [*covering charges*](#glossary:covering-charge) (e.g., [*commitment discount*](#glossary:commitment-discount) purchases) or the [*covered charges*](#glossary:covered-charge) (e.g., usage charges applied against *commitment discount*) to avoid double counting. Including both would result in the same costs being counted more than once in the aggregation. The appropriate set to exclude depends on the cost basis: exclude *covered charges* when aggregating on a billed basis, or exclude *covering charges* when aggregating on an accrual basis.
 
 ## Column ID
 
@@ -29,7 +37,7 @@ List Cost
 
 ## Description
 
-Cost calculated by multiplying List Unit Price and the corresponding Pricing Quantity.
+Cost of a *charge* based on the service-provider-suggested pricing.
 
 ## Content Constraints
 

@@ -1,6 +1,14 @@
 # Contracted Cost
 
-Contracted Cost represents the cost calculated by multiplying [*contracted unit price*](#glossary:contracted-unit-price) and the corresponding [Pricing Quantity](#datamodel.costandusage.pricingquantity). Contracted Cost is denominated in the [Billing Currency](#datamodel.costandusage.billingcurrency) and is commonly used for calculating savings based on negotiation activities, by comparing it with [List Cost](#datamodel.costandusage.listcost). If [*negotiated discounts*](#glossary:negotiated-discount) are not applicable, the Contracted Cost defaults to the List Cost.
+Contracted Cost represents the cost of a [*charge*](#glossary:charge) based on negotiated unit pricing.
+
+When [Contracted Unit Price](#datamodel.costandusage.contractedunitprice) and [Pricing Quantity](#datamodel.costandusage.pricingquantity) are provided for the *charge*, Contracted Cost is calculated by multiplying the Contracted Unit Price by the corresponding Pricing Quantity.
+
+Contracted Cost reflects negotiated unit price adjustments for the associated [*SKU Price*](#glossary:sku-price), independent of any discount-bearing [*commitment programs*](#glossary:commitment-program) (e.g., [*commitment discount*](#glossary:commitment-discount)) being applied to the charge. Contracted Cost does not reflect any cost impact conditional on a discount-bearing *commitment program* being applied to the *charge*.
+
+When no negotiated unit price adjustments apply to the *charge*, Contracted Cost equals [List Cost](#datamodel.costandusage.listcost).
+
+Contracted Cost is denominated in the [Billing Currency](#datamodel.costandusage.billingcurrency). Contracted Cost is commonly used for calculating savings based on negotiation activities by comparing it with List Cost.
 
 ## Requirements
 
@@ -10,14 +18,16 @@ ContractedCost MUST adhere to the following requirements:
 * ContractedCost MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * ContractedCost MUST NOT be null.
 * ContractedCost MUST be denominated in the BillingCurrency.
-* When [ContractedUnitPrice](#datamodel.costandusage.contractedunitprice) is null, ContractedCost MUST adhere to the following requirements:
-  * ContractedCost of a [*charge*](#glossary:charge) calculated based on other *charges* (e.g., when the [ChargeCategory](#datamodel.costandusage.chargecategory) is "Tax") MUST be calculated based on the ContractedCost of those related *charges*.
-  * ContractedCost of a *charge* unrelated to other *charges* (e.g., when the ChargeCategory is "Credit") MUST be equal to the [BilledCost](#datamodel.costandusage.billedcost).
+* ContractedCost MUST NOT reflect any cost impact conditional on a discount-bearing *commitment program* being applied to the *charge*.
+* ContractedCost MUST equal ListCost when no negotiated unit price adjustments apply to the *charge*.
+* ContractedCost MUST equal [BilledCost](#datamodel.costandusage.billedcost) when [ChargeCategory](#datamodel.costandusage.chargecategory) is "Credit".
+* ContractedCost MUST be calculated based on the ContractedCost of the related *charges* when ChargeCategory is "Tax".
+* ContractedCost MAY differ from BilledCost when ChargeCategory is "Adjustment".
 * ContractedCost MUST equal the product of ContractedUnitPrice and PricingQuantity when ContractedUnitPrice is not null and PricingQuantity is not null.
 
 ## Usability Constraints
 
-**Aggregation:** When aggregating Contracted Cost for savings calculations, it's important to exclude either [Charge Category](#datamodel.costandusage.chargecategory) "Purchase" *charges* (one-time and recurring) that are paid to cover future eligible *charges* (e.g., [commitment discount](#glossary:commitment-discount)) or the covered [Charge Category](#datamodel.costandusage.chargecategory) "Usage" *charges* themselves. This exclusion helps prevent double counting of these *charges* in the aggregation. Which set of *charges* to exclude depends on whether costs are aggregated on a billed basis (exclude covered *charges*) or accrual basis (exclude Purchases for future *charges*). For instance, *charges* categorized as [Charge Category](#datamodel.costandusage.chargecategory) "Purchase" and their related [Charge Category](#datamodel.costandusage.chargecategory) "Tax" *charges* for a Commitment Discount might be excluded from an accrual basis cost aggregation of Contracted Cost. This is because the "Usage" and "Tax" charge records provided during the commitment [*period*](#glossary:period) already specify the Contracted Cost. Purchase *charges* that cover future eligible *charges* can be identified by filtering for [Charge Category](#datamodel.costandusage.chargecategory) "Purchase" records with a [Billed Cost](#datamodel.costandusage.billedcost) greater than 0 and an [Effective Cost](#datamodel.costandusage.effectivecost) equal to 0.
+**Aggregation:** When aggregating Contracted Cost for savings calculations, exclude either the [*covering charges*](#glossary:covering-charge) (e.g., [*commitment discount*](#glossary:commitment-discount) purchases) or the [*covered charges*](#glossary:covered-charge) (e.g., usage charges applied against *commitment discount*) to avoid double counting. Including both would result in the same costs being counted more than once in the aggregation. The appropriate set to exclude depends on the cost basis: exclude *covered charges* when aggregating on a billed basis, or exclude *covering charges* when aggregating on an accrual basis.
 
 ## Column ID
 
@@ -29,7 +39,7 @@ Contracted Cost
 
 ## Description
 
-Cost calculated by multiplying *contracted unit price* and the corresponding Pricing Quantity.
+Cost of a *charge* based on negotiated unit pricing.
 
 ## Content Constraints
 

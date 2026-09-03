@@ -16,7 +16,7 @@ PricingQuantity MUST adhere to the following requirements:
 
 ## Usability Constraints
 
-**Aggregation:** When aggregating Pricing Quantity for commitment utilization calculations, it's important to exclude [*commitment discount*](#glossary:commitment-discount) purchases (i.e., when Charge Category is "Purchase") that are paid to cover future eligible [*charges*](#glossary:charge) (e.g., *commitment discount*). Otherwise, when accounting for all upfront or accrued purchases, it's important to exclude *commitment discount* usage (i.e., when Charge Category is "Usage"). This exclusion helps prevent double counting of these quantities in the aggregation.
+**Aggregation:** When aggregating Pricing Quantity per [SKU ID](#datamodel.costandusage.skuid) for a SKU that includes both [*covering charges*](#glossary:covering-charge) and their [*covered charges*](#glossary:covered-charge), exclude either the *covering charges* or the *covered charges* to avoid double counting. The appropriate set to exclude depends on the purpose: exclude *covering charges* when calculating utilization, or exclude *covered charges* when accounting for billed purchases.
 
 ## Column ID
 
