@@ -21,12 +21,12 @@ The Invoice Detail dataset is a transactional dataset that represents the financ
 | [Invoice Issue Date](#datamodel.invoicedetail.invoiceissuedate)                   | Dimension   | Mandatory     | True        | Date/Time |
 | [Invoice Issue Status](#datamodel.invoicedetail.invoiceissuestatus)             | Dimension   | Mandatory     | False        | String    |
 | [Invoice Issuer Name](#datamodel.invoicedetail.invoiceissuername)                 | Dimension   | Mandatory     | False        | String    |
-| [Payment Currency](#datamodel.invoicedetail.paymentcurrency)                     | Dimension   | [Conditional](#conditions.includesbillingandpaymentcurrencydifferences)   | False        | String    |
-| [Payment Currency Billed Cost](#datamodel.invoicedetail.paymentcurrencybilledcost) | Metric      | [Conditional](#conditions.includesbillingandpaymentcurrencydifferences)   | False        | Decimal   |
-| [Payment Currency Invoice Detail ID](#datamodel.invoicedetail.paymentcurrencyinvoicedetailid) | Dimension | [Conditional](#conditions.includesaggregationlevelcurrencydifferences) | False | String |
+| [Payment Currency](#datamodel.invoicedetail.paymentcurrency)                     | Dimension   | Conditional   | False        | String    |
+| [Payment Currency Billed Cost](#datamodel.invoicedetail.paymentcurrencybilledcost) | Metric      | Conditional   | False        | Decimal   |
+| [Payment Currency Invoice Detail ID](#datamodel.invoicedetail.paymentcurrencyinvoicedetailid) | Dimension | Conditional | False | String |
 | [Payment Due Date](#datamodel.invoicedetail.paymentduedate)               | Dimension   | Mandatory     | True         | Date/Time |
 | [Payment Terms](#datamodel.invoicedetail.paymentterms)                     | Dimension   | Mandatory     | False        | String    |
-| [Purchase Order Number](#datamodel.invoicedetail.purchaseordernumber)             | Dimension   | [Conditional](#conditions.includespurchaseordernumbers)   | True        | String    |
+| [Purchase Order Number](#datamodel.invoicedetail.purchaseordernumber)             | Dimension   | Conditional   | True        | String    |
 | [Reference Invoice ID](#datamodel.invoicedetail.referenceinvoiceid)               | Dimension   | Mandatory     | False        | String    |
 
 ## Relationships<!--SkipTOC-->
@@ -63,7 +63,7 @@ InvoiceDetail MUST adhere to the following requirements:
   * InvoiceDetail MUST include [InvoiceIssueStatus](#datamodel.invoicedetail.invoiceissuestatus).
   * InvoiceDetail MUST include [InvoiceIssuerName](#datamodel.invoicedetail.invoiceissuername).
   * InvoiceDetail MUST include [PaymentCurrency](#datamodel.invoicedetail.paymentcurrency) when the [*operating model*](#glossary:operating-model) [includes billing and payment currency differences](#conditions.includesbillingandpaymentcurrencydifferences).
-  * InvoiceDetail MUST include [PaymentCurrencyBilledCost](#datamodel.invoicedetail.paymentcurrencybilledcost) when the *operating model* [includes billing and payment currency differences](#conditions.includesbillingandpaymentcurrencydifferences).
+  * InvoiceDetail MUST include [PaymentCurrencyBilledCost](#datamodel.invoicedetail.paymentcurrencybilledcost) when the *operating model* includes billing and payment currency differences.
   * InvoiceDetail MUST include [PaymentCurrencyInvoiceDetailId](#datamodel.invoicedetail.paymentcurrencyinvoicedetailid) when the *operating model* [includes aggregation level currency differences](#conditions.includesaggregationlevelcurrencydifferences).
   * InvoiceDetail MUST include [PaymentDueDate](#datamodel.invoicedetail.paymentduedate).
   * InvoiceDetail MUST include [PaymentTerms](#datamodel.invoicedetail.paymentterms).
