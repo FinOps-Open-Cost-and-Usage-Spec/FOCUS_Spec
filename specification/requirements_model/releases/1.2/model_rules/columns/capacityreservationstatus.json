@@ -106,11 +106,9 @@
         "Value": null
       },
       "Condition": {
-        "AND": {
-          "CheckFunction": "CheckValue",
-          "ColumnName": "CapacityReservationId",
-          "Value": null
-        }
+        "CheckFunction": "CheckValue",
+        "ColumnName": "CapacityReservationId",
+        "Value": null
       },
       "Dependencies": [
         "CapacityReservationId-C-003-C"
@@ -138,7 +136,8 @@
         "Value": null
       },
       "Condition": {
-        "AND": [
+        "CheckFunction": "AND",
+        "Items": [
           {
             "CheckFunction": "CheckNotValue",
             "ColumnName": "CapacityReservationId",
