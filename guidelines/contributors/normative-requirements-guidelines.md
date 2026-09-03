@@ -395,7 +395,7 @@ Rules in this document that refer to what a requirement **constrains** apply to 
 
 The grammatical subject SHOULD be explicit and unambiguous.
 
-**Exception for Aggregate Expressions:** When a requirement describes an aggregate or derived value (e.g., sums, products, counts), the aggregate expression (e.g., `The sum of`, `The product of`) MAY be used as the grammatical subject when it improves readability. The aggregate expression is not itself a Constrainable Entity; the column or metric being constrained MUST still be clearly identifiable within the requirement.
+**Exception for Aggregate Expressions:** When a requirement describes an aggregate or derived value (e.g., sums, products, counts), the aggregate expression (e.g., `The sum of`, `The product of`) MAY be used as the grammatical subject when it improves readability. The aggregate expression is not itself a Constrainable Entity; the column or object property being constrained MUST still be clearly identifiable within the requirement.
 
 #### Allowed Constrainable Entities
 
