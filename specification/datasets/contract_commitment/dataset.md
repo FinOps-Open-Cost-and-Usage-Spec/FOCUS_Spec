@@ -23,7 +23,7 @@ The Contract Commitment dataset is a supporting dataset that describes the terms
 | [Contract Commitment Offer Category](#datamodel.contractcommitment.contractcommitmentoffercategory) | Dimension | Mandatory | False | String |
 | [Contract Commitment Payment Interval](#datamodel.contractcommitment.contractcommitmentpaymentinterval) | Dimension | Mandatory | False | String |
 | [Contract Commitment Payment Model](#datamodel.contractcommitment.contractcommitmentpaymentmodel) | Dimension | Mandatory | False | String |
-| [Contract Commitment Payment Upfront Percentage](#datamodel.contractcommitment.contractcommitmentpaymentupfrontpercentage) | Metric | [Conditional](#conditions.includespartialupfrontpayments) | False | Decimal |
+| [Contract Commitment Payment Upfront Percentage](#datamodel.contractcommitment.contractcommitmentpaymentupfrontpercentage) | Metric | Conditional | False | Decimal |
 | [Contract Commitment Period End](#datamodel.contractcommitment.contractcommitmentperiodend) | Dimension | Mandatory | False | Date/Time |
 | [Contract Commitment Period Start](#datamodel.contractcommitment.contractcommitmentperiodstart) | Dimension | Mandatory | False | Date/Time |
 | [Contract Commitment Quantity](#datamodel.contractcommitment.contractcommitmentquantity) | Metric | Mandatory | True | Decimal |
@@ -33,8 +33,8 @@ The Contract Commitment dataset is a supporting dataset that describes the terms
 | [Contract Period End](#datamodel.contractcommitment.contractperiodend) | Dimension | Mandatory | False | Date/Time |
 | [Contract Period Start](#datamodel.contractcommitment.contractperiodstart) | Dimension | Mandatory | False | Date/Time |
 | [Invoice Issuer Name](#datamodel.contractcommitment.invoiceissuername) | Dimension | Mandatory | False | String |
-| [Pricing Currency](#datamodel.contractcommitment.pricingcurrency) | Dimension | [Conditional](#conditions.includespricing-billingcurrencydifferences) | False | String |
-| [Pricing Currency Contract Commitment Cost](#datamodel.contractcommitment.pricingcurrencycontractcommitmentcost) | Metric | [Conditional](#conditions.includespricing-billingcurrencydifferences) | True | Decimal |
+| [Pricing Currency](#datamodel.contractcommitment.pricingcurrency) | Dimension | Conditional | False | String |
+| [Pricing Currency Contract Commitment Cost](#datamodel.contractcommitment.pricingcurrencycontractcommitmentcost) | Metric | Conditional | True | Decimal |
 | [Service Provider Name](#datamodel.contractcommitment.serviceprovidername) | Dimension | Mandatory | False | String |
 
 ## Relationships<!--SkipTOC-->
@@ -81,7 +81,7 @@ ContractCommitment MUST adhere to the following requirements:
   * ContractCommitment MUST include [ContractPeriodStart](#datamodel.contractcommitment.contractperiodstart).
   * ContractCommitment MUST include [InvoiceIssuerName](#datamodel.contractcommitment.invoiceissuername).
   * ContractCommitment MUST include [PricingCurrency](#datamodel.contractcommitment.pricingcurrency) when the *operating model* [includes pricing and billing currency differences](#conditions.includespricing-billingcurrencydifferences).
-  * ContractCommitment MUST include [PricingCurrencyContractCommitmentCost](#datamodel.contractcommitment.pricingcurrencycontractcommitmentcost) when the *operating model* [includes pricing and billing currency differences](#conditions.includespricing-billingcurrencydifferences).
+  * ContractCommitment MUST include [PricingCurrencyContractCommitmentCost](#datamodel.contractcommitment.pricingcurrencycontractcommitmentcost) when the *operating model* includes pricing and billing currency differences.
   * ContractCommitment MUST include [ServiceProviderName](#datamodel.contractcommitment.serviceprovidername).
 * ContractCommitment MUST conform to [CorrectionHandling](#attributes.correctionhandling) requirements.
 * ContractCommitment MUST conform to [DatasetCompleteness](#attributes.datasetcompleteness) requirements.
