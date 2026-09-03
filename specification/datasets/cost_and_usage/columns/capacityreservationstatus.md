@@ -36,15 +36,15 @@ Indicates whether the *charge* represents either the consumption of a *capacity 
 
 ## Content Constraints
 
-| Constraint      | Value                                                |
-| :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datamodel.costandusage)             |
-| Conditions      | [Includes Capacity Reservations](#conditions.includescapacityreservations) |
-| Column type     | Dimension                                            |
-| Feature level   | Conditional                                          |
-| Allows nulls    | True                                                 |
-| Data type       | String                                               |
-| Value format    | Allowed values                                       |
+| Constraint                 | Value                                     |
+| :------------------------- | :---------------------------------------- |
+| Dataset                    | [Cost and Usage](#datamodel.costandusage) |
+| Operating Model Conditions | [Includes Capacity Reservations](#operatingmodelconditions.includescapacityreservations) |
+| Column type                | Dimension                                 |
+| Feature level              | Conditional                               |
+| Allows nulls               | True                                      |
+| Data type                  | String                                    |
+| Value format               | Allowed values                            |
 
 ## Version Introduced
 

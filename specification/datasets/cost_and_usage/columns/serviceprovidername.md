@@ -32,15 +32,15 @@ The name of the entity that made the *resources* or *services* available for pur
 
 ## Content Constraints
 
-| Constraint      | Value                                                |
-| :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datamodel.costandusage)             |
-| Conditions      | Not applicable                                        |
-| Column type     | Dimension                                            |
-| Feature level   | Mandatory                                            |
-| Allows nulls    | False                                                |
-| Data type       | String                                               |
-| Value format    | \<not specified>                                     |
+| Constraint                 | Value                                     |
+| :------------------------- | :---------------------------------------- |
+| Dataset                    | [Cost and Usage](#datamodel.costandusage) |
+| Operating Model Conditions | Not applicable                            |
+| Column type                | Dimension                                 |
+| Feature level              | Mandatory                                 |
+| Allows nulls               | False                                     |
+| Data type                  | String                                    |
+| Value format               | \<not specified>                          |
 
 ## Version Introduced
 

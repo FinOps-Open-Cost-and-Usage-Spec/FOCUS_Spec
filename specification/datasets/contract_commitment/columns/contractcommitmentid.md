@@ -28,15 +28,15 @@ A service-provider-assigned identifier describing a single contract term agreed 
 
 ## Content Constraints
 
-|    Constraint   |      Value                                           |
-|:----------------|:-----------------------------------------------------|
-| Dataset         | [Contract Commitment](#datamodel.contractcommitment)  |
-| Conditions      | Not applicable                                        |
-| Column type     | Dimension                                            |
-| Feature level   | Mandatory                                            |
-| Allows nulls    | False                                                |
-| Data type       | String                                               |
-| Value format    | \<not specified>                                     |
+| Constraint                 | Value                                                |
+| :------------------------- | :--------------------------------------------------- |
+| Dataset                    | [Contract Commitment](#datamodel.contractcommitment) |
+| Operating Model Conditions | Not applicable                                       |
+| Column type                | Dimension                                            |
+| Feature level              | Mandatory                                            |
+| Allows nulls               | False                                                |
+| Data type                  | String                                               |
+| Value format               | \<not specified>                                     |
 
 ## Version Introduced
 

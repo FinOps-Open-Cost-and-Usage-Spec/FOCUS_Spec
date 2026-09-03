@@ -56,7 +56,7 @@ The guidelines cover authoring of normative requirements for the following entit
 * **FOCUS columns** — individual columns within FOCUS datasets, defined by FOCUS. Columns may contain nested objects and object properties, which can have additional normative requirements through reusable attributes.
 * **Custom columns** — individual columns within FOCUS datasets, not defined by FOCUS. These guidelines describe how normative requirements should be authored for custom extensions while preserving interoperability.
 * **FOCUS attributes** — reusable sets of normative constraints that datasets, columns, or column sub-elements (such as objects and object properties) conform to. These guidelines define how normative requirements are authored within Attribute sections and subsequently reused throughout the specification.
-* **FOCUS Conditions** — reusable applicability expressions that define the circumstances under which normative requirements apply. Conditions apply to Data Model, Datasets, and Columns to express when specific normative requirements become applicable.
+* **FOCUS Operating Model Conditions** — reusable applicability expressions that define the circumstances under which normative requirements apply. Operating Model Conditions apply to Data Model, Datasets, and Columns to express when specific normative requirements become applicable.
 
 The diagram below illustrates the relationships among these entities and identifies where normative requirements may be authored and applied throughout the FOCUS specification:
 
@@ -67,9 +67,9 @@ Dataset ||--|{ Column : has
 Column ||--o{ Object : contains
 Object ||--|{ ObjectProperty : has
 
-Condition }|..|| DataModel : applies-to
-Condition }|..|{ Dataset : applies-to
-Condition }|..|{ Column : applies-to
+OperatingModelCondition }|..|| DataModel : applies-to
+OperatingModelCondition }|..|{ Dataset : applies-to
+OperatingModelCondition }|..|{ Column : applies-to
 
 Dataset }|..|{ Attribute : conforms-to
 Column }|..|{ Attribute : conforms-to
@@ -77,7 +77,7 @@ ObjectProperty }|..|{ Attribute : conforms-to
 
 %% Normative reusable entities
 style Attribute fill:#f8d7da,stroke:#666,stroke-width:1px
-style Condition fill:#f8d7da,stroke:#666,stroke-width:1px
+style OperatingModelCondition fill:#f8d7da,stroke:#666,stroke-width:1px
 
 %% Schema-level entities
 style DataModel fill:#d4edda,stroke:#666,stroke-width:1px
@@ -97,7 +97,7 @@ style ObjectProperty fill:#d4edda,stroke:#666,stroke-width:1px
 * `|| -- has -- |{` : one parent to one-or-more enumerated structural members
 * `|| -- contains -- o{` : one parent to zero-or-more child entities (array of objects)
 * `}| .. conforms-to .. |{` : many children to one-or-more parents conformance relationship
-* `}| .. applies-to .. |{` : e.g., many Conditions apply to many target entities
+* `}| .. applies-to .. |{` : e.g., many Operating Model Conditions apply to many target entities
 
 **Exceptions:**
 

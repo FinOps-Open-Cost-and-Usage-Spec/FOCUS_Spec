@@ -28,15 +28,15 @@ A name assigned to a grouping of [*resources*](#glossary:resource) or [*services
 
 ## Content Constraints
 
-| Constraint      | Value                                                |
-| :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datamodel.costandusage)             |
-| Conditions      | [Includes Sub Accounts](#conditions.includessubaccounts) |
-| Column type     | Dimension                                            |
-| Feature level   | Conditional                                          |
-| Allows nulls    | True                                                 |
-| Data type       | String                                               |
-| Value format    | \<not specified>                                     |
+| Constraint                 | Value                                     |
+| :------------------------- | :---------------------------------------- |
+| Dataset                    | [Cost and Usage](#datamodel.costandusage) |
+| Operating Model Conditions | [Includes Sub Accounts](#operatingmodelconditions.includessubaccounts) |
+| Column type                | Dimension                                 |
+| Feature level              | Conditional                               |
+| Allows nulls               | True                                      |
+| Data type                  | String                                    |
+| Value format               | \<not specified>                          |
 
 ## Version Introduced
 

@@ -26,15 +26,15 @@ The timestamp when the Invoice Detail record was last updated.
 
 ## Content Constraints
 
-|    Constraint    |              Value             |
-|:----------------|:--------------------------------|
-| Dataset         | [Invoice Detail](#datamodel.invoicedetail)             |
-| Conditions      | Not applicable                                         |
-| Column type     | Dimension                       |
-| Feature level   | Mandatory                       |
-| Allows nulls    | False                           |
-| Data type       | Date/Time                        |
-| Value format    | [Date/Time Format](#attributes.date/timeformat) |
+| Constraint                 | Value                                           |
+| :------------------------- | :---------------------------------------------- |
+| Dataset                    | [Invoice Detail](#datamodel.invoicedetail)      |
+| Operating Model Conditions | Not applicable                                  |
+| Column type                | Dimension                                       |
+| Feature level              | Mandatory                                       |
+| Allows nulls               | False                                           |
+| Data type                  | Date/Time                                       |
+| Value format               | [Date/Time Format](#attributes.date/timeformat) |
 
 ## Version Introduced
 

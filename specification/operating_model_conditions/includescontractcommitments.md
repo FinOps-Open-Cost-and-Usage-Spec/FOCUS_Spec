@@ -1,6 +1,6 @@
 # Includes Contract Commitments
 
-The Includes Contract Commitments condition represents a verifiable state indicating whether the [*operating model*](#glossary:operating-model) includes [*contract commitments*](#glossary:contract-commitment).
+The Includes Contract Commitments operating model condition represents a verifiable state indicating whether the [*operating model*](#glossary:operating-model) includes [*contract commitments*](#glossary:contract-commitment).
 
 ## Requirements
 
@@ -9,7 +9,7 @@ IncludesContractCommitments MUST adhere to the following requirements:
 * IncludesContractCommitments MUST evaluate to true when the *operating model* includes *contract commitments*.
 * IncludesContractCommitments MUST evaluate to false when the *operating model* does not include *contract commitments*.
 
-## Condition ID
+## Operating Model Condition ID
 
 IncludesContractCommitments
 

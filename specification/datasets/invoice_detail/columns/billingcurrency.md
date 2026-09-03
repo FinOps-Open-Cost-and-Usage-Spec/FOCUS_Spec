@@ -27,15 +27,15 @@ Represents the currency that a *charge* was billed in.
 
 ## Content Constraints
 
-| Constraint      | Value                               |
-|:----------------|:------------------------------------|
-| Dataset         | [Invoice Detail](#datamodel.invoicedetail)             |
-| Conditions      | Not applicable                                         |
-| Column type     | Dimension                           |
-| Feature level   | Mandatory                           |
-| Allows nulls    | False                               |
-| Data type       | String                              |
-| Value format    | [Currency Format](#attributes.currencyformat) |
+| Constraint                 | Value                                         |
+| :------------------------- | :-------------------------------------------- |
+| Dataset                    | [Invoice Detail](#datamodel.invoicedetail)    |
+| Operating Model Conditions | Not applicable                                |
+| Column type                | Dimension                                     |
+| Feature level              | Mandatory                                     |
+| Allows nulls               | False                                         |
+| Data type                  | String                                        |
+| Value format               | [Currency Format](#attributes.currencyformat) |
 
 ## Version Introduced
 

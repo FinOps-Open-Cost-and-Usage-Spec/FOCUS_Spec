@@ -27,15 +27,15 @@ An invoice-issuer-assigned name to identify the type of *billing account*.
 
 ## Content Constraints
 
-| Constraint      | Value                                                |
-| :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datamodel.costandusage)             |
-| Conditions      | [Includes Multiple Billing Account Types](#conditions.includesmultiplebillingaccounttypes) |
-| Column type     | Dimension                                            |
-| Feature level   | Conditional                                          |
-| Allows nulls    | False                                                |
-| Data type       | String                                               |
-| Value format    | \<not specified>                                     |
+| Constraint                 | Value                                     |
+| :------------------------- | :---------------------------------------- |
+| Dataset                    | [Cost and Usage](#datamodel.costandusage) |
+| Operating Model Conditions | [Includes Multiple Billing Account Types](#operatingmodelconditions.includesmultiplebillingaccounttypes) |
+| Column type                | Dimension                                 |
+| Feature level              | Conditional                               |
+| Allows nulls               | False                                     |
+| Data type                  | String                                    |
+| Value format               | \<not specified>                          |
 
 ## Version Introduced
 

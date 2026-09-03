@@ -25,15 +25,15 @@ The *national* or *virtual currency* denomination that a *resource* or *service*
 
 ## Content Constraints
 
-| Constraint      | Value                                                |
-| :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datamodel.costandusage)             |
-| Conditions      | [Includes Pricing-Billing Currency Differences](#conditions.includespricing-billingcurrencydifferences) |
-| Column type     | Dimension                                            |
-| Feature level   | Conditional                                          |
-| Allows nulls    | False                                                |
-| Data type       | String                                               |
-| Value format    | [Currency Format](#attributes.currencyformat)        |
+| Constraint                 | Value                                         |
+| :------------------------- | :-------------------------------------------- |
+| Dataset                    | [Cost and Usage](#datamodel.costandusage)     |
+| Operating Model Conditions | [Includes Pricing-Billing Currency Differences](#operatingmodelconditions.includespricing-billingcurrencydifferences) |
+| Column type                | Dimension                                     |
+| Feature level              | Conditional                                   |
+| Allows nulls               | False                                         |
+| Data type                  | String                                        |
+| Value format               | [Currency Format](#attributes.currencyformat) |
 
 ## Version Introduced
 

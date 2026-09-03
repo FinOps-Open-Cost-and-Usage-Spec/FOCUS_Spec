@@ -49,15 +49,15 @@ The state of the billing period (i.e., "Open" or "Closed"), indicating whether t
 
 ## Content Constraints
 
-| Constraint    | Value                               |
-| :------------ | :---------------------------------- |
-| Dataset         | [Billing Period](#datamodel.billingperiod)             |
-| Conditions      | Not applicable                                         |
-| Column type   | Dimension                           |
-| Feature level | Mandatory                           |
-| Allows nulls  | False                               |
-| Data type     | String                              |
-| Value format  | Allowed values                      |
+| Constraint                 | Value                                      |
+| :------------------------- | :----------------------------------------- |
+| Dataset                    | [Billing Period](#datamodel.billingperiod) |
+| Operating Model Conditions | Not applicable                             |
+| Column type                | Dimension                                  |
+| Feature level              | Mandatory                                  |
+| Allows nulls               | False                                      |
+| Data type                  | String                                     |
+| Value format               | Allowed values                             |
 
 ## Version Introduced
 

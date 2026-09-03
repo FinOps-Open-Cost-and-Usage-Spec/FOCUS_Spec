@@ -25,15 +25,15 @@ The *inclusive start bound* of a contract period.
 
 ## Content Constraints
 
-| Constraint      | Value                                                |
-|:----------------|:-----------------------------------------------------|
-| Dataset         | [Contract Commitment](#datamodel.contractcommitment)  |
-| Conditions      | Not applicable                                        |
-| Column type     | Dimension                                            |
-| Feature level   | Mandatory                                            |
-| Allows nulls    | False                                                |
-| Data type       | Date/Time                                            |
-| Value format    | [Date/Time Format](#attributes.date/timeformat)      |
+| Constraint                 | Value                                                |
+| :------------------------- | :--------------------------------------------------- |
+| Dataset                    | [Contract Commitment](#datamodel.contractcommitment) |
+| Operating Model Conditions | Not applicable                                       |
+| Column type                | Dimension                                            |
+| Feature level              | Mandatory                                            |
+| Allows nulls               | False                                                |
+| Data type                  | Date/Time                                            |
+| Value format               | [Date/Time Format](#attributes.date/timeformat)      |
 
 ## Version Introduced
 

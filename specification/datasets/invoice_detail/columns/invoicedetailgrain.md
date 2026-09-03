@@ -59,15 +59,15 @@ The set of key-value pairs that defines the granularity of the invoice line item
 
 ## Content Constraints
 
-|    Constraint    |              Value             |
-|:----------------|:--------------------------------|
-| Dataset         | [Invoice Detail](#datamodel.invoicedetail)             |
-| Conditions      | Not applicable                                         |
-| Column type     | Dimension                       |
-| Feature level   | Mandatory                       |
-| Allows nulls    | True                            |
-| Data type       | JSON                            |
-| Value format    | [Key-Value Format](#attributes.key-valueformat) |
+| Constraint                 | Value                                           |
+| :------------------------- | :---------------------------------------------- |
+| Dataset                    | [Invoice Detail](#datamodel.invoicedetail)      |
+| Operating Model Conditions | Not applicable                                  |
+| Column type                | Dimension                                       |
+| Feature level              | Mandatory                                       |
+| Allows nulls               | True                                            |
+| Data type                  | JSON                                            |
+| Value format               | [Key-Value Format](#attributes.key-valueformat) |
 
 ## Version Introduced
 

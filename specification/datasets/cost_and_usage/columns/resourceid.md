@@ -30,15 +30,15 @@ Identifier assigned to a *resource* by the service provider.
 
 ## Content Constraints
 
-| Constraint      | Value                                                |
-| :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datamodel.costandusage)             |
-| Conditions      | [Includes Provisioned Resources](#conditions.includesprovisionedresources) |
-| Column type     | Dimension                                            |
-| Feature level   | Conditional                                          |
-| Allows nulls    | True                                                 |
-| Data type       | String                                               |
-| Value format    | \<not specified>                                     |
+| Constraint                 | Value                                     |
+| :------------------------- | :---------------------------------------- |
+| Dataset                    | [Cost and Usage](#datamodel.costandusage) |
+| Operating Model Conditions | [Includes Provisioned Resources](#operatingmodelconditions.includesprovisionedresources) |
+| Column type                | Dimension                                 |
+| Feature level              | Conditional                               |
+| Allows nulls               | True                                      |
+| Data type                  | String                                    |
+| Value format               | \<not specified>                          |
 
 ## Version Introduced
 

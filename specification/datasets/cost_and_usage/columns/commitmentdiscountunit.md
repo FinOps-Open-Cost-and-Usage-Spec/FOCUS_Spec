@@ -33,15 +33,15 @@ The service-provider-specified measurement unit indicating how a service provide
 
 ## Content Constraints
 
-| Constraint      | Value                                                |
-| :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datamodel.costandusage)             |
-| Conditions      | [Includes Commitment Discounts](#conditions.includescommitmentdiscounts) |
-| Column type     | Dimension                                            |
-| Feature level   | Conditional                                          |
-| Allows nulls    | True                                                 |
-| Data type       | String                                               |
-| Value format    | [Unit Format](#attributes.unitformat)                |
+| Constraint                 | Value                                     |
+| :------------------------- | :---------------------------------------- |
+| Dataset                    | [Cost and Usage](#datamodel.costandusage) |
+| Operating Model Conditions | [Includes Commitment Discounts](#operatingmodelconditions.includescommitmentdiscounts) |
+| Column type                | Dimension                                 |
+| Feature level              | Conditional                               |
+| Allows nulls               | True                                      |
+| Data type                  | String                                    |
+| Value format               | [Unit Format](#attributes.unitformat)     |
 
 ## Version Introduced
 

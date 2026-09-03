@@ -26,15 +26,15 @@ The identifier linking a granular record to the specific [Invoice Detail](#datam
 
 ## Content Constraints
 
-|    Constraint   |              Value              |
-|:----------------|:--------------------------------|
-| Dataset         | [Invoice Detail](#datamodel.invoicedetail)             |
-| Conditions      | [Includes Aggregation Level Currency Differences](#conditions.includesaggregationlevelcurrencydifferences) |
-| Column type     | Dimension                       |
-| Feature level   | Conditional                     |
-| Allows nulls    | False                           |
-| Data type       | String                          |
-| Value format    | \<not specified>                |
+| Constraint                 | Value                                      |
+| :------------------------- | :----------------------------------------- |
+| Dataset                    | [Invoice Detail](#datamodel.invoicedetail) |
+| Operating Model Conditions | [Includes Aggregation Level Currency Differences](#operatingmodelconditions.includesaggregationlevelcurrencydifferences) |
+| Column type                | Dimension                                  |
+| Feature level              | Conditional                                |
+| Allows nulls               | False                                      |
+| Data type                  | String                                     |
+| Value format               | \<not specified>                           |
 
 ## Version Introduced
 

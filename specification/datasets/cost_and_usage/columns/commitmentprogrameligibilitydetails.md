@@ -93,16 +93,16 @@ The types of *commitment programs* available for a specific usage row.
 
 ## Content Constraints
 
-| Constraint    | Value                                                                                                                        |
-|:-------------------------------------|:---------------------------------|
-| Dataset       | [Cost and Usage](#datamodel.costandusage)                                                                                     |
-| Conditions    | [Includes Commitment Programs](#conditions.includescommitmentprograms)                                                        |
-| Column type   | Dimension                                                                                                                    |
-| Feature level | Conditional                                                                                                                  |
-| Allows nulls  | True                                                                                                                         |
-| Data type     | JSON                                                                                                                         |
-| Value format  | [JSON Object Format](#attributes.jsonobjectformat)                                                                           |
-| Object        | [CommitmentProgramEligibilityDetailsObject](#datamodel.costandusage.commitmentprogrameligibilitydetails.commitmentprogrameligibilitydetailsobject) |
+| Constraint                 | Value                                              |
+| :------------------------- | :------------------------------------------------- |
+| Dataset                    | [Cost and Usage](#datamodel.costandusage)          |
+| Operating Model Conditions | [Includes Commitment Programs](#operatingmodelconditions.includescommitmentprograms) |
+| Column type                | Dimension                                          |
+| Feature level              | Conditional                                        |
+| Allows nulls               | True                                               |
+| Data type                  | JSON                                               |
+| Value format               | [JSON Object Format](#attributes.jsonobjectformat) |
+| Object                     | [CommitmentProgramEligibilityDetailsObject](#datamodel.costandusage.commitmentprogrameligibilitydetails.commitmentprogrameligibilitydetailsobject) |
 
 ## Version Introduced
 
