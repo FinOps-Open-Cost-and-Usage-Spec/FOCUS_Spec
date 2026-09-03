@@ -28,14 +28,15 @@ The invoice-issuer-assigned identifier for an Invoice Detail record encapsulatin
 
 ## Content Constraints
 
-|    Constraint    |              Value             |
-|:----------------|:--------------------------------|
-| Dataset         | [Cost and Usage](#datamodel.costandusage)             |
-| Column type     | Dimension                       |
-| Feature level   | Conditional                     |
-| Allows nulls    | True                            |
-| Data type       | String                          |
-| Value format    | \<not specified>                |
+| Constraint                 | Value                                     |
+| :------------------------- | :---------------------------------------- |
+| Dataset                    | [Cost and Usage](#datamodel.costandusage) |
+| Operating Model Conditions | [Includes Payable Invoices](#operatingmodelconditions.includespayableinvoices) |
+| Column type                | Dimension                                 |
+| Feature level              | Conditional                               |
+| Allows nulls               | True                                      |
+| Data type                  | String                                    |
+| Value format               | \<not specified>                          |
 
 ## Version Introduced
 
