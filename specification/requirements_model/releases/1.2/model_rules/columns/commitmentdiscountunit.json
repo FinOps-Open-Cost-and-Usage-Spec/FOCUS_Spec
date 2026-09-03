@@ -164,7 +164,7 @@
         "Value": null
       },
       "Dependencies": [
-        "CommitmentDiscountQuantity-C-000-C"
+        "CommitmentDiscountQuantity-C-003-C"
       ]
     }
   },
@@ -191,7 +191,7 @@
         "Value": null
       },
       "Dependencies": [
-        "CommitmentDiscountQuantity-C-000-C"
+        "CommitmentDiscountQuantity-C-003-C"
       ]
     }
   },
