@@ -1212,7 +1212,7 @@ Where `[Dataset|Column]` is the primary schema-level entity targeted by the Attr
 When an Attribute is applicable only under specific conditions, the structural anchor MAY be preceded by an operating model condition:
 
 ```markdown
-When <Actor> <OperatingModelCondition>, [Dataset|Column] conforming to <AttributeId> attribute MUST adhere to the following requirements:
+When the operating model <OperatingModelCondition>, [Dataset|Column] conforming to <AttributeId> attribute MUST adhere to the following requirements:
 ```
 
 ### Constrainable Entities in Attribute Requirements
