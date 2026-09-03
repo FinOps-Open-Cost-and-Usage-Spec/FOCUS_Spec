@@ -135,6 +135,8 @@ AI agents generating or reviewing content MUST act as strict technical editors e
   * use `remain consistent` when requiring a value to be stable across time, records, or another defined scope.
 * **Structural Anchors:** Apply the following rules:
   * Each Requirements section, including a reusable Attribute Requirements section, MUST begin with a structural anchor.
+  * The canonical form is `<Entity> MUST adhere to the following requirements:`.
+  * For Attribute Requirements sections, replace `<Entity>` with `Dataset conforming to <AttributeId> attribute` or `Column conforming to <AttributeId> attribute`, as appropriate for the applicable entity type.
   * A structural anchor establishes the scope of the Requirements section.
   * A structural anchor supports automated parsing and validation.
   * A structural anchor does not introduce a verifiable constraint.
