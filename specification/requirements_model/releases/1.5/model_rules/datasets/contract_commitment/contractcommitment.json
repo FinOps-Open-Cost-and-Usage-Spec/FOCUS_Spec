@@ -1128,7 +1128,7 @@
     "DatasetId": "ContractCommitment",
     "DatasetName": "Contract Commitment",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractCommitment MUST include ContractCommitmentPaymentUpfrontPercentage when the service provider offers \"Partial Upfront\" payment models.",
+      "MustSatisfy": "ContractCommitment MUST include ContractCommitmentPaymentUpfrontPercentage when the operating model includes partial upfront payments.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1182,7 +1182,7 @@
     "DatasetId": "ContractCommitment",
     "DatasetName": "Contract Commitment",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractCommitment MUST include PricingCurrency when the service provider supports pricing and billing in different currencies.",
+      "MustSatisfy": "ContractCommitment MUST include PricingCurrency when the operating model includes pricing and billing currency differences.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1210,7 +1210,7 @@
     "DatasetId": "ContractCommitment",
     "DatasetName": "Contract Commitment",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractCommitment MUST include PricingCurrencyContractCommitmentCost when the service provider supports pricing and billing in different currencies.",
+      "MustSatisfy": "ContractCommitment MUST include PricingCurrencyContractCommitmentCost when the operating model includes pricing and billing currency differences.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",

@@ -158,7 +158,11 @@
           }
         ]
       },
-      "Condition": {},
+      "Condition": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "ContractId",
+        "Value": null
+      },
       "Dependencies": [
         "CCT-ContractId-C-005-M",
         "CCT-ContractId-C-006-O"

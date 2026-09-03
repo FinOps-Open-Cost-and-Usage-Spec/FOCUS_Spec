@@ -120,7 +120,7 @@
     "DatasetName": "Billing Period",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "The presence of columns in BillingPeriod MUST adhere to the following requirements:",
+      "MustSatisfy": "BillingPeriod column presence MUST adhere to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",

@@ -26,7 +26,7 @@ The following section details the normative requirements for the AllocatedMethod
 
 ### Object Requirements
 
-The AllocatedMethodDetailsObject MUST adhere to the following requirements:
+AllocatedMethodDetailsObject MUST adhere to the following requirements:
 
 * AllocatedMethodDetailsObject MUST conform to the [AllocatedMethodDetailsObjectSchema](#schemas.costandusage.allocatedmethoddetailsobjectschema) JSON Schema.
 * AllocatedMethodDetailsObject.Elements[\*].AllocatedRatio MUST represent the allocated charge's percentage of the origin charge.

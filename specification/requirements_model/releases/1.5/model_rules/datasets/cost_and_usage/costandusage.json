@@ -846,7 +846,7 @@
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage SHOULD include AvailabilityZone when the host provider supports deploying resources or services within an availability zone.",
+      "MustSatisfy": "CostAndUsage SHOULD include AvailabilityZone when the operating model includes availability zones.",
       "Keyword": "SHOULD",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -874,7 +874,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage MUST include ListUnitPrice when the service provider publishes unit prices exclusive of discounts.",
+      "MustSatisfy": "CostAndUsage MUST include ListUnitPrice when the operating model includes list unit prices.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -954,7 +954,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage MUST include BillingAccountType when the invoice issuer supports more than one possible BillingAccountType value.",
+      "MustSatisfy": "CostAndUsage MUST include BillingAccountType when the operating model includes multiple billing account types.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1060,7 +1060,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage MUST include ConsumedQuantity when the service provider supports the measurement of usage.",
+      "MustSatisfy": "CostAndUsage MUST include ConsumedQuantity when the operating model includes usage measurement.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1088,7 +1088,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage MUST include CommitmentDiscountName when the service provider supports commitment discounts.",
+      "MustSatisfy": "CostAndUsage MUST include CommitmentDiscountName when the operating model includes commitment discounts.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1116,7 +1116,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage MUST include CommitmentDiscountId when the service provider supports commitment discounts.",
+      "MustSatisfy": "CostAndUsage MUST include CommitmentDiscountId when the operating model includes commitment discounts.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1144,7 +1144,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage MUST include CommitmentDiscountType when the service provider supports commitment discounts.",
+      "MustSatisfy": "CostAndUsage MUST include CommitmentDiscountType when the operating model includes commitment discounts.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1172,7 +1172,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage MUST include CommitmentDiscountUnit when the service provider supports commitment discounts.",
+      "MustSatisfy": "CostAndUsage MUST include CommitmentDiscountUnit when the operating model includes commitment discounts.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1200,7 +1200,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage MUST include CommitmentDiscountCategory when the service provider supports commitment discounts.",
+      "MustSatisfy": "CostAndUsage MUST include CommitmentDiscountCategory when the operating model includes commitment discounts.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1228,7 +1228,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage MUST include CommitmentDiscountStatus when the service provider supports commitment discounts.",
+      "MustSatisfy": "CostAndUsage MUST include CommitmentDiscountStatus when the operating model includes commitment discounts.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1256,7 +1256,7 @@
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage MUST include CommitmentDiscountQuantity when the service provider supports commitment discounts.",
+      "MustSatisfy": "CostAndUsage MUST include CommitmentDiscountQuantity when the operating model includes commitment discounts.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1284,7 +1284,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage MUST include SubAccountId when the service provider supports a sub account construct.",
+      "MustSatisfy": "CostAndUsage MUST include SubAccountId when the operating model includes sub accounts.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1312,7 +1312,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage MUST include CapacityReservationStatus when the service provider supports capacity reservations.",
+      "MustSatisfy": "CostAndUsage MUST include CapacityReservationStatus when the operating model includes capacity reservations.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1366,7 +1366,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage MUST include PricingCategory when the service provider supports more than one pricing category across all SKUs.",
+      "MustSatisfy": "CostAndUsage MUST include PricingCategory when the operating model includes multiple pricing categories.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1550,7 +1550,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage MUST include SubAccountName when the service provider supports a sub account construct.",
+      "MustSatisfy": "CostAndUsage MUST include SubAccountName when the operating model includes sub accounts.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1656,7 +1656,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage MUST include InvoiceId when the invoice issuer supports payable invoices.",
+      "MustSatisfy": "CostAndUsage MUST include InvoiceId when the operating model includes payable invoices.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1684,7 +1684,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage MUST include ContractedUnitPrice when the service provider supports negotiated pricing concepts.",
+      "MustSatisfy": "CostAndUsage MUST include ContractedUnitPrice when the operating model includes negotiated pricing.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1817,7 +1817,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage MUST include ResourceType when the service provider supports billing based on provisioned resources and supports assigning types to resources.",
+      "MustSatisfy": "CostAndUsage MUST include ResourceType when the operating model includes provisioned resources and includes resource type assignment.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1923,7 +1923,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage MUST include ResourceId when the service provider supports billing based on provisioned resources.",
+      "MustSatisfy": "CostAndUsage MUST include ResourceId when the operating model includes provisioned resources.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1951,7 +1951,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage MUST include ResourceName when the service provider supports billing based on provisioned resources.",
+      "MustSatisfy": "CostAndUsage MUST include ResourceName when the operating model includes provisioned resources.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1979,7 +1979,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage MUST include PricingCurrency when the service provider supports pricing and billing in different currencies.",
+      "MustSatisfy": "CostAndUsage MUST include PricingCurrency when the operating model includes pricing and billing currency differences.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -2008,7 +2008,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage MUST adhere to the following PricingCurrencyContractedUnitPrice presence requirements:",
+      "MustSatisfy": "CostAndUsage MUST adhere to the following PricingCurrencyContractedUnitPrice requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -2054,7 +2054,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage MUST include PricingCurrencyContractedUnitPrice when the service provider supports prices in virtual currency and publishes unit prices exclusive of discounts.",
+      "MustSatisfy": "CostAndUsage MUST include PricingCurrencyContractedUnitPrice when the operating model includes virtual currency and includes list unit prices.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -2083,7 +2083,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage SHOULD include PricingCurrencyContractedUnitPrice when the service provider supports pricing and billing in different currencies and publishes unit prices exclusive of discounts.",
+      "MustSatisfy": "CostAndUsage SHOULD include PricingCurrencyContractedUnitPrice when the operating model includes pricing and billing currency differences and includes list unit prices.",
       "Keyword": "SHOULD",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -2138,7 +2138,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage MUST adhere to the following PricingCurrencyEffectiveCost presence requirements:",
+      "MustSatisfy": "CostAndUsage MUST adhere to the following PricingCurrencyEffectiveCost requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -2184,7 +2184,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage MUST include PricingCurrencyEffectiveCost when the service provider supports prices in virtual currency and publishes unit prices exclusive of discounts.",
+      "MustSatisfy": "CostAndUsage MUST include PricingCurrencyEffectiveCost when the operating model includes virtual currency and includes list unit prices.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -2213,7 +2213,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage SHOULD include PricingCurrencyEffectiveCost when the service provider supports pricing and billing in different currencies and publishes unit prices exclusive of discounts.",
+      "MustSatisfy": "CostAndUsage SHOULD include PricingCurrencyEffectiveCost when the operating model includes pricing and billing currency differences and includes list unit prices.",
       "Keyword": "SHOULD",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -2268,7 +2268,7 @@
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage MUST adhere to the following PricingCurrencyListUnitPrice presence requirements:",
+      "MustSatisfy": "CostAndUsage MUST adhere to the following PricingCurrencyListUnitPrice requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -2314,7 +2314,7 @@
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage MUST include PricingCurrencyListUnitPrice when the service provider supports prices in virtual currency and publishes unit prices exclusive of discounts.",
+      "MustSatisfy": "CostAndUsage MUST include PricingCurrencyListUnitPrice when the operating model includes virtual currency and includes list unit prices.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -2343,7 +2343,7 @@
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage SHOULD include PricingCurrencyListUnitPrice when the service provider supports pricing and billing in different currencies and publishes unit prices exclusive of discounts.",
+      "MustSatisfy": "CostAndUsage SHOULD include PricingCurrencyListUnitPrice when the operating model includes pricing and billing currency differences and includes list unit prices.",
       "Keyword": "SHOULD",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -2397,7 +2397,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage MUST include SkuPriceId when the service provider supports unit pricing concepts and publishes price lists, publicly or as part of contracting.",
+      "MustSatisfy": "CostAndUsage MUST include SkuPriceId when the operating model includes unit pricing.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -2425,7 +2425,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage MUST include SkuMeter when the service provider supports unit pricing concepts and publishes price lists, publicly or as part of contracting.",
+      "MustSatisfy": "CostAndUsage MUST include SkuMeter when the operating model includes unit pricing.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -2453,7 +2453,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage MUST include SkuId when the service provider supports unit pricing concepts and publishes price lists, publicly or as part of contracting.",
+      "MustSatisfy": "CostAndUsage MUST include SkuId when the operating model includes unit pricing.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -2481,7 +2481,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage MUST include SkuPriceDetails when the service provider supports unit pricing concepts and publishes price lists, publicly or as part of contracting.",
+      "MustSatisfy": "CostAndUsage MUST include SkuPriceDetails when the operating model includes unit pricing.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -2509,7 +2509,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage MUST include RegionName when the host provider supports deploying resources or services within a region.",
+      "MustSatisfy": "CostAndUsage MUST include RegionName when the operating model includes regions.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -2537,7 +2537,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage MUST include RegionId when the host provider supports deploying resources or services within a region.",
+      "MustSatisfy": "CostAndUsage MUST include RegionId when the operating model includes regions.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -2565,7 +2565,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage MUST include Tags when the data generator supports setting user or provider-defined tags.",
+      "MustSatisfy": "CostAndUsage MUST include Tags when the operating model includes tags.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -2593,7 +2593,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage MUST include CapacityReservationId when the service provider supports capacity reservations.",
+      "MustSatisfy": "CostAndUsage MUST include CapacityReservationId when the operating model includes capacity reservations.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -2621,7 +2621,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage MUST include ConsumedUnit when the service provider supports the measurement of usage.",
+      "MustSatisfy": "CostAndUsage MUST include ConsumedUnit when the operating model includes usage measurement.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -2649,7 +2649,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage MUST include SubAccountType when the service provider supports more than one possible SubAccountType value.",
+      "MustSatisfy": "CostAndUsage MUST include SubAccountType when the operating model includes multiple sub account types.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -2703,7 +2703,7 @@
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage SHOULD include AllocatedMethodDetails when the data generator supports data generator-calculated split cost allocation.",
+      "MustSatisfy": "CostAndUsage SHOULD include AllocatedMethodDetails when the operating model includes split cost allocation.",
       "Keyword": "SHOULD",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -2731,7 +2731,7 @@
     "Order": 40,
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage MUST include AllocatedMethodId when the data generator supports data generator-calculated split cost allocation.",
+      "MustSatisfy": "CostAndUsage MUST include AllocatedMethodId when the operating model includes split cost allocation.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -2759,7 +2759,7 @@
     "Order": 50,
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage MUST include AllocatedResourceId when the data generator supports data generator-calculated split cost allocation.",
+      "MustSatisfy": "CostAndUsage MUST include AllocatedResourceId when the operating model includes split cost allocation.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -2787,7 +2787,7 @@
     "Order": 60,
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage MUST include AllocatedResourceName when the data generator supports data generator-calculated split cost allocation.",
+      "MustSatisfy": "CostAndUsage MUST include AllocatedResourceName when the operating model includes split cost allocation.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -2815,7 +2815,7 @@
     "Order": 70,
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage MUST include AllocatedTags when the data generator supports data generator-calculated split cost allocation.",
+      "MustSatisfy": "CostAndUsage MUST include AllocatedTags when the operating model includes split cost allocation.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -2843,7 +2843,7 @@
     "Order": 330,
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage MUST include ContractApplied when the service provider supports contract commitments.",
+      "MustSatisfy": "CostAndUsage MUST include ContractApplied when the operating model includes contract commitments.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -2929,7 +2929,7 @@
     }
   },
   "CAU-CostAndUsage-D-078-M": {
-    "Function": "Format",
+    "Function": "Validation",
     "Reference": "CostAndUsage",
     "EntityType": "Dataset",
     "EntityName": "Cost and Usage",
@@ -2948,11 +2948,13 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "ATT-CorrectionHandling-A-000-M"
+      ]
     }
   },
   "CAU-CostAndUsage-D-079-M": {
-    "Function": "Format",
+    "Function": "Validation",
     "Reference": "CostAndUsage",
     "EntityType": "Dataset",
     "EntityName": "Cost and Usage",
@@ -2971,11 +2973,13 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "ATT-DatasetCompleteness-A-000-M"
+      ]
     }
   },
   "CAU-CostAndUsage-D-080-M": {
-    "Function": "Format",
+    "Function": "Validation",
     "Reference": "CostAndUsage",
     "EntityType": "Dataset",
     "EntityName": "Cost and Usage",
@@ -2994,11 +2998,13 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "ATT-DatasetConfiguration-A-000-M"
+      ]
     }
   },
   "CAU-CostAndUsage-D-081-M": {
-    "Function": "Format",
+    "Function": "Validation",
     "Reference": "CostAndUsage",
     "EntityType": "Dataset",
     "EntityName": "Cost and Usage",
@@ -3017,7 +3023,9 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "ATT-DeliveryHandling-A-000-M"
+      ]
     }
   },
   "CAU-CostAndUsage-D-082-C": {
@@ -3084,7 +3092,7 @@
     "Order": 1310,
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "When the data generator supports data generator-calculated split cost allocation, CostAndUsage MUST adhere to the following requirements:",
+      "MustSatisfy": "When the operating model includes split cost allocation, CostAndUsage MUST adhere to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -3139,7 +3147,7 @@
     "Order": 1320,
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage MUST have its data generator-calculated split cost allocation method documented and accessible to practitioners.",
+      "MustSatisfy": "CostAndUsage MUST have its split cost allocation method documented and accessible to practitioners.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -3164,7 +3172,7 @@
     "Order": 1330,
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage SHOULD offer data generator-calculated split cost allocation on an opt-in basis.",
+      "MustSatisfy": "CostAndUsage SHOULD offer split cost allocation on an opt-in basis.",
       "Keyword": "SHOULD",
       "Requirement": {},
       "Condition": {},
@@ -3189,7 +3197,7 @@
     "Order": 1340,
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage MAY contain records for concepts not related to resource usage, when it aligns with the documented data generator-calculated split cost allocation method.",
+      "MustSatisfy": "CostAndUsage MAY contain records for concepts not related to resource usage, when it aligns with the documented split cost allocation method.",
       "Keyword": "MAY",
       "Requirement": {},
       "Condition": {},
@@ -3214,7 +3222,7 @@
     "Order": 1350,
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage MAY contain records for unused or unallocated usage from the origin charge as separate allocated charges, when it aligns with the documented data generator-calculated split cost allocation method.",
+      "MustSatisfy": "CostAndUsage MAY contain records for unused or unallocated usage from the origin charge as separate allocated charges, when it aligns with the documented split cost allocation method.",
       "Keyword": "MAY",
       "Requirement": {},
       "Condition": {},
@@ -3239,7 +3247,7 @@
     "Order": 1360,
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage MAY contain allocated charges with apportioned costs for unused or unallocated usage, when it aligns with the documented data generator-calculated split cost allocation method.",
+      "MustSatisfy": "CostAndUsage MAY contain allocated charges with apportioned costs for unused or unallocated usage, when it aligns with the documented split cost allocation method.",
       "Keyword": "MAY",
       "Requirement": {},
       "Condition": {},
@@ -3310,7 +3318,7 @@
     "Order": 1390,
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage FOCUS columns MUST conform to DataGeneratorCalculatedSplitCostAllocationHandling requirements when the data generator supports data generator-calculated split cost allocation.",
+      "MustSatisfy": "CostAndUsage FOCUS columns MUST conform to DataGeneratorCalculatedSplitCostAllocationHandling requirements when the operating model includes split cost allocation.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -3320,7 +3328,7 @@
     }
   },
   "CAU-CostAndUsage-D-093-M": {
-    "Function": "Format",
+    "Function": "Validation",
     "Reference": "CostAndUsage",
     "EntityType": "Dataset",
     "EntityName": "Cost and Usage",
@@ -3345,7 +3353,7 @@
     }
   },
   "CAU-CostAndUsage-D-094-M": {
-    "Function": "Format",
+    "Function": "Validation",
     "Reference": "CostAndUsage",
     "EntityType": "Dataset",
     "EntityName": "Cost and Usage",
@@ -3370,7 +3378,7 @@
     }
   },
   "CAU-CostAndUsage-D-095-M": {
-    "Function": "Format",
+    "Function": "Validation",
     "Reference": "CostAndUsage",
     "EntityType": "Dataset",
     "EntityName": "Cost and Usage",
@@ -3435,7 +3443,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage MUST include CommitmentProgramEligibilityDetails when the service provider supports at least one commitment program.",
+      "MustSatisfy": "CostAndUsage MUST include CommitmentProgramEligibilityDetails when the operating model includes commitment programs.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -3460,7 +3468,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "CostAndUsage MUST include InvoiceDetailId when the invoice issuer supports payable invoices.",
+      "MustSatisfy": "CostAndUsage MUST include InvoiceDetailId when the operating model includes payable invoices.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},

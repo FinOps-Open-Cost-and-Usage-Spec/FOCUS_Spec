@@ -174,11 +174,14 @@
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Dynamic",
+    "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ContractApplied MUST conform to StringHandling requirements.",
       "Keyword": "MUST",
-      "Requirement": {},
+      "Requirement": {
+        "CheckFunction": "FormatString",
+        "ColumnName": "ContractApplied"
+      },
       "Condition": {},
       "Dependencies": []
     }

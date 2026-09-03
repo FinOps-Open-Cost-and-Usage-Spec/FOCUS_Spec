@@ -11,13 +11,24 @@ from pathlib import Path
 
 
 FILE_REF_RE = re.compile(r'^file\(("|\')(.*)\1\)$')
+# Environment variable used to pass the extraction output folder to pytest.
+EXTRACT_FOLDER_ENV = 'FOCUS_EXTRACT_FOLDER'
 
 def get_args():
     parser = argparse.ArgumentParser(description='Model JSON Generator.')
     parser.add_argument('--logging-level', type=str, default='INFO', choices={"DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"}, help='Logging level to use')
     parser.add_argument('--build-only', action='store_true', help='Write out JSON file instead of running the test process')
     parser.add_argument('--version', type=str, default=None, help='Specific version to build (e.g., 1.3). If not specified, all versions will be built.')
-    return parser.parse_args()
+    parser.add_argument('--extracted-only', action='store_true', help='Build and test only the extracted model produced by the external extraction tool (written to build/extracted-model-<version>.json). Requires --extract-folder. Combine with --build-only to skip the tests.')
+    parser.add_argument('--extract-folder', type=str, default=None, metavar='FOLDER', help='Folder holding the extraction tool output (model_details.json, model_rules/, ...). Requires --extracted-only.')
+    args = parser.parse_args()
+
+    if args.extracted_only and not args.extract_folder:
+        parser.error('--extracted-only requires --extract-folder <folder>')
+    if args.extract_folder and not args.extracted_only:
+        parser.error('--extract-folder requires --extracted-only')
+
+    return args
 
 
 def _load_json_file(path):
@@ -57,11 +68,16 @@ def _resolve_schema_file_refs(node, base_dir):
         for item in node:
             _resolve_schema_file_refs(item, base_dir)
 
-def build_version(version):
-    """Build the model JSON for a specific version."""
+def build_version(version, source_dir=None, output_prefix='model-'):
+    """Build the model JSON for a specific version.
+
+    By default the source is releases/<version>. Pass source_dir to build from an
+    alternate tree (e.g. the extraction output) and output_prefix to change the
+    generated file name.
+    """
     model = {}
-    version_dir = os.path.join('releases', version)
-    
+    version_dir = source_dir if source_dir else os.path.join('releases', version)
+
     if not os.path.exists(version_dir):
         logger.error(f'❌ Version directory not found: {version_dir}')
         return False
@@ -136,7 +152,7 @@ def build_version(version):
                         model_rules.update(rules)
     model['ModelRules'] = model_rules
 
-    model_output_file = f"build/model-{model['Details']['ModelVersion']}.json"
+    model_output_file = f"build/{output_prefix}{model['Details']['ModelVersion']}.json"
     try:
         os.makedirs('build', exist_ok=True)
         with open(model_output_file, 'w', encoding='utf-8') as out_file:
@@ -146,6 +162,29 @@ def build_version(version):
     except Exception as e:
         logger.error(f"❌ Output of {model_output_file} failed {repr(e)}")
         return False
+
+def build_extracted(source_dir):
+    """Build the model JSON from an extraction output tree."""
+    if not os.path.isdir(source_dir):
+        logger.error(f'❌ Extraction output directory not found: {source_dir}')
+        return False
+
+    model_details_path = os.path.join(source_dir, 'model_details.json')
+    if not os.path.exists(model_details_path):
+        logger.error(f'❌ Model details not found: {model_details_path}')
+        return False
+
+    try:
+        with open(model_details_path, 'rb') as f:
+            version = json.loads(f.read())['Details']['ModelVersion']
+    except (JSONDecodeError, KeyError, OSError) as e:
+        logger.error(f'❌ Unable to determine model version from {model_details_path}')
+        logger.error(repr(e))
+        return False
+
+    logger.info(f'Building extracted model version {version} from {source_dir}')
+    return build_version(version, source_dir=source_dir, output_prefix='extracted-model-')
+
 
 def build(version=None):
     """Build model JSON for specified version or all versions."""
@@ -185,13 +224,25 @@ def build(version=None):
 if __name__ == "__main__":
     args = get_args()
     logger = init_logger(args.logging_level)
+    tests_dir = Path(__file__).parent / "tests"
+
+    if args.extracted_only:
+        extract_folder = os.path.abspath(args.extract_folder)
+        if not build_extracted(extract_folder):
+            sys.exit(1)
+        if args.build_only:
+            sys.exit(0)
+        # Run only the tests parameterized against the extracted model. The folder is
+        # passed through the environment so the test fixtures build the same tree.
+        env = {**os.environ, EXTRACT_FOLDER_ENV: extract_folder}
+        sys.exit(subprocess.call(["pytest", str(tests_dir), "-k", "extracted"], env=env))
+
     if args.build_only:
         build(args.version)
         sys.exit(0)
     else:
         # Build first, then run tests
         build(args.version)
-        tests_dir = Path(__file__).parent / "tests"
         if args.version:
             # Run tests for specific version
             result = subprocess.call(["pytest", str(tests_dir), "-k", args.version])
