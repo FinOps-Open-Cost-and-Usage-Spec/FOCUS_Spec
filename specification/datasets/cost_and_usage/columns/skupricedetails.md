@@ -58,12 +58,14 @@ The following keys should be used when applicable to facilitate cross-SKU and cr
 | NetworkMaxThroughput     | Network maximum sustained throughput for data transfer<sup>1</sup>       | Numeric          | Measure: Megabits per second (Mbps)                   |
 | OperatingSystem          | Operating system family<sup>3</sup>                                      | String           | Examples: "Linux", "MacOS", "Windows"                 |
 | Redundancy               | Level of redundancy offered by the SKU                                   | String           | Examples: "Local", "Zonal", "Global"                  |
+| ServingScope             | Geographic scope across which the SKU is served<sup>4</sup>              | String           | Examples: "Global", "Regional", "DataZone"            |
 | StorageClass             | Class or tier of storage provided                                        | String           | Examples: "Hot", "Archive", "Nearline"                |
 
 Notes
 <br><sup>1</sup> In the case of "burstable" SKUs offering variable levels of performance, the baseline or guaranteed value should be used.
 <br><sup>2</sup> Memory manufacturers still commonly uses "GB" to refer to 2<sup>30</sup> bytes, which is known as GiB in other contexts.
 <br><sup>3</sup> This is the operating system family of the SKU, if it's included with the SKU or the SKU only supports one type of operating system.
+<br><sup>4</sup> ServingScope applies when a service provider prices more than one serving scope for the same capability. ServingScope describes the breadth of the geographic area a request may be served from, which is distinct from Redundancy. Redundancy describes how widely a SKU is replicated for durability or availability, whereas ServingScope describes where the work is carried out. A SKU may carry both.
 
 ## Examples
 
