@@ -99,33 +99,117 @@ AI agents generating or reviewing content MUST act as strict technical editors e
 ### Normative Language & Requirements
 
 * **BCP-14 Keywords:** Use MUST, MUST NOT, SHOULD, SHOULD NOT, MAY (uppercase). NEVER use: "REQUIRED", "SHALL", "SHALL NOT", "RECOMMENDED", "NOT RECOMMENDED", "OPTIONAL".
-* **Location:** Capitalized keywords MUST NOT appear outside "Requirements" sections unless quoted.
-* **Structure:** Use bulleted lists. Each bullet MUST express exactly one verifiable state. Split bullets that combine multiple obligations.
+* **Location:** Capitalized BCP-14 keywords MUST NOT appear outside "Requirements" sections in files under `specification/attributes/`, `specification/conditions/`, and `specification/datasets/` unless quoted. 
+
+* **Structure:** Apply the following rules:
+  * Normative requirements MUST use bulleted lists.
+  * A normative bullet containing more than one constraint MUST be split.
+  * Each resolved atomic requirement MUST express exactly one verifiable constraint.
+* **Nested Requirements:** Apply the following rules:
+  * Introduce nested normative bullets only when expressing composite requirements.
+  * Preserve the established indentation hierarchy.
+  * Never skip nesting levels.
+* **Requirement Ownership (DRY):** Apply the following rules:
+  * Each normative requirement MUST be defined exactly once. 
+  * When the same normative behavior applies in multiple locations, authors MUST reference the existing requirement or reusable Attribute rather than duplicating the requirement text.
+* **Structural Grouping Bullets:** Apply the following rules:
+  * A structural grouping bullet is a parent normative bullet within a composite requirement.
+  * A condition grouping bullet establishes a shared condition inherited by its nested normative bullets.
+  * A context grouping bullet provides organizational context without adding constraints to the resolved atomic requirements.
+  * A structural grouping bullet does not independently resolve into an atomic requirement.
+* **Composite Requirements:** Apply the following rules:
+  * A composite requirement consists of a hierarchy of nested normative bullets.
+  * Parent bullets establish scope, conditions, or obligations for their nested normative bullets.
+  * Lowest-level normative bullets define individual constraints.
+  * Each atomic requirement is derived from one lowest-level normative bullet together with all applicable constraints inherited from its ancestor bullets.
 * **Allowed Subjects:** MUST be schema-level entities (e.g., `FOCUS dataset`, `BilledCost`). Actors (e.g., Data Generator) and Processes MUST NOT be subjects.
 * **State vs. Behavior:** Describe a state, not behavior. Prohibited process verbs: *ensure, handle, support, provide, alter, prefix, document* (though they MAY appear in conditional clauses).
 * **Conditional Phrasing:** Use ONLY: `when / unless / only when / except when`. (DO NOT use `if`).
 * **Mathematical Accuracy:** `and/or` is permitted ONLY in mathematical validations or conditional clauses.
-* **Structural Anchors:** Requirements sections MUST begin with a non-verifiable anchor phrase ending in a colon (e.g., `<Entity> MUST adhere to the following requirements:`).
-* **Terminology:** Normative text MUST use `ColumnId`s, NEVER Display Names. The subject for dataset requirements MUST be `FOCUS dataset`. Elsewhere, specify the exact abstraction (e.g., `FOCUS dataset`, `dataset instance`, `dataset artifact`).
+* **Comparison Terminology:** Select comparison terminology according to the semantics of the comparison:
+  * use `equal` for numeric comparisons;
+  * use `match` for identifiers and string values;
+  * use `be` when evaluating states or enumerated values;
+  * use `greater than or equal to` or `less than or equal to` for inequalities;
+  * use `equivalent` for semantic equivalence; and
+  * use `remain consistent` when requiring a value to be stable across time, records, or another defined scope.
+* **Structural Anchors:** Apply the following rules:
+  * Each Requirements section, including a reusable Attribute Requirements section, MUST begin with a structural anchor.
+  * The canonical form is `<Entity> MUST adhere to the following requirements:`.
+  * For Attribute Requirements sections, replace `<Entity>` with `Dataset conforming to <AttributeId> attribute` or `Column conforming to <AttributeId> attribute`, as appropriate for the applicable entity type.
+  * A structural anchor establishes the scope of the Requirements section.
+  * A structural anchor supports automated parsing and validation.
+  * A structural anchor does not introduce a verifiable constraint.
+  * A structural anchor does not resolve into an atomic requirement.
+* **Terminology:** Apply the following rules:
+  * Normative references to FOCUS entities MUST use a generic keyword, canonical Entity ID, or dot-notation reference path.
+  * Normative references to FOCUS entities MUST NOT use Display Names.
+  * Requirements governing a specific dataset MUST use its `DatasetId` as the subject (e.g., `SkuPrice`).
+  * All other normative subjects referring to a FOCUS dataset concept MUST use `FOCUS dataset`, including when the constraint applies to a dataset specification, dataset instance, or dataset artifact.
+  * In non-subject positions, references to dataset concepts MUST use `FOCUS dataset`, `dataset instance`, or `dataset artifact`, according to the precise abstraction intended.
 * **Tone:** Use formal language. Contractions (e.g., *don't, can't*) MUST NOT be used in normative requirements.
 * **Inline Examples:** Any non-normative examples embedded within a requirement MUST be enclosed in parentheses using "e.g." (e.g., `...without lossy transformations (e.g., rounding)`).
+* **Subsection Ordering:** When generating new specification entities, preserve the subsection ordering already established for that entity type within the specification. Do not invent alternative subsection sequences.
 
 ### Editorial Conventions
 
 * **Column/Attribute IDs:** PascalCase without spaces (e.g., PricingQuantity). Entity IDs MUST be used in normative text sections.
-* **Column/Attribute Display Names:** Normal text with spaces (e.g., "Pricing Quantity"). These SHOULD be used in introductory or explanatory non-normative text.
+* **Column/Attribute References in Non-Normative Content:**
+  * Display Names SHOULD be used for conceptual, reader-facing references.
+  * Canonical IDs MAY be used for schema-facing references.
+  * A reference is schema-facing when any of the following applies:
+    * it identifies a field in code, JSON, SQL, a schema, or a table header;
+    * it is an object or property path;
+    * the surrounding sentence describes the field being populated, omitted, null, serialized, validated, matched, compared, grouped, filtered, joined, aggregated, or repeated; or
+    * exact correspondence with an adjacent table, code block, schema fragment, or query expression is required.
+  * When none of the schema-facing conditions above applies, treat the reference as conceptual.
+  * Reviewers MUST NOT create a finding solely because a schema-facing non-normative reference uses its canonical ID.
+  * A canonical ID used for a conceptual non-normative reference MAY produce a suggestion. 
+  * A canonical ID used for a conceptual non-normative reference MUST NOT produce an error or warning.
 * **No Mixing:** Do not mix Entity IDs and Display Names within the same normative requirement.
-* **Column values:** Enclosed in double quotes (e.g., `"Usage"`, `"Tax"`).
+* **Column values:** Apply the following rules:
+  * When a column value appears in prose or normative text, enclose it in double quotation marks (e.g., `"Usage"`, `"Tax"`). 
+  * In an Allowed Values table, list values without quotation marks because the `Value` column identifies them as literals, unless quotation marks are part of the value itself.
 * **Glossary terms:** Link with `[*term*](#glossary:term)` format.
-* **Linking Rule:** Link entity names and Glossary terms ONLY on their first occurrence per source file. Exception: Functional links using different anchor text are exempt.
+* **Linking Rule:** For each distinct entity or glossary destination in a source Markdown file:
+  * Ignore occurrences in document titles and section headings.
+  * Link the first remaining occurrence in reading order.
+  * Leave all later occurrences unlinked.
+  * When no remaining occurrence exists, no link is required.
+  Exceptions:
+  * A link whose anchor text is not an entity name or glossary term does not count toward first occurrence.
+  * Content Constraints sections link every entity reference.
+  * Glossary entries apply this rule independently within each entry.
+  * A table is an entity catalog table only when each data row represents and identifies a distinct specification entity.
+  * In an entity catalog table, the entity reference that identifies each row MAY link to that entity's definition even when the entity was linked earlier in the file.
+  * Each normative requirement bullet MAY link its first reference to each distinct FOCUS entity, glossary term, or FOCUS Condition, even when the same destination was linked earlier in the file. 
+  * Later references to the same destination within that bullet MUST remain unlinked.
 * **Lists:** All unordered lists MUST use asterisks (`*`), never dashes (`-`) or plus signs (`+`). Nested bullet points MUST use exactly two spaces per level.
 * **Notes:** Important notes must use the blockquote format (`> **Note:**`).
+* **Notes versus Exceptions:** Apply the following rules:
+  * Notes MUST contain only informative or explanatory material. 
+  * Normative conditions and exceptions MUST be expressed as requirements.
 * **Anchors:** Pandoc auto-generates custom heading anchors. DO NOT flag missing HTML `<a name="">` tags.
+* **Markdown Tables:** Select spacing by maximum row width:
+  * Below 120 characters, prefer padding cells to align the vertical pipes.
+  * At 120 characters or more, prefer one space after each cell value without alignment padding.
+* **Numbers in Prose:** Apply the following rules:
+  * In explanatory prose, spell out numbers zero through nine.
+  * In explanatory prose, use numerals beginning at 10. 
+  * Preserve numeric notation in JSON, mathematics, schema constraints, identifiers, and technical examples.
+* **Dash Usage:** Apply dash formatting by purpose:
+  * Use an unspaced hyphen (`-`) for compound words and ranges.
+  * Use a spaced hyphen (` - `) to set off parenthetical phrases.
+  * Avoid HTML entities and special Unicode dash characters.
 
 ### Validation & Schema Accuracy
 
 * **Mathematical & Schema Accuracy:** AI reviewers MUST rigorously calculate, parse, and verify all data within examples (especially JSON snippets and tables). Flag any mathematical inconsistencies or hallucinated data.
 * **JSON Formatting:** JSON blocks MUST use double quotation marks for keys. Verify that the JSON is structurally valid.
+* **JSON Object Requirements:** Apply the following rules:
+  * Requirements governing a JSON object MUST be authored with the object definition. 
+  * Column-level requirements MUST remain with the column definition. 
+  * Requirements for object properties SHOULD reference properties using dot notation where appropriate to distinguish object-level constraints from property-level constraints.
 * **Example Disclaimer:** Top-level sections with examples and no normative requirements MUST begin with: `> Note: The following section is informative and non-normative. It does not define requirements.` Enforce ONLY on Level-2 headings in `spec.md` or major section overview files (e.g., `appendix_overview.md`). Ignore nested .md files.
 
 ### File Organization
@@ -140,6 +224,7 @@ AI agents generating or reviewing content MUST act as strict technical editors e
 * **Self-contained comments:** Every review comment or suggestion MUST include all context needed for the author to evaluate it independently. Do not reference other comments (e.g., "same as above" or "see my comment on line X").
 * **Diff-scope discipline:** Only flag issues on lines changed or added by the PR. Pre-existing problems are out of scope unless they create a direct inconsistency with new content in the same PR.
 * **Deduplication:** If your tooling can read PR threads, do not flag already-raised issues or post competing suggestions. To add details, reply to the existing thread.
+* **BCP-14 rule applicability:** When the BCP-14 keyword location rule does not apply, continue applying all other relevant Markdown, editorial, example-accuracy, and review-conduct rules.
 
 ### Issue and Pull Request Templates
 
