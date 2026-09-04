@@ -27,14 +27,15 @@ Service-provider-specified measurement unit indicating how a service provider me
 
 ## Content Constraints
 
-| Constraint      | Value                                                |
-| :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datamodel.costandusage)             |
-| Column type     | Dimension                                            |
-| Feature level   | Conditional                                          |
-| Allows nulls    | True                                                 |
-| Data type       | String                                               |
-| Value format    | [Unit Format](#attributes.unitformat) recommended    |
+| Constraint                 | Value                                             |
+| :------------------------- | :------------------------------------------------ |
+| Dataset                    | [Cost and Usage](#datamodel.costandusage)         |
+| Operating Model Conditions | [Includes Usage Measurement](#operatingmodelconditions.includesusagemeasurement) |
+| Column type                | Dimension                                         |
+| Feature level              | Conditional                                       |
+| Allows nulls               | True                                              |
+| Data type                  | String                                            |
+| Value format               | [Unit Format](#attributes.unitformat) recommended |
 
 ## Version Introduced
 

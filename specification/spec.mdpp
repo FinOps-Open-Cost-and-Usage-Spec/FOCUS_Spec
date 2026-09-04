@@ -31,7 +31,7 @@ pagetitle: FinOps Open Cost and Usage Specification
 
 <div style="page-break-after: always"></div>
 
-!INCLUDE "conditions/conditions.mdpp",1
+!INCLUDE "operating_model_conditions/operating_model_conditions.mdpp",1
 
 <div style="page-break-after: always"></div>
 
