@@ -19,11 +19,11 @@ specification/
 ├── attributes/                  # Attribute specifications
 ├── metadata/                    # Metadata specifications
 ├── appendix/                    # Appendix materials
-├── supported_features/          # Features enabled by FOCUS
-└── requirements_model/          # Validation rules and models
+├── supported-features/          # Features enabled by FOCUS
+└── requirements-model/          # Validation rules and models
 ```
 
-***Note:*** *For directory and file naming conventions across the repository, see [Repository Naming Conventions](repository-naming-conventions.md).*
+***Note:*** *For directory and file naming conventions across the repository, see [Repository Naming Conventions](repository-naming-conventions.md). Directory and file names in this document reflect the target naming convention and may not yet match the current state of the repository until the conventions have been fully applied.*
 
 ## MarkdownPP Usage in FOCUS
 
@@ -33,11 +33,11 @@ The root specification file `spec.mdpp` uses MarkdownPP directives to compose th
 
 ```markdown
 !INCLUDE "overview.md",1
-!INCLUDE "supported_features/supported_features.mdpp",1
+!INCLUDE "supported-features/supported-features.mdpp",1
 !INCLUDE "datasets/datasets.mdpp",1
 !INCLUDE "attributes/attributes.mdpp",1
 !INCLUDE "metadata/metadata.mdpp",1
-!INCLUDE "use_case_library.md",1
+!INCLUDE "use-case-library.md",1
 !INCLUDE "glossary.md",1
 !INCLUDE "appendix/appendix.mdpp",1
 ```
@@ -306,13 +306,13 @@ While markdown can be included in a .mdpp, the FOCUS project discourages this be
 
 ```markdown
 <!-- Use descriptive include paths -->
-!INCLUDE "datasets/cost_and_usage/overview.md"
-!INCLUDE "datasets/cost_and_usage/columns/billedcost.md"
+!INCLUDE "datasets/costandusage/overview.md"
+!INCLUDE "datasets/costandusage/columns/billedcost.md"
 
 <!-- Group related includes -->
-!INCLUDE "attributes/column_handling.md"
-!INCLUDE "attributes/string_handling.md"
-!INCLUDE "attributes/numeric_format.md"
+!INCLUDE "attributes/columnhandling.md"
+!INCLUDE "attributes/stringhandling.md"
+!INCLUDE "attributes/numericformat.md"
 ```
 
 ### Header Level Management
