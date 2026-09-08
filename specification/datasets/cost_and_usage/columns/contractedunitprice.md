@@ -36,15 +36,16 @@ The agreed-upon unit price for a single Pricing Unit of the associated SKU, incl
 
 ## Content Constraints
 
-| Constraint      | Value                                                |
-| :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datamodel.costandusage)             |
-| Column type     | Metric                                               |
-| Feature level   | Conditional                                          |
-| Allows nulls    | True                                                 |
-| Data type       | Decimal                                              |
-| Value format    | [Numeric Format](#attributes.numericformat)          |
-| Number range    | Any valid non-negative decimal value                 |
+| Constraint                 | Value                                       |
+| :------------------------- | :------------------------------------------ |
+| Dataset                    | [Cost and Usage](#datamodel.costandusage)   |
+| Operating Model Conditions | [Includes Negotiated Pricing](#operatingmodelconditions.includesnegotiatedpricing) |
+| Column type                | Metric                                      |
+| Feature level              | Conditional                                 |
+| Allows nulls               | True                                        |
+| Data type                  | Decimal                                     |
+| Value format               | [Numeric Format](#attributes.numericformat) |
+| Number range               | Any valid non-negative decimal value        |
 
 ## Version Introduced
 

@@ -142,6 +142,7 @@ A set of properties describing the *requester* under whose identity a request th
 | Constraint | Value |
 | :--- | :--- |
 | Dataset | [Cost and Usage](#datamodel.costandusage) |
+| Operating Model Conditions | [Includes Requester Attribution](#operatingmodelconditions.includesrequesterattribution) |
 | Column type | Dimension |
 | Feature level | Conditional |
 | Allows nulls | True |
