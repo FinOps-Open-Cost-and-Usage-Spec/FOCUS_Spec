@@ -16,7 +16,7 @@ PricingQuantity MUST adhere to the following requirements:
 
 ## Usability Constraints
 
-**Aggregation:** When aggregating Pricing Quantity per [SKU ID](#datamodel.costandusage.skuid) for a SKU that includes both [*covering charges*](#glossary:covering-charge) and their [*covered charges*](#glossary:covered-charge), exclude either the *covering charges* or the *covered charges*, based on the specific use case, to avoid double counting. Exclude *covering charges* when calculating utilization, or *covered charges* when accounting for billed purchases.
+**Aggregation:** When aggregating Pricing Quantity per [SKU ID](#datamodel.costandusage.skuid) for a SKU that includes both [*covering charges*](#glossary:covering-charge) and their [*covered charges*](#glossary:covered-charge), exclude either the *covering charges* or the *covered charges*, based on the specific use case, to avoid double counting. The appropriate set to exclude depends on the relevant cost basis for the use case. Exclude *covered charges* when aggregating on a billed basis, or *covering charges* when aggregating on an accrual basis.
 
 ## Column ID
 
