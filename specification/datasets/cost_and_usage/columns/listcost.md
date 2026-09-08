@@ -1,6 +1,6 @@
 # List Cost
 
-List Cost represents the cost of a [*charge*](#glossary:charge) based on the service-provider-suggested pricing.
+List Cost represents the cost of a [*charge*](#glossary:charge) based on the provider-suggested pricing.
 
 When [List Unit Price](#datamodel.costandusage.listunitprice) and [Pricing Quantity](#datamodel.costandusage.pricingquantity) are provided for the *charge*, List Cost is calculated by multiplying the List Unit Price by the corresponding Pricing Quantity.
 
