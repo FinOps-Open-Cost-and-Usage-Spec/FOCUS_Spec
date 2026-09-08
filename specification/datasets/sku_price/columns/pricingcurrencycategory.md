@@ -31,15 +31,15 @@ Categorizes the nature of the Pricing Currency as either a financial instrument 
 
 ## Content Constraints
 
-| Constraint      | Value                           |
-| :-------------- | :------------------------------ |
-| Dataset         | [SKU Price](#datamodel.skuprice) |
-| Conditions      | Not applicable                   |
-| Column type     | Dimension                       |
-| Feature level   | Mandatory                       |
-| Allows nulls    | False                           |
-| Data type       | String                          |
-| Value format    | Allowed values                  |
+| Constraint                 | Value                           |
+| :------------------------- | :------------------------------ |
+| Dataset                    | [SKU Price](#datamodel.skuprice) |
+| Operating Model Conditions | Not applicable                  |
+| Column type                | Dimension                       |
+| Feature level              | Mandatory                       |
+| Allows nulls               | False                           |
+| Data type                  | String                          |
+| Value format               | Allowed values                  |
 
 ## Version Introduced
 

@@ -62,15 +62,15 @@ Represents the categorical length of the term of a purchase.
 
 ## Content Constraints
 
-| Constraint      | Value                                                                                      |
-| :-------------- | :----------------------------------------------------------------------------------------- |
-| Dataset         | [SKU Price](#datamodel.skuprice)                                                            |
-| Conditions      | [Includes Purchases](#conditions.includespurchases)                                        |
-| Column type     | Dimension                                                                                  |
-| Feature level   | Conditional                                                                                |
-| Allows nulls    | True                                                                                       |
-| Data type       | String                                                                                     |
-| Value format    | [Expected format](#datamodel.skuprice.purchasedurationtype.expectedformat)                  |
+| Constraint                 | Value                                                                                      |
+| :------------------------- | :----------------------------------------------------------------------------------------- |
+| Dataset                    | [SKU Price](#datamodel.skuprice)                                                           |
+| Operating Model Conditions | [Includes Purchases](#operatingmodelconditions.includespurchases)                          |
+| Column type                | Dimension                                                                                  |
+| Feature level              | Conditional                                                                                |
+| Allows nulls               | True                                                                                       |
+| Data type                  | String                                                                                     |
+| Value format               | [Expected format](#datamodel.skuprice.purchasedurationtype.expectedformat)                 |
 
 ## Version Introduced
 

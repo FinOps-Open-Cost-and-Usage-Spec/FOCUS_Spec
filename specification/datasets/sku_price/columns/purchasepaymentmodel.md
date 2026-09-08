@@ -43,15 +43,15 @@ Defines the financial settlement structure of a purchase.
 
 ## Content Constraints
 
-| Constraint      | Value                                                                                      |
-| :-------------- | :----------------------------------------------------------------------------------------- |
-| Dataset         | [SKU Price](#datamodel.skuprice)                                                            |
-| Conditions      | [Includes Purchases](#conditions.includespurchases)                                        |
-| Column type     | Dimension                                                                                  |
-| Feature level   | Conditional                                                                                |
-| Allows nulls    | True                                                                                       |
-| Data type       | String                                                                                     |
-| Value format    | Allowed values                                                                             |
+| Constraint                 | Value                                                                                      |
+| :------------------------- | :----------------------------------------------------------------------------------------- |
+| Dataset                    | [SKU Price](#datamodel.skuprice)                                                           |
+| Operating Model Conditions | [Includes Purchases](#operatingmodelconditions.includespurchases)                          |
+| Column type                | Dimension                                                                                  |
+| Feature level              | Conditional                                                                                |
+| Allows nulls               | True                                                                                       |
+| Data type                  | String                                                                                     |
+| Value format               | Allowed values                                                                             |
 
 ## Version Introduced
 

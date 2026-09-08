@@ -30,16 +30,16 @@ The suggested service-provider-published unit price for a single Pricing Unit of
 
 ## Content Constraints
 
-| Constraint      | Value                                                |
-| :-------------- | :--------------------------------------------------- |
-| Dataset         | [SKU Price](#datamodel.skuprice)                      |
-| Conditions      | Not applicable                                        |
-| Column type     | Metric                                               |
-| Feature level   | Mandatory                                            |
-| Allows nulls    | False                                                |
-| Data type       | Decimal                                              |
-| Value format    | [Numeric Format](#attributes.numericformat)          |
-| Number range    | Any valid non-negative decimal value                 |
+| Constraint                 | Value                                                |
+| :------------------------- | :--------------------------------------------------- |
+| Dataset                    | [SKU Price](#datamodel.skuprice)                     |
+| Operating Model Conditions | Not applicable                                       |
+| Column type                | Metric                                               |
+| Feature level              | Mandatory                                            |
+| Allows nulls               | False                                                |
+| Data type                  | Decimal                                              |
+| Value format               | [Numeric Format](#attributes.numericformat)          |
+| Number range               | Any valid non-negative decimal value                 |
 
 ## Version Introduced
 
