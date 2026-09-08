@@ -18,7 +18,6 @@ ContractedCost MUST adhere to the following requirements:
 * ContractedCost MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * ContractedCost MUST NOT be null.
 * ContractedCost MUST be denominated in the BillingCurrency.
-* ContractedCost MUST NOT reflect any cost impact conditional on a discount-bearing *commitment program* being applied to the *charge*.
 * ContractedCost MUST equal ListCost when no negotiated unit price adjustments apply to the *charge*.
 * ContractedCost MUST equal [BilledCost](#datamodel.costandusage.billedcost) when [ChargeCategory](#datamodel.costandusage.chargecategory) is "Credit".
 * ContractedCost MUST be calculated based on the ContractedCost of the related *charges* when ChargeCategory is "Tax".
