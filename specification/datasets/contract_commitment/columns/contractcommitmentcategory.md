@@ -12,8 +12,8 @@ ContractCommitmentCategory MUST adhere to the following requirements:
 
 ## Allowed Values
 
-| Value   | Description                                                              |
-|:--------|:-------------------------------------------------------------------------|
+| Value   | Description                                                        |
+|:--------|:-------------------------------------------------------------------|
 | Spend   | Contract commitments that require a predetermined amount of spend. |
 | Usage   | Contract commitments that require a predetermined amount of usage. |
 
