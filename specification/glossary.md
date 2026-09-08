@@ -119,7 +119,7 @@ A purchase [*charge*](#glossary:charge) whose cost is applied against one or mor
 
 <a name="glossary:credential"><b>Credential</b></a>
 
-The means by which a [*principal*](#glossary:principal) is authenticated on an individual request (e.g., API key, access token, session). A credential is distinct from the principal that presents it, and the same principal may present different credentials on different requests. A credential is separate from any published identifier that references it; a credential with no such identifier cannot be represented in a FOCUS dataset.
+The means by which a [*principal*](#glossary:principal) is authenticated on an individual request (e.g., API key, access token, session). A credential is distinct from the principal it authenticates, and the same principal may be authenticated by different credentials on different requests. A credential is separate from any published identifier that references it; a credential with no such identifier cannot be represented in a FOCUS dataset.
 
 <a name="glossary:credit"><b>Credit</b></a>
 
@@ -286,7 +286,7 @@ A return of funds that have previously been charged.
 
 <a name="glossary:requester"><b>Requester</b></a>
 
-The entity on whose behalf a request that produces a [*charge*](#glossary:charge) is made, as represented in an identity and access management model. A service provider commonly represents a requester at more than one level, such as the [*principal*](#glossary:principal) to which access to [*resources*](#glossary:resource) or [*services*](#glossary:service) is granted and the [*credential*](#glossary:credential) presented on the request. A requester is distinct from the party that benefits from the usage or purchase, which a FOCUS dataset does not identify.
+The identity under which a request that produces a [*charge*](#glossary:charge) is made, as represented in an identity and access management model. A service provider commonly represents a requester at more than one level, such as the [*principal*](#glossary:principal) to which access to [*resources*](#glossary:resource) or [*services*](#glossary:service) is granted and the [*credential*](#glossary:credential) presented on the request. A requester is distinct from the party that benefits from the usage or purchase, which a FOCUS dataset does not identify.
 
 <a name="glossary:resource"><b>Resource</b></a>
 

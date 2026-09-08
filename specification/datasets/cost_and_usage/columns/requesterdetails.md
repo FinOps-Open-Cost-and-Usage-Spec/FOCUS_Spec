@@ -1,6 +1,6 @@
 # Requester Details
 
-Requester Details represents a set of properties describing the [*requester*](#glossary:requester) on whose behalf a request that produced a [*charge*](#glossary:charge) was made. A *requester* is commonly represented at more than one level: the [*principal*](#glossary:principal) to which access to a [*resource*](#glossary:resource) or [*service*](#glossary:service) is granted, and the [*credential*](#glossary:credential) that *principal* presented on the request. Requester Details carries these as a collection of key-value entries, where the `Principal` entry describes the *principal* identified by [Principal ID](#datamodel.costandusage.principalid) and the `Credential` entry describes the *credential* identified by [Credential ID](#datamodel.costandusage.credentialid).
+Requester Details represents a set of properties describing the [*requester*](#glossary:requester) under whose identity a request that produced a [*charge*](#glossary:charge) was made. A *requester* is commonly represented at more than one level: the [*principal*](#glossary:principal) to which access to a [*resource*](#glossary:resource) or [*service*](#glossary:service) is granted, and the [*credential*](#glossary:credential) that authenticated that *principal* on the request. Requester Details carries these as a collection of key-value entries, where the `Principal` entry describes the *principal* identified by [Principal ID](#datamodel.costandusage.principalid) and the `Credential` entry describes the *credential* identified by [Credential ID](#datamodel.costandusage.credentialid).
 
 Where Principal ID and Credential ID provide opaque identifiers suited to grouping and joining, Requester Details carries the descriptive attributes published alongside those identifiers, such as a display name, an email address, and the kind of *principal* or *credential* the identifier represents. A request may be authenticated with an API key acting under a named user, or with a workload identity acting under a service account; in each case the named user or service account is the *principal*, and the API key or workload identity is the *credential*.
 
@@ -135,7 +135,7 @@ Requester Details
 
 ## Description
 
-A set of properties describing the *requester* on whose behalf a request that produced a *charge* was made.
+A set of properties describing the *requester* under whose identity a request that produced a *charge* was made.
 
 ## Content Constraints
 
