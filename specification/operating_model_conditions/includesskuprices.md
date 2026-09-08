@@ -2,6 +2,8 @@
 
 The Includes SKU Prices operating model condition represents a verifiable state indicating whether the [*operating model*](#glossary:operating-model) includes [*SKU Prices*](#glossary:sku-price).
 
+> **Note:** An *operating model* does not include *SKU Prices* when no [*service provider*](#glossary:service-provider) in it supplies a [*price list*](#glossary:price-list) (e.g., auction-based marketplaces, pure pass-through aggregation of third-party prices, or exclusively bespoke-quoted capacity).
+
 ## Requirements
 
 IncludesSkuPrices MUST adhere to the following requirements:
