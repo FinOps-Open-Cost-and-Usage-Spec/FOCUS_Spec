@@ -44,7 +44,7 @@ The provider-suggested unit price per Pricing Unit for the *SKU Price* identifie
 | Constraint                 | Value                                       |
 | :------------------------- | :------------------------------------------ |
 | Dataset                    | [Cost and Usage](#datamodel.costandusage)   |
-| Operating Model Conditions | [Includes List Unit Prices](#operatingmodelconditions.includeslistunitprices) |
+| Operating Model Conditions | Not applicable                              |
 | Column type                | Metric                                      |
 | Feature level              | Mandatory                                   |
 | Allows nulls               | True                                        |

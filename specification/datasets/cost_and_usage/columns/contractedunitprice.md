@@ -47,7 +47,7 @@ The negotiated unit price per Pricing Unit for the *SKU Price* identified by the
 | Constraint                 | Value                                       |
 | :------------------------- | :------------------------------------------ |
 | Dataset                    | [Cost and Usage](#datamodel.costandusage)   |
-| Operating Model Conditions | [Includes Negotiated Pricing](#operatingmodelconditions.includesnegotiatedpricing) |
+| Operating Model Conditions | Not applicable                              |
 | Column type                | Metric                                      |
 | Feature level              | Mandatory                                   |
 | Allows nulls               | True                                        |
