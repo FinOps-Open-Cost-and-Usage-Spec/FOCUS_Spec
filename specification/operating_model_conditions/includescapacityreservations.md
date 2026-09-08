@@ -1,6 +1,6 @@
 # Includes Capacity Reservations
 
-The Includes Capacity Reservations condition represents a verifiable state indicating whether the [*operating model*](#glossary:operating-model) includes [*capacity reservations*](#glossary:capacity-reservation).
+The Includes Capacity Reservations operating model condition represents a verifiable state indicating whether the [*operating model*](#glossary:operating-model) includes [*capacity reservations*](#glossary:capacity-reservation).
 
 ## Requirements
 
@@ -9,7 +9,7 @@ IncludesCapacityReservations MUST adhere to the following requirements:
 * IncludesCapacityReservations MUST evaluate to true when the *operating model* includes *capacity reservations*.
 * IncludesCapacityReservations MUST evaluate to false when the *operating model* does not include *capacity reservations*.
 
-## Condition ID
+## Operating Model Condition ID
 
 IncludesCapacityReservations
 

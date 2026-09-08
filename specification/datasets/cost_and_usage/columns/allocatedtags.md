@@ -54,14 +54,15 @@ A set of tags assigned to tag sources that are applicable to *allocated charges*
 
 ## Content Constraints
 
-| Constraint      | Value                                                |
-| :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datamodel.costandusage)             |
-| Column type     | Dimension                                            |
-| Feature level   | Conditional                                          |
-| Allows nulls    | True                                                 |
-| Data type       | JSON                                                 |
-| Value format    | [Key-Value Format](#attributes.key-valueformat)      |
+| Constraint                 | Value                                           |
+| :------------------------- | :---------------------------------------------- |
+| Dataset                    | [Cost and Usage](#datamodel.costandusage)       |
+| Operating Model Conditions | [Includes Split Cost Allocation](#operatingmodelconditions.includessplitcostallocation) |
+| Column type                | Dimension                                       |
+| Feature level              | Conditional                                     |
+| Allows nulls               | True                                            |
+| Data type                  | JSON                                            |
+| Value format               | [Key-Value Format](#attributes.key-valueformat) |
 
 ## Version Introduced
 
