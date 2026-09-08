@@ -198,7 +198,7 @@ To ensure consistent language when describing relationships and evaluations betw
 
 ### Domain Terminology
 
-To ensure clarity and prevent ambiguity between distinct domain concepts, normative requirements and standard prose MUST use sufficiently domain-qualified terminology.
+To ensure clarity and prevent ambiguity between distinct domain concepts, normative requirements and standard prose MUST adhere to the following domain terminology requirements:
 
 * **Tier Terms:**
   * Terms containing `tier` or `tiered` SHOULD be qualified sufficiently to distinguish the intended concept from other tier concepts (e.g., `Pricing` may refer to both threshold-based pricing and subscription levels, so `Pricing Tier` remains ambiguous).
