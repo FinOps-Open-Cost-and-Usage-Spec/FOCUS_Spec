@@ -37,7 +37,7 @@ List Cost
 
 ## Description
 
-Cost of a *charge* based on the service-provider-suggested pricing.
+Cost of a *charge* based on the provider-suggested pricing.
 
 ## Content Constraints
 
