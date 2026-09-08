@@ -11,7 +11,7 @@ PurchasePaymentModel MUST adhere to the following requirements:
   * PurchasePaymentModel MUST be null when [ChargeCategory](#datamodel.skuprice.chargecategory) is "Usage".
   * PurchasePaymentModel MUST be null when ChargeCategory is "Credit".
   * PurchasePaymentModel MUST NOT be null when ChargeCategory is "Purchase".
-* PurchasePaymentModel MUST be one of the allowed values when present.
+* PurchasePaymentModel MUST be one of the allowed values.
 
 ## Allowed Values
 

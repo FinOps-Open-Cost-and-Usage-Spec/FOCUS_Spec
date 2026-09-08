@@ -39,7 +39,7 @@ A rate that varies with market conditions, such as spot capacity, has no represe
 
 ### Price History is Not Guaranteed
 
-The dataset represents prices as of the date it is captured. A service provider is not required to publish superseded prices, and the dataset carries no signal saying whether it did, so two conformant instances can return a different number of rows for the same SKU Price ID at the same point in time. Retaining successive instances and comparing them on SKU Price Created and SKU Price Last Updated is how a practitioner reconstructs a history the provider does not publish.
+The dataset represents prices as of the date it is captured. A service provider is not required to publish superseded prices, and the dataset carries no signal saying whether it did, so two conformant instances can return a different number of rows for the same SKU Price ID at the same point in time. Retaining successive instances and comparing them on SKU Price Effective Start and SKU Price Effective End is how a practitioner reconstructs a history the provider does not publish.
 
 This one is deliberate rather than deferred. Requiring full price history would raise the cost of a first conformant delivery considerably, for a capability most practitioners can reproduce by retaining what they already receive.
 

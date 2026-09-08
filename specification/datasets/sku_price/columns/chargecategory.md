@@ -11,7 +11,7 @@ ChargeCategory MUST adhere to the following requirements:
 * ChargeCategory MUST be one of the allowed values.
 * ChargeCategory MUST be "Usage" when the *SKU Price* represents the rate for consumption of a service or resource.
 * ChargeCategory MUST be "Purchase" when the *SKU Price* represents a fee for the acquisition of a service, resource, or [*commitment*](#glossary:commitment).
-* ChargeCategory MUST be "Credit" when the *SKU Price* represents the unit value of a credit granted by the service provider.
+* ChargeCategory MUST be "Credit" when the *SKU Price* represents the unit value of a credit granted by the [*service provider*](#glossary:service-provider).
 
 ## Allowed Values
 
@@ -29,7 +29,7 @@ The Cost and Usage dataset acts as a financial ledger that tracks post-facto fin
 
 Conversely, the SKU Price dataset acts as a pre-facto catalog of available unit rates. Because taxes are calculated dynamically based on jurisdiction and entity, and adjustments are account-level ledger corrections, service providers do not publish catalog unit prices for these events. Therefore, the allowed values for Charge Category in the SKU Price dataset are limited to catalog pricing constructs: "Usage" (the published rate to consume a resource), "Purchase" (the published fee to acquire a commitment or service), and "Credit" (the published unit value of a granted credit).
 
-Credits are catalog pricing constructs where a service provider issues a distinct *SKU* and *SKU Price* for the credit, most commonly a promotional credit carrying a defined unit value. Where a service provider publishes no such *SKU Price*, the credit appears only in Cost and Usage and has no SKU Price record.
+Credits are catalog pricing constructs where a service provider issues a distinct [*SKU*](#glossary:sku) and *SKU Price* for the credit, most commonly a promotional credit carrying a defined unit value. Where a service provider publishes no such *SKU Price*, the credit appears only in Cost and Usage and has no SKU Price record.
 
 ## Column ID
 

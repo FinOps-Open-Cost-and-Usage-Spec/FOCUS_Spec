@@ -11,7 +11,6 @@ QuantityTierMinimum MUST adhere to the following requirements:
 * QuantityTierMinimum MUST be of type Decimal.
 * QuantityTierMinimum MUST NOT be null.
 * QuantityTierMinimum MUST represent a quantity denominated in the [PricingUnit](#datamodel.skuprice.pricingunit).
-* QuantityTierMinimum MUST be strictly less than [QuantityTierMaximum](#datamodel.skuprice.quantitytiermaximum) when QuantityTierMaximum is not null.
 * QuantityTierMinimum MUST be the exclusive lower bound of the quantity-based pricing tier.
 
 ## Column ID
