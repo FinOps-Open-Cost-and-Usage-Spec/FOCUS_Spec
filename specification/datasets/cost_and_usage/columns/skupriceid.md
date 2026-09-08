@@ -43,7 +43,7 @@ A service-provider-specified unique identifier that represents a specific *SKU P
 | Constraint                 | Value                                     |
 | :------------------------- | :---------------------------------------- |
 | Dataset                    | [Cost and Usage](#datamodel.costandusage) |
-| Operating Model Conditions | [Includes Unit Pricing](#operatingmodelconditions.includesunitpricing) |
+| Operating Model Conditions | Not applicable                            |
 | Column type                | Dimension                                 |
 | Feature level              | Mandatory                                 |
 | Allows nulls               | True                                      |

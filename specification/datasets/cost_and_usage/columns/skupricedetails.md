@@ -92,7 +92,7 @@ A set of properties of a SKU Price ID which are meaningful and common to all ins
 | Constraint                 | Value                                           |
 | :------------------------- | :---------------------------------------------- |
 | Dataset                    | [Cost and Usage](#datamodel.costandusage)       |
-| Operating Model Conditions | [Includes Unit Pricing](#operatingmodelconditions.includesunitpricing) |
+| Operating Model Conditions | Not applicable                                  |
 | Column type                | Dimension                                       |
 | Feature level              | Mandatory                                       |
 | Allows nulls               | True                                            |
