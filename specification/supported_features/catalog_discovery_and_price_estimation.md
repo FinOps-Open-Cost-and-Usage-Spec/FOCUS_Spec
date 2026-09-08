@@ -107,9 +107,10 @@ SELECT
 FROM PlannedUsage PU
 LEFT JOIN SkuPrice SP
   ON SP.SkuPriceId = PU.SkuPriceId
-  AND SP.SkuPriceEffectiveStart <= PU.PlannedDate
-  AND SP.SkuPriceEffectiveEnd > PU.PlannedDate
+  AND (SP.SkuPriceEffectiveStart IS NULL OR SP.SkuPriceEffectiveStart <= PU.PlannedDate)
+  AND (SP.SkuPriceEffectiveEnd IS NULL OR SP.SkuPriceEffectiveEnd > PU.PlannedDate)
 ORDER BY SP.PricingCurrencyCategory, SP.PricingCurrency, EstimatedListAmount DESC
+```
 
 ### Identify the Prices a Billing Account is Eligible For
 

@@ -100,7 +100,7 @@ ORDER BY DiscountRate DESC
 
 This query takes inputs of a time range via Charge Period Start and Charge Period End, aggregates consumption per SKU Price ID over that range, and returns the tier each aggregated quantity falls within. The quantity is aggregated before the tier is resolved, because a tier boundary is evaluated against the quantity accumulated over the pricing period rather than against the quantity on a single charge.
 
-The join carries the effective date window so that consumption matches the price that applied during the range, not every price ever published under that SKU Price ID. A SKU Price ID that also carries a negotiated rate on the resolved tier returns one row per agreement, and Contract ID is null on the public record.
+The join carries the effective date window so that consumption matches the price that applied during the range, not every price ever published under that SKU Price ID. The window is evaluated against the earliest charge period start in the range, so the range supplied is one that falls within a single effective window. A range that crosses a price change resolves the tier against the record in force at the start of the range rather than against each record in turn. A SKU Price ID that also carries a negotiated rate on the resolved tier returns one row per agreement, and Contract ID is null on the public record.
 
 > **Note:** Whether the resolved rate applies only to the units inside that tier or retroactively to all units consumed is a property of the published pricing terms for the offering rather than of the tier boundaries, so the tier returned here identifies the applicable rate rather than recalculating the charge.
 
@@ -205,13 +205,16 @@ This query takes inputs of a time range via Charge Period Start and Charge Perio
 
 Consumption already covered by a *commitment discount* is excluded. Its Effective Cost already reflects that commitment while Contracted Unit Price does not, so including it would subtract the two against different baselines and report the agreement as raising cost rather than lowering it.
 
-The join resolves the quantity tier the aggregated consumption falls into, so an agreement that negotiated several tiers reprices at the one rate that applies rather than once per tier.
+The join resolves the quantity tier the aggregated consumption falls into, so an agreement that negotiated several tiers reprices at the one rate that applies rather than once per tier. As in the tier resolution query above, the effective date window is evaluated against the earliest charge period start, so the range supplied is one that falls within a single effective window.
+
+Effective Cost is denominated in the Billing Currency while Contracted Unit Price is denominated in the Pricing Currency, so the join matches the two currencies before the difference is taken. Consumption billed in a currency the negotiated rate is not quoted in does not return, because the SKU Price dataset does not carry a conversion rate.
 
 ```sql
 WITH ObservedUsage AS (
   SELECT
     SkuPriceId,
     PricingUnit,
+    BillingCurrency,
     MIN(ChargePeriodStart) AS EarliestChargePeriodStart,
     SUM(PricingQuantity) AS TotalPricingQuantity,
     SUM(EffectiveCost) AS TotalEffectiveCost
@@ -220,7 +223,7 @@ WITH ObservedUsage AS (
     AND ChargeCategory = 'Usage'
     AND SkuPriceId IS NOT NULL
     AND CommitmentDiscountId IS NULL
-  GROUP BY SkuPriceId, PricingUnit
+  GROUP BY SkuPriceId, PricingUnit, BillingCurrency
 )
 SELECT
   SP.ContractId,
@@ -238,6 +241,7 @@ FROM ObservedUsage OU
 INNER JOIN SkuPrice SP
   ON OU.SkuPriceId = SP.SkuPriceId
   AND OU.PricingUnit = SP.PricingUnit
+  AND OU.BillingCurrency = SP.PricingCurrency
   AND OU.TotalPricingQuantity > SP.QuantityTierMinimum
   AND (SP.QuantityTierMaximum IS NULL OR OU.TotalPricingQuantity <= SP.QuantityTierMaximum)
   AND (SP.SkuPriceEffectiveStart IS NULL OR OU.EarliestChargePeriodStart >= SP.SkuPriceEffectiveStart)
