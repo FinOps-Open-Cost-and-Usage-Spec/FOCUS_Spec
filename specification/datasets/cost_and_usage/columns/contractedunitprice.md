@@ -1,8 +1,6 @@
 # Contracted Unit Price
 
-Contracted Unit Price represents the negotiated unit price per [Pricing Unit](#datamodel.costandusage.pricingunit) for the [*SKU Price*](#glossary:sku-price) identified by the given [SKU Price ID](#datamodel.costandusage.skupriceid).
-
-Contracted Unit Price reflects negotiated unit price adjustments for the associated *SKU Price*, independent of any discount-bearing [*commitment programs*](#glossary:commitment-program) (e.g., [*commitment discount*](#glossary:commitment-discount)) being applied to the [*charge*](#glossary:charge). Contracted Unit Price does not reflect any unit price impact conditional on a discount-bearing *commitment program* being applied to the *charge*.
+Contracted Unit Price represents the negotiated unit price per [Pricing Unit](#datamodel.costandusage.pricingunit) for the [*SKU Price*](#glossary:sku-price) identified by the given [SKU Price ID](#datamodel.costandusage.skupriceid). It is the unit price before any discount-bearing [*commitment programs*](#glossary:commitment-program) (e.g., [*commitment discount*](#glossary:commitment-discount)) are applied to the unit price.
 
 When no negotiated unit price adjustments apply to the *charge*, Contracted Unit Price equals [List Unit Price](#datamodel.costandusage.listunitprice).
 
