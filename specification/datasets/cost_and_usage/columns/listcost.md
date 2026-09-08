@@ -23,7 +23,7 @@ ListCost MUST adhere to the following requirements:
 
 ## Usability Constraints
 
-**Aggregation:** When aggregating List Cost for savings calculations, exclude either the [*covering charges*](#glossary:covering-charge) (e.g., [*commitment discount*](#glossary:commitment-discount) purchases) or the [*covered charges*](#glossary:covered-charge) (e.g., usage charges applied against *commitment discount*) to avoid double counting. Including both would result in the same costs being counted more than once in the aggregation. The appropriate set to exclude depends on the cost basis: exclude *covered charges* when aggregating on a billed basis, or exclude *covering charges* when aggregating on an accrual basis.
+**Aggregation:** When aggregating List Cost for savings calculations, exclude either the [*covering charges*](#glossary:covering-charge) (e.g., [*commitment discount*](#glossary:commitment-discount) purchases) or the [*covered charges*](#glossary:covered-charge) (e.g., usage charges applied against *commitment discount*), based on the specific use case, to avoid double counting. The appropriate set to exclude depends on the relevant cost basis for the use case. Exclude *covered charges* when aggregating on a billed basis, or *covering charges* when aggregating on an accrual basis.
 
 ## Column ID
 
