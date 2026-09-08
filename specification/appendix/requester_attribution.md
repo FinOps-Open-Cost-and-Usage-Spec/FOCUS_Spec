@@ -1,6 +1,6 @@
 # Examples: Requester Attribution
 
-The examples below illustrate how [Principal ID](#datamodel.costandusage.principalid) and [Credential ID](#datamodel.costandusage.credentialid) are populated in the [Cost and Usage](#datamodel.costandusage) dataset across technology environments. Each scenario identifies the [*principal*](#glossary:principal) to which access to a [*resource*](#glossary:resource) or [*service*](#glossary:service) is granted and the [*credential*](#glossary:credential) presented on the request that produced the [*charge*](#glossary:charge). Provider, customer, and identifier values below are illustrative.
+The examples below illustrate how [Principal ID](#datamodel.costandusage.principalid) and [Credential ID](#datamodel.costandusage.credentialid) are populated in the [Cost and Usage](#datamodel.costandusage) dataset across technology environments. Each scenario shows which levels of the [*requester*](#glossary:requester) are represented: the [*principal*](#glossary:principal) to which access to a [*resource*](#glossary:resource) or [*service*](#glossary:service) is granted, the [*credential*](#glossary:credential) presented on the request that produced the [*charge*](#glossary:charge), both, or neither. Provider, customer, and identifier values below are illustrative.
 
 ## Attribution Roles
 
@@ -38,22 +38,22 @@ The two columns are independent: a *charge* may carry a *principal* with no *cre
 
 ## Summary
 
-| # | Scenario | Data Generator | PrincipalId | CredentialId | Credential Type |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| 1 | **Generative AI API, User-Owned Key** | Aura Web | `user_8842` | `key_01HQZX3M8N` | API Key |
-| 2 | **Generative AI API, Service Account Key** | LatticeScale | `svc-acme-docbot-prod` | `key_7734PLQZ` | API Key |
-| 3 | **Multi-Tenant PaaS** | OmniQuery | `svc-bi-reporting-engine` | `key_22XCVB88` | API Key |
-| 4 | **Network Edge Processing** | Aura Web | `svc-edge-gateway-prod` | `key_edge_9931` | API Key |
-| 5 | **Workload Identity** | LatticeScale | `svc-ci-deploy` | `fedsess_5FG2WQ7H` | Federated Session |
-| 6 | **Direct PaaS Usage, Session Recorded** | LatticeScale | `dev_uuid_112233` | `sess_9KD2LM4T` | Session |
-| 7 | **Direct PaaS Usage, No Session Recorded** | StackLens | `user_5521` | `null` | `null` |
-| 8 | **Credential Without a Published Identifier** | Meridian AI | `user_3390` | `null` | `null` |
-| 9 | **Seat-Based SaaS** | SprintCanvas | `user_uuid_554321` | `null` | `null` |
-| 10 | **Seat-Plus-Token SaaS** | PipelCRM | `user_uuid_887766` | `null` | `null` |
-| 11 | **API-Key-Only IAM Model** | PulseMail | `key_9RT2XZ40` | `null` | `null` |
-| 12 | **Marketplace Purchase** | Aura Web | `hp_user_66120` | `sess_MK4471` | Session |
-| 13 | **Credential Without a Determinable Principal** | Meridian AI | `null` | `key_07PQXR2W9F` | API Key |
-| 14 | **Billing System Charge** | LatticeScale | `null` | `null` | `null` |
+| # | Scenario | Data Generator | PrincipalId | Principal Type | CredentialId | Credential Type |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 1 | **Generative AI API, User-Owned Key** | Aura Web | `user_8842` | User | `key_01HQZX3M8N` | API Key |
+| 2 | **Generative AI API, Service Account Key** | LatticeScale | `svc-acme-docbot-prod` | Service Account | `key_7734PLQZ` | API Key |
+| 3 | **Multi-Tenant PaaS** | OmniQuery | `svc-bi-reporting-engine` | Service Account | `key_22XCVB88` | API Key |
+| 4 | **Network Edge Processing** | Aura Web | `svc-edge-gateway-prod` | Service Account | `key_edge_9931` | API Key |
+| 5 | **Workload Identity** | LatticeScale | `svc-ci-deploy` | Service Account | `fedsess_5FG2WQ7H` | Federated Session |
+| 6 | **Direct PaaS Usage, Session Recorded** | LatticeScale | `dev_uuid_112233` | User | `sess_9KD2LM4T` | Session |
+| 7 | **Direct PaaS Usage, No Session Recorded** | StackLens | `user_5521` | User | `null` | `null` |
+| 8 | **Credential Without a Published Identifier** | Meridian AI | `user_3390` | User | `null` | `null` |
+| 9 | **Seat-Based SaaS** | SprintCanvas | `user_uuid_554321` | User | `null` | `null` |
+| 10 | **Seat-Plus-Token SaaS** | PipelCRM | `user_uuid_887766` | User | `null` | `null` |
+| 11 | **API-Key-Only IAM Model** | PulseMail | `key_9RT2XZ40` | API Key | `null` | `null` |
+| 12 | **Marketplace Purchase** | Aura Web | `hp_user_66120` | User | `sess_MK4471` | Session |
+| 13 | **Credential Without a Determinable Principal** | Meridian AI | `null` | `null` | `key_07PQXR2W9F` | API Key |
+| 14 | **Billing System Charge** | LatticeScale | `null` | `null` | `null` | `null` |
 
 Every CredentialId value above is an identifier a *service provider* assigns to a *credential* and publishes, not the *credential* itself. Scenarios 7 through 11 show the reasons the column is null, and each maps to one of the two null conditions: in Scenario 8 the *credential* presented has no published identifier, while in the others no *credential* is associated with the *charge*, whether because no session is identified separately from the *principal* (Scenario 7), the *charge* is not the product of an individual request (Scenarios 9 and 10), or the presented key is itself the *principal* (Scenario 11).
 
