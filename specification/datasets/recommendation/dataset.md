@@ -14,10 +14,10 @@ The Recommendation dataset is a supporting dataset that describes optimization r
 | [Contract Commitment Type](#datamodel.recommendation.contractcommitmenttype) | Dimension | [Conditional](#operatingmodelconditions.includescontractcommitmentrecommendations) | True | String |
 | [Currency](#datamodel.recommendation.currency) | Dimension | Mandatory | True | String |
 | [Estimated Monthly Cost Impact](#datamodel.recommendation.estimatedmonthlycostimpact) | Metric | Mandatory | True | Decimal |
-| [Implementation Effort](#datamodel.recommendation.implementationeffort) | Dimension | Optional | True | String |
-| [Implementation Risk](#datamodel.recommendation.implementationrisk) | Dimension | Optional | True | String |
 | [Evaluation Period End](#datamodel.recommendation.evaluationperiodend) | Dimension | Optional | True | Date/Time |
 | [Evaluation Period Start](#datamodel.recommendation.evaluationperiodstart) | Dimension | Optional | True | Date/Time |
+| [Implementation Effort](#datamodel.recommendation.implementationeffort) | Dimension | Optional | True | String |
+| [Implementation Risk](#datamodel.recommendation.implementationrisk) | Dimension | Optional | True | String |
 | [Recommendation Category](#datamodel.recommendation.recommendationcategory) | Dimension | Mandatory | False | String |
 | [Recommendation Created](#datamodel.recommendation.recommendationcreated) | Dimension | Mandatory | False | Date/Time |
 | [Recommendation Description](#datamodel.recommendation.recommendationdescription) | Dimension | Mandatory | True | String |
@@ -66,10 +66,10 @@ Recommendation MUST adhere to the following requirements:
   * Recommendation MUST include [ContractCommitmentType](#datamodel.recommendation.contractcommitmenttype) when the *operating model* [includes contract commitment recommendations](#operatingmodelconditions.includescontractcommitmentrecommendations).
   * Recommendation MUST include [Currency](#datamodel.recommendation.currency).
   * Recommendation MUST include [EstimatedMonthlyCostImpact](#datamodel.recommendation.estimatedmonthlycostimpact).
-  * Recommendation MAY include [ImplementationEffort](#datamodel.recommendation.implementationeffort).
-  * Recommendation MAY include [ImplementationRisk](#datamodel.recommendation.implementationrisk).
   * Recommendation MAY include [EvaluationPeriodEnd](#datamodel.recommendation.evaluationperiodend).
   * Recommendation MAY include [EvaluationPeriodStart](#datamodel.recommendation.evaluationperiodstart).
+  * Recommendation MAY include [ImplementationEffort](#datamodel.recommendation.implementationeffort).
+  * Recommendation MAY include [ImplementationRisk](#datamodel.recommendation.implementationrisk).
   * Recommendation MUST include [RecommendationCategory](#datamodel.recommendation.recommendationcategory).
   * Recommendation MUST include [RecommendationCreated](#datamodel.recommendation.recommendationcreated).
   * Recommendation MUST include [RecommendationDescription](#datamodel.recommendation.recommendationdescription).
