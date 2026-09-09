@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import importlib.util
 import os
 import re
 import subprocess
@@ -37,6 +38,9 @@ GROUP_PATTERNS = {
     "saas_spend_agreements": "saas_examples/spend_agreements/*.csv",
     "saas_virtual_currency": "saas_examples/virtual_currency_pricing_model_*.csv",
 }
+
+VALIDATOR_ENV_VAR = "FOCUS_VALIDATOR_PATH"
+VALIDATOR_REPO_URL = "https://github.com/finopsfoundation/focus_validator"
 
 
 def parse_args() -> argparse.Namespace:
@@ -79,6 +83,15 @@ def parse_args() -> argparse.Namespace:
         default=None,
         help="Optional file containing one Rule ID per line to exclude from threshold checks.",
     )
+    parser.add_argument(
+        "--validator-path",
+        default=None,
+        help=(
+            "Path to the FOCUS Validator checkout. Defaults to the "
+            f"{VALIDATOR_ENV_VAR} environment variable, then ./focus_validator, "
+            "then ../focus_validator."
+        ),
+    )
     return parser.parse_args()
 
 
@@ -107,14 +120,50 @@ def load_excluded_rules(exclude_rule_args: list[str], exclude_rules_file: str | 
     return excluded_rules
 
 
+def _is_validator_checkout(path: Path) -> bool:
+    """Return True when path looks like a FOCUS Validator repository root."""
+    return (path / "focus_validator" / "main.py").is_file()
+
+
+def resolve_validator_cwd(focus_spec_root: Path, explicit: str | None) -> Path | None:
+    """Locate the FOCUS Validator checkout.
+
+    Returns the working directory to run the validator from, or None when
+    focus_validator is already importable and no directory override is needed.
+    """
+    for source, raw in (("--validator-path", explicit), (VALIDATOR_ENV_VAR, os.environ.get(VALIDATOR_ENV_VAR))):
+        if not raw:
+            continue
+        candidate = Path(raw).expanduser().resolve()
+        if _is_validator_checkout(candidate):
+            return candidate
+        raise SystemExit(
+            f"{source} points to {candidate}, which does not contain focus_validator/main.py.\n"
+            f"Clone the validator from {VALIDATOR_REPO_URL} and point {source} at its root."
+        )
+
+    for candidate in (focus_spec_root / "focus_validator", focus_spec_root.parent / "focus_validator"):
+        if _is_validator_checkout(candidate):
+            return candidate.resolve()
+
+    if importlib.util.find_spec("focus_validator") is not None:
+        return None
+
+    raise SystemExit(
+        "Could not locate the FOCUS Validator.\n"
+        f"Clone it from {VALIDATOR_REPO_URL} next to this repository, or point at it with\n"
+        f"  --validator-path /path/to/focus_validator\n"
+        f"  {VALIDATOR_ENV_VAR}=/path/to/focus_validator"
+    )
+
+
 def run_validator(
-    focus_spec_root: Path,
+    validator_cwd: Path | None,
     csv_path: Path,
     validate_version: str,
     applicability_criteria: str,
     filter_rules: str | None,
 ) -> ValidationResult:
-    validator_cwd = focus_spec_root / "focus_validator"
     cmd = [
         sys.executable,
         "-m",
@@ -163,6 +212,7 @@ def main() -> int:
     script_path = Path(__file__).resolve()
     data_dir = script_path.parent
     focus_spec_root = data_dir.parent.parent
+    validator_cwd = resolve_validator_cwd(focus_spec_root, args.validator_path)
 
     groups = args.group or list(GROUP_PATTERNS.keys())
     files = iter_files(data_dir, groups)
@@ -178,7 +228,7 @@ def main() -> int:
     results: list[ValidationResult] = []
     for csv_path in files:
         result = run_validator(
-            focus_spec_root=focus_spec_root,
+            validator_cwd=validator_cwd,
             csv_path=csv_path,
             validate_version=args.validate_version,
             applicability_criteria=args.applicability_criteria,

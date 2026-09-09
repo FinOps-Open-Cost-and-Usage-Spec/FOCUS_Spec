@@ -226,6 +226,12 @@ The contributor may only proceed with requesting review of the complete set of e
 
 Before requesting review for example updates, contributors SHOULD validate the affected CSV examples with the FOCUS Validator.
 
+The commands below require a local checkout of the [FOCUS Validator](https://github.com/finopsfoundation/focus_validator) with its dependencies installed. The script looks for the validator in `./focus_validator`, then `../focus_validator`. When the checkout is elsewhere, point at it with `--validator-path` or the `FOCUS_VALIDATOR_PATH` environment variable:
+
+```bash
+python specification/data/validate_examples.py --validator-path /path/to/focus_validator --validate-version 1.2 --applicability-criteria ALL
+```
+
 * Validate all tracked example groups:
 
 ```bash
@@ -244,22 +250,22 @@ python specification/data/validate_examples.py --group commitment_discount_flexi
 python specification/data/validate_examples.py --group commitment_discount_flexibility --filter-rules CommitmentDiscount --validate-version 1.2 --applicability-criteria ALL
 ```
 
-* Run adjusted validation when a workstream has approved and documented OR-composite false negatives:
+* Run adjusted validation when a workstream has approved and documented OR-composite false positives:
 
 ```bash
 python specification/data/validate_examples.py --group commitment_discount_flexibility --validate-version 1.2 --applicability-criteria ALL --exclude-rules-file specification/data/commitment_discount_flexibility_excluded_rules_v1_2.txt
 ```
 
+Exclusion lists used for adjusted validation adhere to the following requirements:
+
+* Exclusion lists MUST be version-scoped.
+* Exclusion lists MUST be narrowly targeted.
+* Exclusion lists MUST have Task Force approval before merge.
+
 > **Note:**
 > `Fail` is the raw validator output.
 >
 > `AdjustedFail` excludes only the explicitly listed Rule IDs and is the value used for the threshold check.
->
-> Exclusion list MUST be version-scoped.
->
-> Exclusion lists MUST be narrowly targeted.
->
-> Exclusion lists MUST have Task Force approval before merge.
 
 ## Pull Requests
 
