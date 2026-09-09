@@ -134,7 +134,7 @@ UncachedRate AS (
     ModelId,
     MAX(COALESCE(ContractedUnitPrice, ListUnitPrice)) AS UncachedUnitPrice
   FROM TokenRows
-  WHERE TokenDirection = 'Input' AND CacheAction = 'None'
+  WHERE TokenDirection = 'Input' AND CacheAction = 'Uncached'
   GROUP BY ServiceProviderName, ModelId
 ),
 InputSide AS (

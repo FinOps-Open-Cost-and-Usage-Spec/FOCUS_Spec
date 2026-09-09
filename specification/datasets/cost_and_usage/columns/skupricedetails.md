@@ -22,6 +22,9 @@ SkuPriceDetails MUST adhere to the following requirements:
   * SkuPriceDetails MUST include the FOCUS-defined SKU Price property when an equivalent property is included as a custom property.
   * SkuPriceDetails MUST NOT include properties that are not applicable to the corresponding SkuPriceId.
   * SkuPriceDetails SHOULD include all FOCUS-defined SKU Price properties listed below that are applicable to the corresponding SkuPriceId.
+  * SkuPriceDetails SHOULD include CacheAction when the *SKU Price* is metered in tokens.
+  * SkuPriceDetails SHOULD include TokenDirection when the *SKU Price* meters only tokens consumed from a request or only tokens generated in a response.
+  * SkuPriceDetails MUST NOT include CacheAction or TokenDirection when the *SKU Price* is not metered in tokens (e.g., a charge for retaining cached content metered in token-hours).
   * SkuPriceDetails SHOULD include all custom SKU Price properties that are applicable to the corresponding SkuPriceId when there is no equivalent FOCUS-defined property.
   * SkuPriceDetails MAY include properties that are already captured in other dedicated columns.
   * SkuPriceDetails properties for a given SkuPriceId MUST adhere to the following requirements:
@@ -36,6 +39,14 @@ SkuPriceDetails MUST adhere to the following requirements:
   * Property value MUST be of the type specified for that property.
   * Property value MUST represent the value for a single PricingUnit, denominated in the unit of measure specified for that property when the property holds a numeric value.
   * Property value MUST be one of the allowed values specified for that property when allowed values are specified.
+* When included, CacheAction and TokenDirection MUST adhere to the following requirements:
+  * CacheAction MUST be "Read" when the *SKU Price* meters only request tokens served from a cache.
+  * CacheAction MUST be "Write" when the *SKU Price* meters only request tokens placed into a cache (e.g., a charge a service provider meters as cache creation).
+  * CacheAction MUST be "Uncached" when the *SKU Price* meters tokens without distinguishing a cache interaction (e.g., tokens generated in a response, or request tokens that a service provider bills on one meter whether or not they were placed into a cache).
+  * CacheAction MUST be "Other" when the *SKU Price* meters a cache-related token charge to which none of the other allowed values apply.
+  * TokenDirection MUST be "Input" when the tokens metered by the *SKU Price* are consumed from a request.
+  * TokenDirection MUST be "Output" when the tokens metered by the *SKU Price* are generated in a response.
+  * [ConsumedQuantity](#datamodel.costandusage.consumedquantity) on a row with CacheAction "Uncached" MUST NOT include tokens counted in ConsumedQuantity on a row with CacheAction "Read" or "Write" (e.g., a cached token that a usage report also counts inside a prompt token total is counted on the "Read" row only).
 
 ## FOCUS-Defined Properties
 
@@ -43,7 +54,7 @@ The following keys should be used when applicable to facilitate cross-SKU and cr
 
 | Key                      | Description                                                              | Data Type        | Unit of Measure (numeric) or values (string)          |
 | :----------------------- | :----------------------------------------------------------------------- | :--------------- | :---------------------------------------------------- |
-| CacheAction              | How the tokens metered by the SKU interacted with a prompt cache<sup>4</sup> | String           | Allowed values: "None", "Read", "Write", "Other"      |
+| CacheAction              | How the tokens metered by the SKU interacted with a prompt cache<sup>4</sup> | String           | Allowed values: "Uncached", "Read", "Write", "Other"  |
 | CoreCount                | Number of physical or virtual CPUs available<sup>1</sup>                 | Numeric          | Measure: Quantity of Cores                            |
 | DiskMaxIops              | Storage maximum sustained input/output operations per second<sup>1</sup> | Numeric          | Measure: Input/Output Operations per Second (IOPS)    |
 | DiskSpace                | Storage capacity available                                               | Numeric          | Measure: Gibibytes (GiB)                              |
@@ -67,7 +78,7 @@ Notes
 <br><sup>1</sup> In the case of "burstable" SKUs offering variable levels of performance, the baseline or guaranteed value should be used.
 <br><sup>2</sup> Memory manufacturers still commonly uses "GB" to refer to 2<sup>30</sup> bytes, which is known as GiB in other contexts.
 <br><sup>3</sup> This is the operating system family of the SKU, if it's included with the SKU or the SKU only supports one type of operating system.
-<br><sup>4</sup> CacheAction and TokenDirection apply to SKUs metered in tokens. A SKU Price metered in tokens carries both properties, and a SKU Price not metered in tokens carries neither, since properties that are not applicable to a SkuPriceId are not included. "Input" identifies tokens consumed from a request and "Output" identifies tokens generated in a response. "Read" identifies request tokens served from a cache, "Write" identifies request tokens placed into a cache, "None" identifies tokens the service provider meters without distinguishing a cache interaction, which includes all tokens generated in a response, and "Other" identifies a cache-related token charge that is neither a read nor a write. Each token a service provider bills is counted on one row, so ConsumedQuantity on a row with CacheAction "None" excludes tokens billed on rows with "Read" or "Write". The set of token kinds a model distinguishes is defined by the model developer. Which of those kinds a service provider meters as its own charge, and the meter name it uses, vary across service providers and across model versions, so these properties identify the kind of token independently of how a given service provider names its meters, and a value applies only where a service provider meters that kind of token as its own charge. Dimensions that qualify a charge without describing the direction of its tokens or their interaction with a cache, such as token modality, reasoning effort, cache retention duration, and context window size, are not values of these properties. Charges for retaining cached content over time are not measured in tokens and carry neither property.
+<br><sup>4</sup> CacheAction and TokenDirection apply to SKUs metered in tokens. The requirements above state when each property applies, what each value identifies, and that a token billed on a "Read" or "Write" row is not also counted on an "Uncached" row. The set of token kinds a model distinguishes is defined by the model developer. Which of those kinds a service provider meters as its own charge, and the meter name it uses, vary across service providers and across model versions, so these properties identify the kind of token independently of how a given service provider names its meters. Dimensions that qualify a charge without describing the direction of its tokens or their interaction with a cache, such as token modality, reasoning effort, cache retention duration, and context window size, are not values of these properties. [Examples: AI Prompt Caching](#appendix.examples:aipromptcaching) shows both properties on two service providers that meter cache activity differently.
 
 ## Examples
 
