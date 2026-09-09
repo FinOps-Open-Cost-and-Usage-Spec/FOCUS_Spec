@@ -8,7 +8,9 @@ RecommendationDescription MUST adhere to the following requirements:
 
 * RecommendationDescription MUST be of type String.
 * RecommendationDescription MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* RecommendationDescription MAY be null when a human-readable summary is not available.
+* RecommendationDescription MUST adhere to the following nullability requirements:
+  * RecommendationDescription MUST NOT be null when a human-readable summary of the recommendation is available to the [data generator](#metadata.datagenerator).
+  * RecommendationDescription MAY be null when a human-readable summary of the recommendation is not available to the data generator.
 
 ## Column ID
 
