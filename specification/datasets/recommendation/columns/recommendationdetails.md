@@ -30,8 +30,8 @@ RecommendationDetails MUST adhere to the following requirements:
   * Property key MUST combine a metric name and a calculation in the `<MetricName><Calculation>` format.
   * Property key SHOULD use one of the recommended metric names listed below.
   * Property key SHOULD use one of the recommended calculations listed below.
-  * Property key MUST express a metric name that is not listed as one of the recommended metric names in PascalCase format.
-  * Property key MUST express a calculation that is not listed as one of the recommended calculations in PascalCase format.
+  * Property key MUST express the metric name in PascalCase format when the metric name is not one of the recommended metric names.
+  * Property key MUST express the calculation in PascalCase format when the calculation is not one of the recommended calculations.
   * Property value MUST be of type Numeric.
   * Property value MUST be denominated in the unit of measure specified for that metric name.
 
