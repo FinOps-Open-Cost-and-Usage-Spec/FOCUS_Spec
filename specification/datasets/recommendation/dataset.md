@@ -48,9 +48,9 @@ The Recommendation dataset can be joined to the [Cost and Usage](#datamodel.cost
 * Resource ID associates a recommendation with the *resource* whose cost and usage the recommendation seeks to optimize.
 * Billing Account ID associates a recommendation with the [*billing account*](#glossary:billing-account) under which the related cost and usage is reported.
 
-| Dataset A      | Dataset A Column | Dataset B      | Dataset B Column |
-| -------------- | ---------------- | -------------- | ---------------- |
-| Recommendation | Resource ID      | Cost and Usage | Resource ID      |
+| Dataset A      | Dataset A Column   | Dataset B      | Dataset B Column   |
+| -------------- | ------------------ | -------------- | ------------------ |
+| Recommendation | Resource ID        | Cost and Usage | Resource ID        |
 | Recommendation | Billing Account ID | Cost and Usage | Billing Account ID |
 
 ## Requirements<!--SkipTOC-->
