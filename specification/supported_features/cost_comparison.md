@@ -25,12 +25,18 @@ When comparing costs across marketplace boundaries, practitioners should be awar
 * BillingPeriodEnd
 * BillingPeriodStart
 * ChargeCategory
+* ChargeClass
 * ChargePeriodEnd
 * ChargePeriodStart
 * CommitmentDiscountId
+* ConsumedUnit
+* ContractedUnitPrice
 * InvoiceIssuerName
+* ListUnitPrice
+* PricingQuantity
 * ServiceName
 * ServiceProviderName
+* SkuPriceDetails
 
 ## Example SQL Queries
 
@@ -101,10 +107,75 @@ GROUP BY
 HAVING ABS(SUM(EffectiveCost) - SUM(BilledCost)) > 0.01
 ```
 
+### Cache Cost Efficiency for Token-Metered SKUs
+
+Measures what prompt caching saved as a share of what the same input tokens would have cost uncached, in the same form as the discount effectiveness query above, using the FOCUS-defined [SkuPriceDetails](#datamodel.costandusage.skupricedetails) properties TokenDirection, CacheAction, and ModelId. The cache-affected cost is the EffectiveCost of every input token row, including cache reads and cache writes, plus any charge for retaining cached content, which is metered in token-hours and carries neither property. The uncached-equivalent cost is the total input PricingQuantity multiplied by the unit price of the uncached input row for the same model, using ContractedUnitPrice where a negotiated price applies. The query assumes the input rows for a model share one PricingUnit, takes the highest uncached unit price where a model has more than one, and returns no row for a model with no uncached input in the period, since the base rate is then not in the dataset. Because ANSI SQL does not define a standard for parsing JSON, the query uses the BigQuery Standard SQL `JSON_VALUE` function; similar functions are available in all major SQL engines.
+
+```sql
+WITH TokenRows AS (
+  SELECT
+    ServiceProviderName,
+    JSON_VALUE(SkuPriceDetails, '$.ModelId') AS ModelId,
+    JSON_VALUE(SkuPriceDetails, '$.TokenDirection') AS TokenDirection,
+    JSON_VALUE(SkuPriceDetails, '$.CacheAction') AS CacheAction,
+    ConsumedUnit,
+    PricingQuantity,
+    ListUnitPrice,
+    ContractedUnitPrice,
+    EffectiveCost
+  FROM focus_data_table
+  WHERE ChargeCategory = 'Usage'
+    AND ChargeClass IS NULL
+    AND ChargePeriodStart >= ? AND ChargePeriodEnd < ?
+),
+UncachedRate AS (
+  SELECT
+    ServiceProviderName,
+    ModelId,
+    MAX(COALESCE(ContractedUnitPrice, ListUnitPrice)) AS UncachedUnitPrice
+  FROM TokenRows
+  WHERE TokenDirection = 'Input' AND CacheAction = 'None'
+  GROUP BY ServiceProviderName, ModelId
+),
+InputSide AS (
+  SELECT
+    ServiceProviderName,
+    ModelId,
+    SUM(PricingQuantity) AS InputPricingQuantity,
+    SUM(EffectiveCost) AS InputEffectiveCost
+  FROM TokenRows
+  WHERE TokenDirection = 'Input'
+  GROUP BY ServiceProviderName, ModelId
+),
+Retention AS (
+  SELECT
+    ServiceProviderName,
+    ModelId,
+    SUM(EffectiveCost) AS RetentionEffectiveCost
+  FROM TokenRows
+  WHERE ConsumedUnit = 'Token-Hours'
+  GROUP BY ServiceProviderName, ModelId
+)
+SELECT
+  i.ServiceProviderName,
+  i.ModelId,
+  i.InputEffectiveCost + COALESCE(r.RetentionEffectiveCost, 0) AS CacheAffectedCost,
+  i.InputPricingQuantity * u.UncachedUnitPrice AS UncachedEquivalentCost,
+  (1 - (i.InputEffectiveCost + COALESCE(r.RetentionEffectiveCost, 0))
+       / NULLIF(i.InputPricingQuantity * u.UncachedUnitPrice, 0)) * 100 AS CacheCostEfficiency
+FROM InputSide i
+JOIN UncachedRate u
+  ON u.ServiceProviderName = i.ServiceProviderName
+  AND u.ModelId = i.ModelId
+LEFT JOIN Retention r
+  ON r.ServiceProviderName = i.ServiceProviderName
+  AND r.ModelId = i.ModelId
+```
+
 ## Version Introduced
 
 0.5
 
 ## Version Updated
 
-1.4
+1.5
