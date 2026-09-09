@@ -1,6 +1,6 @@
 # Principal ID
 
-A Principal ID is an identifier representing the [*principal*](#glossary:principal): an entity defined in an identity and access management model (e.g., user, role, service account) to which access to [*resources*](#glossary:resource) or [*services*](#glossary:service) is granted. A *principal* is distinct from the credential (e.g., API key, access token) presented with an individual request, and from the organizational container (e.g., project, workspace) within which the request runs. The same *principal* may be associated with multiple credentials. Principal ID is commonly used to report and audit cost by the *principal* that incurred a [*charge*](#glossary:charge).
+A Principal ID is an identifier representing the [*principal*](#glossary:principal) to which access to a [*resource*](#glossary:resource) or [*service*](#glossary:service) is granted. Principal ID is commonly used to report and audit cost by the *principal* that incurred a [*charge*](#glossary:charge).
 
 ## Requirements
 
