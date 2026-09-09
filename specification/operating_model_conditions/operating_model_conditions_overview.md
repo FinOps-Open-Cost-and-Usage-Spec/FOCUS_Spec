@@ -14,7 +14,7 @@ Operating model conditions are sorted alphabetically by name.
 | [Includes Capacity Reservations](#operatingmodelconditions.includescapacityreservations) | Commitment | Operating model includes capacity reservations. |
 | [Includes Commitment Discounts](#operatingmodelconditions.includescommitmentdiscounts) | Commitment | Operating model includes commitment discounts. |
 | [Includes Commitment Programs](#operatingmodelconditions.includescommitmentprograms) | Commitment | Operating model includes commitment programs. |
-| [Includes Contract Commitment Recommendations](#operatingmodelconditions.includescontractcommitmentrecommendations) | Commitment | Operating model includes recommendations to purchase contract commitments. |
+| [Includes Contract Commitment Recommendations](#operatingmodelconditions.includescontractcommitmentrecommendations) | Recommendation | Operating model includes recommendations to purchase contract commitments. |
 | [Includes Contract Commitments](#operatingmodelconditions.includescontractcommitments) | Commitment | Operating model includes contract commitments. |
 | [Includes List Unit Prices](#operatingmodelconditions.includeslistunitprices) | Pricing | Operating model includes standard, non-discounted unit prices. |
 | [Includes Multiple Billing Account Types](#operatingmodelconditions.includesmultiplebillingaccounttypes) | Account | Operating model includes multiple Billing Account Types. |
@@ -28,7 +28,7 @@ Operating model conditions are sorted alphabetically by name.
 | [Includes Purchase Order Numbers](#operatingmodelconditions.includespurchaseordernumbers) | Billing | Operating model includes purchase order numbers. |
 | [Includes Recommendations](#operatingmodelconditions.includesrecommendations) | Recommendation | Operating model includes recommendations for resources or services. |
 | [Includes Regions](#operatingmodelconditions.includesregions) | Resource | Operating model includes deploying resources or services within a region. |
-| [Includes Resource Configuration Recommendations](#operatingmodelconditions.includesresourceconfigurationrecommendations) | Resource | Operating model includes recommendations to change the configuration of a resource. |
+| [Includes Resource Configuration Recommendations](#operatingmodelconditions.includesresourceconfigurationrecommendations) | Recommendation | Operating model includes recommendations to change the configuration of a resource. |
 | [Includes Resource Type Assignment](#operatingmodelconditions.includesresourcetypeassignment) | Resource | Operating model includes categorizing resources by type. |
 | [Includes Split Cost Allocation](#operatingmodelconditions.includessplitcostallocation) | Allocation | Operating model includes split cost allocation. |
 | [Includes Sub Accounts](#operatingmodelconditions.includessubaccounts) | Account | Operating model includes a sub account construct. |
