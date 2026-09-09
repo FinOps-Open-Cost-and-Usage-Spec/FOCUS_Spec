@@ -8,8 +8,8 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
+    "Conditions": [
+      "IncludesPricingBillingCurrencyDifferences"
     ],
     "Order": 0,
     "DatasetType": "CAU",
@@ -59,7 +59,7 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": 20,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
@@ -85,7 +85,7 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": 30,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
@@ -111,7 +111,7 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": 40,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
@@ -137,7 +137,7 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Order": 50,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",

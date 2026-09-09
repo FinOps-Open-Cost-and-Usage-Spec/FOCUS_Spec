@@ -319,6 +319,6 @@ Each JSON file in `model_rules/` contains one or more rules structured as:
 
 The schema enforces:
 
-* Required keys like `Details`, `ApplicabilityCriteria`, `CheckFunction`, etc.
+* Required keys like `Details`, `Conditions` (named `ApplicabilityCriteria` prior to model version 1.5), `CheckFunction`, etc.
 * Proper data types (e.g., arrays, strings, objects)
 * Structured `ValidationCriteria` for consistent rule logic

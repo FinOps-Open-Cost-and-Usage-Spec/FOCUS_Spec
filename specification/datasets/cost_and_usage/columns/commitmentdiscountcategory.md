@@ -8,7 +8,7 @@ CommitmentDiscountCategory MUST adhere to the following requirements:
 
 * CommitmentDiscountCategory MUST be of type String.
 * CommitmentDiscountCategory MUST adhere to the following nullability requirements:
-  * CommitmentDiscountCategory MUST be null when [CommitmentDiscountId](#datasets.costandusage.commitmentdiscountid) is null.
+  * CommitmentDiscountCategory MUST be null when [CommitmentDiscountId](#datamodel.costandusage.commitmentdiscountid) is null.
   * CommitmentDiscountCategory MUST NOT be null when CommitmentDiscountId is not null.
 * CommitmentDiscountCategory MUST be one of the allowed values.
 
@@ -33,14 +33,15 @@ Indicates whether the *commitment discount* identified in the CommitmentDiscount
 
 ## Content Constraints
 
-| Constraint      | Value                                                |
-| :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datasets.costandusage)             |
-| Column type     | Dimension                                            |
-| Feature level   | Conditional                                          |
-| Allows nulls    | True                                                 |
-| Data type       | String                                               |
-| Value format    | Allowed values                                       |
+| Constraint                 | Value                                     |
+| :------------------------- | :---------------------------------------- |
+| Dataset                    | [Cost and Usage](#datamodel.costandusage) |
+| Operating Model Conditions | [Includes Commitment Discounts](#operatingmodelconditions.includescommitmentdiscounts) |
+| Column type                | Dimension                                 |
+| Feature level              | Conditional                               |
+| Allows nulls               | True                                      |
+| Data type                  | String                                    |
+| Value format               | Allowed values                            |
 
 ## Version Introduced
 

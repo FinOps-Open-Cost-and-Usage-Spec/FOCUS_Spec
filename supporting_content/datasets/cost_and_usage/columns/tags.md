@@ -54,3 +54,15 @@ Discussion / Scratch space:
     	* After much discussion and exploring multiple different options, and formats, the following were decided:
         	* Tags are presented in a json structure - key/value (tags) and key-only (labels) are both included using the same json object.
         	* Labels will be shown with a value of true (boolean not string). Other options were to break labels out into a separate column, separate part of the JSON object, or provide inline with null OR the boolean    	- 
+
+## Tag Key Representation
+
+User-defined tag keys in Tags are a faithful representation of the provided keys, aside from any *tag scheme*-specific prefix the data generator prepends. A data generator does not normalize the casing or otherwise transform the characters of a user-defined tag key but may define constraints on the set of supported tag keys (e.g., a data generator may limit the number of characters or set of characters supported), as long as these limitations are applied prior to setting the tags.
+
+Tag key casing reflects how the tag key was provided rather than a data generator convention, and the representation a data generator surfaces depends on the platform. For example:
+
+* Some platforms treat tag keys as case-sensitive, so keys entered with different casing (e.g., `Application` and `application`) are distinct keys and are surfaced as entered.
+* Some platforms treat tag keys as case-insensitive for operations while preserving the casing entered when the key was created, so the same logical key can appear with different casing across rows (e.g., `Application`, `APPLICATION`, and `application`).
+* Some platforms restrict tag keys to a fixed character set (e.g., lowercase only), so variation does not arise.
+
+Because casing reflects how the key was provided, a consumer aggregating logically equivalent keys can apply case-insensitive matching, while remaining aware that some platforms treat keys differing only by casing as semantically distinct.

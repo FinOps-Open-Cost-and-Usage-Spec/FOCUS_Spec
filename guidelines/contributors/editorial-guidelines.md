@@ -46,11 +46,11 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
         <td><strong>Column &amp; Attribute IDs:</strong></td>
         <td>
            <strong>Columns IDs</strong>:<br>
-            * PricingQuantity<br> 
-            * PricingUnit<br> 
+            * PricingQuantity<br>
+            * PricingUnit<br>
             * ServiceProviderName<br><br>
           <strong>Attributes IDs</strong>:<br>
-            * CurrencyCodeFormat <br> 
+            * CurrencyCodeFormat <br>
             * DateTimeFormat <br>
         </td>
         <td>
@@ -191,7 +191,7 @@ To ensure consistent language when describing relationships and evaluations betw
 * **Numeric Values:** Use "equal" or "be equal to" when comparing numeric values, costs, quantities, or mathematical sums (e.g., "ContractedCost MUST be equal to BilledCost"). Do not use "match".
 * **Identifiers and Strings:** Use "match" when comparing strings, IDs, or names (e.g., "HostProviderName MUST match ServiceProviderName"). Do not use "equal".
 * **State and Conditions:** Use forms of the verb "to be" (e.g., "is", "are", "be") when evaluating if a column contains a specific value or state (e.g., "when ChargeCategory is `Purchase`" or "ChargeCategory MAY be `Usage`"). Do not use "equals" or "equal", **except** when evaluating inequalities (e.g., "greater than or equal to").
-* **Inequalities:** When expressing range or directional limits, the standard phrases "greater than or equal to" and "less than or equal to" MUST be used, even for non-numeric data types like timestamps or dates (e.g., "BillingPeriodLastUpdated MUST be greater than or equal to BillingPeriodCreated"). 
+* **Inequalities:** When expressing range or directional limits, the standard phrases "greater than or equal to" and "less than or equal to" MUST be used, even for non-numeric data types like timestamps or dates (e.g., "BillingPeriodLastUpdated MUST be greater than or equal to BillingPeriodCreated").
 * **Semantic Comparisons:** When comparing concepts, formats, or values that share the same meaning but may not be strictly identical strings, use "equivalent" or "semantically equivalent" (e.g., "PricingUnit MUST be semantically equivalent to the corresponding pricing measurement unit..."). Do not use "equal".
 
 > **Note:** Validation of comparison terminology may require contextual understanding of value types, identifiers, semantic equivalence, or domain-specific meaning and may not always be suitable for deterministic editorial validation.
@@ -230,9 +230,9 @@ To ensure consistent language when describing relationships and evaluations betw
 
 ### Formatting
 
-* **Structural Anchor Requirements:** Normative bullet lists MUST be preceded by a structural anchor requirement. See [Normative Requirements Guidelines](normative-requirements-guidelines.md#structural-anchor-requirement) for details.
+* **Structural Anchors:** Normative bullet lists MUST be preceded by a structural anchor. See [Normative Requirements Guidelines](normative-requirements-guidelines.md#structural-anchor) for details.
 
-> **Note:** Validation of structural anchor requirements may require contextual editorial judgment and is not always suitable for deterministic editorial validation.
+> **Note:** Validation of structural anchors may require contextual editorial judgment and is not always suitable for deterministic editorial validation.
 
 * **Example** (Markdown, illustrative):
 
@@ -251,7 +251,7 @@ To ensure consistent language when describing relationships and evaluations betw
     * Incorrect: `The columns foster data integrity, interoperability, and consistency, improve data analysis and reporting, and support reliable decision-making.`
     * Correct: `The columns foster data integrity, interoperability, and consistency; improve data analysis and reporting; and support reliable decision-making.`
 
-* **Spelling Out Numbers**: In standard prose, numbers zero through nine MUST be spelled out as words (e.g., "one", "two", "nine"), while numbers 10 and above MUST be written as numerals (e.g., "10", "42"). 
+* **Spelling Out Numbers**: In standard prose, numbers zero through nine MUST be spelled out as words (e.g., "one", "two", "nine"), while numbers 10 and above MUST be written as numerals (e.g., "10", "42").
   * **Exception:** This rule DOES NOT apply to technical values, mathematical formulas, JSON examples, or explicit column constraints (e.g., write `BilledCost MUST be 0`, not `BilledCost MUST be zero`).
 
 * **Dash Formatting:**
@@ -299,6 +299,8 @@ To ensure consistent language when describing relationships and evaluations betw
 
 > **Note:** Authors should consult the actual FOCUS attribute specification files as the source of truth, as these guidelines do not necessarily reflect the latest version.
 
+* **Brand-Free Identifiers:** Resource, host, and pod-level identifiers in appendix examples MUST use neutral, brand-free labels (e.g., `host-prod-07`, `pod-orders-01`) rather than labels derived from fictitious customer or data generator names, so that an identifier does not read as an additional, unintended entity in the example.
+
 * **Valid Examples:** Examples MUST reflect valid combinations of values defined in the specification.
 
 > **Note:** Validation of example correctness may require schema, glossary, or domain-specific review beyond editorial validation.
@@ -307,7 +309,7 @@ To ensure consistent language when describing relationships and evaluations betw
 
 > **Note:** Validation of terminology consistency may require comparison against the approved glossary and specification entity definitions.
 
-* **Informative Examples:** Examples MUST be considered informative and non-normative, and MUST NOT define requirements. 
+* **Informative Examples:** Examples MUST be considered informative and non-normative, and MUST NOT define requirements.
 
 * **Example Note Requirement:** Example sections MUST include a note indicating that the content is informative and non-normative.
 
@@ -364,9 +366,12 @@ To ensure consistent language when describing relationships and evaluations betw
 
 * **No Blockquote Usage:** Exceptions MUST NOT be expressed using blockquote syntax (which is strictly reserved for Notes).
 
-* **No Header Usage:** Exceptions MUST NOT use Markdown headers (e.g., `#### Exceptions`). 
+* **No Header Usage:** Exceptions MUST NOT use Markdown headers (e.g., `#### Exceptions`).
 
-* **Exception Label:** Exceptions MUST begin with the inline label `**Exception:**` or `**Exceptions:**` (the term `Exception` or `Exceptions`, optionally followed by a qualifier, followed by a colon, in bold).
+* **Exception Label:** Exceptions MUST begin with the inline label `**Exception[ for <Topic>]:**` or `**Exceptions[ for <Topic>]:**` (the term `Exception` or `Exceptions`, with or without a semantic qualifier `for <Topic>`, followed by a colon, formatted in bold).
+  * A semantic qualifier SHOULD be included in Normative Requirements Guidelines to support cross-referencing and automated processing.
+  * A semantic qualifier MAY be included in other guidelines.
+  * When used, semantic qualifiers SHOULD be applied consistently throughout the document.
 
 * **Consistent Terminology:** Only the term `Exception` or `Exceptions` MUST be used. Variants such as `Special Case`, `Caveat`, or similar terms MUST NOT be used.
 
@@ -381,7 +386,7 @@ To ensure consistent language when describing relationships and evaluations betw
 * **Example** (Markdown, illustrative):
 
   ```md
-  **Exceptions:** This is a single-line exception.
+  **Exception:** This is a single-line exception.
   ```
 
 * **Example** (Markdown, illustrative):
@@ -435,7 +440,7 @@ To ensure consistent language when describing relationships and evaluations betw
 > **3.1.47.6. Content Constraints**
 >
 > <img width="492" alt="image" src="https://github.com/user-attachments/assets/5185cbf9-306d-4663-a1c7-c8b7ab5c5bb8">
-> 
+>
 > **3.1.47.7. Version Introduced**
 >
 > 1.0-preview
@@ -447,6 +452,7 @@ To ensure consistent language when describing relationships and evaluations betw
   * When a markdown table has a maximum row width of 120 characters or more, the table SHOULD use exactly one space after values without additional padding.
 
 ### Example HTML Table
+
 This is an example of a complex table with merged rows and columns, along with an additional header row.
 
 <table  border="1" cellpadding="8" cellspacing="0">
@@ -479,6 +485,7 @@ This is an example of a complex table with merged rows and columns, along with a
 </table>
 
 This is how it is written in HTML:
+
 ```html
 <table  border="1" cellpadding="8" cellspacing="0">
   <tr>

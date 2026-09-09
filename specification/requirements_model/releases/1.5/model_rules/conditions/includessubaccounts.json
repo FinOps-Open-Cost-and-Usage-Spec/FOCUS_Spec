@@ -1,0 +1,86 @@
+{
+  "CON-IncludesSubAccounts-N-000-C": {
+    "Function": "Composite",
+    "Reference": "IncludesSubAccounts",
+    "EntityType": "Condition",
+    "EntityId": "IncludesSubAccounts",
+    "EntityName": "Includes Sub Accounts",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "DatasetType": "CON",
+    "DatasetId": null,
+    "DatasetName": null,
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Static",
+    "Order": 0,
+    "ValidationCriteria": {
+      "MustSatisfy": "IncludesSubAccounts MUST adhere to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CON-IncludesSubAccounts-N-001-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CON-IncludesSubAccounts-N-002-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CON-IncludesSubAccounts-N-001-C",
+        "CON-IncludesSubAccounts-N-002-C"
+      ]
+    }
+  },
+  "CON-IncludesSubAccounts-N-001-C": {
+    "Function": "Validation",
+    "Reference": "IncludesSubAccounts",
+    "EntityType": "Condition",
+    "EntityId": "IncludesSubAccounts",
+    "EntityName": "Includes Sub Accounts",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "DatasetType": "CON",
+    "DatasetId": null,
+    "DatasetName": null,
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Dynamic",
+    "Order": 10,
+    "ValidationCriteria": {
+      "MustSatisfy": "IncludesSubAccounts MUST evaluate to true when the operating model includes a sub account construct.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CON-IncludesSubAccounts-N-002-C": {
+    "Function": "Validation",
+    "Reference": "IncludesSubAccounts",
+    "EntityType": "Condition",
+    "EntityId": "IncludesSubAccounts",
+    "EntityName": "Includes Sub Accounts",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "DatasetType": "CON",
+    "DatasetId": null,
+    "DatasetName": null,
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Dynamic",
+    "Order": 20,
+    "ValidationCriteria": {
+      "MustSatisfy": "IncludesSubAccounts MUST evaluate to false when the operating model does not include a sub account construct.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}

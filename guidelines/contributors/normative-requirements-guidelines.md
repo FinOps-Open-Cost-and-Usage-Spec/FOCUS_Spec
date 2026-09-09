@@ -1,29 +1,86 @@
 # Normative Requirements Guidelines
 
-This section defines guidelines for authoring normative requirements in the FOCUS specification. These guidelines define **how** to write normative requirements to ensure clarity, consistency, and testability. It does not define the requirements themselves (the "what") but concentrates on their **structure, subjects, and verifiability**.
+## Table of Contents
+
+* [Overview and Purpose](#overview-and-purpose)
+* [Notation Conventions](#notation-conventions)
+* [FOCUS Dataset Abstraction Levels and Terminology](#focus-dataset-abstraction-levels-and-terminology)
+* [Core Normative Authoring Rules](#core-normative-authoring-rules)
+  * [Normative Requirement Model](#normative-requirement-model)
+  * [Structural Anchor](#structural-anchor)
+  * [Standalone Requirements](#standalone-requirements)
+  * [Composite Requirements](#composite-requirements)
+  * [Structural Grouping Bullets](#structural-grouping-bullets)
+  * [Atomic Requirements](#atomic-requirements)
+  * [FOCUS Entity Reference Conventions](#focus-entity-reference-conventions)
+  * [Constrainable Entity](#constrainable-entity)
+  * [Explicit Conditions in Normative Requirements](#explicit-conditions-in-normative-requirements)
+  * [Verifiable State Descriptor: State, Not Behavior](#verifiable-state-descriptor-state-not-behavior)
+  * [Use of BCP 14 Keywords](#use-of-bcp-14-keywords)
+  * [Splitting Requirements](#splitting-requirements)
+  * [Separation of Normative and Non-Normative Content](#separation-of-normative-and-non-normative-content)
+  * [DRY (Don't Repeat Yourself) Principle](#dry-dont-repeat-yourself-principle)
+  * [Tone and Grammar](#tone-and-grammar)
+* [Dataset Requirements](#dataset-requirements)
+  * [Logical Grouping of Dataset Requirements](#logical-grouping-of-dataset-requirements)
+  * [Ordering of Dataset Requirements Within Groups](#ordering-of-dataset-requirements-within-groups)
+  * [Consistent Wording and Patterns in Dataset Requirements](#consistent-wording-and-patterns-in-dataset-requirements)
+  * [Dataset Normative Requirements Examples](#dataset-normative-requirements-examples)
+* [Column Requirements](#column-requirements)
+  * [Logical Grouping of Column Requirements](#logical-grouping-of-column-requirements)
+  * [Cross-Dataset Column Definitions](#cross-dataset-column-definitions)
+  * [Ordering of Column Requirements Within Groups](#ordering-of-column-requirements-within-groups)
+  * [Additional Guidelines for Columns in JSON Format](#additional-guidelines-for-columns-in-json-format)
+  * [Grouping of Nullability-Related and Subsequent Column Requirements](#grouping-of-nullability-related-and-subsequent-column-requirements)
+  * [Grouping of Column Requirements Based on Specific Conditions](#grouping-of-column-requirements-based-on-specific-conditions)
+  * [Consistent Wording and Patterns in Column Requirements](#consistent-wording-and-patterns-in-column-requirements)
+  * [Column Normative Requirements Examples](#column-normative-requirements-examples)
+* [Attribute Requirements](#attribute-requirements)
+  * [Role of Attributes in the Specification](#role-of-attributes-in-the-specification)
+  * [Structural Anchor for Attributes](#structural-anchor-for-attributes)
+  * [Constrainable Entities in Attribute Requirements](#constrainable-entities-in-attribute-requirements)
+  * [FOCUS Dataset Column vs FOCUS Column vs Custom Column Requirements](#focus-dataset-column-vs-focus-column-vs-custom-column-requirements)
+  * [`CustomColumnHandling` Attribute](#customcolumnhandling-attribute)
+  * [Grouping of Attribute Requirements](#grouping-of-attribute-requirements)
+  * [Ordering of Attribute Requirements Within Groups](#ordering-of-attribute-requirements-within-groups)
+  * [Attribute Normative Requirements Examples](#attribute-normative-requirements-examples)
+
+## Overview and Purpose
+
+This section defines guidelines for authoring normative requirements in the FOCUS specification. These guidelines define **how** to write normative requirements to ensure clarity, consistency, and testability. It does not define the requirements themselves (the "what"), but instead specifies the **structure, Constrainable Entities, and verifiability** of normative requirements.
 
 The guidelines cover authoring of normative requirements for the following entities:
 
+* **FOCUS Data Model** — a collection of one or more FOCUS datasets that define a particular representation of FOCUS data. Data Model defines normative requirements governing dataset composition and the conditions under which specific datasets are required or optional.
 * **FOCUS datasets** — the primary containers of structured data as defined in FOCUS.
-* **FOCUS columns** — individual columns within FOCUS datasets, defined by FOCUS (may contain nested objects and object properties, which can have additional normative rules).
-* **Custom columns** — individual columns within FOCUS datasets, not defined by FOCUS.
-* **FOCUS attributes** — reusable sets of normative constraints that datasets, columns, or column sub-elements (such as objects and object properties) conform to; guidelines cover how to author requirements within Attribute sections.
+* **FOCUS columns** — individual columns within FOCUS datasets, defined by FOCUS. Columns may contain nested objects and object properties, which can have additional normative requirements through reusable attributes.
+* **Custom columns** — individual columns within FOCUS datasets, not defined by FOCUS. These guidelines describe how normative requirements should be authored for custom extensions while preserving interoperability.
+* **FOCUS attributes** — reusable sets of normative constraints that datasets, columns, or column sub-elements (such as objects and object properties) conform to. These guidelines define how normative requirements are authored within Attribute sections and subsequently reused throughout the specification.
+* **FOCUS Operating Model Conditions** — reusable applicability expressions that define the circumstances under which normative requirements apply. Operating Model Conditions apply to Data Model, Datasets, and Columns to express when specific normative requirements become applicable.
 
-The diagram below illustrates the relationships among these entities and shows where normative requirements apply:
+The diagram below illustrates the relationships among these entities and identifies where normative requirements may be authored and applied throughout the FOCUS specification:
 
 ```mermaid
 erDiagram
+DataModel ||--|{ Dataset : has
 Dataset ||--|{ Column : has
 Column ||--o{ Object : contains
 Object ||--|{ ObjectProperty : has
-Dataset }|..|| Attribute : conforms-to
-Column }|..|| Attribute : conforms-to
-ObjectProperty }|..|| Attribute : conforms-to
 
-%% Attribute
+OperatingModelCondition }|..|| DataModel : applies-to
+OperatingModelCondition }|..|{ Dataset : applies-to
+OperatingModelCondition }|..|{ Column : applies-to
+
+Dataset }|..|{ Attribute : conforms-to
+Column }|..|{ Attribute : conforms-to
+ObjectProperty }|..|{ Attribute : conforms-to
+
+%% Normative reusable entities
 style Attribute fill:#f8d7da,stroke:#666,stroke-width:1px
+style OperatingModelCondition fill:#f8d7da,stroke:#666,stroke-width:1px
 
 %% Schema-level entities
+style DataModel fill:#d4edda,stroke:#666,stroke-width:1px
 style Dataset fill:#d4edda,stroke:#666,stroke-width:1px
 style Column fill:#d4edda,stroke:#666,stroke-width:1px
 style Object fill:#d4edda,stroke:#666,stroke-width:1px
@@ -32,67 +89,21 @@ style ObjectProperty fill:#d4edda,stroke:#666,stroke-width:1px
 
 **Nodes:**
 
-* 🟩 FOCUS schema-level entity (normative subject)
-* 🟥 FOCUS normative rule set (not a normative subject)
+* 🟩 FOCUS Constrainable Entity
+* 🟥 FOCUS Entity that organizes, reuses, or qualifies normative requirements (not a Constrainable Entity)
 
 **Relationships:**
 
 * `|| -- has -- |{` : one parent to one-or-more enumerated structural members
 * `|| -- contains -- o{` : one parent to zero-or-more child entities (array of objects)
-* `}| .. conforms-to .. ||` : many children to one parent conformance relationship
+* `}| .. conforms-to .. |{` : many children to one-or-more parents conformance relationship
+* `}| .. applies-to .. |{` : e.g., many Operating Model Conditions apply to many target entities
 
 **Exceptions:**
 
 * `CustomColumnHandling` is a special Attribute that references other Attributes (e.g., `NullHandling`, `DateTimeFormat`) to establish recommended conformance for custom columns. This cross-reference pattern is an exception rather than a general relationship shown in the diagram.
 
 > **Note:** These guidelines do not currently apply to FOCUS Metadata requirements, which are out of scope.
-
-## Dataset Abstraction and Normative Subject Convention
-
-By glossary definition, the following concepts are used:
-
-* **FOCUS Dataset** — the primary dataset concept defined by the FOCUS specification.
-* **Dataset Instance** — represents a specific implementation of a **FOCUS Dataset** provided by a data generator.
-* **Dataset Artifact** — represents a physical representation of a specific **FOCUS Dataset Instance** delivered by a data generator.
-
-However, by design decision, the specification adopts the following normative conventions:
-
-* **FOCUS Dataset is used as the canonical normative subject** for dataset-level requirements.
-* Normative requirements are intentionally written against **FOCUS Dataset**, even when the constraint applies to:
-  * a dataset specification,
-  * a dataset instance, or
-  * a dataset instance artifact.
-* The intended level of application (specification vs. instance vs. artifact) is inferred from context rather than encoded in the normative subject.
-
-This choice is intentional and overrides interpretations based solely on abstraction level.
-
-### Dataset Terminology in Non-Subject Positions
-
-The convention above applies exclusively to the normative subject position. When a normative requirement references a dataset concept in a non-subject position (e.g., in conditions, scope clauses, or explanatory context within the requirement body), the precise glossary term MUST be used:
-
-* `FOCUS dataset` — when referring to the abstract dataset definition established by FOCUS.
-* `dataset instance` — when referring to a specific implementation of a FOCUS dataset provided by a data generator.
-* `dataset artifact` — when referring to a physical representation of a specific dataset instance delivered by a data generator.
-
-Generic terms such as `dataset` or `datasets` MUST NOT be used in non-subject positions where the precise abstraction level is known.
-
-* Example of attribute-level requirement (subject: `FOCUS dataset`, body: `dataset artifacts`):
-
-```markdown
-* *FOCUS dataset* MUST preserve all previously delivered *dataset artifacts* when using Append delivery mechanism.
-```
-
-* Example of column-level requirement (subject: `BilledCost`, body: `dataset instances`):
-
-```markdown
-* BilledCost MUST be 0 for *charges* generated by entities that are not responsible or authorized for invoicing, to avoid double-counting when merging multiple *dataset instances*.
-```
-
-* Example of column-level requirement (subject: `EffectiveCost`, body: specific `{DatasetId}` + `dataset instances`):
-
-```markdown
-* EffectiveCost MUST be 0 when ChargeCategory is "Purchase" and the purchase is intended to cover related eligible *charges*. This requirement applies even when the *covered charges* originate from different CostAndUsage *dataset instances*, possibly from a different ServiceProviderName.
-```
 
 ## Notation Conventions
 
@@ -104,50 +115,64 @@ This document uses the following notation conventions in requirement patterns an
 * `[A|B]` — a choice between two alternatives (e.g., `[Dataset|Column]`)
 * `...` — indicates that additional content exists but is not shown in the example
 
+## FOCUS Dataset Abstraction Levels and Terminology
+
+The FOCUS specification distinguishes between the abstract dataset concept, its implementations, and its physical representations.
+
+The FOCUS glossary defines the following dataset concepts:
+
+* **FOCUS dataset** — the primary dataset concept defined by the FOCUS specification.
+* **Dataset instance** — represents a specific implementation of a **FOCUS dataset** provided by a data generator.
+* **Dataset artifact** — represents a physical representation of a specific **FOCUS dataset instance** delivered by a data generator.
+
 ## Core Normative Authoring Rules
 
-### Normative Requirement Structure
+### Normative Requirement Model
 
-The recommended pattern for a normative requirement is:
+The following core concepts define the structure of normative content in the FOCUS specification:
 
-``` markdown
-<Subject (+qualifier)> + <BCP 14 Keyword> + <Verifiable State Descriptor> + <Object (+qualifier)> [+ Conditions]
-```
+* **Entity** — any uniquely identifiable element of the FOCUS specification model.
+* **Constrainable Entity** — a FOCUS Entity whose conformance can be directly evaluated through normative requirements and to which an obligation and constraint can be applied. Every Constrainable Entity is an Entity, but not every Entity is a Constrainable Entity. Attributes and Conditions are FOCUS Entities that organize, reuse, or qualify normative requirements; they are not themselves Constrainable Entities.
+* **Obligation** — the conformance level expressed by a BCP 14 keyword.
+* **Constraint** — one verifiable state against which conformance of a Constrainable Entity is evaluated.
+* **Condition** — an applicability expression that qualifies when a normative requirement applies.
+* **Normative bullet** — a bullet that contains a BCP 14 keyword.
+* **Normative requirement** — an authored construct expressed in one of two forms:
+  * a [standalone requirement](#standalone-requirements), represented by a single normative bullet, or
+  * a [composite requirement](#composite-requirements), represented by a hierarchy of nested normative bullets.
+* **Atomic requirement** — the smallest resolved conformance unit derived from a normative requirement. Each atomic requirement defines exactly one verifiable constraint. A standalone requirement resolves into exactly one atomic requirement; a composite requirement resolves into multiple atomic requirements.
 
-* Each normative requirement MUST be expressed as an individual bullet point, except for structural anchor requirements (see [Structural Anchor Requirement](#structural-anchor-requirement)).
-* Each bullet MUST represent exactly one normative requirement expressing a single constraint.
-* Each normative requirement MUST:
-  * identify exactly one **normative subject** to which the requirement applies
-  * contain exactly one **BCP 14 keyword** (MUST, SHOULD, MAY, MUST NOT, etc.), indicating the obligation level
-  * express exactly one **verifiable constraint**
-  * be split into multiple bullets if it introduces multiple independent constraints.
-* Each normative requirement SHOULD describe a **verifiable state** of the object rather than behavior
+The conceptual model is:
 
-### Explicit Conditions in Normative Requirements
+> Atomic Requirement = Constrainable Entity + Obligation + Constraint [+ Condition]
 
-* A requirement MUST include an explicit condition when applicability is conditional and cannot be inferred from the normative subject and any associated qualifiers.
-* Conditional logic MUST be expressed using one of the following approved conditional keywords:
-  * `when`
-  * `unless`
-  * `only when`
-  * `except when`
+At the atomic conformance-unit level, each atomic requirement constrains one Constrainable Entity. A composite authored construct can resolve into multiple atomic requirements, each of which independently satisfies this model. The Condition component is present only when applicability is conditional.
 
-### Structural Anchor Requirement
+Although every normative bullet contains a BCP 14 keyword, not every normative bullet introduces a conformance constraint. Some normative bullets serve solely to group nested normative bullets under a shared condition or context:
 
-Each Requirements section for a schema-level construct MUST begin with a single **structural anchor requirement**.
+* A [condition grouping bullet](#condition-grouping-bullets) defines a shared condition inherited by nested normative bullets.
+* A [context grouping bullet](#context-grouping-bullets) provides organizational context for nested normative bullets.
 
-The structural anchor requirement:
+In addition to normative bullets, the requirement structure includes a structural anchor that provides scope but does not introduce a conformance constraint:
 
-* introduces the scope of the subsequent normative requirements,
-* MUST appear as the first normative statement in the section,
-* exists to support automated parsing and validation, and
-* is not evaluated as a conformance requirement and does not introduce a constraint on datasets, columns, attributes, or other normative subjects.
+* A [structural anchor](#structural-anchor) defines the scope of a Requirements section.
 
-The canonical form of a structural anchor requirement is:
+### Structural Anchor
+
+A structural anchor is a structural construct that defines the scope of a Requirements section for a schema-level construct. It supports automated parsing and validation, does not introduce a verifiable constraint, and is not resolved into an atomic requirement.
+
+Requirements section for a schema-level construct MUST satisfy the following structural rules:
+
+* Requirements section MUST begin with a single structural anchor.
+* Structural anchor MUST appear as the first normative statement in the section.
+
+The canonical form of a structural anchor is:
 
 ``` markdown
 <Entity> MUST adhere to the following requirements:
 ```
+
+The entity in the grammatical subject position establishes scope but is not constrained by the structural anchor. It functions as a Constrainable Entity only in the atomic requirements resolved within that scope.
 
 For **Attribute Requirements** sections, a different canonical form applies:
 
@@ -155,47 +180,256 @@ For **Attribute Requirements** sections, a different canonical form applies:
 [Dataset|Column] conforming to <AttributeId> attribute MUST adhere to the following requirements:
 ```
 
-See [Section Structural Anchor Requirement for Attributes](#structural-anchor-requirement-for-attributes) for details.
+See [Structural Anchor for Attributes](#structural-anchor-for-attributes) section for details.
 
-### Normative Subject
+### Standalone Requirements
 
-* Each normative requirement MUST clearly identify the subject being constrained.
+A standalone requirement is a normative requirement represented by a single normative bullet. The normative bullet and the requirement have a one-to-one correspondence, and the requirement resolves into exactly one atomic requirement.
 
-#### Terminology Usage in Normative Requirements
+Standalone requirement MUST adhere to the following rules:
 
-* Column references in normative requirements MUST use the ColumnId.
-* Display Names MUST NOT be used in normative requirements.
-* Display Names MAY be used in non-normative sections for readability.
+* Standalone requirement MUST contain exactly one Constrainable Entity.
+* Standalone requirement MUST contain exactly one BCP 14 keyword indicating the obligation level.
+* Standalone requirement MUST express exactly one constraint.
+* Standalone requirement MUST describe a verifiable state of the object, not behavior.
 
-#### Allowed Subjects
+Standalone normative requirements use the following canonical form:
 
-The normative subject MUST be a schema-level entity or specific documentation, such as:
+``` markdown
+* <GrammaticalSubject> <BCP-14-Keyword> <VerifiableStateDescriptor>[ Conditions].
+```
 
-##### Dataset Subjects
+* **Example** (illustrative):
 
-* **FOCUS Dataset**, whereby use of:  
-  * `FOCUS dataset` keyword represents any FOCUS dataset  
-  * `FOCUS dataset` keyword with a qualifier represents a qualified subset of FOCUS datasets  
+``` markdown
+* CommitmentDiscountQuantity MUST be of type Decimal.
+```
+
+### Composite Requirements
+
+A composite requirement is a normative requirement represented by a hierarchy of normative bullets. Parent bullets establish scope, conditions, or obligations for their nested bullets, while lowest-level normative bullets define individual constraints.
+
+Composite requirements SHOULD be used to group related requirements when hierarchical grouping improves readability, particularly when multiple requirements share a common business context, such as when:
+
+* multiple requirements share the same conditions or scope; or
+* multiple requirements share the same subject.
+
+Flat parallel bullets SHOULD be preferred when the ordering of requirements alone is sufficient for clarity and readability.
+
+Atomic requirements are derived from the lowest-level normative bullets together with all applicable constraints established by their ancestor bullets. Parent bullets used solely for structural grouping do not define atomic requirements.
+
+Composite requirements MUST adhere to the following guidelines:
+
+* **Hierarchical Obligation:** When a parent bullet uses a BCP 14 keyword (e.g., MUST), it establishes an obligation to evaluate the nested constraints. Each nested bullet then defines the specific requirement for its respective subject or condition using its own BCP 14 keyword. The applicable obligation for each nested bullet is determined by its own BCP 14 keyword, not by an aggregate of the hierarchy — except as noted in `Exception for Recommended Conformance` below.
+* **Shared Conditionality:** Nested bullets MUST inherit any condition established by the parent bullet.
+* **Context and Subject Consistency:** Nested bullets SHOULD maintain a consistent business context. While nested bullets SHOULD NOT introduce a different subject type, they MAY reference different subjects (e.g., a FOCUS dataset and its custom columns) provided they all relate to the same primary business context defined by the parent bullet.
+
+**Exception for Recommended Conformance:** When a parent bullet uses a SHOULD keyword to establish recommended conformance to a set of requirements (e.g., in `CustomColumnHandling` or when a column declares conformance to an attribute like `UnitFormat`), the weakest keyword in the hierarchy applies to the overall conformance.
+
+**Examples** (illustrative):
+
+* Incorrect:
+
+```markdown
+* When ChargeCategory is "Purchase", CostAndUsage MUST adhere to the following requirements:
+  * BillingCurrency MUST conform to CurrencyCodeFormat requirements.
+  * ResourceId MUST be a unique identifier within a service provider.
+  * InvoiceDetail documentation MUST describe invoice reconciliation methodology.
+```
+
+* Correct:
+
+```markdown
+* When ChargeCategory is "Purchase", CommitmentDiscountQuantity MUST adhere to the following requirements:
+  * CommitmentDiscountQuantity MUST NOT be null when ChargeClass is not "Correction".
+  * CommitmentDiscountQuantity MAY be null when ChargeClass is "Correction".
+  * CommitmentDiscountQuantity MUST be expressed in CommitmentDiscountUnit when not null.
+```
+
+### Structural Grouping Bullets
+
+A **structural grouping bullet** is a parent bullet within a [composite requirement](#composite-requirements) that groups related nested normative bullets under a shared condition or context.
+
+Structural grouping bullets appear in two variants: condition grouping bullets and context grouping bullets. The effect on [atomic requirements](#atomic-requirements) derived from the composite requirement depends on the grouping variant.
+
+An entity in the grammatical subject position of a structural grouping bullet establishes shared condition or context but is not constrained by that grouping bullet. The entity functions as a Constrainable Entity in each resolved atomic requirement that constrains it.
+
+#### Condition Grouping Bullets
+
+A condition grouping bullet introduces a shared condition that applies to all nested bullets. The condition is inherited when resolving nested normative bullets into atomic requirements.
+
+It uses the following canonical form:
+
+``` markdown
+* When <Condition>, <GrammaticalSubject> MUST adhere to the following requirements:
+```
+
+* **Example** (illustrative):
+
+``` markdown
+* When ListUnitPrice is not null, ListUnitPrice MUST adhere to the following requirements:
+```
+
+#### Context Grouping Bullets
+
+A context grouping bullet introduces a shared context for a group of related nested bullets without introducing a shared condition. The context is used for structural organization and does not add constraints to the resolved atomic requirements.
+
+Context grouping bullets may be used for different requirement contexts, such as **column presence** and **nullability**.
+
+##### Column Presence Grouping Bullets
+
+Column presence grouping bullets are used in dataset requirements. They use the following canonical form:
+
+``` markdown
+* <GrammaticalSubject> <ContextLabel> MUST adhere to the following requirements:
+```
+
+* **Example** (illustrative):
+
+``` markdown
+* ContractCommitment column presence MUST adhere to the following requirements:
+```
+
+##### Nullability Grouping Bullets
+
+Nullability grouping bullets are used in column requirements. They use the following canonical form:
+
+``` markdown
+* <GrammaticalSubject> MUST adhere to the following <ContextLabel> requirements:
+```
+
+* **Example** (illustrative):
+
+``` markdown
+* CommitmentDiscountQuantity MUST adhere to the following nullability requirements:
+```
+
+### Atomic Requirements
+
+An atomic requirement is the smallest resolved conformance unit derived from a normative requirement. Atomic requirements are not authored independently; they are derived from standalone or composite requirements and represent the individual constraints evaluated during conformance validation.
+
+A standalone normative bullet corresponds to one atomic requirement.
+
+![Standalone requirement resolves into one atomic requirement](./images/nrg-standalone-to-atomic-resolution.svg)
+
+A lowest-level normative bullet within a composite requirement corresponds to one atomic requirement after applying all applicable constraints inherited from its ancestor bullets.
+
+![Composite requirement resolves into multiple atomic requirements, with conditions inherited from ancestor bullets](./images/nrg-composite-to-atomic-resolution.svg)
+
+Atomic requirement MUST adhere to the following rules:
+
+* Atomic requirement MUST resolve to exactly one Constrainable Entity to which the requirement applies.
+* Atomic requirement MUST resolve to exactly one obligation level defined by a BCP 14 keyword.
+* Atomic requirement MUST express exactly one constraint.
+* Atomic requirement MUST describe a verifiable state of the object, not behavior.
+
+Structural anchors and structural grouping bullets do not represent atomic requirements because they do not define verifiable constraints.
+
+### FOCUS Entity Reference Conventions
+
+#### General FOCUS Entity Reference Conventions
+
+The following conventions apply to references to FOCUS entities in normative requirements:
+
+* References to FOCUS entities MUST use one of the following:
+  * a generic keyword (e.g., `FOCUS column`, `Custom column`),
+  * the entity ID (e.g., `BilledCost`, `NullHandling`), or
+  * a dot-notation reference path for object properties (e.g., `ContractAppliedObject.Elements[*].ContractId`).
+* References to FOCUS entities MUST NOT use their Display Names.
+* References to FOCUS entities SHOULD default to singular form, with the understanding that the requirement applies to all applicable instances, values, or elements of the referenced entity unless otherwise specified.
+
+#### FOCUS Dataset Reference Conventions
+
+When a normative requirement references a FOCUS dataset concept, different conventions apply depending on the position of the reference within the requirement.
+
+> **Note:** Dataset concepts referenced in this section (FOCUS dataset, dataset instance, dataset artifact) are defined in [FOCUS Dataset Abstraction Levels and Terminology](#focus-dataset-abstraction-levels-and-terminology).
+
+When a FOCUS dataset concept appears in the **grammatical subject position**:
+
+* `FOCUS dataset` MUST be used as the canonical reference to the Constrainable Entity even when the constraint applies to:
+  * a dataset specification,
+  * a dataset instance, or
+  * a dataset instance artifact.
+* The intended level of application (specification vs. instance vs. artifact) MUST be inferred from context rather than encoded in the grammatical subject.
+
+When a FOCUS dataset concept appears in a **non-subject position** (e.g., in conditions, scope clauses, or explanatory context within the requirement body):
+
+* One of the following precise glossary terms MUST be used:
+  * `FOCUS dataset` — when referring to the abstract dataset definition established by FOCUS.
+  * `dataset instance` — when referring to a specific implementation of a FOCUS dataset provided by a data generator.
+  * `dataset artifact` — when referring to a physical representation of a specific dataset instance delivered by a data generator.
+* Generic terms such as `dataset` or `datasets` MUST NOT be used when the precise abstraction level is known.
+
+**Examples** (illustrative):
+
+```markdown
+* *FOCUS dataset* MUST preserve all previously delivered *dataset artifacts* when using Append delivery mechanism.
+```
+
+```markdown
+* BilledCost MUST be 0 for *charges* generated by entities that are not responsible or authorized for invoicing, to avoid double-counting when merging multiple *dataset instances*.
+```
+
+```markdown
+* EffectiveCost MUST be 0 when ChargeCategory is "Purchase" and the purchase is intended to cover related eligible *charges*. This requirement applies even when the *covered charges* originate from different CostAndUsage *dataset instances*, possibly from a different ServiceProviderName.
+```
+
+### Constrainable Entity
+
+This section defines allowed and disallowed forms of Constrainable Entity in normative requirements, and the grammatical subject forms used to reference them. Reference conventions (use of IDs, prohibition on Display Names, singular form) are defined in the [FOCUS Entity Reference Conventions](#focus-entity-reference-conventions) section.
+
+#### Grammatical Subject Structure
+
+A normative bullet references its Constrainable Entity through the **grammatical subject**, i.e., the text at the subject position of the bullet. The grammatical subject consists of:
+
+* a **reference to a Constrainable Entity** (using an ID, generic keyword, or dot-notation path per [FOCUS Entity Reference Conventions](#focus-entity-reference-conventions)), and
+* optionally, one or more **qualifiers** that specify a subset, aspect, or context of the Constrainable Entity.
+
+Common qualifier types are:
+
+* **content or type** (e.g., `FOCUS column containing numeric values`)
+* **structural context** (e.g., `Key in Object in FOCUS dataset column`)
+* **aspect** (e.g., `InvoiceDetail documentation`, `FOCUS dataset delivery mechanism documentation`)
+
+Rules in this document that refer to what a requirement **constrains** apply to the Constrainable Entity. Rules that refer to the **wording or position** of the reference apply to the grammatical subject.
+
+The grammatical subject SHOULD be explicit and unambiguous.
+
+**Exception for Aggregate Expressions:** When a requirement describes an aggregate or derived value (e.g., sums, products, counts), the aggregate expression (e.g., `The sum of`, `The product of`) MAY be used as the grammatical subject when it improves readability. The aggregate expression is not itself a Constrainable Entity; the column or object property being constrained MUST still be clearly identifiable within the requirement.
+
+#### Allowed Constrainable Entities
+
+A Constrainable Entity MUST be a schema-level FOCUS Entity. The subsections below enumerate the allowed categories.
+
+##### Data Model Entity
+
+* **FOCUS Data Model**, whereby `DataModel` identifies the FOCUS Data Model.
+
+##### Dataset Entities
+
+* **FOCUS Dataset**, whereby use of:
+  * `FOCUS dataset` keyword represents any FOCUS dataset
+  * `FOCUS dataset` keyword with a qualifier represents a qualified subset of FOCUS datasets
   * A single FOCUS dataset explicitly identified by `<FOCUS Dataset ID>` (e.g., `CostAndUsage`)
 
-##### Dataset Column Subjects
+##### Dataset Column Entities
 
-* **FOCUS Dataset Column**, whereby use of:  
-  * `FOCUS dataset column` keyword represents any column in a FOCUS dataset (either a FOCUS column or a custom column)  
+* **FOCUS Dataset Column**, whereby use of:
+  * `FOCUS dataset column` keyword represents any column in a FOCUS dataset (either a FOCUS column or a custom column)
   * `FOCUS dataset column` keyword with a qualifier represents a qualified subset of FOCUS dataset columns (e.g., `FOCUS dataset column containing numeric values`)
 
-* **FOCUS Column**, whereby use of:  
-  * `FOCUS column` keyword represents any FOCUS column  
-  * `FOCUS column` keyword with a qualifier represents a qualified subset of FOCUS columns (e.g., `FOCUS column containing numeric values`)  
+* **FOCUS Column**, whereby use of:
+  * `FOCUS column` keyword represents any FOCUS column
+  * `FOCUS column` keyword with a qualifier represents a qualified subset of FOCUS columns (e.g., `FOCUS column containing numeric values`)
   * A single FOCUS column explicitly identified by `<FOCUS Column ID>` (e.g., `BilledCost`)
 
-* **Custom Column**, whereby use of:  
-  * `Custom column` keyword represents any custom column  
+* **Custom Column**, whereby use of:
+  * `Custom column` keyword represents any custom column
   * `Custom column` keyword with a qualifier represents a qualified subset of custom columns (e.g., `Custom column containing numeric values`)
 
-##### Sub-element Subjects
+##### Sub-Element Entities
 
-* **Structural sub-elements within Columns** (objects, keys, key values):
+* **Structural sub-elements within Columns** (objects and object properties, including keys and key values):
   * `object`, `key`, or `value` keywords MUST NOT be used alone. Always reference them in context.
   * Examples of valid subject forms for structural sub-elements:
     * `Key in Object in [FOCUS|Custom] column containing JsonObjectFormat values`
@@ -211,33 +445,34 @@ The normative subject MUST be a schema-level entity or specific documentation, s
     * `<ObjectId>.<PropertyPath>` for JSON Object property-level requirements (e.g., `ContractCommitmentApplicabilityObject.Applicability.Cost`)
     * `<ObjectId>.<PropertyPath>[*].<PropertyPath>` for properties within arrays (e.g., `ContractAppliedObject.Elements[*].ContractId`, `ContractCommitmentApplicabilityObject.Inclusions[*].Dimension`)
 
-##### Documentation Subjects
+##### Documentation Qualifier Forms
 
-* **Documentation**, whereby use of:
-  * `FOCUS dataset documentation` keyword represents documentation of any FOCUS dataset
-  * `{DatasetId} documentation` represents documentation of a specific dataset (e.g., `InvoiceDetail documentation`)
-  * `{Qualifier} documentation` represents documentation identified by a specific qualifier (e.g., `FOCUS dataset delivery mechanism documentation`, `Custom column JSON object schema documentation`, `Data generator-calculated split cost allocation method documentation`)
+The `documentation` qualifier specifies the documentation aspect of a Constrainable Entity enumerated above.
 
-The subject SHOULD be explicit and unambiguous.
+* **Documentation aspect qualifier**, whereby use of:
+  * `<Entity keyword> documentation` represents documentation of any entity of that type (e.g., `FOCUS dataset documentation`, `FOCUS column documentation`, `Custom column documentation`)
+  * `<Entity ID> documentation` represents documentation of a specific entity (e.g., `InvoiceDetail documentation`, `BilledCost documentation`)
+  * `<Entity reference> <SubQualifier> documentation` represents documentation of a specific aspect of an entity (e.g., `FOCUS dataset delivery mechanism documentation`, `Custom column JSON object schema documentation`)
 
-**Exception for Aggregate Expressions:** When a requirement describes an aggregate or derived value (e.g., sums, products, counts), the aggregate expression (e.g., `The sum of`, `The product of`) MAY be used as the grammatical subject when it improves readability. The column or metric being constrained MUST still be clearly identifiable within the requirement.
+#### Disallowed Constrainable Entities
 
-#### Disallowed Subjects
-
-The following MUST NOT be used as normative subjects:
+The following MUST NOT be used as Constrainable Entities or as the grammatical subjects of normative requirements:
 
 * Actors (e.g., `data generator`, `service provider`, `consumer`)
 * Processes or mechanisms (e.g., `Delivery Handling`, `Correction Handling`, etc.)
 
-> **Note:** Actors and processes/mechanisms can appear as part of a documentation qualifier without violating this rule. In such cases, the normative subject is the documentation itself, not the actor or mechanism. For example, in `Data generator-calculated split cost allocation method documentation`, the subject is the documentation, not the data generator; in `FOCUS dataset delivery mechanism documentation`, the subject is the documentation, not the delivery mechanism.
+> **Note:** Actors and processes/mechanisms can appear inside a qualifier (most commonly inside a documentation qualifier that describes what the documentation is about). In such cases the Constrainable Entity is the FOCUS entity being documented (typically a FOCUS dataset or column), and the actor or mechanism appears only within the qualifier chain, never as the entity reference itself. For example, in `FOCUS dataset delivery mechanism documentation`, the Constrainable Entity is `FOCUS dataset` and `delivery mechanism documentation` is the qualifier chain that narrows to the documentation of the delivery mechanism aspect.
 
-### FOCUS Entity Reference Conventions
+### Explicit Conditions in Normative Requirements
 
-* References to FOCUS entities in normative requirements MUST use their canonical identifiers (e.g., `{DatasetId}`, `{ColumnId}`, `{AttributeId}`) or canonical object/property reference paths (e.g., `Object.Property[*].Field`).
-* References to FOCUS entities in normative requirements MUST NOT use their Display Names.
-* References SHOULD default to singular form, with the understanding that the requirement applies to all applicable instances, values, or elements of the referenced entity unless otherwise specified.
+* Requirement MUST include an explicit condition when applicability is conditional and cannot be inferred from the Constrainable Entity and any associated qualifiers.
+* Conditional logic MUST be expressed using one of the following approved conditional keywords:
+  * `when`
+  * `unless`
+  * `only when`
+  * `except when`
 
-### State, Not Behavior
+### Verifiable State Descriptor: State, Not Behavior
 
 Normative requirements MUST describe a **verifiable state**, not an operational process or behavior.
 
@@ -246,11 +481,9 @@ Specifically:
 * The primary verb of the obligation (i.e., the verb that directly follows the BCP-14 keyword) MUST define a verifiable state.
 * Process-oriented verbs (e.g., `ensure`, `handle`, `support`, `provide`) MUST NOT be used as the primary verb of the obligation.
 * Process-oriented verbs MAY be used in non-normative or explanatory clauses (e.g., to describe intent or rationale).
-* When a requirement refers to actor behavior, it MUST be expressed as:
-  * a constraint on the resulting state of a schema-level entity (e.g., dataset, column, object), or
-  * a constraint on documentation.
+* When a requirement refers to actor behavior, it MUST be expressed as a constraint on the resulting state of a schema-level entity (e.g., dataset, column, object), including its documentation aspect where applicable.
 
-#### Common non-compliant verbs (non-exhaustive)
+#### Common Non-Compliant Verbs (Non-Exhaustive)
 
 * The following verbs are commonly used in a process-oriented way when defining requirements:
   * `ensure`
@@ -266,26 +499,22 @@ Specifically:
   * `alter`
   * `document`
 
-* These verbs are prohibited when applied as obligations on actors or processes but may be used when defining verifiable states of documentation. 
+* These verbs are prohibited when applied as obligations on actors or processes but may be used when defining verifiable states of documentation.
 
 * **Example** (illustrative):
 
-  * `Document X MUST provide Y` is non-compliant because it describes a behavior of the documentation process rather than a verifiable state of the documentation itself. 
+  * `Document X MUST provide Y` is non-compliant because it describes a behavior of the documentation process rather than a verifiable state of the documentation itself.
   * However, `Documentation for X MUST include Y` is compliant because it describes a verifiable state of the documentation.
 
 > **Note:** This list is not exhaustive. Any verb that describes an action, responsibility, or implementation behavior rather than a verifiable state is considered non-compliant in the normative position.
 
-### Tone and Grammar
-
-In order to maintain a formal, professional tone throughout the specification, contractions MUST NOT be used in normative requirements (e.g., use "do not" instead of "don't").
-
 ### Use of BCP 14 Keywords
 
-* Each normative bullet MUST contain exactly one of the following BCP 14 keywords: `MUST`, `MUST NOT`, `SHOULD`, `SHOULD NOT`, `MAY`.
-* A bullet containing more than one normative keyword MUST be split (see [Splitting Requirements](#splitting-requirements) section).
-* The following BCP 14 keywords MUST NOT be used: `REQUIRED`, `SHALL`, `SHALL NOT`, `RECOMMENDED`, `NOT RECOMMENDED`, `OPTIONAL`.
+* Normative bullet MUST contain exactly one of the following BCP 14 keywords: `MUST`, `MUST NOT`, `SHOULD`, `SHOULD NOT`, `MAY`.
+* Normative bullet MUST NOT contain any of the following BCP 14 keywords: `REQUIRED`, `SHALL`, `SHALL NOT`, `RECOMMENDED`, `NOT RECOMMENDED`, `OPTIONAL`.
+* Normative bullet containing more than one BCP 14 keyword MUST be split (see [Splitting Requirements](#splitting-requirements) section).
 
-* **Exception for Composite Requirements:** While each individual bullet (parent or nested) MUST contain only one BCP 14 keyword, a Composite Requirement as a whole MAY contain multiple keywords to express nuanced obligations. In such cases, the logical strength of the requirement is governed by the hierarchy defined in section [Composite Requirements](#composite-requirements).
+**Exception for Composite Requirements:** While each individual bullet (parent or nested) MUST contain only one BCP 14 keyword, a Composite Requirement as a whole MAY contain multiple keywords to express nuanced obligations. In such cases, the applicable obligation for each nested bullet is governed by the rules defined in [Composite Requirements](#composite-requirements).
 
 > **Note:** The keyword `RECOMMENDED` was previously used for presence-related normative requirements with the meaning "recommended but not mandatory." This usage is deprecated as of December 2025.
 
@@ -293,68 +522,63 @@ For detailed interpretation of BCP 14 keywords, see [BCP14](https://tools.ietf.o
 
 ### Splitting Requirements
 
-A requirement MUST be split into multiple bullets if it:
+#### Splitting Normative Bullets
 
-* contains more than one BCP 14 keyword,
-* combines multiple obligations (e.g., multiple verifiable state descriptors, multiple objects, or multiple conditions that result in distinct constraints),
-* combines multiple independent conditions using “and” or “or” that result in distinct constraints
-* contains a hidden constraint expressed as a definition (e.g., `ColumnA MUST be Z, where Z is defined as Y`),
-* applies constraints to multiple subjects, even with a single BCP 14 keyword (e.g., `ColumnA and ColumnB MUST be X`).
+A normative requirement is composed of one or more normative bullets (see [Normative Requirement Model](#normative-requirement-model)). The following rules define when a normative bullet MUST be split into multiple bullets:
 
-* **Example** (illustrative):
+* Normative bullet MUST be split if it constrains more than one Constrainable Entity (e.g., `ColumnA and ColumnB MUST be X`).
+* Normative bullet MUST be split if it contains more than one BCP 14 keyword (e.g., a bullet containing both `MUST` and `SHOULD`).
+* Normative bullet MUST be split if it combines more than one constraint (e.g., multiple verifiable state descriptors, or multiple independent conditions using "and" or "or" that produce distinct constraints).
+* Normative bullet MUST be split if it contains a hidden constraint expressed as a non-normative definition (e.g., `ColumnA MUST be a valid Y, where a valid Y satisfies condition Z.`). The hidden constraint MUST be extracted into its own normative bullet so that each constraint is expressed explicitly.
 
-  * Incorrect: `ColumnA and ColumnB MUST be non-null when ColumnC is true and ColumnD is not "X".`
-  
-  * Correct:
+**Examples** (illustrative):
 
-    * `ColumnA MUST be non-null when ColumnC is true and ColumnD is not "X".`
-    * `ColumnB MUST be non-null when ColumnC is true and ColumnD is not "X".`
-
-  * Correct:
-
-    * `PricingQuantity MUST be null when ChargeCategory is "Tax" or "Adjustment".`
-    * `BillingPeriodStart MUST be less than or equal to BillingPeriodEnd.`
-
-### Composite Requirements
-
-Composite (parent + nested) requirements MAY be used to group related constraints under a shared condition, context, or subject.
-
-Composite requirements MUST adhere to the following guidelines:
-
-* **Nuanced Obligation:** When a parent bullet uses a BCP 14 keyword (e.g., MUST), it establishes a mandatory requirement to evaluate the nested constraints. Each nested bullet then defines the specific nuance of that obligation for its respective subject or condition using its own BCP 14 keyword.
-* **Shared Conditionality:** Nested bullets MUST share the same condition if defined by the parent bullet.
-* **Context and Subject Consistency:** Nested bullets SHOULD maintain a consistent business context. While nested bullets SHOULD NOT introduce a different subject type, they MAY reference different subjects (e.g., a FOCUS dataset and its custom columns) provided they all relate to the same primary business context defined by the parent bullet.
-
-* **Example** (illustrative):
-
-Incorrect:
+* Incorrect:
 
 ```markdown
-* When ChargeCategory is "Purchase", CostAndUsage MUST adhere to the following requirements:
-  * BillingCurrency MUST conform to CurrencyCodeFormat requirements.
-  * ResourceId MUST be a unique identifier within a service provider.
-  * InvoiceDetail documentation MUST describe invoice reconciliation methodology.
+* ContractAppliedObject.Elements[*].ContractId and ContractAppliedObject.Elements[*].ContractCommitmentId MUST be a unique identifier within the service provider.
 ```
 
-Correct:
+* Correct:
 
 ```markdown
-* When ChargeCategory is "Purchase", CommitmentDiscountQuantity MUST adhere to the following requirements:
-  * CommitmentDiscountQuantity MUST NOT be null when ChargeClass is not "Correction".
-  * CommitmentDiscountQuantity MAY be null when ChargeClass is "Correction".
-  * CommitmentDiscountQuantity MUST be expressed in CommitmentDiscountUnit when not null.  
+* ContractAppliedObject.Elements[*].ContractId MUST be a unique identifier within the service provider.
+* ...
+* ContractAppliedObject.Elements[*].ContractCommitmentId MUST be a unique identifier within the service provider.
 ```
 
-**Exception:** When a parent bullet uses a SHOULD keyword to establish recommended conformance to a set of requirements (e.g., in `CustomColumnHandling` or when a column declares conformance to an attribute like `UnitFormat`), the weakest keyword in the hierarchy applies to the overall conformance.
+* Correct:
 
-Composite requirements SHOULD be used when grouping improves readability and:
+```markdown
+* PricingQuantity MUST be null when ChargeCategory is "Tax" or "Adjustment".
+```
 
-* Multiple requirements share the same Business Context.
-* Multiple requirements share the same subject.
+* Correct:
 
-Flat parallel bullets SHOULD be preferred when ordering keywords alone is sufficient for clarity and readability.
+```markdown
+* BillingPeriodStart MUST be less than or equal to BillingPeriodEnd.
+```
 
-### Contextual Information (e.g., Definitions, Examples) and Normative Authority (Requirements)
+#### Applying Splitting Rules
+
+The splitting rules above are authoring rules that apply to individual normative bullets.
+
+For a [standalone requirement](#standalone-requirements), these rules are sufficient because a standalone requirement is authored as a single normative bullet.
+
+For a [composite requirement](#composite-requirements), the splitting rules apply independently to each normative bullet, whether the bullet is a parent or nested bullet.
+
+Composite requirements intentionally allow variation across bullets. A nested bullet MAY:
+
+* use a different BCP 14 keyword than its parent or siblings (see Exception for Composite Requirements in [Use of BCP 14 Keywords](#use-of-bcp-14-keywords));
+* reference a different Constrainable Entity than its parent or siblings (see Context and Subject Consistency in [Composite Requirements](#composite-requirements)).
+
+Such variation across parent and nested bullets is not itself a splitting trigger. Splitting rules apply only to the contents of an individual normative bullet.
+
+However, inherited context within a composite requirement MAY introduce additional constraints that are only visible after resolution — for example, a nested bullet may appear well-formed in isolation but, combined with inherited conditions or scope, may resolve into an atomic requirement containing a hidden constraint. Therefore, every resolved [atomic requirement](#atomic-requirements) MUST also satisfy the rules defined for atomic requirements.
+
+If a resolved atomic requirement violates those rules, the authored requirement MUST be rephrased, typically by splitting one or more normative bullets.
+
+### Separation of Normative and Non-Normative Content
 
 While normative requirements MUST focus on **enforceable constraints** and **verifiable states**, definitions, informative clauses, and examples MAY be included within a requirement where necessary to provide essential context and ensure unambiguous interpretation.
 
@@ -377,7 +601,7 @@ Each normative requirement MUST be defined in exactly one place across the speci
 * If a requirement applies broadly to multiple datasets, columns, or column sub-elements (e.g., objects within columns), it SHOULD be defined as an Attribute requirement, with conformance declared by those entities.
 
 * If a requirement involves multiple columns within a single dataset, it MUST be defined on the primary column it describes. Other columns involved MUST NOT restate it as a normative requirement but MAY reference it in their introductory description.
-  
+
   * The primary owner is the entity whose conformance would fail if the requirement is violated.
 
   * **Example:** `ListCost MUST equal the product of ListUnitPrice and PricingQuantity when ListUnitPrice is not null and PricingQuantity is not null.` — this requirement is defined on `ListCost`. `ListUnitPrice` and `PricingQuantity` MAY reference it in their introductory description but MUST NOT restate it as a normative requirement.
@@ -385,6 +609,15 @@ Each normative requirement MUST be defined in exactly one place across the speci
 * If a requirement spans multiple datasets, it MUST be defined on the column in the dataset that is the primary owner of the validation. Other datasets involved MUST NOT restate it as a normative requirement but MAY reference it in their introductory description.
 
   * **Example:** A cross-dataset sum validation comparing `BilledCost` aggregated by `InvoiceId` and `InvoiceIssuerName` between `InvoiceDetail` and `CostAndUsage` is defined on `InvoiceDetail.BilledCost`, as `InvoiceDetail` is the primary owner of invoice-level validation. `CostAndUsage` MAY reference it in its introductory description but MUST NOT restate it as a normative requirement.
+
+### Tone and Grammar
+
+* Normative requirements MUST NOT contain contractions (e.g., use "do not" instead of "don't") to maintain a formal, professional tone throughout the specification.
+* Normative bullets MUST NOT begin with an article ("A"/"An"/"The") to ensure conciseness and universal applicability; "each" is implicit.
+
+**Exception for Aggregate Expression Subjects:** Normative bullets whose subject is an aggregate expression MAY begin with "The" (e.g., `The sum of <ColumnId> ... MUST equal ...`), as permitted in [Constrainable Entity](#constrainable-entity).
+
+> **Note:** The rules in this document apply to normative requirements authored in the FOCUS specification. They do not govern the bullets that state the rules themselves.
 
 ## Dataset Requirements
 
@@ -472,12 +705,12 @@ Use standardized phrasing and terminology, and apply common requirement patterns
 ##### Other Requirements: Documentation
 
 ```markdown
-* <DatasetId> documentation MUST <verifiable state>.
+* <DatasetId> documentation MUST <VerifiableStateDescriptor>.
 ```
 
 ```markdown
 * <DatasetId> documentation MUST adhere to the following requirements:
-  * <DatasetId> documentation MUST <verifiable state>.
+  * <DatasetId> documentation MUST <VerifiableStateDescriptor>.
 ```
 
 ### Dataset Normative Requirements Examples
@@ -507,7 +740,7 @@ ContractCommitment MUST adhere to the following requirements:
 * ...
 ```
 
-> **Note:** Column presence groups are structural groupings and not normative subjects.
+> **Note:** The column presence-related bullet is a context grouping bullet. It is not, in itself, a normative requirement and does not define a normative constraint. It serves only as a grouping context. See [Structural Grouping Bullets](#structural-grouping-bullets) and [Composite Requirements](#composite-requirements) sections for details.
 
 #### **Cost and Usage**
 
@@ -533,7 +766,7 @@ CostAndUsage MUST adhere to the following requirements:
 * ...
 ```
 
-> **Note:** Column presence groups are structural groupings and not normative subjects.
+> **Note:** The column presence-related bullet is a context grouping bullet. It is not, in itself, a normative requirement and does not define a normative constraint. It serves only as a grouping context. See [Structural Grouping Bullets](#structural-grouping-bullets) and [Composite Requirements](#composite-requirements) sections for details.
 
 ## Column Requirements
 
@@ -549,7 +782,7 @@ Grouping and ordering of requirements ensure clarity, logical flow, and consiste
      1. **Nullability**: Clarifies when the value can or cannot exist, ensuring all subsequent rules align with column nullability.
      1. **Values and Value Ranges**: Further constrains valid values, assuming the format is already correct.
      1. **Column-to-Column Relationships**: Defines dependencies and consistency rules between related columns.
-  2. **Business & Contextual Requirements**
+  2. **Business and Contextual Requirements**
      1. **Unit/Denomination**: Ensures consistency in measurement or currency.
      1. **Uniqueness**: Defines uniqueness constraints for data integrity.
      1. **Fallback/Substitute Values**: Specifies what alternative values may be used if the expected value is missing.
@@ -656,11 +889,11 @@ FOCUS defines two JSON-based value formats for columns: Key-Value Format and JSO
 
 * **Singular Form for Object Properties**: Use singular (dot-notation path with `[*]`) when defining requirements for individual property values, with the understanding that `[*]` applies the requirement to all elements in the array (e.g., `ContractAppliedObject.Elements[*].ContractId MUST be a unique identifier within the service provider.`).
 
-* **Aggregate Expressions for Object Properties**: For aggregate requirements over object properties, the **Exception for Aggregate Expressions** in the [Normative Subject](#normative-subject) section applies (e.g., `The sum of AllocatedMethodDetailsObject.Elements[*].AllocatedRatio across all allocated charges related to a single origin charge MUST equal 1 (100%).`).
+* **Aggregate Expressions for Object Properties**: For aggregate requirements over object properties, the **Exception for Aggregate Expressions** in the [Constrainable Entity](#constrainable-entity) section applies (e.g., `The sum of AllocatedMethodDetailsObject.Elements[*].AllocatedRatio across all allocated charges related to a single origin charge MUST equal 1 (100%).`).
 
 ### Grouping of Nullability-Related and Subsequent Column Requirements
 
-* When there is only one nullability-related requirement, state it directly. If there are multiple, list them as nested bullets under the introductory bullet 'ColumnId nullability is defined as follows:'
+* When there is only one nullability-related requirement, state it directly. If there are multiple, list them as nested bullets under a context grouping bullet (see [Structural Grouping Bullets](#structural-grouping-bullets)) using the following pattern:
 
 ```markdown
 * <ColumnId> MUST adhere to the following nullability requirements:
@@ -685,6 +918,8 @@ FOCUS defines two JSON-based value formats for columns: Key-Value Format and JSO
     * <ColumnId> MAY be null when <Condition>.
 ```
 
+> **Note:** The column nullability-related bullet is a context grouping bullet. It is not, in itself, a normative requirement and does not define a normative constraint. It serves only as a grouping context. See [Structural Grouping Bullets](#structural-grouping-bullets) and [Composite Requirements](#composite-requirements) sections for details.
+
 ### Grouping of Column Requirements Based on Specific Conditions
 
 * **Parent Condition**
@@ -695,7 +930,7 @@ FOCUS defines two JSON-based value formats for columns: Key-Value Format and JSO
 ```markdown
 * When <Condition(s)>, <ColumnId> MUST adhere to the following requirements:
 ```
-  
+
 ```markdown
 * When <Condition>, <ColumnId> MUST adhere to the following requirements:
   * <ColumnId> MUST NOT be null when <Condition>.
@@ -712,6 +947,8 @@ FOCUS defines two JSON-based value formats for columns: Key-Value Format and JSO
     * <ColumnId> MUST be <SpecificRequirement>.
     * <ColumnId> MUST be <SpecificRequirement>.
 ```
+
+> **Note:** The condition-related parent bullet is a condition grouping bullet. It is not, in itself, a normative requirement and does not define a normative constraint. It serves only as a shared condition for its nested bullets. See [Structural Grouping Bullets](#structural-grouping-bullets) and [Composite Requirements](#composite-requirements) sections for details.
 
 ### Consistent Wording and Patterns in Column Requirements
 
@@ -790,26 +1027,26 @@ To ensure clarity and consistency across columns and corresponding requirements,
 * <ColumnId> SHOULD/MUST remain consistent over time for a given <OtherColumnId>.
 ```
 
-##### Business & Contextual Requirements: Unit/Denomination
+##### Business and Contextual Requirements: Unit/Denomination
 
 ```markdown
 * <ColumnId> MUST be denominated in the BillingCurrency.
 * <ColumnId> MUST be expressed in the <OtherColumnId>.
 ```
 
-##### Business & Contextual Requirements: Uniqueness
+##### Business and Contextual Requirements: Uniqueness
 
 ```markdown
 * <ColumnId> MUST be a unique identifier within <Scope>.
 ```
 
-##### Business & Contextual Requirements: Fallback/Substitute Values
+##### Business and Contextual Requirements: Fallback/Substitute Values
 
 ```markdown
 * <ColumnId> MUST NOT duplicate <OtherColumnId> when <Condition>
 ```
 
-##### Business & Contextual Requirements: Relationships Outside the Spec
+##### Business and Contextual Requirements: Relationships Outside the Spec
 
 ```markdown
 * The sum of <ColumnId>[ for a given <Scope>] MUST equal ...
@@ -817,7 +1054,7 @@ To ensure clarity and consistency across columns and corresponding requirements,
 * The sum of <ColumnId>[ for a given <Scope>] MAY differ from ...
 ```
 
-##### Business & Contextual Requirements: Cost Validation
+##### Business and Contextual Requirements: Cost Validation
 
 ```markdown
 * <CostColumnId> MUST equal the product of <UnitPriceColumnId> and PricingQuantity when <UnitPriceColumnId> is not null and PricingQuantity is not null.
@@ -826,17 +1063,17 @@ To ensure clarity and consistency across columns and corresponding requirements,
 ##### Other Requirements: Documentation
 
 ```markdown
-* <Qualifier> documentation MUST <verifiable state>.
+* <ColumnId> documentation MUST <VerifiableStateDescriptor>.
 ```
 
 ```markdown
-* <Qualifier> documentation MUST adhere to the following requirements:
-  * <Qualifier> documentation MUST <verifiable state>.
+* <ColumnId> documentation MUST adhere to the following requirements:
+  * <ColumnId> documentation MUST <VerifiableStateDescriptor>.
 ```
 
 #### Column Requirement Standardized Terminology
 
-##### Identifiers and Uniqueness within Scope
+##### Identifiers and Uniqueness Within Scope
 
 * Patterns:
 
@@ -940,7 +1177,7 @@ CommitmentDiscountQuantity MUST adhere to the following requirements:
 
 ### Role of Attributes in the Specification
 
-Attributes define reusable sets of normative constraints applicable to FOCUS datasets, columns (both FOCUS and custom), and column sub-elements (e.g., objects, keys, key values). Although Attributes are FOCUS entities, they serve only as containers for these constraints and are not treated as normative subjects of requirements.
+Attributes define reusable sets of normative constraints applicable to FOCUS datasets, columns (both FOCUS and custom), and column sub-elements (e.g., objects and object properties, including keys and key values). Although Attributes are FOCUS Entities, they serve only as containers for these constraints and are not Constrainable Entities.
 
 An entity is considered conforming to an Attribute if it explicitly declares conformance or inherits it from a parent entity. For example, when a dataset declares conformance to `NullHandling`, all columns within that dataset are considered conforming to that Attribute.
 
@@ -950,13 +1187,13 @@ Conformance to an Attribute can be declared at:
 * **Column group level:** The dataset declares conformance for a specific group of columns (e.g., `CostAndUsage FOCUS columns MUST conform to FocusColumnHandling requirements.` or `CostAndUsage custom columns MUST conform to CustomColumnHandling requirements.`). This pattern is used to apply attributes separately to FOCUS columns and custom columns within a dataset.
 * **Column level:** A specific column declares conformance directly (e.g., `BilledCost MUST conform to NumericFormat requirements.`).
 
-Normative requirements defined in an Attribute section are evaluated within the scope of conforming entities but apply only to the subjects explicitly defined by each requirement. Conformance determines the set of entities in scope, while the requirement subject determines which of those entities are targeted.
+Normative requirements defined in an Attribute section are evaluated within the scope of conforming entities but apply only to the Constrainable Entities explicitly identified by each requirement. Conformance determines the set of entities in scope, while the Constrainable Entity determines which of those entities is targeted.
 
-### Structural Anchor Requirement for Attributes
+### Structural Anchor for Attributes
 
-Each Attribute Requirements section MUST begin with a structural anchor requirement.
+Each Attribute Requirements section MUST begin with a structural anchor.
 
-The structural anchor requirement:
+The structural anchor:
 
 * uses the primary schema-level entity as the subject,
 * references the Attribute ID to establish the conformance context,
@@ -964,34 +1201,34 @@ The structural anchor requirement:
 * is non-verifiable and non-enforceable,
 * exists solely for structural consistency and automated parsing.
 
-The canonical form of the structural anchor requirement is:
+The canonical form of the structural anchor is:
 
 ```markdown
 [Dataset|Column] conforming to <AttributeId> attribute MUST adhere to the following requirements:
 ```
 
-Where `[Dataset|Column]` is the primary schema-level entity targeted by the Attribute — either Dataset or Column. Most Attributes target either datasets or columns, but not both. When an Attribute targets both datasets and columns, a separate structural anchor requirement MUST be used for each entity type.
+Where `[Dataset|Column]` is the primary schema-level entity targeted by the Attribute — either Dataset or Column. Most Attributes target either datasets or columns, but not both. When an Attribute targets both datasets and columns, a separate structural anchor MUST be used for each entity type.
 
-When an Attribute is applicable only under specific conditions, the structural anchor requirement MAY be preceded by an applicability criteria condition:
+When an Attribute is applicable only under specific conditions, the structural anchor MAY be preceded by an operating model condition:
 
 ```markdown
-When <actor> <applicability-criteria-condition>, [Dataset|Column] conforming to <AttributeId> attribute MUST adhere to the following requirements:
+When the operating model <OperatingModelCondition>, [Dataset|Column] conforming to <AttributeId> attribute MUST adhere to the following requirements:
 ```
 
-### Normative Subjects in Attribute Requirements
+### Constrainable Entities in Attribute Requirements
 
-Unlike column-level and dataset-level requirements, where the subject is a specific named dataset, column, or column sub-element, Attribute requirements are expressed against normative subjects that represent normative FOCUS entities, i.e., datasets, columns, or column sub-elements.
+Unlike column-level and dataset-level requirements, where the Constrainable Entity is a specific named dataset, column, or column sub-element, Attribute requirements identify generic Constrainable Entities, i.e., datasets, columns, or column sub-elements.
 
-These subjects define the targets of individual requirements within the scope of conforming entities. While conformance determines which entities are in scope, the subject of each requirement determines which of those entities are affected.
+These Constrainable Entities define the targets of individual requirements within the scope of conforming entities. While conformance determines which entities are in scope, the Constrainable Entity of each requirement determines which one is affected.
 
 When an Attribute's requirements do not apply to all entities within scope but only to a subset, a qualifier condition narrows the scope by describing that subset (e.g., `When FOCUS column contains numeric values, FOCUS column MUST adhere to the following requirements`). This ensures that the applicability of each requirement is explicit and does not rely solely on the conformance declaration.
 
-The following table provides an overview of anchor subject types and requirement subjects used across all attributes, with each Attribute typically targeting only a subset of these subjects.
+The following table provides an overview of anchor subject types and grammatical subject forms used across all Attributes. Each grammatical subject form identifies a Constrainable Entity, optionally accompanied by a qualifier. Each Attribute typically targets only a subset of these Constrainable Entities.
 
-| Anchor Subject Type | Requirement Subject |
+| Anchor Subject Type | Constrainable Entity (with optional qualifier) |
 |---|---|
 | Dataset | FOCUS dataset |
-| Dataset | [Qualifier] documentation |
+| Dataset | FOCUS dataset with documentation qualifier |
 | Column | FOCUS dataset column |
 | Column | FOCUS column |
 | Column | Custom column |
@@ -1001,11 +1238,11 @@ The following table provides an overview of anchor subject types and requirement
 | Column | Key value in Object in FOCUS dataset column |
 | Column | Key in FOCUS dataset column |
 | Column | Key value in FOCUS dataset column |
-| Column | [Qualifier] documentation |
+| Column | FOCUS dataset column with documentation qualifier |
 
 ### FOCUS Dataset Column vs FOCUS Column vs Custom Column Requirements
 
-Requirements that can apply to all columns in a FOCUS dataset (both FOCUS columns and custom columns) use `*FOCUS dataset column*` as the normative subject. This approach is used by the majority of attributes (e.g., `NullHandling`, `DateTimeFormat`, `NumericFormat`, `StringHandling`) to define column-agnostic requirements. Requirements specific to FOCUS-defined columns use `*FOCUS column*` as the normative subject and are defined in `FocusColumnHandling` attribute. Requirements specific to custom columns use `*Custom column*` as the normative subject and are defined in `CustomColumnHandling` attribute.
+Requirements that can apply to all columns in a FOCUS dataset (both FOCUS columns and custom columns) use `*FOCUS dataset column*` as the Constrainable Entity. This approach is used by the majority of attributes (e.g., `NullHandling`, `DateTimeFormat`, `NumericFormat`, `StringHandling`) to define column-agnostic requirements. Requirements specific to FOCUS-defined columns use `*FOCUS column*` as the Constrainable Entity and are defined in `FocusColumnHandling` attribute. Requirements specific to custom columns use `*Custom column*` as the Constrainable Entity and are defined in `CustomColumnHandling` attribute.
 
 When an Attribute uses `*FOCUS dataset column*` as the subject:
 
@@ -1020,7 +1257,7 @@ When an Attribute uses `*FOCUS dataset column*` as the subject:
 * Typically references other attributes (e.g., `NullHandling`, `DateTimeFormat`, `NumericFormat`) with `SHOULD conform` to establish recommended conformance for custom columns.
 * Lists specific requirements that must remain mandatory for custom columns (e.g., documented schema for JSON objects, single numeric value for numeric columns).
 
-Datasets declare conformance to `CustomColumnHandling` for custom columns using the pattern:
+Datasets declare conformance to `CustomColumnHandling` for custom columns using the following pattern:
 
 ```markdown
 * <DatasetId> *custom columns* MUST conform to CustomColumnHandling requirements.
@@ -1034,11 +1271,11 @@ Structured grouping and ordering of Attribute requirements improves clarity, con
 
 The groups defined here represent an ordering convention, not a structural requirement. Requirements within each group MAY be expressed as flat parallel bullets or as composite (parent + nested) bullets — whichever improves clarity and readability.
 
-The only **exception** is the **Structural Attribute Anchor Requirement** (group 0), which by its nature always acts as a parent composite requirement.
+The only **exception** is the **Structural Attribute Anchor** (group 0), which by its nature always acts as a parent composite requirement.
 
-Attributes may include requirements that apply to one or more intended normative subjects. To make the applicability of each Attribute, and each of its individual requirements, as transparent as possible, intended normative subjects serve as the basis for grouping. This ensures that readers can readily determine whether a requirement applies to a dataset, a subset of datasets, FOCUS columns, or custom columns.
+Attributes may include requirements that apply to one or more intended Constrainable Entities. To make the applicability of each Attribute, and each of its individual requirements, as transparent as possible, intended Constrainable Entities serve as the basis for grouping. This ensures that readers can readily determine whether a requirement applies to a dataset, a subset of datasets, FOCUS columns, or custom columns.
 
-0. **Structural Attribute Anchor Requirement:** Introduces the scope of the Attribute and provides a stable parsing entry point; it does not introduce a verifiable constraint.
+0. **Structural Attribute Anchor:** Introduces the scope of the Attribute and provides a stable parsing entry point; it does not introduce a verifiable constraint.
 1. **FOCUS Dataset-level Attribute Requirements:**
    1. **Global FOCUS Dataset Requirements:** Applicable to all FOCUS datasets that declare conformance to the Attribute, regardless of their structure, specific role or context.
    1. **Qualified FOCUS Dataset Requirements:** Applicable to a subset of FOCUS datasets that declare conformance to the Attribute and are identified through a qualifier.
@@ -1063,7 +1300,7 @@ Attributes may include requirements that apply to one or more intended normative
    1. **Documentation:** Defines requirements for documentation associated with entities conforming to the Attribute.
    1. **Other:** Captures requirements that do not fall into the above categories.
 
-### Ordering of Attribute Requirements within Groups
+### Ordering of Attribute Requirements Within Groups
 
 To further enhance readability, individual requirements within each group SHOULD be ordered as follows:
 

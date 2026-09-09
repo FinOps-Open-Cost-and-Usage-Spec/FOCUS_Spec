@@ -9,7 +9,7 @@ ChargeFrequency MUST adhere to the following requirements:
 * ChargeFrequency MUST be of type String.
 * ChargeFrequency MUST NOT be null.
 * ChargeFrequency MUST be one of the allowed values.
-* ChargeFrequency MUST NOT be "Usage-Based" when [ChargeCategory](#datasets.costandusage.chargecategory) is "Purchase".
+* ChargeFrequency MUST NOT be "Usage-Based" when [ChargeCategory](#datamodel.costandusage.chargecategory) is "Purchase".
 
 ## Allowed Values
 
@@ -33,14 +33,15 @@ Indicates how often a *charge* will occur.
 
 ## Content Constraints
 
-| Constraint      | Value                                                |
-| :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datasets.costandusage)             |
-| Column type     | Dimension                                            |
-| Feature level   | Recommended                                          |
-| Allows nulls    | False                                                |
-| Data type       | String                                               |
-| Value format    | Allowed values                                       |
+| Constraint                 | Value                                     |
+| :------------------------- | :---------------------------------------- |
+| Dataset                    | [Cost and Usage](#datamodel.costandusage) |
+| Operating Model Conditions | Not applicable                            |
+| Column type                | Dimension                                 |
+| Feature level              | Recommended                               |
+| Allows nulls               | False                                     |
+| Data type                  | String                                    |
+| Value format               | Allowed values                            |
 
 ## Version Introduced
 

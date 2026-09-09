@@ -13,7 +13,7 @@ The model document for FOCUS contains the following major sections:
 | Section | Purpose |
 |---------|---------|
 | Details | Key details about the model document |
-| ApplicabilityCriteria | Key flags used to define attributes about the data generator that need to be true for some model rules to apply |
+| Conditions | Key flags used to define attributes about the data generator that need to be true for some model rules to apply (named `ApplicabilityCriteria` prior to model version 1.5) |
 | CheckFunctions | Method definitions to describe the actual check needed to conform to a rule |
 | ModelDatasets | List of datasets defined by FOCUS and the related top level model rules associated with the dataset |
 | Schemas | Reusable JSON Schema definitions that can be referenced by validation rules |
@@ -30,14 +30,14 @@ The first stage of conversion of rules from the normative text to model rules is
 * `ModelRuleId` - Formal identifier for this model rule entry
 * `Function` - The type of rule to be defined (Valid types: `Composite`, `Presence`, `Type`, `Format`, `Validation`, `Nullability`)
 * `Reference` - The Column/Attribute Id this rule applies to
-* `EntityType` - The type of entity this rule applies to (Valid types: `Dataset`, `Column`, `Attribute`, `Object`)
+* `EntityType` - The type of entity this rule applies to (Valid types: `Dataset`, `Column`, `Attribute`, `Object`, `Condition`; `Condition` added in model version 1.5)
 * `EntityName` - The human-readable name of the entity this rule applies to
 * `EntityId` - The unique identifier of the entity this rule applies to
 * `Notes` - Free form notes (short) included in the model rule document
 * `ModelVersionIntroduced` - Requirements Model Version this rule was added to the Model Rules
 * `Status` - Status of the rule (Valid values: Active, Deprecated, Removed)
 * `ModelVersionRemoved` - Requirements Model Version this rule was removed from the Model Rules
-* `ApplicabilityCriteria` - Specific criteria that must be true of the data generator for this rule to apply to the dataset
+* `Conditions` - Specific criteria that must be true of the data generator for this rule to apply to the dataset (named `ApplicabilityCriteria` prior to model version 1.5)
 * `Type` - Identifier if this is a Static or Dynamic rule, with Static rules being possible to assess model without external information being required
 * `Order` - The order in which this rule should be processed or displayed
 * `DatasetType` - The dataset type this rule applies to (e.g., "CAU" for Cost and Usage, "CCT" for Contract Commitment)
@@ -192,16 +192,16 @@ The suffix is determined by applying the following rules in order. Once a rule m
 **1. Scope Precedence (Always `-C`)**
 
 If a rule has **any** of the following scope indicators, it **MUST** use the `-C` suffix:
-* Non-empty `ApplicabilityCriteria` array (e.g., `["COMMITMENT_DISCOUNT_SUPPORTED"]`)
+* Non-empty `Conditions` array (e.g., `["COMMITMENT_DISCOUNT_SUPPORTED"]`); this key is named `ApplicabilityCriteria` prior to model version 1.5
 * Non-empty `Condition` object (row-level conditions)
 * Conditional keywords in `MustSatisfy` text: "when", "unless", or "where"
 
 **Examples:**
 
 ```json
-// ApplicabilityCriteria present → -C
+// Conditions present → -C
 "CAU-AvailabilityZone-C-000-C": {
-  "ApplicabilityCriteria": ["AVAILABILITY_ZONE_SUPPORTED"],
+  "Conditions": ["AVAILABILITY_ZONE_SUPPORTED"],
   ...
 }
 
@@ -227,7 +227,7 @@ For `Function: "Composite"` rules where **ALL** rules referenced in the `Require
 
 **Example:**
 ```json
-// All child rules have ApplicabilityCriteria → Parent gets -C
+// All child rules have Conditions → Parent gets -C
 "CAU-SampleColumn-C-003-C": {
   "Function": "Composite",
   "ValidationCriteria": {
@@ -279,7 +279,7 @@ For rules that don't match rules 1-3, use the normative `Keyword` field:
 ```json
 // MUST keyword, no scope → -M
 "CAU-BilledCost-C-001-M": {
-  "ApplicabilityCriteria": [],
+  "Conditions": [],
   "ValidationCriteria": {
     "Keyword": "MUST",
     "MustSatisfy": "BilledCost MUST be of type Decimal.",
@@ -289,7 +289,7 @@ For rules that don't match rules 1-3, use the normative `Keyword` field:
 
 // MAY keyword, no scope → -O
 "InvoiceHandling-A-003-O": {
-  "ApplicabilityCriteria": [],
+  "Conditions": [],
   "ValidationCriteria": {
     "Keyword": "MAY",
     "MustSatisfy": "Informational line items... MAY be excluded.",

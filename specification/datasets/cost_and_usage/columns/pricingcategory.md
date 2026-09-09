@@ -8,9 +8,9 @@ PricingCategory MUST adhere to the following requirements:
 
 * PricingCategory MUST be of type String.
 * PricingCategory MUST adhere to the following nullability requirements:
-  * PricingCategory MUST be null when [SkuPriceId](#datasets.costandusage.skupriceid) is null.
-  * PricingCategory MUST be null when [ChargeCategory](#datasets.costandusage.chargecategory) is "Tax".
-  * PricingCategory MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#datasets.costandusage.chargeclass) is not "Correction".
+  * PricingCategory MUST be null when [SkuPriceId](#datamodel.costandusage.skupriceid) is null.
+  * PricingCategory MUST be null when [ChargeCategory](#datamodel.costandusage.chargecategory) is "Tax".
+  * PricingCategory MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#datamodel.costandusage.chargeclass) is not "Correction".
   * PricingCategory MAY be null in all other cases.
 * When PricingCategory is not null, PricingCategory MUST adhere to the following requirements:
   * PricingCategory MUST be one of the allowed values.
@@ -42,14 +42,15 @@ Describes the pricing model used for a *charge* at the time of use or purchase.
 
 ## Content Constraints
 
-| Constraint      | Value                                                |
-| :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datasets.costandusage)             |
-| Column type     | Dimension                                            |
-| Feature level   | Conditional                                          |
-| Allows nulls    | True                                                 |
-| Data type       | String                                               |
-| Value format    | Allowed values                                       |
+| Constraint                 | Value                                     |
+| :------------------------- | :---------------------------------------- |
+| Dataset                    | [Cost and Usage](#datamodel.costandusage) |
+| Operating Model Conditions | [Includes Multiple Pricing Categories](#operatingmodelconditions.includesmultiplepricingcategories) |
+| Column type                | Dimension                                 |
+| Feature level              | Conditional                               |
+| Allows nulls               | True                                      |
+| Data type                  | String                                    |
+| Value format               | Allowed values                            |
 
 ## Version Introduced
 

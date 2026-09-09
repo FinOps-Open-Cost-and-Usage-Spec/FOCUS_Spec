@@ -8,8 +8,8 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "AVAILABILITY_ZONE_SUPPORTED"
+    "Conditions": [
+      "IncludesAvailabilityZones"
     ],
     "Type": "Static",
     "Order": 0,
@@ -54,7 +54,7 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Type": "Static",
     "Order": 20,
     "DatasetType": "CAU",
@@ -80,7 +80,7 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Type": "Static",
     "Order": 30,
     "DatasetType": "CAU",
@@ -106,7 +106,7 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Type": "Dynamic",
     "Order": 40,
     "DatasetType": "CAU",

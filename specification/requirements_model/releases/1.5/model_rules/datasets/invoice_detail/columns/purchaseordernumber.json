@@ -8,8 +8,8 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "PURCHASE_ORDER_NUMBERS_SUPPORTED"
+    "Conditions": [
+      "IncludesPurchaseOrderNumbers"
     ],
     "Type": "Static",
     "Order": 0,
@@ -59,7 +59,7 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Type": "Static",
     "Order": 10,
     "DatasetType": "IND",
@@ -85,7 +85,7 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Type": "Static",
     "Order": 20,
     "DatasetType": "IND",
@@ -111,7 +111,7 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Type": "Static",
     "Order": 30,
     "DatasetType": "IND",
@@ -138,7 +138,7 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "Conditions": [],
     "Type": "Dynamic",
     "Order": 40,
     "DatasetType": "IND",

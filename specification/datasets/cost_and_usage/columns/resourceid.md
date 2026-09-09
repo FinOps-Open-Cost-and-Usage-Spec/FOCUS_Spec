@@ -14,7 +14,7 @@ ResourceId MUST adhere to the following requirements:
 * When ResourceId is not null, ResourceId MUST adhere to the following requirements:
   * ResourceId MUST be a unique identifier within the service provider.
   * ResourceId SHOULD be a fully-qualified identifier.
-  * ResourceId MUST be the identifier of the *resource* that received the [*commitment discount*](#glossary:commitment-discount) when [CommitmentDiscountStatus](#datasets.costandusage.commitmentdiscountstatus) is "Used".
+  * ResourceId MUST be the identifier of the *resource* that received the [*commitment discount*](#glossary:commitment-discount) when [CommitmentDiscountStatus](#datamodel.costandusage.commitmentdiscountstatus) is "Used".
 
 ## Column ID
 
@@ -30,14 +30,15 @@ Identifier assigned to a *resource* by the service provider.
 
 ## Content Constraints
 
-| Constraint      | Value                                                |
-| :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datasets.costandusage)             |
-| Column type     | Dimension                                            |
-| Feature level   | Conditional                                          |
-| Allows nulls    | True                                                 |
-| Data type       | String                                               |
-| Value format    | \<not specified>                                     |
+| Constraint                 | Value                                     |
+| :------------------------- | :---------------------------------------- |
+| Dataset                    | [Cost and Usage](#datamodel.costandusage) |
+| Operating Model Conditions | [Includes Provisioned Resources](#operatingmodelconditions.includesprovisionedresources) |
+| Column type                | Dimension                                 |
+| Feature level              | Conditional                               |
+| Allows nulls               | True                                      |
+| Data type                  | String                                    |
+| Value format               | \<not specified>                          |
 
 ## Version Introduced
 

@@ -1,0 +1,86 @@
+{
+  "CON-IncludesPurchaseOrderNumbers-N-000-C": {
+    "Function": "Composite",
+    "Reference": "IncludesPurchaseOrderNumbers",
+    "EntityType": "Condition",
+    "EntityId": "IncludesPurchaseOrderNumbers",
+    "EntityName": "Includes Purchase Order Numbers",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "DatasetType": "CON",
+    "DatasetId": null,
+    "DatasetName": null,
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Static",
+    "Order": 0,
+    "ValidationCriteria": {
+      "MustSatisfy": "IncludesPurchaseOrderNumbers MUST adhere to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CON-IncludesPurchaseOrderNumbers-N-001-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CON-IncludesPurchaseOrderNumbers-N-002-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CON-IncludesPurchaseOrderNumbers-N-001-C",
+        "CON-IncludesPurchaseOrderNumbers-N-002-C"
+      ]
+    }
+  },
+  "CON-IncludesPurchaseOrderNumbers-N-001-C": {
+    "Function": "Validation",
+    "Reference": "IncludesPurchaseOrderNumbers",
+    "EntityType": "Condition",
+    "EntityId": "IncludesPurchaseOrderNumbers",
+    "EntityName": "Includes Purchase Order Numbers",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "DatasetType": "CON",
+    "DatasetId": null,
+    "DatasetName": null,
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Dynamic",
+    "Order": 10,
+    "ValidationCriteria": {
+      "MustSatisfy": "IncludesPurchaseOrderNumbers MUST evaluate to true when the operating model includes purchase order numbers.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CON-IncludesPurchaseOrderNumbers-N-002-C": {
+    "Function": "Validation",
+    "Reference": "IncludesPurchaseOrderNumbers",
+    "EntityType": "Condition",
+    "EntityId": "IncludesPurchaseOrderNumbers",
+    "EntityName": "Includes Purchase Order Numbers",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "DatasetType": "CON",
+    "DatasetId": null,
+    "DatasetName": null,
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Dynamic",
+    "Order": 20,
+    "ValidationCriteria": {
+      "MustSatisfy": "IncludesPurchaseOrderNumbers MUST evaluate to false when the operating model does not include purchase order numbers.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}

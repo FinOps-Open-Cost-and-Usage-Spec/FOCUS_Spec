@@ -1,6 +1,6 @@
 # Invoice Issue Status
 
-Invoice Issue Status indicates the publication state of the invoice and the reliability of its associated delivered [Cost and Usage](#datasets.costandusage) and [Invoice Detail](#datasets.invoicedetail) data. It distinguishes between provisional data that is subject to change, invoices that have been formally issued as valid financial obligations with finalized associated data, and invoices that have been explicitly retracted.
+Invoice Issue Status indicates the publication state of the invoice and the reliability of its associated delivered [Cost and Usage](#datamodel.costandusage) and [Invoice Detail](#datamodel.invoicedetail) data. It distinguishes between provisional data that is subject to change, invoices that have been formally issued as valid financial obligations with finalized associated data, and invoices that have been explicitly retracted.
 
 ## Requirements
 
@@ -47,14 +47,15 @@ The publication state of the invoice and the reliability of its associated deliv
 
 ## Content Constraints
 
-|    Constraint   |              Value              |
-|:----------------|:--------------------------------|
-| Dataset         | [Invoice Detail](#datasets.invoicedetail)             |
-| Column type     | Dimension                       |
-| Feature level   | Mandatory                       |
-| Allows nulls    | False                           |
-| Data type       | String                          |
-| Value format    | Allowed values                |
+| Constraint                 | Value                                      |
+| :------------------------- | :----------------------------------------- |
+| Dataset                    | [Invoice Detail](#datamodel.invoicedetail) |
+| Operating Model Conditions | Not applicable                             |
+| Column type                | Dimension                                  |
+| Feature level              | Mandatory                                  |
+| Allows nulls               | False                                      |
+| Data type                  | String                                     |
+| Value format               | Allowed values                             |
 
 ## Version Introduced
 

@@ -2,7 +2,7 @@
 
 This section provides examples of how correction handling may be implemented in alignment with the FOCUS specification. The examples are limited to illustrating correction handling for the Cost and Usage FOCUS dataset, and cover scenarios involving corrections to open and closed billing periods, as well as the various delivery mechanisms and correction styles supported by FOCUS.
 
-The examples that follow are sectioned by [Billing Period Status](#datasets.billingperiod.billingperiodstatus) (i.e., "Open" or "Closed") and Billing Period Category (i.e., current open period, or previous open period, or closed):
+The examples that follow are sectioned by [Billing Period Status](#datamodel.billingperiod.billingperiodstatus) (i.e., "Open" or "Closed") and Billing Period Category (i.e., current open period, or previous open period, or closed):
 
 | Billing Period Status | Billing Period Category | Description |
 | :--- | :--- | :--- |
