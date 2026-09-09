@@ -64,7 +64,7 @@ Each entry in the array contains the following properties:
 
 <div class="h7-nonindex">Value Properties</div>
 
-The `value` of each entry is an object. FOCUS supports the properties below for describing the entity; a data generator uses them as necessary and may include additional custom properties.
+The `value` of each entry is an object. FOCUS supports the properties below for describing the entity; a [*data generator*](#metadata.datagenerator) uses them as necessary and may include additional custom properties.
 
 | Property | Type | Required | Description |
 | :--- | :--- | :--- | :--- |
