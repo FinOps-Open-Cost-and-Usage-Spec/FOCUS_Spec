@@ -31,7 +31,7 @@ Identifier assigned to a *resource* by the service provider.
 
 | Constraint      | Value                                          |
 | :-------------- | :--------------------------------------------- |
-| Dataset         | [Recommendation](#datasets.recommendation)     |
+| Dataset         | [Recommendation](#datamodel.recommendation)     |
 | Column type     | Dimension                                      |
 | Feature level   | Mandatory                                      |
 | Allows nulls    | True                                           |

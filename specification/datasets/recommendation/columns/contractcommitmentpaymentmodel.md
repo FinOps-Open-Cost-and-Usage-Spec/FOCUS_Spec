@@ -42,7 +42,7 @@ Defines the financial settlement structure of the *contract commitment* a recomm
 
 | Constraint      | Value                                          |
 | :-------------- | :--------------------------------------------- |
-| Dataset         | [Recommendation](#datasets.recommendation)     |
+| Dataset         | [Recommendation](#datamodel.recommendation)     |
 | Column type     | Dimension                                      |
 | Feature level   | Conditional                                    |
 | Allows nulls    | True                                           |

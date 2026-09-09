@@ -1,6 +1,6 @@
 # Recommendation Subcategory
 
-Recommendation Subcategory is a secondary classification of the [Recommendation Category](#datasets.recommendation.recommendationcategory) that identifies the specific optimization activity a recommendation proposes (e.g., Rightsizing within the Cost category). Recommendation Subcategory (in conjunction with the Recommendation Category) is commonly used to route recommendations to the team responsible for the corresponding activity.
+Recommendation Subcategory is a secondary classification of the [Recommendation Category](#datamodel.recommendation.recommendationcategory) that identifies the specific optimization activity a recommendation proposes (e.g., Rightsizing within the Cost category). Recommendation Subcategory (in conjunction with the Recommendation Category) is commonly used to route recommendations to the team responsible for the corresponding activity.
 
 ## Requirements
 
@@ -44,7 +44,7 @@ Secondary classification of the Recommendation Category that identifies the spec
 
 | Constraint      | Value                                          |
 | :-------------- | :--------------------------------------------- |
-| Dataset         | [Recommendation](#datasets.recommendation)     |
+| Dataset         | [Recommendation](#datamodel.recommendation)     |
 | Column type     | Dimension                                      |
 | Feature level   | Mandatory                                      |
 | Allows nulls    | False                                          |

@@ -2,7 +2,7 @@
 
 Recommendation Provider Name is the name of the entity that generated the recommendation. Recommendation Provider Name is used to attribute recommendations to their source and to deduplicate overlapping recommendations produced by multiple tools.
 
-Recommendation Provider Name may differ from the [Service Provider Name](#datasets.recommendation.serviceprovidername). For example, a third-party tool may generate a recommendation about [*resources*](#glossary:resource) or [*services*](#glossary:service) provided by another service provider.
+Recommendation Provider Name may differ from the [Service Provider Name](#datamodel.recommendation.serviceprovidername). For example, a third-party tool may generate a recommendation about [*resources*](#glossary:resource) or [*services*](#glossary:service) provided by another service provider.
 
 ## Requirements
 
@@ -28,7 +28,7 @@ The name of the entity that generated the recommendation.
 
 | Constraint      | Value                                          |
 | :-------------- | :--------------------------------------------- |
-| Dataset         | [Recommendation](#datasets.recommendation)     |
+| Dataset         | [Recommendation](#datamodel.recommendation)     |
 | Column type     | Dimension                                      |
 | Feature level   | Mandatory                                      |
 | Allows nulls    | False                                          |

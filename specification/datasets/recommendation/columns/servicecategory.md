@@ -52,7 +52,7 @@ Highest-level classification of a *service* based on the core function of the *s
 
 | Constraint      | Value                                          |
 | :-------------- | :--------------------------------------------- |
-| Dataset         | [Recommendation](#datasets.recommendation)     |
+| Dataset         | [Recommendation](#datamodel.recommendation)     |
 | Column type     | Dimension                                      |
 | Feature level   | Mandatory                                      |
 | Allows nulls    | True                                           |

@@ -28,7 +28,7 @@ Host-provider-assigned identifier for an isolated geographic area where a *resou
 
 | Constraint      | Value                                          |
 | :-------------- | :--------------------------------------------- |
-| Dataset         | [Recommendation](#datasets.recommendation)     |
+| Dataset         | [Recommendation](#datamodel.recommendation)     |
 | Column type     | Dimension                                      |
 | Feature level   | Conditional                                    |
 | Allows nulls    | True                                           |

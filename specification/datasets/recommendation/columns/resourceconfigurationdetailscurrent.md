@@ -49,7 +49,7 @@ The configuration of the *resource* targeted by a recommendation before the reco
 
 | Constraint      | Value                                          |
 | :-------------- | :--------------------------------------------- |
-| Dataset         | [Recommendation](#datasets.recommendation)     |
+| Dataset         | [Recommendation](#datamodel.recommendation)     |
 | Column type     | Dimension                                      |
 | Feature level   | Conditional                                    |
 | Allows nulls    | True                                           |

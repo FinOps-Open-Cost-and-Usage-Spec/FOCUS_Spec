@@ -1,6 +1,6 @@
 # Service Subcategory
 
-The Service Subcategory is a secondary classification of the [Service Category](#datasets.recommendation.servicecategory) for a [*service*](#glossary:service) based on its core function. In the Recommendation dataset, the Service Subcategory (in conjunction with the Service Category) is commonly used to analyze recommendations for specific workload types across service providers.
+The Service Subcategory is a secondary classification of the [Service Category](#datamodel.recommendation.servicecategory) for a [*service*](#glossary:service) based on its core function. In the Recommendation dataset, the Service Subcategory (in conjunction with the Service Category) is commonly used to analyze recommendations for specific workload types across service providers.
 
 ## Requirements
 
@@ -8,7 +8,7 @@ ServiceSubcategory MUST adhere to the following requirements:
 
 * ServiceSubcategory MUST be of type String.
 * ServiceSubcategory MUST adhere to the following nullability requirements:
-  * ServiceSubcategory MUST be null when [ServiceCategory](#datasets.recommendation.servicecategory) is null.
+  * ServiceSubcategory MUST be null when [ServiceCategory](#datamodel.recommendation.servicecategory) is null.
   * ServiceSubcategory MAY be null when ServiceCategory is not null.
 * When not null, ServiceSubcategory MUST be one of the allowed values.
 * When not null, ServiceSubcategory MUST have one and only one parent ServiceCategory as specified in the allowed values below.
@@ -116,7 +116,7 @@ Secondary classification of the Service Category for a *service* based on its co
 
 | Constraint      | Value                                          |
 | :-------------- | :--------------------------------------------- |
-| Dataset         | [Recommendation](#datasets.recommendation)     |
+| Dataset         | [Recommendation](#datamodel.recommendation)     |
 | Column type     | Dimension                                      |
 | Feature level   | Recommended                                    |
 | Allows nulls    | True                                           |

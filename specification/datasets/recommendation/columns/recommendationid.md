@@ -1,6 +1,6 @@
 # Recommendation ID
 
-A Recommendation ID is an identifier assigned to a recommendation by the [Recommendation Provider Name](#datasets.recommendation.recommendationprovidername). The Recommendation ID is commonly used to track a recommendation over time and to deduplicate recommendations that are reported across multiple refreshes.
+A Recommendation ID is an identifier assigned to a recommendation by the [Recommendation Provider Name](#datamodel.recommendation.recommendationprovidername). The Recommendation ID is commonly used to track a recommendation over time and to deduplicate recommendations that are reported across multiple refreshes.
 
 ## Requirements
 
@@ -29,7 +29,7 @@ An identifier assigned to a recommendation by the entity that generated it.
 
 | Constraint      | Value                                          |
 | :-------------- | :--------------------------------------------- |
-| Dataset         | [Recommendation](#datasets.recommendation)     |
+| Dataset         | [Recommendation](#datamodel.recommendation)     |
 | Column type     | Dimension                                      |
 | Feature level   | Mandatory                                      |
 | Allows nulls    | False                                          |

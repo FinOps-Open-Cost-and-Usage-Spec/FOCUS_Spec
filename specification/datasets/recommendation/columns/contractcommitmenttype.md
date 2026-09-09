@@ -28,7 +28,7 @@ A service-provider-assigned name to identify the type of *contract commitment* a
 
 | Constraint      | Value                                          |
 | :-------------- | :--------------------------------------------- |
-| Dataset         | [Recommendation](#datasets.recommendation)     |
+| Dataset         | [Recommendation](#datamodel.recommendation)     |
 | Column type     | Dimension                                      |
 | Feature level   | Conditional                                    |
 | Allows nulls    | True                                           |

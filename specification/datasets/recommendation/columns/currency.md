@@ -1,6 +1,6 @@
 # Currency
 
-Currency is an identifier that represents the currency in which a recommendation's [Estimated Monthly Cost Impact](#datasets.recommendation.estimatedmonthlycostimpact) is expressed.
+Currency is an identifier that represents the currency in which a recommendation's [Estimated Monthly Cost Impact](#datamodel.recommendation.estimatedmonthlycostimpact) is expressed.
 
 ## Requirements
 
@@ -30,7 +30,7 @@ Represents the currency in which a recommendation's estimated cost impact is exp
 
 | Constraint      | Value                                          |
 | :-------------- | :--------------------------------------------- |
-| Dataset         | [Recommendation](#datasets.recommendation)     |
+| Dataset         | [Recommendation](#datamodel.recommendation)     |
 | Column type     | Dimension                                      |
 | Feature level   | Mandatory                                      |
 | Allows nulls    | True                                           |

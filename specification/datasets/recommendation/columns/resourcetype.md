@@ -9,7 +9,7 @@ ResourceType MUST adhere to the following requirements:
 * ResourceType MUST be of type String.
 * ResourceType MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * ResourceType MUST adhere to the following nullability requirements:
-  * ResourceType MUST be null when [ResourceId](#datasets.recommendation.resourceid) is null.
+  * ResourceType MUST be null when [ResourceId](#datamodel.recommendation.resourceid) is null.
   * ResourceType MUST NOT be null when ResourceId is not null.
 
 ## Column ID
@@ -28,7 +28,7 @@ The kind of *resource* a recommendation applies to.
 
 | Constraint      | Value                                          |
 | :-------------- | :--------------------------------------------- |
-| Dataset         | [Recommendation](#datasets.recommendation)     |
+| Dataset         | [Recommendation](#datamodel.recommendation)     |
 | Column type     | Dimension                                      |
 | Feature level   | Conditional                                    |
 | Allows nulls    | True                                           |

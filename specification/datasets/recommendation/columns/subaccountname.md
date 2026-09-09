@@ -1,6 +1,6 @@
 # Sub Account Name
 
-A Sub Account Name is a display name assigned to a [*sub account*](#glossary:sub-account). In the Recommendation dataset, the Sub Account Name is commonly used to make sub-account-scoped recommendations readable without resolving the [Sub Account ID](#datasets.recommendation.subaccountid). Sub account names are commonly used for scenarios like grouping based on organizational constructs, access management needs, and cost allocation strategies.
+A Sub Account Name is a display name assigned to a [*sub account*](#glossary:sub-account). In the Recommendation dataset, the Sub Account Name is commonly used to make sub-account-scoped recommendations readable without resolving the [Sub Account ID](#datamodel.recommendation.subaccountid). Sub account names are commonly used for scenarios like grouping based on organizational constructs, access management needs, and cost allocation strategies.
 
 ## Requirements
 
@@ -28,7 +28,7 @@ The display name assigned to a *sub account*.
 
 | Constraint      | Value                                          |
 | :-------------- | :--------------------------------------------- |
-| Dataset         | [Recommendation](#datasets.recommendation)     |
+| Dataset         | [Recommendation](#datamodel.recommendation)     |
 | Column type     | Dimension                                      |
 | Feature level   | Conditional                                    |
 | Allows nulls    | True                                           |

@@ -1,6 +1,6 @@
 # Resource Configuration Details Recommended
 
-Resource Configuration Details Recommended represents the configuration of the [*resource*](#glossary:resource) that a recommendation proposes to change to (for example, a smaller instance size or a newer storage tier). Resource Configuration Details Recommended is commonly used alongside [Resource Configuration Details Current](#datasets.recommendation.resourceconfigurationdetailscurrent) to show the target state of a configuration-change recommendation.
+Resource Configuration Details Recommended represents the configuration of the [*resource*](#glossary:resource) that a recommendation proposes to change to (for example, a smaller instance size or a newer storage tier). Resource Configuration Details Recommended is commonly used alongside [Resource Configuration Details Current](#datamodel.recommendation.resourceconfigurationdetailscurrent) to show the target state of a configuration-change recommendation.
 
 ## Requirements
 
@@ -49,7 +49,7 @@ The configuration of the *resource* that a recommendation proposes to change to.
 
 | Constraint      | Value                                          |
 | :-------------- | :--------------------------------------------- |
-| Dataset         | [Recommendation](#datasets.recommendation)     |
+| Dataset         | [Recommendation](#datamodel.recommendation)     |
 | Column type     | Dimension                                      |
 | Feature level   | Conditional                                    |
 | Allows nulls    | True                                           |

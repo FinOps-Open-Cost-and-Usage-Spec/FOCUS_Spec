@@ -1,6 +1,6 @@
 # Billing Account Name
 
-A Billing Account Name is a display name assigned to a [*billing account*](#glossary:billing-account). In the Recommendation dataset, the Billing Account Name is used to make billing-account-scoped recommendations readable without resolving the [Billing Account ID](#datasets.recommendation.billingaccountid). *Billing accounts* are commonly used for scenarios like grouping based on organizational constructs, invoice reconciliation and cost allocation strategies.
+A Billing Account Name is a display name assigned to a [*billing account*](#glossary:billing-account). In the Recommendation dataset, the Billing Account Name is used to make billing-account-scoped recommendations readable without resolving the [Billing Account ID](#datamodel.recommendation.billingaccountid). *Billing accounts* are commonly used for scenarios like grouping based on organizational constructs, invoice reconciliation and cost allocation strategies.
 
 ## Requirements
 
@@ -28,7 +28,7 @@ The display name assigned to a *billing account*.
 
 | Constraint      | Value                                          |
 | :-------------- | :--------------------------------------------- |
-| Dataset         | [Recommendation](#datasets.recommendation)     |
+| Dataset         | [Recommendation](#datamodel.recommendation)     |
 | Column type     | Dimension                                      |
 | Feature level   | Mandatory                                      |
 | Allows nulls    | True                                           |

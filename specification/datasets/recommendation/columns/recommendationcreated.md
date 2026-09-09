@@ -27,7 +27,7 @@ The timestamp when the recommendation was generated.
 
 | Constraint      | Value                                              |
 | :-------------- | :------------------------------------------------- |
-| Dataset         | [Recommendation](#datasets.recommendation)         |
+| Dataset         | [Recommendation](#datamodel.recommendation)         |
 | Column type     | Dimension                                          |
 | Feature level   | Mandatory                                          |
 | Allows nulls    | False                                              |

@@ -10,7 +10,7 @@ RecommendationLastUpdated MUST adhere to the following requirements:
 * RecommendationLastUpdated MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.
 * RecommendationLastUpdated MUST NOT be null.
 * RecommendationLastUpdated MUST represent the most recent moment in time when any column value of the recommendation record was created or modified.
-* RecommendationLastUpdated MUST be greater than or equal to [RecommendationCreated](#datasets.recommendation.recommendationcreated).
+* RecommendationLastUpdated MUST be greater than or equal to [RecommendationCreated](#datamodel.recommendation.recommendationcreated).
 
 ## Column ID
 
@@ -28,7 +28,7 @@ The timestamp when the recommendation was last updated.
 
 | Constraint      | Value                                              |
 | :-------------- | :------------------------------------------------- |
-| Dataset         | [Recommendation](#datasets.recommendation)         |
+| Dataset         | [Recommendation](#datamodel.recommendation)         |
 | Column type     | Dimension                                          |
 | Feature level   | Mandatory                                          |
 | Allows nulls    | False                                              |

@@ -1,6 +1,6 @@
 # Resource Name
 
-The Resource Name is a display name assigned to a [*resource*](#glossary:resource). In the Recommendation dataset, the Resource Name is commonly used to make resource-scoped recommendations readable without resolving the [Resource ID](#datasets.recommendation.resourceid).
+The Resource Name is a display name assigned to a [*resource*](#glossary:resource). In the Recommendation dataset, the Resource Name is commonly used to make resource-scoped recommendations readable without resolving the [Resource ID](#datamodel.recommendation.resourceid).
 
 ## Requirements
 
@@ -28,7 +28,7 @@ Display name assigned to a *resource*.
 
 | Constraint      | Value                                          |
 | :-------------- | :--------------------------------------------- |
-| Dataset         | [Recommendation](#datasets.recommendation)     |
+| Dataset         | [Recommendation](#datamodel.recommendation)     |
 | Column type     | Dimension                                      |
 | Feature level   | Mandatory                                      |
 | Allows nulls    | True                                           |

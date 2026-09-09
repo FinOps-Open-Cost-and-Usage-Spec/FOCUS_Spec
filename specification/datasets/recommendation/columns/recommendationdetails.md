@@ -1,6 +1,6 @@
 # Recommendation Details
 
-Recommendation Details represents additional properties of a recommendation that are not expressed in other columns, capturing supporting detail a [*practitioner*](#glossary:practitioner) needs to evaluate a recommendation. Details vary by [*service provider*](#glossary:service-provider), [*service*](#glossary:service), and recommendation type, so properties are conveyed as key-value pairs rather than as a fixed set of columns. Recommendation Details complements [Resource Configuration Details Current](#datasets.recommendation.resourceconfigurationdetailscurrent) and [Resource Configuration Details Recommended](#datasets.recommendation.resourceconfigurationdetailsrecommended), which convey resource configuration specifically, by carrying detail that is not resource configuration, such as pricing properties of a proposed [*SKU*](#glossary:sku) or the metrics a recommendation is derived from.
+Recommendation Details represents additional properties of a recommendation that are not expressed in other columns, capturing supporting detail a [*practitioner*](#glossary:practitioner) needs to evaluate a recommendation. Details vary by [*service provider*](#glossary:service-provider), [*service*](#glossary:service), and recommendation type, so properties are conveyed as key-value pairs rather than as a fixed set of columns. Recommendation Details complements [Resource Configuration Details Current](#datamodel.recommendation.resourceconfigurationdetailscurrent) and [Resource Configuration Details Recommended](#datamodel.recommendation.resourceconfigurationdetailsrecommended), which convey resource configuration specifically, by carrying detail that is not resource configuration, such as pricing properties of a proposed [*SKU*](#glossary:sku) or the metrics a recommendation is derived from.
 
 FOCUS-defined property keys appear in the list below and custom (e.g., service-provider-defined) keys are prefixed with "x_" to make them easy to identify as well as prevent collisions with FOCUS-defined properties introduced in a future release.
 
@@ -21,7 +21,7 @@ RecommendationDetails MUST adhere to the following requirements:
   * Property key SHOULD remain consistent across comparable recommendations having that property, and the values for this key SHOULD remain in a consistent format.
   * RecommendationDetails MUST include the FOCUS-defined recommendation property when an equivalent property is included as a custom property.
   * RecommendationDetails SHOULD include all FOCUS-defined recommendation properties that are applicable to the recommendation.
-  * RecommendationDetails MAY include FOCUS-defined [SkuPriceDetails](#datasets.costandusage.skupricedetails) properties describing the *SKU* a recommendation proposes.
+  * RecommendationDetails MAY include FOCUS-defined [SkuPriceDetails](#datamodel.costandusage.skupricedetails) properties describing the *SKU* a recommendation proposes.
 * FOCUS-defined recommendation properties MUST adhere to the following requirements:
   * Property key MUST match the spelling and casing specified for the FOCUS-defined property.
   * Property value MUST be of the type specified for that property.
@@ -43,14 +43,14 @@ The following keys should be used when applicable to facilitate cross-service-pr
 | :------------------------- | :----------------------------------------------------------------------------------------- | :-------- | :--------------------------------------------------- |
 | CommitmentDiscountQuantity | Amount of the [*commitment discount*](#glossary:commitment-discount) proposed for purchase | Numeric   | Measure: Commitment Discount Unit                    |
 | CommitmentDiscountUnit     | Unit of measurement for the proposed Commitment Discount Quantity                          | String    | Examples: "Hours", "USD", "DPUs"                     |
-| SkuId                      | [SKU](#datasets.costandusage.skuid) proposed by a recommendation                           | String    | Examples: "m5d.2xlarge", "NC24rs_v3"                 |
-| SkuPriceId                 | [SKU Price](#datasets.costandusage.skupriceid) proposed by a recommendation                | String    | Examples: "AB12CD34EF56"                             |
+| SkuId                      | [SKU](#datamodel.costandusage.skuid) proposed by a recommendation                           | String    | Examples: "m5d.2xlarge", "NC24rs_v3"                 |
+| SkuPriceId                 | [SKU Price](#datamodel.costandusage.skupriceid) proposed by a recommendation                | String    | Examples: "AB12CD34EF56"                             |
 
-In addition to the keys above, any FOCUS-defined [SKU Price](#datasets.costandusage.skupricedetails) property MAY be included to describe the *SKU* a recommendation proposes (e.g., CoreCount, MemorySize, InstanceType).
+In addition to the keys above, any FOCUS-defined [SKU Price](#datamodel.costandusage.skupricedetails) property MAY be included to describe the *SKU* a recommendation proposes (e.g., CoreCount, MemorySize, InstanceType).
 
 ### Observed Metric Properties
 
-A recommendation is commonly derived from one or more metrics observed over the [evaluation period](#datasets.recommendation.evaluationperiodstart). Observed metric property keys combine a metric name and a calculation in the `<MetricName><Calculation>` format (e.g., `CpuUtilizationAverage`, `MemoryUtilizationP95`), so a recommendation derived from several metrics can convey each one, and each is directly queryable.
+A recommendation is commonly derived from one or more metrics observed over the [evaluation period](#datamodel.recommendation.evaluationperiodstart). Observed metric property keys combine a metric name and a calculation in the `<MetricName><Calculation>` format (e.g., `CpuUtilizationAverage`, `MemoryUtilizationP95`), so a recommendation derived from several metrics can convey each one, and each is directly queryable.
 
 The table below lists recommended metric names. A metric name that is not listed can be used as long as it is expressed in [PascalCase](#glossary:pascalcase) format.
 
@@ -106,7 +106,7 @@ Additional properties of a recommendation that are not expressed in other column
 
 | Constraint    | Value                                           |
 | :------------ | :---------------------------------------------- |
-| Dataset       | [Recommendation](#datasets.recommendation)      |
+| Dataset       | [Recommendation](#datamodel.recommendation)      |
 | Column type   | Dimension                                       |
 | Feature level | Mandatory                                       |
 | Allows nulls  | True                                            |

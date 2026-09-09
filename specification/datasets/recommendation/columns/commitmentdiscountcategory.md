@@ -1,6 +1,6 @@
 # Commitment Discount Category
 
-Commitment Discount Category indicates whether the [*commitment discount*](#glossary:commitment-discount) a recommendation proposes to purchase is based on usage quantity or cost (aka "spend"). Commitment Discount Category provides a programmatically referenceable classification of a proposed [*contract commitment*](#glossary:contract-commitment), whereas [Contract Commitment Type](#datasets.recommendation.contractcommitmenttype) values differ across [*service providers*](#glossary:service-provider). Commitment Discount Category uses the same allowed values as [Commitment Discount Category](#datasets.costandusage.commitmentdiscountcategory) in the [Cost and Usage](#datasets.costandusage) dataset, which supports comparison of proposed commitment discounts against existing ones.
+Commitment Discount Category indicates whether the [*commitment discount*](#glossary:commitment-discount) a recommendation proposes to purchase is based on usage quantity or cost (aka "spend"). Commitment Discount Category provides a programmatically referenceable classification of a proposed [*contract commitment*](#glossary:contract-commitment), whereas [Contract Commitment Type](#datamodel.recommendation.contractcommitmenttype) values differ across [*service providers*](#glossary:service-provider). Commitment Discount Category uses the same allowed values as [Commitment Discount Category](#datamodel.costandusage.commitmentdiscountcategory) in the [Cost and Usage](#datamodel.costandusage) dataset, which supports comparison of proposed commitment discounts against existing ones.
 
 ## Requirements
 
@@ -35,7 +35,7 @@ Indicates whether the *commitment discount* a recommendation proposes to purchas
 
 | Constraint      | Value                                          |
 | :-------------- | :--------------------------------------------- |
-| Dataset         | [Recommendation](#datasets.recommendation)     |
+| Dataset         | [Recommendation](#datamodel.recommendation)     |
 | Column type     | Dimension                                      |
 | Feature level   | Conditional                                    |
 | Allows nulls    | True                                           |
