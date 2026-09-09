@@ -65,7 +65,7 @@ Notes
 <br><sup>1</sup> In the case of "burstable" SKUs offering variable levels of performance, the baseline or guaranteed value should be used.
 <br><sup>2</sup> Memory manufacturers still commonly uses "GB" to refer to 2<sup>30</sup> bytes, which is known as GiB in other contexts.
 <br><sup>3</sup> This is the operating system family of the SKU, if it's included with the SKU or the SKU only supports one type of operating system.
-<br><sup>4</sup> PricingRegionScope describes the breadth of the geographic area a SKU price applies to, from a single region to any region, and applies when a service provider prices more than one scope for the same capability. PricingRegionScope is distinct from Redundancy: Redundancy describes how widely a SKU is replicated for durability or availability, whereas PricingRegionScope describes how broad an area the price covers. A SKU may carry both.
+<br><sup>4</sup> PricingRegionScope describes the breadth of the geographic area a SKU price applies to, from a single region to any region. PricingRegionScope is distinct from Redundancy: Redundancy describes how widely a SKU is replicated for durability or availability, whereas PricingRegionScope describes how broad an area the price covers. A SKU may carry both.
 
 ## Examples
 
