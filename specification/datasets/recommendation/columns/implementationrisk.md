@@ -15,12 +15,12 @@ ImplementationRisk MUST adhere to the following requirements:
 ## Allowed Values
 
 | Value     | Description                                                      |
-|:----------|:----------------------------------------------------------------|
-| Very Low  | Minimal risk of disruption. |
-| Low       | Small risk of disruption. |
-| Medium    | Moderate risk of disruption. |
-| High      | Significant risk of disruption. |
-| Very High | Extensive risk of disruption. |
+|:----------|:-----------------------------------------------------------------|
+| Very Low  | Minimal risk of disruption.                                      |
+| Low       | Small risk of disruption.                                        |
+| Medium    | Moderate risk of disruption.                                     |
+| High      | Significant risk of disruption.                                  |
+| Very High | Extensive risk of disruption.                                    |
 
 ## Column ID
 
