@@ -5,7 +5,7 @@ Columns that contain currency information in cost data following a consistent fo
 A currency may be one of the following currency types:
 
 * [*National currency*](#glossary:national-currency) (e.g., USD, EUR).
-* [*Consumption currency*](#glossary:consumption-currency) (e.g., platform credits, normalized billing units).
+* *Consumption currency* (e.g., platform credits, normalized billing units).
 
 ## Requirements
 
