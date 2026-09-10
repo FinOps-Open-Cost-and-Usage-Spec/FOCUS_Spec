@@ -6,12 +6,16 @@ The scenarios draw on a single rate card rather than a separate dataset per scen
 
 [**CSV Example: complete rate card**](/specification/data/sku_price_examples/aura_web_rate_card_full.csv)
 
-The rate card contains 18 records across six SKUs:
+The rate card contains 26 records across ten SKUs:
 
 * A general purpose virtual machine offered at a current and a superseded on-demand rate, at a second on-demand rate in another currency, at a negotiated rate, and at three reservation rates.
+* A burstable virtual machine whose on-demand rate changes at the start of 2027, announced ahead of taking effect.
+* A shared-core virtual machine offered at a single rate that carries no effective start or end date.
 * A one-year virtual machine reservation, offered under two payment models.
 * A one-year flexible spend plan, offered under two payment models.
 * Object storage priced across three quantity tiers, with one negotiated tier.
+* A legacy object storage tier with no published origin date, scheduled for withdrawal.
+* A managed database offered at a standing rate, with a promotional rate for the first quarter of 2026.
 * An analytics service priced in a [*consumption currency*](#glossary:consumption-currency).
 * A purchasable balance of that consumption currency, and the published unit value of a granted promotional credit.
 
