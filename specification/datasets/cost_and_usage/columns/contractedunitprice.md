@@ -1,6 +1,10 @@
 # Contracted Unit Price
 
-The Contracted Unit Price represents the agreed-upon unit price for a single [Pricing Unit](#datamodel.costandusage.pricingunit) of the associated SKU, inclusive of [*negotiated discounts*](#glossary:negotiated-discount), if present, while excluding negotiated [*commitment discounts*](#glossary:commitment-discount) or any other discounts. This price is denominated in the [Billing Currency](#datamodel.costandusage.billingcurrency). The Contracted Unit Price is commonly used for calculating savings based on negotiation activities. If negotiated discounts are not applicable, the Contracted Unit Price defaults to the [List Unit Price](#datamodel.costandusage.listunitprice).
+Contracted Unit Price represents the negotiated unit price per [Pricing Unit](#datamodel.costandusage.pricingunit) for the [*SKU Price*](#glossary:sku-price) identified by the given [SKU Price ID](#datamodel.costandusage.skupriceid). It is the unit price before the application of any discount-bearing [*commitment programs*](#glossary:commitment-program) (e.g., [*commitment discount*](#glossary:commitment-discount)).
+
+When no negotiated unit price adjustments apply to the *charge*, Contracted Unit Price equals [List Unit Price](#datamodel.costandusage.listunitprice).
+
+Contracted Unit Price is denominated in the [Billing Currency](#datamodel.costandusage.billingcurrency). Contracted Unit Price is commonly used for negotiation activities.
 
 ## Requirements
 
@@ -9,7 +13,7 @@ ContractedUnitPrice MUST adhere to the following requirements:
 * ContractedUnitPrice MUST be of type Decimal.
 * ContractedUnitPrice MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * ContractedUnitPrice MUST adhere to the following nullability requirements:
-  * ContractedUnitPrice MUST be null when [SkuPriceId](#datamodel.costandusage.skupriceid) is null.
+  * ContractedUnitPrice MUST be null when SkuPriceId is null.
   * ContractedUnitPrice MUST be null when [ChargeCategory](#datamodel.costandusage.chargecategory) is "Tax".
   * ContractedUnitPrice MUST NOT be null when SkuPriceId is not null.
   * ContractedUnitPrice MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#datamodel.costandusage.chargeclass) is not "Correction".
@@ -17,6 +21,10 @@ ContractedUnitPrice MUST adhere to the following requirements:
 * When ContractedUnitPrice is not null, ContractedUnitPrice MUST adhere to the following requirements:
   * ContractedUnitPrice MUST be a non-negative decimal value.
   * ContractedUnitPrice MUST be denominated in the BillingCurrency.
+  * ContractedUnitPrice MUST represent the negotiated unit price per PricingUnit for the *SKU Price* identified by the given SkuPriceId when negotiated unit price adjustments apply to the *charge*.
+  * ContractedUnitPrice MUST reflect negotiated unit price adjustments for the *SKU Price* identified by the given SkuPriceId, independent of any discount-bearing *commitment programs* being applied to the *charge*.
+  * ContractedUnitPrice MUST NOT reflect any unit price impact conditional on a discount-bearing *commitment program* being applied to the *charge*.
+  * ContractedUnitPrice MUST equal ListUnitPrice when no negotiated unit price adjustments apply to the *charge*.
 
 ## Usability Constraints
 
@@ -32,16 +40,16 @@ Contracted Unit Price
 
 ## Description
 
-The agreed-upon unit price for a single Pricing Unit of the associated SKU, inclusive of negotiated discounts, if present, while excluding negotiated commitment discounts or any other discounts.
+The negotiated unit price per Pricing Unit for the *SKU Price* identified by the given SKU Price ID.
 
 ## Content Constraints
 
 | Constraint                 | Value                                       |
 | :------------------------- | :------------------------------------------ |
 | Dataset                    | [Cost and Usage](#datamodel.costandusage)   |
-| Operating Model Conditions | [Includes Negotiated Pricing](#operatingmodelconditions.includesnegotiatedpricing) |
+| Operating Model Conditions | Not applicable                              |
 | Column type                | Metric                                      |
-| Feature level              | Conditional                                 |
+| Feature level              | Mandatory                                   |
 | Allows nulls               | True                                        |
 | Data type                  | Decimal                                     |
 | Value format               | [Numeric Format](#attributes.numericformat) |
