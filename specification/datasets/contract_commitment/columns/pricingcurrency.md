@@ -25,14 +25,15 @@ The *national* or *consumption currency* denomination that the [Contract Commitm
 
 ## Content Constraints
 
-| Constraint      | Value                               |
-|:----------------|:------------------------------------|
-| Dataset         | [Contract Commitment](#datamodel.contractcommitment)  |
-| Column type     | Dimension                           |
-| Feature level   | Conditional                         |
-| Allows nulls    | False                               |
-| Data type       | String                              |
-| Value format    | [Currency Format](#attributes.currencyformat) |
+| Constraint                 | Value                                                |
+| :------------------------- | :--------------------------------------------------- |
+| Dataset                    | [Contract Commitment](#datamodel.contractcommitment) |
+| Operating Model Conditions | [Includes Pricing-Billing Currency Differences](#operatingmodelconditions.includespricing-billingcurrencydifferences) |
+| Column type                | Dimension                                            |
+| Feature level              | Conditional                                          |
+| Allows nulls               | False                                                |
+| Data type                  | String                                               |
+| Value format               | [Currency Format](#attributes.currencyformat)        |
 
 ## Version Introduced
 
