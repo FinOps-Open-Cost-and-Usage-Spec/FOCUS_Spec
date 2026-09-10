@@ -37,3 +37,13 @@ The Contract Applied Object Schema defines the structure for the [Contract Appli
 [Download from GitHub](/specification/schemas/datasets/cost_and_usage/contractappliedobjectschema.json)
 
 !INCLUDECODE "schemas/datasets/cost_and_usage/contractappliedobjectschema.json" (json)
+
+## SKU Price
+
+### SKU Price Eligibility Object Schema
+
+The SKU Price Eligibility Object Schema defines the structure for the [SKU Price Eligibility](#datamodel.skuprice.skupriceeligibility) column.
+
+[Download from GitHub](/specification/schemas/datasets/sku_price/skupriceeligibilityobjectschema.json)
+
+!INCLUDECODE "schemas/datasets/sku_price/skupriceeligibilityobjectschema.json" (json)
