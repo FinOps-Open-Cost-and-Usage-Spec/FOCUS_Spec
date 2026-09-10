@@ -1,0 +1,229 @@
+# Requirements Model extraction on every push to a PR branch.
+#
+# What fails the build and what only sets a label follows what each step can assert. validate
+# and extract are preconditions: malformed markdown or a generator that throws leaves nothing
+# downstream worth reading, so they fail the job. The model suite, verify and diff are audits
+# that do not pass against the published 1.5 model today, so gating on them would block every
+# PR. They report through labels instead.
+#
+# Three labels, because they assert three different kinds of thing. Each is applied only when
+# its own condition holds:
+#
+#   RM extracted    validate, extract, the specification's own model suite and verify all pass
+#                   over the extracted model. Named for its subject rather than its suite:
+#                   build_json.py already runs those same tests over the published releases in
+#                   generate_draft_spec and its siblings, so "RM model tests" would not have
+#                   said which model was tested.
+#   RM curated      verify reports zero warnings. Warnings are curation left at its defaults,
+#                   which verify deliberately does not fail on, so a model can be entirely
+#                   sound with dozens outstanding. A different claim from soundness.
+#   RM match        diff finds no content differences against the baseline.
+#
+# They read as a ladder: a model has to extract soundly before its curation is worth counting,
+# and be both before matching the baseline. Folding four commands into RM extracted costs no
+# diagnostic detail, because the summary table names the first stage that did not pass.
+#
+# A PR earns none of the three today.
+name: Requirements Model
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+
+# A rapid series of pushes should leave one run, for the tip.
+concurrency:
+  group: rm-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  pull-requests: write
+
+env:
+  ACTION_REPO: FinOps-Open-Cost-and-Usage-Spec/FOCUS_RM_Extraction
+  ACTION_REF: v1
+  SPEC: ./specification
+  BASELINE: ./specification/requirements_model/releases/latest
+  OUT: ./build/requirements_model
+
+jobs:
+  requirements-model:
+    name: Extract and audit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/checkout@v7
+        with:
+          repository: ${{ env.ACTION_REPO }}
+          ref: ${{ env.ACTION_REF }}
+          path: .rm-action
+
+      # Hard gate. No continue-on-error: if this fails the job fails, and the label step below
+      # still runs to strip any labels the PR was carrying from an earlier push.
+      - name: Validate and extract
+        id: extract
+        uses: ./.rm-action
+        with:
+          commands: validate,extract
+          specification: ${{ env.SPEC }}
+          baseline: ${{ env.BASELINE }}
+          output: ${{ env.OUT }}
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: specification/requirements_model/requirements.txt
+      - name: Install model test dependencies
+        run: pip install -r specification/requirements_model/requirements.txt packaging
+
+      # The specification's own Requirements Model suite, run over the extracted model rather
+      # than over a published release. It asks a different question from verify: verify audits
+      # the transformation, this audits the model against the spec repo's own schema and
+      # conventions. The published 1.5 passes it cleanly, so a failure here is a real gap and
+      # not a quirk of the suite.
+      #
+      # The harness is staged in a scratch tree because build_json.py and tests/conftest.py
+      # both anchor to <root>/specification/requirements_model and discover releases by
+      # scanning releases/, so neither can be pointed at an arbitrary folder. Dropping the
+      # extraction into the real releases/ would either collide with the published release of
+      # the same ModelVersion, since both build to build/model-<version>.json and the last
+      # writer wins, or overwrite the baseline the diff step still needs.
+      - name: Model tests
+        id: modeltests
+        continue-on-error: true
+        env:
+          EXTRACTED: ${{ env.OUT }}
+        run: |
+          set -euo pipefail
+
+          EXTRACTED="$(cd "$EXTRACTED" && pwd)"
+          SOURCE="$PWD/specification/requirements_model"
+          STAGE="${RUNNER_TEMP:-/tmp}/rm-model-tests"
+
+          # conftest.py reads ROOT as parents[3] of itself, so both intermediate folders are
+          # load-bearing and the staged tree cannot be flattened.
+          MODEL="$STAGE/specification/requirements_model"
+          rm -rf "$STAGE"
+          mkdir -p "$MODEL/releases"
+          cp "$SOURCE/build_json.py" "$SOURCE/build_helpers.py" "$MODEL/"
+          cp -RL "$SOURCE/tests" "$MODEL/tests"
+
+          # Name the release for the model's own version, so pytest ids read v1.5 rather than
+          # something that never appears in the published model.
+          VERSION="$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["Details"]["ModelVersion"])' \
+            "$EXTRACTED/model_details.json")"
+
+          # -L, not -R: a release's json_schemas/datasets is a symlink out to
+          # specification/schemas, so copying it as a link leaves it dangling once staged and
+          # the build fails resolving the file(...) schema references.
+          cp -RL "$EXTRACTED" "$MODEL/releases/$VERSION"
+
+          echo "Testing extracted model $VERSION under the specification's own suite"
+          cd "$MODEL"
+          python3 build_json.py --logging-level WARNING
+
+      - name: Verify
+        id: verify
+        continue-on-error: true
+        uses: ./.rm-action
+        with:
+          commands: verify
+          specification: ${{ env.SPEC }}
+          baseline: ${{ env.BASELINE }}
+          output: ${{ env.OUT }}
+          node-version: ''
+
+      - name: Diff
+        id: diff
+        continue-on-error: true
+        uses: ./.rm-action
+        with:
+          commands: diff
+          baseline: ${{ env.BASELINE }}
+          output: ${{ env.OUT }}
+          summary: true
+          node-version: ''
+
+      # !cancelled() rather than always(): a run superseded by the next push should leave the
+      # labels alone, not race the run that replaced it. It does still run when extract failed,
+      # which strips whatever labels an earlier push left on the PR.
+      #
+      # The summary is written here rather than in its own step so the label decision has one
+      # source of truth: the table reports what was actually applied, not what the result
+      # implies should have been.
+      - name: Apply labels and report
+        if: ${{ !cancelled() }}
+        uses: actions/github-script@v9
+        env:
+          EXTRACT_OUTCOME: ${{ steps.extract.outcome }}
+          TESTS_OUTCOME: ${{ steps.modeltests.outcome }}
+          VERIFY_OUTCOME: ${{ steps.verify.outcome }}
+          VERIFY_WARNINGS: ${{ steps.verify.outputs.verify-warnings }}
+          DIFF_VERDICT: ${{ steps.diff.outputs.diff-verdict }}
+        with:
+          script: |
+            // Read through env, never string-interpolated into the script body.
+            const { EXTRACT_OUTCOME, TESTS_OUTCOME, VERIFY_OUTCOME, VERIFY_WARNINGS, DIFF_VERDICT } = process.env;
+
+            // Every stage that has to hold for the model to be sound, reported by the first one
+            // that did not, so a single label still says where it broke.
+            const stages = [
+              ['extract', EXTRACT_OUTCOME],
+              ['model tests', TESTS_OUTCOME],
+              ['verify', VERIFY_OUTCOME],
+            ];
+            const broke = stages.find(([, outcome]) => outcome !== 'success');
+
+            const checks = [
+              { label: 'RM extracted',
+                result: broke ? `${broke[0]} ${broke[1] || 'skipped'}` : 'success',
+                want: !broke },
+              { label: 'RM curated', result: VERIFY_WARNINGS === '' ? 'n/a' : `${VERIFY_WARNINGS} warnings`,
+                want: VERIFY_OUTCOME === 'success' && VERIFY_WARNINGS === '0' },
+              // content-complete counts as a match: all rules and values agree and the run
+              // differs only in key order or whitespace, which diff_model.js does not treat
+              // as a gap.
+              { label: 'RM match', result: DIFF_VERDICT || 'skipped',
+                want: ['complete', 'content-complete'].includes(DIFF_VERDICT) },
+            ];
+
+            const { owner, repo } = context.repo;
+            const issue_number = context.issue.number;
+            const current = new Set(
+              (await github.paginate(github.rest.issues.listLabelsOnIssue,
+                { owner, repo, issue_number })).map((l) => l.name)
+            );
+
+            for (const c of checks) {
+              const has = current.has(c.label);
+              c.state = c.want ? 'on' : 'off';
+              if (c.want === has) continue;          // only touch what actually changed
+              try {
+                if (c.want) await github.rest.issues.addLabels({ owner, repo, issue_number, labels: [c.label] });
+                else        await github.rest.issues.removeLabel({ owner, repo, issue_number, name: c.label });
+                core.info(`${c.want ? 'added' : 'removed'} "${c.label}"`);
+              } catch (err) {
+                // A pull_request run from a fork gets a read-only token. The audit still ran
+                // and reaches the summary table; only the label is unavailable, which the
+                // 'unavailable' state records. Not worth failing the job over.
+                core.warning(`could not ${c.want ? 'add' : 'remove'} "${c.label}": ${err.message}`);
+                c.state = 'unavailable';
+              }
+            }
+
+            await core.summary
+              .addHeading('Requirements Model', 3)
+              .addTable([
+                [{ data: 'Label', header: true }, { data: 'Result', header: true }, { data: 'State', header: true }],
+                ...checks.map((c) => [c.label, c.result, c.state]),
+              ])
+              .write();
+
+      - name: Upload the generated model
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v7
+        with:
+          name: requirements-model
+          path: build/requirements_model
+          if-no-files-found: warn
