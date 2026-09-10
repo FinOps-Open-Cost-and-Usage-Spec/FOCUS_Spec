@@ -1,6 +1,8 @@
 # Principal ID
 
-A Principal ID is an identifier representing the [*principal*](#glossary:principal) to which access to a [*resource*](#glossary:resource) or [*service*](#glossary:service) is granted. Principal ID is commonly used to report and audit cost by the *principal* that incurred a [*charge*](#glossary:charge).
+A Principal ID is an identifier representing the [*principal*](#glossary:principal) to which access to a [*resource*](#glossary:resource) or [*service*](#glossary:service) is granted. Principal ID is an identifier that references a *principal* rather than the *principal* itself, so a *principal* with no published identifier has no value to include in the column. Principal ID is commonly used to report and audit cost by the *principal* that incurred a [*charge*](#glossary:charge).
+
+For scenarios demonstrating how Principal ID is populated across different technology environments, see [Examples: Requester Attribution](#appendix.examples:requesterattribution).
 
 ## Requirements
 
@@ -10,10 +12,10 @@ PrincipalId MUST adhere to the following requirements:
 * PrincipalId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * PrincipalId MUST adhere to the following nullability requirements:
   * PrincipalId MUST be null when a *charge* is not associated with a *principal*.
-  * PrincipalId MUST NOT be null when a *charge* is associated with a *principal*.
+  * PrincipalId MUST be null when the *principal* associated with a *charge* has no published identifier.
+  * PrincipalId MUST NOT be null when the *principal* associated with a *charge* has a published identifier.
 * When PrincipalId is not null, PrincipalId MUST adhere to the following requirements:
   * PrincipalId MUST be a unique identifier within the service provider.
-* PrincipalId documentation MUST include the use cases in which PrincipalId is not null.
 
 ## Column ID
 
