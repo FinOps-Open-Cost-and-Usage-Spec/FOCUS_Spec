@@ -37,4 +37,4 @@ Note the following details in the example dataset:
 ```
 
 * The `Dimension` values reference columns in the [Cost and Usage](#datamodel.costandusage) dataset. A consumer resolves eligibility by evaluating a Cost and Usage row against these rules, which is why the dimension names are Cost and Usage column names rather than SKU Price column names.
-* Both records carry a [QuantityTierMinimum](#datamodel.skuprice.quantitytierminimum) of 0 and a null [QuantityTierMaximum](#datamodel.skuprice.quantitytiermaximum). Aura Web supports quantity tier pricing elsewhere in its catalog, so the columns are present throughout the dataset. On an offering with no quantity thresholds, the minimum is zero and the maximum is null to indicate no upper bound.
+* Both records carry a [QuantityTierMinimum](#datamodel.skuprice.quantitytierminimum) of zero and a null [QuantityTierMaximum](#datamodel.skuprice.quantitytiermaximum). Aura Web supports quantity tier pricing elsewhere in its catalog, so the columns are present throughout the dataset. On an offering with no quantity thresholds, the minimum is zero and the maximum is null to indicate no upper bound.

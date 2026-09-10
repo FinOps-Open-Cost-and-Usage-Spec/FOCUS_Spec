@@ -4,14 +4,14 @@ A [*SKU Price*](#glossary:sku-price) record is scoped in time and denominated in
 
 ## Price Changes Over Time
 
-Aura Web reduced the on-demand rate for its standard virtual machine at the start of 2026. Both the old and the new rate appear in the rate card.
+Aura Web reduced the on-demand unit price for its standard virtual machine at the start of 2026. Both the superseded and the current unit price appear in the [*price list*](#glossary:price-list).
 
 [**CSV Example**](/specification/data/sku_price_examples/sku_price_effectivity.csv)
 
 Note the following details in the example dataset:
 
 * [SkuPriceEffectiveStart](#datamodel.skuprice.skupriceeffectivestart) is inclusive and [SkuPriceEffectiveEnd](#datamodel.skuprice.skupriceeffectiveend) is exclusive, so each record describes a half-open interval. The superseded rate of 0.400000 covers 2025-07-01 up to but not including 2026-01-01, and the current rate of 0.384000 begins at 2026-01-01.
-* The two intervals meet at 2026-01-01 with no gap and no overlap. Sharing the boundary timestamp is what makes every point in time resolve to exactly one price for this combination of [ServiceProviderName](#datamodel.skuprice.serviceprovidername), [SkuPriceId](#datamodel.skuprice.skupriceid), [ContractId](#datamodel.skuprice.contractid), [QuantityTierMinimum](#datamodel.skuprice.quantitytierminimum), and [PricingCurrency](#datamodel.skuprice.pricingcurrency).
+* The two intervals meet at 2026-01-01 with no gap and no overlap. Sharing the boundary timestamp is what makes every point in time resolve to exactly one price for this combination of [ServiceProviderName](#datamodel.skuprice.serviceprovidername), [SkuPriceId](#datamodel.skuprice.skupriceid), [ContractId](#datamodel.skuprice.contractid), and [PricingCurrency](#datamodel.skuprice.pricingcurrency).
 * The current rate carries a null SkuPriceEffectiveEnd, which states that it is active with no scheduled end. The superseded rate carries an end timestamp because it has been replaced.
 * Both records carry the same [SkuPriceCreated](#datamodel.skuprice.skupricecreated) of 2025-06-15T09:12:00Z and the same [SkuPriceLastUpdated](#datamodel.skuprice.skupricelastupdated) of 2025-12-18T16:40:00Z. These describe when the catalog record was written and last modified, which is a different question from when the price applies. The 2026 rate was published in December 2025, ahead of taking effect.
 * A charge in the [Cost and Usage](#datamodel.costandusage) dataset resolves to one of these records by comparing its charge period start against the effective interval. Retaining superseded records is what makes a historical charge resolvable after a price change.

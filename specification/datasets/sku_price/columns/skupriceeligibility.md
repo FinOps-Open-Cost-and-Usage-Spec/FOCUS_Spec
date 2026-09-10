@@ -143,16 +143,16 @@ A structured definition of the specific entities, accounts, or contexts eligible
 
 ## Content Constraints
 
-| Constraint | Value |
-| :--- | :--- |
-| Dataset | [SKU Price](#datamodel.skuprice) |
-| Conditions | Not applicable |
-| Column type | Dimension |
-| Feature level | Mandatory |
-| Allows nulls | False |
-| Data type | JSON |
-| Value format | [JSON Object Format](#attributes.jsonobjectformat) |
-| Object | [SkuPriceEligibilityObject](#datamodel.skuprice.skupriceeligibility.skupriceeligibilityobject) |
+| Constraint                 | Value |
+| :------------------------- | :--- |
+| Dataset                    | [SKU Price](#datamodel.skuprice) |
+| Operating Model Conditions | Not applicable |
+| Column type                | Dimension |
+| Feature level              | Mandatory |
+| Allows nulls               | False |
+| Data type                  | JSON |
+| Value format               | [JSON Object Format](#attributes.jsonobjectformat) |
+| Object                     | [SkuPriceEligibilityObject](#datamodel.skuprice.skupriceeligibility.skupriceeligibilityobject) |
 
 ## Version Introduced
 

@@ -12,7 +12,6 @@ PricingUnit MUST adhere to the following requirements:
 * PricingUnit MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * PricingUnit SHOULD conform to [UnitFormat](#attributes.unitformat) requirements.
 * PricingUnit MUST NOT be null.
-* PricingUnit MUST be semantically equivalent to the corresponding pricing measurement unit in the service-provider-published [*price list*](#glossary:price-list).
 
 ## Implementation Guidance
 
@@ -39,15 +38,15 @@ Service-provider-specified measurement unit used to define the unit price of an 
 
 ## Content Constraints
 
-| Constraint      | Value                                                |
-| :-------------- | :--------------------------------------------------- |
-| Dataset         | [SKU Price](#datamodel.skuprice)                      |
-| Conditions      | Not applicable                                        |
-| Column type     | Dimension                                            |
-| Feature level   | Mandatory                                            |
-| Allows nulls    | False                                                |
-| Data type       | String                                               |
-| Value format    | [Unit Format](#attributes.unitformat)                |
+| Constraint                 | Value                                                |
+| :------------------------- | :--------------------------------------------------- |
+| Dataset                    | [SKU Price](#datamodel.skuprice)                     |
+| Operating Model Conditions | Not applicable                                       |
+| Column type                | Dimension                                            |
+| Feature level              | Mandatory                                            |
+| Allows nulls               | False                                                |
+| Data type                  | String                                               |
+| Value format               | [Unit Format](#attributes.unitformat)                |
 
 ## Version Introduced
 

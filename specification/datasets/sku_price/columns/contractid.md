@@ -26,15 +26,15 @@ A service-provider-assigned identifier for a contract describing the agreed term
 
 ## Content Constraints
 
-| Constraint      | Value                                                                                      |
-|:----------------|:-------------------------------------------------------------------------------------------|
-| Dataset         | [SKU Price](#datamodel.skuprice)                                                            |
-| Conditions      | Not applicable                                                                              |
-| Column type     | Dimension                                                                                  |
-| Feature level   | Mandatory                                                                                  |
-| Allows nulls    | True                                                                                       |
-| Data type       | String                                                                                     |
-| Value format    | \<not specified>                                                                           |
+| Constraint                 | Value                                                                                      |
+| :------------------------- | :----------------------------------------------------------------------------------------- |
+| Dataset                    | [SKU Price](#datamodel.skuprice)                                                           |
+| Operating Model Conditions | Not applicable                                                                             |
+| Column type                | Dimension                                                                                  |
+| Feature level              | Mandatory                                                                                  |
+| Allows nulls               | True                                                                                       |
+| Data type                  | String                                                                                     |
+| Value format               | \<not specified>                                                                           |
 
 ## Version Introduced
 

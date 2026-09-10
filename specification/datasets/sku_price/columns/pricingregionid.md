@@ -36,15 +36,15 @@ Service-provider-assigned identifier for an isolated geographic area where the s
 
 ## Content Constraints
 
-| Constraint      | Value                                                |
-| :-------------- | :--------------------------------------------------- |
-| Dataset         | [SKU Price](#datamodel.skuprice)                      |
-| Conditions      | [Includes Regions](#conditions.includesregions)      |
-| Column type     | Dimension                                            |
-| Feature level   | Conditional                                          |
-| Allows nulls    | True                                                 |
-| Data type       | String                                               |
-| Value format    | \<not specified>                                     |
+| Constraint                 | Value                                                |
+| :------------------------- | :--------------------------------------------------- |
+| Dataset                    | [SKU Price](#datamodel.skuprice)                     |
+| Operating Model Conditions | [Includes Regions](#operatingmodelconditions.includesregions) |
+| Column type                | Dimension                                            |
+| Feature level              | Conditional                                          |
+| Allows nulls               | True                                                 |
+| Data type                  | String                                               |
+| Value format               | \<not specified>                                     |
 
 ## Version Introduced
 

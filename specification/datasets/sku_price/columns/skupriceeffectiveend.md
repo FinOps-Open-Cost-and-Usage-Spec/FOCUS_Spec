@@ -29,15 +29,15 @@ The exclusive date and time when the specified unit price and associated pricing
 
 ## Content Constraints
 
-| Constraint      | Value                                                |
-| :-------------- | :--------------------------------------------------- |
-| Dataset         | [SKU Price](#datamodel.skuprice)                      |
-| Conditions      | Not applicable                                        |
-| Column type     | Dimension                                            |
-| Feature level   | Mandatory                                            |
-| Allows nulls    | True                                                 |
-| Data type       | Date/Time                                            |
-| Value format    | [Date/Time Format](#attributes.date/timeformat)      |
+| Constraint                 | Value                                                |
+| :------------------------- | :--------------------------------------------------- |
+| Dataset                    | [SKU Price](#datamodel.skuprice)                     |
+| Operating Model Conditions | Not applicable                                       |
+| Column type                | Dimension                                            |
+| Feature level              | Mandatory                                            |
+| Allows nulls               | True                                                 |
+| Data type                  | Date/Time                                            |
+| Value format               | [Date/Time Format](#attributes.date/timeformat)      |
 
 ## Version Introduced
 

@@ -32,14 +32,15 @@ Indicates whether a *charge* represents a correction to a previously *closed bil
 
 ## Content Constraints
 
-| Constraint      | Value                                                |
-| :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datamodel.costandusage)             |
-| Column type     | Dimension                                            |
-| Feature level   | Mandatory                                            |
-| Allows nulls    | True                                                 |
-| Data type       | String                                               |
-| Value format    | Allowed values                                       |
+| Constraint                 | Value                                     |
+| :------------------------- | :---------------------------------------- |
+| Dataset                    | [Cost and Usage](#datamodel.costandusage) |
+| Operating Model Conditions | Not applicable                            |
+| Column type                | Dimension                                 |
+| Feature level              | Mandatory                                 |
+| Allows nulls               | True                                      |
+| Data type                  | String                                    |
+| Value format               | Allowed values                            |
 
 ## Version Introduced
 
