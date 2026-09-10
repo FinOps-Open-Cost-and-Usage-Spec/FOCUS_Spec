@@ -80,7 +80,7 @@ To facilitate querying data across *principals* and across [*service providers*]
 
 <div class="h7-nonindex">Additional Levels</div>
 
-Every entry value uses the same set of properties, so the *principal*, the *credential*, and any additional level share one shape. A *requester* represented at further levels (e.g., a tenant, a delegating identity, an intermediate role) carries each one as a custom entry whose value uses those same properties.
+Every entry value uses the same set of properties, so the *principal*, the *credential*, and any additional level share one shape. A *requester* represented at further levels (e.g., a tenant, a delegating identity, an intermediate role, a client application) carries each one as a custom entry whose value uses those same properties. A client application (e.g., a command-line agent, an IDE extension, a hosted agent runtime) is a level of this kind when the *service provider* defines it in its identity and access management model and identifies which one made each request, so one *principal* making requests through several of them carries a different entry on each. Where the *service provider* does not define client applications but records which one a *credential* was issued to, that record is an attribute of the *credential* and is carried as a custom property within the `Credential` entry.
 
 This specification defines the *principal* and the *credential* because they are the two levels that appear across *service providers*. It does not enumerate the levels between them, which vary by authorization model. Reusing one shape for every level means a level named by a data generator and a level named by a later version of this specification are read the same way.
 

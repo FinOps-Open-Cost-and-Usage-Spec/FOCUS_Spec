@@ -58,6 +58,30 @@ Scenario: An engineer assumes a deployment role to run a compute job. Access to 
 |---------------------|-------------|-------------|--------------|-------------------|
 | Aura Web | Compute | role_deploy_prod | sess_R7D3PK5V | [{"key": "Principal", "value": {"Name": "deploy-prod", "Type": "Role"}}, {"key": "Credential", "value": {"Type": "Session"}}, {"key": "x_DelegatingIdentity", "value": {"Name": "Priya Nair", "Email": "priya.nair@example.com", "Type": "User"}}] |
 
+## Meridian AI (Agent Harnesses Under One User)
+
+Scenario: An engineer at Acme Corp runs two agent harnesses against the same inference service, a command-line agent and an IDE extension. Both authenticate as the engineer through single sign-on. Meridian AI defines each client application in its identity and access management model and identifies which one presented each session. The engineer is the *principal* on both rows and each harness's session is its own *credential*. The client application is a level of the *requester* that is neither, so it is carried as a custom entry whose `value` uses the same properties as the FOCUS-defined entries. Grouping by PrincipalId combines the engineer's spend across harnesses, and grouping by the `x_ClientApplication` entry separates it.
+
+| ServiceProviderName | ServiceName | PrincipalId | CredentialId | RequesterDetails |
+|---------------------|-------------|-------------|--------------|-------------------|
+| Meridian AI | Inference | user_5108 | sess_9QT4LM2A | [{"key": "Principal", "value": {"Name": "Sam Okafor", "Email": "sam.okafor@example.com", "Type": "User"}}, {"key": "Credential", "value": {"Type": "Session"}}, {"key": "x_ClientApplication", "value": {"Name": "Forge CLI", "Type": "Application"}}] |
+| Meridian AI | Inference | user_5108 | sess_2WD8XN7C | [{"key": "Principal", "value": {"Name": "Sam Okafor", "Email": "sam.okafor@example.com", "Type": "User"}}, {"key": "Credential", "value": {"Type": "Session"}}, {"key": "x_ClientApplication", "value": {"Name": "Forge IDE Extension", "Type": "Application"}}] |
+
+Where a [*service provider*](#glossary:service-provider) does not define client applications in its identity and access management model but issues each harness its own API key under the engineer, the harness is an attribute of the *credential* rather than a level of the *requester*, and the same information is carried as a custom property within the `Credential` entry.
+
+| ServiceProviderName | ServiceName | PrincipalId | CredentialId | RequesterDetails |
+|---------------------|-------------|-------------|--------------|-------------------|
+| Meridian AI | Inference | user_5108 | key_08RRTX5M2B | [{"key": "Principal", "value": {"Name": "Sam Okafor", "Email": "sam.okafor@example.com", "Type": "User"}}, {"key": "Credential", "value": {"Type": "API Key", "Name": "forge-cli", "x_ClientApplication": "Forge CLI"}}] |
+
+## LatticeScale (Autonomous Agent Under a Workload Identity)
+
+Scenario: Acme Corp operates a code review agent that runs without a person initiating each run. Each run exchanges a short-lived federated token for access to LatticeScale's inference service. The agent's service account is the *principal*, and LatticeScale assigns each exchange a federated session identifier, which is the *credential*. The token itself is never published. The team that operates the agent is published as an attribute of the service account, so it is carried as a custom property within the `Principal` entry. Two runs produce two rows that share a PrincipalId and differ in CredentialId, so grouping by PrincipalId yields the agent's total and grouping by CredentialId yields cost per run. The engineers whose pull requests the agent reviewed are not represented in either column.
+
+| ServiceProviderName | ServiceName | PrincipalId | CredentialId | RequesterDetails |
+|---------------------|-------------|-------------|--------------|-------------------|
+| LatticeScale | Inference | svc-review-agent | fedsess_3HN8KW2D | [{"key": "Principal", "value": {"Name": "svc-review-agent", "Type": "Service Account", "x_OwningTeam": "platform-engineering"}}, {"key": "Credential", "value": {"Type": "Federated Session"}}] |
+| LatticeScale | Inference | svc-review-agent | fedsess_7MP1QZ6R | [{"key": "Principal", "value": {"Name": "svc-review-agent", "Type": "Service Account", "x_OwningTeam": "platform-engineering"}}, {"key": "Credential", "value": {"Type": "Federated Session"}}] |
+
 ## Cost Attribution by Principal and by Credential
 
 This example demonstrates how the two identifier columns support different attribution questions.
@@ -89,3 +113,13 @@ Grouping by CredentialId answers which *credential* incurred the cost, and separ
 | **Total** | | **$270.00** |
 
 Rows 1 and 2 combine to $150.00 for Alex Rivera under PrincipalId and separate into $120.00 and $30.00 under CredentialId. Row 4 carries no CredentialId, so grouping on that column collects it under null rather than attributing it to a *credential*. Both groupings count every *charge* once and total $270.00, because each identifier appears once per row.
+
+Grouping by the `Type` property of the `Principal` entry separates the cost incurred by human users from the cost incurred by workloads:
+
+| Principal Type | BilledCost |
+|:---|:---|
+| User | $225.00 |
+| Service Account | $45.00 |
+| **Total** | **$270.00** |
+
+Principal Type is read from the entry whose `key` is `Principal`. Because RequesterDetails is an array, a query that flattens every entry before aggregating counts each row once per entry. In this example, where Rows 1 through 3 each carry a `Credential` entry as well as a `Principal` entry, a sum over the flattened entries reaches $495.00 rather than $270.00, with Row 1 counted under both "User" and "API Key". Filtering to the `Principal` entry before aggregating, or extracting its `Type` as a scalar, keeps each *charge* counted once.
