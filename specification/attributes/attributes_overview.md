@@ -11,7 +11,7 @@ Attributes serve as reusable containers for requirements that enforce consistenc
 | [Custom Column Handling](#attributes.customcolumnhandling) | Defines column ID naming, formatting, and value requirements for [*custom columns*](#glossary:custom-column) appearing in a [*FOCUS dataset*](#glossary:FOCUS-dataset). |
 | [Data Generator-Calculated Split Cost Allocation Handling](#attributes.datagenerator-calculatedsplitcostallocationhandling) | Allows data generators to provide granular cost information based on specific documented methods. |
 | [Dataset Completeness](#attributes.datasetcompleteness) | Defines requirements for a *FOCUS dataset* to include *custom columns* not represented in [*FOCUS columns*](#glossary:FOCUS-column). |
-| [Dataset Configuration](#attributes.datasetconfiguration) | Defines the rules for customizing a dataset's schema. |
+| [Dataset Configuration](#attributes.datasetconfiguration) | Defines the rules for customizing a dataset's schema and level of detail. |
 | [Date/Time Format](#attributes.date/timeformat) | Outlines rules and ISO 8601 formatting requirements for date and time information. |
 | [Delivery Handling](#attributes.deliveryhandling) | Defines how a data generator delivers a FOCUS dataset to a customer. |
 | [FOCUS Column Handling](#attributes.focuscolumnhandling) | Defines naming conventions for *FOCUS columns* appearing in a *FOCUS dataset*. |
