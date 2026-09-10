@@ -51,7 +51,7 @@ Topics left to a later revision or to the companion guideline are listed in [Def
 | Term | Meaning |
 | :--- | :--- |
 | *Operating model* | The collective set of capabilities, business concepts, and data constructs underlying a [*FOCUS dataset*](../../specification/glossary.md#glossary:FOCUS-dataset), as the [Glossary](../../specification/glossary.md) defines it. It covers both the billing concepts a *data generator* uses (regions, commitment discounts, unit pricing, and so on) and the participating entities involved ([*service providers*](../../specification/glossary.md#glossary:service-provider), host providers, [*invoice issuers*](../../specification/glossary.md#glossary:invoice-issuer), and *data generators*). It determines whether a FOCUS concept applies to a *data generator*, and it is not the same thing as the category of company the *data generator* is. |
-| *Operating model* Condition | A verifiable state of an *operating model*, defined in the [Conditions](../../specification/conditions/conditions_overview.md) section. Every `Conditional` column references one or more of them through its presence requirement. |
+| *Operating model* Condition | A verifiable state of an *operating model*, defined in the [Operating Model Conditions](../../specification/operating_model_conditions/operating_model_conditions_overview.md) section. Every `Conditional` column references one or more of them through its presence requirement. |
 | Leveling unit | A column within a dataset, not a Column ID in the abstract. The same Column ID may take a different feature level, a different nullability, or a different set of Conditions in each dataset that defines it. Decide per dataset. |
 | Feature level | `Mandatory`, `Conditional`, `Recommended`, or `Optional`. Decides whether the column is present, and when. This revision assigns only the first two. |
 | Nullability | `Allows nulls` = `True` or `False`. Decides whether the value may be null where the column is present. |
@@ -100,6 +100,8 @@ These hold for every column and do not depend on which column is being decided.
 ## Decision Procedure
 
 Five steps. Step 3 applies only where Step 2 returns `Conditional`.
+
+> **Note:** The examples in this guideline are illustrative. They name columns and Conditions as they stood when the example was written, may not match the current specification text, and are not the source of truth for any column's feature level, nullability, or Conditions.
 
 ```mermaid
 flowchart TD
@@ -171,11 +173,11 @@ A `Conditional` level is expressed through one or more *operating model* Conditi
 An *operating model* Condition MUST describe a characteristic of the *operating model*, not a category of *data generator*. Categories such as Cloud, SaaS, PaaS, or data center are not valid Conditions because they describe who the generator is rather than what concepts its operating model includes.
 
 1. **Look for an existing Condition** that marks exactly where the concept exists. Reusing one is preferred over adding a near-duplicate.
-2. **Where none exists, propose one** in the same pull request as the column: Condition ID, Display Name, Description, requirements stating when it evaluates to true and when to false, Version Introduced, and a row in the Condition List with its category.
+2. **Where none exists, propose one** in the same pull request as the column: Condition ID, Display Name, Description, requirements stating when it evaluates to true and when to false, Version Introduced, a row in the Operating Model Condition List with its category, and an `!INCLUDE` line in `operating_model_conditions.mdpp`. The list row and the `!INCLUDE` line both go in alphabetical position; `validate_includes.py` fails the build when a Condition file is missing from the template.
 3. **Where more than one applies**, decide which shape fits:
    * **Conjunction** — the column requires two independent characteristics. State both in the presence requirement.
 
-     **Example:** `CostAndUsage MUST include [ResourceType](#datamodel.costandusage.resourcetype) when the *operating model* [includes provisioned resources](#conditions.includesprovisionedresources) and [includes resource type assignment](#conditions.includesresourcetypeassignment).`
+     **Example:** `CostAndUsage MUST include [ResourceType](#datamodel.costandusage.resourcetype) when the *operating model* [includes provisioned resources](#operatingmodelconditions.includesprovisionedresources) and [includes resource type assignment](#operatingmodelconditions.includesresourcetypeassignment).`
    * **Nesting** — one Condition presupposes another. Express the dependency in the narrower Condition's own requirements rather than repeating it on every column.
 
      **Example:** `IncludesListUnitPrices` evaluates to true only when `IncludesUnitPricing` is true.
@@ -220,12 +222,12 @@ Where the level is `Mandatory`:
 Where the level is `Conditional`:
 
 ```markdown
-{DatasetId} MUST include [{ColumnId}](#datamodel.{datasetid}.{columnid}) when the *operating model* [{condition display name, lowercase}](#conditions.{condition anchor}).
+{DatasetId} MUST include [{ColumnId}](#datamodel.{datasetid}.{columnid}) when the *operating model* [{condition display name, lowercase}](#operatingmodelconditions.{condition anchor}).
 ```
 
-**Example:** `CostAndUsage MUST include [RegionId](#datamodel.costandusage.regionid) when the *operating model* [includes regions](#conditions.includesregions).`
+**Example:** `CostAndUsage MUST include [RegionId](#datamodel.costandusage.regionid) when the *operating model* [includes regions](#operatingmodelconditions.includesregions).`
 
-The Condition's anchor is generated from its Display Name and can differ from its Condition ID (e.g., `#conditions.includespricing-billingcurrencydifferences`).
+The Condition's anchor is generated from its Display Name and can differ from its Condition ID (e.g., `#operatingmodelconditions.includespricing-billingcurrencydifferences`).
 
 **Content Constraints**, in the column definition: `Feature level` set to the Step 2 result, linked to the Condition where the level is `Conditional`; `Allows nulls` set to the Step 4 result.
 
@@ -273,9 +275,9 @@ The last two work together. The Presence gate or nullability gate signal decides
 
 * **Step 1, Concept.** The isolated geographic area a [*resource*](../../specification/glossary.md#glossary:resource) or [*service*](../../specification/glossary.md#glossary:service) is deployed in.
 * **Step 2, Applicability.** An *operating model* without regions has no row that could carry a value. Presence gate, so `Conditional`.
-* **Step 3, Condition.** [Includes Regions](../../specification/conditions/includesregions.md) exists and marks exactly where the concept exists. No new Condition needed.
+* **Step 3, Condition.** [Includes Regions](../../specification/operating_model_conditions/includesregions.md) exists and marks exactly where the concept exists. No new Condition needed.
 * **Step 4, Nullability.** Where the *operating model* includes regions, a region is available on many rows but not all, so `Allows nulls` = `True`.
-* **Step 5, Record.** `CostAndUsage MUST include [RegionId](#datamodel.costandusage.regionid) when the *operating model* [includes regions](#conditions.includesregions).` Content Constraints: `Feature level` = `Conditional`, linked to Includes Regions; `Allows nulls` = `True`.
+* **Step 5, Record.** `CostAndUsage MUST include [RegionId](#datamodel.costandusage.regionid) when the *operating model* [includes regions](#operatingmodelconditions.includesregions).` Content Constraints: `Feature level` = `Conditional`, linked to Includes Regions; `Allows nulls` = `True`.
 
 The same Column ID is leveled on its own terms in each dataset that defines it.
 
