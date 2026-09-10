@@ -11,10 +11,12 @@ A currency may be one of the following currency types:
 
 Column conforming to CurrencyFormat attribute MUST adhere to the following requirements:
 
-* [*FOCUS dataset column*](#glossary:FOCUS-dataset-column) MUST conform to [ISO 4217:2015](https://www.iso.org/standard/64758.html) standard, except when the value is presented in a *consumption currency*.
-* *FOCUS dataset column* MUST use the three-letter alphabetic code defined in ISO 4217:2015 (e.g., USD, EUR), except when the value is presented in a *consumption currency*.
-* *FOCUS dataset column* MUST conform to [StringHandling](#attributes.stringhandling) requirements when the value is presented in a *consumption currency*.
-* *FOCUS dataset column* MUST NOT use a code defined in ISO 4217:2015 when the value is presented in a *consumption currency*.
+* Unless the value is presented in a *consumption currency*, [*FOCUS dataset column*](#glossary:FOCUS-dataset-column) MUST adhere to the following requirements:
+  * *FOCUS dataset column* MUST conform to [ISO 4217:2015](https://www.iso.org/standard/64758.html) standard.
+  * *FOCUS dataset column* MUST use the three-letter alphabetic code defined in ISO 4217:2015 (e.g., USD, EUR).
+* When the value is presented in a *consumption currency*, *FOCUS dataset column* MUST adhere to the following requirements:
+  * *FOCUS dataset column* MUST conform to [StringHandling](#attributes.stringhandling) requirements.
+  * *FOCUS dataset column* MUST NOT use a code defined in ISO 4217:2015.
 
 ## Implementation Context
 
