@@ -1,6 +1,6 @@
 # Consumption Currency Pricing Model
 
-Many SaaS service providers support pricing models that utilize a *consumption currency* such as platform credits or normalized billing units. Charges may be provided using a consumption currency, which can subsequently be converted to a [*national currency*](#glossary:national-currency) such as USD or EUR at an advertised or agreed-upon conversion rate.
+Many SaaS service providers support pricing models that utilize a [*consumption currency*](#glossary:consumption-currency) such as platform credits or normalized billing units. Charges may be provided using a consumption currency, which can subsequently be converted to a [*national currency*](#glossary:national-currency) such as USD or EUR at an advertised or agreed-upon conversion rate.
 
 The scenarios described below illustrate how a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) should look for various scenarios where a provider utilizes this pricing model.
 

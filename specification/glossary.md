@@ -89,6 +89,12 @@ A feature of [*commitment discounts*](#glossary:commitment-discount) that may fu
 
 A service-provider offering that allows a customer to enter into a [*commitment*](#glossary:commitment). Commitment programs include [*commitment discounts*](#glossary:commitment-discount), [*capacity reservations*](#glossary:capacity-reservation), and other constructs that require advance spend or usage agreements.
 
+<a name="glossary:consumption-currency"><b>Consumption Currency</b></a>
+
+A proprietary [*virtual currency*](#glossary:virtual-currency) issued by a [*service provider*](#glossary:service-provider) to normalize, measure, and aggregate the consumption of [*resources*](#glossary:resource) or [*services*](#glossary:service) within their specific ecosystem.
+
+Unlike a [*national currency*](#glossary:national-currency), a consumption currency acts as an intermediate balance and holds no purchasing power outside of the issuing provider's platform. Pricing models that utilize a consumption currency require a secondary conversion rate to calculate the final financial cost of the usage. Common examples include proprietary platform credits and normalized billing units.
+
 <a name="glossary:contract"><b>Contract</b></a>
 
 A collection of agreed terms between a service provider and a customer.
@@ -326,4 +332,4 @@ A billing concept where the cost of a [*charge*](#glossary:charge) is determinis
 
 <a name="glossary:virtual-currency"><b>Virtual Currency</b></a>
 
-A proprietary currency (e.g., credits, tokens) issued by service providers and independent of government regulation.
+A digital representation of value that is independent of government regulation or central banks (e.g., cryptocurrency, digital credits).
