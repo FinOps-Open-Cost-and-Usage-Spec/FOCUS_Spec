@@ -1,6 +1,6 @@
 # Pricing Currency
 
-Pricing Currency is the national or virtual currency denomination that a [*contract commitment*](#glossary:contract-commitment) was priced in. This is commonly used in scenarios where a commitment is negotiated in one currency but billed in another.
+Pricing Currency is the [*national*](#glossary:national-currency) or [*consumption currency*](#glossary:consumption-currency) denomination that a [*contract commitment*](#glossary:contract-commitment) was priced in. This is commonly used in scenarios where a commitment is negotiated in one currency but billed in another.
 
 ## Requirements
 
@@ -21,7 +21,7 @@ Pricing Currency
 
 ## Description
 
-The national or virtual currency denomination that the [Contract Commitment Cost](#datamodel.contractcommitment.contractcommitmentcost) was priced in.
+The *national* or *consumption currency* denomination that the [Contract Commitment Cost](#datamodel.contractcommitment.contractcommitmentcost) was priced in.
 
 ## Content Constraints
 
