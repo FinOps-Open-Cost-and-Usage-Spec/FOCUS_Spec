@@ -1,0 +1,11 @@
+# FR #1974 adjusted validation exclusions for commitment_discount_flexibility (FOCUS 1.2)
+# These are known false-negative and cascading failures tied to OR-composite nullability behavior.
+InvoiceId-C-005-C
+CapacityReservationStatus-C-004-C
+CommitmentDiscountStatus-C-004-C
+CapacityReservationStatus-C-002-C
+CommitmentDiscountStatus-C-002-C
+CapacityReservationStatus-C-000-C
+CommitmentDiscountStatus-C-000-C
+CostAndUsage-D-002-M
+CostAndUsage-D-000-M
