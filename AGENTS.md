@@ -104,6 +104,7 @@ AI agents generating or reviewing content MUST act as strict technical editors e
 * **Structure:** Apply the following rules:
   * Normative requirements MUST use bulleted lists.
   * A normative bullet containing more than one constraint MUST be split.
+  * A normative bullet containing more than one BCP-14 keyword MUST be split.
   * Each resolved atomic requirement MUST express exactly one verifiable constraint.
 * **Nested Requirements:** Apply the following rules:
   * Introduce nested normative bullets only when expressing composite requirements.
