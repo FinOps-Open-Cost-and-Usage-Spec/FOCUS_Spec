@@ -155,6 +155,7 @@ AI agents generating or reviewing content MUST act as strict technical editors e
 ### Editorial Conventions
 
 * **Column/Attribute IDs:** PascalCase without spaces (e.g., PricingQuantity). Entity IDs MUST be used in normative text sections.
+* **Column/Attribute Display Names:** Normal text with spaces (e.g., Pricing Quantity).
 * **Column/Attribute References in Non-Normative Content:**
   * Display Names SHOULD be used for conceptual, reader-facing references.
   * Canonical IDs MAY be used for schema-facing references.
