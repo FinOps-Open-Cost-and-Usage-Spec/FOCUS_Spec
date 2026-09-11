@@ -59,11 +59,13 @@ The following keys should be used when applicable to facilitate cross-SKU and cr
 | OperatingSystem          | Operating system family<sup>3</sup>                                      | String           | Examples: "Linux", "MacOS", "Windows"                 |
 | Redundancy               | Level of redundancy offered by the SKU                                   | String           | Examples: "Local", "Zonal", "Global"                  |
 | StorageClass             | Class or tier of storage provided                                        | String           | Examples: "Hot", "Archive", "Nearline"                |
+| TokenType                | Kind of token metered by the SKU, as defined by the model developer<sup>4</sup> | String           | Examples: "Input", "Output", "CacheRead", "CacheWrite" |
 
 Notes
 <br><sup>1</sup> In the case of "burstable" SKUs offering variable levels of performance, the baseline or guaranteed value should be used.
 <br><sup>2</sup> Memory manufacturers still commonly uses "GB" to refer to 2<sup>30</sup> bytes, which is known as GiB in other contexts.
 <br><sup>3</sup> This is the operating system family of the SKU, if it's included with the SKU or the SKU only supports one type of operating system.
+<br><sup>4</sup> "Input" identifies tokens consumed from a request, "Output" identifies tokens generated in a response, "CacheRead" identifies request tokens served from a cache, and "CacheWrite" identifies request tokens placed into a cache. The set of token types a model distinguishes is defined by the model developer. Which of those types a service provider meters as its own charge, and the meter name it uses, vary across service providers and across model versions, so this property identifies the kind of token independently of how a given service provider names its meters. A value applies only where a service provider meters that kind of token as its own charge. This property describes the role a token plays in a request or response, so dimensions that qualify a charge without describing that role, such as token modality and context window size, are not values of this property. Charges for retaining cached content over time are not measured in tokens and are not identified by this property.
 
 ## Examples
 
