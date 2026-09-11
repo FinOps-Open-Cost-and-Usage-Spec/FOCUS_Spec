@@ -1,14 +1,14 @@
 # Aura Web Flexible Spend Plan - All Upfront - 0% Utilization
 
-| Parameter                    | Value                |
-| ---------------------------- | -------------------- |
-| Scenario Type                | commitment           |
-| Payment Model                | All Upfront          |
-| Commitment Discount Category | Spend                |
-| Utilization                  | 0%                   |
-| Hours Generated              | 24                   |
-| Annual Commitment            | $353,028.00   |
-| List Unit Price              | $60.45/hour   |
+| Parameter                    | Value       |
+| ---------------------------- | ----------- |
+| Scenario Type                | commitment  |
+| Payment Model                | All Upfront |
+| Commitment Discount Category | Spend       |
+| Utilization                  | 0%          |
+| Hours Generated              | 24          |
+| Annual Commitment            | $211,992.00 |
+| List Unit Price              | $36.30/hour |
 
 [CSV Example](/specification/data/commitment_discount_scenarios/aura_web_flexible_spend_plan_all_upfront_0pct.csv)
 
@@ -24,11 +24,11 @@ This scenario demonstrates **zero utilization** where the commitment is purchase
 
 *The following row summary reflects only the rows included in the 24-hour sample CSV.*
 
-| Row Type           | Count   | BilledCost               | EffectiveCost         |
-| ------------------ | ------- | ------------------------ | --------------------- |
-| Purchase           | 1       | $353,028.00       | $0.00          |
-| Usage (Unused)     | 24      | $0.00             | $967.20        |
-| **Total**          | 25      | **$353,028.00**   | **$967.20**    |
+| Row Type       | Count | BilledCost      | EffectiveCost |
+| -------------- | ----- | --------------- | ------------- |
+| Purchase       | 1     | $211,992.00     | $0.00         |
+| Usage (Unused) | 24    | $0.00           | $580.80       |
+| **Total**      | 25    | **$211,992.00** | **$580.80**   |
 
 ## Column Interactions
 
@@ -38,11 +38,11 @@ Understanding how columns relate to each other is critical for validating FOCUS 
 
 These three quantity columns serve different purposes and must be understood in context:
 
-| Column                           | Purpose                                 | When Populated                  | Typical Value              |
-| -------------------------------- | --------------------------------------- | ------------------------------- | -------------------------- |
-| **PricingQuantity**              | Quantity used for pricing calculation   | All priced rows                 | 40.30 (USD, hourly rate)   |
-| **ConsumedQuantity**             | Actual resource consumption             | Usage rows with resources       | 1 (hours consumed)         |
-| **CommitmentDiscountQuantity**   | Commitment capacity applied             | Rows with commitment discount   | 40.30 (USD)                |
+| Column                         | Purpose                               | When Populated                | Typical Value            |
+| ------------------------------ | ------------------------------------- | ----------------------------- | ------------------------ |
+| **PricingQuantity**            | Quantity used for pricing calculation | All priced rows               | 24.20 (USD, hourly rate) |
+| **ConsumedQuantity**           | Actual resource consumption           | Usage rows with resources     | 1 (hours consumed)       |
+| **CommitmentDiscountQuantity** | Commitment capacity applied           | Rows with commitment discount | 24.20 (USD)              |
 
 **For spend-based commitments:** CommitmentDiscountQuantity represents the dollar amount applied, not a count of resources. For this commitment, the value equals the hourly dollar commitment.
 
@@ -57,10 +57,10 @@ These three quantity columns serve different purposes and must be understood in 
 
 ### Cost Columns: BilledCost vs. EffectiveCost vs. ListCost
 
-| Scenario           | BilledCost         | EffectiveCost   | ListCost           |
-| ------------------ | ------------------ | --------------- | ------------------ |
-| **Purchase Row**   | $353,028.00 | $0.00    | $353,028.00 |
-| **Unused Row**     | $0.00       | $40.30   | $40.30      |
+| Scenario         | BilledCost  | EffectiveCost | ListCost    |
+| ---------------- | ----------- | ------------- | ----------- |
+| **Purchase Row** | $211,992.00 | $0.00         | $211,992.00 |
+| **Unused Row**   | $0.00       | $24.20        | $24.20      |
 
 This scenario has no Used or Standard rows because utilization is 0% and no resources were consumed.
 
@@ -71,35 +71,35 @@ The following critical rules apply to commitment discount data:
 
 ## Purchase Row Details
 
-| Column                     | Value                                | Explanation                                                 |
-| -------------------------- | ------------------------------------ | ----------------------------------------------------------- |
-| ChargeCategory             | Purchase                             | Commitment purchase transaction                             |
-| ChargeFrequency            | One-Time                             | One-time upfront payment                                    |
-| BilledCost                 | $353,028.00                   | Full annual commitment payment                              |
-| EffectiveCost              | $0.00                         | **must be 0** - cost is amortized to usage rows             |
-| PricingQuantity            | 353,028.00                           | Total commitment in USD (PricingUnit = USD)                 |
-| CommitmentDiscountStatus   | null                                 | Status only applies to usage rows                           |
-| CommitmentDiscountQuantity | 353,028.00                           | Full annual commitment ($40.30/hr &times; 8,760 hrs) |
-| CommitmentDiscountUnit     | USD                                  | Unit of commitment capacity (spend-based)                   |
-| SkuId                      | AURAWEB-USEAST1-COMPUTE-PURCHASE         | Commitment purchase SKU                                     |
-| SkuPriceId                 | AURAWEB-USEAST1-COMPUTE-PURCHASE-UPFRONT | Price point for upfront purchase                            |
+| Column                     | Value                                                  | Explanation                                          |
+| -------------------------- | ------------------------------------------------------ | ---------------------------------------------------- |
+| ChargeCategory             | Purchase                                               | Commitment purchase transaction                      |
+| ChargeFrequency            | One-Time                                               | One-time upfront payment                             |
+| BilledCost                 | $211,992.00                                            | Full annual commitment payment                       |
+| EffectiveCost              | $0.00                                                  | **must be 0** - cost is amortized to usage rows      |
+| PricingQuantity            | 211,992.00                                             | Total commitment in USD (PricingUnit = USD)          |
+| CommitmentDiscountStatus   | null                                                   | Status only applies to usage rows                    |
+| CommitmentDiscountQuantity | 211,992.00                                             | Full annual commitment ($24.20/hr &times; 8,760 hrs) |
+| CommitmentDiscountUnit     | USD                                                    | Unit of commitment capacity (spend-based)            |
+| SkuId                      | AURAWEB-USEAST1-COMPUTE-PURCHASE                       | Commitment purchase SKU                              |
+| SkuPriceId                 | AURAWEB-USEAST1-COMPUTE-FLEXSPEND-PURCHASE-ALL-UPFRONT | Price point for the all upfront purchase fee         |
 
 ## Unused Commitment Row Details
 
-| Column                       | Value                                                          | Explanation                                        |
-| ---------------------------- | -------------------------------------------------------------- | -------------------------------------------------- |
-| ChargeCategory               | Usage                                                          | Represents commitment capacity                     |
-| BilledCost                   | $0.00                                                   | No additional billing (already paid at purchase)   |
-| EffectiveCost                | $40.30                                                  | **Wasted value** - lost commitment                 |
-| PricingQuantity              | 40.30                                                          | Hourly commitment in USD (PricingUnit = USD)       |
-| ListCost                     | $40.30                                                  | $1.00 &times; 40.30 USD                     |
-| ConsumedQuantity             | null                                                           | **No resource consumed**                           |
-| CommitmentDiscountQuantity   | 40.30                                                          | Commitment wasted                                  |
-| CommitmentDiscountStatus     | Unused                                                         | Commitment not utilized                            |
-| ResourceId                   | auraweb:flexspend::123456789012:flexspendplan/fsp-abc123def456 | must match CommitmentDiscountId (no resource used) |
-| ResourceName                 | Compute Flexible Spend Plan                                      | Carried from Purchase row (no resource consumed)   |
-| ResourceType                 | Commitment                                                     | Carried from Purchase row (no resource consumed)   |
-| SkuId                        | AURAWEB-USEAST1-COMPUTE-PURCHASE                                   | must match Purchase row (no resource consumed)     |
-| SkuPriceId                   | AURAWEB-USEAST1-COMPUTE-PURCHASE-UPFRONT                           | must match Purchase row (no resource consumed)     |
+| Column                     | Value                                                          | Explanation                                        |
+| -------------------------- | -------------------------------------------------------------- | -------------------------------------------------- |
+| ChargeCategory             | Usage                                                          | Represents commitment capacity                     |
+| BilledCost                 | $0.00                                                          | No additional billing (already paid at purchase)   |
+| EffectiveCost              | $24.20                                                         | **Wasted value** - lost commitment                 |
+| PricingQuantity            | 24.20                                                          | Hourly commitment in USD (PricingUnit = USD)       |
+| ListCost                   | $24.20                                                         | $1.00 &times; 24.20 USD                            |
+| ConsumedQuantity           | null                                                           | **No resource consumed**                           |
+| CommitmentDiscountQuantity | 24.20                                                          | Commitment wasted                                  |
+| CommitmentDiscountStatus   | Unused                                                         | Commitment not utilized                            |
+| ResourceId                 | auraweb:flexspend::123456789012:flexspendplan/fsp-abc123def456 | must match CommitmentDiscountId (no resource used) |
+| ResourceName               | Compute Flexible Spend Plan                                    | Carried from Purchase row (no resource consumed)   |
+| ResourceType               | Commitment                                                     | Carried from Purchase row (no resource consumed)   |
+| SkuId                      | AURAWEB-USEAST1-COMPUTE-PURCHASE                               | must match Purchase row (no resource consumed)     |
+| SkuPriceId                 | AURAWEB-USEAST1-COMPUTE-FLEXSPEND-COMMITMENT-UNUSED            | Price point for unused commitment capacity         |
 
 For spend-based unused rows, PricingUnit is USD and PricingQuantity is the hourly commitment amount. ListCost = ListUnitPrice ($1.00) &times; PricingQuantity, which equals the wasted commitment dollars per hour.

@@ -69,32 +69,32 @@ The following critical rules apply to commitment discount data:
 
 ## Purchase Row Details
 
-| Column                     | Value                                | Explanation                                                      |
-| -------------------------- | ------------------------------------ | ---------------------------------------------------------------- |
-| ChargeCategory             | Purchase                             | Commitment purchase transaction                                  |
-| ChargeFrequency            | Recurring                            | Monthly recurring fee                                            |
-| BilledCost                 | $35,515.20                    | Monthly recurring payment (hourly rate &times; 672 hours in Feb) |
-| EffectiveCost              | $0.00                         | **must be 0** - cost is amortized to usage rows                  |
-| PricingQuantity            | 35,515.20                            | Total commitment in USD (PricingUnit = USD)                      |
-| CommitmentDiscountStatus   | null                                 | Status only applies to usage rows                                |
-| CommitmentDiscountQuantity | 35,515.20                            | Commitment capacity for Feb ($52.85/hr &times; 672 hrs)   |
-| CommitmentDiscountUnit     | USD                                  | Unit of commitment capacity (spend-based)                        |
-| SkuId                      | AURAWEB-USEAST1-COMPUTE-PURCHASE         | Commitment purchase SKU                                          |
-| SkuPriceId                 | AURAWEB-USEAST1-COMPUTE-PURCHASE-MONTHLY | Price point for recurring purchase                               |
+| Column                     | Value                                                 | Explanation                                                      |
+| -------------------------- | ----------------------------------------------------- | ---------------------------------------------------------------- |
+| ChargeCategory             | Purchase                                              | Commitment purchase transaction                                  |
+| ChargeFrequency            | Recurring                                             | Monthly recurring fee                                            |
+| BilledCost                 | $35,515.20                                            | Monthly recurring payment (hourly rate &times; 672 hours in Feb) |
+| EffectiveCost              | $0.00                                                 | **must be 0** - cost is amortized to usage rows                  |
+| PricingQuantity            | 35,515.20                                             | Total commitment in USD (PricingUnit = USD)                      |
+| CommitmentDiscountStatus   | null                                                  | Status only applies to usage rows                                |
+| CommitmentDiscountQuantity | 35,515.20                                             | Commitment capacity for Feb ($52.85/hr &times; 672 hrs)          |
+| CommitmentDiscountUnit     | USD                                                   | Unit of commitment capacity (spend-based)                        |
+| SkuId                      | AURAWEB-USEAST1-COMPUTE-PURCHASE                      | Commitment purchase SKU                                          |
+| SkuPriceId                 | AURAWEB-USEAST1-COMPUTE-FLEXSPEND-PURCHASE-NO-UPFRONT | Price point for the no upfront recurring fee                     |
 
 ## Usage Row Details (Commitment-Covered)
 
-| Column                     | Value                                                 | Explanation                                |
-| -------------------------- | ----------------------------------------------------- | ------------------------------------------ |
-| ChargeCategory             | Usage                                                 | Compute resource consumption               |
-| PricingCategory            | Committed                                             | Priced under commitment discount           |
-| BilledCost                 | $0.00                                          | **must be 0** - covered by commitment      |
-| EffectiveCost              | $52.85                                         | Amortized cost (annual / hours)            |
-| ListCost                   | $79.28                                         | What you would have paid at list price     |
-| PricingQuantity            | 1                                                     | Units priced                               |
-| ConsumedQuantity           | 1                                                     | Hours used                                 |
-| CommitmentDiscountQuantity | 52.85                                                 | Hourly commitment spend applied            |
-| CommitmentDiscountStatus   | Used                                                  | Commitment applied                         |
-| CommitmentDiscountId       | auraweb:flexspend::123456789012:flexspendplan/fsp-... | Links usage to purchase                    |
-| SkuId                      | AURAWEB-USEAST1-COMPUTE-USAGE                             | Resource usage SKU (differs from Purchase) |
-| SkuPriceId                 | AURAWEB-USEAST1-COMPUTE-USAGE-COMMITTED                   | Price point for committed usage            |
+| Column                     | Value                                                 | Explanation                                               |
+| -------------------------- | ----------------------------------------------------- | --------------------------------------------------------- |
+| ChargeCategory             | Usage                                                 | Compute resource consumption                              |
+| PricingCategory            | Committed                                             | Priced under commitment discount                          |
+| BilledCost                 | $0.00                                                 | **must be 0** - covered by commitment                     |
+| EffectiveCost              | $52.85                                                | Amortized cost (annual / hours)                           |
+| ListCost                   | $79.28                                                | What you would have paid at list price                    |
+| PricingQuantity            | 1                                                     | Units priced                                              |
+| ConsumedQuantity           | 1                                                     | Hours used                                                |
+| CommitmentDiscountQuantity | 52.85                                                 | Hourly commitment spend applied                           |
+| CommitmentDiscountStatus   | Used                                                  | Commitment applied                                        |
+| CommitmentDiscountId       | auraweb:flexspend::123456789012:flexspendplan/fsp-... | Links usage to purchase                                   |
+| SkuId                      | AURAWEB-USEAST1-COMPUTE-USAGE                         | Resource usage SKU (differs from Purchase)                |
+| SkuPriceId                 | AURAWEB-USEAST1-COMPUTE-USAGE-FLEXSPEND-NO-UPFRONT    | Price point for committed usage under the no upfront plan |

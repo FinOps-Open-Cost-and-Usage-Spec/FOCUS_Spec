@@ -29,6 +29,14 @@ Commitment discounts follow a "use-it-or-lose-it" model where the [*amortization
 
 For example, if a customer buys a spend-based *commitment discount* with a $1.00 hourly commit in January (31 days), only $1.00 is eligible for consumption for each hourly *charge period*. If a customer has eligible *resources* running during this *charge period*, an amount of up to $1.00 will be allocated to these *resources*. Conversely, if a customer does not have eligible *resources* running that fully take advantage of this $1.00 during this *charge period*, then some or all of this amount will go to waste.
 
+### SKU Price Identifiers
+
+Each SkuPriceId in the scenarios below names one price point. A price point is a single combination of the *commitment discount* product, the payment option, and the role the charge plays: a one-time fee, a recurring fee, a committed usage rate, or unused commitment capacity. Charges that differ in any of these carry different SkuPriceId values, even where their unit prices happen to match.
+
+Payment options are the variation most easily missed. An all upfront plan and a no upfront plan cover the same *SKU* and are often described in the same words, but a service provider publishes them as separate [*SKU Prices*](#glossary:sku-price) in its [*price list*](#glossary:price-list), so they carry separate SkuPriceId values. The same holds for the length of a *commitment discount*, and for the one-time and recurring fees of a partial upfront plan, which are two prices under a single purchase.
+
+This granularity is what allows a *SKU Price* to be resolved from a SkuPriceId alone. Where one identifier names two price points, a *price list* has no way to express both, and the *SKU Price* a reader looks up will not be the one that priced the charge.
+
 ## Data Generator Scenarios
 
 Below are tables listing some common commitment discount scenarios for a few prominent FOCUS data generators.
