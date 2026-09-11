@@ -184,7 +184,7 @@ AI agents generating or reviewing content MUST act as strict technical editors e
   * Glossary entries apply this rule independently within each entry.
   * A table is an entity catalog table only when each data row represents and identifies a distinct specification entity.
   * In an entity catalog table, the entity reference that identifies each row MAY link to that entity's definition even when the entity was linked earlier in the file.
-  * Each normative requirement bullet MAY link its first reference to each distinct FOCUS entity, glossary term, or FOCUS Condition, even when the same destination was linked earlier in the file. 
+  * Each normative requirement bullet MAY link its first reference to each distinct FOCUS entity, glossary term, or Operating Model Condition, even when the same destination was linked earlier in the file.
   * Later references to the same destination within that bullet MUST remain unlinked.
 * **Lists:** All unordered lists MUST use asterisks (`*`), never dashes (`-`) or plus signs (`+`). Nested bullet points MUST use exactly two spaces per level.
 * **Notes:** Important notes must use the blockquote format (`> **Note:**`).
