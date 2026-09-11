@@ -152,17 +152,45 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
 
 > **Note:** Examples are illustrative, informative, and non-normative. They do not define requirements and do not override the rules in this section.
 
+### Column and Attribute References
+
+* Normative requirements MUST use canonical Column IDs and Attribute IDs.
+* **Non-Normative Entity References:** Select terminology according to context:
+  * Conceptual, reader-facing references to FOCUS entities SHOULD use Display Names when available.
+  * Schema-facing references to FOCUS entities MAY use canonical Entity IDs.
+
+A reference is schema-facing when it satisfies at least one of the following conditions:
+
+* It identifies a field in code, JSON, SQL, a schema, or a table header.
+* It is an object or property path.
+* The surrounding sentence describes the field being populated, omitted, null, serialized, validated, matched, compared, grouped, filtered, joined, aggregated, or repeated.
+* Exact correspondence with an adjacent table, code block, schema fragment, or query expression is required.
+
+When none of these conditions applies, the reference is conceptual.
+
 ### Linking
 
-* **Linking on First Occurrence:** To avoid excessive linking, entity references (including FOCUS entity IDs, display names, and glossary terms) MUST be linked only on their first occurrence within a given source markdown file.
+Body content includes paragraphs, list items, table cells, and requirement bullets.
 
-> **Note:** Unless otherwise specified, first-occurrence linking is evaluated relative to the containing source markdown file.
+* **First Occurrence:** Entity references, including entity IDs, Display Names, and glossary terms, MUST be linked only on their first occurrence in body content within each source Markdown file.
+
+* **Titles and Headings:** Document titles and section headings do not count as body content and MUST NOT be linked solely to satisfy this rule.
+
+> **Note:** Ignore heading occurrences when determining the first occurrence. Link the first occurrence in body content instead. A term used only in headings does not require a link.
 
 **Exceptions:**
 
 * In **Content Constraints** sections, all entity references MUST be linked, regardless of prior occurrence in the source markdown file.
 
 * In the **Glossary** file, entity references MUST be linked only on their first occurrence within each glossary entry, rather than once per source markdown file.
+
+* A table is an **entity catalog table** only when each data row represents a distinct specification entity and a cell in that row identifies that entity.
+
+* In an **entity catalog table**, the entity reference that identifies the subject of each row MAY link to that entity's definition even when the entity was linked earlier in the source Markdown file.
+
+* In **Requirements** sections, the first reference to each distinct FOCUS entity, glossary term, or FOCUS Condition in each normative requirement bullet MAY be linked, even when the same destination was linked earlier in the source Markdown file.
+  
+* In **Requirements** sections, later references to the same destination within that bullet MUST NOT be linked.
 
 ### Entity References
 
@@ -171,8 +199,6 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
 * **Entity ID Formatting:** Entity IDs MUST be formatted without spaces.
 
 * **Entity ID Naming:** Entity IDs MUST match the exact naming conventions used in the schema (e.g., CommitmentDiscountId).
-
-* **Entity Display Name References:** References to FOCUS entities in non-normative content (i.e., outside Requirements sections) MUST use Display Names when available.
 
 * **Entity Scope:** These rules apply to all entities defined in the FOCUS specification (e.g., Columns, Attributes, Datasets, Objects).
 
