@@ -223,7 +223,7 @@ When a contribution requires creating a series of examples, contributors must no
 The contributor may only proceed with requesting review of the complete set of examples after the Task Force has formally approved the initial subset. This iterative approach ensures early alignment on formatting, canonical terminology, and technical accuracy, significantly reducing the need for extensive rework later in the review cycle.
 
 #### Validating CSV Examples
-
+ 
 Before requesting review for example updates, contributors SHOULD validate the affected CSV examples with the FOCUS Validator.
 
 The commands below require a local checkout of the [FOCUS Validator](https://github.com/finopsfoundation/focus_validator) with its dependencies installed. The script looks for the validator in `./focus_validator`, then `../focus_validator`. When the checkout is elsewhere, point at it with `--validator-path` or the `FOCUS_VALIDATOR_PATH` environment variable:
