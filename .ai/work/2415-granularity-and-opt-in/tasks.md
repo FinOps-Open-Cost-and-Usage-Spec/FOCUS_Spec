@@ -39,7 +39,7 @@
 * [ ] Add glossary entries: Companion Artifact, Detail Representation, Detail Scope, Detail Variant.
 * [ ] Restructure DatasetConfiguration requirements per review.md section 2.1.
 * [ ] Update DatasetConfiguration intro bullet and Example.
-* [ ] Revert Version Introduced to 1.4.
+* [x] Revert Version Introduced to 1.4.
 * [ ] Accept attributes_overview row suggestion.
 * [ ] Align supporting content terminology and sections per review.md section 4.
 * [ ] Migrate placement alternatives, embedded JSON option, AWS precedent, and privacy notes from research.md to supporting content.

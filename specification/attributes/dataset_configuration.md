@@ -61,4 +61,4 @@ Defines configuration options for controlling the structure, content, and scoped
 
 ## Version Introduced
 
-1.4 (column selection); 1.5 (scoped detail configuration)
+1.4
