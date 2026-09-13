@@ -19,7 +19,7 @@ Dataset conforming to DatasetConfiguration attribute MUST adhere to the followin
 * *FOCUS dataset* MUST be configurable to select one detail level for a detail scope when the same data coverage can be delivered at more than one detail level.
 * *FOCUS dataset* MUST be configurable to select one delivery method for all detail scopes or for each detail scope when a selected detail level can be delivered through more than one delivery method.
 * *FOCUS dataset* MUST include the columns documented for a selected detail level, regardless of the user-defined selection of columns.
-* When *FOCUS dataset* offers a detail scope, *FOCUS dataset* detail-scope documentation MUST adhere to the following requirements:
+* When a detail scope is offered, *FOCUS dataset* detail-scope documentation MUST adhere to the following requirements:
   * *FOCUS dataset* detail-scope documentation MUST include FOCUS dimension criteria that identify the data coverage of each offered detail scope.
   * *FOCUS dataset* detail-scope documentation MUST include all offered detail levels for each offered detail scope.
   * *FOCUS dataset* detail-scope documentation MUST include the columns populated for each offered detail level.
