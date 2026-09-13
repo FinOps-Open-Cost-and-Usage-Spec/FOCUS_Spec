@@ -17,7 +17,7 @@ ServiceCategory MUST adhere to the following requirements:
 | AI and Machine Learning   | Artificial Intelligence and Machine Learning related technologies.                                                               |
 | Analytics                 | Data processing, analytics, and visualization capabilities.                                                                      |
 | Business Applications     | Business and productivity applications and services.                                                                             |
-| Compute                   | Virtual, containerized, serverless, or high-performance computing infrastructure and services.                                   |
+| Compute                   | Physical, virtual, containerized, or serverless computing infrastructure and services.                                   |
 | Databases                 | Database platforms and services that allow for storage and querying of data.                                                     |
 | Developer Tools           | Software development and delivery tools and services.                                                                            |
 | Identity                  | Identity and access management services.                                                                                         |
@@ -48,14 +48,15 @@ Highest-level classification of a *service* based on the core function of the *s
 
 ## Content Constraints
 
-| Constraint      | Value                                                |
-| :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datasets.costandusage)             |
-| Column type     | Dimension                                            |
-| Feature level   | Mandatory                                            |
-| Allows nulls    | False                                                |
-| Data type       | String                                               |
-| Value format    | Allowed values                                       |
+| Constraint                 | Value                                     |
+| :------------------------- | :---------------------------------------- |
+| Dataset                    | [Cost and Usage](#datamodel.costandusage) |
+| Operating Model Conditions | Not applicable                            |
+| Column type                | Dimension                                 |
+| Feature level              | Mandatory                                 |
+| Allows nulls               | False                                     |
+| Data type                  | String                                    |
+| Value format               | Allowed values                            |
 
 ## Version Introduced
 

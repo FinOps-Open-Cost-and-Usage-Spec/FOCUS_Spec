@@ -9,7 +9,7 @@ PaymentDueDate MUST adhere to the following requirements:
 * PaymentDueDate MUST be of type Date/Time.
 * PaymentDueDate MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.
 * PaymentDueDate MAY be null.
-* PaymentDueDate MUST be the date specified by the invoice issuer as the deadline for payment for the corresponding [InvoiceId](#datasets.invoicedetail.invoiceid).
+* PaymentDueDate MUST be the date specified by the invoice issuer as the deadline for payment for the corresponding [InvoiceId](#datamodel.invoicedetail.invoiceid).
 
 ## Column ID
 
@@ -25,14 +25,15 @@ The date by which the payment for an invoice is expected to be received by the i
 
 ## Content Constraints
 
-|    Constraint    |              Value             |
-|:----------------|:--------------------------------|
-| Dataset         | [Invoice Detail](#datasets.invoicedetail)             |
-| Column type     | Dimension                       |
-| Feature level   | Mandatory                       |
-| Allows nulls    | True                            |
-| Data type       | Date/Time                       |
-| Value format    | [Date/Time Format](#attributes.date/timeformat) |
+| Constraint                 | Value                                           |
+| :------------------------- | :---------------------------------------------- |
+| Dataset                    | [Invoice Detail](#datamodel.invoicedetail)      |
+| Operating Model Conditions | Not applicable                                  |
+| Column type                | Dimension                                       |
+| Feature level              | Mandatory                                       |
+| Allows nulls               | True                                            |
+| Data type                  | Date/Time                                       |
+| Value format               | [Date/Time Format](#attributes.date/timeformat) |
 
 ## Version Introduced
 

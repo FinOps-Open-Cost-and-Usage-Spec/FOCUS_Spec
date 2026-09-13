@@ -1,8 +1,8 @@
 # Contract Commitment Fulfillment Interval
 
-Contract Commitment Fulfillment Interval represents the specific [*period*](#glossary:period) used to measure and reset the fulfillment of a [*contract commitment*](#glossary:contract-commitment). It establishes the window during which usage is aggregated to determine if commitment obligations have been met. At the end of each fulfillment interval, the [contract commitment model](#datasets.contractcommitment.contractcommitmentmodel) logic is applied, either resulting in the expiration of unused capacity (Continuous) or the calculation of a balance or true-up (Discontinuous).
+Contract Commitment Fulfillment Interval represents the specific [*period*](#glossary:period) used to measure and reset the fulfillment of a [*contract commitment*](#glossary:contract-commitment). It establishes the window during which usage is aggregated to determine if commitment obligations have been met. At the end of each fulfillment interval, the [contract commitment model](#datamodel.contractcommitment.contractcommitmentmodel) logic is applied, either resulting in the expiration of unused capacity (Continuous) or the calculation of a balance or true-up (Discontinuous).
 
-Contract Commitment Fulfillment Interval has a series of possible values that represent a length of time, typically recurring over the [contract commitment duration type](#datasets.contractcommitment.contractcommitmentdurationtype). Continuous models are typically Hourly, whereas Discontinuous models are typically Daily or greater.
+Contract Commitment Fulfillment Interval has a series of possible values that represent a length of time, typically recurring over the [contract commitment duration type](#datamodel.contractcommitment.contractcommitmentdurationtype). Continuous models are typically Hourly, whereas Discontinuous models are typically Daily or greater.
 
 ## Requirements
 
@@ -44,14 +44,15 @@ Represents the specific *period* used to measure and reset the fulfillment of a 
 
 ## Content Constraints
 
-| Constraint      | Value          |
-| :-------------- | :------------- |
-| Dataset         | [Contract Commitment](#datasets.contractcommitment)  |
-| Column type     | Dimension      |
-| Feature level   | Mandatory      |
-| Allows nulls    | False          |
-| Data type       | String         |
-| Value format    | Allowed values |
+| Constraint                 | Value                                                |
+| :------------------------- | :--------------------------------------------------- |
+| Dataset                    | [Contract Commitment](#datamodel.contractcommitment) |
+| Operating Model Conditions | Not applicable                                       |
+| Column type                | Dimension                                            |
+| Feature level              | Mandatory                                            |
+| Allows nulls               | False                                                |
+| Data type                  | String                                               |
+| Value format               | Allowed values                                       |
 
 ## Version Introduced
 

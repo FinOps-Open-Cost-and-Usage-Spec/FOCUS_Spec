@@ -1,6 +1,6 @@
 # Examples: AI Model Identity
 
-The following examples illustrate how a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) represents the identity of an AI model using FOCUS-defined [SkuPriceDetails](#datasets.costandusage.skupricedetails) properties, and how the split between input (prompt) and output (generated) tokens is carried structurally rather than through a dedicated property. Provider and model names below are illustrative.
+The following examples illustrate how a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) represents the identity of an AI model using FOCUS-defined [SkuPriceDetails](#datamodel.costandusage.skupricedetails) properties, and how the split between input (prompt) and output (generated) tokens is carried structurally rather than through a dedicated property. Provider and model names below are illustrative.
 
 ## Baseline Scenario
 
@@ -24,15 +24,15 @@ For this scenario, Acme Corp purchases the model directly from the model develop
 Note the following details in the example dataset:
 
 * Model identity is carried in SkuPriceDetails using the FOCUS-defined properties ModelDeveloper, ModelFamily, ModelId, and ModelVersion. These values are common to both rows because both describe the same model.
-* The split between input and output tokens is structural. Each is a separate [*SKU*](#glossary:sku) with its own [SkuId](#datasets.costandusage.skuid) and [SkuPriceId](#datasets.costandusage.skupriceid), distinguished by [SkuMeter](#datasets.costandusage.skumeter) values of "Input Tokens" and "Output Tokens". No separate token-type property is used.
-* [ConsumedQuantity](#datasets.costandusage.consumedquantity) holds the raw token count and [ConsumedUnit](#datasets.costandusage.consumedunit) is "Tokens", while [PricingQuantity](#datasets.costandusage.pricingquantity) holds the priced volume and [PricingUnit](#datasets.costandusage.pricingunit) is "1000000 Tokens".
-* Because Acme Corp pays the list price, [ListUnitPrice](#datasets.costandusage.listunitprice) and [ContractedUnitPrice](#datasets.costandusage.contractedunitprice) are equal, so [ListCost](#datasets.costandusage.listcost), [ContractedCost](#datasets.costandusage.contractedcost), [BilledCost](#datasets.costandusage.billedcost), and [EffectiveCost](#datasets.costandusage.effectivecost) are equal.
+* The split between input and output tokens is structural. Each is a separate [*SKU*](#glossary:sku) with its own [SkuId](#datamodel.costandusage.skuid) and [SkuPriceId](#datamodel.costandusage.skupriceid), distinguished by [SkuMeter](#datamodel.costandusage.skumeter) values of "Input Tokens" and "Output Tokens". No separate token-type property is used.
+* [ConsumedQuantity](#datamodel.costandusage.consumedquantity) holds the raw token count and [ConsumedUnit](#datamodel.costandusage.consumedunit) is "Tokens", while [PricingQuantity](#datamodel.costandusage.pricingquantity) holds the priced volume and [PricingUnit](#datamodel.costandusage.pricingunit) is "1000000 Tokens".
+* Because Acme Corp pays the list price, [ListUnitPrice](#datamodel.costandusage.listunitprice) and [ContractedUnitPrice](#datamodel.costandusage.contractedunitprice) are equal, so [ListCost](#datamodel.costandusage.listcost), [ContractedCost](#datamodel.costandusage.contractedcost), [BilledCost](#datamodel.costandusage.billedcost), and [EffectiveCost](#datamodel.costandusage.effectivecost) are equal.
 
 ## Scenario B: Same Model Served by a Cloud Provider
 
 For this scenario, the same underlying model is served by a cloud provider, LatticeScale, as its own first-party [*service*](#glossary:service):
 
-* Every participating entity ([ServiceProviderName](#datasets.costandusage.serviceprovidername), [HostProviderName](#datasets.costandusage.hostprovidername), and [InvoiceIssuerName](#datasets.costandusage.invoiceissuername)) is LatticeScale, the [*service provider*](#glossary:service-provider)
+* Every participating entity ([ServiceProviderName](#datamodel.costandusage.serviceprovidername), [HostProviderName](#datamodel.costandusage.hostprovidername), and [InvoiceIssuerName](#datamodel.costandusage.invoiceissuername)) is LatticeScale, the [*service provider*](#glossary:service-provider)
 * The model developer, Solora AI, is not the *service provider*, and is carried in the ModelDeveloper property.
 
 [**CSV Example**](/specification/data/ai_model_identity/ai_model_identity_b.csv)

@@ -9,7 +9,7 @@ InvoiceIssueDate MUST adhere to the following requirements:
 * InvoiceIssueDate MUST be of type Date/Time.
 * InvoiceIssueDate MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.
 * InvoiceIssueDate MAY be null.
-* InvoiceIssueDate MUST represent the official date of issuance for the corresponding [InvoiceId](#datasets.invoicedetail.invoiceid).
+* InvoiceIssueDate MUST represent the official date of issuance for the corresponding [InvoiceId](#datamodel.invoicedetail.invoiceid).
 
 ## Column ID
 
@@ -25,14 +25,15 @@ The date the invoice was issued by the invoice issuer.
 
 ## Content Constraints
 
-|    Constraint    |              Value             |
-|:----------------|:--------------------------------|
-| Dataset         | [Invoice Detail](#datasets.invoicedetail)             |
-| Column type     | Dimension                       |
-| Feature level   | Mandatory                       |
-| Allows nulls    | True                            |
-| Data type       | Date/Time                        |
-| Value format    | [Date/Time Format](#attributes.date/timeformat) |
+| Constraint                 | Value                                           |
+| :------------------------- | :---------------------------------------------- |
+| Dataset                    | [Invoice Detail](#datamodel.invoicedetail)      |
+| Operating Model Conditions | Not applicable                                  |
+| Column type                | Dimension                                       |
+| Feature level              | Mandatory                                       |
+| Allows nulls               | True                                            |
+| Data type                  | Date/Time                                       |
+| Value format               | [Date/Time Format](#attributes.date/timeformat) |
 
 ## Version Introduced
 

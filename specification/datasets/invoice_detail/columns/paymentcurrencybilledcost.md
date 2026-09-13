@@ -1,6 +1,6 @@
 # Payment Currency Billed Cost
 
-Payment Currency Billed Cost represents the [Billed Cost](#datasets.invoicedetail.billedcost) as expressed in [Payment Currency](#datasets.invoicedetail.paymentcurrency). This metric is essential for organizations that need to reconcile their financial records in the currency used for actual settlement, especially when it differs from the currency used for initial billing.
+Payment Currency Billed Cost represents the [Billed Cost](#datamodel.invoicedetail.billedcost) as expressed in [Payment Currency](#datamodel.invoicedetail.paymentcurrency). This metric is essential for organizations that need to reconcile their financial records in the currency used for actual settlement, especially when it differs from the currency used for initial billing.
 
 ## Requirements
 
@@ -72,15 +72,16 @@ The Billed Cost as expressed in Payment Currency.
 
 ## Content Constraints
 
-|    Constraint   |      Value              |
-|:----------------|:------------------------|
-| Dataset         | [Invoice Detail](#datasets.invoicedetail)             |
-| Column type     | Metric                  |
-| Feature level   | Conditional             |
-| Allows nulls    | False                   |
-| Data type       | Decimal                 |
-| Value format    | [Numeric Format](#attributes.numericformat) |
-| Number range    | Any valid decimal value |
+| Constraint                 | Value                                       |
+| :------------------------- | :------------------------------------------ |
+| Dataset                    | [Invoice Detail](#datamodel.invoicedetail)  |
+| Operating Model Conditions | [Includes Billing and Payment Currency Differences](#operatingmodelconditions.includesbillingandpaymentcurrencydifferences) |
+| Column type                | Metric                                      |
+| Feature level              | Conditional                                 |
+| Allows nulls               | False                                       |
+| Data type                  | Decimal                                     |
+| Value format               | [Numeric Format](#attributes.numericformat) |
+| Number range               | Any valid decimal value                     |
 
 ## Version Introduced
 

@@ -35,7 +35,7 @@ GROUP BY
   SubAccountId,
   SubAccountName,
   ServiceName
-ORDER BY MonthlyCost DESC
+ORDER BY TotalBilledCost DESC
 ```
 
 ## Version Introduced

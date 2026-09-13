@@ -10,7 +10,7 @@ The Correction Handling attribute defines how [*corrections*](#glossary:correcti
 
 Accurate correction handling is essential to ensure the consistency, integrity, and usability of *FOCUS datasets* over time. Depending on the dataset and delivery configuration, it supports a range of key outcomes, including but not limited to:
 
-* Consistency of delivered data - ensuring that delivered data remains consistent and reliable over time, where applicable, including alignment between related *FOCUS datasets* (e.g., [Invoice Detail](#datasets.invoicedetail) records and the underlying [Cost and Usage](#datasets.costandusage) records).
+* Consistency of delivered data - ensuring that delivered data remains consistent and reliable over time, where applicable, including alignment between related *FOCUS datasets* (e.g., [Invoice Detail](#datamodel.invoicedetail) records and the underlying [Cost and Usage](#datamodel.costandusage) records).
 * Data integrity and [*invoice reconciliation*](#glossary:invoice-reconciliation) - ensuring that corrections do not compromise records associated with [*issued invoices*](#glossary:issued-invoice) or [*closed billing periods*](#glossary:closed-billing-period), and that alignment is maintained in accordance with defined *invoice reconciliation* requirements.
 * Auditability and traceability - enabling the tracking of delivered data and applied corrections over time, so that changes and their effects can be understood, verified, and correctly reflected in downstream processes (e.g., cost allocation, chargeback, reporting).
 
