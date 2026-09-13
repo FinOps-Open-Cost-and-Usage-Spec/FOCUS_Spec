@@ -68,7 +68,7 @@ Dataset conforming to DatasetConfiguration attribute MUST adhere to the followin
 * *FOCUS dataset* MUST preserve the sum of each *FOCUS dataset column* representing a summable *metric* when records are represented as a single record.
 * *FOCUS dataset* MAY offer a default column set.
 * *FOCUS dataset* default column set MUST include all applicable [*FOCUS columns*](#glossary:FOCUS-column) when a default column set is offered.
-* When *FOCUS dataset* offers a [*detail scope*](#glossary:detail-scope), *FOCUS dataset* MUST adhere to the following requirements:
+* When a [*detail scope*](#glossary:detail-scope) is offered, *FOCUS dataset* MUST adhere to the following requirements:
   * *FOCUS dataset* MUST be configurable to select each [*detail variant*](#glossary:detail-variant) offered for a *detail scope*.
   * *FOCUS dataset* MUST include only one *detail variant* for each *detail scope*.
   * *FOCUS dataset* MUST include the columns documented for a selected *detail variant*, regardless of the user-defined selection of columns.
@@ -90,7 +90,7 @@ Dataset conforming to DatasetConfiguration attribute MUST adhere to the followin
 |--------|-------|-------------------|
 | #3866728644, #3867990817 (TF-2 action item, 2026-08-26) | Four normative terms are undefined in shipped content | Glossary entries in 1.2; `data coverage` removed from bullets |
 | #3917948166 (@ijurica) | Renames and glossary entries | Adopted, with the additional collisions noted in 1.1 |
-| #3866728667 | Documentation block has no applicability gate | Condition grouping bullet `When FOCUS dataset offers a detail scope` |
+| #3866728667 | Documentation block has no applicability gate | Condition grouping bullet `When a detail scope is offered` |
 | #3866728652 | `for all detail scopes or for each detail scope` reads both ways | Single configurability bullet; move the whole-dataset vs. per-scope choice to supporting content as a data generator choice (**confirm author intent**) |
 | #3866728656 | Detail columns conflict with column selection | `regardless of the user-defined selection of columns` |
 | #3866728674 | No accessibility bullet | Added, matching DeliveryHandling |

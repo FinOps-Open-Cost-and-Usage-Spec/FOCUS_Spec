@@ -44,4 +44,29 @@
 * [x] Apply review fixes independent of TF-2: detail columns regardless of column selection, documentation condition, documentation accessibility.
 * [ ] Align supporting content terminology and sections per review.md section 4.
 * [ ] Migrate placement alternatives, embedded JSON option, AWS precedent, and privacy notes from research.md to supporting content.
-* [ ] Reply to open review threads and resolve.
+* [ ] Resolve remaining open review threads (see Open Review Threads below).
+
+## Open Review Threads (Status 2026-09-13)
+
+Five review threads remain unresolved on PR #2473. All other threads are resolved.
+
+* [ ] #3866728644 (Matt-Cowsert, `dataset_configuration.md` line 19): detail scope, detail level, delivery method, and data coverage are undefined in shipped content. Resolve together with #3867990817 once glossary entries land.
+* [ ] #3867990817 (Matt-Cowsert, TF-2 action item 2026-08-26): add glossary entries sourced from supporting content. Blocked on the TF-2 naming decision (review.md section 1.1).
+* [ ] #3917948166 (ijurica, file-level): rename detail level to detail variant and delivery method to detail representation, with proposed glossary entries. Blocked on the TF-2 naming decision.
+* [ ] #3866728652 (Matt-Cowsert, line 20): whether `for all detail scopes or for each detail scope` requires both selection granularities or accepts either. Needs an author decision; review.md section 2.2 recommends a single configurability bullet with the choice moved to supporting content.
+* [ ] #3866728680 (Matt-Cowsert, line 31): whether `delivered dimension columns` covers custom columns. Fix with the review.md section 2.3 A wording (all delivered FOCUS dataset columns other than summable metrics), which also covers custom metric columns.
+
+### Resolved This Session
+
+* Threads #3800388224 and #3818143965: Version Introduced reverted to 1.4 (87c245c5).
+* Thread #3800428211: anchor wording restored to `Dataset` (a978845c); confirming reply added.
+* Thread #3866728656: detail-level columns included regardless of column selection (fcda8332).
+* Thread #3866728667: documentation block nested under `When a detail scope is offered` (fcda8332, 1dd689e8).
+* Thread #3866728674: documentation accessibility bullet added (fcda8332).
+* Thread #3866728683: attributes overview row now reads scoped detail (fcda8332).
+
+### Session Notes
+
+* Branch merged with `working_draft` on 2026-09-13 (69b60415).
+* Local branch `backup/pr-2473-pre-fix` (0a1405c5) is no longer needed and can be deleted.
+* Thread replies use the `🤖 [AI][Claude Code]` prefix. Commits that apply reviewer wording include `Co-authored-by:` trailers.
