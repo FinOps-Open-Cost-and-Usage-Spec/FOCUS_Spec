@@ -40,7 +40,8 @@
 * [ ] Restructure DatasetConfiguration requirements per review.md section 2.1.
 * [ ] Update DatasetConfiguration intro bullet and Example.
 * [x] Revert Version Introduced to 1.4.
-* [ ] Accept attributes_overview row suggestion.
+* [x] Accept attributes_overview row suggestion.
+* [x] Apply review fixes independent of TF-2: detail columns regardless of column selection, documentation condition, documentation accessibility.
 * [ ] Align supporting content terminology and sections per review.md section 4.
 * [ ] Migrate placement alternatives, embedded JSON option, AWS precedent, and privacy notes from research.md to supporting content.
 * [ ] Reply to open review threads and resolve.
