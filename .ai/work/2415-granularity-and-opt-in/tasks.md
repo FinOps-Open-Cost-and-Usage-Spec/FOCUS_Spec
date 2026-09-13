@@ -31,3 +31,16 @@
 * [x] Move PR #2473 out of draft.
 * [x] Resolve stale outdated GitHub review threads.
 * [ ] Requirements model JSON update (deferred until approach is agreed upon).
+
+## Glossary and Alignment Review (2026-09-13)
+
+* [x] Merge `working_draft` into the branch (17 commits behind; glossary anchors now `#datamodel.*`).
+* [ ] Confirm with TF-2: term names, default output as a detail variant, selection granularity, PrincipalId default column set, Ledger interaction.
+* [ ] Add glossary entries: Companion Artifact, Detail Representation, Detail Scope, Detail Variant.
+* [ ] Restructure DatasetConfiguration requirements per review.md section 2.1.
+* [ ] Update DatasetConfiguration intro bullet and Example.
+* [ ] Revert Version Introduced to 1.4.
+* [ ] Accept attributes_overview row suggestion.
+* [ ] Align supporting content terminology and sections per review.md section 4.
+* [ ] Migrate placement alternatives, embedded JSON option, AWS precedent, and privacy notes from research.md to supporting content.
+* [ ] Reply to open review threads and resolve.
