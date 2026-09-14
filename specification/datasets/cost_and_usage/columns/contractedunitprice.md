@@ -49,7 +49,7 @@ The negotiated unit price per Pricing Unit for the *SKU Price* identified by the
 | Dataset                    | [Cost and Usage](#datamodel.costandusage)   |
 | Operating Model Conditions | [Includes Unit Pricing](#operatingmodelconditions.includesunitpricing) |
 | Column type                | Metric                                      |
-| Feature level              | Conditional |
+| Feature level              | Conditional                                 |
 | Allows nulls               | True                                        |
 | Data type                  | Decimal                                     |
 | Value format               | [Numeric Format](#attributes.numericformat) |

@@ -46,7 +46,7 @@ The provider-suggested unit price per Pricing Unit for the *SKU Price* identifie
 | Dataset                    | [Cost and Usage](#datamodel.costandusage)   |
 | Operating Model Conditions | [Includes Unit Pricing](#operatingmodelconditions.includesunitpricing) |
 | Column type                | Metric                                      |
-| Feature level              | Conditional |
+| Feature level              | Conditional                                 |
 | Allows nulls               | True                                        |
 | Data type                  | Decimal                                     |
 | Value format               | [Numeric Format](#attributes.numericformat) |

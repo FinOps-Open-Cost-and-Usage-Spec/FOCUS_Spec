@@ -51,7 +51,7 @@ Service-provider-specified unique identifier that represents a specific *SKU* (e
 | Dataset                    | [Cost and Usage](#datamodel.costandusage) |
 | Operating Model Conditions | [Includes Unit Pricing](#operatingmodelconditions.includesunitpricing) |
 | Column type                | Dimension                                 |
-| Feature level              | Conditional |
+| Feature level              | Conditional                               |
 | Allows nulls               | True                                      |
 | Data type                  | String                                    |
 | Value format               | \<not specified>                          |

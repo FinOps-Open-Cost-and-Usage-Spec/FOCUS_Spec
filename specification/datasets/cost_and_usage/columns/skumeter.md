@@ -38,7 +38,7 @@ Describes the functionality being metered or measured by a particular SKU in a *
 | Dataset                    | [Cost and Usage](#datamodel.costandusage) |
 | Operating Model Conditions | [Includes Unit Pricing](#operatingmodelconditions.includesunitpricing) |
 | Column type                | Dimension                                 |
-| Feature level              | Conditional |
+| Feature level              | Conditional                               |
 | Allows nulls               | True                                      |
 | Data type                  | String                                    |
 | Value format               | \<not specified>                          |

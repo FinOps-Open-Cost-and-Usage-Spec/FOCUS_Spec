@@ -94,7 +94,7 @@ A set of properties of a SKU Price ID which are meaningful and common to all ins
 | Dataset                    | [Cost and Usage](#datamodel.costandusage)       |
 | Operating Model Conditions | [Includes Unit Pricing](#operatingmodelconditions.includesunitpricing) |
 | Column type                | Dimension                                       |
-| Feature level              | Conditional |
+| Feature level              | Conditional                                     |
 | Allows nulls               | True                                            |
 | Data type                  | JSON                                            |
 | Value format               | [Key-Value Format](#attributes.key-valueformat) |
