@@ -21,7 +21,7 @@ ListUnitPrice MUST adhere to the following requirements:
   * ListUnitPrice MUST be denominated in the BillingCurrency.
   * ListUnitPrice MUST represent the provider-suggested unit price per PricingUnit for the *SKU Price* identified by the given SkuPriceId.
   * ListUnitPrice MUST NOT reflect negotiated unit price adjustments for the associated *SKU Price*.
-  * ListUnitPrice MUST NOT reflect any unit price impact conditional on a discount-bearing *commitment program* being applied to the *charge*.
+  * ListUnitPrice MUST NOT reflect any unit price impact dependent on a discount-bearing *commitment program* being applied to the *charge*.
 
 ## Usability Constraints
 
