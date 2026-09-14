@@ -1,6 +1,6 @@
 # List Cost
 
-List Cost represents the cost of a [*charge*](#glossary:charge) based on the provider-suggested pricing. It is the cost before any negotiated unit price adjustments for the associated [*SKU Price*](#glossary:sku-price) or any discount-bearing [*commitment programs*](#glossary:commitment-program) (e.g., [*commitment discount*](#glossary:commitment-discount)) are applied to the *charge*.
+List Cost represents the cost of a [*charge*](#glossary:charge) based on the provider-suggested pricing. It is the cost before any negotiated pricing terms or any discount-bearing [*commitment programs*](#glossary:commitment-program) (e.g., [*commitment discount*](#glossary:commitment-discount)) are applied to the *charge*.
 
 When [List Unit Price](#datamodel.costandusage.listunitprice) and [Pricing Quantity](#datamodel.costandusage.pricingquantity) are provided for the *charge*, List Cost is calculated by multiplying the List Unit Price by the corresponding Pricing Quantity.
 

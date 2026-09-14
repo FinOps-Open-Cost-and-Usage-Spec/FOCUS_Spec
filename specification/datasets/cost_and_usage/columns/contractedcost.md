@@ -1,8 +1,8 @@
 # Contracted Cost
 
-Contracted Cost represents the cost of a [*charge*](#glossary:charge) based on negotiated unit pricing for the associated [*SKU Price*](#glossary:sku-price). It is the cost before any discount-bearing [*commitment programs*](#glossary:commitment-program) (e.g., [*commitment discounts*](#glossary:commitment-discount)) are applied to the *charge*.
+Contracted Cost represents the cost of a [*charge*](#glossary:charge) based on negotiated pricing terms. It is the cost before any discount-bearing [*commitment programs*](#glossary:commitment-program) (e.g., [*commitment discounts*](#glossary:commitment-discount)) are applied to the *charge*.
 
-When [Contracted Unit Price](#datamodel.costandusage.contractedunitprice) and [Pricing Quantity](#datamodel.costandusage.pricingquantity) are provided for the *charge*, Contracted Cost is calculated by multiplying the Contracted Unit Price by the corresponding Pricing Quantity. When no negotiated unit price adjustments apply to the *charge*, Contracted Cost equals [List Cost](#datamodel.costandusage.listcost).
+When [Contracted Unit Price](#datamodel.costandusage.contractedunitprice) and [Pricing Quantity](#datamodel.costandusage.pricingquantity) are provided for the *charge*, Contracted Cost is calculated by multiplying the Contracted Unit Price by the corresponding Pricing Quantity. When no negotiated pricing terms apply to a usage or purchase *charge*, Contracted Cost equals [List Cost](#datamodel.costandusage.listcost).
 
 Contracted Cost is denominated in the [Billing Currency](#datamodel.costandusage.billingcurrency). Contracted Cost is commonly used for calculating savings based on negotiation activities by comparing it with List Cost.
 
@@ -14,7 +14,8 @@ ContractedCost MUST adhere to the following requirements:
 * ContractedCost MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * ContractedCost MUST NOT be null.
 * ContractedCost MUST be denominated in the BillingCurrency.
-* ContractedCost MUST equal [BilledCost](#datamodel.costandusage.billedcost) when [ChargeCategory](#datamodel.costandusage.chargecategory) is "Credit".
+* ContractedCost MUST equal ListCost when [ChargeCategory](#datamodel.costandusage.chargecategory) is "Usage" or "Purchase" and no negotiated pricing terms apply to the *charge*.
+* ContractedCost MUST equal [BilledCost](#datamodel.costandusage.billedcost) when ChargeCategory is "Credit".
 * ContractedCost MUST be calculated based on the ContractedCost of the related *charges* when ChargeCategory is "Tax".
 * ContractedCost MAY differ from BilledCost when ChargeCategory is "Adjustment".
 * ContractedCost MUST equal the product of ContractedUnitPrice and PricingQuantity when ContractedUnitPrice is not null and PricingQuantity is not null.
@@ -33,7 +34,7 @@ Contracted Cost
 
 ## Description
 
-Cost of a *charge* based on negotiated unit pricing.
+Cost of a *charge* based on negotiated pricing terms.
 
 ## Content Constraints
 
