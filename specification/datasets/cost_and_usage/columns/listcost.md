@@ -14,7 +14,7 @@ ListCost MUST adhere to the following requirements:
 * ListCost MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * ListCost MUST NOT be null.
 * ListCost MUST be denominated in the BillingCurrency.
-* When [ChargeCategory](#datamodel.costandusage.chargecategory) is "Usage" or "Purchase", ListCost MUST adhere to the following requirements:
+* When [ChargeCategory](#datamodel.costandusage.chargecategory) is "Usage" or "Purchase" and [ChargeClass](#datamodel.costandusage.chargeclass) is not "Correction", ListCost MUST adhere to the following requirements:
   * ListCost MUST NOT reflect negotiated pricing terms.
   * ListCost MUST NOT reflect any cost impact dependent on a discount-bearing *commitment program* being applied to the *charge*.
 * ListCost MUST equal BilledCost when ChargeCategory is "Credit".
