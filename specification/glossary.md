@@ -276,6 +276,7 @@ A comprehensive list of prices offered by a service provider.
 
 An entity defined in an identity and access management model (e.g., user, service account) to which access to [*resources*](#glossary:resource) or [*services*](#glossary:service) is granted. A principal is distinct from the credential (e.g., API key, access token) presented with an individual request, and from the organizational container (e.g., project, workspace) within which the request runs. The same principal may be associated with multiple credentials.
 
+<a name="glossary:quantity-based-tiered-pricing"><b>Quantity-Based Tiered Pricing</b></a>
 
 A form of [*threshold-based tiered pricing model*](#glossary:threshold-based-tiered-pricing) in which pricing levels are defined by threshold ranges based on [Pricing Quantity](#datamodel.costandusage.pricingquantity).
 
