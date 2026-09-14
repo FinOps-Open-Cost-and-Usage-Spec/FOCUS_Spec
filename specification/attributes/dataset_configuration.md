@@ -6,7 +6,7 @@ Common scenarios where dataset configuration is valuable include:
 
 * **Managing Scale**: Trim large exports to reduce time and cost of data preparation
 * **Reducing Noise**: Tailor datasets for specific workflows (e.g., cost allocation, commitment analysis)
-* **Managing Detail**: Include optional detail for cost areas where detailed attribution is needed (e.g., per-user or per-feature costs for a shared service)
+* **Managing Detail**: Include optional detail for areas of a dataset where detailed attribution is needed (e.g., per-user or per-feature costs for a shared service)
 * **Lowering Barriers**: Strip away technical complexity for spreadsheet users
 * **Enabling Comparison**: Remove custom (`x_`) columns for standardized cross-provider reporting
 
@@ -15,23 +15,25 @@ Common scenarios where dataset configuration is valuable include:
 Dataset conforming to DatasetConfiguration attribute MUST adhere to the following requirements:
 
 * *FOCUS dataset* MUST be configurable to include only a user-defined selection of columns.
-* *FOCUS dataset* MUST adhere to all column-level specifications defined in the FOCUS schema, regardless of the selected configuration (e.g., column selection or detail level).
-* *FOCUS dataset* MUST be configurable to select one detail level for a detail scope when the same data coverage can be delivered at more than one detail level.
-* *FOCUS dataset* MUST be configurable to select one delivery method for all detail scopes or for each detail scope when a selected detail level can be delivered through more than one delivery method.
-* *FOCUS dataset* MUST include the columns documented for a selected detail level, regardless of the user-defined selection of columns.
-* When a detail scope is offered, *FOCUS dataset* detail-scope documentation MUST adhere to the following requirements:
-  * *FOCUS dataset* detail-scope documentation MUST include FOCUS dimension criteria that identify the data coverage of each offered detail scope.
-  * *FOCUS dataset* detail-scope documentation MUST include all offered detail levels for each offered detail scope.
-  * *FOCUS dataset* detail-scope documentation MUST include the columns populated for each offered detail level.
-  * *FOCUS dataset* detail-scope documentation MUST include whether each offered detail level uses [DataGeneratorCalculatedSplitCostAllocationHandling](#attributes.datagenerator-calculatedsplitcostallocationhandling).
-  * *FOCUS dataset* detail-scope documentation MUST include the available delivery methods for each offered detail level.
-  * *FOCUS dataset* detail-scope documentation MUST include the relationship of each delivery method to other delivered [*dataset artifacts*](#glossary:dataset-artifact) or provider-defined companion artifacts that represent the same underlying usage or charges.
-  * *FOCUS dataset* detail-scope documentation MUST include the columns used to relate a provider-defined companion artifact to the corresponding less-detailed dataset artifact when the detail is delivered outside the corresponding dataset artifact.
-  * *FOCUS dataset* detail-scope documentation MUST be accessible to practitioners.
-* *FOCUS dataset* SHOULD represent records with identical values in all delivered dimension columns and non-summable metric columns as a single record.
-* *FOCUS dataset* SHOULD preserve the aggregate value of each summable metric when records are represented as a single record.
+* *FOCUS dataset* MUST adhere to all column-level specifications defined in the FOCUS schema, regardless of the selected configuration (e.g., column selection or detail variant selection).
+* When a [*detail scope*](#glossary:detail-scope) is offered, *FOCUS dataset* MUST adhere to the following requirements:
+  * *FOCUS dataset* MUST be configurable to select each [*detail variant*](#glossary:detail-variant) offered for a *detail scope*.
+  * *FOCUS dataset* MUST include only one *detail variant* for each *detail scope*.
+  * *FOCUS dataset* MUST include the columns documented for a selected *detail variant*, regardless of the user-defined selection of columns.
+  * *FOCUS dataset* MUST be configurable to select one [*detail representation*](#glossary:detail-representation) when more than one *detail representation* is offered for a selected *detail variant*.
+  * *FOCUS dataset* detail scope documentation MUST adhere to the following requirements:
+    * *FOCUS dataset* detail scope documentation MUST include the values of [*FOCUS columns*](#glossary:FOCUS-column) representing [*dimensions*](#glossary:dimension) that identify the records in each *detail scope*.
+    * *FOCUS dataset* detail scope documentation MUST include each *detail variant* offered for each *detail scope*.
+    * *FOCUS dataset* detail scope documentation MUST include the columns populated for each offered *detail variant*.
+    * *FOCUS dataset* detail scope documentation MUST include whether each offered *detail variant* uses [DataGeneratorCalculatedSplitCostAllocationHandling](#attributes.datagenerator-calculatedsplitcostallocationhandling).
+    * *FOCUS dataset* detail scope documentation MUST include each *detail representation* offered for each *detail variant*.
+    * *FOCUS dataset* detail scope documentation MUST include the relationship between records delivered at each *detail representation* and other records representing the same underlying data in [*dataset artifacts*](#glossary:dataset-artifact) or [*companion artifacts*](#glossary:companion-artifact) (e.g., records that replace or supplement other records).
+    * *FOCUS dataset* detail scope documentation MUST include the columns that relate records in a *companion artifact* to the related records in the *dataset artifact* when a *companion artifact* is offered.
+    * *FOCUS dataset* detail scope documentation MUST be accessible to practitioners.
+* *FOCUS dataset* SHOULD represent records with identical values in all delivered [*FOCUS dataset columns*](#glossary:FOCUS-dataset-column), other than *FOCUS dataset columns* representing summable [*metrics*](#glossary:metric), as a single record.
+* *FOCUS dataset* SHOULD preserve the aggregate value of each *FOCUS dataset column* representing a summable *metric* when records are represented as a single record.
 * *FOCUS dataset* MAY offer a default column set.
-* *FOCUS dataset* default column set MUST include all applicable [*FOCUS columns*](#glossary:FOCUS-column) when a default column set is offered.
+* *FOCUS dataset* default column set MUST include all applicable FOCUS columns when a default column set is offered.
 
 ## Example
 
@@ -45,9 +47,9 @@ A practitioner configures their FOCUS Cost and Usage dataset to include only the
 
 Even though columns like `CommitmentDiscountId` and `ResourceId` are excluded, the included cost columns (`BilledCost`, `EffectiveCost`) still reflect commitment discounts correctly. The dataset remains conformant to the FOCUS specification because each included column follows all requirements for that column, including requirements that reference columns not in the dataset.
 
-A provider offers a user-attribution detail scope. The detail-scope documentation identifies its data coverage as records where ServiceName is `"Example AI Service"`. The documentation identifies a `"user"` detail level and the custom `x_UserId` column that is populated for that detail level.
+A data generator offers a detail scope for records where Service Name is "Example AI Service". The detail scope documentation identifies two detail variants for that scope: the default variant, which does not populate per-user detail, and a "user" detail variant, which populates the custom column `x_UserId`.
 
-A practitioner selects the `"user"` detail level for that scope and selects the replacement delivery method. The delivered dataset includes `x_UserId` and replaces a record in the documented data coverage with the detailed records it represents. The configuration mechanism used to select the detail level and delivery method is provider-defined.
+A practitioner selects the "user" detail variant and the expanded detail representation. In the delivered dataset artifact, each record in the detail scope is replaced by one record per user, and the summable metrics of those records sum to the values of the record they replace. The mechanism used to make these selections is not defined by FOCUS.
 
 ## Attribute ID
 

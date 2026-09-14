@@ -35,10 +35,13 @@
 ## Glossary and Alignment Review (2026-09-13)
 
 * [x] Merge `working_draft` into the branch (17 commits behind; glossary anchors now `#datamodel.*`).
-* [ ] Confirm with TF-2: term names, default output as a detail variant, selection granularity, PrincipalId default column set, Ledger interaction.
-* [ ] Add glossary entries: Companion Artifact, Detail Representation, Detail Scope, Detail Variant.
-* [ ] Restructure DatasetConfiguration requirements per review.md section 2.1.
-* [ ] Update DatasetConfiguration intro bullet and Example.
+* [ ] Confirm with TF-2: term names, default output as a detail variant, PrincipalId default column set, Ledger interaction (listed under Open Questions for TF-2 in the PR description).
+* [x] Decide selection granularity: either whole-dataset or per-scope selection satisfies the requirement (author decision 2026-09-13).
+* [x] Add glossary entries: Companion Artifact, Detail Representation, Detail Scope, Detail Variant.
+* [x] Restructure DatasetConfiguration requirements per review.md section 2.1, keeping record minimization at SHOULD, keeping the existing bullet order, and keeping the split cost allocation "uses" wording.
+* [x] Update DatasetConfiguration intro bullet and Example.
+* [ ] Undecided: review.md 2.3 B (sum preservation SHOULD to MUST) and 2.3 C ("contains allocated charges" wording).
+* [ ] Requirements model A-002 text drifts further from the spec ("detail variant selection"); update with the deferred RM work.
 * [x] Revert Version Introduced to 1.4.
 * [x] Accept attributes_overview row suggestion.
 * [x] Apply review fixes independent of TF-2: detail columns regardless of column selection, documentation condition, documentation accessibility.
@@ -50,11 +53,11 @@
 
 Five review threads remain unresolved on PR #2473. All other threads are resolved.
 
-* [ ] #3866728644 (Matt-Cowsert, `dataset_configuration.md` line 19): detail scope, detail level, delivery method, and data coverage are undefined in shipped content. Resolve together with #3867990817 once glossary entries land.
-* [ ] #3867990817 (Matt-Cowsert, TF-2 action item 2026-08-26): add glossary entries sourced from supporting content. Blocked on the TF-2 naming decision (review.md section 1.1).
-* [ ] #3917948166 (ijurica, file-level): rename detail level to detail variant and delivery method to detail representation, with proposed glossary entries. Blocked on the TF-2 naming decision.
-* [ ] #3866728652 (Matt-Cowsert, line 20): whether `for all detail scopes or for each detail scope` requires both selection granularities or accepts either. Needs an author decision; review.md section 2.2 recommends a single configurability bullet with the choice moved to supporting content.
-* [ ] #3866728680 (Matt-Cowsert, line 31): whether `delivered dimension columns` covers custom columns. Fix with the review.md section 2.3 A wording (all delivered FOCUS dataset columns other than summable metrics), which also covers custom metric columns.
+* [ ] #3866728644 (Matt-Cowsert): terms undefined in shipped content. Glossary entries added; reply and leave open until TF-2 confirms the names.
+* [ ] #3867990817 (Matt-Cowsert, TF-2 action item 2026-08-26): glossary entries added under the proposed names; reply and leave open until TF-2 confirms.
+* [ ] #3917948166 (ijurica): renames and glossary entries adopted; reply and leave open until TF-2 confirms.
+* [ ] #3866728652 (Matt-Cowsert): selection-granularity clause removed; either granularity satisfies the requirement. Reply and resolve.
+* [ ] #3866728680 (Matt-Cowsert): merge criterion now uses FOCUS dataset columns, which include custom columns. Reply and resolve.
 
 ### Resolved This Session
 

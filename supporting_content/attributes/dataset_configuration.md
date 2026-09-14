@@ -105,7 +105,7 @@ The following options were developed for the Dataset Configuration attribute for
 
 | Option                     | Status   | Description                                                      |
 |----------------------------|----------|------------------------------------------------------------------|
-| Scoped detail configuration | Included | Select optional detail for documented data coverage |
+| Scoped detail configuration | Included | Select optional detail for a documented detail scope |
 
 ### Future Options
 
@@ -236,31 +236,31 @@ When introduced, time granularity will allow practitioners to choose temporal re
 
 ## Scoped Detail Configuration
 
-Scoped detail configuration allows practitioners to include optional detail for documented areas of cost data. Data generators often omit high-cardinality or privacy-sensitive columns from a default dataset. When such data is available, the data generator documents the data coverage and the columns that are populated, then the practitioner elects to include that detail.
+Scoped detail configuration allows practitioners to include optional detail for documented areas of a dataset. Data generators often omit high-cardinality or privacy-sensitive columns from a default dataset. When such detail is available, the data generator documents the detail scope and the columns populated for each detail variant, then the practitioner elects to include that detail.
 
 The requirements define the resulting dataset and the documentation needed to assess it. They deliberately do not define a request payload, property name, or transport mechanism. A provider can expose the selection through an API parameter, an export setting, a query interface, or another access mechanism.
 
-### Detail Scopes and Data Coverage
+### Detail Scopes and Detail Variants
 
-A detail scope is a documented area of a FOCUS dataset for which a practitioner can select an offered detail level. Its data coverage is expressed using FOCUS dimension criteria so that a practitioner can evaluate the documented coverage against the delivered data. A detail scope can apply to one service, multiple services, or records defined by non-service dimension criteria. For example, a provider might describe the coverage of an AI user-attribution detail scope as records where ServiceName is `"Example AI Service"` and ResourceType is `"ModelInference"`.
+A detail scope is a subset of records in a FOCUS dataset, identified by values of FOCUS columns representing dimensions, for which more than one detail variant is offered. Identifying the records with FOCUS columns lets a practitioner evaluate the documented scope against the delivered data. A detail scope can correspond to one service, multiple services, or records identified without reference to a service. For example, a data generator might identify a detail scope as records where Service Name is "Example AI Service" and Resource Type is "ModelInference".
 
-A detail scope can contain more than one offered detail level, but a configured dataset selects one detail level for that scope. Each detail level documents the columns that are populated when it is selected. Those columns can be FOCUS columns or custom columns. A custom column is appropriate when the detail is not standardized by FOCUS.
+The records delivered for a detail scope when no additional detail is selected are themselves a detail variant. A configured dataset includes one detail variant for each detail scope. Each detail variant documents the columns that are populated when it is selected. Those columns can be FOCUS columns or custom columns. A custom column is appropriate when the detail is not standardized by FOCUS. Detail variants within the same detail scope do not need to form an ordered scale; two variants can populate different columns without one being more detailed than the other.
 
-### Delivery Methods
+### Detail Representations
 
-A delivery method describes how records at a selected detail level are delivered. When a detail level can be delivered through more than one method, the practitioner can select one method either for the complete dataset or separately for each detail scope. The selection mechanism and names for delivery methods are provider-defined.
+A detail representation describes how records at a selected detail variant are delivered in relation to the records for the same detail scope when that variant is not selected. When more than one detail representation is offered for a detail variant, the data generator can offer the selection for the complete dataset or separately for each detail scope. Either approach satisfies the requirement. The selection mechanism and the names of detail representations are not defined by FOCUS.
 
-Common delivery methods include:
+Common detail representations include:
 
 * **Inline**: The selected detail is included in the same dataset records as additional populated columns.
-* **Replacement**: Detailed records replace the less detailed records that represent the same underlying usage or charges.
-* **Separate companion artifact**: Detailed records are delivered outside the less detailed [*dataset artifact*](#glossary:dataset-artifact), such as in a provider-defined file or table.
+* **Expanded**: More detailed records replace the less detailed records that represent the same underlying data in the same [*dataset artifact*](#glossary:dataset-artifact).
+* **Companion artifact**: Detailed records are delivered outside the dataset artifact, such as in a separate file or table.
 
-The documentation for each method identifies its relationship to other delivered dataset artifacts or provider-defined companion artifacts that represent the same underlying usage or charges. When detail is delivered outside the corresponding FOCUS dataset artifact, the companion artifact is provider-defined unless FOCUS defines a standard dataset for that detail. The documentation identifies the column or columns used to relate the companion artifact to the corresponding less-detailed dataset artifact. This enables practitioners to determine whether records replace one another or must be combined without double-counting.
+The documentation for each detail representation identifies the relationship between the records it delivers and other records that represent the same underlying data, whether in dataset artifacts or companion artifacts. A companion artifact is not a dataset artifact of a FOCUS dataset, and its structure is not defined by FOCUS. When FOCUS defines a standard dataset for that detail, the detail is delivered as a dataset artifact of that dataset rather than as a companion artifact. The documentation identifies the column or columns that relate records in a companion artifact to the related records in the dataset artifact. This enables practitioners to determine whether records replace one another or must be combined without double-counting.
 
 ### Record Minimization
 
-Additional detail can increase the number of records substantially. After the delivered dimensions and non-summable metrics are determined, records with identical values in those columns can be represented by one record whose summable metrics preserve the aggregate values of the represented records. This minimizes the dataset without removing the selected detail.
+Additional detail can increase the number of records substantially. After the delivered columns are determined, records with identical values in all delivered columns other than summable metrics can be represented by one record whose summable metrics preserve the aggregate values of the represented records. This applies to custom columns as well as FOCUS columns, so records that differ only in a custom column such as `x_UserId` remain separate. This minimizes the dataset without removing the selected detail.
 
 This aggregation guidance does not replace the aggregation guidance for individual columns. Practitioners must continue to apply the documented aggregation treatment for columns such as PricingQuantity, ListCost, and ContractedCost when calculating a use-case-specific total.
 
@@ -272,9 +272,9 @@ A provider that natively measures usage at the actor grain can offer actor attri
 
 ### Relationship to Split Cost Allocation
 
-Scoped detail configuration is the broader opt-in and documentation mechanism for selecting additional detail. Data Generator-Calculated Split Cost Allocation Handling is a defined subset of that pattern for detail levels that split an origin charge into [*allocated charges*](#glossary:allocated-charge). A detail level can add scoped detail without split cost allocation when the provider already measures the underlying usage or charges at that detail level.
+Scoped detail configuration is the broader opt-in and documentation mechanism for selecting additional detail. Data Generator-Calculated Split Cost Allocation Handling is a defined subset of that pattern for detail variants that split an origin charge into [*allocated charges*](#glossary:allocated-charge). A detail variant can add scoped detail without split cost allocation when the provider already measures the underlying usage or charges at that detail.
 
-Detail-scope documentation identifies whether each offered detail level uses Data Generator-Calculated Split Cost Allocation Handling. This disclosure helps practitioners understand when records are allocated charges and apply the split cost allocation requirements for matching dimensions, matching non-summable metrics, and preserving the sum of summable metrics across the corresponding origin charge.
+Detail scope documentation identifies whether each offered detail variant uses Data Generator-Calculated Split Cost Allocation Handling. This disclosure helps practitioners understand when records are allocated charges and apply the split cost allocation requirements for matching dimensions, matching non-summable metrics, and preserving the sum of summable metrics across the corresponding origin charge.
 
 ## Future Configuration Options
 
@@ -332,7 +332,7 @@ Configuration metadata should describe the options applied when generating a dat
 | Configuration Option | Metadata Needed                                                |
 |----------------------|----------------------------------------------------------------|
 | Column selection | List of included columns (or excluded columns) |
-| Scoped detail configuration | Selected detail levels, documented data coverage, populated columns, split cost allocation disclosure, relationship to related dataset artifacts or provider-defined companion artifacts, and columns used to relate separately delivered detail |
+| Scoped detail configuration | Detail scope, selected detail variant, selected detail representation, populated columns, split cost allocation disclosure, relationship to related dataset artifacts or companion artifacts, and columns that relate companion artifact records |
 | Row aggregation | Whether aggregation is enabled |
 | Time granularity | Selected granularity (hourly, daily, monthly) |
 | FOCUS version | Selected version (already captured in Schema as FocusVersion) |
@@ -366,11 +366,12 @@ The following example illustrates one possible shape for recording selected scop
   "Configuration": {
     "ScopedDetail": [
       {
-        "DataCoverage": {
+        "DetailScope": {
           "ServiceName": "Example AI Service",
           "ResourceType": "ModelInference"
         },
-        "DetailLevel": "user"
+        "DetailVariant": "user",
+        "DetailRepresentation": "Expanded"
       }
     ]
   }

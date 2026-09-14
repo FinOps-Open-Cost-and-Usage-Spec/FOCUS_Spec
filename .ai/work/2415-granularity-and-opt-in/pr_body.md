@@ -1,27 +1,34 @@
 ## Summary
 
-This draft extends the Dataset Configuration attribute with scoped detail configuration for FOCUS 1.5.
+This PR extends the Dataset Configuration attribute with scoped detail configuration for FOCUS 1.5.
 
 Data generators can make optional, higher-cardinality detail available for documented areas of a FOCUS dataset. Practitioners can select the detail needed for those areas without FOCUS defining a request payload, property name, or transport mechanism. A provider can expose the selection through an API parameter, export setting, query interface, or another access mechanism.
 
+The glossary gains four entries: Companion Artifact, Detail Representation, Detail Scope, and Detail Variant. A detail scope is a subset of records, identified by values of FOCUS columns representing dimensions (e.g., ServiceName, ResourceType), for which more than one detail variant is offered. The records delivered when no additional detail is selected count as a detail variant.
+
 The normative requirements establish:
 
-* A FOCUS dataset is configurable to select a detail level when the same documented data coverage can be delivered at more than one detail level.
-* Detail-scope documentation identifies data coverage using FOCUS dimension criteria, such as `ServiceName` and `ResourceType`.
-* Detail-scope documentation identifies the offered detail levels and the columns populated for each level. Those columns can be FOCUS columns or custom columns.
-* Detail-scope documentation identifies whether each offered detail level uses Data Generator-Calculated Split Cost Allocation Handling.
-* A FOCUS dataset is configurable to select a delivery method at the dataset level or detail-scope level when a selected detail level has more than one delivery method.
-* Detail-scope documentation identifies available delivery methods and their relationship to other delivered dataset artifacts or provider-defined companion artifacts that represent the same usage or charges.
-* When detailed records are delivered outside the corresponding FOCUS dataset artifact, the documentation identifies the column or columns used to relate the provider-defined companion artifact to the corresponding less-detailed dataset artifact.
-* Records with identical delivered dimensions and non-summable metrics should be represented as a single record while preserving aggregate summable-metric values.
+* When a detail scope is offered, a FOCUS dataset is configurable to select each offered detail variant and includes only one detail variant for each detail scope.
+* The columns documented for a selected detail variant are included regardless of the user-defined column selection.
+* A FOCUS dataset is configurable to select one detail representation when more than one is offered for a selected detail variant. Whether that selection applies to the complete dataset or to each detail scope is left to the data generator.
+* Detail scope documentation includes the column values that identify each detail scope, the offered detail variants and the columns each populates (FOCUS or custom), and whether each variant uses Data Generator-Calculated Split Cost Allocation Handling.
+* Detail scope documentation includes the offered detail representations, their relationship to other records representing the same data, and the columns that relate companion artifact records to dataset artifact records. The documentation is accessible to practitioners.
+* Records with identical values in all delivered columns other than summable metrics, including custom columns, should be represented as a single record while preserving the aggregate value of each summable metric column.
 
-The supporting content describes illustrative delivery methods:
+The supporting content describes illustrative detail representations:
 
-* Inline detail in the same records
-* Replacement of less-detailed records with detailed records
-* Detail delivered in a separate provider-defined companion artifact, such as a separate file
+* Inline: additional populated columns on the same records
+* Expanded: more detailed records replace the less detailed records in the same dataset artifact
+* Companion artifact: detail delivered in a separate file or table whose structure FOCUS does not define
 
 It also explains that Data Generator-Calculated Split Cost Allocation Handling is a defined subset of scoped detail configuration, and that record-minimization guidance does not replace column-specific aggregation guidance, including the guidance for `PricingQuantity`, `ListCost`, and `ContractedCost`.
+
+### Open Questions for TF-2
+
+* **Term names.** This PR uses detail variant and detail representation, as @ijurica proposed, in place of detail level and delivery method. "Level" implies an ordinal scale and collides with "Feature level" in Content Constraints tables. "Delivery method" sits next to DeliveryHandling's delivery mechanism. The Replacement representation is renamed Expanded because Replacement is a CorrectionHandling correction style. Data coverage is folded into the Detail Scope definition rather than defined separately. These names are the author's proposal; TF-2 can confirm them or choose others.
+* **Default output as a detail variant.** The Detail Variant entry counts the default output as a variant. Without that, a detail scope with only one optional variant would not trigger the configurability requirement, and the opt-in would not be guaranteed. TF-2 can confirm or revise this.
+* **PrincipalId and the default column set.** PrincipalId (#2360) is required when IncludesRequesterAttribution applies, and a default column set must include all applicable FOCUS columns. Together, high-cardinality actor detail is in every offered default column set. Options: exempt columns populated only by a non-default detail variant, tie PrincipalId to a selected detail variant, or accept PrincipalId in the default column set.
+* **Record minimization and Ledger corrections.** In the Ledger correction style, a reversal and its corrected record can share every non-summable value. The record-minimization SHOULD would merge them into a net record and lose the audit trail. Should the requirement carry an exception, or is a supporting content note enough?
 
 ### Type of Change
 
