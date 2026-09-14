@@ -1,6 +1,6 @@
 # List Cost
 
-List Cost represents the cost of a [*charge*](#glossary:charge) based on the provider-suggested pricing. It is the cost before any negotiated unit price adjustments for the associated [*SKU Price*](#glossary:sku-price) or any discount-bearing [*commitment programs*](#glossary:commitment-program) (e.g., [*commitment discount*](#glossary:commitment-discount)) are applied to the *charge*.
+List Cost represents the cost of a [*charge*](#glossary:charge) based on the provider-suggested pricing. It is the cost before any negotiated pricing terms or any discount-bearing [*commitment programs*](#glossary:commitment-program) (e.g., [*commitment discount*](#glossary:commitment-discount)) are applied to the *charge*.
 
 When [List Unit Price](#datamodel.costandusage.listunitprice) and [Pricing Quantity](#datamodel.costandusage.pricingquantity) are provided for the *charge*, List Cost is calculated by multiplying the List Unit Price by the corresponding Pricing Quantity.
 
@@ -14,7 +14,10 @@ ListCost MUST adhere to the following requirements:
 * ListCost MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * ListCost MUST NOT be null.
 * ListCost MUST be denominated in the BillingCurrency.
-* ListCost MUST equal BilledCost when [ChargeCategory](#datamodel.costandusage.chargecategory) is "Credit".
+* When [ChargeCategory](#datamodel.costandusage.chargecategory) is "Usage" or "Purchase" and [ChargeClass](#datamodel.costandusage.chargeclass) is not "Correction", ListCost MUST adhere to the following requirements:
+  * ListCost MUST NOT reflect negotiated pricing terms.
+  * ListCost MUST NOT reflect any cost impact dependent on a discount-bearing *commitment program* being applied to the *charge*.
+* ListCost MUST equal BilledCost when ChargeCategory is "Credit".
 * ListCost MUST be calculated based on the ListCost of the related *charges* when ChargeCategory is "Tax".
 * ListCost MAY differ from BilledCost when ChargeCategory is "Adjustment".
 * ListCost MUST equal the product of ListUnitPrice and PricingQuantity when ListUnitPrice is not null and PricingQuantity is not null.

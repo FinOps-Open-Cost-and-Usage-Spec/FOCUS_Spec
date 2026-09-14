@@ -29,5 +29,6 @@ Operating model conditions are sorted alphabetically by name.
 | [Includes Split Cost Allocation](#operatingmodelconditions.includessplitcostallocation) | Allocation | Operating model includes split cost allocation. |
 | [Includes Sub Accounts](#operatingmodelconditions.includessubaccounts) | Account | Operating model includes a sub account construct. |
 | [Includes Tags](#operatingmodelconditions.includestags) | Allocation | Operating model includes tags. |
+| [Includes Unit Pricing](#operatingmodelconditions.includesunitpricing) | Pricing | Operating model includes unit pricing. |
 | [Includes Usage Measurement](#operatingmodelconditions.includesusagemeasurement) | Billing | Operating model includes the measurement of usage. |
 | [Includes Virtual Currency](#operatingmodelconditions.includesvirtualcurrency) | Pricing | Operating model includes prices in virtual currency. |
