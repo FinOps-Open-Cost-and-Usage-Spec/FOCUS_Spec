@@ -40,8 +40,8 @@ The suggested service-provider-published unit price for a single Pricing Unit of
 | :------------------------- | :------------------------------------------ |
 | Dataset                    | [Cost and Usage](#datamodel.costandusage)   |
 | Operating Model Conditions |                                             |
-| ├─ Must                    | [Includes Virtual Currency](#operatingmodelconditions.includesvirtualcurrency) and [Includes List Unit Prices](#operatingmodelconditions.includeslistunitprices) |
-| └─ Should                  | [Includes Pricing-Billing Currency Differences](#operatingmodelconditions.includespricing-billingcurrencydifferences) and [Includes List Unit Prices](#operatingmodelconditions.includeslistunitprices) |
+| ├─ Must                    | [Includes Virtual Currency](#operatingmodelconditions.includesvirtualcurrency) |
+| └─ Should                  | [Includes Pricing-Billing Currency Differences](#operatingmodelconditions.includespricing-billingcurrencydifferences) |
 | Column type                | Metric                                      |
 | Feature level              | Conditional                                 |
 | Allows nulls               | True                                        |
