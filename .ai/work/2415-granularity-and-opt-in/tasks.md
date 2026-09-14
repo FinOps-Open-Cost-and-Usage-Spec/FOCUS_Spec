@@ -35,7 +35,7 @@
 ## Glossary and Alignment Review (2026-09-13)
 
 * [x] Merge `working_draft` into the branch (17 commits behind; glossary anchors now `#datamodel.*`).
-* [ ] Confirm with TF-2: term names, default output as a detail variant, PrincipalId default column set, Ledger interaction (listed under Open Questions for TF-2 in the PR description).
+* [ ] Confirm with TF-2: term names, default output as a detail variant, companion artifact vs. native dataset (DatasetCompleteness), detail variant vs. dataset instance, PrincipalId default column set, Ledger interaction (listed under Open Questions for TF-2 in the PR description).
 * [x] Decide selection granularity: either whole-dataset or per-scope selection satisfies the requirement (author decision 2026-09-13).
 * [x] Add glossary entries: Companion Artifact, Detail Representation, Detail Scope, Detail Variant.
 * [x] Restructure DatasetConfiguration requirements per review.md section 2.1, keeping record minimization at SHOULD, keeping the existing bullet order, and keeping the split cost allocation "uses" wording.
@@ -56,8 +56,8 @@ Five review threads remain unresolved on PR #2473. All other threads are resolve
 * [ ] #3866728644 (Matt-Cowsert): terms undefined in shipped content. Glossary entries added; reply and leave open until TF-2 confirms the names.
 * [ ] #3867990817 (Matt-Cowsert, TF-2 action item 2026-08-26): glossary entries added under the proposed names; reply and leave open until TF-2 confirms.
 * [ ] #3917948166 (ijurica): renames and glossary entries adopted; reply and leave open until TF-2 confirms.
-* [ ] #3866728652 (Matt-Cowsert): selection-granularity clause removed; either granularity satisfies the requirement. Reply and resolve.
-* [ ] #3866728680 (Matt-Cowsert): merge criterion now uses FOCUS dataset columns, which include custom columns. Reply and resolve.
+* [x] #3866728652 (Matt-Cowsert): selection-granularity clause removed; either granularity satisfies the requirement. Replied and resolved (ad243df2).
+* [x] #3866728680 (Matt-Cowsert): merge criterion now uses FOCUS dataset columns, which include custom columns. Replied and resolved (ad243df2).
 
 ### Resolved This Session
 
