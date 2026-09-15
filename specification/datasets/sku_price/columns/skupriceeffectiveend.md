@@ -12,7 +12,7 @@ SkuPriceEffectiveEnd MUST adhere to the following requirements:
 * SkuPriceEffectiveEnd MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements (e.g., UTC).
 * SkuPriceEffectiveEnd MUST adhere to the following nullability requirements:
   * SkuPriceEffectiveEnd MUST be null when the unit price is applicable without an upper time boundary.
-  * SkuPriceEffectiveEnd MUST NOT be null when the unit price has a designated timestamp beyond which it is no longer applicable.
+  * SkuPriceEffectiveEnd MUST NOT be null when the unit price has a designated timestamp from which it is no longer applicable.
 * When SkuPriceEffectiveStart is not null and SkuPriceEffectiveEnd is not null, SkuPriceEffectiveEnd MUST be chronologically greater than [SkuPriceEffectiveStart](#datamodel.skuprice.skupriceeffectivestart).
 
 ## Column ID
