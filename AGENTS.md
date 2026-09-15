@@ -159,7 +159,7 @@ These forms are not equivalent:
   * Normative references to FOCUS entities MUST use a generic keyword, canonical Entity ID, or dot-notation reference path.
   * Normative references to FOCUS entities MUST NOT use Display Names.
   * Requirements governing a specific dataset MUST use its `DatasetId` as the subject (e.g., `CostAndUsage`).
-  * All other normative subjects referring to a FOCUS dataset concept MUST use `FOCUS dataset`, including when the constraint applies to a dataset specification, dataset instance, or dataset artifact.
+  * All other grammatical subjects referring to a FOCUS dataset concept MUST use `FOCUS dataset`, including when the constraint applies to a dataset specification, dataset instance, or dataset artifact.
   * In non-subject positions, references to dataset concepts MUST use `FOCUS dataset`, `dataset instance`, or `dataset artifact`, according to the precise abstraction intended.
 * **Tone:** Use formal language. Contractions (e.g., *don't, can't*) MUST NOT be used in normative requirements.
 * **Inline Examples:** Any non-normative examples embedded within a requirement MUST be enclosed in parentheses using "e.g." (e.g., `...without lossy transformations (e.g., rounding)`).
