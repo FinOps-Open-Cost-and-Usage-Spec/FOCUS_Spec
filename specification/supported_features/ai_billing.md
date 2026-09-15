@@ -12,6 +12,7 @@ FOCUS enables normalization of usage-based billing data from artificial intellig
 * PricingUnit
 * SkuId
 * SkuMeter
+* SkuPriceDetails
 
 ## Supporting Columns
 
@@ -25,7 +26,6 @@ FOCUS enables normalization of usage-based billing data from artificial intellig
 * ServiceName
 * ServiceProviderName
 * ServiceSubcategory
-* SkuPriceDetails
 * SkuPriceId
 
 ## Example SQL Queries
