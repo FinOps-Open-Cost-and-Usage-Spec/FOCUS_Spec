@@ -2,11 +2,11 @@
 
 ## Problem
 
-`ContractCommitmentDurationType` uses the `[Numeric Value] [Unit]` format with an allowed-unit list spanning Minute through Year. The format permits several non-equivalent encodings of the same purchased term, and before this change no requirement selected among them.
+`ContractCommitmentDurationType` uses the `[Numeric Value] [Unit]` format with time units spanning Minute through Year. The format permits several non-equivalent encodings of the same purchased term, and before this change no requirement selected among them.
 
 For a one-year commitment, "1 Year" and "12 Months" were both conformant. For a one-week commitment, "1 Week" and "7 Days" were both conformant. The two governing requirements were `SHOULD`, and neither expressed a preference for one encoding over another:
 
-* `ContractCommitmentDurationType SHOULD be expressed with a quantity and time unit, where quantity is a positive integer, and time-unit is a standardized unit of time, either singular or plural`
+* `ContractCommitmentDurationType SHOULD use the "[Numeric Value] [Unit]" format`
 * `ContractCommitmentDurationType SHOULD present the unit of time as one of the allowed values.`
 
 Two providers selling an identical one-year term could therefore emit different strings while both conforming. Because the column is a dimension used for grouping, cross-provider aggregation fragments a single logical term into multiple buckets. This affects commitment planning, renewal forecasting, and weighted-average-term reporting.
@@ -25,14 +25,14 @@ Require the largest allowed unit that expresses the purchased term as a whole nu
 
 Selected because:
 
-* It is additive. A generator already emitting the natural form of a term is unaffected, so the change is non-breaking in practice.
+* It does not change scenario coverage and simplifies scenario enablement: a generator already emitting the natural form (the common case in practice) needs no change. A generator emitting a non-natural encoding (e.g., "12 Months") must update to the canonical form, and a consumer filtering or grouping on a value that was not already conformant may need to update its queries. "Non-breaking" is not an accurate description of that impact.
 * It preserves the existing string format, the allowed-value list, the data type, and nullability. No consumer parsing logic changes.
 * It reuses vocabulary already in the column, so no new concepts are introduced to the specification.
 * It resolves the ambiguity at the point where it originates, which is the choice of unit.
 
-Scope decision: reduction applies only across exact conversions between adjacent units (60 minutes to an hour, 24 hours to a day, 7 days to a week, 12 months to a year, 4 quarters to a year). Inexact relationships are deliberately excluded, which is why "365 Days" is not treated as reducible to "1 Year". The existing recommendation that the value reflect the standard duration of the purchased offering already covers that case.
+Scope decision: reduction applies only across exact conversions between adjacent units (60 minutes to an hour, 24 hours to a day, 7 days to a week, 12 months to a year). Inexact relationships are deliberately excluded, which is why "365 Days" is not treated as reducible to "1 Year". The existing recommendation that the value reflect the standard duration of the purchased offering already covers that case.
 
-Open question for reviewers: `Quarter` is not treated as a reduction target, so "3 Months" remains valid and is not required to become "1 Quarter". This preserves the "3 Months" example already present in the column and reflects that `Quarter` is absent from the `UnitFormat` allowed time-based units, appearing only in this column's local list. Reviewers may prefer to either add `Quarter` to the reduction ladder or remove it from the allowed values.
+Resolved by Task Force 1 (2026-09-02): `Quarter`/`Quarters` are dropped entirely, both from this column's allowed values and from the Quarter/Week addition this PR otherwise made to `UnitFormat` (Week stays). A quarter implies alignment with a calendar or fiscal quarter, and three consecutive months do not necessarily fall on those bounds, so treating "3 Months" as reducible to "1 Quarter" would have been incorrect. Dropping `Quarter` also removes the need for a reduction ladder decision on it. The column's unit vocabulary now references UnitFormat's allowed time-based unit names directly instead of duplicating the list locally, so the two lists cannot drift apart again.
 
 ### Option 2: ISO 8601 duration format (not selected)
 
@@ -59,11 +59,8 @@ Not selected because:
 
 ## Requirements model
 
-The corresponding rule is `CCT-ContractCommitmentDurationType-C-008-M`.
+The largest-whole-unit MUST is `CCT-ContractCommitmentDurationType-C-008-M`. It is typed `Dynamic` and carries an empty `Requirement`, matching the adjacent `C-006-O` and `C-007-O` rules: the underlying check is a divisibility test against the next larger allowed unit, and the available `CheckFunctions` provide no divisibility primitive, so the rule cannot be expressed as a static check. Automating it would require a dedicated check function, for example one that parses a quantity and unit and tests reducibility against a conversion table.
 
-It is typed `Dynamic` and carries an empty `Requirement`, matching the adjacent `C-006-O` and `C-007-O` rules. Two reasons:
+## Open items
 
-* Confirming that a value uses the largest whole unit requires the purchased term from the commercial offering, which is not derivable from the dataset alone.
-* The underlying check is a divisibility test against the next larger allowed unit. The available `CheckFunctions` provide no divisibility primitive, and expressing divisibility by 7, 12, 24, or 60 as a regular expression over unbounded integers produces patterns tens of thousands of characters long, which are not reviewable.
-
-Automating this rule would require a dedicated check function, for example one that parses a quantity and unit and tests reducibility against a conversion table.
+* **SKU/offering term consistency is out of scope for this column.** Task Force 1 raised a scenario on 2026-09-01: two terms for the same purchased offering (e.g., a 1-month and a 12-month option) should stay in the same time unit so the largest-whole-unit MUST does not make them harder to compare. That scenario is about comparing purchase options across SKUs, which is `PurchaseDurationType` / SKU Price dataset territory (#2424) — that dataset carries `SkuId` to formally scope "same offering" against. The Contract Commitment dataset records commitments already entered into, not a catalog of options, and has no comparable identifier, and "offering" is not itself a defined FOCUS term. This PR does not add a requirement here; the scenario should be tracked against #2424 instead.

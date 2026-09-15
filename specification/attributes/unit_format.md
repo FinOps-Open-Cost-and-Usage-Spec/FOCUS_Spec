@@ -34,7 +34,7 @@ The normative requirements above refer to the following definitions.
 
 ### Measurement Unit
 
-A standardized expression that describes how quantities in a *FOCUS dataset* are denominated (e.g., `GB`, `Seconds`, `GB-Hours`, `10 GB/Hour`, `Units/3 Months`).
+A standardized expression that describes how quantities in a *FOCUS dataset* are denominated (e.g., `GB`, `Seconds`, `GB-Hours`, `10 GB/Hour`, `Units/2 Weeks`).
 
 ### Base Unit
 
@@ -50,7 +50,7 @@ A [measurement unit](#attributes.unitformat.definitions.measurementunit) that co
 
 ### Ratio Unit
 
-A [measurement unit](#attributes.unitformat.definitions.measurementunit) that expresses one [base unit](#attributes.unitformat.definitions.baseunit) or [compound unit](#attributes.unitformat.definitions.compoundunit) per another using a slash (`/`), optionally including a [denominator quantity](#attributes.unitformat.definitions.denominatorquantity) (e.g., `GB/Hour`, `Units/3 Months`, `Core-Hours/Day`).
+A [measurement unit](#attributes.unitformat.definitions.measurementunit) that expresses one [base unit](#attributes.unitformat.definitions.baseunit) or [compound unit](#attributes.unitformat.definitions.compoundunit) per another using a slash (`/`), optionally including a [denominator quantity](#attributes.unitformat.definitions.denominatorquantity) (e.g., `GB/Hour`, `Units/2 Weeks`, `Core-Hours/Day`).
 
 ### Unit Quantity
 
@@ -58,7 +58,7 @@ A positive integer included in a [measurement unit](#attributes.unitformat.defin
 
 ### Denominator Quantity
 
-A positive integer included in the denominator of a [ratio unit](#attributes.unitformat.definitions.ratiounit), indicating the granularity of the denominator (e.g., `3` in `Units/3 Months`).
+A positive integer included in the denominator of a [ratio unit](#attributes.unitformat.definitions.ratiounit), indicating the granularity of the denominator (e.g., `2` in `Units/2 Weeks`).
 
 ## Base Unit Names
 
@@ -100,7 +100,6 @@ The table below lists allowed time-based base units.
 | Time-based Unit (Singular) | Time-based Unit (Plural) |
 |:---------------------------|:-------------------------|
 | Year                       | Years                    |
-| Quarter                    | Quarters                 |
 | Month                      | Months                   |
 | Week                       | Weeks                    |
 | Day                        | Days                     |
