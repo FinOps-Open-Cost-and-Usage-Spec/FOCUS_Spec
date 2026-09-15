@@ -192,9 +192,12 @@ AI agents generating or reviewing content MUST act as strict technical editors e
   * Notes MUST contain only informative or explanatory material. 
   * Normative conditions and exceptions MUST be expressed as requirements.
 * **Anchors:** Pandoc auto-generates custom heading anchors. DO NOT flag missing HTML `<a name="">` tags.
-* **Markdown Tables:** Select spacing by maximum row width:
-  * Below 120 characters, prefer padding cells to align the vertical pipes.
+* **Markdown Tables:** Select spacing based on the table's natural, unpadded content and source readability:
+  * When rows are similar in length and remain below 120 characters, prefer padding cells to align the vertical pipes.
+  * When one or a few rows are substantially longer than the others, preserve the established padding for the shorter rows and allow the longer rows to extend beyond the aligned width.
+  * Do not expand every row solely to align with an unusually long row.
   * At 120 characters or more, prefer one space after each cell value without alignment padding.
+  * Mixed trailing-pipe positions resulting from the long-row exception are compliant and MUST NOT be flagged solely as a table-alignment issue.
 * **Numbers in Prose:** Apply the following rules:
   * In explanatory prose, spell out numbers zero through nine.
   * In explanatory prose, use numerals beginning at 10. 
