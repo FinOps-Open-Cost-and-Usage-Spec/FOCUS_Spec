@@ -191,7 +191,7 @@ These forms are not equivalent:
   * Link the first remaining occurrence in reading order.
   * Leave all later occurrences unlinked.
   * When no remaining occurrence exists, no link is required.
-  Exceptions:
+* **Linking Rule Exceptions:** Apply the following exceptions:
   * A link whose anchor text is not an entity name or glossary term does not count toward first occurrence.
   * Content Constraints sections link every entity reference.
   * Glossary entries apply this rule independently within each entry.
