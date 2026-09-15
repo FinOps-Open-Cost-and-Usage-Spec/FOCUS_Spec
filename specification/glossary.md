@@ -91,7 +91,7 @@ A service-provider offering that allows a customer to enter into a [*commitment*
 
 <a name="glossary:companion-artifact"><b>Companion Artifact</b></a>
 
-An artifact delivered alongside a [*dataset artifact*](#glossary:dataset-artifact) that contains records at a selected [*detail variant*](#glossary:detail-variant) for a [*detail scope*](#glossary:detail-scope) (e.g., a separate file or table). A companion artifact is not a dataset artifact of a [*FOCUS dataset*](#glossary:FOCUS-dataset), and its structure is not defined by FOCUS.
+An artifact delivered alongside a [*dataset artifact*](#glossary:dataset-artifact) that contains records populated with additional columns for a documented subset of records (e.g., a separate file or table). A companion artifact is not a dataset artifact of a [*FOCUS dataset*](#glossary:FOCUS-dataset), and its structure is not defined by FOCUS.
 
 <a name="glossary:contract"><b>Contract</b></a>
 
@@ -144,18 +144,6 @@ A physical representation of a specific [*dataset instance*](#glossary:dataset-i
 <a name="glossary:delivery-scope"><b>Delivery Scope</b></a>
 
 A dataset-specific boundary or set of boundaries that determines which records are included in a [*dataset artifact*](#glossary:dataset-instance-artifact) delivery. Scopes can be temporal (e.g., a [*billing period*](#glossary:billing-period)) or non-temporal (e.g., a [*contract*](#glossary:contract) or other logical grouping), and multiple scopes may be applicable for a single dataset depending on use case or delivery configuration. Scopes determine how Overwrite and Append *dataset artifact* deliveries, as well as corrections, are applied.
-
-<a name="glossary:detail-representation"><b>Detail Representation</b></a>
-
-The form in which records at a selected [*detail variant*](#glossary:detail-variant) are delivered in relation to the records for the same [*detail scope*](#glossary:detail-scope) when that detail variant is not selected. Examples include additional populated columns on the same records, more detailed records that replace the corresponding records in the same [*dataset artifact*](#glossary:dataset-artifact), and records delivered in a [*companion artifact*](#glossary:companion-artifact).
-
-<a name="glossary:detail-scope"><b>Detail Scope</b></a>
-
-A subset of records in a [*FOCUS dataset*](#glossary:FOCUS-dataset), identified by values of [*FOCUS columns*](#glossary:FOCUS-column) representing [*dimensions*](#glossary:dimension) (e.g., [Service Name](#datamodel.costandusage.servicename), [Resource Type](#datamodel.costandusage.resourcetype)), for which more than one [*detail variant*](#glossary:detail-variant) is offered. A detail scope can correspond to one [*service*](#glossary:service), multiple services, or records identified without reference to a service.
-
-<a name="glossary:detail-variant"><b>Detail Variant</b></a>
-
-An offered set of populated columns, together with the resulting records, for a [*detail scope*](#glossary:detail-scope). The records delivered for a detail scope when no additional detail is selected also constitute a detail variant. Detail variants within the same detail scope can differ in the columns they populate without one being more detailed than another.
 
 <a name="glossary:dimension"><b>Dimension</b></a>
 
