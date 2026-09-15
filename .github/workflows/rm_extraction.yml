@@ -37,9 +37,12 @@ on:
 
 # A rapid series of pushes should leave one run, for the tip.
 concurrency:
-  group: rm-${{ github.event.pull_request.number }}
-  cancel-in-progress: true
-
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+    paths:
+      - 'specification/**'
+      - '.github/workflows/rm_extraction.yml'
 permissions:
   contents: read
   pull-requests: write
