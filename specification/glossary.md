@@ -91,7 +91,7 @@ A service-provider offering that allows a customer to enter into a [*commitment*
 
 <a name="glossary:companion-artifact"><b>Companion Artifact</b></a>
 
-An artifact delivered alongside a [*dataset artifact*](#glossary:dataset-artifact) that contains records populated with additional columns for a documented subset of records (e.g., a separate file or table). A companion artifact is not a dataset artifact of a [*FOCUS dataset*](#glossary:FOCUS-dataset), and its structure is not defined by FOCUS.
+An artifact delivered alongside a [*dataset artifact*](#glossary:dataset-artifact) that contains records populated with specific columns for a documented subset of records (e.g., a separate file or table). A companion artifact is not a dataset artifact of a [*FOCUS dataset*](#glossary:FOCUS-dataset), and its structure is not defined by FOCUS.
 
 <a name="glossary:contract"><b>Contract</b></a>
 

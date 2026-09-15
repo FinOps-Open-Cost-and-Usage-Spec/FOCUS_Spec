@@ -83,7 +83,7 @@ Based on applicability, configuration options may be split into separate attribu
 
 | Attribute | Options | Feature Level |
 |-----------|---------|---------------|
-| **DatasetConfiguration** | Column selection, additional columns for matching records, row aggregation, time granularity, schema versioning, row filtering | None (all datasets) |
+| **DatasetConfiguration** | Column selection, column population for matching records, row aggregation, time granularity, schema versioning, row filtering | None (all datasets) |
 | **DatasetDelivery** | Scheduling, incremental refresh, overwrite vs append, partitioning | Files or Tables |
 | **DatasetFileHandling** | File format, compression | Files only |
 
@@ -105,7 +105,7 @@ The following options were developed for the Dataset Configuration attribute for
 
 | Option                     | Status   | Description                                                      |
 |----------------------------|----------|------------------------------------------------------------------|
-| Additional columns for matching records | Included | Select additional columns populated for records matching documented criteria |
+| Column population for matching records | Included | Select which columns are populated for records matching documented criteria |
 
 ### Future Options
 
@@ -234,25 +234,25 @@ When introduced, time granularity will allow practitioners to choose temporal re
 * **Monthly**: Will be recommended (SHOULD) - useful for executive reporting and billing reconciliation
 * **Hourly**: Will be required when applicable (MUST) - when the dataset includes costs priced at an hourly or lower grain, hourly granularity will need to be available to preserve pricing accuracy
 
-## Populating Additional Columns for Matching Records
+## Populating Specific Columns for Matching Records
 
-A data generator can populate additional columns for records that match documented criteria, instead of requiring every record in a dataset to carry that detail. Data generators often omit high-cardinality or privacy-sensitive columns from a default dataset; when the underlying detail is available, the data generator documents which records qualify and what those extra columns are, and the practitioner elects to include them.
+A data generator can populate specific columns for records that match documented criteria, instead of requiring every record in a dataset to carry that detail. Data generators often leave high-cardinality or privacy-sensitive columns unpopulated by default; when the underlying detail is available, the data generator documents which records qualify and which columns are populated for them, and the practitioner elects to include them.
 
 The requirements define the resulting dataset and the documentation needed to assess it. They deliberately do not define a request payload, property name, or transport mechanism. A provider can expose the selection through an API parameter, an export setting, a query interface, or another access mechanism.
 
-### Matching Criteria and Additional Columns
+### Matching Criteria and Populated Columns
 
 Criteria identify a subset of records in a FOCUS dataset using the values of FOCUS columns representing dimensions. Identifying records this way lets a practitioner evaluate the documented criteria against the delivered data. Criteria can correspond to one service, multiple services, or records identified without reference to a service. For example, a data generator might document criteria as records where Service Name is "Example AI Service" and Resource Type is "ModelInference".
 
-A data generator can offer more than one set of additional columns for the same criteria; the records delivered when no additional columns are selected are themselves a set. A configured dataset includes one set of additional columns for each documented criteria. Each set documents the columns that are populated when it is selected. Those columns can be FOCUS columns or custom columns. A custom column is appropriate when the detail is not standardized by FOCUS. Sets offered for the same criteria do not need to form an ordered scale; two sets can populate different columns without one being more detailed than the other.
+A data generator can offer more than one set of columns for the same criteria; the columns populated when no specific columns are selected are themselves a set. A configured dataset includes one set for each documented criteria. Each set documents the columns that are populated when it is selected. Those columns can be FOCUS columns or custom columns. A custom column is appropriate when the detail is not standardized by FOCUS. Sets offered for the same criteria do not need to form an ordered scale; two sets can populate different columns without one being more detailed than the other.
 
 ### Delivery Options
 
-A delivery option describes how records populated with a selected set of additional columns are delivered in relation to the records for the same criteria when that set is not selected. When more than one delivery option is offered, the data generator can offer the selection for the complete dataset or separately for each set of criteria. Either approach satisfies the requirement. The selection mechanism and the names of delivery options are not defined by FOCUS.
+A delivery option describes how records populated under a selected set are delivered in relation to the records for the same criteria when that set is not selected. When more than one delivery option is offered, the data generator can offer the selection for the complete dataset or separately for each set of criteria. Either approach satisfies the requirement. The selection mechanism and the names of delivery options are not defined by FOCUS.
 
 Common delivery options include:
 
-* **Inline**: The additional columns are included in the same dataset records as additional populated columns.
+* **Inline**: The specific columns are populated on the same dataset records.
 * **Expanded**: More detailed records replace the less detailed records that represent the same underlying data in the same [*dataset artifact*](#glossary:dataset-artifact).
 * **Companion artifact**: Detailed records are delivered outside the dataset artifact, such as in a separate file or table.
 
@@ -260,7 +260,7 @@ The documentation for each delivery option identifies the relationship between t
 
 ### Record Minimization
 
-Additional columns can increase the number of records substantially. After the delivered columns are determined, records with identical values in all delivered columns other than summable metrics can be represented by one record whose summable metrics preserve the aggregate values of the represented records. This applies to custom columns as well as FOCUS columns, so records that differ only in a custom column such as `x_UserId` remain separate. This minimizes the dataset without removing the selected detail.
+Populating specific columns can increase the number of records substantially. After the delivered columns are determined, records with identical values in all delivered columns other than summable metrics can be represented by one record whose summable metrics preserve the aggregate values of the represented records. This applies to custom columns as well as FOCUS columns, so records that differ only in a custom column such as `x_UserId` remain separate. This minimizes the dataset without removing the selected detail.
 
 This aggregation guidance does not replace the aggregation guidance for individual columns. Practitioners must continue to apply the documented aggregation treatment for columns such as PricingQuantity, ListCost, and ContractedCost when calculating a use-case-specific total.
 
@@ -272,9 +272,9 @@ A provider that natively measures usage at the actor grain can populate actor-le
 
 ### Relationship to Split Cost Allocation
 
-Populating additional columns for matching records is the broader opt-in and documentation mechanism for offering detail. Data Generator-Calculated Split Cost Allocation Handling is a defined subset of that pattern for additional columns that split an origin charge into [*allocated charges*](#glossary:allocated-charge). A set of additional columns can be offered without split cost allocation when the provider already measures the underlying usage or charges at that detail.
+Populating specific columns for matching records is the broader opt-in and documentation mechanism for offering detail. Data Generator-Calculated Split Cost Allocation Handling is a defined subset of that pattern for columns that split an origin charge into [*allocated charges*](#glossary:allocated-charge). A set of columns can be offered without split cost allocation when the provider already measures the underlying usage or charges at that detail.
 
-Criteria documentation identifies whether each offered set of additional columns uses Data Generator-Calculated Split Cost Allocation Handling. This disclosure helps practitioners understand when records are allocated charges and apply the split cost allocation requirements for matching dimensions, matching non-summable metrics, and preserving the sum of summable metrics across the corresponding origin charge.
+Criteria documentation identifies whether each offered set uses Data Generator-Calculated Split Cost Allocation Handling. This disclosure helps practitioners understand when records are allocated charges and apply the split cost allocation requirements for matching dimensions, matching non-summable metrics, and preserving the sum of summable metrics across the corresponding origin charge.
 
 ## Future Configuration Options
 
@@ -310,7 +310,7 @@ Major cloud providers support various configuration options:
 
 ## Configuration Metadata
 
-The Dataset Configuration attribute requires documentation for offered sets of additional columns, but it does not yet define structured metadata for all selected configuration options. This section evaluates what changes would be needed to support structured configuration metadata within the existing metadata structure.
+The Dataset Configuration attribute requires documentation for offered sets of columns, but it does not yet define structured metadata for all selected configuration options. This section evaluates what changes would be needed to support structured configuration metadata within the existing metadata structure.
 
 ### Current Metadata Structure
 
@@ -332,7 +332,7 @@ Configuration metadata should describe the options applied when generating a dat
 | Configuration Option | Metadata Needed                                                |
 |----------------------|----------------------------------------------------------------|
 | Column selection | List of included columns (or excluded columns) |
-| Additional columns for matching records | Matching criteria, selected set of additional columns, selected delivery option, populated columns, split cost allocation disclosure, relationship to related dataset artifacts or companion artifacts, and columns that relate companion artifact records |
+| Column population for matching records | Matching criteria, selected set of columns, selected delivery option, populated columns, split cost allocation disclosure, relationship to related dataset artifacts or companion artifacts, and columns that relate companion artifact records |
 | Row aggregation | Whether aggregation is enabled |
 | Time granularity | Selected granularity (hourly, daily, monthly) |
 | FOCUS version | Selected version (already captured in Schema as FocusVersion) |
@@ -356,15 +356,15 @@ Since Schema already tracks structural information (columns, data types) and tri
 
 Option A (extending Dataset Instance) is the most natural fit. The configuration options describe how a specific dataset artifact was shaped, which aligns with Dataset Instance's purpose. FOCUS version selection is already partially addressed by Schema's `FocusVersion` property.
 
-### Example Additional Columns Metadata
+### Example Column Population Metadata
 
-The following example illustrates one possible shape for recording a selection of additional columns in dataset instance metadata. The field names are illustrative and would need task force review before becoming part of the formal metadata schema.
+The following example illustrates one possible shape for recording a column population selection in dataset instance metadata. The field names are illustrative and would need task force review before becoming part of the formal metadata schema.
 
 ```json
 {
   "DatasetInstanceId": "178151-dbad145e-178151-dbad145e-178151",
   "Configuration": {
-    "AdditionalColumns": [
+    "PopulatedColumns": [
       {
         "Criteria": {
           "ServiceName": "Example AI Service",
