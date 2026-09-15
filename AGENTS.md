@@ -125,7 +125,20 @@ AI agents generating or reviewing content MUST act as strict technical editors e
   * Each atomic requirement is derived from one lowest-level normative bullet together with all applicable constraints inherited from its ancestor bullets.
 * **Allowed Subjects:** MUST be schema-level entities (e.g., `FOCUS dataset`, `BilledCost`). Actors (e.g., Data Generator) and Processes MUST NOT be subjects.
 * **State vs. Behavior:** Describe a state, not behavior. Prohibited process verbs: *ensure, handle, support, provide, alter, prefix, document* (though they MAY appear in conditional clauses).
-* **Conditional Phrasing:** Use ONLY: `when / unless / only when / except when`. (DO NOT use `if`).
+* **Requirement Applicability Conditions:** Apply the following rules:
+  * A clause that determines when a normative obligation applies MUST use `when`, `unless`, `only when`, or `except when`.
+  * A phrase that restricts the subject, object, value, or property governed by an otherwise unconditional obligation is a descriptive modifier, not a requirement applicability condition.
+  * Before reporting a conditional-phrasing violation, identify the BCP-14 obligation and demonstrate that the disputed phrase changes when that obligation applies.
+  * A suggested correction MUST preserve the logical scope of the original requirement. It MUST NOT convert a descriptive modifier into a condition on the entire obligation.
+  * `if` MUST NOT introduce a requirement applicability condition.
+Examples:
+* Applicability condition: `ListUnitPrice MUST be null when SkuPriceId is null.`
+  The `when` clause determines when the obligation applies.
+* Descriptive modifier: `ListUnitPrice MUST NOT reflect any unit price impact dependent on a discount-bearing commitment program being applied to the charge.`
+  `dependent on ...` identifies the prohibited kind of impact. The `MUST NOT` obligation applies unconditionally.
+These forms are not equivalent:
+* `MUST NOT reflect any impact dependent on X` prohibits impacts whose provenance depends on X.
+* `MUST NOT reflect any impact when X` conditions the entire prohibition on X and may prohibit unrelated impacts while X is true.
 * **Mathematical Accuracy:** `and/or` is permitted ONLY in mathematical validations or conditional clauses.
 * **Comparison Terminology:** Select comparison terminology according to the semantics of the comparison:
   * use `equal` for numeric comparisons;
