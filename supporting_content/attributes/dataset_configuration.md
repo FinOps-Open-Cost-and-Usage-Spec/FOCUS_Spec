@@ -105,7 +105,7 @@ The following options were developed for the Dataset Configuration attribute for
 
 | Option                     | Status   | Description                                                      |
 |----------------------------|----------|------------------------------------------------------------------|
-| Column population for matching records | Included | Select which columns are populated for records matching documented criteria |
+| Column population for matching records | Included | Select which columns are populated for records matching criteria |
 
 ### Future Options
 
@@ -236,15 +236,15 @@ When introduced, time granularity will allow practitioners to choose temporal re
 
 ## Populating Specific Columns for Matching Records
 
-A data generator can populate specific columns for records that match documented criteria, instead of requiring every record in a dataset to carry that detail. Data generators often leave high-cardinality or privacy-sensitive columns unpopulated by default; when the underlying detail is available, the data generator documents which records qualify and which columns are populated for them, and the practitioner elects to include them.
+A data generator can populate specific columns for records that match specific criteria, instead of requiring every record in a dataset to carry that detail. Data generators often leave high-cardinality or privacy-sensitive columns unpopulated by default; when the underlying detail is available, the data generator documents which records qualify and which columns are populated for them, and the practitioner elects to include them.
 
 The requirements define the resulting dataset and the documentation needed to assess it. They deliberately do not define a request payload, property name, or transport mechanism. A provider can expose the selection through an API parameter, an export setting, a query interface, or another access mechanism.
 
 ### Matching Criteria and Populated Columns
 
-Criteria identify a subset of records in a FOCUS dataset using the values of FOCUS columns representing dimensions. Identifying records this way lets a practitioner evaluate the documented criteria against the delivered data. Criteria can correspond to one service, multiple services, or records identified without reference to a service. For example, a data generator might document criteria as records where Service Name is "Example AI Service" and Resource Type is "ModelInference".
+Criteria identify a subset of records in a FOCUS dataset using the values of FOCUS columns representing dimensions. Identifying records this way lets a practitioner evaluate criteria against the delivered data. Criteria can correspond to one service, multiple services, or records identified without reference to a service. For example, a data generator might document criteria as records where Service Name is "Example AI Service" and Resource Type is "ModelInference".
 
-A data generator can offer more than one set of columns for the same criteria; the columns populated when no specific columns are selected are themselves a set. A configured dataset includes one set for each documented criteria. Each set documents the columns that are populated when it is selected. Those columns can be FOCUS columns or custom columns. A custom column is appropriate when the detail is not standardized by FOCUS. Sets offered for the same criteria do not need to form an ordered scale; two sets can populate different columns without one being more detailed than the other.
+A data generator can offer more than one set of columns for the same criteria; the columns populated when no specific columns are selected are themselves a set. A configured dataset includes one set of columns for each set of criteria. Each set documents the columns that are populated when it is selected. Those columns can be FOCUS columns or custom columns. A custom column is appropriate when the detail is not standardized by FOCUS. Sets offered for the same criteria do not need to form an ordered scale; two sets can populate different columns without one being more detailed than the other.
 
 ### Delivery Options
 

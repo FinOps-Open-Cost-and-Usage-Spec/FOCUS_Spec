@@ -16,9 +16,8 @@ Dataset conforming to DatasetConfiguration attribute MUST adhere to the followin
 
 * *FOCUS dataset* MUST be configurable to include only a user-defined selection of columns.
 * *FOCUS dataset* MUST adhere to all column-level specifications defined in the FOCUS schema, regardless of the selected configuration.
-* *FOCUS dataset* MAY populate specific columns for records matching documented criteria.
-* When *FOCUS dataset* populates specific columns for records matching documented criteria, *FOCUS dataset* MUST adhere to the following requirements:
-  * *FOCUS dataset* MUST be configurable to select one set of columns for records matching the same documented criteria when more than one set is offered.
+* When *FOCUS dataset* populates specific columns for records matching criteria, *FOCUS dataset* MUST adhere to the following requirements:
+  * *FOCUS dataset* MUST be configurable to select one set of columns for records matching the same criteria when more than one set is offered.
   * *FOCUS dataset* MUST include the columns in a selected set, regardless of the user-defined selection of columns.
   * *FOCUS dataset* MUST be configurable to select how a selected set is delivered when more than one delivery option is documented.
   * Criteria documentation MUST adhere to the following requirements:
