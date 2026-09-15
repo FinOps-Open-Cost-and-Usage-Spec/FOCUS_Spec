@@ -29,7 +29,6 @@ Operating model conditions are sorted alphabetically by name.
 | [Includes Quantity Tier Pricing](#operatingmodelconditions.includesquantitytierpricing) | Pricing | Operating model includes quantity-based tier pricing. |
 | [Includes Regions](#operatingmodelconditions.includesregions) | Resource | Operating model includes deploying resources or services within a region. |
 | [Includes Resource Type Assignment](#operatingmodelconditions.includesresourcetypeassignment) | Resource | Operating model includes categorizing resources by type. |
-| [Includes SKU Prices](#operatingmodelconditions.includesskuprices) | Pricing | Operating model includes SKU prices. |
 | [Includes Split Cost Allocation](#operatingmodelconditions.includessplitcostallocation) | Allocation | Operating model includes split cost allocation. |
 | [Includes Sub Accounts](#operatingmodelconditions.includessubaccounts) | Account | Operating model includes a sub account construct. |
 | [Includes Tags](#operatingmodelconditions.includestags) | Allocation | Operating model includes tags. |

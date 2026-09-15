@@ -22,7 +22,7 @@ DataModel MUST adhere to the following requirements:
 * DataModel MUST include [BillingPeriod](#datamodel.billingperiod) when the [*operating model*](#glossary:operating-model) [includes payable invoices](#operatingmodelconditions.includespayableinvoices).
 * DataModel MUST include [ContractCommitment](#datamodel.contractcommitment) when the *operating model* [includes contract commitments](#operatingmodelconditions.includescontractcommitments).
 * DataModel MUST include [InvoiceDetail](#datamodel.invoicedetail) when the *operating model* [includes payable invoices](#operatingmodelconditions.includespayableinvoices).
-* DataModel MUST include [SkuPrice](#datamodel.skuprice) when the *operating model* [includes SKU prices](#operatingmodelconditions.includesskuprices).
+* DataModel MUST include [SkuPrice](#datamodel.skuprice) when the *operating model* [includes unit pricing](#operatingmodelconditions.includesunitpricing).
 
 ## Data Model ID<!--SkipTOC-->
 
