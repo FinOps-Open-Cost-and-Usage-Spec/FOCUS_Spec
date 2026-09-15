@@ -1,6 +1,6 @@
 # Examples: AI Billing
 
-The following examples illustrate how a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) represents usage-based billing for foundation model APIs, where consumption is measured in tokens rather than in the compute, storage, or networking units common to infrastructure services. Provider and model names below are illustrative.
+The following examples illustrate how a [Cost and Usage](#datamodel.costandusage) [*FOCUS dataset*](#glossary:FOCUS-dataset) represents usage-based billing for foundation model APIs, where consumption is measured in tokens rather than in the compute, storage, or networking units common to infrastructure services. Provider and model names below are illustrative.
 
 ## Baseline Scenario
 
@@ -20,10 +20,13 @@ Note the following column usage common to the scenarios below:
 
 > **Note:** The examples in this section populate a `PrincipalId` column to identify the actor associated with each charge. That column is proposed and not yet part of the specification.
 
-The following examples illustrate three foundation model billing scenarios. A model served by a cloud provider as its own first-party service is covered in the *Examples: AI Model Identity* section. Charges for a model and its underlying infrastructure appearing on the same invoice are outside the scope of this section.
+The following examples illustrate foundation model billing scenarios across direct billing, cloud marketplace resale, a cloud provider first-party offering, and commitment drawdown. Charges for a model and its underlying infrastructure appearing on the same invoice are outside the scope of this section.
 
 | Example | Invoice Issuer | Service Provider | Focus |
 | :--- | :--- | :--- | :--- |
 | Per-Token Foundation Model API | Solora AI | Solora AI | Model developer bills the customer directly |
 | Multi-Model Usage | Solora AI | Solora AI | Multiple models on one invoice, each priced separately |
 | Foundation Model via CSP Marketplace | Aura Web | Solora AI | Cloud provider invoices for a third-party model |
+| CSP-Served Foundation Model (First-Party) | Aura Web | Aura Web | Cloud provider bills for a first-party generative AI service |
+| Drawdown via Prepayment | Solora AI | Solora AI | Commitment purchase with subsequent token drawdown |
+| Multi-Model Invoice via CSP Marketplace | LatticeScale | Solora AI | Multiple models and cache meters on one marketplace invoice |
