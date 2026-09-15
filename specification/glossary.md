@@ -89,10 +89,6 @@ A feature of [*commitment discounts*](#glossary:commitment-discount) that may fu
 
 A service-provider offering that allows a customer to enter into a [*commitment*](#glossary:commitment). Commitment programs include [*commitment discounts*](#glossary:commitment-discount), [*capacity reservations*](#glossary:capacity-reservation), and other constructs that require advance spend or usage agreements.
 
-<a name="glossary:companion-artifact"><b>Companion Artifact</b></a>
-
-An artifact delivered alongside a [*dataset artifact*](#glossary:dataset-artifact) that contains records populated with specific columns for a documented subset of records (e.g., a separate file or table). A companion artifact is not a dataset artifact of a [*FOCUS dataset*](#glossary:FOCUS-dataset), and its structure is not defined by FOCUS.
-
 <a name="glossary:contract"><b>Contract</b></a>
 
 A collection of agreed terms between a service provider and a customer.
