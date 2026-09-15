@@ -23,6 +23,11 @@
 # and be both before matching the baseline. Folding four commands into RM extracted costs no
 # diagnostic detail, because the summary table names the first stage that did not pass.
 #
+# This workflow has been intentionally developed to run on only local PRs and forks will miss RM  
+# execution. There is a low number of PRs that come in via fork and having fork PRs run this workflow was a 
+# lot more tricky. I see this as a low issue at this stage as the TF-RM is unlikely to need all PRs to have a RM 
+# match. We can review this later once we decide a more strict policy on RM labels.
+#
 # A PR earns none of the three today.
 name: Requirements Model
 
