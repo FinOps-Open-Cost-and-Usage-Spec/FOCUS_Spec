@@ -9,6 +9,7 @@ For this scenario, Acme Corp consumes a Solora AI model through a cloud provider
 
 Note the following details in the example dataset:
 
+* This dataset is a cache-only slice of a larger workload: uncached input and output token rows are omitted so the example can focus on cache read and cache write metering.
 * [InvoiceIssuerName](#datamodel.costandusage.invoiceissuername) is "Aura Web" while [ServiceProviderName](#datamodel.costandusage.serviceprovidername) and [HostProviderName](#datamodel.costandusage.hostprovidername) are "Solora AI", which matches the participating entity arrangement described in [Participating Entity Identification](#appendix.examples:participatingentityidentification) for a service resold through a marketplace.
 * Attributing spend to the model developer remains possible even though the charge settles through the cloud provider, which matters when the same model is consumed through more than one channel.
 * Cache reads and cache writes are metered separately, using [SkuMeter](#datamodel.costandusage.skumeter) values of "Cache Read Input Tokens" and "Cache Write Input Tokens", each with its own [SkuId](#datamodel.costandusage.skuid) and rate. The TokenType property of [SkuPriceDetails](#datamodel.costandusage.skupricedetails) labels each row "CacheRead" or "CacheWrite", so cache operations can be grouped by token type independently of the meter name.
