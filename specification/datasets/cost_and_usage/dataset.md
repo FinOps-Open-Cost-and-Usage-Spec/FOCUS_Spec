@@ -193,7 +193,7 @@ CostAndUsage MUST adhere to the following requirements:
 * CostAndUsage *FOCUS columns* MUST conform to [FocusColumnHandling](#attributes.focuscolumnhandling) requirements.
 * CostAndUsage *FOCUS columns* MUST conform to [NullHandling](#attributes.nullhandling) requirements.
 * CostAndUsage *custom columns* MUST conform to [CustomColumnHandling](#attributes.customcolumnhandling) requirements.
-* CostAndUsage documentation MUST adhere to the following requirements:
+* When the *operating model* [includes requester attribution](#operatingmodelconditions.includesrequesterattribution), CostAndUsage documentation MUST adhere to the following requirements:
   * CostAndUsage documentation MUST include the use cases in which [CredentialId](#datamodel.costandusage.credentialid) is not null.
   * CostAndUsage documentation MUST include the use cases in which [PrincipalId](#datamodel.costandusage.principalid) is not null.
   * CostAndUsage documentation MUST include the use cases in which [RequesterDetails](#datamodel.costandusage.requesterdetails) is not null.

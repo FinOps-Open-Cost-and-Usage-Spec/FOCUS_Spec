@@ -40,29 +40,27 @@
             "description": "Descriptive attributes of the requester level named by the entry key",
             "properties": {
                 "Type": {
-                    "type": [
-                        "string",
-                        "null"
-                    ],
+                    "type": "string",
                     "description": "The kind of entity the entry describes (e.g., User, Service Account, API Key, Session)"
                 },
                 "Name": {
-                    "type": [
-                        "string",
-                        "null"
-                    ],
+                    "type": "string",
                     "description": "Readable display name for the entity the entry describes"
                 },
                 "Email": {
-                    "type": [
-                        "string",
-                        "null"
-                    ],
+                    "type": "string",
                     "description": "Email address associated with the entity the entry describes"
                 }
             },
             "patternProperties": {
                 "^x_[A-Z][a-zA-Z0-9]*$": {
+                    "type": [
+                        "string",
+                        "number",
+                        "boolean",
+                        "object",
+                        "array"
+                    ],
                     "description": "Custom data generator-defined properties prefixed with x_ in PascalCase format"
                 }
             },
