@@ -15,8 +15,8 @@ CredentialId MUST adhere to the following requirements:
   * CredentialId MUST be null when the *credential* associated with a *charge* has no published identifier.
   * CredentialId MUST NOT be null when the *credential* associated with a *charge* has a published identifier.
 * When CredentialId is not null, CredentialId MUST adhere to the following requirements:
-  * CredentialId MUST be a unique identifier within the [*service provider*](#glossary:service-provider).
   * CredentialId MUST be an identifier that references a *credential*.
+  * CredentialId MUST be a unique identifier within the [*service provider*](#glossary:service-provider).
   * CredentialId MUST NOT contain a *credential* value that authenticates a request (e.g., an API key string, an access token, a password).
 
 ## Column ID
