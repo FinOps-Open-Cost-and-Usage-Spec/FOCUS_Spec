@@ -14,13 +14,13 @@ Common scenarios where dataset configuration is valuable include:
 
 Dataset conforming to DatasetConfiguration attribute MUST adhere to the following requirements:
 
-* *FOCUS dataset* MUST be configurable to include only a user-defined selection of columns, except when a column is documented for a selected [*detail variant*](#glossary:detail-variant).
+* *FOCUS dataset* MUST be configurable to include only a user-defined selection of columns.
 * *FOCUS dataset* MUST adhere to all column-level specifications defined in the FOCUS schema, regardless of the selected configuration (e.g., column selection or detail variant selection).
 * When a [*detail scope*](#glossary:detail-scope) is offered, *FOCUS dataset* MUST adhere to the following requirements:
-  * *FOCUS dataset* MUST be configurable to select each *detail variant* offered for a *detail scope*.
+  * *FOCUS dataset* MUST be configurable to select each [*detail variant*](#glossary:detail-variant) offered for a *detail scope*.
   * *FOCUS dataset* MUST include only one *detail variant* for each *detail scope*.
   * *FOCUS dataset* MUST preserve the sum of each [*FOCUS dataset column*](#glossary:FOCUS-dataset-column) representing a summable [*metric*](#glossary:metric) for the records in a *detail scope* across all offered *detail variants*.
-  * *FOCUS dataset* MUST include the columns documented for a selected *detail variant*, regardless of the user-defined selection of columns.
+  * *FOCUS dataset* user-defined selection of columns MUST include the columns documented for a selected *detail variant*.
   * *FOCUS dataset* MUST be configurable to select one [*detail representation*](#glossary:detail-representation) when more than one *detail representation* is offered for a selected *detail variant*.
   * *FOCUS dataset* detail scope documentation MUST adhere to the following requirements:
     * *FOCUS dataset* detail scope documentation MUST include the values of [*FOCUS columns*](#glossary:FOCUS-column) representing [*dimensions*](#glossary:dimension) that identify the records in each *detail scope*.

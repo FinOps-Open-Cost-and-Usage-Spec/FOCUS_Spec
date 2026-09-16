@@ -37,6 +37,7 @@
 * [x] Merge `working_draft` into the branch (17 commits behind; glossary anchors now `#datamodel.*`).
 * [ ] Confirm with TF-2: term names, default output as a detail variant, detail scope vs. delivery scope, changing a detail variant within a delivery scope, companion artifact vs. native dataset (DatasetCompleteness), detail variant vs. dataset instance, column selection vs. detail variant columns, PrincipalId default column set, Ledger interaction (listed under Open Questions for TF-2 in the PR description).
 * [x] Author decision 2026-09-15: detail variants are not required to be nested (glossary), and summable metric sums are preserved across the variants of a detail scope (new MUST bullet).
+* [x] Author decision 2026-09-16: detail variant columns are part of the user-defined selection of columns, not an exception to it. Supersedes the 2026-09-15 exception wording; the 1.4 column-selection requirement is restored unchanged, so A-001 no longer drifts.
 * [x] Author decision 2026-09-15: no new requirement for a dataset column list. The existing ColumnDefinition requirement already covers columns added by detail variants and excludes companion artifact columns; supporting content explains the interaction.
 * [x] Decide selection granularity: either whole-dataset or per-scope selection satisfies the requirement (author decision 2026-09-13).
 * [x] Add glossary entries: Companion Artifact, Detail Representation, Detail Scope, Detail Variant.
