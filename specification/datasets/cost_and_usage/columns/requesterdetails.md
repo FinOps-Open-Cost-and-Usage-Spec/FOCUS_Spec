@@ -32,6 +32,8 @@ RequesterDetailsValue MUST adhere to the following requirements:
 
 * RequesterDetailsValue MUST conform to the [RequesterDetailsValueSchema](#schemas.costandusage.requesterdetailsvalueschema) JSON Schema.
 * RequesterDetailsValue MUST NOT include entries that are not applicable to the *requester* associated with the *charge*.
+* RequesterDetailsValue MUST NOT include an entry whose Entry.key is "Principal" when PrincipalId is null.
+* RequesterDetailsValue MUST NOT include an entry whose Entry.key is "Credential" when CredentialId is null.
 
 RequesterDetailsValue entries MUST adhere to the following requirements:
 
@@ -86,7 +88,7 @@ This specification defines the *principal* and the *credential* because they are
 
 <div class="h7-nonindex">Entry Placement</div>
 
-Attributes describing the *principal* identified by PrincipalId belong in the `value` of the `Principal` entry. Attributes describing the *credential* identified by CredentialId belong in the `value` of the `Credential` entry. An entry is present only when attributes for it are published, so a *charge* with a *principal* and no identified *credential* carries a `Principal` entry alone.
+Attributes describing the *principal* identified by PrincipalId belong in the `value` of the `Principal` entry. Attributes describing the *credential* identified by CredentialId belong in the `value` of the `Credential` entry. An entry is present only when attributes for it are published, and the `Principal` and `Credential` entries only when PrincipalId or CredentialId, respectively, is not null. A *charge* with a *principal* and no identified *credential* therefore carries a `Principal` entry alone, and a *principal* or *credential* with no published identifier has no entry.
 
 When PrincipalId or CredentialId is populated but few descriptive attributes are published, the corresponding entry carries the attributes that are available. The identity and access management model that defines an entity also defines what kind of entity it is, so a data generator publishing opaque identifiers without display names or email addresses carries a `Principal` or `Credential` entry whose `value` holds `Type` alone (e.g., `{"Type": "Service Account"}`).
 
