@@ -20,7 +20,7 @@ Dataset conforming to DatasetConfiguration attribute MUST adhere to the followin
   * *FOCUS dataset* MUST be configurable to select each [*detail variant*](#glossary:detail-variant) offered for a *detail scope*.
   * *FOCUS dataset* MUST include only one *detail variant* for each *detail scope*.
   * *FOCUS dataset* MUST preserve the sum of each [*FOCUS dataset column*](#glossary:FOCUS-dataset-column) representing a summable [*metric*](#glossary:metric) for the records in a *detail scope* across all offered *detail variants*.
-  * *FOCUS dataset* user-defined selection of columns MUST include the columns documented for a selected *detail variant*.
+  * *FOCUS dataset* user-defined selection of columns MUST include the columns documented for a selected *detail variant* that are not populated when no additional detail is selected.
   * *FOCUS dataset* MUST be configurable to select one [*detail representation*](#glossary:detail-representation) when more than one *detail representation* is offered for a selected *detail variant*.
   * *FOCUS dataset* detail scope documentation MUST adhere to the following requirements:
     * *FOCUS dataset* detail scope documentation MUST include the values of [*FOCUS columns*](#glossary:FOCUS-column) representing [*dimensions*](#glossary:dimension) that identify the records in each *detail scope*.
