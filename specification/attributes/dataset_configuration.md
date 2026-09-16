@@ -19,6 +19,7 @@ Dataset conforming to DatasetConfiguration attribute MUST adhere to the followin
 * When a [*detail scope*](#glossary:detail-scope) is offered, *FOCUS dataset* MUST adhere to the following requirements:
   * *FOCUS dataset* MUST be configurable to select each [*detail variant*](#glossary:detail-variant) offered for a *detail scope*.
   * *FOCUS dataset* MUST include only one *detail variant* for each *detail scope*.
+  * *FOCUS dataset* MUST preserve the sum of each [*FOCUS dataset column*](#glossary:FOCUS-dataset-column) representing a summable [*metric*](#glossary:metric) for the records in a *detail scope* across all offered *detail variants*.
   * *FOCUS dataset* MUST include the columns documented for a selected *detail variant*, regardless of the user-defined selection of columns.
   * *FOCUS dataset* MUST be configurable to select one [*detail representation*](#glossary:detail-representation) when more than one *detail representation* is offered for a selected *detail variant*.
   * *FOCUS dataset* detail scope documentation MUST adhere to the following requirements:
@@ -30,7 +31,7 @@ Dataset conforming to DatasetConfiguration attribute MUST adhere to the followin
     * *FOCUS dataset* detail scope documentation MUST include the relationship between records delivered at each *detail representation* and other records representing the same underlying data in [*dataset artifacts*](#glossary:dataset-artifact) or [*companion artifacts*](#glossary:companion-artifact) (e.g., records that replace or supplement other records).
     * *FOCUS dataset* detail scope documentation MUST include the columns that relate records in a *companion artifact* to the related records in the *dataset artifact* when a *companion artifact* is offered.
     * *FOCUS dataset* detail scope documentation MUST be accessible to practitioners.
-* *FOCUS dataset* SHOULD represent records with identical values in all delivered [*FOCUS dataset columns*](#glossary:FOCUS-dataset-column), other than *FOCUS dataset columns* representing summable [*metrics*](#glossary:metric), as a single record.
+* *FOCUS dataset* SHOULD represent records with identical values in all delivered *FOCUS dataset columns*, other than *FOCUS dataset columns* representing summable *metrics*, as a single record.
 * *FOCUS dataset* SHOULD preserve the aggregate value of each *FOCUS dataset column* representing a summable *metric* when records are represented as a single record.
 * *FOCUS dataset* MAY offer a default column set.
 * *FOCUS dataset* default column set MUST include all applicable FOCUS columns when a default column set is offered.

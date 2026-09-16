@@ -155,7 +155,7 @@ A subset of records in a [*FOCUS dataset*](#glossary:FOCUS-dataset), identified 
 
 <a name="glossary:detail-variant"><b>Detail Variant</b></a>
 
-An offered set of populated columns, together with the resulting records, for a [*detail scope*](#glossary:detail-scope). The records delivered for a detail scope when no additional detail is selected also constitute a detail variant. Detail variants within the same detail scope can differ in the columns they populate without one being more detailed than another.
+An offered option for a [*detail scope*](#glossary:detail-scope) that determines which columns are populated and the records that result. The records delivered for a detail scope when no additional detail is selected also constitute a detail variant. A detail scope's variants do not have to be a sequence from less to more detail. For any two, each can populate columns the other does not. Detail variants for the same detail scope represent the same underlying charges, so each summable [*metric*](#glossary:metric) sums to the same value for every variant.
 
 <a name="glossary:dimension"><b>Dimension</b></a>
 
