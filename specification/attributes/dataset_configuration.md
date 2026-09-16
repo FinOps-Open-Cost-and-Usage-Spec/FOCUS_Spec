@@ -34,7 +34,7 @@ Dataset conforming to DatasetConfiguration attribute MUST adhere to the followin
 * *FOCUS dataset* SHOULD represent records with identical values in all delivered *FOCUS dataset columns*, other than *FOCUS dataset columns* containing summable numeric values (e.g., costs and quantities), as a single record.
 * *FOCUS dataset* SHOULD preserve the aggregate value of each *FOCUS dataset column* containing summable numeric values when records are represented as a single record.
 * *FOCUS dataset* MAY offer a default column set.
-* *FOCUS dataset* default column set MUST include all applicable FOCUS columns when a default column set is offered.
+* *FOCUS dataset* default column set MUST include all applicable *FOCUS columns* when a default column set is offered.
 
 ## Example
 
