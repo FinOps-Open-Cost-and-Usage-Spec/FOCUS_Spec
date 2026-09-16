@@ -48,7 +48,9 @@ A practitioner configures their FOCUS Cost and Usage dataset to include only the
 
 Even though columns like `CommitmentDiscountId` and `ResourceId` are excluded, the included cost columns (`BilledCost`, `EffectiveCost`) still reflect commitment discounts correctly. The dataset remains conformant to the FOCUS specification because each included column follows all requirements for that column, including requirements that reference columns not in the dataset.
 
-A data generator offers a detail scope for records where Service Name is "Example AI Service". The detail scope documentation identifies two detail variants for that scope: the default variant, which does not populate per-user detail, and a "user" detail variant, which populates the custom column `x_UserId`.
+A data generator offers a detail scope for records where Service Name is "Example AI Service". The detail scope documentation identifies three detail variants for that scope: the default variant, which does not populate per-user detail; a "user" detail variant, which populates the custom column `x_UserId`; and a "feature" detail variant, which populates the custom column `x_FeatureName`.
+
+Neither the "user" nor the "feature" detail variant is more detailed than the other, since each populates a column the other does not. The records in the detail scope sum to the same totals for each summable metric under either selection.
 
 A practitioner selects the "user" detail variant and the expanded detail representation. In the delivered dataset artifact, each record in the detail scope is replaced by one record per user, and the summable metrics of those records sum to the values of the record they replace. The mechanism used to make these selections is not defined by FOCUS.
 
