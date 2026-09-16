@@ -280,7 +280,7 @@ A provider that natively measures usage at the actor grain can offer actor attri
 
 ### Relationship to Split Cost Allocation
 
-Scoped detail configuration is the broader opt-in and documentation mechanism for selecting additional detail. Data Generator-Calculated Split Cost Allocation Handling is a defined subset of that pattern for detail variants that split an origin charge into [*allocated charges*](#glossary:allocated-charge). A detail variant can add scoped detail without split cost allocation when the provider already measures the underlying usage or charges at that detail.
+Scoped detail configuration is the broader opt-in and documentation mechanism for selecting additional detail. Data Generator-Calculated Split Cost Allocation Handling is a defined subset of that pattern for detail variants that split an origin charge into [*allocated charges*](#glossary:allocated-charge). A detail variant can add scoped detail without split cost allocation when the provider already measures the underlying data at that detail.
 
 Detail scope documentation identifies whether each offered detail variant uses Data Generator-Calculated Split Cost Allocation Handling. This disclosure helps practitioners understand when records are allocated charges and apply the split cost allocation requirements for matching dimensions, matching non-summable metrics, and preserving the sum of summable metrics across the corresponding origin charge.
 
