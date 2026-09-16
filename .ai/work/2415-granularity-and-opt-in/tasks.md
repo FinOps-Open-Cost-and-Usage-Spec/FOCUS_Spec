@@ -44,7 +44,7 @@
 * [x] Restructure DatasetConfiguration requirements per review.md section 2.1, keeping record minimization at SHOULD, keeping the existing bullet order, and keeping the split cost allocation "uses" wording.
 * [x] Update DatasetConfiguration intro bullet and Example.
 * [ ] Undecided: review.md 2.3 B (sum preservation SHOULD to MUST) and 2.3 C ("contains allocated charges" wording).
-* [ ] Requirements model A-002 text drifts further from the spec ("detail variant selection"); update with the deferred RM work.
+* [ ] Requirements model catch-up belongs to #2460 (Add all 1.5 spec changes to the Requirements Model), not this PR. Repo practice is that feature PRs change only the specification and dedicated PRs update the model (precedent: #2049 for 1.4). Scope this PR contributes: A-002 text is cosmetically stale ("user's chosen configuration (e.g., column selection)" vs. "selected configuration (e.g., column selection or detail variant selection)"); 15 leaf requirements have no rule (5 detail scope, 8 detail scope documentation, 2 record minimization); the two grouping bullets need composite or Conditions modeling; and A-000's Items and Dependencies need extending. A-001 is no longer stale.
 * [x] Revert Version Introduced to 1.4.
 * [x] Accept attributes_overview row suggestion.
 * [x] Apply review fixes independent of TF-2: detail columns regardless of column selection, documentation condition, documentation accessibility.
