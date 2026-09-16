@@ -4,14 +4,15 @@
 
 The following requirements were developed as part of the Dataset Configuration attribute but deferred from the initial specification to keep the scope focused on column selection (#1091). These may be integrated as normative requirements in a separate change.
 
-### Row aggregation
+### Row Aggregation
 
-* A FOCUS dataset SHOULD sum metric columns by default when the selected dimension columns result in rows with identical values.
+The Dataset Configuration requirements establish a default expectation that duplicate records are aggregated after the delivered detail is determined. The ability to select an alternative aggregation behavior remains deferred.
+
 * A FOCUS dataset SHOULD allow opting in or out of row aggregation (summing metrics).
   * A FOCUS dataset MUST sum metric column values when rows are aggregated.
   * A FOCUS dataset SHOULD use case-insensitive matching when aggregating rows.
 
-### Time granularity
+### Time Granularity
 
 * A FOCUS dataset MUST allow selecting the time granularity based on ChargePeriodStart, when available.
   * A FOCUS dataset MUST allow selecting daily granularity.
@@ -19,12 +20,12 @@ The following requirements were developed as part of the Dataset Configuration a
   * A FOCUS dataset SHOULD allow selecting monthly granularity.
   * A FOCUS dataset MUST sum metric columns based on selected dimension columns with identical values when time granularity is changed.
 
-### FOCUS version selection
+### FOCUS Version Selection
 
 * A FOCUS dataset SHOULD allow selecting the FOCUS version.
   * A FOCUS dataset MUST NOT add or remove columns when a specific FOCUS version is selected.
 
-### Row filtering
+### Row Filtering
 
 * A FOCUS dataset SHOULD allow filtering rows by column values.
   * A FOCUS dataset MUST use case-insensitive matching when filtering rows.
@@ -82,7 +83,7 @@ Based on applicability, configuration options may be split into separate attribu
 
 | Attribute | Options | Feature Level |
 |-----------|---------|---------------|
-| **DatasetConfiguration** | Column selection, row aggregation, time granularity, schema versioning, row filtering | None (all datasets) |
+| **DatasetConfiguration** | Column selection, scoped detail configuration, row aggregation, time granularity, schema versioning, row filtering | None (all datasets) |
 | **DatasetDelivery** | Scheduling, incremental refresh, overwrite vs append, partitioning | Files or Tables |
 | **DatasetFileHandling** | File format, compression | Files only |
 
@@ -97,6 +98,14 @@ The following options were developed for the Dataset Configuration attribute. Co
 | Time granularity  | Deferred | Choose temporal resolution (daily, monthly, hourly) |
 | Schema versioning | Deferred | Select which schema version to use                  |
 | Row filtering     | Deferred | Filter rows by column values                        |
+
+### Developed for 1.5
+
+The following options were developed for the Dataset Configuration attribute for 1.5.
+
+| Option                     | Status   | Description                                                      |
+|----------------------------|----------|------------------------------------------------------------------|
+| Scoped detail configuration | Included | Select optional detail for a documented detail scope |
 
 ### Future Options
 
@@ -225,6 +234,48 @@ When introduced, time granularity will allow practitioners to choose temporal re
 * **Monthly**: Will be recommended (SHOULD) - useful for executive reporting and billing reconciliation
 * **Hourly**: Will be required when applicable (MUST) - when the dataset includes costs priced at an hourly or lower grain, hourly granularity will need to be available to preserve pricing accuracy
 
+## Scoped Detail Configuration
+
+Scoped detail configuration allows practitioners to include optional detail for documented areas of a dataset. Data generators often omit high-cardinality or privacy-sensitive columns from a default dataset. When such detail is available, the data generator documents the detail scope and the columns populated for each detail variant, then the practitioner elects to include that detail.
+
+The requirements define the resulting dataset and the documentation needed to assess it. They deliberately do not define a request payload, property name, or transport mechanism. A provider can expose the selection through an API parameter, an export setting, a query interface, or another access mechanism.
+
+### Detail Scopes and Detail Variants
+
+A detail scope is a subset of records in a FOCUS dataset, identified by values of FOCUS columns representing dimensions, for which more than one detail variant is offered. Identifying the records with FOCUS columns lets a practitioner evaluate the documented scope against the delivered data. A detail scope can correspond to one service, multiple services, or records identified without reference to a service. For example, a data generator might identify a detail scope as records where Service Name is "Example AI Service" and Resource Type is "ModelInference".
+
+The records delivered for a detail scope when no additional detail is selected are themselves a detail variant. A configured dataset includes one detail variant for each detail scope. Each detail variant documents the columns that are populated when it is selected. Those columns can be FOCUS columns or custom columns. A custom column is appropriate when the detail is not standardized by FOCUS. Detail variants within the same detail scope do not need to form an ordered scale; two variants can populate different columns without one being more detailed than the other.
+
+### Detail Representations
+
+A detail representation describes how records at a selected detail variant are delivered in relation to the records for the same detail scope when that variant is not selected. When more than one detail representation is offered for a detail variant, the data generator can offer the selection for the complete dataset or separately for each detail scope. Either approach satisfies the requirement. The selection mechanism and the names of detail representations are not defined by FOCUS.
+
+Common detail representations include:
+
+* **Inline**: The selected detail is included in the same dataset records as additional populated columns.
+* **Expanded**: More detailed records replace the less detailed records that represent the same underlying data in the same [*dataset artifact*](#glossary:dataset-artifact).
+* **Companion artifact**: Detailed records are delivered outside the dataset artifact, such as in a separate file or table.
+
+The documentation for each detail representation identifies the relationship between the records it delivers and other records that represent the same underlying data, whether in dataset artifacts or companion artifacts. A companion artifact is not a dataset artifact of a FOCUS dataset, and its structure is not defined by FOCUS. When FOCUS defines a standard dataset for that detail, the detail is delivered as a dataset artifact of that dataset rather than as a companion artifact. The documentation identifies the column or columns that relate records in a companion artifact to the related records in the dataset artifact. This enables practitioners to determine whether records replace one another or must be combined without double-counting.
+
+### Record Minimization
+
+Additional detail can increase the number of records substantially. After the delivered columns are determined, records with identical values in all delivered columns other than summable metrics can be represented by one record whose summable metrics preserve the aggregate values of the represented records. This applies to custom columns as well as FOCUS columns, so records that differ only in a custom column such as `x_UserId` remain separate. This minimizes the dataset without removing the selected detail.
+
+This aggregation guidance does not replace the aggregation guidance for individual columns. Practitioners must continue to apply the documented aggregation treatment for columns such as PricingQuantity, ListCost, and ContractedCost when calculating a use-case-specific total.
+
+### Actor Attribution
+
+Actor-level detail is useful for shared platforms and pass-through services where the service account that initiates usage is not the entity that should bear the cost. For example, an AI gateway service account may initiate all LLM requests while costs should be attributed to the calling team, application, or user.
+
+A provider that natively measures usage at the actor grain can offer actor attribution as scoped detail without requiring split cost allocation. When a provider starts from a coarser [*origin charge*](#glossary:origin-charge) and distributes it across actors or workloads using an allocation method, the actor-attribution detail uses [Data Generator-Calculated Split Cost Allocation Handling](#attributes.datagenerator-calculatedsplitcostallocationhandling).
+
+### Relationship to Split Cost Allocation
+
+Scoped detail configuration is the broader opt-in and documentation mechanism for selecting additional detail. Data Generator-Calculated Split Cost Allocation Handling is a defined subset of that pattern for detail variants that split an origin charge into [*allocated charges*](#glossary:allocated-charge). A detail variant can add scoped detail without split cost allocation when the provider already measures the underlying usage or charges at that detail.
+
+Detail scope documentation identifies whether each offered detail variant uses Data Generator-Calculated Split Cost Allocation Handling. This disclosure helps practitioners understand when records are allocated charges and apply the split cost allocation requirements for matching dimensions, matching non-summable metrics, and preserving the sum of summable metrics across the corresponding origin charge.
+
 ## Future Configuration Options
 
 ### Format Selection
@@ -259,7 +310,7 @@ Major cloud providers support various configuration options:
 
 ## Configuration Metadata
 
-The Dataset Configuration attribute requires that FOCUS datasets include metadata describing the selected configuration options (`DatasetConfiguration-A-003-M`). This section evaluates what changes would be needed to support this requirement within the existing metadata structure.
+The Dataset Configuration attribute requires documentation for offered scoped detail configurations, but it does not yet define structured metadata for all selected configuration options. This section evaluates what changes would be needed to support structured configuration metadata within the existing metadata structure.
 
 ### Current Metadata Structure
 
@@ -274,13 +325,14 @@ The FOCUS metadata system has four sections:
 
 None of these sections currently capture dataset configuration selections.
 
-### What Needs to be Tracked
+### What Needs to Be Tracked
 
 Configuration metadata should describe the options applied when generating a dataset artifact:
 
 | Configuration Option | Metadata Needed                                                |
 |----------------------|----------------------------------------------------------------|
 | Column selection | List of included columns (or excluded columns) |
+| Scoped detail configuration | Detail scope, selected detail variant, selected detail representation, populated columns, split cost allocation disclosure, relationship to related dataset artifacts or companion artifacts, and columns that relate companion artifact records |
 | Row aggregation | Whether aggregation is enabled |
 | Time granularity | Selected granularity (hourly, daily, monthly) |
 | FOCUS version | Selected version (already captured in Schema as FocusVersion) |
@@ -288,21 +340,43 @@ Configuration metadata should describe the options applied when generating a dat
 
 ### Possible Approaches
 
-#### Option A: Extend Dataset Instance metadata
+#### Option A: Extend Dataset Instance Metadata
 
 Add a `Configuration` object to DatasetInstance containing the selected options. This is the most natural fit since DatasetInstance already describes the nature of the dataset artifact, and configuration options directly shape what the artifact contains.
 
-#### Option B: New metadata section
+#### Option B: New Metadata Section
 
 Create a dedicated `Configuration` metadata section alongside Data Generator, Dataset Instance, Recency, and Schema. This provides clear separation but adds a new top-level concept.
 
-#### Option C: Extend Schema metadata
+#### Option C: Extend Schema Metadata
 
 Since Schema already tracks structural information (columns, data types) and triggers a new entry when the dataset structure changes, configuration changes could be captured alongside. However, Schema is focused on the data structure, not on what subset was selected.
 
 ### Recommendation
 
 Option A (extending Dataset Instance) is the most natural fit. The configuration options describe how a specific dataset artifact was shaped, which aligns with Dataset Instance's purpose. FOCUS version selection is already partially addressed by Schema's `FocusVersion` property.
+
+### Example Scoped Detail Metadata
+
+The following example illustrates one possible shape for recording selected scoped detail in dataset instance metadata. The field names are illustrative and would need task force review before becoming part of the formal metadata schema.
+
+```json
+{
+  "DatasetInstanceId": "178151-dbad145e-178151-dbad145e-178151",
+  "Configuration": {
+    "ScopedDetail": [
+      {
+        "DetailScope": {
+          "ServiceName": "Example AI Service",
+          "ResourceType": "ModelInference"
+        },
+        "DetailVariant": "user",
+        "DetailRepresentation": "Expanded"
+      }
+    ]
+  }
+}
+```
 
 ### Estimated Scope
 
