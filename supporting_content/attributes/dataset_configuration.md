@@ -264,7 +264,7 @@ The columns populated for a selected detail variant are part of the delivered da
 
 Columns that appear only in a companion artifact are not part of a dataset artifact, so they are not in that column list. When the same column is also populated in the dataset artifact, such as under the inline detail representation, it is provided in the dataset artifact and is included.
 
-Changing the selected detail variant for a detail scope adds or removes columns in the delivered dataset artifact. Schema metadata requires a new Schema collection object whenever the structure of the dataset instance artifacts changes, so each variant change produces a new Schema collection object.
+Changing the selected detail variant for a detail scope adds or removes columns in the delivered dataset artifact under the inline and expanded detail representations. Schema metadata requires a new Schema collection object whenever the structure of the dataset instance artifacts changes, so those variant changes produce a new Schema collection object. A variant whose detail is delivered only in a companion artifact leaves the dataset artifact structure unchanged.
 
 ### Record Minimization
 
