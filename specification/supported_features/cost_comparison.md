@@ -109,7 +109,7 @@ HAVING ABS(SUM(EffectiveCost) - SUM(BilledCost)) > 0.01
 
 ### Cache Cost Efficiency for Token-Metered SKUs
 
-Measures what prompt caching saved as a share of what the same input tokens would have cost uncached, in the same form as the discount effectiveness query above, using the FOCUS-defined [SkuPriceDetails](#datamodel.costandusage.skupricedetails) properties TokenDirection, CacheAction, and ModelId. The cache-affected cost is the EffectiveCost of every input token row, including cache reads and cache writes, plus any charge for retaining cached content, which is metered in token-hours and carries neither property. The uncached-equivalent cost is the total input PricingQuantity multiplied by the unit price of the uncached input row for the same model, using ContractedUnitPrice where a negotiated price applies. The query assumes the input rows for a model share one PricingUnit, takes the highest uncached unit price where a model has more than one, and returns no row for a model with no uncached input in the period, since the base rate is then not in the dataset. Because ANSI SQL does not define a standard for parsing JSON, the query uses the BigQuery Standard SQL `JSON_VALUE` function; similar functions are available in all major SQL engines.
+Measures what prompt caching saved as a share of what the same input tokens would have cost uncached, in the same form as the discount effectiveness query above, using the FOCUS-defined [SkuPriceDetails](#datamodel.costandusage.skupricedetails) properties TokenDirection, TokenCacheAction, and ModelId. The cache-affected cost is the EffectiveCost of every input token row, including cache reads and cache writes, plus any charge for retaining cached content, which is metered in token-hours and carries neither property. The uncached-equivalent cost is the total input PricingQuantity multiplied by the unit price of the uncached input row for the same model, using ContractedUnitPrice where a negotiated price applies. The query assumes the input rows for a model share one PricingUnit, takes the highest uncached unit price where a model has more than one, and returns no row for a model with no uncached input in the period, since the base rate is then not in the dataset. Because ANSI SQL does not define a standard for parsing JSON, the query uses the BigQuery Standard SQL `JSON_VALUE` function; similar functions are available in all major SQL engines.
 
 ```sql
 WITH TokenRows AS (
@@ -117,7 +117,7 @@ WITH TokenRows AS (
     ServiceProviderName,
     JSON_VALUE(SkuPriceDetails, '$.ModelId') AS ModelId,
     JSON_VALUE(SkuPriceDetails, '$.TokenDirection') AS TokenDirection,
-    JSON_VALUE(SkuPriceDetails, '$.CacheAction') AS CacheAction,
+    JSON_VALUE(SkuPriceDetails, '$.TokenCacheAction') AS TokenCacheAction,
     ConsumedUnit,
     PricingQuantity,
     ListUnitPrice,
@@ -134,7 +134,7 @@ UncachedRate AS (
     ModelId,
     MAX(COALESCE(ContractedUnitPrice, ListUnitPrice)) AS UncachedUnitPrice
   FROM TokenRows
-  WHERE TokenDirection = 'Input' AND CacheAction = 'Uncached'
+  WHERE TokenDirection = 'Input' AND TokenCacheAction = 'Uncached'
   GROUP BY ServiceProviderName, ModelId
 ),
 InputSide AS (

@@ -50,14 +50,14 @@ GROUP BY
 
 ### Cache Hit Rate for Token-Metered SKUs
 
-Computes the share of input tokens served from a prompt cache, per workload, using the TokenDirection and CacheAction properties. The denominator is every input token row, so it holds whether or not a service provider meters cache writes as their own charge. Where a service provider emits cache read rows but no uncached input row, the denominator loses that bucket and the ratio overstates the hit rate.
+Computes the share of input tokens served from a prompt cache, per workload, using the TokenDirection and TokenCacheAction properties. The denominator is every input token row, so it holds whether or not a service provider meters cache writes as their own charge. Where a service provider emits cache read rows but no uncached input row, the denominator loses that bucket and the ratio overstates the hit rate.
 
 ```sql
 SELECT
   ServiceProviderName,
   SubAccountId,
   Tags,
-  COALESCE(SUM(CASE WHEN JSON_VALUE(SkuPriceDetails, '$.CacheAction') = 'Read'
+  COALESCE(SUM(CASE WHEN JSON_VALUE(SkuPriceDetails, '$.TokenCacheAction') = 'Read'
                     THEN ConsumedQuantity END), 0)
     / NULLIF(SUM(ConsumedQuantity), 0) AS CacheHitRate
 FROM focus_data_table
