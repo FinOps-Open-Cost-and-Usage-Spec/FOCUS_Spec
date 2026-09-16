@@ -258,6 +258,14 @@ Common detail representations include:
 
 The documentation for each detail representation identifies the relationship between the records it delivers and other records that represent the same underlying data, whether in dataset artifacts or companion artifacts. A companion artifact is not a dataset artifact of a FOCUS dataset, and its structure is not defined by FOCUS. When FOCUS defines a standard dataset for that detail, the detail is delivered as a dataset artifact of that dataset rather than as a companion artifact. The documentation identifies the column or columns that relate records in a companion artifact to the related records in the dataset artifact. This enables practitioners to determine whether records replace one another or must be combined without double-counting.
 
+### Column Lists and Schema Metadata
+
+The columns populated for a selected detail variant are part of the delivered dataset artifact, so they appear in the Schema metadata like any other column. ColumnDefinition contains one object for every column provided in the dataset instance artifacts that reference the parent Schema object. A practitioner reading the Schema metadata therefore sees a single column list covering the user-defined column selection together with the columns contributed by every selected detail variant across all detail scopes, with one entry for a column that more than one detail scope contributes.
+
+Columns that appear only in a companion artifact are not part of a dataset artifact, so they are not in that column list. When the same column is also populated in the dataset artifact, such as under the inline detail representation, it is provided in the dataset artifact and is included.
+
+Changing the selected detail variant for a detail scope adds or removes columns in the delivered dataset artifact. Schema metadata requires a new Schema collection object whenever the structure of the dataset instance artifacts changes, so each variant change produces a new Schema collection object.
+
 ### Record Minimization
 
 Additional detail can increase the number of records substantially. After the delivered columns are determined, records with identical values in all delivered columns other than summable metrics can be represented by one record whose summable metrics preserve the aggregate values of the represented records. This applies to custom columns as well as FOCUS columns, so records that differ only in a custom column such as `x_UserId` remain separate. This minimizes the dataset without removing the selected detail.
