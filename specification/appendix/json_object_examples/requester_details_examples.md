@@ -58,7 +58,7 @@ Scenario: An engineer assumes a deployment role to run a compute job. Access to 
 |---------------------|-------------|-------------|--------------|-------------------|
 | Aura Web | Compute | role_deploy_prod | sess_R7D3PK5V | [{"key": "Principal", "value": {"Name": "deploy-prod", "Type": "Role"}}, {"key": "Credential", "value": {"Type": "Session"}}, {"key": "x_DelegatingIdentity", "value": {"Name": "Priya Nair", "Email": "priya.nair@example.com", "Type": "User"}}] |
 
-## Meridian AI (Agent Harnesses Under One User)
+## Meridian AI and Aura Web (Agent Harnesses Under One User)
 
 Scenario: An engineer at Acme Corp runs two agent harnesses against the same inference service, a command-line agent and an IDE extension. Both authenticate as the engineer through single sign-on. Meridian AI defines each client application in its identity and access management model and identifies which one presented each session. The engineer is the *principal* on both rows and each harness's session is its own *credential*. The client application is a level of the *requester* that is neither, so it is carried as a custom entry whose `value` uses the same properties as the FOCUS-defined entries. Grouping by PrincipalId combines the engineer's spend across harnesses, and grouping by the `x_ClientApplication` entry separates it.
 
@@ -67,15 +67,15 @@ Scenario: An engineer at Acme Corp runs two agent harnesses against the same inf
 | Meridian AI | Inference | user_5108 | sess_9QT4LM2A | [{"key": "Principal", "value": {"Name": "Sam Okafor", "Email": "sam.okafor@example.com", "Type": "User"}}, {"key": "Credential", "value": {"Type": "Session"}}, {"key": "x_ClientApplication", "value": {"Name": "Forge CLI", "Type": "Application"}}] |
 | Meridian AI | Inference | user_5108 | sess_2WD8XN7C | [{"key": "Principal", "value": {"Name": "Sam Okafor", "Email": "sam.okafor@example.com", "Type": "User"}}, {"key": "Credential", "value": {"Type": "Session"}}, {"key": "x_ClientApplication", "value": {"Name": "Forge IDE Extension", "Type": "Application"}}] |
 
-Where a [*service provider*](#glossary:service-provider) does not define client applications in its identity and access management model but issues each harness its own API key under the engineer, the harness is an attribute of the *credential* rather than a level of the *requester*, and the same information is carried as a custom property within the `Credential` entry.
+Where a [*service provider*](#glossary:service-provider) does not define client applications in its identity and access management model but issues each harness its own API key under the engineer, as Aura Web does, the harness is an attribute of the *credential* rather than a level of the *requester*, and the same information is carried as a custom property within the `Credential` entry.
 
 | ServiceProviderName | ServiceName | PrincipalId | CredentialId | RequesterDetails |
 |---------------------|-------------|-------------|--------------|-------------------|
-| Meridian AI | Inference | user_5108 | key_08RRTX5M2B | [{"key": "Principal", "value": {"Name": "Sam Okafor", "Email": "sam.okafor@example.com", "Type": "User"}}, {"key": "Credential", "value": {"Type": "API Key", "Name": "forge-cli", "x_ClientApplication": "Forge CLI"}}] |
+| Aura Web | Inference | user_7261 | key_08RRTX5M2B | [{"key": "Principal", "value": {"Name": "Sam Okafor", "Email": "sam.okafor@example.com", "Type": "User"}}, {"key": "Credential", "value": {"Type": "API Key", "Name": "forge-cli", "x_ClientApplication": "Forge CLI"}}] |
 
 ## LatticeScale (Autonomous Agent Under a Workload Identity)
 
-Scenario: Acme Corp operates a code review agent that runs without a person initiating each run. Each run exchanges a short-lived federated token for access to LatticeScale's inference service. The agent's service account is the *principal*, and LatticeScale assigns each exchange a federated session identifier, which is the *credential*. The token itself is never published. The team that operates the agent is published as an attribute of the service account, so it is carried as a custom property within the `Principal` entry. Two runs produce two rows that share a PrincipalId and differ in CredentialId, so grouping by PrincipalId yields the agent's total and grouping by CredentialId yields cost per run. The engineers whose pull requests the agent reviewed are not represented in either column.
+Scenario: Acme Corp operates a code review agent that runs without a person initiating each run. Each run exchanges a short-lived federated token for a session with LatticeScale's inference service. The agent's service account is the *principal*, and the federated session each exchange establishes is the *credential*, identified by the federated session identifier LatticeScale assigns to it. The token itself is never published. The team that operates the agent is published as an attribute of the service account, so it is carried as a custom property within the `Principal` entry. Two runs produce two rows that share a PrincipalId and differ in CredentialId, so grouping by PrincipalId yields the agent's total and grouping by CredentialId yields cost per run. The engineers whose pull requests the agent reviewed are not represented in either column.
 
 | ServiceProviderName | ServiceName | PrincipalId | CredentialId | RequesterDetails |
 |---------------------|-------------|-------------|--------------|-------------------|
@@ -93,7 +93,7 @@ Acme Corp runs generative AI inference and scheduled compute on Aura Web. Four c
 3. **Inference via an API key** (Row 3): Jordan Lee, presenting `batch-key`. BilledCost is $75.00.
 4. **Scheduled compute** (Row 4): the `svc-nightly-etl` service account, which has no email address and for which no *credential* identifier is published. BilledCost is $45.00.
 
-Grouping by PrincipalId answers which *requester* incurred the cost, and combines a user's charges regardless of which *credential* was presented:
+Grouping by PrincipalId answers which *principal* incurred the cost, and combines a user's charges regardless of which *credential* was presented:
 
 | PrincipalId | Email | BilledCost |
 |:---|:---|:---|

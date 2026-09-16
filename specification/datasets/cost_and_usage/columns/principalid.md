@@ -1,6 +1,6 @@
 # Principal ID
 
-A Principal ID is an identifier representing the [*principal*](#glossary:principal) to which access to a [*resource*](#glossary:resource) or [*service*](#glossary:service) is granted. Principal ID is an identifier that references a *principal* rather than the *principal* itself, so a *principal* with no published identifier has no value to include in the column. Principal ID is commonly used to report and audit cost by the *principal* that incurred a [*charge*](#glossary:charge).
+A Principal ID is an identifier representing the [*principal*](#glossary:principal) to which access to a [*resource*](#glossary:resource) or [*service*](#glossary:service) is granted. Principal ID is an identifier that references a *principal* rather than the *principal* itself, so a *principal* with no published identifier has no value to include in the column. Principal ID is commonly used to report and audit cost by the *principal* that incurred a [*charge*](#glossary:charge). Descriptive attributes of the *principal* (e.g., display name, type) are carried in [Requester Details](#datamodel.costandusage.requesterdetails).
 
 For scenarios demonstrating how Principal ID is populated across different technology environments, see [Examples: Requester Attribution](#appendix.examples:requesterattribution).
 
@@ -17,6 +17,7 @@ PrincipalId MUST adhere to the following requirements:
 * When PrincipalId is not null, PrincipalId MUST adhere to the following requirements:
   * PrincipalId MUST be an identifier that references a *principal*.
   * PrincipalId MUST be a unique identifier within the [*service provider*](#glossary:service-provider).
+  * PrincipalId MUST NOT contain a value that authenticates a request (e.g., an API key string, an access token, a password).
 
 ## Column ID
 

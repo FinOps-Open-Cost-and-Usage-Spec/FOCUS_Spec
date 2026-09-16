@@ -293,7 +293,7 @@
     "Type": "Dynamic",
     "Order": 20,
     "ValidationCriteria": {
-      "MustSatisfy": "FOCUS dataset column MUST conform to all requirements of the corresponding column definition, which may specify or restrict the shape or contents of the object.",
+      "MustSatisfy": "FOCUS dataset column MUST conform to all requirements of the corresponding column definition, which may specify or restrict the shape or contents of the Object or the Array.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
