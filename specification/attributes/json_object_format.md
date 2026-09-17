@@ -18,7 +18,6 @@ Column conforming to JsonObjectFormat attribute MUST adhere to the following req
   * Object in Array in *FOCUS dataset column* MUST NOT be empty.
   * Object in Array in *FOCUS dataset column* SHOULD NOT exceed 3 levels of nesting.
 
-
 ## Attribute ID
 
 JsonObjectFormat
