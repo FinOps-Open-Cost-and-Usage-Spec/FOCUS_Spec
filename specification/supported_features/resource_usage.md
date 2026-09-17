@@ -70,7 +70,7 @@ GROUP BY
 
 ### Input-to-Output Token Ratio by Model
 
-Compares the tokens consumed from requests with the tokens generated in responses for each model, using the TokenDirection and ModelId properties.
+Compares the tokens consumed from requests with the tokens generated in responses for each model, using the TokenDirection and ModelId properties. Where a service provider bills request and response tokens on a single meter, TokenDirection is not populated and those rows fall out of both sums.
 
 ```sql
 SELECT

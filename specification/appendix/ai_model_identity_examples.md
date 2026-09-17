@@ -1,6 +1,6 @@
 # Examples: AI Model Identity
 
-The following examples illustrate how a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) represents the identity of an AI model using FOCUS-defined [SkuPriceDetails](#datamodel.costandusage.skupricedetails) properties, and how the split between input (prompt) and output (generated) tokens is carried structurally and labeled by the TokenDirection property. Provider and model names below are illustrative.
+The following examples illustrate how a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) represents the identity of an AI model using FOCUS-defined [SkuPriceDetails](#datamodel.costandusage.skupricedetails) properties, and how the split between input (prompt) and output (generated) [*tokens*](#glossary:token) is carried structurally and labeled by the TokenDirection property. Provider and model names below are illustrative.
 
 ## Baseline Scenario
 
