@@ -92,9 +92,9 @@ A set of properties of a SKU Price ID which are meaningful and common to all ins
 | Constraint                 | Value                                           |
 | :------------------------- | :---------------------------------------------- |
 | Dataset                    | [Cost and Usage](#datamodel.costandusage)       |
-| Operating Model Conditions | Not applicable                                  |
+| Operating Model Conditions | [Includes Unit Pricing](#operatingmodelconditions.includesunitpricing) |
 | Column type                | Dimension                                       |
-| Feature level              | Mandatory                                       |
+| Feature level              | Conditional                                     |
 | Allows nulls               | True                                            |
 | Data type                  | JSON                                            |
 | Value format               | [Key-Value Format](#attributes.key-valueformat) |
