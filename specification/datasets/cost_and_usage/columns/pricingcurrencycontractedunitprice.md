@@ -1,6 +1,10 @@
 # Pricing Currency Contracted Unit Price
 
-The Pricing Currency Contracted Unit Price represents the agreed-upon unit price for a single [Pricing Unit](#datamodel.costandusage.pricingunit) of the associated [*SKU*](#glossary:sku), inclusive of [*negotiated discounts*](#glossary:negotiated-discount), if present, while excluding negotiated [*commitment discounts*](#glossary:commitment-discount) or any other discounts. This price is denominated in the [Pricing Currency](#datamodel.costandusage.pricingcurrency). When negotiated discounts do not apply to unit prices and instead are applied to exchange rates, the Pricing Currency Contracted Unit Price defaults to the [Pricing Currency List Unit Price](#datamodel.costandusage.pricingcurrencylistunitprice). The Pricing Currency Contracted Unit Price is commonly used to calculate savings based on negotiation activities.
+Pricing Currency Contracted Unit Price represents the negotiated unit price per [Pricing Unit](#datamodel.costandusage.pricingunit) for the [*SKU Price*](#glossary:sku-price) identified by the given [SKU Price ID](#datamodel.costandusage.skupriceid). It is the unit price before the application of any discount-bearing [*commitment programs*](#glossary:commitment-program) (e.g., [*commitment discount*](#glossary:commitment-discount)).
+
+When no negotiated unit price adjustments apply to the *charge*, Pricing Currency Contracted Unit Price equals [Pricing Currency List Unit Price](#datamodel.costandusage.pricingcurrencylistunitprice).
+
+Pricing Currency Contracted Unit Price is denominated in the [Pricing Currency](#datamodel.costandusage.pricingcurrency). Pricing Currency Contracted Unit Price is commonly used for negotiation activities.
 
 ## Requirements
 
@@ -9,7 +13,7 @@ PricingCurrencyContractedUnitPrice MUST adhere to the following requirements:
 * PricingCurrencyContractedUnitPrice MUST be of type Decimal.
 * PricingCurrencyContractedUnitPrice MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * PricingCurrencyContractedUnitPrice MUST adhere to the following nullability requirements:
-  * PricingCurrencyContractedUnitPrice MUST be null when [SkuPriceId](#datamodel.costandusage.skupriceid) is null.
+  * PricingCurrencyContractedUnitPrice MUST be null when SkuPriceId is null.
   * PricingCurrencyContractedUnitPrice MUST be null when [ChargeCategory](#datamodel.costandusage.chargecategory) is "Tax".
   * PricingCurrencyContractedUnitPrice MUST NOT be null when SkuPriceId is not null.
   * PricingCurrencyContractedUnitPrice MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#datamodel.costandusage.chargeclass) is not "Correction".
@@ -17,6 +21,10 @@ PricingCurrencyContractedUnitPrice MUST adhere to the following requirements:
 * When PricingCurrencyContractedUnitPrice is not null, PricingCurrencyContractedUnitPrice MUST adhere to the following requirements:
   * PricingCurrencyContractedUnitPrice MUST be a non-negative decimal value.
   * PricingCurrencyContractedUnitPrice MUST be denominated in the PricingCurrency.
+  * PricingCurrencyContractedUnitPrice MUST represent the negotiated unit price per PricingUnit for the *SKU Price* identified by the given SkuPriceId when negotiated unit price adjustments apply to the *charge*.
+  * PricingCurrencyContractedUnitPrice MUST reflect negotiated unit price adjustments for the *SKU Price* identified by the given SkuPriceId, independent of any discount-bearing *commitment programs* being applied to the *charge*.
+  * PricingCurrencyContractedUnitPrice MUST NOT reflect any unit price impact dependent on a discount-bearing *commitment program* being applied to the *charge*.
+  * PricingCurrencyContractedUnitPrice MUST equal PricingCurrencyListUnitPrice when no negotiated unit price adjustments apply to the *charge*.
 
 ## Usability Constraints
 
@@ -32,7 +40,7 @@ Pricing Currency Contracted Unit Price
 
 ## Description
 
-The agreed-upon unit price for a single Pricing Unit of the associated SKU, inclusive of *negotiated discounts*, if present, while excluding negotiated *commitment discounts* or any other discounts, and expressed in Pricing Currency.
+The negotiated unit price per Pricing Unit for the *SKU Price* identified by the given SKU Price ID, expressed in Pricing Currency.
 
 ## Content Constraints
 
