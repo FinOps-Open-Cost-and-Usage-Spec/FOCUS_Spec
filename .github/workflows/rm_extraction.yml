@@ -1,4 +1,4 @@
-# Requirements Model extraction on every push to a PR branch.
+# Requirements Model extraction on every push to a PR that changes specification/ or this file.
 #
 # What fails the build and what only sets a label follows what each step can assert. validate
 # and extract are preconditions: malformed markdown or a generator that throws leaves nothing
