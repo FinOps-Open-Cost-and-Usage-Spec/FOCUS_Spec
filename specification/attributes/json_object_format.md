@@ -11,10 +11,13 @@ Column conforming to JsonObjectFormat attribute MUST adhere to the following req
 * Object in *FOCUS dataset column* SHOULD NOT exceed 3 levels of nesting.
 * Key in Object in *FOCUS dataset column* MUST be unique.
 * Key value in Object in *FOCUS dataset column* MUST be of type number, string, boolean (`true` or `false`), array, object, or `null`.
-* Object in array in *FOCUS dataset column* MUST adhere to the following requirements:
-  * Object in array in *FOCUS dataset column* MUST be of a consistent type.
-  * Object in array in *FOCUS dataset column* MUST NOT be repeated.
-  * Object in array in *FOCUS dataset column* MUST NOT be null.
+* Object in Array in *FOCUS dataset column* MUST adhere to the following requirements:
+  * Object in Array in *FOCUS dataset column* MUST be of a consistent type.
+  * Object in Array in *FOCUS dataset column* MUST be unique.
+  * Object in Array in *FOCUS dataset column* MUST NOT be null.
+  * Object in Array in *FOCUS dataset column* MUST NOT be empty.
+  * Object in Array in *FOCUS dataset column* SHOULD NOT exceed 3 levels of nesting.
+
 
 ## Attribute ID
 
