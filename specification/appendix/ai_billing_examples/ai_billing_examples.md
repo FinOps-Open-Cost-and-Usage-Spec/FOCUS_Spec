@@ -8,7 +8,7 @@ The following conditions apply to the scenarios below:
 
 * Acme Corp runs generative AI workloads billed on token consumption.
 * Input and output tokens are priced separately, denominated per 1,000,000 tokens, so each token type is carried as its own row rather than blended into a single rate.
-* Token billing is represented using existing Cost and Usage columns. No AI-specific column is required.
+* Token billing is represented using existing Cost and Usage columns. No AI-specific column is needed.
 
 Note the following column usage common to the scenarios below:
 
