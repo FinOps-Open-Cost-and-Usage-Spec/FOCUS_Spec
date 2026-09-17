@@ -26,13 +26,13 @@ Scenario: A compute charge initiated by a service account, where the *credential
 |---------------------|-------------|-------------|--------------|-------------------|
 | Aura Web | Compute | svc_nightly_etl | null | [{"key": "Principal", "value": {"Name": "svc-nightly-etl", "Type": "Service Account"}}] |
 
-## Meridian AI (Credential Without a Determinable Principal)
+## Solora AI (Credential Without a Principal Identifier)
 
-Scenario: An inference charge authenticated with an API key that cannot be mapped to an entity in the identity and access management model. No *principal* can be determined, so PrincipalId is null, while the known *credential* is recorded in the `Credential` entry.
+Scenario: An inference charge authenticated with an API key whose identifier is published, while no identifier is published for the *principal* the key authenticates. PrincipalId is null, so the `Principal` entry is omitted, and the *credential* is described in the `Credential` entry.
 
 | ServiceProviderName | ServiceName | PrincipalId | CredentialId | RequesterDetails |
 |---------------------|-------------|-------------|--------------|-------------------|
-| Meridian AI | Inference | null | key_07PQXR2W9F | [{"key": "Credential", "value": {"Type": "API Key", "Name": "eval-sandbox"}}] |
+| Solora AI | Inference | null | key_07PQXR2W9F | [{"key": "Credential", "value": {"Type": "API Key", "Name": "eval-sandbox"}}] |
 
 ## StackLens (No Determinable Principal or Credential)
 
