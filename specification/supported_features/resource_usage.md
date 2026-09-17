@@ -10,6 +10,7 @@ FOCUS enables tracking of resource consumption by providing information about wh
 * ConsumedUnit
 * ResourceId
 * SkuId
+* SkuPriceDetails
 
 ## Supporting Columns
 
@@ -19,9 +20,6 @@ FOCUS enables tracking of resource consumption by providing information about wh
 * ChargePeriodStart
 * ServiceProviderName
 * ServiceName
-* SkuPriceDetails
-* SubAccountId
-* Tags
 
 ## Example SQL Queries
 
@@ -50,13 +48,12 @@ GROUP BY
 
 ### Cache Hit Rate for Token-Metered SKUs
 
-Computes the share of input tokens served from a prompt cache, per workload, using the TokenDirection and TokenCacheAction properties. The denominator is every input token row, so it holds whether or not a service provider meters cache writes as their own charge. Where a service provider emits cache read rows but no uncached input row, the denominator loses that bucket and the ratio overstates the hit rate.
+Computes the share of input tokens served from a cache, per model, using the TokenDirection, TokenCacheAction, and ModelId properties. The denominator is every input token row, so it holds whether or not a service provider meters cache writes as their own charge. Where a service provider emits cache read rows but no uncached input row, the denominator loses that bucket and the ratio overstates the hit rate. Where a service provider bills request and response tokens on a single meter, TokenDirection is not populated and those rows are excluded entirely.
 
 ```sql
 SELECT
   ServiceProviderName,
-  SubAccountId,
-  Tags,
+  JSON_VALUE(SkuPriceDetails, '$.ModelId') AS ModelId,
   COALESCE(SUM(CASE WHEN JSON_VALUE(SkuPriceDetails, '$.TokenCacheAction') = 'Read'
                     THEN ConsumedQuantity END), 0)
     / NULLIF(SUM(ConsumedQuantity), 0) AS CacheHitRate
@@ -68,8 +65,7 @@ WHERE ChargeCategory = 'Usage'
   AND ChargePeriodStart >= ? AND ChargePeriodEnd <= ?
 GROUP BY
   ServiceProviderName,
-  SubAccountId,
-  Tags
+  ModelId
 ```
 
 ### Input-to-Output Token Ratio by Model

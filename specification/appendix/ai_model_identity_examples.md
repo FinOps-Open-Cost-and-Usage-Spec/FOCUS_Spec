@@ -41,4 +41,4 @@ Note the following details in the example dataset:
 
 * ModelDeveloper ("Solora AI") differs from ServiceProviderName ("LatticeScale"). The model developer is not represented by any existing participating-entity column, which is why model identity is carried as its own property.
 * The served ModelId is namespaced by the *service provider* ("latticescale.solora-reasoning-pro"), so the other model-identity properties (ModelDeveloper, ModelFamily, and ModelVersion) are what associate the charge with the underlying model across *service providers*.
-* As in Scenario A, the input and output split is structural, and the model-identity properties are common to both rows.
+* As in Scenario A, the input and output split is structural and labeled by TokenDirection, TokenCacheAction carries "Uncached" on both rows, and the model-identity properties are common to both rows.
