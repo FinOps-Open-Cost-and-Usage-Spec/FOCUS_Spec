@@ -2,7 +2,7 @@
 
 For this scenario, Acme Corp prepays a Solora AI token commitment and then draws it down against Solora Saturn usage:
 
-* Acme Corp purchases a one-year spend commitment of $500,000.00 for Solora AI token input.
+* Acme Corp purchases a one-year spend commitment of $500,000.00 for Solora AI token consumption.
 * Input tokens are priced at $5.00 per 1,000,000 tokens, and output tokens at $25.00 per 1,000,000 tokens.
 * During the [*charge period*](#glossary:chargeperiod), the workload consumes 5,000,000 input tokens and 1,500,000 output tokens against that commitment.
 
