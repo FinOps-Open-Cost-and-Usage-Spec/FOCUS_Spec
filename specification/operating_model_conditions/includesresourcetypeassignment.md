@@ -1,6 +1,6 @@
 # Includes Resource Type Assignment
 
-The Includes Resource Type Assignment condition represents a verifiable state indicating whether the [*operating model*](#glossary:operating-model) includes categorizing resources by type.
+The Includes Resource Type Assignment operating model condition represents a verifiable state indicating whether the [*operating model*](#glossary:operating-model) includes categorizing resources by type.
 
 ## Requirements
 
@@ -9,7 +9,7 @@ IncludesResourceTypeAssignment MUST adhere to the following requirements:
 * IncludesResourceTypeAssignment MUST evaluate to true when the *operating model* includes categorizing resources by type.
 * IncludesResourceTypeAssignment MUST evaluate to false when the *operating model* does not include categorizing resources by type.
 
-## Condition ID
+## Operating Model Condition ID
 
 IncludesResourceTypeAssignment
 
