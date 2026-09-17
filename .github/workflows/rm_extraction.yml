@@ -213,9 +213,10 @@ jobs:
                 else        await github.rest.issues.removeLabel({ owner, repo, issue_number, name: c.label });
                 core.info(`${c.want ? 'added' : 'removed'} "${c.label}"`);
               } catch (err) {
-                // A pull_request run from a fork gets a read-only token. The audit still ran
-                // and reaches the summary table; only the label is unavailable, which the
-                // 'unavailable' state records. Not worth failing the job over.
+                // Fork PRs skip this job, so a failure here comes from the label API, such as
+                // a label removed between the list and the write. The summary table still
+                // reports each result; only the label is unavailable, which the 'unavailable'
+                // state records. Not worth failing the job over.
                 core.warning(`could not ${c.want ? 'add' : 'remove'} "${c.label}": ${err.message}`);
                 c.state = 'unavailable';
               }
