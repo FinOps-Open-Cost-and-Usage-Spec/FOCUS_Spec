@@ -188,7 +188,7 @@ Body content includes paragraphs, list items, table cells, and requirement bulle
 
 * In an **entity catalog table**, the entity reference that identifies the subject of each row MAY link to that entity's definition even when the entity was linked earlier in the source Markdown file.
 
-* In **Requirements** sections, the first reference to each distinct FOCUS entity, glossary term, or FOCUS Condition in each normative requirement bullet MUST be linked, even when the same destination was linked earlier in the source Markdown file.
+* In **Requirements** sections, the first reference to each distinct FOCUS entity, glossary term, or Operating Model Condition in each normative requirement bullet MUST be linked, even when the same destination was linked earlier in the source Markdown file.
 
 * In **Requirements** sections, later references to the same destination within that bullet MUST NOT be linked.
 
