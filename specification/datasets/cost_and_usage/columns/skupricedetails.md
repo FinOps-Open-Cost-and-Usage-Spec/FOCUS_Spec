@@ -41,11 +41,12 @@ SkuPriceDetails MUST adhere to the following requirements:
   * Property value MUST be of the type specified for that property.
   * Property value MUST represent the value for a single PricingUnit, denominated in the unit of measure specified for that property when the property holds a numeric value.
   * Property value MUST be one of the allowed values specified for that property when allowed values are specified.
-* When included, TokenCacheAction and TokenDirection MUST adhere to the following requirements:
+* When included, TokenCacheAction MUST adhere to the following requirements:
   * TokenCacheAction MUST be "Read" when the *SKU Price* meters only request tokens served from a cache.
   * TokenCacheAction MUST be "Write" when the *SKU Price* meters only request tokens placed into a cache (e.g., a charge a service provider meters as cache creation).
   * TokenCacheAction MUST be "Uncached" when the *SKU Price* meters tokens consumed from a request without distinguishing a cache interaction (e.g., request tokens that a service provider bills on one meter whether or not they were placed into a cache).
   * TokenCacheAction MUST be "Other" when the *SKU Price* meters a cache-related token charge to which none of the other allowed values apply.
+* When included, TokenDirection MUST adhere to the following requirements:
   * TokenDirection MUST be "Input" when the tokens metered by the *SKU Price* are consumed from a request.
   * TokenDirection MUST be "Output" when the tokens metered by the *SKU Price* are generated in a response.
 * [ConsumedQuantity](#datamodel.costandusage.consumedquantity) on a row with TokenCacheAction "Uncached" MUST NOT include tokens counted in ConsumedQuantity on a row with TokenCacheAction "Read" or "Write" (e.g., a cached token that a usage report also counts inside a prompt token total is counted on the "Read" row only).
