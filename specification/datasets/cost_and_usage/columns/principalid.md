@@ -1,6 +1,6 @@
 # Principal ID
 
-A Principal ID is an identifier representing the [*principal*](#glossary:principal) to which access to a [*resource*](#glossary:resource) or [*service*](#glossary:service) is granted. Principal ID is an identifier that references a *principal* rather than the *principal* itself, so a *principal* with no published identifier has no value to include in the column. Principal ID is commonly used to report and audit cost by the *principal* that incurred a [*charge*](#glossary:charge). Descriptive attributes of the *principal* (e.g., display name, type) are carried in [Requester Details](#datamodel.costandusage.requesterdetails).
+A Principal ID is an identifier representing the [*principal*](#glossary:principal) to which access to a [*resource*](#glossary:resource) or [*service*](#glossary:service) is granted. Principal ID is commonly used to report and audit cost by the *principal* that incurred a [*charge*](#glossary:charge). Descriptive attributes of the *principal* (e.g., display name, type) are carried in [Requester Details](#datamodel.costandusage.requesterdetails).
 
 For scenarios demonstrating how Principal ID is populated across different technology environments, see [Examples: Requester Attribution](#appendix.examples:requesterattribution).
 
