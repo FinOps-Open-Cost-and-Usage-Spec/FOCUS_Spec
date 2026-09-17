@@ -242,7 +242,7 @@ The requirements define the resulting dataset and the documentation needed to as
 
 ### User-Defined Criteria and Column Population Documentation
 
-User-defined criteria identify a subset of records in a FOCUS dataset using conditions on the values of FOCUS columns representing dimensions (e.g., Service Name equals "Example AI Service"). A practitioner supplies criteria to request that specific columns be populated for the matching records; records that do not match are unaffected.
+User-defined criteria identify a subset of records in a FOCUS dataset using conditions on the values of FOCUS or custom columns (e.g., Service Name equals "Example AI Service"). A practitioner supplies criteria to request that specific columns be populated for the matching records; records that do not match are unaffected.
 
 Column population documentation identifies which columns a data generator can populate this way. Those columns can be FOCUS columns or custom columns; a custom column is appropriate when the detail is not standardized by FOCUS.
 
