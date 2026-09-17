@@ -21,7 +21,12 @@ SkuPriceDetails MUST adhere to the following requirements:
   * SkuPriceDetails MUST be associated with a given SkuPriceId.
   * SkuPriceDetails MUST include the FOCUS-defined SKU Price property when an equivalent property is included as a custom property.
   * SkuPriceDetails MUST NOT include properties that are not applicable to the corresponding SkuPriceId.
+  * SkuPriceDetails MUST NOT include TokenCacheAction when the *SKU Price* does not meter [*tokens*](#glossary:token) consumed from a request (e.g., tokens generated in a response, or a charge for retaining cached content metered in token-hours).
+  * SkuPriceDetails MUST NOT include TokenDirection when the *SKU Price* is not metered in tokens.
+  * SkuPriceDetails MUST NOT include TokenDirection when the *SKU Price* meters both tokens consumed from a request and tokens generated in a response.
   * SkuPriceDetails SHOULD include all FOCUS-defined SKU Price properties listed below that are applicable to the corresponding SkuPriceId.
+  * SkuPriceDetails SHOULD include TokenCacheAction when the *SKU Price* meters tokens consumed from a request.
+  * SkuPriceDetails SHOULD include TokenDirection when the *SKU Price* meters only tokens consumed from a request or only tokens generated in a response.
   * SkuPriceDetails SHOULD include all custom SKU Price properties that are applicable to the corresponding SkuPriceId when there is no equivalent FOCUS-defined property.
   * SkuPriceDetails MAY include properties that are already captured in other dedicated columns.
   * SkuPriceDetails properties for a given SkuPriceId MUST adhere to the following requirements:
@@ -35,12 +40,21 @@ SkuPriceDetails MUST adhere to the following requirements:
   * Property key MUST match the spelling and casing specified for the FOCUS-defined property.
   * Property value MUST be of the type specified for that property.
   * Property value MUST represent the value for a single PricingUnit, denominated in the unit of measure specified for that property when the property holds a numeric value.
+  * Property value MUST be one of the allowed values specified for that property when allowed values are specified.
+* When included, TokenCacheAction MUST adhere to the following requirements:
+  * TokenCacheAction MUST be "Read" when the *SKU Price* meters only request tokens served from a cache.
+  * TokenCacheAction MUST be "Write" when the *SKU Price* meters only request tokens placed into a cache (e.g., a charge a service provider meters as cache creation).
+  * TokenCacheAction MUST be "Uncached" when the *SKU Price* meters tokens consumed from a request without distinguishing a cache interaction (e.g., request tokens that a service provider bills on one meter whether or not they were placed into a cache).
+  * TokenCacheAction MUST be "Other" when the *SKU Price* meters a cache-related token charge to which none of the other allowed values apply.
+* When included, TokenDirection MUST adhere to the following requirements:
+  * TokenDirection MUST be "Input" when the tokens metered by the *SKU Price* are consumed from a request.
+  * TokenDirection MUST be "Output" when the tokens metered by the *SKU Price* are generated in a response.
 
 ## FOCUS-Defined Properties
 
 The following keys should be used when applicable to facilitate cross-SKU and cross-service-provider queries for the same conceptual property. FOCUS-defined keys will appear in the list below and custom (e.g., service-provider-defined) keys will be prefixed with "x_" to make them easy to identify as well as prevent collisions.
 
-| Key                      | Description                                                              | Data Type        | Unit of Measure (numeric) or example values (string)  |
+| Key                      | Description                                                              | Data Type        | Unit of Measure (numeric) or values (string)          |
 | :----------------------- | :----------------------------------------------------------------------- | :--------------- | :---------------------------------------------------- |
 | CoreCount                | Number of physical or virtual CPUs available<sup>1</sup>                 | Numeric          | Measure: Quantity of Cores                            |
 | DiskMaxIops              | Storage maximum sustained input/output operations per second<sup>1</sup> | Numeric          | Measure: Input/Output Operations per Second (IOPS)    |
@@ -59,11 +73,14 @@ The following keys should be used when applicable to facilitate cross-SKU and cr
 | OperatingSystem          | Operating system family<sup>3</sup>                                      | String           | Examples: "Linux", "MacOS", "Windows"                 |
 | Redundancy               | Level of redundancy offered by the SKU                                   | String           | Examples: "Local", "Zonal", "Global"                  |
 | StorageClass             | Class or tier of storage provided                                        | String           | Examples: "Hot", "Archive", "Nearline"                |
+| TokenCacheAction         | Interaction of the metered tokens with a cache<sup>4</sup>               | String           | Allowed values: "Uncached", "Read", "Write", "Other"  |
+| TokenDirection           | Direction of the metered tokens, into or out of the model<sup>4</sup>    | String           | Allowed values: "Input", "Output"                     |
 
 Notes
 <br><sup>1</sup> In the case of "burstable" SKUs offering variable levels of performance, the baseline or guaranteed value should be used.
 <br><sup>2</sup> Memory manufacturers still commonly uses "GB" to refer to 2<sup>30</sup> bytes, which is known as GiB in other contexts.
 <br><sup>3</sup> This is the operating system family of the SKU, if it's included with the SKU or the SKU only supports one type of operating system.
+<br><sup>4</sup> TokenDirection applies to SKUs that meter tokens in one direction only, and TokenCacheAction to SKUs that meter tokens consumed from a request. The requirements above state when each property applies and what each value identifies. [ConsumedQuantity](#datamodel.costandusage.consumedquantity) requirements state that a token counted on a "Read" or "Write" row is not also counted on an "Uncached" row. The model developer defines which cache interactions and which token directions a model distinguishes. Which of those a service provider meters as its own charge, and the meter name it uses, vary across service providers and across model versions, so each property identifies one attribute of the metered tokens independently of how a given service provider names its meters. Reasoning tokens are generated in a response, so a SKU that meters them separately carries TokenDirection "Output". Dimensions that qualify a charge without describing the direction of its tokens or their interaction with a cache, such as token modality, reasoning effort, cache retention duration, and context window size, are not values of these properties. [Examples: AI Prompt Caching](#appendix.examples:aipromptcaching) shows both properties on two service providers that meter cache activity differently.
 
 ## Examples
 
