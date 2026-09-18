@@ -90,7 +90,7 @@ NOTE: Preferred option?
 
 ## Example usage scenarios
 
-* See [Appendix: Quantity-Driven Pricing strategies](../appendix/quantity_driven_pricing_strategies.md) section for more information on
-  * Quantity-Driven Pricing strategies (such as flat-rate, volume-based rates and tier-based rating)
-  * related UC scenarios
+* See [Appendix: Threshold-Based Tiered Pricing](../appendix/threshold_based_tiered_pricing.md) section for more information on
+  * threshold-based tiered pricing, including quantity-based, duration-based and spend-based thresholds
+  * a worked example showing how the threshold-based tier application model affects PricingQuantity
 * See [Pricing Support – UCs and Data samples Spreadsheet](https://docs.google.com/spreadsheets/d/1AZ-vtkKeKwYc8rqhxP1zMTnAVAS-svmWQQmr8cpv-IM/edit#gid=117987709) for various UC scenarios and sample data.
