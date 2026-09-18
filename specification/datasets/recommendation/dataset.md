@@ -8,10 +8,6 @@ The Recommendation dataset is a supporting dataset that describes optimization r
 | :--- | :--- | :--- | :--- | :--- |
 | [Billing Account ID](#datamodel.recommendation.billingaccountid) | Dimension | Mandatory | True | String |
 | [Billing Account Name](#datamodel.recommendation.billingaccountname) | Dimension | Mandatory | True | String |
-| [Commitment Discount Category](#datamodel.recommendation.commitmentdiscountcategory) | Dimension | [Conditional](#operatingmodelconditions.includescontractcommitmentrecommendations) | True | String |
-| [Contract Commitment Duration Type](#datamodel.recommendation.contractcommitmentdurationtype) | Dimension | [Conditional](#operatingmodelconditions.includescontractcommitmentrecommendations) | True | String |
-| [Contract Commitment Payment Model](#datamodel.recommendation.contractcommitmentpaymentmodel) | Dimension | [Conditional](#operatingmodelconditions.includescontractcommitmentrecommendations) | True | String |
-| [Contract Commitment Type](#datamodel.recommendation.contractcommitmenttype) | Dimension | [Conditional](#operatingmodelconditions.includescontractcommitmentrecommendations) | True | String |
 | [Currency](#datamodel.recommendation.currency) | Dimension | Mandatory | True | String |
 | [Estimated Monthly Cost Impact](#datamodel.recommendation.estimatedmonthlycostimpact) | Metric | Mandatory | True | Decimal |
 | [Evaluation Period End](#datamodel.recommendation.evaluationperiodend) | Dimension | Optional | True | Date/Time |
@@ -29,8 +25,6 @@ The Recommendation dataset is a supporting dataset that describes optimization r
 | [Recommendation Subcategory](#datamodel.recommendation.recommendationsubcategory) | Dimension | Mandatory | False | String |
 | [Region ID](#datamodel.recommendation.regionid) | Dimension | [Conditional](#operatingmodelconditions.includesregions) | True | String |
 | [Region Name](#datamodel.recommendation.regionname) | Dimension | [Conditional](#operatingmodelconditions.includesregions) | True | String |
-| [Resource Configuration Details Current](#datamodel.recommendation.resourceconfigurationdetailscurrent) | Dimension | [Conditional](#operatingmodelconditions.includesresourceconfigurationrecommendations) | True | JSON |
-| [Resource Configuration Details Recommended](#datamodel.recommendation.resourceconfigurationdetailsrecommended) | Dimension | [Conditional](#operatingmodelconditions.includesresourceconfigurationrecommendations) | True | JSON |
 | [Resource ID](#datamodel.recommendation.resourceid) | Dimension | Mandatory | True | String |
 | [Resource Name](#datamodel.recommendation.resourcename) | Dimension | Mandatory | True | String |
 | [Resource Type](#datamodel.recommendation.resourcetype) | Dimension | [Conditional](#operatingmodelconditions.includesresourcetypeassignment) | True | String |
@@ -60,10 +54,6 @@ Recommendation MUST adhere to the following requirements:
 * Recommendation column presence MUST adhere to the following requirements:
   * Recommendation MUST include [BillingAccountId](#datamodel.recommendation.billingaccountid).
   * Recommendation MUST include [BillingAccountName](#datamodel.recommendation.billingaccountname).
-  * Recommendation MUST include [CommitmentDiscountCategory](#datamodel.recommendation.commitmentdiscountcategory) when the [*operating model*](#glossary:operating-model) [includes contract commitment recommendations](#operatingmodelconditions.includescontractcommitmentrecommendations).
-  * Recommendation MUST include [ContractCommitmentDurationType](#datamodel.recommendation.contractcommitmentdurationtype) when the *operating model* [includes contract commitment recommendations](#operatingmodelconditions.includescontractcommitmentrecommendations).
-  * Recommendation MUST include [ContractCommitmentPaymentModel](#datamodel.recommendation.contractcommitmentpaymentmodel) when the *operating model* [includes contract commitment recommendations](#operatingmodelconditions.includescontractcommitmentrecommendations).
-  * Recommendation MUST include [ContractCommitmentType](#datamodel.recommendation.contractcommitmenttype) when the *operating model* [includes contract commitment recommendations](#operatingmodelconditions.includescontractcommitmentrecommendations).
   * Recommendation MUST include [Currency](#datamodel.recommendation.currency).
   * Recommendation MUST include [EstimatedMonthlyCostImpact](#datamodel.recommendation.estimatedmonthlycostimpact).
   * Recommendation MAY include [EvaluationPeriodEnd](#datamodel.recommendation.evaluationperiodend).
@@ -79,10 +69,8 @@ Recommendation MUST adhere to the following requirements:
   * Recommendation MUST include [RecommendationProviderName](#datamodel.recommendation.recommendationprovidername).
   * Recommendation MUST include [RecommendationStatus](#datamodel.recommendation.recommendationstatus).
   * Recommendation MUST include [RecommendationSubcategory](#datamodel.recommendation.recommendationsubcategory).
-  * Recommendation MUST include [RegionId](#datamodel.recommendation.regionid) when the *operating model* [includes regions](#operatingmodelconditions.includesregions).
+  * Recommendation MUST include [RegionId](#datamodel.recommendation.regionid) when the [*operating model*](#glossary:operating-model) [includes regions](#operatingmodelconditions.includesregions).
   * Recommendation MUST include [RegionName](#datamodel.recommendation.regionname) when the *operating model* [includes regions](#operatingmodelconditions.includesregions).
-  * Recommendation MUST include [ResourceConfigurationDetailsCurrent](#datamodel.recommendation.resourceconfigurationdetailscurrent) when the *operating model* [includes resource configuration recommendations](#operatingmodelconditions.includesresourceconfigurationrecommendations).
-  * Recommendation MUST include [ResourceConfigurationDetailsRecommended](#datamodel.recommendation.resourceconfigurationdetailsrecommended) when the *operating model* [includes resource configuration recommendations](#operatingmodelconditions.includesresourceconfigurationrecommendations).
   * Recommendation MUST include [ResourceId](#datamodel.recommendation.resourceid).
   * Recommendation MUST include [ResourceName](#datamodel.recommendation.resourcename).
   * Recommendation MUST include [ResourceType](#datamodel.recommendation.resourcetype) when the *operating model* [includes resource type assignment](#operatingmodelconditions.includesresourcetypeassignment).
