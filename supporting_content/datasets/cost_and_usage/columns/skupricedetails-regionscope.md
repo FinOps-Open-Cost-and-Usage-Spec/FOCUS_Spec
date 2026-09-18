@@ -45,9 +45,13 @@ Three questions sit close together. Each has its own home, and none of them subs
 
 PR #2424 draws the first half of this distinction itself, in the `PricingRegionId` Implementation Guidance: Pricing Region ID defines the geographic boundary for which the rate is valid, and Region ID defines the physical location where a resource is provisioned. `RegionScope` is the Cost and Usage side of the same axis, carried as a class rather than as an identifier, because Cost and Usage has no column for the priced area.
 
-**Neither `RegionScope` nor `PricingRegionId` derives the other.** A `PricingRegionId` of "eu" does not say whether "eu" is a region, a macro-region, or the whole world, without a provider-specific lookup. A `RegionScope` of "DataZone" says the breadth without saying which data zone. The pair is lossless where either alone is not.
+`SkuPriceEligibility`, also defined on PR #2424, is not a fourth entry in that table. It carries a predicate over arbitrary dimensions rather than a location, and it answers which entities may receive a price rather than how broad an area the price covers. The comparison invites itself because region-shaped eligibility is common: five of the nine examples in that column's appendix constrain `RegionId`. The `IsGlobalScope` flag on the same object is the part most likely to be misread. It marks a price that is not restricted to an enumerated set of entities and carries no geographic meaning, so a price can be regionally scoped and globally eligible at the same time.
 
-PR #2424's dataset definition relates SKU Price to Cost and Usage through `SkuPriceId`. On that join the two read together as the identifier and its class, so a practitioner working from a charge can reach both the priced area and its breadth without decoding a provider-specific region string.
+**Neither `RegionScope` nor `PricingRegionId` derives the other.** A `PricingRegionId` of "eu" does not say whether "eu" is a region, a macro-region, or the whole world, without a provider-specific lookup. A `RegionScope` of "DataZone" says the breadth without saying which data zone. The pair is more informative than either alone, though it is not complete: which regions sit inside "eu" is recoverable from neither, so testing whether a given charge falls inside the priced area still takes a provider lookup.
+
+Eligibility does not close that gap either. Counting the regions in a `SkuPriceEligibility` inclusion set looks like a way to infer breadth, and it fails twice. Inclusions are required only when a price is neither globally nor complexly scoped, so the public list prices that make up most of a rate card carry `IsGlobalScope` and no region rule to count. Where inclusions are present, a dimension omitted from them is defined as an implicit wildcard, so a regional price whose provider wrote no region rule is indistinguishable from a global one. An enumerated set does not say whether it is the provider's full roster for that boundary or a negotiated subset.
+
+PR #2424's dataset definition relates SKU Price to Cost and Usage through `SkuPriceId`, as a one-to-many relationship: resolving the record that applies to a charge also takes the effective period, `ContractId`, quantity tier, and pricing currency. Once resolved, the two read together as the identifier and its class, so a practitioner working from a charge can reach both the priced area and its breadth without having to infer the breadth from a provider-specific region string.
 
 One consequence for the examples: `RegionId` is defined for "an isolated geographic area where a resource is provisioned or a service is provided", so a macro-region does not belong in it. An earlier draft of the Scenario B data zone row carried a `RegionId` of "eu"; it now carries "northeurope", a single region inside the area the fictitious provider prices as one data zone. The identifier for the data zone itself is what `PricingRegionId` carries.
 
@@ -57,14 +61,15 @@ The property is defined in `SkuPriceDetails` for now. @ijurica asked at Task For
 
 The SKU Price dataset carries no `SkuPriceDetails` column, so a property that moves there becomes a column. `RegionScope` beside `PricingRegionId` produces no name collision, and the pair reads as identifier plus class.
 
-What the pair enables on a rate card that neither enables alone:
+PR #2424's own supporting content reaches the same diagnosis from the other side and names a different destination. `scope_and_evolution.md` records that `SkuPriceDetails` properties are available only for SKUs an organization has already consumed, which it calls the wrong way round for a dataset whose purpose is pricing what has not been bought yet. The resolution it proposes is a companion SKU Properties dataset joined on `SkuId`, not a SKU Price column. Both routes answer the availability problem, and which one fits turns on the undispositioned question at the end of this file: whether region scope is a property of the SKU or of the SKU price.
+
+What the pair enables on a rate card that neither enables alone, given a value set consistent enough to group on:
 
 * **Premium analysis across the breadth ladder.** Pivoting unit price by `RegionScope` gives the regional-over-global premium per SKU as a group-by. Using `PricingRegionId` alone requires a provider-specific mapping from region strings to breadth before the pivot is possible.
-* **Cross-provider rate comparison.** Two rate cards can be compared at the same breadth without decoding each provider's region vocabulary. This is stronger on SKU Price than on Cost and Usage, because a rate card carries every price point rather than only the ones a customer used.
+* **Cross-provider rate comparison.** Two rate cards can be compared at the same breadth without decoding each provider's region vocabulary, but only where both providers reached for the same breadth words. The table at the top of this file shows three providers using three vocabularies, so this one is contingent on the value set question below rather than on elevation.
 * **Rate-card completeness checks.** Grouping by SKU and counting distinct `RegionScope` values answers whether a provider publishes a global price for every capability it prices regionally. Without the class, that question requires enumerating region identifiers and knowing which are macro-regions.
 * **Partition reasoning.** PR #2424 allows a provider to partition price-list delivery, for example by region. `RegionScope` distinguishes a partition that contains no global price points from one that was never delivered. Without it both look like a missing row.
 * **Migration forecasting.** Costing a move from regional to data zone pricing means filtering the rate card to the same SKU at a different breadth. That is a predicate on `RegionScope` rather than a guess about which `PricingRegionId` is the data zone.
-* **Disambiguating "global" on the same row.** `SkuPriceEligibility.IsGlobalScope` on PR #2424 is a non-geographic flag: it marks a price that applies to all entities. An explicit geographic-breadth column makes clear that `IsGlobalScope` is about who is eligible rather than where the price applies.
 
 What elevation would require, and what it does not settle:
 
@@ -81,7 +86,7 @@ What elevation would require, and what it does not settle:
 ## Reference
 
 * Action Item #2672, naming research, on PR #2613
-* PR #2424, the SKU Price dataset, for `PricingRegionId` and `SkuPriceEligibility`
+* PR #2424, the SKU Price dataset, for `PricingRegionId` and `SkuPriceEligibility`, and its `scope_and_evolution.md` supporting content
 * [AWS Bedrock inference profiles](https://docs.aws.amazon.com/bedrock/latest/userguide/inference-profiles-support.html)
 * [Azure AI Foundry deployment types](https://learn.microsoft.com/azure/ai-foundry/openai/how-to/deployment-types)
 * [Google Cloud bucket locations](https://cloud.google.com/storage/docs/locations)
