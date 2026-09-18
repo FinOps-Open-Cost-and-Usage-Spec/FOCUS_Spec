@@ -21,7 +21,6 @@ The Recommendation dataset is a supporting dataset that describes optimization r
 | [Recommendation ID](#datamodel.recommendation.recommendationid) | Dimension | Mandatory | False | String |
 | [Recommendation Last Updated](#datamodel.recommendation.recommendationlastupdated) | Dimension | Mandatory | False | Date/Time |
 | [Recommendation Provider Name](#datamodel.recommendation.recommendationprovidername) | Dimension | Mandatory | False | String |
-| [Recommendation Subcategory](#datamodel.recommendation.recommendationsubcategory) | Dimension | Mandatory | False | String |
 | [Region ID](#datamodel.recommendation.regionid) | Dimension | [Conditional](#operatingmodelconditions.includesregions) | True | String |
 | [Region Name](#datamodel.recommendation.regionname) | Dimension | [Conditional](#operatingmodelconditions.includesregions) | True | String |
 | [Resource ID](#datamodel.recommendation.resourceid) | Dimension | Mandatory | True | String |
@@ -66,7 +65,6 @@ Recommendation MUST adhere to the following requirements:
   * Recommendation MUST include [RecommendationId](#datamodel.recommendation.recommendationid).
   * Recommendation MUST include [RecommendationLastUpdated](#datamodel.recommendation.recommendationlastupdated).
   * Recommendation MUST include [RecommendationProviderName](#datamodel.recommendation.recommendationprovidername).
-  * Recommendation MUST include [RecommendationSubcategory](#datamodel.recommendation.recommendationsubcategory).
   * Recommendation MUST include [RegionId](#datamodel.recommendation.regionid) when the [*operating model*](#glossary:operating-model) [includes regions](#operatingmodelconditions.includesregions).
   * Recommendation MUST include [RegionName](#datamodel.recommendation.regionname) when the *operating model* [includes regions](#operatingmodelconditions.includesregions).
   * Recommendation MUST include [ResourceId](#datamodel.recommendation.resourceid).
