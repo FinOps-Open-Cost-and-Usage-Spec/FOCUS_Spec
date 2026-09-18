@@ -47,14 +47,15 @@ The configuration of the *resource* that a recommendation proposes to change to.
 
 ## Content Constraints
 
-| Constraint      | Value                                          |
-| :-------------- | :--------------------------------------------- |
-| Dataset         | [Recommendation](#datamodel.recommendation)     |
-| Column type     | Dimension                                      |
-| Feature level   | Conditional                                    |
-| Allows nulls    | True                                           |
-| Data type       | JSON                                           |
-| Value format    | [Key-Value Format](#attributes.key-valueformat) |
+| Constraint                 | Value                                                                                                                     |
+| :------------------------- | :------------------------------------------------------------------------------------------------------------------------ |
+| Dataset                    | [Recommendation](#datamodel.recommendation)                                                                               |
+| Operating Model Conditions | [Includes Resource Configuration Recommendations](#operatingmodelconditions.includesresourceconfigurationrecommendations) |
+| Column type                | Dimension                                                                                                                 |
+| Feature level              | Conditional                                                                                                               |
+| Allows nulls               | True                                                                                                                      |
+| Data type                  | JSON                                                                                                                      |
+| Value format               | [Key-Value Format](#attributes.key-valueformat)                                                                           |
 
 ## Version Introduced
 

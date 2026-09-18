@@ -26,14 +26,15 @@ The display name assigned to a *sub account*.
 
 ## Content Constraints
 
-| Constraint      | Value                                          |
-| :-------------- | :--------------------------------------------- |
-| Dataset         | [Recommendation](#datamodel.recommendation)     |
-| Column type     | Dimension                                      |
-| Feature level   | Conditional                                    |
-| Allows nulls    | True                                           |
-| Data type       | String                                         |
-| Value format    | \<not specified>                               |
+| Constraint                 | Value                                                                  |
+| :------------------------- | :--------------------------------------------------------------------- |
+| Dataset                    | [Recommendation](#datamodel.recommendation)                            |
+| Operating Model Conditions | [Includes Sub Accounts](#operatingmodelconditions.includessubaccounts) |
+| Column type                | Dimension                                                              |
+| Feature level              | Conditional                                                            |
+| Allows nulls               | True                                                                   |
+| Data type                  | String                                                                 |
+| Value format               | \<not specified>                                                       |
 
 ## Version Introduced
 

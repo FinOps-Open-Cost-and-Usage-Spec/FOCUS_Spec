@@ -40,14 +40,15 @@ Defines the financial settlement structure of the *contract commitment* a recomm
 
 ## Content Constraints
 
-| Constraint      | Value                                          |
-| :-------------- | :--------------------------------------------- |
-| Dataset         | [Recommendation](#datamodel.recommendation)     |
-| Column type     | Dimension                                      |
-| Feature level   | Conditional                                    |
-| Allows nulls    | True                                           |
-| Data type       | String                                         |
-| Value format    | Allowed values                                 |
+| Constraint                 | Value                                                                                                               |
+| :------------------------- | :------------------------------------------------------------------------------------------------------------------ |
+| Dataset                    | [Recommendation](#datamodel.recommendation)                                                                         |
+| Operating Model Conditions | [Includes Contract Commitment Recommendations](#operatingmodelconditions.includescontractcommitmentrecommendations) |
+| Column type                | Dimension                                                                                                           |
+| Feature level              | Conditional                                                                                                         |
+| Allows nulls               | True                                                                                                                |
+| Data type                  | String                                                                                                              |
+| Value format               | Allowed values                                                                                                      |
 
 ## Version Introduced
 

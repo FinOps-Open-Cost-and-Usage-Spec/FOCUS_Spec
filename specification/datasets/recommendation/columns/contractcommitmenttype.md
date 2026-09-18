@@ -26,14 +26,15 @@ A service-provider-assigned name to identify the type of *contract commitment* a
 
 ## Content Constraints
 
-| Constraint      | Value                                          |
-| :-------------- | :--------------------------------------------- |
-| Dataset         | [Recommendation](#datamodel.recommendation)     |
-| Column type     | Dimension                                      |
-| Feature level   | Conditional                                    |
-| Allows nulls    | True                                           |
-| Data type       | String                                         |
-| Value format    | \<not specified>                               |
+| Constraint                 | Value                                                                                                               |
+| :------------------------- | :------------------------------------------------------------------------------------------------------------------ |
+| Dataset                    | [Recommendation](#datamodel.recommendation)                                                                         |
+| Operating Model Conditions | [Includes Contract Commitment Recommendations](#operatingmodelconditions.includescontractcommitmentrecommendations) |
+| Column type                | Dimension                                                                                                           |
+| Feature level              | Conditional                                                                                                         |
+| Allows nulls               | True                                                                                                                |
+| Data type                  | String                                                                                                              |
+| Value format               | \<not specified>                                                                                                    |
 
 ## Version Introduced
 
