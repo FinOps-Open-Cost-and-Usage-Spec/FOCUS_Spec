@@ -95,7 +95,7 @@ ORDER BY REC.EstimatedMonthlyCostImpact ASC
 
 ### Build a Triage Queue
 
-This query presents a worklist of recommendations. The least effort appears first and the largest saving breaks ties. Implementation Effort and Implementation Risk are ordinal rather than numeric, so a CASE expression establishes their order. A second CASE expression places recommendations with no Estimated Monthly Cost Impact last, because database engines differ in where they sort nulls by default. Recommendation Details is returned alongside the description, giving a reviewer the proposed change and its cost in a single row.
+This query presents a worklist of recommendations. The least effort appears first and the largest saving breaks ties. Implementation Effort and Implementation Risk are ordinal rather than numeric, so a CASE expression establishes their order. A second CASE expression places recommendations with no Estimated Monthly Cost Impact last, because database engines differ in where they sort nulls by default. Recommendation ID breaks any remaining tie, giving the worklist the same order on every engine. Recommendation Details is returned alongside the description, giving a reviewer the proposed change and its cost in a single row.
 
 ```sql
 SELECT
@@ -119,7 +119,8 @@ ORDER BY
     ELSE 6
   END ASC,
   CASE WHEN EstimatedMonthlyCostImpact IS NULL THEN 1 ELSE 0 END ASC,
-  EstimatedMonthlyCostImpact ASC
+  EstimatedMonthlyCostImpact ASC,
+  RecommendationId ASC
 ```
 
 ## Version Introduced
