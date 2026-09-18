@@ -53,6 +53,8 @@ Recommendation Details carries supporting detail that is not expressed in other 
   * SubAccountName
 * [CostAndUsage](#datasets.costandusage)
   * BillingAccountId
+  * ChargePeriodEnd
+  * ChargePeriodStart
   * EffectiveCost
   * ResourceId
 
