@@ -50,14 +50,15 @@ Highest-level classification of a *service* based on the core function of the *s
 
 ## Content Constraints
 
-| Constraint      | Value                                          |
-| :-------------- | :--------------------------------------------- |
-| Dataset         | [Recommendation](#datamodel.recommendation)     |
-| Column type     | Dimension                                      |
-| Feature level   | Mandatory                                      |
-| Allows nulls    | True                                           |
-| Data type       | String                                         |
-| Value format    | Allowed values                                 |
+| Constraint                 | Value                                       |
+| :------------------------- | :------------------------------------------ |
+| Dataset                    | [Recommendation](#datamodel.recommendation) |
+| Operating Model Conditions | Not applicable                              |
+| Column type                | Dimension                                   |
+| Feature level              | Mandatory                                   |
+| Allows nulls               | True                                        |
+| Data type                  | String                                      |
+| Value format               | Allowed values                              |
 
 ## Version Introduced
 

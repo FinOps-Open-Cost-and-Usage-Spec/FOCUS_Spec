@@ -36,14 +36,15 @@ Represents the relative level of risk associated with acting on a recommendation
 
 ## Content Constraints
 
-| Constraint      | Value                                          |
-| :-------------- | :--------------------------------------------- |
-| Dataset         | [Recommendation](#datamodel.recommendation)     |
-| Column type     | Dimension                                      |
-| Feature level   | Optional                                       |
-| Allows nulls    | True                                           |
-| Data type       | String                                         |
-| Value format    | Allowed values                                 |
+| Constraint                 | Value                                       |
+| :------------------------- | :------------------------------------------ |
+| Dataset                    | [Recommendation](#datamodel.recommendation) |
+| Operating Model Conditions | Not applicable                              |
+| Column type                | Dimension                                   |
+| Feature level              | Optional                                    |
+| Allows nulls               | True                                        |
+| Data type                  | String                                      |
+| Value format               | Allowed values                              |
 
 ## Version Introduced
 

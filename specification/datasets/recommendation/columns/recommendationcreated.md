@@ -25,14 +25,15 @@ The timestamp when the recommendation was generated.
 
 ## Content Constraints
 
-| Constraint      | Value                                              |
-| :-------------- | :------------------------------------------------- |
-| Dataset         | [Recommendation](#datamodel.recommendation)         |
-| Column type     | Dimension                                          |
-| Feature level   | Mandatory                                          |
-| Allows nulls    | False                                              |
-| Data type       | Date/Time                                          |
-| Value format    | [Date/Time Format](#attributes.date/timeformat)    |
+| Constraint                 | Value                                           |
+| :------------------------- | :---------------------------------------------- |
+| Dataset                    | [Recommendation](#datamodel.recommendation)     |
+| Operating Model Conditions | Not applicable                                  |
+| Column type                | Dimension                                       |
+| Feature level              | Mandatory                                       |
+| Allows nulls               | False                                           |
+| Data type                  | Date/Time                                       |
+| Value format               | [Date/Time Format](#attributes.date/timeformat) |
 
 ## Version Introduced
 

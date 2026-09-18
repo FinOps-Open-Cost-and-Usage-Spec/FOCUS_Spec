@@ -28,15 +28,16 @@ The estimated change in effective cost, over a one-month period, projected from 
 
 ## Content Constraints
 
-| Constraint      | Value                                          |
-| :-------------- | :--------------------------------------------- |
-| Dataset         | [Recommendation](#datamodel.recommendation)     |
-| Column type     | Metric                                         |
-| Feature level   | Mandatory                                      |
-| Allows nulls    | True                                           |
-| Data type       | Decimal                                        |
-| Value format    | [Numeric Format](#attributes.numericformat)    |
-| Number range    | Any valid decimal value                        |
+| Constraint                 | Value                                       |
+| :------------------------- | :------------------------------------------ |
+| Dataset                    | [Recommendation](#datamodel.recommendation) |
+| Operating Model Conditions | Not applicable                              |
+| Column type                | Metric                                      |
+| Feature level              | Mandatory                                   |
+| Allows nulls               | True                                        |
+| Data type                  | Decimal                                     |
+| Value format               | [Numeric Format](#attributes.numericformat) |
+| Number range               | Any valid decimal value                     |
 
 ## Version Introduced
 

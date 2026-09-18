@@ -24,14 +24,15 @@ The name of the entity that provides the resources or services to which a recomm
 
 ## Content Constraints
 
-| Constraint      | Value                                          |
-| :-------------- | :--------------------------------------------- |
-| Dataset         | [Recommendation](#datamodel.recommendation)     |
-| Column type     | Dimension                                      |
-| Feature level   | Mandatory                                      |
-| Allows nulls    | False                                          |
-| Data type       | String                                         |
-| Value format    | \<not specified>                               |
+| Constraint                 | Value                                       |
+| :------------------------- | :------------------------------------------ |
+| Dataset                    | [Recommendation](#datamodel.recommendation) |
+| Operating Model Conditions | Not applicable                              |
+| Column type                | Dimension                                   |
+| Feature level              | Mandatory                                   |
+| Allows nulls               | False                                       |
+| Data type                  | String                                      |
+| Value format               | \<not specified>                            |
 
 ## Version Introduced
 

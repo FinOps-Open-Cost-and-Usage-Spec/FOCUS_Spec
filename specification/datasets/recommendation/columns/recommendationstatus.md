@@ -34,14 +34,15 @@ Represents the position of a recommendation within its lifecycle.
 
 ## Content Constraints
 
-| Constraint      | Value                                          |
-| :-------------- | :--------------------------------------------- |
-| Dataset         | [Recommendation](#datamodel.recommendation)     |
-| Column type     | Dimension                                      |
-| Feature level   | Mandatory                                      |
-| Allows nulls    | False                                          |
-| Data type       | String                                         |
-| Value format    | Allowed values                                 |
+| Constraint                 | Value                                       |
+| :------------------------- | :------------------------------------------ |
+| Dataset                    | [Recommendation](#datamodel.recommendation) |
+| Operating Model Conditions | Not applicable                              |
+| Column type                | Dimension                                   |
+| Feature level              | Mandatory                                   |
+| Allows nulls               | False                                       |
+| Data type                  | String                                      |
+| Value format               | Allowed values                              |
 
 ## Version Introduced
 

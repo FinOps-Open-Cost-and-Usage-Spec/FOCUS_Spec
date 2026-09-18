@@ -30,14 +30,15 @@ The identifier assigned to a *billing account* by the invoice issuer.
 
 ## Content Constraints
 
-| Constraint      | Value                                          |
-| :-------------- | :--------------------------------------------- |
-| Dataset         | [Recommendation](#datamodel.recommendation)     |
-| Column type     | Dimension                                      |
-| Feature level   | Mandatory                                      |
-| Allows nulls    | True                                           |
-| Data type       | String                                         |
-| Value format    | \<not specified>                               |
+| Constraint                 | Value                                       |
+| :------------------------- | :------------------------------------------ |
+| Dataset                    | [Recommendation](#datamodel.recommendation) |
+| Operating Model Conditions | Not applicable                              |
+| Column type                | Dimension                                   |
+| Feature level              | Mandatory                                   |
+| Allows nulls               | True                                        |
+| Data type                  | String                                      |
+| Value format               | \<not specified>                            |
 
 ## Version Introduced
 

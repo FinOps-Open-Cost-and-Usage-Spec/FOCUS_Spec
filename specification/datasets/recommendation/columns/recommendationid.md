@@ -27,14 +27,15 @@ An identifier assigned to a recommendation by the entity that generated it.
 
 ## Content Constraints
 
-| Constraint      | Value                                          |
-| :-------------- | :--------------------------------------------- |
-| Dataset         | [Recommendation](#datamodel.recommendation)     |
-| Column type     | Dimension                                      |
-| Feature level   | Mandatory                                      |
-| Allows nulls    | False                                          |
-| Data type       | String                                         |
-| Value format    | \<not specified>                               |
+| Constraint                 | Value                                       |
+| :------------------------- | :------------------------------------------ |
+| Dataset                    | [Recommendation](#datamodel.recommendation) |
+| Operating Model Conditions | Not applicable                              |
+| Column type                | Dimension                                   |
+| Feature level              | Mandatory                                   |
+| Allows nulls               | False                                       |
+| Data type                  | String                                      |
+| Value format               | \<not specified>                            |
 
 ## Version Introduced
 

@@ -104,14 +104,15 @@ Additional properties of a recommendation that are not expressed in other column
 
 ## Content Constraints
 
-| Constraint    | Value                                           |
-| :------------ | :---------------------------------------------- |
-| Dataset       | [Recommendation](#datamodel.recommendation)      |
-| Column type   | Dimension                                       |
-| Feature level | Mandatory                                       |
-| Allows nulls  | True                                            |
-| Data type     | JSON                                            |
-| Value format  | [Key-Value Format](#attributes.key-valueformat) |
+| Constraint                 | Value                                           |
+| :------------------------- | :---------------------------------------------- |
+| Dataset                    | [Recommendation](#datamodel.recommendation)     |
+| Operating Model Conditions | Not applicable                                  |
+| Column type                | Dimension                                       |
+| Feature level              | Mandatory                                       |
+| Allows nulls               | True                                            |
+| Data type                  | JSON                                            |
+| Value format               | [Key-Value Format](#attributes.key-valueformat) |
 
 ## Version Introduced
 

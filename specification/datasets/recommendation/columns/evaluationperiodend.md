@@ -28,14 +28,15 @@ The *exclusive end bound* of the period a recommendation was derived from.
 
 ## Content Constraints
 
-| Constraint      | Value                                              |
-| :-------------- | :------------------------------------------------- |
-| Dataset         | [Recommendation](#datamodel.recommendation)         |
-| Column type     | Dimension                                          |
-| Feature level   | Optional                                           |
-| Allows nulls    | True                                               |
-| Data type       | Date/Time                                          |
-| Value format    | [Date/Time Format](#attributes.date/timeformat)    |
+| Constraint                 | Value                                           |
+| :------------------------- | :---------------------------------------------- |
+| Dataset                    | [Recommendation](#datamodel.recommendation)     |
+| Operating Model Conditions | Not applicable                                  |
+| Column type                | Dimension                                       |
+| Feature level              | Optional                                        |
+| Allows nulls               | True                                            |
+| Data type                  | Date/Time                                       |
+| Value format               | [Date/Time Format](#attributes.date/timeformat) |
 
 ## Version Introduced
 

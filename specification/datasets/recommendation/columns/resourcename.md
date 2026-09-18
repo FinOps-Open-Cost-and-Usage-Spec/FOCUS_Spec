@@ -26,14 +26,15 @@ Display name assigned to a *resource*.
 
 ## Content Constraints
 
-| Constraint      | Value                                          |
-| :-------------- | :--------------------------------------------- |
-| Dataset         | [Recommendation](#datamodel.recommendation)     |
-| Column type     | Dimension                                      |
-| Feature level   | Mandatory                                      |
-| Allows nulls    | True                                           |
-| Data type       | String                                         |
-| Value format    | \<not specified>                               |
+| Constraint                 | Value                                       |
+| :------------------------- | :------------------------------------------ |
+| Dataset                    | [Recommendation](#datamodel.recommendation) |
+| Operating Model Conditions | Not applicable                              |
+| Column type                | Dimension                                   |
+| Feature level              | Mandatory                                   |
+| Allows nulls               | True                                        |
+| Data type                  | String                                      |
+| Value format               | \<not specified>                            |
 
 ## Version Introduced
 

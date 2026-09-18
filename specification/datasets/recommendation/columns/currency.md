@@ -28,14 +28,15 @@ Represents the currency in which a recommendation's estimated cost impact is exp
 
 ## Content Constraints
 
-| Constraint      | Value                                          |
-| :-------------- | :--------------------------------------------- |
-| Dataset         | [Recommendation](#datamodel.recommendation)     |
-| Column type     | Dimension                                      |
-| Feature level   | Mandatory                                      |
-| Allows nulls    | True                                           |
-| Data type       | String                                         |
-| Value format    | [Currency Format](#attributes.currencyformat)  |
+| Constraint                 | Value                                         |
+| :------------------------- | :-------------------------------------------- |
+| Dataset                    | [Recommendation](#datamodel.recommendation)   |
+| Operating Model Conditions | Not applicable                                |
+| Column type                | Dimension                                     |
+| Feature level              | Mandatory                                     |
+| Allows nulls               | True                                          |
+| Data type                  | String                                        |
+| Value format               | [Currency Format](#attributes.currencyformat) |
 
 ## Version Introduced
 
