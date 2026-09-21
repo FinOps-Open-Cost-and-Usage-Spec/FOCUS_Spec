@@ -1,6 +1,6 @@
 # Pricing Currency Contracted Unit Price
 
-Pricing Currency Contracted Unit Price represents the negotiated unit price per [Pricing Unit](#datamodel.costandusage.pricingunit) for the [*SKU Price*](#glossary:sku-price) identified by the given [SKU Price ID](#datamodel.costandusage.skupriceid). This unit price does not reflect any negotiated currency exchange rates or discount-bearing [*commitment programs*](#glossary:commitment-program) (e.g., [*commitment discount*](#glossary:commitment-discount)).
+Pricing Currency Contracted Unit Price represents the negotiated unit price per [Pricing Unit](#datamodel.costandusage.pricingunit) for the [*SKU Price*](#glossary:sku-price) identified by the given [SKU Price ID](#datamodel.costandusage.skupriceid). It is the unit price before any currency exchange rate conversion or the application of any discount-bearing [*commitment programs*](#glossary:commitment-program) (e.g., [*commitment discount*](#glossary:commitment-discount)).
 
 When no negotiated pricing terms apply to the *charge*, Pricing Currency Contracted Unit Price equals [Pricing Currency List Unit Price](#datamodel.costandusage.pricingcurrencylistunitprice).
 
