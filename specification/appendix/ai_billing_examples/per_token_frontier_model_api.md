@@ -1,11 +1,11 @@
-# Per-Token Foundation Model API
+# Per-Token Frontier Model API
 
-For this scenario, Acme Corp consumes a foundation model API billed directly by the model developer, Solora AI:
+For this scenario, Acme Corp consumes a frontier model API billed directly by the model developer, Solora AI:
 
 * Input tokens are priced at $5.00 per 1,000,000 tokens, and output tokens at $25.00 per 1,000,000 tokens.
 * During the [*charge period*](#glossary:chargeperiod), the workload consumes 8,400,000 input tokens and 2,100,000 output tokens.
 
-[**CSV Example**](/specification/data/ai_billing/per_token_foundation_model_api.csv)
+[**CSV Example**](/specification/data/ai_billing/per_token_frontier_model_api.csv)
 
 Note the following details in the example dataset:
 

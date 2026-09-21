@@ -1,7 +1,7 @@
 !INCLUDE "ai_billing_examples.md",0
-!INCLUDE "per_token_foundation_model_api.md",1
+!INCLUDE "per_token_frontier_model_api.md",1
 !INCLUDE "multi_model_usage.md",1
-!INCLUDE "foundation_model_via_csp_marketplace.md",1
-!INCLUDE "csp_served_foundation_model_first_party.md",1
-!INCLUDE "drawdown_via_prepayment_foundation_model_api.md",1
+!INCLUDE "frontier_model_via_csp_marketplace.md",1
+!INCLUDE "csp_served_frontier_model_first_party.md",1
+!INCLUDE "drawdown_via_prepayment_frontier_model_api.md",1
 !INCLUDE "multi_model_invoice_via_csp_marketplace.md",1
