@@ -28,8 +28,8 @@ Note the following details in the example dataset:
 
 * The three rate records carry a ChargeCategory of "Usage" and a null PurchaseDurationType and PurchasePaymentModel, even though each rate exists only because a one-year reservation was purchased. The two fee records in the same extract carry both values. The columns describe the purchase, and a rate is not a purchase.
 * This is deliberate rather than an omission. A price list is published before consumption happens, so at the time a rate is published there is no way to know whether a given unit of consumption will end up covered by a commitment. Whether coverage was actually applied is visible in [EffectiveCost](#datamodel.costandusage.effectivecost) and [BilledCost](#datamodel.costandusage.billedcost) in the [Cost and Usage](#datamodel.costandusage) dataset, which record what happened, rather than in the price, which records what is on offer.
-* Because neither column is populated on a rate record, a rate that varies by payment model is distinguished by its SKU Price ID. The three records here are "AURAWEB-USEAST1-COMPUTE-USAGE-COMMITTED", "AURAWEB-USEAST1-COMPUTE-USAGE-COMMITTED-PARTIAL-UPFRONT", and "AURAWEB-USEAST1-COMPUTE-USAGE-COMMITTED-ALL-UPFRONT". Publishing them under one SKU Price ID would collide on row uniqueness and would leave a consumer no way to tell them apart.
-* The rates and fees together resolve to a one-year cost for each of three cash-flow shapes, with a larger reduction the more of the obligation is settled upfront. Against an on-demand [ListUnitPrice](#datamodel.skuprice.listunitprice) of 0.384000 per hour, or 3,363.84 over 8,760 hours:
+* Because neither column is populated on a rate record, a rate that varies by payment model is distinguished by its SKU Price ID. The three records here are "AURAWEB-USEAST1-COMPUTE-USAGE-COMMITTED-NO-UPFRONT", "AURAWEB-USEAST1-COMPUTE-USAGE-COMMITTED-PARTIAL-UPFRONT", and "AURAWEB-USEAST1-COMPUTE-USAGE-COMMITTED-ALL-UPFRONT". Publishing them under one SKU Price ID would collide on row uniqueness and would leave a consumer no way to tell them apart.
+* The rates and fees together resolve to a one-year cost for each of three cash-flow shapes, with a larger reduction the more of the obligation is settled upfront. Against an on-demand [UnitPrice](#datamodel.skuprice.unitprice) of 0.384000 per hour, or 3,363.84 over 8,760 hours:
 
 | Payment model | Upfront fee | Hourly rate | One-year total | Reduction |
 | :--- | ---: | ---: | ---: | ---: |
@@ -37,7 +37,7 @@ Note the following details in the example dataset:
 | Partial Upfront | 1244.160000 | 0.142000 | 2,488.08 | 26% |
 | No Upfront | *none* | 0.299200 | 2,620.99 | 22% |
 
-* The "All Upfront" rate is 0.000000 rather than null. The obligation was settled in full by the fee, so covered consumption carries no further per-hour charge, and zero is the price. ListUnitPrice does not accept nulls in this dataset.
+* The "All Upfront" rate is 0.000000 rather than null. The obligation was settled in full by the fee, so covered consumption carries no further per-hour charge, and zero is the price. UnitPrice does not accept nulls in this dataset.
 * The "No Upfront" plan has no fee record at all, because nothing is charged to acquire it. Its whole obligation is recovered through the hourly rate.
 
 > **Note:** A purchase that carries no term at all leaves PurchaseDurationType null on a record whose ChargeCategory is "Purchase". A non-expiring balance of credits is the common shape, and is shown in the consumption currency scenario.
