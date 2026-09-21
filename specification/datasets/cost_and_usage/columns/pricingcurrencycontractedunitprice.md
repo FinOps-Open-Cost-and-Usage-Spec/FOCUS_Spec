@@ -1,6 +1,6 @@
 # Pricing Currency Contracted Unit Price
 
-Pricing Currency Contracted Unit Price represents the negotiated unit price per [Pricing Unit](#datamodel.costandusage.pricingunit) for the [*SKU Price*](#glossary:sku-price) identified by the given [SKU Price ID](#datamodel.costandusage.skupriceid). It is the unit price before the application of any discount-bearing [*commitment programs*](#glossary:commitment-program) (e.g., [*commitment discount*](#glossary:commitment-discount)).
+Pricing Currency Contracted Unit Price represents the negotiated unit price per [Pricing Unit](#datamodel.costandusage.pricingunit) for the [*SKU Price*](#glossary:sku-price) identified by the given [SKU Price ID](#datamodel.costandusage.skupriceid). This unit price does not reflect any negotiated currency exchange rates or discount-bearing [*commitment programs*](#glossary:commitment-program) (e.g., [*commitment discount*](#glossary:commitment-discount)).
 
 When no negotiated pricing terms apply to the *charge*, Pricing Currency Contracted Unit Price equals [Pricing Currency List Unit Price](#datamodel.costandusage.pricingcurrencylistunitprice).
 
@@ -22,7 +22,7 @@ PricingCurrencyContractedUnitPrice MUST adhere to the following requirements:
   * PricingCurrencyContractedUnitPrice MUST be a non-negative decimal value.
   * PricingCurrencyContractedUnitPrice MUST be denominated in the PricingCurrency.
   * PricingCurrencyContractedUnitPrice MUST represent the negotiated unit price per PricingUnit for the *SKU Price* identified by the given SkuPriceId when negotiated pricing terms apply to the *charge*.
-  * PricingCurrencyContractedUnitPrice MUST reflect negotiated pricing terms for the *SKU Price* identified by the given SkuPriceId, independent of any discount-bearing *commitment programs* being applied to the *charge*.
+  * PricingCurrencyContractedUnitPrice MUST reflect negotiated pricing terms for the *SKU Price* identified by the given SkuPriceId, excluding negotiated currency exchange rates and independent of any discount-bearing *commitment programs* being applied to the *charge*.
   * PricingCurrencyContractedUnitPrice MUST NOT reflect any unit price impact dependent on a discount-bearing *commitment program* being applied to the *charge*.
   * PricingCurrencyContractedUnitPrice MUST equal PricingCurrencyListUnitPrice when no negotiated pricing terms apply to the *charge*.
 
