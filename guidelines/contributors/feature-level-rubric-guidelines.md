@@ -16,7 +16,7 @@ Nullability is therefore decided here, but as the second axis and as a diagnosti
 **Output of the decision.** A leveling decision is not an annotation. It produces:
 
 1. a column presence requirement in the dataset's normative requirements,
-2. the `Feature level` and `Allows nulls` values in the column's Content Constraints table,
+2. the `Operating Model Conditions`, `Feature level`, and `Allows nulls` values in the column's Content Constraints table, and the matching row in the dataset's column table,
 3. where the level is `Conditional`, an *operating model* Condition that the presence requirement references.
 
 [Decision Procedure](#decision-procedure) produces all three.
@@ -95,7 +95,7 @@ These hold for every column and do not depend on which column is being decided.
 
 5. **Derivation runs one way.** Where a column is calculated from other columns, the derived column can never be more present than its sources: when a source is absent, the derived column is absent. The reverse does not hold. The absence of a derived column, or a narrower applicability of the derived concept, does not lower the feature level of its source columns, and each source column is leveled on its own terms.
 
-   **Example:** A cost restated in a second currency is derived from the billing currency cost and is absent whenever that cost is absent. A *data generator* that does not restate omits the derived column, and the source cost keeps its own level.
+   **Example:** A cost restated in a second currency is derived from the billing currency cost and is absent whenever that cost is absent. The restated cost has no bearing on the level of the billing currency cost, which is leveled on its own terms.
 
 ## Decision Procedure
 
@@ -170,7 +170,7 @@ Where either the concept test or the value test fails, the column is `Conditiona
 
 A `Conditional` level is expressed through one or more *operating model* Conditions. Never through a category of *data generator*, and never through prose in the column description alone.
 
-An *operating model* Condition MUST describe a characteristic of the *operating model*, not a category of *data generator*. Categories such as Cloud, SaaS, PaaS, or data center are not valid Conditions because they describe who the generator is rather than what concepts its operating model includes.
+An *operating model* Condition MUST describe a characteristic of the *operating model*, not a category of *data generator*. Categories such as Cloud, SaaS, PaaS, or data center are not valid Conditions because they describe who the *data generator* is rather than what concepts its *operating model* includes.
 
 1. **Look for an existing Condition** that marks exactly where the concept exists. Reusing one is preferred over adding a near-duplicate.
 2. **Where none exists, propose one** in the same pull request as the column: Condition ID, Display Name, Description, requirements stating when it evaluates to true and when to false, Version Introduced, a row in the Operating Model Condition List with its category, and an `!INCLUDE` line in `operating_model_conditions.mdpp`. The list row and the `!INCLUDE` line both go in alphabetical position; `validate_includes.py` fails the build when a Condition file is missing from the template.
@@ -229,7 +229,9 @@ Where the level is `Conditional`:
 
 The Condition's anchor is generated from its Display Name and can differ from its Condition ID (e.g., `#operatingmodelconditions.includespricing-billingcurrencydifferences`).
 
-**Content Constraints**, in the column definition: `Feature level` set to the Step 2 result, linked to the Condition where the level is `Conditional`; `Allows nulls` set to the Step 4 result.
+**Content Constraints**, in the column definition: `Operating Model Conditions` set to the Step 3 Condition or Conditions, or `Not applicable` where the level is `Mandatory`; `Feature level` set to the Step 2 result; `Allows nulls` set to the Step 4 result.
+
+**Dataset column table**, in the dataset's Columns section: the column's row carries the same `Feature Level` and `Allows Nulls` values, with `Conditional` linked to the anchor of the first Condition the presence requirement names.
 
 **Nullability requirements**, in the column definition, where Step 4 returned `True` for the row-level applicability reason: state when the column is null and when it is not, rather than leaving the null rule implicit.
 
@@ -273,11 +275,11 @@ The last two work together. The Presence gate or nullability gate signal decides
 
 **RegionId, in the Cost and Usage dataset:**
 
-* **Step 1, Concept.** The isolated geographic area a [*resource*](../../specification/glossary.md#glossary:resource) or [*service*](../../specification/glossary.md#glossary:service) is deployed in.
+* **Step 1, Concept.** An isolated geographic area where a [*resource*](../../specification/glossary.md#glossary:resource) is provisioned or a [*service*](../../specification/glossary.md#glossary:service) is provided.
 * **Step 2, Applicability.** An *operating model* without regions has no row that could carry a value. Presence gate, so `Conditional`.
 * **Step 3, Condition.** [Includes Regions](../../specification/operating_model_conditions/includesregions.md) exists and marks exactly where the concept exists. No new Condition needed.
 * **Step 4, Nullability.** Where the *operating model* includes regions, a region is available on many rows but not all, so `Allows nulls` = `True`.
-* **Step 5, Record.** `CostAndUsage MUST include [RegionId](#datamodel.costandusage.regionid) when the *operating model* [includes regions](#operatingmodelconditions.includesregions).` Content Constraints: `Feature level` = `Conditional`, linked to Includes Regions; `Allows nulls` = `True`.
+* **Step 5, Record.** `CostAndUsage MUST include [RegionId](#datamodel.costandusage.regionid) when the *operating model* [includes regions](#operatingmodelconditions.includesregions).` Content Constraints: `Operating Model Conditions` = Includes Regions; `Feature level` = `Conditional`; `Allows nulls` = `True`. Dataset column table: `Feature Level` = `Conditional`, linked to Includes Regions; `Allows Nulls` = `True`.
 
 The same Column ID is leveled on its own terms in each dataset that defines it.
 
