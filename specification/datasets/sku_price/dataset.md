@@ -43,13 +43,16 @@ Resolving the price that applies to a Cost and Usage charge therefore requires m
 * **Effective Period:** The SKU Price record's effective period (defined by [SKU Price Effective Start](#datamodel.skuprice.skupriceeffectivestart) and [SKU Price Effective End](#datamodel.skuprice.skupriceeffectiveend)) contains the Cost and Usage charge period (defined by [Charge Period Start](#datamodel.costandusage.chargeperiodstart) and [Charge Period End](#datamodel.costandusage.chargeperiodend)).
 * **Contract:** The Contract ID matches the agreement under which the charge was incurred (or is null for a public list price).
 * **Quantity Tier:** The quantity tier (defined by [Quantity Tier Minimum](#datamodel.skuprice.quantitytierminimum) and [Quantity Tier Maximum](#datamodel.skuprice.quantitytiermaximum)) contains the cumulative or evaluated quantity that determines the price for the charge.
-* **Pricing Currency:** The pricing currency matches the currency in which the charge is denominated.
+* **Pricing Currency:** The SKU price's [Pricing Currency](#datamodel.skuprice.pricingcurrency) matches the charge's [PricingCurrency](#datamodel.costandusage.pricingcurrency).
 
 The resolved record carries the unit price for that combination. If Contract ID is populated, the Unit Price represents the contractually agreed rate; if null, it represents the public list price. Comparing a billed contracted rate against its published catalog rate therefore requires looking up the corresponding SKU Price record where Contract ID is null.
 
-> **Note:** Because the SKU Price dataset may be delivered as a point-in-time snapshot, historical charges in the Cost and Usage dataset may reference a price point that is no longer published in the current catalog. Practitioners must retain historical SKU Price snapshots to reliably resolve older charges.
+> **Note on Currency Conversion:** Because the unit prices in the Cost and Usage dataset are denominated in the Billing Currency, comparing a Cost and Usage rate against a resolved SKU Price rate requires currency conversion whenever the charge's Billing Currency differs from its Pricing Currency.
+
+> **Note on Point-in-Time Data:** Because the SKU Price dataset may be delivered as a point-in-time snapshot, historical charges in the Cost and Usage dataset may reference a price point that is no longer published in the current catalog. Practitioners must retain historical SKU Price snapshots to reliably resolve older charges.
 
 Additionally, the SKU Price dataset can optionally join to the [Contract Commitment](#datamodel.contractcommitment) dataset to relate a specific contracted price to an overarching contractual agreement.
+
 
 | Dataset A           | Dataset A Column  | Dataset B           | Dataset B Column       |
 | ------------------- | ----------------- | ------------------- | ---------------------- |
