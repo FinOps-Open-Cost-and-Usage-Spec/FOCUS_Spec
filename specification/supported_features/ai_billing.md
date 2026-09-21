@@ -2,7 +2,7 @@
 
 ## Description
 
-FOCUS enables normalization of usage-based billing data from artificial intelligence and machine learning services, including token consumption for foundation model APIs. Token quantities are represented through consumption and pricing columns, allowing consumption and cost to be tracked by [*SKU*](#glossary:sku), token direction, and cache interaction. The TokenDirection and TokenCacheAction properties of [SkuPriceDetails](#datamodel.costandusage.skupricedetails) label the direction of the metered tokens and their interaction with a cache, so those attributes can be compared across service providers independently of provider-specific meter names, with model identity carried in the same SkuPriceDetails object.
+FOCUS enables normalization of usage-based billing data from artificial intelligence and machine learning services, including token consumption for frontier model APIs. Token quantities are represented through consumption and pricing columns, allowing consumption and cost to be tracked by [*SKU*](#glossary:sku), token direction, and cache interaction. The TokenDirection and TokenCacheAction properties of [SkuPriceDetails](#datamodel.costandusage.skupricedetails) label the direction of the metered tokens and their interaction with a cache, so those attributes can be compared across service providers independently of provider-specific meter names, with model identity carried in the same SkuPriceDetails object.
 
 ## Directly Dependent Columns
 
