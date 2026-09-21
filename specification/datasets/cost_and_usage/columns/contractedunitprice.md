@@ -2,7 +2,7 @@
 
 Contracted Unit Price represents the negotiated unit price per [Pricing Unit](#datamodel.costandusage.pricingunit) for the [*SKU Price*](#glossary:sku-price) identified by the given [SKU Price ID](#datamodel.costandusage.skupriceid). It is the unit price before the application of any discount-bearing [*commitment programs*](#glossary:commitment-program) (e.g., [*commitment discount*](#glossary:commitment-discount)).
 
-When no negotiated unit price adjustments apply to the *charge*, Contracted Unit Price equals [List Unit Price](#datamodel.costandusage.listunitprice).
+When no negotiated pricing terms apply to the *charge*, Contracted Unit Price equals [List Unit Price](#datamodel.costandusage.listunitprice).
 
 Contracted Unit Price is denominated in the [Billing Currency](#datamodel.costandusage.billingcurrency). Contracted Unit Price is commonly used for negotiation activities.
 
@@ -21,10 +21,10 @@ ContractedUnitPrice MUST adhere to the following requirements:
 * When ContractedUnitPrice is not null, ContractedUnitPrice MUST adhere to the following requirements:
   * ContractedUnitPrice MUST be a non-negative decimal value.
   * ContractedUnitPrice MUST be denominated in the BillingCurrency.
-  * ContractedUnitPrice MUST represent the negotiated unit price per PricingUnit for the *SKU Price* identified by the given SkuPriceId when negotiated unit price adjustments apply to the *charge*.
-  * ContractedUnitPrice MUST reflect negotiated unit price adjustments for the *SKU Price* identified by the given SkuPriceId, independent of any discount-bearing *commitment programs* being applied to the *charge*.
+  * ContractedUnitPrice MUST represent the negotiated unit price per PricingUnit for the *SKU Price* identified by the given SkuPriceId when negotiated pricing terms apply to the *charge*.
+  * ContractedUnitPrice MUST reflect negotiated pricing terms for the *SKU Price* identified by the given SkuPriceId, independent of any discount-bearing *commitment programs* being applied to the *charge*.
   * ContractedUnitPrice MUST NOT reflect any unit price impact dependent on a discount-bearing *commitment program* being applied to the *charge*.
-  * ContractedUnitPrice MUST equal ListUnitPrice when no negotiated unit price adjustments apply to the *charge*.
+  * ContractedUnitPrice MUST equal ListUnitPrice when no negotiated pricing terms apply to the *charge*.
 
 ## Usability Constraints
 

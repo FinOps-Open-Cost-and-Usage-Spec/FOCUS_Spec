@@ -16,9 +16,9 @@ ContractedCost MUST adhere to the following requirements:
 * ContractedCost MUST be denominated in the BillingCurrency.
 * When [ChargeCategory](#datamodel.costandusage.chargecategory) is "Usage" or "Purchase" and [ChargeClass](#datamodel.costandusage.chargeclass) is not "Correction", ContractedCost MUST adhere to the following requirements:
   * ContractedCost MUST represent the cost of the *charge* based on negotiated pricing terms.
-  * ContractedCost MUST equal ListCost when no negotiated pricing terms apply to the *charge*.
   * ContractedCost MUST reflect negotiated pricing terms, independent of any discount-bearing *commitment programs* being applied to the *charge*.
   * ContractedCost MUST NOT reflect any cost impact dependent on a discount-bearing *commitment program* being applied to the *charge*.
+  * ContractedCost MUST equal ListCost when no negotiated pricing terms apply to the *charge*.
 * ContractedCost MUST equal [BilledCost](#datamodel.costandusage.billedcost) when ChargeCategory is "Credit".
 * ContractedCost MUST be calculated based on the ContractedCost of the related *charges* when ChargeCategory is "Tax".
 * ContractedCost MAY differ from BilledCost when ChargeCategory is "Adjustment".

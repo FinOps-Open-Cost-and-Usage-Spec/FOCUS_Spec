@@ -1,6 +1,6 @@
 # List Unit Price
 
-List Unit Price represents the provider-suggested unit price per [Pricing Unit](#datamodel.costandusage.pricingunit) for the [*SKU Price*](#glossary:sku-price) identified by the given [SKU Price ID](#datamodel.costandusage.skupriceid). It is the unit price before the application of any negotiated unit price adjustments or discount-bearing [*commitment programs*](#glossary:commitment-program) (e.g., [*commitment discount*](#glossary:commitment-discount)).
+List Unit Price represents the provider-suggested unit price per [Pricing Unit](#datamodel.costandusage.pricingunit) for the [*SKU Price*](#glossary:sku-price) identified by the given [SKU Price ID](#datamodel.costandusage.skupriceid). It is the unit price before the application of any negotiated pricing terms or discount-bearing [*commitment programs*](#glossary:commitment-program) (e.g., [*commitment discount*](#glossary:commitment-discount)).
 
 List Unit Price is denominated in the [Billing Currency](#datamodel.costandusage.billingcurrency). List Unit Price is commonly used for rate optimization activities.
 
@@ -20,7 +20,7 @@ ListUnitPrice MUST adhere to the following requirements:
   * ListUnitPrice MUST be a non-negative decimal value.
   * ListUnitPrice MUST be denominated in the BillingCurrency.
   * ListUnitPrice MUST represent the provider-suggested unit price per PricingUnit for the *SKU Price* identified by the given SkuPriceId.
-  * ListUnitPrice MUST NOT reflect negotiated unit price adjustments for the associated *SKU Price*.
+  * ListUnitPrice MUST NOT reflect negotiated pricing terms for the associated *SKU Price*.
   * ListUnitPrice MUST NOT reflect any unit price impact dependent on a discount-bearing *commitment program* being applied to the *charge*.
 
 ## Usability Constraints
