@@ -399,6 +399,10 @@
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-CostAndUsage-D-097-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-099-C"
           }
         ]
       },
@@ -471,7 +475,8 @@
         "CAU-CostAndUsage-D-073-C",
         "CAU-CostAndUsage-D-074-C",
         "CAU-CostAndUsage-D-075-M",
-        "CAU-CostAndUsage-D-076-M"
+        "CAU-CostAndUsage-D-076-M",
+        "CAU-CostAndUsage-D-099-C"
       ]
     }
   },
@@ -690,6 +695,10 @@
           },
           {
             "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-PrincipalId-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-RegionId-C-000-C"
           },
           {
@@ -808,6 +817,7 @@
         "CAU-PricingCurrencyListUnitPrice-C-000-C",
         "CAU-PricingQuantity-C-000-M",
         "CAU-PricingUnit-C-000-M",
+        "CAU-PrincipalId-C-000-C",
         "CAU-RegionId-C-000-C",
         "CAU-RegionName-C-000-C",
         "CAU-ResourceId-C-000-C",
@@ -3463,6 +3473,34 @@
       "MustSatisfy": "CostAndUsage MUST include InvoiceDetailId when the invoice issuer supports payable invoices.",
       "Keyword": "MUST",
       "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-099-C": {
+    "Function": "Presence",
+    "Reference": "PrincipalId",
+    "EntityType": "Dataset",
+    "EntityName": "Principal ID",
+    "EntityId": "PrincipalId",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "Conditions": [
+      "IncludesRequesterAttribution"
+    ],
+    "Type": "Static",
+    "Order": 580,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include PrincipalId when the operating model includes requester attribution.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "PrincipalId"
+      },
       "Condition": {},
       "Dependencies": []
     }
