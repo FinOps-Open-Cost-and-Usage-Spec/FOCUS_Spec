@@ -6,7 +6,7 @@ Aura Web prices object storage in three quantity tiers, and grants Acme Corp a n
 
 Note the following details in the example dataset:
 
-* All four records share a [SkuPriceId](#datamodel.skuprice.skupriceid) of "AURAWEB-USEAST1-STORAGE-OBJECT-STANDARD". [QuantityTierMinimum](#datamodel.skuprice.quantitytierminimum) is a member of the composite key, which is what allows the tiers to coexist as separate records for one price point.
+* Each tier carries its own [SkuPriceId](#datamodel.skuprice.skupriceid), encoding its boundaries: "AURAWEB-USEAST1-STORAGE-OBJECT-STANDARD-0-51200", "-51200-512000", and "-512000-PLUS". A SKU Price ID is commonly used to differentiate prices by properties such as periods and tiers, so each tier represents a distinct price point.
 * QuantityTierMinimum is an exclusive lower bound and [QuantityTierMaximum](#datamodel.skuprice.quantitytiermaximum) is an inclusive upper bound, so each pair describes a half-open quantity interval. A quantity falls in a tier when it is strictly greater than the minimum and less than or equal to the maximum. The three public tiers therefore cover the following quantities, measured in the [PricingUnit](#datamodel.skuprice.pricingunit) of "GB-Months":
 
 | Quantity range | QuantityTierMinimum | QuantityTierMaximum | [UnitPrice](#datamodel.skuprice.unitprice) |
@@ -19,4 +19,3 @@ Note the following details in the example dataset:
 * The highest tier carries a null QuantityTierMaximum to indicate no upper bound. Only the highest tier does; a tier with a higher tier above it carries a maximum, which is what closes the gap between them.
 * These boundaries identify which tier a quantity falls in. Whether the tier's unit price applies only to the units inside that tier or to every unit consumed is a property of the published pricing terms for the offering, and is not expressed by the boundaries themselves.
 * The fourth record is a negotiated rate on the middle tier, carrying a populated [ContractId](#datamodel.skuprice.contractid) and a UnitPrice of 0.018700 against a public UnitPrice of 0.022000. It repeats the tier boundaries of the public middle tier rather than defining new ones, because the negotiation changed the price within that tier rather than where the tier begins and ends.
-* Only one member of the composite key differs between the negotiated record and the public middle tier: ContractId. Relative to the other two public tiers, QuantityTierMinimum differs as well. Both records describe the same quantity interval without colliding.
