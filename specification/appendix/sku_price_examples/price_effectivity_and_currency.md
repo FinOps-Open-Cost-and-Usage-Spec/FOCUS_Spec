@@ -74,7 +74,7 @@ Aura Web prices its analytics service in platform credits rather than in a [*nat
 
 Note the following details in the example dataset:
 
-* The analytics rate carries a PricingCurrencyCategory of "Consumable" and a PricingCurrency of "Credit". Multiplying scanned volume by its ListUnitPrice of 4.000000 yields a balance of credits, not a financial cost. Converting that balance to a financial cost requires the second record.
+* The analytics rate carries a PricingCurrencyCategory of "Consumable" and a PricingCurrency of "Credit". Multiplying scanned volume by its UnitPrice of 4.000000 yields a balance of credits, not a financial cost. Converting that balance to a financial cost requires the second record.
 * The credit purchase carries a PricingCurrencyCategory of "Payable" and a PricingCurrency of "USD", with a UnitPrice of 0.010000 per credit. A consumer reaches a financial cost by resolving the consumable rate first and then applying the payable rate. Scanning 100 GB consumes 400 credits, which cost 4.00.
 * [PricingUnit](#datamodel.skuprice.pricingunit) and PricingCurrency answer different questions and are easy to transpose on a record like this. On the analytics rate the unit is "GB" and the currency is "Credit"; on the credit purchase the unit is "Credits" and the currency is "USD". The unit is what is being measured, and the currency is what it is priced in.
 * [PricingRegionId](#datamodel.skuprice.pricingregionid) is null on all three records, which states that the rate is not regionally scoped rather than that its region is unknown. The virtual machine and storage rates elsewhere in the rate card carry "us-east-1" because those prices vary by region.

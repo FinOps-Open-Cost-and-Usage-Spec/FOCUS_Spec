@@ -2,7 +2,7 @@
 
 The SKU Price dataset is the primary dataset for standardizing [*service provider*](#glossary:service-provider) catalog rates, multipliers, and negotiated prices. This dataset enables practitioners to perform precise rate lookups, analyze commitment discounts, and understand the cost mechanics of payable and consumable prices.
 
-The SKU Price dataset represents prices as of the date the dataset is captured. A *service provider* may not include historical prices in their delivery; if so, practitioners can reconstruct price history by combining successive snapshots and comparing them using [SKU Price Effective Start](#datamodel.skuprice.skupriceeffectivestart) and [SKU Price Effective End](#datamodel.skuprice.skupriceeffectiveend). The dataset reflects the prices a *service provider* offers, independent of whether a price was used, and is not derived from [Cost and Usage](#datamodel.costandusage) data.
+The SKU Price dataset represents prices as of the date the dataset is captured. A *service provider* might not include historical prices in their delivery; if so, practitioners can reconstruct price history by combining successive snapshots and comparing them using [SKU Price Effective Start](#datamodel.skuprice.skupriceeffectivestart) and [SKU Price Effective End](#datamodel.skuprice.skupriceeffectiveend). The dataset reflects the prices a *service provider* offers, independent of whether a price was used, and is not derived from [Cost and Usage](#datamodel.costandusage) data.
 
 The dataset describes the full price list a *service provider* offers, not only the SKUs that appear in Cost and Usage. To manage the size of a complete price list, a *service provider* may partition delivery, for example by region, service, or SKU category, and is encouraged to do so where publishing a complete list in a single delivery would otherwise be impractical.
 
@@ -48,11 +48,10 @@ Resolving the price that applies to a Cost and Usage charge therefore requires m
 The resolved record carries the unit price for that combination. If Contract ID is populated, the Unit Price represents the contractually agreed rate; if null, it represents the public list price. Comparing a billed contracted rate against its published catalog rate therefore requires looking up the corresponding SKU Price record where Contract ID is null.
 
 > **Note on Currency Conversion:** Because the unit prices in the Cost and Usage dataset are denominated in the Billing Currency, comparing a Cost and Usage rate against a resolved SKU Price rate requires currency conversion whenever the charge's Billing Currency differs from its Pricing Currency.
-
+>
 > **Note on Point-in-Time Data:** Because the SKU Price dataset may be delivered as a point-in-time snapshot, historical charges in the Cost and Usage dataset may reference a price point that is no longer published in the current catalog. Practitioners must retain historical SKU Price snapshots to reliably resolve older charges.
 
 Additionally, the SKU Price dataset can optionally join to the [Contract Commitment](#datamodel.contractcommitment) dataset to relate a specific contracted price to an overarching contractual agreement.
-
 
 | Dataset A           | Dataset A Column  | Dataset B           | Dataset B Column       |
 | ------------------- | ----------------- | ------------------- | ---------------------- |
