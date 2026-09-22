@@ -33,17 +33,17 @@ The following examples illustrate frontier model billing scenarios across direct
 
 The same examples can be read by axis. An example may appear under more than one heading.
 
-*Participating entity arrangements*
+### Participating Entity Arrangements
 
 * Model developer sells, hosts, and invoices — Per-Token Frontier Model API; Multi-Model Usage; Drawdown via Prepayment
 * CSP sells, hosts, and invoices a third-party model — CSP-Served Third-Party Model; Cached Tokens via CSP Marketplace; Multi-Model Invoice via CSP Marketplace
 
-*Billing mechanics*
+### Billing Mechanics
 
 * Per-token pricing in block increments — every example
 * Commitment purchase and drawdown — Drawdown via Prepayment (the only example with [PricingCategory](#datamodel.costandusage.pricingcategory) "Committed" usage rows)
 
-*Token metering*
+### Token Metering
 
 * Input and output tokens priced separately — every example except Cached Tokens via CSP Marketplace, which is a cache-only slice
 * Cache read and cache write — Cached Tokens via CSP Marketplace; Multi-Model Invoice via CSP Marketplace
