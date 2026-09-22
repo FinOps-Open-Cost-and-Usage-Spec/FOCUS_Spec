@@ -154,7 +154,7 @@
       "type": "object",
       "description": "The list of all rules, each containing logic, reference metadata, and criteria.",
       "patternProperties": {
-        "^([A-Za-z0-9]{3}-)?[A-Za-z0-9]+-[CADON]{1}-\\d{3}-[MOC]$": {
+        "^([A-Za-z0-9]{3}-)?[A-Za-z0-9]+-[CADONM]{1}-\\d{3}-[MOC]$": {
           "type": "object",
           "properties": {
             "Function": {
@@ -175,6 +175,7 @@
               "type": "string",
               "enum": [
                 "Dataset",
+                "DataModel",
                 "Column",
                 "Attribute",
                 "Object",
@@ -346,6 +347,7 @@
                     "EntityType": {
                       "enum": [
                         "Attribute",
+                        "DataModel",
                         "Condition"
                       ]
                     }
