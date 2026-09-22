@@ -243,7 +243,7 @@
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "AllocatedMethodDetails MUST conform to AllocatedMethodDetailsObject requirements when AllocatedMethodDetails is not null.",
+      "MustSatisfy": "The AllocatedMethodDetails MUST conform to AllocatedMethodDetailsObject requirements when AllocatedMethodDetails is not null.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "CheckModelRule",
