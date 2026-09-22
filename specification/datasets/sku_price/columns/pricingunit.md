@@ -1,6 +1,6 @@
 # Pricing Unit
 
-Pricing Unit represents the service-provider-specified measurement unit used to define the unit price of an offering. Common examples include the number of hours for compute runtime (e.g., `Hours`), data volume for storage (e.g., `GB-Months`), or an accumulated count of API requests or AI interactions (e.g., `1000 Requests`, `1000 Tokens`).
+Pricing Unit represents the service-provider-specified measurement unit used to define the unit price of an offering. Common examples include the number of hours for compute runtime (e.g., `Hours`), data volume for storage (e.g., `GB-Months`), or an accumulated count of API requests or AI interactions (e.g., `1,000 Requests`, `1,000,000 Tokens`).
 
 Distinct from the [Consumed Unit](#datamodel.costandusage.consumedunit) in [Cost and Usage](#datamodel.costandusage) data, Pricing Unit focuses strictly on the measurement standard dictated by the [*service provider*](#glossary:service-provider) in their rate card, which is often at a coarser granularity than the raw usage measurement.
 
