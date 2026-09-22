@@ -21,17 +21,17 @@ Two supported features:
 
 ### There is No Coverage-Aware Unit Price
 
-The dataset carries List Unit Price and Contracted Unit Price. It does not carry a rate reflecting a commitment discount having been applied. A practitioner cannot ask it what an M5 large will cost given the reservations they already hold.
+The dataset carries a single Unit Price, relying on Contract ID to distinguish a public price from a contractually agreed one. While it does contain the theoretical catalog price for commitment discounts (e.g., the published hourly rate of a 1-year reservation), it does not carry a coverage-aware effective rate reflecting a commitment having actually been applied to consumption. A practitioner cannot ask it what a specific M5 large will ultimately cost given the reservation inventory they currently hold.
 
 This is a structural limit rather than a missing column. The same SKU prices differently depending on which commitment covers it: one rate under a one year reservation, another under a three year reservation, another under a savings plan, and different rates again where any of those was itself negotiated. A single coverage-aware price column would have to pick one, and there is no row for it to sit on. Row uniqueness is defined across service provider, SKU Price ID, contract, quantity tier, effective start, and pricing currency, and none of those members distinguish one commitment instrument from another.
 
-Where a service provider needs to express this today, the specification directs them to custom columns, stating that SKU Price should include custom columns needed to identify specific rate card routing logic when FOCUS columns are not sufficient. Guidance for what those columns look like is open under #2590. Whether a pattern emerges from that guidance worth standardizing is the question that follows it.
+Where a service provider needs to express this today, the specification directs them to custom columns, stating that SKU Price should include custom columns needed to identify specific rate card routing logic when FOCUS columns are not sufficient.
 
-### The Rate Difference is the Negotiated Portion, Not the Whole Benefit
+### The Rate Difference is the Contracted Portion, Not the Whole Benefit
 
-Subtracting Contracted Unit Price from List Unit Price gives what negotiation reduced the rate by. It does not give everything an agreement was worth, because the effect of applying a commitment to a charge is recognized in Effective Cost on the Cost and Usage side. The Cost Comparison supported feature already states the split: List against Contracted quantifies negotiated discount savings, and Contracted against Effective isolates commitment discount savings.
+Subtracting a contracted record's Unit Price from the Unit Price of its public equivalent (the record sharing the same SKU Price ID, pricing currency, quantity tier, and effective period, where Contract ID is null) gives what the contract reduced the rate by. It does not give everything an agreement was worth, because the effect of applying a commitment to a charge is recognized in Effective Cost on the Cost and Usage side. The Cost Comparison supported feature already states the split: comparing list amounts against contracted amounts quantifies contracted discount savings, and comparing contracted amounts against effective amounts isolates commitment discount savings.
 
-The boundary case is a negotiation whose discount exists only because a commitment was purchased, such as a rate that applies only when a specific reservation is held. Read strictly, the negotiated portion belongs to the purchase record for that reservation, and the application of it belongs to Effective Cost on the usage records, which places the two halves of one negotiation in different columns of different datasets. Whether that is the right answer is open under #1835 and #2492, with #2602 collecting the scenario as sample data rather than as argument.
+The boundary case is a contract whose discount exists only because a commitment was purchased, such as a rate that applies only when a specific reservation is held. Read strictly, the contracted portion belongs to the purchase record for that reservation, and the application of it belongs to Effective Cost on the usage records, which places the two halves of one agreement in different columns of different datasets.
 
 ### There is No Signal for Dynamic Pricing
 

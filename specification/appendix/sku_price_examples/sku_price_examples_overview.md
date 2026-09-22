@@ -2,11 +2,11 @@
 
 The following section contains examples of how a [*service provider*](#glossary:service-provider) may represent a published [*price list*](#glossary:price-list) as a [SKU Price](#datamodel.skuprice) [*FOCUS dataset*](#glossary:FOCUS-dataset). The scenarios use a fictitious service provider, Aura Web, and a fictitious customer, Acme Corp. Provider, service, and identifier names are illustrative.
 
-The scenarios draw on a single rate card rather than a separate dataset per scenario, because several SKU Price constructs are only visible when the records sit side by side. Row uniqueness, tier boundaries, and price effectivity each depend on how a record relates to its neighbors.
+The scenarios draw on a single [*price list*](#glossary:price-list) rather than a separate dataset per scenario, because several SKU Price constructs are only visible when the records sit side by side. Row uniqueness, tier boundaries, and price effectivity each depend on how a record relates to its neighbors.
 
-[**CSV Example: complete rate card**](/specification/data/sku_price_examples/aura_web_rate_card_full.csv)
+[**CSV Example: complete price list**](/specification/data/sku_price_examples/aura_web_rate_card_full.csv)
 
-The rate card contains 31 records across ten SKUs:
+The *price list* contains 31 records across ten SKUs:
 
 * A general purpose virtual machine offered at a current and a superseded on-demand rate, at a second on-demand rate in another currency, at a negotiated rate, and at six committed rates, one for each commitment instrument and payment model under which its consumption can be covered.
 * A burstable virtual machine whose on-demand rate changes at the start of 2027, announced ahead of taking effect.

@@ -47,9 +47,10 @@ Resolving the price that applies to a Cost and Usage charge therefore requires m
 
 The resolved record carries the unit price for that combination. If Contract ID is populated, the Unit Price represents the contractually agreed rate; if null, it represents the public list price. Comparing a billed contracted rate against its published catalog rate therefore requires looking up the corresponding SKU Price record where Contract ID is null.
 
-> **Note on Currency Conversion:** Because the unit prices in the Cost and Usage dataset are denominated in the Billing Currency, comparing a Cost and Usage rate against a resolved SKU Price rate requires currency conversion whenever the charge's Billing Currency differs from its Pricing Currency.
+> **Notes:**
 >
-> **Note on Point-in-Time Data:** Because the SKU Price dataset may be delivered as a point-in-time snapshot, historical charges in the Cost and Usage dataset may reference a price point that is no longer published in the current catalog. Practitioners must retain historical SKU Price snapshots to reliably resolve older charges.
+> * Because the base unit prices in the Cost and Usage dataset (i.e., [List Unit Price](#datamodel.costandusage.listunitprice) and [Contracted Unit Price](#datamodel.costandusage.contractedunitprice)) are denominated in the Billing Currency, comparing a Cost and Usage rate against a resolved SKU Price record requires currency conversion whenever the charge's Billing Currency differs from its Pricing Currency. However, the Pricing Currency unit prices (i.e., [Pricing Currency List Unit Price](#datamodel.costandusage.pricingcurrencylistunitprice) and [Pricing Currency Contracted Unit Price](#datamodel.costandusage.pricingcurrencycontractedunitprice)) are denominated in the Pricing Currency and compare directly against Unit Price without conversion.
+> * Because the SKU Price dataset is delivered as a point-in-time snapshot, historical charges in the Cost and Usage dataset may reference a superseded price record that is no longer included in the current catalog. Practitioners must retain historical SKU Price snapshots to reliably resolve older charges.
 
 Additionally, the SKU Price dataset can optionally join to the [Contract Commitment](#datamodel.contractcommitment) dataset to relate a specific contracted price to an overarching contractual agreement.
 

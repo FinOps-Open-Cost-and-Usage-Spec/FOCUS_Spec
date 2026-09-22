@@ -22,7 +22,7 @@ Practitioners are encouraged to carefully distinguish between **Pricing Region I
 * **Pricing Region ID** defines the geographic boundary for which the *rate itself* is valid.
 * **Region ID** defines the physical location where a specific *resource* is provisioned.
 
-In many cases these will be identical. However, if a pricing rate is global but still applies to specific regional deployments, or if the provider rate card dictates a resource deployment region that differs from the pricing boundary, `Pricing Region ID` reflects the pricing boundary. The set of `Region ID` values can instead be represented as inclusion criteria within [SKU Price Eligibility](#datamodel.skuprice.skupriceeligibility) to capture the resource location without conflating the rate card logic.
+In many cases these will be identical. However, if a *SKU Price* is global but still applies to specific regional deployments, or if the provider [*price list*](#glossary:price-list) dictates a resource deployment region that differs from the pricing boundary, `Pricing Region ID` reflects the pricing boundary. The set of `Region ID` values can instead be represented as inclusion criteria within [SKU Price Eligibility](#datamodel.skuprice.skupriceeligibility) to capture the resource location without conflating the *price list* logic.
 
 ### Null vs Global Values for Non-Regionalized Prices
 
