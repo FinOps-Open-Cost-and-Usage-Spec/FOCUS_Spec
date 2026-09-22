@@ -218,7 +218,11 @@
           }
         ]
       },
-      "Condition": {},
+      "Condition": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "PrincipalId",
+        "Value": null
+      },
       "Dependencies": [
         "CAU-PrincipalId-C-007-M"
       ]
