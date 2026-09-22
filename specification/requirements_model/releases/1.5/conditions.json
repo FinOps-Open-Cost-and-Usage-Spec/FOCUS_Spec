@@ -100,5 +100,9 @@
       "Description": "A verifiable state indicating whether the operating model includes prices in virtual currency.",
       "ModelRuleId": "CON-IncludesVirtualCurrency-N-000-C"
     }
+  },
+  "IncludesRequesterAttribution": {
+    "Description": "A verifiable state indicating whether the operating model includes requester attribution.",
+    "ModelRuleId": "CON-IncludesRequesterAttribution-N-000-C"
   }
 }
