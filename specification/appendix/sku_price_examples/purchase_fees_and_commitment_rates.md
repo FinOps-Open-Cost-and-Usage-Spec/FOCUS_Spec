@@ -22,11 +22,11 @@ The rate that covered consumption is priced at is a separate record from the fee
 
 [**CSV Example**](/specification/data/sku_price_examples/sku_price_commitment_rates.csv)
 
-The extract carries the three reservation rates alongside the two reservation fees, so the difference between them is visible in one place.
+The extract carries the on-demand rate and the three reservation rates alongside the two reservation fees, so the difference between them is visible in one place.
 
 Note the following details in the example dataset:
 
-* The three rate records carry a ChargeCategory of "Usage" and a null PurchaseDurationType and PurchasePaymentModel, even though each rate exists only because a one-year reservation was purchased. The two fee records in the same extract carry both values. The columns describe the purchase, and a rate is not a purchase.
+* The three reservation rate records carry a ChargeCategory of "Usage" and a null PurchaseDurationType and PurchasePaymentModel, even though each rate exists only because a one-year reservation was purchased. The two fee records in the same extract carry both values. The columns describe the purchase, and a rate is not a purchase.
 * This is deliberate rather than an omission. A price list is published before consumption happens, so at the time a rate is published there is no way to know whether a given unit of consumption will end up covered by a commitment. Whether coverage was actually applied is visible in [EffectiveCost](#datamodel.costandusage.effectivecost) and [BilledCost](#datamodel.costandusage.billedcost) in the [Cost and Usage](#datamodel.costandusage) dataset, which record what happened, rather than in the price, which records what is on offer.
 * Because neither column is populated on a rate record, a rate that varies by payment model is distinguished by its SKU Price ID. The three records here are "AURAWEB-USEAST1-COMPUTE-USAGE-COMMITTED-NO-UPFRONT", "AURAWEB-USEAST1-COMPUTE-USAGE-COMMITTED-PARTIAL-UPFRONT", and "AURAWEB-USEAST1-COMPUTE-USAGE-COMMITTED-ALL-UPFRONT". Publishing them under one SKU Price ID would collide on row uniqueness and would leave a consumer no way to tell them apart.
 * The rates and fees together resolve to a one-year cost for each of three cash-flow shapes, with a larger reduction the more of the obligation is settled upfront. Against an on-demand [UnitPrice](#datamodel.skuprice.unitprice) of 0.384000 per hour, or 3,363.84 over 8,760 hours:
