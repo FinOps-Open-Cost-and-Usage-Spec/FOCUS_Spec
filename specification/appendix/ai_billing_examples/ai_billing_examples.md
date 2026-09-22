@@ -20,13 +20,31 @@ Note the following column usage on the token usage rows in the scenarios below:
 * The TokenDirection and TokenCacheAction properties of SkuPriceDetails label the direction of the metered tokens and their interaction with a cache, independently of the SkuMeter name.
 * [PrincipalId](#datamodel.costandusage.principalid) identifies the [*principal*](#glossary:principal) associated with a charge, where one applies.
 
-The following examples illustrate frontier model billing scenarios across direct billing, multiple models on one invoice, cloud marketplace resale, a cloud provider first-party offering, commitment drawdown, and cached token metering. Charges for a model and its underlying infrastructure appearing on the same invoice are outside the scope of this section.
+The following examples illustrate frontier model billing scenarios across direct billing, multiple models on one invoice, cloud marketplace resale, a CSP-served third-party model, commitment drawdown, and cached token metering. Charges for a model and its underlying infrastructure appearing on the same invoice are outside the scope of this section.
 
-| Example | Invoice Issuer | Service Provider | Focus |
-| :--- | :--- | :--- | :--- |
-| Per-Token Frontier Model API | Solora AI | Solora AI | Model developer bills the customer directly |
-| Multi-Model Usage | Solora AI | Solora AI | Multiple models on one invoice, each priced separately |
-| Frontier Model via CSP Marketplace | Aura Web | Solora AI | Cloud provider invoices for a third-party model |
-| CSP-Served Frontier Model (First-Party) | Aura Web | Aura Web | Cloud provider bills for a first-party generative AI service |
-| Drawdown via Prepayment | Solora AI | Solora AI | Commitment purchase with subsequent token drawdown |
-| Multi-Model Invoice via CSP Marketplace | LatticeScale | Solora AI | Multiple models and cache meters on one marketplace invoice |
+| Example | Invoice Issuer | Service Provider | Host Provider | Focus |
+| :--- | :--- | :--- | :--- | :--- |
+| Per-Token Frontier Model API | Solora AI | Solora AI | Solora AI | Model developer bills the customer directly |
+| Multi-Model Usage | Solora AI | Solora AI | Solora AI | Multiple models on one invoice, each priced separately |
+| Cached Tokens via CSP Marketplace | Aura Web | Aura Web | Aura Web | Cloud provider invoices for a third-party model; cache-only metering slice |
+| CSP-Served Third-Party Model | Aura Web | Aura Web | Aura Web | Cloud provider bills for its own service serving a third-party model |
+| Drawdown via Prepayment | Solora AI | Solora AI | Solora AI | Commitment purchase with subsequent token drawdown |
+| Multi-Model Invoice via CSP Marketplace | LatticeScale | LatticeScale | LatticeScale | Multiple models and cache meters on one marketplace invoice |
+
+The same examples can be read by axis. An example may appear under more than one heading.
+
+*Participating entity arrangements*
+
+* Model developer sells, hosts, and invoices — Per-Token Frontier Model API; Multi-Model Usage; Drawdown via Prepayment
+* CSP sells, hosts, and invoices a third-party model — CSP-Served Third-Party Model; Cached Tokens via CSP Marketplace; Multi-Model Invoice via CSP Marketplace
+
+*Billing mechanics*
+
+* Per-token pricing in block increments — every example
+* Commitment purchase and drawdown — Drawdown via Prepayment (the only example with [PricingCategory](#datamodel.costandusage.pricingcategory) "Committed" usage rows)
+
+*Token metering*
+
+* Input and output tokens priced separately — every example except Cached Tokens via CSP Marketplace, which is a cache-only slice
+* Cache read and cache write — Cached Tokens via CSP Marketplace; Multi-Model Invoice via CSP Marketplace
+* Multiple models on one invoice — Multi-Model Usage; Multi-Model Invoice via CSP Marketplace
