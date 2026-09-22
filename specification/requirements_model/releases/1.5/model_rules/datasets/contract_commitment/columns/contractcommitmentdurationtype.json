@@ -34,7 +34,7 @@
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CCT-ContractCommitmentDurationType-C-004-O"
+            "ModelRuleId": "CCT-ContractCommitmentDurationType-C-008-O"
           },
           {
             "CheckFunction": "CheckModelRule",
@@ -55,7 +55,7 @@
         "CCT-ContractCommitmentDurationType-C-001-M",
         "CCT-ContractCommitmentDurationType-C-002-M",
         "CCT-ContractCommitmentDurationType-C-003-M",
-        "CCT-ContractCommitmentDurationType-C-004-O",
+        "CCT-ContractCommitmentDurationType-C-008-O",
         "CCT-ContractCommitmentDurationType-C-005-O",
         "CCT-ContractCommitmentDurationType-C-006-O",
         "CCT-ContractCommitmentDurationType-C-007-O",
@@ -150,10 +150,10 @@
     "EntityId": "ContractCommitmentDurationType",
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
-    "Status": "Active",
+    "Status": "Removed",
     "Conditions": [],
     "Type": "Static",
-    "Order": 40,
+    "Order": -1,
     "DatasetType": "CCT",
     "DatasetId": "ContractCommitment",
     "DatasetName": "Contract Commitment",
@@ -167,7 +167,8 @@
       },
       "Condition": {},
       "Dependencies": []
-    }
+    },
+    "ModelVersionRemoved": "1.5"
   },
   "CCT-ContractCommitmentDurationType-C-005-O": {
     "Function": "Validation",
@@ -313,6 +314,29 @@
         "CCT-ContractCommitmentPeriodEnd-C-003-M",
         "CCT-ContractCommitmentPeriodStart-C-003-M"
       ]
+    }
+  },
+  "CCT-ContractCommitmentDurationType-C-008-O": {
+    "Function": "Format",
+    "Reference": "ContractCommitmentDurationType",
+    "EntityType": "Column",
+    "EntityName": "Contract Commitment Duration Type",
+    "EntityId": "ContractCommitmentDurationType",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Dynamic",
+    "Order": 40,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitmentDurationType SHOULD use the \"[Numeric Value] [Unit]\" format (e.g., \"1 Day\", \"1 Year\", \"3 Months\", \"3 Years\").",
+      "Keyword": "SHOULD",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
     }
   }
 }
