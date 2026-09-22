@@ -27,7 +27,9 @@ Within the SKU Price dataset, the Purchase Payment Model describes how the fee f
 
 * **All Upfront:** The full obligation is settled by a single fee at the start of the term.
 * **No Upfront:** The obligation is settled through periodic fees over the term, with no initial payment.
-* **Partial Upfront:** The obligation combines an initial fee and periodic fees, typically represented across multiple SKU Price records (e.g., one record for the upfront fee and a separate record for the recurring fee).
+* **Partial Upfront:** The obligation combines an initial fee and periodic fees, and is represented by one SKU Price record rather than by separate records for the upfront fee and the recurring fee.
+
+Whether the price of a purchase differs across payment models is set by the [*service provider*](#glossary:service-provider). Some price the payment model into the purchase and charge less in total the more of the obligation is settled upfront. Others charge the same total under every payment model, and some offer only one. Each payment model offered is still published as a separate SKU Price record, so two records for the same purchase can carry the same price and differ only in how it is settled.
 
 ## Column ID
 
