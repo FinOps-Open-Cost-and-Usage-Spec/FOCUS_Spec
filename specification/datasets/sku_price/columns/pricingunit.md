@@ -34,7 +34,7 @@ Pricing Unit
 
 ## Description
 
-Service-provider-specified measurement unit used to define the unit price of an offering (e.g., `Hours`, `GB-Months`, `1000 Tokens`).
+Service-provider-specified measurement unit used to define the unit price of an offering (e.g., `Hours`, `GB-Months`, `1,000 Tokens`).
 
 ## Content Constraints
 
