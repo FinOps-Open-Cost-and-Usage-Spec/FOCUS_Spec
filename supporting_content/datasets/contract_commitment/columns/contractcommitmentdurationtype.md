@@ -26,13 +26,13 @@ Require the largest allowed unit that expresses the purchased term as a whole nu
 Selected because:
 
 * It does not change scenario coverage and simplifies scenario enablement: a generator already emitting the natural form (the common case in practice) needs no change. A generator emitting a non-natural encoding (e.g., "12 Months") must update to the canonical form, and a consumer filtering or grouping on a value that was not already conformant may need to update its queries. "Non-breaking" is not an accurate description of that impact.
-* It preserves the existing string format, the allowed-value list, the data type, and nullability. No consumer parsing logic changes.
+* It preserves the existing string format, the data type, and nullability. No consumer parsing logic changes.
 * It reuses vocabulary already in the column, so no new concepts are introduced to the specification.
 * It resolves the ambiguity at the point where it originates, which is the choice of unit.
 
 Scope decision: reduction applies only across exact conversions between adjacent units (60 minutes to an hour, 24 hours to a day, 7 days to a week, 12 months to a year). Inexact relationships are deliberately excluded, which is why "365 Days" is not treated as reducible to "1 Year". The existing recommendation that the value reflect the standard duration of the purchased offering already covers that case.
 
-Resolved by Task Force 1 (2026-09-02): `Quarter`/`Quarters` are dropped entirely, both from this column's allowed values and from the Quarter/Week addition this PR otherwise made to `UnitFormat` (Week stays). A quarter implies alignment with a calendar or fiscal quarter, and three consecutive months do not necessarily fall on those bounds, so treating "3 Months" as reducible to "1 Quarter" would have been incorrect. Dropping `Quarter` also removes the need for a reduction ladder decision on it. The column's unit vocabulary now references UnitFormat's allowed time-based unit names directly instead of duplicating the list locally, so the two lists cannot drift apart again.
+Resolved by Task Force 1 (2026-09-01): `Quarter`/`Quarters` are dropped entirely, both from this column's allowed values and from the Quarter/Week addition this PR otherwise made to `UnitFormat` (Week stays). A quarter implies alignment with a calendar or fiscal quarter, and three consecutive months do not necessarily fall on those bounds, so treating "3 Months" as reducible to "1 Quarter" would have been incorrect. Dropping `Quarter` also removes the need for a reduction ladder decision on it. The column's unit vocabulary now references UnitFormat's allowed time-based unit names directly instead of duplicating the list locally, so the two lists cannot drift apart again.
 
 ### Option 2: ISO 8601 duration format (not selected)
 

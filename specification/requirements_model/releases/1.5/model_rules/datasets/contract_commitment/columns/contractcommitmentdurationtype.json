@@ -148,7 +148,7 @@
     }
   },
   "CCT-ContractCommitmentDurationType-C-004-O": {
-    "Function": "Validation",
+    "Function": "Format",
     "Reference": "ContractCommitmentDurationType",
     "EntityType": "Column",
     "EntityName": "Contract Commitment Duration Type",
@@ -190,7 +190,7 @@
     "DatasetId": "ContractCommitment",
     "DatasetName": "Contract Commitment",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractCommitmentDurationType SHOULD present the unit of time as one of the allowed time-based unit names defined by UnitFormat.",
+      "MustSatisfy": "ContractCommitmentDurationType SHOULD present the unit of time as one of the allowed time-based unit names defined by UnitFormat, from Minute through Year.",
       "Keyword": "SHOULD",
       "Requirement": {
         "CheckFunction": "OR",
@@ -326,7 +326,7 @@
     "DatasetId": "ContractCommitment",
     "DatasetName": "Contract Commitment",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractCommitmentDurationType MUST use the largest unit of time that expresses the duration as a whole number (e.g., \"1 Year\" rather than \"12 Months\", \"1 Week\" rather than \"7 Days\").",
+      "MustSatisfy": "ContractCommitmentDurationType MUST use the largest time-based unit defined by UnitFormat that expresses the duration as a whole number (e.g., \"1 Year\" rather than \"12 Months\", \"1 Week\" rather than \"7 Days\").",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
