@@ -1,6 +1,6 @@
 # Examples: Allocated Method Details
 
-The JSON samples in the scenarios below each represent a single allocated record out of the multiple records derived from an origin record for that scenario. The sum AllocatedRatio will add up to 1 (100%) across all allocated records for an origin record, with the AllocatedRatio (or sum of AllocatedRatio) representing the allocated record's portion of the overall origin record.
+The JSON samples in the scenarios below each represent a single allocated record out of the multiple records derived from an origin record for that scenario. The sum of AllocatedRatio will add up to 1 (100%) across all allocated records for an origin record within the same charge period, with the AllocatedRatio (or sum of AllocatedRatio) representing the allocated record's portion of the overall origin record for that charge period. A data generator that calculates the split at a finer granularity than it publishes (e.g., hourly calculation, daily publication) derives the published AllocatedRatio from the allocated and origin charges over the published charge period, not from the finer-grained ratios.
 
 ## Scenario 1: Single UsageUnit Value Used for Allocation
 
