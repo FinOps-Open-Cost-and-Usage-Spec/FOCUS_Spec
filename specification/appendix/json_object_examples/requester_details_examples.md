@@ -34,7 +34,7 @@ Scenario: An inference charge authenticated with an API key whose identifier is 
 |---------------------|-------------|-------------|--------------|-------------------|
 | Solora AI | Inference | null | key_07PQXR2W9F | [{"key": "Credential", "value": {"Type": "API Key", "Name": "eval-sandbox"}}] |
 
-## StackLens (No Determinable Principal or Credential)
+## StackLens (No Associated Principal or Credential)
 
 Scenario: A platform subscription billed at the account level, with no entity in the identity and access management model associated with it and no *credential* presented. PrincipalId, CredentialId, and RequesterDetails are all null.
 
