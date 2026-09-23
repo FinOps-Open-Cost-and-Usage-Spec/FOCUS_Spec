@@ -28,7 +28,7 @@ For this scenario, contract terms include the following terms in addition to the
 
 For this scenario, the initial purchase of consumption currency is executed as follows:
 
-* On April 1, 2025, Acme Corp agrees to purchase 100,000 OmniBucks at $2 per OmniBuck for a total spend $200,000. These OmniBucks are only valid for 12 months.
+* On April 1, 2025, Acme Corp agrees to purchase 100,000 OmniBucks at $2 per OmniBuck for a total spend of $200,000. These OmniBucks are only valid for 12 months.
 
 [**CSV Example**](/specification/data/saas_examples/consumption_currency_pricing_model_a1.csv)
 
@@ -68,7 +68,7 @@ For this scenario, contract terms include the following terms in addition to the
 
 For this scenario, the initial purchase of consumption currency is executed as follows:
 
-* On April 1, 2025, Acme Corp agrees to purchase 100,000 OmniBucks at discounted cost of $1 per OmniBuck for a total spend $100,000. These OmniBucks are only valid for 12 months.
+* On April 1, 2025, Acme Corp agrees to purchase 100,000 OmniBucks at a discounted cost of $1 per OmniBuck for a total spend of $100,000. These OmniBucks are only valid for 12 months.
 
 [**CSV Example**](/specification/data/saas_examples/consumption_currency_pricing_model_b1.csv)
 
