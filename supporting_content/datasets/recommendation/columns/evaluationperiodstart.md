@@ -50,4 +50,4 @@ A single column carrying an ISO 8601 duration (e.g., `P7D`, `P30D`), interpreted
 
 ## Related
 
-* `ContractCommitmentDurationType` — open question on expressing duration as a quantity and unit versus a single string, discussed in [PR #2444](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pull/2444). Both this column and that one concern how the dataset expresses durations, which is why the group preferred to resolve them together.
+* `ContractCommitmentDurationType` — open question on expressing duration as a quantity and unit versus a single string, discussed in [PR #2600](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pull/2600). Both this column and that one concern how the dataset expresses durations, which is why the group preferred to resolve them together.
