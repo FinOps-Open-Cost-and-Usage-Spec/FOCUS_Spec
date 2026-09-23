@@ -31,10 +31,6 @@
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-PricingQuantity-C-003-M"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-PricingQuantity-C-013-C"
           }
         ]
       },
@@ -43,7 +39,6 @@
         "CAU-PricingQuantity-C-001-M",
         "CAU-PricingQuantity-C-002-M",
         "CAU-PricingQuantity-C-003-M",
-        "CAU-PricingQuantity-C-013-C",
         "CAU-CostAndUsage-D-036-M"
       ]
     }
@@ -456,9 +451,10 @@
     "EntityId": "PricingQuantity",
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.5",
+    "Status": "Removed",
     "Conditions": [],
-    "Order": 100,
+    "Order": -1,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
