@@ -112,7 +112,7 @@ Additionally, OmniQuery offers a modified usage to OmniBuck ratio for one of the
 
 Note the following details in the example dataset:
 
-* Because of the modified rate for Workflow Operations, the PricingCurrencyContractedUnitPrice and PricingCurrencyListUnitPrice are different for this charge. The ContractedUnitPrice is set to $1 and the ListUnitPrice is set to $2.
+* Because of the modified rate for Workflow Operations, PricingCurrencyContractedUnitPrice is set to 2 and PricingCurrencyListUnitPrice is set to 3 for this charge.
 * The PricingCurrencyEffectiveCost is 240 OmniBucks for this charge, which is less than example B2 above due to the modified rate.
 * ListCost reflects the cost of the charge at both the list cost of the OmniBucks and the list rate for which the usage consumes OmniBucks.
 
@@ -127,6 +127,6 @@ For this scenario, Acme Corp has exceeded their purchased OmniBucks on October 1
 
 Note the following details in the example dataset:
 
-* This example focuses on the purchases records only for the overage and additional purchases. Neither usage charges nor earlier purchases are not included in this example.
+* This example includes only purchase records for the overage and additional purchases. Usage charges and earlier purchases are not included.
 * The Charge Period for the Overage Purchase is April 1st 2025 - October 1st 2025. This is because the overage charge is to cover the period of time the overage OmniBuck purchase is applicable to.
 * The Charge Period for the Additional Purchase is October 1st 2025 - April 1st 2026. This is because the additional purchase is to cover the period of time to which the additional OmniBuck purchase is applicable. Because end dates are exclusive, ChargePeriodEnd is April 1st 2026.
