@@ -17,7 +17,7 @@ RecommendationDetails MUST adhere to the following requirements:
   * RecommendationDetails MUST be null when a recommendation has no supporting detail that is not expressed in other columns.
 * When RecommendationDetails is not null, RecommendationDetails MUST adhere to the following requirements:
   * RecommendationDetails MUST NOT include a property that duplicates the value of another [*FOCUS column*](#glossary:FOCUS-column) in the same [*row*](#glossary:row).
-  * Property key MUST begin with the string "x_" unless it is a FOCUS-defined property.
+  * Property key MUST begin with the string "x_" unless the key is a FOCUS-defined recommendation property, an observed metric property, or a FOCUS-defined SkuPriceDetails property.
   * Property key SHOULD remain consistent across comparable recommendations having that property, and the values for this key SHOULD remain in a consistent format.
   * RecommendationDetails MUST include the FOCUS-defined recommendation property when an equivalent property is included as a custom property.
   * RecommendationDetails SHOULD include all FOCUS-defined recommendation properties that are applicable to the recommendation.
