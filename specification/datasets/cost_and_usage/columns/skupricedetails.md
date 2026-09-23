@@ -65,7 +65,7 @@ Notes
 <br><sup>1</sup> In the case of "burstable" SKUs offering variable levels of performance, the baseline or guaranteed value should be used.
 <br><sup>2</sup> Memory manufacturers still commonly uses "GB" to refer to 2<sup>30</sup> bytes, which is known as GiB in other contexts.
 <br><sup>3</sup> This is the operating system family of the SKU, if it's included with the SKU or the SKU only supports one type of operating system.
-<br><sup>4</sup> RegionScope describes the breadth of the geographic area a SKU price applies to, from a single region to any region. RegionScope is distinct from RegionId, which identifies the one region a resource is provisioned in or a service is provided from: a charge may carry a single RegionId while the price on that charge applies across a much broader area. RegionScope is also distinct from Redundancy, which describes how widely a SKU is replicated for durability or availability. A SKU may carry both.
+<br><sup>4</sup> RegionScope describes the breadth of the geographic area a SKU price applies to, from a single region to any region. RegionScope is distinct from RegionId, which identifies the one region a resource is provisioned in or a service is provided from: a charge may carry a single RegionId while the price on that charge applies across a much broader area. RegionScope is also distinct from Redundancy, which describes how widely a SKU is replicated for durability or availability. A SKU may carry both. Both properties list "Global" among their example values: on Redundancy it describes replication across regions, and on RegionScope it describes a price that applies in any region.
 
 ## Examples
 
