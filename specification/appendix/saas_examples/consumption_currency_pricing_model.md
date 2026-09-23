@@ -2,7 +2,7 @@
 
 Many SaaS service providers support pricing models that utilize a [*consumption currency*](#glossary:consumption-currency) such as platform credits or normalized billing units. Charges may be provided using a consumption currency, which can subsequently be converted to a [*national currency*](#glossary:national-currency) such as USD or EUR at an advertised or agreed-upon conversion rate.
 
-The scenarios described below illustrate how a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) should look for various scenarios where a provider utilizes this pricing model.
+The scenarios described below illustrate how a [Cost and Usage](#datamodel.costandusage) [*FOCUS dataset*](#glossary:FOCUS-dataset) should look for various scenarios where a provider utilizes this pricing model.
 
 ## Baseline Scenario
 
@@ -12,7 +12,7 @@ The following baseline conditions apply to the scenarios described below:
 * OmniQuery offers a consumption currency pricing model for their services and requires a purchase of consumption currency in advance of usage. Their denomination of consumption currency is called "OmniBucks".
 * OmniQuery requires purchase of additional OmniBucks in the event of usage exceeding purchased OmniBucks.
 * OmniQuery publicly lists the cost of their OmniBucks at $2 per OmniBuck.
-* OmniQuery treats OmniBuck purchases as resources; therefore, charges for OmniBuck purchases include values for ResourceId, ResourceName, and ResourceType.
+* OmniQuery treats OmniBuck purchases as resources; therefore, charges for OmniBuck purchases include values for [ResourceId](#datamodel.costandusage.resourceid), [ResourceName](#datamodel.costandusage.resourcename), and [ResourceType](#datamodel.costandusage.resourcetype).
 * OmniQuery publicly lists their usage to OmniBuck rates. These rates are as follows:
   * 1 Q Widget Execution = 1 OmniBuck
   * 1 Z Widget Execution = 2 OmniBucks
@@ -35,11 +35,11 @@ For this scenario, the initial purchase of consumption currency is executed as f
 Note the following details in the example dataset:
 
 * The Charge Period is April 1st 2025 - April 1st 2026. The Billing Period is the month of April 2025 (when the OmniBucks were purchased) and therefore will appear in the April invoice.
-* Because OmniQuery uses a consumption currency pricing model for usage and publishes their OmniBuck price in terms of dollars and their usage cost in terms of OmniBucks, their Cost and Usage *FOCUS dataset* includes the columns PricingCurrency, PricingCurrencyContractedUnitPrice, PricingCurrencyEffectiveCost, and PricingCurrencyListUnitPrice.
+* Because OmniQuery uses a consumption currency pricing model for usage and publishes their OmniBuck price in terms of dollars and their usage cost in terms of OmniBucks, their Cost and Usage *FOCUS dataset* includes the columns [PricingCurrency](#datamodel.costandusage.pricingcurrency), [PricingCurrencyContractedUnitPrice](#datamodel.costandusage.pricingcurrencycontractedunitprice), [PricingCurrencyEffectiveCost](#datamodel.costandusage.pricingcurrencyeffectivecost), and [PricingCurrencyListUnitPrice](#datamodel.costandusage.pricingcurrencylistunitprice).
 * A single charge representing the total payment for the initial OmniBuck purchase agreement ($200,000) is charged in the first invoice.
-  * ListCost, BilledCost, and ContractedCost of the purchase are all represented in this charge, however EffectiveCost is zero since the OmniBucks are not yet consumed.
-* PricingQuantity is set to the total OmniBucks purchased.
-* Because Acme Corp is paying the list price, ListUnitPrice and ContractedUnitPrice are all set to the same value of $2.
+  * [ListCost](#datamodel.costandusage.listcost), [BilledCost](#datamodel.costandusage.billedcost), and [ContractedCost](#datamodel.costandusage.contractedcost) of the purchase are all represented in this charge, however [EffectiveCost](#datamodel.costandusage.effectivecost) is zero since the OmniBucks are not yet consumed.
+* [PricingQuantity](#datamodel.costandusage.pricingquantity) is set to the total OmniBucks purchased.
+* Because Acme Corp is paying the list price, [ListUnitPrice](#datamodel.costandusage.listunitprice) and [ContractedUnitPrice](#datamodel.costandusage.contractedunitprice) are all set to the same value of $2.
 
 ## Scenario A2: Usage of Consumption Currency Purchased Without a Discount
 
@@ -55,7 +55,7 @@ Note the following details in the example dataset:
 
 * The Charge Period is April 1st 2025 - April 2nd 2025. The Billing Period is the month of April 2025.
 * PricingCurrency for these usage charges is "OmniBucks", the denomination the usage is priced in. The per usage OmniBuck price of each charge is carried in PricingCurrencyListUnitPrice and PricingCurrencyContractedUnitPrice.
-* PricingQuantity reflects the amount of usage of the PricingUnit for each charge and is equivalent to ConsumedQuantity. While relevant to this example, there are scenarios including tiered pricing where ConsumedQuantity and PricingQuantity may not be the same.
+* PricingQuantity reflects the amount of usage of the [PricingUnit](#datamodel.costandusage.pricingunit) for each charge and is equivalent to [ConsumedQuantity](#datamodel.costandusage.consumedquantity). While relevant to this example, there are scenarios including tiered pricing where ConsumedQuantity and PricingQuantity may not be the same.
 * Because Acme Corp's usage includes no discount on usage to OmniBuck rates, PricingCurrencyContractedUnitPrice and PricingCurrencyListUnitPrice are equivalent.
 
 ## Scenario B: Consumption Currency Offered at a Discount
@@ -129,4 +129,4 @@ Note the following details in the example dataset:
 
 * This example includes only purchase records for the overage and additional purchases. Usage charges and earlier purchases are not included.
 * The Charge Period for the Overage Purchase is April 1st 2025 - October 1st 2025. This is because the overage charge is to cover the period of time the overage OmniBuck purchase is applicable to.
-* The Charge Period for the Additional Purchase is October 1st 2025 - April 1st 2026. This is because the additional purchase is to cover the period of time to which the additional OmniBuck purchase is applicable. Because end dates are exclusive, ChargePeriodEnd is April 1st 2026.
+* The Charge Period for the Additional Purchase is October 1st 2025 - April 1st 2026. This is because the additional purchase is to cover the period of time to which the additional OmniBuck purchase is applicable. Because end dates are exclusive, [ChargePeriodEnd](#datamodel.costandusage.chargeperiodend) is April 1st 2026.
