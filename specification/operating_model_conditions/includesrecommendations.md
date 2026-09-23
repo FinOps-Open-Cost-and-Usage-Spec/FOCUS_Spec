@@ -9,7 +9,7 @@ IncludesRecommendations MUST adhere to the following requirements:
 * IncludesRecommendations MUST evaluate to true when the *operating model* includes recommendations for *resources* or *services*.
 * IncludesRecommendations MUST evaluate to false when the *operating model* does not include recommendations for *resources* or *services*.
 
-## Condition ID
+## Operating Model Condition ID
 
 IncludesRecommendations
 
