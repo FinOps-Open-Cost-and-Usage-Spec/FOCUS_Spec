@@ -46,7 +46,7 @@ The following keys should be used when applicable to facilitate cross-service-pr
 | SkuId                      | [SKU](#datamodel.costandusage.skuid) proposed by a recommendation                           | String    | Examples: "m5d.2xlarge", "NC24rs_v3"                 |
 | SkuPriceId                 | [SKU Price](#datamodel.costandusage.skupriceid) proposed by a recommendation                | String    | Examples: "AB12CD34EF56"                             |
 
-In addition to the keys above, any FOCUS-defined [SKU Price](#datamodel.costandusage.skupricedetails) property MAY be included to describe the *SKU* a recommendation proposes (e.g., CoreCount, MemorySize, InstanceType).
+In addition to the keys above, any FOCUS-defined [SKU Price](#datamodel.costandusage.skupricedetails) property can be included to describe the *SKU* a recommendation proposes (e.g., CoreCount, MemorySize, InstanceType).
 
 ### Observed Metric Properties
 
