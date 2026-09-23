@@ -11,18 +11,18 @@ A currency may be one of the following currency types:
 
 Column conforming to CurrencyFormat attribute MUST adhere to the following requirements:
 
-* Unless the value is presented in a *consumption currency*, [*FOCUS dataset column*](#glossary:FOCUS-dataset-column) MUST adhere to the following requirements:
+* Unless the value represents a *consumption currency*, [*FOCUS dataset column*](#glossary:FOCUS-dataset-column) MUST adhere to the following requirements:
   * *FOCUS dataset column* MUST conform to [ISO 4217:2015](https://www.iso.org/standard/64758.html) standard.
   * *FOCUS dataset column* MUST use the three-letter alphabetic code defined in ISO 4217:2015 (e.g., USD, EUR).
-* When the value is presented in a *consumption currency*, *FOCUS dataset column* MUST adhere to the following requirements:
-  * *FOCUS dataset column* MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-  * *FOCUS dataset column* MUST NOT use a code defined in ISO 4217:2015.
+* When the value represents a *consumption currency*, *FOCUS dataset column* MUST NOT use a code defined in ISO 4217:2015.
 
 ## Implementation Context
 
 A *consumption currency* is one subtype of [*virtual currency*](#glossary:virtual-currency). Other subtypes, such as a cryptocurrency, have no code defined in ISO 4217:2015 and no allowed value under this attribute.
 
-Columns that carry a national currency by their own definition are unaffected by the *consumption currency* exception. BillingCurrency, for example, separately constrains its values to *national currency* in each dataset that includes it.
+Whether a value represents a *consumption currency* follows from the [*service provider*](#glossary:service-provider)'s pricing documentation or the applicable contract terms, not from the format of the value. A single column can carry both currency types (e.g., a *national currency* on purchase rows and a *consumption currency* on usage rows).
+
+Columns that carry a *national currency* by their own definition are unaffected by the *consumption currency* exception. Billing Currency, for example, separately constrains its values to *national currency* in each dataset that includes it.
 
 ## Attribute ID
 
