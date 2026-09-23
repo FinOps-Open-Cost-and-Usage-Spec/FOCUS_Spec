@@ -24,10 +24,6 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "BIP-BillingPeriod-D-001-C"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
             "ModelRuleId": "BIP-BillingPeriod-D-002-M"
           },
           {
@@ -66,7 +62,6 @@
       },
       "Condition": {},
       "Dependencies": [
-        "BIP-BillingPeriod-D-001-C",
         "BIP-BillingPeriod-D-002-M",
         "BIP-BillingPeriod-D-011-M",
         "BIP-BillingPeriod-D-012-M",
@@ -87,11 +82,12 @@
     "EntityId": "BillingPeriod",
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.5",
+    "Status": "Removed",
     "Conditions": [
       "IncludesPayableInvoices"
     ],
-    "Order": 10,
+    "Order": -1,
     "DatasetType": "BIP",
     "DatasetId": "BillingPeriod",
     "DatasetName": "Billing Period",
@@ -120,7 +116,7 @@
     "DatasetName": "Billing Period",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "The presence of columns in BillingPeriod MUST adhere to the following requirements:",
+      "MustSatisfy": "BillingPeriod column presence MUST adhere to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
