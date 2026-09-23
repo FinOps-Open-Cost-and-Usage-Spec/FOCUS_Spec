@@ -14,7 +14,7 @@ Each provider names the axis and its levels differently. The table below is from
 | Azure AI Foundry | "deployment type" | Global, Data zone, Azure geography |
 | Google Cloud | "location type" | region, dual-region, multi-region, zone |
 
-Three of the three name the axis with a classifier word. None uses "serving", which is why the original `ServingScope` name did not survive review.
+All three name the axis with a classifier word. None uses "serving", which is why the original `ServingScope` name did not survive review.
 
 AI model serving is where providers price this most distinctly today, which is why both appendix scenarios use AI SKUs. The dimension is not AI-specific: it applies wherever a provider prices one capability at more than one geographic breadth. Other offerings that vary breadth commonly bundle it with replication, which the `Redundancy` property already describes.
 
@@ -61,7 +61,7 @@ The property is defined in `SkuPriceDetails` for now. @ijurica asked at Task For
 
 The SKU Price dataset carries no `SkuPriceDetails` column, so a property that moves there becomes a column. `RegionScope` beside `PricingRegionId` produces no name collision, and the pair reads as identifier plus class.
 
-PR #2424's own supporting content reaches the same diagnosis from the other side and names a different destination. `scope_and_evolution.md` records that `SkuPriceDetails` properties are available only for SKUs an organization has already consumed, which it calls the wrong way round for a dataset whose purpose is pricing what has not been bought yet. The resolution it proposes is a companion SKU Properties dataset joined on `SkuId`, not a SKU Price column. Both routes answer the availability problem, and which one fits turns on the undispositioned question at the end of this file: whether region scope is a property of the SKU or of the SKU price.
+PR #2424's own supporting content reaches the same diagnosis from the other side and names a different destination. `scope_and_evolution.md` records that `SkuPriceDetails` properties are available only for SKUs an organization has already consumed, which it calls the wrong way round for a dataset whose purpose is pricing what has not been bought yet. The resolution it proposes is a companion SKU Properties dataset joined on `SkuId`, not a SKU Price column. Both routes answer the availability problem, and which one fits depends on the undispositioned question at the end of this file: whether region scope is a property of the SKU or of the SKU price.
 
 What the pair enables on a rate card that neither enables alone, given a value set consistent enough to group on:
 
