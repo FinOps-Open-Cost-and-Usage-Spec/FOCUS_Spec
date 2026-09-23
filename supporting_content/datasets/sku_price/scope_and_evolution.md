@@ -35,7 +35,7 @@ The boundary case is a contract whose discount exists only because a commitment 
 
 ### There is No Signal for Dynamic Pricing
 
-A rate that varies with market conditions, such as spot capacity, has no representation distinct from a fixed rate, and no query can separate the two. Options are under analysis in #2565.
+A rate that varies with market conditions, such as spot capacity, has no representation distinct from a fixed rate, and no query can separate the two.
 
 ### Price History is Not Guaranteed
 
@@ -59,30 +59,12 @@ That is the difference between a price list a practitioner can look something up
 
 Those properties do exist in FOCUS today, in SKU Price Details on the Cost and Usage dataset, as key-value pairs keyed to SKU Price ID that carry functional and technical specifications. The placement has two consequences. Reaching a property means parsing a key-value structure rather than filtering a column, and, more consequentially, the properties are available only for SKUs an organization has already consumed. For a dataset whose purpose is pricing what has not been bought yet, that is the wrong way round.
 
-A companion SKU Properties dataset, joined on SKU ID, is the natural resolution, with a SKU-level categorization hierarchy alongside it so that comparison across providers rests on shared categories rather than on matching provider-specific strings. Properties are open under #1045 and categorization under #963.
+A companion SKU Properties dataset, joined on SKU ID, is the natural resolution, with a SKU-level categorization hierarchy alongside it so that comparison across providers rests on shared categories rather than on matching provider-specific strings.
 
 The sequencing follows the same reasoning as the rest of this dataset. Prices attach to SKUs, so a stable SKU identifier and an agreed price structure had to settle before properties could hang off them. A companion dataset adds to what exists here rather than revising it, which is what makes the price list a reasonable thing to have shipped first.
-
-## Open Threads
-
-| Issue | Question |
-| :--- | :--- |
-| #2492 | Revisiting the List and Contracted cost and unit price specifications, including which discounts Contracted Unit Price excludes (earlier framing in #1835) |
-| #2602 | Sample data for a negotiated discount conditioned on a commitment discount |
-| #1045 | A companion SKU Properties dataset |
-| #963 | SKU categorization and hierarchy |
-| #2565 | How to signal dynamic pricing |
-| #2590 | Custom column guidance, including rate card routing |
-| #2588 | Null value semantics for the effective date columns |
-| #2566 | What publishing this dataset obligates a data generator to deliver |
-| #2428 | Appendix sample data |
-| #2520 | Aligning Cost and Usage charge frequency requirements with this dataset |
-| #1625 | Tier handling in the List Unit Price and List Cost requirements |
-| #1832 | List price defaulting where a provider publishes no discount-exclusive rate |
-| #2478 | An implementation guide for how the pricing columns work together |
 
 ## What Sits Outside This Dataset
 
 * **What was actually paid.** Comparing billed, contracted, effective, and list amounts is the Cost Comparison supported feature, against Cost and Usage.
 * **Commitment inventory.** What an organization has committed to, and how much of it remains, is the Contract Commitment dataset.
-* **Which action to take.** Turning a rate difference into a recommendation is the Recommendation dataset, tracked under #975.
+* **Which action to take.** Turning a rate difference into a recommendation is the Recommendation dataset.
