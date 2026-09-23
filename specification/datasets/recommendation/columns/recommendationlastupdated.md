@@ -1,6 +1,6 @@
 # Recommendation Last Updated
 
-Recommendation Last Updated is the timestamp when the recommendation was last updated. This timestamp helps a [*practitioner*](#glossary:practitioner) identify the most current version of a recommendation, particularly when its estimated savings or status change after it was first generated.
+Recommendation Last Updated is the timestamp when the recommendation was last updated. This timestamp helps a [*practitioner*](#glossary:practitioner) identify the most current version of a recommendation, particularly when its estimated savings change after it was first generated.
 
 ## Requirements
 
