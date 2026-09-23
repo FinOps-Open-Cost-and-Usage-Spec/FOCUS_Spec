@@ -88,9 +88,9 @@ This specification defines the *principal* and the *credential* because they are
 
 <div class="h7-nonindex">Entry Placement</div>
 
-Attributes describing the *principal* identified by PrincipalId belong in the `value` of the `Principal` entry. Attributes describing the *credential* identified by CredentialId belong in the `value` of the `Credential` entry. An entry appears only when its attributes are published, and the `Principal` and `Credential` entries appear only when PrincipalId or CredentialId, respectively, is not null. A *charge* with a *principal* and no identified *credential* therefore carries a `Principal` entry and no `Credential` entry, and a *principal* or *credential* with no published identifier has no entry.
+Attributes describing the *principal* identified by PrincipalId belong in the `value` of the `Principal` entry. Attributes describing the *credential* identified by CredentialId belong in the `value` of the `Credential` entry. An entry appears only when its attributes are published, and the `Principal` and `Credential` entries appear only when PrincipalId or CredentialId, respectively, is not null. A *charge* whose PrincipalId is not null and whose CredentialId is null therefore carries no `Credential` entry and can carry a `Principal` entry, and a *principal* or *credential* with no published identifier has no entry.
 
-RequesterDetails is not null when PrincipalId or CredentialId is populated, so an entry for the identified entity is carried even where the data generator publishes no display name or email address for it. The identity and access management model that defines an entity also defines what kind of entity it is, so `Type` is always available, and such an entry holds `Type` alone (e.g., `{"Type": "Service Account"}`).
+RequesterDetails is not null when PrincipalId or CredentialId is not null, including where the data generator publishes no display name or email address for the identified entity. The identity and access management model that defines an entity also defines what kind of entity it is, so `Type` is always available, and the `value` of an entry for that entity can hold `Type` alone (e.g., `{"Type": "Service Account"}`).
 
 ### Value Example
 
