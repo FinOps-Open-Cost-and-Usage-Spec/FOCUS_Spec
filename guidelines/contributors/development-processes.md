@@ -222,6 +222,41 @@ When a contribution requires creating a series of examples, contributors must no
 
 The contributor may only proceed with requesting review of the complete set of examples after the Task Force has formally approved the initial subset. This iterative approach ensures early alignment on formatting, canonical terminology, and technical accuracy, significantly reducing the need for extensive rework later in the review cycle.
 
+#### Validating CSV Examples
+
+Before requesting review for example updates, contributors SHOULD validate the affected CSV examples with the FOCUS Validator.
+
+* Validate all tracked example groups:
+
+```bash
+python specification/data/validate_examples.py --validate-version 1.2 --applicability-criteria ALL
+```
+
+* Validate a specific group:
+
+```bash
+python specification/data/validate_examples.py --group commitment_discount_flexibility --validate-version 1.2 --applicability-criteria ALL
+```
+
+* Validate a specific rule family (for focused remediation):
+
+```bash
+python specification/data/validate_examples.py --group commitment_discount_flexibility --filter-rules CommitmentDiscount --validate-version 1.2 --applicability-criteria ALL
+```
+
+* Run adjusted validation when a workstream has approved, documented OR-composite false-negatives:
+
+```bash
+python specification/data/validate_examples.py --group commitment_discount_flexibility --validate-version 1.2 --applicability-criteria ALL --exclude-rules-file specification/data/commitment_discount_flexibility_excluded_rules_v1_2.txt
+```
+
+> **Note:**
+> `Fail` is the raw validator output.
+>
+> `AdjustedFail` excludes only the explicitly listed Rule IDs and is the value used for the threshold check.
+>
+> Exclusion lists MUST be version-scoped, narrowly targeted, and reviewed with the Task Force before merge.
+
 ## Pull Requests
 
 Pull Requests (PRs) are used to promote development work through our branch pipeline, with the overarching [contributing guidelines](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/contributing.md) being followed.
@@ -425,4 +460,3 @@ Channel for maintainers to communicate and update each other about activities.
 * PR = Pull Request
 * TF = Task Force
 * WG = Working Group
-
