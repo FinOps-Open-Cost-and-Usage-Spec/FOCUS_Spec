@@ -17,6 +17,7 @@
 !INCLUDE "marketplace_purchases.md",1
 !INCLUDE "participating_entity_identification.md",1
 !INCLUDE "recency_metadata.md",1
+!INCLUDE "recommendations.md",1
 !INCLUDE "resource_usage.md",1
 !INCLUDE "schema_metadata.md",1
 !INCLUDE "service_categorization.md",1
