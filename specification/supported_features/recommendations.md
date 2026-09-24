@@ -45,7 +45,7 @@ Implementation Effort expresses the relative effort to act on a recommendation, 
   * ServiceSubcategory
   * SubAccountId
   * SubAccountName
-* [CostAndUsage](#datasets.costandusage)
+* [CostAndUsage](#datamodel.costandusage)
   * BillingAccountId
   * ChargePeriodEnd
   * ChargePeriodStart
