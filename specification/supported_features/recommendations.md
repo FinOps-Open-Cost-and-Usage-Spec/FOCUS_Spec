@@ -10,7 +10,7 @@ Recommendation Provider Name identifies the entity that produced each recommenda
 
 Recommendation Details carries supporting detail that is not expressed in other columns, such as the size of a proposed commitment discount or the metrics a recommendation was derived from. FOCUS-defined property keys make that detail queryable across providers. Evaluation Period Start and Evaluation Period End express the period a recommendation was derived from. This supports weighing the confidence of a recommendation and comparing recommendations produced by generators that evaluate different periods.
 
-Implementation Effort and Implementation Risk express the relative cost and disruption of acting on a recommendation. A worklist can be ordered by what is cheapest to act on before the size of the projected saving. Recommendation Created and Recommendation Last Updated record when a recommendation was produced and when it last changed. This distinguishes a newly surfaced proposal from one that has been restated over time.
+Implementation Effort expresses the relative effort to act on a recommendation, and Implementation Risk the relative risk of disruption. A worklist can be ordered by what takes the least effort to act on before the size of the projected saving. Recommendation Created and Recommendation Last Updated record when a recommendation was produced and when it last changed. This distinguishes a newly surfaced proposal from one that has been restated over time.
 
 ## Directly Dependent Columns
 
