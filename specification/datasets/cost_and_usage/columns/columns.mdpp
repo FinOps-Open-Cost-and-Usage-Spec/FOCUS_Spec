@@ -33,6 +33,7 @@
 !INCLUDE "contractapplied.md",1
 !INCLUDE "contractedcost.md",1
 !INCLUDE "contractedunitprice.md",1
+!INCLUDE "credentialid.md",1
 !INCLUDE "effectivecost.md",1
 !INCLUDE "hostprovidername.md",1
 !INCLUDE "invoicedetailid.md",1
@@ -50,6 +51,7 @@
 !INCLUDE "principalid.md",1
 !INCLUDE "regionid.md",1
 !INCLUDE "regionname.md",1
+!INCLUDE "requesterdetails.md",1
 !INCLUDE "resourceid.md",1
 !INCLUDE "resourcename.md",1
 !INCLUDE "resourcetype.md",1
