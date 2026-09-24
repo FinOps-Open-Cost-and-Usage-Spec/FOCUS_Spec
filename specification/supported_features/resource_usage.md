@@ -48,7 +48,7 @@ GROUP BY
 
 ### Cache Hit Rate for Token-Metered SKUs
 
-Computes the share of input tokens served from a cache, per model, using the TokenDirection, TokenCacheAction, and ModelId properties. The denominator is every input token row, so it holds whether or not a service provider meters cache writes as their own charge. Where a service provider emits cache read rows but no uncached input row, the denominator loses that bucket and the ratio overstates the hit rate. Where a service provider bills request and response tokens on a single meter, TokenDirection is not populated and those rows are excluded entirely.
+Computes the share of input tokens served from a cache, per model, using the TokenDirection, TokenCacheAction, and ModelId properties. The denominator is every input token row, including rows that carry no TokenCacheAction, so it holds whether or not a service provider meters cache writes as their own charge. Where a service provider emits cache read rows but no row for its other input tokens, the denominator loses that bucket and the ratio overstates the hit rate. Where a service provider bills request and response tokens on a single meter, TokenDirection is not populated and those rows are excluded entirely.
 
 ```sql
 SELECT
