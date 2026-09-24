@@ -87,7 +87,7 @@ FROM Recommendation REC
 LEFT JOIN CostAndUsage CU
   ON REC.ResourceId = CU.ResourceId
   AND (REC.BillingAccountId IS NULL OR REC.BillingAccountId = CU.BillingAccountId)
-  AND CU.ChargePeriodStart >= ? AND CU.ChargePeriodEnd < ?
+  AND CU.ChargePeriodStart >= ? AND CU.ChargePeriodEnd <= ?
 WHERE REC.RecommendationCategory = 'Cost'
 GROUP BY REC.RecommendationId, REC.ResourceId, REC.ResourceName, REC.EstimatedMonthlyCostImpact
 ORDER BY REC.EstimatedMonthlyCostImpact ASC
