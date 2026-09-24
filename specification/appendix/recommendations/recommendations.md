@@ -2,7 +2,7 @@
 
 ## Overview
 
-The [Recommendation](#datasets.recommendation) dataset normalizes optimization recommendations from a service provider and from third-party tooling, presenting both in one place. Where the [Cost and Usage](#datasets.costandusage) dataset records what has already been spent, the Recommendation dataset records what a [data generator](#metadata.datagenerator) proposes changing, and what that change is expected to cost or save.
+The [Recommendation](#datamodel.recommendation) dataset normalizes optimization recommendations from a service provider and from third-party tooling, presenting both in one place. Where the [Cost and Usage](#datamodel.costandusage) dataset records what has already been spent, the Recommendation dataset records what a [data generator](#metadata.datagenerator) proposes changing, and what that change is expected to cost or save.
 
 The scenarios below use the fictitious cloud service provider Aura Web, the fictitious cost management platform Budget Beacon, and the fictitious customer Acme Corp.
 
