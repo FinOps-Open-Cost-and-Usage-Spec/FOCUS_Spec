@@ -6,13 +6,13 @@ The scenarios draw on a single [*price list*](#glossary:price-list) rather than 
 
 [**CSV Example: complete price list**](/specification/data/sku_price_examples/aura_web_rate_card_full.csv)
 
-The *price list* contains 26 records across ten SKUs:
+The *price list* contains 28 records across 10 SKUs:
 
-* A general purpose virtual machine offered at a current and a superseded on-demand rate, at a second on-demand rate in another currency, at a negotiated rate, and at three reservation rates.
+* A general purpose virtual machine offered at a current and a superseded on-demand rate, at a second on-demand rate in another currency, at a negotiated rate, and at three committed rates, one for each reservation payment model under which its consumption can be covered.
 * A burstable virtual machine whose on-demand rate changes at the start of 2027, announced ahead of taking effect.
 * A shared-core virtual machine offered at a single rate that carries no effective start or end date.
-* A one-year virtual machine reservation, offered under two payment models.
-* A one-year flexible spend plan, offered under two payment models.
+* A one-year virtual machine reservation, offered under three payment models.
+* A one-year flexible spend plan, offered under three payment models.
 * Object storage priced across three quantity tiers, with one negotiated tier.
 * A legacy object storage tier with no published origin date, scheduled for withdrawal.
 * A managed database offered at a standing rate, with a promotional rate for the first quarter of 2026.
