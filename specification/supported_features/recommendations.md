@@ -14,7 +14,7 @@ Implementation Effort and Implementation Risk express the relative cost and disr
 
 ## Directly Dependent Columns
 
-* [Recommendation](#datasets.recommendation)
+* [Recommendation](#datamodel.recommendation)
   * Currency
   * EstimatedMonthlyCostImpact
   * RecommendationCategory
