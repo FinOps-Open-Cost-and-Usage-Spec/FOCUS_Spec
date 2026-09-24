@@ -13,7 +13,7 @@ SkuPriceEffectiveStart MUST adhere to the following requirements:
 * SkuPriceEffectiveStart MUST adhere to the following nullability requirements:
   * SkuPriceEffectiveStart MUST be null when the [SkuPrice](#datamodel.skuprice) record is applicable without a lower time boundary.
   * SkuPriceEffectiveStart MUST NOT be null when the SkuPrice record has a designated timestamp from which it becomes applicable.
-* When SkuPriceEffectiveStart is not null, SkuPriceEffectiveStart MUST represent the exact timestamp designated by the *service provider* from which the unit price is applicable.
+* SkuPriceEffectiveStart MUST be the [*inclusive start bound*](#glossary:inclusivestartbound) of the effective period of the SkuPrice record when SkuPriceEffectiveStart is not null.
 
 ## Column ID
 
