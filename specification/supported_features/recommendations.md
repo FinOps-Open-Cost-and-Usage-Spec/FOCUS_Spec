@@ -28,7 +28,7 @@ Implementation Effort expresses the relative effort to act on a recommendation, 
 
 ## Supporting Columns
 
-* [Recommendation](#datasets.recommendation)
+* [Recommendation](#datamodel.recommendation)
   * BillingAccountId
   * BillingAccountName
   * EvaluationPeriodEnd
