@@ -73,7 +73,7 @@
     "Type": "Dynamic",
     "Order": 10,
     "ValidationCriteria": {
-      "MustSatisfy": "FOCUS dataset column MUST contain a serialized JSON string, consistent with the ECMA 404 definition of an object.",
+      "MustSatisfy": "FOCUS dataset column MUST contain a serialized JSON string, consistent with the ECMA 404 definition of an object or an array.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -293,7 +293,7 @@
     "Type": "Dynamic",
     "Order": 20,
     "ValidationCriteria": {
-      "MustSatisfy": "FOCUS dataset column MUST conform to all requirements of the corresponding column definition, which may specify or restrict the shape or contents of the object.",
+      "MustSatisfy": "FOCUS dataset column MUST conform to all requirements of the corresponding column definition, which may specify or restrict the shape or contents of the Object or the Array.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
