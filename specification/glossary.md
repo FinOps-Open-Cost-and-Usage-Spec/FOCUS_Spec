@@ -99,7 +99,7 @@ A specific term within a [*contract*](#glossary:contract) that defines a measura
 
 <a name="glossary:contracted-unit-price"><b>Contracted Unit Price</b></a>
 
-The agreed-upon unit price for a single [Pricing Unit](#datamodel.costandusage.pricingunit) of the associated SKU, inclusive of negotiated discounts, if present, and exclusive of any other discounts. This price is denominated in the [Billing Currency](#glossary:billing-currency).
+The negotiated unit price per [Pricing Unit](#datamodel.costandusage.pricingunit) for the [*SKU Price*](#glossary:sku-price) identified by the given [SKU Price ID](#datamodel.costandusage.skupriceid). Contracted Unit Price reflects negotiated pricing terms for the associated *SKU Price*, independent of any discount-bearing [*commitment programs*](#glossary:commitment-program) (e.g., [*commitment discount*](#glossary:commitment-discount)) being applied to the [*charge*](#glossary:charge). It does not reflect any unit price impact dependent on a discount-bearing *commitment program* being applied to the *charge*.
 
 <a name="glossary:correction"><b>Correction</b></a>
 
@@ -177,6 +177,10 @@ The collection of datasets are designed to provide billing insight, additional c
 
 A column included in a [*FOCUS dataset*](#glossary:FOCUS-dataset). A FOCUS dataset column is either a [*FOCUS column*](#glossary:FOCUS-column) or a [*custom column*](#glossary:custom-column).
 
+<a name="glossary:foreign-exchange"><b>Foreign Exchange (FX)</b></a>
+
+The conversion of an amount from one currency to another using a currency exchange rate.
+
 <a name="glossary:inclusivestartbound"><b>Inclusive Start Bound</b></a>
 
 A Date/Time Format value that is contained within the beginning bound of a time period.
@@ -209,7 +213,7 @@ A common acronym for JavaScript Object Notation, a data format codified in [ECMA
 
 <a name="glossary:list-unit-price"><b>List Unit Price</b></a>
 
-The suggested service-provider-published unit price for a single [Pricing Unit](#datamodel.costandusage.pricingunit) of the associated [SKU](#glossary:sku), exclusive of any discounts. This price is denominated in the [Billing Currency](#glossary:billing-currency).
+The provider-suggested unit price per [Pricing Unit](#datamodel.costandusage.pricingunit) for the [*SKU Price*](#glossary:sku-price) identified by the given [SKU Price ID](#datamodel.costandusage.skupriceid). List Unit Price does not reflect negotiated pricing terms for the associated *SKU Price* or any unit price impact dependent on a discount-bearing [*commitment program*](#glossary:commitment-program) (e.g., [*commitment discount*](#glossary:commitment-discount)) being applied to the [*charge*](#glossary:charge).
 
 <a name="glossary:managed-service-provider"><b>Managed Service Provider (MSP)</b></a>
 
@@ -235,6 +239,18 @@ Negotiated discounts are classified with the following designations:
 
 * [Contract Commitment Offer Category](#datamodel.contractcommitment.contractcommitmentoffercategory): "Negotiated"
 * [Contract Commitment Benefit Category](#datamodel.contractcommitment.contractcommitmentbenefitcategory): "Discount"
+
+<a name="glossary:negotiated-fx-pricing-terms"><b>Negotiated FX Pricing Terms</b></a>
+
+[*Negotiated pricing terms*](#glossary:negotiated-pricing-terms) that affect [*foreign exchange*](#glossary:foreign-exchange) conversion.
+
+<a name="glossary:negotiated-non-fx-pricing-terms"><b>Negotiated Non-FX Pricing Terms</b></a>
+
+[*Negotiated pricing terms*](#glossary:negotiated-pricing-terms) that do not affect [*foreign exchange*](#glossary:foreign-exchange) conversion.
+
+<a name="glossary:negotiated-pricing-terms"><b>Negotiated Pricing Terms</b></a>
+
+Privately agreed [*terms*](#glossary:term) between a service provider and a customer that modify pricing from the provider-suggested pricing. Negotiated pricing terms consist of [*negotiated non-FX pricing terms*](#glossary:negotiated-non-fx-pricing-terms) (e.g., negotiated unit prices, negotiated tiered pricing configurations) and [*negotiated FX pricing terms*](#glossary:negotiated-fx-pricing-terms) (e.g., negotiated currency exchange rates).
 
 <a name="glossary:on-demand"><b>On-Demand</b></a>
 

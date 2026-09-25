@@ -2,7 +2,7 @@
 
 Pricing Currency Effective Cost represents the [Pricing Currency](#datamodel.costandusage.pricingcurrency)-denominated equivalent of [Effective Cost](#datamodel.costandusage.effectivecost). It reflects the cost of a [*charge*](#glossary:charge) based on the [*resources*](#glossary:resource) used, [*services*](#glossary:service) used, or [*contract commitments*](#glossary:contract-commitment) recognized in a given [*charge period*](#glossary:chargeperiod).
 
-Because Pricing Currency Effective Cost differs from Effective Cost only in denomination, it follows the same pricing adjustments, amortizations, and exclusions. This column provides practitioners with a standardized baseline, allowing them to view costs in a uniform currency, whether converting from a [*virtual currency*](#glossary:virtual-currency) to a [*national currency*](#glossary:national-currency) (e.g., tokens to USD) or from one national currency to another (e.g., EUR to USD).
+Pricing Currency Effective Cost applies the same pricing adjustments, amortizations, and exclusions as Effective Cost, before any currency exchange rate conversion between the Pricing Currency and the Billing Currency. This column provides practitioners with a standardized baseline, allowing them to view costs in a uniform currency, whether converting from a [*virtual currency*](#glossary:virtual-currency) to a [*national currency*](#glossary:national-currency) (e.g., tokens to USD) or from one national currency to another (e.g., EUR to USD).
 
 Pricing Currency Effective Cost is commonly used to support FinOps activities, including [*accrual-based*](#glossary:accrual-based-accounting) reporting, forecasting, and cost allocation when pricing and billing use different currencies.
 
@@ -14,7 +14,7 @@ PricingCurrencyEffectiveCost MUST adhere to the following requirements:
 * PricingCurrencyEffectiveCost MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * PricingCurrencyEffectiveCost MUST NOT be null.
 * PricingCurrencyEffectiveCost MUST be denominated in the PricingCurrency.
-* PricingCurrencyEffectiveCost MUST be the PricingCurrency-denominated equivalent of EffectiveCost.
+* PricingCurrencyEffectiveCost MUST be the PricingCurrency-denominated equivalent of EffectiveCost, before any currency exchange rate conversion.
 
 ## Column ID
 
@@ -34,8 +34,8 @@ The PricingCurrency-denominated equivalent of Effective Cost, representing the c
 | :------------------------- | :------------------------------------------ |
 | Dataset                    | [Cost and Usage](#datamodel.costandusage)   |
 | Operating Model Conditions |                                             |
-| ├─ Must                    | [Includes Virtual Currency](#operatingmodelconditions.includesvirtualcurrency) and [Includes List Unit Prices](#operatingmodelconditions.includeslistunitprices) |
-| └─ Should                  | [Includes Pricing-Billing Currency Differences](#operatingmodelconditions.includespricing-billingcurrencydifferences) and [Includes List Unit Prices](#operatingmodelconditions.includeslistunitprices) |
+| ├─ Must                    | [Includes Virtual Currency](#operatingmodelconditions.includesvirtualcurrency) |
+| └─ Should                  | [Includes Pricing-Billing Currency Differences](#operatingmodelconditions.includespricing-billingcurrencydifferences) |
 | Column type                | Metric                                      |
 | Feature level              | Conditional                                 |
 | Allows nulls               | False                                       |
