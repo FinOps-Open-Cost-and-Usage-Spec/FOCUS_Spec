@@ -47,6 +47,10 @@
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CCT-ContractCommitmentDurationType-C-007-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitmentDurationType-C-008-M"
           }
         ]
       },
@@ -59,6 +63,7 @@
         "CCT-ContractCommitmentDurationType-C-005-O",
         "CCT-ContractCommitmentDurationType-C-006-O",
         "CCT-ContractCommitmentDurationType-C-007-O",
+        "CCT-ContractCommitmentDurationType-C-008-M",
         "CCT-ContractCommitment-D-021-M"
       ]
     }
@@ -143,7 +148,7 @@
     }
   },
   "CCT-ContractCommitmentDurationType-C-004-O": {
-    "Function": "Validation",
+    "Function": "Format",
     "Reference": "ContractCommitmentDurationType",
     "EntityType": "Column",
     "EntityName": "Contract Commitment Duration Type",
@@ -158,12 +163,12 @@
     "DatasetId": "ContractCommitment",
     "DatasetName": "Contract Commitment",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractCommitmentDurationType SHOULD be expressed with a quantity and time unit, where quantity is a positive integer, and time-unit is a standardized unit of time, either singular or plural (e.g., \"1 Day\", \"1 Year\", \"3 Months\", \"3 Years\").",
+      "MustSatisfy": "ContractCommitmentDurationType SHOULD use the \"[Numeric Value] [Unit]\" format (e.g., \"1 Day\", \"1 Year\", \"3 Months\", \"3 Years\").",
       "Keyword": "SHOULD",
       "Requirement": {
         "CheckFunction": "CheckRegexMatch",
         "ColumnName": "ContractCommitmentDurationType",
-        "Pattern": "^[1-9][0-9]*\\s+(Minute|Minutes|Hour|Hours|Day|Days|Week|Weeks|Month|Months|Quarter|Quarters|Year|Years)$"
+        "Pattern": "^[1-9][0-9]*\\s+(Minute|Minutes|Hour|Hours|Day|Days|Week|Weeks|Month|Months|Year|Years)$"
       },
       "Condition": {},
       "Dependencies": []
@@ -185,7 +190,7 @@
     "DatasetId": "ContractCommitment",
     "DatasetName": "Contract Commitment",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractCommitmentDurationType SHOULD present the unit of time as one of the allowed values.",
+      "MustSatisfy": "ContractCommitmentDurationType SHOULD present the unit of time as one of the allowed time-based unit names defined by UnitFormat, from Minute through Year.",
       "Keyword": "SHOULD",
       "Requirement": {
         "CheckFunction": "OR",
@@ -239,16 +244,6 @@
             "CheckFunction": "CheckStringEndsWith",
             "ColumnName": "ContractCommitmentDurationType",
             "Value": "Months"
-          },
-          {
-            "CheckFunction": "CheckStringEndsWith",
-            "ColumnName": "ContractCommitmentDurationType",
-            "Value": "Quarter"
-          },
-          {
-            "CheckFunction": "CheckStringEndsWith",
-            "ColumnName": "ContractCommitmentDurationType",
-            "Value": "Quarters"
           },
           {
             "CheckFunction": "CheckStringEndsWith",
@@ -313,6 +308,29 @@
         "CCT-ContractCommitmentPeriodEnd-C-003-M",
         "CCT-ContractCommitmentPeriodStart-C-003-M"
       ]
+    }
+  },
+  "CCT-ContractCommitmentDurationType-C-008-M": {
+    "Function": "Validation",
+    "Reference": "ContractCommitmentDurationType",
+    "EntityType": "Column",
+    "EntityName": "Contract Commitment Duration Type",
+    "EntityId": "ContractCommitmentDurationType",
+    "Notes": "Typed Dynamic because no CheckFunction can test whether a quantity divides evenly into a larger unit, so this cannot be enforced as a static rule.",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Dynamic",
+    "Order": 80,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitmentDurationType MUST use the largest time-based unit defined by UnitFormat that expresses the duration as a whole number (e.g., \"1 Year\" rather than \"12 Months\", \"1 Week\" rather than \"7 Days\").",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
     }
   }
 }
