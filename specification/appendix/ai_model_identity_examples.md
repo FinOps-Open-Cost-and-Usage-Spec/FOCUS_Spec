@@ -6,13 +6,13 @@ The following examples illustrate how a Cost and Usage [*FOCUS dataset*](#glossa
 
 The following conditions apply to the scenarios below:
 
-* Acme Corp uses a per-token foundation model API to run a generative AI workload.
+* Acme Corp uses a per-token frontier model API to run a generative AI workload.
 * The model is priced separately for input and output tokens, denominated per 1,000,000 tokens.
 * The model identity (developer, family, identifier, and version) is stable for a given [*SKU Price*](#glossary:sku-price), so it is carried in SkuPriceDetails.
 
 > **Note:** The FOCUS-defined model-identity properties are listed in alphabetical order; the ordering is presentational and does not imply precedence.
 
-## Scenario A: Foundation Model Purchased Directly
+## Scenario A: Frontier Model Purchased Directly
 
 For this scenario, Acme Corp purchases the model directly from the model developer, Solora AI:
 

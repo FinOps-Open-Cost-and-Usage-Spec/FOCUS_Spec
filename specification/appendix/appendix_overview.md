@@ -7,7 +7,8 @@
 | Topic | Description |
 | :--- | :--- |
 | [Discount Handling](#appendix.discounthandling) | Explains how discounts are represented and applied to charges in a FOCUS dataset. |
-| [Examples: AI Model Identity](#appendix.examples:aimodelidentity) | Illustrates how to represent the identity of an AI model in a Cost and Usage FOCUS dataset, including a directly purchased foundation model and the same model served by a cloud provider as a first-party service. |
+| [Examples: AI Model Identity](#appendix.examples:aimodelidentity) | Illustrates how to represent the identity of an AI model in a Cost and Usage FOCUS dataset, including a directly purchased frontier model and the same model served by a cloud provider as a first-party service. |
+| [Examples: AI Billing](#appendix.examples:aibilling) | Illustrates how to represent usage-based billing for frontier model APIs in a Cost and Usage FOCUS dataset, including direct billing, marketplace resale, first-party CSP offerings, commitment drawdown, and multi-model invoices with cached token charges. |
 | [Examples: Commitment Discounts](#appendix.examples:commitmentdiscounts) | Explains the purchasing, usage, and amortization of commitment discounts in a FOCUS dataset. |
 | [Examples: Commitment Discount Flexibility](#appendix.examples:commitmentdiscountflexibility) | Demonstrates scenarios for usage-based commitment discounts with and without commitment discount flexibility. |
 | [Examples: Commitment Program Eligibility Details](#appendix.examples:commitmentprogrameligibilitydetails) | Demonstrates how commitment program eligibility details interact with capacity reservation columns for capacity reservation programs. |
@@ -40,12 +41,12 @@ The table below outlines the fictitious *data generators* used throughout the sp
 | **CrestNode** | Cloud Service Provider | An enterprise-focused cloud platform with deep integrations into existing corporate software ecosystems and directory services. | Microsoft Azure |
 | **LatticeScale** | Cloud Service Provider | A cloud provider heavily optimized for machine learning, data analytics, and containerized Kubernetes workloads. | Google Cloud Platform (GCP) |
 | **Meridian AI** | AI Inference Provider | An AI provider offering hosted inference endpoints, sold directly and through cloud marketplaces. | Cohere, Mistral AI |
-| **ModelMesh** | Foundation Model Developer | An AI lab that develops and trains open-weight foundation models, which are self-hosted or served by cloud providers and inference platforms. | Meta (Llama), Mistral AI |
+| **ModelMesh** | Frontier Model Developer | An AI lab that develops and trains open-weight frontier models, which are self-hosted or served by cloud providers and inference platforms. | Meta (Llama), Mistral AI |
 | **OmniQuery** | Data Platform | A centralized hub for storing, processing, and analyzing massive datasets to drive business intelligence. | Snowflake, Databricks |
 | **PipelCRM** | CRM | A customer relationship management platform designed to track sales pipelines, manage contacts, and optimize lead conversion. | Salesforce, HubSpot |
 | **PulseMail** | Email API | A developer-friendly service for reliably routing, sending, and tracking both transactional and marketing emails. | SendGrid, Mailgun |
 | **SchemaWeaver** | Open Source Library | An open-source tool that refines raw cloud cost and usage data, normalizing it into FOCUS-compliant schemas for downstream analytics and reporting. Not a public service. | OpenCost, Cloud Intelligence Dashboards, FinOps toolkit |
-| **Solora AI** | Foundation Model Developer | An AI lab that develops and trains foundation models that are sold directly and served by cloud providers as a first-party offering. | OpenAI, Anthropic |
+| **Solora AI** | Frontier Model Developer | An AI lab that develops and trains frontier models that are sold directly and served by cloud providers as a first-party offering. | OpenAI, Anthropic |
 | **SprintCanvas** | Project Management | A collaborative workspace for planning, assigning, and tracking team tasks and agile workflows. | Jira, Asana, Trello |
 | **StackLens** | SaaS Observability | A monitoring tool that tracks application performance, logs, and system health in real-time to prevent downtime. | Datadog, New Relic |
 | **StoreStack** | Database as a Service | A fully managed, scalable cloud database solution that handles provisioning, backups, and routine maintenance. | MongoDB Atlas |
