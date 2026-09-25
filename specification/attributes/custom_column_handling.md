@@ -36,8 +36,9 @@ Column conforming to CustomColumnHandling attribute MUST adhere to the following
 * *Custom column* containing numeric values MUST contain a single numeric value.
 * *Custom column* containing numeric values SHOULD conform to [NumericFormat](#attributes.numericformat) requirements.
 * *Custom column* containing string values SHOULD conform to [StringHandling](#attributes.stringhandling) requirements.
-* *Custom column* representing a [*national currency*](#glossary:national-currency) or a [*consumption currency*](#glossary:consumption-currency) SHOULD conform to [CurrencyFormat](#attributes.currencyformat) requirements.
+* *Custom column* representing a currency SHOULD conform to [CurrencyFormat](#attributes.currencyformat) requirements.
 * *Custom column* representing a measurement unit SHOULD conform to [UnitFormat](#attributes.unitformat) requirements.
+* *Custom column* documentation SHOULD specify how to determine whether a value represents a [*national currency*](#glossary:national-currency) when the *custom column* represents a currency.
 
 ## Attribute ID
 
