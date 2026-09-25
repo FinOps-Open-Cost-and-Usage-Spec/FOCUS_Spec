@@ -11,7 +11,8 @@ For this scenario, Acme Corp consumes three Solora Atlas models through a cloud 
 
 Note the following details in the example dataset:
 
-* [InvoiceIssuerName](#datamodel.costandusage.invoiceissuername), [ServiceProviderName](#datamodel.costandusage.serviceprovidername), and [HostProviderName](#datamodel.costandusage.hostprovidername) are all "LatticeScale", the cloud marketplace operator. Model identity still attributes each model to Solora AI through SkuPriceDetails. As with other marketplace and managed-inference arrangements, the three participating-entity columns name the platform rather than the model developer.
+* [ServiceProviderName](#datamodel.costandusage.serviceprovidername) is "Solora AI", the marketplace seller (model developer). [HostProviderName](#datamodel.costandusage.hostprovidername) and [InvoiceIssuerName](#datamodel.costandusage.invoiceissuername) are "LatticeScale", the CSP that hosts the offerings and issues the invoice. This matches Participating Entity Identification scenario 3.1.3 (marketplace seller as service provider; CSP as host and invoice issuer). Because HostProviderName differs from ServiceProviderName, the customer selected the host or the seller exposes the host.
+* Model identity attributes each model to Solora AI through SkuPriceDetails.
 * Three models share one invoice and service name, while [SkuId](#datamodel.costandusage.skuid) and the ModelId property of [SkuPriceDetails](#datamodel.costandusage.skupricedetails) distinguish each model and rate structure.
 * Cache read and cache write input tokens appear only on Venus, using [SkuMeter](#datamodel.costandusage.skumeter) values of "Cache Read Input Tokens" and "Cache Write Input Tokens", with the TokenCacheAction property of *SkuPriceDetails* labeling those rows "Read" or "Write" and TokenDirection "Input".
 * Representing each model and token type as its own row keeps unit rates comparable across models on the same marketplace invoice.
