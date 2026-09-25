@@ -173,6 +173,10 @@ The collection of datasets are designed to provide billing insight, additional c
 
 A column included in a [*FOCUS dataset*](#glossary:FOCUS-dataset). A FOCUS dataset column is either a [*FOCUS column*](#glossary:FOCUS-column) or a [*custom column*](#glossary:custom-column).
 
+<a name="glossary:foreign-exchange"><b>Foreign Exchange (FX)</b></a>
+
+The conversion of an amount from one currency to another using a currency exchange rate.
+
 <a name="glossary:inclusivestartbound"><b>Inclusive Start Bound</b></a>
 
 A Date/Time Format value that is contained within the beginning bound of a time period.
@@ -231,6 +235,18 @@ Negotiated discounts are classified with the following designations:
 
 * [Contract Commitment Offer Category](#datamodel.contractcommitment.contractcommitmentoffercategory): "Negotiated"
 * [Contract Commitment Benefit Category](#datamodel.contractcommitment.contractcommitmentbenefitcategory): "Discount"
+
+<a name="glossary:negotiated-fx-pricing-terms"><b>Negotiated FX Pricing Terms</b></a>
+
+[*Negotiated pricing terms*](#glossary:negotiated-pricing-terms) that affect [*foreign exchange*](#glossary:foreign-exchange) conversion.
+
+<a name="glossary:negotiated-non-fx-pricing-terms"><b>Negotiated Non-FX Pricing Terms</b></a>
+
+[*Negotiated pricing terms*](#glossary:negotiated-pricing-terms) that do not affect [*foreign exchange*](#glossary:foreign-exchange) conversion.
+
+<a name="glossary:negotiated-pricing-terms"><b>Negotiated Pricing Terms</b></a>
+
+Privately agreed [*terms*](#glossary:term) between a service provider and a customer that modify pricing from the provider-suggested pricing. Negotiated pricing terms consist of [*negotiated non-FX pricing terms*](#glossary:negotiated-non-fx-pricing-terms) (e.g., negotiated unit prices, negotiated tiered pricing configurations) and [*negotiated FX pricing terms*](#glossary:negotiated-fx-pricing-terms) (e.g., negotiated currency exchange rates).
 
 <a name="glossary:on-demand"><b>On-Demand</b></a>
 
