@@ -26,17 +26,18 @@ The following examples illustrate frontier model billing scenarios across direct
 | :--- | :--- | :--- | :--- | :--- |
 | Per-Token Frontier Model API | Solora AI | Solora AI | Solora AI | Model developer bills the customer directly |
 | Multi-Model Usage | Solora AI | Solora AI | Solora AI | Multiple models on one invoice, each priced separately |
-| Cached Tokens via CSP Marketplace | Aura Web | Aura Web | Aura Web | Cloud provider invoices for a third-party model; cache-only metering slice |
+| Cached Tokens via CSP Marketplace | Aura Web | Solora AI | Aura Web | Marketplace seller (model developer) as service provider; CSP hosts and invoices; cache-only metering slice |
 | CSP-Served Third-Party Model | Aura Web | Aura Web | Aura Web | Cloud provider bills for its own service serving a third-party model |
 | Drawdown via Prepayment | Solora AI | Solora AI | Solora AI | Commitment purchase with subsequent token drawdown |
-| Multi-Model Invoice via CSP Marketplace | LatticeScale | LatticeScale | LatticeScale | Multiple models and cache meters on one marketplace invoice |
+| Multi-Model Invoice via CSP Marketplace | LatticeScale | Solora AI | LatticeScale | Marketplace seller as service provider; CSP hosts and invoices; multiple models and cache meters |
 
 The same examples can be read by axis. An example may appear under more than one heading.
 
 ### Participating Entity Arrangements
 
 * Model developer sells, hosts, and invoices — Per-Token Frontier Model API; Multi-Model Usage; Drawdown via Prepayment
-* CSP sells, hosts, and invoices a third-party model — CSP-Served Third-Party Model; Cached Tokens via CSP Marketplace; Multi-Model Invoice via CSP Marketplace
+* CSP sells, hosts, and invoices a third-party model — CSP-Served Third-Party Model
+* Marketplace seller (model developer) sells; CSP hosts and invoices (scenario 3.1.3) — Cached Tokens via CSP Marketplace; Multi-Model Invoice via CSP Marketplace
 
 ### Billing Mechanics
 
