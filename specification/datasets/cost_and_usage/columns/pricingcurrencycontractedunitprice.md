@@ -23,7 +23,7 @@ PricingCurrencyContractedUnitPrice MUST adhere to the following requirements:
   * PricingCurrencyContractedUnitPrice MUST be denominated in the PricingCurrency.
   * PricingCurrencyContractedUnitPrice MUST reflect negotiated pricing terms for the *SKU Price* identified by the given SkuPriceId, excluding negotiated currency exchange rates and independent of any discount-bearing *commitment programs* being applied to the *charge*.
   * PricingCurrencyContractedUnitPrice MUST NOT reflect any unit price impact dependent on a discount-bearing *commitment program* being applied to the *charge*.
-  * PricingCurrencyContractedUnitPrice MUST equal PricingCurrencyListUnitPrice when no negotiated pricing terms apply to the *charge*.
+  * PricingCurrencyContractedUnitPrice MUST equal PricingCurrencyListUnitPrice when no negotiated pricing terms other than negotiated currency exchange rates apply to the *charge*.
 
 ## Usability Constraints
 
