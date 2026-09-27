@@ -25,14 +25,15 @@ The invoice-issuer-assigned identifier for an Invoice Detail record encapsulatin
 
 ## Content Constraints
 
-|    Constraint    |              Value             |
-|:----------------|:--------------------------------|
-| Dataset         | [Invoice Detail](#datamodel.invoicedetail)             |
-| Column type     | Dimension                       |
-| Feature level   | Mandatory                       |
-| Allows nulls    | False                           |
-| Data type       | String                          |
-| Value format    | \<not specified>                |
+| Constraint                 | Value                                      |
+| :------------------------- | :----------------------------------------- |
+| Dataset                    | [Invoice Detail](#datamodel.invoicedetail) |
+| Operating Model Conditions | Not applicable                             |
+| Column type                | Dimension                                  |
+| Feature level              | Mandatory                                  |
+| Allows nulls               | False                                      |
+| Data type                  | String                                     |
+| Value format               | \<not specified>                           |
 
 ## Version Introduced
 

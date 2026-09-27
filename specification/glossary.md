@@ -117,6 +117,10 @@ A [*charge*](#glossary:charge) whose [Billed Cost](#datamodel.costandusage.bille
 
 A purchase [*charge*](#glossary:charge) whose cost is applied against one or more [*covered charges*](#glossary:covered-charge), offsetting their [Billed Cost](#datamodel.costandusage.billedcost). Common examples include [*commitment discount*](#glossary:commitment-discount) purchases, prepayment charges, and marketplace purchases that cover consumption-based usage.
 
+<a name="glossary:credential"><b>Credential</b></a>
+
+The means by which a [*principal*](#glossary:principal) is authenticated on an individual request (e.g., API key, access token, session). A credential is distinct from the principal it authenticates, and the same principal may be authenticated by different credentials on different requests. A credential is separate from any published identifier that references it; a credential with no such identifier cannot be represented in a FOCUS dataset.
+
 <a name="glossary:credit"><b>Credit</b></a>
 
 A financial incentive or allowance granted by a service provider unrelated to other past/current/future charges.
@@ -268,6 +272,10 @@ An individual who performs FinOps within an organization to maximize the busines
 
 A comprehensive list of prices offered by a service provider.
 
+<a name="glossary:principal"><b>Principal</b></a>
+
+An entity defined in an identity and access management model (e.g., user, service account) to which access to [*resources*](#glossary:resource) or [*services*](#glossary:service) is granted. A principal is distinct from the credential (e.g., API key, access token) presented with an individual request, and from the organizational container (e.g., project, workspace) within which the request runs. The same principal may be associated with multiple credentials.
+
 <a name="glossary:service-provider"><b>Service Provider</b></a>
 
 An entity that provides the [*resources*](#glossary:resource) or [*services*](#glossary:service) available for usage or purchase.
@@ -275,6 +283,10 @@ An entity that provides the [*resources*](#glossary:resource) or [*services*](#g
 <a name="glossary:refund"><b>Refund</b></a>
 
 A return of funds that have previously been charged.
+
+<a name="glossary:requester"><b>Requester</b></a>
+
+An entity defined in an identity and access management model on whose behalf a request is initiated, resulting in a [*charge*](#glossary:charge). A [*service provider*](#glossary:service-provider) commonly represents a requester at more than one level, such as the [*principal*](#glossary:principal) to which access to [*resources*](#glossary:resource) or [*services*](#glossary:service) is granted and the [*credential*](#glossary:credential) presented on the request. A requester is distinct from the party that benefits from the usage or purchase, which a FOCUS dataset does not identify.
 
 <a name="glossary:resource"><b>Resource</b></a>
 
