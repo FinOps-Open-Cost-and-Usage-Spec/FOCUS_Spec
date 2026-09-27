@@ -100,7 +100,7 @@ The evaluation of an entity's usage against a rate card's eligibility rules proc
 When the processing workflow evaluates a rule against a charge where the target `Dimension` is `null`:
 * The `DoesNotExist` operator evaluates to `true`.
 * The `Exists` operator evaluates to `false`.
-* The `In` and `NotIn` operators MUST NOT match any string values. For example, a `null` dimension evaluated against `Values: ["global"]` evaluates to `false`.
+* The `In` and `NotIn` operators must not match any string values. For example, a `null` dimension evaluated against `Values: ["global"]` evaluates to `false`.
 
 Because service providers inconsistently use both `null` and `global` to represent non-regionalized services, an eligibility rule defining `RegionId In ["global"]` will strictly evaluate to `false` against a charge carrying a `null` RegionId. Consumers reconciling rates across these boundaries should normalize `null` and `global` values prior to evaluation.
 
