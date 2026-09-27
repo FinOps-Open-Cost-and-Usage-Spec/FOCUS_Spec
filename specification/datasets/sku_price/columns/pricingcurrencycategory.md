@@ -14,7 +14,7 @@ PricingCurrencyCategory MUST adhere to the following requirements:
 
 | Value      | Description                                                                                                                                                             |
 | :--------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Payable    | The pricing currency represents a financial medium of exchange the customer can pay in; typically a [*national currency*](#glossary:national-currency) (e.g., USD, EUR, JPY). Math resulting from this rate yields a base financial cost, though a currency conversion step may still be required if the customer's actual billed currency differs. |
+| Payable    | The pricing currency represents a financial medium of exchange the customer can pay in: a [*national currency*](#glossary:national-currency) (e.g., USD, EUR, JPY). Math resulting from this rate yields a base financial cost, though a currency conversion step may still be required if the customer's actual billed currency differs. |
 | Consumable | The pricing currency represents a service-provider-specific *consumption currency* (e.g., platform credits, normalized billing units). Math resulting from this rate yields a virtual cost balance within the provider's ecosystem, requiring a mandatory secondary conversion to determine the financial cost. |
 
 ## Column ID
