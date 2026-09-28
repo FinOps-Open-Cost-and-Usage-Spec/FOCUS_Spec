@@ -11,8 +11,8 @@ AllocatedServiceName MUST adhere to the following requirements:
 * AllocatedServiceName MUST adhere to the following nullability requirements:
   * AllocatedServiceName MUST be null when [AllocatedMethodId](#datamodel.costandusage.allocatedmethodid) is null.
   * AllocatedServiceName MUST NOT be null when AllocatedMethodId is not null.
-* AllocatedServiceName SHOULD match the [ServiceName](#datamodel.costandusage.servicename) used by the data generator for the equivalent independently billed *service*.
-* AllocatedServiceName MUST match the AllocatedServiceName used for other [*allocated charges*](#glossary:allocated-charge) related to the same [*origin charge*](#glossary:origin-charge) when a *charge* represents the unallocated portion of the origin *charge* and those *allocated charges* share a single AllocatedServiceName value.
+* AllocatedServiceName SHOULD match the [ServiceName](#datamodel.costandusage.servicename) used by the data generator for the equivalent *service*.
+* AllocatedServiceName MUST match the AllocatedServiceName of the related [*allocated charges*](#glossary:allocated-charge) when the *charge* represents the unallocated portion of an [*origin charge*](#glossary:origin-charge) and those *allocated charges* share a single AllocatedServiceName value.
 
 ## Column ID
 
