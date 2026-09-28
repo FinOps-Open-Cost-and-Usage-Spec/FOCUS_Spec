@@ -38,6 +38,14 @@ The Contract Applied Object Schema defines the structure for the [Contract Appli
 
 !INCLUDECODE "schemas/datasets/cost_and_usage/contractappliedobjectschema.json" (json)
 
+### Requester Details Value Schema
+
+The Requester Details Value Schema defines the structure for the [Requester Details](#datamodel.costandusage.requesterdetails) column.
+
+[Download from GitHub](/specification/schemas/datasets/cost_and_usage/requesterdetailsvalueschema.json)
+
+!INCLUDECODE "schemas/datasets/cost_and_usage/requesterdetailsvalueschema.json" (json)
+
 ## SKU Price
 
 ### SKU Price Eligibility Object Schema
