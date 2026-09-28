@@ -50,7 +50,7 @@
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CCT-ContractCommitmentDurationType-C-008-M"
+            "ModelRuleId": "CCT-ContractCommitmentDurationType-C-008-C"
           }
         ]
       },
@@ -63,7 +63,7 @@
         "CCT-ContractCommitmentDurationType-C-005-O",
         "CCT-ContractCommitmentDurationType-C-006-O",
         "CCT-ContractCommitmentDurationType-C-007-O",
-        "CCT-ContractCommitmentDurationType-C-008-M",
+        "CCT-ContractCommitmentDurationType-C-008-C",
         "CCT-ContractCommitment-D-021-M"
       ]
     }
@@ -310,7 +310,7 @@
       ]
     }
   },
-  "CCT-ContractCommitmentDurationType-C-008-M": {
+  "CCT-ContractCommitmentDurationType-C-008-C": {
     "Function": "Validation",
     "Reference": "ContractCommitmentDurationType",
     "EntityType": "Column",
@@ -326,7 +326,7 @@
     "DatasetId": "ContractCommitment",
     "DatasetName": "Contract Commitment",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractCommitmentDurationType MUST use the largest time-based unit defined by UnitFormat that expresses the duration as a whole number (e.g., \"1 Year\" rather than \"12 Months\", \"1 Week\" rather than \"7 Days\").",
+      "MustSatisfy": "When ContractCommitmentDurationType expresses a time-based unit, ContractCommitmentDurationType MUST use the largest time-based unit defined by UnitFormat that expresses the duration as a whole number (e.g., \"1 Year\" rather than \"12 Months\", \"1 Week\" rather than \"7 Days\").",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
