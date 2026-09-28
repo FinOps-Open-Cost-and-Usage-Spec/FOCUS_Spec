@@ -183,17 +183,25 @@ def test_sql_block_is_valid(sql):
         pytest.fail(f"Invalid SQL in block:\n{sql}\n\n{error}", pytrace=False)
 
 
+def _output_aliases(tree):
+    """Output aliases (``expression AS name``) defined within a statement.
+
+    Kept apart from ``_local_names`` so that ``_enclosing_aliases`` can set
+    aside an alias without also dropping a table alias, UNNEST alias, or
+    JSON_TABLE column of the same name. Lower-cased for matching.
+    """
+    return {alias.alias.lower() for alias in tree.find_all(exp.Alias) if alias.alias}
+
+
 def _local_names(tree):
     """Names defined within a statement that are not FOCUS columns.
 
-    Covers output aliases, CTE names, table names and aliases (including
-    derived-table column lists), UNNEST aliases, inline column definitions, and
-    any qualifier used on a column reference. Lower-cased for matching.
+    Covers CTE names, table names and aliases (including derived-table column
+    lists), UNNEST aliases, inline column definitions, and any qualifier used
+    on a column reference. Output aliases are collected by
+    ``_output_aliases``. Lower-cased for matching.
     """
     names = set()
-    for alias in tree.find_all(exp.Alias):
-        if alias.alias:
-            names.add(alias.alias.lower())
     for cte in tree.find_all(exp.CTE):
         if cte.alias:
             names.add(cte.alias.lower())
@@ -262,7 +270,11 @@ def _source_columns(source, dataset_columns):
             continue
         if isinstance(query, exp.SetOperation):
             return None
-        for _, inner in source.selected_sources.values():
+        # A qualified star (CU.*) expands only the source it names.
+        qualifier = projection.table if isinstance(projection, exp.Column) else ""
+        for inner_name, (_, inner) in source.selected_sources.items():
+            if qualifier and inner_name.lower() != qualifier.lower():
+                continue
             inner_names = _source_columns(inner, dataset_columns)
             if inner_names is None:
                 return None
@@ -306,16 +318,23 @@ def _visible_sources(scope):
 
 
 def _match_cte_names(tree):
-    """Spell each reference to a CTE the way the CTE declares its name.
+    """Spell every CTE name, and each table reference to one, in lower case.
 
     sqlglot matches CTE names case-sensitively, but SQL identifiers are
     case-insensitive: without this, ``WITH Totals AS (...) ... FROM totals``
-    reads ``totals`` as a table.
+    reads ``totals`` as a table. Rewriting declarations and references alike
+    keeps nested CTEs whose names differ only in case (``T`` and ``t``) bound
+    to their own scope.
     """
-    declared = {cte.alias.lower(): cte.alias for cte in tree.find_all(exp.CTE)}
+    declared = set()
+    for cte in tree.find_all(exp.CTE):
+        alias = cte.args.get("alias")
+        if alias is not None and isinstance(alias.this, exp.Identifier):
+            alias.this.set("this", alias.name.lower())
+            declared.add(alias.name)
     for table in tree.find_all(exp.Table):
-        name = declared.get(table.name.lower())
-        if name and not table.db and isinstance(table.this, exp.Identifier):
+        name = table.name.lower()
+        if name in declared and not table.db and isinstance(table.this, exp.Identifier):
             table.this.set("this", name)
 
 
@@ -354,7 +373,6 @@ def _column_problem(column, scope, dataset_columns, all_columns, local):
     only has to be a FOCUS column of some dataset or a query-local name.
     """
     name = column.name.lower()
-    local = local - _enclosing_aliases(column)
     in_any_dataset = name in all_columns or name in local
     fallback = None if in_any_dataset else "not a FOCUS column"
     if scope is None:
@@ -406,7 +424,8 @@ def _unresolved_columns(sql, dataset_columns):
     for tree in sqlglot.parse(sql):
         if tree is None:
             continue
-        local = _local_names(tree)
+        declared = _local_names(tree)
+        aliases = _output_aliases(tree)
         _match_cte_names(tree)
         scopes = {id(scope.expression): scope for scope in traverse_scope(tree)}
         for column in tree.find_all(exp.Column):
@@ -414,6 +433,7 @@ def _unresolved_columns(sql, dataset_columns):
             if not name or name.startswith("x_") or column.is_star:
                 continue
             scope = _enclosing_scope(column, scopes)
+            local = declared | (aliases - _enclosing_aliases(column))
             try:
                 problem = _column_problem(
                     column, scope, dataset_columns, all_columns, local
@@ -592,10 +612,30 @@ _SELF_TEST_CASES = [
         id="alias-does-not-vouch-for-its-own-input",
     ),
     pytest.param(
+        "SELECT TRIM(E) AS E FROM CostAndUsage "
+        "CROSS JOIN UNNEST(ContractApplied) AS E",
+        set(),
+        id="alias-repeats-an-unnest-alias",
+    ),
+    pytest.param(
+        "SELECT JT.ContractName AS ContractName FROM CostAndUsage CU, "
+        "JSON_TABLE(CU.ContractApplied, '$.Elements[*]' "
+        "COLUMNS (ContractName VARCHAR(50) PATH '$.Name')) AS JT",
+        set(),
+        id="alias-repeats-a-json-table-column",
+    ),
+    pytest.param(
         "WITH Totals AS (SELECT InvoiceId FROM CostAndUsage) "
         "SELECT InvoiceId FROM totals",
         set(),
         id="cte-named-in-different-case",
+    ),
+    pytest.param(
+        "WITH T AS (SELECT InvoiceId FROM CostAndUsage) SELECT InvoiceId "
+        "FROM T WHERE EXISTS (WITH t AS (SELECT InvoiceId FROM InvoiceDetail) "
+        "SELECT InvoiceId FROM t)",
+        set(),
+        id="nested-ctes-named-in-different-case",
     ),
     pytest.param(
         "SELECT BilledCost FROM (SELECT BilledCost FROM CostAndUsage) "
@@ -614,6 +654,13 @@ _SELF_TEST_CASES = [
         "SELECT CU.* FROM CostAndUsage CU",
         set(),
         id="qualified-star",
+    ),
+    pytest.param(
+        "WITH T AS (SELECT CU.* FROM CostAndUsage CU "
+        "JOIN SkuPrice SP ON CU.SkuPriceId = SP.SkuPriceId) "
+        "SELECT T.BilledCost, T.UnitPrice FROM T",
+        {"T.UnitPrice"},
+        id="qualified-star-cte-exposes-only-its-table",
     ),
 ]
 
