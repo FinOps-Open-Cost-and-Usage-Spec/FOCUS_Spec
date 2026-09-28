@@ -213,7 +213,7 @@ A common acronym for JavaScript Object Notation, a data format codified in [ECMA
 
 <a name="glossary:list-unit-price"><b>List Unit Price</b></a>
 
-The provider-suggested unit price per [Pricing Unit](#datamodel.costandusage.pricingunit) for the [*SKU Price*](#glossary:sku-price) identified by the given [SKU Price ID](#datamodel.costandusage.skupriceid). List Unit Price does not reflect negotiated pricing terms for the associated *SKU Price* or any unit price impact dependent on a discount-bearing [*commitment program*](#glossary:commitment-program) (e.g., [*commitment discount*](#glossary:commitment-discount)) being applied to the [*charge*](#glossary:charge).
+The service-provider-suggested unit price per [Pricing Unit](#datamodel.costandusage.pricingunit) for the [*SKU Price*](#glossary:sku-price) identified by the given [SKU Price ID](#datamodel.costandusage.skupriceid). List Unit Price does not reflect negotiated pricing terms for the associated *SKU Price* or any unit price impact dependent on a discount-bearing [*commitment program*](#glossary:commitment-program) (e.g., [*commitment discount*](#glossary:commitment-discount)) being applied to the [*charge*](#glossary:charge).
 
 <a name="glossary:managed-service-provider"><b>Managed Service Provider (MSP)</b></a>
 
@@ -250,7 +250,7 @@ Negotiated discounts are classified with the following designations:
 
 <a name="glossary:negotiated-pricing-terms"><b>Negotiated Pricing Terms</b></a>
 
-Privately agreed [*terms*](#glossary:term) between a service provider and a customer that modify pricing from the provider-suggested pricing. Negotiated pricing terms consist of [*negotiated non-FX pricing terms*](#glossary:negotiated-non-fx-pricing-terms) (e.g., negotiated unit prices, negotiated tiered pricing configurations) and [*negotiated FX pricing terms*](#glossary:negotiated-fx-pricing-terms) (e.g., negotiated currency exchange rates).
+Privately agreed [*terms*](#glossary:term) between a service provider and a customer that modify pricing from the service-provider-suggested pricing. Negotiated pricing terms consist of [*negotiated non-FX pricing terms*](#glossary:negotiated-non-fx-pricing-terms) (e.g., negotiated unit prices, negotiated tiered pricing configurations) and [*negotiated FX pricing terms*](#glossary:negotiated-fx-pricing-terms) (e.g., negotiated currency exchange rates).
 
 <a name="glossary:on-demand"><b>On-Demand</b></a>
 

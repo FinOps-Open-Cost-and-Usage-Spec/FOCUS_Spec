@@ -1,6 +1,6 @@
 # Pricing Currency List Unit Price
 
-Pricing Currency List Unit Price represents the provider-suggested unit price per [Pricing Unit](#datamodel.costandusage.pricingunit) for the [*SKU Price*](#glossary:sku-price) identified by the given [SKU Price ID](#datamodel.costandusage.skupriceid). It is the unit price before the application of any negotiated pricing terms or discount-bearing [*commitment programs*](#glossary:commitment-program) (e.g., [*commitment discount*](#glossary:commitment-discount)).
+Pricing Currency List Unit Price represents the service-provider-suggested unit price per [Pricing Unit](#datamodel.costandusage.pricingunit) for the [*SKU Price*](#glossary:sku-price) identified by the given [SKU Price ID](#datamodel.costandusage.skupriceid). It is the unit price before the application of any negotiated pricing terms or discount-bearing [*commitment programs*](#glossary:commitment-program) (e.g., [*commitment discount*](#glossary:commitment-discount)).
 
 Pricing Currency List Unit Price is denominated in the [Pricing Currency](#datamodel.costandusage.pricingcurrency). Pricing Currency List Unit Price is commonly used for rate optimization activities.
 
@@ -19,7 +19,7 @@ PricingCurrencyListUnitPrice MUST adhere to the following requirements:
 * When PricingCurrencyListUnitPrice is not null, PricingCurrencyListUnitPrice MUST adhere to the following requirements:
   * PricingCurrencyListUnitPrice MUST be a non-negative decimal value.
   * PricingCurrencyListUnitPrice MUST be denominated in the PricingCurrency.
-  * PricingCurrencyListUnitPrice MUST represent the provider-suggested unit price per PricingUnit for the *SKU Price* identified by the given SkuPriceId.
+  * PricingCurrencyListUnitPrice MUST represent the service-provider-suggested unit price per PricingUnit for the *SKU Price* identified by the given SkuPriceId.
   * PricingCurrencyListUnitPrice MUST NOT reflect negotiated pricing terms for the associated *SKU Price*.
   * PricingCurrencyListUnitPrice MUST NOT reflect any unit price impact dependent on a discount-bearing *commitment program* being applied to the *charge*.
 
@@ -37,7 +37,7 @@ Pricing Currency List Unit Price
 
 ## Description
 
-The provider-suggested unit price per Pricing Unit for the *SKU Price* identified by the given SKU Price ID, expressed in Pricing Currency.
+The service-provider-suggested unit price per Pricing Unit for the *SKU Price* identified by the given SKU Price ID, expressed in Pricing Currency.
 
 ## Content Constraints
 
