@@ -23,11 +23,11 @@ SkuPriceDetails MUST adhere to the following requirements:
   * SkuPriceDetails MUST NOT include properties that are not applicable to the corresponding SkuPriceId.
   * SkuPriceDetails MUST NOT include TokenCacheAction when the *SKU Price* does not meter [*tokens*](#glossary:token) consumed from a request (e.g., tokens generated in a response, or a charge for retaining cached content metered in token-hours).
   * SkuPriceDetails MUST NOT include TokenCacheAction when the *SKU Price* meters request tokens that were served from or placed into a cache together with request tokens that were not (e.g., request tokens that a service provider bills on one meter whether or not they were placed into a cache).
-  * SkuPriceDetails MUST NOT include TokenDirection when the *SKU Price* is not metered in tokens.
+  * SkuPriceDetails MUST NOT include TokenDirection when the *SKU Price* does not meter *tokens*.
   * SkuPriceDetails MUST NOT include TokenDirection when the *SKU Price* meters both tokens consumed from a request and tokens generated in a response.
   * SkuPriceDetails SHOULD include all FOCUS-defined SKU Price properties listed below that are applicable to the corresponding SkuPriceId.
   * SkuPriceDetails SHOULD include TokenCacheAction when the *SKU Price* meters only tokens consumed from a request, except when the *SKU Price* meters request tokens that were served from or placed into a cache together with request tokens that were not.
-  * SkuPriceDetails SHOULD include TokenDirection when the *SKU Price* meters only tokens consumed from a request or only tokens generated in a response.
+  * SkuPriceDetails SHOULD include TokenDirection when the *SKU Price* meters only input or only output tokens.
   * SkuPriceDetails SHOULD include all custom SKU Price properties that are applicable to the corresponding SkuPriceId when there is no equivalent FOCUS-defined property.
   * SkuPriceDetails MAY include properties that are already captured in other dedicated columns.
   * SkuPriceDetails properties for a given SkuPriceId MUST adhere to the following requirements:
@@ -48,8 +48,8 @@ SkuPriceDetails MUST adhere to the following requirements:
   * TokenCacheAction MUST be "Uncached" when the *SKU Price* meters only request tokens that were neither served from nor placed into a cache (e.g., input tokens that a service provider meters separately from its cache reads and cache writes).
   * TokenCacheAction MUST be "Other" when the *SKU Price* meters a cache-related token charge to which none of the other allowed values apply.
 * When included, TokenDirection MUST adhere to the following requirements:
-  * TokenDirection MUST be "Input" when the tokens metered by the *SKU Price* are consumed from a request.
-  * TokenDirection MUST be "Output" when the tokens metered by the *SKU Price* are generated in a response.
+  * TokenDirection MUST be "Input" when the *SKU Price* meters tokens consumed from a request.
+  * TokenDirection MUST be "Output" when the *SKU Price* meters tokens generated in a response.
 
 ## FOCUS-Defined Properties
 
