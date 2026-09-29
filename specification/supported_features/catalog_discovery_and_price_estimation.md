@@ -23,13 +23,13 @@ SKU Price Effective Start and SKU Price Effective End carry meaning only as a pa
 
 A point-in-time lookup therefore treats a null bound as unbounded in that direction, which is the `(bound IS NULL OR comparison)` pattern the point-in-time queries below use. Finding announced changes is the exception: it tests the bounds directly, because it looks for prices whose applicability changes rather than for prices in force. Rating a [*charge*](#glossary:charge) follows the same rule against Charge Period Start: a charge falls under a price when its charge period start is on or after SKU Price Effective Start and before SKU Price Effective End.
 
-> **Note:** A [*dataset instance*](#glossary:dataset-instance) may hold only the prices in force today, or it may also carry forward-dated changes and superseded prices. The specification does not require a *service provider* to publish pricing history, and carries no signal distinguishing the two, so the same query can return one row per SKU Price ID from one *service provider* and several from another. Filtering to a point in time rather than assuming one row per SKU Price ID is what makes a query portable.
+> **Note:** A [*dataset instance*](#glossary:dataset-instance) may hold only the prices in force today, or it may also carry forward-dated changes and superseded prices. The specification does not require a *service provider* to publish pricing history, and carries no signal distinguishing the two, so the same query can return one row per SKU Price ID from one *service provider* and several from another. Filtering to a point in time rather than assuming one row per SKU Price ID is what makes a query portable, and where several quantity tiers share a SKU Price ID, a point in time still returns one row per tier.
 
 ### Scope When Conditional Columns are Absent
 
 This feature applies wherever a *service provider* publishes a SKU Price dataset, and the data model states when that dataset is present. Every column this feature directly depends on is present in every SKU Price dataset instance. The queries that read public prices keep only records with a null Contract ID, so they return nothing from a dataset instance that carries only negotiated rates.
 
-Two conditions change what applies. Pricing Region ID is present when the [*operating model*](#glossary:operating-model) [includes regions](#operatingmodelconditions.includesregions). Where it is absent, prices do not vary by location and a single price stands for every region, so comparing rates across regions does not apply rather than returning an incomplete result. Quantity Tier Minimum and Quantity Tier Maximum are present when the *operating model* [includes quantity tier pricing](#operatingmodelconditions.includesquantitytierpricing). Where they are absent, every price applies at any quantity, so a planned line needs no tier, and the estimate holds with those two columns left out of the query.
+Two conditions change what applies. Pricing Region ID is present when the [*operating model*](#glossary:operating-model) [includes regions](#operatingmodelconditions.includesregions). Where it is absent, prices do not vary by location and a single price stands for every region, so comparing rates across regions does not apply rather than returning an incomplete result. Quantity Tier Minimum and Quantity Tier Maximum are present when the *operating model* [includes quantity tier pricing](#operatingmodelconditions.includesquantitytierpricing). Where they are absent, every price applies at any quantity, so a planned line needs no tier, and the queries that return those two columns hold with them left out.
 
 ## Directly Dependent Columns
 
@@ -78,6 +78,8 @@ SELECT
   SkuPriceId,
   SkuPriceDescription,
   PricingUnit,
+  QuantityTierMinimum,
+  QuantityTierMaximum,
   PricingCurrency,
   PricingCurrencyCategory,
   UnitPrice
@@ -97,7 +99,7 @@ This query takes a set of planned quantities, each paired with the service provi
 
 Pricing Currency Category is returned alongside the total because a "Consumable" rate produces a balance in a consumption currency rather than a financial amount. Rows carrying different Pricing Currency values, or a mix of "Payable" and "Consumable", are not additive without a conversion step the SKU Price dataset does not carry. Additionally, a SKU Price ID published in more than one pricing currency returns one row per currency for the same planned line, and those rows are alternative prices for that line rather than parts of it.
 
-Quantity Tier Minimum and Quantity Tier Maximum are returned so the planned quantity can be checked against the tier the price applies to. Records that share a service provider, SKU Price ID, Contract ID, and Pricing Currency cannot overlap in time, so tiers in force together carry different SKU Price IDs, and a planned line names the tier it is priced under. A quantity that spans tiers is entered as one line per tier, split as the pricing terms of the *service provider* dictate, since whether a tier's rate applies only to the units inside that tier or to every unit consumed is a property of those terms rather than of the tier boundaries.
+Quantity Tier Minimum and Quantity Tier Maximum are returned so each row can be matched to the tier it prices. Where each tier carries its own SKU Price ID, a planned line names its tier; where several tiers share a SKU Price ID, a planned line returns one row per tier, and the row that applies is the one for the tier the line was entered for, which for a line split from a larger quantity may not be the tier its own quantity falls in. A quantity that spans tiers is entered as one line per tier, split as the pricing terms of the *service provider* dictate, since whether a tier's rate applies only to the units inside that tier or to every unit consumed is a property of those terms rather than of the tier boundaries.
 
 ```sql
 WITH PlannedUsage (ServiceProviderName, SkuPriceId, PlannedQuantity, PlannedDate) AS (
@@ -215,6 +217,8 @@ SELECT
   SkuPriceId,
   PricingRegionId,
   PricingUnit,
+  QuantityTierMinimum,
+  QuantityTierMaximum,
   PricingCurrency,
   UnitPrice
 FROM SkuPrice
