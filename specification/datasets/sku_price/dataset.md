@@ -41,7 +41,7 @@ The [SKU Price](#datamodel.skuprice) dataset relates to the [Cost and Usage](#da
 Resolving the price that applies to a Cost and Usage charge therefore requires more than the SKU Price ID alone. The charge must also be aligned to the SKU Price record using the following criteria:
 
 * **Effective Period:** The Cost and Usage [Charge Period Start](#datamodel.costandusage.chargeperiodstart) is on or after the SKU Price [SKU Price Effective Start](#datamodel.skuprice.skupriceeffectivestart) and before [SKU Price Effective End](#datamodel.skuprice.skupriceeffectiveend); for this criterion, a null SKU Price Effective Start represents the earliest available time, and a null SKU Price Effective End represents the latest available time.
-* **Contract:** The Contract ID matches the agreement under which the charge was incurred (or is null for a public list price).
+* **Contract:** The Contract ID matches a `ContractId` property extracted from the charge's [Contract Applied](#datamodel.costandusage.contractapplied) array (`ContractApplied.Elements[*].ContractId`), or is null for a public list price. Note that `ContractApplied` only resolves prices associated with contract commitments.
 * **Quantity Tier:** The quantity tier (defined by [Quantity Tier Minimum](#datamodel.skuprice.quantitytierminimum) and [Quantity Tier Maximum](#datamodel.skuprice.quantitytiermaximum)) contains the cumulative or evaluated quantity that determines the price for the charge.
 * **Pricing Currency:** The SKU price's [Pricing Currency](#datamodel.skuprice.pricingcurrency) matches the charge's [PricingCurrency](#datamodel.costandusage.pricingcurrency), or the charge's [BillingCurrency](#datamodel.costandusage.billingcurrency) when the *operating model* does not [include pricing and billing currency differences](#operatingmodelconditions.includespricing-billingcurrencydifferences).
 
@@ -56,7 +56,7 @@ Additionally, the SKU Price dataset can optionally join to the [Contract Commitm
 
 | Dataset A           | Dataset A Column  | Dataset B           | Dataset B Column       |
 | ------------------- | ----------------- | ------------------- | ---------------------- |
-| Cost and Usage      | SKU Price ID, Contract ID, Pricing Currency, plus time and tier (see above) | SKU Price | SKU Price ID, Contract ID, Pricing Currency, plus time and tier (see above) |
+| Cost and Usage      | SKU Price ID, ContractApplied.Elements[*].ContractId, Pricing Currency, plus time and tier (see above) | SKU Price | SKU Price ID, Contract ID, Pricing Currency, plus time and tier (see above) |
 | Contract Commitment | Contract ID       | SKU Price           | Contract ID            |
 
 ## Requirements<!--SkipTOC-->
