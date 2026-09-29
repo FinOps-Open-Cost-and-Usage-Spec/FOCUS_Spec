@@ -35,6 +35,7 @@ One capability narrows. Pricing Region ID is present when the [*operating model*
 
 * [SkuPrice](#datamodel.skuprice)
   * ChargeCategory
+  * ContractId
   * ListUnitPrice
   * PricingCurrency
   * PricingCurrencyCategory
@@ -66,6 +67,8 @@ SKU Price Eligibility is defined in [*JSON object format*](#attributes.jsonobjec
 ### Find the List Prices in Force at a Point in Time
 
 This query takes inputs of a service provider, a pricing service name, and a point in time, then returns the public consumption rates that apply for that service at that moment. It filters to a Charge Category of "Usage", so acquisition fees and granted credits are excluded; dropping that predicate returns the full set of rates for the service. The same point in time is supplied to both bounds, and each bound is tested for null so that an open-ended price is returned rather than filtered out.
+
+It also keeps only records with a null Contract ID, which hold the public list price; a record with a populated Contract ID belongs to a specific [*contract*](#glossary:contract).
 
 ```sql
 SELECT
@@ -118,13 +121,14 @@ ORDER BY SP.PricingCurrencyCategory, SP.PricingCurrency, EstimatedPricingCurrenc
 
 ### Identify the Prices a Billing Account is Eligible For
 
-This query takes inputs of a service provider and a billing account identifier, then returns the prices that account may receive. A price with `IsGlobalScope` set to `true` applies to all entities without restriction. A price with neither global nor complex scope carries an `Inclusions` array whose rules name the dimension, operator, and values that define the boundary.
+This query takes inputs of a service provider and a billing account identifier, then returns the prices that account may receive. A price with `IsGlobalScope` set to `true` applies to all entities without restriction. A price with neither global nor complex scope carries an `Inclusions` array whose rules name the dimension, operator, and values that define the boundary. Contract ID is returned so a contracted price the account may receive can be told apart from the list price under the same SKU Price ID.
 
 > **Note:** This query evaluates the `In` operator against the `BillingAccountId` dimension only, and returns rows flagged `IsComplexScope` for review rather than resolving them. A complete evaluation applies `InclusionOperator` across all inclusion rules and then removes any entity caught by `Exclusions`, in the order described in the SKU Price Eligibility column definition.
 
 ```sql
 SELECT
   SkuPriceId,
+  ContractId,
   SkuPriceDescription,
   ListUnitPrice,
   PricingCurrency,
@@ -161,6 +165,7 @@ SELECT
   MAX(ListUnitPrice) AS HighestListUnitPrice
 FROM SkuPrice
 WHERE ServiceProviderName = ?
+  AND ContractId IS NULL
   AND (SkuPriceEffectiveStart IS NULL OR SkuPriceEffectiveStart <= ?)
   AND (SkuPriceEffectiveEnd IS NULL OR SkuPriceEffectiveEnd > ?)
 GROUP BY ChargeCategory, PricingUnit, PricingCurrency
@@ -186,6 +191,7 @@ SELECT
   SkuPriceLastUpdated
 FROM SkuPrice
 WHERE ServiceProviderName = ?
+  AND ContractId IS NULL
   AND (SkuPriceEffectiveStart > ? OR SkuPriceEffectiveEnd > ?)
 ORDER BY SkuPriceEffectiveStart, SkuPriceEffectiveEnd
 ```
@@ -205,6 +211,7 @@ SELECT
 FROM SkuPrice
 WHERE PricingServiceName = ?
   AND ChargeCategory = 'Usage'
+  AND ContractId IS NULL
   AND (SkuPriceEffectiveStart IS NULL OR SkuPriceEffectiveStart <= ?)
   AND (SkuPriceEffectiveEnd IS NULL OR SkuPriceEffectiveEnd > ?)
 ORDER BY SkuPriceId, ListUnitPrice
