@@ -1,8 +1,8 @@
 # SKU Price Effective End
 
-SKU Price Effective End represents the exclusive date and time when the specified unit price and its associated pricing properties are no longer active or applicable for a given [SKU Price ID](#datamodel.skuprice.skupriceid).
+SKU Price Effective End represents the exclusive date and time when the specified [SKU Price](#datamodel.skuprice) record is no longer active or applicable for a given [SKU Price ID](#datamodel.skuprice.skupriceid).
 
-When combined with [SKU Price Effective Start](#datamodel.skuprice.skupriceeffectivestart), this column defines the precise validity window of a rate card entry. When a unit price has no scheduled expiration or deprecation date, this value remains null, including for a price published ahead of taking effect. A null therefore states that the price has no upper boundary, not that the price is the one currently in effect. A charge in Cost and Usage falls under this price when its charge period start is before SKU Price Effective End, or when this value is null.
+When combined with [SKU Price Effective Start](#datamodel.skuprice.skupriceeffectivestart), this column defines the precise validity window of a rate card entry. When a SKU Price record has no scheduled expiration or deprecation date, this value remains null, including for a price published ahead of taking effect. A null therefore states that the price has no upper boundary, not that the price is the one currently in effect. A charge in Cost and Usage falls under this price when its charge period start is before SKU Price Effective End, or when this value is null.
 
 ## Requirements
 
@@ -26,7 +26,7 @@ SKU Price Effective End
 
 ## Description
 
-The exclusive date and time when the specified unit price and associated pricing properties are no longer active or applicable.
+The exclusive date and time when the specified SKU Price record is no longer active or applicable.
 
 ## Content Constraints
 

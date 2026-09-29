@@ -1,6 +1,6 @@
 # SKU Price Eligibility
 
-SKU Price Eligibility is a structured definition of the specific entities, accounts, or contexts eligible to receive the specified [*SKU Price*](#glossary:sku-price). This column details the inclusionary and exclusionary logic that dictates when a specific unit price can be applied to consumption.
+SKU Price Eligibility is a structured definition of the specific entities, accounts, or contexts eligible to receive the specified [*SKU Price*](#glossary:sku-price). This column details the inclusionary and exclusionary logic that dictates when a specific *SKU Price* can be applied to consumption.
 
 ## Requirements
 
@@ -91,8 +91,8 @@ The evaluation of an entity's usage against a rate card's eligibility rules proc
 
 1. **Normalization:** Convert the entity attribute and the Scope `Values` to a consistent case (default: lowercase) for comparison.
 2. **Scope Check:** If `IsGlobalScope` is `true`, the entity passes inclusion; proceed to Exclusion Evaluation. If `IsComplexScope` is `true`, the object does not determine eligibility; terminate evaluation.
-3. **Inclusion Evaluation:** Iterate through `Inclusions`. Apply `InclusionOperator`. If result is `False`, the entity is not eligible for this unit price; terminate evaluation.
-4. **Exclusion Evaluation:** Iterate through `Exclusions`. If `True`, the entity is explicitly excluded from this unit price; terminate evaluation.
+3. **Inclusion Evaluation:** Iterate through `Inclusions`. Apply `InclusionOperator`. If result is `False`, the entity is not eligible for this *SKU Price*; terminate evaluation.
+4. **Exclusion Evaluation:** Iterate through `Exclusions`. If `True`, the entity is explicitly excluded from this *SKU Price*; terminate evaluation.
 5. **Resolution:** If the entity passes the Scope Check or Inclusion Evaluation and is not caught by Exclusions, the `SKU Price` is valid for that entity.
 
 <div class="h7-nonindex">Evaluating Rules Against Null Dimensions</div>
@@ -148,7 +148,7 @@ SKU Price Eligibility
 
 ## Description
 
-A structured definition of the specific entities, accounts, or contexts eligible to receive the specified unit price.
+A structured definition of the specific entities, accounts, or contexts eligible to receive the specified *SKU Price*.
 
 ## Content Constraints
 
