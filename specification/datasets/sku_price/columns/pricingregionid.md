@@ -1,6 +1,6 @@
 # Pricing Region ID
 
-Pricing Region ID is a service-provider-assigned identifier for an isolated geographic area where the specified price for a [*resource*](#glossary:resource) or [*service*](#glossary:service) applies. This column is commonly used to join pricing rates against actual usage or to analyze unit price variations across different geographical deployments.
+Pricing Region ID is a service-provider-assigned identifier for an isolated geographic area where the specified [SKU Price](#glossary:sku-price) applies. This column is commonly used to join pricing rates against actual usage or to analyze unit price variations across different geographical deployments.
 
 ## Requirements
 
@@ -22,7 +22,7 @@ Practitioners are encouraged to carefully distinguish between **Pricing Region I
 * **Pricing Region ID** defines the geographic boundary for which the *rate itself* is valid.
 * **Region ID** defines the physical location where a specific *resource* is provisioned.
 
-In many cases these will be identical. However, if a *SKU Price* is global but still applies to specific regional deployments, or if the provider [*price list*](#glossary:price-list) dictates a resource deployment region that differs from the pricing boundary, `Pricing Region ID` reflects the pricing boundary. The set of `Region ID` values can instead be represented as inclusion criteria within [SKU Price Eligibility](#datamodel.skuprice.skupriceeligibility) to capture the resource location without conflating the *price list* logic.
+In many cases these will be identical. However, if a [*SKU Price*](#glossary:sku-price) is global but still applies to specific regional deployments, or if the *service provider's* [*price list*](#glossary:price-list) dictates a resource deployment region that differs from the pricing boundary, `Pricing Region ID` reflects the pricing boundary. The set of `Region ID` values can instead be represented as inclusion criteria within [SKU Price Eligibility](#datamodel.skuprice.skupriceeligibility) to capture the resource location without conflating the *price list* logic.
 
 ### Null vs Global Values for Non-Regionalized Prices
 
