@@ -40,10 +40,10 @@ The [SKU Price](#datamodel.skuprice) dataset relates to the [Cost and Usage](#da
 
 Resolving the price that applies to a Cost and Usage charge therefore requires more than the SKU Price ID alone. The charge must also be aligned to the SKU Price record using the following criteria:
 
-* **Effective Period:** The SKU Price record's effective period (defined by [SKU Price Effective Start](#datamodel.skuprice.skupriceeffectivestart) and [SKU Price Effective End](#datamodel.skuprice.skupriceeffectiveend)) contains the Cost and Usage charge period (defined by [Charge Period Start](#datamodel.costandusage.chargeperiodstart) and [Charge Period End](#datamodel.costandusage.chargeperiodend)).
+* **Effective Period:** The Cost and Usage [Charge Period Start](#datamodel.costandusage.chargeperiodstart) is on or after the SKU Price [SKU Price Effective Start](#datamodel.skuprice.skupriceeffectivestart) and before [SKU Price Effective End](#datamodel.skuprice.skupriceeffectiveend); for this criterion, a null SKU Price Effective Start represents the earliest available time, and a null SKU Price Effective End represents the latest available time.
 * **Contract:** The Contract ID matches the agreement under which the charge was incurred (or is null for a public list price).
 * **Quantity Tier:** The quantity tier (defined by [Quantity Tier Minimum](#datamodel.skuprice.quantitytierminimum) and [Quantity Tier Maximum](#datamodel.skuprice.quantitytiermaximum)) contains the cumulative or evaluated quantity that determines the price for the charge.
-* **Pricing Currency:** The SKU price's [Pricing Currency](#datamodel.skuprice.pricingcurrency) matches the charge's [PricingCurrency](#datamodel.costandusage.pricingcurrency).
+* **Pricing Currency:** The SKU price's [Pricing Currency](#datamodel.skuprice.pricingcurrency) matches the charge's [PricingCurrency](#datamodel.costandusage.pricingcurrency), or the charge's [BillingCurrency](#datamodel.costandusage.billingcurrency) when the *operating model* does not [include pricing and billing currency differences](#operatingmodelconditions.includespricing-billingcurrencydifferences).
 
 The resolved record carries the unit price for that combination. If Contract ID is populated, the Unit Price represents the contractually agreed rate; if null, it represents the public list price. Comparing a billed contracted rate against its published catalog rate therefore requires looking up the corresponding SKU Price record where Contract ID is null.
 
