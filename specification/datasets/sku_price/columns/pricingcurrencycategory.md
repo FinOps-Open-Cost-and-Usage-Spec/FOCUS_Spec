@@ -14,7 +14,7 @@ PricingCurrencyCategory MUST adhere to the following requirements:
 
 | Value      | Description                                                                                                                                                             |
 | :--------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Payable    | The pricing currency represents a financial medium of exchange the customer can pay in; typically a [*national currency*](#glossary:national-currency) (e.g., USD, EUR, JPY). Math resulting from this rate yields a base financial cost, though a currency conversion step may still be required if the customer's actual billed currency differs. |
+| Payable    | The pricing currency represents a financial medium of exchange the customer can pay in: a [*national currency*](#glossary:national-currency) (e.g., USD, EUR, JPY). Math resulting from this rate yields a base financial cost, though a currency conversion step may still be required if the customer's actual billed currency differs. |
 | Consumable | The pricing currency represents a service-provider-specific *consumption currency* (e.g., platform credits, normalized billing units). Math resulting from this rate yields a virtual cost balance within the provider's ecosystem, requiring a mandatory secondary conversion to determine the financial cost. |
 
 ## Column ID
@@ -27,19 +27,19 @@ Pricing Currency Category
 
 ## Description
 
-Categorizes the nature of the Pricing Currency as either a financial instrument paid by the customer ("Payable") or a proprietary consumption currency issued by the *service provider* ("Consumable").
+Categorizes the nature of the Pricing Currency as either a financial instrument the customer can pay in ("Payable") or a proprietary consumption currency issued by the *service provider* ("Consumable").
 
 ## Content Constraints
 
-| Constraint      | Value                           |
-| :-------------- | :------------------------------ |
-| Dataset         | [SKU Price](#datamodel.skuprice) |
-| Conditions      | Not applicable                   |
-| Column type     | Dimension                       |
-| Feature level   | Mandatory                       |
-| Allows nulls    | False                           |
-| Data type       | String                          |
-| Value format    | Allowed values                  |
+| Constraint                 | Value                           |
+| :------------------------- | :------------------------------ |
+| Dataset                    | [SKU Price](#datamodel.skuprice) |
+| Operating Model Conditions | Not applicable                  |
+| Column type                | Dimension                       |
+| Feature level              | Mandatory                       |
+| Allows nulls               | False                           |
+| Data type                  | String                          |
+| Value format               | Allowed values                  |
 
 ## Version Introduced
 

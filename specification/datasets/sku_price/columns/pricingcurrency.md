@@ -10,6 +10,10 @@ PricingCurrency MUST adhere to the following requirements:
 * PricingCurrency MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * PricingCurrency MUST conform to [CurrencyFormat](#attributes.currencyformat) requirements.
 * PricingCurrency MUST NOT be null.
+* PricingCurrency MUST represent a *national currency* or a *consumption currency*.
+* PricingCurrency documentation MUST adhere to the following requirements:
+  * PricingCurrency documentation MUST specify how to determine whether a value represents a *national currency*.
+  * PricingCurrency documentation MUST be accessible to practitioners.
 
 ## Column ID
 
@@ -25,15 +29,15 @@ The *national currency* or *consumption currency* denomination that a *resource*
 
 ## Content Constraints
 
-| Constraint      | Value                                                |
-| :-------------- | :--------------------------------------------------- |
-| Dataset         | [SKU Price](#datamodel.skuprice)                      |
-| Conditions      | Not applicable                                        |
-| Column type     | Dimension                                            |
-| Feature level   | Mandatory                                            |
-| Allows nulls    | False                                                |
-| Data type       | String                                               |
-| Value format    | [Currency Format](#attributes.currencyformat)        |
+| Constraint                 | Value                                                |
+| :------------------------- | :--------------------------------------------------- |
+| Dataset                    | [SKU Price](#datamodel.skuprice)                     |
+| Operating Model Conditions | Not applicable                                       |
+| Column type                | Dimension                                            |
+| Feature level              | Mandatory                                            |
+| Allows nulls               | False                                                |
+| Data type                  | String                                               |
+| Value format               | [Currency Format](#attributes.currencyformat)        |
 
 ## Version Introduced
 

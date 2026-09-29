@@ -35,15 +35,15 @@ The inclusive upper boundary of a quantity-based pricing tier, measured in the d
 
 ## Content Constraints
 
-| Constraint      | Value                                                |
-| :-------------- | :--------------------------------------------------- |
-| Dataset         | [SKU Price](#datamodel.skuprice)                      |
-| Conditions      | [Includes Quantity Tier Pricing](#conditions.includesquantitytierpricing) |
-| Column type     | Metric                                               |
-| Feature level   | Conditional                                          |
-| Allows nulls    | True                                                 |
-| Data type       | Decimal                                              |
-| Value format    | \<not specified>                                     |
+| Constraint                 | Value                                                |
+| :------------------------- | :--------------------------------------------------- |
+| Dataset                    | [SKU Price](#datamodel.skuprice)                     |
+| Operating Model Conditions | [Includes Quantity Tier Pricing](#operatingmodelconditions.includesquantitytierpricing) |
+| Column type                | Metric                                               |
+| Feature level              | Conditional                                          |
+| Allows nulls               | True                                                 |
+| Data type                  | Decimal                                              |
+| Value format               | \<not specified>                                     |
 
 ## Version Introduced
 

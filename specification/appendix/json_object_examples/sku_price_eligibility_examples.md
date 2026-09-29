@@ -89,7 +89,7 @@ A unit price where the catalog's base Pricing Region ID represents a broad macro
 }
 ```
 
-## Global Region Scope
+## Non-Regionalized Scope
 
 A unit price for a non-regionalized service (e.g., DNS, IAM, or CDN) where consumption occurs outside of a specific physical geography, which a service provider may represent with a Region ID value such as `"global"`.
 

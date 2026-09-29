@@ -8,6 +8,9 @@ ContractId MUST adhere to the following requirements:
 
 * ContractId MUST be of type String.
 * ContractId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
+* ContractId MUST adhere to the following nullability requirements:
+  * ContractId MUST be null when [UnitPrice](#datamodel.skuprice.unitprice) represents a list unit price.
+  * ContractId MUST NOT be null when UnitPrice represents a contracted unit price.
 * When ContractId is not null, ContractId MUST adhere to the following requirements:
   * ContractId MUST be a unique identifier within the service provider.
   * ContractId SHOULD be a fully-qualified identifier.
@@ -26,15 +29,15 @@ A service-provider-assigned identifier for a contract describing the agreed term
 
 ## Content Constraints
 
-| Constraint      | Value                                                                                      |
-|:----------------|:-------------------------------------------------------------------------------------------|
-| Dataset         | [SKU Price](#datamodel.skuprice)                                                            |
-| Conditions      | Not applicable                                                                              |
-| Column type     | Dimension                                                                                  |
-| Feature level   | Mandatory                                                                                  |
-| Allows nulls    | True                                                                                       |
-| Data type       | String                                                                                     |
-| Value format    | \<not specified>                                                                           |
+| Constraint                 | Value                                                                                      |
+| :------------------------- | :----------------------------------------------------------------------------------------- |
+| Dataset                    | [SKU Price](#datamodel.skuprice)                                                           |
+| Operating Model Conditions | Not applicable                                                                             |
+| Column type                | Dimension                                                                                  |
+| Feature level              | Mandatory                                                                                  |
+| Allows nulls               | True                                                                                       |
+| Data type                  | String                                                                                     |
+| Value format               | \<not specified>                                                                           |
 
 ## Version Introduced
 

@@ -95,6 +95,15 @@ The evaluation of an entity's usage against a rate card's eligibility rules proc
 4. **Exclusion Evaluation:** Iterate through `Exclusions`. If `True`, the entity is explicitly excluded from this unit price; terminate evaluation.
 5. **Resolution:** If the entity passes the Scope Check or Inclusion Evaluation and is not caught by Exclusions, the `SKU Price` is valid for that entity.
 
+<div class="h7-nonindex">Evaluating Rules Against Null Dimensions</div>
+
+When the processing workflow evaluates a rule against a charge where the target `Dimension` is `null`:
+* The `DoesNotExist` operator evaluates to `true`.
+* The `Exists` operator evaluates to `false`.
+* The `In` and `NotIn` operators must not match any string values. For example, a `null` dimension evaluated against `Values: ["global"]` evaluates to `false`.
+
+Because service providers inconsistently use both `null` and `global` to represent non-regionalized services, an eligibility rule defining `RegionId In ["global"]` will strictly evaluate to `false` against a charge carrying a `null` RegionId. Consumers reconciling rates across these boundaries should normalize `null` and `global` values prior to evaluation.
+
 <div class="h7-nonindex">Dependency Logic</div>
 
 1. **Consistency:** Engines are expected to accept a JSON Object and to reject scalar values for this field, for compatibility with typed database schemas.
@@ -143,16 +152,16 @@ A structured definition of the specific entities, accounts, or contexts eligible
 
 ## Content Constraints
 
-| Constraint | Value |
-| :--- | :--- |
-| Dataset | [SKU Price](#datamodel.skuprice) |
-| Conditions | Not applicable |
-| Column type | Dimension |
-| Feature level | Mandatory |
-| Allows nulls | False |
-| Data type | JSON |
-| Value format | [JSON Object Format](#attributes.jsonobjectformat) |
-| Object | [SkuPriceEligibilityObject](#datamodel.skuprice.skupriceeligibility.skupriceeligibilityobject) |
+| Constraint                 | Value |
+| :------------------------- | :--- |
+| Dataset                    | [SKU Price](#datamodel.skuprice) |
+| Operating Model Conditions | Not applicable |
+| Column type                | Dimension |
+| Feature level              | Mandatory |
+| Allows nulls               | False |
+| Data type                  | JSON |
+| Value format               | [JSON Object Format](#attributes.jsonobjectformat) |
+| Object                     | [SkuPriceEligibilityObject](#datamodel.skuprice.skupriceeligibility.skupriceeligibilityobject) |
 
 ## Version Introduced
 

@@ -1,6 +1,6 @@
 # SKU Price Description
 
-A SKU Price Description provides a high-level context of a [*SKU Price*](#glossary:sku-price) without requiring additional discovery. This column is a self-contained summary of the catalog offering's purpose and unit price. It typically covers a select group of corresponding details across a rate card dataset or provides information not otherwise available.
+A SKU Price Description provides a high-level context of a [*SKU Price*](#glossary:sku-price) without requiring additional discovery. This column is a self-contained summary of the catalog offering's purpose and unit price. It typically covers a select group of corresponding details across a [SKU Price](#datamodel.skuprice) dataset or provides information not otherwise available.
 
 ## Requirements
 
@@ -25,15 +25,15 @@ Self-contained summary of the *SKU Price's* purpose and offering.
 
 ## Content Constraints
 
-| Constraint      | Value                                                |
-| :-------------- | :--------------------------------------------------- |
-| Dataset         | [SKU Price](#datamodel.skuprice)                      |
-| Conditions      | Not applicable                                        |
-| Column type     | Dimension                                            |
-| Feature level   | Mandatory                                            |
-| Allows nulls    | False                                                |
-| Data type       | String                                               |
-| Value format    | \<not specified>                                     |
+| Constraint                 | Value                                                |
+| :------------------------- | :--------------------------------------------------- |
+| Dataset                    | [SKU Price](#datamodel.skuprice)                     |
+| Operating Model Conditions | Not applicable                                       |
+| Column type                | Dimension                                            |
+| Feature level              | Mandatory                                            |
+| Allows nulls               | False                                                |
+| Data type                  | String                                               |
+| Value format               | \<not specified>                                     |
 
 ## Version Introduced
 

@@ -11,7 +11,6 @@ QuantityTierMinimum MUST adhere to the following requirements:
 * QuantityTierMinimum MUST be of type Decimal.
 * QuantityTierMinimum MUST NOT be null.
 * QuantityTierMinimum MUST represent a quantity denominated in the [PricingUnit](#datamodel.skuprice.pricingunit).
-* QuantityTierMinimum MUST be strictly less than [QuantityTierMaximum](#datamodel.skuprice.quantitytiermaximum) when QuantityTierMaximum is not null.
 * QuantityTierMinimum MUST be the exclusive lower bound of the quantity-based pricing tier.
 
 ## Column ID
@@ -28,15 +27,15 @@ The exclusive lower boundary of a quantity-based pricing tier, measured in the d
 
 ## Content Constraints
 
-| Constraint      | Value                                                |
-| :-------------- | :--------------------------------------------------- |
-| Dataset         | [SKU Price](#datamodel.skuprice)                      |
-| Conditions      | [Includes Quantity Tier Pricing](#conditions.includesquantitytierpricing) |
-| Column type     | Metric                                               |
-| Feature level   | Conditional                                          |
-| Allows nulls    | False                                                |
-| Data type       | Decimal                                              |
-| Value format    | \<not specified>                                     |
+| Constraint                 | Value                                                |
+| :------------------------- | :--------------------------------------------------- |
+| Dataset                    | [SKU Price](#datamodel.skuprice)                     |
+| Operating Model Conditions | [Includes Quantity Tier Pricing](#operatingmodelconditions.includesquantitytierpricing) |
+| Column type                | Metric                                               |
+| Feature level              | Conditional                                          |
+| Allows nulls               | False                                                |
+| Data type                  | Decimal                                              |
+| Value format               | \<not specified>                                     |
 
 ## Version Introduced
 

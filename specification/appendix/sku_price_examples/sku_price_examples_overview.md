@@ -1,19 +1,21 @@
 # Examples: SKU Price
 
-> Note: The following section is informative and non-normative. It does not define requirements.
-
 The following section contains examples of how a [*service provider*](#glossary:service-provider) may represent a published [*price list*](#glossary:price-list) as a [SKU Price](#datamodel.skuprice) [*FOCUS dataset*](#glossary:FOCUS-dataset). The scenarios use a fictitious service provider, Aura Web, and a fictitious customer, Acme Corp. Provider, service, and identifier names are illustrative.
 
-The scenarios draw on a single rate card rather than a separate dataset per scenario, because several SKU Price constructs are only visible when the records sit side by side. Row uniqueness, tier boundaries, and price effectivity each depend on how a record relates to its neighbors.
+The scenarios draw on a single [*price list*](#glossary:price-list) rather than a separate dataset per scenario, because several SKU Price constructs are only visible when the records sit side by side. Row uniqueness, tier boundaries, and price effectivity each depend on how a record relates to its neighbors.
 
-[**CSV Example: complete rate card**](/specification/data/sku_price_examples/aura_web_rate_card_full.csv)
+[**CSV Example: complete price list**](/specification/data/sku_price_examples/aura_web_rate_card_full.csv)
 
-The rate card contains 18 records across six SKUs:
+The *price list* contains 28 records across 10 SKUs:
 
-* A general purpose virtual machine offered at a current and a superseded on-demand rate, at a second on-demand rate in another currency, at a negotiated rate, and at three reservation rates.
-* A one-year virtual machine reservation, offered under two payment models.
-* A one-year flexible spend plan, offered under two payment models.
+* A general purpose virtual machine offered at a current and a superseded on-demand rate, at a second on-demand rate in another currency, at a negotiated rate, and at three committed rates, one for each reservation payment model under which its consumption can be covered.
+* A burstable virtual machine whose on-demand rate changes at the start of 2027, announced ahead of taking effect.
+* A shared-core virtual machine offered at a single rate that carries no effective start or end date.
+* A one-year virtual machine reservation, offered under three payment models.
+* A one-year flexible spend plan, offered under three payment models.
 * Object storage priced across three quantity tiers, with one negotiated tier.
+* A legacy object storage tier with no published origin date, scheduled for withdrawal.
+* A managed database offered at a standing rate, with a promotional rate for the first quarter of 2026.
 * An analytics service priced in a [*consumption currency*](#glossary:consumption-currency).
 * A purchasable balance of that consumption currency, and the published unit value of a granted promotional credit.
 
