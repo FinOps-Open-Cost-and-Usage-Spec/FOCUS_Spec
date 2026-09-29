@@ -242,11 +242,11 @@ Negotiated discounts are classified with the following designations:
 
 <a name="glossary:negotiated-fx-pricing-terms"><b>Negotiated FX Pricing Terms</b></a>
 
-[*Negotiated pricing terms*](#glossary:negotiated-pricing-terms) that affect [*foreign exchange*](#glossary:foreign-exchange) conversion.
+[*Negotiated pricing terms*](#glossary:negotiated-pricing-terms) that affect the [*foreign exchange*](#glossary:foreign-exchange) conversion between the applicable record's [Pricing Currency](#datamodel.costandusage.pricingcurrency) and [Billing Currency](#datamodel.costandusage.billingcurrency).
 
 <a name="glossary:negotiated-non-fx-pricing-terms"><b>Negotiated Non-FX Pricing Terms</b></a>
 
-[*Negotiated pricing terms*](#glossary:negotiated-pricing-terms) that do not affect [*foreign exchange*](#glossary:foreign-exchange) conversion.
+[*Negotiated pricing terms*](#glossary:negotiated-pricing-terms) that do not affect the [*foreign exchange*](#glossary:foreign-exchange) conversion between the applicable record's [Pricing Currency](#datamodel.costandusage.pricingcurrency) and [Billing Currency](#datamodel.costandusage.billingcurrency).
 
 <a name="glossary:negotiated-pricing-terms"><b>Negotiated Pricing Terms</b></a>
 
