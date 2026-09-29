@@ -13,8 +13,6 @@ UnitPrice MUST adhere to the following requirements:
 * UnitPrice MUST NOT be null.
 * UnitPrice MUST be a non-negative decimal value.
 * UnitPrice MUST be denominated in the [PricingCurrency](#datamodel.skuprice.pricingcurrency).
-* UnitPrice MUST represent a contracted unit price when *ContractId* is not null.
-* UnitPrice MUST represent a list unit price when *ContractId* is null.
 
 ## Usability Constraints
 
