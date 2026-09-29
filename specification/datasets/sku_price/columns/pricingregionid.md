@@ -1,6 +1,6 @@
 # Pricing Region ID
 
-Pricing Region ID is a service-provider-assigned identifier for an isolated geographic area where the specified price for a [*resource*](#glossary:resource) or [*service*](#glossary:service) applies. This column is commonly used to join pricing rates against actual usage or to analyze unit price variations across different geographical deployments.
+Pricing Region ID is a service-provider-assigned identifier for an isolated geographic area where the specified [*SKU Price*](#glossary:sku-price) applies. This column is commonly used to join pricing rates against actual usage or to analyze unit price variations across different geographical deployments.
 
 ## Requirements
 
@@ -10,8 +10,8 @@ PricingRegionId MUST adhere to the following requirements:
 * PricingRegionId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * PricingRegionId MUST represent the geographic boundary or regional construct explicitly defined by the *service provider* for the unit price, even when this represents a global or macro-region scope.
 * PricingRegionId MUST adhere to the following nullability requirements:
-  * PricingRegionId MUST NOT be null when the unit price is specific to a distinct region.
-  * PricingRegionId MAY be null when the unit price applies globally or is not regionally scoped.
+  * PricingRegionId MUST NOT be null when the *SKU Price* is specific to a distinct region.
+  * PricingRegionId MAY be null when the *SKU Price* applies globally or is not regionally scoped.
 
 ## Implementation Guidance
 
