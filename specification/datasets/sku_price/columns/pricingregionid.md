@@ -1,6 +1,6 @@
 # Pricing Region ID
 
-Pricing Region ID is a service-provider-assigned identifier for an isolated geographic area where the specified price for a [*resource*](#glossary:resource) or [*service*](#glossary:service) applies. This column is commonly used to join pricing rates against actual usage or to analyze unit price variations across different geographical deployments.
+Pricing Region ID is a service-provider-assigned identifier for an isolated geographic area where the specified [SKU Price](#glossary:sku-price) applies. This column is commonly used to join pricing rates against actual usage or to analyze unit price variations across different geographical deployments.
 
 ## Requirements
 
