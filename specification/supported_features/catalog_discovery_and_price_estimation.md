@@ -65,7 +65,7 @@ SKU Price Eligibility is defined in [*JSON object format*](#attributes.jsonobjec
 
 ### Find the List Prices in Force at a Point in Time
 
-This query takes inputs of a service provider, a pricing service name, and a point in time, then returns the public rates that apply for that service at that moment. The same point in time is supplied to both bounds, and each bound is tested for null so that an open-ended price is returned rather than filtered out.
+This query takes inputs of a service provider, a pricing service name, and a point in time, then returns the public consumption rates that apply for that service at that moment. It filters to a Charge Category of "Usage", so acquisition fees and granted credits are excluded; dropping that predicate returns the full set of rates for the service. The same point in time is supplied to both bounds, and each bound is tested for null so that an open-ended price is returned rather than filtered out.
 
 ```sql
 SELECT
@@ -80,6 +80,7 @@ FROM SkuPrice
 WHERE ServiceProviderName = ?
   AND PricingServiceName = ?
   AND ChargeCategory = 'Usage'
+  AND ContractId IS NULL
   AND (SkuPriceEffectiveStart IS NULL OR SkuPriceEffectiveStart <= ?)
   AND (SkuPriceEffectiveEnd IS NULL OR SkuPriceEffectiveEnd > ?)
 ORDER BY SkuId, ListUnitPrice
@@ -87,15 +88,16 @@ ORDER BY SkuId, ListUnitPrice
 
 ### Estimate the Cost of a Planned Workload
 
-This query takes a set of planned quantities, each paired with the SKU Price ID it is priced under and a point in time, and returns the projected cost of each line and the components behind it. The planned quantity is expressed in the Pricing Unit of the matching price, so a rate quoted per `1K Requests` takes a quantity counted in thousands of requests rather than in requests.
+This query takes a set of planned quantities, each paired with the service provider and the SKU Price ID it is priced under and a point in time, and returns the projected cost of each line and the components behind it. The planned quantity is expressed in the Pricing Unit of the matching price, so a rate quoted per `1K Requests` takes a quantity counted in thousands of requests rather than in requests.
 
-Pricing Currency Category is returned alongside the total because a "Consumable" rate produces a balance in a consumption currency rather than a financial amount. Rows carrying different Pricing Currency values, or a mix of "Payable" and "Consumable", are not additive without a conversion step the SKU Price dataset does not carry.
+Pricing Currency Category is returned alongside the total because a "Consumable" rate produces a balance in a consumption currency rather than a financial amount. Rows carrying different Pricing Currency values, or a mix of "Payable" and "Consumable", are not additive without a conversion step the SKU Price dataset does not carry. Additionally, a SKU Price ID published in more than one pricing currency returns one row per currency for the same planned line, and those rows are alternative prices for that line rather than parts of it.
 
 ```sql
-WITH PlannedUsage (SkuPriceId, PlannedQuantity, PlannedDate) AS (
-  VALUES (?, ?, ?)
+WITH PlannedUsage (ServiceProviderName, SkuPriceId, PlannedQuantity, PlannedDate) AS (
+  VALUES (?, ?, ?, ?)
 )
 SELECT
+  PU.ServiceProviderName,
   PU.SkuPriceId,
   SP.SkuPriceDescription,
   SP.PricingUnit,
@@ -103,13 +105,15 @@ SELECT
   SP.ListUnitPrice,
   SP.PricingCurrency,
   SP.PricingCurrencyCategory,
-  PU.PlannedQuantity * SP.ListUnitPrice AS EstimatedListAmount
+  PU.PlannedQuantity * SP.ListUnitPrice AS EstimatedPricingCurrencyListCost
 FROM PlannedUsage PU
 LEFT JOIN SkuPrice SP
-  ON SP.SkuPriceId = PU.SkuPriceId
+  ON SP.ServiceProviderName = PU.ServiceProviderName
+  AND SP.SkuPriceId = PU.SkuPriceId
+  AND SP.ContractId IS NULL
   AND (SP.SkuPriceEffectiveStart IS NULL OR SP.SkuPriceEffectiveStart <= PU.PlannedDate)
   AND (SP.SkuPriceEffectiveEnd IS NULL OR SP.SkuPriceEffectiveEnd > PU.PlannedDate)
-ORDER BY SP.PricingCurrencyCategory, SP.PricingCurrency, EstimatedListAmount DESC
+ORDER BY SP.PricingCurrencyCategory, SP.PricingCurrency, EstimatedPricingCurrencyListCost DESC
 ```
 
 ### Identify the Prices a Billing Account is Eligible For
