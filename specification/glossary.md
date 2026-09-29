@@ -344,4 +344,4 @@ A billing concept where the cost of a [*charge*](#glossary:charge) is determinis
 
 <a name="glossary:virtual-currency"><b>Virtual Currency</b></a>
 
-A digital representation of value that is independent of government regulation or central banks (e.g., cryptocurrency, digital credits).
+A proprietary currency (e.g., credits, tokens) issued by service providers and independent of government regulation.
