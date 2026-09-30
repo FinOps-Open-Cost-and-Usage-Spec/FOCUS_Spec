@@ -1,4 +1,5 @@
 # Pricing Service Name
+
 Pricing Service Name is a display name for the [*service*](#glossary:service) under which the specified [*SKU Price*](#glossary:sku-price) is published in the [*service provider's*](#glossary:service-provider) [*price list*](#glossary:price-list). The Pricing Service Name is commonly used for scenarios like analyzing unit price variations across *services* or filtering *price lists* to find specific offerings.
 
 ## Requirements

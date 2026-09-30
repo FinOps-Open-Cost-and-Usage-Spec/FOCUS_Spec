@@ -98,6 +98,7 @@ The evaluation of an entity's usage against a rate card's eligibility rules proc
 <div class="h7-nonindex">Evaluating Rules Against Null Dimensions</div>
 
 When the processing workflow evaluates a rule against a [*charge*](#glossary:charge) where the target `Dimension` is `null`:
+
 * The `DoesNotExist` operator evaluates to `true`.
 * The `Exists` operator evaluates to `false`.
 * The `In` and `NotIn` operators must not match any string values. For example, a `null` dimension evaluated against `Values: ["global"]` evaluates to `false`.
