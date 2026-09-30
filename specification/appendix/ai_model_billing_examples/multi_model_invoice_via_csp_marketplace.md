@@ -7,7 +7,7 @@ For this scenario, Acme Corp consumes three Solora Atlas models through a cloud 
 * Solora Atlas 5.6 Venus is priced at $1.00 per 1,000,000 input tokens and $6.00 per 1,000,000 output tokens, with cache read input tokens at $0.10 per 1,000,000 tokens and cache write input tokens at $1.25 per 1,000,000 tokens.
 * During the [*charge period*](#glossary:chargeperiod), the workload consumes 100,000,000 input and 50,000,000 output tokens on Jupiter; 5,000,000 input and 1,500,000 output tokens on Mars; and 750,000 input, 250,000 output, 100,000 cache read input, and 80,000 cache write input tokens on Venus.
 
-[**CSV Example**](/specification/data/ai_billing/multi_model_invoice_via_csp_marketplace.csv)
+[**CSV Example**](/specification/data/ai_model_billing/multi_model_invoice_via_csp_marketplace.csv)
 
 Note the following details in the example dataset:
 

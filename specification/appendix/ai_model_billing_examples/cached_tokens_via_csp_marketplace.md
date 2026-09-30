@@ -5,7 +5,7 @@ For this scenario, Acme Corp consumes a Solora AI model through a cloud provider
 * Cache read input tokens are priced at $0.20 per 1,000,000 tokens, and cache write input tokens at $2.50 per 1,000,000 tokens.
 * During the [*charge period*](#glossary:chargeperiod), the workload consumes 50,000,000 cache read input tokens and 15,000,000 cache write input tokens.
 
-[**CSV Example**](/specification/data/ai_billing/cached_tokens_via_csp_marketplace.csv)
+[**CSV Example**](/specification/data/ai_model_billing/cached_tokens_via_csp_marketplace.csv)
 
 Note the following details in the example dataset:
 

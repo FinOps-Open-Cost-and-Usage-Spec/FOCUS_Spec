@@ -6,7 +6,7 @@ For this scenario, Acme Corp routes requests across two models from the same mod
 * Solora Atlas 5.4 Mini is priced at $0.75 per 1,000,000 input tokens and $4.50 per 1,000,000 output tokens.
 * During the [*charge period*](#glossary:chargeperiod), the workload consumes 10,000,000 input and 2,000,000 output tokens on Solora Atlas 5.5, and 3,000,000 input and 500,000 output tokens on Solora Atlas 5.4 Mini.
 
-[**CSV Example**](/specification/data/ai_billing/multi_model_usage.csv)
+[**CSV Example**](/specification/data/ai_model_billing/multi_model_usage.csv)
 
 Note the following details in the example dataset:
 

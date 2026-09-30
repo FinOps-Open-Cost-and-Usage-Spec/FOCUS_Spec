@@ -6,7 +6,7 @@ For this scenario, Acme Corp prepays a Solora AI token commitment and then draws
 * Input tokens are priced at $5.00 per 1,000,000 tokens, and output tokens at $25.00 per 1,000,000 tokens.
 * During the [*charge period*](#glossary:chargeperiod), the workload consumes 5,000,000 input tokens and 1,500,000 output tokens against that commitment.
 
-[**CSV Example**](/specification/data/ai_billing/drawdown_via_prepayment_frontier_model_api.csv)
+[**CSV Example**](/specification/data/ai_model_billing/drawdown_via_prepayment_ai_model_api.csv)
 
 Note the following details in the example dataset:
 
