@@ -148,7 +148,7 @@ SKU Price Eligibility
 
 ## Description
 
-A structured definition of the specific entities, accounts, or contexts eligible to receive the specified *SKU Price*.
+A structured definition of the specific entities, accounts, or contexts eligible for the specified SKU Price record.
 
 ## Content Constraints
 
