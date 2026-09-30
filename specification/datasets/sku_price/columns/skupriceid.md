@@ -13,7 +13,7 @@ SkuPriceId MUST adhere to the following requirements:
 * SkuPriceId MUST NOT be null.
 * SkuPriceId MUST have one and only one parent [SkuId](#datamodel.skuprice.skuid).
 * SkuPriceId MUST have one and only one [PricingUnit](#datamodel.skuprice.pricingunit).
-* SkuPriceId MUST NOT be associated with both a "Usage" [ChargeCategory](#datamodel.skuprice.chargecategory) and a "Purchase" ChargeCategory.
+* SkuPriceId MUST have one and only one [ChargeCategory](#datamodel.skuprice.chargecategory).
 * SkuPriceId MUST remain consistent over time.
 * SkuPriceId MUST remain consistent across contracts or billing agreements.
 * SkuPriceId MAY match SkuId.

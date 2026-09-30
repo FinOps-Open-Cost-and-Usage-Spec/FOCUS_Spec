@@ -9,6 +9,8 @@ PricingCurrencyCategory MUST adhere to the following requirements:
 * PricingCurrencyCategory MUST be of type String.
 * PricingCurrencyCategory MUST NOT be null.
 * PricingCurrencyCategory MUST be one of the allowed values.
+* PricingCurrencyCategory MUST be "Payable" when PricingCurrency represents a [*national currency*](#glossary:national-currency).
+* PricingCurrencyCategory MUST be "Consumable" when PricingCurrency represents a *consumption currency*.
 
 ## Allowed Values
 
