@@ -16,7 +16,7 @@ SkuPriceEligibility MUST adhere to the following requirements:
 
 ## SKU Price Eligibility Object
 
-SKU Price Eligibility consists of a valid JSON object which contains a set of top-level property keys. These keys define entity-based inclusionary and exclusionary logic for the *SKU Price*.
+SKU Price Eligibility consists of a valid JSON object which contains a set of top-level property keys. These keys define entity-based inclusionary and exclusionary logic for the SKU Price record.
 
 The following section details the normative requirements for the SkuPriceEligibilityObject and its nested properties. For a logical overview of the expected content, see the [Schema Structure](#datamodel.skuprice.skupriceeligibility.skupriceeligibilityobject.objectschemastructure) and [Object Example](#datamodel.skuprice.skupriceeligibility.skupriceeligibilityobject.objectexample) sections.
 
