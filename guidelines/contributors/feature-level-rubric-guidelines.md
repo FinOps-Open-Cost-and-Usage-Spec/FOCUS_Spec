@@ -138,7 +138,7 @@ flowchart TD
 
 Write down the exact concept the column carries, as its Description and its glossary term define it. Every later step tests that concept, not a broader or narrower one.
 
-### Step 2: Applicability Test — Sets the Feature Level
+### Step 2: Applicability Test - Sets the Feature Level
 
 **Before the test: the Supported Feature floor.** Where the column appears among the Directly Dependent Columns of a Supported Feature, that feature cannot be exercised without it. Such a column is `Mandatory` or `Conditional`, and the test below decides which. `Recommended` and `Optional` are not available to it.
 
@@ -175,16 +175,16 @@ An *operating model* Condition MUST describe a characteristic of the *operating 
 1. **Look for an existing Condition** that marks exactly where the concept exists. Reusing one is preferred over adding a near-duplicate.
 2. **Where none exists, propose one** in the same pull request as the column: Condition ID, Display Name, Description, requirements stating when it evaluates to true and when to false, Version Introduced, a row in the Operating Model Condition List with its category, and an `!INCLUDE` line in `operating_model_conditions.mdpp`. The list row and the `!INCLUDE` line both go in alphabetical position; `validate_includes.py` fails the build when a Condition file is missing from the template.
 3. **Where more than one applies**, decide which shape fits:
-   * **Conjunction** — the column requires two independent characteristics. State both in the presence requirement.
+   * **Conjunction** - the column requires two independent characteristics. State both in the presence requirement.
 
      **Example:** `CostAndUsage MUST include [ResourceType](#datamodel.costandusage.resourcetype) when the *operating model* [includes provisioned resources](#operatingmodelconditions.includesprovisionedresources) and [includes resource type assignment](#operatingmodelconditions.includesresourcetypeassignment).`
-   * **Nesting** — one Condition presupposes another. Express the dependency in the narrower Condition's own requirements rather than repeating it on every column.
+   * **Nesting** - one Condition presupposes another. Express the dependency in the narrower Condition's own requirements rather than repeating it on every column.
 
      **Example:** `IncludesListUnitPrices` evaluates to true only when `IncludesUnitPricing` is true.
 
 A Condition must remain a verifiable state of the *operating model*. A Condition that can only be evaluated by inspecting the dataset contents is not admissible.
 
-### Step 4: Nullability Test — Sets `Allows nulls`
+### Step 4: Nullability Test - Sets `Allows nulls`
 
 **Question:** where the column is present, is a meaningful value available on every row?
 

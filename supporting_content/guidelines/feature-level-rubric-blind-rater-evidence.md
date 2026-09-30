@@ -132,20 +132,20 @@ The packet itself was reduced this round. The Supported Features content and the
 
 Verification arm, the text as it now stands:
 
-| Column | Rater 1 | Rater 2 | Rater 3 | Outcome |
-|---|---|---|---|---|
-| BilledCost (canary) | Mandatory | Mandatory | Mandatory | unanimous |
-| EffectiveCost | Mandatory | Mandatory | Mandatory | unanimous |
-| ChargeClass | Mandatory, nulls allowed | Mandatory, nulls allowed | Mandatory, nulls allowed | unanimous |
-| ContractCommitmentId | Mandatory | Mandatory | Mandatory | unanimous |
-| RegionId | Conditional | Conditional | Conditional | unanimous |
-| AvailabilityZone | Conditional | Conditional | Conditional | unanimous |
-| ListUnitPrice | Conditional | Conditional | Conditional | unanimous |
-| ContractedUnitPrice | Conditional | Conditional | Conditional | unanimous |
-| ListCost | Conditional | Conditional | Conditional | unanimous |
-| ContractedCost | Conditional | Conditional | Conditional | unanimous |
-| InvoiceId | Conditional | Conditional | Mandatory | two to one |
-| BillingAccountName | Conditional | Conditional | Mandatory | two to one |
+| Column               | Rater 1                  | Rater 2                  | Rater 3                  | Outcome    |
+| :------------------- | :----------------------- | :----------------------- | :----------------------- | :--------- |
+| BilledCost (canary)  | Mandatory                | Mandatory                | Mandatory                | unanimous  |
+| EffectiveCost        | Mandatory                | Mandatory                | Mandatory                | unanimous  |
+| ChargeClass          | Mandatory, nulls allowed | Mandatory, nulls allowed | Mandatory, nulls allowed | unanimous  |
+| ContractCommitmentId | Mandatory                | Mandatory                | Mandatory                | unanimous  |
+| RegionId             | Conditional              | Conditional              | Conditional              | unanimous  |
+| AvailabilityZone     | Conditional              | Conditional              | Conditional              | unanimous  |
+| ListUnitPrice        | Conditional              | Conditional              | Conditional              | unanimous  |
+| ContractedUnitPrice  | Conditional              | Conditional              | Conditional              | unanimous  |
+| ListCost             | Conditional              | Conditional              | Conditional              | unanimous  |
+| ContractedCost       | Conditional              | Conditional              | Conditional              | unanimous  |
+| InvoiceId            | Conditional              | Conditional              | Mandatory                | two to one |
+| BillingAccountName   | Conditional              | Conditional              | Mandatory                | two to one |
 
 Ten of twelve were unanimous, and the canary held in all three arms. The cost and price family converged for the first time: ListCost and ContractedCost landed Conditional for every rater in every arm, each quoting the directional derivation principle, where round 7 had left the family bistable and round 8 non-convergent. Both columns are now leveled by applicability and derivation direction alone, which is what removing the admission tests was expected to do.
 
