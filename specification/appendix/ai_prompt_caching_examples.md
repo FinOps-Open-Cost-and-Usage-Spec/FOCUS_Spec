@@ -8,7 +8,7 @@ The following examples illustrate how a Cost and Usage [*FOCUS dataset*](#glossa
 
 The following conditions apply to the scenarios below:
 
-* Acme Corp uses a per-token foundation model API to run a generative AI workload with a large reusable prompt prefix.
+* Acme Corp uses a per-token [*AI model*](#glossary:ai-model) API to run a workload with a large reusable prompt prefix.
 * During the [*charge period*](#glossary:chargeperiod), the workload processes 500,000 input tokens that are not cached, places 2,000,000 input tokens into the cache, reads 8,000,000 input tokens from the cache, and generates 1,500,000 output tokens.
 * Input tokens are priced at $3.00 per 1,000,000 tokens and output tokens at $15.00 per 1,000,000 tokens.
 * Cache reads are priced at $0.30 per 1,000,000 tokens, a tenth of the input price.
