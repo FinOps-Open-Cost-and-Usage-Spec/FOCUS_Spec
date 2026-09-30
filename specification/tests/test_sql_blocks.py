@@ -250,8 +250,8 @@ def _local_names(tree, query_column_lists=True):
     lists), UNNEST aliases, inline column definitions, and any qualifier used
     on a column reference. Output aliases are collected by
     ``_output_aliases``. With ``query_column_lists=False``, the column lists
-    of CTEs and FROM-clause subqueries are left out: those names resolve only
-    in a query that reads the CTE or subquery (see ``_source_columns``).
+    of CTEs, FROM-clause subqueries, and tables are left out: those names
+    resolve only in a query that reads that source (see ``_source_columns``).
     Column lists on UNNEST, VALUES, and LATERAL stay. Lower-cased for
     matching.
     """
@@ -263,7 +263,7 @@ def _local_names(tree, query_column_lists=True):
         if table_alias.name:
             names.add(table_alias.name.lower())
         if not query_column_lists and isinstance(
-            table_alias.parent, (exp.CTE, exp.Subquery)
+            table_alias.parent, (exp.CTE, exp.Subquery, exp.Table)
         ):
             continue
         for column in table_alias.args.get("columns") or []:
@@ -305,17 +305,26 @@ def _is_table_function(source):
 def _source_columns(source, dataset_columns):
     """Return the lower-cased column names a FROM/JOIN source exposes.
 
-    A table exposes the Column IDs of the dataset it names. A CTE or derived
-    table exposes its column list, else its projection, expanding ``*``
-    through its own sources. Returns None when the names cannot be known: a
-    table function, a table that is not a FOCUS dataset, or an unexpandable
-    ``*``.
+    A table exposes the Column IDs of the dataset it names, plus the names in
+    its column list. A CTE or derived table exposes its projection, expanding
+    ``*`` through its own sources; a column list renames the projection by
+    position, so columns past the list's end keep their names. Next to a
+    ``*``, whose positions are unknown, the list's names are added to the
+    projection's. Returns None when the names cannot be known: a table
+    function, a table that is not a FOCUS dataset, or an unexpandable ``*``
+    with no column list.
     """
     if _is_table_function(source):
         return None
     if isinstance(source, exp.Table):
         name = source.name.lower()
-        return dataset_columns.get(_TABLE_NAME_ALIASES.get(name, name))
+        columns = dataset_columns.get(_TABLE_NAME_ALIASES.get(name, name))
+        table_alias = source.args.get("alias")
+        if columns is not None and isinstance(table_alias, exp.TableAlias):
+            # Column IDs carry no position, so the list's new names are added
+            # rather than mapped onto the columns they rename.
+            columns = columns | {column.name.lower() for column in table_alias.columns}
+        return columns
     query = source.expression
     container = query.parent
     # The column list sits on the CTE or derived table, above a parenthesized
@@ -325,16 +334,20 @@ def _source_columns(source, dataset_columns):
             break
         container = container.parent
     table_alias = container.args.get("alias") if container is not None else None
-    if isinstance(table_alias, exp.TableAlias) and table_alias.columns:
-        return {column.name.lower() for column in table_alias.columns}
-    names = set()
-    for projection in query.selects:
+    renamed = []
+    if isinstance(table_alias, exp.TableAlias):
+        renamed = [column.name.lower() for column in table_alias.columns]
+    projections = query.selects
+    if not any(projection.is_star for projection in projections):
+        projections = projections[len(renamed) :]
+    names = set(renamed)
+    for projection in projections:
         if not projection.is_star:
             if projection.alias_or_name:
                 names.add(projection.alias_or_name.lower())
             continue
         if isinstance(query, exp.SetOperation):
-            return None
+            return set(renamed) if renamed else None
         # A qualified star (CU.*) expands only the source it names.
         qualifier = projection.table if isinstance(projection, exp.Column) else ""
         for inner_name, (_, inner) in source.selected_sources.items():
@@ -342,7 +355,7 @@ def _source_columns(source, dataset_columns):
                 continue
             inner_names = _source_columns(inner, dataset_columns)
             if inner_names is None:
-                return None
+                return set(renamed) if renamed else None
             names |= inner_names
     return names
 
@@ -384,6 +397,28 @@ def _visible_sources(scope):
         if scope.scope_type not in _CORRELATED_SCOPE_TYPES:
             break
         scope = scope.parent
+    return sources
+
+
+def _join_condition_sources(column, scope):
+    """Return (name, source) for each SEMI or ANTI join whose ON holds ``column``.
+
+    The right side of such a join is not a selected source, so the query's
+    output cannot read it, but its own join condition can.
+    """
+    sources = []
+    node = column
+    while node is not scope.expression and node.parent is not None:
+        parent = node.parent
+        if (
+            isinstance(parent, exp.Join)
+            and parent.args.get("on") is node
+            and parent.text("kind").upper() in ("SEMI", "ANTI")
+        ):
+            name = parent.this.alias_or_name
+            if name in scope.sources:
+                sources.append((name, scope.sources[name]))
+        node = parent
     return sources
 
 
@@ -442,8 +477,9 @@ def _column_problem(
     its own query or one enclosing it. A qualifier that names no such source
     fails, unless it names a column or one of ``alias_names`` (field access,
     or a source sqlglot does not map); the column then falls back as below.
-    An unqualified column must be a column of a source its query reads, or a
-    name in ``local``; in a query that reads a table function, any name in
+    An unqualified column must be a column of a source its query reads (in a
+    SEMI or ANTI join's condition, that join's right side too), or a name in
+    ``local``; in a query that reads a table function, any name in
     ``statement_local`` also counts. A column that cannot be traced to a
     dataset (outside a query, or read from UNNEST, a table function, or an
     unexpandable ``*``) only has to be a FOCUS column of some dataset or a
@@ -474,7 +510,8 @@ def _column_problem(
         return fallback
 
     known, labels, unknown_tables, opaque = set(), set(), set(), False
-    for source_name, source in _visible_sources(scope):
+    sources = _visible_sources(scope) + _join_condition_sources(column, scope)
+    for source_name, source in sources:
         if _is_table_function(source):
             # Names a table function exposes are not tracked per source, so a
             # query that reads one may use any name the statement defines.
@@ -652,6 +689,35 @@ _SELF_TEST_CASES = [
         id="semi-join-right-side-resolves-to-its-dataset",
     ),
     pytest.param(
+        "SELECT BilledCost FROM CostAndUsage CU LEFT SEMI JOIN SkuPrice SP "
+        "ON CU.SkuPriceId = SP.SkuPriceId AND UnitPrice > 0",
+        set(),
+        id="semi-join-condition-reads-its-right-side",
+    ),
+    pytest.param(
+        "SELECT BilledCost FROM CostAndUsage CU LEFT ANTI JOIN SkuPrice SP "
+        "ON CU.SkuPriceId = SP.SkuPriceId AND UnitPrice > 0",
+        set(),
+        id="anti-join-condition-reads-its-right-side",
+    ),
+    pytest.param(
+        "SELECT UnitPrice FROM CostAndUsage CU LEFT SEMI JOIN SkuPrice SP "
+        "ON CU.SkuPriceId = SP.SkuPriceId",
+        {"UnitPrice"},
+        id="semi-join-right-side-hidden-outside-its-condition",
+    ),
+    pytest.param(
+        "SELECT CU.Cost, CU.InvoiceId FROM CostAndUsage AS CU (Cost)",
+        set(),
+        id="table-column-list-adds-its-names",
+    ),
+    pytest.param(
+        "SELECT InvoiceId, Cost FROM InvoiceDetail WHERE EXISTS "
+        "(SELECT 1 FROM CostAndUsage AS CU (Cost))",
+        {"Cost"},
+        id="table-column-list-not-read-does-not-vouch",
+    ),
+    pytest.param(
         "WITH T AS (SELECT SkuPriceId, SUM(BilledCost) AS Total "
         "FROM CostAndUsage GROUP BY SkuPriceId) "
         "SELECT T.SkuPriceId, Total FROM T ORDER BY Total",
@@ -688,6 +754,12 @@ _SELF_TEST_CASES = [
         "SELECT Total FROM T",
         set(),
         id="cte-column-list-resolves-where-the-cte-is-read",
+    ),
+    pytest.param(
+        "WITH T (Cost) AS (SELECT BilledCost, InvoiceId FROM CostAndUsage) "
+        "SELECT Cost, InvoiceId, T.BilledCost FROM T",
+        {"T.BilledCost"},
+        id="partial-cte-column-list-keeps-later-columns",
     ),
     pytest.param(
         "WITH RECURSIVE R (n) AS (SELECT 1 UNION ALL "
