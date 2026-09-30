@@ -37,7 +37,7 @@ The same examples can be read by axis. An example may appear under more than one
 
 * Model developer sells, hosts, and invoices — Per-Token Frontier Model API; Multi-Model Usage; Drawdown via Prepayment
 * CSP sells, hosts, and invoices a third-party model — CSP-Served Third-Party Model
-* Marketplace seller (model developer) sells; CSP hosts and invoices (scenario 3.1.3) — Cached Tokens via CSP Marketplace; Multi-Model Invoice via CSP Marketplace
+* Marketplace seller (model developer) sells; CSP hosts and invoices (scenario 3.1.3 in [Examples: Participating Entity Identification](#appendix.examples:participatingentityidentification)) — Cached Tokens via CSP Marketplace; Multi-Model Invoice via CSP Marketplace
 
 ### Billing Mechanics
 
