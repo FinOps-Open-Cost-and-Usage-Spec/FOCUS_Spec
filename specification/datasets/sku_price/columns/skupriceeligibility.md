@@ -1,6 +1,6 @@
 # SKU Price Eligibility
 
-SKU Price Eligibility is a structured definition of the specific entities, accounts, or contexts eligible to receive the specified [*SKU Price*](#glossary:sku-price). This column details the inclusionary and exclusionary logic that dictates when a specific [SKU Price](#datamodel.skuprice) record can be applied to consumption.
+SKU Price Eligibility is a structured definition of the specific entities, accounts, or contexts eligible for the specified [SKU Price](#datamodel.skuprice) record. This column details the inclusionary and exclusionary logic that dictates when a specific SKU Price record can be applied to consumption.
 
 ## Requirements
 
