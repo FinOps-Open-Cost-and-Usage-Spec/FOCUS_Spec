@@ -20,7 +20,7 @@ Note the following column usage on the token usage rows in the scenarios below:
 * The TokenDirection and TokenCacheAction properties of SkuPriceDetails label the direction of the metered tokens and their interaction with a cache, independently of the SkuMeter name.
 * [PrincipalId](#datamodel.costandusage.principalid) identifies the [*principal*](#glossary:principal) associated with a charge, where one applies.
 
-The following examples illustrate frontier model billing scenarios across direct billing, multiple models on one invoice, cloud marketplace resale, a CSP-served third-party model, commitment drawdown, and cached token metering. Charges for a model and its underlying infrastructure appearing on the same invoice are outside the scope of this section.
+The following examples illustrate frontier model billing scenarios across direct billing, multiple models on one invoice, cloud marketplace purchases, a CSP-served third-party model, commitment drawdown, and cached token metering. Charges for a model and its underlying infrastructure appearing on the same invoice are outside the scope of this section.
 
 | Example | Invoice Issuer | Service Provider | Host Provider | Focus |
 | :--- | :--- | :--- | :--- | :--- |
