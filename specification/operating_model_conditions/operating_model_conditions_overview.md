@@ -27,6 +27,7 @@ Operating model conditions are sorted alphabetically by name.
 | [Includes Purchase Order Numbers](#operatingmodelconditions.includespurchaseordernumbers) | Billing | Operating model includes purchase order numbers. |
 | [Includes Recommendations](#operatingmodelconditions.includesrecommendations) | Recommendation | Operating model includes recommendations for resources or services. |
 | [Includes Regions](#operatingmodelconditions.includesregions) | Resource | Operating model includes deploying resources or services within a region. |
+| [Includes Requester Attribution](#operatingmodelconditions.includesrequesterattribution) | Account | Operating model includes attributing usage or purchase of resources or services to requesters. |
 | [Includes Resource Type Assignment](#operatingmodelconditions.includesresourcetypeassignment) | Resource | Operating model includes categorizing resources by type. |
 | [Includes Split Cost Allocation](#operatingmodelconditions.includessplitcostallocation) | Allocation | Operating model includes split cost allocation. |
 | [Includes Sub Accounts](#operatingmodelconditions.includessubaccounts) | Account | Operating model includes a sub account construct. |

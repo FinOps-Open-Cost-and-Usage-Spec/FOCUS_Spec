@@ -18,6 +18,7 @@
 !INCLUDE "includespurchaseordernumbers.md",1
 !INCLUDE "includesrecommendations.md",1
 !INCLUDE "includesregions.md",1
+!INCLUDE "includesrequesterattribution.md",1
 !INCLUDE "includesresourcetypeassignment.md",1
 !INCLUDE "includessplitcostallocation.md",1
 !INCLUDE "includessubaccounts.md",1
