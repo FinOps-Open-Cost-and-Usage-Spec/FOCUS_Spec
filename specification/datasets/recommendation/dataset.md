@@ -21,17 +21,17 @@ The Recommendation dataset is a supporting dataset that describes optimization r
 | [Recommendation ID](#datamodel.recommendation.recommendationid) | Dimension | Mandatory | False | String |
 | [Recommendation Last Updated](#datamodel.recommendation.recommendationlastupdated) | Dimension | Mandatory | False | Date/Time |
 | [Recommendation Provider Name](#datamodel.recommendation.recommendationprovidername) | Dimension | Mandatory | False | String |
-| [Region ID](#datamodel.recommendation.regionid) | Dimension | [Conditional](#operatingmodelconditions.includesregions) | True | String |
-| [Region Name](#datamodel.recommendation.regionname) | Dimension | [Conditional](#operatingmodelconditions.includesregions) | True | String |
+| [Region ID](#datamodel.recommendation.regionid) | Dimension | Conditional | True | String |
+| [Region Name](#datamodel.recommendation.regionname) | Dimension | Conditional | True | String |
 | [Resource ID](#datamodel.recommendation.resourceid) | Dimension | Mandatory | True | String |
 | [Resource Name](#datamodel.recommendation.resourcename) | Dimension | Mandatory | True | String |
-| [Resource Type](#datamodel.recommendation.resourcetype) | Dimension | [Conditional](#operatingmodelconditions.includesresourcetypeassignment) | True | String |
+| [Resource Type](#datamodel.recommendation.resourcetype) | Dimension | Conditional | True | String |
 | [Service Category](#datamodel.recommendation.servicecategory) | Dimension | Mandatory | True | String |
 | [Service Name](#datamodel.recommendation.servicename) | Dimension | Mandatory | True | String |
 | [Service Provider Name](#datamodel.recommendation.serviceprovidername) | Dimension | Mandatory | False | String |
 | [Service Subcategory](#datamodel.recommendation.servicesubcategory) | Dimension | Recommended | True | String |
-| [Sub Account ID](#datamodel.recommendation.subaccountid) | Dimension | [Conditional](#operatingmodelconditions.includessubaccounts) | True | String |
-| [Sub Account Name](#datamodel.recommendation.subaccountname) | Dimension | [Conditional](#operatingmodelconditions.includessubaccounts) | True | String |
+| [Sub Account ID](#datamodel.recommendation.subaccountid) | Dimension | Conditional | True | String |
+| [Sub Account Name](#datamodel.recommendation.subaccountname) | Dimension | Conditional | True | String |
 
 ## Relationships<!--SkipTOC-->
 
@@ -66,7 +66,7 @@ Recommendation MUST adhere to the following requirements:
   * Recommendation MUST include [RecommendationLastUpdated](#datamodel.recommendation.recommendationlastupdated).
   * Recommendation MUST include [RecommendationProviderName](#datamodel.recommendation.recommendationprovidername).
   * Recommendation MUST include [RegionId](#datamodel.recommendation.regionid) when the [*operating model*](#glossary:operating-model) [includes regions](#operatingmodelconditions.includesregions).
-  * Recommendation MUST include [RegionName](#datamodel.recommendation.regionname) when the *operating model* [includes regions](#operatingmodelconditions.includesregions).
+  * Recommendation MUST include [RegionName](#datamodel.recommendation.regionname) when the *operating model* includes regions.
   * Recommendation MUST include [ResourceId](#datamodel.recommendation.resourceid).
   * Recommendation MUST include [ResourceName](#datamodel.recommendation.resourcename).
   * Recommendation MUST include [ResourceType](#datamodel.recommendation.resourcetype) when the *operating model* [includes resource type assignment](#operatingmodelconditions.includesresourcetypeassignment).
@@ -75,7 +75,7 @@ Recommendation MUST adhere to the following requirements:
   * Recommendation MUST include [ServiceProviderName](#datamodel.recommendation.serviceprovidername).
   * Recommendation SHOULD include [ServiceSubcategory](#datamodel.recommendation.servicesubcategory).
   * Recommendation MUST include [SubAccountId](#datamodel.recommendation.subaccountid) when the *operating model* [includes sub accounts](#operatingmodelconditions.includessubaccounts).
-  * Recommendation MUST include [SubAccountName](#datamodel.recommendation.subaccountname) when the *operating model* [includes sub accounts](#operatingmodelconditions.includessubaccounts).
+  * Recommendation MUST include [SubAccountName](#datamodel.recommendation.subaccountname) when the *operating model* includes sub accounts.
 * Recommendation MUST conform to [CorrectionHandling](#attributes.correctionhandling) requirements.
 * Recommendation MUST conform to [DatasetCompleteness](#attributes.datasetcompleteness) requirements.
 * Recommendation MUST conform to [DatasetConfiguration](#attributes.datasetconfiguration) requirements.
