@@ -32,7 +32,7 @@ Pricing Service Name
 
 ## Description
 
-A display name for the offering to which the specified *SKU Price* applies.
+A display name for the *service* under which the specified *SKU Price* is published in the *service provider's* *price list*.
 
 ## Content Constraints
 
