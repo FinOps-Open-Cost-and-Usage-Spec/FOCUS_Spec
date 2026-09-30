@@ -1,6 +1,6 @@
 # Pricing Region ID
 
-Pricing Region ID is a service-provider-assigned identifier for an isolated geographic area where the specified [SKU Price](#glossary:sku-price) applies. This column is commonly used to join pricing rates against actual usage or to analyze unit price variations across different geographical deployments.
+Pricing Region ID is a service-provider-assigned identifier for an isolated geographic area where the specified [*SKU Price*](#glossary:sku-price) applies. This column is commonly used to join pricing rates against actual usage or to analyze unit price variations across different geographical deployments.
 
 ## Requirements
 
@@ -8,7 +8,7 @@ PricingRegionId MUST adhere to the following requirements:
 
 * PricingRegionId MUST be of type String.
 * PricingRegionId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* PricingRegionId MUST represent the geographic boundary or regional construct explicitly defined by the *service provider* for the *SKU Price*, even when this represents a global or macro-region scope.
+* PricingRegionId MUST represent the geographic boundary or regional construct explicitly defined by the [*service provider*](#glossary:service-provider) for the *SKU Price*, even when this represents a global or macro-region scope.
 * PricingRegionId MUST adhere to the following nullability requirements:
   * PricingRegionId MUST NOT be null when the *SKU Price* is specific to a distinct region.
   * PricingRegionId MAY be null when the *SKU Price* applies globally or is not regionally scoped.
@@ -17,16 +17,16 @@ PricingRegionId MUST adhere to the following requirements:
 
 ### Difference Between Pricing Region ID and Region ID
 
-Practitioners are encouraged to carefully distinguish between **Pricing Region ID** and [Region ID](#datamodel.costandusage.regionid).
+[*Practitioners*](#glossary:practitioner) are encouraged to carefully distinguish between **Pricing Region ID** and [Region ID](#datamodel.costandusage.regionid).
 
 * **Pricing Region ID** defines the geographic boundary for which the *rate itself* is valid.
-* **Region ID** defines the physical location where a specific *resource* is provisioned.
+* **Region ID** defines the physical location where a specific [*resource*](#glossary:resource) is provisioned.
 
-In many cases these will be identical. However, if a [*SKU Price*](#glossary:sku-price) is global but still applies to specific regional deployments, or if the *service provider's* [*price list*](#glossary:price-list) dictates a resource deployment region that differs from the pricing boundary, `Pricing Region ID` reflects the pricing boundary. The set of `Region ID` values can instead be represented as inclusion criteria within [SKU Price Eligibility](#datamodel.skuprice.skupriceeligibility) to capture the resource location without conflating the *price list* logic.
+In many cases these will be identical. However, if a *SKU Price* is global but still applies to specific regional deployments, or if the *service provider's* [*price list*](#glossary:price-list) dictates a resource deployment region that differs from the pricing boundary, `Pricing Region ID` reflects the pricing boundary. The set of `Region ID` values can instead be represented as inclusion criteria within [SKU Price Eligibility](#datamodel.skuprice.skupriceeligibility) to capture the resource location without conflating the *price list* logic.
 
 ### Null vs Global Values for Non-Regionalized Prices
 
-Non-regionalized services (i.e., services with no physical geography) are inconsistently represented across *service providers*. This variance exists not only across different *service providers*, but frequently across different services within the exact same *service provider*. For instance, one service team might use a null Pricing Region ID, while another service from the same *service provider* explicitly publishes the string identifier "global" to mean the exact same thing.
+Non-regionalized [*services*](#glossary:service) (i.e., *services* with no physical geography) are inconsistently represented across *service providers*. This variance exists not only across different *service providers*, but frequently across different *services* within the exact same *service provider*. For instance, one service team might use a null Pricing Region ID, while another *service* from the same *service provider* explicitly publishes the string identifier "global" to mean the exact same thing.
 
 Because of this native inconsistency, consumers of this dataset should be aware that a Pricing Region ID of null or "global" cannot reliably be used on its own to distinguish between a truly worldwide geographic scope and a non-regionalized service scope.
 

@@ -13,8 +13,8 @@ QuantityTierMaximum MUST adhere to the following requirements:
   * QuantityTierMaximum MUST be null when there is no upper limit for the pricing tier.
   * QuantityTierMaximum MUST NOT be null when a subsequent, higher-quantity pricing tier exists for the same offering.
 * When QuantityTierMaximum is not null, QuantityTierMaximum MUST adhere to the following requirements:
-  * QuantityTierMaximum MUST represent a quantity denominated in the [PricingUnit](#datamodel.skuprice.pricingunit).
-  * QuantityTierMaximum MUST be strictly greater than [QuantityTierMinimum](#datamodel.skuprice.quantitytierminimum).
+  * QuantityTierMaximum MUST represent a quantity denominated in the PricingUnit.
+  * QuantityTierMaximum MUST be strictly greater than QuantityTierMinimum.
   * QuantityTierMaximum MUST be the inclusive upper bound of the quantity-based pricing tier.
 
 ## Implementation Guidance

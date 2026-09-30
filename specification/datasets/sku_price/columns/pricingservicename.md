@@ -1,6 +1,6 @@
 # Pricing Service Name
 
-Pricing Service Name represents an offering that can be purchased from a [*service provider*](#glossary:service-provider) (e.g., virtual machine, database, professional service). A *service* offering can include various types of usage or other [*charges*](#glossary:charge).
+Pricing Service Name represents an offering that can be purchased from a [*service provider*](#glossary:service-provider) (e.g., virtual machine, database, professional service). A [*service*](#glossary:service) offering can include various types of usage or other [*charges*](#glossary:charge).
 
 Pricing Service Name is a display name for the offering to which the specified [*SKU Price*](#glossary:sku-price) applies. The Pricing Service Name is commonly used for scenarios like analyzing unit price variations across services or filtering rate cards to find specific offerings.
 
@@ -10,17 +10,17 @@ PricingServiceName MUST adhere to the following requirements:
 
 * PricingServiceName MUST be of type String.
 * PricingServiceName MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* PricingServiceName MUST represent the service offering explicitly defined by the *service provider* for the *SKU Price*, even when this represents a grouping or abstraction of multiple distinct underlying services.
+* PricingServiceName MUST represent the service offering explicitly defined by the *service provider* for the *SKU Price*, even when this represents a grouping or abstraction of multiple distinct underlying *services*.
 * PricingServiceName MUST NOT be null.
 
 ## Implementation Guidance
 
-Practitioners are encouraged to carefully distinguish between **Pricing Service Name** and [Service Name](#datamodel.costandusage.servicename).
+[*Practitioners*](#glossary:practitioner) are encouraged to carefully distinguish between **Pricing Service Name** and [Service Name](#datamodel.costandusage.servicename).
 
-* **Pricing Service Name** defines the name of the service as explicitly published in the provider's rate card or pricing catalog.
-* **Service Name** defines the name of the service associated with the actual usage or provisioned resource in the cost and usage data.
+* **Pricing Service Name** defines the name of the *service* as explicitly published in the provider's rate card or pricing catalog.
+* **Service Name** defines the name of the *service* associated with the actual usage or provisioned [*resource*](#glossary:resource) in the [Cost and Usage](#datamodel.costandusage) data.
 
-In many cases, these will be identical. However, if a *service provider* abstracts or groups rate card offerings differently than their provisioned resources (e.g., pricing multiple distinct database engines under a single generic rate card service name), `Pricing Service Name` reflects the exact service name designated by the rate card. The set of `Service Name` values can instead be represented as inclusion criteria within [SKU Price Eligibility](#datamodel.skuprice.skupriceeligibility) to capture the service names without conflating the rate card logic.
+In many cases, these will be identical. However, if a *service provider* abstracts or groups rate card offerings differently than their provisioned *resources* (e.g., pricing multiple distinct database engines under a single generic rate card service name), `Pricing Service Name` reflects the exact service name designated by the rate card. The set of `Service Name` values can instead be represented as inclusion criteria within [SKU Price Eligibility](#datamodel.skuprice.skupriceeligibility) to capture the service names without conflating the rate card logic.
 
 ## Column ID
 
