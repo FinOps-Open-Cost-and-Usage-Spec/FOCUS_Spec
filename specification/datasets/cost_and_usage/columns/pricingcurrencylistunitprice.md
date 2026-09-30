@@ -45,7 +45,7 @@ The service-provider-suggested unit price per Pricing Unit for the *SKU Price* i
 | :------------------------- | :------------------------------------------ |
 | Dataset                    | [Cost and Usage](#datamodel.costandusage)   |
 | Operating Model Conditions |                                             |
-| ├─ Must                    | [Includes Virtual Currency](#operatingmodelconditions.includesvirtualcurrency) and [Includes Unit Pricing](#operatingmodelconditions.includesunitpricing) |
+| ├─ Must                    | [Includes Consumption Currency](#operatingmodelconditions.includesconsumptioncurrency) and [Includes Unit Pricing](#operatingmodelconditions.includesunitpricing) |
 | └─ Should                  | [Includes Pricing-Billing Currency Differences](#operatingmodelconditions.includespricing-billingcurrencydifferences) and [Includes Unit Pricing](#operatingmodelconditions.includesunitpricing) |
 | Column type                | Metric                                      |
 | Feature level              | Conditional                                 |
