@@ -21,7 +21,7 @@ PricingCurrencyContractedUnitPrice MUST adhere to the following requirements:
 * When PricingCurrencyContractedUnitPrice is not null, PricingCurrencyContractedUnitPrice MUST adhere to the following requirements:
   * PricingCurrencyContractedUnitPrice MUST be a non-negative decimal value.
   * PricingCurrencyContractedUnitPrice MUST be denominated in the PricingCurrency.
-  * PricingCurrencyContractedUnitPrice MUST reflect *negotiated non-FX pricing terms* for the *SKU Price* identified by the given SkuPriceId, independent of any discount-bearing *commitment programs* being applied to the *charge*.
+  * PricingCurrencyContractedUnitPrice MUST reflect *negotiated non-FX pricing terms* for the *SKU Price* identified by the given SkuPriceId that are independent of any discount-bearing *commitment programs* being applied to the *charge*.
   * PricingCurrencyContractedUnitPrice MUST NOT reflect any unit price impact dependent on a discount-bearing *commitment program* being applied to the *charge*.
   * PricingCurrencyContractedUnitPrice MUST equal PricingCurrencyListUnitPrice when no *negotiated non-FX pricing terms* apply to the *charge*.
 
