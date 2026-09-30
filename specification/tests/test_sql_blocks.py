@@ -10,9 +10,13 @@ block in a searched directory must:
 A table is named by its dataset's Dataset ID (e.g. ``CostAndUsage``, read
 from each ``datasets/*/dataset.md``; ``focus_data_table`` also names Cost and
 Usage), and a column read from it must be one of that dataset's Column IDs.
-Qualifiers resolve through table aliases, CTEs, and derived tables. An
-unqualified column in a query that joins several tables must be a column of
-at least one of them.
+Qualifiers resolve through table aliases, CTEs, and derived tables. A
+qualifier that names no source its query reads fails, unless it names a
+column or an alias the statement declares (e.g. a PIVOT alias), which sqlglot
+does not always map to a source. An unqualified column in a query that joins
+several tables must be a column of at least one of them. An output alias
+counts only in the query that defines it, and a CTE's column list only in a
+query that reads the CTE.
 
 The ``?`` character is permitted as a bind placeholder for tunable query
 values; sqlglot parses it natively, so no preprocessing is required.
@@ -188,18 +192,68 @@ def _output_aliases(tree):
 
     Kept apart from ``_local_names`` so that ``_enclosing_aliases`` can set
     aside an alias without also dropping a table alias, UNNEST alias, or
-    JSON_TABLE column of the same name. Lower-cased for matching.
+    JSON_TABLE column of the same name. These count only where the check
+    falls back to every dataset; elsewhere a column sees the aliases of its
+    own query (see ``_query_aliases``). Lower-cased for matching.
     """
     return {alias.alias.lower() for alias in tree.find_all(exp.Alias) if alias.alias}
 
 
-def _local_names(tree):
+def _query_aliases(query):
+    """Output aliases a query defines in its own clauses.
+
+    Covers the query's projection and PIVOT columns, not the aliases of a
+    query nested inside it. An alias resolves only within the query that
+    defines it (e.g. in its ORDER BY), not in a sibling CTE or an enclosing
+    query. A UNION's aliases come from its first branch. Lower-cased for
+    matching.
+    """
+    names = {
+        projection.alias.lower()
+        for projection in query.selects
+        if isinstance(projection, exp.Alias) and projection.alias
+    }
+    for alias in query.find_all(exp.Alias):
+        owner = alias.parent
+        while owner is not None and not isinstance(owner, exp.Query):
+            owner = owner.parent
+        if owner is query and alias.alias:
+            names.add(alias.alias.lower())
+    return names
+
+
+def _alias_names(tree):
+    """Table aliases, column lists, and inline column definitions.
+
+    A qualifier that names one of these but no source its query reads may be
+    a PIVOT alias or a field of an UNNEST element, neither of which sqlglot
+    maps to a source. CTE names are left out: a qualifier that names a CTE
+    must name one its query reads. Lower-cased for matching.
+    """
+    names = set()
+    for table_alias in tree.find_all(exp.TableAlias):
+        if table_alias.name and not isinstance(table_alias.parent, exp.CTE):
+            names.add(table_alias.name.lower())
+        for column in table_alias.args.get("columns") or []:
+            if getattr(column, "name", None):
+                names.add(column.name.lower())
+    for definition in tree.find_all(exp.ColumnDef, exp.JSONColumnDef):
+        if definition.name:
+            names.add(definition.name.lower())
+    return names
+
+
+def _local_names(tree, query_column_lists=True):
     """Names defined within a statement that are not FOCUS columns.
 
     Covers CTE names, table names and aliases (including derived-table column
     lists), UNNEST aliases, inline column definitions, and any qualifier used
     on a column reference. Output aliases are collected by
-    ``_output_aliases``. Lower-cased for matching.
+    ``_output_aliases``. With ``query_column_lists=False``, the column lists
+    of CTEs and FROM-clause subqueries are left out: those names resolve only
+    in a query that reads the CTE or subquery (see ``_source_columns``).
+    Column lists on UNNEST, VALUES, and LATERAL stay. Lower-cased for
+    matching.
     """
     names = set()
     for cte in tree.find_all(exp.CTE):
@@ -208,6 +262,10 @@ def _local_names(tree):
     for table_alias in tree.find_all(exp.TableAlias):
         if table_alias.name:
             names.add(table_alias.name.lower())
+        if not query_column_lists and isinstance(
+            table_alias.parent, (exp.CTE, exp.Subquery)
+        ):
+            continue
         for column in table_alias.args.get("columns") or []:
             if getattr(column, "name", None):
                 names.add(column.name.lower())
@@ -233,10 +291,11 @@ def _local_names(tree):
 
 
 def _is_table_function(source):
-    """Whether a FROM/JOIN source is UNNEST or a function such as JSON_TABLE.
+    """Whether a FROM/JOIN source is UNNEST, LATERAL, or a function such as JSON_TABLE.
 
-    These sources expose only names the query declares itself (an alias, a
-    column definition), which ``_local_names`` collects.
+    These sources expose only names the statement declares itself (an alias,
+    a column definition), which ``_local_names`` and ``_output_aliases``
+    collect.
     """
     if isinstance(source, Scope):
         return source.scope_type is ScopeType.UDTF
@@ -259,6 +318,12 @@ def _source_columns(source, dataset_columns):
         return dataset_columns.get(_TABLE_NAME_ALIASES.get(name, name))
     query = source.expression
     container = query.parent
+    # The column list sits on the CTE or derived table, above a parenthesized
+    # body or, for a recursive CTE read from inside itself, its first branch.
+    while isinstance(container, (exp.SetOperation, exp.Subquery)):
+        if container.args.get("alias"):
+            break
+        container = container.parent
     table_alias = container.args.get("alias") if container is not None else None
     if isinstance(table_alias, exp.TableAlias) and table_alias.columns:
         return {column.name.lower() for column in table_alias.columns}
@@ -293,13 +358,18 @@ def _find_source(scope, qualifier):
     """Return the FROM/JOIN source a column qualifier names, or None.
 
     Searches the column's own query first, then enclosing queries, so a
-    correlated subquery can name an outer table.
+    correlated subquery can name an outer table. The right side of a SEMI or
+    ANTI join counts: sqlglot leaves it out of ``selected_sources``, but the
+    join condition reads its columns.
     """
     qualifier = qualifier.lower()
     while scope is not None:
         for name, (_, source) in scope.selected_sources.items():
             if name.lower() == qualifier:
                 return source
+        for name, _ in scope.references:
+            if name.lower() == qualifier and name in scope.sources:
+                return scope.sources[name]
         scope = scope.parent
     return None
 
@@ -363,24 +433,36 @@ def _enclosing_aliases(column):
     return names
 
 
-def _column_problem(column, scope, dataset_columns, all_columns, local):
+def _column_problem(
+    column, scope, dataset_columns, all_columns, local, statement_local, alias_names
+):
     """Return why ``column`` does not resolve, or None when it does.
 
-    A qualified column must be a column of the source its qualifier names. An
-    unqualified column must be a column of a source its query reads, or a
-    query-local name. A column that cannot be traced to a dataset (outside a
-    query, or read from UNNEST, a table function, or an unexpandable ``*``)
-    only has to be a FOCUS column of some dataset or a query-local name.
+    A qualified column must be a column of the source its qualifier names, in
+    its own query or one enclosing it. A qualifier that names no such source
+    fails, unless it names a column or one of ``alias_names`` (field access,
+    or a source sqlglot does not map); the column then falls back as below.
+    An unqualified column must be a column of a source its query reads, or a
+    name in ``local``; in a query that reads a table function, any name in
+    ``statement_local`` also counts. A column that cannot be traced to a
+    dataset (outside a query, or read from UNNEST, a table function, or an
+    unexpandable ``*``) only has to be a FOCUS column of some dataset or a
+    name in ``statement_local``.
     """
     name = column.name.lower()
-    in_any_dataset = name in all_columns or name in local
+    in_any_dataset = name in all_columns or name in statement_local
     fallback = None if in_any_dataset else "not a FOCUS column"
     if scope is None:
         return fallback
 
     if column.table:
         source = _find_source(scope, column.table)
-        if source is None or _is_table_function(source):
+        if source is None:
+            qualifier = column.table.lower()
+            if qualifier in alias_names or qualifier in all_columns:
+                return fallback
+            return f"no table or alias named {column.table} in the query"
+        if _is_table_function(source):
             return fallback
         names = _source_columns(source, dataset_columns)
         if names is not None:
@@ -394,6 +476,9 @@ def _column_problem(column, scope, dataset_columns, all_columns, local):
     known, labels, unknown_tables, opaque = set(), set(), set(), False
     for source_name, source in _visible_sources(scope):
         if _is_table_function(source):
+            # Names a table function exposes are not tracked per source, so a
+            # query that reads one may use any name the statement defines.
+            known |= statement_local
             continue
         names = _source_columns(source, dataset_columns)
         if names is not None:
@@ -425,6 +510,8 @@ def _unresolved_columns(sql, dataset_columns):
         if tree is None:
             continue
         declared = _local_names(tree)
+        query_declared = _local_names(tree, query_column_lists=False)
+        alias_names = _alias_names(tree)
         aliases = _output_aliases(tree)
         _match_cte_names(tree)
         scopes = {id(scope.expression): scope for scope in traverse_scope(tree)}
@@ -433,16 +520,33 @@ def _unresolved_columns(sql, dataset_columns):
             if not name or name.startswith("x_") or column.is_star:
                 continue
             scope = _enclosing_scope(column, scopes)
-            local = declared | (aliases - _enclosing_aliases(column))
+            enclosing = _enclosing_aliases(column)
+            statement_local = declared | (aliases - enclosing)
+            local = statement_local
+            if scope is not None:
+                local = query_declared | (_query_aliases(scope.expression) - enclosing)
             try:
                 problem = _column_problem(
-                    column, scope, dataset_columns, all_columns, local
+                    column,
+                    scope,
+                    dataset_columns,
+                    all_columns,
+                    local,
+                    statement_local,
+                    alias_names,
                 )
             except OptimizeError:
                 # sqlglot cannot map the query's sources (e.g. two unaliased
-                # derived tables), so check against every dataset instead.
+                # derived tables), so check against every dataset and every
+                # name the statement defines instead.
                 problem = _column_problem(
-                    column, None, dataset_columns, all_columns, local
+                    column,
+                    None,
+                    dataset_columns,
+                    all_columns,
+                    local,
+                    statement_local,
+                    alias_names,
                 )
             if problem is not None:
                 reference = f"{column.table}.{name}" if column.table else name
@@ -531,6 +635,23 @@ _SELF_TEST_CASES = [
         id="qualifier-names-a-table-that-is-not-a-dataset",
     ),
     pytest.param(
+        "SELECT CU.BilledCost, SP.UnitPrice FROM CostAndUsage CU",
+        {"SP.UnitPrice"},
+        id="qualifier-names-no-source-in-the-query",
+    ),
+    pytest.param(
+        "WITH T AS (SELECT UnitPrice FROM SkuPrice) "
+        "SELECT T.UnitPrice FROM CostAndUsage",
+        {"T.UnitPrice"},
+        id="qualifier-names-a-cte-the-query-does-not-read",
+    ),
+    pytest.param(
+        "SELECT CU.BilledCost FROM CostAndUsage CU LEFT SEMI JOIN InvoiceDetail I "
+        "ON I.InvoiceId = CU.InvoiceId AND I.ListUnitPrice > 0",
+        {"I.ListUnitPrice"},
+        id="semi-join-right-side-resolves-to-its-dataset",
+    ),
+    pytest.param(
         "WITH T AS (SELECT SkuPriceId, SUM(BilledCost) AS Total "
         "FROM CostAndUsage GROUP BY SkuPriceId) "
         "SELECT T.SkuPriceId, Total FROM T ORDER BY Total",
@@ -544,11 +665,41 @@ _SELF_TEST_CASES = [
         id="cte-not-joined-does-not-vouch",
     ),
     pytest.param(
+        "WITH T AS (SELECT SUM(BilledCost) AS UnitPrice FROM CostAndUsage) "
+        "SELECT InvoiceId, UnitPrice FROM InvoiceDetail",
+        {"UnitPrice"},
+        id="alias-in-cte-not-joined-does-not-vouch",
+    ),
+    pytest.param(
+        "WITH T (UnitPrice) AS (SELECT BilledCost FROM CostAndUsage) "
+        "SELECT InvoiceId, UnitPrice FROM InvoiceDetail",
+        {"UnitPrice"},
+        id="cte-column-list-not-joined-does-not-vouch",
+    ),
+    pytest.param(
         "WITH P (SkuPriceId, Quantity) AS (VALUES (?, ?)) "
         "SELECT P.Quantity * SP.UnitPrice AS Amount, P.ListUnitPrice "
         "FROM P JOIN SkuPrice SP ON SP.SkuPriceId = P.SkuPriceId",
         {"P.ListUnitPrice"},
         id="cte-column-list-defines-its-columns",
+    ),
+    pytest.param(
+        "WITH T (Total) AS (SELECT SUM(BilledCost) FROM CostAndUsage) "
+        "SELECT Total FROM T",
+        set(),
+        id="cte-column-list-resolves-where-the-cte-is-read",
+    ),
+    pytest.param(
+        "WITH RECURSIVE R (n) AS (SELECT 1 UNION ALL "
+        "SELECT n + 1 FROM R WHERE n < 10) SELECT n FROM R",
+        set(),
+        id="recursive-cte-column-list",
+    ),
+    pytest.param(
+        "WITH T (Total) AS ((SELECT SUM(BilledCost) FROM CostAndUsage)) "
+        "SELECT Total FROM T",
+        set(),
+        id="parenthesized-cte-body-column-list",
     ),
     pytest.param(
         "WITH U AS (SELECT * FROM CostAndUsage UNION ALL "
@@ -564,6 +715,13 @@ _SELF_TEST_CASES = [
         id="unexpandable-star-joined-to-a-dataset-falls-back",
     ),
     pytest.param(
+        "WITH A AS (SELECT BilledCost AS Cost FROM CostAndUsage), "
+        "B AS (SELECT BilledCost AS Cost FROM InvoiceDetail), "
+        "U AS (SELECT * FROM A UNION ALL SELECT * FROM B) SELECT Cost FROM U",
+        set(),
+        id="unexpandable-star-falls-back-to-any-name-the-statement-defines",
+    ),
+    pytest.param(
         "WITH T AS (SELECT * FROM SkuPrice) SELECT T.ListUnitPrice FROM T",
         {"T.ListUnitPrice"},
         id="star-cte-exposes-its-dataset-columns",
@@ -572,6 +730,12 @@ _SELF_TEST_CASES = [
         "SELECT ID.BilledCost FROM (SELECT InvoiceId FROM InvoiceDetail) ID",
         {"ID.BilledCost"},
         id="derived-table-exposes-only-its-projection",
+    ),
+    pytest.param(
+        "SELECT InvoiceId, UnitPrice FROM InvoiceDetail WHERE EXISTS "
+        "(SELECT 1 FROM (SELECT BilledCost FROM CostAndUsage) AS D (UnitPrice))",
+        {"UnitPrice"},
+        id="derived-table-column-list-not-read-does-not-vouch",
     ),
     pytest.param(
         "SELECT SP.SkuPriceId FROM SkuPrice SP WHERE EXISTS "
@@ -601,15 +765,50 @@ _SELF_TEST_CASES = [
         id="unnest-element-field",
     ),
     pytest.param(
+        "SELECT E.ContractId FROM CostAndUsage "
+        "CROSS JOIN UNNEST(ContractApplied) AS T (E)",
+        set(),
+        id="unnest-element-field-through-column-alias",
+    ),
+    pytest.param(
+        "SELECT ContractApplied.ContractId FROM CostAndUsage",
+        set(),
+        id="field-access-on-a-column-falls-back",
+    ),
+    pytest.param(
         "SELECT JSON_VALUE(E, '$.Id') FROM SkuPrice CROSS JOIN "
         "UNNEST(JSON_EXTRACT_ARRAY(ContractApplied, '$.Elements')) AS E",
         {"ContractApplied"},
         id="unnest-argument-resolved-in-its-query",
     ),
     pytest.param(
+        "SELECT Total FROM CostAndUsage CU CROSS JOIN LATERAL "
+        "(SELECT CU.BilledCost * 2 AS Total) AS L ORDER BY Total",
+        set(),
+        id="lateral-output-alias",
+    ),
+    pytest.param(
         "SELECT SUM(ListUnitPrice) AS ListUnitPrice FROM SkuPrice",
         {"ListUnitPrice"},
         id="alias-does-not-vouch-for-its-own-input",
+    ),
+    pytest.param(
+        "SELECT SUM(BilledCost) AS Total FROM CostAndUsage ORDER BY Total",
+        set(),
+        id="alias-resolves-in-its-own-query",
+    ),
+    pytest.param(
+        "SELECT InvoiceId FROM InvoiceDetail WHERE EXISTS "
+        "(SELECT BilledCost AS Amount FROM CostAndUsage UNION ALL "
+        "SELECT BilledCost FROM InvoiceDetail ORDER BY Amount)",
+        set(),
+        id="alias-resolves-in-union-order-by",
+    ),
+    pytest.param(
+        "SELECT P.SkuPriceId, Compute FROM CostAndUsage PIVOT (SUM(BilledCost) "
+        "FOR InvoiceId IN ('a' AS Compute, 'b' AS Storage)) AS P",
+        set(),
+        id="pivot-alias-and-output-names",
     ),
     pytest.param(
         "SELECT TRIM(E) AS E FROM CostAndUsage "
