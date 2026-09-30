@@ -27,7 +27,7 @@ While the Charge Category column is shared between the [Cost and Usage](#datamod
 
 The Cost and Usage dataset acts as a financial ledger that tracks post-facto financial events. Therefore, it requires values like "Tax" and "Adjustment" to accurately balance a final invoice.
 
-Conversely, the SKU Price dataset acts as a pre-facto catalog of available unit rates. Because taxes are calculated dynamically based on jurisdiction and entity, and adjustments are account-level ledger corrections, service providers do not publish catalog unit prices for these events. Therefore, the allowed values for Charge Category in the SKU Price dataset are limited to catalog pricing constructs: "Usage" (the published rate to consume a resource), "Purchase" (the published fee to acquire a commitment or service), and "Credit" (the published unit value of a granted credit).
+Conversely, the SKU Price dataset acts as a pre-facto catalog of available unit rates. Because taxes are calculated dynamically based on jurisdiction and entity, and adjustments are account-level ledger corrections, service providers do not publish *SKU Prices* for these events. Therefore, the allowed values for Charge Category in the SKU Price dataset are limited to catalog pricing constructs: "Usage" (the published rate to consume a resource), "Purchase" (the published fee to acquire a commitment or service), and "Credit" (the published unit value of a granted credit).
 
 Credits are catalog pricing constructs where a service provider issues a distinct [*SKU*](#glossary:sku) and *SKU Price* for the credit, most commonly a promotional credit carrying a defined unit value. Where a service provider publishes no such *SKU Price*, the credit appears only in Cost and Usage and has no SKU Price record.
 
