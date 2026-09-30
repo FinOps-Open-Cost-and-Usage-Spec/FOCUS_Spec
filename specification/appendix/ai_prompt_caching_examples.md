@@ -47,7 +47,7 @@ Identifying the cache write separately supports a return-on-investment analysis:
 For this scenario, the same model is served by a cloud provider, LatticeScale, which applies no cache write charge and instead charges for retaining cached content:
 
 * Tokens placed into the cache are charged at the ordinary $3.00 input price, on the same meter as input tokens that are not cached.
-* Retained content is charged at $1.00 per 1,000,000 token-hours. The 2,000,000 cached tokens are retained for 3 hours, producing 6,000,000 token-hours.
+* Retained content is charged at $1.00 per 1,000,000 token-hours. The 2,000,000 cached tokens are retained for three hours, producing 6,000,000 token-hours.
 
 [**CSV Example**](/specification/data/ai_prompt_caching/ai_prompt_caching_b.csv)
 
