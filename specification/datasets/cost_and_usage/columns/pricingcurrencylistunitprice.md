@@ -21,7 +21,7 @@ PricingCurrencyListUnitPrice MUST adhere to the following requirements:
   * PricingCurrencyListUnitPrice MUST be denominated in the PricingCurrency.
   * PricingCurrencyListUnitPrice MUST represent the service-provider-suggested unit price per PricingUnit for the *SKU Price* identified by the given SkuPriceId.
   * PricingCurrencyListUnitPrice MUST NOT reflect *negotiated pricing terms* for the associated *SKU Price*.
-  * PricingCurrencyListUnitPrice MUST NOT reflect any unit price impact dependent on a discount-bearing *commitment program* being applied to the *charge*.
+  * PricingCurrencyListUnitPrice MUST NOT reflect any unit price impact dependent on a discount-bearing *commitment program* being applied to the [*charge*](#glossary:charge).
 
 ## Usability Constraints
 
