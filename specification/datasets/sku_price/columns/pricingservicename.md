@@ -1,8 +1,5 @@
 # Pricing Service Name
-
-Pricing Service Name represents an offering that can be purchased from a [*service provider*](#glossary:service-provider) (e.g., virtual machine, database, professional service). A [*service*](#glossary:service) offering can include various types of usage or other [*charges*](#glossary:charge).
-
-Pricing Service Name is a display name for the offering to which the specified [*SKU Price*](#glossary:sku-price) applies. The Pricing Service Name is commonly used for scenarios like analyzing unit price variations across services or filtering rate cards to find specific offerings.
+Pricing Service Name is a display name for the [*service*](#glossary:service) under which the specified [*SKU Price*](#glossary:sku-price) is published in the [*service provider's*](#glossary:service-provider) [*price list*](#glossary:price-list). The Pricing Service Name is commonly used for scenarios like analyzing unit price variations across *services* or filtering *price lists* to find specific offerings.
 
 ## Requirements
 
