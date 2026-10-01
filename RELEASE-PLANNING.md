@@ -198,6 +198,7 @@ This table displays key milestones and dates related to the development of FOCUS
       <td><strong>Thu Oct 8</strong></td>
       <td>1.6 Scope Starts</td>
       <td rowspan="2">
+        6 weeks.<br/>
         Scope definition and prioritization for v1.6.<br/>
         Runs in parallel with v1.5 Final Consistency Review and IPR Review.
       </td>
@@ -211,6 +212,7 @@ This table displays key milestones and dates related to the development of FOCUS
       <td><strong>Thu Nov 19</strong></td>
       <td>1.6 Development Starts</td>
       <td rowspan="6">
+        18 weeks (16 working weeks plus 2-week end-of-year break).<br/>
         Development begins immediately after v1.6 Scope Ends (19 Nov 2026).<br/>
         Includes a two-week end-of-year break (21 Dec 2026 to 4 Jan 2027).<br/>
         Interim milestones occur on Thursdays (Members meeting cadence).
