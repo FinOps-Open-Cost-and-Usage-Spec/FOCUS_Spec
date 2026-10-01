@@ -9,6 +9,7 @@ When combined with [Quantity Tier Minimum](#datamodel.skuprice.quantitytierminim
 QuantityTierMaximum MUST adhere to the following requirements:
 
 * QuantityTierMaximum MUST be of type Decimal.
+* QuantityTierMaximum MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * QuantityTierMaximum MUST adhere to the following nullability requirements:
   * QuantityTierMaximum MUST be null when there is no upper limit for the pricing tier.
   * QuantityTierMaximum MUST NOT be null when a subsequent, higher-quantity pricing tier exists for the same offering.
@@ -43,7 +44,8 @@ The inclusive upper boundary of a quantity-based pricing tier, measured in the d
 | Feature level              | Conditional                                          |
 | Allows nulls               | True                                                 |
 | Data type                  | Decimal                                              |
-| Value format               | \<not specified>                                     |
+| Value format               | [Numeric Format](#attributes.numericformat)          |
+| Number range               | Any valid non-negative decimal value                 |
 
 ## Version Introduced
 

@@ -14,7 +14,7 @@ ChargeCategory MUST adhere to the following requirements:
 * ChargeCategory MUST be "Tax" when the *charge* represents taxes levied by the relevant authorities.
 * ChargeCategory MUST be "Credit" when the *charge* represents a financial incentive or allowance unrelated to other charges.
 * ChargeCategory MUST be "Adjustment" when the *charge* represents a billing modification that does not fall into other ChargeCategories.
-* ChargeCategory MUST match [ChargeCategory](#datamodel.skuprice.chargecategory) of the [SkuPrice](#datamodel.skuprice) records identified by [SkuPriceId](#datamodel.costandusage.skupriceid) when SkuPriceId is not null and ChargeCategory is "Usage" or "Purchase".
+* ChargeCategory for a given [SkuPriceId](#datamodel.costandusage.skupriceid) and [ServiceProviderName](#datamodel.costandusage.serviceprovidername) MUST match [SkuPrice.ChargeCategory](#datamodel.skuprice.chargecategory) for the same [SkuPrice.SkuPriceId](#datamodel.skuprice.skupriceid) and [SkuPrice.ServiceProviderName](#datamodel.skuprice.serviceprovidername) when SkuPriceId is not null and ChargeCategory is "Usage" or "Purchase".
 
 ## Allowed Values
 

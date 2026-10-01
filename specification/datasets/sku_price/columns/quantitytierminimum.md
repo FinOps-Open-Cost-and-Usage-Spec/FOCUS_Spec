@@ -9,6 +9,9 @@ When combined with [Quantity Tier Maximum](#datamodel.skuprice.quantitytiermaxim
 QuantityTierMinimum MUST adhere to the following requirements:
 
 * QuantityTierMinimum MUST be of type Decimal.
+* QuantityTierMinimum MUST conform to [NumericFormat](#attributes.numericformat) requirements.
+* QuantityTierMinimum MUST NOT be null.
+* QuantityTierMinimum MUST be a non-negative decimal value.
 * QuantityTierMinimum MUST NOT be null.
 * QuantityTierMinimum MUST represent a quantity denominated in the [PricingUnit](#datamodel.skuprice.pricingunit).
 * QuantityTierMinimum MUST be the exclusive lower bound of the quantity-based pricing tier.
@@ -35,7 +38,8 @@ The exclusive lower boundary of a quantity-based pricing tier, measured in the d
 | Feature level              | Conditional                                          |
 | Allows nulls               | False                                                |
 | Data type                  | Decimal                                              |
-| Value format               | \<not specified>                                     |
+| Value format               | [Numeric Format](#attributes.numericformat)          |
+| Number range               | Any valid non-negative decimal value                 |
 
 ## Version Introduced
 
