@@ -399,6 +399,10 @@
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-CostAndUsage-D-097-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-099-C"
           }
         ]
       },
@@ -471,7 +475,8 @@
         "CAU-CostAndUsage-D-073-C",
         "CAU-CostAndUsage-D-074-C",
         "CAU-CostAndUsage-D-075-M",
-        "CAU-CostAndUsage-D-076-M"
+        "CAU-CostAndUsage-D-076-M",
+        "CAU-CostAndUsage-D-099-C"
       ]
     }
   },
@@ -511,6 +516,10 @@
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-AllocatedResourceName-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedServiceName-C-000-C"
           },
           {
             "CheckFunction": "CheckModelRule",
@@ -764,6 +773,7 @@
         "CAU-AllocatedMethodDetails-C-000-C",
         "CAU-AllocatedResourceId-C-000-C",
         "CAU-AllocatedResourceName-C-000-C",
+        "CAU-AllocatedServiceName-C-000-C",
         "CAU-AllocatedTags-C-000-C",
         "CAU-AvailabilityZone-C-000-C",
         "CAU-BilledCost-C-000-M",
@@ -2820,6 +2830,34 @@
       "Requirement": {
         "CheckFunction": "ColumnPresent",
         "ColumnName": "AllocatedTags"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-099-C": {
+    "Function": "Presence",
+    "Reference": "AllocatedServiceName",
+    "EntityType": "Dataset",
+    "EntityName": "Allocated Service Name",
+    "EntityId": "AllocatedServiceName",
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    ],
+    "Order": 65,
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST include AllocatedServiceName when the operating model includes split cost allocation.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "AllocatedServiceName"
       },
       "Condition": {},
       "Dependencies": []
