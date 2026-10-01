@@ -1,0 +1,86 @@
+{
+  "CON-IncludesRequesterAttribution-N-000-C": {
+    "Function": "Composite",
+    "Reference": "IncludesRequesterAttribution",
+    "EntityType": "Condition",
+    "EntityId": "IncludesRequesterAttribution",
+    "EntityName": "Includes Requester Attribution",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "DatasetType": "CON",
+    "DatasetId": null,
+    "DatasetName": null,
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Static",
+    "Order": 0,
+    "ValidationCriteria": {
+      "MustSatisfy": "IncludesRequesterAttribution MUST adhere to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CON-IncludesRequesterAttribution-N-001-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CON-IncludesRequesterAttribution-N-002-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CON-IncludesRequesterAttribution-N-001-C",
+        "CON-IncludesRequesterAttribution-N-002-C"
+      ]
+    }
+  },
+  "CON-IncludesRequesterAttribution-N-001-C": {
+    "Function": "Validation",
+    "Reference": "IncludesRequesterAttribution",
+    "EntityType": "Condition",
+    "EntityId": "IncludesRequesterAttribution",
+    "EntityName": "Includes Requester Attribution",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "DatasetType": "CON",
+    "DatasetId": null,
+    "DatasetName": null,
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Dynamic",
+    "Order": 10,
+    "ValidationCriteria": {
+      "MustSatisfy": "IncludesRequesterAttribution MUST evaluate to true when the operating model includes attributing usage or purchase of resources or services to requesters.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CON-IncludesRequesterAttribution-N-002-C": {
+    "Function": "Validation",
+    "Reference": "IncludesRequesterAttribution",
+    "EntityType": "Condition",
+    "EntityId": "IncludesRequesterAttribution",
+    "EntityName": "Includes Requester Attribution",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "DatasetType": "CON",
+    "DatasetId": null,
+    "DatasetName": null,
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Dynamic",
+    "Order": 20,
+    "ValidationCriteria": {
+      "MustSatisfy": "IncludesRequesterAttribution MUST evaluate to false when the operating model does not include attributing usage or purchase of resources or services to requesters.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}

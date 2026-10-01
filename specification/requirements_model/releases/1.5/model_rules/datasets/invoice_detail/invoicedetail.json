@@ -24,10 +24,6 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "IND-InvoiceDetail-D-001-C"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
             "ModelRuleId": "IND-InvoiceDetail-D-002-M"
           },
           {
@@ -74,7 +70,6 @@
       },
       "Condition": {},
       "Dependencies": [
-        "IND-InvoiceDetail-D-001-C",
         "IND-InvoiceDetail-D-002-M",
         "IND-InvoiceDetail-D-027-M",
         "IND-InvoiceDetail-D-028-M",
@@ -97,12 +92,13 @@
     "EntityId": "InvoiceDetail",
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.5",
+    "Status": "Removed",
     "Conditions": [
       "IncludesPayableInvoices"
     ],
     "Type": "Dynamic",
-    "Order": 10,
+    "Order": -1,
     "DatasetType": "IND",
     "DatasetId": "InvoiceDetail",
     "DatasetName": "Invoice Detail",
@@ -130,7 +126,7 @@
     "DatasetId": "InvoiceDetail",
     "DatasetName": "Invoice Detail",
     "ValidationCriteria": {
-      "MustSatisfy": "The presence of columns in InvoiceDetail MUST adhere to the following requirements:",
+      "MustSatisfy": "InvoiceDetail column presence MUST adhere to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -803,7 +799,7 @@
     "DatasetId": "InvoiceDetail",
     "DatasetName": "Invoice Detail",
     "ValidationCriteria": {
-      "MustSatisfy": "InvoiceDetail MUST include PaymentCurrency when the invoice issuer supports billing and payment in different currencies.",
+      "MustSatisfy": "InvoiceDetail MUST include PaymentCurrency when the operating model includes billing and payment currency differences.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -831,7 +827,7 @@
     "DatasetId": "InvoiceDetail",
     "DatasetName": "Invoice Detail",
     "ValidationCriteria": {
-      "MustSatisfy": "InvoiceDetail MUST include PaymentCurrencyBilledCost when the invoice issuer supports billing and payment in different currencies.",
+      "MustSatisfy": "InvoiceDetail MUST include PaymentCurrencyBilledCost when the operating model includes billing and payment currency differences.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -859,7 +855,7 @@
     "DatasetId": "InvoiceDetail",
     "DatasetName": "Invoice Detail",
     "ValidationCriteria": {
-      "MustSatisfy": "InvoiceDetail MUST include PaymentCurrencyInvoiceDetailId when the invoice issuer represents billing currency and payment currency at different aggregation levels on payable invoices.",
+      "MustSatisfy": "InvoiceDetail MUST include PaymentCurrencyInvoiceDetailId when the operating model includes aggregation level currency differences.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -939,7 +935,7 @@
     "DatasetId": "InvoiceDetail",
     "DatasetName": "Invoice Detail",
     "ValidationCriteria": {
-      "MustSatisfy": "InvoiceDetail MUST include PurchaseOrderNumber when the invoice issuer supports customer input of purchase order numbers.",
+      "MustSatisfy": "InvoiceDetail MUST include PurchaseOrderNumber when the operating model includes purchase order numbers.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
