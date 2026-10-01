@@ -30,6 +30,16 @@ This section outlines the planned release schedule and key milestones for the FO
     </ul>
         </td>
     </tr>
+    <tr>
+        <td>v1.6</td>
+        <td>May 2027</td>
+        <td>
+<strong>TBD</strong>
+    <ul>
+      <li>Scope to be defined during the v1.6 scoping period (8 Oct 2026 to 19 Nov 2026)</li>
+    </ul>
+        </td>
+    </tr>
 </table>
 
 ### Scope of Previous Releases
@@ -168,6 +178,104 @@ This section outlines the planned release schedule and key milestones for the FO
         </td>
     </tr>
 </table>
+
+### Estimated Timeline for v1.6
+
+This table displays key milestones and dates related to the development of FOCUS Release v1.6.
+
+<table>
+  <thead>
+    <tr>
+      <th>Final Date</th>
+      <th>Interim Date</th>
+      <th>Milestone</th>
+      <th>Comments</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="2"><strong>8-Oct-26 to 19-Nov-26</strong></td>
+      <td><strong>Thu Oct 8</strong></td>
+      <td>1.6 Scope Starts</td>
+      <td rowspan="2">
+        Scope definition and prioritization for v1.6.<br/>
+        Runs in parallel with v1.5 Final Consistency Review and IPR Review.
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Thu Nov 19</strong></td>
+      <td>1.6 Scope Ends*</td>
+    </tr>
+    <tr>
+      <td rowspan="6"><strong>19-Nov-26 to 25-Mar-27</strong></td>
+      <td><strong>Thu Nov 19</strong></td>
+      <td>1.6 Development Starts</td>
+      <td rowspan="6">
+        Development begins immediately after v1.6 Scope Ends (19 Nov 2026).<br/>
+        Includes a two-week end-of-year break (21 Dec 2026 to 4 Jan 2027).<br/>
+        Interim milestones occur on Thursdays (Members meeting cadence).
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Thu Jan 28</strong><br/>(10 weeks)</td>
+      <td>Deadline to Create PR Drafts</td>
+    </tr>
+    <tr>
+      <td><strong>Thu Feb 11</strong><br/>(2 weeks)</td>
+      <td>Deadline to Complete PR Drafts</td>
+    </tr>
+    <tr>
+      <td><strong>Thu Feb 25</strong><br/>(2 weeks)</td>
+      <td>Deadline to Start TF Review</td>
+    </tr>
+    <tr>
+      <td><strong>Thu Mar 11</strong><br/>(2 weeks)</td>
+      <td>Deadline to Start Member Review</td>
+    </tr>
+    <tr>
+      <td><strong>Thu Mar 25</strong><br/>(2 weeks)</td>
+      <td>Deadline to Approve Member Review PRs</td>
+    </tr>
+    <tr>
+      <td><strong>25-Mar-27 to 15-Apr-27</strong></td>
+      <td>(3 weeks)</td>
+      <td>Start / End Final Consistency Review v1.6</td>
+      <td>
+        Fixed three-week consistency review period (Thursday-to-Thursday). <br/> End of Consistency Review is followed by baseline preparation time for IPR Review.
+      </td>
+    </tr>
+    <tr>
+      <td><strong>22-Apr-27 to 21-May-27</strong></td>
+      <td></td>
+      <td>Start / End IPR Review v1.6</td>
+      <td>
+        Start of IPR Review begins after baseline prep (1 week).<br/>
+        IPR Review duration is at least 30 days.<br/>
+        End of IPR Review completes at least 3 days before Final Approval (approval package preparation).
+      </td>
+    </tr>
+    <tr>
+      <td><strong>27-May-27</strong></td>
+      <td></td>
+      <td>Working Group (WG) Approval of v1.6</td>
+      <td>WG approves the v1.6 Release Candidate.</td>
+    </tr>
+    <tr>
+      <td><strong>27-May-27</strong></td>
+      <td></td>
+      <td>SC Ratification of v1.6</td>
+      <td>Steering Committee ratifies the v1.6 release on the same day.</td>
+    </tr>
+    <tr>
+      <td><strong>XX-Jun-27</strong></td>
+      <td></td>
+      <td>Public Announcement</td>
+      <td>Final publication date to be confirmed at a later stage.</td>
+    </tr>
+  </tbody>
+</table>
+
+\* Feature request items approved during the v1.6 scoping period can start drafting before the 19 Nov 2026 milestone.
 
 ### Estimated Timeline for v1.5
 
