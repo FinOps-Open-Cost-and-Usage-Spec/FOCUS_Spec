@@ -96,7 +96,7 @@ Cloud environments evolve rapidly, and the FOCUS specification must remain adapt
 
 ### Example
 
-We are considering adding a dataset for contract information. The first implementation of this dataset in the spec may begin with basic contract metadata (e.g., contract ID, start date, end date). However, it should be designed to accommodate future fields like contract terms, renewal options, or pricing tiers without requiring a complete overhaul of the dataset structure.
+We are considering adding a dataset for contract information. The first implementation of this dataset in the spec may begin with basic contract metadata (e.g., contract ID, start date, end date). However, it should be designed to accommodate future fields like contract terms, renewal options, or commitment tiers without requiring a complete overhaul of the dataset structure.
 
 ## Compliance with FOCUS Design Goals
 

@@ -36,11 +36,10 @@ Current column mappings found in available data sets:
 
 ## Example usage scenarios
 
-* See [Appendix: Quantity-Driven Pricing strategies](../appendix/quantity_driven_pricing_strategies.md) section for more information on
-  * Quantity-Driven Pricing strategies (such as flat-rate, volume-based rates and tier-based rating)
-  * related UC scenarios
-  * Current values observed in billing data for various scenarios
-  * Alternative data sources for various scenarios
+* See [Appendix: Threshold-Based Tiered Pricing](../appendix/threshold_based_tiered_pricing.md) section for more information on
+  * threshold-based tiered pricing, including quantity-based, duration-based and spend-based thresholds
+  * the graduated pricing and retroactive pricing threshold-based tier application models
+  * a worked example showing how each threshold-based tier application model affects ListUnitPrice
 * See [Pricing Support – UCs and Data samples Spreadsheet](https://docs.google.com/spreadsheets/d/1AZ-vtkKeKwYc8rqhxP1zMTnAVAS-svmWQQmr8cpv-IM/edit#gid=117987709) for additional UC scenarios and sample data.
 
 ## Discussion / Scratch space
