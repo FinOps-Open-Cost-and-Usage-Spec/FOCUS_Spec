@@ -23,7 +23,7 @@ SKU Price Effective Start and SKU Price Effective End carry meaning only as a pa
 
 A point-in-time lookup therefore treats a null bound as unbounded in that direction, which is the `(bound IS NULL OR comparison)` pattern the point-in-time queries below use. Finding announced changes is the exception: it tests the bounds directly, because it looks for prices whose applicability changes rather than for prices in force. Rating a [*charge*](#glossary:charge) follows the same rule against Charge Period Start: a charge falls under a price when its charge period start is on or after SKU Price Effective Start and before SKU Price Effective End.
 
-> **Note:** A [*dataset instance*](#glossary:dataset-instance) may hold only the prices in force today, or it may also carry forward-dated changes and superseded prices. The specification does not require a *service provider* to publish pricing history, and carries no signal distinguishing the two, so the same query can return one row per SKU Price ID from one *service provider* and several from another. Filtering to a point in time rather than assuming one row per SKU Price ID is what makes a query portable, and where several quantity tiers share a SKU Price ID, a point in time still returns one row per tier.
+> **Note:** A [*dataset instance*](#glossary:dataset-instance) may hold only the prices in force today, or it may also carry forward-dated changes and superseded prices. The specification does not require a *service provider* to publish pricing history, and carries no signal distinguishing the two, so the same query can return one row per SKU Price ID from one *service provider* and several from another. Filtering to a point in time rather than assuming one row per SKU Price ID is what makes a query portable.
 
 ### Scope When Conditional Columns are Absent
 
@@ -62,7 +62,7 @@ Two conditions change what applies. Pricing Region ID is present when the [*oper
 
 > Note: The following examples are informative and non-normative. They do not define requirements.
 
-SKU Price Eligibility is defined in [*JSON object format*](#attributes.jsonobjectformat), and ANSI SQL does not define a standard for parsing JSON. The eligibility query below uses BigQuery Standard SQL JSON functions (e.g., `JSON_VALUE`, `JSON_EXTRACT_ARRAY`, `JSON_VALUE_ARRAY`, `UNNEST`); similar functions exist in all major SQL engines. Every other query below is ANSI SQL and runs without modification.
+SKU Price Eligibility is defined in [*JSON object format*](#attributes.jsonobjectformat), and ANSI SQL does not define a standard for parsing JSON. The eligibility query below uses BigQuery Standard SQL JSON functions (e.g., `JSON_VALUE`, `JSON_EXTRACT_ARRAY`, `JSON_VALUE_ARRAY`, `UNNEST`); similar functions exist in all major SQL engines. Every other query below uses ANSI SQL, with `?` marking each input value, and may need small adjustments for a particular database engine, such as in how it accepts the list of planned quantities.
 
 > Important Consideration: The following queries assume FOCUS-conformant dataset artifacts. Practitioners should verify provider conformance before relying on these queries. Non-conformant dataset artifacts may produce inaccurate results.
 
@@ -99,7 +99,7 @@ This query takes a set of planned quantities, each paired with the service provi
 
 Pricing Currency Category is returned alongside the total because a "Consumable" rate produces a balance in a consumption currency rather than a financial amount. Rows carrying different Pricing Currency values, or a mix of "Payable" and "Consumable", are not additive without a conversion step the SKU Price dataset does not carry. Additionally, a SKU Price ID published in more than one pricing currency returns one row per currency for the same planned line, and those rows are alternative prices for that line rather than parts of it.
 
-Quantity Tier Minimum and Quantity Tier Maximum are returned so each row can be matched to the tier it prices. Where each tier carries its own SKU Price ID, a planned line names its tier; where several tiers share a SKU Price ID, a planned line returns one row per tier, and the row that applies is the one for the tier the line was entered for, which for a line split from a larger quantity may not be the tier its own quantity falls in. A quantity that spans tiers is entered as one line per tier, split as the pricing terms of the *service provider* dictate, since whether a tier's rate applies only to the units inside that tier or to every unit consumed is a property of those terms rather than of the tier boundaries.
+Quantity Tier Minimum and Quantity Tier Maximum are returned so each row can be matched to the tier it prices. Each tier carries its own SKU Price ID, so a planned line names its tier. A quantity that spans tiers is entered as one line per tier, split as the pricing terms of the *service provider* dictate, since whether a tier's rate applies only to the units inside that tier or to every unit consumed is a property of those terms rather than of the tier boundaries.
 
 ```sql
 WITH PlannedUsage (ServiceProviderName, SkuPriceId, PlannedQuantity, PlannedDate) AS (
