@@ -819,7 +819,7 @@
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "AllocatedMethodDetailsObject.Elements[*].AllocatedRatio MUST represent the allocated charge's percentage of the origin charge.",
+      "MustSatisfy": "AllocatedMethodDetailsObject.Elements[*].AllocatedRatio MUST represent the allocated charge's percentage of the origin charge over the allocated charge's charge period.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -842,11 +842,14 @@
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "The sum of AllocatedMethodDetailsObject.Elements[*].AllocatedRatio across all allocated charges related to a single origin charge MUST be equal to 1 (100%).",
+      "MustSatisfy": "The sum of AllocatedMethodDetailsObject.Elements[*].AllocatedRatio across all allocated charges that are related to a single origin charge and share the same ChargePeriodStart and ChargePeriodEnd MUST be equal to 1 (100%).",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-ChargePeriodStart-C-003-M",
+        "CAU-ChargePeriodEnd-C-003-M"
+      ]
     }
   },
   "CAU-AllocatedMethodDetailsObject-O-028-O": {
