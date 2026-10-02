@@ -29,33 +29,33 @@ A point-in-time lookup therefore treats a null bound as unbounded in that direct
 
 This feature applies wherever a *service provider* publishes a SKU Price dataset, and the data model states when that dataset is present. Every column this feature directly depends on is present in every SKU Price dataset instance. The queries that read public prices keep only records with a null Contract ID, so they return nothing from a dataset instance that carries only negotiated rates.
 
-Two conditions change what applies. Pricing Region ID is present when the [*operating model*](#glossary:operating-model) [includes regions](#operatingmodelconditions.includesregions). Where it is absent, prices do not vary by location and a single price stands for every region, so comparing rates across regions does not apply rather than returning an incomplete result. Quantity Tier Minimum and Quantity Tier Maximum are present when the *operating model* [includes quantity tier pricing](#operatingmodelconditions.includesquantitytierpricing). Where they are absent, every price applies at any quantity, so a planned line needs no tier, and the queries that return those two columns hold with them left out.
+Three conditions change what applies. Pricing Region ID is present when the [*operating model*](#glossary:operating-model) [includes regions](#operatingmodelconditions.includesregions). Where it is absent, prices do not vary by location and a single price stands for every region, so comparing rates across regions does not apply rather than returning an incomplete result. Quantity Tier Minimum and Quantity Tier Maximum are present when the *operating model* [includes quantity tier pricing](#operatingmodelconditions.includesquantitytierpricing). Where they are absent, every price applies at any quantity, so a planned line needs no tier, and the queries that return those two columns hold with them left out. Separating usage rates from purchase fees applies when the *operating model* [includes purchases](#operatingmodelconditions.includespurchases). Where it does not, the catalog publishes no acquisition fees and no record carries a Charge Category of "Purchase", so an estimate from consumption rates has no purchase-fee component to add.
 
 ## Directly Dependent Columns
 
 * [SkuPrice](#datamodel.skuprice)
   * ChargeCategory
   * ContractId
-  * PricingCurrency
   * PricingCurrencyCategory
-  * PricingServiceName
-  * PricingUnit
-  * ServiceProviderName
-  * SkuId
-  * SkuPriceDescription
-  * SkuPriceEffectiveEnd
-  * SkuPriceEffectiveStart
   * SkuPriceEligibility
-  * SkuPriceId
   * UnitPrice
 
 ## Supporting Columns
 
 * [SkuPrice](#datamodel.skuprice)
+  * PricingCurrency
   * PricingRegionId
+  * PricingServiceName
+  * PricingUnit
   * QuantityTierMaximum
   * QuantityTierMinimum
+  * ServiceProviderName
+  * SkuId
   * SkuPriceCreated
+  * SkuPriceDescription
+  * SkuPriceEffectiveEnd
+  * SkuPriceEffectiveStart
+  * SkuPriceId
   * SkuPriceLastUpdated
 
 ## Example SQL Queries
@@ -64,13 +64,13 @@ Two conditions change what applies. Pricing Region ID is present when the [*oper
 
 SKU Price Eligibility is defined in [*JSON object format*](#attributes.jsonobjectformat), and ANSI SQL does not define a standard for parsing JSON. The eligibility query below uses BigQuery Standard SQL JSON functions (e.g., `JSON_VALUE`, `JSON_EXTRACT_ARRAY`, `JSON_VALUE_ARRAY`, `UNNEST`); similar functions exist in all major SQL engines. Every other query below uses ANSI SQL, with `?` marking each input value, and may need small adjustments for a particular database engine, such as in how it accepts the list of planned quantities.
 
-> Important Consideration: The following queries assume FOCUS-conformant dataset artifacts. Practitioners should verify provider conformance before relying on these queries. Non-conformant dataset artifacts may produce inaccurate results.
+> **Note:** The following queries assume FOCUS-conformant dataset artifacts. Practitioners should verify provider conformance before relying on these queries. Non-conformant dataset artifacts may produce inaccurate results.
 
 ### Find the List Prices in Force at a Point in Time
 
 This query takes inputs of a service provider, a pricing service name, and a point in time, then returns the public consumption rates that apply for that service at that moment. It filters to a Charge Category of "Usage", so acquisition fees and granted credits are excluded; dropping that predicate returns every public rate for the service. The same point in time is supplied to both bounds, and each bound is tested for null so that an open-ended price is returned rather than filtered out.
 
-It also keeps only records with a null Contract ID, which carry the public list price; a record with a populated Contract ID carries a rate negotiated under a specific *contract*.
+It also keeps only records with a null Contract ID, which carry the public list price; a record with a populated Contract ID carries a rate negotiated under a specific *contract*. One *SKU* can still return the same public rate more than once. A *service provider* can publish a separate usage record, under its own SKU Price ID, for consumption a *commitment discount* covers, and that record carries the list price. SKU Price Description is returned so those rows can be told apart.
 
 ```sql
 SELECT
@@ -131,7 +131,7 @@ ORDER BY SP.PricingCurrencyCategory, SP.PricingCurrency, EstimatedPricingCurrenc
 
 This query takes inputs of a service provider, a point in time, and a [*billing account*](#glossary:billing-account) identifier, then returns the prices that account may be eligible for. A price with `IsGlobalScope` set to `true` applies to every entity its `Exclusions` do not remove. A price with neither global nor complex scope carries an `Inclusions` array whose rules name the dimension, operator, and values that define the boundary. Contract ID is returned so a contracted price the account may receive can be told apart from the list price under the same SKU Price ID.
 
-> **Note:** This query evaluates the `In` operator against the `BillingAccountId` dimension only, including the `["*"]` wildcard that matches every account, and returns rows flagged `IsComplexScope` for review rather than resolving them. It does not evaluate `Exclusions`, so a price can return for an account its `Exclusions` remove. A price whose inclusion rules restrict other dimensions but not `BillingAccountId` is not returned, and its remaining rules need evaluating separately. Values are compared as written, while the SKU Price Eligibility column definition normalizes case before comparing. A complete evaluation applies `InclusionOperator` across all inclusion rules and then removes any entity caught by `Exclusions`, in the order described in the SKU Price Eligibility column definition.
+> **Note:** This query evaluates the `In` operator against the `BillingAccountId` dimension only, including the `["*"]` wildcard that matches every account, and returns rows flagged `IsComplexScope` for review rather than resolving them. It does not evaluate `Exclusions`, so a price can return for an account its `Exclusions` remove. Where a price has neither global nor complex scope and its `Inclusions` do not name `BillingAccountId`, the price is unrestricted on billing account under the implicit wildcard rule in the SKU Price Eligibility column definition, but this query does not return it. Values are compared as written, while the SKU Price Eligibility column definition normalizes case before comparing. A complete evaluation applies `InclusionOperator` across all inclusion rules and then removes any entity caught by `Exclusions`, in the order described in the SKU Price Eligibility column definition.
 
 ```sql
 SELECT
@@ -164,13 +164,14 @@ ORDER BY SkuPriceId, ContractId
 
 ### Separate Usage Rates from Purchase Fees and Credit Values
 
-This query takes inputs of a service provider and a point in time, then reports how the catalog divides across Charge Category. A forecast built only on "Usage" rates omits the acquisition fees an architecture also incurs, so each category is counted separately rather than summed. Only records with a null Contract ID are counted, so the counts and price ranges describe the public catalog rather than the rates of any one *contract*.
+This query takes inputs of a service provider and a point in time, then reports how the catalog divides across Charge Category. A forecast built only on "Usage" rates omits the acquisition fees an architecture also incurs, so each category is counted separately rather than summed. Only records with a null Contract ID are counted, so the counts and price ranges describe the public catalog rather than the rates of any one *contract*. Pricing Currency Category is returned so a rate priced in a *consumption currency* is not read as a monetary amount.
 
 ```sql
 SELECT
   ChargeCategory,
   PricingUnit,
   PricingCurrency,
+  PricingCurrencyCategory,
   COUNT(*) AS SkuPriceCount,
   MIN(UnitPrice) AS LowestPublicUnitPrice,
   MAX(UnitPrice) AS HighestPublicUnitPrice
@@ -179,7 +180,7 @@ WHERE ServiceProviderName = ?
   AND ContractId IS NULL
   AND (SkuPriceEffectiveStart IS NULL OR SkuPriceEffectiveStart <= ?)
   AND (SkuPriceEffectiveEnd IS NULL OR SkuPriceEffectiveEnd > ?)
-GROUP BY ChargeCategory, PricingUnit, PricingCurrency
+GROUP BY ChargeCategory, PricingUnit, PricingCurrency, PricingCurrencyCategory
 ORDER BY ChargeCategory, PricingUnit
 ```
 
