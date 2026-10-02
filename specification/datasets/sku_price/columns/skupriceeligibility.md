@@ -79,8 +79,8 @@ SkuPriceEligibility uses a reserved string to represent global or unrestricted b
 
 <div class="h7-nonindex">Wildcard Behavior Rules</div>
 
-1. **Inclusion Logic:** When `["*"]` is used in an Inclusion rule, the rule evaluates to `True` for every entity, effectively making the price globally eligible for that specific Dimension.
-2. **Exclusion Logic:** When `["*"]` is used in an Exclusion rule, the rule evaluates to `True` for every entity, effectively excluding all entities (this is typically used only in combination with `ExclusionOperator: "And"` for surgical filtering).
+1. **Inclusion Logic:** When `["*"]` is used with the `In` or `Contains` operator in an Inclusion rule, the rule evaluates to `True` for every entity where the Dimension is not null, effectively making the price globally eligible for that specific Dimension.
+2. **Exclusion Logic:** When `["*"]` is used with the `In` or `Contains` operator in an Exclusion rule, the rule evaluates to `True` for every entity where the Dimension is not null, effectively excluding all entities (this is typically used only in combination with `ExclusionOperator: "And"` for surgical filtering).
 3. **Implicit Wildcards:** If a Dimension is omitted entirely from the `Inclusions` array, it is treated as an implicit wildcard (unrestricted).
 
 ### Object Implementation Guidance
