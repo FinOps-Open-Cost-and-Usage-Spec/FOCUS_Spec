@@ -8,6 +8,10 @@ An accounting method used in technology cost management to record costs in the p
 
 A charge representing a modification to billing data to account for certain events or circumstances not previously captured, or captured incorrectly. Examples include billing errors, service disruptions, or pricing changes.
 
+<a name="glossary:ai-model"><b>AI Model</b></a>
+
+A trained machine learning system (e.g., a large language model) that produces output, such as text, images, or embeddings, from input content.
+
 <a name="glossary:allocated-charge"><b>Allocated Charge</b></a>
 
 The [charge](#glossary:charge) that was created as the result of an allocation operation. This is used in the context of [Data Generator-Calculated Split Cost Allocation](#supportedfeatures.datagenerator-calculatedsplitcostallocation) to identify the charges that were created from the [origin charge](#glossary:origin-charge) resulting from the application of Data Generator-Calculated Split Cost Allocation.
@@ -282,6 +286,10 @@ A comprehensive list of prices offered by a service provider.
 
 An entity defined in an identity and access management model (e.g., user, service account) to which access to [*resources*](#glossary:resource) or [*services*](#glossary:service) is granted. A principal is distinct from the credential (e.g., API key, access token) presented with an individual request, and from the organizational container (e.g., project, workspace) within which the request runs. The same principal may be associated with multiple credentials.
 
+<a name="glossary:prompt-cache"><b>Prompt Cache</b></a>
+
+A storage mechanism that allows a generative AI workload to reuse previously processed input content across requests to an [*AI model*](#glossary:ai-model). Service providers may meter cache reads, cache writes, and cache retention differently.
+
 <a name="glossary:service-provider"><b>Service Provider</b></a>
 
 An entity that provides the [*resources*](#glossary:resource) or [*services*](#glossary:service) available for usage or purchase.
@@ -338,10 +346,14 @@ A Resource or Service-Provider-defined construct for grouping resources and/or o
 
 An agreement specified on a [*contract*](#glossary:contract) or [*invoice*](#glossary:invoice).
 
+<a name="glossary:token"><b>Token</b></a>
+
+A unit of measure representing a discrete quantity of content processed by an [*AI model*](#glossary:ai-model). The amount of content a single token represents is determined by the model, so token counts are not directly comparable across models. Distinct from a token issued as a [*virtual currency*](#glossary:virtual-currency), which denominates value rather than measuring consumption.
+
 <a name="glossary:unit-pricing"><b>Unit Pricing</b></a>
 
 A billing concept where the cost of a [*charge*](#glossary:charge) is deterministically derived as the product of a unit price (defined per [*SKU Price*](#glossary:sku-price)) and the corresponding [Pricing Quantity](#datamodel.costandusage.pricingquantity), representing purchased or consumed volume of a [*SKU*](#glossary:sku).
 
 <a name="glossary:virtual-currency"><b>Virtual Currency</b></a>
 
-A digital representation of value that is independent of government regulation or central banks (e.g., cryptocurrency, digital credits).
+A digital representation of value that is independent of government regulation or central banks (e.g., cryptocurrency, digital credits). Distinct from a [*token*](#glossary:token) as a unit of measure for content processed by an [*AI model*](#glossary:ai-model).
