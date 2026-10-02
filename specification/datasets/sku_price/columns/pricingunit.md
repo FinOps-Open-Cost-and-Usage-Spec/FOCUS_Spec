@@ -12,6 +12,7 @@ PricingUnit MUST adhere to the following requirements:
 * PricingUnit MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * PricingUnit SHOULD conform to [UnitFormat](#attributes.unitformat) requirements.
 * PricingUnit MUST NOT be null.
+* PricingUnit MUST equal [PricingCurrency](#datamodel.skuprice.pricingcurrency) when [PricingCurrencyCategory](#datamodel.skuprice.pricingcurrencycategory) is "Consumable".
 
 ## Implementation Guidance
 
