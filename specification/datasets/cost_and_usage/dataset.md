@@ -142,15 +142,15 @@ CostAndUsage MUST adhere to the following requirements:
   * CostAndUsage MUST include [PricingCategory](#datamodel.costandusage.pricingcategory) when the *operating model* [includes multiple pricing categories](#operatingmodelconditions.includesmultiplepricingcategories).
   * CostAndUsage MUST include [PricingCurrency](#datamodel.costandusage.pricingcurrency) when the *operating model* [includes pricing and billing currency differences](#operatingmodelconditions.includespricing-billingcurrencydifferences).
   * CostAndUsage MUST adhere to the following [PricingCurrencyContractedUnitPrice](#datamodel.costandusage.pricingcurrencycontractedunitprice) requirements:
-    * CostAndUsage MUST include PricingCurrencyContractedUnitPrice when the *operating model* [includes virtual currency](#operatingmodelconditions.includesvirtualcurrency) and includes list unit prices.
+    * CostAndUsage MUST include PricingCurrencyContractedUnitPrice when the *operating model* [includes consumption currency](#operatingmodelconditions.includesconsumptioncurrency) and includes list unit prices.
     * CostAndUsage SHOULD include PricingCurrencyContractedUnitPrice when the *operating model* includes pricing and billing currency differences and includes list unit prices.
     * CostAndUsage MAY include PricingCurrencyContractedUnitPrice in all other cases.
   * CostAndUsage MUST adhere to the following [PricingCurrencyEffectiveCost](#datamodel.costandusage.pricingcurrencyeffectivecost) requirements:
-    * CostAndUsage MUST include PricingCurrencyEffectiveCost when the *operating model* includes virtual currency and includes list unit prices.
+    * CostAndUsage MUST include PricingCurrencyEffectiveCost when the *operating model* includes consumption currency and includes list unit prices.
     * CostAndUsage SHOULD include PricingCurrencyEffectiveCost when the *operating model* includes pricing and billing currency differences and includes list unit prices.
     * CostAndUsage MAY include PricingCurrencyEffectiveCost in all other cases.
   * CostAndUsage MUST adhere to the following [PricingCurrencyListUnitPrice](#datamodel.costandusage.pricingcurrencylistunitprice) requirements:
-    * CostAndUsage MUST include PricingCurrencyListUnitPrice when the *operating model* includes virtual currency and includes list unit prices.
+    * CostAndUsage MUST include PricingCurrencyListUnitPrice when the *operating model* includes consumption currency and includes list unit prices.
     * CostAndUsage SHOULD include PricingCurrencyListUnitPrice when the *operating model* includes pricing and billing currency differences and includes list unit prices.
     * CostAndUsage MAY include PricingCurrencyListUnitPrice in all other cases.
   * CostAndUsage MUST include [PricingQuantity](#datamodel.costandusage.pricingquantity).

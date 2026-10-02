@@ -1,6 +1,6 @@
 # SKU Price Eligibility
 
-SKU Price Eligibility is a structured definition of the specific entities, accounts, or contexts eligible to receive the specified [*SKU Price*](#glossary:sku-price). This column details the inclusionary and exclusionary logic that dictates when a specific unit price can be applied to consumption.
+SKU Price Eligibility is a structured definition of the specific entities, accounts, or contexts eligible for the specified [SKU Price](#datamodel.skuprice) record. This column details the inclusionary and exclusionary logic that dictates when a specific SKU Price record can be applied to consumption.
 
 ## Requirements
 
@@ -16,7 +16,7 @@ SkuPriceEligibility MUST adhere to the following requirements:
 
 ## SKU Price Eligibility Object
 
-SKU Price Eligibility consists of a valid JSON object which contains a set of top-level property keys. These keys define entity-based inclusionary and exclusionary logic for the *SKU Price*.
+SKU Price Eligibility consists of a valid JSON object which contains a set of top-level property keys. These keys define entity-based inclusionary and exclusionary logic for the SKU Price record.
 
 The following section details the normative requirements for the SkuPriceEligibilityObject and its nested properties. For a logical overview of the expected content, see the [Schema Structure](#datamodel.skuprice.skupriceeligibility.skupriceeligibilityobject.objectschemastructure) and [Object Example](#datamodel.skuprice.skupriceeligibility.skupriceeligibilityobject.objectexample) sections.
 
@@ -79,8 +79,8 @@ SkuPriceEligibility uses a reserved string to represent global or unrestricted b
 
 <div class="h7-nonindex">Wildcard Behavior Rules</div>
 
-1. **Inclusion Logic:** When `["*"]` is used in an Inclusion rule, the rule evaluates to `True` for every entity, effectively making the price globally eligible for that specific Dimension.
-2. **Exclusion Logic:** When `["*"]` is used in an Exclusion rule, the rule evaluates to `True` for every entity, effectively excluding all entities (this is typically used only in combination with `ExclusionOperator: "And"` for surgical filtering).
+1. **Inclusion Logic:** When `["*"]` is used with the `In` or `Contains` operator in an Inclusion rule, the rule evaluates to `True` for every entity where the Dimension is not null, effectively making the price globally eligible for that specific Dimension.
+2. **Exclusion Logic:** When `["*"]` is used with the `In` or `Contains` operator in an Exclusion rule, the rule evaluates to `True` for every entity where the Dimension is not null, effectively excluding all entities (this is typically used only in combination with `ExclusionOperator: "And"` for surgical filtering).
 3. **Implicit Wildcards:** If a Dimension is omitted entirely from the `Inclusions` array, it is treated as an implicit wildcard (unrestricted).
 
 ### Object Implementation Guidance
@@ -91,18 +91,19 @@ The evaluation of an entity's usage against a rate card's eligibility rules proc
 
 1. **Normalization:** Convert the entity attribute and the Scope `Values` to a consistent case (default: lowercase) for comparison.
 2. **Scope Check:** If `IsGlobalScope` is `true`, the entity passes inclusion; proceed to Exclusion Evaluation. If `IsComplexScope` is `true`, the object does not determine eligibility; terminate evaluation.
-3. **Inclusion Evaluation:** Iterate through `Inclusions`. Apply `InclusionOperator`. If result is `False`, the entity is not eligible for this unit price; terminate evaluation.
-4. **Exclusion Evaluation:** Iterate through `Exclusions`. If `True`, the entity is explicitly excluded from this unit price; terminate evaluation.
-5. **Resolution:** If the entity passes the Scope Check or Inclusion Evaluation and is not caught by Exclusions, the `SKU Price` is valid for that entity.
+3. **Inclusion Evaluation:** Iterate through `Inclusions`. Apply `InclusionOperator`. If result is `False`, the entity is not eligible for this SKU Price record; terminate evaluation.
+4. **Exclusion Evaluation:** Iterate through `Exclusions`. If `True`, the entity is explicitly excluded from this SKU Price record; terminate evaluation.
+5. **Resolution:** If the entity passes the Scope Check or Inclusion Evaluation and is not caught by Exclusions, the SKU Price record is valid for that entity.
 
 <div class="h7-nonindex">Evaluating Rules Against Null Dimensions</div>
 
-When the processing workflow evaluates a rule against a charge where the target `Dimension` is `null`:
+When the processing workflow evaluates a rule against a [*charge*](#glossary:charge) where the target `Dimension` is `null`:
+
 * The `DoesNotExist` operator evaluates to `true`.
 * The `Exists` operator evaluates to `false`.
 * The `In` and `NotIn` operators must not match any string values. For example, a `null` dimension evaluated against `Values: ["global"]` evaluates to `false`.
 
-Because service providers inconsistently use both `null` and `global` to represent non-regionalized services, an eligibility rule defining `RegionId In ["global"]` will strictly evaluate to `false` against a charge carrying a `null` RegionId. Consumers reconciling rates across these boundaries should normalize `null` and `global` values prior to evaluation.
+Because [*service providers*](#glossary:service-provider) inconsistently use both `null` and `global` to represent non-regionalized [*services*](#glossary:service), an eligibility rule defining `RegionId In ["global"]` will strictly evaluate to `false` against a *charge* carrying a `null` [RegionId](#datamodel.costandusage.regionid). Consumers reconciling rates across these boundaries should normalize `null` and `global` values prior to evaluation.
 
 <div class="h7-nonindex">Dependency Logic</div>
 
@@ -111,7 +112,7 @@ Because service providers inconsistently use both `null` and `global` to represe
 
 ### Object Example
 
-Here is a basic example of the object format, describing a custom contracted rate that is only eligible for two specific Billing Accounts.
+Here is a basic example of the object format, describing a custom contracted rate that is only eligible for two specific [*billing accounts*](#glossary:billing-account).
 
 ```json
 {
@@ -148,7 +149,7 @@ SKU Price Eligibility
 
 ## Description
 
-A structured definition of the specific entities, accounts, or contexts eligible to receive the specified unit price.
+A structured definition of the specific entities, accounts, or contexts eligible for the specified SKU Price record.
 
 ## Content Constraints
 
