@@ -36,17 +36,23 @@ The same examples can be read by axis. An example may appear under more than one
 
 ### Participating Entity Arrangements
 
-* Model developer sells, hosts, and invoices — Per-Token AI Model API; Multi-Model Usage; Drawdown via Prepayment
-* CSP sells, hosts, and invoices a third-party model — CSP-Served Third-Party Model
-* Marketplace seller (model developer) sells; CSP hosts and invoices (scenario 3.1.3 in [Examples: Participating Entity Identification](#appendix.examples:participatingentityidentification)) — Cached Tokens via CSP Marketplace; Multi-Model Invoice via CSP Marketplace
+| Arrangement | Applicable Examples |
+| :--- | :--- |
+| Model developer sells, hosts, and invoices | <ul><li>Per-Token AI Model API</li><li>Multi-Model Usage</li><li>Drawdown via Prepayment</li></ul> |
+| CSP sells, hosts, and invoices a third-party model | <ul><li>CSP-Served Third-Party Model</li></ul> |
+| Marketplace seller (model developer) sells; CSP hosts and invoices (scenario 3.1.3 in [Examples: Participating Entity Identification](#appendix.examples:participatingentityidentification)) | <ul><li>Cached Tokens via CSP Marketplace</li><li>Multi-Model Invoice via CSP Marketplace</li></ul> |
 
 ### Billing Mechanics
 
-* Per-token pricing in block increments — every example
-* Commitment purchase and drawdown — Drawdown via Prepayment (the only example with [PricingCategory](#datamodel.costandusage.pricingcategory) "Committed" usage rows)
+| Mechanic | Applicable Examples |
+| :--- | :--- |
+| Per-token pricing in block increments | <ul><li>*All examples*</li></ul> |
+| Commitment purchase and drawdown | <ul><li>Drawdown via Prepayment (the only example with PricingCategory "Committed" usage rows)</li></ul> |
 
 ### Token Metering
 
-* Input and output tokens priced separately — every example except Cached Tokens via CSP Marketplace, which is a cache-only slice
-* Cache read and cache write — Cached Tokens via CSP Marketplace; Multi-Model Invoice via CSP Marketplace
-* Multiple models on one invoice — Multi-Model Usage; Multi-Model Invoice via CSP Marketplace
+| Metering Feature | Applicable Examples |
+| :--- | :--- |
+| Input and output tokens priced separately | <ul><li>*All examples except Cached Tokens via CSP Marketplace*</li></ul> |
+| Cache read and cache write | <ul><li>Cached Tokens via CSP Marketplace</li><li>Multi-Model Invoice via CSP Marketplace</li></ul> |
+| Multiple models on one invoice | <ul><li>Multi-Model Usage</li><li>Multi-Model Invoice via CSP Marketplace</li></ul> |
