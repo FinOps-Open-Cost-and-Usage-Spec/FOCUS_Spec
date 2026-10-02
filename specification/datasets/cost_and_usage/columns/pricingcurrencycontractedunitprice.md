@@ -4,7 +4,7 @@ Pricing Currency Contracted Unit Price represents the negotiated unit price per 
 
 When no [*negotiated non-FX pricing terms*](#glossary:negotiated-non-fx-pricing-terms) apply to the [*charge*](#glossary:charge), Pricing Currency Contracted Unit Price equals [Pricing Currency List Unit Price](#datamodel.costandusage.pricingcurrencylistunitprice).
 
-Pricing Currency Contracted Unit Price is denominated in the [Pricing Currency](#datamodel.costandusage.pricingcurrency). Pricing Currency Contracted Unit Price is commonly used for negotiation activities.
+Pricing Currency Contracted Unit Price is denominated in the [Pricing Currency](#datamodel.costandusage.pricingcurrency). Pricing Currency Contracted Unit Price is commonly used for negotiation and rate optimization activities.
 
 ## Requirements
 
