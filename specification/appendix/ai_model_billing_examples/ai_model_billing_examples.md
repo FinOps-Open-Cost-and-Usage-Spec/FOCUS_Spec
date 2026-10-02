@@ -29,6 +29,7 @@ Note the following column usage on the token usage rows in the scenarios below:
 * [ServiceCategory](#datamodel.costandusage.servicecategory) is "AI and Machine Learning" and [ServiceSubcategory](#datamodel.costandusage.servicesubcategory) is "Generative AI".
 * Model identity is carried in [SkuPriceDetails](#datamodel.costandusage.skupricedetails) using the properties described in the [Examples: AI Model Identity](#appendix.examples:aimodelidentity) section, which are not restated here.
 * The TokenDirection and TokenCacheAction properties of SkuPriceDetails label the direction of the metered tokens and their interaction with a cache, independently of the SkuMeter name.
+* Solora AI meters cache reads and cache writes separately from other input tokens, so the "Input Tokens" rows it sells carry TokenCacheAction "Uncached".
 * [PrincipalId](#datamodel.costandusage.principalid) identifies the [*principal*](#glossary:principal) associated with a charge, where one applies.
 
 The same examples can be read by axis. An example may appear under more than one heading.
