@@ -28,8 +28,8 @@ The following individuals serve in leadership roles for the FOCUS Steering Commi
 
 | Name | GitHub Handle | Corporate Affiliation | Role | Start Release (Date) |
 | :--- | :--- | :--- | :--- | :--- |
+| Matt Cowsert | [@Matt-Cowsert](https://github.com/Matt-Cowsert) | FinOps Foundation | WG Chair | 1.5 (2026/10/01) |
 | Mike Fuller | [@mike-finopsorg](https://github.com/mike-finopsorg) | FinOps Foundation | SC Chair | 0.5 (2023/04/04) |
-| Shawn Alpay | [@shawnalpay](https://github.com/shawnalpay) | FinOps Foundation | WG Chair | 1.2 (2024/10/08) |
 
 ## Emeritus Maintainers
 
@@ -50,4 +50,5 @@ We thank the following individuals for their leadership and service as previous 
 
 | Name | GitHub Handle | Corporate Affiliation | Role | Start Release (Date) | End Release (End Date) |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| Shawn Alpay | [@shawnalpay](https://github.com/shawnalpay) | FinOps Foundation | WG Chair | 1.2 (2024/10/08) | 1.5 (2026/10/01) |
 | Udam Dewaraja | [@udam-f2](https://github.com/udam-f2) | FinOps Foundation | WG Chair | 0.5 (2023/04/04) | 1.1 (2024/10/08) |
