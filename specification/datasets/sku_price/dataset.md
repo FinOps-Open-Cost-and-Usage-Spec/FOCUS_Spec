@@ -36,10 +36,11 @@ The columns are presented in alphabetical order.
 
 ## Relationships<!--SkipTOC-->
 
-The [SKU Price](#datamodel.skuprice) dataset relates to the [Cost and Usage](#datamodel.costandusage) dataset through the SKU Price ID, enabling the attribution of catalog rates to incurred usage. This is a one-to-many relationship: a single SKU Price ID corresponds to multiple SKU Price records, because a SKU's price varies by effective period, contract, quantity tier, and pricing currency.
+The [SKU Price](#datamodel.skuprice) dataset relates to the [Cost and Usage](#datamodel.costandusage) dataset through the SKU Price ID, enabling the attribution of catalog rates to incurred usage. This is a one-to-many relationship: a single SKU Price ID corresponds to multiple SKU Price records, because a SKU's price varies by effective period, contract, and pricing currency.
 
 Resolving the price that applies to a Cost and Usage charge therefore requires more than the SKU Price ID alone. The charge must also be aligned to the SKU Price record using the following criteria:
 
+* **Service Provider:** The Cost and Usage [Service Provider Name](#datamodel.costandusage.serviceprovidername) matches the SKU Price record's [Service Provider Name](#datamodel.skuprice.serviceprovidername).
 * **Effective Period:** The Cost and Usage [Charge Period Start](#datamodel.costandusage.chargeperiodstart) is on or after the SKU Price record's [SKU Price Effective Start](#datamodel.skuprice.skupriceeffectivestart) and before its [SKU Price Effective End](#datamodel.skuprice.skupriceeffectiveend); for this criterion, a null SKU Price Effective Start represents the earliest available time, and a null SKU Price Effective End represents the latest available time.
 * **Contract:** The Contract ID matches a `ContractId` property extracted from the charge's [Contract Applied](#datamodel.costandusage.contractapplied) array (`ContractApplied.Elements[*].ContractId`), or is null for a public list price. Note that `ContractApplied` only resolves prices associated with contract commitments.
 * **Pricing Currency:** The SKU price's [Pricing Currency](#datamodel.skuprice.pricingcurrency) matches the charge's [PricingCurrency](#datamodel.costandusage.pricingcurrency), or the charge's [BillingCurrency](#datamodel.costandusage.billingcurrency) when the [*operating model*](#glossary:operating-model) does not [include pricing and billing currency differences](#operatingmodelconditions.includespricing-billingcurrencydifferences).
@@ -55,10 +56,10 @@ Additionally, the SKU Price dataset can optionally join to the [Contract Commitm
 
 | Dataset A           | Dataset A Column  | Dataset B           | Dataset B Column       |
 | ------------------- | ----------------- | ------------------- | ---------------------- |
-| Cost and Usage      | SKU Price ID, ContractApplied.Elements[*].ContractId, Pricing Currency (or Billing Currency), plus time (see above) | SKU Price | SKU Price ID, Contract ID, Pricing Currency, plus time (see above) |
+| Cost and Usage      | Service Provider Name, SKU Price ID, ContractApplied.Elements[*].ContractId, Pricing Currency (or Billing Currency), plus time (see above) | SKU Price | Service Provider Name, SKU Price ID, Contract ID, Pricing Currency, plus time (see above) |
 | Contract Commitment | Contract ID       | SKU Price           | Contract ID            |
 
-## Implementation Guidance
+## Implementation Guidance<!--SkipTOC-->
 
 Because a SKU Price ID represents a specific price point, it inherently defines the quantity tier for that price. Service providers that natively share a single underlying identifier across multiple quantity tiers will need to generate a distinct SKU Price ID for each tier when exporting data to FOCUS. In such a case, this can be achieved by simply concatenating the price ID with the tier start (and optionally tier end).
 
