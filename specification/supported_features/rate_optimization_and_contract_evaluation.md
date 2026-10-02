@@ -149,7 +149,7 @@ ORDER BY DiscountRate DESC
 
 This query answers the same question for one offering at a given quantity, where the negotiated tiers need not match the public ones. It takes inputs of a service provider, a SKU ID, a Pricing Region ID, a Pricing Unit, a Pricing Currency, a quantity, a point in time, and a Contract ID, then returns the public price whose tier contains that quantity alongside the negotiated price under that Contract ID whose tier contains the same quantity. Each side resolves its own tier and its own effective date window, so an agreement whose tier boundaries or effective dates differ from those of the public prices is still compared at the quantity and moment supplied. Where the *contract* prices no tier containing the quantity, or is not in force at that point in time, the negotiated columns are null.
 
-The public side reads only records that carry a tier boundary, as described above, so an offering without quantity tiers returns no rows; for such an offering, the query above compares the negotiated rate with the public rate. A *contract* with more than one rate containing the quantity, such as a tier and a flat rate for the same offering, returns one row for each.
+The public side reads only records that carry a tier boundary, as described above, so an offering without quantity tiers returns no rows; for such an offering, the query above compares the negotiated rate with the public rate. A *contract* with more than one rate containing the quantity, such as a tier and a flat rate for the same offering, returns one row for each. Several sets of inputs can be compared in one run, and a set entered more than once returns its rows once.
 
 ```sql
 WITH Comparison (ServiceProviderName, SkuId, PricingRegionId, PricingUnit, PricingCurrency, Quantity, PointInTime, ContractId) AS (
@@ -212,7 +212,7 @@ ContractedTier AS (
     AND (SP.SkuPriceEffectiveEnd IS NULL OR SP.SkuPriceEffectiveEnd > C.PointInTime)
   WHERE SP.ChargeCategory = 'Usage'
 )
-SELECT
+SELECT DISTINCT
   PT.ServiceProviderName,
   PT.SkuId,
   PT.PricingRegionId,
@@ -390,7 +390,7 @@ This query takes inputs of a time range via Charge Period Start and Charge Perio
 
 Consumption already covered by a *commitment discount* is excluded. Its Effective Cost already reflects that commitment while the negotiated Unit Price does not, so including it would subtract the two against different baselines and report the agreement as raising cost rather than lowering it.
 
-Consumption is repriced at the negotiated rate carried under the SKU Price ID it was billed under, since a SKU Price ID stays the same across contracts. Each tier carries its own SKU Price ID, so that rate is the negotiated rate for the tier the charge was billed in. An agreement that sets its own tier boundaries therefore carries those tiers under SKU Price IDs of its own, so consumption billed under the public tiers finds no negotiated rate and does not return; the query that compares public and negotiated prices at a given quantity finds those tiers through the SKU ID. The effective date window is evaluated against the earliest charge period start, so the range supplied is one that falls within a single effective window. The negotiated rate applies only to the entities its SKU Price Eligibility admits, and Contract ID does not extend it to every account under the *contract*, so consumption from a *billing account* outside that eligibility is repriced at a rate it cannot receive. Restricting `ObservedUsage` to the eligible billing accounts keeps the projection to consumption the agreement covers.
+Consumption is repriced at the negotiated rate carried under the SKU Price ID it was billed under, since a SKU Price ID stays the same across contracts. Each tier carries its own SKU Price ID, so that rate is the negotiated rate for the tier the charge was billed in. An agreement that sets its own tier boundaries therefore carries those tiers under SKU Price IDs of its own, so consumption billed under the public tiers finds no negotiated rate and does not return; the query that compares public and negotiated prices at a given quantity finds those tiers through the SKU ID. The effective date window is evaluated against the earliest charge period start, so the range supplied is one that falls within a single effective window. A *contract* does not make its negotiated rate available to all of an organization's consumption. SKU Price Eligibility decides which consumption receives the rate, and it can limit the rate to certain *billing accounts*, [*sub accounts*](#glossary:sub-account), regions, or other Cost and Usage values. This query reprices all consumption billed under the SKU Price ID that no *commitment discount* covered. Consumption the agreement does not cover stays out only when each charge is checked against SKU Price Eligibility before `ObservedUsage` adds the charges up.
 
 Effective Cost is denominated in the Billing Currency while Unit Price is denominated in the Pricing Currency, so the join matches the two currencies before the difference is taken. Consumption billed in a currency the negotiated rate is not quoted in does not return, because the SKU Price dataset does not carry a conversion rate.
 
