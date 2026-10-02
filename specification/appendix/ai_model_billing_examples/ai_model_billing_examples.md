@@ -31,6 +31,8 @@ Note the following column usage on the token usage rows in the scenarios below:
 * The TokenDirection and TokenCacheAction properties of SkuPriceDetails label the direction of the metered tokens and their interaction with a cache, independently of the SkuMeter name.
 * Solora AI meters cache reads and cache writes separately from other input tokens, so the "Input Tokens" rows it sells carry TokenCacheAction "Uncached".
 * [PrincipalId](#datamodel.costandusage.principalid) identifies the [*principal*](#glossary:principal) associated with a charge, where one applies.
+* [CredentialId](#datamodel.costandusage.credentialid) identifies the [*credential*](#glossary:credential) presented on the request that produced the charge, where one applies.
+* [RequesterDetails](#datamodel.costandusage.requesterdetails) carries the published attributes of each (see [Examples: Requester Attribution](#appendix.examples:requesterattribution) and [Examples: Requester Details](#appendix.examples:jsonobject.examples:requesterdetails)); it is populated wherever PrincipalId or CredentialId is set.
 
 The same examples can be read by axis. An example may appear under more than one heading.
 
