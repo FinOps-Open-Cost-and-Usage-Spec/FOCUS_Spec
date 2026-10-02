@@ -73,7 +73,6 @@ SELECT
   InvoiceIssuerName,
   ServiceProviderName,
   ServiceName,
-  SkuMeter,
   JSON_VALUE(SkuPriceDetails, '$.TokenDirection') AS TokenDirection,
   JSON_VALUE(SkuPriceDetails, '$.TokenCacheAction') AS TokenCacheAction,
   SUM(ConsumedQuantity) AS TotalTokens
@@ -87,7 +86,6 @@ GROUP BY
   InvoiceIssuerName,
   ServiceProviderName,
   ServiceName,
-  SkuMeter,
   JSON_VALUE(SkuPriceDetails, '$.TokenDirection'),
   JSON_VALUE(SkuPriceDetails, '$.TokenCacheAction')
 ```
