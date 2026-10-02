@@ -63,6 +63,10 @@
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "ATT-UnitFormat-A-024-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-UnitFormat-A-025-O"
           }
         ]
       },
@@ -78,7 +82,8 @@
         "ATT-UnitFormat-A-021-O",
         "ATT-UnitFormat-A-022-O",
         "ATT-UnitFormat-A-023-O",
-        "ATT-UnitFormat-A-024-O"
+        "ATT-UnitFormat-A-024-O",
+        "ATT-UnitFormat-A-025-O"
       ]
     }
   },
@@ -589,7 +594,7 @@
     "Order": 160,
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "FOCUS dataset column expressing a ratio unit and including a denominator quantity SHOULD use the <plural-units>/<denominator-quantity> <plural-time-units> format (e.g., Units/3 Months).",
+      "MustSatisfy": "FOCUS dataset column expressing a ratio unit and including a denominator quantity SHOULD use the <plural-units>/<denominator-quantity> <plural-time-units> format (e.g., Units/2 Weeks).",
       "Keyword": "SHOULD",
       "Requirement": {},
       "Condition": {},
@@ -682,6 +687,29 @@
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "FOCUS dataset column including a unit quantity SHOULD use the <unit-quantity> <plural-units> format (e.g., 1000 Tokens, 1000 Characters).",
+      "Keyword": "SHOULD",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-UnitFormat-A-025-O": {
+    "Function": "Validation",
+    "Reference": "UnitFormat",
+    "EntityType": "Attribute",
+    "EntityName": "Unit Format",
+    "EntityId": "UnitFormat",
+    "ModelVersionIntroduced": "1.5",
+    "DatasetType": "ATT",
+    "DatasetId": null,
+    "DatasetName": null,
+    "Status": "Active",
+    "Notes": "Typed Dynamic because no CheckFunction can test whether a quantity divides evenly into a larger unit, so this cannot be enforced as a static rule.",
+    "Conditions": [],
+    "Order": 210,
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS dataset column expressing a time-based unit SHOULD use the largest unit of time that expresses the duration as a whole number (e.g., 1 Year rather than 12 Months).",
       "Keyword": "SHOULD",
       "Requirement": {},
       "Condition": {},

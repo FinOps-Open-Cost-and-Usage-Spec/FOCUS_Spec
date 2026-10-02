@@ -5,6 +5,7 @@
 !INCLUDE "includescapacityreservations.md",1
 !INCLUDE "includescommitmentdiscounts.md",1
 !INCLUDE "includescommitmentprograms.md",1
+!INCLUDE "includesconsumptioncurrency.md",1
 !INCLUDE "includescontractcommitments.md",1
 !INCLUDE "includeslistunitprices.md",1
 !INCLUDE "includesmultiplebillingaccounttypes.md",1
@@ -24,4 +25,3 @@
 !INCLUDE "includestags.md",1
 !INCLUDE "includesunitpricing.md",1
 !INCLUDE "includesusagemeasurement.md",1
-!INCLUDE "includesvirtualcurrency.md",1

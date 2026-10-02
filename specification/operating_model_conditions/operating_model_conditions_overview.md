@@ -14,6 +14,7 @@ Operating model conditions are sorted alphabetically by name.
 | [Includes Capacity Reservations](#operatingmodelconditions.includescapacityreservations) | Commitment | Operating model includes capacity reservations. |
 | [Includes Commitment Discounts](#operatingmodelconditions.includescommitmentdiscounts) | Commitment | Operating model includes commitment discounts. |
 | [Includes Commitment Programs](#operatingmodelconditions.includescommitmentprograms) | Commitment | Operating model includes commitment programs. |
+| [Includes Consumption Currency](#operatingmodelconditions.includesconsumptioncurrency) | Pricing | Operating model includes prices in consumption currency. |
 | [Includes Contract Commitments](#operatingmodelconditions.includescontractcommitments) | Commitment | Operating model includes contract commitments. |
 | [Includes List Unit Prices](#operatingmodelconditions.includeslistunitprices) | Pricing | Operating model includes standard, non-discounted unit prices. |
 | [Includes Multiple Billing Account Types](#operatingmodelconditions.includesmultiplebillingaccounttypes) | Account | Operating model includes multiple Billing Account Types. |
@@ -33,4 +34,3 @@ Operating model conditions are sorted alphabetically by name.
 | [Includes Tags](#operatingmodelconditions.includestags) | Allocation | Operating model includes tags. |
 | [Includes Unit Pricing](#operatingmodelconditions.includesunitpricing) | Pricing | Operating model includes unit pricing. |
 | [Includes Usage Measurement](#operatingmodelconditions.includesusagemeasurement) | Billing | Operating model includes the measurement of usage. |
-| [Includes Virtual Currency](#operatingmodelconditions.includesvirtualcurrency) | Pricing | Operating model includes prices in virtual currency. |
