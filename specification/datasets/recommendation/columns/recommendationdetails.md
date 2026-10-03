@@ -41,8 +41,10 @@ The following keys should be used when applicable to facilitate cross-service-pr
 | :------------------------- | :----------------------------------------------------------------------------------------- | :-------- | :--------------------------------------------------- |
 | CommitmentDiscountQuantity | Amount of the [*commitment discount*](#glossary:commitment-discount) proposed for purchase | Numeric   | Measure: Commitment Discount Unit                    |
 | CommitmentDiscountUnit     | Unit of measurement for the proposed Commitment Discount Quantity                          | String    | Examples: "Hours", "USD", "DPUs"                     |
-| SkuId                      | [SKU](#datamodel.costandusage.skuid) proposed by a recommendation                           | String    | Examples: "m5d.2xlarge", "NC24rs_v3"                 |
-| SkuPriceId                 | [SKU Price](#datamodel.costandusage.skupriceid) proposed by a recommendation                | String    | Examples: "AB12CD34EF56"                             |
+| CurrentSkuId               | [SKU](#datamodel.costandusage.skuid) in use before acting on a recommendation              | String    | Examples: "m5d.xlarge", "NC24rs_v3"                  |
+| CurrentSkuPriceId          | [SKU Price](#datamodel.costandusage.skupriceid) in use before acting on a recommendation   | String    | Examples: "ZY98XW76VU54"                             |
+| SkuId                      | SKU proposed by a recommendation                                                           | String    | Examples: "m5d.2xlarge", "NC24rs_v3"                 |
+| SkuPriceId                 | SKU Price proposed by a recommendation                                                     | String    | Examples: "AB12CD34EF56"                             |
 
 In addition to the keys above, any FOCUS-defined [SKU Price](#datamodel.costandusage.skupricedetails) property can be included to describe the *SKU* a recommendation proposes (e.g., CoreCount, MemorySize, InstanceType).
 
@@ -77,6 +79,7 @@ The table below lists recommended calculations. A calculation that is not listed
 
 ```json
 {
+    "CurrentSkuId": "m5d.xlarge",
     "SkuId": "m5d.large",
     "CoreCount": 2,
     "MemorySize": 8,
