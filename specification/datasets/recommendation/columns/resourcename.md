@@ -1,6 +1,6 @@
 # Resource Name
 
-The Resource Name is a display name assigned to a [*resource*](#glossary:resource). In the Recommendation dataset, the Resource Name is commonly used to make resource-scoped recommendations readable without resolving the [Resource ID](#datamodel.recommendation.resourceid).
+The Resource Name is a display name assigned to a [*resource*](#glossary:resource). It is commonly used for cost analysis, reporting, and allocation scenarios.
 
 ## Requirements
 

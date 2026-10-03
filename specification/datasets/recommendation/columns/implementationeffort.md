@@ -1,6 +1,6 @@
 # Implementation Effort
 
-Implementation Effort represents the relative level of effort to act on a recommendation, as assessed by the [Recommendation Provider Name](#datamodel.recommendation.recommendationprovidername). Implementation Effort is commonly used to balance [Estimated Monthly Cost Impact](#datamodel.recommendation.estimatedmonthlycostimpact) against the work needed to realize it.
+Implementation Effort represents the relative level of effort to act on a recommendation, as assessed by the [Recommendation Provider Name](#datamodel.recommendation.recommendationprovidername). Implementation Effort is commonly used to balance [Estimated Delta Cost](#datamodel.recommendation.estimateddeltacost) against the work needed to realize it.
 
 ## Requirements
 

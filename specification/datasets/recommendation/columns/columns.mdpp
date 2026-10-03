@@ -1,13 +1,13 @@
 !INCLUDE "billingaccountid.md",1
 !INCLUDE "billingaccountname.md",1
-!INCLUDE "currency.md",1
-!INCLUDE "estimatedmonthlycostimpact.md",1
+!INCLUDE "estimateddeltacost.md",1
 !INCLUDE "evaluationperiodend.md",1
 !INCLUDE "evaluationperiodstart.md",1
 !INCLUDE "implementationeffort.md",1
 !INCLUDE "implementationrisk.md",1
 !INCLUDE "recommendationcategory.md",1
 !INCLUDE "recommendationcreated.md",1
+!INCLUDE "recommendationcurrency.md",1
 !INCLUDE "recommendationdescription.md",1
 !INCLUDE "recommendationdetails.md",1
 !INCLUDE "recommendationid.md",1

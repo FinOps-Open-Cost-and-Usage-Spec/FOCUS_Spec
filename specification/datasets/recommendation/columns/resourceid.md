@@ -1,6 +1,6 @@
 # Resource ID
 
-A Resource ID is an identifier assigned to a [*resource*](#glossary:resource) by the [*service provider*](#glossary:service-provider). The Resource ID associates a recommendation with the *resource* it seeks to optimize, enabling recommendations to be joined to cost and usage data.
+A Resource ID is an identifier assigned to a [*resource*](#glossary:resource) by the [*service provider*](#glossary:service-provider). The Resource ID associates a recommendation with the *resource* it seeks to optimize.
 
 ## Requirements
 

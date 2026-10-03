@@ -1,6 +1,6 @@
 # Recommendation Created
 
-Recommendation Created is the timestamp when the recommendation was generated. This timestamp facilitates analysis of how recommendations and their estimated savings change over time.
+Recommendation Created is the timestamp when the recommendation was generated. Recommendation Created is commonly used to analyze how recommendations change over time.
 
 ## Requirements
 

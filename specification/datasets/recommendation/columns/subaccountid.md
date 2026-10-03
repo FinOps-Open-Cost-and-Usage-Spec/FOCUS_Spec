@@ -1,6 +1,6 @@
 # Sub Account ID
 
-A Sub Account ID is a service-provider-assigned identifier for a [*sub account*](#glossary:sub-account). The Sub Account ID identifies the *sub account* in which the recommended change would be applied, supporting routing and roll-up of recommendations across organizational constructs.
+A Sub Account ID is a service-provider-assigned identifier for a [*sub account*](#glossary:sub-account). The Sub Account ID identifies the *sub account* in which the recommended change would be applied.
 
 ## Requirements
 

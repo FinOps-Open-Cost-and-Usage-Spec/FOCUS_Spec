@@ -1,6 +1,6 @@
 # Evaluation Period Start
 
-Evaluation Period Start represents the [*inclusive start bound*](#glossary:inclusivestartbound) of the period a recommendation was derived from. For example, a recommendation derived from 30 days of observed utilization where Evaluation Period Start is '2024-01-01T00:00:00Z' and [Evaluation Period End](#datamodel.recommendation.evaluationperiodend) is '2024-01-31T00:00:00Z' includes behavior observed on January 1 since Evaluation Period Start represents the *inclusive start bound*, but does not include behavior observed on January 31 since Evaluation Period End represents the [*exclusive end bound*](#glossary:exclusiveendbound). Evaluation Period Start, together with Evaluation Period End, allows a [*practitioner*](#glossary:practitioner) to assess the confidence of a recommendation and to compare recommendations produced by [data generators](#metadata.datagenerator) that evaluate different periods.
+Evaluation Period Start represents the [*inclusive start bound*](#glossary:inclusivestartbound) of the period a recommendation was derived from. For example, a recommendation derived from 30 days of observed utilization where Evaluation Period Start is '2024-01-01T00:00:00Z' and [Evaluation Period End](#datamodel.recommendation.evaluationperiodend) is '2024-01-31T00:00:00Z' includes behavior observed on January 1 since Evaluation Period Start represents the *inclusive start bound*, but does not include behavior observed on January 31 since Evaluation Period End represents the [*exclusive end bound*](#glossary:exclusiveendbound).
 
 ## Requirements
 
@@ -30,15 +30,15 @@ The *inclusive start bound* of the period a recommendation was derived from.
 
 ## Content Constraints
 
-| Constraint                 | Value                                           |
-| :------------------------- | :---------------------------------------------- |
-| Dataset                    | [Recommendation](#datamodel.recommendation)     |
-| Operating Model Conditions | Not applicable                                  |
-| Column type                | Dimension                                       |
-| Feature level              | Optional                                        |
-| Allows nulls               | True                                            |
-| Data type                  | Date/Time                                       |
-| Value format               | [Date/Time Format](#attributes.date/timeformat) |
+| Constraint                 | Value                                                                              |
+| :------------------------- | :--------------------------------------------------------------------------------- |
+| Dataset                    | [Recommendation](#datamodel.recommendation)                                        |
+| Operating Model Conditions | [Includes Evaluation Periods](#operatingmodelconditions.includesevaluationperiods) |
+| Column type                | Dimension                                                                          |
+| Feature level              | Conditional                                                                        |
+| Allows nulls               | True                                                                               |
+| Data type                  | Date/Time                                                                          |
+| Value format               | [Date/Time Format](#attributes.date/timeformat)                                    |
 
 ## Version Introduced
 

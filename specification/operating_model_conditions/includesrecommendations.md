@@ -1,6 +1,6 @@
 # Includes Recommendations
 
-The Includes Recommendations condition represents a verifiable state indicating whether the [*operating model*](#glossary:operating-model) includes recommendations for [*resources*](#glossary:resource) or [*services*](#glossary:service).
+The Includes Recommendations operating model condition represents a verifiable state indicating whether the [*operating model*](#glossary:operating-model) includes recommendations for [*resources*](#glossary:resource) or [*services*](#glossary:service).
 
 ## Requirements
 

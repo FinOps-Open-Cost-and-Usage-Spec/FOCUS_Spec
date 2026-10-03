@@ -8,14 +8,14 @@ The Recommendation dataset is a supporting dataset that describes optimization r
 | :--- | :--- | :--- | :--- | :--- |
 | [Billing Account ID](#datamodel.recommendation.billingaccountid) | Dimension | Mandatory | True | String |
 | [Billing Account Name](#datamodel.recommendation.billingaccountname) | Dimension | Mandatory | True | String |
-| [Currency](#datamodel.recommendation.currency) | Dimension | Mandatory | True | String |
-| [Estimated Monthly Cost Impact](#datamodel.recommendation.estimatedmonthlycostimpact) | Metric | Mandatory | True | Decimal |
-| [Evaluation Period End](#datamodel.recommendation.evaluationperiodend) | Dimension | Optional | True | Date/Time |
-| [Evaluation Period Start](#datamodel.recommendation.evaluationperiodstart) | Dimension | Optional | True | Date/Time |
+| [Estimated Delta Cost](#datamodel.recommendation.estimateddeltacost) | Metric | Mandatory | True | Decimal |
+| [Evaluation Period End](#datamodel.recommendation.evaluationperiodend) | Dimension | Conditional | True | Date/Time |
+| [Evaluation Period Start](#datamodel.recommendation.evaluationperiodstart) | Dimension | Conditional | True | Date/Time |
 | [Implementation Effort](#datamodel.recommendation.implementationeffort) | Dimension | Optional | True | String |
 | [Implementation Risk](#datamodel.recommendation.implementationrisk) | Dimension | Optional | True | String |
 | [Recommendation Category](#datamodel.recommendation.recommendationcategory) | Dimension | Mandatory | False | String |
 | [Recommendation Created](#datamodel.recommendation.recommendationcreated) | Dimension | Mandatory | False | Date/Time |
+| [Recommendation Currency](#datamodel.recommendation.recommendationcurrency) | Dimension | Mandatory | True | String |
 | [Recommendation Description](#datamodel.recommendation.recommendationdescription) | Dimension | Mandatory | True | String |
 | [Recommendation Details](#datamodel.recommendation.recommendationdetails) | Dimension | Mandatory | True | JSON |
 | [Recommendation ID](#datamodel.recommendation.recommendationid) | Dimension | Mandatory | False | String |
@@ -52,20 +52,20 @@ Recommendation MUST adhere to the following requirements:
 * Recommendation column presence MUST adhere to the following requirements:
   * Recommendation MUST include [BillingAccountId](#datamodel.recommendation.billingaccountid).
   * Recommendation MUST include [BillingAccountName](#datamodel.recommendation.billingaccountname).
-  * Recommendation MUST include [Currency](#datamodel.recommendation.currency).
-  * Recommendation MUST include [EstimatedMonthlyCostImpact](#datamodel.recommendation.estimatedmonthlycostimpact).
-  * Recommendation MAY include [EvaluationPeriodEnd](#datamodel.recommendation.evaluationperiodend).
-  * Recommendation MAY include [EvaluationPeriodStart](#datamodel.recommendation.evaluationperiodstart).
+  * Recommendation MUST include [EstimatedDeltaCost](#datamodel.recommendation.estimateddeltacost).
+  * Recommendation MUST include [EvaluationPeriodEnd](#datamodel.recommendation.evaluationperiodend) when the [*operating model*](#glossary:operating-model) [includes evaluation periods](#operatingmodelconditions.includesevaluationperiods).
+  * Recommendation MUST include [EvaluationPeriodStart](#datamodel.recommendation.evaluationperiodstart) when the *operating model* includes evaluation periods.
   * Recommendation MAY include [ImplementationEffort](#datamodel.recommendation.implementationeffort).
   * Recommendation MAY include [ImplementationRisk](#datamodel.recommendation.implementationrisk).
   * Recommendation MUST include [RecommendationCategory](#datamodel.recommendation.recommendationcategory).
   * Recommendation MUST include [RecommendationCreated](#datamodel.recommendation.recommendationcreated).
+  * Recommendation MUST include [RecommendationCurrency](#datamodel.recommendation.recommendationcurrency).
   * Recommendation MUST include [RecommendationDescription](#datamodel.recommendation.recommendationdescription).
   * Recommendation MUST include [RecommendationDetails](#datamodel.recommendation.recommendationdetails).
   * Recommendation MUST include [RecommendationId](#datamodel.recommendation.recommendationid).
   * Recommendation MUST include [RecommendationLastUpdated](#datamodel.recommendation.recommendationlastupdated).
   * Recommendation MUST include [RecommendationProviderName](#datamodel.recommendation.recommendationprovidername).
-  * Recommendation MUST include [RegionId](#datamodel.recommendation.regionid) when the [*operating model*](#glossary:operating-model) [includes regions](#operatingmodelconditions.includesregions).
+  * Recommendation MUST include [RegionId](#datamodel.recommendation.regionid) when the *operating model* [includes regions](#operatingmodelconditions.includesregions).
   * Recommendation MUST include [RegionName](#datamodel.recommendation.regionname) when the *operating model* includes regions.
   * Recommendation MUST include [ResourceId](#datamodel.recommendation.resourceid).
   * Recommendation MUST include [ResourceName](#datamodel.recommendation.resourcename).

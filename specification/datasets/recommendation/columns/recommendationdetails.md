@@ -1,8 +1,6 @@
 # Recommendation Details
 
-Recommendation Details represents additional properties of a recommendation that are not expressed in other columns, capturing supporting detail a [*practitioner*](#glossary:practitioner) needs to evaluate a recommendation. Details vary by [*service provider*](#glossary:service-provider), [*service*](#glossary:service), and recommendation type, so properties are conveyed as key-value pairs rather than as a fixed set of columns. Recommendation Details carries detail such as the configuration a recommendation proposes, pricing properties of a proposed [*SKU*](#glossary:sku), or the metrics a recommendation is derived from.
-
-FOCUS-defined property keys appear in the list below and custom (e.g., service-provider-defined) keys are prefixed with "x_" to make them easy to identify as well as prevent collisions with FOCUS-defined properties introduced in a future release.
+Recommendation Details represents additional properties of a recommendation that are not expressed in other columns. Details vary by [*service provider*](#glossary:service-provider), [*service*](#glossary:service), and recommendation type, so properties are conveyed as key-value pairs rather than as a fixed set of columns. Recommendation Details carries detail such as the configuration a recommendation proposes, pricing properties of a proposed [*SKU*](#glossary:sku), or the metrics a recommendation is derived from.
 
 ## Requirements
 
@@ -37,7 +35,7 @@ RecommendationDetails MUST adhere to the following requirements:
 
 ## FOCUS-Defined Properties
 
-The following keys should be used when applicable to facilitate cross-service-provider queries for the same conceptual property. Custom (e.g., service-provider-defined) keys are prefixed with "x_".
+The following keys should be used when applicable to facilitate cross-service-provider queries for the same conceptual property. Custom (e.g., service-provider-defined) keys are prefixed with "x_" to make them easy to identify as well as prevent collisions with FOCUS-defined properties introduced in a future release.
 
 | Key                        | Description                                                                                | Data Type | Unit of Measure (numeric) or example values (string) |
 | :------------------------- | :----------------------------------------------------------------------------------------- | :-------- | :--------------------------------------------------- |
@@ -50,9 +48,9 @@ In addition to the keys above, any FOCUS-defined [SKU Price](#datamodel.costandu
 
 ### Observed Metric Properties
 
-A recommendation is commonly derived from one or more metrics observed over the [evaluation period](#datamodel.recommendation.evaluationperiodstart). Observed metric property keys combine a metric name and a calculation in the `<MetricName><Calculation>` format (e.g., `CpuUtilizationAverage`, `MemoryUtilizationP95`), so a recommendation derived from several metrics can convey each one, and each is directly queryable.
+A recommendation is commonly derived from one or more metrics observed over the [evaluation period](#datamodel.recommendation.evaluationperiodstart). Observed metric property keys combine a metric name and a calculation in the `<MetricName><Calculation>` format (e.g., `CpuUtilizationAverage`, `MemoryUtilizationP95`).
 
-The table below lists recommended metric names. A metric name that is not listed can be used as long as it is expressed in [PascalCase](#glossary:pascalcase) format.
+The table below lists recommended metric names. A metric name that is not listed can be used as long as it is expressed in PascalCase format.
 
 | Metric Name       | Description                                | Unit of Measure                    |
 | :---------------- | :----------------------------------------- | :--------------------------------- |

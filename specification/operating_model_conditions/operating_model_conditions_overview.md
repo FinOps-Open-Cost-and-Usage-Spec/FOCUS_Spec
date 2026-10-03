@@ -16,6 +16,7 @@ Operating model conditions are sorted alphabetically by name.
 | [Includes Commitment Programs](#operatingmodelconditions.includescommitmentprograms) | Commitment | Operating model includes commitment programs. |
 | [Includes Consumption Currency](#operatingmodelconditions.includesconsumptioncurrency) | Pricing | Operating model includes prices in consumption currency. |
 | [Includes Contract Commitments](#operatingmodelconditions.includescontractcommitments) | Commitment | Operating model includes contract commitments. |
+| [Includes Evaluation Periods](#operatingmodelconditions.includesevaluationperiods) | Recommendation | Operating model includes recommendations derived from a period of evaluation. |
 | [Includes List Unit Prices](#operatingmodelconditions.includeslistunitprices) | Pricing | Operating model includes standard, non-discounted unit prices. |
 | [Includes Multiple Billing Account Types](#operatingmodelconditions.includesmultiplebillingaccounttypes) | Account | Operating model includes multiple Billing Account Types. |
 | [Includes Multiple Pricing Categories](#operatingmodelconditions.includesmultiplepricingcategories) | Pricing | Operating model includes multiple pricing categories. |
