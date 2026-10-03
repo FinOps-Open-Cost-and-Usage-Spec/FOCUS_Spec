@@ -16,6 +16,7 @@ Operating model conditions are sorted alphabetically by name.
 | [Includes Commitment Programs](#operatingmodelconditions.includescommitmentprograms) | Commitment | Operating model includes commitment programs. |
 | [Includes Consumption Currency](#operatingmodelconditions.includesconsumptioncurrency) | Pricing | Operating model includes prices in consumption currency. |
 | [Includes Contract Commitments](#operatingmodelconditions.includescontractcommitments) | Commitment | Operating model includes contract commitments. |
+| [Includes Evaluation Periods](#operatingmodelconditions.includesevaluationperiods) | Recommendation | Operating model includes recommendations derived from a period of evaluation. |
 | [Includes List Unit Prices](#operatingmodelconditions.includeslistunitprices) | Pricing | Operating model includes standard, non-discounted unit prices. |
 | [Includes Multiple Billing Account Types](#operatingmodelconditions.includesmultiplebillingaccounttypes) | Account | Operating model includes multiple Billing Account Types. |
 | [Includes Multiple Pricing Categories](#operatingmodelconditions.includesmultiplepricingcategories) | Pricing | Operating model includes multiple pricing categories. |
@@ -26,6 +27,7 @@ Operating model conditions are sorted alphabetically by name.
 | [Includes Pricing-Billing Currency Differences](#operatingmodelconditions.includespricing-billingcurrencydifferences) | Pricing | Operating model includes pricing and billing in different currencies. |
 | [Includes Provisioned Resources](#operatingmodelconditions.includesprovisionedresources) | Resource | Operating model includes provisioned resources. |
 | [Includes Purchase Order Numbers](#operatingmodelconditions.includespurchaseordernumbers) | Billing | Operating model includes purchase order numbers. |
+| [Includes Recommendations](#operatingmodelconditions.includesrecommendations) | Recommendation | Operating model includes recommendations for resources or services. |
 | [Includes Regions](#operatingmodelconditions.includesregions) | Resource | Operating model includes deploying resources or services within a region. |
 | [Includes Requester Attribution](#operatingmodelconditions.includesrequesterattribution) | Account | Operating model includes attributing usage or purchase of resources or services to requesters. |
 | [Includes Resource Type Assignment](#operatingmodelconditions.includesresourcetypeassignment) | Resource | Operating model includes categorizing resources by type. |
