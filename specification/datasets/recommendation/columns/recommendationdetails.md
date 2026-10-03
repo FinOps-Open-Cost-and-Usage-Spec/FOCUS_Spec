@@ -41,9 +41,9 @@ The following keys should be used when applicable to facilitate cross-service-pr
 | :------------------------- | :----------------------------------------------------------------------------------------- | :-------- | :--------------------------------------------------- |
 | CommitmentDiscountQuantity | Amount of the [*commitment discount*](#glossary:commitment-discount) proposed for purchase | Numeric   | Measure: Commitment Discount Unit                    |
 | CommitmentDiscountUnit     | Unit of measurement for the proposed Commitment Discount Quantity                          | String    | Examples: "Hours", "USD", "DPUs"                     |
-| CurrentSkuId               | [SKU](#datamodel.costandusage.skuid) in use before acting on a recommendation              | String    | Examples: "m5d.xlarge", "NC24rs_v3"                  |
-| CurrentSkuPriceId          | [SKU Price](#datamodel.costandusage.skupriceid) in use before acting on a recommendation   | String    | Examples: "ZY98XW76VU54"                             |
-| SkuId                      | SKU proposed by a recommendation                                                           | String    | Examples: "m5d.2xlarge", "NC24rs_v3"                 |
+| CurrentSkuId               | [SKU](#datamodel.costandusage.skuid) in use before acting on a recommendation              | String    | Examples: "LM12NO34PQ56", "GH78IJ90KL12"             |
+| CurrentSkuPriceId          | [SKU Price](#datamodel.costandusage.skupriceid) in use before acting on a recommendation   | String    | Examples: "EF12GH34IJ56"                             |
+| SkuId                      | SKU proposed by a recommendation                                                           | String    | Examples: "ZX98YW76VU54", "QR34ST56UV78"             |
 | SkuPriceId                 | SKU Price proposed by a recommendation                                                     | String    | Examples: "AB12CD34EF56"                             |
 
 In addition to the keys above, any FOCUS-defined [SKU Price](#datamodel.costandusage.skupricedetails) property can be included to describe the *SKU* a recommendation proposes (e.g., CoreCount, MemorySize, InstanceType).
@@ -56,10 +56,10 @@ The table below lists recommended metric names. A metric name that is not listed
 
 | Metric Name       | Description                                | Unit of Measure                    |
 | :---------------- | :----------------------------------------- | :--------------------------------- |
-| CpuUtilization    | Processor utilization                      | Percent                            |
-| DiskUtilization   | Storage capacity utilization               | Percent                            |
+| CpuUtilization    | Processor utilization                      | Percent (0 to 100)                 |
+| DiskUtilization   | Storage capacity utilization               | Percent (0 to 100)                 |
 | DiskIops          | Storage input/output operations per second | Input/Output Operations per Second |
-| MemoryUtilization | Memory utilization                         | Percent                            |
+| MemoryUtilization | Memory utilization                         | Percent (0 to 100)                 |
 | NetworkThroughput | Network throughput for data transfer       | Megabits per second (Mbps)         |
 | RequestCount      | Requests processed                         | Requests                           |
 
@@ -79,8 +79,9 @@ The table below lists recommended calculations. A calculation that is not listed
 
 ```json
 {
-    "CurrentSkuId": "m5d.xlarge",
-    "SkuId": "m5d.large",
+    "CurrentSkuId": "LM12NO34PQ56",
+    "SkuId": "ZX98YW76VU54",
+    "InstanceType": "m5d.large",
     "CoreCount": 2,
     "MemorySize": 8,
     "CpuUtilizationAverage": 4.2,

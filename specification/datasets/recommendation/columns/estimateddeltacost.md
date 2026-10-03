@@ -13,6 +13,8 @@ EstimatedDeltaCost MUST adhere to the following requirements:
   * EstimatedDeltaCost MAY be null when RecommendationCategory is not "Cost".
 * EstimatedDeltaCost MUST be denominated in the [RecommendationCurrency](#datamodel.recommendation.recommendationcurrency).
 * EstimatedDeltaCost MUST represent the estimated change in CostAndUsage.EffectiveCost over a 30-day period projected from acting on a recommendation.
+* EstimatedDeltaCost MUST be negative when acting on a recommendation is projected to decrease CostAndUsage.EffectiveCost.
+* EstimatedDeltaCost MUST be positive when acting on a recommendation is projected to increase CostAndUsage.EffectiveCost.
 
 ## Column ID
 
