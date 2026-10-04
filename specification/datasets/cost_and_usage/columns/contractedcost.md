@@ -20,7 +20,6 @@ ContractedCost MUST adhere to the following requirements:
   * ContractedCost MUST equal ListCost when no *negotiated pricing terms* apply to the *charge*.
 * ContractedCost MUST equal BilledCost when ChargeCategory is "Credit".
 * ContractedCost MUST be calculated based on the ContractedCost of the related *charges* when ChargeCategory is "Tax".
-* ContractedCost MAY differ from BilledCost when ChargeCategory is "Adjustment".
 * ContractedCost MUST equal the product of ContractedUnitPrice and PricingQuantity when ContractedUnitPrice is not null and PricingQuantity is not null.
 
 ## Usability Constraints
