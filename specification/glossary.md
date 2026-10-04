@@ -336,7 +336,7 @@ A construct composed of the common properties of a product offering associated w
 
 <a name="glossary:sku-price"><b>SKU Price</b></a>
 
-A pricing construct that encompasses SKU properties (e.g., functionality and technical specifications), along with core stable pricing details for a particular SKU, while excluding dynamic or negotiable pricing elements such as unit price amounts; currency (and related exchange rates); temporal validity (e.g., effective dates); and contract- or negotiation-specific factors (e.g., contract or account identifiers and negotiable discounts).
+A pricing construct that encompasses SKU properties (e.g., functionality and technical specifications), along with core stable pricing details for a particular SKU, while excluding dynamic or negotiable pricing elements such as unit price amounts; currency (and related exchange rates); temporal validity (e.g., effective dates); and contract- or negotiation-specific factors (e.g., contract or account identifiers and negotiable discounts) other than the pricing structure itself (e.g., a negotiated tier configuration).
 
 <a name="glossary:split-cost-allocation"><b>Split Cost Allocation</b></a>
 
