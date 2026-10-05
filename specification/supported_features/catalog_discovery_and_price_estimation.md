@@ -60,9 +60,7 @@ Three conditions change what applies. Pricing Region ID is present when the [*op
 
 ## Example SQL Queries
 
-> Note: The following examples are informative and non-normative. They do not define requirements.
-
-SKU Price Eligibility is defined in [*JSON object format*](#attributes.jsonobjectformat), and ANSI SQL does not define a standard for parsing JSON. The eligibility query below uses BigQuery Standard SQL JSON functions (e.g., `JSON_VALUE`, `JSON_EXTRACT_ARRAY`, `JSON_VALUE_ARRAY`, `UNNEST`); similar functions exist in all major SQL engines. Every other query below uses ANSI SQL, with `?` marking each input value, and may need small adjustments for a particular database engine, such as in how it accepts the list of planned quantities.
+SKU Price Eligibility is defined in [*JSON object format*](#attributes.jsonobjectformat). The eligibility query below uses BigQuery Standard SQL JSON functions (e.g., `JSON_VALUE`, `JSON_EXTRACT_ARRAY`, `JSON_VALUE_ARRAY`, `UNNEST`); similar functions exist in all major SQL engines. Every other query below uses ANSI SQL, with `?` marking each input value, and may need small adjustments for a particular database engine, such as in how it accepts the list of planned quantities.
 
 > **Note:** The following queries assume FOCUS-conformant dataset artifacts. Practitioners should verify provider conformance before relying on these queries. Non-conformant dataset artifacts may produce inaccurate results.
 

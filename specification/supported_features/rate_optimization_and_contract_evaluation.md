@@ -74,8 +74,6 @@ Conditional columns narrow this feature independently:
 
 ## Example SQL Queries
 
-> Note: The following examples are informative and non-normative. They do not define requirements.
-
 The following queries use ANSI SQL, with `?` marking each input value, and may need small adjustments for a particular database engine.
 
 > **Note:** The following queries assume FOCUS-conformant dataset artifacts. Practitioners should verify provider conformance before relying on these queries. Non-conformant dataset artifacts may produce inaccurate results.
@@ -219,6 +217,7 @@ SELECT DISTINCT
   PT.PricingUnit,
   PT.PricingCurrency,
   PT.Quantity,
+  PT.PointInTime,
   PT.ContractId,
   PT.SkuPriceId AS PublicSkuPriceId,
   PT.QuantityTierMinimum AS PublicTierMinimum,
