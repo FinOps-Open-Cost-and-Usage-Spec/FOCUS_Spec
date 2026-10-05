@@ -19,16 +19,17 @@ SkuPriceId MUST adhere to the following requirements:
   * SkuPriceId MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#datamodel.costandusage.chargeclass) is not "Correction".
   * SkuPriceId MAY be null in all other cases.
 * When SkuPriceId is not null, SkuPriceId MUST adhere to the following requirements:
-  * SkuPriceId MUST have one and only one parent [SkuId](#datamodel.costandusage.skuid).
-  * SkuPriceId MUST have one and only one [PricingUnit](#datamodel.costandusage.pricingunit).
-  * SkuPriceId MUST NOT be associated with both a "Usage" [ChargeCategory](#datamodel.costandusage.chargecategory) and a "Purchase" ChargeCategory.
-  * SkuPriceId MUST remain consistent over time.
-  * SkuPriceId MUST remain consistent across [*billing accounts*](#glossary:billing-account) or contracts.
+  * SkuPriceId MUST have one and only one parent [SkuId](#datamodel.costandusage.skuid) for a given [ServiceProviderName](#datamodel.costandusage.serviceprovidername).
+  * SkuPriceId MUST have one and only one [PricingUnit](#datamodel.costandusage.pricingunit) for a given ServiceProviderName.
+  * SkuPriceId MUST NOT be associated with both a "Usage" [ChargeCategory](#datamodel.costandusage.chargecategory) and a "Purchase" ChargeCategory for a given ServiceProviderName.
+  * SkuPriceId for a given ServiceProviderName and *SKU Price* MUST adhere to the following requirements:
+    * SkuPriceId MUST remain consistent over time.
+    * SkuPriceId MUST remain consistent across [*billing accounts*](#glossary:billing-account) or [*contracts*](#glossary:contract).
   * SkuPriceId MAY match SkuId.
   * SkuPriceId MUST be associated with a given [*resource*](#glossary:resource) or [*service*](#glossary:service) when ChargeCategory is "Usage" or "Purchase".
   * SkuPriceId MUST reference a *SKU Price* in a service-provider-supplied *price list*, enabling the lookup of detailed information about the *SKU Price*.
-  * SkuPriceId MUST have one and only one [ListUnitPrice](#datamodel.costandusage.listunitprice) for a given [ServiceProviderName](#datamodel.costandusage.serviceprovidername), [BillingCurrency](#datamodel.costandusage.billingcurrency), and [ChargePeriodStart](#datamodel.costandusage.chargeperiodstart).
-  * SkuPriceId MUST have one and only one [ContractedUnitPrice](#datamodel.costandusage.contractedunitprice) for a given ServiceProviderName, [*contract*](#glossary:contract), [BillingAccountId](#datamodel.costandusage.billingaccountid), BillingCurrency, and ChargePeriodStart.
+  * SkuPriceId MUST have one and only one [ListUnitPrice](#datamodel.costandusage.listunitprice) for a given ServiceProviderName, [BillingCurrency](#datamodel.costandusage.billingcurrency), and [ChargePeriodStart](#datamodel.costandusage.chargeperiodstart).
+  * SkuPriceId MUST have one and only one [ContractedUnitPrice](#datamodel.costandusage.contractedunitprice) for a given ServiceProviderName, *contract*, [BillingAccountId](#datamodel.costandusage.billingaccountid), BillingCurrency, and ChargePeriodStart.
 
 See [Examples: Commitment Discount Flexibility](#appendix.examples:commitmentdiscountflexibility) for more details around *commitment discount flexibility*.
 

@@ -32,7 +32,7 @@ SkuPriceDetails MUST adhere to the following requirements:
   * SkuPriceDetails SHOULD include TokenDirection when the *SKU Price* meters only input or only output tokens.
   * SkuPriceDetails SHOULD include all custom SKU Price properties that are applicable to the corresponding SkuPriceId when there is no equivalent FOCUS-defined property.
   * SkuPriceDetails MAY include properties that are already captured in other dedicated columns.
-  * SkuPriceDetails properties for a given SkuPriceId MUST adhere to the following requirements:
+  * SkuPriceDetails properties for a given [ServiceProviderName](#datamodel.costandusage.serviceprovidername) and SkuPriceId MUST adhere to the following requirements:
     * Existing SkuPriceDetails properties SHOULD remain consistent over time.
     * Existing SkuPriceDetails properties SHOULD NOT be removed.
     * Additional SkuPriceDetails properties MAY be added over time.
