@@ -14,6 +14,7 @@ ConsumedQuantity MUST adhere to the following requirements:
   * When ChargeCategory is "Usage" and CommitmentDiscountStatus is not "Unused", ConsumedQuantity MUST adhere to the following requirements:
     * ConsumedQuantity MUST NOT be null when [ChargeClass](#datamodel.costandusage.chargeclass) is not "Correction".
     * ConsumedQuantity MAY be null when ChargeClass is "Correction".
+* ConsumedQuantity MUST NOT include [*tokens*](#glossary:token) counted on a different row with TokenCacheAction "Read" or "Write" in [SkuPriceDetails](#datamodel.costandusage.skupricedetails) when SkuPriceDetails on the same row includes neither value (e.g., a cached token that a usage report also counts inside a prompt token total is counted on the "Read" row only).
 
 ## Column ID
 
@@ -29,15 +30,16 @@ The volume of a metered SKU associated with a *resource* or *service* used, base
 
 ## Content Constraints
 
-| Constraint      | Value                                                |
-| :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datamodel.costandusage)             |
-| Column type     | Metric                                               |
-| Feature level   | Conditional                                          |
-| Allows nulls    | True                                                 |
-| Data type       | Decimal                                              |
-| Value format    | [Numeric Format](#attributes.numericformat)          |
-| Number range    | Any valid decimal value                              |
+| Constraint                 | Value                                       |
+| :------------------------- | :------------------------------------------ |
+| Dataset                    | [Cost and Usage](#datamodel.costandusage)   |
+| Operating Model Conditions | [Includes Usage Measurement](#operatingmodelconditions.includesusagemeasurement) |
+| Column type                | Metric                                      |
+| Feature level              | Conditional                                 |
+| Allows nulls               | True                                        |
+| Data type                  | Decimal                                     |
+| Value format               | [Numeric Format](#attributes.numericformat) |
+| Number range               | Any valid decimal value                     |
 
 ## Version Introduced
 
