@@ -30,7 +30,7 @@ FOCUS enables normalization of usage-based billing data from artificial intellig
 
 ## Example SQL Queries
 
-Because ANSI SQL does not define a standard for parsing JSON, the following queries use BigQuery Standard SQL JSON functions (e.g., `JSON_VALUE`) to read the TokenDirection and TokenCacheAction properties from SkuPriceDetails. Similar functions are available in all major SQL engines; the examples can be adapted to accommodate any particular database instance. Non-JSON constructs (`NULLIF`) are ANSI SQL and should work without modification.
+The following queries use BigQuery Standard SQL JSON functions (e.g., `JSON_VALUE`) to read the TokenDirection and TokenCacheAction properties from SkuPriceDetails. Similar JSON functions are widely available across major SQL engines with variances in syntax, so the examples may need to be adapted for other database engines. Standard SQL functions used here (e.g., `NULLIF`) should work without modification.
 
 ### Effective Cost Per Million Tokens
 
