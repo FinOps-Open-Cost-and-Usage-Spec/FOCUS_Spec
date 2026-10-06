@@ -23,6 +23,15 @@ ListUnitPrice MUST adhere to the following requirements:
   * ListUnitPrice MUST NOT reflect *negotiated pricing terms* for the associated *SKU Price*.
   * ListUnitPrice MUST NOT reflect any unit price impact dependent on a discount-bearing *commitment program* being applied to the [*charge*](#glossary:charge).
 
+## Implementation Guidance
+
+List Unit Price is the service-provider-suggested unit price that commonly serves as the starting point for negotiation. It is not necessarily publicly available. For example, it can be provided only in a [*price list*](#glossary:price-list) specific to a customer.
+
+List Unit Price does not reflect any *negotiated pricing terms*. This includes the following cases, which may be less obvious:
+
+* Tier configuration: a negotiated tier configuration results in SKU Price IDs that differ from those of the service-provider-suggested one. For these SKU Price IDs, List Unit Price is the service-provider-suggested unit price for the same quantity under the service-provider-suggested tier configuration.
+* Currency exchange rates: when the [Pricing Currency](#datamodel.costandusage.pricingcurrency) differs from the Billing Currency, List Unit Price does not reflect [*negotiated FX pricing terms*](#glossary:negotiated-fx-pricing-terms), such as a negotiated currency exchange rate, even though it is denominated in the Billing Currency.
+
 ## Usability Constraints
 
 **Aggregation:** Column values should only be viewed in the context of their row and not aggregated to produce a total.

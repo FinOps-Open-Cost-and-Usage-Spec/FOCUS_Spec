@@ -25,6 +25,16 @@ ContractedUnitPrice MUST adhere to the following requirements:
   * ContractedUnitPrice MUST NOT reflect any unit price impact dependent on a discount-bearing *commitment program* being applied to the *charge*.
   * ContractedUnitPrice MUST equal ListUnitPrice when no *negotiated pricing terms* apply to the *charge*.
 
+## Implementation Guidance
+
+Every *charge* with a SKU Price ID has a Contracted Unit Price, whether or not *negotiated pricing terms* apply. Agreeing to a contract does not by itself introduce *negotiated pricing terms*; only privately agreed terms that modify the service-provider-suggested pricing do.
+
+Unlike List Unit Price, Contracted Unit Price reflects *negotiated pricing terms* when they apply to the *SKU Price* identified by the given SKU Price ID. These may include a negotiated unit price, a negotiated tier configuration, and [*negotiated FX pricing terms*](#glossary:negotiated-fx-pricing-terms), such as a negotiated currency exchange rate. When no *negotiated pricing terms* apply, Contracted Unit Price equals List Unit Price.
+
+[Pricing Currency Contracted Unit Price](#datamodel.costandusage.pricingcurrencycontractedunitprice) does not reflect *negotiated FX pricing terms*, because it is before any currency exchange rate conversion.
+
+The terms of a discount-bearing *commitment program* (e.g., a *commitment discount*) can also be negotiated, such as the unit price for its purchase, its discount, or its eligibility. Of these terms, Contracted Unit Price reflects only a negotiated unit price for the commitment purchase itself (i.e., the [*covering charge*](#glossary:covering-charge)). The impact of applying the *commitment program* to [*covered charges*](#glossary:covered-charge) is reflected in their [Effective Cost](#datamodel.costandusage.effectivecost), whether or not the program's discount or eligibility is negotiated.
+
 ## Usability Constraints
 
 **Aggregation:** Column values should only be viewed in the context of their row and not aggregated to produce a total.
