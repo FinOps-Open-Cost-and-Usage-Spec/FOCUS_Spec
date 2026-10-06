@@ -58,7 +58,7 @@ Additionally, the SKU Price dataset can optionally join to the [Contract Commitm
 
 | Dataset A           | Dataset A Column  | Dataset B           | Dataset B Column       |
 | ------------------- | ----------------- | ------------------- | ---------------------- |
-| Cost and Usage      | Service Provider Name, SKU Price ID, ContractApplied.Elements[*].ContractId, Pricing Currency (or Billing Currency), plus time (see above) | SKU Price | Service Provider Name, SKU Price ID, Contract ID, Pricing Currency, plus time (see above) |
+| Cost and Usage      | Service Provider Name, SKU Price ID, ContractApplied.Elements[*].ContractId, Pricing Currency (or Billing Currency), UnitPriceType, plus time (see above) | SKU Price | Service Provider Name, SKU Price ID, Contract ID, Pricing Currency, UnitPriceType, plus time (see above) |
 | Contract Commitment | Contract ID       | SKU Price           | Contract ID            |
 
 ## Implementation Guidance<!--SkipTOC-->
