@@ -13,6 +13,7 @@ The columns are presented in alphabetical order.
 | Column                                                                              | Column Type | Feature Level                                                  | Allows Nulls | Data Type |
 | ----------------------------------------------------------------------------------- | ----------- | -------------------------------------------------------------- | ------------ | --------- |
 | [Charge Category](#datamodel.skuprice.chargecategory)                              | Dimension   | Mandatory   | False        | String    |
+| [Commitment Discount Category](#datamodel.skuprice.commitmentdiscountcategory)     | Dimension   | Conditional | True         | String    |
 | [Contract ID](#datamodel.skuprice.contractid)                                        | Dimension   | Mandatory                                                      | True         | String    |
 | [Pricing Currency](#datamodel.skuprice.pricingcurrency)                              | Dimension   | Mandatory                                                      | False        | String    |
 | [Pricing Currency Category](#datamodel.skuprice.pricingcurrencycategory)                            | Dimension   | Mandatory                                                      | False        | String    |
@@ -71,6 +72,7 @@ SkuPrice MUST adhere to the following requirements:
 
 * SkuPrice column presence MUST adhere to the following requirements:
   * SkuPrice MUST include [ChargeCategory](#datamodel.skuprice.chargecategory).
+  * SkuPrice MUST include [CommitmentDiscountCategory](#datamodel.skuprice.commitmentdiscountcategory) when the *operating model* [includes commitment discounts](#operatingmodelconditions.includescommitmentdiscounts).  
   * SkuPrice MUST include [ContractId](#datamodel.skuprice.contractid).
   * SkuPrice MUST include [PricingCurrency](#datamodel.skuprice.pricingcurrency).
   * SkuPrice MUST include [PricingCurrencyCategory](#datamodel.skuprice.pricingcurrencycategory).
