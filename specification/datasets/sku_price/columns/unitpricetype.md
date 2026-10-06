@@ -8,10 +8,10 @@ UnitPriceType MUST adhere to the following requirements:
 
 * UnitPriceType MUST be of type String.
 * UnitPriceType MUST NOT be null.
-* UnitPriceType MUST use one of the allowed values defined in this specification when the price model aligns with a defined concept.
-* UnitPriceType MAY contain provider-specific values when the price model does not align with a standard value.
+* UnitPriceType SHOULD use one of the recommended values when the price model aligns with a defined concept.
+* UnitPriceType MAY contain provider-specific values when the price model does not align with a recommended value.
 
-## Allowed Values
+## Recommended Values
 
 | Value        | Description                                                                 |
 |:-------------|:----------------------------------------------------------------------------|
@@ -41,7 +41,7 @@ Categorizes the monetary value in *Unit Price*.
 | Feature level              | Mandatory                                 |
 | Allows nulls               | False                                     |
 | Data type                  | String                                    |
-| Value format               | Recommended values                                      |
+| Value format               | Recommended values                        |
 
 ## Version Introduced
 
