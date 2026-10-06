@@ -9,6 +9,9 @@ UnitPriceType MUST adhere to the following requirements:
 * UnitPriceType MUST be of type String.
 * UnitPriceType MUST NOT be null.
 * UnitPriceType SHOULD use one of the recommended values when the price model aligns with a defined concept.
+* UnitPriceType SHOULD be "List" when the SkuPrice record does not represent a price specific to a contract.
+* UnitPriceType SHOULD be "Base" when the SkuPrice record represents a price specific to a contract and that price is a list price fixed for the contract at a point in time.
+* UnitPriceType SHOULD be "Contracted" when the SkuPrice record represents a price specific to a contract and that price is not a list price fixed for the contract at a point in time.
 * UnitPriceType MAY contain provider-specific values when the price model does not align with a recommended value.
 
 ## Recommended Values
