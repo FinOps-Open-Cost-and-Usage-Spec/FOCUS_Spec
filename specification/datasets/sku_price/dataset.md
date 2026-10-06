@@ -34,6 +34,7 @@ The columns are presented in alphabetical order.
 | [SKU Price ID](#datamodel.skuprice.skupriceid)                                       | Dimension   | Mandatory                                                      | False        | String    |
 | [SKU Price Last Updated](#datamodel.skuprice.skupricelastupdated)                    | Dimension   | Mandatory                                                      | False        | Date/Time |
 | [Unit Price](#datamodel.skuprice.unitprice)                                 | Metric      | Mandatory                                                      | False        | Decimal   |
+| [Unit Price Type](#datamodel.skuprice.unitpricetype)                                 | Dimension   | Mandatory                                                      | False        | String    |
 
 ## Relationships<!--SkipTOC-->
 
@@ -45,24 +46,27 @@ Resolving the price that applies to a Cost and Usage charge therefore requires m
 * **Effective Period:** The Cost and Usage [Charge Period Start](#datamodel.costandusage.chargeperiodstart) is on or after the SKU Price record's [SKU Price Effective Start](#datamodel.skuprice.skupriceeffectivestart) and before its [SKU Price Effective End](#datamodel.skuprice.skupriceeffectiveend); for this criterion, a null SKU Price Effective Start represents the earliest available time, and a null SKU Price Effective End represents the latest available time.
 * **Contract:** The Contract ID matches a `ContractId` property extracted from the charge's [Contract Applied](#datamodel.costandusage.contractapplied) array (`ContractApplied.Elements[*].ContractId`), or is null for a public list price. Note that `ContractApplied` only resolves prices associated with contract commitments.
 * **Pricing Currency:** The SKU price's [Pricing Currency](#datamodel.skuprice.pricingcurrency) matches the charge's [PricingCurrency](#datamodel.costandusage.pricingcurrency), or the charge's [BillingCurrency](#datamodel.costandusage.billingcurrency) when the [*operating model*](#glossary:operating-model) does not [include pricing and billing currency differences](#operatingmodelconditions.includespricing-billingcurrencydifferences).
+* **Unit Price Type:** The SKU Price record's [Unit Price Type](#datamodel.skuprice.unitpricetype) is filtered to a single value (e.g., "List"). Because one contract can carry more than one price type for the same SKU Price ID (e.g., a "Base" rate and a "Contracted" rate), the other criteria alone can match more than one record. Comparing a billed contracted rate against its published catalog rate, for example, requires looking up the corresponding SKU Price record where Unit Price Type is "List".
 
-The resolved record carries the unit price for that combination. If Contract ID is populated, the Unit Price represents the contractually agreed rate; if null, it represents the public list price. Comparing a billed contracted rate against its published catalog rate therefore requires looking up the corresponding SKU Price record where Contract ID is null.
+The resolved record carries the unit price for that combination.
 
 > **Notes:**
 >
-> * Because the base unit prices in the Cost and Usage dataset (i.e., [List Unit Price](#datamodel.costandusage.listunitprice) and [Contracted Unit Price](#datamodel.costandusage.contractedunitprice)) are denominated in the Billing Currency, comparing a Cost and Usage rate against a resolved SKU Price record requires currency conversion whenever the charge's Billing Currency differs from its Pricing Currency. However, the Pricing Currency unit prices (i.e., [Pricing Currency List Unit Price](#datamodel.costandusage.pricingcurrencylistunitprice) and [Pricing Currency Contracted Unit Price](#datamodel.costandusage.pricingcurrencycontractedunitprice)) are denominated in the Pricing Currency and compare directly against Unit Price without conversion.
+> * Because the unit prices in the Cost and Usage dataset (i.e., [List Unit Price](#datamodel.costandusage.listunitprice) and [Contracted Unit Price](#datamodel.costandusage.contractedunitprice)) are denominated in the Billing Currency, comparing a Cost and Usage rate against a resolved SKU Price record requires currency conversion whenever the charge's Billing Currency differs from its Pricing Currency. However, the Pricing Currency unit prices (i.e., [Pricing Currency List Unit Price](#datamodel.costandusage.pricingcurrencylistunitprice) and [Pricing Currency Contracted Unit Price](#datamodel.costandusage.pricingcurrencycontractedunitprice)) are denominated in the Pricing Currency and compare directly against Unit Price without conversion.
 > * Because the SKU Price dataset is delivered as a point-in-time snapshot, historical charges in the Cost and Usage dataset may reference a superseded price record that is no longer included in the current catalog. Practitioners must retain historical SKU Price snapshots to reliably resolve older charges.
 
 Additionally, the SKU Price dataset can optionally join to the [Contract Commitment](#datamodel.contractcommitment) dataset to relate a specific contracted price to an overarching contractual agreement.
 
 | Dataset A           | Dataset A Column  | Dataset B           | Dataset B Column       |
 | ------------------- | ----------------- | ------------------- | ---------------------- |
-| Cost and Usage      | Service Provider Name, SKU Price ID, ContractApplied.Elements[*].ContractId, Pricing Currency (or Billing Currency), plus time (see above) | SKU Price | Service Provider Name, SKU Price ID, Contract ID, Pricing Currency, plus time (see above) |
+| Cost and Usage      | Service Provider Name, SKU Price ID, ContractApplied.Elements[*].ContractId, Pricing Currency (or Billing Currency), plus time (see above) | SKU Price | Service Provider Name, SKU Price ID, Contract ID, Pricing Currency, Unit Price Type (one value, see above), plus time (see above) |
 | Contract Commitment | Contract ID       | SKU Price           | Contract ID            |
 
 ## Implementation Guidance<!--SkipTOC-->
 
 Because a SKU Price ID represents a specific price point, it inherently defines the quantity tier for that price. Service providers that natively share a single underlying identifier across multiple quantity tiers will need to generate a distinct SKU Price ID for each tier when exporting data to FOCUS. In such a case, this can be achieved by simply concatenating the price ID with the tier start (and optionally tier end).
+
+The same applies to commitment terms. Service providers that price one SKU at different rates under different commitment terms (e.g., one year and three years) will need a distinct SKU Price ID for each term, because [Purchase Duration Type](#datamodel.skuprice.purchasedurationtype) is null on "Usage" records and cannot separate them.
 
 This ensures that each tier maintains its own distinct identifier, allowing practitioners to join Cost and Usage data directly to the correct tier using SKU Price ID without needing to manually evaluate the Quantity Tier Minimum boundaries.
 
@@ -93,14 +97,15 @@ SkuPrice MUST adhere to the following requirements:
   * SkuPrice MUST include [SkuPriceId](#datamodel.skuprice.skupriceid).
   * SkuPrice MUST include [SkuPriceLastUpdated](#datamodel.skuprice.skupricelastupdated).
   * SkuPrice MUST include [UnitPrice](#datamodel.skuprice.unitprice).
+  * SkuPrice MUST include [UnitPriceType](#datamodel.skuprice.unitpricetype).
   * SkuPrice SHOULD include [*custom columns*](#glossary:custom-column) needed to identify specific rate card routing logic when [*FOCUS columns*](#glossary:FOCUS-column) are not sufficient.
 * SkuPrice MUST conform to [DatasetCompleteness](#attributes.datasetcompleteness) requirements.
 * SkuPrice MUST conform to [DatasetConfiguration](#attributes.datasetconfiguration) requirements.
 * SkuPrice MUST conform to [DeliveryHandling](#attributes.deliveryhandling) requirements.
 * SkuPrice MUST use the Overwrite delivery mechanism.
 * SkuPrice SHOULD contain at least one record for every [SkuPriceId](#datamodel.skuprice.skupriceid) referenced in the [CostAndUsage](#datamodel.costandusage) dataset.
-* SkuPrice MUST NOT contain multiple records that share identical values (including nulls) across ServiceProviderName, SkuPriceId, ContractId, SkuPriceEffectiveStart, and PricingCurrency.
-* SkuPrice MUST NOT contain records with overlapping effective periods (defined by SkuPriceEffectiveStart and SkuPriceEffectiveEnd) when those records share identical values (including nulls) across ServiceProviderName, SkuPriceId, ContractId, and PricingCurrency; for this constraint, a null SkuPriceEffectiveStart represents the earliest available time, and a null SkuPriceEffectiveEnd represents the latest available time.
+* SkuPrice MUST NOT contain multiple records that share identical values (including nulls) across ServiceProviderName, SkuPriceId, ContractId, SkuPriceEffectiveStart, PricingCurrency, and UnitPriceType.
+* SkuPrice MUST NOT contain records with overlapping effective periods (defined by SkuPriceEffectiveStart and SkuPriceEffectiveEnd) when those records share identical values (including nulls) across ServiceProviderName, SkuPriceId, ContractId, PricingCurrency, and UnitPriceType; for this constraint, a null SkuPriceEffectiveStart represents the earliest available time, and a null SkuPriceEffectiveEnd represents the latest available time.
 * SkuPrice *FOCUS columns* MUST conform to [FocusColumnHandling](#attributes.focuscolumnhandling) requirements.
 * SkuPrice *FOCUS columns* MUST conform to [NullHandling](#attributes.nullhandling) requirements.
 * SkuPrice *custom columns* MUST conform to [CustomColumnHandling](#attributes.customcolumnhandling) requirements.
