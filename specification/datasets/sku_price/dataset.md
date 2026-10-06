@@ -48,7 +48,7 @@ Resolving the price that applies to a Cost and Usage charge therefore requires m
 * **Pricing Currency:** The SKU price's [Pricing Currency](#datamodel.skuprice.pricingcurrency) matches the charge's [PricingCurrency](#datamodel.costandusage.pricingcurrency), or the charge's [BillingCurrency](#datamodel.costandusage.billingcurrency) when the [*operating model*](#glossary:operating-model) does not [include pricing and billing currency differences](#operatingmodelconditions.includespricing-billingcurrencydifferences).
 * **Unit Price Type:** The SKU price's [Unit Price Type](#datamodel.skuprice.unitpricetype) is filtered to isolate a specific price model (e.g., "List"). Because a single SKU Price ID may carry multiple standard public price types (e.g., distinct "Base" and "List" rates), this filter is required to avoid data duplication. Comparing a billed contracted rate against its published catalog rate, for example, requires looking up the corresponding SKU Price record where Unit Price Type is "List".
 
-The resolved record carries the unit price for that combination. 
+The resolved record carries the unit price for that combination.
 
 > **Notes:**
 >
