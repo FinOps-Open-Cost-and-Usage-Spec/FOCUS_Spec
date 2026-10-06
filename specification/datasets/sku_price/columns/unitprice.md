@@ -2,7 +2,7 @@
 
 The Unit Price represents the service-provider-published unit price for a single [Pricing Unit](#datamodel.skuprice.pricingunit) of the associated [*SKU Price*](#glossary:sku-price). This price is denominated in the [Pricing Currency](#datamodel.skuprice.pricingcurrency).
 
-When [Contract ID](#datamodel.skuprice.contractid) is null, the Unit Price represents the standard public list price. When Contract ID is populated, the Unit Price represents a contractually agreed rate, typically lower than the public rate.
+When [Contract ID](#datamodel.skuprice.contractid) is null, the Unit Price represents the standard public price. When Contract ID is populated, the Unit Price represents a contractually agreed rate, typically lower than the public rate.
 
 ## Requirements
 
