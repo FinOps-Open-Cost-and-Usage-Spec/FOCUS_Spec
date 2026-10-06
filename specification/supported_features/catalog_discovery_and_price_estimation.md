@@ -99,6 +99,8 @@ Pricing Currency Category is returned alongside the total because a "Consumable"
 
 Quantity Tier Minimum and Quantity Tier Maximum are returned so each row can be matched to the tier it prices. Each tier carries its own SKU Price ID, so a planned line names its tier. A quantity that spans tiers is entered as one line per tier, split as the pricing terms of the *service provider* dictate, since whether a tier's rate applies only to the units inside that tier or to every unit consumed is a property of those terms rather than of the tier boundaries.
 
+The query prices each line at the public rate. Replacing `SP.ContractId IS NULL` with `SP.ContractId = ?` prices it at the rate negotiated under that *contract* instead, and a line whose SKU Price ID the *contract* does not price returns with its price columns null.
+
 ```sql
 WITH PlannedUsage (ServiceProviderName, SkuPriceId, PlannedQuantity, PlannedDate) AS (
   VALUES (?, ?, ?, ?)
