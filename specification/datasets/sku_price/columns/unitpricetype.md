@@ -1,6 +1,6 @@
 # Unit Price Type
 
-Unit Price Type categorizes the monetary value in [Unit Price](#datamodel.skuprice.unitprice) by indicating the nature of the rate. This categorization delineates between a standard public price, a baseline for tiered calculations, a custom contractual agreement, or other price types specific to a given [*service provider*](#glossary:service-provider).
+Unit Price Type categorizes the monetary value in [Unit Price](#datamodel.skuprice.unitprice) by indicating the nature of the rate. This categorization delineates between a standard public price, a baseline price tied to a specific [*contract*](#glossary:contract), a price made available as part of a custom negotiated agreement, or other price types specific to a given [*service provider*](#glossary:service-provider).
 
 ## Requirements
 
@@ -15,9 +15,9 @@ UnitPriceType MUST adhere to the following requirements:
 
 | Value        | Description                                                                 |
 |:-------------|:----------------------------------------------------------------------------|
-| List         | The standard public catalog price offered to all consumers before discounts.|
-| Contracted   | A custom price established through a contractual agreement.                   |
-| Base         | A list price for a given contract as it existed at a specific point in time, typically at the beginning of the contract. |
+| List         | A price not specific to a *contract*, such as a published catalog price or a temporary promotional price. |
+| Base         | A list price fixed for a *contract* at a point in time, typically at the beginning of the *contract*. |
+| Contracted   | A price specific to a *contract*, other than a "Base" price. |
 
 ## Column ID
 
@@ -36,12 +36,12 @@ Categorizes the monetary value in *Unit Price*.
 | Constraint                 | Value                                     |
 | :------------------------- | :---------------------------------------- |
 | Dataset                    | [SKU Price](#datamodel.skuprice)          |
-| Operating Model Conditions | None                                      |
+| Operating Model Conditions | Not applicable                            |
 | Column type                | Dimension                                 |
 | Feature level              | Mandatory                                 |
 | Allows nulls               | False                                     |
 | Data type                  | String                                    |
-| Value format               | Open                                      |
+| Value format               | Recommended values                                      |
 
 ## Version Introduced
 

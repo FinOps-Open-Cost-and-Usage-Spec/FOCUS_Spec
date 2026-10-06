@@ -46,7 +46,7 @@ Resolving the price that applies to a Cost and Usage charge therefore requires m
 * **Effective Period:** The Cost and Usage [Charge Period Start](#datamodel.costandusage.chargeperiodstart) is on or after the SKU Price record's [SKU Price Effective Start](#datamodel.skuprice.skupriceeffectivestart) and before its [SKU Price Effective End](#datamodel.skuprice.skupriceeffectiveend); for this criterion, a null SKU Price Effective Start represents the earliest available time, and a null SKU Price Effective End represents the latest available time.
 * **Contract:** The Contract ID matches a `ContractId` property extracted from the charge's [Contract Applied](#datamodel.costandusage.contractapplied) array (`ContractApplied.Elements[*].ContractId`), or is null for a public list price. Note that `ContractApplied` only resolves prices associated with contract commitments.
 * **Pricing Currency:** The SKU price's [Pricing Currency](#datamodel.skuprice.pricingcurrency) matches the charge's [PricingCurrency](#datamodel.costandusage.pricingcurrency), or the charge's [BillingCurrency](#datamodel.costandusage.billingcurrency) when the [*operating model*](#glossary:operating-model) does not [include pricing and billing currency differences](#operatingmodelconditions.includespricing-billingcurrencydifferences).
-* **Unit Price Type:** The SKU price's [Unit Price Type](#datamodel.skuprice.unitpricetype) is filtered to isolate a specific price model (e.g., "List"). Because a single SKU Price ID may carry multiple standard public price types (e.g., distinct "Base" and "List" rates), this filter is required to avoid data duplication. Comparing a billed contracted rate against its published catalog rate, for example, requires looking up the corresponding SKU Price record where Unit Price Type is "List".
+* **Unit Price Type:** The SKU Price record's [Unit Price Type](#datamodel.skuprice.unitpricetype) is filtered to a single value (e.g., "List"). Because one contract can carry more than one price type for the same SKU Price ID (e.g., a "Base" rate and a "Contracted" rate), the other criteria alone can match more than one record. Comparing a billed contracted rate against its published catalog rate, for example, requires looking up the corresponding SKU Price record where Unit Price Type is "List".
 
 The resolved record carries the unit price for that combination.
 
@@ -59,7 +59,7 @@ Additionally, the SKU Price dataset can optionally join to the [Contract Commitm
 
 | Dataset A           | Dataset A Column  | Dataset B           | Dataset B Column       |
 | ------------------- | ----------------- | ------------------- | ---------------------- |
-| Cost and Usage      | Service Provider Name, SKU Price ID, ContractApplied.Elements[*].ContractId, Pricing Currency (or Billing Currency), plus time (see above) | SKU Price | Service Provider Name, SKU Price ID, Contract ID, Pricing Currency, UnitPriceType = "List", plus time (see above) |
+| Cost and Usage      | Service Provider Name, SKU Price ID, ContractApplied.Elements[*].ContractId, Pricing Currency (or Billing Currency), plus time (see above) | SKU Price | Service Provider Name, SKU Price ID, Contract ID, Pricing Currency, Unit Price Type (one value, see above), plus time (see above) |
 | Contract Commitment | Contract ID       | SKU Price           | Contract ID            |
 
 ## Implementation Guidance<!--SkipTOC-->
