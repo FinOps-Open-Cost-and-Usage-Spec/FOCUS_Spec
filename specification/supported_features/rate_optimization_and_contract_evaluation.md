@@ -94,6 +94,7 @@ Each conditional column narrows this feature on its own:
   * SkuPriceDescription
   * SkuPriceEffectiveEnd
   * SkuPriceEffectiveStart
+  * SkuPriceEligibility
   * SkuPriceId
 * [CostAndUsage](#datamodel.costandusage)
   * BillingAccountId
@@ -102,9 +103,14 @@ Each conditional column narrows this feature on its own:
   * ChargePeriodEnd
   * ChargePeriodStart
   * CommitmentDiscountId
+  * ContractApplied
   * ContractedUnitPrice
   * EffectiveCost
   * ListUnitPrice
+  * PricingCurrency
+  * PricingCurrencyContractedUnitPrice
+  * PricingCurrencyEffectiveCost
+  * PricingCurrencyListUnitPrice
   * PricingQuantity
   * PricingUnit
   * ServiceProviderName
