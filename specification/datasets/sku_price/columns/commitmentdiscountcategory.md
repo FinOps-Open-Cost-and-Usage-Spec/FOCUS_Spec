@@ -1,6 +1,6 @@
 # Commitment Discount Category
 
-Commitment Discount Category indicates, for a [*SKU Price*](#glossary:sku-price) record representing a [*commitment discount*](#glossary:commitment-discount), whether the discount is based on usage quantity or cost (aka "spend"). The CommitmentDiscountCategory column is only applicable to *commitment discounts* and not [*negotiated discounts*](#glossary:negotiated-discount).
+Commitment Discount Category indicates whether the [*commitment discount*](#glossary:commitment-discount) a [SKU Price](#datamodel.skuprice) record relates to is based on usage quantity or cost (aka "spend"). The CommitmentDiscountCategory column is only applicable to *commitment discounts* and not [*negotiated discounts*](#glossary:negotiated-discount).
 
 ## Requirements
 
@@ -29,7 +29,7 @@ Commitment Discount Category
 
 ## Description
 
-Indicates, for a *SKU Price* record representing a *commitment discount*, whether the commitment is based on usage quantity or cost (aka "spend").
+Indicates whether the *commitment discount* a SKU Price record relates to is based on usage quantity or cost (aka "spend").
 
 ## Content Constraints
 

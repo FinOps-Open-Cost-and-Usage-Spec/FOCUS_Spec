@@ -7,7 +7,10 @@ Unit Price Type categorizes the monetary value in [Unit Price](#datamodel.skupri
 UnitPriceType MUST adhere to the following requirements:
 
 * UnitPriceType MUST be of type String.
+* UnitPriceType MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * UnitPriceType MUST NOT be null.
+* UnitPriceType MUST NOT be "Base" when the SkuPrice record does not represent the [*list unit price*](#glossary:list-unit-price) at a point in time, fixed for a given [ContractId](#datamodel.skuprice.contractid).
+* UnitPriceType MUST NOT be "Contracted" when the SkuPrice record does not represent a [*contracted unit price*](#glossary:contracted-unit-price) for a given ContractId.
 * UnitPriceType SHOULD use one of the recommended values when the price model aligns with a defined concept.
 * UnitPriceType SHOULD be "List" when the SkuPrice record does not represent a price specific to a contract.
 * UnitPriceType SHOULD be "Base" when the SkuPrice record represents a price specific to a contract and that price is a list price fixed for the contract at a point in time.
@@ -18,9 +21,9 @@ UnitPriceType MUST adhere to the following requirements:
 
 | Value        | Description                                                                 |
 |:-------------|:----------------------------------------------------------------------------|
-| List         | A price not specific to a *contract*, such as a published catalog price or a temporary promotional price. |
-| Base         | A list price fixed for a *contract* at a point in time, typically at the beginning of the *contract*. |
-| Contracted   | A price specific to a *contract*, other than a "Base" price. |
+| List         | A *list unit price* not specific to a *contract*. |
+| Base         | A *list unit price* at a point in time, fixed for a given *contract*, typically at the beginning of the *contract*. |
+| Contracted   | A *contracted unit price* for a given *contract*. |
 
 ## Column ID
 
