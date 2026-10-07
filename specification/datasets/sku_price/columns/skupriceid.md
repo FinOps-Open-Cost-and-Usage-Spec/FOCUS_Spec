@@ -15,6 +15,7 @@ SkuPriceId MUST adhere to the following requirements:
 * SkuPriceId MUST have one and only one [PricingUnit](#datamodel.skuprice.pricingunit).
 * SkuPriceId MUST have one and only one [ChargeCategory](#datamodel.skuprice.chargecategory).
 * SkuPriceId MUST have one and only one [QuantityTierMinimum](#datamodel.skuprice.quantitytierminimum) when the [*operating model*](#glossary:operating-model) [includes quantity tier pricing](#operatingmodelconditions.includesquantitytierpricing).
+* SkuPriceId MUST have one and only one [QuantityTierMaximum](#datamodel.skuprice.quantitytiermaximum) (including null) when the *operating model* includes quantity tier pricing.
 * SkuPriceId MUST remain consistent over time.
 * SkuPriceId MUST remain consistent across contracts or billing agreements.
 * SkuPriceId MAY match SkuId.

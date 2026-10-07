@@ -11,8 +11,10 @@ ContractId MUST adhere to the following requirements:
 * ContractId MUST be of type String.
 * ContractId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * ContractId MUST adhere to the following nullability requirements:
-  * ContractId MUST be null when the SkuPrice record does not represent a price established by a contract.
-  * ContractId MUST NOT be null when the SkuPrice record represents a price established by a contract.
+  * ContractId MUST be null when the SkuPrice record does not represent a price specific to a contract.
+  * ContractId MUST be null when [UnitPriceType](#datamodel.skuprice.unitpricetype) is "List".
+  * ContractId MUST NOT be null when the SkuPrice record represents a price specific to a contract.
+  * ContractId MUST NOT be null when UnitPriceType is "Base" or "Contracted".
 * When ContractId is not null, ContractId MUST adhere to the following requirements:
   * ContractId MUST be a unique identifier within the service provider.
   * ContractId SHOULD be a fully-qualified identifier.
