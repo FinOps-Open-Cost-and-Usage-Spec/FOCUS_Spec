@@ -30,11 +30,11 @@ FOCUS enables normalization of usage-based billing data from artificial intellig
 
 ## Example SQL Queries
 
-The following queries use BigQuery Standard SQL JSON functions (e.g., `JSON_VALUE`) to read the TokenDirection and TokenCacheAction properties from SkuPriceDetails. Similar JSON functions are widely available across major SQL engines with variances in syntax, so the examples may need to be adapted for other database engines. Standard SQL functions used here (e.g., `NULLIF`) should work without modification.
+The following queries use BigQuery Standard SQL JSON functions (e.g., `JSON_VALUE`) to read the ModelDeveloper, ModelId, TokenDirection, and TokenCacheAction properties from SkuPriceDetails. Similar JSON functions are widely available across major SQL engines with variances in syntax, so the examples may need to be adapted for other database engines. Standard SQL functions used here (e.g., `NULLIF`) should work without modification.
 
 ### Effective Cost Per Million Tokens
 
-Effective cost per one million tokens, by SKU, token direction, and cache action:
+Effective cost per one million tokens, by model, SKU, token direction, and cache action:
 
 ```sql
 SELECT
