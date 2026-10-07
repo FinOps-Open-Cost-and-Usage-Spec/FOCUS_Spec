@@ -85,7 +85,7 @@ SKU Price Eligibility uses [*JSON object format*](#attributes.jsonobjectformat).
 
 ### Find the List Prices in Force at a Point in Time
 
-This query takes a service provider, a pricing service name, and a point in time. It returns the public usage rates for that service at that moment. It keeps only records with a Charge Category of "Usage", so purchase fees and granted credits are left out. Dropping that filter returns every public rate for the service. The same point in time goes to both date bounds. Each bound is tested for null, so a price with no start date or no end date is returned rather than dropped.
+This query answers which public usage rates apply to a service at a given moment. An estimate starts from these rates. It takes a service provider, a pricing service name, and a point in time. It keeps only records with a Charge Category of "Usage", so purchase fees and granted credits are left out. Dropping that filter returns every public rate for the service. The same point in time goes to both date bounds. Each bound is tested for null, so a price with no start date or no end date is returned rather than dropped.
 
 It also keeps only records with a Unit Price Type of "List", which hold the public list price. A record under a *contract* holds a "Base" or "Contracted" price instead. A record with no *contract* can instead hold a Unit Price Type the *service provider* defines for itself. This query leaves both out.
 
@@ -115,7 +115,7 @@ ORDER BY SkuId, UnitPrice
 
 ### Estimate the Cost of a Planned Workload
 
-This query takes a set of planned lines. Each line has a service provider, the SKU Price ID it is priced under, a planned quantity, and a point in time. The query returns the projected cost of each line and the values behind it. The planned quantity is counted in the Pricing Unit of the matching price. So a rate quoted per `1K Requests` takes a quantity counted in thousands of requests, not in requests.
+This query answers what a planned workload would cost at public rates. The total can then be checked against a budget or compared with another design. It takes a set of planned lines. Each line has a service provider, the SKU Price ID it is priced under, a planned quantity, and a point in time. The query returns the projected cost of each line and the values behind it. The planned quantity is counted in the Pricing Unit of the matching price. So a rate quoted per `1K Requests` takes a quantity counted in thousands of requests, not in requests.
 
 Pricing Currency Category is returned with the total, because a "Consumable" rate gives a balance in a *consumption currency*, not money. Rows with different Pricing Currency values cannot be added together without a conversion, and neither can a mix of "Payable" and "Consumable" rows. The SKU Price dataset does not carry that conversion. A SKU Price ID published in more than one pricing currency returns one row per currency for the same planned line. Those rows are alternative prices for that line, not parts of it.
 
@@ -151,7 +151,7 @@ ORDER BY SP.PricingCurrencyCategory, SP.PricingCurrency, EstimatedPricingCurrenc
 
 ### Identify the Prices a Billing Account is Eligible For
 
-This query takes a service provider, a point in time, and a [*billing account*](#glossary:billing-account) ID. It returns the prices that account may be eligible for. A price with `IsGlobalScope` set to `true` applies to every entity its `Exclusions` do not remove. A price with neither global nor complex scope has an `Inclusions` array. Each rule in that array names a dimension, an operator, and the values that decide which entities are included.
+This query answers which prices a [*billing account*](#glossary:billing-account) may be eligible for. An estimate can then set aside prices the account cannot receive. It takes a service provider, a point in time, and a *billing account* ID. A price with `IsGlobalScope` set to `true` applies to every entity its `Exclusions` do not remove. A price with neither global nor complex scope has an `Inclusions` array. Each rule in that array names a dimension, an operator, and the values that decide which entities are included.
 
 Contract ID and Unit Price Type are returned to tell apart the prices under one SKU Price ID. Contract ID separates a *contract* price from the list price. Unit Price Type separates a "Base" price from a "Contracted" one under the same *contract*.
 
@@ -189,7 +189,7 @@ ORDER BY SkuPriceId, ContractId, UnitPriceType
 
 ### Separate Usage Rates from Purchase Fees and Credit Values
 
-This query takes a service provider and a point in time. It shows how the catalog splits across Charge Category. A forecast built only on "Usage" rates leaves out any purchase fees the architecture also has to pay. So each category is counted on its own, not added together. Only "List" records are counted, so the counts and price ranges describe the public catalog, not the prices of any one *contract*. Pricing Currency Category is returned so a rate priced in a *consumption currency* is not read as money.
+This query answers what kinds of prices a catalog holds. Knowing that keeps a forecast from leaving out purchase fees or reading a credit value as a usage rate. It takes a service provider and a point in time, and it shows how the catalog splits across Charge Category. A forecast built only on "Usage" rates leaves out any purchase fees the architecture also has to pay. So each category is counted on its own, not added together. Only "List" records are counted, so the counts and price ranges describe the public catalog, not the prices of any one *contract*. Pricing Currency Category is returned so a rate priced in a *consumption currency* is not read as money.
 
 ```sql
 SELECT
@@ -211,7 +211,7 @@ ORDER BY ChargeCategory, PricingUnit
 
 ### Find Announced Price Changes and Scheduled Retirements
 
-This query takes a service provider and a point in time. It returns the public prices that change after that moment: prices that start later, and prices that stop applying later. A SKU Price Effective Start after that moment is an announced price change. A SKU Price Effective End after that moment is a scheduled retirement of that price. Only "List" records are returned. Dropping that filter also returns changes to *contract* prices and to any other Unit Price Type the *service provider* publishes.
+This query answers which public prices change after a given moment. A forecast or a migration plan can then account for a change before it takes effect. It takes a service provider and a point in time. It returns the public prices that change after that moment: prices that start later, and prices that stop applying later. A SKU Price Effective Start after that moment is an announced price change. A SKU Price Effective End after that moment is a scheduled retirement of that price. Only "List" records are returned. Dropping that filter also returns changes to *contract* prices and to any other Unit Price Type the *service provider* publishes.
 
 SKU Price Created and SKU Price Last Updated are returned to show when the record entered the catalog and when it last changed. The dataset shows prices as of the date it is captured. To rebuild a price history the *service provider* does not publish, a *practitioner* keeps dataset instances over time. The *practitioner* then compares them on SKU Price Effective Start and SKU Price Effective End. The two timestamps cannot replace that comparison, because a correction can update a record after its effective window has closed.
 
@@ -235,7 +235,7 @@ ORDER BY SkuPriceEffectiveStart, SkuPriceEffectiveEnd
 
 ### Compare List Prices Across Regions
 
-This query takes a service provider, a pricing service name, and a point in time. It shows how the public rate for each *SKU* varies by location, so a deployment decision can weigh the price difference between regions. Rows are sorted by SKU ID, because SKU ID stays the same across the price details a *SKU* varies by, including location. SKU Price ID may not, since a *service provider* may publish a separate SKU Price ID for each region. This query applies where the *operating model* includes regions.
+This query answers how the public rate for each *SKU* varies by location. A deployment decision can then weigh the price difference between regions. It takes a service provider, a pricing service name, and a point in time. Rows are sorted by SKU ID, because SKU ID stays the same across the price details a *SKU* varies by, including location. SKU Price ID may not, since a *service provider* may publish a separate SKU Price ID for each region. This query applies where the *operating model* includes regions.
 
 ```sql
 SELECT
