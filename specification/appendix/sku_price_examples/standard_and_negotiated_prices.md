@@ -6,8 +6,8 @@ Aura Web publishes a public rate for its standard virtual machine and separately
 
 Note the following details in the example dataset:
 
-* The public rate carries a null [ContractId](#datamodel.skuprice.contractid), which is what identifies it as a list price available to any customer. [UnitPrice](#datamodel.skuprice.unitprice) carries the published rate of 0.384000 per hour.
-* The contracted rate carries a ContractId of "auraweb:contract::ACCT-123456789012:agreements/ctr-7f3a91b2c4d5", so its UnitPrice is populated at 0.326400 per hour, a 15 percent reduction. Comparing a negotiated rate to its public equivalent requires looking up the corresponding SKU Price record where Contract ID is null.
+* The public rate carries a null [ContractId](#datamodel.skuprice.contractid) and a [UnitPriceType](#datamodel.skuprice.unitpricetype) of "List", which identify it as a list price that is not specific to a contract. [UnitPrice](#datamodel.skuprice.unitprice) carries the published rate of 0.384000 per hour.
+* The contracted rate carries a ContractId of "auraweb:contract::ACCT-123456789012:agreements/ctr-7f3a91b2c4d5" and a UnitPriceType of "Contracted", so its UnitPrice is populated at 0.326400 per hour, a 15 percent reduction. Comparing a negotiated rate to its public equivalent requires looking up the corresponding SKU Price record where UnitPriceType is "List".
 * The two records share a SkuPriceId. A SKU Price ID stays consistent across contracts, so the negotiated rate is the same price point under different terms rather than a different price point. ContractId is a member of the composite key, which is what allows the two records to coexist.
 * [SkuPriceEligibility](#datamodel.skuprice.skupriceeligibility) is where the two records differ in reach. The public rate uses `IsGlobalScope`, which states that its eligibility is not restricted to an enumerated set of entities:
 
