@@ -42,7 +42,7 @@ The same examples can be read by axis. An example may appear under more than one
 | :--- | :--- |
 | Model developer sells, hosts, and invoices | <ul><li>Per-Token AI Model API</li><li>Multi-Model Usage</li><li>Drawdown via Prepayment</li></ul> |
 | CSP sells, hosts, and invoices a third-party model | <ul><li>CSP-Served Third-Party Model</li></ul> |
-| Marketplace seller (model developer) sells; CSP hosts and invoices (scenario 3.1.3 in [Examples: Participating Entity Identification](#appendix.examples:participatingentityidentification)) | <ul><li>Cached Tokens via CSP Marketplace</li><li>Multi-Model Invoice via CSP Marketplace</li></ul> |
+| Marketplace seller (model developer) sells; CSP hosts and invoices (scenario 3.2.2 in [Examples: Participating Entity Identification](#appendix.examples:participatingentityidentification)) | <ul><li>Cached Tokens via CSP Marketplace</li><li>Multi-Model Invoice via CSP Marketplace</li></ul> |
 
 ### Billing Mechanics
 
