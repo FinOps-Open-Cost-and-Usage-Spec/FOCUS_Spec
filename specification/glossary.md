@@ -109,7 +109,7 @@ A specific term within a [*contract*](#glossary:contract) that defines a measura
 
 <a name="glossary:contracted-unit-price"><b>Contracted Unit Price</b></a>
 
-The negotiated unit price per [Pricing Unit](#datamodel.costandusage.pricingunit) for the [*SKU Price*](#glossary:sku-price) identified by the given [SKU Price ID](#datamodel.costandusage.skupriceid). Contracted Unit Price reflects [*negotiated pricing terms*](#glossary:negotiated-pricing-terms) for the associated *SKU Price* that are independent of any discount-bearing [*commitment programs*](#glossary:commitment-program) (e.g., [*commitment discount*](#glossary:commitment-discount)) being applied to the [*charge*](#glossary:charge). It does not reflect any unit price impact dependent on a discount-bearing *commitment program* being applied to the *charge*. This price is denominated in the [*Billing Currency*](#glossary:billing-currency).
+The negotiated unit price per [Pricing Unit](#datamodel.costandusage.pricingunit) for the [*SKU Price*](#glossary:sku-price) identified by the given [SKU Price ID](#datamodel.costandusage.skupriceid). Contracted Unit Price reflects [*negotiated pricing terms*](#glossary:negotiated-pricing-terms) for the associated *SKU Price* that are independent of any discount-bearing [*commitment programs*](#glossary:commitment-program) (e.g., [*commitment discount*](#glossary:commitment-discount)) being applied to the [*charge*](#glossary:charge). It does not reflect any unit price impact dependent on a discount-bearing *commitment program* being applied to the *charge*.
 
 <a name="glossary:correction"><b>Correction</b></a>
 
@@ -223,7 +223,7 @@ A common acronym for JavaScript Object Notation, a data format codified in [ECMA
 
 <a name="glossary:list-unit-price"><b>List Unit Price</b></a>
 
-The service-provider-suggested unit price per [Pricing Unit](#datamodel.costandusage.pricingunit) for the [*SKU Price*](#glossary:sku-price) identified by the given [SKU Price ID](#datamodel.costandusage.skupriceid). List Unit Price does not reflect [*negotiated pricing terms*](#glossary:negotiated-pricing-terms) for the associated *SKU Price* or any unit price impact dependent on a discount-bearing [*commitment program*](#glossary:commitment-program) (e.g., [*commitment discount*](#glossary:commitment-discount)) being applied to the [*charge*](#glossary:charge). This price is denominated in the [*Billing Currency*](#glossary:billing-currency).
+The service-provider-suggested unit price per [Pricing Unit](#datamodel.costandusage.pricingunit) for the [*SKU Price*](#glossary:sku-price) identified by the given [SKU Price ID](#datamodel.costandusage.skupriceid). List Unit Price does not reflect [*negotiated pricing terms*](#glossary:negotiated-pricing-terms) for the associated *SKU Price* or any unit price impact dependent on a discount-bearing [*commitment program*](#glossary:commitment-program) (e.g., [*commitment discount*](#glossary:commitment-discount)) being applied to the [*charge*](#glossary:charge).
 
 <a name="glossary:managed-service-provider"><b>Managed Service Provider (MSP)</b></a>
 
