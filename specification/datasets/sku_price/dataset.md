@@ -38,7 +38,7 @@ The columns are presented in alphabetical order.
 
 ## Relationships<!--SkipTOC-->
 
-The [SKU Price](#datamodel.skuprice) dataset relates to the [Cost and Usage](#datamodel.costandusage) dataset through the SKU Price ID, enabling the attribution of catalog rates to incurred usage. This is a one-to-many relationship: a single SKU Price ID corresponds to multiple SKU Price records, because a SKU's price varies by effective period, contract, and pricing currency.
+The [SKU Price](#datamodel.skuprice) dataset relates to the [Cost and Usage](#datamodel.costandusage) dataset through the SKU Price ID, enabling the attribution of catalog rates to incurred usage. This is a one-to-many relationship: a single SKU Price ID corresponds to multiple SKU Price records, because a SKU's price varies by effective period, contract, pricing currency, and unit price type.
 
 Resolving the price that applies to a Cost and Usage charge therefore requires more than the SKU Price ID alone. The charge must also be aligned to the SKU Price record using the following criteria:
 
@@ -64,11 +64,11 @@ Additionally, the SKU Price dataset can optionally join to the [Contract Commitm
 
 ## Implementation Guidance<!--SkipTOC-->
 
-Because a SKU Price ID represents a specific price point, it inherently defines the quantity tier for that price. Service providers that natively share a single underlying identifier across multiple quantity tiers will need to generate a distinct SKU Price ID for each tier when exporting data to FOCUS. In such a case, this can be achieved by simply concatenating the price ID with the tier start (and optionally tier end).
-
-The same applies to commitment terms. Service providers that price one SKU at different rates under different commitment terms (e.g., one year and three years) will need a distinct SKU Price ID for each term, because [Purchase Duration Type](#datamodel.skuprice.purchasedurationtype) is null on "Usage" records and cannot separate them.
+Because a SKU Price ID represents a specific price point, it inherently defines the quantity tier for that price. Service providers that natively share a single underlying identifier across multiple quantity tiers will need to generate a distinct SKU Price ID for each tier when exporting data to FOCUS. In such a case, this can be achieved by simply concatenating the price ID with the tier start and tier end.
 
 This ensures that each tier maintains its own distinct identifier, allowing practitioners to join Cost and Usage data directly to the correct tier using SKU Price ID without needing to manually evaluate the Quantity Tier Minimum boundaries.
+
+The same applies to commitment terms. Service providers that price one SKU at different rates under different commitment terms (e.g., one year and three years) will need a distinct SKU Price ID for each term, because [Purchase Duration Type](#datamodel.skuprice.purchasedurationtype) is null on "Usage" records and cannot separate them. A price that differs only by contract keeps its SKU Price ID and is separated by Contract ID.
 
 ## Requirements<!--SkipTOC-->
 
