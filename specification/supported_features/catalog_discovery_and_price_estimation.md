@@ -130,6 +130,7 @@ WITH PlannedUsage (ServiceProviderName, SkuPriceId, PlannedQuantity, PlannedDate
 SELECT
   PU.ServiceProviderName,
   PU.SkuPriceId,
+  PU.PlannedDate,
   SP.SkuPriceDescription,
   SP.PricingUnit,
   SP.QuantityTierMinimum,
@@ -138,7 +139,7 @@ SELECT
   SP.UnitPrice,
   SP.PricingCurrency,
   SP.PricingCurrencyCategory,
-  PU.PlannedQuantity * SP.UnitPrice AS EstimatedPricingCurrencyListCost
+  PU.PlannedQuantity * SP.UnitPrice AS EstimatedPricingCurrencyCost
 FROM PlannedUsage PU
 LEFT JOIN SkuPrice SP
   ON SP.ServiceProviderName = PU.ServiceProviderName
@@ -146,7 +147,7 @@ LEFT JOIN SkuPrice SP
   AND SP.UnitPriceType = 'List'
   AND (SP.SkuPriceEffectiveStart IS NULL OR SP.SkuPriceEffectiveStart <= PU.PlannedDate)
   AND (SP.SkuPriceEffectiveEnd IS NULL OR SP.SkuPriceEffectiveEnd > PU.PlannedDate)
-ORDER BY SP.PricingCurrencyCategory, SP.PricingCurrency, EstimatedPricingCurrencyListCost DESC
+ORDER BY SP.PricingCurrencyCategory, SP.PricingCurrency, EstimatedPricingCurrencyCost DESC
 ```
 
 ### Identify the Prices a Billing Account is Eligible For
