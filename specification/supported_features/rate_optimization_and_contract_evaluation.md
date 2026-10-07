@@ -370,17 +370,17 @@ ORDER BY PQ.TotalEffectiveCost DESC
 
 ### Identify the Next Quantity Tier
 
-This query takes inputs of one or more [*SKUs*](#glossary:sku), each identified by a Service Provider Name and SKU ID, and a point in time. For each tier of the requested *SKUs* that has a next tier, it returns the tier's boundaries and rate, its width, the next tier, the next tier's rate, and the difference between the two rates.
+This query takes one or more *SKUs*, each named by a Service Provider Name and SKU ID, and a point in time. For each tier of those *SKUs* that has a next tier, it returns the tier's boundaries, rate, and width. It also returns the next tier, the next tier's rate, and the difference between the two rates.
 
-The next tier is the tier in the same set of tiers whose Quantity Tier Minimum equals the current tier's Quantity Tier Maximum. The two tiers are matched on Service Provider Name, SKU ID, Pricing Region ID, Contract ID, Pricing Unit, Pricing Currency, and Charge Category, as well as on that boundary. This keeps public and negotiated tiers separate.
+The next tier is the tier in the same set whose Quantity Tier Minimum equals the current tier's Quantity Tier Maximum. The two tiers are matched on Service Provider Name, SKU ID, Pricing Region ID, Contract ID, Unit Price Type, Pricing Unit, Pricing Currency, and Charge Category, as well as on that boundary. This keeps public and negotiated tiers apart. It also keeps a "Base" tier from pairing with a "Contracted" tier under the same *contract*.
 
-The query assumes one set of tiers for each such combination of attributes. Only tiers in effect at the supplied point in time are considered.
+The query assumes one set of tiers for each such combination. It looks only at tiers in effect at the given point in time.
 
-Tier Width is the difference between the current tier's Quantity Tier Maximum and Quantity Tier Minimum. It does not measure how far recorded consumption is from the next tier, since the query reads only the SKU Price dataset.
+Tier Width is the current tier's Quantity Tier Maximum minus its Quantity Tier Minimum. It does not show how far recorded consumption is from the next tier, because the query reads only the SKU Price dataset.
 
-A tier with a null Quantity Tier Maximum is the highest tier and has no next tier, so it does not appear. A tier for which no next tier starts at its Quantity Tier Maximum does not appear either, so a gap or overlap between tier boundaries is not reported as a next-tier relationship. A negotiated tier whose *contract* defines no next tier does not appear, and a requested *SKU* without quantity tiers returns no rows.
+A tier with a null Quantity Tier Maximum is the highest tier. It has no next tier, so it does not appear. A tier is also left out when no other tier starts at its Quantity Tier Maximum. So a gap or overlap between tier boundaries is not reported as a next tier. A negotiated tier whose *contract* defines no next tier does not appear either. For such a tier, the terms of the agreement set the rate beyond its maximum, and the query that compares public and negotiated prices at a given quantity shows both sides at a chosen quantity. A requested *SKU* without quantity tiers returns no rows.
 
-> **Note:** Whether the rate of the next tier applies only to the units inside that tier or retroactively to all units consumed is a property of the published pricing terms for the offering rather than of the tier boundaries, so the difference between the two rates is the change in rate at the boundary rather than the change in cost from reaching the next tier.
+> **Note:** The published pricing terms for the offering, not the tier boundaries, decide whether the next tier's rate applies only to the units inside that tier or to every unit consumed. So the difference between the two rates is the change in rate at the boundary. It is not the change in cost from reaching the next tier.
 
 ```sql
 WITH RequestedSkus (ServiceProviderName, SkuId) AS (
@@ -396,6 +396,7 @@ ActiveTiers AS (
         SP.SkuId,
         SP.PricingRegionId,
         SP.ContractId,
+        SP.UnitPriceType,
         SP.PricingUnit,
         SP.PricingCurrency,
         SP.ChargeCategory,
@@ -419,6 +420,7 @@ SELECT
     CURRENT_TIER.SkuId,
     CURRENT_TIER.PricingRegionId,
     CURRENT_TIER.ContractId,
+    CURRENT_TIER.UnitPriceType,
     CURRENT_TIER.PricingUnit,
     CURRENT_TIER.PricingCurrency,
     CURRENT_TIER.SkuPriceId AS CurrentSkuPriceId,
@@ -451,11 +453,13 @@ INNER JOIN ActiveTiers NEXT_TIER
             AND CURRENT_TIER.ContractId IS NULL
         )
     )
+    AND NEXT_TIER.UnitPriceType = CURRENT_TIER.UnitPriceType
     AND NEXT_TIER.QuantityTierMinimum = CURRENT_TIER.QuantityTierMaximum
 WHERE CURRENT_TIER.QuantityTierMaximum IS NOT NULL
 ORDER BY
     CURRENT_TIER.SkuId,
     CURRENT_TIER.ContractId,
+    CURRENT_TIER.UnitPriceType,
     CURRENT_TIER.QuantityTierMinimum
 ```
 
