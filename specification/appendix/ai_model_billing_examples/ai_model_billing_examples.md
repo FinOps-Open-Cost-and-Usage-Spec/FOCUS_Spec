@@ -25,7 +25,7 @@ Note the following column usage on the token usage rows in the scenarios below:
 
 * [ConsumedQuantity](#datamodel.costandusage.consumedquantity) and [ConsumedUnit](#datamodel.costandusage.consumedunit) carry the raw token count and unit of measure.
 * [PricingQuantity](#datamodel.costandusage.pricingquantity) and [PricingUnit](#datamodel.costandusage.pricingunit) carry the same consumption expressed in the [*block pricing*](#glossary:block-pricing) increment the provider prices against.
-* [SkuId](#datamodel.costandusage.skuid) identifies the priced model offering and [SkuMeter](#datamodel.costandusage.skumeter) distinguishes the token type being charged.
+* [SkuId](#datamodel.costandusage.skuid) reflects the model, token type, and other technical properties of the offering; [SkuMeter](#datamodel.costandusage.skumeter) reflects the token type.
 * [ServiceCategory](#datamodel.costandusage.servicecategory) is "AI and Machine Learning" and [ServiceSubcategory](#datamodel.costandusage.servicesubcategory) is "Generative AI".
 * Model identity is carried in [SkuPriceDetails](#datamodel.costandusage.skupricedetails) using the properties described in the [Examples: AI Model Identity](#appendix.examples:aimodelidentity) section, which are not restated here.
 * The TokenDirection and TokenCacheAction properties of SkuPriceDetails label the direction of the metered tokens and their interaction with a cache, independently of the SkuMeter name.
