@@ -69,7 +69,7 @@ GROUP BY
 
 ### Token Consumption Volume Over Time
 
-Token consumption volume over time, by service, token direction, and cache action:
+Token consumption volume over time, by service, model, token direction, and cache action:
 
 ```sql
 SELECT
