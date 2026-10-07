@@ -25,6 +25,6 @@ Each scenario below links a CSV extract containing the records from the rate car
 
 Two properties of the dataset shape every scenario that follows.
 
-The first is row uniqueness. A SKU Price record is identified by the combination of ServiceProviderName, SkuPriceId, ContractId, SkuPriceEffectiveStart, and PricingCurrency. Two records that differ in any one of those five values are distinct prices for the same SKU Price ID. Two records that match on all five are the same price, and only one of them belongs in the dataset. Every scenario below that shows several records sharing a SKU Price ID is separating them on one of those five values.
+The first is row uniqueness. A SKU Price record is identified by the combination of ServiceProviderName, SkuPriceId, ContractId, SkuPriceEffectiveStart, PricingCurrency, and UnitPriceType. Two records that differ in any one of those six values are distinct prices for the same SKU Price ID. Two records that match on all six are the same price, and only one of them belongs in the dataset. Every scenario below that shows several records sharing a SKU Price ID is separating them on one of those six values.
 
 The second is that the dataset describes prices, not charges. A price list is published before consumption happens, so it records what a price is and who is eligible for it. It does not record whether a price was used, how much was consumed, or what a customer was ultimately billed. Those belong to the [Cost and Usage](#datamodel.costandusage) dataset.
