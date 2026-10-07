@@ -14,11 +14,11 @@ An estimate from public prices multiplies the planned quantity by the Unit Price
 
 Pricing Currency Category says whether that result is money or a balance in a [*consumption currency*](#glossary:consumption-currency) the *service provider* issues. A "Consumable" rate gives a balance, not money. That balance needs another conversion before it can be read as money. So an estimate that mixes the two categories without converting is not a money total.
 
-Charge Category sorts prices into three kinds. "Usage" is the rate to use something. "Purchase" is the fee to buy it. "Credit" is the value of one unit of a granted credit. A forecast keeps usage rates and purchase fees apart instead of adding them together.
+Charge Category sorts prices into three kinds. "Usage" is the rate to use something. "Purchase" is the fee to buy it. "Credit" is the value of one unit of a granted credit. So a forecast can keep usage rates and purchase fees apart instead of adding them together.
 
-SKU Price Eligibility holds the rules that decide which entities can get a price. A published catalog often includes prices an organization cannot get. An estimate that checks eligibility first uses only prices the organization can actually get. An estimate that skips this check may rest on prices out of reach.
+SKU Price Eligibility holds the rules that decide which entities can get a price. A published catalog often includes prices an organization cannot get. Checking eligibility before pricing an architecture is what separates an estimate the organization can achieve from one that is only theoretical.
 
-An estimate built this way leaves out any [*commitment discount*](#glossary:commitment-discount). Unit Price on a "List" record is the public rate. No rate in the SKU Price dataset shows the effect of a *commitment discount* applied to consumption. An organization with commitments that would cover the planned architecture pays less than this estimate shows. That difference is measured from recorded consumption in Cost and Usage, through the [Cost Comparison](#supportedfeatures.costcomparison) supported feature, not from the price list.
+An estimate built this way leaves out the effect of any [*commitment discount*](#glossary:commitment-discount). Unit Price on a "List" record is the public rate. No rate in the SKU Price dataset shows the effect of a *commitment discount* applied to consumption. An organization with commitments that would cover the planned architecture pays less than this estimate shows. That difference is measured from recorded consumption in Cost and Usage, through the [Cost Comparison](#supportedfeatures.costcomparison) supported feature, not from the price list.
 
 ### Reading the Effective Date Columns
 
@@ -33,7 +33,7 @@ So a lookup at a point in time treats a null bound as having no limit on that si
 
 A [*charge*](#glossary:charge) follows the same rule, using its Charge Period Start. A charge falls under a price when its Charge Period Start is on or after SKU Price Effective Start and before SKU Price Effective End.
 
-> **Note:** A [*dataset instance*](#glossary:dataset-instance) may hold only the prices in force today. It may also hold future price changes and old prices that were replaced. The specification does not require a *service provider* to publish price history, and FOCUS defines no way to tell the two kinds apart. So the same query can return one row per SKU Price ID from one *service provider* and several from another. A query that filters to a point in time, instead of expecting one row per SKU Price ID, works the same way for both.
+> **Note:** A [*dataset instance*](#glossary:dataset-instance) may hold only the prices in force today. Or it may also hold future price changes and old prices that were replaced. The specification does not require a *service provider* to publish price history, and FOCUS defines no way to tell these two kinds of dataset instance apart. So the same query can return one row per SKU Price ID from one *service provider* and several from another. A query that filters to a point in time, instead of expecting one row per SKU Price ID, works the same way for both.
 
 ### Scope When Conditional Columns are Absent
 
@@ -85,9 +85,9 @@ SKU Price Eligibility uses [*JSON object format*](#attributes.jsonobjectformat).
 
 ### Find the List Prices in Force at a Point in Time
 
-This query takes a service provider, a pricing service name, and a point in time. It returns the public usage rates for that service at that moment. It keeps only a Charge Category of "Usage", so purchase fees and granted credits are left out. Dropping that filter returns every public rate for the service. The same point in time goes to both date bounds. Each bound is tested for null, so a price with no start date or no end date is returned rather than dropped.
+This query takes a service provider, a pricing service name, and a point in time. It returns the public usage rates for that service at that moment. It keeps only records with a Charge Category of "Usage", so purchase fees and granted credits are left out. Dropping that filter returns every public rate for the service. The same point in time goes to both date bounds. Each bound is tested for null, so a price with no start date or no end date is returned rather than dropped.
 
-It also keeps only records with a Unit Price Type of "List", which hold the public list price. A record under a *contract* holds a "Base" or "Contracted" price instead. A record with no *contract* can also hold a Unit Price Type the *service provider* defines for itself. This query leaves both out.
+It also keeps only records with a Unit Price Type of "List", which hold the public list price. A record under a *contract* holds a "Base" or "Contracted" price instead. A record with no *contract* can instead hold a Unit Price Type the *service provider* defines for itself. This query leaves both out.
 
 One *SKU* can still return the same public rate more than once. A *service provider* can publish a separate usage record, with its own SKU Price ID, for consumption a *commitment discount* covers. That record also holds the list price. SKU Price Description and Commitment Discount Category are returned so these rows can be told apart.
 
@@ -117,11 +117,11 @@ ORDER BY SkuId, UnitPrice
 
 This query takes a set of planned lines. Each line has a service provider, the SKU Price ID it is priced under, a planned quantity, and a point in time. The query returns the projected cost of each line and the values behind it. The planned quantity is counted in the Pricing Unit of the matching price. So a rate quoted per `1K Requests` takes a quantity counted in thousands of requests, not in requests.
 
-Pricing Currency Category is returned with the total, because a "Consumable" rate gives a balance in a *consumption currency*, not money. Rows with different Pricing Currency values cannot be added together, and neither can a mix of "Payable" and "Consumable" rows. Adding them needs a conversion the SKU Price dataset does not carry. A SKU Price ID published in more than one pricing currency returns one row per currency for the same planned line. Those rows are alternative prices for that line, not parts of it.
+Pricing Currency Category is returned with the total, because a "Consumable" rate gives a balance in a *consumption currency*, not money. Rows with different Pricing Currency values cannot be added together without a conversion, and neither can a mix of "Payable" and "Consumable" rows. The SKU Price dataset does not carry that conversion. A SKU Price ID published in more than one pricing currency returns one row per currency for the same planned line. Those rows are alternative prices for that line, not parts of it.
 
 Quantity Tier Minimum and Quantity Tier Maximum are returned so each row can be matched to its tier. Each tier has its own SKU Price ID, so a planned line names its tier. A quantity that spans tiers is entered as one line per tier, split the way the pricing terms of the *service provider* say. Those terms, not the tier boundaries, decide whether a tier's rate applies only to the units inside that tier or to every unit consumed.
 
-The query prices each line at the public rate from the "List" record. To price it at the rate negotiated under a *contract* instead, replace `SP.UnitPriceType = 'List'` with `SP.ContractId = ? AND SP.UnitPriceType = 'Contracted'`. A line whose SKU Price ID has no "Contracted" record under that *contract* then returns with its price columns null. The Unit Price Type filter is still needed, because one *contract* can have both a "Base" and a "Contracted" record for the same SKU Price ID.
+The query prices each line at the public rate from the "List" record. Replacing `SP.UnitPriceType = 'List'` with `SP.ContractId = ? AND SP.UnitPriceType = 'Contracted'` prices it at the rate negotiated under a *contract* instead. A line whose SKU Price ID has no "Contracted" record under that *contract* then returns with its price columns null. The Unit Price Type filter is still needed, because one *contract* can have both a "Base" and a "Contracted" record for the same SKU Price ID.
 
 ```sql
 WITH PlannedUsage (ServiceProviderName, SkuPriceId, PlannedQuantity, PlannedDate) AS (
@@ -155,7 +155,7 @@ This query takes a service provider, a point in time, and a [*billing account*](
 
 Contract ID and Unit Price Type are returned to tell apart the prices under one SKU Price ID. Contract ID separates a *contract* price from the list price. Unit Price Type separates a "Base" price from a "Contracted" one under the same *contract*.
 
-> **Note:** This query checks only the `In` operator on the `BillingAccountId` dimension. That includes the `["*"]` wildcard, which matches every account. Rows flagged `IsComplexScope` are returned for review, not resolved. The query does not check `Exclusions`, so it can return a price for an account that `Exclusions` removes. Some prices have neither global nor complex scope and have `Inclusions` that do not name `BillingAccountId`. Under the implicit wildcard rule in the SKU Price Eligibility column definition, such a price places no limit on billing account, but this query does not return it. The query compares values exactly as written, while the column definition ignores case. A full check applies `InclusionOperator` across all inclusion rules, then removes any entity caught by `Exclusions`, in the order the SKU Price Eligibility column definition gives.
+> **Note:** This query checks only the `In` operator on the `BillingAccountId` dimension. That includes the `["*"]` wildcard, which matches every account. Rows flagged `IsComplexScope` are returned for review, not resolved. The query does not check `Exclusions`, so it can return a price for an account that `Exclusions` removes. Some prices have neither global nor complex scope and have `Inclusions` that do not name `BillingAccountId`. Under the implicit wildcard rule in the SKU Price Eligibility column definition, such a price places no limit on billing account, but this query does not return it. The query compares values exactly as written, while the SKU Price Eligibility column definition compares them without regard to case. A full check applies `InclusionOperator` across all inclusion rules, then removes any entity caught by `Exclusions`, in the order the SKU Price Eligibility column definition gives.
 
 ```sql
 SELECT
@@ -189,7 +189,7 @@ ORDER BY SkuPriceId, ContractId, UnitPriceType
 
 ### Separate Usage Rates from Purchase Fees and Credit Values
 
-This query takes a service provider and a point in time. It shows how the catalog splits across Charge Category. A forecast built only on "Usage" rates leaves out the purchase fees an architecture can also bring. So each category is counted on its own, not added together. Only "List" records are counted, so the counts and price ranges describe the public catalog, not the prices of any one *contract*. Pricing Currency Category is returned so a rate priced in a *consumption currency* is not read as money.
+This query takes a service provider and a point in time. It shows how the catalog splits across Charge Category. A forecast built only on "Usage" rates leaves out any purchase fees the architecture also has to pay. So each category is counted on its own, not added together. Only "List" records are counted, so the counts and price ranges describe the public catalog, not the prices of any one *contract*. Pricing Currency Category is returned so a rate priced in a *consumption currency* is not read as money.
 
 ```sql
 SELECT
@@ -211,9 +211,9 @@ ORDER BY ChargeCategory, PricingUnit
 
 ### Find Announced Price Changes and Scheduled Retirements
 
-This query takes a service provider and a point in time. It returns the public prices that change after that moment: prices that start later, and prices that stop applying later. A SKU Price Effective Start after that moment is an announced price change. A SKU Price Effective End after that moment is a planned retirement of that price. Only "List" records are returned. Dropping that filter also returns changes to *contract* prices and to any other Unit Price Type the *service provider* publishes.
+This query takes a service provider and a point in time. It returns the public prices that change after that moment: prices that start later, and prices that stop applying later. A SKU Price Effective Start after that moment is an announced price change. A SKU Price Effective End after that moment is a scheduled retirement of that price. Only "List" records are returned. Dropping that filter also returns changes to *contract* prices and to any other Unit Price Type the *service provider* publishes.
 
-SKU Price Created and SKU Price Last Updated are returned to show when the record entered the catalog and when it last changed. The dataset shows prices as of the date it is captured. To rebuild a price history the *service provider* does not publish, a *practitioner* keeps dataset instances over time. The practitioner then compares them on SKU Price Effective Start and SKU Price Effective End. The two timestamps cannot replace that comparison, because a correction can update a record after its effective window has closed.
+SKU Price Created and SKU Price Last Updated are returned to show when the record entered the catalog and when it last changed. The dataset shows prices as of the date it is captured. To rebuild a price history the *service provider* does not publish, a *practitioner* keeps dataset instances over time. The *practitioner* then compares them on SKU Price Effective Start and SKU Price Effective End. The two timestamps cannot replace that comparison, because a correction can update a record after its effective window has closed.
 
 ```sql
 SELECT
@@ -235,7 +235,7 @@ ORDER BY SkuPriceEffectiveStart, SkuPriceEffectiveEnd
 
 ### Compare List Prices Across Regions
 
-This query takes a service provider, a pricing service name, and a point in time. It shows how the public rate for each *SKU* varies by location, so a deployment decision can weigh the price difference between regions. Rows are sorted by SKU ID. SKU ID stays the same across the price details a *SKU* varies by, including location, while a *service provider* may publish a separate SKU Price ID for each region. This query applies where the *operating model* includes regions.
+This query takes a service provider, a pricing service name, and a point in time. It shows how the public rate for each *SKU* varies by location, so a deployment decision can weigh the price difference between regions. Rows are sorted by SKU ID, because SKU ID stays the same across the price details a *SKU* varies by, including location. SKU Price ID may not, since a *service provider* may publish a separate SKU Price ID for each region. This query applies where the *operating model* includes regions.
 
 ```sql
 SELECT
