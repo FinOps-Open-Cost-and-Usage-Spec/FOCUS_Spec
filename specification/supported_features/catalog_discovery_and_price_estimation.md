@@ -39,7 +39,7 @@ A [*charge*](#glossary:charge) follows the same rule, using its Charge Period St
 
 This feature applies wherever a *service provider* publishes a SKU Price dataset. The data model says when that dataset is present. Every column this feature directly depends on is in every SKU Price dataset instance.
 
-The queries that read public prices keep only records with a Unit Price Type of "List". So they return nothing from a dataset instance that has only contract prices. "List" is a recommended value, not a required one. When a *service provider* labels its public prices with a value of its own, that value replaces "List" in these queries. Unlike "List", a value of its own does not mean the Contract ID is null, so these queries then also need a filter for a null Contract ID.
+The queries that read public prices keep only records with a Unit Price Type of "List". So they return nothing from a dataset instance that has only contract prices. "List" is a recommended value, not a required one. When a *service provider* labels its public prices with a value of its own, that value replaces "List" in these queries. Unlike "List", a value of its own does not mean the Contract ID is null. So these queries then also need a filter for a null Contract ID.
 
 Four conditions change what applies:
 
