@@ -77,6 +77,8 @@ SELECT
   InvoiceIssuerName,
   ServiceProviderName,
   ServiceName,
+  JSON_VALUE(SkuPriceDetails, '$.ModelDeveloper') AS ModelDeveloper,
+  JSON_VALUE(SkuPriceDetails, '$.ModelId') AS ModelId,
   JSON_VALUE(SkuPriceDetails, '$.TokenDirection') AS TokenDirection,
   JSON_VALUE(SkuPriceDetails, '$.TokenCacheAction') AS TokenCacheAction,
   SUM(ConsumedQuantity) AS TotalTokens
@@ -90,6 +92,8 @@ GROUP BY
   InvoiceIssuerName,
   ServiceProviderName,
   ServiceName,
+  JSON_VALUE(SkuPriceDetails, '$.ModelDeveloper'),
+  JSON_VALUE(SkuPriceDetails, '$.ModelId'),
   JSON_VALUE(SkuPriceDetails, '$.TokenDirection'),
   JSON_VALUE(SkuPriceDetails, '$.TokenCacheAction')
 ```
