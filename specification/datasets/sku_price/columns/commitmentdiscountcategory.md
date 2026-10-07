@@ -8,8 +8,8 @@ CommitmentDiscountCategory MUST adhere to the following requirements:
 
 * CommitmentDiscountCategory MUST be of type String.
 * CommitmentDiscountCategory MUST adhere to the following nullability requirements:
-  * CommitmentDiscountCategory MUST be null when the SkuPrice record does not represent a rate associated with a commitment discount.
-  * CommitmentDiscountCategory MUST NOT be null when the SkuPrice record represents a rate associated with a commitment discount.
+  * CommitmentDiscountCategory MUST be null when the SkuPrice record does not represent the purchase of a commitment discount or a usage rate that applies under a commitment discount.
+  * CommitmentDiscountCategory MUST NOT be null when the SkuPrice record represents the purchase of a commitment discount or a usage rate that applies under a commitment discount.
 * CommitmentDiscountCategory MUST be one of the allowed values.
 
 ## Allowed Values
