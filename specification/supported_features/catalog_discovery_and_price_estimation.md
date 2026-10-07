@@ -115,7 +115,7 @@ ORDER BY SkuId, UnitPrice
 
 ### Estimate the Cost of a Planned Workload
 
-This query answers what a planned workload would cost at public rates. The total can then be checked against a budget or compared with another design. It takes a set of planned lines. Each line has a service provider, the SKU Price ID it is priced under, a planned quantity, and a point in time. The query returns the projected cost of each line and the values behind it. The planned quantity is counted in the Pricing Unit of the matching price. So a rate quoted per `1K Requests` takes a quantity counted in thousands of requests, not in requests.
+This query answers what a planned workload would cost at public rates. The cost of each line can then be checked against a budget or compared with another design. It takes a set of planned lines. Each line has a service provider, the SKU Price ID it is priced under, a planned quantity, and a point in time. The query returns the projected cost of each line and the values behind it. The planned quantity is counted in the Pricing Unit of the matching price. So a rate quoted per `1K Requests` takes a quantity counted in thousands of requests, not in requests.
 
 Pricing Currency Category is returned with the total, because a "Consumable" rate gives a balance in a *consumption currency*, not money. Rows with different Pricing Currency values cannot be added together without a conversion, and neither can a mix of "Payable" and "Consumable" rows. The SKU Price dataset does not carry that conversion. A SKU Price ID published in more than one pricing currency returns one row per currency for the same planned line. Those rows are alternative prices for that line, not parts of it.
 
@@ -151,7 +151,7 @@ ORDER BY SP.PricingCurrencyCategory, SP.PricingCurrency, EstimatedPricingCurrenc
 
 ### Identify the Prices a Billing Account is Eligible For
 
-This query answers which prices a [*billing account*](#glossary:billing-account) may be eligible for. An estimate can then set aside prices the account cannot receive. It takes a service provider, a point in time, and a *billing account* ID. A price with `IsGlobalScope` set to `true` applies to every entity its `Exclusions` do not remove. A price with neither global nor complex scope has an `Inclusions` array. Each rule in that array names a dimension, an operator, and the values that decide which entities are included.
+This query answers which prices a [*billing account*](#glossary:billing-account) may be eligible for. An estimate can then start from the prices the account may receive, within the limits the note below describes. It takes a service provider, a point in time, and a *billing account* ID. A price with `IsGlobalScope` set to `true` applies to every entity its `Exclusions` do not remove. A price with neither global nor complex scope has an `Inclusions` array. Each rule in that array names a dimension, an operator, and the values that decide which entities are included.
 
 Contract ID and Unit Price Type are returned to tell apart the prices under one SKU Price ID. Contract ID separates a *contract* price from the list price. Unit Price Type separates a "Base" price from a "Contracted" one under the same *contract*.
 
