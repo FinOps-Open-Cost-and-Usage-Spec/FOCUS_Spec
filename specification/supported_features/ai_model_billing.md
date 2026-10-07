@@ -39,6 +39,8 @@ Effective cost per one million tokens, by SKU, token direction, and cache action
 ```sql
 SELECT
   ServiceProviderName,
+  JSON_VALUE(SkuPriceDetails, '$.ModelDeveloper') AS ModelDeveloper,
+  JSON_VALUE(SkuPriceDetails, '$.ModelId') AS ModelId,
   SkuId,
   SkuPriceId,
   SkuMeter,
@@ -55,6 +57,8 @@ WHERE ChargeCategory='Usage'
   AND ChargePeriodStart >= ? AND ChargePeriodEnd <= ?
 GROUP BY
   ServiceProviderName,
+  JSON_VALUE(SkuPriceDetails, '$.ModelDeveloper'),
+  JSON_VALUE(SkuPriceDetails, '$.ModelId'),
   SkuId,
   SkuPriceId,
   SkuMeter,
