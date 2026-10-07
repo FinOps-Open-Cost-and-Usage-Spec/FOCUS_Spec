@@ -4,13 +4,13 @@
 
 FOCUS supports the discovery of the prices a [*service provider*](#glossary:service-provider) offers, and the estimation of cost for consumption that has not happened yet. Prices are carried in the [SKU Price](#datamodel.skuprice) dataset, which describes the full [*price list*](#glossary:price-list) a *service provider* publishes rather than only the [*SKUs*](#glossary:sku) that already appear in [Cost and Usage](#datamodel.costandusage) data. A [*practitioner*](#glossary:practitioner) sizing a net-new architecture can therefore price it from the same schema across every *service provider*, without reading one catalog format per provider.
 
-Unit Price is the rate for a single Pricing Unit, denominated in the Pricing Currency. On a record with a null Contract ID it is the public list price, and on a record with a populated Contract ID it is a rate negotiated under that [*contract*](#glossary:contract), so an estimate from public prices is the planned quantity in that Pricing Unit multiplied by Unit Price on the record with a null Contract ID. Pricing Currency Category states whether that product is a financial amount or a balance in a [*consumption currency*](#glossary:consumption-currency) the *service provider* issues. A "Consumable" rate yields a virtual balance and needs a further conversion before it can be read as money, so an estimate that mixes the two categories without converting is not a monetary total.
+Unit Price is the rate for a single Pricing Unit, denominated in the Pricing Currency, and Unit Price Type states what kind of rate it is. A "List" record carries the public list price and has a null Contract ID. A record with a populated Contract ID carries a price specific to that [*contract*](#glossary:contract): "Base" for a list price the *contract* fixes, and "Contracted" for any other price under it, such as a negotiated rate. An estimate from public prices is therefore the planned quantity in that Pricing Unit multiplied by Unit Price on the "List" record. Pricing Currency Category states whether that product is a financial amount or a balance in a [*consumption currency*](#glossary:consumption-currency) the *service provider* issues. A "Consumable" rate yields a virtual balance and needs a further conversion before it can be read as money, so an estimate that mixes the two categories without converting is not a monetary total.
 
 Charge Category separates the rate to consume something ("Usage") from the fee to acquire it ("Purchase") and from the unit value of a granted credit ("Credit"), so a forecast keeps recurring consumption apart from acquisition fees rather than summing them.
 
 SKU Price Eligibility carries the inclusion and exclusion logic that determines which entities may receive a given price. A published catalog commonly contains prices an organization cannot obtain, so evaluating eligibility before pricing an architecture is what separates an achievable estimate from a theoretical one.
 
-An estimate built this way is a pre-commitment estimate. Unit Price on a record with a null Contract ID is the public rate, and no rate in the SKU Price dataset reflects a [*commitment discount*](#glossary:commitment-discount) having been applied to consumption. An organization holding commitments that would cover the planned architecture pays less than this estimate shows. Sizing that difference is done against recorded consumption in Cost and Usage, through the [Cost Comparison](#supportedfeatures.costcomparison) supported feature, rather than against the price list.
+An estimate built this way is a pre-commitment estimate. Unit Price on a "List" record is the public rate, and no rate in the SKU Price dataset reflects a [*commitment discount*](#glossary:commitment-discount) having been applied to consumption. An organization holding commitments that would cover the planned architecture pays less than this estimate shows. Sizing that difference is done against recorded consumption in Cost and Usage, through the [Cost Comparison](#supportedfeatures.costcomparison) supported feature, rather than against the price list.
 
 ### Reading the Effective Date Columns
 
@@ -27,9 +27,9 @@ A point-in-time lookup therefore treats a null bound as unbounded in that direct
 
 ### Scope When Conditional Columns are Absent
 
-This feature applies wherever a *service provider* publishes a SKU Price dataset, and the data model states when that dataset is present. Every column this feature directly depends on is present in every SKU Price dataset instance. The queries that read public prices keep only records with a null Contract ID, so they return nothing from a dataset instance that carries only negotiated rates.
+This feature applies wherever a *service provider* publishes a SKU Price dataset, and the data model states when that dataset is present. Every column this feature directly depends on is present in every SKU Price dataset instance. The queries that read public prices keep only records with a Unit Price Type of "List", so they return nothing from a dataset instance that carries only contract prices. "List" is a recommended value rather than a required one, so for a *service provider* that labels its public prices with a value of its own, that value takes the place of "List" in these queries.
 
-Three conditions change what applies. Pricing Region ID is present when the [*operating model*](#glossary:operating-model) [includes regions](#operatingmodelconditions.includesregions). Where it is absent, prices do not vary by location and a single price stands for every region, so comparing rates across regions does not apply rather than returning an incomplete result. Quantity Tier Minimum and Quantity Tier Maximum are present when the *operating model* [includes quantity tier pricing](#operatingmodelconditions.includesquantitytierpricing). Where they are absent, every price applies at any quantity, so a planned line needs no tier, and the queries that return those two columns hold with them left out. Separating usage rates from purchase fees applies when the *operating model* [includes purchases](#operatingmodelconditions.includespurchases). Where it does not, the catalog publishes no acquisition fees and no record carries a Charge Category of "Purchase", so an estimate from consumption rates has no purchase-fee component to add.
+Four conditions change what applies. Pricing Region ID is present when the [*operating model*](#glossary:operating-model) [includes regions](#operatingmodelconditions.includesregions). Where it is absent, prices do not vary by location and a single price stands for every region, so comparing rates across regions does not apply rather than returning an incomplete result. Quantity Tier Minimum and Quantity Tier Maximum are present when the *operating model* [includes quantity tier pricing](#operatingmodelconditions.includesquantitytierpricing). Where they are absent, every price applies at any quantity, so a planned line needs no tier, and the queries that return those two columns hold with them left out. Separating usage rates from purchase fees applies when the *operating model* [includes purchases](#operatingmodelconditions.includespurchases). Where it does not, the catalog publishes no acquisition fees and no record carries a Charge Category of "Purchase", so an estimate from consumption rates has no purchase-fee component to add. Commitment Discount Category is present when the *operating model* [includes commitment discounts](#operatingmodelconditions.includescommitmentdiscounts). Where it is absent, no price is for a *commitment discount*, and the list price query holds with that column left out.
 
 ## Directly Dependent Columns
 
@@ -39,10 +39,12 @@ Three conditions change what applies. Pricing Region ID is present when the [*op
   * PricingCurrencyCategory
   * SkuPriceEligibility
   * UnitPrice
+  * UnitPriceType
 
 ## Supporting Columns
 
 * [SkuPrice](#datamodel.skuprice)
+  * CommitmentDiscountCategory
   * PricingCurrency
   * PricingRegionId
   * PricingServiceName
@@ -68,13 +70,14 @@ SKU Price Eligibility is defined in [*JSON object format*](#attributes.jsonobjec
 
 This query takes inputs of a service provider, a pricing service name, and a point in time, then returns the public consumption rates that apply for that service at that moment. It filters to a Charge Category of "Usage", so acquisition fees and granted credits are excluded; dropping that predicate returns every public rate for the service. The same point in time is supplied to both bounds, and each bound is tested for null so that an open-ended price is returned rather than filtered out.
 
-It also keeps only records with a null Contract ID, which carry the public list price; a record with a populated Contract ID carries a rate negotiated under a specific *contract*. One *SKU* can still return the same public rate more than once. A *service provider* can publish a separate usage record, under its own SKU Price ID, for consumption a *commitment discount* covers, and that record carries the list price. SKU Price Description is returned so those rows can be told apart.
+It also keeps only records with a Unit Price Type of "List", which carry the public list price. A record under a *contract* carries a "Base" or "Contracted" price instead, and a record with no *contract* can carry a Unit Price Type the *service provider* defines for itself, which this query leaves out. One *SKU* can still return the same public rate more than once. A *service provider* can publish a separate usage record, under its own SKU Price ID, for consumption a *commitment discount* covers, and that record carries the list price. SKU Price Description and Commitment Discount Category are returned so those rows can be told apart.
 
 ```sql
 SELECT
   SkuId,
   SkuPriceId,
   SkuPriceDescription,
+  CommitmentDiscountCategory,
   PricingUnit,
   QuantityTierMinimum,
   QuantityTierMaximum,
@@ -85,7 +88,7 @@ FROM SkuPrice
 WHERE ServiceProviderName = ?
   AND PricingServiceName = ?
   AND ChargeCategory = 'Usage'
-  AND ContractId IS NULL
+  AND UnitPriceType = 'List'
   AND (SkuPriceEffectiveStart IS NULL OR SkuPriceEffectiveStart <= ?)
   AND (SkuPriceEffectiveEnd IS NULL OR SkuPriceEffectiveEnd > ?)
 ORDER BY SkuId, UnitPrice
@@ -99,7 +102,7 @@ Pricing Currency Category is returned alongside the total because a "Consumable"
 
 Quantity Tier Minimum and Quantity Tier Maximum are returned so each row can be matched to the tier it prices. Each tier carries its own SKU Price ID, so a planned line names its tier. A quantity that spans tiers is entered as one line per tier, split as the pricing terms of the *service provider* dictate, since whether a tier's rate applies only to the units inside that tier or to every unit consumed is a property of those terms rather than of the tier boundaries.
 
-The query prices each line at the public rate. Replacing `SP.ContractId IS NULL` with `SP.ContractId = ?` prices it at the rate negotiated under that *contract* instead, and a line whose SKU Price ID the *contract* does not price returns with its price columns null.
+The query prices each line at the public rate, read from the "List" record. Replacing `SP.UnitPriceType = 'List'` with `SP.ContractId = ? AND SP.UnitPriceType = 'Contracted'` prices it at the rate negotiated under that *contract* instead, and a line whose SKU Price ID has no "Contracted" record under that *contract* returns with its price columns null. The Unit Price Type predicate stays in place because one *contract* can carry both a "Base" and a "Contracted" record for the same SKU Price ID.
 
 ```sql
 WITH PlannedUsage (ServiceProviderName, SkuPriceId, PlannedQuantity, PlannedDate) AS (
@@ -121,7 +124,7 @@ FROM PlannedUsage PU
 LEFT JOIN SkuPrice SP
   ON SP.ServiceProviderName = PU.ServiceProviderName
   AND SP.SkuPriceId = PU.SkuPriceId
-  AND SP.ContractId IS NULL
+  AND SP.UnitPriceType = 'List'
   AND (SP.SkuPriceEffectiveStart IS NULL OR SP.SkuPriceEffectiveStart <= PU.PlannedDate)
   AND (SP.SkuPriceEffectiveEnd IS NULL OR SP.SkuPriceEffectiveEnd > PU.PlannedDate)
 ORDER BY SP.PricingCurrencyCategory, SP.PricingCurrency, EstimatedPricingCurrencyListCost DESC
@@ -129,7 +132,7 @@ ORDER BY SP.PricingCurrencyCategory, SP.PricingCurrency, EstimatedPricingCurrenc
 
 ### Identify the Prices a Billing Account is Eligible For
 
-This query takes inputs of a service provider, a point in time, and a [*billing account*](#glossary:billing-account) identifier, then returns the prices that account may be eligible for. A price with `IsGlobalScope` set to `true` applies to every entity its `Exclusions` do not remove. A price with neither global nor complex scope carries an `Inclusions` array whose rules name the dimension, operator, and values that define the boundary. Contract ID is returned so a contracted price the account may receive can be told apart from the list price under the same SKU Price ID.
+This query takes inputs of a service provider, a point in time, and a [*billing account*](#glossary:billing-account) identifier, then returns the prices that account may be eligible for. A price with `IsGlobalScope` set to `true` applies to every entity its `Exclusions` do not remove. A price with neither global nor complex scope carries an `Inclusions` array whose rules name the dimension, operator, and values that define the boundary. Contract ID and Unit Price Type are returned so a price under a *contract* can be told apart from the list price under the same SKU Price ID, and a "Base" price from a "Contracted" one under the same *contract*.
 
 > **Note:** This query evaluates the `In` operator against the `BillingAccountId` dimension only, including the `["*"]` wildcard that matches every account, and returns rows flagged `IsComplexScope` for review rather than resolving them. It does not evaluate `Exclusions`, so a price can return for an account its `Exclusions` remove. Where a price has neither global nor complex scope and its `Inclusions` do not name `BillingAccountId`, the price is unrestricted on billing account under the implicit wildcard rule in the SKU Price Eligibility column definition, but this query does not return it. Values are compared as written, while the SKU Price Eligibility column definition normalizes case before comparing. A complete evaluation applies `InclusionOperator` across all inclusion rules and then removes any entity caught by `Exclusions`, in the order described in the SKU Price Eligibility column definition.
 
@@ -137,6 +140,7 @@ This query takes inputs of a service provider, a point in time, and a [*billing 
 SELECT
   SkuPriceId,
   ContractId,
+  UnitPriceType,
   SkuPriceDescription,
   UnitPrice,
   PricingCurrency,
@@ -159,12 +163,12 @@ WHERE ServiceProviderName = ?
         )
     )
   )
-ORDER BY SkuPriceId, ContractId
+ORDER BY SkuPriceId, ContractId, UnitPriceType
 ```
 
 ### Separate Usage Rates from Purchase Fees and Credit Values
 
-This query takes inputs of a service provider and a point in time, then reports how the catalog divides across Charge Category. A forecast built only on "Usage" rates omits the acquisition fees an architecture also incurs, so each category is counted separately rather than summed. Only records with a null Contract ID are counted, so the counts and price ranges describe the public catalog rather than the rates of any one *contract*. Pricing Currency Category is returned so a rate priced in a *consumption currency* is not read as a monetary amount.
+This query takes inputs of a service provider and a point in time, then reports how the catalog divides across Charge Category. A forecast built only on "Usage" rates omits the acquisition fees an architecture also incurs, so each category is counted separately rather than summed. Only "List" records are counted, so the counts and price ranges describe the public catalog rather than the prices of any one *contract*. Pricing Currency Category is returned so a rate priced in a *consumption currency* is not read as a monetary amount.
 
 ```sql
 SELECT
@@ -177,7 +181,7 @@ SELECT
   MAX(UnitPrice) AS HighestPublicUnitPrice
 FROM SkuPrice
 WHERE ServiceProviderName = ?
-  AND ContractId IS NULL
+  AND UnitPriceType = 'List'
   AND (SkuPriceEffectiveStart IS NULL OR SkuPriceEffectiveStart <= ?)
   AND (SkuPriceEffectiveEnd IS NULL OR SkuPriceEffectiveEnd > ?)
 GROUP BY ChargeCategory, PricingUnit, PricingCurrency, PricingCurrencyCategory
@@ -186,7 +190,7 @@ ORDER BY ChargeCategory, PricingUnit
 
 ### Find Announced Price Changes and Scheduled Retirements
 
-This query takes inputs of a service provider and a point in time, then returns the public prices whose applicability changes after that moment: those that take effect later, and those that stop applying. A forward-dated SKU Price Effective Start is an announced price change, and a SKU Price Effective End in the future is a scheduled retirement of that price. Only records with a null Contract ID are returned; dropping that predicate also returns changes to negotiated rates.
+This query takes inputs of a service provider and a point in time, then returns the public prices whose applicability changes after that moment: those that take effect later, and those that stop applying. A forward-dated SKU Price Effective Start is an announced price change, and a SKU Price Effective End in the future is a scheduled retirement of that price. Only "List" records are returned; dropping that predicate also returns changes to the prices of each *contract* and to any other Unit Price Type the *service provider* publishes.
 
 SKU Price Created and SKU Price Last Updated are returned so a change can be traced to when the record entered the catalog and when it last moved. Because the dataset represents prices as of the date it is captured, a practitioner reconstructs a price history the *service provider* does not publish by retaining successive dataset instances and comparing them on SKU Price Effective Start and SKU Price Effective End. The two audit timestamps are not a substitute, since a correction can update a record after its effective window has closed.
 
@@ -203,7 +207,7 @@ SELECT
   SkuPriceLastUpdated
 FROM SkuPrice
 WHERE ServiceProviderName = ?
-  AND ContractId IS NULL
+  AND UnitPriceType = 'List'
   AND (SkuPriceEffectiveStart > ? OR SkuPriceEffectiveEnd > ?)
 ORDER BY SkuPriceEffectiveStart, SkuPriceEffectiveEnd
 ```
@@ -226,7 +230,7 @@ FROM SkuPrice
 WHERE ServiceProviderName = ?
   AND PricingServiceName = ?
   AND ChargeCategory = 'Usage'
-  AND ContractId IS NULL
+  AND UnitPriceType = 'List'
   AND (SkuPriceEffectiveStart IS NULL OR SkuPriceEffectiveStart <= ?)
   AND (SkuPriceEffectiveEnd IS NULL OR SkuPriceEffectiveEnd > ?)
 ORDER BY SkuId, PricingCurrency, UnitPrice
