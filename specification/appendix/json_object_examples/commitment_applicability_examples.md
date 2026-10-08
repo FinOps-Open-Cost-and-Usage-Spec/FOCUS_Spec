@@ -65,13 +65,12 @@ A reservation that covers a single SKU in a single region. The top-level `Covera
 
 ## Spend-Based Commitment with a Discount
 
-A one-year flexible spend plan (SKU Price ID "AURAWEB-COMMITMENT-FLEXSPEND-1YR-ALL-UPFRONT", Commitment Discount Category "Spend", Pricing Unit "USD"). It covers all compute usage at 28 percent off the list unit price, except GPU virtual machines at 12 percent off, and it does not cover dynamically priced usage. The plan is applied first to the usage with the highest discount.
+A one-year flexible spend plan (SKU Price ID "AURAWEB-COMMITMENT-FLEXSPEND-1YR-ALL-UPFRONT", Commitment Discount Category "Spend", Pricing Unit "USD"). It covers all compute usage at 28 percent off its unit price, except GPU virtual machines at 12 percent off, and it does not cover dynamically priced usage. The plan is applied first to the usage with the highest discount.
 
 ```json
 {
   "Coverage": {
-    "Discount": 0.28,
-    "Basis": "List"
+    "Discount": 0.28
   },
   "ApplicationOrder": "HighestDiscountFirst",
   "InclusionOperator": "Or",
@@ -81,8 +80,7 @@ A one-year flexible spend plan (SKU Price ID "AURAWEB-COMMITMENT-FLEXSPEND-1YR-A
       "Operator": "StartsWith",
       "Values": ["AURAWEB-COMPUTE-VM-GPU-"],
       "Coverage": {
-        "Discount": 0.12,
-        "Basis": "List"
+        "Discount": 0.12
       }
     },
     {
@@ -133,16 +131,15 @@ A spend plan for which the *service provider* publishes the unit price of each c
 }
 ```
 
-## Contracted Commitment Applied to Contracted Unit Prices
+## Global Scope
 
-A spend plan under a *contract* whose discount applies to the contracted unit price rather than the list unit price, for all usage of the *service provider*.
+A spend plan that covers all usage of the *service provider* at 10 percent off the unit price of covered usage.
 
 ```json
 {
   "IsGlobalScope": true,
   "Coverage": {
-    "Discount": 0.1,
-    "Basis": "Contracted"
+    "Discount": 0.1
   }
 }
 ```
