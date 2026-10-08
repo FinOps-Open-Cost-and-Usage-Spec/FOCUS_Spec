@@ -6,6 +6,8 @@ The SKU Price dataset represents prices as of the date the dataset is captured. 
 
 The dataset describes the full price list a *service provider* offers, not only the SKUs that appear in Cost and Usage. To manage the size of a complete price list, a *service provider* may partition delivery, for example by region, service, or SKU category, and is encouraged to do so where publishing a complete list in a single delivery would otherwise be impractical.
 
+> **Note:** The SKU Price dataset is a preview in this version of FOCUS. Its columns, requirements, and relationships may change in a future version based on implementation feedback, and those changes may not be backward compatible.
+
 The columns are presented in alphabetical order.
 
 ## Columns<!--SkipTOC-->
