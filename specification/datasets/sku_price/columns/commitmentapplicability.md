@@ -31,8 +31,8 @@ CommitmentApplicabilityObject MUST adhere to the following requirements:
 * CommitmentApplicabilityObject.IsComplexScope MUST be `true` when the coverage logic of the *commitment discount* exceeds schema capabilities.
 * CommitmentApplicabilityObject.Coverage MUST conform to CoverageObject requirements when CommitmentApplicabilityObject.Coverage is present.
 * CommitmentApplicabilityObject.Coverage MUST be present when CommitmentApplicabilityObject.IsGlobalScope is `true`.
-* CommitmentApplicabilityObject.Inclusions[\*].Dimension SHOULD represent a column in [CostAndUsage](#datamodel.costandusage).
-* CommitmentApplicabilityObject.Exclusions[\*].Dimension SHOULD represent a column in CostAndUsage.
+* CommitmentApplicabilityObject.Inclusions[\*].Dimension SHOULD represent a column in [CostAndUsage](#datamodel.costandusage) or [SkuPrice](#datamodel.skuprice).
+* CommitmentApplicabilityObject.Exclusions[\*].Dimension SHOULD represent a column in CostAndUsage or SkuPrice.
 * CommitmentApplicabilityObject.Inclusions[\*].Values MUST contain only the single string "*" when the wildcard is present.
 * CommitmentApplicabilityObject.Exclusions[\*].Values MUST contain only the single string "*" when the wildcard is present.
 * CommitmentApplicabilityObject.Inclusions[\*].Coverage MUST conform to CoverageObject requirements when CommitmentApplicabilityObject.Inclusions[\*].Coverage is present.
@@ -73,7 +73,7 @@ CommitmentApplicability contains a structured JSON object defining the usage cov
 
 | Key | Type | Description |
 | :--- | :--- | :--- |
-| `Dimension` | String | A valid FOCUS Column ID (e.g., `SkuId`, `SkuPriceId`, `RegionId`). |
+| `Dimension` | String | A valid FOCUS Column ID from Cost and Usage or SKU Price (e.g., `SkuId`, `PricingServiceName`, `PricingRegionId`, `RegionId`). |
 | `Operator` | String | The comparison logic to apply. Must be one of the Supported Operators. |
 | `Values` | Array | A list of strings to compare. A value of `["*"]` acts as a global wildcard. |
 | `Coverage` | Object | Optional, `Inclusions` only. The `Coverage` object for usage matched by this rule. Overrides the top-level `Coverage`. |
