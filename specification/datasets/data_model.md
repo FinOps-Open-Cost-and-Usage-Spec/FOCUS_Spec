@@ -12,7 +12,7 @@ Datasets are sorted first by Feature Level (i.e., Mandatory, then Conditional), 
 | [Billing Period](#datamodel.billingperiod)           | Reference    | Conditional   | Describes the billing periods by which cost and usage is invoiced. |
 | [Contract Commitment](#datamodel.contractcommitment) | Reference    | Conditional   | Describes the terms of contracts agreed between a service provider and a customer. |
 | [Invoice Detail](#datamodel.invoicedetail)           | Transaction  | Conditional   | Describes the cost and usage issued on invoices. |
-| [SKU Price](#datamodel.skuprice)                     | Reference    | Conditional   | Describes the unit prices offered by a service provider. |
+| [SKU Price](#datamodel.skuprice) (preview)           | Reference    | Conditional   | Describes the unit prices offered by a service provider. |
 
 ## Requirements<!--SkipTOC-->
 
