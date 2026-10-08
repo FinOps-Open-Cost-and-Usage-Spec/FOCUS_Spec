@@ -13,6 +13,7 @@ The columns are presented in alphabetical order.
 | Column                                                                              | Column Type | Feature Level                                                  | Allows Nulls | Data Type |
 | ----------------------------------------------------------------------------------- | ----------- | -------------------------------------------------------------- | ------------ | --------- |
 | [Charge Category](#datamodel.skuprice.chargecategory)                              | Dimension   | Mandatory   | False        | String    |
+| [Commitment Applicability](#datamodel.skuprice.commitmentapplicability)           | Dimension   | Conditional | True         | JSON      |
 | [Commitment Discount Category](#datamodel.skuprice.commitmentdiscountcategory)     | Dimension   | Conditional | True         | String    |
 | [Contract ID](#datamodel.skuprice.contractid)                                        | Dimension   | Mandatory                                                      | True         | String    |
 | [Pricing Currency](#datamodel.skuprice.pricingcurrency)                              | Dimension   | Mandatory                                                      | False        | String    |
@@ -68,15 +69,14 @@ Because a SKU Price ID represents a specific price point, it inherently defines 
 
 This ensures that each tier maintains its own distinct identifier, allowing practitioners to join Cost and Usage data directly to the correct tier using SKU Price ID without needing to manually evaluate the Quantity Tier Minimum boundaries.
 
-The same applies to commitment terms. Service providers that price one SKU at different rates under different commitment terms (e.g., one year and three years) will need a distinct SKU Price ID for each term, because [Purchase Duration Type](#datamodel.skuprice.purchasedurationtype) is null on "Usage" records and cannot separate them. A price that differs only by contract keeps its SKU Price ID and is separated by Contract ID.
-
 ## Requirements<!--SkipTOC-->
 
 SkuPrice MUST adhere to the following requirements:
 
 * SkuPrice column presence MUST adhere to the following requirements:
   * SkuPrice MUST include [ChargeCategory](#datamodel.skuprice.chargecategory).
-  * SkuPrice MUST include [CommitmentDiscountCategory](#datamodel.skuprice.commitmentdiscountcategory) when the *operating model* [includes commitment discounts](#operatingmodelconditions.includescommitmentdiscounts).  
+  * SkuPrice MUST include [CommitmentApplicability](#datamodel.skuprice.commitmentapplicability) when the *operating model* [includes commitment discounts](#operatingmodelconditions.includescommitmentdiscounts).
+  * SkuPrice MUST include [CommitmentDiscountCategory](#datamodel.skuprice.commitmentdiscountcategory) when the *operating model* includes commitment discounts.
   * SkuPrice MUST include [ContractId](#datamodel.skuprice.contractid).
   * SkuPrice MUST include [PricingCurrency](#datamodel.skuprice.pricingcurrency).
   * SkuPrice MUST include [PricingCurrencyCategory](#datamodel.skuprice.pricingcurrencycategory).
