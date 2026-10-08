@@ -1,6 +1,6 @@
 # SKU Price
 
-> **Preview:** The SKU Price dataset is a preview in this version of FOCUS. Its columns, requirements, and relationships may change in a future version based on implementation feedback, and those changes may not be backward compatible.
+> **Preview:** The SKU Price dataset is a preview in this version of FOCUS. Its columns, requirements, and relationships may change in a future version based on implementation feedback.
 
 The SKU Price dataset is the primary dataset for standardizing [*service provider*](#glossary:service-provider) catalog rates, multipliers, and negotiated prices. This dataset enables practitioners to perform precise rate lookups, analyze commitment discounts, and understand the cost mechanics of payable and consumable prices.
 
