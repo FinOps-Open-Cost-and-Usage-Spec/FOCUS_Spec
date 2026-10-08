@@ -85,9 +85,23 @@ Usage AS (
 ),
 RuleTarget AS (
   SELECT
-    C.*,
-    U.*,
-    RuleOrder,
+    C.CommitmentSkuPriceId,
+    C.CommitmentChargeCategory,
+    C.CommitmentDiscountCategory,
+    C.PurchaseDurationType,
+    C.PurchasePaymentModel,
+    C.CommitmentCurrency,
+    C.CommitmentUnitPrice,
+    C.CommitmentApplicability,
+    U.ChargeCategory,
+    U.SkuId,
+    U.SkuPriceId,
+    U.PricingUnit,
+    U.PricingCurrency,
+    U.ContractId,
+    U.ListUnitPrice,
+    U.ContractedUnitPrice,
+    RuleOrder AS RuleOrder,
     InclusionRule,
     JSON_VALUE(InclusionRule, '$.Operator') AS Operator,
     JSON_VALUE_ARRAY(InclusionRule, '$.Values') AS RuleValues,
@@ -106,7 +120,23 @@ RuleTarget AS (
 ),
 RuleMatch AS (
   SELECT
-    *,
+    CommitmentSkuPriceId,
+    CommitmentChargeCategory,
+    CommitmentDiscountCategory,
+    PurchaseDurationType,
+    PurchasePaymentModel,
+    CommitmentUnitPrice,
+    CommitmentApplicability,
+    ChargeCategory,
+    SkuId,
+    SkuPriceId,
+    PricingUnit,
+    PricingCurrency,
+    ContractId,
+    ListUnitPrice,
+    ContractedUnitPrice,
+    RuleOrder,
+    InclusionRule,
     CASE Operator
       WHEN 'In' THEN Target IN UNNEST(RuleValues) OR '*' IN UNNEST(RuleValues)
       WHEN 'StartsWith' THEN EXISTS (
@@ -163,7 +193,19 @@ Covered AS (
 ),
 Effective AS (
   SELECT
-    *,
+    CommitmentSkuPriceId,
+    CommitmentChargeCategory,
+    CommitmentDiscountCategory,
+    PurchaseDurationType,
+    PurchasePaymentModel,
+    Coverage,
+    ChargeCategory,
+    SkuId,
+    SkuPriceId,
+    PricingCurrency,
+    ContractId,
+    ListUnitPrice,
+    ContractedUnitPrice,
     CASE
       WHEN JSON_VALUE(Coverage, '$.UnitPrice') IS NOT NULL
         THEN CAST(JSON_VALUE(Coverage, '$.UnitPrice') AS NUMERIC)
@@ -261,12 +303,20 @@ Commitment AS (
 ),
 RuleTarget AS (
   SELECT
-    C.*,
+    C.CommitmentSkuPriceId,
+    C.CommitmentChargeCategory,
+    C.CommitmentContractId,
+    C.CommitmentDiscountCategory,
+    C.PurchaseDurationType,
+    C.PurchasePaymentModel,
+    C.CommitmentCurrency,
+    C.CommitmentUnitPrice,
+    C.CommitmentApplicability,
     U.UsageChargeCategory,
     U.SkuId,
     U.SkuPriceId,
     U.PricingUnit,
-    RuleOrder,
+    RuleOrder AS RuleOrder,
     InclusionRule,
     JSON_VALUE(InclusionRule, '$.Operator') AS Operator,
     JSON_VALUE_ARRAY(InclusionRule, '$.Values') AS RuleValues,
@@ -284,7 +334,21 @@ RuleTarget AS (
 ),
 RuleMatch AS (
   SELECT
-    *,
+    CommitmentSkuPriceId,
+    CommitmentChargeCategory,
+    CommitmentContractId,
+    CommitmentDiscountCategory,
+    PurchaseDurationType,
+    PurchasePaymentModel,
+    CommitmentCurrency,
+    CommitmentUnitPrice,
+    CommitmentApplicability,
+    UsageChargeCategory,
+    SkuId,
+    SkuPriceId,
+    PricingUnit,
+    RuleOrder,
+    InclusionRule,
     CASE Operator
       WHEN 'In' THEN Target IN UNNEST(RuleValues) OR '*' IN UNNEST(RuleValues)
       WHEN 'StartsWith' THEN EXISTS (
