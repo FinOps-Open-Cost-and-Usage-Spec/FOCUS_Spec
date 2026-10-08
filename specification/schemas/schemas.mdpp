@@ -48,6 +48,14 @@ The Requester Details Value Schema defines the structure for the [Requester Deta
 
 ## SKU Price
 
+### Commitment Applicability Object Schema
+
+The Commitment Applicability Object Schema defines the structure for the [Commitment Applicability](#datamodel.skuprice.commitmentapplicability) column.
+
+[Download from GitHub](/specification/schemas/datasets/sku_price/commitmentapplicabilityobjectschema.json)
+
+!INCLUDECODE "schemas/datasets/sku_price/commitmentapplicabilityobjectschema.json" (json)
+
 ### SKU Price Eligibility Object Schema
 
 The SKU Price Eligibility Object Schema defines the structure for the [SKU Price Eligibility](#datamodel.skuprice.skupriceeligibility) column.

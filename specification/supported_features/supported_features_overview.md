@@ -10,6 +10,7 @@ The FOCUS specification is designed to meet the needs of FinOps practitioners in
 | :--- | :--- |
 | [Account Structures](#supportedfeatures.accountstructures) | Supports breaking costs down by billing and sub-accounts to facilitate chargeback and budgeting scenarios. |
 | [Billed Cost and Invoice Alignment](#supportedfeatures.billedcostandinvoicealignment) | Ensures data is consistent with payable invoices regarding total cost and the period of time covered. |
+| [Catalog Discovery and Price Estimation](#supportedfeatures.catalogdiscoveryandpriceestimation) | Enables pricing net-new architectures from published service provider rates, accounting for price eligibility and the dates a price applies. |
 | [Charge Categorization](#supportedfeatures.chargecategorization) | Supports classification of charges including purchases, usage, tax, credits, and adjustments. |
 | [Commit Usage and Under Usage](#supportedfeatures.commitusageandunderusage) | Tracks the usage and under-usage of commitment discounts and capacity reservations. |
 | [Commitment Program Eligibility Details](#supportedfeatures.commitmentprogrameligibilitydetails) | Identifies which commitment programs each charge qualifies for, supporting coverage rate analysis and uncovered savings identification. |
