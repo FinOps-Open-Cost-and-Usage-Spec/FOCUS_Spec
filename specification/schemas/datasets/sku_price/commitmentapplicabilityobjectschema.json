@@ -18,15 +18,7 @@
           "type": "number",
           "minimum": 0,
           "maximum": 1,
-          "description": "Fraction by which the unit price identified by Basis is reduced for covered usage"
-        },
-        "Basis": {
-          "type": "string",
-          "enum": [
-            "List",
-            "Contracted"
-          ],
-          "description": "Unit Price Type of the unit price that Discount reduces"
+          "description": "Fraction by which the list and contracted unit prices of covered usage are reduced"
         },
         "UnitPrice": {
           "type": "number",
@@ -51,14 +43,6 @@
           ]
         }
       ],
-      "dependentRequired": {
-        "Discount": [
-          "Basis"
-        ],
-        "Basis": [
-          "Discount"
-        ]
-      },
       "additionalProperties": false
     },
     "InclusionRule": {

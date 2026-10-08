@@ -46,9 +46,7 @@ CoverageObject MUST adhere to the following requirements:
 * CoverageObject MUST contain exactly one of the Factor, Discount, and UnitPrice properties.
 * CoverageObject.Factor MUST represent the quantity of the *commitment discount*, expressed in the [PricingUnit](#datamodel.skuprice.pricingunit) of the SkuPrice record, consumed by one unit of covered usage, expressed in the PricingUnit of the covered usage.
 * CoverageObject.Factor MUST NOT be present when [CommitmentDiscountCategory](#datamodel.skuprice.commitmentdiscountcategory) is "Spend".
-* CoverageObject.Discount MUST represent the fraction by which the unit price identified by CoverageObject.Basis is reduced for covered usage.
-* CoverageObject.Basis MUST be present when CoverageObject.Discount is present.
-* CoverageObject.Basis MUST NOT be present when CoverageObject.Discount is not present.
+* CoverageObject.Discount MUST represent the fraction by which the unit price of covered usage is reduced.
 * CoverageObject.UnitPrice MUST represent the unit price per PricingUnit of the covered usage.
 * CoverageObject.UnitPrice MUST be denominated in the [PricingCurrency](#datamodel.skuprice.pricingcurrency).
 
@@ -83,8 +81,7 @@ CommitmentApplicability contains a structured JSON object defining the usage cov
 | Key | Type | Description |
 | :--- | :--- | :--- |
 | `Factor` | Decimal | Quantity of the *commitment discount*, in the Pricing Unit of the purchase record, consumed by one unit of covered usage. Greater than 0; can be greater than 1 (e.g., *commitment discount flexibility*). |
-| `Discount` | Decimal | Fraction by which the unit price identified by `Basis` is reduced for covered usage. From 0 to 1. |
-| `Basis` | String | Required with `Discount`. The Unit Price Type of the unit price that `Discount` reduces. Valid values: `List`, `Contracted`. |
+| `Discount` | Decimal | Fraction by which the unit price of covered usage is reduced, applied to both its list and its contracted unit price. From 0 to 1. |
 | `UnitPrice` | Decimal | Unit price per Pricing Unit of the covered usage, denominated in the Pricing Currency of the purchase record. Non-negative. |
 
 A `Coverage` object contains exactly one of `Factor`, `Discount`, or `UnitPrice`.
@@ -133,7 +130,7 @@ Values are compared as exact strings.
 <div class="h7-nonindex">Deriving the Unit Price of Covered Usage</div>
 
 * **`UnitPrice`:** the unit price of covered usage, as published.
-* **`Discount`:** the Unit Price of the SKU Price record for the covered usage whose Unit Price Type matches `Basis`, multiplied by one minus `Discount`.
+* **`Discount`:** the Unit Price of the SKU Price record for the covered usage multiplied by one minus `Discount`, for its "List" record and, under a *contract*, for its "Contracted" record.
 * **`Factor`:** the price of the *commitment discount* (the Unit Price of the purchase record, spread over its Purchase Duration Type according to its Purchase Payment Model), multiplied by `Factor` and divided by the quantity of usage the *commitment discount* covers per unit of time.
 
 <div class="h7-nonindex">Evaluating Rules Against Null Dimensions</div>
