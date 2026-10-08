@@ -6,7 +6,7 @@ Aura Web offers two commitment instruments, each under three payment models. A r
 
 ## Commitment Purchases
 
-[**CSV Example**](/specification/data/sku_price_examples/sku_price_commitment_purchases.csv)
+[**CSV Example**](/specification/data/sku_price_examples/sku_price_commitment_pricing.csv)
 
 Note the following details in the example dataset:
 
