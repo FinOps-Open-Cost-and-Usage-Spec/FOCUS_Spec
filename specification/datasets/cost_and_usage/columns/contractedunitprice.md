@@ -33,7 +33,7 @@ Unlike List Unit Price, Contracted Unit Price reflects *negotiated pricing terms
 
 [Pricing Currency Contracted Unit Price](#datamodel.costandusage.pricingcurrencycontractedunitprice) does not reflect *negotiated FX pricing terms*, because it is before any currency exchange rate conversion.
 
-The terms of a discount-bearing *commitment program* (e.g., a *commitment discount*) can also be negotiated, such as the unit price for its purchase, its discount, or its eligibility. Of these terms, Contracted Unit Price reflects only a negotiated unit price for the commitment purchase itself (i.e., the [*covering charge*](#glossary:covering-charge)). The impact of applying the *commitment program* to [*covered charges*](#glossary:covered-charge) is reflected in their [Effective Cost](#datamodel.costandusage.effectivecost), whether or not the program's discount or eligibility is negotiated.
+The terms of a *commitment program* can also be negotiated, such as the unit price for its purchase, its discount, or its eligibility. A [*negotiated discount*](#glossary:negotiated-discount) (e.g., a discount received in exchange for a spend commitment) is reflected in Contracted Unit Price. The impact of applying a *commitment discount* to [*covered charges*](#glossary:covered-charge) is not; it is reflected in their [Effective Cost](#datamodel.costandusage.effectivecost).
 
 ## Usability Constraints
 
