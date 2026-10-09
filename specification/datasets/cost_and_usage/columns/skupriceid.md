@@ -2,7 +2,11 @@
 
 SKU Price ID is a service-provider-specified unique identifier that represents a specific [*SKU Price*](#glossary:sku-price) associated with a [*resource*](#glossary:resource) or [*service*](#glossary:service) used or purchased. It serves as a key reference for a *SKU Price* in a [*price list*](#glossary:price-list) published by a service provider, allowing practitioners to look up detailed information about the *SKU Price*.
 
-The composition of properties associated with the SKU Price ID may differ across service providers and across *SKUs* within the same service provider. However, the exclusion of dynamic or negotiable pricing properties - such as unit price amount; currency (and related exchange rates); temporal validity (e.g., effective dates); and contract- or negotiation-specific elements (e.g., contract or account identifiers, and negotiable discounts) - ensures that the SKU Price ID remains consistent across different billing periods and billing accounts within a service provider. This consistency enables efficient filtering of [*charges*](#glossary:charge) to track price fluctuations (e.g., changes in unit price amounts) over time and across billing accounts, for both list and contracted unit prices. Additionally, the SKU Price ID is commonly used to analyze costs based on pricing properties such as [*periods*](#glossary:period) and tiers.
+The composition of properties associated with the SKU Price ID may differ across service providers and across *SKUs* within the same service provider. However, the exclusion of dynamic or negotiable pricing elements - such as unit price amounts, currency, [*foreign exchange*](#glossary:foreign-exchange) rates, effective dates, contract or account identifiers, and negotiated discounts - ensures that the SKU Price ID remains consistent across different billing periods and billing accounts within a service provider. Modifications to the pricing structure itself (such as a negotiated tier configuration), however, are included in the *SKU Price* and therefore result in a distinct SKU Price ID.
+
+This consistency enables efficient filtering of [*charges*](#glossary:charge) to track price fluctuations (e.g., changes in unit price amounts) over time and across billing accounts, for both list and contracted unit prices. Additionally, the SKU Price ID is commonly used to analyze costs based on pricing properties such as [*periods*](#glossary:period) and tiers.
+
+To maintain a strict relationship with a single unit price, pricing structures with multiple price points (e.g., tiered pricing) use a distinct SKU Price ID for each individual pricing tier.
 
 ## Requirements
 
@@ -15,14 +19,17 @@ SkuPriceId MUST adhere to the following requirements:
   * SkuPriceId MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#datamodel.costandusage.chargeclass) is not "Correction".
   * SkuPriceId MAY be null in all other cases.
 * When SkuPriceId is not null, SkuPriceId MUST adhere to the following requirements:
-  * SkuPriceId MUST have one and only one parent [SkuId](#datamodel.costandusage.skuid).
-  * SkuPriceId MUST remain consistent over time.
-  * SkuPriceId MUST remain consistent across [*billing accounts*](#glossary:billing-account) or contracts.
+  * SkuPriceId MUST have one and only one parent [SkuId](#datamodel.costandusage.skuid) for a given [ServiceProviderName](#datamodel.costandusage.serviceprovidername).
+  * SkuPriceId MUST have one and only one [PricingUnit](#datamodel.costandusage.pricingunit) for a given ServiceProviderName.
+  * SkuPriceId MUST NOT be associated with both a "Usage" [ChargeCategory](#datamodel.costandusage.chargecategory) and a "Purchase" ChargeCategory for a given ServiceProviderName.
+  * SkuPriceId for a given ServiceProviderName and *SKU Price* MUST adhere to the following requirements:
+    * SkuPriceId MUST remain consistent over time.
+    * SkuPriceId MUST remain consistent across [*billing accounts*](#glossary:billing-account) or [*contracts*](#glossary:contract).
   * SkuPriceId MAY match SkuId.
   * SkuPriceId MUST be associated with a given [*resource*](#glossary:resource) or [*service*](#glossary:service) when ChargeCategory is "Usage" or "Purchase".
   * SkuPriceId MUST reference a *SKU Price* in a service-provider-supplied *price list*, enabling the lookup of detailed information about the *SKU Price*.
-  * SkuPriceId MUST be a valid reference to the [ListUnitPrice](#datamodel.costandusage.listunitprice) when the service provider publishes unit prices exclusive of discounts.
-  * SkuPriceId MUST be a valid reference to the [ContractedUnitPrice](#datamodel.costandusage.contractedunitprice) when the service provider supports negotiated pricing concepts.
+  * SkuPriceId MUST have one and only one [ListUnitPrice](#datamodel.costandusage.listunitprice) for a given ServiceProviderName, [BillingCurrency](#datamodel.costandusage.billingcurrency), and [ChargePeriodStart](#datamodel.costandusage.chargeperiodstart).
+  * SkuPriceId MUST have one and only one [ContractedUnitPrice](#datamodel.costandusage.contractedunitprice) for a given ServiceProviderName, *contract*, [BillingAccountId](#datamodel.costandusage.billingaccountid), BillingCurrency, and ChargePeriodStart.
 
 See [Examples: Commitment Discount Flexibility](#appendix.examples:commitmentdiscountflexibility) for more details around *commitment discount flexibility*.
 
@@ -40,14 +47,15 @@ A service-provider-specified unique identifier that represents a specific *SKU P
 
 ## Content Constraints
 
-| Constraint      | Value                                                |
-| :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datamodel.costandusage)             |
-| Column type     | Dimension                                            |
-| Feature level   | Conditional                                          |
-| Allows nulls    | True                                                 |
-| Data type       | String                                               |
-| Value format    | \<not specified>                                     |
+| Constraint                 | Value                                     |
+| :------------------------- | :---------------------------------------- |
+| Dataset                    | [Cost and Usage](#datamodel.costandusage) |
+| Operating Model Conditions | [Includes Unit Pricing](#operatingmodelconditions.includesunitpricing) |
+| Column type                | Dimension                                 |
+| Feature level              | Conditional                               |
+| Allows nulls               | True                                      |
+| Data type                  | String                                    |
+| Value format               | \<not specified>                          |
 
 ## Version Introduced
 

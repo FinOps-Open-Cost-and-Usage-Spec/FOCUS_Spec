@@ -19,7 +19,7 @@ SPEC_DIR = Path(__file__).resolve().parent.parent
 # Append more section names here to extend coverage over time.
 JSON_SEARCH_DIRS = [
     SPEC_DIR / "appendix",
-    SPEC_DIR / "conditions",
+    SPEC_DIR / "operating_model_conditions",
     SPEC_DIR / "datasets",
     SPEC_DIR / "supported_features",
 ]

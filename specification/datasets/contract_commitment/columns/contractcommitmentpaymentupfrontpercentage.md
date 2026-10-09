@@ -30,15 +30,16 @@ Represents the portion of the total Contract Commitment Cost paid at the start o
 
 ## Content Constraints
 
-| Constraint    | Value            |
-| :------------ | :--------------- |
-| Dataset       | [Contract Commitment](#datamodel.contractcommitment) |
-| Column type   | Metric           |
-| Feature level | Conditional      |
-| Allows nulls  | False            |
-| Data type     | Decimal          |
-| Value format  | [Numeric Format](#attributes.numericformat) |
-| Number range  | 0.0 to 1.0 (inclusive)            |
+| Constraint                 | Value                                                |
+| :------------------------- | :--------------------------------------------------- |
+| Dataset                    | [Contract Commitment](#datamodel.contractcommitment) |
+| Operating Model Conditions | [Includes Partial Upfront Payments](#operatingmodelconditions.includespartialupfrontpayments) |
+| Column type                | Metric                                               |
+| Feature level              | Conditional                                          |
+| Allows nulls               | False                                                |
+| Data type                  | Decimal                                              |
+| Value format               | [Numeric Format](#attributes.numericformat)          |
+| Number range               | 0.0 to 1.0 (inclusive)                               |
 
 ## Version Introduced
 

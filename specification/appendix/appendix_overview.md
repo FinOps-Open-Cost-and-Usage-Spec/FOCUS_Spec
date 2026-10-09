@@ -7,7 +7,9 @@
 | Topic | Description |
 | :--- | :--- |
 | [Discount Handling](#appendix.discounthandling) | Explains how discounts are represented and applied to charges in a FOCUS dataset. |
-| [Examples: AI Model Identity](#appendix.examples:aimodelidentity) | Illustrates how to represent the identity of an AI model in a Cost and Usage FOCUS dataset, including a directly purchased foundation model and the same model served by a cloud provider as a first-party service. |
+| [Examples: AI Model Identity](#appendix.examples:aimodelidentity) | Illustrates how to represent the identity of an AI model in a Cost and Usage FOCUS dataset, including a directly purchased AI model and the same model served by a cloud provider as a first-party service. |
+| [Examples: AI Prompt Caching](#appendix.examples:aipromptcaching) | Illustrates how to distinguish cached from uncached [*token*](#glossary:token) charges in a Cost and Usage FOCUS dataset, covering a service provider that prices cache retention into the write and one that charges for cache storage separately. |
+| [Examples: AI Model Billing](#appendix.examples:aimodelbilling) | Illustrates how to represent usage-based billing for AI model APIs in a Cost and Usage FOCUS dataset, including direct billing, marketplace purchases, first-party CSP offerings, commitment drawdown, and multi-model invoices with cached token charges. |
 | [Examples: Commitment Discounts](#appendix.examples:commitmentdiscounts) | Explains the purchasing, usage, and amortization of commitment discounts in a FOCUS dataset. |
 | [Examples: Commitment Discount Flexibility](#appendix.examples:commitmentdiscountflexibility) | Demonstrates scenarios for usage-based commitment discounts with and without commitment discount flexibility. |
 | [Examples: Commitment Program Eligibility Details](#appendix.examples:commitmentprogrameligibilitydetails) | Demonstrates how commitment program eligibility details interact with capacity reservation columns for capacity reservation programs. |
@@ -17,7 +19,8 @@
 | [Examples: JSON Object](#appendix.examples:jsonobject) | Provides examples for columns using the JSON Object Format, such as Contract Commitment Applicability. |
 | [Examples: Metadata](#appendix.examples:metadata) | Contains JSON payload examples for updating Data Generator, Dataset, Schema, and Recency metadata. |
 | [Examples: Participating Entity Identification](#appendix.examples:participatingentityidentification) | Illustrates how to identify the roles of participating entities (e.g., Service Provider, Invoice Issuer, Host Provider, Data Generator) across various supply chain scenarios. |
-| [Examples: SaaS](#appendix.examples:saas) | Illustrates how to model SaaS billing scenarios, including simple SaaS agreements, SaaS spend agreements, and virtual currency pricing models. |
+| [Examples: Requester Attribution](#appendix.examples:requesterattribution) | Illustrates how Principal ID and Credential ID are populated across different technology environments, including where a charge carries one identifier but not the other, and why neither column identifies the party that benefits from a charge. |
+| [Examples: SaaS](#appendix.examples:saas) | Illustrates how to model SaaS billing scenarios, including simple SaaS agreements, SaaS spend agreements, and consumption currency pricing models. |
 | [Examples: Split Cost Allocation Field Mapping](#appendix.examples:splitcostallocationfieldmapping) | Provides a selected column-by-column field mapping showing how a data generator transforms native billing data (column-augmentation format) into FOCUS split allocation rows, with metric reconciliation verification. |
 | [Grouping Constructs for Resources or Services](#appendix.groupingconstructsforresourcesorservices) | Outlines and compares the two distinct levels of resource or service grouping mechanisms supported by FOCUS: billing accounts and sub accounts. |
 | [Invoice and Billing Period Handling](#appendix.invoiceandbillingperiodhandling) | Outlines invoice reconciliation, invoice issuance, and open vs. closed billing periods across FOCUS datasets, including correction handling. |
@@ -38,12 +41,13 @@ The table below outlines the fictitious *data generators* used throughout the sp
 | **CollabChat** | Team Communications | A messaging platform offering organized chat channels, direct messaging, and secure file sharing for remote teams. | Slack |
 | **CrestNode** | Cloud Service Provider | An enterprise-focused cloud platform with deep integrations into existing corporate software ecosystems and directory services. | Microsoft Azure |
 | **LatticeScale** | Cloud Service Provider | A cloud provider heavily optimized for machine learning, data analytics, and containerized Kubernetes workloads. | Google Cloud Platform (GCP) |
-| **ModelMesh** | Foundation Model Developer | An AI lab that develops and trains open-weight foundation models, which are self-hosted or served by cloud providers and inference platforms. | Meta (Llama), Mistral AI |
+| **Meridian AI** | AI Inference Provider | An AI provider offering hosted inference endpoints, sold directly and through cloud marketplaces. | Cohere, Mistral AI |
+| **ModelMesh** | AI Model Developer | An AI lab that develops and trains open-weight AI models, which are self-hosted or served by cloud providers and inference platforms. | Meta (Llama), Mistral AI |
 | **OmniQuery** | Data Platform | A centralized hub for storing, processing, and analyzing massive datasets to drive business intelligence. | Snowflake, Databricks |
 | **PipelCRM** | CRM | A customer relationship management platform designed to track sales pipelines, manage contacts, and optimize lead conversion. | Salesforce, HubSpot |
 | **PulseMail** | Email API | A developer-friendly service for reliably routing, sending, and tracking both transactional and marketing emails. | SendGrid, Mailgun |
 | **SchemaWeaver** | Open Source Library | An open-source tool that refines raw cloud cost and usage data, normalizing it into FOCUS-compliant schemas for downstream analytics and reporting. Not a public service. | OpenCost, Cloud Intelligence Dashboards, FinOps toolkit |
-| **Solora AI** | Foundation Model Developer | An AI lab that develops and trains foundation models that are sold directly and served by cloud providers as a first-party offering. | OpenAI, Anthropic |
+| **Solora AI** | AI Model Developer | An AI lab that develops and trains AI models that are sold directly and served by cloud providers as a first-party offering. | OpenAI, Anthropic |
 | **SprintCanvas** | Project Management | A collaborative workspace for planning, assigning, and tracking team tasks and agile workflows. | Jira, Asana, Trello |
 | **StackLens** | SaaS Observability | A monitoring tool that tracks application performance, logs, and system health in real-time to prevent downtime. | Datadog, New Relic |
 | **StoreStack** | Database as a Service | A fully managed, scalable cloud database solution that handles provisioning, backups, and routine maintenance. | MongoDB Atlas |
