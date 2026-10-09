@@ -9,7 +9,7 @@ RegionName MUST adhere to the following requirements:
 * RegionName MUST be of type String.
 * RegionName MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * RegionName MUST adhere to the following nullability requirements:
-  * RegionName MUST be null when [RegionId](#datasets.costandusage.regionid) is null.
+  * RegionName MUST be null when [RegionId](#datamodel.costandusage.regionid) is null.
   * RegionName MUST NOT be null when RegionId is not null.
 
 ## Column ID
@@ -26,14 +26,15 @@ The name of an isolated geographic area where a *resource* is provisioned or a *
 
 ## Content Constraints
 
-| Constraint      | Value                                                |
-| :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datasets.costandusage)             |
-| Column type     | Dimension                                            |
-| Feature level   | Conditional                                          |
-| Allows nulls    | True                                                 |
-| Data type       | String                                               |
-| Value format    | \<not specified>                                     |
+| Constraint                 | Value                                     |
+| :------------------------- | :---------------------------------------- |
+| Dataset                    | [Cost and Usage](#datamodel.costandusage) |
+| Operating Model Conditions | [Includes Regions](#operatingmodelconditions.includesregions) |
+| Column type                | Dimension                                 |
+| Feature level              | Conditional                               |
+| Allows nulls               | True                                      |
+| Data type                  | String                                    |
+| Value format               | \<not specified>                          |
 
 ## Version Introduced
 

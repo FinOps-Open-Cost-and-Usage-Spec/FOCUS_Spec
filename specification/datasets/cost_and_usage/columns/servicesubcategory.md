@@ -1,6 +1,6 @@
 # Service Subcategory
 
-The Service Subcategory is a secondary classification of the [Service Category](#datasets.costandusage.servicecategory) for a [*service*](#glossary:service) based on its core function. The Service Subcategory (in conjunction with the Service Category) is commonly used for scenarios like analyzing spend and usage for specific workload types across service providers and tracking the migration of workloads across fundamentally different architectures.
+The Service Subcategory is a secondary classification of the [Service Category](#datamodel.costandusage.servicecategory) for a [*service*](#glossary:service) based on its core function. The Service Subcategory (in conjunction with the Service Category) is commonly used for scenarios like analyzing spend and usage for specific workload types across service providers and tracking the migration of workloads across fundamentally different architectures.
 
 ## Requirements
 
@@ -29,11 +29,12 @@ ServiceSubcategory MUST adhere to the following requirements:
 | Analytics                 | Other (Analytics)                     | Analytics services that do not fall into one of the defined subcategories. |
 | Business Applications     | Productivity and Collaboration        | Tools that facilitate individuals managing tasks and working together. |
 | Business Applications     | Other (Business Applications)         | Business Applications services that do not fall into one of the defined subcategories. |
+| Compute                   | Bare Metal                            | Computing environments provisioned as physical servers without a provider-managed hypervisor, giving direct access to the underlying hardware. |
 | Compute                   | Containers                            | Management and orchestration of containerized compute platforms. |
 | Compute                   | End User Computing                    | Virtualized desktop infrastructure and device / endpoint management. |
 | Compute                   | Quantum Compute                       | Resources and simulators that leverage the principles of quantum mechanics. |
 | Compute                   | Serverless Compute                    | Enablement of compute capabilities without provisioning or managing servers. |
-| Compute                   | Virtual Machines                      | Computing environments ranging from hosts with abstracted operating systems to bare-metal servers. |
+| Compute                   | Virtual Machines                      | Computing environments provisioned as virtual instances with a provider-managed hypervisor, abstracting access to the underlying hardware, whether shared or single-tenant. |
 | Compute                   | Other (Compute)                       | Compute services that do not fall into one of the defined subcategories. |
 | Databases                 | Caching                               | Low-latency and high-throughput access to frequently accessed data. |
 | Databases                 | Data Warehouses                       | Big data storage and querying capabilities. |
@@ -112,14 +113,15 @@ Secondary classification of the Service Category for a *service* based on its co
 
 ## Content Constraints
 
-| Constraint      | Value                                                |
-| :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datasets.costandusage)             |
-| Column type     | Dimension                                            |
-| Feature level   | Recommended                                          |
-| Allows nulls    | False                                                |
-| Data type       | String                                               |
-| Value format    | Allowed values                                       |
+| Constraint                 | Value                                     |
+| :------------------------- | :---------------------------------------- |
+| Dataset                    | [Cost and Usage](#datamodel.costandusage) |
+| Operating Model Conditions | Not applicable                            |
+| Column type                | Dimension                                 |
+| Feature level              | Recommended                               |
+| Allows nulls               | False                                     |
+| Data type                  | String                                    |
+| Value format               | Allowed values                            |
 
 ## Version Introduced
 

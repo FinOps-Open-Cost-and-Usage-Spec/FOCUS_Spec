@@ -1,0 +1,86 @@
+{
+  "CON-IncludesCommitmentPrograms-N-000-C": {
+    "Function": "Composite",
+    "Reference": "IncludesCommitmentPrograms",
+    "EntityType": "Condition",
+    "EntityId": "IncludesCommitmentPrograms",
+    "EntityName": "Includes Commitment Programs",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "DatasetType": "CON",
+    "DatasetId": null,
+    "DatasetName": null,
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Static",
+    "Order": 0,
+    "ValidationCriteria": {
+      "MustSatisfy": "IncludesCommitmentPrograms MUST adhere to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CON-IncludesCommitmentPrograms-N-001-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CON-IncludesCommitmentPrograms-N-002-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CON-IncludesCommitmentPrograms-N-001-C",
+        "CON-IncludesCommitmentPrograms-N-002-C"
+      ]
+    }
+  },
+  "CON-IncludesCommitmentPrograms-N-001-C": {
+    "Function": "Validation",
+    "Reference": "IncludesCommitmentPrograms",
+    "EntityType": "Condition",
+    "EntityId": "IncludesCommitmentPrograms",
+    "EntityName": "Includes Commitment Programs",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "DatasetType": "CON",
+    "DatasetId": null,
+    "DatasetName": null,
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Dynamic",
+    "Order": 10,
+    "ValidationCriteria": {
+      "MustSatisfy": "IncludesCommitmentPrograms MUST evaluate to true when the operating model includes commitment programs.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CON-IncludesCommitmentPrograms-N-002-C": {
+    "Function": "Validation",
+    "Reference": "IncludesCommitmentPrograms",
+    "EntityType": "Condition",
+    "EntityId": "IncludesCommitmentPrograms",
+    "EntityName": "Includes Commitment Programs",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "DatasetType": "CON",
+    "DatasetId": null,
+    "DatasetName": null,
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Dynamic",
+    "Order": 20,
+    "ValidationCriteria": {
+      "MustSatisfy": "IncludesCommitmentPrograms MUST evaluate to false when the operating model does not include commitment programs.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}

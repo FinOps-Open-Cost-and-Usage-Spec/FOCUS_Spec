@@ -1,6 +1,6 @@
 # Contract Commitment Payment Model
 
-Contract Commitment Payment Model defines the financial settlement structure of a [*contract commitment*](#glossary:contract-commitment). It identifies whether the financial obligation is settled via a single upfront payment, distributed recurring charges, or a combination of both over the [contract commitment duration type](#datasets.contractcommitment.contractcommitmentdurationtype).
+Contract Commitment Payment Model defines the financial settlement structure of a [*contract commitment*](#glossary:contract-commitment). It identifies whether the financial obligation is settled via a single upfront payment, distributed recurring charges, or a combination of both over the [contract commitment duration type](#datamodel.contractcommitment.contractcommitmentdurationtype).
 
 Contract Commitment Payment Model has three possible values: **No Upfront**, **Partial Upfront**, and **All Upfront**.
 
@@ -26,8 +26,8 @@ ContractCommitmentPaymentModel MUST adhere to the following requirements:
 
 ## Implementation Guidance
 
-* Settled via Upfront: Refer to the [contract commitment period start](#datasets.contractcommitment.contractcommitmentperiodstart) for the cash event.
-* Settled via Recurring Charges: Refer to the [contract commitment payment interval](#datasets.contractcommitment.contractcommitmentpaymentinterval) to understand the frequency of those subsequent cash events.
+* Settled via Upfront: Refer to the [contract commitment period start](#datamodel.contractcommitment.contractcommitmentperiodstart) for the cash event.
+* Settled via Recurring Charges: Refer to the [contract commitment payment interval](#datamodel.contractcommitment.contractcommitmentpaymentinterval) to understand the frequency of those subsequent cash events.
 
 ## Column ID
 
@@ -43,14 +43,15 @@ Defines the financial settlement structure of a *contract commitment*.
 
 ## Content Constraints
 
-| Constraint      | Value          |
-| :-------------- | :------------- |
-| Dataset         | [Contract Commitment](#datasets.contractcommitment)  |
-| Column type     | Dimension      |
-| Feature level   | Mandatory      |
-| Allows nulls    | False          |
-| Data type       | String         |
-| Value format    | Allowed values |
+| Constraint                 | Value                                                |
+| :------------------------- | :--------------------------------------------------- |
+| Dataset                    | [Contract Commitment](#datamodel.contractcommitment) |
+| Operating Model Conditions | Not applicable                                       |
+| Column type                | Dimension                                            |
+| Feature level              | Mandatory                                            |
+| Allows nulls               | False                                                |
+| Data type                  | String                                               |
+| Value format               | Allowed values                                       |
 
 ## Version Introduced
 

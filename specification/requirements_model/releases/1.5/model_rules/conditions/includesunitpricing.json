@@ -1,0 +1,86 @@
+{
+  "CON-IncludesUnitPricing-N-000-C": {
+    "Function": "Composite",
+    "Reference": "IncludesUnitPricing",
+    "EntityType": "Condition",
+    "EntityId": "IncludesUnitPricing",
+    "EntityName": "Includes Unit Pricing",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "DatasetType": "CON",
+    "DatasetId": null,
+    "DatasetName": null,
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Static",
+    "Order": 0,
+    "ValidationCriteria": {
+      "MustSatisfy": "IncludesUnitPricing MUST adhere to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CON-IncludesUnitPricing-N-001-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CON-IncludesUnitPricing-N-002-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CON-IncludesUnitPricing-N-001-C",
+        "CON-IncludesUnitPricing-N-002-C"
+      ]
+    }
+  },
+  "CON-IncludesUnitPricing-N-001-C": {
+    "Function": "Validation",
+    "Reference": "IncludesUnitPricing",
+    "EntityType": "Condition",
+    "EntityId": "IncludesUnitPricing",
+    "EntityName": "Includes Unit Pricing",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "DatasetType": "CON",
+    "DatasetId": null,
+    "DatasetName": null,
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Dynamic",
+    "Order": 10,
+    "ValidationCriteria": {
+      "MustSatisfy": "IncludesUnitPricing MUST evaluate to true when the operating model includes unit pricing.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CON-IncludesUnitPricing-N-002-C": {
+    "Function": "Validation",
+    "Reference": "IncludesUnitPricing",
+    "EntityType": "Condition",
+    "EntityId": "IncludesUnitPricing",
+    "EntityName": "Includes Unit Pricing",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "DatasetType": "CON",
+    "DatasetId": null,
+    "DatasetName": null,
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Dynamic",
+    "Order": 20,
+    "ValidationCriteria": {
+      "MustSatisfy": "IncludesUnitPricing MUST evaluate to false when the operating model does not include unit pricing.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}

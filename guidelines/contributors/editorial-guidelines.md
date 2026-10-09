@@ -46,11 +46,11 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
         <td><strong>Column &amp; Attribute IDs:</strong></td>
         <td>
            <strong>Columns IDs</strong>:<br>
-            * PricingQuantity<br> 
-            * PricingUnit<br> 
+            * PricingQuantity<br>
+            * PricingUnit<br>
             * ServiceProviderName<br><br>
           <strong>Attributes IDs</strong>:<br>
-            * CurrencyCodeFormat <br> 
+            * CurrencyCodeFormat <br>
             * DateTimeFormat <br>
         </td>
         <td>
@@ -119,7 +119,7 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
         <td><strong>Important Text</strong></td>
         <td> <img width="492" alt="image" src="https://github.com/user-attachments/assets/c6f60ff9-1503-43a3-8229-004595b334d2"></td>
         <td>> Important Consideration</td>
-        <td>- It is added as a note.</td>
+        <td>* It is added as a note.</td>
     </tr>
     <tr>
         <td><strong>Key-Value Format</strong></td>
@@ -136,23 +136,27 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
 ```
             </pre>
         </td>
-        <td>- Monospace font</td>
+        <td>* Monospace font</td>
     </tr>
     <tr>
       <td><strong>Tables</strong></td>
       <td><img width="492" alt="image" src="https://github.com/user-attachments/assets/5185cbf9-306d-4663-a1c7-c8b7ab5c5bb8"></td>
       <td><img width="492" alt="image" src="https://github.com/user-attachments/assets/83d0977f-a731-4def-93e3-b3e5f5dedb72"></td>
-      <td> - Tables: Simple tables can be created using markdown, but for more complex tables, it is recommended to use HTML elements. See the example below. </td>
+      <td> * Tables: Simple tables can be created using markdown, but for more complex tables, it is recommended to use HTML elements. See the example below. </td>
     </tr>
 </table>
 
+> **Note:** Complex tables typically include merged rows or columns, embedded images, multi-line content, or advanced layout requirements that are difficult to express reliably using standard markdown tables.
+
 ## Editorial Notes
 
-> Note: Examples are illustrative, informative, and non-normative. They do not define requirements and do not override the rules in this section.
+> **Note:** Examples are illustrative, informative, and non-normative. They do not define requirements and do not override the rules in this section.
 
 ### Linking
 
 * **Linking on First Occurrence:** To avoid excessive linking, entity references (including FOCUS entity IDs, display names, and glossary terms) MUST be linked only on their first occurrence within a given source markdown file.
+
+> **Note:** Unless otherwise specified, first-occurrence linking is evaluated relative to the containing source markdown file.
 
 **Exceptions:**
 
@@ -187,8 +191,10 @@ To ensure consistent language when describing relationships and evaluations betw
 * **Numeric Values:** Use "equal" or "be equal to" when comparing numeric values, costs, quantities, or mathematical sums (e.g., "ContractedCost MUST be equal to BilledCost"). Do not use "match".
 * **Identifiers and Strings:** Use "match" when comparing strings, IDs, or names (e.g., "HostProviderName MUST match ServiceProviderName"). Do not use "equal".
 * **State and Conditions:** Use forms of the verb "to be" (e.g., "is", "are", "be") when evaluating if a column contains a specific value or state (e.g., "when ChargeCategory is `Purchase`" or "ChargeCategory MAY be `Usage`"). Do not use "equals" or "equal", **except** when evaluating inequalities (e.g., "greater than or equal to").
-* **Inequalities:** When expressing range or directional limits, the standard phrases "greater than or equal to" and "less than or equal to" MUST be used, even for non-numeric data types like timestamps or dates (e.g., "BillingPeriodLastUpdated MUST be greater than or equal to BillingPeriodCreated"). 
+* **Inequalities:** When expressing range or directional limits, the standard phrases "greater than or equal to" and "less than or equal to" MUST be used, even for non-numeric data types like timestamps or dates (e.g., "BillingPeriodLastUpdated MUST be greater than or equal to BillingPeriodCreated").
 * **Semantic Comparisons:** When comparing concepts, formats, or values that share the same meaning but may not be strictly identical strings, use "equivalent" or "semantically equivalent" (e.g., "PricingUnit MUST be semantically equivalent to the corresponding pricing measurement unit..."). Do not use "equal".
+
+> **Note:** Validation of comparison terminology may require contextual understanding of value types, identifiers, semantic equivalence, or domain-specific meaning and may not always be suitable for deterministic editorial validation.
 
 ### Bullet Structure
 
@@ -224,7 +230,9 @@ To ensure consistent language when describing relationships and evaluations betw
 
 ### Formatting
 
-* * **Structural Anchor Requirements:** Normative bullet lists MUST be preceded by a structural anchor requirement. See [Normative Requirements Guidelines](normative-requirements-guidelines.md#structural-anchor-requirement) for details..
+* **Structural Anchors:** Normative bullet lists MUST be preceded by a structural anchor. See [Normative Requirements Guidelines](normative-requirements-guidelines.md#structural-anchor) for details.
+
+> **Note:** Validation of structural anchors may require contextual editorial judgment and is not always suitable for deterministic editorial validation.
 
 * **Example** (Markdown, illustrative):
 
@@ -234,6 +242,8 @@ To ensure consistent language when describing relationships and evaluations betw
 
 * **Consistent Introductory Phrases:** Introductory phrases for normative lists SHOULD be consistent within a section.
 
+> **Note:** Authors SHOULD prefer stable introductory patterns such as "... MUST adhere to the following requirements:" within the same section unless contextual variation improves readability.
+
 * **Sentence Spacing:** Sentences within paragraphs MUST be delineated with a single space.
 
 * **Semicolons in Nested Lists:** When a comma-separated list contains one or more items with internal commas, semicolons MUST be used to separate the top-level list items to prevent ambiguity about item boundaries. See [Merriam-Webster's guide to semicolons](https://www.merriam-webster.com/grammar/a-guide-to-using-semicolons) for further reference.
@@ -241,7 +251,7 @@ To ensure consistent language when describing relationships and evaluations betw
     * Incorrect: `The columns foster data integrity, interoperability, and consistency, improve data analysis and reporting, and support reliable decision-making.`
     * Correct: `The columns foster data integrity, interoperability, and consistency; improve data analysis and reporting; and support reliable decision-making.`
 
-* **Spelling Out Numbers**: In standard prose, numbers zero through nine MUST be spelled out as words (e.g., "one", "two", "nine"), while numbers 10 and above MUST be written as numerals (e.g., "10", "42"). 
+* **Spelling Out Numbers**: In standard prose, numbers zero through nine MUST be spelled out as words (e.g., "one", "two", "nine"), while numbers 10 and above MUST be written as numerals (e.g., "10", "42").
   * **Exception:** This rule DOES NOT apply to technical values, mathematical formulas, JSON examples, or explicit column constraints (e.g., write `BilledCost MUST be 0`, not `BilledCost MUST be zero`).
 
 * **Dash Formatting:**
@@ -261,21 +271,25 @@ To ensure consistent language when describing relationships and evaluations betw
 
 * **Consistent Subsection Order:** Sections for the same entity type SHOULD follow a consistent subsection order (e.g., Title, Requirements, Entity ID, Display Name, Description, Content Constraints, Version Introduced).
 
+> **Note:** The subsection order examples in this section are illustrative unless a canonical order is explicitly defined for a specific entity type.
+
 * **Consistent Subsection Titles:** Subsection titles SHOULD match exactly across sections of the same entity type.
 
 * **Normative Scope:** Normative requirements (those using BCP-14 keywords) MUST appear only in the "Requirements" section.
 
 * **No Normative Leakage:** Normative keywords (MUST, SHOULD, MAY, etc.) MUST NOT be used in any section other than "Requirements".
 
+> **Note:** This restriction applies to normative content within FOCUS specification entities and does not prohibit guideline documents, examples, or editorial instructions from discussing normative terminology or authoring rules.
+
 * **Example** (Markdown, illustrative):
 
 ```md
- ✔ Correct:
+ Correct:
   ## Requirements
   ...
   * PricingQuantity MUST be greater than 0.
   
- ✘ Incorrect:
+ Incorrect:
   ## Description
   ...
   * PricingQuantity MUST be greater than 0.
@@ -283,20 +297,28 @@ To ensure consistent language when describing relationships and evaluations betw
 
 ### Examples
 
-> Note: Authors should consult the actual FOCUS attribute specification files as the source of truth, as these guidelines do not necessarily reflect the latest version.
+> **Note:** Authors should consult the actual FOCUS attribute specification files as the source of truth, as these guidelines do not necessarily reflect the latest version.
+
+* **Brand-Free Identifiers:** Resource, host, and pod-level identifiers in appendix examples MUST use neutral, brand-free labels (e.g., `host-prod-07`, `pod-orders-01`) rather than labels derived from fictitious customer or data generator names, so that an identifier does not read as an additional, unintended entity in the example.
 
 * **Valid Examples:** Examples MUST reflect valid combinations of values defined in the specification.
 
+> **Note:** Validation of example correctness may require schema, glossary, or domain-specific review beyond editorial validation.
+
 * **No New Terminology:** Examples MUST NOT introduce terminology that is not defined in the specification.
 
-* **Informative Examples:** Examples MUST be considered informative and non-normative, and MUST NOT define requirements. 
+> **Note:** Validation of terminology consistency may require comparison against the approved glossary and specification entity definitions.
+
+* **Informative Examples:** Examples MUST be considered informative and non-normative, and MUST NOT define requirements.
 
 * **Example Note Requirement:** Example sections MUST include a note indicating that the content is informative and non-normative.
+
+  * **Exception:** This requirement does not apply to guideline documents, training materials, or authoring guidance where examples are inherently illustrative.
 
 * **Example** (Markdown, illustrative):
 
   ```md
-  > Note: The following examples are informative and non-normative. They do not define requirements.
+  > **Note:** The following examples are informative and non-normative. They do not define requirements.
   ```
 
 ### Notes and Exceptions
@@ -312,6 +334,8 @@ To ensure consistent language when describing relationships and evaluations betw
 * **Consistent Terminology:** Only the terms `Note` or `Notes` MUST be used. Variants such as `Important Note`, `Warning`, or similar terms MUST NOT be used.
 
 * **Non-Normative Content:** Notes MUST be informative and non-normative. They MUST NOT contain normative keywords (e.g., MUST, SHOULD, MAY).
+
+> **Note:** This restriction applies to informative notes within specification content and does not prohibit guideline documents or explanatory examples from discussing normative keywords.
 
 * **Single-Line Notes:** A note containing a single statement MUST be written as a single blockquote line.
 
@@ -342,9 +366,12 @@ To ensure consistent language when describing relationships and evaluations betw
 
 * **No Blockquote Usage:** Exceptions MUST NOT be expressed using blockquote syntax (which is strictly reserved for Notes).
 
-* **No Header Usage:** Exceptions MUST NOT use Markdown headers (e.g., `#### Exceptions`). 
+* **No Header Usage:** Exceptions MUST NOT use Markdown headers (e.g., `#### Exceptions`).
 
-* **Exception Label:** Exceptions MUST begin with the inline label `**Exception:**` or `**Exceptions:**` (the term `Exception` or `Exceptions`, optionally followed by a qualifier, followed by a colon, in bold).
+* **Exception Label:** Exceptions MUST begin with the inline label `**Exception[ for <Topic>]:**` or `**Exceptions[ for <Topic>]:**` (the term `Exception` or `Exceptions`, with or without a semantic qualifier `for <Topic>`, followed by a colon, formatted in bold).
+  * A semantic qualifier SHOULD be included in Normative Requirements Guidelines to support cross-referencing and automated processing.
+  * A semantic qualifier MAY be included in other guidelines.
+  * When used, semantic qualifiers SHOULD be applied consistently throughout the document.
 
 * **Consistent Terminology:** Only the term `Exception` or `Exceptions` MUST be used. Variants such as `Special Case`, `Caveat`, or similar terms MUST NOT be used.
 
@@ -359,7 +386,7 @@ To ensure consistent language when describing relationships and evaluations betw
 * **Example** (Markdown, illustrative):
 
   ```md
-  **Exceptions:** This is a single-line exception.
+  **Exception:** This is a single-line exception.
   ```
 
 * **Example** (Markdown, illustrative):
@@ -372,8 +399,6 @@ To ensure consistent language when describing relationships and evaluations betw
   ```
 
 ### Important Text
-
-* **Informative Notes:** Important notes MUST NOT contain normative keywords.
 
 * **Currency and Dollar Signs:** The `$` symbol SHOULD be used for currency values in prose and tables. For build-pipeline behavior and troubleshooting related to dollar-sign parsing, see [MarkdownPP Guidelines](markdownpp-guidelines.md#currency-and-dollar-sign-handling).
 
@@ -415,7 +440,7 @@ To ensure consistent language when describing relationships and evaluations betw
 > **3.1.47.6. Content Constraints**
 >
 > <img width="492" alt="image" src="https://github.com/user-attachments/assets/5185cbf9-306d-4663-a1c7-c8b7ab5c5bb8">
-> 
+>
 > **3.1.47.7. Version Introduced**
 >
 > 1.0-preview
@@ -427,6 +452,7 @@ To ensure consistent language when describing relationships and evaluations betw
   * When a markdown table has a maximum row width of 120 characters or more, the table SHOULD use exactly one space after values without additional padding.
 
 ### Example HTML Table
+
 This is an example of a complex table with merged rows and columns, along with an additional header row.
 
 <table  border="1" cellpadding="8" cellspacing="0">
@@ -459,6 +485,7 @@ This is an example of a complex table with merged rows and columns, along with a
 </table>
 
 This is how it is written in HTML:
+
 ```html
 <table  border="1" cellpadding="8" cellspacing="0">
   <tr>

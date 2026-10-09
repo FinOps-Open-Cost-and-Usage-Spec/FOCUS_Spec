@@ -2,9 +2,13 @@ import pytest
 import re
 from conftest import requires_version
 
-def _collect_reference_prefix_violations(cr_json, expect_att_attribute_prefix: bool):
+def _collect_reference_prefix_violations(cr_json, expect_att_attribute_prefix: bool, support_condition: bool = False):
     rules = cr_json.get("ModelRules") or {}
     violations = []
+
+    # The entity-letter character class for the new 3-letter-prefix pattern.
+    # 1.5+ adds 'N' for Condition rules (CON-<EntityId>-N-<Number>-<Severity>).
+    letter_class = "CADON" if support_condition else "CADO"
 
     for rid, rule in rules.items():
         entity_type = rule.get("EntityType")
@@ -16,7 +20,7 @@ def _collect_reference_prefix_violations(cr_json, expect_att_attribute_prefix: b
 
         # Check if rule ID follows the new 3-letter-prefix pattern
         # Pattern: <3-letter-prefix>-<Reference>-<EntityType>-<Number>-<Severity>
-        new_pattern_match = re.match(r'^([A-Z]{3})-(.+?)-([CADO])-\d+-[A-Z]$', rid)
+        new_pattern_match = re.match(rf'^([A-Z]{{3}})-(.+?)-([{letter_class}])-\d+-[A-Z]$', rid)
 
         if new_pattern_match:
             # Rule uses new format - validate it properly
@@ -29,6 +33,18 @@ def _collect_reference_prefix_violations(cr_json, expect_att_attribute_prefix: b
                     continue
                 if entity_letter != "A":
                     violations.append((rid, ref, "Attribute rules must use entity letter 'A'"))
+                    continue
+                if reference_part != ref:
+                    violations.append((rid, ref, f"Expected reference '{reference_part}' to match EntityId field"))
+                continue
+
+            # For 1.5+, Condition rules must use CON-<EntityId>-N-<Number>-<Severity>.
+            if support_condition and entity_type == "Condition":
+                if prefix != "CON":
+                    violations.append((rid, ref, "Condition rules must use CON prefix"))
+                    continue
+                if entity_letter != "N":
+                    violations.append((rid, ref, "Condition rules must use entity letter 'N'"))
                     continue
                 if reference_part != ref:
                     violations.append((rid, ref, f"Expected reference '{reference_part}' to match EntityId field"))
@@ -64,6 +80,11 @@ def _collect_reference_prefix_violations(cr_json, expect_att_attribute_prefix: b
                     attribute_pattern = rf'^ATT-{re.escape(ref)}-A-\d+-[A-Z]$'
                     if not re.match(attribute_pattern, rid):
                         violations.append((rid, ref, "Attribute rules must use ATT prefix format: ATT-<EntityId>-A-<Number>-<Severity>"))
+                # For Condition rules in 1.5+, validate CON-prefixed format.
+                elif support_condition and entity_type == "Condition":
+                    condition_pattern = rf'^CON-{re.escape(ref)}-N-\d+-[A-Z]$'
+                    if not re.match(condition_pattern, rid):
+                        violations.append((rid, ref, "Condition rules must use CON prefix format: CON-<EntityId>-N-<Number>-<Severity>"))
                 # For non-Dataset/Column rules before 1.4, validate legacy format.
                 elif not expect_att_attribute_prefix:
                     if not rid.startswith(ref):
@@ -87,14 +108,32 @@ def test_reference_matches_rule_key_prefix_for_columns_and_objects_pre_1_4(cr_js
     )
 
 
-@pytest.mark.dependency(name="reference_matches_rule_key_prefix_for_columns_and_objects_1_4_plus", scope="session")
-def test_reference_matches_rule_key_prefix_for_columns_and_objects_1_4_plus(cr_json, model_version):
-    # This test applies to version 1.4 and above.
-    should_skip, reason = requires_version(model_version, min_version="1.4")
+@pytest.mark.dependency(name="reference_matches_rule_key_prefix_for_columns_and_objects_1_4", scope="session")
+def test_reference_matches_rule_key_prefix_for_columns_and_objects_1_4(cr_json, model_version):
+    # This test applies to version 1.4 only (prior to the 1.5 Condition entity type).
+    should_skip, reason = requires_version(model_version, min_version="1.4", max_version="1.4")
     if should_skip:
         pytest.skip(reason)
 
     violations = _collect_reference_prefix_violations(cr_json, expect_att_attribute_prefix=True)
+
+    assert not violations, (
+        "ModelRules.EntityId must match the expected pattern in the rule key:\n"
+        + "\n".join(f"- Rule {rid}: EntityId='{ref}' - {issue}" for rid, ref, issue in violations)
+    )
+
+
+@pytest.mark.dependency(name="reference_matches_rule_key_prefix_for_columns_and_objects_1_5_plus", scope="session")
+def test_reference_matches_rule_key_prefix_for_columns_and_objects_1_5_plus(cr_json, model_version):
+    # This test applies to version 1.5 and above, which adds the Condition entity type
+    # (CON-<EntityId>-N-<Number>-<Severity>).
+    should_skip, reason = requires_version(model_version, min_version="1.5")
+    if should_skip:
+        pytest.skip(reason)
+
+    violations = _collect_reference_prefix_violations(
+        cr_json, expect_att_attribute_prefix=True, support_condition=True
+    )
 
     assert not violations, (
         "ModelRules.EntityId must match the expected pattern in the rule key:\n"

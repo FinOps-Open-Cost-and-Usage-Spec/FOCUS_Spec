@@ -8,6 +8,10 @@ An accounting method used in technology cost management to record costs in the p
 
 A charge representing a modification to billing data to account for certain events or circumstances not previously captured, or captured incorrectly. Examples include billing errors, service disruptions, or pricing changes.
 
+<a name="glossary:ai-model"><b>AI Model</b></a>
+
+A trained machine learning system (e.g., a large language model) that produces output, such as text, images, or embeddings, from input content.
+
 <a name="glossary:allocated-charge"><b>Allocated Charge</b></a>
 
 The [charge](#glossary:charge) that was created as the result of an allocation operation. This is used in the context of [Data Generator-Calculated Split Cost Allocation](#supportedfeatures.datagenerator-calculatedsplitcostallocation) to identify the charges that were created from the [origin charge](#glossary:origin-charge) resulting from the application of Data Generator-Calculated Split Cost Allocation.
@@ -58,7 +62,7 @@ The time window for which a charge is effective, inclusive of the start date and
 
 <a name="glossary:closed-billing-period"><b>Closed Billing Period</b></a>
 
-A [*billing period*](#glossary:billing-period) with [Billing Period Status](#datasets.billingperiod.billingperiodstatus) set to "Closed". The period has been financially closed after all anticipated invoices for the period have been [*issued*](#glossary:issued-invoice) by designated [*invoice issuers*](#glossary:invoice-issuer) and no additional invoices will be associated with this period. Exceptionally, additional invoices may be associated with a closed billing period if explicitly requested or approved by the customer.
+A [*billing period*](#glossary:billing-period) with [Billing Period Status](#datamodel.billingperiod.billingperiodstatus) set to "Closed". The period has been financially closed after all anticipated invoices for the period have been [*issued*](#glossary:issued-invoice) by designated [*invoice issuers*](#glossary:invoice-issuer) and no additional invoices will be associated with this period. Exceptionally, additional invoices may be associated with a closed billing period if explicitly requested or approved by the customer.
 
 <a name="glossary:cloud-service-provider"><b>Cloud Service Provider (CSP)</b></a>
 
@@ -70,15 +74,15 @@ A customer's agreement to either spend a defined monetary amount or consume a sp
 
 <a name="glossary:commitment-discount"><b>Commitment Discount</b></a>
 
-A publicly available [*contract commitment*](#glossary:contract-commitment) that provides discounted pricing on preselected SKUs in exchange for a commitment to specific spend or usage goals over a specified [*period*](#glossary:period), based on publicly disclosed standard terms and pricing. Committed spend or usage is evenly distributed across predefined [Contract Commitment Fulfillment Intervals](#datasets.contractcommitment.contractcommitmentfulfillmentinterval) (e.g., hourly), and unused benefits cannot be carried over to subsequent Intervals. Only one commitment discount may be applied to a single charge at a time, and it may overlap with one or more [*negotiated discounts*](#glossary:negotiated-discount).
+A publicly available [*contract commitment*](#glossary:contract-commitment) that provides discounted pricing on preselected SKUs in exchange for a commitment to specific spend or usage goals over a specified [*period*](#glossary:period), based on publicly disclosed standard terms and pricing. Committed spend or usage is evenly distributed across predefined [Contract Commitment Fulfillment Intervals](#datamodel.contractcommitment.contractcommitmentfulfillmentinterval) (e.g., hourly), and unused benefits cannot be carried over to subsequent Intervals. Only one commitment discount may be applied to a single charge at a time, and it may overlap with one or more [*negotiated discounts*](#glossary:negotiated-discount).
 
 This term has been used in the past by FinOps teams managing Public Cloud to refer to specific *contract commitments* (including Reserved Instances, Savings Plans and Committed Use Discounts) offered by cloud providers, and is defined here to maintain consistency with the terms of that subset of *contract commitments*.
 
 Commitment discounts are classified with the following designations:
 
-* [Contract Commitment Offer Category](#datasets.contractcommitment.contractcommitmentoffercategory): "Public"
-* [Contract Commitment Benefit Category](#datasets.contractcommitment.contractcommitmentbenefitcategory): "Discount"
-* [Contract Commitment Model](#datasets.contractcommitment.contractcommitmentmodel): "Continuous"
+* [Contract Commitment Offer Category](#datamodel.contractcommitment.contractcommitmentoffercategory): "Public"
+* [Contract Commitment Benefit Category](#datamodel.contractcommitment.contractcommitmentbenefitcategory): "Discount"
+* [Contract Commitment Model](#datamodel.contractcommitment.contractcommitmentmodel): "Continuous"
 * Unused benefits cannot be carried over to subsequent Contract Commitment Fulfillment Intervals
 
 <a name="glossary:commitment-discount-flexibility"><b>Commitment Discount Flexibility</b></a>
@@ -88,6 +92,12 @@ A feature of [*commitment discounts*](#glossary:commitment-discount) that may fu
 <a name="glossary:commitment-program"><b>Commitment Program</b></a>
 
 A service-provider offering that allows a customer to enter into a [*commitment*](#glossary:commitment). Commitment programs include [*commitment discounts*](#glossary:commitment-discount), [*capacity reservations*](#glossary:capacity-reservation), and other constructs that require advance spend or usage agreements.
+
+<a name="glossary:consumption-currency"><b>Consumption Currency</b></a>
+
+A proprietary [*virtual currency*](#glossary:virtual-currency) issued by a [*service provider*](#glossary:service-provider) to normalize, measure, and aggregate the consumption of [*resources*](#glossary:resource) or [*services*](#glossary:service) within their specific ecosystem.
+
+Unlike a [*national currency*](#glossary:national-currency), a consumption currency acts as an intermediate balance and holds no purchasing power outside of the issuing provider's platform. Pricing models that utilize a consumption currency require a secondary conversion rate to calculate the final financial cost of the usage. Common examples include proprietary platform credits and normalized billing units.
 
 <a name="glossary:contract"><b>Contract</b></a>
 
@@ -99,7 +109,7 @@ A specific term within a [*contract*](#glossary:contract) that defines a measura
 
 <a name="glossary:contracted-unit-price"><b>Contracted Unit Price</b></a>
 
-The agreed-upon unit price for a single [Pricing Unit](#datasets.costandusage.pricingunit) of the associated SKU, inclusive of negotiated discounts, if present, and exclusive of any other discounts. This price is denominated in the [Billing Currency](#glossary:billing-currency).
+The negotiated unit price per [Pricing Unit](#datamodel.costandusage.pricingunit) for the [*SKU Price*](#glossary:sku-price) identified by the given [SKU Price ID](#datamodel.costandusage.skupriceid). Contracted Unit Price reflects [*negotiated pricing terms*](#glossary:negotiated-pricing-terms) for the associated *SKU Price* that are independent of any discount-bearing [*commitment programs*](#glossary:commitment-program) (e.g., [*commitment discount*](#glossary:commitment-discount)) being applied to the [*charge*](#glossary:charge). It does not reflect any unit price impact dependent on a discount-bearing *commitment program* being applied to the *charge*.
 
 <a name="glossary:correction"><b>Correction</b></a>
 
@@ -107,15 +117,19 @@ Any modification (including updates, additions, or omissions) to previously deli
 
 A correction (lowercase) may consist of one or more simultaneous changes, including updates to or omission of previously delivered records, or the addition of new records that supplement previously delivered data within the affected *delivery scope*. This concept applies across all FOCUS datasets.
 
-In contrast to the broader concept of correction (lowercase), the term "Correction" (capitalized) refers to a specific allowed value in the [Charge Class](#datasets.costandusage.chargeclass) column in Cost and Usage datasets. It designates [*charges*](#glossary:charge) used to correct cost or usage data from a previously [*closed billing period*](#glossary:closed-billing-period).
+In contrast to the broader concept of correction (lowercase), the term "Correction" (capitalized) refers to a specific allowed value in the [Charge Class](#datamodel.costandusage.chargeclass) column in Cost and Usage datasets. It designates [*charges*](#glossary:charge) used to correct cost or usage data from a previously [*closed billing period*](#glossary:closed-billing-period).
 
 <a name="glossary:covered-charge"><b>Covered Charge</b></a>
 
-A [*charge*](#glossary:charge) whose [Billed Cost](#datasets.costandusage.billedcost) is fully or partially absorbed by a corresponding [*covering charge*](#glossary:covering-charge). Common examples include usage charges applied against [*commitment discounts*](#glossary:commitment-discount), or consumption of SaaS offerings drawn from a prepayment, such as marketplace purchases.
+A [*charge*](#glossary:charge) whose [Billed Cost](#datamodel.costandusage.billedcost) is fully or partially absorbed by a corresponding [*covering charge*](#glossary:covering-charge). Common examples include usage charges applied against [*commitment discounts*](#glossary:commitment-discount), or consumption of SaaS offerings drawn from a prepayment, such as marketplace purchases.
 
 <a name="glossary:covering-charge"><b>Covering Charge</b></a>
 
-A purchase [*charge*](#glossary:charge) whose cost is applied against one or more [*covered charges*](#glossary:covered-charge), offsetting their [Billed Cost](#datasets.costandusage.billedcost). Common examples include [*commitment discount*](#glossary:commitment-discount) purchases, prepayment charges, and marketplace purchases that cover consumption-based usage.
+A purchase [*charge*](#glossary:charge) whose cost is applied against one or more [*covered charges*](#glossary:covered-charge), offsetting their [Billed Cost](#datamodel.costandusage.billedcost). Common examples include [*commitment discount*](#glossary:commitment-discount) purchases, prepayment charges, and marketplace purchases that cover consumption-based usage.
+
+<a name="glossary:credential"><b>Credential</b></a>
+
+The means by which a [*principal*](#glossary:principal) is authenticated on an individual request (e.g., API key, access token, session). A credential is distinct from the principal it authenticates, and the same principal may be authenticated by different credentials on different requests. A credential is separate from any published identifier that references it; a credential with no such identifier cannot be represented in a FOCUS dataset.
 
 <a name="glossary:credit"><b>Credit</b></a>
 
@@ -173,6 +187,10 @@ The collection of datasets are designed to provide billing insight, additional c
 
 A column included in a [*FOCUS dataset*](#glossary:FOCUS-dataset). A FOCUS dataset column is either a [*FOCUS column*](#glossary:FOCUS-column) or a [*custom column*](#glossary:custom-column).
 
+<a name="glossary:foreign-exchange"><b>Foreign Exchange (FX)</b></a>
+
+The conversion of an amount from one currency to another using a currency exchange rate.
+
 <a name="glossary:inclusivestartbound"><b>Inclusive Start Bound</b></a>
 
 A Date/Time Format value that is contained within the beginning bound of a time period.
@@ -193,11 +211,11 @@ An entity responsible for issuing payable [*invoices*](#glossary:invoice) for th
 
 The process of verifying that the costs, quantities, and applied adjustments on an [*invoice*](#glossary:invoice) are equal to the underlying usage records and contracted rates for a specific [*billing period*](#glossary:billing-period).
 
-In the context of FOCUS, this process ensures consistency by reconciling cost and usage data across the invoice, the [Invoice Detail](#datasets.invoicedetail) dataset, and the [Cost and Usage](#datasets.costandusage) dataset to identify and resolve any discrepancies.
+In the context of FOCUS, this process ensures consistency by reconciling cost and usage data across the invoice, the [Invoice Detail](#datamodel.invoicedetail) dataset, and the [Cost and Usage](#datamodel.costandusage) dataset to identify and resolve any discrepancies.
 
 <a name="glossary:issued-invoice"><b>Issued Invoice</b></a>
 
-An [*invoice*](#glossary:invoice) that has been formally [*reconciled*](#glossary:invoice-reconciliation) and issued by the designated [*invoice issuer*](#glossary:invoice-issuer) ([Invoice Issue Status](#datasets.invoicedetail.invoiceissuestatus) set to "Issued"). Once issued, the invoice becomes the authoritative financial document and is considered finalized. The financial data presented on the invoice is not expected to change.
+An [*invoice*](#glossary:invoice) that has been formally [*reconciled*](#glossary:invoice-reconciliation) and issued by the designated [*invoice issuer*](#glossary:invoice-issuer) ([Invoice Issue Status](#datamodel.invoicedetail.invoiceissuestatus) set to "Issued"). Once issued, the invoice becomes the authoritative financial document and is considered finalized. The financial data presented on the invoice is not expected to change.
 
 <a name="glossary:json"><b>JSON</b></a>
 
@@ -205,7 +223,7 @@ A common acronym for JavaScript Object Notation, a data format codified in [ECMA
 
 <a name="glossary:list-unit-price"><b>List Unit Price</b></a>
 
-The suggested service-provider-published unit price for a single [Pricing Unit](#datasets.costandusage.pricingunit) of the associated [SKU](#glossary:sku), exclusive of any discounts. This price is denominated in the [Billing Currency](#glossary:billing-currency).
+The service-provider-suggested unit price per [Pricing Unit](#datamodel.costandusage.pricingunit) for the [*SKU Price*](#glossary:sku-price) identified by the given [SKU Price ID](#datamodel.costandusage.skupriceid). List Unit Price does not reflect [*negotiated pricing terms*](#glossary:negotiated-pricing-terms) for the associated *SKU Price* or any unit price impact dependent on a discount-bearing [*commitment program*](#glossary:commitment-program) (e.g., [*commitment discount*](#glossary:commitment-discount)) being applied to the [*charge*](#glossary:charge).
 
 <a name="glossary:managed-service-provider"><b>Managed Service Provider (MSP)</b></a>
 
@@ -229,8 +247,20 @@ A privately agreed [*contract commitment*](#glossary:contract-commitment) that p
 
 Negotiated discounts are classified with the following designations:
 
-* [Contract Commitment Offer Category](#datasets.contractcommitment.contractcommitmentoffercategory): "Negotiated"
-* [Contract Commitment Benefit Category](#datasets.contractcommitment.contractcommitmentbenefitcategory): "Discount"
+* [Contract Commitment Offer Category](#datamodel.contractcommitment.contractcommitmentoffercategory): "Negotiated"
+* [Contract Commitment Benefit Category](#datamodel.contractcommitment.contractcommitmentbenefitcategory): "Discount"
+
+<a name="glossary:negotiated-fx-pricing-terms"><b>Negotiated FX Pricing Terms</b></a>
+
+[*Negotiated pricing terms*](#glossary:negotiated-pricing-terms) that affect the [*foreign exchange*](#glossary:foreign-exchange) conversion between the applicable record's [Pricing Currency](#datamodel.costandusage.pricingcurrency) and [Billing Currency](#datamodel.costandusage.billingcurrency).
+
+<a name="glossary:negotiated-non-fx-pricing-terms"><b>Negotiated Non-FX Pricing Terms</b></a>
+
+[*Negotiated pricing terms*](#glossary:negotiated-pricing-terms) that do not affect the [*foreign exchange*](#glossary:foreign-exchange) conversion between the applicable record's [Pricing Currency](#datamodel.costandusage.pricingcurrency) and [Billing Currency](#datamodel.costandusage.billingcurrency).
+
+<a name="glossary:negotiated-pricing-terms"><b>Negotiated Pricing Terms</b></a>
+
+Privately agreed [*terms*](#glossary:term) between a service provider and a customer that modify pricing from the service-provider-suggested pricing. Negotiated pricing terms consist of [*negotiated non-FX pricing terms*](#glossary:negotiated-non-fx-pricing-terms) (e.g., negotiated unit prices, negotiated tiered pricing configurations) and [*negotiated FX pricing terms*](#glossary:negotiated-fx-pricing-terms) (e.g., negotiated currency exchange rates).
 
 <a name="glossary:on-demand"><b>On-Demand</b></a>
 
@@ -238,7 +268,11 @@ A service that is available and provided immediately or as needed, without requi
 
 <a name="glossary:open-billing-period"><b>Open Billing Period</b></a>
 
-A [*billing period*](#glossary:billing-period) with [Billing Period Status](#datasets.billingperiod.billingperiodstatus) set to "Open". Billing activities are ongoing, and the period remains subject to updates until formally closed.
+A [*billing period*](#glossary:billing-period) with [Billing Period Status](#datamodel.billingperiod.billingperiodstatus) set to "Open". Billing activities are ongoing, and the period remains subject to updates until formally closed.
+
+<a name="glossary:operating-model"><b>Operating Model</b></a>
+
+The collective set of capabilities, business concepts, and data constructs underlying a FOCUS-compliant dataset. It encompasses features and metadata enrichments supported across participating entities (e.g., [*service providers*](#glossary:service-provider), host providers, [*invoice issuers*](#glossary:invoice-issuer), and [*data generators*](#metadata.datagenerator)), reflecting the verifiable state of these elements at the time of dataset creation.
 
 <a name="glossary:origin-charge"><b>Origin Charge</b></a>
 
@@ -264,6 +298,14 @@ An individual who performs FinOps within an organization to maximize the busines
 
 A comprehensive list of prices offered by a service provider.
 
+<a name="glossary:principal"><b>Principal</b></a>
+
+An entity defined in an identity and access management model (e.g., user, service account) to which access to [*resources*](#glossary:resource) or [*services*](#glossary:service) is granted. A principal is distinct from the credential (e.g., API key, access token) presented with an individual request, and from the organizational container (e.g., project, workspace) within which the request runs. The same principal may be associated with multiple credentials.
+
+<a name="glossary:prompt-cache"><b>Prompt Cache</b></a>
+
+A storage mechanism that allows a generative AI workload to reuse previously processed input content across requests to an [*AI model*](#glossary:ai-model). Service providers may meter cache reads, cache writes, and cache retention differently.
+
 <a name="glossary:service-provider"><b>Service Provider</b></a>
 
 An entity that provides the [*resources*](#glossary:resource) or [*services*](#glossary:service) available for usage or purchase.
@@ -271,6 +313,10 @@ An entity that provides the [*resources*](#glossary:resource) or [*services*](#g
 <a name="glossary:refund"><b>Refund</b></a>
 
 A return of funds that have previously been charged.
+
+<a name="glossary:requester"><b>Requester</b></a>
+
+An entity defined in an identity and access management model on whose behalf a request is initiated, resulting in a [*charge*](#glossary:charge). A [*service provider*](#glossary:service-provider) commonly represents a requester at more than one level, such as the [*principal*](#glossary:principal) to which access to [*resources*](#glossary:resource) or [*services*](#glossary:service) is granted and the [*credential*](#glossary:credential) presented on the request. A requester is distinct from the party that benefits from the usage or purchase, which a FOCUS dataset does not identify.
 
 <a name="glossary:resource"><b>Resource</b></a>
 
@@ -290,7 +336,11 @@ A construct composed of the common properties of a product offering associated w
 
 <a name="glossary:sku-price"><b>SKU Price</b></a>
 
-A pricing construct that encompasses SKU properties (e.g., functionality and technical specifications), along with core stable pricing details for a particular SKU, while excluding dynamic or negotiable pricing elements such as unit price amounts; currency (and related exchange rates); temporal validity (e.g., effective dates); and contract- or negotiation-specific factors (e.g., contract or account identifiers and negotiable discounts).
+A pricing construct that encompasses [*SKU*](#glossary:sku) properties (e.g., functionality and technical specifications) and core stable pricing details for a particular *SKU*. It excludes dynamic or negotiable pricing elements such as unit price amounts, currency, [*foreign exchange*](#glossary:foreign-exchange) rates, effective dates, contract or account identifiers, and negotiated discounts. However, modifications to the pricing structure itself (such as a negotiated tier configuration) are included.
+
+<a name="glossary:split-cost-allocation"><b>Split Cost Allocation</b></a>
+
+A mechanism that splits a single [*origin charge*](#glossary:origin-charge) into multiple [*allocated charges*](#glossary:allocated-charge) to distribute cost and usage across [*resources*](#glossary:resource) at a more granular level, using a defined [*allocated method*](#glossary:allocated-method).
 
 <a name="glossary:sub-account"><b>Sub Account</b></a>
 
@@ -312,6 +362,14 @@ A Resource or Service-Provider-defined construct for grouping resources and/or o
 
 An agreement specified on a [*contract*](#glossary:contract) or [*invoice*](#glossary:invoice).
 
+<a name="glossary:token"><b>Token</b></a>
+
+A unit of measure representing a discrete quantity of content processed by an [*AI model*](#glossary:ai-model). The amount of content a single token represents is determined by the model, so token counts are not directly comparable across models. Distinct from a token issued as a [*virtual currency*](#glossary:virtual-currency), which denominates value rather than measuring consumption.
+
+<a name="glossary:unit-pricing"><b>Unit Pricing</b></a>
+
+A billing concept where the cost of a [*charge*](#glossary:charge) is deterministically derived as the product of a unit price (defined per [*SKU Price*](#glossary:sku-price)) and the corresponding [Pricing Quantity](#datamodel.costandusage.pricingquantity), representing purchased or consumed volume of a [*SKU*](#glossary:sku).
+
 <a name="glossary:virtual-currency"><b>Virtual Currency</b></a>
 
-A proprietary currency (e.g., credits, tokens) issued by service providers and independent of government regulation.
+A digital representation of value that is independent of government regulation or central banks (e.g., cryptocurrency, digital credits). Distinct from a [*token*](#glossary:token) as a unit of measure for content processed by an [*AI model*](#glossary:ai-model).

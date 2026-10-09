@@ -9,7 +9,7 @@ SubAccountName MUST adhere to the following requirements:
 * SubAccountName MUST be of type String.
 * SubAccountName MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * SubAccountName MUST adhere to the following nullability requirements:
-  * SubAccountName MUST be null when [SubAccountId](#datasets.costandusage.subaccountid) is null.
+  * SubAccountName MUST be null when [SubAccountId](#datamodel.costandusage.subaccountid) is null.
   * SubAccountName MUST NOT be null when SubAccountId is not null.
 
 See [Appendix: Grouping constructs for resources or services](#appendix.groupingconstructsforresourcesorservices) for details and examples of the different grouping constructs supported by FOCUS.
@@ -28,14 +28,15 @@ A name assigned to a grouping of [*resources*](#glossary:resource) or [*services
 
 ## Content Constraints
 
-| Constraint      | Value                                                |
-| :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datasets.costandusage)             |
-| Column type     | Dimension                                            |
-| Feature level   | Conditional                                          |
-| Allows nulls    | True                                                 |
-| Data type       | String                                               |
-| Value format    | \<not specified>                                     |
+| Constraint                 | Value                                     |
+| :------------------------- | :---------------------------------------- |
+| Dataset                    | [Cost and Usage](#datamodel.costandusage) |
+| Operating Model Conditions | [Includes Sub Accounts](#operatingmodelconditions.includessubaccounts) |
+| Column type                | Dimension                                 |
+| Feature level              | Conditional                               |
+| Allows nulls               | True                                      |
+| Data type                  | String                                    |
+| Value format               | \<not specified>                          |
 
 ## Version Introduced
 

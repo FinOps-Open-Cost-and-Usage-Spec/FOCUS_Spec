@@ -11,7 +11,7 @@ ContractCommitmentId MUST adhere to the following requirements:
 * ContractCommitmentId MUST NOT be null.
 * ContractCommitmentId MUST be a unique identifier within the service provider.
 * ContractCommitmentId SHOULD be a fully-qualified identifier.
-* ContractCommitmentId MUST have one and only one parent [ContractId](#datasets.contractcommitment.contractid).
+* ContractCommitmentId MUST have one and only one parent [ContractId](#datamodel.contractcommitment.contractid).
 * ContractCommitmentId MAY match ContractId.
 
 ## Column ID
@@ -28,14 +28,15 @@ A service-provider-assigned identifier describing a single contract term agreed 
 
 ## Content Constraints
 
-|    Constraint   |      Value                                           |
-|:----------------|:-----------------------------------------------------|
-| Dataset         | [Contract Commitment](#datasets.contractcommitment)  |
-| Column type     | Dimension                                            |
-| Feature level   | Mandatory                                            |
-| Allows nulls    | False                                                |
-| Data type       | String                                               |
-| Value format    | \<not specified>                                     |
+| Constraint                 | Value                                                |
+| :------------------------- | :--------------------------------------------------- |
+| Dataset                    | [Contract Commitment](#datamodel.contractcommitment) |
+| Operating Model Conditions | Not applicable                                       |
+| Column type                | Dimension                                            |
+| Feature level              | Mandatory                                            |
+| Allows nulls               | False                                                |
+| Data type                  | String                                               |
+| Value format               | \<not specified>                                     |
 
 ## Version Introduced
 

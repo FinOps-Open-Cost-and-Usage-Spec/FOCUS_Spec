@@ -5,6 +5,17 @@ from collections import deque
 from build_helpers import init_logger
 
 
+def conditions_key(model_version):
+    """Return the rule-applicability key for a model version.
+
+    Renamed from "ApplicabilityCriteria" to "Conditions" in 1.5.
+    """
+    try:
+        major_minor = tuple(int(x) for x in str(model_version).split('.')[:2])
+    except (TypeError, ValueError):
+        major_minor = (0, 0)
+    return "Conditions" if major_minor >= (1, 5) else "ApplicabilityCriteria"
+
 def get_args():
     parser = argparse.ArgumentParser(description='Model Table Generator.')
     parser.add_argument('-t', '--dataset-name', default="CostAndUsage", help='Dataset to generate Model table for')
@@ -38,11 +49,13 @@ def generate_markdown(data, dataset_name, logger):
         logger.warning(f'Dataset {dataset_name} not found')
         exit(1)
 
+    cond_key = conditions_key(data.get("Details", {}).get("ModelVersion"))
+
     headers = [
         "ModelRuleId",
         "Function",
         "Reference",
-        "ApplicabilityCriteria",
+        cond_key,
         "MustSatisfy",
         "KeyWord",            
         "Requirement",
@@ -89,7 +102,7 @@ def generate_markdown(data, dataset_name, logger):
             rule_id,
             rule.get("Function", ""),
             rule.get("Reference", ""),
-            ", ".join(rule.get("ApplicabilityCriteria", [])),
+            ", ".join(rule.get(cond_key, [])),
             vc.get("MustSatisfy", ""),
             vc.get("KeyWord", ""),
             summarize_check(req),

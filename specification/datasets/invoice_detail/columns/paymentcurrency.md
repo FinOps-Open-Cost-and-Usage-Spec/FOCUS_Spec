@@ -1,6 +1,6 @@
 # Payment Currency
 
-Payment Currency represents the currency in which the [*invoice issuer*](#glossary:invoice-issuer) requires settlement. This is the currency of the financial obligation created by the invoice, which may differ from the [Billing Currency](#datasets.costandusage.billingcurrency) and/or the source currency of the payer's funds or bank account. Payment Currency allows FinOps practitioners to track settlement obligations and foreign exchange impacts.
+Payment Currency represents the currency in which the [*invoice issuer*](#glossary:invoice-issuer) requires settlement. This is the currency of the financial obligation created by the invoice, which may differ from the [Billing Currency](#datamodel.costandusage.billingcurrency) and/or the source currency of the payer's funds or bank account. Payment Currency allows FinOps practitioners to track settlement obligations and foreign exchange impacts.
 
 ## Requirements
 
@@ -26,14 +26,15 @@ The currency in which the invoice is paid.
 
 ## Content Constraints
 
-|    Constraint    |              Value             |
-|:----------------|:--------------------------------|
-| Dataset         | [Invoice Detail](#datasets.invoicedetail)             |
-| Column type     | Dimension                       |
-| Feature level   | Conditional                     |
-| Allows nulls    | False                           |
-| Data type       | String                          |
-| Value format    | [Currency Format](#attributes.currencyformat) |
+| Constraint                 | Value                                         |
+| :------------------------- | :-------------------------------------------- |
+| Dataset                    | [Invoice Detail](#datamodel.invoicedetail)    |
+| Operating Model Conditions | [Includes Billing and Payment Currency Differences](#operatingmodelconditions.includesbillingandpaymentcurrencydifferences) |
+| Column type                | Dimension                                     |
+| Feature level              | Conditional                                   |
+| Allows nulls               | False                                         |
+| Data type                  | String                                        |
+| Value format               | [Currency Format](#attributes.currencyformat) |
 
 ## Version Introduced
 

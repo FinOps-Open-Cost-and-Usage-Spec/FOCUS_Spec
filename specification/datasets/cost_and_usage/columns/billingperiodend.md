@@ -1,6 +1,6 @@
 # Billing Period End
 
-Billing Period End represents the [*exclusive end bound*](#glossary:exclusiveendbound) of a [*billing period*](#glossary:billing-period). For example, a time period where [Billing Period Start](#datasets.costandusage.billingperiodstart) is '2024-01-01T00:00:00Z' and Billing Period End is '2024-02-01T00:00:00Z' includes [*charges*](#glossary:charge) for January since Billing Period Start represents the [*inclusive start bound*](#glossary:inclusivestartbound), but does not include *charges* for February since Billing Period End represents the *exclusive end bound*.
+Billing Period End represents the [*exclusive end bound*](#glossary:exclusiveendbound) of a [*billing period*](#glossary:billing-period). For example, a time period where [Billing Period Start](#datamodel.costandusage.billingperiodstart) is '2024-01-01T00:00:00Z' and Billing Period End is '2024-02-01T00:00:00Z' includes [*charges*](#glossary:charge) for January since Billing Period Start represents the [*inclusive start bound*](#glossary:inclusivestartbound), but does not include *charges* for February since Billing Period End represents the *exclusive end bound*.
 
 ## Requirements
 
@@ -25,14 +25,15 @@ The *exclusive end bound* of a *billing period*.
 
 ## Content Constraints
 
-| Constraint      | Value                                                |
-| :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datasets.costandusage)             |
-| Column type     | Dimension                                            |
-| Feature level   | Mandatory                                            |
-| Allows nulls    | False                                                |
-| Data type       | Date/Time                                            |
-| Value format    | [Date/Time Format](#attributes.date/timeformat)       |
+| Constraint                 | Value                                           |
+| :------------------------- | :---------------------------------------------- |
+| Dataset                    | [Cost and Usage](#datamodel.costandusage)       |
+| Operating Model Conditions | Not applicable                                  |
+| Column type                | Dimension                                       |
+| Feature level              | Mandatory                                       |
+| Allows nulls               | False                                           |
+| Data type                  | Date/Time                                       |
+| Value format               | [Date/Time Format](#attributes.date/timeformat) |
 
 ## Version Introduced
 

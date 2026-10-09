@@ -9,7 +9,7 @@ ReferenceInvoiceId MUST adhere to the following requirements:
 * ReferenceInvoiceId MUST be of type String.
 * ReferenceInvoiceId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * ReferenceInvoiceId MUST NOT be null.
-* ReferenceInvoiceId MUST match the [InvoiceId](#datasets.invoicedetail.invoiceid) of the original [*invoice*](#glossary:invoice) when it adjusts another invoice.
+* ReferenceInvoiceId MUST match the [InvoiceId](#datamodel.invoicedetail.invoiceid) of the original [*invoice*](#glossary:invoice) when it adjusts another invoice.
 * ReferenceInvoiceId MUST match the InvoiceId of the current invoice when it does not adjust another invoice.
 
 ## Column ID
@@ -26,14 +26,15 @@ The invoice-issuer-assigned identifier for an invoice that affects charges as st
 
 ## Content Constraints
 
-|    Constraint   |              Value              |
-|:----------------|:--------------------------------|
-| Dataset         | [Invoice Detail](#datasets.invoicedetail)             |
-| Column type     | Dimension                       |
-| Feature level   | Mandatory                       |
-| Allows nulls    | False                           |
-| Data type       | String                          |
-| Value format    | \<not specified>                |
+| Constraint                 | Value                                      |
+| :------------------------- | :----------------------------------------- |
+| Dataset                    | [Invoice Detail](#datamodel.invoicedetail) |
+| Operating Model Conditions | Not applicable                             |
+| Column type                | Dimension                                  |
+| Feature level              | Mandatory                                  |
+| Allows nulls               | False                                      |
+| Data type                  | String                                     |
+| Value format               | \<not specified>                           |
 
 ## Version Introduced
 

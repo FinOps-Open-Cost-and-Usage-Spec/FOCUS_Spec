@@ -36,13 +36,13 @@ Scenario: A compute instance type and tenancy that are eligible for both discoun
 
 ## Coverage Rate with Eligibility-Adjusted Denominator
 
-This example demonstrates how to calculate an accurate [*commitment*](#glossary:commitment) coverage rate using [CommitmentProgramEligibilityDetails](#datasets.costandusage.commitmentprogrameligibilitydetails) alongside [CommitmentDiscountId](#datasets.costandusage.commitmentdiscountid).
+This example demonstrates how to calculate an accurate [*commitment*](#glossary:commitment) coverage rate using [CommitmentProgramEligibilityDetails](#datamodel.costandusage.commitmentprogrameligibilitydetails) alongside [CommitmentDiscountId](#datamodel.costandusage.commitmentdiscountid).
 
 Acme Corp runs compute workloads on Aura Web. Some usage is covered by a Resource Reservation, some is eligible but uncovered, and a support fee is ineligible for any [*commitment program*](#glossary:commitment-program).
 
 Three usage rows for a single charge period (2025-04-01):
 
-1. **Uncovered compute** (Row 1): Eligible for Flexible Spend Plan and Resource Reservation, not currently covered. [BilledCost](#datasets.costandusage.billedcost) and [EffectiveCost](#datasets.costandusage.effectivecost) are both $200.00.
+1. **Uncovered compute** (Row 1): Eligible for Flexible Spend Plan and Resource Reservation, not currently covered. [BilledCost](#datamodel.costandusage.billedcost) and [EffectiveCost](#datamodel.costandusage.effectivecost) are both $200.00.
 2. **Covered compute** (Row 2): Covered by a Resource Reservation. CommitmentProgramEligibilityDetails is populated. BilledCost is $0.00; EffectiveCost is $150.00.
 3. **Support fee** (Row 3): Not eligible for any *commitment program*. Both CommitmentProgramEligibilityDetails and CommitmentDiscountId are null. BilledCost and EffectiveCost are both $50.00.
 
@@ -60,14 +60,14 @@ Row 3 (support fee) is correctly excluded because CommitmentProgramEligibilityDe
 
 ## Uncovered Eligible Spend by Program Type
 
-This example demonstrates how to use [CommitmentProgramEligibilityDetails](#datasets.costandusage.commitmentprogrameligibilitydetails) to identify uncovered savings opportunities across [*commitment program*](#glossary:commitment-program) types and providers.
+This example demonstrates how to use [CommitmentProgramEligibilityDetails](#datamodel.costandusage.commitmentprogrameligibilitydetails) to identify uncovered savings opportunities across [*commitment program*](#glossary:commitment-program) types and providers.
 
 Acme Corp runs compute workloads on Aura Web and uses StackLens for observability monitoring. Some Aura Web compute usage is covered by a Resource Reservation. StackLens usage is uncovered but eligible for Interval Spend Commitments at monthly or annual terms. A practitioner wants to answer: "Which *commitment program* and provider should I target for my next purchase?"
 
 Six usage rows for a single charge period (2025-04-01):
 
-1. **Uncovered compute** (Rows 1-2): Two Aura Web Compute rows eligible for both Flexible Spend Plan and Resource Reservation. [BilledCost](#datasets.costandusage.billedcost) totals $500.00 across both rows.
-2. **Covered compute** (Row 3): Aura Web Compute covered by an existing Resource Reservation. Filtered out by the query because [CommitmentDiscountId](#datasets.costandusage.commitmentdiscountid) is populated.
+1. **Uncovered compute** (Rows 1-2): Two Aura Web Compute rows eligible for both Flexible Spend Plan and Resource Reservation. [BilledCost](#datamodel.costandusage.billedcost) totals $500.00 across both rows.
+2. **Covered compute** (Row 3): Aura Web Compute covered by an existing Resource Reservation. Filtered out by the query because [CommitmentDiscountId](#datamodel.costandusage.commitmentdiscountid) is populated.
 3. **Ineligible support** (Row 4): Aura Web Support with no CommitmentProgramEligibilityDetails. Filtered out because the column is null.
 4. **Uncovered observability** (Rows 5-6): Two StackLens Observability rows eligible for Monthly Interval Spend Commitment and Annual Interval Spend Commitment. BilledCost totals $200.00.
 
