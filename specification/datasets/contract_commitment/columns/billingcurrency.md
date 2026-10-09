@@ -1,6 +1,6 @@
 # Billing Currency
 
-[*Billing currency*](#glossary:billing-currency) is an identifier that represents the currency of a [*contract commitment*](#glossary:contract-commitment).
+[*Billing Currency*](#glossary:billing-currency) is an identifier that represents the currency of a [*contract commitment*](#glossary:contract-commitment).
 
 ## Requirements
 
