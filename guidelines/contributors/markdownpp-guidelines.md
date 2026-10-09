@@ -401,3 +401,22 @@ make
 ```
 
 Most build failures are from [linting](https://pymarkdown.readthedocs.io/) issues with Markdown, and addressing these should be the first point of call. Remember that HTML and Markdown only supports six levels of headings, and many sections of the specification are already at this limit; adding headings under these sections can therefore cause issues.
+
+**Fixing Lint Errors**:
+
+Some lint rules can fix their own errors (e.g., MD992, Display Name casing in column files). From the `specification/` directory, `make lint-fix` applies those fixes and then reports any errors that still need a manual fix. Review the changes before committing.
+
+```bash
+make lint-fix
+```
+
+**Checking Before Each Commit (Optional)**:
+
+The repository includes a [pre-commit](https://pre-commit.com/) configuration that lints changed specification files and validates includes when you commit. It uses the same Python environment as `make`, so activate that environment before committing. To enable it:
+
+```bash
+pip install pre-commit
+pre-commit install
+```
+
+When the linter fixes a file, the commit stops so you can review and stage the changes, then commit again. Errors that cannot be fixed automatically are listed with their file and line.
