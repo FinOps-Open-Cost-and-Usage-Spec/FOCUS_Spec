@@ -40,6 +40,17 @@ A comprehensive test file containing intentional markdown linting violations of 
 
 Python unit test for testing the title case logic in `rule_md_991.py`. Tests the `_is_title_case()` method with various heading formats.
 
+### test_display_name_casing.py
+
+pytest tests for `rule_md_992.py` (MD992, `display-name-casing`). MD992 checks that references to a column's Display Name in its own column file use the exact Display Name casing, and fixes them in `fix` mode. The Display Name comes from the `## Display Name` section, or from the level-1 (`#`) heading when that section is missing. Only files in a `columns` directory are checked.
+
+A match of the Display Name (ignoring case) is treated as a Display Name reference when:
+
+* It is the subject of the introduction (e.g., `An [*availability zone*](#glossary:availability-zone) is ...`).
+* A word after the first is capitalized (e.g., `Sub account Name`). All-lowercase text refers to the concept, and a capital on the first word only may be sentence case, so neither is flagged. An acronym written as in the Display Name (e.g., `resource ID`) does not count as a capital.
+
+The fixtures in `fixtures/md992/columns/` are copies of real column files containing the issue #2740 errors, plus `edge_cases.md` and `acronym_edge_cases.md`.
+
 ## Running the Tests
 
 ### Prerequisites
@@ -85,6 +96,14 @@ python3 test_title_case.py
 
 **Expected output:** Test results showing which title case examples pass or fail, with suggestions for corrections.
 
+### Test Display Name Casing
+
+From the repository root, run:
+
+```bash
+pytest custom_linter_rules/tests/test_display_name_casing.py
+```
+
 ## Understanding the Output
 
 ### Enhanced Linter Format
@@ -104,6 +123,10 @@ test_linter_violations.md:13:4: MD991: Heading should use title case [Actual: 'c
 - **RULE_ID** - The markdown rule being violated (e.g., MD991, MD012, MD022)
 - **Message** - Description of the violation
 - **[Actual: ..., Expected: ...]** - Shows what was found vs what should be there
+
+## Adding New Rules
+
+Custom rules use IDs from MD990 upward so they never collide with the pymarkdownlnt built-in rules (MD001 to MD048). Take the next unused number and give the rule a readable `plugin_name`.
 
 ## Adding New Tests
 
@@ -127,5 +150,6 @@ To add new test cases to `test_linter_violations.md`:
 ## Related Files
 
 - `../rule_md_991.py` - Custom title case linter rule
+- `../rule_md_992.py` - Custom Display Name casing linter rule
 - `../../specification/enhanced_markdown_lint.py` - Enhanced linter wrapper
 - `../../specification/markdownlnt.cfg` - Linter configuration
