@@ -42,14 +42,11 @@ Python unit test for testing the title case logic in `rule_md_991.py`. Tests the
 
 ### test_display_name_casing.py
 
-pytest tests for `rule_md_992.py` (MD992, `display-name-casing`). MD992 checks that references to a column's Display Name in its own column file use the exact Display Name casing, and fixes them in `fix` mode. The Display Name comes from the `## Display Name` section, or from the level-1 (`#`) heading when that section is missing. Only files in a `columns` directory are checked.
+pytest tests for `rule_md_992.py` (MD992, `display-name-casing`). MD992 checks that the subject of a column file's introduction uses the exact Display Name casing, and fixes it in `fix` mode. The subject is the first words of the first paragraph after the level-1 (`#`) heading, optionally after an article and inside a link (e.g., `An [*availability zone*](#glossary:availability-zone) is ...` becomes `An [*Availability Zone*](#glossary:availability-zone) is ...`). The Display Name comes from the `## Display Name` section, or from the level-1 heading when that section is missing. Only files in a `columns` directory are checked.
 
-A match of the Display Name (ignoring case) is treated as a Display Name reference when:
+Display Name references elsewhere in a column file (e.g., `Sub account Name` in a later sentence) are not checked. A check for them was considered but left out: outside the introduction subject, text cannot reliably be told apart from the concept (e.g., "billing currency") or from sentence case, so the rule could flag or rewrite correct text. A future rule could warn about such text without fixing it or failing the build.
 
-* It is the subject of the introduction (e.g., `An [*availability zone*](#glossary:availability-zone) is ...`).
-* A word after the first is capitalized (e.g., `Sub account Name`). All-lowercase text refers to the concept, and a capital on the first word only may be sentence case, so neither is flagged. An acronym written as in the Display Name (e.g., `resource ID`) does not count as a capital.
-
-The fixtures in `fixtures/md992/columns/` are copies of real column files containing the issue #2740 errors, plus `edge_cases.md` and `acronym_edge_cases.md`.
+The fixtures in `fixtures/md992/columns/` are copies of real column files containing the issue #2740 errors, plus `edge_cases.md`.
 
 ## Running the Tests
 
