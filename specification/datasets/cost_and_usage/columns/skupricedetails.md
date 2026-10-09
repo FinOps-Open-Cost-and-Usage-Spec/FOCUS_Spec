@@ -1,8 +1,10 @@
 # SKU Price Details
 
-SKU Price Details represent a list of [*SKU Price*](#glossary:sku-price) properties (key-value pairs) associated with a specific [SKU Price ID](#datamodel.costandusage.skupriceid). These properties include qualitative and quantitative properties of a [*SKUs*](#glossary:sku) (e.g., functionality and technical specifications), along with core stable pricing properties (e.g., pricing [*periods*](#glossary:period), tiers, etc.), excluding dynamic or negotiable pricing elements such as unit price amounts; currency (and related exchange rates); temporal validity (e.g., effective dates); and contract- or negotiation-specific factors (e.g., contract or account identifiers, and negotiable discounts).
+SKU Price Details represent a list of [*SKU Price*](#glossary:sku-price) properties (key-value pairs) associated with a specific [SKU Price ID](#datamodel.costandusage.skupriceid). These properties include qualitative and quantitative properties of a [*SKU*](#glossary:sku) (e.g., functionality and technical specifications), along with core stable pricing properties (e.g., pricing [*periods*](#glossary:period) and tiers).
 
-The composition of properties associated with a specific *SKU Price* may differ across service providers and across *SKUs* within the same service provider. However, the exclusion of dynamic or negotiable pricing properties should ensure that all [*charges*](#glossary:charge) with the same SKU Price ID share the same SKU Price Details, i.e., that SKU Price Details remains consistent across different [*billing periods*](#glossary:billing-period) and [*billing accounts*](#glossary:billing-account) within a service provider.
+SKU Price Details exclude dynamic or negotiable pricing elements such as unit price amounts, currency, [*foreign exchange*](#glossary:foreign-exchange) rates, effective dates, contract or account identifiers, and negotiated discounts. However, modifications to the pricing structure itself (such as a negotiated tier configuration) are included.
+
+The composition of properties associated with a specific *SKU Price* may differ across service providers and across *SKUs* within the same service provider. However, the exclusion of dynamic or negotiable pricing elements should ensure that all [*charges*](#glossary:charge) with the same SKU Price ID share the same SKU Price Details, i.e., that SKU Price Details remains consistent across different [*billing periods*](#glossary:billing-period) and [*billing accounts*](#glossary:billing-account) within a service provider.
 
 SKU Price Details helps practitioners understand and distinguish *SKU Prices*, each identified by a SKU Price ID and associated with a used or purchased [*resource*](#glossary:resource) or [*service*](#glossary:service). It can also help determine the quantity of units for a property when it holds a numeric value (e.g., CoreCount), even when its unit differs from the one in which the *SKU* is priced and charged, thus supporting FinOps capabilities such as unit economics. Additionally, the SKU Price Details may be used to analyze costs based on pricing properties such as *periods* and tiers.
 
@@ -30,7 +32,7 @@ SkuPriceDetails MUST adhere to the following requirements:
   * SkuPriceDetails SHOULD include TokenDirection when the *SKU Price* meters only input or only output tokens.
   * SkuPriceDetails SHOULD include all custom SKU Price properties that are applicable to the corresponding SkuPriceId when there is no equivalent FOCUS-defined property.
   * SkuPriceDetails MAY include properties that are already captured in other dedicated columns.
-  * SkuPriceDetails properties for a given SkuPriceId MUST adhere to the following requirements:
+  * SkuPriceDetails properties for a given [ServiceProviderName](#datamodel.costandusage.serviceprovidername) and SkuPriceId MUST adhere to the following requirements:
     * Existing SkuPriceDetails properties SHOULD remain consistent over time.
     * Existing SkuPriceDetails properties SHOULD NOT be removed.
     * Additional SkuPriceDetails properties MAY be added over time.

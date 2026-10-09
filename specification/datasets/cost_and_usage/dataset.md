@@ -130,7 +130,7 @@ CostAndUsage MUST adhere to the following requirements:
   * CostAndUsage MUST include [ConsumedUnit](#datamodel.costandusage.consumedunit) when the *operating model* includes usage measurement.
   * CostAndUsage MUST include [ContractApplied](#datamodel.costandusage.contractapplied) when the *operating model* [includes contract commitments](#operatingmodelconditions.includescontractcommitments).
   * CostAndUsage MUST include [ContractedCost](#datamodel.costandusage.contractedcost).
-  * CostAndUsage MUST include [ContractedUnitPrice](#datamodel.costandusage.contractedunitprice) when the *operating model* [includes negotiated pricing](#operatingmodelconditions.includesnegotiatedpricing).
+  * CostAndUsage MUST include [ContractedUnitPrice](#datamodel.costandusage.contractedunitprice) when the *operating model* [includes unit pricing](#operatingmodelconditions.includesunitpricing).
   * CostAndUsage MUST include [CredentialId](#datamodel.costandusage.credentialid) when the *operating model* [includes requester attribution](#operatingmodelconditions.includesrequesterattribution).
   * CostAndUsage MUST include [EffectiveCost](#datamodel.costandusage.effectivecost).
   * CostAndUsage MUST include [HostProviderName](#datamodel.costandusage.hostprovidername).
@@ -138,20 +138,20 @@ CostAndUsage MUST adhere to the following requirements:
   * CostAndUsage MUST include [InvoiceId](#datamodel.costandusage.invoiceid) when the *operating model* includes payable invoices.
   * CostAndUsage MUST include [InvoiceIssuerName](#datamodel.costandusage.invoiceissuername).
   * CostAndUsage MUST include [ListCost](#datamodel.costandusage.listcost).
-  * CostAndUsage MUST include [ListUnitPrice](#datamodel.costandusage.listunitprice) when the *operating model* [includes list unit prices](#operatingmodelconditions.includeslistunitprices).
+  * CostAndUsage MUST include [ListUnitPrice](#datamodel.costandusage.listunitprice) when the *operating model* includes unit pricing.
   * CostAndUsage MUST include [PricingCategory](#datamodel.costandusage.pricingcategory) when the *operating model* [includes multiple pricing categories](#operatingmodelconditions.includesmultiplepricingcategories).
   * CostAndUsage MUST include [PricingCurrency](#datamodel.costandusage.pricingcurrency) when the *operating model* [includes pricing and billing currency differences](#operatingmodelconditions.includespricing-billingcurrencydifferences).
   * CostAndUsage MUST adhere to the following [PricingCurrencyContractedUnitPrice](#datamodel.costandusage.pricingcurrencycontractedunitprice) requirements:
-    * CostAndUsage MUST include PricingCurrencyContractedUnitPrice when the *operating model* [includes consumption currency](#operatingmodelconditions.includesconsumptioncurrency) and includes list unit prices.
-    * CostAndUsage SHOULD include PricingCurrencyContractedUnitPrice when the *operating model* includes pricing and billing currency differences and includes list unit prices.
+    * CostAndUsage MUST include PricingCurrencyContractedUnitPrice when the *operating model* [includes consumption currency](#operatingmodelconditions.includesconsumptioncurrency) and includes unit pricing.
+    * CostAndUsage SHOULD include PricingCurrencyContractedUnitPrice when the *operating model* includes pricing and billing currency differences and includes unit pricing.
     * CostAndUsage MAY include PricingCurrencyContractedUnitPrice in all other cases.
   * CostAndUsage MUST adhere to the following [PricingCurrencyEffectiveCost](#datamodel.costandusage.pricingcurrencyeffectivecost) requirements:
-    * CostAndUsage MUST include PricingCurrencyEffectiveCost when the *operating model* includes consumption currency and includes list unit prices.
-    * CostAndUsage SHOULD include PricingCurrencyEffectiveCost when the *operating model* includes pricing and billing currency differences and includes list unit prices.
+    * CostAndUsage MUST include PricingCurrencyEffectiveCost when the *operating model* includes consumption currency.
+    * CostAndUsage SHOULD include PricingCurrencyEffectiveCost when the *operating model* includes pricing and billing currency differences.
     * CostAndUsage MAY include PricingCurrencyEffectiveCost in all other cases.
   * CostAndUsage MUST adhere to the following [PricingCurrencyListUnitPrice](#datamodel.costandusage.pricingcurrencylistunitprice) requirements:
-    * CostAndUsage MUST include PricingCurrencyListUnitPrice when the *operating model* includes consumption currency and includes list unit prices.
-    * CostAndUsage SHOULD include PricingCurrencyListUnitPrice when the *operating model* includes pricing and billing currency differences and includes list unit prices.
+    * CostAndUsage MUST include PricingCurrencyListUnitPrice when the *operating model* includes consumption currency and includes unit pricing.
+    * CostAndUsage SHOULD include PricingCurrencyListUnitPrice when the *operating model* includes pricing and billing currency differences and includes unit pricing.
     * CostAndUsage MAY include PricingCurrencyListUnitPrice in all other cases.
   * CostAndUsage MUST include [PricingQuantity](#datamodel.costandusage.pricingquantity).
   * CostAndUsage MUST include [PricingUnit](#datamodel.costandusage.pricingunit).
@@ -166,7 +166,7 @@ CostAndUsage MUST adhere to the following requirements:
   * CostAndUsage MUST include [ServiceName](#datamodel.costandusage.servicename).
   * CostAndUsage MUST include [ServiceProviderName](#datamodel.costandusage.serviceprovidername).
   * CostAndUsage SHOULD include [ServiceSubcategory](#datamodel.costandusage.servicesubcategory).
-  * CostAndUsage MUST include [SkuId](#datamodel.costandusage.skuid) when the *operating model* [includes unit pricing](#operatingmodelconditions.includesunitpricing).
+  * CostAndUsage MUST include [SkuId](#datamodel.costandusage.skuid) when the *operating model* includes unit pricing.
   * CostAndUsage MUST include [SkuMeter](#datamodel.costandusage.skumeter) when the *operating model* includes unit pricing.
   * CostAndUsage MUST include [SkuPriceDetails](#datamodel.costandusage.skupricedetails) when the *operating model* includes unit pricing.
   * CostAndUsage MUST include [SkuPriceId](#datamodel.costandusage.skupriceid) when the *operating model* includes unit pricing.
