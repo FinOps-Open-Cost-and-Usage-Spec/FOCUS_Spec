@@ -28,11 +28,21 @@ jobs:
           DEBIAN_FRONTEND=noninteractive /usr/bin/apt install -y -f ./wkhtmltox_0.12.6.1-3.jammy_amd64.deb
           /usr/bin/pip3 install --break-system-packages -r requirements.txt
 
+      # Shows lint errors from the build as annotations on the pull request diff.
+      - name: Register lint problem matcher
+        run: echo "::add-matcher::.github/lint-problem-matcher.json"
+
       - name: Build PDF
         shell: bash
         working-directory: ./specification
         run: |
           make STYLE=working_draft BRANCH=${GITHUB_REF_NAME}
+
+      - name: Test custom linter rules
+        if: ${{ !cancelled() }}
+        shell: bash
+        run: |
+          /usr/bin/python3 -m pytest custom_linter_rules/tests/test_display_name_casing.py
 
       - name: Build Requirements Model JSON
         shell: bash
