@@ -294,6 +294,10 @@ A long and often painful conversation had by the FOCUS contributors. Sometimes t
 
 An individual who performs FinOps within an organization to maximize the business value of using cloud and cloud-like services.
 
+<a name="glossary:preview"><b>Preview</b></a>
+
+A designation for a [*FOCUS dataset*](#glossary:FOCUS-dataset) that is published in a version of FOCUS to gather implementation feedback before it is finalized and may change in a later version. See [Preview](#preview).
+
 <a name="glossary:price-list"><b>Price List</b></a>
 
 A comprehensive list of prices offered by a service provider.

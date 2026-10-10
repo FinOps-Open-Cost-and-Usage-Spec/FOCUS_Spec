@@ -92,6 +92,20 @@ Feature level is designated based on the following criteria described in the dat
 * If the existence of a column is described as `SHOULD`, then the feature level is designated as `Recommended`.
 * If the existence of a column is described as `MAY`, then the feature level is designated as `Optional`.
 
+## Preview
+
+A *preview* is a designation for a [*FOCUS dataset*](#glossary:FOCUS-dataset) that is published in a version of FOCUS to gather implementation feedback before it is finalized. The designation applies to the whole dataset and every requirement within it.
+
+* Every new dataset is published as a preview in the first version that includes it.
+* A preview is part of the published specification, and adoption is recommended with the understanding that it may change in the next version.
+* A preview may change in a later version, including with incompatible changes.
+* Only an entire dataset can be a preview. Columns, attributes, and individual requirements cannot.
+* A preview is labeled by a `> **Preview:**` note at the top of the dataset's definition and by "(preview)" next to its name in listings (e.g., the data model dataset table).
+* The requirements in a preview are written the same way as any other requirements. Implementing a preview is optional, and not implementing it never affects conformance.
+* A preview leaves preview status through promotion, extension as a preview in the next version, or removal. The decision is recorded in the changelog of the version that makes it.
+
+For guidance on when to designate a preview and the criteria to leave preview status, see the [Spec Change Guidelines](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/working_draft/guidelines/contributors/spec-change-guidelines.md).
+
 ## Conformance Checkers and Validators
 
 Validation tools may be employed to determine conformance of data and implementations per this specification.

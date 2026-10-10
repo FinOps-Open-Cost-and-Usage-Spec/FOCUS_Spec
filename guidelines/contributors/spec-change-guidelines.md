@@ -96,6 +96,38 @@ To ensure complete and error-free removal of deprecated entities from the FOCUS 
    * Update release notes with removal details
    * Notify stakeholders of the removal
 
+## Preview Process
+
+A preview is a FOCUS dataset published in a version of FOCUS to gather implementation feedback before it is finalized. See [Preview](../../specification/overview.md#preview) in the specification for the definition.
+
+### Designating a Preview
+
+A FOCUS dataset preview MUST adhere to the following requirements:
+
+* A new FOCUS dataset MUST be published as a preview in the first version that includes it.
+* A preview MUST apply only to an entire FOCUS dataset.
+* A preview MUST define standard normative requirements.
+* A preview MAY be omitted without affecting conformance to the FOCUS specification.
+* A preview SHOULD NOT remain a preview for more than two versions.
+* A preview MUST NOT leave preview status until all blocking feedback is incorporated and FOCUS Members approve.
+
+### Marking a Preview
+
+* Add a `> **Preview:**` note at the top of the dataset's definition, stating that it may change in a future version, including with incompatible changes.
+* Add "(preview)" after the dataset's name in listings (e.g., the dataset table in the data model).
+* Add a preview note at the top of related appendix examples.
+* Record the preview designation in the version changelog.
+
+### Exiting Preview
+
+A preview is resolved in a later version as one of the following:
+
+* **Promote:** Remove the preview designation.
+* **Extend:** Keep the preview in the next version, with the reason recorded in the changelog.
+* **Remove:** Remove the dataset when feedback shows it should not proceed.
+
+Resolution is proposed through a work item, as for any other spec change.
+
 ## Change Type Classification
 
 Changes to the FOCUS specification are classified into one of the following types:
