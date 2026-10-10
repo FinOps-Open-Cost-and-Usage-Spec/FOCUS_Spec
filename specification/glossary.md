@@ -296,7 +296,7 @@ An individual who performs FinOps within an organization to maximize the busines
 
 <a name="glossary:preview"><b>Preview</b></a>
 
-A designation for a [*FOCUS dataset*](#glossary:FOCUS-dataset) that is published in a version of FOCUS to gather implementation feedback before it is finalized and may change in a later version. See [Preview](#preview).
+A designation for a [*FOCUS dataset*](#glossary:FOCUS-dataset) that is published in a version of FOCUS so implementers can build it and report what they find, and that may change in the next version without a deprecation notice. See [Preview](#preview).
 
 <a name="glossary:price-list"><b>Price List</b></a>
 

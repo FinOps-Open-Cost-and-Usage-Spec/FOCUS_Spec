@@ -94,15 +94,14 @@ Feature level is designated based on the following criteria described in the dat
 
 ## Preview
 
-A *preview* is a designation for a [*FOCUS dataset*](#glossary:FOCUS-dataset) that is published in a version of FOCUS to gather implementation feedback before it is finalized. The designation applies to the whole dataset and every requirement within it.
+A *preview* is a [*FOCUS dataset*](#glossary:FOCUS-dataset) approved for publication in a version of FOCUS so implementers can build it and report what they find. Its definition may change based on that feedback. The release itself is not a preview.
 
-* Every new dataset is published as a preview in the first version that includes it.
 * A preview is part of the published specification, and adoption is recommended with the understanding that it may change in the next version.
-* A preview may change in a later version, including with incompatible changes.
+* A preview may change in the next version without a deprecation notice. The changelog records every change with migration notes.
 * Only an entire dataset can be a preview. Columns, attributes, and individual requirements cannot.
-* A preview is labeled by a `> **Preview:**` note at the top of the dataset's definition and by "(preview)" next to its name in listings (e.g., the data model dataset table).
+* A preview is labeled by "(preview)" next to its name in listings (e.g., the data model dataset table) and by a `> **Preview:**` note at the top of its page, examples, and supported features.
 * The requirements in a preview are written the same way as any other requirements. Implementing a preview is optional, and not implementing it never affects conformance.
-* A preview leaves preview status through promotion, extension as a preview in the next version, or removal. The decision is recorded in the changelog of the version that makes it.
+* At each later version, FOCUS Members decide whether a preview is promoted out of preview, stays a preview for one more version, or is removed.
 
 For guidance on when to designate a preview and the criteria to leave preview status, see the [Spec Change Guidelines](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/working_draft/guidelines/contributors/spec-change-guidelines.md).
 

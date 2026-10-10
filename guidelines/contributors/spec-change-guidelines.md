@@ -98,35 +98,40 @@ To ensure complete and error-free removal of deprecated entities from the FOCUS 
 
 ## Preview Process
 
-A preview is a FOCUS dataset published in a version of FOCUS to gather implementation feedback before it is finalized. See [Preview](../../specification/overview.md#preview) in the specification for the definition.
+A preview is a FOCUS dataset approved for publication in a version of FOCUS so implementers can build it and report what they find. See [Preview](../../specification/overview.md#preview) in the specification for the definition.
 
 ### Designating a Preview
 
 A FOCUS dataset preview MUST adhere to the following requirements:
 
-* A new FOCUS dataset MUST be published as a preview in the first version that includes it.
 * A preview MUST apply only to an entire FOCUS dataset.
+* A preview MUST be approved by FOCUS Members together with the dataset.
+* A preview MUST have a tracking issue.
 * A preview MUST define standard normative requirements.
 * A preview MAY be omitted without affecting conformance to the FOCUS specification.
-* A preview SHOULD NOT remain a preview for more than two versions.
-* A preview MUST NOT leave preview status until all blocking feedback is incorporated and FOCUS Members approve.
+* A preview MAY change in the next version without a deprecation notice.
+
+The tracking issue records:
+
+* Who proposed the preview, why Members did not approve the dataset as stable, and links to the discussion and meeting notes where they decided.
+* The open questions that can only be answered by building and using the dataset.
+* The scope list, naming each requirement excluded from conformance, including any in other datasets that exist only for the preview.
+* At least one early implementer: any person or organization, inside or outside the working group, that agrees to produce the dataset from real source data (not necessarily as a data generator), use it for its intended purpose (e.g., match SKU Price rows to Cost and Usage rows), and report back what worked and what did not.
+* The date of the next status decision.
 
 ### Marking a Preview
 
-* Add a `> **Preview:**` note at the top of the dataset's definition, stating that it may change in a future version, including with incompatible changes.
-* Add "(preview)" after the dataset's name in listings (e.g., the dataset table in the data model).
-* Add a preview note at the top of related appendix examples.
-* Record the preview designation in the version changelog.
+* Add a `> **Preview:**` note at the top of the dataset's page, its examples, and its supported features, summarizing the scope list.
+* Add "(preview)" after the dataset's name in listings (e.g., the data model dataset table).
+* Record the preview and every later change to it in the version changelog, with migration notes.
 
 ### Exiting Preview
 
-A preview is resolved in a later version as one of the following:
+At each later version, FOCUS Members choose one outcome and record it with its evidence in the tracking issue:
 
-* **Promote:** Remove the preview designation.
-* **Extend:** Keep the preview in the next version, with the reason recorded in the changelog.
-* **Remove:** Remove the dataset when feedback shows it should not proceed.
-
-Resolution is proposed through a work item, as for any other spec change.
+* **Promote:** Remove the preview designation once evidence answers the open questions. Evidence is a report in the tracking issue from an early implementer that built and used the dataset as described above.
+* **Extend:** Keep the preview for one more version, with a plan for the next evidence.
+* **Remove:** Remove the dataset. This is the default when there is no new evidence since the last decision.
 
 ## Change Type Classification
 
