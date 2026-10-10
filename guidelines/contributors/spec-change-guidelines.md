@@ -105,19 +105,18 @@ A preview is a FOCUS dataset approved for publication in a version of FOCUS so i
 A FOCUS dataset preview MUST adhere to the following requirements:
 
 * A preview MUST apply only to an entire FOCUS dataset.
-* A preview MUST be approved by FOCUS Members together with the dataset.
-* A preview MUST have a tracking issue.
+* A preview MUST have a tracking issue for its progress toward leaving preview status.
 * A preview MUST define standard normative requirements.
 * A preview MAY be omitted without affecting conformance to the FOCUS specification.
 * A preview MAY change in the next version without a deprecation notice.
 
-The tracking issue records:
+A preview tracking issue MUST adhere to the following requirements:
 
-* Who proposed the preview, why Members did not approve the dataset as stable, and links to the discussion and meeting notes where they decided.
-* The open questions that can only be answered by building and using the dataset.
-* The scope list, naming each requirement excluded from conformance, including any in other datasets that exist only for the preview.
-* At least one early implementer: any person or organization, inside or outside the working group, that agrees to produce the dataset from real source data (not necessarily as a data generator), use it for its intended purpose (e.g., match SKU Price rows to Cost and Usage rows), and report back what worked and what did not.
-* The date of the next status decision.
+* A preview tracking issue MUST record who proposed the preview, why FOCUS Members did not approve the dataset as stable, and links to the discussion and meeting notes where they decided.
+* A preview tracking issue MUST list the open questions that can only be answered by building and using the dataset.
+* A preview tracking issue MUST include the scope list, naming each requirement excluded from conformance, including any in other datasets that exist only for the preview.
+* A preview tracking issue MUST name at least one early implementer: any person or organization, inside or outside the working group, that agrees to produce the dataset from real source data (not necessarily as a data generator), use it for its intended purpose (e.g., match SKU Price rows to Cost and Usage rows), and report back what worked and what did not.
+* A preview tracking issue MUST state the date of the next status decision.
 
 ### Marking a Preview
 
