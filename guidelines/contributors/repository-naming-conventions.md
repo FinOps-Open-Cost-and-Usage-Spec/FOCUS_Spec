@@ -6,7 +6,7 @@ This document outlines naming conventions for directories and files in the FOCUS
 
 ### FOCUS-defined Directories
 
-To ensure consistency, ease of maintenance, and portability, all directories in this repository, except [GitHub directories](#github-directories), MUST follow these naming conventions:
+To ensure consistency, ease of maintenance, and portability, all directories in this repository, except [GitHub directories](#github-directories) and directories under `vendored/`, MUST follow these naming conventions:
 
 * Directory names MUST use lowercase characters.
 * Directory names MUST NOT contain spaces.
@@ -53,9 +53,11 @@ To ensure consistency, ease of maintenance, and portability, all Markdown and Ma
 
 Files that are not Markdown or MarkdownPP MUST follow these naming conventions:
 
-* Python files (`.py`) and Python-adjacent JSON files consumed as Python test fixtures or package data MUST use `snake_case`, per [PEP 8](https://peps.python.org/pep-0008/#package-and-module-names).
+* Python files (`.py`) and Python-adjacent JSON files consumed as Python test fixtures or package data (e.g., `model_schema.json`) MUST use `snake_case`, per [PEP 8](https://peps.python.org/pep-0008/#package-and-module-names).
 * JSON files that define a FOCUS entity's requirements model rules MUST match the FOCUS entity identifier in lowercase, consistent with the [FOCUS-defined Markdown and MarkdownPP files](#focus-defined-markdown-and-markdownpp-files) rule.
 * Configuration files owned by a specific tool (e.g., `.gemini`, linters, formatters, package managers) MUST follow that tool's expected file naming convention, even when it conflicts with the rules above.
+* File names under `vendored/` MUST match the names their import statements and build references use, even when they conflict with the rules above.
+* CSS files under `specification/styles/` MUST match the build style names the Makefile uses (e.g., `working_draft.css`), even when they conflict with the rules above.
 * GitHub Actions workflow files (`.github/workflows/`) that correspond to a Git branch MUST match that branch name exactly.
 * All other JSON, YAML, CSS, CSV, and image files MUST use kebab-case with hyphens (`-`) as the word separator.
 
@@ -98,26 +100,24 @@ The following examples illustrate correct and incorrect file names based on the 
 
 **Tool-owned configuration files** (align to tooling convention):
 
-| Correct                | Notes                                             |
-|------------------------|---------------------------------------------------|
-| `.gemini/config.yaml`  | Follows Gemini CLI configuration file conventions |
-| `requirements.txt`     | Follows Python package manager conventions        |
+| Correct                | Notes                                                     |
+|------------------------|-----------------------------------------------------------|
+| `.gemini/config.yaml`  | Follows Gemini Code Assist configuration file conventions |
+| `requirements.txt`     | Follows Python package manager conventions                |
 
 **GitHub Actions workflow files corresponding to a Git branch** (match the branch name):
 
-| Correct                                    | Notes                                        |
-|--------------------------------------------|----------------------------------------------|
-| `.github/workflows/working_draft.yml`      | Matches the `working_draft` branch name      |
-| `.github/workflows/candidate_release.yml`  | Matches the `candidate_release` branch name  |
-| `.github/workflows/track-pr-reviews.yml`   | Kebab-case; does not correspond to a branch  |
+| Correct                                          | Notes                                              |
+|--------------------------------------------------|----------------------------------------------------|
+| `.github/workflows/working_draft.yml`            | Matches the `working_draft` branch name            |
+| `.github/workflows/candidate_recommendation.yml` | Matches the `candidate_recommendation` branch name |
+| `.github/workflows/track-pr-reviews.yml`         | Kebab-case; does not correspond to a branch        |
 
 **Other JSON, YAML, CSS, CSV, and image files** (kebab-case):
 
 | Correct                   | Incorrect                                         |
 |---------------------------|---------------------------------------------------|
-| `model-schema.json`       | `model_schema.json`, `modelSchema.json`           |
 | `all-upfront-100pct.csv`  | `all_upfront_100pct.csv`, `AllUpfront100pct.csv`  |
-| `spec-styles.css`         | `spec_styles.css`, `SpecStyles.css`               |
 
 ## Renaming Directories or Files After Publication
 
