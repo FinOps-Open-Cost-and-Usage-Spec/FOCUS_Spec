@@ -98,12 +98,13 @@ To ensure complete and error-free removal of deprecated entities from the FOCUS 
 
 ## Preview Process
 
-A preview is a FOCUS dataset approved for publication in a version of FOCUS so implementers can build it and report what they find. See [Preview](../../specification/overview.md#preview) in the specification for the definition.
+A preview is a FOCUS dataset published in a version of FOCUS so implementers can build it and report what they find. See [Preview](../../specification/overview.md#preview) in the specification for the definition.
 
 ### Designating a Preview
 
 A FOCUS dataset preview MUST adhere to the following requirements:
 
+* A new FOCUS dataset MUST be published as a preview in the first version that includes it.
 * A preview MUST apply only to an entire FOCUS dataset.
 * A preview MUST have a tracking issue for its progress toward leaving preview status.
 * A preview MUST define standard normative requirements.
@@ -112,7 +113,7 @@ A FOCUS dataset preview MUST adhere to the following requirements:
 
 A preview tracking issue MUST adhere to the following requirements:
 
-* A preview tracking issue MUST record who proposed the preview, why FOCUS Members did not approve the dataset as stable, and links to the discussion and meeting notes where they decided.
+* A preview tracking issue MUST record the dataset proposer and links to the discussion and meeting notes where FOCUS Members approved the dataset.
 * A preview tracking issue MUST list the open questions that can only be answered by building and using the dataset.
 * A preview tracking issue MUST include the scope list, naming each requirement excluded from conformance, including any in other datasets that exist only for the preview.
 * A preview tracking issue MUST name at least one early implementer: any person or organization, inside or outside the working group, that agrees to produce the dataset from real source data (not necessarily as a data generator), use it for its intended purpose (e.g., match SKU Price rows to Cost and Usage rows), and report back what worked and what did not.

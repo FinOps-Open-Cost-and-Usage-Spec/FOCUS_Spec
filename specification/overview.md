@@ -94,8 +94,9 @@ Feature level is designated based on the following criteria described in the dat
 
 ## Preview
 
-A *preview* is a [*FOCUS dataset*](#glossary:FOCUS-dataset) approved for publication in a version of FOCUS so implementers can build it and report what they find. Its definition may change based on that feedback. The release itself is not a preview.
+A *preview* is a [*FOCUS dataset*](#glossary:FOCUS-dataset) published in a version of FOCUS so implementers can build it and report what they find. Its definition may change based on that feedback. The release itself is not a preview.
 
+* Every new dataset is published as a preview in the first version that includes it.
 * A preview is part of the published specification, and adoption is recommended with the understanding that it may change in the next version.
 * A preview may change in the next version without a deprecation notice. The changelog records every change with migration notes.
 * Only an entire dataset can be a preview. Columns, attributes, and individual requirements cannot.
