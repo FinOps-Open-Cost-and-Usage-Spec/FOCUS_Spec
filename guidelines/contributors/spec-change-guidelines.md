@@ -70,7 +70,7 @@ Data generators are expected to remove capabilities at the same time that the FO
 
 To ensure complete and error-free removal of deprecated entities from the FOCUS specification, follow this checklist:
 
-1. **Confirm Deprecation Status**: Verify the entity has been deprecated for at least one release cycle and meets retention period requirements.
+1. **Confirm Deprecation Status**: Verify the entity has been deprecated for at least one release cycle and meets retention period requirements. A [preview](#preview-process) dataset is exempt and MAY be removed without a deprecation notice or retention period.
 
 2. **Identify All Files Related to the Entity**:
    * Remove definition files from specification paths (for example: `specification/datasets/*/columns/`, or other relevant subfolders)
@@ -98,18 +98,21 @@ To ensure complete and error-free removal of deprecated entities from the FOCUS 
 
 ## Preview Process
 
-A preview is a FOCUS dataset published in a version of FOCUS so implementers can build it and report what they find. See [Preview](../../specification/overview.md#preview) in the specification for the definition.
+Preview is a status for a FOCUS dataset published in a version of FOCUS so implementers can build it and report what they find. A dataset with this status is called a preview. See [Preview](../../specification/overview.md#preview) in the specification for the definition.
 
 ### Designating a Preview
 
 A FOCUS dataset preview MUST adhere to the following requirements:
 
-* A new FOCUS dataset MUST be published as a preview in the first version that includes it.
-* A preview MUST apply only to an entire FOCUS dataset.
+* A new FOCUS dataset SHOULD be published as a preview in the first version that includes it.
+* A new FOCUS dataset published without preview status MUST have the reason recorded in the version changelog.
+* A preview MUST apply only to an entire FOCUS dataset, and to requirements outside it only when the scope list in the preview's tracking issue names them.
+* A preview MUST NOT be a FOCUS dataset that an earlier version published without preview status.
 * A preview MUST have a tracking issue for its progress toward leaving preview status.
-* A preview MUST define standard normative requirements.
+* A preview MUST include normative requirements written the same way as any other requirements (e.g., a `MUST` is not relaxed to `SHOULD` because the dataset is a preview).
 * A preview MAY be omitted without affecting conformance to the FOCUS specification.
 * A preview MAY change in the next version without a deprecation notice.
+* Requirements that are not on a preview's scope list MUST keep their normal change rules when the preview changes (e.g., the SkuPriceId requirements in Cost and Usage).
 
 A preview tracking issue MUST adhere to the following requirements:
 
@@ -117,20 +120,23 @@ A preview tracking issue MUST adhere to the following requirements:
 * A preview tracking issue MUST include the scope list, naming each requirement excluded from conformance, including any in other datasets that exist only for the preview.
 * A preview tracking issue MUST name at least one early implementer: any person or organization, inside or outside the working group, that agrees to produce the dataset from real source data (not necessarily as a data generator), use it for its intended purpose (e.g., match SKU Price rows to Cost and Usage rows), and report back what worked and what did not.
 * A preview tracking issue MUST state the date of the next status decision.
+* A preview tracking issue MUST record that a request for comments went to existing data generators, and who responded.
 
 ### Marking a Preview
 
-* Add a `> **Preview:**` note at the top of the dataset's page, its examples, and its supported features, summarizing the scope list.
+* Add a `> **Preview:**` note at the top of the dataset's page, its examples, and its supported features, summarizing the scope list and linking to the tracking issue.
 * Add "(preview)" after the dataset's name in listings (e.g., the data model dataset table).
+* Add a note to each section outside the dataset that has requirements on the scope list (e.g., the Charge Category column in Cost and Usage), naming those requirements and stating that they are excluded from conformance while the dataset is in preview.
 * Record the preview and every later change to it in the version changelog, with migration notes.
+* Set the status of each requirement on the scope list to Preview in the requirements model.
 
 ### Exiting Preview
 
 At each later version, FOCUS Members choose one outcome and record it with its evidence in the tracking issue:
 
-* **Promote:** Remove the preview designation once evidence answers the open questions. Evidence is a report in the tracking issue from an early implementer that built and used the dataset as described above.
+* **Promote:** Remove the preview designation once evidence answers the open questions. Evidence is a report in the tracking issue from an early implementer that built and used the dataset as described above. The dataset's requirements become Active in the requirements model, and the "(preview)" label and Preview notes are removed.
 * **Extend:** Keep the preview for one more version, with a plan for the next evidence.
-* **Remove:** Remove the dataset. This is the default when there is no new evidence since the last decision.
+* **Remove:** Remove the dataset without a deprecation notice or retention period. This is the default when there is no new evidence since the last decision.
 
 ## Change Type Classification
 

@@ -94,14 +94,14 @@ Feature level is designated based on the following criteria described in the dat
 
 ## Preview
 
-A *preview* is a [*FOCUS dataset*](#glossary:FOCUS-dataset) published in a version of FOCUS so implementers can build it and report what they find. Its definition may change based on that feedback. The release itself is not a preview.
+*Preview* is a status for a [*FOCUS dataset*](#glossary:FOCUS-dataset) published in a version of FOCUS so implementers can build it and report what they find. A dataset with this status, called a preview, may change based on that feedback. The release itself is not a preview.
 
-* Every new dataset is published as a preview in the first version that includes it.
-* A preview is part of the published specification, and adoption is recommended with the understanding that it may change in the next version.
+* A new dataset is published as a preview by default in the first version that includes it.
+* A preview is part of the published specification.
 * A preview may change in the next version without a deprecation notice. The changelog records every change with migration notes.
-* Only an entire dataset can be a preview. Columns, attributes, and individual requirements cannot.
+* Only an entire dataset can be a preview, and a preview path for single columns and attributes is not yet defined. Requirements outside the dataset are evaluated for conformance as usual unless the dataset's scope list, summarized in its Preview note, names them.
 * A preview is labeled by "(preview)" next to its name in listings (e.g., the data model dataset table) and by a `> **Preview:**` note at the top of its page, examples, and supported features.
-* The requirements in a preview are written the same way as any other requirements. Implementing a preview is optional, and not implementing it never affects conformance.
+* The requirements in a preview are written the same way as any other requirements. Implementing a preview is optional, and its requirements are not evaluated for conformance, whether or not a data generator provides the dataset.
 * At each later version, FOCUS Members decide whether a preview is promoted out of preview, stays a preview for one more version, or is removed.
 
 For guidance on when to designate a preview and the criteria to leave preview status, see the [Spec Change Guidelines](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/working_draft/guidelines/contributors/spec-change-guidelines.md).
