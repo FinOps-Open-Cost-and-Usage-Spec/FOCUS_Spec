@@ -27,8 +27,6 @@ The `ProgramType` property identifies *commitment programs* supported by the pro
 * ChargePeriodEnd
 * ChargePeriodStart
 * CommitmentDiscountId
-* CommitmentDiscountStatus
-* CommitmentDiscountType
 * EffectiveCost
 * ServiceName
 * ServiceProviderName
@@ -158,6 +156,7 @@ SELECT
   CU.ServiceProviderName,
   CU.ServiceName,
   JSON_VALUE(CP, '$.ProgramType') AS EligibleProgramType,
+  CU.CapacityReservationId,
   CU.CapacityReservationStatus,
   SUM(CU.BilledCost) AS BilledCost,
   COUNT(*) AS RowCount
@@ -172,6 +171,7 @@ GROUP BY
   CU.ServiceProviderName,
   CU.ServiceName,
   JSON_VALUE(CP, '$.ProgramType'),
+  CU.CapacityReservationId,
   CU.CapacityReservationStatus
 ORDER BY BilledCost DESC
 ```
