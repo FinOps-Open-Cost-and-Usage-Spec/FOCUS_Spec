@@ -338,6 +338,8 @@ The following conventions apply to references to FOCUS entities in normative req
 * References to FOCUS entities MUST NOT use their Display Names.
 * References to FOCUS entities SHOULD default to singular form, with the understanding that the requirement applies to all applicable instances, values, or elements of the referenced entity unless otherwise specified.
 
+**Exception for Operating Model Conditions:** In normative requirements, Operating Model Conditions MUST be referenced by their Display Name in lowercase, following the *operating model* (e.g., `when the *operating model* [includes availability zones](#operatingmodelconditions.includesavailabilityzones)`), rather than by their Operating Model Condition ID.
+
 #### FOCUS Dataset Reference Conventions
 
 When a normative requirement references a FOCUS dataset concept, different conventions apply depending on the position of the reference within the requirement.

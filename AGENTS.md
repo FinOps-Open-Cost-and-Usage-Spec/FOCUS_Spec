@@ -158,6 +158,7 @@ These forms are not equivalent:
 * **Terminology:** Apply the following rules:
   * Normative references to FOCUS entities MUST use a generic keyword, canonical Entity ID, or dot-notation reference path.
   * Normative references to FOCUS entities MUST NOT use Display Names.
+  * Exception: Operating Model Conditions MUST be referenced by their Display Name in lowercase, following `the *operating model*` (e.g., `when the *operating model* [includes availability zones](#operatingmodelconditions.includesavailabilityzones)`), never by their ID. Do not flag this phrase as a Display Name.
   * Requirements governing a specific dataset MUST use its `DatasetId` as the subject (e.g., `CostAndUsage`).
   * All other grammatical subjects referring to a FOCUS dataset concept MUST use `FOCUS dataset`, including when the constraint applies to a dataset specification, dataset instance, or dataset artifact.
   * In non-subject positions, references to dataset concepts MUST use `FOCUS dataset`, `dataset instance`, or `dataset artifact`, according to the precise abstraction intended.
@@ -167,38 +168,24 @@ These forms are not equivalent:
 
 ### Editorial Conventions
 
-* **Column/Attribute IDs:** PascalCase without spaces (e.g., PricingQuantity). Entity IDs MUST be used in normative text sections.
-* **Column/Attribute Display Names:** Normal text with spaces (e.g., Pricing Quantity).
-* **Column/Attribute References in Non-Normative Content:**
-  * Display Names SHOULD be used for conceptual, reader-facing references.
-  * Canonical IDs MAY be used for schema-facing references.
-  * A reference is schema-facing when any of the following applies:
-    * it identifies a field in code, JSON, SQL, a schema, or a table header;
-    * it is an object or property path;
-    * the surrounding sentence describes the field being populated, omitted, null, serialized, validated, matched, compared, grouped, filtered, joined, aggregated, or repeated; or
-    * exact correspondence with an adjacent table, code block, schema fragment, or query expression is required.
-  * When none of the schema-facing conditions above applies, treat the reference as conceptual.
-  * Reviewers MUST NOT create a finding solely because a schema-facing non-normative reference uses its canonical ID.
-  * A canonical ID used for a conceptual non-normative reference MAY produce a suggestion. 
-  * A canonical ID used for a conceptual non-normative reference MUST NOT produce an error or warning.
-* **No Mixing:** Do not mix Entity IDs and Display Names within the same normative requirement.
+* **Entity IDs and Display Names:** Full rules: [Editorial Guidelines, Entity References](guidelines/contributors/editorial-guidelines.md#entity-references) and [Normative Requirements Guidelines, FOCUS Entity Reference Conventions](guidelines/contributors/normative-requirements-guidelines.md#focus-entity-reference-conventions). When this file and the guidelines differ, the guidelines prevail.
+  * Entity IDs: exact schema name, PascalCase, no spaces (e.g., PricingQuantity). Entity IDs MUST be used in normative text sections.
+  * Display Names: normal text with spaces (e.g., Pricing Quantity).
+  * Outside Requirements sections, Display Names SHOULD be used when available. Do not flag Entity IDs in field lists, code, JSON, SQL, table headers, or object property paths.
+* **No Mixing:** Do not mix Entity IDs and Display Names within the same normative requirement. An Operating Model Condition phrase is not a Display Name for this rule.
 * **Column values:** Apply the following rules:
   * When a column value appears in prose or normative text, enclose it in double quotation marks (e.g., `"Usage"`, `"Tax"`). 
   * In an Allowed Values table, list values without quotation marks because the `Value` column identifies them as literals, unless quotation marks are part of the value itself.
 * **Glossary terms:** Link with `[*term*](#glossary:term)` format.
-* **Linking Rule:** For each distinct entity or glossary destination in a source Markdown file:
-  * Ignore occurrences in document titles and section headings.
-  * Link the first remaining occurrence in reading order.
-  * Leave all later occurrences unlinked.
-  * When no remaining occurrence exists, no link is required.
-* **Linking Rule Exceptions:** Apply the following exceptions:
-  * A link whose anchor text is not an entity name or glossary term does not count toward first occurrence.
-  * Content Constraints sections link every entity reference.
-  * Glossary entries apply this rule independently within each entry.
-  * A table is an entity catalog table only when each data row represents and identifies a distinct specification entity.
-  * In an entity catalog table, the entity reference that identifies each row MAY link to that entity's definition even when the entity was linked earlier in the file.
-  * Each normative requirement bullet MUST link its first reference to each distinct FOCUS entity, glossary term, or Operating Model Condition, even when the same destination was linked earlier in the file.
-  * Later references to the same destination within that bullet MUST remain unlinked.
+* **Linking Rule:** Full rules: [Editorial Guidelines, Linking](guidelines/contributors/editorial-guidelines.md#linking).
+  * Entity definition files are files with a `## Column ID`, `## Dataset ID`, `## Attribute ID`, or `## Operating Model Condition ID` section. In these files the rule below is MUST; in all other files it is SHOULD.
+  * For each entity and glossary term in a source Markdown file: ignore titles and headings, do not link the entity the file defines, link the first remaining occurrence in reading order, and leave later occurrences unlinked.
+  * Entity names are Entity IDs, Display Names, glossary terms, and Operating Model Condition phrases, including plural and possessive forms. An Entity ID and its Display Name are the same entity.
+* **Linking Rule Exceptions:**
+  * Content Constraints sections: link every entity reference.
+  * Glossary file: apply the rule within each glossary entry.
+  * Entity catalog tables (each row represents one FOCUS entity and links to its definition, e.g., the Columns table in `dataset.md`): row links may appear regardless of prior occurrence and do not count toward first occurrence. Content Constraints and Allowed Values tables are not catalog tables.
+  * Functional links (anchor text is not an entity name): may appear regardless of prior occurrence and do not count toward first occurrence.
 * **Lists:** All unordered lists MUST use asterisks (`*`), never dashes (`-`) or plus signs (`+`). Nested bullet points MUST use exactly two spaces per level.
 * **Notes:** Important notes must use the blockquote format (`> **Note:**`).
 * **Notes versus Exceptions:** Apply the following rules:
