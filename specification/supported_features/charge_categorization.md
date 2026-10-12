@@ -21,7 +21,7 @@ FOCUS supports the categorization of charges including purchases, usage, tax, cr
 * ServiceProviderName
 * ServiceCategory
 
-## Example SQL Query
+## Example SQL Queries
 
 ### Report on Commitment Discount Purchases
 
