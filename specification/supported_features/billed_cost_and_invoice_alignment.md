@@ -12,10 +12,6 @@ FOCUS data should be consistent with the costs indicated on payable invoices. Th
 * BillingPeriodStart
 * InvoiceId
 
-## Supporting Columns
-
-* ServiceName
-
 ## Example SQL Query
 
 ```sql
@@ -23,12 +19,14 @@ SELECT
   BillingPeriodStart,
   BillingPeriodEnd,
   InvoiceId,
+  BillingCurrency,
   SUM(BilledCost)
 FROM focus_data_table
 GROUP BY
   BillingPeriodStart,
   BillingPeriodEnd,
-  InvoiceId
+  InvoiceId,
+  BillingCurrency
 ```
 
 ## Version Introduced
