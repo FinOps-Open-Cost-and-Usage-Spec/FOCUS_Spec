@@ -16,10 +16,6 @@ A billing account is the account where invoices are generated. Each billing acco
 * SubAccountName
 * SubAccountType
 
-## Supporting Columns
-
-* InvoiceId
-
 ## Example SQL Query
 
 ```sql
@@ -35,7 +31,11 @@ FROM focus_data_table
 WHERE BillingPeriodStart >= ? AND BillingPeriodEnd < ?
 GROUP BY
   BillingAccountId,
-  SubAccountId
+  BillingAccountName,
+  BillingAccountType,
+  SubAccountId,
+  SubAccountName,
+  SubAccountType
 ```
 
 ## Version Introduced
