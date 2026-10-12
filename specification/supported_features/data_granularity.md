@@ -18,8 +18,6 @@ FOCUS supports multiple levels of cost and usage data granularity. This includes
 * ConsumedUnit
 * EffectiveCost
 * ListCost
-* PricingCurrency
-* PricingUnit
 
 ## Example SQL Query
 
@@ -28,12 +26,19 @@ SELECT
   ChargePeriodStart,
   ChargePeriodEnd,
   ResourceId,
+  ResourceName,
+  ConsumedUnit,
+  SUM(ConsumedQuantity),
+  SUM(ListCost),
+  SUM(BilledCost),
   SUM(EffectiveCost)
 FROM focus_data_table
-Group by
+GROUP BY
   ChargePeriodStart,
   ChargePeriodEnd,
-  ResourceId
+  ResourceId,
+  ResourceName,
+  ConsumedUnit
 ```
 
 ## Version Introduced
