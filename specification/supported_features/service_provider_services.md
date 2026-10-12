@@ -13,7 +13,6 @@ FOCUS supports service providers specifying the services and product offerings t
 ## Supporting Columns
 
 * ServiceProviderName
-* SkuId
 
 ## Example SQL Query
 
@@ -23,6 +22,8 @@ SELECT
   ServiceProviderName,
   SubAccountId,
   SubAccountName,
+  ServiceCategory,
+  ServiceSubcategory,
   ServiceName,
   SUM(BilledCost) AS TotalBilledCost,
   SUM(EffectiveCost) AS TotalEffectiveCost
@@ -34,6 +35,8 @@ GROUP BY
   ServiceProviderName,
   SubAccountId,
   SubAccountName,
+  ServiceCategory,
+  ServiceSubcategory,
   ServiceName
 ORDER BY TotalBilledCost DESC
 ```
