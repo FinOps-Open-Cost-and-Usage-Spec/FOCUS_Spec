@@ -28,7 +28,6 @@ This feature also supports reconciliation across divergent currency grains. When
   * PaymentCurrency
 * [CostAndUsage](#datamodel.costandusage)
   * ChargeCategory
-  * ServiceCategory
 
 ## Example SQL Queries
 
@@ -63,6 +62,34 @@ FULL OUTER JOIN (
 WHERE COALESCE(ID.InvoiceId, CU.InvoiceId) = ?
 ```
 
+### Reconcile Cost and Usage to Invoice Detail by Invoice Detail ID
+
+This query compares each non-tax record in the [InvoiceDetail](#datamodel.invoicedetail) dataset for a specific invoice with the sum of the charges in the [CostAndUsage](#datamodel.costandusage) dataset that reference it, identifying the invoice line items where the two datasets differ.
+
+```sql
+SELECT
+  ID.InvoiceId,
+  ID.InvoiceDetailId,
+  ID.InvoiceIssueStatus,
+  ID.BillingCurrency,
+  ID.BilledCost AS BilledCost_InvoiceDetail,
+  CU.TotalBilledCost_CostAndUsage,
+  (ID.BilledCost - COALESCE(CU.TotalBilledCost_CostAndUsage, 0)) AS Variance
+FROM InvoiceDetail ID
+LEFT JOIN (
+  SELECT
+    InvoiceId,
+    InvoiceDetailId,
+    SUM(BilledCost) AS TotalBilledCost_CostAndUsage
+  FROM CostAndUsage
+  GROUP BY InvoiceId, InvoiceDetailId
+) CU ON ID.InvoiceId = CU.InvoiceId
+  AND ID.InvoiceDetailId = CU.InvoiceDetailId
+WHERE ID.InvoiceId = ?
+  AND ID.ChargeCategory != 'Tax'
+ORDER BY ID.InvoiceDetailId
+```
+
 ### Reconcile Multi-Currency Settlement Using Lineage IDs
 
 This query demonstrates how to use the `PaymentCurrencyInvoiceDetailId` to reconcile granular records (denominated in the billing currency) against the aggregate records used for payment (denominated in the payment currency). This resolves the "Divergent Grain" problem.
@@ -70,13 +97,15 @@ This query demonstrates how to use the `PaymentCurrencyInvoiceDetailId` to recon
 ```sql
 SELECT
   PaymentCurrencyInvoiceDetailId,
+  BillingCurrency,
+  PaymentCurrency,
   SUM(BilledCost) AS TotalBilled_BillingCurrency,
   SUM(PaymentCurrencyBilledCost) AS TotalBilled_PaymentCurrency,
   -- Calculate effective exchange rate for the group
   SUM(PaymentCurrencyBilledCost) / NULLIF(SUM(BilledCost), 0) AS EffectiveExchangeRate
 FROM InvoiceDetail
 WHERE InvoiceId = ?
-GROUP BY PaymentCurrencyInvoiceDetailId
+GROUP BY PaymentCurrencyInvoiceDetailId, BillingCurrency, PaymentCurrency
 ORDER BY PaymentCurrencyInvoiceDetailId
 ```
 

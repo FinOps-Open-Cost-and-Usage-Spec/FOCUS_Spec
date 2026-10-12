@@ -85,6 +85,32 @@ GROUP BY
   ChargePeriodEnd
 ```
 
+### Effective Cost by Consumed Quantity and Pricing Quantity
+
+Compares the quantity consumed with the quantity priced for the same usage charges. [Consumed Quantity](#datamodel.costandusage.consumedquantity) and [Consumed Unit](#datamodel.costandusage.consumedunit) measure what was used (e.g., hours, GB), while [Pricing Quantity](#datamodel.costandusage.pricingquantity) and [Pricing Unit](#datamodel.costandusage.pricingunit) measure what the unit price was applied to, which can use a different unit or block size (e.g., GB-months, blocks of 1,000 requests). Dividing Effective Cost by each quantity gives the cost per unit consumed and the effective price per unit priced. Consumed Quantity is null for charges that are not usage and for unused commitment discounts, so those rows are excluded.
+
+```sql
+SELECT
+  ServiceProviderName,
+  ServiceName,
+  ConsumedUnit,
+  PricingUnit,
+  SUM(ConsumedQuantity) AS TotalConsumedQuantity,
+  SUM(PricingQuantity) AS TotalPricingQuantity,
+  SUM(EffectiveCost) AS TotalEffectiveCost,
+  SUM(EffectiveCost) / NULLIF(SUM(ConsumedQuantity), 0) AS EffectiveCostPerConsumedUnit,
+  SUM(EffectiveCost) / NULLIF(SUM(PricingQuantity), 0) AS EffectiveCostPerPricingUnit
+FROM focus_data_table
+WHERE ChargePeriodStart >= ? AND ChargePeriodEnd < ?
+  AND ChargeCategory = 'Usage'
+  AND ConsumedQuantity IS NOT NULL
+GROUP BY
+  ServiceProviderName,
+  ServiceName,
+  ConsumedUnit,
+  PricingUnit
+```
+
 ## Version Introduced
 
 0.5

@@ -24,7 +24,9 @@ FOCUS enables tracking of resources split by some internal consumption metrics. 
 * ServiceName
 * ServiceProviderName
 
-## Example SQL Query (Find Resources with a Shared Cost)
+## Example SQL Queries
+
+### Find Resources with a Shared Cost
 
 ```sql
 SELECT
@@ -35,7 +37,7 @@ WHERE ChargeCategory='Usage'
   AND AllocatedMethodId IS NOT NULL
 ```
 
-## Example SQL Query (Get Total Effective Cost by ResourceId (Ignore Shared Cost))
+### Get Total Effective Cost by Resource ID (Ignore Shared Cost)
 
 ```sql
 SELECT
@@ -49,11 +51,12 @@ GROUP BY
   ResourceId
 ```
 
-## Example SQL Query (Get Total Effective Cost by AllocatedResourceId)
+### Get Total Effective Cost by Allocated Resource ID
 
 ```sql
 SELECT
   AllocatedResourceId,
+  AllocatedResourceName,
   ServiceName,
   ServiceCategory,
   ServiceProviderName,
@@ -64,12 +67,13 @@ WHERE ChargeCategory='Usage'
   AND AllocatedMethodId IS NOT NULL
 GROUP BY
   AllocatedResourceId,
+  AllocatedResourceName,
   ServiceName,
   ServiceCategory,
   ServiceProviderName
 ```
 
-## Example SQL Query (Get Total Effective Cost by Allocated Service Name)
+### Get Total Effective Cost by Allocated Service Name
 
 ```sql
 SELECT
@@ -84,7 +88,7 @@ GROUP BY
   AllocatedServiceName
 ```
 
-## Example SQL Query (Find Total Unallocated Split Costs by ResourceId)
+### Find Total Unallocated Split Costs by Resource ID
 
 ```sql
 SELECT
@@ -98,23 +102,24 @@ GROUP BY
   ResourceId
 ```
 
-## Example SQL Query (Find How a Single Resource Has Been Split)
+### Find How a Single Resource Has Been Split
 
 ```sql
 SELECT
   ResourceId,
   COALESCE(AllocatedResourceId, 'Unallocated') AS AllocatedResourceId,
+  SUM(BilledCost) AS TotalBilledCost,
   SUM(EffectiveCost) AS TotalEffectiveCost
 FROM focus_data_table
 WHERE ChargeCategory='Usage'
   AND ChargePeriodStart >= ? AND ChargePeriodEnd <= ?
-  AND AllocatedResourceId = ?
+  AND ResourceId = ?
 GROUP BY
   ResourceId,
   COALESCE(AllocatedResourceId, 'Unallocated')
 ```
 
-## Example SQL Query (Extract JSON from AllocatedMethodDetails)
+### Extract JSON from Allocated Method Details
 
 ```sql
 SELECT

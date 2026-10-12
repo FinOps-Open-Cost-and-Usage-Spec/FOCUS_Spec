@@ -6,12 +6,11 @@ FOCUS supports the tracking of commitment discounts usage and under usage, which
 
 ## Directly Dependent Columns
 
-* CommitmentDiscountID
+* CommitmentDiscountId
 * CommitmentDiscountStatus
 * CommitmentDiscountType
-* CapacityReservationID
+* CapacityReservationId
 * CapacityReservationStatus
-* CapacityReservationType
 
 ## Supporting Columns
 
@@ -19,9 +18,10 @@ FOCUS supports the tracking of commitment discounts usage and under usage, which
 * ChargePeriodStart
 * ChargePeriodEnd
 * EffectiveCost
-* ServiceCategory
 
-## Example SQL Query for Commitment Discounts
+## Example SQL Queries
+
+### Report on Unused Commitment Discounts
 
 ```sql
 SELECT
@@ -39,10 +39,11 @@ GROUP BY
   ServiceProviderName,
   BillingAccountId,
   CommitmentDiscountId,
-  CommitmentDiscountType
+  CommitmentDiscountType,
+  CommitmentDiscountStatus
 ```
 
-## Example SQL Query for Capacity Reservations
+### Report on Unused Capacity Reservations
 
 ```sql
 SELECT

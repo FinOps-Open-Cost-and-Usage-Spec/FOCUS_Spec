@@ -17,16 +17,11 @@ The Contract Applied column contains several FOCUS-defined properties. For more 
   * BillingCurrency
   * ContractCommitmentCategory
   * ContractCommitmentCost
-  * ContractCommitmentDescription
   * ContractCommitmentId
   * ContractCommitmentPeriodEnd
   * ContractCommitmentPeriodStart
-  * ContractCommitmentQuantity
   * ContractCommitmentType
-  * ContractCommitmentUnit
   * ContractId
-  * ContractPeriodEnd
-  * ContractPeriodStart
 
 ## Example SQL Queries
 
@@ -78,16 +73,21 @@ ORDER BY ServiceProviderName, ContractCommitmentId
 
 ### Report on Usage Against Contract Commitment by Category
 
-This query takes inputs of a time range via ChargePeriodStart and ChargePeriodEnd, then presents the aggregation of the application of contract commitments from the CostAndUsage dataset per ServiceProviderName and ContractCommitmentId by filtering on the specified time range, along with ChargeCategory of `Usage`. It also joins in the ContractCommitment dataset to provide further information about each contract commitment (in this case, the start and end date/time).
+This query takes inputs of a time range via ChargePeriodStart and ChargePeriodEnd, then presents the aggregation of the application of contract commitments from the CostAndUsage dataset per ServiceProviderName and ContractCommitmentId by filtering on the specified time range, along with ChargeCategory of `Usage`. It also joins in the ContractCommitment dataset to provide further information about each contract commitment (in this case, the contract, category, type, start and end date/time, and committed cost).
 
 ```sql
 SELECT
   MIN(CU.ChargePeriodStart) AS ChargePeriodStart,
   MAX(CU.ChargePeriodEnd) AS ChargePeriodEnd,
   CU.ServiceProviderName,
+  CC.ContractId,
   JSON_VALUE(CA, '$.ContractCommitmentId') AS ContractCommitmentId,
+  CC.ContractCommitmentCategory,
+  CC.ContractCommitmentType,
   CC.ContractCommitmentPeriodStart,
   CC.ContractCommitmentPeriodEnd,
+  CC.BillingCurrency,
+  CC.ContractCommitmentCost,
   SUM(CAST(JSON_VALUE(CA, '$.ContractCommitmentAppliedCost') AS FLOAT64)) AS ContractCommitmentAppliedCost
 FROM CostAndUsage CU
 CROSS JOIN
@@ -99,8 +99,20 @@ ON
 WHERE JSON_VALUE(CA, '$.ContractCommitmentAppliedCost') IS NOT NULL
   AND ChargePeriodStart >= ? AND ChargePeriodEnd < ?
   AND ChargeCategory = 'Usage'
-GROUP BY ServiceProviderName, ContractCommitmentId, ContractCommitmentPeriodStart, ContractCommitmentPeriodEnd
-ORDER BY ServiceProviderName, ContractCommitmentId, ContractCommitmentPeriodStart, ContractCommitmentPeriodEnd
+GROUP BY
+  CU.ServiceProviderName,
+  CC.ContractId,
+  ContractCommitmentId,
+  CC.ContractCommitmentCategory,
+  CC.ContractCommitmentType,
+  CC.ContractCommitmentPeriodStart,
+  CC.ContractCommitmentPeriodEnd,
+  CC.BillingCurrency,
+  CC.ContractCommitmentCost
+ORDER BY
+  CU.ServiceProviderName,
+  CC.ContractCommitmentCategory,
+  ContractCommitmentId
 ```
 
 ## Version Introduced

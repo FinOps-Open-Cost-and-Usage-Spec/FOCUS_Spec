@@ -19,7 +19,7 @@ Many service providers have features that allow FinOps practitioners to enrich c
 
 ```sql
 SELECT
-  tags,
+  Tags,
   ConsumedUnit,
   SUM(BilledCost),
   SUM(EffectiveCost),
@@ -27,7 +27,7 @@ SELECT
 FROM focus_data_table
 WHERE BillingPeriodStart >= ? AND BillingPeriodEnd < ?
 GROUP BY
-  tags,
+  Tags,
   ConsumedUnit
 ```
 
