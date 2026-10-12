@@ -364,7 +364,7 @@ An agreement specified on a [*contract*](#glossary:contract) or [*invoice*](#glo
 
 <a name="glossary:token"><b>Token</b></a>
 
-A unit of measure representing a discrete quantity of content processed by an [*AI model*](#glossary:ai-model). The amount of content a single token represents is determined by the model, so token counts are not directly comparable across models. Distinct from a token issued as a [*virtual currency*](#glossary:virtual-currency), which denominates value rather than measuring consumption.
+A unit of measure representing a discrete quantity of content processed by an [*AI model*](#glossary:ai-model). The amount of content a single token represents is determined by the model, so token counts are not directly comparable across models. Distinct from a token issued as a [*virtual currency*](#glossary:virtual-currency), which denominates value.
 
 <a name="glossary:unit-pricing"><b>Unit Pricing</b></a>
 
