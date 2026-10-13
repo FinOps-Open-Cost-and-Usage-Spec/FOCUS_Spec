@@ -164,9 +164,8 @@ These rules apply to all entities defined in the FOCUS specification (e.g., Colu
 
 * **Entity ID Naming:** Entity IDs MUST match the exact naming conventions used in the schema (e.g., CommitmentDiscountId).
 
-* **Display Name References:** References to FOCUS entities outside Requirements sections SHOULD use Display Names when available.
-
-> **Note:** An Entity ID is appropriate where the reference identifies the field itself, for example in field lists, code, JSON, SQL, table headers, and object property paths.
+* **Display Name References:** Outside Requirements sections, conceptual references to FOCUS entities MUST use Display Names when available; schema-facing references MAY use Entity IDs. In files under `specification/appendix/`, conceptual references SHOULD use Display Names.
+  * A reference is **schema-facing** when it refers to the entity as it appears in data, code, or a schema (e.g., its values, a table header or row label, a column list, a query, or an object or `Dataset.Column` path). Otherwise, it is **conceptual**.
 
 * **Display Names Formatting:** Display Names SHOULD follow normal text conventions, including spaces between words (e.g., Commitment Discount ID).
 
@@ -174,28 +173,26 @@ These rules apply to all entities defined in the FOCUS specification (e.g., Colu
 
 #### Linking
 
-Body content includes paragraphs, list items, table cells, and requirement bullets. An **entity definition file** is a source Markdown file that defines a FOCUS Column, Dataset, Attribute, or Operating Model Condition.
+Body content includes paragraphs, list items, table cells, and requirement bullets.
 
-* **Entity References:** An entity reference is a mention of a FOCUS entity or glossary term by its Entity ID, Display Name, glossary term, or Operating Model Condition phrase (see [General FOCUS Entity Reference Conventions](normative-requirements-guidelines.md#general-focus-entity-reference-conventions)), including its plural and possessive forms (e.g., `BilledCost`, `Billed Costs`). Glossary terms and Operating Model Condition phrases (an Operating Model Condition's Display Name in lowercase) count in any capitalization, except as stated in Entity or Glossary Term. Other forms (e.g., different capitalization, shortened, extended, or `Dataset.Column`, such as `contract commitment period start` or `CostAndUsage.BilledCost`) count as entity references only when linked.
+* **Entity References:** An entity reference is a mention of a FOCUS entity or glossary term by its Entity ID, Display Name, glossary term, or Operating Model Condition phrase (see [General FOCUS Entity Reference Conventions](normative-requirements-guidelines.md#general-focus-entity-reference-conventions)), including its plural and possessive forms (e.g., `BilledCost`, `Billed Costs`). Glossary terms and Operating Model Condition phrases (an Operating Model Condition's Display Name in lowercase) count in any capitalization, except as stated in Entity or Glossary Term. Other forms of the name (e.g., different capitalization, shortened, extended, or `Dataset.Column`, such as `contract commitment period start` or `CostAndUsage.BilledCost`) count as entity references only when linked.
 
 * **Entity or Glossary Term:** When a Display Name and a glossary term have the same text, the form written with the capitalization of the Display Name refers to the FOCUS entity, and any other capitalization refers to the glossary term. Each form counts only as an occurrence of what it refers to.
 
-* **Same Entity:** An Entity ID and its Display Name refer to the same entity. The first occurrence of either form is the first occurrence of that entity.
+* **Same Entity:** An Entity ID and its Display Name refer to the same entity. The first occurrence of either form is the first occurrence of that entity. Columns with the same Column ID in different datasets are different entities.
 
-* **First Occurrence in Entity Definition Files:** In entity definition files, the first occurrence of each entity and glossary term in body content MUST be linked, and later occurrences MUST NOT be linked.
-
-* **First Occurrence in Other Files:** In all other files, the first occurrence of each entity and glossary term in body content SHOULD be linked, and later occurrences SHOULD NOT be linked.
+* **First Occurrence:** The first occurrence of each entity and glossary term in body content MUST be linked, and later occurrences MUST NOT be linked. In files under `specification/appendix/`, both are SHOULD.
 
 * **Titles and Headings:** Document titles and section headings do not count as body content and MUST NOT be linked solely to satisfy this rule.
 
 > **Note:** Ignore heading occurrences when determining the first occurrence. Link the first occurrence in body content instead. A term used only in headings does not require a link.
 
 * **Self-References:** References to the entity that the source Markdown file defines MUST NOT be linked.
-  * **Exception:** In a column definition file whose column has a Display Name with the same text as a glossary term, the first reference to that column MUST link to the glossary entry (e.g., `[*Billing Currency*](#glossary:billing-currency)` in the Billing Currency column definition). This exception overrides Entity or Glossary Term; the link counts as the first occurrence of the glossary term.
+  * **Exception:** In a column definition file whose column has a Display Name with the same text as a glossary term, the first occurrence of that text, in any capitalization, MUST link to the glossary entry (e.g., `[*Billing Currency*](#glossary:billing-currency)` in the Billing Currency column definition). This exception overrides Entity or Glossary Term; the link counts as the first occurrence of the glossary term.
 
 * **Functional Links:** A **functional link** is a link to an entity definition or glossary entry whose anchor text is not an entity reference (e.g., `[column requirements](#datamodel.costandusage.commitmentprogrameligibilitydetails)`, `[here](#datamodel.costandusage.contractapplied)`).
 
-* **Other Links:** Links to other targets (e.g., appendix entries, supported features, document sections, external resources, data files) are outside the scope of this section.
+* **Other Links:** Links to other targets (e.g., appendix entries, supported features, document sections, external resources, data files) are not subject to these linking rules.
 
 **Exceptions:**
 
@@ -206,6 +203,8 @@ Body content includes paragraphs, list items, table cells, and requirement bulle
 * In an **entity catalog table** (a table in which each data row represents one FOCUS entity and links to its definition, e.g., the Columns table in a dataset definition file), the link that identifies each row MAY appear regardless of prior occurrence and does not count as the first occurrence of that entity. Content Constraints and Allowed Values tables are not entity catalog tables.
 
 * A **functional link** MAY appear regardless of prior occurrence and does not count as the first occurrence of that entity.
+
+* Items in a **column list** need not be linked; they still count as an occurrence.
 
 ### Comparison Terminology
 
