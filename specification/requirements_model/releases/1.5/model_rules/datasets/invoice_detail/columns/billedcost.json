@@ -335,7 +335,7 @@
     "DatasetId": "InvoiceDetail",
     "DatasetName": "Invoice Detail",
     "ValidationCriteria": {
-      "MustSatisfy": "When ChargeCategory is not \"Tax\" and InvoiceIssueStatus is not \"Open\", the sum of BilledCost MUST NOT differ from the sum of CostAndUsage.BilledCost by more than `MAX(100 \u00d7 Subunit, (SQRT(Rows) \u00d7 0.5) \u00d7 Subunit)` as defined in Rounding Variance Tolerance.",
+      "MustSatisfy": "When ChargeCategory is not \"Tax\" and InvoiceIssueStatus is not \"Open\", the sum of BilledCost MUST NOT differ from the sum of CostAndUsage.BilledCost by more than MAX(100 × Subunit, (SQRT(Rows) × 0.5) × Subunit) as defined in Rounding Variance Tolerance.",
       "Keyword": "MUST NOT",
       "Requirement": {},
       "Condition": {
@@ -456,7 +456,7 @@
     "DatasetId": "InvoiceDetail",
     "DatasetName": "Invoice Detail",
     "ValidationCriteria": {
-      "MustSatisfy": "When InvoiceIssueStatus is not \"Open\", the sum of BilledCost MUST NOT differ from the sum of CostAndUsage.BilledCost by more than `MAX(100 \u00d7 Subunit, (SQRT(Rows) \u00d7 0.5) \u00d7 Subunit)` as defined in Rounding Variance Tolerance.",
+      "MustSatisfy": "When InvoiceIssueStatus is not \"Open\", the sum of BilledCost MUST NOT differ from the sum of CostAndUsage.BilledCost by more than MAX(100 × Subunit, (SQRT(Rows) × 0.5) × Subunit) as defined in Rounding Variance Tolerance.",
       "Keyword": "MUST NOT",
       "Requirement": {},
       "Condition": {
