@@ -159,7 +159,7 @@
         ]
       },
       "Condition": {
-        "CheckFunction": "CheckValue",
+        "CheckFunction": "CheckNotValue",
         "ColumnName": "ContractId",
         "Value": null
       },

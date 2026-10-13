@@ -219,7 +219,7 @@
         ]
       },
       "Condition": {
-        "CheckFunction": "CheckValue",
+        "CheckFunction": "CheckNotValue",
         "ColumnName": "PrincipalId",
         "Value": null
       },
