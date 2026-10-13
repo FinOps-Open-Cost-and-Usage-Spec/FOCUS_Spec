@@ -117,7 +117,7 @@ A FOCUS dataset preview MUST adhere to the following requirements:
 
 A preview tracking issue MUST adhere to the following requirements:
 
-* A preview tracking issue MUST list the open questions that can only be answered by building and using the dataset.
+* A preview tracking issue MUST list the open questions that can only be answered by building and using the dataset, and who raised each.
 * A preview tracking issue MUST include the scope list, naming each requirement excluded from conformance, including any in other datasets that exist only for the preview.
 * A preview tracking issue SHOULD list at least one early implementer who will generate or use the dataset to answer open questions.
 * A preview tracking issue MUST state the date of the next status decision.
@@ -135,7 +135,7 @@ A preview tracking issue MUST adhere to the following requirements:
 
 At each later version, FOCUS Members choose one outcome and record it with its evidence in the tracking issue:
 
-* **Promote:** Remove the preview designation once evidence answers the open questions. Evidence is a report in the tracking issue from an early implementer that built and used the dataset as described above. The dataset's requirements become Active in the requirements model, and the "(preview)" label and Preview notes are removed.
+* **Promote:** Remove the preview designation once the open questions are addressed. The dataset's requirements become Active in the requirements model, and the "(preview)" label and Preview notes are removed.
 * **Extend:** Keep the preview for one more version, with a plan for the next evidence.
 * **Remove:** Remove the dataset without a deprecation notice or retention period. This is the default when there is no new evidence since the last decision.
 
