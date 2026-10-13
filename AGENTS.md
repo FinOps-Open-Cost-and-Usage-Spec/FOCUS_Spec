@@ -172,7 +172,7 @@ These forms are not equivalent:
   * Entity IDs: exact schema name, PascalCase, no spaces (e.g., PricingQuantity). For references in normative text, see Terminology.
   * Display Names: normal text with spaces (e.g., Pricing Quantity).
   * Outside Requirements sections, Display Names SHOULD be used when available. Do not flag Entity IDs in field lists, code, JSON, SQL, table headers, or object property paths.
-  * When a Display Name and a glossary term have the same text, the Display Name capitalization refers to the entity and the lowercase form to the glossary term.
+  * When a Display Name and a glossary term have the same text, the Display Name capitalization refers to the entity and any other capitalization to the glossary term; each form counts only for what it refers to.
 * **No Mixing:** Do not mix Entity IDs and Display Names within the same normative requirement. An Operating Model Condition phrase does not count as a Display Name for this rule.
 * **Column values:** Apply the following rules:
   * When a column value appears in prose or normative text, enclose it in double quotation marks (e.g., `"Usage"`, `"Tax"`). 
@@ -181,13 +181,13 @@ These forms are not equivalent:
 * **Linking Rule:** Full rules: [Editorial Guidelines, Linking](guidelines/contributors/editorial-guidelines.md#linking).
   * Entity definition files are files with a `## Column ID`, `## Dataset ID`, `## Attribute ID`, or `## Operating Model Condition ID` heading (the heading may end with a comment such as `<!--SkipTOC-->`). In these files the rule below is MUST; in all other files it is SHOULD.
   * For each entity and glossary term in a source Markdown file: ignore titles and headings, do not link the entity the file defines, link the first remaining occurrence in reading order, and leave later occurrences unlinked.
-  * Entity references: an Entity ID, Display Name, glossary term, or Operating Model Condition phrase, including plural and possessive forms. Glossary terms and Operating Model Condition phrases count in any capitalization. Other forms (different capitalization, shortened, extended, `Dataset.Column`) count only when linked. An Entity ID and its Display Name are the same entity.
+  * Entity references: an Entity ID, Display Name, glossary term, or Operating Model Condition phrase, including plural and possessive forms. Glossary terms and Operating Model Condition phrases (Display Name in lowercase) count in any capitalization, except a glossary term with the same text as a Display Name (see Entity IDs and Display Names). Other forms (different capitalization, shortened, extended, `Dataset.Column`) count only when linked. An Entity ID and its Display Name are the same entity.
 * **Linking Rule Exceptions:**
   * Content Constraints sections: link every entity reference.
   * Glossary file: apply the rule within each glossary entry.
   * Entity catalog tables (each row represents one FOCUS entity and links to its definition, e.g., the Columns table in `dataset.md`): row links may appear regardless of prior occurrence and do not count toward first occurrence. Content Constraints and Allowed Values tables are not catalog tables.
   * Functional links (links to an entity definition or glossary entry whose anchor text is not an entity reference, e.g., `[here](...)`, `[column requirements](...)`): may appear regardless of prior occurrence and do not count toward first occurrence.
-  * In a column's own definition file, link its first reference to the glossary entry with the same text, if one exists (e.g., `[*Billing Currency*](#glossary:billing-currency)`); never link it to the column itself. This link counts as the first occurrence of the glossary term.
+  * In a column's own definition file, link its first reference to the glossary entry with the same text, if one exists (e.g., `[*Billing Currency*](#glossary:billing-currency)`); never link it to the column itself. This overrides the Display Name capitalization rule; the link counts as the first occurrence of the glossary term.
   * Links to other targets (appendix, supported features, sections, external URLs, data files) are not subject to the Linking Rule.
 * **Lists:** All unordered lists MUST use asterisks (`*`), never dashes (`-`) or plus signs (`+`). Nested bullet points MUST use exactly two spaces per level.
 * **Notes:** Important notes must use the blockquote format (`> **Note:**`).

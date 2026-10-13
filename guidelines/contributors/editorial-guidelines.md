@@ -176,9 +176,9 @@ These rules apply to all entities defined in the FOCUS specification (e.g., Colu
 
 Body content includes paragraphs, list items, table cells, and requirement bullets. An **entity definition file** is a source Markdown file that defines a FOCUS Column, Dataset, Attribute, or Operating Model Condition.
 
-* **Entity References:** An entity reference is a mention of a FOCUS entity or glossary term by its Entity ID, Display Name, glossary term, or Operating Model Condition phrase (see [General FOCUS Entity Reference Conventions](normative-requirements-guidelines.md#general-focus-entity-reference-conventions)), including its plural and possessive forms (e.g., `BilledCost`, `Billed Costs`). Glossary terms and Operating Model Condition phrases count in any capitalization. Other forms (e.g., different capitalization, shortened, extended, or `Dataset.Column`, such as `contract commitment period start` or `CostAndUsage.BilledCost`) count as entity references only when linked.
+* **Entity References:** An entity reference is a mention of a FOCUS entity or glossary term by its Entity ID, Display Name, glossary term, or Operating Model Condition phrase (see [General FOCUS Entity Reference Conventions](normative-requirements-guidelines.md#general-focus-entity-reference-conventions)), including its plural and possessive forms (e.g., `BilledCost`, `Billed Costs`). Glossary terms and Operating Model Condition phrases (an Operating Model Condition's Display Name in lowercase) count in any capitalization, except as stated in Entity or Glossary Term. Other forms (e.g., different capitalization, shortened, extended, or `Dataset.Column`, such as `contract commitment period start` or `CostAndUsage.BilledCost`) count as entity references only when linked.
 
-* **Entity or Glossary Term:** When a Display Name and a glossary term have the same text, the form written with the capitalization of the Display Name refers to the FOCUS entity, and the lowercase form refers to the glossary term.
+* **Entity or Glossary Term:** When a Display Name and a glossary term have the same text, the form written with the capitalization of the Display Name refers to the FOCUS entity, and any other capitalization refers to the glossary term. Each form counts only as an occurrence of what it refers to.
 
 * **Same Entity:** An Entity ID and its Display Name refer to the same entity. The first occurrence of either form is the first occurrence of that entity.
 
@@ -191,7 +191,7 @@ Body content includes paragraphs, list items, table cells, and requirement bulle
 > **Note:** Ignore heading occurrences when determining the first occurrence. Link the first occurrence in body content instead. A term used only in headings does not require a link.
 
 * **Self-References:** References to the entity that the source Markdown file defines MUST NOT be linked.
-  * **Exception:** In a column definition file whose column has a Display Name with the same text as a glossary term, the first reference to that column MUST link to the glossary entry (e.g., `[*Billing Currency*](#glossary:billing-currency)` in the Billing Currency column definition). This link counts as the first occurrence of the glossary term.
+  * **Exception:** In a column definition file whose column has a Display Name with the same text as a glossary term, the first reference to that column MUST link to the glossary entry (e.g., `[*Billing Currency*](#glossary:billing-currency)` in the Billing Currency column definition). This exception overrides Entity or Glossary Term; the link counts as the first occurrence of the glossary term.
 
 * **Functional Links:** A **functional link** is a link to an entity definition or glossary entry whose anchor text is not an entity reference (e.g., `[column requirements](#datamodel.costandusage.commitmentprogrameligibilitydetails)`, `[here](#datamodel.costandusage.contractapplied)`).
 
