@@ -1,5 +1,5 @@
 {
-  "CAU-PrincipalId-C-000-M": {
+  "CAU-PrincipalId-C-000-C": {
     "Function": "Composite",
     "Reference": "PrincipalId",
     "EntityType": "Column",
@@ -32,11 +32,11 @@
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-PrincipalId-C-003-M"
+            "ModelRuleId": "CAU-PrincipalId-C-003-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-PrincipalId-C-007-M"
+            "ModelRuleId": "CAU-PrincipalId-C-007-C"
           }
         ]
       },
@@ -44,8 +44,8 @@
       "Dependencies": [
         "CAU-PrincipalId-C-001-M",
         "CAU-PrincipalId-C-002-M",
-        "CAU-PrincipalId-C-003-M",
-        "CAU-PrincipalId-C-007-M",
+        "CAU-PrincipalId-C-003-C",
+        "CAU-PrincipalId-C-007-C",
         "CAU-CostAndUsage-D-099-C"
       ]
     }
@@ -102,7 +102,7 @@
       "Dependencies": []
     }
   },
-  "CAU-PrincipalId-C-003-M": {
+  "CAU-PrincipalId-C-003-C": {
     "Function": "Composite",
     "Reference": "PrincipalId",
     "EntityType": "Column",
@@ -214,7 +214,7 @@
       "Dependencies": []
     }
   },
-  "CAU-PrincipalId-C-007-M": {
+  "CAU-PrincipalId-C-007-C": {
     "Function": "Composite",
     "Reference": "PrincipalId",
     "EntityType": "Column",
