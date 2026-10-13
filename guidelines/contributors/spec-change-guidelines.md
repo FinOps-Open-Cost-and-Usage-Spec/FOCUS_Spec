@@ -112,6 +112,7 @@ A FOCUS dataset preview MUST adhere to the following requirements:
 * A preview MUST include normative requirements written the same way as any other requirements (e.g., a `MUST` is not relaxed to `SHOULD` because the dataset is a preview).
 * A preview MAY be omitted without affecting conformance to the FOCUS specification.
 * A preview MAY change in the next version without a deprecation notice.
+* The Specification MUST follow the normal change management process for all entities when not marked as preview.
 * Requirements that are not on a preview's scope list MUST keep their normal change rules when the preview changes (e.g., the SkuPriceId requirements in Cost and Usage).
 
 A preview tracking issue MUST adhere to the following requirements:
