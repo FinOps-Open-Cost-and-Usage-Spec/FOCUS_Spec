@@ -117,7 +117,7 @@ A FOCUS dataset preview MUST adhere to the following requirements:
 
 A preview tracking issue MUST adhere to the following requirements:
 
-* A preview tracking issue MUST list the open questions to learn from the preview.
+* A preview tracking issue MUST list any questions to learn from generating or using the dataset, and who raised each one.
 * A preview tracking issue MUST include the scope list, naming each requirement excluded from conformance, including any in other datasets that exist only for the preview.
 * A preview tracking issue SHOULD list at least one early implementer who will generate or use the dataset to answer open questions.
 * A preview tracking issue MUST state the date of the next status decision.
