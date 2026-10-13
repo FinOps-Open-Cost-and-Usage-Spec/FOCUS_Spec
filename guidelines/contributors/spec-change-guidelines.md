@@ -119,7 +119,7 @@ A preview tracking issue MUST adhere to the following requirements:
 
 * A preview tracking issue MUST list the open questions that can only be answered by building and using the dataset.
 * A preview tracking issue MUST include the scope list, naming each requirement excluded from conformance, including any in other datasets that exist only for the preview.
-* A preview tracking issue MUST name at least one early implementer: any person or organization, inside or outside the working group, that agrees to produce the dataset from real source data (not necessarily as a data generator), use it for its intended purpose (e.g., match SKU Price rows to Cost and Usage rows), and report back what worked and what did not.
+* A preview tracking issue SHOULD list at least one early implementer who will generate the dataset to facilitate answers to open questions.
 * A preview tracking issue MUST state the date of the next status decision.
 * A preview tracking issue MUST record that a request for comments went to existing data generators, and who responded.
 
@@ -135,7 +135,7 @@ A preview tracking issue MUST adhere to the following requirements:
 
 At each later version, FOCUS Members choose one outcome and record it with its evidence in the tracking issue:
 
-* **Promote:** Remove the preview designation once evidence answers the open questions. Evidence is a report in the tracking issue from an early implementer that built and used the dataset as described above. The dataset's requirements become Active in the requirements model, and the "(preview)" label and Preview notes are removed.
+* **Promote:** Remove the preview designation once evidence answers the open questions. Evidence is a report in the tracking issue from an early implementer that generated and used the dataset. The dataset's requirements become Active in the requirements model, and the "(preview)" label and Preview notes are removed.
 * **Extend:** Keep the preview for one more version, with a plan for the next evidence.
 * **Remove:** Remove the dataset without a deprecation notice or retention period. This is the default when there is no new evidence since the last decision.
 
