@@ -181,7 +181,7 @@ Body content includes paragraphs, list items, table cells, and requirement bulle
 
 * **Same Entity:** An Entity ID and its Display Name refer to the same entity. The first occurrence of either form is the first occurrence of that entity. Columns with the same Column ID in different datasets are different entities.
 
-* **First Occurrence:** The first occurrence of each entity and glossary term in body content MUST be linked, and later occurrences MUST NOT be linked. In files under `specification/appendix/`, both are SHOULD.
+* **First Occurrence:** Except as stated in Self-References, the first occurrence of each entity and glossary term in body content MUST be linked, and later occurrences MUST NOT be linked. In files under `specification/appendix/`, both are SHOULD.
 
 * **Titles and Headings:** Document titles and section headings do not count as body content and MUST NOT be linked solely to satisfy this rule.
 

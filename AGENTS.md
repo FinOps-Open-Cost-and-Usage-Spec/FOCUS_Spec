@@ -157,7 +157,7 @@ AI agents generating or reviewing content MUST act as strict technical editors e
 * **Terminology:** Apply the following rules:
   * Normative references to FOCUS entities MUST use a generic keyword, canonical Entity ID, or dot-notation reference path.
   * Normative references to FOCUS entities MUST NOT use Display Names.
-  * Exception: when a requirement uses an Operating Model Condition as an applicability condition, reference it by its Operating Model Condition phrase (Display Name in lowercase), not by its ID (e.g., `when the *operating model* [includes availability zones](#operatingmodelconditions.includesavailabilityzones)`). Do not flag this phrase as a Display Name. This exception does not apply to requirements that define the Operating Model Condition itself.
+  * Exception: when a requirement uses an Operating Model Condition as an applicability condition, reference it by its Operating Model Condition phrase (Display Name in lowercase), not by its ID (e.g., `when the *operating model* [includes availability zones](#operatingmodelconditions.includesavailabilityzones)`). Do not flag this phrase as a violation of the rule prohibiting Display Names in normative requirements. This exception does not apply to requirements that define the Operating Model Condition itself.
   * Requirements governing a specific dataset MUST use its `DatasetId` as the subject (e.g., `CostAndUsage`).
   * All other grammatical subjects referring to a FOCUS dataset concept MUST use `FOCUS dataset`, including when the constraint applies to a dataset specification, dataset instance, or dataset artifact.
   * In non-subject positions, references to dataset concepts MUST use `FOCUS dataset`, `dataset instance`, or `dataset artifact`, according to the precise abstraction intended.
@@ -167,18 +167,18 @@ AI agents generating or reviewing content MUST act as strict technical editors e
 
 ### Editorial Conventions
 
-* **Entity IDs and Display Names:** Full rules: [Editorial Guidelines, Entity References](guidelines/contributors/editorial-guidelines.md#entity-references) and [Normative Requirements Guidelines, FOCUS Entity Reference Conventions](guidelines/contributors/normative-requirements-guidelines.md#focus-entity-reference-conventions). When this file and the guidelines differ, the guidelines prevail.
+* **Entity IDs and Display Names:** Full rules: [Editorial Guidelines, Entity References](guidelines/contributors/editorial-guidelines.md#entity-references) and [Normative Requirements Guidelines, FOCUS Entity Reference Conventions](guidelines/contributors/normative-requirements-guidelines.md#focus-entity-reference-conventions). Apply the rules defined there, including their exceptions; where this summary of Entity IDs and Display Names contradicts them, they prevail.
   * Entity IDs: exact schema name, PascalCase, no spaces (e.g., PricingQuantity). For references in normative text, see Terminology.
   * Display Names: normal text with spaces (e.g., Pricing Quantity).
   * Outside Requirements sections, conceptual references MUST use Display Names when available (SHOULD in `specification/appendix/`); schema-facing references MAY use Entity IDs.
     * A reference is schema-facing when it refers to the entity as it appears in data, code, or a schema (e.g., its values, a table header or row label, a column list, a query, or an object or `Dataset.Column` path); otherwise it is conceptual.
   * When a Display Name and a glossary term have the same text, text in the Display Name's capitalization refers to the entity, and text in any other capitalization refers to the glossary term. Each counts as an occurrence only of what it refers to.
-* **No Mixing:** Do not mix Entity IDs and Display Names within the same normative requirement. An Operating Model Condition phrase does not count as a Display Name for this rule.
+* **No Mixing:** Do not mix Entity IDs and Display Names within the same normative requirement. An Operating Model Condition phrase is exempt from this rule.
 * **Column values:** Apply the following rules:
   * When a column value appears in prose or normative text, enclose it in double quotation marks (e.g., `"Usage"`, `"Tax"`).
   * In an Allowed Values table, list values without quotation marks because the `Value` column identifies them as literals, unless quotation marks are part of the value itself.
 * **Glossary terms:** Link with `[*term*](#glossary:term)` format.
-* **Linking Rule:** Full rules: [Editorial Guidelines, Linking](guidelines/contributors/editorial-guidelines.md#linking).
+* **Linking Rule:** Full rules: [Editorial Guidelines, Linking](guidelines/contributors/editorial-guidelines.md#linking). Apply the rules defined there, including their exceptions; where this summary of linking rules contradicts them, they prevail.
   * For each entity and glossary term in a source Markdown file, ignore titles and headings, and do not link the entity the file defines. The first remaining occurrence in reading order MUST be linked, and later occurrences MUST NOT be linked (both SHOULD in `specification/appendix/`).
   * Entity references: an Entity ID, Display Name, glossary term, or Operating Model Condition phrase, including plural and possessive forms. Glossary terms and Operating Model Condition phrases (Display Name in lowercase) count in any capitalization; for text that is also a Display Name, see Entity IDs and Display Names and the column definition exception below. Other forms of the name (different capitalization, shortened, extended, `Dataset.Column`) count only when linked. An Entity ID and its Display Name refer to the same entity; columns with the same ID in different datasets are different entities.
 * **Linking Rule Exceptions:**
