@@ -1,5 +1,5 @@
 {
-  "CAU-PrincipalId-C-000-C": {
+  "CAU-PrincipalId-C-000-M": {
     "Function": "Composite",
     "Reference": "PrincipalId",
     "EntityType": "Column",
@@ -32,15 +32,11 @@
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-PrincipalId-C-003-C"
+            "ModelRuleId": "CAU-PrincipalId-C-003-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-PrincipalId-C-006-C"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-PrincipalId-C-008-M"
+            "ModelRuleId": "CAU-PrincipalId-C-007-M"
           }
         ]
       },
@@ -48,9 +44,8 @@
       "Dependencies": [
         "CAU-PrincipalId-C-001-M",
         "CAU-PrincipalId-C-002-M",
-        "CAU-PrincipalId-C-003-C",
-        "CAU-PrincipalId-C-006-C",
-        "CAU-PrincipalId-C-008-M",
+        "CAU-PrincipalId-C-003-M",
+        "CAU-PrincipalId-C-007-M",
         "CAU-CostAndUsage-D-099-C"
       ]
     }
@@ -107,7 +102,7 @@
       "Dependencies": []
     }
   },
-  "CAU-PrincipalId-C-003-C": {
+  "CAU-PrincipalId-C-003-M": {
     "Function": "Composite",
     "Reference": "PrincipalId",
     "EntityType": "Column",
@@ -135,13 +130,18 @@
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-PrincipalId-C-005-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-PrincipalId-C-006-C"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
         "CAU-PrincipalId-C-004-C",
-        "CAU-PrincipalId-C-005-C"
+        "CAU-PrincipalId-C-005-C",
+        "CAU-PrincipalId-C-006-C"
       ]
     }
   },
@@ -184,14 +184,37 @@
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "PrincipalId MUST NOT be null when a charge is associated with a principal.",
-      "Keyword": "MUST NOT",
+      "MustSatisfy": "PrincipalId MUST be null when the principal associated with a charge has no published identifier.",
+      "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []
     }
   },
   "CAU-PrincipalId-C-006-C": {
+    "Function": "Nullability",
+    "Reference": "PrincipalId",
+    "EntityType": "Column",
+    "EntityName": "Principal ID",
+    "EntityId": "PrincipalId",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Dynamic",
+    "Order": 60,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "PrincipalId MUST NOT be null when the principal associated with a charge has a published identifier.",
+      "Keyword": "MUST NOT",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-PrincipalId-C-007-M": {
     "Function": "Composite",
     "Reference": "PrincipalId",
     "EntityType": "Column",
@@ -202,7 +225,7 @@
     "Status": "Active",
     "Conditions": [],
     "Type": "Static",
-    "Order": 60,
+    "Order": 70,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
@@ -214,41 +237,24 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-PrincipalId-C-007-M"
+            "ModelRuleId": "CAU-PrincipalId-C-008-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-PrincipalId-C-009-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-PrincipalId-C-010-M"
           }
         ]
       },
-      "Condition": {
-        "CheckFunction": "CheckNotValue",
-        "ColumnName": "PrincipalId",
-        "Value": null
-      },
-      "Dependencies": [
-        "CAU-PrincipalId-C-007-M"
-      ]
-    }
-  },
-  "CAU-PrincipalId-C-007-M": {
-    "Function": "Nullability",
-    "Reference": "PrincipalId",
-    "EntityType": "Column",
-    "EntityName": "Principal ID",
-    "EntityId": "PrincipalId",
-    "Notes": "",
-    "ModelVersionIntroduced": "1.5",
-    "Status": "Active",
-    "Conditions": [],
-    "Type": "Dynamic",
-    "Order": 70,
-    "DatasetType": "CAU",
-    "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost and Usage",
-    "ValidationCriteria": {
-      "MustSatisfy": "PrincipalId MUST be a unique identifier within the service provider.",
-      "Keyword": "MUST",
-      "Requirement": {},
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-PrincipalId-C-008-M",
+        "CAU-PrincipalId-C-009-M",
+        "CAU-PrincipalId-C-010-M"
+      ]
     }
   },
   "CAU-PrincipalId-C-008-M": {
@@ -267,8 +273,54 @@
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "PrincipalId documentation MUST include the use cases in which PrincipalId is not null.",
+      "MustSatisfy": "PrincipalId MUST be an identifier that references a principal.",
       "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-PrincipalId-C-009-M": {
+    "Function": "Validation",
+    "Reference": "PrincipalId",
+    "EntityType": "Column",
+    "EntityName": "Principal ID",
+    "EntityId": "PrincipalId",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Dynamic",
+    "Order": 90,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "PrincipalId MUST be a unique identifier within the service provider.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-PrincipalId-C-010-M": {
+    "Function": "Validation",
+    "Reference": "PrincipalId",
+    "EntityType": "Column",
+    "EntityName": "Principal ID",
+    "EntityId": "PrincipalId",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Dynamic",
+    "Order": 100,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "PrincipalId MUST NOT contain a value that authenticates a request (e.g., an API key string, an access token, a password).",
+      "Keyword": "MUST NOT",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []
