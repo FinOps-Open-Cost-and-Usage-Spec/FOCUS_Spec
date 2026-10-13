@@ -21,10 +21,11 @@ Column conforming to UnitFormat attribute MUST adhere to the following requireme
 * *FOCUS dataset column* expressing a compound unit SHOULD use the `<singular-base-unit>-<plural-base-unit>` format (e.g., `GB-Hours`, `MB-Days`, `Request-Tokens`).
 * *FOCUS dataset column* expressing a [ratio unit](#attributes.unitformat.definitions.ratiounit) MUST use a slash (`/`) to separate the numerator and denominator (e.g., `GB/Hour` to signify gigabytes per hour).
 * *FOCUS dataset column* expressing a ratio unit MAY include a [denominator quantity](#attributes.unitformat.definitions.denominatorquantity) expressed as a positive integer.
-* *FOCUS dataset column* expressing a ratio unit and including a denominator quantity SHOULD use the `<plural-units>/<denominator-quantity> <plural-time-units>` format (e.g., `Units/3 Months`).
+* *FOCUS dataset column* expressing a ratio unit and including a denominator quantity SHOULD use the `<plural-units>/<denominator-quantity> <plural-time-units>` format (e.g., `Units/2 Weeks`).
 * *FOCUS dataset column* expressing a ratio unit with a compound unit numerator SHOULD use the `<compound-unit>/<singular-time-unit>` format (e.g., `Core-Hours/Day`).
 * *FOCUS dataset column* expressing a ratio unit with a time denominator SHOULD use the `<plural-units>/<singular-time-unit>` format (e.g., `GB/Hour`, `PB/Day`).
 * *FOCUS dataset column* expressing a [simple unit](#attributes.unitformat.definitions.simpleunit) SHOULD use the `<plural-units>` format (e.g., `GB`, `Seconds`).
+* *FOCUS dataset column* expressing a time-based unit SHOULD use the largest unit of time that expresses the duration as a whole number (e.g., `1 Year` rather than `12 Months`).
 * *FOCUS dataset column* including a unit quantity SHOULD use the `<unit-quantity> <plural-units>` format (e.g., `1000 Tokens`, `1000 Characters`).
 
 ## Definitions
@@ -33,7 +34,7 @@ The normative requirements above refer to the following definitions.
 
 ### Measurement Unit
 
-A standardized expression that describes how quantities in a *FOCUS dataset* are denominated (e.g., `GB`, `Seconds`, `GB-Hours`, `10 GB/Hour`, `Units/3 Months`).
+A standardized expression that describes how quantities in a *FOCUS dataset* are denominated (e.g., `GB`, `Seconds`, `GB-Hours`, `10 GB/Hour`, `Units/2 Weeks`).
 
 ### Base Unit
 
@@ -49,7 +50,7 @@ A [measurement unit](#attributes.unitformat.definitions.measurementunit) that co
 
 ### Ratio Unit
 
-A [measurement unit](#attributes.unitformat.definitions.measurementunit) that expresses one [base unit](#attributes.unitformat.definitions.baseunit) or [compound unit](#attributes.unitformat.definitions.compoundunit) per another using a slash (`/`), optionally including a [denominator quantity](#attributes.unitformat.definitions.denominatorquantity) (e.g., `GB/Hour`, `Units/3 Months`, `Core-Hours/Day`).
+A [measurement unit](#attributes.unitformat.definitions.measurementunit) that expresses one [base unit](#attributes.unitformat.definitions.baseunit) or [compound unit](#attributes.unitformat.definitions.compoundunit) per another using a slash (`/`), optionally including a [denominator quantity](#attributes.unitformat.definitions.denominatorquantity) (e.g., `GB/Hour`, `Units/2 Weeks`, `Core-Hours/Day`).
 
 ### Unit Quantity
 
@@ -57,7 +58,7 @@ A positive integer included in a [measurement unit](#attributes.unitformat.defin
 
 ### Denominator Quantity
 
-A positive integer included in the denominator of a [ratio unit](#attributes.unitformat.definitions.ratiounit), indicating the granularity of the denominator (e.g., `3` in `Units/3 Months`).
+A positive integer included in the denominator of a [ratio unit](#attributes.unitformat.definitions.ratiounit), indicating the granularity of the denominator (e.g., `2` in `Units/2 Weeks`).
 
 ## Base Unit Names
 
@@ -100,6 +101,7 @@ The table below lists allowed time-based base units.
 |:---------------------------|:-------------------------|
 | Year                       | Years                    |
 | Month                      | Months                   |
+| Week                       | Weeks                    |
 | Day                        | Days                     |
 | Hour                       | Hours                    |
 | Minute                     | Minutes                  |
