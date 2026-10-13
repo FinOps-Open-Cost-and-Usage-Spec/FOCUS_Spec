@@ -9,8 +9,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [
-      "IncludesVirtualCurrency",
-      "IncludesListUnitPrices"
+      "IncludesConsumptionCurrency",
+      "IncludesUnitPricing",
+      "IncludesPricingBillingCurrencyDifferences"
     ],
     "Order": 0,
     "DatasetType": "CAU",

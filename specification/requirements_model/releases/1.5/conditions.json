@@ -24,13 +24,13 @@
       "Description": "A verifiable state indicating whether the operating model includes commitment programs.",
       "ModelRuleId": "CON-IncludesCommitmentPrograms-N-000-C"
     },
+    "IncludesConsumptionCurrency": {
+      "Description": "A verifiable state indicating whether the operating model includes prices in consumption currency.",
+      "ModelRuleId": "CON-IncludesConsumptionCurrency-N-000-C"
+    },
     "IncludesContractCommitments": {
       "Description": "A verifiable state indicating whether the operating model includes contract commitments.",
       "ModelRuleId": "CON-IncludesContractCommitments-N-000-C"
-    },
-    "IncludesListUnitPrices": {
-      "Description": "A verifiable state indicating whether the operating model includes standard, non-discounted unit prices.",
-      "ModelRuleId": "CON-IncludesListUnitPrices-N-000-C"
     },
     "IncludesMultipleBillingAccountTypes": {
       "Description": "A verifiable state indicating whether the operating model includes multiple Billing Account Types.",
@@ -43,10 +43,6 @@
     "IncludesMultipleSubAccountTypes": {
       "Description": "A verifiable state indicating whether the operating model includes multiple Sub Account Types.",
       "ModelRuleId": "CON-IncludesMultipleSubAccountTypes-N-000-C"
-    },
-    "IncludesNegotiatedPricing": {
-      "Description": "A verifiable state indicating whether the operating model includes negotiated pricing concepts.",
-      "ModelRuleId": "CON-IncludesNegotiatedPricing-N-000-C"
     },
     "IncludesPartialUpfrontPayments": {
       "Description": "A verifiable state indicating whether the operating model includes a partial upfront payment model for contract commitments.",
@@ -95,10 +91,6 @@
     "IncludesUsageMeasurement": {
       "Description": "A verifiable state indicating whether the operating model includes the measurement of usage.",
       "ModelRuleId": "CON-IncludesUsageMeasurement-N-000-C"
-    },
-    "IncludesVirtualCurrency": {
-      "Description": "A verifiable state indicating whether the operating model includes prices in virtual currency.",
-      "ModelRuleId": "CON-IncludesVirtualCurrency-N-000-C"
     },
     "IncludesRequesterAttribution": {
       "Description": "A verifiable state indicating whether the operating model includes requester attribution.",

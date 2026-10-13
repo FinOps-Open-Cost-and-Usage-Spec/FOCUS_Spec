@@ -46,6 +46,10 @@
           },
           {
             "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitmentDurationType-C-009-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CCT-ContractCommitmentDurationType-C-007-O"
           }
         ]
@@ -58,6 +62,7 @@
         "CCT-ContractCommitmentDurationType-C-008-O",
         "CCT-ContractCommitmentDurationType-C-005-O",
         "CCT-ContractCommitmentDurationType-C-006-O",
+        "CCT-ContractCommitmentDurationType-C-009-C",
         "CCT-ContractCommitmentDurationType-C-007-O",
         "CCT-ContractCommitment-D-021-M"
       ]
@@ -324,6 +329,29 @@
     "ValidationCriteria": {
       "MustSatisfy": "ContractCommitmentDurationType SHOULD use the \"[Numeric Value] [Unit]\" format (e.g., \"1 Day\", \"1 Year\", \"3 Months\", \"3 Years\").",
       "Keyword": "SHOULD",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CCT-ContractCommitmentDurationType-C-009-C": {
+    "Function": "Validation",
+    "Reference": "ContractCommitmentDurationType",
+    "EntityType": "Column",
+    "EntityName": "Contract Commitment Duration Type",
+    "EntityId": "ContractCommitmentDurationType",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Dynamic",
+    "Order": 65,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "When ContractCommitmentDurationType expresses a time-based unit, ContractCommitmentDurationType MUST use the largest time-based unit defined by UnitFormat that expresses the duration as a whole number (e.g., \"1 Year\" rather than \"12 Months\", \"1 Week\" rather than \"7 Days\").",
+      "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []

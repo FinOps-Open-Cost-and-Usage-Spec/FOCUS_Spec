@@ -54,11 +54,15 @@
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ATT-CustomColumnHandling-A-018-O"
+            "ModelRuleId": "ATT-CustomColumnHandling-A-021-O"
           },
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "ATT-CustomColumnHandling-A-019-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-CustomColumnHandling-A-022-C"
           }
         ]
       },
@@ -72,8 +76,9 @@
         "ATT-CustomColumnHandling-A-015-M",
         "ATT-CustomColumnHandling-A-016-O",
         "ATT-CustomColumnHandling-A-017-O",
-        "ATT-CustomColumnHandling-A-018-O",
-        "ATT-CustomColumnHandling-A-019-O"
+        "ATT-CustomColumnHandling-A-021-O",
+        "ATT-CustomColumnHandling-A-019-O",
+        "ATT-CustomColumnHandling-A-022-C"
       ]
     }
   },
@@ -529,10 +534,10 @@
     "EntityId": "CustomColumnHandling",
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
-    "Status": "Active",
+    "Status": "Removed",
     "Conditions": [],
     "Type": "Dynamic",
-    "Order": 180,
+    "Order": -1,
     "DatasetType": "ATT",
     "DatasetId": null,
     "DatasetName": null,
@@ -542,7 +547,8 @@
       "Requirement": {},
       "Condition": {},
       "Dependencies": []
-    }
+    },
+    "ModelVersionRemoved": "1.5"
   },
   "ATT-CustomColumnHandling-A-019-O": {
     "Function": "Format",
@@ -584,6 +590,52 @@
     "DatasetName": null,
     "ValidationCriteria": {
       "MustSatisfy": "Custom column SHOULD use Pascal case in the portion of the Column ID following the required x_ prefix.",
+      "Keyword": "SHOULD",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-CustomColumnHandling-A-021-O": {
+    "Function": "Validation",
+    "Reference": "CustomColumnHandling",
+    "EntityType": "Attribute",
+    "EntityName": "Custom Column Handling",
+    "EntityId": "CustomColumnHandling",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Dynamic",
+    "Order": 180,
+    "DatasetType": "ATT",
+    "DatasetId": null,
+    "DatasetName": null,
+    "ValidationCriteria": {
+      "MustSatisfy": "Custom column representing a currency SHOULD conform to CurrencyFormat requirements.",
+      "Keyword": "SHOULD",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-CustomColumnHandling-A-022-C": {
+    "Function": "Validation",
+    "Reference": "CustomColumnHandling",
+    "EntityType": "Attribute",
+    "EntityName": "Custom Column Handling",
+    "EntityId": "CustomColumnHandling",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Dynamic",
+    "Order": 200,
+    "DatasetType": "ATT",
+    "DatasetId": null,
+    "DatasetName": null,
+    "ValidationCriteria": {
+      "MustSatisfy": "Custom column documentation SHOULD specify how to determine whether a value represents a national currency when the custom column represents a currency.",
       "Keyword": "SHOULD",
       "Requirement": {},
       "Condition": {},

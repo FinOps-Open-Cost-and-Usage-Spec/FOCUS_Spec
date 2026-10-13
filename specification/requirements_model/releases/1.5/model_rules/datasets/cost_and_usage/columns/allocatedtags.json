@@ -59,9 +59,9 @@
         "CAU-AllocatedTags-C-001-M",
         "CAU-AllocatedTags-C-002-M",
         "CAU-AllocatedTags-C-005-C",
-        "CAU-CostAndUsage-D-073-C",
         "CAU-AllocatedTags-C-010-M",
-        "CAU-AllocatedTags-C-018-C"
+        "CAU-AllocatedTags-C-018-C",
+        "CAU-CostAndUsage-D-073-C"
       ]
     }
   },

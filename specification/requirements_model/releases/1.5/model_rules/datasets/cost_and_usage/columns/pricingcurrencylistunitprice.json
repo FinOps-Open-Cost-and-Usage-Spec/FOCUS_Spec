@@ -9,8 +9,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [
-      "IncludesVirtualCurrency",
-      "IncludesListUnitPrices"
+      "IncludesConsumptionCurrency",
+      "IncludesUnitPricing",
+      "IncludesPricingBillingCurrencyDifferences"
     ],
     "Type": "Static",
     "Order": 0,

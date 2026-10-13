@@ -9,11 +9,11 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [],
+    "Type": "Static",
     "Order": 0,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "BillingAccountId MUST adhere to the following requirements:",
       "Keyword": "MUST",
@@ -22,15 +22,15 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-BillingAccountId-C-001-M"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-BillingAccountId-C-002-M"
           },
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-BillingAccountId-C-003-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-BillingAccountId-C-001-M"
           },
           {
             "CheckFunction": "CheckModelRule",
@@ -63,11 +63,11 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [],
+    "Type": "Static",
     "Order": 40,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "BillingAccountId MUST NOT be null.",
       "Keyword": "MUST NOT",
@@ -82,19 +82,19 @@
   },
   "CAU-BillingAccountId-C-002-M": {
     "Function": "Type",
+    "Reference": "BillingAccountId",
     "EntityType": "Column",
     "EntityName": "Billing Account ID",
     "EntityId": "BillingAccountId",
-    "Reference": "BillingAccountId",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [],
+    "Type": "Static",
     "Order": 20,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "BillingAccountId MUST be of type String.",
       "Keyword": "MUST",
@@ -108,19 +108,19 @@
   },
   "CAU-BillingAccountId-C-003-M": {
     "Function": "Format",
+    "Reference": "BillingAccountId",
     "EntityType": "Column",
     "EntityName": "Billing Account ID",
     "EntityId": "BillingAccountId",
-    "Reference": "BillingAccountId",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [],
+    "Type": "Static",
     "Order": 30,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "BillingAccountId MUST conform to StringHandling requirements.",
       "Keyword": "MUST",
@@ -142,11 +142,11 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [],
+    "Type": "Dynamic",
     "Order": 50,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "BillingAccountId MUST be a unique identifier within an invoice issuer.",
       "Keyword": "MUST",
@@ -165,11 +165,11 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [],
+    "Type": "Dynamic",
     "Order": 60,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "BillingAccountId SHOULD be a fully-qualified identifier.",
       "Keyword": "SHOULD",

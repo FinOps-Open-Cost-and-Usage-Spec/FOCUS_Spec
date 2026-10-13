@@ -48,10 +48,10 @@
       "Dependencies": [
         "CAU-AllocatedMethodDetails-C-001-M",
         "CAU-AllocatedMethodDetails-C-002-M",
-        "CAU-CostAndUsage-D-069-C",
         "CAU-AllocatedMethodDetails-C-003-M",
         "CAU-AllocatedMethodDetails-C-004-C",
-        "CAU-AllocatedMethodDetails-C-008-C"
+        "CAU-AllocatedMethodDetails-C-008-C",
+        "CAU-CostAndUsage-D-069-C"
       ]
     }
   },

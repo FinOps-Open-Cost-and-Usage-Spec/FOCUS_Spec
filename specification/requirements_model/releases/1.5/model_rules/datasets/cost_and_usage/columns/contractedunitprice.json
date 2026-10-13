@@ -9,7 +9,7 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [
-      "IncludesNegotiatedPricing"
+      "IncludesUnitPricing"
     ],
     "Order": 0,
     "DatasetType": "CAU",
