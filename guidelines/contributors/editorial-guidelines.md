@@ -39,7 +39,7 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
         </td>
         <td>
             * Use the display name in the non-normative section.<br>
-            * Linked on first occurrence (see [Linking](#linking)).
+            * Linked on first occurrence (see <a href="#linking">Linking</a>).
         </td>
     </tr>
     <tr>
@@ -65,7 +65,7 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
         <td>
            * Use PascalCamel case (the first letter of every word, is capitalized)<br>
            * Normal text without bold or italics.<br>
-           * Linked on first occurrence (see [Linking](#linking)).
+           * Linked on first occurrence (see <a href="#linking">Linking</a>).
         </td>
     </tr>
     <tr>
@@ -112,7 +112,7 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
         </td>
         <td>
             * Blue font + italic<br>
-            * Linked on first occurrence (see [Linking](#linking)).
+            * Linked on first occurrence (see <a href="#linking">Linking</a>).
         </td>
     </tr>
     <tr>
@@ -310,7 +310,7 @@ To ensure consistent language when describing relationships and evaluations betw
   ## Requirements
   ...
   * PricingQuantity MUST be greater than 0.
-  
+
  Incorrect:
   ## Description
   ...

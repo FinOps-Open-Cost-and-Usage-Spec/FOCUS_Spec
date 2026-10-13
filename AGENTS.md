@@ -94,13 +94,12 @@ The `specification/requirements_model/` directory contains a machine-readable re
 
 ## Writing Specification Content & Review Guidelines
 
-AI agents generating or reviewing content MUST act as strict technical editors enforcing the FOCUS standards. Focus entirely on specification documents, schema definitions, and markdown formatting. 
+AI agents generating or reviewing content MUST act as strict technical editors enforcing the FOCUS standards. Focus entirely on specification documents, schema definitions, and markdown formatting.
 
 ### Normative Language & Requirements
 
 * **BCP-14 Keywords:** Use MUST, MUST NOT, SHOULD, SHOULD NOT, MAY (uppercase). NEVER use: "REQUIRED", "SHALL", "SHALL NOT", "RECOMMENDED", "NOT RECOMMENDED", "OPTIONAL".
 * **Location:** Capitalized BCP-14 keywords MUST NOT appear outside "Requirements" sections in files under `specification/attributes/`, `specification/operating_model_conditions/`, and `specification/datasets/` unless quoted.
-
 * **Structure:** Apply the following rules:
   * Normative requirements MUST use bulleted lists.
   * A normative bullet containing more than one constraint MUST be split.
@@ -111,7 +110,7 @@ AI agents generating or reviewing content MUST act as strict technical editors e
   * Preserve the established indentation hierarchy.
   * Never skip nesting levels.
 * **Requirement Ownership (DRY):** Apply the following rules:
-  * Each normative requirement MUST be defined exactly once. 
+  * Each normative requirement MUST be defined exactly once.
   * When the same normative behavior applies in multiple locations, authors MUST reference the existing requirement or reusable Attribute rather than duplicating the requirement text.
 * **Structural Grouping Bullets:** Apply the following rules:
   * A structural grouping bullet is a parent normative bullet within a composite requirement.
@@ -131,14 +130,14 @@ AI agents generating or reviewing content MUST act as strict technical editors e
   * Before reporting a conditional-phrasing violation, identify the BCP-14 obligation and demonstrate that the disputed phrase changes when that obligation applies.
   * A suggested correction MUST preserve the logical scope of the original requirement. It MUST NOT convert a descriptive modifier into a condition on the entire obligation.
   * `if` MUST NOT introduce a requirement applicability condition.
-Examples:
-* Applicability condition: `ListUnitPrice MUST be null when SkuPriceId is null.`
-  The `when` clause determines when the obligation applies.
-* Descriptive modifier: `ListUnitPrice MUST NOT reflect any unit price impact dependent on a discount-bearing commitment program being applied to the charge.`
-  `dependent on ...` identifies the prohibited kind of impact. The `MUST NOT` obligation applies unconditionally.
-These forms are not equivalent:
-* `MUST NOT reflect any impact dependent on X` prohibits impacts whose provenance depends on X.
-* `MUST NOT reflect any impact when X` conditions the entire prohibition on X and may prohibit unrelated impacts while X is true.
+  * Examples:
+    * Applicability condition: `ListUnitPrice MUST be null when SkuPriceId is null.`
+      The `when` clause determines when the obligation applies.
+    * Descriptive modifier: `ListUnitPrice MUST NOT reflect any unit price impact dependent on a discount-bearing commitment program being applied to the charge.`
+      `dependent on ...` identifies the prohibited kind of impact. The `MUST NOT` obligation applies unconditionally.
+  * These forms are not equivalent:
+    * `MUST NOT reflect any impact dependent on X` prohibits impacts whose provenance depends on X.
+    * `MUST NOT reflect any impact when X` conditions the entire prohibition on X and may prohibit unrelated impacts while X is true.
 * **Mathematical Accuracy:** `and/or` is permitted ONLY in mathematical validations or conditional clauses.
 * **Comparison Terminology:** Select comparison terminology according to the semantics of the comparison:
   * use `equal` for numeric comparisons;
@@ -158,7 +157,7 @@ These forms are not equivalent:
 * **Terminology:** Apply the following rules:
   * Normative references to FOCUS entities MUST use a generic keyword, canonical Entity ID, or dot-notation reference path.
   * Normative references to FOCUS entities MUST NOT use Display Names.
-  * Exception: when a requirement uses an Operating Model Condition as an applicability condition, reference it by its Operating Model Condition phrase (Display Name in lowercase) after the words `the *operating model*` (e.g., `when the *operating model* [includes availability zones](#operatingmodelconditions.includesavailabilityzones)`), never by its ID. Do not flag this phrase as a Display Name. In an Operating Model Condition's own requirements, its ID is the subject.
+  * Exception: when a requirement uses an Operating Model Condition as an applicability condition, reference it by its Operating Model Condition phrase (Display Name in lowercase), not by its ID (e.g., `when the *operating model* [includes availability zones](#operatingmodelconditions.includesavailabilityzones)`). Do not flag this phrase as a Display Name. This exception does not apply to requirements that define the Operating Model Condition itself.
   * Requirements governing a specific dataset MUST use its `DatasetId` as the subject (e.g., `CostAndUsage`).
   * All other grammatical subjects referring to a FOCUS dataset concept MUST use `FOCUS dataset`, including when the constraint applies to a dataset specification, dataset instance, or dataset artifact.
   * In non-subject positions, references to dataset concepts MUST use `FOCUS dataset`, `dataset instance`, or `dataset artifact`, according to the precise abstraction intended.
@@ -176,7 +175,7 @@ These forms are not equivalent:
   * When a Display Name and a glossary term have the same text, text in the Display Name's capitalization refers to the entity, and text in any other capitalization refers to the glossary term. Each counts as an occurrence only of what it refers to.
 * **No Mixing:** Do not mix Entity IDs and Display Names within the same normative requirement. An Operating Model Condition phrase does not count as a Display Name for this rule.
 * **Column values:** Apply the following rules:
-  * When a column value appears in prose or normative text, enclose it in double quotation marks (e.g., `"Usage"`, `"Tax"`). 
+  * When a column value appears in prose or normative text, enclose it in double quotation marks (e.g., `"Usage"`, `"Tax"`).
   * In an Allowed Values table, list values without quotation marks because the `Value` column identifies them as literals, unless quotation marks are part of the value itself.
 * **Glossary terms:** Link with `[*term*](#glossary:term)` format.
 * **Linking Rule:** Full rules: [Editorial Guidelines, Linking](guidelines/contributors/editorial-guidelines.md#linking).
@@ -193,7 +192,7 @@ These forms are not equivalent:
 * **Lists:** All unordered lists MUST use asterisks (`*`), never dashes (`-`) or plus signs (`+`). Nested bullet points MUST use exactly two spaces per level.
 * **Notes:** Important notes must use the blockquote format (`> **Note:**`).
 * **Notes versus Exceptions:** Apply the following rules:
-  * Notes MUST contain only informative or explanatory material. 
+  * Notes MUST contain only informative or explanatory material.
   * Normative conditions and exceptions MUST be expressed as requirements.
 * **Anchors:** Pandoc auto-generates custom heading anchors. DO NOT flag missing HTML `<a name="">` tags.
 * **Markdown Tables:** Select spacing based on the table's natural, unpadded content and source readability:
@@ -204,7 +203,7 @@ These forms are not equivalent:
   * Mixed trailing-pipe positions resulting from the long-row exception are compliant and MUST NOT be flagged solely as a table-alignment issue.
 * **Numbers in Prose:** Apply the following rules:
   * In explanatory prose, spell out numbers zero through nine.
-  * In explanatory prose, use numerals beginning at 10. 
+  * In explanatory prose, use numerals beginning at 10.
   * Preserve numeric notation in JSON, mathematics, schema constraints, identifiers, and technical examples.
 * **Dash Usage:** Apply dash formatting by purpose:
   * Use an unspaced hyphen (`-`) for compound words and ranges.
@@ -216,8 +215,8 @@ These forms are not equivalent:
 * **Mathematical & Schema Accuracy:** AI reviewers MUST rigorously calculate, parse, and verify all data within examples (especially JSON snippets and tables). Flag any mathematical inconsistencies or hallucinated data.
 * **JSON Formatting:** JSON blocks MUST use double quotation marks for keys. Verify that the JSON is structurally valid.
 * **JSON Object Requirements:** Apply the following rules:
-  * Requirements governing a JSON object MUST be authored with the object definition. 
-  * Column-level requirements MUST remain with the column definition. 
+  * Requirements governing a JSON object MUST be authored with the object definition.
+  * Column-level requirements MUST remain with the column definition.
   * Requirements for object properties SHOULD reference properties using dot notation where appropriate to distinguish object-level constraints from property-level constraints.
 * **Example Disclaimer:** Top-level sections with examples and no normative requirements MUST begin with: `> Note: The following section is informative and non-normative. It does not define requirements.` Enforce ONLY on Level-2 headings in `spec.md` or major section overview files (e.g., `appendix_overview.md`). Ignore nested .md files.
 
