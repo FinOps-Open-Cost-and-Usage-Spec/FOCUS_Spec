@@ -47,10 +47,6 @@
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CCT-ContractCommitmentDurationType-C-007-O"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CCT-ContractCommitmentDurationType-C-008-C"
           }
         ]
       },
@@ -63,7 +59,6 @@
         "CCT-ContractCommitmentDurationType-C-005-O",
         "CCT-ContractCommitmentDurationType-C-006-O",
         "CCT-ContractCommitmentDurationType-C-007-O",
-        "CCT-ContractCommitmentDurationType-C-008-C",
         "CCT-ContractCommitment-D-021-M"
       ]
     }

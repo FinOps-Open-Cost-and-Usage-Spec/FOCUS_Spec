@@ -181,7 +181,7 @@
     "Type": "Static",
     "Order": 60,
     "ValidationCriteria": {
-      "MustSatisfy": "Object in array in FOCUS dataset column MUST adhere to the following requirements:",
+      "MustSatisfy": "Object in Array in FOCUS dataset column MUST adhere to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",

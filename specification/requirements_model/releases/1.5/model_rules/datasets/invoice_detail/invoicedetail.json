@@ -918,11 +918,11 @@
     }
   },
   "IND-InvoiceDetail-D-024-C": {
-    "Function": "Validation",
-    "Reference": "InvoiceDetail",
+    "Function": "Presence",
+    "Reference": "PurchaseOrderNumber",
     "EntityType": "Dataset",
-    "EntityName": "Invoice Detail",
-    "EntityId": "InvoiceDetail",
+    "EntityName": "Purchase Order Number",
+    "EntityId": "PurchaseOrderNumber",
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
     "Status": "Active",
