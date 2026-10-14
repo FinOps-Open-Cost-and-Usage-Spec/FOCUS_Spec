@@ -1035,7 +1035,7 @@
     }
   },
   "CAU-SkuPriceDetails-C-033-C": {
-    "Function": "Composite",
+    "Function": "Validation",
     "Reference": "SkuPriceDetails",
     "EntityType": "Column",
     "EntityName": "SKU Price Details",

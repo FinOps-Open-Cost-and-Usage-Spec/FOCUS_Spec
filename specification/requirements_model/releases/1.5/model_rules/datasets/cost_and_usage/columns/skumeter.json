@@ -252,8 +252,8 @@
       "Keyword": "SHOULD",
       "Requirement": {
         "CheckFunction": "CheckDistinctCount",
-        "ColumnAName": "SkuId",
-        "ColumnBName": "SkuMeter",
+        "ColumnAName": "SkuMeter",
+        "ColumnBName": "SkuId",
         "ExpectedCount": 1
       },
       "Condition": {},
