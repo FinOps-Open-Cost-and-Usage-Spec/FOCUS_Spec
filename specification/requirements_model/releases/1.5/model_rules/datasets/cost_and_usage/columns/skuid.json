@@ -11,11 +11,11 @@
     "Conditions": [
       "IncludesUnitPricing"
     ],
+    "Type": "Static",
     "Order": 0,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "SkuId MUST adhere to the following requirements:",
       "Keyword": "MUST",
@@ -36,7 +36,7 @@
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-SkuId-C-007-M"
+            "ModelRuleId": "CAU-SkuId-C-013-M"
           },
           {
             "CheckFunction": "CheckModelRule",
@@ -53,7 +53,7 @@
         "CAU-SkuId-C-001-M",
         "CAU-SkuId-C-002-M",
         "CAU-SkuId-C-003-M",
-        "CAU-SkuId-C-007-M",
+        "CAU-SkuId-C-013-M",
         "CAU-SkuId-C-011-C",
         "CAU-SkuId-C-012-O",
         "CAU-CostAndUsage-D-060-C"
@@ -70,11 +70,11 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [],
+    "Type": "Static",
     "Order": 20,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "SkuId MUST be of type String.",
       "Keyword": "MUST",
@@ -96,11 +96,11 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [],
+    "Type": "Static",
     "Order": 30,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "SkuId MUST conform to StringHandling requirements.",
       "Keyword": "MUST",
@@ -122,11 +122,11 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [],
+    "Type": "Static",
     "Order": 40,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "SkuId MUST adhere to the following nullability requirements:",
       "Keyword": "MUST",
@@ -165,11 +165,11 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [],
+    "Type": "Static",
     "Order": 50,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "SkuId MUST be null when ChargeCategory is \"Tax\".",
       "Keyword": "MUST",
@@ -198,11 +198,11 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [],
+    "Type": "Static",
     "Order": 60,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "SkuId MUST NOT be null when ChargeCategory is \"Usage\" or \"Purchase\" and ChargeClass is not \"Correction\".",
       "Keyword": "MUST NOT",
@@ -252,11 +252,11 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [],
+    "Type": "Dynamic",
     "Order": 70,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "SkuId MAY be null in all other cases.",
       "Keyword": "MAY",
@@ -273,9 +273,9 @@
     "EntityId": "SkuId",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "Status": "Removed",
     "Conditions": [],
-    "Order": 80,
+    "Order": -1,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
@@ -306,7 +306,8 @@
         "CAU-SkuId-C-009-M",
         "CAU-SkuId-C-010-M"
       ]
-    }
+    },
+    "ModelVersionRemoved": "1.5"
   },
   "CAU-SkuId-C-008-M": {
     "Function": "Validation",
@@ -318,11 +319,11 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [],
+    "Type": "Dynamic",
     "Order": 90,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "SkuId MUST remain consistent across billing accounts or contracts.",
       "Keyword": "MUST",
@@ -341,11 +342,11 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [],
+    "Type": "Dynamic",
     "Order": 100,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "SkuId MUST remain consistent across PricingCategory values.",
       "Keyword": "MUST",
@@ -366,11 +367,11 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [],
+    "Type": "Dynamic",
     "Order": 110,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "SkuId MUST remain consistent regardless of any other factors that might impact the price but do not affect the functionality of the SKU.",
       "Keyword": "MUST",
@@ -389,11 +390,11 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [],
+    "Type": "Dynamic",
     "Order": 120,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "SkuId MUST be associated with a given resource or service when ChargeCategory is \"Usage\" or \"Purchase\".",
       "Keyword": "MUST",
@@ -428,11 +429,11 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [],
+    "Type": "Dynamic",
     "Order": 130,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "SkuId MAY match SkuPriceId.",
       "Keyword": "MAY",
@@ -440,6 +441,50 @@
       "Condition": {},
       "Dependencies": [
         "CAU-SkuPriceId-C-003-M"
+      ]
+    }
+  },
+  "CAU-SkuId-C-013-M": {
+    "Function": "Composite",
+    "Reference": "SkuId",
+    "EntityType": "Column",
+    "EntityName": "SKU ID",
+    "EntityId": "SkuId",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Static",
+    "Order": 80,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "SkuId for a given ServiceProviderName and SKU MUST adhere to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-SkuId-C-008-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-SkuId-C-009-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-SkuId-C-010-M"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CAU-SkuId-C-008-M",
+        "CAU-SkuId-C-009-M",
+        "CAU-SkuId-C-010-M",
+        "CAU-ServiceProviderName-C-000-M"
       ]
     }
   }

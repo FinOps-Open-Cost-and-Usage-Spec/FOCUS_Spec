@@ -5,17 +5,17 @@
     "EntityType": "Column",
     "EntityName": "List Unit Price",
     "EntityId": "ListUnitPrice",
-    "Notes": null,
+    "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [
       "IncludesUnitPricing"
     ],
+    "Type": "Static",
     "Order": 0,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ListUnitPrice MUST adhere to the following requirements:",
       "Keyword": "MUST",
@@ -60,11 +60,11 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [],
+    "Type": "Static",
     "Order": 20,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ListUnitPrice MUST be of type Decimal.",
       "Keyword": "MUST",
@@ -86,11 +86,11 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [],
+    "Type": "Static",
     "Order": 30,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ListUnitPrice MUST conform to NumericFormat requirements.",
       "Keyword": "MUST",
@@ -108,15 +108,15 @@
     "EntityType": "Column",
     "EntityName": "List Unit Price",
     "EntityId": "ListUnitPrice",
-    "Notes": null,
+    "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [],
+    "Type": "Static",
     "Order": 40,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ListUnitPrice MUST adhere to the following nullability requirements:",
       "Keyword": "MUST",
@@ -161,15 +161,15 @@
     "EntityType": "Column",
     "EntityName": "List Unit Price",
     "EntityId": "ListUnitPrice",
-    "Notes": null,
+    "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [],
+    "Type": "Static",
     "Order": 60,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ListUnitPrice MUST be null when ChargeCategory is \"Tax\".",
       "Keyword": "MUST",
@@ -194,15 +194,15 @@
     "EntityType": "Column",
     "EntityName": "List Unit Price",
     "EntityId": "ListUnitPrice",
-    "Notes": null,
+    "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [],
+    "Type": "Static",
     "Order": 80,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ListUnitPrice MUST NOT be null when ChargeCategory is \"Usage\" or \"Purchase\" and ChargeClass is not \"Correction\".",
       "Keyword": "MUST NOT",
@@ -248,15 +248,15 @@
     "EntityType": "Column",
     "EntityName": "List Unit Price",
     "EntityId": "ListUnitPrice",
-    "Notes": null,
+    "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [],
+    "Type": "Static",
     "Order": 90,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ListUnitPrice MAY be null in all other cases.",
       "Keyword": "MAY",
@@ -275,15 +275,15 @@
     "EntityType": "Column",
     "EntityName": "List Unit Price",
     "EntityId": "ListUnitPrice",
-    "Notes": null,
+    "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [],
+    "Type": "Static",
     "Order": 100,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "When ListUnitPrice is not null, ListUnitPrice MUST adhere to the following requirements:",
       "Keyword": "MUST",
@@ -297,6 +297,18 @@
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-ListUnitPrice-C-009-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ListUnitPrice-C-015-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ListUnitPrice-C-016-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ListUnitPrice-C-017-M"
           }
         ]
       },
@@ -307,7 +319,10 @@
       },
       "Dependencies": [
         "CAU-ListUnitPrice-C-008-M",
-        "CAU-ListUnitPrice-C-009-M"
+        "CAU-ListUnitPrice-C-009-M",
+        "CAU-ListUnitPrice-C-015-M",
+        "CAU-ListUnitPrice-C-016-M",
+        "CAU-ListUnitPrice-C-017-M"
       ]
     }
   },
@@ -317,15 +332,15 @@
     "EntityType": "Column",
     "EntityName": "List Unit Price",
     "EntityId": "ListUnitPrice",
-    "Notes": null,
+    "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [],
+    "Type": "Static",
     "Order": 110,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ListUnitPrice MUST be a non-negative decimal value.",
       "Keyword": "MUST",
@@ -344,15 +359,15 @@
     "EntityType": "Column",
     "EntityName": "List Unit Price",
     "EntityId": "ListUnitPrice",
-    "Notes": null,
+    "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [],
+    "Type": "Dynamic",
     "Order": 120,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "ListUnitPrice MUST be denominated in the BillingCurrency.",
       "Keyword": "MUST",
@@ -442,15 +457,15 @@
     "EntityType": "Column",
     "EntityName": "List Unit Price",
     "EntityId": "ListUnitPrice",
-    "Notes": null,
+    "Notes": "",
     "ModelVersionIntroduced": "1.3",
     "Status": "Active",
     "Conditions": [],
+    "Type": "Static",
     "Order": 50,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ListUnitPrice MUST be null when SkuPriceId is null.",
       "Keyword": "MUST",
@@ -475,15 +490,15 @@
     "EntityType": "Column",
     "EntityName": "List Unit Price",
     "EntityId": "ListUnitPrice",
-    "Notes": null,
+    "Notes": "",
     "ModelVersionIntroduced": "1.3",
     "Status": "Active",
     "Conditions": [],
+    "Type": "Static",
     "Order": 70,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ListUnitPrice MUST NOT be null when SkuPriceId is not null.",
       "Keyword": "MUST NOT",
@@ -546,6 +561,78 @@
         "CAU-ListCost-C-003-M",
         "CAU-PricingQuantity-C-003-M"
       ]
+    }
+  },
+  "CAU-ListUnitPrice-C-015-M": {
+    "Function": "Validation",
+    "Reference": "ListUnitPrice",
+    "EntityType": "Column",
+    "EntityName": "List Unit Price",
+    "EntityId": "ListUnitPrice",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Dynamic",
+    "Order": 130,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "ListUnitPrice MUST represent the service-provider-suggested unit price per PricingUnit for the SKU Price identified by the given SkuPriceId.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": [
+        "CAU-PricingUnit-C-000-M",
+        "CAU-SkuPriceId-C-000-C"
+      ]
+    }
+  },
+  "CAU-ListUnitPrice-C-016-M": {
+    "Function": "Validation",
+    "Reference": "ListUnitPrice",
+    "EntityType": "Column",
+    "EntityName": "List Unit Price",
+    "EntityId": "ListUnitPrice",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Dynamic",
+    "Order": 140,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "ListUnitPrice MUST NOT reflect negotiated pricing terms for the associated SKU Price.",
+      "Keyword": "MUST NOT",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-ListUnitPrice-C-017-M": {
+    "Function": "Validation",
+    "Reference": "ListUnitPrice",
+    "EntityType": "Column",
+    "EntityName": "List Unit Price",
+    "EntityId": "ListUnitPrice",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Dynamic",
+    "Order": 150,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "ListUnitPrice MUST NOT reflect any unit price impact dependent on a discount-bearing commitment program being applied to the charge.",
+      "Keyword": "MUST NOT",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
     }
   }
 }

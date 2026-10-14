@@ -11,11 +11,11 @@
     "Conditions": [
       "IncludesUnitPricing"
     ],
+    "Type": "Static",
     "Order": 0,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ContractedUnitPrice MUST adhere to the following requirements:",
       "Keyword": "MUST",
@@ -99,11 +99,11 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [],
+    "Type": "Static",
     "Order": 30,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ContractedUnitPrice MUST be of type Decimal.",
       "Keyword": "MUST",
@@ -125,11 +125,11 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [],
+    "Type": "Static",
     "Order": 40,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ContractedUnitPrice MUST conform to NumericFormat requirements.",
       "Keyword": "MUST",
@@ -151,11 +151,11 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [],
+    "Type": "Static",
     "Order": 50,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ContractedUnitPrice MUST adhere to the following nullability requirements:",
       "Keyword": "MUST",
@@ -204,11 +204,11 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [],
+    "Type": "Static",
     "Order": 70,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ContractedUnitPrice MUST be null when ChargeCategory is \"Tax\".",
       "Keyword": "MUST",
@@ -237,11 +237,11 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [],
+    "Type": "Static",
     "Order": 90,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ContractedUnitPrice MUST NOT be null when ChargeCategory is \"Usage\" or \"Purchase\" and ChargeClass is not \"Correction\".",
       "Keyword": "MUST NOT",
@@ -291,11 +291,11 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [],
+    "Type": "Dynamic",
     "Order": 100,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "ContractedUnitPrice MAY be null in all other cases.",
       "Keyword": "MAY",
@@ -314,11 +314,11 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [],
+    "Type": "Static",
     "Order": 110,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "When ContractedUnitPrice is not null, ContractedUnitPrice MUST adhere to the following requirements:",
       "Keyword": "MUST",
@@ -332,6 +332,18 @@
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-ContractedUnitPrice-C-010-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ContractedUnitPrice-C-016-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ContractedUnitPrice-C-017-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ContractedUnitPrice-C-018-C"
           }
         ]
       },
@@ -342,7 +354,10 @@
       },
       "Dependencies": [
         "CAU-ContractedUnitPrice-C-009-M",
-        "CAU-ContractedUnitPrice-C-010-M"
+        "CAU-ContractedUnitPrice-C-010-M",
+        "CAU-ContractedUnitPrice-C-016-M",
+        "CAU-ContractedUnitPrice-C-017-M",
+        "CAU-ContractedUnitPrice-C-018-C"
       ]
     }
   },
@@ -356,11 +371,11 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [],
+    "Type": "Static",
     "Order": 120,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ContractedUnitPrice MUST be a non-negative decimal value.",
       "Keyword": "MUST",
@@ -383,11 +398,11 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [],
+    "Type": "Dynamic",
     "Order": 130,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "ContractedUnitPrice MUST be denominated in the BillingCurrency.",
       "Keyword": "MUST",
@@ -531,11 +546,11 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [],
+    "Type": "Static",
     "Order": 60,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ContractedUnitPrice MUST be null when SkuPriceId is null.",
       "Keyword": "MUST",
@@ -564,11 +579,11 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [],
+    "Type": "Static",
     "Order": 80,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ContractedUnitPrice MUST NOT be null when SkuPriceId is not null.",
       "Keyword": "MUST NOT",
@@ -584,6 +599,79 @@
       },
       "Dependencies": [
         "CAU-SkuPriceId-C-003-M"
+      ]
+    }
+  },
+  "CAU-ContractedUnitPrice-C-016-M": {
+    "Function": "Validation",
+    "Reference": "ContractedUnitPrice",
+    "EntityType": "Column",
+    "EntityName": "Contracted Unit Price",
+    "EntityId": "ContractedUnitPrice",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Dynamic",
+    "Order": 140,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractedUnitPrice MUST reflect negotiated pricing terms for the SKU Price identified by the given SkuPriceId that are independent of any discount-bearing commitment programs being applied to the charge.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": [
+        "CAU-SkuPriceId-C-000-C"
+      ]
+    }
+  },
+  "CAU-ContractedUnitPrice-C-017-M": {
+    "Function": "Validation",
+    "Reference": "ContractedUnitPrice",
+    "EntityType": "Column",
+    "EntityName": "Contracted Unit Price",
+    "EntityId": "ContractedUnitPrice",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Dynamic",
+    "Order": 150,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractedUnitPrice MUST NOT reflect any unit price impact dependent on a discount-bearing commitment program being applied to the charge.",
+      "Keyword": "MUST NOT",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-ContractedUnitPrice-C-018-C": {
+    "Function": "Validation",
+    "Reference": "ContractedUnitPrice",
+    "EntityType": "Column",
+    "EntityName": "Contracted Unit Price",
+    "EntityId": "ContractedUnitPrice",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Dynamic",
+    "Order": 160,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractedUnitPrice MUST equal ListUnitPrice when no negotiated pricing terms apply to the charge.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": [
+        "CAU-ListUnitPrice-C-000-C"
       ]
     }
   }

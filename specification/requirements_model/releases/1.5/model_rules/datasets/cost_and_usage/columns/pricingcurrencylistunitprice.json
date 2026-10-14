@@ -127,7 +127,15 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-PricingCurrencyListUnitPrice-C-011-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-PricingCurrencyListUnitPrice-C-004-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-PricingCurrencyListUnitPrice-C-012-C"
           },
           {
             "CheckFunction": "CheckModelRule",
@@ -136,14 +144,6 @@
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-PricingCurrencyListUnitPrice-C-006-O"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-PricingCurrencyListUnitPrice-C-011-C"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-PricingCurrencyListUnitPrice-C-012-C"
           }
         ]
       },
@@ -295,6 +295,18 @@
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-PricingCurrencyListUnitPrice-C-009-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-PricingCurrencyListUnitPrice-C-013-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-PricingCurrencyListUnitPrice-C-014-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-PricingCurrencyListUnitPrice-C-015-M"
           }
         ]
       },
@@ -305,7 +317,10 @@
       },
       "Dependencies": [
         "CAU-PricingCurrencyListUnitPrice-C-008-M",
-        "CAU-PricingCurrencyListUnitPrice-C-009-M"
+        "CAU-PricingCurrencyListUnitPrice-C-009-M",
+        "CAU-PricingCurrencyListUnitPrice-C-013-M",
+        "CAU-PricingCurrencyListUnitPrice-C-014-M",
+        "CAU-PricingCurrencyListUnitPrice-C-015-M"
       ]
     }
   },
@@ -454,6 +469,78 @@
       "Dependencies": [
         "CAU-SkuPriceId-C-003-M"
       ]
+    }
+  },
+  "CAU-PricingCurrencyListUnitPrice-C-013-M": {
+    "Function": "Validation",
+    "Reference": "PricingCurrencyListUnitPrice",
+    "EntityType": "Column",
+    "EntityName": "Pricing Currency List Unit Price",
+    "EntityId": "PricingCurrencyListUnitPrice",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Dynamic",
+    "Order": 170,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCurrencyListUnitPrice MUST represent the service-provider-suggested unit price per PricingUnit for the SKU Price identified by the given SkuPriceId.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": [
+        "CAU-PricingUnit-C-000-M",
+        "CAU-SkuPriceId-C-000-C"
+      ]
+    }
+  },
+  "CAU-PricingCurrencyListUnitPrice-C-014-M": {
+    "Function": "Validation",
+    "Reference": "PricingCurrencyListUnitPrice",
+    "EntityType": "Column",
+    "EntityName": "Pricing Currency List Unit Price",
+    "EntityId": "PricingCurrencyListUnitPrice",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Dynamic",
+    "Order": 180,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCurrencyListUnitPrice MUST NOT reflect negotiated pricing terms for the associated SKU Price.",
+      "Keyword": "MUST NOT",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-PricingCurrencyListUnitPrice-C-015-M": {
+    "Function": "Validation",
+    "Reference": "PricingCurrencyListUnitPrice",
+    "EntityType": "Column",
+    "EntityName": "Pricing Currency List Unit Price",
+    "EntityId": "PricingCurrencyListUnitPrice",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Dynamic",
+    "Order": 190,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCurrencyListUnitPrice MUST NOT reflect any unit price impact dependent on a discount-bearing commitment program being applied to the charge.",
+      "Keyword": "MUST NOT",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
     }
   }
 }
