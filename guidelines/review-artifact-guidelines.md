@@ -8,9 +8,10 @@ A review artifact is a snapshot. It is built once, from one commit, and it is no
 
 ## Releasing a Review Artifact
 
-* FOCUS Members MUST approve releasing a review artifact through the same two presentation cycles at the Members meeting that a pull request follows under the [Development Processes](contributors/development-processes.md#pull-request-approval-and-conflict-resolution). The approval covers the source branch as it stands when approved, plus rebased `working_draft` changes, and the tracking issue's questions.
+* FOCUS Members MUST approve releasing a review artifact through the same two presentation cycles at the Members meeting that a pull request follows under the [Development Processes](contributors/development-processes.md#pull-request-approval-and-conflict-resolution). The approval covers the source branch as it stands when approved, plus `working_draft` changes merged into it, and the tracking issue's questions.
 * A review artifact MUST have a tracking issue that lists the open questions the review is meant to answer.
 * A review artifact MUST be built from a single commit of its source branch.
+* That commit MUST contain only the approved source branch content and `working_draft` changes merged into it.
 * That commit MUST be preserved with a Git tag that names the review artifact, created by the Admins, and the tracking issue MUST record the tag and the commit.
 * The source branch SHOULD include the consistency review changes made to `working_draft` for the accompanying release before that commit is chosen.
 * A review artifact MUST complete an Intellectual Property Rights (IPR) review that runs in the same period as the IPR review of the release it accompanies.
@@ -33,7 +34,7 @@ A review artifact is a snapshot. It is built once, from one commit, and it is no
 
 ## Developing Content Under Review
 
-* Development of the content under review MAY continue on the source branch, and changes merged into `working_draft` SHOULD be rebased into it. The tag keeps the reviewed commit intact.
+* Development of the content under review MAY continue on the source branch, and the source branch SHOULD take in changes merged into `working_draft`. The tag keeps the reviewed commit intact.
 * Changes to the content under review SHOULD NOT be proposed for a release until the review artifact is retired.
 * Feedback on changes made after the snapshot goes through the normal development process. A review artifact is not reissued to cover them.
 
