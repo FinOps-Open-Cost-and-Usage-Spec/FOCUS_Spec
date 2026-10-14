@@ -6,77 +6,80 @@ A review artifact is a PDF of content that is not part of a FOCUS release. It is
 
 Data generators, the organizations that produce FOCUS data, are asked what it would take to generate the data it describes. Practitioners, the people who use FOCUS data, are asked what it would take to use that data. Their answers help settle the open questions that keep the content out of a release.
 
-A review artifact is a snapshot of its source branch, the GitHub branch that holds the content under review. It is built once, from that branch as it stood at a single point in time.
+A review artifact is a snapshot. It is built once from its source branch, the GitHub branch that holds the content, as that branch stood at a single point in time. Each review artifact has a tracking issue, the GitHub issue that lists its open questions and records each decision about it.
 
-Each review artifact has a tracking issue, the GitHub issue that lists the questions the review needs to answer. The tracking issue also records each decision about the review artifact.
+### Roles
 
-A review artifact goes through four stages:
+* **FOCUS Members:** the participants in the weekly Members meeting, where pull requests are approved.
+* **Source branch owner:** the person who maintains the source branch, usually the author of the pull request that holds the content.
+* **Admins:** the GitHub group that merges pull requests.
+* **FinOps Foundation staff:** the FinOps Foundation team that supports FOCUS.
+* **Maintainers:** the project leads listed in [MAINTAINERS.md](../MAINTAINERS.md).
+* **Working group:** the FOCUS Working Group, the contributors who develop the specification.
 
-1. **Approve and build:** FOCUS Members approve the content and its questions. Then the Admins, the GitHub group that merges pull requests, build and label the PDF.
-2. **Share:** The PDF is shared after an Intellectual Property Rights (IPR) review. This is the patent review period that every FOCUS release also goes through.
-3. **Review and develop:** People give feedback while work on the content continues.
-4. **Retire:** The Maintainers and the working group agree that the review is done. The Maintainers are the project leads listed in [MAINTAINERS.md](../MAINTAINERS.md).
+### Lifecycle
 
-The sections below set the requirements for each stage. The Git and build steps are in the [Admin Checklist](#admin-checklist).
+| Stage | Who | What happens | On the tracking issue |
+| --- | --- | --- | --- |
+| 1. Approve | FOCUS Members | Approve the content and its open questions | The questions, as approved |
+| 2. Build | Source branch owner, Admins | Hold the source branch, tag one commit, and build a labeled PDF from it | The Git tag and the commit |
+| 3. Share and review | Admins, FinOps Foundation staff, source branch owner | Attach the PDF after the Intellectual Property Rights (IPR) review, then collect feedback while work on the content continues | The PDF and a summary of the feedback |
+| 4. Retire | Maintainers, working group | Check progress at least once per release, and retire the review artifact when they agree it is done | Each decision, the date of the next check, and the retirement and its reason |
 
-## Approving and Building a Review Artifact
+The sections below set the requirements for each stage. The [Steps for Each Review Artifact](#steps-for-each-review-artifact) at the end say how to carry out the Build and Share stages.
+
+## Stage 1: Approve
 
 FOCUS Members approve a review artifact the same way they approve a pull request. That means two presentation cycles at the Members meeting, as the [Development Processes](contributors/development-processes.md#pull-request-approval-and-conflict-resolution) describe. The approval covers the content on the source branch and the questions on the tracking issue.
-
-The source branch takes in changes from `working_draft`, the branch where the next FOCUS release is written. One of those changes is the release's consistency review, the last set of edits made across a release before it ships.
 
 A review artifact MUST adhere to the following requirements:
 
 * A review artifact MUST be approved by FOCUS Members before it is built.
 * A review artifact MUST have a tracking issue.
+* The tracking issue of a review artifact MUST list the questions the review needs to answer, as FOCUS Members approved them.
+
+## Stage 2: Build
+
+The source branch takes in changes from `working_draft`, the branch where the next FOCUS release is written. One of those changes is the release's consistency review, the last set of edits made across a release before it ships. The label marks the PDF as a review artifact. A normal build starts with a version line and a statement that calls the document a working draft, and the label changes both.
+
+A review artifact MUST adhere to the following requirements:
+
 * A review artifact MUST be built from its source branch as it stood at a single point in time, marked by one commit.
 * The commit a review artifact is built from MUST hold only the content Members approved and changes merged from `working_draft`.
 * The commit a review artifact is built from SHOULD include the release's consistency review changes.
 * A review artifact MUST consist of the PDF only.
-* The HTML and requirements model files from a review artifact build MUST NOT be shared.
 * A review artifact MUST NOT be revised after it is built.
-
-## Labeling a Review Artifact
-
-The label marks the PDF as a review artifact. The Admins add it when they build the PDF. A normal build starts with a version line and a statement that calls the document a working draft. The label changes both.
-
-A review artifact MUST adhere to the following requirements:
-
 * Every page of a review artifact MUST show a "Review Artifact" watermark.
-* The version line of a review artifact MUST name the content under review.
-* The version line of a review artifact MUST state that the document has no version number (e.g., "SKU Price Dataset Review Artifact (Unversioned)").
+* The version line of a review artifact MUST include the following:
+  * The name of the content under review (e.g., "SKU Price Dataset Review Artifact").
+  * A statement that the document has no version number (e.g., "(Unversioned)").
 * The first page of a review artifact MUST NOT call the document a working draft.
-* The first page of a review artifact MUST state that the document is not a FOCUS release and is not for implementation.
-* The first page of a review artifact MUST name the sections under review.
-* The first page of a review artifact MUST link to its tracking issue.
-* A review artifact label MUST NOT be committed to the source branch.
+* The first page of a review artifact MUST include the following:
+  * A statement that the document is not a FOCUS release.
+  * A statement that the document is not for implementation.
+  * The names of the sections under review.
+  * A link to the tracking issue.
+* The review artifact label MUST NOT be committed to the source branch.
+* The tracking issue of a review artifact MUST record the Git tag and the commit that the review artifact is built from.
 
-## Sharing a Review Artifact
+## Stage 3: Share and Review
 
-FinOps Foundation staff collect feedback on a review artifact in community calls, in talks with practitioners, and by reaching out to data generators.
+Sharing starts after the IPR review, the patent review period that every FOCUS release also goes through. FinOps Foundation staff then collect feedback in community calls, in talks with practitioners, and by reaching out to data generators. Work on the content continues on the source branch during the review. Feedback on those later changes goes through the normal development process, not through the review artifact.
 
 A review artifact MUST adhere to the following requirements:
 
 * A review artifact MUST complete an IPR review before it is shared.
 * A review artifact's IPR review MUST run in the same period as the IPR review of the release it goes out with.
-* The content of a review artifact MUST NOT be part of the release it goes out with.
 * A review artifact MUST be attached to its tracking issue.
+* The HTML and requirements model files from a review artifact build MUST NOT be shared.
 * A review artifact MUST NOT be published on the FOCUS or FinOps Foundation websites.
 * A review artifact MUST NOT be announced as part of a release.
-* Any announcement or message that shares a review artifact MUST state that its content and sample data are out for review.
+* Any announcement or message that shares a review artifact MUST state that its content, including any sample data, is out for review.
+* The content under review MUST NOT be part of the release that the review artifact goes out with.
+* The content under review SHOULD NOT be proposed for a release until the review artifact is retired.
+* The tracking issue of a review artifact SHOULD summarize the feedback on it.
 
-## Developing Content Under Review
-
-Work on the content can continue while the review artifact is out for review. Changes made after the snapshot get feedback through the normal development process, not through the review artifact.
-
-Content under review MUST adhere to the following requirements:
-
-* Content under review MUST NOT change on its source branch from Member approval until the review artifact's commit is tagged, except when the change is merged from `working_draft`.
-* Content under review MAY change on its source branch after the review artifact's commit is tagged.
-* The source branch SHOULD take in changes merged into `working_draft` while the review artifact is out for review.
-* Content under review SHOULD NOT be proposed for a release until its review artifact is retired.
-
-## Retiring a Review Artifact
+## Stage 4: Retire
 
 A review artifact has no time limit, since content can need more than one release to mature.
 
@@ -92,27 +95,19 @@ A review artifact MUST adhere to the following requirements:
   * The review artifact is no longer useful.
 * A retired review artifact MUST NOT be shared.
 * A retired review artifact MUST stay attached to its tracking issue as a record of what was reviewed.
+* The tracking issue of a review artifact MUST record the following:
+  * The decision from each progress check.
+  * The date of the next progress check.
+* When a review artifact is retired, its tracking issue MUST record the retirement and its reason in the following places:
+  * A comment.
+  * A note at the top of the description.
 
 After retirement, the content is either closed or moves toward a future release. A future release can include it only through a pull request that FOCUS Members approve, like any other content.
 
-## Tracking Issue
+## Steps for Each Review Artifact
 
-A review artifact tracking issue MUST adhere to the following requirements:
-
-* The tracking issue MUST list the questions the review needs to answer, as FOCUS Members approved them.
-* The tracking issue MUST record the Git tag and the commit that the review artifact is built from.
-* The tracking issue SHOULD summarize the feedback on the review artifact.
-* The tracking issue MUST record the decision from each progress check.
-* The tracking issue MUST record the date of the next progress check.
-* The tracking issue MUST record the retirement and its reason in a comment.
-* The tracking issue description MUST start with a note that records the retirement and its reason when the review artifact is retired.
-
-## Admin Checklist
-
-The Admins follow these steps for each review artifact after FOCUS Members approve it:
-
-1. **Hold the source branch.** Until the tag in step 3 is in place, the source branch takes in only `working_draft` changes.
-2. **Take in the consistency review.** Merge the release's consistency review changes from `working_draft` into the source branch.
-3. **Tag the commit.** Add a Git tag that names the review artifact to the latest commit on the source branch. Record the tag and the commit on the tracking issue. Work on the content can resume on the source branch after this step. The tag keeps the reviewed commit intact.
-4. **Build the PDF.** Build the PDF from the tagged commit, and add the label during the build. Do not commit the label to the source branch.
-5. **Attach the PDF.** After the IPR review completes, attach the PDF to the tracking issue. Do not attach the HTML or requirements model files from the build.
+1. **Hold the source branch** (source branch owner). From Member approval until the tag in step 2, merge only `working_draft` changes into the source branch. Before the tag, merge the release's consistency review changes when they are in `working_draft`.
+2. **Tag the commit** (Admins). Add a Git tag that names the review artifact to the latest commit on the source branch. Record the tag and the commit on the tracking issue. The tag keeps the reviewed commit intact, so work on the content can resume on the source branch.
+3. **Build the PDF** (Admins). Build the PDF from the tagged commit, and add the label during the build.
+4. **Attach the PDF** (Admins). After the IPR review completes, attach the PDF to the tracking issue.
+5. **Keep the source branch current** (source branch owner). While the review artifact is out for review, the source branch should keep taking in changes merged into `working_draft`.
