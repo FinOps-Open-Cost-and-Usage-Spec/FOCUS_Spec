@@ -23,6 +23,7 @@ A review artifact is a snapshot. It is built once, from the source branch as it 
 
 ## Labeling a Review Artifact
 
+* The Admins build the PDF from the tagged commit. They add the label below when they build it. The label is not committed to the source branch.
 * Every page shows a "Review Artifact" watermark.
 * The version line names the content under review and says that the document has no version number (e.g., "SKU Price Dataset Review Artifact (Unversioned)").
 * The first page says that the document is not a FOCUS release and is not for implementation. It also links to the tracking issue.
@@ -37,7 +38,7 @@ A review artifact is a snapshot. It is built once, from the source branch as it 
 
 ## Developing Content Under Review
 
-* Work on the content under review can continue on the source branch. The source branch should take in changes merged into `working_draft`. The tag keeps the reviewed commit intact.
+* After the tag is in place, work on the content under review can continue on the source branch. The source branch should take in changes merged into `working_draft`. The tag keeps the reviewed commit intact.
 * Until the review artifact is retired, changes to the content should not be proposed for a release.
 * Feedback on changes made after the snapshot goes through the normal development process. A review artifact is not reissued to cover them.
 
