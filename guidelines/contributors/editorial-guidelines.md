@@ -38,32 +38,32 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
             &nbsp;&nbsp; Date/Time Format<br>
         </td>
         <td>
-            * Use the display name in the non-normative section.<br>
+            * Typically the display name in non-normative content; see <a href="#entity-ids-and-display-names">Entity IDs and Display Names</a>.<br>
             * Linked on first occurrence (see <a href="#linking">Linking</a>).
         </td>
     </tr>
     <tr>
         <td><strong>Column &amp; Attribute IDs:</strong></td>
         <td>
-           <strong>Columns IDs</strong>:<br>
+           <strong>Column IDs</strong>:<br>
             * PricingQuantity<br>
             * PricingUnit<br>
             * ServiceProviderName<br><br>
-          <strong>Attributes IDs</strong>:<br>
+          <strong>Attribute IDs</strong>:<br>
             * CurrencyCodeFormat <br>
             * DateTimeFormat <br>
         </td>
         <td>
-          <strong>Columns IDs:</strong><br>
+          <strong>Column IDs:</strong><br>
           &nbsp;&nbsp; PricingQuantity <br>
           &nbsp;&nbsp; PricingUnit<br>
           &nbsp;&nbsp; ServiceProviderName <br><br>
-          <strong>Attributes IDs:</strong> <br/>
+          <strong>Attribute IDs:</strong> <br/>
           &nbsp;&nbsp; CurrencyCodeFormat <br/>
           &nbsp;&nbsp; DateTimeFormat <br>
         </td>
         <td>
-           * Use PascalCamel case (the first letter of every word, is capitalized)<br>
+           * Use PascalCase (the first letter of every word is capitalized)<br>
            * Normal text without bold or italics.<br>
            * Linked on first occurrence (see <a href="#linking">Linking</a>).
         </td>
@@ -103,7 +103,7 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
     <tr>
         <td><strong>Glossary</strong></td>
         <td>
-            <a>SKU</a>, <a>resource</a>, <a>service</a>
+            <em>SKU</em>, <em>resource</em>, <em>service</em>
         </td>
         <td>
             [*SKU*](#glossary:sku) <br>
@@ -111,7 +111,7 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
             [*service*](#glossary:service) <br>
         </td>
         <td>
-            * Blue font + italic<br>
+            * Italic, whether linked or not.<br>
             * Linked on first occurrence (see <a href="#linking">Linking</a>).
         </td>
     </tr>
