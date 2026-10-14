@@ -1,5 +1,7 @@
 # Catalog Discovery and Price Estimation
 
+> **Preview:** The SKU Price dataset is a preview in this version of FOCUS. This supported feature depends on it and may change in a future version based on implementation feedback.
+
 ## Description
 
 FOCUS helps a [*practitioner*](#glossary:practitioner) find the prices a [*service provider*](#glossary:service-provider) offers. It also helps estimate what future consumption will cost. The [SKU Price](#datamodel.skuprice) dataset holds these prices. It covers the full [*price list*](#glossary:price-list) a *service provider* publishes, not just the [*SKUs*](#glossary:sku) already in [Cost and Usage](#datamodel.costandusage) data. So a new architecture can be priced the same way for every *service provider*, without learning a different catalog format for each one.
