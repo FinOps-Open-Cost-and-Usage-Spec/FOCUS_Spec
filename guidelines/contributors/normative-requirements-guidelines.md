@@ -333,10 +333,13 @@ The following conventions apply to references to FOCUS entities in normative req
 
 * References to FOCUS entities MUST use one of the following:
   * a generic keyword (e.g., `FOCUS column`, `Custom column`),
-  * the entity ID (e.g., `BilledCost`, `NullHandling`), or
-  * a dot-notation reference path for object properties (e.g., `ContractAppliedObject.Elements[*].ContractId`).
+  * the Entity ID (e.g., `BilledCost`, `NullHandling`),
+  * a dot-notation reference path for object properties (e.g., `ContractAppliedObject.Elements[*].ContractId`), or
+  * a `Dataset.Column` reference for a column in a dataset other than the dataset in which the requirement is defined (e.g., `CostAndUsage.BilledCost`).
 * References to FOCUS entities MUST NOT use their Display Names.
 * References to FOCUS entities SHOULD default to singular form, with the understanding that the requirement applies to all applicable instances, values, or elements of the referenced entity unless otherwise specified.
+
+**Exception for Operating Model Conditions:** When a normative requirement uses an Operating Model Condition as an applicability condition, it MUST reference the condition by its Operating Model Condition phrase, i.e., its Display Name in lowercase, rather than by its ID (e.g., `when the *operating model* [includes availability zones](#operatingmodelconditions.includesavailabilityzones)`). This exception does not apply to requirements that define the Operating Model Condition itself.
 
 #### FOCUS Dataset Reference Conventions
 
