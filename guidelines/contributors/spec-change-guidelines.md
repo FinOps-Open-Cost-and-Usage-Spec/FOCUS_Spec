@@ -19,6 +19,7 @@ A changelog is provided specifying helpful information to consumers of the FOCUS
 * Deprecation designation of a feature or column to include the version where deprecation occurred
    * Any exception rationale if removal precedes the retention period
 * Designation of the addition of a new feature or column
+* Designation of a new dataset as a preview, and its promotion, extension, or removal in a later version
 * Description of the change
 * Examples of the change, if needed
 
@@ -134,7 +135,7 @@ A preview tracking issue MUST adhere to the following requirements:
 
 At each later version, FOCUS Members choose one outcome and record it with its evidence in the tracking issue:
 
-* **Promote:** Remove the preview designation once the open questions are addressed. The dataset's requirements become Active in the requirements model, and the "(preview)" label and Preview notes are removed.
+* **Promote:** Remove the preview designation once the open questions are addressed. The dataset's requirements become Active in the requirements model, and the "(preview)" label and Preview notes are removed. Version Introduced stays the version that first included the dataset, and the changelog records the version that promotes it.
 * **Extend:** Keep the preview for one more version, with a plan for the next evidence.
 * **Remove:** Remove the dataset without a deprecation notice or retention period. This is the default when there is no new evidence since the last decision.
 
