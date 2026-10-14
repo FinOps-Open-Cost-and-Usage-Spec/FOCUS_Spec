@@ -12,11 +12,12 @@ A review artifact is a snapshot. It is built once, from the source branch as it 
 
 * FOCUS Members approve releasing a review artifact. The approval follows the same steps as a pull request: two presentation cycles at the Members meeting, as the [Development Processes](contributors/development-processes.md#pull-request-approval-and-conflict-resolution) describe.
 * The approval covers the source branch as it stands when approved, plus `working_draft` changes merged into it. It also covers the questions on the tracking issue.
+* From the approval until the tag is in place, the source branch takes in only `working_draft` changes.
 * Every review artifact has a tracking issue that lists the questions the review needs to answer.
 * A review artifact is built from its source branch as it stood at a single point in time, marked by one commit.
 * That commit holds only the approved source branch content and `working_draft` changes merged into it.
-* The Admins put a Git tag on that commit that names the review artifact. The tracking issue records the tag and the commit.
 * Before that commit is chosen, the source branch should take in the release's consistency review changes from `working_draft`.
+* The Admins put a Git tag on that commit that names the review artifact. The tracking issue records the tag and the commit.
 * A review artifact completes an Intellectual Property Rights (IPR) review. That review runs in the same period as the IPR review of the release it goes out with.
 * The source branch is not merged into the release that the review artifact goes out with.
 * Only the PDF is released as the review artifact. The build also makes HTML and requirements model files. Those files are not part of the review artifact and are not shared for review.
@@ -26,11 +27,11 @@ A review artifact is a snapshot. It is built once, from the source branch as it 
 * The Admins build the PDF from the tagged commit. They add the label below when they build it. The label is not committed to the source branch.
 * Every page shows a "Review Artifact" watermark.
 * The version line names the content under review and says that the document has no version number (e.g., "SKU Price Dataset Review Artifact (Unversioned)").
-* The first page says that the document is not a FOCUS release and is not for implementation. It also links to the tracking issue.
+* The first page replaces the working draft status text. It says that the document is not a FOCUS release and is not for implementation, names the sections under review, and links to the tracking issue.
 
 ## Distributing a Review Artifact
 
-* The PDF is attached to the tracking issue.
+* After the IPR review completes, the Admins attach the PDF to the tracking issue.
 * A review artifact is not published on the FOCUS or FinOps Foundation websites.
 * A review artifact is not announced as part of a release.
 * Anything that announces or shares a review artifact says that its content and sample data are out for review.
