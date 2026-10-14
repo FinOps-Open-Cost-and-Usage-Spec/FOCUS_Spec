@@ -111,7 +111,7 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
             [*service*](#glossary:service) <br>
         </td>
         <td>
-            * Italic, whether linked or not.<br>
+            * Italic when the term is used in its glossary meaning, whether linked or not.<br>
             * Linked on first occurrence (see <a href="#linking">Linking</a>).
         </td>
     </tr>
@@ -175,7 +175,7 @@ These rules apply to all entities defined in the FOCUS specification (e.g., Colu
 
 Body content includes paragraphs, list items, table cells, and requirement bullets.
 
-* **Entity References:** An entity reference is a mention of a FOCUS entity or glossary term by its Entity ID, Display Name, glossary term, or Operating Model Condition phrase (see [General FOCUS Entity Reference Conventions](normative-requirements-guidelines.md#general-focus-entity-reference-conventions)), including its plural and possessive forms (e.g., `BilledCost`, `Billed Costs`). Glossary terms and Operating Model Condition phrases (an Operating Model Condition's Display Name in lowercase) count in any capitalization, except as stated in Entity or Glossary Term. Other forms of the name (e.g., different capitalization, shortened, extended, or `Dataset.Column`, such as `contract commitment period start` or `CostAndUsage.BilledCost`) count as entity references only when linked.
+* **Entity References:** An entity reference is a mention of a FOCUS entity or glossary term by its Entity ID, Display Name, glossary term, or Operating Model Condition phrase (see [General FOCUS Entity Reference Conventions](normative-requirements-guidelines.md#general-focus-entity-reference-conventions)), including its plural and possessive forms (e.g., `BilledCost`, `Billed Costs`). Glossary terms used in their glossary meaning and Operating Model Condition phrases (an Operating Model Condition's Display Name in lowercase) count in any capitalization, except that text in the capitalization of a Display Name refers to the entity (see Entity or Glossary Term). Other forms of the name (e.g., different capitalization, shortened, extended, or `Dataset.Column`, such as `contract commitment period start` or `CostAndUsage.BilledCost`) count as entity references only when linked.
 
 * **Entity or Glossary Term:** When a Display Name and a glossary term have the same text, the form written with the capitalization of the Display Name refers to the FOCUS entity, and any other capitalization refers to the glossary term. Each form counts only as an occurrence of what it refers to.
 
