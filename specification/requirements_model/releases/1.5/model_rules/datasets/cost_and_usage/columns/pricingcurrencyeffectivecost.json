@@ -9,14 +9,14 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [
-      "IncludesListUnitPrices",
-      "IncludesVirtualCurrency"
+      "IncludesConsumptionCurrency",
+      "IncludesPricingBillingCurrencyDifferences"
     ],
+    "Type": "Static",
     "Order": 0,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "PricingCurrencyEffectiveCost MUST adhere to the following requirements:",
       "Keyword": "MUST",
@@ -41,7 +41,7 @@
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-PricingCurrencyEffectiveCost-C-007-M"
+            "ModelRuleId": "CAU-PricingCurrencyEffectiveCost-C-008-M"
           }
         ]
       },
@@ -51,7 +51,7 @@
         "CAU-PricingCurrencyEffectiveCost-C-002-M",
         "CAU-PricingCurrencyEffectiveCost-C-003-M",
         "CAU-PricingCurrencyEffectiveCost-C-006-M",
-        "CAU-PricingCurrencyEffectiveCost-C-007-M",
+        "CAU-PricingCurrencyEffectiveCost-C-008-M",
         "CAU-CostAndUsage-D-050-C"
       ]
     }
@@ -66,11 +66,11 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [],
+    "Type": "Static",
     "Order": 50,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "PricingCurrencyEffectiveCost MUST be of type Decimal.",
       "Keyword": "MUST",
@@ -92,11 +92,11 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [],
+    "Type": "Static",
     "Order": 60,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "PricingCurrencyEffectiveCost MUST conform to NumericFormat requirements.",
       "Keyword": "MUST",
@@ -118,11 +118,11 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [],
+    "Type": "Static",
     "Order": 70,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "PricingCurrencyEffectiveCost MUST NOT be null.",
       "Keyword": "MUST NOT",
@@ -196,11 +196,11 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [],
+    "Type": "Dynamic",
     "Order": 100,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "PricingCurrencyEffectiveCost MUST be denominated in the PricingCurrency.",
       "Keyword": "MUST",
@@ -219,9 +219,9 @@
     "EntityId": "PricingCurrencyEffectiveCost",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "Status": "Removed",
     "Conditions": [],
-    "Order": 110,
+    "Order": -1,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
@@ -234,6 +234,33 @@
       "Dependencies": [
         "CAU-EffectiveCost-C-003-M",
         "CAU-PricingCurrency-C-004-M"
+      ]
+    },
+    "ModelVersionRemoved": "1.5"
+  },
+  "CAU-PricingCurrencyEffectiveCost-C-008-M": {
+    "Function": "Validation",
+    "Reference": "PricingCurrencyEffectiveCost",
+    "EntityType": "Column",
+    "EntityName": "Pricing Currency Effective Cost",
+    "EntityId": "PricingCurrencyEffectiveCost",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Dynamic",
+    "Order": 110,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCurrencyEffectiveCost MUST be the PricingCurrency-denominated equivalent of EffectiveCost, before any currency exchange rate conversion.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": [
+        "CAU-PricingCurrency-C-000-C",
+        "CAU-EffectiveCost-C-000-M"
       ]
     }
   }

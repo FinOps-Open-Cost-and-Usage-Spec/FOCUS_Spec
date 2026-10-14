@@ -3,19 +3,19 @@
     "Function": "Composite",
     "Reference": "ContractAppliedObject",
     "EntityType": "Object",
+    "EntityName": "Contract Applied Object",
     "EntityId": "ContractAppliedObject",
-    "EntityName": "Contract Applied",
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
     "Status": "Active",
     "Conditions": [
       "IncludesContractCommitments"
     ],
+    "Type": "Static",
     "Order": 0,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ContractAppliedObject MUST adhere to the following requirements:",
       "Keyword": "MUST",
