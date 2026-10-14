@@ -194,6 +194,9 @@ Body content includes paragraphs, list items, table cells, and requirement bulle
 
 * **Other Links:** Links to other targets (e.g., appendix entries, supported features, document sections, external resources, data files) are not subject to these linking rules.
 
+* **Link Targets:** In specification content, links to FOCUS entities use the generated heading anchors for headings after `!TOC`, as defined in [Markdownpp Guidelines](markdownpp-guidelines.md) ("Automatic Anchor Generation") (e.g., `#datamodel.costandusage.billedcost`), and links to glossary terms use the anchors of the glossary entries (e.g., `#glossary:charge`).
+  * **Specification content** is the content of the Markdown files under `specification/` that `specification/spec.mdpp` includes, directly or through other `!INCLUDE` files.
+
 **Exceptions:**
 
 * In **Content Constraints** sections, all entity references MUST be linked, regardless of prior occurrence in the source Markdown file.

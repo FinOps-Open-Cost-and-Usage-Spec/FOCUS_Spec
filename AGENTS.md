@@ -155,7 +155,7 @@ AI agents generating or reviewing content MUST act as strict technical editors e
   * A structural anchor does not introduce a verifiable constraint.
   * A structural anchor does not resolve into an atomic requirement.
 * **Terminology:** Apply the following rules:
-  * Normative references to FOCUS entities MUST use a generic keyword, canonical Entity ID, or dot-notation reference path.
+  * Normative references to FOCUS entities MUST use a generic keyword, Entity ID, dot-notation reference path for an object property, or `Dataset.Column` for a column in a dataset other than the dataset in which the requirement is defined.
   * Normative references to FOCUS entities MUST NOT use Display Names.
   * Exception: when a requirement uses an Operating Model Condition as an applicability condition, reference it by its Operating Model Condition phrase (Display Name in lowercase), not by its ID (e.g., `when the *operating model* [includes availability zones](#operatingmodelconditions.includesavailabilityzones)`). Do not flag this phrase as a violation of the rule prohibiting Display Names in normative requirements. This exception does not apply to requirements that define the Operating Model Condition itself.
   * Requirements governing a specific dataset MUST use its `DatasetId` as the subject (e.g., `CostAndUsage`).
@@ -194,7 +194,13 @@ AI agents generating or reviewing content MUST act as strict technical editors e
 * **Notes versus Exceptions:** Apply the following rules:
   * Notes MUST contain only informative or explanatory material.
   * Normative conditions and exceptions MUST be expressed as requirements.
-* **Anchors:** Pandoc auto-generates custom heading anchors. DO NOT flag missing HTML `<a name="">` tags.
+* **Anchors:**
+  * Specification content is the content of the Markdown files under `specification/` that `specification/spec.mdpp` includes, directly or through other `!INCLUDE` files.
+  * In specification content, heading anchors are generated for headings after `!TOC` as defined in [Markdownpp Guidelines](guidelines/contributors/markdownpp-guidelines.md) ("Automatic Anchor Generation"); glossary anchors are the `<a name="glossary:...">` tags in `specification/glossary.md`.
+  * Check links in specification content against these anchors, not against links in guideline examples. The build also validates fragment links (`specification/tests/test_spec_links.py`).
+  * Headings before `!TOC` (e.g., in `license.md`) are not covered by the generated-anchor rule. Headings marked `<!--SkipTOC-->` have no generated anchor. If a link targets either, report it for a manual check.
+  * Other Markdown files (e.g., under `guidelines/`) use GitHub heading anchors.
+  * DO NOT flag headings for lacking an HTML `<a name="">` tag.
 * **Markdown Tables:** Select spacing based on the table's natural, unpadded content and source readability:
   * When rows are similar in length and remain below 120 characters, prefer padding cells to align the vertical pipes.
   * When one or a few rows are substantially longer than the others, preserve the established padding for the shorter rows and allow the longer rows to extend beyond the aligned width.
