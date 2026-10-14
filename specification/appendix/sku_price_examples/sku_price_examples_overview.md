@@ -1,6 +1,6 @@
 # Examples: SKU Price
 
-> **Note:** The SKU Price dataset is a preview in this version of FOCUS, so these examples may change in a future version based on implementation feedback.
+> **Preview:** The SKU Price dataset is a preview in this version of FOCUS, so these examples may change in a future version based on implementation feedback.
 
 The following section contains examples of how a [*service provider*](#glossary:service-provider) may represent a published [*price list*](#glossary:price-list) as a [SKU Price](#datamodel.skuprice) [*FOCUS dataset*](#glossary:FOCUS-dataset). The scenarios use a fictitious service provider, Aura Web, and a fictitious customer, Acme Corp. Provider, service, and identifier names are illustrative.
 
