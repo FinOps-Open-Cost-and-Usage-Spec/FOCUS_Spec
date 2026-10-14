@@ -79,7 +79,7 @@ A review artifact MUST adhere to the following requirements:
 
 ## Stage 4: Retire
 
-A review artifact has no time limit, since content can need more than one release to mature.
+A review artifact has no time limit, since content can need more than one release to mature. The Maintainers record the retirement on the tracking issue.
 
 A review artifact MUST adhere to the following requirements:
 
