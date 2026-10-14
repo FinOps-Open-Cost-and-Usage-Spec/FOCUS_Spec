@@ -6,14 +6,14 @@ A review artifact is a PDF of content that is not part of a FOCUS release. It is
 
 Data generators are asked what it would take to generate the data it describes. Practitioners are asked what it would take to use that data. Their answers help settle the open questions that keep the content out of a release.
 
-A review artifact is a snapshot. It is built once, from one commit, and it is not revised.
+A review artifact is a snapshot. It is built once, from the source branch as it stood at a single point in time, and it is not revised.
 
 ## Releasing a Review Artifact
 
 * FOCUS Members approve releasing a review artifact. The approval follows the same steps as a pull request: two presentation cycles at the Members meeting, as the [Development Processes](contributors/development-processes.md#pull-request-approval-and-conflict-resolution) describe.
 * The approval covers the source branch as it stands when approved, plus `working_draft` changes merged into it. It also covers the questions on the tracking issue.
 * Every review artifact has a tracking issue that lists the questions the review needs to answer.
-* A review artifact is built from a single commit of its source branch.
+* A review artifact is built from its source branch as it stood at a single point in time, marked by one commit.
 * That commit holds only the approved source branch content and `working_draft` changes merged into it.
 * The Admins put a Git tag on that commit that names the review artifact. The tracking issue records the tag and the commit.
 * Before that commit is chosen, the source branch should take in the release's consistency review changes from `working_draft`.
@@ -43,6 +43,8 @@ A review artifact is a snapshot. It is built once, from one commit, and it is no
 
 ## Retiring a Review Artifact
 
+* The Maintainers and the working group review the progress of each review artifact at least once per release. Each review ends with either retirement or a decision to continue, and the tracking issue records that decision and the date of the next review.
+* A review artifact has no time limit. Time passing is not, by itself, a reason to retire it.
 * A review artifact is retired when the Maintainers and the working group agree on one of the following:
   * The tracking issue's questions are answered.
   * The content should move toward a release while a question is still open.
