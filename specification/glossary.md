@@ -191,6 +191,10 @@ A column included in a [*FOCUS dataset*](#glossary:FOCUS-dataset). A FOCUS datas
 
 The conversion of an amount from one currency to another using a currency exchange rate.
 
+<a name="glossary:general-availability"><b>General Availability (GA)</b></a>
+
+The version of FOCUS in which a [*FOCUS dataset*](#glossary:FOCUS-dataset) is no longer a [*preview*](#glossary:preview).
+
 <a name="glossary:inclusivestartbound"><b>Inclusive Start Bound</b></a>
 
 A Date/Time Format value that is contained within the beginning bound of a time period.
@@ -296,7 +300,7 @@ An individual who performs FinOps within an organization to maximize the busines
 
 <a name="glossary:preview"><b>Preview</b></a>
 
-A status for a [*FOCUS dataset*](#glossary:FOCUS-dataset) that is published in a version of FOCUS so implementers can build it and report what they find, and that may change in the next version without a deprecation notice. See [Preview](#introduction.preview).
+A status for a [*FOCUS dataset*](#glossary:FOCUS-dataset) that is published in a version of FOCUS so implementers can build it and report what they find, and that may change in the next version without a deprecation notice. See [Preview](#introduction.preview) and [*General Availability (GA)*](#glossary:general-availability).
 
 <a name="glossary:price-list"><b>Price List</b></a>
 

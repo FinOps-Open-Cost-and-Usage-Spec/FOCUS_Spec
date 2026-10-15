@@ -18,8 +18,8 @@ A changelog is provided specifying helpful information to consumers of the FOCUS
 * Change Type Classification 
 * Deprecation designation of a feature or column to include the version where deprecation occurred
    * Any exception rationale if removal precedes the retention period
+* Designation of the addition of a new dataset, to include whether it is a preview, and its promotion, extension, or removal in a later version
 * Designation of the addition of a new feature or column
-* Designation of a new dataset as a preview, and its promotion, extension, or removal in a later version
 * Description of the change
 * Examples of the change, if needed
 
@@ -130,12 +130,13 @@ A preview tracking issue MUST adhere to the following requirements:
 * Add a note to each section outside the dataset that has requirements on the scope list (e.g., the Charge Category column in Cost and Usage), naming those requirements and stating that they are excluded from conformance while the dataset is in preview.
 * Record the preview and every later change to it in the version changelog, with migration notes.
 * Set the status of each requirement on the scope list to Preview in the requirements model.
+* Set each Version Introduced section in the dataset to `Preview: <version>` (e.g., `Preview: 1.5`).
 
 ### Exiting Preview
 
 At each later version, FOCUS Members choose one outcome and record it with its evidence in the tracking issue:
 
-* **Promote:** Remove the preview designation once the open questions are addressed. The dataset's requirements become Active in the requirements model, and the "(preview)" label and Preview notes are removed. Version Introduced stays the version that first included the dataset, and the changelog records the version that promotes it.
+* **Promote:** Remove the preview designation once the open questions are addressed. The dataset's requirements become Active in the requirements model, and the "(preview)" label and Preview notes are removed. Each Version Introduced section is updated to include the general availability (GA) version (e.g., `Preview: 1.5 · GA: 1.6`).
 * **Extend:** Keep the preview for one more version, with a plan for the next evidence.
 * **Remove:** Remove the dataset without a deprecation notice or retention period. This is the default when there is no new evidence since the last decision.
 
