@@ -6,7 +6,7 @@ A review artifact is a PDF of content that is not part of a FOCUS release. It is
 
 Data generators, the organizations that produce FOCUS data, are asked what it would take to generate the data it describes. Practitioners, the people who use FOCUS data, are asked what it would take to use that data. Their answers help settle the open questions that keep the content out of a release.
 
-A review artifact is a snapshot. It is built once from the pull request that holds its content, as that content stood at a single point in time. Each review artifact has a tracking issue, the GitHub issue that lists its open questions and records each decision about it.
+A review artifact is a snapshot. It is built once from the pull request that holds its content, as that content stood at a single point in time. The Markdown files it is built from stay in GitHub, where anyone can read them. Each review artifact has a tracking issue, the GitHub issue that lists its open questions and records each decision about it.
 
 ### Roles
 
@@ -19,33 +19,41 @@ A review artifact is a snapshot. It is built once from the pull request that hol
 
 | Stage | Who | What happens | On the tracking issue |
 | --- | --- | --- | --- |
-| 1. Approve | Working group, at the Members meeting | Approve the content and its open questions | The questions, as approved |
-| 2. Build | Pull request author, Admins | Freeze the pull request, tag one commit, and build a labeled PDF from it | The Git tag and the commit |
-| 3. Share and review | Admins, FinOps Foundation staff | Attach the PDF after the Intellectual Property Rights (IPR) review, then collect feedback while work on the content continues | The PDF and a summary of the feedback |
-| 4. Retire | Maintainers and the working group | Check progress at least once per release, and retire the review artifact when they agree it is done | Each decision, the date of the next check, and the retirement and its reason |
+| 1. Approve | Working group, at the Members meeting | Approve the content and its open questions | The questions, as approved, and the pull requests that hold the content |
+| 2. Build | Pull request authors, Admins | Freeze the pull requests, combine them into one, tag one commit, and build a labeled PDF from it | The Git tag and the commit |
+| 3. Share and review | Admins, FinOps Foundation staff | Send the PDF to an Intellectual Property Rights (IPR) review, attach it when the review completes, then collect feedback while work on the content continues | The PDF and a summary of the feedback |
+| 4. Retire | Maintainers and the working group, at the Members meeting | Check progress at least once per release, and retire the review artifact when they agree it is done | Each decision, the date of the next check, and the retirement and its reason |
 
 The sections below set the requirements for each stage. The [Steps for Each Review Artifact](#steps-for-each-review-artifact) at the end say how to carry out the Build and Share stages.
 
 ## Stage 1: Approve
 
-A review artifact is approved at the Members meeting, the same way as a pull request. That means two presentation cycles, as the [Development Processes](contributors/development-processes.md#pull-request-approval-and-conflict-resolution) describe. The approval covers the content in the pull request and the questions on the tracking issue. Approving a review artifact does not merge the pull request.
+A review artifact is approved at the Members meeting, the same way as a pull request. That means two presentation cycles, as the [Development Processes](contributors/development-processes.md#pull-request-approval-and-conflict-resolution) describe. The approval covers the content under review and the questions on the tracking issue. Approving a review artifact does not merge any of its pull requests.
+
+Supported features are the parts of the specification that show how FOCUS data meets common FinOps needs. The content under review includes its supported features. The tracking issue lists the pull requests that hold the content. When there is more than one, the review artifact is built from the first one listed. The others are merged into it before the tag.
 
 A review artifact MUST adhere to the following requirements:
 
 * A review artifact MUST be approved at the Members meeting before it is built.
+* When the content under review has supported features, a review artifact MUST include them.
+* The tracking issue of a review artifact MUST list the pull requests that hold the content under review.
 * A review artifact MUST have a tracking issue.
 * The tracking issue of a review artifact MUST list the questions the review needs to answer, as approved at the Members meeting.
 
 ## Stage 2: Build
 
-The pull request takes in changes from `working_draft`, the branch where the next FOCUS release is written. One of those changes is the release's consistency review, the last set of edits made across a release before it ships. The label is text added during the build that marks the PDF as a review artifact. A normal build starts with a version line and a statement that calls the document a working draft, and the label changes both.
+The pull request takes in changes from `working_draft`, the branch where the next FOCUS release is written. Each review artifact goes out with one FOCUS release. Its IPR review, a patent review period, runs in the same period as that release's IPR review. Near the end of a release, `working_draft` goes through a Final Consistency Review, the last planned round of edits across the release. The release's IPR review then starts from one `working_draft` commit. Before the tag, the pull request takes in `working_draft` up to that commit.
+
+The label is the text the build adds to mark the PDF as a review artifact: the watermark, the version line, and the first-page statements. A normal build starts with a version line and a statement that calls the document a working draft, and the label changes both.
 
 A review artifact MUST adhere to the following requirements:
 
 * A review artifact MUST be built from its pull request as it stood at a single point in time, marked by one commit.
 * The commit a review artifact is built from MUST hold only the approved content and changes merged from `working_draft`.
-* The commit a review artifact is built from SHOULD include the release's consistency review changes.
-* A review artifact MUST consist of the PDF only.
+* The commit a review artifact is built from MUST hold all of the content under review.
+* The commit a review artifact is built from MUST include the `working_draft` commit that the release's IPR review starts from.
+* The commit a review artifact is built from MUST NOT include `working_draft` changes that are not in the commit that the release's IPR review starts from.
+* A review artifact MUST be a PDF.
 * A review artifact MUST NOT be revised after it is built.
 * Every page of a review artifact MUST show a "Review Artifact" watermark.
 * The version line of a review artifact MUST include the following:
@@ -62,14 +70,14 @@ A review artifact MUST adhere to the following requirements:
 
 ## Stage 3: Share and Review
 
-Sharing starts after the IPR review, the patent review period that every FOCUS release also goes through. FinOps Foundation staff then collect feedback in community calls, in talks with practitioners, and by reaching out to data generators. Work on the content continues during the review. Feedback on those later changes goes through the normal development process, not through the review artifact.
+The PDF's IPR review runs in the same period as the release's, and sharing starts after it completes. FinOps Foundation staff then collect feedback in community calls, in talks with practitioners, and by reaching out to data generators. Work on the content continues during the review. Feedback on those later changes goes through the normal development process, not through the review artifact.
 
 A review artifact MUST adhere to the following requirements:
 
 * A review artifact MUST complete an IPR review before it is shared.
 * A review artifact's IPR review MUST run in the same period as the IPR review of the release it goes out with.
 * A review artifact MUST be attached to its tracking issue.
-* The HTML and requirements model files from a review artifact build MUST NOT be shared.
+* The HTML, Markdown, and requirements model files that a review artifact build produces (e.g., `spec.html` and `spec.md`) MUST NOT be shared.
 * A review artifact MUST NOT be published on the FOCUS or FinOps Foundation websites.
 * A review artifact MUST NOT be announced as part of a release.
 * Any announcement or message that shares a review artifact MUST state that its content, including any sample data, is out for review.
@@ -79,11 +87,14 @@ A review artifact MUST adhere to the following requirements:
 
 ## Stage 4: Retire
 
-A review artifact has no time limit, since content can need more than one release to mature. The Maintainers record the retirement on the tracking issue.
+A review artifact has no time limit, since content can need more than one release to mature. The Maintainers record each progress check decision on the tracking issue, including the retirement.
+
+A progress check can also decide to build a new review artifact from the updated content. The new review artifact goes through every stage again, starting with approval. The earlier one is retired when the new one is shared.
 
 A review artifact MUST adhere to the following requirements:
 
 * A review artifact MUST have its progress checked by the Maintainers and the working group at least once per release.
+* Each progress check of a review artifact MUST take place at the Members meeting.
 * A review artifact MUST be either retired or continued at each progress check.
 * A review artifact MUST NOT be retired only because time has passed.
 * A review artifact MUST NOT be retired unless the Maintainers and the working group agree on one of the following:
@@ -104,7 +115,8 @@ After retirement, the content is either closed or moves toward a future release.
 
 ## Steps for Each Review Artifact
 
-1. **Freeze the pull request** (pull request author). From the approval at the Members meeting until the tag in step 2, merge only `working_draft` changes into it. Before the tag, merge the release's consistency review changes when they are in `working_draft`.
+1. **Freeze the pull requests** (pull request authors). From the approval at the Members meeting until the tag in step 2, change the pull requests listed on the tracking issue only by merging `working_draft` into them or merging them together. Before the tag, merge the other listed pull requests into the first one. Then merge `working_draft` into it, up to the commit that the release's IPR review starts from.
 2. **Tag the commit** (Admins). Add a Git tag that names the review artifact to the latest commit in the pull request. Record the tag and the commit on the tracking issue. The tag keeps the reviewed commit intact, so work on the content can continue as usual.
 3. **Build the PDF** (Admins). Build the PDF from the tagged commit, and add the label during the build.
-4. **Attach the PDF** (Admins). After the IPR review completes, attach the PDF to the tracking issue.
+4. **Send the PDF to IPR review** (Admins). Start the PDF's IPR review in the same period as the release's IPR review.
+5. **Attach the PDF** (Admins). After the IPR review completes, attach the PDF to the tracking issue.
