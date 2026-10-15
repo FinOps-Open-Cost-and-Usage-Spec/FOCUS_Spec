@@ -42,4 +42,4 @@ Identifier assigned to a *resource* by the service provider.
 
 ## Version Introduced
 
-0.5
+GA: 0.5

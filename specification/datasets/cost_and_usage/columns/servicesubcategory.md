@@ -125,4 +125,4 @@ Secondary classification of the Service Category for a *service* based on its co
 
 ## Version Introduced
 
-1.1
+GA: 1.1

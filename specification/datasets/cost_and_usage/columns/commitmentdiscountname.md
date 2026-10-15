@@ -40,4 +40,4 @@ The display name assigned to a *commitment discount*.
 
 ## Version Introduced
 
-1.0-preview
+GA: 1.0-preview

@@ -40,4 +40,4 @@ The identifier assigned to a *billing account* by the invoice issuer.
 
 ## Version Introduced
 
-0.5
+GA: 0.5

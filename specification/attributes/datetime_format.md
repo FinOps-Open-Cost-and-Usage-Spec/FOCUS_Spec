@@ -28,4 +28,4 @@ Rules and formatting requirements for date/time-related columns appearing in a [
 
 ## Version Introduced
 
-0.5
+GA: 0.5

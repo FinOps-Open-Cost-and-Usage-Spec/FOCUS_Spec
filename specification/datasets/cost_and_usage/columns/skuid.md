@@ -58,4 +58,4 @@ Service-provider-specified unique identifier that represents a specific *SKU* (e
 
 ## Version Introduced
 
-1.0-preview
+GA: 1.0-preview

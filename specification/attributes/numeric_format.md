@@ -77,4 +77,4 @@ Rules and formatting requirements for numeric columns appearing in a [*FOCUS dat
 
 ## Version Introduced
 
-1.0-preview
+GA: 1.0-preview

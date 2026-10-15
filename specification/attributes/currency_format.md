@@ -38,4 +38,4 @@ Formatting for currency columns appearing in a [*FOCUS dataset*](#glossary:FOCUS
 
 ## Version Introduced
 
-0.5
+GA: 0.5

@@ -54,4 +54,4 @@ The amount of a *commitment discount* purchased or accounted for in *commitment 
 
 ## Version Introduced
 
-1.1
+GA: 1.1

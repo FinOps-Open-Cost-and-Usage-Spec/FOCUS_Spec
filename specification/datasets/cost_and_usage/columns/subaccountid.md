@@ -40,4 +40,4 @@ An ID assigned to a grouping of [*resources*](#glossary:resource) or [*services*
 
 ## Version Introduced
 
-0.5
+GA: 0.5

@@ -38,4 +38,4 @@ Group by
 
 ## Version Introduced
 
-0.5
+GA: 0.5

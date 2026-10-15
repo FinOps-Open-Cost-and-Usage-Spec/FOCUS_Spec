@@ -53,4 +53,4 @@ Cost of a *charge* based on the service-provider-suggested pricing.
 
 ## Version Introduced
 
-1.0-preview
+GA: 1.0-preview

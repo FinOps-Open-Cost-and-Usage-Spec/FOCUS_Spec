@@ -37,4 +37,4 @@ The *inclusive start bound* of a *billing period*.
 
 ## Version Introduced
 
-0.5
+GA: 0.5

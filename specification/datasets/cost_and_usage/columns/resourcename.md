@@ -39,4 +39,4 @@ Display name assigned to a *resource*.
 
 ## Version Introduced
 
-0.5
+GA: 0.5

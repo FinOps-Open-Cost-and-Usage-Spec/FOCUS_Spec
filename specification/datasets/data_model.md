@@ -36,4 +36,4 @@ The datasets that comprise the FOCUS schema.
 
 ## Version Introduced<!--SkipTOC-->
 
-0.5
+GA: 0.5

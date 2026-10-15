@@ -43,4 +43,4 @@ The identifier assigned to a *commitment discount* by the service provider.
 
 ## Version Introduced
 
-1.0-preview
+GA: 1.0-preview

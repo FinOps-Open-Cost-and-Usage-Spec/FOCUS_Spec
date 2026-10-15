@@ -45,4 +45,4 @@ The volume of a given *SKU* associated with a *resource* or *service* used or pu
 
 ## Version Introduced
 
-1.0-preview
+GA: 1.0-preview

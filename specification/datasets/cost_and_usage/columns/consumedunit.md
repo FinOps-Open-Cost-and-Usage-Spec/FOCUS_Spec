@@ -39,4 +39,4 @@ Service-provider-specified measurement unit indicating how a service provider me
 
 ## Version Introduced
 
-1.0
+GA: 1.0

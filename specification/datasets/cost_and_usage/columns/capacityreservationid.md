@@ -42,4 +42,4 @@ The identifier assigned to a *capacity reservation* by the service provider.
 
 ## Version Introduced
 
-1.1
+GA: 1.1

@@ -75,4 +75,4 @@ Defines how *corrections* to previously delivered FOCUS *dataset artifacts* are 
 
 ## Version Introduced
 
-1.4
+GA: 1.4

@@ -25,4 +25,4 @@ Rules and formatting requirements for columns appearing in a [*FOCUS dataset*](#
 
 ## Version Introduced
 
-1.0-preview
+GA: 1.0-preview

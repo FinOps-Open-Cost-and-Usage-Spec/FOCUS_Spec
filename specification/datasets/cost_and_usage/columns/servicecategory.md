@@ -60,4 +60,4 @@ Highest-level classification of a *service* based on the core function of the *s
 
 ## Version Introduced
 
-0.5
+GA: 0.5

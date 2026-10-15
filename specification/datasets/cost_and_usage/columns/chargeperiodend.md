@@ -37,4 +37,4 @@ The *exclusive end bound* of a *charge period*.
 
 ## Version Introduced
 
-0.5
+GA: 0.5

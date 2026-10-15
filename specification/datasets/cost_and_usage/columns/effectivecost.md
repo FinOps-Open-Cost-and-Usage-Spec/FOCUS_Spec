@@ -52,4 +52,4 @@ Cost of a *charge* based on the *resources* used, *services* used, or *contract 
 
 ## Version Introduced
 
-0.5
+GA: 0.5

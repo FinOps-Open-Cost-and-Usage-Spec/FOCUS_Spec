@@ -37,4 +37,4 @@ Self-contained summary of the *charge's* purpose and price.
 
 ## Version Introduced
 
-1.0-preview
+GA: 1.0-preview

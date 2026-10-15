@@ -24,4 +24,4 @@ Indicates how to handle columns that don't have a value.
 
 ## Version Introduced
 
-0.5
+GA: 0.5

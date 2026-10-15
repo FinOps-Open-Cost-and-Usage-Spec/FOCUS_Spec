@@ -39,4 +39,4 @@ The name of the entity responsible for invoicing for the *resources* or *service
 
 ## Version Introduced
 
-0.5
+GA: 0.5

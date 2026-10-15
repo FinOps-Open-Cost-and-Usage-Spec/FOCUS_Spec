@@ -48,4 +48,4 @@ Indicates whether the *charge* represents either the consumption of a *capacity 
 
 ## Version Introduced
 
-1.1
+GA: 1.1

@@ -37,4 +37,4 @@ The unique customer-issued identifier for tracking the lifecycle of a purchase.
 
 ## Version Introduced
 
-1.4
+GA: 1.4

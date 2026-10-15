@@ -59,4 +59,4 @@ A service-provider-specified unique identifier that represents a specific *SKU P
 
 ## Version Introduced
 
-1.0-preview
+GA: 1.0-preview
