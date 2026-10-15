@@ -61,13 +61,16 @@ Note: The enhanced linter provides contextual error messages showing actual vs e
 ### Document Build Pipeline
 
 1. **Source files**: `*.md` and `*.mdpp` files in `specification/` subdirectories
-2. **markdown-pp**: Processes `spec.mdpp` template, resolving `!INCLUDE` directives to assemble the full spec
+2. **pymarkdownlnt**: Lints the source markdown files (the build stops on errors unless `make force=1`)
 3. **validate_includes.py**: Ensures all `.md` files in each directory are included in corresponding `.mdpp` templates
-4. **pymarkdownlnt**: Lints all markdown files
-5. **Pandoc**: Converts assembled markdown to HTML with custom filters
-6. **wkhtmltopdf**: Generates PDF from HTML
+4. **Code fence check**: Warns about code block markers (` ``` `) that are not aligned to the start of the line
+5. **markdown-pp**: Processes `spec.mdpp` template, resolving `!INCLUDE` directives to assemble `spec.md`
+6. **pymarkdownlnt**: Lints the assembled `spec.md`
+7. **Pandoc**: Converts assembled markdown to HTML with custom filters
+8. **wkhtmltopdf**: Generates PDF from HTML
+9. **pytest**: Validates specification components and build outputs (`specification/tests/`)
 
-* **Anchors:** Pandoc auto-generates heading anchors during the build, so missing HTML `<a name="">` tags are expected. DO NOT flag them.
+* **Anchors:** MarkdownPP generates `<a name="">` anchors for headings when assembling `spec.md` (see [MarkdownPP Guidelines](guidelines/contributors/markdownpp-guidelines.md)), so source files do not need them. DO NOT flag missing HTML `<a name="">` tags.
 
 ### Specification Structure
 
@@ -77,30 +80,24 @@ Note: The enhanced linter provides contextual error messages showing actual vs e
 * `specification/attributes/` - Rules that govern datasets, rows, columns, and values
 * `specification/metadata/` - Dataset metadata schemas
 * `specification/supported_features/` - Catalog of FinOps capabilities enabled by FOCUS datasets
+* `specification/operating_model_conditions/` - Operating model conditions
+* `specification/schemas/` - Machine-readable JSON Schema definitions for JSON-formatted columns
+* `specification/data/` - Example data files used by appendix examples
 * `specification/appendix/` - Examples and supplementary content
 * `supporting_content/` - Background info from spec development
 
 ### Requirements Model (JSON Validation Rules)
 
-The `specification/requirements_model/` directory contains a machine-readable representation of spec requirements:
+`specification/requirements_model/` contains a machine-readable representation of spec requirements. See:
 
-* `model_rules/` - JSON files defining validation rules (organized by attributes/, columns/, datasets/)
-* `build_json.py` - Merges all JSON into `build/model-<version>.json`
-* `tests/` - 32+ pytest tests validating rule structure and dependencies
-
-**Rule ID Format**: `<ArtifactName>-<Type>-<NumericId>-<Status>`
-
-* Types: C (Column), A (Attribute), D (Dataset)
-* Status: M (Mandatory), O (Optional), C (Conditional)
-* Example: `ListUnitPrice-C-001-M`
+* [Requirements Model README](specification/requirements_model/README.md) for structure, build, and tests
+* [Writing Requirements Model Guidelines](guidelines/contributors/writing-requirements-model-guidelines.md) for rule properties and RMId naming
 
 ## Writing Specification Content & Review Guidelines
 
-AI agents generating or reviewing content MUST act as strict technical editors enforcing the FOCUS standards. Focus entirely on specification documents, schema definitions, and markdown formatting. Follow the [Editorial Guidelines](guidelines/contributors/editorial-guidelines.md) for authoring policy (including informative/non-normative notes).
+AI agents generating or reviewing content MUST act as strict technical editors enforcing the FOCUS standards. Focus entirely on specification documents, schema definitions, and markdown formatting.
 
-### Normative Language & Editorial Conventions
-
-* AI agents must follow the [Normative Requirements Guidelines](guidelines/contributors/normative-requirements-guidelines.md) and the [Editorial Guidelines](guidelines/contributors/editorial-guidelines.md) for keywords, requirement structure, terminology, linking, lists, notes, and formatting.
+The contributor guidelines in [`guidelines/contributors/`](guidelines/contributors/) are the source of truth, including the [Editorial Guidelines](guidelines/contributors/editorial-guidelines.md), [Normative Requirements Guidelines](guidelines/contributors/normative-requirements-guidelines.md), [MarkdownPP Guidelines](guidelines/contributors/markdownpp-guidelines.md), and [AI Usage Guidelines](guidelines/contributors/ai-usage-guidelines.md). Use them for keywords, requirement structure, terminology, linking, lists, notes, and formatting. When this file and a guideline disagree, the guideline wins. Use [`specification/glossary.md`](specification/glossary.md) for FOCUS terminology and `.ai/memory/` for saved context across sessions.
 
 ### Validation & Schema Accuracy
 
@@ -118,6 +115,7 @@ AI agents generating or reviewing content MUST act as strict technical editors e
 * **Self-contained comments:** Every review comment or suggestion MUST include all context needed for the author to evaluate it independently. Do not reference other comments (e.g., "same as above" or "see my comment on line X").
 * **Diff-scope discipline:** Only flag issues on lines changed or added by the PR. Pre-existing problems are out of scope unless they create a direct inconsistency with new content in the same PR.
 * **Deduplication:** If your tooling can read PR threads, do not flag already-raised issues or post competing suggestions. To add details, reply to the existing thread.
+* **Guideline-permitted content:** Do not flag content that a guideline explicitly permits. When flagging an issue, cite the specific guideline section that supports it.
 
 ### Issue and Pull Request Templates
 
@@ -159,18 +157,9 @@ These files are committed during active work. After the PR is approved but befor
 
 Persistent learnings are stored in `.ai/memory/` and are not deleted.
 
-## Reference Files
-
-* `.ai/memory/` - Saved context and memory across sessions
-* `specification/glossary.md` - FOCUS terminology definitions
-* `guidelines/` - Development processes and conventions
-
 ## Dependencies
 
-**Python packages** (in requirements.txt):
-
-* pymarkdownlnt, panflute, watchdog
-* pytest, jsonschema (for requirements model tests)
+**Python packages**: See [`requirements.txt`](requirements.txt) (and [`specification/requirements_model/requirements.txt`](specification/requirements_model/requirements.txt) for the requirements model).
 
 **System tools**:
 
