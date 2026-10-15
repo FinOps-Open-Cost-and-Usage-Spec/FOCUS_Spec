@@ -8,27 +8,31 @@ Data generators, which produce FOCUS data, and practitioners, who use it, are as
 
 Its Markdown source stays in GitHub. Its tracking issue, a GitHub issue, records its open questions and every decision, and holds the checklist for building and sharing it.
 
+Where a review artifact sits in the specification lifecycle belongs in the [FOCUS Operating Procedures](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/operating_procedures.md). This guideline covers how one is approved, built, shared, and retired.
+
 ### Roles
 
-* **Working group:** the FOCUS Working Group, the contributors who develop the specification. Everyone in the working group is encouraged to attend the weekly Members meeting, where pull requests are approved.
-* **Maintainers:** working group contributors who lead the project, listed in [MAINTAINERS.md](../MAINTAINERS.md).
-* **Task Force:** a group within the working group that develops related content, led by a Maintainer.
-* **Pull request authors:** the contributors who opened the pull requests that hold the content under review.
-* **Admins:** the GitHub group that merges pull requests.
-* **FinOps Foundation staff:** the FinOps Foundation team that supports FOCUS.
+Members, Maintainers, and Support Staff are defined in section 2.2 of the [FOCUS Operating Procedures](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/operating_procedures.md#22-organization-roles), and Admins in section 6.1.
+
+* **Members:** FOCUS Group Contributors (section 2.2.1). Decisions at the weekly Members meeting follow the Review & Approval process (section 5.2).
+* **Maintainers:** FOCUS Group Maintainers (section 2.2.4), listed in [MAINTAINERS.md](../MAINTAINERS.md).
+* **Task Force:** a group of Members that develops related content, led by a Task Force Convener (section 2.2.3).
+* **Pull request authors:** the Members who opened the pull requests that hold the content under review.
+* **Admins:** FOCUS Admins (section 6.1), who merge pull requests.
+* **Support Staff:** FOCUS Group Support Staff (section 2.2.6), the FinOps Foundation team that supports FOCUS.
 
 ### Lifecycle
 
 | Stage | Who | What happens |
 | --- | --- | --- |
-| 1. Approve | Working group, at the Members meeting | Approve the content and its open questions |
+| 1. Approve | Members meeting | Approve the content and its open questions |
 | 2. Build | Pull request authors, Admins | Combine the content into one pull request, tag one commit, and build the PDF |
-| 3. Share and review | Admins, FinOps Foundation staff | Share the PDF after its Intellectual Property Rights (IPR) review, and collect feedback |
-| 4. Retire | Task Force, with retirement agreed at the Members meeting | Check progress each release, report it at the Members meeting, and retire the review artifact when the working group agrees |
+| 3. Share and review | Admins, Support Staff | Share the PDF after its release's Intellectual Property Rights (IPR) review, and collect feedback |
+| 4. Retire | Task Force, with retirement agreed at the Members meeting | Check progress each release, report it at the Members meeting, and retire the review artifact when the Members meeting agrees |
 
 ## Stage 1: Approve
 
-A review artifact is approved the same way as a pull request (see [Development Processes](contributors/development-processes.md#pull-request-approval-and-conflict-resolution)). Its pull requests need their GitHub approvals and resolved comments, and then the working group approves it at the Members meeting after two presentation cycles. Supported features, the parts of the specification that show how FOCUS data meets common FinOps needs, are part of the content under review.
+A review artifact is approved the same way as a pull request (see [Development Processes](contributors/development-processes.md#pull-request-approval-and-conflict-resolution)). Its pull requests need their GitHub approvals and resolved comments, and then it is approved at the Members meeting, through the Review & Approval process, after two presentation cycles. Supported features, the parts of the specification that show how FOCUS data meets common FinOps needs, are part of the content under review.
 
 A review artifact MUST adhere to the following requirements:
 
@@ -37,6 +41,25 @@ A review artifact MUST adhere to the following requirements:
 * A review artifact MUST have a tracking issue.
 
 ## Stage 2: Build
+
+The content under review stays on its pull request, which targets `working_draft`. When the content spans more than one pull request, the others merge into it first. From approval until the tag, the pull request changes only through those merges and by merging in `working_draft`. When the release that the review artifact goes out with enters its IPR review, the pull request authors merge `working_draft`, at the commit that review starts from, into the pull request and resolve any conflicts. When a resolution changes the content under review, the review artifact goes back to the Members meeting before it is built. Admins then tag the result and build the PDF from the tag. The pull request stays open after the tag, while the PDF stays fixed.
+
+```mermaid
+%%{init: {'gitGraph': {'mainBranchName': 'working_draft'}}}%%
+gitGraph
+  commit id: "Development"
+  branch content-pr
+  commit id: "Content under review"
+  checkout working_draft
+  commit id: "Release enters IPR review"
+  checkout content-pr
+  merge working_draft tag: "Review artifact tag"
+  checkout working_draft
+  commit id: "Later development"
+  checkout content-pr
+  commit id: "Changes from feedback"
+  merge working_draft
+```
 
 A review artifact MUST adhere to the following requirements:
 
@@ -55,12 +78,12 @@ A review artifact MUST adhere to the following requirements:
 
 ## Stage 3: Share and Review
 
-A review artifact goes through an IPR review, a patent review period, at the same time as its release, and is shared only after that review completes. Sharing means sending the PDF, or a link to it, to people for feedback. FinOps Foundation staff collect the feedback. Work on the content continues through the normal development process: its pull request stays open against `working_draft`, and changes based on feedback go into it.
+How the content under review is cleared for IPR belongs in the FOCUS Operating Procedures. A review artifact is shared only after the release it goes out with completes its IPR review, a patent review period. Sharing means sending the PDF, or a link to it, to people for feedback. Support Staff collect the feedback. Work on the content continues through the normal development process: its pull request stays open against `working_draft`, and changes based on feedback go into it.
 
 A review artifact MUST adhere to the following requirements:
 
-* A review artifact MUST complete an IPR review before it is shared.
-* A review artifact's IPR review MUST run at the same time as the IPR review of the release it goes out with.
+* A review artifact MUST NOT be shared before the Steering Committee ratifies review artifacts in the FOCUS Operating Procedures.
+* A review artifact MUST NOT be shared before the IPR review of the release it goes out with is complete.
 * Files from a review artifact build other than the PDF (e.g., `spec.html` or `spec.md`) MUST NOT be shared.
 * A review artifact MUST NOT be announced as part of a release.
 * Any announcement or message that shares a review artifact MUST state that its content, including any sample data, is out for review.
@@ -75,9 +98,9 @@ A review artifact MUST adhere to the following requirements:
 
 * A review artifact MUST have its progress checked at least once per release.
 * Each progress check decision for a review artifact MUST be reported at the Members meeting.
-* Each progress check of a review artifact MUST end in a decision to continue it or to ask the working group to retire it.
+* Each progress check of a review artifact MUST end in a decision to continue it or to ask the Members meeting to retire it.
 * A review artifact MUST NOT be retired when the passage of time is the only reason for retirement.
-* A review artifact MUST NOT be retired unless the working group agrees at the Members meeting on one of the following:
+* A review artifact MUST NOT be retired unless the Members meeting agrees on one of the following:
   * The tracking issue's questions are answered.
   * The content should move toward a release while a question is still open.
   * The content should be closed.
@@ -87,7 +110,7 @@ A review artifact MUST adhere to the following requirements:
 
 ## Tracking Issue
 
-The Task Force records each progress check decision on the tracking issue, including the retirement once the working group agrees to it. The tracking issue also holds the PDF, so a record of what was reviewed stays after retirement.
+The Task Force records each progress check decision on the tracking issue, including the retirement once the Members meeting agrees to it. The tracking issue also holds the PDF, so a record of what was reviewed stays after retirement.
 
 A review artifact MUST adhere to the following requirements:
 
