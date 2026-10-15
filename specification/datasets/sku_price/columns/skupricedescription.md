@@ -37,4 +37,4 @@ Self-contained summary of the *SKU Price's* purpose and offering.
 
 ## Version Introduced
 
-1.5
+Preview: 1.5

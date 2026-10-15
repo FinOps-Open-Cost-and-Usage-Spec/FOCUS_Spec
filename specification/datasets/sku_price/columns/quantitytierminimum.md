@@ -42,4 +42,4 @@ The exclusive lower boundary of a quantity-based pricing tier, measured in the d
 
 ## Version Introduced
 
-1.5
+Preview: 1.5
