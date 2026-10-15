@@ -318,7 +318,7 @@ To ensure consistent language when describing relationships and evaluations betw
 * **Example** (Markdown, illustrative):
 
   ```md
-  > Note: The following section, and examples and other illustrative material elsewhere in this specification, are informative and non-normative. They do not define requirements.
+  > **Note:** The following section, and examples and other illustrative material elsewhere in this specification, are informative and non-normative. They do not define requirements.
   ```
 
 ### Notes and Exceptions
