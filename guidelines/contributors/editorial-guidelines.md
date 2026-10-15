@@ -311,14 +311,14 @@ To ensure consistent language when describing relationships and evaluations betw
 
 * **Informative Examples:** Examples MUST be considered informative and non-normative, and MUST NOT define requirements.
 
-* **Example Note Requirement:** Example sections MUST include a note indicating that the content is informative and non-normative.
+* **Example Note Requirement:** The informative/non-normative note MUST appear ONLY in `specification/overview.md` (Introduction). That single note covers all examples and illustrative material elsewhere in the specification. Example sections, major section overviews other than Introduction, and nested example files MUST NOT repeat the note.
 
   * **Exception:** This requirement does not apply to guideline documents, training materials, or authoring guidance where examples are inherently illustrative.
 
 * **Example** (Markdown, illustrative):
 
   ```md
-  > **Note:** The following examples are informative and non-normative. They do not define requirements.
+  > Note: The following section, and examples and other illustrative material elsewhere in this specification, are informative and non-normative. They do not define requirements.
   ```
 
 ### Notes and Exceptions

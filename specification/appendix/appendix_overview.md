@@ -1,7 +1,5 @@
 # Appendix
 
-> Note: The following section is informative and non-normative. It does not define requirements.
-
 ## Appendix Entries<!--SkipTOC-->
 
 | Topic | Description |
