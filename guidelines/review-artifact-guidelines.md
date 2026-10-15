@@ -61,8 +61,6 @@ A review artifact MUST adhere to the following requirements:
 * A review artifact MUST complete an IPR review before it is shared.
 * A review artifact's IPR review MUST run at the same time as the IPR review of the release it goes out with.
 * Files from a review artifact build other than the PDF (e.g., `spec.html` or `spec.md`) MUST NOT be shared.
-* A review artifact MUST NOT be published on the FOCUS website.
-* A review artifact MUST NOT be published on the FinOps Foundation website.
 * A review artifact MUST NOT be announced as part of a release.
 * Any announcement or message that shares a review artifact MUST state that its content, including any sample data, is out for review.
 * The content under review MUST NOT be part of the release that the review artifact goes out with.
