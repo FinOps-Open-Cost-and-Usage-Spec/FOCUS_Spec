@@ -102,6 +102,7 @@ The contributor guidelines in [`guidelines/contributors/`](guidelines/contributo
 ### Validation & Schema Accuracy
 
 * **Mathematical & Schema Accuracy:** AI reviewers MUST rigorously calculate, parse, and verify all data within examples (especially JSON snippets and tables). Flag any mathematical inconsistencies or hallucinated data. Verify that JSON is structurally valid.
+* **Example Disclaimer:** The informative/non-normative note (`> **Note:** The following section, and examples and other illustrative material elsewhere in this specification, are informative and non-normative. They do not define requirements.`) MUST appear ONLY in `specification/overview.md` (Introduction). It MUST NOT be repeated in other overview files, example sections, or nested example files.
 
 ### File Organization
 
