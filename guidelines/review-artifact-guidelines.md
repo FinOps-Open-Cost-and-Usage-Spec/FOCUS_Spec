@@ -41,6 +41,7 @@ A review artifact MUST adhere to the following requirements:
 A review artifact MUST adhere to the following requirements:
 
 * A review artifact MUST be built from its content as it stood at a single point in time, marked by one tagged commit.
+* The tagged commit of a review artifact MUST be in the `FOCUS_Spec` repository.
 * A review artifact MUST NOT be revised after it is built.
 * The content under review in a review artifact MUST match the approved content.
 * Every other section of a review artifact, except its Version, Status of This Document, and Table of Contents, MUST match the release it goes out with, as that release enters its IPR review.
@@ -54,7 +55,7 @@ A review artifact MUST adhere to the following requirements:
 
 ## Stage 3: Share and Review
 
-A review artifact goes through an IPR review, a patent review period, at the same time as its release, and is shared only after that review completes. Sharing means sending the PDF, or a link to it, to people for feedback. FinOps Foundation staff collect the feedback. Work on the content continues through the normal development process.
+A review artifact goes through an IPR review, a patent review period, at the same time as its release, and is shared only after that review completes. Sharing means sending the PDF, or a link to it, to people for feedback. FinOps Foundation staff collect the feedback. Work on the content continues through the normal development process: its pull request stays open against `working_draft`, and changes based on feedback go into it.
 
 A review artifact MUST adhere to the following requirements:
 
