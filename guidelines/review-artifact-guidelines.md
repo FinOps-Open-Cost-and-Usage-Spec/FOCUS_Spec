@@ -12,6 +12,7 @@ Its Markdown source stays in GitHub. Its tracking issue, a GitHub issue, records
 
 * **Working group:** the FOCUS Working Group, the contributors who develop the specification. Everyone in the working group is encouraged to attend the weekly Members meeting, where pull requests are approved.
 * **Maintainers:** working group contributors who lead the project, listed in [MAINTAINERS.md](../MAINTAINERS.md).
+* **Task Force:** a group within the working group that develops related content, led by a Maintainer.
 * **Pull request authors:** the contributors who opened the pull requests that hold the content under review.
 * **Admins:** the GitHub group that merges pull requests.
 * **FinOps Foundation staff:** the FinOps Foundation team that supports FOCUS.
@@ -23,7 +24,7 @@ Its Markdown source stays in GitHub. Its tracking issue, a GitHub issue, records
 | 1. Approve | Working group, at the Members meeting | Approve the content and its open questions |
 | 2. Build | Pull request authors, Admins | Combine the content into one pull request, tag one commit, and build the PDF |
 | 3. Share and review | Admins, FinOps Foundation staff | Share the PDF after its Intellectual Property Rights (IPR) review, and collect feedback |
-| 4. Retire | Maintainers and the working group, at the Members meeting | Check progress each release, and retire the review artifact when done |
+| 4. Retire | Task Force, with retirement agreed at the Members meeting | Check progress each release, report it at the Members meeting, and retire the review artifact when the working group agrees |
 
 ## Stage 1: Approve
 
@@ -69,15 +70,15 @@ A review artifact MUST adhere to the following requirements:
 
 ## Stage 4: Retire
 
-A review artifact has no time limit, since content can need more than one release to mature. After retirement, the content is closed, continues under a new review artifact, or moves toward a release through a pull request approved at the Members meeting.
+A review artifact has no time limit, since content can need more than one release to mature. The Task Force that owns the content checks its progress at least once per release and reports each decision at the Members meeting. After retirement, the content is closed, continues under a new review artifact, or moves toward a release through a pull request approved at the Members meeting.
 
 A review artifact MUST adhere to the following requirements:
 
 * A review artifact MUST have its progress checked at least once per release.
-* Each progress check of a review artifact MUST take place at the Members meeting.
+* Each progress check decision for a review artifact MUST be reported at the Members meeting.
 * A review artifact MUST be either retired or continued at each progress check.
 * A review artifact MUST NOT be retired when the passage of time is the only reason for retirement.
-* A review artifact MUST NOT be retired unless the Maintainers and the working group agree on one of the following:
+* A review artifact MUST NOT be retired unless the working group agrees at the Members meeting on one of the following:
   * The tracking issue's questions are answered.
   * The content should move toward a release while a question is still open.
   * The content should be closed.
@@ -87,7 +88,7 @@ A review artifact MUST adhere to the following requirements:
 
 ## Tracking Issue
 
-The Maintainers record each progress check decision on the tracking issue, including the retirement.
+The Task Force records each progress check decision on the tracking issue, including the retirement once the working group agrees to it.
 
 A review artifact MUST adhere to the following requirements:
 
