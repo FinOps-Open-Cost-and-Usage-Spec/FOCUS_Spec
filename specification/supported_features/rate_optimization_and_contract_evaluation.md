@@ -1,5 +1,7 @@
 # Rate Optimization and Contract Evaluation
 
+> **Preview:** The SKU Price dataset is a preview in this version of FOCUS. This supported feature depends on it and may change in a future version based on implementation feedback.
+
 ## Description
 
 FOCUS helps compare the rate an organization pays with the rates a [*service provider*](#glossary:service-provider) offers. The [SKU Price](#datamodel.skuprice) dataset holds each price as its own record. Unit Price Type says what kind of price a record holds:

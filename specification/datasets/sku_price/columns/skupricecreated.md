@@ -37,4 +37,4 @@ The timestamp when the SKU Price record was first created.
 
 ## Version Introduced
 
-1.5
+Preview: 1.5

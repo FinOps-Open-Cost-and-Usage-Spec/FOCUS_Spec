@@ -57,4 +57,4 @@ Represents the highest-level classification of a *SKU Price* based on whether it
 
 ## Version Introduced
 
-1.5
+Preview: 1.5

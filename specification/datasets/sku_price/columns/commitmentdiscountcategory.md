@@ -45,4 +45,4 @@ Indicates, for a *SKU Price* record representing a *commitment discount*, whethe
 
 ## Version Introduced
 
-1.5
+Preview: 1.5
