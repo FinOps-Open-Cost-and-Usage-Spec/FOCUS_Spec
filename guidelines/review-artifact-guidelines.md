@@ -2,11 +2,11 @@
 
 ## Overview
 
-A review artifact is a PDF build of the FOCUS Specification that includes content held back from a release, so people can give feedback on it. Only the sections named on its first page are under review, and the rest matches the release it goes out with. It is not a FOCUS release, it is not for production use or conformance claims, and it has no requirements model (the machine-readable form of the specification's rules).
+A review artifact is a PDF build of the FOCUS Specification that includes content held back from a release, so people can give feedback on it. Only the sections it names are under review, and the rest matches the release it goes out with. It is not a FOCUS release, it is not for production use or conformance claims, and it has no requirements model (the machine-readable form of the specification's rules).
 
 Data generators, which produce FOCUS data, and practitioners, who use it, are asked what it would take to generate or use the data it describes. Trying the content out is welcome. What they learn helps settle the open questions that keep the content out of a release.
 
-A review artifact is built once, from its content as it stood at a single point in time, marked by one tagged commit, and never changed. Its Markdown source stays in GitHub. Its tracking issue, a GitHub issue, records its open questions and every decision, and holds the checklist for building and sharing it.
+Its Markdown source stays in GitHub. Its tracking issue, a GitHub issue, records its open questions and every decision, and holds the checklist for building and sharing it.
 
 ### Roles
 
@@ -21,7 +21,7 @@ A review artifact is built once, from its content as it stood at a single point 
 | Stage | Who | What happens |
 | --- | --- | --- |
 | 1. Approve | Working group, at the Members meeting | Approve the content and its open questions |
-| 2. Build | Pull request authors, Admins | Combine the content into one pull request, tag one commit, and build the labeled PDF |
+| 2. Build | Pull request authors, Admins | Combine the content into one pull request, tag one commit, and build the PDF |
 | 3. Share and review | Admins, FinOps Foundation staff | Share the PDF after its Intellectual Property Rights (IPR) review, and collect feedback |
 | 4. Retire | Maintainers and the working group, at the Members meeting | Check progress each release, and retire the review artifact when done |
 
@@ -37,7 +37,7 @@ A review artifact MUST adhere to the following requirements:
 
 ## Stage 2: Build
 
-The content is brought into one pull request, which takes in `working_draft`, the branch where the next release is written. The Admins tag one commit and build the PDF from it. When the approved content has to change before the tag (e.g., to resolve a merge conflict), it is approved again. The label is the text the build adds: a watermark, a version line, and first-page statements, in place of the usual working draft wording.
+When the approved content has to change before the PDF is built (e.g., to resolve a merge conflict), it is approved again.
 
 A review artifact MUST adhere to the following requirements:
 
@@ -49,16 +49,12 @@ A review artifact MUST adhere to the following requirements:
 * A review artifact MUST be a PDF.
 * Links in a review artifact to files in the repository MUST resolve to its tagged commit.
 * Every page of a review artifact MUST show a "Review Artifact" watermark.
-* The version line of a review artifact MUST include the following:
-  * The name of the content under review (e.g., "SKU Price Dataset Review Artifact").
-  * A statement that the document has no version number (e.g., "(Unversioned)").
-* The first page of a review artifact MUST NOT call the document a working draft.
-* The first page of a review artifact MUST include the following:
-  * A statement that the document is not a FOCUS release.
-  * A statement that the document is not for production use or conformance claims.
-  * A statement that trying the content out is welcome.
-  * The names of the sections under review.
-  * A link to the tracking issue.
+* A review artifact MUST open with the following statements:
+  * It is not a FOCUS release.
+  * It is not for production use or conformance claims.
+  * Trying the content out is welcome.
+  * Which sections are under review.
+  * Where its tracking issue is.
 
 ## Stage 3: Share and Review
 
