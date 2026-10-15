@@ -2,7 +2,7 @@
 
 ## Overview
 
-A review artifact is a PDF build of the FOCUS Specification that includes content held back from a release, so people can give feedback on it. Only the sections it names are under review, and the rest matches the release it goes out with. It is not a FOCUS release, it is not for production use or conformance claims, and it has no requirements model (the machine-readable form of the specification's rules).
+A review artifact is a PDF build of the FOCUS Specification that includes content held back from a release, so people can give feedback on it. The sections its content adds or changes are under review, and the rest matches the release it goes out with. It is not a FOCUS release, it is not for production use or conformance claims, and it has no requirements model (the machine-readable form of the specification's rules).
 
 Data generators, which produce FOCUS data, and practitioners, who use it, are asked what it would take to generate or use the data it describes. Trying the content out is welcome. What they learn helps settle the open questions that keep the content out of a release.
 
@@ -37,21 +37,16 @@ A review artifact MUST adhere to the following requirements:
 
 ## Stage 2: Build
 
-When the approved content has to change before the PDF is built (e.g., to resolve a merge conflict), it is approved again.
-
 A review artifact MUST adhere to the following requirements:
 
 * A review artifact MUST be built from its content as it stood at a single point in time, marked by one tagged commit.
 * A review artifact MUST NOT be revised after it is built.
 * The content under review in a review artifact MUST match the approved content.
-* The sections under review MUST include every section that the content under review adds or changes.
-* The sections of a review artifact that are not under review MUST match the release it goes out with, as that release enters its IPR review.
-* A review artifact MUST be a PDF.
+* Every other section of a review artifact MUST match the release it goes out with, as that release enters its IPR review.
 * Links in a review artifact to files in the repository MUST resolve to its tagged commit.
 * Every page of a review artifact MUST show a "Review Artifact" watermark.
 * A review artifact MUST open with the following statements:
-  * It is not a FOCUS release.
-  * It is not for production use or conformance claims.
+  * It is not a FOCUS release, and it is not for production use or conformance claims.
   * Trying the content out is welcome.
   * Which sections are under review.
   * Where its tracking issue is.
