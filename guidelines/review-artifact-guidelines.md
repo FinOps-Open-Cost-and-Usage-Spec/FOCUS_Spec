@@ -49,10 +49,9 @@ The label is the text the build adds to mark the PDF as a review artifact: the w
 A review artifact MUST adhere to the following requirements:
 
 * A review artifact MUST be built from its pull request as it stood at a single point in time, marked by one commit.
-* The commit a review artifact is built from MUST hold only the approved content and changes merged from `working_draft`.
 * The commit a review artifact is built from MUST hold all of the content under review.
 * The commit a review artifact is built from MUST include the `working_draft` commit that the release's IPR review starts from.
-* The commit a review artifact is built from MUST NOT include `working_draft` changes that are not in the commit that the release's IPR review starts from.
+* The commit a review artifact is built from MUST NOT include changes unless they are part of the approved content under review or the `working_draft` commit that the release's IPR review starts from.
 * A review artifact MUST be a PDF.
 * A review artifact MUST NOT be revised after it is built.
 * Every page of a review artifact MUST show a "Review Artifact" watermark.
@@ -66,7 +65,9 @@ A review artifact MUST adhere to the following requirements:
   * The names of the sections under review.
   * A link to the tracking issue.
 * The review artifact label MUST NOT be committed to the pull request.
-* The tracking issue of a review artifact MUST record the Git tag and the commit that the review artifact is built from.
+* The tracking issue of a review artifact MUST record the following for the build:
+  * The Git tag.
+  * The commit that the review artifact is built from.
 
 ## Stage 3: Share and Review
 
@@ -77,8 +78,9 @@ A review artifact MUST adhere to the following requirements:
 * A review artifact MUST complete an IPR review before it is shared.
 * A review artifact's IPR review MUST run in the same period as the IPR review of the release it goes out with.
 * A review artifact MUST be attached to its tracking issue.
-* The HTML, Markdown, and requirements model files that a review artifact build produces (e.g., `spec.html` and `spec.md`) MUST NOT be shared.
-* A review artifact MUST NOT be published on the FOCUS or FinOps Foundation websites.
+* A file that a review artifact build produces MUST NOT be shared unless it is the PDF (e.g., `spec.html`, `spec.md`, and the requirements model file).
+* A review artifact MUST NOT be published on the FOCUS website.
+* A review artifact MUST NOT be published on the FinOps Foundation website.
 * A review artifact MUST NOT be announced as part of a release.
 * Any announcement or message that shares a review artifact MUST state that its content, including any sample data, is out for review.
 * The content under review MUST NOT be part of the release that the review artifact goes out with.
@@ -93,14 +95,15 @@ A progress check can also decide to build a new review artifact from the updated
 
 A review artifact MUST adhere to the following requirements:
 
-* A review artifact MUST have its progress checked by the Maintainers and the working group at least once per release.
+* A review artifact MUST have its progress checked at least once per release.
 * Each progress check of a review artifact MUST take place at the Members meeting.
 * A review artifact MUST be either retired or continued at each progress check.
-* A review artifact MUST NOT be retired only because time has passed.
+* A review artifact MUST NOT be retired when the passage of time is the only reason for retirement.
 * A review artifact MUST NOT be retired unless the Maintainers and the working group agree on one of the following:
   * The tracking issue's questions are answered.
   * The content should move toward a release while a question is still open.
   * The content should be closed.
+  * A new review artifact for the content is shared.
   * The review artifact is no longer useful.
 * A retired review artifact MUST NOT be shared.
 * A retired review artifact MUST stay attached to its tracking issue as a record of what was reviewed.
@@ -111,11 +114,11 @@ A review artifact MUST adhere to the following requirements:
   * A comment.
   * A note at the top of the description.
 
-After retirement, the content is either closed or moves toward a future release. A future release can include it only through a pull request approved at the Members meeting, like any other content.
+After retirement, the content is closed, continues under a new review artifact, or moves toward a future release. A future release can include it only through a pull request approved at the Members meeting, like any other content.
 
 ## Steps for Each Review Artifact
 
-1. **Freeze the pull requests** (pull request authors). From the approval at the Members meeting until the tag in step 2, change the pull requests listed on the tracking issue only by merging `working_draft` into them or merging them together. Before the tag, merge the other listed pull requests into the first one. Then merge `working_draft` into it, up to the commit that the release's IPR review starts from.
+1. **Freeze the pull requests** (pull request authors). From the approval at the Members meeting until the tag in step 2, change the pull requests listed on the tracking issue only by merging `working_draft` into them or merging them together. Before the tag, if more than one pull request is listed, merge the other listed pull requests into the first one. Then merge `working_draft` into the first pull request, up to the commit that the release's IPR review starts from.
 2. **Tag the commit** (Admins). Add a Git tag that names the review artifact to the latest commit in the pull request. Record the tag and the commit on the tracking issue. The tag keeps the reviewed commit intact, so work on the content can continue as usual.
 3. **Build the PDF** (Admins). Build the PDF from the tagged commit, and add the label during the build.
 4. **Send the PDF to IPR review** (Admins). Start the PDF's IPR review in the same period as the release's IPR review.
