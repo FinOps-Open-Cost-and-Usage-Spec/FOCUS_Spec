@@ -10,6 +10,20 @@ Normative requirements are defined and authored exclusively according to the Nor
 
 Authors MUST refer to the [Normative Requirements Guidelines](normative-requirements-guidelines.md) when writing or modifying normative requirements.
 
+The following editorial summary highlights the normative language rules editors most often apply. The Normative Requirements Guidelines remain authoritative.
+
+* **BCP 14 Keywords:** Normative requirements MUST use only the uppercase BCP 14 keywords `MUST`, `MUST NOT`, `SHOULD`, `SHOULD NOT`, and `MAY`. The keywords `REQUIRED`, `SHALL`, `SHALL NOT`, `RECOMMENDED`, `NOT RECOMMENDED`, and `OPTIONAL` MUST NOT be used. See [Use of BCP 14 Keywords](normative-requirements-guidelines.md#use-of-bcp-14-keywords).
+
+* **Keyword Location:** Uppercase BCP 14 keywords MUST NOT appear outside Requirements sections unless quoted (e.g., when discussing the keyword itself).
+
+* **Conditional Keywords:** Conditions in normative requirements MUST use `when`, `unless`, `only when`, or `except when`. The word `if` MUST NOT be used to introduce a normative condition. See [Explicit Conditions in Normative Requirements](normative-requirements-guidelines.md#explicit-conditions-in-normative-requirements).
+
+* **and/or Usage:** The term `and/or` MUST only be used in mathematical validations or conditional clauses.
+
+* **Formal Tone:** Normative requirements MUST NOT contain contractions (e.g., use "do not" instead of "don't").
+
+* **Inline Examples:** Examples embedded in a normative requirement MUST be enclosed in parentheses and introduced with "e.g." (e.g., `... without lossy transformations (e.g., rounding)`).
+
 <table>
     <tr>
         <th>Component</th>
@@ -164,6 +178,8 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
 
 * In the **Glossary** file, entity references MUST be linked only on their first occurrence within each glossary entry, rather than once per source markdown file.
 
+* **Functional Links:** A link whose anchor text differs from the entity name (e.g., a link that points to a specific requirement or section for context) is exempt from first-occurrence linking.
+
 ### Entity References
 
 * **Entity ID References:** Formatting and usage conventions for normative requirements are defined in the Normative Requirements Guidelines.
@@ -173,6 +189,8 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
 * **Entity ID Naming:** Entity IDs MUST match the exact naming conventions used in the schema (e.g., CommitmentDiscountId).
 
 * **Entity Display Name References:** References to FOCUS entities in non-normative content (i.e., outside Requirements sections) MUST use Display Names when available.
+
+* **No Mixing:** Entity IDs and Display Names MUST NOT be mixed within the same normative requirement.
 
 * **Entity Scope:** These rules apply to all entities defined in the FOCUS specification (e.g., Columns, Attributes, Datasets, Objects).
 
