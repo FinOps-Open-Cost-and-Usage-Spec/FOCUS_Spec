@@ -38,4 +38,4 @@ A service-provider-assigned identifier for the type of *commitment discount* app
 
 ## Version Introduced
 
-GA: 1.0-preview
+Preview: 1.0-preview · GA: 1.0

@@ -32,4 +32,4 @@ Naming conventions for *FOCUS columns* appearing in a *FOCUS dataset*.
 
 ## Version Introduced
 
-GA: 0.5
+Preview: 0.5 · GA: 1.0

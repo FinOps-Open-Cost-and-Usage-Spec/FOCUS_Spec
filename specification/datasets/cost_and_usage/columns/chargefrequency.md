@@ -45,4 +45,4 @@ Indicates how often a *charge* will occur.
 
 ## Version Introduced
 
-GA: 1.0-preview
+Preview: 1.0-preview · GA: 1.0

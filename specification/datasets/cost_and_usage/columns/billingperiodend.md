@@ -37,4 +37,4 @@ The *exclusive end bound* of a *billing period*.
 
 ## Version Introduced
 
-GA: 0.5
+Preview: 0.5 · GA: 1.0

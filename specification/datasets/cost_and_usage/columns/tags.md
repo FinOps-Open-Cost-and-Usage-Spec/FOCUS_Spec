@@ -96,4 +96,4 @@ The set of tags assigned to *tag sources* that account for potential provider-de
 
 ## Version Introduced
 
-GA: 1.0-preview
+Preview: 1.0-preview · GA: 1.0

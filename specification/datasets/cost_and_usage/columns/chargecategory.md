@@ -51,4 +51,4 @@ Represents the highest-level classification of a *charge* based on the nature of
 
 ## Version Introduced
 
-GA: 0.5
+Preview: 0.5 · GA: 1.0

@@ -148,4 +148,4 @@ Indicates standards for expressing measurement units in columns appearing in a *
 
 ## Version Introduced
 
-GA: 1.0-preview
+Preview: 1.0-preview · GA: 1.0

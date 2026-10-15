@@ -38,4 +38,4 @@ The kind of *resource* the *charge* applies to.
 
 ## Version Introduced
 
-GA: 1.0-preview
+Preview: 1.0-preview · GA: 1.0

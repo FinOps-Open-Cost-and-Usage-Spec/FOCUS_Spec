@@ -42,4 +42,4 @@ Service-provider-specified measurement unit for determining unit prices, indicat
 
 ## Version Introduced
 
-GA: 1.0-preview
+Preview: 1.0-preview · GA: 1.0
