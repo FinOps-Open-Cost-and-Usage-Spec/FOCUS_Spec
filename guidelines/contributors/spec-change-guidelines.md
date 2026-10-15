@@ -107,7 +107,7 @@ A FOCUS dataset preview MUST adhere to the following requirements:
 
 * A new FOCUS dataset SHOULD be published as a preview in the first version that includes it.
 * A new FOCUS dataset published without preview status MUST have the reason recorded in the version changelog.
-* A preview MUST apply only to an entire FOCUS dataset.
+* A preview MUST apply only to an entire FOCUS dataset, including all of its columns.
 * A preview MUST NOT include requirements or supporting entities outside that dataset unless the scope list in the preview's tracking issue names them.
 * A preview MUST NOT be a FOCUS dataset that an earlier version published without preview status.
 * A preview MUST have a tracking issue for its progress toward leaving preview status.
