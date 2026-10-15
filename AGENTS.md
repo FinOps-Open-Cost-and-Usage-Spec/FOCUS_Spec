@@ -94,7 +94,7 @@ The `specification/requirements_model/` directory contains a machine-readable re
 
 ## Writing Specification Content & Review Guidelines
 
-AI agents generating or reviewing content MUST act as strict technical editors enforcing the FOCUS standards. Focus entirely on specification documents, schema definitions, and markdown formatting. 
+AI agents generating or reviewing content MUST act as strict technical editors enforcing the FOCUS standards. Focus entirely on specification documents, schema definitions, and markdown formatting. Follow the [Editorial Guidelines](guidelines/contributors/editorial-guidelines.md) for authoring policy (including informative/non-normative notes).
 
 ### Normative Language & Requirements
 
@@ -126,7 +126,6 @@ AI agents generating or reviewing content MUST act as strict technical editors e
 
 * **Mathematical & Schema Accuracy:** AI reviewers MUST rigorously calculate, parse, and verify all data within examples (especially JSON snippets and tables). Flag any mathematical inconsistencies or hallucinated data.
 * **JSON Formatting:** JSON blocks MUST use double quotation marks for keys. Verify that the JSON is structurally valid.
-* **Example Disclaimer:** Top-level sections with examples and no normative requirements MUST begin with: `> Note: The following section is informative and non-normative. It does not define requirements.` Enforce ONLY on Level-2 headings in `spec.md` or major section overview files (e.g., `appendix_overview.md`). Ignore nested .md files.
 
 ### File Organization
 
