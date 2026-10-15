@@ -14,11 +14,11 @@ A trained machine learning system (e.g., a large language model) that produces o
 
 <a name="glossary:allocated-charge"><b>Allocated Charge</b></a>
 
-The [charge](#glossary:charge) that was created as the result of an allocation operation. This is used in the context of [Data Generator-Calculated Split Cost Allocation](#supportedfeatures.datagenerator-calculatedsplitcostallocation) to identify the charges that were created from the [origin charge](#glossary:origin-charge) resulting from the application of Data Generator-Calculated Split Cost Allocation.
+The [*charge*](#glossary:charge) that was created as the result of an allocation operation. This is used in the context of [Data Generator-Calculated Split Cost Allocation](#supportedfeatures.datagenerator-calculatedsplitcostallocation) to identify the charges that were created from the [*origin charge*](#glossary:origin-charge) resulting from the application of Data Generator-Calculated Split Cost Allocation.
 
 <a name="glossary:allocated-method"><b>Allocated Method</b></a>
 
-The process or formula by which cost is being allocated from an [origin charge](#glossary:origin-charge) to produce [allocated charges](#glossary:allocated-charge). This is used in the context of [Data Generator-Calculated Split Cost Allocation](#supportedfeatures.datagenerator-calculatedsplitcostallocation) which requires documentation of the method to be provided for any and all allocated methods used. May also be colloquially referred to as allocation method.
+The process or formula by which cost is being allocated from an [*origin charge*](#glossary:origin-charge) to produce [*allocated charges*](#glossary:allocated-charge). This is used in the context of [Data Generator-Calculated Split Cost Allocation](#supportedfeatures.datagenerator-calculatedsplitcostallocation) which requires documentation of the method to be provided for any and all allocated methods used. May also be colloquially referred to as allocation method.
 
 <a name="glossary:amortization"><b>Amortization</b></a>
 
@@ -42,7 +42,7 @@ The time window that an organization receives an invoice for, inclusive of the s
 
 <a name="glossary:block-pricing"><b>Block Pricing</b></a>
 
-A pricing approach where the cost of a particular resource or service is determined based on predefined quantities or tiers of usage. In these scenarios, the Pricing Unit and the corresponding Pricing Quantity can be different from the Consumed Unit and Consumed Quantity.
+A pricing approach where the cost of a particular resource or service is determined based on predefined quantities or tiers of usage. In these scenarios, the [Pricing Unit](#datamodel.costandusage.pricingunit) and the corresponding [Pricing Quantity](#datamodel.costandusage.pricingquantity) can be different from the [Consumed Unit](#datamodel.costandusage.consumedunit) and [Consumed Quantity](#datamodel.costandusage.consumedquantity).
 
 <a name="glossary:cash-based-accounting"><b>Cash-Based Accounting</b></a>
 
@@ -161,7 +161,7 @@ A specification-defined categorical attribute that provides context or categoriz
 
 <a name="glossary:exclusiveendbound"><b>Exclusive End Bound</b></a>
 
-A Date/Time Format value that is not contained within the ending bound of a time period.
+A [Date/Time Format](#attributes.date/timeformat) value that is not contained within the ending bound of a time period.
 
 <a name="glossary:finalized-tag"><b>Finalized Tag</b></a>
 
@@ -193,7 +193,7 @@ The conversion of an amount from one currency to another using a currency exchan
 
 <a name="glossary:inclusivestartbound"><b>Inclusive Start Bound</b></a>
 
-A Date/Time Format value that is contained within the beginning bound of a time period.
+A [Date/Time Format](#attributes.date/timeformat) value that is contained within the beginning bound of a time period.
 
 <a name="glossary:interruptible"><b>Interruptible</b></a>
 
@@ -276,7 +276,7 @@ The collective set of capabilities, business concepts, and data constructs under
 
 <a name="glossary:origin-charge"><b>Origin Charge</b></a>
 
-The [charge](#glossary:charge) that existed prior to an operation. This is used in the context of [Data Generator-Calculated Split Cost Allocation](#supportedfeatures.datagenerator-calculatedsplitcostallocation) to identify the charge that existed prior to the application of Data Generator-Calculated Split Cost Allocation to produce [allocated charges](#glossary:allocated-charge).
+The [*charge*](#glossary:charge) that existed prior to an operation. This is used in the context of [Data Generator-Calculated Split Cost Allocation](#supportedfeatures.datagenerator-calculatedsplitcostallocation) to identify the charge that existed prior to the application of Data Generator-Calculated Split Cost Allocation to produce [*allocated charges*](#glossary:allocated-charge).
 
 <a name="glossary:pascalcase"><b>Pascal Case</b></a>
 
