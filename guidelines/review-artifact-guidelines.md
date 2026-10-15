@@ -88,7 +88,7 @@ A review artifact MUST adhere to the following requirements:
 
 ## Tracking Issue
 
-The Task Force records each progress check decision on the tracking issue, including the retirement once the working group agrees to it.
+The Task Force records each progress check decision on the tracking issue, including the retirement once the working group agrees to it. The tracking issue also holds the PDF, so a record of what was reviewed stays after retirement.
 
 A review artifact MUST adhere to the following requirements:
 
@@ -96,14 +96,10 @@ A review artifact MUST adhere to the following requirements:
   * The questions the review needs to answer.
   * The pull requests that hold the content under review.
   * The sections under review.
-* The tracking issue of a review artifact MUST record the following for the build:
-  * The Git tag.
-  * The commit that the review artifact is built from.
-* A review artifact MUST be attached to its tracking issue, including after it is retired.
-* The tracking issue of a review artifact SHOULD summarize the feedback on it.
 * The tracking issue of a review artifact MUST record the following:
+  * The Git tag and the commit that the review artifact is built from.
   * The decision from each progress check.
   * The date of the next progress check, unless the review artifact is retired.
-* When a review artifact is retired, its tracking issue MUST record the retirement and its reason in the following places:
-  * A comment.
-  * A note at the top of the description.
+* The tracking issue of a review artifact MUST hold its PDF.
+* The tracking issue of a review artifact SHOULD summarize the feedback on it.
+* When a review artifact is retired, the top of its tracking issue's description MUST say so and give the reason.
