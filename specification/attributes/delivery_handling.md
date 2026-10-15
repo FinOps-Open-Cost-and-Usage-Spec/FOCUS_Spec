@@ -4,18 +4,18 @@
 
 The Delivery Handling attribute defines how a [*data generator*](#metadata.datagenerator) delivers a [*FOCUS dataset*](#glossary:FOCUS-dataset) to a customer.
 
-A [*dataset instance*](#glossary:dataset-instance) represents a specific implementation of a [*FOCUS dataset*](#glossary:FOCUS-dataset). A [*dataset instance artifact*](#glossary:dataset-instance-artifact) is the physical delivery of that instance, representing one or more records, independent of storage or transport boundaries (e.g., files, batches, or responses).
+A [*dataset instance*](#glossary:dataset-instance) represents a specific implementation of a *FOCUS dataset*. A [*dataset instance artifact*](#glossary:dataset-instance-artifact) is the physical delivery of that instance, representing one or more records, independent of storage or transport boundaries (e.g., files, batches, or responses).
 
 ### Delivery Mechanisms
 
 FOCUS recognizes two *FOCUS dataset* delivery mechanisms:
 
-* Overwrite: Each delivery provides a complete snapshot, superseding any previously delivered *dataset artifact* for the same [*delivery scope*](#glossary:delivery-scope) (e.g., temporal grouping such as a [*billing period*](#glossary:billing-period) or non-temporal, logical grouping such as a [*contract*](#glossary:contract)).
+* Overwrite: Each delivery provides a complete snapshot, superseding any previously delivered [*dataset artifact*](#glossary:dataset-artifact) for the same [*delivery scope*](#glossary:delivery-scope) (e.g., temporal grouping such as a [*billing period*](#glossary:billing-period) or non-temporal, logical grouping such as a [*contract*](#glossary:contract)).
 * Append: Each delivery adds new data, while previously delivered *dataset artifacts* are preserved.
 
 Overwrite and Append mechanisms are not mutually exclusive, and hybrid implementations are common in practice, allowing data generators to meet specific technical and auditability requirements.
 
-For example, for Cost and Usage *FOCUS datasets*, a data generator may use Overwrite mechanism for *dataset artifacts* corresponding to an [*open billing period*](#glossary:open-billing-period), ensuring the snapshot reflects the most recent state, while using Append mechanism for [*closed billing periods*](#glossary:closed-billing-period) to preserve historical data and support auditing of corrections to previously *closed billing periods* (i.e., [*charges*](#glossary:charge) with Charge Class set to "Correction").
+For example, for [Cost and Usage](#datamodel.costandusage) *FOCUS datasets*, a data generator may use Overwrite mechanism for *dataset artifacts* corresponding to an [*open billing period*](#glossary:open-billing-period), ensuring the snapshot reflects the most recent state, while using Append mechanism for [*closed billing periods*](#glossary:closed-billing-period) to preserve historical data and support auditing of corrections to previously *closed billing periods* (i.e., [*charges*](#glossary:charge) with [Charge Class](#datamodel.costandusage.chargeclass) set to "Correction").
 
 For more information on corrections, see the [Correction Handling attribute](#attributes.correctionhandling).
 
