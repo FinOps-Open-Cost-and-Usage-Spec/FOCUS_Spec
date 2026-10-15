@@ -43,7 +43,7 @@ A review artifact MUST adhere to the following requirements:
 * A review artifact MUST be built from its content as it stood at a single point in time, marked by one tagged commit.
 * A review artifact MUST NOT be revised after it is built.
 * The content under review in a review artifact MUST match the approved content.
-* Every other section of a review artifact MUST match the release it goes out with, as that release enters its IPR review.
+* Every other section of a review artifact, except its Version, Status of This Document, and Table of Contents, MUST match the release it goes out with, as that release enters its IPR review.
 * Links in a review artifact to files in the repository MUST resolve to its tagged commit.
 * Every page of a review artifact MUST show a "Review Artifact" watermark.
 * A review artifact MUST open with the following statements:
@@ -76,7 +76,7 @@ A review artifact MUST adhere to the following requirements:
 
 * A review artifact MUST have its progress checked at least once per release.
 * Each progress check decision for a review artifact MUST be reported at the Members meeting.
-* A review artifact MUST be either retired or continued at each progress check.
+* Each progress check of a review artifact MUST end in a decision to continue it or to ask the working group to retire it.
 * A review artifact MUST NOT be retired when the passage of time is the only reason for retirement.
 * A review artifact MUST NOT be retired unless the working group agrees at the Members meeting on one of the following:
   * The tracking issue's questions are answered.
