@@ -131,7 +131,7 @@ A preview tracking issue MUST adhere to the following requirements:
 * Add a note to each section outside the dataset that has requirements on the scope list (e.g., the Charge Category column in Cost and Usage), naming those requirements and stating that they are excluded from conformance while the dataset is in preview.
 * Record the preview and every later change to it in the version changelog, with migration notes.
 * Set the status of each requirement on the scope list to Preview in the requirements model.
-* Set each Version Introduced section in the dataset to `Preview: <version>` (e.g., `Preview: 1.5`).
+* Set each Version Introduced section in the dataset, including its columns, to `Preview: <version>` (e.g., `Preview: 1.5`).
 
 ### Exiting Preview
 

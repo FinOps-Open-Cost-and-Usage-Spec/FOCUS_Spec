@@ -99,7 +99,7 @@ Feature level is designated based on the following criteria described in the dat
 * A new dataset is published as a preview by default in the first version that includes it.
 * A preview is part of the published specification.
 * A preview may change in the next version without a deprecation notice. The changelog records every change with migration notes.
-* Only an entire dataset can be a preview, and a preview path for single columns and attributes is not yet defined. Requirements outside the dataset are evaluated for conformance as usual unless the dataset's scope list, summarized in its Preview note, names them.
+* Only an entire dataset can be a preview, and its columns are preview as part of it. A preview path for columns and attributes on their own is not yet defined. Requirements outside the dataset are evaluated for conformance as usual unless the dataset's scope list, summarized in its Preview note, names them.
 * A preview is labeled by "(preview)" next to its name in listings (e.g., the data model dataset table) and by a `> **Preview:**` note at the top of its page, examples, and supported features.
 * The requirements in a preview are written the same way as any other requirements. Implementing a preview is optional, and its requirements are not evaluated for conformance, whether or not a data generator provides the dataset.
 * At each later version, FOCUS Members decide whether a preview is promoted out of preview, stays a preview for one more version, or is removed.
