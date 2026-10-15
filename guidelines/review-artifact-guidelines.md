@@ -27,7 +27,7 @@ Its Markdown source stays in GitHub. Its tracking issue, a GitHub issue, records
 
 ## Stage 1: Approve
 
-The working group approves a review artifact at the Members meeting after two presentation cycles, as for a pull request (see [Development Processes](contributors/development-processes.md#pull-request-approval-and-conflict-resolution)). Its pull requests need no GitHub approvals, since they are not merged. Supported features, the parts of the specification that show how FOCUS data meets common FinOps needs, are part of the content under review.
+A review artifact is approved the same way as a pull request (see [Development Processes](contributors/development-processes.md#pull-request-approval-and-conflict-resolution)). Its pull requests need their GitHub approvals and resolved comments, and then the working group approves it at the Members meeting after two presentation cycles. Supported features, the parts of the specification that show how FOCUS data meets common FinOps needs, are part of the content under review.
 
 A review artifact MUST adhere to the following requirements:
 
