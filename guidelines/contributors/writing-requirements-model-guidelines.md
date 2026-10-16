@@ -35,7 +35,7 @@ The first stage of conversion of rules from the normative text to model rules is
 * `EntityId` - The unique identifier of the entity this rule applies to
 * `Notes` - Free form notes (short) included in the model rule document
 * `ModelVersionIntroduced` - Requirements Model Version this rule was added to the Model Rules
-* `Status` - Status of the rule (Valid values: Active, Deprecated, Removed)
+* `Status` - Status of the rule (Valid values: Active, Preview, Deprecated, Removed)
 * `ModelVersionRemoved` - Requirements Model Version this rule was removed from the Model Rules
 * `Conditions` - Specific criteria that must be true of the data generator for this rule to apply to the dataset (named `ApplicabilityCriteria` prior to model version 1.5)
 * `Type` - Identifier if this is a Static or Dynamic rule, with Static rules being possible to assess model without external information being required
@@ -554,9 +554,10 @@ Rule originally from FOCUS v1.2 (unchanged):
 
 #### 12. Status – Set rule lifecycle status
 
-Indicate whether the rule is `Active`, `Deprecated`, or `Removed`.
+Indicate whether the rule is `Active`, `Preview`, `Deprecated`, or `Removed`.
 
 * Default to `Active` unless the normative text explicitly states otherwise.
+* Use `Preview` if the requirement is on a preview's scope list.
 * Use `Deprecated` if the rule is marked for removal or obsolescence.
 * Use `Removed` if the rule is removed from the model.
 

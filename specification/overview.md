@@ -92,6 +92,20 @@ Feature level is designated based on the following criteria described in the dat
 * If the existence of a column is described as `SHOULD`, then the feature level is designated as `Recommended`.
 * If the existence of a column is described as `MAY`, then the feature level is designated as `Optional`.
 
+## Preview
+
+*Preview* is a status for a [*FOCUS dataset*](#glossary:FOCUS-dataset) published in a version of FOCUS so implementers can build it and report what they find. A dataset with this status, called a preview, may change based on that feedback. The release itself is not a preview.
+
+* A new dataset is published as a preview by default in the first version that includes it.
+* A preview is part of the published specification.
+* A preview may change in the next version without a deprecation notice. The changelog records every change with migration notes.
+* Only an entire dataset can be a preview, and its columns are preview as part of it. A preview path for columns and attributes on their own is not yet defined. Requirements outside the dataset are evaluated for conformance as usual unless the dataset's scope list, summarized in its Preview note, names them.
+* A preview is labeled by "(preview)" next to its name in listings (e.g., the data model dataset table), by a `> **Preview:**` note at the top of its page, examples, and supported features, and by `Preview: <version>` with no GA version in each of its Version Introduced sections (e.g., `Preview: 1.5`).
+* The requirements in a preview are written the same way as any other requirements. Implementing a preview is optional, and its requirements are not evaluated for conformance, whether or not a data generator provides the dataset.
+* At each later version, FOCUS Members decide whether a preview is promoted out of preview, stays a preview for one more version, or is removed.
+
+For guidance on when to designate a preview and the criteria to leave preview status, see the [Spec Change Guidelines](/guidelines/contributors/spec-change-guidelines.md).
+
 ## Conformance Checkers and Validators
 
 Validation tools may be employed to determine conformance of data and implementations per this specification.
