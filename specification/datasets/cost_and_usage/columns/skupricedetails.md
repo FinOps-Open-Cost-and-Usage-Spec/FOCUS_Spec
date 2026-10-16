@@ -121,4 +121,4 @@ A set of properties of a SKU Price ID which are meaningful and common to all ins
 
 ## Version Introduced
 
-1.1
+GA: 1.1

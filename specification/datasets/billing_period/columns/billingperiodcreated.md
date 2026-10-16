@@ -37,4 +37,4 @@ The timestamp when the *Billing Period* record was first created.
 
 ## Version Introduced
 
-1.4
+GA: 1.4

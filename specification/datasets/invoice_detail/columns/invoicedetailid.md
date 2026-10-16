@@ -37,4 +37,4 @@ The invoice-issuer-assigned identifier for an Invoice Detail record encapsulatin
 
 ## Version Introduced
 
-1.4
+GA: 1.4

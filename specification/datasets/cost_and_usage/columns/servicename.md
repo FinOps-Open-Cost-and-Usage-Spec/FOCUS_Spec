@@ -44,4 +44,4 @@ An offering that can be purchased from a service provider (e.g., cloud virtual m
 
 ## Version Introduced
 
-0.5
+Preview: 0.5 · GA: 1.0

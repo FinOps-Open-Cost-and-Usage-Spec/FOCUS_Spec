@@ -44,4 +44,4 @@ Indicates whether a *charge* represents a correction to a previously *closed bil
 
 ## Version Introduced
 
-1.0
+GA: 1.0

@@ -36,4 +36,4 @@ A host-provider-assigned identifier for a physically separated and isolated area
 
 ## Version Introduced
 
-0.5
+Preview: 0.5 · GA: 1.0
