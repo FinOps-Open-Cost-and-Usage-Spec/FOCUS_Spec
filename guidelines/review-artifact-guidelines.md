@@ -2,7 +2,7 @@
 
 ## Overview
 
-A review artifact is a PDF build of the FOCUS Specification that includes content held back from a release, so people can give feedback on it. The sections its content adds or changes are under review, and the rest matches the release it goes out with. It is not a FOCUS release, it is not for production use or conformance claims, and it has no requirements model (the machine-readable form of the specification's rules).
+A review artifact is a PDF build of the FOCUS Specification that includes content held back from a release, so people can give feedback on it. The content it adds or changes is under review, and the sections that hold that content are its sections under review. The rest, apart from its Version, Status of This Document, and Table of Contents, matches the release it goes out with. It is not a FOCUS release, it is not for production use or conformance claims, and it has no requirements model (the machine-readable form of the specification's rules).
 
 Data generators, which produce FOCUS data, and practitioners, who use it, are asked what it would take to generate or use the data it describes. Trying the content out is welcome. What they learn helps settle the open questions that keep the content out of a release.
 
@@ -27,7 +27,7 @@ Members, Maintainers, and Support Staff are defined in section 2.2 of the [FOCUS
 | --- | --- | --- |
 | 1. Approve | Members meeting | Approve the content and its open questions |
 | 2. Build | Pull request authors, Admins | Combine the content into one pull request, tag one commit, and build the PDF |
-| 3. Share and review | Admins, Support Staff | Share the PDF after its release's Intellectual Property Rights (IPR) review, and collect feedback |
+| 3. Share and review | Admins, Support Staff | Share the PDF after its release's Intellectual Property Rights (IPR) review and after the review artifact completes the steps the FOCUS Operating Procedures require for it, and collect feedback |
 | 4. Retire | Task Force, with retirement agreed at the Members meeting | Check progress each release, report it at the Members meeting, and retire the review artifact when the Members meeting agrees |
 
 ## Stage 1: Approve
@@ -67,7 +67,7 @@ A review artifact MUST adhere to the following requirements:
 * The tagged commit of a review artifact MUST be in the `FOCUS_Spec` repository.
 * A review artifact MUST NOT be revised after it is built.
 * The content under review in a review artifact MUST match the approved content.
-* Every other section of a review artifact, except its Version, Status of This Document, and Table of Contents, MUST match the release it goes out with, as that release enters its IPR review.
+* The text of a review artifact outside the content under review, except its Version, Status of This Document, and Table of Contents, MUST match the text of the release it goes out with, as that release enters its IPR review.
 * Links in a review artifact to files in the repository MUST resolve to its tagged commit.
 * Every page of a review artifact MUST show a "Review Artifact" watermark.
 * A review artifact MUST open with the following statements:
@@ -78,12 +78,13 @@ A review artifact MUST adhere to the following requirements:
 
 ## Stage 3: Share and Review
 
-How the content under review is cleared for IPR belongs in the FOCUS Operating Procedures. A review artifact is shared only after the release it goes out with completes its IPR review, a patent review period. Sharing means sending the PDF, or a link to it, to people for feedback. Support Staff collect the feedback. Work on the content continues through the normal development process: its pull request stays open against `working_draft`, and changes based on feedback go into it.
+A review artifact is shared only after the release it goes out with completes its IPR review, a patent review period. How the review artifact itself is cleared for IPR, and what approval it needs after its own IPR review, belong in the FOCUS Operating Procedures. Sharing means sending the PDF, or a link to it, to people for feedback. Support Staff collect the feedback. Work on the content continues through the normal development process: its pull request stays open against `working_draft`, and changes based on feedback go into it.
 
 A review artifact MUST adhere to the following requirements:
 
-* A review artifact MUST NOT be shared before the Steering Committee ratifies review artifacts in the FOCUS Operating Procedures.
+* A review artifact MUST NOT be shared before the Steering Committee ratifies the addition of review artifacts to the FOCUS Operating Procedures.
 * A review artifact MUST NOT be shared before the IPR review of the release it goes out with is complete.
+* A review artifact MUST NOT be shared before it completes every review, final approval, and ratification step that the FOCUS Operating Procedures require for it.
 * Files from a review artifact build other than the PDF (e.g., `spec.html` or `spec.md`) MUST NOT be shared.
 * A review artifact MUST NOT be announced as part of a release.
 * Any announcement or message that shares a review artifact MUST state that its content, including any sample data, is out for review.
@@ -106,7 +107,7 @@ A review artifact MUST adhere to the following requirements:
   * The content should be closed.
   * A new review artifact for the content is shared.
   * The review artifact is no longer useful.
-* A retired review artifact MUST NOT be shared.
+* A retired review artifact MUST NOT be shared, apart from the copy its tracking issue keeps as a record.
 
 ## Tracking Issue
 
@@ -122,6 +123,7 @@ A review artifact MUST adhere to the following requirements:
   * The Git tag and the commit that the review artifact is built from.
   * The decision from each progress check.
   * The date of the next progress check, unless the review artifact is retired.
-* The tracking issue of a review artifact MUST hold its PDF.
+* The tracking issue of a review artifact MUST NOT hold its PDF before the review artifact can be shared under Stage 3.
+* The tracking issue of a review artifact MUST hold its PDF from the time the review artifact is first shared, including after it is retired.
 * The tracking issue of a review artifact SHOULD summarize the feedback on it.
 * When a review artifact is retired, the top of its tracking issue's description MUST say so and give the reason.
