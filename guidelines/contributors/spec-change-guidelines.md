@@ -19,6 +19,7 @@ A changelog is provided specifying helpful information to consumers of the FOCUS
 * Deprecation designation of a feature or column to include the version where deprecation occurred
    * Any exception rationale if removal precedes the retention period
 * Designation of the addition of a new dataset, to include whether it is a preview, and its promotion, extension, or removal in a later version
+  * The reason, when a new dataset is published without preview status
 * Designation of the addition of a new feature or column
 * Description of the change
 * Examples of the change, if needed
@@ -128,7 +129,7 @@ A preview tracking issue MUST adhere to the following requirements:
 
 * Add a `> **Preview:**` note at the top of the dataset's page, its examples, and its supported features, summarizing the scope list and linking to the tracking issue.
 * Add "(preview)" after the dataset's name in listings (e.g., the data model dataset table).
-* Add a note to each section outside the dataset that has requirements on the scope list (e.g., the Charge Category column in Cost and Usage), naming those requirements and stating that they are excluded from conformance while the dataset is in preview.
+* Add a note to each section outside the dataset that has requirements on the scope list or defines a supporting entity on it (e.g., the Charge Category column in Cost and Usage), naming them and stating that, while the dataset is in preview, those requirements are excluded from conformance and those supporting entities may change without a deprecation notice.
 * Record the preview and every later change to it in the version changelog, with migration notes.
 * Set the status of each requirement on the scope list to Preview in the requirements model.
 * Set each Version Introduced section in the dataset, including its columns, to `Preview: <version>` (e.g., `Preview: 1.5`).
