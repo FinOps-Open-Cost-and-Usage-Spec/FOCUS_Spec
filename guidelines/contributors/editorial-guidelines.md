@@ -275,6 +275,8 @@ To ensure consistent language when describing relationships and evaluations betw
 
 * **Consistent Subsection Titles:** Subsection titles SHOULD match exactly across sections of the same entity type.
 
+* **Version Sections:** Entity sections MUST NOT include a "Version Updated" section. Changes made after the release in which an entity was introduced are recorded in the [Changelog](/CHANGELOG.md).
+
 * **Normative Scope:** Normative requirements (those using BCP-14 keywords) MUST appear only in the "Requirements" section.
 
 * **No Normative Leakage:** Normative keywords (MUST, SHOULD, MAY, etc.) MUST NOT be used in any section other than "Requirements".
