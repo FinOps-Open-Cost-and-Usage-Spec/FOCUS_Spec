@@ -2,7 +2,7 @@
 
 Title: `[FR] Enable verifiable entity references in specification source`
 
-<!-- Filed as #2779 on 2026-10-17. Later edits on GitHub are not reflected here.
+<!-- Filed as #2779 on 2026-10-17. Synced with the issue body on 2026-10-17.
      Draft for the Feature Request issue template (.github/ISSUE_TEMPLATE/feature-request.yml).
      Only the Requester Information sections are filled in; Maintainer Assessment is left for triage.
      Title: 61 characters. -->
@@ -60,7 +60,7 @@ Not applicable. This request affects how the specification source is authored an
 * Prior art:
   * OpenTelemetry semantic conventions (CNCF, Linux Foundation) keep a machine-readable registry and generate the attribute tables in their Markdown docs with the Weaver tool. A CI check (`make table-check`) fails when the docs drift from the registry. Their prose references are still hand-written links and code spans, which is the part this request addresses: <https://opentelemetry.io/blog/2025/otel-weaver/>
   * Bikeshed, the preprocessor used for W3C, WHATWG, and other specifications, links terms through short semantic markers (e.g., `{{foo}}` for IDL terms, `[[FOO]]` for references): <https://pypi.org/project/bikeshed>
-* A working prototype and a presentation are available. The presentation has been shared with Matt Cowsert as a PDF. [Decide with Matt whether to attach it here.]
+* Prototype: branch [`2779-verifiable-entity-references`](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/tree/2779-verifiable-entity-references/supporting_content/semantic_markup_prototype), in `supporting_content/semantic_markup_prototype/`. Its README covers the syntax, rules, checks, and results. `scan_spec.sh` reproduces the spec-wide counts in the Problem Statement, and `build.sh` reproduces the sample results.
 
 ### Proposed Solution / Approach (Optional)
 
@@ -69,8 +69,9 @@ A prototype tested the following approach against the current specification. Mai
 * **Semantic references written as ordinary Markdown links.** The link target names an entity type instead of a location: `[ResourceType](#col)`, `[resource type](#col:ResourceType)`, `[charges](#term)`, `["Usage"](#val:ChargeCategory)`, `[NumericFormat](#attr)`, `[Includes Tags](#omc)`, `[Cost and Usage](#ds)`. This extends the pattern the glossary links already use (`#glossary:charge`). It renders legibly on GitHub, parses as a normal link in Pandoc's `gfm` reader, and passes the existing pymarkdownlnt configuration unchanged. Any other link passes through untouched, so legacy and semantic markup can coexist.
 * **A generated entity registry.** Entities are read from the files that already define them: column files (Column ID, Display Name, dataset, Allowed Values), `glossary.md`, attribute files, operating model condition files, and dataset files. Anchors are computed with the same algorithm markdown-pp uses. Nothing is maintained by hand. The prototype registry holds 424 entities.
 * **A resolver.** A panflute filter runs beside the existing relative-links filter. It applies today's conventions in one place: link the first mention per source file, never self-link, italicize glossary terms, always link in tables except glossary terms, and link either to spec anchors or to source `.md` files for per-file previews. markdown-pp would add one line that marks each `!INCLUDE` file boundary.
+* **Definitions stay as they are.** The registry recognizes each definition by the structure the specification already follows, and it checks that structure on every build (e.g., a missing Column ID, an H1 that differs from the Display Name, or an Allowed Values table without a value column). All 127 column files on `working_draft` pass. Facts the structure cannot hold, such as aliases, go in optional front matter on the defining file. Using front matter in the real build would need markdown-pp to strip it. A comment on this issue gives the details.
 * **Checks enabled by the tags.** Errors cover unknown entities, values not in a column's allowed values, and ColumnIds that exist in more than one dataset without a qualifier. Warnings cover a Display Name used in a Requirements section, untagged ColumnIds and display names, and hard-coded entity links, each with the exact suggested rewrite.
-* **Prototype results.** The original `billedcost.md` and `chargeclass.md` produced 51 findings. After conversion they produced none, and every difference between the built output and the hand-written originals was a consistency fix.
+* **Prototype results.** Against a registry built from the specification as it is, the original `billedcost.md` and `chargeclass.md` produced 51 findings. The prototype's alias demo adds one more (an italic *covered* recognized as the *covered charge* glossary term), for 52. After conversion the files produced none, and every difference between the built output and the hand-written originals was a consistency fix.
 * **Phased migration that never breaks the build.**
   1. The resolver runs in warn-only mode.
   2. A script applies the suggested rewrites, one folder per PR, with each PR showing the difference in the built specification.
