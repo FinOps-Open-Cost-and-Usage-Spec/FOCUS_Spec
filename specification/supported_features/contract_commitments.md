@@ -20,7 +20,9 @@ The Contract Applied column contains several FOCUS-defined properties. For more 
   * ContractCommitmentId
   * ContractCommitmentPeriodEnd
   * ContractCommitmentPeriodStart
+  * ContractCommitmentQuantity
   * ContractCommitmentType
+  * ContractCommitmentUnit
   * ContractId
 
 ## Example SQL Queries
@@ -73,7 +75,7 @@ ORDER BY ServiceProviderName, ContractCommitmentId
 
 ### Report on Usage Against Contract Commitment by Category
 
-This query takes inputs of a time range via ChargePeriodStart and ChargePeriodEnd, then presents the aggregation of the application of contract commitments from the CostAndUsage dataset per ServiceProviderName and ContractCommitmentId by filtering on the specified time range, along with ChargeCategory of `Usage`. It also joins in the ContractCommitment dataset to provide further information about each contract commitment (in this case, the contract, category, type, start and end date/time, and committed cost).
+This query takes inputs of a time range via ChargePeriodStart and ChargePeriodEnd, then presents the aggregation of the application of contract commitments from the CostAndUsage dataset per ServiceProviderName and ContractCommitmentId by filtering on the specified time range, along with ChargeCategory of `Usage`. It also joins in the ContractCommitment dataset to provide further information about each contract commitment (in this case, the contract, category, type, start and end date/time, committed cost, and committed quantity and unit). It reports applied cost only, so Contract Applied entries that record an applied quantity without an applied cost are excluded.
 
 ```sql
 SELECT
@@ -88,6 +90,8 @@ SELECT
   CC.ContractCommitmentPeriodEnd,
   CC.BillingCurrency,
   CC.ContractCommitmentCost,
+  CC.ContractCommitmentQuantity,
+  CC.ContractCommitmentUnit,
   SUM(CAST(JSON_VALUE(CA, '$.ContractCommitmentAppliedCost') AS FLOAT64)) AS ContractCommitmentAppliedCost
 FROM CostAndUsage CU
 CROSS JOIN
@@ -108,7 +112,9 @@ GROUP BY
   CC.ContractCommitmentPeriodStart,
   CC.ContractCommitmentPeriodEnd,
   CC.BillingCurrency,
-  CC.ContractCommitmentCost
+  CC.ContractCommitmentCost,
+  CC.ContractCommitmentQuantity,
+  CC.ContractCommitmentUnit
 ORDER BY
   CU.ServiceProviderName,
   CC.ContractCommitmentCategory,

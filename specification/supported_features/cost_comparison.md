@@ -101,7 +101,7 @@ GROUP BY
 HAVING ABS(SUM(EffectiveCost) - SUM(BilledCost)) > 0.01
 ```
 
-### Commitment Discount Savings by Charge Period
+### Commitment Discount Savings for a Charge Period Range
 
 Compares Contracted Cost with Effective Cost for usage covered by each commitment discount within a [*charge period*](#glossary:chargeperiod) range, isolating the savings attributable to each commitment discount.
 
@@ -112,9 +112,9 @@ SELECT
   CommitmentDiscountId,
   MIN(ChargePeriodStart) AS ChargePeriodStart,
   MAX(ChargePeriodEnd) AS ChargePeriodEnd,
-  SUM(ContractedCost) AS TotalContractedCost,
+  SUM(CASE WHEN CommitmentDiscountStatus = 'Used' THEN ContractedCost ELSE 0 END) AS TotalContractedCost,
   SUM(EffectiveCost) AS TotalEffectiveCost,
-  SUM(ContractedCost) - SUM(EffectiveCost) AS CommitmentDiscountSavings
+  SUM(CASE WHEN CommitmentDiscountStatus = 'Used' THEN ContractedCost ELSE 0 END) - SUM(EffectiveCost) AS CommitmentDiscountSavings
 FROM focus_data_table
 WHERE ChargePeriodStart >= ? AND ChargePeriodEnd < ?
   AND ChargeCategory = 'Usage'

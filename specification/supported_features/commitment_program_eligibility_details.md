@@ -27,6 +27,7 @@ The `ProgramType` property identifies *commitment programs* supported by the pro
 * ChargePeriodEnd
 * ChargePeriodStart
 * CommitmentDiscountId
+* CommitmentDiscountStatus
 * EffectiveCost
 * ServiceName
 * ServiceProviderName
@@ -77,7 +78,7 @@ ORDER BY EligibleUncoveredCost DESC
 
 This query computes a [*commitment discount*](#glossary:commitment-discount) coverage rate using only eligible [*charges*](#glossary:charge) as the denominator. Without eligibility data, practitioners typically divide covered spend by total spend, which produces a coverage rate that includes ineligible charges (e.g., storage services, support fees) in the denominator and may not reflect the actionable coverage opportunity. This query targets discount-bearing programs only; for [*capacity reservation*](#glossary:capacity-reservation) utilization, see the capacity reservation query below.
 
-Note: Unused commitment rows (CommitmentDiscountStatus = "Unused") have CommitmentDiscountId populated and will artificially inflate both the numerator and the denominator if left in the dataset. To calculate a true, utilization-adjusted coverage rate, practitioners should additionally filter out these rows (e.g., AND CU.CommitmentDiscountStatus != 'Unused').
+Note: Unused commitment rows (CommitmentDiscountStatus = "Unused") have CommitmentDiscountId populated and would artificially inflate both the numerator and the denominator, so the query excludes them. CommitmentDiscountStatus is null on rows without a commitment discount, so the filter also keeps null values.
 
 ```sql
 WITH CommitmentDiscountEligible AS (
@@ -88,6 +89,8 @@ WITH CommitmentDiscountEligible AS (
   FROM focus_data_table CU
   WHERE CU.ChargePeriodStart >= ? AND CU.ChargePeriodEnd < ?
     AND CU.ChargeCategory = 'Usage'
+    -- Exclude unused commitment rows; keep rows without a commitment discount
+    AND (CU.CommitmentDiscountStatus IS NULL OR CU.CommitmentDiscountStatus != 'Unused')
     AND (
       -- Include covered rows in the denominator
       CU.CommitmentDiscountId IS NOT NULL

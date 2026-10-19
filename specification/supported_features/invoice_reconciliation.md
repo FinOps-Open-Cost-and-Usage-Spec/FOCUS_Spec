@@ -68,6 +68,7 @@ This query compares each non-tax record in the [InvoiceDetail](#datamodel.invoic
 
 ```sql
 SELECT
+  ID.InvoiceIssuerName,
   ID.InvoiceId,
   ID.InvoiceDetailId,
   ID.InvoiceIssueStatus,
@@ -78,14 +79,17 @@ SELECT
 FROM InvoiceDetail ID
 LEFT JOIN (
   SELECT
+    InvoiceIssuerName,
     InvoiceId,
     InvoiceDetailId,
     SUM(BilledCost) AS TotalBilledCost_CostAndUsage
   FROM CostAndUsage
-  GROUP BY InvoiceId, InvoiceDetailId
-) CU ON ID.InvoiceId = CU.InvoiceId
+  GROUP BY InvoiceIssuerName, InvoiceId, InvoiceDetailId
+) CU ON ID.InvoiceIssuerName = CU.InvoiceIssuerName
+  AND ID.InvoiceId = CU.InvoiceId
   AND ID.InvoiceDetailId = CU.InvoiceDetailId
-WHERE ID.InvoiceId = ?
+WHERE ID.InvoiceIssuerName = ?
+  AND ID.InvoiceId = ?
   AND ID.ChargeCategory != 'Tax'
 ORDER BY ID.InvoiceDetailId
 ```

@@ -92,6 +92,7 @@ Compares the quantity consumed with the quantity priced for the same usage charg
 ```sql
 SELECT
   ServiceProviderName,
+  BillingCurrency,
   ServiceName,
   ConsumedUnit,
   PricingUnit,
@@ -106,6 +107,7 @@ WHERE ChargePeriodStart >= ? AND ChargePeriodEnd < ?
   AND ConsumedQuantity IS NOT NULL
 GROUP BY
   ServiceProviderName,
+  BillingCurrency,
   ServiceName,
   ConsumedUnit,
   PricingUnit
