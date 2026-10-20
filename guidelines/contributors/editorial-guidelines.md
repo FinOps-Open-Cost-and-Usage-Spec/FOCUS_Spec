@@ -299,11 +299,11 @@ To ensure consistent language when describing relationships and evaluations betw
 
 A FOCUS entity name follows one convention across normative requirements, prose, and section headings:
 
-| Where the name appears              | Form         | Example               |
-|-------------------------------------|--------------|-----------------------|
-| Normative requirements              | Entity ID    | AllocatedResourceId   |
-| Prose outside Requirements sections | Display Name | Allocated Resource ID |
-| Section headings                    | Display Name | Allocated Resource ID |
+| Where the name appears              | Form                        | Example               |
+|-------------------------------------|-----------------------------|-----------------------|
+| Normative requirements              | Entity ID                   | AllocatedResourceId   |
+| Prose outside Requirements sections | Display Name (when defined) | Allocated Resource ID |
+| Section headings                    | Display Name (when defined) | Allocated Resource ID |
 
 The rules for normative requirements are in [FOCUS Entity Reference Conventions](normative-requirements-guidelines.md#focus-entity-reference-conventions). The rules for prose are in [Entity References](#entity-references). The rules for section headings are below.
 
@@ -317,7 +317,7 @@ The rules for normative requirements are in [FOCUS Entity Reference Conventions]
 
 * **Entities Without a Display Name:** When an entity has no Display Name (e.g., a JSON object property such as ProgramType), the heading MUST use the name exactly as the schema defines it.
 
-* **Heading Scope:** These rules apply to all section headings, including headings on supported features pages and in appendix example sections.
+* **Heading Scope:** These rules apply to all document titles and section headings in specification content, including headings on supported features pages and in appendix example sections.
 
 * **Example** (Markdown, illustrative):
 
@@ -334,7 +334,7 @@ The rules for normative requirements are in [FOCUS Entity Reference Conventions]
 
 ### Supported Features Pages
 
-A supported features page describes a FinOps capability that FOCUS data enables. It lists the columns the capability uses under Directly Dependent Columns and Supporting Columns, then shows example SQL queries that use them.
+A supported features page describes a FinOps capability that FOCUS data enables. A page that depends on specific columns lists them under Directly Dependent Columns, Supporting Columns, or both, and shows example SQL queries that use them.
 
 * **Single Query Heading:** A page with one example query MUST place it under the level-2 heading `## Example SQL Query`.
 
