@@ -42,7 +42,7 @@ A review artifact MUST adhere to the following requirements:
 
 ## Stage 2: Build
 
-The content under review stays on its pull request, which targets `working_draft`. When the content spans more than one pull request, the others merge into it first. From approval until the tag, the pull request changes only through those merges and by merging in `working_draft`. When the release that the review artifact goes out with enters its IPR review, the pull request authors merge `working_draft`, at the commit that review starts from, into the pull request and resolve any conflicts. When a resolution changes the content under review, the review artifact goes back to the Members meeting before it is built. Admins then tag the result and build the PDF from the tag. The pull request stays open after the tag, while the PDF stays fixed.
+The content under review stays on its pull request, which targets `working_draft`. When the content spans more than one pull request, the others merge into it first. From approval until the tag, the pull request changes only through those merges and by merging in `working_draft`. When the release that the review artifact goes out with enters its IPR review, the pull request authors merge `working_draft`, at the commit that review starts from, into the pull request and resolve any conflicts. When a merge needs a change to the content under review, the review artifact goes back to the Members meeting before it is built. Admins then tag the result and build the PDF from the tag. The pull request stays open after the tag, while the PDF stays fixed.
 
 ```mermaid
 %%{init: {'gitGraph': {'mainBranchName': 'working_draft'}}}%%
@@ -68,17 +68,17 @@ A review artifact MUST adhere to the following requirements:
 * A review artifact MUST NOT be revised after it is built.
 * The content under review in a review artifact MUST match the approved content.
 * The text of a review artifact outside the content under review, except its Version, Status of This Document, and Table of Contents, MUST match the text of the release it goes out with, as that release enters its IPR review.
-* Links in a review artifact to files in the repository MUST resolve to its tagged commit.
+* Links in a review artifact to files in the repository, other than the patent disclosure link, MUST resolve to its tagged commit.
 * Every page of a review artifact MUST show a "Review Artifact" watermark.
 * A review artifact MUST open with the following statements:
   * It is not a FOCUS release, and it is not for production use or conformance claims.
   * Trying the content out is welcome.
-  * Which sections are under review.
+  * Which sections are under review, and which part of each.
   * Where its tracking issue is.
 
 ## Stage 3: Share and Review
 
-A review artifact is shared only after the release it goes out with completes its IPR review, a patent review period. How the review artifact itself is cleared for IPR, and what approval it needs after its own IPR review, belong in the FOCUS Operating Procedures. Sharing means sending the PDF, or a link to it, to people for feedback. Support Staff collect the feedback. Work on the content continues through the normal development process: its pull request stays open against `working_draft`, and changes based on feedback go into it.
+A review artifact is shared only after the release it goes out with completes its IPR review, a patent review period. How the review artifact itself is cleared for IPR, and what approval it needs after its own IPR review, belong in the FOCUS Operating Procedures. Sharing means making the PDF, or a link to it, available to people by any channel, such as email or a website. Giving the PDF to people for the steps the FOCUS Operating Procedures require for it is not sharing. Support Staff collect the feedback. Work on the content continues through the normal development process: its pull request stays open against `working_draft`, and changes based on feedback go into it.
 
 A review artifact MUST adhere to the following requirements:
 
@@ -116,9 +116,10 @@ The Task Force records each progress check decision on the tracking issue, inclu
 A review artifact MUST adhere to the following requirements:
 
 * The tracking issue of a review artifact MUST list the following, as approved at the Members meeting:
+  * The release that the review artifact goes out with.
   * The questions the review needs to answer.
   * The pull requests that hold the content under review.
-  * The sections under review.
+  * The sections under review, and which part of each is under review.
 * The tracking issue of a review artifact MUST record the following:
   * The Git tag and the commit that the review artifact is built from.
   * The decision from each progress check.
