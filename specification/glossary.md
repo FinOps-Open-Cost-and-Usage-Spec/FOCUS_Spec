@@ -193,7 +193,7 @@ The conversion of an amount from one currency to another using a currency exchan
 
 <a name="glossary:general-availability"><b>General Availability (GA)</b></a>
 
-The version of FOCUS in which a [*FOCUS dataset*](#glossary:FOCUS-dataset) is promoted from [*preview*](#glossary:preview) status or initially published without preview status.
+The version of FOCUS in which a [*FOCUS dataset*](#glossary:FOCUS-dataset), or a supporting entity on a preview's scope list, is promoted from [*preview*](#glossary:preview) status or initially published without preview status.
 
 <a name="glossary:inclusivestartbound"><b>Inclusive Start Bound</b></a>
 

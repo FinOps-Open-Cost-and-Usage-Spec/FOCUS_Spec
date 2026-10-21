@@ -134,6 +134,7 @@ A preview tracking issue MUST adhere to the following requirements:
 * Record the preview and every later change to it in the version changelog, with migration notes.
 * Set the status of each requirement on the scope list to Preview in the requirements model.
 * Set each Version Introduced section in the dataset, including its columns, to `Preview: <version>` (e.g., `Preview: 1.5`).
+* Set the Version Introduced section of each supporting entity on the scope list to `Preview: <version>`, unless the tracking issue explicitly notes an exception for that entity.
 
 ### Exiting Preview
 
