@@ -2,6 +2,8 @@
 
 The Includes Quantity Tier Pricing operating model condition represents a verifiable state indicating whether the [*operating model*](#glossary:operating-model) includes quantity-based pricing tiers.
 
+> **Preview:** Includes Quantity Tier Pricing exists for the SKU Price dataset, which is a preview in this version of FOCUS. While that dataset is a preview, Includes Quantity Tier Pricing may change in a future version without a deprecation notice.
+
 ## Requirements
 
 IncludesQuantityTierPricing MUST adhere to the following requirements:
@@ -23,4 +25,4 @@ A verifiable state indicating whether the *operating model* includes quantity-ba
 
 ## Version Introduced
 
-1.5
+Preview: 1.5
