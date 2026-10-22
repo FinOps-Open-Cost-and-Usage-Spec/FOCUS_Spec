@@ -45,3 +45,13 @@ The Requester Details Value Schema defines the structure for the [Requester Deta
 [Download from GitHub](/specification/schemas/datasets/cost_and_usage/requesterdetailsvalueschema.json)
 
 !INCLUDECODE "schemas/datasets/cost_and_usage/requesterdetailsvalueschema.json" (json)
+
+## SKU Price
+
+### SKU Price Eligibility Object Schema
+
+The SKU Price Eligibility Object Schema defines the structure for the [SKU Price Eligibility](#datamodel.skuprice.skupriceeligibility) column.
+
+[Download from GitHub](/specification/schemas/datasets/sku_price/skupriceeligibilityobjectschema.json)
+
+!INCLUDECODE "schemas/datasets/sku_price/skupriceeligibilityobjectschema.json" (json)

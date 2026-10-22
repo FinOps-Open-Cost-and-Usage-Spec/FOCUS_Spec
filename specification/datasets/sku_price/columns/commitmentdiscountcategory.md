@@ -1,0 +1,48 @@
+# Commitment Discount Category
+
+Commitment Discount Category indicates whether the [*commitment discount*](#glossary:commitment-discount) a [SKU Price](#datamodel.skuprice) record relates to is based on usage quantity or cost (aka "spend"). The CommitmentDiscountCategory column is only applicable to *commitment discounts* and not [*negotiated discounts*](#glossary:negotiated-discount).
+
+## Requirements
+
+CommitmentDiscountCategory MUST adhere to the following requirements:
+
+* CommitmentDiscountCategory MUST be of type String.
+* CommitmentDiscountCategory MUST adhere to the following nullability requirements:
+  * CommitmentDiscountCategory MUST be null when the SkuPrice record does not represent the purchase of a commitment discount or a usage rate that applies under a commitment discount.
+  * CommitmentDiscountCategory MUST NOT be null when the SkuPrice record represents the purchase of a commitment discount or a usage rate that applies under a commitment discount.
+* CommitmentDiscountCategory MUST be one of the allowed values.
+
+## Allowed Values
+
+| Value   | Description                                                              |
+|:--------|:-------------------------------------------------------------------------|
+| Spend   | Commitment discounts that require a predetermined amount of spend. |
+| Usage   | Commitment discounts that require a predetermined amount of usage. |
+
+## Column ID
+
+CommitmentDiscountCategory
+
+## Display Name
+
+Commitment Discount Category
+
+## Description
+
+Indicates whether the *commitment discount* a SKU Price record relates to is based on usage quantity or cost (aka "spend").
+
+## Content Constraints
+
+| Constraint                 | Value                                     |
+| :------------------------- | :---------------------------------------- |
+| Dataset                    | [SKU Price](#datamodel.skuprice) |
+| Operating Model Conditions | [Includes Commitment Discounts](#operatingmodelconditions.includescommitmentdiscounts) |
+| Column type                | Dimension                                 |
+| Feature level              | Conditional                               |
+| Allows nulls               | True                                      |
+| Data type                  | String                                    |
+| Value format               | Allowed values                            |
+
+## Version Introduced
+
+1.5
