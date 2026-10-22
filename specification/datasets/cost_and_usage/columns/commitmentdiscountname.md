@@ -9,7 +9,7 @@ CommitmentDiscountName MUST adhere to the following requirements:
 * CommitmentDiscountName MUST be of type String.
 * CommitmentDiscountName MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * CommitmentDiscountName MUST adhere to the following nullability requirements:
-  * CommitmentDiscountName MUST be null when [CommitmentDiscountId](#datasets.costandusage.commitmentdiscountid) is null.
+  * CommitmentDiscountName MUST be null when [CommitmentDiscountId](#datamodel.costandusage.commitmentdiscountid) is null.
   * When CommitmentDiscountId is not null, CommitmentDiscountName MUST adhere to the following requirements:
     * CommitmentDiscountName MUST NOT be null when a display name can be assigned to a *commitment discount*.
     * CommitmentDiscountName MAY be null when a display name cannot be assigned to a *commitment discount*.
@@ -28,14 +28,15 @@ The display name assigned to a *commitment discount*.
 
 ## Content Constraints
 
-| Constraint      | Value                                                |
-| :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datasets.costandusage)             |
-| Column type     | Dimension                                            |
-| Feature level   | Conditional                                          |
-| Allows nulls    | True                                                 |
-| Data type       | String                                               |
-| Value format    | \<not specified>                                     |
+| Constraint                 | Value                                     |
+| :------------------------- | :---------------------------------------- |
+| Dataset                    | [Cost and Usage](#datamodel.costandusage) |
+| Operating Model Conditions | [Includes Commitment Discounts](#operatingmodelconditions.includescommitmentdiscounts) |
+| Column type                | Dimension                                 |
+| Feature level              | Conditional                               |
+| Allows nulls               | True                                      |
+| Data type                  | String                                    |
+| Value format               | \<not specified>                          |
 
 ## Version Introduced
 

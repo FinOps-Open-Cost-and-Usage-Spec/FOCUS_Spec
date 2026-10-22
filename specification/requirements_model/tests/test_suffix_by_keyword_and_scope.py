@@ -1,5 +1,5 @@
 import pytest
-from conftest import requires_version
+from conftest import requires_version, get_conditions
 
 
 # Phrases to exclude from keyword matching to avoid false positives
@@ -39,9 +39,9 @@ def _text_has_keywords(text, keywords=None) -> bool:
     
     return any(kw in s for kw in keywords)
 
-def _rule_has_scope(rule: dict) -> bool:
+def _rule_has_scope(rule: dict, model_version: str) -> bool:
     vc = rule.get("ValidationCriteria") or {}
-    app = rule.get("ApplicabilityCriteria")
+    app = get_conditions(rule, model_version)
     cond = vc.get("Condition")
     ms = vc.get("MustSatisfy")
     has_app = isinstance(app, list) and len(app) > 0
@@ -49,14 +49,14 @@ def _rule_has_scope(rule: dict) -> bool:
     has_ms_scope = _text_has_keywords(ms)
     return has_app or has_cond or has_ms_scope
 
-def _all_requirement_refs_have_scope(rule: dict, rules: dict) -> bool:
+def _all_requirement_refs_have_scope(rule: dict, rules: dict, model_version: str) -> bool:
     vc = rule.get("ValidationCriteria") or {}
     req_refs = set(_iter_rule_ids_in_requirement(vc.get("Requirement")))
     if not req_refs:
         return False
     for ref_id in req_refs:
         linked = (rules.get(ref_id) or {})
-        if not _rule_has_scope(linked):
+        if not _rule_has_scope(linked, model_version):
             return False
     return True
 
@@ -105,7 +105,7 @@ def test_suffixes_unified(cr_json, model_version):
         pytest.skip(reason)
     
     """
-    Scope = non-empty ApplicabilityCriteria OR non-empty Condition OR 'when'/'unless'/'where'/'if it' in MustSatisfy
+    Scope = non-empty applicability conditions (ApplicabilityCriteria pre-1.5, Conditions from 1.5) OR non-empty Condition OR 'when'/'unless'/'where'/'if it' in MustSatisfy
     • If scope: require '-C' (skip '-M'/'-O').
 
     Otherwise (no scope):
@@ -134,7 +134,7 @@ def test_suffixes_unified(cr_json, model_version):
         keyword = (vc.get("Keyword") or "").strip().upper()
 
         # 1) Scope precedence
-        if _rule_has_scope(rule):
+        if _rule_has_scope(rule, model_version):
             if not (isinstance(rid, str) and rid.endswith("-C")):
                 need_c.append(rid)
             continue
@@ -143,7 +143,7 @@ def test_suffixes_unified(cr_json, model_version):
         func = rule.get("Function")
         if func == "Composite":
             # 2.1) Requirement-linked scope forces -C
-            if _all_requirement_refs_have_scope(rule, rules):
+            if _all_requirement_refs_have_scope(rule, rules, model_version):
                 if not (isinstance(rid, str) and rid.endswith("-C")):
                     need_c.append(rid)
                 continue

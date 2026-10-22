@@ -1,6 +1,6 @@
 # Service Provider Name
 
-Service Provider Name is the name of the entity that provides the [*resources*](#glossary:resource) or [*services*](#glossary:service) available for usage or purchase. These services can be built on top of infrastructure provided by a [Host Provider](#datasets.costandusage.hostprovidername); offered as fully integrated solutions; or include complementary offerings such as support, licensing, or consulting. It is commonly used for cost analysis and reporting scenarios.
+Service Provider Name is the name of the entity that provides the [*resources*](#glossary:resource) or [*services*](#glossary:service) available for usage or purchase. These services can be built on top of infrastructure provided by a [Host Provider](#datamodel.costandusage.hostprovidername); offered as fully integrated solutions; or include complementary offerings such as support, licensing, or consulting. It is commonly used for cost analysis and reporting scenarios.
 
 **Notes:**
 
@@ -32,14 +32,15 @@ The name of the entity that made the *resources* or *services* available for pur
 
 ## Content Constraints
 
-| Constraint      | Value                                                |
-| :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datasets.costandusage)             |
-| Column type     | Dimension                                            |
-| Feature level   | Mandatory                                            |
-| Allows nulls    | False                                                |
-| Data type       | String                                               |
-| Value format    | \<not specified>                                     |
+| Constraint                 | Value                                     |
+| :------------------------- | :---------------------------------------- |
+| Dataset                    | [Cost and Usage](#datamodel.costandusage) |
+| Operating Model Conditions | Not applicable                            |
+| Column type                | Dimension                                 |
+| Feature level              | Mandatory                                 |
+| Allows nulls               | False                                     |
+| Data type                  | String                                    |
+| Value format               | \<not specified>                          |
 
 ## Version Introduced
 
