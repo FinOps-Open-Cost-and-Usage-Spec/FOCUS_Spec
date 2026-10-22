@@ -1,6 +1,6 @@
 # Sub Account Name
 
-A Sub Account Name is a display name assigned to a [*sub account*](#glossary:sub-account). Sub account Name is commonly used for scenarios like grouping based on organizational constructs, access management needs, and cost allocation strategies.
+A Sub Account Name is a display name assigned to a [*sub account*](#glossary:sub-account). Sub Account Name is commonly used for scenarios like grouping based on organizational constructs, access management needs, and cost allocation strategies.
 
 ## Requirements
 
