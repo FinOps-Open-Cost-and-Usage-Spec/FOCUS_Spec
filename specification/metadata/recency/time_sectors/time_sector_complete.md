@@ -27,4 +27,4 @@ Time Sector Complete
 
 ## Version Introduced
 
-1.3
+GA: 1.3

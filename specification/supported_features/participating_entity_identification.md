@@ -40,7 +40,7 @@ GROUP BY
 
 ## Version Introduced
 
-1.1
+GA: 1.1
 
 ## Version Updated
 

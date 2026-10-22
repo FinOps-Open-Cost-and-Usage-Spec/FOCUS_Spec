@@ -45,4 +45,4 @@ Identifier representing the *credential* presented on the request that produced 
 
 ## Version Introduced
 
-1.5
+GA: 1.5

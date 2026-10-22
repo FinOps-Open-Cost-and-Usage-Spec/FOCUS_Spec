@@ -71,4 +71,4 @@ The effective percentage reduction applied to the list price of resources or ser
 
 ## Version Introduced
 
-1.4
+GA: 1.4

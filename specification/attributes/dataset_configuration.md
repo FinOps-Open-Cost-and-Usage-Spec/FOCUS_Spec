@@ -44,4 +44,4 @@ Defines configuration options for controlling the structure and content of a FOC
 
 ## Version Introduced
 
-1.4
+GA: 1.4

@@ -27,4 +27,4 @@ Data Type
 
 ## Version Introduced
 
-1.0
+GA: 1.0

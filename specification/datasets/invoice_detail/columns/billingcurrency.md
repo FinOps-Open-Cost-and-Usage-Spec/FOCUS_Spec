@@ -39,4 +39,4 @@ Represents the currency that a *charge* was billed in.
 
 ## Version Introduced
 
-1.4
+GA: 1.4

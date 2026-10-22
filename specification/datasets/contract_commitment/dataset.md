@@ -105,4 +105,4 @@ Describes the terms of contracts agreed between a service provider and a custome
 
 ## Version Introduced<!--SkipTOC-->
 
-1.3
+GA: 1.3

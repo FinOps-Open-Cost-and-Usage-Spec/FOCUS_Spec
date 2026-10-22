@@ -85,4 +85,4 @@ The Billed Cost as expressed in Payment Currency.
 
 ## Version Introduced
 
-1.4
+GA: 1.4

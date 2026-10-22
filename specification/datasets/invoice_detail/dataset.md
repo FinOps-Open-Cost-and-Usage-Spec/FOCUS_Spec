@@ -98,4 +98,4 @@ The financial record of *charges* as they appear on invoices provided by an invo
 
 ## Version Introduced<!--SkipTOC-->
 
-1.4
+GA: 1.4
