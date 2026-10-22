@@ -126,7 +126,7 @@ AI agents generating or reviewing content MUST act as strict technical editors e
 
 * **Mathematical & Schema Accuracy:** AI reviewers MUST rigorously calculate, parse, and verify all data within examples (especially JSON snippets and tables). Flag any mathematical inconsistencies or hallucinated data.
 * **JSON Formatting:** JSON blocks MUST use double quotation marks for keys. Verify that the JSON is structurally valid.
-* **Example Disclaimer:** The informative/non-normative note (`> Note: The following section, and examples and other illustrative material elsewhere in this specification, are informative and non-normative. They do not define requirements.`) MUST appear ONLY in `specification/overview.md` (Introduction). That single note covers examples and illustrative material across the specification. It MUST NOT be repeated on other overview files, example sections, or nested example files.
+* **Example Disclaimer:** The informative/non-normative note MUST appear ONLY in `specification/overview.md` (Introduction). That single note covers examples and illustrative material across the specification. It MUST NOT be repeated on other overview files, example sections, or nested example files. Its wording is the Markdown example that follows Example Note Requirement in the [Editorial Guidelines](guidelines/contributors/editorial-guidelines.md).
 
 ### File Organization
 
