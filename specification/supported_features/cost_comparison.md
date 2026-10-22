@@ -101,6 +101,63 @@ GROUP BY
 HAVING ABS(SUM(EffectiveCost) - SUM(BilledCost)) > 0.01
 ```
 
+### Commitment Discount Savings for a Charge Period Range
+
+Compares Contracted Cost with Effective Cost for usage covered by each commitment discount within a [*charge period*](#glossary:chargeperiod) range, isolating the savings attributable to each commitment discount.
+
+```sql
+SELECT
+  ServiceProviderName,
+  BillingCurrency,
+  CommitmentDiscountId,
+  MIN(ChargePeriodStart) AS ChargePeriodStart,
+  MAX(ChargePeriodEnd) AS ChargePeriodEnd,
+  SUM(CASE WHEN CommitmentDiscountStatus = 'Used' THEN ContractedCost ELSE 0 END) AS TotalContractedCost,
+  SUM(EffectiveCost) AS TotalEffectiveCost,
+  SUM(CASE WHEN CommitmentDiscountStatus = 'Used' THEN ContractedCost ELSE 0 END) - SUM(EffectiveCost) AS CommitmentDiscountSavings
+FROM focus_data_table
+WHERE ChargePeriodStart >= ? AND ChargePeriodEnd < ?
+  AND ChargeCategory = 'Usage'
+  AND CommitmentDiscountId IS NOT NULL
+GROUP BY
+  ServiceProviderName,
+  BillingCurrency,
+  CommitmentDiscountId
+```
+
+### Billing Period vs. Charge Period Comparison
+
+A *billing period* identifies when a charge is invoiced, while a *charge period* identifies when the charge was incurred, so filtering the same data by each can return different totals. This query separates the charges in each *billing period* into those whose *charge period* falls within the *billing period* and those whose *charge period* extends outside it (e.g., purchases that cover a longer term).
+
+```sql
+SELECT
+  ServiceProviderName,
+  BillingCurrency,
+  BillingPeriodStart,
+  BillingPeriodEnd,
+  CASE
+    WHEN ChargePeriodStart >= BillingPeriodStart AND ChargePeriodEnd <= BillingPeriodEnd
+    THEN 'Within Billing Period'
+    ELSE 'Outside Billing Period'
+  END AS ChargePeriodAlignment,
+  MIN(ChargePeriodStart) AS EarliestChargePeriodStart,
+  MAX(ChargePeriodEnd) AS LatestChargePeriodEnd,
+  SUM(BilledCost) AS TotalBilledCost,
+  SUM(EffectiveCost) AS TotalEffectiveCost
+FROM focus_data_table
+WHERE BillingPeriodStart >= ? AND BillingPeriodEnd < ?
+GROUP BY
+  ServiceProviderName,
+  BillingCurrency,
+  BillingPeriodStart,
+  BillingPeriodEnd,
+  CASE
+    WHEN ChargePeriodStart >= BillingPeriodStart AND ChargePeriodEnd <= BillingPeriodEnd
+    THEN 'Within Billing Period'
+    ELSE 'Outside Billing Period'
+  END
+```
+
 ## Version Introduced
 
 0.5
