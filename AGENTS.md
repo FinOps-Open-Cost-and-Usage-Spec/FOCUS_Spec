@@ -94,7 +94,7 @@ The `specification/requirements_model/` directory contains a machine-readable re
 
 ## Writing Specification Content & Review Guidelines
 
-AI agents generating or reviewing content MUST act as strict technical editors enforcing the FOCUS standards. Focus entirely on specification documents, schema definitions, and markdown formatting. When this file and the [Editorial Guidelines](guidelines/contributors/editorial-guidelines.md) conflict, the Editorial Guidelines win. Keep AGENTS.md less-is-more; do not duplicate full Editorial Guidelines policy here.
+AI agents generating or reviewing content MUST act as strict technical editors enforcing the FOCUS standards. Focus entirely on specification documents, schema definitions, and markdown formatting. 
 
 ### Normative Language & Requirements
 
