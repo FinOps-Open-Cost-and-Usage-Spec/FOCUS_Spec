@@ -29,8 +29,8 @@ The following section details the normative requirements for the AllocatedMethod
 The AllocatedMethodDetailsObject MUST adhere to the following requirements:
 
 * AllocatedMethodDetailsObject MUST conform to the [AllocatedMethodDetailsObjectSchema](#schemas.costandusage.allocatedmethoddetailsobjectschema) JSON Schema.
-* AllocatedMethodDetailsObject.Elements[\*].AllocatedRatio MUST represent the allocated charge's percentage of the origin charge.
-* The sum of AllocatedMethodDetailsObject.Elements[\*].AllocatedRatio across all allocated charges related to a single origin charge MUST be equal to 1 (100%).
+* AllocatedMethodDetailsObject.Elements[\*].AllocatedRatio MUST represent the allocated charge's percentage of the origin charge over the allocated charge's [*charge period*](#glossary:charge-period).
+* The sum of AllocatedMethodDetailsObject.Elements[\*].AllocatedRatio across all allocated charges that are related to a single origin charge and share the same ChargePeriodStart and ChargePeriodEnd MUST be equal to 1 (100%).
 * AllocatedMethodDetailsObject.Elements[\*].UsageUnit SHOULD conform to [UnitFormat](#attributes.unitformat) requirements.
 * AllocatedMethodDetailsObject.Elements[\*].UsageUnit MUST represent the unit or component of data generator's documented [AllocationMethod](#datamodel.costandusage.allocatedmethodid) which was used to determine the AllocatedMethodDetailsObject.Elements[\*].AllocatedRatio value.
 * AllocatedMethodDetailsObject.Elements[\*].UsageQuantity SHOULD capture the quantity or volume of the AllocatedMethodDetailsObject.Elements[\*].UsageUnit measured by the data generator that was used to determine the AllocatedMethodDetailsObject.Elements[\*].AllocatedRatio value.
