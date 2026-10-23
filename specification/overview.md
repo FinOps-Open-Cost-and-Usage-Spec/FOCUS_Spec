@@ -15,9 +15,9 @@ This project is supported by the [FinOps Foundation][FODO]. This work initially 
 This specification is designed to be used by three major groups:
 
 * Billing data generators: Entities that present consumption-based billing information related to infrastructure and *service providers*, such as (but not limited to):
-  * [Cloud Service Providers (CSPs)](#glossary:cloud-service-provider)
+  * [*Cloud Service Providers (CSPs)*](#glossary:cloud-service-provider)
   * Software as a Service (SaaS) platforms
-  * [Managed Service Providers (MSPs)](#glossary:managed-service-provider)
+  * [*Managed Service Providers (MSPs)*](#glossary:managed-service-provider)
   * Internal infrastructure and service platforms
 * FinOps tool *providers*: Organizations that provide tools to assist with FinOps
 * FinOps practitioners: Organizations and individuals consuming billing data for doing FinOps
