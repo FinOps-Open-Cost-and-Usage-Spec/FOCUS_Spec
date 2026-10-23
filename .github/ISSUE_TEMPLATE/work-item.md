@@ -21,7 +21,7 @@ Your input ...
 
 ## 2. **Use Case** *
 Describe the use case(s) that this work item addresses.
-Review [How to Craft Use Cases](/supporting_content/usecases/howtocraftusecases.md) for guidance on crafting use cases.
+Review [How to Craft Use Cases](/supporting-content/usecases/howtocraftusecases.md) for guidance on crafting use cases.
 
 Your input ...
 

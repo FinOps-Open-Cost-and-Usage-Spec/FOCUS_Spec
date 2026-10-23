@@ -76,7 +76,7 @@ To ensure complete and error-free removal of deprecated entities from the FOCUS 
 
 2. **Identify All Files Related to the Entity**:
    * Remove definition files from specification paths (for example: `specification/datasets/*/columns/`, or other relevant subfolders)
-   * Remove any applicable supporting content files from `supporting_content/`
+   * Remove any applicable supporting content files from `supporting-content/`
    * Remove the entity from any tables or listings that include it (for example: dataset tables in `specification/datasets/*/dataset.md`)
   
 3. **Update References**:

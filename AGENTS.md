@@ -24,7 +24,7 @@ make clean                    # Clean generated files
 ### Build Requirements Model JSON
 
 ```bash
-cd specification/requirements_model
+cd specification/requirements-model
 ./build_json.py --build-only  # Generate model JSON only
 ./build_json.py               # Run tests then generate JSON
 ```
@@ -32,7 +32,7 @@ cd specification/requirements_model
 ### Run Tests
 
 ```bash
-cd specification/requirements_model
+cd specification/requirements-model
 pytest tests/                 # Run all requirements model tests
 pytest tests/test_schema.py   # Run a single test file
 ```
@@ -74,15 +74,15 @@ Note: The enhanced linter provides contextual error messages showing actual vs e
 * `specification/datasets/{dataset}/columns/` - Column definitions per dataset
 * `specification/attributes/` - Rules that govern datasets, rows, columns, and values
 * `specification/metadata/` - Dataset metadata schemas
-* `specification/supported_features/` - Catalog of FinOps capabilities enabled by FOCUS datasets
+* `specification/supported-features/` - Catalog of FinOps capabilities enabled by FOCUS datasets
 * `specification/appendix/` - Examples and supplementary content
-* `supporting_content/` - Background info from spec development
+* `supporting-content/` - Background info from spec development
 
 ### Requirements Model (JSON Validation Rules)
 
-The `specification/requirements_model/` directory contains a machine-readable representation of spec requirements:
+The `specification/requirements-model/` directory contains a machine-readable representation of spec requirements:
 
-* `model_rules/` - JSON files defining validation rules (organized by attributes/, columns/, datasets/)
+* `model-rules/` - JSON files defining validation rules (organized by attributes/, columns/, datasets/)
 * `build_json.py` - Merges all JSON into `build/model-<version>.json`
 * `tests/` - 32+ pytest tests validating rule structure and dependencies
 
@@ -126,7 +126,7 @@ AI agents generating or reviewing content MUST act as strict technical editors e
 
 * **Mathematical & Schema Accuracy:** AI reviewers MUST rigorously calculate, parse, and verify all data within examples (especially JSON snippets and tables). Flag any mathematical inconsistencies or hallucinated data.
 * **JSON Formatting:** JSON blocks MUST use double quotation marks for keys. Verify that the JSON is structurally valid.
-* **Example Disclaimer:** Top-level sections with examples and no normative requirements MUST begin with: `> Note: The following section is informative and non-normative. It does not define requirements.` Enforce ONLY on Level-2 headings in `spec.md` or major section overview files (e.g., `appendix_overview.md`). Ignore nested .md files.
+* **Example Disclaimer:** Top-level sections with examples and no normative requirements MUST begin with: `> Note: The following section is informative and non-normative. It does not define requirements.` Enforce ONLY on Level-2 headings in `spec.md` or major section overview files (e.g., `appendix-overview.md`). Ignore nested .md files.
 
 ### File Organization
 
@@ -175,7 +175,7 @@ Per-issue working files are stored in `.ai/work/<issue-number>-<kebab-case-name>
 
 Fetch issue details from GitHub (`gh issue view`) rather than saving locally. Summarize relevant requirements into research.md.
 
-These files are committed during active work. After the PR is approved but before merging, delete the working folder. This is a manual step - do not delete working files until final approval is received. Valuable research should be moved to `supporting_content/` before approval.
+These files are committed during active work. After the PR is approved but before merging, delete the working folder. This is a manual step - do not delete working files until final approval is received. Valuable research should be moved to `supporting-content/` before approval.
 
 ### Memory Files
 
