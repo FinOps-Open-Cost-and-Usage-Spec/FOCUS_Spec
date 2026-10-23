@@ -62,6 +62,7 @@ The link form was chosen. It extends the existing `#glossary:` pattern.
 
 * **Dataset scope.** Eleven ColumnIds exist in more than one dataset. Appendix and attribute files need a default dataset or explicit qualifiers.
 * **Plain prose.** May an ordinary phrase that matches an entity name stay untagged?
+* **Self-references.** Should a file tag references to the entity it defines? Recommendation (David Moreau): tag them. Tagging lets the checks identify every mention unambiguously (casing, ColumnId in Requirements) and keeps one rule for all references. The 10 to 20 extra tags per column file are cheap when tools or AI agents apply them. Definitions (H1, Column ID, Display Name) stay untagged. The prototype has not been changed yet: it still exempts self-references from FOCUS004 and FOCUS006, and it does not check tag casing.
 * **Value links.** Should allowed values link to the column's Allowed Values table?
 * **Line numbers.** Lint messages should carry line numbers before strict mode.
 * **Front matter.** markdown-pp would need to strip front matter, which is needed for aliases.

@@ -84,6 +84,7 @@ Open questions for discovery:
 
 * **Dataset scope.** Eleven ColumnIds (e.g., BilledCost, BillingCurrency, InvoiceId) exist in more than one dataset. Which dataset should references in appendix and attribute files resolve to by default?
 * **Plain prose.** May an ordinary phrase that matches an entity name stay untagged?
+* **Self-references.** Should a file tag references to the entity it defines (e.g., `[BilledCost](#col)` inside `billedcost.md`)? Self-references render without a link either way. Recommendation: tag them. Tagging lets the checks identify every mention of an entity unambiguously, so they can verify casing and confirm that Requirements use the ColumnId. It also keeps a single rule: every entity reference is tagged. A column file typically mentions its own column 10 to 20 times, but that cost is small when tags are applied by tools or AI agents. The definitions themselves (the H1 and the Column ID and Display Name sections) stay untagged. The prototype currently exempts self-references from the untagged-reference checks.
 * **Values.** Should allowed values link to their column's Allowed Values table?
 * **Line numbers.** Should check messages carry line numbers before strict mode is enabled?
 
