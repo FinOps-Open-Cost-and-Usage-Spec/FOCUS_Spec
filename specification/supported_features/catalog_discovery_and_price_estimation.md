@@ -1,6 +1,6 @@
 # Catalog Discovery and Price Estimation
 
-> **Preview:** The SKU Price dataset is a preview in this version of FOCUS. This supported feature depends on it and may change in a future version based on implementation feedback.
+> **Preview:** The SKU Price dataset is a preview in this version of FOCUS. This supported feature depends on it and may change in the next version based on implementation feedback. The preview also covers two requirements outside the dataset, which are excluded from conformance, and two operating model conditions and a schema that exist only for SKU Price. [Issue #2768](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2768) tracks the preview and lists each one.
 
 ## Description
 
