@@ -1,5 +1,7 @@
 # SKU Price
 
+> **Preview:** The SKU Price dataset is a preview in this version of FOCUS. Its columns, requirements, and relationships may change in the next version based on implementation feedback. Its requirements are not evaluated for conformance, whether or not the dataset is provided. Two requirements outside the dataset are also excluded from conformance while it is a preview: the [Data Model](#datamodel) requirement to include SKU Price, and the requirement that [Cost and Usage Charge Category](#datamodel.costandusage.chargecategory) match SKU Price Charge Category. The [Includes Purchases](#operatingmodelconditions.includespurchases) and [Includes Quantity Tier Pricing](#operatingmodelconditions.includesquantitytierpricing) operating model conditions and the [SKU Price Eligibility Object Schema](#schemas.skuprice.skupriceeligibilityobjectschema) are part of the preview and may change in the next version without a deprecation notice. [Issue #2768](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2768) tracks the preview.
+
 The SKU Price dataset is the primary dataset for standardizing [*service provider*](#glossary:service-provider) catalog rates, multipliers, and negotiated prices. This dataset enables practitioners to perform precise rate lookups, analyze commitment discounts, and understand the cost mechanics of payable and consumable prices.
 
 The SKU Price dataset represents prices as of the date the dataset is captured. A *service provider* might not include historical prices in their delivery; if so, practitioners can reconstruct price history by combining successive snapshots and comparing them using [SKU Price Effective Start](#datamodel.skuprice.skupriceeffectivestart) and [SKU Price Effective End](#datamodel.skuprice.skupriceeffectiveend). The dataset reflects the prices a *service provider* offers, independent of whether a price was used, and is not derived from [Cost and Usage](#datamodel.costandusage) data.
@@ -124,4 +126,4 @@ Describes the catalog rates, internal multipliers, and negotiated unit prices fo
 
 ## Version Introduced<!--SkipTOC-->
 
-1.5
+Preview: 1.5

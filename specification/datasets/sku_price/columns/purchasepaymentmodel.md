@@ -57,4 +57,4 @@ Defines the financial settlement structure of a purchase.
 
 ## Version Introduced
 
-1.5
+Preview: 1.5

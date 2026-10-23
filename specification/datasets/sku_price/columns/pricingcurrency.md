@@ -41,4 +41,4 @@ The *national currency* or *consumption currency* denomination that a *resource*
 
 ## Version Introduced
 
-1.5
+Preview: 1.5

@@ -40,4 +40,4 @@ The timestamp when the SKU Price record was last updated.
 
 ## Version Introduced
 
-1.5
+Preview: 1.5

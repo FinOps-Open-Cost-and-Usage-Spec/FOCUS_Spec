@@ -46,4 +46,4 @@ A service-provider-specified unique identifier that represents a specific *SKU P
 
 ## Version Introduced
 
-1.5
+Preview: 1.5
