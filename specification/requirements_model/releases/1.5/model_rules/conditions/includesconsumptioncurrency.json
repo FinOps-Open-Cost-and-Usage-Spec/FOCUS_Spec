@@ -1,0 +1,86 @@
+{
+  "CON-IncludesConsumptionCurrency-N-000-C": {
+    "Function": "Composite",
+    "Reference": "IncludesConsumptionCurrency",
+    "EntityType": "Condition",
+    "EntityName": "Includes Consumption Currency",
+    "EntityId": "IncludesConsumptionCurrency",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Static",
+    "Order": 0,
+    "DatasetType": "CON",
+    "DatasetId": null,
+    "DatasetName": null,
+    "ValidationCriteria": {
+      "MustSatisfy": "IncludesConsumptionCurrency MUST adhere to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CON-IncludesConsumptionCurrency-N-001-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CON-IncludesConsumptionCurrency-N-002-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CON-IncludesConsumptionCurrency-N-001-C",
+        "CON-IncludesConsumptionCurrency-N-002-C"
+      ]
+    }
+  },
+  "CON-IncludesConsumptionCurrency-N-001-C": {
+    "Function": "Validation",
+    "Reference": "IncludesConsumptionCurrency",
+    "EntityType": "Condition",
+    "EntityName": "Includes Consumption Currency",
+    "EntityId": "IncludesConsumptionCurrency",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Dynamic",
+    "Order": 10,
+    "DatasetType": "CON",
+    "DatasetId": null,
+    "DatasetName": null,
+    "ValidationCriteria": {
+      "MustSatisfy": "IncludesConsumptionCurrency MUST evaluate to true when the operating model includes prices in consumption currency.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CON-IncludesConsumptionCurrency-N-002-C": {
+    "Function": "Validation",
+    "Reference": "IncludesConsumptionCurrency",
+    "EntityType": "Condition",
+    "EntityName": "Includes Consumption Currency",
+    "EntityId": "IncludesConsumptionCurrency",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Dynamic",
+    "Order": 20,
+    "DatasetType": "CON",
+    "DatasetId": null,
+    "DatasetName": null,
+    "ValidationCriteria": {
+      "MustSatisfy": "IncludesConsumptionCurrency MUST evaluate to false when the operating model does not include prices in consumption currency.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}

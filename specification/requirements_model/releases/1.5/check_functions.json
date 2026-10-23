@@ -70,7 +70,7 @@
         "ColumnName"
       ],
       "FormatAttributes": [
-        "ATT-CurrencyFormat-A-000-M"
+        "ATT-CurrencyFormat-A-000-C"
       ]
     },
     "CheckNoDuplicates": {
@@ -144,7 +144,7 @@
         "ColumnName"
       ],
       "FormatAttributes": [
-        "ATT-CurrencyFormat-A-000-M"
+        "ATT-CurrencyFormat-A-000-C"
       ]
     },
     "FormatDateTime": {

@@ -11,11 +11,11 @@
     "Conditions": [
       "IncludesUsageMeasurement"
     ],
+    "Type": "Static",
     "Order": 0,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ConsumedQuantity MUST adhere to the following requirements:",
       "Keyword": "MUST",
@@ -33,6 +33,10 @@
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-ConsumedQuantity-C-003-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ConsumedQuantity-C-010-C"
           }
         ]
       },
@@ -41,6 +45,7 @@
         "CAU-ConsumedQuantity-C-001-M",
         "CAU-ConsumedQuantity-C-002-M",
         "CAU-ConsumedQuantity-C-003-C",
+        "CAU-ConsumedQuantity-C-010-C",
         "CAU-CostAndUsage-D-011-C"
       ]
     }
@@ -55,11 +60,11 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [],
+    "Type": "Static",
     "Order": 20,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ConsumedQuantity MUST be of type Decimal.",
       "Keyword": "MUST",
@@ -81,11 +86,11 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [],
+    "Type": "Static",
     "Order": 30,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ConsumedQuantity MUST conform to NumericFormat requirements.",
       "Keyword": "MUST",
@@ -107,11 +112,11 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [],
+    "Type": "Static",
     "Order": 40,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ConsumedQuantity MUST adhere to the following nullability requirements:",
       "Keyword": "MUST",
@@ -120,15 +125,15 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ConsumedQuantity-C-009-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-ConsumedQuantity-C-004-C"
           },
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-ConsumedQuantity-C-005-C"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-ConsumedQuantity-C-009-C"
           }
         ]
       },
@@ -150,11 +155,11 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [],
+    "Type": "Static",
     "Order": 50,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ConsumedQuantity MUST be null when ChargeCategory is not \"Usage\", or when ChargeCategory is \"Usage\" and CommitmentDiscountStatus is \"Unused\".",
       "Keyword": "MUST",
@@ -204,11 +209,11 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [],
+    "Type": "Static",
     "Order": 60,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "When ChargeCategory is \"Usage\" and CommitmentDiscountStatus is not \"Unused\", ConsumedQuantity MUST adhere to the following requirements:",
       "Keyword": "MUST",
@@ -258,11 +263,11 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [],
+    "Type": "Static",
     "Order": 70,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ConsumedQuantity MUST NOT be null when ChargeClass is not \"Correction\".",
       "Keyword": "MUST NOT",
@@ -291,11 +296,11 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [],
+    "Type": "Static",
     "Order": 80,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ConsumedQuantity MAY be null when ChargeClass is \"Correction\".",
       "Keyword": "MAY",
@@ -352,11 +357,11 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [],
+    "Type": "Static",
     "Order": 45,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ConsumedQuantity MUST be null when SkuPriceId is null.",
       "Keyword": "MUST",
@@ -372,6 +377,31 @@
       },
       "Dependencies": [
         "CAU-SkuPriceId-C-003-M"
+      ]
+    }
+  },
+  "CAU-ConsumedQuantity-C-010-C": {
+    "Function": "Validation",
+    "Reference": "ConsumedQuantity",
+    "EntityType": "Column",
+    "EntityName": "Consumed Quantity",
+    "EntityId": "ConsumedQuantity",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Dynamic",
+    "Order": 90,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "ConsumedQuantity MUST NOT include tokens counted on a different row with TokenCacheAction \"Read\" or \"Write\" in SkuPriceDetails when SkuPriceDetails on the same row includes neither value (e.g., a cached token that a usage report also counts inside a prompt token total is counted on the \"Read\" row only).",
+      "Keyword": "MUST NOT",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": [
+        "CAU-SkuPriceDetails-C-000-C"
       ]
     }
   }

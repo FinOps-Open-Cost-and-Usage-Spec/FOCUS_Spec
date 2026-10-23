@@ -1,0 +1,148 @@
+{
+  "DMO-DataModel-M-000-M": {
+    "Function": "Composite",
+    "Reference": "DataModel",
+    "EntityType": "DataModel",
+    "EntityName": "Data Model",
+    "EntityId": "DataModel",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Static",
+    "Order": 0,
+    "DatasetType": "DMO",
+    "DatasetId": null,
+    "DatasetName": null,
+    "ValidationCriteria": {
+      "MustSatisfy": "DataModel MUST adhere to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "DMO-DataModel-M-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "DMO-DataModel-M-002-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "DMO-DataModel-M-003-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "DMO-DataModel-M-004-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "DMO-DataModel-M-001-M",
+        "DMO-DataModel-M-002-C",
+        "DMO-DataModel-M-003-C",
+        "DMO-DataModel-M-004-C"
+      ]
+    }
+  },
+  "DMO-DataModel-M-001-M": {
+    "Function": "Presence",
+    "Reference": "CostAndUsage",
+    "EntityType": "DataModel",
+    "EntityName": "Cost and Usage",
+    "EntityId": "CostAndUsage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Dynamic",
+    "Order": 10,
+    "DatasetType": "DMO",
+    "DatasetId": null,
+    "DatasetName": null,
+    "ValidationCriteria": {
+      "MustSatisfy": "DataModel MUST include CostAndUsage.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "DMO-DataModel-M-002-C": {
+    "Function": "Presence",
+    "Reference": "BillingPeriod",
+    "EntityType": "DataModel",
+    "EntityName": "Billing Period",
+    "EntityId": "BillingPeriod",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "Conditions": [
+      "IncludesPayableInvoices"
+    ],
+    "Type": "Dynamic",
+    "Order": 20,
+    "DatasetType": "DMO",
+    "DatasetId": null,
+    "DatasetName": null,
+    "ValidationCriteria": {
+      "MustSatisfy": "DataModel MUST include BillingPeriod when the operating model includes payable invoices.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "DMO-DataModel-M-003-C": {
+    "Function": "Presence",
+    "Reference": "ContractCommitment",
+    "EntityType": "DataModel",
+    "EntityName": "Contract Commitment",
+    "EntityId": "ContractCommitment",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "Conditions": [
+      "IncludesContractCommitments"
+    ],
+    "Type": "Dynamic",
+    "Order": 30,
+    "DatasetType": "DMO",
+    "DatasetId": null,
+    "DatasetName": null,
+    "ValidationCriteria": {
+      "MustSatisfy": "DataModel MUST include ContractCommitment when the operating model includes contract commitments.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "DMO-DataModel-M-004-C": {
+    "Function": "Presence",
+    "Reference": "InvoiceDetail",
+    "EntityType": "DataModel",
+    "EntityName": "Invoice Detail",
+    "EntityId": "InvoiceDetail",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "Conditions": [
+      "IncludesPayableInvoices"
+    ],
+    "Type": "Dynamic",
+    "Order": 40,
+    "DatasetType": "DMO",
+    "DatasetId": null,
+    "DatasetName": null,
+    "ValidationCriteria": {
+      "MustSatisfy": "DataModel MUST include InvoiceDetail when the operating model includes payable invoices.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}
