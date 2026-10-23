@@ -4,7 +4,7 @@ This directory contains tests for the custom markdown linter rules used in the F
 
 ## Test Files
 
-### test_linter_violations.md
+### test-linter-violations.md
 
 A comprehensive test file containing intentional markdown linting violations of various types. Use this to verify that both built-in and custom linter rules are working correctly.
 
@@ -56,7 +56,7 @@ From the `specification/` directory, run:
 
 ```bash
 # Test with the enhanced linter wrapper (shows detailed error context)
-python3 enhanced_markdown_lint.py --config markdownlnt.cfg scan ../custom_linter_rules/tests/test_linter_violations.md
+python3 enhanced_markdown_lint.py --config markdownlnt.cfg scan ../custom-linter-rules/tests/test-linter-violations.md
 ```
 
 **Expected output:** 30 MD991 violations plus some MD012 and MD022 violations, with enhanced error messages showing:
@@ -70,14 +70,14 @@ From the `specification/` directory, run:
 
 ```bash
 # Test with standard pymarkdownlnt (without enhancements)
-pymarkdownlnt --config markdownlnt.cfg scan ../custom_linter_rules/tests/test_linter_violations.md
+pymarkdownlnt --config markdownlnt.cfg scan ../custom-linter-rules/tests/test-linter-violations.md
 ```
 
 **Expected output:** 30 MD991 violations plus some MD012 and MD022 violations, with standard pymarkdownlnt error format.
 
 ### Test Title Case Logic
 
-From the `custom_linter_rules/tests/` directory, run:
+From the `custom-linter-rules/tests/` directory, run:
 
 ```bash
 python3 test_title_case.py
@@ -95,7 +95,7 @@ file.md:line:col: RULE_ID: Message [Actual: 'found text', Expected: 'expected te
 
 Example:
 ```
-test_linter_violations.md:13:4: MD991: Heading should use title case [Actual: 'column id', Expected: 'Column Id']
+test-linter-violations.md:13:4: MD991: Heading should use title case [Actual: 'column id', Expected: 'Column Id']
 ```
 
 ### Key Components
@@ -107,7 +107,7 @@ test_linter_violations.md:13:4: MD991: Heading should use title case [Actual: 'c
 
 ## Adding New Tests
 
-To add new test cases to `test_linter_violations.md`:
+To add new test cases to `test-linter-violations.md`:
 
 1. Add the intentional violation to the file
 2. Run the linter to verify it's detected
@@ -122,7 +122,7 @@ To add new test cases to `test_linter_violations.md`:
 - **Solution:** Make sure you're running from the `specification/` directory
 
 **Issue:** Custom rule MD991 not triggering
-- **Solution:** Verify `markdownlnt.cfg` has `"additional_paths": "../custom_linter_rules/"`
+- **Solution:** Verify `markdownlnt.cfg` has `"additional_paths": "../custom-linter-rules/"`
 
 ## Related Files
 

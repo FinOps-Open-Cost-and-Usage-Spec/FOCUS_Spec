@@ -24,9 +24,9 @@ To correct this misattribution, CrestNode provisioned a reallocation correction 
 
 CSV Examples:
 
-* [Original Dataset Artifact](/specification/data/correction-handling-examples/closed-billing-period/scenario_1_partial_reallocation_original.csv)
-* [Delta Dataset Artifact](/specification/data/correction-handling-examples/closed-billing-period/scenario_1_partial_reallocation_delta.csv)
-* [Ledger Dataset Artifact](/specification/data/correction-handling-examples/closed-billing-period/scenario_1_partial_reallocation_ledger.csv)
+* [Original Dataset Artifact](/specification/data/correction-handling-examples/closed-billing-period/scenario-1-partial-reallocation-original.csv)
+* [Delta Dataset Artifact](/specification/data/correction-handling-examples/closed-billing-period/scenario-1-partial-reallocation-delta.csv)
+* [Ledger Dataset Artifact](/specification/data/correction-handling-examples/closed-billing-period/scenario-1-partial-reallocation-ledger.csv)
 
 Note the following details in the example datasets:
 
@@ -50,8 +50,8 @@ To account for the previously omitted usage, CrestNode provisioned a correction 
 
 CSV Examples:
 
-* [Delta Dataset Artifact](/specification/data/correction-handling-examples/closed-billing-period/scenario_2_late_arriving_usage_delta.csv)
-* [Ledger Dataset Artifact](/specification/data/correction-handling-examples/closed-billing-period/scenario_2_late_arriving_usage_ledger.csv)
+* [Delta Dataset Artifact](/specification/data/correction-handling-examples/closed-billing-period/scenario-2-late-arriving-usage-delta.csv)
+* [Ledger Dataset Artifact](/specification/data/correction-handling-examples/closed-billing-period/scenario-2-late-arriving-usage-ledger.csv)
 
 Note the following details in the example datasets:
 
@@ -72,9 +72,9 @@ Compared to the bulk correction approach, this method ensures transparency and t
 
 CSV Examples:
 
-* [Original Dataset Artifact](/specification/data/correction-handling-examples/closed-billing-period/scenario_3_itemized_cost_only_original.csv)
-* [Delta Dataset Artifact](/specification/data/correction-handling-examples/closed-billing-period/scenario_3_itemized_cost_only_delta.csv)
-* [Ledger Dataset Artifact](/specification/data/correction-handling-examples/closed-billing-period/scenario_3_itemized_cost_only_ledger.csv)
+* [Original Dataset Artifact](/specification/data/correction-handling-examples/closed-billing-period/scenario-3-itemized-cost-only-original.csv)
+* [Delta Dataset Artifact](/specification/data/correction-handling-examples/closed-billing-period/scenario-3-itemized-cost-only-delta.csv)
+* [Ledger Dataset Artifact](/specification/data/correction-handling-examples/closed-billing-period/scenario-3-itemized-cost-only-ledger.csv)
 
 Note the following details in the example datasets:
 
@@ -95,9 +95,9 @@ To reconcile this discrepancy, CrestNode provisioned a bulk cost-only correction
 
 CSV Examples:
 
-* [Original Dataset Artifact](/specification/data/correction-handling-examples/closed-billing-period/scenario_4_bulk_cost_only_original.csv)
-* [Delta Dataset Artifact](/specification/data/correction-handling-examples/closed-billing-period/scenario_4_bulk_cost_only_delta.csv)
-* [Ledger Dataset Artifact](/specification/data/correction-handling-examples/closed-billing-period/scenario_4_bulk_cost_only_ledger.csv)
+* [Original Dataset Artifact](/specification/data/correction-handling-examples/closed-billing-period/scenario-4-bulk-cost-only-original.csv)
+* [Delta Dataset Artifact](/specification/data/correction-handling-examples/closed-billing-period/scenario-4-bulk-cost-only-delta.csv)
+* [Ledger Dataset Artifact](/specification/data/correction-handling-examples/closed-billing-period/scenario-4-bulk-cost-only-ledger.csv)
 
 Note the following details in the example datasets:
 

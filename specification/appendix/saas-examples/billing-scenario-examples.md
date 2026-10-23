@@ -65,7 +65,7 @@ Key observations:
 * Storage has no [ResourceId](#datamodel.costandusage.resourceid) or [ResourceName](#datamodel.costandusage.resourcename) because it is an account-level charge, not tied to a specific [*resource*](#glossary:resource).
 * [BilledCost](#datamodel.costandusage.billedcost) and [EffectiveCost](#datamodel.costandusage.effectivecost) are equal on all rows. These two columns diverge when a purchase [*charge*](#glossary:charge) covers future usage (as with a [*commitment discount*](#glossary:commitment-discount)), because the [*cash-based*](#glossary:cash-based-accounting) outflow is invoiced upfront while cost is recognized on an [*accrual basis*](#glossary:accrual-based-accounting) over time. With no such purchase [*charges*](#glossary:charge) here, the two views produce the same cost per row.
 
-[**CSV Example**](/specification/data/saas_examples/credit_based_consumption_a.csv)
+[**CSV Example**](/specification/data/saas-examples/credit-based-consumption-a.csv)
 
 ## Host-Based SaaS Monitoring: Monthly On-Demand Usage
 
@@ -117,7 +117,7 @@ Key observations:
 * All three *services* share the [ServiceCategory](#datamodel.costandusage.servicecategory) "Management and Governance" per the FOCUS allowed values for logging, monitoring, and observability *services*.
 * [BilledCost](#datamodel.costandusage.billedcost) and [EffectiveCost](#datamodel.costandusage.effectivecost) are equal on all rows because there are no purchase [*charges*](#glossary:charge) covering future usage (see the Credit-Based Consumption example for a full explanation of when these columns diverge).
 
-[**CSV Example**](/specification/data/saas_examples/host_based_saas_monitoring_a.csv)
+[**CSV Example**](/specification/data/saas-examples/host-based-saas-monitoring-a.csv)
 
 ## Seat-Based SaaS Subscription: Annual Upfront with Commitment Discount
 
@@ -180,7 +180,7 @@ Here is how these charges appear in the data (relevant columns only):
 
 **Rounding Note:** The per-user rate of $7.58 is derived from `$4,550 / 12 months / 50 users` = $7.5833, rounded to two decimal places. This means `$7.58 x 50 users x 12 months` = $4,548.00, which is $2.00 less than the $4,550.00 purchase. In a full 12-month dataset, the final month's charge would include a true-up to ensure the sum of [EffectiveCost](#datamodel.costandusage.effectivecost) across all usage rows equals the [BilledCost](#datamodel.costandusage.billedcost) of the purchase row.
 
-[**CSV Example**](/specification/data/saas_examples/seat_based_saas_annual_a.csv)
+[**CSV Example**](/specification/data/saas-examples/seat-based-saas-annual-a.csv)
 
 ## Multi-Unit Usage-Based PaaS: Database-as-a-Service
 
@@ -236,7 +236,7 @@ Key observations:
 * [RegionId](#datamodel.costandusage.regionid) and [RegionName](#datamodel.costandusage.regionname) are populated. This *service provider* deploys database clusters to specific regions, and pricing varies by region.
 * [BilledCost](#datamodel.costandusage.billedcost) and [EffectiveCost](#datamodel.costandusage.effectivecost) are equal on all rows because there are no purchase [*charges*](#glossary:charge) covering future usage (see the Credit-Based Consumption example for a full explanation of when these columns diverge).
 
-[**CSV Example**](/specification/data/saas_examples/multi_unit_paas_database_a.csv)
+[**CSV Example**](/specification/data/saas-examples/multi-unit-paas-database-a.csv)
 
 ## Flat-Rate SaaS Licensing: Fixed Monthly Subscription
 
@@ -282,7 +282,7 @@ Key observations:
 * If the customer chose the annual billing option ($299.00/month billed annually), this would follow a [*commitment discount*](#glossary:commitment-discount) pattern similar to the Seat-Based SaaS Subscription example above, with a Purchase row for the annual payment and monthly Usage rows for amortized [EffectiveCost](#datamodel.costandusage.effectivecost).
 * [BilledCost](#datamodel.costandusage.billedcost) and [EffectiveCost](#datamodel.costandusage.effectivecost) are equal because there are no purchase [*charges*](#glossary:charge) covering future usage (see the Credit-Based Consumption example for a full explanation of when these columns diverge).
 
-[**CSV Example**](/specification/data/saas_examples/flat_rate_saas_licensing_a.csv)
+[**CSV Example**](/specification/data/saas-examples/flat-rate-saas-licensing-a.csv)
 
 ## Annual Commitment Billed Monthly: Seat-Based CRM
 
@@ -326,7 +326,7 @@ Key observations:
 * If the customer chose the annual pay-upfront option ($90.00/user/month), the $10.00 per-seat discount would qualify as a [*commitment discount*](#glossary:commitment-discount), following the pattern in the Seat-Based SaaS Subscription example with a Purchase row and amortized [EffectiveCost](#datamodel.costandusage.effectivecost).
 * This scenario demonstrates that an annual contract does not automatically produce a [*commitment discount*](#glossary:commitment-discount) in FOCUS. The distinguishing factor is whether the commitment provides a price reduction from the standard rate.
 
-[**CSV Example**](/specification/data/saas_examples/annual_commitment_billed_monthly_a.csv)
+[**CSV Example**](/specification/data/saas-examples/annual-commitment-billed-monthly-a.csv)
 
 ## Tiered Pricing with Committed Minimum: Email API Platform
 
@@ -413,4 +413,4 @@ Key observations:
 * [PricingUnit](#datamodel.costandusage.pricingunit) is "Count" on the Purchase row because the plan fee is a single monthly purchase, not denominated in the usage unit (emails). On Usage rows, [PricingUnit](#datamodel.costandusage.pricingunit) is "Emails" because those rows are priced per email.
 * [ChargeFrequency](#datamodel.costandusage.chargefrequency) is "Recurring" on the Purchase rows (the plan fee recurs monthly). On the Usage rows, [ChargeFrequency](#datamodel.costandusage.chargefrequency) is "Usage-Based" for both Used and Unused rows because the amounts vary based on actual email consumption each period.
 
-[**CSV Example**](/specification/data/saas_examples/tiered_pricing_committed_minimum_a.csv)
+[**CSV Example**](/specification/data/saas-examples/tiered-pricing-committed-minimum-a.csv)

@@ -24,7 +24,7 @@ For this scenario, Acme Corp purchases the model directly from the model develop
 * Cache writes are priced at $3.75 per 1,000,000 tokens, a premium over the $3.00 input price.
 * No separate charge applies for retaining cached content.
 
-[**CSV Example**](/specification/data/ai_prompt_caching/ai_prompt_caching_a.csv)
+[**CSV Example**](/specification/data/ai-prompt-caching/ai-prompt-caching-a.csv)
 
 Note the following details in the example dataset:
 
@@ -49,7 +49,7 @@ For this scenario, the same model is served by a cloud provider, LatticeScale, w
 * Tokens placed into the cache are charged at the ordinary $3.00 input price, on the same meter as input tokens that are not cached.
 * Retained content is charged at $1.00 per 1,000,000 token-hours. The 2,000,000 cached tokens are retained for three hours, producing 6,000,000 token-hours.
 
-[**CSV Example**](/specification/data/ai_prompt_caching/ai_prompt_caching_b.csv)
+[**CSV Example**](/specification/data/ai-prompt-caching/ai-prompt-caching-b.csv)
 
 Note the following details in the example dataset:
 

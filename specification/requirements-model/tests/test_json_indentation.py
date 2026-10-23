@@ -1,5 +1,5 @@
 """
-Test that all JSON files in model_rules use 2-space indentation.
+Test that all JSON files in model-rules use 2-space indentation.
 """
 
 import json
@@ -10,8 +10,8 @@ import pytest
 
 
 def get_model_rules_json_files():
-    """Get all JSON files in the model_rules directory."""
-    model_rules_path = Path(__file__).parent.parent / "model_rules"
+    """Get all JSON files in the model-rules directory."""
+    model_rules_path = Path(__file__).parent.parent / "model-rules"
     json_files = []
     
     for root, dirs, files in os.walk(model_rules_path):

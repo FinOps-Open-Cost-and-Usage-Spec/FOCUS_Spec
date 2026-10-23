@@ -163,7 +163,7 @@ This approach ensures clear linkage to the original specification version while 
 * `applicability_criteria.json`: Feature flags controlling rule application
 * `check_functions.json`: Logical validation functions and their arguments
 * `model_datasets.json`: Maps datasets (e.g., FOCUS) to rule sets
-* `model_rules/`: JSON files defining multiple `ModelRules`
+* `model-rules/`: JSON files defining multiple `ModelRules`
 
 ### 📤 Output
 
@@ -285,7 +285,7 @@ This tool is particularly useful for:
 
 ## 📘  Model Rule  Format
 
-Each JSON file in `model_rules/` contains one or more rules structured as:
+Each JSON file in `model-rules/` contains one or more rules structured as:
 
 ```json
 {

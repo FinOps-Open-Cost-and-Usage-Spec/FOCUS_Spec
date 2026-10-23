@@ -7,7 +7,7 @@
       "DatasetType": "CAU",
       "DatasetId": "CostAndUsage",
       "DatasetName": "Cost and Usage",
-      "Schema": "file('datasets/cost_and_usage/allocatedmethoddetailsobjectschema.json')"
+      "Schema": "file('datasets/costandusage/allocatedmethoddetailsobjectschema.json')"
     },
     "CAU-CommitmentProgramEligibilityDetailsObjectSchema-S-001-M": {
       "EntityType": "Schema",
@@ -16,7 +16,7 @@
       "DatasetType": "CAU",
       "DatasetId": "CostAndUsage",
       "DatasetName": "Cost and Usage",
-      "Schema": "file('datasets/cost_and_usage/commitmentprogrameligibilitydetailsobjectschema.json')"
+      "Schema": "file('datasets/costandusage/commitmentprogrameligibilitydetailsobjectschema.json')"
     },
     "CAU-ContractAppliedObjectSchema-S-001-M": {
       "EntityType": "Schema",
@@ -25,7 +25,7 @@
       "DatasetType": "CAU",
       "DatasetId": "CostAndUsage",
       "DatasetName": "Cost and Usage",
-      "Schema": "file('datasets/cost_and_usage/contractappliedobjectschema.json')"
+      "Schema": "file('datasets/costandusage/contractappliedobjectschema.json')"
     },
     "CCT-ContractCommitmentApplicabilityObjectSchema-S-001-M": {
       "EntityType": "Schema",
@@ -34,7 +34,7 @@
       "DatasetType": "CCT",
       "DatasetId": "ContractCommitment",
       "DatasetName": "Contract Commitment",
-      "Schema": "file('datasets/contract_commitment/contractcommitmentapplicabilityobjectschema.json')"
+      "Schema": "file('datasets/contractcommitment/contractcommitmentapplicabilityobjectschema.json')"
     }
   }
 }

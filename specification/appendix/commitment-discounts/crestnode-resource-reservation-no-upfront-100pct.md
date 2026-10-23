@@ -10,7 +10,7 @@
 | Annual Commitment            | $664,008.00  |
 | List Unit Price              | $113.70/hour |
 
-[CSV Example](/specification/data/commitment_discount_scenarios/crestnode_resource_reservation_no_upfront_100pct.csv)
+[CSV Example](/specification/data/commitment-discount-scenarios/crestnode-resource-reservation-no-upfront-100pct.csv)
 
 ## Scenario Description
 

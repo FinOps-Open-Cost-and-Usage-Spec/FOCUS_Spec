@@ -56,7 +56,7 @@ By filtering the denominator to rows where `CommitmentProgramEligibilityDetails 
 
 Row 3 (support fee) is correctly excluded because CommitmentProgramEligibilityDetails is null for ineligible charges.
 
-[CSV Example](/specification/data/commitment_eligibility/coverage_rate_eligibility_adjusted.csv)
+[CSV Example](/specification/data/commitment-eligibility/coverage-rate-eligibility-adjusted.csv)
 
 ## Uncovered Eligible Spend by Program Type
 
@@ -86,4 +86,4 @@ The same logic applies to StackLens: $200.00 of observability spend could be cov
 
 The query uses BilledCost rather than EffectiveCost because all rows are uncovered (CommitmentDiscountId IS NULL). For uncovered usage, BilledCost equals EffectiveCost and reflects the actual amount paid.
 
-[CSV Example](/specification/data/commitment_eligibility/uncovered_eligible_spend_by_program_type.csv)
+[CSV Example](/specification/data/commitment-eligibility/uncovered-eligible-spend-by-program-type.csv)

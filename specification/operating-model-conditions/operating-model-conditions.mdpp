@@ -1,4 +1,4 @@
-!INCLUDE "operating_model_conditions_overview.md",0
+!INCLUDE "operating-model-conditions-overview.md",0
 !INCLUDE "includesaggregationlevelcurrencydifferences.md",1
 !INCLUDE "includesavailabilityzones.md",1
 !INCLUDE "includesbillingpaymentcurrencydifferences.md",1

@@ -9,7 +9,7 @@ import pytest
 
 
 ROOT = Path(__file__).resolve().parents[3]
-MODEL_DIR = ROOT / "specification" / "requirements_model"
+MODEL_DIR = ROOT / "specification" / "requirements-model"
 BUILD_SCRIPT = MODEL_DIR / "build_json.py"
 RELEASES_DIR = MODEL_DIR / "releases"
 

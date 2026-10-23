@@ -36,7 +36,7 @@ on:
     types: [opened, reopened, synchronize]
     paths:
       - 'specification/**'
-      - '.github/workflows/rm_extraction.yml'
+      - '.github/workflows/rm-extraction.yml'
 
 # A rapid series of pushes should leave one run, for the tip.
 concurrency:
@@ -51,8 +51,8 @@ env:
   ACTION_REPO: FinOps-Open-Cost-and-Usage-Spec/FOCUS_RM_Extraction
   ACTION_REF: v1
   SPEC: ./specification
-  BASELINE: ./specification/requirements_model/releases/latest
-  OUT: ./build/requirements_model
+  BASELINE: ./specification/requirements-model/releases/latest
+  OUT: ./build/requirements-model
 
 jobs:
   requirements-model:
@@ -82,9 +82,9 @@ jobs:
         with:
           python-version: '3.12'
           cache: pip
-          cache-dependency-path: specification/requirements_model/requirements.txt
+          cache-dependency-path: specification/requirements-model/requirements.txt
       - name: Install model test dependencies
-        run: pip install -r specification/requirements_model/requirements.txt packaging
+        run: pip install -r specification/requirements-model/requirements.txt packaging
 
       # The specification's own Requirements Model suite, run over the extracted model rather
       # than over a published release. It asks a different question from verify: verify audits
@@ -93,7 +93,7 @@ jobs:
       # not a quirk of the suite.
       #
       # The harness is staged in a scratch tree because build_json.py and tests/conftest.py
-      # both anchor to <root>/specification/requirements_model and discover releases by
+      # both anchor to <root>/specification/requirements-model and discover releases by
       # scanning releases/, so neither can be pointed at an arbitrary folder. Dropping the
       # extraction into the real releases/ would either collide with the published release of
       # the same ModelVersion, since both build to build/model-<version>.json and the last
@@ -107,12 +107,12 @@ jobs:
           set -euo pipefail
 
           EXTRACTED="$(cd "$EXTRACTED" && pwd)"
-          SOURCE="$PWD/specification/requirements_model"
+          SOURCE="$PWD/specification/requirements-model"
           STAGE="${RUNNER_TEMP:-/tmp}/rm-model-tests"
 
           # conftest.py reads ROOT as parents[3] of itself, so both intermediate folders are
           # load-bearing and the staged tree cannot be flattened.
-          MODEL="$STAGE/specification/requirements_model"
+          MODEL="$STAGE/specification/requirements-model"
           rm -rf "$STAGE"
           mkdir -p "$MODEL/releases"
           cp "$SOURCE/build_json.py" "$SOURCE/build_helpers.py" "$MODEL/"
@@ -123,7 +123,7 @@ jobs:
           VERSION="$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["Details"]["ModelVersion"])' \
             "$EXTRACTED/model_details.json")"
 
-          # -L, not -R: a release's json_schemas/datasets is a symlink out to
+          # -L, not -R: a release's json-schemas/datasets is a symlink out to
           # specification/schemas, so copying it as a link leaves it dangling once staged and
           # the build fails resolving the file(...) schema references.
           cp -RL "$EXTRACTED" "$MODEL/releases/$VERSION"
@@ -235,5 +235,5 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: requirements-model
-          path: build/requirements_model
+          path: build/requirements-model
           if-no-files-found: warn

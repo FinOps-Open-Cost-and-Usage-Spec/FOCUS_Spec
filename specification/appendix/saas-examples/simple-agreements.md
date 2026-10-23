@@ -10,7 +10,7 @@ PipelCRM allows its customers to purchase their service for a term (in this case
 
 Given that PipelCRM does not charge based on or track usage, its usage details are irrelevant to this scenario.
 
-[**CSV Example**](/specification/data/saas_examples/simple_agreements/simple_saas_agreements_a1.csv)
+[**CSV Example**](/specification/data/saas-examples/simple-agreements/simple-saas-agreements-a1.csv)
 
 Note the following details in the example dataset:
 
@@ -24,7 +24,7 @@ PipelCRM offers its customer the ability to purchase a fixed quantity of license
 
 On April 1st, 2025, PipelCRM executes a contract and invoices Acme Corp $50,000 (Billed Cost) for a Charge Period of April 1st 2025 to April 1st 2026. As there is no negotiated discount, List Cost of the purchase is also $50,000.
 
-[**CSV Example**](/specification/data/saas_examples/simple_agreements/simple_saas_agreements_a2.csv)
+[**CSV Example**](/specification/data/saas-examples/simple-agreements/simple-saas-agreements-a2.csv)
 
 Note the following details in the example dataset:
 
@@ -36,7 +36,7 @@ Note the following details in the example dataset:
 
 On June 1st 2025 PipelCRM provides the following records due to Acme Corp's $1,000 mid-contract purchase of an additional 10 licenses for the same Charge Period (April 1st 2025 to April 1st 2026).
 
-[**CSV Example**](/specification/data/saas_examples/simple_agreements/simple_saas_agreements_a3.csv)
+[**CSV Example**](/specification/data/saas-examples/simple-agreements/simple-saas-agreements-a3.csv)
 
 Note the following additional details in the example dataset:
 
@@ -48,7 +48,7 @@ Similar to Scenario A above, PipelCRM offers its customer the ability to purchas
 
 On April 1st, 2026, PipelCRM invoices Acme Corp $50,000 (Billed Cost) for the Charge Period of April 1st 2025 to April 1st 2026. As there is no negotiated discount, List Cost of the purchase is also $50,000.
 
-[**CSV Example**](/specification/data/saas_examples/simple_agreements/simple_saas_agreements_b.csv)
+[**CSV Example**](/specification/data/saas-examples/simple-agreements/simple-saas-agreements-b.csv)
 
 Note the following additional details in the example dataset:
 
@@ -68,7 +68,7 @@ Acme Corp's consumption looks like this:
 * In May 2025, Acme Corp uses 650 licenses
 * In June 2025, Acme Corp uses 635 licenses
 
-[**CSV Example**](/specification/data/saas_examples/simple_agreements/simple_saas_agreements_c.csv)
+[**CSV Example**](/specification/data/saas-examples/simple-agreements/simple-saas-agreements-c.csv)
 
 Note the following additional details in the example dataset:
 

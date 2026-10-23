@@ -1,7 +1,7 @@
-!INCLUDE "ai_model_billing_examples.md",0
-!INCLUDE "per_token_ai_model_api.md",1
-!INCLUDE "multi_model_usage.md",1
-!INCLUDE "cached_tokens_via_csp_marketplace.md",1
-!INCLUDE "csp_served_third_party_model.md",1
-!INCLUDE "drawdown_via_prepayment_ai_model_api.md",1
-!INCLUDE "multi_model_invoice_via_csp_marketplace.md",1
+!INCLUDE "ai-model-billing-examples.md",0
+!INCLUDE "per-token-ai-model-api.md",1
+!INCLUDE "multi-model-usage.md",1
+!INCLUDE "cached-tokens-via-csp-marketplace.md",1
+!INCLUDE "csp-served-third-party-model.md",1
+!INCLUDE "drawdown-via-prepayment-ai-model-api.md",1
+!INCLUDE "multi-model-invoice-via-csp-marketplace.md",1

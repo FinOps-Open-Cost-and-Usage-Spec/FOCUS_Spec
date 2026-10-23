@@ -2,7 +2,7 @@ import sys
 import subprocess
 import os
 import re
-sys.path.insert(0, 'custom_linter_rules')
+sys.path.insert(0, 'custom-linter-rules')
 
 from rule_md_991 import RuleMd991
 
@@ -35,12 +35,12 @@ for text, expected in test_cases:
 
 print()
 print("=" * 70)
-print("Testing against test_linter_violations.md:")
+print("Testing against test-linter-violations.md:")
 print("=" * 70)
 
-# Run pymarkdownlnt against test_linter_violations.md
+# Run pymarkdownlnt against test-linter-violations.md
 script_dir = os.path.dirname(os.path.abspath(__file__))
-test_file = os.path.join(script_dir, "test_linter_violations.md")
+test_file = os.path.join(script_dir, "test-linter-violations.md")
 plugin_file = os.path.join(os.path.dirname(script_dir), "rule_md_991.py")
 
 cmd = [
@@ -63,7 +63,7 @@ try:
             if match:
                 md991_violations.append(int(match.group(1)))
 
-    print(f"Found {len(md991_violations)} MD991 violations in test_linter_violations.md")
+    print(f"Found {len(md991_violations)} MD991 violations in test-linter-violations.md")
 
     if md991_violations:
         print(f"Lines with violations: {sorted(md991_violations)}")

@@ -30,7 +30,7 @@ For this scenario, the initial purchase of consumption currency is executed as f
 
 * On April 1, 2025, Acme Corp agrees to purchase 100,000 OmniBucks at $2 per OmniBuck for a total spend of $200,000. These OmniBucks are only valid for 12 months.
 
-[**CSV Example**](/specification/data/saas_examples/consumption_currency_pricing_model_a1.csv)
+[**CSV Example**](/specification/data/saas-examples/consumption-currency-pricing-model-a1.csv)
 
 Note the following details in the example dataset:
 
@@ -49,7 +49,7 @@ Acme Corp uses OmniQuery's services consuming OmniBucks as follows in the first 
 * 5 executions of Z Widget
 * 120 operations of Workflow
 
-[**CSV Example**](/specification/data/saas_examples/consumption_currency_pricing_model_a2.csv)
+[**CSV Example**](/specification/data/saas-examples/consumption-currency-pricing-model-a2.csv)
 
 Note the following details in the example dataset:
 
@@ -70,7 +70,7 @@ For this scenario, the initial purchase of consumption currency is executed as f
 
 * On April 1, 2025, Acme Corp agrees to purchase 100,000 OmniBucks at a discounted cost of $1 per OmniBuck for a total spend of $100,000. These OmniBucks are only valid for 12 months.
 
-[**CSV Example**](/specification/data/saas_examples/consumption_currency_pricing_model_b1.csv)
+[**CSV Example**](/specification/data/saas-examples/consumption-currency-pricing-model-b1.csv)
 
 Note the following details in the example dataset:
 
@@ -89,7 +89,7 @@ Acme Corp uses OmniQuery's services, consuming OmniBucks as follows in the first
 * 5 executions of Z Widget
 * 120 operations of Workflow
 
-[**CSV Example**](/specification/data/saas_examples/consumption_currency_pricing_model_b2.csv)
+[**CSV Example**](/specification/data/saas-examples/consumption-currency-pricing-model-b2.csv)
 
 Note the following details in the example dataset:
 
@@ -108,7 +108,7 @@ Additionally, OmniQuery offers a modified usage to OmniBuck ratio for one of the
 
 * 1 Workflow Operation = 2 OmniBucks
 
-[**CSV Example**](/specification/data/saas_examples/consumption_currency_pricing_model_b3.csv)
+[**CSV Example**](/specification/data/saas-examples/consumption-currency-pricing-model-b3.csv)
 
 Note the following details in the example dataset:
 
@@ -123,7 +123,7 @@ For this scenario, Acme Corp has exceeded their purchased OmniBucks on October 1
 * OmniQuery has charged Acme Corp for the cost of OmniBucks at the list price of $2 per OmniBuck, and this purchase is effective from April 1st 2025 to the date of the purchase, October 1st 2025.
 * Acme Corp purchases an additional 25,000 OmniBucks to facilitate usage to the end of their contract. These OmniBucks are valid from October 1st 2025 to April 1st 2026.
 
-[**CSV Example**](/specification/data/saas_examples/consumption_currency_pricing_model_c.csv)
+[**CSV Example**](/specification/data/saas-examples/consumption-currency-pricing-model-c.csv)
 
 Note the following details in the example dataset:
 

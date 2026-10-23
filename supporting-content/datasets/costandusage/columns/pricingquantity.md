@@ -90,7 +90,7 @@ NOTE: Preferred option?
 
 ## Example usage scenarios
 
-* See [Appendix: Quantity-Driven Pricing strategies](../appendix/quantity_driven_pricing_strategies.md) section for more information on
+* See [Appendix: Quantity-Driven Pricing strategies](../../../appendix/quantity-driven-pricing-strategies.md) section for more information on
   * Quantity-Driven Pricing strategies (such as flat-rate, volume-based rates and tier-based rating)
   * related UC scenarios
 * See [Pricing Support – UCs and Data samples Spreadsheet](https://docs.google.com/spreadsheets/d/1AZ-vtkKeKwYc8rqhxP1zMTnAVAS-svmWQQmr8cpv-IM/edit#gid=117987709) for various UC scenarios and sample data.

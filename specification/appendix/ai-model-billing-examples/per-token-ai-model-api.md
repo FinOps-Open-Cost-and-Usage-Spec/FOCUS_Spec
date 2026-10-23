@@ -5,7 +5,7 @@ For this scenario, Acme Corp consumes an AI model API billed directly by the mod
 * Input tokens are priced at $5.00 per 1,000,000 tokens, and output tokens at $25.00 per 1,000,000 tokens.
 * During the [*charge period*](#glossary:chargeperiod), the workload consumes 8,400,000 input tokens and 2,100,000 output tokens.
 
-[**CSV Example**](/specification/data/ai_model_billing/per_token_ai_model_api.csv)
+[**CSV Example**](/specification/data/ai-model-billing/per-token-ai-model-api.csv)
 
 Note the following details in the example dataset:
 

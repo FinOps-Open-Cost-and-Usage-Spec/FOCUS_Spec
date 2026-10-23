@@ -117,7 +117,7 @@ This example demonstrates a complex, multi-faceted agreement between a customer 
 | **Pricing Currency CC Cost** | `1000000.00` | `50000.00` | `120000.00` |
 | **Service Provider Name** | `Aura Web` | `Aura Web` | `OmniQuery` |
 
-[CSV Example](/specification/data/contract_commitments/contract_commitment_scenario_1.csv)
+[CSV Example](/specification/data/contract-commitments/contract-commitment-scenario-1.csv)
 
 ### Scenario 2: SaaS Expansion & Hybrid Connector
 
@@ -176,7 +176,7 @@ In this scenario, an enterprise with an existing master agreement with **Aura We
 | **Pricing Currency CC Cost** | `250000.00` | `120000.00` | `15000.00` |
 | **Service Provider Name** | `Aura Web` | `StackLens` | `Aura Web` |
 
-[CSV Example](/specification/data/contract_commitments/contract_commitment_scenario_2.csv)
+[CSV Example](/specification/data/contract-commitments/contract-commitment-scenario-2.csv)
 
 ### Scenario 3: Scale-Out & Overage
 
@@ -229,4 +229,4 @@ This scenario focuses on how the model handles growth beyond initial estimates. 
 | **Pricing Currency CC Cost** | `50000.00` | `0.00` | `100000.00` |
 | **Service Provider Name** | `Aura Web` | `Aura Web` | `Aura Web` |
 
-[CSV Example](/specification/data/contract_commitments/contract_commitment_scenario_3.csv)
+[CSV Example](/specification/data/contract-commitments/contract-commitment-scenario-3.csv)

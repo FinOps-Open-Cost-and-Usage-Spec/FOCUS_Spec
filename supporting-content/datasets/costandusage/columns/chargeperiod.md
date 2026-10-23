@@ -15,7 +15,7 @@ Current column mappings found in available data sets:
 
 Current values observed in billing data for various scenarios:
 
-See [Date/Time Format](../attributes/datetime_format.md) for examples
+See [Date/Time Format](../../../attributes/datetimeformat.md) for examples
 
 ## Discussion Topics
 

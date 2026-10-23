@@ -1,4 +1,4 @@
-!INCLUDE "column_definition_overview.md",0
+!INCLUDE "column-definition-overview.md",0
 !INCLUDE "columnname.md",1
 !INCLUDE "datatype.md",1
 !INCLUDE "deprecated.md",1

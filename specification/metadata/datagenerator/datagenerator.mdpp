@@ -1,2 +1,2 @@
-!INCLUDE "data_generator_overview.md",0
-!INCLUDE "data_generator.md",1
+!INCLUDE "data-generator-overview.md",0
+!INCLUDE "datagenerator.md",1

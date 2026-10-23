@@ -33,9 +33,9 @@ class TestColumnNameValidation(unittest.TestCase):
     }
     
     def get_model_rule_files(self):
-        """Get all JSON files in the model_rules directory."""
+        """Get all JSON files in the model-rules directory."""
         current_dir = os.path.dirname(os.path.abspath(__file__))
-        model_rules_dir = os.path.join(current_dir, 'model_rules')
+        model_rules_dir = os.path.join(current_dir, 'model-rules')
         
         if not os.path.exists(model_rules_dir):
             self.skipTest(f"Model rules directory not found: {model_rules_dir}")
@@ -78,7 +78,7 @@ class TestColumnNameValidation(unittest.TestCase):
     def test_static_rules_column_name_matches_reference(self):
         """Test that static rules with simple check functions have matching ColumnName and Reference."""
         json_files = self.get_model_rule_files()
-        self.assertGreater(len(json_files), 0, "No JSON files found in model_rules directory")
+        self.assertGreater(len(json_files), 0, "No JSON files found in model-rules directory")
         
         violations = []
         

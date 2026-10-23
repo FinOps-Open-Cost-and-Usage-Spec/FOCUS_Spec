@@ -34,4 +34,4 @@ The above SKU catalog shows that this service provider only has 1 service that o
 * The VM_SMALL *commitment discount* is fully utilized within the corresponding [*charge period*](#glossary:chargeperiod), covers 25% of the VM_LARGE resource, and incurs a $0.50 [*EffectiveCost*](#datamodel.costandusage.effectivecost).
 * The VM_LARGE resource incurs an additional, on-demand $2.25 *BilledCost* and *EffectiveCost*.
 
-[CSV Example](/specification/data/commitment_discount_flexibility/one_hundred_percent_utilization_with_commitment_discount_flexibility_with_1_resource.csv)
+[CSV Example](/specification/data/commitment-discount-flexibility/one-hundred-percent-utilization-with-commitment-discount-flexibility-with-1-resource.csv)

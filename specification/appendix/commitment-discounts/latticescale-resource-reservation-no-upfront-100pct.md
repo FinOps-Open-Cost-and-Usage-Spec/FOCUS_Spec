@@ -10,7 +10,7 @@
 | Annual Commitment            | $257,982.00 |
 | List Unit Price              | $44.18/hour |
 
-[CSV Example](/specification/data/commitment_discount_scenarios/latticescale_resource_reservation_no_upfront_100pct.csv)
+[CSV Example](/specification/data/commitment-discount-scenarios/latticescale-resource-reservation-no-upfront-100pct.csv)
 
 ## Scenario Description
 

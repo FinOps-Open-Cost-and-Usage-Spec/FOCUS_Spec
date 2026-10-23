@@ -10,7 +10,7 @@
 | Annual Commitment            | $440,014.80 |
 | List Unit Price              | $75.35/hour |
 
-[CSV Example](/specification/data/commitment_discount_scenarios/aura_web_resource_reservation_partial_upfront_100pct.csv)
+[CSV Example](/specification/data/commitment-discount-scenarios/aura-web-resource-reservation-partial-upfront-100pct.csv)
 
 ## Scenario Description
 

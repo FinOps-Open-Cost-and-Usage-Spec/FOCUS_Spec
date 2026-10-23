@@ -36,15 +36,15 @@ def _resolve_schema_file_refs(node, base_dir):
                     base_dir_abs = os.path.abspath(base_dir)
                     schema_path_abs = os.path.abspath(schema_path)
 
-                    # Only allow schema references from the same release json_schemas folder.
+                    # Only allow schema references from the same release json-schemas folder.
                     if os.path.commonpath([base_dir_abs, schema_path_abs]) != base_dir_abs:
                         raise FileNotFoundError(
-                            f"Schema file reference escapes json_schemas folder: {rel_path}"
+                            f"Schema file reference escapes json-schemas folder: {rel_path}"
                         )
 
                     if not os.path.exists(schema_path):
                         raise FileNotFoundError(
-                            f"Schema file reference not found in json_schemas folder: {schema_path}"
+                            f"Schema file reference not found in json-schemas folder: {schema_path}"
                         )
                     node[key] = _load_json_file(schema_path)
                 else:
@@ -92,16 +92,16 @@ def build_version(version):
     else:
         logger.warning(f'⚠️  Neither conditions.json nor applicability_criteria.json found in {version_dir}')
 
-    json_schemas_dir = os.path.join(version_dir, 'json_schemas')
+    json_schemas_dir = os.path.join(version_dir, 'json-schemas')
     json_schemas_file = os.path.join(json_schemas_dir, 'json_schemas.json')
     if os.path.isdir(json_schemas_dir):
         if os.path.exists(json_schemas_file):
-            files.append('json_schemas/json_schemas.json')
+            files.append('json-schemas/json_schemas.json')
         elif model_version_tuple >= (1, 4):
-            logger.error(f'❌ json_schemas folder exists but json_schemas.json not found: {json_schemas_file}')
+            logger.error(f'❌ json-schemas folder exists but json_schemas.json not found: {json_schemas_file}')
             return False
         else:
-            logger.warning(f'⚠️  json_schemas folder exists but file not found: {json_schemas_file}')
+            logger.warning(f'⚠️  json-schemas folder exists but file not found: {json_schemas_file}')
     
     for filename in files:
         filepath = os.path.join(version_dir, filename)
@@ -111,7 +111,7 @@ def build_version(version):
         with open(filepath, 'rb') as f:
             try:
                 details = json.loads(f.read())
-                if filename == 'json_schemas/json_schemas.json':
+                if filename == 'json-schemas/json_schemas.json':
                     _resolve_schema_file_refs(details, json_schemas_dir)
             except JSONDecodeError as e:
                 logger.error(f'❌ Unable to read {filepath}')
@@ -124,7 +124,7 @@ def build_version(version):
 
     # Load Model rule files
     model_rules = {}
-    rules_dir = os.path.join(version_dir, 'model_rules')
+    rules_dir = os.path.join(version_dir, 'model-rules')
 
     if os.path.exists(rules_dir):
         for root, _, filenames in os.walk(rules_dir):

@@ -19,7 +19,7 @@ For this scenario, Acme Corp purchases the model directly from the model develop
 * Input tokens are priced at $3.00 per 1,000,000 tokens, and output tokens at $15.00 per 1,000,000 tokens.
 * During the [*charge period*](#glossary:chargeperiod), the workload consumes 5,000,000 input tokens and 1,500,000 output tokens.
 
-[**CSV Example**](/specification/data/ai_model_identity/ai_model_identity_a.csv)
+[**CSV Example**](/specification/data/ai-model-identity/ai-model-identity-a.csv)
 
 Note the following details in the example dataset:
 
@@ -35,7 +35,7 @@ For this scenario, the same underlying model is served by a cloud provider, Latt
 * Every participating entity ([Service Provider Name](#datamodel.costandusage.serviceprovidername), [Host Provider Name](#datamodel.costandusage.hostprovidername), and [Invoice Issuer Name](#datamodel.costandusage.invoiceissuername)) is LatticeScale, the [*service provider*](#glossary:service-provider).
 * The model developer, Solora AI, is not the *service provider*, and is carried in the ModelDeveloper property.
 
-[**CSV Example**](/specification/data/ai_model_identity/ai_model_identity_b.csv)
+[**CSV Example**](/specification/data/ai-model-identity/ai-model-identity-b.csv)
 
 Note the following details in the example dataset:
 

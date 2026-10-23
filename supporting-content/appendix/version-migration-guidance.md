@@ -37,26 +37,26 @@ All columns, attributes, and behaviors from FOCUS 1.3 carry forward into FOCUS 1
 The following additive changes do not require migration but may affect data pipelines expecting a fixed schema:
 
 * **New Datasets** (together, they support reconciling usage to issued invoices):
-  * [`BillingPeriod`](/specification/datasets/billing_period/dataset.md) provides invoice-issuer-aware billing period boundaries and status.
-  * [`InvoiceDetail`](/specification/datasets/invoice_detail/dataset.md) carries the financial record of charges as they appear on issued invoices (payment currency, terms, due date, purchase order number).
-* **Expanded Dataset:** the [`ContractCommitment`](/specification/datasets/contract_commitment/dataset.md) dataset grows from 13 to 30 columns, covering identification, lifecycle and periods, commitment structure, and cost and quantity.
+  * [`BillingPeriod`](/specification/datasets/billingperiod/dataset.md) provides invoice-issuer-aware billing period boundaries and status.
+  * [`InvoiceDetail`](/specification/datasets/invoicedetail/dataset.md) carries the financial record of charges as they appear on issued invoices (payment currency, terms, due date, purchase order number).
+* **Expanded Dataset:** the [`ContractCommitment`](/specification/datasets/contractcommitment/dataset.md) dataset grows from 13 to 30 columns, covering identification, lifecycle and periods, commitment structure, and cost and quantity.
 * **New Supported Features:**
-  * [Invoice Reconciliation](/specification/supported_features/invoice_reconciliation.md)
-  * [Commitment Program Eligibility Details](/specification/supported_features/commitment_program_eligibility_details.md)
+  * [Invoice Reconciliation](/specification/supported-features/invoice-reconciliation.md)
+  * [Commitment Program Eligibility Details](/specification/supported-features/commitment-program-eligibility-details.md)
 * **New Cost and Usage Columns:**
-  * [`CommitmentProgramEligibilityDetails`](/specification/datasets/cost_and_usage/columns/commitmentprogrameligibilitydetails.md)
-  * [`InvoiceDetailId`](/specification/datasets/cost_and_usage/columns/invoicedetailid.md)
+  * [`CommitmentProgramEligibilityDetails`](/specification/datasets/costandusage/columns/commitmentprogrameligibilitydetails.md)
+  * [`InvoiceDetailId`](/specification/datasets/costandusage/columns/invoicedetailid.md)
 * **New Attributes:**
-  * [`CorrectionHandling`](/specification/attributes/correction_handling.md)
-  * [`CustomColumnHandling`](/specification/attributes/custom_column_handling.md)
-  * [`DatasetCompleteness`](/specification/attributes/dataset_completeness.md)
-  * [`DatasetConfiguration`](/specification/attributes/dataset_configuration.md)
-  * [`DeliveryHandling`](/specification/attributes/delivery_handling.md)
-  * [`FocusColumnHandling`](/specification/attributes/focus_column_handling.md)
+  * [`CorrectionHandling`](/specification/attributes/correctionhandling.md)
+  * [`CustomColumnHandling`](/specification/attributes/customcolumnhandling.md)
+  * [`DatasetCompleteness`](/specification/attributes/datasetcompleteness.md)
+  * [`DatasetConfiguration`](/specification/attributes/datasetconfiguration.md)
+  * [`DeliveryHandling`](/specification/attributes/deliveryhandling.md)
+  * [`FocusColumnHandling`](/specification/attributes/focuscolumnhandling.md)
 * **New Appendix Entries:**
-  * [Discount Handling](/specification/appendix/discount_handling.md)
-  * [Rounding Variance Tolerance](/specification/appendix/rounding_variance_tolerance.md)
-  * [Invoice and Billing Period Handling](/specification/appendix/invoice_and_billing_period_handling.md)
+  * [Discount Handling](/specification/appendix/discount-handling.md)
+  * [Rounding Variance Tolerance](/specification/appendix/rounding-variance-tolerance.md)
+  * [Invoice and Billing Period Handling](/specification/appendix/invoice-and-billing-period-handling.md)
   * Worked examples for commitment program eligibility details, contract commitments, correction handling, invoice detail, and JSON objects
 
 See the [CHANGELOG](/CHANGELOG.md) for complete details.
@@ -81,16 +81,16 @@ Practitioners who have not yet migrated queries away from these columns should f
 
 #### ContractApplied Format Change
 
-The [`ContractApplied`](/specification/datasets/cost_and_usage/columns/contractapplied.md) column was revised in FOCUS 1.4 to follow the JSON Object Schema format. The concepts represented by the column are unchanged; the change is to the structure of the JSON value.
+The [`ContractApplied`](/specification/datasets/costandusage/columns/contractapplied.md) column was revised in FOCUS 1.4 to follow the JSON Object Schema format. The concepts represented by the column are unchanged; the change is to the structure of the JSON value.
 
-Practitioners whose queries parse the `ContractApplied` value should update their parsing logic to the FOCUS 1.4 schema. Queries that test only for the presence of `ContractApplied`, or that do not inspect its internal structure, are unaffected. See the [Examples: JSON Object](/specification/appendix/json_object_examples/json_object_examples_overview.md) appendix for the JSON Object Schema format.
+Practitioners whose queries parse the `ContractApplied` value should update their parsing logic to the FOCUS 1.4 schema. Queries that test only for the presence of `ContractApplied`, or that do not inspect its internal structure, are unaffected. See the [Examples: JSON Object](/specification/appendix/json-object-examples/json-object-examples-overview.md) appendix for the JSON Object Schema format.
 
 #### Revised Cost Column Requirements
 
 These changes are classified as Compatible and do not require query changes, but they refine how core cost values are defined. Practitioners performing invoice reconciliation or commitment amortization analysis should review the updated definitions:
 
-* [`BilledCost`](/specification/datasets/cost_and_usage/columns/billedcost.md) and [`EffectiveCost`](/specification/datasets/cost_and_usage/columns/effectivecost.md) requirements were revised to clarify the treatment of pricing adjustments, covered and covering charges, and cross-record sum validation. When a covering charge (a purchase that pays for other charges, such as a reserved instance prepayment) and the charges it covers are both present in the same dataset instance, `EffectiveCost` and `BilledCost` sum to the same total within the covering charge's charge period; the totals may differ when only one side of that relationship is present, or when the charges span multiple billing periods or billing accounts.
-* [`InvoiceId`](/specification/datasets/cost_and_usage/columns/invoiceid.md) changed from a Recommended to a Conditional feature level. Values are populated for charges associated with an issued or pre-generated provisional invoice.
+* [`BilledCost`](/specification/datasets/costandusage/columns/billedcost.md) and [`EffectiveCost`](/specification/datasets/costandusage/columns/effectivecost.md) requirements were revised to clarify the treatment of pricing adjustments, covered and covering charges, and cross-record sum validation. When a covering charge (a purchase that pays for other charges, such as a reserved instance prepayment) and the charges it covers are both present in the same dataset instance, `EffectiveCost` and `BilledCost` sum to the same total within the covering charge's charge period; the totals may differ when only one side of that relationship is present, or when the charges span multiple billing periods or billing accounts.
+* [`InvoiceId`](/specification/datasets/costandusage/columns/invoiceid.md) changed from a Recommended to a Conditional feature level. Values are populated for charges associated with an issued or pre-generated provisional invoice.
 
 ### Data Generator Guidance
 
@@ -120,10 +120,10 @@ During staggered adoption, practitioners may receive FOCUS 1.3 and FOCUS 1.4 dat
 
 The following supported features reference columns, attributes, or behaviors changed in FOCUS 1.4. Most reflect additive or clarifying changes and require no query updates; only the `ContractApplied` format change and the removed `ProviderName`/`PublisherName` columns require action (see What Requires Migration above):
 
-* [Participating Entity Identification](/specification/supported_features/participating_entity_identification.md), for the successor columns to the removed `ProviderName` and `PublisherName`
-* [Contract Commitments](/specification/supported_features/contract_commitments.md), for the revised `ContractApplied` format
-* [Billed Cost and Invoice Alignment](/specification/supported_features/billed_cost_and_invoice_alignment.md) and [Effective Cost](/specification/supported_features/effective_cost.md), for the revised cost column requirements
-* [Cost Comparison](/specification/supported_features/cost_comparison.md), for the expanded cash-based versus accrual-based comparison guidance
+* [Participating Entity Identification](/specification/supported-features/participating-entity-identification.md), for the successor columns to the removed `ProviderName` and `PublisherName`
+* [Contract Commitments](/specification/supported-features/contract-commitments.md), for the revised `ContractApplied` format
+* [Billed Cost and Invoice Alignment](/specification/supported-features/billed-cost-and-invoice-alignment.md) and [Effective Cost](/specification/supported-features/effective-cost.md), for the revised cost column requirements
+* [Cost Comparison](/specification/supported-features/cost-comparison.md), for the expanded cash-based versus accrual-based comparison guidance
 
 ### Additional Resources
 
@@ -156,11 +156,11 @@ The following additive changes do not require migration but may affect data pipe
 
 | Change Type | Summary |
 |-------------|---------|
-| **New Dataset** | [`ContractCommitment`](/specification/datasets/contract_commitment/dataset.md) — 13 columns tracking contract and commitment details separately from usage rows |
+| **New Dataset** | [`ContractCommitment`](/specification/datasets/contractcommitment/dataset.md) — 13 columns tracking contract and commitment details separately from usage rows |
 | **Split Cost Allocation** | 5 new columns (`AllocatedMethodId`, `AllocatedMethodDetails`, `AllocatedResourceId`, `AllocatedResourceName`, `AllocatedTags`) enabling data generator-calculated cost allocation |
-| **Contract Tracking** | [`ContractApplied`](/specification/datasets/cost_and_usage/columns/contractapplied.md) column links usage rows to contract commitments via JSON object references |
-| **Entity Identification** | [`ServiceProviderName`](/specification/datasets/cost_and_usage/columns/serviceprovidername.md) and [`HostProviderName`](/specification/datasets/cost_and_usage/columns/hostprovidername.md) provide explicit entity role identification |
-| **New Metadata** | [Dataset Instance](/specification/metadata/dataset_instance/dataset_instance_overview.md) and [Recency](/specification/metadata/recency/recency_overview.md) metadata for tracking data identity and freshness |
+| **Contract Tracking** | [`ContractApplied`](/specification/datasets/costandusage/columns/contractapplied.md) column links usage rows to contract commitments via JSON object references |
+| **Entity Identification** | [`ServiceProviderName`](/specification/datasets/costandusage/columns/serviceprovidername.md) and [`HostProviderName`](/specification/datasets/costandusage/columns/hostprovidername.md) provide explicit entity role identification |
+| **New Metadata** | [Dataset Instance](/specification/metadata/datasetinstance/dataset-instance-overview.md) and [Recency](/specification/metadata/recency/recency-overview.md) metadata for tracking data identity and freshness |
 | **New Attributes** | `InvoiceHandling`, `JsonObjectFormat`, and `DataGeneratorCalculatedSplitCostAllocationHandling` |
 
 See the [CHANGELOG](/CHANGELOG.md) for complete details.
@@ -179,7 +179,7 @@ Practitioners should complete this assessment before migrating queries:
 
 * [ ] Identify all queries, reports, and dashboards that reference `ProviderName` or `PublisherName`
 * [ ] For each usage, determine what business question the column was answering
-* [ ] Review [Participating Entity Identification Examples](/specification/appendix/participating_entity_identification.md) for scenarios matching your acquisition methods
+* [ ] Review [Participating Entity Identification Examples](/specification/appendix/participating-entity-identification.md) for scenarios matching your acquisition methods
 * [ ] Plan migration timeline (deprecated columns will be removed in FOCUS 1.4+)
 
 ### Why This Change Was Made
@@ -192,7 +192,7 @@ The original `ProviderName` and `PublisherName` columns suffered from definition
 | `PublisherName` overlapped conceptually with Provider and Invoice Issuer | The column was often null, duplicated `ProviderName`, or populated inconsistently |
 | Neither column distinguished between the entity selling a service and the entity hosting the infrastructure | Practitioners couldn't determine who to contact for support vs. billing inquiries |
 
-FOCUS 1.3 resolves this by introducing two purpose-specific columns that align with the distinct entity roles documented in [Participating Entity Identification](/specification/appendix/participating_entity_identification.md).
+FOCUS 1.3 resolves this by introducing two purpose-specific columns that align with the distinct entity roles documented in [Participating Entity Identification](/specification/appendix/participating-entity-identification.md).
 
 ### Migration Decision Tree (Practitioners)
 
@@ -227,7 +227,7 @@ The mapping varies by how resources or services were acquired. Review these comm
 | MSP-managed services | MSP | MSP | MSP | CSP (if visible) or MSP |
 | Direct SaaS purchase | SaaS Vendor | SaaS Vendor | SaaS Vendor | CSP (if visible) or SaaS Vendor |
 
-For the complete scenario matrix, see [Participating Entity Identification Examples](/specification/appendix/participating_entity_identification.md).
+For the complete scenario matrix, see [Participating Entity Identification Examples](/specification/appendix/participating-entity-identification.md).
 
 ### New Column: HostProviderName
 
@@ -353,21 +353,21 @@ Data generators SHOULD populate these properties in their metadata schema to hel
 
 The following supported features reference participating entity columns and may require documentation or query updates:
 
-* [Charge Categorization](/specification/supported_features/charge_categorization.md)
-* [Commit Usage and Under Usage](/specification/supported_features/commit_usage_and_under_usage.md)
-* [Cost Comparison](/specification/supported_features/cost_comparison.md)
-* [Effective Cost](/specification/supported_features/effective_cost.md)
-* [Marketplace Purchases](/specification/supported_features/marketplace_purchases.md)
-* [Participating Entity Identification](/specification/supported_features/participating_entity_identification.md)
-* [Service Provider Services](/specification/supported_features/service_provider_services.md)
-* [Resource Usage](/specification/supported_features/resource_usage.md)
-* [Service Categorization](/specification/supported_features/service_categorization.md)
+* [Charge Categorization](/specification/supported-features/charge-categorization.md)
+* [Commit Usage and Under Usage](/specification/supported-features/commit-usage-and-under-usage.md)
+* [Cost Comparison](/specification/supported-features/cost-comparison.md)
+* [Effective Cost](/specification/supported-features/effective-cost.md)
+* [Marketplace Purchases](/specification/supported-features/marketplace-purchases.md)
+* [Participating Entity Identification](/specification/supported-features/participating-entity-identification.md)
+* [Service Provider Services](/specification/supported-features/service-provider-services.md)
+* [Resource Usage](/specification/supported-features/resource-usage.md)
+* [Service Categorization](/specification/supported-features/service-categorization.md)
 
 ---
 
 ## Additional Resources
 
-* [Participating Entity Identification Examples](/specification/appendix/participating_entity_identification.md) — Scenarios showing how entity values vary by acquisition method
-* [ServiceProviderName Column Specification](/specification/datasets/cost_and_usage/columns/serviceprovidername.md)
-* [HostProviderName Column Specification](/specification/datasets/cost_and_usage/columns/hostprovidername.md)
+* [Participating Entity Identification Examples](/specification/appendix/participating-entity-identification.md) — Scenarios showing how entity values vary by acquisition method
+* [ServiceProviderName Column Specification](/specification/datasets/costandusage/columns/serviceprovidername.md)
+* [HostProviderName Column Specification](/specification/datasets/costandusage/columns/hostprovidername.md)
 * [FOCUS 1.3 Changelog](/CHANGELOG.md)

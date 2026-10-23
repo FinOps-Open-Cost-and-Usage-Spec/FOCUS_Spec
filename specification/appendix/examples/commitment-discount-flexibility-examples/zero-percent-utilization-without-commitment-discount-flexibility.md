@@ -34,4 +34,4 @@ The above SKU Catalog shows that this service provider only has 1 service that o
 * The VM_LARGE *commitment discount* is unused for the corresponding [*charge period*](#glossary:chargeperiod) because no VM_LARGE resources are running and incurs a $1.50 [*EffectiveCost*](#datamodel.costandusage.effectivecost).
 * 1 hour of on-demand usage is incurred by the VM_MEDIUM resource and incurs a $2.00 *BilledCost* and *EffectiveCost*.
 
-[CSV Example](/specification/data/commitment_discount_flexibility/zero_percent_utilization_without_commitment_discount_flexibility.csv)
+[CSV Example](/specification/data/commitment-discount-flexibility/zero-percent-utilization-without-commitment-discount-flexibility.csv)

@@ -39,4 +39,4 @@ Current values observed in billing data for various scenarios:
   * Should CommitmentDiscountId be specified as CommitmentDiscountName when name is null (when resource id is not null)
   * Do providers put Id / name for everything?
   * Based on these findings, CommitmentDiscountName column cannot be a non-null column
-  * See [null_handling](../attributes/null_handling.md) for additional context
+  * See [null_handling](../../../attributes/nullhandling.md) for additional context

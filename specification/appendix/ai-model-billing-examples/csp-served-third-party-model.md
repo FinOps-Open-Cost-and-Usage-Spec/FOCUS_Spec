@@ -5,7 +5,7 @@ For this scenario, Acme Corp consumes a Solora Jupiter model through Aura Web Fo
 * Input tokens are priced at $0.75 per 1,000,000 tokens, and output tokens at $4.50 per 1,000,000 tokens.
 * During the [*charge period*](#glossary:chargeperiod), the workload consumes 3,000,000 input tokens and 500,000 output tokens.
 
-[**CSV Example**](/specification/data/ai_model_billing/csp_served_third_party_model.csv)
+[**CSV Example**](/specification/data/ai-model-billing/csp-served-third-party-model.csv)
 
 Note the following details in the example dataset:
 

@@ -36,7 +36,7 @@ This report documents the suite of automated tests validating the ModelRules JSO
 
 *Purpose*: Detect duplicate IDs at source.
 
-*Description*: Checks all individual JSON source files in model_rules for duplicate keys. Fails early before merge, so no silent overwriting occurs.
+*Description*: Checks all individual JSON source files in model-rules for duplicate keys. Fails early before merge, so no silent overwriting occurs.
 
 #### `test_rule_number_sequences.py`
 

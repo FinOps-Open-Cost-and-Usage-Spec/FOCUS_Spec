@@ -50,7 +50,7 @@ def load_spec_file(in_path: Path) -> dict:
             f"{in_path}\n"
             "If you have not generated the model yet, run\n"
             "  ./build_json.py --build-only\n"
-            "from specification/requirements_model/."
+            "from specification/requirements-model/."
         ) from exc
     except PermissionError as exc:
         raise RuntimeError(f"Input model file is not readable: {in_path}") from exc

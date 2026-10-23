@@ -10,7 +10,7 @@
 | Annual Commitment            | $553,018.80 |
 | List Unit Price              | $94.70/hour |
 
-[CSV Example](/specification/data/commitment_discount_scenarios/latticescale_dynamic_compute_commitment_no_upfront_100pct.csv)
+[CSV Example](/specification/data/commitment-discount-scenarios/latticescale-dynamic-compute-commitment-no-upfront-100pct.csv)
 
 ## Scenario Description
 

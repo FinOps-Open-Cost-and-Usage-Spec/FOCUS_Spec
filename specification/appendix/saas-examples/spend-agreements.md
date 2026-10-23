@@ -31,7 +31,7 @@ Acme Corp's consumption looks like this:
 * In the following 2 months, Acme Corp has some more usage
 * For the final 9 months, Acme Corp does not use StoreStack services
 
-[**CSV Example**](/specification/data/saas_examples/spend_agreements/saas_spend_agreements_a1.csv)
+[**CSV Example**](/specification/data/saas-examples/spend-agreements/saas-spend-agreements-a1.csv)
 
 Note the following details in the example dataset:
 
@@ -49,7 +49,7 @@ Acme Corp's consumption looks like this:
 * In the following 2 months, Acme Corp has usage at or above the minimum requirement
 * For the final 9 months, Acme Corp does not use StoreStack services
 
-[**CSV Example**](/specification/data/saas_examples/spend_agreements/saas_spend_agreements_a2.csv)
+[**CSV Example**](/specification/data/saas-examples/spend-agreements/saas-spend-agreements-a2.csv)
 
 Note the following details in the example dataset:
 
@@ -66,7 +66,7 @@ For this scenario B, contract includes the following terms in addition to the ba
 
 Scenario B1 is similar to scenario A1 with the difference being that it's a pre-paid contract.
 
-[**CSV Example**](/specification/data/saas_examples/spend_agreements/saas_spend_agreements_b1.csv)
+[**CSV Example**](/specification/data/saas-examples/spend-agreements/saas-spend-agreements-b1.csv)
 
 Note the following details in the example dataset:
 
@@ -79,7 +79,7 @@ Note the following details in the example dataset:
 
 Scenario B2 is similar to A2 with the difference being that it's a pre-paid contract.
 
-[**CSV Example**](/specification/data/saas_examples/spend_agreements/saas_spend_agreements_b2.csv)
+[**CSV Example**](/specification/data/saas-examples/spend-agreements/saas-spend-agreements-b2.csv)
 
 Note the following details in the example dataset:
 

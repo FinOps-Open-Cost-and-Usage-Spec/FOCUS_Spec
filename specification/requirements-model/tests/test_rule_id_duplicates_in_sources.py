@@ -5,7 +5,7 @@ import pytest
 
 @pytest.mark.dependency(name="no_duplicate_rule_ids_in_source_files", scope="session")
 def test_no_duplicate_rule_ids_in_source_files(version, version_dir):
-    SRC_DIR = version_dir / "model_rules"
+    SRC_DIR = version_dir / "model-rules"
 
     assert SRC_DIR.is_dir(), f"Source folder not found: {SRC_DIR}"
 

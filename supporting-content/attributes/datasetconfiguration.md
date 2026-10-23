@@ -308,10 +308,10 @@ Option A (extending Dataset Instance) is the most natural fit. The configuration
 
 This change would require:
 
-* New metadata property definitions in `specification/metadata/dataset_instance/` (5-8 new `.md` files)
-* Updates to `dataset_instance.mdpp` template
-* New requirements model rules in `specification/requirements_model/model_rules/`
-* Updates to `supporting_content/metadata/` for examples
+* New metadata property definitions in `specification/metadata/datasetinstance/` (5-8 new `.md` files)
+* Updates to `datasetinstance.mdpp` template
+* New requirements model rules in `specification/requirements-model/releases/X.Y/model-rules/`
+* Updates to `supporting-content/metadata/` for examples
 
 This is a significant change that warrants a separate PR to keep the Dataset Configuration attribute focused on its core requirements.
 
