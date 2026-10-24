@@ -51,7 +51,7 @@ Highest-level classification of a *service* based on the core function of the *s
 | Constraint                 | Value                                     |
 | :------------------------- | :---------------------------------------- |
 | Dataset                    | [Cost and Usage](#datamodel.costandusage) |
-| Operating Model Conditions | Not applicable                            |
+| Operating model conditions | Not applicable                            |
 | Column type                | Dimension                                 |
 | Feature level              | Mandatory                                 |
 | Allows nulls               | False                                     |

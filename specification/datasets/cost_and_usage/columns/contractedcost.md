@@ -43,7 +43,7 @@ Cost of a *charge* based on *negotiated pricing terms* before any discount-beari
 | Constraint                 | Value                                       |
 | :------------------------- | :------------------------------------------ |
 | Dataset                    | [Cost and Usage](#datamodel.costandusage)   |
-| Operating Model Conditions | Not applicable                              |
+| Operating model conditions | Not applicable                              |
 | Column type                | Metric                                      |
 | Feature level              | Mandatory                                   |
 | Allows nulls               | False                                       |
