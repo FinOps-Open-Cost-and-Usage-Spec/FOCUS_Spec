@@ -58,7 +58,7 @@ To facilitate querying data across allocations and across service providers, a d
 Here is a basic example of the object format.
 
 * For more detailed examples, please see this column's entry in the JSON Object Examples appendix entry [here](#appendix.examples:jsonobject.examples:commitmentprogrameligibilitydetails).
-* For the JSON schema, please see Commitment Program Eligibility Details Object Schema (linked in Object Requirements).
+* For the JSON schema, please see Commitment Program Eligibility Details Object Schema.
 
 ``` json
 {
