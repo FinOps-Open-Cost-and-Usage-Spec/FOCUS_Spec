@@ -41,9 +41,10 @@ The FOCUS specification implements commitment eligibility via the [CommitmentPro
 
 Because ANSI SQL does not define a standard for parsing JSON, the following queries use BigQuery Standard SQL JSON functions (e.g., `JSON_VALUE`, `JSON_EXTRACT_ARRAY`, `UNNEST`). Similar functions are available in all major SQL engines; the examples can be adapted to accommodate any particular database instance. Non-JSON constructs (CTEs, `NULLIF`) are ANSI SQL and should work without modification.
 
-> Important Consideration: The following queries assume FOCUS-conformant dataset artifacts. Practitioners should verify provider conformance before relying on these queries. Non-conformant dataset artifacts may produce inaccurate results.
-
-Note: The `CommitmentPrograms` array contains all [*commitment program*](#glossary:commitment-program) types, including both discount-bearing programs and [*capacity reservations*](#glossary:capacity-reservation). The first three queries below focus on discount-bearing programs and use [CommitmentDiscountId](#datamodel.costandusage.commitmentdiscountid) to determine coverage. Capacity reservations are fundamentally different: they secure resource availability rather than provide discounts, and are tracked via [CapacityReservationId](#datamodel.costandusage.capacityreservationid) and [CapacityReservationStatus](#datamodel.costandusage.capacityreservationstatus). A separate query for capacity reservation analysis follows. Providers using only custom (`x_`-prefixed) top-level keys would require modified JSON paths.
+> **Notes:**
+>
+> * The following queries assume FOCUS-conformant dataset artifacts. Practitioners should verify provider conformance before relying on these queries. Non-conformant dataset artifacts may produce inaccurate results.
+> * The `CommitmentPrograms` array contains all [*commitment program*](#glossary:commitment-program) types, including both discount-bearing programs and [*capacity reservations*](#glossary:capacity-reservation). The first three queries below focus on discount-bearing programs and use [CommitmentDiscountId](#datamodel.costandusage.commitmentdiscountid) to determine coverage. Capacity reservations are fundamentally different: they secure resource availability rather than provide discounts, and are tracked via [CapacityReservationId](#datamodel.costandusage.capacityreservationid) and [CapacityReservationStatus](#datamodel.costandusage.capacityreservationstatus). A separate query for capacity reservation analysis follows. Providers using only custom (`x_`-prefixed) top-level keys would require modified JSON paths.
 
 ### Identify Eligible Uncovered Spend by Program Type
 
@@ -51,7 +52,7 @@ This query identifies [*charges*](#glossary:charge) that are eligible for [*comm
 
 The query filters to "Usage" charges where [CommitmentProgramEligibilityDetails](#datamodel.costandusage.commitmentprogrameligibilitydetails) is populated (the charge is eligible) and [CommitmentDiscountId](#datamodel.costandusage.commitmentdiscountid) is null (no [*commitment*](#glossary:commitment) is applied). It then expands the `CommitmentPrograms` array to aggregate eligible spend per `ProgramType`. This query uses BilledCost rather than EffectiveCost because the charges are uncovered (CommitmentDiscountId IS NULL), so BilledCost reflects the actual amount paid and the savings opportunity.
 
-Note: When a charge is eligible for multiple *commitment program* types, it appears once per eligible type. Costs are not deduplicated across types, since each type represents an independent purchasing opportunity.
+> **Note:** When a charge is eligible for multiple *commitment program* types, it appears once per eligible type. Costs are not deduplicated across types, since each type represents an independent purchasing opportunity.
 
 ```sql
 SELECT
@@ -79,7 +80,7 @@ ORDER BY EligibleUncoveredCost DESC
 
 This query computes a [*commitment discount*](#glossary:commitment-discount) coverage rate using only eligible [*charges*](#glossary:charge) as the denominator. Without eligibility data, practitioners typically divide covered spend by total spend, which produces a coverage rate that includes ineligible charges (e.g., storage services, support fees) in the denominator and may not reflect the actionable coverage opportunity. This query targets discount-bearing programs only; for [*capacity reservation*](#glossary:capacity-reservation) utilization, see the capacity reservation query below.
 
-Note: Unused commitment rows (CommitmentDiscountStatus = "Unused") have CommitmentDiscountId populated and will artificially inflate both the numerator and the denominator if left in the dataset. To calculate a true, utilization-adjusted coverage rate, practitioners should additionally filter out these rows (e.g., AND CU.CommitmentDiscountStatus != 'Unused').
+> **Note:** Unused commitment rows (CommitmentDiscountStatus = "Unused") have CommitmentDiscountId populated and will artificially inflate both the numerator and the denominator if left in the dataset. To calculate a true, utilization-adjusted coverage rate, practitioners should additionally filter out these rows (e.g., AND CU.CommitmentDiscountStatus != 'Unused').
 
 ```sql
 WITH CommitmentDiscountEligible AS (
@@ -115,7 +116,7 @@ GROUP BY ServiceProviderName
 
 This query aggregates eligible spend and uncovered eligible spend across all providers, including SaaS platforms. A practitioner managing both CSP and SaaS workloads can identify where uncovered eligible spend is concentrated across [*commitment program*](#glossary:commitment-program) types.
 
-Note: As with the first query above, when a charge is eligible for multiple *commitment program* types, it appears once per eligible type. Removing the EligibleProgramType grouping without deduplicating would inflate totals.
+> **Note:** As with the first query above, when a charge is eligible for multiple *commitment program* types, it appears once per eligible type. Removing the EligibleProgramType grouping without deduplicating would inflate totals.
 
 ```sql
 WITH CommitmentDiscountEligible AS (
@@ -151,7 +152,7 @@ ORDER BY UncoveredEligibleCost DESC
 
 The query filters [CommitmentProgramEligibilityDetails](#datamodel.costandusage.commitmentprogrameligibilitydetails) to rows whose `ProgramType` values correspond to capacity-reservation programs (e.g., "Advance Resource Commitment", "Zonal Resource Commitment"). It then uses CapacityReservationId and CapacityReservationStatus to determine reservation utilization.
 
-Note: The FOCUS specification requires CapacityReservationId to not be null when a charge represents unused capacity, but only recommends populating it when a charge is related to a used *capacity reservation*. Where a data generator does not populate CapacityReservationId on used rows, this query will show those rows with a null CapacityReservationStatus.
+> **Note:** The FOCUS specification requires CapacityReservationId to not be null when a charge represents unused capacity, but only recommends populating it when a charge is related to a used *capacity reservation*. Where a data generator does not populate CapacityReservationId on used rows, this query will show those rows with a null CapacityReservationStatus.
 
 ```sql
 SELECT
