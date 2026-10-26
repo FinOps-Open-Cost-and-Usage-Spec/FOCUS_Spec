@@ -1,10 +1,10 @@
 # Rate Optimization and Contract Evaluation
 
-> **Preview:** The SKU Price dataset is a preview in this version of FOCUS. This supported feature depends on it and may change in the next version based on implementation feedback. The preview also covers two requirements outside the dataset, which are excluded from conformance, and two operating model conditions and a schema that exist only for SKU Price. [Issue #2768](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2768) tracks the preview and lists each one.
+> **Preview:** The [SKU Price](#datamodel.skuprice) dataset is a [*preview*](#glossary:preview) in this version of FOCUS. This supported feature depends on it and may change in the next version based on implementation feedback. The preview also covers two requirements outside the dataset, which are excluded from conformance, and two operating model conditions and a schema that exist only for SKU Price. [Issue #2768](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2768) tracks the preview and lists each one.
 
 ## Description
 
-FOCUS helps compare the rate an organization pays with the rates a [*service provider*](#glossary:service-provider) offers. The [SKU Price](#datamodel.skuprice) dataset holds each price as its own record. Unit Price Type says what kind of price a record holds:
+FOCUS helps compare the rate an organization pays with the rates a [*service provider*](#glossary:service-provider) offers. The SKU Price dataset holds each price as its own record. Unit Price Type says what kind of price a record holds:
 
 * "List" is the public list price. A "List" record has a null Contract ID.
 * "Base" is a list price that a [*contract*](#glossary:contract) fixes. Its Contract ID names that *contract*.

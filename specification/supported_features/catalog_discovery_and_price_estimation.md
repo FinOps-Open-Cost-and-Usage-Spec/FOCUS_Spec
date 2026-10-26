@@ -1,10 +1,10 @@
 # Catalog Discovery and Price Estimation
 
-> **Preview:** The SKU Price dataset is a preview in this version of FOCUS. This supported feature depends on it and may change in the next version based on implementation feedback. The preview also covers two requirements outside the dataset, which are excluded from conformance, and two operating model conditions and a schema that exist only for SKU Price. [Issue #2768](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2768) tracks the preview and lists each one.
+> **Preview:** The [SKU Price](#datamodel.skuprice) dataset is a [*preview*](#glossary:preview) in this version of FOCUS. This supported feature depends on it and may change in the next version based on implementation feedback. The preview also covers two requirements outside the dataset, which are excluded from conformance, and two operating model conditions and a schema that exist only for SKU Price. [Issue #2768](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2768) tracks the preview and lists each one.
 
 ## Description
 
-FOCUS helps a [*practitioner*](#glossary:practitioner) find the prices a [*service provider*](#glossary:service-provider) offers. It also helps estimate what future consumption will cost. The [SKU Price](#datamodel.skuprice) dataset holds these prices. It covers the full [*price list*](#glossary:price-list) a *service provider* publishes, not just the [*SKUs*](#glossary:sku) already in [Cost and Usage](#datamodel.costandusage) data. So a new architecture can be priced the same way for every *service provider*, without learning a different catalog format for each one.
+FOCUS helps a [*practitioner*](#glossary:practitioner) find the prices a [*service provider*](#glossary:service-provider) offers. It also helps estimate what future consumption will cost. The SKU Price dataset holds these prices. It covers the full [*price list*](#glossary:price-list) a *service provider* publishes, not just the [*SKUs*](#glossary:sku) already in [Cost and Usage](#datamodel.costandusage) data. So a new architecture can be priced the same way for every *service provider*, without learning a different catalog format for each one.
 
 Unit Price is the price of one Pricing Unit, in the Pricing Currency. Unit Price Type says what kind of price it is:
 

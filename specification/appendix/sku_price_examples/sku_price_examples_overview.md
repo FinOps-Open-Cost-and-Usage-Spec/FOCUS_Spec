@@ -1,8 +1,8 @@
 # Examples: SKU Price
 
-> **Preview:** The SKU Price dataset is a preview in this version of FOCUS, so these examples may change in the next version based on implementation feedback. The preview also covers two requirements outside the dataset, which are excluded from conformance, and two operating model conditions and a schema that exist only for SKU Price. [Issue #2768](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2768) tracks the preview and lists each one.
+> **Preview:** The [SKU Price](#datamodel.skuprice) dataset is a [*preview*](#glossary:preview) in this version of FOCUS, so these examples may change in the next version based on implementation feedback. The preview also covers two requirements outside the dataset, which are excluded from conformance, and two operating model conditions and a schema that exist only for SKU Price. [Issue #2768](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2768) tracks the preview and lists each one.
 
-The following section contains examples of how a [*service provider*](#glossary:service-provider) may represent a published [*price list*](#glossary:price-list) as a [SKU Price](#datamodel.skuprice) [*FOCUS dataset*](#glossary:FOCUS-dataset). The scenarios use a fictitious service provider, Aura Web, and a fictitious customer, Acme Corp. Provider, service, and identifier names are illustrative.
+The following section contains examples of how a [*service provider*](#glossary:service-provider) may represent a published [*price list*](#glossary:price-list) as a SKU Price [*FOCUS dataset*](#glossary:FOCUS-dataset). The scenarios use a fictitious service provider, Aura Web, and a fictitious customer, Acme Corp. Provider, service, and identifier names are illustrative.
 
 The scenarios draw on a single [*price list*](#glossary:price-list) rather than a separate dataset per scenario, because several SKU Price constructs are only visible when the records sit side by side. Row uniqueness, tier boundaries, and price effectivity each depend on how a record relates to its neighbors.
 

@@ -2,7 +2,7 @@
 
 Charge Category represents the highest-level classification of a [*charge*](#glossary:charge) based on the nature of how it is billed. Charge Category is commonly used to identify and distinguish between types of [*charges*](#glossary:charge) that may require different handling.
 
-> **Preview:** The SKU Price dataset is a preview in this version of FOCUS. The requirement that Charge Category match SKU Price Charge Category is excluded from conformance while that dataset is a preview.
+> **Preview:** The SKU Price dataset is a [*preview*](#glossary:preview) in this version of FOCUS. The requirement that Charge Category match SKU Price Charge Category is excluded from conformance while that dataset is a preview.
 
 ## Requirements
 
