@@ -8,13 +8,17 @@ A billing account is the account where invoices are generated. Each billing acco
 
 ## Directly Dependent Columns
 
-* BilledCost
 * BillingAccountId
 * BillingAccountName
 * BillingAccountType
 * SubAccountId
 * SubAccountName
 * SubAccountType
+
+## Supporting Columns
+
+* BilledCost
+* BillingCurrency
 
 ## Example SQL Query
 
@@ -26,6 +30,7 @@ SELECT
   SubAccountId,
   SubAccountName,
   SubAccountType,
+  BillingCurrency,
   SUM(BilledCost)
 FROM focus_data_table
 WHERE BillingPeriodStart >= ? AND BillingPeriodEnd < ?
@@ -35,7 +40,8 @@ GROUP BY
   BillingAccountType,
   SubAccountId,
   SubAccountName,
-  SubAccountType
+  SubAccountType,
+  BillingCurrency
 ```
 
 ## Version Introduced

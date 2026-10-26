@@ -2,14 +2,17 @@
 
 ## Description
 
-FOCUS supports multiple levels of cost and usage data granularity. This includes the ability to report on a daily, hourly, or other time period basis. FOCUS also supports the ability for cost and usage data to be provided for high granularity scenarios, such as down to the individual resources. It also supports high level granularity cost and usage data, such as account level, or service level charges.
+FOCUS supports multiple levels of cost and usage data granularity. This includes the ability to report on a daily, hourly, or other time period basis. FOCUS also supports the ability for cost and usage data to be provided for high granularity scenarios, such as down to the individual resources. It also supports high level granularity cost and usage data, such as account level, or service level charges. For the account and service hierarchies themselves, see [Account Structures](#supportedfeatures.accountstructures) and [Service Provider Services](#supportedfeatures.serviceproviderservices).
 
 ## Directly Dependent Columns
 
-* ResourceId
-* ResourceName
+* BillingAccountId
 * ChargePeriodEnd
 * ChargePeriodStart
+* ResourceId
+* ResourceName
+* ServiceName
+* SubAccountId
 
 ## Supporting Columns
 
@@ -25,6 +28,9 @@ FOCUS supports multiple levels of cost and usage data granularity. This includes
 SELECT
   ChargePeriodStart,
   ChargePeriodEnd,
+  BillingAccountId,
+  SubAccountId,
+  ServiceName,
   ResourceId,
   ResourceName,
   ConsumedUnit,
@@ -36,6 +42,9 @@ FROM focus_data_table
 GROUP BY
   ChargePeriodStart,
   ChargePeriodEnd,
+  BillingAccountId,
+  SubAccountId,
+  ServiceName,
   ResourceId,
   ResourceName,
   ConsumedUnit
