@@ -1,4 +1,4 @@
-!INCLUDE "data-model.md",0
+!INCLUDE "datamodel.md",0
 !INCLUDE "costandusage/costandusage.mdpp",1
 !INCLUDE "billingperiod/billingperiod.mdpp",1
 !INCLUDE "contractcommitment/contractcommitment.mdpp",1
