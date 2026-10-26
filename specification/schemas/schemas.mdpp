@@ -8,9 +8,9 @@ This section provides machine-readable JSON Schema definitions for validating th
 
 The Contract Commitment Applicability Object Schema defines the structure for the [Contract Commitment Applicability](#datamodel.contractcommitment.contractcommitmentapplicability) column.
 
-[Download from GitHub](/specification/schemas/datasets/contract_commitment/contractcommitmentapplicabilityobjectschema.json)
+[Download from GitHub](/specification/schemas/datasets/contractcommitment/contractcommitmentapplicabilityobjectschema.json)
 
-!INCLUDECODE "schemas/datasets/contract_commitment/contractcommitmentapplicabilityobjectschema.json" (json)
+!INCLUDECODE "schemas/datasets/contractcommitment/contractcommitmentapplicabilityobjectschema.json" (json)
 
 ## Cost and Usage
 
@@ -18,30 +18,30 @@ The Contract Commitment Applicability Object Schema defines the structure for th
 
 The Allocated Method Details Object Schema defines the structure for the [Allocated Method Details](#datamodel.costandusage.allocatedmethoddetails) column.
 
-[Download from GitHub](/specification/schemas/datasets/cost_and_usage/allocatedmethoddetailsobjectschema.json)
+[Download from GitHub](/specification/schemas/datasets/costandusage/allocatedmethoddetailsobjectschema.json)
 
-!INCLUDECODE "schemas/datasets/cost_and_usage/allocatedmethoddetailsobjectschema.json" (json)
+!INCLUDECODE "schemas/datasets/costandusage/allocatedmethoddetailsobjectschema.json" (json)
 
 ### Commitment Program Eligibility Details Object Schema
 
 The Commitment Program Eligibility Details Object Schema defines the structure for the [Commitment Program Eligibility Details](#datamodel.costandusage.commitmentprogrameligibilitydetails) column.
 
-[Download from GitHub](/specification/schemas/datasets/cost_and_usage/commitmentprogrameligibilitydetailsobjectschema.json)
+[Download from GitHub](/specification/schemas/datasets/costandusage/commitmentprogrameligibilitydetailsobjectschema.json)
 
-!INCLUDECODE "schemas/datasets/cost_and_usage/commitmentprogrameligibilitydetailsobjectschema.json" (json)
+!INCLUDECODE "schemas/datasets/costandusage/commitmentprogrameligibilitydetailsobjectschema.json" (json)
 
 ### Contract Applied Object Schema
 
 The Contract Applied Object Schema defines the structure for the [Contract Applied](#datamodel.costandusage.contractapplied) column.
 
-[Download from GitHub](/specification/schemas/datasets/cost_and_usage/contractappliedobjectschema.json)
+[Download from GitHub](/specification/schemas/datasets/costandusage/contractappliedobjectschema.json)
 
-!INCLUDECODE "schemas/datasets/cost_and_usage/contractappliedobjectschema.json" (json)
+!INCLUDECODE "schemas/datasets/costandusage/contractappliedobjectschema.json" (json)
 
 ### Requester Details Value Schema
 
 The Requester Details Value Schema defines the structure for the [Requester Details](#datamodel.costandusage.requesterdetails) column.
 
-[Download from GitHub](/specification/schemas/datasets/cost_and_usage/requesterdetailsvalueschema.json)
+[Download from GitHub](/specification/schemas/datasets/costandusage/requesterdetailsvalueschema.json)
 
-!INCLUDECODE "schemas/datasets/cost_and_usage/requesterdetailsvalueschema.json" (json)
+!INCLUDECODE "schemas/datasets/costandusage/requesterdetailsvalueschema.json" (json)

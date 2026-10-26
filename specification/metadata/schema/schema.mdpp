@@ -1,7 +1,7 @@
-!INCLUDE "schema_overview.md",0
-!INCLUDE "schema_id.md",1
-!INCLUDE "creation_date.md",1
-!INCLUDE "focus_version.md",1
-!INCLUDE "data_generator_version.md",1
-!INCLUDE "dataset_instance_id.md",1
-!INCLUDE "column_definition/column_definition.mdpp",1
+!INCLUDE "schema-overview.md",0
+!INCLUDE "schemaid.md",1
+!INCLUDE "creationdate.md",1
+!INCLUDE "focusversion.md",1
+!INCLUDE "datageneratorversion.md",1
+!INCLUDE "datasetinstanceid.md",1
+!INCLUDE "columndefinition/columndefinition.mdpp",1

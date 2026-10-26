@@ -36,7 +36,7 @@ jobs:
 
       - name: Build Requirements Model JSON
         shell: bash
-        working-directory: ./specification/requirements_model
+        working-directory: ./specification/requirements-model
         run: |
           /usr/bin/pip3 install --break-system-packages -r requirements.txt
           ./build_json.py
@@ -58,7 +58,7 @@ jobs:
             specification/spec.md
             specification/images/*
             specification/styles/*
-            specification/requirements_model/build/*.json
+            specification/requirements-model/build/*.json
 
       # Bundle HTML with assets
       - name: Package HTML Bundle
@@ -78,7 +78,7 @@ jobs:
             the best offline HTML experience, download the .zip bundle."
           artifacts: "specification/spec.pdf, specification/spec.md,
             specification/spec.html, specification/spec_html_with_assets.zip,
-            specification/requirements_model/build/*.json"
+            specification/requirements-model/build/*.json"
           allowUpdates: true
           replacesArtifacts: true
           makeLatest: false
