@@ -103,7 +103,7 @@ HAVING ABS(SUM(EffectiveCost) - SUM(BilledCost)) > 0.01
 
 ### Commitment Discount Savings for a Charge Period Range
 
-Compares Contracted Cost with Effective Cost for usage covered by each commitment discount within a [*charge period*](#glossary:chargeperiod) range, isolating the savings attributable to each commitment discount.
+For each *commitment discount* within a [*charge period*](#glossary:chargeperiod) range, compares the Contracted Cost of the usage it covered with its total Effective Cost, including the unused portion. The difference is the net savings attributable to the *commitment discount*, and a negative value means the unused portion cost more than the *commitment discount* saved on covered usage.
 
 ```sql
 SELECT
