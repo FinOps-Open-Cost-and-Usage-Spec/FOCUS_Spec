@@ -23,7 +23,7 @@ specification/
 └── requirements-model/          # Validation rules and models
 ```
 
-***Note:*** *For directory and file naming conventions across the repository, see [Repository Naming Conventions](repository-naming-conventions.md). Directory and file names in this document reflect the target naming convention and may not yet match the current state of the repository until the conventions have been fully applied.*
+> **Note:** For directory and file naming conventions across the repository, see [Repository Naming Conventions](repository-naming-conventions.md). Directory and file names in this document reflect the target naming convention and may not yet match the current state of the repository until the conventions have been fully applied.
 
 ## MarkdownPP Usage in FOCUS
 
