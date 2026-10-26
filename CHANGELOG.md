@@ -238,7 +238,7 @@ v1.4 adds 2 datasets (`BillingPeriod`, `InvoiceDetail`), 47 new columns, 6 new a
   * [Effective Cost](/specification/supported-features/effective-cost.md)
   * [Marketplace Purchases](/specification/supported-features/marketplace-purchases.md)
   * [Participating Entity Identification](/specification/supported-features/participating-entity-identification.md)
-  * [Provider Services](/specification/supported_features/provider_services.md)
+  * Provider Services
   * [Resource Usage](/specification/supported-features/resource-usage.md)
   * [Service Categorization](/specification/supported-features/service-categorization.md)
 
@@ -287,7 +287,7 @@ v1.4 adds 2 datasets (`BillingPeriod`, `InvoiceDetail`), 47 new columns, 6 new a
 
 #### New attributes
 
-* [`InvoiceHandling`](/specification/attributes/invoice_handling.md)
+* `InvoiceHandling`
 * [`JsonObjectFormat`](/specification/attributes/jsonobjectformat.md)
 * [`DataGeneratorCalculatedSplitCostAllocationHandling`](/specification/attributes/datageneratorcalculatedsplitcostallocationhandling.md)
 
@@ -295,8 +295,8 @@ v1.4 adds 2 datasets (`BillingPeriod`, `InvoiceDetail`), 47 new columns, 6 new a
 
 * [Dataset Instance metadata example](/specification/appendix/metadata-examples/dataset-instance-metadata-example.md)
 * [Recency metadata example](/specification/appendix/metadata-examples/recency-metadata-example.md)
-* [Recency metadata updating over time](/specification/appendix/metadata_examples/recency_metadata_updating_over_time_dataset_example.md)
-* [Recency metadata updating not over time](/specification/appendix/metadata_examples/recency_metadata_updating_non_over_time_dataset_example.md)
+* Recency metadata updating over time
+* Recency metadata updating not over time
 * [Schema Dataset Instance ID example](/specification/appendix/metadata-examples/schema-dataset-instance-id-example.md)
 
 #### New metadata column definition properties
@@ -304,7 +304,7 @@ v1.4 adds 2 datasets (`BillingPeriod`, `InvoiceDetail`), 47 new columns, 6 new a
 * [`DatasetInstance`](/specification/metadata/datasetinstance/dataset-instance-overview.md)
   * [`DatasetInstanceId`](/specification/metadata/datasetinstance/datasetinstanceid.md)
   * [`DatasetInstanceName`](/specification/metadata/datasetinstance/datasetinstancename.md)
-  * [`FocusDatasetId`](/specification/metadata/dataset_instance/focus_dataset_id.md)
+  * [`FocusDatasetId`](/specification/metadata/datasetinstance/focusdatasetid.md)
 * [`Recency`](/specification/metadata/recency/recency-overview.md)
   * [`DatasetInstanceComplete`](/specification/metadata/recency/datasetinstancecomplete.md)
   * [`DatasetInstanceId`](/specification/metadata/recency/datasetinstanceid.md)
@@ -405,9 +405,9 @@ The specification's normative requirements are now maintained in a structured, g
 This functionality will be removed in a future release of FOCUS.
 
 * [`CostAndUsage`](/specification/datasets/costandusage/dataset.md)
-  * [`ProviderName`](/specification/datasets/cost_and_usage/columns/providername.md)
+  * `ProviderName`
     * Due to definitional conflicts between the Provider and Publisher columns, this column is deprecated and will be removed in a future release. This column was replaced with the new ServiceProviderName column.  
-  * [`PublisherName`](/specification/datasets/cost_and_usage/columns/publishername.md)
+  * `PublisherName`
     * Due to definitional conflicts between the Provider and Publisher columns, this column is deprecated and will be removed in a future release.
 
 <br>
