@@ -2,7 +2,7 @@
 
 ## Description
 
-FOCUS supports the tracking of commitment discounts usage and under usage, which can come in the form of commitment discounts or capacity reservations.
+FOCUS supports the tracking of [*commitment discounts*](#glossary:commitment-discount) usage and under usage, which can come in the form of *commitment discounts* or [*capacity reservations*](#glossary:capacity-reservation).
 
 ## Directly Dependent Columns
 

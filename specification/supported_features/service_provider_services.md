@@ -2,7 +2,7 @@
 
 ## Description
 
-FOCUS supports service providers specifying the services and product offerings that they provide their customers that align with the names practitioners are familiar with. This empowers practitioners to analyze cost by service, report service costs by subaccount, forecast based on historical trends by service, and verify accuracy of services charged across service providers.
+FOCUS supports [*service providers*](#glossary:service-provider) specifying the [*services*](#glossary:service) and product offerings that they provide their customers that align with the names [*practitioners*](#glossary:practitioner) are familiar with. This empowers *practitioners* to analyze cost by *service*, report *service* costs by [*sub account*](#glossary:sub-account), forecast based on historical trends by *service*, and verify accuracy of *services* charged across *service providers*.
 
 ## Directly Dependent Columns
 

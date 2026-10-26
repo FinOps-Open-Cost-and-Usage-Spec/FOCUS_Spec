@@ -2,7 +2,7 @@
 
 ## Description
 
-FOCUS enables tracking of resources split by some internal consumption metrics. This is most common for resources supporting shared usage like compute nodes in a shared cluster (Kubernetes, databases) or storage engines that can share capacity between workloads.
+FOCUS enables tracking of [*resources*](#glossary:resource) split by some internal consumption metrics. This is most common for *resources* supporting shared usage like compute nodes in a shared cluster (Kubernetes, databases) or storage engines that can share capacity between workloads.
 
 ## Directly Dependent Columns
 

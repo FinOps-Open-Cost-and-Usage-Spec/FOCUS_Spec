@@ -39,7 +39,7 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
         </td>
         <td>
             * Use the display name in the non-normative section.<br>
-            * The first occurrence in a section is linked to the section.
+            * The first occurrence in a source markdown file is linked to the section.
         </td>
     </tr>
     <tr>
@@ -65,7 +65,7 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
         <td>
            * Use PascalCamel case (the first letter of every word, is capitalized)<br>
            * Normal text without bold or italics.<br>
-           * The first occurrence in a section is linked to the section.
+           * The first occurrence in a source markdown file is linked to the section.
         </td>
     </tr>
     <tr>
@@ -112,7 +112,8 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
         </td>
         <td>
             * Blue font + italic<br>
-            * The first occurrence in a section is linked to the glossary.
+            * The first occurrence in a source markdown file is linked to the glossary.<br>
+            * Subsequent occurrences remain italic without a link (e.g., *resource*).
         </td>
     </tr>
     <tr>
@@ -158,6 +159,10 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
 
 > **Note:** Unless otherwise specified, first-occurrence linking is evaluated relative to the containing source markdown file.
 
+* **Glossary Term Formatting:** Glossary terms MUST be italicized on every occurrence. The first occurrence in a source markdown file MUST be linked (e.g., `[*charge*](#glossary:charge)`), and subsequent occurrences MUST be italicized without a link (e.g., `*charge*`). Plural and other inflected forms of a glossary term follow the same rule (e.g., `*charges*`).
+
+* **Glossary Term Scope:** Glossary formatting applies only when a word is used in the sense its glossary entry defines. It MUST NOT be applied when the word is part of a compound term with a different meaning (e.g., "service catalog", "service level", "invoice cycle"), or when the text refers to a column value, which is written as the value in double quotes instead (e.g., "Correction" in Charge Class, not *correction*).
+
 **Exceptions:**
 
 * In **Content Constraints** sections, all entity references MUST be linked, regardless of prior occurrence in the source markdown file.
@@ -176,6 +181,8 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
 
 * **Entity Scope:** These rules apply to all entities defined in the FOCUS specification (e.g., Columns, Attributes, Datasets, Objects).
 
+* **Dataset References:** Datasets in non-normative content MUST be referenced by their Display Name followed by "dataset" (e.g., "Cost and Usage dataset", "Invoice Detail dataset"), not by their dataset ID (e.g., CostAndUsage). Dataset IDs remain acceptable in SQL examples, where they identify tables.
+
 ### Display Names
 
 * **Display Names Usage:** Display Names SHOULD be used in introductory or explanatory sections where natural language context is more appropriate.
@@ -190,7 +197,7 @@ To ensure consistent language when describing relationships and evaluations betw
 
 * **Numeric Values:** Use "equal" or "be equal to" when comparing numeric values, costs, quantities, or mathematical sums (e.g., "ContractedCost MUST be equal to BilledCost"). Do not use "match".
 * **Identifiers and Strings:** Use "match" when comparing strings, IDs, or names (e.g., "HostProviderName MUST match ServiceProviderName"). Do not use "equal".
-* **State and Conditions:** Use forms of the verb "to be" (e.g., "is", "are", "be") when evaluating if a column contains a specific value or state (e.g., "when ChargeCategory is `Purchase`" or "ChargeCategory MAY be `Usage`"). Do not use "equals" or "equal", **except** when evaluating inequalities (e.g., "greater than or equal to").
+* **State and Conditions:** Use forms of the verb "to be" (e.g., "is", "are", "be") when evaluating if a column contains a specific value or state (e.g., 'when ChargeCategory is "Purchase"' or 'ChargeCategory MAY be "Usage"'). Do not use "equals" or "equal", **except** when evaluating inequalities (e.g., "greater than or equal to").
 * **Inequalities:** When expressing range or directional limits, the standard phrases "greater than or equal to" and "less than or equal to" MUST be used, even for non-numeric data types like timestamps or dates (e.g., "BillingPeriodLastUpdated MUST be greater than or equal to BillingPeriodCreated").
 * **Semantic Comparisons:** When comparing concepts, formats, or values that share the same meaning but may not be strictly identical strings, use "equivalent" or "semantically equivalent" (e.g., "PricingUnit MUST be semantically equivalent to the corresponding pricing measurement unit..."). Do not use "equal".
 
@@ -294,6 +301,16 @@ To ensure consistent language when describing relationships and evaluations betw
   ...
   * PricingQuantity MUST be greater than 0.
 ```
+
+### Supported Features
+
+Supported Features files (`specification/supported_features/`) follow these additional conventions:
+
+* **Column Lists:** Entries under "Directly Dependent Columns" and "Supporting Columns" MUST be Column IDs without links.
+* **Column List Coverage:** Every column referenced in an example query SHOULD appear in "Directly Dependent Columns" or "Supporting Columns", and these lists SHOULD NOT contain columns that no example query or description references.
+* **Example Query Headings:** Example queries MUST be placed under a single `## Example SQL Query` heading when there is one query, or `## Example SQL Queries` when there are several. When there are several, each query MUST have its own `###` heading describing its purpose.
+* **Query Descriptions:** Prose that introduces or explains an example query is non-normative and MUST follow the Display Name, linking, and glossary rules above (e.g., 'Charge Category of "Usage"', not "ChargeCategory of `Usage`").
+* **Values in SQL and Prose:** String values inside SQL code blocks use single quotes per SQL syntax (e.g., `'Usage'`), while the same values in prose MUST use double quotes (e.g., "Usage").
 
 ### Examples
 

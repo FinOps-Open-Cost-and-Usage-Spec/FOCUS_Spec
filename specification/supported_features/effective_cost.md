@@ -2,11 +2,11 @@
 
 ## Description
 
-FOCUS enables practitioners to analyze costs on an [*accrual basis*](#glossary:accrual-based-accounting), where expenses are recognized when [*resources*](#glossary:resource) are consumed, [*services*](#glossary:service) are used, or [*contract commitments*](#glossary:contract-commitment) are recognized, regardless of when those costs are invoiced. The [EffectiveCost](#datamodel.costandusage.effectivecost) column reflects all applicable pricing adjustments and distributes the cost of [*covering charges*](#glossary:covering-charge) (one-time or recurring purchases) to the [*covered charges*](#glossary:covered-charge) they offset.
+FOCUS enables [*practitioners*](#glossary:practitioner) to analyze costs on an [*accrual basis*](#glossary:accrual-based-accounting), where expenses are recognized when [*resources*](#glossary:resource) are consumed, [*services*](#glossary:service) are used, or [*contract commitments*](#glossary:contract-commitment) are recognized, regardless of when those costs are invoiced. The [Effective Cost](#datamodel.costandusage.effectivecost) column reflects all applicable pricing adjustments and distributes the cost of [*covering charges*](#glossary:covering-charge) (one-time or recurring purchases) to the [*covered charges*](#glossary:covered-charge) they offset.
 
-For [*charges*](#glossary:charge) that are not *covered charges*, EffectiveCost reflects the same amount as [BilledCost](#datamodel.costandusage.billedcost). For *covering charges* (e.g., [*commitment discount*](#glossary:commitment-discount) purchases, prepayments, or marketplace purchases), EffectiveCost is 0 because their cost is recognized on the *covered charges* instead. In *commitment discount* scenarios, [CommitmentDiscountStatus](#datamodel.costandusage.commitmentdiscountstatus) distinguishes whether amortized cost was allocated to consumed *resources* or *services* ("Used") or remained unallocated ("Unused").
+For [*charges*](#glossary:charge) that are not *covered charges*, Effective Cost reflects the same amount as [Billed Cost](#datamodel.costandusage.billedcost). For *covering charges* (e.g., [*commitment discount*](#glossary:commitment-discount) purchases, prepayments, or marketplace purchases), Effective Cost is 0 because their cost is recognized on the *covered charges* instead. In *commitment discount* scenarios, [Commitment Discount Status](#datamodel.costandusage.commitmentdiscountstatus) distinguishes whether amortized cost was allocated to consumed *resources* or *services* ("Used") or remained unallocated ("Unused").
 
-EffectiveCost is commonly used for *accrual-based* reporting, cost allocation, chargeback, and spending trend analysis. For scenarios involving *commitment discounts* across different payment models, see [Examples: Commitment Discount Flexibility](#appendix.examples:commitmentdiscountflexibility). For marketplace and SaaS scenarios, see [Examples: SaaS](#appendix.examples:saas).
+Effective Cost is commonly used for *accrual-based* reporting, cost allocation, chargeback, and spending trend analysis. For scenarios involving *commitment discounts* across different payment models, see [Examples: Commitment Discount Flexibility](#appendix.examples:commitmentdiscountflexibility). For marketplace and SaaS scenarios, see [Examples: SaaS](#appendix.examples:saas).
 
 ## Directly Dependent Columns
 
@@ -30,11 +30,11 @@ EffectiveCost is commonly used for *accrual-based* reporting, cost allocation, c
 
 ## Example SQL Queries
 
-EffectiveCost can be analyzed using [*billing period*](#glossary:billing-period) or [*charge period*](#glossary:chargeperiod) time filters. Billing period aligns with invoice cycles and is useful for financial reporting. Charge period captures when resources were consumed or commitments were recognized, which is more precise for consumption-based analysis.
+Effective Cost can be analyzed using [*billing period*](#glossary:billing-period) or [*charge period*](#glossary:chargeperiod) time filters. *Billing period* aligns with invoice cycles and is useful for financial reporting. *Charge period* captures when *resources* were consumed or commitments were recognized, which is more precise for consumption-based analysis.
 
 ### Effective Cost by Service and Region
 
-Aggregates EffectiveCost by billing period to align accrual-based cost reporting with invoice cycles.
+Aggregates Effective Cost by *billing period* to align *accrual-based* cost reporting with invoice cycles.
 
 ```sql
 SELECT
@@ -63,7 +63,7 @@ GROUP BY
 
 ### Commitment Discount Effective Cost Breakdown
 
-Analyzes commitment discount amortization by charge period, capturing costs based on when resources were consumed.
+Analyzes *commitment discount* [*amortization*](#glossary:amortization) by *charge period*, capturing costs based on when *resources* were consumed.
 
 ```sql
 SELECT
@@ -87,7 +87,7 @@ GROUP BY
 
 ### Effective Cost by Consumed Quantity and Pricing Quantity
 
-Compares the quantity consumed with the quantity priced for the same usage charges. [Consumed Quantity](#datamodel.costandusage.consumedquantity) and [Consumed Unit](#datamodel.costandusage.consumedunit) measure what was used (e.g., hours, GB), while [Pricing Quantity](#datamodel.costandusage.pricingquantity) and [Pricing Unit](#datamodel.costandusage.pricingunit) measure what the unit price was applied to, which can use a different unit or block size (e.g., GB-months, blocks of 1,000 requests). Dividing Effective Cost by each quantity gives the cost per unit consumed and the effective price per unit priced. Consumed Quantity is null for charges that are not usage and for unused commitment discounts, so those rows are excluded.
+Compares the quantity consumed with the quantity priced for the same usage *charges*. [Consumed Quantity](#datamodel.costandusage.consumedquantity) and [Consumed Unit](#datamodel.costandusage.consumedunit) measure what was used (e.g., hours, GB), while [Pricing Quantity](#datamodel.costandusage.pricingquantity) and [Pricing Unit](#datamodel.costandusage.pricingunit) measure what the unit price was applied to, which can use a different unit or block size (e.g., GB-months, blocks of 1,000 requests). Dividing Effective Cost by each quantity gives the cost per unit consumed and the effective price per unit priced. Rows where Consumed Quantity is null (e.g., when [Charge Category](#datamodel.costandusage.chargecategory) is not "Usage", or when Commitment Discount Status is "Unused") are excluded.
 
 ```sql
 SELECT

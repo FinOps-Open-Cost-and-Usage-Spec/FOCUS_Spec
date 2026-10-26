@@ -2,7 +2,7 @@
 
 ## Description
 
-FOCUS supports the categorization of charges including purchases, usage, tax, credits and adjustments. It includes classification on frequency. It includes classification on correction vs normal entries.
+FOCUS supports the categorization of [*charges*](#glossary:charge) via [Charge Category](#datamodel.costandusage.chargecategory), including "Purchase", "Usage", "Tax", "Credit", and "Adjustment". It includes classification on frequency via [Charge Frequency](#datamodel.costandusage.chargefrequency). It includes classification on "Correction" vs normal entries via [Charge Class](#datamodel.costandusage.chargeclass).
 
 ## Directly Dependent Columns
 
