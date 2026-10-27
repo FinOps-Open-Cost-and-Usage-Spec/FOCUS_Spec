@@ -31,4 +31,4 @@ Operating model conditions are sorted alphabetically by name.
 | [Includes Sub Accounts](#operatingmodelconditions.includessubaccounts) | Account | Operating model includes a sub account construct. |
 | [Includes Tags](#operatingmodelconditions.includestags) | Allocation | Operating model includes tags. |
 | [Includes Unit Pricing](#operatingmodelconditions.includesunitpricing) | Pricing | Operating model includes unit pricing. |
-| [Includes Usage Measurement](#operatingmodelconditions.includesusagemeasurement) | Billing | Operating model includes the measurement of usage. |
+| [Includes Usage Measurement](#operatingmodelconditions.includesusagemeasurement) | Billing | Operating model includes the measurement of resource or service usage. |
