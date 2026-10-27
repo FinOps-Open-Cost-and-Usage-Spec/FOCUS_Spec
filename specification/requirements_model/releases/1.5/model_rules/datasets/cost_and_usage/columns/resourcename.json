@@ -189,7 +189,7 @@
       "Keyword": "MUST NOT",
       "Requirement": {},
       "Condition": {
-        "CheckFunction": "CheckValue",
+        "CheckFunction": "CheckNotValue",
         "ColumnName": "ResourceId",
         "Value": null
       },
