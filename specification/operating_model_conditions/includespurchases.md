@@ -2,7 +2,7 @@
 
 The Includes Purchases operating model condition represents a verifiable state indicating whether the [*operating model*](#glossary:operating-model) includes purchases.
 
-> **Preview:** Includes Purchases exists for the SKU Price dataset, which is a [*preview*](#glossary:preview) in this version of FOCUS. While that dataset is a preview, Includes Purchases may change in the next version without a deprecation notice.
+> **Preview:** Includes Purchases exists for the SKU Price dataset, which is a preview in this version of FOCUS. While that dataset is a preview, Includes Purchases may change in the next version without a deprecation notice.
 
 ## Requirements
 
