@@ -297,27 +297,19 @@ To ensure consistent language when describing relationships and evaluations betw
 
 ### Section Headings
 
-A FOCUS entity name follows one convention across normative requirements, prose, and section headings:
-
-| Where the name appears              | Form                        | Example               |
-|-------------------------------------|-----------------------------|-----------------------|
-| Normative requirements              | Entity ID                   | AllocatedResourceId   |
-| Prose outside Requirements sections | Display Name (when defined) | Allocated Resource ID |
-| Section headings                    | Display Name (when defined) | Allocated Resource ID |
-
-The rules for normative requirements are in [FOCUS Entity Reference Conventions](normative-requirements-guidelines.md#focus-entity-reference-conventions). The rules for prose are in [Entity References](#entity-references). The rules for section headings are below.
-
-* **Display Names in Headings:** Section headings MUST use Display Names, not Entity IDs, when the entity has a Display Name.
-
-* **Display Name Form:** A Display Name in a heading MUST match the Display Name defined for the entity, with spaces between words (e.g., Allocated Resource ID, not AllocatedResourceId).
-
-* **Headings Over Schema Content:** Section headings MUST use Display Names even when the table, query, or code under the heading uses Entity IDs.
+* **Entity Names in Headings:** Document titles and section headings are non-normative content. The Display Name rules in [Entity References](#entity-references) and [Display Names](#display-names) apply to them, even when the table, query, or code under the heading uses Entity IDs (e.g., `### Effective Cost by Allocated Resource ID`, not `### Effective Cost by AllocatedResourceId`).
 
 * **Metadata Names:** A metadata field's Metadata Name serves as its Display Name in headings (e.g., FOCUS Version, not FocusVersion).
 
-* **Entities Without a Display Name:** When an entity has no Display Name (e.g., a JSON object property such as ProgramType), the heading MUST use the name exactly as the schema defines it.
+* **Entities Without a Display Name:** When an entity has no Display Name (e.g., a JSON object property such as ProgramType), the heading uses the name as the schema defines it.
 
 * **Heading Scope:** These rules apply to all document titles and section headings in specification content, including headings on supported features pages and in appendix example sections.
+
+* **Single Query Heading:** On a supported features page with one example query, the query MUST appear under the level-2 heading `## Example SQL Query`.
+
+* **Multiple Query Headings:** On a supported features page with more than one example query, the queries MUST appear under the level-2 heading `## Example SQL Queries`, with one level-3 subheading per query.
+
+* **Query Subheadings:** Each query subheading SHOULD name the scenario the query covers (e.g., `### Effective Cost by Service and Region`).
 
 * **Example** (Markdown, illustrative):
 
@@ -332,27 +324,17 @@ The rules for normative requirements are in [FOCUS Entity Reference Conventions]
     ### Cost Columns: BilledCost vs. EffectiveCost vs. ListCost
   ```
 
-### Supported Features Pages
-
-A supported features page describes a FinOps capability that FOCUS data enables. A page that depends on specific columns lists them under Directly Dependent Columns, Supporting Columns, or both, and shows example SQL queries that use them.
-
-* **Single Query Heading:** A page with one example query MUST place it under the level-2 heading `## Example SQL Query`.
-
-* **Multiple Query Headings:** A page with more than one example query MUST place them under the level-2 heading `## Example SQL Queries`, with one level-3 subheading per query.
-
-* **Query Subheadings:** Each query subheading SHOULD name the scenario the query covers (e.g., `### Effective Cost by Service and Region`).
-
-* **Column Coverage:** Every column listed under Directly Dependent Columns or Supporting Columns MUST appear in at least one example query on the same page.
-
-* **Coverage Scope:** Column Coverage also applies to an appendix example section that lists columns (e.g., under a Directly Dependent Columns or Supporting Columns heading) and shows example queries.
-
-> **Note:** When no query uses a listed column, add the column to a query where it is central to the capability, or remove it from the list.
-
 ### Examples
 
 > **Note:** Authors should consult the actual FOCUS attribute specification files as the source of truth, as these guidelines do not necessarily reflect the latest version.
 
 * **Brand-Free Identifiers:** Resource, host, and pod-level identifiers in appendix examples MUST use neutral, brand-free labels (e.g., `host-prod-07`, `pod-orders-01`) rather than labels derived from fictitious customer or data generator names, so that an identifier does not read as an additional, unintended entity in the example.
+
+* **Column Coverage:** On a supported features page, every column listed under Directly Dependent Columns or Supporting Columns MUST appear in at least one example query on the same page.
+
+* **Column Coverage in the Appendix:** Column Coverage also applies to an appendix example section that lists columns (e.g., under a Directly Dependent Columns or Supporting Columns heading) and shows example queries.
+
+> **Note:** When no query uses a listed column, add the column to a query where it is central to the feature, or remove it from the list.
 
 * **Valid Examples:** Examples MUST reflect valid combinations of values defined in the specification.
 
