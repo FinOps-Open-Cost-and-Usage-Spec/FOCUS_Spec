@@ -329,9 +329,9 @@ To ensure consistent language when describing relationships and evaluations betw
 
 * **Blockquote Format:** Notes MUST be expressed using Markdown blockquote syntax (`>`). This creates a consistent, parseable container and allows downstream tooling to control visual presentation in HTML and PDF outputs.
 
-* **Note Label:** Notes MUST begin with the label `**Note:**` or `**Notes:**` (the term `Note` or `Notes`, followed by a colon, in bold).
+* **Note Label:** Notes MUST begin with the label `**Note:**`, `**Notes:**`, or `**Preview:**` (the term `Note`, `Notes`, or `Preview`, followed by a colon, in bold). The `**Preview:**` label is used only for notes that mark preview content (see [Preview Process](spec-change-guidelines.md#preview-process)).
 
-* **Consistent Terminology:** Only the terms `Note` or `Notes` MUST be used. Variants such as `Important Note`, `Warning`, or similar terms MUST NOT be used.
+* **Consistent Terminology:** Only the terms `Note`, `Notes`, or `Preview` MUST be used. Variants such as `Important Note`, `Warning`, or similar terms MUST NOT be used.
 
 * **Non-Normative Content:** Notes MUST be informative and non-normative. They MUST NOT contain normative keywords (e.g., MUST, SHOULD, MAY).
 

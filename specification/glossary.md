@@ -191,6 +191,10 @@ A column included in a [*FOCUS dataset*](#glossary:FOCUS-dataset). A FOCUS datas
 
 The conversion of an amount from one currency to another using a currency exchange rate.
 
+<a name="glossary:general-availability"><b>General Availability (GA)</b></a>
+
+The version of FOCUS in which a [*FOCUS dataset*](#glossary:FOCUS-dataset), or a supporting entity on a preview's scope list, is promoted from [*preview*](#glossary:preview) status or initially published without preview status.
+
 <a name="glossary:inclusivestartbound"><b>Inclusive Start Bound</b></a>
 
 A [Date/Time Format](#attributes.date/timeformat) value that is contained within the beginning bound of a time period.
@@ -294,6 +298,10 @@ A long and often painful conversation had by the FOCUS contributors. Sometimes t
 
 An individual who performs FinOps within an organization to maximize the business value of using cloud and cloud-like services.
 
+<a name="glossary:preview"><b>Preview</b></a>
+
+A status for a [*FOCUS dataset*](#glossary:FOCUS-dataset) that is published in a version of FOCUS so implementers can build it and report what they find, and that may change in the next version without a deprecation notice. See [Preview](#introduction.preview) and [*General Availability (GA)*](#glossary:general-availability).
+
 <a name="glossary:price-list"><b>Price List</b></a>
 
 A comprehensive list of prices offered by a service provider.
@@ -364,7 +372,7 @@ An agreement specified on a [*contract*](#glossary:contract) or [*invoice*](#glo
 
 <a name="glossary:token"><b>Token</b></a>
 
-A unit of measure representing a discrete quantity of content processed by an [*AI model*](#glossary:ai-model). The amount of content a single token represents is determined by the model, so token counts are not directly comparable across models. Distinct from a token issued as a [*virtual currency*](#glossary:virtual-currency), which denominates value rather than measuring consumption.
+A unit of measure representing a discrete quantity of content processed by an [*AI model*](#glossary:ai-model). The amount of content a single token represents is determined by the model, so token counts are not directly comparable across models. Distinct from a token issued as a [*virtual currency*](#glossary:virtual-currency), which denominates value.
 
 <a name="glossary:unit-pricing"><b>Unit Pricing</b></a>
 
