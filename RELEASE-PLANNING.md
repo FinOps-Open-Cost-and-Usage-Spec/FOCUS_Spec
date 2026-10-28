@@ -34,9 +34,14 @@ This section outlines the planned release schedule and key milestones for the FO
         <td>v1.6</td>
         <td>May 2027</td>
         <td>
-<strong>TBD</strong>
+<strong>Core scope</strong>
     <ul>
-      <li>Scope to be defined during the v1.6 scoping period (8 Oct 2026 to 19 Nov 2026)</li>
+      <li>Make the SKU Price dataset generally available</li>
+      <li>Add Artificial Intelligence (AI) dimensions, a short list chosen from practitioner use cases</li>
+    </ul>
+  <strong>Champion scope</strong>
+    <ul>
+      <li>Added during development as capacity allows</li>
     </ul>
         </td>
     </tr>
@@ -194,33 +199,37 @@ This table displays key milestones and dates related to the development of FOCUS
   </thead>
   <tbody>
     <tr>
-      <td rowspan="2"><strong>8-Oct-26 to 19-Nov-26</strong></td>
+      <td rowspan="2"><strong>8-Oct-26 to 29-Oct-26</strong></td>
       <td><strong>Thu Oct 8</strong></td>
       <td>1.6 Scope Starts</td>
       <td rowspan="2">
-        6 weeks.<br/>
-        Scope definition and prioritization for v1.6.<br/>
-        Runs in parallel with v1.5 Final Consistency Review and IPR Review.
+        3 weeks.<br/>
+        Core scope definition and prioritization for v1.6.<br/>
+        Runs in parallel with v1.5 Final Consistency Review.
       </td>
     </tr>
     <tr>
-      <td><strong>Thu Nov 19</strong></td>
-      <td>1.6 Scope Ends*</td>
+      <td><strong>Thu Oct 29</strong></td>
+      <td>1.6 Core Scope Ends</td>
     </tr>
     <tr>
-      <td rowspan="6"><strong>19-Nov-26 to 25-Mar-27</strong></td>
-      <td><strong>Thu Nov 19</strong></td>
-      <td>1.6 Development Starts</td>
-      <td rowspan="6">
-        18 weeks (16 working weeks plus 2-week end-of-year break).<br/>
-        Development begins immediately after v1.6 Scope Ends (19 Nov 2026).<br/>
+      <td rowspan="7"><strong>29-Oct-26 to 25-Mar-27</strong></td>
+      <td><strong>Thu Oct 29</strong></td>
+      <td>1.6 Core Development Starts</td>
+      <td rowspan="7">
+        21 weeks (19 working weeks plus 2-week end-of-year break).<br/>
+        Core development begins when Core scope ends (29 Oct 2026). Champion scope is added during development as capacity allows.<br/>
         Includes a two-week end-of-year break (21 Dec 2026 to 4 Jan 2027).<br/>
         Interim milestones occur on Thursdays (Members meeting cadence).
       </td>
     </tr>
     <tr>
-      <td><strong>Thu Jan 28</strong><br/>(10 weeks)</td>
+      <td><strong>Thu Jan 28</strong><br/>(13 weeks)</td>
       <td>Deadline to Create PR Drafts</td>
+    </tr>
+    <tr>
+      <td><strong>Thu Jan 28</strong></td>
+      <td>Deadline to Approve Guideline Changes</td>
     </tr>
     <tr>
       <td><strong>Thu Feb 11</strong><br/>(2 weeks)</td>
@@ -277,7 +286,10 @@ This table displays key milestones and dates related to the development of FOCUS
   </tbody>
 </table>
 
-\* Feature request items approved during the v1.6 scoping period can start drafting before the 19 Nov 2026 milestone.
+The v1.6 timeline adds two gates:
+
+* **Guideline changes:** Changes to `AGENTS.md` or to files in `guidelines/` apply to v1.6 when they are approved by the Deadline to Approve Guideline Changes (28 Jan 2027). A change not approved by that date goes to Member Review after the v1.6 Final Consistency Review ends, and it applies to v1.7.
+* **Sample data:** A PR that needs sample data or worked examples comes out of draft only when its representative examples are in place. Its complete set of examples is in place by the Deadline to Start TF Review (25 Feb 2027).
 
 ### Estimated Timeline for v1.5
 
