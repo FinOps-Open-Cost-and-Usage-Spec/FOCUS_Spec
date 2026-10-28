@@ -317,8 +317,6 @@ To ensure consistent language when describing relationships and evaluations betw
   * `specification/appendix/appendix_overview.md`
 * **Informative Status Note Scope:** Each note MUST refer only to the section identified by that heading (e.g., "The Appendix"). The note MUST NOT be placed under the subheadings of that heading, including a heading originating from a nested file. The Conventions section in `specification/overview.md` MUST identify the same headings and exceptions as the corresponding notes.
 
-  * **Exception:** This requirement does not apply to guideline documents, training materials, or authoring guidance where examples are inherently illustrative.
-
 * **Example** (Markdown, illustrative):
 
   ```md
