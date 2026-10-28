@@ -1,3 +1,9 @@
+---
+aliases:
+  covered-charge: [covered]
+  cash-based-accounting: [cash-based]
+---
+
 # Glossary
 
 <a name="glossary:accrual-based-accounting"><b>Accrual-Based Accounting</b></a>
