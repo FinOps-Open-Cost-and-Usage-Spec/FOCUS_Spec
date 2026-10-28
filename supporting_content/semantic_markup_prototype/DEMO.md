@@ -32,7 +32,7 @@ The first command builds the specification with the tags resolved. The second li
 Build-time checks:
 
 * Definition checks (REG codes) run on every build. Errors fail the build.
-* Unknown entities, invalid values, and ambiguous ColumnIds fail the build with the source file and line number.
+* Unknown entities, invalid values, ambiguous ColumnIds, and unknown front matter datasets fail the build with the source file and line number.
 * `tests/test_spec_links.py` confirms that every resolved anchor exists in `spec.html`.
 
 `make force=1` downgrades both to warnings.
@@ -47,7 +47,7 @@ Build-time checks:
 | `datasets/invoice_detail/columns/billedcost.md` | A ColumnId shared by two datasets, which resolves to the file's own dataset, plus dataset-qualified IDs (`CostAndUsage.BilledCost`) |
 | `attributes/numeric_format.md` | Attribute self-references and glossary terms in normative text |
 | `operating_model_conditions/includesresourcetypeassignment.md` | An operating model condition referring to itself |
-| `appendix/saas_examples/consumption_currency_pricing_model.md` | Non-normative prose with explicit dataset qualifiers where a ColumnId exists in several datasets |
+| `appendix/saas_examples/consumption_currency_pricing_model.md` | Non-normative prose with a front matter dataset (`dataset: CostAndUsage`), so shared ColumnIds such as BilledCost need no qualifier |
 | `glossary.md` | Front matter declaring two aliases |
 
 Conversion followed the migration steps:
@@ -57,8 +57,30 @@ Conversion followed the migration steps:
    * Self-references by Display Name in prose (e.g., "Billed Cost represents...") are tagged, per the recommendation on #2779.
    * In `chargeclass.md`, "correction" and "charges" are tagged as glossary terms where the same file already treated them as terms.
    * "invoice issuer" in both BilledCost files points to the glossary term, not the InvoiceIssuerName column.
-   * In the appendix, ColumnIds shared by several datasets are qualified with `CostAndUsage`, because the example rows are Cost and Usage rows.
+   * The appendix file declares `dataset: CostAndUsage` in front matter, because the example rows are Cost and Usage rows. See Dataset Scope.
    * Ordinary phrases such as "Billing Period" in the appendix are left untagged, because whether plain prose may stay untagged is an open question.
+
+## Dataset Scope
+
+Eleven ColumnIds (e.g., BilledCost, BillingCurrency, InvoiceId) are defined in more than one dataset. This branch decides which dataset an unqualified column reference means as follows:
+
+1. A file under `datasets/<dataset>/` belongs to that dataset.
+2. Any other file may declare a dataset in front matter:
+
+   ```yaml
+   ---
+   dataset: CostAndUsage
+   ---
+   ```
+
+3. In a file with a dataset, an unqualified column resolves in that dataset only. A column from another dataset needs a qualifier (e.g., `[BilledCost](#col:InvoiceDetail.BilledCost)`), and an unqualified column that is not in the file's dataset fails the build.
+4. In a file without a dataset, a column may stay unqualified only when a single dataset defines it.
+
+With the front matter, the appendix reads `[ListCost](#col), [BilledCost](#col), and [ContractedCost](#col)`, and all three resolve to Cost and Usage. Before, only BilledCost carried a qualifier, because it is the only one of the three defined in two datasets. Writing the dataset once per file states the intent directly, and adding a column to another dataset later cannot change or break existing references.
+
+`tag_sources.py` applies the rule as well. After adding the front matter, rerunning it removed the six qualifiers that had become unnecessary. It keeps a qualifier when the visible text is qualified too (e.g., `InvoiceDetail.BilledCost` next to `CostAndUsage.BilledCost`). The rendered output did not change.
+
+This is one answer to the Dataset scope question in #2779, which is still open.
 
 ## Review of Rendered Differences
 

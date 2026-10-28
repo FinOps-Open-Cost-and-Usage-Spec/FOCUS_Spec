@@ -33,6 +33,13 @@ In glossary.md, aliases are keyed by glossary key:
       covered-charge: [covered]
     ---
 
+Any file outside datasets/ may name the dataset its unqualified column
+references resolve to (files under datasets/ take it from their location):
+
+    ---
+    dataset: CostAndUsage
+    ---
+
 Definition checks:
 
 * REG001 error  column file has no Column ID or no Display Name section
@@ -46,6 +53,7 @@ Definition checks:
 * REG009 info   an alias or name is shared by entities of different types (references must state the type)
 * REG010 error  malformed glossary anchor (the term would be silently dropped)
 * REG011 warn   unknown front matter key, or an alias for an unknown glossary key
+* REG012 warn   a file under datasets/ declares a dataset in front matter
 
 Usage:
     ./build_registry.py [--spec-dir DIR] [--overlay DIR] [--out registry.json] [--strict]
@@ -63,7 +71,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 DEFAULT_SPEC_DIR = HERE.parent.parent / "specification"
-FRONT_MATTER_KEYS = {"aliases"}
+FRONT_MATTER_KEYS = {"aliases", "dataset"}
 
 
 class Diagnostics:
@@ -174,6 +182,11 @@ def aliases_of(front, source, diag):
     return aliases if isinstance(aliases, list) else [aliases]
 
 
+def check_no_dataset(front, source, diag):
+    if "dataset" in front:
+        diag.report("WARN", "REG012", source, "files under datasets/ take their dataset from their location")
+
+
 def collect(src, diag):
     spec_dir = src.spec_dir
     entities = []
@@ -189,12 +202,14 @@ def collect(src, diag):
         ds_title = h1(text, dataset_md)
         ds_anchor = f"{data_model}.{anchor_part(ds_title)}"
         ds_id = pascal_id(ds_title)
+        check_no_dataset(front, src.rel(dataset_md), diag)
         add(type="ds", id=ds_id, display=ds_title, anchor=ds_anchor, source=src.rel(dataset_md),
             aliases=aliases_of(front, src.rel(dataset_md), diag))
 
         for col_md in sorted((dataset_md.parent / "columns").glob("*.md")):
             source = src.rel(col_md)
             front, text = split_front_matter(src.read(col_md))
+            check_no_dataset(front, source, diag)
             col_id = section_body(text, "Column ID")
             display = section_body(text, "Display Name")
             if not col_id or not display:

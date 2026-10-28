@@ -12,6 +12,12 @@ Input requirements:
   "<!-- focus:begin <path> -->" and "<!-- focus:end <path> -->". Paths are
   relative to the specification directory. The marker lines are removed.
 
+Dataset scope: a file's dataset comes from its location (a column file, or any
+file under datasets/<dataset>/) or, for other files, from "dataset:" in its
+front matter. Unqualified column references in a file with a dataset resolve
+in that dataset only. A file without one may leave a column unqualified only
+when a single dataset defines it.
+
 Rendering rules (the same as focus_semantic.py):
 
 * The first reference to an entity in each source file becomes a link; later
@@ -37,9 +43,11 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+from build_registry import split_front_matter  # noqa: E402
 from focus_semantic import TYPES, Registry  # noqa: E402
 
 MARKER = re.compile(r"^<!-- focus:(begin|end) (\S+) -->$")
+TOC_ANCHOR = re.compile(r'^<a class="toc-anchor" name="[^"]*">&nbsp;</a>$')
 SEMANTIC_LINK = re.compile(r"\[([^\]\n]+)\]\(#(" + "|".join(TYPES) + r")(?::([^)\s]*))?\)")
 ANY_FRAGMENT_LINK = re.compile(r"\]\(#([^)\s]+)\)")
 CODE_SPAN = re.compile(r"(`+[^`]*`+)")
@@ -49,21 +57,35 @@ HEADING = re.compile(r"^(#+)\s+(?:\d+(?:\.\d+)*\.\s+)?(.*?)\s*$")
 class Frame:
     """Per-source-file state."""
 
-    def __init__(self, path, registry):
+    def __init__(self, path, registry, spec_dir):
         self.path = path
         self.line = 0
         self.seen = set()
+        self.declared = None
         self.dataset = next((e["dataset"] for e in registry.by_type["col"] if e["source"] == path), None)
         if self.dataset is None:
             self.dataset = next((e["id"] for e in registry.by_type["ds"]
                                  if Path(e["source"]).parent in Path(path).parents), None)
+        source = spec_dir / path
+        if source.suffix == ".md" and source.exists():
+            text = source.read_text(encoding="utf-8")
+            front, body = split_front_matter(text)
+            # Include drops the front matter and the blank lines after it; count them
+            # so reported line numbers match the source file
+            if front:
+                stripped = text[:len(text) - len(body.lstrip("\n"))]
+                self.line = stripped.count("\n")
+            if self.dataset is None:
+                self.declared = front.get("dataset") or None
+                self.dataset = self.declared
 
 
 class SemanticResolver:
-    def __init__(self, registry, strict=True):
+    def __init__(self, registry, strict=True, spec_dir=Path(".")):
         self.registry = registry
         self.strict = strict
-        self.stack = [Frame("spec.mdpp", registry)]
+        self.spec_dir = spec_dir
+        self.stack = [Frame("spec.mdpp", registry, spec_dir)]
         self.sections = []
         self.in_code = False
         self.errors = 0
@@ -142,11 +164,28 @@ class SemanticResolver:
 
     def run(self, lines):
         out = []
+        skip_blank = False
         for line in lines:
+            # markdown-pp adds an anchor line and a blank line before each heading;
+            # they are not in the source file, so they do not advance its line count
+            if TOC_ANCHOR.match(line.rstrip("\n")):
+                out.append(line)
+                skip_blank = True
+                continue
+            if skip_blank and not line.strip():
+                out.append(line)
+                skip_blank = False
+                continue
+            skip_blank = False
             marker = MARKER.match(line.rstrip("\n"))
             if marker:
                 if marker.group(1) == "begin":
-                    self.stack.append(Frame(marker.group(2), self.registry))
+                    self.stack.append(Frame(marker.group(2), self.registry, self.spec_dir))
+                    declared = self.frame.declared
+                    line, self.frame.line = self.frame.line, 2  # report on the dataset: line
+                    if declared and declared not in {e["id"] for e in self.registry.by_type["ds"]}:
+                        self.report("ERROR", "FOCUS010", f'front matter names unknown dataset "{declared}"')
+                    self.frame.line = line
                 else:
                     self.stack.pop()
                     self.frame.line += 1  # the !INCLUDE line in the parent
@@ -161,11 +200,13 @@ def main():
     parser.add_argument("input", type=Path)
     parser.add_argument("-o", "--output", type=Path, required=True)
     parser.add_argument("--registry", type=Path, required=True)
+    parser.add_argument("--spec-dir", type=Path, default=Path("."),
+                        help="directory the include paths are relative to (default: current directory)")
     parser.add_argument("--no-strict", action="store_true")
     args = parser.parse_args()
 
     registry = Registry(json.loads(args.registry.read_text(encoding="utf-8")))
-    resolver = SemanticResolver(registry, strict=not args.no_strict)
+    resolver = SemanticResolver(registry, strict=not args.no_strict, spec_dir=args.spec_dir)
     lines = args.input.read_text(encoding="utf-8").splitlines(keepends=True)
     args.output.write_text("".join(resolver.run(lines)), encoding="utf-8")
     print(f"Semantic references: {resolver.resolved} resolved, {resolver.errors} error(s), "

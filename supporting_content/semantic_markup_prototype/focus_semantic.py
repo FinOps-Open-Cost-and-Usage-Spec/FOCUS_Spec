@@ -138,6 +138,15 @@ class Registry:
                    if e["id"].lower() == wanted or text.lower() in self.names(e)]
         if ds:
             matches = [e for e in matches if e.get("dataset") == ds]
+        elif kind == "col" and dataset and matches:
+            # A file with a dataset (its location or its front matter) resolves unqualified
+            # columns there only, so a column added to another dataset later cannot change it
+            local = [e for e in matches if e.get("dataset") == dataset]
+            if not local:
+                other = matches[0]
+                return None, (f'col "{other["id"]}" is not in the {dataset} dataset; '
+                              f'qualify it, e.g. (#col:{other["dataset"]}.{other["id"]})')
+            matches = local
         if not matches:
             return None, f'unknown {kind} "{ident or text}"'
         picked = self._pick(matches, dataset, f"{kind} {matches[0]['id']}")
