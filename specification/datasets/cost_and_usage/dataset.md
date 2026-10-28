@@ -82,7 +82,7 @@ The specification for the Cost and Usage dataset defines a group of columns that
 
 ## Relationships<!--SkipTOC-->
 
-The Cost and Usage dataset can be joined to the [Contract Commitment](#datamodel.contractcommitment) dataset through the use of the Contract Commitment ID.
+The Cost and Usage dataset can be joined to the [Contract Commitment](#datamodel.contractcommitment) dataset through the use of the [Contract Commitment ID](#datamodel.contractcommitment.contractcommitmentid).
 
 * In the Cost and Usage dataset, Contract Commitment ID is a property within a JSON object array provided in [Contract Applied](#datamodel.costandusage.contractapplied) column.
 * In the Contract Commitment dataset, Contract Commitment ID is a column.

@@ -47,7 +47,7 @@ Dataset conforming to DeliveryHandling attribute MUST adhere to the following re
 
 * *FOCUS dataset* MUST NOT require practitioners to deduplicate records within or across delivered dataset artifacts.
 * When using Overwrite delivery mechanism, *FOCUS dataset* MUST adhere to the following additional requirements:
-  * *FOCUS dataset* MUST represent a complete snapshot for a given [*delivery scope*](#glossary:delivery-scope).
+  * *FOCUS dataset* MUST represent a complete snapshot for a given *delivery scope*.
   * *FOCUS dataset* MUST supersede all previously delivered *dataset artifacts* for the same *delivery scope*.
 * *FOCUS dataset* MUST preserve all previously delivered *dataset artifacts* when using Append delivery mechanism.
 * *FOCUS dataset* SHOULD have delivered *dataset artifacts* accompanied by corresponding [FOCUS Metadata](#metadata).
