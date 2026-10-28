@@ -26,7 +26,7 @@ Pricing Currency Effective Cost
 
 ## Description
 
-The PricingCurrency-denominated equivalent of Effective Cost, representing the cost of a *charge* based on the *resources* used, *services* used, or *contract commitments* recognized in a given *charge period*.
+The Pricing Currency-denominated equivalent of Effective Cost, representing the cost of a *charge* based on the *resources* used, *services* used, or *contract commitments* recognized in a given *charge period*.
 
 ## Content Constraints
 

@@ -29,7 +29,7 @@ Commitment Discount Category
 
 ## Description
 
-Indicates whether the *commitment discount* identified in the CommitmentDiscountId column is based on usage quantity or cost (aka "spend").
+Indicates whether the *commitment discount* identified in the Commitment Discount ID column is based on usage quantity or cost (aka "spend").
 
 ## Content Constraints
 
