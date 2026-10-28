@@ -82,4 +82,30 @@ One mistake was caught before it reached the output. A hand edit tagged the `# B
 * **Requirements Model extraction.** `.github/workflows/rm_extraction.yml` extracts normative statements from the Markdown source. It has not been made tag-aware, so a PR from this branch would show extraction differences.
 * **PDF.** The PDF step (wkhtmltopdf) was not run locally. It uses the same resolved `spec.md` and `spec.html`, so it should behave like the HTML build.
 * **`build.sh`.** The prototype's `build.sh` compares the samples against the unconverted spec files. On this branch those spec files are already converted, so use `make` and `compare_rendered.sh` instead.
-* **Open questions.** The questions in #2779 are still open: dataset scope, plain prose, value links, self-references, and the Requirements Model.
+* **Open questions.** The questions in #2779 are still open: dataset scope, plain prose, value links, self-references, context rules, and the Requirements Model.
+
+## Open Question: Context Rules
+
+The resolver decides how a reference is decorated (link, italics, quotes), but it renders the name exactly as the author wrote it. Some editorial rules instead decide which name is written, depending on where the reference appears. For example, #2794 changes headings such as `### Cost Columns: BilledCost vs. EffectiveCost vs. ListCost` to use Display Names, following the heading rules proposed in #2778. On this branch, those edits would still be made by hand.
+
+| Context | Rule | Source | Prototype |
+| :--- | :--- | :--- | :--- |
+| Headings | Display Name (or Metadata Name), never a link; a JSON property keeps its schema name | #2778 (open) | The converter skips headings. A tagged heading would be linked and counted as a first mention |
+| Requirements | Entity ID; an operating model condition used as a condition is written as its lowercase phrase | #2765 (open) | FOCUS003 checks columns only |
+| Requirements, other dataset | `Dataset.Column` | #2765 (open) | Accepted |
+| Prose outside Requirements | Display Name for conceptual references; an Entity ID is allowed for schema-facing references (SHOULD in the appendix) | Editorial Guidelines, #2514 and #2765 (open) | Not checked |
+| Content Constraints tables | Every reference links | Editorial Guidelines | Every table links, which is broader than the rule |
+| Entity catalog tables | Row links do not count toward first mention | #2514 and #2765 (open) | Not modeled |
+| Allowed Values tables | Values are unquoted | #2514 (open) | Values render as written |
+| Glossary | First mention is counted per entry, not per file | Editorial Guidelines | Counted per file |
+| Column file whose Display Name is a glossary term | The first mention links to the glossary, never to the column | #2765 (open) | Not modeled |
+| Code, SQL, JSON | Entity IDs, no links | Editorial Guidelines | Skipped |
+
+There are two ways to handle the name:
+
+* **A. The author writes the name, and the linter checks it against the context.** The tag identifies the entity, so a rule such as "headings use the Display Name" is a deterministic check against the registry, and the fix can be automated. All of #2794's heading changes would be reported.
+* **B. The resolver writes the name.** A tag with no text (e.g., `[](#col:BilledCost)`) renders as the Display Name in headings and the Entity ID in requirements, so a renamed Display Name updates everywhere. It cannot handle plurals, possessives, operating model condition phrases, or the conceptual versus schema-facing judgment.
+
+Recommendation: A. The resolver keeps decoration, and the linter checks the name. The source stays readable, and the cases that B cannot handle are the ones the open guideline PRs spend the most words on. The linter can check headings, Requirements, `Dataset.Column` paths, Allowed Values quoting, and Content Constraints links deterministically. For conceptual versus schema-facing prose, it can only check that the text is one of the entity's names.
+
+Tags inside headings are safe for the build: markdown-pp builds a clean anchor and table of contents entry from the link text. The resolver would need to render heading tags without links and not count them as first mentions. The prototype has not been changed for any of this yet.
