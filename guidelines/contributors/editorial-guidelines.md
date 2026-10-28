@@ -63,9 +63,9 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
           &nbsp;&nbsp; DateTimeFormat <br>
         </td>
         <td>
-           * Use PascalCamel case (the first letter of every word, is capitalized)<br>
+           * Use PascalCamel case (the first letter of every word, is capitalized).<br>
            * Normal text without bold or italics.<br>
-           * The first occurrence in each source file is linked to its definition (see Linking)
+           * The first occurrence in each source file is linked to its definition (see Linking).
         </td>
     </tr>
     <tr>
