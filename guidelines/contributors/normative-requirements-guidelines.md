@@ -587,7 +587,7 @@ While normative requirements MUST focus on **enforceable constraints** and **ver
 
 #### Separation of Concerns
 
-* **Definitions:** If a definition is complex or applies to multiple requirements, it SHOULD be placed in the **Glossary** or the preamble section and referenced as a link within the requirement.
+* **Definitions:** If a definition is complex or applies to multiple requirements, it SHOULD be placed in the **Glossary** or the preamble section and referenced in the requirement by its glossary term. Linking follows "Linking on First Occurrence" in the [Editorial Guidelines](editorial-guidelines.md).
 * **Complex Logic:** If an informative or normative clause is complex or applies to multiple requirements, it SHOULD be placed in the **Implementation Context** section to maintain the clarity of the core requirement.
 * **Normative Authority:** To ensure consistency, BCP 14 keywords MUST ONLY be used within the **Requirements** section. The content in the **Glossary**, preamble, or **Implementation Context** MUST NOT contain BCP 14 keywords.
 
