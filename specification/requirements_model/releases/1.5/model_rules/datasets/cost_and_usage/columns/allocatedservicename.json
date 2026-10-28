@@ -150,7 +150,7 @@
     "ModelVersionIntroduced": "1.5",
     "Status": "Active",
     "Conditions": [],
-    "Type": "Dynamic",
+    "Type": "Static",
     "Order": 40,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
@@ -158,8 +158,16 @@
     "ValidationCriteria": {
       "MustSatisfy": "AllocatedServiceName MUST be null when AllocatedMethodId is null.",
       "Keyword": "MUST",
-      "Requirement": {},
-      "Condition": {},
+      "Requirement": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "AllocatedServiceName",
+        "Value": null
+      },
+      "Condition": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "AllocatedMethodId",
+        "Value": null
+      },
       "Dependencies": [
         "CAU-AllocatedMethodId-C-000-C"
       ]

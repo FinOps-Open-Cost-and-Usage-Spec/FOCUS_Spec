@@ -270,7 +270,7 @@
     "ModelVersionIntroduced": "1.5",
     "Status": "Active",
     "Conditions": [],
-    "Type": "Dynamic",
+    "Type": "Static",
     "Order": 80,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
@@ -278,8 +278,15 @@
     "ValidationCriteria": {
       "MustSatisfy": "AllocatedMethodDetails MUST conform to AllocatedMethodDetailsObject requirements when AllocatedMethodDetails is not null.",
       "Keyword": "MUST",
-      "Requirement": {},
-      "Condition": {},
+      "Requirement": {
+        "CheckFunction": "CheckModelRule",
+        "ModelRuleId": "CAU-AllocatedMethodDetailsObject-O-000-M"
+      },
+      "Condition": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "AllocatedMethodDetails",
+        "Value": null
+      },
       "Dependencies": [
         "CAU-AllocatedMethodDetailsObject-O-000-M"
       ]

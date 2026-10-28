@@ -179,7 +179,7 @@
     "ModelVersionIntroduced": "1.5",
     "Status": "Active",
     "Conditions": [],
-    "Type": "Dynamic",
+    "Type": "Static",
     "Order": 50,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
@@ -187,8 +187,26 @@
     "ValidationCriteria": {
       "MustSatisfy": "RequesterDetails MUST NOT be null when PrincipalId is not null or CredentialId is not null.",
       "Keyword": "MUST NOT",
-      "Requirement": {},
-      "Condition": {},
+      "Requirement": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "RequesterDetails",
+        "Value": null
+      },
+      "Condition": {
+        "CheckFunction": "OR",
+        "Items": [
+          {
+            "CheckFunction": "CheckNotValue",
+            "ColumnName": "PrincipalId",
+            "Value": null
+          },
+          {
+            "CheckFunction": "CheckNotValue",
+            "ColumnName": "CredentialId",
+            "Value": null
+          }
+        ]
+      },
       "Dependencies": [
         "CAU-PrincipalId-C-000-C",
         "CAU-CredentialId-C-000-C"
@@ -205,7 +223,7 @@
     "ModelVersionIntroduced": "1.5",
     "Status": "Active",
     "Conditions": [],
-    "Type": "Dynamic",
+    "Type": "Static",
     "Order": 60,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
@@ -213,8 +231,26 @@
     "ValidationCriteria": {
       "MustSatisfy": "RequesterDetails MAY be null when PrincipalId is null and CredentialId is null.",
       "Keyword": "MAY",
-      "Requirement": {},
-      "Condition": {},
+      "Requirement": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "RequesterDetails",
+        "Value": null
+      },
+      "Condition": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "PrincipalId",
+            "Value": null
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "CredentialId",
+            "Value": null
+          }
+        ]
+      },
       "Dependencies": [
         "CAU-PrincipalId-C-000-C",
         "CAU-CredentialId-C-000-C"

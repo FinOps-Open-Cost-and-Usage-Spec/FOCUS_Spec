@@ -321,7 +321,7 @@
     "ModelVersionIntroduced": "1.5",
     "Status": "Active",
     "Conditions": [],
-    "Type": "Dynamic",
+    "Type": "Static",
     "Order": 40,
     "DatasetType": "CCT",
     "DatasetId": "ContractCommitment",
@@ -329,7 +329,11 @@
     "ValidationCriteria": {
       "MustSatisfy": "ContractCommitmentDurationType SHOULD use the \"[Numeric Value] [Unit]\" format (e.g., \"1 Day\", \"1 Year\", \"3 Months\", \"3 Years\").",
       "Keyword": "SHOULD",
-      "Requirement": {},
+      "Requirement": {
+        "CheckFunction": "CheckRegexMatch",
+        "ColumnName": "ContractCommitmentDurationType",
+        "Pattern": "^[1-9][0-9]*\\s+(Minute|Minutes|Hour|Hours|Day|Days|Week|Weeks|Month|Months|Year|Years)$"
+      },
       "Condition": {},
       "Dependencies": []
     }
