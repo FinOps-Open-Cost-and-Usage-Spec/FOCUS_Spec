@@ -9,8 +9,9 @@ AllocatedServiceName MUST adhere to the following requirements:
 * AllocatedServiceName MUST be of type String.
 * AllocatedServiceName MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * AllocatedServiceName MUST adhere to the following nullability requirements:
-  * AllocatedServiceName MUST be null when [AllocatedResourceId](#datamodel.costandusage.allocatedresourceid) is null.
-  * AllocatedServiceName MUST NOT be null when AllocatedResourceId is not null.
+  * AllocatedServiceName MUST be null when [AllocatedMethodId](#datamodel.costandusage.allocatedmethodid) is null.
+  * AllocatedServiceName MUST NOT be null when AllocatedMethodId is not null.
+* AllocatedServiceName SHOULD match the [ServiceName](#datamodel.costandusage.servicename) used by the data generator for the equivalent *service*.
 
 ## Column ID
 
@@ -26,14 +27,15 @@ The display name of the *service* to which cost is allocated in data generator-c
 
 ## Content Constraints
 
-| Constraint      | Value                                                |
-| :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datamodel.costandusage)             |
-| Column type     | Dimension                                            |
-| Feature level   | Conditional                                          |
-| Allows nulls    | True                                                 |
-| Data type       | String                                               |
-| Value format    | \<not specified>                                     |
+| Constraint                 | Value                                     |
+| :------------------------- | :---------------------------------------- |
+| Dataset                    | [Cost and Usage](#datamodel.costandusage) |
+| Operating Model Conditions | [Includes Split Cost Allocation](#operatingmodelconditions.includessplitcostallocation) |
+| Column type                | Dimension                                 |
+| Feature level              | Conditional                               |
+| Allows nulls               | True                                      |
+| Data type                  | String                                    |
+| Value format               | \<not specified>                          |
 
 ## Version Introduced
 

@@ -1,6 +1,10 @@
 # Contracted Unit Price
 
-The Contracted Unit Price represents the agreed-upon unit price for a single [Pricing Unit](#datamodel.costandusage.pricingunit) of the associated SKU, inclusive of [*negotiated discounts*](#glossary:negotiated-discount), if present, while excluding negotiated [*commitment discounts*](#glossary:commitment-discount) or any other discounts. This price is denominated in the [Billing Currency](#datamodel.costandusage.billingcurrency). The Contracted Unit Price is commonly used for calculating savings based on negotiation activities. If negotiated discounts are not applicable, the Contracted Unit Price defaults to the [List Unit Price](#datamodel.costandusage.listunitprice).
+[*Contracted Unit Price*](#glossary:contracted-unit-price) represents the negotiated unit price per [Pricing Unit](#datamodel.costandusage.pricingunit) for the [*SKU Price*](#glossary:sku-price) identified by the given [SKU Price ID](#datamodel.costandusage.skupriceid). It is the unit price before the application of any discount-bearing [*commitment programs*](#glossary:commitment-program) (e.g., [*commitment discount*](#glossary:commitment-discount)).
+
+When no [*negotiated pricing terms*](#glossary:negotiated-pricing-terms) apply to the [*charge*](#glossary:charge), Contracted Unit Price defaults to [List Unit Price](#datamodel.costandusage.listunitprice).
+
+Contracted Unit Price is denominated in the [Billing Currency](#datamodel.costandusage.billingcurrency). Contracted Unit Price is commonly used for negotiation and rate optimization activities.
 
 ## Requirements
 
@@ -9,7 +13,7 @@ ContractedUnitPrice MUST adhere to the following requirements:
 * ContractedUnitPrice MUST be of type Decimal.
 * ContractedUnitPrice MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * ContractedUnitPrice MUST adhere to the following nullability requirements:
-  * ContractedUnitPrice MUST be null when [SkuPriceId](#datamodel.costandusage.skupriceid) is null.
+  * ContractedUnitPrice MUST be null when SkuPriceId is null.
   * ContractedUnitPrice MUST be null when [ChargeCategory](#datamodel.costandusage.chargecategory) is "Tax".
   * ContractedUnitPrice MUST NOT be null when SkuPriceId is not null.
   * ContractedUnitPrice MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#datamodel.costandusage.chargeclass) is not "Correction".
@@ -17,6 +21,19 @@ ContractedUnitPrice MUST adhere to the following requirements:
 * When ContractedUnitPrice is not null, ContractedUnitPrice MUST adhere to the following requirements:
   * ContractedUnitPrice MUST be a non-negative decimal value.
   * ContractedUnitPrice MUST be denominated in the BillingCurrency.
+  * ContractedUnitPrice MUST reflect *negotiated pricing terms* for the *SKU Price* identified by the given SkuPriceId that are independent of any discount-bearing *commitment programs* being applied to the *charge*.
+  * ContractedUnitPrice MUST NOT reflect any unit price impact dependent on a discount-bearing *commitment program* being applied to the *charge*.
+  * ContractedUnitPrice MUST equal ListUnitPrice when no *negotiated pricing terms* apply to the *charge*.
+
+## Implementation Guidance
+
+Every *charge* with a SKU Price ID has a Contracted Unit Price, whether or not *negotiated pricing terms* apply. Agreeing to a contract does not by itself introduce *negotiated pricing terms*; only privately agreed terms that modify the service-provider-suggested pricing do.
+
+Unlike List Unit Price, Contracted Unit Price reflects *negotiated pricing terms* when they apply to the *SKU Price* identified by the given SKU Price ID. These may include a negotiated unit price, a negotiated tier configuration, and [*negotiated FX pricing terms*](#glossary:negotiated-fx-pricing-terms), such as a negotiated currency exchange rate. When no *negotiated pricing terms* apply, Contracted Unit Price equals List Unit Price.
+
+[Pricing Currency Contracted Unit Price](#datamodel.costandusage.pricingcurrencycontractedunitprice) does not reflect *negotiated FX pricing terms*, because it is before any currency exchange rate conversion.
+
+The terms of a *commitment program* can also be negotiated, such as the unit price for its purchase, its discount, or its eligibility. A [*negotiated discount*](#glossary:negotiated-discount) (e.g., a discount received in exchange for a spend commitment) is reflected in Contracted Unit Price. The impact of applying a *commitment discount* to [*covered charges*](#glossary:covered-charge) is not; it is reflected in their [Effective Cost](#datamodel.costandusage.effectivecost).
 
 ## Usability Constraints
 
@@ -32,14 +49,14 @@ Contracted Unit Price
 
 ## Description
 
-The agreed-upon unit price for a single Pricing Unit of the associated SKU, inclusive of negotiated discounts, if present, while excluding negotiated commitment discounts or any other discounts.
+The negotiated unit price per Pricing Unit for the *SKU Price* identified by the given SKU Price ID.
 
 ## Content Constraints
 
 | Constraint                 | Value                                       |
 | :------------------------- | :------------------------------------------ |
 | Dataset                    | [Cost and Usage](#datamodel.costandusage)   |
-| Operating Model Conditions | [Includes Negotiated Pricing](#operatingmodelconditions.includesnegotiatedpricing) |
+| Operating Model Conditions | [Includes Unit Pricing](#operatingmodelconditions.includesunitpricing) |
 | Column type                | Metric                                      |
 | Feature level              | Conditional                                 |
 | Allows nulls               | True                                        |
