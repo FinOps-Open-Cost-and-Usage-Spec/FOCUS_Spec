@@ -15,7 +15,7 @@ SkuPriceDetails MUST adhere to the following requirements:
 * SkuPriceDetails MUST be of type JSON Object (serialized as a String where necessary).
 * SkuPriceDetails MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * SkuPriceDetails MUST conform to [KeyValueFormat](#attributes.key-valueformat) requirements.
-* SkuPriceDetails property keys SHOULD conform to [PascalCase](#glossary:pascalcase) format.
+* SkuPriceDetails property keys SHOULD conform to [*PascalCase*](#glossary:pascalcase) format.
 * SkuPriceDetails MUST adhere to the following nullability requirements:
   * SkuPriceDetails MUST be null when SkuPriceId is null.
   * SkuPriceDetails MAY be null when SkuPriceId is not null.

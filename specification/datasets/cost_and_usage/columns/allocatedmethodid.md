@@ -1,6 +1,6 @@
 # Allocated Method ID
 
-Allocated Method ID is the unique identifier for the [allocated method](#glossary:allocated-method) defined by the service provider which was used for the [Data Generator-Calculated Split Cost Allocation](#attributes.datagenerator-calculatedsplitcostallocationhandling). This unique identifier can be used to find how the [allocated charge](#glossary:allocated-charge) was calculated in the provider's documentation.
+Allocated Method ID is the unique identifier for the [*allocated method*](#glossary:allocated-method) defined by the service provider which was used for the [Data Generator-Calculated Split Cost Allocation](#attributes.datagenerator-calculatedsplitcostallocationhandling). This unique identifier can be used to find how the [*allocated charge*](#glossary:allocated-charge) was calculated in the provider's documentation.
 
 ## Requirements
 
