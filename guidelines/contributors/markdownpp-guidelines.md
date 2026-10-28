@@ -29,7 +29,7 @@ specification/
 
 ### Main Specification File (`spec.mdpp`)
 
-The root specification file `spec.mdpp` uses MarkdownPP directives to compose the complete document.  After specifying some administrative pieces, the following statements reflect the core of the specification.  Each `INCLUDE` corresponds to a section of the document; for example, the second entry for `supported_features` corresponds to Section 2 of the spec.
+The root specification file `spec.mdpp` uses MarkdownPP directives to compose the complete document.  After specifying some administrative pieces, the following statements reflect the core of the specification.  Each `INCLUDE` corresponds to a section of the document; for example, the second entry for `supported-features` corresponds to Section 2 of the spec.
 
 ```markdown
 !INCLUDE "overview.md",1
@@ -84,7 +84,7 @@ clean:
 The Makefile tracks dependencies to ensure proper rebuilding:
 
 ```makefile
-SPEC_SOURCE_FILES=$(filter-out spec.md, $(wildcard *.md*)) $(wildcard supported_features/*.md*) $(wildcard columns/*.md*) $(wildcard attributes/*.md*) $(wildcard appendix/*.md*)
+SPEC_SOURCE_FILES=$(filter-out spec.md, $(wildcard *.md*)) $(wildcard supported-features/*.md*) $(wildcard columns/*.md*) $(wildcard attributes/*.md*) $(wildcard appendix/*.md*)
 SPEC_SOURCE_MDFILES=$(filter-out %.mdpp, $(SPEC_SOURCE_FILES))
 ```
 
@@ -374,7 +374,7 @@ If any new sections are added to the spec that require such validation, they nee
 
 ```bash
 # Check file exists
-ls -la datasets/cost_and_usage/overview.md
+ls -la datasets/costandusage/overview.md
 
 # Verify relative paths
 find . -name "overview.md"
