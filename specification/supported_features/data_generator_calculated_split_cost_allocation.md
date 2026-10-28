@@ -17,6 +17,7 @@ FOCUS enables tracking of [*resources*](#glossary:resource) split by some intern
 
 ## Supporting Columns
 
+* BillingCurrency
 * ChargeCategory
 * ChargePeriodEnd
 * ChargePeriodStart
@@ -108,15 +109,18 @@ GROUP BY
 SELECT
   ResourceId,
   COALESCE(AllocatedResourceId, 'Unallocated') AS AllocatedResourceId,
+  BillingCurrency,
   SUM(BilledCost) AS TotalBilledCost,
   SUM(EffectiveCost) AS TotalEffectiveCost
 FROM focus_data_table
 WHERE ChargeCategory='Usage'
   AND ChargePeriodStart >= ? AND ChargePeriodEnd <= ?
   AND ResourceId = ?
+  AND AllocatedMethodId IS NOT NULL
 GROUP BY
   ResourceId,
-  COALESCE(AllocatedResourceId, 'Unallocated')
+  COALESCE(AllocatedResourceId, 'Unallocated'),
+  BillingCurrency
 ```
 
 ### Extract JSON from Allocated Method Details

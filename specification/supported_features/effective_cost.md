@@ -27,6 +27,7 @@ Effective Cost is commonly used for *accrual-based* reporting, cost allocation, 
 * RegionName
 * ServiceName
 * ServiceProviderName
+* SkuId
 
 ## Example SQL Queries
 
@@ -87,7 +88,7 @@ GROUP BY
 
 ### Effective Cost by Consumed Quantity and Pricing Quantity
 
-Compares the quantity consumed with the quantity priced for the same usage *charges*. [Consumed Quantity](#datamodel.costandusage.consumedquantity) and [Consumed Unit](#datamodel.costandusage.consumedunit) measure what was used (e.g., hours, GB), while [Pricing Quantity](#datamodel.costandusage.pricingquantity) and [Pricing Unit](#datamodel.costandusage.pricingunit) measure what the unit price was applied to, which can use a different unit or block size (e.g., GB-months, blocks of 1,000 requests). Dividing Effective Cost by each quantity gives the cost per unit consumed and the effective price per unit priced. Rows where Consumed Quantity is null (e.g., when [Charge Category](#datamodel.costandusage.chargecategory) is not "Usage", or when Commitment Discount Status is "Unused") are excluded.
+Compares the quantity consumed with the quantity priced for the same usage *charges*, per SKU. [Consumed Quantity](#datamodel.costandusage.consumedquantity) and [Consumed Unit](#datamodel.costandusage.consumedunit) measure what was used (e.g., hours, GB), while [Pricing Quantity](#datamodel.costandusage.pricingquantity) and [Pricing Unit](#datamodel.costandusage.pricingunit) measure what the unit price was applied to, which can use a different unit or block size (e.g., GB-months, blocks of 1,000 requests). Dividing Effective Cost by each quantity gives the cost per unit consumed and the effective price per unit priced. Rows where Consumed Quantity is null (e.g., when [Charge Category](#datamodel.costandusage.chargecategory) is not "Usage", or when Commitment Discount Status is "Unused") are excluded.
 
 ```sql
 SELECT
