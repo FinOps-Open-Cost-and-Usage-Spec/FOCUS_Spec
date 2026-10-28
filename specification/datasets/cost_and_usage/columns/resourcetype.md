@@ -1,16 +1,16 @@
 # Resource Type
 
-Resource Type describes the kind of [*resource*](#glossary:resource) the [*charge*](#glossary:charge) applies to. A Resource Type is commonly used for scenarios like identifying cost changes in groups of similar *resources* and may include values like Virtual Machine, Data Warehouse, and Load Balancer.
+[Resource Type](#col) describes the kind of [resource](#term) the [charge](#term) applies to. A [Resource Type](#col) is commonly used for scenarios like identifying cost changes in groups of similar [resources](#term) and may include values like Virtual Machine, Data Warehouse, and Load Balancer.
 
 ## Requirements
 
-ResourceType MUST adhere to the following requirements:
+[ResourceType](#col) MUST adhere to the following requirements:
 
-* ResourceType MUST be of type String.
-* ResourceType MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* ResourceType MUST adhere to the following nullability requirements:
-  * ResourceType MUST be null when [ResourceId](#datamodel.costandusage.resourceid) is null.
-  * ResourceType MUST NOT be null when ResourceId is not null.
+* [ResourceType](#col) MUST be of type String.
+* [ResourceType](#col) MUST conform to [StringHandling](#attr) requirements.
+* [ResourceType](#col) MUST adhere to the following nullability requirements:
+  * [ResourceType](#col) MUST be null when [ResourceId](#col) is null.
+  * [ResourceType](#col) MUST NOT be null when [ResourceId](#col) is not null.
 
 ## Column ID
 
@@ -22,14 +22,14 @@ Resource Type
 
 ## Description
 
-The kind of *resource* the *charge* applies to.
+The kind of [resource](#term) the [charge](#term) applies to.
 
 ## Content Constraints
 
 | Constraint                 | Value                                     |
 | :------------------------- | :---------------------------------------- |
-| Dataset                    | [Cost and Usage](#datamodel.costandusage) |
-| Operating model conditions | [Includes Provisioned Resources](#operatingmodelconditions.includesprovisionedresources) and [Includes Resource Type Assignment](#operatingmodelconditions.includesresourcetypeassignment) |
+| Dataset                    | [Cost and Usage](#ds)                     |
+| Operating model conditions | [Includes Provisioned Resources](#omc) and [Includes Resource Type Assignment](#omc)                                                                                                       |
 | Column type                | Dimension                                 |
 | Feature level              | Conditional                               |
 | Allows nulls               | True                                      |

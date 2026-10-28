@@ -1,22 +1,22 @@
 # Charge Class
 
-Charge Class indicates whether a [*charge*](#glossary:charge) represents a [*correction*](#glossary:correction) to a previously [*closed billing period*](#glossary:closed-billing-period). Charge Class is commonly used to differentiate such corrections from all other charges, including both regularly incurred *charges* and *corrections* to [*open billing periods*](#glossary:open-billing-period).
+[Charge Class](#col) indicates whether a [charge](#term) represents a [correction](#term) to a previously [closed billing period](#term). [Charge Class](#col) is commonly used to differentiate such [corrections](#term) from all other [charges](#term), including both regularly incurred [charges](#term) and [corrections](#term) to [open billing periods](#term).
 
 ## Requirements
 
-ChargeClass MUST adhere to the following requirements:
+[ChargeClass](#col) MUST adhere to the following requirements:
 
-* ChargeClass MUST be of type String.
-* ChargeClass MUST adhere to the following nullability requirements:
-  * ChargeClass MUST be null when the *charge* does not represent a correction to a previously *closed billing period*.
-  * ChargeClass MUST NOT be null when the *charge* represents a correction to a previously *closed billing period*.
-* ChargeClass MUST be "Correction" when ChargeClass is not null.
+* [ChargeClass](#col) MUST be of type String.
+* [ChargeClass](#col) MUST adhere to the following nullability requirements:
+  * [ChargeClass](#col) MUST be null when the [charge](#term) does not represent a [correction](#term) to a previously [closed billing period](#term).
+  * [ChargeClass](#col) MUST NOT be null when the [charge](#term) represents a [correction](#term) to a previously [closed billing period](#term).
+* [ChargeClass](#col) MUST be ["Correction"](#val:ChargeClass) when [ChargeClass](#col) is not null.
 
 ## Allowed Values
 
 | Value      | Description                                                                                    |
 | :--------- | :----------------------------------------------------------------------------------------------|
-| Correction | Correction to a previously *closed billing period* (e.g., refunds and credit modifications). |
+| Correction | Correction to a previously [closed billing period](#term) (e.g., refunds and credit modifications). |
 
 ## Column ID
 
@@ -28,13 +28,13 @@ Charge Class
 
 ## Description
 
-Indicates whether a *charge* represents a correction to a previously *closed billing period*.
+Indicates whether a [charge](#term) represents a [correction](#term) to a previously [closed billing period](#term).
 
 ## Content Constraints
 
 | Constraint                 | Value                                     |
 | :------------------------- | :---------------------------------------- |
-| Dataset                    | [Cost and Usage](#datamodel.costandusage) |
+| Dataset                    | [Cost and Usage](#ds)                     |
 | Operating model conditions | Not applicable                            |
 | Column type                | Dimension                                 |
 | Feature level              | Mandatory                                 |
