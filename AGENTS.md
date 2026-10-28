@@ -191,14 +191,13 @@ These forms are not equivalent:
   * Link the first remaining occurrence in reading order.
   * Leave all later occurrences unlinked.
   * When no remaining occurrence exists, no link is required.
++ * Normative requirement bullets follow this rule; a destination linked earlier in the file remains unlinked in later requirement bullets.
 * **Linking Rule Exceptions:** Apply the following exceptions:
   * A link whose anchor text is not an entity name or glossary term does not count toward first occurrence.
   * Content Constraints sections link every entity reference.
   * Glossary entries apply this rule independently within each entry.
   * A table is an entity catalog table only when each data row represents and identifies a distinct specification entity.
   * In an entity catalog table, the entity reference that identifies each row MAY link to that entity's definition even when the entity was linked earlier in the file.
-  * Each normative requirement bullet MUST link its first reference to each distinct FOCUS entity, glossary term, or Operating Model Condition, even when the same destination was linked earlier in the file.
-  * Later references to the same destination within that bullet MUST remain unlinked.
 * **Lists:** All unordered lists MUST use asterisks (`*`), never dashes (`-`) or plus signs (`+`). Nested bullet points MUST use exactly two spaces per level.
 * **Notes:** Important notes must use the blockquote format (`> **Note:**`).
 * **Notes versus Exceptions:** Apply the following rules:
