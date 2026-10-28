@@ -164,6 +164,8 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
 
 * In the **Glossary** file, entity references MUST be linked only on their first occurrence within each glossary entry, rather than once per source markdown file.
 
+* In the **Directly Dependent Columns** and **Supporting Columns** lists on a supported features page, column entries MUST NOT be linked, even when an entry is the first occurrence in the source markdown file.
+
 ### Entity References
 
 * **Entity ID References:** Formatting and usage conventions for normative requirements are defined in the Normative Requirements Guidelines.
@@ -173,6 +175,7 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
 * **Entity ID Naming:** Entity IDs MUST match the exact naming conventions used in the schema (e.g., CommitmentDiscountId).
 
 * **Entity Display Name References:** References to FOCUS entities in non-normative content (i.e., outside Requirements sections) MUST use Display Names when available.
+  * **Exception for Column Lists:** On a supported features page, each column entry under the Directly Dependent Columns and Supporting Columns headings MUST be a Column ID (e.g., BilledCost, not Billed Cost).
 
 * **Entity Scope:** These rules apply to all entities defined in the FOCUS specification (e.g., Columns, Attributes, Datasets, Objects).
 
@@ -259,6 +262,8 @@ To ensure consistent language when describing relationships and evaluations betw
   * A spaced hyphen (` - `) MUST be used to set off parenthetical phrases (e.g., `The metric - BilledCost - is required.`).
   * HTML entities and special unicode dash characters SHOULD NOT be used.
 
+* **Column Values in SQL:** Column values inside SQL code use single quotation marks, as SQL string literals require (e.g., `WHERE ChargeCategory = 'Usage'`), rather than the double quotation marks that the Column Values row of the [Editorial Style Guidelines](#editorial-style-guidelines) table sets for prose.
+
 ### JSON Formatting
 
 * **Valid JSON:** JSON examples MUST be valid and complete.
@@ -335,6 +340,8 @@ To ensure consistent language when describing relationships and evaluations betw
 * **Column Coverage in the Appendix:** Column Coverage also applies to an appendix example section that lists columns (e.g., under a Directly Dependent Columns or Supporting Columns heading) and shows example queries.
 
 > **Note:** When no query uses a listed column, add the column to a query where it is central to the feature, or remove it from the list.
+
+* **Query Descriptions:** Prose that introduces or explains an example query is non-normative content. The [Editorial Style Guidelines](#editorial-style-guidelines) table and the rules in [Entity References](#entity-references), [Display Names](#display-names), and [Linking](#linking) apply to it, even when the query uses Entity IDs (e.g., Charge Category of "Usage", not ChargeCategory of `Usage`).
 
 * **Valid Examples:** Examples MUST reflect valid combinations of values defined in the specification.
 
