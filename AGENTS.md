@@ -191,7 +191,7 @@ AI agents generating or reviewing content MUST act as strict technical editors e
   * Column lists: items need not be linked; they still count as an occurrence.
   * Links to other targets (appendix, supported features, sections, external URLs, data files) are not subject to the Linking Rule.
 * **Lists:** All unordered lists MUST use asterisks (`*`), never dashes (`-`) or plus signs (`+`). Nested bullet points MUST use exactly two spaces per level.
-* **Notes:** Important notes must use the blockquote format (`> **Note:**`).
+* **Notes:** Important notes must use the blockquote format (`> **Note:**`), or `> **Preview:**` for notes that mark preview content.
 * **Notes versus Exceptions:** Apply the following rules:
   * Notes MUST contain only informative or explanatory material.
   * Normative conditions and exceptions MUST be expressed as requirements.
