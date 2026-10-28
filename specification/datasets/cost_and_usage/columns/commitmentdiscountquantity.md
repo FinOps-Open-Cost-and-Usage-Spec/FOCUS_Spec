@@ -17,7 +17,7 @@ CommitmentDiscountQuantity MUST adhere to the following requirements:
     * CommitmentDiscountQuantity MAY be null when ChargeClass is "Correction".
   * CommitmentDiscountQuantity MUST be null in all other cases.
 * When CommitmentDiscountQuantity is not null and ChargeCategory is "Purchase", CommitmentDiscountQuantity MUST adhere to the following requirements:
-  * CommitmentDiscountQuantity MUST be the quantity of CommitmentDiscountUnit, paid fully or partially upfront, that is eligible for consumption over the *commitment discount's* [*term*](#glossary:term) when [ChargeFrequency](#datamodel.costandusage.chargefrequency) is "One-Time".
+  * CommitmentDiscountQuantity MUST be the quantity of CommitmentDiscountUnit, paid fully or partially upfront, that is eligible for consumption over the *commitment discount's* term when [ChargeFrequency](#datamodel.costandusage.chargefrequency) is "One-Time".
   * CommitmentDiscountQuantity MUST be the quantity of CommitmentDiscountUnit that is eligible for consumption for each *charge period* that corresponds with the purchase when ChargeFrequency is "Recurring".
 * When CommitmentDiscountQuantity is not null and ChargeCategory is "Usage", CommitmentDiscountQuantity MUST adhere to the following requirements:
   * CommitmentDiscountQuantity MUST be the metered quantity of CommitmentDiscountUnit that is consumed in a given *charge period* when [CommitmentDiscountStatus](#datamodel.costandusage.commitmentdiscountstatus) is "Used".
