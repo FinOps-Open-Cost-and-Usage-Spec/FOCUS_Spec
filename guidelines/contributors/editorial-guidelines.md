@@ -39,7 +39,8 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
         </td>
         <td>
             * Use the display name in the non-normative section.<br>
-            * The first occurrence in a section is linked to the section.
+            * The first occurrence in each source file is linked to its definition (see Linking).
+
         </td>
     </tr>
     <tr>
@@ -65,7 +66,7 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
         <td>
            * Use PascalCamel case (the first letter of every word, is capitalized)<br>
            * Normal text without bold or italics.<br>
-           * The first occurrence in a section is linked to the section.
+           * The first occurrence in each source file is linked to the glossary (see Linking).
         </td>
     </tr>
     <tr>
@@ -187,10 +188,6 @@ Body content includes paragraphs, list items, table cells, and requirement bulle
 * A table is an **entity catalog table** only when each data row represents a distinct specification entity and a cell in that row identifies that entity.
 
 * In an **entity catalog table**, the entity reference that identifies the subject of each row MAY link to that entity's definition even when the entity was linked earlier in the source Markdown file.
-
-* In **Requirements** sections, the first reference to each distinct FOCUS entity, glossary term, or Operating Model Condition in each normative requirement bullet MUST be linked, even when the same destination was linked earlier in the source Markdown file.
-
-* In **Requirements** sections, later references to the same destination within that bullet MUST NOT be linked.
 
 ### Entity References
 
