@@ -38,34 +38,34 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
             &nbsp;&nbsp; Date/Time Format<br>
         </td>
         <td>
-            * Use the display name in the non-normative section.<br>
-            * The first occurrence in a section is linked to the section.
+            * Typically the display name in non-normative content; see <a href="#entity-ids-and-display-names">Entity IDs and Display Names</a>.<br>
+            * Linked on first occurrence (see <a href="#linking">Linking</a>).
         </td>
     </tr>
     <tr>
         <td><strong>Column &amp; Attribute IDs:</strong></td>
         <td>
-           <strong>Columns IDs</strong>:<br>
+           <strong>Column IDs</strong>:<br>
             * PricingQuantity<br>
             * PricingUnit<br>
             * ServiceProviderName<br><br>
-          <strong>Attributes IDs</strong>:<br>
+          <strong>Attribute IDs</strong>:<br>
             * CurrencyCodeFormat <br>
             * DateTimeFormat <br>
         </td>
         <td>
-          <strong>Columns IDs:</strong><br>
+          <strong>Column IDs:</strong><br>
           &nbsp;&nbsp; PricingQuantity <br>
           &nbsp;&nbsp; PricingUnit<br>
           &nbsp;&nbsp; ServiceProviderName <br><br>
-          <strong>Attributes IDs:</strong> <br/>
+          <strong>Attribute IDs:</strong> <br/>
           &nbsp;&nbsp; CurrencyCodeFormat <br/>
           &nbsp;&nbsp; DateTimeFormat <br>
         </td>
         <td>
-           * Use PascalCamel case (the first letter of every word, is capitalized)<br>
+           * Use PascalCase (the first letter of every word is capitalized)<br>
            * Normal text without bold or italics.<br>
-           * The first occurrence in a section is linked to the section.
+           * Linked on first occurrence (see <a href="#linking">Linking</a>).
         </td>
     </tr>
     <tr>
@@ -103,7 +103,7 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
     <tr>
         <td><strong>Glossary</strong></td>
         <td>
-            <a>SKU</a>, <a>resource</a>, <a>service</a>
+            <em>SKU</em>, <em>resource</em>, <em>service</em>
         </td>
         <td>
             [*SKU*](#glossary:sku) <br>
@@ -111,8 +111,8 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
             [*service*](#glossary:service) <br>
         </td>
         <td>
-            * Blue font + italic<br>
-            * The first occurrence in a section is linked to the glossary.
+            * Italic when the term is used in its glossary meaning, whether linked or not.<br>
+            * Linked on first occurrence (see <a href="#linking">Linking</a>).
         </td>
     </tr>
     <tr>
@@ -152,63 +152,64 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
 
 > **Note:** Examples are illustrative, informative, and non-normative. They do not define requirements and do not override the rules in this section.
 
-### Column and Attribute References
-
-* Normative requirements MUST use canonical Column IDs and Attribute IDs.
-* **Non-Normative Entity References:** Select terminology according to context:
-  * Conceptual, reader-facing references to FOCUS entities SHOULD use Display Names when available.
-  * Schema-facing references to FOCUS entities MAY use canonical Entity IDs.
-
-A reference is schema-facing when it satisfies at least one of the following conditions:
-
-* It identifies a field in code, JSON, SQL, a schema, or a table header.
-* It is an object or property path.
-* The surrounding sentence describes the field being populated, omitted, null, serialized, validated, matched, compared, grouped, filtered, joined, aggregated, or repeated.
-* Exact correspondence with an adjacent table, code block, schema fragment, or query expression is required.
-
-When none of these conditions applies, the reference is conceptual.
-
-### Linking
-
-Body content includes paragraphs, list items, table cells, and requirement bullets.
-
-* **First Occurrence:** Entity references, including entity IDs, Display Names, and glossary terms, MUST be linked only on their first occurrence in body content within each source Markdown file.
-
-* **Titles and Headings:** Document titles and section headings do not count as body content and MUST NOT be linked solely to satisfy this rule.
-
-> **Note:** Ignore heading occurrences when determining the first occurrence. Link the first occurrence in body content instead. A term used only in headings does not require a link.
-
-**Exceptions:**
-
-* In **Content Constraints** sections, all entity references MUST be linked, regardless of prior occurrence in the source markdown file.
-
-* In the **Glossary** file, entity references MUST be linked only on their first occurrence within each glossary entry, rather than once per source markdown file.
-
-* A table is an **entity catalog table** only when each data row represents a distinct specification entity and a cell in that row identifies that entity.
-
-* In an **entity catalog table**, the entity reference that identifies the subject of each row MAY link to that entity's definition even when the entity was linked earlier in the source Markdown file.
-
-* In **Requirements** sections, the first reference to each distinct FOCUS entity, glossary term, or Operating Model Condition in each normative requirement bullet MUST be linked, even when the same destination was linked earlier in the source Markdown file.
-
-* In **Requirements** sections, later references to the same destination within that bullet MUST NOT be linked.
-
 ### Entity References
 
-* **Entity ID References:** Formatting and usage conventions for normative requirements are defined in the Normative Requirements Guidelines.
+These rules apply to all entities defined in the FOCUS specification (e.g., Columns, Attributes, Datasets, Objects, Operating Model Conditions) and, for linking, to glossary terms.
+
+#### Entity IDs and Display Names
+
+* **Normative Requirements:** Formatting and usage conventions for references to FOCUS entities in normative requirements, including the exception for Operating Model Conditions, are defined in the [FOCUS Entity Reference Conventions](normative-requirements-guidelines.md#focus-entity-reference-conventions).
 
 * **Entity ID Formatting:** Entity IDs MUST be formatted without spaces.
 
 * **Entity ID Naming:** Entity IDs MUST match the exact naming conventions used in the schema (e.g., CommitmentDiscountId).
 
-* **Entity Scope:** These rules apply to all entities defined in the FOCUS specification (e.g., Columns, Attributes, Datasets, Objects).
+* **Display Name References:** Outside Requirements sections, conceptual references to FOCUS entities MUST use Display Names when available; schema-facing references MAY use Entity IDs. In files under `specification/appendix/`, conceptual references SHOULD use Display Names.
+  * A reference is **schema-facing** when it refers to the entity as it appears in data, code, or a schema (e.g., its values, a table header or row label, a column list, a query, or an object or `Dataset.Column` path). Otherwise, it is **conceptual**.
 
-### Display Names
-
-* **Display Names Usage:** Display Names SHOULD be used in introductory or explanatory sections where natural language context is more appropriate.
-
-* **Display Names Formatting:** Display Names SHOULD follow normal text conventions, including spaces between words (e.g., Commitment Discount ID).
+* **Display Names Formatting:** Display Names SHOULD follow normal text conventions, including spaces between words, and retain the capitalization defined for the Display Name (e.g., Commitment Discount ID, not commitment discount id).
 
 * **Consistent Formatting:** This formatting MUST be used consistently across all normative requirements, descriptions, and tables when referencing a specific string value.
+
+#### Linking
+
+Body content includes paragraphs, list items, table cells, and requirement bullets.
+
+* **Entity References:** An entity reference is a mention of a FOCUS entity by its Entity ID or Display Name, including its plural and possessive forms (e.g., `BilledCost`, `Billed Costs`), or of a column in another dataset by its `Dataset.Column` path (e.g., `CostAndUsage.BilledCost`). An Operating Model Condition is also referenced by its Operating Model Condition phrase (its Display Name in lowercase), in any capitalization (see [General FOCUS Entity Reference Conventions](normative-requirements-guidelines.md#general-focus-entity-reference-conventions)). Other forms of an entity name (e.g., shortened or extended) count as entity references only when linked.
+
+* **Glossary Term References:** A glossary term reference is a mention of a glossary term used in its glossary meaning, in any capitalization, including its plural and possessive forms, except that text in the capitalization of a Display Name refers to the entity (see Entity or Glossary Term). Shortened or extended forms of a glossary term count as glossary term references only when linked or italicized.
+
+* **Entity or Glossary Term:** When a Display Name and a glossary term have the same text, the form written with the capitalization of the Display Name refers to the FOCUS entity, and any other capitalization refers to the glossary term. Where capitalization cannot distinguish them (e.g., at the start of a sentence), use the surrounding context to identify the intended reference. Each form counts only as an occurrence of what it refers to.
+
+* **Same Entity:** An Entity ID and its Display Name refer to the same entity. The first occurrence of either form is the first occurrence of that entity. Columns with the same Column ID in different datasets are different entities. A Display Name or Entity ID refers to the column in the dataset the file belongs to, unless the same sentence or paragraph names another dataset (e.g., "Billed Costs in the Invoice Detail dataset"). A `Dataset.Column` path always refers to the column in the named dataset. In a file that does not belong to a dataset, when a column exists in more than one dataset, authors SHOULD name the intended dataset in the same sentence or paragraph or use a `Dataset.Column` path. A link alone does not count as naming the dataset.
+
+* **First Occurrence:** Except as stated in Self-References, the first occurrence of each entity and glossary term in body content MUST be linked, and later occurrences MUST NOT be linked. In files under `specification/appendix/`, both are SHOULD.
+
+* **Titles and Headings:** Document titles and section headings do not count as body content and MUST NOT be linked solely to satisfy this rule.
+
+> **Note:** Ignore heading occurrences when determining the first occurrence. Link the first occurrence in body content instead. A term used only in headings does not require a link.
+
+* **Self-References:** References to the entity that the source Markdown file defines MUST NOT be linked.
+  * **Exception:** In a column definition file whose column has a Display Name with the same text as a glossary term, the first occurrence of that text, in any capitalization, MUST link to the glossary entry (e.g., `[*Billing Currency*](#glossary:billing-currency)` in the Billing Currency column definition). This exception overrides Entity or Glossary Term; the link counts as the first occurrence of the glossary term.
+
+* **Functional Links:** A **functional link** is a link to an entity definition or glossary entry whose anchor text is not an entity reference or glossary term reference (e.g., `[column requirements](#datamodel.costandusage.commitmentprogrameligibilitydetails)`, `[here](#datamodel.costandusage.contractapplied)`).
+
+* **Other Links:** Links to other targets (e.g., appendix entries, supported features, document sections, external resources, data files) are not subject to these linking rules.
+
+* **Link Targets:** In specification content, links to FOCUS entities use the generated heading anchors for headings after `!TOC`, as defined in [Markdownpp Guidelines](markdownpp-guidelines.md) ("Automatic Anchor Generation") (e.g., `#datamodel.costandusage.billedcost`), and links to glossary terms use the anchors of the glossary entries (e.g., `#glossary:charge`).
+  * **Specification content** is the content of the Markdown files under `specification/` that `specification/spec.mdpp` includes, directly or through other `!INCLUDE` files.
+
+**Exceptions:**
+
+* In **Content Constraints** sections, all entity references and glossary term references MUST be linked, regardless of prior occurrence in the source Markdown file.
+
+* In the **Glossary** file, entity references and glossary term references MUST be linked only on their first occurrence within each glossary entry, rather than once per source Markdown file.
+
+* In an **entity catalog table** (a table in which each data row represents one FOCUS entity and links to its definition, e.g., the Columns table in a dataset definition file), the link that identifies each row MAY appear regardless of prior occurrence and does not count as the first occurrence of that entity. Content Constraints and Allowed Values tables are not entity catalog tables.
+
+* A **functional link** MAY appear regardless of prior occurrence and does not count as the first occurrence of that entity.
+
+* Items in a **column list** need not be linked; they still count as an occurrence.
 
 ### Comparison Terminology
 
@@ -314,7 +315,7 @@ To ensure consistent language when describing relationships and evaluations betw
   ## Requirements
   ...
   * PricingQuantity MUST be greater than 0.
-  
+
  Incorrect:
   ## Description
   ...
@@ -355,9 +356,9 @@ To ensure consistent language when describing relationships and evaluations betw
 
 * **Blockquote Format:** Notes MUST be expressed using Markdown blockquote syntax (`>`). This creates a consistent, parseable container and allows downstream tooling to control visual presentation in HTML and PDF outputs.
 
-* **Note Label:** Notes MUST begin with the label `**Note:**` or `**Notes:**` (the term `Note` or `Notes`, followed by a colon, in bold).
+* **Note Label:** Notes MUST begin with the label `**Note:**`, `**Notes:**`, or `**Preview:**` (the term `Note`, `Notes`, or `Preview`, followed by a colon, in bold). The `**Preview:**` label is used only for notes that mark preview content (see [Preview Process](spec-change-guidelines.md#preview-process)).
 
-* **Consistent Terminology:** Only the terms `Note` or `Notes` MUST be used. Variants such as `Important Note`, `Warning`, or similar terms MUST NOT be used.
+* **Consistent Terminology:** Only the terms `Note`, `Notes`, or `Preview` MUST be used. Variants such as `Important Note`, `Warning`, or similar terms MUST NOT be used.
 
 * **Non-Normative Content:** Notes MUST be informative and non-normative. They MUST NOT contain normative keywords (e.g., MUST, SHOULD, MAY).
 

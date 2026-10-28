@@ -94,13 +94,12 @@ The `specification/requirements_model/` directory contains a machine-readable re
 
 ## Writing Specification Content & Review Guidelines
 
-AI agents generating or reviewing content MUST act as strict technical editors enforcing the FOCUS standards. Focus entirely on specification documents, schema definitions, and markdown formatting. 
+AI agents generating or reviewing content MUST act as strict technical editors enforcing the FOCUS standards. Focus entirely on specification documents, schema definitions, and markdown formatting.
 
 ### Normative Language & Requirements
 
 * **BCP-14 Keywords:** Use MUST, MUST NOT, SHOULD, SHOULD NOT, MAY (uppercase). NEVER use: "REQUIRED", "SHALL", "SHALL NOT", "RECOMMENDED", "NOT RECOMMENDED", "OPTIONAL".
 * **Location:** Capitalized BCP-14 keywords MUST NOT appear outside "Requirements" sections in files under `specification/attributes/`, `specification/operating_model_conditions/`, and `specification/datasets/` unless quoted.
-
 * **Structure:** Apply the following rules:
   * Normative requirements MUST use bulleted lists.
   * A normative bullet containing more than one constraint MUST be split.
@@ -111,7 +110,7 @@ AI agents generating or reviewing content MUST act as strict technical editors e
   * Preserve the established indentation hierarchy.
   * Never skip nesting levels.
 * **Requirement Ownership (DRY):** Apply the following rules:
-  * Each normative requirement MUST be defined exactly once. 
+  * Each normative requirement MUST be defined exactly once.
   * When the same normative behavior applies in multiple locations, authors MUST reference the existing requirement or reusable Attribute rather than duplicating the requirement text.
 * **Structural Grouping Bullets:** Apply the following rules:
   * A structural grouping bullet is a parent normative bullet within a composite requirement.
@@ -131,14 +130,14 @@ AI agents generating or reviewing content MUST act as strict technical editors e
   * Before reporting a conditional-phrasing violation, identify the BCP-14 obligation and demonstrate that the disputed phrase changes when that obligation applies.
   * A suggested correction MUST preserve the logical scope of the original requirement. It MUST NOT convert a descriptive modifier into a condition on the entire obligation.
   * `if` MUST NOT introduce a requirement applicability condition.
-Examples:
-* Applicability condition: `ListUnitPrice MUST be null when SkuPriceId is null.`
-  The `when` clause determines when the obligation applies.
-* Descriptive modifier: `ListUnitPrice MUST NOT reflect any unit price impact dependent on a discount-bearing commitment program being applied to the charge.`
-  `dependent on ...` identifies the prohibited kind of impact. The `MUST NOT` obligation applies unconditionally.
-These forms are not equivalent:
-* `MUST NOT reflect any impact dependent on X` prohibits impacts whose provenance depends on X.
-* `MUST NOT reflect any impact when X` conditions the entire prohibition on X and may prohibit unrelated impacts while X is true.
+  * Examples:
+    * Applicability condition: `ListUnitPrice MUST be null when SkuPriceId is null.`
+      The `when` clause determines when the obligation applies.
+    * Descriptive modifier: `ListUnitPrice MUST NOT reflect any unit price impact dependent on a discount-bearing commitment program being applied to the charge.`
+      `dependent on ...` identifies the prohibited kind of impact. The `MUST NOT` obligation applies unconditionally.
+  * These forms are not equivalent:
+    * `MUST NOT reflect any impact dependent on X` prohibits impacts whose provenance depends on X.
+    * `MUST NOT reflect any impact when X` conditions the entire prohibition on X and may prohibit unrelated impacts while X is true.
 * **Mathematical Accuracy:** `and/or` is permitted ONLY in mathematical validations or conditional clauses.
 * **Comparison Terminology:** Select comparison terminology according to the semantics of the comparison:
   * use `equal` for numeric comparisons;
@@ -156,8 +155,9 @@ These forms are not equivalent:
   * A structural anchor does not introduce a verifiable constraint.
   * A structural anchor does not resolve into an atomic requirement.
 * **Terminology:** Apply the following rules:
-  * Normative references to FOCUS entities MUST use a generic keyword, canonical Entity ID, or dot-notation reference path.
+  * Normative references to FOCUS entities MUST use a generic keyword, Entity ID, dot-notation reference path for an object property, or `Dataset.Column` for a column in a dataset other than the dataset in which the requirement is defined.
   * Normative references to FOCUS entities MUST NOT use Display Names.
+  * Exception: when a requirement uses an Operating Model Condition as an applicability condition, reference it by its Operating Model Condition phrase (Display Name in lowercase), not by its ID (e.g., `when the *operating model* [includes availability zones](#operatingmodelconditions.includesavailabilityzones)`). Do not flag this phrase as a violation of the rule prohibiting Display Names in normative requirements. This exception does not apply to requirements that define the Operating Model Condition itself.
   * Requirements governing a specific dataset MUST use its `DatasetId` as the subject (e.g., `CostAndUsage`).
   * All other grammatical subjects referring to a FOCUS dataset concept MUST use `FOCUS dataset`, including when the constraint applies to a dataset specification, dataset instance, or dataset artifact.
   * In non-subject positions, references to dataset concepts MUST use `FOCUS dataset`, `dataset instance`, or `dataset artifact`, according to the precise abstraction intended.
@@ -167,44 +167,41 @@ These forms are not equivalent:
 
 ### Editorial Conventions
 
-* **Column/Attribute IDs:** PascalCase without spaces (e.g., PricingQuantity). Entity IDs MUST be used in normative text sections.
-* **Column/Attribute Display Names:** Normal text with spaces (e.g., Pricing Quantity).
-* **Column/Attribute References in Non-Normative Content:**
-  * Display Names SHOULD be used for conceptual, reader-facing references.
-  * Canonical IDs MAY be used for schema-facing references.
-  * A reference is schema-facing when any of the following applies:
-    * it identifies a field in code, JSON, SQL, a schema, or a table header;
-    * it is an object or property path;
-    * the surrounding sentence describes the field being populated, omitted, null, serialized, validated, matched, compared, grouped, filtered, joined, aggregated, or repeated; or
-    * exact correspondence with an adjacent table, code block, schema fragment, or query expression is required.
-  * When none of the schema-facing conditions above applies, treat the reference as conceptual.
-  * Reviewers MUST NOT create a finding solely because a schema-facing non-normative reference uses its canonical ID.
-  * A canonical ID used for a conceptual non-normative reference MAY produce a suggestion. 
-  * A canonical ID used for a conceptual non-normative reference MUST NOT produce an error or warning.
-* **No Mixing:** Do not mix Entity IDs and Display Names within the same normative requirement.
+* **Entity IDs and Display Names:** Full rules: [Editorial Guidelines, Entity References](guidelines/contributors/editorial-guidelines.md#entity-references) and [Normative Requirements Guidelines, FOCUS Entity Reference Conventions](guidelines/contributors/normative-requirements-guidelines.md#focus-entity-reference-conventions). Apply the rules defined there, including their exceptions; where this summary of Entity IDs and Display Names contradicts them, they prevail.
+  * Entity IDs: exact schema name, PascalCase, no spaces (e.g., PricingQuantity). For references in normative text, see Terminology.
+  * Display Names: normal text with spaces, in the capitalization defined for the Display Name (e.g., Pricing Quantity).
+  * Outside Requirements sections, conceptual references MUST use Display Names when available (SHOULD in `specification/appendix/`); schema-facing references MAY use Entity IDs.
+    * A reference is schema-facing when it refers to the entity as it appears in data, code, or a schema (e.g., its values, a table header or row label, a column list, a query, or an object or `Dataset.Column` path); otherwise it is conceptual.
+  * When a Display Name and a glossary term have the same text, text in the Display Name's capitalization refers to the entity, and text in any other capitalization refers to the glossary term; where capitalization cannot distinguish them (e.g., at the start of a sentence), use context to identify the intended reference. Each counts as an occurrence only of what it refers to.
+* **No Mixing:** Do not mix Entity IDs and Display Names within the same normative requirement. An Operating Model Condition phrase is exempt from this rule.
 * **Column values:** Apply the following rules:
-  * When a column value appears in prose or normative text, enclose it in double quotation marks (e.g., `"Usage"`, `"Tax"`). 
+  * When a column value appears in prose or normative text, enclose it in double quotation marks (e.g., `"Usage"`, `"Tax"`).
   * In an Allowed Values table, list values without quotation marks because the `Value` column identifies them as literals, unless quotation marks are part of the value itself.
 * **Glossary terms:** Link with `[*term*](#glossary:term)` format.
-* **Linking Rule:** For each distinct entity or glossary destination in a source Markdown file:
-  * Ignore occurrences in document titles and section headings.
-  * Link the first remaining occurrence in reading order.
-  * Leave all later occurrences unlinked.
-  * When no remaining occurrence exists, no link is required.
-* **Linking Rule Exceptions:** Apply the following exceptions:
-  * A link whose anchor text is not an entity name or glossary term does not count toward first occurrence.
-  * Content Constraints sections link every entity reference.
-  * Glossary entries apply this rule independently within each entry.
-  * A table is an entity catalog table only when each data row represents and identifies a distinct specification entity.
-  * In an entity catalog table, the entity reference that identifies each row MAY link to that entity's definition even when the entity was linked earlier in the file.
-  * Each normative requirement bullet MUST link its first reference to each distinct FOCUS entity, glossary term, or Operating Model Condition, even when the same destination was linked earlier in the file.
-  * Later references to the same destination within that bullet MUST remain unlinked.
+* **Linking Rule:** Full rules: [Editorial Guidelines, Linking](guidelines/contributors/editorial-guidelines.md#linking). Apply the rules defined there, including their exceptions; where this summary of linking rules contradicts them, they prevail.
+  * For each entity and glossary term in a source Markdown file, ignore titles and headings, and do not link the entity the file defines. The first remaining occurrence in reading order MUST be linked, and later occurrences MUST NOT be linked (both SHOULD in `specification/appendix/`).
+  * Entity references: an Entity ID or Display Name, including plural and possessive forms, or a `Dataset.Column` path for a column in another dataset; for an Operating Model Condition, also its Operating Model Condition phrase (Display Name in lowercase), in any capitalization. Other forms of an entity name (shortened or extended) count only when linked. An Entity ID and its Display Name refer to the same entity; columns with the same ID in different datasets are different entities. A Display Name or Entity ID refers to the column in the dataset the file belongs to, unless the same sentence or paragraph names another dataset; a `Dataset.Column` path always refers to the column in the named dataset. In a file that does not belong to a dataset, when a column exists in more than one dataset, authors SHOULD name the intended dataset in the same sentence or paragraph or use a `Dataset.Column` path; a link alone does not count as naming the dataset.
+  * Glossary term references: a glossary term used in its glossary meaning, in any capitalization, including plural and possessive forms; for text that is also a Display Name, see Entity IDs and Display Names and the column definition exception below. Shortened or extended forms count only when linked or italicized.
+* **Linking Rule Exceptions:**
+  * Content Constraints sections: link every entity reference and glossary term reference.
+  * Glossary file: apply the rule within each glossary entry.
+  * Entity catalog tables (each row represents one FOCUS entity and links to its definition, e.g., the Columns table in `dataset.md`): row links may appear regardless of prior occurrence and do not count toward first occurrence. Content Constraints and Allowed Values tables are not catalog tables.
+  * Functional links (links to an entity definition or glossary entry whose anchor text is not an entity reference or glossary term reference, e.g., `[here](...)`, `[column requirements](...)`): may appear regardless of prior occurrence and do not count toward first occurrence.
+  * In a column's own definition file, when its Display Name has the same text as a glossary term, link the first occurrence of that text, in any capitalization, to the glossary entry (e.g., `[*Billing Currency*](#glossary:billing-currency)`); never link it to the column itself. This overrides the capitalization bullet under Entity IDs and Display Names; the link counts as the first occurrence of the glossary term.
+  * Column lists: items need not be linked; they still count as an occurrence.
+  * Links to other targets (appendix, supported features, sections, external URLs, data files) are not subject to the Linking Rule.
 * **Lists:** All unordered lists MUST use asterisks (`*`), never dashes (`-`) or plus signs (`+`). Nested bullet points MUST use exactly two spaces per level.
-* **Notes:** Important notes must use the blockquote format (`> **Note:**`).
+* **Notes:** Important notes must use the blockquote format (`> **Note:**`), or `> **Preview:**` for notes that mark preview content.
 * **Notes versus Exceptions:** Apply the following rules:
-  * Notes MUST contain only informative or explanatory material. 
+  * Notes MUST contain only informative or explanatory material.
   * Normative conditions and exceptions MUST be expressed as requirements.
-* **Anchors:** Pandoc auto-generates custom heading anchors. DO NOT flag missing HTML `<a name="">` tags.
+* **Anchors:**
+  * Specification content is the content of the Markdown files under `specification/` that `specification/spec.mdpp` includes, directly or through other `!INCLUDE` files.
+  * In specification content, heading anchors are generated for headings after `!TOC` as defined in [Markdownpp Guidelines](guidelines/contributors/markdownpp-guidelines.md) ("Automatic Anchor Generation"); glossary anchors are the `<a name="glossary:...">` tags in `specification/glossary.md`.
+  * Check links in specification content against these anchors, not against links in guideline examples. The build also validates fragment links (`specification/tests/test_spec_links.py`).
+  * Headings before `!TOC` (e.g., in `license.md`) are not covered by the generated-anchor rule. Headings marked `<!--SkipTOC-->` have no generated anchor. If a link targets either, report it for a manual check.
+  * Other Markdown files (e.g., under `guidelines/`) use GitHub heading anchors.
+  * DO NOT flag headings for lacking an HTML `<a name="">` tag.
 * **Markdown Tables:** Select spacing based on the table's natural, unpadded content and source readability:
   * When rows are similar in length and remain below 120 characters, prefer padding cells to align the vertical pipes.
   * When one or a few rows are substantially longer than the others, preserve the established padding for the shorter rows and allow the longer rows to extend beyond the aligned width.
@@ -213,7 +210,7 @@ These forms are not equivalent:
   * Mixed trailing-pipe positions resulting from the long-row exception are compliant and MUST NOT be flagged solely as a table-alignment issue.
 * **Numbers in Prose:** Apply the following rules:
   * In explanatory prose, spell out numbers zero through nine.
-  * In explanatory prose, use numerals beginning at 10. 
+  * In explanatory prose, use numerals beginning at 10.
   * Preserve numeric notation in JSON, mathematics, schema constraints, identifiers, and technical examples.
 * **Dash Usage:** Apply dash formatting by purpose:
   * Use an unspaced hyphen (`-`) for compound words and ranges.
@@ -225,8 +222,8 @@ These forms are not equivalent:
 * **Mathematical & Schema Accuracy:** AI reviewers MUST rigorously calculate, parse, and verify all data within examples (especially JSON snippets and tables). Flag any mathematical inconsistencies or hallucinated data.
 * **JSON Formatting:** JSON blocks MUST use double quotation marks for keys. Verify that the JSON is structurally valid.
 * **JSON Object Requirements:** Apply the following rules:
-  * Requirements governing a JSON object MUST be authored with the object definition. 
-  * Column-level requirements MUST remain with the column definition. 
+  * Requirements governing a JSON object MUST be authored with the object definition.
+  * Column-level requirements MUST remain with the column definition.
   * Requirements for object properties SHOULD reference properties using dot notation where appropriate to distinguish object-level constraints from property-level constraints.
 * **Example Disclaimer:** Top-level sections with examples and no normative requirements MUST begin with: `> Note: The following section is informative and non-normative. It does not define requirements.` Enforce ONLY on Level-2 headings in `spec.md` or major section overview files (e.g., `appendix_overview.md`). Ignore nested .md files.
 
