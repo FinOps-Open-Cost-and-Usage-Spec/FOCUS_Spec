@@ -34,15 +34,13 @@ RequesterDetailsObject MUST adhere to the following requirements:
 * RequesterDetailsObject MUST NOT include entries that are not applicable to the *requester* associated with the *charge*.
 * RequesterDetailsObject MUST NOT include an entry whose Entry.key is "Principal" when PrincipalId is null.
 * RequesterDetailsObject MUST NOT include an entry whose Entry.key is "Credential" when CredentialId is null.
-
-RequesterDetailsObject entries MUST adhere to the following requirements:
-
-* Entry.key in RequesterDetailsObject MUST be unique within RequesterDetailsObject.
-* Entry.value in RequesterDetailsObject MUST carry the descriptive attributes of the *requester* level named by Entry.key.
-* Entry.value.Type MUST represent the kind of entity described by the entry.
-* Entry.value.Name MUST represent a readable display name for the entity described by the entry.
-* Entry.value.Email MUST represent an email address associated with the entity described by the entry.
-* Custom entry in RequesterDetailsObject MUST represent a level of the *requester* that is neither the *principal* nor the *credential*.
+* RequesterDetailsObject entries MUST adhere to the following requirements:
+  * Entry.key in RequesterDetailsObject MUST be unique within RequesterDetailsObject.
+  * Entry.value in RequesterDetailsObject MUST carry the descriptive attributes of the *requester* level named by Entry.key.
+  * Entry.value.Type MUST represent the kind of entity described by the entry.
+  * Entry.value.Name MUST represent a readable display name for the entity described by the entry.
+  * Entry.value.Email MUST represent an email address associated with the entity described by the entry.
+  * Custom entry in RequesterDetailsObject MUST represent a level of the *requester* that is neither the *principal* nor the *credential*.
 
 ### Object Schema Structure
 
@@ -94,7 +92,7 @@ RequesterDetails is not null when PrincipalId or CredentialId is not null, inclu
 
 ### Object Example
 
-Here is an example of the value format.
+Here is an example of the object format.
 
 * For more detailed examples, please see this column's entry in the JSON Object Examples appendix entry [here](#appendix.examples:jsonobject.examples:requesterdetails).
 * For the JSON schema, please see [Requester Details Object Schema](#schemas.costandusage.requesterdetailsobjectschema).
