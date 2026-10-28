@@ -117,7 +117,7 @@ Any modification (including updates, additions, or omissions) to previously deli
 
 A correction (lowercase) may consist of one or more simultaneous changes, including updates to or omission of previously delivered records, or the addition of new records that supplement previously delivered data within the affected *delivery scope*. This concept applies across all FOCUS datasets.
 
-In contrast to the broader concept of correction (lowercase), the term "Correction" (capitalized) refers to a specific allowed value in the [Charge Class](#datamodel.costandusage.chargeclass) column in Cost and Usage datasets. It designates [*charges*](#glossary:charge) used to correct cost or usage data from a previously [*closed billing period*](#glossary:closed-billing-period).
+In contrast to the broader concept of correction (lowercase), the term "Correction" (capitalized) refers to a specific allowed value in the [Charge Class](#datamodel.costandusage.chargeclass) column in [Cost and Usage](#datamodel.costandusage) datasets. It designates [*charges*](#glossary:charge) used to correct cost or usage data from a previously [*closed billing period*](#glossary:closed-billing-period).
 
 <a name="glossary:covered-charge"><b>Covered Charge</b></a>
 
