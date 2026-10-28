@@ -69,6 +69,7 @@ Definitions are not tagged. The registry recognizes them by the structure the sp
 | REG009 | Info | A name or alias is shared by entities of different types, so references must state the type |
 | REG010 | Error | Malformed glossary anchor (the term would be silently dropped) |
 | REG011 | Warning | Unknown front matter key, or aliases for an unknown glossary key |
+| REG012 | Warning | A file under `datasets/` declares a dataset in front matter; it takes its dataset from its location |
 
 `--strict` makes errors exit non-zero.
 
@@ -112,7 +113,7 @@ File boundaries come from `<!-- focus:file <path> -->` markers. The prototype's 
 
 | Code | Level | Check |
 | :--- | :--- | :--- |
-| FOCUS001 | Error | Unknown entity, or a column ID that exists in several datasets without a qualifier |
+| FOCUS001 | Error | Unknown entity; a column ID that exists in several datasets, in a file with no dataset, without a qualifier; or an unqualified column that is not in the file's dataset |
 | FOCUS003 | Warning | Column reference in a Requirements section whose text is not the ColumnId |
 | FOCUS004 | Warning | Untagged ColumnId in prose |
 | FOCUS005 | Warning | Italic text that matches a glossary term but is not tagged |
@@ -120,6 +121,7 @@ File boundaries come from `<!-- focus:file <path> -->` markers. The prototype's 
 | FOCUS007 | Warning | Hard-coded link to a registry anchor; the message gives the semantic replacement |
 | FOCUS008 | Error | Value that is not in the column's Allowed Values |
 | FOCUS009 | Info | Plain text matching a glossary term (opt-in with `focus-lint-terms=true`) |
+| FOCUS010 | Error | Front matter `dataset` names an unknown dataset (`resolve_semantic.py` only) |
 
 `focus-strict=true` makes errors fail the Pandoc run.
 
@@ -140,9 +142,9 @@ File boundaries come from `<!-- focus:file <path> -->` markers. The prototype's 
 ## Open Questions
 
 * **Front matter in the real build.** markdown-pp pastes included files in raw, so front matter would land mid-document. The Include module would need to strip it, next to the one-line file marker change.
-* **More front matter keys.** Likely next candidates are `deprecated-ids` (resolve an old ColumnId with a warning) and a per-file `default-dataset`, which would answer the dataset-scope question below.
-* **Dataset scope in shared files.** Eleven ColumnIds (e.g., `BilledCost`, `BillingCurrency`, `InvoiceId`) exist in more than one dataset. Column files resolve to their own dataset automatically. Appendix and attribute files would need a qualifier, a per-file default (front matter), or a project-wide default of Cost and Usage.
-* **Line numbers.** The filter reports file and section, not line. Pandoc's `gfm+sourcepos` extension could add line numbers. A separate pymarkdownlnt plugin could also run the same checks against source positions.
+* **More front matter keys.** A likely next candidate is `deprecated-ids` (resolve an old ColumnId with a warning).
+* **Dataset scope in shared files.** Eleven ColumnIds (e.g., `BilledCost`, `BillingCurrency`, `InvoiceId`) exist in more than one dataset. Column files resolve to their own dataset automatically. Other files can declare a default in front matter (`dataset: CostAndUsage`), which the demo branch build (`resolve_semantic.py` and `tag_sources.py`) applies; see `DEMO.md`. The Pandoc filter in `focus_semantic.py` does not read it yet. The alternatives are qualifying every shared column or a project-wide default of Cost and Usage.
+* **Line numbers.** `resolve_semantic.py` reports source line numbers. The Pandoc filter reports file and section, not line. Pandoc's `gfm+sourcepos` extension could add line numbers. A separate pymarkdownlnt plugin could also run the same checks against source positions.
 * **Lowercase prose.** "resource type" as ordinary words is still allowed. FOCUS009 shows how noisy term detection on plain text is. It probably works best as an on-demand report, not a build gate.
 * **Links for values.** Values currently render as plain `"Correction"` text. They could link to the column's Allowed Values table.
 * **Migration.** FOCUS007, FOCUS004 and FOCUS005 already give the exact rewrite for most existing markup. A script could apply those mechanically and leave the ambiguous cases (like "invoice issuer") for people to decide.

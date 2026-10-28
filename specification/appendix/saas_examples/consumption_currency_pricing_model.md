@@ -1,3 +1,7 @@
+---
+dataset: CostAndUsage
+---
+
 # Consumption Currency Pricing Model
 
 Many SaaS service providers support pricing models that utilize a [consumption currency](#term) such as platform credits or normalized billing units. Charges may be provided using a consumption currency, which can subsequently be converted to a [national currency](#term) such as USD or EUR at an advertised or agreed-upon conversion rate.
@@ -35,9 +39,9 @@ For this scenario, the initial purchase of consumption currency is executed as f
 Note the following details in the example dataset:
 
 * The Charge Period is April 1st 2025 - April 1st 2026. The Billing Period is the month of April 2025 (when the OmniBucks were purchased) and therefore will appear in the April invoice.
-* Because OmniQuery uses a consumption currency pricing model for usage and publishes their OmniBuck price in terms of dollars and their usage cost in terms of OmniBucks, their Cost and Usage [FOCUS dataset](#term) includes the columns [PricingCurrency](#col:CostAndUsage.PricingCurrency), [PricingCurrencyContractedUnitPrice](#col), [PricingCurrencyEffectiveCost](#col), and [PricingCurrencyListUnitPrice](#col).
+* Because OmniQuery uses a consumption currency pricing model for usage and publishes their OmniBuck price in terms of dollars and their usage cost in terms of OmniBucks, their Cost and Usage [FOCUS dataset](#term) includes the columns [PricingCurrency](#col), [PricingCurrencyContractedUnitPrice](#col), [PricingCurrencyEffectiveCost](#col), and [PricingCurrencyListUnitPrice](#col).
 * A single charge representing the total payment for the initial OmniBuck purchase agreement ($200,000) is charged in the first invoice.
-  * [ListCost](#col), [BilledCost](#col:CostAndUsage.BilledCost), and [ContractedCost](#col) of the purchase are all represented in this charge, however [EffectiveCost](#col) is zero since the OmniBucks are not yet consumed.
+  * [ListCost](#col), [BilledCost](#col), and [ContractedCost](#col) of the purchase are all represented in this charge, however [EffectiveCost](#col) is zero since the OmniBucks are not yet consumed.
 * [PricingQuantity](#col) is set to the total OmniBucks purchased.
 * Because Acme Corp is paying the list price, [ListUnitPrice](#col) and [ContractedUnitPrice](#col) are all set to the same value of $2.
 
@@ -54,7 +58,7 @@ Acme Corp uses OmniQuery's services consuming OmniBucks as follows in the first 
 Note the following details in the example dataset:
 
 * The Charge Period is April 1st 2025 - April 2nd 2025. The Billing Period is the month of April 2025.
-* [PricingCurrency](#col:CostAndUsage.PricingCurrency) for these usage charges is "OmniBucks", the denomination the usage is priced in. The per usage OmniBuck price of each charge is carried in [PricingCurrencyListUnitPrice](#col) and [PricingCurrencyContractedUnitPrice](#col).
+* [PricingCurrency](#col) for these usage charges is "OmniBucks", the denomination the usage is priced in. The per usage OmniBuck price of each charge is carried in [PricingCurrencyListUnitPrice](#col) and [PricingCurrencyContractedUnitPrice](#col).
 * [PricingQuantity](#col) reflects the amount of usage of the [PricingUnit](#col) for each charge and is equivalent to [ConsumedQuantity](#col). While relevant to this example, there are scenarios including tiered pricing where [ConsumedQuantity](#col) and [PricingQuantity](#col) may not be the same.
 * Because Acme Corp's usage includes no discount on usage to OmniBuck rates, [PricingCurrencyContractedUnitPrice](#col) and [PricingCurrencyListUnitPrice](#col) are equivalent.
 
@@ -75,11 +79,11 @@ For this scenario, the initial purchase of consumption currency is executed as f
 Note the following details in the example dataset:
 
 * The Charge Period is April 1st 2025 - April 1st 2026. The Billing Period is the month of April 2025 (when the OmniBucks were purchased) and therefore will appear in the April invoice.
-* Because OmniQuery uses a consumption currency pricing model for usage and publishes their OmniBuck price in terms of dollars and their usage cost in terms of OmniBucks, their [FOCUS dataset](#term) includes the columns [PricingCurrency](#col:CostAndUsage.PricingCurrency), [PricingCurrencyContractedUnitPrice](#col), [PricingCurrencyEffectiveCost](#col), and [PricingCurrencyListUnitPrice](#col).
+* Because OmniQuery uses a consumption currency pricing model for usage and publishes their OmniBuck price in terms of dollars and their usage cost in terms of OmniBucks, their [FOCUS dataset](#term) includes the columns [PricingCurrency](#col), [PricingCurrencyContractedUnitPrice](#col), [PricingCurrencyEffectiveCost](#col), and [PricingCurrencyListUnitPrice](#col).
 * A single charge representing the total payment for the initial OmniBuck purchase agreement ($100,000) is charged in the first invoice.
-  * [ListCost](#col), [BilledCost](#col:CostAndUsage.BilledCost), and [ContractedCost](#col) of the purchase are all represented in this charge, however [EffectiveCost](#col) is zero, as required for prepaid purchases.
+  * [ListCost](#col), [BilledCost](#col), and [ContractedCost](#col) of the purchase are all represented in this charge, however [EffectiveCost](#col) is zero, as required for prepaid purchases.
 * [PricingQuantity](#col) is set to the total OmniBucks purchased.
-* Because Acme Corp is receiving a discount on the OmniBuck price, the [ListUnitPrice](#col) is set to $2 and the [ContractedUnitPrice](#col) is set to $1. A [ListCost](#col) of ($200,000) and [ContractedCost](#col) ($100,000) reflect the cost of the OmniBucks at the list price and contracted price respectively. The [BilledCost](#col:CostAndUsage.BilledCost) is set to $100,000 since this is the amount that Acme Corp will be charged for the purchase of OmniBucks.
+* Because Acme Corp is receiving a discount on the OmniBuck price, the [ListUnitPrice](#col) is set to $2 and the [ContractedUnitPrice](#col) is set to $1. A [ListCost](#col) of ($200,000) and [ContractedCost](#col) ($100,000) reflect the cost of the OmniBucks at the list price and contracted price respectively. The [BilledCost](#col) is set to $100,000 since this is the amount that Acme Corp will be charged for the purchase of OmniBucks.
 
 ## Scenario B2: Usage of Consumption Currency Purchased at a Discount
 

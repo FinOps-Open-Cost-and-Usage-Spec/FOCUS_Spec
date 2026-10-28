@@ -7,6 +7,8 @@ and prints what it could not decide, which is left for a person:
 * Hand-written links to an entity's anchor become semantic references, in the
   shortest form that resolves to the same entity:
   [*charge*](#glossary:charge) -> [charge](#term)
+* Dataset-qualified column references lose a qualifier the file's dataset makes
+  unnecessary: [BilledCost](#col:CostAndUsage.BilledCost) -> [BilledCost](#col)
 * Italic phrases that name a glossary term become term references:
   *charges* -> [charges](#term)
 * ColumnIds, attribute IDs, and operating model condition IDs written as plain
@@ -21,8 +23,9 @@ Left alone, and reported as NEEDS-REVIEW where relevant:
   sections that define the entity (Column ID, Display Name, and so on).
 * Display Names written as plain words (e.g., "Billed Cost" in prose), because
   plain prose may or may not mean the entity.
-* ColumnIds that exist in several datasets when the file belongs to none of
-  them, because the dataset scope rule is an open question.
+* ColumnIds that exist in several datasets when the file has no dataset, from
+  its location or from "dataset:" in its front matter.
+* ColumnIds that are not in the file's dataset; they need a qualifier.
 
 Usage:
     tag_sources.py --registry semantic-registry.json [--spec-dir DIR] FILE...
@@ -35,6 +38,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+from build_registry import split_front_matter  # noqa: E402
 from focus_semantic import Registry  # noqa: E402
 
 LINK = re.compile(r"\[([^\]\n]+)\]\(([^)\s]+)\)")
@@ -46,13 +50,13 @@ DEFINITION_SECTIONS = {"Column ID", "Display Name", "Attribute ID", "Attribute N
 
 
 class Tagger:
-    def __init__(self, registry, path):
+    def __init__(self, registry, path, declared=None):
         self.registry = registry
         self.path = path
         cols = registry.by_type["col"]
         self.home_col = next((e for e in cols if e["source"] == path), None)
         self.dataset = self.home_col["dataset"] if self.home_col else next(
-            (e["id"] for e in registry.by_type["ds"] if Path(e["source"]).parent in Path(path).parents), None)
+            (e["id"] for e in registry.by_type["ds"] if Path(e["source"]).parent in Path(path).parents), declared)
         # PascalCase IDs that may appear as plain words: columns, attributes, conditions
         self.id_kind = {e["id"]: e["type"] for t in ("attr", "omc") for e in registry.by_type[t]}
         self.id_kind.update({i: "col" for i in registry.col_ids})
@@ -85,6 +89,16 @@ class Tagger:
         text, target = match.group(1), match.group(2)
         if not target.startswith("#"):
             return match.group(0)
+        if target.startswith("#col:"):
+            # Drop a dataset qualifier the file's dataset makes unnecessary, unless the
+            # visible text is qualified too (e.g., to contrast two datasets)
+            if "." in text:
+                return match.group(0)
+            entity, _ = self.registry.find("col", target[5:], text, self.dataset)
+            shorter = self.reference("col", entity, text) if entity else match.group(0)
+            if shorter != match.group(0):
+                self.changes += 1
+            return shorter
         entity = self.registry.anchors.get(target[1:])
         if entity is None:
             return match.group(0)
@@ -200,8 +214,9 @@ def main():
     spec_dir = args.spec_dir.resolve()
     for file in args.files:
         rel = str(file.resolve().relative_to(spec_dir))
-        tagger = Tagger(registry, rel)
         original = file.read_text(encoding="utf-8")
+        front, _ = split_front_matter(original)
+        tagger = Tagger(registry, rel, front.get("dataset") or None)
         converted = tagger.run(original)
         if converted != original:
             file.write_text(converted, encoding="utf-8")
