@@ -40,7 +40,6 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
         <td>
             * Use the display name in the non-normative section.<br>
             * The first occurrence in each source file is linked to its definition (see Linking).
-
         </td>
     </tr>
     <tr>
@@ -66,7 +65,7 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
         <td>
            * Use PascalCamel case (the first letter of every word, is capitalized)<br>
            * Normal text without bold or italics.<br>
-           * The first occurrence in each source file is linked to the glossary (see Linking).
+           * The first occurrence in each source file is linked to its definition (see Linking)
         </td>
     </tr>
     <tr>
@@ -113,7 +112,7 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
         </td>
         <td>
             * Blue font + italic<br>
-            * The first occurrence in a section is linked to the glossary.
+            * The first occurrence in each source file is linked to the glossary (see Linking).
         </td>
     </tr>
     <tr>
