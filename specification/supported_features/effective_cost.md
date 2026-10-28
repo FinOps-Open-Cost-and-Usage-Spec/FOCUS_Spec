@@ -94,6 +94,7 @@ SELECT
   ServiceProviderName,
   BillingCurrency,
   ServiceName,
+  SkuId,
   ConsumedUnit,
   PricingUnit,
   SUM(ConsumedQuantity) AS TotalConsumedQuantity,
@@ -109,6 +110,7 @@ GROUP BY
   ServiceProviderName,
   BillingCurrency,
   ServiceName,
+  SkuId,
   ConsumedUnit,
   PricingUnit
 ```
