@@ -276,7 +276,11 @@
       "MustSatisfy": "RequesterDetails MUST conform to RequesterDetailsValue requirements when RequesterDetails is not null.",
       "Keyword": "MUST",
       "Requirement": {},
-      "Condition": {},
+      "Condition": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "RequesterDetails",
+        "Value": null
+      },
       "Dependencies": []
     }
   }
