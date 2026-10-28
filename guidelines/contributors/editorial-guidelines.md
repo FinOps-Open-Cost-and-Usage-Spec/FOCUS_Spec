@@ -311,14 +311,18 @@ To ensure consistent language when describing relationships and evaluations betw
 
 * **Informative Examples:** Examples MUST be considered informative and non-normative, and MUST NOT define requirements.
 
-* **Example Note Requirement:** The informative/non-normative note MUST appear ONLY in `specification/overview.md` (Introduction). That single note covers all examples and illustrative material elsewhere in the specification. Example sections, major section overviews other than Introduction, and nested example files MUST NOT repeat the note.
+* **Informative Status Note:** Each of the following files MUST include an informative, non-normative status note directly below its first heading:
+  * `specification/overview.md`
+  * `specification/supported_features/supported_features_overview.md`
+  * `specification/appendix/appendix_overview.md`
+* **Informative Status Note Scope:** Each note MUST refer only to the section identified by that heading (e.g., "The Appendix"). The note MUST NOT be placed under the subheadings of that heading, including a heading originating from a nested file. The Conventions section in `specification/overview.md` MUST identify the same headings and exceptions as the corresponding notes.
 
   * **Exception:** This requirement does not apply to guideline documents, training materials, or authoring guidance where examples are inherently illustrative.
 
 * **Example** (Markdown, illustrative):
 
   ```md
-  > **Note:** The following section, and examples and other illustrative material elsewhere in this specification, are informative and non-normative. They do not define requirements.
+  > **Note:** The Appendix, except the Rounding Variance Tolerance appendix entry, is informative and non-normative. It does not define requirements.
   ```
 
 ### Notes and Exceptions
