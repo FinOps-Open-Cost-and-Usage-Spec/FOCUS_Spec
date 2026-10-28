@@ -188,6 +188,8 @@ Body content includes paragraphs, list items, table cells, and requirement bulle
 
 * In an **entity catalog table**, the entity reference that identifies the subject of each row MAY link to that entity's definition even when the entity was linked earlier in the source Markdown file.
 
+* A link whose anchor text is not an entity name or glossary term does not count toward the first occurrence.
+
 ### Entity References
 
 * **Entity ID References:** Formatting and usage conventions for normative requirements are defined in the Normative Requirements Guidelines.
