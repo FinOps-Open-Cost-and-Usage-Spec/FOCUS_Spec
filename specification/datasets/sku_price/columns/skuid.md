@@ -52,4 +52,4 @@ Service-provider-specified unique identifier that represents a specific *SKU* (e
 
 ## Version Introduced
 
-1.5
+Preview: 1.5

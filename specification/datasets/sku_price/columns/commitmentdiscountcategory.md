@@ -45,4 +45,4 @@ Indicates whether the *commitment discount* a SKU Price record relates to is bas
 
 ## Version Introduced
 
-1.5
+Preview: 1.5

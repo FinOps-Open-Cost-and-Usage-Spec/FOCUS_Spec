@@ -41,4 +41,4 @@ The inclusive date and time when the specified SKU Price record becomes active a
 
 ## Version Introduced
 
-1.5
+Preview: 1.5

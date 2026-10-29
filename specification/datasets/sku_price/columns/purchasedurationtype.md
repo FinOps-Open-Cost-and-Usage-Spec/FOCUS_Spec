@@ -74,4 +74,4 @@ Represents the categorical length of the term of a purchase.
 
 ## Version Introduced
 
-1.5
+Preview: 1.5

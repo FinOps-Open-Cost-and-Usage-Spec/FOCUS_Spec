@@ -1,6 +1,8 @@
 # Examples: SKU Price Eligibility
 
-This section describes examples for the [SKU Price Eligibility](#datamodel.skuprice.skupriceeligibility) column in the [SKU Price](#datamodel.skuprice) dataset.
+> **Preview:** The [SKU Price](#datamodel.skuprice) dataset is a preview in this version of FOCUS, so these examples may change in the next version based on implementation feedback. The preview also covers two requirements outside the dataset, which are excluded from conformance, and two operating model conditions and a schema that exist only for SKU Price. [Issue #2768](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2768) tracks the preview and lists each one.
+
+This section describes examples for the [SKU Price Eligibility](#datamodel.skuprice.skupriceeligibility) column in the SKU Price dataset.
 
 ## Global Scope
 

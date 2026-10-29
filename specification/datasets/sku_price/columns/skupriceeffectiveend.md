@@ -42,4 +42,4 @@ The exclusive date and time when the specified SKU Price record is no longer act
 
 ## Version Introduced
 
-1.5
+Preview: 1.5

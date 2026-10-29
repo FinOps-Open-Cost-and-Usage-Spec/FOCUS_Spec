@@ -46,4 +46,4 @@ A display name for the *service* under which the specified *SKU Price* is publis
 
 ## Version Introduced
 
-1.5
+Preview: 1.5

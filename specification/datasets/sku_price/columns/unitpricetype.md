@@ -51,4 +51,4 @@ Categorizes the monetary value in *Unit Price*.
 
 ## Version Introduced
 
-1.5
+Preview: 1.5
