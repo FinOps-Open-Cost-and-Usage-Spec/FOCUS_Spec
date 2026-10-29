@@ -27,6 +27,12 @@ schemas/schemas.mdpp, a metadata field is a file under metadata/ with
 "## Metadata ID" and "## Metadata Name" sections, and so on. That structure is the contract, so this script also checks it
 (REG codes below) and reports any definition it cannot read reliably.
 
+The source files are expected to contain mistakes, and finding them is a goal.
+A finding means two places that should agree do not (an ID and a file name, a
+heading and a name section, the specification and the Requirements Model). It
+does not say which one is wrong; messages name both sides and leave that to a
+person.
+
 Optional YAML front matter on a defining file holds what the structure cannot:
 
     ---
@@ -75,10 +81,11 @@ requirements_model/releases/latest/model_rules/ are named after the entity they
 cover, like the specification files: attributes/<id>.json,
 conditions/<id>.json, and datasets/<dataset>/<id>.json, columns/<id>.json, and
 objects/<id>.json. Each rule records the EntityId and EntityName it applies to.
-The registry is built from the specification, so it is the reference: every
-column, dataset, attribute, operating model condition, and JSON object should
-have a rule file, every rule file should match an entity, and the ID and name in
-the rules should match the specification exactly. Metadata fields and schemas
+Neither side is treated as correct. Every column, dataset, attribute, operating
+model condition, and JSON object is expected to have a rule file, every rule file
+to match an entity, and the ID and name in the rules to match the
+specification's; any difference is reported for a person to resolve on either
+side. Metadata fields and schemas
 have no rule files, so they are not checked. A rule file whose rules all have
 Status "Removed" is history for a removed entity and is expected to have no
 entity. This is one possible answer to how
@@ -231,9 +238,10 @@ def check_name(path, ident, source, diag):
     """REG016: an entity's file (or folder) is named after its ID in lowercase."""
     name = path.name if path.is_dir() else path.stem
     if name != ident.lower():
-        expected = ident.lower() + ("" if path.is_dir() else path.suffix)
+        convention = ident.lower() + ("" if path.is_dir() else path.suffix)
         kind = "folder" if path.is_dir() else "file"
-        diag.report("WARN", "REG016", source, f'{kind} name "{path.name}" does not match {ident}; expected "{expected}"')
+        diag.report("WARN", "REG016", source, f'{kind} name "{path.name}" and ID {ident} disagree '
+                    f'(the naming convention pairs {ident} with "{convention}")')
 
 
 def entity_id(text, id_heading, name_heading, title, source, diag):
@@ -294,7 +302,8 @@ def collect(src, diag):
             ds_row = next((r for r in table_rows(constraints or "") if r and r[0] == "Dataset"), None)
             if ds_row is None or link_text(ds_row[1]) != ds_title:
                 found = link_text(ds_row[1]) if ds_row else "no Dataset row"
-                diag.report("WARN", "REG007", source, f'Content Constraints Dataset is "{found}", expected "{ds_title}"')
+                diag.report("WARN", "REG007", source,
+                            f'Content Constraints Dataset is "{found}", but the file is in the "{ds_title}" dataset folder')
 
             col_anchor = f"{ds_anchor}.{anchor_part(title)}"
             add(type="col", id=col_id, display=display, dataset=ds_id, anchor=col_anchor,
@@ -422,7 +431,7 @@ def collect(src, diag):
         # A trailing acronym in parentheses, e.g. "Cloud Service Provider (CSP)", is not part of the key
         expected = re.sub(r"[^a-z0-9]+", "-", re.sub(r"\s*\([A-Z]+\)$", "", term).lower()).strip("-")
         if key.lower() != expected:
-            diag.report("WARN", "REG006", "glossary.md", f'key "{key}" does not match term "{term}" (expected "{expected}")')
+            diag.report("WARN", "REG006", "glossary.md", f'key "{key}" and term "{term}" disagree (the term gives "{expected}")')
         keys.add(key)
         aliases = glossary_aliases.get(key, [])
         add(type="term", id=key, display=term, anchor=f"glossary:{key}",
@@ -494,8 +503,8 @@ def check_requirements_model(entities, spec_dir, release, diag):
             if removed:
                 continue
             kind = own[0].get("EntityType", "entity") if own else "entity"
-            diag.report("WARN", "REG017", f"{shown}/{rel}", f"rule file for {kind} "
-                        f'"{own[0]["EntityId"] if own else path.stem}" has no entity in the specification')
+            diag.report("WARN", "REG017", f"{shown}/{rel}", f"active rule file for {kind} "
+                        f'"{own[0]["EntityId"] if own else path.stem}" matches no entity in the specification')
             continue
         if not own:
             diag.report("WARN", "REG017", f"{shown}/{rel}", f'no rule names {entity["id"]} as its EntityId')
@@ -506,13 +515,14 @@ def check_requirements_model(entities, spec_dir, release, diag):
         rule_id = max({r["EntityId"] for r in own}, key=[r["EntityId"] for r in own].count)
         if rule_id != entity["id"]:
             diag.report("WARN", "REG017", f"{shown}/{rel}",
-                        f'EntityId "{rule_id}" differs from the specification ID "{entity["id"]}"')
+                        f'rule EntityId "{rule_id}" and specification ID "{entity["id"]}" ({entity["source"]}) disagree')
         names = {r.get("EntityName") for r in own if r.get("EntityName")}
         if names and entity["display"] not in names:
             diag.report("WARN", "REG017", f"{shown}/{rel}",
-                        f'EntityName "{sorted(names)[0]}" differs from the specification name "{entity["display"]}"')
+                        f'rule EntityName "{sorted(names)[0]}" and specification name "{entity["display"]}" '
+                        f'({entity["source"]}) disagree')
     for rel, entity in sorted(expected.items()):
-        diag.report("WARN", "REG017", entity["source"], f'{entity["id"]} has no rule file ({shown}/{rel})')
+        diag.report("WARN", "REG017", entity["source"], f'{entity["id"]} matches no rule file ({shown}/{rel})')
 
 
 def main():

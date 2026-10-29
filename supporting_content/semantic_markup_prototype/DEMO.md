@@ -37,6 +37,8 @@ Build-time checks:
 
 `make force=1` downgrades both to warnings.
 
+The source files are expected to contain mistakes, and finding them is one of the reasons for semantic tagging. A finding means two places that should agree do not: an ID and a file name, a heading and a name section, or the specification and the Requirements Model. The checks do not decide which side is wrong. The messages name both sides, and a person resolves each finding on whichever side is in error.
+
 ## Converted Files
 
 | File | What it shows |
@@ -111,7 +113,7 @@ Metadata IDs repeat across collections the way ColumnIds repeat across datasets.
 
 ## Requirements Model Cross-Check
 
-> **Note:** This section is one possible answer to the open Requirements Model question in #2779 (how the entity registry relates to `requirements_model/`, #2406). The demo is deliberately opinionated: it treats the specification as the reference and the Requirements Model as something to check against it.
+> **Note:** This section is one possible answer to the open Requirements Model question in #2779 (how the entity registry relates to `requirements_model/`, #2406). The demo is deliberately opinionated: it expects the registry and the Requirements Model to describe the same entities, with the same IDs and names. It does not assume either one is correct.
 
 The Requirements Model rule files are named after the entity they cover, like the specification files: `model_rules/attributes/<id>.json`, `conditions/<id>.json`, and `datasets/<dataset>/<id>.json`, `columns/<id>.json`, and `objects/<id>.json`. Each rule also records the EntityId and EntityName it applies to. REG017 compares the registry with `requirements_model/releases/latest` (1.5) in both directions:
 
@@ -125,9 +127,9 @@ Metadata fields and schemas have no rule files, so they are not checked. On this
 | :--- | ---: | :--- |
 | Entity with no rule file | 7 | AllocatedServiceName, CredentialId, PrincipalId, RequesterDetails, RequesterDetailsValue, IncludesConsumptionCurrency, IncludesRequesterAttribution |
 | Active rule file with no entity | 3 | IncludesListUnitPrices, IncludesNegotiatedPricing, IncludesVirtualCurrency |
-| EntityName differs | 8 | "Sku ID", "Sku Meter", "Sku Price Details", "Sku Price ID" (for SKU ...); "Json Object Format", "Date Time Format", "Key Value Format", "Data Generator Calculated Split Cost Allocation Handling" (for the specification's capitalization and punctuation) |
+| EntityName differs | 8 | Rules "Sku ID", "Sku Meter", "Sku Price Details", and "Sku Price ID" against specification "SKU ..."; rules "Json Object Format", "Date Time Format", "Key Value Format", and "Data Generator Calculated Split Cost Allocation Handling" against specification "JSON Object Format", "Date/Time Format", "Key-Value Format", and "Data Generator-Calculated Split Cost Allocation Handling" |
 
-These are the kind of differences the Requirements Model extraction work is meant to catch. The names in the rule files look derived from the IDs rather than copied from the Display Names, so every acronym or punctuation mark in a name differs. The findings are reported, not fixed, because the Requirements Model is outside this demo. `build_registry.py --rm-release none` skips the check.
+Each finding is an inconsistency to resolve, not a verdict. For example, the SKU names could be fixed in the rule files or in the specification's Display Names, and a rule file with no entity could mean a missing specification file or a stale rule. Every name difference is in capitalization or punctuation. The findings are reported, not fixed, because the Requirements Model is outside this demo. `build_registry.py --rm-release none` skips the check.
 
 A JSON object is defined in its column's file but is a separate entity. References to it link normally, unlike the column's references to itself.
 
