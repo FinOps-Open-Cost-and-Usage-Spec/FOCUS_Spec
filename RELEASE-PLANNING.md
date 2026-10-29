@@ -184,6 +184,103 @@ This section outlines the planned release schedule and key milestones for the FO
     </tr>
 </table>
 
+### Estimated Timeline for v1.7
+
+This table shows approximate milestones and dates for FOCUS Release v1.7, for illustration only. It follows the v1.6 pattern, and the dates are confirmed when v1.7 scoping starts (25 Mar 2027).
+
+<table>
+  <thead>
+    <tr>
+      <th>Final Date</th>
+      <th>Interim Date</th>
+      <th>Milestone</th>
+      <th>Comments</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="2"><strong>25-Mar-27 to 15-Apr-27</strong></td>
+      <td><strong>Thu Mar 25</strong></td>
+      <td>1.7 Scope Starts</td>
+      <td rowspan="2">
+        3 weeks.<br/>
+        Core scope definition and prioritization for v1.7.<br/>
+        Runs in parallel with v1.6 Final Consistency Review.
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Thu Apr 15</strong></td>
+      <td>1.7 Core Scope Ends</td>
+    </tr>
+    <tr>
+      <td rowspan="6"><strong>15-Apr-27 to 23-Sep-27</strong></td>
+      <td><strong>Thu Apr 15</strong></td>
+      <td>1.7 Core Development Starts</td>
+      <td rowspan="6">
+        23 weeks.<br/>
+        Core development begins when Core scope ends (15 Apr 2027). Champion scope is added during development as capacity allows.<br/>
+        Interim milestones occur on Thursdays (Members meeting cadence).
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Thu Jul 29</strong><br/>(15 weeks)</td>
+      <td>Deadline to Create PR Drafts<br/>Deadline to Approve Guideline Changes (AGENTS.md and files in guidelines/)</td>
+    </tr>
+    <tr>
+      <td><strong>Thu Aug 12</strong><br/>(2 weeks)</td>
+      <td>Deadline to Complete PR Drafts</td>
+    </tr>
+    <tr>
+      <td><strong>Thu Aug 26</strong><br/>(2 weeks)</td>
+      <td>Deadline to Start TF Review</td>
+    </tr>
+    <tr>
+      <td><strong>Thu Sep 9</strong><br/>(2 weeks)</td>
+      <td>Deadline to Start Member Review</td>
+    </tr>
+    <tr>
+      <td><strong>Thu Sep 23</strong><br/>(2 weeks)</td>
+      <td>Deadline to Approve Member Review PRs</td>
+    </tr>
+    <tr>
+      <td><strong>23-Sep-27 to 14-Oct-27</strong></td>
+      <td>(3 weeks)</td>
+      <td>Start / End Final Consistency Review v1.7</td>
+      <td>
+        Fixed three-week consistency review period (Thursday-to-Thursday). <br/> End of Consistency Review is followed by baseline preparation time for IPR Review.
+      </td>
+    </tr>
+    <tr>
+      <td><strong>19-Oct-27 to 17-Nov-27</strong></td>
+      <td></td>
+      <td>Start / End IPR Review v1.7</td>
+      <td>
+        Start of IPR Review begins after baseline prep (5 days).<br/>
+        IPR Review duration is at least 30 days.<br/>
+        End of IPR Review completes at least 3 days before Final Approval (approval package preparation).
+      </td>
+    </tr>
+    <tr>
+      <td><strong>2-Dec-27</strong></td>
+      <td></td>
+      <td>Working Group (WG) Approval of v1.7</td>
+      <td>WG approves the v1.7 Release Candidate.</td>
+    </tr>
+    <tr>
+      <td><strong>2-Dec-27</strong></td>
+      <td></td>
+      <td>SC Ratification of v1.7</td>
+      <td>Steering Committee ratifies the v1.7 release on the same day.</td>
+    </tr>
+    <tr>
+      <td><strong>Dec-27</strong></td>
+      <td></td>
+      <td>Public Announcement</td>
+      <td>Final publication date to be confirmed at a later stage.</td>
+    </tr>
+  </tbody>
+</table>
+
 ### Estimated Timeline for v1.6
 
 This table displays key milestones and dates related to the development of FOCUS Release v1.6.
