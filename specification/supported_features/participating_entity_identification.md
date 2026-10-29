@@ -26,7 +26,7 @@ SELECT
   ServiceName,
   BillingCurrency,
   SUM(BilledCost) AS TotalBilledCost
-FROM focus_data_table
+FROM CostAndUsage
 WHERE BillingPeriodStart >= ? and BillingPeriodEnd < ?
 GROUP BY
   BillingPeriodStart,

@@ -32,7 +32,7 @@ SELECT
   CommitmentDiscountStatus,
   SUM(BilledCost) AS TotalBilledCost,
   SUM(EffectiveCost) AS TotalEffectiveCost
-FROM focus_data_table
+FROM CostAndUsage
 WHERE ChargePeriodStart >= ? AND ChargePeriodEnd < ?
   AND CommitmentDiscountStatus = 'Unused'
 GROUP BY
@@ -53,7 +53,7 @@ SELECT
   CapacityReservationStatus,
   SUM(BilledCost) AS TotalBilledCost,
   SUM(EffectiveCost) AS TotalEffectiveCost
-FROM focus_data_table
+FROM CostAndUsage
 WHERE ChargePeriodStart >= ? AND ChargePeriodEnd < ?
   AND CapacityReservationStatus = 'Unused'
 GROUP BY

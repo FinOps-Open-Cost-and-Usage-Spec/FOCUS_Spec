@@ -32,7 +32,7 @@ FOCUS enables tracking of [*resources*](#glossary:resource) split by some intern
 ```sql
 SELECT
   DISTINCT ResourceId
-FROM focus_data_table
+FROM CostAndUsage
 WHERE ChargeCategory='Usage'
   AND ChargePeriodStart >= ? AND ChargePeriodEnd <= ?
   AND AllocatedMethodId IS NOT NULL
@@ -44,7 +44,7 @@ WHERE ChargeCategory='Usage'
 SELECT
   ResourceId,
   SUM(EffectiveCost) AS TotalEffectiveCost
-FROM focus_data_table
+FROM CostAndUsage
 WHERE ChargeCategory='Usage'
   AND ChargePeriodStart >= ? AND ChargePeriodEnd <= ?
   AND AllocatedMethodId IS NOT NULL
@@ -62,7 +62,7 @@ SELECT
   ServiceCategory,
   ServiceProviderName,
   SUM(EffectiveCost) AS TotalEffectiveCost
-FROM focus_data_table
+FROM CostAndUsage
 WHERE ChargeCategory='Usage'
   AND ChargePeriodStart >= ? AND ChargePeriodEnd <= ?
   AND AllocatedMethodId IS NOT NULL
@@ -80,7 +80,7 @@ GROUP BY
 SELECT
   AllocatedServiceName,
   SUM(EffectiveCost) AS TotalEffectiveCost
-FROM focus_data_table
+FROM CostAndUsage
 WHERE ChargeCategory='Usage'
   AND ChargePeriodStart >= ? AND ChargePeriodEnd <= ?
   AND AllocatedMethodId IS NOT NULL
@@ -95,7 +95,7 @@ GROUP BY
 SELECT
   ResourceId,
   SUM(EffectiveCost) AS TotalEffectiveCost
-FROM focus_data_table
+FROM CostAndUsage
 WHERE ChargeCategory='Usage'
   AND ChargePeriodStart >= ? AND ChargePeriodEnd <= ?
   AND AllocatedMethodId IS NOT NULL AND AllocatedResourceId IS NULL
@@ -112,7 +112,7 @@ SELECT
   BillingCurrency,
   SUM(BilledCost) AS TotalBilledCost,
   SUM(EffectiveCost) AS TotalEffectiveCost
-FROM focus_data_table
+FROM CostAndUsage
 WHERE ChargeCategory='Usage'
   AND ChargePeriodStart >= ? AND ChargePeriodEnd <= ?
   AND ResourceId = ?
@@ -132,7 +132,7 @@ SELECT
   elements.usage_unit,
   elements.usage_quantity
 FROM
-  focus_data_table,
+  CostAndUsage,
   JSON_TABLE(
     AllocatedMethodDetails,
     '$.Elements[*]' COLUMNS (

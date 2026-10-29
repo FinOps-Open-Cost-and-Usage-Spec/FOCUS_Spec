@@ -21,7 +21,7 @@ SELECT
   InvoiceId,
   BillingCurrency,
   SUM(BilledCost)
-FROM focus_data_table
+FROM CostAndUsage
 GROUP BY
   BillingPeriodStart,
   BillingPeriodEnd,

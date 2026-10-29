@@ -1,6 +1,6 @@
 # Appendix
 
-> Note: The following section is informative and non-normative. It does not define requirements.
+> **Note:** The Appendix, except the Rounding Variance Tolerance appendix entry, is informative and non-normative. It does not define requirements.
 
 ## Appendix Entries<!--SkipTOC-->
 

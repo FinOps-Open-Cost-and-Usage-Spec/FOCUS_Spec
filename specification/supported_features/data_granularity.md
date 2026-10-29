@@ -42,7 +42,7 @@ SELECT
   SUM(ListCost),
   SUM(BilledCost),
   SUM(EffectiveCost)
-FROM focus_data_table
+FROM CostAndUsage
 GROUP BY
   ChargePeriodStart,
   ChargePeriodEnd,

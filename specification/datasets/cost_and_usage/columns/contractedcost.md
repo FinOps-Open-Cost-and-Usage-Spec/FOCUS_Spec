@@ -24,7 +24,7 @@ ContractedCost MUST adhere to the following requirements:
 
 ## Usability Constraints
 
-**Aggregation:** When aggregating Contracted Cost for savings calculations, exclude either the [*covering charges*](#glossary:covering-charge) (e.g., [*commitment discount*](#glossary:commitment-discount) purchases) or the [*covered charges*](#glossary:covered-charge) (e.g., usage charges applied against *commitment discounts*), based on the specific use case, to avoid double counting. The appropriate set to exclude depends on the relevant cost basis for the use case. Exclude *covered charges* when aggregating on a billed basis, or *covering charges* when aggregating on an accrual basis.
+**Aggregation:** When aggregating Contracted Cost for savings calculations, exclude either the [*covering charges*](#glossary:covering-charge) (e.g., *commitment discount* purchases) or the [*covered charges*](#glossary:covered-charge) (e.g., usage charges applied against *commitment discounts*), based on the specific use case, to avoid double counting. The appropriate set to exclude depends on the relevant cost basis for the use case. Exclude *covered charges* when aggregating on a billed basis, or *covering charges* when aggregating on an accrual basis.
 
 ## Column ID
 
@@ -43,7 +43,7 @@ Cost of a *charge* based on *negotiated pricing terms* before any discount-beari
 | Constraint                 | Value                                       |
 | :------------------------- | :------------------------------------------ |
 | Dataset                    | [Cost and Usage](#datamodel.costandusage)   |
-| Operating Model Conditions | Not applicable                              |
+| Operating model conditions | Not applicable                              |
 | Column type                | Metric                                      |
 | Feature level              | Mandatory                                   |
 | Allows nulls               | False                                       |

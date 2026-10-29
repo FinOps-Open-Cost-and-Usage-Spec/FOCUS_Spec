@@ -1,6 +1,6 @@
 # Allocated Resource Name
 
-The Allocated Resource Name is a display name which cost is being allocated to in a [Data Generator-Calculated Split Cost Allocation](#attributes.datagenerator-calculatedsplitcostallocationhandling). The Allocated Resource Name is used to understand what the cost is being allocated to in [*charges*](#glossary:charge) where the service provider is allocating costs to something other than the charge's [ResourceID](#datamodel.costandusage.resourceid), as is the case for [allocated charges](#glossary:allocated-charge).
+The Allocated Resource Name is a display name which cost is being allocated to in a [Data Generator-Calculated Split Cost Allocation](#attributes.datagenerator-calculatedsplitcostallocationhandling). The Allocated Resource Name is used to understand what the cost is being allocated to in [*charges*](#glossary:charge) where the service provider is allocating costs to something other than the charge's [Resource ID](#datamodel.costandusage.resourceid), as is the case for [*allocated charges*](#glossary:allocated-charge).
 
 ## Requirements
 
@@ -30,7 +30,7 @@ The display name of the object to which cost is allocated in data generator-calc
 | Constraint                 | Value                                     |
 | :------------------------- | :---------------------------------------- |
 | Dataset                    | [Cost and Usage](#datamodel.costandusage) |
-| Operating Model Conditions | [Includes Split Cost Allocation](#operatingmodelconditions.includessplitcostallocation) |
+| Operating model conditions | [Includes Split Cost Allocation](#operatingmodelconditions.includessplitcostallocation) |
 | Column type                | Dimension                                 |
 | Feature level              | Conditional                               |
 | Allows nulls               | True                                      |

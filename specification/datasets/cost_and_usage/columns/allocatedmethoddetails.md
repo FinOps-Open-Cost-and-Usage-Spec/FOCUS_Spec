@@ -66,7 +66,7 @@ To facilitate querying data across allocations and across data generators, a dat
 Here is a basic example of the object format.
 
 * For more detailed examples, please see this column's entry in the JSON Object Examples appendix entry [here](#appendix.examples:jsonobject.examples:allocatedmethoddetails).
-* For the JSON schema, please see [Allocated Method Details Object Schema](#schemas.costandusage.allocatedmethoddetailsobjectschema).
+* For the JSON schema, please see Allocated Method Details Object Schema.
 
 ```json
 {
@@ -107,7 +107,7 @@ A set of properties describing how resources are allocated in data generator-def
 | Constraint                 | Value                                              |
 | :------------------------- | :------------------------------------------------- |
 | Dataset                    | [Cost and Usage](#datamodel.costandusage)          |
-| Operating Model Conditions | [Includes Split Cost Allocation](#operatingmodelconditions.includessplitcostallocation) |
+| Operating model conditions | [Includes Split Cost Allocation](#operatingmodelconditions.includessplitcostallocation) |
 | Column type                | Dimension / Metric                                 |
 | Feature level              | Recommended                                        |
 | Allows nulls               | True                                               |
