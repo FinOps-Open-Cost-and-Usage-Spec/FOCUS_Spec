@@ -2,7 +2,7 @@
 
 ## Description
 
-FOCUS enables tracking of resources split by some internal consumption metrics. This is most common for resources supporting shared usage like compute nodes in a shared cluster (Kubernetes, databases) or storage engines that can share capacity between workloads.
+FOCUS enables tracking of [*resources*](#glossary:resource) split by some internal consumption metrics. This is most common for *resources* supporting shared usage like compute nodes in a shared cluster (Kubernetes, databases) or storage engines that can share capacity between workloads.
 
 ## Directly Dependent Columns
 
@@ -17,6 +17,7 @@ FOCUS enables tracking of resources split by some internal consumption metrics. 
 
 ## Supporting Columns
 
+* BillingCurrency
 * ChargeCategory
 * ChargePeriodEnd
 * ChargePeriodStart
@@ -24,7 +25,9 @@ FOCUS enables tracking of resources split by some internal consumption metrics. 
 * ServiceName
 * ServiceProviderName
 
-## Example SQL Query (Find Resources with a Shared Cost)
+## Example SQL Queries
+
+### Find Resources with a Shared Cost
 
 ```sql
 SELECT
@@ -35,7 +38,7 @@ WHERE ChargeCategory='Usage'
   AND AllocatedMethodId IS NOT NULL
 ```
 
-## Example SQL Query (Get Total Effective Cost by ResourceId (Ignore Shared Cost))
+### Get Total Effective Cost by Resource ID (Ignore Shared Cost)
 
 ```sql
 SELECT
@@ -49,11 +52,12 @@ GROUP BY
   ResourceId
 ```
 
-## Example SQL Query (Get Total Effective Cost by AllocatedResourceId)
+### Get Total Effective Cost by Allocated Resource ID
 
 ```sql
 SELECT
   AllocatedResourceId,
+  AllocatedResourceName,
   ServiceName,
   ServiceCategory,
   ServiceProviderName,
@@ -64,12 +68,13 @@ WHERE ChargeCategory='Usage'
   AND AllocatedMethodId IS NOT NULL
 GROUP BY
   AllocatedResourceId,
+  AllocatedResourceName,
   ServiceName,
   ServiceCategory,
   ServiceProviderName
 ```
 
-## Example SQL Query (Get Total Effective Cost by Allocated Service Name)
+### Get Total Effective Cost by Allocated Service Name
 
 ```sql
 SELECT
@@ -84,7 +89,7 @@ GROUP BY
   AllocatedServiceName
 ```
 
-## Example SQL Query (Find Total Unallocated Split Costs by ResourceId)
+### Find Total Unallocated Split Costs by Resource ID
 
 ```sql
 SELECT
@@ -98,23 +103,27 @@ GROUP BY
   ResourceId
 ```
 
-## Example SQL Query (Find How a Single Resource Has Been Split)
+### Find How a Single Resource Has Been Split
 
 ```sql
 SELECT
   ResourceId,
   COALESCE(AllocatedResourceId, 'Unallocated') AS AllocatedResourceId,
+  BillingCurrency,
+  SUM(BilledCost) AS TotalBilledCost,
   SUM(EffectiveCost) AS TotalEffectiveCost
 FROM CostAndUsage
 WHERE ChargeCategory='Usage'
   AND ChargePeriodStart >= ? AND ChargePeriodEnd <= ?
-  AND AllocatedResourceId = ?
+  AND ResourceId = ?
+  AND AllocatedMethodId IS NOT NULL
 GROUP BY
   ResourceId,
-  COALESCE(AllocatedResourceId, 'Unallocated')
+  COALESCE(AllocatedResourceId, 'Unallocated'),
+  BillingCurrency
 ```
 
-## Example SQL Query (Extract JSON from AllocatedMethodDetails)
+### Extract JSON from Allocated Method Details
 
 ```sql
 SELECT
