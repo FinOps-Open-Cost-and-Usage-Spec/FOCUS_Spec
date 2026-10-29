@@ -48,17 +48,22 @@ Build-time checks:
 | `attributes/numeric_format.md` | Attribute self-references and glossary terms in normative text |
 | `operating_model_conditions/includesresourcetypeassignment.md` | An operating model condition referring to itself |
 | `appendix/saas_examples/consumption_currency_pricing_model.md` | Non-normative prose with a front matter dataset (`dataset: CostAndUsage`), so shared ColumnIds such as BilledCost need no qualifier |
+| `datasets/cost_and_usage/columns/contractapplied.md` | A JSON column: its object (`#obj`), its schema (`#schema`), and the repeated schema link from #2703 |
+| `metadata/schema/focus_version.md` | Metadata self-references and a collection reference (`[Schema](#meta)`) |
+| `metadata/recency/dataset_instance_id.md` | A Metadata ID defined in three collections, which resolves to the file's own collection |
 | `glossary.md` | Front matter declaring two aliases |
 
 Conversion followed the migration steps:
 
-1. `tag_sources.py` made 239 mechanical changes and listed what it could not decide.
+1. `tag_sources.py` made 298 mechanical changes and listed what it could not decide.
 2. Judgment calls were made by hand:
    * Self-references by Display Name in prose (e.g., "Billed Cost represents...") are tagged, per the recommendation on #2779.
    * In `chargeclass.md`, "correction" and "charges" are tagged as glossary terms where the same file already treated them as terms.
    * "invoice issuer" in both BilledCost files points to the glossary term, not the InvoiceIssuerName column.
    * The appendix file declares `dataset: CostAndUsage` in front matter, because the example rows are Cost and Usage rows. See Dataset Scope.
    * Ordinary phrases such as "Billing Period" in the appendix are left untagged, because whether plain prose may stay untagged is an open question.
+   * In `contractapplied.md`, "Contract Commitment ID" in the property table names a JSON property, not the ContractCommitmentId column, so it stays untagged. Property paths such as `ContractAppliedObject.Elements[\*].ContractCommitmentId` are also left as written.
+   * In `metadata/recency/dataset_instance_id.md`, "Dataset Instance" could mean the Dataset Instance metadata collection or the *dataset instance* glossary term, so it stays untagged.
 
 ## Dataset Scope
 
@@ -82,16 +87,37 @@ With the front matter, the appendix reads `[ListCost](#col), [BilledCost](#col),
 
 This is one answer to the Dataset scope question in #2779, which is still open.
 
+## Schemas, JSON Objects, and Metadata
+
+The first prototype covered columns, allowed values, datasets, attributes, operating model conditions, and glossary terms. This branch adds three more entity types, each recognized from structure the specification already follows:
+
+| Type | Entities | Hand-written links on `working_draft` | Defined by |
+| :--- | ---: | ---: | :--- |
+| `obj` | 5 | 10 | `### Object ID` and `### Object Display Name` (or `Value`) in a JSON column's file |
+| `schema` | 5 | 10 | A level-3 heading in `schemas/schemas.mdpp` |
+| `meta` | 32 | 75 | A file under `metadata/` with `## Metadata ID` and `## Metadata Name`; each folder's `*_overview.md` defines its collection |
+
+All 42 resolve to anchors that exist in the assembled specification.
+
+Metadata IDs repeat across collections the way ColumnIds repeat across datasets. DatasetInstanceId is defined in the Dataset Instance, Recency, and Schema collections, and DataGenerator is both a collection and a field inside it. An unqualified metadata reference resolves in the collection that holds the file's own definition, or at the top level in any other file. A qualifier names another collection (e.g., `[DatasetInstanceId](#meta:Schema.DatasetInstanceId)`), and an ambiguous reference fails the build.
+
+**#2703.** Each JSON column links its schema twice: by ID in the conformance bullet and by name in the example pointer (`For the JSON schema, please see [Contract Applied Object Schema](...)`). With both tagged as `#schema`, the first-mention rule renders the pointer without a link, which is the "remove the second link" outcome. Keeping the link instead would be one resolver exception for schema pointers, not an edit in each of the five files. Either way, every JSON column renders the same.
+
+**Definition checks.** REG014 reports a metadata file whose H1 differs from its Metadata Name. On this branch it reports `previouscolumnname.md` and `stringencoding.md`, the two mismatches that #2794 fixes by hand.
+
+A JSON object is defined in its column's file but is a separate entity. References to it link normally, unlike the column's references to itself.
+
 ## Review of Rendered Differences
 
-`compare_rendered.sh` reports 26 changed lines in the published `spec.md`. The build resolves 266 semantic references in total. Each one was reviewed and classified using the change types in the Specification Change Guidelines.
+`compare_rendered.sh` reports 33 changed lines in the published `spec.md`. The build resolves 329 semantic references in total. Each one was reviewed and classified using the change types in the Specification Change Guidelines.
 
 | Classification | Lines | Change | Why |
 | :--- | ---: | :--- | :--- |
-| No visible change | 7 | Table padding in Content Constraints rows | Cell widths differ; the rendered tables are identical |
-| Editorial | 12 | Repeat links removed: *covered*, *covered charge*, *covering charge*, *invoice issuer* (Description), and repeated InvoiceDetail column links in Requirements | The Editorial Guidelines link an entity only on its first occurrence in a source file |
+| No visible change | 12 | Table padding in Content Constraints and Object Schema Structure rows | Cell widths differ; the rendered tables are identical |
+| Editorial | 13 | Repeat links removed: *covered*, *covered charge*, *covering charge*, *invoice issuer* (Description), repeated InvoiceDetail column links in Requirements, and *resources* and *services* in the Contract Applied property table | The Editorial Guidelines link an entity only on its first occurrence in a source file |
 | Editorial | 2 | *commitments* now linked at its first mention (one of these lines also has a repeat link removed) | It was styled as a glossary term but never linked |
 | Editorial | 4 | "correction", "corrections", and "charges" in ChargeClass now italicized as glossary terms | The same file already treated these words as glossary terms elsewhere |
+| Editorial (pending #2703) | 1 | The Contract Applied schema pointer renders without a link | The schema is already linked in the conformance bullet; #2703 decides whether the pointer keeps its link |
 | Bug fix (needs Working Group confirmation) | 2 | "invoice issuer" in the BilledCost introductions now links the glossary term instead of the InvoiceIssuerName column | The sentence describes the party that issues the invoice, and both files' Descriptions already used the glossary term |
 | Regression | 0 | None | |
 

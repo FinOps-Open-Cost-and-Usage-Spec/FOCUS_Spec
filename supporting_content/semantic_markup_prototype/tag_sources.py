@@ -11,9 +11,9 @@ and prints what it could not decide, which is left for a person:
   unnecessary: [BilledCost](#col:CostAndUsage.BilledCost) -> [BilledCost](#col)
 * Italic phrases that name a glossary term become term references:
   *charges* -> [charges](#term)
-* ColumnIds, attribute IDs, and operating model condition IDs written as plain
-  words become references, including the file's own entity:
-  BilledCost -> [BilledCost](#col)
+* ColumnIds, attribute IDs, operating model condition IDs, JSON object and
+  schema IDs, and multi-word metadata IDs written as plain words become
+  references, including the file's own entity: BilledCost -> [BilledCost](#col)
 * In a column file, quoted allowed values of that column become value
   references: "Correction" -> ["Correction"](#val:ChargeClass)
 
@@ -46,7 +46,8 @@ CODE_SPAN = re.compile(r"(`+[^`]*`+)")
 ITALIC = re.compile(r"(?<![*\w])\*(?![\s*])([^*\n]+?)(?<![\s*])\*(?![*\w])")
 QUOTED = re.compile(r'(?<![\[\w])"([^"\n]+)"(?!\]\()')
 DEFINITION_SECTIONS = {"Column ID", "Display Name", "Attribute ID", "Attribute Name",
-                       "Operating Model Condition ID", "Dataset ID"}
+                       "Operating Model Condition ID", "Dataset ID", "Metadata ID", "Metadata Name",
+                       "Object ID", "Object Display Name", "Value ID", "Value Display Name"}
 
 
 class Tagger:
@@ -57,13 +58,19 @@ class Tagger:
         self.home_col = next((e for e in cols if e["source"] == path), None)
         self.dataset = self.home_col["dataset"] if self.home_col else next(
             (e["id"] for e in registry.by_type["ds"] if Path(e["source"]).parent in Path(path).parents), declared)
-        # PascalCase IDs that may appear as plain words: columns, attributes, conditions
-        self.id_kind = {e["id"]: e["type"] for t in ("attr", "omc") for e in registry.by_type[t]}
+        self.collection = registry.collection_of(path)
+        # PascalCase IDs that may appear as plain words: columns, attributes, conditions,
+        # JSON objects and schemas, and metadata IDs with more than one word
+        # (one-word IDs such as Schema or Deprecated are also ordinary words)
+        self.id_kind = {e["id"]: e["type"] for t in ("attr", "omc", "obj", "schema") for e in registry.by_type[t]}
+        self.id_kind.update({e["id"]: "meta" for e in registry.by_type["meta"]
+                             if re.search(r"[a-z0-9][A-Z]", e["id"])})
         self.id_kind.update({i: "col" for i in registry.col_ids})
         ids = sorted(self.id_kind, key=len, reverse=True)
         datasets = "|".join(sorted((e["id"] for e in registry.by_type["ds"]), key=len, reverse=True))
-        # An optional dataset qualifier, e.g. CostAndUsage.BilledCost, is kept as written
-        self.id_word = re.compile(r"(?<![\w\[#.`/])((?:(?:" + datasets + r")\.)?(?:" + "|".join(ids) + r"))(?![\w\]`(])")
+        # An optional dataset qualifier, e.g. CostAndUsage.BilledCost, is kept as written.
+        # The head of a property path (ContractAppliedObject.Elements) is left alone.
+        self.id_word = re.compile(r"(?<![\w\[#.`/])((?:(?:" + datasets + r")\.)?(?:" + "|".join(ids) + r"))(?![\w\]`(]|\.\w)")
         self.home_values = ({e["value"] for e in registry.by_type["val"]
                              if e["column"] == self.home_col["id"] and e["dataset"] == self.dataset}
                             if self.home_col else set())
@@ -75,14 +82,14 @@ class Tagger:
 
     def reference(self, kind, entity, text):
         """Shortest semantic link for an entity, given the visible text."""
-        found, _ = self.registry.find(kind, None, text, self.dataset)
+        found, _ = self.registry.find(kind, None, text, self.dataset, self.collection)
         if found is entity:
             return f"[{text}](#{kind})"
         ident = entity["id"]
-        if kind == "col":
-            qualified, _ = self.registry.find(kind, ident, text, self.dataset)
+        if kind in ("col", "meta"):
+            qualified, _ = self.registry.find(kind, ident, text, self.dataset, self.collection)
             if qualified is not entity:
-                ident = f'{entity["dataset"]}.{ident}'
+                ident = f'{entity.get("dataset") or entity.get("collection")}.{ident}'
         return f"[{text}](#{kind}:{ident})"
 
     def convert_link(self, match):
@@ -120,7 +127,7 @@ class Tagger:
         kind = self.id_kind[bare]
         if qualifier and kind != "col":
             return word
-        entity, error = self.registry.find(kind, word, bare, self.dataset)
+        entity, error = self.registry.find(kind, word, bare, self.dataset, self.collection)
         if entity is None:
             self.note(lineno, f"{word}: {error}")
             return word

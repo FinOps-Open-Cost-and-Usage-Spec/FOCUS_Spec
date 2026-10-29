@@ -17,6 +17,10 @@ A semantic reference is an ordinary Markdown link whose target names an entity t
 | `[Cost and Usage](#ds)` | Dataset |
 | `[NumericFormat](#attr)` | Attribute |
 | `[Includes Tags](#omc)` | Operating model condition |
+| `[ContractAppliedObject](#obj)` | JSON object (or value) defined in a column file |
+| `[ContractAppliedObjectSchema](#schema)` | JSON schema |
+| `[FocusVersion](#meta)` | Metadata field or collection |
+| `[DatasetInstanceId](#meta:Recency.DatasetInstanceId)` | Metadata field in a specific collection |
 | `[charges](#term)` | Glossary term; plurals resolve to the singular entry |
 | `[covered](#term:covered-charge)` | Glossary term with an explicit key |
 
@@ -26,7 +30,7 @@ The link form was picked because every tool already in the toolchain parses it a
 
 ## Pieces
 
-* [`build_registry.py`](build_registry.py) generates `build/registry.json` from `specification/`. It reads each column's Column ID, Display Name, dataset and Allowed Values, each attribute and operating model condition by its heading, and the `<a name="glossary:…">` anchors. Anchors are computed with the same algorithm as markdown-pp's TableOfContents module, so links match the assembled spec.
+* [`build_registry.py`](build_registry.py) generates `build/registry.json` from `specification/`. It reads each column's Column ID, Display Name, dataset and Allowed Values, each JSON column's object, each attribute and operating model condition by its heading, the schemas in `schemas/schemas.mdpp`, each metadata field and collection, and the `<a name="glossary:…">` anchors. Anchors are computed with the same algorithm as markdown-pp's TableOfContents module, so links match the assembled spec.
 * [`focus_semantic.py`](focus_semantic.py) is a panflute filter that resolves references and lints them. Its docstring lists the options.
 * [`samples/`](samples/) holds `billedcost.md` and `chargeclass.md` rewritten in semantic form.
 * [`build.sh`](build.sh) runs everything and writes its outputs to `build/`.
@@ -53,6 +57,9 @@ Definitions are not tagged. The registry recognizes them by the structure the sp
 | Allowed value | A row of the column's `## Allowed Values` table, in the column headed "Value" or headed with the Display Name |
 | Glossary term | `<a name="glossary:key"><b>Term</b></a>` in `glossary.md` |
 | Attribute, operating model condition, dataset | The level-1 heading of its file |
+| JSON object | `### Object ID` and `### Object Display Name` (or `### Value ID` and `### Value Display Name`) in a column file, under a level-2 heading named by the object |
+| JSON schema | A level-3 heading in `schemas/schemas.mdpp`, under its dataset's level-2 heading |
+| Metadata field | A file under `metadata/` with `## Metadata ID` and `## Metadata Name` sections; its collection is the folder's `*_overview.md` |
 
 `build_registry.py` checks that contract every time it runs:
 
@@ -70,6 +77,9 @@ Definitions are not tagged. The registry recognizes them by the structure the sp
 | REG010 | Error | Malformed glossary anchor (the term would be silently dropped) |
 | REG011 | Warning | Unknown front matter key, or aliases for an unknown glossary key |
 | REG012 | Warning | A file under `datasets/` declares a dataset in front matter; it takes its dataset from its location |
+| REG013 | Error | An Object, Value, or Metadata ID section without its name section, or the reverse |
+| REG014 | Warning | A metadata file's H1, or an object's level-2 heading, differs from its name |
+| REG015 | Warning | A schema's ID (from its heading) does not match its JSON file name |
 
 `--strict` makes errors exit non-zero.
 
