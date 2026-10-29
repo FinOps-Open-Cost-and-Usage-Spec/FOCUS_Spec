@@ -378,10 +378,11 @@ This table displays key milestones and dates related to the development of FOCUS
   </tbody>
 </table>
 
-The v1.6 timeline adds two gates:
+Notes on the v1.6 timeline:
 
 * **Guideline changes:** Changes to `AGENTS.md` or to files in `guidelines/` apply to v1.6 when they are approved by the Deadline to Approve Guideline Changes (28 Jan 2027). A change not approved by that date goes to Member Review after the v1.6 Final Consistency Review ends, and it applies to v1.7.
 * **Sample data:** A PR that needs sample data or worked examples comes out of draft only when its representative examples are in place. Its complete set of examples is in place by the Deadline to Start TF Review (25 Feb 2027).
+* **Ratification date:** WG Approval and SC Ratification of v1.6 are on 27 May 2027, ahead of Tokenomicon FinOps X (7 to 10 Jun 2027), so ratification does not compete with conference preparation. One more week of v1.6 development would move the v1.6 Final Consistency Review a week later. v1.7 scoping runs in parallel with that review, so v1.7 would start a week later too, and the v1.7 timeline would have to absorb that week.
 
 ### Estimated Timeline for v1.5
 
