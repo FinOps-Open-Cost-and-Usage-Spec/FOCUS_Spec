@@ -24,7 +24,7 @@ SELECT
   RegionName,
   AvailabilityZone,
   SUM(BilledCost) AS TotalBilledCost
-FROM focus_data_table
+FROM CostAndUsage
 WHERE ChargePeriodStart >= ? AND ChargePeriodEnd <= ?
 GROUP BY
   RegionId,

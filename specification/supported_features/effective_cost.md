@@ -48,7 +48,7 @@ SELECT
   PricingUnit,
   SUM(EffectiveCost) AS TotalEffectiveCost,
   SUM(PricingQuantity) AS TotalPricingQuantity
-FROM focus_data_table
+FROM CostAndUsage
 WHERE BillingPeriodStart >= ? AND BillingPeriodEnd < ?
 GROUP BY
   ServiceProviderName,
@@ -73,7 +73,7 @@ SELECT
   ChargePeriodStart,
   ChargePeriodEnd,
   SUM(EffectiveCost) AS TotalEffectiveCost
-FROM focus_data_table
+FROM CostAndUsage
 WHERE ChargePeriodStart >= ? AND ChargePeriodEnd < ?
   AND CommitmentDiscountId IS NOT NULL
   AND ChargeCategory = 'Usage'

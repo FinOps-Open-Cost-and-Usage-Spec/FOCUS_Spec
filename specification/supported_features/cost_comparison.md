@@ -56,7 +56,7 @@ WITH AggregatedData AS (
           THEN 0
           ELSE ListCost
         END) AS TotalListCost
-  FROM focus_data_table
+  FROM CostAndUsage
   WHERE BillingPeriodStart >= ?
     AND BillingPeriodEnd < ?
     AND ChargeClass IS NULL
@@ -91,7 +91,7 @@ SELECT
   SUM(BilledCost) AS TotalBilledCost,
   SUM(EffectiveCost) AS TotalEffectiveCost,
   SUM(EffectiveCost) - SUM(BilledCost) AS CostBasisDifference
-FROM focus_data_table
+FROM CostAndUsage
 WHERE BillingPeriodStart >= ? AND BillingPeriodEnd < ?
 GROUP BY
   ServiceProviderName,

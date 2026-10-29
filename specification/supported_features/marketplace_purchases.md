@@ -23,7 +23,7 @@ SELECT
   BillingPeriodStart,
   BillingPeriodEnd,
   SUM(BilledCost) AS TotalBilledCost
-FROM focus_data_table
+FROM CostAndUsage
 WHERE ServiceProviderName = '<Example SaaS Provider>'
   AND InvoiceIssuerName = '<Example CSP Marketplace>'
 GROUP BY
@@ -41,7 +41,7 @@ SELECT
   ChargePeriodEnd,
   ResourceId,
   SUM(EffectiveCost) AS TotalEffectiveCost
-FROM focus_data_table
+FROM CostAndUsage
 WHERE InvoiceIssuerName = '<Example CSP Marketplace>'
 GROUP BY
   ChargePeriodStart,

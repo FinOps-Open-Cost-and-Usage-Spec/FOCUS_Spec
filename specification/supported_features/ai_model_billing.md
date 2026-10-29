@@ -34,7 +34,7 @@ The following queries use BigQuery Standard SQL JSON functions (e.g., `JSON_VALU
 
 ### Effective Cost Per Million Tokens
 
-Effective cost per one million tokens, by model, SKU, token direction, and cache action:
+Effective cost per one million tokens, by model, SKU, token direction, and cache action. The query also returns the pricing quantity and unit, which can differ from the token count when a provider prices tokens in blocks (e.g., per one million tokens):
 
 ```sql
 SELECT
@@ -47,10 +47,12 @@ SELECT
   JSON_VALUE(SkuPriceDetails, '$.TokenDirection') AS TokenDirection,
   JSON_VALUE(SkuPriceDetails, '$.TokenCacheAction') AS TokenCacheAction,
   BillingCurrency,
+  PricingUnit,
   SUM(ConsumedQuantity) AS TotalTokens,
+  SUM(PricingQuantity) AS TotalPricingQuantity,
   SUM(EffectiveCost) AS TotalEffectiveCost,
   SUM(EffectiveCost) * 1000000 / NULLIF(SUM(ConsumedQuantity), 0) AS EffectiveCostPerMillionTokens
-FROM focus_data_table
+FROM CostAndUsage
 WHERE ChargeCategory='Usage'
   AND ServiceCategory='AI and Machine Learning'
   AND ConsumedUnit='Tokens'
@@ -64,12 +66,13 @@ GROUP BY
   SkuMeter,
   JSON_VALUE(SkuPriceDetails, '$.TokenDirection'),
   JSON_VALUE(SkuPriceDetails, '$.TokenCacheAction'),
-  BillingCurrency
+  BillingCurrency,
+  PricingUnit
 ```
 
 ### Token Consumption Volume Over Time
 
-Token consumption volume over time, by service, model, token direction, and cache action:
+Token consumption volume over time, by service, service subcategory, model, token direction, and cache action:
 
 ```sql
 SELECT
@@ -77,12 +80,13 @@ SELECT
   InvoiceIssuerName,
   ServiceProviderName,
   ServiceName,
+  ServiceSubcategory,
   JSON_VALUE(SkuPriceDetails, '$.ModelDeveloper') AS ModelDeveloper,
   JSON_VALUE(SkuPriceDetails, '$.ModelId') AS ModelId,
   JSON_VALUE(SkuPriceDetails, '$.TokenDirection') AS TokenDirection,
   JSON_VALUE(SkuPriceDetails, '$.TokenCacheAction') AS TokenCacheAction,
   SUM(ConsumedQuantity) AS TotalTokens
-FROM focus_data_table
+FROM CostAndUsage
 WHERE ChargeCategory='Usage'
   AND ServiceCategory='AI and Machine Learning'
   AND ConsumedUnit='Tokens'
@@ -92,6 +96,7 @@ GROUP BY
   InvoiceIssuerName,
   ServiceProviderName,
   ServiceName,
+  ServiceSubcategory,
   JSON_VALUE(SkuPriceDetails, '$.ModelDeveloper'),
   JSON_VALUE(SkuPriceDetails, '$.ModelId'),
   JSON_VALUE(SkuPriceDetails, '$.TokenDirection'),

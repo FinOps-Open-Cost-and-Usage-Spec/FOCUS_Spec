@@ -30,7 +30,7 @@ Represents the currency that a *charge* was billed in.
 | Constraint                 | Value                                         |
 | :------------------------- | :-------------------------------------------- |
 | Dataset                    | [Cost and Usage](#datamodel.costandusage)     |
-| Operating Model Conditions | Not applicable                                |
+| Operating model conditions | Not applicable                                |
 | Column type                | Dimension                                     |
 | Feature level              | Mandatory                                     |
 | Allows nulls               | False                                         |

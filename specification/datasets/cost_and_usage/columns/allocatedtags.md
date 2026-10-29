@@ -10,7 +10,7 @@ AllocatedTags MUST adhere to the following requirements:
 * AllocatedTags MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * AllocatedTags MUST conform to [KeyValueFormat](#attributes.key-valueformat) requirements.
 * AllocatedTags MUST adhere to the following nullability requirements:
-  * AllocatedTags MUST be null when a *charge* is not related to a data generator-calculated split cost allocation.
+  * AllocatedTags MUST be null when a [*charge*](#glossary:charge) is not related to a data generator-calculated split cost allocation.
   * AllocatedTags MAY be null in all other cases.
 * When AllocatedTags is not null, AllocatedTags MUST adhere to the following requirements:
   * AllocatedTags MUST NOT include resource tags already present in [Tags](#datamodel.costandusage.tags).
@@ -57,7 +57,7 @@ A set of tags assigned to tag sources that are applicable to *allocated charges*
 | Constraint                 | Value                                           |
 | :------------------------- | :---------------------------------------------- |
 | Dataset                    | [Cost and Usage](#datamodel.costandusage)       |
-| Operating Model Conditions | [Includes Split Cost Allocation](#operatingmodelconditions.includessplitcostallocation) |
+| Operating model conditions | [Includes Split Cost Allocation](#operatingmodelconditions.includessplitcostallocation) |
 | Column type                | Dimension                                       |
 | Feature level              | Conditional                                     |
 | Allows nulls               | True                                            |
