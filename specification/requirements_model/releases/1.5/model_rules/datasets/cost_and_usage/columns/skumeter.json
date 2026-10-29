@@ -3,7 +3,7 @@
     "Function": "Composite",
     "Reference": "SkuMeter",
     "EntityType": "Column",
-    "EntityName": "Sku Meter",
+    "EntityName": "SKU Meter",
     "EntityId": "SkuMeter",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
@@ -11,11 +11,11 @@
     "Conditions": [
       "IncludesUnitPricing"
     ],
+    "Type": "Static",
     "Order": 0,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "SkuMeter MUST adhere to the following requirements:",
       "Keyword": "MUST",
@@ -36,7 +36,7 @@
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-SkuMeter-C-006-O"
+            "ModelRuleId": "CAU-SkuMeter-C-007-O"
           }
         ]
       },
@@ -45,7 +45,7 @@
         "CAU-SkuMeter-C-001-M",
         "CAU-SkuMeter-C-002-M",
         "CAU-SkuMeter-C-003-C",
-        "CAU-SkuMeter-C-006-O",
+        "CAU-SkuMeter-C-007-O",
         "CAU-CostAndUsage-D-059-C"
       ]
     }
@@ -54,17 +54,17 @@
     "Function": "Type",
     "Reference": "SkuMeter",
     "EntityType": "Column",
-    "EntityName": "Sku Meter",
+    "EntityName": "SKU Meter",
     "EntityId": "SkuMeter",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [],
+    "Type": "Static",
     "Order": 20,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "SkuMeter MUST be of type String.",
       "Keyword": "MUST",
@@ -80,17 +80,17 @@
     "Function": "Format",
     "Reference": "SkuMeter",
     "EntityType": "Column",
-    "EntityName": "Sku Meter",
+    "EntityName": "SKU Meter",
     "EntityId": "SkuMeter",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [],
+    "Type": "Static",
     "Order": 30,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "SkuMeter MUST conform to StringHandling requirements.",
       "Keyword": "MUST",
@@ -106,17 +106,17 @@
     "Function": "Composite",
     "Reference": "SkuMeter",
     "EntityType": "Column",
-    "EntityName": "Sku Meter",
+    "EntityName": "SKU Meter",
     "EntityId": "SkuMeter",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [],
+    "Type": "Static",
     "Order": 40,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "SkuMeter MUST adhere to the following nullability requirements:",
       "Keyword": "MUST",
@@ -144,17 +144,17 @@
     "Function": "Nullability",
     "Reference": "SkuMeter",
     "EntityType": "Column",
-    "EntityName": "Sku Meter",
+    "EntityName": "SKU Meter",
     "EntityId": "SkuMeter",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [],
+    "Type": "Static",
     "Order": 50,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "SkuMeter MUST be null when SkuId is null.",
       "Keyword": "MUST",
@@ -177,17 +177,17 @@
     "Function": "Nullability",
     "Reference": "SkuMeter",
     "EntityType": "Column",
-    "EntityName": "Sku Meter",
+    "EntityName": "SKU Meter",
     "EntityId": "SkuMeter",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Conditions": [],
+    "Type": "Static",
     "Order": 60,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "SkuMeter SHOULD NOT be null when SkuId is not null.",
       "Keyword": "SHOULD NOT",
@@ -210,13 +210,13 @@
     "Function": "Validation",
     "Reference": "SkuMeter",
     "EntityType": "Column",
-    "EntityName": "Sku Meter",
+    "EntityName": "SKU Meter",
     "EntityId": "SkuMeter",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "Status": "Removed",
     "Conditions": [],
-    "Order": 70,
+    "Order": -1,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
@@ -228,6 +228,38 @@
       "Condition": {},
       "Dependencies": [
         "CAU-SkuId-C-003-M"
+      ]
+    },
+    "ModelVersionRemoved": "1.5"
+  },
+  "CAU-SkuMeter-C-007-O": {
+    "Function": "Validation",
+    "Reference": "SkuMeter",
+    "EntityType": "Column",
+    "EntityName": "SKU Meter",
+    "EntityId": "SkuMeter",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Static",
+    "Order": 70,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "SkuMeter SHOULD remain consistent over time for a given ServiceProviderName and SkuId.",
+      "Keyword": "SHOULD",
+      "Requirement": {
+        "CheckFunction": "CheckDistinctCount",
+        "ColumnAName": "SkuMeter",
+        "ColumnBName": "SkuId",
+        "ExpectedCount": 1
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CAU-ServiceProviderName-C-000-M",
+        "CAU-SkuId-C-000-C"
       ]
     }
   }

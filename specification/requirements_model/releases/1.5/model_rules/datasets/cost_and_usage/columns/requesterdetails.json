@@ -1,0 +1,287 @@
+{
+  "CAU-RequesterDetails-C-000-C": {
+    "Function": "Composite",
+    "Reference": "RequesterDetails",
+    "EntityType": "Column",
+    "EntityName": "Requester Details",
+    "EntityId": "RequesterDetails",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "Conditions": [
+      "IncludesRequesterAttribution"
+    ],
+    "Type": "Static",
+    "Order": 0,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "RequesterDetails MUST adhere to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-RequesterDetails-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-RequesterDetails-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-RequesterDetails-C-003-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-RequesterDetails-C-004-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-RequesterDetails-C-007-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CAU-RequesterDetails-C-001-M",
+        "CAU-RequesterDetails-C-002-M",
+        "CAU-RequesterDetails-C-003-M",
+        "CAU-RequesterDetails-C-004-C",
+        "CAU-RequesterDetails-C-007-C",
+        "CAU-CostAndUsage-D-102-C"
+      ]
+    }
+  },
+  "CAU-RequesterDetails-C-001-M": {
+    "Function": "Type",
+    "Reference": "RequesterDetails",
+    "EntityType": "Column",
+    "EntityName": "Requester Details",
+    "EntityId": "RequesterDetails",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Dynamic",
+    "Order": 10,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "RequesterDetails MUST be of type JSON Array (serialized as a String where necessary).",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-RequesterDetails-C-002-M": {
+    "Function": "Format",
+    "Reference": "RequesterDetails",
+    "EntityType": "Column",
+    "EntityName": "Requester Details",
+    "EntityId": "RequesterDetails",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Static",
+    "Order": 20,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "RequesterDetails MUST conform to StringHandling requirements.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "FormatString",
+        "ColumnName": "RequesterDetails"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-RequesterDetails-C-003-M": {
+    "Function": "Format",
+    "Reference": "RequesterDetails",
+    "EntityType": "Column",
+    "EntityName": "Requester Details",
+    "EntityId": "RequesterDetails",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Static",
+    "Order": 30,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "RequesterDetails MUST conform to JsonObjectFormat requirements.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "FormatJSON",
+        "ColumnName": "RequesterDetails",
+        "Path": "$"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-RequesterDetails-C-004-C": {
+    "Function": "Composite",
+    "Reference": "RequesterDetails",
+    "EntityType": "Column",
+    "EntityName": "Requester Details",
+    "EntityId": "RequesterDetails",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Static",
+    "Order": 40,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "RequesterDetails MUST adhere to the following nullability requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-RequesterDetails-C-005-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-RequesterDetails-C-006-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CAU-RequesterDetails-C-005-C",
+        "CAU-RequesterDetails-C-006-C"
+      ]
+    }
+  },
+  "CAU-RequesterDetails-C-005-C": {
+    "Function": "Nullability",
+    "Reference": "RequesterDetails",
+    "EntityType": "Column",
+    "EntityName": "Requester Details",
+    "EntityId": "RequesterDetails",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Static",
+    "Order": 50,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "RequesterDetails MUST NOT be null when PrincipalId is not null or CredentialId is not null.",
+      "Keyword": "MUST NOT",
+      "Requirement": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "RequesterDetails",
+        "Value": null
+      },
+      "Condition": {
+        "CheckFunction": "OR",
+        "Items": [
+          {
+            "CheckFunction": "CheckNotValue",
+            "ColumnName": "PrincipalId",
+            "Value": null
+          },
+          {
+            "CheckFunction": "CheckNotValue",
+            "ColumnName": "CredentialId",
+            "Value": null
+          }
+        ]
+      },
+      "Dependencies": [
+        "CAU-PrincipalId-C-000-C",
+        "CAU-CredentialId-C-000-C"
+      ]
+    }
+  },
+  "CAU-RequesterDetails-C-006-C": {
+    "Function": "Nullability",
+    "Reference": "RequesterDetails",
+    "EntityType": "Column",
+    "EntityName": "Requester Details",
+    "EntityId": "RequesterDetails",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Static",
+    "Order": 60,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "RequesterDetails MAY be null when PrincipalId is null and CredentialId is null.",
+      "Keyword": "MAY",
+      "Requirement": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "RequesterDetails",
+        "Value": null
+      },
+      "Condition": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "PrincipalId",
+            "Value": null
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "CredentialId",
+            "Value": null
+          }
+        ]
+      },
+      "Dependencies": [
+        "CAU-PrincipalId-C-000-C",
+        "CAU-CredentialId-C-000-C"
+      ]
+    }
+  },
+  "CAU-RequesterDetails-C-007-C": {
+    "Function": "Validation",
+    "Reference": "RequesterDetails",
+    "EntityType": "Column",
+    "EntityName": "Requester Details",
+    "EntityId": "RequesterDetails",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Dynamic",
+    "Order": 70,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "RequesterDetails MUST conform to RequesterDetailsValue requirements when RequesterDetails is not null.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "RequesterDetails",
+        "Value": null
+      },
+      "Dependencies": []
+    }
+  }
+}

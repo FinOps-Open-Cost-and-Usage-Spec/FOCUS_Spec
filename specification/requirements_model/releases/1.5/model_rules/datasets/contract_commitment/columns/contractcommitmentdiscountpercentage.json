@@ -238,12 +238,12 @@
           {
             "CheckFunction": "CheckGreaterOrEqualThanValue",
             "ColumnName": "ContractCommitmentDiscountPercentage",
-            "Value": 0.0
+            "Value": 0
           },
           {
             "CheckFunction": "CheckLessOrEqualThanValue",
             "ColumnName": "ContractCommitmentDiscountPercentage",
-            "Value": 1.0
+            "Value": 1
           }
         ]
       },

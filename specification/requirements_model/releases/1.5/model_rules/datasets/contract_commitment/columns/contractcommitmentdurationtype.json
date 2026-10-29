@@ -34,7 +34,7 @@
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CCT-ContractCommitmentDurationType-C-004-O"
+            "ModelRuleId": "CCT-ContractCommitmentDurationType-C-008-O"
           },
           {
             "CheckFunction": "CheckModelRule",
@@ -46,11 +46,11 @@
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CCT-ContractCommitmentDurationType-C-007-O"
+            "ModelRuleId": "CCT-ContractCommitmentDurationType-C-009-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CCT-ContractCommitmentDurationType-C-008-C"
+            "ModelRuleId": "CCT-ContractCommitmentDurationType-C-007-O"
           }
         ]
       },
@@ -59,11 +59,11 @@
         "CCT-ContractCommitmentDurationType-C-001-M",
         "CCT-ContractCommitmentDurationType-C-002-M",
         "CCT-ContractCommitmentDurationType-C-003-M",
-        "CCT-ContractCommitmentDurationType-C-004-O",
+        "CCT-ContractCommitmentDurationType-C-008-O",
         "CCT-ContractCommitmentDurationType-C-005-O",
         "CCT-ContractCommitmentDurationType-C-006-O",
+        "CCT-ContractCommitmentDurationType-C-009-C",
         "CCT-ContractCommitmentDurationType-C-007-O",
-        "CCT-ContractCommitmentDurationType-C-008-C",
         "CCT-ContractCommitment-D-021-M"
       ]
     }
@@ -155,10 +155,10 @@
     "EntityId": "ContractCommitmentDurationType",
     "Notes": "",
     "ModelVersionIntroduced": "1.4",
-    "Status": "Active",
+    "Status": "Removed",
     "Conditions": [],
     "Type": "Static",
-    "Order": 40,
+    "Order": -1,
     "DatasetType": "CCT",
     "DatasetId": "ContractCommitment",
     "DatasetName": "Contract Commitment",
@@ -172,7 +172,8 @@
       },
       "Condition": {},
       "Dependencies": []
-    }
+    },
+    "ModelVersionRemoved": "1.5"
   },
   "CCT-ContractCommitmentDurationType-C-005-O": {
     "Function": "Validation",
@@ -310,18 +311,45 @@
       ]
     }
   },
-  "CCT-ContractCommitmentDurationType-C-008-C": {
+  "CCT-ContractCommitmentDurationType-C-008-O": {
+    "Function": "Format",
+    "Reference": "ContractCommitmentDurationType",
+    "EntityType": "Column",
+    "EntityName": "Contract Commitment Duration Type",
+    "EntityId": "ContractCommitmentDurationType",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Static",
+    "Order": 40,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitmentDurationType SHOULD use the \"[Numeric Value] [Unit]\" format (e.g., \"1 Day\", \"1 Year\", \"3 Months\", \"3 Years\").",
+      "Keyword": "SHOULD",
+      "Requirement": {
+        "CheckFunction": "CheckRegexMatch",
+        "ColumnName": "ContractCommitmentDurationType",
+        "Pattern": "^[1-9][0-9]*\\s+(Minute|Minutes|Hour|Hours|Day|Days|Week|Weeks|Month|Months|Year|Years)$"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CCT-ContractCommitmentDurationType-C-009-C": {
     "Function": "Validation",
     "Reference": "ContractCommitmentDurationType",
     "EntityType": "Column",
     "EntityName": "Contract Commitment Duration Type",
     "EntityId": "ContractCommitmentDurationType",
-    "Notes": "Typed Dynamic because no CheckFunction can test whether a quantity divides evenly into a larger unit, so this cannot be enforced as a static rule.",
+    "Notes": "",
     "ModelVersionIntroduced": "1.5",
     "Status": "Active",
     "Conditions": [],
     "Type": "Dynamic",
-    "Order": 80,
+    "Order": 65,
     "DatasetType": "CCT",
     "DatasetId": "ContractCommitment",
     "DatasetName": "Contract Commitment",
