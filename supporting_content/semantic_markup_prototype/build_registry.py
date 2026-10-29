@@ -67,6 +67,23 @@ Definition checks:
                 object's level-2 heading, differs from its name
 * REG016 warn   a file or folder that defines an entity is not named after its ID in lowercase,
                 per the Repository Naming Conventions (e.g., numericformat.md for NumericFormat)
+* REG017 warn   the specification and the Requirements Model disagree: an entity with no rule
+                file, a rule file with no entity, or a different ID or name (see below)
+
+Requirements Model cross-check (REG017). The rule files under
+requirements_model/releases/latest/model_rules/ are named after the entity they
+cover, like the specification files: attributes/<id>.json,
+conditions/<id>.json, and datasets/<dataset>/<id>.json, columns/<id>.json, and
+objects/<id>.json. Each rule records the EntityId and EntityName it applies to.
+The registry is built from the specification, so it is the reference: every
+column, dataset, attribute, operating model condition, and JSON object should
+have a rule file, every rule file should match an entity, and the ID and name in
+the rules should match the specification exactly. Metadata fields and schemas
+have no rule files, so they are not checked. A rule file whose rules all have
+Status "Removed" is history for a removed entity and is expected to have no
+entity. This is one possible answer to how
+the registry relates to the Requirements Model (#2406); the build does not
+fail on it.
 
 Usage:
     ./build_registry.py [--spec-dir DIR] [--overlay DIR] [--out registry.json] [--strict]
@@ -442,18 +459,78 @@ def check_names(entities, diag):
             diag.report("INFO", "REG009", "registry", f'"{name}" is shared by {parts}; references must state the type')
 
 
+RULE_TYPES = {"Column": "col", "Dataset": "ds", "Attribute": "attr", "Condition": "omc", "Object": "obj"}
+
+
+def rule_path(e, by_dataset):
+    """The rule file a registry entity should have, relative to model_rules/."""
+    if e["type"] == "attr":
+        return f'attributes/{e["id"].lower()}.json'
+    if e["type"] == "omc":
+        return f'conditions/{e["id"].lower()}.json'
+    folder = Path(by_dataset[e["id"] if e["type"] == "ds" else e["dataset"]]["source"]).parent.name
+    sub = {"ds": "", "col": "columns/", "obj": "objects/"}[e["type"]]
+    return f'datasets/{folder}/{sub}{e["id"].lower()}.json'
+
+
+def check_requirements_model(entities, spec_dir, release, diag):
+    """REG017: compare the registry with the Requirements Model rule files."""
+    rules_dir = spec_dir / "requirements_model" / "releases" / release / "model_rules"
+    if not rules_dir.is_dir():
+        diag.report("INFO", "REG017", "registry", f"no Requirements Model at {rules_dir}; cross-check skipped")
+        return
+    shown = f"requirements_model/releases/{release}/model_rules"
+    by_dataset = {e["id"]: e for e in entities if e["type"] == "ds"}
+    expected = {rule_path(e, by_dataset): e for e in entities if e["type"] in RULE_TYPES.values()}
+    for path in sorted(rules_dir.rglob("*.json")):
+        rel = path.relative_to(rules_dir).as_posix()
+        rules = json.loads(path.read_text(encoding="utf-8")).values()
+        # A dataset's rule file also covers each column's presence; its own entity is the one named like the file
+        own = [r for r in rules if str(r.get("EntityId", "")).lower() == path.stem]
+        # Rules for removed entities stay in the model as history, with Status "Removed"
+        removed = bool(own) and all(r.get("Status") == "Removed" for r in own)
+        entity = expected.pop(rel, None)
+        if entity is None:
+            if removed:
+                continue
+            kind = own[0].get("EntityType", "entity") if own else "entity"
+            diag.report("WARN", "REG017", f"{shown}/{rel}", f"rule file for {kind} "
+                        f'"{own[0]["EntityId"] if own else path.stem}" has no entity in the specification')
+            continue
+        if not own:
+            diag.report("WARN", "REG017", f"{shown}/{rel}", f'no rule names {entity["id"]} as its EntityId')
+            continue
+        if removed:
+            diag.report("WARN", "REG017", f"{shown}/{rel}",
+                        f'every rule for {entity["id"]} has Status "Removed", but the specification defines it')
+        rule_id = max({r["EntityId"] for r in own}, key=[r["EntityId"] for r in own].count)
+        if rule_id != entity["id"]:
+            diag.report("WARN", "REG017", f"{shown}/{rel}",
+                        f'EntityId "{rule_id}" differs from the specification ID "{entity["id"]}"')
+        names = {r.get("EntityName") for r in own if r.get("EntityName")}
+        if names and entity["display"] not in names:
+            diag.report("WARN", "REG017", f"{shown}/{rel}",
+                        f'EntityName "{sorted(names)[0]}" differs from the specification name "{entity["display"]}"')
+    for rel, entity in sorted(expected.items()):
+        diag.report("WARN", "REG017", entity["source"], f'{entity["id"]} has no rule file ({shown}/{rel})')
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--spec-dir", type=Path, default=DEFAULT_SPEC_DIR)
     parser.add_argument("--overlay", type=Path)
     parser.add_argument("--out", type=Path, default=HERE / "build" / "registry.json")
     parser.add_argument("--strict", action="store_true", help="exit non-zero on any error")
+    parser.add_argument("--rm-release", default="latest",
+                        help="Requirements Model release to cross-check (default: latest; 'none' skips it)")
     args = parser.parse_args()
 
     diag = Diagnostics()
     src = Source(args.spec_dir.resolve(), args.overlay.resolve() if args.overlay else None)
     entities = collect(src, diag)
     check_names(entities, diag)
+    if args.rm_release != "none":
+        check_requirements_model(entities, src.spec_dir, args.rm_release, diag)
 
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_text(json.dumps(entities, indent=2) + "\n", encoding="utf-8")
