@@ -56,7 +56,7 @@ Definitions are not tagged. The registry recognizes them by the structure the sp
 | Column | A file under `datasets/<dataset>/columns/` with `## Column ID` and `## Display Name` sections |
 | Allowed value | A row of the column's `## Allowed Values` table, in the column headed "Value" or headed with the Display Name |
 | Glossary term | `<a name="glossary:key"><b>Term</b></a>` in `glossary.md` |
-| Attribute, operating model condition, dataset | The level-1 heading of its file |
+| Attribute, operating model condition, dataset | Its file's ID and name sections (`## Attribute ID` and `## Attribute Name`, `## Operating Model Condition ID` and `## Display Name`, `## Dataset ID` and `## Display Name`); the anchor comes from the level-1 heading |
 | JSON object | `### Object ID` and `### Object Display Name` (or `### Value ID` and `### Value Display Name`) in a column file, under a level-2 heading named by the object |
 | JSON schema | A level-3 heading in `schemas/schemas.mdpp`, under its dataset's level-2 heading |
 | Metadata field | A file under `metadata/` with `## Metadata ID` and `## Metadata Name` sections; its collection is the folder's `*_overview.md` |
@@ -67,7 +67,7 @@ Definitions are not tagged. The registry recognizes them by the structure the sp
 | :--- | :--- | :--- |
 | REG001 | Error | Column file has no Column ID or no Display Name section |
 | REG002 | Warning | Column file H1 differs from its Display Name |
-| REG003 | Warning | Column ID is not PascalCase, or does not match the file name |
+| REG003 | Warning | Column ID is not PascalCase |
 | REG004 | Error | Allowed Values table has no "Value" column or column headed with the Display Name |
 | REG005 | Warning | The same allowed value is listed twice for one column |
 | REG006 | Warning | Glossary key does not match its term (a trailing acronym such as "(CSP)" is ignored) |
@@ -77,9 +77,9 @@ Definitions are not tagged. The registry recognizes them by the structure the sp
 | REG010 | Error | Malformed glossary anchor (the term would be silently dropped) |
 | REG011 | Warning | Unknown front matter key, or aliases for an unknown glossary key |
 | REG012 | Warning | A file under `datasets/` declares a dataset in front matter; it takes its dataset from its location |
-| REG013 | Error | An Object, Value, or Metadata ID section without its name section, or the reverse |
-| REG014 | Warning | A metadata file's H1, or an object's level-2 heading, differs from its name |
-| REG015 | Warning | A schema's ID (from its heading) does not match its JSON file name |
+| REG013 | Error | An ID section without its name section, or the reverse; or an attribute, operating model condition, or dataset file with neither (its ID falls back to its H1) |
+| REG014 | Warning | A dataset, attribute, operating model condition, or metadata file's H1, or an object's level-2 heading, differs from its name |
+| REG016 | Warning | A file or folder that defines an entity is not named after its ID in lowercase, per the [Repository Naming Conventions](../../guidelines/contributors/repository-naming-conventions.md) |
 
 `--strict` makes errors exit non-zero.
 

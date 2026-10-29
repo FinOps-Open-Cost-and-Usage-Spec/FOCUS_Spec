@@ -3,7 +3,9 @@
 # (migration step 3). Builds the assembled spec.md for a base git ref and for
 # the working tree, then lists every changed line word by word.
 #
-# Usage: compare_rendered.sh [BASE_REF]   (default: origin/working_draft)
+# Usage: compare_rendered.sh [BASE_REF]
+#   (default: where this branch left origin/working_draft, so later changes to
+#   working_draft do not show up as differences)
 #
 # Writes build/compare/{base,current}-spec.md and build/compare/changes.txt.
 # Set PYTHON to an interpreter with panflute installed (default: python3 on PATH).
@@ -11,7 +13,7 @@ set -euo pipefail
 
 HERE="$(cd "$(dirname "$0")" && pwd)"
 REPO="$(cd "$HERE/../.." && pwd)"
-BASE_REF="${1:-origin/working_draft}"
+BASE_REF="${1:-$(git -C "$REPO" merge-base HEAD origin/working_draft)}"
 OUT="$HERE/build/compare"
 PYTHON="${PYTHON:-python3}"
 mkdir -p "$OUT"
