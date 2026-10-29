@@ -18,13 +18,19 @@ front matter. Unqualified column references in a file with a dataset resolve
 in that dataset only. A file without one may leave a column unqualified only
 when a single dataset defines it.
 
+Metadata scope works the same way with collections: an unqualified metadata
+reference resolves in the collection that holds the file's own definition, or
+at the top level in any other file (e.g., [DatasetInstanceId](#meta) in
+metadata/recency/ means the Recency field).
+
 Rendering rules (the same as focus_semantic.py):
 
 * The first reference to an entity in each source file becomes a link; later
   references render without one. A hand-written link to an entity's anchor also
   counts as its first mention, so mixed files never link an entity twice.
 * References inside table rows always link, except glossary terms.
-* References to the entity a file defines never link.
+* References to the entity a file defines never link. A JSON object defined in
+  its column's file is a separate entity and links normally.
 * Glossary terms render in italics; other entities render as plain text.
 * Allowed values render as written, without a link.
 
@@ -62,6 +68,7 @@ class Frame:
         self.line = 0
         self.seen = set()
         self.declared = None
+        self.collection = registry.collection_of(path)
         self.dataset = next((e["dataset"] for e in registry.by_type["col"] if e["source"] == path), None)
         if self.dataset is None:
             self.dataset = next((e["id"] for e in registry.by_type["ds"]
@@ -105,7 +112,8 @@ class SemanticResolver:
 
     def is_home(self, entity):
         source = entity["source"].split("#")[0]
-        return entity["type"] != "term" and source == self.frame.path
+        # A JSON object shares its column's file but is its own entity, so it links like any other
+        return entity["type"] not in ("term", "obj") and source == self.frame.path
 
     @staticmethod
     def key(entity):
@@ -118,13 +126,14 @@ class SemanticResolver:
     def resolve_link(self, match, in_table):
         text, kind, ident = match.group(1), match.group(2), match.group(3) or None
         plain = text.strip().strip("*_").strip()
-        entity, error = self.registry.find(kind, ident, plain, self.frame.dataset)
+        entity, error = self.registry.find(kind, ident, plain, self.frame.dataset, self.frame.collection)
         if error:
             self.report("ERROR", "FOCUS008" if kind == "val" else "FOCUS001", error)
             return plain
         self.resolved += 1
-        qualified_id = f'{entity.get("dataset")}.{entity["id"]}'
-        if kind == "col" and self.in_requirements and plain not in (entity["id"], qualified_id):
+        scope = entity.get("dataset") or entity.get("collection")
+        if (kind in ("col", "obj", "schema", "meta") and self.in_requirements
+                and plain not in (entity["id"], f'{scope}.{entity["id"]}')):
             self.report("WARN", "FOCUS003",
                         f'display text "{plain}" in Requirements; normative text uses {entity["id"]}')
         if kind == "val":

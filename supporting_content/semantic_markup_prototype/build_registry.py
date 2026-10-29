@@ -3,21 +3,28 @@
 
 The registry is the single source of truth for every entity that semantic
 references can point to: columns, column values, datasets, attributes,
-operating model conditions, and glossary terms. Nothing in it is written
-by hand. Each entry is derived from the file that defines the entity.
+operating model conditions, JSON objects and their schemas, metadata fields,
+and glossary terms. Nothing in it is written by hand. Each entry is derived
+from the file that defines the entity.
 
 Each entry records:
 
-* type: col, val, ds, attr, omc, or term
+* type: col, val, ds, attr, omc, obj, schema, meta, or term
 * id: the canonical identifier (ColumnId, attribute ID, glossary key, ...)
 * display: the Display Name or glossary term as written in its heading
 * aliases: other names that resolve to the entity (from front matter)
 * anchor: the anchor the assembled spec uses (same algorithm as markdown-pp)
 * source: the defining file, relative to the specification directory
+* dataset (col, val, obj), column (val, obj), collection (meta): the scope the
+  entity is defined in; a meta entry's collection is the Metadata ID of the
+  collection that contains it, or absent at the top level
 
 Definitions are recognized by structure, not markup: a column is a file under
 datasets/<dataset>/columns/ with "## Column ID" and "## Display Name" sections,
-and so on. That structure is the contract, so this script also checks it
+a JSON object is a "### Object ID" (or "### Value ID") and "### Object Display
+Name" pair in a column file, a schema is a level-3 heading in
+schemas/schemas.mdpp, a metadata field is a file under metadata/ with
+"## Metadata ID" and "## Metadata Name" sections, and so on. That structure is the contract, so this script also checks it
 (REG codes below) and reports any definition it cannot read reliably.
 
 Optional YAML front matter on a defining file holds what the structure cannot:
@@ -54,6 +61,9 @@ Definition checks:
 * REG010 error  malformed glossary anchor (the term would be silently dropped)
 * REG011 warn   unknown front matter key, or an alias for an unknown glossary key
 * REG012 warn   a file under datasets/ declares a dataset in front matter
+* REG013 error  an Object, Value, or Metadata ID section without its name section, or the reverse
+* REG014 warn   a metadata file's H1 or an object's level-2 heading differs from its name
+* REG015 warn   a schema's ID (from its heading) does not match its JSON file name
 
 Usage:
     ./build_registry.py [--spec-dir DIR] [--overlay DIR] [--out registry.json] [--strict]
@@ -144,10 +154,23 @@ def h1(text, source):
     raise ValueError(f"No level-1 heading in {source}")
 
 
-def section_body(text, heading):
-    """Return the text under a level-2 heading, up to the next level-2 heading."""
-    match = re.search(rf"^## {re.escape(heading)}\s*\n(.*?)(?=^## |\Z)", text, re.M | re.S)
+def section_body(text, heading, level=2):
+    """Return the text under a heading, up to the next heading of the same or a higher level."""
+    hashes = "#" * level
+    match = re.search(rf"^{hashes} {re.escape(heading)}\s*\n(.*?)(?=^#{{1,{level}}} |\Z)", text, re.M | re.S)
     return match.group(1).strip() if match else None
+
+
+def id_and_name(text, id_heading, name_heading, source, diag, level=2):
+    """Return (id, name) for a definition, None when the file has neither section."""
+    ident = section_body(text, id_heading, level)
+    name = section_body(text, name_heading, level)
+    if ident is None and name is None:
+        return None
+    if not ident or not name:
+        diag.report("ERROR", "REG013", source, f'has "{id_heading}" or "{name_heading}" but not both')
+        return None
+    return ident, name
 
 
 def table_rows(body):
@@ -233,6 +256,17 @@ def collect(src, diag):
             add(type="col", id=col_id, display=display, dataset=ds_id, anchor=col_anchor,
                 source=source, aliases=aliases_of(front, source, diag))
 
+            # A JSON column defines its object (or value) under a level-2 heading named by it
+            for label in ("Object", "Value"):
+                found = id_and_name(text, f"{label} ID", f"{label} Display Name", source, diag, level=3)
+                if found is None:
+                    continue
+                obj_id, obj_name = found
+                if not re.search(rf"^## {re.escape(obj_name)}\s*$", text, re.M):
+                    diag.report("WARN", "REG014", source, f'no level-2 heading "{obj_name}" for {obj_id}')
+                add(type="obj", id=obj_id, display=obj_name, dataset=ds_id, column=col_id,
+                    anchor=f"{col_anchor}.{anchor_part(obj_name)}", source=source)
+
             allowed = section_body(text, "Allowed Values")
             if allowed is None:
                 continue
@@ -264,6 +298,61 @@ def collect(src, diag):
             add(type=kind, id=pascal_id(title), display=title,
                 anchor=f"{prefix}.{anchor_part(title)}", source=src.rel(md),
                 aliases=aliases_of(front, src.rel(md), diag))
+
+    # JSON schemas: level-3 headings in schemas/schemas.mdpp, grouped by dataset at level 2
+    schemas_mdpp = spec_dir / "schemas" / "schemas.mdpp"
+    text = src.read(schemas_mdpp)
+    root = anchor_part(h1(text, schemas_mdpp))
+    group = None
+    for block in re.split(r"(?m)^(?=#{2,3} )", text):
+        heading = block.splitlines()[0]
+        if heading.startswith("## "):
+            group = anchor_part(heading[3:].strip())
+        elif heading.startswith("### "):
+            title = heading[4:].strip()
+            schema_id = pascal_id(title)
+            include = re.search(r'^!INCLUDECODE "([^"]+)"', block, re.M)
+            if include and Path(include.group(1)).stem != schema_id.lower():
+                diag.report("WARN", "REG015", src.rel(schemas_mdpp),
+                            f'schema "{title}" (ID {schema_id}) includes {include.group(1)}')
+            add(type="schema", id=schema_id, display=title, anchor=f"{root}.{group}.{anchor_part(title)}",
+                source=src.rel(schemas_mdpp))
+
+    # Metadata: each folder under metadata/ is a collection whose *_overview.md
+    # defines it; every other file with a Metadata ID defines a field in it
+    def overview(folder):
+        return next(iter(sorted(folder.glob("*_overview.md"))), None)
+
+    def collection_anchor(folder):
+        part = anchor_part(h1(src.read(overview(folder)), overview(folder)))
+        return part if folder == spec_dir / "metadata" else f"{collection_anchor(folder.parent)}.{part}"
+
+    def collection_id(folder):
+        if folder == spec_dir / "metadata":
+            return None
+        found = id_and_name(split_front_matter(src.read(overview(folder)))[1], "Metadata ID", "Metadata Name",
+                            src.rel(overview(folder)), Diagnostics())
+        return found[0] if found else None
+
+    for md in sorted((spec_dir / "metadata").rglob("*.md")):
+        source = src.rel(md)
+        front, text = split_front_matter(src.read(md))
+        found = id_and_name(text, "Metadata ID", "Metadata Name", source, diag)
+        if found is None:
+            continue
+        meta_id, name = found
+        title = h1(text, md)
+        if title != name:
+            diag.report("WARN", "REG014", source, f'H1 "{title}" differs from Metadata Name "{name}"')
+        if md == overview(md.parent):
+            anchor, collection = collection_anchor(md.parent), collection_id(md.parent.parent)
+        else:
+            anchor, collection = f"{collection_anchor(md.parent)}.{anchor_part(title)}", collection_id(md.parent)
+        entry = dict(type="meta", id=meta_id, display=name, anchor=anchor, source=source,
+                     aliases=aliases_of(front, source, diag))
+        if collection:
+            entry["collection"] = collection
+        add(**entry)
 
     # Glossary terms: explicit <a name="glossary:key"><b>Term</b></a> anchors
     front, text = split_front_matter(src.read(spec_dir / "glossary.md"))
