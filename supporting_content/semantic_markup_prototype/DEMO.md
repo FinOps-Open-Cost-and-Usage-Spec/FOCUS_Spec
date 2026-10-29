@@ -109,6 +109,26 @@ Metadata IDs repeat across collections the way ColumnIds repeat across datasets.
 
 **File and folder names.** The [Repository Naming Conventions](../../guidelines/contributors/repository-naming-conventions.md) require a file or folder that defines a FOCUS entity to be named after its ID in lowercase, with no separator (e.g., `numericformat.md`). The registry knows which files and folders define entities, so REG016 checks this for every entity type: column, attribute, operating model condition, and metadata files; dataset and metadata collection folders; and schema JSON files. On this branch it reports 40 names, all snake_case dataset folders, attribute files, and metadata files and folders. It reports a warning, not an error, because the renames are planned for 1.6.
 
+## Requirements Model Cross-Check
+
+> **Note:** This section is one possible answer to the open Requirements Model question in #2779 (how the entity registry relates to `requirements_model/`, #2406). The demo is deliberately opinionated: it treats the specification as the reference and the Requirements Model as something to check against it.
+
+The Requirements Model rule files are named after the entity they cover, like the specification files: `model_rules/attributes/<id>.json`, `conditions/<id>.json`, and `datasets/<dataset>/<id>.json`, `columns/<id>.json`, and `objects/<id>.json`. Each rule also records the EntityId and EntityName it applies to. REG017 compares the registry with `requirements_model/releases/latest` (1.5) in both directions:
+
+* Every column, dataset, attribute, operating model condition, and JSON object has a rule file.
+* Every rule file matches an entity, unless all of its rules have Status "Removed" (history for a removed entity, e.g., ProviderName).
+* The EntityId and EntityName in the rules match the specification exactly.
+
+Metadata fields and schemas have no rule files, so they are not checked. On this branch REG017 reports 18 findings:
+
+| Finding | Count | Entities |
+| :--- | ---: | :--- |
+| Entity with no rule file | 7 | AllocatedServiceName, CredentialId, PrincipalId, RequesterDetails, RequesterDetailsValue, IncludesConsumptionCurrency, IncludesRequesterAttribution |
+| Active rule file with no entity | 3 | IncludesListUnitPrices, IncludesNegotiatedPricing, IncludesVirtualCurrency |
+| EntityName differs | 8 | "Sku ID", "Sku Meter", "Sku Price Details", "Sku Price ID" (for SKU ...); "Json Object Format", "Date Time Format", "Key Value Format", "Data Generator Calculated Split Cost Allocation Handling" (for the specification's capitalization and punctuation) |
+
+These are the kind of differences the Requirements Model extraction work is meant to catch. The names in the rule files look derived from the IDs rather than copied from the Display Names, so every acronym or punctuation mark in a name differs. The findings are reported, not fixed, because the Requirements Model is outside this demo. `build_registry.py --rm-release none` skips the check.
+
 A JSON object is defined in its column's file but is a separate entity. References to it link normally, unlike the column's references to itself.
 
 ## Review of Rendered Differences

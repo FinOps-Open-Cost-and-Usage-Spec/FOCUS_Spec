@@ -80,6 +80,7 @@ Definitions are not tagged. The registry recognizes them by the structure the sp
 | REG013 | Error | An ID section without its name section, or the reverse; or an attribute, operating model condition, or dataset file with neither (its ID falls back to its H1) |
 | REG014 | Warning | A dataset, attribute, operating model condition, or metadata file's H1, or an object's level-2 heading, differs from its name |
 | REG016 | Warning | A file or folder that defines an entity is not named after its ID in lowercase, per the [Repository Naming Conventions](../../guidelines/contributors/repository-naming-conventions.md) |
+| REG017 | Warning | The specification and the Requirements Model (`requirements_model/releases/latest`) disagree: an entity with no rule file, an active rule file with no entity, or a different EntityId or EntityName. `--rm-release none` skips it |
 
 `--strict` makes errors exit non-zero.
 
