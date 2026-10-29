@@ -8,6 +8,7 @@
 !INCLUDE "pricingunit.md",1
 !INCLUDE "purchasedurationtype.md",1
 !INCLUDE "purchasepaymentmodel.md",1
+!INCLUDE "quantitytiercategory.md",1
 !INCLUDE "quantitytiermaximum.md",1
 !INCLUDE "quantitytierminimum.md",1
 !INCLUDE "serviceprovidername.md",1
