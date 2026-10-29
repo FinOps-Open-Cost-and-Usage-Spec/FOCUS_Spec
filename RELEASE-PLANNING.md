@@ -213,10 +213,10 @@ This table displays key milestones and dates related to the development of FOCUS
       <td>1.6 Core Scope Ends</td>
     </tr>
     <tr>
-      <td rowspan="7"><strong>29-Oct-26 to 25-Mar-27</strong></td>
+      <td rowspan="6"><strong>29-Oct-26 to 25-Mar-27</strong></td>
       <td><strong>Thu Oct 29</strong></td>
       <td>1.6 Core Development Starts</td>
-      <td rowspan="7">
+      <td rowspan="6">
         21 weeks: 19 working weeks plus a two-week end-of-year break (21 Dec 2026 to 4 Jan 2027).<br/>
         Core development begins when Core scope ends (29 Oct 2026). Champion scope is added during development as capacity allows.<br/>
         Interim milestones occur on Thursdays (Members meeting cadence).
@@ -224,11 +224,7 @@ This table displays key milestones and dates related to the development of FOCUS
     </tr>
     <tr>
       <td><strong>Thu Jan 28</strong><br/>(13 weeks, 11 working)</td>
-      <td>Deadline to Create PR Drafts</td>
-    </tr>
-    <tr>
-      <td><strong>Thu Jan 28</strong></td>
-      <td>Deadline to Approve Guideline Changes</td>
+      <td>Deadline to Create PR Drafts<br/>Deadline to Approve Guideline Changes (AGENTS.md and files in guidelines/)</td>
     </tr>
     <tr>
       <td><strong>Thu Feb 11</strong><br/>(2 weeks)</td>
@@ -277,10 +273,10 @@ This table displays key milestones and dates related to the development of FOCUS
       <td>Steering Committee ratifies the v1.6 release on the same day.</td>
     </tr>
     <tr>
-      <td><strong>XX-Jun-27</strong></td>
+      <td><strong>9-Jun-27</strong></td>
       <td></td>
       <td>Public Announcement</td>
-      <td>Final publication date to be confirmed at a later stage.</td>
+      <td>Tokenomicon FinOps X</td>
     </tr>
   </tbody>
 </table>
