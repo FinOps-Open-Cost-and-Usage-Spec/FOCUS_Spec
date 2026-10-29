@@ -300,7 +300,7 @@ The query also assumes the range is a single tier accounting period (e.g., one c
 
 The public tier returns with a null Contract ID. Each negotiated ("Contracted") rate that contains the total quantity, whether a tier or a flat rate, returns its own row. A charge billed under a SKU Price ID with no "List" record, such as a rate an agreement defines with its own tier boundaries, is not counted.
 
-Corrections to a [*closed billing period*](#glossary:closed-billing-period) keep the charge period of the consumption they correct, so they count toward that range. A reversal lowers the quantity and cost. A correction for usage missing from an earlier invoice adds to them. The total covers every [*billing account*](#glossary:billing-account) in the range. When a *service provider* checks tiers for each *billing account* separately, adding Billing Account ID to `ChargeTierSet` and to the grouping keeps each account's quantity apart.
+Corrections to a [*closed billing period*](#glossary:closed-billing-period) keep the charge period of the consumption they correct, so they count toward that range. A reversal lowers the quantity and cost. A correction for usage missing from an earlier invoice adds to them. A correction without a Pricing Quantity has no Pricing Unit either. So `ChargeTierSet` reads the Pricing Unit from the SKU Price record, and such a correction counts toward the cost but not the quantity. The total covers every [*billing account*](#glossary:billing-account) in the range. When a *service provider* checks tiers for each *billing account* separately, adding Billing Account ID to `ChargeTierSet` and to the grouping keeps each account's quantity apart.
 
 > **Note:** The published pricing terms for the offering, not the tier boundaries, decide whether the rate of the tier returned here applies only to the units inside that tier or to every unit consumed. So this query returns the tier the total quantity reached and that tier's rate. It does not recalculate the charge.
 
@@ -310,7 +310,7 @@ WITH ChargeTierSet AS (
     CU.ServiceProviderName,
     SP.SkuId,
     SP.PricingRegionId,
-    CU.PricingUnit,
+    SP.PricingUnit,
     CU.BillingCurrency,
     CU.ChargePeriodStart,
     CU.PricingQuantity,
@@ -319,7 +319,6 @@ WITH ChargeTierSet AS (
   INNER JOIN SkuPrice SP
     ON SP.ServiceProviderName = CU.ServiceProviderName
     AND SP.SkuPriceId = CU.SkuPriceId
-    AND SP.PricingUnit = CU.PricingUnit
     AND SP.PricingCurrency = CU.BillingCurrency
     AND SP.UnitPriceType = 'List'
     AND SP.ChargeCategory = 'Usage'
@@ -505,7 +504,7 @@ Consumption already covered by a *commitment discount* is left out. Its Effectiv
 
 Consumption is repriced at the negotiated rate under the SKU Price ID it was billed under, since a SKU Price ID stays the same across contracts. Each tier has its own SKU Price ID, so that rate is the negotiated rate for the tier the charge was billed in. A SKU Price ID fixes both the Quantity Tier Minimum and the Quantity Tier Maximum of its tier. So a negotiated tier whose boundaries differ from those of every public tier has a SKU Price ID of its own. Consumption billed under the public tiers is not repriced at that tier's rate. The query that compares public and negotiated prices at a given quantity finds such tiers through the SKU ID.
 
-The effective date window is checked against the earliest Charge Period Start, so the query assumes the range falls within a single effective window. Corrections to a closed billing period keep the charge period of the consumption they correct, so they count toward that range. A reversal lowers the quantity and cost. A correction for usage missing from an earlier invoice adds to them.
+The effective date window is checked against the earliest Charge Period Start, so the query assumes the range falls within a single effective window. Corrections to a closed billing period keep the charge period of the consumption they correct, so they count toward that range. A reversal lowers the quantity and cost. A correction for usage missing from an earlier invoice adds to them. A correction without a Pricing Quantity has no Pricing Unit either. So the query reads the Pricing Unit from the SKU Price record, and such a correction counts toward the cost but not the quantity.
 
 A *contract* does not make its negotiated rate available to all of an organization's consumption. SKU Price Eligibility decides which consumption gets the rate. It can limit the rate to certain *billing accounts*, [*sub accounts*](#glossary:sub-account), regions, or other Cost and Usage values. This query reprices all consumption billed under the SKU Price ID that no *commitment discount* covered. Consumption the agreement does not cover stays out only when each charge is checked against SKU Price Eligibility before `ObservedUsage` adds the charges up.
 
@@ -516,7 +515,6 @@ WITH ObservedUsage AS (
   SELECT
     ServiceProviderName,
     SkuPriceId,
-    PricingUnit,
     BillingCurrency,
     MIN(ChargePeriodStart) AS EarliestChargePeriodStart,
     SUM(PricingQuantity) AS TotalPricingQuantity,
@@ -526,13 +524,13 @@ WITH ObservedUsage AS (
     AND ChargeCategory = 'Usage'
     AND SkuPriceId IS NOT NULL
     AND CommitmentDiscountId IS NULL
-  GROUP BY ServiceProviderName, SkuPriceId, PricingUnit, BillingCurrency
+  GROUP BY ServiceProviderName, SkuPriceId, BillingCurrency
 )
 SELECT
   SP.ContractId,
   OU.ServiceProviderName,
   OU.SkuPriceId,
-  OU.PricingUnit,
+  SP.PricingUnit,
   OU.TotalPricingQuantity,
   OU.TotalEffectiveCost,
   SP.QuantityTierMinimum,
@@ -545,7 +543,6 @@ FROM ObservedUsage OU
 INNER JOIN SkuPrice SP
   ON SP.ServiceProviderName = OU.ServiceProviderName
   AND SP.SkuPriceId = OU.SkuPriceId
-  AND SP.PricingUnit = OU.PricingUnit
   AND SP.PricingCurrency = OU.BillingCurrency
   AND (SP.SkuPriceEffectiveStart IS NULL OR OU.EarliestChargePeriodStart >= SP.SkuPriceEffectiveStart)
   AND (SP.SkuPriceEffectiveEnd IS NULL OR OU.EarliestChargePeriodStart < SP.SkuPriceEffectiveEnd)
