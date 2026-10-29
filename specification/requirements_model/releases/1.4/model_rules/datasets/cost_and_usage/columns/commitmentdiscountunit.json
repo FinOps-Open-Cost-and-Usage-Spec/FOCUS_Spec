@@ -200,7 +200,7 @@
         "Value": null
       },
       "Dependencies": [
-        "CAU-CommitmentDiscountQuantity-C-000-C"
+        "CAU-CommitmentDiscountQuantity-C-003-C"
       ]
     }
   },
@@ -233,7 +233,7 @@
         "Value": null
       },
       "Dependencies": [
-        "CAU-CommitmentDiscountQuantity-C-000-C"
+        "CAU-CommitmentDiscountQuantity-C-003-C"
       ]
     }
   },

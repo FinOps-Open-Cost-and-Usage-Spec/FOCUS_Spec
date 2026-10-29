@@ -1,0 +1,348 @@
+{
+  "ATT-DeliveryHandling-A-000-M": {
+    "Function": "Composite",
+    "Reference": "DeliveryHandling",
+    "EntityType": "Attribute",
+    "EntityName": "Delivery Handling",
+    "EntityId": "DeliveryHandling",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "DatasetType": "ATT",
+    "DatasetId": null,
+    "DatasetName": null,
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Static",
+    "Order": 0,
+    "ValidationCriteria": {
+      "MustSatisfy": "Dataset conforming to DeliveryHandling attribute MUST adhere to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-DeliveryHandling-A-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-DeliveryHandling-A-002-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-DeliveryHandling-A-005-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-DeliveryHandling-A-006-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-DeliveryHandling-A-007-M"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "ATT-DeliveryHandling-A-001-M",
+        "ATT-DeliveryHandling-A-002-C",
+        "ATT-DeliveryHandling-A-005-C",
+        "ATT-DeliveryHandling-A-006-O",
+        "ATT-DeliveryHandling-A-007-M"
+      ]
+    }
+  },
+  "ATT-DeliveryHandling-A-001-M": {
+    "Function": "Validation",
+    "Reference": "DeliveryHandling",
+    "EntityType": "Attribute",
+    "EntityName": "Delivery Handling",
+    "EntityId": "DeliveryHandling",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "DatasetType": "ATT",
+    "DatasetId": null,
+    "DatasetName": null,
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Dynamic",
+    "Order": 10,
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS dataset MUST NOT require practitioners to deduplicate records within or across delivered dataset artifacts.",
+      "Keyword": "MUST NOT",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-DeliveryHandling-A-002-C": {
+    "Function": "Composite",
+    "Reference": "DeliveryHandling",
+    "EntityType": "Attribute",
+    "EntityName": "Delivery Handling",
+    "EntityId": "DeliveryHandling",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "DatasetType": "ATT",
+    "DatasetId": null,
+    "DatasetName": null,
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Static",
+    "Order": 20,
+    "ValidationCriteria": {
+      "MustSatisfy": "When using Overwrite delivery mechanism, FOCUS dataset MUST adhere to the following additional requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-DeliveryHandling-A-003-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-DeliveryHandling-A-004-M"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "ATT-DeliveryHandling-A-003-M",
+        "ATT-DeliveryHandling-A-004-M"
+      ]
+    }
+  },
+  "ATT-DeliveryHandling-A-003-M": {
+    "Function": "Validation",
+    "Reference": "DeliveryHandling",
+    "EntityType": "Attribute",
+    "EntityName": "Delivery Handling",
+    "EntityId": "DeliveryHandling",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "DatasetType": "ATT",
+    "DatasetId": null,
+    "DatasetName": null,
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Dynamic",
+    "Order": 30,
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS dataset MUST represent a complete snapshot for a given delivery scope.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-DeliveryHandling-A-004-M": {
+    "Function": "Validation",
+    "Reference": "DeliveryHandling",
+    "EntityType": "Attribute",
+    "EntityName": "Delivery Handling",
+    "EntityId": "DeliveryHandling",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "DatasetType": "ATT",
+    "DatasetId": null,
+    "DatasetName": null,
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Dynamic",
+    "Order": 40,
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS dataset MUST supersede all previously delivered dataset artifacts for the same delivery scope.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-DeliveryHandling-A-005-C": {
+    "Function": "Validation",
+    "Reference": "DeliveryHandling",
+    "EntityType": "Attribute",
+    "EntityName": "Delivery Handling",
+    "EntityId": "DeliveryHandling",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "DatasetType": "ATT",
+    "DatasetId": null,
+    "DatasetName": null,
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Dynamic",
+    "Order": 50,
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS dataset MUST preserve all previously delivered dataset artifacts when using Append delivery mechanism.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-DeliveryHandling-A-006-O": {
+    "Function": "Validation",
+    "Reference": "DeliveryHandling",
+    "EntityType": "Attribute",
+    "EntityName": "Delivery Handling",
+    "EntityId": "DeliveryHandling",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "DatasetType": "ATT",
+    "DatasetId": null,
+    "DatasetName": null,
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Dynamic",
+    "Order": 60,
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS dataset SHOULD have delivered dataset artifacts accompanied by corresponding FOCUS Metadata.",
+      "Keyword": "SHOULD",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-DeliveryHandling-A-007-M": {
+    "Function": "Composite",
+    "Reference": "DeliveryHandling",
+    "EntityType": "Attribute",
+    "EntityName": "Delivery Handling",
+    "EntityId": "DeliveryHandling",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "DatasetType": "ATT",
+    "DatasetId": null,
+    "DatasetName": null,
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Static",
+    "Order": 70,
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS dataset delivery mechanism documentation MUST adhere to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-DeliveryHandling-A-008-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-DeliveryHandling-A-009-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-DeliveryHandling-A-010-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ATT-DeliveryHandling-A-011-M"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "ATT-DeliveryHandling-A-008-M",
+        "ATT-DeliveryHandling-A-009-C",
+        "ATT-DeliveryHandling-A-010-C",
+        "ATT-DeliveryHandling-A-011-M"
+      ]
+    }
+  },
+  "ATT-DeliveryHandling-A-008-M": {
+    "Function": "Validation",
+    "Reference": "DeliveryHandling",
+    "EntityType": "Attribute",
+    "EntityName": "Delivery Handling",
+    "EntityId": "DeliveryHandling",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "DatasetType": "ATT",
+    "DatasetId": null,
+    "DatasetName": null,
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Dynamic",
+    "Order": 80,
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS dataset delivery mechanism documentation MUST include the delivery mechanism used (Overwrite or Append).",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-DeliveryHandling-A-009-C": {
+    "Function": "Validation",
+    "Reference": "DeliveryHandling",
+    "EntityType": "Attribute",
+    "EntityName": "Delivery Handling",
+    "EntityId": "DeliveryHandling",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "DatasetType": "ATT",
+    "DatasetId": null,
+    "DatasetName": null,
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Dynamic",
+    "Order": 90,
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS dataset delivery mechanism documentation MUST include the conditions under which each delivery mechanism applies when more than one delivery mechanism is used.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-DeliveryHandling-A-010-C": {
+    "Function": "Validation",
+    "Reference": "DeliveryHandling",
+    "EntityType": "Attribute",
+    "EntityName": "Delivery Handling",
+    "EntityId": "DeliveryHandling",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "DatasetType": "ATT",
+    "DatasetId": null,
+    "DatasetName": null,
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Dynamic",
+    "Order": 100,
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS dataset delivery mechanism documentation MUST include the mechanism for correlating dataset artifacts with the FOCUS Metadata Schema object when the Metadata is delivered.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ATT-DeliveryHandling-A-011-M": {
+    "Function": "Validation",
+    "Reference": "DeliveryHandling",
+    "EntityType": "Attribute",
+    "EntityName": "Delivery Handling",
+    "EntityId": "DeliveryHandling",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "DatasetType": "ATT",
+    "DatasetId": null,
+    "DatasetName": null,
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Dynamic",
+    "Order": 110,
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS dataset delivery mechanism documentation MUST be accessible to practitioners.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}

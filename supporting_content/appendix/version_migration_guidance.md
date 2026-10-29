@@ -2,17 +2,135 @@
 
 This appendix provides guidance for practitioners and data generators migrating between FOCUS specification versions. Migration guidance is organized in reverse chronological order, with the most recent migration listed first.
 
-### Document Structure
+## Document Structure
 
-This guide serves two audiences:
+This guide serves two audiences, and each migration below is organized the same way:
 
 | Audience | Relevant Sections |
 |----------|-------------------|
 | **All readers** | Overview, What's Unchanged, What's New, What Requires Migration |
-| **Practitioners** | Provider and Publisher Column Changes, including migration decision tree, query examples, and verification checklist |
-| **Data Generators** | Guidance for Data Generators, including dual-column support, deprecation metadata, and deprecation timeline |
+| **Practitioners** | Practitioner-facing migration topics covering query and pipeline impact, including decision trees, query examples, and verification steps where applicable |
+| **Data Generators** | Data generator guidance covering implementation sequencing and attribute or column changes for the transition |
 
-Practitioners updating queries should focus on the migration decision tree and query examples. Data generators implementing FOCUS 1.3 should review the dual-column support recommendations.
+Practitioners should focus on the What Requires Migration summary and the practitioner topics for their version transition. Data generators should review the data generator guidance for the same transition.
+
+## Migrating from FOCUS 1.3 to FOCUS 1.4
+
+### Overview
+
+FOCUS 1.4 introduces changes across the categories defined by the [Change Impact Classification](/guidelines/contributors/spec-change-guidelines.md):
+
+| Classification | Summary |
+|----------------|---------|
+| **Compatible** | Two new datasets, new columns, six new attributes, two new supported features, and revised requirements for existing cost columns. No changes required to existing queries. |
+| **Migration Compatible** | Removal of the deprecated `ProviderName` and `PublisherName` columns, a revised `ContractApplied` format, and removal of three attributes whose requirements moved to successor attributes, datasets, and columns. Queries or implementations referencing these require updates. |
+| **Incompatible** | None |
+
+FOCUS 1.4 is a larger release than FOCUS 1.3, but most changes are additive and compatible, with no incompatible changes. The items requiring migration are concentrated in a few areas, including the removal of columns deprecated during the 1.3 cycle. Practitioners should review the What Requires Migration summary and the Practitioner Guidance below; data generators should review the Data Generator Guidance.
+
+### What's Unchanged
+
+All columns, attributes, and behaviors from FOCUS 1.3 carry forward into FOCUS 1.4 except for the removed columns and attributes noted below. Existing queries that do not reference the removed columns and do not parse the revised JSON object structure continue to work without modification.
+
+### What's New in FOCUS 1.4
+
+The following additive changes do not require migration but may affect data pipelines expecting a fixed schema:
+
+* **New Datasets** (together, they support reconciling usage to issued invoices):
+  * [`BillingPeriod`](/specification/datasets/billing_period/dataset.md) provides invoice-issuer-aware billing period boundaries and status.
+  * [`InvoiceDetail`](/specification/datasets/invoice_detail/dataset.md) carries the financial record of charges as they appear on issued invoices (payment currency, terms, due date, purchase order number).
+* **Expanded Dataset:** the [`ContractCommitment`](/specification/datasets/contract_commitment/dataset.md) dataset grows from 13 to 30 columns, covering identification, lifecycle and periods, commitment structure, and cost and quantity.
+* **New Supported Features:**
+  * [Invoice Reconciliation](/specification/supported_features/invoice_reconciliation.md)
+  * [Commitment Program Eligibility Details](/specification/supported_features/commitment_program_eligibility_details.md)
+* **New Cost and Usage Columns:**
+  * [`CommitmentProgramEligibilityDetails`](/specification/datasets/cost_and_usage/columns/commitmentprogrameligibilitydetails.md)
+  * [`InvoiceDetailId`](/specification/datasets/cost_and_usage/columns/invoicedetailid.md)
+* **New Attributes:**
+  * [`CorrectionHandling`](/specification/attributes/correction_handling.md)
+  * [`CustomColumnHandling`](/specification/attributes/custom_column_handling.md)
+  * [`DatasetCompleteness`](/specification/attributes/dataset_completeness.md)
+  * [`DatasetConfiguration`](/specification/attributes/dataset_configuration.md)
+  * [`DeliveryHandling`](/specification/attributes/delivery_handling.md)
+  * [`FocusColumnHandling`](/specification/attributes/focus_column_handling.md)
+* **New Appendix Entries:**
+  * [Discount Handling](/specification/appendix/discount_handling.md)
+  * [Rounding Variance Tolerance](/specification/appendix/rounding_variance_tolerance.md)
+  * [Invoice and Billing Period Handling](/specification/appendix/invoice_and_billing_period_handling.md)
+  * Worked examples for commitment program eligibility details, contract commitments, correction handling, invoice detail, and JSON objects
+
+See the [CHANGELOG](/CHANGELOG.md) for complete details.
+
+### What Requires Migration
+
+The following changes require action. Each is detailed in the Practitioner Guidance or Data Generator Guidance below.
+
+| Change | Audience | Action |
+|--------|----------|--------|
+| `ProviderName` and `PublisherName` removed | Practitioners | Migrate any remaining queries to the successor columns identified during the 1.3 cycle. |
+| `ContractApplied` format revised to the JSON Object Schema format | Practitioners | Update queries that parse the `ContractApplied` JSON structure. |
+| `ColumnHandling`, `DiscountHandling`, and `InvoiceHandling` attributes removed | Data Generators | Apply the requirements that moved to successor attributes, datasets, and columns. |
+
+### Practitioner Guidance
+
+#### Provider and Publisher Column Removal
+
+The `ProviderName` and `PublisherName` columns were deprecated in FOCUS 1.3 and are removed in FOCUS 1.4. Their use cases were redistributed to `ServiceProviderName`, `HostProviderName`, `InvoiceIssuerName`, and the `DataGenerator` metadata property during the 1.3 cycle.
+
+Practitioners who have not yet migrated queries away from these columns should follow the [Provider and Publisher Column Changes](#provider-and-publisher-column-changes) guidance for the 1.2 to 1.3 transition below, which provides the column-by-column decision tree, the acquisition-method scenario matrix, and verification steps. The successor columns and their mapping are unchanged in FOCUS 1.4; only the removal of the deprecated columns is new.
+
+#### ContractApplied Format Change
+
+The [`ContractApplied`](/specification/datasets/cost_and_usage/columns/contractapplied.md) column was revised in FOCUS 1.4 to follow the JSON Object Schema format. The concepts represented by the column are unchanged; the change is to the structure of the JSON value.
+
+Practitioners whose queries parse the `ContractApplied` value should update their parsing logic to the FOCUS 1.4 schema. Queries that test only for the presence of `ContractApplied`, or that do not inspect its internal structure, are unaffected. See the [Examples: JSON Object](/specification/appendix/json_object_examples/json_object_examples_overview.md) appendix for the JSON Object Schema format.
+
+#### Revised Cost Column Requirements
+
+These changes are classified as Compatible and do not require query changes, but they refine how core cost values are defined. Practitioners performing invoice reconciliation or commitment amortization analysis should review the updated definitions:
+
+* [`BilledCost`](/specification/datasets/cost_and_usage/columns/billedcost.md) and [`EffectiveCost`](/specification/datasets/cost_and_usage/columns/effectivecost.md) requirements were revised to clarify the treatment of pricing adjustments, covered and covering charges, and cross-record sum validation. When a covering charge (a purchase that pays for other charges, such as a reserved instance prepayment) and the charges it covers are both present in the same dataset instance, `EffectiveCost` and `BilledCost` sum to the same total within the covering charge's charge period; the totals may differ when only one side of that relationship is present, or when the charges span multiple billing periods or billing accounts.
+* [`InvoiceId`](/specification/datasets/cost_and_usage/columns/invoiceid.md) changed from a Recommended to a Conditional feature level. Values are populated for charges associated with an issued or pre-generated provisional invoice.
+
+### Data Generator Guidance
+
+#### Attribute Restructuring
+
+Three attributes were broken down and their requirements moved to other attributes, datasets, and columns in FOCUS 1.4:
+
+| Removed Attribute | Requirements Moved To |
+|-------------------|-----------------------|
+| `ColumnHandling` | `FocusColumnHandling` and `CustomColumnHandling` attributes |
+| `DiscountHandling` | `CostAndUsage` dataset and its specific columns; see the Discount Handling appendix for more details |
+| `InvoiceHandling` | `DeliveryHandling` and `DatasetCompleteness` attributes, and the `CostAndUsage`/`InvoiceDetail`/`BillingPeriod` datasets and their specific columns; see the Invoice and Billing Period Handling appendix for more details |
+
+Data generators applying these attributes should map their existing implementation to the successor requirements.
+
+#### Recommended Implementation Sequence
+
+For a release with multiple changes, data generators can reduce consumer disruption by sequencing the transition:
+
+* Adopt additive changes first. New datasets, columns, and attributes do not affect existing consumers and can be introduced independently.
+* Apply the attribute restructuring. Map `ColumnHandling`, `DiscountHandling`, and `InvoiceHandling` implementations to their successors.
+* Complete the column changes last. Remove `ProviderName` and `PublisherName` once consumers have migrated, and adopt the revised `ContractApplied` format.
+
+During staggered adoption, practitioners may receive FOCUS 1.3 and FOCUS 1.4 data from different providers during the same period. Consumers should determine the FOCUS version of each dataset they process and apply the column expectations for that version, since the removed columns are absent from FOCUS 1.4 data but may remain present in FOCUS 1.3 data during the transition.
+
+### Affected Supported Features
+
+The following supported features reference columns, attributes, or behaviors changed in FOCUS 1.4. Most reflect additive or clarifying changes and require no query updates; only the `ContractApplied` format change and the removed `ProviderName`/`PublisherName` columns require action (see What Requires Migration above):
+
+* [Participating Entity Identification](/specification/supported_features/participating_entity_identification.md), for the successor columns to the removed `ProviderName` and `PublisherName`
+* [Contract Commitments](/specification/supported_features/contract_commitments.md), for the revised `ContractApplied` format
+* [Billed Cost and Invoice Alignment](/specification/supported_features/billed_cost_and_invoice_alignment.md) and [Effective Cost](/specification/supported_features/effective_cost.md), for the revised cost column requirements
+* [Cost Comparison](/specification/supported_features/cost_comparison.md), for the expanded cash-based versus accrual-based comparison guidance
+
+### Additional Resources
+
+* [FOCUS 1.4 CHANGELOG](/CHANGELOG.md), the complete list of 1.4 changes by classification
+* The [Migrating from FOCUS 1.2 to FOCUS 1.3](#migrating-from-focus-12-to-focus-13) section below, for the Provider and Publisher migration decision tree that remains relevant in FOCUS 1.4
+
+---
 
 ## Migrating from FOCUS 1.2 to FOCUS 1.3
 

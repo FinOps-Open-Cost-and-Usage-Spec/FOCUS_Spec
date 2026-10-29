@@ -19,7 +19,7 @@ When a service provider supports unit pricing concepts, FOCUS allows practitione
 ## Supporting Columns
 
 * BillingCurrency
-* BillingPeriodId
+* BillingPeriodStart
 * ChargePeriodEnd
 * ChargePeriodStart
 
@@ -30,13 +30,13 @@ SELECT DISTINCT
   SkuId,
   SkuPriceId,
   SkuPriceDetails,
-  BillingPeriodId,
+  BillingPeriodStart,
   ChargePeriodStart,
   ChargePeriodEnd,
   BillingCurrency,
   ListUnitPrice,
   ContractedUnitPrice
-FROM focus_data_table
+FROM CostAndUsage
 WHERE
   SkuPriceId = ?
   AND ChargePeriodStart >= ?

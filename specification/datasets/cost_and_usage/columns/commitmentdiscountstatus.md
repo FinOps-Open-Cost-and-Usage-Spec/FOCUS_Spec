@@ -1,6 +1,6 @@
 # Commitment Discount Status
 
-Commitment Discount Status indicates whether the [*charge*](#glossary:charge) corresponds with the consumption of a [*commitment discount*](#glossary:commitment-discount) identified in the CommitmentDiscountId column or the unused portion of the committed amount. The CommitmentDiscountStatus column is only applicable to *commitment discounts* and not [*negotiated discounts*](#glossary:negotiated-discount).
+Commitment Discount Status indicates whether the [*charge*](#glossary:charge) corresponds with the consumption of a [*commitment discount*](#glossary:commitment-discount) identified in the [Commitment Discount ID](#datamodel.costandusage.commitmentdiscountid) column or the unused portion of the committed amount. The Commitment Discount Status column is only applicable to *commitment discounts* and not [*negotiated discounts*](#glossary:negotiated-discount).
 
 ## Requirements
 
@@ -8,8 +8,8 @@ CommitmentDiscountStatus MUST adhere to the following requirements:
 
 * CommitmentDiscountStatus MUST be of type String.
 * CommitmentDiscountStatus MUST adhere to the following nullability requirements:
-  * CommitmentDiscountStatus MUST be null when [CommitmentDiscountId](#datasets.costandusage.commitmentdiscountid) is null.
-  * CommitmentDiscountStatus MUST NOT be null when CommitmentDiscountId is not null and [ChargeCategory](#datasets.costandusage.chargecategory) is "Usage".
+  * CommitmentDiscountStatus MUST be null when CommitmentDiscountId is null.
+  * CommitmentDiscountStatus MUST NOT be null when CommitmentDiscountId is not null and [ChargeCategory](#datamodel.costandusage.chargecategory) is "Usage".
 * CommitmentDiscountStatus MUST be one of the allowed values.
 * CommitmentDiscountStatus MUST be "Used" when the *charge* utilizes a specific amount of a given CommitmentDiscountId.
 * CommitmentDiscountStatus MUST be "Unused" when the *charge* represents the unused portion of the given CommitmentDiscountId.
@@ -35,14 +35,15 @@ Indicates whether the *charge* corresponds with the consumption of a *commitment
 
 ## Content Constraints
 
-| Constraint      | Value                                                |
-| :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datasets.costandusage)             |
-| Column type     | Dimension                                            |
-| Feature level   | Conditional                                          |
-| Allows nulls    | True                                                 |
-| Data type       | String                                               |
-| Value format    | Allowed values                                       |
+| Constraint                 | Value                                     |
+| :------------------------- | :---------------------------------------- |
+| Dataset                    | [Cost and Usage](#datamodel.costandusage) |
+| Operating model conditions | [Includes Commitment Discounts](#operatingmodelconditions.includescommitmentdiscounts) |
+| Column type                | Dimension                                 |
+| Feature level              | Conditional                               |
+| Allows nulls               | True                                      |
+| Data type                  | String                                    |
+| Value format               | Allowed values                            |
 
 ## Version Introduced
 

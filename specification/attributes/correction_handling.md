@@ -8,9 +8,9 @@ The Correction Handling attribute defines how [*corrections*](#glossary:correcti
 
 *Corrections* may address a variety of operational or technical causes, such as refunds, late-arriving data, rounding errors, delivery errors, and other post-processing adjustments.
 
-Accurate correction handling is essential to ensure the consistency, integrity, and usability of *FOCUS datasets* over time. Depending on the dataset and delivery configuration, it supports a range of key outcomes, including but not limited to:
+Accurate correction handling is essential to ensure the consistency, integrity, and usability of [*FOCUS datasets*](#glossary:FOCUS-dataset) over time. Depending on the dataset and delivery configuration, it supports a range of key outcomes, including but not limited to:
 
-* Consistency of delivered data - ensuring that delivered data remains consistent and reliable over time, where applicable, including alignment between related *FOCUS datasets* (e.g., [Invoice Detail](#datasets.invoicedetail) records and the underlying [Cost and Usage](#datasets.costandusage) records).
+* Consistency of delivered data - ensuring that delivered data remains consistent and reliable over time, where applicable, including alignment between related *FOCUS datasets* (e.g., [Invoice Detail](#datamodel.invoicedetail) records and the underlying [Cost and Usage](#datamodel.costandusage) records).
 * Data integrity and [*invoice reconciliation*](#glossary:invoice-reconciliation) - ensuring that corrections do not compromise records associated with [*issued invoices*](#glossary:issued-invoice) or [*closed billing periods*](#glossary:closed-billing-period), and that alignment is maintained in accordance with defined *invoice reconciliation* requirements.
 * Auditability and traceability - enabling the tracking of delivered data and applied corrections over time, so that changes and their effects can be understood, verified, and correctly reflected in downstream processes (e.g., cost allocation, chargeback, reporting).
 
@@ -57,7 +57,7 @@ Given that the entire change history is presented, the Ledger correction style p
 Dataset conforming to CorrectionHandling attribute MUST adhere to the following requirements:
 
 * *FOCUS dataset* MUST have its styles for representing corrections in *dataset artifacts* documented and accessible to practitioners (including whether Replacement, Delta, or Ledger style is used and under which conditions each style applies).
-* *FOCUS dataset* MUST represent a complete snapshot of data for the affected [*delivery scope*](#glossary:delivery-scope) when using [Replacement correction style](#attributes.correctionhandling.overview.correctionstyles.replacementcorrections).
+* *FOCUS dataset* MUST represent a complete snapshot of data for the affected *delivery scope* when using [Replacement correction style](#attributes.correctionhandling.overview.correctionstyles.replacementcorrections).
 * *FOCUS dataset* MUST include additive records representing corrections within the same *delivery scope* when using [Delta correction style](#attributes.correctionhandling.overview.correctionstyles.deltacorrections).
 * *FOCUS dataset* MUST include explicit reversal and re-entry additive records representing corrections within the same *delivery scope* when using [Ledger correction style](#attributes.correctionhandling.overview.correctionstyles.ledgercorrections).
 

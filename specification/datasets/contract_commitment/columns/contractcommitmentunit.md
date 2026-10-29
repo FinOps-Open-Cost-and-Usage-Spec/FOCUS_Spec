@@ -1,6 +1,6 @@
 # Contract Commitment Unit
 
-The Contract Commitment Unit represents a service-provider-specified measurement unit for the amount declared in Contract Commitment Quantity. Contract Commitment Unit complements the Contract Commitment Quantity metric.
+The Contract Commitment Unit represents a service-provider-specified measurement unit for the amount declared in [Contract Commitment Quantity](#datamodel.contractcommitment.contractcommitmentquantity). Contract Commitment Unit complements the Contract Commitment Quantity metric.
 
 ## Requirements
 
@@ -27,14 +27,15 @@ A service-provider-specified measurement unit for the amount declared in Contrac
 
 ## Content Constraints
 
-| Constraint      | Value                                                |
-|:----------------|:-----------------------------------------------------|
-| Dataset         | [Contract Commitment](#datasets.contractcommitment)  |
-| Column type     | Dimension                                            |
-| Feature level   | Mandatory                                            |
-| Allows nulls    | True                                                 |
-| Data type       | String                                               |
-| Value format    | [Unit Format](#attributes.unitformat) recommended    |
+| Constraint                 | Value                                                |
+| :------------------------- | :--------------------------------------------------- |
+| Dataset                    | [Contract Commitment](#datamodel.contractcommitment) |
+| Operating model conditions | Not applicable                                       |
+| Column type                | Dimension                                            |
+| Feature level              | Mandatory                                            |
+| Allows nulls               | True                                                 |
+| Data type                  | String                                               |
+| Value format               | [Unit Format](#attributes.unitformat) recommended    |
 
 ## Version Introduced
 
