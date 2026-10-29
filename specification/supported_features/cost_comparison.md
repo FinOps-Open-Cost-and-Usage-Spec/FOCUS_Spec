@@ -115,7 +115,7 @@ SELECT
   SUM(CASE WHEN CommitmentDiscountStatus = 'Used' THEN ContractedCost ELSE 0 END) AS TotalContractedCost,
   SUM(EffectiveCost) AS TotalEffectiveCost,
   SUM(CASE WHEN CommitmentDiscountStatus = 'Used' THEN ContractedCost ELSE 0 END) - SUM(EffectiveCost) AS CommitmentDiscountSavings
-FROM focus_data_table
+FROM CostAndUsage
 WHERE ChargePeriodStart >= ? AND ChargePeriodEnd < ?
   AND ChargeCategory = 'Usage'
   AND CommitmentDiscountId IS NOT NULL
@@ -144,7 +144,7 @@ SELECT
   MAX(ChargePeriodEnd) AS LatestChargePeriodEnd,
   SUM(BilledCost) AS TotalBilledCost,
   SUM(EffectiveCost) AS TotalEffectiveCost
-FROM focus_data_table
+FROM CostAndUsage
 WHERE BillingPeriodStart >= ? AND BillingPeriodEnd < ?
 GROUP BY
   ServiceProviderName,

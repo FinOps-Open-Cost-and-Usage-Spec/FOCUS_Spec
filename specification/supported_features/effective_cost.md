@@ -103,7 +103,7 @@ SELECT
   SUM(EffectiveCost) AS TotalEffectiveCost,
   SUM(EffectiveCost) / NULLIF(SUM(ConsumedQuantity), 0) AS EffectiveCostPerConsumedUnit,
   SUM(EffectiveCost) / NULLIF(SUM(PricingQuantity), 0) AS EffectiveCostPerPricingUnit
-FROM focus_data_table
+FROM CostAndUsage
 WHERE ChargePeriodStart >= ? AND ChargePeriodEnd < ?
   AND ChargeCategory = 'Usage'
   AND ConsumedQuantity IS NOT NULL
