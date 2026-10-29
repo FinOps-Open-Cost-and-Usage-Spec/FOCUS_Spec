@@ -178,7 +178,7 @@ Here is how these charges appear in the data (relevant columns only):
 * [CommitmentDiscountQuantity](#datamodel.costandusage.commitmentdiscountquantity) is 379.00 USD. This is the amount of spend consumed from the commitment in this [*charge period*](#glossary:chargeperiod).
 * [ResourceId](#datamodel.costandusage.resourceid) is the actual [*resource*](#glossary:resource) (the customer's project management site), not the [*commitment discount*](#glossary:commitment-discount).
 
-**Rounding Note:** The per-user rate of $7.58 is derived from `$4,550 / 12 months / 50 users` = $7.5833, rounded to two decimal places. This means `$7.58 x 50 users x 12 months` = $4,548.00, which is $2.00 less than the $4,550.00 purchase. In a full 12-month dataset, the final month's charge would include a true-up to ensure the sum of [EffectiveCost](#datamodel.costandusage.effectivecost) across all usage rows equals the [BilledCost](#datamodel.costandusage.billedcost) of the purchase row.
+> **Note:** The per-user rate of $7.58 is derived from `$4,550 / 12 months / 50 users` = $7.5833, rounded to two decimal places. This means `$7.58 x 50 users x 12 months` = $4,548.00, which is $2.00 less than the $4,550.00 purchase. In a full 12-month dataset, the final month's charge would include a true-up to ensure the sum of [EffectiveCost](#datamodel.costandusage.effectivecost) across all usage rows equals the [BilledCost](#datamodel.costandusage.billedcost) of the purchase row.
 
 [**CSV Example**](/specification/data/saas_examples/seat_based_saas_annual_a.csv)
 
