@@ -59,7 +59,7 @@ SELECT
   CU.ServiceName,
   JSON_VALUE(CP, '$.ProgramType') AS EligibleProgramType,
   SUM(CU.BilledCost) AS EligibleUncoveredCost
-FROM focus_data_table CU
+FROM CostAndUsage CU
 CROSS JOIN
   UNNEST(JSON_EXTRACT_ARRAY(CU.CommitmentProgramEligibilityDetails, '$.CommitmentPrograms')) AS CP
 WHERE CU.ChargePeriodStart >= ? AND CU.ChargePeriodEnd < ?
@@ -87,7 +87,7 @@ WITH CommitmentDiscountEligible AS (
     CU.ServiceProviderName,
     CU.EffectiveCost,
     CU.CommitmentDiscountId
-  FROM focus_data_table CU
+  FROM CostAndUsage CU
   WHERE CU.ChargePeriodStart >= ? AND CU.ChargePeriodEnd < ?
     AND CU.ChargeCategory = 'Usage'
     AND (
@@ -125,7 +125,7 @@ WITH CommitmentDiscountEligible AS (
     CU.EffectiveCost,
     -- EffectiveCost = BilledCost for uncovered rows; used here for ratio consistency
     CASE WHEN CU.CommitmentDiscountId IS NULL THEN CU.EffectiveCost ELSE 0 END AS UncoveredCost
-  FROM focus_data_table CU
+  FROM CostAndUsage CU
   CROSS JOIN
     UNNEST(JSON_EXTRACT_ARRAY(CU.CommitmentProgramEligibilityDetails, '$.CommitmentPrograms')) AS CP
   WHERE CU.ChargePeriodStart >= ? AND CU.ChargePeriodEnd < ?
@@ -161,7 +161,7 @@ SELECT
   CU.CapacityReservationStatus,
   SUM(CU.BilledCost) AS BilledCost,
   COUNT(*) AS RowCount
-FROM focus_data_table CU
+FROM CostAndUsage CU
 CROSS JOIN
   UNNEST(JSON_EXTRACT_ARRAY(CU.CommitmentProgramEligibilityDetails, '$.CommitmentPrograms')) AS CP
 WHERE CU.ChargePeriodStart >= ? AND CU.ChargePeriodEnd < ?

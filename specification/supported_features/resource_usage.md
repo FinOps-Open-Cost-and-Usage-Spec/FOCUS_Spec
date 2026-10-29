@@ -35,7 +35,7 @@ SELECT
   SkuId,
   ConsumedUnit,
   SUM(ConsumedQuantity) AS TotalQuantity
-FROM focus_data_table
+FROM CostAndUsage
 WHERE ChargeCategory='Usage'
   AND ChargePeriodStart >= ? AND ChargePeriodEnd <= ?
 GROUP BY
@@ -57,7 +57,7 @@ SELECT
   COALESCE(SUM(CASE WHEN JSON_VALUE(SkuPriceDetails, '$.TokenCacheAction') = 'Read'
                     THEN ConsumedQuantity END), 0)
     / NULLIF(SUM(ConsumedQuantity), 0) AS CacheHitRate
-FROM focus_data_table
+FROM CostAndUsage
 WHERE ChargeCategory = 'Usage'
   AND ChargeClass IS NULL
   AND ConsumedUnit = 'Tokens'
@@ -84,7 +84,7 @@ SELECT
            THEN ConsumedQuantity END)
     / NULLIF(SUM(CASE WHEN JSON_VALUE(SkuPriceDetails, '$.TokenDirection') = 'Output'
                       THEN ConsumedQuantity END), 0) AS InputToOutputRatio
-FROM focus_data_table
+FROM CostAndUsage
 WHERE ChargeCategory = 'Usage'
   AND ChargeClass IS NULL
   AND ConsumedUnit = 'Tokens'
