@@ -26,6 +26,7 @@ The columns are presented in alphabetical order.
 | [Quantity Tier Minimum](#datamodel.skuprice.quantitytierminimum)                     | Metric      | Conditional         | False        | Decimal   |
 | [Service Provider Name](#datamodel.skuprice.serviceprovidername)                     | Dimension   | Mandatory                                                      | False        | String    |
 | [SKU ID](#datamodel.skuprice.skuid)                                                  | Dimension   | Mandatory                                                      | False        | String    |
+| [SKU Meter](#datamodel.skuprice.skumeter)                                            | Dimension   | Mandatory                                                      | True         | String    |
 | [SKU Price Created](#datamodel.skuprice.skupricecreated)                             | Dimension   | Mandatory                                                      | False        | Date/Time |
 | [SKU Price Description](#datamodel.skuprice.skupricedescription)                     | Dimension   | Mandatory                                                      | False        | String    |
 | [SKU Price Effective End](#datamodel.skuprice.skupriceeffectiveend)                  | Dimension   | Mandatory                                                      | True         | Date/Time |
@@ -89,6 +90,7 @@ SkuPrice MUST adhere to the following requirements:
   * SkuPrice MUST include [QuantityTierMinimum](#datamodel.skuprice.quantitytierminimum) when the *operating model* includes quantity tier pricing.
   * SkuPrice MUST include [ServiceProviderName](#datamodel.skuprice.serviceprovidername).
   * SkuPrice MUST include [SkuId](#datamodel.skuprice.skuid).
+  * SkuPrice MUST include [SkuMeter](#datamodel.skuprice.skumeter).
   * SkuPrice MUST include [SkuPriceCreated](#datamodel.skuprice.skupricecreated).
   * SkuPrice MUST include [SkuPriceDescription](#datamodel.skuprice.skupricedescription).
   * SkuPrice MUST include [SkuPriceEffectiveEnd](#datamodel.skuprice.skupriceeffectiveend).
