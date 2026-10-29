@@ -2,7 +2,7 @@
 
 ## Description
 
-FOCUS supports the analysis of cost and usage data for marketplace purchases and their associated costs. It also supports the reporting of EffectiveCost for usage from the service provider.
+FOCUS supports the analysis of cost and usage data for marketplace purchases and their associated costs. It also supports the reporting of [Effective Cost](#datamodel.costandusage.effectivecost) for usage from the [*service provider*](#glossary:service-provider).
 
 ## Directly Dependent Columns
 
@@ -14,7 +14,9 @@ FOCUS supports the analysis of cost and usage data for marketplace purchases and
 * BilledCost
 * EffectiveCost
 
-## Example SQL Query on a CSP Marketplace Using the Cost and Usage FOCUS Dataset
+## Example SQL Queries
+
+### Report Billed Cost for a Provider on a CSP Marketplace
 
 ```sql
 SELECT
@@ -33,7 +35,7 @@ GROUP BY
   BillingPeriodEnd
 ```
 
-## Example SQL Query on a Provider Using the Cost and Usage FOCUS Dataset
+### Report Effective Cost by Resource for a CSP Marketplace
 
 ```sql
 SELECT
