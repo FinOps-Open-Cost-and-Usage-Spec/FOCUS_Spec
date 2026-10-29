@@ -16,7 +16,7 @@ cd supporting_content/semantic_markup_prototype
 PYTHON=/path/to/venv/bin/python ./compare_rendered.sh
 ```
 
-The first command builds the specification with the tags resolved. The second lists every line of the published `spec.md` that differs from `origin/working_draft`, word by word. You can also open any converted file on GitHub to see how the tagged source reads.
+The first command builds the specification with the tags resolved. The second lists every line of the published `spec.md` that differs from the commit where this branch left `working_draft`, word by word, so later changes to `working_draft` do not show up. You can also open any converted file on GitHub to see how the tagged source reads.
 
 ## What Changed in the Build
 
@@ -104,6 +104,10 @@ Metadata IDs repeat across collections the way ColumnIds repeat across datasets.
 **#2703.** Each JSON column links its schema twice: by ID in the conformance bullet and by name in the example pointer (`For the JSON schema, please see [Contract Applied Object Schema](...)`). With both tagged as `#schema`, the first-mention rule renders the pointer without a link, which is the "remove the second link" outcome. Keeping the link instead would be one resolver exception for schema pointers, not an edit in each of the five files. Either way, every JSON column renders the same.
 
 **Definition checks.** REG014 reports a metadata file whose H1 differs from its Metadata Name. On this branch it reports `previouscolumnname.md` and `stringencoding.md`, the two mismatches that #2794 fixes by hand.
+
+**IDs come from ID sections.** Attribute, operating model condition, and dataset files each have an ID section (e.g., `## Attribute ID`). The first prototype derived these IDs from the H1 instead, which gave three wrong IDs: FOCUSColumnHandling (for FocusColumnHandling), JSONObjectFormat (for JsonObjectFormat), and IncludesBillingAndPaymentCurrencyDifferences (for IncludesBillingPaymentCurrencyDifferences). References still resolved, because IDs match without regard to case, but the registry recorded the wrong IDs. The registry now reads the ID sections, like Column ID and Metadata ID.
+
+**File and folder names.** The [Repository Naming Conventions](../../guidelines/contributors/repository-naming-conventions.md) require a file or folder that defines a FOCUS entity to be named after its ID in lowercase, with no separator (e.g., `numericformat.md`). The registry knows which files and folders define entities, so REG016 checks this for every entity type: column, attribute, operating model condition, and metadata files; dataset and metadata collection folders; and schema JSON files. On this branch it reports 40 names, all snake_case dataset folders, attribute files, and metadata files and folders. It reports a warning, not an error, because the renames are planned for 1.6.
 
 A JSON object is defined in its column's file but is a separate entity. References to it link normally, unlike the column's references to itself.
 

@@ -51,7 +51,7 @@ Definition checks:
 
 * REG001 error  column file has no Column ID or no Display Name section
 * REG002 warn   column file H1 differs from its Display Name
-* REG003 warn   Column ID is not PascalCase, or does not match the file name
+* REG003 warn   Column ID is not PascalCase
 * REG004 error  Allowed Values table has no "Value" column or column headed with the Display Name
 * REG005 warn   the same allowed value is listed twice for one column
 * REG006 warn   glossary key does not match its term (e.g., key "covered-charge" for "Covered Charge")
@@ -61,9 +61,12 @@ Definition checks:
 * REG010 error  malformed glossary anchor (the term would be silently dropped)
 * REG011 warn   unknown front matter key, or an alias for an unknown glossary key
 * REG012 warn   a file under datasets/ declares a dataset in front matter
-* REG013 error  an Object, Value, or Metadata ID section without its name section, or the reverse
-* REG014 warn   a metadata file's H1 or an object's level-2 heading differs from its name
-* REG015 warn   a schema's ID (from its heading) does not match its JSON file name
+* REG013 error  an ID section without its name section, or the reverse; or an attribute,
+                operating model condition, or dataset file with neither (its ID falls back to its H1)
+* REG014 warn   a dataset, attribute, operating model condition, or metadata file's H1, or an
+                object's level-2 heading, differs from its name
+* REG016 warn   a file or folder that defines an entity is not named after its ID in lowercase,
+                per the Repository Naming Conventions (e.g., numericformat.md for NumericFormat)
 
 Usage:
     ./build_registry.py [--spec-dir DIR] [--overlay DIR] [--out registry.json] [--strict]
@@ -157,7 +160,9 @@ def h1(text, source):
 def section_body(text, heading, level=2):
     """Return the text under a heading, up to the next heading of the same or a higher level."""
     hashes = "#" * level
-    match = re.search(rf"^{hashes} {re.escape(heading)}\s*\n(.*?)(?=^#{{1,{level}}} |\Z)", text, re.M | re.S)
+    # A trailing comment such as <!--SkipTOC--> is not part of the heading
+    match = re.search(rf"^{hashes} {re.escape(heading)}\s*(?:<!--.*?-->)?\s*\n(.*?)(?=^#{{1,{level}}} |\Z)",
+                      text, re.M | re.S)
     return match.group(1).strip() if match else None
 
 
@@ -205,6 +210,27 @@ def aliases_of(front, source, diag):
     return aliases if isinstance(aliases, list) else [aliases]
 
 
+def check_name(path, ident, source, diag):
+    """REG016: an entity's file (or folder) is named after its ID in lowercase."""
+    name = path.name if path.is_dir() else path.stem
+    if name != ident.lower():
+        expected = ident.lower() + ("" if path.is_dir() else path.suffix)
+        kind = "folder" if path.is_dir() else "file"
+        diag.report("WARN", "REG016", source, f'{kind} name "{path.name}" does not match {ident}; expected "{expected}"')
+
+
+def entity_id(text, id_heading, name_heading, title, source, diag):
+    """Return (id, name) from a definition's ID and name sections, checking the name against the H1.
+    Without the sections, fall back to an ID derived from the H1 and report it."""
+    found = id_and_name(text, id_heading, name_heading, source, diag)
+    if found is None:
+        diag.report("ERROR", "REG013", source, f'no "{id_heading}" section; ID derived from the H1')
+        return pascal_id(title), title
+    if found[1] != title:
+        diag.report("WARN", "REG014", source, f'H1 "{title}" differs from {name_heading} "{found[1]}"')
+    return found
+
+
 def check_no_dataset(front, source, diag):
     if "dataset" in front:
         diag.report("WARN", "REG012", source, "files under datasets/ take their dataset from their location")
@@ -224,9 +250,10 @@ def collect(src, diag):
         front, text = split_front_matter(src.read(dataset_md))
         ds_title = h1(text, dataset_md)
         ds_anchor = f"{data_model}.{anchor_part(ds_title)}"
-        ds_id = pascal_id(ds_title)
+        ds_id, ds_name = entity_id(text, "Dataset ID", "Display Name", ds_title, src.rel(dataset_md), diag)
         check_no_dataset(front, src.rel(dataset_md), diag)
-        add(type="ds", id=ds_id, display=ds_title, anchor=ds_anchor, source=src.rel(dataset_md),
+        check_name(dataset_md.parent, ds_id, src.rel(dataset_md), diag)
+        add(type="ds", id=ds_id, display=ds_name, anchor=ds_anchor, source=src.rel(dataset_md),
             aliases=aliases_of(front, src.rel(dataset_md), diag))
 
         for col_md in sorted((dataset_md.parent / "columns").glob("*.md")):
@@ -243,8 +270,8 @@ def collect(src, diag):
                 diag.report("WARN", "REG002", source, f'H1 "{title}" differs from Display Name "{display}"')
             if not re.fullmatch(r"[A-Z][A-Za-z0-9]*", col_id):
                 diag.report("WARN", "REG003", source, f'Column ID "{col_id}" is not PascalCase')
-            elif col_md.stem != col_id.lower():
-                diag.report("WARN", "REG003", source, f'file name "{col_md.name}" does not match Column ID "{col_id}"')
+            else:
+                check_name(col_md, col_id, source, diag)
 
             constraints = section_body(text, "Content Constraints")
             ds_row = next((r for r in table_rows(constraints or "") if r and r[0] == "Dataset"), None)
@@ -284,10 +311,11 @@ def collect(src, diag):
                 add(type="val", id=f"{col_id}.{value}", column=col_id, value=value, dataset=ds_id,
                     display=f'"{value}"', anchor=col_anchor, source=source)
 
-    # Attributes and operating model conditions: one entity per file, named by its H1
-    for kind, folder, overview in (
-        ("attr", "attributes", "attributes_overview.md"),
-        ("omc", "operating_model_conditions", "operating_model_conditions_overview.md"),
+    # Attributes and operating model conditions: one entity per file, with ID and name sections
+    for kind, folder, overview, id_heading, name_heading in (
+        ("attr", "attributes", "attributes_overview.md", "Attribute ID", "Attribute Name"),
+        ("omc", "operating_model_conditions", "operating_model_conditions_overview.md",
+         "Operating Model Condition ID", "Display Name"),
     ):
         prefix = anchor_part(h1(src.read(spec_dir / folder / overview), overview))
         for md in sorted((spec_dir / folder).glob("*.md")):
@@ -295,7 +323,9 @@ def collect(src, diag):
                 continue
             front, text = split_front_matter(src.read(md))
             title = h1(text, md)
-            add(type=kind, id=pascal_id(title), display=title,
+            ident, name = entity_id(text, id_heading, name_heading, title, src.rel(md), diag)
+            check_name(md, ident, src.rel(md), diag)
+            add(type=kind, id=ident, display=name,
                 anchor=f"{prefix}.{anchor_part(title)}", source=src.rel(md),
                 aliases=aliases_of(front, src.rel(md), diag))
 
@@ -312,9 +342,8 @@ def collect(src, diag):
             title = heading[4:].strip()
             schema_id = pascal_id(title)
             include = re.search(r'^!INCLUDECODE "([^"]+)"', block, re.M)
-            if include and Path(include.group(1)).stem != schema_id.lower():
-                diag.report("WARN", "REG015", src.rel(schemas_mdpp),
-                            f'schema "{title}" (ID {schema_id}) includes {include.group(1)}')
+            if include:
+                check_name(spec_dir / include.group(1), schema_id, src.rel(schemas_mdpp), diag)
             add(type="schema", id=schema_id, display=title, anchor=f"{root}.{group}.{anchor_part(title)}",
                 source=src.rel(schemas_mdpp))
 
@@ -345,8 +374,11 @@ def collect(src, diag):
         if title != name:
             diag.report("WARN", "REG014", source, f'H1 "{title}" differs from Metadata Name "{name}"')
         if md == overview(md.parent):
+            # A collection is defined by its folder; the overview file itself uses kebab-case
+            check_name(md.parent, meta_id, source, diag)
             anchor, collection = collection_anchor(md.parent), collection_id(md.parent.parent)
         else:
+            check_name(md, meta_id, source, diag)
             anchor, collection = f"{collection_anchor(md.parent)}.{anchor_part(title)}", collection_id(md.parent)
         entry = dict(type="meta", id=meta_id, display=name, anchor=anchor, source=source,
                      aliases=aliases_of(front, source, diag))
