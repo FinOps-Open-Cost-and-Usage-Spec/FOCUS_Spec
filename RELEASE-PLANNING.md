@@ -32,7 +32,7 @@ This section outlines the planned release schedule and key milestones for the FO
     </tr>
     <tr>
         <td>v1.6</td>
-        <td>May 2027</td>
+        <td>Jun 2027</td>
         <td>
 <strong>Core scope</strong>
     <ul>
@@ -217,14 +217,13 @@ This table displays key milestones and dates related to the development of FOCUS
       <td><strong>Thu Oct 29</strong></td>
       <td>1.6 Core Development Starts</td>
       <td rowspan="7">
-        21 weeks (19 working weeks plus 2-week end-of-year break).<br/>
+        21 weeks: 19 working weeks plus a two-week end-of-year break (21 Dec 2026 to 4 Jan 2027).<br/>
         Core development begins when Core scope ends (29 Oct 2026). Champion scope is added during development as capacity allows.<br/>
-        Includes a two-week end-of-year break (21 Dec 2026 to 4 Jan 2027).<br/>
         Interim milestones occur on Thursdays (Members meeting cadence).
       </td>
     </tr>
     <tr>
-      <td><strong>Thu Jan 28</strong><br/>(13 weeks)</td>
+      <td><strong>Thu Jan 28</strong><br/>(13 weeks, 11 working)</td>
       <td>Deadline to Create PR Drafts</td>
     </tr>
     <tr>
