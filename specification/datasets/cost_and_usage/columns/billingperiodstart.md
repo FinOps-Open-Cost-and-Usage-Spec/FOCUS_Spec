@@ -28,7 +28,7 @@ The *inclusive start bound* of a *billing period*.
 | Constraint                 | Value                                           |
 | :------------------------- | :---------------------------------------------- |
 | Dataset                    | [Cost and Usage](#datamodel.costandusage)       |
-| Operating Model Conditions | Not applicable                                  |
+| Operating model conditions | Not applicable                                  |
 | Column type                | Dimension                                       |
 | Feature level              | Mandatory                                       |
 | Allows nulls               | False                                           |

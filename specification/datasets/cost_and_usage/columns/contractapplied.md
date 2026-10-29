@@ -70,7 +70,7 @@ To facilitate querying data across allocations and across service providers, a d
 Here is a basic example of the object format.
 
 * For more detailed examples, please see this column's entry in the JSON Object Examples appendix entry [here](#appendix.examples:jsonobject.examples:contractapplied).
-* For the JSON schema, please see [Contract Applied Object Schema](#schemas.costandusage.contractappliedobjectschema).
+* For the JSON schema, please see Contract Applied Object Schema.
 
 ```json
 {
@@ -115,7 +115,7 @@ A set of properties that associate a *charge* with one or more *contract commitm
 | Constraint                 | Value                                              |
 | :------------------------- | :------------------------------------------------- |
 | Dataset                    | [Cost and Usage](#datamodel.costandusage)          |
-| Operating Model Conditions | [Includes Contract Commitments](#operatingmodelconditions.includescontractcommitments) |
+| Operating model conditions | [Includes Contract Commitments](#operatingmodelconditions.includescontractcommitments) |
 | Column type                | Dimension / Metric                                 |
 | Feature level              | Conditional                                        |
 | Allows nulls               | True                                               |

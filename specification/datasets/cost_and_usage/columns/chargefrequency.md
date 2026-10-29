@@ -36,7 +36,7 @@ Indicates how often a *charge* will occur.
 | Constraint                 | Value                                     |
 | :------------------------- | :---------------------------------------- |
 | Dataset                    | [Cost and Usage](#datamodel.costandusage) |
-| Operating Model Conditions | Not applicable                            |
+| Operating model conditions | Not applicable                            |
 | Column type                | Dimension                                 |
 | Feature level              | Recommended                               |
 | Allows nulls               | False                                     |

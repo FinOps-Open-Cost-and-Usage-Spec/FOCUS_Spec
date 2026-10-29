@@ -95,7 +95,7 @@ RequesterDetails is not null when PrincipalId or CredentialId is not null, inclu
 Here is an example of the object format.
 
 * For more detailed examples, please see this column's entry in the JSON Object Examples appendix entry [here](#appendix.examples:jsonobject.examples:requesterdetails).
-* For the JSON schema, please see [Requester Details Object Schema](#schemas.costandusage.requesterdetailsobjectschema).
+* For the JSON schema, please see Requester Details Object Schema.
 
 ```json
 [
@@ -142,7 +142,7 @@ A set of properties describing the *requester* associated with a *charge*.
 | Constraint | Value |
 | :--- | :--- |
 | Dataset | [Cost and Usage](#datamodel.costandusage) |
-| Operating Model Conditions | [Includes Requester Attribution](#operatingmodelconditions.includesrequesterattribution) |
+| Operating model conditions | [Includes Requester Attribution](#operatingmodelconditions.includesrequesterattribution) |
 | Column type | Dimension |
 | Feature level | Conditional |
 | Allows nulls | True |

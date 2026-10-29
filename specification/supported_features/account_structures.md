@@ -31,7 +31,7 @@ SELECT
   SubAccountName,
   SubAccountType,
   SUM(BilledCost)
-FROM focus_data_table
+FROM CostAndUsage
 WHERE BillingPeriodStart >= ? AND BillingPeriodEnd < ?
 GROUP BY
   BillingAccountId,

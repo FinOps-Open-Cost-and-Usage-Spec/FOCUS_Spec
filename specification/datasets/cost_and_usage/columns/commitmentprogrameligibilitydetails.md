@@ -58,7 +58,7 @@ To facilitate querying data across allocations and across service providers, a d
 Here is a basic example of the object format.
 
 * For more detailed examples, please see this column's entry in the JSON Object Examples appendix entry [here](#appendix.examples:jsonobject.examples:commitmentprogrameligibilitydetails).
-* For the JSON schema, please see [Commitment Program Eligibility Details Object Schema](#schemas.costandusage.commitmentprogrameligibilitydetailsobjectschema).
+* For the JSON schema, please see Commitment Program Eligibility Details Object Schema.
 
 ``` json
 {
@@ -96,7 +96,7 @@ The types of *commitment programs* available for a specific usage row.
 | Constraint                 | Value                                              |
 | :------------------------- | :------------------------------------------------- |
 | Dataset                    | [Cost and Usage](#datamodel.costandusage)          |
-| Operating Model Conditions | [Includes Commitment Programs](#operatingmodelconditions.includescommitmentprograms) |
+| Operating model conditions | [Includes Commitment Programs](#operatingmodelconditions.includescommitmentprograms) |
 | Column type                | Dimension                                          |
 | Feature level              | Conditional                                        |
 | Allows nulls               | True                                               |

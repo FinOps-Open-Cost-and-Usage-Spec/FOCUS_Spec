@@ -24,7 +24,7 @@ SELECT
   SUM(BilledCost),
   SUM(EffectiveCost),
   SUM(ConsumedQuantity)
-FROM focus_data_table
+FROM CostAndUsage
 WHERE BillingPeriodStart >= ? AND BillingPeriodEnd < ?
 GROUP BY
   tags,

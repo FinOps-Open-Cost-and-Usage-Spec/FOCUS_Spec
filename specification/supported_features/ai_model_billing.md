@@ -50,7 +50,7 @@ SELECT
   SUM(ConsumedQuantity) AS TotalTokens,
   SUM(EffectiveCost) AS TotalEffectiveCost,
   SUM(EffectiveCost) * 1000000 / NULLIF(SUM(ConsumedQuantity), 0) AS EffectiveCostPerMillionTokens
-FROM focus_data_table
+FROM CostAndUsage
 WHERE ChargeCategory='Usage'
   AND ServiceCategory='AI and Machine Learning'
   AND ConsumedUnit='Tokens'
@@ -82,7 +82,7 @@ SELECT
   JSON_VALUE(SkuPriceDetails, '$.TokenDirection') AS TokenDirection,
   JSON_VALUE(SkuPriceDetails, '$.TokenCacheAction') AS TokenCacheAction,
   SUM(ConsumedQuantity) AS TotalTokens
-FROM focus_data_table
+FROM CostAndUsage
 WHERE ChargeCategory='Usage'
   AND ServiceCategory='AI and Machine Learning'
   AND ConsumedUnit='Tokens'
