@@ -28,7 +28,7 @@ The date the invoice was issued by the invoice issuer.
 | Constraint                 | Value                                           |
 | :------------------------- | :---------------------------------------------- |
 | Dataset                    | [Invoice Detail](#datamodel.invoicedetail)      |
-| Operating Model Conditions | Not applicable                                  |
+| Operating model conditions | Not applicable                                  |
 | Column type                | Dimension                                       |
 | Feature level              | Mandatory                                       |
 | Allows nulls               | True                                            |

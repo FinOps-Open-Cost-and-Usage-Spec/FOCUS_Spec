@@ -35,7 +35,7 @@ The name of the entity that made the *resources* or *services* available for pur
 | Constraint                 | Value                                     |
 | :------------------------- | :---------------------------------------- |
 | Dataset                    | [Cost and Usage](#datamodel.costandusage) |
-| Operating Model Conditions | Not applicable                            |
+| Operating model conditions | Not applicable                            |
 | Column type                | Dimension                                 |
 | Feature level              | Mandatory                                 |
 | Allows nulls               | False                                     |

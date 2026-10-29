@@ -126,7 +126,7 @@ AI agents generating or reviewing content MUST act as strict technical editors e
 
 * **Mathematical & Schema Accuracy:** AI reviewers MUST rigorously calculate, parse, and verify all data within examples (especially JSON snippets and tables). Flag any mathematical inconsistencies or hallucinated data.
 * **JSON Formatting:** JSON blocks MUST use double quotation marks for keys. Verify that the JSON is structurally valid.
-* **Example Disclaimer:** Top-level sections with examples and no normative requirements MUST begin with: `> Note: The following section is informative and non-normative. It does not define requirements.` Enforce ONLY on Level-2 headings in `spec.md` or major section overview files (e.g., `appendix_overview.md`). Ignore nested .md files.
+* **Informative Status Note:** Each of `specification/overview.md`, `specification/supported_features/supported_features_overview.md`, and `specification/appendix/appendix_overview.md` MUST include an informative, non-normative status note directly below its first heading. Each note MUST refer only to the section identified by that heading. The note MUST NOT be placed under the subheadings of that heading, including a heading originating from a nested file. The Appendix note MUST exclude the Rounding Variance Tolerance appendix entry, and the Conventions section in `specification/overview.md` MUST identify the same headings and exceptions as the notes. Its placement, scope, and wording follow Informative Status Note, Informative Status Note Scope, and the example note in the [Editorial Guidelines](guidelines/contributors/editorial-guidelines.md).
 
 ### File Organization
 

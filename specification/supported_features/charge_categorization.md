@@ -37,7 +37,7 @@ SELECT
   CommitmentDiscountQuantity,
   ChargeFrequency,
   SUM(BilledCost) AS TotalBilledCost
-FROM focus_data_table
+FROM CostAndUsage
 WHERE ChargePeriodStart >= ? AND ChargePeriodEnd < ?
   AND ChargeCategory = 'Purchase'
   AND CommitmentDiscountId IS NOT NULL
@@ -61,7 +61,7 @@ SELECT
   ServiceCategory,
   ServiceName,
   SUM(BilledCost) AS TotalBilledCost
-FROM focus_data_table
+FROM CostAndUsage
 WHERE BillingPeriodStart >= ? AND BillingPeriodEnd < ?
   AND ChargeClass = 'Correction'
 GROUP BY
@@ -82,7 +82,7 @@ SELECT
   CommitmentDiscountType,
   ChargeFrequency,
   SUM(BilledCost) AS TotalBilledCost
-FROM focus_data_table
+FROM CostAndUsage
 WHERE BillingPeriodStart  >= ? AND BillingPeriodStart < ?
   AND ChargeFrequency = 'Recurring'
   AND CommitmentDiscountId IS NOT NULL

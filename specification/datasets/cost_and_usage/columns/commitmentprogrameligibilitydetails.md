@@ -11,7 +11,7 @@ CommitmentProgramEligibilityDetails MUST adhere to the following requirements:
 * CommitmentProgramEligibilityDetails MUST be of type JSON Object (serialized as a String where necessary).
 * CommitmentProgramEligibilityDetails MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * CommitmentProgramEligibilityDetails MUST conform to [JsonObjectFormat](#attributes.jsonobjectformat) requirements.
-* CommitmentProgramEligibilityDetails MUST NOT be null when a charge is eligible for a [*commitment program*](#glossary:commitment-program), regardless of whether a [*commitment*](#glossary:commitment) was actually applied to the charge.
+* CommitmentProgramEligibilityDetails MUST NOT be null when a charge is eligible for a *commitment program*, regardless of whether a *commitment* was actually applied to the charge.
 * CommitmentProgramEligibilityDetails MUST NOT reflect restrictions (e.g., transient account configurations, quotas) that might temporarily prevent purchase or participation in a *commitment program*.
 * CommitmentProgramEligibilityDetails MUST include all publicly available *commitment programs* for which the usage is eligible.
 * CommitmentProgramEligibilityDetails MAY include negotiated *commitment programs* when the usage is eligible and the program is not broadly applicable across the service provider's service catalog.
@@ -58,7 +58,7 @@ To facilitate querying data across allocations and across service providers, a d
 Here is a basic example of the object format.
 
 * For more detailed examples, please see this column's entry in the JSON Object Examples appendix entry [here](#appendix.examples:jsonobject.examples:commitmentprogrameligibilitydetails).
-* For the JSON schema, please see [Commitment Program Eligibility Details Object Schema](#schemas.costandusage.commitmentprogrameligibilitydetailsobjectschema).
+* For the JSON schema, please see Commitment Program Eligibility Details Object Schema.
 
 ``` json
 {
@@ -96,7 +96,7 @@ The types of *commitment programs* available for a specific usage row.
 | Constraint                 | Value                                              |
 | :------------------------- | :------------------------------------------------- |
 | Dataset                    | [Cost and Usage](#datamodel.costandusage)          |
-| Operating Model Conditions | [Includes Commitment Programs](#operatingmodelconditions.includescommitmentprograms) |
+| Operating model conditions | [Includes Commitment Programs](#operatingmodelconditions.includescommitmentprograms) |
 | Column type                | Dimension                                          |
 | Feature level              | Conditional                                        |
 | Allows nulls               | True                                               |

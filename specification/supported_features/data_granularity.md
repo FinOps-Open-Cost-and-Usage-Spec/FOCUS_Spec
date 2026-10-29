@@ -29,7 +29,7 @@ SELECT
   ChargePeriodEnd,
   ResourceId,
   SUM(EffectiveCost)
-FROM focus_data_table
+FROM CostAndUsage
 Group by
   ChargePeriodStart,
   ChargePeriodEnd,

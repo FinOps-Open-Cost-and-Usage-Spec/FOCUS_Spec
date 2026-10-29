@@ -11,7 +11,7 @@ AllocatedServiceName MUST adhere to the following requirements:
 * AllocatedServiceName MUST adhere to the following nullability requirements:
   * AllocatedServiceName MUST be null when [AllocatedMethodId](#datamodel.costandusage.allocatedmethodid) is null.
   * AllocatedServiceName MUST NOT be null when AllocatedMethodId is not null.
-* AllocatedServiceName SHOULD match the [ServiceName](#datamodel.costandusage.servicename) used by the data generator for the equivalent *service*.
+* AllocatedServiceName SHOULD match the ServiceName used by the data generator for the equivalent *service*.
 
 ## Column ID
 
@@ -30,7 +30,7 @@ The display name of the *service* to which cost is allocated in data generator-c
 | Constraint                 | Value                                     |
 | :------------------------- | :---------------------------------------- |
 | Dataset                    | [Cost and Usage](#datamodel.costandusage) |
-| Operating Model Conditions | [Includes Split Cost Allocation](#operatingmodelconditions.includessplitcostallocation) |
+| Operating model conditions | [Includes Split Cost Allocation](#operatingmodelconditions.includessplitcostallocation) |
 | Column type                | Dimension                                 |
 | Feature level              | Conditional                               |
 | Allows nulls               | True                                      |

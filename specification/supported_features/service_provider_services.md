@@ -26,7 +26,7 @@ SELECT
   ServiceName,
   SUM(BilledCost) AS TotalBilledCost,
   SUM(EffectiveCost) AS TotalEffectiveCost
-FROM focus_data_table
+FROM CostAndUsage
 WHERE ServiceName = ?
   AND BillingPeriodStart >= ? AND BillingPeriodStart < ?
 GROUP BY
