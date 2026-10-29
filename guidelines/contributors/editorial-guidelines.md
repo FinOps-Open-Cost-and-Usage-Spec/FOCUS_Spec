@@ -303,11 +303,11 @@ To ensure consistent language when describing relationships and evaluations betw
 
 * **Valid Examples:** Examples MUST reflect valid combinations of values defined in the specification.
 
-> **Note:** Validation of example correctness may require schema, glossary, or domain-specific review beyond editorial validation.
+  > **Note:** Validation of example correctness may require schema, glossary, or domain-specific review beyond editorial validation.
 
 * **No New Terminology:** Examples MUST NOT introduce terminology that is not defined in the specification.
 
-> **Note:** Validation of terminology consistency may require comparison against the approved glossary and specification entity definitions.
+  > **Note:** Validation of terminology consistency may require comparison against the approved glossary and specification entity definitions.
 
 * **Informative Examples:** Examples MUST be considered informative and non-normative, and MUST NOT define requirements.
 
@@ -315,7 +315,11 @@ To ensure consistent language when describing relationships and evaluations betw
   * `specification/overview.md`
   * `specification/supported_features/supported_features_overview.md`
   * `specification/appendix/appendix_overview.md`
-* **Informative Status Note Scope:** Each note MUST refer only to the section identified by that heading (e.g., "The Appendix"). The note MUST NOT be placed under the subheadings of that heading, including a heading originating from a nested file. The Conventions section in `specification/overview.md` MUST identify the same headings and exceptions as the corresponding notes.
+
+* **Informative Status Note Scope:**
+  * Each note MUST refer only to the section identified by that heading (e.g., "The Appendix").
+  * The note MUST NOT be placed under the subheadings of that heading, including a heading originating from a nested file.
+  * The Conventions section in `specification/overview.md` MUST identify the same headings and exceptions as the corresponding notes.
 
 * **Example** (Markdown, illustrative):
 
