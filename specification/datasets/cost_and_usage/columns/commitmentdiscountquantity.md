@@ -44,7 +44,7 @@ The amount of a *commitment discount* purchased or accounted for in *commitment 
 | Constraint                 | Value                                       |
 | :------------------------- | :------------------------------------------ |
 | Dataset                    | [Cost and Usage](#datamodel.costandusage)   |
-| Operating Model Conditions | [Includes Commitment Discounts](#operatingmodelconditions.includescommitmentdiscounts) |
+| Operating model conditions | [Includes Commitment Discounts](#operatingmodelconditions.includescommitmentdiscounts) |
 | Column type                | Metric                                      |
 | Feature level              | Conditional                                 |
 | Allows nulls               | True                                        |

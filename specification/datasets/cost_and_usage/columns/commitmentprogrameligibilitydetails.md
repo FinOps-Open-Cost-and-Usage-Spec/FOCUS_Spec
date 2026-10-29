@@ -96,7 +96,7 @@ The types of *commitment programs* available for a specific usage row.
 | Constraint                 | Value                                              |
 | :------------------------- | :------------------------------------------------- |
 | Dataset                    | [Cost and Usage](#datamodel.costandusage)          |
-| Operating Model Conditions | [Includes Commitment Programs](#operatingmodelconditions.includescommitmentprograms) |
+| Operating model conditions | [Includes Commitment Programs](#operatingmodelconditions.includescommitmentprograms) |
 | Column type                | Dimension                                          |
 | Feature level              | Conditional                                        |
 | Allows nulls               | True                                               |

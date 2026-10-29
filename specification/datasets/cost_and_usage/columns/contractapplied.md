@@ -115,7 +115,7 @@ A set of properties that associate a *charge* with one or more *contract commitm
 | Constraint                 | Value                                              |
 | :------------------------- | :------------------------------------------------- |
 | Dataset                    | [Cost and Usage](#datamodel.costandusage)          |
-| Operating Model Conditions | [Includes Contract Commitments](#operatingmodelconditions.includescontractcommitments) |
+| Operating model conditions | [Includes Contract Commitments](#operatingmodelconditions.includescontractcommitments) |
 | Column type                | Dimension / Metric                                 |
 | Feature level              | Conditional                                        |
 | Allows nulls               | True                                               |

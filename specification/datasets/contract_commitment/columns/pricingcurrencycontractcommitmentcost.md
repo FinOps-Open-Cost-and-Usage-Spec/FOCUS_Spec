@@ -30,7 +30,7 @@ The monetary value of the *contract commitment* in the Pricing Currency.
 | Constraint                 | Value                                                |
 | :------------------------- | :--------------------------------------------------- |
 | Dataset                    | [Contract Commitment](#datamodel.contractcommitment) |
-| Operating Model Conditions | [Includes Pricing-Billing Currency Differences](#operatingmodelconditions.includespricing-billingcurrencydifferences) |
+| Operating model conditions | [Includes Pricing-Billing Currency Differences](#operatingmodelconditions.includespricing-billingcurrencydifferences) |
 | Column type                | Metric                                               |
 | Feature level              | Conditional                                          |
 | Allows nulls               | True                                                 |

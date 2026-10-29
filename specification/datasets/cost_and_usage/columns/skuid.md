@@ -49,7 +49,7 @@ Service-provider-specified unique identifier that represents a specific *SKU* (e
 | Constraint                 | Value                                     |
 | :------------------------- | :---------------------------------------- |
 | Dataset                    | [Cost and Usage](#datamodel.costandusage) |
-| Operating Model Conditions | [Includes Unit Pricing](#operatingmodelconditions.includesunitpricing) |
+| Operating model conditions | [Includes Unit Pricing](#operatingmodelconditions.includesunitpricing) |
 | Column type                | Dimension                                 |
 | Feature level              | Conditional                               |
 | Allows nulls               | True                                      |
