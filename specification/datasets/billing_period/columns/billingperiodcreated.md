@@ -9,7 +9,7 @@ BillingPeriodCreated MUST adhere to the following requirements:
 * BillingPeriodCreated MUST be of type Date/Time.
 * BillingPeriodCreated MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.
 * BillingPeriodCreated MUST NOT be null.
-* BillingPeriodCreated MUST represent the moment in time the [Billing Period](#datamodel.billingperiod) record was instantiated.
+* BillingPeriodCreated MUST represent the moment in time the BillingPeriod record was instantiated.
 
 ## Column ID
 

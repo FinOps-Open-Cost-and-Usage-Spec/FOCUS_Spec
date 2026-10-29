@@ -82,7 +82,7 @@ The specification for the Cost and Usage dataset defines a group of columns that
 
 ## Relationships<!--SkipTOC-->
 
-The Cost and Usage dataset can be joined to the Contract Commitment dataset through the use of the Contract Commitment ID.
+The Cost and Usage dataset can be joined to the [Contract Commitment](#datamodel.contractcommitment) dataset through the use of the [Contract Commitment ID](#datamodel.contractcommitment.contractcommitmentid).
 
 * In the Cost and Usage dataset, Contract Commitment ID is a property within a JSON object array provided in Contract Applied column.
 * In the Contract Commitment dataset, Contract Commitment ID is a column.
@@ -179,13 +179,13 @@ CostAndUsage MUST adhere to the following requirements:
 * CostAndUsage MUST conform to [DatasetCompleteness](#attributes.datasetcompleteness) requirements.
 * CostAndUsage MUST conform to [DatasetConfiguration](#attributes.datasetconfiguration) requirements.
 * CostAndUsage MUST conform to [DeliveryHandling](#attributes.deliveryhandling) requirements.
-* CostAndUsage MUST include *charges* representing unused portions of a [*commitment*](#glossary:commitment) when the *commitment* is not fully utilized.
+* CostAndUsage MUST include [*charges*](#glossary:charge) representing unused portions of a [*commitment*](#glossary:commitment) when the *commitment* is not fully utilized.
 * CostAndUsage MUST include separate *charges* representing discounted and non-discounted portions when a discount applies to only a portion of the originally incurred *charge*.
 * When the *operating model* includes split cost allocation, CostAndUsage MUST adhere to the following requirements:
   * CostAndUsage MUST have its split cost allocation method documented and accessible to practitioners.
   * CostAndUsage SHOULD offer split cost allocation on an opt-in basis.
   * CostAndUsage MAY contain records for concepts not related to resource usage, when it aligns with the documented split cost allocation method.
-  * CostAndUsage MAY contain records for unused or unallocated usage from the *origin charge* as separate *allocated charges*, when it aligns with the documented split cost allocation method.
+  * CostAndUsage MAY contain records for unused or unallocated usage from the [*origin charge*](#glossary:origin-charge) as separate [*allocated charges*](#glossary:allocated-charge), when it aligns with the documented split cost allocation method.
   * CostAndUsage MAY contain *allocated charges* with apportioned costs for unused or unallocated usage, when it aligns with the documented split cost allocation method.
 * CostAndUsage SHOULD reflect all applied discounts in *charges* they pertain to.
 * CostAndUsage SHOULD NOT represent applied discounts as separate negating or offsetting *charges*.
@@ -194,9 +194,9 @@ CostAndUsage MUST adhere to the following requirements:
 * CostAndUsage *FOCUS columns* MUST conform to [NullHandling](#attributes.nullhandling) requirements.
 * CostAndUsage *custom columns* MUST conform to [CustomColumnHandling](#attributes.customcolumnhandling) requirements.
 * When the *operating model* includes requester attribution, CostAndUsage documentation MUST adhere to the following requirements:
-  * CostAndUsage documentation MUST include the use cases in which [CredentialId](#datamodel.costandusage.credentialid) is not null.
-  * CostAndUsage documentation MUST include the use cases in which [PrincipalId](#datamodel.costandusage.principalid) is not null.
-  * CostAndUsage documentation MUST include the use cases in which [RequesterDetails](#datamodel.costandusage.requesterdetails) is not null.
+  * CostAndUsage documentation MUST include the use cases in which CredentialId is not null.
+  * CostAndUsage documentation MUST include the use cases in which PrincipalId is not null.
+  * CostAndUsage documentation MUST include the use cases in which RequesterDetails is not null.
 
 ## Dataset ID<!--SkipTOC-->
 

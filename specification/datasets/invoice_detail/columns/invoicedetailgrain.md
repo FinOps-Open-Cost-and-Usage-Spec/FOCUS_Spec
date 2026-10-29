@@ -13,9 +13,9 @@ InvoiceDetailGrain MUST adhere to the following requirements:
 * InvoiceDetailGrain MUST conform to [KeyValueFormat](#attributes.key-valueformat) requirements.
 * InvoiceDetailGrain MUST NOT be null when one or more properties uniquely define the granularity of the invoice line item.
 * InvoiceDetailGrain MUST contain the set of all properties that uniquely define the granularity of the invoice line item.
-* InvoiceDetailGrain SHOULD use the applicable FOCUS-defined Invoice Detail Grain properties listed below to represent the granularity of the invoice line item.
-* InvoiceDetailGrain MUST include all custom Invoice Detail Grain properties that are applicable to the granularity of the invoice line item when there is no equivalent FOCUS-defined property.
-* InvoiceDetailGrain property keys SHOULD conform to [PascalCase](#glossary:pascalcase) format.
+* InvoiceDetailGrain SHOULD use the applicable FOCUS-defined InvoiceDetailGrain properties listed below to represent the granularity of the invoice line item.
+* InvoiceDetailGrain MUST include all custom InvoiceDetailGrain properties that are applicable to the granularity of the invoice line item when there is no equivalent FOCUS-defined property.
+* InvoiceDetailGrain property keys SHOULD conform to [*PascalCase*](#glossary:pascalcase) format.
 * InvoiceDetailGrain property keys MUST begin with the string "x_" unless it is a FOCUS-defined property.
 * FOCUS-defined InvoiceDetailGrain properties MUST adhere to the following requirements:
   * Property key MUST match the spelling and casing specified for the FOCUS-defined property.

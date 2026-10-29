@@ -31,7 +31,7 @@ The Invoice Detail dataset is a transactional dataset that represents the financ
 
 ## Relationships<!--SkipTOC-->
 
-The Invoice Detail dataset can be joined to the [Cost and Usage](#datamodel.costandusage) dataset through Invoice Issuer Name, Invoice ID, and (optionally) Invoice Detail ID. Take note: one or both datasets will need to be aggregated in order to facilitate any comparison.
+The Invoice Detail dataset can be joined to the Cost and Usage dataset through Invoice Issuer Name, Invoice ID, and (optionally) Invoice Detail ID. Take note: one or both datasets will need to be aggregated in order to facilitate any comparison.
 
 The timing of Invoice ID and Invoice Detail ID availability in Cost and Usage varies across data generators. Some data generators populate these values while the [*billing period*](#glossary:billing-period) is still open, while others do not populate them until after the *billing period* is closed and invoices have been issued.
 
@@ -75,7 +75,7 @@ InvoiceDetail MUST adhere to the following requirements:
 * InvoiceDetail MUST conform to [DatasetConfiguration](#attributes.datasetconfiguration) requirements.
 * InvoiceDetail MUST conform to [DeliveryHandling](#attributes.deliveryhandling) requirements.
 * InvoiceDetail MUST represent all invoice line items with a non-zero BilledCost on any invoice associated with a BillingAccountId.
-* InvoiceDetail [*FOCUS columns*](#glossary:FOCUS-column) MUST conform to [FocusColumnHandling](#attributes.focuscolumnhandling) requirements.
+* InvoiceDetail *FOCUS columns* MUST conform to [FocusColumnHandling](#attributes.focuscolumnhandling) requirements.
 * InvoiceDetail *FOCUS columns* MUST conform to [NullHandling](#attributes.nullhandling) requirements.
 * InvoiceDetail *custom columns* MUST conform to [CustomColumnHandling](#attributes.customcolumnhandling) requirements.
 * InvoiceDetail documentation MUST adhere to the following requirements:

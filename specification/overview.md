@@ -15,9 +15,9 @@ This project is supported by the [FinOps Foundation][FODO]. This work initially 
 This specification is designed to be used by three major groups:
 
 * Billing data generators: Entities that present consumption-based billing information related to infrastructure and *service providers*, such as (but not limited to):
-  * [Cloud Service Providers (CSPs)](#glossary:cloud-service-provider)
+  * [*Cloud Service Providers (CSPs)*](#glossary:cloud-service-provider)
   * Software as a Service (SaaS) platforms
-  * [Managed Service Providers (MSPs)](#glossary:managed-service-provider)
+  * [*Managed Service Providers (MSPs)*](#glossary:managed-service-provider)
   * Internal infrastructure and service platforms
 * FinOps tool *providers*: Organizations that provide tools to assist with FinOps
 * FinOps practitioners: Organizations and individuals consuming billing data for doing FinOps
@@ -96,7 +96,7 @@ Feature level is designated based on the following criteria described in the dat
 
 ## Preview
 
-*Preview* is a status for a [*FOCUS dataset*](#glossary:FOCUS-dataset) published in a version of FOCUS so implementers can build it and report what they find. A dataset with this status, called a preview, may change based on that feedback. The release itself is not a preview.
+[*Preview*](#glossary:preview) is a status for a [*FOCUS dataset*](#glossary:FOCUS-dataset) published in a version of FOCUS so implementers can build it and report what they find. A dataset with this status, called a preview, may change based on that feedback. The release itself is not a preview.
 
 * A new dataset is published as a preview by default in the first version that includes it.
 * A preview is part of the published specification.

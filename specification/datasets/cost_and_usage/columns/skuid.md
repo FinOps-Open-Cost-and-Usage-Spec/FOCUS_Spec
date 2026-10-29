@@ -1,6 +1,6 @@
 # SKU ID
 
-A SKU ID is a service-provider-specified unique identifier that represents a specific [*SKU*](#glossary:sku). *SKUs* are quantifiable goods or service offerings in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) that represent specific functionality and technical specifications. Examples of *SKUs* include but are not limited to:
+A SKU ID is a service-provider-specified unique identifier that represents a specific [*SKU*](#glossary:sku). *SKUs* are quantifiable goods or service offerings in a [Cost and Usage](#datamodel.costandusage) [*FOCUS dataset*](#glossary:FOCUS-dataset) that represent specific functionality and technical specifications. Examples of *SKUs* include but are not limited to:
 
 * A product license that is purchased or subscribed to.
 * Usage of a deployed resource from direct user interaction (e.g., request count).
