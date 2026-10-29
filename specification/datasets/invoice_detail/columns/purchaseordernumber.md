@@ -28,7 +28,7 @@ The unique customer-issued identifier for tracking the lifecycle of a purchase.
 | Constraint                 | Value                                      |
 | :------------------------- | :----------------------------------------- |
 | Dataset                    | [Invoice Detail](#datamodel.invoicedetail) |
-| Operating Model Conditions | [Includes Purchase Order Numbers](#operatingmodelconditions.includespurchaseordernumbers) |
+| Operating model conditions | [Includes Purchase Order Numbers](#operatingmodelconditions.includespurchaseordernumbers) |
 | Column type                | Dimension                                  |
 | Feature level              | Conditional                                |
 | Allows nulls               | True                                       |

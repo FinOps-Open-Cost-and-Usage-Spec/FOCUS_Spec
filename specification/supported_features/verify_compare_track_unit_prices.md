@@ -36,7 +36,7 @@ SELECT DISTINCT
   BillingCurrency,
   ListUnitPrice,
   ContractedUnitPrice
-FROM focus_data_table
+FROM CostAndUsage
 WHERE
   SkuPriceId = ?
   AND ChargePeriodStart >= ?

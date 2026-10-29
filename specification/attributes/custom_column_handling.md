@@ -13,7 +13,7 @@ Each column describes an aspect of the record, including but not limited to:
 * Why the record exists or has specific values.
 * How values are calculated or determined.
 
-These additional columns enable deeper analysis and provide more detailed information that may not be fully captured by standard [*FOCUS columns*](#glossary:FOCUS-column). See the [Dataset Completeness](#attributes.datasetcompleteness) attribute for requirements on what *custom columns* to include.
+These additional columns enable deeper analysis and provide more detailed information that may not be fully captured by standard *FOCUS columns*. See the [Dataset Completeness](#attributes.datasetcompleteness) attribute for requirements on what *custom columns* to include.
 
 ## Requirements
 

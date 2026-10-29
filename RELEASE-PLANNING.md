@@ -30,6 +30,21 @@ This section outlines the planned release schedule and key milestones for the FO
     </ul>
         </td>
     </tr>
+    <tr>
+        <td>v1.6</td>
+        <td>Jun 2027</td>
+        <td>
+<strong>Core scope</strong>
+    <ul>
+      <li>Make the SKU Price dataset generally available</li>
+      <li>Add Artificial Intelligence (AI) dimensions, a short list chosen from practitioner use cases</li>
+    </ul>
+  <strong>Champion scope</strong>
+    <ul>
+      <li>Added during development as capacity allows</li>
+    </ul>
+        </td>
+    </tr>
 </table>
 
 ### Scope of Previous Releases
@@ -168,6 +183,206 @@ This section outlines the planned release schedule and key milestones for the FO
         </td>
     </tr>
 </table>
+
+### Estimated Timeline for v1.7
+
+This table shows approximate milestones and dates for FOCUS Release v1.7, for illustration only. It follows the v1.6 pattern, and the dates are confirmed when v1.7 scoping starts (25 Mar 2027).
+
+<table>
+  <thead>
+    <tr>
+      <th>Final Date</th>
+      <th>Interim Date</th>
+      <th>Milestone</th>
+      <th>Comments</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="2"><strong>25-Mar-27 to 15-Apr-27</strong></td>
+      <td><strong>Thu Mar 25</strong></td>
+      <td>1.7 Scope Starts</td>
+      <td rowspan="2">
+        3 weeks.<br/>
+        Core scope definition and prioritization for v1.7.<br/>
+        Runs in parallel with v1.6 Final Consistency Review.
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Thu Apr 15</strong></td>
+      <td>1.7 Core Scope Ends</td>
+    </tr>
+    <tr>
+      <td rowspan="6"><strong>15-Apr-27 to 23-Sep-27</strong></td>
+      <td><strong>Thu Apr 15</strong></td>
+      <td>1.7 Core Development Starts</td>
+      <td rowspan="6">
+        23 weeks.<br/>
+        Core development begins when Core scope ends (15 Apr 2027). Champion scope is added during development as capacity allows.<br/>
+        Interim milestones occur on Thursdays (Members meeting cadence).
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Thu Jul 29</strong><br/>(15 weeks)</td>
+      <td>Deadline to Create PR Drafts<br/>Deadline to Approve Guideline Changes (AGENTS.md and files in guidelines/)</td>
+    </tr>
+    <tr>
+      <td><strong>Thu Aug 12</strong><br/>(2 weeks)</td>
+      <td>Deadline to Complete PR Drafts</td>
+    </tr>
+    <tr>
+      <td><strong>Thu Aug 26</strong><br/>(2 weeks)</td>
+      <td>Deadline to Start TF Review</td>
+    </tr>
+    <tr>
+      <td><strong>Thu Sep 9</strong><br/>(2 weeks)</td>
+      <td>Deadline to Start Member Review</td>
+    </tr>
+    <tr>
+      <td><strong>Thu Sep 23</strong><br/>(2 weeks)</td>
+      <td>Deadline to Approve Member Review PRs</td>
+    </tr>
+    <tr>
+      <td><strong>23-Sep-27 to 14-Oct-27</strong></td>
+      <td>(3 weeks)</td>
+      <td>Start / End Final Consistency Review v1.7</td>
+      <td>
+        Fixed three-week consistency review period (Thursday-to-Thursday). <br/> End of Consistency Review is followed by baseline preparation time for IPR Review.
+      </td>
+    </tr>
+    <tr>
+      <td><strong>19-Oct-27 to 17-Nov-27</strong></td>
+      <td></td>
+      <td>Start / End IPR Review v1.7</td>
+      <td>
+        Start of IPR Review begins after baseline prep (5 days).<br/>
+        IPR Review duration is at least 30 days.<br/>
+        End of IPR Review completes at least 3 days before Final Approval (approval package preparation).
+      </td>
+    </tr>
+    <tr>
+      <td><strong>2-Dec-27</strong></td>
+      <td></td>
+      <td>Working Group (WG) Approval of v1.7</td>
+      <td>WG approves the v1.7 Release Candidate.</td>
+    </tr>
+    <tr>
+      <td><strong>2-Dec-27</strong></td>
+      <td></td>
+      <td>SC Ratification of v1.7</td>
+      <td>Steering Committee ratifies the v1.7 release on the same day.</td>
+    </tr>
+    <tr>
+      <td><strong>Dec-27</strong></td>
+      <td></td>
+      <td>Public Announcement</td>
+      <td>Final publication date to be confirmed at a later stage.</td>
+    </tr>
+  </tbody>
+</table>
+
+### Estimated Timeline for v1.6
+
+This table displays key milestones and dates related to the development of FOCUS Release v1.6.
+
+<table>
+  <thead>
+    <tr>
+      <th>Final Date</th>
+      <th>Interim Date</th>
+      <th>Milestone</th>
+      <th>Comments</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="2"><strong>8-Oct-26 to 29-Oct-26</strong></td>
+      <td><strong>Thu Oct 8</strong></td>
+      <td>1.6 Scope Starts</td>
+      <td rowspan="2">
+        3 weeks.<br/>
+        Core scope definition and prioritization for v1.6.<br/>
+        Runs in parallel with v1.5 Final Consistency Review.
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Thu Oct 29</strong></td>
+      <td>1.6 Core Scope Ends</td>
+    </tr>
+    <tr>
+      <td rowspan="6"><strong>29-Oct-26 to 25-Mar-27</strong></td>
+      <td><strong>Thu Oct 29</strong></td>
+      <td>1.6 Core Development Starts</td>
+      <td rowspan="6">
+        21 weeks: 19 working weeks plus a two-week end-of-year break (21 Dec 2026 to 4 Jan 2027).<br/>
+        Core development begins when Core scope ends (29 Oct 2026). Champion scope is added during development as capacity allows.<br/>
+        Interim milestones occur on Thursdays (Members meeting cadence).
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Thu Jan 28</strong><br/>(13 weeks, 11 working)</td>
+      <td>Deadline to Create PR Drafts<br/>Deadline to Approve Guideline Changes (AGENTS.md and files in guidelines/)</td>
+    </tr>
+    <tr>
+      <td><strong>Thu Feb 11</strong><br/>(2 weeks)</td>
+      <td>Deadline to Complete PR Drafts</td>
+    </tr>
+    <tr>
+      <td><strong>Thu Feb 25</strong><br/>(2 weeks)</td>
+      <td>Deadline to Start TF Review</td>
+    </tr>
+    <tr>
+      <td><strong>Thu Mar 11</strong><br/>(2 weeks)</td>
+      <td>Deadline to Start Member Review</td>
+    </tr>
+    <tr>
+      <td><strong>Thu Mar 25</strong><br/>(2 weeks)</td>
+      <td>Deadline to Approve Member Review PRs</td>
+    </tr>
+    <tr>
+      <td><strong>25-Mar-27 to 15-Apr-27</strong></td>
+      <td>(3 weeks)</td>
+      <td>Start / End Final Consistency Review v1.6</td>
+      <td>
+        Fixed three-week consistency review period (Thursday-to-Thursday). <br/> End of Consistency Review is followed by baseline preparation time for IPR Review.
+      </td>
+    </tr>
+    <tr>
+      <td><strong>22-Apr-27 to 21-May-27</strong></td>
+      <td></td>
+      <td>Start / End IPR Review v1.6</td>
+      <td>
+        Start of IPR Review begins after baseline prep (1 week).<br/>
+        IPR Review duration is at least 30 days.<br/>
+        End of IPR Review completes at least 3 days before Final Approval (approval package preparation).
+      </td>
+    </tr>
+    <tr>
+      <td><strong>27-May-27</strong></td>
+      <td></td>
+      <td>Working Group (WG) Approval of v1.6</td>
+      <td>WG approves the v1.6 Release Candidate.</td>
+    </tr>
+    <tr>
+      <td><strong>27-May-27</strong></td>
+      <td></td>
+      <td>SC Ratification of v1.6</td>
+      <td>Steering Committee ratifies the v1.6 release on the same day.</td>
+    </tr>
+    <tr>
+      <td><strong>9-Jun-27</strong></td>
+      <td></td>
+      <td>Public Announcement</td>
+      <td>Tokenomicon FinOps X</td>
+    </tr>
+  </tbody>
+</table>
+
+Notes on the v1.6 timeline:
+
+* **Guideline changes:** Changes to `AGENTS.md` or to files in `guidelines/` apply to v1.6 when they are approved by the Deadline to Approve Guideline Changes (28 Jan 2027). A change not approved by that date goes to Member Review after the v1.6 Final Consistency Review ends, and it applies to v1.7.
+* **Sample data:** A PR that needs sample data or worked examples comes out of draft only when its representative examples are in place. Its complete set of examples is in place by the Deadline to Start TF Review (25 Feb 2027).
+* **Ratification date:** WG Approval and SC Ratification of v1.6 are on 27 May 2027, ahead of Tokenomicon FinOps X (7 to 10 Jun 2027), so ratification does not compete with conference preparation. One more week of v1.6 development would move the v1.6 Final Consistency Review a week later. v1.7 scoping runs in parallel with that review, so v1.7 would start a week later too, and the v1.7 timeline would have to absorb that week.
 
 ### Estimated Timeline for v1.5
 

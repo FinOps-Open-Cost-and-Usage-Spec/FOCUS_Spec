@@ -1,6 +1,6 @@
 # Billing Currency
 
-[*Billing currency*](#glossary:billing-currency) is an identifier that represents the currency that a [*charge*](#glossary:charge) for [*resources*](#glossary:resource) or [*services*](#glossary:service) was billed in. Billing Currency is commonly used in scenarios where costs need to be grouped or aggregated.
+[*Billing Currency*](#glossary:billing-currency) is an identifier that represents the currency that a [*charge*](#glossary:charge) for [*resources*](#glossary:resource) or [*services*](#glossary:service) was billed in. Billing Currency is commonly used in scenarios where costs need to be grouped or aggregated.
 
 ## Requirements
 
@@ -30,7 +30,7 @@ Represents the currency that a *charge* was billed in.
 | Constraint                 | Value                                         |
 | :------------------------- | :-------------------------------------------- |
 | Dataset                    | [Cost and Usage](#datamodel.costandusage)     |
-| Operating Model Conditions | Not applicable                                |
+| Operating model conditions | Not applicable                                |
 | Column type                | Dimension                                     |
 | Feature level              | Mandatory                                     |
 | Allows nulls               | False                                         |

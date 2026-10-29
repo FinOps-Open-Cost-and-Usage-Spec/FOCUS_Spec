@@ -1,4 +1,4 @@
-# PreviousColumnName
+# Previous Column Name
 
 The PreviousColumnName field indicates that on that schema the column where the key is included was renamed.
 

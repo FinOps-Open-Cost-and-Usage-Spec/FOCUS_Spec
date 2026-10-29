@@ -32,7 +32,7 @@ The *national* or *consumption currency* denomination that the [Contract Commitm
 | Constraint                 | Value                                                |
 | :------------------------- | :--------------------------------------------------- |
 | Dataset                    | [Contract Commitment](#datamodel.contractcommitment) |
-| Operating Model Conditions | [Includes Pricing-Billing Currency Differences](#operatingmodelconditions.includespricing-billingcurrencydifferences) |
+| Operating model conditions | [Includes Pricing-Billing Currency Differences](#operatingmodelconditions.includespricing-billingcurrencydifferences) |
 | Column type                | Dimension                                            |
 | Feature level              | Conditional                                          |
 | Allows nulls               | False                                                |
