@@ -45,4 +45,4 @@ The PricingCurrency-denominated equivalent of Effective Cost, representing the c
 
 ## Version Introduced
 
-1.2
+GA: 1.2

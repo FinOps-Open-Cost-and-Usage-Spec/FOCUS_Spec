@@ -39,4 +39,4 @@ The display name of the object to which cost is allocated in data generator-calc
 
 ## Version Introduced
 
-1.3
+GA: 1.3

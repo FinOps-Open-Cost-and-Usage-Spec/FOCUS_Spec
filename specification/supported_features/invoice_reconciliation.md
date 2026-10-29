@@ -97,4 +97,4 @@ GROUP BY InvoiceId
 
 ## Version Introduced
 
-1.4
+GA: 1.4

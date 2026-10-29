@@ -41,4 +41,4 @@ The name of the entity that provides the *contract commitment*.
 
 ## Version Introduced
 
-1.4
+GA: 1.4

@@ -45,4 +45,4 @@ Indicates whether the *commitment discount* identified in the CommitmentDiscount
 
 ## Version Introduced
 
-1.0-preview
+Preview: 1.0-preview · GA: 1.0

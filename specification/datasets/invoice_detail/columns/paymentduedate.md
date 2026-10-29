@@ -37,4 +37,4 @@ The date by which the payment for an invoice is expected to be received by the i
 
 ## Version Introduced
 
-1.4
+GA: 1.4

@@ -24,4 +24,4 @@ For an example of the FOCUS Data Generator metadata please refer to: [Data Gener
 
 ## Version Introduced
 
-1.0
+GA: 1.0

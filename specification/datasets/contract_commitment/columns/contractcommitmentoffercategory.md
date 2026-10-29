@@ -52,4 +52,4 @@ Indicates whether the pricing and terms of a *contract commitment* are based on 
 
 ## Version Introduced
 
-1.4
+GA: 1.4

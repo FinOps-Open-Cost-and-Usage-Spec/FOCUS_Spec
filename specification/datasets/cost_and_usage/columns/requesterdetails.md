@@ -154,4 +154,4 @@ A set of properties describing the *requester* associated with a *charge*.
 
 ## Version Introduced
 
-1.5
+GA: 1.5

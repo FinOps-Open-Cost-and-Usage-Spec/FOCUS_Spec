@@ -43,4 +43,4 @@ Represents the highest-level classification of a *contract commitment* based on 
 
 ## Version Introduced
 
-1.3
+GA: 1.3

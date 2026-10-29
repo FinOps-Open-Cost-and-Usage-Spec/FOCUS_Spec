@@ -38,4 +38,4 @@ The currency in which the invoice is paid.
 
 ## Version Introduced
 
-1.4
+GA: 1.4

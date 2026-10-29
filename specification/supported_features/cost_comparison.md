@@ -103,7 +103,7 @@ HAVING ABS(SUM(EffectiveCost) - SUM(BilledCost)) > 0.01
 
 ## Version Introduced
 
-0.5
+Preview: 0.5 · GA: 1.0
 
 ## Version Updated
 

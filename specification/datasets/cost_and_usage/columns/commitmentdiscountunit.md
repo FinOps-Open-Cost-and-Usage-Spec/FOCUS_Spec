@@ -45,4 +45,4 @@ The service-provider-specified measurement unit indicating how a service provide
 
 ## Version Introduced
 
-1.1
+GA: 1.1

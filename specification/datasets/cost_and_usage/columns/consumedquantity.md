@@ -43,4 +43,4 @@ The volume of a metered SKU associated with a *resource* or *service* used, base
 
 ## Version Introduced
 
-1.0
+GA: 1.0

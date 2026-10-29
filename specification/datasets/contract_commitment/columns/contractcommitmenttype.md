@@ -37,4 +37,4 @@ A service-provider-assigned name to identify the type of *contract commitment*.
 
 ## Version Introduced
 
-1.3
+GA: 1.3

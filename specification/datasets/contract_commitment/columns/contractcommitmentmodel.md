@@ -57,4 +57,4 @@ Represents the operational behavior and consumption flexibility of a *contract c
 
 ## Version Introduced
 
-1.4
+GA: 1.4
