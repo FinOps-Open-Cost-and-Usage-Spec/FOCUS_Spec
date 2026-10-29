@@ -9,7 +9,7 @@ BillingPeriodLastUpdated MUST adhere to the following requirements:
 * BillingPeriodLastUpdated MUST be of type Date/Time.
 * BillingPeriodLastUpdated MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.
 * BillingPeriodLastUpdated MUST NOT be null.
-* BillingPeriodLastUpdated MUST represent the most recent moment in time when any column value of the Billing Period record was created or modified.
+* BillingPeriodLastUpdated MUST represent the most recent moment in time when any column value of the BillingPeriod record was created or modified.
 * BillingPeriodLastUpdated MUST be greater than or equal to [BillingPeriodCreated](#datamodel.billingperiod.billingperiodcreated).
 
 ## Column ID
@@ -29,7 +29,7 @@ The timestamp when the Billing Period record was last updated.
 | Constraint                 | Value                                           |
 | :------------------------- | :---------------------------------------------- |
 | Dataset                    | [Billing Period](#datamodel.billingperiod)      |
-| Operating Model Conditions | Not applicable                                  |
+| Operating model conditions | Not applicable                                  |
 | Column type                | Dimension                                       |
 | Feature level              | Mandatory                                       |
 | Allows nulls               | False                                           |

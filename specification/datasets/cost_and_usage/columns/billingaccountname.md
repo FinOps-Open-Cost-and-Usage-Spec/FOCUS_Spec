@@ -29,7 +29,7 @@ The display name assigned to a *billing account*.
 | Constraint                 | Value                                     |
 | :------------------------- | :---------------------------------------- |
 | Dataset                    | [Cost and Usage](#datamodel.costandusage) |
-| Operating Model Conditions | Not applicable                            |
+| Operating model conditions | Not applicable                            |
 | Column type                | Dimension                                 |
 | Feature level              | Mandatory                                 |
 | Allows nulls               | True                                      |

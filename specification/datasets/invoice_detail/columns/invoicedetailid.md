@@ -28,7 +28,7 @@ The invoice-issuer-assigned identifier for an Invoice Detail record encapsulatin
 | Constraint                 | Value                                      |
 | :------------------------- | :----------------------------------------- |
 | Dataset                    | [Invoice Detail](#datamodel.invoicedetail) |
-| Operating Model Conditions | Not applicable                             |
+| Operating model conditions | Not applicable                             |
 | Column type                | Dimension                                  |
 | Feature level              | Mandatory                                  |
 | Allows nulls               | False                                      |

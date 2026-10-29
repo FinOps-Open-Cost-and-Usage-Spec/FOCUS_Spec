@@ -1,6 +1,6 @@
 # SKU ID
 
-A SKU ID is a service-provider-specified unique identifier that represents a specific [*SKU*](#glossary:sku). *SKUs* are quantifiable goods or service offerings in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) that represent specific functionality and technical specifications. Examples of *SKUs* include but are not limited to:
+A SKU ID is a service-provider-specified unique identifier that represents a specific [*SKU*](#glossary:sku). *SKUs* are quantifiable goods or service offerings in a [Cost and Usage](#datamodel.costandusage) [*FOCUS dataset*](#glossary:FOCUS-dataset) that represent specific functionality and technical specifications. Examples of *SKUs* include but are not limited to:
 
 * A product license that is purchased or subscribed to.
 * Usage of a deployed resource from direct user interaction (e.g., request count).
@@ -25,7 +25,7 @@ SkuId MUST adhere to the following requirements:
   * SkuId MUST be null when [ChargeCategory](#datamodel.costandusage.chargecategory) is "Tax".
   * SkuId MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#datamodel.costandusage.chargeclass) is not "Correction".
   * SkuId MAY be null in all other cases.
-* SkuId for a given *SKU* MUST adhere to the following requirements:
+* SkuId for a given [ServiceProviderName](#datamodel.costandusage.serviceprovidername) and *SKU* MUST adhere to the following requirements:
   * SkuId MUST remain consistent across [*billing accounts*](#glossary:billing-account) or contracts.
   * SkuId MUST remain consistent across [PricingCategory](#datamodel.costandusage.pricingcategory) values.
   * SkuId MUST remain consistent regardless of any other factors that might impact the price but do not affect the functionality of the *SKU*.
@@ -49,7 +49,7 @@ Service-provider-specified unique identifier that represents a specific *SKU* (e
 | Constraint                 | Value                                     |
 | :------------------------- | :---------------------------------------- |
 | Dataset                    | [Cost and Usage](#datamodel.costandusage) |
-| Operating Model Conditions | [Includes Unit Pricing](#operatingmodelconditions.includesunitpricing) |
+| Operating model conditions | [Includes Unit Pricing](#operatingmodelconditions.includesunitpricing) |
 | Column type                | Dimension                                 |
 | Feature level              | Conditional                               |
 | Allows nulls               | True                                      |
