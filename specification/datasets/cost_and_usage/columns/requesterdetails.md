@@ -97,7 +97,7 @@ RequesterDetails is not null when PrincipalId or CredentialId is not null, inclu
 Here is an example of the value format.
 
 * For more detailed examples, please see this column's entry in the JSON Object Examples appendix entry [here](#appendix.examples:jsonobject.examples:requesterdetails).
-* For the JSON schema, please see [Requester Details Value Schema](#schemas.costandusage.requesterdetailsvalueschema).
+* For the JSON schema, please see Requester Details Value Schema.
 
 ```json
 [
