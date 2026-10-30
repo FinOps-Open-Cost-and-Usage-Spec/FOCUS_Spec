@@ -119,7 +119,3 @@ GROUP BY
 ## Version Introduced
 
 0.5
-
-## Version Updated
-
-1.4
