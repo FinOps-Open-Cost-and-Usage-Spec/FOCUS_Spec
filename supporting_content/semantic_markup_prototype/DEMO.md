@@ -9,7 +9,7 @@
 >
 > The branch needs another update once both merge: bring it up to date with `working_draft`, rerun `convert_all.sh`, and refresh the counts in this guide and in CONVERSION.md.
 
-The branch is cut from `working_draft`. The whole specification is rewritten with semantic tags wherever the tags cover its content, and the real build (`make`) resolves those tags into today's links and formatting. What the tags do not cover keeps its hand-written markup, and both kinds coexist in one build. [CONVERSION.md](CONVERSION.md) reports the results of converting every file and lists the open questions.
+The branch is cut from `working_draft`. The whole specification is rewritten with semantic tags wherever the tags cover its content, and the real build (`make`) resolves those tags into today's links and formatting. What the tags do not cover keeps its hand-written markup, and both kinds coexist in one build. [CONVERSION.md](CONVERSION.md) reports the results of converting every file and lists the open questions. The [slides](https://docs.google.com/presentation/d/1mkH4I4puVd2Bk2DbG2-yZ1ACfFLuf-8l0hT4rWH8l0o/edit) in the FOCUS shared Google Drive present the proposal and these results for the Working Group.
 
 ## Try It
 
