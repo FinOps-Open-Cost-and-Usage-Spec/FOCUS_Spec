@@ -4,27 +4,30 @@
 
 Every Markdown file that the specification build includes was converted where the tags cover its content. What the tags do not cover was left as written and is listed as a question. The branch is based on `working_draft` at `e0fd5f77` (2026-10-29), so the counts below describe the specification at that point.
 
+The conversion has two passes. The mechanical pass (`convert_all.sh`), described here, translates what the existing markup already states. The [semantic review](SEMANTIC_REVIEW.md), a separate commit, checked every tag, corrected 7, and decided the items the converter left open. The counts below include both.
+
 ## Result
 
 | Measure | Count |
 | :--- | ---: |
 | Files the build includes | 377 |
-| Files that now contain tags | 333 |
-| Semantic tags | 8,127 |
-| ... glossary terms | 2,720 |
-| ... columns | 3,708 |
+| Files that now contain tags | 334 |
+| Semantic tags | 8,504 |
+| ... glossary terms | 2,721 |
+| ... columns | 3,951 |
 | ... attributes | 334 |
-| ... datasets | 619 |
-| ... metadata fields and collections | 270 |
+| ... datasets | 728 |
+| ... metadata fields and collections | 294 |
 | ... operating model conditions | 220 |
 | ... allowed values | 199 |
 | ... JSON objects and schemas | 57 |
 | Build errors | 0 |
-| Build warnings | 11 |
+| Build warnings | 10 |
 | Tests passing | 191 |
-| Changed lines in the published `spec.md` | 820 |
+| Changed lines in the published `spec.md` | 877 |
 | ... lines whose visible words changed | 0 |
 | Items the converter left for a decision | 450 |
+| ... still plain after the semantic review, each with a reason | 60 |
 | Hand-written entity links left in place | 272 |
 
 The build resolves every tag, markdown-pp anchors and the link tests are unchanged, and the Markdown linter passes on all converted files. The conversion is idempotent: running `convert_all.sh` on converted files changes nothing.
@@ -54,12 +57,13 @@ The converter has no classifier and does not interpret prose. It translates the 
 | Plain ID (e.g., `BilledCost`, `CostAndUsage`) | 2,569 | 32% | IDs are unique strings; the dataset comes from the file's location or front matter, or the one dataset that defines the column |
 | Italic glossary term | 1,394 | 17% | The convention that italics mark a glossary term; the phrase must match a term, an alias, or a plural |
 | Plain Display Name | 817 | 10% | An exact, multi-word Display Name in its defined capitalization that names one entity and is not also a glossary term |
+| Semantic review | 377 | 4% | A person's decision from the context, recorded as rules in `semantic_review.py` (see [SEMANTIC_REVIEW.md](SEMANTIC_REVIEW.md)) |
 | Quoted value | 199 | 3% | A value right after a column reference, or of the file's own column, that is one of that column's allowed values |
 
-Apart from the hand-reviewed sample files listed in [DEMO.md](DEMO.md), no person decided what a reference means. This has two consequences:
+In the mechanical pass, apart from the hand-reviewed sample files listed in [DEMO.md](DEMO.md), no person decided what a reference means. This has two consequences, which the semantic review then addressed:
 
-* **The conversion preserves meaning; it does not correct it.** A hand-written link to the wrong entity becomes a tag to the same wrong entity. The link whose text names ContractCommitmentPeriodStart but points to ContractPeriodStart survived conversion; FOCUS011 now reports it. The first-mention differences change only where links appear, never what they point to.
-* **The risk is in the two heuristic sources.** Italic glossary terms (17%) depend on italics never being used for plain emphasis, and plain Display Names (10%) depend on a Title Case name meaning the entity. A sample review of the Display Name tags found and fixed two failure classes (a shorter name inside a longer, ambiguous one, such as "Unit Price" in "List Unit Price", and the data generator role), but these tags have not been reviewed one by one.
+* **The conversion preserves meaning; it does not correct it.** A hand-written link to the wrong entity becomes a tag to the same wrong entity. The link whose text names ContractCommitmentPeriodStart but points to ContractPeriodStart survived the mechanical pass; FOCUS011 reported it, and the semantic review corrected it. The first-mention differences change only where links appear, never what they point to.
+* **The risk is in the two heuristic sources.** Italic glossary terms (17%) depend on italics never being used for plain emphasis, and plain Display Names (10%) depend on a Title Case name meaning the entity. A sample review of the Display Name tags found and fixed two failure classes (a shorter name inside a longer, ambiguous one, such as "Unit Price" in "List Unit Price", and the data generator role), and the semantic review then checked every tag pattern. Its 7 corrections came from hand-written links and italic terms, not from Display Name matching.
 
 The counts come from comparing each converted line with the original; they are approximate to within a few tags.
 
@@ -70,10 +74,10 @@ The counts come from comparing each converted line with the original; they are a
 | Kind | Differences | What it is |
 | :--- | ---: | :--- |
 | Whitespace only | 297 | Table padding, because a tag is shorter than the link it replaced. The rendered tables are identical |
-| Link added | 450 | A first mention that was plain text is now a link (424 columns and datasets, 18 glossary terms, 8 metadata) |
+| Link added | 513 | A first mention that was plain text is now a link (471 columns and datasets, 16 glossary terms, 26 metadata) |
 | Link removed | 213 | A repeat link is now plain text (149 columns and datasets, 60 glossary terms, 2 metadata, 2 operating model conditions) |
-| Link retargeted | 2 | "invoice issuer" in the two BilledCost introductions links the glossary term instead of the InvoiceIssuerName column (a judgment call from the first sample) |
-| Italics | 18 | Italics removed from 12 links to columns, attributes, and Display Names, and added to 6 glossary terms that lacked them |
+| Link retargeted | 6 | "invoice issuer" in the two BilledCost introductions links the glossary term instead of the InvoiceIssuerName column (a judgment call from the first sample), and 4 tags the semantic review corrected |
+| Italics | 21 | Emphasis now follows the kind of entity: removed from links to columns, attributes, Display Names, and terms re-tagged as datasets, and added to glossary terms that lacked it |
 | Visible words changed | 0 | None |
 
 The added and removed links are the Editorial Guidelines applied uniformly: link an entity at its first mention in each source file and not again. Content Constraints tables keep linking every row, and the glossary counts first mentions per entry. A link in a table outside Content Constraints does not count as a first mention, which follows the entity catalog table rule proposed in #2514 and #2765. For example, the Columns table in `dataset.md` no longer turns the links in the requirement list below it into repeats.
@@ -99,17 +103,17 @@ The checks report disagreements. They do not say which side is wrong.
 Each question lists what the conversion did, so the answer can be applied by rerunning the converter.
 
 1. **Tables outside Content Constraints.** 231 hand-written links and 340 rows with references in 37 files were left as written. Catalog tables (the Columns table in `dataset.md`, the overview tables in supported features and operating model conditions) link every row, while example data tables do not. Is there a way for an author to say that a reference always links, or should catalog tables be recognized by structure? Should links in these tables count as first mentions? The demo says they do not.
-2. **Display Names that are also glossary terms.** 208 occurrences were left untagged: SKU Price (101), Billing Period (21), List Unit Price (19), Billing Currency (18), Contracted Unit Price (16), Tags (14), Contract Commitment (12), and Dataset Instance (6). #2765 proposes that the capitalization of the Display Name means the entity and any other capitalization means the term. Should the converter apply that rule?
-3. **Files that mix datasets.** 190 mentions of shared columns, in 11 files, could not be resolved to one dataset, and 111 of them are in `rate_optimization_and_contract_evaluation.md`. Qualifying each one (`[SkuPriceId](#col:SkuPrice.SkuPriceId)`) is explicit but verbose. Would a dataset per section be better?
+2. **Display Names that are also glossary terms.** The converter left 208 occurrences untagged: SKU Price (101), Billing Period (21), List Unit Price (19), Billing Currency (18), Contracted Unit Price (16), Tags (14), Contract Commitment (12), and Dataset Instance (6). The semantic review decided them by context: a name followed by "dataset" or "record" names the dataset, a column's Display Name capitalization names the column, and ordinary prose stays plain. #2765 proposes that the capitalization of the Display Name means the entity and any other capitalization means the term. Should the converter apply that rule, so fewer cases need a person?
+3. **Files that mix datasets.** The converter could not resolve 190 mentions of shared columns in 11 files to one dataset, 111 of them in `rate_optimization_and_contract_evaluation.md`. The semantic review chose the dataset from each sentence and qualified each tag (`[SKU Price ID](#col:SkuPrice.SkuPriceId)`), which is explicit but verbose. Would a dataset per section be better?
 4. **Inferred dataset defaults.** 57 files got `dataset:` front matter from the columns they already reference (53 Cost and Usage, 3 SKU Price, 1 Invoice Detail). A plain shared ColumnId in those files now means that dataset, and the rendered comparison cannot verify it. Should an author confirm each one? `grep -rl "^dataset:" specification` lists them.
 5. **The data generator role and the metadata collection.** Nine italic links use "data generator" as a term linked to the Data Generator metadata section, and 28 Title Case metadata names appear outside the metadata section (Data Generator, FOCUS Version, Data Generator Version, and others). The conversion left them as written. Should the glossary get a Data Generator entry, and should metadata names be tagged outside the metadata section?
 6. **Links to sub-sections.** 32 prose links point at sub-sections of an entity (the correction styles in `correction_handling.md`, "Schema Structure" in each JSON column), not at an entity. They stay hand-written. Should sub-sections become taggable?
 7. **Display Names in Requirements sections.** Nine of the ten FOCUS003 findings are notes and "See" lines under a Requirements heading. Should the check skip them, or should they move out of Requirements sections? The tenth is a requirement with a descriptive link text ("FOCUS Metadata Schema object"), which is the functional-link question again.
-8. **First-mention differences.** 450 links added and 213 removed. Is it acceptable to review them as editorial changes in bulk, and in what size of pull request?
+8. **First-mention differences.** 513 links added and 213 removed. Is it acceptable to review them as editorial changes in bulk, and in what size of pull request?
 9. **Functional links.** Seven removed links have anchor text unlike the entity's name (for example "column requirements" and "accrual basis"). AGENTS.md exempts "functional links using different anchor text", but the Editorial Guidelines do not. Should the resolver keep them?
 10. **Emphasis on entity links.** Italics were removed from 12 links to columns, attributes, and Display Names, and added to 6 glossary terms. Nine lowercase italic links to the Data Generator section were left as written. Is italic on a non-term a mistake or deliberate emphasis?
 11. **Quoted values.** 199 value tags were made. 125 quoted allowed values remain untagged (84 belong to one column and 41 to several, such as "Purchase" and "Usage") because no column reference precedes them. How should an author name the column for these?
-12. **Link text and target disagree.** One case was found (see above). Does it need a separate fix in the specification?
+12. **Link text and target disagree.** One case was found (see above), and the semantic review corrected the tag, so the link now points to the column its text names. Is that the intended column?
 13. **Table padding.** 297 table rows differ only in padding. Should the converter pad whole table columns, or is the linter's table rule enough?
 14. **Merge mechanics.** The conversion changes 326 files, so every open pull request that edits specification content would conflict. Convert once on a quiet day, or convert area by area? The Requirements Model extraction workflow (`rm_extraction.yml`) also reads the Markdown source and is not tag-aware.
 15. **Outside the specification.** The guidelines, `AGENTS.md`, and the Requirements Model rule files describe or depend on the link conventions, and were not converted. They would need to change together with the specification.

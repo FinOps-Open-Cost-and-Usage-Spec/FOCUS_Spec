@@ -20,7 +20,7 @@
 
 In this scenario, the [invoice issuer](#term) performs currency conversion at the individual line-item level. The grain of the payment currency matches the grain of the billing currency exactly.
 
-* **Billing Currency:** USD
+* **[Billing Currency](#col):** USD
 * **[Payment Currency](#col):** EUR
 * **Exchange Rate:** 1.00 USD = 0.92 EUR
 
@@ -40,7 +40,7 @@ In this scenario, the [invoice issuer](#term) performs currency conversion at th
 
 In this scenario, the invoice issuer tracks usage in the billing currency at a granular level but represents that cost in the payment currency as a separate aggregate record.
 
-* **Billing Currency:** USD
+* **[Billing Currency](#col):** USD
 * **[Payment Currency](#col):** EUR
 * **Effective Exchange Rate:** 1.00 USD = 0.92 EUR
 

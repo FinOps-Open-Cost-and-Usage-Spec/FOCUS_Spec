@@ -21,7 +21,7 @@ Billing Period Created
 
 ## Description
 
-The timestamp when the [Billing Period](#term) record was first created.
+The timestamp when the [Billing Period](#ds) record was first created.
 
 ## Content Constraints
 

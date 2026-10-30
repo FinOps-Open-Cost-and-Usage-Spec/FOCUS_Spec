@@ -1,6 +1,6 @@
 # SKU Price Created
 
-[SKU Price Created](#col) is the timestamp when the [SKU Price](#ds) record was first created. This timestamp facilitates auditability of the rate card publication lifecycle, allowing the FinOps [practitioner](#term) to distinguish between the time a SKU Price record becomes effective (i.e., [SKU Price Effective Start](#col)) and the time the provider actually generated the pricing record.
+[SKU Price Created](#col) is the timestamp when the [SKU Price](#ds) record was first created. This timestamp facilitates auditability of the rate card publication lifecycle, allowing the FinOps [practitioner](#term) to distinguish between the time a [SKU Price](#ds) record becomes effective (i.e., [SKU Price Effective Start](#col)) and the time the provider actually generated the pricing record.
 
 ## Requirements
 
@@ -9,7 +9,7 @@
 * [SkuPriceCreated](#col) MUST be of type Date/Time.
 * [SkuPriceCreated](#col) MUST conform to [DateTimeFormat](#attr) requirements.
 * [SkuPriceCreated](#col) MUST NOT be null.
-* [SkuPriceCreated](#col) MUST represent the moment in time the [SKU Price](#term) record was instantiated.
+* [SkuPriceCreated](#col) MUST represent the moment in time the [SKU Price](#ds) record was instantiated.
 
 ## Column ID
 
@@ -21,7 +21,7 @@ SKU Price Created
 
 ## Description
 
-The timestamp when the SKU Price record was first created.
+The timestamp when the [SKU Price](#ds) record was first created.
 
 ## Content Constraints
 

@@ -16,7 +16,7 @@
 [Practitioners](#term) are encouraged to carefully distinguish between **[Pricing Service Name](#col)** and [Service Name](#col:CostAndUsage.ServiceName).
 
 * **[Pricing Service Name](#col)** defines the name of the [service](#term) as explicitly published in the provider's rate card or pricing catalog.
-* **Service Name** defines the name of the [service](#term) associated with the actual usage or provisioned [resource](#term) in the [Cost and Usage](#ds) data.
+* **[Service Name](#col:CostAndUsage.ServiceName)** defines the name of the [service](#term) associated with the actual usage or provisioned [resource](#term) in the [Cost and Usage](#ds) data.
 
 In many cases, these will be identical. However, if a [service provider](#term) abstracts or groups rate card offerings differently than their provisioned [resources](#term) (e.g., pricing multiple distinct database engines under a single generic rate card service name), `Pricing Service Name` reflects the exact service name designated by the rate card. The set of `Service Name` values can instead be represented as inclusion criteria within [SKU Price Eligibility](#col) to capture the service names without conflating the rate card logic.
 

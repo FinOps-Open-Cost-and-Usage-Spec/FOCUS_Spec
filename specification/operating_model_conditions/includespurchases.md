@@ -2,7 +2,7 @@
 
 The [Includes Purchases](#omc) operating model condition represents a verifiable state indicating whether the [operating model](#term) includes purchases.
 
-> **Preview:** [Includes Purchases](#omc) exists for the SKU Price dataset, which is a preview in this version of FOCUS. While that dataset is a preview, [Includes Purchases](#omc) may change in the next version without a deprecation notice.
+> **Preview:** [Includes Purchases](#omc) exists for the [SKU Price](#ds) dataset, which is a preview in this version of FOCUS. While that dataset is a preview, [Includes Purchases](#omc) may change in the next version without a deprecation notice.
 
 ## Requirements
 

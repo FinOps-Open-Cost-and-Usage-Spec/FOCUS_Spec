@@ -14,7 +14,7 @@ Datasets are sorted first by Feature Level (i.e., Mandatory, then Conditional), 
 | [Invoice Detail](#datamodel.invoicedetail)           | Transaction  | Conditional   | Describes the cost and usage issued on invoices. |
 | [SKU Price](#datamodel.skuprice) (preview)           | Reference    | Conditional   | Describes the unit prices offered by a service provider. |
 
-> **Preview:** The SKU Price dataset is a preview in this version of FOCUS. The requirement that the Data Model include SKU Price is excluded from conformance while that dataset is a preview.
+> **Preview:** The [SKU Price](#ds) dataset is a preview in this version of FOCUS. The requirement that the Data Model include [SKU Price](#ds) is excluded from conformance while that dataset is a preview.
 
 ## Requirements<!--SkipTOC-->
 

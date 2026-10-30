@@ -1,6 +1,6 @@
 # Billing Period
 
-The Billing Period dataset is a supporting dataset that defines the time intervals and statuses associated with an [invoice issuer's](#term:invoice-issuer) billing cycles for grouping and presenting [charges](#term) on invoices. This dataset helps FinOps practitioners better understand how and when they can leverage [Cost and Usage](#ds) and [Invoice Detail](#ds) data for formal financial reporting and showback/chargeback processes.
+The [Billing Period](#ds) dataset is a supporting dataset that defines the time intervals and statuses associated with an [invoice issuer's](#term:invoice-issuer) billing cycles for grouping and presenting [charges](#term) on invoices. This dataset helps FinOps practitioners better understand how and when they can leverage [Cost and Usage](#ds) and [Invoice Detail](#ds) data for formal financial reporting and showback/chargeback processes.
 
 ## Columns<!--SkipTOC-->
 
@@ -15,7 +15,7 @@ The Billing Period dataset is a supporting dataset that defines the time interva
 
 ## Relationships<!--SkipTOC-->
 
-The Billing Period dataset is primarily used to provide context for the [Cost and Usage](#ds) and [Invoice Detail](#ds) datasets. It is joined using the [Billing Period Start](#col) and [Invoice Issuer Name](#col) columns available in those datasets.
+The [Billing Period](#ds) dataset is primarily used to provide context for the [Cost and Usage](#ds) and [Invoice Detail](#ds) datasets. It is joined using the [Billing Period Start](#col) and [Invoice Issuer Name](#col) columns available in those datasets.
 
 | Dataset A      | Dataset A Column   | Dataset B      | Dataset B Column   |
 | :------------- | :----------------- | :------------- | :----------------- |

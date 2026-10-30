@@ -20,7 +20,7 @@
 [Practitioners](#term) are encouraged to carefully distinguish between **[Pricing Region ID](#col)** and [Region ID](#col:CostAndUsage.RegionId).
 
 * **[Pricing Region ID](#col)** defines the geographic boundary for which the *rate itself* is valid.
-* **Region ID** defines the physical location where a specific [resource](#term) is provisioned.
+* **[Region ID](#col:CostAndUsage.RegionId)** defines the physical location where a specific [resource](#term) is provisioned.
 
 In many cases these will be identical. However, if a [SKU Price](#term) is global but still applies to specific regional deployments, or if the *service provider's* [price list](#term) dictates a resource deployment region that differs from the pricing boundary, `Pricing Region ID` reflects the pricing boundary. The set of `Region ID` values can instead be represented as inclusion criteria within [SKU Price Eligibility](#col) to capture the resource location without conflating the [price list](#term) logic.
 

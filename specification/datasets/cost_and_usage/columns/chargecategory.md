@@ -2,7 +2,7 @@
 
 [Charge Category](#col) represents the highest-level classification of a [charge](#term) based on the nature of how it is billed. [Charge Category](#col) is commonly used to identify and distinguish between types of [charges](#term) that may require different handling.
 
-> **Preview:** The SKU Price dataset is a preview in this version of FOCUS. The requirement that [Charge Category](#col) match SKU Price [Charge Category](#col) is excluded from conformance while that dataset is a preview.
+> **Preview:** The [SKU Price](#ds) dataset is a preview in this version of FOCUS. The requirement that [Charge Category](#col) match [SKU Price](#ds) [Charge Category](#col) is excluded from conformance while that dataset is a preview.
 
 ## Requirements
 

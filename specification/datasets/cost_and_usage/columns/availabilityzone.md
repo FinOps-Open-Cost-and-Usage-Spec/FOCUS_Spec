@@ -1,6 +1,6 @@
 # Availability Zone
 
-An [Availability Zone](#term) is a host-provider-assigned identifier for a physically separated and isolated area within a Region that provides high availability and fault tolerance. Availability Zone is commonly used for scenarios like analyzing cross-zone data transfer usage and the corresponding cost based on where [resources](#term) are deployed.
+An [Availability Zone](#term) is a host-provider-assigned identifier for a physically separated and isolated area within a Region that provides high availability and fault tolerance. [Availability Zone](#col) is commonly used for scenarios like analyzing cross-zone data transfer usage and the corresponding cost based on where [resources](#term) are deployed.
 
 ## Requirements
 

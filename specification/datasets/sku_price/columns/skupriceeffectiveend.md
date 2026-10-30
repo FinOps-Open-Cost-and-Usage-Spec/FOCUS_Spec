@@ -2,7 +2,7 @@
 
 [SKU Price Effective End](#col) represents the exclusive date and time when the specified [SKU Price](#ds) record is no longer active or applicable for a given [SKU Price ID](#col).
 
-When combined with [SKU Price Effective Start](#col), this column defines the precise validity window of a rate card entry. When a SKU Price record has no scheduled expiration or deprecation date, this value remains null, including for a price published ahead of taking effect. A null therefore states that the price has no upper boundary, not that the price is the one currently in effect. A [charge](#term) in [Cost and Usage](#ds) falls under this price when its [Charge Period Start](#col:CostAndUsage.ChargePeriodStart) is before [SKU Price Effective End](#col), or when this value is null.
+When combined with [SKU Price Effective Start](#col), this column defines the precise validity window of a rate card entry. When a [SKU Price](#ds) record has no scheduled expiration or deprecation date, this value remains null, including for a price published ahead of taking effect. A null therefore states that the price has no upper boundary, not that the price is the one currently in effect. A [charge](#term) in [Cost and Usage](#ds) falls under this price when its [Charge Period Start](#col:CostAndUsage.ChargePeriodStart) is before [SKU Price Effective End](#col), or when this value is null.
 
 ## Requirements
 
@@ -26,7 +26,7 @@ SKU Price Effective End
 
 ## Description
 
-The exclusive date and time when the specified SKU Price record is no longer active or applicable.
+The exclusive date and time when the specified [SKU Price](#ds) record is no longer active or applicable.
 
 ## Content Constraints
 

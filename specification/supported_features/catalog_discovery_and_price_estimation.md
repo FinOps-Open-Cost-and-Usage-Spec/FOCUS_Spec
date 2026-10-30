@@ -1,26 +1,26 @@
 # Catalog Discovery and Price Estimation
 
-> **Preview:** The [SKU Price](#ds) dataset is a preview in this version of FOCUS. This supported feature depends on it and may change in the next version based on implementation feedback. The preview also covers two requirements outside the dataset, which are excluded from conformance, and two operating model conditions and a schema that exist only for SKU Price. [Issue #2768](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2768) tracks the preview and lists each one.
+> **Preview:** The [SKU Price](#ds) dataset is a preview in this version of FOCUS. This supported feature depends on it and may change in the next version based on implementation feedback. The preview also covers two requirements outside the dataset, which are excluded from conformance, and two operating model conditions and a schema that exist only for [SKU Price](#ds). [Issue #2768](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2768) tracks the preview and lists each one.
 
 ## Description
 
-FOCUS helps a [practitioner](#term) find the prices a [service provider](#term) offers. It also helps estimate what future consumption will cost. The SKU Price dataset holds these prices. It covers the full [price list](#term) a [service provider](#term) publishes, not just the [SKUs](#term) already in [Cost and Usage](#ds) data. So a new architecture can be priced the same way for every [service provider](#term), without learning a different catalog format for each one.
+FOCUS helps a [practitioner](#term) find the prices a [service provider](#term) offers. It also helps estimate what future consumption will cost. The [SKU Price](#ds) dataset holds these prices. It covers the full [price list](#term) a [service provider](#term) publishes, not just the [SKUs](#term) already in [Cost and Usage](#ds) data. So a new architecture can be priced the same way for every [service provider](#term), without learning a different catalog format for each one.
 
-[Unit Price](#col) is the price of one Pricing Unit, in the Pricing Currency. [Unit Price Type](#col) says what kind of price it is:
+[Unit Price](#col) is the price of one [Pricing Unit](#col:SkuPrice.PricingUnit), in the [Pricing Currency](#col:SkuPrice.PricingCurrency). [Unit Price Type](#col) says what kind of price it is:
 
-* "List" is the public list price. A "List" record has a null Contract ID.
-* "Base" is a list price that a [contract](#term) fixes. Its Contract ID names that [contract](#term).
-* "Contracted" is any other price under a [contract](#term), such as a negotiated rate. Its Contract ID also names the [contract](#term).
+* "List" is the public list price. A "List" record has a null [Contract ID](#col:SkuPrice.ContractId).
+* "Base" is a list price that a [contract](#term) fixes. Its [Contract ID](#col:SkuPrice.ContractId) names that [contract](#term).
+* "Contracted" is any other price under a [contract](#term), such as a negotiated rate. Its [Contract ID](#col:SkuPrice.ContractId) also names the [contract](#term).
 
-An estimate from public prices multiplies the planned quantity by the [Unit Price](#col) on the "List" record. The planned quantity is counted in the Pricing Unit.
+An estimate from public prices multiplies the planned quantity by the [Unit Price](#col) on the "List" record. The planned quantity is counted in the [Pricing Unit](#col:SkuPrice.PricingUnit).
 
 [Pricing Currency Category](#col) says whether that result is money or a balance in a [consumption currency](#term) the [service provider](#term) issues. A "Consumable" rate gives a balance, not money. That balance needs another conversion before it can be read as money. So an estimate that mixes the two categories without converting is not a money total.
 
-Charge Category sorts prices into three kinds. "Usage" is the rate to use something. "Purchase" is the fee to buy it. "Credit" is the value of one unit of a granted credit. So a forecast can keep usage rates and purchase fees apart instead of adding them together.
+[Charge Category](#col:SkuPrice.ChargeCategory) sorts prices into three kinds. "Usage" is the rate to use something. "Purchase" is the fee to buy it. "Credit" is the value of one unit of a granted credit. So a forecast can keep usage rates and purchase fees apart instead of adding them together.
 
 [SKU Price Eligibility](#col) holds the rules that decide which entities can get a price. A published catalog often includes prices an organization cannot get. Checking eligibility before pricing an architecture is what separates an estimate the organization can achieve from one that is only theoretical.
 
-An estimate built this way leaves out the effect of any [commitment discount](#term). [Unit Price](#col) on a "List" record is the public rate. No rate in the SKU Price dataset shows the effect of a [commitment discount](#term) applied to consumption. An organization with commitments that would cover the planned architecture pays less than this estimate shows. That difference is measured from recorded consumption in [Cost and Usage](#ds), through the [Cost Comparison](#supportedfeatures.costcomparison) supported feature, not from the price list.
+An estimate built this way leaves out the effect of any [commitment discount](#term). [Unit Price](#col) on a "List" record is the public rate. No rate in the [SKU Price](#ds) dataset shows the effect of a [commitment discount](#term) applied to consumption. An organization with commitments that would cover the planned architecture pays less than this estimate shows. That difference is measured from recorded consumption in [Cost and Usage](#ds), through the [Cost Comparison](#supportedfeatures.costcomparison) supported feature, not from the price list.
 
 ### Reading the Effective Date Columns
 
@@ -35,26 +35,26 @@ So a lookup at a point in time treats a null bound as having no limit on that si
 
 A [charge](#term) follows the same rule, using its [Charge Period Start](#col). A charge falls under a price when its [Charge Period Start](#col) is on or after [SKU Price Effective Start](#col) and before [SKU Price Effective End](#col).
 
-> **Note:** A [dataset instance](#term) may hold only the prices in force today. Or it may also hold future price changes and old prices that were replaced. The specification does not require a [service provider](#term) to publish price history, and FOCUS defines no way to tell these two kinds of dataset instance apart. So the same query can return one row per SKU Price ID from one [service provider](#term) and several from another. A query that filters to a point in time, instead of expecting one row per SKU Price ID, works the same way for both.
+> **Note:** A [dataset instance](#term) may hold only the prices in force today. Or it may also hold future price changes and old prices that were replaced. The specification does not require a [service provider](#term) to publish price history, and FOCUS defines no way to tell these two kinds of dataset instance apart. So the same query can return one row per [SKU Price ID](#col:SkuPrice.SkuPriceId) from one [service provider](#term) and several from another. A query that filters to a point in time, instead of expecting one row per [SKU Price ID](#col:SkuPrice.SkuPriceId), works the same way for both.
 
 ### Scope When Conditional Columns are Absent
 
-This feature applies wherever a [service provider](#term) publishes a SKU Price dataset. The data model says when that dataset is present. Every column this feature directly depends on is in every SKU Price dataset instance.
+This feature applies wherever a [service provider](#term) publishes a [SKU Price](#ds) dataset. The data model says when that dataset is present. Every column this feature directly depends on is in every [SKU Price](#ds) dataset instance.
 
-The queries that read public prices keep only records with a [Unit Price Type](#col) of "List". So they return nothing from a dataset instance that has only contract prices. "List" is a recommended value, not a required one. When a [service provider](#term) labels its public prices with a value of its own, that value replaces "List" in these queries. Unlike "List", a value of its own does not mean the Contract ID is null. So these queries then also need a filter for a null Contract ID.
+The queries that read public prices keep only records with a [Unit Price Type](#col) of "List". So they return nothing from a dataset instance that has only contract prices. "List" is a recommended value, not a required one. When a [service provider](#term) labels its public prices with a value of its own, that value replaces "List" in these queries. Unlike "List", a value of its own does not mean the [Contract ID](#col:SkuPrice.ContractId) is null. So these queries then also need a filter for a null [Contract ID](#col:SkuPrice.ContractId).
 
 Four conditions change what applies:
 
 * [Pricing Region ID](#col) is present when the [operating model](#term) [includes regions](#omc). When it is absent, prices do not vary by location, and one price stands for every region. Comparing rates across regions then does not apply, rather than giving an incomplete result.
 * [Quantity Tier Minimum](#col) and [Quantity Tier Maximum](#col) are present when the [operating model](#term) [includes quantity tier pricing](#omc). When they are absent, every price applies at any quantity, so a planned line needs no tier. The queries that return these two columns still work with them left out.
-* Separating usage rates from purchase fees applies when the [operating model](#term) [includes purchases](#omc). When it does not, the catalog has no purchase fees, and no record has a Charge Category of "Purchase". An estimate from usage rates then has no purchase fees to add.
-* Commitment Discount Category is present when the [operating model](#term) [includes commitment discounts](#omc). When it is absent, no price is for a [commitment discount](#term), and the list price query still works with that column left out.
+* Separating usage rates from purchase fees applies when the [operating model](#term) [includes purchases](#omc). When it does not, the catalog has no purchase fees, and no record has a [Charge Category](#col:SkuPrice.ChargeCategory) of "Purchase". An estimate from usage rates then has no purchase fees to add.
+* [Commitment Discount Category](#col:SkuPrice.CommitmentDiscountCategory) is present when the [operating model](#term) [includes commitment discounts](#omc). When it is absent, no price is for a [commitment discount](#term), and the list price query still works with that column left out.
 
 ## Directly Dependent Columns
 
 * [SkuPrice](#ds)
-  * ChargeCategory
-  * ContractId
+  * [ChargeCategory](#col:SkuPrice.ChargeCategory)
+  * [ContractId](#col:SkuPrice.ContractId)
   * [PricingCurrencyCategory](#col)
   * [SkuPriceEligibility](#col)
   * [UnitPrice](#col)
@@ -63,20 +63,20 @@ Four conditions change what applies:
 ## Supporting Columns
 
 * [SkuPrice](#ds)
-  * CommitmentDiscountCategory
-  * PricingCurrency
+  * [CommitmentDiscountCategory](#col:SkuPrice.CommitmentDiscountCategory)
+  * [PricingCurrency](#col:SkuPrice.PricingCurrency)
   * [PricingRegionId](#col)
   * [PricingServiceName](#col)
-  * PricingUnit
+  * [PricingUnit](#col:SkuPrice.PricingUnit)
   * [QuantityTierMaximum](#col)
   * [QuantityTierMinimum](#col)
-  * ServiceProviderName
-  * SkuId
+  * [ServiceProviderName](#col:SkuPrice.ServiceProviderName)
+  * [SkuId](#col:SkuPrice.SkuId)
   * [SkuPriceCreated](#col)
   * [SkuPriceDescription](#col)
   * [SkuPriceEffectiveEnd](#col)
   * [SkuPriceEffectiveStart](#col)
-  * SkuPriceId
+  * [SkuPriceId](#col:SkuPrice.SkuPriceId)
   * [SkuPriceLastUpdated](#col)
 
 ## Example SQL Queries
@@ -87,11 +87,11 @@ Four conditions change what applies:
 
 ### Find the List Prices in Force at a Point in Time
 
-This query answers which public usage rates apply to a service at a given moment. An estimate starts from these rates. It takes a service provider, a pricing service name, and a point in time. It keeps only records with a Charge Category of "Usage", so purchase fees and granted credits are left out. Dropping that filter returns every public rate for the service. The same point in time goes to both date bounds. Each bound is tested for null, so a price with no start date or no end date is returned rather than dropped.
+This query answers which public usage rates apply to a service at a given moment. An estimate starts from these rates. It takes a service provider, a pricing service name, and a point in time. It keeps only records with a [Charge Category](#col:SkuPrice.ChargeCategory) of "Usage", so purchase fees and granted credits are left out. Dropping that filter returns every public rate for the service. The same point in time goes to both date bounds. Each bound is tested for null, so a price with no start date or no end date is returned rather than dropped.
 
 It also keeps only records with a [Unit Price Type](#col) of "List", which hold the public list price. A record under a [contract](#term) holds a "Base" or "Contracted" price instead. A record with no [contract](#term) can instead hold a [Unit Price Type](#col) the [service provider](#term) defines for itself. This query leaves both out.
 
-One [SKU](#term) can still return the same public rate more than once. A [service provider](#term) can publish a separate usage record, with its own SKU Price ID, for consumption a [commitment discount](#term) covers. That record also holds the list price. [SKU Price Description](#col) and Commitment Discount Category are returned so these rows can be told apart.
+One [SKU](#term) can still return the same public rate more than once. A [service provider](#term) can publish a separate usage record, with its own [SKU Price ID](#col:SkuPrice.SkuPriceId), for consumption a [commitment discount](#term) covers. That record also holds the list price. [SKU Price Description](#col) and [Commitment Discount Category](#col:SkuPrice.CommitmentDiscountCategory) are returned so these rows can be told apart.
 
 ```sql
 SELECT
@@ -117,13 +117,13 @@ ORDER BY SkuId, UnitPrice
 
 ### Estimate the Cost of a Planned Workload
 
-This query answers what a planned workload would cost at public rates. The cost of each line can then be checked against a budget or compared with another design. It takes a set of planned lines. Each line has a service provider, the SKU Price ID it is priced under, a planned quantity, and a point in time. The query returns the projected cost of each line and the values behind it. The planned quantity is counted in the Pricing Unit of the matching price. So a rate quoted per `1K Requests` takes a quantity counted in thousands of requests, not in requests.
+This query answers what a planned workload would cost at public rates. The cost of each line can then be checked against a budget or compared with another design. It takes a set of planned lines. Each line has a service provider, the [SKU Price ID](#col:SkuPrice.SkuPriceId) it is priced under, a planned quantity, and a point in time. The query returns the projected cost of each line and the values behind it. The planned quantity is counted in the [Pricing Unit](#col:SkuPrice.PricingUnit) of the matching price. So a rate quoted per `1K Requests` takes a quantity counted in thousands of requests, not in requests.
 
-[Pricing Currency Category](#col) is returned with the total, because a "Consumable" rate gives a balance in a [consumption currency](#term), not money. Rows with different Pricing Currency values cannot be added together without a conversion, and neither can a mix of "Payable" and "Consumable" rows. The SKU Price dataset does not carry that conversion. A SKU Price ID published in more than one pricing currency returns one row per currency for the same planned line. Those rows are alternative prices for that line, not parts of it.
+[Pricing Currency Category](#col) is returned with the total, because a "Consumable" rate gives a balance in a [consumption currency](#term), not money. Rows with different [Pricing Currency](#col:SkuPrice.PricingCurrency) values cannot be added together without a conversion, and neither can a mix of "Payable" and "Consumable" rows. The [SKU Price](#ds) dataset does not carry that conversion. A [SKU Price ID](#col:SkuPrice.SkuPriceId) published in more than one pricing currency returns one row per currency for the same planned line. Those rows are alternative prices for that line, not parts of it.
 
-[Quantity Tier Minimum](#col) and [Quantity Tier Maximum](#col) are returned so each row can be matched to its tier. Each tier has its own SKU Price ID, so a planned line names its tier. A quantity that spans tiers is entered as one line per tier, split the way the pricing terms of the [service provider](#term) say. Those terms, not the tier boundaries, decide whether a tier's rate applies only to the units inside that tier or to every unit consumed.
+[Quantity Tier Minimum](#col) and [Quantity Tier Maximum](#col) are returned so each row can be matched to its tier. Each tier has its own [SKU Price ID](#col:SkuPrice.SkuPriceId), so a planned line names its tier. A quantity that spans tiers is entered as one line per tier, split the way the pricing terms of the [service provider](#term) say. Those terms, not the tier boundaries, decide whether a tier's rate applies only to the units inside that tier or to every unit consumed.
 
-The query prices each line at the public rate from the "List" record. Replacing `SP.UnitPriceType = 'List'` with `SP.ContractId = ? AND SP.UnitPriceType = 'Contracted'` prices it at the rate negotiated under a [contract](#term) instead. A line whose SKU Price ID has no "Contracted" record under that [contract](#term) then returns with its price columns null. The [Unit Price Type](#col) filter is still needed, because one [contract](#term) can have both a "Base" and a "Contracted" record for the same SKU Price ID.
+The query prices each line at the public rate from the "List" record. Replacing `SP.UnitPriceType = 'List'` with `SP.ContractId = ? AND SP.UnitPriceType = 'Contracted'` prices it at the rate negotiated under a [contract](#term) instead. A line whose [SKU Price ID](#col:SkuPrice.SkuPriceId) has no "Contracted" record under that [contract](#term) then returns with its price columns null. The [Unit Price Type](#col) filter is still needed, because one [contract](#term) can have both a "Base" and a "Contracted" record for the same [SKU Price ID](#col:SkuPrice.SkuPriceId).
 
 ```sql
 WITH PlannedUsage (ServiceProviderName, SkuPriceId, PlannedQuantity, PlannedDate) AS (
@@ -156,7 +156,7 @@ ORDER BY SP.PricingCurrencyCategory, SP.PricingCurrency, EstimatedPricingCurrenc
 
 This query answers which prices a [billing account](#term) may be eligible for. An estimate can then start from the prices the account may receive, within the limits the note below describes. It takes a service provider, a point in time, and a [billing account](#term) ID. A price with `IsGlobalScope` set to `true` applies to every entity its `Exclusions` do not remove. A price with neither global nor complex scope has an `Inclusions` array. Each rule in that array uses three keys, `Dimension`, `Operator`, and `Values`, to decide which entities are included.
 
-Contract ID and [Unit Price Type](#col) are returned to tell apart the prices under one SKU Price ID. Contract ID separates a [contract](#term) price from the list price. [Unit Price Type](#col) separates a "Base" price from a "Contracted" one under the same [contract](#term).
+[Contract ID](#col:SkuPrice.ContractId) and [Unit Price Type](#col) are returned to tell apart the prices under one [SKU Price ID](#col:SkuPrice.SkuPriceId). [Contract ID](#col:SkuPrice.ContractId) separates a [contract](#term) price from the list price. [Unit Price Type](#col) separates a "Base" price from a "Contracted" one under the same [contract](#term).
 
 > **Note:** This query checks only rules whose `Dimension` key is `BillingAccountId` and whose `Operator` is `In`. That includes the `["*"]` wildcard, which matches every account. Rows flagged `IsComplexScope` are returned for review, not resolved. The query does not check `Exclusions`, so it can return a price for an account that `Exclusions` removes. Some prices have neither global nor complex scope and have `Inclusions` that do not name `BillingAccountId`. Under the implicit wildcard rule in the [SKU Price Eligibility](#col) column definition, such a price places no limit on billing account, but this query does not return it. The query compares values exactly as written, while the [SKU Price Eligibility](#col) column definition compares them without regard to case. A full check applies `InclusionOperator` across all inclusion rules, then removes any entity caught by `Exclusions`, in the order the [SKU Price Eligibility](#col) column definition gives.
 
@@ -192,7 +192,7 @@ ORDER BY SkuPriceId, ContractId, UnitPriceType
 
 ### Separate Usage Rates from Purchase Fees and Credit Values
 
-This query answers what kinds of prices a catalog holds. Knowing that keeps a forecast from leaving out purchase fees or reading a credit value as a usage rate. It takes a service provider and a point in time, and it shows how the catalog splits across Charge Category. A forecast built only on "Usage" rates leaves out any purchase fees the architecture also has to pay. So each category is counted on its own, not added together. Only "List" records are counted, so the counts and price ranges describe the public catalog, not the prices of any one [contract](#term). [Pricing Currency Category](#col) is returned so a rate priced in a [consumption currency](#term) is not read as money.
+This query answers what kinds of prices a catalog holds. Knowing that keeps a forecast from leaving out purchase fees or reading a credit value as a usage rate. It takes a service provider and a point in time, and it shows how the catalog splits across [Charge Category](#col:SkuPrice.ChargeCategory). A forecast built only on "Usage" rates leaves out any purchase fees the architecture also has to pay. So each category is counted on its own, not added together. Only "List" records are counted, so the counts and price ranges describe the public catalog, not the prices of any one [contract](#term). [Pricing Currency Category](#col) is returned so a rate priced in a [consumption currency](#term) is not read as money.
 
 ```sql
 SELECT
@@ -238,7 +238,7 @@ ORDER BY SkuPriceEffectiveStart, SkuPriceEffectiveEnd
 
 ### Compare List Prices Across Regions
 
-This query answers how the public rate for each [SKU](#term) varies by location. A deployment decision can then weigh the price difference between regions. It takes a service provider, a pricing service name, and a point in time. Rows are sorted by SKU ID, because SKU ID stays the same across the price details a [SKU](#term) varies by, including location. SKU Price ID may not, since a [service provider](#term) may publish a separate SKU Price ID for each region. This query applies where the [operating model](#term) includes regions.
+This query answers how the public rate for each [SKU](#term) varies by location. A deployment decision can then weigh the price difference between regions. It takes a service provider, a pricing service name, and a point in time. Rows are sorted by [SKU ID](#col:SkuPrice.SkuId), because [SKU ID](#col:SkuPrice.SkuId) stays the same across the price details a [SKU](#term) varies by, including location. [SKU Price ID](#col:SkuPrice.SkuPriceId) may not, since a [service provider](#term) may publish a separate [SKU Price ID](#col:SkuPrice.SkuPriceId) for each region. This query applies where the [operating model](#term) includes regions.
 
 ```sql
 SELECT

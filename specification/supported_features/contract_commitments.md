@@ -14,7 +14,7 @@ The [Contract Applied](#col) column contains several FOCUS-defined properties. F
 ## Supporting Columns
 
 * [ContractCommitment](#ds)
-  * BillingCurrency
+  * [BillingCurrency](#col:ContractCommitment.BillingCurrency)
   * [ContractCommitmentCategory](#col)
   * [ContractCommitmentCost](#col)
   * [ContractCommitmentId](#col)
@@ -23,7 +23,7 @@ The [Contract Applied](#col) column contains several FOCUS-defined properties. F
   * [ContractCommitmentQuantity](#col)
   * [ContractCommitmentType](#col)
   * [ContractCommitmentUnit](#col)
-  * ContractId
+  * [ContractId](#col:ContractCommitment.ContractId)
 
 ## Example SQL Queries
 
@@ -54,7 +54,7 @@ ORDER BY ServiceProviderName, ContractCommitmentId
 
 ### Report on Usage Against Contract Commitment
 
-This query takes inputs of a time range via [Charge Period Start](#col) and [Charge Period End](#col), then presents the aggregation of the application of [contract commitments](#term) from the [Cost and Usage](#ds) dataset per Service Provider Name and [Contract Commitment ID](#col) by filtering on the specified time range, along with Charge Category of "Usage".
+This query takes inputs of a time range via [Charge Period Start](#col) and [Charge Period End](#col), then presents the aggregation of the application of [contract commitments](#term) from the [Cost and Usage](#ds) dataset per [Service Provider Name](#col:CostAndUsage.ServiceProviderName) and [Contract Commitment ID](#col) by filtering on the specified time range, along with [Charge Category](#col:CostAndUsage.ChargeCategory) of "Usage".
 
 ```sql
 SELECT
@@ -75,7 +75,7 @@ ORDER BY ServiceProviderName, ContractCommitmentId
 
 ### Report on Usage Against Contract Commitment by Category
 
-This query takes inputs of a time range via [Charge Period Start](#col) and [Charge Period End](#col), then presents the aggregation of the application of [contract commitments](#term) from the [Cost and Usage](#ds) dataset per Service Provider Name and [Contract Commitment ID](#col) by filtering on the specified time range, along with Charge Category of "Usage". It also joins in the Contract Commitment dataset to provide further information about each [contract commitment](#term) (in this case, the contract, category, type, start and end date/time, committed cost, and committed quantity and unit). It reports applied cost only, so [Contract Applied](#col) entries that record an applied quantity without an applied cost are excluded.
+This query takes inputs of a time range via [Charge Period Start](#col) and [Charge Period End](#col), then presents the aggregation of the application of [contract commitments](#term) from the [Cost and Usage](#ds) dataset per [Service Provider Name](#col:CostAndUsage.ServiceProviderName) and [Contract Commitment ID](#col) by filtering on the specified time range, along with [Charge Category](#col:CostAndUsage.ChargeCategory) of "Usage". It also joins in the [Contract Commitment](#ds) dataset to provide further information about each [contract commitment](#term) (in this case, the contract, category, type, start and end date/time, committed cost, and committed quantity and unit). It reports applied cost only, so [Contract Applied](#col) entries that record an applied quantity without an applied cost are excluded.
 
 ```sql
 SELECT

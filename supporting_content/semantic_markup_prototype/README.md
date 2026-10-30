@@ -40,6 +40,7 @@ The link form was picked because every tool already in the toolchain parses it a
 * [`compare_rendered.sh`](compare_rendered.sh) compares the published `spec.md` with a base ref, word by word.
 * [`classify_rendered.py`](classify_rendered.py) sorts the differences found by `compare_rendered.sh` by kind: whitespace, link added, link removed, link retargeted, italics, and visible words changed.
 * [`convert_all.sh`](convert_all.sh) converts every file the build includes (see [CONVERSION.md](CONVERSION.md)).
+* [`semantic_review.py`](semantic_review.py) records the semantic review as rules: corrections to existing tags and decisions on the items `convert_all.sh` leaves open (see [SEMANTIC_REVIEW.md](SEMANTIC_REVIEW.md) and [`semantic-review-changes.tsv`](semantic-review-changes.tsv)).
 
 ```bash
 PYTHON=/path/to/venv/bin/python ./build.sh

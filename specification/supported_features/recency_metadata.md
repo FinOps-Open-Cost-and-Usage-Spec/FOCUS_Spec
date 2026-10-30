@@ -6,16 +6,16 @@ FOCUS supports the ability for data generators to provide metadata indicating 1)
 
 ## Applicable Metadata
 
-* Recency
-  * Dataset Instance Complete
-  * Dataset Instance Last Updated
-  * Dataset Instance ID
-  * Recency Last Updated
-  * Time Sectors
-    * Time Sector Start
-    * Time Sector End
-    * Time Sector Complete
-    * Time Sector Last Updated
+* [Recency](#meta)
+  * [Dataset Instance Complete](#meta)
+  * [Dataset Instance Last Updated](#meta)
+  * [Dataset Instance ID](#meta:Recency.DatasetInstanceId)
+  * [Recency Last Updated](#meta)
+  * [Time Sectors](#meta)
+    * [Time Sector Start](#meta)
+    * [Time Sector End](#meta)
+    * [Time Sector Complete](#meta)
+    * [Time Sector Last Updated](#meta)
 
 ## Version Introduced
 

@@ -1,0 +1,445 @@
+change	file	line	before	after	reason
+corrected	specification/appendix/sku_price_examples/price_effectivity_and_currency.md	3	[SKU Price](#term) record	[SKU Price](#ds) record	a record of the SKU Price dataset; the glossary SKU Price construct excludes prices
+corrected	specification/datasets/billing_period/columns/billingperiodcreated.md	24	[Billing Period](#term) record	[Billing Period](#ds) record	a record of the Billing Period dataset, not the billing period time window
+corrected	specification/datasets/contract_commitment/columns/contractcommitmentperiodend.md	3	[Contract Commitment Period Start](#col:ContractPeriodStart)	[Contract Commitment Period Start](#col)	the text and the example (with Contract Commitment Period End) mean ContractCommitmentPeriodStart, not ContractPeriodStart
+corrected	specification/datasets/cost_and_usage/columns/hostprovidername.md	3	[Service Provider](#col:ServiceProviderName)	[Service Provider](#term)	the party that deploys on the host, not the ServiceProviderName column
+corrected	specification/datasets/sku_price/columns/skupricecreated.md	12	[SKU Price](#term) record	[SKU Price](#ds) record	a record of the SKU Price dataset; the glossary SKU Price construct excludes prices
+corrected	specification/datasets/sku_price/columns/skupricelastupdated.md	12	[SKU Price](#term) record	[SKU Price](#ds) record	a record of the SKU Price dataset; the glossary SKU Price construct excludes prices
+corrected	specification/metadata/schema/column_definition/deprecated.md	3	[Dataset Instance](#meta)	[Dataset Instance](#term)	the dataset instance that holds the column, not the Dataset Instance metadata object
+added	specification/appendix/contract_commitments/contract_commitments.md	5	Contract Commitment	[Contract Commitment](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/appendix/contract_commitments/contract_commitments.md	5	Contract Commitment	[Contract Commitment](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/appendix/contract_commitments/contract_commitments.md	42	Contract Commitment	[Contract Commitment](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/appendix/contract_commitments/contract_commitments.md	44	Contract Commitment	[Contract Commitment](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/appendix/correction_handling_examples/closed_billing_period.md	98	SKU Price IDs	[SKU Price IDs](#col:SkuPriceId)	plural of the SKU Price ID column on charges; plurals need an explicit ID
+added	specification/appendix/correction_handling_examples/closed_billing_period.md	114	SKU Price IDs	[SKU Price IDs](#col:SkuPriceId)	plural of the SKU Price ID column on charges; plurals need an explicit ID
+added	specification/appendix/correction_handling_examples/open_billing_period.md	125	SKU Price IDs	[SKU Price IDs](#col:SkuPriceId)	plural of the SKU Price ID column on charges; plurals need an explicit ID
+added	specification/appendix/correction_handling_examples/open_billing_period.md	141	SKU Price IDs	[SKU Price IDs](#col:SkuPriceId)	plural of the SKU Price ID column on charges; plurals need an explicit ID
+added	specification/appendix/examples/commitment_discount_flexibility_examples/one_hundred_percent_utilization_with_commitment_discount_flexibility_with_1_resource.md	35	BilledCost	[BilledCost](#col:CostAndUsage.BilledCost)	a Cost and Usage charge in the example
+added	specification/appendix/examples/commitment_discount_flexibility_examples/zero_percent_utilization_without_commitment_discount_flexibility.md	35	BilledCost	[BilledCost](#col:CostAndUsage.BilledCost)	a Cost and Usage charge in the example
+added	specification/appendix/invoice_and_billing_period_handling.md	15	Invoice Detail ID	[Invoice Detail ID](#col:InvoiceDetail.InvoiceDetailId)	in the Invoice Detail dataset
+added	specification/appendix/invoice_and_billing_period_handling.md	19	Billing Period	[Billing Period](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/appendix/invoice_and_billing_period_handling.md	23	Billing Period	[Billing Period](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/appendix/invoice_and_billing_period_handling.md	31	Billing Period	[Billing Period](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/appendix/invoice_and_billing_period_handling.md	31	Billing Period	[Billing Period](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/appendix/invoice_and_billing_period_handling.md	33	Billing Period	[Billing Period](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/appendix/json_object_examples/contract_applied_examples.md	7	ContractId	[ContractId](#col:ContractCommitment.ContractId)	the contract in the Contract Commitment dataset
+added	specification/appendix/json_object_examples/contract_applied_examples.md	11	Charge Category	[Charge Category](#col:CostAndUsage.ChargeCategory)	a Cost and Usage charge in the example
+added	specification/appendix/json_object_examples/contract_applied_examples.md	43	Charge Category	[Charge Category](#col:CostAndUsage.ChargeCategory)	a Cost and Usage charge in the example
+added	specification/appendix/json_object_examples/contract_commitment_applicability_examples.md	17	BillingAccountId	[BillingAccountId](#col:CostAndUsage.BillingAccountId)	the account a charge belongs to
+added	specification/appendix/json_object_examples/sku_price_eligibility_examples.md	3	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/appendix/json_object_examples/sku_price_eligibility_examples.md	5	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/appendix/json_object_examples/sku_price_eligibility_examples.md	19	BillingAccountId	[BillingAccountId](#col:CostAndUsage.BillingAccountId)	the account a charge belongs to
+added	specification/appendix/metadata_examples/data_generator_version_changed_example.md	5	Data Generator Version	[Data Generator Version](#meta)	the DataGeneratorVersion field
+added	specification/appendix/metadata_examples/data_generator_version_changed_example.md	7	FOCUS Version	[FOCUS Version](#meta)	the FocusVersion field of the schema object
+added	specification/appendix/metadata_examples/data_generator_version_changed_example.md	7	Data Generator Version	[Data Generator Version](#meta)	the DataGeneratorVersion field
+added	specification/appendix/metadata_examples/dataset_instance_metadata_example.md	5	Contract Commitment	[Contract Commitment](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/appendix/metadata_examples/focus_version_changed_with_data_generator_version_used_example.md	5	Data Generator Version	[Data Generator Version](#meta)	the DataGeneratorVersion field
+added	specification/appendix/metadata_examples/focus_version_changed_with_data_generator_version_used_example.md	5	FOCUS Version	[FOCUS Version](#meta)	the FocusVersion field of the schema object
+added	specification/appendix/metadata_examples/focus_version_changed_with_data_generator_version_used_example.md	5	Data Generator Version	[Data Generator Version](#meta)	the DataGeneratorVersion field
+added	specification/appendix/metadata_examples/focus_version_changed_with_data_generator_version_used_example.md	7	FOCUS Version	[FOCUS Version](#meta)	the FocusVersion field of the schema object
+added	specification/appendix/metadata_examples/focus_version_changed_with_data_generator_version_used_example.md	7	Data Generator Version	[Data Generator Version](#meta)	the DataGeneratorVersion field
+added	specification/appendix/saas_examples/simple_agreements.md	23	List Unit Price	[List Unit Price](#col)	Display Name capitalization means the column (#2765)
+added	specification/appendix/saas_examples/simple_agreements.md	23	List Unit Price	[List Unit Price](#col)	Display Name capitalization means the column (#2765)
+added	specification/appendix/sku_price_examples/commitment_pricing.md	3	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/appendix/sku_price_examples/commitment_pricing.md	3	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/appendix/sku_price_examples/commitment_pricing.md	13	ChargeCategory	[ChargeCategory](#col:SkuPrice.ChargeCategory)	a SKU Price record's value
+added	specification/appendix/sku_price_examples/commitment_pricing.md	16	PricingUnit	[PricingUnit](#col:SkuPrice.PricingUnit)	a SKU Price record's value
+added	specification/appendix/sku_price_examples/commitment_pricing.md	27	ChargeCategory	[ChargeCategory](#col:SkuPrice.ChargeCategory)	a SKU Price record's value
+added	specification/appendix/sku_price_examples/commitment_pricing.md	29	SkuPriceId	[SkuPriceId](#col:SkuPrice.SkuPriceId)	a SKU Price record's value
+added	specification/appendix/sku_price_examples/commitment_pricing.md	29	SkuPriceId	[SkuPriceId](#col:SkuPrice.SkuPriceId)	a SKU Price record's value
+added	specification/appendix/sku_price_examples/commitment_pricing.md	29	CommitmentDiscountCategory	[CommitmentDiscountCategory](#col:SkuPrice.CommitmentDiscountCategory)	a SKU Price record's value
+added	specification/appendix/sku_price_examples/price_effectivity_and_currency.md	42	ServiceProviderName	[ServiceProviderName](#col:SkuPrice.ServiceProviderName)	a SKU Price record's value
+added	specification/appendix/sku_price_examples/price_effectivity_and_currency.md	42	SkuPriceId	[SkuPriceId](#col:SkuPrice.SkuPriceId)	a SKU Price record's value
+added	specification/appendix/sku_price_examples/price_effectivity_and_currency.md	42	ContractId	[ContractId](#col:SkuPrice.ContractId)	a SKU Price record's value
+added	specification/appendix/sku_price_examples/price_effectivity_and_currency.md	42	PricingCurrency	[PricingCurrency](#col:SkuPrice.PricingCurrency)	a SKU Price record's value
+added	specification/appendix/sku_price_examples/price_effectivity_and_currency.md	65	SkuPriceId	[SkuPriceId](#col:SkuPrice.SkuPriceId)	a SKU Price record's value
+added	specification/appendix/sku_price_examples/price_effectivity_and_currency.md	65	PricingCurrency	[PricingCurrency](#col:SkuPrice.PricingCurrency)	a SKU Price record's value
+added	specification/appendix/sku_price_examples/price_effectivity_and_currency.md	65	PricingCurrency	[PricingCurrency](#col:SkuPrice.PricingCurrency)	a SKU Price record's value
+added	specification/appendix/sku_price_examples/price_effectivity_and_currency.md	77	PricingCurrency	[PricingCurrency](#col:SkuPrice.PricingCurrency)	a SKU Price record's value
+added	specification/appendix/sku_price_examples/price_effectivity_and_currency.md	78	PricingCurrency	[PricingCurrency](#col:SkuPrice.PricingCurrency)	a SKU Price record's value
+added	specification/appendix/sku_price_examples/price_effectivity_and_currency.md	79	PricingCurrency	[PricingCurrency](#col:SkuPrice.PricingCurrency)	a SKU Price record's value
+added	specification/appendix/sku_price_examples/price_effectivity_and_currency.md	82	ChargeCategory	[ChargeCategory](#col:SkuPrice.ChargeCategory)	a SKU Price record's value
+added	specification/appendix/sku_price_examples/price_effectivity_and_currency.md	82	SkuPriceId	[SkuPriceId](#col:SkuPrice.SkuPriceId)	a SKU Price record's value
+added	specification/appendix/sku_price_examples/price_effectivity_and_currency.md	82	SkuId	[SkuId](#col:SkuPrice.SkuId)	a SKU Price record's value
+added	specification/appendix/sku_price_examples/sku_price_examples_overview.md	7	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/appendix/sku_price_examples/sku_price_examples_overview.md	9	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/appendix/sku_price_examples/sku_price_examples_overview.md	34	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/appendix/sku_price_examples/standard_and_negotiated_prices.md	14	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/appendix/sku_price_examples/standard_and_negotiated_prices.md	43	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/appendix/split_cost_allocation_field_mapping.md	23	List Unit Price	[List Unit Price](#col)	Display Name capitalization means the column (#2765)
+added	specification/attributes/currency_format.md	25	Billing Currency	[Billing Currency](#col:CostAndUsage.BillingCurrency)	Display Name capitalization means the column (#2765)
+added	specification/datasets/billing_period/columns/billingperiodlastupdated.md	25	Billing Period	[Billing Period](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/datasets/billing_period/dataset.md	3	Billing Period	[Billing Period](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/datasets/billing_period/dataset.md	18	Billing Period	[Billing Period](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/datasets/contract_commitment/columns/contractcommitmentapplicability.md	128	BillingAccountId	[BillingAccountId](#col:CostAndUsage.BillingAccountId)	the account a charge belongs to
+added	specification/datasets/contract_commitment/columns/contractcommitmentlastupdated.md	3	Contract Commitment	[Contract Commitment](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/datasets/contract_commitment/dataset.md	3	Contract Commitment	[Contract Commitment](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/datasets/contract_commitment/dataset.md	42	Contract Commitment	[Contract Commitment](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/datasets/contract_commitment/dataset.md	44	Contract Commitment	[Contract Commitment](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/datasets/cost_and_usage/columns/availabilityzone.md	3	Availability Zone	[Availability Zone](#col)	Display Name capitalization means the column (#2765)
+added	specification/datasets/cost_and_usage/columns/billingcurrency.md	3	Billing Currency	[Billing Currency](#col)	Display Name capitalization means the column (#2765)
+added	specification/datasets/cost_and_usage/columns/chargecategory.md	5	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/datasets/cost_and_usage/columns/chargecategory.md	5	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/datasets/cost_and_usage/columns/contractedcost.md	5	Contracted Unit Price	[Contracted Unit Price](#col)	Display Name capitalization means the column (#2765)
+added	specification/datasets/cost_and_usage/columns/contractedunitprice.md	5	Contracted Unit Price	[Contracted Unit Price](#col)	Display Name capitalization means the column (#2765)
+added	specification/datasets/cost_and_usage/columns/contractedunitprice.md	7	Contracted Unit Price	[Contracted Unit Price](#col)	Display Name capitalization means the column (#2765)
+added	specification/datasets/cost_and_usage/columns/contractedunitprice.md	7	Contracted Unit Price	[Contracted Unit Price](#col)	Display Name capitalization means the column (#2765)
+added	specification/datasets/cost_and_usage/columns/contractedunitprice.md	30	Contracted Unit Price	[Contracted Unit Price](#col)	Display Name capitalization means the column (#2765)
+added	specification/datasets/cost_and_usage/columns/contractedunitprice.md	32	List Unit Price	[List Unit Price](#col)	Display Name capitalization means the column (#2765)
+added	specification/datasets/cost_and_usage/columns/contractedunitprice.md	32	Contracted Unit Price	[Contracted Unit Price](#col)	Display Name capitalization means the column (#2765)
+added	specification/datasets/cost_and_usage/columns/contractedunitprice.md	32	Contracted Unit Price	[Contracted Unit Price](#col)	Display Name capitalization means the column (#2765)
+added	specification/datasets/cost_and_usage/columns/contractedunitprice.md	32	List Unit Price	[List Unit Price](#col)	Display Name capitalization means the column (#2765)
+added	specification/datasets/cost_and_usage/columns/contractedunitprice.md	36	Contracted Unit Price	[Contracted Unit Price](#col)	Display Name capitalization means the column (#2765)
+added	specification/datasets/cost_and_usage/columns/listcost.md	5	List Unit Price	[List Unit Price](#col)	Display Name capitalization means the column (#2765)
+added	specification/datasets/cost_and_usage/columns/listunitprice.md	5	List Unit Price	[List Unit Price](#col)	Display Name capitalization means the column (#2765)
+added	specification/datasets/cost_and_usage/columns/listunitprice.md	5	List Unit Price	[List Unit Price](#col)	Display Name capitalization means the column (#2765)
+added	specification/datasets/cost_and_usage/columns/listunitprice.md	28	List Unit Price	[List Unit Price](#col)	Display Name capitalization means the column (#2765)
+added	specification/datasets/cost_and_usage/columns/listunitprice.md	30	List Unit Price	[List Unit Price](#col)	Display Name capitalization means the column (#2765)
+added	specification/datasets/cost_and_usage/columns/listunitprice.md	32	List Unit Price	[List Unit Price](#col)	Display Name capitalization means the column (#2765)
+added	specification/datasets/cost_and_usage/columns/listunitprice.md	32	SKU Price IDs	[SKU Price IDs](#col:SkuPriceId)	plural of the SKU Price ID column on charges; plurals need an explicit ID
+added	specification/datasets/cost_and_usage/columns/listunitprice.md	32	SKU Price IDs	[SKU Price IDs](#col:SkuPriceId)	plural of the SKU Price ID column on charges; plurals need an explicit ID
+added	specification/datasets/cost_and_usage/columns/listunitprice.md	33	Billing Currency	[Billing Currency](#col)	Display Name capitalization means the column (#2765)
+added	specification/datasets/cost_and_usage/columns/listunitprice.md	33	List Unit Price	[List Unit Price](#col)	Display Name capitalization means the column (#2765)
+added	specification/datasets/cost_and_usage/columns/listunitprice.md	33	Billing Currency	[Billing Currency](#col)	Display Name capitalization means the column (#2765)
+added	specification/datasets/cost_and_usage/dataset.md	88	Contract Commitment	[Contract Commitment](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/datasets/cost_and_usage/dataset.md	88	Contract Commitment ID	[Contract Commitment ID](#col:ContractCommitment.ContractCommitmentId)	the column in the Contract Commitment dataset
+added	specification/datasets/data_model.md	17	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/datasets/data_model.md	17	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/datasets/invoice_detail/columns/billingcurrency.md	3	Billing Currency	[Billing Currency](#col)	Display Name capitalization means the column (#2765)
+added	specification/datasets/invoice_detail/columns/paymentcurrencybilledcost.md	23	Billing Currency	[Billing Currency](#col)	Display Name capitalization means the column (#2765)
+added	specification/datasets/invoice_detail/columns/paymentcurrencybilledcost.md	43	Billing Currency	[Billing Currency](#col)	Display Name capitalization means the column (#2765)
+added	specification/datasets/sku_price/columns/chargecategory.md	26	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/datasets/sku_price/columns/chargecategory.md	30	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/datasets/sku_price/columns/chargecategory.md	30	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/datasets/sku_price/columns/chargecategory.md	32	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/datasets/sku_price/columns/commitmentdiscountcategory.md	32	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/datasets/sku_price/columns/contractid.md	3	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/datasets/sku_price/columns/pricingregionid.md	23	Region ID	[Region ID](#col:CostAndUsage.RegionId)	contrasted with PricingRegionId: the usage record's region
+added	specification/datasets/sku_price/columns/pricingservicename.md	19	Service Name	[Service Name](#col:CostAndUsage.ServiceName)	contrasted with PricingServiceName: the usage record's service
+added	specification/datasets/sku_price/columns/purchasepaymentmodel.md	26	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/datasets/sku_price/columns/purchasepaymentmodel.md	30	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/datasets/sku_price/columns/purchasepaymentmodel.md	32	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/datasets/sku_price/columns/skupricecreated.md	3	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/datasets/sku_price/columns/skupricecreated.md	24	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/datasets/sku_price/columns/skupricedescription.md	24	*SKU Price's*	[SKU Price's](#term:sku-price)	italic possessive of the SKU Price glossary term
+added	specification/datasets/sku_price/columns/skupriceeffectiveend.md	5	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/datasets/sku_price/columns/skupriceeffectiveend.md	29	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/datasets/sku_price/columns/skupriceeffectivestart.md	3	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/datasets/sku_price/columns/skupriceeffectivestart.md	5	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/datasets/sku_price/columns/skupriceeffectivestart.md	28	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/datasets/sku_price/columns/skupriceeligibility.md	3	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/datasets/sku_price/columns/skupriceeligibility.md	19	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/datasets/sku_price/columns/skupriceeligibility.md	28	*SKU Price's*	[SKU Price's](#term:sku-price)	italic possessive of the SKU Price glossary term
+added	specification/datasets/sku_price/columns/skupriceeligibility.md	29	*SKU Price's*	[SKU Price's](#term:sku-price)	italic possessive of the SKU Price glossary term
+added	specification/datasets/sku_price/columns/skupriceeligibility.md	94	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/datasets/sku_price/columns/skupriceeligibility.md	95	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/datasets/sku_price/columns/skupriceeligibility.md	96	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/datasets/sku_price/columns/skupriceeligibility.md	152	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/datasets/sku_price/columns/skupricelastupdated.md	15	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/datasets/sku_price/columns/skupricelastupdated.md	27	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/datasets/sku_price/dataset.md	3	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/datasets/sku_price/dataset.md	3	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/datasets/sku_price/dataset.md	3	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/datasets/sku_price/dataset.md	5	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/datasets/sku_price/dataset.md	7	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/datasets/sku_price/dataset.md	43	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/datasets/sku_price/dataset.md	45	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/datasets/sku_price/dataset.md	47	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/datasets/sku_price/dataset.md	48	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/datasets/sku_price/dataset.md	51	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/datasets/sku_price/dataset.md	51	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/datasets/sku_price/dataset.md	57	Billing Currency	[Billing Currency](#col:CostAndUsage.BillingCurrency)	Display Name capitalization means the column (#2765)
+added	specification/datasets/sku_price/dataset.md	57	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/datasets/sku_price/dataset.md	57	Billing Currency	[Billing Currency](#col:CostAndUsage.BillingCurrency)	Display Name capitalization means the column (#2765)
+added	specification/datasets/sku_price/dataset.md	58	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/datasets/sku_price/dataset.md	58	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/datasets/sku_price/dataset.md	60	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/metadata/dataset_instance/dataset_instance_overview.md	3	Dataset Instance	[Dataset Instance](#meta)	the Dataset Instance metadata object
+added	specification/operating_model_conditions/includespurchases.md	5	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/operating_model_conditions/includesquantitytierpricing.md	5	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/schemas/schemas.mdpp	55	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/supported_features/billed_cost_and_invoice_alignment.md	9	BilledCost	[BilledCost](#col:CostAndUsage.BilledCost)	the page's query reads Cost and Usage
+added	specification/supported_features/billed_cost_and_invoice_alignment.md	10	BillingCurrency	[BillingCurrency](#col:CostAndUsage.BillingCurrency)	the page's query reads Cost and Usage
+added	specification/supported_features/billed_cost_and_invoice_alignment.md	11	BillingPeriodEnd	[BillingPeriodEnd](#col:CostAndUsage.BillingPeriodEnd)	the page's query reads Cost and Usage
+added	specification/supported_features/billed_cost_and_invoice_alignment.md	12	BillingPeriodStart	[BillingPeriodStart](#col:CostAndUsage.BillingPeriodStart)	the page's query reads Cost and Usage
+added	specification/supported_features/billed_cost_and_invoice_alignment.md	13	InvoiceId	[InvoiceId](#col:CostAndUsage.InvoiceId)	the page's query reads Cost and Usage
+added	specification/supported_features/catalog_discovery_and_price_estimation.md	3	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/supported_features/catalog_discovery_and_price_estimation.md	7	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/supported_features/catalog_discovery_and_price_estimation.md	9	Pricing Unit	[Pricing Unit](#col:SkuPrice.PricingUnit)	a SKU Price record's value
+added	specification/supported_features/catalog_discovery_and_price_estimation.md	9	Pricing Currency	[Pricing Currency](#col:SkuPrice.PricingCurrency)	a SKU Price record's value
+added	specification/supported_features/catalog_discovery_and_price_estimation.md	11	Contract ID	[Contract ID](#col:SkuPrice.ContractId)	a SKU Price record's value
+added	specification/supported_features/catalog_discovery_and_price_estimation.md	12	Contract ID	[Contract ID](#col:SkuPrice.ContractId)	a SKU Price record's value
+added	specification/supported_features/catalog_discovery_and_price_estimation.md	13	Contract ID	[Contract ID](#col:SkuPrice.ContractId)	a SKU Price record's value
+added	specification/supported_features/catalog_discovery_and_price_estimation.md	15	Pricing Unit	[Pricing Unit](#col:SkuPrice.PricingUnit)	a SKU Price record's value
+added	specification/supported_features/catalog_discovery_and_price_estimation.md	19	Charge Category	[Charge Category](#col:SkuPrice.ChargeCategory)	a SKU Price record's value
+added	specification/supported_features/catalog_discovery_and_price_estimation.md	23	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/supported_features/catalog_discovery_and_price_estimation.md	38	SKU Price ID	[SKU Price ID](#col:SkuPrice.SkuPriceId)	a SKU Price record's value
+added	specification/supported_features/catalog_discovery_and_price_estimation.md	38	SKU Price ID	[SKU Price ID](#col:SkuPrice.SkuPriceId)	a SKU Price record's value
+added	specification/supported_features/catalog_discovery_and_price_estimation.md	42	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/supported_features/catalog_discovery_and_price_estimation.md	42	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/supported_features/catalog_discovery_and_price_estimation.md	44	Contract ID	[Contract ID](#col:SkuPrice.ContractId)	a SKU Price record's value
+added	specification/supported_features/catalog_discovery_and_price_estimation.md	44	Contract ID	[Contract ID](#col:SkuPrice.ContractId)	a SKU Price record's value
+added	specification/supported_features/catalog_discovery_and_price_estimation.md	50	Charge Category	[Charge Category](#col:SkuPrice.ChargeCategory)	a SKU Price record's value
+added	specification/supported_features/catalog_discovery_and_price_estimation.md	51	Commitment Discount Category	[Commitment Discount Category](#col:SkuPrice.CommitmentDiscountCategory)	a SKU Price record's value
+added	specification/supported_features/catalog_discovery_and_price_estimation.md	56	ChargeCategory	[ChargeCategory](#col:SkuPrice.ChargeCategory)	a SKU Price record's value
+added	specification/supported_features/catalog_discovery_and_price_estimation.md	57	ContractId	[ContractId](#col:SkuPrice.ContractId)	a SKU Price record's value
+added	specification/supported_features/catalog_discovery_and_price_estimation.md	66	CommitmentDiscountCategory	[CommitmentDiscountCategory](#col:SkuPrice.CommitmentDiscountCategory)	a SKU Price record's value
+added	specification/supported_features/catalog_discovery_and_price_estimation.md	67	PricingCurrency	[PricingCurrency](#col:SkuPrice.PricingCurrency)	a SKU Price record's value
+added	specification/supported_features/catalog_discovery_and_price_estimation.md	70	PricingUnit	[PricingUnit](#col:SkuPrice.PricingUnit)	a SKU Price record's value
+added	specification/supported_features/catalog_discovery_and_price_estimation.md	73	ServiceProviderName	[ServiceProviderName](#col:SkuPrice.ServiceProviderName)	a SKU Price record's value
+added	specification/supported_features/catalog_discovery_and_price_estimation.md	74	SkuId	[SkuId](#col:SkuPrice.SkuId)	a SKU Price record's value
+added	specification/supported_features/catalog_discovery_and_price_estimation.md	79	SkuPriceId	[SkuPriceId](#col:SkuPrice.SkuPriceId)	a SKU Price record's value
+added	specification/supported_features/catalog_discovery_and_price_estimation.md	90	Charge Category	[Charge Category](#col:SkuPrice.ChargeCategory)	a SKU Price record's value
+added	specification/supported_features/catalog_discovery_and_price_estimation.md	94	SKU Price ID	[SKU Price ID](#col:SkuPrice.SkuPriceId)	a SKU Price record's value
+added	specification/supported_features/catalog_discovery_and_price_estimation.md	94	Commitment Discount Category	[Commitment Discount Category](#col:SkuPrice.CommitmentDiscountCategory)	a SKU Price record's value
+added	specification/supported_features/catalog_discovery_and_price_estimation.md	120	SKU Price ID	[SKU Price ID](#col:SkuPrice.SkuPriceId)	a SKU Price record's value
+added	specification/supported_features/catalog_discovery_and_price_estimation.md	120	Pricing Unit	[Pricing Unit](#col:SkuPrice.PricingUnit)	a SKU Price record's value
+added	specification/supported_features/catalog_discovery_and_price_estimation.md	122	Pricing Currency	[Pricing Currency](#col:SkuPrice.PricingCurrency)	a SKU Price record's value
+added	specification/supported_features/catalog_discovery_and_price_estimation.md	122	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/supported_features/catalog_discovery_and_price_estimation.md	122	SKU Price ID	[SKU Price ID](#col:SkuPrice.SkuPriceId)	a SKU Price record's value
+added	specification/supported_features/catalog_discovery_and_price_estimation.md	124	SKU Price ID	[SKU Price ID](#col:SkuPrice.SkuPriceId)	a SKU Price record's value
+added	specification/supported_features/catalog_discovery_and_price_estimation.md	126	SKU Price ID	[SKU Price ID](#col:SkuPrice.SkuPriceId)	a SKU Price record's value
+added	specification/supported_features/catalog_discovery_and_price_estimation.md	126	SKU Price ID	[SKU Price ID](#col:SkuPrice.SkuPriceId)	a SKU Price record's value
+added	specification/supported_features/catalog_discovery_and_price_estimation.md	159	Contract ID	[Contract ID](#col:SkuPrice.ContractId)	a SKU Price record's value
+added	specification/supported_features/catalog_discovery_and_price_estimation.md	159	SKU Price ID	[SKU Price ID](#col:SkuPrice.SkuPriceId)	a SKU Price record's value
+added	specification/supported_features/catalog_discovery_and_price_estimation.md	159	Contract ID	[Contract ID](#col:SkuPrice.ContractId)	a SKU Price record's value
+added	specification/supported_features/catalog_discovery_and_price_estimation.md	195	Charge Category	[Charge Category](#col:SkuPrice.ChargeCategory)	a SKU Price record's value
+added	specification/supported_features/catalog_discovery_and_price_estimation.md	241	SKU ID	[SKU ID](#col:SkuPrice.SkuId)	a SKU Price record's value
+added	specification/supported_features/catalog_discovery_and_price_estimation.md	241	SKU ID	[SKU ID](#col:SkuPrice.SkuId)	a SKU Price record's value
+added	specification/supported_features/catalog_discovery_and_price_estimation.md	241	SKU Price ID	[SKU Price ID](#col:SkuPrice.SkuPriceId)	a SKU Price record's value
+added	specification/supported_features/catalog_discovery_and_price_estimation.md	241	SKU Price ID	[SKU Price ID](#col:SkuPrice.SkuPriceId)	a SKU Price record's value
+added	specification/supported_features/contract_commitments.md	17	BillingCurrency	[BillingCurrency](#col:ContractCommitment.BillingCurrency)	listed under its dataset
+added	specification/supported_features/contract_commitments.md	26	ContractId	[ContractId](#col:ContractCommitment.ContractId)	listed under its dataset
+added	specification/supported_features/contract_commitments.md	57	Service Provider Name	[Service Provider Name](#col:CostAndUsage.ServiceProviderName)	the query reads Cost and Usage
+added	specification/supported_features/contract_commitments.md	57	Charge Category	[Charge Category](#col:CostAndUsage.ChargeCategory)	the query reads Cost and Usage
+added	specification/supported_features/contract_commitments.md	78	Service Provider Name	[Service Provider Name](#col:CostAndUsage.ServiceProviderName)	the query reads Cost and Usage
+added	specification/supported_features/contract_commitments.md	78	Charge Category	[Charge Category](#col:CostAndUsage.ChargeCategory)	the query reads Cost and Usage
+added	specification/supported_features/contract_commitments.md	78	Contract Commitment	[Contract Commitment](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/supported_features/dataset_instance_metadata.md	9	Dataset Instance	[Dataset Instance](#meta)	listed under Applicable Metadata
+added	specification/supported_features/dataset_instance_metadata.md	10	Dataset Instance ID	[Dataset Instance ID](#meta:DatasetInstance.DatasetInstanceId)	listed under Applicable Metadata
+added	specification/supported_features/dataset_instance_metadata.md	11	Dataset Instance Name	[Dataset Instance Name](#meta)	listed under Applicable Metadata
+added	specification/supported_features/dataset_instance_metadata.md	12	FOCUS Dataset ID	[FOCUS Dataset ID](#meta)	listed under Applicable Metadata
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	3	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	7	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	9	Contract ID	[Contract ID](#col:SkuPrice.ContractId)	a SKU Price record's contract
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	10	Contract ID	[Contract ID](#col:SkuPrice.ContractId)	a SKU Price record's contract
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	11	Contract ID	[Contract ID](#col:SkuPrice.ContractId)	a SKU Price record's contract
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	13	SKU Price ID	[SKU Price ID](#col:SkuPrice.SkuPriceId)	the sentence is about SKU Price records
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	15	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	19	Contract ID	[Contract ID](#col:SkuPrice.ContractId)	a SKU Price record's contract
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	21	Pricing Unit	[Pricing Unit](#col:SkuPrice.PricingUnit)	the sentence is about SKU Price records
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	23	SKU Price ID	[SKU Price ID](#col:SkuPrice.SkuPriceId)	the sentence is about SKU Price records
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	23	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	23	SKU Price ID	[SKU Price ID](#col:SkuPrice.SkuPriceId)	the sentence is about SKU Price records
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	23	SKU ID	[SKU ID](#col:SkuPrice.SkuId)	the sentence is about SKU Price records
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	23	Pricing Unit	[Pricing Unit](#col:SkuPrice.PricingUnit)	the sentence is about SKU Price records
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	23	Pricing Currency	[Pricing Currency](#col:SkuPrice.PricingCurrency)	the sentence is about SKU Price records
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	23	SKU Price ID	[SKU Price ID](#col:SkuPrice.SkuPriceId)	the sentence is about SKU Price records
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	25	SKU ID	[SKU ID](#col:SkuPrice.SkuId)	the sentence is about SKU Price records
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	25	Commitment Discount Category	[Commitment Discount Category](#col:SkuPrice.CommitmentDiscountCategory)	the sentence is about SKU Price records
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	25	SKU ID	[SKU ID](#col:SkuPrice.SkuId)	the sentence is about SKU Price records
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	25	Pricing Unit	[Pricing Unit](#col:SkuPrice.PricingUnit)	the sentence is about SKU Price records
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	25	Pricing Currency	[Pricing Currency](#col:SkuPrice.PricingCurrency)	the sentence is about SKU Price records
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	27	Charge Category	[Charge Category](#col:SkuPrice.ChargeCategory)	the sentence is about SKU Price records
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	27	Charge Category	[Charge Category](#col:SkuPrice.ChargeCategory)	the sentence is about SKU Price records
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	31	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	33	List Unit Price	[List Unit Price](#col)	Display Name capitalization means the column (#2765)
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	33	Contracted Unit Price	[Contracted Unit Price](#col)	Display Name capitalization means the column (#2765)
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	33	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	39	List Unit Price	[List Unit Price](#col)	Display Name capitalization means the column (#2765)
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	39	Contracted Unit Price	[Contracted Unit Price](#col)	Display Name capitalization means the column (#2765)
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	39	SKU Price ID	[SKU Price ID](#col:CostAndUsage.SkuPriceId)	the sentence is about a charge in Cost and Usage
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	39	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	39	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	39	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	41	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	45	Charge Category	[Charge Category](#col:SkuPrice.ChargeCategory)	the sentence is about SKU Price records
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	45	SKU Price ID	[SKU Price ID](#col:CostAndUsage.SkuPriceId)	the sentence is about a charge in Cost and Usage
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	45	SKU Price ID	[SKU Price ID](#col:SkuPrice.SkuPriceId)	the sentence is about SKU Price records
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	45	Commitment Discount Category	[Commitment Discount Category](#col:SkuPrice.CommitmentDiscountCategory)	the sentence is about SKU Price records
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	49	SKU Price ID	[SKU Price ID](#col:SkuPrice.SkuPriceId)	the sentence is about SKU Price records
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	49	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	49	SKU Price ID	[SKU Price ID](#col:SkuPrice.SkuPriceId)	the sentence is about SKU Price records
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	49	Service Provider Name	[Service Provider Name](#col:SkuPrice.ServiceProviderName)	the sentence is about SKU Price records
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	49	Pricing Currency	[Pricing Currency](#col:SkuPrice.PricingCurrency)	the sentence is about SKU Price records
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	51	Contract ID	[Contract ID](#col:SkuPrice.ContractId)	a SKU Price record's contract
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	51	Pricing Currency	[Pricing Currency](#col:SkuPrice.PricingCurrency)	the sentence is about SKU Price records
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	51	SKU Price ID	[SKU Price ID](#col:SkuPrice.SkuPriceId)	the sentence is about SKU Price records
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	55	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	55	Pricing Currency	[Pricing Currency](#col:CostAndUsage.PricingCurrency)	the sentence is about a charge in Cost and Usage
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	55	Billing Currency	[Billing Currency](#col:CostAndUsage.BillingCurrency)	Display Name capitalization means the column (#2765)
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	55	Billing Currency	[Billing Currency](#col:CostAndUsage.BillingCurrency)	Display Name capitalization means the column (#2765)
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	55	Billing Currency	[Billing Currency](#col:CostAndUsage.BillingCurrency)	Display Name capitalization means the column (#2765)
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	55	Billing Currency	[Billing Currency](#col:CostAndUsage.BillingCurrency)	Display Name capitalization means the column (#2765)
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	61	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	61	Contract ID	[Contract ID](#col:SkuPrice.ContractId)	a SKU Price record's contract
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	61	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	63	Contract ID	[Contract ID](#col:SkuPrice.ContractId)	a SKU Price record's contract
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	63	Contract ID	[Contract ID](#col:SkuPrice.ContractId)	a SKU Price record's contract
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	63	SKU Price ID	[SKU Price ID](#col:CostAndUsage.SkuPriceId)	the sentence is about a charge in Cost and Usage
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	63	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	69	Charge Category	[Charge Category](#col:SkuPrice.ChargeCategory)	the sentence is about SKU Price records
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	70	Commitment Discount Category	[Commitment Discount Category](#col:SkuPrice.CommitmentDiscountCategory)	the sentence is about SKU Price records
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	71	Billing Currency	[Billing Currency](#col:CostAndUsage.BillingCurrency)	Display Name capitalization means the column (#2765)
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	71	Pricing Currency	[Pricing Currency](#col:CostAndUsage.PricingCurrency)	the sentence is about a charge in Cost and Usage
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	71	Billing Currency	[Billing Currency](#col:CostAndUsage.BillingCurrency)	Display Name capitalization means the column (#2765)
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	72	List Unit Price	[List Unit Price](#col)	Display Name capitalization means the column (#2765)
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	72	Contracted Unit Price	[Contracted Unit Price](#col)	Display Name capitalization means the column (#2765)
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	77	ContractId	[ContractId](#col:SkuPrice.ContractId)	listed under SkuPrice
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	88	ChargeCategory	[ChargeCategory](#col:SkuPrice.ChargeCategory)	listed under SkuPrice
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	89	CommitmentDiscountCategory	[CommitmentDiscountCategory](#col:SkuPrice.CommitmentDiscountCategory)	listed under SkuPrice
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	90	PricingCurrency	[PricingCurrency](#col:SkuPrice.PricingCurrency)	listed under SkuPrice
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	93	PricingUnit	[PricingUnit](#col:SkuPrice.PricingUnit)	listed under SkuPrice
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	94	ServiceProviderName	[ServiceProviderName](#col:SkuPrice.ServiceProviderName)	listed under SkuPrice
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	95	SkuId	[SkuId](#col:SkuPrice.SkuId)	listed under SkuPrice
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	100	SkuPriceId	[SkuPriceId](#col:SkuPrice.SkuPriceId)	listed under SkuPrice
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	102	BillingAccountId	[BillingAccountId](#col:CostAndUsage.BillingAccountId)	listed under CostAndUsage
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	103	BillingCurrency	[BillingCurrency](#col:CostAndUsage.BillingCurrency)	listed under CostAndUsage
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	104	ChargeCategory	[ChargeCategory](#col:CostAndUsage.ChargeCategory)	listed under CostAndUsage
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	112	PricingCurrency	[PricingCurrency](#col:CostAndUsage.PricingCurrency)	listed under CostAndUsage
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	117	PricingUnit	[PricingUnit](#col:CostAndUsage.PricingUnit)	listed under CostAndUsage
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	118	ServiceProviderName	[ServiceProviderName](#col:CostAndUsage.ServiceProviderName)	listed under CostAndUsage
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	119	SkuPriceId	[SkuPriceId](#col:CostAndUsage.SkuPriceId)	listed under CostAndUsage
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	129	Contract ID	[Contract ID](#col:SkuPrice.ContractId)	a SKU Price record's contract
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	129	SKU ID	[SKU ID](#col:SkuPrice.SkuId)	the sentence is about SKU Price records
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	131	Contract ID	[Contract ID](#col:SkuPrice.ContractId)	a SKU Price record's contract
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	131	SKU Price ID	[SKU Price ID](#col:SkuPrice.SkuPriceId)	the sentence is about SKU Price records
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	131	Pricing Currency	[Pricing Currency](#col:SkuPrice.PricingCurrency)	the sentence is about SKU Price records
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	131	SKU Price ID	[SKU Price ID](#col:SkuPrice.SkuPriceId)	the sentence is about SKU Price records
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	131	Pricing Currency	[Pricing Currency](#col:SkuPrice.PricingCurrency)	the sentence is about SKU Price records
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	131	SKU Price ID	[SKU Price ID](#col:SkuPrice.SkuPriceId)	the sentence is about SKU Price records
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	133	SKU Price ID	[SKU Price ID](#col:SkuPrice.SkuPriceId)	the sentence is about SKU Price records
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	199	SKU ID	[SKU ID](#col:SkuPrice.SkuId)	the sentence is about SKU Price records
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	199	Pricing Unit	[Pricing Unit](#col:SkuPrice.PricingUnit)	the sentence is about SKU Price records
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	199	Pricing Currency	[Pricing Currency](#col:SkuPrice.PricingCurrency)	the sentence is about SKU Price records
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	199	Contract ID	[Contract ID](#col:SkuPrice.ContractId)	a SKU Price record's contract
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	199	Contract ID	[Contract ID](#col:SkuPrice.ContractId)	a SKU Price record's contract
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	297	SKU Price ID	[SKU Price ID](#col:CostAndUsage.SkuPriceId)	the sentence is about a charge in Cost and Usage
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	297	SKU Price ID	[SKU Price ID](#col:CostAndUsage.SkuPriceId)	the sentence is about a charge in Cost and Usage
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	299	SKU Price ID	[SKU Price ID](#col:SkuPrice.SkuPriceId)	a price published in the SKU Price dataset
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	303	Contract ID	[Contract ID](#col:SkuPrice.ContractId)	a SKU Price record's contract
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	303	SKU Price ID	[SKU Price ID](#col:CostAndUsage.SkuPriceId)	the sentence is about a charge in Cost and Usage
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	305	Pricing Unit	[Pricing Unit](#col:CostAndUsage.PricingUnit)	the sentence is about a charge in Cost and Usage
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	305	Pricing Unit	[Pricing Unit](#col:SkuPrice.PricingUnit)	the sentence is about SKU Price records
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	305	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	305	Billing Account ID	[Billing Account ID](#col:CostAndUsage.BillingAccountId)	a charge's value in Cost and Usage
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	380	Service Provider Name	[Service Provider Name](#col:SkuPrice.ServiceProviderName)	the sentence is about SKU Price records
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	380	SKU ID	[SKU ID](#col:SkuPrice.SkuId)	the sentence is about SKU Price records
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	382	Service Provider Name	[Service Provider Name](#col:SkuPrice.ServiceProviderName)	the sentence is about SKU Price records
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	382	SKU ID	[SKU ID](#col:SkuPrice.SkuId)	the sentence is about SKU Price records
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	382	Contract ID	[Contract ID](#col:SkuPrice.ContractId)	a SKU Price record's contract
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	382	Pricing Unit	[Pricing Unit](#col:SkuPrice.PricingUnit)	the sentence is about SKU Price records
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	382	Pricing Currency	[Pricing Currency](#col:SkuPrice.PricingCurrency)	the sentence is about SKU Price records
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	382	Charge Category	[Charge Category](#col:SkuPrice.ChargeCategory)	the sentence is about SKU Price records
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	386	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	475	SKU ID	[SKU ID](#col:SkuPrice.SkuId)	the sentence is about SKU Price records
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	475	Contract ID	[Contract ID](#col:SkuPrice.ContractId)	a SKU Price record's contract
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	475	Commitment Discount Category	[Commitment Discount Category](#col:SkuPrice.CommitmentDiscountCategory)	the sentence is about SKU Price records
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	477	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	503	Contract ID	[Contract ID](#col:SkuPrice.ContractId)	a SKU Price record's contract
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	507	SKU Price ID	[SKU Price ID](#col:CostAndUsage.SkuPriceId)	the sentence is about a charge in Cost and Usage
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	507	SKU Price ID	[SKU Price ID](#col:SkuPrice.SkuPriceId)	a price published in the SKU Price dataset
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	507	SKU Price ID	[SKU Price ID](#col:SkuPrice.SkuPriceId)	the sentence is about SKU Price records
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	507	SKU Price ID	[SKU Price ID](#col:SkuPrice.SkuPriceId)	the sentence is about SKU Price records
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	507	SKU Price ID	[SKU Price ID](#col:SkuPrice.SkuPriceId)	the sentence is about SKU Price records
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	507	SKU ID	[SKU ID](#col:SkuPrice.SkuId)	the sentence is about SKU Price records
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	509	Pricing Unit	[Pricing Unit](#col:CostAndUsage.PricingUnit)	the sentence is about a charge in Cost and Usage
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	509	Pricing Unit	[Pricing Unit](#col:SkuPrice.PricingUnit)	the sentence is about SKU Price records
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	509	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	511	SKU Price ID	[SKU Price ID](#col:CostAndUsage.SkuPriceId)	the sentence is about a charge in Cost and Usage
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	513	Billing Currency	[Billing Currency](#col:CostAndUsage.BillingCurrency)	Display Name capitalization means the column (#2765)
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	513	Pricing Currency	[Pricing Currency](#col:SkuPrice.PricingCurrency)	the sentence is about SKU Price records
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	513	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	560	Contract ID	[Contract ID](#col:SkuPrice.ContractId)	a SKU Price record's contract
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	560	List Unit Price	[List Unit Price](#col)	Display Name capitalization means the column (#2765)
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	560	Contracted Unit Price	[Contracted Unit Price](#col)	Display Name capitalization means the column (#2765)
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	560	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	560	SKU Price ID	[SKU Price ID](#col:SkuPrice.SkuPriceId)	the sentence is about SKU Price records
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	560	Contracted Unit Price	[Contracted Unit Price](#col)	Display Name capitalization means the column (#2765)
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	560	Billed Cost	[Billed Cost](#col:CostAndUsage.BilledCost)	a charge's value in Cost and Usage
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	562	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	562	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	562	Contract ID	[Contract ID](#col:SkuPrice.ContractId)	a SKU Price record's contract
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	562	Pricing Currency	[Pricing Currency](#col:SkuPrice.PricingCurrency)	the sentence is about SKU Price records
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	564	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	564	SKU Price ID	[SKU Price ID](#col:CostAndUsage.SkuPriceId)	the sentence is about a charge in Cost and Usage
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	564	Contract ID	[Contract ID](#col:SkuPrice.ContractId)	a SKU Price record's contract
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	566	Billing Currency	[Billing Currency](#col:CostAndUsage.BillingCurrency)	Display Name capitalization means the column (#2765)
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	566	Billing Currency	[Billing Currency](#col:CostAndUsage.BillingCurrency)	Display Name capitalization means the column (#2765)
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	566	List Unit Price	[List Unit Price](#col)	Display Name capitalization means the column (#2765)
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	566	Contracted Unit Price	[Contracted Unit Price](#col)	Display Name capitalization means the column (#2765)
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	568	Billing Account ID	[Billing Account ID](#col:CostAndUsage.BillingAccountId)	a charge's value in Cost and Usage
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	568	Contract ID	[Contract ID](#col:SkuPrice.ContractId)	a SKU Price record's contract
+added	specification/supported_features/rate_optimization_and_contract_evaluation.md	568	SKU Price	[SKU Price](#ds)	names the dataset (followed by dataset/record/schema, or joined or listed as a dataset)
+added	specification/supported_features/recency_metadata.md	9	Recency	[Recency](#meta)	listed under Applicable Metadata
+added	specification/supported_features/recency_metadata.md	10	Dataset Instance Complete	[Dataset Instance Complete](#meta)	listed under Applicable Metadata
+added	specification/supported_features/recency_metadata.md	11	Dataset Instance Last Updated	[Dataset Instance Last Updated](#meta)	listed under Applicable Metadata
+added	specification/supported_features/recency_metadata.md	12	Dataset Instance ID	[Dataset Instance ID](#meta:Recency.DatasetInstanceId)	listed under Applicable Metadata
+added	specification/supported_features/recency_metadata.md	13	Recency Last Updated	[Recency Last Updated](#meta)	listed under Applicable Metadata
+added	specification/supported_features/recency_metadata.md	14	Time Sectors	[Time Sectors](#meta)	listed under Applicable Metadata
+added	specification/supported_features/recency_metadata.md	15	Time Sector Start	[Time Sector Start](#meta)	listed under Applicable Metadata
+added	specification/supported_features/recency_metadata.md	16	Time Sector End	[Time Sector End](#meta)	listed under Applicable Metadata
+added	specification/supported_features/recency_metadata.md	17	Time Sector Complete	[Time Sector Complete](#meta)	listed under Applicable Metadata
+added	specification/supported_features/recency_metadata.md	18	Time Sector Last Updated	[Time Sector Last Updated](#meta)	listed under Applicable Metadata
+added	specification/supported_features/schema_metadata.md	9	Schema	[Schema](#meta)	listed under Applicable Metadata
+added	specification/supported_features/schema_metadata.md	10	Column Definition	[Column Definition](#meta)	listed under Applicable Metadata
+left	specification/appendix/correction_handling_examples/closed_billing_period.md	98	SKU Price		the concept, used as ordinary prose
+left	specification/appendix/correction_handling_examples/closed_billing_period.md	114	SKU Price		the concept, used as ordinary prose
+left	specification/appendix/correction_handling_examples/correction_handling_examples_overview.md	5	Billing Period		the concept, used as ordinary prose
+left	specification/appendix/correction_handling_examples/open_billing_period.md	125	SKU Price		the concept, used as ordinary prose
+left	specification/appendix/correction_handling_examples/open_billing_period.md	141	SKU Price		the concept, used as ordinary prose
+left	specification/appendix/invoice_and_billing_period_handling.md	23	Billed Cost		means the column in both Invoice Detail and Cost and Usage
+left	specification/appendix/invoice_and_billing_period_handling.md	33	Billed Cost		means the column in both Invoice Detail and Cost and Usage
+left	specification/appendix/json_object_examples/contract_applied_examples.md	11	Contract ID		a ContractApplied element value, not a column
+left	specification/appendix/metadata_examples/data_generator_version_changed_example.md	5	FOCUS Version		the version of FOCUS, not the field
+left	specification/appendix/metadata_examples/focus_version_changed_with_data_generator_version_used_example.md	5	FOCUS Version		the version of FOCUS, not the field
+left	specification/appendix/metadata_examples/metadata_examples_overview.md	3	Data Generator		the data generator role (no glossary entry yet)
+left	specification/appendix/saas_examples/consumption_currency_pricing_model.md	41	Billing Period		the concept, used as ordinary prose
+left	specification/appendix/saas_examples/consumption_currency_pricing_model.md	60	Billing Period		the concept, used as ordinary prose
+left	specification/appendix/saas_examples/consumption_currency_pricing_model.md	81	Billing Period		the concept, used as ordinary prose
+left	specification/appendix/saas_examples/simple_agreements.md	21	Billing Period		the concept, used as ordinary prose
+left	specification/appendix/saas_examples/simple_agreements.md	35	Billing Period		the concept, used as ordinary prose
+left	specification/appendix/saas_examples/simple_agreements.md	47	Billing Period		the concept, used as ordinary prose
+left	specification/appendix/saas_examples/simple_agreements.md	59	Billing Period		the concept, used as ordinary prose
+left	specification/appendix/saas_examples/simple_agreements.md	66	Billing Period		the concept, used as ordinary prose
+left	specification/appendix/saas_examples/simple_agreements.md	79	Billing Period		the concept, used as ordinary prose
+left	specification/appendix/saas_examples/simple_agreements.md	79	Billing Period		the concept, used as ordinary prose
+left	specification/appendix/saas_examples/spend_agreements.md	46	Billing Period		the concept, used as ordinary prose
+left	specification/appendix/saas_examples/spend_agreements.md	46	Billing Period		the concept, used as ordinary prose
+left	specification/appendix/sku_price_examples/sku_price_examples_overview.md	11	SKU Price		the concept, used as ordinary prose
+left	specification/datasets/contract_commitment/columns/contractcommitmentdiscountpercentage.md	26	Contracted Unit Price		a formula about unit prices in general
+left	specification/datasets/contract_commitment/columns/contractcommitmentdiscountpercentage.md	26	List Unit Price		a formula about unit prices in general
+left	specification/datasets/cost_and_usage/columns/listunitprice.md	32	SKU Price		the concept, used as ordinary prose
+left	specification/datasets/cost_and_usage/columns/listunitprice.md	32	SKU Price		the concept, used as ordinary prose
+left	specification/datasets/cost_and_usage/columns/skupricedetails.md	24	SKU Price		the concept, used as ordinary prose
+left	specification/datasets/cost_and_usage/columns/skupricedetails.md	30	SKU Price		the concept, used as ordinary prose
+left	specification/datasets/cost_and_usage/columns/skupricedetails.md	33	SKU Price		the concept, used as ordinary prose
+left	specification/datasets/cost_and_usage/columns/skupricedetails.md	42	SKU Price		the concept, used as ordinary prose
+left	specification/datasets/cost_and_usage/dataset.md	87	Contract Commitment ID		a property inside ContractApplied, not a column
+left	specification/datasets/invoice_detail/columns/invoicedetailgrain.md	28	Contract ID		a ContractApplied element, not a column
+left	specification/datasets/sku_price/columns/skupricedescription.md	24	SKU Price		the concept, used as ordinary prose
+left	specification/datasets/sku_price/columns/skupriceeligibility.md	28	SKU Price		the concept, used as ordinary prose
+left	specification/datasets/sku_price/columns/skupriceeligibility.md	29	SKU Price		the concept, used as ordinary prose
+left	specification/glossary.md	92	Contract Commitment		the concept, used as ordinary prose
+left	specification/glossary.md	118	Contracted Unit Price		the glossary entry's own term
+left	specification/glossary.md	154	Data Generator		the data generator role (no glossary entry yet)
+left	specification/glossary.md	154	Data Generator		the data generator role (no glossary entry yet)
+left	specification/glossary.md	154	Dataset Instance		the dataset instance as a concept
+left	specification/glossary.md	236	List Unit Price		the glossary entry's own term
+left	specification/metadata/dataset_instance/dataset_instance_overview.md	3	Dataset Instance		the dataset instance as a concept
+left	specification/metadata/recency/dataset_instance_complete.md	3	Data Generator		the data generator role (no glossary entry yet)
+left	specification/metadata/recency/dataset_instance_complete.md	3	Data Generator		the data generator role (no glossary entry yet)
+left	specification/metadata/recency/dataset_instance_complete.md	3	Data Generator		the data generator role (no glossary entry yet)
+left	specification/metadata/recency/dataset_instance_id.md	3	Dataset Instance		the dataset instance as a concept
+left	specification/metadata/recency/dataset_instance_last_updated.md	3	Dataset Instance		the dataset instance as a concept
+left	specification/metadata/recency/time_sectors/time_sector_complete.md	3	DataGenerator		the data generator role (no glossary entry yet)
+left	specification/metadata/recency/time_sectors/time_sector_complete.md	3	DataGenerator		the data generator role (no glossary entry yet)
+left	specification/metadata/recency/time_sectors/time_sector_complete.md	3	DataGenerator		the data generator role (no glossary entry yet)
+left	specification/metadata/recency/time_sectors/time_sectors_overview.md	3	Data Generator		the data generator role (no glossary entry yet)
+left	specification/supported_features/participating_entity_identification.md	9	Data Generator		the data generator role (no glossary entry yet)
+left	specification/supported_features/rate_optimization_and_contract_evaluation.md	15	SKU Price ID		the join key, meaning both datasets
+left	specification/supported_features/rate_optimization_and_contract_evaluation.md	49	SKU Price ID		the join key, meaning both datasets
+left	specification/supported_features/rate_optimization_and_contract_evaluation.md	71	Pricing Currency		the join key, meaning both datasets
+left	specification/supported_features/rate_optimization_and_contract_evaluation.md	562	SKU Price		the concept, used as ordinary prose
+left	specification/supported_features/rate_optimization_and_contract_evaluation.md	566	Pricing Currency		the join key, meaning both datasets
+left	specification/supported_features/schema_metadata.md	5	Data Generator		the data generator role (no glossary entry yet)

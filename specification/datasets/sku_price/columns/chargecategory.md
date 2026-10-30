@@ -23,13 +23,13 @@
 
 ## Implementation Guidance
 
-While the [Charge Category](#col) column is shared between the [Cost and Usage](#ds) dataset and the SKU Price dataset, [practitioners](#term) should note that the allowed values differ by design.
+While the [Charge Category](#col) column is shared between the [Cost and Usage](#ds) dataset and the [SKU Price](#ds) dataset, [practitioners](#term) should note that the allowed values differ by design.
 
 The [Cost and Usage](#ds) dataset acts as a financial ledger that tracks post-facto financial events. Therefore, it requires values like "Tax" and "Adjustment" to accurately balance a final [invoice](#term).
 
-Conversely, the SKU Price dataset acts as a pre-facto catalog of available unit rates. Because taxes are calculated dynamically based on jurisdiction and entity, and [adjustments](#term) are account-level ledger corrections, [service providers](#term) do not publish [SKU Prices](#term) for these events. Therefore, the allowed values for [Charge Category](#col) in the SKU Price dataset are limited to catalog pricing constructs: ["Usage"](#val:ChargeCategory) (the published rate to consume a [resource](#term)), ["Purchase"](#val:ChargeCategory) (the published fee to acquire a [commitment](#term) or [service](#term)), and ["Credit"](#val:ChargeCategory) (the published unit value of a granted [credit](#term)).
+Conversely, the [SKU Price](#ds) dataset acts as a pre-facto catalog of available unit rates. Because taxes are calculated dynamically based on jurisdiction and entity, and [adjustments](#term) are account-level ledger corrections, [service providers](#term) do not publish [SKU Prices](#term) for these events. Therefore, the allowed values for [Charge Category](#col) in the [SKU Price](#ds) dataset are limited to catalog pricing constructs: ["Usage"](#val:ChargeCategory) (the published rate to consume a [resource](#term)), ["Purchase"](#val:ChargeCategory) (the published fee to acquire a [commitment](#term) or [service](#term)), and ["Credit"](#val:ChargeCategory) (the published unit value of a granted [credit](#term)).
 
-[Credits](#term) are catalog pricing constructs where a [service provider](#term) issues a distinct [SKU](#term) and [SKU Price](#term) for the [credit](#term), most commonly a promotional [credit](#term) carrying a defined unit value. Where a [service provider](#term) publishes no such [SKU Price](#term), the [credit](#term) appears only in [Cost and Usage](#ds) and has no SKU Price record.
+[Credits](#term) are catalog pricing constructs where a [service provider](#term) issues a distinct [SKU](#term) and [SKU Price](#term) for the [credit](#term), most commonly a promotional [credit](#term) carrying a defined unit value. Where a [service provider](#term) publishes no such [SKU Price](#term), the [credit](#term) appears only in [Cost and Usage](#ds) and has no [SKU Price](#ds) record.
 
 ## Column ID
 

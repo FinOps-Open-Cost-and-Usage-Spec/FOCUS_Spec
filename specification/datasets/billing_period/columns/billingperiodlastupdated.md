@@ -22,7 +22,7 @@ Billing Period Last Updated
 
 ## Description
 
-The timestamp when the Billing Period record was last updated.
+The timestamp when the [Billing Period](#ds) record was last updated.
 
 ## Content Constraints
 

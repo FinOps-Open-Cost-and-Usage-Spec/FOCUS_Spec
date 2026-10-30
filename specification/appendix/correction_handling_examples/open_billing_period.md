@@ -122,7 +122,7 @@ Since the billing period was still open and invoices had not yet been issued, th
 * Delta style correction
 * Ledger style correction
 
-Regardless of the correction style used, the correction was realized by introducing a single increment record representing the bulk cost-only adjustment. Unlike itemized corrections, this record did not specify a [SkuPriceId](#col), as the discrepancy spanned multiple SKU Price IDs. Because the original records were individually correct and no single record requires reversal, the Ledger style correction does not include explicit reversals. In this case, the Ledger and Delta corrections are identical, as only additive records are needed to reconcile the accumulated drift.
+Regardless of the correction style used, the correction was realized by introducing a single increment record representing the bulk cost-only adjustment. Unlike itemized corrections, this record did not specify a [SkuPriceId](#col), as the discrepancy spanned multiple [SKU Price IDs](#col:SkuPriceId). Because the original records were individually correct and no single record requires reversal, the Ledger style correction does not include explicit reversals. In this case, the Ledger and Delta corrections are identical, as only additive records are needed to reconcile the accumulated drift.
 
 Compared to the itemized correction approach, this method sacrifices transparency and traceability, but is suitable when itemized correction is not feasible.
 
@@ -138,7 +138,7 @@ Note the following details in the example datasets:
 * The original dataset was complete in terms of usage, but a minor cost discrepancy was identified due to accumulated rounding drift across multiple records spanning two [SkuPriceId](#col) values.
 * The correction may be modeled using either Overwrite or Append mechanisms, as the billing period is still open.
 * All three correction styles (Replacement, Delta, and Ledger) introduce a single increment record representing the bulk cost-only adjustment to reconcile the total drift.
-* The correction record does not specify a [SkuPriceId](#col), as it spans multiple SKU Price IDs.
+* The correction record does not specify a [SkuPriceId](#col), as it spans multiple [SKU Price IDs](#col:SkuPriceId).
 * The correction record has [ChargeClass](#col) set to null, indicating that it pertains to an open billing period and is not a retroactive correction to a previously closed billing period.
 * The correction record has [ChargeCategory](#col) set to "Adjustment", which is the only valid value when both [PricingQuantity](#col) and [ChargeClass](#col) are null, due to the normative requirement that [PricingQuantity](#col) must not be null when [ChargeCategory](#col) is ["Usage"](#val:CostAndUsage.ChargeCategory) or "Purchase" and [ChargeClass](#col) is not ["Correction"](#val:CostAndUsage.ChargeClass).
 * The correction record is assigned to the current billing period (July 2025).

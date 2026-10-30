@@ -1,6 +1,6 @@
 # Contract Commitment Last Updated
 
-[Contract Commitment Last Updated](#col) is the timestamp when the [Contract Commitment](#ds) record was last updated. This timestamp helps FinOps practitioners ensure that they are working with the most current version of a Contract Commitment record, particularly if corrections or status changes have been applied to the record after its initial creation.
+[Contract Commitment Last Updated](#col) is the timestamp when the [Contract Commitment](#ds) record was last updated. This timestamp helps FinOps practitioners ensure that they are working with the most current version of a [Contract Commitment](#ds) record, particularly if corrections or status changes have been applied to the record after its initial creation.
 
 ## Requirements
 

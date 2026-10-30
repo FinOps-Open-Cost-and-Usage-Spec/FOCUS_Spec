@@ -2,9 +2,9 @@
 
 [Contracted Unit Price](#term) represents the negotiated unit price per [Pricing Unit](#col) for the [SKU Price](#term) identified by the given [SKU Price ID](#col). It is the unit price before the application of any discount-bearing [commitment programs](#term) (e.g., [commitment discount](#term)).
 
-When no [negotiated pricing terms](#term) apply to the [charge](#term), Contracted Unit Price defaults to [List Unit Price](#col).
+When no [negotiated pricing terms](#term) apply to the [charge](#term), [Contracted Unit Price](#col) defaults to [List Unit Price](#col).
 
-Contracted Unit Price is denominated in the [Billing Currency](#col). Contracted Unit Price is commonly used for negotiation and rate optimization activities.
+[Contracted Unit Price](#col) is denominated in the [Billing Currency](#col). [Contracted Unit Price](#col) is commonly used for negotiation and rate optimization activities.
 
 ## Requirements
 
@@ -27,13 +27,13 @@ Contracted Unit Price is denominated in the [Billing Currency](#col). Contracted
 
 ## Implementation Guidance
 
-Every [charge](#term) with a [SKU Price ID](#col) has a Contracted Unit Price, whether or not [negotiated pricing terms](#term) apply. Agreeing to a contract does not by itself introduce [negotiated pricing terms](#term); only privately agreed terms that modify the service-provider-suggested pricing do.
+Every [charge](#term) with a [SKU Price ID](#col) has a [Contracted Unit Price](#col), whether or not [negotiated pricing terms](#term) apply. Agreeing to a contract does not by itself introduce [negotiated pricing terms](#term); only privately agreed terms that modify the service-provider-suggested pricing do.
 
-Unlike List Unit Price, Contracted Unit Price reflects [negotiated pricing terms](#term) when they apply to the [SKU Price](#term) identified by the given [SKU Price ID](#col). These may include a negotiated unit price, a negotiated tier configuration, and [negotiated FX pricing terms](#term), such as a negotiated currency exchange rate. When no [negotiated pricing terms](#term) apply, Contracted Unit Price equals List Unit Price.
+Unlike [List Unit Price](#col), [Contracted Unit Price](#col) reflects [negotiated pricing terms](#term) when they apply to the [SKU Price](#term) identified by the given [SKU Price ID](#col). These may include a negotiated unit price, a negotiated tier configuration, and [negotiated FX pricing terms](#term), such as a negotiated currency exchange rate. When no [negotiated pricing terms](#term) apply, [Contracted Unit Price](#col) equals [List Unit Price](#col).
 
 [Pricing Currency Contracted Unit Price](#col) does not reflect [negotiated FX pricing terms](#term), because it is before any currency exchange rate conversion.
 
-The terms of a [commitment program](#term) can also be negotiated, such as the unit price for its purchase, its discount, or its eligibility. A [negotiated discount](#term) (e.g., a discount received in exchange for a spend commitment) is reflected in Contracted Unit Price. The impact of applying a [commitment discount](#term) to [covered charges](#term) is not; it is reflected in their [Effective Cost](#col).
+The terms of a [commitment program](#term) can also be negotiated, such as the unit price for its purchase, its discount, or its eligibility. A [negotiated discount](#term) (e.g., a discount received in exchange for a spend commitment) is reflected in [Contracted Unit Price](#col). The impact of applying a [commitment discount](#term) to [covered charges](#term) is not; it is reflected in their [Effective Cost](#col).
 
 ## Usability Constraints
 

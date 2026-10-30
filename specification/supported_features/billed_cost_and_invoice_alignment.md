@@ -6,11 +6,11 @@ FOCUS data should be consistent with the costs indicated on payable [invoices](#
 
 ## Directly Dependent Columns
 
-* BilledCost
-* BillingCurrency
-* BillingPeriodEnd
-* BillingPeriodStart
-* InvoiceId
+* [BilledCost](#col:CostAndUsage.BilledCost)
+* [BillingCurrency](#col:CostAndUsage.BillingCurrency)
+* [BillingPeriodEnd](#col:CostAndUsage.BillingPeriodEnd)
+* [BillingPeriodStart](#col:CostAndUsage.BillingPeriodStart)
+* [InvoiceId](#col:CostAndUsage.InvoiceId)
 
 ## Example SQL Query
 

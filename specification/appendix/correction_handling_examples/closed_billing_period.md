@@ -95,7 +95,7 @@ Note the following details in the example datasets:
 
 On July 5th, 2025, CrestNode detected a minor cost discrepancy caused by accumulated rounding differences across multiple previously invoiced records spanning several different [SkuPriceId](#col) values. While each individual record was correctly rounded, the aggregated cost differed slightly from the precise total, resulting in a small drift.
 
-To reconcile this discrepancy, CrestNode provisioned a bulk cost-only correction using Append mechanism. The correction was realized by introducing a single increment record in both Delta style correction and Ledger style correction formats, representing the bulk cost-only adjustment. Unlike itemized corrections, this bulk record did not specify a [SkuPriceId](#col), as the discrepancy spanned multiple SKU Price IDs. Because the original records were individually correct and no single record requires reversal, the Ledger style correction does not include explicit reversals. In this case, the Ledger and Delta corrections are identical, as only additive records are needed to reconcile the accumulated drift.
+To reconcile this discrepancy, CrestNode provisioned a bulk cost-only correction using Append mechanism. The correction was realized by introducing a single increment record in both Delta style correction and Ledger style correction formats, representing the bulk cost-only adjustment. Unlike itemized corrections, this bulk record did not specify a [SkuPriceId](#col), as the discrepancy spanned multiple [SKU Price IDs](#col:SkuPriceId). Because the original records were individually correct and no single record requires reversal, the Ledger style correction does not include explicit reversals. In this case, the Ledger and Delta corrections are identical, as only additive records are needed to reconcile the accumulated drift.
 
 CSV Examples:
 
@@ -111,5 +111,5 @@ Note the following details in the example datasets:
 * Both Delta style and Ledger style corrections introduce a bulk cost-only record to reconcile the total drift and ensure invoice accuracy.
 * The correction record is assigned to the next open billing period (e.g., June 2025).
 * The correction record has [ChargeClass](#col) set to "Correction", indicating it reconciles cost discrepancies from a previously closed billing period.
-* The correction record does not specify a [SkuPriceId](#col), as it spans multiple SKU Price IDs.
+* The correction record does not specify a [SkuPriceId](#col), as it spans multiple [SKU Price IDs](#col:SkuPriceId).
 * The correction record has [ChargeCategory](#col) set to "Adjustment". While in this case "Usage" might be more precise and is permitted (since [ChargeClass](#col) is ["Correction"](#val:CostAndUsage.ChargeClass)), "Adjustment" was selected to denote a cost-only correction due to a rounding error.

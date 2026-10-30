@@ -9,10 +9,10 @@
 * [SkuPriceLastUpdated](#col) MUST be of type Date/Time.
 * [SkuPriceLastUpdated](#col) MUST conform to [DateTimeFormat](#attr) requirements.
 * [SkuPriceLastUpdated](#col) MUST NOT be null.
-* [SkuPriceLastUpdated](#col) MUST represent the most recent moment in time when any column value of the [SKU Price](#term) record was created or modified.
+* [SkuPriceLastUpdated](#col) MUST represent the most recent moment in time when any column value of the [SKU Price](#ds) record was created or modified.
 * [SkuPriceLastUpdated](#col) MUST be greater than or equal to [SkuPriceCreated](#col).
 
-> **Note:** [SKU Price Last Updated](#col) reflects when the SKU Price record was last modified and may be later than [SKU Price Effective End](#col), because corrections to a record's descriptive or pricing properties can be applied to a retired rate after its effective window has closed. Practitioners reconstructing price history should key on [SKU Price Effective Start](#col) and [SKU Price Effective End](#col) rather than on the record audit timestamps.
+> **Note:** [SKU Price Last Updated](#col) reflects when the [SKU Price](#ds) record was last modified and may be later than [SKU Price Effective End](#col), because corrections to a record's descriptive or pricing properties can be applied to a retired rate after its effective window has closed. Practitioners reconstructing price history should key on [SKU Price Effective Start](#col) and [SKU Price Effective End](#col) rather than on the record audit timestamps.
 
 ## Column ID
 
@@ -24,7 +24,7 @@ SKU Price Last Updated
 
 ## Description
 
-The timestamp when the SKU Price record was last updated.
+The timestamp when the [SKU Price](#ds) record was last updated.
 
 ## Content Constraints
 
