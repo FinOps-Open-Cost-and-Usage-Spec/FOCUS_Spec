@@ -95,6 +95,24 @@ Each question lists what the conversion did, so the answer can be applied by rer
 14. **Merge mechanics.** The conversion changes 326 files, so every open pull request that edits specification content would conflict. Convert once on a quiet day, or convert area by area? The Requirements Model extraction workflow (`rm_extraction.yml`) also reads the Markdown source and is not tag-aware.
 15. **Outside the specification.** The guidelines, `AGENTS.md`, and the Requirements Model rule files describe or depend on the link conventions, and were not converted. They would need to change together with the specification.
 
+## Review of the Rules
+
+After the whole-specification conversion, the tagging rules were reviewed against how they behaved at full scale. Most held up: the link syntax, reading definitions from structure, an explicit ID deciding the entity (with FOCUS011 when the text names another one), and dataset front matter. The findings below are where the rules are inconsistent, implicit, or too dependent on the converter. None of them is implemented yet.
+
+| Priority | Rule | Finding | Recommendation |
+| :--- | :--- | :--- | :--- |
+| High | Tables | Three behaviors coexist: Content Constraints rows always link; a hand-written link in another table does not count as a first mention; a tag in another table counts like prose. Converting a catalog table later would change how the prose after it renders. | One rule for tables outside Content Constraints: a reference links at its first mention within that table, and tables do not affect first mentions in prose. Catalog tables then link every row, and example tables link once. |
+| High | Self-links | "Never link the entity a file defines" is file-based, so it needed exceptions: a JSON object shares its column's file, and DataGenerator is both a collection and a field. | Decide by anchor: do not link a reference whose target is the section it sits in, or one of that section's parents. |
+| High | Headings | Tags in headings are not handled. The converter skips headings, but a tag written in a heading would become a link and count as the first mention. | Render tags in headings as plain text and do not count them. Check the heading form against #2778 (Display Name). |
+| High | Emphasis | Emphasis around a tag's text is dropped silently: italics were removed from 12 links to columns, attributes, and Display Names. | Report emphasis inside a tag as a warning, so the author decides, rather than dropping it. |
+| Medium | Requirements check | FOCUS003 applies to everything under a Requirements heading, so notes and "See" lines trip it (9 of 10 findings). It covers columns, objects, schemas, and metadata, but not attributes or operating model conditions. | Apply it to requirement statements (a bullet with a BCP-14 keyword) only, and extend it to attributes and conditions, with the operating model condition phrase exception proposed in #2765. |
+| Medium | Plain prose | Which plain-text names get tagged is the converter's policy (multi-word, exact case, unambiguous), not a rule an author can follow or a check can enforce. | State the rule: a Display Name in its defined capitalization that names one entity is tagged, and a lint warning reports untagged ones. Lowercase text stays prose. Names shared with a glossary term follow the capitalization rule proposed in #2765. |
+| Medium | Dataset scope | The strict rule (an unqualified column must be in the file's dataset) plus automatic qualifiers produces long tags such as `[SkuPriceId](#col:SkuPrice.SkuPriceId)`, and 190 mentions in files that mix datasets remain. | Allow a dataset per section as well as per file, or a short form that names only the dataset. |
+| Medium | Value tags | Two forms are produced: `#val:Column` for a file's own column and `#val:Dataset.Column` after a column reference, although columns use the shortest form that resolves. | Use the shortest form for values too. |
+| Medium | Functional links | Seven links whose text is not a name of the entity (e.g., "column requirements") are treated as repeats and lose their link. AGENTS.md exempts functional links; the Editorial Guidelines do not. | Decide the exemption. If kept, a tag whose text is not one of the entity's names is exempt from the first-mention rule. |
+| Low | Glossary scope | First mentions are counted per glossary entry by recognizing the `<a name="glossary:…">` line, which ties the rule to that markup. | Keep, and add a definition check so a change to the anchor format fails loudly. |
+| Low | Plurals | Plurals resolve for glossary terms only; "Billed Costs" does not resolve to BilledCost. | Resolve simple plurals and possessives of Display Names, as the Editorial Guidelines already count them as references. |
+
 ## Reproduce
 
 ```bash
