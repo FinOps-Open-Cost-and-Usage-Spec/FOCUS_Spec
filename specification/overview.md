@@ -2,29 +2,29 @@
 
 > **Note:** The Introduction is informative and non-normative. It does not define requirements.
 
-FOCUS is a standards development organization (SDO) formed to establish an open, consensus-driven standard for billing data. In the absence of a broadly adopted standard, infrastructure and [*service providers*](#glossary:service-provider) have relied on proprietary billing schemas and inconsistent terminology, making cost data difficult to normalize and act upon across environments. This lack of conformance has forced FinOps [*practitioners*](#glossary:practitioner) to develop best-effort custom normalization schemes for each provider, in order to perform essential FinOps capabilities such as chargeback, cost allocation, budgeting and forecasting.
+FOCUS is a standards development organization (SDO) formed to establish an open, consensus-driven standard for billing data. In the absence of a broadly adopted standard, infrastructure and [service providers](#term) have relied on proprietary billing schemas and inconsistent terminology, making cost data difficult to normalize and act upon across environments. This lack of conformance has forced FinOps [practitioners](#term) to develop best-effort custom normalization schemes for each provider, in order to perform essential FinOps capabilities such as chargeback, cost allocation, budgeting and forecasting.
 
 The FOCUS Specification, developed by a global community of practitioners and vendors, defines a consistent, vendor-neutral approach to billing data. It is designed to improve interoperability between service providers, reduce operational complexity, and enable greater transparency in cloud and SaaS cost management.
 
 ## Background and History
 
-This project is supported by the [FinOps Foundation][FODO]. This work initially started under the Open Billing working group under the FinOps Foundation. The decision was made in Jan 2023 to begin to migrate the work to a newly formed project under the Linux Foundation called the FinOps Open Cost and Usage Specification (FOCUS) to better support the creation of a specification.
+This project is supported by the [FinOps Foundation][FODO]. This work initially started under the Open Billing working group under the FinOps Foundation. The decision was made in Jan 2023 to begin to migrate the work to a newly formed project under the Linux Foundation called the FinOps Open [Cost and Usage](#ds) Specification (FOCUS) to better support the creation of a specification.
 
 ## Intended Audience
 
 This specification is designed to be used by three major groups:
 
-* Billing data generators: Entities that present consumption-based billing information related to infrastructure and *service providers*, such as (but not limited to):
-  * [*Cloud Service Providers (CSPs)*](#glossary:cloud-service-provider)
+* Billing data generators: Entities that present consumption-based billing information related to infrastructure and [service providers](#term), such as (but not limited to):
+  * [Cloud Service Providers (CSPs)](#term:cloud-service-provider)
   * Software as a Service (SaaS) platforms
-  * [*Managed Service Providers (MSPs)*](#glossary:managed-service-provider)
+  * [Managed Service Providers (MSPs)](#term:managed-service-provider)
   * Internal infrastructure and service platforms
 * FinOps tool *providers*: Organizations that provide tools to assist with FinOps
 * FinOps practitioners: Organizations and individuals consuming billing data for doing FinOps
 
 ## Scope
 
-The FOCUS working group will develop an open-source specification for billing data. The schema will define data [*dimensions*](#glossary:dimension), [*metrics*](#glossary:metric), a set of attributes about billing data, and a common lexicon for describing billing data.
+The FOCUS working group will develop an open-source specification for billing data. The schema will define data [dimensions](#term), [metrics](#term), a set of attributes about billing data, and a common lexicon for describing billing data.
 
 ## Design Principles
 
@@ -74,7 +74,7 @@ Future versions of FOCUS will consider including additional FinOps capabilities 
 ### Consistency Helps with Clarity
 
 * Where possible, use consistent names that will naturally create associations between related columns in the specification.
-* Column naming must strictly follow the [FOCUS Column Handling](#attributes.focuscolumnhandling) requirements.
+* Column naming must strictly follow the [FOCUS Column Handling](#attr) requirements.
 * Use established standards (e.g., ISO8601 for dates, ISO4217 for currency).
 
 ## Conventions
@@ -96,7 +96,7 @@ Feature level is designated based on the following criteria described in the dat
 
 ## Preview
 
-[*Preview*](#glossary:preview) is a status for a [*FOCUS dataset*](#glossary:FOCUS-dataset) published in a version of FOCUS so implementers can build it and report what they find. A dataset with this status, called a preview, may change based on that feedback. The release itself is not a preview.
+[Preview](#term) is a status for a [FOCUS dataset](#term) published in a version of FOCUS so implementers can build it and report what they find. A dataset with this status, called a preview, may change based on that feedback. The release itself is not a preview.
 
 * A new dataset is published as a preview by default in the first version that includes it.
 * A preview is part of the published specification.

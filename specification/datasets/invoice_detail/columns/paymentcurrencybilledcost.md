@@ -1,27 +1,27 @@
 # Payment Currency Billed Cost
 
-Payment Currency Billed Cost represents the [Billed Cost](#datamodel.invoicedetail.billedcost) as expressed in [Payment Currency](#datamodel.invoicedetail.paymentcurrency). This metric is essential for organizations that need to reconcile their financial records in the currency used for actual settlement, especially when it differs from the currency used for initial billing.
+[Payment Currency Billed Cost](#col) represents the [Billed Cost](#col) as expressed in [Payment Currency](#col). This metric is essential for organizations that need to reconcile their financial records in the currency used for actual settlement, especially when it differs from the currency used for initial billing.
 
 ## Requirements
 
-PaymentCurrencyBilledCost MUST adhere to the following requirements:
+[PaymentCurrencyBilledCost](#col) MUST adhere to the following requirements:
 
-* PaymentCurrencyBilledCost MUST be of type Decimal.
-* PaymentCurrencyBilledCost MUST conform to [NumericFormat](#attributes.numericformat) requirements.
-* PaymentCurrencyBilledCost MUST NOT be null.
-* PaymentCurrencyBilledCost MUST be denominated in the PaymentCurrency.
-* PaymentCurrencyBilledCost MUST be the PaymentCurrency-denominated equivalent of BilledCost.
-* PaymentCurrencyBilledCost MAY be non-zero while BilledCost is 0 when PaymentCurrencyBilledCost represents the aggregation of BilledCost amounts (denominated in PaymentCurrency) stated in other records.
-* PaymentCurrencyBilledCost MAY be 0 while BilledCost is non-zero when BilledCost (denominated in PaymentCurrency) is represented in a separate aggregate record.
+* [PaymentCurrencyBilledCost](#col) MUST be of type Decimal.
+* [PaymentCurrencyBilledCost](#col) MUST conform to [NumericFormat](#attr) requirements.
+* [PaymentCurrencyBilledCost](#col) MUST NOT be null.
+* [PaymentCurrencyBilledCost](#col) MUST be denominated in the [PaymentCurrency](#col).
+* [PaymentCurrencyBilledCost](#col) MUST be the [PaymentCurrency](#col)-denominated equivalent of [BilledCost](#col).
+* [PaymentCurrencyBilledCost](#col) MAY be non-zero while [BilledCost](#col) is 0 when [PaymentCurrencyBilledCost](#col) represents the aggregation of [BilledCost](#col) amounts (denominated in [PaymentCurrency](#col)) stated in other records.
+* [PaymentCurrencyBilledCost](#col) MAY be 0 while [BilledCost](#col) is non-zero when [BilledCost](#col) (denominated in [PaymentCurrency](#col)) is represented in a separate aggregate record.
 
 ## Examples
 
 ### Example 1: Consistent Grain
 
-In this scenario, the [*invoice issuer*](#glossary:invoice-issuer) performs currency conversion at the individual line-item level. The grain of the payment currency matches the grain of the billing currency exactly.
+In this scenario, the [invoice issuer](#term) performs currency conversion at the individual line-item level. The grain of the payment currency matches the grain of the billing currency exactly.
 
 * **Billing Currency:** USD
-* **Payment Currency:** EUR
+* **[Payment Currency](#col):** EUR
 * **Exchange Rate:** 1.00 USD = 0.92 EUR
 
 | Column                         | Value  |
@@ -41,7 +41,7 @@ In this scenario, the [*invoice issuer*](#glossary:invoice-issuer) performs curr
 In this scenario, the invoice issuer tracks usage in the billing currency at a granular level but represents that cost in the payment currency as a separate aggregate record.
 
 * **Billing Currency:** USD
-* **Payment Currency:** EUR
+* **[Payment Currency](#col):** EUR
 * **Effective Exchange Rate:** 1.00 USD = 0.92 EUR
 
 | Column                         | A-101              | A-102              | Z-999                     |
@@ -68,19 +68,19 @@ Payment Currency Billed Cost
 
 ## Description
 
-The Billed Cost as expressed in Payment Currency.
+The [Billed Cost](#col) as expressed in [Payment Currency](#col).
 
 ## Content Constraints
 
 | Constraint                 | Value                                       |
 | :------------------------- | :------------------------------------------ |
-| Dataset                    | [Invoice Detail](#datamodel.invoicedetail)  |
-| Operating model conditions | [Includes Billing and Payment Currency Differences](#operatingmodelconditions.includesbillingandpaymentcurrencydifferences) |
+| Dataset                    | [Invoice Detail](#ds)                       |
+| Operating model conditions | [Includes Billing and Payment Currency Differences](#omc)                                                                   |
 | Column type                | Metric                                      |
 | Feature level              | Conditional                                 |
 | Allows nulls               | False                                       |
 | Data type                  | Decimal                                     |
-| Value format               | [Numeric Format](#attributes.numericformat) |
+| Value format               | [Numeric Format](#attr)                     |
 | Number range               | Any valid decimal value                     |
 
 ## Version Introduced

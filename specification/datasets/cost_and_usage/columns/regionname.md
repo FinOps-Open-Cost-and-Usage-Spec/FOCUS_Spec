@@ -1,16 +1,16 @@
 # Region Name
 
-Region Name is a host-provider-assigned display name for an isolated geographic area where a [*resource*](#glossary:resource) is provisioned or a [*service*](#glossary:service) is provided. Region Name is commonly used for scenarios like analyzing cost and unit prices based on where *resources* are deployed.
+[Region Name](#col) is a host-provider-assigned display name for an isolated geographic area where a [resource](#term) is provisioned or a [service](#term) is provided. [Region Name](#col) is commonly used for scenarios like analyzing cost and unit prices based on where [resources](#term) are deployed.
 
 ## Requirements
 
-RegionName MUST adhere to the following requirements:
+[RegionName](#col) MUST adhere to the following requirements:
 
-* RegionName MUST be of type String.
-* RegionName MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* RegionName MUST adhere to the following nullability requirements:
-  * RegionName MUST be null when [RegionId](#datamodel.costandusage.regionid) is null.
-  * RegionName MUST NOT be null when RegionId is not null.
+* [RegionName](#col) MUST be of type String.
+* [RegionName](#col) MUST conform to [StringHandling](#attr) requirements.
+* [RegionName](#col) MUST adhere to the following nullability requirements:
+  * [RegionName](#col) MUST be null when [RegionId](#col) is null.
+  * [RegionName](#col) MUST NOT be null when [RegionId](#col) is not null.
 
 ## Column ID
 
@@ -22,14 +22,14 @@ Region Name
 
 ## Description
 
-The name of an isolated geographic area where a *resource* is provisioned or a *service* is provided.
+The name of an isolated geographic area where a [resource](#term) is provisioned or a [service](#term) is provided.
 
 ## Content Constraints
 
 | Constraint                 | Value                                     |
 | :------------------------- | :---------------------------------------- |
-| Dataset                    | [Cost and Usage](#datamodel.costandusage) |
-| Operating model conditions | [Includes Regions](#operatingmodelconditions.includesregions) |
+| Dataset                    | [Cost and Usage](#ds)                     |
+| Operating model conditions | [Includes Regions](#omc)                                      |
 | Column type                | Dimension                                 |
 | Feature level              | Conditional                               |
 | Allows nulls               | True                                      |

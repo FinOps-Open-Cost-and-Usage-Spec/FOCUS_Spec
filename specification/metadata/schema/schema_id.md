@@ -1,13 +1,13 @@
 # Schema ID
 
-The Schema ID provides the reference item to associate which Schema was used for the generation of a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+The [Schema ID](#meta) provides the reference item to associate which Schema was used for the generation of a [FOCUS dataset](#term).
 
-SchemaId adheres to the following requirements:
+[SchemaId](#meta) adheres to the following requirements:
 
-* SchemaId MUST be present in an object within the [Schema](#metadata.schema) collection.
-* SchemaId MUST be of type String.
+* [SchemaId](#meta) MUST be present in an object within the [Schema](#meta) collection.
+* [SchemaId](#meta) MUST be of type String.
 * SchemaID MUST NOT be null.
-* SchemaId SHOULD be a Globally Unique Identifier (GUID).
+* [SchemaId](#meta) SHOULD be a Globally Unique Identifier (GUID).
 
 ## Metadata ID
 

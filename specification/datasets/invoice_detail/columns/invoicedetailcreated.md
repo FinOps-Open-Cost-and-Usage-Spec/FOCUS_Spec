@@ -1,16 +1,16 @@
 # Invoice Detail Created
 
-Invoice Detail Created is the timestamp when the [Invoice Detail](#datamodel.invoicedetail) record was first created. This timestamp facilitates auditability of the charge and invoice lifecycle, allowing the FinOps practitioner to distinguish between the time of service consumption and the time of financial record generation.
+[Invoice Detail Created](#col) is the timestamp when the [Invoice Detail](#ds) record was first created. This timestamp facilitates auditability of the charge and invoice lifecycle, allowing the FinOps practitioner to distinguish between the time of service consumption and the time of financial record generation.
 
 ## Requirements
 
-InvoiceDetailCreated MUST adhere to the following requirements:
+[InvoiceDetailCreated](#col) MUST adhere to the following requirements:
 
-* InvoiceDetailCreated MUST be of type Date/Time.
-* InvoiceDetailCreated MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.
-* InvoiceDetailCreated MUST NOT be null.
-* InvoiceDetailCreated MUST represent the moment in time the InvoiceDetail record was instantiated.
-* InvoiceDetailCreated for a given [BillingPeriodStart](#datamodel.invoicedetail.billingperiodstart) and [InvoiceIssuerName](#datamodel.invoicedetail.invoiceissuername) MUST be earlier than or equal to [BillingPeriod.BillingPeriodLastUpdated](#datamodel.billingperiod.billingperiodlastupdated) for the same [BillingPeriod.BillingPeriodStart](#datamodel.billingperiod.billingperiodstart) and [BillingPeriod.InvoiceIssuerName](#datamodel.billingperiod.invoiceissuername) when [BillingPeriod.BillingPeriodStatus](#datamodel.billingperiod.billingperiodstatus) is "Closed".
+* [InvoiceDetailCreated](#col) MUST be of type Date/Time.
+* [InvoiceDetailCreated](#col) MUST conform to [DateTimeFormat](#attr) requirements.
+* [InvoiceDetailCreated](#col) MUST NOT be null.
+* [InvoiceDetailCreated](#col) MUST represent the moment in time the InvoiceDetail record was instantiated.
+* [InvoiceDetailCreated](#col) for a given [BillingPeriodStart](#col) and [InvoiceIssuerName](#col) MUST be earlier than or equal to [BillingPeriod.BillingPeriodLastUpdated](#col:BillingPeriod.BillingPeriodLastUpdated) for the same [BillingPeriod.BillingPeriodStart](#col:BillingPeriod.BillingPeriodStart) and [BillingPeriod.InvoiceIssuerName](#col:BillingPeriod.InvoiceIssuerName) when [BillingPeriod.BillingPeriodStatus](#col:BillingPeriod.BillingPeriodStatus) is ["Closed"](#val:BillingPeriod.BillingPeriodStatus).
 
 ## Column ID
 
@@ -22,19 +22,19 @@ Invoice Detail Created
 
 ## Description
 
-The timestamp when the Invoice Detail record was first created.
+The timestamp when the [Invoice Detail](#ds) record was first created.
 
 ## Content Constraints
 
 | Constraint                 | Value                                           |
 | :------------------------- | :---------------------------------------------- |
-| Dataset                    | [Invoice Detail](#datamodel.invoicedetail)      |
+| Dataset                    | [Invoice Detail](#ds)                           |
 | Operating model conditions | Not applicable                                  |
 | Column type                | Dimension                                       |
 | Feature level              | Mandatory                                       |
 | Allows nulls               | False                                           |
 | Data type                  | Date/Time                                       |
-| Value format               | [Date/Time Format](#attributes.date/timeformat) |
+| Value format               | [Date/Time Format](#attr)                       |
 
 ## Version Introduced
 

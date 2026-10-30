@@ -2,12 +2,12 @@
 
 Datetime the data in the time sector was last updated.
 
-TimeSectorLastUpdated adheres to the following requirements:
+[TimeSectorLastUpdated](#meta) adheres to the following requirements:
 
-* TimeSectorLastUpdated MUST be present in [TimeSectors](#metadata.recency.timesectors) subsection of the [Recency](#metadata.recency) metadata section.
-* TimeSectorLastUpdated MUST be of type Date/Time.
-* TimeSectorLastUpdated MUST NOT be null.
-* TimeSectorLastUpdated MUST conform to [DateTimeFormat](#attributes.date/timeformat).
+* [TimeSectorLastUpdated](#meta) MUST be present in [TimeSectors](#meta) subsection of the [Recency](#meta) metadata section.
+* [TimeSectorLastUpdated](#meta) MUST be of type Date/Time.
+* [TimeSectorLastUpdated](#meta) MUST NOT be null.
+* [TimeSectorLastUpdated](#meta) MUST conform to [DateTimeFormat](#attr).
 
 ## Metadata ID
 
@@ -24,7 +24,7 @@ Time Sector Last Updated
 | Feature level | Mandatory                            |
 | Allows nulls  | False                                |
 | Data type     | Date/Time                            |
-| Value format  | [Date/Time Format](#attributes.date/timeformat) |
+| Value format  | [Date/Time Format](#attr)                       |
 
 ## Version Introduced
 

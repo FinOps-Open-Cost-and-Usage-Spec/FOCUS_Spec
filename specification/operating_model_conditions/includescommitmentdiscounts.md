@@ -1,13 +1,13 @@
 # Includes Commitment Discounts
 
-The Includes Commitment Discounts operating model condition represents a verifiable state indicating whether the [*operating model*](#glossary:operating-model) includes [*commitment discounts*](#glossary:commitment-discount).
+The [Includes Commitment Discounts](#omc) operating model condition represents a verifiable state indicating whether the [operating model](#term) includes [commitment discounts](#term).
 
 ## Requirements
 
-IncludesCommitmentDiscounts MUST adhere to the following requirements:
+[IncludesCommitmentDiscounts](#omc) MUST adhere to the following requirements:
 
-* IncludesCommitmentDiscounts MUST evaluate to true when the *operating model* includes *commitment discounts*.
-* IncludesCommitmentDiscounts MUST evaluate to false when the *operating model* does not include *commitment discounts*.
+* [IncludesCommitmentDiscounts](#omc) MUST evaluate to true when the [operating model](#term) includes [commitment discounts](#term).
+* [IncludesCommitmentDiscounts](#omc) MUST evaluate to false when the [operating model](#term) does not include [commitment discounts](#term).
 
 ## Operating Model Condition ID
 
@@ -19,7 +19,7 @@ Includes Commitment Discounts
 
 ## Description
 
-A verifiable state indicating whether the *operating model* includes *commitment discounts*.
+A verifiable state indicating whether the [operating model](#term) includes [commitment discounts](#term).
 
 ## Version Introduced
 

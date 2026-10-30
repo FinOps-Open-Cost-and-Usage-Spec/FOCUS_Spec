@@ -1,3 +1,7 @@
+---
+dataset: CostAndUsage
+---
+
 # Aura Web Flexible Spend Plan - All Upfront - 100% Utilization with Overage
 
 | Parameter                    | Value                                                    |
@@ -14,11 +18,11 @@
 
 ## Scenario Description
 
-This example shows an **Aura Web Flexible Spend Plan**, which is a commitment (with a Commitment Discount Category of `Spend`) where you commit to a specific dollar amount of usage per hour.
+This example shows an **Aura Web Flexible Spend Plan**, which is a commitment (with a [Commitment Discount Category](#col) of `Spend`) where you commit to a specific dollar amount of usage per hour.
 
-The **All Upfront** payment option means the entire commitment cost is paid at purchase time. This results in a single Purchase row with the full BilledCost and zero EffectiveCost (since the cost is amortized to usage rows).
+The **All Upfront** payment option means the entire commitment cost is paid at purchase time. This results in a single Purchase row with the full [BilledCost](#col) and zero [EffectiveCost](#col) (since the cost is amortized to usage rows).
 
-This scenario demonstrates **100% utilization with overage** where demand exceeds commitment capacity. The 24 Used rows represent full utilization of the commitment. The 12 Standard rows represent compute usage beyond the commitment that spills to standard pricing. Standard pricing rows have no CommitmentDiscountStatus, PricingCategory='Standard', and BilledCost=EffectiveCost at the full list price.
+This scenario demonstrates **100% utilization with overage** where demand exceeds commitment capacity. The 24 Used rows represent full utilization of the commitment. The 12 Standard rows represent compute usage beyond the commitment that spills to standard pricing. Standard pricing rows have no [CommitmentDiscountStatus](#col), [PricingCategory](#col)='Standard', and [BilledCost](#col)=[EffectiveCost](#col) at the full list price.
 
 ## Row Summary
 
@@ -45,7 +49,7 @@ These three quantity columns serve different purposes and must be understood in 
 | **ConsumedQuantity**           | Actual resource consumption           | Usage rows with resources     | 1 (hours consumed)         |
 | **CommitmentDiscountQuantity** | Commitment capacity applied           | Rows with commitment discount | 24.20 (USD)                |
 
-**For spend-based commitments:** CommitmentDiscountQuantity represents the dollar amount applied, not a count of resources. For a $24.20/hour commitment, this value is $24.20.
+**For spend-based commitments:** [CommitmentDiscountQuantity](#col) represents the dollar amount applied, not a count of resources. For a $24.20/hour commitment, this value is $24.20.
 
 ### Pricing Columns: List Unit Price vs. Contracted Unit Price
 
@@ -54,7 +58,7 @@ These three quantity columns serve different purposes and must be understood in 
 | **ListUnitPrice**       | List (public) unit price | $36.30      | $36.30 |
 | **ContractedUnitPrice** | Negotiated unit price    | $36.30      | $36.30 |
 
-**Why this matters:** ContractedUnitPrice reflects enterprise-negotiated pricing (e.g., enterprise-negotiated rates), not commitment discount savings. In non-negotiated scenarios, ContractedUnitPrice equals ListUnitPrice. Commitment discount savings are reflected in EffectiveCost, not in unit prices.
+**Why this matters:** [ContractedUnitPrice](#col) reflects enterprise-negotiated pricing (e.g., enterprise-negotiated rates), not commitment discount savings. In non-negotiated scenarios, [ContractedUnitPrice](#col) equals [ListUnitPrice](#col). Commitment discount savings are reflected in [EffectiveCost](#col), not in unit prices.
 
 ### Cost Columns: Billed Cost vs. Effective Cost vs. List Cost
 

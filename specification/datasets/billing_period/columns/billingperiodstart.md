@@ -1,15 +1,15 @@
 # Billing Period Start
 
-Billing Period Start represents the [*inclusive start bound*](#glossary:inclusivestartbound) of a [*billing period*](#glossary:billing-period). For example, a time period where Billing Period Start is '2024-01-01T00:00:00Z' and [Billing Period End](#datamodel.billingperiod.billingperiodend) is '2024-02-01T00:00:00Z' includes January since Billing Period Start represents the *inclusive start bound*, but does not include February since Billing Period End represents the [*exclusive end bound*](#glossary:exclusiveendbound).
+[Billing Period Start](#col) represents the [inclusive start bound](#term) of a [billing period](#term). For example, a time period where [Billing Period Start](#col) is '2024-01-01T00:00:00Z' and [Billing Period End](#col) is '2024-02-01T00:00:00Z' includes January since [Billing Period Start](#col) represents the [inclusive start bound](#term), but does not include February since [Billing Period End](#col) represents the [exclusive end bound](#term).
 
 ## Requirements
 
-BillingPeriodStart MUST adhere to the following requirements:
+[BillingPeriodStart](#col) MUST adhere to the following requirements:
 
-* BillingPeriodStart MUST be of type Date/Time.
-* BillingPeriodStart MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.
-* BillingPeriodStart MUST NOT be null.
-* BillingPeriodStart MUST be the *inclusive start bound* of the *billing period*.
+* [BillingPeriodStart](#col) MUST be of type Date/Time.
+* [BillingPeriodStart](#col) MUST conform to [DateTimeFormat](#attr) requirements.
+* [BillingPeriodStart](#col) MUST NOT be null.
+* [BillingPeriodStart](#col) MUST be the [inclusive start bound](#term) of the [billing period](#term).
 
 ## Column ID
 
@@ -21,19 +21,19 @@ Billing Period Start
 
 ## Description
 
-The *inclusive start bound* of a *billing period*.
+The [inclusive start bound](#term) of a [billing period](#term).
 
 ## Content Constraints
 
 | Constraint                 | Value                                           |
 | :------------------------- | :---------------------------------------------- |
-| Dataset                    | [Billing Period](#datamodel.billingperiod)      |
+| Dataset                    | [Billing Period](#ds)                           |
 | Operating model conditions | Not applicable                                  |
 | Column type                | Dimension                                       |
 | Feature level              | Mandatory                                       |
 | Allows nulls               | False                                           |
 | Data type                  | Date/Time                                       |
-| Value format               | [Date/Time Format](#attributes.date/timeformat) |
+| Value format               | [Date/Time Format](#attr)                       |
 
 ## Version Introduced
 

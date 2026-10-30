@@ -1,17 +1,17 @@
 # Billing Account Type
 
-Billing Account Type is an invoice-issuer-assigned name to identify the type of [*billing account*](#glossary:billing-account). Billing Account Type is a readable display name and not a code. Billing Account Type is commonly used for scenarios like mapping FOCUS and provider constructs, summarizing costs across providers, or invoicing and chargeback.
+[Billing Account Type](#col) is an invoice-issuer-assigned name to identify the type of [billing account](#term). [Billing Account Type](#col) is a readable display name and not a code. [Billing Account Type](#col) is commonly used for scenarios like mapping FOCUS and provider constructs, summarizing costs across providers, or invoicing and chargeback.
 
 ## Requirements
 
-BillingAccountType MUST adhere to the following requirements:
+[BillingAccountType](#col) MUST adhere to the following requirements:
 
-* BillingAccountType MUST be of type String.
-* BillingAccountType MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* BillingAccountType MUST adhere to the following nullability requirements:
-  * BillingAccountType MUST be null when [BillingAccountId](#datamodel.costandusage.billingaccountid) is null.
-  * BillingAccountType MUST NOT be null when BillingAccountId is not null.
-* BillingAccountType MUST be a consistent, readable display value.
+* [BillingAccountType](#col) MUST be of type String.
+* [BillingAccountType](#col) MUST conform to [StringHandling](#attr) requirements.
+* [BillingAccountType](#col) MUST adhere to the following nullability requirements:
+  * [BillingAccountType](#col) MUST be null when [BillingAccountId](#col) is null.
+  * [BillingAccountType](#col) MUST NOT be null when [BillingAccountId](#col) is not null.
+* [BillingAccountType](#col) MUST be a consistent, readable display value.
 
 ## Column ID
 
@@ -23,14 +23,14 @@ Billing Account Type
 
 ## Description
 
-An invoice-issuer-assigned name to identify the type of *billing account*.
+An invoice-issuer-assigned name to identify the type of [billing account](#term).
 
 ## Content Constraints
 
 | Constraint                 | Value                                     |
 | :------------------------- | :---------------------------------------- |
-| Dataset                    | [Cost and Usage](#datamodel.costandusage) |
-| Operating model conditions | [Includes Multiple Billing Account Types](#operatingmodelconditions.includesmultiplebillingaccounttypes) |
+| Dataset                    | [Cost and Usage](#ds)                     |
+| Operating model conditions | [Includes Multiple Billing Account Types](#omc)                                                          |
 | Column type                | Dimension                                 |
 | Feature level              | Conditional                               |
 | Allows nulls               | False                                     |

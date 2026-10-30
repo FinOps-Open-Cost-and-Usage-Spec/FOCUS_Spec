@@ -1,15 +1,15 @@
 # Time Sector End
 
-The Time Sector End is the datetime of the end of the time sector. The Time Sector End MUST be later than the Time Sector Start.
+The [Time Sector End](#meta) is the datetime of the end of the time sector. The [Time Sector End](#meta) MUST be later than the [Time Sector Start](#meta).
 
-TimeSectorEnd adheres to the following requirements:
+[TimeSectorEnd](#meta) adheres to the following requirements:
 
-* TimeSectorEnd MUST be present in the [TimeSectors](#metadata.recency.timesectors) subsection of the [Recency](#metadata.recency) metadata section.
-* TimeSectorEnd MUST be of type Date/Time.
-* TimeSectorEnd MUST NOT be null.
-* TimeSectorEnd MUST conform to [DateTimeFormat](#attributes.date/timeformat).
-* TimeSectorEnd must be exclusive of the end time of the subsequent time sector.
-* TimeSectorEnd MUST be later than TimeSectorStart.
+* [TimeSectorEnd](#meta) MUST be present in the [TimeSectors](#meta) subsection of the [Recency](#meta) metadata section.
+* [TimeSectorEnd](#meta) MUST be of type Date/Time.
+* [TimeSectorEnd](#meta) MUST NOT be null.
+* [TimeSectorEnd](#meta) MUST conform to [DateTimeFormat](#attr).
+* [TimeSectorEnd](#meta) must be exclusive of the end time of the subsequent time sector.
+* [TimeSectorEnd](#meta) MUST be later than [TimeSectorStart](#meta).
 
 ## Metadata ID
 
@@ -26,7 +26,7 @@ Time Sector End
 | Feature level | Mandatory                            |
 | Allows nulls  | False                                |
 | Data type     | Date/Time                            |
-| Value format  | [Date/Time Format](#attributes.date/timeformat) |
+| Value format  | [Date/Time Format](#attr)                       |
 
 ## Version Introduced
 

@@ -1,39 +1,39 @@
 # Contracted Unit Price
 
-[*Contracted Unit Price*](#glossary:contracted-unit-price) represents the negotiated unit price per [Pricing Unit](#datamodel.costandusage.pricingunit) for the [*SKU Price*](#glossary:sku-price) identified by the given [SKU Price ID](#datamodel.costandusage.skupriceid). It is the unit price before the application of any discount-bearing [*commitment programs*](#glossary:commitment-program) (e.g., [*commitment discount*](#glossary:commitment-discount)).
+[Contracted Unit Price](#term) represents the negotiated unit price per [Pricing Unit](#col) for the [SKU Price](#term) identified by the given [SKU Price ID](#col). It is the unit price before the application of any discount-bearing [commitment programs](#term) (e.g., [commitment discount](#term)).
 
-When no [*negotiated pricing terms*](#glossary:negotiated-pricing-terms) apply to the [*charge*](#glossary:charge), Contracted Unit Price defaults to [List Unit Price](#datamodel.costandusage.listunitprice).
+When no [negotiated pricing terms](#term) apply to the [charge](#term), Contracted Unit Price defaults to [List Unit Price](#col).
 
-Contracted Unit Price is denominated in the [Billing Currency](#datamodel.costandusage.billingcurrency). Contracted Unit Price is commonly used for negotiation and rate optimization activities.
+Contracted Unit Price is denominated in the [Billing Currency](#col). Contracted Unit Price is commonly used for negotiation and rate optimization activities.
 
 ## Requirements
 
-ContractedUnitPrice MUST adhere to the following requirements:
+[ContractedUnitPrice](#col) MUST adhere to the following requirements:
 
-* ContractedUnitPrice MUST be of type Decimal.
-* ContractedUnitPrice MUST conform to [NumericFormat](#attributes.numericformat) requirements.
-* ContractedUnitPrice MUST adhere to the following nullability requirements:
-  * ContractedUnitPrice MUST be null when SkuPriceId is null.
-  * ContractedUnitPrice MUST be null when [ChargeCategory](#datamodel.costandusage.chargecategory) is "Tax".
-  * ContractedUnitPrice MUST NOT be null when SkuPriceId is not null.
-  * ContractedUnitPrice MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#datamodel.costandusage.chargeclass) is not "Correction".
-  * ContractedUnitPrice MAY be null in all other cases.
-* When ContractedUnitPrice is not null, ContractedUnitPrice MUST adhere to the following requirements:
-  * ContractedUnitPrice MUST be a non-negative decimal value.
-  * ContractedUnitPrice MUST be denominated in the BillingCurrency.
-  * ContractedUnitPrice MUST reflect *negotiated pricing terms* for the *SKU Price* identified by the given SkuPriceId that are independent of any discount-bearing *commitment programs* being applied to the *charge*.
-  * ContractedUnitPrice MUST NOT reflect any unit price impact dependent on a discount-bearing *commitment program* being applied to the *charge*.
-  * ContractedUnitPrice MUST equal ListUnitPrice when no *negotiated pricing terms* apply to the *charge*.
+* [ContractedUnitPrice](#col) MUST be of type Decimal.
+* [ContractedUnitPrice](#col) MUST conform to [NumericFormat](#attr) requirements.
+* [ContractedUnitPrice](#col) MUST adhere to the following nullability requirements:
+  * [ContractedUnitPrice](#col) MUST be null when [SkuPriceId](#col) is null.
+  * [ContractedUnitPrice](#col) MUST be null when [ChargeCategory](#col) is ["Tax"](#val:CostAndUsage.ChargeCategory).
+  * [ContractedUnitPrice](#col) MUST NOT be null when [SkuPriceId](#col) is not null.
+  * [ContractedUnitPrice](#col) MUST NOT be null when [ChargeCategory](#col) is ["Usage"](#val:CostAndUsage.ChargeCategory) or "Purchase" and [ChargeClass](#col) is not ["Correction"](#val:CostAndUsage.ChargeClass).
+  * [ContractedUnitPrice](#col) MAY be null in all other cases.
+* When [ContractedUnitPrice](#col) is not null, [ContractedUnitPrice](#col) MUST adhere to the following requirements:
+  * [ContractedUnitPrice](#col) MUST be a non-negative decimal value.
+  * [ContractedUnitPrice](#col) MUST be denominated in the [BillingCurrency](#col).
+  * [ContractedUnitPrice](#col) MUST reflect [negotiated pricing terms](#term) for the [SKU Price](#term) identified by the given [SkuPriceId](#col) that are independent of any discount-bearing [commitment programs](#term) being applied to the [charge](#term).
+  * [ContractedUnitPrice](#col) MUST NOT reflect any unit price impact dependent on a discount-bearing [commitment program](#term) being applied to the [charge](#term).
+  * [ContractedUnitPrice](#col) MUST equal [ListUnitPrice](#col) when no [negotiated pricing terms](#term) apply to the [charge](#term).
 
 ## Implementation Guidance
 
-Every *charge* with a SKU Price ID has a Contracted Unit Price, whether or not *negotiated pricing terms* apply. Agreeing to a contract does not by itself introduce *negotiated pricing terms*; only privately agreed terms that modify the service-provider-suggested pricing do.
+Every [charge](#term) with a [SKU Price ID](#col) has a Contracted Unit Price, whether or not [negotiated pricing terms](#term) apply. Agreeing to a contract does not by itself introduce [negotiated pricing terms](#term); only privately agreed terms that modify the service-provider-suggested pricing do.
 
-Unlike List Unit Price, Contracted Unit Price reflects *negotiated pricing terms* when they apply to the *SKU Price* identified by the given SKU Price ID. These may include a negotiated unit price, a negotiated tier configuration, and [*negotiated FX pricing terms*](#glossary:negotiated-fx-pricing-terms), such as a negotiated currency exchange rate. When no *negotiated pricing terms* apply, Contracted Unit Price equals List Unit Price.
+Unlike List Unit Price, Contracted Unit Price reflects [negotiated pricing terms](#term) when they apply to the [SKU Price](#term) identified by the given [SKU Price ID](#col). These may include a negotiated unit price, a negotiated tier configuration, and [negotiated FX pricing terms](#term), such as a negotiated currency exchange rate. When no [negotiated pricing terms](#term) apply, Contracted Unit Price equals List Unit Price.
 
-[Pricing Currency Contracted Unit Price](#datamodel.costandusage.pricingcurrencycontractedunitprice) does not reflect *negotiated FX pricing terms*, because it is before any currency exchange rate conversion.
+[Pricing Currency Contracted Unit Price](#col) does not reflect [negotiated FX pricing terms](#term), because it is before any currency exchange rate conversion.
 
-The terms of a *commitment program* can also be negotiated, such as the unit price for its purchase, its discount, or its eligibility. A [*negotiated discount*](#glossary:negotiated-discount) (e.g., a discount received in exchange for a spend commitment) is reflected in Contracted Unit Price. The impact of applying a *commitment discount* to [*covered charges*](#glossary:covered-charge) is not; it is reflected in their [Effective Cost](#datamodel.costandusage.effectivecost).
+The terms of a [commitment program](#term) can also be negotiated, such as the unit price for its purchase, its discount, or its eligibility. A [negotiated discount](#term) (e.g., a discount received in exchange for a spend commitment) is reflected in Contracted Unit Price. The impact of applying a [commitment discount](#term) to [covered charges](#term) is not; it is reflected in their [Effective Cost](#col).
 
 ## Usability Constraints
 
@@ -49,19 +49,19 @@ Contracted Unit Price
 
 ## Description
 
-The negotiated unit price per Pricing Unit for the *SKU Price* identified by the given SKU Price ID.
+The negotiated unit price per [Pricing Unit](#col) for the [SKU Price](#term) identified by the given [SKU Price ID](#col).
 
 ## Content Constraints
 
 | Constraint                 | Value                                       |
 | :------------------------- | :------------------------------------------ |
-| Dataset                    | [Cost and Usage](#datamodel.costandusage)   |
-| Operating model conditions | [Includes Unit Pricing](#operatingmodelconditions.includesunitpricing) |
+| Dataset                    | [Cost and Usage](#ds)                       |
+| Operating model conditions | [Includes Unit Pricing](#omc)                                          |
 | Column type                | Metric                                      |
 | Feature level              | Conditional                                 |
 | Allows nulls               | True                                        |
 | Data type                  | Decimal                                     |
-| Value format               | [Numeric Format](#attributes.numericformat) |
+| Value format               | [Numeric Format](#attr)                     |
 | Number range               | Any valid non-negative decimal value        |
 
 ## Version Introduced

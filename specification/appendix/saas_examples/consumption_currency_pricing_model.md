@@ -39,7 +39,7 @@ For this scenario, the initial purchase of consumption currency is executed as f
 Note the following details in the example dataset:
 
 * The Charge Period is April 1st 2025 - April 1st 2026. The Billing Period is the month of April 2025 (when the OmniBucks were purchased) and therefore will appear in the April invoice.
-* Because OmniQuery uses a consumption currency pricing model for usage and publishes their OmniBuck price in terms of dollars and their usage cost in terms of OmniBucks, their Cost and Usage [FOCUS dataset](#term) includes the columns [PricingCurrency](#col), [PricingCurrencyContractedUnitPrice](#col), [PricingCurrencyEffectiveCost](#col), and [PricingCurrencyListUnitPrice](#col).
+* Because OmniQuery uses a consumption currency pricing model for usage and publishes their OmniBuck price in terms of dollars and their usage cost in terms of OmniBucks, their [Cost and Usage](#ds) [FOCUS dataset](#term) includes the columns [PricingCurrency](#col), [PricingCurrencyContractedUnitPrice](#col), [PricingCurrencyEffectiveCost](#col), and [PricingCurrencyListUnitPrice](#col).
 * A single charge representing the total payment for the initial OmniBuck purchase agreement ($200,000) is charged in the first invoice.
   * [ListCost](#col), [BilledCost](#col), and [ContractedCost](#col) of the purchase are all represented in this charge, however [EffectiveCost](#col) is zero since the OmniBucks are not yet consumed.
 * [PricingQuantity](#col) is set to the total OmniBucks purchased.

@@ -1,6 +1,10 @@
+---
+dataset: CostAndUsage
+---
+
 # Examples: AI Model Billing
 
-The following examples illustrate how a [Cost and Usage](#datamodel.costandusage) [*FOCUS dataset*](#glossary:FOCUS-dataset) represents usage-based billing for AI model APIs, where consumption is measured in tokens rather than in the compute, storage, or networking units common to infrastructure services. Provider and model names below are illustrative.
+The following examples illustrate how a [Cost and Usage](#ds) [FOCUS dataset](#term) represents usage-based billing for AI model APIs, where consumption is measured in tokens rather than in the compute, storage, or networking units common to infrastructure services. Provider and model names below are illustrative.
 
 ## Baseline Scenario
 
@@ -8,7 +12,7 @@ The following conditions apply to the scenarios below:
 
 * Acme Corp runs model workloads billed on token consumption.
 * Input and output tokens are priced separately, denominated per 1,000,000 tokens, so each token type is carried as its own row rather than blended into a single rate.
-* Token billing is represented using existing Cost and Usage columns. No AI-specific column is needed.
+* Token billing is represented using existing [Cost and Usage](#ds) columns. No AI-specific column is needed.
 
 The following examples illustrate model billing scenarios across direct billing, multiple models on one invoice, cloud marketplace purchases, a CSP-served third-party model, commitment drawdown, and cached token metering. Charges for a model and its underlying infrastructure appearing on the same invoice are outside the scope of this section.
 
@@ -23,16 +27,16 @@ The following examples illustrate model billing scenarios across direct billing,
 
 Note the following column usage on the token usage rows in the scenarios below:
 
-* [ConsumedQuantity](#datamodel.costandusage.consumedquantity) and [ConsumedUnit](#datamodel.costandusage.consumedunit) carry the raw token count and unit of measure.
-* [PricingQuantity](#datamodel.costandusage.pricingquantity) and [PricingUnit](#datamodel.costandusage.pricingunit) carry the same consumption expressed in the [*block pricing*](#glossary:block-pricing) increment the provider prices against.
-* [SkuId](#datamodel.costandusage.skuid) reflects the model, token type, and other technical properties of the offering; [SkuMeter](#datamodel.costandusage.skumeter) reflects the token type.
-* [ServiceCategory](#datamodel.costandusage.servicecategory) is "AI and Machine Learning" and [ServiceSubcategory](#datamodel.costandusage.servicesubcategory) is "Generative AI".
-* Model identity is carried in [SkuPriceDetails](#datamodel.costandusage.skupricedetails) using the properties described in the [Examples: AI Model Identity](#appendix.examples:aimodelidentity) section, which are not restated here.
-* The TokenDirection and TokenCacheAction properties of SkuPriceDetails label the direction of the metered tokens and their interaction with a cache, independently of the SkuMeter name.
+* [ConsumedQuantity](#col) and [ConsumedUnit](#col) carry the raw token count and unit of measure.
+* [PricingQuantity](#col) and [PricingUnit](#col) carry the same consumption expressed in the [block pricing](#term) increment the provider prices against.
+* [SkuId](#col) reflects the model, token type, and other technical properties of the offering; [SkuMeter](#col) reflects the token type.
+* [ServiceCategory](#col) is ["AI and Machine Learning"](#val:CostAndUsage.ServiceCategory) and [ServiceSubcategory](#col) is ["Generative AI"](#val:CostAndUsage.ServiceSubcategory).
+* Model identity is carried in [SkuPriceDetails](#col) using the properties described in the [Examples: AI Model Identity](#appendix.examples:aimodelidentity) section, which are not restated here.
+* The TokenDirection and TokenCacheAction properties of [SkuPriceDetails](#col) label the direction of the metered tokens and their interaction with a cache, independently of the [SkuMeter](#col) name.
 * Solora AI meters cache reads and cache writes separately from other input tokens, so the "Input Tokens" rows it sells carry TokenCacheAction "Uncached".
-* [PrincipalId](#datamodel.costandusage.principalid) identifies the [*principal*](#glossary:principal) associated with a charge, where one applies.
-* [CredentialId](#datamodel.costandusage.credentialid) identifies the [*credential*](#glossary:credential) presented on the request that produced the charge, where one applies.
-* [RequesterDetails](#datamodel.costandusage.requesterdetails) carries the published attributes of each (see [Examples: Requester Attribution](#appendix.examples:requesterattribution) and [Examples: Requester Details](#appendix.examples:jsonobject.examples:requesterdetails)); it is populated wherever PrincipalId or CredentialId is set.
+* [PrincipalId](#col) identifies the [principal](#term) associated with a charge, where one applies.
+* [CredentialId](#col) identifies the [credential](#term) presented on the request that produced the charge, where one applies.
+* [RequesterDetails](#col) carries the published attributes of each (see [Examples: Requester Attribution](#appendix.examples:requesterattribution) and [Examples: Requester Details](#appendix.examples:jsonobject.examples:requesterdetails)); it is populated wherever [PrincipalId](#col) or [CredentialId](#col) is set.
 
 The same examples can be read by axis. An example may appear under more than one heading.
 

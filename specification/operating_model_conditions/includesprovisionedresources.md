@@ -1,13 +1,13 @@
 # Includes Provisioned Resources
 
-The Includes Provisioned Resources operating model condition represents a verifiable state indicating whether the [*operating model*](#glossary:operating-model) includes provisioned [*resources*](#glossary:resource).
+The [Includes Provisioned Resources](#omc) operating model condition represents a verifiable state indicating whether the [operating model](#term) includes provisioned [resources](#term).
 
 ## Requirements
 
-IncludesProvisionedResources MUST adhere to the following requirements:
+[IncludesProvisionedResources](#omc) MUST adhere to the following requirements:
 
-* IncludesProvisionedResources MUST evaluate to true when the *operating model* includes provisioned *resources*.
-* IncludesProvisionedResources MUST evaluate to false when the *operating model* does not include provisioned *resources*.
+* [IncludesProvisionedResources](#omc) MUST evaluate to true when the [operating model](#term) includes provisioned [resources](#term).
+* [IncludesProvisionedResources](#omc) MUST evaluate to false when the [operating model](#term) does not include provisioned [resources](#term).
 
 ## Operating Model Condition ID
 
@@ -19,7 +19,7 @@ Includes Provisioned Resources
 
 ## Description
 
-A verifiable state indicating whether the *operating model* includes provisioned *resources*.
+A verifiable state indicating whether the [operating model](#term) includes provisioned [resources](#term).
 
 ## Version Introduced
 

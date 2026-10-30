@@ -1,20 +1,20 @@
 # Allocated Resource ID
 
-An Allocated Resource ID is an identifier assigned by the data generator which cost is being allocated to in a [Data Generator-Calculated Split Cost Allocation](#attributes.datagenerator-calculatedsplitcostallocationhandling). The Allocated Resource ID is used to understand what the cost is being allocated to in [*charges*](#glossary:charge) where the data generator is allocating costs to something other than the *charge's* [Resource ID](#datamodel.costandusage.resourceid), as is the case for [*allocated charges*](#glossary:allocated-charge).
+An [Allocated Resource ID](#col) is an identifier assigned by the data generator which cost is being allocated to in a [Data Generator-Calculated Split Cost Allocation](#attr:DataGeneratorCalculatedSplitCostAllocationHandling). The [Allocated Resource ID](#col) is used to understand what the cost is being allocated to in [charges](#term) where the data generator is allocating costs to something other than the *charge's* [Resource ID](#col), as is the case for [allocated charges](#term).
 
 ## Requirements
 
-AllocatedResourceId MUST adhere to the following requirements:
+[AllocatedResourceId](#col) MUST adhere to the following requirements:
 
-* AllocatedResourceId MUST be of type String.
-* AllocatedResourceId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* AllocatedResourceId MUST adhere to the following nullability requirements:
-  * AllocatedResourceId MUST be null when a *charge* is not related to a data generator-calculated split cost allocation.
-  * AllocatedResourceId MUST be null when a *charge* represents the unallocated portion of the origin *charge* after split cost allocation.
-  * AllocatedResourceId MUST NOT be null when a *charge* represents the allocated portion of the origin *charge*.
-* When AllocatedResourceId is not null, AllocatedResourceId MUST adhere to the following requirements:
-  * AllocatedResourceId SHOULD be a locally unique identifier within the associated ResourceId and ChargePeriod.
-  * AllocatedResourceId MAY NOT be unique across ResourceId or ChargePeriod values.
+* [AllocatedResourceId](#col) MUST be of type String.
+* [AllocatedResourceId](#col) MUST conform to [StringHandling](#attr) requirements.
+* [AllocatedResourceId](#col) MUST adhere to the following nullability requirements:
+  * [AllocatedResourceId](#col) MUST be null when a [charge](#term) is not related to a data generator-calculated split cost allocation.
+  * [AllocatedResourceId](#col) MUST be null when a [charge](#term) represents the unallocated portion of the origin [charge](#term) after split cost allocation.
+  * [AllocatedResourceId](#col) MUST NOT be null when a [charge](#term) represents the allocated portion of the origin [charge](#term).
+* When [AllocatedResourceId](#col) is not null, [AllocatedResourceId](#col) MUST adhere to the following requirements:
+  * [AllocatedResourceId](#col) SHOULD be a locally unique identifier within the associated [ResourceId](#col) and ChargePeriod.
+  * [AllocatedResourceId](#col) MAY NOT be unique across [ResourceId](#col) or ChargePeriod values.
 
 ## Column ID
 
@@ -32,8 +32,8 @@ The identifier of the object to which cost is allocated in data generator-calcul
 
 | Constraint                 | Value                                     |
 | :------------------------- | :---------------------------------------- |
-| Dataset                    | [Cost and Usage](#datamodel.costandusage) |
-| Operating model conditions | [Includes Split Cost Allocation](#operatingmodelconditions.includessplitcostallocation) |
+| Dataset                    | [Cost and Usage](#ds)                     |
+| Operating model conditions | [Includes Split Cost Allocation](#omc)                                                  |
 | Column type                | Dimension                                 |
 | Feature level              | Conditional                               |
 | Allows nulls               | True                                      |

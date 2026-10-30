@@ -1,16 +1,16 @@
 # Billing Period Start
 
-Billing Period Start represents the [*inclusive start bound*](#glossary:inclusivestartbound) of a [*billing period*](#glossary:billing-period). For example, a time period where Billing Period Start is '2024-01-01T00:00:00Z' and [Billing Period End](#datamodel.invoicedetail.billingperiodend) is '2024-02-01T00:00:00Z' includes [*charges*](#glossary:charge) for January since Billing Period Start represents the *inclusive start bound*, but does not include *charges* for February since Billing Period End represents the [*exclusive end bound*](#glossary:exclusiveendbound).
+[Billing Period Start](#col) represents the [inclusive start bound](#term) of a [billing period](#term). For example, a time period where [Billing Period Start](#col) is '2024-01-01T00:00:00Z' and [Billing Period End](#col) is '2024-02-01T00:00:00Z' includes [charges](#term) for January since [Billing Period Start](#col) represents the [inclusive start bound](#term), but does not include [charges](#term) for February since [Billing Period End](#col) represents the [exclusive end bound](#term).
 
 ## Requirements
 
-BillingPeriodStart MUST adhere to the following requirements:
+[BillingPeriodStart](#col) MUST adhere to the following requirements:
 
-* BillingPeriodStart MUST be of type Date/Time.
-* BillingPeriodStart MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.
-* BillingPeriodStart MUST NOT be null.
-* BillingPeriodStart MUST be the *inclusive start bound* of the *billing period*.
-* BillingPeriodStart for a given [InvoiceId](#datamodel.invoicedetail.invoiceid) and [InvoiceIssuerName](#datamodel.invoicedetail.invoiceissuername) MUST match [CostAndUsage.BillingPeriodStart](#datamodel.costandusage.billingperiodstart) for the same [CostAndUsage.InvoiceId](#datamodel.costandusage.invoiceid) and [CostAndUsage.InvoiceIssuerName](#datamodel.costandusage.invoiceissuername).
+* [BillingPeriodStart](#col) MUST be of type Date/Time.
+* [BillingPeriodStart](#col) MUST conform to [DateTimeFormat](#attr) requirements.
+* [BillingPeriodStart](#col) MUST NOT be null.
+* [BillingPeriodStart](#col) MUST be the [inclusive start bound](#term) of the [billing period](#term).
+* [BillingPeriodStart](#col) for a given [InvoiceId](#col) and [InvoiceIssuerName](#col) MUST match [CostAndUsage.BillingPeriodStart](#col:CostAndUsage.BillingPeriodStart) for the same [CostAndUsage.InvoiceId](#col:CostAndUsage.InvoiceId) and [CostAndUsage.InvoiceIssuerName](#col:CostAndUsage.InvoiceIssuerName).
 
 ## Column ID
 
@@ -22,19 +22,19 @@ Billing Period Start
 
 ## Description
 
-The *inclusive start bound* of a *billing period*.
+The [inclusive start bound](#term) of a [billing period](#term).
 
 ## Content Constraints
 
 | Constraint                 | Value                                           |
 | :------------------------- | :---------------------------------------------- |
-| Dataset                    | [Invoice Detail](#datamodel.invoicedetail)      |
+| Dataset                    | [Invoice Detail](#ds)                           |
 | Operating model conditions | Not applicable                                  |
 | Column type                | Dimension                                       |
 | Feature level              | Mandatory                                       |
 | Allows nulls               | False                                           |
 | Data type                  | Date/Time                                       |
-| Value format               | [Date/Time Format](#attributes.date/timeformat) |
+| Value format               | [Date/Time Format](#attr)                       |
 
 ## Version Introduced
 

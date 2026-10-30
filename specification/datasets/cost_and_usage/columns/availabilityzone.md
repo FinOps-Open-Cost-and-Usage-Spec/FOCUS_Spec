@@ -1,14 +1,14 @@
 # Availability Zone
 
-An [*Availability Zone*](#glossary:availability-zone) is a host-provider-assigned identifier for a physically separated and isolated area within a Region that provides high availability and fault tolerance. Availability Zone is commonly used for scenarios like analyzing cross-zone data transfer usage and the corresponding cost based on where [*resources*](#glossary:resource) are deployed.
+An [Availability Zone](#term) is a host-provider-assigned identifier for a physically separated and isolated area within a Region that provides high availability and fault tolerance. Availability Zone is commonly used for scenarios like analyzing cross-zone data transfer usage and the corresponding cost based on where [resources](#term) are deployed.
 
 ## Requirements
 
-AvailabilityZone MUST adhere to the following requirements:
+[AvailabilityZone](#col) MUST adhere to the following requirements:
 
-* AvailabilityZone MUST be of type String.
-* AvailabilityZone MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* AvailabilityZone MUST be null when a [*charge*](#glossary:charge) is not specific to an *availability zone*.
+* [AvailabilityZone](#col) MUST be of type String.
+* [AvailabilityZone](#col) MUST conform to [StringHandling](#attr) requirements.
+* [AvailabilityZone](#col) MUST be null when a [charge](#term) is not specific to an [availability zone](#term).
 
 ## Column ID
 
@@ -26,8 +26,8 @@ A host-provider-assigned identifier for a physically separated and isolated area
 
 | Constraint                 | Value                                     |
 | :------------------------- | :---------------------------------------- |
-| Dataset                    | [Cost and Usage](#datamodel.costandusage) |
-| Operating model conditions | [Includes Availability Zones](#operatingmodelconditions.includesavailabilityzones) |
+| Dataset                    | [Cost and Usage](#ds)                     |
+| Operating model conditions | [Includes Availability Zones](#omc)                                                |
 | Column type                | Dimension                                 |
 | Feature level              | Recommended                               |
 | Allows nulls               | True                                      |

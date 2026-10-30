@@ -1,28 +1,32 @@
+---
+dataset: CostAndUsage
+---
+
 # Data Granularity
 
 ## Description
 
-FOCUS supports multiple levels of cost and usage data granularity. This includes the ability to report on a daily, hourly, or other time period basis. FOCUS also supports the ability for cost and usage data to be provided for high granularity scenarios, such as down to the individual [*resources*](#glossary:resource) and [*SKUs*](#glossary:sku). It also supports high level granularity cost and usage data, such as account level, or service level [*charges*](#glossary:charge). For the account and service hierarchies themselves, see [Account Structures](#supportedfeatures.accountstructures) and [Service Provider Services](#supportedfeatures.serviceproviderservices).
+FOCUS supports multiple levels of cost and usage data granularity. This includes the ability to report on a daily, hourly, or other time period basis. FOCUS also supports the ability for cost and usage data to be provided for high granularity scenarios, such as down to the individual [resources](#term) and [SKUs](#term). It also supports high level granularity cost and usage data, such as account level, or service level [charges](#term). For the account and service hierarchies themselves, see [Account Structures](#supportedfeatures.accountstructures) and [Service Provider Services](#supportedfeatures.serviceproviderservices).
 
 ## Directly Dependent Columns
 
-* BillingAccountId
-* ChargePeriodEnd
-* ChargePeriodStart
-* ResourceId
-* ResourceName
-* ServiceName
-* SubAccountId
+* [BillingAccountId](#col)
+* [ChargePeriodEnd](#col)
+* [ChargePeriodStart](#col)
+* [ResourceId](#col)
+* [ResourceName](#col)
+* [ServiceName](#col)
+* [SubAccountId](#col)
 
 ## Supporting Columns
 
-* BilledCost
-* BillingCurrency
-* ConsumedQuantity
-* ConsumedUnit
-* EffectiveCost
-* ListCost
-* SkuId
+* [BilledCost](#col)
+* [BillingCurrency](#col)
+* [ConsumedQuantity](#col)
+* [ConsumedUnit](#col)
+* [EffectiveCost](#col)
+* [ListCost](#col)
+* [SkuId](#col)
 
 ## Example SQL Query
 

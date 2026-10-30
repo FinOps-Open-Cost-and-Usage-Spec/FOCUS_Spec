@@ -1,15 +1,15 @@
 # Contract Period Start
 
-Contract Period Start represents the [*inclusive start bound*](#glossary:inclusivestartbound) of a contract period. For example, a time period where Contract Period Start is '2024-01-01T00:00:00Z' and [Contract Period End](#datamodel.contractcommitment.contractperiodend) is '2025-01-01T00:00:00Z' includes January 1 2024 since Contract Period Start represents the *inclusive start bound*, but does not include January 2 2025 since Contract Period End represents the [*exclusive end bound*](#glossary:exclusiveendbound).
+[Contract Period Start](#col) represents the [inclusive start bound](#term) of a contract period. For example, a time period where [Contract Period Start](#col) is '2024-01-01T00:00:00Z' and [Contract Period End](#col) is '2025-01-01T00:00:00Z' includes January 1 2024 since [Contract Period Start](#col) represents the [inclusive start bound](#term), but does not include January 2 2025 since [Contract Period End](#col) represents the [exclusive end bound](#term).
 
 ## Requirements
 
-ContractPeriodStart MUST adhere to the following requirements:
+[ContractPeriodStart](#col) MUST adhere to the following requirements:
 
-* ContractPeriodStart MUST be of type Date/Time.
-* ContractPeriodStart MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.
-* ContractPeriodStart MUST NOT be null.
-* ContractPeriodStart MUST be the *inclusive start bound* of the effective period of the *contract*.
+* [ContractPeriodStart](#col) MUST be of type Date/Time.
+* [ContractPeriodStart](#col) MUST conform to [DateTimeFormat](#attr) requirements.
+* [ContractPeriodStart](#col) MUST NOT be null.
+* [ContractPeriodStart](#col) MUST be the [inclusive start bound](#term) of the effective period of the [contract](#term).
 
 ## Column ID
 
@@ -21,19 +21,19 @@ Contract Period Start
 
 ## Description
 
-The *inclusive start bound* of a contract period.
+The [inclusive start bound](#term) of a contract period.
 
 ## Content Constraints
 
 | Constraint                 | Value                                                |
 | :------------------------- | :--------------------------------------------------- |
-| Dataset                    | [Contract Commitment](#datamodel.contractcommitment) |
+| Dataset                    | [Contract Commitment](#ds)                           |
 | Operating model conditions | Not applicable                                       |
 | Column type                | Dimension                                            |
 | Feature level              | Mandatory                                            |
 | Allows nulls               | False                                                |
 | Data type                  | Date/Time                                            |
-| Value format               | [Date/Time Format](#attributes.date/timeformat)      |
+| Value format               | [Date/Time Format](#attr)                            |
 
 ## Version Introduced
 

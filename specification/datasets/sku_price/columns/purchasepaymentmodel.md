@@ -1,17 +1,17 @@
 # Purchase Payment Model
 
-Purchase Payment Model defines the financial settlement structure of a purchase. It identifies whether the financial obligation is settled via a single upfront payment, distributed recurring charges, or a combination of both over the [Purchase Duration Type](#datamodel.skuprice.purchasedurationtype). When the purchase is a [*commitment discount*](#glossary:commitment-discount), this column represents the settlement structure of that *commitment discount*.
+[Purchase Payment Model](#col) defines the financial settlement structure of a purchase. It identifies whether the financial obligation is settled via a single upfront payment, distributed recurring charges, or a combination of both over the [Purchase Duration Type](#col). When the purchase is a [commitment discount](#term), this column represents the settlement structure of that [commitment discount](#term).
 
 ## Requirements
 
-PurchasePaymentModel MUST adhere to the following requirements:
+[PurchasePaymentModel](#col) MUST adhere to the following requirements:
 
-* PurchasePaymentModel MUST be of type String.
-* PurchasePaymentModel MUST adhere to the following nullability requirements:
-  * PurchasePaymentModel MUST be null when [ChargeCategory](#datamodel.skuprice.chargecategory) is "Usage".
-  * PurchasePaymentModel MUST be null when ChargeCategory is "Credit".
-  * PurchasePaymentModel MUST NOT be null when ChargeCategory is "Purchase".
-* PurchasePaymentModel MUST be one of the allowed values.
+* [PurchasePaymentModel](#col) MUST be of type String.
+* [PurchasePaymentModel](#col) MUST adhere to the following nullability requirements:
+  * [PurchasePaymentModel](#col) MUST be null when [ChargeCategory](#col) is ["Usage"](#val:SkuPrice.ChargeCategory).
+  * [PurchasePaymentModel](#col) MUST be null when [ChargeCategory](#col) is ["Credit"](#val:SkuPrice.ChargeCategory).
+  * [PurchasePaymentModel](#col) MUST NOT be null when [ChargeCategory](#col) is ["Purchase"](#val:SkuPrice.ChargeCategory).
+* [PurchasePaymentModel](#col) MUST be one of the allowed values.
 
 ## Allowed Values
 
@@ -23,13 +23,13 @@ PurchasePaymentModel MUST adhere to the following requirements:
 
 ## Implementation Guidance
 
-Within the SKU Price dataset, the Purchase Payment Model describes how the fee for a purchase is settled, across purchase constructs such as reservations, prepaid licenses, and commitment discounts:
+Within the SKU Price dataset, the [Purchase Payment Model](#col) describes how the fee for a purchase is settled, across purchase constructs such as reservations, prepaid licenses, and commitment discounts:
 
 * **All Upfront:** The full obligation is settled by a single fee at the start of the term.
 * **No Upfront:** The obligation is settled through periodic fees over the term, with no initial payment.
-* **Partial Upfront:** The obligation combines an initial fee and periodic fees. It can be represented by one SKU Price record or by separate records for the upfront fee and the recurring fee, each with its own [SKU Price ID](#datamodel.skuprice.skupriceid).
+* **Partial Upfront:** The obligation combines an initial fee and periodic fees. It can be represented by one SKU Price record or by separate records for the upfront fee and the recurring fee, each with its own [SKU Price ID](#col).
 
-Whether the price of a purchase differs across payment models is set by the [*service provider*](#glossary:service-provider). Some price the payment model into the purchase and charge less in total the more of the obligation is settled upfront. Others charge the same total under every payment model, and some offer only one. Each payment model offered is still published as a separate SKU Price record, so two records for the same purchase can carry the same price and differ only in how it is settled.
+Whether the price of a purchase differs across payment models is set by the [service provider](#term). Some price the payment model into the purchase and charge less in total the more of the obligation is settled upfront. Others charge the same total under every payment model, and some offer only one. Each payment model offered is still published as a separate SKU Price record, so two records for the same purchase can carry the same price and differ only in how it is settled.
 
 ## Column ID
 
@@ -47,8 +47,8 @@ Defines the financial settlement structure of a purchase.
 
 | Constraint                 | Value                                                                                      |
 | :------------------------- | :----------------------------------------------------------------------------------------- |
-| Dataset                    | [SKU Price](#datamodel.skuprice)                                                           |
-| Operating Model Conditions | [Includes Purchases](#operatingmodelconditions.includespurchases)                          |
+| Dataset                    | [SKU Price](#ds)                                                                           |
+| Operating Model Conditions | [Includes Purchases](#omc)                                                                 |
 | Column type                | Dimension                                                                                  |
 | Feature level              | Conditional                                                                                |
 | Allows nulls               | True                                                                                       |

@@ -2,7 +2,7 @@
 
 ## Scenario
 
-CrestNode specifies the optional metadata property [Data Generator Version](#metadata.schema.datageneratorversion) in their [Schema](#metadata.schema) object. They made a change to the Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) they produce that does not adopt a new FOCUS Version, nor does it make a change to the included columns, but does impact values in the data. This example illustrates that Data Generator Version changes are independent of column changes, however data generator version changes may include column changes.
+CrestNode specifies the optional metadata property [Data Generator Version](#meta) in their [Schema](#meta) object. They made a change to the [Cost and Usage](#ds) [FOCUS dataset](#term) they produce that does not adopt a new FOCUS Version, nor does it make a change to the included columns, but does impact values in the data. This example illustrates that Data Generator Version changes are independent of column changes, however data generator version changes may include column changes.
 
 The data generator creates a new schema object to represent the new schema. The data generator includes both the FOCUS Version and Data Generator Version in the schema object.
 

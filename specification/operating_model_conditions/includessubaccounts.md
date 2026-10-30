@@ -1,13 +1,13 @@
 # Includes Sub Accounts
 
-The Includes Sub Accounts operating model condition represents a verifiable state indicating whether the [*operating model*](#glossary:operating-model) includes a [*sub account*](#glossary:sub-account) construct.
+The [Includes Sub Accounts](#omc) operating model condition represents a verifiable state indicating whether the [operating model](#term) includes a [sub account](#term) construct.
 
 ## Requirements
 
-IncludesSubAccounts MUST adhere to the following requirements:
+[IncludesSubAccounts](#omc) MUST adhere to the following requirements:
 
-* IncludesSubAccounts MUST evaluate to true when the *operating model* includes a *sub account* construct.
-* IncludesSubAccounts MUST evaluate to false when the *operating model* does not include a *sub account* construct.
+* [IncludesSubAccounts](#omc) MUST evaluate to true when the [operating model](#term) includes a [sub account](#term) construct.
+* [IncludesSubAccounts](#omc) MUST evaluate to false when the [operating model](#term) does not include a [sub account](#term) construct.
 
 ## Operating Model Condition ID
 
@@ -19,7 +19,7 @@ Includes Sub Accounts
 
 ## Description
 
-A verifiable state indicating whether the *operating model* includes a *sub account* construct.
+A verifiable state indicating whether the [operating model](#term) includes a [sub account](#term) construct.
 
 ## Version Introduced
 

@@ -1,15 +1,15 @@
 # Purchase Order Number
 
-Purchase Order Number is the unique customer-issued identifier for tracking the lifecycle of a purchase. This identifier is typically provided by the customer to the [*invoice issuer*](#glossary:invoice-issuer) to ensure that charges are mapped to specific internal procurement records or purchase orders.
+[Purchase Order Number](#col) is the unique customer-issued identifier for tracking the lifecycle of a purchase. This identifier is typically provided by the customer to the [invoice issuer](#term) to ensure that charges are mapped to specific internal procurement records or purchase orders.
 
 ## Requirements
 
-PurchaseOrderNumber MUST adhere to the following requirements:
+[PurchaseOrderNumber](#col) MUST adhere to the following requirements:
 
-* PurchaseOrderNumber MUST be of type String.
-* PurchaseOrderNumber MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* PurchaseOrderNumber MAY be null.
-* PurchaseOrderNumber MUST represent the identifier used by the customer to uniquely identify the purchase order responsible for the charge.
+* [PurchaseOrderNumber](#col) MUST be of type String.
+* [PurchaseOrderNumber](#col) MUST conform to [StringHandling](#attr) requirements.
+* [PurchaseOrderNumber](#col) MAY be null.
+* [PurchaseOrderNumber](#col) MUST represent the identifier used by the customer to uniquely identify the purchase order responsible for the charge.
 
 ## Column ID
 
@@ -27,8 +27,8 @@ The unique customer-issued identifier for tracking the lifecycle of a purchase.
 
 | Constraint                 | Value                                      |
 | :------------------------- | :----------------------------------------- |
-| Dataset                    | [Invoice Detail](#datamodel.invoicedetail) |
-| Operating model conditions | [Includes Purchase Order Numbers](#operatingmodelconditions.includespurchaseordernumbers) |
+| Dataset                    | [Invoice Detail](#ds)                      |
+| Operating model conditions | [Includes Purchase Order Numbers](#omc)                                                   |
 | Column type                | Dimension                                  |
 | Feature level              | Conditional                                |
 | Allows nulls               | True                                       |

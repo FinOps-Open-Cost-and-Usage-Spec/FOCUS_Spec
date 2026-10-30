@@ -1,14 +1,14 @@
 # Contract Commitment Benefit Category
 
-Contract Commitment Benefit Category defines the primary value or advantage received for a [*contract commitment*](#glossary:contract-commitment). It identifies whether the benefit is realized as a price reduction, a feature entitlement, a guarantee of service availability, or some other commercial outcome.
+[Contract Commitment Benefit Category](#col) defines the primary value or advantage received for a [contract commitment](#term). It identifies whether the benefit is realized as a price reduction, a feature entitlement, a guarantee of service availability, or some other commercial outcome.
 
 ## Requirements
 
-ContractCommitmentBenefitCategory MUST adhere to the following requirements:
+[ContractCommitmentBenefitCategory](#col) MUST adhere to the following requirements:
 
-* ContractCommitmentBenefitCategory MUST be of type String.
-* ContractCommitmentBenefitCategory MUST NOT be null.
-* ContractCommitmentBenefitCategory MUST be one of the allowed values.
+* [ContractCommitmentBenefitCategory](#col) MUST be of type String.
+* [ContractCommitmentBenefitCategory](#col) MUST NOT be null.
+* [ContractCommitmentBenefitCategory](#col) MUST be one of the allowed values.
 
 ## Allowed Values
 
@@ -43,13 +43,13 @@ Contract Commitment Benefit Category
 
 ## Description
 
-Defines the primary value or advantage received for a *contract commitment*.
+Defines the primary value or advantage received for a [contract commitment](#term).
 
 ## Content Constraints
 
 | Constraint                 | Value                                                |
 | :------------------------- | :--------------------------------------------------- |
-| Dataset                    | [Contract Commitment](#datamodel.contractcommitment) |
+| Dataset                    | [Contract Commitment](#ds)                           |
 | Operating model conditions | Not applicable                                       |
 | Column type                | Dimension                                            |
 | Feature level              | Mandatory                                            |

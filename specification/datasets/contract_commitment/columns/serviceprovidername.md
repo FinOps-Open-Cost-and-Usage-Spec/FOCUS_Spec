@@ -1,6 +1,6 @@
 # Service Provider Name
 
-Service Provider Name is the name of the entity that provides the resources or services available for usage or purchase. This entity is responsible for fulfilling the terms of the [*contract commitment*](#glossary:contract-commitment), such as applying discounts, managing credit pools, or guaranteeing resource availability.
+[Service Provider Name](#col) is the name of the entity that provides the resources or services available for usage or purchase. This entity is responsible for fulfilling the terms of the [contract commitment](#term), such as applying discounts, managing credit pools, or guaranteeing resource availability.
 
 > **Notes:**
 >
@@ -9,11 +9,11 @@ Service Provider Name is the name of the entity that provides the resources or s
 
 ## Requirements
 
-ServiceProviderName MUST adhere to the following requirements:
+[ServiceProviderName](#col) MUST adhere to the following requirements:
 
-* ServiceProviderName MUST be of type String.
-* ServiceProviderName MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* ServiceProviderName MUST NOT be null.
+* [ServiceProviderName](#col) MUST be of type String.
+* [ServiceProviderName](#col) MUST conform to [StringHandling](#attr) requirements.
+* [ServiceProviderName](#col) MUST NOT be null.
 
 ## Column ID
 
@@ -25,13 +25,13 @@ Service Provider Name
 
 ## Description
 
-The name of the entity that provides the *contract commitment*.
+The name of the entity that provides the [contract commitment](#term).
 
 ## Content Constraints
 
 | Constraint                 | Value                                                |
 | :------------------------- | :--------------------------------------------------- |
-| Dataset                    | [Contract Commitment](#datamodel.contractcommitment) |
+| Dataset                    | [Contract Commitment](#ds)                           |
 | Operating model conditions | Not applicable                                       |
 | Column type                | Dimension                                            |
 | Feature level              | Mandatory                                            |

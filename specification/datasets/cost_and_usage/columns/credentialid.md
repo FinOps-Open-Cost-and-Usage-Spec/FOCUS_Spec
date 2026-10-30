@@ -1,23 +1,23 @@
 # Credential ID
 
-A Credential ID is an identifier representing the [*credential*](#glossary:credential) presented on the request that produced a [*charge*](#glossary:charge). Credential ID commonly distinguishes *charges* that share a [*principal*](#glossary:principal) but were authenticated with different *credentials*. Descriptive attributes of the *credential* (e.g., display name, type) are carried in [Requester Details](#datamodel.costandusage.requesterdetails).
+A [Credential ID](#col) is an identifier representing the [credential](#term) presented on the request that produced a [charge](#term). [Credential ID](#col) commonly distinguishes [charges](#term) that share a [principal](#term) but were authenticated with different [credentials](#term). Descriptive attributes of the [credential](#term) (e.g., display name, type) are carried in [Requester Details](#col).
 
-For scenarios demonstrating how Credential ID is populated across different technology environments, see [Examples: Requester Attribution](#appendix.examples:requesterattribution).
+For scenarios demonstrating how [Credential ID](#col) is populated across different technology environments, see [Examples: Requester Attribution](#appendix.examples:requesterattribution).
 
 ## Requirements
 
-CredentialId MUST adhere to the following requirements:
+[CredentialId](#col) MUST adhere to the following requirements:
 
-* CredentialId MUST be of type String.
-* CredentialId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* CredentialId MUST adhere to the following nullability requirements:
-  * CredentialId MUST be null when a *charge* is not associated with a *credential*.
-  * CredentialId MUST be null when the *credential* associated with a *charge* has no published identifier.
-  * CredentialId MUST NOT be null when the *credential* associated with a *charge* has a published identifier.
-* When CredentialId is not null, CredentialId MUST adhere to the following requirements:
-  * CredentialId MUST be an identifier that references a *credential*.
-  * CredentialId MUST be a unique identifier within the [*service provider*](#glossary:service-provider).
-  * CredentialId MUST NOT contain a *credential* value that authenticates a request (e.g., an API key string, an access token, a password).
+* [CredentialId](#col) MUST be of type String.
+* [CredentialId](#col) MUST conform to [StringHandling](#attr) requirements.
+* [CredentialId](#col) MUST adhere to the following nullability requirements:
+  * [CredentialId](#col) MUST be null when a [charge](#term) is not associated with a [credential](#term).
+  * [CredentialId](#col) MUST be null when the [credential](#term) associated with a [charge](#term) has no published identifier.
+  * [CredentialId](#col) MUST NOT be null when the [credential](#term) associated with a [charge](#term) has a published identifier.
+* When [CredentialId](#col) is not null, [CredentialId](#col) MUST adhere to the following requirements:
+  * [CredentialId](#col) MUST be an identifier that references a [credential](#term).
+  * [CredentialId](#col) MUST be a unique identifier within the [service provider](#term).
+  * [CredentialId](#col) MUST NOT contain a [credential](#term) value that authenticates a request (e.g., an API key string, an access token, a password).
 
 ## Column ID
 
@@ -29,14 +29,14 @@ Credential ID
 
 ## Description
 
-Identifier representing the *credential* presented on the request that produced a *charge*.
+Identifier representing the [credential](#term) presented on the request that produced a [charge](#term).
 
 ## Content Constraints
 
 | Constraint                 | Value                                     |
 | :------------------------- | :---------------------------------------- |
-| Dataset                    | [Cost and Usage](#datamodel.costandusage) |
-| Operating model conditions | [Includes Requester Attribution](#operatingmodelconditions.includesrequesterattribution) |
+| Dataset                    | [Cost and Usage](#ds)                     |
+| Operating model conditions | [Includes Requester Attribution](#omc)                                                   |
 | Column type                | Dimension                                 |
 | Feature level              | Conditional                               |
 | Allows nulls               | True                                      |

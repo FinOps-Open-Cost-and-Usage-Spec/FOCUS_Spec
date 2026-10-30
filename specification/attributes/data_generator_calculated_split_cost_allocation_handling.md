@@ -1,14 +1,14 @@
 # Data Generator-Calculated Split Cost Allocation Handling
 
-The data generator-calculated split cost allocation for data generator-defined services is a capability that can be offered by data generators which allocates a charge to a more granular level or, in some cases, surfaces detail not visible in the origin charge (such as unused capacity). This is accomplished by taking a charge record present in a FOCUS dataset ([*origin charge*](#glossary:origin-charge)) and splitting it into multiple charge records ([*allocated charges*](#glossary:allocated-charge)) to reflect the more granular detail, while ensuring the origin charge can be derived from the combination of *allocated charges*. This feature is used by practitioners to conduct chargebacks and better understand the usage of resources.
+The data generator-calculated split cost allocation for data generator-defined services is a capability that can be offered by data generators which allocates a charge to a more granular level or, in some cases, surfaces detail not visible in the origin charge (such as unused capacity). This is accomplished by taking a charge record present in a FOCUS dataset ([origin charge](#term)) and splitting it into multiple charge records ([allocated charges](#term)) to reflect the more granular detail, while ensuring the origin charge can be derived from the combination of [allocated charges](#term). This feature is used by practitioners to conduct chargebacks and better understand the usage of resources.
 
 ## Requirements
 
-Column conforming to DataGeneratorCalculatedSplitCostAllocationHandling attribute MUST adhere to the following requirements:
+Column conforming to [DataGeneratorCalculatedSplitCostAllocationHandling](#attr) attribute MUST adhere to the following requirements:
 
-* [*FOCUS dataset column*](#glossary:FOCUS-dataset-column) representing a dimension MUST match the corresponding value in the *origin charge* when present in an *allocated charge*.
-* *FOCUS dataset column* representing a non-summable [*metric*](#glossary:metric) (e.g., unit prices) MUST match the corresponding value in the *origin charge* when present in an *allocated charge*.
-* The sum of *FOCUS dataset column* across *allocated charges* MUST match the *FOCUS dataset column* in the corresponding *origin charge* when the *FOCUS dataset column* represents a summable metric (e.g., costs and quantities).
+* [FOCUS dataset column](#term) representing a dimension MUST match the corresponding value in the [origin charge](#term) when present in an [allocated charge](#term).
+* [FOCUS dataset column](#term) representing a non-summable [metric](#term) (e.g., unit prices) MUST match the corresponding value in the [origin charge](#term) when present in an [allocated charge](#term).
+* The sum of [FOCUS dataset column](#term) across [allocated charges](#term) MUST match the [FOCUS dataset column](#term) in the corresponding [origin charge](#term) when the [FOCUS dataset column](#term) represents a summable metric (e.g., costs and quantities).
 
 ## Attribute ID
 

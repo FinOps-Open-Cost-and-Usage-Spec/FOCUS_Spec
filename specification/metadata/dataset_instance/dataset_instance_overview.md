@@ -1,17 +1,17 @@
 # Dataset Instance
 
-The Dataset Instance metadata object provides information about the [*dataset instance*](#glossary:dataset-instance) and its content. Dataset Instance is a data generator-delivered instance of a FOCUS Dataset. For example, a Data Generator may provide multiple datasets utilizing the FOCUS specification, including multiple instances of the FOCUS [Cost and Usage](#datamodel.costandusage) dataset, each representing a different time granularity.
+The Dataset Instance metadata object provides information about the [dataset instance](#term) and its content. Dataset Instance is a data generator-delivered instance of a FOCUS Dataset. For example, a [Data Generator](#meta) may provide multiple datasets utilizing the FOCUS specification, including multiple instances of the FOCUS [Cost and Usage](#ds) dataset, each representing a different time granularity.
 
 ## Requirements
 
-DatasetInstance adheres to the following requirements:
+[DatasetInstance](#meta) adheres to the following requirements:
 
-* DatasetInstance MUST be present in the [Metadata](#metadata).
-* DatasetInstance MUST be structured as a collection of objects.
-* DatasetInstance MUST NOT be null.
-* DatasetInstance collection MUST contain at least one object for every [*FOCUS dataset*](#glossary:FOCUS-dataset) supported by the data generator.
-* DatasetInstance collection object MUST NOT be null.
-* DatasetInstance collection object MUST be associated with one and only one *FOCUS dataset*.
+* [DatasetInstance](#meta) MUST be present in the [Metadata](#metadata).
+* [DatasetInstance](#meta) MUST be structured as a collection of objects.
+* [DatasetInstance](#meta) MUST NOT be null.
+* [DatasetInstance](#meta) collection MUST contain at least one object for every [FOCUS dataset](#term) supported by the data generator.
+* [DatasetInstance](#meta) collection object MUST NOT be null.
+* [DatasetInstance](#meta) collection object MUST be associated with one and only one [FOCUS dataset](#term).
 
 ## Metadata ID
 

@@ -1,19 +1,19 @@
 # Capacity Reservation Status
 
-Capacity Reservation Status indicates whether the [*charge*](#glossary:charge) represents either the consumption of the [*capacity reservation*](#glossary:capacity-reservation) identified in the [Capacity Reservation ID](#datamodel.costandusage.capacityreservationid) column or when the *capacity reservation* is unused.
+[Capacity Reservation Status](#col) indicates whether the [charge](#term) represents either the consumption of the [capacity reservation](#term) identified in the [Capacity Reservation ID](#col) column or when the [capacity reservation](#term) is unused.
 
 ## Requirements
 
-CapacityReservationStatus MUST adhere to the following requirements:
+[CapacityReservationStatus](#col) MUST adhere to the following requirements:
 
-* CapacityReservationStatus MUST be of type String.
-* CapacityReservationStatus MUST adhere to the following nullability requirements:
-  * CapacityReservationStatus MUST be null when CapacityReservationId is null.
-  * CapacityReservationStatus MUST NOT be null when CapacityReservationId is not null and [ChargeCategory](#datamodel.costandusage.chargecategory) is "Usage".
-* When CapacityReservationStatus is not null, CapacityReservationStatus MUST adhere to the following requirements:
-  * CapacityReservationStatus MUST be one of the allowed values.
-  * CapacityReservationStatus MUST be "Unused" when the *charge* represents the unused portion of a *capacity reservation*.
-  * CapacityReservationStatus MUST be "Used" when the *charge* represents the used portion of a *capacity reservation*.
+* [CapacityReservationStatus](#col) MUST be of type String.
+* [CapacityReservationStatus](#col) MUST adhere to the following nullability requirements:
+  * [CapacityReservationStatus](#col) MUST be null when [CapacityReservationId](#col) is null.
+  * [CapacityReservationStatus](#col) MUST NOT be null when [CapacityReservationId](#col) is not null and [ChargeCategory](#col) is ["Usage"](#val:CostAndUsage.ChargeCategory).
+* When [CapacityReservationStatus](#col) is not null, [CapacityReservationStatus](#col) MUST adhere to the following requirements:
+  * [CapacityReservationStatus](#col) MUST be one of the allowed values.
+  * [CapacityReservationStatus](#col) MUST be ["Unused"](#val:CapacityReservationStatus) when the [charge](#term) represents the unused portion of a [capacity reservation](#term).
+  * [CapacityReservationStatus](#col) MUST be ["Used"](#val:CapacityReservationStatus) when the [charge](#term) represents the used portion of a [capacity reservation](#term).
 
 ## Allowed Values
 
@@ -32,14 +32,14 @@ Capacity Reservation Status
 
 ## Description
 
-Indicates whether the *charge* represents either the consumption of a *capacity reservation* or when a *capacity reservation* is unused.
+Indicates whether the [charge](#term) represents either the consumption of a [capacity reservation](#term) or when a [capacity reservation](#term) is unused.
 
 ## Content Constraints
 
 | Constraint                 | Value                                     |
 | :------------------------- | :---------------------------------------- |
-| Dataset                    | [Cost and Usage](#datamodel.costandusage) |
-| Operating model conditions | [Includes Capacity Reservations](#operatingmodelconditions.includescapacityreservations) |
+| Dataset                    | [Cost and Usage](#ds)                     |
+| Operating model conditions | [Includes Capacity Reservations](#omc)                                                   |
 | Column type                | Dimension                                 |
 | Feature level              | Conditional                               |
 | Allows nulls               | True                                      |

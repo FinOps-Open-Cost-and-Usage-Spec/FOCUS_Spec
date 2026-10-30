@@ -1,16 +1,16 @@
 # Commitment Discount Category
 
-Commitment Discount Category indicates whether the [*commitment discount*](#glossary:commitment-discount) identified in the [Commitment Discount ID](#datamodel.costandusage.commitmentdiscountid) column is based on usage quantity or cost (aka "spend"). The Commitment Discount Category column is only applicable to *commitment discounts* and not [*negotiated discounts*](#glossary:negotiated-discount).
+[Commitment Discount Category](#col) indicates whether the [commitment discount](#term) identified in the [Commitment Discount ID](#col) column is based on usage quantity or cost (aka "spend"). The [Commitment Discount Category](#col) column is only applicable to [commitment discounts](#term) and not [negotiated discounts](#term).
 
 ## Requirements
 
-CommitmentDiscountCategory MUST adhere to the following requirements:
+[CommitmentDiscountCategory](#col) MUST adhere to the following requirements:
 
-* CommitmentDiscountCategory MUST be of type String.
-* CommitmentDiscountCategory MUST adhere to the following nullability requirements:
-  * CommitmentDiscountCategory MUST be null when CommitmentDiscountId is null.
-  * CommitmentDiscountCategory MUST NOT be null when CommitmentDiscountId is not null.
-* CommitmentDiscountCategory MUST be one of the allowed values.
+* [CommitmentDiscountCategory](#col) MUST be of type String.
+* [CommitmentDiscountCategory](#col) MUST adhere to the following nullability requirements:
+  * [CommitmentDiscountCategory](#col) MUST be null when [CommitmentDiscountId](#col) is null.
+  * [CommitmentDiscountCategory](#col) MUST NOT be null when [CommitmentDiscountId](#col) is not null.
+* [CommitmentDiscountCategory](#col) MUST be one of the allowed values.
 
 ## Allowed Values
 
@@ -29,14 +29,14 @@ Commitment Discount Category
 
 ## Description
 
-Indicates whether the *commitment discount* identified in the Commitment Discount ID column is based on usage quantity or cost (aka "spend").
+Indicates whether the [commitment discount](#term) identified in the [Commitment Discount ID](#col) column is based on usage quantity or cost (aka "spend").
 
 ## Content Constraints
 
 | Constraint                 | Value                                     |
 | :------------------------- | :---------------------------------------- |
-| Dataset                    | [Cost and Usage](#datamodel.costandusage) |
-| Operating model conditions | [Includes Commitment Discounts](#operatingmodelconditions.includescommitmentdiscounts) |
+| Dataset                    | [Cost and Usage](#ds)                     |
+| Operating model conditions | [Includes Commitment Discounts](#omc)                                                  |
 | Column type                | Dimension                                 |
 | Feature level              | Conditional                               |
 | Allows nulls               | True                                      |

@@ -1,3 +1,7 @@
+---
+dataset: CostAndUsage
+---
+
 # Resource Usage
 
 ## Description
@@ -6,24 +10,24 @@ FOCUS enables tracking of resource consumption by providing information about wh
 
 ## Directly Dependent Columns
 
-* ConsumedQuantity
-* ConsumedUnit
-* ResourceId
-* SkuId
-* SkuPriceDetails
+* [ConsumedQuantity](#col)
+* [ConsumedUnit](#col)
+* [ResourceId](#col)
+* [SkuId](#col)
+* [SkuPriceDetails](#col)
 
 ## Supporting Columns
 
-* ChargeCategory
-* ChargeClass
-* ChargePeriodEnd
-* ChargePeriodStart
-* ServiceProviderName
-* ServiceName
+* [ChargeCategory](#col)
+* [ChargeClass](#col)
+* [ChargePeriodEnd](#col)
+* [ChargePeriodStart](#col)
+* [ServiceProviderName](#col)
+* [ServiceName](#col)
 
 ## Example SQL Queries
 
-The cache hit rate and input-to-output ratio queries read FOCUS-defined [SkuPriceDetails](#datamodel.costandusage.skupricedetails) properties. Because ANSI SQL does not define a standard for parsing JSON, they use the BigQuery Standard SQL `JSON_VALUE` function; similar functions are available in all major SQL engines, and the examples can be adapted to any particular database instance.
+The cache hit rate and input-to-output ratio queries read FOCUS-defined [SkuPriceDetails](#col) properties. Because ANSI SQL does not define a standard for parsing JSON, they use the BigQuery Standard SQL `JSON_VALUE` function; similar functions are available in all major SQL engines, and the examples can be adapted to any particular database instance.
 
 ### Resource Consumption by Resource and SKU
 

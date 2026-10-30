@@ -1,15 +1,15 @@
 # Invoice Issuer Name
 
-Invoice Issuer Name is the name of the entity responsible for issuing payable invoices for the [*contract commitment*](#glossary:contract-commitment). It is commonly used for cost analysis, reconciliation, and reporting scenarios.
+[Invoice Issuer Name](#col) is the name of the entity responsible for issuing payable invoices for the [contract commitment](#term). It is commonly used for cost analysis, reconciliation, and reporting scenarios.
 
 ## Requirements
 
-InvoiceIssuerName MUST adhere to the following requirements:
+[InvoiceIssuerName](#col) MUST adhere to the following requirements:
 
-* InvoiceIssuerName MUST be of type String.
-* InvoiceIssuerName MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* InvoiceIssuerName MUST NOT be null.
-* InvoiceIssuerName MUST represent the entity that issues invoices.
+* [InvoiceIssuerName](#col) MUST be of type String.
+* [InvoiceIssuerName](#col) MUST conform to [StringHandling](#attr) requirements.
+* [InvoiceIssuerName](#col) MUST NOT be null.
+* [InvoiceIssuerName](#col) MUST represent the entity that issues invoices.
 
 ## Column ID
 
@@ -21,13 +21,13 @@ Invoice Issuer Name
 
 ## Description
 
-The name of the entity responsible for invoicing for the *contract commitment*.
+The name of the entity responsible for invoicing for the [contract commitment](#term).
 
 ## Content Constraints
 
 | Constraint                 | Value                                                |
 | :------------------------- | :--------------------------------------------------- |
-| Dataset                    | [Contract Commitment](#datamodel.contractcommitment) |
+| Dataset                    | [Contract Commitment](#ds)                           |
 | Operating model conditions | Not applicable                                       |
 | Column type                | Dimension                                            |
 | Feature level              | Mandatory                                            |

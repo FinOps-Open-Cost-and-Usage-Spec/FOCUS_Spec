@@ -1,15 +1,15 @@
 # Contract Commitment Created
 
-Contract Commitment Created is the timestamp when the [Contract Commitment](#datamodel.contractcommitment) record was first created. This timestamp facilitates auditability of the contract commitment lifecycle.
+[Contract Commitment Created](#col) is the timestamp when the [Contract Commitment](#ds) record was first created. This timestamp facilitates auditability of the contract commitment lifecycle.
 
 ## Requirements
 
-ContractCommitmentCreated MUST adhere to the following requirements:
+[ContractCommitmentCreated](#col) MUST adhere to the following requirements:
 
-* ContractCommitmentCreated MUST be of type Date/Time.
-* ContractCommitmentCreated MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.
-* ContractCommitmentCreated MUST NOT be null.
-* ContractCommitmentCreated MUST represent the moment in time the ContractCommitment record was instantiated.
+* [ContractCommitmentCreated](#col) MUST be of type Date/Time.
+* [ContractCommitmentCreated](#col) MUST conform to [DateTimeFormat](#attr) requirements.
+* [ContractCommitmentCreated](#col) MUST NOT be null.
+* [ContractCommitmentCreated](#col) MUST represent the moment in time the ContractCommitment record was instantiated.
 
 ## Column ID
 
@@ -27,13 +27,13 @@ The timestamp when the contract commitment record was first created.
 
 | Constraint                 | Value                                                |
 | :------------------------- | :--------------------------------------------------- |
-| Dataset                    | [Contract Commitment](#datamodel.contractcommitment) |
+| Dataset                    | [Contract Commitment](#ds)                           |
 | Operating model conditions | Not applicable                                       |
 | Column type                | Dimension                                            |
 | Feature level              | Mandatory                                            |
 | Allows nulls               | False                                                |
 | Data type                  | Date/Time                                            |
-| Value format               | [Date/Time Format](#attributes.date/timeformat)      |
+| Value format               | [Date/Time Format](#attr)                            |
 
 ## Version Introduced
 

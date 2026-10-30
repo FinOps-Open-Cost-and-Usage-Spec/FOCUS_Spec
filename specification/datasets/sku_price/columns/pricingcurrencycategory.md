@@ -1,16 +1,16 @@
 # Pricing Currency Category
 
-Pricing Currency Category categorizes the nature of the [Pricing Currency](#datamodel.skuprice.pricingcurrency) as either a financial instrument the customer can pay in or a proprietary [*consumption currency*](#glossary:consumption-currency) issued by the [*service provider*](#glossary:service-provider). This column defines whether multiplying a usage amount by the unit price results in a base financial cost ("Payable") or a virtual cost balance ("Consumable"). For a "Consumable" rate, a mandatory secondary lookup is required to determine the actual financial cost. For a "Payable" rate, a secondary currency conversion is only required if the customer's billed currency differs from the pricing currency.
+[Pricing Currency Category](#col) categorizes the nature of the [Pricing Currency](#col) as either a financial instrument the customer can pay in or a proprietary [consumption currency](#term) issued by the [service provider](#term). This column defines whether multiplying a usage amount by the unit price results in a base financial cost (["Payable"](#val:PricingCurrencyCategory)) or a virtual cost balance (["Consumable"](#val:PricingCurrencyCategory)). For a ["Consumable"](#val:PricingCurrencyCategory) rate, a mandatory secondary lookup is required to determine the actual financial cost. For a ["Payable"](#val:PricingCurrencyCategory) rate, a secondary currency conversion is only required if the customer's billed currency differs from the pricing currency.
 
 ## Requirements
 
-PricingCurrencyCategory MUST adhere to the following requirements:
+[PricingCurrencyCategory](#col) MUST adhere to the following requirements:
 
-* PricingCurrencyCategory MUST be of type String.
-* PricingCurrencyCategory MUST NOT be null.
-* PricingCurrencyCategory MUST be one of the allowed values.
-* PricingCurrencyCategory MUST be "Payable" when PricingCurrency represents a [*national currency*](#glossary:national-currency).
-* PricingCurrencyCategory MUST be "Consumable" when PricingCurrency represents a *consumption currency*.
+* [PricingCurrencyCategory](#col) MUST be of type String.
+* [PricingCurrencyCategory](#col) MUST NOT be null.
+* [PricingCurrencyCategory](#col) MUST be one of the allowed values.
+* [PricingCurrencyCategory](#col) MUST be ["Payable"](#val:PricingCurrencyCategory) when [PricingCurrency](#col) represents a [national currency](#term).
+* [PricingCurrencyCategory](#col) MUST be ["Consumable"](#val:PricingCurrencyCategory) when [PricingCurrency](#col) represents a [consumption currency](#term).
 
 ## Allowed Values
 
@@ -29,13 +29,13 @@ Pricing Currency Category
 
 ## Description
 
-Categorizes the nature of the Pricing Currency as either a financial instrument the customer can pay in ("Payable") or a proprietary consumption currency issued by the *service provider* ("Consumable").
+Categorizes the nature of the [Pricing Currency](#col) as either a financial instrument the customer can pay in (["Payable"](#val:PricingCurrencyCategory)) or a proprietary consumption currency issued by the [service provider](#term) (["Consumable"](#val:PricingCurrencyCategory)).
 
 ## Content Constraints
 
 | Constraint                 | Value                           |
 | :------------------------- | :------------------------------ |
-| Dataset                    | [SKU Price](#datamodel.skuprice) |
+| Dataset                    | [SKU Price](#ds)                 |
 | Operating Model Conditions | Not applicable                  |
 | Column type                | Dimension                       |
 | Feature level              | Mandatory                       |

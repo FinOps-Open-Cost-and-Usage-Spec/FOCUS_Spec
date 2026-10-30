@@ -1,15 +1,15 @@
 # Contract Commitment Period End
 
-Contract Commitment Period End represents the [*exclusive end bound*](#glossary:exclusiveendbound) of a contract commitment period. For example, a time period where [Contract Commitment Period Start](#datamodel.contractcommitment.contractperiodstart) is '2024-01-01T00:00:00Z' and Contract Commitment Period End is '2024-01-02T00:00:00Z' includes January 1 2024 since Contract Commitment Period Start represents the [*inclusive start bound*](#glossary:inclusivestartbound), but does not include January 1 2025 since Contract Commitment Period End represents the *exclusive end bound*.
+[Contract Commitment Period End](#col) represents the [exclusive end bound](#term) of a contract commitment period. For example, a time period where [Contract Commitment Period Start](#col:ContractPeriodStart) is '2024-01-01T00:00:00Z' and [Contract Commitment Period End](#col) is '2024-01-02T00:00:00Z' includes January 1 2024 since [Contract Commitment Period Start](#col) represents the [inclusive start bound](#term), but does not include January 1 2025 since [Contract Commitment Period End](#col) represents the [exclusive end bound](#term).
 
 ## Requirements
 
-ContractCommitmentPeriodEnd MUST adhere to the following requirements:
+[ContractCommitmentPeriodEnd](#col) MUST adhere to the following requirements:
 
-* ContractCommitmentPeriodEnd MUST be of type Date/Time.
-* ContractCommitmentPeriodEnd MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.
-* ContractCommitmentPeriodEnd MUST NOT be null.
-* ContractCommitmentPeriodEnd MUST be the *exclusive end bound* of the effective period of the *contract commitment*.
+* [ContractCommitmentPeriodEnd](#col) MUST be of type Date/Time.
+* [ContractCommitmentPeriodEnd](#col) MUST conform to [DateTimeFormat](#attr) requirements.
+* [ContractCommitmentPeriodEnd](#col) MUST NOT be null.
+* [ContractCommitmentPeriodEnd](#col) MUST be the [exclusive end bound](#term) of the effective period of the [contract commitment](#term).
 
 ## Column ID
 
@@ -21,19 +21,19 @@ Contract Commitment Period End
 
 ## Description
 
-The *exclusive end bound* of a contract commitment period.
+The [exclusive end bound](#term) of a contract commitment period.
 
 ## Content Constraints
 
 | Constraint                 | Value                                                |
 | :------------------------- | :--------------------------------------------------- |
-| Dataset                    | [Contract Commitment](#datamodel.contractcommitment) |
+| Dataset                    | [Contract Commitment](#ds)                           |
 | Operating model conditions | Not applicable                                       |
 | Column type                | Dimension                                            |
 | Feature level              | Mandatory                                            |
 | Allows nulls               | False                                                |
 | Data type                  | Date/Time                                            |
-| Value format               | [Date/Time Format](#attributes.date/timeformat)      |
+| Value format               | [Date/Time Format](#attr)                            |
 
 ## Version Introduced
 

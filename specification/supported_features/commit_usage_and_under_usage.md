@@ -1,23 +1,27 @@
+---
+dataset: CostAndUsage
+---
+
 # Commit Usage and Under Usage
 
 ## Description
 
-FOCUS supports the tracking of [*commitment discounts*](#glossary:commitment-discount) usage and under usage, which can come in the form of *commitment discounts* or [*capacity reservations*](#glossary:capacity-reservation).
+FOCUS supports the tracking of [commitment discounts](#term) usage and under usage, which can come in the form of [commitment discounts](#term) or [capacity reservations](#term).
 
 ## Directly Dependent Columns
 
-* CommitmentDiscountId
-* CommitmentDiscountStatus
-* CommitmentDiscountType
-* CapacityReservationId
-* CapacityReservationStatus
+* [CommitmentDiscountId](#col)
+* [CommitmentDiscountStatus](#col)
+* [CommitmentDiscountType](#col)
+* [CapacityReservationId](#col)
+* [CapacityReservationStatus](#col)
 
 ## Supporting Columns
 
-* BilledCost
-* ChargePeriodStart
-* ChargePeriodEnd
-* EffectiveCost
+* [BilledCost](#col)
+* [ChargePeriodStart](#col)
+* [ChargePeriodEnd](#col)
+* [EffectiveCost](#col)
 
 ## Example SQL Queries
 

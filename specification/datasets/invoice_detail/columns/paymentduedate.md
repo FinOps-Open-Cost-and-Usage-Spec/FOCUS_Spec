@@ -1,15 +1,15 @@
 # Payment Due Date
 
-Payment Due Date is the date by which the payment for an invoice is expected to be received by the [*invoice issuer*](#glossary:invoice-issuer). This date is used by FinOps practitioners and finance teams to manage cash flow, prioritize payments, and avoid late fees or service interruptions.
+[Payment Due Date](#col) is the date by which the payment for an invoice is expected to be received by the [invoice issuer](#term). This date is used by FinOps practitioners and finance teams to manage cash flow, prioritize payments, and avoid late fees or service interruptions.
 
 ## Requirements
 
-PaymentDueDate MUST adhere to the following requirements:
+[PaymentDueDate](#col) MUST adhere to the following requirements:
 
-* PaymentDueDate MUST be of type Date/Time.
-* PaymentDueDate MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.
-* PaymentDueDate MAY be null.
-* PaymentDueDate MUST be the date specified by the invoice issuer as the deadline for payment for the corresponding [InvoiceId](#datamodel.invoicedetail.invoiceid).
+* [PaymentDueDate](#col) MUST be of type Date/Time.
+* [PaymentDueDate](#col) MUST conform to [DateTimeFormat](#attr) requirements.
+* [PaymentDueDate](#col) MAY be null.
+* [PaymentDueDate](#col) MUST be the date specified by the invoice issuer as the deadline for payment for the corresponding [InvoiceId](#col).
 
 ## Column ID
 
@@ -27,13 +27,13 @@ The date by which the payment for an invoice is expected to be received by the i
 
 | Constraint                 | Value                                           |
 | :------------------------- | :---------------------------------------------- |
-| Dataset                    | [Invoice Detail](#datamodel.invoicedetail)      |
+| Dataset                    | [Invoice Detail](#ds)                           |
 | Operating model conditions | Not applicable                                  |
 | Column type                | Dimension                                       |
 | Feature level              | Mandatory                                       |
 | Allows nulls               | True                                            |
 | Data type                  | Date/Time                                       |
-| Value format               | [Date/Time Format](#attributes.date/timeformat) |
+| Value format               | [Date/Time Format](#attr)                       |
 
 ## Version Introduced
 

@@ -39,10 +39,10 @@ The Contract Commitment dataset is a supporting dataset that describes the terms
 
 ## Relationships<!--SkipTOC-->
 
-The Contract Commitment dataset can be joined to the [Cost and Usage](#datamodel.costandusage) dataset through the use of Contract Commitment ID.
+The Contract Commitment dataset can be joined to the [Cost and Usage](#ds) dataset through the use of [Contract Commitment ID](#col).
 
-* In the Contract Commitment dataset, Contract Commitment ID is a column.
-* In the Cost and Usage dataset, Contract Commitment ID is a property within a JSON object array provided in [Contract Applied](#datamodel.costandusage.contractapplied) column.
+* In the Contract Commitment dataset, [Contract Commitment ID](#col) is a column.
+* In the [Cost and Usage](#ds) dataset, [Contract Commitment ID](#col) is a property within a JSON object array provided in [Contract Applied](#col:CostAndUsage.ContractApplied) column.
 
 | Dataset A           | Dataset A Column       | Dataset B      | Dataset B Column |
 | ------------------- | ---------------------- | -------------- | -----------------|
@@ -53,43 +53,43 @@ The Contract Commitment dataset can be joined to the [Cost and Usage](#datamodel
 ContractCommitment MUST adhere to the following requirements:
 
 * ContractCommitment column presence MUST adhere to the following requirements:
-  * ContractCommitment MUST include [BillingCurrency](#datamodel.contractcommitment.billingcurrency).
-  * ContractCommitment MUST include [ContractCommitmentApplicability](#datamodel.contractcommitment.contractcommitmentapplicability).
-  * ContractCommitment MUST include [ContractCommitmentBenefitCategory](#datamodel.contractcommitment.contractcommitmentbenefitcategory).
-  * ContractCommitment MUST include [ContractCommitmentCategory](#datamodel.contractcommitment.contractcommitmentcategory).
-  * ContractCommitment MUST include [ContractCommitmentCost](#datamodel.contractcommitment.contractcommitmentcost).
-  * ContractCommitment MUST include [ContractCommitmentCreated](#datamodel.contractcommitment.contractcommitmentcreated).
-  * ContractCommitment MUST include [ContractCommitmentDescription](#datamodel.contractcommitment.contractcommitmentdescription).
-  * ContractCommitment MUST include [ContractCommitmentDiscountPercentage](#datamodel.contractcommitment.contractcommitmentdiscountpercentage).
-  * ContractCommitment MUST include [ContractCommitmentDurationType](#datamodel.contractcommitment.contractcommitmentdurationtype).
-  * ContractCommitment MUST include [ContractCommitmentFulfillmentInterval](#datamodel.contractcommitment.contractcommitmentfulfillmentinterval).
-  * ContractCommitment MUST include [ContractCommitmentId](#datamodel.contractcommitment.contractcommitmentid).
-  * ContractCommitment MUST include [ContractCommitmentLastUpdated](#datamodel.contractcommitment.contractcommitmentlastupdated).
-  * ContractCommitment MUST include [ContractCommitmentLifecycleStatus](#datamodel.contractcommitment.contractcommitmentlifecyclestatus).
-  * ContractCommitment MUST include [ContractCommitmentModel](#datamodel.contractcommitment.contractcommitmentmodel).
-  * ContractCommitment MUST include [ContractCommitmentOfferCategory](#datamodel.contractcommitment.contractcommitmentoffercategory).
-  * ContractCommitment MUST include [ContractCommitmentPaymentInterval](#datamodel.contractcommitment.contractcommitmentpaymentinterval).
-  * ContractCommitment MUST include [ContractCommitmentPaymentModel](#datamodel.contractcommitment.contractcommitmentpaymentmodel).
-  * ContractCommitment MUST include [ContractCommitmentPaymentUpfrontPercentage](#datamodel.contractcommitment.contractcommitmentpaymentupfrontpercentage) when the [*operating model*](#glossary:operating-model) [includes partial upfront payments](#operatingmodelconditions.includespartialupfrontpayments).
-  * ContractCommitment MUST include [ContractCommitmentPeriodEnd](#datamodel.contractcommitment.contractcommitmentperiodend).
-  * ContractCommitment MUST include [ContractCommitmentPeriodStart](#datamodel.contractcommitment.contractcommitmentperiodstart).
-  * ContractCommitment MUST include [ContractCommitmentQuantity](#datamodel.contractcommitment.contractcommitmentquantity).
-  * ContractCommitment MUST include [ContractCommitmentType](#datamodel.contractcommitment.contractcommitmenttype).
-  * ContractCommitment MUST include [ContractCommitmentUnit](#datamodel.contractcommitment.contractcommitmentunit).
-  * ContractCommitment MUST include [ContractId](#datamodel.contractcommitment.contractid).
-  * ContractCommitment MUST include [ContractPeriodEnd](#datamodel.contractcommitment.contractperiodend).
-  * ContractCommitment MUST include [ContractPeriodStart](#datamodel.contractcommitment.contractperiodstart).
-  * ContractCommitment MUST include [InvoiceIssuerName](#datamodel.contractcommitment.invoiceissuername).
-  * ContractCommitment MUST include [PricingCurrency](#datamodel.contractcommitment.pricingcurrency) when the *operating model* [includes pricing and billing currency differences](#operatingmodelconditions.includespricing-billingcurrencydifferences).
-  * ContractCommitment MUST include [PricingCurrencyContractCommitmentCost](#datamodel.contractcommitment.pricingcurrencycontractcommitmentcost) when the *operating model* includes pricing and billing currency differences.
-  * ContractCommitment MUST include [ServiceProviderName](#datamodel.contractcommitment.serviceprovidername).
-* ContractCommitment MUST conform to [CorrectionHandling](#attributes.correctionhandling) requirements.
-* ContractCommitment MUST conform to [DatasetCompleteness](#attributes.datasetcompleteness) requirements.
-* ContractCommitment MUST conform to [DatasetConfiguration](#attributes.datasetconfiguration) requirements.
-* ContractCommitment MUST conform to [DeliveryHandling](#attributes.deliveryhandling) requirements.
-* ContractCommitment [*FOCUS columns*](#glossary:FOCUS-column) MUST conform to [FocusColumnHandling](#attributes.focuscolumnhandling) requirements.
-* ContractCommitment *FOCUS columns* MUST conform to [NullHandling](#attributes.nullhandling) requirements.
-* ContractCommitment [*custom columns*](#glossary:custom-column) MUST conform to [CustomColumnHandling](#attributes.customcolumnhandling) requirements.
+  * ContractCommitment MUST include [BillingCurrency](#col).
+  * ContractCommitment MUST include [ContractCommitmentApplicability](#col).
+  * ContractCommitment MUST include [ContractCommitmentBenefitCategory](#col).
+  * ContractCommitment MUST include [ContractCommitmentCategory](#col).
+  * ContractCommitment MUST include [ContractCommitmentCost](#col).
+  * ContractCommitment MUST include [ContractCommitmentCreated](#col).
+  * ContractCommitment MUST include [ContractCommitmentDescription](#col).
+  * ContractCommitment MUST include [ContractCommitmentDiscountPercentage](#col).
+  * ContractCommitment MUST include [ContractCommitmentDurationType](#col).
+  * ContractCommitment MUST include [ContractCommitmentFulfillmentInterval](#col).
+  * ContractCommitment MUST include [ContractCommitmentId](#col).
+  * ContractCommitment MUST include [ContractCommitmentLastUpdated](#col).
+  * ContractCommitment MUST include [ContractCommitmentLifecycleStatus](#col).
+  * ContractCommitment MUST include [ContractCommitmentModel](#col).
+  * ContractCommitment MUST include [ContractCommitmentOfferCategory](#col).
+  * ContractCommitment MUST include [ContractCommitmentPaymentInterval](#col).
+  * ContractCommitment MUST include [ContractCommitmentPaymentModel](#col).
+  * ContractCommitment MUST include [ContractCommitmentPaymentUpfrontPercentage](#col) when the [operating model](#term) [includes partial upfront payments](#omc).
+  * ContractCommitment MUST include [ContractCommitmentPeriodEnd](#col).
+  * ContractCommitment MUST include [ContractCommitmentPeriodStart](#col).
+  * ContractCommitment MUST include [ContractCommitmentQuantity](#col).
+  * ContractCommitment MUST include [ContractCommitmentType](#col).
+  * ContractCommitment MUST include [ContractCommitmentUnit](#col).
+  * ContractCommitment MUST include [ContractId](#col).
+  * ContractCommitment MUST include [ContractPeriodEnd](#col).
+  * ContractCommitment MUST include [ContractPeriodStart](#col).
+  * ContractCommitment MUST include [InvoiceIssuerName](#col).
+  * ContractCommitment MUST include [PricingCurrency](#col) when the [operating model](#term) [includes pricing and billing currency differences](#omc:IncludesPricingBillingCurrencyDifferences).
+  * ContractCommitment MUST include [PricingCurrencyContractCommitmentCost](#col) when the [operating model](#term) includes pricing and billing currency differences.
+  * ContractCommitment MUST include [ServiceProviderName](#col).
+* ContractCommitment MUST conform to [CorrectionHandling](#attr) requirements.
+* ContractCommitment MUST conform to [DatasetCompleteness](#attr) requirements.
+* ContractCommitment MUST conform to [DatasetConfiguration](#attr) requirements.
+* ContractCommitment MUST conform to [DeliveryHandling](#attr) requirements.
+* ContractCommitment [FOCUS columns](#term) MUST conform to [FocusColumnHandling](#attr) requirements.
+* ContractCommitment [FOCUS columns](#term) MUST conform to [NullHandling](#attr) requirements.
+* ContractCommitment [custom columns](#term) MUST conform to [CustomColumnHandling](#attr) requirements.
 
 ## Dataset ID<!--SkipTOC-->
 

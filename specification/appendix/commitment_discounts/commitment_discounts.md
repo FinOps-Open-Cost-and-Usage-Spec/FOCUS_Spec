@@ -1,41 +1,45 @@
+---
+dataset: CostAndUsage
+---
+
 # Examples: Commitment Discounts
 
-This appendix section defines the concept of a [*commitment discount*](#glossary:commitment-discount). It then lays out a series of FOCUS dataset examples.
+This appendix section defines the concept of a [commitment discount](#term). It then lays out a series of FOCUS dataset examples.
 
 ## Overview
 
-A [*commitment discount*](#glossary:commitment-discount) is a billing discount model that offers reduced rates on preselected [*SKUs*](#glossary:sku) in exchange for an obligated usage or spend amount over a specified [*period*](#glossary:period). *Commitment discounts* typically consist of purchase and usage records within cost and usage datasets.
+A [commitment discount](#term) is a billing discount model that offers reduced rates on preselected [SKUs](#term) in exchange for an obligated usage or spend amount over a specified [period](#term). [Commitment discounts](#term) typically consist of purchase and usage records within cost and usage datasets.
 
-Usage-based *commitment discounts* obligate a customer to a predetermined amount of usage over a specified [*period*](#glossary:period). In some cases, usage-based *commitment discounts* also feature [*commitment discount flexibility*](#glossary:commitment-discount-flexibility) which may expand the types of [*resources*](#glossary:resource) that a *commitment discount* can cover. It is important to note when mixing *commitment discounts* with and without *commitment discount flexibility*, the [CommitmentDiscountUnit](#datamodel.costandusage.commitmentdiscountunit) should reflect this difference.
+Usage-based [commitment discounts](#term) obligate a customer to a predetermined amount of usage over a specified [period](#term). In some cases, usage-based [commitment discounts](#term) also feature [commitment discount flexibility](#term) which may expand the types of [resources](#term) that a [commitment discount](#term) can cover. It is important to note when mixing [commitment discounts](#term) with and without [commitment discount flexibility](#term), the [CommitmentDiscountUnit](#col) should reflect this difference.
 
-Spend-based *commitment discounts* obligate a customer to a predetermined amount of spend over a specified [*period*](#glossary:period). In the usage examples below, each [*row*](#glossary:row) measures the monetary amount of the hourly commit consumed by the *commitment discount*, so the CommitmentDiscountUnit chosen is "USD", or the [*billing currency*](#glossary:billing-currency).
+Spend-based [commitment discounts](#term) obligate a customer to a predetermined amount of spend over a specified [period](#term). In the usage examples below, each [row](#term) measures the monetary amount of the hourly commit consumed by the [commitment discount](#term), so the [CommitmentDiscountUnit](#col) chosen is "USD", or the [billing currency](#term).
 
 ### Purchasing
 
-While customers are bound to the [*period*](#glossary:period) of a *commitment discount*, service providers offer some or all of the following payment options before and/or during the *period*:
+While customers are bound to the [period](#term) of a [commitment discount](#term), service providers offer some or all of the following payment options before and/or during the [period](#term):
 
-* *All Upfront* - The *commitment discount* is paid in full before the *period* begins.
-* *No Upfront* - The *commitment discount* is paid on a repeated basis, typically over each [*billing period*](#glossary:billing-period) of the *period*.
-* *Partial Upfront* - Some of the *commitment discount* is paid before the *period* begins, and the rest is paid repeatedly over the *period*.
+* *All Upfront* - The [commitment discount](#term) is paid in full before the [period](#term) begins.
+* *No Upfront* - The [commitment discount](#term) is paid on a repeated basis, typically over each [billing period](#term) of the [period](#term).
+* *Partial Upfront* - Some of the [commitment discount](#term) is paid before the [period](#term) begins, and the rest is paid repeatedly over the [period](#term).
 
-For example, if a customer buys a 1-year, spend-based *commitment discount* with a $1.00 hourly commit and pays with the partial option, the *commitment discount's* payment consists of a one-time purchase in the beginning of the *period* *and* monthly recurring purchases. The one-time payment covers half of the annual commitment (Flexible Spend Plans are half, Resource Reservations are a portion of the cost), while the recurring payment covers the remaining half and is calculated based on the exact number of hours in each [*billing period*](#glossary:billing-period):
+For example, if a customer buys a 1-year, spend-based [commitment discount](#term) with a $1.00 hourly commit and pays with the partial option, the *commitment discount's* payment consists of a one-time purchase in the beginning of the [period](#term) *and* monthly recurring purchases. The one-time payment covers half of the annual commitment (Flexible Spend Plans are half, Resource Reservations are a portion of the cost), while the recurring payment covers the remaining half and is calculated based on the exact number of hours in each [billing period](#term):
 
 1. *One-Time* - $4,380 (24 hours &times; 365 days &times; $1.00 &times; 0.5)
 2. *Recurring* - $336.00 for February (672 hours in the month &times; $1.00 &times; 0.5)
 
 ### Usage
 
-Commitment discounts follow a "use-it-or-lose-it" model where the [*amortization*](#glossary:amortization) of a *commitment discount's* purchase applies evenly to eligible *resources* over each [*charge period*](#glossary:chargeperiod) of the *period*.
+Commitment discounts follow a "use-it-or-lose-it" model where the [amortization](#term) of a *commitment discount's* purchase applies evenly to eligible [resources](#term) over each [charge period](#term) of the [period](#term).
 
-For example, if a customer buys a spend-based *commitment discount* with a $1.00 hourly commit in January (31 days), only $1.00 is eligible for consumption for each hourly *charge period*. If a customer has eligible *resources* running during this *charge period*, an amount of up to $1.00 will be allocated to these *resources*. Conversely, if a customer does not have eligible *resources* running that fully take advantage of this $1.00 during this *charge period*, then some or all of this amount will go to waste.
+For example, if a customer buys a spend-based [commitment discount](#term) with a $1.00 hourly commit in January (31 days), only $1.00 is eligible for consumption for each hourly [charge period](#term). If a customer has eligible [resources](#term) running during this [charge period](#term), an amount of up to $1.00 will be allocated to these [resources](#term). Conversely, if a customer does not have eligible [resources](#term) running that fully take advantage of this $1.00 during this [charge period](#term), then some or all of this amount will go to waste.
 
 ### SKU Price Identifiers
 
-Each SKU Price ID in the scenarios below names one price point. A price point is a single combination of the *commitment discount* product, the payment option, and the role the charge plays: a one-time fee, a recurring fee, a committed usage rate, or unused commitment capacity. Charges that differ in any of these carry different SKU Price ID values, even where their unit prices happen to match.
+Each [SKU Price ID](#col) in the scenarios below names one price point. A price point is a single combination of the [commitment discount](#term) product, the payment option, and the role the charge plays: a one-time fee, a recurring fee, a committed usage rate, or unused commitment capacity. Charges that differ in any of these carry different [SKU Price ID](#col) values, even where their unit prices happen to match.
 
-Payment options are the variation most easily missed. An all upfront plan and a no upfront plan cover the same *SKU* and are often described in the same words, but a service provider publishes them as separate [*SKU Prices*](#glossary:sku-price) in its [*price list*](#glossary:price-list), so they carry separate SKU Price ID values. The same holds for the length of a *commitment discount*, and for the one-time and recurring fees of a partial upfront plan, which are two prices under a single purchase.
+Payment options are the variation most easily missed. An all upfront plan and a no upfront plan cover the same [SKU](#term) and are often described in the same words, but a service provider publishes them as separate [SKU Prices](#term) in its [price list](#term), so they carry separate [SKU Price ID](#col) values. The same holds for the length of a [commitment discount](#term), and for the one-time and recurring fees of a partial upfront plan, which are two prices under a single purchase.
 
-This granularity is what allows a *SKU Price* to be resolved from a SKU Price ID alone. Where one identifier names two price points, a *price list* has no way to express both, and the *SKU Price* a reader looks up will not be the one that priced the charge.
+This granularity is what allows a [SKU Price](#term) to be resolved from a [SKU Price ID](#col) alone. Where one identifier names two price points, a [price list](#term) has no way to express both, and the [SKU Price](#term) a reader looks up will not be the one that priced the charge.
 
 ## Data Generator Scenarios
 

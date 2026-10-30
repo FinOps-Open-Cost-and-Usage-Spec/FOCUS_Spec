@@ -1,36 +1,36 @@
 # List Unit Price
 
-[*List Unit Price*](#glossary:list-unit-price) represents the service-provider-suggested unit price per [Pricing Unit](#datamodel.costandusage.pricingunit) for the [*SKU Price*](#glossary:sku-price) identified by the given [SKU Price ID](#datamodel.costandusage.skupriceid). It is the unit price before the application of any [*negotiated pricing terms*](#glossary:negotiated-pricing-terms) or discount-bearing [*commitment programs*](#glossary:commitment-program) (e.g., [*commitment discount*](#glossary:commitment-discount)).
+[List Unit Price](#term) represents the service-provider-suggested unit price per [Pricing Unit](#col) for the [SKU Price](#term) identified by the given [SKU Price ID](#col). It is the unit price before the application of any [negotiated pricing terms](#term) or discount-bearing [commitment programs](#term) (e.g., [commitment discount](#term)).
 
-List Unit Price is denominated in the [Billing Currency](#datamodel.costandusage.billingcurrency). List Unit Price is commonly used for negotiation and rate optimization activities.
+List Unit Price is denominated in the [Billing Currency](#col). List Unit Price is commonly used for negotiation and rate optimization activities.
 
 ## Requirements
 
-ListUnitPrice MUST adhere to the following requirements:
+[ListUnitPrice](#col) MUST adhere to the following requirements:
 
-* ListUnitPrice MUST be of type Decimal.
-* ListUnitPrice MUST conform to [NumericFormat](#attributes.numericformat) requirements.
-* ListUnitPrice MUST adhere to the following nullability requirements:
-  * ListUnitPrice MUST be null when SkuPriceId is null.
-  * ListUnitPrice MUST be null when [ChargeCategory](#datamodel.costandusage.chargecategory) is "Tax".
-  * ListUnitPrice MUST NOT be null when SkuPriceId is not null.
-  * ListUnitPrice MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#datamodel.costandusage.chargeclass) is not "Correction".
-  * ListUnitPrice MAY be null in all other cases.
-* When ListUnitPrice is not null, ListUnitPrice MUST adhere to the following requirements:
-  * ListUnitPrice MUST be a non-negative decimal value.
-  * ListUnitPrice MUST be denominated in the BillingCurrency.
-  * ListUnitPrice MUST represent the service-provider-suggested unit price per PricingUnit for the *SKU Price* identified by the given SkuPriceId.
-  * ListUnitPrice MUST NOT reflect *negotiated pricing terms* for the associated *SKU Price*.
-  * ListUnitPrice MUST NOT reflect any unit price impact dependent on a discount-bearing *commitment program* being applied to the [*charge*](#glossary:charge).
+* [ListUnitPrice](#col) MUST be of type Decimal.
+* [ListUnitPrice](#col) MUST conform to [NumericFormat](#attr) requirements.
+* [ListUnitPrice](#col) MUST adhere to the following nullability requirements:
+  * [ListUnitPrice](#col) MUST be null when [SkuPriceId](#col) is null.
+  * [ListUnitPrice](#col) MUST be null when [ChargeCategory](#col) is ["Tax"](#val:CostAndUsage.ChargeCategory).
+  * [ListUnitPrice](#col) MUST NOT be null when [SkuPriceId](#col) is not null.
+  * [ListUnitPrice](#col) MUST NOT be null when [ChargeCategory](#col) is ["Usage"](#val:CostAndUsage.ChargeCategory) or "Purchase" and [ChargeClass](#col) is not ["Correction"](#val:CostAndUsage.ChargeClass).
+  * [ListUnitPrice](#col) MAY be null in all other cases.
+* When [ListUnitPrice](#col) is not null, [ListUnitPrice](#col) MUST adhere to the following requirements:
+  * [ListUnitPrice](#col) MUST be a non-negative decimal value.
+  * [ListUnitPrice](#col) MUST be denominated in the [BillingCurrency](#col).
+  * [ListUnitPrice](#col) MUST represent the service-provider-suggested unit price per [PricingUnit](#col) for the [SKU Price](#term) identified by the given [SkuPriceId](#col).
+  * [ListUnitPrice](#col) MUST NOT reflect [negotiated pricing terms](#term) for the associated [SKU Price](#term).
+  * [ListUnitPrice](#col) MUST NOT reflect any unit price impact dependent on a discount-bearing [commitment program](#term) being applied to the [charge](#term).
 
 ## Implementation Guidance
 
-List Unit Price is the service-provider-suggested unit price that commonly serves as the starting point for negotiation. It is not necessarily publicly available. For example, it can be provided only in a [*price list*](#glossary:price-list) specific to a customer.
+List Unit Price is the service-provider-suggested unit price that commonly serves as the starting point for negotiation. It is not necessarily publicly available. For example, it can be provided only in a [price list](#term) specific to a customer.
 
-List Unit Price does not reflect any *negotiated pricing terms*. This includes the following cases, which may be less obvious:
+List Unit Price does not reflect any [negotiated pricing terms](#term). This includes the following cases, which may be less obvious:
 
 * Tier configuration: a negotiated tier configuration results in SKU Price IDs that differ from those of the service-provider-suggested one. For these SKU Price IDs, List Unit Price is the service-provider-suggested unit price for the same quantity under the service-provider-suggested tier configuration.
-* Currency exchange rates: when the [Pricing Currency](#datamodel.costandusage.pricingcurrency) differs from the Billing Currency, List Unit Price does not reflect [*negotiated FX pricing terms*](#glossary:negotiated-fx-pricing-terms), such as a negotiated currency exchange rate, even though it is denominated in the Billing Currency.
+* Currency exchange rates: when the [Pricing Currency](#col) differs from the Billing Currency, List Unit Price does not reflect [negotiated FX pricing terms](#term), such as a negotiated currency exchange rate, even though it is denominated in the Billing Currency.
 
 ## Usability Constraints
 
@@ -46,19 +46,19 @@ List Unit Price
 
 ## Description
 
-The service-provider-suggested unit price per Pricing Unit for the *SKU Price* identified by the given SKU Price ID.
+The service-provider-suggested unit price per [Pricing Unit](#col) for the [SKU Price](#term) identified by the given [SKU Price ID](#col).
 
 ## Content Constraints
 
 | Constraint                 | Value                                       |
 | :------------------------- | :------------------------------------------ |
-| Dataset                    | [Cost and Usage](#datamodel.costandusage)   |
-| Operating model conditions | [Includes Unit Pricing](#operatingmodelconditions.includesunitpricing) |
+| Dataset                    | [Cost and Usage](#ds)                       |
+| Operating model conditions | [Includes Unit Pricing](#omc)                                          |
 | Column type                | Metric                                      |
 | Feature level              | Conditional                                 |
 | Allows nulls               | True                                        |
 | Data type                  | Decimal                                     |
-| Value format               | [Numeric Format](#attributes.numericformat) |
+| Value format               | [Numeric Format](#attr)                     |
 | Number range               | Any valid non-negative decimal value        |
 
 ## Version Introduced

@@ -1,15 +1,15 @@
 # Contract Commitment Type
 
-Contract Commitment Type is a service-provider-assigned name to identify the type of [*contract commitment*](#glossary:contract-commitment). Contract Commitment Type is a readable display name and not a code. Contract Commitment Type is commonly used for displaying and aggregating the types of commitments the practitioner has made, stated in service-provider-specific terms.
+[Contract Commitment Type](#col) is a service-provider-assigned name to identify the type of [contract commitment](#term). [Contract Commitment Type](#col) is a readable display name and not a code. [Contract Commitment Type](#col) is commonly used for displaying and aggregating the types of commitments the practitioner has made, stated in service-provider-specific terms.
 
 ## Requirements
 
-ContractCommitmentType MUST adhere to the following requirements:
+[ContractCommitmentType](#col) MUST adhere to the following requirements:
 
-* ContractCommitmentType MUST be of type String.
-* ContractCommitmentType MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* ContractCommitmentType MUST NOT be null.
-* ContractCommitmentType MUST be a consistent, readable display value.
+* [ContractCommitmentType](#col) MUST be of type String.
+* [ContractCommitmentType](#col) MUST conform to [StringHandling](#attr) requirements.
+* [ContractCommitmentType](#col) MUST NOT be null.
+* [ContractCommitmentType](#col) MUST be a consistent, readable display value.
 
 ## Column ID
 
@@ -21,13 +21,13 @@ Contract Commitment Type
 
 ## Description
 
-A service-provider-assigned name to identify the type of *contract commitment*.
+A service-provider-assigned name to identify the type of [contract commitment](#term).
 
 ## Content Constraints
 
 | Constraint                 | Value                                                |
 | :------------------------- | :--------------------------------------------------- |
-| Dataset                    | [Contract Commitment](#datamodel.contractcommitment) |
+| Dataset                    | [Contract Commitment](#ds)                           |
 | Operating model conditions | Not applicable                                       |
 | Column type                | Dimension                                            |
 | Feature level              | Mandatory                                            |

@@ -20,11 +20,11 @@ Datasets are sorted first by Feature Level (i.e., Mandatory, then Conditional), 
 
 DataModel MUST adhere to the following requirements:
 
-* DataModel MUST include [CostAndUsage](#datamodel.costandusage).
-* DataModel MUST include [BillingPeriod](#datamodel.billingperiod) when the [*operating model*](#glossary:operating-model) [includes payable invoices](#operatingmodelconditions.includespayableinvoices).
-* DataModel MUST include [ContractCommitment](#datamodel.contractcommitment) when the *operating model* [includes contract commitments](#operatingmodelconditions.includescontractcommitments).
-* DataModel MUST include [InvoiceDetail](#datamodel.invoicedetail) when the *operating model* includes payable invoices.
-* DataModel MUST include [SkuPrice](#datamodel.skuprice) when the *operating model* [includes unit pricing](#operatingmodelconditions.includesunitpricing).
+* DataModel MUST include [CostAndUsage](#ds).
+* DataModel MUST include [BillingPeriod](#ds) when the [operating model](#term) [includes payable invoices](#omc).
+* DataModel MUST include [ContractCommitment](#ds) when the [operating model](#term) [includes contract commitments](#omc).
+* DataModel MUST include [InvoiceDetail](#ds) when the [operating model](#term) includes payable invoices.
+* DataModel MUST include [SkuPrice](#ds) when the [operating model](#term) [includes unit pricing](#omc).
 
 ## Data Model ID<!--SkipTOC-->
 

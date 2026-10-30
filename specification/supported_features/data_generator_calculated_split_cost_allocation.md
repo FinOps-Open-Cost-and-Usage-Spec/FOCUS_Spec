@@ -1,29 +1,33 @@
+---
+dataset: CostAndUsage
+---
+
 # Data Generator-Calculated Split Cost Allocation
 
 ## Description
 
-FOCUS enables tracking of [*resources*](#glossary:resource) split by some internal consumption metrics. This is most common for *resources* supporting shared usage like compute nodes in a shared cluster (Kubernetes, databases) or storage engines that can share capacity between workloads.
+FOCUS enables tracking of [resources](#term) split by some internal consumption metrics. This is most common for [resources](#term) supporting shared usage like compute nodes in a shared cluster (Kubernetes, databases) or storage engines that can share capacity between workloads.
 
 ## Directly Dependent Columns
 
-* ResourceId
-* EffectiveCost
-* BilledCost
-* AllocatedResourceId
-* AllocatedResourceName
-* AllocatedServiceName
-* AllocatedMethodDetails
-* AllocatedMethodId
+* [ResourceId](#col)
+* [EffectiveCost](#col)
+* [BilledCost](#col)
+* [AllocatedResourceId](#col)
+* [AllocatedResourceName](#col)
+* [AllocatedServiceName](#col)
+* [AllocatedMethodDetails](#col)
+* [AllocatedMethodId](#col)
 
 ## Supporting Columns
 
-* BillingCurrency
-* ChargeCategory
-* ChargePeriodEnd
-* ChargePeriodStart
-* ServiceCategory
-* ServiceName
-* ServiceProviderName
+* [BillingCurrency](#col)
+* [ChargeCategory](#col)
+* [ChargePeriodEnd](#col)
+* [ChargePeriodStart](#col)
+* [ServiceCategory](#col)
+* [ServiceName](#col)
+* [ServiceProviderName](#col)
 
 ## Example SQL Queries
 

@@ -1,3 +1,7 @@
+---
+dataset: CostAndUsage
+---
+
 # Service Categorization
 
 ## Description
@@ -6,17 +10,17 @@ FOCUS provides a structure for categorizing services based on their core functio
 
 ## Directly Dependent Columns
 
-* ServiceCategory
-* ServiceName
-* ServiceSubcategory
+* [ServiceCategory](#col)
+* [ServiceName](#col)
+* [ServiceSubcategory](#col)
 
 ## Supporting Columns
 
-* BilledCost
-* BillingCurrency
-* BillingPeriodEnd
-* BillingPeriodStart
-* ServiceProviderName
+* [BilledCost](#col)
+* [BillingCurrency](#col)
+* [BillingPeriodEnd](#col)
+* [BillingPeriodStart](#col)
+* [ServiceProviderName](#col)
 
 ## Example SQL Query
 

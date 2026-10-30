@@ -1,15 +1,15 @@
 # Previous Column Name
 
-The PreviousColumnName field indicates that on that schema the column where the key is included was renamed.
+The [PreviousColumnName](#meta) field indicates that on that schema the column where the key is included was renamed.
 
-PreviousColumnName adheres to the following requirements:
+[PreviousColumnName](#meta) adheres to the following requirements:
 
-* PreviousColumnName MUST be present in an object within the [ColumnDefinition](#metadata.schema.columndefinition) collection when the column was renamed.
-* When PreviousColumnName is present, PreviousColumnName adheres to the following normative requirements:
-  * PreviousColumnName MUST be of type String.
-  * PreviousColumnName MUST not be null.
-  * PreviousColumnName MUST be the name used in previous versions of the schema.
-  * PreviousColumnName MUST NOT be present in schema versions created after the rename.
+* [PreviousColumnName](#meta) MUST be present in an object within the [ColumnDefinition](#meta) collection when the column was renamed.
+* When [PreviousColumnName](#meta) is present, [PreviousColumnName](#meta) adheres to the following normative requirements:
+  * [PreviousColumnName](#meta) MUST be of type String.
+  * [PreviousColumnName](#meta) MUST not be null.
+  * [PreviousColumnName](#meta) MUST be the name used in previous versions of the schema.
+  * [PreviousColumnName](#meta) MUST NOT be present in schema versions created after the rename.
 
 ## Metadata ID
 

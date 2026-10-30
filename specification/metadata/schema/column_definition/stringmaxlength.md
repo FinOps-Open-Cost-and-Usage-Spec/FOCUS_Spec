@@ -2,11 +2,11 @@
 
 The string max length of the data that can be stored in the column.
 
-StringMaxLength adheres to the following requirements:
+[StringMaxLength](#meta) adheres to the following requirements:
 
-* StringMaxLength SHOULD be present in an object within the [ColumnDefinition](#metadata.schema.columndefinition) collection when the column is of String data type.
-* StringMaxLength MUST be of type Integer.
-* StringMaxLength MUST NOT be null.
+* [StringMaxLength](#meta) SHOULD be present in an object within the [ColumnDefinition](#meta) collection when the column is of String data type.
+* [StringMaxLength](#meta) MUST be of type Integer.
+* [StringMaxLength](#meta) MUST NOT be null.
 
 ## Metadata ID
 
@@ -23,7 +23,7 @@ String Max Length
 | Feature level | Recommended                      |
 | Allows nulls  | False                            |
 | Data type     | Integer                          |
-| Value format  | [Numeric Format](#attributes.numericformat) |
+| Value format  | [Numeric Format](#attr)                     |
 
 ## Version Introduced
 

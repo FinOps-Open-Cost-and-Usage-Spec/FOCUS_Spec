@@ -1,16 +1,16 @@
 # Region ID
 
-A Region ID is a host-provider-assigned identifier for an isolated geographic area where a [*resource*](#glossary:resource) is provisioned or a [*service*](#glossary:service) is provided. The region is commonly used for scenarios like analyzing cost and unit prices based on where *resources* are deployed.
+A [Region ID](#col) is a host-provider-assigned identifier for an isolated geographic area where a [resource](#term) is provisioned or a [service](#term) is provided. The region is commonly used for scenarios like analyzing cost and unit prices based on where [resources](#term) are deployed.
 
 ## Requirements
 
-RegionId MUST adhere to the following requirements:
+[RegionId](#col) MUST adhere to the following requirements:
 
-* RegionId MUST be of type String.
-* RegionId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* RegionId MUST adhere to the following nullability requirements:
-  * RegionId MUST NOT be null when a *resource* or *service* is operated in or managed from a distinct region.
-  * RegionId MAY be null when a *resource* or *service* is not operated in or managed from a distinct region.
+* [RegionId](#col) MUST be of type String.
+* [RegionId](#col) MUST conform to [StringHandling](#attr) requirements.
+* [RegionId](#col) MUST adhere to the following nullability requirements:
+  * [RegionId](#col) MUST NOT be null when a [resource](#term) or [service](#term) is operated in or managed from a distinct region.
+  * [RegionId](#col) MAY be null when a [resource](#term) or [service](#term) is not operated in or managed from a distinct region.
 
 ## Column ID
 
@@ -22,14 +22,14 @@ Region ID
 
 ## Description
 
-Host-provider-assigned identifier for an isolated geographic area where a *resource* is provisioned or a *service* is provided.
+Host-provider-assigned identifier for an isolated geographic area where a [resource](#term) is provisioned or a [service](#term) is provided.
 
 ## Content Constraints
 
 | Constraint                 | Value                                     |
 | :------------------------- | :---------------------------------------- |
-| Dataset                    | [Cost and Usage](#datamodel.costandusage) |
-| Operating model conditions | [Includes Regions](#operatingmodelconditions.includesregions) |
+| Dataset                    | [Cost and Usage](#ds)                     |
+| Operating model conditions | [Includes Regions](#omc)                                      |
 | Column type                | Dimension                                 |
 | Feature level              | Conditional                               |
 | Allows nulls               | True                                      |

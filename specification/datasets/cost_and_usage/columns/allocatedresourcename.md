@@ -1,17 +1,17 @@
 # Allocated Resource Name
 
-The Allocated Resource Name is a display name which cost is being allocated to in a [Data Generator-Calculated Split Cost Allocation](#attributes.datagenerator-calculatedsplitcostallocationhandling). The Allocated Resource Name is used to understand what the cost is being allocated to in [*charges*](#glossary:charge) where the service provider is allocating costs to something other than the charge's [Resource ID](#datamodel.costandusage.resourceid), as is the case for [*allocated charges*](#glossary:allocated-charge).
+The [Allocated Resource Name](#col) is a display name which cost is being allocated to in a [Data Generator-Calculated Split Cost Allocation](#attr:DataGeneratorCalculatedSplitCostAllocationHandling). The [Allocated Resource Name](#col) is used to understand what the cost is being allocated to in [charges](#term) where the service provider is allocating costs to something other than the charge's [Resource ID](#col), as is the case for [allocated charges](#term).
 
 ## Requirements
 
-AllocatedResourceName MUST adhere to the following requirements:
+[AllocatedResourceName](#col) MUST adhere to the following requirements:
 
-* AllocatedResourceName MUST be of type String.
-* AllocatedResourceName MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* AllocatedResourceName MUST adhere to the following nullability requirements:
-  * AllocatedResourceName MUST be null when [AllocatedResourceId](#datamodel.costandusage.allocatedresourceid) is null.
-  * AllocatedResourceName MUST NOT be null when AllocatedResourceId is not null.
-* AllocatedResourceName MAY duplicate AllocatedResourceId when a separate display name is not applicable.
+* [AllocatedResourceName](#col) MUST be of type String.
+* [AllocatedResourceName](#col) MUST conform to [StringHandling](#attr) requirements.
+* [AllocatedResourceName](#col) MUST adhere to the following nullability requirements:
+  * [AllocatedResourceName](#col) MUST be null when [AllocatedResourceId](#col) is null.
+  * [AllocatedResourceName](#col) MUST NOT be null when [AllocatedResourceId](#col) is not null.
+* [AllocatedResourceName](#col) MAY duplicate [AllocatedResourceId](#col) when a separate display name is not applicable.
 
 ## Column ID
 
@@ -29,8 +29,8 @@ The display name of the object to which cost is allocated in data generator-calc
 
 | Constraint                 | Value                                     |
 | :------------------------- | :---------------------------------------- |
-| Dataset                    | [Cost and Usage](#datamodel.costandusage) |
-| Operating model conditions | [Includes Split Cost Allocation](#operatingmodelconditions.includessplitcostallocation) |
+| Dataset                    | [Cost and Usage](#ds)                     |
+| Operating model conditions | [Includes Split Cost Allocation](#omc)                                                  |
 | Column type                | Dimension                                 |
 | Feature level              | Conditional                               |
 | Allows nulls               | True                                      |

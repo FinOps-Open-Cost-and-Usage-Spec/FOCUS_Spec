@@ -1,13 +1,13 @@
 # Time Sector Start
 
-The Time Sector Start is the datetime of the start of the time sector.
+The [Time Sector Start](#meta) is the datetime of the start of the time sector.
 
-TimeSectorStart adheres to the following requirements:
+[TimeSectorStart](#meta) adheres to the following requirements:
 
-* TimeSectorStart MUST be present in the [TimeSectors](#metadata.recency.timesectors) subsection of the [Recency](#metadata.recency) metadata section.
-* TimeSectorStart MUST be of type Date/Time.
-* TimeSectorStart MUST NOT be null.
-* TimeSectorStart MUST conform to [DateTimeFormat](#attributes.date/timeformat).
+* [TimeSectorStart](#meta) MUST be present in the [TimeSectors](#meta) subsection of the [Recency](#meta) metadata section.
+* [TimeSectorStart](#meta) MUST be of type Date/Time.
+* [TimeSectorStart](#meta) MUST NOT be null.
+* [TimeSectorStart](#meta) MUST conform to [DateTimeFormat](#attr).
 
 ## Metadata ID
 
@@ -24,7 +24,7 @@ Time Sector Start
 | Feature level | Mandatory                            |
 | Allows nulls  | False                                |
 | Data type     | Date/Time                            |
-| Value format  | [Date/Time Format](#attributes.date/timeformat) |
+| Value format  | [Date/Time Format](#attr)                       |
 
 ## Version Introduced
 

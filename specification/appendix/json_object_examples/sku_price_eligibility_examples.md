@@ -1,8 +1,8 @@
 # Examples: SKU Price Eligibility
 
-> **Preview:** The [SKU Price](#datamodel.skuprice) dataset is a preview in this version of FOCUS, so these examples may change in the next version based on implementation feedback. The preview also covers two requirements outside the dataset, which are excluded from conformance, and two operating model conditions and a schema that exist only for SKU Price. [Issue #2768](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2768) tracks the preview and lists each one.
+> **Preview:** The [SKU Price](#ds) dataset is a preview in this version of FOCUS, so these examples may change in the next version based on implementation feedback. The preview also covers two requirements outside the dataset, which are excluded from conformance, and two operating model conditions and a schema that exist only for SKU Price. [Issue #2768](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2768) tracks the preview and lists each one.
 
-This section describes examples for the [SKU Price Eligibility](#datamodel.skuprice.skupriceeligibility) column in the SKU Price dataset.
+This section describes examples for the [SKU Price Eligibility](#col) column in the SKU Price dataset.
 
 ## Global Scope
 
@@ -71,7 +71,7 @@ A unit price that is only eligible for consumption within a specific region (e.g
 
 ## Macro-Region Scope
 
-A unit price where the catalog's base Pricing Region ID represents a broad macro-region (e.g., "us"), but the eligibility is explicitly mapped to the specific operational regions where consumption actually occurs.
+A unit price where the catalog's base [Pricing Region ID](#col) represents a broad macro-region (e.g., "us"), but the eligibility is explicitly mapped to the specific operational regions where consumption actually occurs.
 
 ```json
 {
@@ -93,7 +93,7 @@ A unit price where the catalog's base Pricing Region ID represents a broad macro
 
 ## Non-Regionalized Scope
 
-A unit price for a non-regionalized service (e.g., DNS, IAM, or CDN) where consumption occurs outside of a specific physical geography, which a service provider may represent with a Region ID value such as `"global"`.
+A unit price for a non-regionalized service (e.g., DNS, IAM, or CDN) where consumption occurs outside of a specific physical geography, which a service provider may represent with a [Region ID](#col) value such as `"global"`.
 
 ```json
 {

@@ -1,21 +1,21 @@
 # Commitment Discount ID
 
-A Commitment Discount ID is the identifier assigned to a [*commitment discount*](#glossary:commitment-discount) by the service provider. Commitment Discount ID is commonly used for scenarios like chargeback for [*commitments*](#glossary:commitment) and savings per *commitment discount*. The Commitment Discount ID column is only applicable to *commitment discounts* and not [*negotiated discounts*](#glossary:negotiated-discount).
+A [Commitment Discount ID](#col) is the identifier assigned to a [commitment discount](#term) by the service provider. [Commitment Discount ID](#col) is commonly used for scenarios like chargeback for [commitments](#term) and savings per [commitment discount](#term). The [Commitment Discount ID](#col) column is only applicable to [commitment discounts](#term) and not [negotiated discounts](#term).
 
 ## Requirements
 
-CommitmentDiscountId MUST adhere to the following requirements:
+[CommitmentDiscountId](#col) MUST adhere to the following requirements:
 
-* CommitmentDiscountId MUST be of type String.
-* CommitmentDiscountId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* CommitmentDiscountId MUST adhere to the following nullability requirements:
-  * CommitmentDiscountId MUST be null when a [*charge*](#glossary:charge) is not related to a *commitment discount*.
-  * CommitmentDiscountId MUST NOT be null when a *charge* is related to a *commitment discount*.
-* When CommitmentDiscountId is not null, CommitmentDiscountId MUST adhere to the following requirements:
-  * CommitmentDiscountId MUST be a unique identifier within the service provider.
-  * CommitmentDiscountId MUST be equal to [ResourceId](#datamodel.costandusage.resourceid) when [ChargeCategory](#datamodel.costandusage.chargecategory) is "Purchase" and the *charge* represents a purchase of that *commitment discount*.
-  * CommitmentDiscountId MUST be equal to ResourceId when ChargeCategory is "Usage" and the *charge* represents an unused portion of that *commitment discount*.
-  * CommitmentDiscountId SHOULD be a fully-qualified identifier.
+* [CommitmentDiscountId](#col) MUST be of type String.
+* [CommitmentDiscountId](#col) MUST conform to [StringHandling](#attr) requirements.
+* [CommitmentDiscountId](#col) MUST adhere to the following nullability requirements:
+  * [CommitmentDiscountId](#col) MUST be null when a [charge](#term) is not related to a [commitment discount](#term).
+  * [CommitmentDiscountId](#col) MUST NOT be null when a [charge](#term) is related to a [commitment discount](#term).
+* When [CommitmentDiscountId](#col) is not null, [CommitmentDiscountId](#col) MUST adhere to the following requirements:
+  * [CommitmentDiscountId](#col) MUST be a unique identifier within the service provider.
+  * [CommitmentDiscountId](#col) MUST be equal to [ResourceId](#col) when [ChargeCategory](#col) is ["Purchase"](#val:CostAndUsage.ChargeCategory) and the [charge](#term) represents a purchase of that [commitment discount](#term).
+  * [CommitmentDiscountId](#col) MUST be equal to [ResourceId](#col) when [ChargeCategory](#col) is ["Usage"](#val:CostAndUsage.ChargeCategory) and the [charge](#term) represents an unused portion of that [commitment discount](#term).
+  * [CommitmentDiscountId](#col) SHOULD be a fully-qualified identifier.
 
 ## Column ID
 
@@ -27,14 +27,14 @@ Commitment Discount ID
 
 ## Description
 
-The identifier assigned to a *commitment discount* by the service provider.
+The identifier assigned to a [commitment discount](#term) by the service provider.
 
 ## Content Constraints
 
 | Constraint                 | Value                                     |
 | :------------------------- | :---------------------------------------- |
-| Dataset                    | [Cost and Usage](#datamodel.costandusage) |
-| Operating model conditions | [Includes Commitment Discounts](#operatingmodelconditions.includescommitmentdiscounts) |
+| Dataset                    | [Cost and Usage](#ds)                     |
+| Operating model conditions | [Includes Commitment Discounts](#omc)                                                  |
 | Column type                | Dimension                                 |
 | Feature level              | Conditional                               |
 | Allows nulls               | True                                      |

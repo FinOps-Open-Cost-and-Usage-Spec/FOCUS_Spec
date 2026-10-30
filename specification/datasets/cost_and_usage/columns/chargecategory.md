@@ -1,22 +1,22 @@
 # Charge Category
 
-Charge Category represents the highest-level classification of a [*charge*](#glossary:charge) based on the nature of how it is billed. Charge Category is commonly used to identify and distinguish between types of *charges* that may require different handling.
+[Charge Category](#col) represents the highest-level classification of a [charge](#term) based on the nature of how it is billed. [Charge Category](#col) is commonly used to identify and distinguish between types of [charges](#term) that may require different handling.
 
-> **Preview:** The SKU Price dataset is a preview in this version of FOCUS. The requirement that Charge Category match SKU Price Charge Category is excluded from conformance while that dataset is a preview.
+> **Preview:** The SKU Price dataset is a preview in this version of FOCUS. The requirement that [Charge Category](#col) match SKU Price [Charge Category](#col) is excluded from conformance while that dataset is a preview.
 
 ## Requirements
 
-ChargeCategory MUST adhere to the following requirements:
+[ChargeCategory](#col) MUST adhere to the following requirements:
 
-* ChargeCategory MUST be of type String.
-* ChargeCategory MUST NOT be null.
-* ChargeCategory MUST be one of the allowed values.
-* ChargeCategory MUST be "Usage" when the *charge* represents consumption of a service or resource.
-* ChargeCategory MUST be "Purchase" when the *charge* represents acquisition of a service, resource, or [*commitment*](#glossary:commitment).
-* ChargeCategory MUST be "Tax" when the *charge* represents taxes levied by the relevant authorities.
-* ChargeCategory MUST be "Credit" when the *charge* represents a financial incentive or allowance unrelated to other charges.
-* ChargeCategory MUST be "Adjustment" when the *charge* represents a billing modification that does not fall into other ChargeCategories.
-* ChargeCategory for a given [SkuPriceId](#datamodel.costandusage.skupriceid) and [ServiceProviderName](#datamodel.costandusage.serviceprovidername) MUST match [SkuPrice.ChargeCategory](#datamodel.skuprice.chargecategory) for the same [SkuPrice.SkuPriceId](#datamodel.skuprice.skupriceid) and [SkuPrice.ServiceProviderName](#datamodel.skuprice.serviceprovidername) when SkuPriceId is not null and ChargeCategory is "Usage" or "Purchase".
+* [ChargeCategory](#col) MUST be of type String.
+* [ChargeCategory](#col) MUST NOT be null.
+* [ChargeCategory](#col) MUST be one of the allowed values.
+* [ChargeCategory](#col) MUST be ["Usage"](#val:ChargeCategory) when the [charge](#term) represents consumption of a service or resource.
+* [ChargeCategory](#col) MUST be ["Purchase"](#val:ChargeCategory) when the [charge](#term) represents acquisition of a service, resource, or [commitment](#term).
+* [ChargeCategory](#col) MUST be ["Tax"](#val:ChargeCategory) when the [charge](#term) represents taxes levied by the relevant authorities.
+* [ChargeCategory](#col) MUST be ["Credit"](#val:ChargeCategory) when the [charge](#term) represents a financial incentive or allowance unrelated to other charges.
+* [ChargeCategory](#col) MUST be ["Adjustment"](#val:ChargeCategory) when the [charge](#term) represents a billing modification that does not fall into other ChargeCategories.
+* [ChargeCategory](#col) for a given [SkuPriceId](#col) and [ServiceProviderName](#col) MUST match [SkuPrice.ChargeCategory](#col:SkuPrice.ChargeCategory) for the same [SkuPrice.SkuPriceId](#col:SkuPrice.SkuPriceId) and [SkuPrice.ServiceProviderName](#col:SkuPrice.ServiceProviderName) when [SkuPriceId](#col) is not null and [ChargeCategory](#col) is ["Usage"](#val:ChargeCategory) or ["Purchase"](#val:ChargeCategory).
 
 ## Allowed Values
 
@@ -38,13 +38,13 @@ Charge Category
 
 ## Description
 
-Represents the highest-level classification of a *charge* based on the nature of how it is billed.
+Represents the highest-level classification of a [charge](#term) based on the nature of how it is billed.
 
 ## Content Constraints
 
 | Constraint                 | Value                                     |
 | :------------------------- | :---------------------------------------- |
-| Dataset                    | [Cost and Usage](#datamodel.costandusage) |
+| Dataset                    | [Cost and Usage](#ds)                     |
 | Operating model conditions | Not applicable                            |
 | Column type                | Dimension                                 |
 | Feature level              | Mandatory                                 |
