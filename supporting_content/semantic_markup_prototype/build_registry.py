@@ -58,7 +58,8 @@ Definition checks:
 * REG001 error  column file has no Column ID or no Display Name section
 * REG002 warn   column file H1 differs from its Display Name
 * REG003 warn   Column ID is not PascalCase
-* REG004 error  Allowed Values table has no "Value" column or column headed with the Display Name
+* REG004 warn   Allowed Values table has no "Value" column or column headed with the Display Name;
+                its values are not registered, so they cannot be referenced
 * REG005 warn   the same allowed value is listed twice for one column
 * REG006 warn   glossary key does not match its term (e.g., key "covered-charge" for "Covered Charge")
 * REG007 warn   Content Constraints "Dataset" row does not name the column's own dataset
@@ -325,8 +326,9 @@ def collect(src, diag):
                 continue
             values = allowed_values(allowed, display)
             if values is None:
-                diag.report("ERROR", "REG004", source,
-                            f'Allowed Values table has no "Value" or "{display}" column; values skipped')
+                header = ", ".join(f'"{h}"' for h in table_rows(allowed)[0]) if table_rows(allowed) else "no table"
+                diag.report("WARN", "REG004", source,
+                            f'Allowed Values table is headed {header}, not "Value" or "{display}"; its values are not registered')
                 continue
             seen_values = set()
             for value in values:
