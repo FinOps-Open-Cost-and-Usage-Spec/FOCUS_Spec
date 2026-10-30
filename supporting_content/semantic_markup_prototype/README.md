@@ -34,7 +34,7 @@ The link form was picked because every tool already in the toolchain parses it a
 * [`focus_semantic.py`](focus_semantic.py) is a panflute filter that resolves references and lints them. Its docstring lists the options.
 * [`samples/`](samples/) holds `billedcost.md` and `chargeclass.md` rewritten in semantic form.
 * [`build.sh`](build.sh) runs everything and writes its outputs to `build/`.
-* [`scan_spec.sh`](scan_spec.sh) runs the lint over all 308 Markdown source files and prints the spec-wide counts cited in issue #2779.
+* [`scan_spec.sh`](scan_spec.sh) runs the lint over every Markdown source file (342 on `working_draft` at e0fd5f77; run it from a clean checkout, because converted files have fewer findings) and prints the spec-wide counts cited in issue #2779.
 * [`resolve_semantic.py`](resolve_semantic.py) resolves tags Markdown-to-Markdown during `make` (see [DEMO.md](DEMO.md)).
 * [`tag_sources.py`](tag_sources.py) rewrites source files to use semantic tags and lists what needs a human decision.
 * [`compare_rendered.sh`](compare_rendered.sh) compares the published `spec.md` with a base ref, word by word.
@@ -154,7 +154,7 @@ File boundaries come from `<!-- focus:file <path> -->` markers. The prototype's 
 
 * **Front matter in the real build.** markdown-pp pastes included files in raw, so front matter would land mid-document. The Include module would need to strip it, next to the one-line file marker change.
 * **More front matter keys.** A likely next candidate is `deprecated-ids` (resolve an old ColumnId with a warning).
-* **Dataset scope in shared files.** Eleven ColumnIds (e.g., `BilledCost`, `BillingCurrency`, `InvoiceId`) exist in more than one dataset. Column files resolve to their own dataset automatically. Other files can declare a default in front matter (`dataset: CostAndUsage`), which the demo branch build (`resolve_semantic.py` and `tag_sources.py`) applies; see `DEMO.md`. The Pandoc filter in `focus_semantic.py` does not read it yet. The alternatives are qualifying every shared column or a project-wide default of Cost and Usage.
+* **Dataset scope in shared files.** Sixteen ColumnIds (e.g., `BilledCost`, `BillingCurrency`, `InvoiceId`) exist in more than one dataset. Column files resolve to their own dataset automatically. Other files can declare a default in front matter (`dataset: CostAndUsage`), which the demo branch build (`resolve_semantic.py` and `tag_sources.py`) applies; see `DEMO.md`. The Pandoc filter in `focus_semantic.py` does not read it yet. The alternatives are qualifying every shared column or a project-wide default of Cost and Usage.
 * **Line numbers.** `resolve_semantic.py` reports source line numbers. The Pandoc filter reports file and section, not line. Pandoc's `gfm+sourcepos` extension could add line numbers. A separate pymarkdownlnt plugin could also run the same checks against source positions.
 * **Lowercase prose.** "resource type" as ordinary words is still allowed. FOCUS009 shows how noisy term detection on plain text is. It probably works best as an on-demand report, not a build gate.
 * **Links for values.** Values currently render as plain `"Correction"` text. They could link to the column's Allowed Values table.
