@@ -38,6 +38,8 @@ The link form was picked because every tool already in the toolchain parses it a
 * [`resolve_semantic.py`](resolve_semantic.py) resolves tags Markdown-to-Markdown during `make` (see [DEMO.md](DEMO.md)).
 * [`tag_sources.py`](tag_sources.py) rewrites source files to use semantic tags and lists what needs a human decision.
 * [`compare_rendered.sh`](compare_rendered.sh) compares the published `spec.md` with a base ref, word by word.
+* [`classify_rendered.py`](classify_rendered.py) sorts the differences found by `compare_rendered.sh` by kind: whitespace, link added, link removed, link retargeted, italics, and visible words changed.
+* [`convert_all.sh`](convert_all.sh) converts every file the build includes (see [CONVERSION.md](CONVERSION.md)).
 
 ```bash
 PYTHON=/path/to/venv/bin/python ./build.sh
@@ -133,6 +135,7 @@ File boundaries come from `<!-- focus:file <path> -->` markers. The prototype's 
 | FOCUS008 | Error | Value that is not in the column's Allowed Values |
 | FOCUS009 | Info | Plain text matching a glossary term (opt-in with `focus-lint-terms=true`) |
 | FOCUS010 | Error | Front matter `dataset` names an unknown dataset (`resolve_semantic.py` only) |
+| FOCUS011 | Warning | Link text names a different entity than the reference points to (an explicit ID wins) |
 
 `focus-strict=true` makes errors fail the Pandoc run.
 
