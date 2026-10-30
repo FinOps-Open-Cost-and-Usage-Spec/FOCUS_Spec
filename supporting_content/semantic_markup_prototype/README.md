@@ -68,7 +68,7 @@ Definitions are not tagged. The registry recognizes them by the structure the sp
 | REG001 | Error | Column file has no Column ID or no Display Name section |
 | REG002 | Warning | Column file H1 differs from its Display Name |
 | REG003 | Warning | Column ID is not PascalCase |
-| REG004 | Error | Allowed Values table has no "Value" column or column headed with the Display Name |
+| REG004 | Warning | Allowed Values table has no "Value" column or column headed with the Display Name; its values are not registered, so they cannot be referenced |
 | REG005 | Warning | The same allowed value is listed twice for one column |
 | REG006 | Warning | Glossary key does not match its term (a trailing acronym such as "(CSP)" is ignored) |
 | REG007 | Warning | Content Constraints "Dataset" row does not name the column's own dataset |
