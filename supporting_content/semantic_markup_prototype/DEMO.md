@@ -151,13 +151,13 @@ A JSON object is defined in its column's file but is a separate entity. Referenc
 
 ## Review of Rendered Differences
 
-`compare_rendered.sh` compares the published `spec.md` with the commit where this branch left `working_draft`, and `classify_rendered.py` sorts every difference by kind. The build resolves 7,851 semantic references, and 816 lines of the published specification differ.
+`compare_rendered.sh` compares the published `spec.md` with the commit where this branch left `working_draft`, and `classify_rendered.py` sorts every difference by kind. The build resolves 8,127 semantic references, and 820 lines of the published specification differ.
 
 | Kind | Differences | Notes |
 | :--- | ---: | :--- |
 | Visible words changed | 0 | No normative or explanatory wording changed |
 | Link retargeted | 2 | "invoice issuer" in the BilledCost introductions links the glossary term instead of the InvoiceIssuerName column. Needs Working Group confirmation |
-| Link added | 445 | A first mention that was plain text is now a link |
+| Link added | 450 | A first mention that was plain text is now a link |
 | Link removed | 213 | A repeat link is now plain text |
 | Italics | 18 | Removed from 12 links to columns, attributes, and Display Names; added to 6 glossary terms |
 | Whitespace only | 297 | Table padding; the rendered tables are identical |

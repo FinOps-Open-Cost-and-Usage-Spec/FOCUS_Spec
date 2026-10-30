@@ -9,7 +9,7 @@
 * [BillingPeriodLastUpdated](#col) MUST be of type Date/Time.
 * [BillingPeriodLastUpdated](#col) MUST conform to [DateTimeFormat](#attr) requirements.
 * [BillingPeriodLastUpdated](#col) MUST NOT be null.
-* [BillingPeriodLastUpdated](#col) MUST represent the most recent moment in time when any column value of the BillingPeriod record was created or modified.
+* [BillingPeriodLastUpdated](#col) MUST represent the most recent moment in time when any column value of the [BillingPeriod](#ds) record was created or modified.
 * [BillingPeriodLastUpdated](#col) MUST be greater than or equal to [BillingPeriodCreated](#col).
 
 ## Column ID

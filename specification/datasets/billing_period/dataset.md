@@ -24,22 +24,22 @@ The Billing Period dataset is primarily used to provide context for the [Cost an
 
 ## Requirements<!--SkipTOC-->
 
-BillingPeriod MUST adhere to the following requirements:
+[BillingPeriod](#ds) MUST adhere to the following requirements:
 
-* BillingPeriod column presence MUST adhere to the following requirements:
-  * BillingPeriod MUST include [BillingPeriodCreated](#col).
-  * BillingPeriod MUST include [BillingPeriodEnd](#col).
-  * BillingPeriod MUST include [BillingPeriodLastUpdated](#col).
-  * BillingPeriod MUST include [BillingPeriodStart](#col).
-  * BillingPeriod MUST include [BillingPeriodStatus](#col).
-  * BillingPeriod MUST include [InvoiceIssuerName](#col).
-* BillingPeriod MUST conform to [CorrectionHandling](#attr) requirements.
-* BillingPeriod MUST conform to [DatasetCompleteness](#attr) requirements.
-* BillingPeriod MUST conform to [DatasetConfiguration](#attr) requirements.
-* BillingPeriod MUST conform to [DeliveryHandling](#attr) requirements.
-* BillingPeriod [FOCUS columns](#term) MUST conform to [FocusColumnHandling](#attr) requirements.
-* BillingPeriod [FOCUS columns](#term) MUST conform to [NullHandling](#attr) requirements.
-* BillingPeriod [custom columns](#term) MUST conform to [CustomColumnHandling](#attr) requirements.
+* [BillingPeriod](#ds) column presence MUST adhere to the following requirements:
+  * [BillingPeriod](#ds) MUST include [BillingPeriodCreated](#col).
+  * [BillingPeriod](#ds) MUST include [BillingPeriodEnd](#col).
+  * [BillingPeriod](#ds) MUST include [BillingPeriodLastUpdated](#col).
+  * [BillingPeriod](#ds) MUST include [BillingPeriodStart](#col).
+  * [BillingPeriod](#ds) MUST include [BillingPeriodStatus](#col).
+  * [BillingPeriod](#ds) MUST include [InvoiceIssuerName](#col).
+* [BillingPeriod](#ds) MUST conform to [CorrectionHandling](#attr) requirements.
+* [BillingPeriod](#ds) MUST conform to [DatasetCompleteness](#attr) requirements.
+* [BillingPeriod](#ds) MUST conform to [DatasetConfiguration](#attr) requirements.
+* [BillingPeriod](#ds) MUST conform to [DeliveryHandling](#attr) requirements.
+* [BillingPeriod](#ds) [FOCUS columns](#term) MUST conform to [FocusColumnHandling](#attr) requirements.
+* [BillingPeriod](#ds) [FOCUS columns](#term) MUST conform to [NullHandling](#attr) requirements.
+* [BillingPeriod](#ds) [custom columns](#term) MUST conform to [CustomColumnHandling](#attr) requirements.
 
 ## Dataset ID<!--SkipTOC-->
 

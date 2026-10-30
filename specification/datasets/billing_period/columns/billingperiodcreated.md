@@ -9,7 +9,7 @@
 * [BillingPeriodCreated](#col) MUST be of type Date/Time.
 * [BillingPeriodCreated](#col) MUST conform to [DateTimeFormat](#attr) requirements.
 * [BillingPeriodCreated](#col) MUST NOT be null.
-* [BillingPeriodCreated](#col) MUST represent the moment in time the BillingPeriod record was instantiated.
+* [BillingPeriodCreated](#col) MUST represent the moment in time the [BillingPeriod](#ds) record was instantiated.
 
 ## Column ID
 

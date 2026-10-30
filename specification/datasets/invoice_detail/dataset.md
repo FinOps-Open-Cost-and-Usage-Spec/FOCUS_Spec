@@ -46,45 +46,45 @@ For more information, see the [Invoice Reconciliation](#supportedfeatures.invoic
 
 ## Requirements<!--SkipTOC-->
 
-InvoiceDetail MUST adhere to the following requirements:
+[InvoiceDetail](#ds) MUST adhere to the following requirements:
 
-* InvoiceDetail column presence MUST adhere to the following requirements:
-  * InvoiceDetail MUST include [BilledCost](#col).
-  * InvoiceDetail MUST include [BillingAccountId](#col).
-  * InvoiceDetail MUST include [BillingCurrency](#col).
-  * InvoiceDetail MUST include [BillingPeriodEnd](#col).
-  * InvoiceDetail MUST include [BillingPeriodStart](#col).
-  * InvoiceDetail MUST include [ChargeCategory](#col).
-  * InvoiceDetail MUST include [InvoiceDetailCreated](#col).
-  * InvoiceDetail MUST include [InvoiceDetailDescription](#col).
-  * InvoiceDetail MUST include [InvoiceDetailGrain](#col).
-  * InvoiceDetail MUST include [InvoiceDetailId](#col).
-  * InvoiceDetail MUST include [InvoiceDetailLastUpdated](#col).
-  * InvoiceDetail MUST include [InvoiceId](#col).
-  * InvoiceDetail MUST include [InvoiceIssueDate](#col).
-  * InvoiceDetail MUST include [InvoiceIssueStatus](#col).
-  * InvoiceDetail MUST include [InvoiceIssuerName](#col).
-  * InvoiceDetail MUST include [PaymentCurrency](#col) when the [operating model](#term) [includes billing and payment currency differences](#omc).
-  * InvoiceDetail MUST include [PaymentCurrencyBilledCost](#col) when the [operating model](#term) includes billing and payment currency differences.
-  * InvoiceDetail MUST include [PaymentCurrencyInvoiceDetailId](#col) when the [operating model](#term) [includes aggregation level currency differences](#omc).
-  * InvoiceDetail MUST include [PaymentDueDate](#col).
-  * InvoiceDetail MUST include [PaymentTerms](#col).
-  * InvoiceDetail MUST include [PurchaseOrderNumber](#col) when the [operating model](#term) [includes purchase order numbers](#omc).
-  * InvoiceDetail MUST include [ReferenceInvoiceId](#col).
-  * InvoiceDetail MUST include [custom columns](#term) to represent any monetary metric that appears on an invoice issued to a [BillingAccountId](#col) when there is no equivalent [FOCUS column](#term).
-* InvoiceDetail MUST conform to [CorrectionHandling](#attr) requirements.
-* InvoiceDetail MUST conform to [DatasetCompleteness](#attr) requirements.
-* InvoiceDetail MUST conform to [DatasetConfiguration](#attr) requirements.
-* InvoiceDetail MUST conform to [DeliveryHandling](#attr) requirements.
-* InvoiceDetail MUST represent all invoice line items with a non-zero [BilledCost](#col) on any invoice associated with a [BillingAccountId](#col).
-* InvoiceDetail [FOCUS columns](#term) MUST conform to [FocusColumnHandling](#attr) requirements.
-* InvoiceDetail [FOCUS columns](#term) MUST conform to [NullHandling](#attr) requirements.
-* InvoiceDetail [custom columns](#term) MUST conform to [CustomColumnHandling](#attr) requirements.
-* InvoiceDetail documentation MUST adhere to the following requirements:
-  * InvoiceDetail documentation MUST specify how InvoiceDetail records correspond to invoice line items.
-  * InvoiceDetail documentation MUST specify whether invoice line items with [BilledCost](#col) of 0 are excluded from InvoiceDetail.
-  * InvoiceDetail documentation MUST describe how columns in the CostAndUsage and InvoiceDetail [dataset instances](#term) represent the invoice issuer's [invoice reconciliation](#term) process.
-  * InvoiceDetail documentation MUST be freely accessible to FOCUS consumers.
+* [InvoiceDetail](#ds) column presence MUST adhere to the following requirements:
+  * [InvoiceDetail](#ds) MUST include [BilledCost](#col).
+  * [InvoiceDetail](#ds) MUST include [BillingAccountId](#col).
+  * [InvoiceDetail](#ds) MUST include [BillingCurrency](#col).
+  * [InvoiceDetail](#ds) MUST include [BillingPeriodEnd](#col).
+  * [InvoiceDetail](#ds) MUST include [BillingPeriodStart](#col).
+  * [InvoiceDetail](#ds) MUST include [ChargeCategory](#col).
+  * [InvoiceDetail](#ds) MUST include [InvoiceDetailCreated](#col).
+  * [InvoiceDetail](#ds) MUST include [InvoiceDetailDescription](#col).
+  * [InvoiceDetail](#ds) MUST include [InvoiceDetailGrain](#col).
+  * [InvoiceDetail](#ds) MUST include [InvoiceDetailId](#col).
+  * [InvoiceDetail](#ds) MUST include [InvoiceDetailLastUpdated](#col).
+  * [InvoiceDetail](#ds) MUST include [InvoiceId](#col).
+  * [InvoiceDetail](#ds) MUST include [InvoiceIssueDate](#col).
+  * [InvoiceDetail](#ds) MUST include [InvoiceIssueStatus](#col).
+  * [InvoiceDetail](#ds) MUST include [InvoiceIssuerName](#col).
+  * [InvoiceDetail](#ds) MUST include [PaymentCurrency](#col) when the [operating model](#term) [includes billing and payment currency differences](#omc).
+  * [InvoiceDetail](#ds) MUST include [PaymentCurrencyBilledCost](#col) when the [operating model](#term) includes billing and payment currency differences.
+  * [InvoiceDetail](#ds) MUST include [PaymentCurrencyInvoiceDetailId](#col) when the [operating model](#term) [includes aggregation level currency differences](#omc).
+  * [InvoiceDetail](#ds) MUST include [PaymentDueDate](#col).
+  * [InvoiceDetail](#ds) MUST include [PaymentTerms](#col).
+  * [InvoiceDetail](#ds) MUST include [PurchaseOrderNumber](#col) when the [operating model](#term) [includes purchase order numbers](#omc).
+  * [InvoiceDetail](#ds) MUST include [ReferenceInvoiceId](#col).
+  * [InvoiceDetail](#ds) MUST include [custom columns](#term) to represent any monetary metric that appears on an invoice issued to a [BillingAccountId](#col) when there is no equivalent [FOCUS column](#term).
+* [InvoiceDetail](#ds) MUST conform to [CorrectionHandling](#attr) requirements.
+* [InvoiceDetail](#ds) MUST conform to [DatasetCompleteness](#attr) requirements.
+* [InvoiceDetail](#ds) MUST conform to [DatasetConfiguration](#attr) requirements.
+* [InvoiceDetail](#ds) MUST conform to [DeliveryHandling](#attr) requirements.
+* [InvoiceDetail](#ds) MUST represent all invoice line items with a non-zero [BilledCost](#col) on any invoice associated with a [BillingAccountId](#col).
+* [InvoiceDetail](#ds) [FOCUS columns](#term) MUST conform to [FocusColumnHandling](#attr) requirements.
+* [InvoiceDetail](#ds) [FOCUS columns](#term) MUST conform to [NullHandling](#attr) requirements.
+* [InvoiceDetail](#ds) [custom columns](#term) MUST conform to [CustomColumnHandling](#attr) requirements.
+* [InvoiceDetail](#ds) documentation MUST adhere to the following requirements:
+  * [InvoiceDetail](#ds) documentation MUST specify how [InvoiceDetail](#ds) records correspond to invoice line items.
+  * [InvoiceDetail](#ds) documentation MUST specify whether invoice line items with [BilledCost](#col) of 0 are excluded from [InvoiceDetail](#ds).
+  * [InvoiceDetail](#ds) documentation MUST describe how columns in the [CostAndUsage](#ds) and [InvoiceDetail](#ds) [dataset instances](#term) represent the invoice issuer's [invoice reconciliation](#term) process.
+  * [InvoiceDetail](#ds) documentation MUST be freely accessible to FOCUS consumers.
 
 ## Dataset ID<!--SkipTOC-->
 

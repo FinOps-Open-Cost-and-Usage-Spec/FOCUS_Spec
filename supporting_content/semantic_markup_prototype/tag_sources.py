@@ -23,9 +23,10 @@ and prints what it could not decide, which is left for a person:
 * A quoted value right after a column reference becomes a value reference when
   the value is one of that column's allowed values:
   [ChargeCategory](#col) is "Tax" -> is ["Tax"](#val:ChargeCategory)
-* ColumnIds, attribute IDs, operating model condition IDs, JSON object and
-  schema IDs, and multi-word metadata IDs written as plain words become
-  references, including the file's own entity: BilledCost -> [BilledCost](#col)
+* ColumnIds, dataset IDs, attribute IDs, operating model condition IDs, JSON
+  object and schema IDs, and multi-word metadata IDs written as plain words
+  become references, including the file's own entity:
+  BilledCost -> [BilledCost](#col), CostAndUsage -> [CostAndUsage](#ds)
 * In a column file, quoted allowed values of that column become value
   references: "Correction" -> ["Correction"](#val:ChargeClass)
 
@@ -82,6 +83,7 @@ class Tagger:
         self.id_kind.update({e["id"]: "meta" for e in registry.by_type["meta"]
                              if re.search(r"[a-z0-9][A-Z]", e["id"])})
         self.id_kind.update({i: "col" for i in registry.col_ids})
+        self.id_kind.update({e["id"]: "ds" for e in registry.by_type["ds"]})
         ids = sorted(self.id_kind, key=len, reverse=True)
         datasets = "|".join(sorted((e["id"] for e in registry.by_type["ds"]), key=len, reverse=True))
         # An optional dataset qualifier, e.g. CostAndUsage.BilledCost, is kept as written.

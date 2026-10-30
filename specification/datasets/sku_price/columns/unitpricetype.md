@@ -9,12 +9,12 @@
 * [UnitPriceType](#col) MUST be of type String.
 * [UnitPriceType](#col) MUST conform to [StringHandling](#attr) requirements.
 * [UnitPriceType](#col) MUST NOT be null.
-* [UnitPriceType](#col) MUST NOT be "Base" when the SkuPrice record does not represent the [list unit price](#term) at a point in time, fixed for a given [ContractId](#col).
-* [UnitPriceType](#col) MUST NOT be "Contracted" when the SkuPrice record does not represent a [contracted unit price](#term) for a given [ContractId](#col).
+* [UnitPriceType](#col) MUST NOT be "Base" when the [SkuPrice](#ds) record does not represent the [list unit price](#term) at a point in time, fixed for a given [ContractId](#col).
+* [UnitPriceType](#col) MUST NOT be "Contracted" when the [SkuPrice](#ds) record does not represent a [contracted unit price](#term) for a given [ContractId](#col).
 * [UnitPriceType](#col) SHOULD use one of the recommended values when the price model aligns with a defined concept.
-* [UnitPriceType](#col) SHOULD be "List" when the SkuPrice record does not represent a price specific to a contract.
-* [UnitPriceType](#col) SHOULD be "Base" when the SkuPrice record represents a price specific to a contract and that price is a list price fixed for the contract at a point in time.
-* [UnitPriceType](#col) SHOULD be "Contracted" when the SkuPrice record represents a price specific to a contract and that price is not a list price fixed for the contract at a point in time.
+* [UnitPriceType](#col) SHOULD be "List" when the [SkuPrice](#ds) record does not represent a price specific to a contract.
+* [UnitPriceType](#col) SHOULD be "Base" when the [SkuPrice](#ds) record represents a price specific to a contract and that price is a list price fixed for the contract at a point in time.
+* [UnitPriceType](#col) SHOULD be "Contracted" when the [SkuPrice](#ds) record represents a price specific to a contract and that price is not a list price fixed for the contract at a point in time.
 * [UnitPriceType](#col) MAY contain provider-specific values when the price model does not align with a recommended value.
 
 ## Recommended Values

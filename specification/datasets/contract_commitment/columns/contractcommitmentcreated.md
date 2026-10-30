@@ -9,7 +9,7 @@
 * [ContractCommitmentCreated](#col) MUST be of type Date/Time.
 * [ContractCommitmentCreated](#col) MUST conform to [DateTimeFormat](#attr) requirements.
 * [ContractCommitmentCreated](#col) MUST NOT be null.
-* [ContractCommitmentCreated](#col) MUST represent the moment in time the ContractCommitment record was instantiated.
+* [ContractCommitmentCreated](#col) MUST represent the moment in time the [ContractCommitment](#ds) record was instantiated.
 
 ## Column ID
 

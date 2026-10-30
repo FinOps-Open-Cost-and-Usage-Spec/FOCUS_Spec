@@ -8,8 +8,8 @@
 
 * [CommitmentDiscountCategory](#col) MUST be of type String.
 * [CommitmentDiscountCategory](#col) MUST adhere to the following nullability requirements:
-  * [CommitmentDiscountCategory](#col) MUST be null when the SkuPrice record does not represent the purchase of a commitment discount or a usage rate that applies under a commitment discount.
-  * [CommitmentDiscountCategory](#col) MUST NOT be null when the SkuPrice record represents the purchase of a commitment discount or a usage rate that applies under a commitment discount.
+  * [CommitmentDiscountCategory](#col) MUST be null when the [SkuPrice](#ds) record does not represent the purchase of a commitment discount or a usage rate that applies under a commitment discount.
+  * [CommitmentDiscountCategory](#col) MUST NOT be null when the [SkuPrice](#ds) record represents the purchase of a commitment discount or a usage rate that applies under a commitment discount.
 * [CommitmentDiscountCategory](#col) MUST be one of the allowed values.
 
 ## Allowed Values

@@ -11,9 +11,9 @@ When combined with [SKU Price Effective End](#col), this column defines the prec
 * [SkuPriceEffectiveStart](#col) MUST be of type Date/Time.
 * [SkuPriceEffectiveStart](#col) MUST conform to [DateTimeFormat](#attr) requirements (e.g., UTC).
 * [SkuPriceEffectiveStart](#col) MUST adhere to the following nullability requirements:
-  * [SkuPriceEffectiveStart](#col) MUST be null when the SkuPrice record is applicable without a lower time boundary.
-  * [SkuPriceEffectiveStart](#col) MUST NOT be null when the SkuPrice record has a designated timestamp from which it becomes applicable.
-* [SkuPriceEffectiveStart](#col) MUST be the [inclusive start bound](#term) of the effective [period](#term) of the SkuPrice record when [SkuPriceEffectiveStart](#col) is not null.
+  * [SkuPriceEffectiveStart](#col) MUST be null when the [SkuPrice](#ds) record is applicable without a lower time boundary.
+  * [SkuPriceEffectiveStart](#col) MUST NOT be null when the [SkuPrice](#ds) record has a designated timestamp from which it becomes applicable.
+* [SkuPriceEffectiveStart](#col) MUST be the [inclusive start bound](#term) of the effective [period](#term) of the [SkuPrice](#ds) record when [SkuPriceEffectiveStart](#col) is not null.
 
 ## Column ID
 
