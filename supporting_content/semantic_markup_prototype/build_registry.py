@@ -214,11 +214,12 @@ def allowed_values(body, display):
     rows = table_rows(body)
     if len(rows) < 3:
         return None
-    header = rows[0]
+    # A header or value may carry a reference, e.g. [Service Category](#col)
+    header = [link_text(c).strip("*_ ") for c in rows[0]]
     for name in ("Value", display):
         if name in header:
             index = header.index(name)
-            return [row[index] for row in rows[2:] if len(row) > index and row[index]]
+            return [link_text(row[index]).strip("*_ ") for row in rows[2:] if len(row) > index and row[index]]
     return None
 
 

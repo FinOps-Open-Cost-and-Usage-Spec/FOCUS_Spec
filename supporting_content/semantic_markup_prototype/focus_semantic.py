@@ -145,8 +145,9 @@ class Registry:
 
         ds, _, ident_tail = (ident or "").rpartition(".") if kind == "col" else ("", "", ident)
         wanted = (ident_tail or re.sub(r"\s+", "", text)).lower()
+        # An explicit ID decides the entity; the link text is then only what readers see
         matches = [e for e in self.by_type[kind]
-                   if e["id"].lower() == wanted or text.lower() in self.names(e)]
+                   if e["id"].lower() == wanted or (not ident_tail and text.lower() in self.names(e))]
         if ds:
             matches = [e for e in matches if e.get("dataset") == ds]
         elif kind == "col" and dataset and matches:
@@ -173,9 +174,11 @@ class Registry:
         scope, _, ident_tail = (ident or "").rpartition(".")
         wanted = (ident_tail or re.sub(r"\s+", "", text)).lower()
         matches = [e for e in self.by_type["meta"]
-                   if e["id"].lower() == wanted or text.lower() in self.names(e)]
+                   if e["id"].lower() == wanted or (not ident_tail and text.lower() in self.names(e))]
         if scope:
             matches = [e for e in matches if e.get("collection") == scope]
+        elif (ident or "").startswith("."):
+            matches = [e for e in matches if not e.get("collection")]  # ".DataGenerator": top level
         if not matches:
             return None, f'unknown meta "{ident or text}"'
         if len(matches) == 1:

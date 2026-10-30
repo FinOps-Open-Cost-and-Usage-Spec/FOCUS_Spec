@@ -28,7 +28,15 @@ Rendering rules (the same as focus_semantic.py):
 * The first reference to an entity in each source file becomes a link; later
   references render without one. A hand-written link to an entity's anchor also
   counts as its first mention, so mixed files never link an entity twice.
-* References inside table rows always link, except glossary terms.
+* References inside Content Constraints tables always link, except glossary
+  terms.
+* A hand-written link in any other table does not count as a first mention (the
+  approach proposed for entity catalog tables in #2514 and #2765), so the
+  Columns table in dataset.md does not turn the links in the requirements below
+  it into repeats.
+* In glossary.md, each entry is its own scope: the first reference in each
+  entry links, because the Editorial Guidelines count first mentions per entry
+  there.
 * References to the entity a file defines never link. A JSON object defined in
   its column's file is a separate entity and links normally.
 * Glossary terms render in italics; other entities render as plain text.
@@ -120,17 +128,29 @@ class SemanticResolver:
         return (entity["type"], entity["id"], entity.get("dataset"))
 
     @property
+    def in_constraints(self):
+        return any(title == "Content Constraints" for _, title in self.sections)
+
+    @property
     def in_requirements(self):
         return any(title == "Requirements" for _, title in self.sections)
 
     def resolve_link(self, match, in_table):
         text, kind, ident = match.group(1), match.group(2), match.group(3) or None
-        plain = text.strip().strip("*_").strip()
+        raw = text.strip()
+        # Emphasis around the whole text is dropped; a stray * (e.g., "Allocated*") is text
+        wrapped = len(raw) > 2 and raw[0] == raw[-1] and raw[0] in "*_" and raw[1] != raw[0]
+        plain = raw[1:-1].strip() if wrapped else raw
         entity, error = self.registry.find(kind, ident, plain, self.frame.dataset, self.frame.collection)
         if error:
             self.report("ERROR", "FOCUS008" if kind == "val" else "FOCUS001", error)
             return plain
         self.resolved += 1
+        if ident and kind in ("col", "attr", "omc", "obj", "schema", "meta") and "." not in plain:
+            named, _ = self.registry.find(kind, None, plain, self.frame.dataset, self.frame.collection)
+            if named is not None and named["id"] != entity["id"]:
+                self.report("WARN", "FOCUS011", f'link text "{plain}" names {named["id"]}, '
+                                                f'but the reference is {entity["id"]}')
         scope = entity.get("dataset") or entity.get("collection")
         if (kind in ("col", "obj", "schema", "meta") and self.in_requirements
                 and plain not in (entity["id"], f'{scope}.{entity["id"]}')):
@@ -140,12 +160,15 @@ class SemanticResolver:
             return plain
 
         key = self.key(entity)
-        link = not self.is_home(entity) and ((in_table and kind != "term") or key not in self.frame.seen)
+        every_row = in_table and kind != "term" and self.in_constraints
+        link = not self.is_home(entity) and (every_row or key not in self.frame.seen)
         self.frame.seen.add(key)
         content = f"*{plain}*" if kind == "term" else plain
         return f"[{content}](#{entity['anchor']})" if link else content
 
-    def note_legacy_links(self, segment):
+    def note_legacy_links(self, segment, in_table=False):
+        if in_table and not self.in_constraints:
+            return
         for target in ANY_FRAGMENT_LINK.findall(segment):
             entity = self.registry.anchors.get(target)
             if entity:
@@ -153,6 +176,8 @@ class SemanticResolver:
 
     def transform(self, line):
         stripped = line.rstrip("\n")
+        if self.frame.path == "glossary.md" and stripped.startswith('<a name="glossary:'):
+            self.frame.seen.clear()
         if stripped.lstrip().startswith("```"):
             self.in_code = not self.in_code
             return line
@@ -167,7 +192,7 @@ class SemanticResolver:
         parts = CODE_SPAN.split(stripped)
         for i in range(0, len(parts), 2):
             # Note hand-written links first so a semantic reference after them is not re-linked
-            self.note_legacy_links(parts[i])
+            self.note_legacy_links(parts[i], in_table)
             parts[i] = SEMANTIC_LINK.sub(lambda m: self.resolve_link(m, in_table), parts[i])
         return "".join(parts) + ("\n" if line.endswith("\n") else "")
 

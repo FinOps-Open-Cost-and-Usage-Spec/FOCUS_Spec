@@ -7,7 +7,8 @@
 #   (default: where this branch left origin/working_draft, so later changes to
 #   working_draft do not show up as differences)
 #
-# Writes build/compare/{base,current}-spec.md and build/compare/changes.txt.
+# Writes build/compare/{base,current}-spec.md, changes.txt (line by line), and
+# classification.txt and classification.tsv (every difference, by kind).
 # Set PYTHON to an interpreter with panflute installed (default: python3 on PATH).
 set -euo pipefail
 
@@ -79,3 +80,6 @@ for tag, i1, i2, j1, j2 in difflib.SequenceMatcher(None, a, b, autojunk=False).g
         print(f"{where}: " + " | ".join(parts))
 print(f"{changed} changed line(s) between {sys.argv[1].rsplit('/', 1)[-1]} and {sys.argv[2].rsplit('/', 1)[-1]}")
 EOF
+
+# A summary by kind of change, and every classified item for review
+"$PYTHON" "$HERE/classify_rendered.py" "$OUT/base-spec.md" "$OUT/current-spec.md" --detail "$OUT/classification.tsv" | tee "$OUT/classification.txt"
