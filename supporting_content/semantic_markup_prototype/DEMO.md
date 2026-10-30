@@ -50,9 +50,9 @@ Build-time checks:
 
 The source files are expected to contain mistakes, and finding them is one of the reasons for semantic tagging. A finding means two places that should agree do not: an ID and a file name, a heading and a name section, or the specification and the Requirements Model. The checks do not decide which side is wrong. The messages name both sides, and a person resolves each finding on whichever side is in error.
 
-## Converted Files
+## Hand-Reviewed Files
 
-Every file the build includes was converted by `convert_all.sh`, and the results are in [CONVERSION.md](CONVERSION.md). The files below were converted first and also edited by hand, so they show the judgment calls the converter does not make.
+Every file the build includes was converted by `convert_all.sh`, and the results are in [CONVERSION.md](CONVERSION.md). The converter carries over the judgments the existing markup already makes (see Where the Tags Came From in CONVERSION.md); it makes none of its own. The files below were converted first as samples and then reviewed and edited by hand, so they are the only files where a person decided what a reference means, and they show the kinds of judgment calls the converter leaves to people.
 
 | File | What it shows |
 | :--- | :--- |

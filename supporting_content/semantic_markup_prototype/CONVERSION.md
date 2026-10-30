@@ -44,6 +44,25 @@ The build resolves every tag, markdown-pp anchors and the link tests are unchang
 
 The converter leaves headings, code, raw HTML lines, the sections that define an entity, and tables outside Content Constraints alone.
 
+## Where the Tags Came From
+
+The converter has no classifier and does not interpret prose. It translates the identity that the existing markup already states, using the rules above, and makes a tag only when one rule applies unambiguously:
+
+| Source in the original file | Tags | Share | How the entity was identified |
+| :--- | ---: | ---: | :--- |
+| Hand-written link | 3,149 | 40% | The anchor names the entity, so the tag is an exact translation |
+| Plain ID (e.g., `BilledCost`) | 2,293 | 29% | IDs are unique strings; the dataset comes from the file's location or front matter, or the one dataset that defines the column |
+| Italic glossary term | 1,394 | 18% | The convention that italics mark a glossary term; the phrase must match a term, an alias, or a plural |
+| Plain Display Name | 817 | 10% | An exact, multi-word Display Name in its defined capitalization that names one entity and is not also a glossary term |
+| Quoted value | 199 | 3% | A value right after a column reference, or of the file's own column, that is one of that column's allowed values |
+
+Apart from the hand-reviewed sample files listed in [DEMO.md](DEMO.md), no person decided what a reference means. This has two consequences:
+
+* **The conversion preserves meaning; it does not correct it.** A hand-written link to the wrong entity becomes a tag to the same wrong entity. The link whose text names ContractCommitmentPeriodStart but points to ContractPeriodStart survived conversion; FOCUS011 now reports it. The first-mention differences change only where links appear, never what they point to.
+* **The risk is in the two heuristic sources.** Italic glossary terms (18%) depend on italics never being used for plain emphasis, and plain Display Names (10%) depend on a Title Case name meaning the entity. A sample review of the Display Name tags found and fixed two failure classes (a shorter name inside a longer, ambiguous one, such as "Unit Price" in "List Unit Price", and the data generator role), but these tags have not been reviewed one by one.
+
+The counts come from comparing each converted line with the original; they are approximate to within a few tags.
+
 ## Differences in the Published Specification
 
 `compare_rendered.sh` compares the published `spec.md` with `working_draft` and sorts every difference by kind. No visible words changed.
