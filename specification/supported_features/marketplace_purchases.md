@@ -1,18 +1,22 @@
+---
+dataset: CostAndUsage
+---
+
 # Marketplace Purchases
 
 ## Description
 
-FOCUS supports the analysis of cost and usage data for marketplace purchases and their associated costs. It also supports the reporting of [Effective Cost](#datamodel.costandusage.effectivecost) for usage from the [*service provider*](#glossary:service-provider).
+FOCUS supports the analysis of cost and usage data for marketplace purchases and their associated costs. It also supports the reporting of [Effective Cost](#col) for usage from the [service provider](#term).
 
 ## Directly Dependent Columns
 
-* InvoiceIssuerName
-* ServiceProviderName
+* [InvoiceIssuerName](#col)
+* [ServiceProviderName](#col)
 
 ## Supporting Columns
 
-* BilledCost
-* EffectiveCost
+* [BilledCost](#col)
+* [EffectiveCost](#col)
 
 ## Example SQL Queries
 

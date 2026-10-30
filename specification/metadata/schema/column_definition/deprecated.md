@@ -1,14 +1,14 @@
 # Deprecated
 
-The deprecation status of a column in a [Dataset Instance](#metadata.datasetinstance).
+The deprecation status of a column in a [Dataset Instance](#meta).
 
-Deprecated adheres to the following requirements:
+[Deprecated](#meta) adheres to the following requirements:
 
-* Deprecated MUST be present in an object within the [ColumnDefinition](#metadata.schema.columndefinition) collection when the column is planned for removal.
-* Deprecated MUST be of type Boolean.
-* Deprecated MUST NOT contain null values.
-* Deprecated SHOULD only be "true" when the column is deprecated.
-* Deprecated MUST be "true" when the data generator removes a column at a future date, or the column has been identified for deprecation for the FOCUS version identified in the schema definition.
+* [Deprecated](#meta) MUST be present in an object within the [ColumnDefinition](#meta) collection when the column is planned for removal.
+* [Deprecated](#meta) MUST be of type Boolean.
+* [Deprecated](#meta) MUST NOT contain null values.
+* [Deprecated](#meta) SHOULD only be "true" when the column is deprecated.
+* [Deprecated](#meta) MUST be "true" when the data generator removes a column at a future date, or the column has been identified for deprecation for the FOCUS version identified in the schema definition.
 
 ## Metadata ID
 

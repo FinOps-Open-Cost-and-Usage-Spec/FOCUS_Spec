@@ -1,15 +1,15 @@
 # Invoice Issue Date
 
-Invoice Issue Date is the date the invoice was issued by the [*invoice issuer*](#glossary:invoice-issuer). This date serves as the official point of record for the billing document, determining the beginning of payment terms and providing a key reference point for financial audits and period closing processes.
+[Invoice Issue Date](#col) is the date the invoice was issued by the [invoice issuer](#term). This date serves as the official point of record for the billing document, determining the beginning of payment terms and providing a key reference point for financial audits and period closing processes.
 
 ## Requirements
 
-InvoiceIssueDate MUST adhere to the following requirements:
+[InvoiceIssueDate](#col) MUST adhere to the following requirements:
 
-* InvoiceIssueDate MUST be of type Date/Time.
-* InvoiceIssueDate MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.
-* InvoiceIssueDate MAY be null.
-* InvoiceIssueDate MUST represent the official date of issuance for the corresponding [InvoiceId](#datamodel.invoicedetail.invoiceid).
+* [InvoiceIssueDate](#col) MUST be of type Date/Time.
+* [InvoiceIssueDate](#col) MUST conform to [DateTimeFormat](#attr) requirements.
+* [InvoiceIssueDate](#col) MAY be null.
+* [InvoiceIssueDate](#col) MUST represent the official date of issuance for the corresponding [InvoiceId](#col).
 
 ## Column ID
 
@@ -27,13 +27,13 @@ The date the invoice was issued by the invoice issuer.
 
 | Constraint                 | Value                                           |
 | :------------------------- | :---------------------------------------------- |
-| Dataset                    | [Invoice Detail](#datamodel.invoicedetail)      |
+| Dataset                    | [Invoice Detail](#ds)                           |
 | Operating model conditions | Not applicable                                  |
 | Column type                | Dimension                                       |
 | Feature level              | Mandatory                                       |
 | Allows nulls               | True                                            |
 | Data type                  | Date/Time                                       |
-| Value format               | [Date/Time Format](#attributes.date/timeformat) |
+| Value format               | [Date/Time Format](#attr)                       |
 
 ## Version Introduced
 

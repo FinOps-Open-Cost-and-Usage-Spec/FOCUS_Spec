@@ -1,24 +1,24 @@
 # SKU Price ID
 
-SKU Price ID is a service-provider-specified unique identifier that represents a specific [*SKU Price*](#glossary:sku-price). It serves as the primary reference key for a *SKU Price* in a [*price list*](#glossary:price-list) published by a service provider, allowing practitioners to uniquely identify specific pricing combinations for a given [*SKU*](#glossary:sku).
+[SKU Price ID](#col) is a service-provider-specified unique identifier that represents a specific [SKU Price](#term). It serves as the primary reference key for a [SKU Price](#term) in a [price list](#term) published by a service provider, allowing practitioners to uniquely identify specific pricing combinations for a given [SKU](#term).
 
-The composition of properties associated with the SKU Price ID may differ across service providers and across *SKUs* within the same service provider. However, the exclusion of dynamic or negotiable pricing properties - such as unit price amount; currency (and related exchange rates); temporal validity (e.g., effective dates); and contract- or negotiation-specific elements (e.g., contract or account identifiers, and negotiable discounts) - ensures that the SKU Price ID remains consistent across different billing periods and billing accounts within a service provider. This consistency enables efficient tracking of price fluctuations (e.g., changes in unit price amounts) over time and across accounts. Additionally, the SKU Price ID is commonly used to differentiate prices based on properties such as [*periods*](#glossary:period) and tiers.
+The composition of properties associated with the [SKU Price ID](#col) may differ across service providers and across [SKUs](#term) within the same service provider. However, the exclusion of dynamic or negotiable pricing properties - such as unit price amount; currency (and related exchange rates); temporal validity (e.g., effective dates); and contract- or negotiation-specific elements (e.g., contract or account identifiers, and negotiable discounts) - ensures that the [SKU Price ID](#col) remains consistent across different billing periods and billing accounts within a service provider. This consistency enables efficient tracking of price fluctuations (e.g., changes in unit price amounts) over time and across accounts. Additionally, the [SKU Price ID](#col) is commonly used to differentiate prices based on properties such as [periods](#term) and tiers.
 
 ## Requirements
 
-SkuPriceId MUST adhere to the following requirements:
+[SkuPriceId](#col) MUST adhere to the following requirements:
 
-* SkuPriceId MUST be of type String.
-* SkuPriceId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* SkuPriceId MUST NOT be null.
-* SkuPriceId MUST have one and only one parent [SkuId](#datamodel.skuprice.skuid).
-* SkuPriceId MUST have one and only one [PricingUnit](#datamodel.skuprice.pricingunit).
-* SkuPriceId MUST have one and only one [ChargeCategory](#datamodel.skuprice.chargecategory).
-* SkuPriceId MUST have one and only one [QuantityTierMinimum](#datamodel.skuprice.quantitytierminimum) when the [*operating model*](#glossary:operating-model) [includes quantity tier pricing](#operatingmodelconditions.includesquantitytierpricing).
-* SkuPriceId MUST have one and only one [QuantityTierMaximum](#datamodel.skuprice.quantitytiermaximum) (including null) when the *operating model* includes quantity tier pricing.
-* SkuPriceId MUST remain consistent over time.
-* SkuPriceId MUST remain consistent across contracts or billing agreements.
-* SkuPriceId MAY match SkuId.
+* [SkuPriceId](#col) MUST be of type String.
+* [SkuPriceId](#col) MUST conform to [StringHandling](#attr) requirements.
+* [SkuPriceId](#col) MUST NOT be null.
+* [SkuPriceId](#col) MUST have one and only one parent [SkuId](#col).
+* [SkuPriceId](#col) MUST have one and only one [PricingUnit](#col).
+* [SkuPriceId](#col) MUST have one and only one [ChargeCategory](#col).
+* [SkuPriceId](#col) MUST have one and only one [QuantityTierMinimum](#col) when the [operating model](#term) [includes quantity tier pricing](#omc).
+* [SkuPriceId](#col) MUST have one and only one [QuantityTierMaximum](#col) (including null) when the [operating model](#term) includes quantity tier pricing.
+* [SkuPriceId](#col) MUST remain consistent over time.
+* [SkuPriceId](#col) MUST remain consistent across contracts or billing agreements.
+* [SkuPriceId](#col) MAY match [SkuId](#col).
 
 ## Column ID
 
@@ -30,13 +30,13 @@ SKU Price ID
 
 ## Description
 
-A service-provider-specified unique identifier that represents a specific *SKU Price*.
+A service-provider-specified unique identifier that represents a specific [SKU Price](#term).
 
 ## Content Constraints
 
 | Constraint                 | Value                                                |
 | :------------------------- | :--------------------------------------------------- |
-| Dataset                    | [SKU Price](#datamodel.skuprice)                     |
+| Dataset                    | [SKU Price](#ds)                                     |
 | Operating Model Conditions | Not applicable                                       |
 | Column type                | Dimension                                            |
 | Feature level              | Mandatory                                            |

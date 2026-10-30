@@ -4,15 +4,15 @@ Columns that provide date and time information conforming to specified rules and
 
 ## Requirements
 
-Column conforming to DateTimeFormat attribute MUST adhere to the following requirements:
+Column conforming to [DateTimeFormat](#attr) attribute MUST adhere to the following requirements:
 
-* [*FOCUS dataset column*](#glossary:FOCUS-dataset-column) MUST be expressed in UTC (Coordinated Universal Time) to avoid ambiguity and ensure consistency across different time zones.
-* *FOCUS dataset column* MUST conform to the ISO 8601 standard, which provides a globally recognized format for representing dates and times (see [ISO 8601-1:2019](https://www.iso.org/standard/70907.html) governing document for details).
-* When *FOCUS dataset column* represents a specific moment in time, it MUST adhere to the following requirements:
-  * *FOCUS dataset column* MUST use the extended ISO 8601 format with UTC offset (`YYYY-MM-DDTHH:mm:ssZ`).
-  * *FOCUS dataset column* MUST include both the date and time components, separated with the letter `T`.
-  * *FOCUS dataset column* MUST use two-digit hours (`HH`), minutes (`mm`), and seconds (`ss`).
-  * *FOCUS dataset column* MUST end with the ISO 8601 UTC designator `Z`.
+* [FOCUS dataset column](#term) MUST be expressed in UTC (Coordinated Universal Time) to avoid ambiguity and ensure consistency across different time zones.
+* [FOCUS dataset column](#term) MUST conform to the ISO 8601 standard, which provides a globally recognized format for representing dates and times (see [ISO 8601-1:2019](https://www.iso.org/standard/70907.html) governing document for details).
+* When [FOCUS dataset column](#term) represents a specific moment in time, it MUST adhere to the following requirements:
+  * [FOCUS dataset column](#term) MUST use the extended ISO 8601 format with UTC offset (`YYYY-MM-DDTHH:mm:ssZ`).
+  * [FOCUS dataset column](#term) MUST include both the date and time components, separated with the letter `T`.
+  * [FOCUS dataset column](#term) MUST use two-digit hours (`HH`), minutes (`mm`), and seconds (`ss`).
+  * [FOCUS dataset column](#term) MUST end with the ISO 8601 UTC designator `Z`.
 
 ## Attribute ID
 
@@ -24,7 +24,7 @@ Date/Time Format
 
 ## Description
 
-Rules and formatting requirements for date/time-related columns appearing in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+Rules and formatting requirements for date/time-related columns appearing in a [FOCUS dataset](#term).
 
 ## Version Introduced
 

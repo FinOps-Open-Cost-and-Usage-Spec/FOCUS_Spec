@@ -1,16 +1,16 @@
 # Commitment Discount Type
 
-Commitment Discount Type is a service-provider-assigned name to identify the type of [*commitment discount*](#glossary:commitment-discount) applied to the [*row*](#glossary:row). The Commitment Discount Type column is only applicable to *commitment discounts* and not [*negotiated discounts*](#glossary:negotiated-discount).
+[Commitment Discount Type](#col) is a service-provider-assigned name to identify the type of [commitment discount](#term) applied to the [row](#term). The [Commitment Discount Type](#col) column is only applicable to [commitment discounts](#term) and not [negotiated discounts](#term).
 
 ## Requirements
 
-CommitmentDiscountType MUST adhere to the following requirements:
+[CommitmentDiscountType](#col) MUST adhere to the following requirements:
 
-* CommitmentDiscountType MUST be of type String.
-* CommitmentDiscountType MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* CommitmentDiscountType MUST adhere to the following nullability requirements:
-  * CommitmentDiscountType MUST be null when [CommitmentDiscountId](#datamodel.costandusage.commitmentdiscountid) is null.
-  * CommitmentDiscountType MUST NOT be null when CommitmentDiscountId is not null.
+* [CommitmentDiscountType](#col) MUST be of type String.
+* [CommitmentDiscountType](#col) MUST conform to [StringHandling](#attr) requirements.
+* [CommitmentDiscountType](#col) MUST adhere to the following nullability requirements:
+  * [CommitmentDiscountType](#col) MUST be null when [CommitmentDiscountId](#col) is null.
+  * [CommitmentDiscountType](#col) MUST NOT be null when [CommitmentDiscountId](#col) is not null.
 
 ## Column ID
 
@@ -22,14 +22,14 @@ Commitment Discount Type
 
 ## Description
 
-A service-provider-assigned identifier for the type of *commitment discount* applied to the *row*.
+A service-provider-assigned identifier for the type of [commitment discount](#term) applied to the [row](#term).
 
 ## Content Constraints
 
 | Constraint                 | Value                                     |
 | :------------------------- | :---------------------------------------- |
-| Dataset                    | [Cost and Usage](#datamodel.costandusage) |
-| Operating model conditions | [Includes Commitment Discounts](#operatingmodelconditions.includescommitmentdiscounts) |
+| Dataset                    | [Cost and Usage](#ds)                     |
+| Operating model conditions | [Includes Commitment Discounts](#omc)                                                  |
 | Column type                | Dimension                                 |
 | Feature level              | Conditional                               |
 | Allows nulls               | True                                      |

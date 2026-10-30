@@ -1,6 +1,6 @@
 # Invoice Detail
 
-The Invoice Detail dataset is a transactional dataset that represents the financial record of [*charges*](#glossary:charge) as they appear on invoices provided by an [*invoice issuer*](#glossary:invoice-issuer). This dataset enables FinOps practitioners to perform financial reconciliation, tax reporting, and payment processing tasks. While the [Cost and Usage](#datamodel.costandusage) dataset provides granular visibility into consumption, the Invoice Detail dataset ensures alignment with the physical or electronic billing documents.
+The [Invoice Detail](#ds) dataset is a transactional dataset that represents the financial record of [charges](#term) as they appear on invoices provided by an [invoice issuer](#term). This dataset enables FinOps practitioners to perform financial reconciliation, tax reporting, and payment processing tasks. While the [Cost and Usage](#ds) dataset provides granular visibility into consumption, the [Invoice Detail](#ds) dataset ensures alignment with the physical or electronic billing documents.
 
 ## Columns<!--SkipTOC-->
 
@@ -31,11 +31,11 @@ The Invoice Detail dataset is a transactional dataset that represents the financ
 
 ## Relationships<!--SkipTOC-->
 
-The Invoice Detail dataset can be joined to the Cost and Usage dataset through Invoice Issuer Name, Invoice ID, and (optionally) Invoice Detail ID.
+The [Invoice Detail](#ds) dataset can be joined to the [Cost and Usage](#ds) dataset through [Invoice Issuer Name](#col), [Invoice ID](#col), and (optionally) [Invoice Detail ID](#col).
 
 > **Note:** One or both datasets will need to be aggregated in order to facilitate any comparison.
 
-The timing of Invoice ID and Invoice Detail ID availability in Cost and Usage varies across data generators. Some data generators populate these values while the [*billing period*](#glossary:billing-period) is still open, while others do not populate them until after the *billing period* is closed and invoices have been issued.
+The timing of [Invoice ID](#col) and [Invoice Detail ID](#col) availability in [Cost and Usage](#ds) varies across data generators. Some data generators populate these values while the [billing period](#term) is still open, while others do not populate them until after the [billing period](#term) is closed and invoices have been issued.
 
 For more information, see the [Invoice Reconciliation](#supportedfeatures.invoicereconciliation) supported feature.
 
@@ -49,41 +49,41 @@ For more information, see the [Invoice Reconciliation](#supportedfeatures.invoic
 InvoiceDetail MUST adhere to the following requirements:
 
 * InvoiceDetail column presence MUST adhere to the following requirements:
-  * InvoiceDetail MUST include [BilledCost](#datamodel.invoicedetail.billedcost).
-  * InvoiceDetail MUST include [BillingAccountId](#datamodel.invoicedetail.billingaccountid).
-  * InvoiceDetail MUST include [BillingCurrency](#datamodel.invoicedetail.billingcurrency).
-  * InvoiceDetail MUST include [BillingPeriodEnd](#datamodel.invoicedetail.billingperiodend).
-  * InvoiceDetail MUST include [BillingPeriodStart](#datamodel.invoicedetail.billingperiodstart).
-  * InvoiceDetail MUST include [ChargeCategory](#datamodel.invoicedetail.chargecategory).
-  * InvoiceDetail MUST include [InvoiceDetailCreated](#datamodel.invoicedetail.invoicedetailcreated).
-  * InvoiceDetail MUST include [InvoiceDetailDescription](#datamodel.invoicedetail.invoicedetaildescription).
-  * InvoiceDetail MUST include [InvoiceDetailGrain](#datamodel.invoicedetail.invoicedetailgrain).
-  * InvoiceDetail MUST include [InvoiceDetailId](#datamodel.invoicedetail.invoicedetailid).
-  * InvoiceDetail MUST include [InvoiceDetailLastUpdated](#datamodel.invoicedetail.invoicedetaillastupdated).
-  * InvoiceDetail MUST include [InvoiceId](#datamodel.invoicedetail.invoiceid).
-  * InvoiceDetail MUST include [InvoiceIssueDate](#datamodel.invoicedetail.invoiceissuedate).
-  * InvoiceDetail MUST include [InvoiceIssueStatus](#datamodel.invoicedetail.invoiceissuestatus).
-  * InvoiceDetail MUST include [InvoiceIssuerName](#datamodel.invoicedetail.invoiceissuername).
-  * InvoiceDetail MUST include [PaymentCurrency](#datamodel.invoicedetail.paymentcurrency) when the [*operating model*](#glossary:operating-model) [includes billing and payment currency differences](#operatingmodelconditions.includesbillingandpaymentcurrencydifferences).
-  * InvoiceDetail MUST include [PaymentCurrencyBilledCost](#datamodel.invoicedetail.paymentcurrencybilledcost) when the *operating model* includes billing and payment currency differences.
-  * InvoiceDetail MUST include [PaymentCurrencyInvoiceDetailId](#datamodel.invoicedetail.paymentcurrencyinvoicedetailid) when the *operating model* [includes aggregation level currency differences](#operatingmodelconditions.includesaggregationlevelcurrencydifferences).
-  * InvoiceDetail MUST include [PaymentDueDate](#datamodel.invoicedetail.paymentduedate).
-  * InvoiceDetail MUST include [PaymentTerms](#datamodel.invoicedetail.paymentterms).
-  * InvoiceDetail MUST include [PurchaseOrderNumber](#datamodel.invoicedetail.purchaseordernumber) when the *operating model* [includes purchase order numbers](#operatingmodelconditions.includespurchaseordernumbers).
-  * InvoiceDetail MUST include [ReferenceInvoiceId](#datamodel.invoicedetail.referenceinvoiceid).
-  * InvoiceDetail MUST include [*custom columns*](#glossary:custom-column) to represent any monetary metric that appears on an invoice issued to a BillingAccountId when there is no equivalent [*FOCUS column*](#glossary:FOCUS-column).
-* InvoiceDetail MUST conform to [CorrectionHandling](#attributes.correctionhandling) requirements.
-* InvoiceDetail MUST conform to [DatasetCompleteness](#attributes.datasetcompleteness) requirements.
-* InvoiceDetail MUST conform to [DatasetConfiguration](#attributes.datasetconfiguration) requirements.
-* InvoiceDetail MUST conform to [DeliveryHandling](#attributes.deliveryhandling) requirements.
-* InvoiceDetail MUST represent all invoice line items with a non-zero BilledCost on any invoice associated with a BillingAccountId.
-* InvoiceDetail *FOCUS columns* MUST conform to [FocusColumnHandling](#attributes.focuscolumnhandling) requirements.
-* InvoiceDetail *FOCUS columns* MUST conform to [NullHandling](#attributes.nullhandling) requirements.
-* InvoiceDetail *custom columns* MUST conform to [CustomColumnHandling](#attributes.customcolumnhandling) requirements.
+  * InvoiceDetail MUST include [BilledCost](#col).
+  * InvoiceDetail MUST include [BillingAccountId](#col).
+  * InvoiceDetail MUST include [BillingCurrency](#col).
+  * InvoiceDetail MUST include [BillingPeriodEnd](#col).
+  * InvoiceDetail MUST include [BillingPeriodStart](#col).
+  * InvoiceDetail MUST include [ChargeCategory](#col).
+  * InvoiceDetail MUST include [InvoiceDetailCreated](#col).
+  * InvoiceDetail MUST include [InvoiceDetailDescription](#col).
+  * InvoiceDetail MUST include [InvoiceDetailGrain](#col).
+  * InvoiceDetail MUST include [InvoiceDetailId](#col).
+  * InvoiceDetail MUST include [InvoiceDetailLastUpdated](#col).
+  * InvoiceDetail MUST include [InvoiceId](#col).
+  * InvoiceDetail MUST include [InvoiceIssueDate](#col).
+  * InvoiceDetail MUST include [InvoiceIssueStatus](#col).
+  * InvoiceDetail MUST include [InvoiceIssuerName](#col).
+  * InvoiceDetail MUST include [PaymentCurrency](#col) when the [operating model](#term) [includes billing and payment currency differences](#omc).
+  * InvoiceDetail MUST include [PaymentCurrencyBilledCost](#col) when the [operating model](#term) includes billing and payment currency differences.
+  * InvoiceDetail MUST include [PaymentCurrencyInvoiceDetailId](#col) when the [operating model](#term) [includes aggregation level currency differences](#omc).
+  * InvoiceDetail MUST include [PaymentDueDate](#col).
+  * InvoiceDetail MUST include [PaymentTerms](#col).
+  * InvoiceDetail MUST include [PurchaseOrderNumber](#col) when the [operating model](#term) [includes purchase order numbers](#omc).
+  * InvoiceDetail MUST include [ReferenceInvoiceId](#col).
+  * InvoiceDetail MUST include [custom columns](#term) to represent any monetary metric that appears on an invoice issued to a [BillingAccountId](#col) when there is no equivalent [FOCUS column](#term).
+* InvoiceDetail MUST conform to [CorrectionHandling](#attr) requirements.
+* InvoiceDetail MUST conform to [DatasetCompleteness](#attr) requirements.
+* InvoiceDetail MUST conform to [DatasetConfiguration](#attr) requirements.
+* InvoiceDetail MUST conform to [DeliveryHandling](#attr) requirements.
+* InvoiceDetail MUST represent all invoice line items with a non-zero [BilledCost](#col) on any invoice associated with a [BillingAccountId](#col).
+* InvoiceDetail [FOCUS columns](#term) MUST conform to [FocusColumnHandling](#attr) requirements.
+* InvoiceDetail [FOCUS columns](#term) MUST conform to [NullHandling](#attr) requirements.
+* InvoiceDetail [custom columns](#term) MUST conform to [CustomColumnHandling](#attr) requirements.
 * InvoiceDetail documentation MUST adhere to the following requirements:
   * InvoiceDetail documentation MUST specify how InvoiceDetail records correspond to invoice line items.
-  * InvoiceDetail documentation MUST specify whether invoice line items with BilledCost of 0 are excluded from InvoiceDetail.
-  * InvoiceDetail documentation MUST describe how columns in the CostAndUsage and InvoiceDetail [*dataset instances*](#glossary:dataset-instance) represent the invoice issuer's [*invoice reconciliation*](#glossary:invoice-reconciliation) process.
+  * InvoiceDetail documentation MUST specify whether invoice line items with [BilledCost](#col) of 0 are excluded from InvoiceDetail.
+  * InvoiceDetail documentation MUST describe how columns in the CostAndUsage and InvoiceDetail [dataset instances](#term) represent the invoice issuer's [invoice reconciliation](#term) process.
   * InvoiceDetail documentation MUST be freely accessible to FOCUS consumers.
 
 ## Dataset ID<!--SkipTOC-->
@@ -96,7 +96,7 @@ Invoice Detail
 
 ## Description<!--SkipTOC-->
 
-The financial record of *charges* as they appear on invoices provided by an invoice issuer.
+The financial record of [charges](#term) as they appear on invoices provided by an invoice issuer.
 
 ## Version Introduced<!--SkipTOC-->
 

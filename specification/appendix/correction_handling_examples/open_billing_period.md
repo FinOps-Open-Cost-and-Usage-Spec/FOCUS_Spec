@@ -1,8 +1,12 @@
+---
+dataset: CostAndUsage
+---
+
 # Corrections to Open Billing Period
 
-The following examples illustrate how corrections to open billing periods, including both current and previous open periods, may be represented in FOCUS Cost and Usage datasets, using various delivery mechanisms and correction styles.
+The following examples illustrate how corrections to open billing periods, including both current and previous open periods, may be represented in FOCUS [Cost and Usage](#ds) datasets, using various delivery mechanisms and correction styles.
 
-> **Note:** Corrections in this section apply to billing periods that are still open, whether current (Current Open-Period Correction Scenarios) or previous (Previous Open-Period Correction Scenarios). In the examples that follow, the InvoiceId column contains a provisional or placeholder value, even though the invoice has not yet been issued.
+> **Note:** Corrections in this section apply to billing periods that are still open, whether current (Current Open-Period Correction Scenarios) or previous (Previous Open-Period Correction Scenarios). In the examples that follow, the [InvoiceId](#col) column contains a provisional or placeholder value, even though the invoice has not yet been issued.
 
 ## Current Open-Period Correction Scenarios
 
@@ -10,7 +14,7 @@ These scenarios address discrepancies related to charges from the July 2025 bill
 
 ### Billing Period Alignment
 
-Since the billing period is still open and invoices have not yet been issued, corrections can be applied without introducing retroactive semantics. The ChargeClass is set to null, and the BillingPeriodStart/End reflect the billing period in which the cost or usage was actually incurred (July).
+Since the billing period is still open and invoices have not yet been issued, corrections can be applied without introducing retroactive semantics. The [ChargeClass](#col) is set to null, and the [BillingPeriodStart](#col)/End reflect the billing period in which the cost or usage was actually incurred (July).
 
 ### Correction Style
 
@@ -18,7 +22,7 @@ CrestNode delivers corrections using Replacement, Delta, and Ledger styles, each
 
 ### Scenario 1: Current Open-Period Correction - Partial Reallocation to Correct Resource
 
-On July 5th, 2025, CrestNode identified that a charge record for the current billing period (July 2025) was incorrectly attributed entirely to ResourceId `R-111`. In reality, only part of the cost and usage belonged to that resource, while the remainder pertained to ResourceId `R-222`.
+On July 5th, 2025, CrestNode identified that a charge record for the current billing period (July 2025) was incorrectly attributed entirely to [ResourceId](#col) `R-111`. In reality, only part of the cost and usage belonged to that resource, while the remainder pertained to [ResourceId](#col) `R-222`.
 
 Since the billing period was still open and invoices had not yet been issued, the correction was applied within the same billing period, allowing for more flexible correction mechanisms. To correct the misattribution, CrestNode had the option to use any of the following approaches:
 
@@ -37,7 +41,7 @@ Note the following details in the example datasets:
 
 * The correction is modeled using either Overwrite or Append mechanisms, as the billing period is still open and invoice has not yet been issued.
 * Original Dataset includes:
-  * A charge record attributed entirely to ResourceId `R-111`.
+  * A charge record attributed entirely to [ResourceId](#col) `R-111`.
 * Replacement style correction includes:
   * A replacement of the original record to reflect the corrected portion for `R-111`.
   * An additional record for `R-222` to account for the remaining portion of the cost and usage.
@@ -48,12 +52,12 @@ Note the following details in the example datasets:
   * A reversal record for the original charge.
   * A corrected record for `R-111`.
   * A corrected record for `R-222`.
-* Each correction record has ChargeClass set to null, indicating that it pertains to an open billing period and is not a retroactive correction to a previously closed billing period.
+* Each correction record has [ChargeClass](#col) set to null, indicating that it pertains to an open billing period and is not a retroactive correction to a previously closed billing period.
 * Each correction record is assigned to the current billing period (July 2025).
 
 ### Scenario 2: Current Open-Period Correction - Late-Arriving Usage
 
-On July 5th, 2025, CrestNode identified a cost incurred during the current billing period (ChargePeriodStart: `2025-07-01`) that was not included in the initial dataset.
+On July 5th, 2025, CrestNode identified a cost incurred during the current billing period ([ChargePeriodStart](#col): `2025-07-01`) that was not included in the initial dataset.
 
 Since the billing period was still open and invoices had not yet been issued, the correction was applied within the same billing period, allowing for more flexible correction mechanisms. To account for the previously omitted usage, CrestNode had the option to use either Overwrite or Append mechanisms, i.e.:
 
@@ -74,12 +78,12 @@ Note the following details in the example datasets:
 * The original dataset was incomplete and did not capture late-arriving usage and associated cost for July 2025.
 * The correction may be modeled using either Overwrite or Append mechanisms, as the billing period is still open.
 * All three correction styles (Replacement, Delta, and Ledger) introduce a single increment record representing the previously omitted usage and associated cost.
-* The correction record has ChargeClass set to null, indicating that it pertains to an open billing period and is not a retroactive correction to a previously closed billing period.
+* The correction record has [ChargeClass](#col) set to null, indicating that it pertains to an open billing period and is not a retroactive correction to a previously closed billing period.
 * The correction record is assigned to the current billing period (July 2025).
 
 ### Scenario 3: Current Open-Period Correction - Itemized Cost-Only Corrections
 
-On July 5th, 2025, CrestNode detected a minor cost discrepancy caused by accumulated rounding differences across multiple records spanning two distinct SkuPriceId values. While each individual record was correctly rounded, the aggregated cost differed slightly from the precise total, resulting in small drifts.
+On July 5th, 2025, CrestNode detected a minor cost discrepancy caused by accumulated rounding differences across multiple records spanning two distinct [SkuPriceId](#col) values. While each individual record was correctly rounded, the aggregated cost differed slightly from the precise total, resulting in small drifts.
 
 Since the billing period was still open and invoices had not yet been issued, the correction was applied within the same billing period, allowing for more flexible correction mechanisms. To reconcile this discrepancy, CrestNode had the option to use either Overwrite or Append mechanisms, i.e.:
 
@@ -87,7 +91,7 @@ Since the billing period was still open and invoices had not yet been issued, th
 * Delta style correction
 * Ledger style correction
 
-Regardless of the correction style used, the correction was realized by introducing two itemized increment records, each representing a cost-only adjustment for one of the affected SkuPriceId values. Unlike bulk corrections, which consolidate adjustments into a single record without specifying a SkuPriceId, this approach explicitly itemizes the correction per SkuPriceId. Because the original records were individually correct and no single record requires reversal, the Ledger style correction does not include explicit reversals. In this case, the Ledger and Delta corrections are identical, as only additive records are needed to reconcile the accumulated drift.
+Regardless of the correction style used, the correction was realized by introducing two itemized increment records, each representing a cost-only adjustment for one of the affected [SkuPriceId](#col) values. Unlike bulk corrections, which consolidate adjustments into a single record without specifying a [SkuPriceId](#col), this approach explicitly itemizes the correction per [SkuPriceId](#col). Because the original records were individually correct and no single record requires reversal, the Ledger style correction does not include explicit reversals. In this case, the Ledger and Delta corrections are identical, as only additive records are needed to reconcile the accumulated drift.
 
 Compared to the bulk correction approach, this method ensures transparency and traceability and is preferred when itemized correction is feasible.
 
@@ -100,17 +104,17 @@ CSV Examples:
 
 Note the following details in the example datasets:
 
-* The original dataset was complete in terms of usage, but a minor cost discrepancy was identified due to accumulated rounding drift across multiple records spanning two SkuPriceId values.
+* The original dataset was complete in terms of usage, but a minor cost discrepancy was identified due to accumulated rounding drift across multiple records spanning two [SkuPriceId](#col) values.
 * The correction may be modeled using either Overwrite or Append mechanisms, as the billing period is still open.
 * All three correction styles (Replacement, Delta, and Ledger) introduce two itemized increment records representing cost-only adjustments.
-* Each correction record explicitly references the affected SkuPriceId.
-* Each correction record has ChargeClass set to null, indicating that it pertains to an open billing period and is not a retroactive correction to a previously closed billing period.
-* Each correction record has ChargeCategory set to "Adjustment", which is the only valid value when both PricingQuantity and ChargeClass are null, due to the normative requirement that PricingQuantity must not be null when ChargeCategory is "Usage" or "Purchase" and ChargeClass is not "Correction".
+* Each correction record explicitly references the affected [SkuPriceId](#col).
+* Each correction record has [ChargeClass](#col) set to null, indicating that it pertains to an open billing period and is not a retroactive correction to a previously closed billing period.
+* Each correction record has [ChargeCategory](#col) set to "Adjustment", which is the only valid value when both [PricingQuantity](#col) and [ChargeClass](#col) are null, due to the normative requirement that [PricingQuantity](#col) must not be null when [ChargeCategory](#col) is ["Usage"](#val:CostAndUsage.ChargeCategory) or "Purchase" and [ChargeClass](#col) is not ["Correction"](#val:CostAndUsage.ChargeClass).
 * Each correction record is assigned to the current billing period (July 2025).
 
 ### Scenario 4: Current Open-Period Correction - Bulk Cost-Only Corrections
 
-On July 5th, 2025, CrestNode detected a minor cost discrepancy caused by accumulated rounding differences across multiple records spanning two distinct SkuPriceId values. While each individual record was correctly rounded, the aggregated cost differed slightly from the precise total, resulting in small drifts.
+On July 5th, 2025, CrestNode detected a minor cost discrepancy caused by accumulated rounding differences across multiple records spanning two distinct [SkuPriceId](#col) values. While each individual record was correctly rounded, the aggregated cost differed slightly from the precise total, resulting in small drifts.
 
 Since the billing period was still open and invoices had not yet been issued, the correction was applied within the same billing period, allowing for more flexible correction mechanisms. To reconcile this discrepancy, CrestNode had the option to use either Overwrite or Append mechanisms, i.e.:
 
@@ -118,7 +122,7 @@ Since the billing period was still open and invoices had not yet been issued, th
 * Delta style correction
 * Ledger style correction
 
-Regardless of the correction style used, the correction was realized by introducing a single increment record representing the bulk cost-only adjustment. Unlike itemized corrections, this record did not specify a SkuPriceId, as the discrepancy spanned multiple SKU Price IDs. Because the original records were individually correct and no single record requires reversal, the Ledger style correction does not include explicit reversals. In this case, the Ledger and Delta corrections are identical, as only additive records are needed to reconcile the accumulated drift.
+Regardless of the correction style used, the correction was realized by introducing a single increment record representing the bulk cost-only adjustment. Unlike itemized corrections, this record did not specify a [SkuPriceId](#col), as the discrepancy spanned multiple SKU Price IDs. Because the original records were individually correct and no single record requires reversal, the Ledger style correction does not include explicit reversals. In this case, the Ledger and Delta corrections are identical, as only additive records are needed to reconcile the accumulated drift.
 
 Compared to the itemized correction approach, this method sacrifices transparency and traceability, but is suitable when itemized correction is not feasible.
 
@@ -131,12 +135,12 @@ CSV Examples:
 
 Note the following details in the example datasets:
 
-* The original dataset was complete in terms of usage, but a minor cost discrepancy was identified due to accumulated rounding drift across multiple records spanning two SkuPriceId values.
+* The original dataset was complete in terms of usage, but a minor cost discrepancy was identified due to accumulated rounding drift across multiple records spanning two [SkuPriceId](#col) values.
 * The correction may be modeled using either Overwrite or Append mechanisms, as the billing period is still open.
 * All three correction styles (Replacement, Delta, and Ledger) introduce a single increment record representing the bulk cost-only adjustment to reconcile the total drift.
-* The correction record does not specify a SkuPriceId, as it spans multiple SKU Price IDs.
-* The correction record has ChargeClass set to null, indicating that it pertains to an open billing period and is not a retroactive correction to a previously closed billing period.
-* The correction record has ChargeCategory set to "Adjustment", which is the only valid value when both PricingQuantity and ChargeClass are null, due to the normative requirement that PricingQuantity must not be null when ChargeCategory is "Usage" or "Purchase" and ChargeClass is not "Correction".
+* The correction record does not specify a [SkuPriceId](#col), as it spans multiple SKU Price IDs.
+* The correction record has [ChargeClass](#col) set to null, indicating that it pertains to an open billing period and is not a retroactive correction to a previously closed billing period.
+* The correction record has [ChargeCategory](#col) set to "Adjustment", which is the only valid value when both [PricingQuantity](#col) and [ChargeClass](#col) are null, due to the normative requirement that [PricingQuantity](#col) must not be null when [ChargeCategory](#col) is ["Usage"](#val:CostAndUsage.ChargeCategory) or "Purchase" and [ChargeClass](#col) is not ["Correction"](#val:CostAndUsage.ChargeClass).
 * The correction record is assigned to the current billing period (July 2025).
 
 ## Previous Open-Period Correction Scenarios
@@ -145,11 +149,11 @@ These scenarios address discrepancies related to charges from the June 2025 bill
 
 ### Billing Period Alignment
 
-Although applied after the period had ended, these corrections do not introduce retroactive semantics, as the billing period was still open and invoices had not yet been issued when the corrections were applied. The ChargeClass is set to null, and the BillingPeriodStart/End reflect the billing period in which the cost or usage was originally incurred (June).
+Although applied after the period had ended, these corrections do not introduce retroactive semantics, as the billing period was still open and invoices had not yet been issued when the corrections were applied. The [ChargeClass](#col) is set to null, and the [BillingPeriodStart](#col)/End reflect the billing period in which the cost or usage was originally incurred (June).
 
 ### Correction Style
 
-CrestNode (acting as both the data generator and [*invoice issuer*](#glossary:invoice-issuer)) delivers corrections using Replacement, Delta, and Ledger correction styles, offering varying levels of traceability and auditability.
+CrestNode (acting as both the data generator and [invoice issuer](#term)) delivers corrections using Replacement, Delta, and Ledger correction styles, offering varying levels of traceability and auditability.
 
 ### Scenario 1: Previous Open-Period Correction - Partial Reallocation to Correct Resource
 

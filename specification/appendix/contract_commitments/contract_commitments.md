@@ -2,7 +2,7 @@
 
 ## Overview
 
-The **Contract Commitment** dataset provides a structured representation of the commercial agreements between a customer and their service providers. While the [Cost and Usage](#datamodel.costandusage) dataset tracks the results of consumption, the Contract Commitment dataset tracks the intent and constraints of the relationship.
+The **Contract Commitment** dataset provides a structured representation of the commercial agreements between a customer and their service providers. While the [Cost and Usage](#ds) dataset tracks the results of consumption, the Contract Commitment dataset tracks the intent and constraints of the relationship.
 
 ### Core Logical Pillars
 

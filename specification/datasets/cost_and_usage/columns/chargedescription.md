@@ -1,15 +1,15 @@
 # Charge Description
 
-A Charge Description provides a high-level context of a [*row*](#glossary:row) without requiring additional discovery. This column is a self-contained summary of the [*charge's*](#glossary:charge) purpose and price. It typically covers a select group of corresponding details across a billing dataset or provides information not otherwise available.
+A [Charge Description](#col) provides a high-level context of a [row](#term) without requiring additional discovery. This column is a self-contained summary of the [charge's](#term:charge) purpose and price. It typically covers a select group of corresponding details across a billing dataset or provides information not otherwise available.
 
 ## Requirements
 
-ChargeDescription MUST adhere to the following requirements:
+[ChargeDescription](#col) MUST adhere to the following requirements:
 
-* ChargeDescription MUST be of type String.
-* ChargeDescription MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* ChargeDescription SHOULD NOT be null.
-* ChargeDescription maximum length SHOULD be provided in the corresponding FOCUS Metadata Schema.
+* [ChargeDescription](#col) MUST be of type String.
+* [ChargeDescription](#col) MUST conform to [StringHandling](#attr) requirements.
+* [ChargeDescription](#col) SHOULD NOT be null.
+* [ChargeDescription](#col) maximum length SHOULD be provided in the corresponding FOCUS Metadata Schema.
 
 ## Column ID
 
@@ -27,7 +27,7 @@ Self-contained summary of the *charge's* purpose and price.
 
 | Constraint                 | Value                                     |
 | :------------------------- | :---------------------------------------- |
-| Dataset                    | [Cost and Usage](#datamodel.costandusage) |
+| Dataset                    | [Cost and Usage](#ds)                     |
 | Operating model conditions | Not applicable                            |
 | Column type                | Dimension                                 |
 | Feature level              | Mandatory                                 |

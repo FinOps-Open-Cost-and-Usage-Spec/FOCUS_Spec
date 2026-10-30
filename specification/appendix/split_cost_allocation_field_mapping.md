@@ -1,22 +1,26 @@
+---
+dataset: CostAndUsage
+---
+
 # Examples: Split Cost Allocation Field Mapping
 
-[DataGeneratorCalculatedSplitCostAllocationHandling](#attributes.datagenerator-calculatedsplitcostallocationhandling)  defines the requirements for split cost allocation, but does not show how a data generator gets there from its own [*native dataset*](#glossary:native-dataset). This is a non-obvious step for data generators whose native dataset artifact uses a column-augmentation format — a single row carrying per-consumer allocation detail in extension columns, rather than a separate row per consumer. Without a worked example, data generators using this format have had to reverse-engineer the transformation independently. This section closes that gap with a worked example showing how such a native dataset artifact transforms into FOCUS [*allocated charge*](#glossary:allocated-charge) rows. It shows the resulting [*origin charge*](#glossary:origin-charge) and *allocated charge* rows, including the [Allocated*](#datamodel.costandusage) columns used in this scenario, and verifies that summable metrics reconcile across the split.
+[DataGeneratorCalculatedSplitCostAllocationHandling](#attr)  defines the requirements for split cost allocation, but does not show how a data generator gets there from its own [native dataset](#term). This is a non-obvious step for data generators whose native dataset artifact uses a column-augmentation format — a single row carrying per-consumer allocation detail in extension columns, rather than a separate row per consumer. Without a worked example, data generators using this format have had to reverse-engineer the transformation independently. This section closes that gap with a worked example showing how such a native dataset artifact transforms into FOCUS [allocated charge](#term) rows. It shows the resulting [origin charge](#term) and [allocated charge](#term) rows, including the [Allocated*](#ds:CostAndUsage) columns used in this scenario, and verifies that summable metrics reconcile across the split.
 
-Data generators that produce FOCUS data from a column-augmentation allocation format should read this section alongside DataGeneratorCalculatedSplitCostAllocationHandling requirements and the worked example in [Examples: Data Generator-Calculated Split Cost Allocation](#appendix.examples:datagenerator-calculatedsplitcostallocation).
+Data generators that produce FOCUS data from a column-augmentation allocation format should read this section alongside [DataGeneratorCalculatedSplitCostAllocationHandling](#attr) requirements and the worked example in [Examples: Data Generator-Calculated Split Cost Allocation](#appendix.examples:datagenerator-calculatedsplitcostallocation).
 
 ## Scenario
 
-Acme Corp runs a shared Aura Web container host (`host-aura-prod-07`) — a single compute instance that provides capacity for multiple application workloads. For the charge period 2026-06-01 to 2026-06-02, the instance runs three consuming workloads. Each consuming workload becomes an allocated resource in the FOCUS dataset artifact, identified by AllocatedResourceId and AllocatedResourceName; its service is identified by AllocatedServiceName. Aura Web's native dataset artifact uses a column-augmentation format: the full instance charge appears on a single row, with per-consumer allocation detail — consumer identifiers, service names, allocation ratios, and measured utilization — expressed as extension columns on that same row. In this example, the data generator splits this into four rows — one *origin charge* row and one *allocated charge* row per consumer — with summable metrics distributed proportionally and all dimension columns preserved.
+Acme Corp runs a shared Aura Web container host (`host-aura-prod-07`) — a single compute instance that provides capacity for multiple application workloads. For the charge period 2026-06-01 to 2026-06-02, the instance runs three consuming workloads. Each consuming workload becomes an allocated resource in the FOCUS dataset artifact, identified by [AllocatedResourceId](#col) and [AllocatedResourceName](#col); its service is identified by [AllocatedServiceName](#col). Aura Web's native dataset artifact uses a column-augmentation format: the full instance charge appears on a single row, with per-consumer allocation detail — consumer identifiers, service names, allocation ratios, and measured utilization — expressed as extension columns on that same row. In this example, the data generator splits this into four rows — one [origin charge](#term) row and one [allocated charge](#term) row per consumer — with summable metrics distributed proportionally and all dimension columns preserved.
 
 The origin charge for the period is:
 
 * Resource: `host-aura-prod-07` (a compute instance)
 * Aura Web service: "Aura Compute Engine" (fictitious equivalent: Amazon EC2)
-* EffectiveCost: $240.00 (full 24-hour period at $10.00/hr, reflecting the Resource Reservation commitment discount)
-* BilledCost: $0.00
-* ConsumedQuantity: 24 instance-hours
-* ListUnitPrice: $12.00 per instance-hour
-* ContractedUnitPrice: $12.00 per instance-hour (defaults to List Unit Price — Resource Reservation is a commitment discount, which does not affect ContractedUnitPrice)
+* [EffectiveCost](#col): $240.00 (full 24-hour period at $10.00/hr, reflecting the Resource Reservation commitment discount)
+* [BilledCost](#col): $0.00
+* [ConsumedQuantity](#col): 24 instance-hours
+* [ListUnitPrice](#col): $12.00 per instance-hour
+* [ContractedUnitPrice](#col): $12.00 per instance-hour (defaults to List Unit Price — Resource Reservation is a commitment discount, which does not affect [ContractedUnitPrice](#col))
 
 The three consuming workloads and their measured allocation ratios for the period are:
 
@@ -28,23 +32,23 @@ The three consuming workloads and their measured allocation ratios for the perio
 
 ## FOCUS Output: Four-Row Transformation
 
-The data generator emits four records in the FOCUS dataset artifact for this charge period. The column-augmentation structure (all consumers on one record in the native dataset artifact) is dissolved: each consumer becomes a separate *allocated charge* row, and the origin row carries the preserved instance dimensions with all summable metrics zeroed. Retaining a zeroed origin row is the representation chosen for this example; DataGeneratorCalculatedSplitCostAllocationHandling requires only that summable metrics across the *allocated charges* reconcile to the origin total, not that the origin row be retained, omitted, or zeroed in any particular way. The row tables below show the columns that participate in the split transformation rather than the complete set of columns each row carries.
+The data generator emits four records in the FOCUS dataset artifact for this charge period. The column-augmentation structure (all consumers on one record in the native dataset artifact) is dissolved: each consumer becomes a separate [allocated charge](#term) row, and the origin row carries the preserved instance dimensions with all summable metrics zeroed. Retaining a zeroed origin row is the representation chosen for this example; [DataGeneratorCalculatedSplitCostAllocationHandling](#attr) requires only that summable metrics across the [allocated charges](#term) reconcile to the origin total, not that the origin row be retained, omitted, or zeroed in any particular way. The row tables below show the columns that participate in the split transformation rather than the complete set of columns each row carries.
 
 ### Column Interactions
 
-* **ResourceId, ResourceName, ServiceName, ServiceCategory**: preserved unchanged from the native dataset artifact on every output row — origin and all *allocated charges* — since these dimensions describe the shared instance, not the individual consumer.
-* **ServiceProviderName**: set to the identity of the provider that produced the native dataset artifact (e.g., "Aura Web") on every output row.
-* **ListUnitPrice, ContractedUnitPrice**: preserved unchanged on every output row (non-summable metrics are preserved per DataGeneratorCalculatedSplitCostAllocationHandling). ContractedUnitPrice defaults to ListUnitPrice here because Resource Reservation is a commitment discount, not a negotiated discount, so it does not reduce ContractedUnitPrice.
-* **ListCost, ContractedCost, EffectiveCost, ConsumedQuantity**: zeroed on the origin row; distributed across the three *allocated charge* rows in proportion to each consumer's allocation ratio. The sum across all four rows equals the pre-split origin total for each metric.
-* **BilledCost**: `$0.00` on all four rows. The origin charge is fully covered by the Resource Reservation's purchase charge (not shown in this example), and each *allocated charge* inherits that covered status since it represents a portion of the same covered usage.
-* **ConsumedUnit**: `"Hours"` on every row, since ConsumedQuantity (including the origin row's zeroed value) is populated on all four rows.
-* **AllocatedResourceId, AllocatedResourceName, AllocatedServiceName**: null on the origin row, since no *allocation* was made *to* the origin row itself; populated with each allocated resource's identifier, display name, and allocated service on the corresponding *allocated charge* row.
-* **AllocatedMethodId**: set to the allocation method identifier on every row, including the origin row — the origin row is *related to* the data generator-calculated split cost allocation even though it is not itself an *allocated charge*.
-* **AllocatedMethodDetails**: null on the origin row, since there is no allocated portion to describe there; on each *allocated charge* row, it carries that allocated resource's allocation ratio and measured utilization.
-* **ChargeCategory**: `"Usage"` on all rows.
-* **PricingCategory**: `"Committed"` on every output row, since ChargeCategory is `"Usage"` on all rows and the usage is subject to the Resource Reservation commitment discount.
-* **CommitmentDiscountId**: set to the Resource Reservation's identifier on every output row, since all four rows are related to the same commitment discount.
-* **CommitmentDiscountStatus**: `"Used"` on every output row, since CommitmentDiscountId is populated and ChargeCategory is `"Usage"` on all rows.
+* **[ResourceId](#col), [ResourceName](#col), [ServiceName](#col), [ServiceCategory](#col)**: preserved unchanged from the native dataset artifact on every output row — origin and all [allocated charges](#term) — since these dimensions describe the shared instance, not the individual consumer.
+* **[ServiceProviderName](#col)**: set to the identity of the provider that produced the native dataset artifact (e.g., "Aura Web") on every output row.
+* **[ListUnitPrice](#col), [ContractedUnitPrice](#col)**: preserved unchanged on every output row (non-summable metrics are preserved per [DataGeneratorCalculatedSplitCostAllocationHandling](#attr)). [ContractedUnitPrice](#col) defaults to [ListUnitPrice](#col) here because Resource Reservation is a commitment discount, not a negotiated discount, so it does not reduce [ContractedUnitPrice](#col).
+* **[ListCost](#col), [ContractedCost](#col), [EffectiveCost](#col), [ConsumedQuantity](#col)**: zeroed on the origin row; distributed across the three [allocated charge](#term) rows in proportion to each consumer's allocation ratio. The sum across all four rows equals the pre-split origin total for each metric.
+* **[BilledCost](#col)**: `$0.00` on all four rows. The origin charge is fully covered by the Resource Reservation's purchase charge (not shown in this example), and each [allocated charge](#term) inherits that covered status since it represents a portion of the same covered usage.
+* **[ConsumedUnit](#col)**: `"Hours"` on every row, since [ConsumedQuantity](#col) (including the origin row's zeroed value) is populated on all four rows.
+* **[AllocatedResourceId](#col), [AllocatedResourceName](#col), [AllocatedServiceName](#col)**: null on the origin row, since no *allocation* was made *to* the origin row itself; populated with each allocated resource's identifier, display name, and allocated service on the corresponding [allocated charge](#term) row.
+* **[AllocatedMethodId](#col)**: set to the allocation method identifier on every row, including the origin row — the origin row is *related to* the data generator-calculated split cost allocation even though it is not itself an [allocated charge](#term).
+* **[AllocatedMethodDetails](#col)**: null on the origin row, since there is no allocated portion to describe there; on each [allocated charge](#term) row, it carries that allocated resource's allocation ratio and measured utilization.
+* **[ChargeCategory](#col)**: `"Usage"` on all rows.
+* **[PricingCategory](#col)**: `"Committed"` on every output row, since [ChargeCategory](#col) is `"Usage"` on all rows and the usage is subject to the Resource Reservation commitment discount.
+* **[CommitmentDiscountId](#col)**: set to the Resource Reservation's identifier on every output row, since all four rows are related to the same commitment discount.
+* **[CommitmentDiscountStatus](#col)**: `"Used"` on every output row, since [CommitmentDiscountId](#col) is populated and [ChargeCategory](#col) is `"Usage"` on all rows.
 
 ### Origin Charge Row Details
 
@@ -174,6 +178,6 @@ The summable metrics across the four records in the FOCUS dataset artifact sum t
 | EffectiveCost   | $0.00      | $120.00 | $72.00 | $48.00 | $240.00  | $240.00 ✓        |
 | ConsumedQuantity | 0         | 12      | 7.2    | 4.8    | 24       | 24 ✓             |
 
-ListCost and ContractedCost are numerically identical in this scenario because ContractedUnitPrice defaults to ListUnitPrice: Resource Reservation is a commitment discount, and commitment discounts affect EffectiveCost (through amortization) but not ContractedUnitPrice, which excludes them by definition. BilledCost is $0.00 across all four rows because this usage is fully covered by the Resource Reservation's purchase charge — a [*covering charge*](#glossary:covering-charge) not itself shown in this example — leaving EffectiveCost as the only metric that reflects the $240.00 amortized cost of the reservation.
+[ListCost](#col) and [ContractedCost](#col) are numerically identical in this scenario because [ContractedUnitPrice](#col) defaults to [ListUnitPrice](#col): Resource Reservation is a commitment discount, and commitment discounts affect [EffectiveCost](#col) (through amortization) but not [ContractedUnitPrice](#col), which excludes them by definition. [BilledCost](#col) is $0.00 across all four rows because this usage is fully covered by the Resource Reservation's purchase charge — a [covering charge](#term) not itself shown in this example — leaving [EffectiveCost](#col) as the only metric that reflects the $240.00 amortized cost of the reservation.
 
-Non-summable metrics (ListUnitPrice `$12.00`, ContractedUnitPrice `$12.00`, ConsumedUnit `"Hours"`) are identical across all four rows.
+Non-summable metrics ([ListUnitPrice](#col) `$12.00`, [ContractedUnitPrice](#col) `$12.00`, [ConsumedUnit](#col) `"Hours"`) are identical across all four rows.

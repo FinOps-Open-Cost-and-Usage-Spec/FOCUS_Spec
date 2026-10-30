@@ -1,17 +1,17 @@
 # Contract ID
 
-Contract ID is a service-provider-assigned identifier for a contract describing the agreed terms between a service provider and a customer. Contracts can include commitment to a certain amount of spend or usage over an agreed period of time.
+[Contract ID](#col) is a service-provider-assigned identifier for a contract describing the agreed terms between a service provider and a customer. Contracts can include commitment to a certain amount of spend or usage over an agreed period of time.
 
 ## Requirements
 
-ContractId MUST adhere to the following requirements:
+[ContractId](#col) MUST adhere to the following requirements:
 
-* ContractId MUST be of type String.
-* ContractId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* ContractId MUST NOT be null.
-* When ContractId is not null, ContractId MUST adhere to the following requirements:
-  * ContractId MUST be a unique identifier within the service provider.
-  * ContractId SHOULD be a fully-qualified identifier.
+* [ContractId](#col) MUST be of type String.
+* [ContractId](#col) MUST conform to [StringHandling](#attr) requirements.
+* [ContractId](#col) MUST NOT be null.
+* When [ContractId](#col) is not null, [ContractId](#col) MUST adhere to the following requirements:
+  * [ContractId](#col) MUST be a unique identifier within the service provider.
+  * [ContractId](#col) SHOULD be a fully-qualified identifier.
 
 ## Column ID
 
@@ -29,7 +29,7 @@ A service-provider-assigned identifier for a contract describing the agreed term
 
 | Constraint                 | Value                                                |
 | :------------------------- | :--------------------------------------------------- |
-| Dataset                    | [Contract Commitment](#datamodel.contractcommitment) |
+| Dataset                    | [Contract Commitment](#ds)                           |
 | Operating model conditions | Not applicable                                       |
 | Column type                | Dimension                                            |
 | Feature level              | Mandatory                                            |

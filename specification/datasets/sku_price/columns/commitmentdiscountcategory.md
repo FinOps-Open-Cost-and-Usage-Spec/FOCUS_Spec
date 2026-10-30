@@ -1,16 +1,16 @@
 # Commitment Discount Category
 
-Commitment Discount Category indicates whether the [*commitment discount*](#glossary:commitment-discount) a [SKU Price](#datamodel.skuprice) record relates to is based on usage quantity or cost (aka "spend"). The CommitmentDiscountCategory column is only applicable to *commitment discounts* and not [*negotiated discounts*](#glossary:negotiated-discount).
+[Commitment Discount Category](#col) indicates whether the [commitment discount](#term) a [SKU Price](#ds) record relates to is based on usage quantity or cost (aka "spend"). The [CommitmentDiscountCategory](#col) column is only applicable to [commitment discounts](#term) and not [negotiated discounts](#term).
 
 ## Requirements
 
-CommitmentDiscountCategory MUST adhere to the following requirements:
+[CommitmentDiscountCategory](#col) MUST adhere to the following requirements:
 
-* CommitmentDiscountCategory MUST be of type String.
-* CommitmentDiscountCategory MUST adhere to the following nullability requirements:
-  * CommitmentDiscountCategory MUST be null when the SkuPrice record does not represent the purchase of a commitment discount or a usage rate that applies under a commitment discount.
-  * CommitmentDiscountCategory MUST NOT be null when the SkuPrice record represents the purchase of a commitment discount or a usage rate that applies under a commitment discount.
-* CommitmentDiscountCategory MUST be one of the allowed values.
+* [CommitmentDiscountCategory](#col) MUST be of type String.
+* [CommitmentDiscountCategory](#col) MUST adhere to the following nullability requirements:
+  * [CommitmentDiscountCategory](#col) MUST be null when the SkuPrice record does not represent the purchase of a commitment discount or a usage rate that applies under a commitment discount.
+  * [CommitmentDiscountCategory](#col) MUST NOT be null when the SkuPrice record represents the purchase of a commitment discount or a usage rate that applies under a commitment discount.
+* [CommitmentDiscountCategory](#col) MUST be one of the allowed values.
 
 ## Allowed Values
 
@@ -29,14 +29,14 @@ Commitment Discount Category
 
 ## Description
 
-Indicates whether the *commitment discount* a SKU Price record relates to is based on usage quantity or cost (aka "spend").
+Indicates whether the [commitment discount](#term) a SKU Price record relates to is based on usage quantity or cost (aka "spend").
 
 ## Content Constraints
 
 | Constraint                 | Value                                     |
 | :------------------------- | :---------------------------------------- |
-| Dataset                    | [SKU Price](#datamodel.skuprice) |
-| Operating Model Conditions | [Includes Commitment Discounts](#operatingmodelconditions.includescommitmentdiscounts) |
+| Dataset                    | [SKU Price](#ds)                 |
+| Operating Model Conditions | [Includes Commitment Discounts](#omc)                                                  |
 | Column type                | Dimension                                 |
 | Feature level              | Conditional                               |
 | Allows nulls               | True                                      |

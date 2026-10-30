@@ -1,10 +1,10 @@
 # Cost and Usage
 
-The Cost and Usage dataset is the primary dataset for FOCUS cost and usage data.
+The [Cost and Usage](#ds) dataset is the primary dataset for FOCUS cost and usage data.
 
-The specification for the Cost and Usage dataset defines a group of columns that provide qualitative values (such as dates, resource, and service provider information) categorized as "dimensions" and quantitative values (numeric values) categorized as "metrics" that can be used for performing various [FinOps capabilities][FODOFC]. Metrics are commonly used for aggregations (sum, multiplication, averaging etc.) and statistical operations within the dataset. Dimensions are commonly used to categorize, filter, and reveal details in your data when combined with metrics. The columns are presented in alphabetical order.
+The specification for the [Cost and Usage](#ds) dataset defines a group of columns that provide qualitative values (such as dates, resource, and service provider information) categorized as "dimensions" and quantitative values (numeric values) categorized as "metrics" that can be used for performing various [FinOps capabilities][FODOFC]. Metrics are commonly used for aggregations (sum, multiplication, averaging etc.) and statistical operations within the dataset. Dimensions are commonly used to categorize, filter, and reveal details in your data when combined with metrics. The columns are presented in alphabetical order.
 
-> **Note:** A Cost and Usage dataset may carry values that are classified as Personal Data or Personally Identifiable Information (PII) under privacy regulations such as GDPR or CCPA, including values that are pseudonymized rather than plain-text. Identity attributes, carried in columns such as [Requester Details](#datamodel.costandusage.requesterdetails), and customer-defined values, carried in columns such as [Tags](#datamodel.costandusage.tags), are the most common sources. Which of these values a dataset carries is a matter for the [*data generator*](#metadata.datagenerator) and the data consumer to settle between them. Organizations need to separately ensure that the ingestion, storage, and processing of a dataset comply with the privacy regulations applicable to them and with their internal data privacy, security, and retention policies. Cost and usage data is commonly retained for multi-year trend analysis, which extends the period over which those obligations apply.
+> **Note:** A [Cost and Usage](#ds) dataset may carry values that are classified as Personal Data or Personally Identifiable Information (PII) under privacy regulations such as GDPR or CCPA, including values that are pseudonymized rather than plain-text. Identity attributes, carried in columns such as [Requester Details](#col), and customer-defined values, carried in columns such as [Tags](#col), are the most common sources. Which of these values a dataset carries is a matter for the [*data generator*](#metadata.datagenerator) and the data consumer to settle between them. Organizations need to separately ensure that the ingestion, storage, and processing of a dataset comply with the privacy regulations applicable to them and with their internal data privacy, security, and retention policies. Cost and usage data is commonly retained for multi-year trend analysis, which extends the period over which those obligations apply.
 
 ## Columns<!--SkipTOC-->
 
@@ -82,9 +82,9 @@ The specification for the Cost and Usage dataset defines a group of columns that
 
 ## Relationships<!--SkipTOC-->
 
-The Cost and Usage dataset can be joined to the [Contract Commitment](#datamodel.contractcommitment) dataset through the use of the [Contract Commitment ID](#datamodel.contractcommitment.contractcommitmentid).
+The [Cost and Usage](#ds) dataset can be joined to the [Contract Commitment](#ds) dataset through the use of the [Contract Commitment ID](#col:ContractCommitment.ContractCommitmentId).
 
-* In the Cost and Usage dataset, Contract Commitment ID is a property within a JSON object array provided in Contract Applied column.
+* In the [Cost and Usage](#ds) dataset, Contract Commitment ID is a property within a JSON object array provided in [Contract Applied](#col) column.
 * In the Contract Commitment dataset, Contract Commitment ID is a column.
 
 | Dataset A           | Dataset A Column  | Dataset B           | Dataset B Column       |
@@ -96,107 +96,107 @@ The Cost and Usage dataset can be joined to the [Contract Commitment](#datamodel
 CostAndUsage MUST adhere to the following requirements:
 
 * CostAndUsage column presence MUST adhere to the following requirements:
-  * CostAndUsage SHOULD include [AllocatedMethodDetails](#datamodel.costandusage.allocatedmethoddetails) when the [*operating model*](#glossary:operating-model) [includes split cost allocation](#operatingmodelconditions.includessplitcostallocation).
-  * CostAndUsage MUST include [AllocatedMethodId](#datamodel.costandusage.allocatedmethodid) when the *operating model* includes split cost allocation.
-  * CostAndUsage MUST include [AllocatedResourceId](#datamodel.costandusage.allocatedresourceid) when the *operating model* includes split cost allocation.
-  * CostAndUsage MUST include [AllocatedResourceName](#datamodel.costandusage.allocatedresourcename) when the *operating model* includes split cost allocation.
-  * CostAndUsage MUST include [AllocatedServiceName](#datamodel.costandusage.allocatedservicename) when the *operating model* includes split cost allocation.
-  * CostAndUsage MUST include [AllocatedTags](#datamodel.costandusage.allocatedtags) when the *operating model* includes split cost allocation.
-  * CostAndUsage SHOULD include [AvailabilityZone](#datamodel.costandusage.availabilityzone) when the *operating model* [includes availability zones](#operatingmodelconditions.includesavailabilityzones).
-  * CostAndUsage MUST include [BilledCost](#datamodel.costandusage.billedcost).
-  * CostAndUsage MUST include [BillingAccountId](#datamodel.costandusage.billingaccountid).
-  * CostAndUsage MUST include [BillingAccountName](#datamodel.costandusage.billingaccountname).
-  * CostAndUsage MUST include [BillingAccountType](#datamodel.costandusage.billingaccounttype) when the *operating model* [includes multiple billing account types](#operatingmodelconditions.includesmultiplebillingaccounttypes).
-  * CostAndUsage MUST include [BillingCurrency](#datamodel.costandusage.billingcurrency).
-  * CostAndUsage MUST include [BillingPeriodEnd](#datamodel.costandusage.billingperiodend).
-  * CostAndUsage MUST include [BillingPeriodStart](#datamodel.costandusage.billingperiodstart).
-  * CostAndUsage MUST include [CapacityReservationId](#datamodel.costandusage.capacityreservationid) when the *operating model* [includes capacity reservations](#operatingmodelconditions.includescapacityreservations).
-  * CostAndUsage MUST include [CapacityReservationStatus](#datamodel.costandusage.capacityreservationstatus) when the *operating model* includes capacity reservations.
-  * CostAndUsage MUST include [ChargeCategory](#datamodel.costandusage.chargecategory).
-  * CostAndUsage MUST include [ChargeClass](#datamodel.costandusage.chargeclass).
-  * CostAndUsage MUST include [ChargeDescription](#datamodel.costandusage.chargedescription).
-  * CostAndUsage SHOULD include [ChargeFrequency](#datamodel.costandusage.chargefrequency).
-  * CostAndUsage MUST include [ChargePeriodEnd](#datamodel.costandusage.chargeperiodend).
-  * CostAndUsage MUST include [ChargePeriodStart](#datamodel.costandusage.chargeperiodstart).
-  * CostAndUsage MUST include [CommitmentDiscountCategory](#datamodel.costandusage.commitmentdiscountcategory) when the *operating model* [includes commitment discounts](#operatingmodelconditions.includescommitmentdiscounts).
-  * CostAndUsage MUST include [CommitmentDiscountId](#datamodel.costandusage.commitmentdiscountid) when the *operating model* includes commitment discounts.
-  * CostAndUsage MUST include [CommitmentDiscountName](#datamodel.costandusage.commitmentdiscountname) when the *operating model* includes commitment discounts.
-  * CostAndUsage MUST include [CommitmentDiscountQuantity](#datamodel.costandusage.commitmentdiscountquantity) when the *operating model* includes commitment discounts.
-  * CostAndUsage MUST include [CommitmentDiscountStatus](#datamodel.costandusage.commitmentdiscountstatus) when the *operating model* includes commitment discounts.
-  * CostAndUsage MUST include [CommitmentDiscountType](#datamodel.costandusage.commitmentdiscounttype) when the *operating model* includes commitment discounts.
-  * CostAndUsage MUST include [CommitmentDiscountUnit](#datamodel.costandusage.commitmentdiscountunit) when the *operating model* includes commitment discounts.
-  * CostAndUsage MUST include [CommitmentProgramEligibilityDetails](#datamodel.costandusage.commitmentprogrameligibilitydetails) when the *operating model* [includes commitment programs](#operatingmodelconditions.includescommitmentprograms).
-  * CostAndUsage MUST include [ConsumedQuantity](#datamodel.costandusage.consumedquantity) when the *operating model* [includes usage measurement](#operatingmodelconditions.includesusagemeasurement).
-  * CostAndUsage MUST include [ConsumedUnit](#datamodel.costandusage.consumedunit) when the *operating model* includes usage measurement.
-  * CostAndUsage MUST include [ContractApplied](#datamodel.costandusage.contractapplied) when the *operating model* [includes contract commitments](#operatingmodelconditions.includescontractcommitments).
-  * CostAndUsage MUST include [ContractedCost](#datamodel.costandusage.contractedcost).
-  * CostAndUsage MUST include [ContractedUnitPrice](#datamodel.costandusage.contractedunitprice) when the *operating model* [includes unit pricing](#operatingmodelconditions.includesunitpricing).
-  * CostAndUsage MUST include [CredentialId](#datamodel.costandusage.credentialid) when the *operating model* [includes requester attribution](#operatingmodelconditions.includesrequesterattribution).
-  * CostAndUsage MUST include [EffectiveCost](#datamodel.costandusage.effectivecost).
-  * CostAndUsage MUST include [HostProviderName](#datamodel.costandusage.hostprovidername).
-  * CostAndUsage MUST include [InvoiceDetailId](#datamodel.costandusage.invoicedetailid) when the *operating model* [includes payable invoices](#operatingmodelconditions.includespayableinvoices).
-  * CostAndUsage MUST include [InvoiceId](#datamodel.costandusage.invoiceid) when the *operating model* includes payable invoices.
-  * CostAndUsage MUST include [InvoiceIssuerName](#datamodel.costandusage.invoiceissuername).
-  * CostAndUsage MUST include [ListCost](#datamodel.costandusage.listcost).
-  * CostAndUsage MUST include [ListUnitPrice](#datamodel.costandusage.listunitprice) when the *operating model* includes unit pricing.
-  * CostAndUsage MUST include [PricingCategory](#datamodel.costandusage.pricingcategory) when the *operating model* [includes multiple pricing categories](#operatingmodelconditions.includesmultiplepricingcategories).
-  * CostAndUsage MUST include [PricingCurrency](#datamodel.costandusage.pricingcurrency) when the *operating model* [includes pricing and billing currency differences](#operatingmodelconditions.includespricing-billingcurrencydifferences).
-  * CostAndUsage MUST adhere to the following [PricingCurrencyContractedUnitPrice](#datamodel.costandusage.pricingcurrencycontractedunitprice) requirements:
-    * CostAndUsage MUST include PricingCurrencyContractedUnitPrice when the *operating model* [includes consumption currency](#operatingmodelconditions.includesconsumptioncurrency) and includes unit pricing.
-    * CostAndUsage SHOULD include PricingCurrencyContractedUnitPrice when the *operating model* includes pricing and billing currency differences and includes unit pricing.
-    * CostAndUsage MAY include PricingCurrencyContractedUnitPrice in all other cases.
-  * CostAndUsage MUST adhere to the following [PricingCurrencyEffectiveCost](#datamodel.costandusage.pricingcurrencyeffectivecost) requirements:
-    * CostAndUsage MUST include PricingCurrencyEffectiveCost when the *operating model* includes consumption currency.
-    * CostAndUsage SHOULD include PricingCurrencyEffectiveCost when the *operating model* includes pricing and billing currency differences.
-    * CostAndUsage MAY include PricingCurrencyEffectiveCost in all other cases.
-  * CostAndUsage MUST adhere to the following [PricingCurrencyListUnitPrice](#datamodel.costandusage.pricingcurrencylistunitprice) requirements:
-    * CostAndUsage MUST include PricingCurrencyListUnitPrice when the *operating model* includes consumption currency and includes unit pricing.
-    * CostAndUsage SHOULD include PricingCurrencyListUnitPrice when the *operating model* includes pricing and billing currency differences and includes unit pricing.
-    * CostAndUsage MAY include PricingCurrencyListUnitPrice in all other cases.
-  * CostAndUsage MUST include [PricingQuantity](#datamodel.costandusage.pricingquantity).
-  * CostAndUsage MUST include [PricingUnit](#datamodel.costandusage.pricingunit).
-  * CostAndUsage MUST include [PrincipalId](#datamodel.costandusage.principalid) when the *operating model* includes requester attribution.
-  * CostAndUsage MUST include [RegionId](#datamodel.costandusage.regionid) when the *operating model* [includes regions](#operatingmodelconditions.includesregions).
-  * CostAndUsage MUST include [RegionName](#datamodel.costandusage.regionname) when the *operating model* includes regions.
-  * CostAndUsage MUST include [RequesterDetails](#datamodel.costandusage.requesterdetails) when the *operating model* includes requester attribution.
-  * CostAndUsage MUST include [ResourceId](#datamodel.costandusage.resourceid) when the *operating model* [includes provisioned resources](#operatingmodelconditions.includesprovisionedresources).
-  * CostAndUsage MUST include [ResourceName](#datamodel.costandusage.resourcename) when the *operating model* includes provisioned resources.
-  * CostAndUsage MUST include [ResourceType](#datamodel.costandusage.resourcetype) when the *operating model* includes provisioned resources and [includes resource type assignment](#operatingmodelconditions.includesresourcetypeassignment).
-  * CostAndUsage MUST include [ServiceCategory](#datamodel.costandusage.servicecategory).
-  * CostAndUsage MUST include [ServiceName](#datamodel.costandusage.servicename).
-  * CostAndUsage MUST include [ServiceProviderName](#datamodel.costandusage.serviceprovidername).
-  * CostAndUsage SHOULD include [ServiceSubcategory](#datamodel.costandusage.servicesubcategory).
-  * CostAndUsage MUST include [SkuId](#datamodel.costandusage.skuid) when the *operating model* includes unit pricing.
-  * CostAndUsage MUST include [SkuMeter](#datamodel.costandusage.skumeter) when the *operating model* includes unit pricing.
-  * CostAndUsage MUST include [SkuPriceDetails](#datamodel.costandusage.skupricedetails) when the *operating model* includes unit pricing.
-  * CostAndUsage MUST include [SkuPriceId](#datamodel.costandusage.skupriceid) when the *operating model* includes unit pricing.
-  * CostAndUsage MUST include [SubAccountId](#datamodel.costandusage.subaccountid) when the *operating model* [includes sub accounts](#operatingmodelconditions.includessubaccounts).
-  * CostAndUsage MUST include [SubAccountName](#datamodel.costandusage.subaccountname) when the *operating model* includes sub accounts.
-  * CostAndUsage MUST include [SubAccountType](#datamodel.costandusage.subaccounttype) when the *operating model* [includes multiple sub account types](#operatingmodelconditions.includesmultiplesubaccounttypes).
-  * CostAndUsage MUST include [Tags](#datamodel.costandusage.tags) when the *operating model* [includes tags](#operatingmodelconditions.includestags).
-  * CostAndUsage SHOULD include [*custom columns*](#glossary:custom-column) needed to identify all applied discounts when [*FOCUS columns*](#glossary:FOCUS-column) are not sufficient.
-* CostAndUsage MUST conform to [CorrectionHandling](#attributes.correctionhandling) requirements.
-* CostAndUsage MUST conform to [DatasetCompleteness](#attributes.datasetcompleteness) requirements.
-* CostAndUsage MUST conform to [DatasetConfiguration](#attributes.datasetconfiguration) requirements.
-* CostAndUsage MUST conform to [DeliveryHandling](#attributes.deliveryhandling) requirements.
-* CostAndUsage MUST include [*charges*](#glossary:charge) representing unused portions of a [*commitment*](#glossary:commitment) when the *commitment* is not fully utilized.
-* CostAndUsage MUST include separate *charges* representing discounted and non-discounted portions when a discount applies to only a portion of the originally incurred *charge*.
-* When the *operating model* includes split cost allocation, CostAndUsage MUST adhere to the following requirements:
+  * CostAndUsage SHOULD include [AllocatedMethodDetails](#col) when the [operating model](#term) [includes split cost allocation](#omc).
+  * CostAndUsage MUST include [AllocatedMethodId](#col) when the [operating model](#term) includes split cost allocation.
+  * CostAndUsage MUST include [AllocatedResourceId](#col) when the [operating model](#term) includes split cost allocation.
+  * CostAndUsage MUST include [AllocatedResourceName](#col) when the [operating model](#term) includes split cost allocation.
+  * CostAndUsage MUST include [AllocatedServiceName](#col) when the [operating model](#term) includes split cost allocation.
+  * CostAndUsage MUST include [AllocatedTags](#col) when the [operating model](#term) includes split cost allocation.
+  * CostAndUsage SHOULD include [AvailabilityZone](#col) when the [operating model](#term) [includes availability zones](#omc).
+  * CostAndUsage MUST include [BilledCost](#col).
+  * CostAndUsage MUST include [BillingAccountId](#col).
+  * CostAndUsage MUST include [BillingAccountName](#col).
+  * CostAndUsage MUST include [BillingAccountType](#col) when the [operating model](#term) [includes multiple billing account types](#omc).
+  * CostAndUsage MUST include [BillingCurrency](#col).
+  * CostAndUsage MUST include [BillingPeriodEnd](#col).
+  * CostAndUsage MUST include [BillingPeriodStart](#col).
+  * CostAndUsage MUST include [CapacityReservationId](#col) when the [operating model](#term) [includes capacity reservations](#omc).
+  * CostAndUsage MUST include [CapacityReservationStatus](#col) when the [operating model](#term) includes capacity reservations.
+  * CostAndUsage MUST include [ChargeCategory](#col).
+  * CostAndUsage MUST include [ChargeClass](#col).
+  * CostAndUsage MUST include [ChargeDescription](#col).
+  * CostAndUsage SHOULD include [ChargeFrequency](#col).
+  * CostAndUsage MUST include [ChargePeriodEnd](#col).
+  * CostAndUsage MUST include [ChargePeriodStart](#col).
+  * CostAndUsage MUST include [CommitmentDiscountCategory](#col) when the [operating model](#term) [includes commitment discounts](#omc).
+  * CostAndUsage MUST include [CommitmentDiscountId](#col) when the [operating model](#term) includes commitment discounts.
+  * CostAndUsage MUST include [CommitmentDiscountName](#col) when the [operating model](#term) includes commitment discounts.
+  * CostAndUsage MUST include [CommitmentDiscountQuantity](#col) when the [operating model](#term) includes commitment discounts.
+  * CostAndUsage MUST include [CommitmentDiscountStatus](#col) when the [operating model](#term) includes commitment discounts.
+  * CostAndUsage MUST include [CommitmentDiscountType](#col) when the [operating model](#term) includes commitment discounts.
+  * CostAndUsage MUST include [CommitmentDiscountUnit](#col) when the [operating model](#term) includes commitment discounts.
+  * CostAndUsage MUST include [CommitmentProgramEligibilityDetails](#col) when the [operating model](#term) [includes commitment programs](#omc).
+  * CostAndUsage MUST include [ConsumedQuantity](#col) when the [operating model](#term) [includes usage measurement](#omc).
+  * CostAndUsage MUST include [ConsumedUnit](#col) when the [operating model](#term) includes usage measurement.
+  * CostAndUsage MUST include [ContractApplied](#col) when the [operating model](#term) [includes contract commitments](#omc).
+  * CostAndUsage MUST include [ContractedCost](#col).
+  * CostAndUsage MUST include [ContractedUnitPrice](#col) when the [operating model](#term) [includes unit pricing](#omc).
+  * CostAndUsage MUST include [CredentialId](#col) when the [operating model](#term) [includes requester attribution](#omc).
+  * CostAndUsage MUST include [EffectiveCost](#col).
+  * CostAndUsage MUST include [HostProviderName](#col).
+  * CostAndUsage MUST include [InvoiceDetailId](#col) when the [operating model](#term) [includes payable invoices](#omc).
+  * CostAndUsage MUST include [InvoiceId](#col) when the [operating model](#term) includes payable invoices.
+  * CostAndUsage MUST include [InvoiceIssuerName](#col).
+  * CostAndUsage MUST include [ListCost](#col).
+  * CostAndUsage MUST include [ListUnitPrice](#col) when the [operating model](#term) includes unit pricing.
+  * CostAndUsage MUST include [PricingCategory](#col) when the [operating model](#term) [includes multiple pricing categories](#omc).
+  * CostAndUsage MUST include [PricingCurrency](#col) when the [operating model](#term) [includes pricing and billing currency differences](#omc:IncludesPricingBillingCurrencyDifferences).
+  * CostAndUsage MUST adhere to the following [PricingCurrencyContractedUnitPrice](#col) requirements:
+    * CostAndUsage MUST include [PricingCurrencyContractedUnitPrice](#col) when the [operating model](#term) [includes consumption currency](#omc) and includes unit pricing.
+    * CostAndUsage SHOULD include [PricingCurrencyContractedUnitPrice](#col) when the [operating model](#term) includes pricing and billing currency differences and includes unit pricing.
+    * CostAndUsage MAY include [PricingCurrencyContractedUnitPrice](#col) in all other cases.
+  * CostAndUsage MUST adhere to the following [PricingCurrencyEffectiveCost](#col) requirements:
+    * CostAndUsage MUST include [PricingCurrencyEffectiveCost](#col) when the [operating model](#term) includes consumption currency.
+    * CostAndUsage SHOULD include [PricingCurrencyEffectiveCost](#col) when the [operating model](#term) includes pricing and billing currency differences.
+    * CostAndUsage MAY include [PricingCurrencyEffectiveCost](#col) in all other cases.
+  * CostAndUsage MUST adhere to the following [PricingCurrencyListUnitPrice](#col) requirements:
+    * CostAndUsage MUST include [PricingCurrencyListUnitPrice](#col) when the [operating model](#term) includes consumption currency and includes unit pricing.
+    * CostAndUsage SHOULD include [PricingCurrencyListUnitPrice](#col) when the [operating model](#term) includes pricing and billing currency differences and includes unit pricing.
+    * CostAndUsage MAY include [PricingCurrencyListUnitPrice](#col) in all other cases.
+  * CostAndUsage MUST include [PricingQuantity](#col).
+  * CostAndUsage MUST include [PricingUnit](#col).
+  * CostAndUsage MUST include [PrincipalId](#col) when the [operating model](#term) includes requester attribution.
+  * CostAndUsage MUST include [RegionId](#col) when the [operating model](#term) [includes regions](#omc).
+  * CostAndUsage MUST include [RegionName](#col) when the [operating model](#term) includes regions.
+  * CostAndUsage MUST include [RequesterDetails](#col) when the [operating model](#term) includes requester attribution.
+  * CostAndUsage MUST include [ResourceId](#col) when the [operating model](#term) [includes provisioned resources](#omc).
+  * CostAndUsage MUST include [ResourceName](#col) when the [operating model](#term) includes provisioned resources.
+  * CostAndUsage MUST include [ResourceType](#col) when the [operating model](#term) includes provisioned resources and [includes resource type assignment](#omc).
+  * CostAndUsage MUST include [ServiceCategory](#col).
+  * CostAndUsage MUST include [ServiceName](#col).
+  * CostAndUsage MUST include [ServiceProviderName](#col).
+  * CostAndUsage SHOULD include [ServiceSubcategory](#col).
+  * CostAndUsage MUST include [SkuId](#col) when the [operating model](#term) includes unit pricing.
+  * CostAndUsage MUST include [SkuMeter](#col) when the [operating model](#term) includes unit pricing.
+  * CostAndUsage MUST include [SkuPriceDetails](#col) when the [operating model](#term) includes unit pricing.
+  * CostAndUsage MUST include [SkuPriceId](#col) when the [operating model](#term) includes unit pricing.
+  * CostAndUsage MUST include [SubAccountId](#col) when the [operating model](#term) [includes sub accounts](#omc).
+  * CostAndUsage MUST include [SubAccountName](#col) when the [operating model](#term) includes sub accounts.
+  * CostAndUsage MUST include [SubAccountType](#col) when the [operating model](#term) [includes multiple sub account types](#omc).
+  * CostAndUsage MUST include [Tags](#col) when the [operating model](#term) [includes tags](#omc).
+  * CostAndUsage SHOULD include [custom columns](#term) needed to identify all applied discounts when [FOCUS columns](#term) are not sufficient.
+* CostAndUsage MUST conform to [CorrectionHandling](#attr) requirements.
+* CostAndUsage MUST conform to [DatasetCompleteness](#attr) requirements.
+* CostAndUsage MUST conform to [DatasetConfiguration](#attr) requirements.
+* CostAndUsage MUST conform to [DeliveryHandling](#attr) requirements.
+* CostAndUsage MUST include [charges](#term) representing unused portions of a [commitment](#term) when the [commitment](#term) is not fully utilized.
+* CostAndUsage MUST include separate [charges](#term) representing discounted and non-discounted portions when a discount applies to only a portion of the originally incurred [charge](#term).
+* When the [operating model](#term) includes split cost allocation, CostAndUsage MUST adhere to the following requirements:
   * CostAndUsage MUST have its split cost allocation method documented and accessible to practitioners.
   * CostAndUsage SHOULD offer split cost allocation on an opt-in basis.
   * CostAndUsage MAY contain records for concepts not related to resource usage, when it aligns with the documented split cost allocation method.
-  * CostAndUsage MAY contain records for unused or unallocated usage from the [*origin charge*](#glossary:origin-charge) as separate [*allocated charges*](#glossary:allocated-charge), when it aligns with the documented split cost allocation method.
-  * CostAndUsage MAY contain *allocated charges* with apportioned costs for unused or unallocated usage, when it aligns with the documented split cost allocation method.
-* CostAndUsage SHOULD reflect all applied discounts in *charges* they pertain to.
-* CostAndUsage SHOULD NOT represent applied discounts as separate negating or offsetting *charges*.
-* CostAndUsage *FOCUS columns* MUST conform to [DataGeneratorCalculatedSplitCostAllocationHandling](#attributes.datagenerator-calculatedsplitcostallocationhandling) requirements when the *operating model* includes split cost allocation.
-* CostAndUsage *FOCUS columns* MUST conform to [FocusColumnHandling](#attributes.focuscolumnhandling) requirements.
-* CostAndUsage *FOCUS columns* MUST conform to [NullHandling](#attributes.nullhandling) requirements.
-* CostAndUsage *custom columns* MUST conform to [CustomColumnHandling](#attributes.customcolumnhandling) requirements.
-* When the *operating model* includes requester attribution, CostAndUsage documentation MUST adhere to the following requirements:
-  * CostAndUsage documentation MUST include the use cases in which CredentialId is not null.
-  * CostAndUsage documentation MUST include the use cases in which PrincipalId is not null.
-  * CostAndUsage documentation MUST include the use cases in which RequesterDetails is not null.
+  * CostAndUsage MAY contain records for unused or unallocated usage from the [origin charge](#term) as separate [allocated charges](#term), when it aligns with the documented split cost allocation method.
+  * CostAndUsage MAY contain [allocated charges](#term) with apportioned costs for unused or unallocated usage, when it aligns with the documented split cost allocation method.
+* CostAndUsage SHOULD reflect all applied discounts in [charges](#term) they pertain to.
+* CostAndUsage SHOULD NOT represent applied discounts as separate negating or offsetting [charges](#term).
+* CostAndUsage [FOCUS columns](#term) MUST conform to [DataGeneratorCalculatedSplitCostAllocationHandling](#attr) requirements when the [operating model](#term) includes split cost allocation.
+* CostAndUsage [FOCUS columns](#term) MUST conform to [FocusColumnHandling](#attr) requirements.
+* CostAndUsage [FOCUS columns](#term) MUST conform to [NullHandling](#attr) requirements.
+* CostAndUsage [custom columns](#term) MUST conform to [CustomColumnHandling](#attr) requirements.
+* When the [operating model](#term) includes requester attribution, CostAndUsage documentation MUST adhere to the following requirements:
+  * CostAndUsage documentation MUST include the use cases in which [CredentialId](#col) is not null.
+  * CostAndUsage documentation MUST include the use cases in which [PrincipalId](#col) is not null.
+  * CostAndUsage documentation MUST include the use cases in which [RequesterDetails](#col) is not null.
 
 ## Dataset ID<!--SkipTOC-->
 
@@ -208,7 +208,7 @@ Cost and Usage
 
 ## Description<!--SkipTOC-->
 
-Describes the cost and usage incurred through using or purchasing a service provider's [*resources*](#glossary:resource) or [*services*](#glossary:service).
+Describes the cost and usage incurred through using or purchasing a service provider's [resources](#term) or [services](#term).
 
 ## Version Introduced<!--SkipTOC-->
 

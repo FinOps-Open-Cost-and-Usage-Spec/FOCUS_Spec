@@ -1,13 +1,13 @@
 # Includes Commitment Programs
 
-The Includes Commitment Programs operating model condition represents a verifiable state indicating whether the [*operating model*](#glossary:operating-model) includes [*commitment programs*](#glossary:commitment-program).
+The [Includes Commitment Programs](#omc) operating model condition represents a verifiable state indicating whether the [operating model](#term) includes [commitment programs](#term).
 
 ## Requirements
 
-IncludesCommitmentPrograms MUST adhere to the following requirements:
+[IncludesCommitmentPrograms](#omc) MUST adhere to the following requirements:
 
-* IncludesCommitmentPrograms MUST evaluate to true when the *operating model* includes *commitment programs*.
-* IncludesCommitmentPrograms MUST evaluate to false when the *operating model* does not include *commitment programs*.
+* [IncludesCommitmentPrograms](#omc) MUST evaluate to true when the [operating model](#term) includes [commitment programs](#term).
+* [IncludesCommitmentPrograms](#omc) MUST evaluate to false when the [operating model](#term) does not include [commitment programs](#term).
 
 ## Operating Model Condition ID
 
@@ -19,7 +19,7 @@ Includes Commitment Programs
 
 ## Description
 
-A verifiable state indicating whether the *operating model* includes *commitment programs*.
+A verifiable state indicating whether the [operating model](#term) includes [commitment programs](#term).
 
 ## Version Introduced
 

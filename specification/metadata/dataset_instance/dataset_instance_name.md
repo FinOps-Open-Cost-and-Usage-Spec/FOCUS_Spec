@@ -2,11 +2,11 @@
 
 The human-readable name of the dataset instance as provided by the data generator.
 
-DatasetInstanceName adheres to the following requirements:
+[DatasetInstanceName](#meta) adheres to the following requirements:
 
-* DatasetInstanceName MUST be present in an object within the [DatasetInstance](#metadata.datasetinstance) collection.
-* DatasetInstanceName MUST be of type String.
-* DatasetInstanceName MUST NOT be null.
+* [DatasetInstanceName](#meta) MUST be present in an object within the [DatasetInstance](#meta) collection.
+* [DatasetInstanceName](#meta) MUST be of type String.
+* [DatasetInstanceName](#meta) MUST NOT be null.
 
 ## Metadata ID
 

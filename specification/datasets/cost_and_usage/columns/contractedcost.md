@@ -1,30 +1,30 @@
 # Contracted Cost
 
-Contracted Cost represents the cost of a [*charge*](#glossary:charge) based on [*negotiated pricing terms*](#glossary:negotiated-pricing-terms) before any discount-bearing [*commitment programs*](#glossary:commitment-program) (e.g., [*commitment discounts*](#glossary:commitment-discount)) are applied to the *charge*.
+[Contracted Cost](#col) represents the cost of a [charge](#term) based on [negotiated pricing terms](#term) before any discount-bearing [commitment programs](#term) (e.g., [commitment discounts](#term)) are applied to the [charge](#term).
 
-When [Contracted Unit Price](#datamodel.costandusage.contractedunitprice) and [Pricing Quantity](#datamodel.costandusage.pricingquantity) are provided for the *charge*, Contracted Cost is calculated by multiplying the Contracted Unit Price by the corresponding Pricing Quantity. When no *negotiated pricing terms* apply to a usage or purchase *charge*, Contracted Cost defaults to [List Cost](#datamodel.costandusage.listcost).
+When [Contracted Unit Price](#col) and [Pricing Quantity](#col) are provided for the [charge](#term), [Contracted Cost](#col) is calculated by multiplying the Contracted Unit Price by the corresponding [Pricing Quantity](#col). When no [negotiated pricing terms](#term) apply to a usage or purchase [charge](#term), [Contracted Cost](#col) defaults to [List Cost](#col).
 
-Contracted Cost is denominated in the [Billing Currency](#datamodel.costandusage.billingcurrency). Contracted Cost is commonly used to calculate savings based on negotiation and rate optimization activities by comparing it with List Cost, [Billed Cost](#datamodel.costandusage.billedcost), and [Effective Cost](#datamodel.costandusage.effectivecost).
+[Contracted Cost](#col) is denominated in the [Billing Currency](#col). [Contracted Cost](#col) is commonly used to calculate savings based on negotiation and rate optimization activities by comparing it with [List Cost](#col), [Billed Cost](#col), and [Effective Cost](#col).
 
 ## Requirements
 
-ContractedCost MUST adhere to the following requirements:
+[ContractedCost](#col) MUST adhere to the following requirements:
 
-* ContractedCost MUST be of type Decimal.
-* ContractedCost MUST conform to [NumericFormat](#attributes.numericformat) requirements.
-* ContractedCost MUST NOT be null.
-* ContractedCost MUST be denominated in the BillingCurrency.
-* When [ChargeCategory](#datamodel.costandusage.chargecategory) is "Usage" or "Purchase" and [ChargeClass](#datamodel.costandusage.chargeclass) is not "Correction", ContractedCost MUST adhere to the following requirements:
-  * ContractedCost MUST reflect *negotiated pricing terms* that are independent of any discount-bearing *commitment programs* being applied to the *charge*.
-  * ContractedCost MUST NOT reflect any cost impact dependent on a discount-bearing *commitment program* being applied to the *charge*.
-  * ContractedCost MUST equal ListCost when no *negotiated pricing terms* apply to the *charge*.
-* ContractedCost MUST equal BilledCost when ChargeCategory is "Credit".
-* ContractedCost MUST be calculated based on the ContractedCost of the related *charges* when ChargeCategory is "Tax".
-* ContractedCost MUST equal the product of ContractedUnitPrice and PricingQuantity when ContractedUnitPrice is not null and PricingQuantity is not null.
+* [ContractedCost](#col) MUST be of type Decimal.
+* [ContractedCost](#col) MUST conform to [NumericFormat](#attr) requirements.
+* [ContractedCost](#col) MUST NOT be null.
+* [ContractedCost](#col) MUST be denominated in the [BillingCurrency](#col).
+* When [ChargeCategory](#col) is ["Usage"](#val:CostAndUsage.ChargeCategory) or "Purchase" and [ChargeClass](#col) is not ["Correction"](#val:CostAndUsage.ChargeClass), [ContractedCost](#col) MUST adhere to the following requirements:
+  * [ContractedCost](#col) MUST reflect [negotiated pricing terms](#term) that are independent of any discount-bearing [commitment programs](#term) being applied to the [charge](#term).
+  * [ContractedCost](#col) MUST NOT reflect any cost impact dependent on a discount-bearing [commitment program](#term) being applied to the [charge](#term).
+  * [ContractedCost](#col) MUST equal [ListCost](#col) when no [negotiated pricing terms](#term) apply to the [charge](#term).
+* [ContractedCost](#col) MUST equal [BilledCost](#col) when [ChargeCategory](#col) is ["Credit"](#val:CostAndUsage.ChargeCategory).
+* [ContractedCost](#col) MUST be calculated based on the [ContractedCost](#col) of the related [charges](#term) when [ChargeCategory](#col) is ["Tax"](#val:CostAndUsage.ChargeCategory).
+* [ContractedCost](#col) MUST equal the product of [ContractedUnitPrice](#col) and [PricingQuantity](#col) when [ContractedUnitPrice](#col) is not null and [PricingQuantity](#col) is not null.
 
 ## Usability Constraints
 
-**Aggregation:** When aggregating Contracted Cost for savings calculations, exclude either the [*covering charges*](#glossary:covering-charge) (e.g., *commitment discount* purchases) or the [*covered charges*](#glossary:covered-charge) (e.g., usage charges applied against *commitment discounts*), based on the specific use case, to avoid double counting. The appropriate set to exclude depends on the relevant cost basis for the use case. Exclude *covered charges* when aggregating on a billed basis, or *covering charges* when aggregating on an accrual basis.
+**Aggregation:** When aggregating [Contracted Cost](#col) for savings calculations, exclude either the [covering charges](#term) (e.g., [commitment discount](#term) purchases) or the [covered charges](#term) (e.g., usage charges applied against [commitment discounts](#term)), based on the specific use case, to avoid double counting. The appropriate set to exclude depends on the relevant cost basis for the use case. Exclude [covered charges](#term) when aggregating on a billed basis, or [covering charges](#term) when aggregating on an accrual basis.
 
 ## Column ID
 
@@ -36,19 +36,19 @@ Contracted Cost
 
 ## Description
 
-Cost of a *charge* based on *negotiated pricing terms* before any discount-bearing *commitment programs* (e.g., *commitment discounts*) are applied to the *charge*.
+Cost of a [charge](#term) based on [negotiated pricing terms](#term) before any discount-bearing [commitment programs](#term) (e.g., [commitment discounts](#term)) are applied to the [charge](#term).
 
 ## Content Constraints
 
 | Constraint                 | Value                                       |
 | :------------------------- | :------------------------------------------ |
-| Dataset                    | [Cost and Usage](#datamodel.costandusage)   |
+| Dataset                    | [Cost and Usage](#ds)                       |
 | Operating model conditions | Not applicable                              |
 | Column type                | Metric                                      |
 | Feature level              | Mandatory                                   |
 | Allows nulls               | False                                       |
 | Data type                  | Decimal                                     |
-| Value format               | [Numeric Format](#attributes.numericformat) |
+| Value format               | [Numeric Format](#attr)                     |
 | Number range               | Any valid decimal value                     |
 
 ## Version Introduced

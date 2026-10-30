@@ -2,13 +2,13 @@
 
 ## Scenario 1: Initial Contract Commitment
 
-A single Cost and Usage charge represents the values stated on a contract and its three contract commitments agreed between a service provider and a customer:
+A single [Cost and Usage](#ds) charge represents the values stated on a contract and its three contract commitments agreed between a service provider and a customer:
 
-1) 12345: Spend $500k overall. (This is the value of the contract, and thus ContractId = ContractCommitmentId.)
+1) 12345: Spend $500k overall. (This is the value of the contract, and thus ContractId = [ContractCommitmentId](#col).)
 2) 23456: Spend $25k on a particular service.
 3) 34567: Consume 100k compute hours on a particular resource type.
 
-The Charge Category is denoted as Purchase, and the Contract ID, Resource ID, and Contract Commitment ID are all denoted as 12345.
+The Charge Category is denoted as Purchase, and the Contract ID, [Resource ID](#col), and [Contract Commitment ID](#col) are all denoted as 12345.
 
 ```json
 {
@@ -40,7 +40,7 @@ The Charge Category is denoted as Purchase, and the Contract ID, Resource ID, an
 
 Assume the contract commitment as described in Scenario 1. Assume that only 50% of cost and usage gets applied to the contract commitments, per the contract terms.
 
-A single Cost and Usage charge for `myResource1` carries Effective Cost of 30 (denominated in USD) and Consumed Quantity of 1 (denominated in compute hours). The Charge Category is denoted as Usage.
+A single [Cost and Usage](#ds) charge for `myResource1` carries [Effective Cost](#col) of 30 (denominated in USD) and [Consumed Quantity](#col) of 1 (denominated in compute hours). The Charge Category is denoted as Usage.
 
 This applies to the contract commitments in the following manner:
 

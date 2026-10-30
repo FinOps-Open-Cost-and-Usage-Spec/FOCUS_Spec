@@ -30,8 +30,8 @@ The following section details the normative requirements for the [ContractApplie
 * ContractAppliedObject.Elements[\*].ContractCommitmentId MUST be a unique identifier within the service provider.
 * ContractAppliedObject.Elements[\*].ContractCommitmentId SHOULD be a fully-qualified identifier.
 * ContractAppliedObject.Elements[\*].ContractCommitmentId MUST have one and only one parent ContractAppliedObject.Elements[\*].ContractId.
-* ContractAppliedObject.Elements[\*].ContractCommitmentId MUST match [ResourceId](#col) when [ChargeCategory](#col) is "Purchase" and the [charge](#term) represents a purchase of that [contract commitment](#term).
-* ContractAppliedObject.Elements[\*].ContractCommitmentId MUST match [ResourceId](#col) when [ChargeCategory](#col) is "Usage" and the [charge](#term) represents an unused portion of that [contract commitment](#term).
+* ContractAppliedObject.Elements[\*].ContractCommitmentId MUST match [ResourceId](#col) when [ChargeCategory](#col) is ["Purchase"](#val:CostAndUsage.ChargeCategory) and the [charge](#term) represents a purchase of that [contract commitment](#term).
+* ContractAppliedObject.Elements[\*].ContractCommitmentId MUST match [ResourceId](#col) when [ChargeCategory](#col) is ["Usage"](#val:CostAndUsage.ChargeCategory) and the [charge](#term) represents an unused portion of that [contract commitment](#term).
 * ContractAppliedObject.Elements[\*].ContractCommitmentId MAY match ContractAppliedObject.Elements[\*].ContractId.
 * ContractAppliedObject.Elements[\*].ContractCommitmentAppliedCost MUST be denominated in the [BillingCurrency](#col).
 * ContractAppliedObject.Elements[\*].ContractCommitmentAppliedQuantity MUST be denominated in the ContractAppliedObject.Elements[\*].ContractCommitmentAppliedUnit.

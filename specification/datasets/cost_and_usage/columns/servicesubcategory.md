@@ -1,15 +1,15 @@
 # Service Subcategory
 
-The Service Subcategory is a secondary classification of the [Service Category](#datamodel.costandusage.servicecategory) for a [*service*](#glossary:service) based on its core function. The Service Subcategory (in conjunction with the Service Category) is commonly used for scenarios like analyzing spend and usage for specific workload types across service providers and tracking the migration of workloads across fundamentally different architectures.
+The [Service Subcategory](#col) is a secondary classification of the [Service Category](#col) for a [service](#term) based on its core function. The [Service Subcategory](#col) (in conjunction with the [Service Category](#col)) is commonly used for scenarios like analyzing spend and usage for specific workload types across service providers and tracking the migration of workloads across fundamentally different architectures.
 
 ## Requirements
 
-ServiceSubcategory MUST adhere to the following requirements:
+[ServiceSubcategory](#col) MUST adhere to the following requirements:
 
-* ServiceSubcategory MUST be of type String.
-* ServiceSubcategory MUST NOT be null.
-* ServiceSubcategory MUST be one of the allowed values.
-* ServiceSubcategory MUST have one and only one parent ServiceCategory as specified in the allowed values below.
+* [ServiceSubcategory](#col) MUST be of type String.
+* [ServiceSubcategory](#col) MUST NOT be null.
+* [ServiceSubcategory](#col) MUST be one of the allowed values.
+* [ServiceSubcategory](#col) MUST have one and only one parent [ServiceCategory](#col) as specified in the allowed values below.
 
 ## Allowed Values
 
@@ -109,13 +109,13 @@ Service Subcategory
 
 ## Description
 
-Secondary classification of the Service Category for a *service* based on its core function.
+Secondary classification of the [Service Category](#col) for a [service](#term) based on its core function.
 
 ## Content Constraints
 
 | Constraint                 | Value                                     |
 | :------------------------- | :---------------------------------------- |
-| Dataset                    | [Cost and Usage](#datamodel.costandusage) |
+| Dataset                    | [Cost and Usage](#ds)                     |
 | Operating model conditions | Not applicable                            |
 | Column type                | Dimension                                 |
 | Feature level              | Recommended                               |

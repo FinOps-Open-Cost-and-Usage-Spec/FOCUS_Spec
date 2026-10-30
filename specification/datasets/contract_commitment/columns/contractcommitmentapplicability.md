@@ -1,44 +1,44 @@
 # Contract Commitment Applicability
 
-Contract Commitment Applicability is a structured definition of the specific entities eligible for coverage under a [*contract commitment*](#glossary:contract-commitment). This column details inclusionary and exclusionary logic, as well as the specific portion of eligible cost or usage that is applicable.
+[Contract Commitment Applicability](#col) is a structured definition of the specific entities eligible for coverage under a [contract commitment](#term). This column details inclusionary and exclusionary logic, as well as the specific portion of eligible cost or usage that is applicable.
 
 ## Requirements
 
 ### Column Requirements
 
-ContractCommitmentApplicability MUST adhere to the following requirements:
+[ContractCommitmentApplicability](#col) MUST adhere to the following requirements:
 
-* ContractCommitmentApplicability MUST be of type JSON Object (serialized as a String where necessary).
-* ContractCommitmentApplicability MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* ContractCommitmentApplicability MUST conform to [JsonObjectFormat](#attributes.jsonobjectformat) requirements.
-* ContractCommitmentApplicability MUST conform to [ContractCommitmentApplicabilityObject](#datamodel.contractcommitment.contractcommitmentapplicability.contractcommitmentapplicabilityobject) requirements.
-* ContractCommitmentApplicability MUST NOT be null.
+* [ContractCommitmentApplicability](#col) MUST be of type JSON Object (serialized as a String where necessary).
+* [ContractCommitmentApplicability](#col) MUST conform to [StringHandling](#attr) requirements.
+* [ContractCommitmentApplicability](#col) MUST conform to [JsonObjectFormat](#attr) requirements.
+* [ContractCommitmentApplicability](#col) MUST conform to [ContractCommitmentApplicabilityObject](#obj) requirements.
+* [ContractCommitmentApplicability](#col) MUST NOT be null.
 
 ## Contract Commitment Applicability Object
 
-Contract Commitment Applicability consists of a valid JSON object which contains a set of top-level property keys. These keys define entity-based inclusionary and exclusionary logic, as well as the portion of relevant cost and/or usage that is applicable to the *contract commitment*.
+[Contract Commitment Applicability](#col) consists of a valid JSON object which contains a set of top-level property keys. These keys define entity-based inclusionary and exclusionary logic, as well as the portion of relevant cost and/or usage that is applicable to the [contract commitment](#term).
 
-The following section details the normative requirements for the ContractCommitmentApplicabilityObject and its nested properties. For a logical overview of the expected content, see the [Schema Structure](#datamodel.contractcommitment.contractcommitmentapplicability.contractcommitmentapplicabilityobject.objectschemastructure) and [Object Example](#datamodel.contractcommitment.contractcommitmentapplicability.contractcommitmentapplicabilityobject.objectexample) sections.
+The following section details the normative requirements for the [ContractCommitmentApplicabilityObject](#obj) and its nested properties. For a logical overview of the expected content, see the [Schema Structure](#datamodel.contractcommitment.contractcommitmentapplicability.contractcommitmentapplicabilityobject.objectschemastructure) and [Object Example](#datamodel.contractcommitment.contractcommitmentapplicability.contractcommitmentapplicabilityobject.objectexample) sections.
 
 ### Object Requirements
 
-ContractCommitmentApplicabilityObject MUST adhere to the following requirements:
+[ContractCommitmentApplicabilityObject](#obj) MUST adhere to the following requirements:
 
-* ContractCommitmentApplicabilityObject MUST conform to the [ContractCommitmentApplicabilityObjectSchema](#schemas.contractcommitment.contractcommitmentapplicabilityobjectschema) JSON Schema.
-* ContractCommitmentApplicabilityObject.IsGlobalScope MUST be `true` when the *contract commitment* applies to all entities.
+* [ContractCommitmentApplicabilityObject](#obj) MUST conform to the [ContractCommitmentApplicabilityObjectSchema](#schema) JSON Schema.
+* ContractCommitmentApplicabilityObject.IsGlobalScope MUST be `true` when the [contract commitment](#term) applies to all entities.
 * ContractCommitmentApplicabilityObject.IsComplexScope MUST be `true` when the *contract commitment's* applicability logic exceeds schema capabilities.
 * ContractCommitmentApplicabilityObject.Applicability.Cost MUST represent the fraction of an eligible charge's cost that is applicable to the commitment (0.0 to 1.0).
 * ContractCommitmentApplicabilityObject.Applicability.Usage MUST represent the fraction of an eligible charge's usage that is applicable to the commitment (0.0 to 1.0).
 * ContractCommitmentApplicabilityObject.Inclusions[\*].Applicability.Cost MUST represent the fraction of an eligible charge's cost that is applicable to the commitment (0.0 to 1.0).
 * ContractCommitmentApplicabilityObject.Inclusions[\*].Applicability.Usage MUST represent the fraction of an eligible charge's usage that is applicable to the commitment (0.0 to 1.0).
-* ContractCommitmentApplicabilityObject.Inclusions[\*].Dimension SHOULD represent a column in [CostAndUsage](#datamodel.costandusage).
+* ContractCommitmentApplicabilityObject.Inclusions[\*].Dimension SHOULD represent a column in [CostAndUsage](#ds).
 * ContractCommitmentApplicabilityObject.Exclusions[\*].Dimension SHOULD represent a column in CostAndUsage.
 * ContractCommitmentApplicabilityObject.Inclusions[\*].Values MUST contain only the single string "*" when the wildcard is present.
 * ContractCommitmentApplicabilityObject.Exclusions[\*].Values MUST contain only the single string "*" when the wildcard is present.
 
 ### Object Schema Structure
 
-ContractCommitmentApplicability contains a structured JSON object defining the logical boundaries and the applicability percentage of a commitment.
+[ContractCommitmentApplicability](#col) contains a structured JSON object defining the logical boundaries and the applicability percentage of a commitment.
 
 <div class="h7-nonindex">Top-Level Properties</div>
 
@@ -84,7 +84,7 @@ ContractCommitmentApplicability contains a structured JSON object defining the l
 
 <div class="h7-nonindex">Wildcard Handling</div>
 
-ContractCommitmentApplicability uses a reserved string to represent global or unrestricted boundaries within a specific Dimension.
+[ContractCommitmentApplicability](#col) uses a reserved string to represent global or unrestricted boundaries within a specific Dimension.
 
 | Reserved Value | Description | Supported Operators |
 | :--- | :--- | :--- |
@@ -113,7 +113,7 @@ The evaluation of an entity against a commitment applicability must follow a str
 
 <div class="h7-nonindex">Integration with Commitment Logic</div>
 
-The evaluation of **Applicability** percentages must be contextually aligned with the [Contract Commitment Model](#datamodel.contractcommitment.contractcommitmentmodel) and [Contract Commitment Fulfillment Interval](#datamodel.contractcommitment.contractcommitmentfulfillmentinterval):
+The evaluation of **Applicability** percentages must be contextually aligned with the [Contract Commitment Model](#col) and [Contract Commitment Fulfillment Interval](#col):
 
 * **Continuous Models:** Applicability percentages must be applied to each discrete unit of activity (e.g., every hour) within the **Fulfillment Interval**. If the commitment is not fully utilized by eligible entities within that hour, the remaining capacity expires.
 * **Discontinuous Models:** Applicability percentages determine the portion of aggregate activity that counts toward fulfillment over the entire **Interval** (e.g., a full year).
@@ -128,7 +128,7 @@ The evaluation of **Applicability** percentages must be contextually aligned wit
 Here is a basic example of the object format, describing organization-wide coverage **except** for Database services running in BillingAccountId 123456789012.
 
 * For more detailed examples, please see this column's entry in the JSON Object Examples appendix entry [here](#appendix.examples:jsonobject.examples:contractcommitmentapplicability).
-* For the JSON schema, please see Contract Commitment Applicability Object Schema.
+* For the JSON schema, please see [Contract Commitment Applicability Object Schema](#schema).
 
 ```json
 {
@@ -173,14 +173,14 @@ A structured definition of the specific entities to which a contract commitment 
 
 | Constraint                 | Value                                                |
 | :------------------------- | :--------------------------------------------------- |
-| Dataset                    | [Contract Commitment](#datamodel.contractcommitment) |
+| Dataset                    | [Contract Commitment](#ds)                           |
 | Operating model conditions | Not applicable                                       |
 | Column type                | Dimension / Metric                                   |
 | Feature level              | Mandatory                                            |
 | Allows nulls               | False                                                |
 | Data type                  | JSON                                                 |
-| Value format               | [JSON Object Format](#attributes.jsonobjectformat)   |
-| Object                     | [ContractCommitmentApplicabilityObject](#datamodel.contractcommitment.contractcommitmentapplicability.contractcommitmentapplicabilityobject) |
+| Value format               | [JSON Object Format](#attr)                          |
+| Object                     | [ContractCommitmentApplicabilityObject](#obj)                                                                                                |
 
 ## Version Introduced
 

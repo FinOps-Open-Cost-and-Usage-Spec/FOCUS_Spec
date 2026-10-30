@@ -1,17 +1,21 @@
+---
+dataset: CostAndUsage
+---
+
 # Rounding Variance Tolerance
 
-When performing invoice reconciliation between the [Cost and Usage](#datamodel.costandusage) dataset and an invoice (either the payable invoice itself, or the [Invoice Detail](#datamodel.invoicedetail) dataset), the totals may not be perfectly equal due to precision differences (e.g., 6 decimals in detailed cost data vs. 2 decimals in invoice data). The following tolerance formula allows for a maximum rounding error based on the statistical probability of rounding variance, which grows with the square root of the row count.
+When performing invoice reconciliation between the [Cost and Usage](#ds) dataset and an invoice (either the payable invoice itself, or the [Invoice Detail](#ds) dataset), the totals may not be perfectly equal due to precision differences (e.g., 6 decimals in detailed cost data vs. 2 decimals in invoice data). The following tolerance formula allows for a maximum rounding error based on the statistical probability of rounding variance, which grows with the square root of the row count.
 
 ## Tolerance Formula
 
-The tolerance used when comparing aggregated BilledCost values is defined as:
+The tolerance used when comparing aggregated [BilledCost](#col) values is defined as:
 
 Tolerance = `MAX(100 × Subunit, (SQRT(Rows) × 0.5) × Subunit)`
 
 Where:
 
-* **Rows** — The number of [CostAndUsage](#datamodel.costandusage) rows included in the aggregation for the relevant [CostAndUsage.InvoiceIssuerName](#datamodel.costandusage.invoiceissuername), [CostAndUsage.InvoiceId](#datamodel.costandusage.invoiceid), and (if applicable) [CostAndUsage.InvoiceDetailId](#datamodel.costandusage.invoicedetailid).
-* **Subunit** — The numeric value of the smallest subunit of [CostAndUsage.BillingCurrency](#datamodel.costandusage.billingcurrency) (for example, `0.01` for USD or `1` for JPY).
+* **Rows** — The number of [CostAndUsage](#ds) rows included in the aggregation for the relevant [CostAndUsage.InvoiceIssuerName](#col:CostAndUsage.InvoiceIssuerName), [CostAndUsage.InvoiceId](#col:CostAndUsage.InvoiceId), and (if applicable) [CostAndUsage.InvoiceDetailId](#col:CostAndUsage.InvoiceDetailId).
+* **Subunit** — The numeric value of the smallest subunit of [CostAndUsage.BillingCurrency](#col:CostAndUsage.BillingCurrency) (for example, `0.01` for USD or `1` for JPY).
 
 The tolerance is the **greater** of the following values:
 

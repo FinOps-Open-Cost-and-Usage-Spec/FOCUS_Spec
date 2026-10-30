@@ -1,15 +1,15 @@
 # Charge Frequency
 
-Charge Frequency indicates how often a [*charge*](#glossary:charge) will occur. Along with the [*charge period*](#glossary:chargeperiod) related columns, the Charge Frequency is commonly used to understand recurrence periods (e.g., monthly, yearly); forecast upcoming *charges*; and differentiate between one-time and recurring fees for purchases.
+[Charge Frequency](#col) indicates how often a [charge](#term) will occur. Along with the [charge period](#term) related columns, the [Charge Frequency](#col) is commonly used to understand recurrence periods (e.g., monthly, yearly); forecast upcoming [charges](#term); and differentiate between one-time and recurring fees for purchases.
 
 ## Requirements
 
-ChargeFrequency MUST adhere to the following requirements:
+[ChargeFrequency](#col) MUST adhere to the following requirements:
 
-* ChargeFrequency MUST be of type String.
-* ChargeFrequency MUST NOT be null.
-* ChargeFrequency MUST be one of the allowed values.
-* ChargeFrequency MUST NOT be "Usage-Based" when [ChargeCategory](#datamodel.costandusage.chargecategory) is "Purchase".
+* [ChargeFrequency](#col) MUST be of type String.
+* [ChargeFrequency](#col) MUST NOT be null.
+* [ChargeFrequency](#col) MUST be one of the allowed values.
+* [ChargeFrequency](#col) MUST NOT be ["Usage-Based"](#val:ChargeFrequency) when [ChargeCategory](#col) is ["Purchase"](#val:CostAndUsage.ChargeCategory).
 
 ## Allowed Values
 
@@ -29,13 +29,13 @@ Charge Frequency
 
 ## Description
 
-Indicates how often a *charge* will occur.
+Indicates how often a [charge](#term) will occur.
 
 ## Content Constraints
 
 | Constraint                 | Value                                     |
 | :------------------------- | :---------------------------------------- |
-| Dataset                    | [Cost and Usage](#datamodel.costandusage) |
+| Dataset                    | [Cost and Usage](#ds)                     |
 | Operating model conditions | Not applicable                            |
 | Column type                | Dimension                                 |
 | Feature level              | Recommended                               |
