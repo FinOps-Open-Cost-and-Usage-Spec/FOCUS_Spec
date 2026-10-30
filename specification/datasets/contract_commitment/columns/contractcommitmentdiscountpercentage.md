@@ -14,7 +14,7 @@
 * [ContractCommitmentDiscountPercentage](#col) MUST be a value between 0.0 and 1.0, inclusive.
 * For contracts with multiple tiers (e.g., 5% discount up to 1M, 10% above 1M), [ContractCommitmentDiscountPercentage](#col) MUST adhere to the following additional requirements:
   * [ContractCommitmentDiscountPercentage](#col) MUST reflect the discount percentage defined for the specific pricing tier represented by the [ContractCommitment](#ds) row.
-  * [ContractCommitmentDiscountPercentage](#col) MUST correspond to only one pricing tier per ContractCommitment row.
+  * [ContractCommitmentDiscountPercentage](#col) MUST correspond to only one pricing tier per [ContractCommitment](#ds) row.
 * [ContractCommitmentDiscountPercentage](#col) SHOULD represent the net effective discount when multiple contractual layers are applicable (e.g., a negotiated discount on top of a standard commitment).
 
 ## Implementation Guidance

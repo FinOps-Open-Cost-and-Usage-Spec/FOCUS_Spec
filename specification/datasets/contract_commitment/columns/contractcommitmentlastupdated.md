@@ -9,7 +9,7 @@
 * [ContractCommitmentLastUpdated](#col) MUST be of type Date/Time.
 * [ContractCommitmentLastUpdated](#col) MUST conform to [DateTimeFormat](#attr) requirements.
 * [ContractCommitmentLastUpdated](#col) MUST NOT be null.
-* [ContractCommitmentLastUpdated](#col) MUST represent the most recent moment in time when any column value of the ContractCommitment record was created or modified.
+* [ContractCommitmentLastUpdated](#col) MUST represent the most recent moment in time when any column value of the [ContractCommitment](#ds) record was created or modified.
 * [ContractCommitmentLastUpdated](#col) MUST be greater than or equal to [ContractCommitmentCreated](#col).
 
 ## Column ID

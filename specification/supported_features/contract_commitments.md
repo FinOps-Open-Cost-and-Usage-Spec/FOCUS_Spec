@@ -8,12 +8,12 @@ The [Contract Applied](#col) column contains several FOCUS-defined properties. F
 
 ## Directly Dependent Columns
 
-* CostAndUsage
+* [CostAndUsage](#ds)
   * [ContractApplied](#col)
 
 ## Supporting Columns
 
-* ContractCommitment
+* [ContractCommitment](#ds)
   * BillingCurrency
   * [ContractCommitmentCategory](#col)
   * [ContractCommitmentCost](#col)

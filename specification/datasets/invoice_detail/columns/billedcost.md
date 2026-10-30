@@ -29,7 +29,7 @@ For all [charges](#term), [Billed Cost](#col) reflects all applicable pricing ad
 
 ### Handling Rounding Discrepancies
 
-When validating [InvoiceDetail.BilledCost](#col:InvoiceDetail.BilledCost) against [CostAndUsage.BilledCost](#col:CostAndUsage.BilledCost), the totals may not be perfectly equal due to precision differences (e.g., 6 decimals in CostAndUsage vs. 2 decimals in InvoiceDetail). The requirement allows for a maximum rounding error based on the statistical probability of rounding variance, which grows with the square root of the row count.  For more information, see the [Rounding Variance Tolerance](#appendix.roundingvariancetolerance) appendix entry.
+When validating [InvoiceDetail.BilledCost](#col:InvoiceDetail.BilledCost) against [CostAndUsage.BilledCost](#col:CostAndUsage.BilledCost), the totals may not be perfectly equal due to precision differences (e.g., 6 decimals in [CostAndUsage](#ds) vs. 2 decimals in [InvoiceDetail](#ds)). The requirement allows for a maximum rounding error based on the statistical probability of rounding variance, which grows with the square root of the row count.  For more information, see the [Rounding Variance Tolerance](#appendix.roundingvariancetolerance) appendix entry.
 
 ## Column ID
 

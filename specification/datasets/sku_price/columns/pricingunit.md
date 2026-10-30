@@ -12,7 +12,7 @@ Distinct from the [Consumed Unit](#col:CostAndUsage.ConsumedUnit) in [Cost and U
 * [PricingUnit](#col) MUST conform to [StringHandling](#attr) requirements.
 * [PricingUnit](#col) SHOULD conform to [UnitFormat](#attr) requirements.
 * [PricingUnit](#col) MUST NOT be null.
-* [PricingUnit](#col) MUST match a [PricingCurrency](#col) value of records whose [PricingCurrencyCategory](#col) is ["Consumable"](#val:SkuPrice.PricingCurrencyCategory) when the SkuPrice record represents the price of that currency.
+* [PricingUnit](#col) MUST match a [PricingCurrency](#col) value of records whose [PricingCurrencyCategory](#col) is ["Consumable"](#val:SkuPrice.PricingCurrencyCategory) when the [SkuPrice](#ds) record represents the price of that currency.
 
 ## Implementation Guidance
 

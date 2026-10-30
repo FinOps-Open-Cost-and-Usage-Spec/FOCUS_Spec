@@ -9,7 +9,7 @@
 * [InvoiceDetailCreated](#col) MUST be of type Date/Time.
 * [InvoiceDetailCreated](#col) MUST conform to [DateTimeFormat](#attr) requirements.
 * [InvoiceDetailCreated](#col) MUST NOT be null.
-* [InvoiceDetailCreated](#col) MUST represent the moment in time the InvoiceDetail record was instantiated.
+* [InvoiceDetailCreated](#col) MUST represent the moment in time the [InvoiceDetail](#ds) record was instantiated.
 * [InvoiceDetailCreated](#col) for a given [BillingPeriodStart](#col) and [InvoiceIssuerName](#col) MUST be earlier than or equal to [BillingPeriod.BillingPeriodLastUpdated](#col:BillingPeriod.BillingPeriodLastUpdated) for the same [BillingPeriod.BillingPeriodStart](#col:BillingPeriod.BillingPeriodStart) and [BillingPeriod.InvoiceIssuerName](#col:BillingPeriod.InvoiceIssuerName) when [BillingPeriod.BillingPeriodStatus](#col:BillingPeriod.BillingPeriodStatus) is ["Closed"](#val:BillingPeriod.BillingPeriodStatus).
 
 ## Column ID

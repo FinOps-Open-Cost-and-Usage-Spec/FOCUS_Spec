@@ -74,43 +74,43 @@ The same applies to commitment terms. Service providers that price one SKU at di
 
 ## Requirements<!--SkipTOC-->
 
-SkuPrice MUST adhere to the following requirements:
+[SkuPrice](#ds) MUST adhere to the following requirements:
 
-* SkuPrice column presence MUST adhere to the following requirements:
-  * SkuPrice MUST include [ChargeCategory](#col).
-  * SkuPrice MUST include [CommitmentDiscountCategory](#col) when the [operating model](#term) [includes commitment discounts](#omc).  
-  * SkuPrice MUST include [ContractId](#col).
-  * SkuPrice MUST include [PricingCurrency](#col).
-  * SkuPrice MUST include [PricingCurrencyCategory](#col).
-  * SkuPrice MUST include [PricingRegionId](#col) when the [operating model](#term) [includes regions](#omc).
-  * SkuPrice MUST include [PricingServiceName](#col).
-  * SkuPrice MUST include [PricingUnit](#col).
-  * SkuPrice MUST include [PurchaseDurationType](#col) when the [operating model](#term) [includes purchases](#omc).
-  * SkuPrice MUST include [PurchasePaymentModel](#col) when the [operating model](#term) includes purchases.
-  * SkuPrice MUST include [QuantityTierMaximum](#col) when the [operating model](#term) [includes quantity tier pricing](#omc).
-  * SkuPrice MUST include [QuantityTierMinimum](#col) when the [operating model](#term) includes quantity tier pricing.
-  * SkuPrice MUST include [ServiceProviderName](#col).
-  * SkuPrice MUST include [SkuId](#col).
-  * SkuPrice MUST include [SkuPriceCreated](#col).
-  * SkuPrice MUST include [SkuPriceDescription](#col).
-  * SkuPrice MUST include [SkuPriceEffectiveEnd](#col).
-  * SkuPrice MUST include [SkuPriceEffectiveStart](#col).
-  * SkuPrice MUST include [SkuPriceEligibility](#col).
-  * SkuPrice MUST include [SkuPriceId](#col).
-  * SkuPrice MUST include [SkuPriceLastUpdated](#col).
-  * SkuPrice MUST include [UnitPrice](#col).
-  * SkuPrice MUST include [UnitPriceType](#col).
-  * SkuPrice SHOULD include [custom columns](#term) needed to identify specific rate card routing logic when [FOCUS columns](#term) are not sufficient.
-* SkuPrice MUST conform to [DatasetCompleteness](#attr) requirements.
-* SkuPrice MUST conform to [DatasetConfiguration](#attr) requirements.
-* SkuPrice MUST conform to [DeliveryHandling](#attr) requirements.
-* SkuPrice MUST use the Overwrite delivery mechanism.
-* SkuPrice SHOULD contain at least one record for every [SkuPriceId](#col) referenced in the [CostAndUsage](#ds) dataset.
-* SkuPrice MUST NOT contain multiple records that share identical values (including nulls) across [ServiceProviderName](#col), [SkuPriceId](#col), [ContractId](#col), [SkuPriceEffectiveStart](#col), [PricingCurrency](#col), and [UnitPriceType](#col).
-* SkuPrice MUST NOT contain records with overlapping effective periods (defined by [SkuPriceEffectiveStart](#col) and [SkuPriceEffectiveEnd](#col)) when those records share identical values (including nulls) across [ServiceProviderName](#col), [SkuPriceId](#col), [ContractId](#col), [PricingCurrency](#col), and [UnitPriceType](#col); for this constraint, a null [SkuPriceEffectiveStart](#col) represents the earliest available time, and a null [SkuPriceEffectiveEnd](#col) represents the latest available time.
-* SkuPrice [FOCUS columns](#term) MUST conform to [FocusColumnHandling](#attr) requirements.
-* SkuPrice [FOCUS columns](#term) MUST conform to [NullHandling](#attr) requirements.
-* SkuPrice [custom columns](#term) MUST conform to [CustomColumnHandling](#attr) requirements.
+* [SkuPrice](#ds) column presence MUST adhere to the following requirements:
+  * [SkuPrice](#ds) MUST include [ChargeCategory](#col).
+  * [SkuPrice](#ds) MUST include [CommitmentDiscountCategory](#col) when the [operating model](#term) [includes commitment discounts](#omc).  
+  * [SkuPrice](#ds) MUST include [ContractId](#col).
+  * [SkuPrice](#ds) MUST include [PricingCurrency](#col).
+  * [SkuPrice](#ds) MUST include [PricingCurrencyCategory](#col).
+  * [SkuPrice](#ds) MUST include [PricingRegionId](#col) when the [operating model](#term) [includes regions](#omc).
+  * [SkuPrice](#ds) MUST include [PricingServiceName](#col).
+  * [SkuPrice](#ds) MUST include [PricingUnit](#col).
+  * [SkuPrice](#ds) MUST include [PurchaseDurationType](#col) when the [operating model](#term) [includes purchases](#omc).
+  * [SkuPrice](#ds) MUST include [PurchasePaymentModel](#col) when the [operating model](#term) includes purchases.
+  * [SkuPrice](#ds) MUST include [QuantityTierMaximum](#col) when the [operating model](#term) [includes quantity tier pricing](#omc).
+  * [SkuPrice](#ds) MUST include [QuantityTierMinimum](#col) when the [operating model](#term) includes quantity tier pricing.
+  * [SkuPrice](#ds) MUST include [ServiceProviderName](#col).
+  * [SkuPrice](#ds) MUST include [SkuId](#col).
+  * [SkuPrice](#ds) MUST include [SkuPriceCreated](#col).
+  * [SkuPrice](#ds) MUST include [SkuPriceDescription](#col).
+  * [SkuPrice](#ds) MUST include [SkuPriceEffectiveEnd](#col).
+  * [SkuPrice](#ds) MUST include [SkuPriceEffectiveStart](#col).
+  * [SkuPrice](#ds) MUST include [SkuPriceEligibility](#col).
+  * [SkuPrice](#ds) MUST include [SkuPriceId](#col).
+  * [SkuPrice](#ds) MUST include [SkuPriceLastUpdated](#col).
+  * [SkuPrice](#ds) MUST include [UnitPrice](#col).
+  * [SkuPrice](#ds) MUST include [UnitPriceType](#col).
+  * [SkuPrice](#ds) SHOULD include [custom columns](#term) needed to identify specific rate card routing logic when [FOCUS columns](#term) are not sufficient.
+* [SkuPrice](#ds) MUST conform to [DatasetCompleteness](#attr) requirements.
+* [SkuPrice](#ds) MUST conform to [DatasetConfiguration](#attr) requirements.
+* [SkuPrice](#ds) MUST conform to [DeliveryHandling](#attr) requirements.
+* [SkuPrice](#ds) MUST use the Overwrite delivery mechanism.
+* [SkuPrice](#ds) SHOULD contain at least one record for every [SkuPriceId](#col) referenced in the [CostAndUsage](#ds) dataset.
+* [SkuPrice](#ds) MUST NOT contain multiple records that share identical values (including nulls) across [ServiceProviderName](#col), [SkuPriceId](#col), [ContractId](#col), [SkuPriceEffectiveStart](#col), [PricingCurrency](#col), and [UnitPriceType](#col).
+* [SkuPrice](#ds) MUST NOT contain records with overlapping effective periods (defined by [SkuPriceEffectiveStart](#col) and [SkuPriceEffectiveEnd](#col)) when those records share identical values (including nulls) across [ServiceProviderName](#col), [SkuPriceId](#col), [ContractId](#col), [PricingCurrency](#col), and [UnitPriceType](#col); for this constraint, a null [SkuPriceEffectiveStart](#col) represents the earliest available time, and a null [SkuPriceEffectiveEnd](#col) represents the latest available time.
+* [SkuPrice](#ds) [FOCUS columns](#term) MUST conform to [FocusColumnHandling](#attr) requirements.
+* [SkuPrice](#ds) [FOCUS columns](#term) MUST conform to [NullHandling](#attr) requirements.
+* [SkuPrice](#ds) [custom columns](#term) MUST conform to [CustomColumnHandling](#attr) requirements.
 
 ## Dataset ID<!--SkipTOC-->
 
