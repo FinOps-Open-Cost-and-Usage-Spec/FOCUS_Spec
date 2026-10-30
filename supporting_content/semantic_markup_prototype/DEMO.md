@@ -7,9 +7,9 @@
 > * [#2710](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pull/2710), the 1.5 Requirements Model update. The REG017 findings below compare against the Requirements Model as it is today, so some of them may disappear when it merges.
 > * [#2787](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pull/2787), the file and folder renames. It is expected to wait for 1.6. The REG016 findings below match the names it renames, and the registry builder hard-codes the current paths (e.g., `datasets/data_model.md` and `*_overview.md`).
 >
-> The branch needs another update once both merge: bring it up to date with `working_draft`, rerun the converter on the converted files, and refresh the counts in this guide.
+> The branch needs another update once both merge: bring it up to date with `working_draft`, rerun `convert_all.sh`, and refresh the counts in this guide and in CONVERSION.md.
 
-The branch is cut from `working_draft`. A representative set of specification files is rewritten with semantic tags, and the real build (`make`) resolves those tags into today's links and formatting. Every file that is not converted keeps its hand-written markup, and both kinds coexist in one build.
+The branch is cut from `working_draft`. The whole specification is rewritten with semantic tags wherever the tags cover its content, and the real build (`make`) resolves those tags into today's links and formatting. What the tags do not cover keeps its hand-written markup, and both kinds coexist in one build. [CONVERSION.md](CONVERSION.md) reports the results of converting every file and lists the open questions.
 
 ## Try It
 
@@ -23,7 +23,11 @@ cd supporting_content/semantic_markup_prototype
 PYTHON=/path/to/venv/bin/python ./compare_rendered.sh
 ```
 
-The first command builds the specification with the tags resolved. The second lists every line of the published `spec.md` that differs from the commit where this branch left `working_draft`, word by word, so later changes to `working_draft` do not show up. You can also open any converted file on GitHub to see how the tagged source reads.
+```bash
+PYTHON=/path/to/venv/bin/python ./convert_all.sh
+```
+
+The first command builds the specification with the tags resolved. The second lists every line of the published `spec.md` that differs from the commit where this branch left `working_draft`, word by word, so later changes to `working_draft` do not show up, and sorts the differences by kind. The third converts every file the build includes. It is safe to run on converted files and changes nothing. You can also open any converted file on GitHub to see how the tagged source reads.
 
 ## What Changed in the Build
 
@@ -47,6 +51,8 @@ Build-time checks:
 The source files are expected to contain mistakes, and finding them is one of the reasons for semantic tagging. A finding means two places that should agree do not: an ID and a file name, a heading and a name section, or the specification and the Requirements Model. The checks do not decide which side is wrong. The messages name both sides, and a person resolves each finding on whichever side is in error.
 
 ## Converted Files
+
+Every file the build includes was converted by `convert_all.sh`, and the results are in [CONVERSION.md](CONVERSION.md). The files below were converted first and also edited by hand, so they show the judgment calls the converter does not make.
 
 | File | What it shows |
 | :--- | :--- |
@@ -93,6 +99,8 @@ Sixteen ColumnIds (e.g., BilledCost, BillingCurrency, InvoiceId) are defined in 
 With the front matter, the appendix reads `[ListCost](#col), [BilledCost](#col), and [ContractedCost](#col)`, and all three resolve to Cost and Usage. Before, only BilledCost carried a qualifier, because it is the only one of the three defined in two datasets. Writing the dataset once per file states the intent directly, and adding a column to another dataset later cannot change or break existing references.
 
 `tag_sources.py` applies the rule as well. After adding the front matter, rerunning it removed the six qualifiers that had become unnecessary. It keeps a qualifier when the visible text is qualified too (e.g., `InvoiceDetail.BilledCost` next to `CostAndUsage.BilledCost`). The rendered output did not change.
+
+For files outside `datasets/`, `convert_all.sh` infers the dataset from the columns a file already references: when every hard-coded link and every ColumnId that only one dataset defines points into a single dataset, the file gets the front matter. It added `dataset:` to 57 files in this way (53 Cost and Usage, 3 SKU Price, 1 Invoice Detail), and a file that mixes datasets gets none. The inference reads tags as well as links, so a second run reaches the same answer.
 
 This is one answer to the Dataset scope question in #2779, which is still open.
 
@@ -143,29 +151,29 @@ A JSON object is defined in its column's file but is a separate entity. Referenc
 
 ## Review of Rendered Differences
 
-`compare_rendered.sh` reports 22 changed lines in the published `spec.md`. The build resolves 333 semantic references in total. Each one was reviewed and classified using the change types in the Specification Change Guidelines.
+`compare_rendered.sh` compares the published `spec.md` with the commit where this branch left `working_draft`, and `classify_rendered.py` sorts every difference by kind. The build resolves 7,851 semantic references, and 816 lines of the published specification differ.
 
-| Classification | Lines | Change | Why |
-| :--- | ---: | :--- | :--- |
-| No visible change | 13 | Table padding in Content Constraints and Object Schema Structure rows | Cell widths differ; the rendered tables are identical |
-| Editorial | 2 | Repeat link removed from *invoice issuer* in the Description of both BilledCost files | The Editorial Guidelines link an entity only on its first occurrence in a source file |
-| Editorial | 1 | *commitments* now linked at its first mention | It was styled as a glossary term but never linked |
-| Editorial | 4 | "correction", "corrections", and "charges" in ChargeClass now italicized as glossary terms | The same file already treated these words as glossary terms elsewhere |
-| Bug fix (needs Working Group confirmation) | 2 | "invoice issuer" in the BilledCost introductions now links the glossary term instead of the InvoiceIssuerName column | The sentence describes the party that issues the invoice, and both files' Descriptions already used the glossary term |
-| Regression | 0 | None | |
+| Kind | Differences | Notes |
+| :--- | ---: | :--- |
+| Visible words changed | 0 | No normative or explanatory wording changed |
+| Link retargeted | 2 | "invoice issuer" in the BilledCost introductions links the glossary term instead of the InvoiceIssuerName column. Needs Working Group confirmation |
+| Link added | 445 | A first mention that was plain text is now a link |
+| Link removed | 213 | A repeat link is now plain text |
+| Italics | 18 | Removed from 12 links to columns, attributes, and Display Names; added to 6 glossary terms |
+| Whitespace only | 297 | Table padding; the rendered tables are identical |
 
-When this branch was first cut, the comparison showed 33 lines. Since then, `working_draft` has fixed by hand most of the repeat links that the first-mention rule removes automatically: the *covered charge*, *covering charge*, and InvoiceDetail column links in Requirements (#2773), the *resources* and *services* links in the Contract Applied property table (#2773), and the schema pointer links (#2789). The 11 lines this branch no longer differs on are the same changes, made one pull request at a time.
+The added and removed links apply the Editorial Guidelines uniformly (see CONVERSION.md for how tables and the glossary are treated). The two retargeted links are the only differences that change where a link goes.
 
-No normative wording changed. The words of every requirement are the same, and only link styling differs.
+Before the whole specification was converted, the same comparison on the hand-reviewed sample files showed 22 lines, all explained: table padding, repeat links removed, and the glossary terms in ChargeClass italicized.
 
-One mistake was caught before it reached the output. A hand edit tagged the `# Billed Cost` heading, which is the column's definition, and the REG002 definition check reported it on the next build.
+Mistakes in the conversion itself were caught by the checks before they reached the output: a hand edit that tagged the `# Billed Cost` heading (REG002), a converter that tagged dataset Display Names under a `<!--SkipTOC-->` comment (REG014), a stray `*` dropped from link text (the classifier's unpaired-asterisk check), and a hard-coded link whose text named a different column than its target (FOCUS011).
 
 ## Known Limitations
 
 * **Requirements Model extraction.** `.github/workflows/rm_extraction.yml` extracts normative statements from the Markdown source. It has not been made tag-aware, so a PR from this branch would show extraction differences.
 * **PDF.** The PDF step (wkhtmltopdf) was not run locally. It uses the same resolved `spec.md` and `spec.html`, so it should behave like the HTML build.
 * **`build.sh`.** The prototype's `build.sh` compares the samples against the unconverted spec files. On this branch those spec files are already converted, so use `make` and `compare_rendered.sh` instead.
-* **Open questions.** The questions in #2779 are still open: dataset scope, plain prose, value links, self-references, context rules, and the Requirements Model.
+* **Open questions.** The questions in #2779 are still open: dataset scope, plain prose, value links, self-references, context rules, and the Requirements Model. CONVERSION.md lists 15 more that the whole-specification conversion raised.
 
 ## Open Question: Context Rules
 
