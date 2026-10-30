@@ -9,7 +9,7 @@
 >
 > The branch needs another update once both merge: bring it up to date with `working_draft`, rerun `convert_all.sh`, and refresh the counts in this guide and in CONVERSION.md.
 
-The branch is cut from `working_draft`. The whole specification is rewritten with semantic tags wherever the tags cover its content, and the real build (`make`) resolves those tags into today's links and formatting. What the tags do not cover keeps its hand-written markup, and both kinds coexist in one build. [CONVERSION.md](CONVERSION.md) reports the results of converting every file and lists the open questions. The [slides](https://docs.google.com/presentation/d/1mkH4I4puVd2Bk2DbG2-yZ1ACfFLuf-8l0hT4rWH8l0o/edit) in the FOCUS shared Google Drive present the proposal and these results for the Working Group.
+The branch is cut from `working_draft`. The whole specification is rewritten with semantic tags wherever the tags cover its content, and the real build (`make`) resolves those tags into today's links and formatting. What the tags do not cover keeps its hand-written markup, and both kinds coexist in one build. [CONVERSION.md](CONVERSION.md) reports the results of converting every file and lists the open questions, and [SEMANTIC_REVIEW.md](SEMANTIC_REVIEW.md) records the semantic review that followed. The [slides](https://docs.google.com/presentation/d/1mkH4I4puVd2Bk2DbG2-yZ1ACfFLuf-8l0hT4rWH8l0o/edit) in the FOCUS shared Google Drive present the proposal and these results for the Working Group.
 
 ## Try It
 
@@ -151,15 +151,15 @@ A JSON object is defined in its column's file but is a separate entity. Referenc
 
 ## Review of Rendered Differences
 
-`compare_rendered.sh` compares the published `spec.md` with the commit where this branch left `working_draft`, and `classify_rendered.py` sorts every difference by kind. The build resolves 8,127 semantic references, and 820 lines of the published specification differ.
+`compare_rendered.sh` compares the published `spec.md` with the commit where this branch left `working_draft`, and `classify_rendered.py` sorts every difference by kind. The build resolves 8,504 semantic references, and 877 lines of the published specification differ.
 
 | Kind | Differences | Notes |
 | :--- | ---: | :--- |
 | Visible words changed | 0 | No normative or explanatory wording changed |
-| Link retargeted | 2 | "invoice issuer" in the BilledCost introductions links the glossary term instead of the InvoiceIssuerName column. Needs Working Group confirmation |
-| Link added | 450 | A first mention that was plain text is now a link |
+| Link retargeted | 6 | "invoice issuer" in the BilledCost introductions links the glossary term instead of the InvoiceIssuerName column (needs Working Group confirmation), and 4 tags corrected in the semantic review |
+| Link added | 513 | A first mention that was plain text is now a link |
 | Link removed | 213 | A repeat link is now plain text |
-| Italics | 18 | Removed from 12 links to columns, attributes, and Display Names; added to 6 glossary terms |
+| Italics | 21 | Emphasis follows the kind of entity: removed from non-term links, added to glossary terms that lacked it |
 | Whitespace only | 297 | Table padding; the rendered tables are identical |
 
 The added and removed links apply the Editorial Guidelines uniformly (see CONVERSION.md for how tables and the glossary are treated). The two retargeted links are the only differences that change where a link goes.

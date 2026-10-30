@@ -2,7 +2,7 @@
 
 [List Unit Price](#term) represents the service-provider-suggested unit price per [Pricing Unit](#col) for the [SKU Price](#term) identified by the given [SKU Price ID](#col). It is the unit price before the application of any [negotiated pricing terms](#term) or discount-bearing [commitment programs](#term) (e.g., [commitment discount](#term)).
 
-List Unit Price is denominated in the [Billing Currency](#col). List Unit Price is commonly used for negotiation and rate optimization activities.
+[List Unit Price](#col) is denominated in the [Billing Currency](#col). [List Unit Price](#col) is commonly used for negotiation and rate optimization activities.
 
 ## Requirements
 
@@ -25,12 +25,12 @@ List Unit Price is denominated in the [Billing Currency](#col). List Unit Price 
 
 ## Implementation Guidance
 
-List Unit Price is the service-provider-suggested unit price that commonly serves as the starting point for negotiation. It is not necessarily publicly available. For example, it can be provided only in a [price list](#term) specific to a customer.
+[List Unit Price](#col) is the service-provider-suggested unit price that commonly serves as the starting point for negotiation. It is not necessarily publicly available. For example, it can be provided only in a [price list](#term) specific to a customer.
 
-List Unit Price does not reflect any [negotiated pricing terms](#term). This includes the following cases, which may be less obvious:
+[List Unit Price](#col) does not reflect any [negotiated pricing terms](#term). This includes the following cases, which may be less obvious:
 
-* Tier configuration: a negotiated tier configuration results in SKU Price IDs that differ from those of the service-provider-suggested one. For these SKU Price IDs, List Unit Price is the service-provider-suggested unit price for the same quantity under the service-provider-suggested tier configuration.
-* Currency exchange rates: when the [Pricing Currency](#col) differs from the Billing Currency, List Unit Price does not reflect [negotiated FX pricing terms](#term), such as a negotiated currency exchange rate, even though it is denominated in the Billing Currency.
+* Tier configuration: a negotiated tier configuration results in [SKU Price IDs](#col:SkuPriceId) that differ from those of the service-provider-suggested one. For these [SKU Price IDs](#col:SkuPriceId), [List Unit Price](#col) is the service-provider-suggested unit price for the same quantity under the service-provider-suggested tier configuration.
+* Currency exchange rates: when the [Pricing Currency](#col) differs from the [Billing Currency](#col), [List Unit Price](#col) does not reflect [negotiated FX pricing terms](#term), such as a negotiated currency exchange rate, even though it is denominated in the [Billing Currency](#col).
 
 ## Usability Constraints
 

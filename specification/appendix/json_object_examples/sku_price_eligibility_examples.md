@@ -1,8 +1,8 @@
 # Examples: SKU Price Eligibility
 
-> **Preview:** The [SKU Price](#ds) dataset is a preview in this version of FOCUS, so these examples may change in the next version based on implementation feedback. The preview also covers two requirements outside the dataset, which are excluded from conformance, and two operating model conditions and a schema that exist only for SKU Price. [Issue #2768](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2768) tracks the preview and lists each one.
+> **Preview:** The [SKU Price](#ds) dataset is a preview in this version of FOCUS, so these examples may change in the next version based on implementation feedback. The preview also covers two requirements outside the dataset, which are excluded from conformance, and two operating model conditions and a schema that exist only for [SKU Price](#ds). [Issue #2768](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2768) tracks the preview and lists each one.
 
-This section describes examples for the [SKU Price Eligibility](#col) column in the SKU Price dataset.
+This section describes examples for the [SKU Price Eligibility](#col) column in the [SKU Price](#ds) dataset.
 
 ## Global Scope
 
@@ -16,7 +16,7 @@ When a unit price is not restricted to an enumerated set of entities (e.g., stan
 
 ## Enterprise Scope with Exceptions
 
-An enterprise-wide negotiated rate that covers all accounts **except** a specific sandbox account (BillingAccountId 123456789012).
+An enterprise-wide negotiated rate that covers all accounts **except** a specific sandbox account ([BillingAccountId](#col:CostAndUsage.BillingAccountId) 123456789012).
 
 ```json
 {

@@ -52,7 +52,7 @@ The [Requester Details Object Schema](#schema) defines the structure for the [Re
 
 The [SKU Price Eligibility Object Schema](#schema) defines the structure for the [SKU Price Eligibility](#col) column.
 
-> **Preview:** The [SKU Price Eligibility Object Schema](#schema) defines a column of the SKU Price dataset, which is a preview in this version of FOCUS. While that dataset is a preview, this schema may change in the next version without a deprecation notice.
+> **Preview:** The [SKU Price Eligibility Object Schema](#schema) defines a column of the [SKU Price](#ds) dataset, which is a preview in this version of FOCUS. While that dataset is a preview, this schema may change in the next version without a deprecation notice.
 
 [Download from GitHub](/specification/schemas/datasets/sku_price/skupriceeligibilityobjectschema.json)
 

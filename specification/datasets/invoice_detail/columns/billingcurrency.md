@@ -1,6 +1,6 @@
 # Billing Currency
 
-[Billing Currency](#term) is an identifier that represents the currency that a [charge](#term) for [resources](#term) or [services](#term) was billed in. Billing Currency is commonly used in scenarios where costs need to be grouped or aggregated.
+[Billing Currency](#term) is an identifier that represents the currency that a [charge](#term) for [resources](#term) or [services](#term) was billed in. [Billing Currency](#col) is commonly used in scenarios where costs need to be grouped or aggregated.
 
 ## Requirements
 

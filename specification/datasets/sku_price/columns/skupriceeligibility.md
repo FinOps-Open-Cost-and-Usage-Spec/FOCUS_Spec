@@ -1,6 +1,6 @@
 # SKU Price Eligibility
 
-[SKU Price Eligibility](#col) is a structured definition of the specific entities, accounts, or contexts eligible for the specified [SKU Price](#ds) record. This column details the inclusionary and exclusionary logic that dictates when a specific SKU Price record can be applied to consumption.
+[SKU Price Eligibility](#col) is a structured definition of the specific entities, accounts, or contexts eligible for the specified [SKU Price](#ds) record. This column details the inclusionary and exclusionary logic that dictates when a specific [SKU Price](#ds) record can be applied to consumption.
 
 ## Requirements
 
@@ -16,7 +16,7 @@
 
 ## SKU Price Eligibility Object
 
-[SKU Price Eligibility](#col) consists of a valid JSON object which contains a set of top-level property keys. These keys define entity-based inclusionary and exclusionary logic for the SKU Price record.
+[SKU Price Eligibility](#col) consists of a valid JSON object which contains a set of top-level property keys. These keys define entity-based inclusionary and exclusionary logic for the [SKU Price](#ds) record.
 
 The following section details the normative requirements for the [SkuPriceEligibilityObject](#obj) and its nested properties. For a logical overview of the expected content, see the [Schema Structure](#datamodel.skuprice.skupriceeligibility.skupriceeligibilityobject.objectschemastructure) and [Object Example](#datamodel.skuprice.skupriceeligibility.skupriceeligibilityobject.objectexample) sections.
 
@@ -25,8 +25,8 @@ The following section details the normative requirements for the [SkuPriceEligib
 [SkuPriceEligibilityObject](#obj) MUST adhere to the following requirements:
 
 * [SkuPriceEligibilityObject](#obj) MUST conform to the [SkuPriceEligibilityObjectSchema](#schema) JSON Schema.
-* SkuPriceEligibilityObject.IsGlobalScope MUST be `true` when the *SKU Price's* eligibility is not restricted to an enumerated set of entities (e.g., a standard public list price).
-* SkuPriceEligibilityObject.IsComplexScope MUST be `true` when the *SKU Price's* eligibility logic exceeds schema capabilities.
+* SkuPriceEligibilityObject.IsGlobalScope MUST be `true` when the [SKU Price's](#term:sku-price) eligibility is not restricted to an enumerated set of entities (e.g., a standard public list price).
+* SkuPriceEligibilityObject.IsComplexScope MUST be `true` when the [SKU Price's](#term:sku-price) eligibility logic exceeds schema capabilities.
 * SkuPriceEligibilityObject.Inclusions[\*].Dimension SHOULD represent a column in [Cost and Usage](#ds).
 * SkuPriceEligibilityObject.Exclusions[\*].Dimension SHOULD represent a column in [Cost and Usage](#ds).
 * SkuPriceEligibilityObject.Inclusions[\*].Values MUST contain only the single string "*" when the wildcard is present.
@@ -91,9 +91,9 @@ The evaluation of an entity's usage against a rate card's eligibility rules proc
 
 1. **Normalization:** Convert the entity attribute and the Scope `Values` to a consistent case (default: lowercase) for comparison.
 2. **Scope Check:** If `IsGlobalScope` is `true`, the entity passes inclusion; proceed to Exclusion Evaluation. If `IsComplexScope` is `true`, the object does not determine eligibility; terminate evaluation.
-3. **Inclusion Evaluation:** Iterate through `Inclusions`. Apply `InclusionOperator`. If result is `False`, the entity is not eligible for this SKU Price record; terminate evaluation.
-4. **Exclusion Evaluation:** Iterate through `Exclusions`. If `True`, the entity is explicitly excluded from this SKU Price record; terminate evaluation.
-5. **Resolution:** If the entity passes the Scope Check or Inclusion Evaluation and is not caught by Exclusions, the SKU Price record is valid for that entity.
+3. **Inclusion Evaluation:** Iterate through `Inclusions`. Apply `InclusionOperator`. If result is `False`, the entity is not eligible for this [SKU Price](#ds) record; terminate evaluation.
+4. **Exclusion Evaluation:** Iterate through `Exclusions`. If `True`, the entity is explicitly excluded from this [SKU Price](#ds) record; terminate evaluation.
+5. **Resolution:** If the entity passes the Scope Check or Inclusion Evaluation and is not caught by Exclusions, the [SKU Price](#ds) record is valid for that entity.
 
 <div class="h7-nonindex">Evaluating Rules Against Null Dimensions</div>
 
@@ -149,7 +149,7 @@ SKU Price Eligibility
 
 ## Description
 
-A structured definition of the specific entities, accounts, or contexts eligible for the specified SKU Price record.
+A structured definition of the specific entities, accounts, or contexts eligible for the specified [SKU Price](#ds) record.
 
 ## Content Constraints
 

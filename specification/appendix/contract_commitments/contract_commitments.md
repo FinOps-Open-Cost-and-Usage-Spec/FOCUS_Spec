@@ -2,7 +2,7 @@
 
 ## Overview
 
-The **Contract Commitment** dataset provides a structured representation of the commercial agreements between a customer and their service providers. While the [Cost and Usage](#ds) dataset tracks the results of consumption, the Contract Commitment dataset tracks the intent and constraints of the relationship.
+The **[Contract Commitment](#ds)** dataset provides a structured representation of the commercial agreements between a customer and their service providers. While the [Cost and Usage](#ds) dataset tracks the results of consumption, the [Contract Commitment](#ds) dataset tracks the intent and constraints of the relationship.
 
 ### Core Logical Pillars
 
@@ -39,9 +39,9 @@ By contrast, in a Continuous model with an Hourly Fulfillment Interval, an engin
 
 ### Common Offering Examples
 
-The following table provides a reference for how common cloud and SaaS commercial offerings theoretically map to the Contract Commitment schema. (This table is provided for demonstration purposes only. Actual value assignments are left to the data generators upon the creation of dataset artifacts.)
+The following table provides a reference for how common cloud and SaaS commercial offerings theoretically map to the [Contract Commitment](#ds) schema. (This table is provided for demonstration purposes only. Actual value assignments are left to the data generators upon the creation of dataset artifacts.)
 
-In the below table, CC represents Contract Commitment.
+In the below table, CC represents [Contract Commitment](#ds).
 
 | Offering Example | CC Category | CC Model | CC Offer Category | CC Benefit Category | CC Fulfillment Interval | CC Duration Type | CC Payment Model | CC Payment Interval |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |

@@ -23,13 +23,13 @@
 
 ## Implementation Guidance
 
-Within the SKU Price dataset, the [Purchase Payment Model](#col) describes how the fee for a purchase is settled, across purchase constructs such as reservations, prepaid licenses, and commitment discounts:
+Within the [SKU Price](#ds) dataset, the [Purchase Payment Model](#col) describes how the fee for a purchase is settled, across purchase constructs such as reservations, prepaid licenses, and commitment discounts:
 
 * **All Upfront:** The full obligation is settled by a single fee at the start of the term.
 * **No Upfront:** The obligation is settled through periodic fees over the term, with no initial payment.
-* **Partial Upfront:** The obligation combines an initial fee and periodic fees. It can be represented by one SKU Price record or by separate records for the upfront fee and the recurring fee, each with its own [SKU Price ID](#col).
+* **Partial Upfront:** The obligation combines an initial fee and periodic fees. It can be represented by one [SKU Price](#ds) record or by separate records for the upfront fee and the recurring fee, each with its own [SKU Price ID](#col).
 
-Whether the price of a purchase differs across payment models is set by the [service provider](#term). Some price the payment model into the purchase and charge less in total the more of the obligation is settled upfront. Others charge the same total under every payment model, and some offer only one. Each payment model offered is still published as a separate SKU Price record, so two records for the same purchase can carry the same price and differ only in how it is settled.
+Whether the price of a purchase differs across payment models is set by the [service provider](#term). Some price the payment model into the purchase and charge less in total the more of the obligation is settled upfront. Others charge the same total under every payment model, and some offer only one. Each payment model offered is still published as a separate [SKU Price](#ds) record, so two records for the same purchase can carry the same price and differ only in how it is settled.
 
 ## Column ID
 

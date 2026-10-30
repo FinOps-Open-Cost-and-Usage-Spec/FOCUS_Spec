@@ -1,6 +1,6 @@
 # Contract Commitment
 
-The Contract Commitment dataset is a supporting dataset that describes the terms of contracts agreed between a service provider and a customer.
+The [Contract Commitment](#ds) dataset is a supporting dataset that describes the terms of contracts agreed between a service provider and a customer.
 
 ## Columns<!--SkipTOC-->
 
@@ -39,9 +39,9 @@ The Contract Commitment dataset is a supporting dataset that describes the terms
 
 ## Relationships<!--SkipTOC-->
 
-The Contract Commitment dataset can be joined to the [Cost and Usage](#ds) dataset through the use of [Contract Commitment ID](#col).
+The [Contract Commitment](#ds) dataset can be joined to the [Cost and Usage](#ds) dataset through the use of [Contract Commitment ID](#col).
 
-* In the Contract Commitment dataset, [Contract Commitment ID](#col) is a column.
+* In the [Contract Commitment](#ds) dataset, [Contract Commitment ID](#col) is a column.
 * In the [Cost and Usage](#ds) dataset, [Contract Commitment ID](#col) is a property within a JSON object array provided in [Contract Applied](#col:CostAndUsage.ContractApplied) column.
 
 | Dataset A           | Dataset A Column       | Dataset B      | Dataset B Column |

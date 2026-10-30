@@ -2,7 +2,7 @@
 
 [List Cost](#col) represents the cost of a [charge](#term) based on the service-provider-suggested pricing. It is the cost before any [negotiated pricing terms](#term) or any discount-bearing [commitment programs](#term) (e.g., [commitment discount](#term)) are applied to the [charge](#term).
 
-When [List Unit Price](#col) and [Pricing Quantity](#col) are provided for the [charge](#term), [List Cost](#col) is calculated by multiplying the List Unit Price by the corresponding [Pricing Quantity](#col).
+When [List Unit Price](#col) and [Pricing Quantity](#col) are provided for the [charge](#term), [List Cost](#col) is calculated by multiplying the [List Unit Price](#col) by the corresponding [Pricing Quantity](#col).
 
 [List Cost](#col) is denominated in the [Billing Currency](#col). [List Cost](#col) is commonly used to calculate savings based on negotiation and rate optimization activities by comparing it with [Contracted Cost](#col), [Billed Cost](#col), and [Effective Cost](#col).
 

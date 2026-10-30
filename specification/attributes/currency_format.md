@@ -22,7 +22,7 @@ A [consumption currency](#term) is one subtype of [virtual currency](#term). Whi
 
 Whether a value represents a [national currency](#term) follows from the column's own definition or from the column's documentation, not from the format of the value. A single column can carry both currency types (e.g., a [national currency](#term) on purchase rows and a [consumption currency](#term) on usage rows).
 
-Columns that carry a [national currency](#term) by their own definition take their currency type from that definition. Billing Currency, for example, separately constrains its values to [national currency](#term) in each dataset that includes it.
+Columns that carry a [national currency](#term) by their own definition take their currency type from that definition. [Billing Currency](#col:CostAndUsage.BillingCurrency), for example, separately constrains its values to [national currency](#term) in each dataset that includes it.
 
 ## Attribute ID
 

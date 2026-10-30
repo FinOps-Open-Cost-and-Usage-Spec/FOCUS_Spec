@@ -1,6 +1,6 @@
 # Dataset Instance
 
-The Dataset Instance metadata object provides information about the [dataset instance](#term) and its content. Dataset Instance is a data generator-delivered instance of a FOCUS Dataset. For example, a [Data Generator](#meta) may provide multiple datasets utilizing the FOCUS specification, including multiple instances of the FOCUS [Cost and Usage](#ds) dataset, each representing a different time granularity.
+The [Dataset Instance](#meta) metadata object provides information about the [dataset instance](#term) and its content. Dataset Instance is a data generator-delivered instance of a FOCUS Dataset. For example, a [Data Generator](#meta) may provide multiple datasets utilizing the FOCUS specification, including multiple instances of the FOCUS [Cost and Usage](#ds) dataset, each representing a different time granularity.
 
 ## Requirements
 

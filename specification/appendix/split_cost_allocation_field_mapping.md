@@ -20,7 +20,7 @@ The origin charge for the period is:
 * [BilledCost](#col): $0.00
 * [ConsumedQuantity](#col): 24 instance-hours
 * [ListUnitPrice](#col): $12.00 per instance-hour
-* [ContractedUnitPrice](#col): $12.00 per instance-hour (defaults to List Unit Price — Resource Reservation is a commitment discount, which does not affect [ContractedUnitPrice](#col))
+* [ContractedUnitPrice](#col): $12.00 per instance-hour (defaults to [List Unit Price](#col) — Resource Reservation is a commitment discount, which does not affect [ContractedUnitPrice](#col))
 
 The three consuming workloads and their measured allocation ratios for the period are:
 

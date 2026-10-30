@@ -85,7 +85,7 @@ The specification for the [Cost and Usage](#ds) dataset defines a group of colum
 The [Cost and Usage](#ds) dataset can be joined to the [Contract Commitment](#ds) dataset through the use of the [Contract Commitment ID](#col:ContractCommitment.ContractCommitmentId).
 
 * In the [Cost and Usage](#ds) dataset, Contract Commitment ID is a property within a JSON object array provided in [Contract Applied](#col) column.
-* In the Contract Commitment dataset, Contract Commitment ID is a column.
+* In the [Contract Commitment](#ds) dataset, [Contract Commitment ID](#col:ContractCommitment.ContractCommitmentId) is a column.
 
 | Dataset A           | Dataset A Column  | Dataset B           | Dataset B Column       |
 | ------------------- | ----------------- | ------------------- | ---------------------- |

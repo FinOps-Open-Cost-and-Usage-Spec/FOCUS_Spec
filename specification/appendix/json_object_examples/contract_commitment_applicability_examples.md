@@ -14,7 +14,7 @@ If the commitment is 100% applicable to all resources, the `Applicability` objec
 
 ## Global Scope with Specific Exceptions
 
-Organization-wide coverage **except** for Database services running in BillingAccountId 123456789012.
+Organization-wide coverage **except** for Database services running in [BillingAccountId](#col:CostAndUsage.BillingAccountId) 123456789012.
 
 ```json
 {

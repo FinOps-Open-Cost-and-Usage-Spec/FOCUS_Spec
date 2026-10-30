@@ -20,7 +20,7 @@ Note the following details in the example dataset:
 
 * The Charge Period is April 1st 2025 - April 1st 2026. The Billing Period is the month of April 2025 (when the licenses were ordered) and therefore will appear in the April invoice.
 * A single charge representing the total payment for the 12-month agreement ($10,000) is charged in the first invoice. [BilledCost](#col) and [EffectiveCost](#col) are realized in the same record since detailed usage records will not be provided during the 12-month period to realize amortized portions of this up-front payment.
-* The single charge record does not include a List Unit Price, [Pricing Quantity](#col), or SKU-related information. Alternatively, the [Pricing Quantity](#col) could have been set to 1, and the List Unit Price could be the same as the total charge.
+* The single charge record does not include a [List Unit Price](#col), [Pricing Quantity](#col), or SKU-related information. Alternatively, the [Pricing Quantity](#col) could have been set to 1, and the [List Unit Price](#col) could be the same as the total charge.
   
 ## Scenario A2: Invoice Up-Front for a Quantity of a Service
 

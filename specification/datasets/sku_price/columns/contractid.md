@@ -1,6 +1,6 @@
 # Contract ID
 
-[Contract ID](#col) is a service-provider-assigned identifier for a [contract](#term) describing the agreed terms between a service provider and a customer. Contracts can include commitment to a certain amount of spend or usage over an agreed period of time. A null [Contract ID](#col) indicates a public list price that is not tied to a specific contract; a non-null [Contract ID](#col) associates the price with a specific contract. The terms of a contract, including its duration, are described in the [Contract Commitment](#ds) dataset, while the SKU Price dataset carries the unit price specific to that contract.
+[Contract ID](#col) is a service-provider-assigned identifier for a [contract](#term) describing the agreed terms between a service provider and a customer. Contracts can include commitment to a certain amount of spend or usage over an agreed period of time. A null [Contract ID](#col) indicates a public list price that is not tied to a specific contract; a non-null [Contract ID](#col) associates the price with a specific contract. The terms of a contract, including its duration, are described in the [Contract Commitment](#ds) dataset, while the [SKU Price](#ds) dataset carries the unit price specific to that contract.
 
 > **Note:** [SkuPriceEligibility](#col) is the exclusive determinant of which entities are eligible for the [SkuPrice](#ds) record. [ContractId](#col) serves only to identify the source agreement; it does not implicitly grant pricing eligibility to all accounts governed by that contract.
 

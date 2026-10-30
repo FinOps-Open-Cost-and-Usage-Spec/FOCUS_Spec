@@ -1,6 +1,6 @@
 # Host Provider Name
 
-[Host Provider Name](#col) is the name of the entity that provides the underlying infrastructure on which the [resources](#term) or [services](#term) of the [Service Provider](#col:ServiceProviderName) are deployed.
+[Host Provider Name](#col) is the name of the entity that provides the underlying infrastructure on which the [resources](#term) or [services](#term) of the [Service Provider](#term) are deployed.
 
 In some instances, the host provider and the service provider are the same entity: the provider hosts their own services. In other instances, the host provider and the service provider are separate entities, though the service provider may or may not expose the host provider and/or allow the customer to select the host provider.
 

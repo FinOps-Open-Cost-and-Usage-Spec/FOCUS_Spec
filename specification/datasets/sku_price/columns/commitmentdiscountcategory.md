@@ -29,7 +29,7 @@ Commitment Discount Category
 
 ## Description
 
-Indicates whether the [commitment discount](#term) a SKU Price record relates to is based on usage quantity or cost (aka "spend").
+Indicates whether the [commitment discount](#term) a [SKU Price](#ds) record relates to is based on usage quantity or cost (aka "spend").
 
 ## Content Constraints
 

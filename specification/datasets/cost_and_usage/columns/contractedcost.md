@@ -2,7 +2,7 @@
 
 [Contracted Cost](#col) represents the cost of a [charge](#term) based on [negotiated pricing terms](#term) before any discount-bearing [commitment programs](#term) (e.g., [commitment discounts](#term)) are applied to the [charge](#term).
 
-When [Contracted Unit Price](#col) and [Pricing Quantity](#col) are provided for the [charge](#term), [Contracted Cost](#col) is calculated by multiplying the Contracted Unit Price by the corresponding [Pricing Quantity](#col). When no [negotiated pricing terms](#term) apply to a usage or purchase [charge](#term), [Contracted Cost](#col) defaults to [List Cost](#col).
+When [Contracted Unit Price](#col) and [Pricing Quantity](#col) are provided for the [charge](#term), [Contracted Cost](#col) is calculated by multiplying the [Contracted Unit Price](#col) by the corresponding [Pricing Quantity](#col). When no [negotiated pricing terms](#term) apply to a usage or purchase [charge](#term), [Contracted Cost](#col) defaults to [List Cost](#col).
 
 [Contracted Cost](#col) is denominated in the [Billing Currency](#col). [Contracted Cost](#col) is commonly used to calculate savings based on negotiation and rate optimization activities by comparing it with [List Cost](#col), [Billed Cost](#col), and [Effective Cost](#col).
 

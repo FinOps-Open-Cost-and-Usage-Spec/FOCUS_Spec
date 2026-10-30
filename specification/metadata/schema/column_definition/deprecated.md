@@ -1,6 +1,6 @@
 # Deprecated
 
-The deprecation status of a column in a [Dataset Instance](#meta).
+The deprecation status of a column in a [Dataset Instance](#term).
 
 [Deprecated](#meta) adheres to the following requirements:
 

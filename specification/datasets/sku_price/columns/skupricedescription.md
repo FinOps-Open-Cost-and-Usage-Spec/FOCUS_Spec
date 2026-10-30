@@ -21,7 +21,7 @@ SKU Price Description
 
 ## Description
 
-Self-contained summary of the *SKU Price's* purpose and offering.
+Self-contained summary of the [SKU Price's](#term:sku-price) purpose and offering.
 
 ## Content Constraints
 
