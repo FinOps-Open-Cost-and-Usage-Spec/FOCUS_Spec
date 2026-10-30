@@ -1,6 +1,13 @@
 # Semantic Markup Demo Branch
 
 > **Note:** This branch demonstrates feature request [#2779](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2779), which is proposed for FOCUS 1.6. It is for understanding the concept and for local testing. It is not intended to be merged as is.
+>
+> This branch is also not up to date with `working_draft`. It was cut at commit `038257ac`, and later commits are not included. Two open pull requests are expected to merge soon and are not reflected either:
+>
+> * [#2710](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pull/2710), the 1.5 Requirements Model update. The REG017 findings below compare against the Requirements Model as it was before this PR, so some of them may disappear when it merges.
+> * [#2787](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pull/2787), the file and folder renames. It is expected to wait for 1.6. The REG016 findings below match the names it renames, and the registry builder hard-codes the current paths (e.g., `datasets/data_model.md` and `*_overview.md`).
+>
+> The branch needs an update once both merge: bring it up to date with `working_draft`, rerun the converter on the converted files, and refresh the counts in this guide.
 
 The branch is cut from `working_draft`. A representative set of specification files is rewritten with semantic tags, and the real build (`make`) resolves those tags into today's links and formatting. Every file that is not converted keeps its hand-written markup, and both kinds coexist in one build.
 
