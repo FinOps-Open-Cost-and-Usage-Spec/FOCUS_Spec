@@ -2,12 +2,12 @@
 
 > **Note:** This branch demonstrates feature request [#2779](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2779), which is proposed for FOCUS 1.6. It is for understanding the concept and for local testing. It is not intended to be merged as is.
 >
-> This branch is also not up to date with `working_draft`. It was cut at commit `038257ac`, and later commits are not included. Two open pull requests are expected to merge soon and are not reflected either:
+> This branch was rebased onto `working_draft` at commit `e0fd5f77` on 2026-10-29, so it includes everything merged for 1.5 up to that point. Two open pull requests are expected to merge soon and are not reflected:
 >
-> * [#2710](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pull/2710), the 1.5 Requirements Model update. The REG017 findings below compare against the Requirements Model as it was before this PR, so some of them may disappear when it merges.
+> * [#2710](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pull/2710), the 1.5 Requirements Model update. The REG017 findings below compare against the Requirements Model as it is today, so some of them may disappear when it merges.
 > * [#2787](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pull/2787), the file and folder renames. It is expected to wait for 1.6. The REG016 findings below match the names it renames, and the registry builder hard-codes the current paths (e.g., `datasets/data_model.md` and `*_overview.md`).
 >
-> The branch needs an update once both merge: bring it up to date with `working_draft`, rerun the converter on the converted files, and refresh the counts in this guide.
+> The branch needs another update once both merge: bring it up to date with `working_draft`, rerun the converter on the converted files, and refresh the counts in this guide.
 
 The branch is cut from `working_draft`. A representative set of specification files is rewritten with semantic tags, and the real build (`make`) resolves those tags into today's links and formatting. Every file that is not converted keeps its hand-written markup, and both kinds coexist in one build.
 
@@ -57,14 +57,14 @@ The source files are expected to contain mistakes, and finding them is one of th
 | `attributes/numeric_format.md` | Attribute self-references and glossary terms in normative text |
 | `operating_model_conditions/includesresourcetypeassignment.md` | An operating model condition referring to itself |
 | `appendix/saas_examples/consumption_currency_pricing_model.md` | Non-normative prose with a front matter dataset (`dataset: CostAndUsage`), so shared ColumnIds such as BilledCost need no qualifier |
-| `datasets/cost_and_usage/columns/contractapplied.md` | A JSON column: its object (`#obj`), its schema (`#schema`), and the repeated schema link from #2703 |
+| `datasets/cost_and_usage/columns/contractapplied.md` | A JSON column: its object (`#obj`), its schema (`#schema`), and the schema pointer that #2703 asked about |
 | `metadata/schema/focus_version.md` | Metadata self-references and a collection reference (`[Schema](#meta)`) |
 | `metadata/recency/dataset_instance_id.md` | A Metadata ID defined in three collections, which resolves to the file's own collection |
 | `glossary.md` | Front matter declaring two aliases |
 
 Conversion followed the migration steps:
 
-1. `tag_sources.py` made 298 mechanical changes and listed what it could not decide.
+1. `tag_sources.py` converted the hard-coded links, plain ColumnIds, attribute and condition IDs, italic glossary terms, and quoted values, and listed what it could not decide.
 2. Judgment calls were made by hand:
    * Self-references by Display Name in prose (e.g., "Billed Cost represents...") are tagged, per the recommendation on #2779.
    * In `chargeclass.md`, "correction" and "charges" are tagged as glossary terms where the same file already treated them as terms.
@@ -76,7 +76,7 @@ Conversion followed the migration steps:
 
 ## Dataset Scope
 
-Eleven ColumnIds (e.g., BilledCost, BillingCurrency, InvoiceId) are defined in more than one dataset. This branch decides which dataset an unqualified column reference means as follows:
+Sixteen ColumnIds (e.g., BilledCost, BillingCurrency, InvoiceId) are defined in more than one dataset. This branch decides which dataset an unqualified column reference means as follows:
 
 1. A file under `datasets/<dataset>/` belongs to that dataset.
 2. Any other file may declare a dataset in front matter:
@@ -102,21 +102,21 @@ The first prototype covered columns, allowed values, datasets, attributes, opera
 
 | Type | Entities | Hand-written links on `working_draft` | Defined by |
 | :--- | ---: | ---: | :--- |
-| `obj` | 5 | 10 | `### Object ID` and `### Object Display Name` (or `Value`) in a JSON column's file |
-| `schema` | 5 | 10 | A level-3 heading in `schemas/schemas.mdpp` |
+| `obj` | 6 | 12 | `### Object ID` and `### Object Display Name` (or `Value`) in a JSON column's file |
+| `schema` | 6 | 7 | A level-3 heading in `schemas/schemas.mdpp` |
 | `meta` | 32 | 75 | A file under `metadata/` with `## Metadata ID` and `## Metadata Name`; each folder's `*_overview.md` defines its collection |
 
-All 42 resolve to anchors that exist in the assembled specification.
+All 44 resolve to anchors that exist in the assembled specification. The schema link count fell from 10 to 7 because #2789 removed the five pointer links by hand, as described next.
 
 Metadata IDs repeat across collections the way ColumnIds repeat across datasets. DatasetInstanceId is defined in the Dataset Instance, Recency, and Schema collections, and DataGenerator is both a collection and a field inside it. An unqualified metadata reference resolves in the collection that holds the file's own definition, or at the top level in any other file. A qualifier names another collection (e.g., `[DatasetInstanceId](#meta:Schema.DatasetInstanceId)`), and an ambiguous reference fails the build.
 
-**#2703.** Each JSON column links its schema twice: by ID in the conformance bullet and by name in the example pointer (`For the JSON schema, please see [Contract Applied Object Schema](...)`). With both tagged as `#schema`, the first-mention rule renders the pointer without a link, which is the "remove the second link" outcome. Keeping the link instead would be one resolver exception for schema pointers, not an edit in each of the five files. Either way, every JSON column renders the same.
+**#2703.** Each JSON column linked its schema twice: by ID in the conformance bullet and by name in the example pointer (`For the JSON schema, please see [Contract Applied Object Schema](...)`). #2789 resolved this by hand, removing the pointer link from all five files. With both references tagged as `#schema`, as in `contractapplied.md`, the first-mention rule produces the same rendered output without an edit in any file, and it applies to every future JSON column too. Keeping the pointer link instead would have been one resolver exception for schema pointers, not five file edits.
 
 **Definition checks.** REG014 reports a metadata file whose H1 differs from its Metadata Name. On this branch it reports `previouscolumnname.md` and `stringencoding.md`, the two mismatches that #2794 fixes by hand.
 
 **IDs come from ID sections.** Attribute, operating model condition, and dataset files each have an ID section (e.g., `## Attribute ID`). The first prototype derived these IDs from the H1 instead, which gave three wrong IDs: FOCUSColumnHandling (for FocusColumnHandling), JSONObjectFormat (for JsonObjectFormat), and IncludesBillingAndPaymentCurrencyDifferences (for IncludesBillingPaymentCurrencyDifferences). References still resolved, because IDs match without regard to case, but the registry recorded the wrong IDs. The registry now reads the ID sections, like Column ID and Metadata ID.
 
-**File and folder names.** The [Repository Naming Conventions](../../guidelines/contributors/repository-naming-conventions.md) require a file or folder that defines a FOCUS entity to be named after its ID in lowercase, with no separator (e.g., `numericformat.md`). The registry knows which files and folders define entities, so REG016 checks this for every entity type: column, attribute, operating model condition, and metadata files; dataset and metadata collection folders; and schema JSON files. On this branch it reports 40 names, all snake_case dataset folders, attribute files, and metadata files and folders. It reports a warning, not an error, because the renames are planned for 1.6.
+**File and folder names.** The [Repository Naming Conventions](../../guidelines/contributors/repository-naming-conventions.md) require a file or folder that defines a FOCUS entity to be named after its ID in lowercase, with no separator (e.g., `numericformat.md`). The registry knows which files and folders define entities, so REG016 checks this for every entity type: column, attribute, operating model condition, and metadata files; dataset and metadata collection folders; and schema JSON files. On this branch it reports 41 names, all snake_case dataset folders, attribute files, and metadata files and folders. It reports a warning, not an error, because the renames are planned for 1.6.
 
 ## Requirements Model Cross-Check
 
@@ -128,11 +128,12 @@ The Requirements Model rule files are named after the entity they cover, like th
 * Every rule file matches an entity, unless all of its rules have Status "Removed" (history for a removed entity, e.g., ProviderName).
 * The EntityId and EntityName in the rules match the specification exactly.
 
-Metadata fields and schemas have no rule files, so they are not checked. On this branch REG017 reports 18 findings:
+Metadata fields and schemas have no rule files, so they are not checked. On this branch REG017 reports 45 findings:
 
 | Finding | Count | Entities |
 | :--- | ---: | :--- |
-| Entity with no rule file | 7 | AllocatedServiceName, CredentialId, PrincipalId, RequesterDetails, RequesterDetailsValue, IncludesConsumptionCurrency, IncludesRequesterAttribution |
+| Entity with no rule file | 9 | AllocatedServiceName, CredentialId, PrincipalId, RequesterDetails, RequesterDetailsObject, IncludesConsumptionCurrency, IncludesPurchases, IncludesQuantityTierPricing, IncludesRequesterAttribution |
+| SKU Price entity with no rule file | 25 | The SKU Price dataset, its 22 columns, and its SkuPriceEligibilityObject; the dataset is new on `working_draft` and has no rule files yet |
 | Active rule file with no entity | 3 | IncludesListUnitPrices, IncludesNegotiatedPricing, IncludesVirtualCurrency |
 | EntityName differs | 8 | Rules "Sku ID", "Sku Meter", "Sku Price Details", and "Sku Price ID" against specification "SKU ..."; rules "Json Object Format", "Date Time Format", "Key Value Format", and "Data Generator Calculated Split Cost Allocation Handling" against specification "JSON Object Format", "Date/Time Format", "Key-Value Format", and "Data Generator-Calculated Split Cost Allocation Handling" |
 
@@ -142,17 +143,18 @@ A JSON object is defined in its column's file but is a separate entity. Referenc
 
 ## Review of Rendered Differences
 
-`compare_rendered.sh` reports 33 changed lines in the published `spec.md`. The build resolves 329 semantic references in total. Each one was reviewed and classified using the change types in the Specification Change Guidelines.
+`compare_rendered.sh` reports 22 changed lines in the published `spec.md`. The build resolves 333 semantic references in total. Each one was reviewed and classified using the change types in the Specification Change Guidelines.
 
 | Classification | Lines | Change | Why |
 | :--- | ---: | :--- | :--- |
-| No visible change | 12 | Table padding in Content Constraints and Object Schema Structure rows | Cell widths differ; the rendered tables are identical |
-| Editorial | 13 | Repeat links removed: *covered*, *covered charge*, *covering charge*, *invoice issuer* (Description), repeated InvoiceDetail column links in Requirements, and *resources* and *services* in the Contract Applied property table | The Editorial Guidelines link an entity only on its first occurrence in a source file |
-| Editorial | 2 | *commitments* now linked at its first mention (one of these lines also has a repeat link removed) | It was styled as a glossary term but never linked |
+| No visible change | 13 | Table padding in Content Constraints and Object Schema Structure rows | Cell widths differ; the rendered tables are identical |
+| Editorial | 2 | Repeat link removed from *invoice issuer* in the Description of both BilledCost files | The Editorial Guidelines link an entity only on its first occurrence in a source file |
+| Editorial | 1 | *commitments* now linked at its first mention | It was styled as a glossary term but never linked |
 | Editorial | 4 | "correction", "corrections", and "charges" in ChargeClass now italicized as glossary terms | The same file already treated these words as glossary terms elsewhere |
-| Editorial (pending #2703) | 1 | The Contract Applied schema pointer renders without a link | The schema is already linked in the conformance bullet; #2703 decides whether the pointer keeps its link |
 | Bug fix (needs Working Group confirmation) | 2 | "invoice issuer" in the BilledCost introductions now links the glossary term instead of the InvoiceIssuerName column | The sentence describes the party that issues the invoice, and both files' Descriptions already used the glossary term |
 | Regression | 0 | None | |
+
+When this branch was first cut, the comparison showed 33 lines. Since then, `working_draft` has fixed by hand most of the repeat links that the first-mention rule removes automatically: the *covered charge*, *covering charge*, and InvoiceDetail column links in Requirements (#2773), the *resources* and *services* links in the Contract Applied property table (#2773), and the schema pointer links (#2789). The 11 lines this branch no longer differs on are the same changes, made one pull request at a time.
 
 No normative wording changed. The words of every requirement are the same, and only link styling differs.
 
