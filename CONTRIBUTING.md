@@ -17,6 +17,7 @@ Before contributing, please review the following guidelines carefully to ensure 
 
 2. **Get Familiar with the Project**
    * Review the [FOCUS Specification Overview](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/working_draft/README.md#overview) and the latest release.
+   * See what the Working Group is building on the [FOCUS project board](https://github.com/orgs/FinOps-Open-Cost-and-Usage-Spec/projects/5). The [board README](https://github.com/orgs/FinOps-Open-Cost-and-Usage-Spec/projects/5?pane=info) explains each view and field.
    * Join the **FOCUS Slack working-group** for discussions and meeting updates. _(you will be invited once you have completed the [README CLA](https://github.com/FinOps-Open-Cost-and-Usage-Spec/EasyCLA/blob/main/README.md) steps)_
    * Familiarize yourself with the [Roles & Tasks](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/operating_procedures.md#22-organization-roles) and [Review & Approval Process](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/operating_procedures.md#52-review--approval).
 
