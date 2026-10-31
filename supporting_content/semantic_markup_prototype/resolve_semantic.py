@@ -66,6 +66,38 @@ SEMANTIC_LINK = re.compile(r"\[([^\]\n]+)\]\(#(" + "|".join(TYPES) + r")(?::([^)
 ANY_FRAGMENT_LINK = re.compile(r"\]\(#([^)\s]+)\)")
 CODE_SPAN = re.compile(r"(`+[^`]*`+)")
 HEADING = re.compile(r"^(#+)\s+(?:\d+(?:\.\d+)*\.\s+)?(.*?)\s*$")
+HAND_LINK_TARGET = re.compile(r"\]\([^)]*\)")
+HTML_TAG = re.compile(r"<[^>]+>")
+BULLET = re.compile(r"^\s*[*-]\s")
+WORDS = re.compile(r"[\w'-]+")
+# A term at the start of a line, list item, table cell or sentence may be capitalized
+SENTENCE_START = re.compile(r"(^\s*([*|>]\s*)*|[.:!?|]\s+)(\*\*)?$")
+# Kinds whose tag text is an entity name (an ID or a Display Name), so its case is checked
+NAMED = ("col", "ds", "attr", "omc", "obj", "schema", "meta")
+
+
+def word_case(word):
+    """U for an acronym (a trailing plural s is ignored, e.g., SKUs), T for a capital, l otherwise."""
+    bare = re.sub(r"(?<=[A-Z])'?s$", "", word)
+    if len(bare) > 1 and bare.isupper():
+        return "U"
+    return "T" if word[:1].isupper() else "l"
+
+
+def term_case_agrees(text, display, at_start):
+    """True when a glossary term is written lowercase (acronyms kept), as in the glossary,
+    or lowercase with a capital first letter at the start of a sentence."""
+    words, names = WORDS.findall(text), WORDS.findall(display)
+    # Different wording (an explicit key, or "accrual basis" for Accrual-Based Accounting)
+    # has no case to compare; plurals and possessives still compare word by word
+    if len(words) != len(names) or any(not w.lower().startswith(n.lower()[:max(1, len(n) - 2)])
+                                       for w, n in zip(words, names)):
+        return True
+    shape = [word_case(w) for w in words]
+    prose = ["U" if word_case(n) == "U" else "l" for n in names]
+    if shape in (prose, [word_case(n) for n in names]):
+        return True
+    return at_start and shape == ["T" if i == 0 and c == "l" else c for i, c in enumerate(prose)]
 
 
 class Frame:
@@ -103,6 +135,14 @@ class SemanticResolver:
         self.stack = [Frame("spec.mdpp", registry, spec_dir)]
         self.sections = []
         self.in_code = False
+        self.line_text = ""
+        self.prefix = ""
+        self.in_heading = False
+        self.column_forms = set()
+        # Single-word ColumnIds (e.g., Tags) are also ordinary words, so only compound IDs count
+        ids = sorted({e["id"] for e in registry.by_type["col"] if re.search(r"[a-z][A-Z]", e["id"])},
+                     key=len, reverse=True)
+        self.column_id = re.compile(r"(?<![\w.\[/#-])(" + "|".join(ids) + r")(?![\w\]])") if ids else None
         self.errors = 0
         self.warnings = 0
         self.resolved = 0
@@ -141,6 +181,11 @@ class SemanticResolver:
         # Emphasis around the whole text is dropped; a stray * (e.g., "Allocated*") is text
         wrapped = len(raw) > 2 and raw[0] == raw[-1] and raw[0] in "*_" and raw[1] != raw[0]
         plain = raw[1:-1].strip() if wrapped else raw
+        if wrapped:
+            self.report("ERROR", "FOCUS016", f'emphasis inside the tag "{raw}"; the build sets the style, '
+                                             f'so write [{plain}](#{kind}{":" + ident if ident else ""})')
+        if self.in_heading:
+            self.report("ERROR", "FOCUS017", f'tag "{match.group(0)}" in a heading; write the heading as plain text')
         entity, error = self.registry.find(kind, ident, plain, self.frame.dataset, self.frame.collection)
         if error:
             self.report("ERROR", "FOCUS008" if kind == "val" else "FOCUS001", error)
@@ -157,7 +202,12 @@ class SemanticResolver:
             self.report("WARN", "FOCUS003",
                         f'display text "{plain}" in Requirements; normative text uses {entity["id"]}')
         if kind == "val":
+            self.check_value(plain, entity)
             return plain
+        self.check_case(kind, ident, plain, entity, scope, self.prefix + match.string[:match.start()])
+        self.check_redundant(kind, ident, plain, entity, scope)
+        if kind == "col" and self.in_requirements:
+            self.column_forms.add("ID" if plain in (entity["id"], f"{scope}.{entity['id']}") else "Display Name")
 
         key = self.key(entity)
         every_row = in_table and kind != "term" and self.in_constraints
@@ -165,6 +215,70 @@ class SemanticResolver:
         self.frame.seen.add(key)
         content = f"*{plain}*" if kind == "term" else plain
         return f"[{content}](#{entity['anchor']})" if link else content
+
+    def check_value(self, plain, entity):
+        if not (len(plain) >= 2 and plain[0] == plain[-1] == '"'):
+            self.report("ERROR", "FOCUS014", f'value {plain} has no double quotes; '
+                                             f'write ["{entity["value"]}"](#val:{entity["column"]})')
+        column = entity["column"]
+        if entity["source"] == self.frame.path:
+            return  # the column's own file names it in every sentence by implication
+        display = next((c["display"] for c in self.registry.by_type["col"]
+                        if c["id"] == column and c.get("dataset") == entity.get("dataset")), column)
+        # The value tag's own target names the column, so leave value targets out
+        text = re.sub(r"\]\(#val:[^)]*\)", "]", self.line_text)
+        if column not in text and display.lower() not in text.lower():
+            self.report("WARN", "FOCUS015", f'value "{entity["value"]}" of {column}, '
+                                            f'but the line does not name {column}')
+
+    def check_case(self, kind, ident, plain, entity, scope, before):
+        if kind == "term":
+            if not term_case_agrees(plain, entity["display"], SENTENCE_START.search(before) is not None):
+                self.report("WARN", "FOCUS013",
+                            f'glossary term text "{plain}" and its glossary entry "{entity["display"]}" disagree '
+                            f'in case; prose writes a term in lowercase, as in the glossary, or with a '
+                            f'capital at the start of a sentence')
+            return
+        names = self.names(entity, scope)
+        # An explicit ID records that other text was meant (e.g., [resource type](#col:ResourceType)),
+        # and an operating model condition used as a condition is written as its lowercase phrase (#2765)
+        if plain in names or ident or (kind == "omc" and plain == plain.lower()):
+            return
+        same = next((n for n in names if n.lower() == plain.lower()), None)
+        if same is None and re.sub(r"\s+", "", plain).lower() == entity["id"].lower():
+            same = entity["id"]
+        if same is not None:
+            self.report("WARN", "FOCUS012", f'tag text "{plain}" and the {kind} name "{same}" differ only '
+                                            f'in case; match the case, or give the ID to keep this text')
+
+    @staticmethod
+    def names(entity, scope):
+        names = [entity["display"], entity["id"], *entity.get("aliases", [])]
+        return names + [f"{scope}.{entity['id']}"] if scope else names
+
+    def check_redundant(self, kind, ident, plain, entity, scope):
+        if not ident or kind not in NAMED:
+            return
+        if "." not in ident:
+            if plain in self.names(entity, scope):
+                self.report("ERROR", "FOCUS018", f'explicit ID {ident} is the one the text "{plain}" already '
+                                                 f'gives; write [{plain}](#{kind})')
+        elif kind == "col" and "." not in plain:
+            dataset = ident.split(".")[0]
+            shared = [c for c in self.registry.by_type["col"] if c["id"] == entity["id"]]
+            if dataset == self.frame.dataset:
+                self.report("ERROR", "FOCUS018", f"qualifier {dataset} is this file's dataset; "
+                                                 f"write (#col:{entity['id']})")
+            elif self.frame.dataset is None and len(shared) == 1:
+                self.report("ERROR", "FOCUS018", f"qualifier {dataset} is the only dataset with "
+                                                 f"{entity['id']}; write (#col:{entity['id']})")
+
+    def check_untagged(self, segment):
+        if self.column_id is None:
+            return
+        text = HTML_TAG.sub("", HAND_LINK_TARGET.sub("]", SEMANTIC_LINK.sub("", segment)))
+        for word in self.column_id.findall(text):
+            self.report("ERROR", "FOCUS004", f"untagged ColumnId {word}; write [{word}](#col)")
 
     def note_legacy_links(self, segment, in_table=False):
         if in_table and not self.in_constraints:
@@ -188,12 +302,25 @@ class SemanticResolver:
             level = len(heading.group(1))
             self.sections = [(lvl, t) for lvl, t in self.sections if lvl < level]
             self.sections.append((level, heading.group(2)))
+        self.line_text = stripped
+        self.in_heading = bool(heading)
+        self.column_forms = set()
         in_table = stripped.lstrip().startswith("|")
+        # Headings, tables, HTML and the ID and name sections that define an entity hold IDs as written
+        innermost = self.sections[-1][1] if self.sections else ""
+        prose = not (heading or in_table or stripped.lstrip().startswith("<")
+                     or re.search(r"( ID| Name)$", innermost))
         parts = CODE_SPAN.split(stripped)
         for i in range(0, len(parts), 2):
+            if prose:
+                self.check_untagged(parts[i])
             # Note hand-written links first so a semantic reference after them is not re-linked
             self.note_legacy_links(parts[i], in_table)
+            self.prefix = "".join(parts[:i])
             parts[i] = SEMANTIC_LINK.sub(lambda m: self.resolve_link(m, in_table), parts[i])
+        if len(self.column_forms) == 2 and BULLET.match(stripped):
+            self.report("ERROR", "FOCUS019", "requirement mixes ColumnIds and Display Names; "
+                                             "normative text uses ColumnIds")
         return "".join(parts) + ("\n" if line.endswith("\n") else "")
 
     def run(self, lines):
