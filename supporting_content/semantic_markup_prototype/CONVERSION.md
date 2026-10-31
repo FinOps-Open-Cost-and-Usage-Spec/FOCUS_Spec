@@ -120,7 +120,7 @@ Each question lists what the conversion did, so the answer can be applied by rer
 
 ## Review of the Rules
 
-After the whole-specification conversion, the tagging rules were reviewed against how they behaved at full scale. Most held up: the link syntax, reading definitions from structure, an explicit ID deciding the entity (with FOCUS011 when the text names another one), and dataset front matter. The findings below are where the rules are inconsistent, implicit, or too dependent on the converter. None of them is implemented yet.
+After the whole-specification conversion, the tagging rules were reviewed against how they behaved at full scale. Most held up: the link syntax, reading definitions from structure, an explicit ID deciding the entity (with FOCUS011 when the text names another one), and dataset front matter. The findings below are where the rules are inconsistent, implicit, or too dependent on the converter. Headings and Emphasis are now checks (FOCUS017 and FOCUS016, see Checks the Tags Make Possible); they are errors rather than rendering rules, because nothing in the specification trips them. The rest are not implemented yet.
 
 | Priority | Rule | Finding | Recommendation |
 | :--- | :--- | :--- | :--- |
@@ -135,6 +135,44 @@ After the whole-specification conversion, the tagging rules were reviewed agains
 | Medium | Functional links | Seven links whose text is not a name of the entity (e.g., "column requirements") are treated as repeats and lose their link. AGENTS.md exempts functional links; the Editorial Guidelines do not. | Decide the exemption. If kept, a tag whose text is not one of the entity's names is exempt from the first-mention rule. |
 | Low | Glossary scope | First mentions are counted per glossary entry by recognizing the `<a name="glossary:…">` line, which ties the rule to that markup. | Keep, and add a definition check so a change to the anchor format fails loudly. |
 | Low | Plurals | Plurals resolve for glossary terms only; "Billed Costs" does not resolve to BilledCost. | Resolve simple plurals and possessives of Display Names, as the Editorial Guidelines already count them as references. |
+
+## Checks the Tags Make Possible
+
+With every reference tagged, the resolver knows what each piece of text is meant to name, so it can check how it is written. Before these checks, tag text matched names regardless of case, so `[JSON object format](#attr)` resolved to JsonObjectFormat without a finding. Each candidate check was measured against the 8,504 tags before it was added.
+
+| Code | Level | Check | Findings now |
+| :--- | :--- | :--- | :--- |
+| FOCUS012 | Warning | Tag text and the entity's ID or Display Name differ only in case | 12 |
+| FOCUS013 | Warning | Glossary term text in a case the glossary conventions do not allow | 2 |
+| FOCUS004 | Error | Untagged ColumnId in prose (moved from the Pandoc filter into the build) | 0 |
+| FOCUS014 | Error | Value tag text without double quotes | 0 of 199 value tags |
+| FOCUS015 | Warning | Value tag on a line that does not name its column, outside the column's own file | 0 |
+| FOCUS016 | Error | Emphasis inside a tag | 0 |
+| FOCUS017 | Error | Tag in a heading | 0 |
+| FOCUS018 | Error | Explicit ID or dataset qualifier that changes nothing | 0 |
+| FOCUS019 | Error | Requirement bullet that mixes ColumnIds and Display Names | 0 |
+
+The checks with no findings are errors, so the build keeps what the conversion achieved. The 14 case findings are reported, not fixed: each is a place where the text and a definition disagree, and fixing one changes the capitalization readers see.
+
+* **FOCUS012:** lowercase column names in `contractcommitmentfulfillmentinterval.md` (2) and `contractcommitmentpaymentmodel.md` (3); `[tags](#col)` in `providertagprefixes.md`; `[JSON object format](#attr)` in three supported features; `[data generator](#meta)` twice in `glossary.md`; and `[SkuPriceEligibilityObjectSchema](#schema)` in `skupriceeligibility.md`, where the registry derives SKUPriceEligibilityObjectSchema from the heading "SKU Price Eligibility Object Schema", because the schemas section has no ID of its own.
+* **FOCUS013:** `[Pascal case](#term)` in `custom_column_handling.md` and `focus_column_handling.md`; the glossary entry is "Pascal Case".
+
+A tag with an explicit ID may use any text, so text that is meant to differ (e.g., `[resource type](#col:ResourceType)`) stays valid. FOCUS018 then reports an explicit ID only when the text already gives it in the same case.
+
+Measured but not added, because they depend on a decision:
+
+| Candidate | Findings | Depends on |
+| :--- | :--- | :--- |
+| A glossary term written as another entity's Display Name in that entity's capitalization | 81 (74 are `[SKU Price](#term)`) | Whether capitalization decides the entity (#2765) |
+| A glossary term in Title Case mid-sentence | 87 | The same |
+| FOCUS003 for datasets, attributes, and operating model conditions in Requirements | 3 datasets, 1 condition (attributes already use the ID 172 of 172 times) | The operating model condition phrase in #2765 |
+| A tag that covers only part of a longer name (e.g., `[billing account](#term) ID`, `origin [charge](#term)`) | 3 after exempting condition phrases | Exemptions for phrases that contain a term |
+| An explicit ID whose PascalCase text is no entity's ID (`[AllocationMethod](#col:AllocatedMethodId)`) | 1 | None; a small extension of FOCUS011 |
+| A possessive inside a tag (`[charge's](#term:charge)`) | 7 | A style choice |
+| A ColumnId in non-normative text, where the Editorial Guidelines prefer Display Names | 1,255 in 89 files | Whether the guideline applies to supported features |
+| An untagged multi-word Display Name | 34, nearly all left plain on purpose as join keys | A way to mark text as deliberately plain, or to name both datasets |
+
+`test_resolve_semantic.py` covers each check: `pytest supporting_content/semantic_markup_prototype/test_resolve_semantic.py`.
 
 ## Reproduce
 

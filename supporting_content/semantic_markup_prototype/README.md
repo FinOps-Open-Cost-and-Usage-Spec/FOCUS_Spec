@@ -129,7 +129,7 @@ File boundaries come from `<!-- focus:file <path> -->` markers. The prototype's 
 | :--- | :--- | :--- |
 | FOCUS001 | Error | Unknown entity; a column ID that exists in several datasets, in a file with no dataset, without a qualifier; or an unqualified column that is not in the file's dataset |
 | FOCUS003 | Warning | Column reference in a Requirements section whose text is not the ColumnId |
-| FOCUS004 | Warning | Untagged ColumnId in prose |
+| FOCUS004 | Warning, error in `resolve_semantic.py` | Untagged ColumnId in prose. The resolver skips headings, tables, HTML, code, the ID and name sections that define an entity, and single-word IDs such as `Tags` |
 | FOCUS005 | Warning | Italic text that matches a glossary term but is not tagged |
 | FOCUS006 | Warning | Untagged multi-word Display Name (e.g., "Resource Type") in prose |
 | FOCUS007 | Warning | Hard-coded link to a registry anchor; the message gives the semantic replacement |
@@ -137,8 +137,16 @@ File boundaries come from `<!-- focus:file <path> -->` markers. The prototype's 
 | FOCUS009 | Info | Plain text matching a glossary term (opt-in with `focus-lint-terms=true`) |
 | FOCUS010 | Error | Front matter `dataset` names an unknown dataset (`resolve_semantic.py` only) |
 | FOCUS011 | Warning | Link text names a different entity than the reference points to (an explicit ID wins) |
+| FOCUS012 | Warning | Tag text and the entity's ID or Display Name differ only in case (e.g., `[JSON object format](#attr)`). A tag with an explicit ID may use any text, and an operating model condition may be its lowercase phrase |
+| FOCUS013 | Warning | Glossary term text is not lowercase (acronyms kept), the glossary's own form, or lowercase with a capital at the start of a sentence (e.g., `[Pascal case](#term)` mid-sentence) |
+| FOCUS014 | Error | Value tag text without double quotes |
+| FOCUS015 | Warning | Value tag on a line that does not name its column, outside the column's own file |
+| FOCUS016 | Error | Emphasis inside a tag's text; the build sets the style |
+| FOCUS017 | Error | Tag in a heading |
+| FOCUS018 | Error | Explicit ID that the text already gives exactly, or a dataset qualifier that is the file's dataset (or the only dataset with that column) |
+| FOCUS019 | Error | Requirement bullet that mixes ColumnIds and Display Names |
 
-`focus-strict=true` makes errors fail the Pandoc run.
+FOCUS012 to FOCUS019 run in `resolve_semantic.py` only. `focus-strict=true` makes errors fail the Pandoc run.
 
 ## Results
 
