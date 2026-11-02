@@ -561,8 +561,8 @@
         "Value": "Credit"
       },
       "Dependencies": [
-        "IND-BilledCost-C-000-M",
-        "IND-ChargeCategory-C-000-M"
+        "CAU-BilledCost-C-000-M",
+        "CAU-ChargeCategory-C-000-M"
       ]
     }
   },
