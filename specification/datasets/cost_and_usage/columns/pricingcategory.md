@@ -14,7 +14,7 @@ PricingCategory MUST adhere to the following requirements:
   * PricingCategory MAY be null in all other cases.
 * When PricingCategory is not null, PricingCategory MUST adhere to the following requirements:
   * PricingCategory MUST be one of the allowed values.
-  * PricingCategory MUST be "Standard" when pricing is predetermined at the agreed upon rate for the [billing account](#glossary:billing-account).
+  * PricingCategory MUST be "Standard" when pricing is predetermined at the agreed upon rate for the [*billing account*](#glossary:billing-account).
   * PricingCategory MUST be "Committed" when the *charge* is subject to an existing *commitment discount* and is not the purchase of the *commitment discount*.
   * PricingCategory MUST be "Dynamic" when pricing is determined by the service provider and may change over time, regardless of predetermined agreement pricing.
   * PricingCategory MUST be "Other" when there is a pricing model but none of the allowed values apply.
@@ -25,7 +25,7 @@ PricingCategory MUST adhere to the following requirements:
 | :-------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Standard  | *Charges* priced at the agreed upon rate for the billing account, including [*negotiated discounts*](#glossary:negotiated-discount). This pricing includes any flat rate and volume/tiered pricing but does not include dynamic pricing or reduced pricing due to the application of a *commitment discount*. This does include the purchase of a commitment discount at agreed upon rates. |
 | Dynamic   | *Charges* priced at a variable rate determined by the service provider. This includes any product or service with a unit price the service provider can change without notice, like interruptible or low priority [*resources*](#glossary:resource). |
-| Committed | *Charges* with reduced pricing due to the application of the *commitment discount* specified by the Commitment Discount ID. |
+| Committed | *Charges* with reduced pricing due to the application of the *commitment discount* specified by the [Commitment Discount ID](#datamodel.costandusage.commitmentdiscountid). |
 | Other     | *Charges* priced in a way not covered by another pricing category. |
 
 ## Column ID
@@ -45,7 +45,7 @@ Describes the pricing model used for a *charge* at the time of use or purchase.
 | Constraint                 | Value                                     |
 | :------------------------- | :---------------------------------------- |
 | Dataset                    | [Cost and Usage](#datamodel.costandusage) |
-| Operating Model Conditions | [Includes Multiple Pricing Categories](#operatingmodelconditions.includesmultiplepricingcategories) |
+| Operating model conditions | [Includes Multiple Pricing Categories](#operatingmodelconditions.includesmultiplepricingcategories) |
 | Column type                | Dimension                                 |
 | Feature level              | Conditional                               |
 | Allows nulls               | True                                      |

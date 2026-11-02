@@ -36,7 +36,7 @@ Identifier representing the *credential* presented on the request that produced 
 | Constraint                 | Value                                     |
 | :------------------------- | :---------------------------------------- |
 | Dataset                    | [Cost and Usage](#datamodel.costandusage) |
-| Operating Model Conditions | [Includes Requester Attribution](#operatingmodelconditions.includesrequesterattribution) |
+| Operating model conditions | [Includes Requester Attribution](#operatingmodelconditions.includesrequesterattribution) |
 | Column type                | Dimension                                 |
 | Feature level              | Conditional                               |
 | Allows nulls               | True                                      |

@@ -24,6 +24,8 @@ Operating model conditions are sorted alphabetically by name.
 | [Includes Pricing-Billing Currency Differences](#operatingmodelconditions.includespricing-billingcurrencydifferences) | Pricing | Operating model includes pricing and billing in different currencies. |
 | [Includes Provisioned Resources](#operatingmodelconditions.includesprovisionedresources) | Resource | Operating model includes provisioned resources. |
 | [Includes Purchase Order Numbers](#operatingmodelconditions.includespurchaseordernumbers) | Billing | Operating model includes purchase order numbers. |
+| [Includes Purchases](#operatingmodelconditions.includespurchases) (preview) | Pricing | Operating model includes purchases. |
+| [Includes Quantity Tier Pricing](#operatingmodelconditions.includesquantitytierpricing) (preview) | Pricing | Operating model includes quantity-based tier pricing. |
 | [Includes Regions](#operatingmodelconditions.includesregions) | Resource | Operating model includes deploying resources or services within a region. |
 | [Includes Requester Attribution](#operatingmodelconditions.includesrequesterattribution) | Account | Operating model includes attributing usage or purchase of resources or services to requesters. |
 | [Includes Resource Type Assignment](#operatingmodelconditions.includesresourcetypeassignment) | Resource | Operating model includes categorizing resources by type. |
@@ -31,4 +33,4 @@ Operating model conditions are sorted alphabetically by name.
 | [Includes Sub Accounts](#operatingmodelconditions.includessubaccounts) | Account | Operating model includes a sub account construct. |
 | [Includes Tags](#operatingmodelconditions.includestags) | Allocation | Operating model includes tags. |
 | [Includes Unit Pricing](#operatingmodelconditions.includesunitpricing) | Pricing | Operating model includes unit pricing. |
-| [Includes Usage Measurement](#operatingmodelconditions.includesusagemeasurement) | Billing | Operating model includes the measurement of usage. |
+| [Includes Usage Measurement](#operatingmodelconditions.includesusagemeasurement) | Billing | Operating model includes the measurement of resource or service usage. |

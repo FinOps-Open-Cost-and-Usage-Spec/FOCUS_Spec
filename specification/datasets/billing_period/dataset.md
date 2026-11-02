@@ -15,7 +15,7 @@ The Billing Period dataset is a supporting dataset that defines the time interva
 
 ## Relationships<!--SkipTOC-->
 
-The Billing Period dataset is primarily used to provide context for the [Cost and Usage](#datamodel.costandusage) and [Invoice Detail](#datamodel.invoicedetail) datasets. It is joined using the Billing Period Start and Invoice Issuer Name columns available in those datasets.
+The Billing Period dataset is primarily used to provide context for the Cost and Usage and Invoice Detail datasets. It is joined using the Billing Period Start and Invoice Issuer Name columns available in those datasets.
 
 | Dataset A      | Dataset A Column   | Dataset B      | Dataset B Column   |
 | :------------- | :----------------- | :------------- | :----------------- |

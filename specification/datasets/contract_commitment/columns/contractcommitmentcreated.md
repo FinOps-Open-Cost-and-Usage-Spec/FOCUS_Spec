@@ -9,7 +9,7 @@ ContractCommitmentCreated MUST adhere to the following requirements:
 * ContractCommitmentCreated MUST be of type Date/Time.
 * ContractCommitmentCreated MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.
 * ContractCommitmentCreated MUST NOT be null.
-* ContractCommitmentCreated MUST represent the moment in time the [Contract Commitment](#datamodel.contractcommitment) record was instantiated.
+* ContractCommitmentCreated MUST represent the moment in time the ContractCommitment record was instantiated.
 
 ## Column ID
 
@@ -28,7 +28,7 @@ The timestamp when the contract commitment record was first created.
 | Constraint                 | Value                                                |
 | :------------------------- | :--------------------------------------------------- |
 | Dataset                    | [Contract Commitment](#datamodel.contractcommitment) |
-| Operating Model Conditions | Not applicable                                       |
+| Operating model conditions | Not applicable                                       |
 | Column type                | Dimension                                            |
 | Feature level              | Mandatory                                            |
 | Allows nulls               | False                                                |

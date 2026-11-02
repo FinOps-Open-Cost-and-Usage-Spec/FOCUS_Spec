@@ -19,7 +19,7 @@ Includes Split Cost Allocation
 
 ## Description
 
-A verifiable state indicating whether the *operating model* includes split cost allocation.
+A verifiable state indicating whether the *operating model* includes *split cost allocation*.
 
 ## Version Introduced
 
