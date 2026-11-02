@@ -1,6 +1,6 @@
 # Contract Commitment Last Updated
 
-Contract Commitment Last Updated is the timestamp when the [Contract Commitment](#datasets.contractcommitment) record was last updated. This timestamp helps FinOps practitioners ensure that they are working with the most current version of a Contract Commitment record, particularly if corrections or status changes have been applied to the record after its initial creation.
+Contract Commitment Last Updated is the timestamp when the [Contract Commitment](#datamodel.contractcommitment) record was last updated. This timestamp helps FinOps practitioners ensure that they are working with the most current version of a Contract Commitment record, particularly if corrections or status changes have been applied to the record after its initial creation.
 
 ## Requirements
 
@@ -9,8 +9,8 @@ ContractCommitmentLastUpdated MUST adhere to the following requirements:
 * ContractCommitmentLastUpdated MUST be of type Date/Time.
 * ContractCommitmentLastUpdated MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.
 * ContractCommitmentLastUpdated MUST NOT be null.
-* ContractCommitmentLastUpdated MUST represent the most recent moment in time when any column value of the Contract Commitment record was created or modified.
-* ContractCommitmentLastUpdated MUST be greater than or equal to [ContractCommitmentCreated](#datasets.contractcommitment.contractcommitmentcreated).
+* ContractCommitmentLastUpdated MUST represent the most recent moment in time when any column value of the ContractCommitment record was created or modified.
+* ContractCommitmentLastUpdated MUST be greater than or equal to [ContractCommitmentCreated](#datamodel.contractcommitment.contractcommitmentcreated).
 
 ## Column ID
 
@@ -26,14 +26,15 @@ The timestamp when the contract commitment record was last updated.
 
 ## Content Constraints
 
-|    Constraint    |              Value             |
-|:----------------|:--------------------------------|
-| Dataset         | [Contract Commitment](#datasets.contractcommitment)  |
-| Column type     | Dimension                       |
-| Feature level   | Mandatory                       |
-| Allows nulls    | False                           |
-| Data type       | Date/Time                        |
-| Value format    | [Date/Time Format](#attributes.date/timeformat) |
+| Constraint                 | Value                                                |
+| :------------------------- | :--------------------------------------------------- |
+| Dataset                    | [Contract Commitment](#datamodel.contractcommitment) |
+| Operating model conditions | Not applicable                                       |
+| Column type                | Dimension                                            |
+| Feature level              | Mandatory                                            |
+| Allows nulls               | False                                                |
+| Data type                  | Date/Time                                            |
+| Value format               | [Date/Time Format](#attributes.date/timeformat)      |
 
 ## Version Introduced
 

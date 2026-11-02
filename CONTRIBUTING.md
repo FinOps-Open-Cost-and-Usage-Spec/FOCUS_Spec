@@ -72,7 +72,7 @@ git checkout -b <issue-number>-<short-description>
 * Use BCP-14 keywords (**MUST**, **SHOULD**, **MAY**, etc.) correctly.  
 * Do not remove normative content without prior discussion.
 
-> See [Typographic Conventions](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/working_draft/specification/overview.md#typographic-conventions), (e.g., “for how to use BCP-14 keywords”).
+> See [Conventions](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/working_draft/specification/overview.md#conventions), (e.g., "for how to use BCP-14 keywords").
 
 4. **Submit your PR**
 

@@ -1,6 +1,6 @@
 # Commitment Discount ID
 
-A Commitment Discount ID is the identifier assigned to a [*commitment discount*](#glossary:commitment-discount) by the service provider. Commitment Discount ID is commonly used for scenarios like chargeback for *commitments* and savings per *commitment discount*. The CommitmentDiscountId column is only applicable to *commitment discounts* and not [*negotiated discounts*](#glossary:negotiated-discount).
+A Commitment Discount ID is the identifier assigned to a [*commitment discount*](#glossary:commitment-discount) by the service provider. Commitment Discount ID is commonly used for scenarios like chargeback for [*commitments*](#glossary:commitment) and savings per *commitment discount*. The Commitment Discount ID column is only applicable to *commitment discounts* and not [*negotiated discounts*](#glossary:negotiated-discount).
 
 ## Requirements
 
@@ -13,7 +13,7 @@ CommitmentDiscountId MUST adhere to the following requirements:
   * CommitmentDiscountId MUST NOT be null when a *charge* is related to a *commitment discount*.
 * When CommitmentDiscountId is not null, CommitmentDiscountId MUST adhere to the following requirements:
   * CommitmentDiscountId MUST be a unique identifier within the service provider.
-  * CommitmentDiscountId MUST be equal to [ResourceId](#datasets.costandusage.resourceid) when [ChargeCategory](#datasets.costandusage.chargecategory) is "Purchase" and the *charge* represents a purchase of that *commitment discount*.
+  * CommitmentDiscountId MUST be equal to [ResourceId](#datamodel.costandusage.resourceid) when [ChargeCategory](#datamodel.costandusage.chargecategory) is "Purchase" and the *charge* represents a purchase of that *commitment discount*.
   * CommitmentDiscountId MUST be equal to ResourceId when ChargeCategory is "Usage" and the *charge* represents an unused portion of that *commitment discount*.
   * CommitmentDiscountId SHOULD be a fully-qualified identifier.
 
@@ -31,14 +31,15 @@ The identifier assigned to a *commitment discount* by the service provider.
 
 ## Content Constraints
 
-| Constraint      | Value                                                |
-| :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datasets.costandusage)             |
-| Column type     | Dimension                                            |
-| Feature level   | Conditional                                          |
-| Allows nulls    | True                                                 |
-| Data type       | String                                               |
-| Value format    | \<not specified>                                     |
+| Constraint                 | Value                                     |
+| :------------------------- | :---------------------------------------- |
+| Dataset                    | [Cost and Usage](#datamodel.costandusage) |
+| Operating model conditions | [Includes Commitment Discounts](#operatingmodelconditions.includescommitmentdiscounts) |
+| Column type                | Dimension                                 |
+| Feature level              | Conditional                               |
+| Allows nulls               | True                                      |
+| Data type                  | String                                    |
+| Value format               | \<not specified>                          |
 
 ## Version Introduced
 

@@ -1,6 +1,6 @@
 # Contract Commitment Description
 
-Contract Commitment Description provides a high-level context of a [*contract commitment*](#glossary:contract-commitment) without requiring additional discovery. Contract Commitment Description is a self-contained summary of the contract commitment's terms, which may not be sufficiently described by the other columns of the Contract Commitment dataset.
+Contract Commitment Description provides a high-level context of a [*contract commitment*](#glossary:contract-commitment) without requiring additional discovery. Contract Commitment Description is a self-contained summary of the contract commitment's terms, which may not be sufficiently described by the other columns of the [Contract Commitment](#datamodel.contractcommitment) dataset.
 
 ## Requirements
 
@@ -25,14 +25,15 @@ The self-contained summary of the *contract commitment's* terms.
 
 ## Content Constraints
 
-|    Constraint   |      Value                                           |
-|:----------------|:-----------------------------------------------------|
-| Dataset         | [Contract Commitment](#datasets.contractcommitment)  |
-| Column type     | Dimension                                            |
-| Feature level   | Mandatory                                            |
-| Allows nulls    | True                                                 |
-| Data type       | String                                               |
-| Value format    | \<not specified>                                     |
+| Constraint                 | Value                                                |
+| :------------------------- | :--------------------------------------------------- |
+| Dataset                    | [Contract Commitment](#datamodel.contractcommitment) |
+| Operating model conditions | Not applicable                                       |
+| Column type                | Dimension                                            |
+| Feature level              | Mandatory                                            |
+| Allows nulls               | True                                                 |
+| Data type                  | String                                               |
+| Value format               | \<not specified>                                     |
 
 ## Version Introduced
 
