@@ -753,8 +753,8 @@
       "Dependencies": [
         "CAU-ContractedUnitPrice-C-000-C",
         "CAU-ServiceProviderName-C-000-M",
-        "IND-BillingAccountId-C-000-M",
-        "IND-BillingCurrency-C-000-M",
+        "CAU-BillingAccountId-C-000-M",
+        "CAU-BillingCurrency-C-000-M",
         "CAU-ChargePeriodStart-C-000-M"
       ]
     }
