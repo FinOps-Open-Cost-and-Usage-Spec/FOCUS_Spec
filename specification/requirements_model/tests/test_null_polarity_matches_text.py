@@ -50,9 +50,9 @@ def _null_leaves(node, path):
     fn = node.get("CheckFunction")
     if fn in NULL_CHECKS and "Value" in node and node["Value"] is None:
         yield path, node
-    for op in ("AND", "OR"):
-        for i, child in enumerate(node.get(op) or []):
-            yield from _null_leaves(child, f"{path}.{op}[{i}]")
+    if fn in ("AND", "OR"):
+        for i, child in enumerate(node.get("Items") or []):
+            yield from _null_leaves(child, f"{path}.{fn}[{i}]")
 
 
 def _subject(leaf):
