@@ -1,0 +1,35 @@
+# Opt-in local checks for specification changes. The hooks use the same
+# Python environment as make (requirements.txt installed). Enable with:
+#   pip install pre-commit
+#   pre-commit install
+# See guidelines/contributors/markdownpp-guidelines.md (Troubleshooting).
+repos:
+  - repo: local
+    hooks:
+      # Applies automatic lint fixes (e.g., MD992), then scans for anything
+      # that still needs a manual fix. When files are fixed, the commit stops
+      # so the changes can be reviewed and staged. The linter runs from
+      # specification/ because markdownlnt.cfg uses a relative plugin path.
+      - id: spec-markdown-lint
+        name: Lint specification markdown
+        language: system
+        entry: >-
+          bash -c 'cd specification &&
+          files=("${@#specification/}") &&
+          { python3 enhanced_markdown_lint.py --config markdownlnt.cfg fix "${files[@]}";
+          status=$?; [ $status -eq 0 ] || [ $status -eq 3 ] || exit $status; } &&
+          python3 enhanced_markdown_lint.py --config markdownlnt.cfg scan "${files[@]}"' --
+        files: ^specification/((supported_features|attributes|appendix|datasets|metadata|data|schemas|operating_model_conditions)/.*|[^/]+)\.md$
+        exclude: ^specification/spec\.md$
+
+      # Checks that every .md file is included by its .mdpp template.
+      - id: spec-validate-includes
+        name: Validate specification includes
+        language: system
+        entry: >-
+          bash -c 'cd specification &&
+          for dir in $(find supported_features attributes appendix datasets metadata data schemas operating_model_conditions -type f \( -name "*.md" -o -name "*.mdpp" \) -exec dirname {} \; 2>/dev/null | sort -u); do
+          if [ -f "$dir/$(basename "$dir").mdpp" ]; then python3 ./validate_includes.py "$dir" || exit 1; fi;
+          done'
+        files: ^specification/.*\.(md|mdpp)$
+        pass_filenames: false

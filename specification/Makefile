@@ -35,7 +35,7 @@ OS=$(shell uname)
 # Set to 1 to force build even if linter finds errors (e.g., make force=1)
 force?=0
 
-.PHONY: all clean lint test
+.PHONY: all clean lint lint-fix test
 
 all: spec.md spec.pdf spec.html test
 
@@ -66,6 +66,16 @@ ifeq ($(force),1)
 else
 	@$(PYMARKDOWNLNT) --config markdownlnt.cfg scan $(SPEC_SOURCE_MDFILES)
 endif
+
+# Apply automatic fixes for lint rules that support them (e.g., MD992), then
+# scan again to report anything that still needs a manual fix. pymarkdownlnt
+# fix exits with 3 when it changed files, which is not a failure here.
+lint-fix:
+	@echo "Applying automatic lint fixes..."
+	@$(PYMARKDOWNLNT) --config markdownlnt.cfg fix $(SPEC_SOURCE_MDFILES); \
+	status=$$?; if [ $$status -ne 0 ] && [ $$status -ne 3 ]; then exit $$status; fi
+	@echo "Checking for remaining lint errors..."
+	@$(PYMARKDOWNLNT) --config markdownlnt.cfg scan $(SPEC_SOURCE_MDFILES)
 
 spec.md: $(SPEC_SOURCE_FILES)
 	@echo "Running linter on markdown files in the following directories:"
