@@ -751,7 +751,7 @@
       "Requirement": {},
       "Condition": {},
       "Dependencies": [
-        "CAU-ContractedUnitPrice-C-000-C",
+        "CAU-ContractedUnitPrice-C-004-M",
         "CAU-ServiceProviderName-C-000-M",
         "CAU-BillingAccountId-C-000-M",
         "CAU-BillingCurrency-C-000-M",
