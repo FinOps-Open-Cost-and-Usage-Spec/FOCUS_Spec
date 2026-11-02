@@ -29,7 +29,7 @@ The identifier linking a granular record to the specific [Invoice Detail](#datam
 | Constraint                 | Value                                      |
 | :------------------------- | :----------------------------------------- |
 | Dataset                    | [Invoice Detail](#datamodel.invoicedetail) |
-| Operating Model Conditions | [Includes Aggregation Level Currency Differences](#operatingmodelconditions.includesaggregationlevelcurrencydifferences) |
+| Operating model conditions | [Includes Aggregation Level Currency Differences](#operatingmodelconditions.includesaggregationlevelcurrencydifferences) |
 | Column type                | Dimension                                  |
 | Feature level              | Conditional                                |
 | Allows nulls               | False                                      |

@@ -33,7 +33,7 @@ The volume of a metered SKU associated with a *resource* or *service* used, base
 | Constraint                 | Value                                       |
 | :------------------------- | :------------------------------------------ |
 | Dataset                    | [Cost and Usage](#datamodel.costandusage)   |
-| Operating Model Conditions | [Includes Usage Measurement](#operatingmodelconditions.includesusagemeasurement) |
+| Operating model conditions | [Includes Usage Measurement](#operatingmodelconditions.includesusagemeasurement) |
 | Column type                | Metric                                      |
 | Feature level              | Conditional                                 |
 | Allows nulls               | True                                        |

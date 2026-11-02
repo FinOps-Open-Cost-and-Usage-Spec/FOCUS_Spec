@@ -3,3 +3,4 @@
 !INCLUDE "billingperiod/billingperiod.mdpp",1
 !INCLUDE "contractcommitment/contractcommitment.mdpp",1
 !INCLUDE "invoicedetail/invoicedetail.mdpp",1
+!INCLUDE "skuprice/skuprice.mdpp",1

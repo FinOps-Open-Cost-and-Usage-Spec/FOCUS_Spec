@@ -15,6 +15,7 @@
 !INCLUDE "participating-entity-identification.md",1
 !INCLUDE "requester-attribution.md",1
 !INCLUDE "saas-examples/saas-examples.mdpp",1
+!INCLUDE "sku-price-examples/sku-price-examples.mdpp",1
 !INCLUDE "split-cost-allocation-field-mapping.md",1
 !INCLUDE "grouping-constructs-for-resources-and-or-services.md",1
 !INCLUDE "invoice-and-billing-period-handling.md",1

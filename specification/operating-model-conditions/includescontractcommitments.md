@@ -19,7 +19,7 @@ Includes Contract Commitments
 
 ## Description
 
-A verifiable state indicating whether the *operating model* includes contract commitments.
+A verifiable state indicating whether the *operating model* includes *contract commitments*.
 
 ## Version Introduced
 

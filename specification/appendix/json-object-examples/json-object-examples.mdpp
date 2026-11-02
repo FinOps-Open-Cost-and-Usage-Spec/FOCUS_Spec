@@ -4,3 +4,4 @@
 !INCLUDE "contract-applied-examples.md",1
 !INCLUDE "contract-commitment-applicability-examples.md",1
 !INCLUDE "requester-details-examples.md",1
+!INCLUDE "sku-price-eligibility-examples.md",1

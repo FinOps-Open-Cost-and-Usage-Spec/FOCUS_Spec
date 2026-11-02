@@ -2,6 +2,7 @@
 !INCLUDE "account-structures.md",1
 !INCLUDE "ai-model-billing.md",1
 !INCLUDE "billed-cost-and-invoice-alignment.md",1
+!INCLUDE "catalog-discovery-and-price-estimation.md",1
 !INCLUDE "charge-categorization.md",1
 !INCLUDE "commit-usage-and-under-usage.md",1
 !INCLUDE "commitment-program-eligibility-details.md",1
@@ -17,6 +18,7 @@
 !INCLUDE "location.md",1
 !INCLUDE "marketplace-purchases.md",1
 !INCLUDE "participating-entity-identification.md",1
+!INCLUDE "rate-optimization-and-contract-evaluation.md",1
 !INCLUDE "recency-metadata.md",1
 !INCLUDE "resource-usage.md",1
 !INCLUDE "schema-metadata.md",1

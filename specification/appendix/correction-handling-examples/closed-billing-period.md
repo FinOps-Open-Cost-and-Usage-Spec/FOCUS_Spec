@@ -20,7 +20,7 @@ On July 5th, 2025, CrestNode identified that a charge record previously invoiced
 
 To correct this misattribution, CrestNode provisioned a reallocation correction using Append mechanisms. The correction was realized either through a Delta style correction, which redistributed the cost between resources using increment and decrement records, or through a Ledger style correction, which negated the original charge and introduced corrected records for each resource.
 
-***Note:*** *Replacement (i.e., Overwrite delivery mechanism) could have been applied in this scenario because the reallocation would not affect invoice reconciliation and would not require additional invoices. However, CrestNode chose Append to preserve traceability and auditability while ensuring that downstream processes, in particular chargeback, receive timely and accurate cost attribution.*
+> **Note:** Replacement (i.e., Overwrite delivery mechanism) could have been applied in this scenario because the reallocation would not affect invoice reconciliation and would not require additional invoices. However, CrestNode chose Append to preserve traceability and auditability while ensuring that downstream processes, in particular chargeback, receive timely and accurate cost attribution.
 
 CSV Examples:
 

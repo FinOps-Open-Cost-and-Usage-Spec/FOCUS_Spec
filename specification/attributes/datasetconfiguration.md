@@ -20,7 +20,7 @@ Dataset conforming to DatasetConfiguration attribute MUST adhere to the followin
 
 ## Example
 
-A practitioner configures their FOCUS Cost and Usage dataset to include only these columns:
+A practitioner configures their FOCUS [Cost and Usage](#datamodel.costandusage) dataset to include only these columns:
 
 * BillingAccountId
 * ServiceName

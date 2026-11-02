@@ -12,6 +12,9 @@ Datasets are sorted first by Feature Level (i.e., Mandatory, then Conditional), 
 | [Billing Period](#datamodel.billingperiod)           | Reference    | Conditional   | Describes the billing periods by which cost and usage is invoiced. |
 | [Contract Commitment](#datamodel.contractcommitment) | Reference    | Conditional   | Describes the terms of contracts agreed between a service provider and a customer. |
 | [Invoice Detail](#datamodel.invoicedetail)           | Transaction  | Conditional   | Describes the cost and usage issued on invoices. |
+| [SKU Price](#datamodel.skuprice) (preview)           | Reference    | Conditional   | Describes the unit prices offered by a service provider. |
+
+> **Preview:** The SKU Price dataset is a preview in this version of FOCUS. The requirement that the Data Model include SKU Price is excluded from conformance while that dataset is a preview.
 
 ## Requirements<!--SkipTOC-->
 
@@ -21,6 +24,7 @@ DataModel MUST adhere to the following requirements:
 * DataModel MUST include [BillingPeriod](#datamodel.billingperiod) when the [*operating model*](#glossary:operating-model) [includes payable invoices](#operatingmodelconditions.includespayableinvoices).
 * DataModel MUST include [ContractCommitment](#datamodel.contractcommitment) when the *operating model* [includes contract commitments](#operatingmodelconditions.includescontractcommitments).
 * DataModel MUST include [InvoiceDetail](#datamodel.invoicedetail) when the *operating model* includes payable invoices.
+* DataModel MUST include [SkuPrice](#datamodel.skuprice) when the *operating model* [includes unit pricing](#operatingmodelconditions.includesunitpricing).
 
 ## Data Model ID<!--SkipTOC-->
 

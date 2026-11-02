@@ -26,14 +26,14 @@ Pricing Currency Effective Cost
 
 ## Description
 
-The PricingCurrency-denominated equivalent of Effective Cost, representing the cost of a *charge* based on the *resources* used, *services* used, or *contract commitments* recognized in a given *charge period*.
+The Pricing Currency-denominated equivalent of Effective Cost, representing the cost of a *charge* based on the *resources* used, *services* used, or *contract commitments* recognized in a given *charge period*.
 
 ## Content Constraints
 
 | Constraint                 | Value                                       |
 | :------------------------- | :------------------------------------------ |
 | Dataset                    | [Cost and Usage](#datamodel.costandusage)   |
-| Operating Model Conditions |                                             |
+| Operating model conditions |                                             |
 | ├─ Must                    | [Includes Consumption Currency](#operatingmodelconditions.includesconsumptioncurrency) |
 | └─ Should                  | [Includes Pricing-Billing Currency Differences](#operatingmodelconditions.includespricing-billingcurrencydifferences) |
 | Column type                | Metric                                      |
