@@ -55,4 +55,4 @@ Describes the time intervals and statuses associated with an invoice issuer's bi
 
 ## Version Introduced<!--SkipTOC-->
 
-1.4
+GA: 1.4

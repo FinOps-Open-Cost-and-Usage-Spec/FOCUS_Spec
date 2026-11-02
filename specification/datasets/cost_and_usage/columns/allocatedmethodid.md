@@ -39,4 +39,4 @@ A unique identifier defining the method of data generator-calculated split cost 
 
 ## Version Introduced
 
-1.3
+GA: 1.3

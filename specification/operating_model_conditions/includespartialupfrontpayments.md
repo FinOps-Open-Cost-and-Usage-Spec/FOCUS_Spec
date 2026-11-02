@@ -23,4 +23,4 @@ A verifiable state indicating whether the *operating model* includes a partial u
 
 ## Version Introduced
 
-1.5
+GA: 1.5

@@ -54,4 +54,4 @@ Column ID naming, formatting, and value requirements for *custom columns* appear
 
 ## Version Introduced
 
-1.4
+GA: 1.4

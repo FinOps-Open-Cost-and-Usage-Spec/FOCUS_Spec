@@ -37,4 +37,4 @@ The self-contained summary of the *contract commitment's* terms.
 
 ## Version Introduced
 
-1.3
+GA: 1.3

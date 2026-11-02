@@ -59,4 +59,4 @@ Defines the primary value or advantage received for a *contract commitment*.
 
 ## Version Introduced
 
-1.4
+GA: 1.4

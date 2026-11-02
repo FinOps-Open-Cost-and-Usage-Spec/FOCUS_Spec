@@ -37,4 +37,4 @@ The name of the entity responsible for invoicing for the *contract commitment*.
 
 ## Version Introduced
 
-1.4
+GA: 1.4

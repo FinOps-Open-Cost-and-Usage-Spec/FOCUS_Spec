@@ -125,4 +125,4 @@ A set of properties that associate a *charge* with one or more *contract commitm
 
 ## Version Introduced
 
-1.3
+GA: 1.3

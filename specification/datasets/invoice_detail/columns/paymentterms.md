@@ -37,4 +37,4 @@ The terms (typically focused on timeframe) by which the invoice issuer expects t
 
 ## Version Introduced
 
-1.4
+GA: 1.4

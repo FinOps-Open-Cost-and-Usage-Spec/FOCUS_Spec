@@ -11,4 +11,4 @@ FOCUS' schema metadata supports communication of important attributes about the 
 
 ## Version Introduced
 
-1.1
+GA: 1.1

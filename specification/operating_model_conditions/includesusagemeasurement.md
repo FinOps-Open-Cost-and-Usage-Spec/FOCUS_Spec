@@ -23,4 +23,4 @@ A verifiable state indicating whether the *operating model* includes the measure
 
 ## Version Introduced
 
-1.5
+GA: 1.5

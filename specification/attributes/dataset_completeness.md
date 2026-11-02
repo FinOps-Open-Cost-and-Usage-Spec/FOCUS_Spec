@@ -44,4 +44,4 @@ Defines requirements for a *FOCUS dataset* to include *custom columns* for *nati
 
 ## Version Introduced
 
-1.4
+GA: 1.4

@@ -71,4 +71,4 @@ The set of key-value pairs that defines the granularity of the invoice line item
 
 ## Version Introduced
 
-1.4
+GA: 1.4

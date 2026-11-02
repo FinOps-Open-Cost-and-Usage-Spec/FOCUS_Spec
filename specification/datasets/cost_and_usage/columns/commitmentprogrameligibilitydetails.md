@@ -106,4 +106,4 @@ The types of *commitment programs* available for a specific usage row.
 
 ## Version Introduced
 
-1.4
+GA: 1.4
