@@ -1,6 +1,6 @@
 name: Sync PR Linked Issues
 
-# Writes the issues a pull request is linked to into the Linked Issues text field on the project board,
+# Writes the issues a pull request is linked to into the PR Linked Issues text field on the project board,
 # so the pull request's row shows which Feature Request or Action Item it belongs to.
 # A link comes from a closing keyword in the description ("Closes #2373") or from the Development section of the sidebar.
 # A linked Action Item is listed under its parent issue, e.g. "FR #2335 > AI #2336, #2373".
@@ -41,7 +41,7 @@ jobs:
       ORG: "FinOps-Open-Cost-and-Usage-Spec"
       REPO: ${{ github.repository }}
       PROJECT_NUM: 5
-      FIELD_NAME: "Linked Issues"
+      FIELD_NAME: "PR Linked Issues"
       EVENT_NAME: ${{ github.event_name }}
       EVENT_ACTION: ${{ github.event.action }}
       EVENT_PR: ${{ github.event.pull_request.number }}
@@ -49,7 +49,7 @@ jobs:
       DRY_RUN: ${{ github.event.inputs.dry_run || 'false' }}
 
     steps:
-      - name: Sync Linked Issues from the pull request's issue links
+      - name: Sync PR Linked Issues from the pull request's issue links
         run: |
           set -euo pipefail
 
@@ -66,7 +66,7 @@ jobs:
             if ! [[ "$PR_NUM" =~ ^[0-9]+$ ]]; then echo "Invalid PR number: $PR_NUM"; exit 1; fi
           done
 
-          # 2. Fetch the Linked Issues field. The field list is read whole because a lookup by a name
+          # 2. Fetch the PR Linked Issues field. The field list is read whole because a lookup by a name
           # that does not exist returns an error rather than an empty result.
           PROJ_DATA=$(gh api graphql -f query='
             query($org: String!, $num: Int!) {

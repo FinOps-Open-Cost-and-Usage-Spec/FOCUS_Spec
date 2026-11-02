@@ -23,8 +23,8 @@ jobs:
           set -e
 
           # 0. GATEKEEPER: Prevent the logger from spamming updates to fields that workflows maintain
-          # (PR Open Threads from track-pr-threads.yml, Linked Issues from sync-pr-linked-issues.yml)
-          if [ "$FIELD" == "PR Open Threads" ] || [ "$FIELD" == "Linked Issues" ]; then
+          # (PR Open Threads from track-pr-threads.yml, PR Linked Issues from sync-pr-linked-issues.yml)
+          if [ "$FIELD" == "PR Open Threads" ] || [ "$FIELD" == "PR Linked Issues" ]; then
             echo "Field '$FIELD' updated by automation. Skipping log entry to prevent spam."
             exit 0
           fi
