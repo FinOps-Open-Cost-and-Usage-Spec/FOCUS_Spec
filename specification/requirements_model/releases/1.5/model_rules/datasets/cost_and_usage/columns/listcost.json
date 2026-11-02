@@ -458,7 +458,7 @@
         "CAU-ListCost-C-013-M",
         "CAU-ListCost-C-014-M",
         "CAU-ListCost-C-015-M",
-        "IND-ChargeCategory-C-000-M",
+        "CAU-ChargeCategory-C-000-M",
         "CAU-ChargeClass-C-000-M"
       ]
     }
