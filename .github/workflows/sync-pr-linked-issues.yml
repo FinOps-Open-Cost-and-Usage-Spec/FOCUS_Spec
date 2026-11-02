@@ -1,0 +1,195 @@
+name: Sync PR Linked Issues
+
+# Writes the issues a pull request is linked to into the Linked Issues text field on the project board,
+# so the pull request's row shows which Feature Request or Action Item it belongs to.
+# A link comes from a closing keyword in the description ("Closes #2373") or from the Development section of the sidebar.
+# A linked Action Item is listed under its parent issue, e.g. "FR #2335 > AI #2336, #2373".
+# The value holds issue types and numbers only, never titles.
+
+on:
+  # pull_request_target gives pull requests from forks access to PROJECT_PAT.
+  # The job never checks out or runs pull request code. It reads the links through the API.
+  pull_request_target:
+    types: [opened, reopened, edited]
+  schedule:
+    # Linking an issue from the sidebar sends no pull request event, so a sweep picks it up.
+    - cron: '45 */4 * * *'
+  workflow_dispatch:
+    inputs:
+      pr_number:
+        description: 'PR number (leave blank to sync all open PRs)'
+        required: false
+      dry_run:
+        description: 'Print the changes without making them'
+        type: boolean
+        default: false
+
+permissions: {}
+
+concurrency:
+  group: sync-pr-linked-issues-${{ github.event.pull_request.number || github.event.inputs.pr_number || 'all' }}
+  cancel-in-progress: false
+
+jobs:
+  sync_linked_issues:
+    name: Sync PR Linked Issues
+    if: github.repository == 'FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      GH_TOKEN: ${{ secrets.PROJECT_PAT }}
+      ORG: "FinOps-Open-Cost-and-Usage-Spec"
+      REPO: ${{ github.repository }}
+      PROJECT_NUM: 5
+      FIELD_NAME: "Linked Issues"
+      EVENT_NAME: ${{ github.event_name }}
+      EVENT_ACTION: ${{ github.event.action }}
+      EVENT_PR: ${{ github.event.pull_request.number }}
+      INPUT_PR: ${{ github.event.inputs.pr_number }}
+      DRY_RUN: ${{ github.event.inputs.dry_run || 'false' }}
+
+    steps:
+      - name: Sync Linked Issues from the pull request's issue links
+        run: |
+          set -euo pipefail
+
+          # 1. Identify PRs
+          if [ "$EVENT_NAME" = "pull_request_target" ]; then
+            PR_LIST="$EVENT_PR"
+          elif [ -n "$INPUT_PR" ]; then
+            PR_LIST="$INPUT_PR"
+          else
+            PR_LIST=$(gh pr list -R "$REPO" --state open --limit 500 --json number --jq '.[].number')
+          fi
+
+          for PR_NUM in $PR_LIST; do
+            if ! [[ "$PR_NUM" =~ ^[0-9]+$ ]]; then echo "Invalid PR number: $PR_NUM"; exit 1; fi
+          done
+
+          # 2. Fetch the Linked Issues field. The field list is read whole because a lookup by a name
+          # that does not exist returns an error rather than an empty result.
+          PROJ_DATA=$(gh api graphql -f query='
+            query($org: String!, $num: Int!) {
+              organization(login: $org) {
+                projectV2(number: $num) {
+                  id
+                  fields(first: 100) { nodes { ... on ProjectV2Field { id name dataType } } }
+                }
+              }
+            }' -f org="$ORG" -F num="$PROJECT_NUM")
+
+          PROJECT_ID=$(jq -r '.data.organization.projectV2.id' <<< "$PROJ_DATA")
+          FIELD=$(jq -c --arg f "$FIELD_NAME" 'first(.data.organization.projectV2.fields.nodes[] | select(.name == $f)) // {}' <<< "$PROJ_DATA")
+          FIELD_ID=$(jq -r '.id // empty' <<< "$FIELD")
+          FIELD_TYPE=$(jq -r '.dataType // empty' <<< "$FIELD")
+
+          if [ -z "$FIELD_ID" ] || [ "$FIELD_TYPE" != "TEXT" ]; then
+            if [ "$DRY_RUN" = "true" ]; then
+              echo "Text field '$FIELD_NAME' not found on project $PROJECT_NUM, or not a text field; the dry run treats every current value as blank"
+            else
+              echo "Text field '$FIELD_NAME' not found on project $PROJECT_NUM, or not a text field"; exit 1
+            fi
+          fi
+
+          # GitHub can update a pull request's linked issues a moment after the edit event fires.
+          if [ "$EVENT_ACTION" = "edited" ]; then sleep 10; fi
+
+          read_pr() {
+            gh api graphql -f query='
+              query($owner: String!, $name: String!, $num: Int!, $field: String!) {
+                repository(owner: $owner, name: $name) {
+                  pullRequest(number: $num) {
+                    closingIssuesReferences(first: 50) {
+                      nodes {
+                        number
+                        repository { nameWithOwner }
+                        issueType { name }
+                        parent { number repository { nameWithOwner } issueType { name } }
+                      }
+                    }
+                    projectItems(first: 10) {
+                      nodes {
+                        id
+                        project { id }
+                        fieldValueByName(name: $field) { ... on ProjectV2ItemFieldTextValue { text } }
+                      }
+                    }
+                  }
+                }
+              }' -f owner="${REPO%/*}" -f name="${REPO#*/}" -F num="$1" -f field="$FIELD_NAME"
+          }
+
+          # Builds the field value from the linked issues. Each linked Action Item is grouped under its parent issue;
+          # any other linked issue stands on its own. Groups are ordered by issue number and joined with "; ".
+          # Feature, Action Item, and Work Item read as FR, AI, and WI; other issue types use their type name.
+          # An issue in another repository reads as "Issue owner/repo#N", since its type names are not this repository's.
+          FORMAT='
+            def kind: (.issueType.name // "") as $t
+              | if .repository.nameWithOwner != $repo then "Issue"
+                else {"Feature": "FR", "Action Item": "AI", "Work Item": "WI"}[$t] // (if $t == "" then "Issue" else $t end) end;
+            def ref: if .repository.nameWithOwner == $repo then "#\(.number)" else "\(.repository.nameWithOwner)#\(.number)" end;
+            [ .data.repository.pullRequest.closingIssuesReferences.nodes[]?
+              | if .issueType.name == "Action Item" and .parent != null then
+                  {key: (.parent | ref), head: "\(.parent | kind) \(.parent | ref)", n: .parent.number, ai: {n: .number, ref: ref}}
+                elif .issueType.name == "Action Item" then
+                  {key: "AI", head: "AI", n: 0, ai: {n: .number, ref: ref}}
+                else
+                  {key: ref, head: "\(kind) \(ref)", n: .number, ai: null}
+                end ]
+            | group_by(.key)
+            | map({n: .[0].n, head: .[0].head, ais: ([.[].ai | select(. != null)] | unique_by(.ref) | sort_by(.n) | map(.ref))})
+            | sort_by(.n)
+            | map(if .head == "AI" then "AI " + (.ais | join(", "))
+                  elif (.ais | length) > 0 then .head + " > AI " + (.ais | join(", "))
+                  else .head end)
+            | join("; ")'
+
+          # 3. Sync each PR. A failure on one PR is reported and the run moves on to the next.
+          FAILED=0
+          for PR_NUM in $PR_LIST; do
+            # A new PR is added to the board by the built-in "Auto-add to project" workflow. Wait for it.
+            READ_OK=1
+            for _ in {1..12}; do
+              if ! PR_DATA=$(read_pr "$PR_NUM"); then READ_OK=0; break; fi
+              # Match the board by node ID: another owner's project can share its number.
+              ITEM=$(jq -c --arg pid "$PROJECT_ID" 'first(.data.repository.pullRequest.projectItems.nodes[]? | select(.project.id == $pid)) // empty' <<< "$PR_DATA")
+              if [ -n "$ITEM" ] || [ "$EVENT_NAME" != "pull_request_target" ]; then break; fi
+              sleep 5
+            done
+
+            if [ "$READ_OK" = "0" ]; then echo "#$PR_NUM: could not read the pull request, skipped"; FAILED=1; continue; fi
+
+            ITEM_ID=$(jq -r '.id // empty' <<< "${ITEM:-null}")
+            if [ -z "$ITEM_ID" ]; then echo "#$PR_NUM: not on the board, skipped"; continue; fi
+
+            CURRENT=$(jq -r '.fieldValueByName.text // empty' <<< "$ITEM")
+            TARGET=$(jq -r --arg repo "$REPO" "$FORMAT" <<< "$PR_DATA")
+
+            if [ "$CURRENT" = "$TARGET" ]; then echo "#$PR_NUM: already '${TARGET:-blank}'"; continue; fi
+
+            if [ "$DRY_RUN" = "true" ]; then
+              echo "#$PR_NUM: would set '${CURRENT:-blank}' to '${TARGET:-blank}' (dry run)"; continue
+            fi
+
+            if [ -n "$TARGET" ]; then
+              if gh api graphql -f query='
+                mutation($project: ID!, $item: ID!, $field: ID!, $text: String!) {
+                  updateProjectV2ItemFieldValue(input: { projectId: $project, itemId: $item, fieldId: $field, value: { text: $text } }) { clientMutationId }
+                }' -f project="$PROJECT_ID" -f item="$ITEM_ID" -f field="$FIELD_ID" -f text="$TARGET" > /dev/null; then
+                echo "#$PR_NUM: set '${CURRENT:-blank}' to '$TARGET'"
+              else
+                echo "#$PR_NUM: could not set '$TARGET'"; FAILED=1
+              fi
+            else
+              if gh api graphql -f query='
+                mutation($project: ID!, $item: ID!, $field: ID!) {
+                  clearProjectV2ItemFieldValue(input: { projectId: $project, itemId: $item, fieldId: $field }) { clientMutationId }
+                }' -f project="$PROJECT_ID" -f item="$ITEM_ID" -f field="$FIELD_ID" > /dev/null; then
+                echo "#$PR_NUM: cleared '$CURRENT'"
+              else
+                echo "#$PR_NUM: could not clear '$CURRENT'"; FAILED=1
+              fi
+            fi
+          done
+
+          if [ "$FAILED" = "1" ]; then echo "One or more pull requests could not be synced; see above."; exit 1; fi
