@@ -267,21 +267,26 @@
     "ModelVersionIntroduced": "1.5",
     "Status": "Active",
     "Conditions": [],
-    "Type": "Dynamic",
+    "Type": "Static",
     "Order": 70,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "RequesterDetails MUST conform to RequesterDetailsValue requirements when RequesterDetails is not null.",
+      "MustSatisfy": "RequesterDetails MUST conform to RequesterDetailsObject requirements when RequesterDetails is not null.",
       "Keyword": "MUST",
-      "Requirement": {},
+      "Requirement": {
+        "CheckFunction": "CheckModelRule",
+        "ModelRuleId": "CAU-RequesterDetailsObject-O-000-M"
+      },
       "Condition": {
         "CheckFunction": "CheckNotValue",
         "ColumnName": "RequesterDetails",
         "Value": null
       },
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-RequesterDetailsObject-O-000-M"
+      ]
     }
   }
 }

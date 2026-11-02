@@ -305,7 +305,7 @@
     "DatasetId": "ContractCommitment",
     "DatasetName": "Contract Commitment",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractCommitmentDiscountPercentage MUST reflect the discount percentage defined for the specific pricing tier represented by the Contract Commitment row.",
+      "MustSatisfy": "ContractCommitmentDiscountPercentage MUST reflect the discount percentage defined for the specific pricing tier represented by the ContractCommitment row.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -328,7 +328,7 @@
     "DatasetId": "ContractCommitment",
     "DatasetName": "Contract Commitment",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractCommitmentDiscountPercentage MUST correspond to only one pricing tier per Contract Commitment row.",
+      "MustSatisfy": "ContractCommitmentDiscountPercentage MUST correspond to only one pricing tier per ContractCommitment row.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},

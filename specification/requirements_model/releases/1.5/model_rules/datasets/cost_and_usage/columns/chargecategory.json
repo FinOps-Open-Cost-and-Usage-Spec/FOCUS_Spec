@@ -51,6 +51,10 @@
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-ChargeCategory-C-008-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ChargeCategory-C-009-C"
           }
         ]
       },
@@ -64,6 +68,7 @@
         "CAU-ChargeCategory-C-006-C",
         "CAU-ChargeCategory-C-007-C",
         "CAU-ChargeCategory-C-008-C",
+        "CAU-ChargeCategory-C-009-C",
         "CAU-CostAndUsage-D-008-M"
       ]
     }
@@ -286,6 +291,56 @@
       "Requirement": {},
       "Condition": {},
       "Dependencies": []
+    }
+  },
+  "CAU-ChargeCategory-C-009-C": {
+    "Function": "Validation",
+    "Reference": "ChargeCategory",
+    "EntityType": "Column",
+    "EntityName": "Charge Category",
+    "EntityId": "ChargeCategory",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Dynamic",
+    "Order": 100,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "ChargeCategory for a given SkuPriceId and ServiceProviderName MUST match SkuPrice.ChargeCategory for the same SkuPrice.SkuPriceId and SkuPrice.ServiceProviderName when SkuPriceId is not null and ChargeCategory is \"Usage\" or \"Purchase\".",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckNotValue",
+            "ColumnName": "SkuPriceId",
+            "Value": null
+          },
+          {
+            "CheckFunction": "OR",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ChargeCategory",
+                "Value": "Usage"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ChargeCategory",
+                "Value": "Purchase"
+              }
+            ]
+          }
+        ]
+      },
+      "Dependencies": [
+        "CAU-SkuPriceId-C-000-C",
+        "CAU-ServiceProviderName-C-000-M"
+      ]
     }
   }
 }

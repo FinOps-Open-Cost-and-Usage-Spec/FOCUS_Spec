@@ -148,7 +148,7 @@
     "DatasetId": "ContractCommitment",
     "DatasetName": "Contract Commitment",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractCommitmentLastUpdated MUST represent the most recent moment in time when any column value of the Contract Commitment record was created or modified.",
+      "MustSatisfy": "ContractCommitmentLastUpdated MUST represent the most recent moment in time when any column value of the ContractCommitment record was created or modified.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},

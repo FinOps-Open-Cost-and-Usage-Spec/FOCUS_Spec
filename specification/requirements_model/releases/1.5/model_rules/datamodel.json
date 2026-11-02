@@ -35,6 +35,10 @@
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "DMO-DataModel-M-004-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "DMO-DataModel-M-005-C"
           }
         ]
       },
@@ -43,7 +47,8 @@
         "DMO-DataModel-M-001-M",
         "DMO-DataModel-M-002-C",
         "DMO-DataModel-M-003-C",
-        "DMO-DataModel-M-004-C"
+        "DMO-DataModel-M-004-C",
+        "DMO-DataModel-M-005-C"
       ]
     }
   },
@@ -139,6 +144,31 @@
     "DatasetName": null,
     "ValidationCriteria": {
       "MustSatisfy": "DataModel MUST include InvoiceDetail when the operating model includes payable invoices.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "DMO-DataModel-M-005-C": {
+    "Function": "Presence",
+    "Reference": "SkuPrice",
+    "EntityType": "DataModel",
+    "EntityName": "SKU Price",
+    "EntityId": "SkuPrice",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "Conditions": [
+      "IncludesUnitPricing"
+    ],
+    "Type": "Dynamic",
+    "Order": 50,
+    "DatasetType": "DMO",
+    "DatasetId": null,
+    "DatasetName": null,
+    "ValidationCriteria": {
+      "MustSatisfy": "DataModel MUST include SkuPrice when the operating model includes unit pricing.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},

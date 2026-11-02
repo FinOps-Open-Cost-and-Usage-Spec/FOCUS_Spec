@@ -264,7 +264,7 @@
     "DatasetId": "ContractCommitment",
     "DatasetName": "Contract Commitment",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractCommitmentApplicabilityObject.Inclusions[*].Dimension SHOULD represent a column in Cost and Usage.",
+      "MustSatisfy": "ContractCommitmentApplicabilityObject.Inclusions[*].Dimension SHOULD represent a column in CostAndUsage.",
       "Keyword": "SHOULD",
       "Requirement": {},
       "Condition": {},
@@ -287,7 +287,7 @@
     "DatasetId": "ContractCommitment",
     "DatasetName": "Contract Commitment",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractCommitmentApplicabilityObject.Exclusions[*].Dimension SHOULD represent a column in Cost and Usage.",
+      "MustSatisfy": "ContractCommitmentApplicabilityObject.Exclusions[*].Dimension SHOULD represent a column in CostAndUsage.",
       "Keyword": "SHOULD",
       "Requirement": {},
       "Condition": {},
