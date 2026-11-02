@@ -2,12 +2,11 @@
 
 > **Note:** This branch demonstrates feature request [#2779](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2779), which is proposed for FOCUS 1.6. It is for understanding the concept and for local testing. It is not intended to be merged as is.
 >
-> This branch was rebased onto `working_draft` at commit `e0fd5f77` on 2026-10-29, so it includes everything merged for 1.5 up to that point. Two open pull requests are expected to merge soon and are not reflected:
+> This branch was rebased onto `working_draft` at commit `e9cdcc7c` on 2026-11-02, so it includes everything merged for 1.5, including the 1.5 Requirements Model update ([#2710](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pull/2710)) that the REG017 findings below compare against. One open pull request is not reflected:
 >
-> * [#2710](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pull/2710), the 1.5 Requirements Model update. The REG017 findings below compare against the Requirements Model as it is today, so some of them may disappear when it merges.
 > * [#2787](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pull/2787), the file and folder renames. It is expected to wait for 1.6. The REG016 findings below match the names it renames, and the registry builder hard-codes the current paths (e.g., `datasets/data_model.md` and `*_overview.md`).
 >
-> The branch needs another update once both merge: bring it up to date with `working_draft`, rerun `convert_all.sh`, and refresh the counts in this guide and in CONVERSION.md.
+> The branch needs another update once it merges: bring it up to date with `working_draft`, rerun `convert_all.sh`, and refresh the counts in this guide and in CONVERSION.md.
 
 The branch is cut from `working_draft`. The whole specification is rewritten with semantic tags wherever the tags cover its content, and the real build (`make`) resolves those tags into today's links and formatting. What the tags do not cover keeps its hand-written markup, and both kinds coexist in one build. [CONVERSION.md](CONVERSION.md) reports the results of converting every file and lists the open questions, and [SEMANTIC_REVIEW.md](SEMANTIC_REVIEW.md) records the semantic review that followed. The [slides](https://docs.google.com/presentation/d/1mkH4I4puVd2Bk2DbG2-yZ1ACfFLuf-8l0hT4rWH8l0o/edit) in the FOCUS shared Google Drive present the proposal and these results for the Working Group.
 
@@ -136,16 +135,17 @@ The Requirements Model rule files are named after the entity they cover, like th
 * Every rule file matches an entity, unless all of its rules have Status "Removed" (history for a removed entity, e.g., ProviderName).
 * The EntityId and EntityName in the rules match the specification exactly.
 
-Metadata fields and schemas have no rule files, so they are not checked. On this branch REG017 reports 45 findings:
+Metadata fields and schemas have no rule files, so they are not checked. On this branch REG017 reports 28 findings:
 
 | Finding | Count | Entities |
 | :--- | ---: | :--- |
-| Entity with no rule file | 9 | AllocatedServiceName, CredentialId, PrincipalId, RequesterDetails, RequesterDetailsObject, IncludesConsumptionCurrency, IncludesPurchases, IncludesQuantityTierPricing, IncludesRequesterAttribution |
-| SKU Price entity with no rule file | 25 | The SKU Price dataset, its 22 columns, and its SkuPriceEligibilityObject; the dataset is new on `working_draft` and has no rule files yet |
-| Active rule file with no entity | 3 | IncludesListUnitPrices, IncludesNegotiatedPricing, IncludesVirtualCurrency |
-| EntityName differs | 8 | Rules "Sku ID", "Sku Meter", "Sku Price Details", and "Sku Price ID" against specification "SKU ..."; rules "Json Object Format", "Date Time Format", "Key Value Format", and "Data Generator Calculated Split Cost Allocation Handling" against specification "JSON Object Format", "Date/Time Format", "Key-Value Format", and "Data Generator-Calculated Split Cost Allocation Handling" |
+| Entity with no rule file | 2 | IncludesPurchases, IncludesQuantityTierPricing |
+| SKU Price entity with no rule file | 25 | The SKU Price dataset, its 23 columns, and its SkuPriceEligibilityObject |
+| Active rule file with no entity | 1 | `datamodel.json`, whose rules cover the data model as a whole (EntityType DataModel); the registry has no entity of that kind |
 
-Each finding is an inconsistency to resolve, not a verdict. For example, the SKU names could be fixed in the rule files or in the specification's Display Names, and a rule file with no entity could mean a missing specification file or a stale rule. Every name difference is in capitalization or punctuation. The findings are reported, not fixed, because the Requirements Model is outside this demo. `build_registry.py --rm-release none` skips the check.
+Before #2710 merged, REG017 reported 45 findings. The update added the missing rule files for seven entities, removed or retired the rule files for three conditions, and changed eight EntityNames to match the specification (e.g., "Sku Price ID" to "SKU Price ID", "Json Object Format" to "JSON Object Format"). It also added `datamodel.json`.
+
+Each finding is an inconsistency to resolve, not a verdict. For example, an entity with no rule file could mean a missing rule or an entity that the Requirements Model leaves out on purpose, such as a preview dataset, and a rule file with no entity could mean a missing specification entity or a gap in the registry. The findings are reported, not fixed, because the Requirements Model is outside this demo. `build_registry.py --rm-release none` skips the check.
 
 A JSON object is defined in its column's file but is a separate entity. References to it link normally, unlike the column's references to itself.
 

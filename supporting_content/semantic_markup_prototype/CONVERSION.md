@@ -2,7 +2,7 @@
 
 > **Note:** This guide covers the conversion of the whole specification to semantic tags on this branch. Like the rest of the branch, it is a demonstration for FOCUS 1.6 and is not intended to be merged as is. [DEMO.md](DEMO.md) describes the branch. The questions at the end are open for the Working Group.
 
-Every Markdown file that the specification build includes was converted where the tags cover its content. What the tags do not cover was left as written and is listed as a question. The branch is based on `working_draft` at `e0fd5f77` (2026-10-29), so the counts below describe the specification at that point.
+Every Markdown file that the specification build includes was converted where the tags cover its content. What the tags do not cover was left as written and is listed as a question. The branch is based on `working_draft` at `e9cdcc7c` (2026-11-02), so the counts below describe the specification at that point. The conversion was made on `e0fd5f77` (2026-10-29); the only change since is the 1.5 Requirements Model update, which changes the REG017 findings and none of the specification's Markdown.
 
 The conversion has two passes. The mechanical pass (`convert_all.sh`), described here, translates what the existing markup already states. The [semantic review](SEMANTIC_REVIEW.md), a separate commit, checked every tag, corrected 7, and decided the items the converter left open. The counts below include both.
 
@@ -30,7 +30,7 @@ The conversion has two passes. The mechanical pass (`convert_all.sh`), described
 | ... still plain after the semantic review, each with a reason | 60 |
 | Hand-written entity links left in place | 272 |
 
-The build resolves every tag, markdown-pp anchors and the link tests are unchanged, and the Markdown linter passes on all converted files. The conversion is idempotent: running `convert_all.sh` on converted files changes nothing.
+The build resolves every tag, markdown-pp anchors and the link tests are unchanged, and the Markdown linter passes on all converted files. The conversion is idempotent: running `convert_all.sh` on its own output changes nothing. Run again after the semantic review, it makes three more edits, because the review's tags give it new evidence: it adds `dataset: CostAndUsage` to `currency_format.md` and `billed_cost_and_invoice_alignment.md`, which makes six qualifiers in them unnecessary, and it tags one more value in `rate_optimization_and_contract_evaluation.md`. The branch does not include those edits.
 
 ## What the Converter Does
 
@@ -92,7 +92,7 @@ The checks report disagreements. They do not say which side is wrong.
 
 * **A link points at a different column than its text names.** In `contractcommitmentperiodend.md`, the text "Contract Commitment Period Start" links to ContractPeriodStart (FOCUS011).
 * **Names that do not match their files.** 41 entity files and folders are not named after their entity ID (REG016). #2787 renames these along with the other files in the repository.
-* **Names that do not match the Requirements Model.** 45 differences (REG017): 25 are the new SKU Price entities, which have no rule files yet.
+* **Entities that do not match the Requirements Model.** 28 differences (REG017): 25 are the SKU Price entities, which have no rule files, and 1 is the new data model rule file, which the registry has no entity for. The 1.5 Requirements Model update (#2710) resolved the name differences.
 * **A table header that is not "Value".** The SKU Price column PurchaseDurationType has an Allowed Values table headed "Time Unit" (REG004), so its values cannot be referenced.
 * **Glossary keys that do not match their terms.** Four keys (REG006), for example `pascalcase` for "Pascal Case".
 * **A role with no glossary entry.** "data generator" is written as an italic link nine times, but only the Data Generator metadata section exists to link to.
