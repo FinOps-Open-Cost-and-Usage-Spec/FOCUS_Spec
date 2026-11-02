@@ -1,0 +1,160 @@
+name: Sync PR Status
+
+# Sets a pull request's Status on the project board from its draft state:
+# PR In Draft while it is a draft, PR Open once it is ready for review.
+# Only a blank, Submitted, PR In Draft, or PR Open Status is changed.
+# Later stages (PR TF Review onward) and holds (Blocked, Postponed) are set by hand and left as they are.
+
+on:
+  # pull_request_target gives pull requests from forks access to PROJECT_PAT.
+  # The job never checks out or runs pull request code. It reads the draft flag through the API.
+  pull_request_target:
+    types: [opened, reopened, ready_for_review, converted_to_draft]
+  schedule:
+    - cron: '30 6 * * *'  # Daily sweep of all open pull requests, in case an event was missed
+  workflow_dispatch:
+    inputs:
+      pr_number:
+        description: 'PR number (leave blank to sync all open PRs)'
+        required: false
+      dry_run:
+        description: 'Print the changes without making them'
+        type: boolean
+        default: false
+
+permissions: {}
+
+concurrency:
+  group: sync-pr-status-${{ github.event.pull_request.number || github.event.inputs.pr_number || 'all' }}
+  cancel-in-progress: false
+
+jobs:
+  sync_status:
+    name: Sync PR Status
+    if: github.repository == 'FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec'
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.PROJECT_PAT }}
+      ORG: "FinOps-Open-Cost-and-Usage-Spec"
+      REPO: ${{ github.repository }}
+      PROJECT_NUM: 5
+      EVENT_NAME: ${{ github.event_name }}
+      EVENT_ACTION: ${{ github.event.action }}
+      EVENT_PR: ${{ github.event.pull_request.number }}
+      INPUT_PR: ${{ github.event.inputs.pr_number }}
+      DRY_RUN: ${{ github.event.inputs.dry_run || 'false' }}
+
+    steps:
+      - name: Sync Status from draft state
+        run: |
+          set -euo pipefail
+
+          # 1. Identify PRs
+          if [ "$EVENT_NAME" = "pull_request_target" ]; then
+            PR_LIST="$EVENT_PR"
+          elif [ -n "$INPUT_PR" ]; then
+            PR_LIST="$INPUT_PR"
+          else
+            PR_LIST=$(gh pr list -R "$REPO" --state open --limit 500 --json number --jq '.[].number')
+          fi
+
+          for PR_NUM in $PR_LIST; do
+            if ! [[ "$PR_NUM" =~ ^[0-9]+$ ]]; then echo "Invalid PR number: $PR_NUM"; exit 1; fi
+          done
+
+          # 2. Fetch Status field and option IDs
+          PROJ_DATA=$(gh api graphql -f query='
+            query($org: String!, $num: Int!) {
+              organization(login: $org) {
+                projectV2(number: $num) {
+                  id
+                  field(name: "Status") { ... on ProjectV2SingleSelectField { id options { id name } } }
+                }
+              }
+            }' -f org="$ORG" -F num="$PROJECT_NUM")
+
+          PROJECT_ID=$(jq -r '.data.organization.projectV2.id' <<< "$PROJ_DATA")
+          STATUS_FIELD_ID=$(jq -r '.data.organization.projectV2.field.id' <<< "$PROJ_DATA")
+          DRAFT_OPT=$(jq -r '.data.organization.projectV2.field.options[] | select(.name == "PR In Draft") | .id' <<< "$PROJ_DATA")
+          OPEN_OPT=$(jq -r '.data.organization.projectV2.field.options[] | select(.name == "PR Open") | .id' <<< "$PROJ_DATA")
+
+          if [ -z "$DRAFT_OPT" ] || [ -z "$OPEN_OPT" ]; then
+            echo "Status options 'PR In Draft' and 'PR Open' not found"; exit 1
+          fi
+
+          read_pr() {
+            gh api graphql -f query='
+              query($owner: String!, $name: String!, $num: Int!) {
+                repository(owner: $owner, name: $name) {
+                  pullRequest(number: $num) {
+                    state
+                    isDraft
+                    projectItems(first: 10) {
+                      nodes {
+                        id
+                        project { number }
+                        fieldValueByName(name: "Status") { ... on ProjectV2ItemFieldSingleSelectValue { name } }
+                      }
+                    }
+                  }
+                }
+              }' -f owner="${REPO%/*}" -f name="${REPO#*/}" -F num="$1"
+          }
+
+          # 3. Sync each PR. A failure on one PR is reported and the run moves on to the next.
+          FAILED=0
+          for PR_NUM in $PR_LIST; do
+            # A new PR is added to the board by the built-in "Auto-add to project" workflow, and the built-in
+            # "Item added to project" workflow then sets Status to Submitted. On a reopened PR, the built-in
+            # "Item reopened" workflow moves Status from Closed to Submitted. Wait for them, so none
+            # overwrites the value set here.
+            READ_OK=1
+            for i in {1..12}; do
+              if ! PR_DATA=$(read_pr "$PR_NUM"); then READ_OK=0; break; fi
+              ITEM=$(jq -c --argjson n "$PROJECT_NUM" '.data.repository.pullRequest.projectItems.nodes[]? | select(.project.number == $n)' <<< "$PR_DATA")
+              STATUS=$(jq -r '.fieldValueByName.name // empty' <<< "${ITEM:-null}")
+              if { [ "$EVENT_ACTION" = "opened" ] || [ "$EVENT_ACTION" = "reopened" ]; } &&
+                 { [ -z "$STATUS" ] || [ "$STATUS" = "Closed" ]; }; then
+                sleep 5; continue
+              fi
+              if [ -n "$ITEM" ] || [ "$EVENT_NAME" != "pull_request_target" ]; then break; fi
+              sleep 5
+            done
+
+            if [ "$READ_OK" = "0" ]; then echo "#$PR_NUM: could not read the pull request, skipped"; FAILED=1; continue; fi
+
+            ITEM_ID=$(jq -r '.id // empty' <<< "${ITEM:-null}")
+            STATE=$(jq -r '.data.repository.pullRequest.state // empty' <<< "$PR_DATA")
+            IS_DRAFT=$(jq -r '.data.repository.pullRequest.isDraft' <<< "$PR_DATA")
+
+            if [ -z "$ITEM_ID" ]; then echo "#$PR_NUM: not on the board, skipped"; continue; fi
+            if [ "$STATE" != "OPEN" ]; then echo "#$PR_NUM: ${STATE:-not found}, skipped"; continue; fi
+
+            if [ "$IS_DRAFT" = "true" ]; then
+              TARGET="PR In Draft"; TARGET_OPT="$DRAFT_OPT"
+            else
+              TARGET="PR Open"; TARGET_OPT="$OPEN_OPT"
+            fi
+
+            case "$STATUS" in
+              ""|"Submitted"|"PR In Draft"|"PR Open") ;;
+              *) echo "#$PR_NUM: Status '$STATUS' is set by hand, left as is"; continue ;;
+            esac
+
+            if [ "$STATUS" = "$TARGET" ]; then echo "#$PR_NUM: already $TARGET"; continue; fi
+
+            if [ "$DRY_RUN" = "true" ]; then
+              echo "#$PR_NUM: would set '${STATUS:-blank}' to '$TARGET' (dry run)"; continue
+            fi
+
+            if gh api graphql -f query='
+              mutation($project: ID!, $item: ID!, $field: ID!, $option: String!) {
+                updateProjectV2ItemFieldValue(input: { projectId: $project, itemId: $item, fieldId: $field, value: { singleSelectOptionId: $option } }) { clientMutationId }
+              }' -f project="$PROJECT_ID" -f item="$ITEM_ID" -f field="$STATUS_FIELD_ID" -f option="$TARGET_OPT" > /dev/null; then
+              echo "#$PR_NUM: set '${STATUS:-blank}' to '$TARGET'"
+            else
+              echo "#$PR_NUM: could not set Status to '$TARGET'"; FAILED=1
+            fi
+          done
+
+          if [ "$FAILED" = "1" ]; then echo "One or more pull requests could not be synced; see above."; exit 1; fi
