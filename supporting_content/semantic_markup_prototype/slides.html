@@ -1,0 +1,648 @@
+<!doctype html>
+<!--
+  FOCUS Semantic Markup slides (FR #2779). Open this file in a browser.
+
+  Keys: Right, Space or Page Down for the next slide; Left or Page Up for the previous one;
+  Home and End; N shows the speaker notes; F toggles full screen. The address ends in
+  #<number>, so a link can open a given slide. Printing (or saving as PDF) gives one slide
+  per page, without the notes.
+
+  To edit: each <section> is one 1920 x 1080 slide, in order, and its <aside> holds the
+  speaker notes. Footers end with the slide number, so renumber them after adding or
+  removing a slide.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FOCUS Semantic Markup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; }
+body { background: #0B1220; color: #F7F5EF; font-family: 'IBM Plex Sans', Arial, sans-serif; overflow: hidden; }
+#stage { position: absolute; inset: 0 0 56px 0; display: flex; align-items: center; justify-content: center; }
+#deck { width: 1920px; height: 1080px; position: relative; flex: none; transform-origin: center center; box-shadow: 0 8px 40px rgba(0, 0, 0, 0.45); }
+#deck > section { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden; display: none !important; }
+#deck > section.active { display: flex !important; }
+section aside { display: none; }
+section table { width: 100%; border-collapse: collapse; }
+section th, section td { padding: 16px 24px; text-align: left; vertical-align: top; border-bottom: 1px solid #D9D4C7; line-height: 1.35; }
+section th { font-weight: 600; }
+x-shape { display: block; flex: none; }
+x-shape[kind="arrow-right"] { clip-path: polygon(0 32%, 62% 32%, 62% 0, 100% 50%, 62% 100%, 62% 68%, 0 68%); }
+#bar { position: absolute; left: 0; right: 0; bottom: 0; height: 56px; display: flex; align-items: center; gap: 12px; padding: 0 16px; font-size: 15px; color: #B9C3D6; }
+#bar button { background: #1C2A4A; color: #F7F5EF; border: 1px solid #2E3E63; border-radius: 6px; padding: 6px 14px; font: inherit; cursor: pointer; }
+#bar button:hover { background: #2E3E63; }
+#bar button[aria-pressed="true"] { background: #A8520A; border-color: #A8520A; }
+#count { min-width: 64px; text-align: center; font-variant-numeric: tabular-nums; }
+#title { flex: 1; text-align: right; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+#notes { position: absolute; left: 0; right: 0; bottom: 56px; max-height: 40%; overflow: auto; padding: 20px 24px; background: rgba(11, 18, 32, 0.96); border-top: 1px solid #2E3E63; font-size: 18px; line-height: 1.55; color: #E6E9F0; display: none; }
+body.show-notes #notes { display: block; }
+@media print {
+  @page { size: 1920px 1080px; margin: 0; }
+  html, body { height: auto; overflow: visible; background: none; }
+  #stage { position: static; display: block; }
+  #deck { transform: none !important; box-shadow: none; width: auto; height: auto; }
+  #deck > section { position: relative; display: flex !important; break-after: page; }
+  #bar, #notes { display: none !important; }
+}
+</style>
+</head>
+<body>
+<div id="stage"><div id="deck">
+<section id="cover" data-transition="fade" style="background:#14213D;color:#F7F5EF;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;justify-content:center;gap:40px">
+<p style="font-size:30px;font-weight:600;color:#F2A65A;letter-spacing:2px;text-transform:uppercase">FOCUS Working Group · Proposal</p>
+<h1 style="font-size:112px;font-weight:600;line-height:1.05;color:#F7F5EF;width:1500px">Mark what it means, not how it looks</h1>
+<p style="font-size:40px;line-height:1.35;color:#B9C3D6;width:1400px">Moving FOCUS source files from formatting-based markup to semantic tags, with the formatting applied by the build. A working prototype is included.</p>
+<p style="font-size:32px;font-weight:600;color:#F7F5EF;border-top:2px solid #F2A65A;padding:28px 0 0 0;width:600px">David Moreau<br><span style="color:#B9C3D6">Coinbase</span></p>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#B9C3D6">Updated 30 October 2026 with a conversion and semantic review of the whole specification</p>
+<aside>This is a proposal to change how we write the FOCUS source files. Today every author hand-writes the links and formatting the published spec needs. The proposal is that authors only say what a reference is, such as a column, a glossary term or an allowed value, and the build turns that into links and formatting. I built a small working prototype to test it, and the results are later in the deck.</aside>
+</section>
+<section id="today" data-transition="fade" style="background:#F7F5EF;color:#14213D;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:56px">
+<h2 style="font-size:64px;font-weight:600;line-height:1.1">Today, authors write the formatting by hand</h2>
+<div style="display:flex;gap:56px;align-items:start">
+<div style="width:1010px;background:#14213D;border-radius:16px;padding:40px;display:flex;flex-direction:column;gap:16px">
+<p style="font-size:24px;color:#B9C3D6;font-family:'IBM Plex Sans', Arial, sans-serif">datasets/cost_and_usage/columns/billedcost.md</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;line-height:1.55;color:#E6E9F0">Billed Cost represents the cost of a<br><span style="color:#F2A65A">[*charge*](#glossary:charge)</span> as invoiced by the<br><span style="color:#F2A65A">[invoice issuer](#datamodel.costandusage.invoiceissuername)</span><br>in a given <span style="color:#F2A65A">[*billing period*](#glossary:billing-period)</span>.<br>Billed Cost differs from<br><span style="color:#F2A65A">[Effective Cost](#datamodel.costandusage.effectivecost)</span><br>when <span style="color:#F2A65A">[*covering charges*](#glossary:covering-charge)</span> …<br><br>* BilledCost MUST be denominated in the BillingCurrency.<br>* BilledCost MUST NOT include any portion of a<br><span style="color:#F2A65A">[*covered charge*](#glossary:covered-charge)</span> that is<br>offset by a <span style="color:#F2A65A">[*covering charge*](#glossary:covering-charge)</span>.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:28px">
+<h3 style="font-size:36px;font-weight:600;line-height:1.2">Each author applies these rules by hand, in every file</h3>
+<p style="font-size:28px;line-height:1.4;color:#3D4657;border-top:2px solid #D9D4C7;padding:20px 0 0 0">Link only the first mention of an entity in each file</p>
+<p style="font-size:28px;line-height:1.4;color:#3D4657;border-top:2px solid #D9D4C7;padding:20px 0 0 0">Italicize glossary terms on every mention</p>
+<p style="font-size:28px;line-height:1.4;color:#3D4657;border-top:2px solid #D9D4C7;padding:20px 0 0 0">Use the ColumnId in Requirements and the Display Name in prose</p>
+<p style="font-size:28px;line-height:1.4;color:#3D4657;border-top:2px solid #D9D4C7;padding:20px 0 0 0">Type the anchor path, which comes from the heading text</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B7280">FOCUS semantic markup · 2</p>
+<aside>This is real text from the BilledCost column file. Everything in orange is formatting the author typed by hand. The author has to know which mention is the first one in the file, which words are glossary terms, and the exact anchor path. That path comes from the heading hierarchy, so renaming a heading breaks every link to it. Reviewers check all of this by eye.</aside>
+</section>
+<section id="scale" data-transition="fade" style="background:#ECE9E0;color:#14213D;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:64px">
+<h2 style="font-size:64px;font-weight:600;line-height:1.1">Across the spec, that’s thousands of references</h2>
+<div style="display:flex;gap:32px">
+<div style="flex:1;background:#FDFCF8;border:1px solid #D9D4C7;border-radius:16px;padding:48px;display:flex;flex-direction:column;gap:16px">
+<p style="font-size:120px;font-weight:600;line-height:1;color:#A8520A">2,850</p>
+<p style="font-size:30px;line-height:1.35;color:#3D4657">hand-written links to spec anchors (1,280 columns and datasets, 1,031 glossary terms, the rest attributes, conditions, schemas and metadata)</p>
+</div>
+<div style="flex:1;background:#FDFCF8;border:1px solid #D9D4C7;border-radius:16px;padding:48px;display:flex;flex-direction:column;gap:16px">
+<p style="font-size:120px;font-weight:600;line-height:1;color:#A8520A">4,477</p>
+<p style="font-size:30px;line-height:1.35;color:#3D4657">more references marked only by formatting or plain text (untagged ColumnIds, italic glossary terms, Title Case display names)</p>
+</div>
+<div style="flex:1;background:#FDFCF8;border:1px solid #D9D4C7;border-radius:16px;padding:48px;display:flex;flex-direction:column;gap:16px">
+<p style="font-size:120px;font-weight:600;line-height:1;color:#A8520A">333</p>
+<p style="font-size:30px;line-height:1.35;color:#3D4657">of the 342 source files contain at least one of these references</p>
+</div>
+</div>
+<p style="font-size:28px;line-height:1.4;color:#3D4657;width:1500px">These aren’t errors. They are references that no tool can check today, because nothing in the source says what they refer to.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B7280">Counted by the prototype linter over every Markdown file under specification/, working_draft on 29 October 2026 · 3</p>
+<aside>I ran the prototype linter over the whole spec to size the problem. 2,850 links have a hand-typed anchor. Another 4,477 references are marked only by formatting: a ColumnId in plain text, a glossary term in italics, or a Title Case display name in prose. Most of these follow today’s conventions, so they are not mistakes. The point is that we can’t verify any of them automatically, and they are in 333 of 342 files. The counts grew since the first scan mainly because the SKU Price dataset added 34 files, and because the scanner now also counts JSON objects, schemas and metadata fields.</aside>
+</section>
+<section id="problem" data-transition="fade" style="background:#14213D;color:#F7F5EF;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;justify-content:space-between;gap:48px">
+<h2 style="font-size:88px;font-weight:600;line-height:1.1;color:#F7F5EF">Formatting can’t carry meaning</h2>
+<div style="display:flex;gap:32px">
+<div style="flex:1;border-top:4px solid #F2A65A;padding:32px 0 0 0;display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:36px;color:#F2A65A">resource type</p>
+<p style="font-size:30px;line-height:1.4;color:#B9C3D6">The ResourceType column, or just two ordinary words?</p>
+</div>
+<div style="flex:1;border-top:4px solid #F2A65A;padding:32px 0 0 0;display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:36px;color:#F2A65A">*charge*</p>
+<p style="font-size:30px;line-height:1.4;color:#B9C3D6">The glossary term, or emphasis? Italics have to serve both.</p>
+</div>
+<div style="flex:1;border-top:4px solid #F2A65A;padding:32px 0 0 0;display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:36px;color:#F2A65A">ResourceType</p>
+<p style="font-size:30px;line-height:1.4;color:#B9C3D6">A real column, or a typo of one? Nothing checks it.</p>
+</div>
+</div>
+<p style="font-size:40px;line-height:1.35;color:#F7F5EF;width:1500px">We are running out of distinct formats, and no linter can recover intent that was never written down.</p>
+<aside>This is the core problem. When an author writes resource type, we can’t tell whether they mean the column. Italics mean both glossary term and emphasis. A ColumnId in plain text could be misspelled and nothing would notice. We can’t lint our way out of this, because the information isn’t in the source. Each new kind of entity also needs another visual convention, and we are running out.</aside>
+</section>
+<section id="drift" data-transition="fade" style="background:#F7F5EF;color:#14213D;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:56px">
+<h2 style="font-size:64px;font-weight:600;line-height:1.1">What converting the whole spec turned up</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:32px">
+<div style="background:#FDFCF8;border:1px solid #D9D4C7;border-left:6px solid #A8520A;border-radius:12px;padding:40px;display:flex;flex-direction:column;gap:12px">
+<h3 style="font-size:36px;font-weight:600;line-height:1.2">Same words, two targets</h3>
+<p style="font-size:28px;line-height:1.4;color:#3D4657">In billedcost.md, “invoice issuer” links to the InvoiceIssuerName column in the first paragraph and to the glossary term in the Description.</p>
+</div>
+<div style="background:#FDFCF8;border:1px solid #D9D4C7;border-left:6px solid #A8520A;border-radius:12px;padding:40px;display:flex;flex-direction:column;gap:12px">
+<h3 style="font-size:36px;font-weight:600;line-height:1.2">Text and target disagree</h3>
+<p style="font-size:28px;line-height:1.4;color:#3D4657">In contractcommitmentperiodend.md, the text “Contract Commitment Period Start” links to the ContractPeriodStart column.</p>
+</div>
+<div style="background:#FDFCF8;border:1px solid #D9D4C7;border-left:6px solid #A8520A;border-radius:12px;padding:40px;display:flex;flex-direction:column;gap:12px">
+<h3 style="font-size:36px;font-weight:600;line-height:1.2">Linked again and again</h3>
+<p style="font-size:28px;line-height:1.4;color:#3D4657">213 links repeat an entity already linked earlier in the same file, despite the first-mention rule.</p>
+</div>
+<div style="background:#FDFCF8;border:1px solid #D9D4C7;border-left:6px solid #A8520A;border-radius:12px;padding:40px;display:flex;flex-direction:column;gap:12px">
+<h3 style="font-size:36px;font-weight:600;line-height:1.2">Never linked</h3>
+<p style="font-size:28px;line-height:1.4;color:#3D4657">513 first mentions of an entity have no link, such as the column lists on supported features pages.</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B7280">Found by converting every file and comparing the output with working_draft · 5</p>
+<aside>To see what this means in practice, I converted every file the build includes and compared the generated spec with today’s. The first two findings matter most. Linking the same words to a column in one place and to a glossary term in another is a real ambiguity, and in the second case the text names one column while the link goes to another. No linter can resolve either one without tags, because only the author knows which was meant. The other two are the first-mention rule applied unevenly: 213 repeat links and 513 first mentions without a link, spread across the spec.</aside>
+</section>
+<section id="proposal" data-transition="fade" style="background:#ECE9E0;color:#14213D;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:64px">
+<h2 style="font-size:64px;font-weight:600;line-height:1.1">Tag the meaning; let the build apply the format</h2>
+<div style="display:flex;align-items:center;gap:24px">
+<div style="width:400px;background:#FDFCF8;border:2px solid #14213D;border-radius:16px;padding:36px;display:flex;flex-direction:column;gap:12px">
+<h3 style="font-size:32px;font-weight:600;line-height:1.2">Source .md</h3>
+<p style="font-size:26px;line-height:1.4;color:#3D4657">Authors write what each reference is: column, term, value</p>
+</div>
+<x-shape kind="arrow-right" style="width:72px;height:40px;background:#A8520A"></x-shape>
+<div style="width:400px;background:#FDFCF8;border:2px solid #14213D;border-radius:16px;padding:36px;display:flex;flex-direction:column;gap:12px">
+<h3 style="font-size:32px;font-weight:600;line-height:1.2">Entity registry</h3>
+<p style="font-size:26px;line-height:1.4;color:#3D4657">Generated from column files, the glossary and attributes</p>
+</div>
+<x-shape kind="arrow-right" style="width:72px;height:40px;background:#A8520A"></x-shape>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px">
+<div style="background:#14213D;border-radius:16px;padding:28px 36px">
+<p style="font-size:28px;line-height:1.3;color:#F7F5EF"><b>Spec HTML and PDF</b><br><span style="color:#B9C3D6">links to spec anchors</span></p>
+</div>
+<div style="background:#14213D;border-radius:16px;padding:28px 36px">
+<p style="font-size:28px;line-height:1.3;color:#F7F5EF"><b>Per-file preview</b><br><span style="color:#B9C3D6">links to the source .md files</span></p>
+</div>
+<div style="background:#14213D;border-radius:16px;padding:28px 36px">
+<p style="font-size:28px;line-height:1.3;color:#F7F5EF"><b>Lint report</b><br><span style="color:#B9C3D6">every reference checked</span></p>
+</div>
+</div>
+</div>
+<p style="font-size:30px;line-height:1.4;color:#3D4657;width:1560px">A resolver step in the build looks up each tag in the registry and writes today’s links and formatting. Authors stop typing anchors, italics and first-mention links.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B7280">FOCUS semantic markup · 6</p>
+<aside>Here is the proposal in one picture. Authors tag what a reference is. A registry is generated from the files that already define each entity: column files, the glossary, attributes and operating model conditions. Nobody maintains it by hand. A resolver step in the build looks up every tag and applies the formatting rules, so everything after it sees ordinary Markdown. The same source can produce the full spec, a per-file preview that links to source files, and a lint report.</aside>
+</section>
+<section id="syntax" data-transition="fade" style="background:#F7F5EF;color:#14213D;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<h2 style="font-size:64px;font-weight:600;line-height:1.1">The tag is a normal Markdown link</h2>
+<table style="font-size:26px;color:#14213D;font-family:'IBM Plex Sans', Arial, sans-serif">
+<tr style="background:#14213D"><th style="width:56%;color:#F7F5EF">Write</th><th style="width:44%;color:#F7F5EF">Means</th></tr>
+<tr><td style="font-family:'JetBrains Mono', 'Courier New', monospace">[ResourceType](#col)</td><td>Column; the ID comes from the link text</td></tr>
+<tr style="background:#ECE9E0"><td style="font-family:'JetBrains Mono', 'Courier New', monospace">[resource type](#col:ResourceType)</td><td>Column, written with any display text</td></tr>
+<tr><td style="font-family:'JetBrains Mono', 'Courier New', monospace">[BilledCost](#col:InvoiceDetail.BilledCost)</td><td>Column in another dataset</td></tr>
+<tr style="background:#ECE9E0"><td style="font-family:'JetBrains Mono', 'Courier New', monospace">[charges](#term)</td><td>Glossary term; plurals resolve to the entry</td></tr>
+<tr><td style="font-family:'JetBrains Mono', 'Courier New', monospace">["Usage"](#val:ChargeCategory)</td><td>Allowed value of a column</td></tr>
+<tr style="background:#ECE9E0"><td style="font-family:'JetBrains Mono', 'Courier New', monospace">[NumericFormat](#attr), [Includes Tags](#omc)</td><td>Attribute, operating model condition</td></tr>
+<tr><td style="font-family:'JetBrains Mono', 'Courier New', monospace">[Cost and Usage](#ds), [FocusVersion](#meta)</td><td>Dataset, metadata field</td></tr>
+<tr style="background:#ECE9E0"><td style="font-family:'JetBrains Mono', 'Courier New', monospace">[ContractAppliedObjectSchema](#schema)</td><td>JSON schema (#obj for its object)</td></tr>
+</table>
+<p style="font-size:28px;line-height:1.4;color:#3D4657;width:1560px">Our glossary links already work this way: <span style="color:#A8520A">#glossary:charge</span> names a term, not a location. Any other link passes through unchanged.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B7280">FOCUS semantic markup · 7</p>
+<aside>The syntax is deliberately boring. The link target names an entity type, and optionally an ID, instead of a location. When the link text already matches the ID, you leave the ID off. A column that exists in several datasets can name its dataset, and a file outside the datasets folder can set a default dataset in front matter so it rarely has to. The same pattern covers JSON objects, schemas and metadata fields. This isn’t new to us: our glossary links already work this way. Ordinary links, such as appendix links, keep working unchanged, so old and new markup can coexist during migration.</aside>
+</section>
+<section id="beforeafter" data-transition="fade" style="background:#ECE9E0;color:#14213D;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:32px">
+<h2 style="font-size:64px;font-weight:600;line-height:1.1">The same text, before and after</h2>
+<div style="background:#14213D;border-radius:16px;padding:32px 40px;display:flex;flex-direction:column;gap:12px">
+<p style="font-size:24px;font-weight:600;color:#B9C3D6;letter-spacing:2px;text-transform:uppercase">Before · formatting written by hand</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;line-height:1.55;color:#E6E9F0">Billed Cost represents the cost of a <span style="color:#F2A65A">[*charge*](#glossary:charge)</span> as invoiced by the<br><span style="color:#F2A65A">[invoice issuer](#datamodel.costandusage.invoiceissuername)</span> in a given<br><span style="color:#F2A65A">[*billing period*](#glossary:billing-period)</span>.<br>* BilledCost MUST be denominated in the BillingCurrency.</p>
+</div>
+<div style="background:#14213D;border-radius:16px;padding:32px 40px;display:flex;flex-direction:column;gap:12px">
+<p style="font-size:24px;font-weight:600;color:#B9C3D6;letter-spacing:2px;text-transform:uppercase">After · meaning tagged, formatting left to the build</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;line-height:1.55;color:#E6E9F0">Billed Cost represents the cost of a <span style="color:#7FB2FF">[charge](#term)</span> as invoiced by the<br><span style="color:#7FB2FF">[invoice issuer](#term)</span> in a given <span style="color:#7FB2FF">[billing period](#term)</span>.<br>* BilledCost MUST be denominated in the <span style="color:#7FB2FF">[BillingCurrency](#col)</span>.</p>
+</div>
+<p style="font-size:28px;line-height:1.4;color:#3D4657;width:1600px">Where the original followed the rules, the build output is identical. Where it didn’t, the output is corrected. Choosing the glossary term for “invoice issuer” is now a decision recorded in the source.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B7280">From samples/billedcost.md in the prototype · 8</p>
+<aside>Here is the same opening from BilledCost in both forms. The tagged version is shorter and easier to read in raw form. The author no longer decides whether a mention is the first one, whether to add italics, or what the anchor path is. They only say what the reference is. Note the invoice issuer choice: in the original, the same words point to two different places in one file. In the tagged version the author has to pick one, and that choice is recorded.</aside>
+</section>
+<section id="rules" data-transition="fade" style="background:#F7F5EF;color:#14213D;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<h2 style="font-size:64px;font-weight:600;line-height:1.1">Formatting rules live in one place</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:28px">
+<div style="background:#FDFCF8;border:1px solid #D9D4C7;border-radius:12px;padding:36px;display:flex;flex-direction:column;gap:12px">
+<h3 style="font-size:32px;font-weight:600;line-height:1.2">First mention links</h3>
+<p style="font-size:26px;line-height:1.4;color:#3D4657">The first reference to each entity in a source file becomes a link; each glossary entry counts on its own</p>
+</div>
+<div style="background:#FDFCF8;border:1px solid #D9D4C7;border-radius:12px;padding:36px;display:flex;flex-direction:column;gap:12px">
+<h3 style="font-size:32px;font-weight:600;line-height:1.2">Later mentions don’t</h3>
+<p style="font-size:26px;line-height:1.4;color:#3D4657">Repeat references keep their formatting but drop the link</p>
+</div>
+<div style="background:#FDFCF8;border:1px solid #D9D4C7;border-radius:12px;padding:36px;display:flex;flex-direction:column;gap:12px">
+<h3 style="font-size:32px;font-weight:600;line-height:1.2">No self-links</h3>
+<p style="font-size:26px;line-height:1.4;color:#3D4657">BilledCost is never linked inside billedcost.md</p>
+</div>
+<div style="background:#FDFCF8;border:1px solid #D9D4C7;border-radius:12px;padding:36px;display:flex;flex-direction:column;gap:12px">
+<h3 style="font-size:32px;font-weight:600;line-height:1.2">Terms in italics</h3>
+<p style="font-size:26px;line-height:1.4;color:#3D4657">Glossary terms render in italics; other entities render as plain text</p>
+</div>
+<div style="background:#FDFCF8;border:1px solid #D9D4C7;border-radius:12px;padding:36px;display:flex;flex-direction:column;gap:12px">
+<h3 style="font-size:32px;font-weight:600;line-height:1.2">Constraints link every row</h3>
+<p style="font-size:26px;line-height:1.4;color:#3D4657">Content Constraints cells stand alone, so every row links (glossary terms excepted)</p>
+</div>
+<div style="background:#FDFCF8;border:1px solid #D9D4C7;border-radius:12px;padding:36px;display:flex;flex-direction:column;gap:12px">
+<h3 style="font-size:32px;font-weight:600;line-height:1.2">An explicit ID wins</h3>
+<p style="font-size:26px;line-height:1.4;color:#3D4657">[text](#col:Id) always means Id; if the text names another entity, the build warns</p>
+</div>
+</div>
+<p style="font-size:30px;line-height:1.4;color:#14213D;width:1560px">Changing a rule, such as how columns are styled, becomes one edit to the build instead of a thousand edits to the source.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B7280">Today’s conventions from the Editorial Guidelines, applied by the resolver · 9</p>
+<aside>These rules are the ones we follow today. The difference is that the resolver applies them, so they are applied the same way everywhere. The last one is new: when a tag names an ID explicitly, that ID decides the entity, and if the visible text names a different entity the build reports it. That is how the conversion found a link whose text and target disagree. If the working group decides to change a convention, for example to style columns differently or to link every mention in the Requirements section, that becomes one change in the build. Today it would mean editing every file.</aside>
+</section>
+<section id="definitions" data-transition="fade" style="background:#ECE9E0;color:#14213D;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<h2 style="font-size:64px;font-weight:600;line-height:1.1">Definitions stay where they are</h2>
+<div style="display:flex;gap:48px;align-items:start">
+<div style="width:960px;display:flex;flex-direction:column;gap:24px">
+<table style="font-size:26px;color:#14213D;font-family:'IBM Plex Sans', Arial, sans-serif;background:#FDFCF8">
+<tr style="background:#14213D"><th style="width:32%;color:#F7F5EF">Entity</th><th style="width:68%;color:#F7F5EF">Recognized by the structure we already use</th></tr>
+<tr><td>Column</td><td>Its file’s Column ID and Display Name sections</td></tr>
+<tr style="background:#F2EFE6"><td>Allowed value</td><td>A row of the column’s Allowed Values table</td></tr>
+<tr><td>Glossary term</td><td>The existing glossary anchor</td></tr>
+<tr style="background:#F2EFE6"><td>Attribute, condition, dataset</td><td>Its file’s ID and name sections</td></tr>
+<tr><td>JSON object, schema</td><td>Object ID section; heading in schemas.mdpp</td></tr>
+<tr style="background:#F2EFE6"><td>Metadata field</td><td>Metadata ID and Metadata Name sections</td></tr>
+</table>
+<p style="font-size:28px;line-height:1.4;color:#3D4657">Only references get tagged. The build checks each definition’s structure, and front matter holds what it can’t, such as aliases.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:28px">
+<div style="border-top:4px solid #A8520A;padding:20px 0 0 0;display:flex;flex-direction:column;gap:8px">
+<p style="font-size:72px;font-weight:600;line-height:1;color:#A8520A">149 of 150</p>
+<p style="font-size:26px;line-height:1.4;color:#3D4657">column files pass every structural check; one Allowed Values table is headed “Time Unit”</p>
+</div>
+<div style="border-top:4px solid #A8520A;padding:20px 0 0 0;display:flex;flex-direction:column;gap:8px">
+<p style="font-size:72px;font-weight:600;line-height:1;color:#A8520A">8</p>
+<p style="font-size:26px;line-height:1.4;color:#3D4657">names belong to two kinds of entity, such as “billing currency”: a column and a glossary term</p>
+</div>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B7280">Definition checks run against working_draft · 10</p>
+<aside>A common question is whether we also tag the definitions. We don’t need to. Column files, the glossary, the Allowed Values tables, and the ID and name sections of every other entity are already very regular, so the registry reads definitions from that structure, and the build checks the structure every time. 149 of 150 column files pass today. The one exception is a new SKU Price column whose Allowed Values table has an unexpected header, which is exactly the kind of thing the check is for. The checks also found eight names that belong to two kinds of entity. For example, billing currency is both the BillingCurrency column and a glossary term. That’s why a reference has to say what kind of entity it is. Aliases go in optional front matter on the defining file.</aside>
+</section>
+<section id="lint" data-transition="fade" style="background:#ECE9E0;color:#14213D;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<h2 style="font-size:64px;font-weight:600;line-height:1.1">Tags make consistency checkable</h2>
+<table style="font-size:24px;color:#14213D;font-family:'IBM Plex Sans', Arial, sans-serif;background:#FDFCF8">
+<tr style="background:#14213D"><th style="width:27%;color:#F7F5EF">Check</th><th style="width:73%;color:#F7F5EF">Real message from the prototype</th></tr>
+<tr><td><b>Unknown entity</b> · error</td><td style="font-family:'JetBrains Mono', 'Courier New', monospace">unknown col "ResorceType"</td></tr>
+<tr style="background:#F2EFE6"><td><b>Value not allowed</b> · error</td><td style="font-family:'JetBrains Mono', 'Courier New', monospace">"Refund" is not an allowed value of ChargeClass (allowed: Correction)</td></tr>
+<tr><td><b>Ambiguous column</b> · error</td><td style="font-family:'JetBrains Mono', 'Courier New', monospace">col "BilledCost" exists in several datasets (CostAndUsage, InvoiceDetail); qualify it</td></tr>
+<tr style="background:#F2EFE6"><td><b>Display name in Requirements</b></td><td style="font-family:'JetBrains Mono', 'Courier New', monospace">display text "Billing Currency" in Requirements; normative text uses BillingCurrency</td></tr>
+<tr><td><b>Untagged ColumnId</b></td><td style="font-family:'JetBrains Mono', 'Courier New', monospace">untagged ColumnId BillingCurrency; write [BillingCurrency](#col)</td></tr>
+<tr style="background:#F2EFE6"><td><b>Untagged display name</b></td><td style="font-family:'JetBrains Mono', 'Courier New', monospace">untagged display name "Resource Type"; tag it or reword</td></tr>
+<tr><td><b>Hard-coded link</b></td><td style="font-family:'JetBrains Mono', 'Courier New', monospace">hard-coded link "charge" -&gt; #glossary:charge; write [charge](#term)</td></tr>
+<tr style="background:#F2EFE6"><td><b>Text names another entity</b></td><td style="font-family:'JetBrains Mono', 'Courier New', monospace">link text "Contract Commitment Period Start" names ContractCommitmentPeriodStart, but the reference is ContractPeriodStart</td></tr>
+</table>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B7280">Errors can fail the build in strict mode; warnings guide migration · 11</p>
+<aside>Once references are tagged, these checks become possible. These are real messages from the prototype. The top three are errors: a misspelled column, a value that isn’t in the column’s Allowed Values table, and a ColumnId that exists in more than one dataset. The rest are warnings. One of them enforces our existing rule that normative text uses the ColumnId, not the Display Name. The untagged and hard-coded checks find references in legacy files and suggest the exact rewrite, so they also drive the migration. The last row is a real finding from converting the whole spec: the link text and the link target name two different columns.</aside>
+</section>
+<section id="results" data-transition="fade" style="background:#14213D;color:#F7F5EF;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:64px">
+<h2 style="font-size:64px;font-weight:600;line-height:1.1;color:#F7F5EF">The whole spec, converted and reviewed</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:32px">
+<div style="border-top:4px solid #F2A65A;padding:32px 0 0 0;display:flex;flex-direction:column;gap:16px">
+<p style="font-size:120px;font-weight:600;line-height:1;color:#F2A65A">8,504</p>
+<p style="font-size:28px;line-height:1.4;color:#B9C3D6">tags in 334 of the 377 files the build includes</p>
+</div>
+<div style="border-top:4px solid #F2A65A;padding:32px 0 0 0;display:flex;flex-direction:column;gap:16px">
+<p style="font-size:120px;font-weight:600;line-height:1;color:#F2A65A">0</p>
+<p style="font-size:28px;line-height:1.4;color:#B9C3D6">build errors; all 191 tests and the Markdown linter pass</p>
+</div>
+<div style="border-top:4px solid #F2A65A;padding:32px 0 0 0;display:flex;flex-direction:column;gap:16px">
+<p style="font-size:120px;font-weight:600;line-height:1;color:#F2A65A">0</p>
+<p style="font-size:28px;line-height:1.4;color:#B9C3D6">words changed in the published spec; only links, italics and padding differ</p>
+</div>
+<div style="border-top:4px solid #F2A65A;padding:32px 0 0 0;display:flex;flex-direction:column;gap:16px">
+<p style="font-size:120px;font-weight:600;line-height:1;color:#F2A65A">506</p>
+<p style="font-size:28px;line-height:1.4;color:#B9C3D6">entities in a registry generated from the spec, none written by hand</p>
+</div>
+</div>
+<p style="font-size:30px;line-height:1.4;color:#F7F5EF;width:1560px">Two passes: a script made 8,127 tags and is safe to rerun, then a semantic review checked every tag and decided what the script could not.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#B9C3D6">Demo branch 2779-semantic-markup-demo, based on working_draft at e9cdcc7c · 12</p>
+<aside>This started with two sample files and is now the whole specification, done in two passes. First, one script converted every file the build includes. It only carries over what the existing markup already says, it is safe to rerun, and it made 8,127 tags. Then a semantic review, a separate commit, checked every tag for meaning and decided the references the script left open, which brings the total to 8,504. The real build resolves all of them with no errors, the tests and the linter pass, and CI passes on the branch. No word of the published spec changed: every difference is a link, italics or table padding. The registry behind it holds 506 entities, all read from files we already maintain.</aside>
+</section>
+<section id="differences" data-transition="fade" style="background:#ECE9E0;color:#14213D;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<h2 style="font-size:64px;font-weight:600;line-height:1.1">Every difference, sorted by kind</h2>
+<table style="font-size:26px;color:#14213D;font-family:'IBM Plex Sans', Arial, sans-serif;background:#FDFCF8">
+<tr style="background:#14213D"><th style="width:26%;color:#F7F5EF">Kind</th><th style="width:12%;color:#F7F5EF">Count</th><th style="width:62%;color:#F7F5EF">What it is</th></tr>
+<tr><td><b>Words changed</b></td><td>0</td><td>No wording changed anywhere</td></tr>
+<tr style="background:#F2EFE6"><td><b>Link retargeted</b></td><td>6</td><td>“invoice issuer” now links the glossary term (needs a decision), and 4 corrected tags</td></tr>
+<tr><td><b>Link added</b></td><td>513</td><td>A first mention that was plain text is now linked</td></tr>
+<tr style="background:#F2EFE6"><td><b>Link removed</b></td><td>213</td><td>A repeat link is now plain text</td></tr>
+<tr><td><b>Italics</b></td><td>21</td><td>Emphasis follows the kind of entity: off non-term links, on glossary terms</td></tr>
+<tr style="background:#F2EFE6"><td><b>Padding only</b></td><td>297</td><td>Table spacing; the rendered tables are identical</td></tr>
+</table>
+<p style="font-size:30px;line-height:1.4;color:#14213D;width:1560px">877 lines of the published spec differ. Reviewing the conversion means reading a sorted list, not a diff of 336 files.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B7280">Compared with working_draft at e9cdcc7c · 13</p>
+<aside>This is migration step four, reviewing the differences, made practical. A comparison script builds today’s spec and the converted one, and sorts every difference by kind. Only two kinds need a person: a changed word, and there are none, and a link that points somewhere new. There are six: the two invoice issuer links, and four tags the semantic review corrected because they pointed at the wrong entity. The added and removed links are the first-mention rule from the Editorial Guidelines applied evenly, the italics follow the glossary convention, and the padding changes don’t show in the output.</aside>
+</section>
+<section id="semantic" data-transition="fade" style="background:#F7F5EF;color:#14213D;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<h2 style="font-size:64px;font-weight:600;line-height:1.1">Then a person reviewed every tag</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px">
+<div style="border-top:4px solid #A8520A;padding:24px 0 0 0;display:flex;flex-direction:column;gap:12px">
+<p style="font-size:96px;font-weight:600;line-height:1;color:#A8520A">7</p>
+<p style="font-size:28px;line-height:1.4;color:#3D4657">existing tags corrected, all from hand-written links or italics</p>
+</div>
+<div style="border-top:4px solid #A8520A;padding:24px 0 0 0;display:flex;flex-direction:column;gap:12px">
+<p style="font-size:96px;font-weight:600;line-height:1;color:#A8520A">377</p>
+<p style="font-size:28px;line-height:1.4;color:#3D4657">tags added where context decides, such as which dataset a column means</p>
+</div>
+<div style="border-top:4px solid #A8520A;padding:24px 0 0 0;display:flex;flex-direction:column;gap:12px">
+<p style="font-size:96px;font-weight:600;line-height:1;color:#A8520A">60</p>
+<p style="font-size:28px;line-height:1.4;color:#3D4657">references left as plain text, each with a reason</p>
+</div>
+</div>
+<table style="font-size:24px;color:#14213D;font-family:'IBM Plex Sans', Arial, sans-serif;background:#FDFCF8">
+<tr style="background:#14213D"><th style="width:40%;color:#F7F5EF">Before</th><th style="width:36%;color:#F7F5EF">After</th><th style="width:24%;color:#F7F5EF">Why</th></tr>
+<tr><td style="font-family:'JetBrains Mono', 'Courier New', monospace">[Service Provider](#col:ServiceProviderName)</td><td style="font-family:'JetBrains Mono', 'Courier New', monospace">[Service Provider](#term)</td><td>The party, not the column</td></tr>
+<tr style="background:#F2EFE6"><td style="font-family:'JetBrains Mono', 'Courier New', monospace">[SKU Price](#term) record</td><td style="font-family:'JetBrains Mono', 'Courier New', monospace">[SKU Price](#ds) record</td><td>A record of the dataset</td></tr>
+<tr><td style="font-family:'JetBrains Mono', 'Courier New', monospace">[Contract Commitment Period Start](#col:ContractPeriodStart)</td><td style="font-family:'JetBrains Mono', 'Courier New', monospace">[Contract Commitment Period Start](#col)</td><td>The column its text names</td></tr>
+</table>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B7280">One commit; every change and its reason are in semantic-review-changes.tsv · 14</p>
+<aside>The script only carries over what the markup already says, including its mistakes. So the second pass is a person reading for meaning. The 8,127 tags reduce to 685 patterns, and 550 of them could possibly be wrong, so each was checked against its contexts. Seven tags were wrong, all inherited from hand-written links or italics. For example, “the Service Provider” in the host provider column means the party, not the column, and a “SKU Price record” is a record of the dataset, not the glossary term. The review also decided the 435 references the script left open, adding 377 tags and leaving 60 as plain text with a reason. It is one commit, so the working group can compare it with the script’s output, review every change in one list, or roll it back.</aside>
+</section>
+<section id="findings" data-transition="fade" style="background:#ECE9E0;color:#14213D;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:36px">
+<h2 style="font-size:64px;font-weight:600;line-height:1.1">What the linter finds in today’s spec</h2>
+<div style="display:flex;flex-direction:column;gap:24px">
+<div style="background:#FDFCF8;border:1px solid #D9D4C7;border-left:6px solid #A8520A;border-radius:12px;padding:24px 32px;display:flex;flex-direction:column;gap:10px">
+<p style="font-size:22px;color:#6B7280;font-family:'JetBrains Mono', 'Courier New', monospace">contractcommitmentpaymentmodel.md:29</p>
+<p style="font-size:24px;line-height:1.4;font-family:'JetBrains Mono', 'Courier New', monospace">Refer to the <span style="color:#A8520A;font-weight:600">[contract commitment period start](#col)</span> for the cash event.</p>
+<p style="font-size:24px;line-height:1.4;color:#3D4657"><b style="color:#14213D">FOCUS012</b> tag text and the column name “Contract Commitment Period Start” differ only in case</p>
+</div>
+<div style="background:#FDFCF8;border:1px solid #D9D4C7;border-left:6px solid #A8520A;border-radius:12px;padding:24px 32px;display:flex;flex-direction:column;gap:10px">
+<p style="font-size:22px;color:#6B7280;font-family:'JetBrains Mono', 'Courier New', monospace">focus_column_handling.md:10 (a requirement)</p>
+<p style="font-size:24px;line-height:1.4;font-family:'JetBrains Mono', 'Courier New', monospace">[FOCUS column](#term) MUST use <span style="color:#A8520A;font-weight:600">[Pascal case](#term)</span> in the Column ID.</p>
+<p style="font-size:24px;line-height:1.4;color:#3D4657"><b style="color:#14213D">FOCUS013</b> glossary term text and its glossary entry “Pascal Case” disagree in case</p>
+</div>
+<div style="background:#FDFCF8;border:1px solid #D9D4C7;border-left:6px solid #A8520A;border-radius:12px;padding:24px 32px;display:flex;flex-direction:column;gap:10px">
+<p style="font-size:22px;color:#6B7280;font-family:'JetBrains Mono', 'Courier New', monospace">skupriceeligibility.md:27 (a requirement)</p>
+<p style="font-size:24px;line-height:1.4;font-family:'JetBrains Mono', 'Courier New', monospace">… MUST conform to the <span style="color:#A8520A;font-weight:600">[SkuPriceEligibilityObjectSchema](#schema)</span> JSON Schema.</p>
+<p style="font-size:24px;line-height:1.4;color:#3D4657"><b style="color:#14213D">FOCUS012</b> tag text and the schema name “SKUPriceEligibilityObjectSchema”, from its heading, differ only in case. Which one is right is for a person to decide.</p>
+</div>
+</div>
+<p style="font-size:28px;line-height:1.4;color:#14213D;width:1600px">14 findings like these, all written by hand before the conversion. Seven more checks find nothing today, so they fail the build to keep it that way.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B7280">make spec.html on the demo branch: 0 errors, 24 warnings; the findings are left in place to show the checks · 15</p>
+<aside>Here is what that means in practice. These are three of the warnings the build prints today on the demo branch. Before tagging, the resolver matched names without regard to case, so none of these surfaced. Now that every reference says what it names, the build can compare the text with the definition. The first is a column written in lowercase in a column description. The second is in a requirement: the glossary entry is Pascal Case with a capital C. The third is a real disagreement in the spec itself: the requirement writes Sku, the way ColumnIds do, but the schema heading writes SKU, so the two give different IDs. The linter doesn’t pick a side; it reports both. All 14 findings were in working_draft already, written by hand. We left them unfixed so the demo shows the checks working. Seven other checks, such as unquoted values and tags in headings, find nothing after the conversion, so they are errors that keep new drift out.</aside>
+</section>
+<section id="whysyntax" data-transition="fade" style="background:#F7F5EF;color:#14213D;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<h2 style="font-size:64px;font-weight:600;line-height:1.1">Why links, and not custom tags</h2>
+<table style="font-size:26px;color:#14213D;font-family:'IBM Plex Sans', Arial, sans-serif;background:#FDFCF8">
+<tr style="background:#14213D"><th style="width:28%;color:#F7F5EF">Option</th><th style="width:20%;color:#F7F5EF">Raw on GitHub</th><th style="width:20%;color:#F7F5EF">Our Pandoc build</th><th style="width:16%;color:#F7F5EF">pymarkdownlnt</th><th style="width:16%;color:#F7F5EF">New tooling</th></tr>
+<tr style="background:#FBEBDA"><td><b>Link form</b><br>[ResourceType](#col)</td><td>Readable, shown as a link</td><td>A normal link node</td><td>Passes as is</td><td>None</td></tr>
+<tr><td><b>Custom tags</b><br>&lt;column&gt;…&lt;/column&gt;</td><td>Readable, tags hidden</td><td>Raw HTML pieces to pair up</td><td>Inline-HTML rule fires</td><td>None</td></tr>
+<tr style="background:#F2EFE6"><td><b>Pandoc spans</b><br>[ResourceType]{.col}</td><td>{.col} shows literally</td><td>Needs a different reader</td><td>Unknown syntax</td><td>None</td></tr>
+<tr><td><b>Remark plugins</b><br>any syntax</td><td>Depends on syntax</td><td>A second parser beside Pandoc</td><td>Depends on syntax</td><td>Node.js</td></tr>
+</table>
+<p style="font-size:28px;line-height:1.4;color:#3D4657;width:1560px">The link form is the only option every tool in our pipeline already understands. It also extends a pattern authors already use for glossary links.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B7280">FOCUS semantic markup · 16</p>
+<aside>I looked at the obvious alternatives. Custom tags like column read well on GitHub, but Pandoc sees them as separate pieces of raw HTML, and our linter flags inline HTML. Pandoc spans are clean in Pandoc but show the braces literally on GitHub. Remark is a good tool, but it would add Node.js and a second Markdown parser next to Pandoc, and the Pandoc tree is the one that produces the spec. The link form works everywhere today with no new tooling.</aside>
+</section>
+<section id="pipeline" data-transition="fade" style="background:#ECE9E0;color:#14213D;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:56px">
+<h2 style="font-size:64px;font-weight:600;line-height:1.1">A small change to the build we have</h2>
+<div style="display:flex;gap:20px;align-items:stretch">
+<div style="flex:1;background:#FDFCF8;border:3px solid #A8520A;border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:12px">
+<p style="font-size:24px;font-weight:600;color:#A8520A;letter-spacing:1px;text-transform:uppercase">New</p>
+<h3 style="font-size:30px;font-weight:600;line-height:1.2">Registry script</h3>
+<p style="font-size:26px;line-height:1.4;color:#3D4657">Reads the entities from the spec files and checks them</p>
+</div>
+<div style="flex:1;background:#FDFCF8;border:3px solid #A8520A;border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:12px">
+<p style="font-size:24px;font-weight:600;color:#A8520A;letter-spacing:1px;text-transform:uppercase">Small change</p>
+<h3 style="font-size:30px;font-weight:600;line-height:1.2">markdown-pp</h3>
+<p style="font-size:26px;line-height:1.4;color:#3D4657">Marks each !INCLUDE file and drops front matter</p>
+</div>
+<div style="flex:1;background:#FDFCF8;border:3px solid #A8520A;border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:12px">
+<p style="font-size:24px;font-weight:600;color:#A8520A;letter-spacing:1px;text-transform:uppercase">New step</p>
+<h3 style="font-size:30px;font-weight:600;line-height:1.2">Resolver</h3>
+<p style="font-size:26px;line-height:1.4;color:#3D4657">Turns tags into today’s Markdown links</p>
+</div>
+<div style="flex:1;background:#FDFCF8;border:1px solid #D9D4C7;border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:12px">
+<p style="font-size:24px;font-weight:600;color:#6B7280;letter-spacing:1px;text-transform:uppercase">One setting</p>
+<h3 style="font-size:30px;font-weight:600;line-height:1.2">pymarkdownlnt</h3>
+<p style="font-size:26px;line-height:1.4;color:#3D4657">Tagged files pass; front matter allowed</p>
+</div>
+<div style="flex:1;background:#FDFCF8;border:1px solid #D9D4C7;border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:12px">
+<p style="font-size:24px;font-weight:600;color:#6B7280;letter-spacing:1px;text-transform:uppercase">Unchanged</p>
+<h3 style="font-size:30px;font-weight:600;line-height:1.2">Pandoc, PDF</h3>
+<p style="font-size:26px;line-height:1.4;color:#3D4657">See ordinary Markdown, as today</p>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:20px">
+<p style="font-size:30px;line-height:1.4;color:#14213D;width:1560px">Everything is Python and the tools we already use. No Node.js and no second Markdown parser.</p>
+<p style="font-size:30px;line-height:1.4;color:#14213D;width:1560px">Legacy markup passes through untouched. The demo branch builds the fully converted spec this way, and CI passes.</p>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B7280">FOCUS semantic markup · 17</p>
+<aside>For those who know the build: it barely changes. A script generates the registry and checks the definitions. The vendored markdown-pp include module marks where each file starts and drops front matter. Then a resolver step turns the tags into the same Markdown links we write by hand today, right after markdown-pp, so the linter, Pandoc and the PDF step all see ordinary Markdown. The only linter change is one setting that allows front matter. Hand-written links and italics keep working, so files can migrate at any pace.</aside>
+</section>
+<section id="migration" data-transition="fade" style="background:#F7F5EF;color:#14213D;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:56px">
+<h2 style="font-size:64px;font-weight:600;line-height:1.1">A migration that never breaks the build</h2>
+<div style="display:flex;gap:28px">
+<div style="flex:1;background:#FDFCF8;border:1px solid #D9D4C7;border-radius:16px;padding:40px;display:flex;flex-direction:column;gap:16px">
+<p style="font-size:72px;font-weight:600;line-height:1;color:#A8520A">1</p>
+<h3 style="font-size:34px;font-weight:600;line-height:1.2">Warn only</h3>
+<p style="font-size:28px;line-height:1.4;color:#3D4657">Add the registry and resolver to the build. Every finding is a warning, and no file has to change.</p>
+</div>
+<div style="flex:1;background:#FDFCF8;border:1px solid #D9D4C7;border-radius:16px;padding:40px;display:flex;flex-direction:column;gap:16px">
+<p style="font-size:72px;font-weight:600;line-height:1;color:#A8520A">2</p>
+<h3 style="font-size:34px;font-weight:600;line-height:1.2">Scripted conversion</h3>
+<p style="font-size:28px;line-height:1.4;color:#3D4657">One script converts every file. Rerunning it changes nothing, and each difference is sorted by kind.</p>
+</div>
+<div style="flex:1;background:#FDFCF8;border:1px solid #D9D4C7;border-radius:16px;padding:40px;display:flex;flex-direction:column;gap:16px">
+<p style="font-size:72px;font-weight:600;line-height:1;color:#A8520A">3</p>
+<h3 style="font-size:34px;font-weight:600;line-height:1.2">Semantic review</h3>
+<p style="font-size:28px;line-height:1.4;color:#3D4657">A person checks every tag and decides what the script listed, in one commit that can be rolled back.</p>
+</div>
+<div style="flex:1;background:#FDFCF8;border:1px solid #D9D4C7;border-radius:16px;padding:40px;display:flex;flex-direction:column;gap:16px">
+<p style="font-size:72px;font-weight:600;line-height:1;color:#A8520A">4</p>
+<h3 style="font-size:34px;font-weight:600;line-height:1.2">Strict mode</h3>
+<p style="font-size:28px;line-height:1.4;color:#3D4657">Unknown entities and invalid values fail CI, so new drift can’t merge.</p>
+</div>
+</div>
+<p style="font-size:30px;line-height:1.4;color:#14213D;width:1560px">Old and new markup coexist at every step. The demo branch has done steps 1 to 3 for the whole spec.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B7280">FOCUS semantic markup · 18</p>
+<aside>The migration is incremental. First the tooling runs in warn-only mode, so nothing changes for authors. Then a script converts the files. It is safe to rerun, and a comparison sorts every rendered difference by kind. Then a person reviews the result for meaning and decides what the script listed, such as a name that is also a glossary term. Keeping that review as its own commit means the script can be rerun whenever the spec changes, and the review can be compared, reviewed or rolled back separately. The demo branch has done the first three steps for the whole spec. Converting touches hundreds of files at once, so we still need to choose between one conversion on a quiet day and an area at a time. Once the spec is clean, strict mode stops new drift from merging.</aside>
+</section>
+<section id="questions" data-transition="fade" style="background:#ECE9E0;color:#14213D;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<h2 style="font-size:64px;font-weight:600;line-height:1.1">Decisions for the working group</h2>
+<div style="display:flex;flex-direction:column">
+<div style="display:flex;gap:40px;border-top:2px solid #C9C3B3;padding:22px 0">
+<p style="width:420px;font-size:30px;font-weight:600;line-height:1.3">Tables outside Content Constraints</p>
+<p style="flex:1;font-size:28px;line-height:1.4;color:#3D4657">Catalog tables link every row; example tables don’t. Which rule decides? 231 links were left as written.</p>
+</div>
+<div style="display:flex;gap:40px;border-top:2px solid #C9C3B3;padding:22px 0">
+<p style="width:420px;font-size:30px;font-weight:600;line-height:1.3">Names that are also terms</p>
+<p style="flex:1;font-size:28px;line-height:1.4;color:#3D4657">“SKU Price” is a dataset and a glossary term. 208 needed a person; can capitalization decide, as #2765 proposes?</p>
+</div>
+<div style="display:flex;gap:40px;border-top:2px solid #C9C3B3;padding:22px 0">
+<p style="width:420px;font-size:30px;font-weight:600;line-height:1.3">Dataset scope</p>
+<p style="flex:1;font-size:28px;line-height:1.4;color:#3D4657">16 ColumnIds exist in more than one dataset. A default per file, or per section in files that mix datasets?</p>
+</div>
+<div style="display:flex;gap:40px;border-top:2px solid #C9C3B3;padding:22px 0">
+<p style="width:420px;font-size:30px;font-weight:600;line-height:1.3">Plain prose</p>
+<p style="flex:1;font-size:28px;line-height:1.4;color:#3D4657">May “resource type” stay untagged as ordinary words? The script tags only names that are unambiguous.</p>
+</div>
+<div style="display:flex;gap:40px;border-top:2px solid #C9C3B3;border-bottom:2px solid #C9C3B3;padding:22px 0">
+<p style="width:420px;font-size:30px;font-weight:600;line-height:1.3">Merging the conversion</p>
+<p style="flex:1;font-size:28px;line-height:1.4;color:#3D4657">It touches 336 files. Review it in bulk as editorial, and convert at once or one area at a time?</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B7280">The next slides take the first three in turn; all 15 questions are in CONVERSION.md · 19</p>
+<aside>These are the decisions that are ours to make before scaling up. The first three came out of converting the whole spec, and the next three slides take them one at a time. Tables outside Content Constraints are the biggest: catalog tables link every row and example tables don’t, and no rule says which is which yet. Names that are also glossary terms, like SKU Price, needed a person in 208 places, and #2765 already proposes a rule that would let the script decide most of them. Dataset scope has a recommendation, a default per file, but files that mix datasets still need a qualifier on each mention. Plain prose is still open. And merging a change of this size needs a plan, because every open pull request would conflict.</aside>
+</section>
+<section id="qtables" data-transition="fade" style="background:#F7F5EF;color:#14213D;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<h2 style="font-size:64px;font-weight:600;line-height:1.1">Which tables should link every row?</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:32px">
+<div style="background:#FDFCF8;border:1px solid #D9D4C7;border-left:6px solid #A8520A;border-radius:12px;padding:40px;display:flex;flex-direction:column;gap:12px">
+<h3 style="font-size:36px;font-weight:600;line-height:1.2">Catalog tables</h3>
+<p style="font-size:28px;line-height:1.4;color:#3D4657">Each row names a different entity, like the Columns table in dataset.md. Readers land on a row and expect its link.</p>
+</div>
+<div style="background:#FDFCF8;border:1px solid #D9D4C7;border-left:6px solid #A8520A;border-radius:12px;padding:40px;display:flex;flex-direction:column;gap:12px">
+<h3 style="font-size:36px;font-weight:600;line-height:1.2">Example data tables</h3>
+<p style="font-size:28px;line-height:1.4;color:#3D4657">Rows repeat the same columns and values. Linking every row would repeat the same link down the table.</p>
+</div>
+</div>
+<p style="font-size:28px;line-height:1.4;color:#3D4657;width:1560px">Today only Content Constraints rows always link. The conversion left 231 hand-written links in 37 files as written until there is a rule.</p>
+<div style="background:#14213D;border-radius:16px;padding:32px 40px">
+<p style="font-size:30px;line-height:1.4;color:#F7F5EF"><b style="color:#F2A65A">Proposed:</b> a reference links at its first mention within each table, and tables don’t affect first mentions in the prose around them.</p>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B7280">Question 1 of 3 · the entity catalog table rule proposed in #2514 and #2765 · 20</p>
+<aside>The Editorial Guidelines say Content Constraints tables link every reference. Other tables are where the conversion stopped. A catalog table, such as the list of columns at the top of each dataset, names a different entity on every row, so every row should link. An example data table repeats the same columns and values, so linking every row just repeats the same link. The proposal handles both with one rule: a reference links at its first mention within each table, so a catalog links every row and an example table links once, and tables don’t change which mention in the surrounding prose counts as the first. Until we agree, those 231 links stay hand-written.</aside>
+</section>
+<section id="qnames" data-transition="fade" style="background:#ECE9E0;color:#14213D;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<h2 style="font-size:64px;font-weight:600;line-height:1.1">Column, dataset, or glossary term?</h2>
+<table style="font-size:26px;color:#14213D;font-family:'IBM Plex Sans', Arial, sans-serif;background:#FDFCF8">
+<tr style="background:#14213D"><th style="width:44%;color:#F7F5EF">The text says</th><th style="width:22%;color:#F7F5EF">It means</th><th style="width:34%;color:#F7F5EF">Because</th></tr>
+<tr><td>“a SKU Price record”, “the SKU Price dataset”</td><td>The dataset</td><td>Followed by record or dataset</td></tr>
+<tr style="background:#F2EFE6"><td>“reads List Unit Price from Cost and Usage”</td><td>The column</td><td>Display Name capitalization</td></tr>
+<tr><td>“several SKU Price constructs”</td><td>The concept</td><td>The glossary meaning, in prose</td></tr>
+<tr style="background:#F2EFE6"><td>“The Billing Period is the month of April”</td><td>The concept</td><td>Ordinary prose, left untagged</td></tr>
+</table>
+<p style="font-size:28px;line-height:1.4;color:#3D4657;width:1560px">208 such names needed a person in this conversion. #2765 proposes that a Display Name’s own capitalization means the entity, and any other capitalization means the term.</p>
+<div style="background:#14213D;border-radius:16px;padding:32px 40px">
+<p style="font-size:30px;line-height:1.4;color:#F7F5EF"><b style="color:#F2A65A">Decide:</b> adopt that rule, plus “record” and “dataset” cues, so the script settles most of these cases?</p>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B7280">Question 2 of 3 · names shared by a dataset or column and a glossary term · 21</p>
+<aside>Some names belong to two kinds of entity. SKU Price is a dataset and a glossary term; List Unit Price is a column and a glossary term; Billing Period is a dataset and a glossary term. The script can’t tell which is meant, so it left 208 of them for a person. In the review, the cues were consistent: a name followed by record or dataset meant the dataset, a column’s Display Name capitalization meant the column, and the rest was the concept in ordinary prose. #2765 already proposes the capitalization rule. If we adopt it, together with the record and dataset cues, the script can decide most of these itself, and people only see the leftovers.</aside>
+</section>
+<section id="qdatasets" data-transition="fade" style="background:#F7F5EF;color:#14213D;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<h2 style="font-size:64px;font-weight:600;line-height:1.1">Which dataset does a column mean?</h2>
+<div style="display:flex;flex-direction:column">
+<div style="display:flex;gap:40px;border-top:2px solid #C9C3B3;padding:22px 0">
+<p style="width:420px;font-size:30px;font-weight:600;line-height:1.3">The problem</p>
+<p style="flex:1;font-size:28px;line-height:1.4;color:#3D4657">16 ColumnIds exist in more than one dataset, such as BilledCost and SkuPriceId.</p>
+</div>
+<div style="display:flex;gap:40px;border-top:2px solid #C9C3B3;padding:22px 0">
+<p style="width:420px;font-size:30px;font-weight:600;line-height:1.3">Column files</p>
+<p style="flex:1;font-size:28px;line-height:1.4;color:#3D4657">Take their dataset from their folder. Nothing to write.</p>
+</div>
+<div style="display:flex;gap:40px;border-top:2px solid #C9C3B3;padding:22px 0">
+<p style="width:420px;font-size:30px;font-weight:600;line-height:1.3">Other files</p>
+<p style="flex:1;font-size:28px;line-height:1.4;color:#3D4657">Declare a default once, <span style="font-family:'JetBrains Mono', 'Courier New', monospace;color:#A8520A">dataset: CostAndUsage</span>. The script set one in 57 files.</p>
+</div>
+<div style="display:flex;gap:40px;border-top:2px solid #C9C3B3;border-bottom:2px solid #C9C3B3;padding:22px 0">
+<p style="width:420px;font-size:30px;font-weight:600;line-height:1.3">Files that mix datasets</p>
+<p style="flex:1;font-size:28px;line-height:1.4;color:#3D4657">Qualify each mention, <span style="font-family:'JetBrains Mono', 'Courier New', monospace;color:#A8520A">[SKU Price ID](#col:SkuPrice.SkuPriceId)</span>: 190 mentions in 11 files.</p>
+</div>
+</div>
+<div style="background:#14213D;border-radius:16px;padding:32px 40px">
+<p style="font-size:30px;line-height:1.4;color:#F7F5EF"><b style="color:#F2A65A">Decide:</b> keep a default per file with qualifiers, or also allow a default per section?</p>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B7280">Question 3 of 3 · the dataset scope question in #2779 · 22</p>
+<aside>A column like BilledCost exists in both Cost and Usage and Invoice Detail, so a reference has to say which one it means. Column files already know, from their folder. Other files can say it once in front matter, and the script inferred that default for 57 files from the columns they already reference. The hard case is a page that really is about two datasets, like the rate optimization supported feature, which compares SKU Price records with Cost and Usage charges. There every shared column needs a qualifier, 190 times across 11 files. That is explicit, but verbose. A default per section would let those pages say it once per section instead.</aside>
+</section>
+<section id="rulesreview" data-transition="fade" style="background:#ECE9E0;color:#14213D;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<h2 style="font-size:64px;font-weight:600;line-height:1.1">Four rule changes: two now checks, two to settle</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:32px">
+<div style="background:#FDFCF8;border:1px solid #D9D4C7;border-radius:12px;padding:40px;display:flex;flex-direction:column;gap:12px">
+<h3 style="font-size:36px;font-weight:600;line-height:1.2">One rule for tables</h3>
+<p style="font-size:28px;line-height:1.4;color:#3D4657">Outside Content Constraints, link at the first mention within each table; tables don’t affect the prose.</p>
+</div>
+<div style="background:#FDFCF8;border:1px solid #D9D4C7;border-radius:12px;padding:40px;display:flex;flex-direction:column;gap:12px">
+<h3 style="font-size:36px;font-weight:600;line-height:1.2">Self-links by anchor</h3>
+<p style="font-size:28px;line-height:1.4;color:#3D4657">No link to the section a reference sits in, or its parents, instead of no link to the file’s own entity.</p>
+</div>
+<div style="background:#F2EFE6;border:1px solid #D9D4C7;border-left:6px solid #A8520A;border-radius:12px;padding:40px;display:flex;flex-direction:column;gap:12px">
+<h3 style="font-size:36px;font-weight:600;line-height:1.2">Tags in headings <span style="font-size:24px;color:#A8520A">· done</span></h3>
+<p style="font-size:28px;line-height:1.4;color:#3D4657">Now an error, FOCUS017. No heading has one, so the question of how to render them doesn’t arise.</p>
+</div>
+<div style="background:#F2EFE6;border:1px solid #D9D4C7;border-left:6px solid #A8520A;border-radius:12px;padding:40px;display:flex;flex-direction:column;gap:12px">
+<h3 style="font-size:36px;font-weight:600;line-height:1.2">Emphasis inside a tag <span style="font-size:24px;color:#A8520A">· done</span></h3>
+<p style="font-size:28px;line-height:1.4;color:#3D4657">Now an error, FOCUS016, instead of being dropped silently. Nothing in the spec trips it.</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B7280">From the rules review in CONVERSION.md: 11 findings, these four high priority · 23</p>
+<aside>After the full conversion I reviewed the tagging rules themselves against how they behaved at scale. Most held up. These four were where the rules were inconsistent or silent. Two are now settled as checks: a tag in a heading, and italics inside a tag, are both errors. Neither occurs anywhere in the converted spec, so making them errors costs nothing and keeps it that way. The other two still need us. Tables follow three different behaviors today, and one rule would cover them. And the no-self-link rule is based on files, so it needed exceptions for JSON objects and for Data Generator; deciding by anchor removes them.</aside>
+</section>
+<section id="ask" data-transition="fade" style="background:#14213D;color:#F7F5EF;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:56px">
+<h2 style="font-size:88px;font-weight:600;line-height:1.1;color:#F7F5EF">What we’re asking for</h2>
+<div style="display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;gap:40px;align-items:start">
+<p style="width:80px;font-size:64px;font-weight:600;line-height:1;color:#F2A65A">1</p>
+<p style="flex:1;font-size:40px;line-height:1.35;color:#F7F5EF">Agree on the direction: the source tags meaning, and the build applies formatting.</p>
+</div>
+<div style="display:flex;gap:40px;align-items:start">
+<p style="width:80px;font-size:64px;font-weight:600;line-height:1;color:#F2A65A">2</p>
+<p style="flex:1;font-size:40px;line-height:1.35;color:#F7F5EF">Adopt the link form as the syntax for semantic references.</p>
+</div>
+<div style="display:flex;gap:40px;align-items:start">
+<p style="width:80px;font-size:64px;font-weight:600;line-height:1;color:#F2A65A">3</p>
+<p style="flex:1;font-size:40px;line-height:1.35;color:#F7F5EF">Review the demo branch’s whole-spec conversion, settle its open questions, then plan the 1.6 rollout.</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#B9C3D6">Tracked in feature request #2779 · 24</p>
+<aside>There are three asks. First, agreement on the direction. Second, agreement on the link-form syntax, so the work isn’t thrown away. Third, instead of a small pilot, review what is already built: the demo branch converts the whole specification, with every rendered difference sorted by kind and every open decision listed. Once we settle those questions, we can plan how to roll the conversion out in 1.6, all at once or an area at a time.</aside>
+</section>
+</div></div>
+<div id="notes" aria-live="polite"></div>
+<div id="bar">
+<button id="prev" title="Previous slide (Left)">&larr;</button>
+<span id="count"></span>
+<button id="next" title="Next slide (Right)">&rarr;</button>
+<button id="notes-toggle" aria-pressed="false" title="Speaker notes (N)">Notes</button>
+<button id="full" title="Full screen (F)">Full screen</button>
+<span id="title"></span>
+</div>
+<script>
+(function () {
+  var deck = document.getElementById('deck');
+  var slides = Array.prototype.slice.call(deck.children);
+  var current = 0;
+
+  function fit() {
+    var stage = document.getElementById('stage');
+    var scale = Math.min(stage.clientWidth / 1920, stage.clientHeight / 1080);
+    deck.style.transform = 'scale(' + scale + ')';
+  }
+
+  function show(index) {
+    current = Math.max(0, Math.min(slides.length - 1, index));
+    slides.forEach(function (s, i) { s.classList.toggle('active', i === current); });
+    var slide = slides[current];
+    var heading = slide.querySelector('h1, h2');
+    var notes = slide.querySelector('aside');
+    document.getElementById('count').textContent = (current + 1) + ' / ' + slides.length;
+    document.getElementById('title').textContent = heading ? heading.textContent : '';
+    document.getElementById('notes').textContent = notes ? notes.textContent : 'No notes for this slide.';
+    if (location.hash !== '#' + (current + 1)) history.replaceState(null, '', '#' + (current + 1));
+  }
+
+  function fromHash() {
+    var n = parseInt(location.hash.slice(1), 10);
+    return isNaN(n) ? 0 : n - 1;
+  }
+
+  function toggleNotes() {
+    var on = document.body.classList.toggle('show-notes');
+    document.getElementById('notes-toggle').setAttribute('aria-pressed', String(on));
+  }
+
+  function toggleFull() {
+    if (document.fullscreenElement) document.exitFullscreen();
+    else if (document.documentElement.requestFullscreen) document.documentElement.requestFullscreen();
+  }
+
+  document.addEventListener('keydown', function (e) {
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    var key = e.key;
+    if (key === 'ArrowRight' || key === 'PageDown' || key === ' ') show(current + 1);
+    else if (key === 'ArrowLeft' || key === 'PageUp') show(current - 1);
+    else if (key === 'Home') show(0);
+    else if (key === 'End') show(slides.length - 1);
+    else if (key === 'n' || key === 'N') toggleNotes();
+    else if (key === 'f' || key === 'F') toggleFull();
+    else return;
+    e.preventDefault();
+  });
+  document.getElementById('prev').addEventListener('click', function () { show(current - 1); });
+  document.getElementById('next').addEventListener('click', function () { show(current + 1); });
+  document.getElementById('notes-toggle').addEventListener('click', toggleNotes);
+  document.getElementById('full').addEventListener('click', toggleFull);
+  window.addEventListener('resize', fit);
+  window.addEventListener('hashchange', function () { show(fromHash()); });
+  fit();
+  show(fromHash());
+})();
+</script>
+</body>
+</html>
