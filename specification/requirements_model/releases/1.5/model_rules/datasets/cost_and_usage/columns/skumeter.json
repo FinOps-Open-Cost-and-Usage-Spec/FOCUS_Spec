@@ -242,7 +242,7 @@
     "ModelVersionIntroduced": "1.5",
     "Status": "Active",
     "Conditions": [],
-    "Type": "Static",
+    "Type": "Dynamic",
     "Order": 70,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
@@ -250,12 +250,7 @@
     "ValidationCriteria": {
       "MustSatisfy": "SkuMeter SHOULD remain consistent over time for a given ServiceProviderName and SkuId.",
       "Keyword": "SHOULD",
-      "Requirement": {
-        "CheckFunction": "CheckDistinctCount",
-        "ColumnAName": "SkuMeter",
-        "ColumnBName": "SkuId",
-        "ExpectedCount": 1
-      },
+      "Requirement": {},
       "Condition": {},
       "Dependencies": [
         "CAU-ServiceProviderName-C-000-M",
