@@ -587,7 +587,7 @@
       "Requirement": {},
       "Condition": {},
       "Dependencies": [
-        "IND-ChargeCategory-C-000-M"
+        "CAU-ChargeCategory-C-000-M"
       ]
     }
   }
