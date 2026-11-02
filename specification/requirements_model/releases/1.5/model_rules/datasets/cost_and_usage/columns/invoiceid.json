@@ -126,7 +126,7 @@
       "MustSatisfy": "InvoiceId MUST adhere to the following nullability requirements:",
       "Keyword": "MUST",
       "Requirement": {
-        "CheckFunction": "OR",
+        "CheckFunction": "AND",
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
