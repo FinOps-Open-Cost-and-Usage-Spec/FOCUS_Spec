@@ -2,7 +2,7 @@
 
 > **Note:** This guide covers the conversion of the whole specification to semantic tags on this branch. Like the rest of the branch, it is a demonstration for FOCUS 1.6 and is not intended to be merged as is. [DEMO.md](DEMO.md) describes the branch. The questions at the end are open for the Working Group.
 
-Every Markdown file that the specification build includes was converted where the tags cover its content. What the tags do not cover was left as written and is listed as a question. The branch is based on `working_draft` at `e9cdcc7c` (2026-11-02), so the counts below describe the specification at that point. The conversion was made on `e0fd5f77` (2026-10-29); the only change since is the 1.5 Requirements Model update, which changes the REG017 findings and none of the specification's Markdown.
+Every Markdown file that the specification build includes was converted where the tags cover its content. What the tags do not cover was left as written and is listed as a question. The branch is based on `working_draft_interim` at `e9cdcc7c` (2026-11-02), so the counts below describe the specification at that point. The conversion was made on `e0fd5f77` (2026-10-29); the only change since is the 1.5 Requirements Model update, which changes the REG017 findings and none of the specification's Markdown.
 
 The conversion has two passes. The mechanical pass (`convert_all.sh`), described here, translates what the existing markup already states. The [semantic review](SEMANTIC_REVIEW.md), a separate commit, checked every tag, corrected 7, and decided the items the converter left open. The counts below include both.
 
@@ -69,7 +69,7 @@ The counts come from comparing each converted line with the original; they are a
 
 ## Differences in the Published Specification
 
-`compare_rendered.sh` compares the published `spec.md` with `working_draft` and sorts every difference by kind. No visible words changed.
+`compare_rendered.sh` compares the published `spec.md` with the commit where this branch left `working_draft_interim` and sorts every difference by kind. No visible words changed.
 
 | Kind | Differences | What it is |
 | :--- | ---: | :--- |
@@ -189,4 +189,4 @@ make spec.html
 PYTHON=/path/to/venv/bin/python supporting_content/semantic_markup_prototype/compare_rendered.sh
 ```
 
-The first command converts the files and writes every item that needs a decision to `build/convert-run.txt`. The second builds the specification. The third writes the comparison with `working_draft` to `build/compare/`.
+The first command converts the files and writes every item that needs a decision to `build/convert-run.txt`. The second builds the specification. The third writes the comparison with `working_draft_interim` to `build/compare/`.

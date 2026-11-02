@@ -2,13 +2,13 @@
 
 > **Note:** This branch demonstrates feature request [#2779](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2779), which is proposed for FOCUS 1.6. It is for understanding the concept and for local testing. It is not intended to be merged as is.
 >
-> This branch was rebased onto `working_draft` at commit `e9cdcc7c` on 2026-11-02, so it includes everything merged for 1.5, including the 1.5 Requirements Model update ([#2710](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pull/2710)) that the REG017 findings below compare against. One open pull request is not reflected:
+> This branch is based on `working_draft_interim`, where work for 1.6 goes while FOCUS 1.5 is in its IPR Review (2 November to 3 December 2026). It sits on commit `e9cdcc7c` (2026-11-02), where `working_draft` also is, so it includes everything merged for 1.5, including the 1.5 Requirements Model update ([#2710](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pull/2710)) that the REG017 findings below compare against. One open pull request is not reflected:
 >
 > * [#2787](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pull/2787), the file and folder renames. It is expected to wait for 1.6. The REG016 findings below match the names it renames, and the registry builder hard-codes the current paths (e.g., `datasets/data_model.md` and `*_overview.md`).
 >
-> The branch needs another update once it merges: bring it up to date with `working_draft`, rerun `convert_all.sh`, and refresh the counts in this guide and in CONVERSION.md.
+> The branch needs another update once it merges: bring it up to date with `working_draft_interim` (or with `working_draft` after the IPR Review, when the two are merged), rerun `convert_all.sh`, and refresh the counts in this guide and in CONVERSION.md.
 
-The branch is cut from `working_draft`. The whole specification is rewritten with semantic tags wherever the tags cover its content, and the real build (`make`) resolves those tags into today's links and formatting. What the tags do not cover keeps its hand-written markup, and both kinds coexist in one build. [CONVERSION.md](CONVERSION.md) reports the results of converting every file and lists the open questions, and [SEMANTIC_REVIEW.md](SEMANTIC_REVIEW.md) records the semantic review that followed. The [slides](slides.html) present the proposal and these results for the Working Group. GitHub shows the file as source, so open it in a browser from a checkout or a downloaded copy; press N for the speaker notes.
+The branch is cut from `working_draft_interim`. The whole specification is rewritten with semantic tags wherever the tags cover its content, and the real build (`make`) resolves those tags into today's links and formatting. What the tags do not cover keeps its hand-written markup, and both kinds coexist in one build. [CONVERSION.md](CONVERSION.md) reports the results of converting every file and lists the open questions, and [SEMANTIC_REVIEW.md](SEMANTIC_REVIEW.md) records the semantic review that followed. The [slides](slides.html) present the proposal and these results for the Working Group. GitHub shows the file as source, so open it in a browser from a checkout or a downloaded copy; press N for the speaker notes.
 
 ## Try It
 
@@ -26,7 +26,7 @@ PYTHON=/path/to/venv/bin/python ./compare_rendered.sh
 PYTHON=/path/to/venv/bin/python ./convert_all.sh
 ```
 
-The first command builds the specification with the tags resolved. The second lists every line of the published `spec.md` that differs from the commit where this branch left `working_draft`, word by word, so later changes to `working_draft` do not show up, and sorts the differences by kind. The third converts every file the build includes. It is safe to run on converted files and changes nothing. You can also open any converted file on GitHub to see how the tagged source reads.
+The first command builds the specification with the tags resolved. The second lists every line of the published `spec.md` that differs from the commit where this branch left `working_draft_interim`, word by word, so later changes to that branch do not show up, and sorts the differences by kind. The third converts every file the build includes. Rerunning it on its own output changes nothing; after the semantic review it makes three more edits, which [CONVERSION.md](CONVERSION.md) lists. You can also open any converted file on GitHub to see how the tagged source reads.
 
 ## What Changed in the Build
 
@@ -151,7 +151,7 @@ A JSON object is defined in its column's file but is a separate entity. Referenc
 
 ## Review of Rendered Differences
 
-`compare_rendered.sh` compares the published `spec.md` with the commit where this branch left `working_draft`, and `classify_rendered.py` sorts every difference by kind. The build resolves 8,504 semantic references, and 877 lines of the published specification differ.
+`compare_rendered.sh` compares the published `spec.md` with the commit where this branch left `working_draft_interim`, and `classify_rendered.py` sorts every difference by kind. The build resolves 8,504 semantic references, and 877 lines of the published specification differ.
 
 | Kind | Differences | Notes |
 | :--- | ---: | :--- |
