@@ -20,7 +20,7 @@
 3. Process owner circulates to task force for feedback (1 week minimum)
 4. Process owner proposes path forward based on evaluation criteria
 5. Brief presented at Members meeting for decision
-6. Final decision recorded; brief committed to `supporting_content/decisions/`
+6. Final decision recorded; brief committed to `supporting-content/decisions/`
 
 **Not for:** Editorial changes, unopposed additions, or issues with only one viable interpretation.
 
@@ -117,7 +117,7 @@ What FOCUS design principles and design notes should guide this decision?
 2. [Specific action item with owner and date]
 3. [Additional items as needed]
 
-**Decision approval path:** Task Force → Members meeting → commit to `supporting_content/decisions/YYYY-MM-DD-topic-name.md`
+**Decision approval path:** Task Force → Members meeting → commit to `supporting-content/decisions/YYYY-MM-DD-topic-name.md`
 
 ---
 

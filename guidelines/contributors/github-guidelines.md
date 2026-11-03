@@ -37,7 +37,7 @@ This is a standard GitHub directory that contains GitHub-specific configuration 
 
 A typical FOCUS contributor will not spend much time interacting with this folder, and thus it can be safely ignored.
 
-### 2. `custom_linter_rules` folder
+### 2. `custom-linter-rules` folder
 
 This directory contains custom linting rules specific to the FOCUS specification project. Linting rules help maintain code quality, ensure consistency in documentation, and establish coding best practices.
 
@@ -55,7 +55,7 @@ The core folder containing the specification documentation:
 * **`glossary.md`** - Comprehensive glossary of terms and definitions used throughout the specification
 * **`columns` subfolder** - Contains detailed documentation for individual FOCUS columns like `servicesubcategory.md`
 
-### 5. `supporting_content` folder
+### 5. `supporting-content` folder
 
 The repository provides supporting content that includes example mappings between well-known service provider datasets and what's defined in the FOCUS specification. This likely includes mappings for major cloud providers like:
 

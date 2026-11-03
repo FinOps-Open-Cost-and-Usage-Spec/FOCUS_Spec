@@ -1,0 +1,5 @@
+!INCLUDE "commitment-discount-flexibility-examples-overview.md",0
+!INCLUDE "one-hundred-percent-utilization-without-commitment-discount-flexibility.md",1
+!INCLUDE "zero-percent-utilization-without-commitment-discount-flexibility.md",1
+!INCLUDE "one-hundred-percent-utilization-with-commitment-discount-flexibility-with-1-resource.md",1
+!INCLUDE "one-hundred-percent-utilization-with-commitment-discount-flexibility-with-2-resources.md",1

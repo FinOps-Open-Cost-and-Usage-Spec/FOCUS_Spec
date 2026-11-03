@@ -24,7 +24,7 @@ make clean                    # Clean generated files
 ### Build Requirements Model JSON
 
 ```bash
-cd specification/requirements_model
+cd specification/requirements-model
 ./build_json.py --build-only  # Generate model JSON only
 ./build_json.py               # Run tests then generate JSON
 ```
@@ -32,7 +32,7 @@ cd specification/requirements_model
 ### Run Tests
 
 ```bash
-cd specification/requirements_model
+cd specification/requirements-model
 pytest tests/                 # Run all requirements model tests
 pytest tests/test_schema.py   # Run a single test file
 ```
@@ -74,15 +74,15 @@ Note: The enhanced linter provides contextual error messages showing actual vs e
 * `specification/datasets/{dataset}/columns/` - Column definitions per dataset
 * `specification/attributes/` - Rules that govern datasets, rows, columns, and values
 * `specification/metadata/` - Dataset metadata schemas
-* `specification/supported_features/` - Catalog of FinOps capabilities enabled by FOCUS datasets
+* `specification/supported-features/` - Catalog of FinOps capabilities enabled by FOCUS datasets
 * `specification/appendix/` - Examples and supplementary content
-* `supporting_content/` - Background info from spec development
+* `supporting-content/` - Background info from spec development
 
 ### Requirements Model (JSON Validation Rules)
 
-The `specification/requirements_model/` directory contains a machine-readable representation of spec requirements:
+The `specification/requirements-model/` directory contains a machine-readable representation of spec requirements:
 
-* `model_rules/` - JSON files defining validation rules (organized by attributes/, columns/, datasets/)
+* `model-rules/` - JSON files defining validation rules (organized by attributes/, columns/, datasets/)
 * `build_json.py` - Merges all JSON into `build/model-<version>.json`
 * `tests/` - 32+ pytest tests validating rule structure and dependencies
 
@@ -126,7 +126,7 @@ AI agents generating or reviewing content MUST act as strict technical editors e
 
 * **Mathematical & Schema Accuracy:** AI reviewers MUST rigorously calculate, parse, and verify all data within examples (especially JSON snippets and tables). Flag any mathematical inconsistencies or hallucinated data.
 * **JSON Formatting:** JSON blocks MUST use double quotation marks for keys. Verify that the JSON is structurally valid.
-* **Informative Status Note:** Each of `specification/overview.md`, `specification/supported_features/supported_features_overview.md`, and `specification/appendix/appendix_overview.md` MUST include an informative, non-normative status note directly below its first heading. Each note MUST refer only to the section identified by that heading. The note MUST NOT be placed under the subheadings of that heading, including a heading originating from a nested file. The Appendix note MUST exclude the Rounding Variance Tolerance appendix entry, and the Conventions section in `specification/overview.md` MUST identify the same headings and exceptions as the notes. Its placement, scope, and wording follow Informative Status Note, Informative Status Note Scope, and the example note in the [Editorial Guidelines](guidelines/contributors/editorial-guidelines.md).
+* **Informative Status Note:** Each of `specification/overview.md`, `specification/supported-features/supported-features-overview.md`, and `specification/appendix/appendix-overview.md` MUST include an informative, non-normative status note directly below its first heading. Each note MUST refer only to the section identified by that heading. The note MUST NOT be placed under the subheadings of that heading, including a heading originating from a nested file. The Appendix note MUST exclude the Rounding Variance Tolerance appendix entry, and the Conventions section in `specification/overview.md` MUST identify the same headings and exceptions as the notes. Its placement, scope, and wording follow Informative Status Note, Informative Status Note Scope, and the example note in the [Editorial Guidelines](guidelines/contributors/editorial-guidelines.md).
 
 ### File Organization
 
@@ -175,7 +175,7 @@ Per-issue working files are stored in `.ai/work/<issue-number>-<kebab-case-name>
 
 Fetch issue details from GitHub (`gh issue view`) rather than saving locally. Summarize relevant requirements into research.md.
 
-These files are committed during active work. After the PR is approved but before merging, delete the working folder. This is a manual step - do not delete working files until final approval is received. Valuable research should be moved to `supporting_content/` before approval.
+These files are committed during active work. After the PR is approved but before merging, delete the working folder. This is a manual step - do not delete working files until final approval is received. Valuable research should be moved to `supporting-content/` before approval.
 
 ### Memory Files
 

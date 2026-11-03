@@ -1,6 +1,6 @@
-!INCLUDE "recency_overview.md",0
-!INCLUDE "dataset_instance_id.md",1
-!INCLUDE "dataset_instance_complete.md",1
-!INCLUDE "dataset_instance_last_updated.md",1
-!INCLUDE "recency_last_updated.md",1
-!INCLUDE "time_sectors/time_sectors.mdpp",1
+!INCLUDE "recency-overview.md",0
+!INCLUDE "datasetinstanceid.md",1
+!INCLUDE "datasetinstancecomplete.md",1
+!INCLUDE "datasetinstancelastupdated.md",1
+!INCLUDE "recencylastupdated.md",1
+!INCLUDE "timesectors/timesectors.mdpp",1

@@ -1,5 +1,5 @@
-!INCLUDE "metadata_overview.md",0
-!INCLUDE "data_generator/data_generator.mdpp",1
-!INCLUDE "dataset_instance/dataset_instance.mdpp",1
+!INCLUDE "metadata-overview.md",0
+!INCLUDE "datagenerator/datagenerator.mdpp",1
+!INCLUDE "datasetinstance/datasetinstance.mdpp",1
 !INCLUDE "recency/recency.mdpp",1
 !INCLUDE "schema/schema.mdpp",1

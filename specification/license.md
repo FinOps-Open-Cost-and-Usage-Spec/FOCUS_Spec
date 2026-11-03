@@ -11,7 +11,7 @@ This work is made available under:
 
 [cc-by]: http://creativecommons.org/licenses/by/4.0/
 [cc-by-image]: ./images/88x31.png
-[cc-by-shield]: ./images/License-CC-BY-4.0-lightgrey.svg
+[cc-by-shield]: ./images/license-cc-by-4.0-lightgrey.svg
 
 THESE MATERIALS ARE PROVIDED "AS IS." The parties expressly disclaim
 any warranties (express, implied, or otherwise), including implied

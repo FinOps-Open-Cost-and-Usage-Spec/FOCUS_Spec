@@ -1,0 +1,15 @@
+!INCLUDE "commitment-discounts.md",0
+!INCLUDE "aura-web-resource-reservation-all-upfront-100pct.md",1
+!INCLUDE "aura-web-resource-reservation-partial-upfront-100pct.md",1
+!INCLUDE "aura-web-flexible-spend-plan-all-upfront-100pct.md",1
+!INCLUDE "aura-web-flexible-spend-plan-partial-upfront-100pct.md",1
+!INCLUDE "aura-web-flexible-spend-plan-no-upfront-100pct.md",1
+!INCLUDE "aura-web-flexible-spend-plan-all-upfront-overage.md",1
+!INCLUDE "aura-web-flexible-spend-plan-all-upfront-75pct.md",1
+!INCLUDE "aura-web-flexible-spend-plan-all-upfront-50pct.md",1
+!INCLUDE "aura-web-flexible-spend-plan-all-upfront-0pct.md",1
+!INCLUDE "crestnode-resource-reservation-all-upfront-100pct.md",1
+!INCLUDE "crestnode-resource-reservation-no-upfront-100pct.md",1
+!INCLUDE "crestnode-flexible-spend-plan-all-upfront-100pct.md",1
+!INCLUDE "latticescale-resource-reservation-no-upfront-100pct.md",1
+!INCLUDE "latticescale-dynamic-compute-commitment-no-upfront-100pct.md",1
