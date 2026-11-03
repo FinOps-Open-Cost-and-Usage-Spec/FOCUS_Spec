@@ -117,7 +117,11 @@
       "MustSatisfy": "CommitmentProgramEligibilityDetailsObject.CommitmentPrograms[*].ProgramType MUST match CommitmentDiscountType for one object in CommitmentProgramEligibilityDetailsObject.CommitmentPrograms when CommitmentDiscountType is not null.",
       "Keyword": "MUST",
       "Requirement": {},
-      "Condition": {},
+      "Condition": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "CommitmentDiscountType",
+        "Value": null
+      },
       "Dependencies": [
         "CAU-CommitmentDiscountType-C-003-C"
       ]

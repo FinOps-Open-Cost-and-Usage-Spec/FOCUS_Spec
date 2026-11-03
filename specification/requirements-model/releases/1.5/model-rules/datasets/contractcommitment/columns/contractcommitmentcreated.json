@@ -143,7 +143,7 @@
     "DatasetId": "ContractCommitment",
     "DatasetName": "Contract Commitment",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractCommitmentCreated MUST represent the moment in time the Contract Commitment record was instantiated.",
+      "MustSatisfy": "ContractCommitmentCreated MUST represent the moment in time the ContractCommitment record was instantiated.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},

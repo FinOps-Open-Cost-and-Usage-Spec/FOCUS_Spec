@@ -148,7 +148,7 @@
     "DatasetId": "InvoiceDetail",
     "DatasetName": "Invoice Detail",
     "ValidationCriteria": {
-      "MustSatisfy": "InvoiceDetailCreated MUST represent the moment in time the Invoice Detail record was instantiated.",
+      "MustSatisfy": "InvoiceDetailCreated MUST represent the moment in time the InvoiceDetail record was instantiated.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
