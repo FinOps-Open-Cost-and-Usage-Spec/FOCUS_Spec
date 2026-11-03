@@ -300,7 +300,7 @@ body.show-notes #notes { display: block; }
 </div>
 </div>
 <p style="font-size:30px;line-height:1.4;color:#F7F5EF;width:1560px">Two passes: a script made 8,127 tags and is safe to rerun, then a semantic review checked every tag and decided what the script could not.</p>
-<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#B9C3D6">Demo branch 2779-semantic-markup-demo, based on working_draft at e9cdcc7c · 12</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#B9C3D6">Demo branch 2779-semantic-markup-demo, based on working_draft_interim at 12770c1a · 12</p>
 <aside>This started with two sample files and is now the whole specification, done in two passes. First, one script converted every file the build includes. It only carries over what the existing markup already says, it is safe to rerun, and it made 8,127 tags. Then a semantic review, a separate commit, checked every tag for meaning and decided the references the script left open, which brings the total to 8,504. The real build resolves all of them with no errors, the tests and the linter pass, and CI passes on the branch. No word of the published spec changed: every difference is a link, italics or table padding. The registry behind it holds 506 entities, all read from files we already maintain.</aside>
 </section>
 <section id="differences" data-transition="fade" style="background:#ECE9E0;color:#14213D;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
@@ -315,7 +315,7 @@ body.show-notes #notes { display: block; }
 <tr style="background:#F2EFE6"><td><b>Padding only</b></td><td>297</td><td>Table spacing; the rendered tables are identical</td></tr>
 </table>
 <p style="font-size:30px;line-height:1.4;color:#14213D;width:1560px">877 lines of the published spec differ. Reviewing the conversion means reading a sorted list, not a diff of 336 files.</p>
-<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B7280">Compared with working_draft at e9cdcc7c · 13</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B7280">Compared with working_draft_interim at 12770c1a · 13</p>
 <aside>This is migration step four, reviewing the differences, made practical. A comparison script builds today’s spec and the converted one, and sorts every difference by kind. Only two kinds need a person: a changed word, and there are none, and a link that points somewhere new. There are six: the two invoice issuer links, and four tags the semantic review corrected because they pointed at the wrong entity. The added and removed links are the first-mention rule from the Editorial Guidelines applied evenly, the italics follow the glossary convention, and the padding changes don’t show in the output.</aside>
 </section>
 <section id="semantic" data-transition="fade" style="background:#F7F5EF;color:#14213D;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">

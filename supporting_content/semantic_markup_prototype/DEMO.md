@@ -2,7 +2,7 @@
 
 > **Note:** This branch demonstrates feature request [#2779](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2779), which is proposed for FOCUS 1.6. It is for understanding the concept and for local testing. It is not intended to be merged as is.
 >
-> This branch is based on `working_draft_interim`, where work for 1.6 goes while FOCUS 1.5 is in its IPR Review (2 November to 3 December 2026). It sits on commit `e9cdcc7c` (2026-11-02), where `working_draft` also is, so it includes everything merged for 1.5, including the 1.5 Requirements Model update ([#2710](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pull/2710)) that the REG017 findings below compare against. One open pull request is not reflected:
+> This branch is based on `working_draft_interim`, where work for 1.6 goes while FOCUS 1.5 is in its IPR Review (2 November to 3 December 2026). It sits on commit `12770c1a` (2026-11-03), which adds the 1.6 version bump (#2814) to `working_draft` at `e9cdcc7c`, so it includes everything merged for 1.5, including the 1.5 Requirements Model update ([#2710](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pull/2710)) that the REG017 findings below compare against. One open pull request is not reflected:
 >
 > * [#2787](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pull/2787), the file and folder renames. It is expected to wait for 1.6. The REG016 findings below match the names it renames, and the registry builder hard-codes the current paths (e.g., `datasets/data_model.md` and `*_overview.md`).
 >
