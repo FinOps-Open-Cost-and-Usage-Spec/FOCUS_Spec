@@ -41,7 +41,3 @@ GROUP BY
 ## Version Introduced
 
 1.1
-
-## Version Updated
-
-1.3
