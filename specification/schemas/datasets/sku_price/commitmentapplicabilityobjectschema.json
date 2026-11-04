@@ -1,0 +1,489 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://focus.finops.org/schemas/commitmentapplicabilityobject.json",
+  "title": "Commitment Applicability Object",
+  "description": "Schema for validating the Commitment Applicability column JSON object structure in FOCUS datasets",
+  "type": "object",
+  "$defs": {
+    "Coverage": {
+      "type": "object",
+      "description": "How usage covered by the commitment is covered. Contains exactly one of Factor, Discount, or UnitPrice.",
+      "properties": {
+        "Factor": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "description": "Quantity of the commitment, in the Pricing Unit of the purchase record, consumed by one unit of covered usage"
+        },
+        "Discount": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Fraction by which the list and contracted unit prices of covered usage are reduced"
+        },
+        "UnitPrice": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Unit price per Pricing Unit of the covered usage, in the Pricing Currency of the purchase record"
+        }
+      },
+      "oneOf": [
+        {
+          "required": [
+            "Factor"
+          ]
+        },
+        {
+          "required": [
+            "Discount"
+          ]
+        },
+        {
+          "required": [
+            "UnitPrice"
+          ]
+        }
+      ],
+      "additionalProperties": false
+    },
+    "InclusionRule": {
+      "type": "object",
+      "required": [
+        "Dimension",
+        "Operator",
+        "Values"
+      ],
+      "properties": {
+        "Dimension": {
+          "type": "string",
+          "description": "A valid FOCUS Column ID"
+        },
+        "Operator": {
+          "type": "string",
+          "description": "The comparison logic to apply",
+          "enum": [
+            "In",
+            "NotIn",
+            "StartsWith",
+            "NotStartsWith",
+            "Contains",
+            "NotContains",
+            "EndsWith",
+            "Exists",
+            "DoesNotExist"
+          ]
+        },
+        "Values": {
+          "type": "array",
+          "description": "List of strings to compare",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "Coverage": {
+          "$ref": "#/$defs/Coverage",
+          "description": "Optional rule-level coverage that overrides the top-level Coverage"
+        }
+      },
+      "allOf": [
+        {
+          "description": "Wildcard constraint: If '*' is used, it must be the only value and Operator must be compatible.",
+          "if": {
+            "properties": {
+              "Values": {
+                "contains": {
+                  "const": "*"
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "Values": {
+                "maxItems": 1
+              },
+              "Operator": {
+                "enum": [
+                  "In",
+                  "Contains",
+                  "Exists",
+                  "DoesNotExist"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "description": "Existence Logic: Exists/DoesNotExist operators require the specific wildcard value.",
+          "if": {
+            "properties": {
+              "Operator": {
+                "enum": [
+                  "Exists",
+                  "DoesNotExist"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "Values": {
+                "items": {
+                  "const": "*"
+                },
+                "maxItems": 1
+              }
+            }
+          }
+        }
+      ],
+      "additionalProperties": false
+    },
+    "ExclusionRule": {
+      "type": "object",
+      "required": [
+        "Dimension",
+        "Operator",
+        "Values"
+      ],
+      "properties": {
+        "Dimension": {
+          "type": "string",
+          "description": "A valid FOCUS Column ID"
+        },
+        "Operator": {
+          "type": "string",
+          "description": "The comparison logic to apply",
+          "enum": [
+            "In",
+            "NotIn",
+            "StartsWith",
+            "NotStartsWith",
+            "Contains",
+            "NotContains",
+            "EndsWith",
+            "Exists",
+            "DoesNotExist"
+          ]
+        },
+        "Values": {
+          "type": "array",
+          "description": "List of strings to compare",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        }
+      },
+      "allOf": [
+        {
+          "description": "Wildcard constraint: If '*' is used, it must be the only value and Operator must be compatible.",
+          "if": {
+            "properties": {
+              "Values": {
+                "contains": {
+                  "const": "*"
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "Values": {
+                "maxItems": 1
+              },
+              "Operator": {
+                "enum": [
+                  "In",
+                  "Contains",
+                  "Exists",
+                  "DoesNotExist"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "description": "Existence Logic: Exists/DoesNotExist operators require the specific wildcard value.",
+          "if": {
+            "properties": {
+              "Operator": {
+                "enum": [
+                  "Exists",
+                  "DoesNotExist"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "Values": {
+                "items": {
+                  "const": "*"
+                },
+                "maxItems": 1
+              }
+            }
+          }
+        }
+      ],
+      "additionalProperties": false
+    }
+  },
+  "properties": {
+    "IsGlobalScope": {
+      "type": "boolean",
+      "description": "If true, coverage is not restricted to an enumerated set of entities",
+      "default": false
+    },
+    "IsComplexScope": {
+      "type": "boolean",
+      "description": "If true, coverage logic exceeds schema capabilities",
+      "default": false
+    },
+    "Coverage": {
+      "$ref": "#/$defs/Coverage",
+      "description": "Default coverage for all covered usage"
+    },
+    "ApplicationOrder": {
+      "type": "string",
+      "description": "Order in which the commitment is applied to eligible usage",
+      "enum": [
+        "HighestDiscountFirst",
+        "RuleOrder",
+        "ServiceProviderDefined"
+      ],
+      "default": "ServiceProviderDefined"
+    },
+    "InclusionOperator": {
+      "type": "string",
+      "description": "Logical operator for Inclusions array",
+      "enum": [
+        "And",
+        "Or"
+      ]
+    },
+    "Inclusions": {
+      "type": "array",
+      "description": "List of rules defining the covered usage",
+      "items": {
+        "$ref": "#/$defs/InclusionRule"
+      }
+    },
+    "ExclusionOperator": {
+      "type": "string",
+      "description": "Logical operator for Exclusions array",
+      "enum": [
+        "And",
+        "Or"
+      ]
+    },
+    "Exclusions": {
+      "type": "array",
+      "description": "List of rules defining usage removed from coverage",
+      "items": {
+        "$ref": "#/$defs/ExclusionRule"
+      },
+      "minItems": 1
+    }
+  },
+  "allOf": [
+    {
+      "description": "IsGlobalScope and IsComplexScope cannot both be true simultaneously.",
+      "not": {
+        "required": [
+          "IsGlobalScope",
+          "IsComplexScope"
+        ],
+        "properties": {
+          "IsGlobalScope": {
+            "const": true
+          },
+          "IsComplexScope": {
+            "const": true
+          }
+        }
+      }
+    },
+    {
+      "description": "If IsGlobalScope is true, Inclusions must be empty or omitted.",
+      "if": {
+        "properties": {
+          "IsGlobalScope": {
+            "const": true
+          }
+        },
+        "required": [
+          "IsGlobalScope"
+        ]
+      },
+      "then": {
+        "properties": {
+          "Inclusions": {
+            "maxItems": 0
+          },
+          "InclusionOperator": false
+        }
+      }
+    },
+    {
+      "description": "If IsComplexScope is true, Inclusions must be empty or omitted.",
+      "if": {
+        "properties": {
+          "IsComplexScope": {
+            "const": true
+          }
+        },
+        "required": [
+          "IsComplexScope"
+        ]
+      },
+      "then": {
+        "properties": {
+          "Inclusions": {
+            "maxItems": 0
+          },
+          "InclusionOperator": false
+        }
+      }
+    },
+    {
+      "description": "If neither Global nor Complex scope is active, Inclusions and InclusionOperator are required.",
+      "if": {
+        "not": {
+          "anyOf": [
+            {
+              "properties": {
+                "IsGlobalScope": {
+                  "const": true
+                }
+              },
+              "required": [
+                "IsGlobalScope"
+              ]
+            },
+            {
+              "properties": {
+                "IsComplexScope": {
+                  "const": true
+                }
+              },
+              "required": [
+                "IsComplexScope"
+              ]
+            }
+          ]
+        }
+      },
+      "then": {
+        "required": [
+          "InclusionOperator",
+          "Inclusions"
+        ],
+        "properties": {
+          "Inclusions": {
+            "minItems": 1
+          }
+        }
+      }
+    },
+    {
+      "description": "If Exclusions are present, ExclusionOperator is required.",
+      "if": {
+        "required": [
+          "Exclusions"
+        ]
+      },
+      "then": {
+        "required": [
+          "ExclusionOperator"
+        ]
+      }
+    },
+    {
+      "description": "If IsGlobalScope is true, Coverage is required.",
+      "if": {
+        "properties": {
+          "IsGlobalScope": {
+            "const": true
+          }
+        },
+        "required": [
+          "IsGlobalScope"
+        ]
+      },
+      "then": {
+        "required": [
+          "Coverage"
+        ]
+      }
+    },
+    {
+      "description": "If InclusionOperator is And, rule-level Coverage is not allowed.",
+      "if": {
+        "properties": {
+          "InclusionOperator": {
+            "const": "And"
+          }
+        },
+        "required": [
+          "InclusionOperator"
+        ]
+      },
+      "then": {
+        "properties": {
+          "Inclusions": {
+            "items": {
+              "not": {
+                "required": [
+                  "Coverage"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "description": "If top-level Coverage is omitted and scope is not complex, every Inclusions rule requires Coverage.",
+      "if": {
+        "not": {
+          "anyOf": [
+            {
+              "required": [
+                "Coverage"
+              ]
+            },
+            {
+              "properties": {
+                "IsComplexScope": {
+                  "const": true
+                }
+              },
+              "required": [
+                "IsComplexScope"
+              ]
+            }
+          ]
+        }
+      },
+      "then": {
+        "properties": {
+          "Inclusions": {
+            "items": {
+              "required": [
+                "Coverage"
+              ]
+            }
+          }
+        }
+      }
+    }
+  ],
+  "patternProperties": {
+    "^x_[A-Z][a-zA-Z0-9]*$": {
+      "description": "Custom data generator-defined properties prefixed with x_ in PascalCase format"
+    }
+  },
+  "additionalProperties": false
+}
