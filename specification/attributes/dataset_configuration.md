@@ -25,10 +25,10 @@ Dataset conforming to DatasetConfiguration attribute MUST adhere to the followin
     * Column population documentation MUST include the columns populated only for records matching user-defined criteria.
     * Column population documentation MUST include whether populated columns use [DataGeneratorCalculatedSplitCostAllocationHandling](#attributes.datagenerator-calculatedsplitcostallocationhandling).
     * Column population documentation MUST be accessible to practitioners.
-* *FOCUS dataset* SHOULD represent records with identical values in all delivered *FOCUS dataset columns*, other than *FOCUS dataset columns* representing summable [*metrics*](#glossary:metric), as a single record.
-* *FOCUS dataset* SHOULD preserve the aggregate value of each *FOCUS dataset column* representing a summable *metric* when records are represented as a single record.
+* *FOCUS dataset* SHOULD represent records with identical values in all delivered *FOCUS dataset columns*, other than *FOCUS dataset columns* containing summable numeric values (e.g., costs and quantities), as a single record.
+* *FOCUS dataset* SHOULD preserve the aggregate value of each *FOCUS dataset column* containing summable numeric values when records are represented as a single record.
 * *FOCUS dataset* MAY offer a default column set.
-* *FOCUS dataset* default column set MUST include all applicable FOCUS columns when a default column set is offered.
+* *FOCUS dataset* default column set MUST include all applicable *FOCUS columns* when a default column set is offered.
 
 ## Example
 

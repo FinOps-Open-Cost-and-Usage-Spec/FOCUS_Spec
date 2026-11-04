@@ -246,6 +246,10 @@ User-defined criteria identify a subset of records in a FOCUS dataset using cond
 
 Column population documentation identifies which columns a data generator can populate this way. Those columns can be FOCUS columns or custom columns; a custom column is appropriate when the detail is not standardized by FOCUS.
 
+### Column Lists and Schema Metadata
+
+Columns populated by column rules are part of the delivered dataset artifact, so they appear in the Schema metadata like any other column. ColumnDefinition contains one object for every column provided in the dataset instance artifacts that reference the parent Schema object, so a practitioner sees a single column list covering the user-defined column selection together with the columns populated by column rules.
+
 ### Record Minimization
 
 Populating specific columns can increase the number of records substantially, particularly when a data generator only has this detail at a finer grain than its default records. After the populated columns are determined, records with identical values in all delivered columns other than summable metrics can be represented by one record whose summable metrics preserve the aggregate values of the represented records. This applies to custom columns as well as FOCUS columns, so records that differ only in a custom column such as `x_UserId` remain separate. This minimizes the dataset without removing the populated detail.
@@ -260,7 +264,7 @@ A provider that natively measures usage at the actor grain can populate actor-le
 
 ### Relationship to Split Cost Allocation
 
-Populating specific columns for matching records is the broader, criteria-based mechanism for offering detail. Data Generator-Calculated Split Cost Allocation Handling is a defined subset of that pattern for columns that split an origin charge into [*allocated charges*](#glossary:allocated-charge). Columns can be populated without split cost allocation when the provider already measures the underlying usage or charges at that detail.
+Populating specific columns for matching records is the broader, criteria-based mechanism for offering detail. Data Generator-Calculated Split Cost Allocation Handling is a defined subset of that pattern for columns that split an origin charge into [*allocated charges*](#glossary:allocated-charge). Columns can be populated without split cost allocation when the provider already measures the underlying data at that detail.
 
 Column population documentation identifies whether populated columns use Data Generator-Calculated Split Cost Allocation Handling. This disclosure helps practitioners understand when records are allocated charges and apply the split cost allocation requirements for matching dimensions, matching non-summable metrics, and preserving the sum of summable metrics across the corresponding origin charge.
 
