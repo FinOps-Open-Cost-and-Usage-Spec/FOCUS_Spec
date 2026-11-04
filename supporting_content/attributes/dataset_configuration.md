@@ -83,7 +83,7 @@ Based on applicability, configuration options may be split into separate attribu
 
 | Attribute | Options | Feature Level |
 |-----------|---------|---------------|
-| **DatasetConfiguration** | Column selection, scoped detail configuration, row aggregation, time granularity, schema versioning, row filtering | None (all datasets) |
+| **DatasetConfiguration** | Column selection, column rules, row aggregation, time granularity, schema versioning, row filtering | None (all datasets) |
 | **DatasetDelivery** | Scheduling, incremental refresh, overwrite vs append, partitioning | Files or Tables |
 | **DatasetFileHandling** | File format, compression | Files only |
 
@@ -105,7 +105,7 @@ The following options were developed for the Dataset Configuration attribute for
 
 | Option                     | Status   | Description                                                      |
 |----------------------------|----------|------------------------------------------------------------------|
-| Scoped detail configuration | Included | Select optional detail for a documented detail scope |
+| Column rules | Included | Populate specific columns for records matching user-defined criteria |
 
 ### Future Options
 
@@ -234,41 +234,25 @@ When introduced, time granularity will allow practitioners to choose temporal re
 * **Monthly**: Will be recommended (SHOULD) - useful for executive reporting and billing reconciliation
 * **Hourly**: Will be required when applicable (MUST) - when the dataset includes costs priced at an hourly or lower grain, hourly granularity will need to be available to preserve pricing accuracy
 
-## Scoped Detail Configuration
+## Populating Specific Columns for Matching Records
 
-Scoped detail configuration allows practitioners to include optional detail for documented areas of a dataset. Data generators often omit high-cardinality or privacy-sensitive columns from a default dataset. When such detail is available, the data generator documents the detail scope and the columns populated for each detail variant, then the practitioner elects to include that detail.
+A data generator can populate specific columns for records that match user-defined criteria, instead of populating every record with that data when the practitioner may not need it for all records. Data generators often leave high-cardinality or privacy-sensitive columns unpopulated by default; when the underlying detail is available, the data generator documents which columns can be populated, and the practitioner defines criteria to request them for matching records.
 
-The requirements define the resulting dataset and the documentation needed to assess it. They deliberately do not define a request payload, property name, or transport mechanism. A provider can expose the selection through an API parameter, an export setting, a query interface, or another access mechanism.
+The requirements define the resulting dataset and the documentation needed to assess it. They deliberately do not define a request payload, property name, or transport mechanism. A provider can expose criteria through an API parameter, an export setting, a query interface, or another access mechanism. Populated columns are delivered inline, as additional values on the same dataset records; FOCUS does not define a separate delivery mechanism or artifact for this data.
 
-### Detail Scopes and Detail Variants
+### User-Defined Criteria and Column Population Documentation
 
-A detail scope is a subset of records in a FOCUS dataset, identified by values of FOCUS columns representing dimensions, for which more than one detail variant is offered. Identifying the records with FOCUS columns lets a practitioner evaluate the documented scope against the delivered data. A detail scope can correspond to one service, multiple services, or records identified without reference to a service. For example, a data generator might identify a detail scope as records where Service Name is "Example AI Service" and Resource Type is "ModelInference".
+User-defined criteria identify a subset of records in a FOCUS dataset using conditions on the values of FOCUS or custom columns (e.g., Service Name equals "Example AI Service"). A practitioner supplies criteria to request that specific columns be populated for the matching records; records that do not match are unaffected.
 
-The records delivered for a detail scope when no additional detail is selected are themselves a detail variant. A configured dataset includes one detail variant for each detail scope. Each detail variant documents the columns that are populated when it is selected. Those columns can be FOCUS columns or custom columns. A custom column is appropriate when the detail is not standardized by FOCUS. Detail variants within the same detail scope do not need to form an ordered scale; two variants can populate different columns without one being more detailed than the other.
-
-### Detail Representations
-
-A detail representation describes how records at a selected detail variant are delivered in relation to the records for the same detail scope when that variant is not selected. When more than one detail representation is offered for a detail variant, the data generator can offer the selection for the complete dataset or separately for each detail scope. Either approach satisfies the requirement. The selection mechanism and the names of detail representations are not defined by FOCUS.
-
-Common detail representations include:
-
-* **Inline**: The selected detail is included in the same dataset records as additional populated columns.
-* **Expanded**: More detailed records replace the less detailed records that represent the same underlying data in the same [*dataset artifact*](#glossary:dataset-artifact).
-* **Companion artifact**: Detailed records are delivered outside the dataset artifact, such as in a separate file or table.
-
-The documentation for each detail representation identifies the relationship between the records it delivers and other records that represent the same underlying data, whether in dataset artifacts or companion artifacts. A companion artifact is not a dataset artifact of a FOCUS dataset, and its structure is not defined by FOCUS. When FOCUS defines a standard dataset for that detail, the detail is delivered as a dataset artifact of that dataset rather than as a companion artifact. The documentation identifies the column or columns that relate records in a companion artifact to the related records in the dataset artifact. This enables practitioners to determine whether records replace one another or must be combined without double-counting.
+Column population documentation identifies which columns a data generator can populate this way. Those columns can be FOCUS columns or custom columns; a custom column is appropriate when the detail is not standardized by FOCUS.
 
 ### Column Lists and Schema Metadata
 
-The columns populated for a selected detail variant are part of the delivered dataset artifact, so they appear in the Schema metadata like any other column. ColumnDefinition contains one object for every column provided in the dataset instance artifacts that reference the parent Schema object. A practitioner reading the Schema metadata therefore sees a single column list covering the user-defined column selection together with the columns contributed by every selected detail variant across all detail scopes, with one entry for a column that more than one detail scope contributes.
-
-Columns that appear only in a companion artifact are not part of a dataset artifact, so they are not in that column list. When the same column is also populated in the dataset artifact, such as under the inline detail representation, it is provided in the dataset artifact and is included.
-
-Changing the selected detail variant for a detail scope adds or removes columns in the delivered dataset artifact under the inline and expanded detail representations. Schema metadata requires a new Schema collection object whenever the structure of the dataset instance artifacts changes, so those variant changes produce a new Schema collection object. A variant whose detail is delivered only in a companion artifact leaves the dataset artifact structure unchanged.
+Columns populated by column rules are part of the delivered dataset artifact, so they appear in the Schema metadata like any other column. ColumnDefinition contains one object for every column provided in the dataset instance artifacts that reference the parent Schema object, so a practitioner sees a single column list covering the user-defined column selection together with the columns populated by column rules.
 
 ### Record Minimization
 
-Additional detail can increase the number of records substantially. After the delivered columns are determined, records with identical values in all delivered columns other than summable metrics can be represented by one record whose summable metrics preserve the aggregate values of the represented records. This applies to custom columns as well as FOCUS columns, so records that differ only in a custom column such as `x_UserId` remain separate. This minimizes the dataset without removing the selected detail.
+Populating specific columns can increase the number of records substantially, particularly when a data generator only has this detail at a finer grain than its default records. After the populated columns are determined, records with identical values in all delivered columns other than summable metrics can be represented by one record whose summable metrics preserve the aggregate values of the represented records. This applies to custom columns as well as FOCUS columns, so records that differ only in a custom column such as `x_UserId` remain separate. This minimizes the dataset without removing the populated detail.
 
 This aggregation guidance does not replace the aggregation guidance for individual columns. Practitioners must continue to apply the documented aggregation treatment for columns such as PricingQuantity, ListCost, and ContractedCost when calculating a use-case-specific total.
 
@@ -276,13 +260,13 @@ This aggregation guidance does not replace the aggregation guidance for individu
 
 Actor-level detail is useful for shared platforms and pass-through services where the service account that initiates usage is not the entity that should bear the cost. For example, an AI gateway service account may initiate all LLM requests while costs should be attributed to the calling team, application, or user.
 
-A provider that natively measures usage at the actor grain can offer actor attribution as scoped detail without requiring split cost allocation. When a provider starts from a coarser [*origin charge*](#glossary:origin-charge) and distributes it across actors or workloads using an allocation method, the actor-attribution detail uses [Data Generator-Calculated Split Cost Allocation Handling](#attributes.datagenerator-calculatedsplitcostallocationhandling).
+A provider that natively measures usage at the actor grain can populate actor-level columns for matching records without requiring split cost allocation. When a provider starts from a coarser [*origin charge*](#glossary:origin-charge) and distributes it across actors or workloads using an allocation method, the actor-attribution detail uses [Data Generator-Calculated Split Cost Allocation Handling](#attributes.datagenerator-calculatedsplitcostallocationhandling).
 
 ### Relationship to Split Cost Allocation
 
-Scoped detail configuration is the broader opt-in and documentation mechanism for selecting additional detail. Data Generator-Calculated Split Cost Allocation Handling is a defined subset of that pattern for detail variants that split an origin charge into [*allocated charges*](#glossary:allocated-charge). A detail variant can add scoped detail without split cost allocation when the provider already measures the underlying data at that detail.
+Populating specific columns for matching records is the broader, criteria-based mechanism for offering detail. Data Generator-Calculated Split Cost Allocation Handling is a defined subset of that pattern for columns that split an origin charge into [*allocated charges*](#glossary:allocated-charge). Columns can be populated without split cost allocation when the provider already measures the underlying data at that detail.
 
-Detail scope documentation identifies whether each offered detail variant uses Data Generator-Calculated Split Cost Allocation Handling. This disclosure helps practitioners understand when records are allocated charges and apply the split cost allocation requirements for matching dimensions, matching non-summable metrics, and preserving the sum of summable metrics across the corresponding origin charge.
+Column population documentation identifies whether populated columns use Data Generator-Calculated Split Cost Allocation Handling. This disclosure helps practitioners understand when records are allocated charges and apply the split cost allocation requirements for matching dimensions, matching non-summable metrics, and preserving the sum of summable metrics across the corresponding origin charge.
 
 ## Future Configuration Options
 
@@ -318,7 +302,7 @@ Major cloud providers support various configuration options:
 
 ## Configuration Metadata
 
-The Dataset Configuration attribute requires documentation for offered scoped detail configurations, but it does not yet define structured metadata for all selected configuration options. This section evaluates what changes would be needed to support structured configuration metadata within the existing metadata structure.
+The Dataset Configuration attribute requires column population documentation describing which columns can be populated, but it does not yet define structured metadata for all selected configuration options. This section evaluates what changes would be needed to support structured configuration metadata within the existing metadata structure.
 
 ### Current Metadata Structure
 
@@ -340,7 +324,7 @@ Configuration metadata should describe the options applied when generating a dat
 | Configuration Option | Metadata Needed                                                |
 |----------------------|----------------------------------------------------------------|
 | Column selection | List of included columns (or excluded columns) |
-| Scoped detail configuration | Detail scope, selected detail variant, selected detail representation, populated columns, split cost allocation disclosure, relationship to related dataset artifacts or companion artifacts, and columns that relate companion artifact records |
+| Column rules | User-defined criteria, populated columns, and split cost allocation disclosure |
 | Row aggregation | Whether aggregation is enabled |
 | Time granularity | Selected granularity (hourly, daily, monthly) |
 | FOCUS version | Selected version (already captured in Schema as FocusVersion) |
@@ -364,22 +348,29 @@ Since Schema already tracks structural information (columns, data types) and tri
 
 Option A (extending Dataset Instance) is the most natural fit. The configuration options describe how a specific dataset artifact was shaped, which aligns with Dataset Instance's purpose. FOCUS version selection is already partially addressed by Schema's `FocusVersion` property.
 
-### Example Scoped Detail Metadata
+### Example Column Rules Metadata
 
-The following example illustrates one possible shape for recording selected scoped detail in dataset instance metadata. The field names are illustrative and would need task force review before becoming part of the formal metadata schema.
+The following example illustrates one possible shape for recording column rules in dataset instance metadata. The field names are illustrative and would need task force review before becoming part of the formal metadata schema.
 
 ```json
 {
   "DatasetInstanceId": "178151-dbad145e-178151-dbad145e-178151",
   "Configuration": {
-    "ScopedDetail": [
+    "ColumnRules": [
       {
-        "DetailScope": {
-          "ServiceName": "Example AI Service",
-          "ResourceType": "ModelInference"
-        },
-        "DetailVariant": "user",
-        "DetailRepresentation": "Expanded"
+        "Conditions": [
+          {
+            "Column": "ServiceName",
+            "Operator": "Equals",
+            "Values": ["Example AI Service"]
+          },
+          {
+            "Column": "ResourceType",
+            "Operator": "Equals",
+            "Values": ["ModelInference"]
+          }
+        ],
+        "Columns": ["x_UserId"]
       }
     ]
   }
