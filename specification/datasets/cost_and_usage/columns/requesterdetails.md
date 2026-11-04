@@ -32,14 +32,14 @@ RequesterDetailsObject MUST adhere to the following requirements:
 
 * RequesterDetailsObject MUST conform to the [RequesterDetailsObjectSchema](#schemas.costandusage.requesterdetailsobjectschema) JSON Schema.
 * RequesterDetailsObject MUST NOT include entries that are not applicable to the *requester* associated with the *charge*.
-* RequesterDetailsObject MUST NOT include an entry whose Entry.key is "Principal" when PrincipalId is null.
-* RequesterDetailsObject MUST NOT include an entry whose Entry.key is "Credential" when CredentialId is null.
+* RequesterDetailsObject[\*].key MUST NOT be "Principal" when PrincipalId is null.
+* RequesterDetailsObject[\*].key MUST NOT be "Credential" when CredentialId is null.
 * RequesterDetailsObject entries MUST adhere to the following requirements:
-  * Entry.key in RequesterDetailsObject MUST be unique within RequesterDetailsObject.
-  * Entry.value in RequesterDetailsObject MUST carry the descriptive attributes of the *requester* level named by Entry.key.
-  * Entry.value.Type MUST represent the kind of entity described by the entry.
-  * Entry.value.Name MUST represent a readable display name for the entity described by the entry.
-  * Entry.value.Email MUST represent an email address associated with the entity described by the entry.
+  * RequesterDetailsObject[\*].key MUST be unique within RequesterDetailsObject.
+  * RequesterDetailsObject[\*].value MUST carry the descriptive attributes of the *requester* level named by RequesterDetailsObject[\*].key.
+  * RequesterDetailsObject[\*].value.Type MUST represent the kind of entity described by RequesterDetailsObject[\*].
+  * RequesterDetailsObject[\*].value.Name MUST represent a readable display name for the entity described by RequesterDetailsObject[\*].
+  * RequesterDetailsObject[\*].value.Email MUST represent an email address associated with the entity described by RequesterDetailsObject[\*].
   * Custom entry in RequesterDetailsObject MUST represent a level of the *requester* that is neither the *principal* nor the *credential*.
 
 ### Object Schema Structure
