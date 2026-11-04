@@ -8,6 +8,8 @@ The SKU Price dataset represents prices as of the date the dataset is captured. 
 
 The dataset describes the full price list a *service provider* offers, not only the SKUs that appear in Cost and Usage. To manage the size of a complete price list, a *service provider* may partition delivery, for example by region, service, or SKU category, and is encouraged to do so where publishing a complete list in a single delivery would otherwise be impractical.
 
+Most prices do not change from one delivery to the next. To keep repeated deliveries small, a practitioner can configure the dataset with a changed-since point in time, such as the time of their last delivery. The delivery then contains only the records created or modified since that point, identified by [SKU Price Last Updated](#datamodel.skuprice.skupricelastupdated), and each record replaces the previously delivered record with the same key. A price that is no longer offered stays in the delivery as a record with an end date, so the practitioner can tell it apart from a price that did not change.
+
 The columns are presented in alphabetical order.
 
 ## Columns<!--SkipTOC-->
@@ -104,7 +106,13 @@ SkuPrice MUST adhere to the following requirements:
 * SkuPrice MUST conform to [DatasetCompleteness](#attributes.datasetcompleteness) requirements.
 * SkuPrice MUST conform to [DatasetConfiguration](#attributes.datasetconfiguration) requirements.
 * SkuPrice MUST conform to [DeliveryHandling](#attributes.deliveryhandling) requirements.
-* SkuPrice MUST use the Overwrite delivery mechanism.
+* SkuPrice MUST be configurable to include only records with a SkuPriceLastUpdated on or after a practitioner-specified point in time.
+* SkuPrice MUST use the Overwrite delivery mechanism when no changed-since point in time is configured.
+* SkuPrice MUST adhere to the following requirements when a changed-since point in time is configured:
+  * SkuPrice MUST include every record with a SkuPriceLastUpdated on or after the configured point in time.
+  * SkuPrice MUST NOT include records with a SkuPriceLastUpdated before the configured point in time.
+  * SkuPrice records MUST supersede previously delivered records that share identical values (including nulls) across ServiceProviderName, SkuPriceId, ContractId, SkuPriceEffectiveStart, PricingCurrency, and UnitPriceType.
+  * SkuPrice records for prices no longer offered MUST have a non-null SkuPriceEffectiveEnd.
 * SkuPrice SHOULD contain at least one record for every [SkuPriceId](#datamodel.skuprice.skupriceid) referenced in the [CostAndUsage](#datamodel.costandusage) dataset.
 * SkuPrice MUST NOT contain multiple records that share identical values (including nulls) across ServiceProviderName, SkuPriceId, ContractId, SkuPriceEffectiveStart, PricingCurrency, and UnitPriceType.
 * SkuPrice MUST NOT contain records with overlapping effective periods (defined by SkuPriceEffectiveStart and SkuPriceEffectiveEnd) when those records share identical values (including nulls) across ServiceProviderName, SkuPriceId, ContractId, PricingCurrency, and UnitPriceType; for this constraint, a null SkuPriceEffectiveStart represents the earliest available time, and a null SkuPriceEffectiveEnd represents the latest available time.
