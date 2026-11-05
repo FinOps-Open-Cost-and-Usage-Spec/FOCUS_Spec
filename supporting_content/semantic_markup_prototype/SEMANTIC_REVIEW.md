@@ -69,4 +69,4 @@ These are inconsistencies in the source, not in the tags. They are reported, not
 * **Host Provider.** In `serviceprovidername.md`, "a Host Provider" (the party) links to the HostProviderName column, because the glossary has no host provider entry.
 * **AllocationMethod.** A requirement in `allocatedmethoddetails.md` names "AllocationMethod", which is not an entity ID; it links to AllocatedMethodId.
 * **Schema ID casing.** The registry derives `SKUPriceEligibilityObjectSchema` from the heading "SKU Price Eligibility Object Schema", while its file name and references use `SkuPriceEligibilityObjectSchema`. References resolve because IDs match without regard to case.
-* **Display Names in Requirements.** Ten FOCUS003 findings remain; nine are notes or "See" lines placed under a Requirements heading.
+* **Display Names in Requirements.** Ten FOCUS003 findings remain; nine are notes or "See" lines placed under a Requirements heading. FOCUS003 has since moved to requirement statements, so those nine are no longer reported; see Requirements and Prose in [CONVERSION.md](CONVERSION.md).

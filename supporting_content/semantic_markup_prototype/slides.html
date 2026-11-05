@@ -270,7 +270,7 @@ body.show-notes #notes { display: block; }
 <tr><td><b>Unknown entity</b> · error</td><td style="font-family:'JetBrains Mono', 'Courier New', monospace">unknown col "ResorceType"</td></tr>
 <tr style="background:#F2EFE6"><td><b>Value not allowed</b> · error</td><td style="font-family:'JetBrains Mono', 'Courier New', monospace">"Refund" is not an allowed value of ChargeClass (allowed: Correction)</td></tr>
 <tr><td><b>Ambiguous column</b> · error</td><td style="font-family:'JetBrains Mono', 'Courier New', monospace">col "BilledCost" exists in several datasets (CostAndUsage, InvoiceDetail); qualify it</td></tr>
-<tr style="background:#F2EFE6"><td><b>Display name in Requirements</b></td><td style="font-family:'JetBrains Mono', 'Courier New', monospace">display text "Billing Currency" in Requirements; normative text uses BillingCurrency</td></tr>
+<tr style="background:#F2EFE6"><td><b>Display name in a requirement</b></td><td style="font-family:'JetBrains Mono', 'Courier New', monospace">display text "Billing Currency" in a requirement; normative text uses BillingCurrency</td></tr>
 <tr><td><b>Untagged ColumnId</b></td><td style="font-family:'JetBrains Mono', 'Courier New', monospace">untagged ColumnId BillingCurrency; write [BillingCurrency](#col)</td></tr>
 <tr style="background:#F2EFE6"><td><b>Untagged display name</b></td><td style="font-family:'JetBrains Mono', 'Courier New', monospace">untagged display name "Resource Type"; tag it or reword</td></tr>
 <tr><td><b>Hard-coded link</b></td><td style="font-family:'JetBrains Mono', 'Courier New', monospace">hard-coded link "charge" -&gt; #glossary:charge; write [charge](#term)</td></tr>
@@ -363,7 +363,7 @@ body.show-notes #notes { display: block; }
 </div>
 </div>
 <p style="font-size:28px;line-height:1.4;color:#14213D;width:1600px">14 findings like these, all written by hand before the conversion. Seven more checks find nothing today, so they fail the build to keep it that way.</p>
-<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B7280">make spec.html on the demo branch: 0 errors, 24 warnings; the findings are left in place to show the checks · 15</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B7280">make spec.html on the demo branch: 0 errors, 25 warnings; the findings are left in place to show the checks · 15</p>
 <aside>Here is what that means in practice. These are three of the warnings the build prints today on the demo branch. Before tagging, the resolver matched names without regard to case, so none of these surfaced. Now that every reference says what it names, the build can compare the text with the definition. The first is a column written in lowercase in a column description. The second is in a requirement: the glossary entry is Pascal Case with a capital C. The third is a real disagreement in the spec itself: the requirement writes Sku, the way ColumnIds do, but the schema heading writes SKU, so the two give different IDs. The linter doesn’t pick a side; it reports both. All 14 findings were in working_draft already, written by hand. We left them unfixed so the demo shows the checks working. Seven other checks, such as unquoted values and tags in headings, find nothing after the conversion, so they are errors that keep new drift out.</aside>
 </section>
 <section id="whysyntax" data-transition="fade" style="background:#F7F5EF;color:#14213D;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">

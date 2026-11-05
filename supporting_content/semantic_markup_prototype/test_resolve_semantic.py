@@ -112,6 +112,17 @@ def test_requirement_mixing_columnids_and_display_names():
     assert run(requirements, IN_CU) == ["FOCUS003", "FOCUS019"]
 
 
+def test_requirement_is_a_statement_with_a_keyword():
+    # A requirement uses entity IDs wherever it sits, with or without a Requirements heading
+    assert run("* [Billed Cost](#col) MUST be a number.", IN_CU) == ["FOCUS003"]
+    assert run("[BilledCost](#col) MUST be a number in [Cost and Usage](#ds).", IN_CU) == ["FOCUS003"]
+    assert run("* [BilledCost](#col) MUST be a number in [CostAndUsage](#ds).", IN_CU) == []
+    # Notes, "See" lines and quoted keywords under a Requirements heading are prose
+    assert run("## Requirements\n\n> **Note:** [Billed Cost](#col) MUST is quoted elsewhere.\n", IN_CU) == []
+    assert run("## Requirements\n\nSee [Billed Cost](#col) for details.\n", IN_CU) == []
+    assert run('The keyword "MUST" in [Billed Cost](#col) and `MUST` in code.', IN_CU) == []
+
+
 def test_untagged_columnid_exemptions():
     assert run("## Column ID\n\nChargeCategory\n") == []
     assert run("| ChargeCategory | text |\n") == []

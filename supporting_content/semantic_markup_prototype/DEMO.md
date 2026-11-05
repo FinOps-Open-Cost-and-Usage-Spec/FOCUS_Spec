@@ -182,7 +182,7 @@ The resolver decides how a reference is decorated (link, italics, quotes), but i
 | Context | Rule | Source | Prototype |
 | :--- | :--- | :--- | :--- |
 | Headings | Display Name (or Metadata Name), never a link; a JSON property keeps its schema name | #2778 (open) | The converter skips headings. A tagged heading would be linked and counted as a first mention |
-| Requirements | Entity ID; an operating model condition used as a condition is written as its lowercase phrase | #2765 (open) | FOCUS003 checks columns only |
+| Requirements | Entity ID; an operating model condition used as a condition is written as its lowercase phrase | #2765 (open) | FOCUS003 checks columns, datasets, JSON objects, schemas, and metadata in any line with a BCP-14 keyword; not yet attributes or conditions |
 | Requirements, other dataset | `Dataset.Column` | #2765 (open) | Accepted |
 | Prose outside Requirements | Display Name for conceptual references; an Entity ID is allowed for schema-facing references (SHOULD in the appendix) | Editorial Guidelines, #2514 and #2765 (open) | Not checked |
 | Content Constraints tables | Every reference links | Editorial Guidelines | Every table links, which is broader than the rule |

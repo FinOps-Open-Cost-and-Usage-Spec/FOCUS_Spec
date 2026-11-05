@@ -129,7 +129,7 @@ File boundaries come from `<!-- focus:file <path> -->` markers. The prototype's 
 | Code | Level | Check |
 | :--- | :--- | :--- |
 | FOCUS001 | Error | Unknown entity; a column ID that exists in several datasets, in a file with no dataset, without a qualifier; or an unqualified column that is not in the file's dataset |
-| FOCUS003 | Warning | Column reference in a Requirements section whose text is not the ColumnId |
+| FOCUS003 | Warning | Column, dataset, JSON object, schema, or metadata reference in a requirement whose text is not the entity ID. In `resolve_semantic.py`, a requirement is a line with MUST, SHOULD, or MAY outside code and quoted values, wherever it sits; notes and "See" lines are prose. The Pandoc filter checks columns under a Requirements heading |
 | FOCUS004 | Warning, error in `resolve_semantic.py` | Untagged ColumnId in prose. The resolver skips headings, tables, HTML, code, the ID and name sections that define an entity, and single-word IDs such as `Tags` |
 | FOCUS005 | Warning | Italic text that matches a glossary term but is not tagged |
 | FOCUS006 | Warning | Untagged multi-word Display Name (e.g., "Resource Type") in prose |
@@ -145,7 +145,7 @@ File boundaries come from `<!-- focus:file <path> -->` markers. The prototype's 
 | FOCUS016 | Error | Emphasis inside a tag's text; the build sets the style |
 | FOCUS017 | Error | Tag in a heading |
 | FOCUS018 | Error | Explicit ID that the text already gives exactly, or a dataset qualifier that is the file's dataset (or the only dataset with that column) |
-| FOCUS019 | Error | Requirement bullet that mixes ColumnIds and Display Names |
+| FOCUS019 | Error | Requirement that mixes ColumnIds and Display Names |
 
 FOCUS012 to FOCUS019 run in `resolve_semantic.py` only. `focus-strict=true` makes errors fail the Pandoc run.
 

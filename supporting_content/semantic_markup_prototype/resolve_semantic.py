@@ -68,7 +68,9 @@ CODE_SPAN = re.compile(r"(`+[^`]*`+)")
 HEADING = re.compile(r"^(#+)\s+(?:\d+(?:\.\d+)*\.\s+)?(.*?)\s*$")
 HAND_LINK_TARGET = re.compile(r"\]\([^)]*\)")
 HTML_TAG = re.compile(r"<[^>]+>")
-BULLET = re.compile(r"^\s*[*-]\s")
+# A BCP-14 keyword outside code spans and quoted values marks a requirement statement
+KEYWORD = re.compile(r"\b(MUST|SHOULD|MAY)\b")
+QUOTED = re.compile(r'"[^"\n]*"')
 WORDS = re.compile(r"[\w'-]+")
 # A term at the start of a line, list item, table cell or sentence may be capitalized
 SENTENCE_START = re.compile(r"(^\s*([*|>]\s*)*|[.:!?|]\s+)(\*\*)?$")
@@ -138,6 +140,7 @@ class SemanticResolver:
         self.line_text = ""
         self.prefix = ""
         self.in_heading = False
+        self.in_requirement = False
         self.column_forms = set()
         # Single-word ColumnIds (e.g., Tags) are also ordinary words, so only compound IDs count
         ids = sorted({e["id"] for e in registry.by_type["col"] if re.search(r"[a-z][A-Z]", e["id"])},
@@ -171,10 +174,6 @@ class SemanticResolver:
     def in_constraints(self):
         return any(title == "Content Constraints" for _, title in self.sections)
 
-    @property
-    def in_requirements(self):
-        return any(title == "Requirements" for _, title in self.sections)
-
     def resolve_link(self, match, in_table):
         text, kind, ident = match.group(1), match.group(2), match.group(3) or None
         raw = text.strip()
@@ -197,16 +196,16 @@ class SemanticResolver:
                 self.report("WARN", "FOCUS011", f'link text "{plain}" names {named["id"]}, '
                                                 f'but the reference is {entity["id"]}')
         scope = entity.get("dataset") or entity.get("collection")
-        if (kind in ("col", "obj", "schema", "meta") and self.in_requirements
+        if (kind in ("col", "ds", "obj", "schema", "meta") and self.in_requirement
                 and plain not in (entity["id"], f'{scope}.{entity["id"]}')):
             self.report("WARN", "FOCUS003",
-                        f'display text "{plain}" in Requirements; normative text uses {entity["id"]}')
+                        f'display text "{plain}" in a requirement; normative text uses {entity["id"]}')
         if kind == "val":
             self.check_value(plain, entity)
             return plain
         self.check_case(kind, ident, plain, entity, scope, self.prefix + match.string[:match.start()])
         self.check_redundant(kind, ident, plain, entity, scope)
-        if kind == "col" and self.in_requirements:
+        if kind == "col" and self.in_requirement:
             self.column_forms.add("ID" if plain in (entity["id"], f"{scope}.{entity['id']}") else "Display Name")
 
         key = self.key(entity)
@@ -306,6 +305,13 @@ class SemanticResolver:
         self.in_heading = bool(heading)
         self.column_forms = set()
         in_table = stripped.lstrip().startswith("|")
+        # A requirement is a statement with a BCP-14 keyword, wherever it sits: dataset files put
+        # requirements under "Requirements<!--SkipTOC-->", JSON columns under "Object Requirements",
+        # and metadata files under no Requirements heading at all, while notes and "See" lines under a
+        # Requirements heading are prose
+        statement = QUOTED.sub("", CODE_SPAN.sub("", stripped))
+        self.in_requirement = (not (heading or in_table or stripped.lstrip().startswith(">"))
+                               and KEYWORD.search(statement) is not None)
         # Headings, tables, HTML and the ID and name sections that define an entity hold IDs as written
         innermost = self.sections[-1][1] if self.sections else ""
         prose = not (heading or in_table or stripped.lstrip().startswith("<")
@@ -318,7 +324,7 @@ class SemanticResolver:
             self.note_legacy_links(parts[i], in_table)
             self.prefix = "".join(parts[:i])
             parts[i] = SEMANTIC_LINK.sub(lambda m: self.resolve_link(m, in_table), parts[i])
-        if len(self.column_forms) == 2 and BULLET.match(stripped):
+        if len(self.column_forms) == 2:
             self.report("ERROR", "FOCUS019", "requirement mixes ColumnIds and Display Names; "
                                              "normative text uses ColumnIds")
         return "".join(parts) + ("\n" if line.endswith("\n") else "")
