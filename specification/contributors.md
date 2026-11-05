@@ -35,17 +35,12 @@ Thanks to the following FOCUS members for their contributions to the FOCUS Relea
 * David Earney (American Express)
 * Deeja Cruz (Datadog)
 * Erik Norman (Caligo)
-* George Parker (Salesforce)
 * Izadora Sobral (Luizalabs)
-* John Ely (Capital One)
 * Jose Ernesto Suarez (Glassity)
 * Marc Perreaut (Amadeus)
 * Nan Braun (Thavron Solutions)
 * Ruben Vander Stockt (Across Cloud)
 * Samantha White (FinOps Foundation)
-* Sanjna Srivatsa (Broadcom)
-* Tom Cross (Fellscape)
-* Velu Natarajan (GoodRx)
 
 <div style="page-break-after: always"></div>
 
