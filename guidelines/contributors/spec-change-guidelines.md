@@ -18,6 +18,8 @@ A changelog is provided specifying helpful information to consumers of the FOCUS
 * Change Type Classification 
 * Deprecation designation of a feature or column to include the version where deprecation occurred
    * Any exception rationale if removal precedes the retention period
+* Designation of the addition of a new dataset, to include whether it is a preview, and its promotion, extension, or removal in a later version
+  * The reason, when a new dataset is published without preview status
 * Designation of the addition of a new feature or column
 * Description of the change
 * Examples of the change, if needed
@@ -28,7 +30,7 @@ A changelog is provided specifying helpful information to consumers of the FOCUS
 
 When a new feature or column is introduced to the FOCUS specification, depending on the circumstances of the change, its support may be initially optional. This allows data generators that support it to adopt the new feature or column without restricting other adopters from using newer versions of the specification. 
 
-* Within the Content Constraints section, Feature Level indicates whether the column is Mandatory (i.e., required), Conditional (i.e., required under certain circumstances), or Recommended (i.e., not required).
+* Within the Content Constraints section, Feature Level indicates whether the column is Mandatory (i.e., required), Conditional (i.e., required under certain circumstances), Recommended (i.e., not required, but encouraged), or Optional (i.e., not required).
    *  Example: Feature level is specified: "Recommended"    
 * Changelog indicates that the new feature/column has been added.
     * Example: "Column 1 has been added in version 2.0."
@@ -70,7 +72,7 @@ Data generators are expected to remove capabilities at the same time that the FO
 
 To ensure complete and error-free removal of deprecated entities from the FOCUS specification, follow this checklist:
 
-1. **Confirm Deprecation Status**: Verify the entity has been deprecated for at least one release cycle and meets retention period requirements.
+1. **Confirm Deprecation Status**: Verify the entity has been deprecated for at least one release cycle and meets retention period requirements. A [preview](#preview-process) dataset is exempt and MAY be removed without a deprecation notice or retention period.
 
 2. **Identify All Files Related to the Entity**:
    * Remove definition files from specification paths (for example: `specification/datasets/*/columns/`, or other relevant subfolders)
@@ -95,6 +97,52 @@ To ensure complete and error-free removal of deprecated entities from the FOCUS 
 6. **Communicate Changes**:
    * Update release notes with removal details
    * Notify stakeholders of the removal
+
+## Preview Process
+
+Preview is a status for a FOCUS dataset published in a version of FOCUS so implementers can build it and report what they find. A dataset with this status is called a preview. See [Preview](../../specification/overview.md#preview) in the specification for the definition.
+
+### Designating a Preview
+
+A FOCUS dataset preview MUST adhere to the following requirements:
+
+* A new FOCUS dataset SHOULD be published as a preview in the first version that includes it.
+* A new FOCUS dataset published without preview status MUST have the reason recorded in the version changelog.
+* A preview MUST apply only to an entire FOCUS dataset, including all of its columns.
+* A preview MUST NOT include requirements or supporting entities outside that dataset unless the scope list in the preview's tracking issue names them.
+* A preview MUST NOT be a FOCUS dataset that an earlier version published without preview status.
+* A preview MUST have a tracking issue for its progress toward leaving preview status.
+* A preview MUST include normative requirements written the same way as any other requirements (e.g., a `MUST` is not relaxed to `SHOULD` because the dataset is a preview).
+* A preview MAY be omitted without affecting conformance to the FOCUS specification.
+* A preview MAY change in the next version without a deprecation notice.
+* The Specification MUST follow the normal change management process for all entities when not marked as preview.
+
+A preview tracking issue MUST adhere to the following requirements:
+
+* A preview tracking issue MUST list any questions to learn from generating or using the dataset, and who raised each one.
+* A preview tracking issue MUST include the scope list, naming each requirement excluded from conformance, including any in other datasets that exist only for the preview.
+* A preview tracking issue MUST name in the scope list each supporting entity outside the dataset that the preview includes (e.g., an operating model condition).
+* A preview tracking issue SHOULD list at least one early implementer, who is any person or organization, inside or outside the working group, that will generate or use the dataset to answer open questions.
+* A preview tracking issue MUST state the date of the next status decision.
+* A preview tracking issue MUST record that a request for comments went to existing data generators, and who responded.
+
+### Marking a Preview
+
+* Add a `> **Preview:**` note at the top of the dataset's page, its examples, and its supported features, summarizing the scope list and linking to the tracking issue.
+* Add "(preview)" after the dataset's name in listings (e.g., the data model dataset table).
+* Add a note to each section outside the dataset that has requirements on the scope list or defines a supporting entity on it (e.g., the Charge Category column in Cost and Usage), naming them and stating that, while the dataset is in preview, those requirements are excluded from conformance and those supporting entities may change without a deprecation notice.
+* Record the preview and every later change to it in the version changelog, with migration notes.
+* Set the status of each requirement on the scope list to Preview in the requirements model.
+* Set each Version Introduced section in the dataset, including its columns, to `Preview: <version>` (e.g., `Preview: 1.5`).
+* Set the Version Introduced section of each supporting entity on the scope list to `Preview: <version>`, unless the tracking issue explicitly notes an exception for that entity.
+
+### Exiting Preview
+
+At each later version, FOCUS Members choose one outcome and record it with its evidence in the tracking issue:
+
+* **Promote:** Remove the preview designation once the open questions are addressed. The dataset's requirements become Active in the requirements model, and the "(preview)" label and Preview notes are removed. Each Version Introduced section is updated to include the general availability (GA) version (e.g., `Preview: 1.5 · GA: 1.6`).
+* **Extend:** Keep the preview for one more version, with a plan for the next evidence.
+* **Remove:** Remove the dataset without a deprecation notice or retention period. This is the default when there is no new evidence since the last decision.
 
 ## Change Type Classification
 

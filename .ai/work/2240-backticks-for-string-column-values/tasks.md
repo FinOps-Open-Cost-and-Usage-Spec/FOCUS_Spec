@@ -20,6 +20,13 @@
 * [x] Rerun classifier/evidence validation, requirements-model tests, whitespace validation, and the full build after the final edits.
 * [x] Record human scope decisions for metadata, nested wildcard, historical values, key prefixes, and code-like assignments.
 
+## Interim Branch Update
+
+* [x] Merge the current `working_draft_interim` content locally and resolve conflicts.
+* [x] Review the current specification for string values added or changed since the original audit.
+* [ ] Refresh the fixed-base audit manifests and validators for the interim branch before claiming full evidence coverage.
+* [x] Complete current build and test validation.
+
 ## Human and PR Workflow
 
 * [x] Human-review the changed contributor guidance and targeted ambiguous formatting cases.

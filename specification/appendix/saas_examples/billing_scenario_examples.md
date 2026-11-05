@@ -156,6 +156,7 @@ Here is how these charges appear in the data (relevant columns only):
 | PricingCategory | Standard | Committed |
 
 **Purchase Charge:** [ChargeCategory](#datamodel.costandusage.chargecategory) is `Purchase` with [ChargeFrequency](#datamodel.costandusage.chargefrequency) `One-Time`. The full annual amount is invoiced in a single payment.
+
 * The [*charge period*](#glossary:chargeperiod) spans the entire commitment term: April 1, 2025 through April 1, 2026.
 * [BilledCost](#datamodel.costandusage.billedcost) is $4,550.00. This is the [*cash-based*](#glossary:cash-based-accounting) invoiced amount for the annual subscription.
 * [EffectiveCost](#datamodel.costandusage.effectivecost) is $0.00. The purchase covers future usage. Cost is recognized on an [*accrual basis*](#glossary:accrual-based-accounting) as usage occurs.
@@ -167,6 +168,7 @@ Here is how these charges appear in the data (relevant columns only):
 * [PricingCategory](#datamodel.costandusage.pricingcategory) is `Standard`. The purchase of the [*commitment discount*](#glossary:commitment-discount) is at the agreed-upon rate.
 
 **Usage Charge (April 2025):** [ChargeCategory](#datamodel.costandusage.chargecategory) is `Usage` with [PricingCategory](#datamodel.costandusage.pricingcategory) `Committed`. The usage is covered by the annual purchase.
+
 * [BilledCost](#datamodel.costandusage.billedcost) is $0.00. No additional invoiced amount. The usage is covered by the purchase charge.
 * [EffectiveCost](#datamodel.costandusage.effectivecost) is $379.00. This is the [*accrual-based*](#glossary:accrual-based-accounting) recognized portion of the annual commitment: `$7.58/user x 50 users`.
 * [ListCost](#datamodel.costandusage.listcost) is $452.50 (`50 users x $9.05/user`). The monthly list cost without the annual discount.
@@ -176,7 +178,7 @@ Here is how these charges appear in the data (relevant columns only):
 * [CommitmentDiscountQuantity](#datamodel.costandusage.commitmentdiscountquantity) is 379.00 USD. This is the amount of spend consumed from the commitment in this [*charge period*](#glossary:chargeperiod).
 * [ResourceId](#datamodel.costandusage.resourceid) is the actual [*resource*](#glossary:resource) (the customer's project management site), not the [*commitment discount*](#glossary:commitment-discount).
 
-**Rounding Note:** The per-user rate of $7.58 is derived from `$4,550 / 12 months / 50 users` = $7.5833, rounded to two decimal places. This means `$7.58 x 50 users x 12 months` = $4,548.00, which is $2.00 less than the $4,550.00 purchase. In a full 12-month dataset, the final month's charge would include a true-up to ensure the sum of [EffectiveCost](#datamodel.costandusage.effectivecost) across all usage rows equals the [BilledCost](#datamodel.costandusage.billedcost) of the purchase row.
+> **Note:** The per-user rate of $7.58 is derived from `$4,550 / 12 months / 50 users` = $7.5833, rounded to two decimal places. This means `$7.58 x 50 users x 12 months` = $4,548.00, which is $2.00 less than the $4,550.00 purchase. In a full 12-month dataset, the final month's charge would include a true-up to ensure the sum of [EffectiveCost](#datamodel.costandusage.effectivecost) across all usage rows equals the [BilledCost](#datamodel.costandusage.billedcost) of the purchase row.
 
 [**CSV Example**](/specification/data/saas_examples/seat_based_saas_annual_a.csv)
 

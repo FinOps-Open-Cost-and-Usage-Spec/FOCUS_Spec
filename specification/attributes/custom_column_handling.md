@@ -13,7 +13,7 @@ Each column describes an aspect of the record, including but not limited to:
 * Why the record exists or has specific values.
 * How values are calculated or determined.
 
-These additional columns enable deeper analysis and provide more detailed information that may not be fully captured by standard [*FOCUS columns*](#glossary:FOCUS-column). See the [Dataset Completeness](#attributes.datasetcompleteness) attribute for requirements on what *custom columns* to include.
+These additional columns enable deeper analysis and provide more detailed information that may not be fully captured by standard *FOCUS columns*. See the [Dataset Completeness](#attributes.datasetcompleteness) attribute for requirements on what *custom columns* to include.
 
 ## Requirements
 
@@ -36,8 +36,9 @@ Column conforming to CustomColumnHandling attribute MUST adhere to the following
 * *Custom column* containing numeric values MUST contain a single numeric value.
 * *Custom column* containing numeric values SHOULD conform to [NumericFormat](#attributes.numericformat) requirements.
 * *Custom column* containing string values SHOULD conform to [StringHandling](#attributes.stringhandling) requirements.
-* *Custom column* representing a national currency SHOULD conform to [CurrencyFormat](#attributes.currencyformat) requirements.
+* *Custom column* representing a currency SHOULD conform to [CurrencyFormat](#attributes.currencyformat) requirements.
 * *Custom column* representing a measurement unit SHOULD conform to [UnitFormat](#attributes.unitformat) requirements.
+* *Custom column* documentation SHOULD specify how to determine whether a value represents a [*national currency*](#glossary:national-currency) when the *custom column* represents a currency.
 
 ## Attribute ID
 

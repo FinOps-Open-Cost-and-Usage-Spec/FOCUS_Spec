@@ -28,7 +28,7 @@ ContractCommitmentFulfillmentInterval MUST adhere to the following requirements:
 | Transactional | 90         | No time-based reset; based purely on event volume or credit consumption. | API call bundles or "Credit Packs" with no expiration date. |
 | Custom        | 100        | A bespoke interval that does not fit standard calendar units. | Bridge contracts, unique POCs, or non-standard durations (e.g., 100 days). |
 
-Note: the sort orders and use cases presented above are included for convenience and are not defined as separate FOCUS columns.
+> **Note:** The sort orders and use cases presented above are included for convenience and are not defined as separate FOCUS columns.
 
 ## Column ID
 
@@ -44,14 +44,15 @@ Represents the specific *period* used to measure and reset the fulfillment of a 
 
 ## Content Constraints
 
-| Constraint      | Value          |
-| :-------------- | :------------- |
-| Dataset         | [Contract Commitment](#datamodel.contractcommitment)  |
-| Column type     | Dimension      |
-| Feature level   | Mandatory      |
-| Allows nulls    | False          |
-| Data type       | String         |
-| Value format    | Allowed values |
+| Constraint                 | Value                                                |
+| :------------------------- | :--------------------------------------------------- |
+| Dataset                    | [Contract Commitment](#datamodel.contractcommitment) |
+| Operating model conditions | Not applicable                                       |
+| Column type                | Dimension                                            |
+| Feature level              | Mandatory                                            |
+| Allows nulls               | False                                                |
+| Data type                  | String                                               |
+| Value format               | Allowed values                                       |
 
 ## Version Introduced
 

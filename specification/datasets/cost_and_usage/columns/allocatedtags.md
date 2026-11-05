@@ -10,7 +10,7 @@ AllocatedTags MUST adhere to the following requirements:
 * AllocatedTags MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * AllocatedTags MUST conform to [KeyValueFormat](#attributes.key-valueformat) requirements.
 * AllocatedTags MUST adhere to the following nullability requirements:
-  * AllocatedTags MUST be null when a *charge* is not related to a data generator-calculated split cost allocation.
+  * AllocatedTags MUST be null when a [*charge*](#glossary:charge) is not related to a data generator-calculated split cost allocation.
   * AllocatedTags MAY be null in all other cases.
 * When AllocatedTags is not null, AllocatedTags MUST adhere to the following requirements:
   * AllocatedTags MUST NOT include resource tags already present in [Tags](#datamodel.costandusage.tags).
@@ -54,14 +54,15 @@ A set of tags assigned to tag sources that are applicable to *allocated charges*
 
 ## Content Constraints
 
-| Constraint      | Value                                                |
-| :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datamodel.costandusage)             |
-| Column type     | Dimension                                            |
-| Feature level   | Conditional                                          |
-| Allows nulls    | True                                                 |
-| Data type       | JSON                                                 |
-| Value format    | [Key-Value Format](#attributes.key-valueformat)      |
+| Constraint                 | Value                                           |
+| :------------------------- | :---------------------------------------------- |
+| Dataset                    | [Cost and Usage](#datamodel.costandusage)       |
+| Operating model conditions | [Includes Split Cost Allocation](#operatingmodelconditions.includessplitcostallocation) |
+| Column type                | Dimension                                       |
+| Feature level              | Conditional                                     |
+| Allows nulls               | True                                            |
+| Data type                  | JSON                                            |
+| Value format               | [Key-Value Format](#attributes.key-valueformat) |
 
 ## Version Introduced
 

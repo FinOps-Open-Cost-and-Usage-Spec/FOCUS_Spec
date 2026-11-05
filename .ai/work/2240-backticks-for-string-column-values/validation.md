@@ -1,6 +1,19 @@
 # Validation
 
-## Current Results
+## Interim Branch Update
+
+* Merged `origin/working_draft_interim` at `12770c1` locally, preserving later specification changes while applying the string-value convention to the updated content.
+* The original manifests and their fixed-base validators have not been regenerated for the interim branch; their results below are historical and do not validate the current merge.
+* The classifier identified candidates in the current tracked Markdown, including new SKU Price, AI billing, and supported-feature material. Reviewed values were converted while JSON, code syntax, prefixes, and ordinary quotations were retained.
+* Classifier regression tests: 16 passed.
+* Specification component tests: 191 passed.
+* Specification source Markdown, the assembled Markdown, and updated audit notes passed linting.
+* Specification build completed in separate steps: source lint, include validation and assembly in the Linux container; assembled Markdown lint on the host; HTML and a 459-page PDF generation plus component tests in the container.
+* Requirements-model tests: 181 passed and 51 skipped. The container reported unknown pytest marker warnings for dependency and order markers.
+* A comparison against the interim branch found that non-guidance Markdown changes are quote-to-backtick edits, including three previously reviewed punctuation adjustments.
+* Whitespace validation against the interim branch passed with `core.whitespace=cr-at-eol`.
+
+## Original Results (August 2026)
 
 * Quote-classifier regression tests: 16 passed.
 * Evidence validation: 960 baseline occurrences have one-to-one review decisions; 520 replacements and 416 residual decisions match fresh scans from the fixed base commit.

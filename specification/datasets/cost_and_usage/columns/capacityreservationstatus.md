@@ -1,6 +1,6 @@
 # Capacity Reservation Status
 
-Capacity Reservation Status indicates whether the [*charge*](#glossary:charge) represents either the consumption of the [*capacity reservation*](#glossary:capacity-reservation) identified in the CapacityReservationId column or when the *capacity reservation* is unused.
+Capacity Reservation Status indicates whether the [*charge*](#glossary:charge) represents either the consumption of the [*capacity reservation*](#glossary:capacity-reservation) identified in the [Capacity Reservation ID](#datamodel.costandusage.capacityreservationid) column or when the *capacity reservation* is unused.
 
 ## Requirements
 
@@ -36,14 +36,15 @@ Indicates whether the *charge* represents either the consumption of a *capacity 
 
 ## Content Constraints
 
-| Constraint      | Value                                                |
-| :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datamodel.costandusage)             |
-| Column type     | Dimension                                            |
-| Feature level   | Conditional                                          |
-| Allows nulls    | True                                                 |
-| Data type       | String                                               |
-| Value format    | Allowed values                                       |
+| Constraint                 | Value                                     |
+| :------------------------- | :---------------------------------------- |
+| Dataset                    | [Cost and Usage](#datamodel.costandusage) |
+| Operating model conditions | [Includes Capacity Reservations](#operatingmodelconditions.includescapacityreservations) |
+| Column type                | Dimension                                 |
+| Feature level              | Conditional                               |
+| Allows nulls               | True                                      |
+| Data type                  | String                                    |
+| Value format               | Allowed values                            |
 
 ## Version Introduced
 

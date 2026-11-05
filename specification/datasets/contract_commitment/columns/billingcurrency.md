@@ -1,6 +1,6 @@
 # Billing Currency
 
-[*Billing currency*](#glossary:billing-currency) is an identifier that represents the currency of a [*contract commitment*](#glossary:contract-commitment).
+[*Billing Currency*](#glossary:billing-currency) is an identifier that represents the currency of a [*contract commitment*](#glossary:contract-commitment).
 
 ## Requirements
 
@@ -27,14 +27,15 @@ Represents the currency of a *contract commitment*.
 
 ## Content Constraints
 
-| Constraint      | Value                                                |
-|:----------------|:-----------------------------------------------------|
-| Dataset         | [Contract Commitment](#datamodel.contractcommitment)  |
-| Column type     | Dimension                                            |
-| Feature level   | Mandatory                                            |
-| Allows nulls    | True                                                 |
-| Data type       | String                                               |
-| Value format    | [Currency Format](#attributes.currencyformat)        |
+| Constraint                 | Value                                                |
+| :------------------------- | :--------------------------------------------------- |
+| Dataset                    | [Contract Commitment](#datamodel.contractcommitment) |
+| Operating model conditions | Not applicable                                       |
+| Column type                | Dimension                                            |
+| Feature level              | Mandatory                                            |
+| Allows nulls               | True                                                 |
+| Data type                  | String                                               |
+| Value format               | [Currency Format](#attributes.currencyformat)        |
 
 ## Version Introduced
 

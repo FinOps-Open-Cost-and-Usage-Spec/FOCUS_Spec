@@ -21,17 +21,19 @@ The Invoice Detail dataset is a transactional dataset that represents the financ
 | [Invoice Issue Date](#datamodel.invoicedetail.invoiceissuedate)                   | Dimension   | Mandatory     | True        | Date/Time |
 | [Invoice Issue Status](#datamodel.invoicedetail.invoiceissuestatus)             | Dimension   | Mandatory     | False        | String    |
 | [Invoice Issuer Name](#datamodel.invoicedetail.invoiceissuername)                 | Dimension   | Mandatory     | False        | String    |
-| [Payment Currency](#datamodel.invoicedetail.paymentcurrency)                     | Dimension   | [Conditional](#conditions.includesbillingandpaymentcurrencydifferences)   | False        | String    |
-| [Payment Currency Billed Cost](#datamodel.invoicedetail.paymentcurrencybilledcost) | Metric      | [Conditional](#conditions.includesbillingandpaymentcurrencydifferences)   | False        | Decimal   |
-| [Payment Currency Invoice Detail ID](#datamodel.invoicedetail.paymentcurrencyinvoicedetailid) | Dimension | [Conditional](#conditions.includesaggregationlevelcurrencydifferences) | False | String |
+| [Payment Currency](#datamodel.invoicedetail.paymentcurrency)                     | Dimension   | Conditional   | False        | String    |
+| [Payment Currency Billed Cost](#datamodel.invoicedetail.paymentcurrencybilledcost) | Metric      | Conditional   | False        | Decimal   |
+| [Payment Currency Invoice Detail ID](#datamodel.invoicedetail.paymentcurrencyinvoicedetailid) | Dimension | Conditional | False | String |
 | [Payment Due Date](#datamodel.invoicedetail.paymentduedate)               | Dimension   | Mandatory     | True         | Date/Time |
 | [Payment Terms](#datamodel.invoicedetail.paymentterms)                     | Dimension   | Mandatory     | False        | String    |
-| [Purchase Order Number](#datamodel.invoicedetail.purchaseordernumber)             | Dimension   | [Conditional](#conditions.includespurchaseordernumbers)   | True        | String    |
+| [Purchase Order Number](#datamodel.invoicedetail.purchaseordernumber)             | Dimension   | Conditional   | True        | String    |
 | [Reference Invoice ID](#datamodel.invoicedetail.referenceinvoiceid)               | Dimension   | Mandatory     | False        | String    |
 
 ## Relationships<!--SkipTOC-->
 
-The Invoice Detail dataset can be joined to the [Cost and Usage](#datamodel.costandusage) dataset through Invoice Issuer Name, Invoice ID, and (optionally) Invoice Detail ID. Take note: one or both datasets will need to be aggregated in order to facilitate any comparison.
+The Invoice Detail dataset can be joined to the Cost and Usage dataset through Invoice Issuer Name, Invoice ID, and (optionally) Invoice Detail ID.
+
+> **Note:** One or both datasets will need to be aggregated in order to facilitate any comparison.
 
 The timing of Invoice ID and Invoice Detail ID availability in Cost and Usage varies across data generators. Some data generators populate these values while the [*billing period*](#glossary:billing-period) is still open, while others do not populate them until after the *billing period* is closed and invoices have been issued.
 
@@ -62,12 +64,12 @@ InvoiceDetail MUST adhere to the following requirements:
   * InvoiceDetail MUST include [InvoiceIssueDate](#datamodel.invoicedetail.invoiceissuedate).
   * InvoiceDetail MUST include [InvoiceIssueStatus](#datamodel.invoicedetail.invoiceissuestatus).
   * InvoiceDetail MUST include [InvoiceIssuerName](#datamodel.invoicedetail.invoiceissuername).
-  * InvoiceDetail MUST include [PaymentCurrency](#datamodel.invoicedetail.paymentcurrency) when the [*operating model*](#glossary:operating-model) [includes billing and payment currency differences](#conditions.includesbillingandpaymentcurrencydifferences).
-  * InvoiceDetail MUST include [PaymentCurrencyBilledCost](#datamodel.invoicedetail.paymentcurrencybilledcost) when the *operating model* [includes billing and payment currency differences](#conditions.includesbillingandpaymentcurrencydifferences).
-  * InvoiceDetail MUST include [PaymentCurrencyInvoiceDetailId](#datamodel.invoicedetail.paymentcurrencyinvoicedetailid) when the *operating model* [includes aggregation level currency differences](#conditions.includesaggregationlevelcurrencydifferences).
+  * InvoiceDetail MUST include [PaymentCurrency](#datamodel.invoicedetail.paymentcurrency) when the [*operating model*](#glossary:operating-model) [includes billing and payment currency differences](#operatingmodelconditions.includesbillingandpaymentcurrencydifferences).
+  * InvoiceDetail MUST include [PaymentCurrencyBilledCost](#datamodel.invoicedetail.paymentcurrencybilledcost) when the *operating model* includes billing and payment currency differences.
+  * InvoiceDetail MUST include [PaymentCurrencyInvoiceDetailId](#datamodel.invoicedetail.paymentcurrencyinvoicedetailid) when the *operating model* [includes aggregation level currency differences](#operatingmodelconditions.includesaggregationlevelcurrencydifferences).
   * InvoiceDetail MUST include [PaymentDueDate](#datamodel.invoicedetail.paymentduedate).
   * InvoiceDetail MUST include [PaymentTerms](#datamodel.invoicedetail.paymentterms).
-  * InvoiceDetail MUST include [PurchaseOrderNumber](#datamodel.invoicedetail.purchaseordernumber) when the *operating model* [includes purchase order numbers](#conditions.includespurchaseordernumbers).
+  * InvoiceDetail MUST include [PurchaseOrderNumber](#datamodel.invoicedetail.purchaseordernumber) when the *operating model* [includes purchase order numbers](#operatingmodelconditions.includespurchaseordernumbers).
   * InvoiceDetail MUST include [ReferenceInvoiceId](#datamodel.invoicedetail.referenceinvoiceid).
   * InvoiceDetail MUST include [*custom columns*](#glossary:custom-column) to represent any monetary metric that appears on an invoice issued to a BillingAccountId when there is no equivalent [*FOCUS column*](#glossary:FOCUS-column).
 * InvoiceDetail MUST conform to [CorrectionHandling](#attributes.correctionhandling) requirements.
@@ -75,7 +77,7 @@ InvoiceDetail MUST adhere to the following requirements:
 * InvoiceDetail MUST conform to [DatasetConfiguration](#attributes.datasetconfiguration) requirements.
 * InvoiceDetail MUST conform to [DeliveryHandling](#attributes.deliveryhandling) requirements.
 * InvoiceDetail MUST represent all invoice line items with a non-zero BilledCost on any invoice associated with a BillingAccountId.
-* InvoiceDetail [*FOCUS columns*](#glossary:FOCUS-column) MUST conform to [FocusColumnHandling](#attributes.focuscolumnhandling) requirements.
+* InvoiceDetail *FOCUS columns* MUST conform to [FocusColumnHandling](#attributes.focuscolumnhandling) requirements.
 * InvoiceDetail *FOCUS columns* MUST conform to [NullHandling](#attributes.nullhandling) requirements.
 * InvoiceDetail *custom columns* MUST conform to [CustomColumnHandling](#attributes.customcolumnhandling) requirements.
 * InvoiceDetail documentation MUST adhere to the following requirements:

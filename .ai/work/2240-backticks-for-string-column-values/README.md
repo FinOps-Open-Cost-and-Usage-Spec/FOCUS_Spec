@@ -1,5 +1,7 @@
 # Issue 2240 Audit Evidence
 
+> **Note:** The inventories and validation commands below describe the original August 2026 change against `02e7dfb`. They are historical evidence and do not validate the merge with `working_draft_interim` at `12770c1`. See `validation.md` for the updated work.
+
 This folder preserves the audit methodology for the repository-wide editorial rewrite. The classifier inventories candidates; it does not decide which quotation marks to replace. Every baseline occurrence has a decision in `evidence/repository_review_manifest.tsv`, every manifest-controlled replacement is recorded in `evidence/applied_manifest.tsv`, and every double-quoted occurrence retained in the worktree has an explicit skip decision in `evidence/residual_manifest.tsv`. Contributor-guidance files that required render-safe HTML or explanatory edits are reviewed separately and explicitly allowlisted by the source validator.
 
 All comparisons use the fixed pre-change commit `02e7dfbcc347edaade318eb06e111d18da3c4620`. This keeps the workflow valid after changes are staged or committed and prevents generated files such as `specification/spec.md` from entering the inventory.

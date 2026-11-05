@@ -9,7 +9,7 @@ ContractCommitmentLifecycleStatus MUST adhere to the following requirements:
 * ContractCommitmentLifecycleStatus MUST be of type String.
 * ContractCommitmentLifecycleStatus MUST NOT be null.
 * ContractCommitmentLifecycleStatus MUST be one of the allowed values.
-* When a contract commitment record is modified in a way that requires a new [ContractCommitmentID](#datamodel.contractcommitment.contractcommitmentid), ContractCommitmentLifecycleStatus for the previous record MUST be `Superseded`.
+* When a contract commitment record is modified in a way that requires a new [ContractCommitmentId](#datamodel.contractcommitment.contractcommitmentid), ContractCommitmentLifecycleStatus for the previous record MUST be `Superseded`.
 
 ## Allowed Values
 
@@ -37,14 +37,15 @@ The current lifecycle state of a *contract commitment*.
 
 ## Content Constraints
 
-| Constraint      | Value          |
-| :-------------- | :------------- |
-| Dataset         | [Contract Commitment](#datamodel.contractcommitment)  |
-| Column type     | Dimension      |
-| Feature level   | Mandatory      |
-| Allows nulls    | False          |
-| Data type       | String         |
-| Value format    | Allowed values |
+| Constraint                 | Value                                                |
+| :------------------------- | :--------------------------------------------------- |
+| Dataset                    | [Contract Commitment](#datamodel.contractcommitment) |
+| Operating model conditions | Not applicable                                       |
+| Column type                | Dimension                                            |
+| Feature level              | Mandatory                                            |
+| Allows nulls               | False                                                |
+| Data type                  | String                                               |
+| Value format               | Allowed values                                       |
 
 ## Version Introduced
 
