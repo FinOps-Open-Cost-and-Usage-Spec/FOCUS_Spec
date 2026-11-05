@@ -1,14 +1,14 @@
 # Service Category
 
-The Service Category is the highest-level classification of a [*service*](#glossary:service) based on the core function of the *service*. Each *service* should have one and only one category that best aligns with its primary purpose. The Service Category is commonly used for scenarios like analyzing costs across service providers and tracking the migration of workloads across fundamentally different architectures.
+The [Service Category](#col) is the highest-level classification of a [service](#term) based on the core function of the [service](#term). Each [service](#term) should have one and only one category that best aligns with its primary purpose. The [Service Category](#col) is commonly used for scenarios like analyzing costs across service providers and tracking the migration of workloads across fundamentally different architectures.
 
 ## Requirements
 
-ServiceCategory MUST adhere to the following requirements:
+[ServiceCategory](#col) MUST adhere to the following requirements:
 
-* ServiceCategory MUST be of type String.
-* ServiceCategory MUST NOT be null.
-* ServiceCategory MUST be one of the allowed values.
+* [ServiceCategory](#col) MUST be of type String.
+* [ServiceCategory](#col) MUST NOT be null.
+* [ServiceCategory](#col) MUST be one of the allowed values.
 
 ## Allowed Values
 
@@ -44,13 +44,13 @@ Service Category
 
 ## Description
 
-Highest-level classification of a *service* based on the core function of the *service*.
+Highest-level classification of a [service](#term) based on the core function of the [service](#term).
 
 ## Content Constraints
 
 | Constraint                 | Value                                     |
 | :------------------------- | :---------------------------------------- |
-| Dataset                    | [Cost and Usage](#datamodel.costandusage) |
+| Dataset                    | [Cost and Usage](#ds)                     |
 | Operating model conditions | Not applicable                            |
 | Column type                | Dimension                                 |
 | Feature level              | Mandatory                                 |

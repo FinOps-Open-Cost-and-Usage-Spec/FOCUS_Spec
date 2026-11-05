@@ -1,14 +1,14 @@
 # Billing Account Name
 
-A Billing Account Name is a display name assigned to a [*billing account*](#glossary:billing-account). *Billing accounts* are commonly used for scenarios like grouping based on organizational constructs, invoice reconciliation and cost allocation strategies.
+A [Billing Account Name](#col) is a display name assigned to a [billing account](#term). [Billing accounts](#term) are commonly used for scenarios like grouping based on organizational constructs, invoice reconciliation and cost allocation strategies.
 
 ## Requirements
 
-BillingAccountName MUST adhere to the following requirements:
+[BillingAccountName](#col) MUST adhere to the following requirements:
 
-* BillingAccountName MUST be of type String.
-* BillingAccountName MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* BillingAccountName MUST NOT be null when the [*invoice issuer*](#glossary:invoice-issuer) supports assigning a display name for the *billing account*.
+* [BillingAccountName](#col) MUST be of type String.
+* [BillingAccountName](#col) MUST conform to [StringHandling](#attr) requirements.
+* [BillingAccountName](#col) MUST NOT be null when the [invoice issuer](#term) supports assigning a display name for the [billing account](#term).
 
 See [Appendix: Grouping constructs for resources or services](#appendix.groupingconstructsforresourcesorservices) for details and examples of the different grouping constructs supported by FOCUS.
 
@@ -22,13 +22,13 @@ Billing Account Name
 
 ## Description
 
-The display name assigned to a *billing account*.
+The display name assigned to a [billing account](#term).
 
 ## Content Constraints
 
 | Constraint                 | Value                                     |
 | :------------------------- | :---------------------------------------- |
-| Dataset                    | [Cost and Usage](#datamodel.costandusage) |
+| Dataset                    | [Cost and Usage](#ds)                     |
 | Operating model conditions | Not applicable                            |
 | Column type                | Dimension                                 |
 | Feature level              | Mandatory                                 |

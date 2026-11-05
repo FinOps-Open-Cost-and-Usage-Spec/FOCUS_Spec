@@ -1,6 +1,6 @@
 # Examples: Contract Commitment Applicability
 
-This section describes examples for the [Contract Commitment Applicability](#datamodel.contractcommitment.contractcommitmentapplicability) column in the [Contract Commitment](#datamodel.contractcommitment) dataset.
+This section describes examples for the [Contract Commitment Applicability](#col) column in the [Contract Commitment](#ds) dataset.
 
 ## Global Scope and Applicability
 
@@ -14,7 +14,7 @@ If the commitment is 100% applicable to all resources, the `Applicability` objec
 
 ## Global Scope with Specific Exceptions
 
-Organization-wide coverage **except** for Database services running in BillingAccountId 123456789012.
+Organization-wide coverage **except** for Database services running in [BillingAccountId](#col:CostAndUsage.BillingAccountId) 123456789012.
 
 ```json
 {

@@ -1,13 +1,13 @@
 # Includes Multiple Billing Account Types
 
-The Includes Multiple Billing Account Types operating model condition represents a verifiable state indicating whether the [*operating model*](#glossary:operating-model) includes multiple [Billing Account Types](#datamodel.costandusage.billingaccounttype).
+The [Includes Multiple Billing Account Types](#omc) operating model condition represents a verifiable state indicating whether the [operating model](#term) includes multiple [Billing Account Types](#col:BillingAccountType).
 
 ## Requirements
 
-IncludesMultipleBillingAccountTypes MUST adhere to the following requirements:
+[IncludesMultipleBillingAccountTypes](#omc) MUST adhere to the following requirements:
 
-* IncludesMultipleBillingAccountTypes MUST evaluate to true when the *operating model* includes multiple BillingAccountTypes.
-* IncludesMultipleBillingAccountTypes MUST evaluate to false when the *operating model* does not include multiple BillingAccountTypes.
+* [IncludesMultipleBillingAccountTypes](#omc) MUST evaluate to true when the [operating model](#term) includes multiple BillingAccountTypes.
+* [IncludesMultipleBillingAccountTypes](#omc) MUST evaluate to false when the [operating model](#term) does not include multiple BillingAccountTypes.
 
 ## Operating Model Condition ID
 
@@ -19,7 +19,7 @@ Includes Multiple Billing Account Types
 
 ## Description
 
-A verifiable state indicating whether the *operating model* includes multiple Billing Account Types.
+A verifiable state indicating whether the [operating model](#term) includes multiple Billing Account Types.
 
 ## Version Introduced
 

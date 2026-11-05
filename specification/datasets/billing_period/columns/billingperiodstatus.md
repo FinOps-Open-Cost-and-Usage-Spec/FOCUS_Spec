@@ -1,16 +1,16 @@
 # Billing Period Status
 
-Billing Period Status represents the state of the billing period (i.e., "Open" or "Closed"). This status helps FinOps practitioners determine if the [Cost and Usage](#datamodel.costandusage) and [Invoice Detail](#datamodel.invoicedetail) data for a given period is preliminary and subject to change, or if all anticipated invoices have been issued and the delivered data is finalized and ready for formal financial reporting and showback/chargeback processes.
+[Billing Period Status](#col) represents the state of the billing period (i.e., ["Open"](#val:BillingPeriodStatus) or ["Closed"](#val:BillingPeriodStatus)). This status helps FinOps practitioners determine if the [Cost and Usage](#ds) and [Invoice Detail](#ds) data for a given period is preliminary and subject to change, or if all anticipated invoices have been issued and the delivered data is finalized and ready for formal financial reporting and showback/chargeback processes.
 
 ## Requirements
 
-BillingPeriodStatus MUST adhere to the following requirements:
+[BillingPeriodStatus](#col) MUST adhere to the following requirements:
 
-* BillingPeriodStatus MUST be of type String.
-* BillingPeriodStatus MUST NOT be null.
-* BillingPeriodStatus MUST be one of the allowed values.
-* BillingPeriodStatus MUST represent the state of the billing period identified by [BillingPeriodStart](#datamodel.billingperiod.billingperiodstart) and [BillingPeriodEnd](#datamodel.billingperiod.billingperiodend).
-* BillingPeriodStatus MUST NOT be "Open" following a previous status of "Closed", except when explicitly requested or approved by the customer.
+* [BillingPeriodStatus](#col) MUST be of type String.
+* [BillingPeriodStatus](#col) MUST NOT be null.
+* [BillingPeriodStatus](#col) MUST be one of the allowed values.
+* [BillingPeriodStatus](#col) MUST represent the state of the billing period identified by [BillingPeriodStart](#col) and [BillingPeriodEnd](#col).
+* [BillingPeriodStatus](#col) MUST NOT be ["Open"](#val:BillingPeriodStatus) following a previous status of ["Closed"](#val:BillingPeriodStatus), except when explicitly requested or approved by the customer.
 
 ## Allowed Values
 
@@ -21,19 +21,19 @@ BillingPeriodStatus MUST adhere to the following requirements:
 
 ## Implementation Guidance
 
-While the transition from "Open" to "Closed" typically signifies the end of a billing cycle, in scenarios such as the following, it may be necessary to provide corrections to closed billing periods:
+While the transition from ["Open"](#val:BillingPeriodStatus) to ["Closed"](#val:BillingPeriodStatus) typically signifies the end of a billing cycle, in scenarios such as the following, it may be necessary to provide corrections to closed billing periods:
 
-* Retroactive adjustments: an [*invoice issuer*](#glossary:invoice-issuer) generates credits or corrections for a period previously marked as finalized.
+* Retroactive adjustments: an [invoice issuer](#term) generates credits or corrections for a period previously marked as finalized.
 * Audit corrections: discrepancies are discovered during financial reconciliation that require the data to be re-processed.
 * Late-arriving usage: occasional delays in usage reporting necessitate a revision of the final invoice.
 
-Corrections to closed billing periods are generally represented in the context of a subsequent open billing period to preserve historical financial accuracy and ensure transparent tracking. Exceptionally, a previously closed billing period may be reopened to apply such corrections, but this transition from "Closed" to "Open" must be explicitly requested or approved by the customer to maintain auditability and the integrity of financial reporting.
+Corrections to closed billing periods are generally represented in the context of a subsequent open billing period to preserve historical financial accuracy and ensure transparent tracking. Exceptionally, a previously closed billing period may be reopened to apply such corrections, but this transition from ["Closed"](#val:BillingPeriodStatus) to ["Open"](#val:BillingPeriodStatus) must be explicitly requested or approved by the customer to maintain auditability and the integrity of financial reporting.
 
-Corrections that do not impact the integrity of the closed billing period, such as informational or metadata updates, are allowed regardless of Billing Period Status.
+Corrections that do not impact the integrity of the closed billing period, such as informational or metadata updates, are allowed regardless of [Billing Period Status](#col).
 
-FinOps tools and reporting engines should be designed to detect Billing Period Status transitions and corrections to closed billing periods, and trigger updates to downstream processes (e.g., cost allocation, chargeback, reporting) to ensure financial accuracy.
+FinOps tools and reporting engines should be designed to detect [Billing Period Status](#col) transitions and corrections to closed billing periods, and trigger updates to downstream processes (e.g., cost allocation, chargeback, reporting) to ensure financial accuracy.
 
-For more information, please see the [Invoice and Billing Period Handling](#appendix.invoiceandbillingperiodhandling) appendix and the [Correction Handling](#attributes.correctionhandling) attribute.
+For more information, please see the [Invoice and Billing Period Handling](#appendix.invoiceandbillingperiodhandling) appendix and the [Correction Handling](#attr) attribute.
 
 ## Column ID
 
@@ -45,13 +45,13 @@ Billing Period Status
 
 ## Description
 
-The state of the billing period (i.e., "Open" or "Closed"), indicating whether the delivered data for the period is preliminary, or if all anticipated invoices have been issued and the delivered data is finalized.
+The state of the billing period (i.e., ["Open"](#val:BillingPeriodStatus) or ["Closed"](#val:BillingPeriodStatus)), indicating whether the delivered data for the period is preliminary, or if all anticipated invoices have been issued and the delivered data is finalized.
 
 ## Content Constraints
 
 | Constraint                 | Value                                      |
 | :------------------------- | :----------------------------------------- |
-| Dataset                    | [Billing Period](#datamodel.billingperiod) |
+| Dataset                    | [Billing Period](#ds)                      |
 | Operating model conditions | Not applicable                             |
 | Column type                | Dimension                                  |
 | Feature level              | Mandatory                                  |

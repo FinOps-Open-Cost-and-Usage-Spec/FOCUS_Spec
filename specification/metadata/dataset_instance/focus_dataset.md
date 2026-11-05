@@ -2,12 +2,12 @@
 
 The identifier of the FOCUS dataset for which the schema and its data conform to. This indicates which FOCUS dataset the data artifact aligns with, such as "FOCUS Cost and Usage" or "FOCUS Contract."
 
-The FocusDatasetId property adheres to the following requirements:
+The [FocusDatasetId](#meta) property adheres to the following requirements:
 
-* FocusDatasetId MUST be present in an object within the [DatasetInstance](#metadata.datasetinstance) collection.
-* FocusDatasetId MUST be of type String.
-* FocusDatasetId MUST NOT be null.
-* FocusDatasetId MUST match the Dataset ID of one of the [*FOCUS datasets*](#glossary:FOCUS-dataset) defined in the FOCUS specification.
+* [FocusDatasetId](#meta) MUST be present in an object within the [DatasetInstance](#meta) collection.
+* [FocusDatasetId](#meta) MUST be of type String.
+* [FocusDatasetId](#meta) MUST NOT be null.
+* [FocusDatasetId](#meta) MUST match the Dataset ID of one of the [FOCUS datasets](#term) defined in the FOCUS specification.
 
 ## Metadata ID
 

@@ -1,16 +1,16 @@
 # Contract Commitment Offer Category
 
-Contract Commitment Offer Category indicates whether the pricing and terms of a [*contract commitment*](#glossary:contract-commitment) are based on a standard, publicly accessible offering or have been specifically brokered through private negotiation.
+[Contract Commitment Offer Category](#col) indicates whether the pricing and terms of a [contract commitment](#term) are based on a standard, publicly accessible offering or have been specifically brokered through private negotiation.
 
-Contract Commitment Offer Category has two possible values: **Public** and **Negotiated**. _Public_ denotes terms and pricing that are generally available to all customers via a service provider's standard rate card or portal. _Negotiated_ denotes terms and pricing that have been specifically modified through an agreement between the customer and the service provider.
+[Contract Commitment Offer Category](#col) has two possible values: **Public** and **Negotiated**. _Public_ denotes terms and pricing that are generally available to all customers via a service provider's standard rate card or portal. _Negotiated_ denotes terms and pricing that have been specifically modified through an agreement between the customer and the service provider.
 
 ## Requirements
 
-ContractCommitmentOfferCategory MUST adhere to the following requirements:
+[ContractCommitmentOfferCategory](#col) MUST adhere to the following requirements:
 
-* ContractCommitmentOfferCategory MUST be of type String.
-* ContractCommitmentOfferCategory MUST NOT be null.
-* ContractCommitmentOfferCategory MUST be one of the allowed values.
+* [ContractCommitmentOfferCategory](#col) MUST be of type String.
+* [ContractCommitmentOfferCategory](#col) MUST NOT be null.
+* [ContractCommitmentOfferCategory](#col) MUST be one of the allowed values.
 
 ## Allowed Values
 
@@ -36,13 +36,13 @@ Contract Commitment Offer Category
 
 ## Description
 
-Indicates whether the pricing and terms of a *contract commitment* are based on a standard, publicly accessible offering or have been specifically brokered through private negotiation.
+Indicates whether the pricing and terms of a [contract commitment](#term) are based on a standard, publicly accessible offering or have been specifically brokered through private negotiation.
 
 ## Content Constraints
 
 | Constraint                 | Value                                                |
 | :------------------------- | :--------------------------------------------------- |
-| Dataset                    | [Contract Commitment](#datamodel.contractcommitment) |
+| Dataset                    | [Contract Commitment](#ds)                           |
 | Operating model conditions | Not applicable                                       |
 | Column type                | Dimension                                            |
 | Feature level              | Mandatory                                            |

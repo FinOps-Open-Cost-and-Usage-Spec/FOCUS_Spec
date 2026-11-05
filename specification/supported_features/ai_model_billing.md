@@ -1,36 +1,40 @@
+---
+dataset: CostAndUsage
+---
+
 # AI Model Billing
 
 ## Description
 
-FOCUS enables normalization of usage-based billing data from artificial intelligence and machine learning services, including token consumption for AI model APIs. Token quantities are represented through consumption and pricing columns, allowing consumption and cost to be tracked by [*SKU*](#glossary:sku), token direction, and cache interaction. The TokenDirection and TokenCacheAction properties of [SkuPriceDetails](#datamodel.costandusage.skupricedetails) label the direction of the metered tokens and their interaction with a cache, so those attributes can be compared across service providers independently of provider-specific meter names, with model identity carried in the same SkuPriceDetails object.
+FOCUS enables normalization of usage-based billing data from artificial intelligence and machine learning services, including token consumption for AI model APIs. Token quantities are represented through consumption and pricing columns, allowing consumption and cost to be tracked by [SKU](#term), token direction, and cache interaction. The TokenDirection and TokenCacheAction properties of [SkuPriceDetails](#col) label the direction of the metered tokens and their interaction with a cache, so those attributes can be compared across service providers independently of provider-specific meter names, with model identity carried in the same [SkuPriceDetails](#col) object.
 
 ## Directly Dependent Columns
 
-* ConsumedQuantity
-* ConsumedUnit
-* PricingQuantity
-* PricingUnit
-* SkuId
-* SkuMeter
-* SkuPriceDetails
+* [ConsumedQuantity](#col)
+* [ConsumedUnit](#col)
+* [PricingQuantity](#col)
+* [PricingUnit](#col)
+* [SkuId](#col)
+* [SkuMeter](#col)
+* [SkuPriceDetails](#col)
 
 ## Supporting Columns
 
-* BillingCurrency
-* ChargeCategory
-* ChargePeriodEnd
-* ChargePeriodStart
-* EffectiveCost
-* InvoiceIssuerName
-* ServiceCategory
-* ServiceName
-* ServiceProviderName
-* ServiceSubcategory
-* SkuPriceId
+* [BillingCurrency](#col)
+* [ChargeCategory](#col)
+* [ChargePeriodEnd](#col)
+* [ChargePeriodStart](#col)
+* [EffectiveCost](#col)
+* [InvoiceIssuerName](#col)
+* [ServiceCategory](#col)
+* [ServiceName](#col)
+* [ServiceProviderName](#col)
+* [ServiceSubcategory](#col)
+* [SkuPriceId](#col)
 
 ## Example SQL Queries
 
-The following queries use BigQuery Standard SQL JSON functions (e.g., `JSON_VALUE`) to read the ModelDeveloper, ModelId, TokenDirection, and TokenCacheAction properties from SkuPriceDetails. Similar JSON functions are widely available across major SQL engines with variances in syntax, so the examples may need to be adapted for other database engines. Standard SQL functions used here (e.g., `NULLIF`) should work without modification.
+The following queries use BigQuery Standard SQL JSON functions (e.g., `JSON_VALUE`) to read the ModelDeveloper, ModelId, TokenDirection, and TokenCacheAction properties from [SkuPriceDetails](#col). Similar JSON functions are widely available across major SQL engines with variances in syntax, so the examples may need to be adapted for other database engines. Standard SQL functions used here (e.g., `NULLIF`) should work without modification.
 
 ### Effective Cost Per Million Tokens
 

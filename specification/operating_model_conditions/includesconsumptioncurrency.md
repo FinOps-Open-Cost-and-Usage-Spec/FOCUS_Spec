@@ -1,13 +1,13 @@
 # Includes Consumption Currency
 
-The Includes Consumption Currency operating model condition represents a verifiable state indicating whether the [*operating model*](#glossary:operating-model) includes prices in [*consumption currency*](#glossary:consumption-currency).
+The [Includes Consumption Currency](#omc) operating model condition represents a verifiable state indicating whether the [operating model](#term) includes prices in [consumption currency](#term).
 
 ## Requirements
 
-IncludesConsumptionCurrency MUST adhere to the following requirements:
+[IncludesConsumptionCurrency](#omc) MUST adhere to the following requirements:
 
-* IncludesConsumptionCurrency MUST evaluate to true when the *operating model* includes prices in *consumption currency*.
-* IncludesConsumptionCurrency MUST evaluate to false when the *operating model* does not include prices in *consumption currency*.
+* [IncludesConsumptionCurrency](#omc) MUST evaluate to true when the [operating model](#term) includes prices in [consumption currency](#term).
+* [IncludesConsumptionCurrency](#omc) MUST evaluate to false when the [operating model](#term) does not include prices in [consumption currency](#term).
 
 ## Operating Model Condition ID
 
@@ -19,7 +19,7 @@ Includes Consumption Currency
 
 ## Description
 
-A verifiable state indicating whether the *operating model* includes prices in *consumption currency*.
+A verifiable state indicating whether the [operating model](#term) includes prices in [consumption currency](#term).
 
 ## Version Introduced
 

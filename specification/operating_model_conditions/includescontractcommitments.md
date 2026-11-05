@@ -1,13 +1,13 @@
 # Includes Contract Commitments
 
-The Includes Contract Commitments operating model condition represents a verifiable state indicating whether the [*operating model*](#glossary:operating-model) includes [*contract commitments*](#glossary:contract-commitment).
+The [Includes Contract Commitments](#omc) operating model condition represents a verifiable state indicating whether the [operating model](#term) includes [contract commitments](#term).
 
 ## Requirements
 
-IncludesContractCommitments MUST adhere to the following requirements:
+[IncludesContractCommitments](#omc) MUST adhere to the following requirements:
 
-* IncludesContractCommitments MUST evaluate to true when the *operating model* includes *contract commitments*.
-* IncludesContractCommitments MUST evaluate to false when the *operating model* does not include *contract commitments*.
+* [IncludesContractCommitments](#omc) MUST evaluate to true when the [operating model](#term) includes [contract commitments](#term).
+* [IncludesContractCommitments](#omc) MUST evaluate to false when the [operating model](#term) does not include [contract commitments](#term).
 
 ## Operating Model Condition ID
 
@@ -19,7 +19,7 @@ Includes Contract Commitments
 
 ## Description
 
-A verifiable state indicating whether the *operating model* includes *contract commitments*.
+A verifiable state indicating whether the [operating model](#term) includes [contract commitments](#term).
 
 ## Version Introduced
 

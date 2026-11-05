@@ -1,3 +1,7 @@
+---
+dataset: CostAndUsage
+---
+
 # Verification, Comparison, and Fluctuation Tracking of Unit Prices
 
 ## Description
@@ -10,18 +14,18 @@ When a service provider supports unit pricing concepts, FOCUS allows practitione
 
 ## Directly Dependent Columns
 
-* ContractedUnitPrice
-* ListUnitPrice
-* SkuId
-* SkuPriceDetails
-* SkuPriceId
+* [ContractedUnitPrice](#col)
+* [ListUnitPrice](#col)
+* [SkuId](#col)
+* [SkuPriceDetails](#col)
+* [SkuPriceId](#col)
 
 ## Supporting Columns
 
-* BillingCurrency
-* BillingPeriodStart
-* ChargePeriodEnd
-* ChargePeriodStart
+* [BillingCurrency](#col)
+* [BillingPeriodStart](#col)
+* [ChargePeriodEnd](#col)
+* [ChargePeriodStart](#col)
 
 ## Example SQL Query
 

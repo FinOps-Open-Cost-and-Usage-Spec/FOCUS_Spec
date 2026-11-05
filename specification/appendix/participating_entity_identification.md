@@ -1,13 +1,17 @@
+---
+dataset: CostAndUsage
+---
+
 # Examples: Participating Entity Identification
 
 Understanding cost and usage data in billing datasets requires identifying the roles of several participating entities involved in resource or service provisioning, invoicing, and data generation. The FOCUS Specification includes multiple columns to identify key participating entities, these include:
 
-* [Service Provider Name](#datamodel.costandusage.serviceprovidername)
-* [Invoice Issuer Name](#datamodel.costandusage.invoiceissuername)
-* [Host Provider Name](#datamodel.costandusage.hostprovidername)
-* [Data Generator](#metadata.datagenerator)
+* [Service Provider Name](#col)
+* [Invoice Issuer Name](#col)
+* [Host Provider Name](#col)
+* [Data Generator](#meta)
 
-The value for each of these may vary depending on how *resources* or *services* are obtained — whether directly from a Cloud Service Provider (CSP) or a SaaS provider, via a Managed Service Provider (MSP), through a cloud marketplace, or from internal service offerings. The table below provides examples that illustrate how the value for each dimension may shift depending on the method of acquisition and other contributing factors.
+The value for each of these may vary depending on how [resources](#term) or [services](#term) are obtained — whether directly from a Cloud Service Provider (CSP) or a SaaS provider, via a Managed Service Provider (MSP), through a cloud marketplace, or from internal service offerings. The table below provides examples that illustrate how the value for each dimension may shift depending on the method of acquisition and other contributing factors.
 
 | #     | Scenario                                                                                                                                                                       | Service Provider             | Invoice Issuer | Host Provider                           | Data Generator     |
 |-------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------|----------------|-----------------------------------------|--------------------|

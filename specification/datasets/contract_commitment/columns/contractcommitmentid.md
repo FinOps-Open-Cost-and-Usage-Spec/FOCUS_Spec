@@ -1,18 +1,18 @@
 # Contract Commitment ID
 
-Contract Commitment ID is a service-provider-assigned identifier describing a single contract term agreed between a provider and a customer. Contracts can include commitments to a certain amount of spend or usage over an agreed period of time.
+[Contract Commitment ID](#col) is a service-provider-assigned identifier describing a single contract term agreed between a provider and a customer. Contracts can include commitments to a certain amount of spend or usage over an agreed period of time.
 
 ## Requirements
 
-ContractCommitmentId MUST adhere to the following requirements:
+[ContractCommitmentId](#col) MUST adhere to the following requirements:
 
-* ContractCommitmentId MUST be of type String.
-* ContractCommitmentId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* ContractCommitmentId MUST NOT be null.
-* ContractCommitmentId MUST be a unique identifier within the service provider.
-* ContractCommitmentId SHOULD be a fully-qualified identifier.
-* ContractCommitmentId MUST have one and only one parent [ContractId](#datamodel.contractcommitment.contractid).
-* ContractCommitmentId MAY match ContractId.
+* [ContractCommitmentId](#col) MUST be of type String.
+* [ContractCommitmentId](#col) MUST conform to [StringHandling](#attr) requirements.
+* [ContractCommitmentId](#col) MUST NOT be null.
+* [ContractCommitmentId](#col) MUST be a unique identifier within the service provider.
+* [ContractCommitmentId](#col) SHOULD be a fully-qualified identifier.
+* [ContractCommitmentId](#col) MUST have one and only one parent [ContractId](#col).
+* [ContractCommitmentId](#col) MAY match [ContractId](#col).
 
 ## Column ID
 
@@ -30,7 +30,7 @@ A service-provider-assigned identifier describing a single contract term agreed 
 
 | Constraint                 | Value                                                |
 | :------------------------- | :--------------------------------------------------- |
-| Dataset                    | [Contract Commitment](#datamodel.contractcommitment) |
+| Dataset                    | [Contract Commitment](#ds)                           |
 | Operating model conditions | Not applicable                                       |
 | Column type                | Dimension                                            |
 | Feature level              | Mandatory                                            |

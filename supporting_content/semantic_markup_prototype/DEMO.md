@@ -1,0 +1,202 @@
+# Semantic Markup Demo Branch
+
+> **Note:** This branch demonstrates feature request [#2779](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2779), which is proposed for FOCUS 1.6. It is for understanding the concept and for local testing. It is not intended to be merged as is.
+>
+> This branch is based on `working_draft_interim`, where work for 1.6 goes while FOCUS 1.5 is in its IPR Review (2 November to 3 December 2026). It sits on commit `12770c1a` (2026-11-03), which adds the 1.6 version bump (#2814) to `working_draft` at `e9cdcc7c`, so it includes everything merged for 1.5, including the 1.5 Requirements Model update ([#2710](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pull/2710)) that the REG017 findings below compare against. One open pull request is not reflected:
+>
+> * [#2787](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pull/2787), the file and folder renames. It is expected to wait for 1.6. The REG016 findings below match the names it renames, and the registry builder hard-codes the current paths (e.g., `datasets/data_model.md` and `*_overview.md`).
+>
+> The branch needs another update once it merges: bring it up to date with `working_draft_interim` (or with `working_draft` after the IPR Review, when the two are merged), rerun `convert_all.sh`, and refresh the counts in this guide and in CONVERSION.md.
+
+The branch is cut from `working_draft_interim`. The whole specification is rewritten with semantic tags wherever the tags cover its content, and the real build (`make`) resolves those tags into today's links and formatting. What the tags do not cover keeps its hand-written markup, and both kinds coexist in one build. [CONVERSION.md](CONVERSION.md) reports the results of converting every file and lists the open questions, and [SEMANTIC_REVIEW.md](SEMANTIC_REVIEW.md) records the semantic review that followed. The [slides](slides.html) present the proposal and these results for the Working Group. GitHub shows the file as source, so open it in a browser from a checkout or a downloaded copy; press N for the speaker notes.
+
+## Try It
+
+```bash
+cd specification
+make spec.html
+```
+
+```bash
+cd supporting_content/semantic_markup_prototype
+PYTHON=/path/to/venv/bin/python ./compare_rendered.sh
+```
+
+```bash
+PYTHON=/path/to/venv/bin/python ./convert_all.sh
+```
+
+The first command builds the specification with the tags resolved. The second lists every line of the published `spec.md` that differs from the commit where this branch left `working_draft_interim`, word by word, so later changes to that branch do not show up, and sorts the differences by kind. The third converts every file the build includes. Rerunning it on its own output changes nothing; after the semantic review it makes three more edits, which [CONVERSION.md](CONVERSION.md) lists. You can also open any converted file on GitHub to see how the tagged source reads.
+
+## What Changed in the Build
+
+| File | Change |
+| :--- | :--- |
+| `vendored/MarkdownPP/Modules/Include.py` | Marks each included file's start and end, and drops YAML front matter from included files |
+| `specification/Makefile` | Builds and checks the entity registry, assembles `spec.semantic.md`, and resolves it into `spec.md` |
+| `specification/markdownlnt.cfg` | Enables the linter's front matter extension |
+| `.gitignore` | Ignores the two new build intermediates |
+
+`resolve_semantic.py` converts Markdown to Markdown, so everything after it is unchanged: the linter, Pandoc, wkhtmltopdf, the link tests, and the published `spec.md` artifact all see ordinary Markdown. With no tags in the source, the resolved `spec.md` is byte-identical to the current build.
+
+Build-time checks:
+
+* Definition checks (REG codes) run on every build. Errors fail the build.
+* Unknown entities, invalid values, ambiguous ColumnIds, and unknown front matter datasets fail the build with the source file and line number.
+* `tests/test_spec_links.py` confirms that every resolved anchor exists in `spec.html`.
+
+`make force=1` downgrades both to warnings.
+
+The source files are expected to contain mistakes, and finding them is one of the reasons for semantic tagging. A finding means two places that should agree do not: an ID and a file name, a heading and a name section, or the specification and the Requirements Model. The checks do not decide which side is wrong. The messages name both sides, and a person resolves each finding on whichever side is in error.
+
+## Hand-Reviewed Files
+
+Every file the build includes was converted by `convert_all.sh`, and the results are in [CONVERSION.md](CONVERSION.md). The converter carries over the judgments the existing markup already makes (see Where the Tags Came From in CONVERSION.md); it makes none of its own. The files below were converted first as samples and then reviewed and edited by hand, so they are the only files where a person decided what a reference means, and they show the kinds of judgment calls the converter leaves to people.
+
+| File | What it shows |
+| :--- | :--- |
+| `datasets/cost_and_usage/columns/billedcost.md` | Glossary-heavy prose, self-references, aliases (*covered*, *cash-based*), and the "invoice issuer" decision |
+| `datasets/cost_and_usage/columns/chargeclass.md` | An allowed value tag (`["Correction"](#val:ChargeClass)`) and plain words that become glossary terms |
+| `datasets/cost_and_usage/columns/resourcetype.md` | Operating model condition and attribute references, and a Content Constraints table |
+| `datasets/invoice_detail/columns/billedcost.md` | A ColumnId shared by two datasets, which resolves to the file's own dataset, plus dataset-qualified IDs (`CostAndUsage.BilledCost`) |
+| `attributes/numeric_format.md` | Attribute self-references and glossary terms in normative text |
+| `operating_model_conditions/includesresourcetypeassignment.md` | An operating model condition referring to itself |
+| `appendix/saas_examples/consumption_currency_pricing_model.md` | Non-normative prose with a front matter dataset (`dataset: CostAndUsage`), so shared ColumnIds such as BilledCost need no qualifier |
+| `datasets/cost_and_usage/columns/contractapplied.md` | A JSON column: its object (`#obj`), its schema (`#schema`), and the schema pointer that #2703 asked about |
+| `metadata/schema/focus_version.md` | Metadata self-references and a collection reference (`[Schema](#meta)`) |
+| `metadata/recency/dataset_instance_id.md` | A Metadata ID defined in three collections, which resolves to the file's own collection |
+| `glossary.md` | Front matter declaring two aliases |
+
+Conversion followed the migration steps:
+
+1. `tag_sources.py` converted the hard-coded links, plain ColumnIds, attribute and condition IDs, italic glossary terms, and quoted values, and listed what it could not decide.
+2. Judgment calls were made by hand:
+   * Self-references by Display Name in prose (e.g., "Billed Cost represents...") are tagged, per the recommendation on #2779.
+   * In `chargeclass.md`, "correction" and "charges" are tagged as glossary terms where the same file already treated them as terms.
+   * "invoice issuer" in both BilledCost files points to the glossary term, not the InvoiceIssuerName column.
+   * The appendix file declares `dataset: CostAndUsage` in front matter, because the example rows are Cost and Usage rows. See Dataset Scope.
+   * Ordinary phrases such as "Billing Period" in the appendix are left untagged, because whether plain prose may stay untagged is an open question.
+   * In `contractapplied.md`, "Contract Commitment ID" in the property table names a JSON property, not the ContractCommitmentId column, so it stays untagged. Property paths such as `ContractAppliedObject.Elements[\*].ContractCommitmentId` are also left as written.
+   * In `metadata/recency/dataset_instance_id.md`, "Dataset Instance" could mean the Dataset Instance metadata collection or the *dataset instance* glossary term, so it stays untagged.
+
+## Dataset Scope
+
+Sixteen ColumnIds (e.g., BilledCost, BillingCurrency, InvoiceId) are defined in more than one dataset. This branch decides which dataset an unqualified column reference means as follows:
+
+1. A file under `datasets/<dataset>/` belongs to that dataset.
+2. Any other file may declare a dataset in front matter:
+
+   ```yaml
+   ---
+   dataset: CostAndUsage
+   ---
+   ```
+
+3. In a file with a dataset, an unqualified column resolves in that dataset only. A column from another dataset needs a qualifier (e.g., `[BilledCost](#col:InvoiceDetail.BilledCost)`), and an unqualified column that is not in the file's dataset fails the build.
+4. In a file without a dataset, a column may stay unqualified only when a single dataset defines it.
+
+With the front matter, the appendix reads `[ListCost](#col), [BilledCost](#col), and [ContractedCost](#col)`, and all three resolve to Cost and Usage. Before, only BilledCost carried a qualifier, because it is the only one of the three defined in two datasets. Writing the dataset once per file states the intent directly, and adding a column to another dataset later cannot change or break existing references.
+
+`tag_sources.py` applies the rule as well. After adding the front matter, rerunning it removed the six qualifiers that had become unnecessary. It keeps a qualifier when the visible text is qualified too (e.g., `InvoiceDetail.BilledCost` next to `CostAndUsage.BilledCost`). The rendered output did not change.
+
+For files outside `datasets/`, `convert_all.sh` infers the dataset from the columns a file already references: when every hard-coded link and every ColumnId that only one dataset defines points into a single dataset, the file gets the front matter. It added `dataset:` to 57 files in this way (53 Cost and Usage, 3 SKU Price, 1 Invoice Detail), and a file that mixes datasets gets none. The inference reads tags as well as links, so a second run reaches the same answer.
+
+This is one answer to the Dataset scope question in #2779, which is still open.
+
+## Schemas, JSON Objects, and Metadata
+
+The first prototype covered columns, allowed values, datasets, attributes, operating model conditions, and glossary terms. This branch adds three more entity types, each recognized from structure the specification already follows:
+
+| Type | Entities | Hand-written links on `working_draft` | Defined by |
+| :--- | ---: | ---: | :--- |
+| `obj` | 6 | 12 | `### Object ID` and `### Object Display Name` (or `Value`) in a JSON column's file |
+| `schema` | 6 | 7 | A level-3 heading in `schemas/schemas.mdpp` |
+| `meta` | 32 | 75 | A file under `metadata/` with `## Metadata ID` and `## Metadata Name`; each folder's `*_overview.md` defines its collection |
+
+All 44 resolve to anchors that exist in the assembled specification. The schema link count fell from 10 to 7 because #2789 removed the five pointer links by hand, as described next.
+
+Metadata IDs repeat across collections the way ColumnIds repeat across datasets. DatasetInstanceId is defined in the Dataset Instance, Recency, and Schema collections, and DataGenerator is both a collection and a field inside it. An unqualified metadata reference resolves in the collection that holds the file's own definition, or at the top level in any other file. A qualifier names another collection (e.g., `[DatasetInstanceId](#meta:Schema.DatasetInstanceId)`), and an ambiguous reference fails the build.
+
+**#2703.** Each JSON column linked its schema twice: by ID in the conformance bullet and by name in the example pointer (`For the JSON schema, please see [Contract Applied Object Schema](...)`). #2789 resolved this by hand, removing the pointer link from all five files. With both references tagged as `#schema`, as in `contractapplied.md`, the first-mention rule produces the same rendered output without an edit in any file, and it applies to every future JSON column too. Keeping the pointer link instead would have been one resolver exception for schema pointers, not five file edits.
+
+**Definition checks.** REG014 reports a metadata file whose H1 differs from its Metadata Name. On this branch it reports `previouscolumnname.md` and `stringencoding.md`, the two mismatches that #2794 fixes by hand.
+
+**IDs come from ID sections.** Attribute, operating model condition, and dataset files each have an ID section (e.g., `## Attribute ID`). The first prototype derived these IDs from the H1 instead, which gave three wrong IDs: FOCUSColumnHandling (for FocusColumnHandling), JSONObjectFormat (for JsonObjectFormat), and IncludesBillingAndPaymentCurrencyDifferences (for IncludesBillingPaymentCurrencyDifferences). References still resolved, because IDs match without regard to case, but the registry recorded the wrong IDs. The registry now reads the ID sections, like Column ID and Metadata ID.
+
+**File and folder names.** The [Repository Naming Conventions](../../guidelines/contributors/repository-naming-conventions.md) require a file or folder that defines a FOCUS entity to be named after its ID in lowercase, with no separator (e.g., `numericformat.md`). The registry knows which files and folders define entities, so REG016 checks this for every entity type: column, attribute, operating model condition, and metadata files; dataset and metadata collection folders; and schema JSON files. On this branch it reports 41 names, all snake_case dataset folders, attribute files, and metadata files and folders. It reports a warning, not an error, because the renames are planned for 1.6.
+
+## Requirements Model Cross-Check
+
+> **Note:** This section is one possible answer to the open Requirements Model question in #2779 (how the entity registry relates to `requirements_model/`, #2406). The demo is deliberately opinionated: it expects the registry and the Requirements Model to describe the same entities, with the same IDs and names. It does not assume either one is correct.
+
+The Requirements Model rule files are named after the entity they cover, like the specification files: `model_rules/attributes/<id>.json`, `conditions/<id>.json`, and `datasets/<dataset>/<id>.json`, `columns/<id>.json`, and `objects/<id>.json`. Each rule also records the EntityId and EntityName it applies to. REG017 compares the registry with `requirements_model/releases/latest` (1.5) in both directions:
+
+* Every column, dataset, attribute, operating model condition, and JSON object has a rule file.
+* Every rule file matches an entity, unless all of its rules have Status "Removed" (history for a removed entity, e.g., ProviderName).
+* The EntityId and EntityName in the rules match the specification exactly.
+
+Metadata fields and schemas have no rule files, so they are not checked. On this branch REG017 reports 28 findings:
+
+| Finding | Count | Entities |
+| :--- | ---: | :--- |
+| Entity with no rule file | 2 | IncludesPurchases, IncludesQuantityTierPricing |
+| SKU Price entity with no rule file | 25 | The SKU Price dataset, its 23 columns, and its SkuPriceEligibilityObject |
+| Active rule file with no entity | 1 | `datamodel.json`, whose rules cover the data model as a whole (EntityType DataModel); the registry has no entity of that kind |
+
+Before #2710 merged, REG017 reported 45 findings. The update added the missing rule files for seven entities, removed or retired the rule files for three conditions, and changed eight EntityNames to match the specification (e.g., "Sku Price ID" to "SKU Price ID", "Json Object Format" to "JSON Object Format"). It also added `datamodel.json`.
+
+Each finding is an inconsistency to resolve, not a verdict. For example, an entity with no rule file could mean a missing rule or an entity that the Requirements Model leaves out on purpose, such as a preview dataset, and a rule file with no entity could mean a missing specification entity or a gap in the registry. The findings are reported, not fixed, because the Requirements Model is outside this demo. `build_registry.py --rm-release none` skips the check.
+
+A JSON object is defined in its column's file but is a separate entity. References to it link normally, unlike the column's references to itself.
+
+## Review of Rendered Differences
+
+`compare_rendered.sh` compares the published `spec.md` with the commit where this branch left `working_draft_interim`, and `classify_rendered.py` sorts every difference by kind. The build resolves 8,504 semantic references, and 877 lines of the published specification differ.
+
+| Kind | Differences | Notes |
+| :--- | ---: | :--- |
+| Visible words changed | 0 | No normative or explanatory wording changed |
+| Link retargeted | 6 | "invoice issuer" in the BilledCost introductions links the glossary term instead of the InvoiceIssuerName column (needs Working Group confirmation), and 4 tags corrected in the semantic review |
+| Link added | 513 | A first mention that was plain text is now a link |
+| Link removed | 213 | A repeat link is now plain text |
+| Italics | 21 | Emphasis follows the kind of entity: removed from non-term links, added to glossary terms that lacked it |
+| Whitespace only | 297 | Table padding; the rendered tables are identical |
+
+The added and removed links apply the Editorial Guidelines uniformly (see CONVERSION.md for how tables and the glossary are treated). The two retargeted links are the only differences that change where a link goes.
+
+Before the whole specification was converted, the same comparison on the hand-reviewed sample files showed 22 lines, all explained: table padding, repeat links removed, and the glossary terms in ChargeClass italicized.
+
+Mistakes in the conversion itself were caught by the checks before they reached the output: a hand edit that tagged the `# Billed Cost` heading (REG002), a converter that tagged dataset Display Names under a `<!--SkipTOC-->` comment (REG014), a stray `*` dropped from link text (the classifier's unpaired-asterisk check), and a hard-coded link whose text named a different column than its target (FOCUS011).
+
+## Known Limitations
+
+* **Requirements Model extraction.** `.github/workflows/rm_extraction.yml` extracts normative statements from the Markdown source. It has not been made tag-aware, so a PR from this branch would show extraction differences.
+* **PDF.** The PDF step (wkhtmltopdf) was not run locally. It uses the same resolved `spec.md` and `spec.html`, so it should behave like the HTML build.
+* **`build.sh`.** The prototype's `build.sh` compares the samples against the unconverted spec files. On this branch those spec files are already converted, so use `make` and `compare_rendered.sh` instead.
+* **Open questions.** The questions in #2779 are still open: dataset scope, plain prose, value links, self-references, context rules, and the Requirements Model. CONVERSION.md lists 15 more that the whole-specification conversion raised.
+
+## Open Question: Context Rules
+
+The resolver decides how a reference is decorated (link, italics, quotes), but it renders the name exactly as the author wrote it. Some editorial rules instead decide which name is written, depending on where the reference appears. For example, #2794 changes headings such as `### Cost Columns: BilledCost vs. EffectiveCost vs. ListCost` to use Display Names, following the heading rules proposed in #2778. On this branch, those edits would still be made by hand.
+
+| Context | Rule | Source | Prototype |
+| :--- | :--- | :--- | :--- |
+| Headings | Display Name (or Metadata Name), never a link; a JSON property keeps its schema name | #2778 (open) | The converter skips headings. A tagged heading would be linked and counted as a first mention |
+| Requirements | Entity ID; an operating model condition used as a condition is written as its lowercase phrase | #2765 (open) | FOCUS003 checks columns, datasets, JSON objects, schemas, and metadata in any line with a BCP-14 keyword; not yet attributes or conditions |
+| Requirements, other dataset | `Dataset.Column` | #2765 (open) | Accepted |
+| Prose outside Requirements | Display Name for conceptual references; an Entity ID is allowed for schema-facing references (SHOULD in the appendix) | Editorial Guidelines, #2514 and #2765 (open) | Not checked |
+| Content Constraints tables | Every reference links | Editorial Guidelines | Every table links, which is broader than the rule |
+| Entity catalog tables | Row links do not count toward first mention | #2514 and #2765 (open) | Not modeled |
+| Allowed Values tables | Values are unquoted | #2514 (open) | Values render as written |
+| Glossary | First mention is counted per entry, not per file | Editorial Guidelines | Counted per file |
+| Column file whose Display Name is a glossary term | The first mention links to the glossary, never to the column | #2765 (open) | Not modeled |
+| Code, SQL, JSON | Entity IDs, no links | Editorial Guidelines | Skipped |
+
+There are two ways to handle the name:
+
+* **A. The author writes the name, and the linter checks it against the context.** The tag identifies the entity, so a rule such as "headings use the Display Name" is a deterministic check against the registry, and the fix can be automated. All of #2794's heading changes would be reported.
+* **B. The resolver writes the name.** A tag with no text (e.g., `[](#col:BilledCost)`) renders as the Display Name in headings and the Entity ID in requirements, so a renamed Display Name updates everywhere. It cannot handle plurals, possessives, operating model condition phrases, or the conceptual versus schema-facing judgment.
+
+Recommendation: A. The resolver keeps decoration, and the linter checks the name. The source stays readable, and the cases that B cannot handle are the ones the open guideline PRs spend the most words on. The linter can check headings, Requirements, `Dataset.Column` paths, Allowed Values quoting, and Content Constraints links deterministically. For conceptual versus schema-facing prose, it can only check that the text is one of the entity's names.
+
+Tags inside headings are safe for the build: markdown-pp builds a clean anchor and table of contents entry from the link text. The resolver would need to render heading tags without links and not count them as first mentions. The prototype has not been changed for any of this yet.

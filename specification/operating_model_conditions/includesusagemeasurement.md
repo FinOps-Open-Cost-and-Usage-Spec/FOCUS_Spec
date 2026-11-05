@@ -1,13 +1,13 @@
 # Includes Usage Measurement
 
-The Includes Usage Measurement operating model condition represents a verifiable state indicating whether the [*operating model*](#glossary:operating-model) includes the measurement of [*resource*](#glossary:resource) or [*service*](#glossary:service) usage.
+The [Includes Usage Measurement](#omc) operating model condition represents a verifiable state indicating whether the [operating model](#term) includes the measurement of [resource](#term) or [service](#term) usage.
 
 ## Requirements
 
-IncludesUsageMeasurement MUST adhere to the following requirements:
+[IncludesUsageMeasurement](#omc) MUST adhere to the following requirements:
 
-* IncludesUsageMeasurement MUST evaluate to true when the *operating model* includes the measurement of *resource* or *service* usage.
-* IncludesUsageMeasurement MUST evaluate to false when the *operating model* does not include the measurement of *resource* or *service* usage.
+* [IncludesUsageMeasurement](#omc) MUST evaluate to true when the [operating model](#term) includes the measurement of [resource](#term) or [service](#term) usage.
+* [IncludesUsageMeasurement](#omc) MUST evaluate to false when the [operating model](#term) does not include the measurement of [resource](#term) or [service](#term) usage.
 
 ## Operating Model Condition ID
 
@@ -19,7 +19,7 @@ Includes Usage Measurement
 
 ## Description
 
-A verifiable state indicating whether the *operating model* includes the measurement of *resource* or *service* usage.
+A verifiable state indicating whether the [operating model](#term) includes the measurement of [resource](#term) or [service](#term) usage.
 
 ## Version Introduced
 

@@ -1,16 +1,16 @@
 # Reference Invoice ID
 
-Reference Invoice ID is an invoice-issuer-assigned identifier for an invoice that affects charges as stated on a previous invoice. This occurs typically in the context of credits, refunds, or corrections where an adjustment is applied to a specific previously-issued billing document. This ID allows for direct lineage between adjustments and the original billing records.
+[Reference Invoice ID](#col) is an invoice-issuer-assigned identifier for an invoice that affects charges as stated on a previous invoice. This occurs typically in the context of credits, refunds, or corrections where an adjustment is applied to a specific previously-issued billing document. This ID allows for direct lineage between adjustments and the original billing records.
 
 ## Requirements
 
-ReferenceInvoiceId MUST adhere to the following requirements:
+[ReferenceInvoiceId](#col) MUST adhere to the following requirements:
 
-* ReferenceInvoiceId MUST be of type String.
-* ReferenceInvoiceId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* ReferenceInvoiceId MUST NOT be null.
-* ReferenceInvoiceId MUST match the [InvoiceId](#datamodel.invoicedetail.invoiceid) of the original [*invoice*](#glossary:invoice) when it adjusts another invoice.
-* ReferenceInvoiceId MUST match the InvoiceId of the current invoice when it does not adjust another invoice.
+* [ReferenceInvoiceId](#col) MUST be of type String.
+* [ReferenceInvoiceId](#col) MUST conform to [StringHandling](#attr) requirements.
+* [ReferenceInvoiceId](#col) MUST NOT be null.
+* [ReferenceInvoiceId](#col) MUST match the [InvoiceId](#col) of the original [invoice](#term) when it adjusts another invoice.
+* [ReferenceInvoiceId](#col) MUST match the [InvoiceId](#col) of the current invoice when it does not adjust another invoice.
 
 ## Column ID
 
@@ -28,7 +28,7 @@ The invoice-issuer-assigned identifier for an invoice that affects charges as st
 
 | Constraint                 | Value                                      |
 | :------------------------- | :----------------------------------------- |
-| Dataset                    | [Invoice Detail](#datamodel.invoicedetail) |
+| Dataset                    | [Invoice Detail](#ds)                      |
 | Operating model conditions | Not applicable                             |
 | Column type                | Dimension                                  |
 | Feature level              | Mandatory                                  |

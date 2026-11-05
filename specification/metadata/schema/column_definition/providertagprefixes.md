@@ -1,12 +1,12 @@
 # Provider Tag Prefixes
 
-The Provider Tag Prefixes define the list of prefixes used in the tag name of provider-defined [tags](#datamodel.costandusage.tags). This metadata is useful for the consumer to identify which tags are provider-defined vs user-defined.
+The [Provider Tag Prefixes](#meta) define the list of prefixes used in the tag name of provider-defined [tags](#col). This metadata is useful for the consumer to identify which tags are provider-defined vs user-defined.
 
-ProviderTagPrefixes adheres to the following requirements:
+[ProviderTagPrefixes](#meta) adheres to the following requirements:
 
-* ProviderTagPrefixes MUST be present in an object within the [ColumnDefinition](#metadata.schema.columndefinition) collection when [ColumnName](#metadata.schema.columndefinition.columnname) is "Tags".
-* ProviderTagPrefixes MUST be of type Collection of Strings.
-* ProviderTagPrefixes SHOULD be easily associated with the data generator who generated the [*dataset instance*](#glossary:dataset-instance) and the corresponding [*dataset instance artifacts*](#glossary:dataset-instance-artifact).
+* [ProviderTagPrefixes](#meta) MUST be present in an object within the [ColumnDefinition](#meta) collection when [ColumnName](#meta) is "[Tags](#col)".
+* [ProviderTagPrefixes](#meta) MUST be of type Collection of Strings.
+* [ProviderTagPrefixes](#meta) SHOULD be easily associated with the data generator who generated the [dataset instance](#term) and the corresponding [dataset instance artifacts](#term).
 
 ## Metadata ID
 

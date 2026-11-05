@@ -1,14 +1,14 @@
 # Contract Commitment Category
 
-Contract Commitment Category represents the highest-level classification of a [*contract commitment*](#glossary:contract-commitment) based on the nature of how it is applied to a charge. Contract Commitment Category is commonly used to identify and distinguish between categories of contract commitments that may require different handling.
+[Contract Commitment Category](#col) represents the highest-level classification of a [contract commitment](#term) based on the nature of how it is applied to a charge. [Contract Commitment Category](#col) is commonly used to identify and distinguish between categories of contract commitments that may require different handling.
 
 ## Requirements
 
-ContractCommitmentCategory MUST adhere to the following requirements:
+[ContractCommitmentCategory](#col) MUST adhere to the following requirements:
 
-* ContractCommitmentCategory MUST be of type String.
-* ContractCommitmentCategory MUST NOT be null.
-* ContractCommitmentCategory MUST be one of the allowed values.
+* [ContractCommitmentCategory](#col) MUST be of type String.
+* [ContractCommitmentCategory](#col) MUST NOT be null.
+* [ContractCommitmentCategory](#col) MUST be one of the allowed values.
 
 ## Allowed Values
 
@@ -27,13 +27,13 @@ Contract Commitment Category
 
 ## Description
 
-Represents the highest-level classification of a *contract commitment* based on the nature of how it is applied to a charge.
+Represents the highest-level classification of a [contract commitment](#term) based on the nature of how it is applied to a charge.
 
 ## Content Constraints
 
 | Constraint                 | Value                                                |
 | :------------------------- | :--------------------------------------------------- |
-| Dataset                    | [Contract Commitment](#datamodel.contractcommitment) |
+| Dataset                    | [Contract Commitment](#ds)                           |
 | Operating model conditions | Not applicable                                       |
 | Column type                | Dimension                                            |
 | Feature level              | Mandatory                                            |

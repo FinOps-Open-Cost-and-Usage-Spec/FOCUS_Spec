@@ -1,18 +1,22 @@
+---
+dataset: CostAndUsage
+---
+
 # Participating Entity Identification
 
 ## Description
 
-FOCUS allows practitioners to identify the several participating entities involved in resource or service hosting, invoicing, and data generation. The FOCUS Specification includes multiple columns to identify key participating entities, including Service Provider Name, Invoice Issuer Name, Host Provider Name, and Data Generator.
+FOCUS allows practitioners to identify the several participating entities involved in resource or service hosting, invoicing, and data generation. The FOCUS Specification includes multiple columns to identify key participating entities, including [Service Provider Name](#col), [Invoice Issuer Name](#col), [Host Provider Name](#col), and Data Generator.
 
 ## Directly Dependent Columns
 
-* ServiceProviderName
-* InvoiceIssuerName
-* HostProviderName
+* [ServiceProviderName](#col)
+* [InvoiceIssuerName](#col)
+* [HostProviderName](#col)
 
 ## Applicable Metadata
 
-* DataGenerator
+* [DataGenerator](#meta)
 
 ## Example SQL Query
 

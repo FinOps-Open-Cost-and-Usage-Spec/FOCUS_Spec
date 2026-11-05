@@ -1,23 +1,23 @@
 # Principal ID
 
-A Principal ID is an identifier representing the [*principal*](#glossary:principal) to which access to a [*resource*](#glossary:resource) or [*service*](#glossary:service) is granted. Principal ID is commonly used to report and audit cost by the *principal* that incurred a [*charge*](#glossary:charge). Descriptive attributes of the *principal* (e.g., display name, type) are carried in [Requester Details](#datamodel.costandusage.requesterdetails).
+A [Principal ID](#col) is an identifier representing the [principal](#term) to which access to a [resource](#term) or [service](#term) is granted. [Principal ID](#col) is commonly used to report and audit cost by the [principal](#term) that incurred a [charge](#term). Descriptive attributes of the [principal](#term) (e.g., display name, type) are carried in [Requester Details](#col).
 
-For scenarios demonstrating how Principal ID is populated across different technology environments, see [Examples: Requester Attribution](#appendix.examples:requesterattribution).
+For scenarios demonstrating how [Principal ID](#col) is populated across different technology environments, see [Examples: Requester Attribution](#appendix.examples:requesterattribution).
 
 ## Requirements
 
-PrincipalId MUST adhere to the following requirements:
+[PrincipalId](#col) MUST adhere to the following requirements:
 
-* PrincipalId MUST be of type String.
-* PrincipalId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* PrincipalId MUST adhere to the following nullability requirements:
-  * PrincipalId MUST be null when a *charge* is not associated with a *principal*.
-  * PrincipalId MUST be null when the *principal* associated with a *charge* has no published identifier.
-  * PrincipalId MUST NOT be null when the *principal* associated with a *charge* has a published identifier.
-* When PrincipalId is not null, PrincipalId MUST adhere to the following requirements:
-  * PrincipalId MUST be an identifier that references a *principal*.
-  * PrincipalId MUST be a unique identifier within the [*service provider*](#glossary:service-provider).
-  * PrincipalId MUST NOT contain a value that authenticates a request (e.g., an API key string, an access token, a password).
+* [PrincipalId](#col) MUST be of type String.
+* [PrincipalId](#col) MUST conform to [StringHandling](#attr) requirements.
+* [PrincipalId](#col) MUST adhere to the following nullability requirements:
+  * [PrincipalId](#col) MUST be null when a [charge](#term) is not associated with a [principal](#term).
+  * [PrincipalId](#col) MUST be null when the [principal](#term) associated with a [charge](#term) has no published identifier.
+  * [PrincipalId](#col) MUST NOT be null when the [principal](#term) associated with a [charge](#term) has a published identifier.
+* When [PrincipalId](#col) is not null, [PrincipalId](#col) MUST adhere to the following requirements:
+  * [PrincipalId](#col) MUST be an identifier that references a [principal](#term).
+  * [PrincipalId](#col) MUST be a unique identifier within the [service provider](#term).
+  * [PrincipalId](#col) MUST NOT contain a value that authenticates a request (e.g., an API key string, an access token, a password).
 
 ## Column ID
 
@@ -29,14 +29,14 @@ Principal ID
 
 ## Description
 
-Identifier representing the *principal* to which access to a *resource* or *service* is granted.
+Identifier representing the [principal](#term) to which access to a [resource](#term) or [service](#term) is granted.
 
 ## Content Constraints
 
 | Constraint                 | Value                                     |
 | :------------------------- | :---------------------------------------- |
-| Dataset                    | [Cost and Usage](#datamodel.costandusage) |
-| Operating model conditions | [Includes Requester Attribution](#operatingmodelconditions.includesrequesterattribution) |
+| Dataset                    | [Cost and Usage](#ds)                     |
+| Operating model conditions | [Includes Requester Attribution](#omc)                                                   |
 | Column type                | Dimension                                 |
 | Feature level              | Conditional                               |
 | Allows nulls               | True                                      |

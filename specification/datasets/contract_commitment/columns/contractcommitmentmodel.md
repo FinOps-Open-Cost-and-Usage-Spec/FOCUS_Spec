@@ -1,17 +1,17 @@
 # Contract Commitment Model
 
-Contract Commitment Model represents the operational behavior and consumption flexibility of a [*contract commitment*](#glossary:contract-commitment). This field distinguishes between rigid, "use-it-or-lose-it" obligations (typically hourly) and flexible, aggregate-based agreements that accommodate variable usage patterns.
+[Contract Commitment Model](#col) represents the operational behavior and consumption flexibility of a [contract commitment](#term). This field distinguishes between rigid, "use-it-or-lose-it" obligations (typically hourly) and flexible, aggregate-based agreements that accommodate variable usage patterns.
 
-Contract Commitment Model has two possible values: **Continuous** and **Discontinuous**. Continuous models (e.g., reserved instances, savings plans) represent a flat, constant "floor" of commitment where any dip in usage results in immediate, unrecoverable waste. Discontinuous models (e.g., enterprise agreements, SaaS minimum spend agreements) represent a broader, more flexible bucket where the commitment is "spikier": the usage can fluctuate wildly, but as long as the aggregate hits the target (or the true-up handles the variance), the commitment is satisfied. In either case, the interval of the commitment is represented by the [Contract Commitment Fulfillment Interval](#datamodel.contractcommitment.contractcommitmentfulfillmentinterval).
+[Contract Commitment Model](#col) has two possible values: **Continuous** and **Discontinuous**. Continuous models (e.g., reserved instances, savings plans) represent a flat, constant "floor" of commitment where any dip in usage results in immediate, unrecoverable waste. Discontinuous models (e.g., enterprise agreements, SaaS minimum spend agreements) represent a broader, more flexible bucket where the commitment is "spikier": the usage can fluctuate wildly, but as long as the aggregate hits the target (or the true-up handles the variance), the commitment is satisfied. In either case, the interval of the commitment is represented by the [Contract Commitment Fulfillment Interval](#col).
 
 ## Requirements
 
-ContractCommitmentModel MUST adhere to the following requirements:
+[ContractCommitmentModel](#col) MUST adhere to the following requirements:
 
-* ContractCommitmentModel MUST be of type String.
-* ContractCommitmentModel MUST NOT be null.
-* ContractCommitmentModel MUST be one of the allowed values.
-* ContractCommitmentModel MUST be "Discontinuous" when ContractCommitmentFulfillmentInterval is "Full Period".
+* [ContractCommitmentModel](#col) MUST be of type String.
+* [ContractCommitmentModel](#col) MUST NOT be null.
+* [ContractCommitmentModel](#col) MUST be one of the allowed values.
+* [ContractCommitmentModel](#col) MUST be ["Discontinuous"](#val:ContractCommitmentModel) when [ContractCommitmentFulfillmentInterval](#col) is ["Full Period"](#val:ContractCommitment.ContractCommitmentFulfillmentInterval).
 
 ## Allowed Values
 
@@ -29,7 +29,7 @@ ContractCommitmentModel MUST adhere to the following requirements:
 
 ### Relationship with Fulfillment Interval
 
-Because a `Continuous` model dictates a recurring, "use-it-or-lose-it" evaluation window, it cannot logically span an entire, cumulative contract term without a reset. Therefore, if the associated Contract Commitment Fulfillment Interval is `Full Period`, the Contract Commitment Model must be categorized as `Discontinuous`.
+Because a `Continuous` model dictates a recurring, "use-it-or-lose-it" evaluation window, it cannot logically span an entire, cumulative contract term without a reset. Therefore, if the associated [Contract Commitment Fulfillment Interval](#col) is `Full Period`, the [Contract Commitment Model](#col) must be categorized as `Discontinuous`.
 
 ## Column ID
 
@@ -41,13 +41,13 @@ Contract Commitment Model
 
 ## Description
 
-Represents the operational behavior and consumption flexibility of a *contract commitment*.
+Represents the operational behavior and consumption flexibility of a [contract commitment](#term).
 
 ## Content Constraints
 
 | Constraint                 | Value                                                |
 | :------------------------- | :--------------------------------------------------- |
-| Dataset                    | [Contract Commitment](#datamodel.contractcommitment) |
+| Dataset                    | [Contract Commitment](#ds)                           |
 | Operating model conditions | Not applicable                                       |
 | Column type                | Dimension                                            |
 | Feature level              | Mandatory                                            |
