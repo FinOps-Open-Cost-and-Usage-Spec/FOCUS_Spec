@@ -29,17 +29,23 @@ Thanks to the following FOCUS Maintainers for their leadership and contributions
 Thanks to the following FOCUS members for their contributions to the FOCUS Release **v1.5** specification.
 
 * Arjun Kaushal (Trident Consulting)
-* Beau Nelford (Anglepoint / FinOps Foundation)
+* Beau Nelford (FinOps Foundation)
 * Ben Olson (Adobe)
 * Dave Moreau (Coinbase)
 * David Earney (American Express)
 * Deeja Cruz (Datadog)
 * Erik Norman (Caligo)
+* George Parker (Salesforce)
 * Izadora Sobral (Luizalabs)
+* John Ely (Capital One)
 * Jose Ernesto Suarez (Glassity)
 * Marc Perreaut (Amadeus)
 * Nan Braun (Thavron Solutions)
 * Ruben Vander Stockt (Across Cloud)
+* Samantha White (FinOps Foundation)
+* Sanjna Srivatsa (Broadcom)
+* Tom Cross (Fellscape)
+* Velu Natarajan (GoodRx)
 
 <div style="page-break-after: always"></div>
 
