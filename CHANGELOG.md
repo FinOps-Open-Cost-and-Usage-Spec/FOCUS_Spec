@@ -4,6 +4,243 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## v1.5
+
+<sup>Announced December 2026</sup>
+
+v1.5 adds 1 dataset (`SkuPrice`, preview), 27 new columns, 3 new supported features (2 preview), 26 operating model conditions (2 preview), 6 new `SkuPriceDetails` properties, and 16 new glossary entries.
+
+### Changes to Supported Features by [Change Impact Classification](/guidelines/contributors/spec-change-guidelines.md)
+
+#### Compatible Changes
+
+* New `SkuPriceDetails` properties and an informative supported feature to support [AI Model Billing](/specification/supported_features/ai_model_billing.md): model identity (`ModelDeveloper`, `ModelFamily`, `ModelId`, `ModelVersion`) and token metering (`TokenDirection`, `TokenCacheAction`). `ConsumedQuantity` adds a requirement that prevents cached tokens from being counted twice. Affecting:
+  * [Resource Usage](/specification/supported_features/resource_usage.md), which adds cache hit rate and input-to-output token ratio queries.
+* New dataset and columns to support [Catalog Discovery and Price Estimation](/specification/supported_features/catalog_discovery_and_price_estimation.md) (preview) and [Rate Optimization and Contract Evaluation](/specification/supported_features/rate_optimization_and_contract_evaluation.md) (preview).
+* New columns for requester attribution (`PrincipalId`, `CredentialId`, `RequesterDetails`), with a [Requester Attribution](/specification/appendix/requester_attribution.md) appendix entry and a dataset note on personal data in Cost and Usage.
+* New [`AllocatedServiceName`](/specification/datasets/cost_and_usage/columns/allocatedservicename.md) column, with a [Split Cost Allocation Field Mapping](/specification/appendix/split_cost_allocation_field_mapping.md) appendix entry and new example queries. Affecting:
+  * [Data Generator-Calculated Split Cost Allocation](/specification/supported_features/data_generator_calculated_split_cost_allocation.md)
+* Column and dataset presence requirements are now expressed through named [operating model conditions](/specification/operating_model_conditions/operating_model_conditions_overview.md) (e.g., `CostAndUsage MUST include RegionId when the operating model includes regions`). Dataset presence requirements moved to a new Data Model level. Each column's Content Constraints table names its operating model conditions.
+* Presence of [`ListUnitPrice`](/specification/datasets/cost_and_usage/columns/listunitprice.md), [`ContractedUnitPrice`](/specification/datasets/cost_and_usage/columns/contractedunitprice.md), `SkuId`, `SkuMeter`, `SkuPriceDetails`, and `SkuPriceId` now depends on whether the operating model includes unit pricing. Previously it depended on whether the service provider published undiscounted prices, supported negotiated pricing, or published price lists. `PricingCurrencyEffectiveCost` presence no longer depends on publishing undiscounted prices.
+* Removed the duplicative cost-formula requirement from [`PricingQuantity`](/specification/datasets/cost_and_usage/columns/pricingquantity.md). The same formula remains on `ListCost` and `ContractedCost`.
+* [`Tags`](/specification/datasets/cost_and_usage/columns/tags.md) and [`AllocatedTags`](/specification/datasets/cost_and_usage/columns/allocatedtags.md): added (for `AllocatedTags`) and restored (for `Tags`) the requirement that user-defined tag keys match the keys assigned at the tag source, with or without a tag scheme-specific prefix.
+* [`ChargeCategory`](/specification/datasets/cost_and_usage/columns/chargecategory.md): added a cross-dataset requirement to match `SkuPrice.ChargeCategory` for the same `SkuPriceId` and `ServiceProviderName` when `ChargeCategory` is "Usage" or "Purchase". Excluded from conformance while SKU Price is a preview.
+* [`ServiceCategory`](/specification/datasets/cost_and_usage/columns/servicecategory.md) allowed value descriptions are now technology-agnostic. Values are unchanged.
+* New example queries in [Cost Comparison](/specification/supported_features/cost_comparison.md) (commitment discount savings, billing period vs. charge period), [Effective Cost](/specification/supported_features/effective_cost.md) (consumed vs. pricing quantity), and [Invoice Reconciliation](/specification/supported_features/invoice_reconciliation.md) (reconciliation by Invoice Detail ID).
+
+#### Migration Compatible Changes
+
+* Revised [`ListCost`](/specification/datasets/cost_and_usage/columns/listcost.md), [`ListUnitPrice`](/specification/datasets/cost_and_usage/columns/listunitprice.md), [`ContractedCost`](/specification/datasets/cost_and_usage/columns/contractedcost.md), [`ContractedUnitPrice`](/specification/datasets/cost_and_usage/columns/contractedunitprice.md), [`PricingCurrencyListUnitPrice`](/specification/datasets/cost_and_usage/columns/pricingcurrencylistunitprice.md), and [`PricingCurrencyContractedUnitPrice`](/specification/datasets/cost_and_usage/columns/pricingcurrencycontractedunitprice.md) to separate *negotiated pricing terms* from discount-bearing *commitment programs*. A negotiated discount received in exchange for a spend commitment is now reflected in Contracted Unit Price; the effect of applying a commitment discount is not. List values do not reflect negotiated tier configurations or negotiated FX pricing terms. Savings queries that compare List, Contracted, and Effective Cost may return different results for affected providers. Affecting:
+  * [Cost Comparison](/specification/supported_features/cost_comparison.md)
+  * [Verify, Compare, and Track Unit Prices](/specification/supported_features/verify_compare_track_unit_prices.md)
+* Replaced the virtual currency allowance with *consumption currency* (e.g., platform credits, normalized billing units). [`CurrencyFormat`](/specification/attributes/currency_format.md) prohibits ISO 4217 codes for values that are not a national currency, and [`PricingCurrency`](/specification/datasets/cost_and_usage/columns/pricingcurrency.md) (Cost and Usage and Contract Commitment) MUST be a national or consumption currency, with documentation of how to tell them apart. `PricingCurrencyEffectiveCost`, `PricingCurrencyListUnitPrice`, and `PricingCurrencyContractedUnitPrice` presence now depends on consumption currency.
+* `SkuId`, `SkuMeter`, `SkuPriceId`, and `SkuPriceDetails` identity requirements are now scoped to a given `ServiceProviderName`. Queries that join or group on SKU identifiers across providers should include `ServiceProviderName`. [`SkuPriceId`](/specification/datasets/cost_and_usage/columns/skupriceid.md) adds requirements for one `PricingUnit`, one `ListUnitPrice` per `BillingCurrency` and `ChargePeriodStart`, one `ContractedUnitPrice` per contract, `BillingAccountId`, `BillingCurrency`, and `ChargePeriodStart`, and no mix of "Usage" and "Purchase" charges.
+* [`ContractCommitmentDurationType`](/specification/datasets/contract_commitment/columns/contractcommitmentdurationtype.md) MUST use the largest whole time-based unit (e.g., "1 Year", not "12 Months"). Queries that match on duration strings may need updating.
+* [`ServiceSubcategory`](/specification/datasets/cost_and_usage/columns/servicesubcategory.md): split a new "Bare Metal" value out of "Virtual Machines" under "Compute". Queries on "Virtual Machines" no longer return bare-metal charges.
+
+#### Incompatible Changes
+
+* None
+
+### Added
+
+#### New supported features
+
+* [AI Model Billing](/specification/supported_features/ai_model_billing.md)
+* [Catalog Discovery and Price Estimation](/specification/supported_features/catalog_discovery_and_price_estimation.md) (preview)
+* [Rate Optimization and Contract Evaluation](/specification/supported_features/rate_optimization_and_contract_evaluation.md) (preview)
+
+#### New datasets
+
+* [`SkuPrice`](/specification/datasets/sku_price/dataset.md) (preview). The [Data Model](/specification/datasets/data_model.md) requirement to include `SkuPrice` is excluded from conformance while the dataset is a preview.
+
+#### New columns
+
+* [`CostAndUsage`](/specification/datasets/cost_and_usage/dataset.md)
+  * [`AllocatedServiceName`](/specification/datasets/cost_and_usage/columns/allocatedservicename.md)
+  * [`CredentialId`](/specification/datasets/cost_and_usage/columns/credentialid.md)
+  * [`PrincipalId`](/specification/datasets/cost_and_usage/columns/principalid.md)
+  * [`RequesterDetails`](/specification/datasets/cost_and_usage/columns/requesterdetails.md)
+* [`SkuPrice`](/specification/datasets/sku_price/dataset.md) (preview)
+  * [`ChargeCategory`](/specification/datasets/sku_price/columns/chargecategory.md)
+  * [`CommitmentDiscountCategory`](/specification/datasets/sku_price/columns/commitmentdiscountcategory.md)
+  * [`ContractId`](/specification/datasets/sku_price/columns/contractid.md)
+  * [`PricingCurrency`](/specification/datasets/sku_price/columns/pricingcurrency.md)
+  * [`PricingCurrencyCategory`](/specification/datasets/sku_price/columns/pricingcurrencycategory.md)
+  * [`PricingRegionId`](/specification/datasets/sku_price/columns/pricingregionid.md)
+  * [`PricingServiceName`](/specification/datasets/sku_price/columns/pricingservicename.md)
+  * [`PricingUnit`](/specification/datasets/sku_price/columns/pricingunit.md)
+  * [`PurchaseDurationType`](/specification/datasets/sku_price/columns/purchasedurationtype.md)
+  * [`PurchasePaymentModel`](/specification/datasets/sku_price/columns/purchasepaymentmodel.md)
+  * [`QuantityTierMaximum`](/specification/datasets/sku_price/columns/quantitytiermaximum.md)
+  * [`QuantityTierMinimum`](/specification/datasets/sku_price/columns/quantitytierminimum.md)
+  * [`ServiceProviderName`](/specification/datasets/sku_price/columns/serviceprovidername.md)
+  * [`SkuId`](/specification/datasets/sku_price/columns/skuid.md)
+  * [`SkuPriceCreated`](/specification/datasets/sku_price/columns/skupricecreated.md)
+  * [`SkuPriceDescription`](/specification/datasets/sku_price/columns/skupricedescription.md)
+  * [`SkuPriceEffectiveEnd`](/specification/datasets/sku_price/columns/skupriceeffectiveend.md)
+  * [`SkuPriceEffectiveStart`](/specification/datasets/sku_price/columns/skupriceeffectivestart.md)
+  * [`SkuPriceEligibility`](/specification/datasets/sku_price/columns/skupriceeligibility.md)
+  * [`SkuPriceId`](/specification/datasets/sku_price/columns/skupriceid.md)
+  * [`SkuPriceLastUpdated`](/specification/datasets/sku_price/columns/skupricelastupdated.md)
+  * [`UnitPrice`](/specification/datasets/sku_price/columns/unitprice.md)
+  * [`UnitPriceType`](/specification/datasets/sku_price/columns/unitpricetype.md)
+
+#### New column properties
+
+* [`SkuPriceDetails`](/specification/datasets/cost_and_usage/columns/skupricedetails.md)
+  * `ModelDeveloper`
+  * `ModelFamily`
+  * `ModelId`
+  * `ModelVersion`
+  * `TokenCacheAction`
+  * `TokenDirection`
+
+#### New operating model conditions
+
+* [Operating Model Conditions](/specification/operating_model_conditions/operating_model_conditions_overview.md)
+  * Includes Aggregation Level Currency Differences
+  * Includes Availability Zones
+  * Includes Billing-Payment Currency Differences
+  * Includes Capacity Reservations
+  * Includes Commitment Discounts
+  * Includes Commitment Programs
+  * Includes Consumption Currency
+  * Includes Contract Commitments
+  * Includes Multiple Billing Account Types
+  * Includes Multiple Pricing Categories
+  * Includes Multiple Sub Account Types
+  * Includes Partial Upfront Payments
+  * Includes Payable Invoices
+  * Includes Pricing-Billing Currency Differences
+  * Includes Provisioned Resources
+  * Includes Purchase Order Numbers
+  * Includes Purchases (preview)
+  * Includes Quantity Tier Pricing (preview)
+  * Includes Regions
+  * Includes Requester Attribution
+  * Includes Resource Type Assignment
+  * Includes Split Cost Allocation
+  * Includes Sub Accounts
+  * Includes Tags
+  * Includes Unit Pricing
+  * Includes Usage Measurement
+
+#### New allowed and recommended values
+
+* [`ServiceSubcategory`](/specification/datasets/cost_and_usage/columns/servicesubcategory.md): "Bare Metal" (Compute)
+* [`UnitFormat`](/specification/attributes/unit_format.md): count-based units `Characters`, `Images`, `Jobs`, `Messages`, `Pages`, `Sessions`; time-based unit `Weeks`
+
+#### New appendix entries
+
+* [Examples: AI Model Billing](/specification/appendix/ai_model_billing_examples/ai_model_billing_examples.md)
+* [Examples: AI Model Identity](/specification/appendix/ai_model_identity_examples.md)
+* [Examples: AI Prompt Caching](/specification/appendix/ai_prompt_caching_examples.md)
+* [Examples: Requester Details](/specification/appendix/json_object_examples/requester_details_examples.md)
+* [Examples: SKU Price](/specification/appendix/sku_price_examples/sku_price_examples_overview.md)
+* [Examples: SKU Price Eligibility](/specification/appendix/json_object_examples/sku_price_eligibility_examples.md)
+* [Examples: Split Cost Allocation](/specification/appendix/split_cost_allocation_examples.md)
+* [Consumption Currency Pricing Model](/specification/appendix/saas_examples/consumption_currency_pricing_model.md) (replaces Virtual Currency Pricing Model)
+* [Requester Attribution](/specification/appendix/requester_attribution.md)
+* [Split Cost Allocation Field Mapping](/specification/appendix/split_cost_allocation_field_mapping.md)
+
+#### New glossary entries
+
+* [Glossary](/specification/glossary.md)
+  * `AI Model`
+  * `Consumption Currency`
+  * `Credential`
+  * `Foreign Exchange (FX)`
+  * `General Availability (GA)`
+  * `Negotiated FX Pricing Terms`
+  * `Negotiated Non-FX Pricing Terms`
+  * `Negotiated Pricing Terms`
+  * `Operating Model`
+  * `Preview`
+  * `Principal`
+  * `Prompt Cache`
+  * `Requester`
+  * `Split Cost Allocation`
+  * `Token`
+  * `Unit Pricing`
+
+#### New requirements model features
+
+* Added the v1.5 requirements model release, including `conditions.json` for operating model conditions and JSON schemas for datasets.
+* Renamed the model rule key `ApplicabilityCriteria` to `Conditions`, added a `Condition` entity type, and added `Preview` as a rule status. Tools that read the model JSON need to use the new key name. See [Writing Requirements Model Guidelines](/guidelines/contributors/writing-requirements-model-guidelines.md).
+* Requirements model extraction now runs in GitHub Actions.
+* Build-time validation for JSON blocks, JSON schemas, SQL example blocks, and specification links.
+
+### Changed
+
+#### Changed datasets
+
+* [`CostAndUsage`](/specification/datasets/cost_and_usage/dataset.md), [`BillingPeriod`](/specification/datasets/billing_period/dataset.md), [`ContractCommitment`](/specification/datasets/contract_commitment/dataset.md), and [`InvoiceDetail`](/specification/datasets/invoice_detail/dataset.md): column presence requirements now use operating model conditions. Dataset presence requirements moved to the [Data Model](/specification/datasets/data_model.md).
+* [`CostAndUsage`](/specification/datasets/cost_and_usage/dataset.md): added a note that the dataset can carry personal data, such as identity attributes in `RequesterDetails` and customer-defined values in `Tags`.
+
+#### Changed columns
+
+* [`ContractCommitment`](/specification/datasets/contract_commitment/dataset.md)
+  * [`ContractCommitmentDurationType`](/specification/datasets/contract_commitment/columns/contractcommitmentdurationtype.md): SHOULD use the "[Numeric Value] [Unit]" format with `UnitFormat` time units, and MUST use the largest whole time-based unit.
+  * [`PricingCurrency`](/specification/datasets/contract_commitment/columns/pricingcurrency.md): MUST be a national or consumption currency, with documentation requirements.
+* [`CostAndUsage`](/specification/datasets/cost_and_usage/dataset.md)
+  * [`AllocatedTags`](/specification/datasets/cost_and_usage/columns/allocatedtags.md): added user-defined tag key requirements.
+  * [`ChargeCategory`](/specification/datasets/cost_and_usage/columns/chargecategory.md): added a requirement to match `SkuPrice.ChargeCategory` for the same `SkuPriceId` and `ServiceProviderName` on "Usage" and "Purchase" charges (excluded from conformance while SKU Price is a preview).
+  * [`ConsumedQuantity`](/specification/datasets/cost_and_usage/columns/consumedquantity.md): MUST NOT double count tokens reported on a separate cache "Read" or "Write" row.
+  * [`ContractedCost`](/specification/datasets/cost_and_usage/columns/contractedcost.md): redefined around negotiated pricing terms, with requirements for "Usage" and "Purchase" charges that are not corrections. The "Credit" and "Tax" rules no longer depend on `ContractedUnitPrice` being null.
+  * [`ContractedUnitPrice`](/specification/datasets/cost_and_usage/columns/contractedunitprice.md): redefined around negotiated pricing terms; added Implementation Guidance.
+  * [`ListCost`](/specification/datasets/cost_and_usage/columns/listcost.md): redefined around service-provider-suggested pricing, with requirements for "Usage" and "Purchase" charges that are not corrections. The "Credit" and "Tax" rules no longer depend on `ListUnitPrice` being null.
+  * [`ListUnitPrice`](/specification/datasets/cost_and_usage/columns/listunitprice.md): redefined around service-provider-suggested pricing; added Implementation Guidance.
+  * [`PricingCurrency`](/specification/datasets/cost_and_usage/columns/pricingcurrency.md): MUST be a national or consumption currency, with documentation requirements.
+  * [`PricingCurrencyContractedUnitPrice`](/specification/datasets/cost_and_usage/columns/pricingcurrencycontractedunitprice.md): redefined to reflect negotiated non-FX pricing terms.
+  * [`PricingCurrencyEffectiveCost`](/specification/datasets/cost_and_usage/columns/pricingcurrencyeffectivecost.md): clarified that values are before any currency exchange rate conversion.
+  * [`PricingCurrencyListUnitPrice`](/specification/datasets/cost_and_usage/columns/pricingcurrencylistunitprice.md): redefined around service-provider-suggested pricing.
+  * [`PricingQuantity`](/specification/datasets/cost_and_usage/columns/pricingquantity.md): removed the duplicative cost-formula requirement; revised the aggregation note.
+  * [`ServiceCategory`](/specification/datasets/cost_and_usage/columns/servicecategory.md): allowed value descriptions are now technology-agnostic (e.g., Compute includes physical infrastructure; Migration covers moves between any environments).
+  * [`ServiceSubcategory`](/specification/datasets/cost_and_usage/columns/servicesubcategory.md): added "Bare Metal" and narrowed "Virtual Machines" to hypervisor-based instances.
+  * [`SkuId`](/specification/datasets/cost_and_usage/columns/skuid.md) and [`SkuMeter`](/specification/datasets/cost_and_usage/columns/skumeter.md): consistency requirements scoped to a given `ServiceProviderName`.
+  * [`SkuPriceDetails`](/specification/datasets/cost_and_usage/columns/skupricedetails.md): added AI model and token properties with requirements; properties MUST use allowed values where specified; requirements scoped to a given `ServiceProviderName`.
+  * [`SkuPriceId`](/specification/datasets/cost_and_usage/columns/skupriceid.md): scoped to a given `ServiceProviderName`; added requirements for one `PricingUnit`, one list and contracted unit price per scope, and no mix of "Usage" and "Purchase" charges.
+  * [`Tags`](/specification/datasets/cost_and_usage/columns/tags.md): restored user-defined tag key preservation requirements.
+
+#### Changed attributes
+
+* [`CurrencyFormat`](/specification/attributes/currency_format.md): replaced virtual currency with consumption currency; ISO 4217 codes MUST NOT be used for values that are not a national currency; added Implementation Context.
+* [`CustomColumnHandling`](/specification/attributes/custom_column_handling.md): currency requirements now apply to any currency custom column, not only national currency, and documentation SHOULD say how to identify a national currency.
+* [`JsonObjectFormat`](/specification/attributes/json_object_format.md): allows a top-level array as well as an object; objects in an array MUST NOT be empty and SHOULD NOT exceed 3 levels of nesting.
+* [`UnitFormat`](/specification/attributes/unit_format.md): added recommended count-based units and descriptions, the `Weeks` time unit, and a SHOULD to use the largest whole time unit.
+
+#### Changed guidelines
+
+* [Normative Requirements Guidelines](/guidelines/contributors/normative-requirements-guidelines.md): refactored (Part 2), replaced Normative Subject with Constrainable Entity, and added composite-to-atomic resolution diagrams.
+* [Spec Change Guidelines](/guidelines/contributors/spec-change-guidelines.md): added the Preview Process for designating, marking, and exiting a preview.
+* [Editorial Guidelines](/guidelines/contributors/editorial-guidelines.md): added rules for note labels, informative status notes, inequalities, structural anchors, spelling out numbers, and brand-free identifiers in examples.
+* [Spec Design Guidelines](/guidelines/contributors/spec-design-guidelines.md): added Example Data rules for consistent identifiers and agreement between data files and narrative.
+* [Writing Requirements Model Guidelines](/guidelines/contributors/writing-requirements-model-guidelines.md) and [Dataset Mapping Documentation](/guidelines/data-generators/dataset-mapping-documentation.md): Feature Level lists now include Recommended; the requirements model guidelines also document the `Conditions` key and `Preview` status.
+* [Markdown++ Guidelines](/guidelines/contributors/markdownpp-guidelines.md): updated file paths to hyphenated names.
+* [Repository Naming Conventions](/guidelines/contributors/repository-naming-conventions.md): added conventions for non-Markdown file types.
+
+#### Changed glossary entries
+
+* [Glossary](/specification/glossary.md)
+  * `Contracted Unit Price`: Revised definition.
+  * `List Unit Price`: Revised definition.
+  * `SKU Price`: Revised definition.
+  * `Virtual Currency`: Revised definition, distinguished from *token* as a unit of measure.
+
+#### Changed specification structure
+
+* "Datasets" section renamed to [Data Model](/specification/datasets/data_model.md), with its own requirements and entity ID.
+* Supported feature SQL examples now read from named datasets (e.g., `FROM CostAndUsage`) instead of `focus_data_table`.
+* Entity anchors renamed from `#datasets.` to `#datamodel.` (e.g., `#datamodel.costandusage.billedcost`). Deep links that use the old anchors need updating.
+* Each column's Content Constraints table adds an Operating model conditions row.
+* The [Overview](/specification/overview.md) adds a Preview section and a Conventions statement: the Introduction, Supported Features, and Appendix (except Rounding Variance Tolerance) are informative and non-normative, as are examples and notes wherever they appear.
+* Notes reformatted as labeled blockquotes across the specification, and display names capitalized consistently in column introductions.
+
+### Removed
+
+* Virtual Currency Pricing Model appendix entry (replaced by [Consumption Currency Pricing Model](/specification/appendix/saas_examples/consumption_currency_pricing_model.md))
+
 ## v1.4
 
 <sup>Announced June 2026</sup>
