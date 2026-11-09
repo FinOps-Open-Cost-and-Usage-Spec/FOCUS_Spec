@@ -102,6 +102,12 @@ To ensure complete and error-free removal of deprecated entities from the FOCUS 
 
 Preview is a status for a FOCUS dataset published in a version of FOCUS so implementers can build it and report what they find. A dataset with this status is called a preview. See [Preview](../../specification/overview.md#preview) in the specification for the definition.
 
+A supporting entity is an entity that a preview dataset depends on and that is defined outside the dataset's own section (e.g., an operating model condition, or an object schema such as the Eligibility Object Schema that the SKU Price dataset uses). A requirement is not a supporting entity. A supporting entity is part of a preview only when the scope list in the preview's tracking issue names it.
+
+**TODO (FR #2782, question 1):** Confirm the definition of supporting entity above, and whether it also needs a glossary entry, since the specification's overview and General Availability glossary entry use the term.
+
+**TODO (FR #2782, question 5):** Decide where the specification states, as a normative requirement, that preview content is not evaluated for conformance, and which source fixes the scope list for each version (the tracking issue, the dataset's Preview note, or the requirements model).
+
 ### Designating a Preview
 
 A FOCUS dataset preview MUST adhere to the following requirements:
@@ -117,6 +123,10 @@ A FOCUS dataset preview MUST adhere to the following requirements:
 * A preview MAY change in the next version without a deprecation notice.
 * The Specification MUST follow the normal change management process for all entities when not marked as preview.
 
+**TODO (FR #2782, question 13):** Decide when in a release cycle a dataset can enter preview.
+
+**TODO (FR #2782, question 4):** Decide whether a stable requirement can depend on preview content, and how the requirements model and validators treat that dependency.
+
 A preview tracking issue MUST adhere to the following requirements:
 
 * A preview tracking issue MUST list any questions to learn from generating or using the dataset, and who raised each one.
@@ -125,6 +135,8 @@ A preview tracking issue MUST adhere to the following requirements:
 * A preview tracking issue SHOULD list at least one early implementer, who is any person or organization, inside or outside the working group, that will generate or use the dataset to answer open questions.
 * A preview tracking issue MUST state the date of the next status decision.
 * A preview tracking issue MUST record that a request for comments went to existing data generators, and who responded.
+
+**TODO (FR #2782, question 16):** Decide who sends the request for comments to data generators, when, and in what form. Decide how practitioners and data generators outside the working group commit to trying a preview, who keeps each tracking issue up to date, and whether tracking issues follow an issue template.
 
 ### Marking a Preview
 
@@ -136,6 +148,12 @@ A preview tracking issue MUST adhere to the following requirements:
 * Set each Version Introduced section in the dataset, including its columns, to `Preview: <version>` (e.g., `Preview: 1.5`).
 * Set the Version Introduced section of each supporting entity on the scope list to `Preview: <version>`, unless the tracking issue explicitly notes an exception for that entity.
 
+**TODO (FR #2782, question 10):** Decide how a delivered dataset's metadata marks preview content, how a data generator states that it provides a preview, and how published schema files mark preview content.
+
+**TODO (FR #2782, question 11):** Decide what Version Introduced shows for a preview and after promotion, for the dataset, its columns, the supporting entities on its scope list, and the supported features that depend on it. FR #2816 proposes to take this question.
+
+**TODO (FR #2782, question 17):** Decide how release notes, the website, and announcements describe preview content, so readers do not take a whole release as a preview.
+
 ### Exiting Preview
 
 At each later version, FOCUS Members choose one outcome and record it with its evidence in the tracking issue:
@@ -143,6 +161,12 @@ At each later version, FOCUS Members choose one outcome and record it with its e
 * **Promote:** Remove the preview designation once the open questions are addressed. The dataset's requirements become Active in the requirements model, and the "(preview)" label and Preview notes are removed. Each Version Introduced section is updated to include the general availability (GA) version (e.g., `Preview: 1.5 · GA: 1.6`).
 * **Extend:** Keep the preview for one more version, with a plan for the next evidence.
 * **Remove:** Remove the dataset without a deprecation notice or retention period. This is the default when there is no new evidence since the last decision.
+
+**TODO (FR #2782, question 14):** Decide what evidence is enough to promote a preview, and what counts as no new evidence for the removal default, including for datasets that cannot yet be built from data generator output.
+
+**TODO (FR #2782, question 15):** Decide how long a dataset can stay in preview, and when in the release cycle FOCUS Members make each status decision.
+
+**TODO (FR #2782, question 8):** Decide how a validator checks preview content on request while conformance checks leave it out.
 
 ## Change Type Classification
 
