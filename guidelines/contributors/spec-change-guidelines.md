@@ -104,7 +104,7 @@ Preview is a status for a FOCUS dataset published in a version of FOCUS so imple
 
 A supporting entity is an entity that a preview dataset depends on and that is defined outside the dataset's own section (e.g., an operating model condition, or an object schema such as the SKU Price Eligibility Object Schema that the SKU Price dataset uses). A requirement is not a supporting entity. A supporting entity is part of a preview only when the scope list in the preview's tracking issue names it.
 
-**TODO (FR #2782, question 1):** Confirm the definition of supporting entity above, and whether it also needs a glossary entry, since the specification's overview and General Availability glossary entry use the term.
+**TODO (FR #2782, question 1):** Confirm the definition of supporting entity above, and whether it also needs a glossary entry, since the specification's overview and General Availability glossary entry use the term. Decide which kinds of entity can qualify. As written, the definition does not exclude a column in another dataset or a glossary term. Whether content in a stable dataset, such as a column, can be a preview is open on FR #960, so the boundary for columns follows that request.
 
 **TODO (FR #2782, question 5):** Decide where the specification states, as a normative requirement, that preview content is not evaluated for conformance, and which source fixes the scope list for each version (the tracking issue, the dataset's Preview note, or the requirements model).
 
