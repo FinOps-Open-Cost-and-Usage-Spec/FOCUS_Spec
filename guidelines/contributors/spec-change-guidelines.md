@@ -106,7 +106,7 @@ A supporting entity is an entity that a preview dataset depends on and that is d
 
 **TODO (FR #2782, question 1):** Confirm the definition of supporting entity above, and whether it also needs a glossary entry, since the specification's overview and General Availability glossary entry use the term. Decide which kinds of entity can qualify. As written, the definition does not exclude a column in another dataset or a glossary term. Whether content in a stable dataset, such as a column, can be a preview is open on FR #960, so the boundary for columns follows that request.
 
-**TODO (FR #2782, question 5):** Decide where the specification states, as a normative requirement, that preview content is not evaluated for conformance, and which source fixes the scope list for each version (the tracking issue, the dataset's Preview note, or the requirements model).
+**TODO (FR #2782, question 5):** Decide whether and where the specification states, as a normative requirement, that preview content is not evaluated for conformance, and which source fixes the scope list for each version (the tracking issue, the dataset's Preview note, or the requirements model). Follows FR #2811.
 
 ### Designating a Preview
 
@@ -125,7 +125,9 @@ A FOCUS dataset preview MUST adhere to the following requirements:
 
 **TODO (FR #2782, question 13):** Decide when in a release cycle a dataset can enter preview.
 
-**TODO (FR #2782, question 4):** Decide whether a stable requirement can depend on preview content, and how the requirements model and validators treat that dependency.
+**TODO (FR #2782, question 4):** Decide whether a stable requirement can depend on preview content, and how the requirements model and validators treat that dependency. Follows FR #2811.
+
+**TODO (FR #2782, question 8):** Decide whether and how a validator checks preview content on request while conformance checks leave it out. Follows FR #2811, which takes the conformance-exclusion part of this question.
 
 A preview tracking issue MUST adhere to the following requirements:
 
@@ -148,11 +150,9 @@ A preview tracking issue MUST adhere to the following requirements:
 * Set each Version Introduced section in the dataset, including its columns, to `Preview: <version>` (e.g., `Preview: 1.5`).
 * Set the Version Introduced section of each supporting entity on the scope list to `Preview: <version>`, unless the tracking issue explicitly notes an exception for that entity.
 
-**TODO (FR #2782, question 10):** Decide how a delivered dataset's metadata marks preview content, how a data generator states that it provides a preview, and how published schema files mark preview content.
+**TODO (FR #2782, question 10):** Decide how a delivered dataset's metadata marks preview content, how a data generator states that it provides a preview, and how published schema files mark preview content. Follows FR #2811.
 
-**TODO (FR #2782, question 8):** Decide how a validator checks preview content on request while conformance checks leave it out.
-
-**TODO (FR #2782, question 11):** Decide what Version Introduced shows for a preview and after promotion, for the dataset, its columns, the supporting entities on its scope list, and the supported features that depend on it. FR #2816 proposes to take this question.
+**TODO (FR #2782, question 11):** The rules above and under Exiting Preview set Version Introduced for the dataset and its columns. Decide what Version Introduced shows for the supported features that depend on a preview, both during the preview and after promotion, and for the supporting entities on its scope list after promotion. FR #2816 proposes to take this question.
 
 **TODO (FR #2782, question 17):** Decide how release notes, the website, and announcements describe preview content, so readers do not take a whole release as a preview.
 
@@ -164,7 +164,7 @@ At each later version, FOCUS Members choose one outcome and record it with its e
 * **Extend:** Keep the preview for one more version, with a plan for the next evidence.
 * **Remove:** Remove the dataset without a deprecation notice or retention period. This is the default when there is no new evidence since the last decision.
 
-**TODO (FR #2782, question 14):** Decide what evidence is enough to promote a preview, and what counts as no new evidence for the removal default, including for datasets that cannot yet be built from data generator output.
+**TODO (FR #2782, question 14):** Decide what evidence is enough to promote a preview, and what counts as no new evidence for the removal default, including for datasets that no data generator produces yet.
 
 **TODO (FR #2782, question 15):** Decide how long a dataset can stay in preview, and when in the release cycle FOCUS Members make each status decision.
 
