@@ -102,7 +102,7 @@ To ensure complete and error-free removal of deprecated entities from the FOCUS 
 
 Preview is a status for a FOCUS dataset published in a version of FOCUS so implementers can build it and report what they find. A dataset with this status is called a preview. See [Preview](../../specification/overview.md#preview) in the specification for the definition.
 
-A supporting entity is an entity that a preview dataset depends on and that is defined outside the dataset's own section (e.g., an operating model condition, or an object schema such as the Eligibility Object Schema that the SKU Price dataset uses). A requirement is not a supporting entity. A supporting entity is part of a preview only when the scope list in the preview's tracking issue names it.
+A supporting entity is an entity that a preview dataset depends on and that is defined outside the dataset's own section (e.g., an operating model condition, or an object schema such as the SKU Price Eligibility Object Schema that the SKU Price dataset uses). A requirement is not a supporting entity. A supporting entity is part of a preview only when the scope list in the preview's tracking issue names it.
 
 **TODO (FR #2782, question 1):** Confirm the definition of supporting entity above, and whether it also needs a glossary entry, since the specification's overview and General Availability glossary entry use the term.
 
@@ -150,6 +150,8 @@ A preview tracking issue MUST adhere to the following requirements:
 
 **TODO (FR #2782, question 10):** Decide how a delivered dataset's metadata marks preview content, how a data generator states that it provides a preview, and how published schema files mark preview content.
 
+**TODO (FR #2782, question 8):** Decide how a validator checks preview content on request while conformance checks leave it out.
+
 **TODO (FR #2782, question 11):** Decide what Version Introduced shows for a preview and after promotion, for the dataset, its columns, the supporting entities on its scope list, and the supported features that depend on it. FR #2816 proposes to take this question.
 
 **TODO (FR #2782, question 17):** Decide how release notes, the website, and announcements describe preview content, so readers do not take a whole release as a preview.
@@ -165,8 +167,6 @@ At each later version, FOCUS Members choose one outcome and record it with its e
 **TODO (FR #2782, question 14):** Decide what evidence is enough to promote a preview, and what counts as no new evidence for the removal default, including for datasets that cannot yet be built from data generator output.
 
 **TODO (FR #2782, question 15):** Decide how long a dataset can stay in preview, and when in the release cycle FOCUS Members make each status decision.
-
-**TODO (FR #2782, question 8):** Decide how a validator checks preview content on request while conformance checks leave it out.
 
 ## Change Type Classification
 
