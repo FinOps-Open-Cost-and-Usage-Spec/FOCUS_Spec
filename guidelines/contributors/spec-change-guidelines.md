@@ -104,9 +104,9 @@ Preview is a status for a FOCUS dataset published in a version of FOCUS so imple
 
 A supporting entity is an entity that a preview dataset depends on and that is defined outside the dataset's own section (e.g., an operating model condition, or an object schema such as the SKU Price Eligibility Object Schema that the SKU Price dataset uses). A requirement is not a supporting entity. A supporting entity is part of a preview only when the scope list in the preview's tracking issue names it.
 
-**TODO (FR #2782, question 1):** Confirm the definition of supporting entity above, and whether it also needs a glossary entry, since the specification's overview and General Availability glossary entry use the term. Decide which kinds of entity can qualify. As written, the definition does not exclude a column in another dataset or a glossary term. Whether content in a stable dataset, such as a column, can be a preview is open on FR #960, so the boundary for columns follows that request.
+**TODO (FR #2782, question 1):** Confirm the definition of supporting entity above, and whether it also needs a glossary entry, since the specification's overview and General Availability glossary entry use the term. Decide which kinds of entity can qualify. One alternative test is the one the SKU Price Preview notes and the scope list rule for requirements already use: an entity outside the dataset that exists only for the preview. That test would also tell a tracking issue which supporting entities to list, and it would leave out a stable column in another dataset. As written, the definition does not exclude a column in another dataset or a glossary term. Whether content in a stable dataset, such as a column, can be a preview is open on FR #960, so the boundary for columns follows that request.
 
-**TODO (FR #2782, question 5):** Decide whether and where the specification states, as a normative requirement, that preview content is not evaluated for conformance, and which source fixes the scope list for each version (the tracking issue, the dataset's Preview note, or the requirements model). Follows FR #2811.
+**TODO (FR #2782, question 5):** Decide where the specification states, as a normative requirement, that preview content is not evaluated for conformance, and which source fixes the scope list for each version (the tracking issue, the dataset's Preview note, or the requirements model). Follows FR #2811.
 
 ### Designating a Preview
 
@@ -152,7 +152,7 @@ A preview tracking issue MUST adhere to the following requirements:
 
 **TODO (FR #2782, question 10):** Decide how a delivered dataset's metadata marks preview content, how a data generator states that it provides a preview, and how published schema files mark preview content. Follows FR #2811.
 
-**TODO (FR #2782, question 11):** The rules above and under Exiting Preview set Version Introduced for the dataset and its columns. Decide what Version Introduced shows for the supported features that depend on a preview, both during the preview and after promotion, and for the supporting entities on its scope list after promotion. FR #2816 proposes to take this question.
+**TODO (FR #2782, question 11):** Decide what Version Introduced shows after promotion, for the dataset, its columns, the supporting entities on its scope list, and the supported features that depend on it. The Promote step below sets `Preview: <version> · GA: <version>` for the dataset and its columns, and the choice is between that and the promotion version alone. Also decide what the supported features that depend on a preview show while it is a preview. FR #2816 proposes to take this question.
 
 **TODO (FR #2782, question 17):** Decide how release notes, the website, and announcements describe preview content, so readers do not take a whole release as a preview.
 
