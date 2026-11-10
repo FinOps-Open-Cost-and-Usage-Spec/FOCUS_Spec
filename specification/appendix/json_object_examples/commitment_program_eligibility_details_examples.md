@@ -12,11 +12,11 @@ Scenario: A compute usage row that is partially covered by a Flexible Spend Plan
 
 ## StackLens (Observability with Interval Spend Commitment)
 
-Scenario: An observability platform usage row eligible for Monthly and Annual interval spend commitment pricing, offering lower effective rates than standard usage.
+Scenario: An observability platform usage row eligible for interval spend commitment pricing, offering lower effective rates than standard usage.
 
 | ServiceProviderName | ServiceName   | CommitmentProgramEligibilityDetails                                                                                            |
 |---------------------|---------------|-------------------------------------------------------------------------------------------------------------------------|
-| StackLens           | Observability | {"CommitmentPrograms": [{"ProgramType": "Monthly Interval Spend Commitment"}, {"ProgramType": "Annual Interval Spend Commitment"}]} |
+| StackLens           | Observability | {"CommitmentPrograms": [{"ProgramType": "Interval Spend Commitment"}]} |
 
 ## LatticeScale (Ineligible Object Storage Usage)
 
@@ -69,7 +69,7 @@ Six usage rows for a single charge period (2025-04-01):
 1. **Uncovered compute** (Rows 1-2): Two Aura Web Compute rows eligible for both Flexible Spend Plan and Resource Reservation. [BilledCost](#datamodel.costandusage.billedcost) totals $500.00 across both rows.
 2. **Covered compute** (Row 3): Aura Web Compute covered by an existing Resource Reservation. Filtered out by the query because [CommitmentDiscountId](#datamodel.costandusage.commitmentdiscountid) is populated.
 3. **Ineligible support** (Row 4): Aura Web Support with no CommitmentProgramEligibilityDetails. Filtered out because the column is null.
-4. **Uncovered observability** (Rows 5-6): Two StackLens Observability rows eligible for Monthly Interval Spend Commitment and Annual Interval Spend Commitment. BilledCost totals $200.00.
+4. **Uncovered observability** (Rows 5-6): Two StackLens Observability rows eligible for Interval Spend Commitment. BilledCost totals $200.00.
 
 To evaluate these purchasing options, the `CommitmentPrograms` JSON array must be flattened so each eligible program can be analyzed independently. By expanding the array (e.g., via `CROSS JOIN UNNEST`) and grouping the uncovered costs by `ServiceProviderName`, `ServiceName`, and `EligibleProgramType`, the practitioner gets the summary presented in the table below. A reference implementation is available in the [eligible uncovered spend query](#supportedfeatures.commitmentprogrameligibilitydetails) supported feature.
 
@@ -77,12 +77,11 @@ To evaluate these purchasing options, the `CommitmentPrograms` JSON array must b
 |:--------------------|:------------|:--------------------|:---------------------------|
 | Aura Web | Compute | Flexible Spend Plan | $500.00 |
 | Aura Web | Compute | Resource Reservation | $500.00 |
-| StackLens | Observability | Monthly Interval Spend Commitment | $200.00 |
-| StackLens | Observability | Annual Interval Spend Commitment | $200.00 |
+| StackLens | Observability | Interval Spend Commitment | $200.00 |
 
 Aura Web Compute appears as $500.00 under both Flexible Spend Plan and Resource Reservation. This does not mean $1,000.00 is uncovered. The $500.00 is the same spend, and each program type represents an independent purchasing opportunity. Purchasing a Flexible Spend Plan would cover some or all of that $500.00, as would a Resource Reservation. The practitioner must choose between them (or split across both) based on flexibility requirements and discount depth.
 
-The same logic applies to StackLens: $200.00 of observability spend could be covered by either a monthly or annual Interval Spend Commitment. The annual option typically offers a deeper discount in exchange for a longer commitment term.
+StackLens appears once, with $200.00 under Interval Spend Commitment. CommitmentProgramEligibilityDetails does not include *commitment* [*periods*](#glossary:period), so the summary does not separate monthly and annual terms. The practitioner chooses the term when purchasing.
 
 The query uses BilledCost rather than EffectiveCost because all rows are uncovered (CommitmentDiscountId IS NULL). For uncovered usage, BilledCost equals EffectiveCost and reflects the actual amount paid.
 

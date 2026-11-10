@@ -1,6 +1,6 @@
 # Contract Period End
 
-Contract Period End represents the [*exclusive end bound*](#glossary:exclusiveendbound) of a contract period. For example, a time period where [Contract Period Start](#datamodel.contractcommitment.contractperiodstart) is '2024-01-01T00:00:00Z' and Contract Period End is '2024-01-02T00:00:00Z' includes January 1 2024 since Contract Period Start represents the [*inclusive start bound*](#glossary:inclusivestartbound), but does not include January 1 2025 since Contract Period End represents the *exclusive end bound*.
+Contract Period End represents the [*exclusive end bound*](#glossary:exclusiveendbound) of a contract period. For example, a time period where [Contract Period Start](#datamodel.contractcommitment.contractperiodstart) is '2024-01-01T00:00:00Z' and Contract Period End is '2025-01-01T00:00:00Z' includes January 1 2024 since Contract Period Start represents the [*inclusive start bound*](#glossary:inclusivestartbound), but does not include January 1 2025 since Contract Period End represents the *exclusive end bound*.
 
 ## Requirements
 
