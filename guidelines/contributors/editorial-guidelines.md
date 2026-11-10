@@ -1,21 +1,18 @@
 # Editorial Style Guidelines
 
-The "Editorial Style Guidelines" section ensures consistency and clarity across all documentation. Adhering to these guidelines is crucial for maintaining a unified style, which enhances readability and reduces misinterpretation. By following the specified standards—whether in formatting, linking, or structuring information—we ensure that all documents are professional, clear, and aligned with our editorial principles. Consistent application of these guidelines contributes to high-quality, user-friendly documentation.
-
-These guidelines can be modified through a Pull Request (PR), which the members must review and agree upon. This process ensures that any changes are thoughtfully considered and maintains the overall integrity of our editorial standards.
-
 ## Table of Contents
 
+* [Overview](#overview)
 * [Core Editorial Rules](#core-editorial-rules)
   * [References and Terminology](#references-and-terminology)
-    * [Linking](#linking)
     * [Entity References](#entity-references)
     * [Display Names](#display-names)
     * [Column Values](#column-values)
+    * [Linking](#linking)
     * [Comparison Terminology](#comparison-terminology)
   * [Document Structure](#document-structure)
-    * [Normative Requirements](#normative-requirements)
     * [Section Structure](#section-structure)
+    * [Requirements Sections](#requirements-sections)
     * [Bullet Structure](#bullet-structure)
     * [Notes and Exceptions](#notes-and-exceptions)
     * [Examples](#examples)
@@ -24,30 +21,20 @@ These guidelines can be modified through a Pull Request (PR), which the members 
     * [Currency and Dollar Signs](#currency-and-dollar-signs)
     * [JSON Formatting](#json-formatting)
     * [Tables](#tables)
-  * [Complete Column Example](#complete-column-example)
-* [Supported Features](#supported-features)
+* [Column Editorial Rules](#column-editorial-rules)
+  * [Column Examples](#column-examples)
+    * [Pricing Quantity](#pricing-quantity)
+* [Supported Features Editorial Rules](#supported-features-editorial-rules)
+
+## Overview
+
+The "Editorial Style Guidelines" section ensures consistency and clarity across all documentation. Adhering to these guidelines is crucial for maintaining a unified style, which enhances readability and reduces misinterpretation. By following the specified standards—whether in formatting, linking, or structuring information—we ensure that all documents are professional, clear, and aligned with our editorial principles. Consistent application of these guidelines contributes to high-quality, user-friendly documentation.
+
+These guidelines can be modified through a Pull Request (PR), which the members must review and agree upon. This process ensures that any changes are thoughtfully considered and maintains the overall integrity of our editorial standards.
 
 ## Core Editorial Rules
 
-> **Note:** Examples are illustrative, informative, and non-normative. They do not define requirements and do not override the rules in this section.
-
 ### References and Terminology
-
-#### Linking
-
-* **Linking on First Occurrence:** To avoid excessive linking, entity references (including FOCUS entity IDs, display names, and glossary terms) MUST be linked only on their first occurrence within a given source markdown file.
-
-> **Note:** Unless otherwise specified, first-occurrence linking is evaluated relative to the containing source markdown file.
-
-**Exceptions:**
-
-* In **Content Constraints** sections, all entity references MUST be linked, regardless of prior occurrence in the source markdown file.
-
-* In the **Glossary** file, entity references MUST be linked only on their first occurrence within each glossary entry, rather than once per source markdown file.
-
-* **Link Targets:** Column and attribute names and IDs are linked to the section that defines them.
-
-* **Glossary Terms:** Glossary terms are written in italics and are linked to the glossary (e.g., `[*SKU*](#glossary:sku)`).
 
 #### Entity References
 
@@ -75,6 +62,22 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 
 * **Column Value Formatting:** Column values are enclosed in double quotation marks and written in normal text, without bold or italics (e.g., "Usage", "Tax", "TB").
 
+#### Linking
+
+* **Linking on First Occurrence:** To avoid excessive linking, entity references (including FOCUS entity IDs, display names, and glossary terms) MUST be linked only on their first occurrence within a given source markdown file.
+
+> **Note:** Unless otherwise specified, first-occurrence linking is evaluated relative to the containing source markdown file.
+
+**Exceptions:**
+
+* In **Content Constraints** sections, all entity references MUST be linked, regardless of prior occurrence in the source markdown file.
+
+* In the **Glossary** file, entity references MUST be linked only on their first occurrence within each glossary entry, rather than once per source markdown file.
+
+* **Link Targets:** Column and attribute names and IDs are linked to the section that defines them.
+
+* **Glossary Terms:** Glossary terms are written in italics and are linked to the glossary (e.g., `[*SKU*](#glossary:sku)`).
+
 #### Comparison Terminology
 
 To ensure consistent language when describing relationships and evaluations between values, normative requirements and standard prose MUST use the following terminology:
@@ -89,7 +92,15 @@ To ensure consistent language when describing relationships and evaluations betw
 
 ### Document Structure
 
-#### Normative Requirements
+#### Section Structure
+
+* **Consistent Subsection Order:** Sections for the same entity type SHOULD follow a consistent subsection order (e.g., Title, Requirements, Entity ID, Display Name, Description, Content Constraints, Version Introduced).
+
+> **Note:** The subsection order examples in this section are illustrative unless a canonical order is explicitly defined for a specific entity type.
+
+* **Consistent Subsection Titles:** Subsection titles SHOULD match exactly across sections of the same entity type.
+
+#### Requirements Sections
 
 Normative requirements are defined and authored exclusively according to the Normative Requirements Guidelines.
 
@@ -128,14 +139,6 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
   ...
   * PricingQuantity MUST be greater than 0.
 ```
-
-#### Section Structure
-
-* **Consistent Subsection Order:** Sections for the same entity type SHOULD follow a consistent subsection order (e.g., Title, Requirements, Entity ID, Display Name, Description, Content Constraints, Version Introduced).
-
-> **Note:** The subsection order examples in this section are illustrative unless a canonical order is explicitly defined for a specific entity type.
-
-* **Consistent Subsection Titles:** Subsection titles SHOULD match exactly across sections of the same entity type.
 
 #### Bullet Structure
 
@@ -388,49 +391,65 @@ This is how it is written in HTML:
 
 ```
 
-### Complete Column Example
+## Column Editorial Rules
 
-> **3.1.47 Pricing Quantity**
->
-> The Pricing Quantity represents the volume of a given [*SKU*](#glossary:sku) associated with a [*resource*](#glossary:resource) or [*service*](#glossary:service) used or purchased, based on the [Pricing Unit](#datasets.costandusage.pricingunit). Distinct from [Consumed Quantity](#datasets.costandusage.consumedquantity) (complementary to [Consumed Unit](#datasets.costandusage.consumedunit)), it focuses on pricing and cost, not *resource* and *service* consumption.
->
-> **3.1.47.1. Requirements**
->
-> PricingQuantity MUST adhere to the following requirements:
->
-> * PricingQuantity MUST be of type Decimal.
-> * PricingQuantity MUST conform to [NumericFormat](#attributes.numericformat) requirements.
-> * PricingQuantity MUST adhere to the following nullability requirements:
->   * PricingQuantity MUST be null when [SkuPriceId](#datasets.costandusage.skupriceid) is null.
->   * PricingQuantity MUST be null when [ChargeCategory](#datasets.costandusage.chargecategory) is "Tax".
->   * PricingQuantity MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#datasets.costandusage.chargeclass) is not "Correction".
->   * PricingQuantity MAY be null in all other cases.
-> * Cost metric (e.g., [ContractedCost](#datasets.costandusage.contractedcost)) MUST equal the product of the corresponding unit price (e.g., [ContractedUnitPrice](#datasets.costandusage.contractedunitprice)) and PricingQuantity when the unit price is not null and PricingQuantity is not null.
->
-> **3.1.47.2. Column ID**
->
-> PricingQuantity
->
-> **3.1.47.3. Display Name**
->
-> Pricing Quantity
->
-> **3.1.47.4. Description**
->
-> The volume of a given *SKU* associated with a *resource* or *service* used or purchased, based on the Pricing Unit.
->
-> **3.1.47.5. Usability Constraints**
->
-> **Aggregation:** When aggregating Pricing Quantity for commitment utilization calculations, it's important to exclude [*commitment discount*](#glossary:commitment-discount) purchases (i.e. when Charge Category is "Purchase") that are paid to cover future eligible [*charges*](#glossary:charge) (e.g., *commitment discount*). Otherwise, when accounting for all upfront or accrued purchases, it's important to exclude *commitment discount* usage (i.e. when Charge Category is "Usage"). This exclusion helps prevent double counting of these quantities in the aggregation.
->
-> **3.1.47.6. Content Constraints**
->
-> <img width="492" alt="image" src="https://github.com/user-attachments/assets/5185cbf9-306d-4663-a1c7-c8b7ab5c5bb8">
->
-> **3.1.47.7. Version Introduced**
->
-> 1.0-preview
+### Column Examples
 
-## Supported Features
+> **Note:** Examples are illustrative, informative, and non-normative. They do not define requirements and do not override the rules in this section.
+
+#### Pricing Quantity
+
+```markdown
+# Pricing Quantity
+
+The Pricing Quantity represents the volume of a given [*SKU*](#glossary:sku) associated with a [*resource*](#glossary:resource) or [*service*](#glossary:service) used or purchased, based on the [Pricing Unit](#datamodel.costandusage.pricingunit). Distinct from [Consumed Quantity](#datamodel.costandusage.consumedquantity) (complementary to [Consumed Unit](#datamodel.costandusage.consumedunit)), it focuses on pricing and cost, not *resource* and *service* consumption.
+
+## Requirements
+
+PricingQuantity MUST adhere to the following requirements:
+
+* PricingQuantity MUST be of type Decimal.
+* PricingQuantity MUST conform to [NumericFormat](#attributes.numericformat) requirements.
+* PricingQuantity MUST adhere to the following nullability requirements:
+  * PricingQuantity MUST be null when [SkuPriceId](#datamodel.costandusage.skupriceid) is null.
+  * PricingQuantity MUST be null when [ChargeCategory](#datamodel.costandusage.chargecategory) is "Tax".
+  * PricingQuantity MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#datamodel.costandusage.chargeclass) is not "Correction".
+  * PricingQuantity MAY be null in all other cases.
+
+## Usability Constraints
+
+**Aggregation:** When aggregating Pricing Quantity per [SKU ID](#datamodel.costandusage.skuid) for a SKU that includes both [*covering charges*](#glossary:covering-charge) and their [*covered charges*](#glossary:covered-charge), exclude one or the other, based on the specific use case, to avoid double counting. The appropriate set to exclude depends on the relevant cost basis for the use case. Exclude *covered charges* when aggregating on a billed basis, or *covering charges* when aggregating on an accrual basis.
+
+## Column ID
+
+PricingQuantity
+
+## Display Name
+
+Pricing Quantity
+
+## Description
+
+The volume of a given *SKU* associated with a *resource* or *service* used or purchased, based on the Pricing Unit.
+
+## Content Constraints
+
+| Constraint                 | Value                                       |
+| :------------------------- | :------------------------------------------ |
+| Dataset                    | [Cost and Usage](#datamodel.costandusage)   |
+| Operating model conditions | Not applicable                              |
+| Column type                | Metric                                      |
+| Feature level              | Mandatory                                   |
+| Allows nulls               | True                                        |
+| Data type                  | Decimal                                     |
+| Value format               | [Numeric Format](#attributes.numericformat) |
+| Number range               | Any valid decimal value                     |
+
+## Version Introduced
+
+1.0-preview
+```
+
+## Supported Features Editorial Rules
 
 Rules specific to supported features pages are being defined in [#2572](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2572) ([PR #2778](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pull/2778)).
