@@ -139,7 +139,7 @@ In this scenario, an enterprise with an existing master agreement with **Aura We
 
 * **Context:** A commitment based on **Data Volume (TB)** specifically for egress traffic between cloud providers.
 * **Commercial Logic:** A **Usage-based**, **Continuous** model tracked on a **Monthly Fulfillment Interval**.
-* **Eligibility:** Targeted specifically at `Egress` SKU meters via string-match logic in the Eligibility JSON.
+* **Eligibility:** Targeted specifically at `Egress` SKU meters via string-match logic in the CC Applicability JSON.
 
 ### Data Example: AGR-44-GAMMA
 
@@ -206,7 +206,7 @@ This scenario focuses on how the model handles growth beyond initial estimates. 
 | **CC Description** | `Base 100TB DB Storage` | `Tier 2 Storage Overage` | `1PB Annual CDN Volume` |
 | **CC Discount %** | `0.20` | `0.10` | `0.25` |
 | **CC Duration Type** | `1 Year` | `1 Year` | `1 Year` |
-| **CC Applicability** | `{"InclusionOperator": "Or", "Inclusions": [{"Dimension": "ServiceCategory", "Operator": "In", "Values": ["Databases"]}]}` | `{"InclusionOperator": "Or", "Inclusions": [{"Dimension": "ServiceCategory", "Operator": "In", "Values": ["Databases"]}]}` | `{"InclusionOperator": "Or", "Inclusions": [{"Dimension": "ServiceCategory", "Operator": "In", "Values": ["Networking"]}]}` |
+| **CC Applicability** | `{"InclusionOperator": "Or", "Inclusions": [{"Dimension": "ServiceCategory", "Operator": "In", "Values": ["Databases"]}]}` | `{"InclusionOperator": "Or", "Inclusions": [{"Dimension": "ServiceCategory", "Operator": "In", "Values": ["Databases"]}]}` | `{"InclusionOperator": "Or", "Inclusions": [{"Dimension": "ServiceSubcategory", "Operator": "In", "Values": ["Content Delivery"]}]}` |
 | **CC Fulfillment Interval** | `Monthly` | `Monthly` | `Annual` |
 | **CC ID** | `CMT-STR-BASE` | `CMT-STR-OVER` | `CMT-CDN-VOL` |
 | **CC Last Updated** | `2026-02-01T08:00:00Z` | `2026-02-01T08:00:00Z` | `2026-02-01T08:00:00Z` |

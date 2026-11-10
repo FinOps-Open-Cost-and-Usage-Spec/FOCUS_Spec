@@ -23,7 +23,7 @@ ContractCommitmentDiscountPercentage MUST adhere to the following requirements:
 
 In scenarios where a commitment has "stacked" or "nested" discounts, this field should reflect the total reduction from the list price.
 
-Discount Percentage = 1 - (Unit Price After All Applicable Discounts / List Unit Price)
+Discount Percentage = 1 - (unit price after all applicable discounts / List Unit Price)
 
 For example, consider usage that yields a cost for which the following discounts are applicable:
 

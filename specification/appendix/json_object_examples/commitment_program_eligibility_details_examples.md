@@ -81,7 +81,7 @@ To evaluate these purchasing options, the `CommitmentPrograms` JSON array must b
 
 Aura Web Compute appears as $500.00 under both Flexible Spend Plan and Resource Reservation. This does not mean $1,000.00 is uncovered. The $500.00 is the same spend, and each program type represents an independent purchasing opportunity. Purchasing a Flexible Spend Plan would cover some or all of that $500.00, as would a Resource Reservation. The practitioner must choose between them (or split across both) based on flexibility requirements and discount depth.
 
-StackLens appears once, with $200.00 under Interval Spend Commitment. CommitmentProgramEligibilityDetails does not include *commitment* periods, so the summary does not separate monthly and annual terms. The practitioner chooses the term when purchasing.
+StackLens appears once, with $200.00 under Interval Spend Commitment. CommitmentProgramEligibilityDetails does not include *commitment* [*periods*](#glossary:period), so the summary does not separate monthly and annual terms. The practitioner chooses the term when purchasing.
 
 The query uses BilledCost rather than EffectiveCost because all rows are uncovered (CommitmentDiscountId IS NULL). For uncovered usage, BilledCost equals EffectiveCost and reflects the actual amount paid.
 
