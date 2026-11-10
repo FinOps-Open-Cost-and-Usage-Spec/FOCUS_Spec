@@ -1,159 +1,52 @@
-## Editorial Style Guidelines
+# Editorial Style Guidelines
+
+## Table of Contents
+
+* [Overview](#overview)
+* [Core Editorial Rules](#core-editorial-rules)
+  * [References and Terminology](#references-and-terminology)
+  * [Document Structure](#document-structure)
+  * [Text and Formatting](#text-and-formatting)
+* [Column Editorial Rules](#column-editorial-rules)
+  * [Column Examples](#column-examples)
+* [Supported Features Editorial Rules](#supported-features-editorial-rules)
+
+## Overview
 
 The "Editorial Style Guidelines" section ensures consistency and clarity across all documentation. Adhering to these guidelines is crucial for maintaining a unified style, which enhances readability and reduces misinterpretation. By following the specified standards—whether in formatting, linking, or structuring information—we ensure that all documents are professional, clear, and aligned with our editorial principles. Consistent application of these guidelines contributes to high-quality, user-friendly documentation.
 
 These guidelines can be modified through a Pull Request (PR), which the members must review and agree upon. This process ensures that any changes are thoughtfully considered and maintains the overall integrity of our editorial standards.
 
-### Normative Requirements
+## Core Editorial Rules
 
-Normative requirements are defined and authored exclusively according to the Normative Requirements Guidelines.
+### References and Terminology
 
-Authors MUST refer to the [Normative Requirements Guidelines](normative-requirements-guidelines.md) when writing or modifying normative requirements.
+#### Entity References
 
-<table>
-    <tr>
-        <th>Component</th>
-        <th>Display (PDF, HTML)</th>
-        <th>Markdown (examples)</th>
-        <th>Editorial Guidelines</th>
-    </tr>
-    <tr>
-        <td><strong>Column &amp; Attribute Names:</strong></td>
-        <td>
-            <strong>Column Names</strong>:<br>
-            * Pricing Quantity<br>
-            * Pricing Unit<br>
-            * Service Provider Name<br><br>
-            <strong>Attribute Names</strong>:<br>
-            * Currency Code Format<br>
-            * Date/Time Format
-        </td>
-        <td>
-            <strong>Column Names:</strong><br>
-            &nbsp;&nbsp; Pricing Quantity<br>
-            &nbsp;&nbsp; Pricing Unit<br>
-            &nbsp;&nbsp; Service Provider Name<br><br>
-            <strong>Attribute Names</strong>:<br>
-            &nbsp;&nbsp; Currency Code Format<br>
-            &nbsp;&nbsp; Date/Time Format<br>
-        </td>
-        <td>
-            * Use the display name in the non-normative section.<br>
-            * The first occurrence in a section is linked to the section.
-        </td>
-    </tr>
-    <tr>
-        <td><strong>Column &amp; Attribute IDs:</strong></td>
-        <td>
-           <strong>Columns IDs</strong>:<br>
-            * PricingQuantity<br>
-            * PricingUnit<br>
-            * ServiceProviderName<br><br>
-          <strong>Attributes IDs</strong>:<br>
-            * CurrencyCodeFormat <br>
-            * DateTimeFormat <br>
-        </td>
-        <td>
-          <strong>Columns IDs:</strong><br>
-          &nbsp;&nbsp; PricingQuantity <br>
-          &nbsp;&nbsp; PricingUnit<br>
-          &nbsp;&nbsp; ServiceProviderName <br><br>
-          <strong>Attributes IDs:</strong> <br/>
-          &nbsp;&nbsp; CurrencyCodeFormat <br/>
-          &nbsp;&nbsp; DateTimeFormat <br>
-        </td>
-        <td>
-           * Use PascalCamel case (the first letter of every word, is capitalized)<br>
-           * Normal text without bold or italics.<br>
-           * The first occurrence in a section is linked to the section.
-        </td>
-    </tr>
-    <tr>
-        <td><strong>Column Values:</strong></td>
-        <td>
-            * "Usage"<br>
-            * "Tax"<br>
-            * "TB"<br>
-        </td>
-        <td>
-            This column:<br>
-            &nbsp;&nbsp; * MUST be null when ChargeCategory is "Tax" ...
-        </td>
-        <td>
-            * Enclosed in double quotation marks<br>
-            * Normal text without bold or italics
-        </td>
-    </tr>
-    <tr>
-        <td><strong>Normative Keywords</strong> (Formatting Only)</td>
-        <td>
-            Normative keywords and statements (see Normative Requirements Guidelines)
-        </td>
-        <td>
-            This column:<br/>
-            &nbsp;&nbsp; * MUST NOT be null when ChargeClass is ... <br/>
-            &nbsp;&nbsp; * MUST be null when ChargeCategory is ... <br/>
-            &nbsp;&nbsp; * MAY be null for all other combinations of ... <br/>
-        </td>
-        <td>
-           * Formatting follows Editorial Guidelines.<br>
-           * Structure and usage are defined in the Normative Requirements Guidelines.<br>
-        </td>
-    </tr>
-    <tr>
-        <td><strong>Glossary</strong></td>
-        <td>
-            <a>SKU</a>, <a>resource</a>, <a>service</a>
-        </td>
-        <td>
-            [*SKU*](#glossary:sku) <br>
-            [*resource*](#glossary:resource) <br>
-            [*service*](#glossary:service) <br>
-        </td>
-        <td>
-            * Blue font + italic<br>
-            * The first occurrence in a section is linked to the glossary.
-        </td>
-    </tr>
-    <tr>
-        <td><strong>Important Text</strong></td>
-        <td> <img width="492" alt="image" src="https://github.com/user-attachments/assets/c6f60ff9-1503-43a3-8229-004595b334d2"></td>
-        <td>> Important Consideration</td>
-        <td>* It is added as a note.</td>
-    </tr>
-    <tr>
-        <td><strong>Key-Value Format</strong></td>
-        <td>JSON Script</td>
-        <td>
-            <pre>
-**Example**:
-```json
-{
-    "key1": "value1",
-    "key2": true,
-    "key3": 123
-}
-```
-            </pre>
-        </td>
-        <td>* Monospace font</td>
-    </tr>
-    <tr>
-      <td><strong>Tables</strong></td>
-      <td><img width="492" alt="image" src="https://github.com/user-attachments/assets/5185cbf9-306d-4663-a1c7-c8b7ab5c5bb8"></td>
-      <td><img width="492" alt="image" src="https://github.com/user-attachments/assets/83d0977f-a731-4def-93e3-b3e5f5dedb72"></td>
-      <td> * Tables: Simple tables can be created using markdown, but for more complex tables, it is recommended to use HTML elements. See the example below. </td>
-    </tr>
-</table>
+* **Entity ID References:** Formatting and usage conventions for normative requirements are defined in the Normative Requirements Guidelines.
+* **Entity ID Formatting:** Entity IDs MUST be formatted without spaces.
+* **Entity ID Naming:** Entity IDs MUST match the exact naming conventions used in the schema (e.g., CommitmentDiscountId).
+* **Column and Attribute ID Emphasis:** Column and attribute IDs are written in normal text, without bold or italics.
+* **Entity Display Name References:** References to FOCUS entities in non-normative content (i.e., outside Requirements sections) MUST use Display Names when available.
+* **Entity Scope:** These rules apply to all entities defined in the FOCUS specification (e.g., Columns, Attributes, Datasets, Objects).
 
-> **Note:** Complex tables typically include merged rows or columns, embedded images, multi-line content, or advanced layout requirements that are difficult to express reliably using standard markdown tables.
+#### Display Names
 
-## Editorial Notes
+* **Display Names Usage:** Display Names SHOULD be used in introductory or explanatory sections where natural language context is more appropriate.
+* **Display Names Formatting:** Display Names SHOULD follow normal text conventions, including spaces between words (e.g., Commitment Discount ID).
+* **Consistent Formatting:** This formatting MUST be used consistently across all normative requirements, descriptions, and tables when referencing a specific string value.
 
-> **Note:** Examples are illustrative, informative, and non-normative. They do not define requirements and do not override the rules in this section.
+#### Column Values
 
-### Linking
+* **Column Value Formatting:** Column values are enclosed in double quotation marks and written in normal text, without bold or italics (e.g., "Usage", "Tax", "TB").
 
+#### Glossary Terms
+
+* **Glossary Term Formatting:** Glossary terms are written in italics (e.g., `*SKU*`).
+
+#### Linking
+
+* **Link Targets:** Column and attribute names and IDs are linked to the section that defines them.
 * **Linking on First Occurrence:** To avoid excessive linking, entity references (including FOCUS entity IDs, display names, and glossary terms) MUST be linked only on their first occurrence within a given source markdown file.
 
 > **Note:** Unless otherwise specified, first-occurrence linking is evaluated relative to the containing source markdown file.
@@ -161,30 +54,9 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
 **Exceptions:**
 
 * In **Content Constraints** sections, all entity references MUST be linked, regardless of prior occurrence in the source markdown file.
-
 * In the **Glossary** file, entity references MUST be linked only on their first occurrence within each glossary entry, rather than once per source markdown file.
 
-### Entity References
-
-* **Entity ID References:** Formatting and usage conventions for normative requirements are defined in the Normative Requirements Guidelines.
-
-* **Entity ID Formatting:** Entity IDs MUST be formatted without spaces.
-
-* **Entity ID Naming:** Entity IDs MUST match the exact naming conventions used in the schema (e.g., CommitmentDiscountId).
-
-* **Entity Display Name References:** References to FOCUS entities in non-normative content (i.e., outside Requirements sections) MUST use Display Names when available.
-
-* **Entity Scope:** These rules apply to all entities defined in the FOCUS specification (e.g., Columns, Attributes, Datasets, Objects).
-
-### Display Names
-
-* **Display Names Usage:** Display Names SHOULD be used in introductory or explanatory sections where natural language context is more appropriate.
-
-* **Display Names Formatting:** Display Names SHOULD follow normal text conventions, including spaces between words (e.g., Commitment Discount ID).
-
-* **Consistent Formatting:** This formatting MUST be used consistently across all normative requirements, descriptions, and tables when referencing a specific string value.
-
-### Comparison Terminology
+#### Comparison Terminology
 
 To ensure consistent language when describing relationships and evaluations between values, normative requirements and standard prose MUST use the following terminology:
 
@@ -196,39 +68,21 @@ To ensure consistent language when describing relationships and evaluations betw
 
 > **Note:** Validation of comparison terminology may require contextual understanding of value types, identifiers, semantic equivalence, or domain-specific meaning and may not always be suitable for deterministic editorial validation.
 
-### Bullet Structure
+### Document Structure
 
-* **Unordered List Style:** All unordered lists in Markdown MUST use asterisks (`*`) rather than dashes (`-`) or plus signs (`+`). This maintains visual consistency across the specification and aligns with our automated linting standards.
+#### Section Structure
 
-* **Indentation Levels:** Nested bullet points MUST be indented using two spaces per level.
+* **Consistent Subsection Order:** Sections for the same entity type SHOULD follow a consistent subsection order (e.g., Title, Requirements, Entity ID, Display Name, Description, Content Constraints, Version Introduced).
 
-* **Indentation Usage:** A nested indentation level MUST only be introduced when a parent bullet defines a composite (grouping) requirement, typically ending with a colon (:).
+> **Note:** The subsection order examples in this section are illustrative unless a canonical order is explicitly defined for a specific entity type.
 
-* **Example** (illustrative):
+* **Consistent Subsection Titles:** Subsection titles SHOULD match exactly across sections of the same entity type.
 
-    ```md
-    ... MUST adhere to the following requirements:
+#### Requirements Sections
 
-    * ... MUST be of type JSON ...
-    * ... MUST adhere to the following nullability requirements:
-      * ... SHOULD NOT be null when ...
-      * ... MUST be null when ...
-      * ... MUST adhere to the following ...
-        * ... MUST be of type ...
-    ```
+Normative requirements are defined and authored exclusively according to the Normative Requirements Guidelines.
 
-* **No Skipped Levels:** Nested bullets points MUST NOT skip indentation levels.
-
-* **Consistent Indentation:** All bullet points within the same list MUST use consistent indentation.
-
-* **Example** (Markdown, illustrative):
-
-  ```md
-  * ... MUST be null when ChargeCategory is "Tax".
-  * ... MUST be null when ChargeCategory is "Adjustment".
-  ```
-
-### Formatting
+Authors MUST refer to the [Normative Requirements Guidelines](normative-requirements-guidelines.md) when writing or modifying normative requirements.
 
 * **Structural Anchors:** Normative bullet lists MUST be preceded by a structural anchor. See [Normative Requirements Guidelines](normative-requirements-guidelines.md#structural-anchor) for details.
 
@@ -239,44 +93,11 @@ To ensure consistent language when describing relationships and evaluations betw
   ```md
   ... MUST adhere to the following requirements:
   ```
-
 * **Consistent Introductory Phrases:** Introductory phrases for normative lists SHOULD be consistent within a section.
 
 > **Note:** Authors SHOULD prefer stable introductory patterns such as "... MUST adhere to the following requirements:" within the same section unless contextual variation improves readability.
 
-* **Sentence Spacing:** Sentences within paragraphs MUST be delineated with a single space.
-
-* **Semicolons in Nested Lists:** When a comma-separated list contains one or more items with internal commas, semicolons MUST be used to separate the top-level list items to prevent ambiguity about item boundaries. See [Merriam-Webster's guide to semicolons](https://www.merriam-webster.com/grammar/a-guide-to-using-semicolons) for further reference.
-  * **Example** (prose, illustrative):
-    * Incorrect: `The columns foster data integrity, interoperability, and consistency, improve data analysis and reporting, and support reliable decision-making.`
-    * Correct: `The columns foster data integrity, interoperability, and consistency; improve data analysis and reporting; and support reliable decision-making.`
-
-* **Spelling Out Numbers**: In standard prose, numbers zero through nine MUST be spelled out as words (e.g., "one", "two", "nine"), while numbers 10 and above MUST be written as numerals (e.g., "10", "42").
-  * **Exception:** This rule DOES NOT apply to technical values, mathematical formulas, JSON examples, or explicit column constraints (e.g., write `BilledCost MUST be 0`, not `BilledCost MUST be zero`).
-
-* **Dash Formatting:**
-  * An unspaced hyphen (`-`) MUST be used for compound words (e.g., `cost-only`) and ranges (e.g., `2024-2025`).
-  * A spaced hyphen (` - `) MUST be used to set off parenthetical phrases (e.g., `The metric - BilledCost - is required.`).
-  * HTML entities and special unicode dash characters SHOULD NOT be used.
-
-### JSON Formatting
-
-* **Valid JSON:** JSON examples MUST be valid and complete.
-
-* **JSON Quotation Marks:** JSON keys MUST use double quotation marks.
-
-* **Consistent Structure:** JSON examples SHOULD follow consistent formatting and indentation.
-
-### Section Structure
-
-* **Consistent Subsection Order:** Sections for the same entity type SHOULD follow a consistent subsection order (e.g., Title, Requirements, Entity ID, Display Name, Description, Content Constraints, Version Introduced).
-
-> **Note:** The subsection order examples in this section are illustrative unless a canonical order is explicitly defined for a specific entity type.
-
-* **Consistent Subsection Titles:** Subsection titles SHOULD match exactly across sections of the same entity type.
-
 * **Normative Scope:** Normative requirements (those using BCP-14 keywords) MUST appear only in the "Requirements" section.
-
 * **No Normative Leakage:** Normative keywords (MUST, SHOULD, MAY, etc.) MUST NOT be used in any section other than "Requirements".
 
 > **Note:** This restriction applies to normative content within FOCUS specification entities and does not prohibit guideline documents, examples, or editorial instructions from discussing normative terminology or authoring rules.
@@ -295,68 +116,53 @@ To ensure consistent language when describing relationships and evaluations betw
   * PricingQuantity MUST be greater than 0.
 ```
 
-### Examples
+#### Bullet Structure
 
-> **Note:** Authors should consult the actual FOCUS attribute specification files as the source of truth, as these guidelines do not necessarily reflect the latest version.
+* **Unordered List Style:** All unordered lists in Markdown MUST use asterisks (`*`) rather than dashes (`-`) or plus signs (`+`). This maintains visual consistency across the specification and aligns with our automated linting standards.
+* **Indentation Levels:** Nested bullet points MUST be indented using two spaces per level.
+* **Indentation Usage:** A nested indentation level MUST only be introduced when a parent bullet defines a composite (grouping) requirement, typically ending with a colon (:).
+* **Example** (illustrative):
 
-* **Brand-Free Identifiers:** Resource, host, and pod-level identifiers in appendix examples MUST use neutral, brand-free labels (e.g., `host-prod-07`, `pod-orders-01`) rather than labels derived from fictitious customer or data generator names, so that an identifier does not read as an additional, unintended entity in the example.
+    ```md
+    ... MUST adhere to the following requirements:
 
-* **Valid Examples:** Examples MUST reflect valid combinations of values defined in the specification.
-
-  > **Note:** Validation of example correctness may require schema, glossary, or domain-specific review beyond editorial validation.
-
-* **No New Terminology:** Examples MUST NOT introduce terminology that is not defined in the specification.
-
-  > **Note:** Validation of terminology consistency may require comparison against the approved glossary and specification entity definitions.
-
-* **Informative Examples:** Examples MUST be considered informative and non-normative, and MUST NOT define requirements.
-
-* **Informative Status Note:** Each of the following files MUST include an informative, non-normative status note directly below its first heading:
-  * `specification/overview.md`
-  * `specification/supported_features/supported_features_overview.md`
-  * `specification/appendix/appendix_overview.md`
-
-* **Informative Status Note Scope:**
-  * Each note MUST refer only to the section identified by that heading (e.g., "The Appendix").
-  * The note MUST NOT be placed under the subheadings of that heading, including a heading originating from a nested file.
-  * The Conventions section in `specification/overview.md` MUST identify the same headings and exceptions as the corresponding notes.
-
+    * ... MUST be of type JSON ...
+    * ... MUST adhere to the following nullability requirements:
+      * ... SHOULD NOT be null when ...
+      * ... MUST be null when ...
+      * ... MUST adhere to the following ...
+        * ... MUST be of type ...
+    ```
+* **No Skipped Levels:** Nested bullets points MUST NOT skip indentation levels.
+* **Consistent Indentation:** All bullet points within the same list MUST use consistent indentation.
 * **Example** (Markdown, illustrative):
 
   ```md
-  > **Note:** The Appendix, except the Rounding Variance Tolerance appendix entry, is informative and non-normative. It does not define requirements.
+  * ... MUST be null when ChargeCategory is "Tax".
+  * ... MUST be null when ChargeCategory is "Adjustment".
   ```
 
-### Notes and Exceptions
+#### Notes and Exceptions
 
-#### Notes
+##### Notes
 
 * **Permitted in Non-Normative Content Only:** Notes MUST NOT appear in Requirements sections. Notes MAY appear in non-normative sections of the specification and in guidelines documents.
-
 * **Blockquote Format:** Notes MUST be expressed using Markdown blockquote syntax (`>`). This creates a consistent, parseable container and allows downstream tooling to control visual presentation in HTML and PDF outputs.
-
 * **Note Label:** Notes MUST begin with the label `**Note:**`, `**Notes:**`, or `**Preview:**` (the term `Note`, `Notes`, or `Preview`, followed by a colon, in bold). The `**Preview:**` label is used only for notes that mark preview content (see [Preview Process](spec-change-guidelines.md#preview-process)).
-
 * **Consistent Terminology:** Only the terms `Note`, `Notes`, or `Preview` MUST be used. Variants such as `Important Note`, `Warning`, or similar terms MUST NOT be used.
-
 * **Non-Normative Content:** Notes MUST be informative and non-normative. They MUST NOT contain normative keywords (e.g., MUST, SHOULD, MAY).
 
 > **Note:** This restriction applies to informative notes within specification content and does not prohibit guideline documents or explanatory examples from discussing normative keywords.
 
 * **Single-Line Notes:** A note containing a single statement MUST be written as a single blockquote line.
-
 * **Multi-Line Notes:** A note spanning multiple lines MUST repeat the blockquote prefix (`>`) on each line. A blank blockquote line (`>`) MUST separate the label from the bullet list.
-
 * **Multiple Notes:** When multiple notes are present in the same context, they SHOULD be grouped within a single blockquote and expressed as bullet points.
-
 * **Bullet Usage in Notes:** When using bullets inside a note, the bullets MUST follow standard bullet formatting rules defined in this document.
-
 * **Example** (Markdown, illustrative):
 
   ```md
   > **Note:** This is a single-line note.
   ```
-
 * **Example** (Markdown, illustrative):
 
   ```md
@@ -365,36 +171,39 @@ To ensure consistent language when describing relationships and evaluations betw
   > * This is the first note.
   > * This is the second note, which provides additional information.
   ```
+* **Informative Status Note:** Each of the following files MUST include an informative, non-normative status note directly below its first heading:
+  * `specification/overview.md`
+  * `specification/supported_features/supported_features_overview.md`
+  * `specification/appendix/appendix_overview.md`
+* **Informative Status Note Scope:**
+  * Each note MUST refer only to the section identified by that heading (e.g., "The Appendix").
+  * The note MUST NOT be placed under the subheadings of that heading, including a heading originating from a nested file.
+  * The Conventions section in `specification/overview.md` MUST identify the same headings and exceptions as the corresponding notes.
+* **Example** (Markdown, illustrative):
 
-#### Exceptions
+  ```md
+  > **Note:** The Appendix, except the Rounding Variance Tolerance appendix entry, is informative and non-normative. It does not define requirements.
+  ```
+
+##### Exceptions
 
 * **Not Permitted in Requirements Sections:** Exceptions MUST NOT appear in Requirements sections of the specification. If a condition represents a normative constraint, authors MUST express it explicitly using structured requirement patterns (e.g., “when”, “unless”) instead.
-
 * **No Blockquote Usage:** Exceptions MUST NOT be expressed using blockquote syntax (which is strictly reserved for Notes).
-
 * **No Header Usage:** Exceptions MUST NOT use Markdown headers (e.g., `#### Exceptions`).
-
 * **Exception Label:** Exceptions MUST begin with the inline label `**Exception[ for <Topic>]:**` or `**Exceptions[ for <Topic>]:**` (the term `Exception` or `Exceptions`, with or without a semantic qualifier `for <Topic>`, followed by a colon, formatted in bold).
   * A semantic qualifier SHOULD be included in Normative Requirements Guidelines to support cross-referencing and automated processing.
   * A semantic qualifier MAY be included in other guidelines.
   * When used, semantic qualifiers SHOULD be applied consistently throughout the document.
-
 * **Consistent Terminology:** Only the term `Exception` or `Exceptions` MUST be used. Variants such as `Special Case`, `Caveat`, or similar terms MUST NOT be used.
-
 * **Structural Relationship:** Exceptions MUST be directly associated with the content they modify and SHOULD appear immediately after the relevant content.
-
 * **Single-Line Exceptions:** An exception containing a single statement MUST be written as a single line of plain text immediately following the label.
-
 * **Multi-Line Exceptions:** An exception spanning multiple statements MUST be expressed as a bullet list. A blank line MUST separate the label from the bullet list.
-
 * **Bullet Usage in Exceptions:** When using bullets inside an exception, the bullets MUST follow standard bullet formatting rules defined in this document.
-
 * **Example** (Markdown, illustrative):
 
   ```md
   **Exception:** This is a single-line exception.
   ```
-
 * **Example** (Markdown, illustrative):
 
   ```md
@@ -404,60 +213,57 @@ To ensure consistent language when describing relationships and evaluations betw
   * This rule does not apply when ChargeCategory is `Tax`.
   ```
 
-### Important Text
+#### Examples
+
+> **Note:** Authors should consult the actual FOCUS attribute specification files as the source of truth, as these guidelines do not necessarily reflect the latest version.
+
+* **Brand-Free Identifiers:** Resource, host, and pod-level identifiers in appendix examples MUST use neutral, brand-free labels (e.g., `host-prod-07`, `pod-orders-01`) rather than labels derived from fictitious customer or data generator names, so that an identifier does not read as an additional, unintended entity in the example.
+* **Valid Examples:** Examples MUST reflect valid combinations of values defined in the specification.
+
+  > **Note:** Validation of example correctness may require schema, glossary, or domain-specific review beyond editorial validation.
+* **No New Terminology:** Examples MUST NOT introduce terminology that is not defined in the specification.
+
+  > **Note:** Validation of terminology consistency may require comparison against the approved glossary and specification entity definitions.
+* **Informative Examples:** Examples MUST be considered informative and non-normative, and MUST NOT define requirements.
+
+### Text and Formatting
+
+#### Formatting
+
+* **Sentence Spacing:** Sentences within paragraphs MUST be delineated with a single space.
+* **Semicolons in Nested Lists:** When a comma-separated list contains one or more items with internal commas, semicolons MUST be used to separate the top-level list items to prevent ambiguity about item boundaries. See [Merriam-Webster's guide to semicolons](https://www.merriam-webster.com/grammar/a-guide-to-using-semicolons) for further reference.
+  * **Example** (prose, illustrative):
+    * Incorrect: `The columns foster data integrity, interoperability, and consistency, improve data analysis and reporting, and support reliable decision-making.`
+    * Correct: `The columns foster data integrity, interoperability, and consistency; improve data analysis and reporting; and support reliable decision-making.`
+* **Spelling Out Numbers**: In standard prose, numbers zero through nine MUST be spelled out as words (e.g., "one", "two", "nine"), while numbers 10 and above MUST be written as numerals (e.g., "10", "42").
+  * **Exception:** This rule DOES NOT apply to technical values, mathematical formulas, JSON examples, or explicit column constraints (e.g., write `BilledCost MUST be 0`, not `BilledCost MUST be zero`).
+* **Dash Formatting:**
+  * An unspaced hyphen (`-`) MUST be used for compound words (e.g., `cost-only`) and ranges (e.g., `2024-2025`).
+  * A spaced hyphen (` - `) MUST be used to set off parenthetical phrases (e.g., `The metric - BilledCost - is required.`).
+  * HTML entities and special unicode dash characters SHOULD NOT be used.
+
+#### Currency and Dollar Signs
 
 * **Currency and Dollar Signs:** The `$` symbol SHOULD be used for currency values in prose and tables. For build-pipeline behavior and troubleshooting related to dollar-sign parsing, see [MarkdownPP Guidelines](markdownpp-guidelines.md#currency-and-dollar-sign-handling).
 
-### Example
+#### JSON Formatting
 
-> **3.1.47 Pricing Quantity**
->
-> The Pricing Quantity represents the volume of a given [*SKU*](#glossary:sku) associated with a [*resource*](#glossary:resource) or [*service*](#glossary:service) used or purchased, based on the [Pricing Unit](#datasets.costandusage.pricingunit). Distinct from [Consumed Quantity](#datasets.costandusage.consumedquantity) (complementary to [Consumed Unit](#datasets.costandusage.consumedunit)), it focuses on pricing and cost, not *resource* and *service* consumption.
->
-> **3.1.47.1. Requirements**
->
-> PricingQuantity MUST adhere to the following requirements:
->
-> * PricingQuantity MUST be of type Decimal.
-> * PricingQuantity MUST conform to [NumericFormat](#attributes.numericformat) requirements.
-> * PricingQuantity MUST adhere to the following nullability requirements:
->   * PricingQuantity MUST be null when [SkuPriceId](#datasets.costandusage.skupriceid) is null.
->   * PricingQuantity MUST be null when [ChargeCategory](#datasets.costandusage.chargecategory) is "Tax".
->   * PricingQuantity MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#datasets.costandusage.chargeclass) is not "Correction".
->   * PricingQuantity MAY be null in all other cases.
-> * Cost metric (e.g., [ContractedCost](#datasets.costandusage.contractedcost)) MUST equal the product of the corresponding unit price (e.g., [ContractedUnitPrice](#datasets.costandusage.contractedunitprice)) and PricingQuantity when the unit price is not null and PricingQuantity is not null.
->
-> **3.1.47.2. Column ID**
->
-> PricingQuantity
->
-> **3.1.47.3. Display Name**
->
-> Pricing Quantity
->
-> **3.1.47.4. Description**
->
-> The volume of a given *SKU* associated with a *resource* or *service* used or purchased, based on the Pricing Unit.
->
-> **3.1.47.5. Usability Constraints**
->
-> **Aggregation:** When aggregating Pricing Quantity for commitment utilization calculations, it's important to exclude [*commitment discount*](#glossary:commitment-discount) purchases (i.e. when Charge Category is "Purchase") that are paid to cover future eligible [*charges*](#glossary:charge) (e.g., *commitment discount*). Otherwise, when accounting for all upfront or accrued purchases, it's important to exclude *commitment discount* usage (i.e. when Charge Category is "Usage"). This exclusion helps prevent double counting of these quantities in the aggregation.
->
-> **3.1.47.6. Content Constraints**
->
-> <img width="492" alt="image" src="https://github.com/user-attachments/assets/5185cbf9-306d-4663-a1c7-c8b7ab5c5bb8">
->
-> **3.1.47.7. Version Introduced**
->
-> 1.0-preview
+* **Valid JSON:** JSON examples MUST be valid and complete.
+* **JSON Quotation Marks:** JSON keys MUST use double quotation marks.
+* **Consistent Structure:** JSON examples SHOULD follow consistent formatting and indentation.
+* **Monospace Font:** JSON examples are written in monospace font (in Markdown, a fenced code block).
 
-### Tables
+#### Tables
+
+* **Complex Tables:** Simple tables can be created using markdown, but for more complex tables, it is recommended to use HTML elements. See the example below.
+
+> **Note:** Complex tables typically include merged rows or columns, embedded images, multi-line content, or advanced layout requirements that are difficult to express reliably using standard markdown tables.
 
 * **Markdown Table Spacing:**
   * When a markdown table has a maximum row width of less than 120 characters, the table SHOULD be padded with spaces to align the vertical pipes visually.
   * When a markdown table has a maximum row width of 120 characters or more, the table SHOULD use exactly one space after values without additional padding.
 
-### Example HTML Table
+##### Example HTML Table
 
 This is an example of a complex table with merged rows and columns, along with an additional header row.
 
@@ -523,3 +329,68 @@ This is how it is written in HTML:
 </table>
 
 ```
+
+## Column Editorial Rules
+
+TODO: Rules specific to column sections are not defined yet.
+
+### Column Examples
+
+> **Note:** Examples are illustrative, informative, and non-normative. They do not define requirements and do not override the rules in this section.
+
+#### Pricing Quantity
+
+```markdown
+# Pricing Quantity
+
+The Pricing Quantity represents the volume of a given [*SKU*](#glossary:sku) associated with a [*resource*](#glossary:resource) or [*service*](#glossary:service) used or purchased, based on the [Pricing Unit](#datamodel.costandusage.pricingunit). Distinct from [Consumed Quantity](#datamodel.costandusage.consumedquantity) (complementary to [Consumed Unit](#datamodel.costandusage.consumedunit)), it focuses on pricing and cost, not *resource* and *service* consumption.
+
+## Requirements
+
+PricingQuantity MUST adhere to the following requirements:
+
+* PricingQuantity MUST be of type Decimal.
+* PricingQuantity MUST conform to [NumericFormat](#attributes.numericformat) requirements.
+* PricingQuantity MUST adhere to the following nullability requirements:
+  * PricingQuantity MUST be null when [SkuPriceId](#datamodel.costandusage.skupriceid) is null.
+  * PricingQuantity MUST be null when [ChargeCategory](#datamodel.costandusage.chargecategory) is "Tax".
+  * PricingQuantity MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#datamodel.costandusage.chargeclass) is not "Correction".
+  * PricingQuantity MAY be null in all other cases.
+
+## Usability Constraints
+
+**Aggregation:** When aggregating Pricing Quantity per [SKU ID](#datamodel.costandusage.skuid) for a SKU that includes both [*covering charges*](#glossary:covering-charge) and their [*covered charges*](#glossary:covered-charge), exclude one or the other, based on the specific use case, to avoid double counting. The appropriate set to exclude depends on the relevant cost basis for the use case. Exclude *covered charges* when aggregating on a billed basis, or *covering charges* when aggregating on an accrual basis.
+
+## Column ID
+
+PricingQuantity
+
+## Display Name
+
+Pricing Quantity
+
+## Description
+
+The volume of a given *SKU* associated with a *resource* or *service* used or purchased, based on the Pricing Unit.
+
+## Content Constraints
+
+| Constraint                 | Value                                       |
+| :------------------------- | :------------------------------------------ |
+| Dataset                    | [Cost and Usage](#datamodel.costandusage)   |
+| Operating model conditions | Not applicable                              |
+| Column type                | Metric                                      |
+| Feature level              | Mandatory                                   |
+| Allows nulls               | True                                        |
+| Data type                  | Decimal                                     |
+| Value format               | [Numeric Format](#attributes.numericformat) |
+| Number range               | Any valid decimal value                     |
+
+## Version Introduced
+
+1.0-preview
+```
+
+## Supported Features Editorial Rules
+
+TODO: Rules specific to supported features pages are being defined in [#2572](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2572) ([PR #2778](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pull/2778)).
