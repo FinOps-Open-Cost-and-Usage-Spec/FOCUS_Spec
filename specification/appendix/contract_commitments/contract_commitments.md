@@ -127,7 +127,7 @@ In this scenario, an enterprise with an existing master agreement with **Aura We
 
 * **Context:** A short-term, intensive commitment to a specific number of GPU-Hours for a specialized AI training run.
 * **Commercial Logic:** A **Usage-based**, **Continuous** model with a short **3-Month** duration. It is paid **All Upfront** to secure priority capacity.
-* **Eligibility:** Restricted to the `AI/ML` service category.
+* **Eligibility:** Restricted to the `AI and Machine Learning` service category.
 
 #### Commitment 2: Observability Seat License (Quantity-Based)
 
@@ -139,7 +139,7 @@ In this scenario, an enterprise with an existing master agreement with **Aura We
 
 * **Context:** A commitment based on **Data Volume (TB)** specifically for egress traffic between cloud providers.
 * **Commercial Logic:** A **Usage-based**, **Continuous** model tracked on a **Monthly Fulfillment Interval**.
-* **Eligibility:** Targeted specifically at `Egress` usage types via string-match logic in the Eligibility JSON.
+* **Eligibility:** Targeted specifically at `Egress` SKU meters via string-match logic in the Eligibility JSON.
 
 ### Data Example: AGR-44-GAMMA
 
@@ -153,7 +153,7 @@ In this scenario, an enterprise with an existing master agreement with **Aura We
 | **CC Description** | `H100 GPU Reservation - Q1` | `StackLens Monitoring Seats` | `Inter-Cloud Egress Tier` |
 | **CC Discount %** | `0.30` | `null` | `0.50` |
 | **CC Duration Type** | `3 Months` | `1 Year` | `1 Year` |
-| **CC Applicability** | `{"InclusionOperator": "Or", "Inclusions": [{"Dimension": "ServiceCategory", "Operator": "In", "Values": ["AI/ML"]}]}` | `{"IsGlobalScope": true}` | `{"InclusionOperator": "Or", "Inclusions": [{"Dimension": "UsageType", "Operator": "Contains", "Values": ["Egress"]}]}` |
+| **CC Applicability** | `{"InclusionOperator": "Or", "Inclusions": [{"Dimension": "ServiceCategory", "Operator": "In", "Values": ["AI and Machine Learning"]}]}` | `{"IsGlobalScope": true}` | `{"InclusionOperator": "Or", "Inclusions": [{"Dimension": "SkuMeter", "Operator": "Contains", "Values": ["Egress"]}]}` |
 | **CC Fulfillment Interval** | `Monthly` | `Annual` | `Monthly` |
 | **CC ID** | `CMT-AI-888` | `CMT-SEC-999` | `CMT-DATA-111` |
 | **CC Last Updated** | `2026-02-01T08:00:00Z` | `2026-02-01T08:00:00Z` | `2026-02-01T08:00:00Z` |
@@ -186,7 +186,7 @@ This scenario focuses on how the model handles growth beyond initial estimates. 
 
 * **Context:** The customer commits to a base of 100TB of Database storage. To avoid "sticker shock" if they grow to 150TB, they have a pre-negotiated **Overage Tier**.
 * **Commercial Logic:** Commitment 1 is the paid floor (`CC Cost: 50000.00`). Commitment 2 is a "Zero-Cost" commitment that exists solely to define the **CC Discount %** (10%) applied to any usage exceeding the first 100TB.
-* **Eligibility:** Both rows target the same `Database` service category.
+* **Eligibility:** Both rows target the same `Databases` service category.
 
 #### Commitment 3: CDN Annual (Volume Exhaustion)
 
@@ -206,7 +206,7 @@ This scenario focuses on how the model handles growth beyond initial estimates. 
 | **CC Description** | `Base 100TB DB Storage` | `Tier 2 Storage Overage` | `1PB Annual CDN Volume` |
 | **CC Discount %** | `0.20` | `0.10` | `0.25` |
 | **CC Duration Type** | `1 Year` | `1 Year` | `1 Year` |
-| **CC Applicability** | `{"InclusionOperator": "Or", "Inclusions": [{"Dimension": "ServiceCategory", "Operator": "In", "Values": ["Database"]}]}` | `{"InclusionOperator": "Or", "Inclusions": [{"Dimension": "ServiceCategory", "Operator": "In", "Values": ["Database"]}]}` | `{"InclusionOperator": "Or", "Inclusions": [{"Dimension": "ServiceCategory", "Operator": "In", "Values": ["CDN"]}]}` |
+| **CC Applicability** | `{"InclusionOperator": "Or", "Inclusions": [{"Dimension": "ServiceCategory", "Operator": "In", "Values": ["Databases"]}]}` | `{"InclusionOperator": "Or", "Inclusions": [{"Dimension": "ServiceCategory", "Operator": "In", "Values": ["Databases"]}]}` | `{"InclusionOperator": "Or", "Inclusions": [{"Dimension": "ServiceCategory", "Operator": "In", "Values": ["Networking"]}]}` |
 | **CC Fulfillment Interval** | `Monthly` | `Monthly` | `Annual` |
 | **CC ID** | `CMT-STR-BASE` | `CMT-STR-OVER` | `CMT-CDN-VOL` |
 | **CC Last Updated** | `2026-02-01T08:00:00Z` | `2026-02-01T08:00:00Z` | `2026-02-01T08:00:00Z` |

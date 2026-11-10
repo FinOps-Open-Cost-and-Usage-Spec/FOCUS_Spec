@@ -143,7 +143,7 @@ Here is a basic example of the object format, describing organization-wide cover
     {
       "Dimension": "ServiceCategory",
       "Operator": "In",
-      "Values": ["Database"]
+      "Values": ["Databases"]
     }
   ]
 }
