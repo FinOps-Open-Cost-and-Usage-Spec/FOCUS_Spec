@@ -35,6 +35,7 @@ python3 "$issue_work/tools/validate_manifest.py" \
   --allow-file guidelines/contributors/normative-requirements-guidelines.md \
   --allow-file guidelines/contributors/writing-requirements-model-guidelines.md \
   --allow-prefix "$issue_work/" \
+  --additional-manifest "$issue_work/evidence/inline_literal_manifest.tsv" \
   "$issue_work/evidence/applied_manifest.tsv"
 ```
 
@@ -62,7 +63,7 @@ To prepare an `apply_patch` patch for the approved records in one file without e
 ```bash
 python3 "$issue_work/tools/manifest_to_patch.py" \
   --source-ref "$issue_base_ref" \
-  "$issue_work/evidence/repository_review_manifest.tsv" \
+  "$issue_work/evidence/applied_manifest.tsv" \
   supporting_content/datasets/cost_and_usage/columns/pricingcategory.md
 ```
 
@@ -102,4 +103,4 @@ bash .ai/work/2240-backticks-for-string-column-values/tools/lint_markdown_delta.
   "$issue_base_ref"
 ```
 
-The baseline inventory contains 1,465 occurrences: 855 recorded replacements and 610 retained occurrences. The applied manifest includes 24 scanner-visible substitutions in contributor guidance; fenced Markdown examples and explanatory guidance changes are reviewed separately. The residual inventory is intentionally reviewed rather than automatically applied. Retained cases include raw JSON, property names and `x_` key prefixes, Boolean literals, format notation, requirement quotations, comparison terminology, and ordinary prose quotations.
+The baseline prose inventory contains 1,465 occurrences: 855 recorded replacements and 610 retained occurrences. A separate inline-value inventory records 65 standalone quoted values in two later examples; their unnecessary internal quotation marks were removed. Both manifests are required for the source-change validator. The applied manifest includes 24 scanner-visible substitutions in contributor guidance; fenced Markdown examples and explanatory guidance changes are reviewed separately. The residual inventory is intentionally reviewed rather than automatically applied. Retained cases include raw JSON, property names and `x_` key prefixes, Boolean literals, format notation, requirement quotations, comparison terminology, and ordinary prose quotations.

@@ -1,18 +1,12 @@
 #!/usr/bin/env python3
 
-"""Render approved review records as an apply_patch patch without editing files."""
+"""Render applied-manifest records as an apply_patch patch without editing files."""
 
 import argparse
 import csv
 import subprocess
 from collections import defaultdict
 from pathlib import Path
-
-
-def replacement(value):
-    if value.endswith((",", ".")):
-        return f"`{value[:-1]}`{value[-1]}"
-    return f"`{value}`"
 
 
 def source_lines(path, source_ref):
@@ -34,6 +28,8 @@ def main(manifest_path, selected_file, source_ref):
         ]
     if not records:
         raise RuntimeError(f"No approved manifest records for {selected_file}")
+    if any(not record.get("replacement") for record in records):
+        raise RuntimeError("Use an applied manifest containing explicit replacements")
 
     path = Path(selected_file)
     lines = source_lines(path, source_ref)
@@ -57,7 +53,7 @@ def main(manifest_path, selected_file, source_ref):
                 )
             new_line = (
                 new_line[:start]
-                + replacement(record["value"])
+                + record["replacement"]
                 + new_line[start + len(original) :]
             )
         print("@@")

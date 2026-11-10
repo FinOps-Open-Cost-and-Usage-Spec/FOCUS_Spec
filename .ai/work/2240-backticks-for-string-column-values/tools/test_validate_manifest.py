@@ -12,6 +12,7 @@ from pathlib import Path
 
 VALIDATOR = Path(__file__).resolve().with_name("validate_manifest.py")
 LINT_DELTA = Path(__file__).resolve().with_name("lint_markdown_delta.sh")
+PATCH_GENERATOR = Path(__file__).resolve().with_name("manifest_to_patch.py")
 
 
 class ValidateManifestTests(unittest.TestCase):
@@ -32,10 +33,12 @@ class ValidateManifestTests(unittest.TestCase):
     def git(self, *args):
         return subprocess.run(["git", *args], cwd=self.root, check=True, capture_output=True, text=True)
 
-    def validate(self, allow):
+    def validate(self, allow, additional=None):
         args = [sys.executable, str(VALIDATOR), "--base-ref", self.base]
         if allow:
             args.extend(["--allow-file", "guidance.md"])
+        if additional:
+            args.extend(["--additional-manifest", additional])
         return subprocess.run([*args, "manifest.tsv"], cwd=self.root, capture_output=True, text=True)
 
     def test_allowlisted_file_accepts_other_reviewed_edits(self):
@@ -53,6 +56,14 @@ class ValidateManifestTests(unittest.TestCase):
         (self.root / "guidance.md").write_text("")
         self.assertNotEqual(self.validate(allow=True).returncode, 0)
 
+    def test_additional_manifest_is_checked_against_worktree(self):
+        (self.root / "additional.tsv").write_text((self.root / "manifest.tsv").read_text())
+        (self.root / "manifest.tsv").write_text("file\tline\tcolumn\tvalue\treplacement\n")
+        (self.root / "guidance.md").write_text("`Usage`\nOriginal guidance.\n")
+        self.assertEqual(self.validate(allow=False, additional="additional.tsv").returncode, 0)
+        (self.root / "guidance.md").write_text("`Tax`\nOriginal guidance.\n")
+        self.assertNotEqual(self.validate(allow=False, additional="additional.tsv").returncode, 0)
+
     def test_lint_comparison_preserves_existing_baseline_directory(self):
         baseline = self.root / ".ai/work/2240-backticks-for-string-column-values/.lint-base"
         baseline.mkdir(parents=True)
@@ -61,6 +72,19 @@ class ValidateManifestTests(unittest.TestCase):
         result = subprocess.run(["bash", str(LINT_DELTA), self.base], cwd=self.root, capture_output=True, text=True)
         self.assertNotEqual(result.returncode, 0)
         self.assertTrue(sentinel.is_file())
+
+    def test_patch_preview_uses_recorded_wildcard_replacement(self):
+        (self.root / "wildcard.md").write_text('The value is "*".\n')
+        self.git("add", "wildcard.md")
+        self.git("-c", "user.name=Test", "-c", "user.email=test@example.com", "commit", "-qm", "wildcard baseline")
+        base = self.git("rev-parse", "HEAD").stdout.strip()
+        with (self.root / "wildcard.tsv").open("w", newline="") as output:
+            writer = csv.DictWriter(output, fieldnames=["file", "line", "column", "value", "replacement", "decision"], delimiter="\t")
+            writer.writeheader()
+            writer.writerow({"file": "wildcard.md", "line": "1", "column": "14", "value": "*", "replacement": '`"*"`', "decision": "apply_repo_review"})
+        result = subprocess.run([sys.executable, str(PATCH_GENERATOR), "--source-ref", base, "wildcard.tsv", "wildcard.md"], cwd=self.root, capture_output=True, text=True)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn('+The value is `"*"`.', result.stdout)
 
 
 if __name__ == "__main__":

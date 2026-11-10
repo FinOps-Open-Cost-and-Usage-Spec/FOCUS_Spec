@@ -26,6 +26,7 @@
 * [x] Review the current specification for string values added or changed since the original audit.
 * [x] Refresh the fixed-base audit manifests and validators for the interim branch.
 * [x] Correct the additional string values found during the refreshed audit.
+* [x] Inventory and validate standalone quoted values already inside inline code in later examples.
 * [x] Complete current build and test validation.
 
 ## Human and PR Workflow

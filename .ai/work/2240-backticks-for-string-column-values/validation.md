@@ -6,14 +6,16 @@
 * Refreshed the manifests against `12770c1a7a0b1c84ba5ec24b87eea708bedb9897`: 1,465 baseline occurrences, 855 replacements across 119 files, and 610 residual decisions. The original August results below remain historical.
 * Evidence and applied-manifest validators passed against the interim baseline. The source validator checks recorded substitutions in allowlisted guidance files line by line; fenced examples and other guidance edits are reviewed separately.
 * Reviewed residual occurrences added since the earlier audit and corrected 25 missed values in five files.
-* Manifest and lint-baseline regression tests: 4 passed.
+* Manifest, patch preview, and lint-baseline regression tests: 6 passed.
+* A final sweep recorded and checked 65 standalone inline-code string values in two later examples; their internal quotation marks were removed. Quoted wildcard literals were retained.
 * Markdown lint comparison against the interim baseline: 410 existing diagnostics in each version and zero new diagnostics. The issue working Markdown is clean.
 * The classifier identified candidates in the current tracked Markdown, including new SKU Price, AI billing, and supported-feature material. Reviewed values were converted while JSON, code syntax, prefixes, and ordinary quotations were retained.
 * Classifier regression tests: 16 passed.
-* Specification component tests: 191 passed on the merged branch before the 25 additional audit corrections.
-* The earlier merged-branch build passed source and assembled Markdown linting; the refreshed audit also passed the Markdown lint comparison and issue working Markdown checks.
-* Specification build before the 25 additional audit corrections completed in separate steps: source lint, include validation and assembly in the Linux container; assembled Markdown lint on the host; HTML and a 459-page PDF generation plus component tests in the container.
-* Requirements-model tests on the merged branch before the 25 additional audit corrections: 181 passed and 51 skipped. The container reported unknown pytest marker warnings for dependency and order markers.
+* Specification component tests after all audit corrections: 191 passed.
+* Specification source and assembled Markdown linting, include validation, the Markdown lint comparison, and issue working Markdown checks passed after the final example corrections.
+* Final specification build completed in separate steps: source lint, include validation and assembly on the host; assembled Markdown lint on the host; HTML and a 459-page PDF generation plus component tests in the Linux container.
+* Requirements-model tests with the model test requirements installed: 181 passed and 51 skipped. Most skips are version-specific. Two legacy-path checks were run independently against 181 model 1.5 JSON files and passed.
+* Split-allocation example: calculated allocations and metric totals reconcile, and its three embedded JSON objects validate against their schema.
 * A comparison against the interim branch found that non-guidance Markdown changes are quote-to-backtick edits, including three previously reviewed punctuation adjustments.
 * Whitespace validation against the interim branch passed with `core.whitespace=cr-at-eol`.
 

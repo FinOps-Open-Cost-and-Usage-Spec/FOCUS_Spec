@@ -4,6 +4,7 @@
 
 import argparse
 import csv
+import re
 import sys
 from collections import Counter
 from pathlib import Path
@@ -14,6 +15,12 @@ import quote_audit
 
 SCAN_FIELDS = ["classification", "reason", "file", "line", "column", "value", "context"]
 OCCURRENCE_FIELDS = ["file", "line", "column", "value"]
+INLINE_FIELDS = ["file", "line", "column", "value", "replacement", "context"]
+INLINE_VALUE_FILES = (
+    "specification/appendix/split_cost_allocation_field_mapping.md",
+    "specification/appendix/json_object_examples/sku_price_eligibility_examples.md",
+)
+INLINE_QUOTED_VALUE = re.compile(r'`"([^"`]+)"`')
 REVIEW_DECISIONS = {
     "apply_audit_fix",
     "apply_existing",
@@ -58,6 +65,7 @@ def main(work_directory, base_ref):
     review = load(evidence / "repository_review_manifest.tsv")
     residual = load(evidence / "residual_manifest.tsv")
     applied = load(evidence / "applied_manifest.tsv")
+    inline = load(evidence / "inline_literal_manifest.tsv")
     tracked_paths = quote_audit.tracked_markdown_paths(base_ref)
 
     require(
@@ -94,9 +102,23 @@ def main(work_directory, base_ref):
         reviewed_applies == manifest_applies,
         "Applied manifest does not exactly match candidate apply decisions",
     )
+    expected_inline = []
+    for filename in INLINE_VALUE_FILES:
+        path = Path(filename)
+        for line_number, line in enumerate(quote_audit.read_source(path, base_ref).splitlines(), 1):
+            for match in INLINE_QUOTED_VALUE.finditer(line):
+                expected_inline.append((filename, str(line_number), str(match.start() + 2), match.group(1), match.group(1), line.strip()))
+        require(
+            not INLINE_QUOTED_VALUE.search(quote_audit.read_source(path)),
+            f"Quoted inline values remain in {filename}",
+        )
+    require(
+        [tuple(row[field] for field in INLINE_FIELDS) for row in inline] == expected_inline,
+        "Inline value manifest does not match the baseline inventory",
+    )
     print(
         f"Validated {len(candidate)} baseline occurrences, {len(applied)} replacements, "
-        f"and {len(residual)} residual decisions against {base_ref}"
+        f"{len(residual)} residual decisions, and {len(inline)} inline value edits against {base_ref}"
     )
 
 

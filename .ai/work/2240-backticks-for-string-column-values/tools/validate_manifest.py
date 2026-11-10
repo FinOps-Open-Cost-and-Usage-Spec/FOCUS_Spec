@@ -18,9 +18,12 @@ def base_text(path, base_ref):
     return result.stdout.decode("utf-8").replace("\r\n", "\n")
 
 
-def main(manifest_path, base_ref, allowed_files, allowed_prefixes):
+def main(manifest_path, base_ref, allowed_files, allowed_prefixes, additional_manifests):
     with open(manifest_path, newline="", encoding="utf-8") as source:
         records = list(csv.DictReader(source, delimiter="\t"))
+    for additional_manifest in additional_manifests:
+        with open(additional_manifest, newline="", encoding="utf-8") as source:
+            records.extend(csv.DictReader(source, delimiter="\t"))
 
     edits = defaultdict(list)
     for record in records:
@@ -87,6 +90,7 @@ if __name__ == "__main__":
     parser.add_argument("--base-ref", required=True)
     parser.add_argument("--allow-file", action="append", default=[])
     parser.add_argument("--allow-prefix", action="append", default=[])
+    parser.add_argument("--additional-manifest", action="append", default=[])
     parser.add_argument("manifest")
     arguments = parser.parse_args()
     main(
@@ -94,4 +98,5 @@ if __name__ == "__main__":
         arguments.base_ref,
         arguments.allow_file,
         arguments.allow_prefix,
+        arguments.additional_manifest,
     )

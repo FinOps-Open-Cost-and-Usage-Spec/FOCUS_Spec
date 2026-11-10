@@ -18,7 +18,7 @@ The formatting applies to string data values referenced in prose, not column or 
 
 ## Interim Baseline Update
 
-The November audit uses `12770c1a7a0b1c84ba5ec24b87eea708bedb9897` as its baseline. Its refreshed evidence covers 1,465 candidate occurrences, 855 recorded replacements, and 610 retained occurrences. The original baseline and counts described below are historical. The refresh identified 25 additional string values in examples and supporting content, which were converted.
+The November audit uses `12770c1a7a0b1c84ba5ec24b87eea708bedb9897` as its baseline. Its refreshed evidence covers 1,465 candidate occurrences, 855 recorded replacements, and 610 retained occurrences. A final sweep also identified 65 standalone inline-code string values in two later examples; these have separate recorded replacements, while quoted wildcard literals retain their syntax. The original baseline and counts described below are historical. The refresh identified 25 additional string values in examples and supporting content, which were converted.
 
 ## Original Validation Method
 
