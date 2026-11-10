@@ -42,6 +42,8 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 
 #### Linking
 
+* **Link Targets:** Column and attribute names and IDs are linked to the section that defines them.
+* **Glossary Terms:** Glossary terms are written in italics and are linked to the glossary (e.g., `[*SKU*](#glossary:sku)`).
 * **Linking on First Occurrence:** To avoid excessive linking, entity references (including FOCUS entity IDs, display names, and glossary terms) MUST be linked only on their first occurrence within a given source markdown file.
 
 > **Note:** Unless otherwise specified, first-occurrence linking is evaluated relative to the containing source markdown file.
@@ -50,8 +52,6 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 
 * In **Content Constraints** sections, all entity references MUST be linked, regardless of prior occurrence in the source markdown file.
 * In the **Glossary** file, entity references MUST be linked only on their first occurrence within each glossary entry, rather than once per source markdown file.
-* **Link Targets:** Column and attribute names and IDs are linked to the section that defines them.
-* **Glossary Terms:** Glossary terms are written in italics and are linked to the glossary (e.g., `[*SKU*](#glossary:sku)`).
 
 #### Comparison Terminology
 
