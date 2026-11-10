@@ -5,25 +5,10 @@
 * [Overview](#overview)
 * [Core Editorial Rules](#core-editorial-rules)
   * [References and Terminology](#references-and-terminology)
-    * [Entity References](#entity-references)
-    * [Display Names](#display-names)
-    * [Column Values](#column-values)
-    * [Linking](#linking)
-    * [Comparison Terminology](#comparison-terminology)
   * [Document Structure](#document-structure)
-    * [Section Structure](#section-structure)
-    * [Requirements Sections](#requirements-sections)
-    * [Bullet Structure](#bullet-structure)
-    * [Notes and Exceptions](#notes-and-exceptions)
-    * [Examples](#examples)
   * [Text and Formatting](#text-and-formatting)
-    * [Formatting](#formatting)
-    * [Currency and Dollar Signs](#currency-and-dollar-signs)
-    * [JSON Formatting](#json-formatting)
-    * [Tables](#tables)
 * [Column Editorial Rules](#column-editorial-rules)
   * [Column Examples](#column-examples)
-    * [Pricing Quantity](#pricing-quantity)
 * [Supported Features Editorial Rules](#supported-features-editorial-rules)
 
 ## Overview
@@ -39,23 +24,16 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 #### Entity References
 
 * **Entity ID References:** Formatting and usage conventions for normative requirements are defined in the Normative Requirements Guidelines.
-
 * **Entity ID Formatting:** Entity IDs MUST be formatted without spaces.
-
 * **Entity ID Naming:** Entity IDs MUST match the exact naming conventions used in the schema (e.g., CommitmentDiscountId).
-
 * **Column and Attribute ID Emphasis:** Column and attribute IDs are written in normal text, without bold or italics.
-
 * **Entity Display Name References:** References to FOCUS entities in non-normative content (i.e., outside Requirements sections) MUST use Display Names when available.
-
 * **Entity Scope:** These rules apply to all entities defined in the FOCUS specification (e.g., Columns, Attributes, Datasets, Objects).
 
 #### Display Names
 
 * **Display Names Usage:** Display Names SHOULD be used in introductory or explanatory sections where natural language context is more appropriate.
-
 * **Display Names Formatting:** Display Names SHOULD follow normal text conventions, including spaces between words (e.g., Commitment Discount ID).
-
 * **Consistent Formatting:** This formatting MUST be used consistently across all normative requirements, descriptions, and tables when referencing a specific string value.
 
 #### Column Values
@@ -71,11 +49,8 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 **Exceptions:**
 
 * In **Content Constraints** sections, all entity references MUST be linked, regardless of prior occurrence in the source markdown file.
-
 * In the **Glossary** file, entity references MUST be linked only on their first occurrence within each glossary entry, rather than once per source markdown file.
-
 * **Link Targets:** Column and attribute names and IDs are linked to the section that defines them.
-
 * **Glossary Terms:** Glossary terms are written in italics and are linked to the glossary (e.g., `[*SKU*](#glossary:sku)`).
 
 #### Comparison Terminology
@@ -115,13 +90,11 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
   ```md
   ... MUST adhere to the following requirements:
   ```
-
 * **Consistent Introductory Phrases:** Introductory phrases for normative lists SHOULD be consistent within a section.
 
 > **Note:** Authors SHOULD prefer stable introductory patterns such as "... MUST adhere to the following requirements:" within the same section unless contextual variation improves readability.
 
 * **Normative Scope:** Normative requirements (those using BCP-14 keywords) MUST appear only in the "Requirements" section.
-
 * **No Normative Leakage:** Normative keywords (MUST, SHOULD, MAY, etc.) MUST NOT be used in any section other than "Requirements".
 
 > **Note:** This restriction applies to normative content within FOCUS specification entities and does not prohibit guideline documents, examples, or editorial instructions from discussing normative terminology or authoring rules.
@@ -143,11 +116,8 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
 #### Bullet Structure
 
 * **Unordered List Style:** All unordered lists in Markdown MUST use asterisks (`*`) rather than dashes (`-`) or plus signs (`+`). This maintains visual consistency across the specification and aligns with our automated linting standards.
-
 * **Indentation Levels:** Nested bullet points MUST be indented using two spaces per level.
-
 * **Indentation Usage:** A nested indentation level MUST only be introduced when a parent bullet defines a composite (grouping) requirement, typically ending with a colon (:).
-
 * **Example** (illustrative):
 
     ```md
@@ -160,11 +130,8 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
       * ... MUST adhere to the following ...
         * ... MUST be of type ...
     ```
-
 * **No Skipped Levels:** Nested bullets points MUST NOT skip indentation levels.
-
 * **Consistent Indentation:** All bullet points within the same list MUST use consistent indentation.
-
 * **Example** (Markdown, illustrative):
 
   ```md
@@ -177,31 +144,22 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
 ##### Notes
 
 * **Permitted in Non-Normative Content Only:** Notes MUST NOT appear in Requirements sections. Notes MAY appear in non-normative sections of the specification and in guidelines documents.
-
 * **Blockquote Format:** Notes MUST be expressed using Markdown blockquote syntax (`>`). This creates a consistent, parseable container and allows downstream tooling to control visual presentation in HTML and PDF outputs.
-
 * **Note Label:** Notes MUST begin with the label `**Note:**`, `**Notes:**`, or `**Preview:**` (the term `Note`, `Notes`, or `Preview`, followed by a colon, in bold). The `**Preview:**` label is used only for notes that mark preview content (see [Preview Process](spec-change-guidelines.md#preview-process)).
-
 * **Consistent Terminology:** Only the terms `Note`, `Notes`, or `Preview` MUST be used. Variants such as `Important Note`, `Warning`, or similar terms MUST NOT be used.
-
 * **Non-Normative Content:** Notes MUST be informative and non-normative. They MUST NOT contain normative keywords (e.g., MUST, SHOULD, MAY).
 
 > **Note:** This restriction applies to informative notes within specification content and does not prohibit guideline documents or explanatory examples from discussing normative keywords.
 
 * **Single-Line Notes:** A note containing a single statement MUST be written as a single blockquote line.
-
 * **Multi-Line Notes:** A note spanning multiple lines MUST repeat the blockquote prefix (`>`) on each line. A blank blockquote line (`>`) MUST separate the label from the bullet list.
-
 * **Multiple Notes:** When multiple notes are present in the same context, they SHOULD be grouped within a single blockquote and expressed as bullet points.
-
 * **Bullet Usage in Notes:** When using bullets inside a note, the bullets MUST follow standard bullet formatting rules defined in this document.
-
 * **Example** (Markdown, illustrative):
 
   ```md
   > **Note:** This is a single-line note.
   ```
-
 * **Example** (Markdown, illustrative):
 
   ```md
@@ -214,32 +172,22 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
 ##### Exceptions
 
 * **Not Permitted in Requirements Sections:** Exceptions MUST NOT appear in Requirements sections of the specification. If a condition represents a normative constraint, authors MUST express it explicitly using structured requirement patterns (e.g., “when”, “unless”) instead.
-
 * **No Blockquote Usage:** Exceptions MUST NOT be expressed using blockquote syntax (which is strictly reserved for Notes).
-
 * **No Header Usage:** Exceptions MUST NOT use Markdown headers (e.g., `#### Exceptions`).
-
 * **Exception Label:** Exceptions MUST begin with the inline label `**Exception[ for <Topic>]:**` or `**Exceptions[ for <Topic>]:**` (the term `Exception` or `Exceptions`, with or without a semantic qualifier `for <Topic>`, followed by a colon, formatted in bold).
   * A semantic qualifier SHOULD be included in Normative Requirements Guidelines to support cross-referencing and automated processing.
   * A semantic qualifier MAY be included in other guidelines.
   * When used, semantic qualifiers SHOULD be applied consistently throughout the document.
-
 * **Consistent Terminology:** Only the term `Exception` or `Exceptions` MUST be used. Variants such as `Special Case`, `Caveat`, or similar terms MUST NOT be used.
-
 * **Structural Relationship:** Exceptions MUST be directly associated with the content they modify and SHOULD appear immediately after the relevant content.
-
 * **Single-Line Exceptions:** An exception containing a single statement MUST be written as a single line of plain text immediately following the label.
-
 * **Multi-Line Exceptions:** An exception spanning multiple statements MUST be expressed as a bullet list. A blank line MUST separate the label from the bullet list.
-
 * **Bullet Usage in Exceptions:** When using bullets inside an exception, the bullets MUST follow standard bullet formatting rules defined in this document.
-
 * **Example** (Markdown, illustrative):
 
   ```md
   **Exception:** This is a single-line exception.
   ```
-
 * **Example** (Markdown, illustrative):
 
   ```md
@@ -254,27 +202,21 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
 > **Note:** Authors should consult the actual FOCUS attribute specification files as the source of truth, as these guidelines do not necessarily reflect the latest version.
 
 * **Brand-Free Identifiers:** Resource, host, and pod-level identifiers in appendix examples MUST use neutral, brand-free labels (e.g., `host-prod-07`, `pod-orders-01`) rather than labels derived from fictitious customer or data generator names, so that an identifier does not read as an additional, unintended entity in the example.
-
 * **Valid Examples:** Examples MUST reflect valid combinations of values defined in the specification.
 
   > **Note:** Validation of example correctness may require schema, glossary, or domain-specific review beyond editorial validation.
-
 * **No New Terminology:** Examples MUST NOT introduce terminology that is not defined in the specification.
 
   > **Note:** Validation of terminology consistency may require comparison against the approved glossary and specification entity definitions.
-
 * **Informative Examples:** Examples MUST be considered informative and non-normative, and MUST NOT define requirements.
-
 * **Informative Status Note:** Each of the following files MUST include an informative, non-normative status note directly below its first heading:
   * `specification/overview.md`
   * `specification/supported_features/supported_features_overview.md`
   * `specification/appendix/appendix_overview.md`
-
 * **Informative Status Note Scope:**
   * Each note MUST refer only to the section identified by that heading (e.g., "The Appendix").
   * The note MUST NOT be placed under the subheadings of that heading, including a heading originating from a nested file.
   * The Conventions section in `specification/overview.md` MUST identify the same headings and exceptions as the corresponding notes.
-
 * **Example** (Markdown, illustrative):
 
   ```md
@@ -286,15 +228,12 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
 #### Formatting
 
 * **Sentence Spacing:** Sentences within paragraphs MUST be delineated with a single space.
-
 * **Semicolons in Nested Lists:** When a comma-separated list contains one or more items with internal commas, semicolons MUST be used to separate the top-level list items to prevent ambiguity about item boundaries. See [Merriam-Webster's guide to semicolons](https://www.merriam-webster.com/grammar/a-guide-to-using-semicolons) for further reference.
   * **Example** (prose, illustrative):
     * Incorrect: `The columns foster data integrity, interoperability, and consistency, improve data analysis and reporting, and support reliable decision-making.`
     * Correct: `The columns foster data integrity, interoperability, and consistency; improve data analysis and reporting; and support reliable decision-making.`
-
 * **Spelling Out Numbers**: In standard prose, numbers zero through nine MUST be spelled out as words (e.g., "one", "two", "nine"), while numbers 10 and above MUST be written as numerals (e.g., "10", "42").
   * **Exception:** This rule DOES NOT apply to technical values, mathematical formulas, JSON examples, or explicit column constraints (e.g., write `BilledCost MUST be 0`, not `BilledCost MUST be zero`).
-
 * **Dash Formatting:**
   * An unspaced hyphen (`-`) MUST be used for compound words (e.g., `cost-only`) and ranges (e.g., `2024-2025`).
   * A spaced hyphen (` - `) MUST be used to set off parenthetical phrases (e.g., `The metric - BilledCost - is required.`).
@@ -307,11 +246,8 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
 #### JSON Formatting
 
 * **Valid JSON:** JSON examples MUST be valid and complete.
-
 * **JSON Quotation Marks:** JSON keys MUST use double quotation marks.
-
 * **Consistent Structure:** JSON examples SHOULD follow consistent formatting and indentation.
-
 * **Monospace Font:** JSON examples are written in monospace font (in Markdown, a fenced code block).
 
 #### Tables
