@@ -24,7 +24,8 @@
 
 * [x] Merge the current `working_draft_interim` content locally and resolve conflicts.
 * [x] Review the current specification for string values added or changed since the original audit.
-* [ ] Refresh the fixed-base audit manifests and validators for the interim branch before claiming full evidence coverage.
+* [x] Refresh the fixed-base audit manifests and validators for the interim branch.
+* [x] Correct the additional string values found during the refreshed audit.
 * [x] Complete current build and test validation.
 
 ## Human and PR Workflow

@@ -1,20 +1,21 @@
 # Issue 2240 Audit Evidence
 
-> **Note:** The inventories and validation commands below describe the original August 2026 change against `02e7dfb`. They are historical evidence and do not validate the merge with `working_draft_interim` at `12770c1`. See `validation.md` for the updated work.
+> **Note:** The inventories and validation commands below use the interim branch at `12770c1` as the baseline. Historical August 2026 evidence remains available in Git history.
 
 This folder preserves the audit methodology for the repository-wide editorial rewrite. The classifier inventories candidates; it does not decide which quotation marks to replace. Every baseline occurrence has a decision in `evidence/repository_review_manifest.tsv`, every manifest-controlled replacement is recorded in `evidence/applied_manifest.tsv`, and every double-quoted occurrence retained in the worktree has an explicit skip decision in `evidence/residual_manifest.tsv`. Contributor-guidance files that required render-safe HTML or explanatory edits are reviewed separately and explicitly allowlisted by the source validator.
 
-All comparisons use the fixed pre-change commit `02e7dfbcc347edaade318eb06e111d18da3c4620`. This keeps the workflow valid after changes are staged or committed and prevents generated files such as `specification/spec.md` from entering the inventory.
+All comparisons use the fixed interim baseline commit `12770c1a7a0b1c84ba5ec24b87eea708bedb9897`. This keeps the workflow valid after changes are staged or committed and prevents generated files such as `specification/spec.md` from entering the inventory.
 
 Run the following commands from the repository root.
 
 ## Classifier and Evidence Validation
 
 ```bash
-issue_base_ref=02e7dfbcc347edaade318eb06e111d18da3c4620
+issue_base_ref=12770c1a7a0b1c84ba5ec24b87eea708bedb9897
 issue_work=.ai/work/2240-backticks-for-string-column-values
 
 python3 "$issue_work/tools/test_quote_audit.py"
+python3 "$issue_work/tools/test_validate_manifest.py"
 python3 "$issue_work/tools/validate_evidence.py" --base-ref "$issue_base_ref" "$issue_work"
 ```
 
@@ -23,7 +24,7 @@ python3 "$issue_work/tools/validate_evidence.py" --base-ref "$issue_base_ref" "$
 ## Validate Source Changes Against the Applied Manifest
 
 ```bash
-issue_base_ref=02e7dfbcc347edaade318eb06e111d18da3c4620
+issue_base_ref=12770c1a7a0b1c84ba5ec24b87eea708bedb9897
 issue_work=.ai/work/2240-backticks-for-string-column-values
 
 python3 "$issue_work/tools/validate_manifest.py" \
@@ -37,12 +38,12 @@ python3 "$issue_work/tools/validate_manifest.py" \
   "$issue_work/evidence/applied_manifest.tsv"
 ```
 
-The allowlisted contributor files contain reviewed, render-safe examples and guidance changes that are not mechanical quote substitutions. In particular, the raw HTML table in `guidelines/contributors/editorial-guidelines.md` uses `<code>...</code>` instead of literal Markdown backticks because inline Markdown is not reliably parsed inside raw HTML table blocks. The HTML element renders the same inline-code presentation without exposing backtick characters in the preview; normal Markdown prose continues to use backticks. The working folder contains the audit evidence itself.
+The allowlisted files contain reviewed guidance changes that are not entirely represented by scanner candidates, including fenced Markdown examples. Recorded substitutions in these files are checked line by line; other changes in the allowlisted files require separate review. In particular, the raw HTML table in `guidelines/contributors/editorial-guidelines.md` uses `<code>...</code>` instead of literal Markdown backticks because inline Markdown is not reliably parsed inside raw HTML table blocks. The HTML element renders the same inline-code presentation without exposing backtick characters in the preview; normal Markdown prose continues to use backticks. The working folder contains the audit evidence itself.
 
 ## Inspect or Regenerate an Inventory
 
 ```bash
-issue_base_ref=02e7dfbcc347edaade318eb06e111d18da3c4620
+issue_base_ref=12770c1a7a0b1c84ba5ec24b87eea708bedb9897
 issue_work=.ai/work/2240-backticks-for-string-column-values
 
 python3 "$issue_work/tools/quote_audit.py" \
@@ -95,10 +96,10 @@ podman run --rm \
 The full build lints specification sources. Other changed repository Markdown contains pre-existing diagnostics, so `lint_markdown_delta.sh` compares diagnostic occurrences by file, line, and rule against the fixed base rather than claiming those files are globally clean. It also requires the new issue working documents to be clean.
 
 ```bash
-issue_base_ref=02e7dfbcc347edaade318eb06e111d18da3c4620
+issue_base_ref=12770c1a7a0b1c84ba5ec24b87eea708bedb9897
 
 bash .ai/work/2240-backticks-for-string-column-values/tools/lint_markdown_delta.sh \
   "$issue_base_ref"
 ```
 
-The residual inventory is intentionally reviewed rather than automatically applied. Retained cases include raw JSON, property names and `x_` key prefixes, Boolean literals, format notation, requirement quotations, comparison terminology, and ordinary prose quotations.
+The baseline inventory contains 1,465 occurrences: 855 recorded replacements and 610 retained occurrences. The applied manifest includes 24 scanner-visible substitutions in contributor guidance; fenced Markdown examples and explanatory guidance changes are reviewed separately. The residual inventory is intentionally reviewed rather than automatically applied. Retained cases include raw JSON, property names and `x_` key prefixes, Boolean literals, format notation, requirement quotations, comparison terminology, and ordinary prose quotations.

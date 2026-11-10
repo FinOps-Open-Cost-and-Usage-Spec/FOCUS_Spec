@@ -66,7 +66,14 @@ def main(manifest_path, base_ref, allowed_files, allowed_prefixes):
 
         expected = "".join(expected_lines)
         actual = Path(path_string).read_text(encoding="utf-8").replace("\r\n", "\n")
-        if actual != expected:
+        if path_string in allowed_files:
+            actual_lines = actual.splitlines(keepends=True)
+            for line_number in by_line:
+                if line_number > len(actual_lines) or actual_lines[line_number - 1] != expected_lines[line_number - 1]:
+                    raise RuntimeError(
+                        f"Worktree line does not match manifest at {path_string}:{line_number}"
+                    )
+        elif actual != expected:
             raise RuntimeError(f"Worktree does not match manifest for {path_string}")
 
     print(

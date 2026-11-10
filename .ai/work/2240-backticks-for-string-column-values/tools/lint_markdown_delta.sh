@@ -17,13 +17,13 @@ issue_lint_output=$(mktemp -d /tmp/focus-2240-lint.XXXXXX)
 cleanup() {
   rm -rf "$issue_lint_base" "$issue_lint_output"
 }
-trap cleanup EXIT
-
 if [[ -e "$issue_lint_base" ]]; then
   echo "Temporary baseline path already exists: $issue_lint_base" >&2
+  rm -rf "$issue_lint_output"
   exit 1
 fi
 
+trap cleanup EXIT
 mkdir "$issue_lint_base"
 git archive "$issue_base_ref" | tar -x -C "$issue_lint_base"
 git diff --name-only "$issue_base_ref" -- '*.md' > "$issue_lint_output/paths.txt"
@@ -31,8 +31,17 @@ git diff --name-only "$issue_base_ref" -- '*.md' > "$issue_lint_output/paths.txt
 issue_current_paths=()
 issue_base_paths=()
 while IFS= read -r issue_path; do
-  issue_current_paths+=("/workspace/current/$issue_path")
-  issue_base_paths+=("/workspace/current/.ai/work/2240-backticks-for-string-column-values/.lint-base/$issue_path")
+  # The issue working files are new relative to the interim branch and are
+  # checked separately below. Do not pass nonexistent baseline files to lint.
+  if [[ "$issue_path" == .ai/work/2240-backticks-for-string-column-values/* ]]; then
+    continue
+  fi
+  if [[ -f "$issue_repo_root/$issue_path" ]]; then
+    issue_current_paths+=("/workspace/current/$issue_path")
+  fi
+  if [[ -f "$issue_lint_base/$issue_path" ]]; then
+    issue_base_paths+=("/workspace/current/.ai/work/2240-backticks-for-string-column-values/.lint-base/$issue_path")
+  fi
 done < "$issue_lint_output/paths.txt"
 
 set +e

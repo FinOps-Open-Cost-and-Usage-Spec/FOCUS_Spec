@@ -16,7 +16,11 @@ Issue 2240, "Use backticks instead of double-quotes for all string column values
 
 The formatting applies to string data values referenced in prose, not column or property names. For example, `ChargeCategory` is a column name and `Usage` is a string column value. The implementation uses the broader editorial interpretation established during review: metadata values, nested object values, dataset-instance names, historical changelog values, and illustrative invoice values are included when they represent data. Code and JSON syntax, identifiers, non-string literals, format notation, and ordinary quotations remain excluded.
 
-## Validation Method
+## Interim Baseline Update
+
+The November audit uses `12770c1a7a0b1c84ba5ec24b87eea708bedb9897` as its baseline. Its refreshed evidence covers 1,465 candidate occurrences, 855 recorded replacements, and 610 retained occurrences. The original baseline and counts described below are historical. The refresh identified 25 additional string values in examples and supporting content, which were converted.
+
+## Original Validation Method
 
 The changes were generated from a non-mutating candidate inventory rather than a global replacement. All scans use the fixed pre-change commit `02e7dfbcc347edaade318eb06e111d18da3c4620` and the Markdown paths tracked at that commit.
 

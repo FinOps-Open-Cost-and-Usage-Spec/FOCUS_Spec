@@ -71,7 +71,7 @@ A unit price that is only eligible for consumption within a specific region (e.g
 
 ## Macro-Region Scope
 
-A unit price where the catalog's base Pricing Region ID represents a broad macro-region (e.g., "us"), but the eligibility is explicitly mapped to the specific operational regions where consumption actually occurs.
+A unit price where the catalog's base Pricing Region ID represents a broad macro-region (e.g., `us`), but the eligibility is explicitly mapped to the specific operational regions where consumption actually occurs.
 
 ```json
 {
