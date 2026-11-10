@@ -10,8 +10,8 @@ PricingQuantity MUST adhere to the following requirements:
 * PricingQuantity MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * PricingQuantity MUST adhere to the following nullability requirements:
   * PricingQuantity MUST be null when [SkuPriceId](#datamodel.costandusage.skupriceid) is null.
-  * PricingQuantity MUST be null when [ChargeCategory](#datamodel.costandusage.chargecategory) is "Tax".
-  * PricingQuantity MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#datamodel.costandusage.chargeclass) is not "Correction".
+  * PricingQuantity MUST be null when [ChargeCategory](#datamodel.costandusage.chargecategory) is `Tax`.
+  * PricingQuantity MUST NOT be null when ChargeCategory is `Usage` or `Purchase` and [ChargeClass](#datamodel.costandusage.chargeclass) is not `Correction`.
   * PricingQuantity MAY be null in all other cases.
 
 ## Usability Constraints

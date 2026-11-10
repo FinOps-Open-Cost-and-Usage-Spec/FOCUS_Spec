@@ -9,7 +9,7 @@ The scenarios described below illustrate how a [Cost and Usage](#datamodel.costa
 The following baseline conditions apply to the scenarios described below:
 
 * Acme Corp has signed an agreement with SaaS service provider OmniQuery to use their services.
-* OmniQuery offers a consumption currency pricing model for their services and requires a purchase of consumption currency in advance of usage. Their denomination of consumption currency is called "OmniBucks".
+* OmniQuery offers a consumption currency pricing model for their services and requires a purchase of consumption currency in advance of usage. Their denomination of consumption currency is called `OmniBucks`.
 * OmniQuery requires purchase of additional OmniBucks in the event of usage exceeding purchased OmniBucks.
 * OmniQuery publicly lists the cost of their OmniBucks at $2 per OmniBuck.
 * OmniQuery treats OmniBuck purchases as resources; therefore, charges for OmniBuck purchases include values for [ResourceId](#datamodel.costandusage.resourceid), [ResourceName](#datamodel.costandusage.resourcename), and [ResourceType](#datamodel.costandusage.resourcetype).
@@ -54,7 +54,7 @@ Acme Corp uses OmniQuery's services consuming OmniBucks as follows in the first 
 Note the following details in the example dataset:
 
 * The Charge Period is April 1st 2025 - April 2nd 2025. The Billing Period is the month of April 2025.
-* PricingCurrency for these usage charges is "OmniBucks", the denomination the usage is priced in. The per usage OmniBuck price of each charge is carried in PricingCurrencyListUnitPrice and PricingCurrencyContractedUnitPrice.
+* PricingCurrency for these usage charges is `OmniBucks`, the denomination the usage is priced in. The per usage OmniBuck price of each charge is carried in PricingCurrencyListUnitPrice and PricingCurrencyContractedUnitPrice.
 * PricingQuantity reflects the amount of usage of the [PricingUnit](#datamodel.costandusage.pricingunit) for each charge and is equivalent to [ConsumedQuantity](#datamodel.costandusage.consumedquantity). While relevant to this example, there are scenarios including tiered pricing where ConsumedQuantity and PricingQuantity may not be the same.
 * Because Acme Corp's usage includes no discount on usage to OmniBuck rates, PricingCurrencyContractedUnitPrice and PricingCurrencyListUnitPrice are equivalent.
 

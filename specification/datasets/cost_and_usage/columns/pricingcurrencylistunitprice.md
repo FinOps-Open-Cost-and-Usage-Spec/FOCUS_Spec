@@ -12,9 +12,9 @@ PricingCurrencyListUnitPrice MUST adhere to the following requirements:
 * PricingCurrencyListUnitPrice MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * PricingCurrencyListUnitPrice MUST adhere to the following nullability requirements:
   * PricingCurrencyListUnitPrice MUST be null when SkuPriceId is null.
-  * PricingCurrencyListUnitPrice MUST be null when [ChargeCategory](#datamodel.costandusage.chargecategory) is "Tax".
+  * PricingCurrencyListUnitPrice MUST be null when [ChargeCategory](#datamodel.costandusage.chargecategory) is `Tax`.
   * PricingCurrencyListUnitPrice MUST NOT be null when SkuPriceId is not null.
-  * PricingCurrencyListUnitPrice MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#datamodel.costandusage.chargeclass) is not "Correction".
+  * PricingCurrencyListUnitPrice MUST NOT be null when ChargeCategory is `Usage` or `Purchase` and [ChargeClass](#datamodel.costandusage.chargeclass) is not `Correction`.
   * PricingCurrencyListUnitPrice MAY be null in all other cases.
 * When PricingCurrencyListUnitPrice is not null, PricingCurrencyListUnitPrice MUST adhere to the following requirements:
   * PricingCurrencyListUnitPrice MUST be a non-negative decimal value.

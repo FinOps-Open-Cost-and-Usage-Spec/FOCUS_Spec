@@ -192,19 +192,19 @@ Case sensitivity affects both filtering and aggregation operations.
 When row filtering is introduced, FOCUS will require case-insensitive matching. This is practitioner-friendly:
 
 * Practitioners shouldn't need to know exact casing to find their data
-* "prod" should match "Prod", "PROD", and "prod"
+* `prod` should match `Prod`, `PROD`, and `prod`
 * Reduces friction and improves usability
 
 ### Aggregation (Case-Insensitive Recommended)
 
 When row aggregation is introduced, FOCUS will recommend case-insensitive matching. From a practitioner perspective, case-insensitive grouping is ideal:
 
-* "Prod" and "prod" likely represent the same environment
+* `Prod` and `prod` likely represent the same environment
 * Inconsistent casing is usually a data quality issue, not intentional differentiation
 
 However, case-insensitive aggregation presents implementation challenges:
 
-* When "Prod" and "prod" are merged, which value should be returned?
+* When `Prod` and `prod` are merged, which value should be returned?
 * Different systems handle this differently (first value, alphabetical, etc.)
 
 Due to these implementation complexities, case-insensitive aggregation will be a SHOULD rather than a MUST. Providers that cannot implement case-insensitive aggregation should use case-sensitive matching and document this behavior.

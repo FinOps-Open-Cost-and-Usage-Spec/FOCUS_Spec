@@ -473,8 +473,8 @@ This functionality will be removed in a future release of FOCUS.
 * `ResourceId`
   * Revised requirement for uniqueness: the value must be unique within the provider.
 * `ServiceName`
-  * Added requirement for mapping the value to a single ServiceCategory or "Other".
-  * Added recommendation for mapping the value to a single ServiceSubcategory or "Other".
+  * Added requirement for mapping the value to a single ServiceCategory or `Other`.
+  * Added recommendation for mapping the value to a single ServiceSubcategory or `Other`.
 * `SkuId`
   * Revised column definition to position SkuId as a stable, functional identifier beyond pricing constructs.
   * Revised requirement for presence: the value must be present when the provider supports unit pricing and publishes price lists.
@@ -488,7 +488,7 @@ This functionality will be removed in a future release of FOCUS.
 * `SkuPriceId`
   * Revised requirement for presence: the value must be present when the provider supports unit pricing and publishes price lists.
   * Revised requirement that the value must have a single parent SkuId, removing the prior exception for commitment discount flexibility.
-  * Added requirement that the value must be associated with a given resource or service when ChargeCategory is "Usage" or "Purchase".
+  * Added requirement that the value must be associated with a given resource or service when ChargeCategory is `Usage` or `Purchase`.
   * Added requirements for a SkuPriceId to be consistent across variations of billing accounts and contracts.
 * `SubAccountName`
   * Revised requirement of nullability to be tied to the nullability of SubAccountId (e.g., must be null when SubAccountId is null).
@@ -538,15 +538,15 @@ This functionality will be removed in a future release of FOCUS.
   * Must be globally unique within the provider.
   * Should be a fully-qualified identifier.
 * `ConsumedQuantity` column updates:
-  * Must be null when `CommitmentDiscountStatus` is "Unused".
+  * Must be null when `CommitmentDiscountStatus` is `Unused`.
 * `ConsumedUnit` column updates:
-  * Must be null when `ChargeClass` is not "Correction" and `ChargeCategory` is not "Usage".
-  * Must be null when `ChargeClass` is not "Correction" and `ChargeCategory` is "Usage" and `CommitmentDiscountStatus` is "Unused".
-  * May be null when `ChargeCategory` is "Usage" and `ChargeClass` is "Correction".
+  * Must be null when `ChargeClass` is not `Correction` and `ChargeCategory` is not `Usage`.
+  * Must be null when `ChargeClass` is not `Correction` and `ChargeCategory` is `Usage` and `CommitmentDiscountStatus` is `Unused`.
+  * May be null when `ChargeCategory` is `Usage` and `ChargeClass` is `Correction`.
 * `EffectiveCost` column updates:
-  * When `CommitmentDiscountStatus` is "Unused", must be the difference between the used commitment discount amount and the portion of the total commitment discount purchase applicable for the charge period.
+  * When `CommitmentDiscountStatus` is `Unused`, must be the difference between the used commitment discount amount and the portion of the total commitment discount purchase applicable for the charge period.
 * `PricingCategory` column updates:
-  * Must not be "Committed" when the charge is for a commitment discount purchase.
+  * Must not be `Committed` when the charge is for a commitment discount purchase.
 * `SkuPriceId` column updates:
   * `SkuId` can be used if the provider does not have a `SkuPriceId` but other requirements must be met.
 * Metadata updates:
@@ -607,9 +607,9 @@ New metadata column definition properties:
   * Column IDs should not exceed 50 characters.
   * Attribute renamed to `Column naming and ordering` to denote it also includes rules for column ordering.
 * `ChargeCategory` column updates:
-  * Added "Credit" value for credits and any applicable credit corrections. See added `ChargeClass` column.
-  * Updated "Usage", "Purchase", and "Tax" to include refunds/corrections. See added `ChargeClass` column.
-  * Updated "Adjustment" value to exclude credits and refunds.
+  * Added `Credit` value for credits and any applicable credit corrections. See added `ChargeClass` column.
+  * Updated `Usage`, `Purchase`, and `Tax` to include refunds/corrections. See added `ChargeClass` column.
+  * Updated `Adjustment` value to exclude credits and refunds.
 * `ChargeFrequency` column updates:
   * Column is recommended and may not be present.
 * `CommitmentDiscountCategory` column updates:
@@ -621,32 +621,32 @@ New metadata column definition properties:
 * `CommitmentDiscountType` column updates:
   * Column is conditional and only required when the provider supports commitment discounts.
 * `ConsumedQuantity` column updates:
-  * Column renamed from UsageQuantity. It is now limited to ChargeType "Usage" rows.
+  * Column renamed from UsageQuantity. It is now limited to ChargeType `Usage` rows.
   * Column is conditional and only required when the provider supports the measurement of usage.
-  * Column must not be null when `ChargeCategory` is "Usage" and `ChargeClass` is not "Correction".
+  * Column must not be null when `ChargeCategory` is `Usage` and `ChargeClass` is not `Correction`.
 * `ConsumedUnit` column updates:
-  * Column renamed from UsageUnit. It is now limited to ChargeType "Usage" rows.
+  * Column renamed from UsageUnit. It is now limited to ChargeType `Usage` rows.
   * Column is conditional and only required when the provider supports the measurement of usage.
-  * Column must not be null when `ChargeCategory` is "Usage" and `ChargeClass` is not "Correction".
+  * Column must not be null when `ChargeCategory` is `Usage` and `ChargeClass` is not `Correction`.
 * `EffectiveCost` column updates:
   * Clarified that effective cost does not mix or "blend" costs across multiple charges.
   * Specified that in the case of a purchase charge paid to cover future eligible charges, the Effective Cost is set to 0.
 * `ListUnitPrice` column updates:
   * Column is conditional and only required when the provider publishes a price list that excludes discounts.
-  * Must not be null when `ChargeClass` is not "Correction" and `ChargeCategory` is "Usage" or "Purchase".
-  * Must be null when `ChargeCategory` is "Tax".
+  * Must not be null when `ChargeClass` is not `Correction` and `ChargeCategory` is `Usage` or `Purchase`.
+  * Must be null when `ChargeCategory` is `Tax`.
 * `PricingCategory` column updates:
   * Column is conditional and only required when the provider supports more than one pricing category value.
-  * Changed "On-Demand" to "Standard".
-  * Changed "Commitment-Based" to "Committed".
-  * Must not be null when `ChargeClass` is not "Correction" and `ChargeCategory` is "Usage" or "Purchase".
-  * Must be null when `ChargeCategory` is "Tax".
+  * Changed `On-Demand` to `Standard`.
+  * Changed `Commitment-Based` to `Committed`.
+  * Must not be null when `ChargeClass` is not `Correction` and `ChargeCategory` is `Usage` or `Purchase`.
+  * Must be null when `ChargeCategory` is `Tax`.
 * `PricingQuantity`
-  * Must not be null when `ChargeClass` is not "Correction" and `ChargeCategory` is "Usage" or "Purchase".
-  * Must be null when `ChargeCategory` is "Tax".
+  * Must not be null when `ChargeClass` is not `Correction` and `ChargeCategory` is `Usage` or `Purchase`.
+  * Must be null when `ChargeCategory` is `Tax`.
 * `PricingUnit`
-  * Must not be null when `ChargeClass` is not "Correction" and `ChargeCategory` is "Usage" or "Purchase".
-  * Must be null when `ChargeCategory` is "Tax".
+  * Must not be null when `ChargeClass` is not `Correction` and `ChargeCategory` is `Usage` or `Purchase`.
+  * Must be null when `ChargeCategory` is `Tax`.
 * `RegionId` column updates:
   * `Region` column was renamed to `RegionId` when `RegionName` column was introduced
 * `ResourceId` column updates:
@@ -657,12 +657,12 @@ New metadata column definition properties:
   * Column is conditional and only required when the provider supports billing based on provisioned resource instances and supports multiple "types" of resources.
 * `SkuId` column updates:
   * Column is conditional and only required when the provider publishes a SKU list.
-  * Must not be null when `ChargeClass` is not "Correction" and `ChargeCategory` is "Usage" or "Purchase".
-  * Must be null when `ChargeCategory` is "Tax".
+  * Must not be null when `ChargeClass` is not `Correction` and `ChargeCategory` is `Usage` or `Purchase`.
+  * Must be null when `ChargeCategory` is `Tax`.
 * `SkuPriceId` column updates:
   * Column is conditional and only required when the provider publishes a SKU price list.
-  * Must not be null when `ChargeClass` is not "Correction" and `ChargeCategory` is "Usage" or "Purchase".
-  * Must be null when `ChargeCategory` is "Tax".
+  * Must not be null when `ChargeClass` is not `Correction` and `ChargeCategory` is `Usage` or `Purchase`.
+  * Must be null when `ChargeCategory` is `Tax`.
 * `SubAccountId` column updates:
   * Column is conditional and only required when the provider supports a sub account construct.
 * `SubAccountName` column updates:

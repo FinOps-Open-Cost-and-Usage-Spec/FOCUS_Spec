@@ -35,7 +35,7 @@ BilledCost adheres to the following requirements:
 
 #### Derived Charges
 
-* ~~**NOK:** EffectiveCost MUST be derived from the EffectiveCost of underlying *charges* when ChargeCategory is "Tax" or "Adjustment".~~
+* ~~**NOK:** EffectiveCost MUST be derived from the EffectiveCost of underlying *charges* when ChargeCategory is `Tax` or `Adjustment`.~~
 
 #### EffectiveCost - BilledCost Sum checks
 
@@ -51,9 +51,9 @@ BilledCost adheres to the following requirements:
 
 > Irena: FYI, InvoiceDetail-related PR #1900 - Reqs candidates:
 >
-> * The sum of InvoiceDetail.BilledCost for a given InvoiceDetail.InvoiceDetailId, InvoiceDetail.InvoiceId, and InvoiceDetail.InvoiceIssuerName MUST match the payable amount provided in the corresponding invoice line items when InvoiceDetail.InvoiceStatus is "Closed".
-> * The sum of InvoiceDetail.BilledCost for a given InvoiceDetail.InvoiceDetailId, InvoiceDetail.InvoiceId, and InvoiceDetail.InvoiceIssuerName MUST match the sum of CostAndUsage.BilledCost for the same CostAndUsage.InvoiceDetailId, CostAndUsage.InvoiceId, and CostAndUsage.InvoiceIssuerName when InvoiceDetail.InvoiceStatus is "Closed".
-> * The sum of InvoiceDetail.BilledCost for a given InvoiceDetail.InvoiceDetailId, InvoiceDetail.InvoiceId, and InvoiceDetail.InvoiceIssuerName MAY differ from the sum of CostAndUsage.BilledCost for the same CostAndUsage.InvoiceDetailId, CostAndUsage.InvoiceId, and CostAndUsage.InvoiceIssuerName when InvoiceDetail.InvoiceStatus is "Open".
+> * The sum of InvoiceDetail.BilledCost for a given InvoiceDetail.InvoiceDetailId, InvoiceDetail.InvoiceId, and InvoiceDetail.InvoiceIssuerName MUST match the payable amount provided in the corresponding invoice line items when InvoiceDetail.InvoiceStatus is `Closed`.
+> * The sum of InvoiceDetail.BilledCost for a given InvoiceDetail.InvoiceDetailId, InvoiceDetail.InvoiceId, and InvoiceDetail.InvoiceIssuerName MUST match the sum of CostAndUsage.BilledCost for the same CostAndUsage.InvoiceDetailId, CostAndUsage.InvoiceId, and CostAndUsage.InvoiceIssuerName when InvoiceDetail.InvoiceStatus is `Closed`.
+> * The sum of InvoiceDetail.BilledCost for a given InvoiceDetail.InvoiceDetailId, InvoiceDetail.InvoiceId, and InvoiceDetail.InvoiceIssuerName MAY differ from the sum of CostAndUsage.BilledCost for the same CostAndUsage.InvoiceDetailId, CostAndUsage.InvoiceId, and CostAndUsage.InvoiceIssuerName when InvoiceDetail.InvoiceStatus is `Open`.
 
 ### EffectiveCost
 
@@ -75,36 +75,36 @@ EffectiveCost adheres to the following requirements:
 #### Independent Usage and Purchase Charges (Effective - Billed comparison)
 
 * ~~**NOK:** EffectiveCost MUST match the BilledCost in scenarios where this *charge* is not covering other eligible *charges* or is not covered by other eligible *charges*.~~
-* ~~**NOK:** EffectiveCost MUST match the BilledCost in scenarios where this *charge* is not covering other eligible *charges* or is not covered by other eligible *charges* and ChargeCategory is "Adjustment".~~
+* ~~**NOK:** EffectiveCost MUST match the BilledCost in scenarios where this *charge* is not covering other eligible *charges* or is not covered by other eligible *charges* and ChargeCategory is `Adjustment`.~~
 * ~~**NOK:** BilledCost MUST be 0 when InvoiceIssuerName does not match the DataOriginatorName.~~
-* ~~**NOK:** EffectiveCost MUST equal BilledCost when ChargeCategory is not "Adjustment" and the *charge* is neither intended to cover other eligible *charges* nor covered by other eligible *charges*.~~
-* **NOK:** EffectiveCost MUST equal BilledCost when ChargeCategory is "Usage" and the *charge* is not covered by other eligible *charges*.
-* **NOK:** EffectiveCost MUST equal BilledCost when ChargeCategory is "Purchase" and the *charge* is neither intended to cover other eligible *charges* nor covered by other eligible *charges*.
-* **NOK:** EffectiveCost MUST equal BilledCost when ChargeCategory is "Tax" or "Credit".
-* **NOK:** EffectiveCost MAY differ from BilledCost when ChargeCategory is "Adjustment".
+* ~~**NOK:** EffectiveCost MUST equal BilledCost when ChargeCategory is not `Adjustment` and the *charge* is neither intended to cover other eligible *charges* nor covered by other eligible *charges*.~~
+* **NOK:** EffectiveCost MUST equal BilledCost when ChargeCategory is `Usage` and the *charge* is not covered by other eligible *charges*.
+* **NOK:** EffectiveCost MUST equal BilledCost when ChargeCategory is `Purchase` and the *charge* is neither intended to cover other eligible *charges* nor covered by other eligible *charges*.
+* **NOK:** EffectiveCost MUST equal BilledCost when ChargeCategory is `Tax` or `Credit`.
+* **NOK:** EffectiveCost MAY differ from BilledCost when ChargeCategory is `Adjustment`.
 
 #### Covering/Covered Charges
 
-* **NOK:** EffectiveCost MUST be 0 when ChargeCategory is "Purchase" and the purchase is intended to cover related eligible *charges*.
+* **NOK:** EffectiveCost MUST be 0 when ChargeCategory is `Purchase` and the purchase is intended to cover related eligible *charges*.
 
 #### Derived Charges
 
-* ~~**NOK:** EffectiveCost MUST be derived from the EffectiveCost of underlying *charges* when ChargeCategory is "Tax" or "Adjustment".~~
+* ~~**NOK:** EffectiveCost MUST be derived from the EffectiveCost of underlying *charges* when ChargeCategory is `Tax` or `Adjustment`.~~
 
 #### EffectiveCost - BilledCost Sum checks
 
-* **NOK:** The sum of EffectiveCost MUST equal the sum of BilledCost within [*dataset artifacts*](#glossary:dataset-artifact) from a single data generator when those *dataset artifacts* include both purchase *charges* (ChargeCategory is "Purchase") and the related eligible *charges* they are intended to cover from the same source, or when the artifact contains neither purchase nor covered charges.
-* **NOK:** The sum of EffectiveCost MAY differ from the sum of BilledCost within [*dataset artifacts*](#glossary:dataset-artifact) from a single data generator when the artifact contains only purchase *charges* (ChargeCategory is "Purchase") or only the related eligible *charges* they are intended to cover, and those *charges* originate from different data sources (e.g., marketplace scenarios).
+* **NOK:** The sum of EffectiveCost MUST equal the sum of BilledCost within [*dataset artifacts*](#glossary:dataset-artifact) from a single data generator when those *dataset artifacts* include both purchase *charges* (ChargeCategory is `Purchase`) and the related eligible *charges* they are intended to cover from the same source, or when the artifact contains neither purchase nor covered charges.
+* **NOK:** The sum of EffectiveCost MAY differ from the sum of BilledCost within [*dataset artifacts*](#glossary:dataset-artifact) from a single data generator when the artifact contains only purchase *charges* (ChargeCategory is `Purchase`) or only the related eligible *charges* they are intended to cover, and those *charges* originate from different data sources (e.g., marketplace scenarios).
 
 > Udam: Seems like we dont need these.
 
 ##### Commitment Discount specifics
 
 * ~~*Charges* for a given [CommitmentDiscountId](#datasets.costandusage.commitmentdiscountid) adhere to the following additional requirements:~~
-  * ~~**NOK:** The sum of EffectiveCost where ChargeCategory is "Usage" MUST equal the sum of BilledCost where ChargeCategory is "Purchase".~~
-  * ~~**NOK:** The sum of EffectiveCost where ChargeCategory is "Usage" MUST equal the sum of EffectiveCost where ChargeCategory is "Usage" and [CommitmentDiscountStatus](#datasets.costandusage.commitmentdiscountstatus) is "Used", plus the sum of EffectiveCost where ChargeCategory is "Usage" and CommitmentDiscountStatus is "Unused".~~
-  * ~~**NOK:** When CommitmentDiscountStatus is "Used", EffectiveCost MUST represent the portion of the amortized *commitment discount* allocated to eligible *resources* or *services* consumed during the *charge period*.~~
-  * ~~**NOK:** When CommitmentDiscountStatus is "Unused", EffectiveCost MUST represent the portion of the amortized *commitment discount* that was not allocated to any *resources* or *services* during the *charge period*.~~
+  * ~~**NOK:** The sum of EffectiveCost where ChargeCategory is `Usage` MUST equal the sum of BilledCost where ChargeCategory is `Purchase`.~~
+  * ~~**NOK:** The sum of EffectiveCost where ChargeCategory is `Usage` MUST equal the sum of EffectiveCost where ChargeCategory is `Usage` and [CommitmentDiscountStatus](#datasets.costandusage.commitmentdiscountstatus) is `Used`, plus the sum of EffectiveCost where ChargeCategory is `Usage` and CommitmentDiscountStatus is `Unused`.~~
+  * ~~**NOK:** When CommitmentDiscountStatus is `Used`, EffectiveCost MUST represent the portion of the amortized *commitment discount* allocated to eligible *resources* or *services* consumed during the *charge period*.~~
+  * ~~**NOK:** When CommitmentDiscountStatus is `Unused`, EffectiveCost MUST represent the portion of the amortized *commitment discount* that was not allocated to any *resources* or *services* during the *charge period*.~~
 
 > Udam: feels like we can get rid of these and move them to examples of usage and purchases charges that have different cost origins (e.g., commitment discount, prepayment, marketplace purchase scenarios)
 
@@ -112,9 +112,9 @@ EffectiveCost adheres to the following requirements:
 > However, I suggest we keep the DiscountHandling attribute, at least for now (we need to revisit it, but that’s out of scope for this PR, right?). - to be discussed with the RM team as well
 > If we decide to keep them, I suggest replacing them with something like the following:
 
-* **NOK:** The sum of EffectiveCost where ChargeCategory is "Usage" for a given [CommitmentDiscountId](#datasets.costandusage.commitmentdiscountid) MUST equal the sum of BilledCost where ChargeCategory is "Purchase" for the same CommitmentDiscountId.
-* **NOK:** EffectiveCost MUST represent the portion of the amortized *commitment discount* allocated to eligible *resources* or *services* consumed during the *charge period* when CommitmentDiscountStatus is "Used".
-* **NOK:** EffectiveCost MUST represent the portion of the amortized *commitment discount* that was not allocated to any *resources* or *services* during the *charge period* when CommitmentDiscountStatus is "Unused".
+* **NOK:** The sum of EffectiveCost where ChargeCategory is `Usage` for a given [CommitmentDiscountId](#datasets.costandusage.commitmentdiscountid) MUST equal the sum of BilledCost where ChargeCategory is `Purchase` for the same CommitmentDiscountId.
+* **NOK:** EffectiveCost MUST represent the portion of the amortized *commitment discount* allocated to eligible *resources* or *services* consumed during the *charge period* when CommitmentDiscountStatus is `Used`.
+* **NOK:** EffectiveCost MUST represent the portion of the amortized *commitment discount* that was not allocated to any *resources* or *services* during the *charge period* when CommitmentDiscountStatus is `Unused`.
 
 #### CostAndUsage - InvoiceDetail - Invoice Sum Checks
 
@@ -128,18 +128,18 @@ EffectiveCost adheres to the following requirements:
 
 BEFORE:
 
-> * EffectiveCost MUST be 0 when [ChargeCategory](#datasets.costandusage.chargecategory) is "Purchase" and the purchase is intended to cover related eligible *charges*.
+> * EffectiveCost MUST be 0 when [ChargeCategory](#datasets.costandusage.chargecategory) is `Purchase` and the purchase is intended to cover related eligible *charges*.
 > ...
-> * When ChargeCategory is not "Usage" or "Purchase", EffectiveCost adheres to the following additional requirements:
->   * EffectiveCost of a *charge* calculated based on other *charges* (e.g., when the ChargeCategory is "Tax") MUST be calculated based on the EffectiveCost of those related *charges*.
->   * EffectiveCost of a *charge* unrelated to other *charges* (e.g., when the ChargeCategory is "Credit") MUST match the [BilledCost](#datasets.costandusage.billedcost).
+> * When ChargeCategory is not `Usage` or `Purchase`, EffectiveCost adheres to the following additional requirements:
+>   * EffectiveCost of a *charge* calculated based on other *charges* (e.g., when the ChargeCategory is `Tax`) MUST be calculated based on the EffectiveCost of those related *charges*.
+>   * EffectiveCost of a *charge* unrelated to other *charges* (e.g., when the ChargeCategory is `Credit`) MUST match the [BilledCost](#datasets.costandusage.billedcost).
 > 
 
 AFTER:
 
 > * EffectiveCost MUST match the BilledCost when the *charge* is unrelated to other *charges*.
-> * EffectiveCost MUST be 0 when [ChargeCategory](#datasets.costandusage.chargecategory) is "Purchase" and the purchase is intended to cover related eligible *charges*.
-> * EffectiveCost MUST be derived from the EffectiveCost of underlying charges when ChargeCategory is "Tax" or "Adjustment".
+> * EffectiveCost MUST be 0 when [ChargeCategory](#datasets.costandusage.chargecategory) is `Purchase` and the purchase is intended to cover related eligible *charges*.
+> * EffectiveCost MUST be derived from the EffectiveCost of underlying charges when ChargeCategory is `Tax` or `Adjustment`.
 
 ---
 
@@ -147,8 +147,8 @@ AFTER:
 
 NEW Draft!!!:
 
-> * The sum of EffectiveCost MUST equal the sum of BilledCost within [*dataset artifacts*](#glossary:dataset-artifact) from a single data generator when those *dataset artifacts* include both purchase *charges* (ChargeCategory is "Purchase") and the related eligible *charges* they are intended to cover from the same source, or when the artifact contains neither purchase nor covered charges.
-> * The sum of EffectiveCost MAY differ from the sum of BilledCost within [*dataset artifacts*](#glossary:dataset-artifact) from a single data generator when the artifact contains only purchase *charges* (ChargeCategory is "Purchase") or only the related eligible *charges* they are intended to cover, and those *charges* originate from different data sources (e.g., marketplace scenarios).
+> * The sum of EffectiveCost MUST equal the sum of BilledCost within [*dataset artifacts*](#glossary:dataset-artifact) from a single data generator when those *dataset artifacts* include both purchase *charges* (ChargeCategory is `Purchase`) and the related eligible *charges* they are intended to cover from the same source, or when the artifact contains neither purchase nor covered charges.
+> * The sum of EffectiveCost MAY differ from the sum of BilledCost within [*dataset artifacts*](#glossary:dataset-artifact) from a single data generator when the artifact contains only purchase *charges* (ChargeCategory is `Purchase`) or only the related eligible *charges* they are intended to cover, and those *charges* originate from different data sources (e.g., marketplace scenarios).
 
 ---
 
@@ -331,15 +331,15 @@ EffectiveCost MUST adhere to the following requirements:
 * EffectiveCost MUST conform to [NumericFormat](#numericformat) requirements.
 * EffectiveCost MUST NOT be null.
 * EffectiveCost MUST be a valid decimal value.
-* EffectiveCost MUST be 0 when [ChargeCategory](#chargecategory) is "Purchase" and the purchase is intended to cover future eligible *charges*.
+* EffectiveCost MUST be 0 when [ChargeCategory](#chargecategory) is `Purchase` and the purchase is intended to cover future eligible *charges*.
 * EffectiveCost MUST be denominated in the BillingCurrency.
 * The sum of EffectiveCost in a given *billing period* MAY differ from the sum of the invoices received for the same *billing period* for a [*billing account*](#glossary:billing-account).
-* When ChargeCategory is not "Usage" or "Purchase", EffectiveCost MUST adhere to the following requirements:
-  * EffectiveCost of a *charge* calculated based on other *charges* (e.g., when the ChargeCategory is "Tax") MUST be calculated based on the EffectiveCost of those related *charges*.
-  * EffectiveCost of a *charge* unrelated to other *charges* (e.g., when the ChargeCategory is "Credit") MUST match the [BilledCost](#billedcost).
+* When ChargeCategory is not `Usage` or `Purchase`, EffectiveCost MUST adhere to the following requirements:
+  * EffectiveCost of a *charge* calculated based on other *charges* (e.g., when the ChargeCategory is `Tax`) MUST be calculated based on the EffectiveCost of those related *charges*.
+  * EffectiveCost of a *charge* unrelated to other *charges* (e.g., when the ChargeCategory is `Credit`) MUST match the [BilledCost](#billedcost).
 * *Charges* for a given [CommitmentDiscountId](#commitmentdiscountid) MUST adhere to the following requirements:
-  * The sum of EffectiveCost where ChargeCategory is "Usage" MUST equal the sum of BilledCost where ChargeCategory is "Purchase".
-  * The sum of EffectiveCost where ChargeCategory is "Usage" MUST equal the sum of EffectiveCost where ChargeCategory is "Usage" and [CommitmentDiscountStatus](#commitmentdiscountstatus) is "Used", plus the sum of EffectiveCost where ChargeCategory is "Usage" and CommitmentDiscountStatus is "Unused".
+  * The sum of EffectiveCost where ChargeCategory is `Usage` MUST equal the sum of BilledCost where ChargeCategory is `Purchase`.
+  * The sum of EffectiveCost where ChargeCategory is `Usage` MUST equal the sum of EffectiveCost where ChargeCategory is `Usage` and [CommitmentDiscountStatus](#commitmentdiscountstatus) is `Used`, plus the sum of EffectiveCost where ChargeCategory is `Usage` and CommitmentDiscountStatus is `Unused`.
 
 ### Column ID
 

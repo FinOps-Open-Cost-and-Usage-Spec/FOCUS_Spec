@@ -12,7 +12,7 @@ The `ProgramType` property identifies *commitment programs* supported by the pro
 
 * Equal [CommitmentDiscountType](#datamodel.costandusage.commitmentdiscounttype) for one object in the CommitmentPrograms array when CommitmentDiscountType is not null.
 * Correspond to terminology disclosed by the service provider in public documentation. This guidance is especially relevant for SaaS providers that do not itemize commitment discount application at the row level, where CommitmentDiscountType is typically not populated.
-* Do not encode period length, payment option, or other commitment attributes (e.g., use "Flexible Spend Plan" rather than "1 Year Flexible Spend Plan No Upfront").
+* Do not encode period length, payment option, or other commitment attributes (e.g., use `Flexible Spend Plan` rather than `1 Year Flexible Spend Plan No Upfront`).
 
 ## Directly Dependent Columns
 
@@ -45,9 +45,9 @@ Because ANSI SQL does not define a standard for parsing JSON, the following quer
 
 ### Identify Eligible Uncovered Spend by Program Type
 
-This query identifies *charges* that are eligible for *commitment programs* but are not currently covered by a [*commitment discount*](#glossary:commitment-discount). A *practitioner* running relevant workloads can use this to quantify the savings opportunity per *commitment program* type (e.g., "Flexible Spend Plan" vs. "Resource Reservation") and per [*service*](#glossary:service).
+This query identifies *charges* that are eligible for *commitment programs* but are not currently covered by a [*commitment discount*](#glossary:commitment-discount). A *practitioner* running relevant workloads can use this to quantify the savings opportunity per *commitment program* type (e.g., `Flexible Spend Plan` vs. `Resource Reservation`) and per [*service*](#glossary:service).
 
-The query filters to *charges* where [Charge Category](#datamodel.costandusage.chargecategory) is "Usage", Commitment Program Eligibility Details is populated (the *charge* is eligible), and Commitment Discount ID is null (no *commitment* is applied). It then expands the `CommitmentPrograms` array to aggregate eligible spend per `ProgramType`. This query uses [Billed Cost](#datamodel.costandusage.billedcost) rather than [Effective Cost](#datamodel.costandusage.effectivecost) because the *charges* are uncovered (Commitment Discount ID is null), so Billed Cost reflects the actual amount paid and the savings opportunity.
+The query filters to *charges* where [Charge Category](#datamodel.costandusage.chargecategory) is `Usage`, Commitment Program Eligibility Details is populated (the *charge* is eligible), and Commitment Discount ID is null (no *commitment* is applied). It then expands the `CommitmentPrograms` array to aggregate eligible spend per `ProgramType`. This query uses [Billed Cost](#datamodel.costandusage.billedcost) rather than [Effective Cost](#datamodel.costandusage.effectivecost) because the *charges* are uncovered (Commitment Discount ID is null), so Billed Cost reflects the actual amount paid and the savings opportunity.
 
 > **Note:** When a *charge* is eligible for multiple *commitment program* types, it appears once per eligible type. Costs are not deduplicated across types, since each type represents an independent purchasing opportunity.
 
@@ -77,7 +77,7 @@ ORDER BY EligibleUncoveredCost DESC
 
 This query computes a *commitment discount* coverage rate using only eligible *charges* as the denominator. Without eligibility data, *practitioners* typically divide covered spend by total spend, which produces a coverage rate that includes ineligible *charges* (e.g., storage services, support fees) in the denominator and may not reflect the actionable coverage opportunity. This query targets discount-bearing programs only; for *capacity reservation* utilization, see the *capacity reservation* query below.
 
-> **Note:** Unused *commitment discount* rows ([Commitment Discount Status](#datamodel.costandusage.commitmentdiscountstatus) is "Unused") have Commitment Discount ID populated and would artificially inflate both the numerator and the denominator, so the query excludes them. Commitment Discount Status is null on rows without a *commitment discount*, so the filter also keeps null values.
+> **Note:** Unused *commitment discount* rows ([Commitment Discount Status](#datamodel.costandusage.commitmentdiscountstatus) is `Unused`) have Commitment Discount ID populated and would artificially inflate both the numerator and the denominator, so the query excludes them. Commitment Discount Status is null on rows without a *commitment discount*, so the filter also keeps null values.
 
 ```sql
 WITH CommitmentDiscountEligible AS (
@@ -149,7 +149,7 @@ ORDER BY UncoveredEligibleCost DESC
 
 *Capacity reservations* secure *resource* availability rather than provide discounts, and are tracked via Capacity Reservation ID and Capacity Reservation Status rather than the *commitment discount* columns used in the queries above. This query identifies *charges* eligible for capacity-reservation *commitment programs*, distinguishing between used and unused reservations.
 
-The query filters Commitment Program Eligibility Details to rows whose `ProgramType` values correspond to capacity-reservation programs (e.g., "Advance Resource Commitment", "Zonal Resource Commitment"). It then uses Capacity Reservation ID and Capacity Reservation Status to determine reservation utilization.
+The query filters Commitment Program Eligibility Details to rows whose `ProgramType` values correspond to capacity-reservation programs (e.g., `Advance Resource Commitment`, `Zonal Resource Commitment`). It then uses Capacity Reservation ID and Capacity Reservation Status to determine reservation utilization.
 
 > **Note:** The FOCUS specification requires Capacity Reservation ID to not be null when a *charge* represents unused capacity, but only recommends populating it when a *charge* is related to a used *capacity reservation*. Where a data generator does not populate Capacity Reservation ID on used rows, this query will show those rows with a null Capacity Reservation Status.
 

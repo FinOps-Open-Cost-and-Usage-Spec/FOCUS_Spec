@@ -9,12 +9,12 @@ UnitPriceType MUST adhere to the following requirements:
 * UnitPriceType MUST be of type String.
 * UnitPriceType MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * UnitPriceType MUST NOT be null.
-* UnitPriceType MUST NOT be "Base" when the SkuPrice record does not represent the [*list unit price*](#glossary:list-unit-price) at a point in time, fixed for a given [ContractId](#datamodel.skuprice.contractid).
-* UnitPriceType MUST NOT be "Contracted" when the SkuPrice record does not represent a [*contracted unit price*](#glossary:contracted-unit-price) for a given ContractId.
+* UnitPriceType MUST NOT be `Base` when the SkuPrice record does not represent the [*list unit price*](#glossary:list-unit-price) at a point in time, fixed for a given [ContractId](#datamodel.skuprice.contractid).
+* UnitPriceType MUST NOT be `Contracted` when the SkuPrice record does not represent a [*contracted unit price*](#glossary:contracted-unit-price) for a given ContractId.
 * UnitPriceType SHOULD use one of the recommended values when the price model aligns with a defined concept.
-* UnitPriceType SHOULD be "List" when the SkuPrice record does not represent a price specific to a contract.
-* UnitPriceType SHOULD be "Base" when the SkuPrice record represents a price specific to a contract and that price is a list price fixed for the contract at a point in time.
-* UnitPriceType SHOULD be "Contracted" when the SkuPrice record represents a price specific to a contract and that price is not a list price fixed for the contract at a point in time.
+* UnitPriceType SHOULD be `List` when the SkuPrice record does not represent a price specific to a contract.
+* UnitPriceType SHOULD be `Base` when the SkuPrice record represents a price specific to a contract and that price is a list price fixed for the contract at a point in time.
+* UnitPriceType SHOULD be `Contracted` when the SkuPrice record represents a price specific to a contract and that price is not a list price fixed for the contract at a point in time.
 * UnitPriceType MAY contain provider-specific values when the price model does not align with a recommended value.
 
 ## Recommended Values

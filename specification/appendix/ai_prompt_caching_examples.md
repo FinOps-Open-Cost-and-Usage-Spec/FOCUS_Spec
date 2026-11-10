@@ -28,12 +28,12 @@ For this scenario, Acme Corp purchases the model directly from the model develop
 
 Note the following details in the example dataset:
 
-* Each kind of token is its own [*SKU*](#glossary:sku), with its own [SKU ID](#datamodel.costandusage.skuid), [SKU Price ID](#datamodel.costandusage.skupriceid), and SKU Meter. The three input-side rows are distinguished structurally by SKU Meter values of "Input Tokens", "Cache Write Input Tokens", and "Cache Read Input Tokens".
-* TokenCacheAction does not create that distinction; it normalizes it. The property carries "Uncached", "Write", and "Read" on those same three rows, and TokenDirection carries "Input" on all three, so a query can select cache reads, or every input token, without matching on the SKU Meter text.
-* Every input token row carries both properties. The output row carries TokenDirection "Output" and no TokenCacheAction, because a cache interaction is a property of tokens consumed from a request, so grouping the input rows by TokenCacheAction produces a breakdown that sums to the total input token cost.
-* The "Input Tokens" row carries TokenCacheAction "Uncached" because Solora AI meters cache reads and cache writes as their own charges, so that row holds only the 500,000 input tokens that were neither served from nor placed into the cache. Each token is counted on one row.
+* Each kind of token is its own [*SKU*](#glossary:sku), with its own [SKU ID](#datamodel.costandusage.skuid), [SKU Price ID](#datamodel.costandusage.skupriceid), and SKU Meter. The three input-side rows are distinguished structurally by SKU Meter values of `Input Tokens`, `Cache Write Input Tokens`, and `Cache Read Input Tokens`.
+* TokenCacheAction does not create that distinction; it normalizes it. The property carries `Uncached`, `Write`, and `Read` on those same three rows, and TokenDirection carries `Input` on all three, so a query can select cache reads, or every input token, without matching on the SKU Meter text.
+* Every input token row carries both properties. The output row carries TokenDirection `Output` and no TokenCacheAction, because a cache interaction is a property of tokens consumed from a request, so grouping the input rows by TokenCacheAction produces a breakdown that sums to the total input token cost.
+* The `Input Tokens` row carries TokenCacheAction `Uncached` because Solora AI meters cache reads and cache writes as their own charges, so that row holds only the 500,000 input tokens that were neither served from nor placed into the cache. Each token is counted on one row.
 * Model identity properties are common to all four rows because all four describe the same model.
-* [Consumed Quantity](#datamodel.costandusage.consumedquantity) holds the raw token count and [Consumed Unit](#datamodel.costandusage.consumedunit) is "Tokens", while [Pricing Quantity](#datamodel.costandusage.pricingquantity) holds the priced volume and [Pricing Unit](#datamodel.costandusage.pricingunit) is "1000000 Tokens".
+* [Consumed Quantity](#datamodel.costandusage.consumedquantity) holds the raw token count and [Consumed Unit](#datamodel.costandusage.consumedunit) is `Tokens`, while [Pricing Quantity](#datamodel.costandusage.pricingquantity) holds the priced volume and [Pricing Unit](#datamodel.costandusage.pricingunit) is `1000000 Tokens`.
 
 Identifying the cache write separately supports a return-on-investment analysis:
 
@@ -53,11 +53,11 @@ For this scenario, the same model is served by a cloud provider, LatticeScale, w
 
 Note the following details in the example dataset:
 
-* The SKU Meter wording differs from Scenario A for the same conceptual charge. Cache reads appear on a meter named "Cached Input Tokens" here and "Cache Read Input Tokens" in Scenario A, while both rows carry TokenCacheAction "Read". Matching on TokenCacheAction selects both; matching on SKU Meter text selects neither consistently.
-* No row carries TokenCacheAction "Write". This *service provider* does not meter cache writes as their own charge, so no [*SKU Price*](#glossary:sku-price) holds that value.
-* The "Input Tokens" row covers 2,500,000 tokens, comprising both the tokens that populated the cache and those processed without caching. The *service provider* does not meter them separately, so the dataset cannot separate them either. The row carries no TokenCacheAction, because "Uncached" would describe the 2,000,000 tokens that populated the cache as uncached, and TokenDirection "Input" still identifies its tokens as input. The cost of populating the cache is not separable on this *service provider*, which is a property of its billing model rather than of the dataset.
-* The context cache storage row has its own SKU ID and a SKU Meter value of "Context Cache Storage", and carries neither TokenCacheAction nor TokenDirection. It is denominated in token-hours rather than tokens, so neither property applies to it.
-* The context cache storage row conforms to [Unit Format](#attributes.unitformat) compound unit requirements, with Consumed Unit "Token-Hours" and Pricing Unit "1000000 Token-Hours".
+* The SKU Meter wording differs from Scenario A for the same conceptual charge. Cache reads appear on a meter named `Cached Input Tokens` here and `Cache Read Input Tokens` in Scenario A, while both rows carry TokenCacheAction `Read`. Matching on TokenCacheAction selects both; matching on SKU Meter text selects neither consistently.
+* No row carries TokenCacheAction `Write`. This *service provider* does not meter cache writes as their own charge, so no [*SKU Price*](#glossary:sku-price) holds that value.
+* The `Input Tokens` row covers 2,500,000 tokens, comprising both the tokens that populated the cache and those processed without caching. The *service provider* does not meter them separately, so the dataset cannot separate them either. The row carries no TokenCacheAction, because `Uncached` would describe the 2,000,000 tokens that populated the cache as uncached, and TokenDirection `Input` still identifies its tokens as input. The cost of populating the cache is not separable on this *service provider*, which is a property of its billing model rather than of the dataset.
+* The context cache storage row has its own SKU ID and a SKU Meter value of `Context Cache Storage`, and carries neither TokenCacheAction nor TokenDirection. It is denominated in token-hours rather than tokens, so neither property applies to it.
+* The context cache storage row conforms to [Unit Format](#attributes.unitformat) compound unit requirements, with Consumed Unit `Token-Hours` and Pricing Unit `1000000 Token-Hours`.
 
 The same analysis applied to this scenario yields a different result:
 

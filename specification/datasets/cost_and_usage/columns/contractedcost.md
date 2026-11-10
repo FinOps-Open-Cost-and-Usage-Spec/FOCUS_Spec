@@ -14,12 +14,12 @@ ContractedCost MUST adhere to the following requirements:
 * ContractedCost MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * ContractedCost MUST NOT be null.
 * ContractedCost MUST be denominated in the BillingCurrency.
-* When [ChargeCategory](#datamodel.costandusage.chargecategory) is "Usage" or "Purchase" and [ChargeClass](#datamodel.costandusage.chargeclass) is not "Correction", ContractedCost MUST adhere to the following requirements:
+* When [ChargeCategory](#datamodel.costandusage.chargecategory) is `Usage` or `Purchase` and [ChargeClass](#datamodel.costandusage.chargeclass) is not `Correction`, ContractedCost MUST adhere to the following requirements:
   * ContractedCost MUST reflect *negotiated pricing terms* that are independent of any discount-bearing *commitment programs* being applied to the *charge*.
   * ContractedCost MUST NOT reflect any cost impact dependent on a discount-bearing *commitment program* being applied to the *charge*.
   * ContractedCost MUST equal ListCost when no *negotiated pricing terms* apply to the *charge*.
-* ContractedCost MUST equal BilledCost when ChargeCategory is "Credit".
-* ContractedCost MUST be calculated based on the ContractedCost of the related *charges* when ChargeCategory is "Tax".
+* ContractedCost MUST equal BilledCost when ChargeCategory is `Credit`.
+* ContractedCost MUST be calculated based on the ContractedCost of the related *charges* when ChargeCategory is `Tax`.
 * ContractedCost MUST equal the product of ContractedUnitPrice and PricingQuantity when ContractedUnitPrice is not null and PricingQuantity is not null.
 
 ## Usability Constraints

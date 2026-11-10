@@ -1,0 +1,13 @@
+FROM docker.io/pandoc/extra:latest-ubuntu
+
+RUN /usr/bin/apt-get -y update \
+    && DEBIAN_FRONTEND=noninteractive /usr/bin/apt-get install -y make wget zip \
+    && wget -q https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-3/wkhtmltox_0.12.6.1-3.jammy_amd64.deb \
+    && DEBIAN_FRONTEND=noninteractive /usr/bin/apt-get install -y -f ./wkhtmltox_0.12.6.1-3.jammy_amd64.deb \
+    && rm -f wkhtmltox_0.12.6.1-3.jammy_amd64.deb \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY requirements.txt /tmp/focus-requirements.txt
+RUN /usr/bin/pip3 install --break-system-packages -r /tmp/focus-requirements.txt
+
+ENTRYPOINT []

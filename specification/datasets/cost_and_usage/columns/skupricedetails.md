@@ -45,13 +45,13 @@ SkuPriceDetails MUST adhere to the following requirements:
   * Property value MUST represent the value for a single PricingUnit, denominated in the unit of measure specified for that property when the property holds a numeric value.
   * Property value MUST be one of the allowed values specified for that property when allowed values are specified.
 * When included, TokenCacheAction MUST adhere to the following requirements:
-  * TokenCacheAction MUST be "Read" when the *SKU Price* meters only tokens served from a *prompt cache*.
-  * TokenCacheAction MUST be "Write" when the *SKU Price* meters only tokens placed into a *prompt cache* (e.g., a charge a service provider meters as cache creation).
-  * TokenCacheAction MUST be "Uncached" when the *SKU Price* meters only request tokens neither served from nor placed into a *prompt cache* (e.g., input tokens that a service provider meters separately from its cache reads and cache writes).
-  * TokenCacheAction MUST be "Other" when the *SKU Price* meters a cache-related token charge to which none of the other allowed values apply.
+  * TokenCacheAction MUST be `Read` when the *SKU Price* meters only tokens served from a *prompt cache*.
+  * TokenCacheAction MUST be `Write` when the *SKU Price* meters only tokens placed into a *prompt cache* (e.g., a charge a service provider meters as cache creation).
+  * TokenCacheAction MUST be `Uncached` when the *SKU Price* meters only request tokens neither served from nor placed into a *prompt cache* (e.g., input tokens that a service provider meters separately from its cache reads and cache writes).
+  * TokenCacheAction MUST be `Other` when the *SKU Price* meters a cache-related token charge to which none of the other allowed values apply.
 * When included, TokenDirection MUST adhere to the following requirements:
-  * TokenDirection MUST be "Input" when the *SKU Price* meters tokens consumed from a request.
-  * TokenDirection MUST be "Output" when the *SKU Price* meters tokens generated in a response.
+  * TokenDirection MUST be `Input` when the *SKU Price* meters tokens consumed from a request.
+  * TokenDirection MUST be `Output` when the *SKU Price* meters tokens generated in a response.
 
 ## FOCUS-Defined Properties
 
@@ -62,29 +62,29 @@ The following keys should be used when applicable to facilitate cross-SKU and cr
 | CoreCount                | Number of physical or virtual CPUs available<sup>1</sup>                 | Numeric          | Measure: Quantity of Cores                            |
 | DiskMaxIops              | Storage maximum sustained input/output operations per second<sup>1</sup> | Numeric          | Measure: Input/Output Operations per Second (IOPS)    |
 | DiskSpace                | Storage capacity available                                               | Numeric          | Measure: Gibibytes (GiB)                              |
-| DiskType                 | Kind of disk used                                                        | String           | Examples: "SSD", "HDD", "NVMe"                        |
+| DiskType                 | Kind of disk used                                                        | String           | Examples: `SSD`, `HDD`, `NVMe`                        |
 | GpuCount                 | Number of GPUs available                                                 | Numeric          | Measure: Quantity of GPUs                             |
-| InstanceType             | Common name of the instance including size, shape, series, etc.          | String           | Examples: "m5d.2xlarge", "NC24rs_v3", "P50"           |
-| InstanceSeries           | Common name for the series and/or generation of the instance             | String           | Examples: "M5", "Dadv5", "N2D"                        |
+| InstanceType             | Common name of the instance including size, shape, series, etc.          | String           | Examples: `m5d.2xlarge`, `NC24rs_v3`, `P50`           |
+| InstanceSeries           | Common name for the series and/or generation of the instance             | String           | Examples: `M5`, `Dadv5`, `N2D`                        |
 | MemorySize               | RAM allocated for processing                                             | Numeric          | Measure: Gibibytes (GiB<sup>2</sup>)                  |
-| ModelDeveloper           | Name of the entity that created the model                                | String           | Examples: "Solora AI", "ModelMesh"                    |
-| ModelFamily              | Grouping of related models as defined by the model developer             | String           | Examples: "Solora Reasoning", "ModelMesh General"     |
-| ModelId                  | Identifier for the model as it appears in billing, which may be namespaced by the service provider and is not guaranteed to match across service providers | String           | Examples: "solora-reasoning-pro", "modelmesh-general-7b" |
-| ModelVersion             | Version of the model within a given model family, as defined by the model developer | String           | Examples: "3.0", "2.5"                                |
+| ModelDeveloper           | Name of the entity that created the model                                | String           | Examples: `Solora AI`, `ModelMesh`                    |
+| ModelFamily              | Grouping of related models as defined by the model developer             | String           | Examples: `Solora Reasoning`, `ModelMesh General`     |
+| ModelId                  | Identifier for the model as it appears in billing, which may be namespaced by the service provider and is not guaranteed to match across service providers | String           | Examples: `solora-reasoning-pro`, `modelmesh-general-7b` |
+| ModelVersion             | Version of the model within a given model family, as defined by the model developer | String           | Examples: `3.0`, `2.5`                                |
 | NetworkMaxIops           | Network maximum sustained input/output operations per second<sup>1</sup> | Numeric          | Measure: Input/Output Operations per Second (IOPS)    |
 | NetworkMaxThroughput     | Network maximum sustained throughput for data transfer<sup>1</sup>       | Numeric          | Measure: Megabits per second (Mbps)                   |
-| OperatingSystem          | Operating system family<sup>3</sup>                                      | String           | Examples: "Linux", "MacOS", "Windows"                 |
-| Redundancy               | Level of redundancy offered by the SKU                                   | String           | Examples: "Local", "Zonal", "Global"                  |
-| StorageClass             | Class or tier of storage provided                                        | String           | Examples: "Hot", "Archive", "Nearline"                |
-| TokenCacheAction         | Interaction of the metered tokens with a cache<sup>4</sup>               | String           | Allowed values: "Uncached", "Read", "Write", "Other"  |
-| TokenDirection           | Direction of the metered tokens, into or out of the model<sup>4</sup>    | String           | Allowed values: "Input", "Output"                     |
+| OperatingSystem          | Operating system family<sup>3</sup>                                      | String           | Examples: `Linux`, `MacOS`, `Windows`                 |
+| Redundancy               | Level of redundancy offered by the SKU                                   | String           | Examples: `Local`, `Zonal`, `Global`                  |
+| StorageClass             | Class or tier of storage provided                                        | String           | Examples: `Hot`, `Archive`, `Nearline`                |
+| TokenCacheAction         | Interaction of the metered tokens with a cache<sup>4</sup>               | String           | Allowed values: `Uncached`, `Read`, `Write`, `Other`  |
+| TokenDirection           | Direction of the metered tokens, into or out of the model<sup>4</sup>    | String           | Allowed values: `Input`, `Output`                     |
 
 > **Notes:**
 >
 > 1. In the case of "burstable" SKUs offering variable levels of performance, the baseline or guaranteed value should be used.
 > 2. Memory manufacturers still commonly use "GB" to refer to 2<sup>30</sup> bytes, which is known as GiB in other contexts.
 > 3. This is the operating system family of the SKU, if it's included with the SKU or the SKU only supports one type of operating system.
-> 4. TokenDirection applies to SKUs that meter tokens in one direction only, and TokenCacheAction to SKUs that meter only tokens consumed from a request. The requirements above state when each property applies and what each value identifies. A SKU that bills request tokens on one meter whether or not they were served from or placed into a cache carries no TokenCacheAction, because "Uncached" would misdescribe the tokens that interacted with the cache, and TokenDirection still identifies its tokens as input. Because null is not one of the allowed values, TokenCacheAction is omitted rather than set to null when the interaction of the metered tokens with a cache is not known. [Consumed Quantity](#datamodel.costandusage.consumedquantity) requirements state that a token counted on a "Read" or "Write" row is not also counted on a row that carries neither value. The model developer defines which cache interactions and which token directions a model distinguishes. Which of those a service provider meters as its own charge, and the meter name it uses, vary across service providers and across model versions, so each property identifies one attribute of the metered tokens independently of how a given service provider names its meters. Reasoning tokens are generated in a response, so a SKU that meters them separately carries TokenDirection "Output". Dimensions that qualify a charge without describing the direction of its tokens or their interaction with a cache, such as token modality, reasoning effort, cache retention duration, and context window size, are not values of these properties. [Examples: AI Prompt Caching](#appendix.examples:aipromptcaching) shows both properties on two service providers that meter cache activity differently.
+> 4. TokenDirection applies to SKUs that meter tokens in one direction only, and TokenCacheAction to SKUs that meter only tokens consumed from a request. The requirements above state when each property applies and what each value identifies. A SKU that bills request tokens on one meter whether or not they were served from or placed into a cache carries no TokenCacheAction, because `Uncached` would misdescribe the tokens that interacted with the cache, and TokenDirection still identifies its tokens as input. Because null is not one of the allowed values, TokenCacheAction is omitted rather than set to null when the interaction of the metered tokens with a cache is not known. [Consumed Quantity](#datamodel.costandusage.consumedquantity) requirements state that a token counted on a `Read` or `Write` row is not also counted on a row that carries neither value. The model developer defines which cache interactions and which token directions a model distinguishes. Which of those a service provider meters as its own charge, and the meter name it uses, vary across service providers and across model versions, so each property identifies one attribute of the metered tokens independently of how a given service provider names its meters. Reasoning tokens are generated in a response, so a SKU that meters them separately carries TokenDirection `Output`. Dimensions that qualify a charge without describing the direction of its tokens or their interaction with a cache, such as token modality, reasoning effort, cache retention duration, and context window size, are not values of these properties. [Examples: AI Prompt Caching](#appendix.examples:aipromptcaching) shows both properties on two service providers that meter cache activity differently.
 
 ## Examples
 

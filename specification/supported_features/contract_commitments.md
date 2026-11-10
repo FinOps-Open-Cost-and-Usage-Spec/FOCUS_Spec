@@ -33,7 +33,7 @@ Because ANSI SQL does not inherently support the parsing of JSON, the following 
 
 ### Report on Initial Contract Commitment
 
-This query takes inputs of a time range via [Charge Period Start](#datamodel.costandusage.chargeperiodstart) and [Charge Period End](#datamodel.costandusage.chargeperiodend), then presents the aggregation of initial *contract commitments* from the Cost and Usage dataset per [Service Provider Name](#datamodel.costandusage.serviceprovidername) and Contract Commitment ID by filtering on the specified time range, along with [Charge Category](#datamodel.costandusage.chargecategory) of "Purchase".
+This query takes inputs of a time range via [Charge Period Start](#datamodel.costandusage.chargeperiodstart) and [Charge Period End](#datamodel.costandusage.chargeperiodend), then presents the aggregation of initial *contract commitments* from the Cost and Usage dataset per [Service Provider Name](#datamodel.costandusage.serviceprovidername) and Contract Commitment ID by filtering on the specified time range, along with [Charge Category](#datamodel.costandusage.chargecategory) of `Purchase`.
 
 ```sql
 SELECT
@@ -54,7 +54,7 @@ ORDER BY ServiceProviderName, ContractCommitmentId
 
 ### Report on Usage Against Contract Commitment
 
-This query takes inputs of a time range via Charge Period Start and Charge Period End, then presents the aggregation of the application of *contract commitments* from the Cost and Usage dataset per Service Provider Name and Contract Commitment ID by filtering on the specified time range, along with Charge Category of "Usage".
+This query takes inputs of a time range via Charge Period Start and Charge Period End, then presents the aggregation of the application of *contract commitments* from the Cost and Usage dataset per Service Provider Name and Contract Commitment ID by filtering on the specified time range, along with Charge Category of `Usage`.
 
 ```sql
 SELECT
@@ -75,7 +75,7 @@ ORDER BY ServiceProviderName, ContractCommitmentId
 
 ### Report on Usage Against Contract Commitment by Category
 
-This query takes inputs of a time range via Charge Period Start and Charge Period End, then presents the aggregation of the application of *contract commitments* from the Cost and Usage dataset per Service Provider Name and Contract Commitment ID by filtering on the specified time range, along with Charge Category of "Usage". It also joins in the Contract Commitment dataset to provide further information about each *contract commitment* (in this case, the contract, category, type, start and end date/time, committed cost, and committed quantity and unit). It reports applied cost only, so Contract Applied entries that record an applied quantity without an applied cost are excluded.
+This query takes inputs of a time range via Charge Period Start and Charge Period End, then presents the aggregation of the application of *contract commitments* from the Cost and Usage dataset per Service Provider Name and Contract Commitment ID by filtering on the specified time range, along with Charge Category of `Usage`. It also joins in the Contract Commitment dataset to provide further information about each *contract commitment* (in this case, the contract, category, type, start and end date/time, committed cost, and committed quantity and unit). It reports applied cost only, so Contract Applied entries that record an applied quantity without an applied cost are excluded.
 
 ```sql
 SELECT

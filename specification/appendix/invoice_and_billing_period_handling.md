@@ -10,7 +10,7 @@ Without this fundamental alignment, downstream processes like financial reportin
 
 ### Invoice Reconciliation and Issuance
 
-Before an [*invoice is issued*](#glossary:issued-invoice), i.e., before the [Invoice Issue Status](#datamodel.invoicedetail.invoiceissuestatus) in the Invoice Detail dataset transitions to "Issued", data generators typically perform internal *invoice reconciliation* to ensure consistency between the invoice, the Invoice Detail dataset, and the Cost and Usage dataset.
+Before an [*invoice is issued*](#glossary:issued-invoice), i.e., before the [Invoice Issue Status](#datamodel.invoicedetail.invoiceissuestatus) in the Invoice Detail dataset transitions to `Issued`, data generators typically perform internal *invoice reconciliation* to ensure consistency between the invoice, the Invoice Detail dataset, and the Cost and Usage dataset.
 
 At the conclusion of this process, a key objective is for the aggregated [Billed Costs](#datamodel.invoicedetail.billedcost) in the Invoice Detail dataset for a given [Invoice Detail ID](#datamodel.invoicedetail.invoicedetailid) to align with the payable amounts presented on the corresponding invoice line items. This alignment is performed across [Invoice ID](#datamodel.invoicedetail.invoiceid), Invoice Detail ID, and [Invoice Issuer](#datamodel.invoicedetail.invoiceissuername).
 

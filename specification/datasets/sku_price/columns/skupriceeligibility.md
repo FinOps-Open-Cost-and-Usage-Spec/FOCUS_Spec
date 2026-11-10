@@ -29,8 +29,8 @@ SkuPriceEligibilityObject MUST adhere to the following requirements:
 * SkuPriceEligibilityObject.IsComplexScope MUST be `true` when the *SKU Price's* eligibility logic exceeds schema capabilities.
 * SkuPriceEligibilityObject.Inclusions[\*].Dimension SHOULD represent a column in [Cost and Usage](#datamodel.costandusage).
 * SkuPriceEligibilityObject.Exclusions[\*].Dimension SHOULD represent a column in Cost and Usage.
-* SkuPriceEligibilityObject.Inclusions[\*].Values MUST contain only the single string "*" when the wildcard is present.
-* SkuPriceEligibilityObject.Exclusions[\*].Values MUST contain only the single string "*" when the wildcard is present.
+* SkuPriceEligibilityObject.Inclusions[\*].Values MUST contain only the single string `"*"` when the wildcard is present.
+* SkuPriceEligibilityObject.Exclusions[\*].Values MUST contain only the single string `"*"` when the wildcard is present.
 
 ### Object Schema Structure
 

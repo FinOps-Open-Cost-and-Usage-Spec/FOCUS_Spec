@@ -23,12 +23,12 @@ Current terms used by providers:
 
 | Provider  | Scenario      | Value                |
 | --------- | ------------- | -------------------- |
-| AWS       | Not available | "Payer Account" |
-| GCP       | Not available | "Billing Account"    |
-| Microsoft | EA            | "Billing Account"    |
-| Microsoft | MCA/MPA       | "Billing Profile"    |
-| Microsoft | Other         | "Subscription"       |
-| OCI       | Not available | "Billing Account"    |
+| AWS       | Not available | `Payer Account` |
+| GCP       | Not available | `Billing Account`    |
+| Microsoft | EA            | `Billing Account`    |
+| Microsoft | MCA/MPA       | `Billing Profile`    |
+| Microsoft | Other         | `Subscription`       |
+| OCI       | Not available | `Billing Account`    |
 
 ## Discussion / scratch space
 

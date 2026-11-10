@@ -9,8 +9,8 @@ ContractCommitmentCost MUST adhere to the following requirements:
 * ContractCommitmentCost MUST be of type Decimal.
 * ContractCommitmentCost MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * ContractCommitmentCost MUST adhere to the following nullability requirements:
-  * ContractCommitmentCost MUST NOT be null when [ContractCommitmentCategory](#datamodel.contractcommitment.contractcommitmentcategory) is "Spend".
-  * ContractCommitmentCost MAY be null when ContractCommitmentCategory is "Usage".
+  * ContractCommitmentCost MUST NOT be null when [ContractCommitmentCategory](#datamodel.contractcommitment.contractcommitmentcategory) is `Spend`.
+  * ContractCommitmentCost MAY be null when ContractCommitmentCategory is `Usage`.
 * ContractCommitmentCost MUST be denominated in the [BillingCurrency](#datamodel.contractcommitment.billingcurrency).
 
 ## Column ID

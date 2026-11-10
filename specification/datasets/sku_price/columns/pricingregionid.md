@@ -26,9 +26,9 @@ In many cases these will be identical. However, if a *SKU Price* is global but s
 
 ### Null vs Global Values for Non-Regionalized Prices
 
-Non-regionalized [*services*](#glossary:service) (i.e., *services* with no physical geography) are inconsistently represented across *service providers*. This variance exists not only across different *service providers*, but frequently across different *services* within the exact same *service provider*. For instance, one service team might use a null Pricing Region ID, while another *service* from the same *service provider* explicitly publishes the string identifier "global" to mean the exact same thing.
+Non-regionalized [*services*](#glossary:service) (i.e., *services* with no physical geography) are inconsistently represented across *service providers*. This variance exists not only across different *service providers*, but frequently across different *services* within the exact same *service provider*. For instance, one service team might use a null Pricing Region ID, while another *service* from the same *service provider* explicitly publishes the string identifier `global` to mean the exact same thing.
 
-Because of this native inconsistency, consumers of this dataset should be aware that a Pricing Region ID of null or "global" cannot reliably be used on its own to distinguish between a truly worldwide geographic scope and a non-regionalized service scope.
+Because of this native inconsistency, consumers of this dataset should be aware that a Pricing Region ID of null or `global` cannot reliably be used on its own to distinguish between a truly worldwide geographic scope and a non-regionalized service scope.
 
 ## Column ID
 

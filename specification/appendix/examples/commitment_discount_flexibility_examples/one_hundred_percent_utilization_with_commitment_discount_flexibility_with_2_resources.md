@@ -30,7 +30,7 @@ The above SKU Catalog shows that this service provider only has 1 service that o
 
 ## Outcome
 
-* 1 recurring, purchase record exists for 1 eligible "Normalized Hour" for a no upfront, *commitment discount* and incurs a $2.00 [*BilledCost*](#datamodel.costandusage.billedcost).
+* 1 recurring, purchase record exists for 1 eligible `Normalized Hour` for a no upfront, *commitment discount* and incurs a $2.00 [*BilledCost*](#datamodel.costandusage.billedcost).
 * With *commitment discount flexibility*, 1 *commitment discount* for a VM_XLARGE covers 2 VM_MEDIUM resources within the corresponding [*charge period*](#glossary:chargeperiod) and incurs a $2.00 total [*EffectiveCost*](#datamodel.costandusage.effectivecost).
   * 1 *commitment discount* with a normalization factor of 8 covers 2 resources with normalization factors of 4 (i.e 4 + 4 = 8).
 

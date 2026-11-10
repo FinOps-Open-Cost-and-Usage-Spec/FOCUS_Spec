@@ -59,7 +59,7 @@ Current column mappings found in available data sets:
 
 * Tax-related record are not available in billing data
 
-### Example PricingQuantity values for charges where ChargeCategory is "Tax"
+### Example PricingQuantity values for charges where ChargeCategory is `Tax`
 
 Example A
 | Description          | Pricing Quantity          | Unit Price   | Billed Cost |

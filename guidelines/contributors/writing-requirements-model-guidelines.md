@@ -40,9 +40,9 @@ The first stage of conversion of rules from the normative text to model rules is
 * `Conditions` - Specific criteria that must be true of the data generator for this rule to apply to the dataset (named `ApplicabilityCriteria` prior to model version 1.5)
 * `Type` - Identifier if this is a Static or Dynamic rule, with Static rules being possible to assess model without external information being required
 * `Order` - The order in which this rule should be processed or displayed
-* `DatasetType` - The dataset type this rule applies to (e.g., "CAU" for Cost and Usage, "CCT" for Contract Commitment)
-* `DatasetId` - The identifier of the dataset this rule belongs to (Required for Dataset, Column, and Object entity types, e.g., "CostAndUsage" for Cost and Usage, "ContractCommitment" for Contract Commitment)
-* `DatasetName` - The human-readable name of the dataset this rule belongs to (Required for Dataset, Column, and Object entity types, e.g., "Cost and Usage" for Cost and Usage)
+* `DatasetType` - The dataset type this rule applies to (e.g., `CAU` for Cost and Usage, `CCT` for Contract Commitment)
+* `DatasetId` - The identifier of the dataset this rule belongs to (Required for Dataset, Column, and Object entity types, e.g., `CostAndUsage` for Cost and Usage, `ContractCommitment` for Contract Commitment)
+* `DatasetName` - The human-readable name of the dataset this rule belongs to (Required for Dataset, Column, and Object entity types, e.g., `Cost and Usage` for Cost and Usage)
 * `ValidationCriteria` - The detailed criteria that defines how this rule is to be validated
   * `MustSatisfy` - The normative text that this rule defines
   * `Keyword` - The Normative keyword that applies to this rule (Allowed Values: `MUST`, `MUST NOT`, `SHOULD`, `SHOULD NOT`, `MAY`)
@@ -426,7 +426,7 @@ Unconditional rule (applies to all rows):
 "Condition": {}
 ```
 
-Conditional rule when ChargeCategory is "Purchase":
+Conditional rule when ChargeCategory is `Purchase`:
 ```json
 "Condition": {
   "CheckFunction": "CheckValue",
@@ -435,7 +435,7 @@ Conditional rule when ChargeCategory is "Purchase":
 }
 ```
 
-Conditional rule when ContractCommitmentCategory is "Usage":
+Conditional rule when ContractCommitmentCategory is `Usage`:
 ```json
 "Condition": {
   "CheckFunction": "CheckValue",
@@ -510,7 +510,7 @@ Atomic rule checking column presence:
 
 #### 10. Type – Specify validation dependency classification
 
-Note: Do not confuse the Type property (Static/Dynamic) with the Function property value of "Type" (which refers to data types like Decimal or String).
+Note: Do not confuse the Type property (Static/Dynamic) with the Function property value of `Type` (which refers to data types like Decimal or String).
 
 Indicates whether the rule can be validated using only the dataset itself or requires external dependencies.
 

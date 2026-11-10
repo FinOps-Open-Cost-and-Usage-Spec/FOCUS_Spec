@@ -71,7 +71,7 @@ A unit price that is only eligible for consumption within a specific region (e.g
 
 ## Macro-Region Scope
 
-A unit price where the catalog's base Pricing Region ID represents a broad macro-region (e.g., "us"), but the eligibility is explicitly mapped to the specific operational regions where consumption actually occurs.
+A unit price where the catalog's base Pricing Region ID represents a broad macro-region (e.g., `us`), but the eligibility is explicitly mapped to the specific operational regions where consumption actually occurs.
 
 ```json
 {
@@ -93,7 +93,7 @@ A unit price where the catalog's base Pricing Region ID represents a broad macro
 
 ## Non-Regionalized Scope
 
-A unit price for a non-regionalized service (e.g., DNS, IAM, or CDN) where consumption occurs outside of a specific physical geography, which a service provider may represent with a Region ID value such as `"global"`.
+A unit price for a non-regionalized service (e.g., DNS, IAM, or CDN) where consumption occurs outside of a specific physical geography, which a service provider may represent with a Region ID value such as `global`.
 
 ```json
 {

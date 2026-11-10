@@ -16,7 +16,7 @@ The bar applied was that a column whose utility and applicability are not obviou
 
 Quantity Tier Name represents a service-provider-specified display name or label for a specific quantity-based pricing tier associated with a *SKU Price*.
 
-While Quantity Tier Minimum and Quantity Tier Maximum define the strict mathematical boundaries of the quantity envelope, Quantity Tier Name provides a human-readable identifier. This column is commonly used for displaying rate cards in reports, reconciling against vendor pricing pages, or understanding the sequential order of tiers (e.g., "First 1000 Units", "Tier 1", "Over 50 TB").
+While Quantity Tier Minimum and Quantity Tier Maximum define the strict mathematical boundaries of the quantity envelope, Quantity Tier Name provides a human-readable identifier. This column is commonly used for displaying rate cards in reports, reconciling against vendor pricing pages, or understanding the sequential order of tiers (e.g., `First 1000 Units`, `Tier 1`, `Over 50 TB`).
 
 ### Requirements as designed
 
