@@ -43,4 +43,4 @@ Represents the portion of the total Contract Commitment Cost paid at the start o
 
 ## Version Introduced
 
-1.4
+GA: 1.4

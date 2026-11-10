@@ -61,4 +61,4 @@ The state of the billing period (i.e., "Open" or "Closed"), indicating whether t
 
 ## Version Introduced
 
-1.4
+GA: 1.4

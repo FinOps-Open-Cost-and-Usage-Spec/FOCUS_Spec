@@ -55,4 +55,4 @@ Cost of a *charge* as invoiced by the [*invoice issuer*](#glossary:invoice-issue
 
 ## Version Introduced
 
-0.5
+Preview: 0.5 · GA: 1.0

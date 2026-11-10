@@ -50,4 +50,4 @@ Represents the categorical length of the *contract commitment* offering.
 
 ## Version Introduced
 
-1.4
+GA: 1.4

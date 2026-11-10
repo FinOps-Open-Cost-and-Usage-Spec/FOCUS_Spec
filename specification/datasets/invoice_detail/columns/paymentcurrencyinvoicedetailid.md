@@ -38,4 +38,4 @@ The identifier linking a granular record to the specific [Invoice Detail](#datam
 
 ## Version Introduced
 
-1.4
+GA: 1.4

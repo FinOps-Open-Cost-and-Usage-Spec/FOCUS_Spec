@@ -37,4 +37,4 @@ The date the invoice was issued by the invoice issuer.
 
 ## Version Introduced
 
-1.4
+GA: 1.4

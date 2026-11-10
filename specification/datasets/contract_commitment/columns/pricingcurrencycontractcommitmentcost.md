@@ -40,4 +40,4 @@ The monetary value of the *contract commitment* in the Pricing Currency.
 
 ## Version Introduced
 
-1.4
+GA: 1.4

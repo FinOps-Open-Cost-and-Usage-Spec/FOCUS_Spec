@@ -37,4 +37,4 @@ The timestamp when the contract commitment record was first created.
 
 ## Version Introduced
 
-1.4
+GA: 1.4

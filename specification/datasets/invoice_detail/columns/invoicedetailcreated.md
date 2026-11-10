@@ -38,4 +38,4 @@ The timestamp when the Invoice Detail record was first created.
 
 ## Version Introduced
 
-1.4
+GA: 1.4

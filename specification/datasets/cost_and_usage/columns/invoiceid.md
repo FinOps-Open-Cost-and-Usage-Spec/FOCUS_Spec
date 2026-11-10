@@ -42,4 +42,4 @@ The invoice-issuer-assigned identifier for an invoice encapsulating *charges* in
 
 ## Version Introduced
 
-1.2
+GA: 1.2

@@ -28,4 +28,4 @@ Dataset Instance ID
 
 ## Version Introduced
 
-1.3
+GA: 1.3

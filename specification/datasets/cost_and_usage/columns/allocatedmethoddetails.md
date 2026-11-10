@@ -117,4 +117,4 @@ A set of properties describing how resources are allocated in data generator-def
 
 ## Version Introduced
 
-1.3
+GA: 1.3

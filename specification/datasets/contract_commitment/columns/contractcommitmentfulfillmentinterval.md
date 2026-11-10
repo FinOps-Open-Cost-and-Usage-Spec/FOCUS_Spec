@@ -56,4 +56,4 @@ Represents the specific *period* used to measure and reset the fulfillment of a 
 
 ## Version Introduced
 
-1.4
+GA: 1.4

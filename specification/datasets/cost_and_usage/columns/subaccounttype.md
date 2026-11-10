@@ -39,4 +39,4 @@ A service-provider-assigned name to identify the type of *sub account*.
 
 ## Version Introduced
 
-1.2
+GA: 1.2

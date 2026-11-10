@@ -58,4 +58,4 @@ The negotiated unit price per Pricing Unit for the *SKU Price* identified by the
 
 ## Version Introduced
 
-1.2
+GA: 1.2

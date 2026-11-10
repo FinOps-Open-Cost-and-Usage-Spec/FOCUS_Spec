@@ -30,4 +30,4 @@ Data Generator Version
 
 ## Version Introduced
 
-1.1
+GA: 1.1

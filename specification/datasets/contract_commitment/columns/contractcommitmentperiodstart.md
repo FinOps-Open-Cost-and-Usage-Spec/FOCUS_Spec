@@ -37,4 +37,4 @@ The *inclusive start bound* of a contract commitment period.
 
 ## Version Introduced
 
-1.3
+GA: 1.3

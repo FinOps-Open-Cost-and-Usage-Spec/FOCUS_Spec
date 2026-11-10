@@ -32,4 +32,4 @@ Rules and formatting requirements for columns appearing in a [*FOCUS dataset*](#
 
 ## Version Introduced
 
-1.3
+GA: 1.3

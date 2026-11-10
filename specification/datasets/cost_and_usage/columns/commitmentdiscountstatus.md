@@ -47,4 +47,4 @@ Indicates whether the *charge* corresponds with the consumption of a *commitment
 
 ## Version Introduced
 
-1.0
+GA: 1.0

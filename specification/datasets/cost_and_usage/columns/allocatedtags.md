@@ -66,4 +66,4 @@ A set of tags assigned to tag sources that are applicable to *allocated charges*
 
 ## Version Introduced
 
-1.3
+GA: 1.3

@@ -39,4 +39,4 @@ A service-provider-assigned identifier for a contract describing the agreed term
 
 ## Version Introduced
 
-1.3
+GA: 1.3

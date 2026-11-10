@@ -32,4 +32,4 @@ Requirements for string-capturing columns appearing in a [*FOCUS dataset*](#glos
 
 ## Version Introduced
 
-1.0
+GA: 1.0

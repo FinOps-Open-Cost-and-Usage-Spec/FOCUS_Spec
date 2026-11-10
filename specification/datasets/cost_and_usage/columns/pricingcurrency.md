@@ -41,4 +41,4 @@ The *national* or *consumption currency* denomination that a *resource* or *serv
 
 ## Version Introduced
 
-1.2
+GA: 1.2

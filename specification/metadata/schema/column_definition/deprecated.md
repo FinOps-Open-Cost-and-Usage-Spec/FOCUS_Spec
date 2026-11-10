@@ -29,4 +29,4 @@ Deprecated
 
 ## Version Introduced
 
-1.2
+GA: 1.2
