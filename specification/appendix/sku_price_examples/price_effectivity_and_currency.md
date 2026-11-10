@@ -1,6 +1,6 @@
 # Price Effectivity and Currency
 
-A [*SKU Price*](#glossary:sku-price) record is scoped in time and denominated in a currency. Both are members of the composite key, so a price change and a currency variant each produce an additional record rather than replacing an existing one.
+A [SKU Price](#datamodel.skuprice) record is scoped in time and denominated in a currency. Both are members of the composite key, so a price change and a currency variant each produce an additional record rather than replacing an existing one.
 
 ## Price Changes Over Time
 
