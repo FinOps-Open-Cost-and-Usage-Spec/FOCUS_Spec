@@ -40,10 +40,13 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 
 * **Column Value Formatting:** Column values are enclosed in double quotation marks and written in normal text, without bold or italics (e.g., "Usage", "Tax", "TB").
 
+#### Glossary Terms
+
+* **Glossary Term Formatting:** Glossary terms are written in italics (e.g., `*SKU*`).
+
 #### Linking
 
 * **Link Targets:** Column and attribute names and IDs are linked to the section that defines them.
-* **Glossary Terms:** Glossary terms are written in italics and are linked to the glossary (e.g., `[*SKU*](#glossary:sku)`).
 * **Linking on First Occurrence:** To avoid excessive linking, entity references (including FOCUS entity IDs, display names, and glossary terms) MUST be linked only on their first occurrence within a given source markdown file.
 
 > **Note:** Unless otherwise specified, first-occurrence linking is evaluated relative to the containing source markdown file.
@@ -168,6 +171,19 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
   > * This is the first note.
   > * This is the second note, which provides additional information.
   ```
+* **Informative Status Note:** Each of the following files MUST include an informative, non-normative status note directly below its first heading:
+  * `specification/overview.md`
+  * `specification/supported_features/supported_features_overview.md`
+  * `specification/appendix/appendix_overview.md`
+* **Informative Status Note Scope:**
+  * Each note MUST refer only to the section identified by that heading (e.g., "The Appendix").
+  * The note MUST NOT be placed under the subheadings of that heading, including a heading originating from a nested file.
+  * The Conventions section in `specification/overview.md` MUST identify the same headings and exceptions as the corresponding notes.
+* **Example** (Markdown, illustrative):
+
+  ```md
+  > **Note:** The Appendix, except the Rounding Variance Tolerance appendix entry, is informative and non-normative. It does not define requirements.
+  ```
 
 ##### Exceptions
 
@@ -209,19 +225,6 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
 
   > **Note:** Validation of terminology consistency may require comparison against the approved glossary and specification entity definitions.
 * **Informative Examples:** Examples MUST be considered informative and non-normative, and MUST NOT define requirements.
-* **Informative Status Note:** Each of the following files MUST include an informative, non-normative status note directly below its first heading:
-  * `specification/overview.md`
-  * `specification/supported_features/supported_features_overview.md`
-  * `specification/appendix/appendix_overview.md`
-* **Informative Status Note Scope:**
-  * Each note MUST refer only to the section identified by that heading (e.g., "The Appendix").
-  * The note MUST NOT be placed under the subheadings of that heading, including a heading originating from a nested file.
-  * The Conventions section in `specification/overview.md` MUST identify the same headings and exceptions as the corresponding notes.
-* **Example** (Markdown, illustrative):
-
-  ```md
-  > **Note:** The Appendix, except the Rounding Variance Tolerance appendix entry, is informative and non-normative. It does not define requirements.
-  ```
 
 ### Text and Formatting
 
@@ -329,6 +332,8 @@ This is how it is written in HTML:
 
 ## Column Editorial Rules
 
+TODO: Rules specific to column sections are not defined yet.
+
 ### Column Examples
 
 > **Note:** Examples are illustrative, informative, and non-normative. They do not define requirements and do not override the rules in this section.
@@ -388,4 +393,4 @@ The volume of a given *SKU* associated with a *resource* or *service* used or pu
 
 ## Supported Features Editorial Rules
 
-Rules specific to supported features pages are being defined in [#2572](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2572) ([PR #2778](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pull/2778)).
+TODO: Rules specific to supported features pages are being defined in [#2572](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2572) ([PR #2778](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pull/2778)).
