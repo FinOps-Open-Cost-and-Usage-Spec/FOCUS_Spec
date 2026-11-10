@@ -148,7 +148,7 @@
     "DatasetId": "BillingPeriod",
     "DatasetName": "Billing Period",
     "ValidationCriteria": {
-      "MustSatisfy": "BillingPeriodLastUpdated MUST represent the most recent moment in time when any column value of the Billing Period record was created or modified.",
+      "MustSatisfy": "BillingPeriodLastUpdated MUST represent the most recent moment in time when any column value of the BillingPeriod record was created or modified.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},

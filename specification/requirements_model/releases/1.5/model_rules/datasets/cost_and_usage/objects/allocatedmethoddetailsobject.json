@@ -15,7 +15,7 @@
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "AllocatedMethodDetailsObject MUST adhere to the following requirements:",
+      "MustSatisfy": "The AllocatedMethodDetailsObject MUST adhere to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",

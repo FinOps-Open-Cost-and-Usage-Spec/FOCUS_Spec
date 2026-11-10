@@ -201,7 +201,7 @@
     "DatasetId": "InvoiceDetail",
     "DatasetName": "Invoice Detail",
     "ValidationCriteria": {
-      "MustSatisfy": "InvoiceDetailGrain SHOULD use the applicable FOCUS-defined Invoice Detail Grain properties listed below to represent the granularity of the invoice line item.",
+      "MustSatisfy": "InvoiceDetailGrain SHOULD use the applicable FOCUS-defined InvoiceDetailGrain properties listed below to represent the granularity of the invoice line item.",
       "Keyword": "SHOULD",
       "Requirement": {},
       "Condition": {},
@@ -224,7 +224,7 @@
     "DatasetId": "InvoiceDetail",
     "DatasetName": "Invoice Detail",
     "ValidationCriteria": {
-      "MustSatisfy": "InvoiceDetailGrain MUST include all custom Invoice Detail Grain properties that are applicable to the granularity of the invoice line item when there is no equivalent FOCUS-defined property.",
+      "MustSatisfy": "InvoiceDetailGrain MUST include all custom InvoiceDetailGrain properties that are applicable to the granularity of the invoice line item when there is no equivalent FOCUS-defined property.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
