@@ -116,7 +116,7 @@ The contributor guidelines in [`guidelines/contributors/`](guidelines/contributo
 * **Self-contained comments:** Every review comment or suggestion MUST include all context needed for the author to evaluate it independently. Do not reference other comments (e.g., "same as above" or "see my comment on line X").
 * **Diff-scope discipline:** Only flag issues on lines changed or added by the PR. Pre-existing problems are out of scope unless they create a direct inconsistency with new content in the same PR.
 * **Deduplication:** If your tooling can read PR threads, do not flag already-raised issues or post competing suggestions. To add details, reply to the existing thread.
-* **Guideline-permitted content:** Do not flag content that a guideline explicitly permits. When flagging an issue, cite the specific guideline section that supports it.
+* **Guideline-permitted content:** Do not flag content that a guideline explicitly permits. When flagging a guideline issue, cite the specific guideline section that supports it.
 
 ### Issue and Pull Request Templates
 
