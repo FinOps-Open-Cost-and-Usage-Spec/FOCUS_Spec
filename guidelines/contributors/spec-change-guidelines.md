@@ -111,7 +111,7 @@ A supporting entity is an entity defined outside a preview dataset's own section
 * **Proposed:** The definition of supporting entity above, with its test: an entity outside the dataset that exists only for the preview.
 * **Why:** The SKU Price Preview notes and the scope list rule for requirements already use this test, and all three supporting entities on the [SKU Price scope list](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2768) meet it. Under the test, stable content (e.g., a column in another dataset, a glossary term, or an operating model condition that stable requirements also use, such as Includes Regions) cannot be a supporting entity, so a scope list cannot let stable content change without a deprecation notice.
 * **Open:** Confirm the test.
-* **Open:** Whether supporting entity also needs a glossary entry, since the specification's overview and General Availability glossary entry use the term.
+* **Open:** How the glossary defines supporting entity, since the specification's overview and General Availability glossary entry use the term.
 * **Open:** What happens when stable content later starts to use a supporting entity, which then no longer meets the test. One answer: before that stable content is published, the entity leaves the scope list, its Preview markings are removed, and it follows the normal change management process. What its Version Introduced section then shows follows question 11.
 * **Elsewhere:** Whether content in a stable dataset, such as a column, can be a preview stays open on FR #960.
 
@@ -153,7 +153,7 @@ A preview tracking issue MUST adhere to the following requirements:
 
 * **Proposed:** The second and third requirements above. The scope list names each requirement outside the dataset that exists only for the preview, wherever it is defined, and names no other requirement outside the dataset. A requirement that applies to stable content stays evaluated for conformance.
 * **Why:** The [SKU Price scope list](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2768) names two such requirements: the Data Model requirement, which is outside any dataset, and the Cost and Usage requirement that ChargeCategory match SkuPrice.ChargeCategory. The merged text said "in other datasets", which does not cover the Data Model requirement.
-* **Open:** A requirement that combines stable checks with a check that exists only for the preview. In the specification, the Charge Category match is its own bullet, but the 1.5 requirements model groups every Charge Category bullet under one requirement, so excluding that grouped requirement would also stop stable checks.
+* **Open:** How a grouped requirement is evaluated when one of its checks exists only for the preview. The 1.5 requirements model gives the Charge Category match its own rule, but the Charge Category requirement that groups it requires all nine Charge Category rules, so excluding that grouped requirement would also stop stable checks.
 * **Open:** How the requirements model and validators treat that dependency. Follows FR #2811.
 
 **TODO (FR #2782, question 5):** Decide each of the following. Follows FR #2811.
@@ -166,6 +166,7 @@ A preview tracking issue MUST adhere to the following requirements:
 
 * **Proposed:** The last requirement above: each tracking issue names a single person who keeps it up to date.
 * **Proposed:** Tracking issues follow the section layout of the [SKU Price tracking issue](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2768): a detailed description, the pull requests, the open questions, the scope list, and the definition of done. The definition of done carries the other tracking issue requirements above as checklist items (e.g., the early implementer, the date of the next status decision, and the request for comments).
+* **Why:** The SKU Price tracking issue already uses this layout, names one assignee, and carries those requirements as checklist items in its definition of done.
 * **Open:** Who sends the request for comments to data generators, when, and in what form.
 * **Open:** How practitioners and data generators outside the working group commit to trying a preview.
 
@@ -189,13 +190,14 @@ A preview tracking issue MUST adhere to the following requirements:
 **Proposed (FR #2782, question 11):**
 
 * **Proposed:** Move the choice of what Version Introduced shows after promotion to FR #2816, which covers Version Introduced for all content.
-* **Why:** Task Force discussion so far leaned toward the promotion version alone, so implementers can see which version promoted the dataset. Until FR #2816 decides, the Promote step below updates each Version Introduced section to `Preview: <version> · GA: <version>`.
-* **Open here:** What the Version Introduced section shows on the supported features that depend on a preview while the dataset is a preview.
+* **Why:** FR #2816 covers what Version Introduced records for all content, including content first published as a preview. Task Force members have suggested both the promotion version alone and listing both the preview and the GA version. Until FR #2816 decides, the Promote step below updates each Version Introduced section to `Preview: <version> · GA: <version>`.
+* **Open here:** Whether a supported feature that depends on a preview can be generally available while the dataset is a preview, and what its Version Introduced section shows until then.
 
 **Proposed (FR #2782, question 17):**
 
 * **Proposed:** The release notes step above, which also covers a preview extended from an earlier version.
 * **Proposed:** The website and announcements follow the same practice: they name each preview dataset as a preview wherever they list what a version includes, so readers do not take a whole release as a preview.
+* **Why:** Section 7.2 of the [FOCUS Operating Procedures](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/operating_procedures.md) already requires previews to be labeled as such wherever they are published.
 * **Open:** Confirm with whoever owns the release announcement and the website.
 
 ### Exiting Preview
