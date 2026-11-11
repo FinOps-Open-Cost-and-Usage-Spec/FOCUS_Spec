@@ -10,19 +10,11 @@ Normative requirements are defined and authored exclusively according to the Nor
 
 Authors MUST refer to the [Normative Requirements Guidelines](normative-requirements-guidelines.md) when writing or modifying normative requirements.
 
-The following editorial summary highlights the normative language rules editors most often apply. The Normative Requirements Guidelines remain authoritative.
+The Normative Requirements Guidelines define BCP 14 keyword usage, conditional keywords, contractions, and inline examples (see [Use of BCP 14 Keywords](normative-requirements-guidelines.md#use-of-bcp-14-keywords), [Explicit Conditions in Normative Requirements](normative-requirements-guidelines.md#explicit-conditions-in-normative-requirements), [Tone and Grammar](normative-requirements-guidelines.md#tone-and-grammar), and [Non-Normative Examples](normative-requirements-guidelines.md#non-normative-examples)). Two further rules apply:
 
-* **BCP 14 Keywords:** Normative requirements MUST use only the uppercase BCP 14 keywords `MUST`, `MUST NOT`, `SHOULD`, `SHOULD NOT`, and `MAY`. The keywords `REQUIRED`, `SHALL`, `SHALL NOT`, `RECOMMENDED`, `NOT RECOMMENDED`, and `OPTIONAL` MUST NOT be used. See [Use of BCP 14 Keywords](normative-requirements-guidelines.md#use-of-bcp-14-keywords).
-
-* **Keyword Location:** Uppercase BCP 14 keywords MUST NOT appear outside Requirements sections unless quoted (e.g., when discussing the keyword itself).
-
-* **Conditional Keywords:** Conditions in normative requirements MUST use `when`, `unless`, `only when`, or `except when`. The word `if` MUST NOT be used to introduce a normative condition. See [Explicit Conditions in Normative Requirements](normative-requirements-guidelines.md#explicit-conditions-in-normative-requirements).
+* **Quoted Keywords:** A quoted BCP 14 keyword (e.g., when discussing the keyword itself) is not a normative use, and keyword placement rules do not apply to it.
 
 * **and/or Usage:** The term `and/or` MUST only be used in mathematical validations or conditional clauses.
-
-* **Formal Tone:** Normative requirements MUST NOT contain contractions (e.g., use "do not" instead of "don't").
-
-* **Inline Examples:** Examples embedded in a normative requirement MUST be enclosed in parentheses and introduced with "e.g." (e.g., `... without lossy transformations (e.g., rounding)`).
 
 <table>
     <tr>
