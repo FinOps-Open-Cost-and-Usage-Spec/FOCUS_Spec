@@ -20,23 +20,21 @@ The origin charge EffectiveCost for the period is $100.00. The data generator me
 * `pod-scoring-01` (ML Inference Service): 35 vCPU-hours (35%)
 * `pod-frontend-01` (Web Frontend Service): 25 vCPU-hours (25%)
 
-The data generator emits one origin charge row and three *allocated charge* rows. Per DataGeneratorCalculatedSplitCostAllocationHandling, the origin dimensions (ServiceName, ServiceCategory, ResourceId) are preserved across all four rows. AllocatedServiceName identifies the consuming *service* on each *allocated charge* row.
+The data generator emits three *allocated charge* rows. Per DataGeneratorCalculatedSplitCostAllocationHandling, the origin dimensions (ServiceName, ServiceCategory, ResourceId) are preserved across all three rows. AllocatedServiceName identifies the consuming *service* on each *allocated charge* row.
 
 Rows for the period:
 
-1. **Origin charge** (Row 1): The origin charge row carrying the preserved origin dimensions. AllocatedResourceId is null, AllocatedServiceName is null. ServiceName is "Aura Container Runtime", ServiceCategory is "Compute". EffectiveCost is $0.00, since the full $100.00 host cost is sliced across the three allocated charge rows below.
-2. **Allocated charge — Orders Service** (Row 2): 40% of the origin charge allocated to `pod-orders-01`. ServiceName remains "Aura Container Runtime" (preserved from the origin charge). AllocatedResourceId is `pod-orders-01`, AllocatedServiceName is "Aura Order Management". EffectiveCost is $40.00.
-3. **Allocated charge — ML Inference Service** (Row 3): 35% allocated to `pod-scoring-01`. ServiceName remains "Aura Container Runtime". AllocatedResourceId is `pod-scoring-01`, AllocatedServiceName is "Aura ML Inference". EffectiveCost is $35.00.
-4. **Allocated charge — Web Frontend Service** (Row 4): 25% allocated to `pod-frontend-01`. ServiceName remains "Aura Container Runtime". AllocatedResourceId is `pod-frontend-01`, AllocatedServiceName is "Aura Edge Delivery". EffectiveCost is $25.00.
+1. **Allocated charge — Orders Service** (Row 1): 40% of the origin charge allocated to `pod-orders-01`. ServiceName is "Aura Container Runtime" and ServiceCategory is "Compute" (preserved from the origin charge). AllocatedResourceId is `pod-orders-01`, AllocatedServiceName is "Aura Order Management". EffectiveCost is $40.00.
+2. **Allocated charge — ML Inference Service** (Row 2): 35% allocated to `pod-scoring-01`. ServiceName remains "Aura Container Runtime". AllocatedResourceId is `pod-scoring-01`, AllocatedServiceName is "Aura ML Inference". EffectiveCost is $35.00.
+3. **Allocated charge — Web Frontend Service** (Row 3): 25% allocated to `pod-frontend-01`. ServiceName remains "Aura Container Runtime". AllocatedResourceId is `pod-frontend-01`, AllocatedServiceName is "Aura Edge Delivery". EffectiveCost is $25.00.
 
-The three allocated charge EffectiveCost values sum to $40.00 + $35.00 + $25.00 = $100.00, matching the origin charge total, which satisfies the DataGeneratorCalculatedSplitCostAllocationHandling requirement that a summable metric sums to the origin charge across the allocated charges. In this example, the data generator represents that split by reducing the origin charge row's EffectiveCost to $0.00 and moving the full amount to the allocated charge rows, with no separate offsetting rows. DataGeneratorCalculatedSplitCostAllocationHandling does not itself prescribe whether the origin charge row is zeroed, omitted, or paired with a separate offsetting row, only that the allocated charges sum to the origin total.
+The three allocated charge EffectiveCost values sum to $40.00 + $35.00 + $25.00 = $100.00, matching the origin charge total, which satisfies the DataGeneratorCalculatedSplitCostAllocationHandling requirement that a summable metric sums to the origin charge across the allocated charges. In this example, the data generator represents that split with the three allocated charge rows alone, with no separate origin or offsetting rows, since every row related to the split carries an AllocatedServiceName. DataGeneratorCalculatedSplitCostAllocationHandling does not itself prescribe whether the origin charge row is zeroed, omitted, or paired with a separate offsetting row, only that the allocated charges sum to the origin total.
 
 | Row | ResourceId | ServiceName | ServiceCategory | AllocatedResourceId | AllocatedServiceName | EffectiveCost |
 | :-- | :--- | :--- | :--- | :--- | :--- | ---: |
-| 1 | `cluster-shared-01` | Aura Container Runtime | Compute | *(null)* | *(null)* | $0.00 |
-| 2 | `cluster-shared-01` | Aura Container Runtime | Compute | `pod-orders-01` | Aura Order Management | $40.00 |
-| 3 | `cluster-shared-01` | Aura Container Runtime | Compute | `pod-scoring-01` | Aura ML Inference | $35.00 |
-| 4 | `cluster-shared-01` | Aura Container Runtime | Compute | `pod-frontend-01` | Aura Edge Delivery | $25.00 |
+| 1 | `cluster-shared-01` | Aura Container Runtime | Compute | `pod-orders-01` | Aura Order Management | $40.00 |
+| 2 | `cluster-shared-01` | Aura Container Runtime | Compute | `pod-scoring-01` | Aura ML Inference | $35.00 |
+| 3 | `cluster-shared-01` | Aura Container Runtime | Compute | `pod-frontend-01` | Aura Edge Delivery | $25.00 |
 
 ## Analysis Queries Enabled by Allocated Service Name
 
