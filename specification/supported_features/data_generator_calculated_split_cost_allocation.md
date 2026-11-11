@@ -84,7 +84,7 @@ FROM CostAndUsage
 WHERE ChargeCategory='Usage'
   AND ChargePeriodStart >= ? AND ChargePeriodEnd <= ?
   AND AllocatedMethodId IS NOT NULL
-  AND AllocatedServiceName IS NOT NULL
+  AND AllocatedResourceId IS NOT NULL
 GROUP BY
   AllocatedServiceName
 ```
