@@ -8,7 +8,7 @@ Data generators, which produce FOCUS data, and practitioners, who use it, are as
 
 Its Markdown source stays in GitHub. Its tracking issue, a GitHub issue, records its open questions and every decision, and holds the checklist for building and sharing it.
 
-Where a review artifact sits in the specification lifecycle belongs in the [FOCUS Operating Procedures](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/operating_procedures.md). This guideline covers how one is approved, built, shared, and retired.
+Section 5.3 of the [FOCUS Operating Procedures](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/operating_procedures.md#53-review-artifacts-and-previews) places a review artifact in the specification lifecycle, next to normal content and a preview. This guideline covers how one is approved, built, shared, and retired.
 
 ### Roles
 
@@ -68,7 +68,7 @@ A review artifact MUST adhere to the following requirements:
 * A review artifact MUST NOT be revised after it is built.
 * The content under review in a review artifact MUST match the approved content.
 * The text of a review artifact outside the content under review, except its Version, Status of This Document, and Table of Contents, MUST match the text of the release it goes out with, as that release enters its IPR review.
-* Links in a review artifact to files in the repository, other than the patent disclosure link, MUST resolve to its tagged commit.
+* Links in a review artifact to files in the repository, other than the patent disclosure link in Status of This Document, MUST resolve to its tagged commit.
 * Every page of a review artifact MUST show a "Review Artifact" watermark.
 * A review artifact MUST open with the following statements:
   * It is not a FOCUS release, and it is not for production use or conformance claims.
@@ -78,11 +78,10 @@ A review artifact MUST adhere to the following requirements:
 
 ## Stage 3: Share and Review
 
-A review artifact is shared only after the release it goes out with completes its IPR review, a patent review period. How the review artifact itself is cleared for IPR, and what approval it needs after its own IPR review, belong in the FOCUS Operating Procedures. Sharing means making the PDF, or a link to it, available to people by any channel, such as email or a website. Giving the PDF to people for the steps the FOCUS Operating Procedures require for it is not sharing. Support Staff collect the feedback. Work on the content continues through the normal development process: its pull request stays open against `working_draft`, and changes based on feedback go into it.
+A review artifact is shared only after the release it goes out with completes its IPR review, a patent review period. Section 5.3 of the [FOCUS Operating Procedures](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/operating_procedures.md#53-review-artifacts-and-previews) sets how the review artifact itself is cleared for IPR and approved: its tagged commit normally goes through the same IPR review period as its release, and it is approved and ratified separately from the release. Sharing means making the PDF, or a link to it, available to people by any channel, such as email or a website. Giving the PDF to people for the steps the FOCUS Operating Procedures require for it is not sharing. Support Staff collect the feedback. Work on the content continues through the normal development process: its pull request stays open against `working_draft`, and changes based on feedback go into it.
 
 A review artifact MUST adhere to the following requirements:
 
-* A review artifact MUST NOT be shared before the Steering Committee ratifies the addition of review artifacts to the FOCUS Operating Procedures.
 * A review artifact MUST NOT be shared before the IPR review of the release it goes out with is complete.
 * A review artifact MUST NOT be shared before it completes every review, final approval, and ratification step that the FOCUS Operating Procedures require for it.
 * Files from a review artifact build other than the PDF (e.g., `spec.html` or `spec.md`) MUST NOT be shared.
