@@ -190,8 +190,6 @@ The following editorial summary highlights the normative language rules editors 
 
 * **Entity Display Name References:** References to FOCUS entities in non-normative content (i.e., outside Requirements sections) MUST use Display Names when available.
 
-* **No Mixing:** Entity IDs and Display Names MUST NOT be mixed within the same normative requirement.
-
 * **Entity Scope:** These rules apply to all entities defined in the FOCUS specification (e.g., Columns, Attributes, Datasets, Objects).
 
 ### Display Names
