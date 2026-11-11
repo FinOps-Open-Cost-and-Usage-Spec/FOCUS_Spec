@@ -102,6 +102,19 @@ To ensure complete and error-free removal of deprecated entities from the FOCUS 
 
 Preview is a status for a FOCUS dataset published in a version of FOCUS so implementers can build it and report what they find. A dataset with this status is called a preview. See [Preview](../../specification/overview.md#preview) in the specification for the definition.
 
+Each preview has a tracking issue with a scope list, which names the requirements and supporting entities outside the dataset that are part of the preview (see [Designating a Preview](#designating-a-preview)). Stable content is any content not marked as preview.
+
+A supporting entity is an entity defined outside a preview dataset's own section that the dataset depends on and that exists only for the preview (e.g., an operating model condition, or an object schema such as the SKU Price Eligibility Object Schema that the SKU Price dataset uses). A requirement is not a supporting entity.
+
+**Proposed (FR #2782, question 1):**
+
+* **Proposed:** The definition of supporting entity above, with its test: an entity outside the dataset that exists only for the preview.
+* **Why:** The SKU Price Preview notes and the scope list rule for requirements already use this test, and all three supporting entities on the [SKU Price scope list](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2768) meet it. Under the test, stable content (e.g., a column in another dataset, a glossary term, or an operating model condition that stable requirements also use, such as Includes Regions) cannot be a supporting entity, so a scope list cannot let stable content change without a deprecation notice.
+* **Open:** Confirm the test.
+* **Open:** How the glossary defines supporting entity, since the specification's overview and General Availability glossary entry use the term.
+* **Open:** What happens when stable content later starts to use a supporting entity, which then no longer meets the test. One answer: before that stable content is published, the entity leaves the scope list, its Preview markings are removed, and it follows the normal change management process. What its Version Introduced section then shows follows question 11.
+* **Elsewhere:** Whether content in a stable dataset, such as a column, can be a preview stays open on FR #960.
+
 ### Designating a Preview
 
 A FOCUS dataset preview MUST adhere to the following requirements:
@@ -117,14 +130,45 @@ A FOCUS dataset preview MUST adhere to the following requirements:
 * A preview MAY change in the next version without a deprecation notice.
 * The Specification MUST follow the normal change management process for all entities when not marked as preview.
 
+**Proposed (FR #2782, question 13):**
+
+* **Proposed:** A dataset enters preview through the same pull request gates as any other content in its release.
+* **Why:** Section 5.3 of the [FOCUS Operating Procedures](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/operating_procedures.md) has a preview follow the same lifecycle and IPR process as the release it ships in.
+* **Open:** The latest point in a release cycle at which FOCUS Members can still designate a dataset a preview. For comparison, FOCUS Members chose a preview for SKU Price on October 22, 2026, during the 1.5 Final Consistency Review (October 8 to 29).
+
+**TODO (FR #2782, question 8):** Decide whether and how a validator checks preview content on request while conformance checks leave it out. Follows FR #2811, which takes the conformance-exclusion part of this question.
+
 A preview tracking issue MUST adhere to the following requirements:
 
 * A preview tracking issue MUST list any questions to learn from generating or using the dataset, and who raised each one.
-* A preview tracking issue MUST include the scope list, naming each requirement excluded from conformance, including any in other datasets that exist only for the preview.
+* A preview tracking issue MUST include the scope list, naming each requirement excluded from conformance, including any outside the dataset that exist only for the preview.
+* A preview tracking issue MUST NOT name on the scope list a requirement outside the dataset unless that requirement exists only for the preview.
 * A preview tracking issue MUST name in the scope list each supporting entity outside the dataset that the preview includes (e.g., an operating model condition).
 * A preview tracking issue SHOULD list at least one early implementer, who is any person or organization, inside or outside the working group, that will generate or use the dataset to answer open questions.
 * A preview tracking issue MUST state the date of the next status decision.
 * A preview tracking issue MUST record that a request for comments went to existing data generators, and who responded.
+* A preview tracking issue MUST name a single person who keeps it up to date.
+
+**Proposed (FR #2782, question 4):**
+
+* **Proposed:** The second and third requirements above. The scope list names each requirement outside the dataset that exists only for the preview, wherever it is defined, and names no other requirement outside the dataset. A requirement that applies to stable content stays evaluated for conformance.
+* **Why:** The [SKU Price scope list](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2768) names two such requirements: the Data Model requirement, which is outside any dataset, and the Cost and Usage requirement that ChargeCategory match SkuPrice.ChargeCategory. The merged text said "in other datasets", which does not cover the Data Model requirement.
+* **Open:** How a grouped requirement is evaluated when one of its checks exists only for the preview. The 1.5 requirements model gives the Charge Category match its own rule, but the Charge Category requirement that groups it requires all nine Charge Category rules, so excluding that grouped requirement would also stop stable checks.
+* **Open:** How the requirements model and validators treat that dependency. Follows FR #2811.
+
+**TODO (FR #2782, question 5):** Decide each of the following. Follows FR #2811.
+
+* Where the specification states, as a normative requirement, that preview content is not evaluated for conformance.
+* Which source fixes the scope list for each version: the tracking issue, the dataset's Preview note, or the requirements model.
+* Whether naming a supporting entity on the scope list excludes that entity's own requirements from conformance (e.g., the two requirements in each of Includes Purchases and Includes Quantity Tier Pricing), or whether the scope list names those requirements too.
+
+**Proposed (FR #2782, question 16):**
+
+* **Proposed:** The last requirement above: each tracking issue names a single person who keeps it up to date.
+* **Proposed:** Tracking issues follow the section layout of the [SKU Price tracking issue](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2768): a detailed description, the pull requests, the open questions, the scope list, and the definition of done. The definition of done carries the other tracking issue requirements above as checklist items (e.g., the early implementer, the date of the next status decision, and the request for comments).
+* **Why:** The SKU Price tracking issue already uses this layout, names one assignee, and carries those requirements as checklist items in its definition of done.
+* **Open:** Who sends the request for comments to data generators, when, and in what form.
+* **Open:** How practitioners and data generators outside the working group commit to trying a preview.
 
 ### Marking a Preview
 
@@ -132,9 +176,29 @@ A preview tracking issue MUST adhere to the following requirements:
 * Add "(preview)" after the dataset's name in listings (e.g., the data model dataset table).
 * Add a note to each section outside the dataset that has requirements on the scope list or defines a supporting entity on it (e.g., the Charge Category column in Cost and Usage), naming them and stating that, while the dataset is in preview, those requirements are excluded from conformance and those supporting entities may change without a deprecation notice.
 * Record the preview and every later change to it in the version changelog, with migration notes.
+* Add "(preview)" after the name of each preview dataset in the version's release notes, including a preview extended from an earlier version, and state there that only the datasets named as previews are previews.
 * Set the status of each requirement on the scope list to Preview in the requirements model.
 * Set each Version Introduced section in the dataset, including its columns, to `Preview: <version>` (e.g., `Preview: 1.5`).
 * Set the Version Introduced section of each supporting entity on the scope list to `Preview: <version>`, unless the tracking issue explicitly notes an exception for that entity.
+
+**TODO (FR #2782, question 10):** Decide each of the following. Follows FR #2811.
+
+* How a delivered dataset's metadata marks preview content.
+* How a data generator states that it provides a preview.
+* How published schema files mark preview content.
+
+**Proposed (FR #2782, question 11):**
+
+* **Proposed:** Move the choice of what Version Introduced shows after promotion to FR #2816, which covers Version Introduced for all content.
+* **Why:** FR #2816 covers what Version Introduced records for all content, including content first published as a preview. Task Force members have suggested both the promotion version alone and listing both the preview and the GA version. Until FR #2816 decides, the Promote step below updates each Version Introduced section to `Preview: <version> · GA: <version>`.
+* **Open here:** Whether a supported feature that depends on a preview can be generally available while the dataset is a preview, and what its Version Introduced section shows until then.
+
+**Proposed (FR #2782, question 17):**
+
+* **Proposed:** The release notes step above, which also covers a preview extended from an earlier version.
+* **Proposed:** The website and announcements follow the same practice: they name each preview dataset as a preview wherever they list what a version includes, so readers do not take a whole release as a preview.
+* **Why:** Section 7.2 of the [FOCUS Operating Procedures](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/operating_procedures.md) already requires previews to be labeled as such wherever they are published.
+* **Open:** Confirm with whoever owns the release announcement and the website.
 
 ### Exiting Preview
 
@@ -143,6 +207,19 @@ At each later version, FOCUS Members choose one outcome and record it with its e
 * **Promote:** Remove the preview designation once the open questions are addressed. The dataset's requirements become Active in the requirements model, and the "(preview)" label and Preview notes are removed. Each Version Introduced section is updated to include the general availability (GA) version (e.g., `Preview: 1.5 · GA: 1.6`).
 * **Extend:** Keep the preview for one more version, with a plan for the next evidence.
 * **Remove:** Remove the dataset without a deprecation notice or retention period. This is the default when there is no new evidence since the last decision.
+
+**TODO (FR #2782, question 14):** Decide each of the following.
+
+* What evidence is enough to promote a preview.
+* What counts as no new evidence for the removal default, including for datasets that no data generator produces yet.
+
+**Proposed (FR #2782, question 15):**
+
+* **Proposed:** A preview stays for at least one published version, so the first status decision comes in the version after the one that introduced it.
+* **Proposed:** Each decision follows that version's release gates.
+* **Why:** The removal default above already limits how long a preview without new evidence can last. Because release cycles overlap, the time between a preview's publication and its first decision depends on which gate the decision is tied to.
+* **Open:** Which release gate each decision is tied to.
+* **Open:** Whether a preview that keeps producing new evidence also has a maximum number of versions.
 
 ## Change Type Classification
 
