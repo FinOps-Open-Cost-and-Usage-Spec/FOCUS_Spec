@@ -17,7 +17,7 @@ Thanks to the following FOCUS Maintainers for their leadership and contributions
 * Karl Kraft (Walmart)
 * Larry Advey (CloudZero)
 * Matt Cowsert (FinOps Foundation)
-* Michael Flanakin (Salesforce / Allyte)
+* Michael Flanakin (Allyte)
 * Mike Fuller (FinOps Foundation)
 * Riley Jenkins (Domo)
 * Sai Pydiganta (Amazon Web Services)
