@@ -8,8 +8,8 @@ block in a searched directory must:
   as aliases, CTEs, and table aliases).
 
 A table is named by its dataset's Dataset ID (e.g. ``CostAndUsage``, read
-from each ``datasets/*/dataset.md``; ``focus_data_table`` also names Cost and
-Usage), and a column read from it must be one of that dataset's Column IDs.
+from each ``datasets/*/dataset.md``), and a column read from it must be one
+of that dataset's Column IDs.
 Qualifiers resolve through table aliases, CTEs, and derived tables. A
 qualifier that names no source its query reads fails, unless it names a
 column or an alias the statement declares (e.g. a PIVOT alias), which sqlglot
@@ -79,11 +79,6 @@ def _collect_dataset_columns():
 
 
 DATASET_COLUMNS = _collect_dataset_columns()
-
-# Table names that stand for a FOCUS dataset without being its Dataset ID.
-# Supported feature queries written before FOCUS defined more than one dataset
-# read the Cost and Usage dataset as ``focus_data_table``.
-_TABLE_NAME_ALIASES = {"focus_data_table": "costandusage"}
 
 # Query scopes whose unqualified columns can also resolve against an enclosing
 # query: correlated subqueries, the arguments of UNNEST, and the branches of a
@@ -318,7 +313,7 @@ def _source_columns(source, dataset_columns):
         return None
     if isinstance(source, exp.Table):
         name = source.name.lower()
-        columns = dataset_columns.get(_TABLE_NAME_ALIASES.get(name, name))
+        columns = dataset_columns.get(name)
         table_alias = source.args.get("alias")
         if columns is not None and isinstance(table_alias, exp.TableAlias):
             # Column IDs carry no position, so the list's new names are added
@@ -653,13 +648,8 @@ _SELF_TEST_CASES = [
     ),
     pytest.param(
         "SELECT ListUnitPrice FROM focus_data_table",
-        set(),
-        id="focus-data-table-reads-cost-and-usage",
-    ),
-    pytest.param(
-        "SELECT UnitPrice FROM focus_data_table",
-        {"UnitPrice"},
-        id="focus-data-table-is-only-cost-and-usage",
+        {"ListUnitPrice"},
+        id="retired-focus-data-table-name-is-not-a-dataset",
     ),
     pytest.param(
         "SELECT BilledCost FROM CostAndUsages",
