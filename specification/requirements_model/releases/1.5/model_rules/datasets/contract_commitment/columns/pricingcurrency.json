@@ -37,6 +37,14 @@
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CCT-PricingCurrency-C-004-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-PricingCurrency-C-005-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-PricingCurrency-C-006-M"
           }
         ]
       },
@@ -46,6 +54,8 @@
         "CCT-PricingCurrency-C-002-M",
         "CCT-PricingCurrency-C-003-M",
         "CCT-PricingCurrency-C-004-M",
+        "CCT-PricingCurrency-C-005-M",
+        "CCT-PricingCurrency-C-006-M",
         "CCT-ContractCommitment-D-031-C"
       ]
     }
@@ -151,6 +161,113 @@
         "ColumnName": "PricingCurrency",
         "Value": null
       },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CCT-PricingCurrency-C-005-M": {
+    "Function": "Validation",
+    "Reference": "PricingCurrency",
+    "EntityType": "Column",
+    "EntityName": "Pricing Currency",
+    "EntityId": "PricingCurrency",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Dynamic",
+    "Order": 50,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCurrency MUST represent a national currency or a consumption currency.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CCT-PricingCurrency-C-006-M": {
+    "Function": "Composite",
+    "Reference": "PricingCurrency",
+    "EntityType": "Column",
+    "EntityName": "Pricing Currency",
+    "EntityId": "PricingCurrency",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Static",
+    "Order": 60,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCurrency documentation MUST adhere to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-PricingCurrency-C-007-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-PricingCurrency-C-008-M"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CCT-PricingCurrency-C-007-M",
+        "CCT-PricingCurrency-C-008-M"
+      ]
+    }
+  },
+  "CCT-PricingCurrency-C-007-M": {
+    "Function": "Validation",
+    "Reference": "PricingCurrency",
+    "EntityType": "Column",
+    "EntityName": "Pricing Currency",
+    "EntityId": "PricingCurrency",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Dynamic",
+    "Order": 70,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCurrency documentation MUST specify how to determine whether a value represents a national currency.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CCT-PricingCurrency-C-008-M": {
+    "Function": "Validation",
+    "Reference": "PricingCurrency",
+    "EntityType": "Column",
+    "EntityName": "Pricing Currency",
+    "EntityId": "PricingCurrency",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Dynamic",
+    "Order": 80,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCurrency documentation MUST be accessible to practitioners.",
+      "Keyword": "MUST",
+      "Requirement": {},
       "Condition": {},
       "Dependencies": []
     }

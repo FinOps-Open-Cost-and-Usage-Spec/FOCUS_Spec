@@ -36,7 +36,7 @@ Identifier representing the *principal* to which access to a *resource* or *serv
 | Constraint                 | Value                                     |
 | :------------------------- | :---------------------------------------- |
 | Dataset                    | [Cost and Usage](#datamodel.costandusage) |
-| Operating Model Conditions | [Includes Requester Attribution](#operatingmodelconditions.includesrequesterattribution) |
+| Operating model conditions | [Includes Requester Attribution](#operatingmodelconditions.includesrequesterattribution) |
 | Column type                | Dimension                                 |
 | Feature level              | Conditional                               |
 | Allows nulls               | True                                      |

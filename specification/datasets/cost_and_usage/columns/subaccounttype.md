@@ -30,7 +30,7 @@ A service-provider-assigned name to identify the type of *sub account*.
 | Constraint                 | Value                                     |
 | :------------------------- | :---------------------------------------- |
 | Dataset                    | [Cost and Usage](#datamodel.costandusage) |
-| Operating Model Conditions | [Includes Multiple Sub Account Types](#operatingmodelconditions.includesmultiplesubaccounttypes) |
+| Operating model conditions | [Includes Multiple Sub Account Types](#operatingmodelconditions.includesmultiplesubaccounttypes) |
 | Column type                | Dimension                                 |
 | Feature level              | Conditional                               |
 | Allows nulls               | True                                      |

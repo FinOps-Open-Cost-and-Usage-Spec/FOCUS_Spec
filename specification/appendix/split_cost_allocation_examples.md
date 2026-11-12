@@ -38,7 +38,7 @@ The three allocated charge EffectiveCost values sum to $40.00 + $35.00 + $25.00 
 | 3 | `cluster-shared-01` | Aura Container Runtime | Compute | `pod-scoring-01` | Aura ML Inference | $35.00 |
 | 4 | `cluster-shared-01` | Aura Container Runtime | Compute | `pod-frontend-01` | Aura Edge Delivery | $25.00 |
 
-## Analysis Queries Enabled by AllocatedServiceName
+## Analysis Queries Enabled by Allocated Service Name
 
 Practitioners can now answer two distinct questions against the same dataset without external lookups:
 

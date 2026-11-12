@@ -1,6 +1,6 @@
 # Sub Account Name
 
-A Sub Account Name is a display name assigned to a [*sub account*](#glossary:sub-account). Sub account Name is commonly used for scenarios like grouping based on organizational constructs, access management needs, and cost allocation strategies.
+A Sub Account Name is a display name assigned to a [*sub account*](#glossary:sub-account). Sub Account Name is commonly used for scenarios like grouping based on organizational constructs, access management needs, and cost allocation strategies.
 
 ## Requirements
 
@@ -31,7 +31,7 @@ A name assigned to a grouping of [*resources*](#glossary:resource) or [*services
 | Constraint                 | Value                                     |
 | :------------------------- | :---------------------------------------- |
 | Dataset                    | [Cost and Usage](#datamodel.costandusage) |
-| Operating Model Conditions | [Includes Sub Accounts](#operatingmodelconditions.includessubaccounts) |
+| Operating model conditions | [Includes Sub Accounts](#operatingmodelconditions.includessubaccounts) |
 | Column type                | Dimension                                 |
 | Feature level              | Conditional                               |
 | Allows nulls               | True                                      |
