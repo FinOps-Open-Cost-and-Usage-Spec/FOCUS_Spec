@@ -12,7 +12,7 @@ Thanks to the following FOCUS Maintainers for their leadership and contributions
 
 * Andrew Quigley (Northwestern Mutual)
 * Graham Murphy (TechnologyOne)
-* Irena Jurica (Neos)
+* Irena Jurica (Neos / CloudVane)
 * Joaquin Prado (FinOps Foundation)
 * Karl Kraft (Walmart)
 * Larry Advey (CloudZero)
