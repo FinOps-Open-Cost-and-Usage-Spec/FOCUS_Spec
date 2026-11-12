@@ -15,7 +15,7 @@ SELECT
   BillingPeriodStart,
   x_CustomColumn,
   SUM(BilledCost) AS TotalBilledCost
-FROM focus_data_table
+FROM CostAndUsage
 WHERE ServiceName = ?
   AND BillingPeriodStart >= ? AND BillingPeriodStart < ?
 GROUP BY

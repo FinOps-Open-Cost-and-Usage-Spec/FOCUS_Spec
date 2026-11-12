@@ -29,7 +29,7 @@ The *exclusive end bound* of a *billing period*.
 | Constraint                 | Value                                           |
 | :------------------------- | :---------------------------------------------- |
 | Dataset                    | [Invoice Detail](#datamodel.invoicedetail)      |
-| Operating Model Conditions | Not applicable                                  |
+| Operating model conditions | Not applicable                                  |
 | Column type                | Dimension                                       |
 | Feature level              | Mandatory                                       |
 | Allows nulls               | False                                           |

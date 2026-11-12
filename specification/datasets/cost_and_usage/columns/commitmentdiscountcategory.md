@@ -1,6 +1,6 @@
 # Commitment Discount Category
 
-Commitment Discount Category indicates whether the [*commitment discount*](#glossary:commitment-discount) identified in the CommitmentDiscountId column is based on usage quantity or cost (aka "spend"). The CommitmentDiscountCategory column is only applicable to *commitment discounts* and not [*negotiated discounts*](#glossary:negotiated-discount).
+Commitment Discount Category indicates whether the [*commitment discount*](#glossary:commitment-discount) identified in the [Commitment Discount ID](#datamodel.costandusage.commitmentdiscountid) column is based on usage quantity or cost (aka "spend"). The Commitment Discount Category column is only applicable to *commitment discounts* and not [*negotiated discounts*](#glossary:negotiated-discount).
 
 ## Requirements
 
@@ -8,7 +8,7 @@ CommitmentDiscountCategory MUST adhere to the following requirements:
 
 * CommitmentDiscountCategory MUST be of type String.
 * CommitmentDiscountCategory MUST adhere to the following nullability requirements:
-  * CommitmentDiscountCategory MUST be null when [CommitmentDiscountId](#datamodel.costandusage.commitmentdiscountid) is null.
+  * CommitmentDiscountCategory MUST be null when CommitmentDiscountId is null.
   * CommitmentDiscountCategory MUST NOT be null when CommitmentDiscountId is not null.
 * CommitmentDiscountCategory MUST be one of the allowed values.
 
@@ -29,14 +29,14 @@ Commitment Discount Category
 
 ## Description
 
-Indicates whether the *commitment discount* identified in the CommitmentDiscountId column is based on usage quantity or cost (aka "spend").
+Indicates whether the *commitment discount* identified in the Commitment Discount ID column is based on usage quantity or cost (aka "spend").
 
 ## Content Constraints
 
 | Constraint                 | Value                                     |
 | :------------------------- | :---------------------------------------- |
 | Dataset                    | [Cost and Usage](#datamodel.costandusage) |
-| Operating Model Conditions | [Includes Commitment Discounts](#operatingmodelconditions.includescommitmentdiscounts) |
+| Operating model conditions | [Includes Commitment Discounts](#operatingmodelconditions.includescommitmentdiscounts) |
 | Column type                | Dimension                                 |
 | Feature level              | Conditional                               |
 | Allows nulls               | True                                      |

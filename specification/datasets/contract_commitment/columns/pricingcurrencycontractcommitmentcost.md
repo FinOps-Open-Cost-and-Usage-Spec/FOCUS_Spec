@@ -9,7 +9,7 @@ PricingCurrencyContractCommitmentCost MUST adhere to the following requirements:
 * PricingCurrencyContractCommitmentCost MUST be of type Decimal.
 * PricingCurrencyContractCommitmentCost MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * PricingCurrencyContractCommitmentCost MUST adhere to the following nullability requirements:
-  * PricingCurrencyContractCommitmentCost MUST NOT be null when [ContractCommitmentCategory](#datamodel.contractcommitment.contractcommitmentcategory) is "Spend" and [PricingCurrency](#datamodel.contractcommitment.pricingcurrency) is provided.
+  * PricingCurrencyContractCommitmentCost MUST NOT be null when [ContractCommitmentCategory](#datamodel.contractcommitment.contractcommitmentcategory) is "Spend" and PricingCurrency is provided.
   * PricingCurrencyContractCommitmentCost MAY be null when ContractCommitmentCategory is "Usage".
 * PricingCurrencyContractCommitmentCost MUST be denominated in the PricingCurrency.
 
@@ -30,7 +30,7 @@ The monetary value of the *contract commitment* in the Pricing Currency.
 | Constraint                 | Value                                                |
 | :------------------------- | :--------------------------------------------------- |
 | Dataset                    | [Contract Commitment](#datamodel.contractcommitment) |
-| Operating Model Conditions | [Includes Pricing-Billing Currency Differences](#operatingmodelconditions.includespricing-billingcurrencydifferences) |
+| Operating model conditions | [Includes Pricing-Billing Currency Differences](#operatingmodelconditions.includespricing-billingcurrencydifferences) |
 | Column type                | Metric                                               |
 | Feature level              | Conditional                                          |
 | Allows nulls               | True                                                 |

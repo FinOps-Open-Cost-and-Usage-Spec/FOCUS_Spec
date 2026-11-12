@@ -33,7 +33,7 @@ Represents the portion of the total Contract Commitment Cost paid at the start o
 | Constraint                 | Value                                                |
 | :------------------------- | :--------------------------------------------------- |
 | Dataset                    | [Contract Commitment](#datamodel.contractcommitment) |
-| Operating Model Conditions | [Includes Partial Upfront Payments](#operatingmodelconditions.includespartialupfrontpayments) |
+| Operating model conditions | [Includes Partial Upfront Payments](#operatingmodelconditions.includespartialupfrontpayments) |
 | Column type                | Metric                                               |
 | Feature level              | Conditional                                          |
 | Allows nulls               | False                                                |
