@@ -92,7 +92,7 @@ jobs:
                     projectItems(first: 10) {
                       nodes {
                         id
-                        project { number }
+                        project { id }
                         fieldValueByName(name: "Status") { ... on ProjectV2ItemFieldSingleSelectValue { name } }
                       }
                     }
@@ -111,7 +111,7 @@ jobs:
             READ_OK=1
             for i in {1..12}; do
               if ! PR_DATA=$(read_pr "$PR_NUM"); then READ_OK=0; break; fi
-              ITEM=$(jq -c --argjson n "$PROJECT_NUM" '.data.repository.pullRequest.projectItems.nodes[]? | select(.project.number == $n)' <<< "$PR_DATA")
+              ITEM=$(jq -c --arg pid "$PROJECT_ID" 'first(.data.repository.pullRequest.projectItems.nodes[]? | select(.project.id == $pid)) // empty' <<< "$PR_DATA")
               STATUS=$(jq -r '.fieldValueByName.name // empty' <<< "${ITEM:-null}")
               if { [ "$EVENT_ACTION" = "opened" ] || [ "$EVENT_ACTION" = "reopened" ]; } &&
                  { [ -z "$STATUS" ] || [ "$STATUS" = "Closed" ]; }; then
