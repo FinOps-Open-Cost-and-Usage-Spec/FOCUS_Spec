@@ -140,6 +140,65 @@ Once an issue is **Accepted in Scope**, it is tagged for inclusion in a specific
 
 This process ensures that all proposed features and improvements are traceable and categorized consistently through issue labels.
 
+### Champion Scope Entry
+
+Each release has two kinds of scope. Core scope is the work the Working Group commits to delivering in the release. Champion scope is work that a contributor, referred to as the champion, chooses to lead. Champion scope is added during development as capacity allows, its delivery is less predictable, and it does not move into Core scope. The Scope field in the FOCUS WG project records each Feature Request as `Core`, `Champion`, or `Seeking Champion`. `Seeking Champion` lists triaged Feature Requests that anyone may pick up, but it does not limit what may be championed.
+
+Champion scope enables members to build consensus before work reaches a Task Force, either synchronously or asynchronously (e.g., in the Open Forum, via ad hoc meetings, or in comments on the Feature Request or Pull Request). This ensures that Task Force time is spent on work within the Core scope.
+
+A Feature Request enters Champion scope through a **Champion scope sponsorship** from a Maintainer. A sponsorship is separate from Pull Request review and approval.
+
+#### Readiness Criteria
+
+A Feature Request is ready for a Champion scope sponsorship when:
+
+* The Feature Request has been triaged (its Status is neither `Submitted` nor `Needs More Info`).
+* The champion records a comment on the Feature Request that they will lead the work through Task Force discussion and that it is ready for that discussion.
+* A Pull Request has been linked to the Feature Request.
+* The proposal has been discussed with at least one FOCUS member other than the champion, in one of the following ways:
+  * In comments on the linked Pull Request.
+  * Outside GitHub (e.g., in the Open Forum, an ad hoc meeting, or Slack), with a summary posted as a comment on the linked Pull Request that mentions (`@username`) every member who took part.
+* The open questions for the Task Force have been listed in the Pull Request description or in a comment on the Feature Request.
+
+The linked Pull Request may be a draft, and it may add supporting content under `/supporting_content` instead of specification text.
+
+#### Sponsorship
+
+To sponsor a Feature Request, a Maintainer who is not an author of the linked Pull Request comments on the Feature Request using the following text:
+
+```text
+Champion scope sponsorship: I support bringing this Feature Request to a Task Force for discussion.
+```
+
+A sponsorship:
+
+* Does not count as an approval of the linked Pull Request or toward its eligibility for merging.
+* Does not commit the sponsoring Maintainer to approving the linked Pull Request.
+* Does not move the Feature Request into Core scope.
+
+The sponsoring Maintainer may still review and approve the linked Pull Request later, as described in [Pull Request Approval and Conflict Resolution](#pull-request-approval-and-conflict-resolution).
+
+#### After Sponsorship
+
+Once a Feature Request has been sponsored:
+
+* The Working Group Chair sets its Scope field to `Champion`.
+* The Working Group Chair informs the Maintainers of the sponsorship and records the date of that notice in a comment on the Feature Request.
+* Any Maintainer may object within seven days of the notice when they believe the additional work would disrupt the project or work already in Core scope.
+* An objection must be recorded, with its reason, in a comment on the Feature Request.
+* When there is an objection, the Maintainers discuss it at their next meeting and the Working Group Chair then decides it.
+* The Feature Request must not be placed on a Task Force agenda until the objection is decided.
+* The outcome of an objection is recorded on the Feature Request.
+* A Maintainer who disagrees with the outcome may follow the [Conflict Resolution](#conflict-resolution) process.
+* When seven days pass without an objection, or an objection is decided in favor of proceeding, the Working Group Chair decides when Task Force capacity allows the Feature Request to be placed on an agenda and chooses the Task Force it is assigned to.
+* If Task Force capacity does not allow it, the Feature Request remains in Champion scope and the Working Group Chair records the wait in a comment on the Feature Request.
+* Additional Maintainers may add their own sponsorship to the Feature Request.
+* When Task Force capacity is limited, the Working Group Chair may consider the number of sponsorships, and the organizations they come from, when choosing which Champion scope item to place on an agenda first.
+* Task Forces schedule Champion scope items after Core scope items.
+* When a Champion scope item no longer has an active champion, the Working Group Chair may set its Scope field back to `Seeking Champion`.
+
+A sponsorship is not needed to raise an item under any other business at a Task Force meeting, or to discuss it in the Open Forum.
+
 ### Specification Development Phase
 This diagram represents the **Specification Development** phase, where implementation shifts from issues to GitHub Pull Requests (PRs). Contributions are managed and tracked through a PR-based workflow, with status labels applied to indicate progress:
 
@@ -304,6 +363,7 @@ Use this option to provide *non-blocking feedback*, such as suggestions, request
 #### 2. **Approve**
 Select this option to indicate **formal approval** of the proposed contribution.  
 * At least **three (3)** Working Group members must submit an “Approve” review for the pull request (PR) to be eligible for merging.
+* An “Approve” review means the reviewer considers the PR ready to merge. To support Task Force discussion of Champion scope work, Maintainers use a Champion scope sponsorship instead (see [Champion Scope Entry](#champion-scope-entry)).
 
 #### 3. **Request Changes**
 Use this option when **significant revisions** are needed.  
@@ -331,7 +391,7 @@ All Pull Requests **must go through a formal review and approval process before 
 * All reviewers assigned to the Pull Request must approve before the Pull Request is eligible for merging.
 * If a reviewer becomes inactive or unresponsive, Maintainers may reassign review to an alternate reviewer.
 * At least **one Maintainer** must approve the Pull Request.
-  * If a Pull Request addresses a Feature Request that is outside of the official scope for the current release, this Maintainer approval allows the PR to be considered by the working group, assigned to a Task Force at the discretion of the Working Group Chair.
+* A Pull Request approval does not bring a Feature Request that is outside of the official scope for the current release into Task Force discussion. That entry is signaled separately, as described in [Champion Scope Entry](#champion-scope-entry).
 * It is not required to have approvals from _all_ FOCUS members, but all active reviewers must approve.
 
 
