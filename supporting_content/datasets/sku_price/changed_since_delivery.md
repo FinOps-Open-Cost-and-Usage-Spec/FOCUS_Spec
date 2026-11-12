@@ -10,7 +10,7 @@ Most prices do not change from month to month. If a service provider re-sends th
 
 ## Size Analysis
 
-Source: 14 monthly Azure EA price sheets (September 2025 to October 2026) for one billing account, loaded into a FinOps hub on Azure Data Explorer. Rows and compressed size (extent) as stored. "Re-sent" sizes are estimated from the bytes per row of the matching changes-only table.
+Source: 14 monthly Azure EA price sheets (September 2025 to October 2026) for one billing account, converted to both layouts with a FinOps toolkit prototype. Rows and compressed size as stored. "Re-sent" sizes are estimated from the bytes per row of the matching changes-only table.
 
 | Layout | Delivery | Rows | Size |
 | --- | --- | --- | --- |
@@ -35,7 +35,7 @@ Per-month view for SKU Price rows:
 * The theory holds. Without changed-since delivery, the SKU Price row layout is about 2.4 times the rows and 3.2 times the size of today's monthly price sheets.
 * With changed-since delivery, the same layout is about 3.7 times smaller than today's price sheets and 12 times smaller than re-sending every row.
 * Each monthly changed-since delivery is about 4% of a full delivery.
-* Closed prices are about one in six changed rows. A changed-since delivery has to carry them as records with an effective end; otherwise a practitioner cannot tell a removed price from an unchanged one.
+* Closed prices are about one in five changed rows. A changed-since delivery has to carry them as records with an effective end; otherwise a practitioner cannot tell a removed price from an unchanged one.
 
 ## Why MUST, Not MAY
 
@@ -45,10 +45,10 @@ The cost to a service provider is low. SKU Price Last Updated is already mandato
 
 ## Implementation Notes
 
-* SKU Price Last Updated has to reflect the last change, not the last time a record was generated. In the FinOps hubs prototype, the column holds the last ingestion time, so every current row looks changed in the latest month (all 3.89M current rows show October 2026). A changed-since filter on that value would return the full catalog.
+* SKU Price Last Updated has to reflect the last change, not the last time a record was generated. In the prototype, the column holds the last load time, so every current row looks changed in the latest month (all 3.89M current rows show October 2026). A changed-since filter on that value would return the full catalog.
 * Practitioners apply a changed-since delivery by replacing rows that share the dataset key (ServiceProviderName, SkuPriceId, ContractId, SkuPriceEffectiveStart, PricingCurrency, UnitPriceType) and adding the rest.
 * A full delivery (no changed-since point) remains available to start over or recover from gaps.
 
 ## Reproducing
 
-FinOps toolkit prototype: `src/templates/finops-hub/modules/Microsoft.FinOpsHubs/Analytics/preview/SkuPrices_v1_5/` (`SkuPrices_v1_5.kql` builds `SkuPrices_v1_5` and `SkuPricesWide_v1_5`). "Re-sent" rows are the sum, over all monthly loads, of rows whose effective period covers that month.
+Source data: monthly Azure EA price sheets. Prototype: FinOps toolkit SKU Price v1.5 preview. "Re-sent" rows are the sum, over all monthly loads, of rows whose effective period covers that month.
