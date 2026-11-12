@@ -144,7 +144,7 @@ This process ensures that all proposed features and improvements are traceable a
 
 Each release has two kinds of scope. Core scope is the work the Working Group commits to delivering in the release. Champion scope is work that a contributor, referred to as the champion, chooses to lead. Champion scope is added during development as capacity allows, its delivery is less predictable, and it does not move into Core scope. The Scope field in the FOCUS WG project records each Feature Request as `Core`, `Champion`, or `Seeking Champion`. `Seeking Champion` lists triaged Feature Requests that anyone may pick up, but it does not limit what may be championed.
 
-Champion scope enables members to build consensus before work reaches a Task Force, either synchronously or asynchronously (e.g., in the Open Forum, via ad hoc meetings, or in comments on the Feature Request or Pull Request). This ensures that Task Force time is spent on work within the Core scope.
+Champion scope enables members to build consensus before work reaches a Task Force, either synchronously or asynchronously (e.g., in the Open Forum, via ad hoc meetings, or in comments on the Feature Request or Pull Request). This keeps Task Force time focused on work that members have already discussed and agreed to take up.
 
 A Feature Request enters Champion scope through a **Champion scope sponsorship** from a Maintainer. A sponsorship is separate from Pull Request review and approval.
 
