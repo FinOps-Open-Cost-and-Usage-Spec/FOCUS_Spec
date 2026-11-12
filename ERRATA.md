@@ -6,6 +6,53 @@ These updates serve as the basis for revising FOCUS enablement artifacts, such a
 
 ---
 
+## Version 1.5
+
+This section outlines minor discrepancies found in the 1.5 release of the FOCUS specification and its Requirements Model.
+
+All issues are considered clarifications to intended language and are not meant to represent material changes.
+
+### A. Schema & Validation Logic Corrections
+*The following corrections align requirement lines with the rest of their definitions.*
+
+| Issue | Section / Location | Original | Corrected | Tracking |
+| :--- | :--- | :--- | :--- | :--- |
+| **#1: Missing Currency Format requirement for PaymentCurrency** | `datasets/invoice_detail/columns/paymentcurrency.md`, line [9](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/e9cdcc7cbb9bfec2f6d6f6b6a8d872bc0b6b9cc0/specification/datasets/invoice_detail/columns/paymentcurrency.md?plain=1#L9) | No Currency Format requirement follows the StringHandling requirement. | PaymentCurrency MUST conform to CurrencyFormat requirements. (Matches BillingCurrency and the Content Constraints table.) | Issue: [#2837](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2837) |
+| **#2: Redundant ContractId not-null condition** | `datasets/contract_commitment/columns/contractid.md`, lines [12](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/e9cdcc7cbb9bfec2f6d6f6b6a8d872bc0b6b9cc0/specification/datasets/contract_commitment/columns/contractid.md?plain=1#L12), [13](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/e9cdcc7cbb9bfec2f6d6f6b6a8d872bc0b6b9cc0/specification/datasets/contract_commitment/columns/contractid.md?plain=1#L13) and [14](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/e9cdcc7cbb9bfec2f6d6f6b6a8d872bc0b6b9cc0/specification/datasets/contract_commitment/columns/contractid.md?plain=1#L14) | When ContractId is not null, ContractId MUST adhere to the following requirements: (with two nested bullets) | The condition line is removed and its two nested bullets move up one level. ContractId MUST NOT be null (line 11), so the condition was always met. | Issue: [#2837](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2837) |
+| **#3: Lowercase "must" in TimeSectorEnd requirement** | `metadata/recency/time_sectors/time_sector_end.md`, line [11](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/e9cdcc7cbb9bfec2f6d6f6b6a8d872bc0b6b9cc0/specification/metadata/recency/time_sectors/time_sector_end.md?plain=1#L11) | TimeSectorEnd **must** be exclusive of the end time of the subsequent time sector. | TimeSectorEnd **MUST** be exclusive of the end time of the subsequent time sector. | Issue: [#2837](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2837) |
+
+### B. Terminology & Reference Corrections
+*The following corrections standardize casing, names, and link targets.*
+
+| Issue | Section / Location | Original | Corrected | Tracking |
+| :--- | :--- | :--- | :--- | :--- |
+| **#4: Inconsistent use of "ID" vs "Id" in SchemaId** | `metadata/schema/schema_id.md`, line [9](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/e9cdcc7cbb9bfec2f6d6f6b6a8d872bc0b6b9cc0/specification/metadata/schema/schema_id.md?plain=1#L9) | **SchemaID** MUST NOT be null. | **SchemaId** MUST NOT be null. | Issue: [#2836](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2836) |
+| **#5: Inconsistent use of "ID" vs "Id" in DatasetInstanceId** | `metadata/schema/dataset_instance_id.md`, lines [8](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/e9cdcc7cbb9bfec2f6d6f6b6a8d872bc0b6b9cc0/specification/metadata/schema/dataset_instance_id.md?plain=1#L8), [9](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/e9cdcc7cbb9bfec2f6d6f6b6a8d872bc0b6b9cc0/specification/metadata/schema/dataset_instance_id.md?plain=1#L9) and [10](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/e9cdcc7cbb9bfec2f6d6f6b6a8d872bc0b6b9cc0/specification/metadata/schema/dataset_instance_id.md?plain=1#L10) | **DatasetInstanceID** (three times) | **DatasetInstanceId** | Issue: [#2836](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2836) |
+| **#6: Incorrect InvoiceId link target** | `datasets/cost_and_usage/columns/invoicedetailid.md`, line [15](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/e9cdcc7cbb9bfec2f6d6f6b6a8d872bc0b6b9cc0/specification/datasets/cost_and_usage/columns/invoicedetailid.md?plain=1#L15) | ...within a given InvoiceId, linked to `#datamodel.invoicedetail.invoiceid`. | ...within a given InvoiceId, linked to `#datamodel.costandusage.invoiceid`. | Issue: [#2836](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2836) |
+| **#7: AllocationMethod used as a column name** | `datasets/cost_and_usage/columns/allocatedmethoddetails.md`, line [35](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/e9cdcc7cbb9bfec2f6d6f6b6a8d872bc0b6b9cc0/specification/datasets/cost_and_usage/columns/allocatedmethoddetails.md?plain=1#L35) | ...data generator's documented **AllocationMethod** which... | ...data generator's documented **allocation method** which... (link target unchanged) | Issue: [#2836](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2836) |
+| **#8: Inconsistent operating model condition name** | `operating_model_conditions/includespricingbillingcurrencydifferences.md`, line [1](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/e9cdcc7cbb9bfec2f6d6f6b6a8d872bc0b6b9cc0/specification/operating_model_conditions/includespricingbillingcurrencydifferences.md?plain=1#L1) | Includes **Pricing-Billing** Currency Differences | Includes **Pricing and Billing** Currency Differences (matches Includes Billing and Payment Currency Differences) | Issue: [#2836](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2836) |
+
+### C. Typographical Errors
+*The following corrections fix minor textual discrepancies that do not impact the intended technical implementation.*
+
+| Issue | Section / Location | Original | Corrected | Tracking |
+| :--- | :--- | :--- | :--- | :--- |
+| **#9: "MUST not" in TimeSectorComplete requirement** | `metadata/recency/time_sectors/time_sector_complete.md`, line [9](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/e9cdcc7cbb9bfec2f6d6f6b6a8d872bc0b6b9cc0/specification/metadata/recency/time_sectors/time_sector_complete.md?plain=1#L9) | TimeSectorComplete MUST **not** be null. | TimeSectorComplete MUST **NOT** be null. | Issue: [#2836](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2836) |
+| **#10: "MUST not" in PreviousColumnName requirement** | `metadata/schema/column_definition/previouscolumnname.md`, line [10](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/e9cdcc7cbb9bfec2f6d6f6b6a8d872bc0b6b9cc0/specification/metadata/schema/column_definition/previouscolumnname.md?plain=1#L10) | PreviousColumnName MUST **not** be null. | PreviousColumnName MUST **NOT** be null. | Issue: [#2836](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2836) |
+| **#11: "NULL" in HostProviderName requirements** | `datasets/cost_and_usage/columns/hostprovidername.md`, lines [14](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/e9cdcc7cbb9bfec2f6d6f6b6a8d872bc0b6b9cc0/specification/datasets/cost_and_usage/columns/hostprovidername.md?plain=1#L14) and [15](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/e9cdcc7cbb9bfec2f6d6f6b6a8d872bc0b6b9cc0/specification/datasets/cost_and_usage/columns/hostprovidername.md?plain=1#L15) | HostProviderName MAY be **NULL** when... | HostProviderName MAY be **null** when... | Issue: [#2836](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2836) |
+| **#12: Duplicate requirement in Time Sector End description** | `metadata/recency/time_sectors/time_sector_end.md`, line [3](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/e9cdcc7cbb9bfec2f6d6f6b6a8d872bc0b6b9cc0/specification/metadata/recency/time_sectors/time_sector_end.md?plain=1#L3) | The Time Sector End **MUST be** later than the Time Sector Start. | The Time Sector End **is** later than the Time Sector Start. (Line 12 states the requirement.) | Issue: [#2836](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2836) |
+
+### D. Requirements Model Corrections
+*The following corrections address the FOCUS 1.5 Requirements Model validation rules.*
+
+| Issue | File | Original | Corrected | Tracking |
+| :--- | :--- | :--- | :--- | :--- |
+| **#13: Missing PaymentCurrency Currency Format check** | `paymentcurrency.json` | The Invoice Detail PaymentCurrency rules have no Currency Format check. | A Currency Format rule is added, matching the BillingCurrency rules. (Follows erratum #1.) | Issue: [#2837](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2837) |
+| **#14: ContractId not-null composite** | `contractid.json` | `CCT-ContractId-C-004-C` models the "When ContractId is not null" condition removed by erratum #2. | The rule matches the corrected requirement text. (Follows erratum #2.) | Issue: [#2837](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2837) |
+| **#15: Allowed-values rules fail on null<br><br>*(Defect also present in the 1.2 to 1.4 Requirements Models)*** | `commitmentdiscountstatus.json`, `commitmentdiscountcategory.json` | `CAU-CommitmentDiscountStatus-C-005-M` and `CAU-CommitmentDiscountCategory-C-005-M` have an empty `Condition`, so a null value fails the allowed-values check, contradicting each column's `C-003-C` (MUST be null when CommitmentDiscountId is null). | Each rule gets a `CheckNotValue` condition on its own column with `"Value": null`, matching the sibling `CapacityReservationStatus` and `PricingCategory` rules. | Issue: [#2783](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2783) |
+
+---
+
 ## Version 1.4
 
 This section outlines discrepancies found in the enablement artifacts (Requirements Model) for the 1.4 release of the FOCUS specification. The underlying specification text for version 1.4 remains accurate and unchanged.
