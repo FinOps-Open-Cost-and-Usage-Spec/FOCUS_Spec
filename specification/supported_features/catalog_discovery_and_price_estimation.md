@@ -260,6 +260,57 @@ WHERE ServiceProviderName = ?
 ORDER BY SkuId, PricingCurrency, UnitPrice
 ```
 
+### List Every Price for a SKU
+
+This query answers what every current price for one *SKU* is, side by side. A practitioner can then see the public rate, the rate a *contract* fixes, and the negotiated rate together before choosing how to buy. It takes a service provider, a SKU ID, and a point in time. It returns one row for each SKU Price ID, Contract ID, and Pricing Currency, with a column for each Unit Price Type. A public price has a null Contract ID, so it returns on its own row. Joining that row to each *contract* row on SKU Price ID and Pricing Currency puts the public rate beside the negotiated rate.
+
+```sql
+SELECT
+  SkuId,
+  SkuPriceId,
+  ContractId,
+  SkuPriceDescription,
+  ChargeCategory,
+  PricingUnit,
+  PricingCurrency,
+  MAX(CASE WHEN UnitPriceType = 'List' THEN UnitPrice END) AS ListUnitPrice,
+  MAX(CASE WHEN UnitPriceType = 'Base' THEN UnitPrice END) AS BaseUnitPrice,
+  MAX(CASE WHEN UnitPriceType = 'Contracted' THEN UnitPrice END) AS ContractedUnitPrice
+FROM SkuPrice
+WHERE ServiceProviderName = ?
+  AND SkuId = ?
+  AND (SkuPriceEffectiveStart IS NULL OR SkuPriceEffectiveStart <= ?)
+  AND (SkuPriceEffectiveEnd IS NULL OR SkuPriceEffectiveEnd > ?)
+GROUP BY SkuId, SkuPriceId, ContractId, SkuPriceDescription, ChargeCategory, PricingUnit, PricingCurrency
+ORDER BY ChargeCategory, SkuPriceId, ContractId
+```
+
+### Track Price Changes Since a Point in Time
+
+This query answers which prices changed after a given moment and whether each one went up or down. A practitioner can then explain a change in cost that consumption does not explain (e.g., a rate increase in the middle of a budget period). It takes a service provider and a point in time. A change is a record that starts after that moment and replaces a record that ended when it started, for the same SKU Price ID, Contract ID, Pricing Currency, and Unit Price Type. A price that is new to the catalog has no earlier record, so it is not counted as a change. Results are grouped by Unit Price Type, so public and negotiated changes show apart.
+
+This query relies on the dataset keeping records whose SKU Price Effective End has passed. A dataset instance that holds only current prices cannot show what a price was before it changed.
+
+```sql
+SELECT
+  Cur.UnitPriceType,
+  COUNT(*) AS ChangedPrices,
+  SUM(CASE WHEN Cur.UnitPrice > Prev.UnitPrice THEN 1 ELSE 0 END) AS Increases,
+  SUM(CASE WHEN Cur.UnitPrice < Prev.UnitPrice THEN 1 ELSE 0 END) AS Decreases
+FROM SkuPrice Cur
+INNER JOIN SkuPrice Prev
+  ON Prev.ServiceProviderName = Cur.ServiceProviderName
+  AND Prev.SkuPriceId = Cur.SkuPriceId
+  AND Prev.PricingCurrency = Cur.PricingCurrency
+  AND Prev.UnitPriceType = Cur.UnitPriceType
+  AND (Prev.ContractId = Cur.ContractId OR (Prev.ContractId IS NULL AND Cur.ContractId IS NULL))
+  AND Prev.SkuPriceEffectiveEnd = Cur.SkuPriceEffectiveStart
+WHERE Cur.ServiceProviderName = ?
+  AND Cur.SkuPriceEffectiveStart > ?
+GROUP BY Cur.UnitPriceType
+ORDER BY Cur.UnitPriceType
+```
+
 ## Version Introduced
 
 1.5
