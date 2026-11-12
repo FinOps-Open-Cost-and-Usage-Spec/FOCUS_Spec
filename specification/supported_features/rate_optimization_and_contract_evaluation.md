@@ -106,8 +106,10 @@ Each conditional column narrows this feature on its own:
   * ChargePeriodStart
   * CommitmentDiscountId
   * ContractApplied
+  * ContractedCost
   * ContractedUnitPrice
   * EffectiveCost
+  * ListCost
   * ListUnitPrice
   * PricingCurrency
   * PricingCurrencyContractedUnitPrice
@@ -641,6 +643,73 @@ LEFT JOIN Prices CP
   AND (CP.SkuPriceEffectiveStart IS NULL OR C.ChargePeriodStart >= CP.SkuPriceEffectiveStart)
   AND (CP.SkuPriceEffectiveEnd IS NULL OR C.ChargePeriodStart < CP.SkuPriceEffectiveEnd)
 ORDER BY ContractedCostDifference DESC NULLS LAST
+```
+
+### Find Where the Public Price Moved Away from the Contract-Fixed Price
+
+This query answers where the current public price no longer matches the list price a *contract* fixed. A practitioner can then see which rates the agreement protects from a public price increase, and which ones it holds above a public price decrease. It takes a service provider, a Contract ID, and a point in time. It pairs each "Base" record under that *contract* with the "List" record in force for the same SKU Price ID and Pricing Currency. It then counts, by service, the prices where the public price is above or below the fixed price, and the largest difference as a percentage of the fixed price.
+
+```sql
+SELECT
+  B.PricingServiceName,
+  COUNT(*) AS Prices,
+  SUM(CASE WHEN L.UnitPrice > B.UnitPrice THEN 1 ELSE 0 END) AS ListAboveBase,
+  SUM(CASE WHEN L.UnitPrice < B.UnitPrice THEN 1 ELSE 0 END) AS ListBelowBase,
+  MAX(CASE WHEN B.UnitPrice > 0 THEN 100.0 * (L.UnitPrice - B.UnitPrice) / B.UnitPrice END) AS MaxDriftPercent
+FROM SkuPrice B
+INNER JOIN SkuPrice L
+  ON L.ServiceProviderName = B.ServiceProviderName
+  AND L.SkuPriceId = B.SkuPriceId
+  AND L.PricingCurrency = B.PricingCurrency
+  AND L.UnitPriceType = 'List'
+  AND (L.SkuPriceEffectiveStart IS NULL OR L.SkuPriceEffectiveStart <= ?)
+  AND (L.SkuPriceEffectiveEnd IS NULL OR L.SkuPriceEffectiveEnd > ?)
+WHERE B.ServiceProviderName = ?
+  AND B.ContractId = ?
+  AND B.UnitPriceType = 'Base'
+  AND (B.SkuPriceEffectiveStart IS NULL OR B.SkuPriceEffectiveStart <= ?)
+  AND (B.SkuPriceEffectiveEnd IS NULL OR B.SkuPriceEffectiveEnd > ?)
+GROUP BY B.PricingServiceName
+ORDER BY ListAboveBase + ListBelowBase DESC, B.PricingServiceName
+```
+
+### Fill Missing Unit Prices on Cost and Usage Records
+
+This query answers what the list and contracted cost of each charge would be when the Cost and Usage dataset leaves List Unit Price or Contracted Unit Price null. Savings from negotiation and from *commitment discounts* can then be measured across all consumption, not just the charges that carry both prices. It takes a time range through Charge Period Start and Charge Period End, a service provider, and a Contract ID. Each charge looks up the "List" record and the "Contracted" record under that Contract ID with the same SKU Price ID and Pricing Currency, in force at its Charge Period Start. A unit price already on the charge is kept. A price is used only when its Pricing Unit matches the charge's Pricing Unit, so the costs are not scaled by a different unit.
+
+```sql
+SELECT
+  C.ChargePeriodStart,
+  C.SkuPriceId,
+  C.PricingUnit,
+  C.PricingQuantity,
+  COALESCE(C.ListUnitPrice, L.UnitPrice) AS ListUnitPrice,
+  COALESCE(C.ContractedUnitPrice, K.UnitPrice) AS ContractedUnitPrice,
+  COALESCE(C.ListCost, C.PricingQuantity * L.UnitPrice) AS ListCost,
+  COALESCE(C.ContractedCost, C.PricingQuantity * K.UnitPrice) AS ContractedCost,
+  C.EffectiveCost
+FROM CostAndUsage C
+LEFT JOIN SkuPrice L
+  ON L.ServiceProviderName = C.ServiceProviderName
+  AND L.SkuPriceId = C.SkuPriceId
+  AND L.PricingCurrency = C.BillingCurrency
+  AND L.PricingUnit = C.PricingUnit
+  AND L.UnitPriceType = 'List'
+  AND (L.SkuPriceEffectiveStart IS NULL OR L.SkuPriceEffectiveStart <= C.ChargePeriodStart)
+  AND (L.SkuPriceEffectiveEnd IS NULL OR L.SkuPriceEffectiveEnd > C.ChargePeriodStart)
+LEFT JOIN SkuPrice K
+  ON K.ServiceProviderName = C.ServiceProviderName
+  AND K.SkuPriceId = C.SkuPriceId
+  AND K.PricingCurrency = C.BillingCurrency
+  AND K.PricingUnit = C.PricingUnit
+  AND K.ContractId = ?
+  AND K.UnitPriceType = 'Contracted'
+  AND (K.SkuPriceEffectiveStart IS NULL OR K.SkuPriceEffectiveStart <= C.ChargePeriodStart)
+  AND (K.SkuPriceEffectiveEnd IS NULL OR K.SkuPriceEffectiveEnd > C.ChargePeriodStart)
+WHERE C.ServiceProviderName = ?
+  AND C.ChargePeriodStart >= ?
+  AND C.ChargePeriodEnd <= ?
+  AND C.SkuPriceId IS NOT NULL
 ```
 
 ## Version Introduced
