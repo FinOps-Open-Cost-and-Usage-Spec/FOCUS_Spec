@@ -84,14 +84,3 @@ The provided recency metadata for time series dataset could look like this:
   ]
 }
 ```
-
-For comparison, the provided recency metadata for a non-time series dataset could look like this:
-
-```json
-{
-  "DatasetInstanceId": "54321-abcde-12345-abcde-12345",
-  "RecencyLastUpdated": "2025-01-29T12:01:03Z",
-  "DatasetInstanceLastUpdated" : "2025-01-29T04:00:00Z",
-  "DatasetInstanceComplete" : true
-}
-```
