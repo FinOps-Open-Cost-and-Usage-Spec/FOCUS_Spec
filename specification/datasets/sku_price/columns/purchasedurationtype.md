@@ -39,7 +39,7 @@ The following units should be used for the representation of time:
 | Year |
 | Years |
 
-> **Note:** These time units express the term of a purchase and are not measurement units. They intentionally differ from the time-based units in [Unit Format](#attributes.unitformat), which govern how the unit of measure for a quantity is expressed. Purchase Duration Type includes "Week" and "Quarter" because they are common purchase terms.
+> **Note:** These time units express the term of a purchase and are not measurement units. They intentionally differ from the time-based units in [Unit Format](#attributes.unitformat), which govern how the unit of measure for a quantity is expressed. Purchase Duration Type includes "Quarter" because it is a common purchase term.
 
 ## Expected Format
 

@@ -262,4 +262,4 @@ ORDER BY SkuId, PricingCurrency, UnitPrice
 
 ## Version Introduced
 
-1.5
+Preview: 1.5

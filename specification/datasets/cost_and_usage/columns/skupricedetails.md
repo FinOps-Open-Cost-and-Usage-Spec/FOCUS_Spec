@@ -64,8 +64,8 @@ The following keys should be used when applicable to facilitate cross-SKU and cr
 | DiskSpace                | Storage capacity available                                               | Numeric          | Measure: Gibibytes (GiB)                              |
 | DiskType                 | Kind of disk used                                                        | String           | Examples: "SSD", "HDD", "NVMe"                        |
 | GpuCount                 | Number of GPUs available                                                 | Numeric          | Measure: Quantity of GPUs                             |
-| InstanceType             | Common name of the instance including size, shape, series, etc.          | String           | Examples: "m5d.2xlarge", "NC24rs_v3", "P50"           |
 | InstanceSeries           | Common name for the series and/or generation of the instance             | String           | Examples: "M5", "Dadv5", "N2D"                        |
+| InstanceType             | Common name of the instance including size, shape, series, etc.          | String           | Examples: "m5d.2xlarge", "NC24rs_v3", "P50"           |
 | MemorySize               | RAM allocated for processing                                             | Numeric          | Measure: Gibibytes (GiB<sup>2</sup>)                  |
 | ModelDeveloper           | Name of the entity that created the model                                | String           | Examples: "Solora AI", "ModelMesh"                    |
 | ModelFamily              | Grouping of related models as defined by the model developer             | String           | Examples: "Solora Reasoning", "ModelMesh General"     |

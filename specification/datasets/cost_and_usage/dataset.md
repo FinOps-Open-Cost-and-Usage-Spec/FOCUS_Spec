@@ -47,7 +47,7 @@ The specification for the Cost and Usage dataset defines a group of columns that
 | [Contracted Unit Price](#datamodel.costandusage.contractedunitprice)                                 | Metric             | Conditional | True         | Decimal   |
 | [Credential ID](#datamodel.costandusage.credentialid)                                                | Dimension          | Conditional | True         | String    |
 | [Effective Cost](#datamodel.costandusage.effectivecost)                                              | Metric             | Mandatory     | False        | Decimal   |
-| [Host Provider Name](#datamodel.costandusage.hostprovidername)                                       | Dimension          | Mandatory     | False        | String    |
+| [Host Provider Name](#datamodel.costandusage.hostprovidername)                                       | Dimension          | Mandatory     | True         | String    |
 | [Invoice Detail ID](#datamodel.costandusage.invoicedetailid)                                         | Dimension          | Conditional | True         | String    |
 | [Invoice ID](#datamodel.costandusage.invoiceid)                                                      | Dimension          | Conditional | True         | String    |
 | [Invoice Issuer Name](#datamodel.costandusage.invoiceissuername)                                     | Dimension          | Mandatory     | False        | String    |
@@ -87,9 +87,15 @@ The Cost and Usage dataset can be joined to the [Contract Commitment](#datamodel
 * In the Cost and Usage dataset, Contract Commitment ID is a property within a JSON object array provided in Contract Applied column.
 * In the Contract Commitment dataset, Contract Commitment ID is a column.
 
+The Cost and Usage dataset can also be joined to the [Billing Period](#datamodel.billingperiod), [Invoice Detail](#datamodel.invoicedetail), and [SKU Price](#datamodel.skuprice) datasets. Each of those datasets describes the join in its own Relationships section.
+
 | Dataset A           | Dataset A Column  | Dataset B           | Dataset B Column       |
 | ------------------- | ----------------- | ------------------- | ---------------------- |
 | Cost and Usage      | Contract Applied  | Contract Commitment | Contract Commitment ID |
+| Cost and Usage      | Billing Period Start and Invoice Issuer Name | Billing Period | Billing Period Start and Invoice Issuer Name |
+| Cost and Usage      | Invoice Issuer Name and Invoice ID | Invoice Detail | Invoice Issuer Name and Invoice ID |
+| Cost and Usage      | Invoice Issuer Name, Invoice ID, and Invoice Detail ID | Invoice Detail | Invoice Issuer Name, Invoice ID, and Invoice Detail ID |
+| Cost and Usage      | Service Provider Name, SKU Price ID, ContractApplied.Elements[*].ContractId, Pricing Currency (or Billing Currency), plus time (see SKU Price) | SKU Price | Service Provider Name, SKU Price ID, Contract ID, Pricing Currency, Unit Price Type (one value, see SKU Price), plus time (see SKU Price) |
 
 ## Requirements<!--SkipTOC-->
 

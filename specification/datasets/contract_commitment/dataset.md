@@ -44,9 +44,12 @@ The Contract Commitment dataset can be joined to the [Cost and Usage](#datamodel
 * In the Contract Commitment dataset, Contract Commitment ID is a column.
 * In the Cost and Usage dataset, Contract Commitment ID is a property within a JSON object array provided in [Contract Applied](#datamodel.costandusage.contractapplied) column.
 
+The Contract Commitment dataset can also be joined to the [SKU Price](#datamodel.skuprice) dataset through Contract ID, which relates a specific contracted price to its contract.
+
 | Dataset A           | Dataset A Column       | Dataset B      | Dataset B Column |
 | ------------------- | ---------------------- | -------------- | -----------------|
 | Contract Commitment | Contract Commitment ID | Cost and Usage | Contract Applied |
+| Contract Commitment | Contract ID            | SKU Price      | Contract ID      |
 
 ## Requirements<!--SkipTOC-->
 
