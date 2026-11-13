@@ -17,7 +17,7 @@ The updated schema-related metadata could look like this:
   "SchemaId": "56789-abcde-56789-abcde-56789",
   "FocusVersion": "1.1",
   "DataGeneratorVersion": "2.4",
-  "CreationDate": "2024-05-02T12:01:03.083z",
+  "CreationDate": "2024-05-02T12:01:03Z",
   "DatasetInstanceId": "178151-dbad145e-178151-dbad145e-178151",
   "ColumnDefinition": [
     {
@@ -55,7 +55,7 @@ The updated schema-related metadata could look like this:
           {
                 "ColumnName": "Tags",
                 "DataType": "JSON",
-                "DataGeneratorTagPrefixes": ["crestnode", "cn"]
+                "ProviderTagPrefixes": ["crestnode", "cn"]
           },
           {
                 "ColumnName": "x_awesome_column1",

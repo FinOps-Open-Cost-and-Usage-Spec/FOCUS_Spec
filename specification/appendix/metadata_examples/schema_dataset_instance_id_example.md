@@ -2,7 +2,7 @@
 
 ## Scenario
 
-CrestNode provides two FOCUS datasets: Cost and Usage and Contract. Each [Schema](#metadata.schema) metadata object includes the [Dataset](#datasets) metadata to indicate which FOCUS Dataset the Schema conforms to.
+CrestNode provides two FOCUS datasets: Cost and Usage and Contract Commitment. Each [Schema](#metadata.schema) metadata object includes the [DatasetInstanceId](#metadata.schema.datasetinstanceid) metadata to indicate which dataset instance the Schema describes.
 
 ## Supplied Metadata
 
@@ -14,7 +14,7 @@ The schema for the data artifact conforming to the dataset FOCUS Cost and Usage.
 {
   "SchemaId": "1234-abcde-12345-abcde-12345",
   "FocusVersion": "1.0",
-  "CreationDate": "2024-01-01T12:01:03.083z",
+  "CreationDate": "2024-01-01T12:01:03Z",
   "DatasetInstanceId": "178151-dbad145e-178151-dbad145e-178151",
   "ColumnDefinition": [
           {
@@ -58,13 +58,13 @@ The schema for the data artifact conforming to the dataset FOCUS Cost and Usage.
 }
 ```
 
-The schema for the data artifact conforming to the dataset FOCUS Contracts.
+The schema for the data artifact conforming to the dataset FOCUS Contract Commitment.
 
 ```json
 {
-  "SchemaId": "1234-abcde-12345-abcde-12345",
+  "SchemaId": "78912-abcde-78912-abcde-78912",
   "FocusVersion": "1.0",
-  "CreationDate": "2024-01-01T12:01:03.083z",
+  "CreationDate": "2024-01-01T12:01:03Z",
   "DatasetInstanceId": "178151-dbad145e-178151-dbad145e-246811",
   "ColumnDefinition": [
           {
@@ -74,7 +74,7 @@ The schema for the data artifact conforming to the dataset FOCUS Contracts.
                 "StringEncoding": "UTF-8"
           },
           {
-              "ColumnName": "OverColumnName",
+              "ColumnName": "ContractCommitmentId",
               "DataType": "STRING",
               "StringMaxLength": 64,
               "StringEncoding": "UTF-8"
