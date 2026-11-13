@@ -13,85 +13,85 @@ The provided recency metadata for time series dataset could look like this:
 ```json
 {
   "DatasetInstanceId": "1234-abcde-12345-abcde-12345",
-  "RecencyLastUpdateDate": "2025-01-291T12:01:03.083z",
+  "RecencyLastUpdated": "2025-01-29T12:01:03Z",
   "TimeSectors": [
     {
-      "TimeSectorStart": "2025-01-27T0:00:00z",
-      "TimeSectorEnd" : "2025-01-27T1:00:00z",
+      "TimeSectorStart": "2025-01-27T00:00:00Z",
+      "TimeSectorEnd" : "2025-01-27T01:00:00Z",
       "TimeSectorComplete" : true,
-      "TimeSectorLastUpdated" : "2025-01-29T04:00:00z"
+      "TimeSectorLastUpdated" : "2025-01-29T04:00:00Z"
     },
     {
-      "TimeSectorStart": "2025-01-27T1:00:00z",
-      "TimeSectorEnd" : "2025-01-27T2:00:00z",
+      "TimeSectorStart": "2025-01-27T01:00:00Z",
+      "TimeSectorEnd" : "2025-01-27T02:00:00Z",
       "TimeSectorComplete" : true,
-      "TimeSectorLastUpdated" : "2025-01-29T04:00:00z"
+      "TimeSectorLastUpdated" : "2025-01-29T04:00:00Z"
     },
     {
-      "TimeSectorStart": "2025-01-27T2:00:00z",
-      "TimeSectorEnd" : "2025-01-27T3:00:00z",
+      "TimeSectorStart": "2025-01-27T02:00:00Z",
+      "TimeSectorEnd" : "2025-01-27T03:00:00Z",
       "TimeSectorComplete" : true,
-      "TimeSectorLastUpdated" : "2025-01-29T04:00:00z"
+      "TimeSectorLastUpdated" : "2025-01-29T04:00:00Z"
     },
     {
-      "TimeSectorStart": "2025-01-27T3:00:00z",
-      "TimeSectorEnd" : "2025-01-27T4:00:00z",
+      "TimeSectorStart": "2025-01-27T03:00:00Z",
+      "TimeSectorEnd" : "2025-01-27T04:00:00Z",
       "TimeSectorComplete" : true,
-      "TimeSectorLastUpdated" : "2025-01-29T04:00:00z"
+      "TimeSectorLastUpdated" : "2025-01-29T04:00:00Z"
     },
     {
-      "TimeSectorStart": "2025-01-27T4:00:00z",
-      "TimeSectorEnd" : "2025-01-27T5:00:00z",
+      "TimeSectorStart": "2025-01-27T04:00:00Z",
+      "TimeSectorEnd" : "2025-01-27T05:00:00Z",
       "TimeSectorComplete" : true,
-      "TimeSectorLastUpdated" : "2025-01-29T04:00:00z"
+      "TimeSectorLastUpdated" : "2025-01-29T04:00:00Z"
     },
     {
-      "TimeSectorStart": "2025-01-27T5:00:00z",
-      "TimeSectorEnd" : "2025-01-27T6:00:00z",
+      "TimeSectorStart": "2025-01-27T05:00:00Z",
+      "TimeSectorEnd" : "2025-01-27T06:00:00Z",
       "TimeSectorComplete" : true,
-      "TimeSectorLastUpdated" : "2025-01-29T04:00:00z"
+      "TimeSectorLastUpdated" : "2025-01-29T04:00:00Z"
     },
     {
-      "TimeSectorStart": "2025-01-27T6:00:00z",
-      "TimeSectorEnd" : "2025-01-27T7:00:00z",
+      "TimeSectorStart": "2025-01-27T06:00:00Z",
+      "TimeSectorEnd" : "2025-01-27T07:00:00Z",
       "TimeSectorComplete" : true,
-      "TimeSectorLastUpdated" : "2025-01-29T11:15:24z"
+      "TimeSectorLastUpdated" : "2025-01-29T11:15:24Z"
     },
     {
-      "TimeSectorStart": "2025-01-27T7:00:00z",
-      "TimeSectorEnd" : "2025-01-27T8:00:00z",
+      "TimeSectorStart": "2025-01-27T07:00:00Z",
+      "TimeSectorEnd" : "2025-01-27T08:00:00Z",
       "TimeSectorComplete" : true,
-      "TimeSectorLastUpdated" : "2025-01-29T11:15:24z"
+      "TimeSectorLastUpdated" : "2025-01-29T11:15:24Z"
     },
     {
-      "TimeSectorStart": "2025-01-27T8:00:00z",
-      "TimeSectorEnd" : "2025-01-27T9:00:00z",
+      "TimeSectorStart": "2025-01-27T08:00:00Z",
+      "TimeSectorEnd" : "2025-01-27T09:00:00Z",
       "TimeSectorComplete" : false,
-      "TimeSectorLastUpdated" : "2025-01-29T04:00:00z"
+      "TimeSectorLastUpdated" : "2025-01-29T04:00:00Z"
     },
     {
-      "TimeSectorStart": "2025-01-27T9:00:00z",
-      "TimeSectorEnd" : "2025-01-27T10:00:00z",
+      "TimeSectorStart": "2025-01-27T09:00:00Z",
+      "TimeSectorEnd" : "2025-01-27T10:00:00Z",
       "TimeSectorComplete" : false,
-      "TimeSectorLastUpdated" : "2025-01-29T10:23:10z"
+      "TimeSectorLastUpdated" : "2025-01-29T10:23:10Z"
     },
     {
-      "TimeSectorStart": "2025-01-27T10:00:00z",
-      "TimeSectorEnd" : "2025-01-27T11:00:00z",
+      "TimeSectorStart": "2025-01-27T10:00:00Z",
+      "TimeSectorEnd" : "2025-01-27T11:00:00Z",
       "TimeSectorComplete" : false,
-      "TimeSectorLastUpdated" : "2025-01-29T11:15:24z"
+      "TimeSectorLastUpdated" : "2025-01-29T11:15:24Z"
     }
   ]
 }
 ```
 
-The provided recency metadata for non-time series dataset could look like this:
+For comparison, the provided recency metadata for a non-time series dataset could look like this:
 
 ```json
 {
-  "Dataset": "1234-abcde-12345-abcde-12345",
-  "RecencyLastUpdateDate": "2025-01-291T12:01:03.083z",
-  "DatasetInstanceLastUpdated" : "2025-01-29T04:00:00z",
+  "DatasetInstanceId": "54321-abcde-12345-abcde-12345",
+  "RecencyLastUpdated": "2025-01-29T12:01:03Z",
+  "DatasetInstanceLastUpdated" : "2025-01-29T04:00:00Z",
   "DatasetInstanceComplete" : true
 }
 ```

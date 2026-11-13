@@ -17,8 +17,7 @@ The updated schema-related metadata could look like this:
   "SchemaId": "45678-abcde-45678-abcde-45678",
   "FocusVersion": "1.1",
   "DataGeneratorVersion": "2.3",
-  "name": "New Columns",
-  "CreationDate": "2024-04-02T12:01:03.083z",
+  "CreationDate": "2024-04-02T12:01:03Z",
   "DatasetInstanceId": "178151-dbad145e-178151-dbad145e-178151",
   "ColumnDefinition": [
     {
@@ -79,8 +78,8 @@ For reference, the prior schema object looked like this:
   "SchemaId": "34567-abcde-34567-abcde-34567",
   "FocusVersion": "1.0",
   "DataGeneratorVersion": "2.2",
-  "CreationDate": "2024-04-02T12:01:03.083z",
-  "Dataset": "FOCUS Cost and Usage",
+  "CreationDate": "2024-04-02T12:01:03Z",
+  "DatasetInstanceId": "178151-dbad145e-178151-dbad145e-178151",
   "ColumnDefinition": [
     {
       "ColumnName": "BillingAccountId",
