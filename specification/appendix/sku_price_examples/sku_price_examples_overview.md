@@ -1,6 +1,6 @@
 # Examples: SKU Price
 
-> **Preview:** The [SKU Price](#datamodel.skuprice) dataset is a preview in this version of FOCUS, so these examples may change in the next version based on implementation feedback. The preview also covers two requirements outside the dataset, which are excluded from conformance, and two operating model conditions and a schema that exist only for SKU Price. [Issue #2768](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2768) tracks the preview and lists each one.
+> **Preview:** The [SKU Price](#datamodel.skuprice) dataset is a preview in this version of FOCUS, so these examples may change in the next version based on implementation feedback. The preview also covers two requirements outside the dataset, which are excluded from conformance, and three operating model conditions and a schema that exist only for SKU Price. [Issue #2768](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2768) tracks the preview and lists each one.
 
 The following section contains examples of how a [*service provider*](#glossary:service-provider) may represent a published [*price list*](#glossary:price-list) as a SKU Price [*FOCUS dataset*](#glossary:FOCUS-dataset). The scenarios use a fictitious service provider, Aura Web, and a fictitious customer, Acme Corp. Provider, service, and identifier names are illustrative.
 
@@ -21,7 +21,7 @@ The *price list* contains 28 records across 10 SKUs:
 * An analytics service priced in a [*consumption currency*](#glossary:consumption-currency).
 * A purchasable balance of that consumption currency, and the published unit value of a granted promotional credit.
 
-Each scenario below links a CSV extract containing the records from the rate card that the scenario discusses. The extracts are subsets of the complete rate card, not separate datasets.
+Each scenario below links a CSV extract containing the records from the rate card that the scenario discusses. The extracts are subsets of the complete rate card, not separate datasets. The Context Window Pricing scenario is the exception: it uses two other fictitious service providers, Solora AI and Meridian AI, with their own price lists.
 
 ## Reading a SKU Price Record
 
