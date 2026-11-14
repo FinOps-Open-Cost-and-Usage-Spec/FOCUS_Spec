@@ -7,6 +7,7 @@
 | Topic | Description |
 | :--- | :--- |
 | [Discount Handling](#appendix.discounthandling) | Explains how discounts are represented and applied to charges in a FOCUS dataset. |
+| [Examples: AI Context Window Pricing](#appendix.examples:aicontextwindowpricing) | Illustrates how to identify the context-window pricing tier of [*token*](#glossary:token) charges in a Cost and Usage FOCUS dataset, covering a service provider that publishes an exclusive threshold and one that publishes an inclusive threshold. |
 | [Examples: AI Model Identity](#appendix.examples:aimodelidentity) | Illustrates how to represent the identity of an AI model in a Cost and Usage FOCUS dataset, including a directly purchased AI model and the same model served by a cloud provider as a first-party service. |
 | [Examples: AI Prompt Caching](#appendix.examples:aipromptcaching) | Illustrates how to distinguish cached from uncached [*token*](#glossary:token) charges in a Cost and Usage FOCUS dataset, covering a service provider that prices cache retention into the write and one that charges for cache storage separately. |
 | [Examples: AI Model Billing](#appendix.examples:aimodelbilling) | Illustrates how to represent usage-based billing for AI model APIs in a Cost and Usage FOCUS dataset, including direct billing, marketplace purchases, first-party CSP offerings, commitment drawdown, and multi-model invoices with cached token charges. |
