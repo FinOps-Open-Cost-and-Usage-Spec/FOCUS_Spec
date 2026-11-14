@@ -18,15 +18,20 @@ SkuPriceDetails MUST adhere to the following requirements:
 * SkuPriceDetails property keys SHOULD conform to [*PascalCase*](#glossary:pascalcase) format.
 * SkuPriceDetails MUST adhere to the following nullability requirements:
   * SkuPriceDetails MUST be null when SkuPriceId is null.
-  * SkuPriceDetails MAY be null when SkuPriceId is not null.
+  * SkuPriceDetails MUST NOT be null when SkuPriceId is not null and the corresponding *SKU Price* depends on context-window size.
+  * SkuPriceDetails MAY be null when SkuPriceId is not null and the corresponding *SKU Price* does not depend on context-window size.
 * When SkuPriceDetails is not null, SkuPriceDetails MUST adhere to the following requirements:
   * SkuPriceDetails MUST be associated with a given SkuPriceId.
   * SkuPriceDetails MUST include the FOCUS-defined SKU Price property when an equivalent property is included as a custom property.
+  * SkuPriceDetails MUST include ContextWindowMinimum when the *SKU Price* depends on context-window size.
+  * SkuPriceDetails MUST include ContextWindowMaximum when the *SKU Price* depends on context-window size.
   * SkuPriceDetails MUST NOT include properties that are not applicable to the corresponding SkuPriceId.
   * SkuPriceDetails MUST NOT include TokenCacheAction when the *SKU Price* does not meter [*tokens*](#glossary:token) consumed from a request (e.g., tokens generated in a response, or a charge for retaining cached content metered in token-hours).
   * SkuPriceDetails MUST NOT include TokenCacheAction when the *SKU Price* meters request tokens served from or placed into a [*prompt cache*](#glossary:prompt-cache) together with request tokens that were not (e.g., request tokens billed on one meter whether or not they were placed into a *prompt cache*).
   * SkuPriceDetails MUST NOT include TokenDirection when the *SKU Price* does not meter *tokens* (e.g., a charge for retaining cached content metered in token-hours).
   * SkuPriceDetails MUST NOT include TokenDirection when the *SKU Price* meters both tokens consumed from a request and tokens generated in a response.
+  * SkuPriceDetails MUST NOT include ContextWindowMinimum when the *SKU Price* does not depend on context-window size.
+  * SkuPriceDetails MUST NOT include ContextWindowMaximum when the *SKU Price* does not depend on context-window size.
   * SkuPriceDetails SHOULD include all FOCUS-defined SKU Price properties listed below that are applicable to the corresponding SkuPriceId.
   * SkuPriceDetails SHOULD include TokenCacheAction when the *SKU Price* meters only tokens consumed from a request, except when the *SKU Price* meters request tokens served from or placed into a *prompt cache* together with request tokens that were not.
   * SkuPriceDetails SHOULD include TokenDirection when the *SKU Price* meters only input or only output tokens.
@@ -36,13 +41,15 @@ SkuPriceDetails MUST adhere to the following requirements:
     * Existing SkuPriceDetails properties SHOULD remain consistent over time.
     * Existing SkuPriceDetails properties SHOULD NOT be removed.
     * Additional SkuPriceDetails properties MAY be added over time.
+    * ContextWindowMinimum MUST have one and only one value when included.
+    * ContextWindowMaximum MUST have one and only one value, including null, when included.
   * Property key SHOULD remain consistent across comparable *SKUs* having that property, and the values for this key SHOULD remain in a consistent format.
   * Property key MUST begin with the string "x_" unless it is a FOCUS-defined property.
-  * Property value MUST represent the value for a single [PricingUnit](#datamodel.costandusage.pricingunit) when the property holds a numeric value.
+  * Property value MUST represent the value for a single [PricingUnit](#datamodel.costandusage.pricingunit) when the property holds a numeric value, except when the property key is "ContextWindowMinimum" or "ContextWindowMaximum".
 * FOCUS-defined SKU Price properties MUST adhere to the following requirements:
   * Property key MUST match the spelling and casing specified for the FOCUS-defined property.
   * Property value MUST be of the type specified for that property.
-  * Property value MUST represent the value for a single PricingUnit, denominated in the unit of measure specified for that property when the property holds a numeric value.
+  * Property value MUST represent the value for a single PricingUnit, denominated in the unit of measure specified for that property when the property holds a numeric value, except when the property key is "ContextWindowMinimum" or "ContextWindowMaximum".
   * Property value MUST be one of the allowed values specified for that property when allowed values are specified.
 * When included, TokenCacheAction MUST adhere to the following requirements:
   * TokenCacheAction MUST be "Read" when the *SKU Price* meters only tokens served from a *prompt cache*.
@@ -52,6 +59,20 @@ SkuPriceDetails MUST adhere to the following requirements:
 * When included, TokenDirection MUST adhere to the following requirements:
   * TokenDirection MUST be "Input" when the *SKU Price* meters tokens consumed from a request.
   * TokenDirection MUST be "Output" when the *SKU Price* meters tokens generated in a response.
+* When included, ContextWindowMinimum MUST adhere to the following requirements:
+  * ContextWindowMinimum MUST be of type Numeric.
+  * ContextWindowMinimum MUST NOT be null.
+  * ContextWindowMinimum MUST conform to [NumericFormat](#attributes.numericformat) requirements.
+  * ContextWindowMinimum MUST be a non-negative decimal value.
+  * ContextWindowMinimum MUST represent the exclusive lower bound of the input *token* count, including cached input *tokens*, consumed from a single request for which the *SKU Price* applies.
+* When included, ContextWindowMaximum MUST adhere to the following requirements:
+  * ContextWindowMaximum MUST be of type Numeric when ContextWindowMaximum is not null.
+  * ContextWindowMaximum MUST conform to NumericFormat requirements when ContextWindowMaximum is not null.
+  * ContextWindowMaximum MUST adhere to the following nullability requirements:
+    * ContextWindowMaximum MUST be null when the context-window pricing tier has no upper limit.
+    * ContextWindowMaximum MUST NOT be null when the context-window pricing tier has an upper limit.
+  * ContextWindowMaximum MUST be strictly greater than ContextWindowMinimum when ContextWindowMaximum is not null.
+  * ContextWindowMaximum MUST represent the inclusive upper bound of the input *token* count, including cached input *tokens*, consumed from a single request for which the *SKU Price* applies when ContextWindowMaximum is not null.
 
 ## FOCUS-Defined Properties
 
@@ -59,6 +80,8 @@ The following keys should be used when applicable to facilitate cross-SKU and cr
 
 | Key                      | Description                                                              | Data Type        | Unit of Measure (numeric) or values (string)          |
 | :----------------------- | :----------------------------------------------------------------------- | :--------------- | :---------------------------------------------------- |
+| ContextWindowMaximum     | Inclusive upper bound of the input-token range per request for which the SKU Price applies<sup>5</sup> | Numeric or null  | Measure: Input Tokens per Request                     |
+| ContextWindowMinimum     | Exclusive lower bound of the input-token range per request for which the SKU Price applies<sup>5</sup> | Numeric          | Measure: Input Tokens per Request                     |
 | CoreCount                | Number of physical or virtual CPUs available<sup>1</sup>                 | Numeric          | Measure: Quantity of Cores                            |
 | DiskMaxIops              | Storage maximum sustained input/output operations per second<sup>1</sup> | Numeric          | Measure: Input/Output Operations per Second (IOPS)    |
 | DiskSpace                | Storage capacity available                                               | Numeric          | Measure: Gibibytes (GiB)                              |
@@ -84,7 +107,8 @@ The following keys should be used when applicable to facilitate cross-SKU and cr
 > 1. In the case of "burstable" SKUs offering variable levels of performance, the baseline or guaranteed value should be used.
 > 2. Memory manufacturers still commonly use "GB" to refer to 2<sup>30</sup> bytes, which is known as GiB in other contexts.
 > 3. This is the operating system family of the SKU, if it's included with the SKU or the SKU only supports one type of operating system.
-> 4. TokenDirection applies to SKUs that meter tokens in one direction only, and TokenCacheAction to SKUs that meter only tokens consumed from a request. The requirements above state when each property applies and what each value identifies. A SKU that bills request tokens on one meter whether or not they were served from or placed into a cache carries no TokenCacheAction, because "Uncached" would misdescribe the tokens that interacted with the cache, and TokenDirection still identifies its tokens as input. Because null is not one of the allowed values, TokenCacheAction is omitted rather than set to null when the interaction of the metered tokens with a cache is not known. [Consumed Quantity](#datamodel.costandusage.consumedquantity) requirements state that a token counted on a "Read" or "Write" row is not also counted on a row that carries neither value. The model developer defines which cache interactions and which token directions a model distinguishes. Which of those a service provider meters as its own charge, and the meter name it uses, vary across service providers and across model versions, so each property identifies one attribute of the metered tokens independently of how a given service provider names its meters. Reasoning tokens are generated in a response, so a SKU that meters them separately carries TokenDirection "Output". Dimensions that qualify a charge without describing the direction of its tokens or their interaction with a cache, such as token modality, reasoning effort, cache retention duration, and context window size, are not values of these properties. [Examples: AI Prompt Caching](#appendix.examples:aipromptcaching) shows both properties on two service providers that meter cache activity differently.
+> 4. TokenDirection applies to SKUs that meter tokens in one direction only, and TokenCacheAction to SKUs that meter only tokens consumed from a request. The requirements above state when each property applies and what each value identifies. A SKU that bills request tokens on one meter whether or not they were served from or placed into a cache carries no TokenCacheAction, because "Uncached" would misdescribe the tokens that interacted with the cache, and TokenDirection still identifies its tokens as input. Because null is not one of the allowed values, TokenCacheAction is omitted rather than set to null when the interaction of the metered tokens with a cache is not known. [Consumed Quantity](#datamodel.costandusage.consumedquantity) requirements state that a token counted on a "Read" or "Write" row is not also counted on a row that carries neither value. The model developer defines which cache interactions and which token directions a model distinguishes. Which of those a service provider meters as its own charge, and the meter name it uses, vary across service providers and across model versions, so each property identifies one attribute of the metered tokens independently of how a given service provider names its meters. Reasoning tokens are generated in a response, so a SKU that meters them separately carries TokenDirection "Output". Dimensions that qualify a charge without describing the direction of its tokens or their interaction with a cache, such as token modality, reasoning effort, cache retention duration, and context window size, are not values of these properties. Context-window pricing bounds are identified separately by ContextWindowMinimum and ContextWindowMaximum. [Examples: AI Prompt Caching](#appendix.examples:aipromptcaching) shows both properties on two service providers that meter cache activity differently.
+> 5. ContextWindowMinimum and ContextWindowMaximum identify the range of input tokens consumed from a single request, including cached input tokens, for which the SKU Price applies. They describe a pricing range, not the observed length of a request, the maximum context length of the model, or the aggregated quantity on a charge. Property values are JSON numbers, not quoted numbers. An unbounded maximum is the explicit JSON value null, not an omitted key. When the price does not depend on context-window size, both keys are omitted. The keys apply to every price qualified by the range, including output and separately metered cache charges, and are independent of processing tier. The numeric exceptions change the per-PricingUnit scaling basis, not the unit of measure: both bounds remain input tokens per request. [Examples: AI Context Window Pricing](#appendix.examples:aicontextwindowpricing) shows both properties on two service providers that publish their thresholds differently.
 
 ## Examples
 
