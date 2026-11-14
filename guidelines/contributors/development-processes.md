@@ -152,7 +152,7 @@ A Feature Request enters Champion scope through a **Champion scope sponsorship**
 
 A Feature Request is ready for a Champion scope sponsorship when:
 
-* The Feature Request has been triaged (its Status is neither `Submitted` nor `Needs More Info`).
+* The Feature Request is open and triaged, and its Status is not `Needs More Info`.
 * The champion records a comment on the Feature Request that they will lead the work through Task Force discussion and that it is ready for that discussion.
 * A Pull Request has been linked to the Feature Request.
 * The proposal has been discussed with at least one FOCUS member other than the champion, in one of the following ways:
