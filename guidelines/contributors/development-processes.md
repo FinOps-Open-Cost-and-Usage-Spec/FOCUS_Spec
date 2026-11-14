@@ -193,6 +193,7 @@ Once a Feature Request has been sponsored:
 * Additional Maintainers may add their own sponsorship to the Feature Request.
 * When Task Force capacity is limited, the Working Group Chair may consider the number of sponsorships, and the organizations they come from, when choosing which Champion scope item to place on an agenda first.
 * Task Forces schedule Champion scope items after Core scope items.
+* Once placed on a Task Force agenda, a Champion scope item follows the same review and approval process as Core scope work.
 * When a Champion scope item no longer has an active champion, the Working Group Chair may set its Scope field back to `Seeking Champion`.
 
 A sponsorship is not needed to raise an item under any other business at a Task Force meeting, or to discuss it in the Open Forum.
@@ -361,7 +362,7 @@ Use this option to provide *non-blocking feedback*, such as suggestions, request
 #### 2. **Approve**
 Select this option to indicate **formal approval** of the proposed contribution.  
 * At least **three (3)** Working Group members must submit an “Approve” review for the pull request (PR) to be eligible for merging.
-* An “Approve” review means the reviewer considers the PR ready to merge. To support Task Force discussion of Champion scope work, Maintainers use a Champion scope sponsorship instead (see [Champion Scope](#champion-scope)).
+* An “Approve” review does not bring Champion scope work to a Task Force. That signal is a Champion scope sponsorship (see [Champion Scope](#champion-scope)).
 
 #### 3. **Request Changes**
 Use this option when **significant revisions** are needed.  
