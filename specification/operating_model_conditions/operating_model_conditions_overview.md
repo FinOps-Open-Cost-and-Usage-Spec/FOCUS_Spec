@@ -15,6 +15,7 @@ Operating model conditions are sorted alphabetically by name.
 | [Includes Commitment Discounts](#operatingmodelconditions.includescommitmentdiscounts) | Commitment | Operating model includes commitment discounts. |
 | [Includes Commitment Programs](#operatingmodelconditions.includescommitmentprograms) | Commitment | Operating model includes commitment programs. |
 | [Includes Consumption Currency](#operatingmodelconditions.includesconsumptioncurrency) | Pricing | Operating model includes prices in consumption currency. |
+| [Includes Context Window Pricing](#operatingmodelconditions.includescontextwindowpricing) (preview) | Pricing | Operating model includes context-window pricing tiers. |
 | [Includes Contract Commitments](#operatingmodelconditions.includescontractcommitments) | Commitment | Operating model includes contract commitments. |
 | [Includes Multiple Billing Account Types](#operatingmodelconditions.includesmultiplebillingaccounttypes) | Account | Operating model includes multiple Billing Account Types. |
 | [Includes Multiple Pricing Categories](#operatingmodelconditions.includesmultiplepricingcategories) | Pricing | Operating model includes multiple pricing categories. |
