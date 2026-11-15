@@ -2,7 +2,7 @@
 
 The following examples illustrate how a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) uses the FOCUS-defined [SKU Price Details](#datamodel.costandusage.skupricedetails) properties ContextWindowMinimum and ContextWindowMaximum to identify the context-window pricing tier of each [*charge*](#glossary:charge). Provider and model names below are illustrative.
 
-Some [*service providers*](#glossary:service-provider) price an [*AI model*](#glossary:ai-model) differently depending on how many input [*tokens*](#glossary:token), including cached input *tokens*, a single request consumes. Each tier is a distinct [*SKU Price*](#glossary:sku-price), and every price in the tier (input, output, cache read, and cache write) carries the same bounds. Because the bounds sit on each charge, a practitioner can group or filter spend by tier without a catalog join and without parsing [SKU Meter](#datamodel.costandusage.skumeter) or [Charge Description](#datamodel.costandusage.chargedescription) text.
+Some [*service providers*](#glossary:service-provider) price an [*AI model*](#glossary:ai-model) differently depending on how many input [*tokens*](#glossary:token) a single request consumes, as each *service provider* counts them toward the threshold in its pricing terms. Each tier is a distinct [*SKU Price*](#glossary:sku-price), and every price in the tier (input, output, cache read, and cache write) carries the same bounds. Because the bounds sit on each charge, a practitioner can group or filter spend by tier without a catalog join and without parsing [SKU Meter](#datamodel.costandusage.skumeter) or [Charge Description](#datamodel.costandusage.chargedescription) text.
 
 ## Baseline Scenario
 
@@ -17,7 +17,7 @@ The following conditions apply to the scenarios below:
 
 ## Scenario A: Exclusive Published Threshold
 
-For this scenario, Acme Corp purchases Solora Reasoning Pro directly from Solora AI, which publishes one price for requests of up to 200,000 input tokens and another for requests over 200,000 input tokens. It prices input tokens, output tokens, cache reads, and cache writes in both tiers. Acme Corp also uses Solora General, whose price does not depend on context-window size.
+For this scenario, Acme Corp purchases Solora Reasoning Pro directly from Solora AI, which publishes one price for requests of up to 200,000 input tokens and another for requests over 200,000 input tokens. It prices input tokens, output tokens, cache reads, and cache writes in both tiers. Solora AI counts cached input tokens toward its threshold. Acme Corp also uses Solora General, whose price does not depend on context-window size.
 
 [**CSV Example**](/specification/data/ai_context_window_pricing/ai_context_window_pricing_a.csv)
 
@@ -25,14 +25,14 @@ Note the following details in the example dataset:
 
 * "Over 200,000" converts directly to a boundary of 200000. The standard tier carries ContextWindowMinimum 0 and ContextWindowMaximum 200000, and the long-context tier carries ContextWindowMinimum 200000 and a ContextWindowMaximum of null. A request of exactly 200,000 input tokens falls in the standard tier only.
 * In this example, each tier encodes its bounds in its SkuPriceId (e.g., "SOLORA-REASONING-PRO-INPUT-0-200000" and "SOLORA-REASONING-PRO-INPUT-200000-PLUS"). This naming is illustrative and is not required by FOCUS.
-* All four token meters in a tier carry the same bounds. The tier is selected by the input tokens the request consumes, including cached input tokens, so the output row of a long request carries the long-context bounds even though its tokens are output tokens, and the cache rows carry them because cached tokens count toward the request's input.
+* All four token meters in a tier carry the same bounds. The tier is selected by the input tokens the request consumes, which for Solora AI include cached input tokens, so the output row of a long request carries the long-context bounds even though its tokens are output tokens, and the cache rows carry them because Solora AI counts cached tokens toward the request's input.
 * TokenDirection and TokenCacheAction continue to identify the direction of the metered tokens and their interaction with the cache. ContextWindowMinimum and ContextWindowMaximum identify a separate pricing qualifier, not an additional value of either property.
 * The Solora General row carries neither ContextWindowMinimum nor ContextWindowMaximum, because its price does not depend on context-window size. It is not represented as a tier from 0 to null.
 * A Cost and Usage row aggregates many requests over the [*charge period*](#glossary:chargeperiod). The data generator assigns each request's tokens to the SkuPriceId of the matching tier before aggregation, so the tier of a row cannot be derived from its [ConsumedQuantity](#datamodel.costandusage.consumedquantity).
 
 ## Scenario B: Inclusive Published Threshold
 
-For this scenario, Acme Corp uses Meridian Command from Meridian AI, which publishes one price for requests below 128,000 input tokens and another for requests of 128,000 input tokens and above. It prices uncached input tokens, output tokens, and cached input tokens. Meridian AI does not bill cache writes, and does not include them in the uncached input meter.
+For this scenario, Acme Corp uses Meridian Command from Meridian AI, which publishes one price for requests below 128,000 input tokens and another for requests of 128,000 input tokens and above. It prices uncached input tokens, output tokens, and cached input tokens. Meridian AI does not bill cache writes, and does not include them in the uncached input meter. Meridian AI counts cached input tokens, including tokens placed into the cache, toward its threshold.
 
 [**CSV Example**](/specification/data/ai_context_window_pricing/ai_context_window_pricing_b.csv)
 
@@ -40,7 +40,7 @@ Note the following details in the example dataset:
 
 * "128,000 input tokens and above" includes the threshold in the long-context tier. Token counts are whole numbers, so the inclusive starting threshold converts to an exclusive lower bound one token below it, 127999. The standard tier carries ContextWindowMinimum 0 and ContextWindowMaximum 127999, and the long-context tier carries ContextWindowMinimum 127999 and a ContextWindowMaximum of null. A request of exactly 128,000 input tokens falls in the long-context tier, as the published terms state.
 * The data generator makes this conversion once, so a practitioner applies the same comparison to every *service provider*: a request falls in a tier when its input token count is strictly greater than ContextWindowMinimum and, when ContextWindowMaximum is not null, less than or equal to ContextWindowMaximum.
-* There is no cache write row, because Meridian AI does not bill cache writes. The "Input Tokens" rows hold only tokens that were neither served from nor placed into the cache, so they carry TokenCacheAction "Uncached".
+* There is no cache write row, because Meridian AI does not bill cache writes. The "Input Tokens" rows hold only tokens that were neither served from nor placed into the cache, so they carry TokenCacheAction "Uncached". Because Meridian AI counts tokens placed into the cache toward its threshold, those tokens still count toward the request's input token count when the tier is selected, even though no row meters them.
 
 ## Spend by Context-Window Tier
 
