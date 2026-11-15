@@ -1,6 +1,6 @@
 # Context Window Pricing
 
-Solora AI and Meridian AI each price an [*AI model*](#glossary:ai-model) differently depending on how many input [*tokens*](#glossary:token), including cached input *tokens*, a single request consumes. Context-window pricing is represented as one record per tier for each priced token meter, each carrying its own unit price and the same [ContextWindowMinimum](#datamodel.skuprice.contextwindowminimum) and [ContextWindowMaximum](#datamodel.skuprice.contextwindowmaximum) boundaries. These scenarios use their own fictitious price lists rather than extracts from the Aura Web rate card. All prices are fictitious round values for illustration.
+Solora AI and Meridian AI each price an [*AI model*](#glossary:ai-model) differently depending on how many input [*tokens*](#glossary:token) a single request consumes, and each counts cached input *tokens* toward its threshold. Context-window pricing is represented as one record per tier for each priced token meter, each carrying its own unit price and the same [ContextWindowMinimum](#datamodel.skuprice.contextwindowminimum) and [ContextWindowMaximum](#datamodel.skuprice.contextwindowmaximum) boundaries. These scenarios use their own fictitious price lists rather than extracts from the Aura Web rate card. All prices are fictitious round values for illustration.
 
 The fictitious operating models include unit pricing, usage measurement, and context-window pricing. They do not include regions, purchases, commitment discounts, or quantity tier pricing, so the conditional columns for those conditions are omitted. All records are public list usage rates, globally eligible, with a null ContractId.
 
@@ -10,7 +10,7 @@ The fictitious operating models include unit pricing, usage measurement, and con
 
 Note the following details in the example dataset:
 
-* Each tier of each token meter carries its own [SkuPriceId](#datamodel.skuprice.skupriceid), encoding its boundaries, for example "SOLORA-REASONING-PRO-INPUT-0-200000" and "SOLORA-REASONING-PRO-INPUT-200000-PLUS". The tiers of a meter share a [SkuId](#datamodel.skuprice.skuid).
+* Each tier of each token meter carries its own [SkuPriceId](#datamodel.skuprice.skupriceid). In this example, each tier encodes its bounds in its SkuPriceId (e.g., "SOLORA-REASONING-PRO-INPUT-0-200000" and "SOLORA-REASONING-PRO-INPUT-200000-PLUS"). This naming is illustrative and is not required by FOCUS. The tiers of a meter share a [SkuId](#datamodel.skuprice.skuid).
 * ContextWindowMinimum is an exclusive lower bound and ContextWindowMaximum is an inclusive upper bound, the same convention as [QuantityTierMinimum](#datamodel.skuprice.quantitytierminimum) and [QuantityTierMaximum](#datamodel.skuprice.quantitytiermaximum). The tiers cover the following request sizes, measured in input tokens per request:
 
 | Service provider | Published threshold | Request size | ContextWindowMinimum | ContextWindowMaximum |

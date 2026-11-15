@@ -1,6 +1,6 @@
 # Includes Context Window Pricing
 
-The Includes Context Window Pricing operating model condition represents a verifiable state indicating whether the [*operating model*](#glossary:operating-model) includes context-window pricing tiers based on the number of input [*tokens*](#glossary:token), including cached input *tokens*, consumed from a single request.
+The Includes Context Window Pricing operating model condition represents a verifiable state indicating whether the [*operating model*](#glossary:operating-model) includes context-window pricing tiers based on the number of input [*tokens*](#glossary:token) consumed from a single request, as counted by the [*service provider*](#glossary:service-provider) toward the threshold in its pricing terms.
 
 > **Preview:** Includes Context Window Pricing exists for the SKU Price dataset, which is a preview in this version of FOCUS. While that dataset is a preview, Includes Context Window Pricing may change in the next version without a deprecation notice.
 

@@ -1,8 +1,8 @@
 # Context Window Maximum
 
-Context Window Maximum represents the inclusive upper boundary of a context-window pricing tier for the specified [*SKU Price*](#glossary:sku-price). This value is measured in input [*tokens*](#glossary:token), including cached input *tokens* served from or placed into a [*prompt cache*](#glossary:prompt-cache), consumed from a single request.
+Context Window Maximum represents the inclusive upper boundary of a context-window pricing tier for the specified [*SKU Price*](#glossary:sku-price). This value is measured in input [*tokens*](#glossary:token) consumed from a single request, as counted by the [*service provider*](#glossary:service-provider) toward the threshold in its pricing terms. When the *service provider* counts cached input *tokens*, whether served from or placed into a [*prompt cache*](#glossary:prompt-cache), toward that threshold, the count includes them.
 
-When combined with [Context Window Minimum](#datamodel.skuprice.contextwindowminimum), this column defines the range of input *tokens*, including cached input *tokens*, consumed from a single request for which a specific unit price applies. When a *SKU Price* represents a context-window pricing tier with no upper bound, this value is null and Context Window Minimum is non-null. When the *SKU Price*'s price does not depend on context-window size, both columns are null: the qualifier does not apply.
+When combined with [Context Window Minimum](#datamodel.skuprice.contextwindowminimum), this column defines the range of input *tokens* consumed from a single request, as counted by the *service provider* toward the threshold in its pricing terms, for which a specific unit price applies. When a *SKU Price* represents a context-window pricing tier with no upper bound, this value is null and Context Window Minimum is non-null. When the *SKU Price*'s price does not depend on context-window size, both columns are null: the qualifier does not apply.
 
 ## Requirements
 
@@ -10,7 +10,7 @@ ContextWindowMaximum MUST adhere to the following requirements:
 
 * ContextWindowMaximum MUST be of type Decimal.
 * ContextWindowMaximum MUST conform to [NumericFormat](#attributes.numericformat) requirements.
-* ContextWindowMaximum MUST represent a count of input *tokens*, including cached input *tokens*, consumed from a single request when ContextWindowMaximum is not null.
+* ContextWindowMaximum MUST represent a count of input *tokens* consumed from a single request, as counted by the *service provider* toward the threshold in its pricing terms, when ContextWindowMaximum is not null.
 * ContextWindowMaximum MUST adhere to the following nullability requirements:
   * ContextWindowMaximum MUST be null when the price for the record does not depend on context-window size.
   * ContextWindowMaximum MUST be null when ContextWindowMinimum is not null and there is no upper limit for the context-window pricing tier.
@@ -21,7 +21,7 @@ ContextWindowMaximum MUST adhere to the following requirements:
 
 ## Implementation Guidance
 
-Context-window qualifiers apply only when Context Window Minimum is non-null. For such a record, a request falls within a tier when the number of input *tokens*, including cached input *tokens*, consumed from that request is strictly greater than Context Window Minimum and, when Context Window Maximum is not null, less than or equal to Context Window Maximum. The count includes cached input *tokens*, whether served from or placed into a *prompt cache*. Cache activity does not change the unit used to measure the context-window bounds.
+Context-window qualifiers apply only when Context Window Minimum is non-null. For such a record, a request falls within a tier when the number of input *tokens* consumed from that request, as counted by the *service provider* toward the threshold in its pricing terms, is strictly greater than Context Window Minimum and, when Context Window Maximum is not null, less than or equal to Context Window Maximum. When the *service provider* counts cached input *tokens*, whether served from or placed into a *prompt cache*, toward that threshold, the count includes them. Cache activity does not change the unit used to measure the context-window bounds.
 
 Both columns default to null. A data generator populates them only for records whose price depends on context-window size. When a tier schedule covers every positive input-token count, the lowest tier uses a Context Window Minimum of 0. A threshold-only surcharge can start above zero; its unqualified base price has null in both columns. Records whose price does not depend on context size have null in both columns, not a 0-to-null tier. For a context-window tier with no upper bound, Context Window Maximum is null. Its non-null Context Window Minimum distinguishes an unbounded tier from an inapplicable qualifier.
 
@@ -41,7 +41,7 @@ Context Window Maximum
 
 ## Description
 
-The inclusive upper boundary of a context-window pricing tier, measured in input tokens, including cached input tokens, consumed from a single request.
+The inclusive upper boundary of a context-window pricing tier, measured in input tokens consumed from a single request, as counted by the service provider toward the threshold in its pricing terms.
 
 ## Content Constraints
 
