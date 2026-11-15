@@ -24,7 +24,7 @@ For this scenario, Acme Corp purchases Solora Reasoning Pro directly from Solora
 Note the following details in the example dataset:
 
 * "Over 200,000" converts directly to a boundary of 200000. The standard tier carries ContextWindowMinimum 0 and ContextWindowMaximum 200000, and the long-context tier carries ContextWindowMinimum 200000 and a ContextWindowMaximum of null. A request of exactly 200,000 input tokens falls in the standard tier only.
-* Each tier encodes its bounds in its SkuPriceId, for example "SOLORA-REASONING-PRO-INPUT-0-200000" and "SOLORA-REASONING-PRO-INPUT-200000-PLUS".
+* In this example, each tier encodes its bounds in its SkuPriceId (e.g., "SOLORA-REASONING-PRO-INPUT-0-200000" and "SOLORA-REASONING-PRO-INPUT-200000-PLUS"). This naming is illustrative and is not required by FOCUS.
 * All four token meters in a tier carry the same bounds. The tier is selected by the input tokens the request consumes, including cached input tokens, so the output row of a long request carries the long-context bounds even though its tokens are output tokens, and the cache rows carry them because cached tokens count toward the request's input.
 * TokenDirection and TokenCacheAction continue to identify the direction of the metered tokens and their interaction with the cache. ContextWindowMinimum and ContextWindowMaximum identify a separate pricing qualifier, not an additional value of either property.
 * The Solora General row carries neither ContextWindowMinimum nor ContextWindowMaximum, because its price does not depend on context-window size. It is not represented as a tier from 0 to null.

@@ -18,13 +18,12 @@ SkuPriceDetails MUST adhere to the following requirements:
 * SkuPriceDetails property keys SHOULD conform to [*PascalCase*](#glossary:pascalcase) format.
 * SkuPriceDetails MUST adhere to the following nullability requirements:
   * SkuPriceDetails MUST be null when SkuPriceId is null.
-  * SkuPriceDetails MUST NOT be null when SkuPriceId is not null and the corresponding *SKU Price* depends on context-window size.
-  * SkuPriceDetails MAY be null when SkuPriceId is not null and the corresponding *SKU Price* does not depend on context-window size.
+  * SkuPriceDetails MAY be null when SkuPriceId is not null.
 * When SkuPriceDetails is not null, SkuPriceDetails MUST adhere to the following requirements:
   * SkuPriceDetails MUST be associated with a given SkuPriceId.
   * SkuPriceDetails MUST include the FOCUS-defined SKU Price property when an equivalent property is included as a custom property.
-  * SkuPriceDetails MUST include ContextWindowMinimum when the *SKU Price* depends on context-window size.
-  * SkuPriceDetails MUST include ContextWindowMaximum when the *SKU Price* depends on context-window size.
+  * SkuPriceDetails SHOULD include ContextWindowMinimum when the *SKU Price* depends on context-window size.
+  * SkuPriceDetails SHOULD include ContextWindowMaximum when the *SKU Price* depends on context-window size.
   * SkuPriceDetails MUST NOT include properties that are not applicable to the corresponding SkuPriceId.
   * SkuPriceDetails MUST NOT include TokenCacheAction when the *SKU Price* does not meter [*tokens*](#glossary:token) consumed from a request (e.g., tokens generated in a response, or a charge for retaining cached content metered in token-hours).
   * SkuPriceDetails MUST NOT include TokenCacheAction when the *SKU Price* meters request tokens served from or placed into a [*prompt cache*](#glossary:prompt-cache) together with request tokens that were not (e.g., request tokens billed on one meter whether or not they were placed into a *prompt cache*).
@@ -41,8 +40,6 @@ SkuPriceDetails MUST adhere to the following requirements:
     * Existing SkuPriceDetails properties SHOULD remain consistent over time.
     * Existing SkuPriceDetails properties SHOULD NOT be removed.
     * Additional SkuPriceDetails properties MAY be added over time.
-    * ContextWindowMinimum MUST have one and only one value when included.
-    * ContextWindowMaximum MUST have one and only one value, including null, when included.
   * Property key SHOULD remain consistent across comparable *SKUs* having that property, and the values for this key SHOULD remain in a consistent format.
   * Property key MUST begin with the string "x_" unless it is a FOCUS-defined property.
   * Property value MUST represent the value for a single [PricingUnit](#datamodel.costandusage.pricingunit) when the property holds a numeric value, except when the property key is "ContextWindowMinimum" or "ContextWindowMaximum".
@@ -60,13 +57,11 @@ SkuPriceDetails MUST adhere to the following requirements:
   * TokenDirection MUST be "Input" when the *SKU Price* meters tokens consumed from a request.
   * TokenDirection MUST be "Output" when the *SKU Price* meters tokens generated in a response.
 * When included, ContextWindowMinimum MUST adhere to the following requirements:
-  * ContextWindowMinimum MUST be of type Numeric.
   * ContextWindowMinimum MUST NOT be null.
   * ContextWindowMinimum MUST conform to [NumericFormat](#attributes.numericformat) requirements.
   * ContextWindowMinimum MUST be a non-negative decimal value.
   * ContextWindowMinimum MUST represent the exclusive lower bound of the input *token* count, including cached input *tokens*, consumed from a single request for which the *SKU Price* applies.
 * When included, ContextWindowMaximum MUST adhere to the following requirements:
-  * ContextWindowMaximum MUST be of type Numeric when ContextWindowMaximum is not null.
   * ContextWindowMaximum MUST conform to NumericFormat requirements when ContextWindowMaximum is not null.
   * ContextWindowMaximum MUST adhere to the following nullability requirements:
     * ContextWindowMaximum MUST be null when the context-window pricing tier has no upper limit.
