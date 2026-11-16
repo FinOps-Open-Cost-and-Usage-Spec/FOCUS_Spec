@@ -12,9 +12,10 @@ from each ``datasets/*/dataset.md``), and a column read from it must be one
 of that dataset's Column IDs.
 Qualifiers resolve through table aliases, CTEs, and derived tables. A
 qualifier that names no source its query reads fails, unless it names a
-column or an alias the statement declares (e.g. a PIVOT alias), which sqlglot
-does not always map to a source. An unqualified column in a query that joins
-several tables must be a column of at least one of them. An output alias
+column or an alias that its query or an enclosing query declares (e.g. a
+PIVOT alias), which sqlglot does not always map to a source. An unqualified
+column in a query that joins several tables must be a column of at least one
+of them. An output alias
 counts only in the query that defines it, and a CTE's column list only in a
 query that reads the CTE.
 
@@ -217,25 +218,64 @@ def _query_aliases(query):
     return names
 
 
+def _declaring_query(node):
+    """Return the query whose clauses declare ``node``, or None.
+
+    A table alias, column list, or column definition belongs to the query
+    whose FROM, JOIN, or WITH clause holds it, not to a derived table, UNNEST,
+    or CTE body it labels.
+    """
+    owner = node.parent
+    while owner is not None and not isinstance(owner, (exp.Select, exp.SetOperation)):
+        owner = owner.parent
+    return owner
+
+
 def _alias_names(tree):
     """Table aliases, column lists, and inline column definitions.
 
-    A qualifier that names one of these but no source its query reads may be
-    a PIVOT alias or a field of an UNNEST element, neither of which sqlglot
-    maps to a source. CTE names are left out: a qualifier that names a CTE
-    must name one its query reads. Lower-cased for matching.
+    Returns (name, declaring query, CTE name) triples; the CTE name is set for
+    a CTE's column list and None otherwise. A qualifier that names one of
+    these but no source its query reads may be a PIVOT alias or a field of an
+    UNNEST element, neither of which sqlglot maps to a source. CTE names are
+    left out: a qualifier that names a CTE must name one its query reads.
+    See ``_visible_alias_names`` for where each name counts. Lower-cased for
+    matching.
     """
-    names = set()
+    names = []
     for table_alias in tree.find_all(exp.TableAlias):
-        if table_alias.name and not isinstance(table_alias.parent, exp.CTE):
-            names.add(table_alias.name.lower())
+        owner = _declaring_query(table_alias)
+        cte = None
+        if isinstance(table_alias.parent, exp.CTE):
+            cte = table_alias.name.lower()
+        elif table_alias.name:
+            names.append((table_alias.name.lower(), owner, None))
         for column in table_alias.args.get("columns") or []:
             if getattr(column, "name", None):
-                names.add(column.name.lower())
+                names.append((column.name.lower(), owner, cte))
     for definition in tree.find_all(exp.ColumnDef, exp.JSONColumnDef):
         if definition.name:
-            names.add(definition.name.lower())
+            names.append((definition.name.lower(), _declaring_query(definition), None))
     return names
+
+
+def _visible_alias_names(scope, alias_names):
+    """Return the names in ``alias_names`` a column in ``scope`` can use.
+
+    A name counts when its own query or a query enclosing it declares it, so a
+    sibling CTE or a nested subquery does not vouch for a qualifier. A CTE's
+    column list counts only where that query also reads the CTE.
+    """
+    chain, read = set(), set()
+    while scope is not None:
+        chain.add(id(scope.expression))
+        read |= {name.lower() for name in scope.selected_sources}
+        scope = scope.parent
+    return {
+        name
+        for name, owner, cte in alias_names
+        if (owner is None or id(owner) in chain) and (cte is None or cte in read)
+    }
 
 
 def _local_names(tree, query_column_lists=True):
@@ -470,8 +510,9 @@ def _column_problem(
 
     A qualified column must be a column of the source its qualifier names, in
     its own query or one enclosing it. A qualifier that names no such source
-    fails, unless it names a column or one of ``alias_names`` (field access,
-    or a source sqlglot does not map); the column then falls back as below.
+    fails, unless it names a column or one of ``alias_names`` that its own
+    query or an enclosing one declares (field access, or a source sqlglot
+    does not map); the column then falls back as below.
     An unqualified column must be a column of a source its query reads (in a
     SEMI or ANTI join's condition, that join's right side too), or a name in
     ``local``; in a query that reads a table function, any name in
@@ -490,7 +531,9 @@ def _column_problem(
         source = _find_source(scope, column.table)
         if source is None:
             qualifier = column.table.lower()
-            if qualifier in alias_names or qualifier in all_columns:
+            if qualifier in all_columns or qualifier in _visible_alias_names(
+                scope, alias_names
+            ):
                 return fallback
             return f"no table or alias named {column.table} in the query"
         if _is_table_function(source):
@@ -610,7 +653,7 @@ def test_sql_block_references_known_columns(sql):
 
 # Self-tests for the column check, run against a small fixed schema so they do
 # not move when the spec's datasets change. Each case pairs a query with the
-# column references the check must flag.
+# column references the check must flag, each with the reason a contributor reads.
 _SELF_TEST_DATASET_COLUMNS = {
     "costandusage": {
         "billedcost",
@@ -626,301 +669,332 @@ _SELF_TEST_DATASET_COLUMNS = {
 _SELF_TEST_CASES = [
     pytest.param(
         "SELECT ListUnitPrice FROM SkuPrice",
-        {"ListUnitPrice"},
+        {"ListUnitPrice": "not a column of SkuPrice"},
         id="unqualified-column-of-another-dataset",
     ),
     pytest.param(
         "SELECT SP.ListUnitPrice FROM SkuPrice SP",
-        {"SP.ListUnitPrice"},
+        {"SP.ListUnitPrice": "not a column of SkuPrice"},
         id="qualifier-resolved-through-table-alias",
     ),
     pytest.param(
         "SELECT SP.ListUnitPrice FROM CostAndUsage CU "
         "JOIN SkuPrice SP ON CU.SkuPriceId = SP.SkuPriceId",
-        {"SP.ListUnitPrice"},
+        {"SP.ListUnitPrice": "not a column of SkuPrice"},
         id="qualifier-checked-against-its-own-dataset-in-join",
     ),
     pytest.param(
         "SELECT ListUnitPrice, UnitPrice FROM CostAndUsage CU "
         "JOIN SkuPrice SP ON CU.SkuPriceId = SP.SkuPriceId",
-        set(),
+        {},
         id="unqualified-column-of-any-joined-dataset",
     ),
     pytest.param(
         "SELECT ListUnitPrice FROM focus_data_table",
-        {"ListUnitPrice"},
+        {"ListUnitPrice": "no FOCUS dataset named focus_data_table"},
         id="retired-focus-data-table-name-is-not-a-dataset",
     ),
     pytest.param(
         "SELECT BilledCost FROM CostAndUsages",
-        {"BilledCost"},
+        {"BilledCost": "no FOCUS dataset named CostAndUsages"},
         id="table-that-is-not-a-dataset",
     ),
     pytest.param(
         "SELECT C.BilledCost FROM CostAndUsages C",
-        {"C.BilledCost"},
+        {"C.BilledCost": "no FOCUS dataset named CostAndUsages"},
         id="qualifier-names-a-table-that-is-not-a-dataset",
     ),
     pytest.param(
         "SELECT CU.BilledCost, SP.UnitPrice FROM CostAndUsage CU",
-        {"SP.UnitPrice"},
+        {"SP.UnitPrice": "no table or alias named SP in the query"},
         id="qualifier-names-no-source-in-the-query",
     ),
     pytest.param(
         "WITH T AS (SELECT UnitPrice FROM SkuPrice) "
         "SELECT T.UnitPrice FROM CostAndUsage",
-        {"T.UnitPrice"},
+        {"T.UnitPrice": "no table or alias named T in the query"},
         id="qualifier-names-a-cte-the-query-does-not-read",
+    ),
+    pytest.param(
+        "WITH Prices AS (SELECT SP.UnitPrice FROM SkuPrice SP) "
+        "SELECT CU.BilledCost, SP.UnitPrice FROM CostAndUsage CU",
+        {"SP.UnitPrice": "no table or alias named SP in the query"},
+        id="qualifier-names-an-alias-from-a-sibling-cte",
+    ),
+    pytest.param(
+        "WITH T (SP) AS (SELECT BilledCost FROM CostAndUsage) "
+        "SELECT CU.BilledCost, SP.UnitPrice FROM CostAndUsage CU",
+        {"SP.UnitPrice": "no table or alias named SP in the query"},
+        id="qualifier-names-a-column-list-of-a-cte-not-read",
+    ),
+    pytest.param(
+        "SELECT CU.BilledCost, SP.UnitPrice FROM CostAndUsage CU WHERE EXISTS "
+        "(SELECT 1 FROM (SELECT UnitPrice FROM SkuPrice) SP)",
+        {"SP.UnitPrice": "no table or alias named SP in the query"},
+        id="qualifier-names-an-alias-from-a-nested-query",
+    ),
+    pytest.param(
+        "WITH T (E) AS (SELECT ContractApplied FROM CostAndUsage) "
+        "SELECT E.ContractId FROM T",
+        {},
+        id="qualifier-names-a-column-list-of-a-cte-read",
+    ),
+    pytest.param(
+        "SELECT P.SkuPriceId FROM CostAndUsage PIVOT (SUM(BilledCost) "
+        "FOR InvoiceId IN ('a' AS Compute)) AS P WHERE EXISTS "
+        "(SELECT 1 FROM SkuPrice WHERE P.ContractId > 0)",
+        {},
+        id="pivot-alias-resolves-in-a-correlated-subquery",
     ),
     pytest.param(
         "SELECT CU.BilledCost FROM CostAndUsage CU LEFT SEMI JOIN InvoiceDetail I "
         "ON I.InvoiceId = CU.InvoiceId AND I.ListUnitPrice > 0",
-        {"I.ListUnitPrice"},
+        {"I.ListUnitPrice": "not a column of InvoiceDetail"},
         id="semi-join-right-side-resolves-to-its-dataset",
     ),
     pytest.param(
         "SELECT BilledCost FROM CostAndUsage CU LEFT SEMI JOIN SkuPrice SP "
         "ON CU.SkuPriceId = SP.SkuPriceId AND UnitPrice > 0",
-        set(),
+        {},
         id="semi-join-condition-reads-its-right-side",
     ),
     pytest.param(
         "SELECT BilledCost FROM CostAndUsage CU LEFT ANTI JOIN SkuPrice SP "
         "ON CU.SkuPriceId = SP.SkuPriceId AND UnitPrice > 0",
-        set(),
+        {},
         id="anti-join-condition-reads-its-right-side",
     ),
     pytest.param(
         "SELECT UnitPrice FROM CostAndUsage CU LEFT SEMI JOIN SkuPrice SP "
         "ON CU.SkuPriceId = SP.SkuPriceId",
-        {"UnitPrice"},
+        {"UnitPrice": "not a column of CostAndUsage"},
         id="semi-join-right-side-hidden-outside-its-condition",
     ),
     pytest.param(
         "SELECT CU.Cost, CU.InvoiceId FROM CostAndUsage AS CU (Cost)",
-        set(),
+        {},
         id="table-column-list-adds-its-names",
     ),
     pytest.param(
         "SELECT InvoiceId, Cost FROM InvoiceDetail WHERE EXISTS "
         "(SELECT 1 FROM CostAndUsage AS CU (Cost))",
-        {"Cost"},
+        {"Cost": "not a column of InvoiceDetail"},
         id="table-column-list-not-read-does-not-vouch",
     ),
     pytest.param(
         "WITH T AS (SELECT SkuPriceId, SUM(BilledCost) AS Total "
         "FROM CostAndUsage GROUP BY SkuPriceId) "
         "SELECT T.SkuPriceId, Total FROM T ORDER BY Total",
-        set(),
+        {},
         id="cte-output-columns-and-aliases",
     ),
     pytest.param(
         "WITH A AS (SELECT ListUnitPrice FROM CostAndUsage) "
         "SELECT ListUnitPrice FROM SkuPrice",
-        {"ListUnitPrice"},
+        {"ListUnitPrice": "not a column of SkuPrice"},
         id="cte-not-joined-does-not-vouch",
     ),
     pytest.param(
         "WITH T AS (SELECT SUM(BilledCost) AS UnitPrice FROM CostAndUsage) "
         "SELECT InvoiceId, UnitPrice FROM InvoiceDetail",
-        {"UnitPrice"},
+        {"UnitPrice": "not a column of InvoiceDetail"},
         id="alias-in-cte-not-joined-does-not-vouch",
     ),
     pytest.param(
         "WITH T (UnitPrice) AS (SELECT BilledCost FROM CostAndUsage) "
         "SELECT InvoiceId, UnitPrice FROM InvoiceDetail",
-        {"UnitPrice"},
+        {"UnitPrice": "not a column of InvoiceDetail"},
         id="cte-column-list-not-joined-does-not-vouch",
     ),
     pytest.param(
         "WITH P (SkuPriceId, Quantity) AS (VALUES (?, ?)) "
         "SELECT P.Quantity * SP.UnitPrice AS Amount, P.ListUnitPrice "
         "FROM P JOIN SkuPrice SP ON SP.SkuPriceId = P.SkuPriceId",
-        {"P.ListUnitPrice"},
+        {"P.ListUnitPrice": "not a column of P"},
         id="cte-column-list-defines-its-columns",
     ),
     pytest.param(
         "WITH T (Total) AS (SELECT SUM(BilledCost) FROM CostAndUsage) "
         "SELECT Total FROM T",
-        set(),
+        {},
         id="cte-column-list-resolves-where-the-cte-is-read",
     ),
     pytest.param(
         "WITH T (Cost) AS (SELECT BilledCost, InvoiceId FROM CostAndUsage) "
         "SELECT Cost, InvoiceId, T.BilledCost FROM T",
-        {"T.BilledCost"},
+        {"T.BilledCost": "not a column of T"},
         id="partial-cte-column-list-keeps-later-columns",
     ),
     pytest.param(
         "WITH RECURSIVE R (n) AS (SELECT 1 UNION ALL "
         "SELECT n + 1 FROM R WHERE n < 10) SELECT n FROM R",
-        set(),
+        {},
         id="recursive-cte-column-list",
     ),
     pytest.param(
         "WITH T (Total) AS ((SELECT SUM(BilledCost) FROM CostAndUsage)) "
         "SELECT Total FROM T",
-        set(),
+        {},
         id="parenthesized-cte-body-column-list",
     ),
     pytest.param(
         "WITH U AS (SELECT * FROM CostAndUsage UNION ALL "
         "SELECT * FROM InvoiceDetail) SELECT UnitPrice, NotAColumn FROM U",
-        {"NotAColumn"},
+        {"NotAColumn": "not a FOCUS column"},
         id="unexpandable-star-falls-back-to-any-dataset",
     ),
     pytest.param(
         "WITH U AS (SELECT * FROM CostAndUsage UNION ALL "
         "SELECT * FROM InvoiceDetail) SELECT ContractApplied "
         "FROM U JOIN SkuPrice SP ON U.SkuPriceId = SP.SkuPriceId",
-        set(),
+        {},
         id="unexpandable-star-joined-to-a-dataset-falls-back",
     ),
     pytest.param(
         "WITH A AS (SELECT BilledCost AS Cost FROM CostAndUsage), "
         "B AS (SELECT BilledCost AS Cost FROM InvoiceDetail), "
         "U AS (SELECT * FROM A UNION ALL SELECT * FROM B) SELECT Cost FROM U",
-        set(),
+        {},
         id="unexpandable-star-falls-back-to-any-name-the-statement-defines",
     ),
     pytest.param(
         "WITH T AS (SELECT * FROM SkuPrice) SELECT T.ListUnitPrice FROM T",
-        {"T.ListUnitPrice"},
+        {"T.ListUnitPrice": "not a column of T"},
         id="star-cte-exposes-its-dataset-columns",
     ),
     pytest.param(
         "SELECT ID.BilledCost FROM (SELECT InvoiceId FROM InvoiceDetail) ID",
-        {"ID.BilledCost"},
+        {"ID.BilledCost": "not a column of ID"},
         id="derived-table-exposes-only-its-projection",
     ),
     pytest.param(
         "SELECT InvoiceId, UnitPrice FROM InvoiceDetail WHERE EXISTS "
         "(SELECT 1 FROM (SELECT BilledCost FROM CostAndUsage) AS D (UnitPrice))",
-        {"UnitPrice"},
+        {"UnitPrice": "not a column of InvoiceDetail"},
         id="derived-table-column-list-not-read-does-not-vouch",
     ),
     pytest.param(
         "SELECT SP.SkuPriceId FROM SkuPrice SP WHERE EXISTS "
         "(SELECT 1 FROM CostAndUsage CU "
         "WHERE CU.SkuPriceId = SP.SkuPriceId AND SP.ListUnitPrice > 0)",
-        {"SP.ListUnitPrice"},
+        {"SP.ListUnitPrice": "not a column of SkuPrice"},
         id="correlated-qualifier-resolved-in-outer-query",
     ),
     pytest.param(
         "SELECT SP.SkuPriceId FROM SkuPrice SP WHERE EXISTS "
         "(SELECT 1 FROM CostAndUsage CU "
         "WHERE CU.SkuPriceId = SP.SkuPriceId AND UnitPrice > 0)",
-        set(),
+        {},
         id="correlated-unqualified-column-of-outer-query",
     ),
     pytest.param(
         "SELECT CU.x_Team, JSON_VALUE(CA, '$.ContractId') FROM CostAndUsage CU "
         "CROSS JOIN UNNEST(JSON_EXTRACT_ARRAY(CU.ContractApplied, '$.Elements'))"
         " AS CA",
-        set(),
+        {},
         id="unnest-alias-and-custom-column",
     ),
     pytest.param(
         "SELECT E.ContractId FROM CostAndUsage "
         "CROSS JOIN UNNEST(ContractApplied) AS E",
-        set(),
+        {},
         id="unnest-element-field",
     ),
     pytest.param(
         "SELECT E.ContractId FROM CostAndUsage "
         "CROSS JOIN UNNEST(ContractApplied) AS T (E)",
-        set(),
+        {},
         id="unnest-element-field-through-column-alias",
     ),
     pytest.param(
         "SELECT ContractApplied.ContractId FROM CostAndUsage",
-        set(),
+        {},
         id="field-access-on-a-column-falls-back",
     ),
     pytest.param(
         "SELECT JSON_VALUE(E, '$.Id') FROM SkuPrice CROSS JOIN "
         "UNNEST(JSON_EXTRACT_ARRAY(ContractApplied, '$.Elements')) AS E",
-        {"ContractApplied"},
+        {"ContractApplied": "not a column of SkuPrice"},
         id="unnest-argument-resolved-in-its-query",
     ),
     pytest.param(
         "SELECT Total FROM CostAndUsage CU CROSS JOIN LATERAL "
         "(SELECT CU.BilledCost * 2 AS Total) AS L ORDER BY Total",
-        set(),
+        {},
         id="lateral-output-alias",
     ),
     pytest.param(
         "SELECT SUM(ListUnitPrice) AS ListUnitPrice FROM SkuPrice",
-        {"ListUnitPrice"},
+        {"ListUnitPrice": "not a column of SkuPrice"},
         id="alias-does-not-vouch-for-its-own-input",
     ),
     pytest.param(
         "SELECT SUM(BilledCost) AS Total FROM CostAndUsage ORDER BY Total",
-        set(),
+        {},
         id="alias-resolves-in-its-own-query",
     ),
     pytest.param(
         "SELECT InvoiceId FROM InvoiceDetail WHERE EXISTS "
         "(SELECT BilledCost AS Amount FROM CostAndUsage UNION ALL "
         "SELECT BilledCost FROM InvoiceDetail ORDER BY Amount)",
-        set(),
+        {},
         id="alias-resolves-in-union-order-by",
     ),
     pytest.param(
         "SELECT P.SkuPriceId, Compute FROM CostAndUsage PIVOT (SUM(BilledCost) "
         "FOR InvoiceId IN ('a' AS Compute, 'b' AS Storage)) AS P",
-        set(),
+        {},
         id="pivot-alias-and-output-names",
     ),
     pytest.param(
         "SELECT TRIM(E) AS E FROM CostAndUsage "
         "CROSS JOIN UNNEST(ContractApplied) AS E",
-        set(),
+        {},
         id="alias-repeats-an-unnest-alias",
     ),
     pytest.param(
         "SELECT JT.ContractName AS ContractName FROM CostAndUsage CU, "
         "JSON_TABLE(CU.ContractApplied, '$.Elements[*]' "
         "COLUMNS (ContractName VARCHAR(50) PATH '$.Name')) AS JT",
-        set(),
+        {},
         id="alias-repeats-a-json-table-column",
     ),
     pytest.param(
         "WITH Totals AS (SELECT InvoiceId FROM CostAndUsage) "
         "SELECT InvoiceId FROM totals",
-        set(),
+        {},
         id="cte-named-in-different-case",
     ),
     pytest.param(
         "WITH T AS (SELECT InvoiceId FROM CostAndUsage) SELECT InvoiceId "
         "FROM T WHERE EXISTS (WITH t AS (SELECT InvoiceId FROM InvoiceDetail) "
         "SELECT InvoiceId FROM t)",
-        set(),
+        {},
         id="nested-ctes-named-in-different-case",
     ),
     pytest.param(
         "SELECT BilledCost FROM (SELECT BilledCost FROM CostAndUsage) "
         "JOIN (SELECT InvoiceId FROM InvoiceDetail) ON TRUE",
-        set(),
+        {},
         id="unaliased-derived-tables",
     ),
     pytest.param(
         "SELECT SP.SkuPriceId FROM SkuPrice SP WHERE EXISTS "
         "(SELECT 1 FROM CostAndUsage CU WHERE CU.SkuPriceId = SP.SkuPriceId "
         "UNION ALL SELECT 1 FROM InvoiceDetail WHERE UnitPrice > 0)",
-        set(),
+        {},
         id="union-branch-resolves-in-outer-query",
     ),
     pytest.param(
         "SELECT CU.* FROM CostAndUsage CU",
-        set(),
+        {},
         id="qualified-star",
     ),
     pytest.param(
         "WITH T AS (SELECT CU.* FROM CostAndUsage CU "
         "JOIN SkuPrice SP ON CU.SkuPriceId = SP.SkuPriceId) "
         "SELECT T.BilledCost, T.UnitPrice FROM T",
-        {"T.UnitPrice"},
+        {"T.UnitPrice": "not a column of T"},
         id="qualified-star-cte-exposes-only-its-table",
     ),
 ]
@@ -928,5 +1002,5 @@ _SELF_TEST_CASES = [
 
 @pytest.mark.parametrize("sql, expected", _SELF_TEST_CASES)
 def test_column_check_resolves_references_per_table(sql, expected):
-    """The column check flags exactly the references that do not resolve."""
-    assert set(_unresolved_columns(sql, _SELF_TEST_DATASET_COLUMNS)) == expected
+    """The column check flags exactly the references that do not resolve, and why."""
+    assert _unresolved_columns(sql, _SELF_TEST_DATASET_COLUMNS) == expected
