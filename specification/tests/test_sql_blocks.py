@@ -15,9 +15,12 @@ qualifier that names no source its query reads fails, unless it names a
 column or an alias that its query or an enclosing query declares (e.g. a
 PIVOT alias), which sqlglot does not always map to a source. An unqualified
 column in a query that joins several tables must be a column of at least one
-of them. An output alias
-counts only in the query that defines it, and a CTE's column list only in a
-query that reads the CTE.
+of them. The right side of a SEMI or ANTI join is readable only in that
+join's ON condition. An output alias counts only in the query that defines
+it, and a CTE's column list only in a query that reads the CTE. When sqlglot
+cannot map a query's tables (e.g. an unaliased self-join), that query's
+columns only have to be FOCUS columns of some dataset. A table that is not a
+FOCUS dataset fails, including an ``x_``-prefixed one.
 
 The ``?`` character is permitted as a bind placeholder for tunable query
 values; sqlglot parses it natively, so no preprocessing is required.
@@ -402,22 +405,36 @@ def _source_label(name, source):
     return name
 
 
-def _find_source(scope, qualifier):
-    """Return the FROM/JOIN source a column qualifier names, or None.
+def _find_source(scope, column):
+    """Return the FROM/JOIN source ``column``'s qualifier names, or None.
 
     Searches the column's own query first, then enclosing queries, so a
     correlated subquery can name an outer table. The right side of a SEMI or
-    ANTI join counts: sqlglot leaves it out of ``selected_sources``, but the
-    join condition reads its columns.
+    ANTI join counts only inside that join's condition: sqlglot leaves it out
+    of ``selected_sources``, and the join's output has only the left side's
+    columns.
     """
-    qualifier = qualifier.lower()
+    qualifier = column.table.lower()
     while scope is not None:
         for name, (_, source) in scope.selected_sources.items():
             if name.lower() == qualifier:
                 return source
-        for name, _ in scope.references:
-            if name.lower() == qualifier and name in scope.sources:
-                return scope.sources[name]
+        for name, source in _join_condition_sources(column, scope):
+            if name.lower() == qualifier:
+                return source
+        scope = scope.parent
+    return None
+
+
+def _semi_join_kind(scope, qualifier):
+    """Return "SEMI" or "ANTI" when ``qualifier`` names such a join's right side."""
+    qualifier = qualifier.lower()
+    while scope is not None:
+        for join in scope.expression.args.get("joins") or []:
+            kind = join.text("kind").upper()
+            name = join.this.alias_or_name.lower()
+            if kind in ("SEMI", "ANTI") and name == qualifier:
+                return kind
         scope = scope.parent
     return None
 
@@ -509,7 +526,8 @@ def _column_problem(
     """Return why ``column`` does not resolve, or None when it does.
 
     A qualified column must be a column of the source its qualifier names, in
-    its own query or one enclosing it. A qualifier that names no such source
+    its own query or one enclosing it (a SEMI or ANTI join's right side only
+    in that join's condition). A qualifier that names no such source
     fails, unless it names a column or one of ``alias_names`` that its own
     query or an enclosing one declares (field access, or a source sqlglot
     does not map); the column then falls back as below.
@@ -528,8 +546,15 @@ def _column_problem(
         return fallback
 
     if column.table:
-        source = _find_source(scope, column.table)
+        source = _find_source(scope, column)
         if source is None:
+            kind = _semi_join_kind(scope, column.table)
+            if kind is not None:
+                article = "an" if kind == "ANTI" else "a"
+                return (
+                    f"{column.table} is the right side of {article} {kind} JOIN, "
+                    "readable only in its ON condition"
+                )
             qualifier = column.table.lower()
             if qualifier in all_columns or qualifier in _visible_alias_names(
                 scope, alias_names
@@ -771,6 +796,34 @@ _SELF_TEST_CASES = [
         id="semi-join-right-side-hidden-outside-its-condition",
     ),
     pytest.param(
+        "SELECT SP.UnitPrice FROM CostAndUsage CU LEFT SEMI JOIN SkuPrice SP "
+        "ON CU.SkuPriceId = SP.SkuPriceId",
+        {
+            "SP.UnitPrice": (
+                "SP is the right side of a SEMI JOIN, readable only in its ON condition"
+            )
+        },
+        id="semi-join-qualified-right-side-hidden-outside-its-condition",
+    ),
+    pytest.param(
+        "SELECT BilledCost FROM CostAndUsage CU LEFT ANTI JOIN SkuPrice SP "
+        "ON CU.SkuPriceId = SP.SkuPriceId WHERE SP.UnitPrice > 0",
+        {
+            "SP.UnitPrice": (
+                "SP is the right side of an ANTI JOIN, "
+                "readable only in its ON condition"
+            )
+        },
+        id="anti-join-qualified-right-side-hidden-in-where",
+    ),
+    pytest.param(
+        "SELECT BilledCost FROM CostAndUsage CU LEFT SEMI JOIN SkuPrice SP "
+        "ON CU.SkuPriceId = SP.SkuPriceId AND EXISTS (SELECT 1 FROM InvoiceDetail I "
+        "WHERE I.InvoiceId = CU.InvoiceId AND SP.UnitPrice > 0)",
+        {},
+        id="semi-join-right-side-resolves-in-a-subquery-in-its-condition",
+    ),
+    pytest.param(
         "SELECT CU.Cost, CU.InvoiceId FROM CostAndUsage AS CU (Cost)",
         {},
         id="table-column-list-adds-its-names",
@@ -977,6 +1030,24 @@ _SELF_TEST_CASES = [
         "JOIN (SELECT InvoiceId FROM InvoiceDetail) ON TRUE",
         {},
         id="unaliased-derived-tables",
+    ),
+    pytest.param(
+        # sqlglot cannot map an unaliased self-join, so its columns are only
+        # checked against every dataset: UnitPrice (a SkuPrice column) passes.
+        "SELECT CostAndUsage.UnitPrice FROM CostAndUsage JOIN CostAndUsage ON TRUE",
+        {},
+        id="unmapped-query-checks-columns-against-every-dataset",
+    ),
+    pytest.param(
+        "SELECT CostAndUsage.NotAColumn FROM CostAndUsage JOIN CostAndUsage ON TRUE",
+        {"CostAndUsage.NotAColumn": "not a FOCUS column"},
+        id="unmapped-query-still-flags-a-non-focus-column",
+    ),
+    pytest.param(
+        "SELECT CU.BilledCost FROM CostAndUsage CU "
+        "JOIN x_tag_map M ON CU.InvoiceId = M.InvoiceId",
+        {"M.InvoiceId": "no FOCUS dataset named x_tag_map"},
+        id="custom-prefixed-table-is-not-a-dataset",
     ),
     pytest.param(
         "SELECT SP.SkuPriceId FROM SkuPrice SP WHERE EXISTS "
