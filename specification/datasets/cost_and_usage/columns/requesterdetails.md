@@ -37,9 +37,9 @@ RequesterDetailsObject MUST adhere to the following requirements:
 * RequesterDetailsObject entries MUST adhere to the following requirements:
   * RequesterDetailsObject[\*].key MUST be unique within RequesterDetailsObject.
   * RequesterDetailsObject[\*].value MUST carry the descriptive attributes of the *requester* level named by RequesterDetailsObject[\*].key.
-  * RequesterDetailsObject[\*].value.Type MUST represent the kind of entity described by RequesterDetailsObject[\*].
-  * RequesterDetailsObject[\*].value.Name MUST represent a readable display name for the entity described by RequesterDetailsObject[\*].
-  * RequesterDetailsObject[\*].value.Email MUST represent an email address associated with the entity described by RequesterDetailsObject[\*].
+  * RequesterDetailsObject[\*].value.Type MUST represent the kind of entity named by RequesterDetailsObject[\*].key.
+  * RequesterDetailsObject[\*].value.Name MUST represent a readable display name for the entity named by RequesterDetailsObject[\*].key.
+  * RequesterDetailsObject[\*].value.Email MUST represent an email address associated with the entity named by RequesterDetailsObject[\*].key.
   * Custom entry in RequesterDetailsObject MUST represent a level of the *requester* that is neither the *principal* nor the *credential*.
 
 ### Object Schema Structure
