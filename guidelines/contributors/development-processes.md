@@ -390,7 +390,7 @@ All Pull Requests **must go through a formal review and approval process before 
 * All reviewers assigned to the Pull Request must approve before the Pull Request is eligible for merging.
 * If a reviewer becomes inactive or unresponsive, Maintainers may reassign review to an alternate reviewer.
 * At least **one Maintainer** must approve the Pull Request.
-* A Pull Request approval does not bring a Feature Request that is outside of the official scope for the current release into Task Force discussion. That entry is signaled separately, as described in [Champion Scope](#champion-scope).
+* A Pull Request approval does not bring a Feature Request that is outside of Core scope for the current release into Task Force discussion. That entry is signaled separately, as described in [Champion Scope](#champion-scope).
 * It is not required to have approvals from _all_ FOCUS members, but all active reviewers must approve.
 
 
