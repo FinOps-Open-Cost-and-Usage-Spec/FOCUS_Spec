@@ -9,8 +9,9 @@ name: Sync PR Linked Issues
 on:
   # pull_request_target gives pull requests from forks access to PROJECT_PAT.
   # The job never checks out or runs pull request code. It reads the links through the API.
+  # closed catches a sidebar link added after the last sweep, since the sweep reads only open PRs.
   pull_request_target:
-    types: [opened, reopened, edited]
+    types: [opened, reopened, edited, closed]
   schedule:
     # Linking an issue from the sidebar sends no pull request event, so a sweep picks it up.
     - cron: '45 */4 * * *'
@@ -129,9 +130,9 @@ jobs:
                 else {"Feature": "FR", "Action Item": "AI", "Work Item": "WI"}[$t] // (if $t == "" then "Issue" else $t end) end;
             def ref: if .repository.nameWithOwner == $repo then "#\(.number)" else "\(.repository.nameWithOwner)#\(.number)" end;
             [ .data.repository.pullRequest.closingIssuesReferences.nodes[]?
-              | if .issueType.name == "Action Item" and .parent != null then
+              | if kind == "AI" and .parent != null then
                   {key: (.parent | ref), head: "\(.parent | kind) \(.parent | ref)", n: .parent.number, ai: {n: .number, ref: ref}}
-                elif .issueType.name == "Action Item" then
+                elif kind == "AI" then
                   {key: "AI", head: "AI", n: 0, ai: {n: .number, ref: ref}}
                 else
                   {key: ref, head: "\(kind) \(ref)", n: .number, ai: null}
