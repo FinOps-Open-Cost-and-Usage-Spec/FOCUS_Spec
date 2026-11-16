@@ -112,7 +112,7 @@ A supporting entity is an entity defined outside a preview dataset's own section
 * **Why:** The SKU Price Preview notes and the scope list rule for requirements already use this test, and all three supporting entities on the [SKU Price scope list](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2768) meet it. Under the test, stable content (e.g., a column in another dataset, a glossary term, or an operating model condition that stable requirements also use, such as Includes Regions) cannot be a supporting entity, so a scope list cannot let stable content change without a deprecation notice.
 * **Open:** Confirm the test.
 * **Open:** How the glossary defines supporting entity, since the specification's overview and General Availability glossary entry use the term.
-* **Open:** What happens when stable content later starts to use a supporting entity, which then no longer meets the test. One answer: before that stable content is published, the entity leaves the scope list, its Preview markings are removed, and it follows the normal change management process. What its Version Introduced section then shows follows question 11.
+* **Open:** What happens when stable content later starts to use a supporting entity, which then no longer meets the test. One answer: before that stable content is published, the entity leaves the scope list, its Preview markings are removed, and it follows the normal change management process. What its Version Introduced section then shows follows FR #2816.
 * **Elsewhere:** Whether content in a stable dataset, such as a column, can be a preview stays open on FR #960.
 
 ### Designating a Preview
@@ -189,9 +189,10 @@ A preview tracking issue MUST adhere to the following requirements:
 
 **Proposed (FR #2782, question 11):**
 
-* **Proposed:** Move the choice of what Version Introduced shows after promotion to FR #2816, which covers Version Introduced for all content.
-* **Why:** FR #2816 covers what Version Introduced records for all content, including content first published as a preview. Task Force members have suggested both the promotion version alone and listing both the preview and the GA version. Until FR #2816 decides, the Promote step below updates each Version Introduced section to `Preview: <version> · GA: <version>`.
-* **Open here:** Whether a supported feature that depends on a preview can be generally available while the dataset is a preview, and what its Version Introduced section shows until then.
+* **Proposed:** A supported feature is not generally available while the dataset, or any other FOCUS entity it depends on, is a preview. The Promote step below states this.
+* **Proposed:** Move what Version Introduced shows, for a preview and after promotion, to FR #2816, including on a supported feature that depends on a preview.
+* **Why:** A supported feature describes what the data it depends on makes possible. While that data is a preview, it can change without a deprecation notice, so the supported feature cannot be more stable than the data under it.
+* **Why:** FR #2816 covers what Version Introduced records for all content, including content first published as a preview. Until FR #2816 decides, the Promote step below updates each Version Introduced section to `Preview: <version> · GA: <version>`.
 
 **Proposed (FR #2782, question 17):**
 
@@ -199,12 +200,13 @@ A preview tracking issue MUST adhere to the following requirements:
 * **Proposed:** The website and announcements follow the same practice: they name each preview dataset as a preview wherever they list what a version includes, so readers do not take a whole release as a preview.
 * **Why:** Section 7.2 of the [FOCUS Operating Procedures](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/operating_procedures.md) already requires previews to be labeled as such wherever they are published.
 * **Open:** Confirm with whoever owns the release announcement and the website.
+* **Open:** Whether each column page in a preview dataset also carries a `> **Preview:**` note, so a reader who opens one column sees it without reading the dataset's page first.
 
 ### Exiting Preview
 
 At each later version, FOCUS Members choose one outcome and record it with its evidence in the tracking issue:
 
-* **Promote:** Remove the preview designation once the open questions are addressed. The dataset's requirements become Active in the requirements model, and the "(preview)" label and Preview notes are removed. Each Version Introduced section is updated to include the general availability (GA) version (e.g., `Preview: 1.5 · GA: 1.6`).
+* **Promote:** Remove the preview designation once the open questions are addressed. The dataset's requirements become Active in the requirements model, and the "(preview)" label and Preview notes are removed. Each Version Introduced section is updated to include the general availability (GA) version (e.g., `Preview: 1.5 · GA: 1.6`). A supported feature that depends on the dataset becomes generally available only when every FOCUS entity it depends on is generally available, and keeps its Preview note until then.
 * **Extend:** Keep the preview for one more version, with a plan for the next evidence.
 * **Remove:** Remove the dataset without a deprecation notice or retention period. This is the default when there is no new evidence since the last decision.
 
