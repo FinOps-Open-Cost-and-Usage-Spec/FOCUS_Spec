@@ -6,7 +6,7 @@ This section describes examples for the [Commitment Applicability](#datamodel.sk
 
 ## Usage-Based Commitment with Flexibility
 
-A one-year reservation for the standard virtual machine family (SKU Price ID "AURAWEB-COMPUTE-RESERVATION-VM-STD-1YR-ALL-UPFRONT", Commitment Discount Category "Usage", Pricing Unit "Units"). One reservation covers one hour of the 8X32 size, two hours of the 4X16 size, or half an hour of the 16X64 size.
+A one-year reservation for a standard virtual machine family (Commitment Discount Category "Usage", Pricing Unit "Units"). One reservation covers one hour of the 8X32 size, two hours of the 4X16 size, or half an hour of the 16X64 size.
 
 ```json
 {
@@ -18,7 +18,7 @@ A one-year reservation for the standard virtual machine family (SKU Price ID "AU
     {
       "Dimension": "SkuId",
       "Operator": "In",
-      "Values": ["AURAWEB-COMPUTE-VM-STD-4X16"],
+      "Values": ["VM-STD-4X16"],
       "Coverage": {
         "Factor": 0.5
       }
@@ -26,12 +26,12 @@ A one-year reservation for the standard virtual machine family (SKU Price ID "AU
     {
       "Dimension": "SkuId",
       "Operator": "In",
-      "Values": ["AURAWEB-COMPUTE-VM-STD-8X32"]
+      "Values": ["VM-STD-8X32"]
     },
     {
       "Dimension": "SkuId",
       "Operator": "In",
-      "Values": ["AURAWEB-COMPUTE-VM-STD-16X64"],
+      "Values": ["VM-STD-16X64"],
       "Coverage": {
         "Factor": 2.0
       }
@@ -54,7 +54,7 @@ A reservation that covers a single SKU in a single region. The top-level `Covera
     {
       "Dimension": "SkuId",
       "Operator": "In",
-      "Values": ["AURAWEB-COMPUTE-VM-STD-8X32"]
+      "Values": ["VM-STD-8X32"]
     },
     {
       "Dimension": "RegionId",
@@ -67,7 +67,7 @@ A reservation that covers a single SKU in a single region. The top-level `Covera
 
 ## Spend-Based Commitment with a Discount
 
-A one-year flexible spend plan (SKU Price ID "AURAWEB-COMMITMENT-FLEXSPEND-1YR-ALL-UPFRONT", Commitment Discount Category "Spend", Pricing Unit "USD"). It covers all compute usage at 28 percent off its unit price, except GPU virtual machines at 12 percent off, and it does not cover dynamically priced usage. The plan is applied first to the usage with the highest discount.
+A one-year spend plan (Commitment Discount Category "Spend", Pricing Unit "USD"). It covers all compute usage at 28 percent off its unit price, except GPU virtual machines at 12 percent off, and it does not cover usage with a Pricing Category of "Dynamic" (e.g., interruptible [*resources*](#glossary:resource)). The plan is applied first to the usage with the highest discount.
 
 ```json
 {
@@ -80,7 +80,7 @@ A one-year flexible spend plan (SKU Price ID "AURAWEB-COMMITMENT-FLEXSPEND-1YR-A
     {
       "Dimension": "SkuId",
       "Operator": "StartsWith",
-      "Values": ["AURAWEB-COMPUTE-VM-GPU-"],
+      "Values": ["VM-GPU-"],
       "Coverage": {
         "Discount": 0.12
       }
@@ -116,17 +116,17 @@ A spend plan for which the [*service provider*](#glossary:service-provider) publ
     {
       "Dimension": "SkuPriceId",
       "Operator": "In",
-      "Values": ["AURAWEB-USEAST1-COMPUTE-ONDEMAND-STANDARD"],
+      "Values": ["VM-STD-8X32-ONDEMAND"],
       "Coverage": {
-        "UnitPrice": 0.2765
+        "UnitPrice": 0.2650
       }
     },
     {
       "Dimension": "SkuPriceId",
       "Operator": "In",
-      "Values": ["AURAWEB-USEAST1-COMPUTE-ONDEMAND-BURST"],
+      "Values": ["VM-BURST-2X8-ONDEMAND"],
       "Coverage": {
-        "UnitPrice": 0.0691
+        "UnitPrice": 0.0700
       }
     }
   ]
