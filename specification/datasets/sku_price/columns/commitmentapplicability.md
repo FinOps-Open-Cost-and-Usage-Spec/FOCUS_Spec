@@ -217,4 +217,4 @@ A structured definition of the usage that a *commitment discount* purchased unde
 
 ## Version Introduced
 
-1.5
+Preview: 1.6

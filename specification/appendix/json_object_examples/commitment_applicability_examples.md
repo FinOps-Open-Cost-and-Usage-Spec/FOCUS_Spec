@@ -1,6 +1,8 @@
 # Examples: Commitment Applicability
 
-This section describes examples for the [Commitment Applicability](#datamodel.skuprice.commitmentapplicability) column in the [SKU Price](#datamodel.skuprice) dataset. Each object belongs to a SKU Price record that represents the purchase of a [*commitment discount*](#glossary:commitment-discount).
+> **Preview:** The [SKU Price](#datamodel.skuprice) dataset is a preview in this version of FOCUS, so these examples may change in the next version based on implementation feedback. The preview also covers two requirements outside the dataset, which are excluded from conformance, and two operating model conditions and two schemas that exist only for SKU Price. [Issue #2768](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2768) tracks the preview and lists each one.
+
+This section describes examples for the [Commitment Applicability](#datamodel.skuprice.commitmentapplicability) column in the SKU Price dataset. Each object belongs to a SKU Price record that represents the purchase of a [*commitment discount*](#glossary:commitment-discount).
 
 ## Usage-Based Commitment with Flexibility
 

@@ -52,6 +52,8 @@ The Requester Details Object Schema defines the structure for the [Requester Det
 
 The Commitment Applicability Object Schema defines the structure for the [Commitment Applicability](#datamodel.skuprice.commitmentapplicability) column.
 
+> **Preview:** The Commitment Applicability Object Schema defines a column of the SKU Price dataset, which is a preview in this version of FOCUS. While that dataset is a preview, this schema may change in the next version without a deprecation notice.
+
 [Download from GitHub](/specification/schemas/datasets/sku_price/commitmentapplicabilityobjectschema.json)
 
 !INCLUDECODE "schemas/datasets/sku_price/commitmentapplicabilityobjectschema.json" (json)
