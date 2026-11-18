@@ -10,7 +10,7 @@ Common scenarios where dataset configuration is valuable include:
 * **Limiting Deliveries**: Request or export only records that changed since a point in time, in request-based (pull) or scheduled (push) delivery
 * **Enabling Comparison**: Remove custom (`x_`) columns for standardized cross-provider reporting
 
-### Changed-Since Configuration
+## Changed-Since Configuration
 
 A changed-since point in time limits a delivery to records created or modified since that point, as indicated by the dataset's last-updated column. It applies to request-based (pull) delivery, where each request carries the point in time, and to scheduled (push) delivery such as exports, where the point in time is set once for the first delivery and then advances to the capture time of the previous delivery.
 
