@@ -8,7 +8,7 @@ The SKU Price dataset represents prices as of the date the dataset is captured. 
 
 The dataset describes the full price list a *service provider* offers, not only the SKUs that appear in Cost and Usage. To manage the size of a complete price list, a *service provider* may partition delivery, for example by region, service, or SKU category, and is encouraged to do so where publishing a complete list in a single delivery would otherwise be impractical.
 
-Most prices do not change from one delivery to the next. To keep repeated deliveries small, a practitioner can configure the dataset with a changed-since point in time, such as the time of their last delivery. The configuration applies to request-based (pull) delivery, where each request carries a changed-since point in time, and to scheduled (push) delivery such as exports, where the point in time is set once for the first delivery and then advances to the capture time of the previous delivery. The delivery contains only the records created or modified since that point, identified by [SKU Price Last Updated](#datamodel.skuprice.skupricelastupdated), and each record is the current state of the price it identifies. A price that is no longer offered stays in the delivery as a record with an end date, so the practitioner can tell it apart from a price that did not change.
+Most prices do not change from one delivery to the next. To keep repeated deliveries small, a practitioner can configure the dataset with a changed-since point in time, as described in [DatasetConfiguration](#attributes.datasetconfiguration), so that a delivery contains only records changed since that point, identified by [SKU Price Last Updated](#datamodel.skuprice.skupricelastupdated). A price that is no longer offered stays in the delivery as a record with an end date, so the practitioner can tell it apart from a price that did not change.
 
 The columns are presented in alphabetical order.
 
@@ -110,9 +110,6 @@ SkuPrice MUST adhere to the following requirements:
 * SkuPrice MUST use the [Overwrite delivery mechanism](#attributes.deliveryhandling) unless a changed-since point in time is configured.
 * SkuPrice MUST use the [Append delivery mechanism](#attributes.deliveryhandling) when a changed-since point in time is configured.
 * SkuPrice MUST adhere to the following requirements when a changed-since point in time is configured:
-  * SkuPrice MUST include every record with a SkuPriceLastUpdated on or after the changed-since point in time.
-  * SkuPrice MUST NOT include records with a SkuPriceLastUpdated before the changed-since point in time.
-  * SkuPrice changed-since point in time MUST be the capture time of the previous delivery for each scheduled delivery after the first.
   * SkuPrice MUST set a non-null SkuPriceEffectiveEnd and update SkuPriceLastUpdated when a price is no longer offered.
   * SkuPrice MUST be delivered without a changed-since point in time when a previously delivered record's identifying values change (i.e., ServiceProviderName, SkuPriceId, ContractId, SkuPriceEffectiveStart, PricingCurrency, or UnitPriceType).
 * SkuPrice SHOULD contain at least one record for every [SkuPriceId](#datamodel.skuprice.skupriceid) referenced in the [CostAndUsage](#datamodel.costandusage) dataset.
