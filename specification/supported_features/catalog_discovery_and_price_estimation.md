@@ -263,7 +263,7 @@ ORDER BY SkuId, PricingCurrency, UnitPrice
 
 ### Identify the Usage a Commitment Covers
 
-This query answers which usage the [*commitment discounts*](#glossary:commitment-discount) offered under a service cover, and what that usage costs with and without them. It takes a service provider, the Pricing Service Name under which the commitments are purchased, and a point in time. For each commitment purchase record and each usage SKU Price it covers, it returns the list and contracted unit prices of the usage, and the effective unit prices that follow from the coverage:
+This query answers which usage the *commitment discounts* offered under a service cover, and what that usage costs with and without them. It takes a service provider, the Pricing Service Name under which the commitments are purchased, and a point in time. For each commitment purchase record and each usage SKU Price it covers, it returns the list and contracted unit prices of the usage, and the effective unit prices that follow from the coverage:
 
 * **List Unit Price:** the Unit Price of the "List" record of the usage.
 * **Contracted Unit Price:** the Unit Price of a "Contracted" record of the usage, one row per *contract*. Without a "Contracted" record, it defaults to the List Unit Price.

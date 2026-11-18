@@ -80,7 +80,7 @@ CommitmentApplicability contains a structured JSON object defining the usage cov
 
 | Key | Type | Description |
 | :--- | :--- | :--- |
-| `Factor` | Decimal | Quantity of the *commitment discount*, in the Pricing Unit of the purchase record, consumed by one unit of covered usage. Greater than 0; can be greater than 1 (e.g., *commitment discount flexibility*). |
+| `Factor` | Decimal | Quantity of the *commitment discount*, in the Pricing Unit of the purchase record, consumed by one unit of covered usage. Greater than 0; can be greater than 1 (e.g., [*commitment discount flexibility*](#glossary:commitment-discount-flexibility)). |
 | `Discount` | Decimal | Fraction by which the unit price of covered usage is reduced, applied to both its list and its contracted unit price. From 0 to 1. |
 | `UnitPrice` | Decimal | Unit price per Pricing Unit of the covered usage, denominated in the Pricing Currency of the purchase record. Non-negative. |
 
@@ -110,8 +110,8 @@ CommitmentApplicability uses a reserved string to represent unrestricted boundar
 
 <div class="h7-nonindex">Wildcard Behavior Rules</div>
 
-1. **Inclusion Logic:** When `["*"]` is used with the `In` or `Contains` operator in an Inclusion rule, the rule evaluates to `True` for every charge where the Dimension is not null.
-2. **Exclusion Logic:** When `["*"]` is used with the `In` or `Contains` operator in an Exclusion rule, the rule evaluates to `True` for every charge where the Dimension is not null.
+1. **Inclusion Logic:** When `["*"]` is used with the `In` or `Contains` operator in an Inclusion rule, the rule evaluates to `True` for every [*charge*](#glossary:charge) where the Dimension is not null.
+2. **Exclusion Logic:** When `["*"]` is used with the `In` or `Contains` operator in an Exclusion rule, the rule evaluates to `True` for every *charge* where the Dimension is not null.
 3. **Implicit Wildcards:** If a Dimension is omitted entirely from the `Inclusions` array, it is treated as an implicit wildcard (unrestricted).
 
 ### Object Implementation Guidance
@@ -130,7 +130,7 @@ Values are compared as exact strings.
 <div class="h7-nonindex">Deriving the Unit Price of Covered Usage</div>
 
 * **`UnitPrice`:** the unit price of covered usage, as published.
-* **`Discount`:** the Unit Price of the SKU Price record for the covered usage multiplied by one minus `Discount`, for its "List" record and, under a *contract*, for its "Contracted" record.
+* **`Discount`:** the Unit Price of the SKU Price record for the covered usage multiplied by one minus `Discount`, for its "List" record and, under a [*contract*](#glossary:contract), for its "Contracted" record.
 * **`Factor`:** the price of the *commitment discount* (the Unit Price of the purchase record, spread over its Purchase Duration Type according to its Purchase Payment Model), multiplied by `Factor` and divided by the quantity of usage the *commitment discount* covers per unit of time.
 
 <div class="h7-nonindex">Evaluating Rules Against Null Dimensions</div>

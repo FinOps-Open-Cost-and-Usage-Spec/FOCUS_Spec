@@ -106,7 +106,7 @@ The GPU rule comes first, because the first matching rule determines the coverag
 
 ## Spend-Based Commitment with Published Unit Prices
 
-A spend plan for which the *service provider* publishes the unit price of each covered SKU Price instead of a discount.
+A spend plan for which the [*service provider*](#glossary:service-provider) publishes the unit price of each covered SKU Price instead of a discount.
 
 ```json
 {
