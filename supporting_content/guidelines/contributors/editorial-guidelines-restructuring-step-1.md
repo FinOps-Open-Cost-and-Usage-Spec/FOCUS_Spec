@@ -438,7 +438,7 @@ The volume of a given *SKU* associated with a *resource* or *service* used or pu
 1.0-preview
 ```
 
-## Supported Features Editorial Rules
+<!-- ## Supported Features Editorial Rules -->
 
 <!-- ## Retired Rule IDs (Optional) -->
 
