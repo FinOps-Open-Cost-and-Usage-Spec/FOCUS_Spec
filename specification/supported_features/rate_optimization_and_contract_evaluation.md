@@ -118,6 +118,7 @@ Each conditional column narrows this feature on its own:
   * PricingQuantity
   * PricingUnit
   * ServiceProviderName
+  * SkuId
   * SkuPriceId
 
 ## Example SQL Queries
@@ -710,6 +711,90 @@ WHERE C.ServiceProviderName = ?
   AND C.ChargePeriodStart >= ?
   AND C.ChargePeriodEnd <= ?
   AND C.SkuPriceId IS NOT NULL
+```
+
+### Reprice On-Demand Consumption at a Commitment Rate
+
+This query answers what consumption that no *commitment discount* covers would cost at the rate a *commitment discount* gives. The difference sizes the value of buying a commitment (e.g., a reservation or savings plan) for that consumption. It takes a time range through Charge Period Start and Charge Period End and a service provider. It adds up the usage that no *commitment discount* covered, by SKU ID and Pricing Unit. It then reprices that usage at each "List" rate published for the same *SKU* with a Commitment Discount Category. One row returns for each commitment rate, so each term or rate offered for the *SKU* shows side by side.
+
+The query reads rates, not purchase fees. A commitment's fees (see the purchase terms query above) and the share of consumption the commitment would cover are outside this result. So the difference is the most the rate alone could save, not a forecast of savings. A commitment to an amount of spend can give a rate that FOCUS does not carry, so it may return no row. The query reads only a single flat rate, a record with no Quantity Tier Minimum above zero and no Quantity Tier Maximum. Tiered commitment rates are not repriced.
+
+```sql
+WITH OnDemandUsage AS (
+  SELECT
+    ServiceProviderName,
+    SkuId,
+    PricingUnit,
+    BillingCurrency,
+    MIN(ChargePeriodStart) AS EarliestChargePeriodStart,
+    SUM(PricingQuantity) AS TotalPricingQuantity,
+    SUM(EffectiveCost) AS TotalEffectiveCost
+  FROM CostAndUsage
+  WHERE ServiceProviderName = ?
+    AND ChargePeriodStart >= ? AND ChargePeriodEnd <= ?
+    AND ChargeCategory = 'Usage'
+    AND SkuId IS NOT NULL
+    AND CommitmentDiscountId IS NULL
+  GROUP BY ServiceProviderName, SkuId, PricingUnit, BillingCurrency
+)
+SELECT
+  OD.SkuId,
+  SP.SkuPriceId,
+  SP.SkuPriceDescription,
+  SP.CommitmentDiscountCategory,
+  OD.PricingUnit,
+  OD.TotalPricingQuantity,
+  OD.TotalEffectiveCost,
+  SP.UnitPrice AS CommitmentUnitPrice,
+  SP.PricingCurrency,
+  OD.TotalPricingQuantity * SP.UnitPrice AS ProjectedCommitmentRateCost,
+  OD.TotalEffectiveCost - (OD.TotalPricingQuantity * SP.UnitPrice) AS ProjectedRateReduction
+FROM OnDemandUsage OD
+INNER JOIN SkuPrice SP
+  ON SP.ServiceProviderName = OD.ServiceProviderName
+  AND SP.SkuId = OD.SkuId
+  AND SP.PricingUnit = OD.PricingUnit
+  AND SP.PricingCurrency = OD.BillingCurrency
+  AND SP.ChargeCategory = 'Usage'
+  AND SP.CommitmentDiscountCategory IS NOT NULL
+  AND SP.ContractId IS NULL
+  AND SP.UnitPriceType = 'List'
+  AND (SP.QuantityTierMinimum IS NULL OR SP.QuantityTierMinimum = 0)
+  AND SP.QuantityTierMaximum IS NULL
+  AND (SP.SkuPriceEffectiveStart IS NULL OR OD.EarliestChargePeriodStart >= SP.SkuPriceEffectiveStart)
+  AND (SP.SkuPriceEffectiveEnd IS NULL OR OD.EarliestChargePeriodStart < SP.SkuPriceEffectiveEnd)
+ORDER BY ProjectedRateReduction DESC
+```
+
+### Find Charges Whose Price is Missing from the Catalog
+
+This query answers which usage charges name a SKU Price ID that the SKU Price dataset has no "List" record for. Those charges can be checked before any query that joins the two datasets, since each one drops out of an inner join. It takes a service provider and a time range through Charge Period Start and Charge Period End. It returns, for each SKU Price ID and Billing Currency, how many charges have no published public rate in force at their Charge Period Start, and their Effective Cost.
+
+A missing record has three common causes. The *dataset instance* may hold only current prices, so a charge from before the latest price change finds nothing. The rate may be quoted in a currency other than the Billing Currency. Or the *service provider* may not publish that price. The query cannot tell these apart.
+
+```sql
+SELECT
+  CU.SkuPriceId,
+  CU.BillingCurrency,
+  COUNT(*) AS Charges,
+  SUM(CU.EffectiveCost) AS TotalEffectiveCost
+FROM CostAndUsage CU
+WHERE CU.ServiceProviderName = ?
+  AND CU.ChargePeriodStart >= ? AND CU.ChargePeriodEnd <= ?
+  AND CU.ChargeCategory = 'Usage'
+  AND CU.SkuPriceId IS NOT NULL
+  AND NOT EXISTS (
+    SELECT 1
+    FROM SkuPrice SP
+    WHERE SP.ServiceProviderName = CU.ServiceProviderName
+      AND SP.SkuPriceId = CU.SkuPriceId
+      AND SP.PricingCurrency = CU.BillingCurrency
+      AND SP.UnitPriceType = 'List'
+      AND (SP.SkuPriceEffectiveStart IS NULL OR SP.SkuPriceEffectiveStart <= CU.ChargePeriodStart)
+      AND (SP.SkuPriceEffectiveEnd IS NULL OR SP.SkuPriceEffectiveEnd > CU.ChargePeriodStart)
+  )
+GROUP BY CU.SkuPriceId, CU.BillingCurrency
+ORDER BY TotalEffectiveCost DESC
 ```
 
 ## Version Introduced
