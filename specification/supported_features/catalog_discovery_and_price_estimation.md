@@ -39,7 +39,7 @@ A [*charge*](#glossary:charge) follows the same rule, using its Charge Period St
 
 ### Scope When Conditional Columns are Absent
 
-This feature applies wherever a *service provider* publishes a SKU Price dataset. The data model says when that dataset is present. Every column this feature directly depends on is in every SKU Price dataset instance.
+This feature applies wherever a *service provider* publishes a SKU Price dataset. The data model says when that dataset is present. Charge Category, Contract ID, Pricing Currency Category, SKU Price Eligibility, Unit Price, and Unit Price Type are in every SKU Price *dataset instance*.
 
 The queries that read public prices keep only records with a Unit Price Type of "List". So they return nothing from a dataset instance that has only contract prices. "List" is a recommended value, not a required one. When a *service provider* labels its public prices with a value of its own, that value replaces "List" in these queries. Unlike "List", a value of its own does not mean the Contract ID is null. So these queries then also need a filter for a null Contract ID.
 
@@ -47,8 +47,8 @@ Four conditions change what applies:
 
 * Pricing Region ID is present when the [*operating model*](#glossary:operating-model) [includes regions](#operatingmodelconditions.includesregions). When it is absent, prices do not vary by location, and one price stands for every region. Comparing rates across regions then does not apply, rather than giving an incomplete result.
 * Quantity Tier Minimum and Quantity Tier Maximum are present when the *operating model* [includes quantity tier pricing](#operatingmodelconditions.includesquantitytierpricing). When they are absent, every price applies at any quantity, so a planned line needs no tier. The queries that return these two columns still work with them left out.
-* Separating usage rates from purchase fees applies when the *operating model* [includes purchases](#operatingmodelconditions.includespurchases). When it does not, the catalog has no purchase fees, and no record has a Charge Category of "Purchase". An estimate from usage rates then has no purchase fees to add.
-* Commitment Discount Category is present when the *operating model* [includes commitment discounts](#operatingmodelconditions.includescommitmentdiscounts). When it is absent, no price is for a *commitment discount*, and the list price query still works with that column left out.
+* Separating usage rates from purchase fees applies when the *operating model* [includes purchases](#operatingmodelconditions.includespurchases). When it does not, the catalog has no purchase fees, and no record has a Charge Category of "Purchase". An estimate from usage rates then has no purchase fees to add. Purchase Duration Type and Purchase Payment Model are present under the same condition. When they are absent, the two commitment coverage queries do not apply.
+* Commitment Applicability and Commitment Discount Category are present when the *operating model* [includes commitment discounts](#operatingmodelconditions.includescommitmentdiscounts). When they are absent, no prices are associated with *commitment discounts*, so the two commitment coverage queries do not apply, while the list price query still works with Commitment Discount Category left out.
 
 ## Directly Dependent Columns
 
@@ -57,6 +57,8 @@ Four conditions change what applies:
   * CommitmentApplicability
   * ContractId
   * PricingCurrencyCategory
+  * PurchaseDurationType
+  * PurchasePaymentModel
   * SkuPriceEligibility
   * UnitPrice
   * UnitPriceType
