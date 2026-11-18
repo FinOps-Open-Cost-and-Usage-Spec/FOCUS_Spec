@@ -7,6 +7,7 @@ Common scenarios where dataset configuration is valuable include:
 * **Managing Scale**: Trim large exports to reduce time and cost of data preparation
 * **Reducing Noise**: Tailor datasets for specific workflows (e.g., cost allocation, commitment analysis)
 * **Lowering Barriers**: Strip away technical complexity for spreadsheet users
+* **Limiting Deliveries**: Request or export only records that changed since a point in time, in request-based (pull) or scheduled (push) delivery
 * **Enabling Comparison**: Remove custom (`x_`) columns for standardized cross-provider reporting
 
 ## Requirements
@@ -15,6 +16,7 @@ Dataset conforming to DatasetConfiguration attribute MUST adhere to the followin
 
 * *FOCUS dataset* MUST be configurable to include only a user-defined selection of columns.
 * *FOCUS dataset* MUST adhere to all column-level specifications defined in the FOCUS schema, regardless of the user's chosen configuration (e.g., column selection).
+* *FOCUS dataset* SHOULD be configurable to include only records created or modified since a user-defined point in time (e.g., the time of the previous delivery) when the dataset defines a last-updated column.
 * *FOCUS dataset* MAY offer a default column set.
 * *FOCUS dataset* default column set MUST include all applicable [*FOCUS columns*](#glossary:FOCUS-column) when a default column set is offered.
 
