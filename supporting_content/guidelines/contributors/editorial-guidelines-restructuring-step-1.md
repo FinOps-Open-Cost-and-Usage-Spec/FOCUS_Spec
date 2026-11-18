@@ -19,8 +19,8 @@ The "Editorial Style Guidelines" section ensures consistency and clarity across 
   * [Tables](#tables)
 * [Column Editorial Rules](#column-editorial-rules)
   * [Column Examples](#column-examples)
-* [Supported Features Editorial Rules](#supported-features-editorial-rules)
 
+<!-- * [Supported Features Editorial Rules](#supported-features-editorial-rules) -->
 <!-- * [Retired Rule IDs (Optional)](#retired-rule-ids-optional) -->
 
 ## How to Read These Rules
