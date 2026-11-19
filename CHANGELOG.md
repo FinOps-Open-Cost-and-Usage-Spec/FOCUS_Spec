@@ -14,7 +14,7 @@ v1.5 adds 1 dataset (`SkuPrice`, preview), 27 new columns, 3 new supported featu
 
 #### Compatible Changes
 
-* New `SkuPriceDetails` properties and an informative supported feature to support [AI Model Billing](/specification/supported_features/ai_model_billing.md): model identity (`ModelDeveloper`, `ModelFamily`, `ModelId`, `ModelVersion`) and token metering (`TokenDirection`, `TokenCacheAction`). `ConsumedQuantity` adds a requirement that prevents cached tokens from being counted twice. Affecting:
+* New `SkuPriceDetails` properties and an informative supported feature to support [AI Model Billing](/specification/supported_features/ai_model_billing.md): model identity (`ModelDeveloper`, `ModelFamily`, `ModelId`, `ModelVersion`) and token metering (`TokenDirection`, `TokenCacheAction`). Affecting:
   * [Resource Usage](/specification/supported_features/resource_usage.md), which adds cache hit rate and input-to-output token ratio queries.
 * New dataset and columns to support [Catalog Discovery and Price Estimation](/specification/supported_features/catalog_discovery_and_price_estimation.md) (preview) and [Rate Optimization and Contract Evaluation](/specification/supported_features/rate_optimization_and_contract_evaluation.md) (preview).
 * New columns for requester attribution (`PrincipalId`, `CredentialId`, `RequesterDetails`), with documentation requirements, a [Requester Attribution](/specification/appendix/requester_attribution.md) appendix entry, and a dataset note on personal data in Cost and Usage.
@@ -38,6 +38,8 @@ v1.5 adds 1 dataset (`SkuPrice`, preview), 27 new columns, 3 new supported featu
 * [`ContractedUnitPrice`](/specification/datasets/cost_and_usage/columns/contractedunitprice.md) presence now depends on whether the operating model includes unit pricing. Previously it depended on whether the service provider supported negotiated pricing concepts. A dataset whose operating model includes negotiated pricing but not unit pricing (e.g., a flat-fee contract) may omit `ContractedUnitPrice`, so queries that select it may need updating.
 * [`ContractCommitmentDurationType`](/specification/datasets/contract_commitment/columns/contractcommitmentdurationtype.md) MUST use the largest whole time-based unit (e.g., "1 Year", not "12 Months"). "Quarter" and "Quarters" are no longer among its units. Queries that match on duration strings may need updating.
 * [`ServiceSubcategory`](/specification/datasets/cost_and_usage/columns/servicesubcategory.md): split a new "Bare Metal" value out of "Virtual Machines" under "Compute". Queries on "Virtual Machines" no longer return bare-metal charges.
+* [`ConsumedQuantity`](/specification/datasets/cost_and_usage/columns/consumedquantity.md) MUST NOT include tokens counted on a different row with `TokenCacheAction` "Read" or "Write" in `SkuPriceDetails`. Queries that subtract cached tokens from prompt token totals would subtract them twice. Affecting:
+  * [Resource Usage](/specification/supported_features/resource_usage.md)
 
 #### Incompatible Changes
 
