@@ -140,7 +140,7 @@ CostAndUsage MUST adhere to the following requirements:
   * CostAndUsage MUST include [ListCost](#datamodel.costandusage.listcost).
   * CostAndUsage MUST include [ListUnitPrice](#datamodel.costandusage.listunitprice) when the *operating model* includes unit pricing.
   * CostAndUsage MUST include [PricingCategory](#datamodel.costandusage.pricingcategory) when the *operating model* [includes multiple pricing categories](#operatingmodelconditions.includesmultiplepricingcategories).
-  * CostAndUsage MUST include [PricingCurrency](#datamodel.costandusage.pricingcurrency) when the *operating model* [includes pricing and billing currency differences](#operatingmodelconditions.includespricing-billingcurrencydifferences).
+  * CostAndUsage MUST include [PricingCurrency](#datamodel.costandusage.pricingcurrency) when the *operating model* [includes pricing and billing currency differences](#operatingmodelconditions.includespricingandbillingcurrencydifferences).
   * CostAndUsage MUST adhere to the following [PricingCurrencyContractedUnitPrice](#datamodel.costandusage.pricingcurrencycontractedunitprice) requirements:
     * CostAndUsage MUST include PricingCurrencyContractedUnitPrice when the *operating model* [includes consumption currency](#operatingmodelconditions.includesconsumptioncurrency) and includes unit pricing.
     * CostAndUsage SHOULD include PricingCurrencyContractedUnitPrice when the *operating model* includes pricing and billing currency differences and includes unit pricing.

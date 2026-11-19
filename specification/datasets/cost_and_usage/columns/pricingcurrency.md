@@ -32,7 +32,7 @@ The *national* or *consumption currency* denomination that a *resource* or *serv
 | Constraint                 | Value                                         |
 | :------------------------- | :-------------------------------------------- |
 | Dataset                    | [Cost and Usage](#datamodel.costandusage)     |
-| Operating model conditions | [Includes Pricing-Billing Currency Differences](#operatingmodelconditions.includespricing-billingcurrencydifferences) |
+| Operating model conditions | [Includes Pricing and Billing Currency Differences](#operatingmodelconditions.includespricingandbillingcurrencydifferences) |
 | Column type                | Dimension                                     |
 | Feature level              | Conditional                                   |
 | Allows nulls               | False                                         |

@@ -6,7 +6,7 @@ TimeSectorComplete adheres to the following requirements:
 
 * TimeSectorComplete MUST be present in the [TimeSectors](#metadata.recency.timesectors) subsection of the [Recency](#metadata.recency) metadata section.
 * TimeSectorComplete MUST be of type Boolean.
-* TimeSectorComplete MUST not be null.
+* TimeSectorComplete MUST NOT be null.
 
 ## Metadata ID
 

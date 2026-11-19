@@ -559,7 +559,7 @@
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "AllocatedMethodDetailsObject.Elements[*].UsageUnit MUST represent the unit or component of data generator's documented AllocationMethod which was used to determine the AllocatedMethodDetailsObject.Elements[*].AllocatedRatio value.",
+      "MustSatisfy": "AllocatedMethodDetailsObject.Elements[*].UsageUnit MUST represent the unit or component of data generator's documented allocation method which was used to determine the AllocatedMethodDetailsObject.Elements[*].AllocatedRatio value.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -888,7 +888,7 @@
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "AllocatedMethodDetailsObject.Elements[*].UsageUnit MUST represent the unit or component of data generator's documented AllocationMethod which was used to determine the AllocatedMethodDetailsObject.Elements[*].AllocatedRatio value.",
+      "MustSatisfy": "AllocatedMethodDetailsObject.Elements[*].UsageUnit MUST represent the unit or component of data generator's documented allocation method which was used to determine the AllocatedMethodDetailsObject.Elements[*].AllocatedRatio value.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},

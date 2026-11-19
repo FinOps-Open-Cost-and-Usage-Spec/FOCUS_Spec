@@ -80,7 +80,7 @@ ContractCommitment MUST adhere to the following requirements:
   * ContractCommitment MUST include [ContractPeriodEnd](#datamodel.contractcommitment.contractperiodend).
   * ContractCommitment MUST include [ContractPeriodStart](#datamodel.contractcommitment.contractperiodstart).
   * ContractCommitment MUST include [InvoiceIssuerName](#datamodel.contractcommitment.invoiceissuername).
-  * ContractCommitment MUST include [PricingCurrency](#datamodel.contractcommitment.pricingcurrency) when the *operating model* [includes pricing and billing currency differences](#operatingmodelconditions.includespricing-billingcurrencydifferences).
+  * ContractCommitment MUST include [PricingCurrency](#datamodel.contractcommitment.pricingcurrency) when the *operating model* [includes pricing and billing currency differences](#operatingmodelconditions.includespricingandbillingcurrencydifferences).
   * ContractCommitment MUST include [PricingCurrencyContractCommitmentCost](#datamodel.contractcommitment.pricingcurrencycontractcommitmentcost) when the *operating model* includes pricing and billing currency differences.
   * ContractCommitment MUST include [ServiceProviderName](#datamodel.contractcommitment.serviceprovidername).
 * ContractCommitment MUST conform to [CorrectionHandling](#attributes.correctionhandling) requirements.

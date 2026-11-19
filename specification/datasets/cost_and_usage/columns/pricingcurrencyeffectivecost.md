@@ -35,7 +35,7 @@ The Pricing Currency-denominated equivalent of Effective Cost, representing the 
 | Dataset                    | [Cost and Usage](#datamodel.costandusage)   |
 | Operating model conditions |                                             |
 | ├─ Must                    | [Includes Consumption Currency](#operatingmodelconditions.includesconsumptioncurrency) |
-| └─ Should                  | [Includes Pricing-Billing Currency Differences](#operatingmodelconditions.includespricing-billingcurrencydifferences) |
+| └─ Should                  | [Includes Pricing and Billing Currency Differences](#operatingmodelconditions.includespricingandbillingcurrencydifferences) |
 | Column type                | Metric                                      |
 | Feature level              | Conditional                                 |
 | Allows nulls               | False                                       |
