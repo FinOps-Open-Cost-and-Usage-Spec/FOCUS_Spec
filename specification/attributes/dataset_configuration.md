@@ -7,12 +7,18 @@ Common scenarios where dataset configuration is valuable include:
 * **Managing Scale**: Trim large exports to reduce time and cost of data preparation
 * **Reducing Noise**: Tailor datasets for specific workflows (e.g., cost allocation, commitment analysis)
 * **Lowering Barriers**: Strip away technical complexity for spreadsheet users
-* **Limiting Deliveries**: Request or export only records that changed since a point in time, in request-based (pull) or scheduled (push) delivery
+* **Limiting Deliveries**: Request or export only the period and records needed, in request-based (pull) or scheduled (push) delivery
 * **Enabling Comparison**: Remove custom (`x_`) columns for standardized cross-provider reporting
 
-## Changed-Since Configuration
+## Period Configuration
 
-A changed-since point in time limits a delivery to records created or modified since that point, as indicated by the dataset's last-updated column. It applies to request-based (pull) delivery, where each request carries the point in time, and to scheduled (push) delivery such as exports, where the point in time is set once for the first delivery and then advances to the capture time of the previous delivery.
+Period configuration limits a delivery to a period of time and, optionally, to the records that changed during it. It applies to datasets that define a last-updated column. It uses three options:
+
+* Start: Beginning of the period (inclusive). Defaults to the start of the current [*billing period*](#glossary:billing-period). Also serves as the changed-since point in time.
+* End: End of the period (exclusive). Defaults to the time of the request.
+* IncludeAllRows: Whether to include records that were active at Start but did not change during the period. Defaults to true, so practitioners receive every row they may need and opt out of unchanged rows to reduce data size.
+
+Period configuration applies to request-based (pull) delivery, where each request carries the options, and to scheduled (push) delivery such as exports, where the options are set once. A pull has no knowledge of earlier deliveries, so IncludeAllRows defaults to true. The first push delivery includes all rows. Each later push delivery defaults to IncludeAllRows set to false and a Start equal to the capture time of the previous delivery.
 
 ## Requirements
 
@@ -20,11 +26,13 @@ Dataset conforming to DatasetConfiguration attribute MUST adhere to the followin
 
 * *FOCUS dataset* MUST be configurable to include only a user-defined selection of columns.
 * *FOCUS dataset* MUST adhere to all column-level specifications defined in the FOCUS schema, regardless of the user's chosen configuration (e.g., column selection).
-* *FOCUS dataset* SHOULD be configurable to include only records created or modified since a user-defined point in time (e.g., the time of the previous delivery) when the dataset defines a last-updated column.
-* *FOCUS dataset* MUST adhere to the following requirements when a changed-since point in time is configured:
-  * *FOCUS dataset* MUST include every record last updated on or after the changed-since point in time.
-  * *FOCUS dataset* MUST NOT include records last updated before the changed-since point in time.
-  * *FOCUS dataset* changed-since point in time MUST be the capture time of the previous delivery for each scheduled delivery after the first.
+* *FOCUS dataset* SHOULD be configurable with Start, End, and IncludeAllRows options when the dataset defines a last-updated column.
+* *FOCUS dataset* MUST adhere to the following requirements when Start, End, or IncludeAllRows is configured:
+  * *FOCUS dataset* MUST include a separate record for every change last updated on or after Start and before End.
+  * *FOCUS dataset* MUST NOT include records last updated before Start or on or after End, except as required by IncludeAllRows.
+  * *FOCUS dataset* MUST include records active at Start that did not change during the period when IncludeAllRows is true.
+  * *FOCUS dataset* MUST NOT include records active at Start that did not change during the period when IncludeAllRows is false.
+  * *FOCUS dataset* MUST treat IncludeAllRows as true when it is not configured, except for scheduled deliveries after the first.
 * *FOCUS dataset* MAY offer a default column set.
 * *FOCUS dataset* default column set MUST include all applicable [*FOCUS columns*](#glossary:FOCUS-column) when a default column set is offered.
 

@@ -1,12 +1,35 @@
-# SKU Price Changed-Since Delivery
+# SKU Price Period and Changed-Since Delivery
 
-Background on why the SKU Price dataset requires a changed-since configuration and why honoring it is mandatory. This document records design intent and is not normative.
+Background on why the SKU Price dataset requires period configuration (Start, End, IncludeAllRows) and why honoring it is mandatory. This document records design intent and is not normative.
 
 ## The Problem
 
 SKU Price uses one row per price type (e.g., "List", "Contracted") with effective dates. That layout is compact when each delivery carries only what changed. When every delivery re-sends every current price, the same layout is larger than the monthly price sheets providers publish today, because one price sheet row becomes several rows.
 
 Most prices do not change from month to month. If a service provider re-sends the full catalog each time, practitioners pay to transfer, store, and deduplicate rows they already have.
+
+## Configuration Options
+
+* Start: inclusive; defaults to the current billing period start; also the changed-since point in time.
+* End: exclusive; defaults to the request time.
+* IncludeAllRows: include prices active at Start that did not change. Defaults to true.
+
+IncludeAllRows defaults to true so practitioners get every row they may need instead of silently missing rows. Opting out (false) is what delivers the size savings below. A pull cannot know whether the practitioner has earlier data, so it always defaults to true. Recurring pushes after the first default to false.
+
+## Scenarios
+
+| # | Scenario | Start | End | IncludeAllRows |
+| --- | --- | --- | --- | --- |
+| 1 | Initial or one-time pull of current prices | null (current billing period start) | null (now) | null/true |
+| 2 | Initial pull of historical prices | date | date | null/true |
+| 3 | Later pull of prices changed during a period | date (changed-since) | null or date | false |
+| 4 | Recurring push of prices changed since last delivery (after the first) | null (previous delivery) | null | false |
+
+The first push uses scenario 1 or 2 so the practitioner starts with all prices.
+
+### Out of Scope
+
+Prices active during a period (S to E) but only if changed since an earlier date (S1). It needs a fourth option (ChangedSince) that duplicates Start in typical scenarios. Workarounds: pull all prices for the period and filter out rows already held, or pull changes since S1 and drop rows with a SkuPriceEffectiveStart before S. Revisit if challenged.
 
 ## Size Analysis
 
@@ -39,7 +62,7 @@ Per-month view for SKU Price rows:
 
 ## Why MUST, Not MAY
 
-A changed-since option that a service provider is free to ignore gives practitioners no size guarantee. They would still have to plan storage and pipelines for full re-sends and deduplicate every delivery. The requirement therefore makes the configuration mandatory and requires that unchanged records be excluded when it is used.
+A period option that a service provider is free to ignore gives practitioners no size guarantee. They would still have to plan storage and pipelines for full re-sends and deduplicate every delivery. The requirement therefore makes the configuration mandatory and requires that unchanged records be excluded when it is used.
 
 The cost to a service provider is low. SKU Price Last Updated is already mandatory and already defined as the last time any value on the record changed, so the filter uses data the provider has to produce anyway.
 
