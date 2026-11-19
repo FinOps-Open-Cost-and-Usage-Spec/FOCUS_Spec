@@ -6,13 +6,13 @@ CrestNode provides recency metadata to accompany their FOCUS data export. CrestN
 
 ## Supplied Metadata
 
-Metadata can be provided at a location such as `/FOCUS/metadata/recency/recency-54321-abcde-12345-abcde-12345.json`.
+Metadata can be provided at a location such as `/FOCUS/metadata/recency/recency-178151-dbad145e-178151-dbad145e-246811.json`.
 
 The provided recency metadata for non-time series dataset could look like this:
 
 ```json
 {
-  "DatasetInstanceId": "54321-abcde-12345-abcde-12345",
+  "DatasetInstanceId": "178151-dbad145e-178151-dbad145e-246811",
   "RecencyLastUpdated": "2025-01-29T15:01:03Z",
   "DatasetInstanceLastUpdated" : "2025-01-29T10:00:00Z",
   "DatasetInstanceComplete" : true

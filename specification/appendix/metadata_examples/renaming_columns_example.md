@@ -82,7 +82,7 @@ The subsequent new schema metadata after the rename could look like this:
  {
   "SchemaId": "89123-abcde-89123-abcde-89123",
   "FocusVersion": "1.0",
-  "CreationDate": "2024-03-02T12:01:03Z",
+  "CreationDate": "2024-07-02T12:01:03Z",
   "DatasetInstanceId": "178151-dbad145e-178151-dbad145e-178151",
   "ColumnDefinition": [
     {

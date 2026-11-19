@@ -78,7 +78,7 @@ For reference, the prior schema object looked like this:
   "SchemaId": "34567-abcde-34567-abcde-34567",
   "FocusVersion": "1.0",
   "DataGeneratorVersion": "2.2",
-  "CreationDate": "2024-04-02T12:01:03Z",
+  "CreationDate": "2024-03-02T12:01:03Z",
   "DatasetInstanceId": "178151-dbad145e-178151-dbad145e-178151",
   "ColumnDefinition": [
     {

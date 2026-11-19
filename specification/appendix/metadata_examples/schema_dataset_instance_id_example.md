@@ -2,7 +2,7 @@
 
 ## Scenario
 
-CrestNode provides two FOCUS datasets: Cost and Usage and Contract Commitment. Each [Schema](#metadata.schema) metadata object includes the [DatasetInstanceId](#metadata.schema.datasetinstanceid) metadata to indicate which dataset instance the Schema describes.
+CrestNode provides two FOCUS datasets: Cost and Usage and Contract Commitment. Each [Schema](#metadata.schema) metadata object includes the [Dataset Instance ID](#metadata.schema.datasetinstanceid) metadata to indicate which dataset instance the Schema describes.
 
 ## Supplied Metadata
 
