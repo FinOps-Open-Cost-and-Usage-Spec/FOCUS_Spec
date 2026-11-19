@@ -1,3 +1,7 @@
+---
+dataset: CostAndUsage
+---
+
 # Aura Web Flexible Spend Plan - All Upfront - 0% Utilization
 
 | Parameter                    | Value       |
@@ -14,11 +18,11 @@
 
 ## Scenario Description
 
-This example shows an **Aura Web Flexible Spend Plan**, which is a commitment (with a Commitment Discount Category of `Spend`) where you commit to a specific dollar amount of usage per hour.
+This example shows an **Aura Web Flexible Spend Plan**, which is a commitment (with a [Commitment Discount Category](#col) of `Spend`) where you commit to a specific dollar amount of usage per hour.
 
-The **All Upfront** payment option means the entire commitment cost is paid at purchase time. This results in a single Purchase row with the full BilledCost and zero EffectiveCost (since the cost is amortized to usage rows).
+The **All Upfront** payment option means the entire commitment cost is paid at purchase time. This results in a single Purchase row with the full [BilledCost](#col) and zero [EffectiveCost](#col) (since the cost is amortized to usage rows).
 
-This scenario demonstrates **zero utilization** where the commitment is purchased but no resources are consumed. All usage rows have CommitmentDiscountStatus='Unused', representing wasted commitment capacity. The EffectiveCost on these rows reflects the cost of unused commitment that cannot be recovered.
+This scenario demonstrates **zero utilization** where the commitment is purchased but no resources are consumed. All usage rows have [CommitmentDiscountStatus](#col)='Unused', representing wasted commitment capacity. The [EffectiveCost](#col) on these rows reflects the cost of unused commitment that cannot be recovered.
 
 ## Row Summary
 
@@ -44,7 +48,7 @@ These three quantity columns serve different purposes and must be understood in 
 | **ConsumedQuantity**           | Actual resource consumption           | Usage rows with resources     | 1 (hours consumed)       |
 | **CommitmentDiscountQuantity** | Commitment capacity applied           | Rows with commitment discount | 24.20 (USD)              |
 
-**For spend-based commitments:** CommitmentDiscountQuantity represents the dollar amount applied, not a count of resources. For this commitment, the value equals the hourly dollar commitment.
+**For spend-based commitments:** [CommitmentDiscountQuantity](#col) represents the dollar amount applied, not a count of resources. For this commitment, the value equals the hourly dollar commitment.
 
 ### Pricing Columns: List Unit Price vs. Contracted Unit Price
 
@@ -53,7 +57,7 @@ These three quantity columns serve different purposes and must be understood in 
 | **ListUnitPrice**         | List (public) unit price   | $1.00              |
 | **ContractedUnitPrice**   | Negotiated unit price      | $1.00              |
 
-**Why this matters:** ContractedUnitPrice reflects enterprise-negotiated pricing (e.g., enterprise-negotiated rates), not commitment discount savings. In non-negotiated scenarios, ContractedUnitPrice equals ListUnitPrice. Commitment discount savings are reflected in EffectiveCost, not in unit prices. For spend-based purchase and unused rows, PricingUnit is USD and ListUnitPrice is $1.00, because you are fundamentally purchasing a block of dollars.
+**Why this matters:** [ContractedUnitPrice](#col) reflects enterprise-negotiated pricing (e.g., enterprise-negotiated rates), not commitment discount savings. In non-negotiated scenarios, [ContractedUnitPrice](#col) equals [ListUnitPrice](#col). Commitment discount savings are reflected in [EffectiveCost](#col), not in unit prices. For spend-based purchase and unused rows, [PricingUnit](#col) is USD and [ListUnitPrice](#col) is $1.00, because you are fundamentally purchasing a block of dollars.
 
 ### Cost Columns: Billed Cost vs. Effective Cost vs. List Cost
 
@@ -102,4 +106,4 @@ The following critical rules apply to commitment discount data:
 | SkuId                      | AURAWEB-USEAST1-COMPUTE-PURCHASE                               | must match Purchase row (no resource consumed)     |
 | SkuPriceId                 | AURAWEB-USEAST1-COMPUTE-FLEXSPEND-COMMITMENT-UNUSED            | Price point for unused commitment capacity         |
 
-For spend-based unused rows, PricingUnit is USD and PricingQuantity is the hourly commitment amount. ListCost = ListUnitPrice ($1.00) &times; PricingQuantity, which equals the wasted commitment dollars per hour.
+For spend-based unused rows, [PricingUnit](#col) is USD and [PricingQuantity](#col) is the hourly commitment amount. [ListCost](#col) = [ListUnitPrice](#col) ($1.00) &times; [PricingQuantity](#col), which equals the wasted commitment dollars per hour.

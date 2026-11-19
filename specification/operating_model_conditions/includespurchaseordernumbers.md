@@ -1,13 +1,13 @@
 # Includes Purchase Order Numbers
 
-The Includes Purchase Order Numbers operating model condition represents a verifiable state indicating whether the [*operating model*](#glossary:operating-model) includes purchase order numbers.
+The [Includes Purchase Order Numbers](#omc) operating model condition represents a verifiable state indicating whether the [operating model](#term) includes purchase order numbers.
 
 ## Requirements
 
-IncludesPurchaseOrderNumbers MUST adhere to the following requirements:
+[IncludesPurchaseOrderNumbers](#omc) MUST adhere to the following requirements:
 
-* IncludesPurchaseOrderNumbers MUST evaluate to true when the *operating model* includes purchase order numbers.
-* IncludesPurchaseOrderNumbers MUST evaluate to false when the *operating model* does not include purchase order numbers.
+* [IncludesPurchaseOrderNumbers](#omc) MUST evaluate to true when the [operating model](#term) includes purchase order numbers.
+* [IncludesPurchaseOrderNumbers](#omc) MUST evaluate to false when the [operating model](#term) does not include purchase order numbers.
 
 ## Operating Model Condition ID
 
@@ -19,7 +19,7 @@ Includes Purchase Order Numbers
 
 ## Description
 
-A verifiable state indicating whether the *operating model* includes purchase order numbers.
+A verifiable state indicating whether the [operating model](#term) includes purchase order numbers.
 
 ## Version Introduced
 

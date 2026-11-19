@@ -1,0 +1,17 @@
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll("[data-focus-id]").forEach(function (el) {
+    el.title = el.className.replace(/focus-/g, "") + ": " + el.dataset.focusId;
+  });
+  var legend = document.createElement("div");
+  legend.className = "focus-legend";
+  legend.innerHTML = '<label><input type="checkbox" id="focus-toggle" checked> Highlight semantic references</label> &nbsp; ' +
+    '<span class="focus-col">column</span> <span class="focus-val">value</span> <span class="focus-term">glossary term</span> ' +
+    '<span class="focus-attr">attribute / dataset</span> <span class="focus-repeat">dashed = later mention (not linked)</span>';
+  document.body.insertBefore(legend, document.body.firstChild);
+  document.body.classList.add("show-entities");
+  document.getElementById("focus-toggle").addEventListener("change", function (e) {
+    document.body.classList.toggle("show-entities", e.target.checked);
+  });
+});
+</script>

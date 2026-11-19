@@ -1,24 +1,28 @@
+---
+dataset: CostAndUsage
+---
+
 # Account Structures
 
 ## Description
 
-Different [*service providers*](#glossary:service-provider) have different account constructs that FinOps [*practitioners*](#glossary:practitioner) use for allocation, reporting, and more. Organizations may have one or many accounts within one or more *service providers* and FinOps *practitioners* may need to review the cost broken down by each account. FOCUS has two types of accounts: a [*billing account*](#glossary:billing-account) and a [*sub account*](#glossary:sub-account).
+Different [service providers](#term) have different account constructs that FinOps [practitioners](#term) use for allocation, reporting, and more. Organizations may have one or many accounts within one or more [service providers](#term) and FinOps [practitioners](#term) may need to review the cost broken down by each account. FOCUS has two types of accounts: a [billing account](#term) and a [sub account](#term).
 
-A *billing account* is the account where [*invoices*](#glossary:invoice) are generated. Each *billing account* can have one or more *sub accounts*, which can be used for deploying and managing [*resources*](#glossary:resource) and [*services*](#glossary:service). Billing and sub accounts are often used to facilitate allocation strategies and FinOps *practitioners* must be able to break costs down by billing and sub account to facilitate FinOps scenarios like chargeback and budgeting.
+A [billing account](#term) is the account where [invoices](#term) are generated. Each [billing account](#term) can have one or more [sub accounts](#term), which can be used for deploying and managing [resources](#term) and [services](#term). Billing and sub accounts are often used to facilitate allocation strategies and FinOps [practitioners](#term) must be able to break costs down by billing and sub account to facilitate FinOps scenarios like chargeback and budgeting.
 
 ## Directly Dependent Columns
 
-* BillingAccountId
-* BillingAccountName
-* BillingAccountType
-* SubAccountId
-* SubAccountName
-* SubAccountType
+* [BillingAccountId](#col)
+* [BillingAccountName](#col)
+* [BillingAccountType](#col)
+* [SubAccountId](#col)
+* [SubAccountName](#col)
+* [SubAccountType](#col)
 
 ## Supporting Columns
 
-* BilledCost
-* BillingCurrency
+* [BilledCost](#col)
+* [BillingCurrency](#col)
 
 ## Example SQL Query
 

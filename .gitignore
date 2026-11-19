@@ -1,6 +1,8 @@
 *.pdf
 .DS_Store
 spec.md
+spec.semantic.md
+semantic-registry.json
 spec.html
 spec_pdf.html
 *.pyc

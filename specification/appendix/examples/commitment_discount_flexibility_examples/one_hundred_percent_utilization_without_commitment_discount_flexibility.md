@@ -21,16 +21,16 @@ For this example, fictitious service provider, *LatticeScale*, offers the follow
 | Compute | VM_LARGE  | VM_LARGE_ON_DEMAND_HOUR                 | $3.00                | 3                    |
 | Compute | VM_XLARGE | VM_XLARGE_ON_DEMAND_HOUR                | $4.00                | 4                    |
 
-The above SKU Catalog shows that this service provider only has 1 service that offers 4 virtual machine SKUs at various list rates, [*commitment discount*](#glossary:commitment-discount) rates, and normalization factors. Each SKU's normalization factor classifies its relative size to its *commitment discount* rate. Usage-based *commitment discounts* with [*commitment discount flexibility*](#appendix.examples:commitmentdiscountflexibility) can fully cover any combination of 1 or more SKUs where the sum of their normalization factor is less than or equal to the normalization factor of the *commitment discount*.
+The above SKU Catalog shows that this service provider only has 1 service that offers 4 virtual machine SKUs at various list rates, [commitment discount](#term) rates, and normalization factors. Each SKU's normalization factor classifies its relative size to its [commitment discount](#term) rate. Usage-based [commitment discounts](#term) with [*commitment discount flexibility*](#appendix.examples:commitmentdiscountflexibility) can fully cover any combination of 1 or more SKUs where the sum of their normalization factor is less than or equal to the normalization factor of the [commitment discount](#term).
 
 ## Scenario
 
-* 1 no upfront *commitment discount* is purchased for 1 year (2023) for 1 VM_LARGE.
+* 1 no upfront [commitment discount](#term) is purchased for 1 year (2023) for 1 VM_LARGE.
 * 1 VM_LARGE resource runs for 1 hour from 2023-01-01T00:00:00 to 2023-01-01T01:00:00.
 
 ## Outcome
 
-* 1 recurring, purchase record exists for 1 eligible "Hour" of the no upfront, *commitment discount* and incurs a $1.50 [*BilledCost*](#datamodel.costandusage.billedcost).
-* The *commitment discount* covers the first [*charge period*](#glossary:chargeperiod) for 1 VM_LARGE resource incurring a $1.50 [*EffectiveCost*](#datamodel.costandusage.effectivecost).
+* 1 recurring, purchase record exists for 1 eligible "Hour" of the no upfront, [commitment discount](#term) and incurs a $1.50 [BilledCost](#col:CostAndUsage.BilledCost).
+* The [commitment discount](#term) covers the first [charge period](#term) for 1 VM_LARGE resource incurring a $1.50 [EffectiveCost](#col).
 
 [CSV Example](/specification/data/commitment_discount_flexibility/one_hundred_percent_utilization_without_commitment_discount_flexibility.csv)

@@ -1,13 +1,13 @@
 # Includes Split Cost Allocation
 
-The Includes Split Cost Allocation operating model condition represents a verifiable state indicating whether the [*operating model*](#glossary:operating-model) includes [*split cost allocation*](#glossary:split-cost-allocation).
+The [Includes Split Cost Allocation](#omc) operating model condition represents a verifiable state indicating whether the [operating model](#term) includes [split cost allocation](#term).
 
 ## Requirements
 
-IncludesSplitCostAllocation MUST adhere to the following requirements:
+[IncludesSplitCostAllocation](#omc) MUST adhere to the following requirements:
 
-* IncludesSplitCostAllocation MUST evaluate to true when the *operating model* includes *split cost allocation*.
-* IncludesSplitCostAllocation MUST evaluate to false when the *operating model* does not include *split cost allocation*.
+* [IncludesSplitCostAllocation](#omc) MUST evaluate to true when the [operating model](#term) includes [split cost allocation](#term).
+* [IncludesSplitCostAllocation](#omc) MUST evaluate to false when the [operating model](#term) does not include [split cost allocation](#term).
 
 ## Operating Model Condition ID
 
@@ -19,7 +19,7 @@ Includes Split Cost Allocation
 
 ## Description
 
-A verifiable state indicating whether the *operating model* includes *split cost allocation*.
+A verifiable state indicating whether the [operating model](#term) includes [split cost allocation](#term).
 
 ## Version Introduced
 

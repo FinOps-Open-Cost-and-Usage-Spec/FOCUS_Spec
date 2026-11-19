@@ -2,7 +2,7 @@
 
 ## Scenario
 
-CrestNode provides metadata about the data generator as a part of their FOCUS data export. They provide the relevant data via the [Data Generator](#metadata.datagenerator) schema object.
+CrestNode provides metadata about the data generator as a part of their FOCUS data export. They provide the relevant data via the [Data Generator](#meta) schema object.
 
 ## Supplied Metadata
 

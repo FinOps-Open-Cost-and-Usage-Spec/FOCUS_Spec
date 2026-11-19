@@ -2,7 +2,7 @@
 
 ## Scenario
 
-CrestNode has decided to remove columns from their FOCUS data export. The column removed is x_awesome_column3. The data generator creates a new [Schema](#metadata.schema) object to represent the new schema, with a unique [SchemaId](#metadata.schema.schemaid).
+CrestNode has decided to remove columns from their FOCUS data export. The column removed is x_awesome_column3. The data generator creates a new [Schema](#meta) object to represent the new schema, with a unique [SchemaId](#meta).
 
 ## Supplied Metadata
 

@@ -1,13 +1,13 @@
 # Includes Requester Attribution
 
-The Includes Requester Attribution operating model condition represents a verifiable state indicating whether the [*operating model*](#glossary:operating-model) includes attributing usage or purchase of [*resources*](#glossary:resource) or [*services*](#glossary:service) to [*requesters*](#glossary:requester).
+The [Includes Requester Attribution](#omc) operating model condition represents a verifiable state indicating whether the [operating model](#term) includes attributing usage or purchase of [resources](#term) or [services](#term) to [requesters](#term).
 
 ## Requirements
 
-IncludesRequesterAttribution MUST adhere to the following requirements:
+[IncludesRequesterAttribution](#omc) MUST adhere to the following requirements:
 
-* IncludesRequesterAttribution MUST evaluate to true when the *operating model* includes attributing usage or purchase of *resources* or *services* to *requesters*.
-* IncludesRequesterAttribution MUST evaluate to false when the *operating model* does not include attributing usage or purchase of *resources* or *services* to *requesters*.
+* [IncludesRequesterAttribution](#omc) MUST evaluate to true when the [operating model](#term) includes attributing usage or purchase of [resources](#term) or [services](#term) to [requesters](#term).
+* [IncludesRequesterAttribution](#omc) MUST evaluate to false when the [operating model](#term) does not include attributing usage or purchase of [resources](#term) or [services](#term) to [requesters](#term).
 
 ## Operating Model Condition ID
 
@@ -19,7 +19,7 @@ Includes Requester Attribution
 
 ## Description
 
-A verifiable state indicating whether the *operating model* includes attributing usage or purchase of *resources* or *services* to *requesters*.
+A verifiable state indicating whether the [operating model](#term) includes attributing usage or purchase of [resources](#term) or [services](#term) to [requesters](#term).
 
 ## Version Introduced
 

@@ -1,13 +1,13 @@
 # Includes Payable Invoices
 
-The Includes Payable Invoices operating model condition represents a verifiable state indicating whether the [*operating model*](#glossary:operating-model) includes payable [*invoices*](#glossary:invoice).
+The [Includes Payable Invoices](#omc) operating model condition represents a verifiable state indicating whether the [operating model](#term) includes payable [invoices](#term).
 
 ## Requirements
 
-IncludesPayableInvoices MUST adhere to the following requirements:
+[IncludesPayableInvoices](#omc) MUST adhere to the following requirements:
 
-* IncludesPayableInvoices MUST evaluate to true when the *operating model* includes payable *invoices*.
-* IncludesPayableInvoices MUST evaluate to false when the *operating model* does not include payable *invoices*.
+* [IncludesPayableInvoices](#omc) MUST evaluate to true when the [operating model](#term) includes payable [invoices](#term).
+* [IncludesPayableInvoices](#omc) MUST evaluate to false when the [operating model](#term) does not include payable [invoices](#term).
 
 ## Operating Model Condition ID
 
@@ -19,7 +19,7 @@ Includes Payable Invoices
 
 ## Description
 
-A verifiable state indicating whether the *operating model* includes payable *invoices*.
+A verifiable state indicating whether the [operating model](#term) includes payable [invoices](#term).
 
 ## Version Introduced
 

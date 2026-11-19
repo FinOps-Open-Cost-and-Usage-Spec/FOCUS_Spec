@@ -1,17 +1,17 @@
 # Invoice Issuer Name
 
-Invoice Issuer Name is the name of the entity responsible for issuing payable invoices for the [*resources*](#glossary:resource) or [*services*](#glossary:service) consumed. It is commonly used for cost analysis and reporting scenarios.
+[Invoice Issuer Name](#col) is the name of the entity responsible for issuing payable invoices for the [resources](#term) or [services](#term) consumed. It is commonly used for cost analysis and reporting scenarios.
 
 ## Requirements
 
-InvoiceIssuerName MUST adhere to the following requirements:
+[InvoiceIssuerName](#col) MUST adhere to the following requirements:
 
-* InvoiceIssuerName MUST be of type String.
-* InvoiceIssuerName MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* InvoiceIssuerName MUST NOT be null.
-* InvoiceIssuerName MUST represent the entity that issues invoices.
+* [InvoiceIssuerName](#col) MUST be of type String.
+* [InvoiceIssuerName](#col) MUST conform to [StringHandling](#attr) requirements.
+* [InvoiceIssuerName](#col) MUST NOT be null.
+* [InvoiceIssuerName](#col) MUST represent the entity that issues invoices.
 
-See [Appendix: Participating Entity Identification Examples](#appendix.examples:participatingentityidentification) section for examples of Invoice Issuer Name values across various use case scenarios.
+See [Appendix: Participating Entity Identification Examples](#appendix.examples:participatingentityidentification) section for examples of [Invoice Issuer Name](#col) values across various use case scenarios.
 
 ## Column ID
 
@@ -23,13 +23,13 @@ Invoice Issuer Name
 
 ## Description
 
-The name of the entity responsible for invoicing for the *resources* or *services* consumed.
+The name of the entity responsible for invoicing for the [resources](#term) or [services](#term) consumed.
 
 ## Content Constraints
 
 | Constraint                 | Value                                      |
 | :------------------------- | :----------------------------------------- |
-| Dataset                    | [Billing Period](#datamodel.billingperiod) |
+| Dataset                    | [Billing Period](#ds)                      |
 | Operating model conditions | Not applicable                             |
 | Column type                | Dimension                                  |
 | Feature level              | Mandatory                                  |

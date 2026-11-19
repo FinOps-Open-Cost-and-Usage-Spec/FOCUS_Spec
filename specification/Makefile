@@ -4,6 +4,10 @@ PYMARKDOWNLNT=python3 ./enhanced_markdown_lint.py
 PYTEST=python3 -m pytest
 WKHTMLTOPDF=$(shell which wkhtmltopdf)
 PANDOC_PROJECT_RELATIVE_LINKS=../vendored/pandoc-project-relative-links/pandoc-project-relative-links.py
+# Semantic reference demo (#2779): tags such as [BilledCost](#col) are resolved into
+# today's links and formatting between markdown-pp and the rest of the build.
+SEMANTIC_TOOLS=../supporting_content/semantic_markup_prototype
+SEMANTIC_REGISTRY=semantic-registry.json
 
 ifeq ($(STYLE),)
 STYLE=working_draft
@@ -25,8 +29,8 @@ ROOT_FILES=$(wildcard *.md *.mdpp)
 # 3. Grab the markdown files recursively ONLY from the allowed subdirectories
 SUBDIR_FILES=$(shell find $(SPEC_SOURCE_DIRS) -type f \( -name "*.md" -o -name "*.mdpp" \) 2>/dev/null)
 
-# 4. Combine them, sort them, and filter out spec.md
-SPEC_SOURCE_FILES=$(filter-out ./spec.md spec.md, $(sort $(ROOT_FILES) $(SUBDIR_FILES)))
+# 4. Combine them, sort them, and filter out spec.md and its semantic intermediate
+SPEC_SOURCE_FILES=$(filter-out ./spec.md spec.md ./spec.semantic.md spec.semantic.md, $(sort $(ROOT_FILES) $(SUBDIR_FILES)))
 SPEC_SOURCE_MDFILES=$(filter-out %.mdpp, $(SPEC_SOURCE_FILES))
 
 export TOCDEPTH=2
@@ -102,7 +106,11 @@ endif
 	while IFS=: read -r file line _; do \
 		echo "WARNING: Found code block escape that is not aligned to the start of the line in file $$file on line $$line"; \
 	done || true
-	PYTHONPATH=../vendored/ $(MARKDOWNPP) spec.mdpp -o $@
+	@echo "Checking entity definitions and building the semantic registry..."
+	python3 $(SEMANTIC_TOOLS)/build_registry.py --spec-dir . --out $(SEMANTIC_REGISTRY) $(if $(filter 1,$(force)),,--strict)
+	PYTHONPATH=../vendored/ $(MARKDOWNPP) spec.mdpp -o spec.semantic.md
+	@echo "Resolving semantic references..."
+	python3 $(SEMANTIC_TOOLS)/resolve_semantic.py --registry $(SEMANTIC_REGISTRY) $(if $(filter 1,$(force)),--no-strict) spec.semantic.md -o $@
 ifeq ($(force),1)
 	-@$(PYMARKDOWNLNT) --config markdownlnt.cfg scan $@
 else
@@ -110,4 +118,4 @@ else
 endif
 
 clean:
-	rm -f spec.pdf spec.html spec.md spec_pdf.html version.md
+	rm -f spec.pdf spec.html spec.md spec_pdf.html version.md spec.semantic.md $(SEMANTIC_REGISTRY)

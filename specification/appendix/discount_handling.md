@@ -1,8 +1,8 @@
 # Discount Handling
 
-While [*service providers*](#glossary:service-provider) may use different terms and mechanisms to describe and represent discounts in their native datasets, FOCUS represents discounts as reduced pricing reflected directly in the [*charges*](#glossary:charge) they pertain to, rather than as separate offsetting *charges*. Unlike discounts, [*credits*](#glossary:credit) are financial incentives or allowances represented as separate *charges* unrelated to other *charges*.
+While [service providers](#term) may use different terms and mechanisms to describe and represent discounts in their native datasets, FOCUS represents discounts as reduced pricing reflected directly in the [charges](#term) they pertain to, rather than as separate offsetting [charges](#term). Unlike discounts, [credits](#term) are financial incentives or allowances represented as separate [charges](#term) unrelated to other [charges](#term).
 
-In [Cost and Usage](#datamodel.costandusage), cost and unit price columns reflect the effect of discounts. Discounts associated with [*contract commitments*](#glossary:contract-commitment) are further identified and attributed using the [Contract Applied](#datamodel.costandusage.contractapplied) column (also serves as an association to the [Contract Commitment](#datamodel.contractcommitment) dataset), as well as [*commitment discount*](#glossary:commitment-discount)-specific columns. [*Custom columns*](#glossary:custom-column) may be used when needed to further identify or describe discounts.
+In [Cost and Usage](#ds), cost and unit price columns reflect the effect of discounts. Discounts associated with [contract commitments](#term) are further identified and attributed using the [Contract Applied](#col) column (also serves as an association to the [Contract Commitment](#ds) dataset), as well as [commitment discount](#term)-specific columns. [Custom columns](#term) may be used when needed to further identify or describe discounts.
 
 For additional context and related normative requirements associated with discount handling, refer to the following specification sections:
 

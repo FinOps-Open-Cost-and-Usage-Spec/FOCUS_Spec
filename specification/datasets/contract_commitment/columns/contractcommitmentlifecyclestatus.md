@@ -1,15 +1,15 @@
 # Contract Commitment Lifecycle Status
 
-Contract Commitment Lifecycle Status represents the current lifecycle state of a [*contract commitment*](#glossary:contract-commitment). The Status determines the applicability of the commitment to a specific period of [Cost and Usage](#datamodel.costandusage) data.
+[Contract Commitment Lifecycle Status](#col) represents the current lifecycle state of a [contract commitment](#term). The Status determines the applicability of the commitment to a specific period of [Cost and Usage](#ds) data.
 
 ## Requirements
 
-ContractCommitmentLifecycleStatus MUST adhere to the following requirements:
+[ContractCommitmentLifecycleStatus](#col) MUST adhere to the following requirements:
 
-* ContractCommitmentLifecycleStatus MUST be of type String.
-* ContractCommitmentLifecycleStatus MUST NOT be null.
-* ContractCommitmentLifecycleStatus MUST be one of the allowed values.
-* When a contract commitment record is modified in a way that requires a new [ContractCommitmentId](#datamodel.contractcommitment.contractcommitmentid), ContractCommitmentLifecycleStatus for the previous record MUST be "Superseded".
+* [ContractCommitmentLifecycleStatus](#col) MUST be of type String.
+* [ContractCommitmentLifecycleStatus](#col) MUST NOT be null.
+* [ContractCommitmentLifecycleStatus](#col) MUST be one of the allowed values.
+* When a contract commitment record is modified in a way that requires a new [ContractCommitmentId](#col), [ContractCommitmentLifecycleStatus](#col) for the previous record MUST be ["Superseded"](#val:ContractCommitmentLifecycleStatus).
 
 ## Allowed Values
 
@@ -33,13 +33,13 @@ Contract Commitment Lifecycle Status
 
 ## Description
 
-The current lifecycle state of a *contract commitment*.
+The current lifecycle state of a [contract commitment](#term).
 
 ## Content Constraints
 
 | Constraint                 | Value                                                |
 | :------------------------- | :--------------------------------------------------- |
-| Dataset                    | [Contract Commitment](#datamodel.contractcommitment) |
+| Dataset                    | [Contract Commitment](#ds)                           |
 | Operating model conditions | Not applicable                                       |
 | Column type                | Dimension                                            |
 | Feature level              | Mandatory                                            |

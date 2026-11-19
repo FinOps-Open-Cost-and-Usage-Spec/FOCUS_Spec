@@ -1,15 +1,15 @@
 # Charge Period Start
 
-Charge Period Start represents the [*inclusive start bound*](#glossary:inclusivestartbound) of a [*charge period*](#glossary:chargeperiod). For example, a time period where Charge Period Start is '2024-01-01T00:00:00Z' and [Charge Period End](#datamodel.costandusage.chargeperiodend) is '2024-01-02T00:00:00Z' includes [*charges*](#glossary:charge) for January 1 since Charge Period Start represents the *inclusive start bound*, but does not include *charges* for January 2 since Charge Period End represents the [*exclusive end bound*](#glossary:exclusiveendbound).
+[Charge Period Start](#col) represents the [inclusive start bound](#term) of a [charge period](#term). For example, a time period where [Charge Period Start](#col) is '2024-01-01T00:00:00Z' and [Charge Period End](#col) is '2024-01-02T00:00:00Z' includes [charges](#term) for January 1 since [Charge Period Start](#col) represents the [inclusive start bound](#term), but does not include [charges](#term) for January 2 since [Charge Period End](#col) represents the [exclusive end bound](#term).
 
 ## Requirements
 
-ChargePeriodStart MUST adhere to the following requirements:
+[ChargePeriodStart](#col) MUST adhere to the following requirements:
 
-* ChargePeriodStart MUST be of type Date/Time.
-* ChargePeriodStart MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.
-* ChargePeriodStart MUST NOT be null.
-* ChargePeriodStart MUST be the *inclusive start bound* of the effective period of the *charge*.
+* [ChargePeriodStart](#col) MUST be of type Date/Time.
+* [ChargePeriodStart](#col) MUST conform to [DateTimeFormat](#attr) requirements.
+* [ChargePeriodStart](#col) MUST NOT be null.
+* [ChargePeriodStart](#col) MUST be the [inclusive start bound](#term) of the effective period of the [charge](#term).
 
 ## Column ID
 
@@ -21,19 +21,19 @@ Charge Period Start
 
 ## Description
 
-The *inclusive start bound* of a *charge period*.
+The [inclusive start bound](#term) of a [charge period](#term).
 
 ## Content Constraints
 
 | Constraint                 | Value                                           |
 | :------------------------- | :---------------------------------------------- |
-| Dataset                    | [Cost and Usage](#datamodel.costandusage)       |
+| Dataset                    | [Cost and Usage](#ds)                           |
 | Operating model conditions | Not applicable                                  |
 | Column type                | Dimension                                       |
 | Feature level              | Mandatory                                       |
 | Allows nulls               | False                                           |
 | Data type                  | Date/Time                                       |
-| Value format               | [Date/Time Format](#attributes.date/timeformat) |
+| Value format               | [Date/Time Format](#attr)                       |
 
 ## Version Introduced
 

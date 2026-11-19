@@ -1,3 +1,7 @@
+---
+dataset: CostAndUsage
+---
+
 # LatticeScale Resource Reservation - No Upfront - 100% Utilization
 
 | Parameter                    | Value              |
@@ -14,11 +18,11 @@
 
 ## Scenario Description
 
-This example shows a **LatticeScale Resource Reservation**, which is a commitment (with a Commitment Discount Category of `Usage`) where you commit to a specific quantity of resource capacity (e.g., instance hours).
+This example shows a **LatticeScale Resource Reservation**, which is a commitment (with a [Commitment Discount Category](#col) of `Usage`) where you commit to a specific quantity of resource capacity (e.g., instance hours).
 
-The **No Upfront** payment option means you pay nothing at purchase time and instead pay a recurring monthly fee. LatticeScale commitments are billed monthly with no upfront payment option. This results in a recurring Purchase row each billing period with BilledCost equal to the monthly fee and zero EffectiveCost.
+The **No Upfront** payment option means you pay nothing at purchase time and instead pay a recurring monthly fee. LatticeScale commitments are billed monthly with no upfront payment option. This results in a recurring Purchase row each billing period with [BilledCost](#col) equal to the monthly fee and zero [EffectiveCost](#col).
 
-This scenario demonstrates **full utilization** where exactly 100% of the commitment capacity is consumed. All usage rows have CommitmentDiscountStatus='Used', indicating the commitment was fully applied. BilledCost=0 on usage rows because they're covered by the commitment.
+This scenario demonstrates **full utilization** where exactly 100% of the commitment capacity is consumed. All usage rows have [CommitmentDiscountStatus](#col)='Used', indicating the commitment was fully applied. [BilledCost](#col)=0 on usage rows because they're covered by the commitment.
 
 ## Row Summary
 
@@ -44,7 +48,7 @@ These three quantity columns serve different purposes and must be understood in 
 | **ConsumedQuantity**           | Actual resource consumption           | Usage rows with resources     | 1 (hours consumed)   |
 | **CommitmentDiscountQuantity** | Commitment capacity applied           | Rows with commitment discount | 1 (commitment units) |
 
-**For usage-based commitments:** CommitmentDiscountQuantity represents the quantity of resources (e.g., instance hours), not a dollar amount. For a 1-hour reservation, CommitmentDiscountQuantity = 1.
+**For usage-based commitments:** [CommitmentDiscountQuantity](#col) represents the quantity of resources (e.g., instance hours), not a dollar amount. For a 1-hour reservation, [CommitmentDiscountQuantity](#col) = 1.
 
 ### Pricing Columns: List Unit Price vs. Contracted Unit Price
 
@@ -53,7 +57,7 @@ These three quantity columns serve different purposes and must be understood in 
 | **ListUnitPrice**       | List (public) unit price | $44.18      |
 | **ContractedUnitPrice** | Negotiated unit price    | $44.18      |
 
-**Why this matters:** ContractedUnitPrice reflects enterprise-negotiated pricing (e.g., enterprise-negotiated rates), not commitment discount savings. In non-negotiated scenarios, ContractedUnitPrice equals ListUnitPrice. Commitment discount savings are reflected in EffectiveCost, not in unit prices.
+**Why this matters:** [ContractedUnitPrice](#col) reflects enterprise-negotiated pricing (e.g., enterprise-negotiated rates), not commitment discount savings. In non-negotiated scenarios, [ContractedUnitPrice](#col) equals [ListUnitPrice](#col). Commitment discount savings are reflected in [EffectiveCost](#col), not in unit prices.
 
 ### Cost Columns: Billed Cost vs. Effective Cost vs. List Cost
 

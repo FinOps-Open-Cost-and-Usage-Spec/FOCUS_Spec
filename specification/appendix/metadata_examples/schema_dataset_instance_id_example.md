@@ -2,13 +2,13 @@
 
 ## Scenario
 
-CrestNode provides two FOCUS datasets: Cost and Usage and Contract. Each [Schema](#metadata.schema) metadata object includes the [Dataset](#datasets) metadata to indicate which FOCUS Dataset the Schema conforms to.
+CrestNode provides two FOCUS datasets: [Cost and Usage](#ds) and Contract. Each [Schema](#meta) metadata object includes the [Dataset](#datasets) metadata to indicate which FOCUS Dataset the Schema conforms to.
 
 ## Supplied Metadata
 
 Metadata can be provided at a location such as `/FOCUS/metadata/schemas/schema-1234-abcde-12345-abcde-12345.json`.
 
-The schema for the data artifact conforming to the dataset FOCUS Cost and Usage.
+The schema for the data artifact conforming to the dataset FOCUS [Cost and Usage](#ds).
 
 ```json
 {

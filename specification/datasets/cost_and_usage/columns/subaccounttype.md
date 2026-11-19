@@ -1,17 +1,17 @@
 # Sub Account Type
 
-Sub Account Type is a service-provider-assigned name to identify the type of [*sub account*](#glossary:sub-account). Sub Account Type is a readable display name and not a code. Sub Account Type is commonly used for scenarios like mapping FOCUS and service provider constructs, summarizing costs across service providers, or invoicing and chargeback.
+[Sub Account Type](#col) is a service-provider-assigned name to identify the type of [sub account](#term). [Sub Account Type](#col) is a readable display name and not a code. [Sub Account Type](#col) is commonly used for scenarios like mapping FOCUS and service provider constructs, summarizing costs across service providers, or invoicing and chargeback.
 
 ## Requirements
 
-SubAccountType MUST adhere to the following requirements:
+[SubAccountType](#col) MUST adhere to the following requirements:
 
-* SubAccountType MUST be of type String.
-* SubAccountType MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* SubAccountType MUST adhere to the following nullability requirements:
-  * SubAccountType MUST be null when [SubAccountId](#datamodel.costandusage.subaccountid) is null.
-  * SubAccountType MUST NOT be null when SubAccountId is not null.
-* SubAccountType MUST be a consistent, readable display value.
+* [SubAccountType](#col) MUST be of type String.
+* [SubAccountType](#col) MUST conform to [StringHandling](#attr) requirements.
+* [SubAccountType](#col) MUST adhere to the following nullability requirements:
+  * [SubAccountType](#col) MUST be null when [SubAccountId](#col) is null.
+  * [SubAccountType](#col) MUST NOT be null when [SubAccountId](#col) is not null.
+* [SubAccountType](#col) MUST be a consistent, readable display value.
 
 ## Column ID
 
@@ -23,14 +23,14 @@ Sub Account Type
 
 ## Description
 
-A service-provider-assigned name to identify the type of *sub account*.
+A service-provider-assigned name to identify the type of [sub account](#term).
 
 ## Content Constraints
 
 | Constraint                 | Value                                     |
 | :------------------------- | :---------------------------------------- |
-| Dataset                    | [Cost and Usage](#datamodel.costandusage) |
-| Operating model conditions | [Includes Multiple Sub Account Types](#operatingmodelconditions.includesmultiplesubaccounttypes) |
+| Dataset                    | [Cost and Usage](#ds)                     |
+| Operating model conditions | [Includes Multiple Sub Account Types](#omc)                                                      |
 | Column type                | Dimension                                 |
 | Feature level              | Conditional                               |
 | Allows nulls               | True                                      |

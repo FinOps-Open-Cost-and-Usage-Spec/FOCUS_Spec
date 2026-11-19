@@ -1,16 +1,16 @@
 # Sub Account Name
 
-A Sub Account Name is a display name assigned to a [*sub account*](#glossary:sub-account). Sub Account Name is commonly used for scenarios like grouping based on organizational constructs, access management needs, and cost allocation strategies.
+A [Sub Account Name](#col) is a display name assigned to a [sub account](#term). [Sub Account Name](#col) is commonly used for scenarios like grouping based on organizational constructs, access management needs, and cost allocation strategies.
 
 ## Requirements
 
-SubAccountName MUST adhere to the following requirements:
+[SubAccountName](#col) MUST adhere to the following requirements:
 
-* SubAccountName MUST be of type String.
-* SubAccountName MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* SubAccountName MUST adhere to the following nullability requirements:
-  * SubAccountName MUST be null when [SubAccountId](#datamodel.costandusage.subaccountid) is null.
-  * SubAccountName MUST NOT be null when SubAccountId is not null.
+* [SubAccountName](#col) MUST be of type String.
+* [SubAccountName](#col) MUST conform to [StringHandling](#attr) requirements.
+* [SubAccountName](#col) MUST adhere to the following nullability requirements:
+  * [SubAccountName](#col) MUST be null when [SubAccountId](#col) is null.
+  * [SubAccountName](#col) MUST NOT be null when [SubAccountId](#col) is not null.
 
 See [Appendix: Grouping constructs for resources or services](#appendix.groupingconstructsforresourcesorservices) for details and examples of the different grouping constructs supported by FOCUS.
 
@@ -24,14 +24,14 @@ Sub Account Name
 
 ## Description
 
-A name assigned to a grouping of [*resources*](#glossary:resource) or [*services*](#glossary:service), often used to manage access and/or cost.
+A name assigned to a grouping of [resources](#term) or [services](#term), often used to manage access and/or cost.
 
 ## Content Constraints
 
 | Constraint                 | Value                                     |
 | :------------------------- | :---------------------------------------- |
-| Dataset                    | [Cost and Usage](#datamodel.costandusage) |
-| Operating model conditions | [Includes Sub Accounts](#operatingmodelconditions.includessubaccounts) |
+| Dataset                    | [Cost and Usage](#ds)                     |
+| Operating model conditions | [Includes Sub Accounts](#omc)                                          |
 | Column type                | Dimension                                 |
 | Feature level              | Conditional                               |
 | Allows nulls               | True                                      |

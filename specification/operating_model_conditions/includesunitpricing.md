@@ -1,13 +1,13 @@
 # Includes Unit Pricing
 
-The Includes Unit Pricing operating model condition represents a verifiable state indicating whether the [*operating model*](#glossary:operating-model) includes [*unit pricing*](#glossary:unit-pricing).
+The [Includes Unit Pricing](#omc) operating model condition represents a verifiable state indicating whether the [operating model](#term) includes [unit pricing](#term).
 
 ## Requirements
 
-IncludesUnitPricing MUST adhere to the following requirements:
+[IncludesUnitPricing](#omc) MUST adhere to the following requirements:
 
-* IncludesUnitPricing MUST evaluate to true when the *operating model* includes *unit pricing*.
-* IncludesUnitPricing MUST evaluate to false when the *operating model* does not include *unit pricing*.
+* [IncludesUnitPricing](#omc) MUST evaluate to true when the [operating model](#term) includes [unit pricing](#term).
+* [IncludesUnitPricing](#omc) MUST evaluate to false when the [operating model](#term) does not include [unit pricing](#term).
 
 ## Operating Model Condition ID
 
@@ -19,7 +19,7 @@ Includes Unit Pricing
 
 ## Description
 
-A verifiable state indicating whether the *operating model* includes *unit pricing*.
+A verifiable state indicating whether the [operating model](#term) includes [unit pricing](#term).
 
 ## Version Introduced
 

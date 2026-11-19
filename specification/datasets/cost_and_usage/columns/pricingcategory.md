@@ -1,23 +1,23 @@
 # Pricing Category
 
-Pricing Category describes the pricing model used for a [*charge*](#glossary:charge) at the time of use or purchase. It can be useful for distinguishing between *charges* incurred at the [*list unit price*](#glossary:list-unit-price) or a reduced price and exposing optimization opportunities, like increasing [*commitment discount*](#glossary:commitment-discount) coverage.
+[Pricing Category](#col) describes the pricing model used for a [charge](#term) at the time of use or purchase. It can be useful for distinguishing between [charges](#term) incurred at the [list unit price](#term) or a reduced price and exposing optimization opportunities, like increasing [commitment discount](#term) coverage.
 
 ## Requirements
 
-PricingCategory MUST adhere to the following requirements:
+[PricingCategory](#col) MUST adhere to the following requirements:
 
-* PricingCategory MUST be of type String.
-* PricingCategory MUST adhere to the following nullability requirements:
-  * PricingCategory MUST be null when [SkuPriceId](#datamodel.costandusage.skupriceid) is null.
-  * PricingCategory MUST be null when [ChargeCategory](#datamodel.costandusage.chargecategory) is "Tax".
-  * PricingCategory MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#datamodel.costandusage.chargeclass) is not "Correction".
-  * PricingCategory MAY be null in all other cases.
-* When PricingCategory is not null, PricingCategory MUST adhere to the following requirements:
-  * PricingCategory MUST be one of the allowed values.
-  * PricingCategory MUST be "Standard" when pricing is predetermined at the agreed upon rate for the [*billing account*](#glossary:billing-account).
-  * PricingCategory MUST be "Committed" when the *charge* is subject to an existing *commitment discount* and is not the purchase of the *commitment discount*.
-  * PricingCategory MUST be "Dynamic" when pricing is determined by the service provider and may change over time, regardless of predetermined agreement pricing.
-  * PricingCategory MUST be "Other" when there is a pricing model but none of the allowed values apply.
+* [PricingCategory](#col) MUST be of type String.
+* [PricingCategory](#col) MUST adhere to the following nullability requirements:
+  * [PricingCategory](#col) MUST be null when [SkuPriceId](#col) is null.
+  * [PricingCategory](#col) MUST be null when [ChargeCategory](#col) is ["Tax"](#val:CostAndUsage.ChargeCategory).
+  * [PricingCategory](#col) MUST NOT be null when [ChargeCategory](#col) is ["Usage"](#val:CostAndUsage.ChargeCategory) or "Purchase" and [ChargeClass](#col) is not ["Correction"](#val:CostAndUsage.ChargeClass).
+  * [PricingCategory](#col) MAY be null in all other cases.
+* When [PricingCategory](#col) is not null, [PricingCategory](#col) MUST adhere to the following requirements:
+  * [PricingCategory](#col) MUST be one of the allowed values.
+  * [PricingCategory](#col) MUST be ["Standard"](#val:PricingCategory) when pricing is predetermined at the agreed upon rate for the [billing account](#term).
+  * [PricingCategory](#col) MUST be ["Committed"](#val:PricingCategory) when the [charge](#term) is subject to an existing [commitment discount](#term) and is not the purchase of the [commitment discount](#term).
+  * [PricingCategory](#col) MUST be ["Dynamic"](#val:PricingCategory) when pricing is determined by the service provider and may change over time, regardless of predetermined agreement pricing.
+  * [PricingCategory](#col) MUST be ["Other"](#val:PricingCategory) when there is a pricing model but none of the allowed values apply.
 
 ## Allowed Values
 
@@ -38,14 +38,14 @@ Pricing Category
 
 ## Description
 
-Describes the pricing model used for a *charge* at the time of use or purchase.
+Describes the pricing model used for a [charge](#term) at the time of use or purchase.
 
 ## Content Constraints
 
 | Constraint                 | Value                                     |
 | :------------------------- | :---------------------------------------- |
-| Dataset                    | [Cost and Usage](#datamodel.costandusage) |
-| Operating model conditions | [Includes Multiple Pricing Categories](#operatingmodelconditions.includesmultiplepricingcategories) |
+| Dataset                    | [Cost and Usage](#ds)                     |
+| Operating model conditions | [Includes Multiple Pricing Categories](#omc)                                                        |
 | Column type                | Dimension                                 |
 | Feature level              | Conditional                               |
 | Allows nulls               | True                                      |

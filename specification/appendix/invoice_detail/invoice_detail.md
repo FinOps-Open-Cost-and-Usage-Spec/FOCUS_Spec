@@ -2,7 +2,7 @@
 
 ## Overview
 
-The **Invoice Detail** dataset provides a transactional representation of the financial obligations between a customer and an [*invoice issuer*](#glossary:invoice-issuer). While the [Cost and Usage](#datamodel.costandusage) dataset tracks granular consumption, the Invoice Detail dataset tracks the financial record of charges as they appear on a physical or electronic billing document.
+The **[Invoice Detail](#ds)** dataset provides a transactional representation of the financial obligations between a customer and an [invoice issuer](#term). While the [Cost and Usage](#ds) dataset tracks granular consumption, the [Invoice Detail](#ds) dataset tracks the financial record of charges as they appear on a physical or electronic billing document.
 
 ### Core Logical Pillars
 
@@ -33,7 +33,7 @@ The following examples demonstrate some common patterns for issuing invoices fro
 This example includes a mix of standard consumption, a one-time purchase of a resource reservation, and taxes, all billed and paid in the same currency (USD).
 
 * **Currencies:** Since Billing and Payment currencies are identical, `PaymentCurrencyBilledCost` equals `BilledCost`.
-* **Aggregate Payment Currency**: Since no aggregate rows are present, `PaymentCurrencyInvoiceDetailId` is different for all rows.
+* **Aggregate [Payment Currency](#col)**: Since no aggregate rows are present, `PaymentCurrencyInvoiceDetailId` is different for all rows.
 * **Invoice Lineage:** Since this is an original invoice, `ReferenceInvoiceId` matches `InvoiceId`.
 
 #### Data Example: INV-2025-001
@@ -71,7 +71,7 @@ This example demonstrates the "Divergent Grain" model, where usage is tracked in
 
 * **Row 1 & 2 (Usage):** The detail lines, denominated in USD. `PaymentCurrencyBilledCost` is `0.00` because the detail does not have an exchange rate applied.
 * **Row 3 (Settlement):** The aggregate payable line, denominated in AUD. `BilledCost` is `0.00` (USD) to avoid double-counting consumption. `PaymentCurrencyBilledCost` holds the 5.17 AUD obligation.
-* **Aggregate Payment Currency**: Because aggregate Payment Currency rows are present, the same `PaymentCurrencyInvoiceDetailId` value of `LINE-AGG` associates these rows with each other.
+* **Aggregate [Payment Currency](#col)**: Because aggregate [Payment Currency](#col) rows are present, the same `PaymentCurrencyInvoiceDetailId` value of `LINE-AGG` associates these rows with each other.
 * **Invoice Lineage:** Since this is an original invoice, `ReferenceInvoiceId` matches `InvoiceId`.
 
 #### Data Example: AUIN25-1286479

@@ -1,25 +1,29 @@
+---
+dataset: CostAndUsage
+---
+
 # Charge Categorization
 
 ## Description
 
-FOCUS supports the categorization of [*charges*](#glossary:charge) via [Charge Category](#datamodel.costandusage.chargecategory), including "Purchase", "Usage", "Tax", "Credit", and "Adjustment". It includes classification on frequency via [Charge Frequency](#datamodel.costandusage.chargefrequency). It includes classification on "Correction" vs normal entries via [Charge Class](#datamodel.costandusage.chargeclass).
+FOCUS supports the categorization of [charges](#term) via [Charge Category](#col), including "Purchase", "Usage", "Tax", "Credit", and "Adjustment". It includes classification on frequency via [Charge Frequency](#col). It includes classification on "Correction" vs normal entries via [Charge Class](#col).
 
 ## Directly Dependent Columns
 
-* ChargeCategory
-* ChargeClass
-* ChargeFrequency
+* [ChargeCategory](#col)
+* [ChargeClass](#col)
+* [ChargeFrequency](#col)
 
 ## Supporting Columns
 
-* BilledCost
-* BillingAccountId
-* BillingPeriodEnd
-* BillingPeriodStart
-* CommitmentDiscountId
-* CommitmentDiscountType
-* ServiceProviderName
-* ServiceCategory
+* [BilledCost](#col)
+* [BillingAccountId](#col)
+* [BillingPeriodEnd](#col)
+* [BillingPeriodStart](#col)
+* [CommitmentDiscountId](#col)
+* [CommitmentDiscountType](#col)
+* [ServiceProviderName](#col)
+* [ServiceCategory](#col)
 
 ## Example SQL Queries
 

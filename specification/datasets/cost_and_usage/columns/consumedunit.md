@@ -1,17 +1,17 @@
 # Consumed Unit
 
-The Consumed Unit represents a service-provider-specified measurement unit indicating how a service provider measures usage of a metered SKU associated with a [*resource*](#glossary:resource) or [*service*](#glossary:service). Consumed Unit complements the [Consumed Quantity](#datamodel.costandusage.consumedquantity) metric. It is often listed at a finer granularity or over a different time interval when compared to [Pricing Unit](#datamodel.costandusage.pricingunit) (complementary to [Pricing Quantity](#datamodel.costandusage.pricingquantity)), and focuses on *resource* and *service* consumption, not pricing and cost.
+The [Consumed Unit](#col) represents a service-provider-specified measurement unit indicating how a service provider measures usage of a metered SKU associated with a [resource](#term) or [service](#term). [Consumed Unit](#col) complements the [Consumed Quantity](#col) metric. It is often listed at a finer granularity or over a different time interval when compared to [Pricing Unit](#col) (complementary to [Pricing Quantity](#col)), and focuses on [resource](#term) and [service](#term) consumption, not pricing and cost.
 
 ## Requirements
 
-ConsumedUnit MUST adhere to the following requirements:
+[ConsumedUnit](#col) MUST adhere to the following requirements:
 
-* ConsumedUnit MUST be of type String.
-* ConsumedUnit MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* ConsumedUnit SHOULD conform to [UnitFormat](#attributes.unitformat) requirements.
-* ConsumedUnit MUST adhere to the following nullability requirements:
-  * ConsumedUnit MUST be null when ConsumedQuantity is null.
-  * ConsumedUnit MUST NOT be null when ConsumedQuantity is not null.
+* [ConsumedUnit](#col) MUST be of type String.
+* [ConsumedUnit](#col) MUST conform to [StringHandling](#attr) requirements.
+* [ConsumedUnit](#col) SHOULD conform to [UnitFormat](#attr) requirements.
+* [ConsumedUnit](#col) MUST adhere to the following nullability requirements:
+  * [ConsumedUnit](#col) MUST be null when [ConsumedQuantity](#col) is null.
+  * [ConsumedUnit](#col) MUST NOT be null when [ConsumedQuantity](#col) is not null.
 
 ## Column ID
 
@@ -23,19 +23,19 @@ Consumed Unit
 
 ## Description
 
-Service-provider-specified measurement unit indicating how a service provider measures usage of a metered SKU associated with a *resource* or *service*.
+Service-provider-specified measurement unit indicating how a service provider measures usage of a metered SKU associated with a [resource](#term) or [service](#term).
 
 ## Content Constraints
 
 | Constraint                 | Value                                             |
 | :------------------------- | :------------------------------------------------ |
-| Dataset                    | [Cost and Usage](#datamodel.costandusage)         |
-| Operating model conditions | [Includes Usage Measurement](#operatingmodelconditions.includesusagemeasurement) |
+| Dataset                    | [Cost and Usage](#ds)                             |
+| Operating model conditions | [Includes Usage Measurement](#omc)                                               |
 | Column type                | Dimension                                         |
 | Feature level              | Conditional                                       |
 | Allows nulls               | True                                              |
 | Data type                  | String                                            |
-| Value format               | [Unit Format](#attributes.unitformat) recommended |
+| Value format               | [Unit Format](#attr) recommended                  |
 
 ## Version Introduced
 

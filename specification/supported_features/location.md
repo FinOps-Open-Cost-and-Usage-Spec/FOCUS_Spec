@@ -1,3 +1,7 @@
+---
+dataset: CostAndUsage
+---
+
 # Location
 
 ## Description
@@ -6,15 +10,15 @@ FOCUS provides structured location data through region and availability zone inf
 
 ## Directly Dependent Columns
 
-* AvailabilityZone
-* RegionId
-* RegionName
+* [AvailabilityZone](#col)
+* [RegionId](#col)
+* [RegionName](#col)
 
 ## Supporting Columns
 
-* BilledCost
-* ChargePeriodEnd
-* ChargePeriodStart
+* [BilledCost](#col)
+* [ChargePeriodEnd](#col)
+* [ChargePeriodStart](#col)
 
 ## Example SQL Query
 

@@ -1,12 +1,12 @@
 # Data Type
 
-The data type of the column provided in the [*FOCUS dataset*](#glossary:FOCUS-dataset).
+The data type of the column provided in the [FOCUS dataset](#term).
 
-DataType adheres to the following requirements:
+[DataType](#meta) adheres to the following requirements:
 
-* DataType MUST be present in an object within the [ColumnDefinition](#metadata.schema.columndefinition) collection.
-* DataType MUST be of type String.
-* DataType MUST NOT contain null values.
+* [DataType](#meta) MUST be present in an object within the [ColumnDefinition](#meta) collection.
+* [DataType](#meta) MUST be of type String.
+* [DataType](#meta) MUST NOT contain null values.
 
 ## Metadata ID
 

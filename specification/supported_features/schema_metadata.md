@@ -6,8 +6,8 @@ FOCUS' schema metadata supports communication of important attributes about the 
 
 ## Applicable Metadata
 
-* Schema
-  * Column Definition
+* [Schema](#meta)
+  * [Column Definition](#meta)
 
 ## Version Introduced
 

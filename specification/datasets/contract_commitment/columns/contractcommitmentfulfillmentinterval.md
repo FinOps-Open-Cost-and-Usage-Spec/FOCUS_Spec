@@ -1,17 +1,17 @@
 # Contract Commitment Fulfillment Interval
 
-Contract Commitment Fulfillment Interval represents the specific [*period*](#glossary:period) used to measure and reset the fulfillment of a [*contract commitment*](#glossary:contract-commitment). It establishes the window during which usage is aggregated to determine if commitment obligations have been met. At the end of each fulfillment interval, the [contract commitment model](#datamodel.contractcommitment.contractcommitmentmodel) logic is applied, either resulting in the expiration of unused capacity (Continuous) or the calculation of a balance or true-up (Discontinuous).
+[Contract Commitment Fulfillment Interval](#col) represents the specific [period](#term) used to measure and reset the fulfillment of a [contract commitment](#term). It establishes the window during which usage is aggregated to determine if commitment obligations have been met. At the end of each fulfillment interval, the [contract commitment model](#col) logic is applied, either resulting in the expiration of unused capacity (Continuous) or the calculation of a balance or true-up (Discontinuous).
 
-Contract Commitment Fulfillment Interval has a series of possible values that represent a length of time, typically recurring over the [contract commitment duration type](#datamodel.contractcommitment.contractcommitmentdurationtype). Continuous models are typically Hourly, whereas Discontinuous models are typically Daily or greater.
+[Contract Commitment Fulfillment Interval](#col) has a series of possible values that represent a length of time, typically recurring over the [contract commitment duration type](#col). Continuous models are typically Hourly, whereas Discontinuous models are typically Daily or greater.
 
 ## Requirements
 
-ContractCommitmentFulfillmentInterval MUST adhere to the following requirements:
+[ContractCommitmentFulfillmentInterval](#col) MUST adhere to the following requirements:
 
-* ContractCommitmentFulfillmentInterval MUST be of type String.
-* ContractCommitmentFulfillmentInterval MUST NOT be null.
-* ContractCommitmentFulfillmentInterval MUST be one of the allowed values.
-* ContractCommitmentFulfillmentInterval MUST NOT be "Full Period" when ContractCommitmentModel is "Continuous".
+* [ContractCommitmentFulfillmentInterval](#col) MUST be of type String.
+* [ContractCommitmentFulfillmentInterval](#col) MUST NOT be null.
+* [ContractCommitmentFulfillmentInterval](#col) MUST be one of the allowed values.
+* [ContractCommitmentFulfillmentInterval](#col) MUST NOT be ["Full Period"](#val:ContractCommitmentFulfillmentInterval) when [ContractCommitmentModel](#col) is ["Continuous"](#val:ContractCommitment.ContractCommitmentModel).
 
 ## Allowed Values
 
@@ -40,13 +40,13 @@ Contract Commitment Fulfillment Interval
 
 ## Description
 
-Represents the specific *period* used to measure and reset the fulfillment of a *contract commitment*.
+Represents the specific [period](#term) used to measure and reset the fulfillment of a [contract commitment](#term).
 
 ## Content Constraints
 
 | Constraint                 | Value                                                |
 | :------------------------- | :--------------------------------------------------- |
-| Dataset                    | [Contract Commitment](#datamodel.contractcommitment) |
+| Dataset                    | [Contract Commitment](#ds)                           |
 | Operating model conditions | Not applicable                                       |
 | Column type                | Dimension                                            |
 | Feature level              | Mandatory                                            |

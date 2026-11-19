@@ -1,16 +1,16 @@
 # Payment Currency Invoice Detail ID
 
-Payment Currency Invoice Detail ID is a reference to the [Invoice Detail ID](#datamodel.invoicedetail.invoicedetailid) of the record where the [Payment Currency Billed Cost](#datamodel.invoicedetail.paymentcurrencybilledcost) for the current row is aggregated. This identifier enables practitioners to explicitly link granular usage records to their corresponding aggregate records stated in their chosen currency for settlement, ensuring accurate reconciliation across divergent grains.
+[Payment Currency Invoice Detail ID](#col) is a reference to the [Invoice Detail ID](#col) of the record where the [Payment Currency Billed Cost](#col) for the current row is aggregated. This identifier enables practitioners to explicitly link granular usage records to their corresponding aggregate records stated in their chosen currency for settlement, ensuring accurate reconciliation across divergent grains.
 
 ## Requirements
 
-PaymentCurrencyInvoiceDetailId MUST adhere to the following requirements:
+[PaymentCurrencyInvoiceDetailId](#col) MUST adhere to the following requirements:
 
-* PaymentCurrencyInvoiceDetailId MUST be of type String.
-* PaymentCurrencyInvoiceDetailId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* PaymentCurrencyInvoiceDetailId MUST NOT be null.
-* PaymentCurrencyInvoiceDetailId MUST match the InvoiceDetailId of the record representing the PaymentCurrencyBilledCost aggregation for the current row.
-* PaymentCurrencyInvoiceDetailId MUST match InvoiceDetailId of the current record when PaymentCurrencyBilledCost is non-zero.
+* [PaymentCurrencyInvoiceDetailId](#col) MUST be of type String.
+* [PaymentCurrencyInvoiceDetailId](#col) MUST conform to [StringHandling](#attr) requirements.
+* [PaymentCurrencyInvoiceDetailId](#col) MUST NOT be null.
+* [PaymentCurrencyInvoiceDetailId](#col) MUST match the [InvoiceDetailId](#col) of the record representing the [PaymentCurrencyBilledCost](#col) aggregation for the current row.
+* [PaymentCurrencyInvoiceDetailId](#col) MUST match [InvoiceDetailId](#col) of the current record when [PaymentCurrencyBilledCost](#col) is non-zero.
 
 ## Column ID
 
@@ -22,14 +22,14 @@ Payment Currency Invoice Detail ID
 
 ## Description
 
-The identifier linking a granular record to the specific [Invoice Detail](#datamodel.invoicedetail) record where its Payment Currency Billed Cost is represented or aggregated.
+The identifier linking a granular record to the specific [Invoice Detail](#ds) record where its [Payment Currency Billed Cost](#col) is represented or aggregated.
 
 ## Content Constraints
 
 | Constraint                 | Value                                      |
 | :------------------------- | :----------------------------------------- |
-| Dataset                    | [Invoice Detail](#datamodel.invoicedetail) |
-| Operating model conditions | [Includes Aggregation Level Currency Differences](#operatingmodelconditions.includesaggregationlevelcurrencydifferences) |
+| Dataset                    | [Invoice Detail](#ds)                      |
+| Operating model conditions | [Includes Aggregation Level Currency Differences](#omc)                                                                  |
 | Column type                | Dimension                                  |
 | Feature level              | Conditional                                |
 | Allows nulls               | False                                      |

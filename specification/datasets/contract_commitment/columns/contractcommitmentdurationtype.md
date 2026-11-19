@@ -1,25 +1,25 @@
 # Contract Commitment Duration Type
 
-Contract Commitment Duration Type represents the categorical length of a [*contract commitment*](#glossary:contract-commitment) (e.g., "1 Year", "3 Years") based on the commercial agreement or pricing model.
+[Contract Commitment Duration Type](#col) represents the categorical length of a [contract commitment](#term) (e.g., "1 Year", "3 Years") based on the commercial agreement or pricing model.
 
-This column serves as a stable classifier for the commitment's duration, distinct from the actual lifespan of the specific record. For example, a 3-year commitment that is exchanged or modified may have a calculated duration of only a few months, but its Contract Commitment Duration Type remains "3 Years". This allows for consistent grouping and reporting on commitment durations, regardless of lifecycle events.
+This column serves as a stable classifier for the commitment's duration, distinct from the actual lifespan of the specific record. For example, a 3-year commitment that is exchanged or modified may have a calculated duration of only a few months, but its [Contract Commitment Duration Type](#col) remains "3 Years". This allows for consistent grouping and reporting on commitment durations, regardless of lifecycle events.
 
 ## Requirements
 
-ContractCommitmentDurationType MUST adhere to the following requirements:
+[ContractCommitmentDurationType](#col) MUST adhere to the following requirements:
 
-* ContractCommitmentDurationType MUST be of type String.
-* ContractCommitmentDurationType MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* ContractCommitmentDurationType MUST NOT be null.
-* ContractCommitmentDurationType SHOULD use the "[Numeric Value] [Unit]" format (e.g., "1 Day", "1 Year", "3 Months", "3 Years").
-* ContractCommitmentDurationType SHOULD present the unit of time as one of the allowed time-based unit names defined by [UnitFormat](#attributes.unitformat), from Minute through Year.
-* ContractCommitmentDurationType SHOULD correspond to the standard duration of the purchased offering (e.g., "1 Year", "3 Years") rather than a precise calculation of days or hours.
-* When ContractCommitmentDurationType expresses a time-based unit, ContractCommitmentDurationType MUST use the largest time-based unit defined by UnitFormat that expresses the duration as a whole number (e.g., "1 Year" rather than "12 Months", "1 Week" rather than "7 Days").
-* ContractCommitmentDurationType MAY differ from the actual duration calculated between [ContractCommitmentPeriodStart](#datamodel.contractcommitment.contractcommitmentperiodstart) and [ContractCommitmentPeriodEnd](#datamodel.contractcommitment.contractcommitmentperiodend) (e.g., if a 3-year commitment is exchanged in its final month, the resulting record may have a short lifespan but retains a value of "3 Years").
+* [ContractCommitmentDurationType](#col) MUST be of type String.
+* [ContractCommitmentDurationType](#col) MUST conform to [StringHandling](#attr) requirements.
+* [ContractCommitmentDurationType](#col) MUST NOT be null.
+* [ContractCommitmentDurationType](#col) SHOULD use the "[Numeric Value] [Unit]" format (e.g., "1 Day", "1 Year", "3 Months", "3 Years").
+* [ContractCommitmentDurationType](#col) SHOULD present the unit of time as one of the allowed time-based unit names defined by [UnitFormat](#attr), from Minute through Year.
+* [ContractCommitmentDurationType](#col) SHOULD correspond to the standard duration of the purchased offering (e.g., "1 Year", "3 Years") rather than a precise calculation of days or hours.
+* When [ContractCommitmentDurationType](#col) expresses a time-based unit, [ContractCommitmentDurationType](#col) MUST use the largest time-based unit defined by [UnitFormat](#attr) that expresses the duration as a whole number (e.g., "1 Year" rather than "12 Months", "1 Week" rather than "7 Days").
+* [ContractCommitmentDurationType](#col) MAY differ from the actual duration calculated between [ContractCommitmentPeriodStart](#col) and [ContractCommitmentPeriodEnd](#col) (e.g., if a 3-year commitment is exchanged in its final month, the resulting record may have a short lifespan but retains a value of "3 Years").
 
 ## Expected Format
 
-A given Contract Commitment Duration Type value follows a structured format of "[Numeric Value] [Unit]".
+A given [Contract Commitment Duration Type](#col) value follows a structured format of "[Numeric Value] [Unit]".
 
 * [Numeric Value]: A positive integer.
 * [Unit]: A standardized unit of time, singular or plural (e.g., Hour, Year, Years).
@@ -34,13 +34,13 @@ Contract Commitment Duration Type
 
 ## Description
 
-Represents the categorical length of the *contract commitment* offering.
+Represents the categorical length of the [contract commitment](#term) offering.
 
 ## Content Constraints
 
 | Constraint                 | Value                                                |
 | :------------------------- | :--------------------------------------------------- |
-| Dataset                    | [Contract Commitment](#datamodel.contractcommitment) |
+| Dataset                    | [Contract Commitment](#ds)                           |
 | Operating model conditions | Not applicable                                       |
 | Column type                | Dimension                                            |
 | Feature level              | Mandatory                                            |

@@ -1,18 +1,18 @@
 # Commitment Discount Name
 
-A Commitment Discount Name is the display name assigned to a [*commitment discount*](#glossary:commitment-discount). The Commitment Discount Name column is only applicable to *commitment discounts* and not [*negotiated discounts*](#glossary:negotiated-discount).
+A [Commitment Discount Name](#col) is the display name assigned to a [commitment discount](#term). The [Commitment Discount Name](#col) column is only applicable to [commitment discounts](#term) and not [negotiated discounts](#term).
 
 ## Requirements
 
-CommitmentDiscountName MUST adhere to the following requirements:
+[CommitmentDiscountName](#col) MUST adhere to the following requirements:
 
-* CommitmentDiscountName MUST be of type String.
-* CommitmentDiscountName MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* CommitmentDiscountName MUST adhere to the following nullability requirements:
-  * CommitmentDiscountName MUST be null when [CommitmentDiscountId](#datamodel.costandusage.commitmentdiscountid) is null.
-  * When CommitmentDiscountId is not null, CommitmentDiscountName MUST adhere to the following requirements:
-    * CommitmentDiscountName MUST NOT be null when a display name can be assigned to a *commitment discount*.
-    * CommitmentDiscountName MAY be null when a display name cannot be assigned to a *commitment discount*.
+* [CommitmentDiscountName](#col) MUST be of type String.
+* [CommitmentDiscountName](#col) MUST conform to [StringHandling](#attr) requirements.
+* [CommitmentDiscountName](#col) MUST adhere to the following nullability requirements:
+  * [CommitmentDiscountName](#col) MUST be null when [CommitmentDiscountId](#col) is null.
+  * When [CommitmentDiscountId](#col) is not null, [CommitmentDiscountName](#col) MUST adhere to the following requirements:
+    * [CommitmentDiscountName](#col) MUST NOT be null when a display name can be assigned to a [commitment discount](#term).
+    * [CommitmentDiscountName](#col) MAY be null when a display name cannot be assigned to a [commitment discount](#term).
 
 ## Column ID
 
@@ -24,14 +24,14 @@ Commitment Discount Name
 
 ## Description
 
-The display name assigned to a *commitment discount*.
+The display name assigned to a [commitment discount](#term).
 
 ## Content Constraints
 
 | Constraint                 | Value                                     |
 | :------------------------- | :---------------------------------------- |
-| Dataset                    | [Cost and Usage](#datamodel.costandusage) |
-| Operating model conditions | [Includes Commitment Discounts](#operatingmodelconditions.includescommitmentdiscounts) |
+| Dataset                    | [Cost and Usage](#ds)                     |
+| Operating model conditions | [Includes Commitment Discounts](#omc)                                                  |
 | Column type                | Dimension                                 |
 | Feature level              | Conditional                               |
 | Allows nulls               | True                                      |

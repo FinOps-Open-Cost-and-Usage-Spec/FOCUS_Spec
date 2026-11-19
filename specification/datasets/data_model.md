@@ -14,17 +14,17 @@ Datasets are sorted first by Feature Level (i.e., Mandatory, then Conditional), 
 | [Invoice Detail](#datamodel.invoicedetail)           | Transaction  | Conditional   | Describes the cost and usage issued on invoices. |
 | [SKU Price](#datamodel.skuprice) (preview)           | Reference    | Conditional   | Describes the unit prices offered by a service provider. |
 
-> **Preview:** The SKU Price dataset is a preview in this version of FOCUS. The requirement that the Data Model include SKU Price is excluded from conformance while that dataset is a preview.
+> **Preview:** The [SKU Price](#ds) dataset is a preview in this version of FOCUS. The requirement that the Data Model include [SKU Price](#ds) is excluded from conformance while that dataset is a preview.
 
 ## Requirements<!--SkipTOC-->
 
 DataModel MUST adhere to the following requirements:
 
-* DataModel MUST include [CostAndUsage](#datamodel.costandusage).
-* DataModel MUST include [BillingPeriod](#datamodel.billingperiod) when the [*operating model*](#glossary:operating-model) [includes payable invoices](#operatingmodelconditions.includespayableinvoices).
-* DataModel MUST include [ContractCommitment](#datamodel.contractcommitment) when the *operating model* [includes contract commitments](#operatingmodelconditions.includescontractcommitments).
-* DataModel MUST include [InvoiceDetail](#datamodel.invoicedetail) when the *operating model* includes payable invoices.
-* DataModel MUST include [SkuPrice](#datamodel.skuprice) when the *operating model* [includes unit pricing](#operatingmodelconditions.includesunitpricing).
+* DataModel MUST include [CostAndUsage](#ds).
+* DataModel MUST include [BillingPeriod](#ds) when the [operating model](#term) [includes payable invoices](#omc).
+* DataModel MUST include [ContractCommitment](#ds) when the [operating model](#term) [includes contract commitments](#omc).
+* DataModel MUST include [InvoiceDetail](#ds) when the [operating model](#term) includes payable invoices.
+* DataModel MUST include [SkuPrice](#ds) when the [operating model](#term) [includes unit pricing](#omc).
 
 ## Data Model ID<!--SkipTOC-->
 

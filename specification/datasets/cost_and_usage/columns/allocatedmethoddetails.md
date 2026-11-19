@@ -1,43 +1,43 @@
 # Allocated Method Details
 
-Allocated Method Details provides information about how resources are allocated when usage records are split to support cost allocation requirements.
+[Allocated Method Details](#col) provides information about how resources are allocated when usage records are split to support cost allocation requirements.
 
-Allocated Method Details consists of a valid JSON object which contains an array consisting of key-value objects describing the one or more factors that determined the split cost allocation. Each object consists of FOCUS-defined property keys but can be extended to provide additional details about the allocation.
+[Allocated Method Details](#col) consists of a valid JSON object which contains an array consisting of key-value objects describing the one or more factors that determined the split cost allocation. Each object consists of FOCUS-defined property keys but can be extended to provide additional details about the allocation.
 
 ## Requirements
 
 ### Column Requirements
 
-AllocatedMethodDetails MUST adhere to the following requirements:
+[AllocatedMethodDetails](#col) MUST adhere to the following requirements:
 
-* AllocatedMethodDetails MUST be of type JSON Object (serialized as a String where necessary).
-* AllocatedMethodDetails MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* AllocatedMethodDetails MUST conform to [JsonObjectFormat](#attributes.jsonobjectformat) requirements.
-* AllocatedMethodDetails MUST adhere to the following nullability requirements:
-  * AllocatedMethodDetails MUST be null when a charge is not related to a data generator-calculated split cost allocation.
-  * AllocatedMethodDetails SHOULD NOT be null when a charge is related to a data generator-calculated split cost allocation.
-* AllocatedMethodDetails MUST conform to [AllocatedMethodDetailsObject](#datamodel.costandusage.allocatedmethoddetails.allocatedmethoddetailsobject) requirements when AllocatedMethodDetails is not null.
+* [AllocatedMethodDetails](#col) MUST be of type JSON Object (serialized as a String where necessary).
+* [AllocatedMethodDetails](#col) MUST conform to [StringHandling](#attr) requirements.
+* [AllocatedMethodDetails](#col) MUST conform to [JsonObjectFormat](#attr) requirements.
+* [AllocatedMethodDetails](#col) MUST adhere to the following nullability requirements:
+  * [AllocatedMethodDetails](#col) MUST be null when a charge is not related to a data generator-calculated split cost allocation.
+  * [AllocatedMethodDetails](#col) SHOULD NOT be null when a charge is related to a data generator-calculated split cost allocation.
+* [AllocatedMethodDetails](#col) MUST conform to [AllocatedMethodDetailsObject](#obj) requirements when [AllocatedMethodDetails](#col) is not null.
 
 ## Allocated Method Details Object
 
-Allocated Method Details consists of a valid JSON object with a top level key of Elements containing an Array of entry objects. Each entry object consists of FOCUS-defined property keys but can be extended to provide additional details about the allocation.
+[Allocated Method Details](#col) consists of a valid JSON object with a top level key of Elements containing an Array of entry objects. Each entry object consists of FOCUS-defined property keys but can be extended to provide additional details about the allocation.
 
-The following section details the normative requirements for the AllocatedMethodDetailsObject and its nested properties. For a logical overview of the expected content, see the [Schema Structure](#datamodel.costandusage.allocatedmethoddetails.allocatedmethoddetailsobject.objectschemastructure) and [Object Example](#datamodel.costandusage.allocatedmethoddetails.allocatedmethoddetailsobject.objectexample) sections.
+The following section details the normative requirements for the [AllocatedMethodDetailsObject](#obj) and its nested properties. For a logical overview of the expected content, see the [Schema Structure](#datamodel.costandusage.allocatedmethoddetails.allocatedmethoddetailsobject.objectschemastructure) and [Object Example](#datamodel.costandusage.allocatedmethoddetails.allocatedmethoddetailsobject.objectexample) sections.
 
 ### Object Requirements
 
-The AllocatedMethodDetailsObject MUST adhere to the following requirements:
+The [AllocatedMethodDetailsObject](#obj) MUST adhere to the following requirements:
 
-* AllocatedMethodDetailsObject MUST conform to the [AllocatedMethodDetailsObjectSchema](#schemas.costandusage.allocatedmethoddetailsobjectschema) JSON Schema.
+* [AllocatedMethodDetailsObject](#obj) MUST conform to the [AllocatedMethodDetailsObjectSchema](#schema) JSON Schema.
 * AllocatedMethodDetailsObject.Elements[\*].AllocatedRatio MUST represent the allocated charge's percentage of the origin charge.
 * The sum of AllocatedMethodDetailsObject.Elements[\*].AllocatedRatio across all allocated charges related to a single origin charge MUST be equal to 1 (100%).
-* AllocatedMethodDetailsObject.Elements[\*].UsageUnit SHOULD conform to [UnitFormat](#attributes.unitformat) requirements.
-* AllocatedMethodDetailsObject.Elements[\*].UsageUnit MUST represent the unit or component of data generator's documented [AllocationMethod](#datamodel.costandusage.allocatedmethodid) which was used to determine the AllocatedMethodDetailsObject.Elements[\*].AllocatedRatio value.
+* AllocatedMethodDetailsObject.Elements[\*].UsageUnit SHOULD conform to [UnitFormat](#attr) requirements.
+* AllocatedMethodDetailsObject.Elements[\*].UsageUnit MUST represent the unit or component of data generator's documented [AllocationMethod](#col:AllocatedMethodId) which was used to determine the AllocatedMethodDetailsObject.Elements[\*].AllocatedRatio value.
 * AllocatedMethodDetailsObject.Elements[\*].UsageQuantity SHOULD capture the quantity or volume of the AllocatedMethodDetailsObject.Elements[\*].UsageUnit measured by the data generator that was used to determine the AllocatedMethodDetailsObject.Elements[\*].AllocatedRatio value.
 
 ### Object Schema Structure
 
-AllocatedMethodDetails contains a structured JSON object defining the allocation properties used to calculate a split cost allocation.
+[AllocatedMethodDetails](#col) contains a structured JSON object defining the allocation properties used to calculate a split cost allocation.
 
 <div class="h7-nonindex">Top-Level Properties</div>
 
@@ -66,7 +66,7 @@ To facilitate querying data across allocations and across data generators, a dat
 Here is a basic example of the object format.
 
 * For more detailed examples, please see this column's entry in the JSON Object Examples appendix entry [here](#appendix.examples:jsonobject.examples:allocatedmethoddetails).
-* For the JSON schema, please see Allocated Method Details Object Schema.
+* For the JSON schema, please see [Allocated Method Details Object Schema](#schema).
 
 ```json
 {
@@ -106,14 +106,14 @@ A set of properties describing how resources are allocated in data generator-def
 
 | Constraint                 | Value                                              |
 | :------------------------- | :------------------------------------------------- |
-| Dataset                    | [Cost and Usage](#datamodel.costandusage)          |
-| Operating model conditions | [Includes Split Cost Allocation](#operatingmodelconditions.includessplitcostallocation) |
+| Dataset                    | [Cost and Usage](#ds)                              |
+| Operating model conditions | [Includes Split Cost Allocation](#omc)                                                  |
 | Column type                | Dimension / Metric                                 |
 | Feature level              | Recommended                                        |
 | Allows nulls               | True                                               |
 | Data type                  | JSON                                               |
-| Value format               | [JSON Object Format](#attributes.jsonobjectformat) |
-| Object                     | [AllocatedMethodDetailsObject](#datamodel.costandusage.allocatedmethoddetails.allocatedmethoddetailsobject) |
+| Value format               | [JSON Object Format](#attr)                        |
+| Object                     | [AllocatedMethodDetailsObject](#obj)                                                                        |
 
 ## Version Introduced
 

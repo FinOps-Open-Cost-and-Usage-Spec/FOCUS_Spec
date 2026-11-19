@@ -1,13 +1,13 @@
 # Includes Tags
 
-The Includes Tags operating model condition represents a verifiable state indicating whether the [*operating model*](#glossary:operating-model) includes [*tags*](#glossary:tag).
+The [Includes Tags](#omc) operating model condition represents a verifiable state indicating whether the [operating model](#term) includes [tags](#term).
 
 ## Requirements
 
-IncludesTags MUST adhere to the following requirements:
+[IncludesTags](#omc) MUST adhere to the following requirements:
 
-* IncludesTags MUST evaluate to true when the *operating model* includes *tags*.
-* IncludesTags MUST evaluate to false when the *operating model* does not include *tags*.
+* [IncludesTags](#omc) MUST evaluate to true when the [operating model](#term) includes [tags](#term).
+* [IncludesTags](#omc) MUST evaluate to false when the [operating model](#term) does not include [tags](#term).
 
 ## Operating Model Condition ID
 
@@ -19,7 +19,7 @@ Includes Tags
 
 ## Description
 
-A verifiable state indicating whether the *operating model* includes *tags*.
+A verifiable state indicating whether the [operating model](#term) includes [tags](#term).
 
 ## Version Introduced
 

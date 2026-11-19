@@ -1,6 +1,6 @@
 # Billing Period
 
-The Billing Period dataset is a supporting dataset that defines the time intervals and statuses associated with an [*invoice issuer's*](#glossary:invoice-issuer) billing cycles for grouping and presenting [*charges*](#glossary:charge) on invoices. This dataset helps FinOps practitioners better understand how and when they can leverage [Cost and Usage](#datamodel.costandusage) and [Invoice Detail](#datamodel.invoicedetail) data for formal financial reporting and showback/chargeback processes.
+The [Billing Period](#ds) dataset is a supporting dataset that defines the time intervals and statuses associated with an [invoice issuer's](#term:invoice-issuer) billing cycles for grouping and presenting [charges](#term) on invoices. This dataset helps FinOps practitioners better understand how and when they can leverage [Cost and Usage](#ds) and [Invoice Detail](#ds) data for formal financial reporting and showback/chargeback processes.
 
 ## Columns<!--SkipTOC-->
 
@@ -15,7 +15,7 @@ The Billing Period dataset is a supporting dataset that defines the time interva
 
 ## Relationships<!--SkipTOC-->
 
-The Billing Period dataset is primarily used to provide context for the Cost and Usage and Invoice Detail datasets. It is joined using the Billing Period Start and Invoice Issuer Name columns available in those datasets.
+The [Billing Period](#ds) dataset is primarily used to provide context for the [Cost and Usage](#ds) and [Invoice Detail](#ds) datasets. It is joined using the [Billing Period Start](#col) and [Invoice Issuer Name](#col) columns available in those datasets.
 
 | Dataset A      | Dataset A Column   | Dataset B      | Dataset B Column   |
 | :------------- | :----------------- | :------------- | :----------------- |
@@ -24,22 +24,22 @@ The Billing Period dataset is primarily used to provide context for the Cost and
 
 ## Requirements<!--SkipTOC-->
 
-BillingPeriod MUST adhere to the following requirements:
+[BillingPeriod](#ds) MUST adhere to the following requirements:
 
-* BillingPeriod column presence MUST adhere to the following requirements:
-  * BillingPeriod MUST include [BillingPeriodCreated](#datamodel.billingperiod.billingperiodcreated).
-  * BillingPeriod MUST include [BillingPeriodEnd](#datamodel.billingperiod.billingperiodend).
-  * BillingPeriod MUST include [BillingPeriodLastUpdated](#datamodel.billingperiod.billingperiodlastupdated).
-  * BillingPeriod MUST include [BillingPeriodStart](#datamodel.billingperiod.billingperiodstart).
-  * BillingPeriod MUST include [BillingPeriodStatus](#datamodel.billingperiod.billingperiodstatus).
-  * BillingPeriod MUST include [InvoiceIssuerName](#datamodel.billingperiod.invoiceissuername).
-* BillingPeriod MUST conform to [CorrectionHandling](#attributes.correctionhandling) requirements.
-* BillingPeriod MUST conform to [DatasetCompleteness](#attributes.datasetcompleteness) requirements.
-* BillingPeriod MUST conform to [DatasetConfiguration](#attributes.datasetconfiguration) requirements.
-* BillingPeriod MUST conform to [DeliveryHandling](#attributes.deliveryhandling) requirements.
-* BillingPeriod [*FOCUS columns*](#glossary:FOCUS-column) MUST conform to [FocusColumnHandling](#attributes.focuscolumnhandling) requirements.
-* BillingPeriod *FOCUS columns* MUST conform to [NullHandling](#attributes.nullhandling) requirements.
-* BillingPeriod [*custom columns*](#glossary:custom-column) MUST conform to [CustomColumnHandling](#attributes.customcolumnhandling) requirements.
+* [BillingPeriod](#ds) column presence MUST adhere to the following requirements:
+  * [BillingPeriod](#ds) MUST include [BillingPeriodCreated](#col).
+  * [BillingPeriod](#ds) MUST include [BillingPeriodEnd](#col).
+  * [BillingPeriod](#ds) MUST include [BillingPeriodLastUpdated](#col).
+  * [BillingPeriod](#ds) MUST include [BillingPeriodStart](#col).
+  * [BillingPeriod](#ds) MUST include [BillingPeriodStatus](#col).
+  * [BillingPeriod](#ds) MUST include [InvoiceIssuerName](#col).
+* [BillingPeriod](#ds) MUST conform to [CorrectionHandling](#attr) requirements.
+* [BillingPeriod](#ds) MUST conform to [DatasetCompleteness](#attr) requirements.
+* [BillingPeriod](#ds) MUST conform to [DatasetConfiguration](#attr) requirements.
+* [BillingPeriod](#ds) MUST conform to [DeliveryHandling](#attr) requirements.
+* [BillingPeriod](#ds) [FOCUS columns](#term) MUST conform to [FocusColumnHandling](#attr) requirements.
+* [BillingPeriod](#ds) [FOCUS columns](#term) MUST conform to [NullHandling](#attr) requirements.
+* [BillingPeriod](#ds) [custom columns](#term) MUST conform to [CustomColumnHandling](#attr) requirements.
 
 ## Dataset ID<!--SkipTOC-->
 

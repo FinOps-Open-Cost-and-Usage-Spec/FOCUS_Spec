@@ -1,8 +1,8 @@
 # Contract Commitment Payment Model
 
-Contract Commitment Payment Model defines the financial settlement structure of a [*contract commitment*](#glossary:contract-commitment). It identifies whether the financial obligation is settled via a single upfront payment, distributed recurring charges, or a combination of both over the [contract commitment duration type](#datamodel.contractcommitment.contractcommitmentdurationtype).
+[Contract Commitment Payment Model](#col) defines the financial settlement structure of a [contract commitment](#term). It identifies whether the financial obligation is settled via a single upfront payment, distributed recurring charges, or a combination of both over the [contract commitment duration type](#col).
 
-Contract Commitment Payment Model has three possible values: **No Upfront**, **Partial Upfront**, and **All Upfront**.
+[Contract Commitment Payment Model](#col) has three possible values: **No Upfront**, **Partial Upfront**, and **All Upfront**.
 
 * No Upfront denotes that the obligation is settled entirely through recurring charges with no initial payment.
 * Partial Upfront denotes that the obligation is settled through a combination of an initial payment and recurring charges.
@@ -10,11 +10,11 @@ Contract Commitment Payment Model has three possible values: **No Upfront**, **P
 
 ## Requirements
 
-ContractCommitmentPaymentModel MUST adhere to the following requirements:
+[ContractCommitmentPaymentModel](#col) MUST adhere to the following requirements:
 
-* ContractCommitmentPaymentModel MUST be of type String.
-* ContractCommitmentPaymentModel MUST NOT be null.
-* ContractCommitmentPaymentModel MUST be one of the allowed values.
+* [ContractCommitmentPaymentModel](#col) MUST be of type String.
+* [ContractCommitmentPaymentModel](#col) MUST NOT be null.
+* [ContractCommitmentPaymentModel](#col) MUST be one of the allowed values.
 
 ## Allowed Values
 
@@ -26,8 +26,8 @@ ContractCommitmentPaymentModel MUST adhere to the following requirements:
 
 ## Implementation Guidance
 
-* Settled via Upfront: Refer to the [contract commitment period start](#datamodel.contractcommitment.contractcommitmentperiodstart) for the cash event.
-* Settled via Recurring Charges: Refer to the [contract commitment payment interval](#datamodel.contractcommitment.contractcommitmentpaymentinterval) to understand the frequency of those subsequent cash events.
+* Settled via Upfront: Refer to the [contract commitment period start](#col) for the cash event.
+* Settled via Recurring Charges: Refer to the [contract commitment payment interval](#col) to understand the frequency of those subsequent cash events.
 
 ## Column ID
 
@@ -39,13 +39,13 @@ Contract Commitment Payment Model
 
 ## Description
 
-Defines the financial settlement structure of a *contract commitment*.
+Defines the financial settlement structure of a [contract commitment](#term).
 
 ## Content Constraints
 
 | Constraint                 | Value                                                |
 | :------------------------- | :--------------------------------------------------- |
-| Dataset                    | [Contract Commitment](#datamodel.contractcommitment) |
+| Dataset                    | [Contract Commitment](#ds)                           |
 | Operating model conditions | Not applicable                                       |
 | Column type                | Dimension                                            |
 | Feature level              | Mandatory                                            |

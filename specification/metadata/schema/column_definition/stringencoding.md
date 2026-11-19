@@ -1,12 +1,12 @@
 # String Encoding
 
-The string encoding scheme of the column provided in the [*FOCUS dataset*](#glossary:FOCUS-dataset).
+The string encoding scheme of the column provided in the [FOCUS dataset](#term).
 
-StringEncoding adheres to the following requirements:
+[StringEncoding](#meta) adheres to the following requirements:
 
-* StringEncoding MUST be present in an object within the [ColumnDefinition](#metadata.schema.columndefinition) collection when this information is required in order to successfully read the data.
-* StringEncoding MUST be of type String.
-* StringEncoding MUST NOT be null.
+* [StringEncoding](#meta) MUST be present in an object within the [ColumnDefinition](#meta) collection when this information is required in order to successfully read the data.
+* [StringEncoding](#meta) MUST be of type String.
+* [StringEncoding](#meta) MUST NOT be null.
 
 ## Metadata ID
 

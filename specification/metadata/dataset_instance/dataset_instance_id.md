@@ -1,14 +1,14 @@
 # Dataset Instance ID
 
-The Dataset Instance ID is a data generator-specified unique identifier that represents a specific FOCUS dataset instance provided by the data generator.
+The [Dataset Instance ID](#meta) is a data generator-specified unique identifier that represents a specific FOCUS dataset instance provided by the data generator.
 
-DatasetInstanceId adheres to the following requirements:
+[DatasetInstanceId](#meta) adheres to the following requirements:
 
-* DatasetInstanceId MUST be present in an object within the [DatasetInstance](#metadata.datasetinstance) collection.
-* DatasetInstanceId MUST be of type String.
-* DatasetInstanceId MUST NOT contain null values.
-* DatasetInstanceId MUST be a unique identifier within a data generator.
-* DatasetInstanceId SHOULD be a Globally Unique Identifier (GUID).
+* [DatasetInstanceId](#meta) MUST be present in an object within the [DatasetInstance](#meta) collection.
+* [DatasetInstanceId](#meta) MUST be of type String.
+* [DatasetInstanceId](#meta) MUST NOT contain null values.
+* [DatasetInstanceId](#meta) MUST be a unique identifier within a data generator.
+* [DatasetInstanceId](#meta) SHOULD be a Globally Unique Identifier (GUID).
 
 ## Metadata ID
 

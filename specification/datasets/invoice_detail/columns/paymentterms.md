@@ -1,15 +1,15 @@
 # Payment Terms
 
-Payment Terms represents the [*terms*](#glossary:term) (typically focused on timeframe) by which the [*invoice issuer*](#glossary:invoice-issuer) expects to receive payment for an invoice. These terms define the agreed-upon period for settling the invoice, helping both the provider and the customer manage financial expectations and payment schedules.
+[Payment Terms](#col) represents the [terms](#term) (typically focused on timeframe) by which the [invoice issuer](#term) expects to receive payment for an invoice. These terms define the agreed-upon period for settling the invoice, helping both the provider and the customer manage financial expectations and payment schedules.
 
 ## Requirements
 
-PaymentTerms MUST adhere to the following requirements:
+[PaymentTerms](#col) MUST adhere to the following requirements:
 
-* PaymentTerms MUST be of type String.
-* PaymentTerms MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* PaymentTerms MUST NOT be null.
-* PaymentTerms MUST represent the payment terms (e.g., "Net 30") as defined on the corresponding invoice.
+* [PaymentTerms](#col) MUST be of type String.
+* [PaymentTerms](#col) MUST conform to [StringHandling](#attr) requirements.
+* [PaymentTerms](#col) MUST NOT be null.
+* [PaymentTerms](#col) MUST represent the payment terms (e.g., "Net 30") as defined on the corresponding invoice.
 
 ## Column ID
 
@@ -27,7 +27,7 @@ The terms (typically focused on timeframe) by which the invoice issuer expects t
 
 | Constraint                 | Value                                      |
 | :------------------------- | :----------------------------------------- |
-| Dataset                    | [Invoice Detail](#datamodel.invoicedetail) |
+| Dataset                    | [Invoice Detail](#ds)                      |
 | Operating model conditions | Not applicable                             |
 | Column type                | Dimension                                  |
 | Feature level              | Mandatory                                  |

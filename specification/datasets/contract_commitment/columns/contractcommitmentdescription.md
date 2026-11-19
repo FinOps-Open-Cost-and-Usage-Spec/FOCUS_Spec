@@ -1,15 +1,15 @@
 # Contract Commitment Description
 
-Contract Commitment Description provides a high-level context of a [*contract commitment*](#glossary:contract-commitment) without requiring additional discovery. Contract Commitment Description is a self-contained summary of the contract commitment's terms, which may not be sufficiently described by the other columns of the [Contract Commitment](#datamodel.contractcommitment) dataset.
+[Contract Commitment Description](#col) provides a high-level context of a [contract commitment](#term) without requiring additional discovery. [Contract Commitment Description](#col) is a self-contained summary of the contract commitment's terms, which may not be sufficiently described by the other columns of the [Contract Commitment](#ds) dataset.
 
 ## Requirements
 
-ContractCommitmentDescription MUST adhere to the following requirements:
+[ContractCommitmentDescription](#col) MUST adhere to the following requirements:
 
-* ContractCommitmentDescription MUST be of type String.
-* ContractCommitmentDescription MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* ContractCommitmentDescription SHOULD NOT be null.
-* ContractCommitmentDescription maximum length SHOULD be provided in the corresponding FOCUS Metadata Schema.
+* [ContractCommitmentDescription](#col) MUST be of type String.
+* [ContractCommitmentDescription](#col) MUST conform to [StringHandling](#attr) requirements.
+* [ContractCommitmentDescription](#col) SHOULD NOT be null.
+* [ContractCommitmentDescription](#col) maximum length SHOULD be provided in the corresponding FOCUS Metadata Schema.
 
 ## Column ID
 
@@ -27,7 +27,7 @@ The self-contained summary of the *contract commitment's* terms.
 
 | Constraint                 | Value                                                |
 | :------------------------- | :--------------------------------------------------- |
-| Dataset                    | [Contract Commitment](#datamodel.contractcommitment) |
+| Dataset                    | [Contract Commitment](#ds)                           |
 | Operating model conditions | Not applicable                                       |
 | Column type                | Dimension                                            |
 | Feature level              | Mandatory                                            |

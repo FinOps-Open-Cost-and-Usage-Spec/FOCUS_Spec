@@ -2,7 +2,7 @@
 
 ## Scenario
 
-CrestNode has decided to change the datatype of column x_awesome_column1 from a string to a number. CrestNode creates a new [Schema](#metadata.schema) object with the modification to x_awesome_column2.
+CrestNode has decided to change the datatype of column x_awesome_column1 from a string to a number. CrestNode creates a new [Schema](#meta) object with the modification to x_awesome_column2.
 
 ## Supplied Metadata
 

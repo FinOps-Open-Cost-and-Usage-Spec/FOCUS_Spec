@@ -1,13 +1,13 @@
 # Includes Availability Zones
 
-The Includes Availability Zones operating model condition represents a verifiable state indicating whether the [*operating model*](#glossary:operating-model) includes deploying [*resources*](#glossary:resource) or [*services*](#glossary:service) within an [*availability zone*](#glossary:availability-zone).
+The [Includes Availability Zones](#omc) operating model condition represents a verifiable state indicating whether the [operating model](#term) includes deploying [resources](#term) or [services](#term) within an [availability zone](#term).
 
 ## Requirements
 
-IncludesAvailabilityZones MUST adhere to the following requirements:
+[IncludesAvailabilityZones](#omc) MUST adhere to the following requirements:
 
-* IncludesAvailabilityZones MUST evaluate to true when the *operating model* includes deploying *resources* or *services* within an *availability zone*.
-* IncludesAvailabilityZones MUST evaluate to false when the *operating model* does not include deploying *resources* or *services* within an *availability zone*.
+* [IncludesAvailabilityZones](#omc) MUST evaluate to true when the [operating model](#term) includes deploying [resources](#term) or [services](#term) within an [availability zone](#term).
+* [IncludesAvailabilityZones](#omc) MUST evaluate to false when the [operating model](#term) does not include deploying [resources](#term) or [services](#term) within an [availability zone](#term).
 
 ## Operating Model Condition ID
 
@@ -19,7 +19,7 @@ Includes Availability Zones
 
 ## Description
 
-A verifiable state indicating whether the *operating model* includes deploying *resources* or *services* within an *availability zone*.
+A verifiable state indicating whether the [operating model](#term) includes deploying [resources](#term) or [services](#term) within an [availability zone](#term).
 
 ## Version Introduced
 

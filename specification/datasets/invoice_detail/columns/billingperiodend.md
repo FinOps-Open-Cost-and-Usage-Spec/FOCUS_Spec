@@ -1,16 +1,16 @@
 # Billing Period End
 
-Billing Period End represents the [*exclusive end bound*](#glossary:exclusiveendbound) of a [*billing period*](#glossary:billing-period). For example, a time period where [Billing Period Start](#datamodel.invoicedetail.billingperiodstart) is '2024-01-01T00:00:00Z' and Billing Period End is '2024-02-01T00:00:00Z' includes [*charges*](#glossary:charge) for January since Billing Period Start represents the [*inclusive start bound*](#glossary:inclusivestartbound), but does not include *charges* for February since Billing Period End represents the *exclusive end bound*.
+[Billing Period End](#col) represents the [exclusive end bound](#term) of a [billing period](#term). For example, a time period where [Billing Period Start](#col) is '2024-01-01T00:00:00Z' and [Billing Period End](#col) is '2024-02-01T00:00:00Z' includes [charges](#term) for January since [Billing Period Start](#col) represents the [inclusive start bound](#term), but does not include [charges](#term) for February since [Billing Period End](#col) represents the [exclusive end bound](#term).
 
 ## Requirements
 
-BillingPeriodEnd MUST adhere to the following requirements:
+[BillingPeriodEnd](#col) MUST adhere to the following requirements:
 
-* BillingPeriodEnd MUST be of type Date/Time.
-* BillingPeriodEnd MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.
-* BillingPeriodEnd MUST NOT be null.
-* BillingPeriodEnd MUST be the *exclusive end bound* of the *billing period*.
-* BillingPeriodEnd for a given [InvoiceId](#datamodel.invoicedetail.invoiceid) and [InvoiceIssuerName](#datamodel.invoicedetail.invoiceissuername) MUST match [CostAndUsage.BillingPeriodEnd](#datamodel.costandusage.billingperiodend) for the same [CostAndUsage.InvoiceId](#datamodel.costandusage.invoiceid) and [CostAndUsage.InvoiceIssuerName](#datamodel.costandusage.invoiceissuername).
+* [BillingPeriodEnd](#col) MUST be of type Date/Time.
+* [BillingPeriodEnd](#col) MUST conform to [DateTimeFormat](#attr) requirements.
+* [BillingPeriodEnd](#col) MUST NOT be null.
+* [BillingPeriodEnd](#col) MUST be the [exclusive end bound](#term) of the [billing period](#term).
+* [BillingPeriodEnd](#col) for a given [InvoiceId](#col) and [InvoiceIssuerName](#col) MUST match [CostAndUsage.BillingPeriodEnd](#col:CostAndUsage.BillingPeriodEnd) for the same [CostAndUsage.InvoiceId](#col:CostAndUsage.InvoiceId) and [CostAndUsage.InvoiceIssuerName](#col:CostAndUsage.InvoiceIssuerName).
 
 ## Column ID
 
@@ -22,19 +22,19 @@ Billing Period End
 
 ## Description
 
-The *exclusive end bound* of a *billing period*.
+The [exclusive end bound](#term) of a [billing period](#term).
 
 ## Content Constraints
 
 | Constraint                 | Value                                           |
 | :------------------------- | :---------------------------------------------- |
-| Dataset                    | [Invoice Detail](#datamodel.invoicedetail)      |
+| Dataset                    | [Invoice Detail](#ds)                           |
 | Operating model conditions | Not applicable                                  |
 | Column type                | Dimension                                       |
 | Feature level              | Mandatory                                       |
 | Allows nulls               | False                                           |
 | Data type                  | Date/Time                                       |
-| Value format               | [Date/Time Format](#attributes.date/timeformat) |
+| Value format               | [Date/Time Format](#attr)                       |
 
 ## Version Introduced
 
