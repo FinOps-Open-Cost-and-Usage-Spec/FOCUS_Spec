@@ -27,7 +27,7 @@ Not setting UpdatedSince delivers every row in the period, so practitioners rece
 * First push delivery: UpdatedSince is not set.
 * Later push deliveries: UpdatedSince is the capture time of the previous delivery.
 
-When the key values of a previously delivered row change, a practitioner cannot match the new row to the delivered one, so UpdatedSince is not used for that delivery. Matching relies on the dataset's [*row key*](#glossary:row-key).
+When the key values of a previously delivered row change, a practitioner cannot match the new row to the delivered one, so the next delivery ignores UpdatedSince. Matching relies on the dataset's [*row key*](#glossary:row-key).
 
 ## Requirements
 
@@ -45,10 +45,11 @@ Dataset conforming to DatasetConfiguration attribute MUST adhere to the followin
 * *FOCUS dataset* MUST adhere to the following requirements when the dataset declares a last-updated column and a *row key*:
   * *FOCUS dataset* SHOULD be configurable with an UpdatedSince option.
   * *FOCUS dataset* MUST use the capture time of the previous delivery as UpdatedSince for each scheduled delivery after the first, when UpdatedSince is not configured.
-  * *FOCUS dataset* MUST NOT exclude rows based on their last-updated value when UpdatedSince is not set.
-  * *FOCUS dataset* MUST NOT include rows last updated before UpdatedSince when UpdatedSince is set.
+  * *FOCUS dataset* MUST apply UpdatedSince independently of PeriodStart and PeriodEnd (e.g., a row last updated before PeriodStart is included when it was updated on or after UpdatedSince).
+  * *FOCUS dataset* MUST NOT filter rows by their last-updated value when UpdatedSince is not set, so all rows in the period are delivered.
+  * *FOCUS dataset* MUST NOT include rows last updated before UpdatedSince when UpdatedSince is set, so only changed rows are delivered.
   * *FOCUS dataset* MUST represent each change since UpdatedSince as a separate row when UpdatedSince is set.
-  * *FOCUS dataset* MUST NOT set UpdatedSince for a delivery after a previously delivered row's key values were corrected (e.g., a corrected date that is part of the key), so every current row is delivered again.
+  * *FOCUS dataset* MUST deliver every row in the next delivery, ignoring UpdatedSince, after the key values of any previously delivered row are corrected.
 * *FOCUS dataset* MAY offer a default column set.
 * *FOCUS dataset* default column set MUST include all applicable [*FOCUS columns*](#glossary:FOCUS-column) when a default column set is offered.
 
