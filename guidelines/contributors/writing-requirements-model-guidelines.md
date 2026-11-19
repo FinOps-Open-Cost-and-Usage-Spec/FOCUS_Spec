@@ -4,7 +4,7 @@ The FOCUS Requirements Model is a machine-readable representation of the normati
 
 With the formal rule definition structure now in place, FOCUS members need to understand how to read and write model rules effectively. This guide assists those working with the Requirements Model, whether creating new rules, maintaining existing ones, or validating datasets against FOCUS requirements.
 
-The `specification/requirements_model` folder contains modular model components organized by version under `releases/X.Y/` directories. A Python-based build process assembles these components into a validated `model-<version>.json` file using a corresponding JSON Schema (`model_schema.json`). The `releases/latest/` symlink always points to the most recent model version.
+The `specification/requirements-model` folder contains modular model components organized by version under `releases/X.Y/` directories. A Python-based build process assembles these components into a validated `model-<version>.json` file using a corresponding JSON Schema (`model_schema.json`). The `releases/latest/` symlink always points to the most recent model version.
 
 ## Model document overview
 
@@ -306,7 +306,7 @@ The test suite validates suffix correctness in `test_suffix_by_keyword_and_scope
 
 When creating new rules, run the test suite to validate your suffix choices:
 ```bash
-pytest specification/requirements_model/tests/test_suffix_by_keyword_and_scope.py
+pytest specification/requirements-model/tests/test_suffix_by_keyword_and_scope.py
 ```
 
 ##### Quick Reference
@@ -383,7 +383,7 @@ Specify provider capability flags that determine when the rule applies. These ke
 
 The following provider capability flags are defined in the model. Use these to gate rules that depend on specific data generator capabilities.
 
-**Location**: `specification/requirements_model/releases/X.Y/applicability_criteria.json` (or `releases/latest/applicability_criteria.json` for current version)
+**Location**: `specification/requirements-model/releases/X.Y/applicability_criteria.json` (or `releases/latest/applicability_criteria.json` for current version)
 
 | Key | Description |
 |-----|-------------|
@@ -533,7 +533,7 @@ Record the version of the FOCUS specification in which this rule was introduced.
 
 **Version-Specific Model Structure:**
 
-The Requirements Model uses a multi-version structure under `specification/requirements_model/releases/`:
+The Requirements Model uses a multi-version structure under `specification/requirements-model/releases/`:
 * Each version has its own directory: `releases/1.2/`, `releases/1.3/`, etc.
 * The `releases/latest/` symlink points to the most recent model version
 * When creating new rules, work in the appropriate version directory (typically `releases/latest/`)
@@ -695,7 +695,7 @@ Attribute entity types define cross-cutting requirements that apply to multiple 
 
 **File Organization:**
 
-Attribute rules are stored in: `specification/requirements_model/releases/X.Y/model_rules/attributes/`
+Attribute rules are stored in: `specification/requirements-model/releases/X.Y/model-rules/attributes/`
 
 #### Working with Dataset Entity Types
 
@@ -723,7 +723,7 @@ Dataset entity types define requirements for entire datasets, including structur
 
 **File Organization:**
 
-Dataset rules are stored in: `specification/requirements_model/releases/X.Y/model_rules/datasets/<dataset_id>/`
+Dataset rules are stored in: `specification/requirements-model/releases/X.Y/model-rules/datasets/<dataset_id>/`
 
 #### Working with Column Entity Types
 
@@ -755,7 +755,7 @@ Column entity types define requirements for individual columns within a dataset,
 
 **File Organization:**
 
-Column rules are stored in: `specification/requirements_model/releases/X.Y/model_rules/datasets/<dataset_id>/columns/`
+Column rules are stored in: `specification/requirements-model/releases/X.Y/model-rules/datasets/<dataset_id>/columns/`
 
 #### Working with Object Entity Types
 
@@ -785,7 +785,7 @@ Object entity types validate the internal structure and properties of JSON objec
 
 **File Organization:**
 
-Object rules are stored in: `specification/requirements_model/releases/X.Y/model_rules/datasets/<dataset_id>/objects/`
+Object rules are stored in: `specification/requirements-model/releases/X.Y/model-rules/datasets/<dataset_id>/objects/`
 
 #### Working with Schema Entity Types
 
@@ -805,34 +805,34 @@ Schema entity types define reusable JSON Schema documents used to validate JSON 
 
 **Creating Schema Entries:**
 
-1. Add schema JSON files under `json_schemas/datasets/<dataset_id>/`
-2. Add an entry in `json_schemas/json_schemas.json` with Dataset metadata and a `Schema` file reference
-3. Use `file('relative/path.json')` paths relative to the version's `json_schemas/` folder
+1. Add schema JSON files under `json-schemas/datasets/<dataset_id>/`
+2. Add an entry in `json-schemas/json_schemas.json` with Dataset metadata and a `Schema` file reference
+3. Use `file('relative/path.json')` paths relative to the version's `json-schemas/` folder
 4. Validate with `./build_json.py --build-only` to confirm dereferencing into top-level `Schemas`
 
 **File Organization:**
 
-Schema entries are stored in: `specification/requirements_model/releases/X.Y/json_schemas/json_schemas.json`
+Schema entries are stored in: `specification/requirements-model/releases/X.Y/json-schemas/json_schemas.json`
 
-Schema source files are stored in: `specification/requirements_model/releases/X.Y/json_schemas/datasets/<dataset_id>/`
+Schema source files are stored in: `specification/requirements-model/releases/X.Y/json-schemas/datasets/<dataset_id>/`
 
 ### Stage 2
 
-The second phase of conversion is to take the table created in Stage 1 and create the entries in the `specification/requirements_model` folder that adds the rules to the formal JSON structure.
+The second phase of conversion is to take the table created in Stage 1 and create the entries in the `specification/requirements-model` folder that adds the rules to the formal JSON structure.
 
 #### Folder structure
 
-Version-specific model content is organized under `specification/requirements_model/releases/X.Y/` where X.Y represents the model version (e.g., 1.2, 1.3). A `latest` symlink points to the most recent version.
+Version-specific model content is organized under `specification/requirements-model/releases/X.Y/` where X.Y represents the model version (e.g., 1.2, 1.3). A `latest` symlink points to the most recent version.
 
 **Version-specific structure** (`releases/X.Y/`):
 * `model_details.json`: Metadata like versioning for this model version
 * `applicability_criteria.json`: Feature flags controlling rule application
 * `check_functions.json`: Logical validation functions and their arguments
 * `model_datasets.json`: Maps datasets (e.g., FOCUS) to rule sets
-* `model_rules/attributes/`: JSON files defining multiple `ModelRules` for a single attribute
-* `model_rules/datasets/<dataset_id>/`: JSON files defining multiple `ModelRules` for a single dataset
-* `model_rules/datasets/<dataset_id>/columns/`: JSON files defining multiple `ModelRules` for a single column
-* `model_rules/datasets/<dataset_id>/objects/`: JSON files defining multiple `ModelRules` for properties within JSON object columns
+* `model-rules/attributes/`: JSON files defining multiple `ModelRules` for a single attribute
+* `model-rules/datasets/<dataset_id>/`: JSON files defining multiple `ModelRules` for a single dataset
+* `model-rules/datasets/<dataset_id>/columns/`: JSON files defining multiple `ModelRules` for a single column
+* `model-rules/datasets/<dataset_id>/objects/`: JSON files defining multiple `ModelRules` for properties within JSON object columns
 
 **Build output** (top-level):
 * `build/model-X.Y.json`: Built complete model JSON files for all versions
@@ -846,8 +846,8 @@ Version-specific model content is organized under `specification/requirements_mo
 * Assign the Action Item (AI) to yourself to signal that you are working on the item (See: [GitHub Issues](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues))
 * Open a branch with the source of git feature branch for your development work.
 * Pull your branch to your development environment and perform all work specific to this AI in this branch.
-* Navigate to the appropriate model version directory under `specification/requirements_model/releases/X.Y/` (or use the `latest` symlink for current development)
-* Add a file into the relevant folder `model_rules/attributes/`, `model_rules/datasets/<dataset_id>/columns/`, or `model_rules/datasets/<dataset_id>/objects/` with name `entity-name.json` (example: availabilityzone.json)
+* Navigate to the appropriate model version directory under `specification/requirements-model/releases/X.Y/` (or use the `latest` symlink for current development)
+* Add a file into the relevant folder `model-rules/attributes/`, `model-rules/datasets/<dataset_id>/columns/`, or `model-rules/datasets/<dataset_id>/objects/` with name `entity-name.json` (example: availabilityzone.json)
 * Write your rules into this file based on the rules in the Stage 1 table from the AI ticket (See: [ModelRule Templates](#modelrule-templates) for helpers)
 * If you need to add new ApplicabilityCriteria add them to `applicability_criteria.json` in the version directory, avoiding duplication
 * If you need to add new CheckFunctions add them to `check_functions.json` in the version directory, avoiding duplication
@@ -861,10 +861,10 @@ Before committing your changes, validate that your model rules are correctly str
 
 **Building the model JSON:**
 
-From the `specification/requirements_model` directory, run the build script:
+From the `specification/requirements-model` directory, run the build script:
 
 ```bash
-cd specification/requirements_model
+cd specification/requirements-model
 ./build_json.py
 ```
 
@@ -888,7 +888,7 @@ To skip tests and only generate the JSON (useful during development):
 To run the test suite without building:
 
 ```bash
-cd specification/requirements_model
+cd specification/requirements-model
 pytest tests/
 ```
 
@@ -983,7 +983,7 @@ The `Order` field serves several important functions:
 
 ### Schemas entry template
 
-Use this template when registering a reusable JSON Schema in `json_schemas/json_schemas.json`.
+Use this template when registering a reusable JSON Schema in `json-schemas/json_schemas.json`.
 
 ```json
 {
@@ -995,7 +995,7 @@ Use this template when registering a reusable JSON Schema in `json_schemas/json_
       "DatasetType": "CAU",
       "DatasetId": "CostAndUsage",
       "DatasetName": "Cost and Usage",
-      "Schema": "file('datasets/cost_and_usage/sampleobjectschema.json')"
+      "Schema": "file('datasets/costandusage/sampleobjectschema.json')"
     }
   }
 }
@@ -1004,7 +1004,7 @@ Use this template when registering a reusable JSON Schema in `json_schemas/json_
 Notes:
 * The schema entry ID should follow the `DatasetType-EntityId-S-NNN-Level` pattern.
 * `EntityType` must be `Schema`.
-* The `Schema` path must be relative to `releases/X.Y/json_schemas/`.
+* The `Schema` path must be relative to `releases/X.Y/json-schemas/`.
 * During build, `file('...')` is dereferenced and replaced with the JSON content in `build/model-X.Y.json`.
 
 ### Base column composite rule

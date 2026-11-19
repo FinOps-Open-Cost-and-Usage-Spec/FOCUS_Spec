@@ -313,8 +313,8 @@ To ensure consistent language when describing relationships and evaluations betw
 
 * **Informative Status Note:** Each of the following files MUST include an informative, non-normative status note directly below its first heading:
   * `specification/overview.md`
-  * `specification/supported_features/supported_features_overview.md`
-  * `specification/appendix/appendix_overview.md`
+  * `specification/supported-features/supported-features-overview.md`
+  * `specification/appendix/appendix-overview.md`
 
 * **Informative Status Note Scope:**
   * Each note MUST refer only to the section identified by that heading (e.g., "The Appendix").

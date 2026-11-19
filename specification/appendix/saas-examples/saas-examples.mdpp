@@ -1,0 +1,5 @@
+!INCLUDE "saas-examples-overview.md",0
+!INCLUDE "simple-agreements.md",1
+!INCLUDE "spend-agreements.md",1
+!INCLUDE "consumption-currency-pricing-model.md",1
+!INCLUDE "billing-scenario-examples.md",1

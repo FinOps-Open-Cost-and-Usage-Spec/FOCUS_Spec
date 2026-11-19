@@ -31,7 +31,7 @@ DATASETS_DIR = SPEC_DIR / "datasets"
 # Append more section names here to extend coverage over time.
 SQL_SEARCH_DIRS = [
     SPEC_DIR / "datasets",
-    SPEC_DIR / "supported_features",
+    SPEC_DIR / "supported-features",
 ]
 
 

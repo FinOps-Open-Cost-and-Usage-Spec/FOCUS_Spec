@@ -28,7 +28,7 @@ jobs:
           make STYLE=main BRANCH=main
       - name: Build Requirements Model JSON
         shell: bash
-        working-directory: ./specification/requirements_model
+        working-directory: ./specification/requirements-model
         run: |
           /usr/bin/pip3 install --break-system-packages -r requirements.txt
           ./build_json.py
@@ -48,4 +48,4 @@ jobs:
             specification/spec.md
             specification/images/*
             specification/styles/*
-            specification/requirements_model/build/*.json
+            specification/requirements-model/build/*.json

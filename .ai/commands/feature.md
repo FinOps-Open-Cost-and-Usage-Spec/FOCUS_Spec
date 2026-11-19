@@ -12,7 +12,7 @@
 ### Phase 2: Research
 
 1. Analyze issue requirements (re-fetch from GitHub if needed for updates)
-2. Search spec: `rg "<keywords>" specification/ supporting_content/`
+2. Search spec: `rg "<keywords>" specification/ supporting-content/`
 3. Identify change type and files needed (see File Matrix below)
 4. Read 1-2 similar implementations as patterns
 5. Think about conflicts, risks, gaps, dependencies, etc. this issue has with the existing specification (cascading impacts) or with issues actively being worked.
@@ -51,7 +51,7 @@ Use `<issue-number>-<kebab-case-name>` matching your branch:
 
 | File | Purpose | Lifecycle |
 |------|---------|-----------|
-| `research.md` | Synthesized issue requirements, investigation findings, patterns | Migrate valuable parts to `supporting_content/` as part of PR; delete folder before merge |
+| `research.md` | Synthesized issue requirements, investigation findings, patterns | Migrate valuable parts to `supporting-content/` as part of PR; delete folder before merge |
 | `plan.md` | Implementation approach and deliverables | Delete before merge |
 | `tasks.md` | Execution tracking with checkboxes | Delete before merge |
 
@@ -61,7 +61,7 @@ Note: Fetch issue details from GitHub rather than saving locally. This ensures c
 
 **During the PR** (before final approval):
 
-* Migrate valuable research to `supporting_content/`
+* Migrate valuable research to `supporting-content/`
 * Add relevant implementation notes to PR description or linked issue
 
 **After approval, before merge**:
@@ -77,14 +77,14 @@ After creating the PR, add this comment on `research.md` to remind reviewers:
 
 | Type | Create | Update |
 |------|--------|--------|
-| **Column** | `columns/<name>.md`, `model_rules/columns/<name>.json`, `supporting_content/columns/<name>.md` | `columns.mdpp` |
-| **Attribute** | `attributes/<name>.md`, `model_rules/attributes/<name>.json`, `supporting_content/attributes/<name>.md` | `attributes.mdpp`, `dataset.md`, `costandusage.json` |
+| **Column** | `columns/<name>.md`, `model-rules/columns/<name>.json`, `supporting-content/columns/<name>.md` | `columns.mdpp` |
+| **Attribute** | `attributes/<name>.md`, `model-rules/attributes/<name>.json`, `supporting-content/attributes/<name>.md` | `attributes.mdpp`, `dataset.md`, `costandusage.json` |
 
 ## Pattern Files
 
 Read these for structure (don't memorize - read when needed):
 
-* **Column:** `specification/datasets/cost_and_usage/columns/billingaccountid.md`
+* **Column:** `specification/datasets/costandusage/columns/billingaccountid.md`
 * **Attribute:** `specification/attributes/invoice_handling.md`
 * **JSON rules:** `guidelines/contributors/writing-requirements-model-guidelines.md`
 

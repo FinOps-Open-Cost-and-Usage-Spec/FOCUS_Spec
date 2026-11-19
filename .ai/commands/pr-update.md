@@ -67,7 +67,7 @@ For each thread requiring a response, analyze and categorize:
    * Consider impact on FinOps practitioners, providers, and tool vendors
    * Prioritize FinOps practitioner benefits over providers/vendors that support them
 
-3. **Changes to `supporting_content/` or other files:**
+3. **Changes to `supporting-content/` or other files:**
    * Generally okay to implement autonomously unless major impact
    * Still evaluate for alignment with project goals
 
@@ -75,7 +75,7 @@ For each thread requiring a response, analyze and categorize:
    * Seek amicable solutions that best serve FinOps practitioners
    * If a specific rule causes disagreement but removal wouldn't be detrimental:
      * Consider suggesting removal to move forward on agreeable portions
-     * Removed requirements should be moved to `supporting_content/`
+     * Removed requirements should be moved to `supporting-content/`
      * Can be revisited in a later PR or future release
 
 ### Phase 4: User Consultation (Implementation Only)
@@ -112,11 +112,11 @@ For each thread requiring a response, analyze and categorize:
    * Only proceed with implementation after user approval
    * Make changes using appropriate tools (Read, Edit, Write)
    * Follow FOCUS conventions from `AGENTS.md`
-   * Move removed requirements to `supporting_content/` if applicable
+   * Move removed requirements to `supporting-content/` if applicable
    * Track which files were explicitly changed
 
 3. **Document decisions:**
-   * Add resolved disagreements to `supporting_content/`
+   * Add resolved disagreements to `supporting-content/`
    * Document closed decisions for future reference
 
 4. **Post implementation responses:**
@@ -245,7 +245,7 @@ GitHub PRs have three types of comments:
 * [ ] Discussion and question responses posted autonomously
 * [ ] User approved implementation plan before file changes
 * [ ] Agreed changes are implemented
-* [ ] Decisions documented in `supporting_content/` where appropriate
+* [ ] Decisions documented in `supporting-content/` where appropriate
 * [ ] User approved changes before commit
 * [ ] Only explicitly changed files staged and committed
 * [ ] Changes pushed (only after user approval)

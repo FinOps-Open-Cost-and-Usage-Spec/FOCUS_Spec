@@ -22,7 +22,7 @@ Naming for all Issues should aim to be short, but remain clear and descriptive. 
 Issues should be created via the use of issue templates that adhere to Issue Types. The Working Group uses four Issue Types: Feedback, Feature Request, Action Items, and Maintenance Tasks.
 
 <figure>
-    <img src="images/FOCUS-Process-labels-issue-templates.drawio.png" alt="Issue Templates & Labels">
+    <img src="images/focus-process-labels-issue-templates.drawio.png" alt="Issue Templates & Labels">
     <figcaption>Issue Templates & Labels</figcaption>
 </figure>
 
@@ -132,7 +132,7 @@ The FOCUS [Specification LifeCycle](https://github.com/FinOps-Open-Cost-and-Usag
 This diagram illustrates how the **Scope Definition** phase is practically implemented using GitHub Issues. The process begins with the creation of either **Feedback** or **Feature Request** issues. These issues are triaged and evaluated through a structured discovery process, during which labels such as `Submitted`, `In Discussion`, or `Under Consideration` are applied.
 
 <figure>
-    <img src="images/FOCUS-Process-scope-phase.drawio.png" alt="Scope Definition Phase">
+    <img src="images/focus-process-scope-phase.drawio.png" alt="Scope Definition Phase">
     <figcaption>Scope Definition Phase</figcaption>
 </figure>
 
@@ -144,7 +144,7 @@ This process ensures that all proposed features and improvements are traceable a
 This diagram represents the **Specification Development** phase, where implementation shifts from issues to GitHub Pull Requests (PRs). Contributions are managed and tracked through a PR-based workflow, with status labels applied to indicate progress:
 
 <figure>
-    <img src="images/FOCUS-Process-development-2-phase.drawio.png" alt="Specification Development">
+    <img src="images/focus-process-development-2-phase.drawio.png" alt="Specification Development">
     <figcaption>Specification Development Phase</figcaption>
 </figure>
 

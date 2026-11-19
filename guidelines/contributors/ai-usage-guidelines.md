@@ -100,7 +100,7 @@ Working folders (`.ai/work/<issue-number>-<kebab-case-name>/`) contain research,
 
 After a PR is approved but before merging:
 
-1. **Migrate valuable content**: Include broadly useful research in `supporting_content/`
+1. **Migrate valuable content**: Include broadly useful research in `supporting-content/`
 2. **Capture execution details**: Add relevant implementation notes to the PR description or linked issue
 3. **Delete the working folder**: Remove the `.ai/work/` folder in a final commit
 
