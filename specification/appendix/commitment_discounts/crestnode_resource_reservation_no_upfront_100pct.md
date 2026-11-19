@@ -73,7 +73,7 @@ The following critical rules apply to commitment discount data:
 | -------------------------- | -------------------------------------------------------- | -------------------------------------------------------------- |
 | ChargeCategory             | Purchase                                                 | Commitment purchase transaction                                |
 | ChargeFrequency            | Recurring                                                | Monthly recurring fee                                          |
-| BilledCost                 | $50,937.60                                               | Monthly fee (hourly rate &times; 672 hours in Feb)             |
+| BilledCost                 | $50,937.60                                               | Monthly fee ($75.80/hour &times; 672 hours in Feb)             |
 | EffectiveCost              | $0.00                                                    | **must be 0** - cost is amortized to usage rows                |
 | PricingQuantity            | 1                                                        | One commitment unit purchased                                  |
 | CommitmentDiscountStatus   | null                                                     | Status only applies to usage rows                              |
