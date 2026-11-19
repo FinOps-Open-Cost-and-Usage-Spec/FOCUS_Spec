@@ -27,6 +27,10 @@ IncludeAllRows defaults to true so practitioners get every row they may need ins
 
 The first push uses scenario 1 or 2 so the practitioner starts with all prices.
 
+### Which Column Start and End Apply To
+
+Start and End apply to SkuPriceLastUpdated, not SkuPriceEffectiveStart. A price announced in July to take effect in January changes in July. Filtering on SkuPriceEffectiveStart would hide it from practitioners pulling changes in July. Effective dates still decide which unchanged rows were active at Start, which IncludeAllRows adds. Cost and Usage would apply Start and End to ChargePeriodStart.
+
 ### Out of Scope
 
 Prices active during a period (S to E) but only if changed since an earlier date (S1). It needs a fourth option (ChangedSince) that duplicates Start in typical scenarios. Workarounds: pull all prices for the period and filter out rows already held, or pull changes since S1 and drop rows with a SkuPriceEffectiveStart before S. Revisit if challenged.

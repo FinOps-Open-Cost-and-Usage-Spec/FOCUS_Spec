@@ -8,8 +8,6 @@ The SKU Price dataset represents prices as of the date the dataset is captured. 
 
 The dataset describes the full price list a *service provider* offers, not only the SKUs that appear in Cost and Usage. To manage the size of a complete price list, a *service provider* may partition delivery, for example by region, service, or SKU category, and is encouraged to do so where publishing a complete list in a single delivery would otherwise be impractical.
 
-Most prices do not change from one delivery to the next. To keep repeated deliveries small, a practitioner can configure the dataset with a period and IncludeAllRows, as described in [DatasetConfiguration](#attributes.datasetconfiguration), so that a delivery contains only records changed during that period, identified by [SKU Price Last Updated](#datamodel.skuprice.skupricelastupdated). A price that is no longer offered stays in the delivery as a record with an end date, so the practitioner can tell it apart from a price that did not change.
-
 The columns are presented in alphabetical order.
 
 ## Columns<!--SkipTOC-->
@@ -107,11 +105,10 @@ SkuPrice MUST adhere to the following requirements:
 * SkuPrice MUST conform to [DatasetConfiguration](#attributes.datasetconfiguration) requirements.
 * SkuPrice MUST conform to [DeliveryHandling](#attributes.deliveryhandling) requirements.
 * SkuPrice MUST be configurable with Start, End, and IncludeAllRows options, as described in [DatasetConfiguration](#attributes.datasetconfiguration).
+* SkuPrice Start and End MUST apply to SkuPriceLastUpdated.
 * SkuPrice MUST use the [Overwrite delivery mechanism](#attributes.deliveryhandling) when IncludeAllRows is true.
 * SkuPrice MUST use the [Append delivery mechanism](#attributes.deliveryhandling) when IncludeAllRows is false.
-* SkuPrice MUST include a separate record for each price change during the configured period.
 * SkuPrice MUST set a non-null SkuPriceEffectiveEnd and update SkuPriceLastUpdated when a price is no longer offered.
-* SkuPrice MUST be delivered with IncludeAllRows set to true when a previously delivered record's identifying values change (i.e., ServiceProviderName, SkuPriceId, ContractId, SkuPriceEffectiveStart, PricingCurrency, or UnitPriceType).
 * SkuPrice SHOULD contain at least one record for every [SkuPriceId](#datamodel.skuprice.skupriceid) referenced in the [CostAndUsage](#datamodel.costandusage) dataset.
 * SkuPrice MUST NOT contain multiple records that share identical values (including nulls) across ServiceProviderName, SkuPriceId, ContractId, SkuPriceEffectiveStart, PricingCurrency, and UnitPriceType.
 * SkuPrice MUST NOT contain records with overlapping effective periods (defined by SkuPriceEffectiveStart and SkuPriceEffectiveEnd) when those records share identical values (including nulls) across ServiceProviderName, SkuPriceId, ContractId, PricingCurrency, and UnitPriceType; for this constraint, a null SkuPriceEffectiveStart represents the earliest available time, and a null SkuPriceEffectiveEnd represents the latest available time.
