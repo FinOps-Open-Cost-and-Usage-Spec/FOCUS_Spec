@@ -1,6 +1,6 @@
 # SKU Price
 
-> **Preview:** The SKU Price dataset is a preview in this version of FOCUS. Its columns, requirements, and relationships may change in the next version based on implementation feedback. Its requirements are not evaluated for conformance, whether or not the dataset is provided. Two requirements outside the dataset are also excluded from conformance while it is a preview: the [Data Model](#datamodel) requirement to include SKU Price, and the requirement that [Cost and Usage Charge Category](#datamodel.costandusage.chargecategory) match SKU Price Charge Category. The [Includes Purchases](#operatingmodelconditions.includespurchases) and [Includes Quantity Tier Pricing](#operatingmodelconditions.includesquantitytierpricing) operating model conditions and the [SKU Price Eligibility Object Schema](#schemas.skuprice.skupriceeligibilityobjectschema) are part of the preview and may change in the next version without a deprecation notice. [Issue #2768](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2768) tracks the preview.
+> **Preview:** The SKU Price dataset is a preview in this version of FOCUS. Its columns, requirements, and relationships may change in the next version based on implementation feedback. Its requirements are not evaluated for conformance, whether or not the dataset is provided. Two requirements outside the dataset are also excluded from conformance while it is a preview: the [Data Model](#datamodel) requirement to include SKU Price, and the requirement that [Cost and Usage Charge Category](#datamodel.costandusage.chargecategory) match SKU Price Charge Category. The [Includes Purchases](#operatingmodelconditions.includespurchases) and [Includes Quantity Tier Pricing](#operatingmodelconditions.includesquantitytierpricing) operating model conditions, the [SKU Price Eligibility Object Schema](#schemas.skuprice.skupriceeligibilityobjectschema), and the [Commitment Applicability Object Schema](#schemas.skuprice.commitmentapplicabilityobjectschema) are part of the preview and may change in the next version without a deprecation notice. [Issue #2768](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2768) tracks the preview.
 
 The SKU Price dataset is the primary dataset for standardizing [*service provider*](#glossary:service-provider) catalog rates, multipliers, and negotiated prices. This dataset enables practitioners to perform precise rate lookups, analyze commitment discounts, and understand the cost mechanics of payable and consumable prices.
 
@@ -15,6 +15,7 @@ The columns are presented in alphabetical order.
 | Column                                                                              | Column Type | Feature Level                                                  | Allows Nulls | Data Type |
 | ----------------------------------------------------------------------------------- | ----------- | -------------------------------------------------------------- | ------------ | --------- |
 | [Charge Category](#datamodel.skuprice.chargecategory)                              | Dimension   | Mandatory   | False        | String    |
+| [Commitment Applicability](#datamodel.skuprice.commitmentapplicability)           | Dimension   | Conditional | True         | JSON      |
 | [Commitment Discount Category](#datamodel.skuprice.commitmentdiscountcategory)     | Dimension   | Conditional | True         | String    |
 | [Contract ID](#datamodel.skuprice.contractid)                                        | Dimension   | Mandatory                                                      | True         | String    |
 | [Pricing Currency](#datamodel.skuprice.pricingcurrency)                              | Dimension   | Mandatory                                                      | False        | String    |
@@ -70,15 +71,14 @@ Because a SKU Price ID represents a specific price point, it inherently defines 
 
 This ensures that each tier maintains its own distinct identifier, allowing practitioners to join Cost and Usage data directly to the correct tier using SKU Price ID without needing to manually evaluate the Quantity Tier Minimum boundaries.
 
-The same applies to commitment terms. Service providers that price one SKU at different rates under different commitment terms (e.g., one year and three years) will need a distinct SKU Price ID for each term, because [Purchase Duration Type](#datamodel.skuprice.purchasedurationtype) is null on "Usage" records and cannot separate them. A price that differs only by contract keeps its SKU Price ID and is separated by Contract ID.
-
 ## Requirements<!--SkipTOC-->
 
 SkuPrice MUST adhere to the following requirements:
 
 * SkuPrice column presence MUST adhere to the following requirements:
   * SkuPrice MUST include [ChargeCategory](#datamodel.skuprice.chargecategory).
-  * SkuPrice MUST include [CommitmentDiscountCategory](#datamodel.skuprice.commitmentdiscountcategory) when the *operating model* [includes commitment discounts](#operatingmodelconditions.includescommitmentdiscounts).  
+  * SkuPrice MUST include [CommitmentApplicability](#datamodel.skuprice.commitmentapplicability) when the *operating model* [includes commitment discounts](#operatingmodelconditions.includescommitmentdiscounts).
+  * SkuPrice MUST include [CommitmentDiscountCategory](#datamodel.skuprice.commitmentdiscountcategory) when the *operating model* includes commitment discounts.
   * SkuPrice MUST include [ContractId](#datamodel.skuprice.contractid).
   * SkuPrice MUST include [PricingCurrency](#datamodel.skuprice.pricingcurrency).
   * SkuPrice MUST include [PricingCurrencyCategory](#datamodel.skuprice.pricingcurrencycategory).
