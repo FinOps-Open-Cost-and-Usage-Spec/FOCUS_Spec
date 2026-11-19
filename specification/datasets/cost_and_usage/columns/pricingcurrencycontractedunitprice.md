@@ -48,7 +48,7 @@ The negotiated unit price per Pricing Unit for the *SKU Price* identified by the
 | Dataset                    | [Cost and Usage](#datamodel.costandusage)   |
 | Operating model conditions |                                             |
 | ├─ Must                    | [Includes Consumption Currency](#operatingmodelconditions.includesconsumptioncurrency) and [Includes Unit Pricing](#operatingmodelconditions.includesunitpricing) |
-| └─ Should                  | [Includes Pricing-Billing Currency Differences](#operatingmodelconditions.includespricing-billingcurrencydifferences) and [Includes Unit Pricing](#operatingmodelconditions.includesunitpricing) |
+| └─ Should                  | [Includes Pricing and Billing Currency Differences](#operatingmodelconditions.includespricingandbillingcurrencydifferences) and [Includes Unit Pricing](#operatingmodelconditions.includesunitpricing) |
 | Column type                | Metric                                      |
 | Feature level              | Conditional                                 |
 | Allows nulls               | True                                        |

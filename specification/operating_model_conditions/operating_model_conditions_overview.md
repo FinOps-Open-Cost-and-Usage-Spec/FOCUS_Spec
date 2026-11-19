@@ -21,7 +21,7 @@ Operating model conditions are sorted alphabetically by name.
 | [Includes Multiple Sub Account Types](#operatingmodelconditions.includesmultiplesubaccounttypes) | Account | Operating model includes multiple Sub Account Types. |
 | [Includes Partial Upfront Payments](#operatingmodelconditions.includespartialupfrontpayments) | Commitment | Operating model includes a partial upfront payment model for contract commitments. |
 | [Includes Payable Invoices](#operatingmodelconditions.includespayableinvoices) | Billing | Operating model includes payable invoices. |
-| [Includes Pricing-Billing Currency Differences](#operatingmodelconditions.includespricing-billingcurrencydifferences) | Pricing | Operating model includes pricing and billing in different currencies. |
+| [Includes Pricing and Billing Currency Differences](#operatingmodelconditions.includespricingandbillingcurrencydifferences) | Pricing | Operating model includes pricing and billing in different currencies. |
 | [Includes Provisioned Resources](#operatingmodelconditions.includesprovisionedresources) | Resource | Operating model includes provisioned resources. |
 | [Includes Purchase Order Numbers](#operatingmodelconditions.includespurchaseordernumbers) | Billing | Operating model includes purchase order numbers. |
 | [Includes Purchases](#operatingmodelconditions.includespurchases) (preview) | Pricing | Operating model includes purchases. |

@@ -159,7 +159,7 @@
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "HostProviderName MAY be NULL when the associated ServiceName does not involve deployment on any underlying infrastructure (e.g., professional services, software licenses).",
+      "MustSatisfy": "HostProviderName MAY be null when the associated ServiceName does not involve deployment on any underlying infrastructure (e.g., professional services, software licenses).",
       "Keyword": "MAY",
       "Requirement": {},
       "Condition": {},
@@ -184,7 +184,7 @@
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "HostProviderName MAY be NULL when the information about the entity providing the underlying infrastructure cannot be uniquely determined (e.g., when the ChargeCategory is \"Tax\" or \"Adjustment\").",
+      "MustSatisfy": "HostProviderName MAY be null when the information about the entity providing the underlying infrastructure cannot be uniquely determined (e.g., when the ChargeCategory is \"Tax\" or \"Adjustment\").",
       "Keyword": "MAY",
       "Requirement": {},
       "Condition": {},
