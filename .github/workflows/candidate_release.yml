@@ -45,6 +45,7 @@ jobs:
           path: |
             specification/spec.html
             specification/spec.pdf
+            specification/spec.md
             specification/images/*
             specification/styles/*
             specification/requirements_model/build/*.json
