@@ -66,7 +66,7 @@ The following changes require review. Each is detailed in the Practitioner Guida
 
 | Change | Audience | Action |
 |--------|----------|--------|
-| List and contracted price and cost columns redefined around negotiated pricing terms and commitment programs | Practitioners, Data Generators | Revalidate savings queries that compare List, Contracted, and Effective Cost. Recompute list and contracted values under the revised definitions. |
+| List and contracted price and cost columns redefined around negotiated pricing terms and discount-bearing commitment programs | Practitioners, Data Generators | Revalidate savings queries that compare List, Contracted, and Effective Cost. Recompute list and contracted values under the revised definitions. |
 | Consumption currency replaces virtual currency in `CurrencyFormat` and `PricingCurrency` | Practitioners, Data Generators | Stop inferring currency type from the value format. Classify each `PricingCurrency` value and document how to tell the types apart. |
 | SKU identifiers scoped to `ServiceProviderName`, with new `SkuPriceId` requirements | Practitioners, Data Generators | Include `ServiceProviderName` in joins and groupings on SKU identifiers. Check `SkuPriceId` assignment against the new requirements. |
 | `ContractCommitmentDurationType` uses the largest whole time-based unit | Practitioners, Data Generators | Update queries that match on duration strings. Normalize emitted values (e.g., "1 Year", not "12 Months"; "3 Months", not "1 Quarter"). |
@@ -87,14 +87,16 @@ FOCUS 1.5 revises [`ListCost`](/specification/datasets/cost_and_usage/columns/li
 |--------|-----------|-----------|
 | `ListUnitPrice` | The suggested service-provider-published unit price, exclusive of any discounts | The service-provider-suggested unit price, before any negotiated pricing terms or discount-bearing commitment programs. It is not necessarily public and can come from a customer-specific price list. It does not reflect a negotiated tier configuration or a negotiated currency exchange rate. |
 | `ContractedUnitPrice` | The agreed-upon unit price, inclusive of negotiated discounts and excluding negotiated commitment discounts or any other discounts | The negotiated unit price, reflecting negotiated pricing terms (e.g., a negotiated unit price, tier configuration, or currency exchange rate) that are independent of any discount-bearing commitment program. Equals `ListUnitPrice` when no negotiated pricing terms apply. |
-| `PricingCurrencyContractedUnitPrice` | The agreed-upon unit price in Pricing Currency, inclusive of negotiated discounts | Reflects negotiated non-FX pricing terms only, before any currency exchange rate conversion. Equals `PricingCurrencyListUnitPrice` when no negotiated non-FX pricing terms apply. |
+| `PricingCurrencyContractedUnitPrice` | The agreed-upon unit price in Pricing Currency, inclusive of negotiated discounts. Defaults to `PricingCurrencyListUnitPrice` when negotiated discounts apply to exchange rates instead of unit prices | Reflects negotiated non-FX pricing terms only, before any currency exchange rate conversion. Equals `PricingCurrencyListUnitPrice` when no negotiated non-FX pricing terms apply. |
 
 `ListCost` and `ContractedCost` follow the same split for "Usage" and "Purchase" charges that are not corrections.
 
 Two consequences matter for savings analysis:
 
 * The revised definition states explicitly that a negotiated discount received in exchange for a spend commitment is reflected in Contracted Unit Price. The effect of applying a commitment discount to covered charges is not; it remains in `EffectiveCost`.
-* The gap between List Cost and Contracted Cost measures the effect of negotiated pricing terms. The gap between Contracted Cost and Effective Cost measures the effect of commitment programs. For providers whose FOCUS 1.4 data placed a negotiated term in a different column, savings will move from one gap to the other, and List Cost itself can change where FOCUS 1.4 list values reflected a negotiated tier configuration or exchange rate.
+* The gap between List Cost and Contracted Cost measures the effect of negotiated pricing terms. The gap between Contracted Cost and Effective Cost measures the effect of discount-bearing commitment programs being applied to the charge. Negotiated terms of a commitment program that do not depend on it being applied, such as the unit price for its purchase, are reflected in Contracted Cost.
+
+Much of this revision makes explicit, in each column's requirements and Implementation Guidance, boundaries that FOCUS 1.4 implied or stated only in another column. Where a provider's FOCUS 1.4 data drew these boundaries differently, savings will move from one gap to the other.
 
 Practitioners with savings, negotiation, or unit price tracking reports should run them for the same period against FOCUS 1.4 and FOCUS 1.5 data from each provider, and review differences before trending across the version boundary. The [Cost Comparison](/specification/supported_features/cost_comparison.md) supported feature adds a query for commitment discount savings over a charge period range that uses the FOCUS 1.5 definitions.
 
