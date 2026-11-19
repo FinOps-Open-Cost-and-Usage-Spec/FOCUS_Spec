@@ -38,4 +38,4 @@ The invoice-issuer-assigned identifier for an invoice that affects charges as st
 
 ## Version Introduced
 
-1.4
+GA: 1.4

@@ -184,4 +184,4 @@ A structured definition of the specific entities to which a contract commitment 
 
 ## Version Introduced
 
-1.4
+GA: 1.4

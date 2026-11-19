@@ -39,4 +39,4 @@ A service-provider-specified measurement unit for the amount declared in Contrac
 
 ## Version Introduced
 
-1.3
+GA: 1.3

@@ -19,4 +19,4 @@ FOCUS supports the ability for data generators to provide metadata indicating 1)
 
 ## Version Introduced
 
-1.3
+GA: 1.3

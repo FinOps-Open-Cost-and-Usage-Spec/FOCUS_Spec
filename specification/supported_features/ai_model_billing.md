@@ -105,4 +105,4 @@ GROUP BY
 
 ## Version Introduced
 
-1.5
+GA: 1.5

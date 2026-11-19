@@ -45,4 +45,4 @@ Identifier representing the *principal* to which access to a *resource* or *serv
 
 ## Version Introduced
 
-1.5
+GA: 1.5

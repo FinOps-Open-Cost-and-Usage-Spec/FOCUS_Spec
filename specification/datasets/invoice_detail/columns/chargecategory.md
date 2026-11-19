@@ -58,4 +58,4 @@ Represents the highest-level classification of a *charge* based on the nature of
 
 ## Version Introduced
 
-1.4
+GA: 1.4

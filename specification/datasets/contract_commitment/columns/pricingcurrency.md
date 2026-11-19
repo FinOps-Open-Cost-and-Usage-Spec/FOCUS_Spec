@@ -41,4 +41,4 @@ The *national* or *consumption currency* denomination that the [Contract Commitm
 
 ## Version Introduced
 
-1.4
+GA: 1.4

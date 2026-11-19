@@ -34,4 +34,4 @@ For an example of the FOCUS recency metadata, please refer to: [Recency Metadata
 
 ## Version Introduced
 
-1.3
+GA: 1.3

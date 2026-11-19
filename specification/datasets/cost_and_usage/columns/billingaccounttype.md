@@ -39,4 +39,4 @@ An invoice-issuer-assigned name to identify the type of *billing account*.
 
 ## Version Introduced
 
-1.2
+GA: 1.2

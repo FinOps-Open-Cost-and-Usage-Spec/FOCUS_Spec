@@ -53,4 +53,4 @@ Cost of a *charge* based on *negotiated pricing terms* before any discount-beari
 
 ## Version Introduced
 
-1.0
+GA: 1.0

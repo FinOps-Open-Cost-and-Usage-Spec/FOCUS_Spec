@@ -106,6 +106,7 @@ Feature level is designated based on the following criteria described in the dat
 * A preview is labeled by "(preview)" next to its name in listings (e.g., the data model dataset table), by a `> **Preview:**` note at the top of its page, examples, and supported features, and by `Preview: <version>` with no GA version in each of its Version Introduced sections (e.g., `Preview: 1.5`).
 * The requirements in a preview are written the same way as any other requirements. Implementing a preview is optional, and its requirements are not evaluated for conformance, whether or not a data generator provides the dataset.
 * At each later version, FOCUS Members decide whether a preview is promoted out of preview, stays a preview for one more version, or is removed.
+* Before 1.0, the whole specification was a preview: versions 0.x were implicit previews and 1.0-preview was named as one. Content introduced in those versions is labeled with that version as its preview version and 1.0 as its GA version (e.g., `Preview: 0.5 · GA: 1.0`).
 
 For guidance on when to designate a preview and the criteria to leave preview status, see the [Spec Change Guidelines](/guidelines/contributors/spec-change-guidelines.md).
 

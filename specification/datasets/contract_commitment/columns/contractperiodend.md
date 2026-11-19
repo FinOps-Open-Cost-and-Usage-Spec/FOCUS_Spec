@@ -37,4 +37,4 @@ The *exclusive end bound* of a contract period.
 
 ## Version Introduced
 
-1.3
+GA: 1.3

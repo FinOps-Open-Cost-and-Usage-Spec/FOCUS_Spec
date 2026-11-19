@@ -39,4 +39,4 @@ Represents the currency of a *contract commitment*.
 
 ## Version Introduced
 
-1.3
+GA: 1.3

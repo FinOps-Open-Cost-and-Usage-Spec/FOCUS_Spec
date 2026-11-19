@@ -38,4 +38,4 @@ The invoice-issuer-provided description of an invoice line item.
 
 ## Version Introduced
 
-1.4
+GA: 1.4

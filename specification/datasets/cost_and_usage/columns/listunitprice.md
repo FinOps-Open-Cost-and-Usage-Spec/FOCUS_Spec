@@ -63,4 +63,4 @@ The service-provider-suggested unit price per Pricing Unit for the *SKU Price* i
 
 ## Version Introduced
 
-1.0-preview
+Preview: 1.0-preview · GA: 1.0

@@ -45,4 +45,4 @@ The Pricing Currency-denominated equivalent of Effective Cost, representing the 
 
 ## Version Introduced
 
-1.2
+GA: 1.2

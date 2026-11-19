@@ -71,4 +71,4 @@ Defines how a *data generator* delivers a *FOCUS dataset* to a customer.
 
 ## Version Introduced
 
-1.4
+GA: 1.4

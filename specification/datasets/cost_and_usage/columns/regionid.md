@@ -38,4 +38,4 @@ Host-provider-assigned identifier for an isolated geographic area where a *resou
 
 ## Version Introduced
 
-1.0
+GA: 1.0

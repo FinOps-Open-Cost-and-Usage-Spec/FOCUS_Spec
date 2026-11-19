@@ -24,4 +24,4 @@ An attribute that allows data generators to offer more detailed cost and usage i
 
 ## Version Introduced
 
-1.3
+GA: 1.3

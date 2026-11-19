@@ -27,4 +27,4 @@ For an example of the FOCUS dataset instance metadata, please refer to: [Dataset
 
 ## Version Introduced
 
-1.3
+GA: 1.3

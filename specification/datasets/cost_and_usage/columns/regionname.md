@@ -38,4 +38,4 @@ The name of an isolated geographic area where a *resource* is provisioned or a *
 
 ## Version Introduced
 
-1.0
+GA: 1.0

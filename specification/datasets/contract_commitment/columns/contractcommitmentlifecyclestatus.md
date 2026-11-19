@@ -49,4 +49,4 @@ The current lifecycle state of a *contract commitment*.
 
 ## Version Introduced
 
-1.4
+GA: 1.4

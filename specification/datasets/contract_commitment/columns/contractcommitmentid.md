@@ -40,4 +40,4 @@ A service-provider-assigned identifier describing a single contract term agreed 
 
 ## Version Introduced
 
-1.3
+GA: 1.3

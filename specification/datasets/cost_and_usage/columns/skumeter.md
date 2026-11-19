@@ -45,4 +45,4 @@ Describes the functionality being metered or measured by a particular SKU in a *
 
 ## Version Introduced
 
-1.1
+GA: 1.1

@@ -39,4 +39,4 @@ The display name of the *service* to which cost is allocated in data generator-c
 
 ## Version Introduced
 
-1.5
+GA: 1.5

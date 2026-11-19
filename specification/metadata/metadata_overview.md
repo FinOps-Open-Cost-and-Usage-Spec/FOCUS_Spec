@@ -28,4 +28,4 @@ Metadata
 
 <div class='h4-nonindex'>Version Introduced</div>
 
-1.0
+GA: 1.0

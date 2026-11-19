@@ -59,4 +59,4 @@ The publication state of the invoice and the reliability of its associated deliv
 
 ## Version Introduced
 
-1.4
+GA: 1.4
