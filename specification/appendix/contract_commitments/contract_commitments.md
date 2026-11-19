@@ -51,7 +51,7 @@ In the below table, CC represents Contract Commitment.
 | **Advance Resource Commitment** | Usage | Continuous | Public | Availability | Hourly | 1 Month | No Upfront | Monthly |
 | **Enterprise Spend Agreement** | Spend | Discontinuous | Negotiated | Discount | Full Period | 3 Years | No Upfront | Monthly |
 | **Bulk Capacity Credits** | Spend | Discontinuous | Negotiated | Entitlement | Full Period | 1 Year | All Upfront | One-Time |
-| **Interval Spend Commitment** | Spend | Discontinuous | Public | Entitlement | Full Period | 1 Year | No Upfront | Monthly |
+| **Interval Spend Commitment** | Spend | Discontinuous | Public | Entitlement | Monthly | 1 Year | No Upfront | Monthly |
 | **Seat License** | Usage | Continuous | Negotiated | Discount | Monthly | 1 Year | No Upfront | Monthly |
 | **Multi-Year Pool** | Spend | Discontinuous | Negotiated | Discount | Full Period | 3 Years | All Upfront | One-Time |
 | **Growth Rebate** | Spend | Discontinuous | Negotiated | Discount | Annual | 2 Years | No Upfront | Annual |

@@ -62,7 +62,7 @@ Row 3 (support fee) is correctly excluded because CommitmentProgramEligibilityDe
 
 This example demonstrates how to use [CommitmentProgramEligibilityDetails](#datamodel.costandusage.commitmentprogrameligibilitydetails) to identify uncovered savings opportunities across [*commitment program*](#glossary:commitment-program) types and providers.
 
-Acme Corp runs compute workloads on Aura Web and uses StackLens for observability monitoring. Some Aura Web compute usage is covered by a Resource Reservation. StackLens usage is uncovered but eligible for Interval Spend Commitments at monthly or annual terms. A practitioner wants to answer: "Which *commitment program* and provider should I target for my next purchase?"
+Acme Corp runs compute workloads on Aura Web and uses StackLens for observability monitoring. Some Aura Web compute usage is covered by a Resource Reservation. StackLens usage is uncovered but eligible for Interval Spend Commitments at monthly or annual intervals. A practitioner wants to answer: "Which *commitment program* and provider should I target for my next purchase?"
 
 Six usage rows for a single charge period (2025-04-01):
 
