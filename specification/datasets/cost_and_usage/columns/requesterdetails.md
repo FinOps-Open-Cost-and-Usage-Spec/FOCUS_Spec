@@ -34,13 +34,12 @@ RequesterDetailsObject MUST adhere to the following requirements:
 * RequesterDetailsObject MUST NOT include entries that are not applicable to the *requester* associated with the *charge*.
 * RequesterDetailsObject[\*].key MUST NOT be "Principal" when PrincipalId is null.
 * RequesterDetailsObject[\*].key MUST NOT be "Credential" when CredentialId is null.
-* RequesterDetailsObject entries MUST adhere to the following requirements:
-  * RequesterDetailsObject[\*].key MUST be unique within RequesterDetailsObject.
-  * RequesterDetailsObject[\*].value MUST carry the descriptive attributes of the *requester* level named by RequesterDetailsObject[\*].key.
-  * RequesterDetailsObject[\*].value.Type MUST represent the kind of entity named by RequesterDetailsObject[\*].key.
-  * RequesterDetailsObject[\*].value.Name MUST represent a readable display name for the entity named by RequesterDetailsObject[\*].key.
-  * RequesterDetailsObject[\*].value.Email MUST represent an email address associated with the entity named by RequesterDetailsObject[\*].key.
-  * Custom entry in RequesterDetailsObject MUST represent a level of the *requester* that is neither the *principal* nor the *credential*.
+* RequesterDetailsObject[\*].key MUST be unique within RequesterDetailsObject.
+* RequesterDetailsObject[\*].value MUST carry the descriptive attributes of the *requester* level named by RequesterDetailsObject[\*].key.
+* RequesterDetailsObject[\*].value.Type MUST represent the kind of entity named by RequesterDetailsObject[\*].key.
+* RequesterDetailsObject[\*].value.Name MUST represent a readable display name for the entity named by RequesterDetailsObject[\*].key.
+* RequesterDetailsObject[\*].value.Email MUST represent an email address associated with the entity named by RequesterDetailsObject[\*].key.
+* Custom entry in RequesterDetailsObject MUST represent a level of the *requester* that is neither the *principal* nor the *credential*.
 
 ### Object Schema Structure
 
