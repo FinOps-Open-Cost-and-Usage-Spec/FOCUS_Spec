@@ -164,6 +164,8 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
 
 * In the **Glossary** file, entity references MUST be linked only on their first occurrence within each glossary entry, rather than once per source markdown file.
 
+* In the **Directly Dependent Columns** and **Supporting Columns** lists on a supported features page, column entries MUST NOT be linked, even when an entry is the first occurrence in the source markdown file.
+
 ### Entity References
 
 * **Entity ID References:** Formatting and usage conventions for normative requirements are defined in the Normative Requirements Guidelines.
@@ -173,6 +175,7 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
 * **Entity ID Naming:** Entity IDs MUST match the exact naming conventions used in the schema (e.g., CommitmentDiscountId).
 
 * **Entity Display Name References:** References to FOCUS entities in non-normative content (i.e., outside Requirements sections) MUST use Display Names when available.
+  * **Exception for Column Lists:** On a supported features page, each column entry under the Directly Dependent Columns and Supporting Columns headings MUST be a Column ID (e.g., BilledCost, not Billed Cost).
 
 * **Entity Scope:** These rules apply to all entities defined in the FOCUS specification (e.g., Columns, Attributes, Datasets, Objects).
 
@@ -259,6 +262,8 @@ To ensure consistent language when describing relationships and evaluations betw
   * A spaced hyphen (` - `) MUST be used to set off parenthetical phrases (e.g., `The metric - BilledCost - is required.`).
   * HTML entities and special unicode dash characters SHOULD NOT be used.
 
+* **Column Values in SQL:** Column values inside SQL code use single quotation marks, as SQL string literals require (e.g., `WHERE ChargeCategory = 'Usage'`), rather than the double quotation marks that the Column Values row of the [Editorial Style Guidelines](#editorial-style-guidelines) table sets for prose.
+
 ### JSON Formatting
 
 * **Valid JSON:** JSON examples MUST be valid and complete.
@@ -295,11 +300,48 @@ To ensure consistent language when describing relationships and evaluations betw
   * PricingQuantity MUST be greater than 0.
 ```
 
+### Section Headings
+
+* **Entity Names in Headings:** Document titles and section headings are non-normative content. The Display Name rules in [Entity References](#entity-references) and [Display Names](#display-names) apply to them, even when the table, query, or code under the heading uses Entity IDs (e.g., `### Effective Cost by Allocated Resource ID`, not `### Effective Cost by AllocatedResourceId`).
+
+* **Metadata Names:** A metadata field's Metadata Name serves as its Display Name in headings (e.g., FOCUS Version, not FocusVersion).
+
+* **Entities Without a Display Name:** When an entity has no Display Name (e.g., a JSON object property such as ProgramType), the heading uses the name as the schema defines it.
+
+* **Heading Scope:** These rules apply to all document titles and section headings in specification content, including headings on supported features pages and in appendix example sections.
+
+* **Single Query Heading:** On a supported features page with one example query, the query MUST appear under the level-2 heading `## Example SQL Query`.
+
+* **Multiple Query Headings:** On a supported features page with more than one example query, the queries MUST appear under the level-2 heading `## Example SQL Queries`, with one level-3 subheading per query.
+
+* **Query Subheadings:** Each query subheading SHOULD name the scenario the query covers (e.g., `### Effective Cost by Service and Region`).
+
+* **Example** (Markdown, illustrative):
+
+  ```md
+  Correct:
+    ### Get Total Effective Cost by Allocated Resource ID
+    ### Cost Columns: Billed Cost vs. Effective Cost vs. List Cost
+    ### Naming Conventions for ProgramType Values
+
+  Incorrect:
+    ### Get Total Effective Cost by AllocatedResourceId
+    ### Cost Columns: BilledCost vs. EffectiveCost vs. ListCost
+  ```
+
 ### Examples
 
 > **Note:** Authors should consult the actual FOCUS attribute specification files as the source of truth, as these guidelines do not necessarily reflect the latest version.
 
 * **Brand-Free Identifiers:** Resource, host, and pod-level identifiers in appendix examples MUST use neutral, brand-free labels (e.g., `host-prod-07`, `pod-orders-01`) rather than labels derived from fictitious customer or data generator names, so that an identifier does not read as an additional, unintended entity in the example.
+
+* **Column Coverage:** On a supported features page, every column listed under Directly Dependent Columns or Supporting Columns MUST appear in at least one example query on the same page.
+
+* **Column Coverage in the Appendix:** Column Coverage also applies to an appendix example section that lists columns (e.g., under a Directly Dependent Columns or Supporting Columns heading) and shows example queries.
+
+> **Note:** When no query uses a listed column, add the column to a query where it is central to the feature, or remove it from the list.
+
+* **Query Descriptions:** Prose that introduces or explains an example query is non-normative content. The [Editorial Style Guidelines](#editorial-style-guidelines) table and the rules in [Entity References](#entity-references), [Display Names](#display-names), and [Linking](#linking) apply to it, even when the query uses Entity IDs (e.g., Charge Category of "Usage", not ChargeCategory of `Usage`).
 
 * **Valid Examples:** Examples MUST reflect valid combinations of values defined in the specification.
 
