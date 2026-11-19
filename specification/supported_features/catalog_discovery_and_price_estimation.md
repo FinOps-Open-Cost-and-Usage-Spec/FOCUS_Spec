@@ -311,6 +311,31 @@ GROUP BY Cur.UnitPriceType
 ORDER BY Cur.UnitPriceType
 ```
 
+### Show the Price History of a SKU over a Period
+
+This query answers what every price for a *SKU* was at any time during a past period, and when each one changed. A practitioner can then explain a past cost or rebuild an estimate as of an earlier date (e.g., a prior budget period). It takes a service provider, a SKU ID, and a period start and end. It returns every record whose effective window overlaps that period, oldest first, one row for each SKU Price ID, Contract ID, Pricing Currency, and Unit Price Type.
+
+This query needs a *dataset instance* that holds historical prices. A dataset instance with only current prices returns the prices in force now, not the ones that applied in the period. A historical pull sets Start and End to the dates of the period and includes unchanged rows, so prices active at Start return along with the ones that changed.
+
+```sql
+SELECT
+  SkuId,
+  SkuPriceId,
+  ContractId,
+  UnitPriceType,
+  PricingUnit,
+  PricingCurrency,
+  UnitPrice,
+  SkuPriceEffectiveStart,
+  SkuPriceEffectiveEnd
+FROM SkuPrice
+WHERE ServiceProviderName = ?
+  AND SkuId = ?
+  AND (SkuPriceEffectiveStart IS NULL OR SkuPriceEffectiveStart < ?)
+  AND (SkuPriceEffectiveEnd IS NULL OR SkuPriceEffectiveEnd > ?)
+ORDER BY SkuPriceId, ContractId, PricingCurrency, UnitPriceType, SkuPriceEffectiveStart
+```
+
 ## Version Introduced
 
 1.5
