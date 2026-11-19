@@ -12,22 +12,22 @@ Common scenarios where dataset configuration is valuable include:
 
 ## Configuration Options
 
-A *FOCUS dataset* is configured through the following options. Each option applies to every delivery mechanism: request-based (pull) delivery, where each request carries the options, and scheduled (push) delivery such as exports, where the options are set once.
+A *FOCUS dataset* is configured through the following options. Each applies to request-based (pull) delivery, where each request carries the options, and to scheduled (push) delivery such as exports, where the options are set once.
 
 | Option | Description | Default |
 | --- | --- | --- |
 | Columns | Columns to include. | Default column set, when offered |
-| Start | Beginning (inclusive) of the period to deliver. Applies to the period column the dataset declares. Also the changed-since point in time: rows last updated on or after Start are changes. | Start of the current [*billing period*](#glossary:billing-period) |
-| End | End (exclusive) of the period to deliver. Applies to the same period column as Start. | Time of the request |
-| IncludeAllRows | Whether to include rows that were active at Start but did not change during the period. Set to false to receive only changed rows. | true |
+| Start | Beginning (inclusive) of the period to deliver. Rows are included when their period, as declared by the dataset, overlaps the period from Start to End. | Start of the current [*billing period*](#glossary:billing-period) |
+| End | End (exclusive) of the period to deliver. | Time of the request |
+| UpdatedSince | Only rows last updated on or after this time. Use it to receive only changes since an earlier delivery. | None (all rows in the period) |
 
-IncludeAllRows defaults to true so practitioners receive every row they may need and opt out of unchanged rows to reduce data size.
+Not setting UpdatedSince delivers every row in the period, so practitioners receive every row they may need. Setting it reduces data size. Defaults differ by delivery:
 
-Defaults differ by delivery:
+* Pull: UpdatedSince is not set, because a request has no knowledge of earlier deliveries.
+* First push delivery: UpdatedSince is not set.
+* Later push deliveries: UpdatedSince is the capture time of the previous delivery.
 
-* Pull: IncludeAllRows is true, because a request has no knowledge of earlier deliveries.
-* First push delivery: IncludeAllRows is true.
-* Later push deliveries: IncludeAllRows is false and Start is the capture time of the previous delivery.
+When UpdatedSince is set and Start or End is not, the period is unbounded on that side, so changes are not missed (e.g., a price announced now for a future date).
 
 ## Requirements
 
@@ -35,17 +35,19 @@ Dataset conforming to DatasetConfiguration attribute MUST adhere to the followin
 
 * *FOCUS dataset* MUST be configurable to include only a user-defined selection of columns.
 * *FOCUS dataset* MUST adhere to all column-level specifications defined in the FOCUS schema, regardless of the user's chosen configuration (e.g., column selection).
-* *FOCUS dataset* SHOULD be configurable with Start and End options when the dataset declares a period column.
-* *FOCUS dataset* MUST adhere to the following requirements when Start or End is configured:
-  * *FOCUS dataset* MUST include a separate row for every change with a period column value on or after Start and before End.
-  * *FOCUS dataset* MUST NOT include rows with a period column value before Start or on or after End, except as required by IncludeAllRows.
-  * *FOCUS dataset* Start MUST be the capture time of the previous delivery for each scheduled delivery after the first, when Start is not configured.
-* *FOCUS dataset* SHOULD be configurable with an IncludeAllRows option when the dataset declares a period column.
-* *FOCUS dataset* MUST adhere to the following requirements when IncludeAllRows is configured or defaulted:
-  * *FOCUS dataset* MUST include rows active at Start that did not change during the period when IncludeAllRows is true.
-  * *FOCUS dataset* MUST NOT include rows active at Start that did not change during the period when IncludeAllRows is false.
-  * *FOCUS dataset* IncludeAllRows MUST be true when not configured, except for scheduled deliveries after the first.
-  * *FOCUS dataset* MUST be delivered with IncludeAllRows set to true when a previously delivered row's identifying values change.
+* *FOCUS dataset* MUST adhere to the following requirements when the dataset declares a period:
+  * *FOCUS dataset* MUST be configurable with a Start option.
+  * *FOCUS dataset* MUST be configurable with an End option.
+  * *FOCUS dataset* MUST include only rows with a period that overlaps the period from Start to End.
+  * *FOCUS dataset* MUST use the start of the current *billing period* as Start when neither Start nor UpdatedSince is configured.
+  * *FOCUS dataset* MUST use the time of the request as End when neither End nor UpdatedSince is configured.
+* *FOCUS dataset* MUST adhere to the following requirements when the dataset declares a last-updated column and a row key:
+  * *FOCUS dataset* SHOULD be configurable with an UpdatedSince option.
+  * *FOCUS dataset* MUST include every row last updated on or after UpdatedSince when UpdatedSince is configured.
+  * *FOCUS dataset* MUST NOT include rows last updated before UpdatedSince when UpdatedSince is configured.
+  * *FOCUS dataset* MUST include a separate row for every change when UpdatedSince is configured.
+  * *FOCUS dataset* MUST use the capture time of the previous delivery as UpdatedSince for each scheduled delivery after the first, when UpdatedSince is not configured.
+  * *FOCUS dataset* MUST be delivered without UpdatedSince when a previously delivered row's key values change.
 * *FOCUS dataset* MAY offer a default column set.
 * *FOCUS dataset* default column set MUST include all applicable [*FOCUS columns*](#glossary:FOCUS-column) when a default column set is offered.
 

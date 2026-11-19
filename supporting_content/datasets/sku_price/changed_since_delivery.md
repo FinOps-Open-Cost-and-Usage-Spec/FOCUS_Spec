@@ -1,6 +1,6 @@
 # SKU Price Period and Changed-Since Delivery
 
-Background on why the SKU Price dataset requires period configuration (Start, End, IncludeAllRows) and why honoring it is mandatory. This document records design intent and is not normative.
+Background on why the SKU Price dataset requires period configuration (Start, End, UpdatedSince) and why honoring it is mandatory. This document records design intent and is not normative.
 
 ## The Problem
 
@@ -10,30 +10,27 @@ Most prices do not change from month to month. If a service provider re-sends th
 
 ## Configuration Options
 
-* Start: inclusive; defaults to the current billing period start; also the changed-since point in time.
+* Start: inclusive; defaults to the current billing period start.
 * End: exclusive; defaults to the request time.
-* IncludeAllRows: include prices active at Start that did not change. Defaults to true.
+* UpdatedSince: only rows last updated on or after this time. Not set by default.
 
-IncludeAllRows defaults to true so practitioners get every row they may need instead of silently missing rows. Opting out (false) is what delivers the size savings below. A pull cannot know whether the practitioner has earlier data, so it always defaults to true. Recurring pushes after the first default to false.
+Start and End select prices by effective period (SkuPriceEffectiveStart, SkuPriceEffectiveEnd). UpdatedSince selects by SkuPriceLastUpdated. They answer different questions: which prices applied during a period, and which prices changed since a time. A price announced in July for January changes in July, so only UpdatedSince finds it for a practitioner pulling changes in July.
+
+UpdatedSince is not set by default so practitioners fall into the pit of success and receive every row they may need. Setting it is the opt-in that delivers the size savings below. A pull cannot know whether the practitioner has earlier data, so it never sets it. Recurring pushes after the first set it to the previous capture time. When UpdatedSince is set, an unset Start or End is unbounded so changes (e.g., future-dated prices, retirements) are not missed.
+
+The row key is needed so a practitioner can tell which delivered row an update replaces. Cost and Usage has no defined key, so UpdatedSince does not apply to it until one exists. Start and End can apply to it using ChargePeriodStart and ChargePeriodEnd once it declares a period.
 
 ## Scenarios
 
-| # | Scenario | Start | End | IncludeAllRows |
+| # | Scenario | Start | End | UpdatedSince |
 | --- | --- | --- | --- | --- |
-| 1 | Initial or one-time pull of current prices | null (current billing period start) | null (now) | null/true |
-| 2 | Initial pull of historical prices | date | date | null/true |
-| 3 | Later pull of prices changed during a period | date (changed-since) | null or date | false |
-| 4 | Recurring push of prices changed since last delivery (after the first) | null (previous delivery) | null | false |
+| 1 | Initial or one-time pull of current prices | default | default | not set |
+| 2 | Initial pull of historical prices | date | date | not set |
+| 3 | Later pull of prices changed since a time | unbounded | unbounded | date |
+| 4 | Recurring push after the first | unbounded | unbounded | previous capture time |
+| 5 | Prices active during S to E, only if changed since S1 | S | E | S1 |
 
 The first push uses scenario 1 or 2 so the practitioner starts with all prices.
-
-### Which Column Start and End Apply To
-
-Start and End apply to SkuPriceLastUpdated, not SkuPriceEffectiveStart. A price announced in July to take effect in January changes in July. Filtering on SkuPriceEffectiveStart would hide it from practitioners pulling changes in July. Effective dates still decide which unchanged rows were active at Start, which IncludeAllRows adds. Cost and Usage would apply Start and End to ChargePeriodStart.
-
-### Out of Scope
-
-Prices active during a period (S to E) but only if changed since an earlier date (S1). It needs a fourth option (ChangedSince) that duplicates Start in typical scenarios. Workarounds: pull all prices for the period and filter out rows already held, or pull changes since S1 and drop rows with a SkuPriceEffectiveStart before S. Revisit if challenged.
 
 ## Size Analysis
 
