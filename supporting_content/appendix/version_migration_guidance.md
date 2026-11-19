@@ -23,7 +23,7 @@ FOCUS 1.5 introduces changes across the categories defined by the [Change Impact
 | Classification | Summary |
 |----------------|---------|
 | **Compatible** | A new SKU Price dataset (preview), new columns for requester attribution and split cost allocation, new `SkuPriceDetails` properties for AI model billing, three new supported features (two preview), and column presence requirements expressed through operating model conditions. No changes required to existing queries. |
-| **Migration Compatible** | Revised definitions of the list and contracted price and cost columns, consumption currency in place of virtual currency, SKU identifiers scoped to `ServiceProviderName`, a largest-whole-unit rule for `ContractCommitmentDurationType`, and a new "Bare Metal" `ServiceSubcategory` value split from "Virtual Machines". Queries or implementations that depend on these require review. |
+| **Migration Compatible** | Revised definitions of the list and contracted price and cost columns, consumption currency in place of virtual currency, SKU identifiers scoped to `ServiceProviderName`, a largest-whole-unit rule for `ContractCommitmentDurationType`, and a new "Bare Metal" `ServiceSubcategory` value split from "Virtual Machines", and a `ConsumedQuantity` rule against counting cached tokens twice. Queries or implementations that depend on these require review. |
 | **Incompatible** | None |
 
 FOCUS 1.5 removes and renames no columns, attributes, or datasets. Most of its migration impact is on values, not on schema: the same columns are present, but some of them hold different values for affected service providers. A query that runs without error against FOCUS 1.5 data can still return different results than it did against FOCUS 1.4 data. Practitioners should review the What Requires Migration summary and the Practitioner Guidance below; data generators should review the Data Generator Guidance.
@@ -48,7 +48,7 @@ The following additive changes do not require migration but may affect data pipe
 * **New Cost and Usage Columns:**
   * [`AllocatedServiceName`](/specification/datasets/cost_and_usage/columns/allocatedservicename.md), for split cost allocation
   * [`PrincipalId`](/specification/datasets/cost_and_usage/columns/principalid.md), [`CredentialId`](/specification/datasets/cost_and_usage/columns/credentialid.md), and [`RequesterDetails`](/specification/datasets/cost_and_usage/columns/requesterdetails.md), for requester attribution. The Cost and Usage dataset now notes that it can carry personal data, such as identity attributes in `RequesterDetails` and customer-defined values in `Tags`. Practitioners who store or share FOCUS data should review their data handling for these columns.
-* **New `SkuPriceDetails` Properties:** [`SkuPriceDetails`](/specification/datasets/cost_and_usage/columns/skupricedetails.md) adds model identity properties (`ModelDeveloper`, `ModelFamily`, `ModelId`, `ModelVersion`) and token metering properties (`TokenDirection`, `TokenCacheAction`). [`ConsumedQuantity`](/specification/datasets/cost_and_usage/columns/consumedquantity.md) adds a requirement that tokens reported on a separate cache "Read" or "Write" row are not counted twice.
+* **New `SkuPriceDetails` Properties:** [`SkuPriceDetails`](/specification/datasets/cost_and_usage/columns/skupricedetails.md) adds model identity properties (`ModelDeveloper`, `ModelFamily`, `ModelId`, `ModelVersion`) and token metering properties (`TokenDirection`, `TokenCacheAction`). A new `ConsumedQuantity` rule for cached tokens is covered under [Cached Token Counting](#cached-token-counting) below.
 * **Operating Model Conditions:** 26 named [operating model conditions](/specification/operating_model_conditions/operating_model_conditions_overview.md) (two of them part of the SKU Price preview) now express when a column or dataset is required (e.g., Includes Regions, Includes Unit Pricing). Dataset presence requirements moved to the new [Data Model](/specification/datasets/data_model.md) level. See [Revised Presence Requirements](#revised-presence-requirements) below.
 * **New Allowed and Recommended Values:** [`UnitFormat`](/specification/attributes/unit_format.md) adds the count-based units `Characters`, `Images`, `Jobs`, `Messages`, `Pages`, and `Sessions`, and the time-based unit `Weeks`.
 * **New Appendix Entries:**
@@ -71,9 +71,10 @@ The following changes require review. Each is detailed in the Practitioner Guida
 | SKU identifiers scoped to `ServiceProviderName`, with new `SkuPriceId` requirements | Practitioners, Data Generators | Include `ServiceProviderName` in joins and groupings on SKU identifiers. Check `SkuPriceId` assignment against the new requirements. |
 | `ContractCommitmentDurationType` uses the largest whole time-based unit | Practitioners, Data Generators | Update queries that match on duration strings. Normalize emitted values (e.g., "1 Year", not "12 Months"; "3 Months", not "1 Quarter"). |
 | "Bare Metal" `ServiceSubcategory` split from "Virtual Machines" | Practitioners, Data Generators | Update filters on "Virtual Machines" that should include bare-metal charges. Reclassify bare-metal services. |
+| `ConsumedQuantity` excludes tokens counted on a separate cache "Read" or "Write" row | Practitioners, Data Generators | Remove query logic that subtracts cached tokens from prompt token totals. Stop counting cached tokens in the prompt row. |
 | Column presence expressed through operating model conditions | Data Generators | Re-evaluate which columns are required, since some columns are now required in more operating models. |
 | Entity anchors renamed from `#datasets.` to `#datamodel.` | Practitioners, Data Generators | Update deep links into the specification. |
-| Requirements model rule key renamed from `ApplicabilityCriteria` to `Conditions` | Data Generators, tool builders | Update tools that read the requirements model JSON. |
+| Requirements model rule key renamed from `ApplicabilityCriteria` to `Conditions`, with new entity types | Data Generators, tool builders | Update tools that read or validate the requirements model JSON. |
 
 The presence row is classified as Compatible, since it does not change existing queries, but it changes what data generators provide. The last two rows are structural changes to the specification and its requirements model; the changelog lists them under Changed specification structure and New requirements model features, outside its Change Impact Classification sections. They break tools and links that depend on the old names.
 
@@ -95,6 +96,7 @@ Two consequences matter for savings analysis:
 
 * The revised definition states explicitly that a negotiated discount received in exchange for a spend commitment is reflected in Contracted Unit Price. The effect of applying a commitment discount to covered charges is not; it remains in `EffectiveCost`.
 * The gap between List Cost and Contracted Cost measures the effect of negotiated pricing terms. The gap between Contracted Cost and Effective Cost measures the effect of discount-bearing commitment programs being applied to the charge. Negotiated terms of a commitment program that do not depend on it being applied, such as the unit price for its purchase, are reflected in Contracted Cost.
+* Both gaps depend on which charges are aggregated. A commitment discount purchase (a covering charge) can carry Contracted Cost, while the usage it covers carries Effective Cost. To avoid double counting, the [`ContractedCost`](/specification/datasets/cost_and_usage/columns/contractedcost.md) aggregation guidance excludes either the covering charges or the covered charges: covered charges when aggregating on a billed basis, and covering charges when aggregating on an accrual basis. Including both inflates the measured savings.
 
 Much of this revision makes explicit, in each column's requirements and Implementation Guidance, boundaries that FOCUS 1.4 implied or stated only in another column. Where a provider's FOCUS 1.4 data drew these boundaries differently, savings will move from one gap to the other.
 
@@ -134,6 +136,12 @@ Each SKU Price ID now has one and only one Pricing Unit for a given `ServiceProv
 * When [`ContractCommitmentDurationType`](/specification/datasets/contract_commitment/columns/contractcommitmentdurationtype.md) expresses a time-based unit, it uses the largest `UnitFormat` time unit that expresses the duration as a whole number (e.g., "1 Year" rather than "12 Months", "1 Week" rather than "7 Days"). The column's own allowed values table, which included "Quarter", is replaced by the `UnitFormat` time units from Minute through Year, which do not include it, so a quarterly term is expressed as "3 Months". Queries that match on duration strings should match the normalized form, or both forms while FOCUS 1.4 data is still in use.
 * [`ServiceSubcategory`](/specification/datasets/cost_and_usage/columns/servicesubcategory.md) adds "Bare Metal" under "Compute" and narrows "Virtual Machines" to hypervisor-based instances. Queries on "Virtual Machines" no longer return bare-metal charges. To keep a view of all compute instances, filter on both values. [`ServiceCategory`](/specification/datasets/cost_and_usage/columns/servicecategory.md) allowed value descriptions are now technology-agnostic; the values are unchanged.
 
+#### Cached Token Counting
+
+[`ConsumedQuantity`](/specification/datasets/cost_and_usage/columns/consumedquantity.md) must not include tokens counted on a different row whose `SkuPriceDetails` has a `TokenCacheAction` of "Read" or "Write", when the row itself has neither value. A service provider's usage report may count cached tokens inside a prompt token total and also report them separately. Under FOCUS 1.5, the cached tokens appear on the "Read" or "Write" row only, and the prompt row excludes them.
+
+Practitioners who subtract cached tokens from prompt token totals to avoid double counting in FOCUS 1.4 data should remove that step for FOCUS 1.5 data. Otherwise the cached tokens are subtracted twice. For example, a prompt total of 100 tokens that includes 20 cached tokens is reported as 80 on the prompt row under FOCUS 1.5; subtracting the 20 cached tokens again gives 60. As with the other value changes, read the [FOCUS Version](/specification/metadata/schema/focus_version.md) metadata of each dataset to decide which logic applies.
+
 #### Deep Links and Example Queries
 
 The specification's "Datasets" section is now the [Data Model](/specification/datasets/data_model.md), and entity anchors changed from `#datasets.` to `#datamodel.` (e.g., `#datamodel.costandusage.billedcost`). Internal documentation, dashboards, or tools that deep-link into the published specification need their links updated. Supported feature SQL examples now read from named datasets (e.g., `FROM CostAndUsage`) instead of `focus_data_table`; practitioners copying them should map the dataset names to their own tables.
@@ -166,12 +174,15 @@ A data generator with unit pricing and no negotiated pricing could omit `Contrac
 * **SKU Price Details.** `SkuPriceDetails` property values use the allowed values where a property defines them.
 * **Duration type.** Express time-based `ContractCommitmentDurationType` values in the largest whole `UnitFormat` time unit; the "[Numeric Value] [Unit]" format is recommended. "Quarter" is no longer among the units, so quarterly terms become "3 Months". `UnitFormat` also recommends the largest whole time unit for any time-based unit.
 * **Service subcategory.** Classify services provisioned as physical servers without a provider-managed hypervisor as "Bare Metal".
+* **Cached tokens.** When a usage report counts cached tokens both inside a prompt token total and on a separate cache row, exclude them from `ConsumedQuantity` on the prompt row and report them on the row with `TokenCacheAction` "Read" or "Write".
 * **JSON columns.** [`JsonObjectFormat`](/specification/attributes/json_object_format.md) now allows a top-level array. Objects in an array also must not be empty, and should not exceed three levels of nesting.
 * **Tags.** [`Tags`](/specification/datasets/cost_and_usage/columns/tags.md) restores, and [`AllocatedTags`](/specification/datasets/cost_and_usage/columns/allocatedtags.md) adds, the requirement that user-defined tag keys match the keys assigned at the tag source, with or without a tag scheme-specific prefix.
 
-#### Requirements Model Key Rename
+#### Requirements Model Changes
 
-The FOCUS 1.5 release of the requirements model renames the model rule key `ApplicabilityCriteria` to `Conditions`, and `conditions.json` replaces `applicability_criteria.json`. `Conditions` holds the IDs of operating model conditions. Earlier model releases keep the old key. Tools that read the model JSON, such as validators, need to read the new key for FOCUS 1.5. See [Writing Requirements Model Guidelines](/guidelines/contributors/writing-requirements-model-guidelines.md).
+The FOCUS 1.5 release of the requirements model renames the model rule key `ApplicabilityCriteria` to `Conditions`, and `conditions.json` replaces `applicability_criteria.json`. `Conditions` holds the IDs of operating model conditions. Earlier model releases keep the old key. Tools that read the model JSON, such as validators, need to read the new key for FOCUS 1.5.
+
+The model schema also adds two entity types, `DataModel` and `Condition`, to the existing `Dataset`, `Column`, `Attribute`, and `Object`. Rule IDs gain matching entity type codes, `M` and `N` (e.g., `DMO-DataModel-M-005-C`, `CON-IncludesUnitPricing-N-000-C`). Tools that dispatch on entity type, or that validate rule IDs against the FOCUS 1.4 pattern, need to accept both new types. See [Writing Requirements Model Guidelines](/guidelines/contributors/writing-requirements-model-guidelines.md).
 
 #### Recommended Implementation Sequence
 
@@ -186,12 +197,12 @@ During staggered adoption, practitioners may receive FOCUS 1.4 and FOCUS 1.5 dat
 
 ### Affected Supported Features
 
-The following supported features reference columns, attributes, or behaviors changed in FOCUS 1.5. Several reflect additive changes and require no query updates; the list and contracted price redefinition, the SKU identifier scope, and the "Bare Metal" split require review (see What Requires Migration above):
+The following supported features reference columns, attributes, or behaviors changed in FOCUS 1.5. Several reflect additive changes and require no query updates; the list and contracted price redefinition, the SKU identifier scope, the "Bare Metal" split, and the cached token rule require review (see What Requires Migration above):
 
 * [Cost Comparison](/specification/supported_features/cost_comparison.md), for the list and contracted price redefinition
 * [Verify, Compare, and Track Unit Prices](/specification/supported_features/verify_compare_track_unit_prices.md), for the list and contracted price redefinition and the SKU identifier scope, since a SKU Price ID identifies a price only within a given `ServiceProviderName`
 * [Service Categorization](/specification/supported_features/service_categorization.md), for the "Bare Metal" `ServiceSubcategory` value
-* [Resource Usage](/specification/supported_features/resource_usage.md), which adds cache hit rate and input-to-output token ratio queries
+* [Resource Usage](/specification/supported_features/resource_usage.md), which adds cache hit rate and input-to-output token ratio queries, and for the cached token rule in `ConsumedQuantity`
 * [Data Generator-Calculated Split Cost Allocation](/specification/supported_features/data_generator_calculated_split_cost_allocation.md), for the new `AllocatedServiceName` column
 * [Effective Cost](/specification/supported_features/effective_cost.md) and [Invoice Reconciliation](/specification/supported_features/invoice_reconciliation.md), which add example queries
 
