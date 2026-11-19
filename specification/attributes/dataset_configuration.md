@@ -48,7 +48,7 @@ Dataset conforming to DatasetConfiguration attribute MUST adhere to the followin
   * *FOCUS dataset* MUST NOT exclude rows based on their last-updated value when UpdatedSince is not set.
   * *FOCUS dataset* MUST NOT include rows last updated before UpdatedSince when UpdatedSince is set.
   * *FOCUS dataset* MUST represent each change since UpdatedSince as a separate row when UpdatedSince is set.
-  * *FOCUS dataset* MUST NOT set UpdatedSince when the key values of a previously delivered row have changed.
+  * *FOCUS dataset* MUST NOT set UpdatedSince for a delivery after a previously delivered row's key values were corrected (e.g., a corrected date that is part of the key), so every current row is delivered again.
 * *FOCUS dataset* MAY offer a default column set.
 * *FOCUS dataset* default column set MUST include all applicable [*FOCUS columns*](#glossary:FOCUS-column) when a default column set is offered.
 
