@@ -164,6 +164,37 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
 
 * In the **Glossary** file, entity references MUST be linked only on their first occurrence within each glossary entry, rather than once per source markdown file.
 
+### Semantic Tags
+
+A semantic tag is a Markdown link whose target names the kind of entity a reference means, instead of a location. The build resolves each tag into the links and formatting described in Linking, so the author writes the tag on every mention and does not decide which mention links. Semantic tags apply from FOCUS 1.6. A reference written in the existing conventions (a hand-written link, italics, or plain text) remains valid, and both may appear in the same file.
+
+| Kind | Entity | Example |
+| :--- | :--- | :--- |
+| `col` | Column | `[BilledCost](#col)`, `[resource type](#col:ResourceType)`, `[BilledCost](#col:InvoiceDetail.BilledCost)` |
+| `val` | Allowed value of a column | `["Usage"](#val:ChargeCategory)` |
+| `ds` | Dataset | `[Cost and Usage](#ds)` |
+| `attr` | Attribute | `[NumericFormat](#attr)` |
+| `omc` | Operating model condition | `[Includes Tags](#omc)` |
+| `obj` | JSON object defined by a column | `[ContractAppliedObject](#obj)` |
+| `schema` | JSON schema | `[ContractAppliedObjectSchema](#schema)` |
+| `meta` | Metadata field or collection | `[FocusVersion](#meta)`, `[DatasetInstanceId](#meta:Recency.DatasetInstanceId)` |
+| `term` | Glossary term | `[charges](#term)`, `[covered](#term:covered-charge)` |
+
+* **Tag Text:** The link text is what readers see. When it is the entity's ID or Display Name (or a glossary term or its plural), the kind alone identifies the entity. Other text names the entity after a colon (e.g., `[resource type](#col:ResourceType)`).
+* **Datasets:** A column tag in a file under `datasets/<dataset>/` resolves in that dataset. Other files qualify a column that several datasets define (e.g., `#col:CostAndUsage.BilledCost`), or set a default for the file in front matter (`dataset: CostAndUsage`).
+* **Formatting:** Tag text is written without emphasis, and tags are not used in headings. The build applies italics to glossary terms.
+* **Conversion Status:** A file records, in front matter, the tag kinds it has been converted for. The key is temporary and is removed when the whole specification is converted. `mechanical` means the conversion tool converted the kind, and the build fails when rerunning the tool would change the file. `reviewed` means a person has also decided every reference the tool left, and the build fails on an untagged reference of that kind.
+
+```yaml
+---
+semantic:
+  col: mechanical
+  term: reviewed
+---
+```
+
+The tools and their checks are in `specification/tools/semantic/`.
+
 ### Entity References
 
 * **Entity ID References:** Formatting and usage conventions for normative requirements are defined in the Normative Requirements Guidelines.

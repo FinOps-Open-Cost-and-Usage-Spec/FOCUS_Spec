@@ -3,6 +3,8 @@
 spec.md
 spec.html
 spec_pdf.html
+spec.semantic.md
+specification/semantic-registry.json
 *.pyc
 specification/version.md
 .vscode/*

@@ -37,6 +37,10 @@ pytest tests/                 # Run all requirements model tests
 pytest tests/test_schema.py   # Run a single test file
 ```
 
+```bash
+pytest specification/tools/semantic/tests   # Semantic tag tool tests (run locally; not part of make test)
+```
+
 ### Lint Markdown
 
 Linting is automatically run as part of `make`. The build will stop if the linter detects issues and will not create the spec.md, spec.html, or spec.pdf files.
@@ -61,11 +65,12 @@ Note: The enhanced linter provides contextual error messages showing actual vs e
 ### Document Build Pipeline
 
 1. **Source files**: `*.md` and `*.mdpp` files in `specification/` subdirectories
-2. **markdown-pp**: Processes `spec.mdpp` template, resolving `!INCLUDE` directives to assemble the full spec
-3. **validate_includes.py**: Ensures all `.md` files in each directory are included in corresponding `.mdpp` templates
-4. **pymarkdownlnt**: Lints all markdown files
-5. **Pandoc**: Converts assembled markdown to HTML with custom filters
-6. **wkhtmltopdf**: Generates PDF from HTML
+2. **markdown-pp**: Processes `spec.mdpp` template, resolving `!INCLUDE` directives to assemble the full spec. It marks where each included file begins and ends, and drops each file's front matter
+3. **Semantic tags** (`specification/tools/semantic/`): builds the entity registry from the defining files, checks the `semantic:` conversion status of each file, and resolves semantic tags (e.g., `[BilledCost](#col)`) into links and italics. Untagged text passes through unchanged
+4. **validate_includes.py**: Ensures all `.md` files in each directory are included in corresponding `.mdpp` templates
+5. **pymarkdownlnt**: Lints all markdown files
+6. **Pandoc**: Converts assembled markdown to HTML with custom filters
+7. **wkhtmltopdf**: Generates PDF from HTML
 
 ### Specification Structure
 
@@ -117,6 +122,7 @@ AI agents generating or reviewing content MUST act as strict technical editors e
 * **No Mixing:** Do not mix Entity IDs and Display Names within the same normative requirement.
 * **Column values:** Enclosed in double quotes (e.g., `"Usage"`, `"Tax"`).
 * **Glossary terms:** Link with `[*term*](#glossary:term)` format.
+* **Semantic tags:** From FOCUS 1.6, a reference MAY be written as a semantic tag (e.g., `[BilledCost](#col)`, `[charges](#term)`, `["Usage"](#val:ChargeCategory)`), and the build applies first-occurrence linking and italics. A file whose `semantic:` front matter lists a tag kind MUST keep references of that kind tagged. See Semantic Tags in the [Editorial Guidelines](guidelines/contributors/editorial-guidelines.md).
 * **Linking Rule:** Link entity names and Glossary terms ONLY on their first occurrence per source file. Exception: Functional links using different anchor text are exempt.
 * **Lists:** All unordered lists MUST use asterisks (`*`), never dashes (`-`) or plus signs (`+`). Nested bullet points MUST use exactly two spaces per level.
 * **Notes:** Important notes must use the blockquote format (`> **Note:**`), or `> **Preview:**` for notes that mark preview content.
