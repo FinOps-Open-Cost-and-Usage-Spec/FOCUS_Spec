@@ -32,7 +32,7 @@
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-CommitmentDiscountStatus-C-005-M"
+            "ModelRuleId": "CAU-CommitmentDiscountStatus-C-005-C"
           },
           {
             "CheckFunction": "CheckModelRule",
@@ -48,7 +48,7 @@
       "Dependencies": [
         "CAU-CommitmentDiscountStatus-C-001-M",
         "CAU-CommitmentDiscountStatus-C-002-C",
-        "CAU-CommitmentDiscountStatus-C-005-M",
+        "CAU-CommitmentDiscountStatus-C-005-C",
         "CAU-CommitmentDiscountStatus-C-006-C",
         "CAU-CommitmentDiscountStatus-C-007-C",
         "CAU-CostAndUsage-D-017-C"
@@ -196,7 +196,7 @@
       ]
     }
   },
-  "CAU-CommitmentDiscountStatus-C-005-M": {
+  "CAU-CommitmentDiscountStatus-C-005-C": {
     "Function": "Validation",
     "Reference": "CommitmentDiscountStatus",
     "EntityType": "Column",
@@ -229,7 +229,11 @@
           }
         ]
       },
-      "Condition": {},
+      "Condition": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "CommitmentDiscountStatus",
+        "Value": null
+      },
       "Dependencies": []
     }
   },
