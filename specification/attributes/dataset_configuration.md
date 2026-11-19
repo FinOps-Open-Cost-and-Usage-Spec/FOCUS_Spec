@@ -19,15 +19,15 @@ A *FOCUS dataset* is configured through the following options. Each applies to r
 | Columns | Columns to include. | Default column set, when offered |
 | Start | Beginning (inclusive) of the period to deliver. Rows are included when their period, as declared by the dataset, overlaps the period from Start to End. | Start of the current [*billing period*](#glossary:billing-period) |
 | End | End (exclusive) of the period to deliver. | Time of the request |
-| UpdatedSince | Only rows last updated on or after this time. Use it to receive only changes since an earlier delivery. | None (all rows in the period) |
+| UpdatedSince | Only rows last updated on or after this time. Use it to receive only changes since an earlier delivery. Independent of Start and End. | None (all rows in the period) |
 
 Not setting UpdatedSince delivers every row in the period, so practitioners receive every row they may need. Setting it reduces data size. Defaults differ by delivery:
 
 * Pull: UpdatedSince is not set, because a request has no knowledge of earlier deliveries.
 * First push delivery: UpdatedSince is not set.
-* Later push deliveries: UpdatedSince is the capture time of the previous delivery.
+* Later push deliveries: UpdatedSince is the capture time of the previous delivery, and Start and End are unbounded so changes are not missed (e.g., a retirement or a price announced now for a future date).
 
-When UpdatedSince is set and Start or End is not, the period is unbounded on that side, so changes are not missed (e.g., a price announced now for a future date).
+Start and End default independently of UpdatedSince. A pull that sets only UpdatedSince is limited to the current billing period unless Start and End are widened.
 
 ## Requirements
 
@@ -39,14 +39,15 @@ Dataset conforming to DatasetConfiguration attribute MUST adhere to the followin
   * *FOCUS dataset* MUST be configurable with a Start option.
   * *FOCUS dataset* MUST be configurable with an End option.
   * *FOCUS dataset* MUST include only rows with a period that overlaps the period from Start to End.
-  * *FOCUS dataset* MUST use the start of the current *billing period* as Start when neither Start nor UpdatedSince is configured.
-  * *FOCUS dataset* MUST use the time of the request as End when neither End nor UpdatedSince is configured.
+  * *FOCUS dataset* MUST use the start of the current *billing period* as Start when Start is not configured.
+  * *FOCUS dataset* MUST use the time of the request as End when End is not configured.
 * *FOCUS dataset* MUST adhere to the following requirements when the dataset declares a last-updated column and a row key:
   * *FOCUS dataset* SHOULD be configurable with an UpdatedSince option.
   * *FOCUS dataset* MUST include every row last updated on or after UpdatedSince when UpdatedSince is configured.
   * *FOCUS dataset* MUST NOT include rows last updated before UpdatedSince when UpdatedSince is configured.
   * *FOCUS dataset* MUST include a separate row for every change when UpdatedSince is configured.
   * *FOCUS dataset* MUST use the capture time of the previous delivery as UpdatedSince for each scheduled delivery after the first, when UpdatedSince is not configured.
+  * *FOCUS dataset* MUST NOT limit Start and End for each scheduled delivery after the first, when Start and End are not configured.
   * *FOCUS dataset* MUST be delivered without UpdatedSince when a previously delivered row's key values change.
 * *FOCUS dataset* MAY offer a default column set.
 * *FOCUS dataset* default column set MUST include all applicable [*FOCUS columns*](#glossary:FOCUS-column) when a default column set is offered.
