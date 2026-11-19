@@ -44,13 +44,13 @@ The time window that an organization receives an invoice for, inclusive of the s
 
 A pricing approach where the cost of a particular resource or service is determined based on predefined quantities or tiers of usage. In these scenarios, the [Pricing Unit](#datamodel.costandusage.pricingunit) and the corresponding [Pricing Quantity](#datamodel.costandusage.pricingquantity) can be different from the [Consumed Unit](#datamodel.costandusage.consumedunit) and [Consumed Quantity](#datamodel.costandusage.consumedquantity).
 
-<a name="glossary:cash-based-accounting"><b>Cash-Based Accounting</b></a>
-
-An accounting method used in technology cost management to record costs in the period when charges are invoiced. This approach aligns expenses with billing cycles, independent of when resources are utilized, services are delivered, or entitlements are available for or actually consumed (including unused or expired entitlements).
-
 <a name="glossary:capacity-reservation"><b>Capacity Reservation</b></a>
 
 A capacity reservation is an agreement that secures a dedicated amount of resources or services for a specified period. This ensures the reserved capacity is always available and accessible, even if it's not fully utilized. Customers are typically charged for the reserved capacity, regardless of actual consumption.
+
+<a name="glossary:cash-based-accounting"><b>Cash-Based Accounting</b></a>
+
+An accounting method used in technology cost management to record costs in the period when charges are invoiced. This approach aligns expenses with billing cycles, independent of when resources are utilized, services are delivered, or entitlements are available for or actually consumed (including unused or expired entitlements).
 
 <a name="glossary:charge"><b>Charge</b></a>
 
@@ -167,7 +167,7 @@ A [Date/Time Format](#attributes.date/timeformat) value that is not contained wi
 
 A tag with one tag value chosen from a set of possible tag values after being processed by a set of service-provider-defined or user-defined rules.
 
-<a name="glossary:finops-cost-and-usage-specification"><b>FinOps Cost and Usage Specification (FOCUS)</b></a>
+<a name="glossary:finops-cost-and-usage-specification"><b>FinOps Open Cost and Usage Specification (FOCUS)</b></a>
 
 An open-source specification that defines requirements for billing data.
 
@@ -314,10 +314,6 @@ An entity defined in an identity and access management model (e.g., user, servic
 
 A storage mechanism that allows a generative AI workload to reuse previously processed input content across requests to an [*AI model*](#glossary:ai-model). Service providers may meter cache reads, cache writes, and cache retention differently.
 
-<a name="glossary:service-provider"><b>Service Provider</b></a>
-
-An entity that provides the [*resources*](#glossary:resource) or [*services*](#glossary:service) available for usage or purchase.
-
 <a name="glossary:refund"><b>Refund</b></a>
 
 A return of funds that have previously been charged.
@@ -337,6 +333,10 @@ A row in a FOCUS-compatible cost and usage dataset.
 <a name="glossary:service"><b>Service</b></a>
 
 An offering that can be purchased from a service provider, and can include many types of usage or other charges; e.g., a cloud database service may include compute, storage, and networking charges.
+
+<a name="glossary:service-provider"><b>Service Provider</b></a>
+
+An entity that provides the [*resources*](#glossary:resource) or [*services*](#glossary:service) available for usage or purchase.
 
 <a name="glossary:sku"><b>SKU</b></a>
 

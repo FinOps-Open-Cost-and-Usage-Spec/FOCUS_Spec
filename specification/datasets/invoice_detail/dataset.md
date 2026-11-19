@@ -9,9 +9,9 @@ The Invoice Detail dataset is a transactional dataset that represents the financ
 | [Billed Cost](#datamodel.invoicedetail.billedcost)                                | Metric      | Mandatory     | False        | Decimal   |
 | [Billing Account ID](#datamodel.invoicedetail.billingaccountid)                   | Dimension   | Mandatory     | False        | String    |
 | [Billing Currency](#datamodel.invoicedetail.billingcurrency)                      | Dimension   | Mandatory     | False        | String    |
-| [Charge Category](#datamodel.invoicedetail.chargecategory)                        | Dimension   | Mandatory     | False        | String    |
 | [Billing Period End](#datamodel.invoicedetail.billingperiodend)                   | Dimension   | Mandatory     | False        | Date/Time |
 | [Billing Period Start](#datamodel.invoicedetail.billingperiodstart)               | Dimension   | Mandatory     | False        | Date/Time |
+| [Charge Category](#datamodel.invoicedetail.chargecategory)                        | Dimension   | Mandatory     | False        | String    |
 | [Invoice Detail Created](#datamodel.invoicedetail.invoicedetailcreated)           | Dimension   | Mandatory     | False        | Date/Time |
 | [Invoice Detail Description](#datamodel.invoicedetail.invoicedetaildescription)   | Dimension   | Mandatory     | True         | String    |
 | [Invoice Detail Grain](#datamodel.invoicedetail.invoicedetailgrain)               | Dimension   | Mandatory     | True         | JSON      |
