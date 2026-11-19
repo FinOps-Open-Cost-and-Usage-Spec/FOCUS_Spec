@@ -336,7 +336,7 @@ A row in a FOCUS-compatible cost and usage dataset.
 
 <a name="glossary:row-key"><b>Row Key</b></a>
 
-The set of columns a dataset declares to uniquely identify a [*row*](#glossary:row). It lets a practitioner tell which previously delivered row a changed row replaces.
+The set of columns a dataset declares to uniquely identify a [*row*](#glossary:row). A changed row with the same key replaces the previously delivered row.
 
 <a name="glossary:service"><b>Service</b></a>
 
