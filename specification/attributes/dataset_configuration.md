@@ -17,7 +17,7 @@ A *FOCUS dataset* is configured through the following options. Each applies to r
 | Option | Description | Default |
 | --- | --- | --- |
 | Columns | Columns to include. | Default column set, when offered |
-| PeriodStart | Beginning (inclusive) of the period to deliver. Rows whose period ends on or before PeriodStart are excluded. | PeriodStart of the current [*billing period*](#glossary:billing-period) |
+| PeriodStart | Beginning (inclusive) of the period to deliver. Rows whose period ends on or before PeriodStart are excluded. | Start of the current [*billing period*](#glossary:billing-period) |
 | PeriodEnd | End (exclusive) of the period to deliver. Rows whose period starts on or after PeriodEnd are excluded. | Time of the request |
 | UpdatedSince | Timestamp used to filter rows last updated on or after. Use to receive only changes since an earlier delivery. | None (all rows in the period) |
 
@@ -27,7 +27,7 @@ Not setting UpdatedSince delivers every row in the period, so practitioners rece
 * First push delivery: UpdatedSince is not set.
 * Later push deliveries: UpdatedSince is the capture time of the previous delivery.
 
-A row key is the set of columns the dataset declares to uniquely identify a row. It lets a practitioner tell which delivered row an update replaces.
+When the key values of a previously delivered row change, a practitioner cannot match the new row to the delivered one, so UpdatedSince is not used for that delivery. Matching relies on the dataset's [*row key*](#glossary:row-key).
 
 ## Requirements
 
@@ -36,19 +36,19 @@ Dataset conforming to DatasetConfiguration attribute MUST adhere to the followin
 * *FOCUS dataset* MUST be configurable to include only a user-defined selection of columns.
 * *FOCUS dataset* MUST adhere to all column-level specifications defined in the FOCUS schema, regardless of the user's chosen configuration (e.g., column selection).
 * *FOCUS dataset* MUST adhere to the following requirements when the dataset declares period columns:
-  * *FOCUS dataset* MUST use the start of the current *billing period* as PeriodStart when PeriodStart is not configured.
-  * *FOCUS dataset* MUST use the time of the request as PeriodEnd when PeriodEnd is not configured.
   * *FOCUS dataset* MUST be configurable with a PeriodStart option.
+  * *FOCUS dataset* MUST use the start of the current *billing period* as PeriodStart when PeriodStart is not configured.
   * *FOCUS dataset* MUST NOT include rows with a period that ends on or before PeriodStart.
   * *FOCUS dataset* MUST be configurable with a PeriodEnd option.
+  * *FOCUS dataset* MUST use the time of the request as PeriodEnd when PeriodEnd is not configured.
   * *FOCUS dataset* MUST NOT include rows with a period that starts on or after PeriodEnd.
-* *FOCUS dataset* MUST adhere to the following requirements when the dataset declares a last-updated column and a row key:
-  * *FOCUS dataset* MUST use the capture time of the previous delivery as UpdatedSince for each scheduled delivery after the first, when UpdatedSince is not configured.
+* *FOCUS dataset* MUST adhere to the following requirements when the dataset declares a last-updated column and a *row key*:
   * *FOCUS dataset* SHOULD be configurable with an UpdatedSince option.
-  * *FOCUS dataset* MUST include every row last updated on or after UpdatedSince when UpdatedSince is configured.
-  * *FOCUS dataset* MUST NOT include rows last updated before UpdatedSince when UpdatedSince is configured.
-  * *FOCUS dataset* MUST include a separate row for every change when UpdatedSince is configured.
-  * *FOCUS dataset* MUST deliver all rows without UpdatedSince when key values of any previously delivered row have changed.
+  * *FOCUS dataset* MUST use the capture time of the previous delivery as UpdatedSince for each scheduled delivery after the first, when UpdatedSince is not configured.
+  * *FOCUS dataset* MUST include every row in the period, whether or not it changed, when UpdatedSince is not set.
+  * *FOCUS dataset* MUST include only rows in the period last updated on or after UpdatedSince when UpdatedSince is set.
+  * *FOCUS dataset* MUST include a separate row for each update since UpdatedSince when UpdatedSince is set.
+  * *FOCUS dataset* MUST NOT set UpdatedSince when the key values of a previously delivered row have changed.
 * *FOCUS dataset* MAY offer a default column set.
 * *FOCUS dataset* default column set MUST include all applicable [*FOCUS columns*](#glossary:FOCUS-column) when a default column set is offered.
 

@@ -334,6 +334,10 @@ A unique component that incurs a charge.
 
 A row in a FOCUS-compatible cost and usage dataset.
 
+<a name="glossary:row-key"><b>Row Key</b></a>
+
+The set of columns a dataset declares to uniquely identify a [*row*](#glossary:row). It lets a practitioner tell which previously delivered row a changed row replaces.
+
 <a name="glossary:service"><b>Service</b></a>
 
 An offering that can be purchased from a service provider, and can include many types of usage or other charges; e.g., a cloud database service may include compute, storage, and networking charges.
