@@ -102,7 +102,7 @@ To ensure complete and error-free removal of deprecated entities from the FOCUS 
 
 Preview is a status for a FOCUS dataset published in a version of FOCUS so implementers can build it and report what they find. A dataset with this status is called a preview. See [Preview](../../specification/overview.md#preview) in the specification for the definition.
 
-Each preview has a tracking issue with a scope list, which names the requirements and supporting entities outside the dataset that are part of the preview (see [Designating a Preview](#designating-a-preview)). Stable content is any content not marked as preview.
+Each preview has a tracking issue with a scope list, which names each requirement excluded from conformance, including any outside the dataset that exist only for the preview, and each supporting entity outside the dataset that is part of the preview (see [Designating a Preview](#designating-a-preview)). Stable content is any content not marked as preview.
 
 A supporting entity is an entity defined outside a preview dataset's own section that the dataset depends on and that exists only for the preview (e.g., an operating model condition, or an object schema such as the SKU Price Eligibility Object Schema that the SKU Price dataset uses). A requirement is not a supporting entity.
 
@@ -206,7 +206,7 @@ A preview tracking issue MUST adhere to the following requirements:
 
 At each later version, FOCUS Members choose one outcome and record it with its evidence in the tracking issue:
 
-* **Promote:** Remove the preview designation once the open questions are addressed. The dataset's requirements become Active in the requirements model, and the "(preview)" label and Preview notes are removed. Each Version Introduced section is updated to include the general availability (GA) version (e.g., `Preview: 1.5 · GA: 1.6`). A supported feature that depends on the dataset becomes generally available only when every FOCUS entity it depends on is generally available, and keeps its Preview note until then.
+* **Promote:** Remove the preview designation once the open questions are addressed. The dataset's requirements become Active in the requirements model, and the "(preview)" label and Preview notes are removed. Each Version Introduced section is updated to include the general availability (GA) version (e.g., `Preview: 1.5 · GA: 1.6`). A supported feature that depends on the dataset is the exception: it becomes generally available only when every FOCUS entity it depends on is generally available. Until then, it keeps a Preview note that names only the entities that are still a preview, and its Version Introduced section gets no GA version.
 * **Extend:** Keep the preview for one more version, with a plan for the next evidence.
 * **Remove:** Remove the dataset without a deprecation notice or retention period. This is the default when there is no new evidence since the last decision.
 
