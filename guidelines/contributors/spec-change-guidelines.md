@@ -206,7 +206,7 @@ A preview tracking issue MUST adhere to the following requirements:
 
 At each later version, FOCUS Members choose one outcome and record it with its evidence in the tracking issue:
 
-* **Promote:** Remove the preview designation once the open questions are addressed. The dataset's requirements become Active in the requirements model, and the "(preview)" label and Preview notes are removed. Each Version Introduced section is updated to include the general availability (GA) version (e.g., `Preview: 1.5 · GA: 1.6`). A supported feature that depends on the dataset is the exception: it becomes generally available only when every FOCUS entity it depends on is generally available. Until then, it keeps a Preview note that names only the entities that are still a preview, and its Version Introduced section gets no GA version.
+* **Promote:** Remove the preview designation once the open questions are addressed. The dataset's requirements become Active in the requirements model, and the "(preview)" label and Preview notes are removed. Each Version Introduced section is updated to include the general availability (GA) version (e.g., `Preview: 1.5 · GA: 1.6`). A supported feature that depends on the dataset is the exception: it becomes generally available only when every FOCUS entity it depends on is generally available. Until then, it keeps a Preview note that names only the entities that are still a preview.
 * **Extend:** Keep the preview for one more version, with a plan for the next evidence.
 * **Remove:** Remove the dataset without a deprecation notice or retention period. This is the default when there is no new evidence since the last decision.
 
