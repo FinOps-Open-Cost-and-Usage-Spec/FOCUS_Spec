@@ -45,10 +45,11 @@ Dataset conforming to DatasetConfiguration attribute MUST adhere to the followin
 * *FOCUS dataset* MUST adhere to the following requirements when the dataset declares a last-updated column and a *row key*:
   * *FOCUS dataset* SHOULD be configurable with an UpdatedSince option.
   * *FOCUS dataset* MUST use the capture time of the previous delivery as UpdatedSince for each scheduled delivery after the first, when UpdatedSince is not configured.
-  * *FOCUS dataset* MUST apply UpdatedSince independently of PeriodStart and PeriodEnd (e.g., a row last updated before PeriodStart is included when it was updated on or after UpdatedSince).
-  * *FOCUS dataset* MUST NOT filter rows by their last-updated value when UpdatedSince is not set, so all rows in the period are delivered.
-  * *FOCUS dataset* MUST NOT include rows last updated before UpdatedSince when UpdatedSince is set, so only changed rows are delivered.
-  * *FOCUS dataset* MUST represent each change since UpdatedSince as a separate row when UpdatedSince is set.
+* *FOCUS dataset* MUST adhere to the following requirements when UpdatedSince is not set:
+  * *FOCUS dataset* MUST include all rows in the period.
+* *FOCUS dataset* MUST adhere to the following requirements when UpdatedSince is set:
+  * *FOCUS dataset* MUST NOT include rows last updated before UpdatedSince.
+  * *FOCUS dataset* MUST represent each change since UpdatedSince as a separate row.
   * *FOCUS dataset* MUST deliver every row in the next delivery, ignoring UpdatedSince, after the key values of any previously delivered row are corrected.
 * *FOCUS dataset* MAY offer a default column set.
 * *FOCUS dataset* default column set MUST include all applicable [*FOCUS columns*](#glossary:FOCUS-column) when a default column set is offered.
