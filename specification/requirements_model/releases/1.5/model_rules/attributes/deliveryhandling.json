@@ -68,7 +68,7 @@
     "DatasetId": null,
     "DatasetName": null,
     "ValidationCriteria": {
-      "MustSatisfy": "FOCUS dataset MUST NOT require practitioners to deduplicate records within or across delivered dataset artifacts.",
+      "MustSatisfy": "FOCUS dataset MUST NOT require practitioners to deduplicate records within or across delivered dataset artifacts when not using Versioned Append delivery mechanism.",
       "Keyword": "MUST NOT",
       "Requirement": {},
       "Condition": {},
@@ -175,7 +175,7 @@
     "DatasetId": null,
     "DatasetName": null,
     "ValidationCriteria": {
-      "MustSatisfy": "FOCUS dataset MUST preserve all previously delivered dataset artifacts when using Append delivery mechanism.",
+      "MustSatisfy": "FOCUS dataset MUST preserve all previously delivered dataset artifacts when using Additive Append or Versioned Append delivery mechanism.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -269,7 +269,7 @@
     "DatasetId": null,
     "DatasetName": null,
     "ValidationCriteria": {
-      "MustSatisfy": "FOCUS dataset delivery mechanism documentation MUST include the delivery mechanism used (Overwrite or Append).",
+      "MustSatisfy": "FOCUS dataset delivery mechanism documentation MUST include the delivery mechanism used (Overwrite, Additive Append, or Versioned Append).",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
