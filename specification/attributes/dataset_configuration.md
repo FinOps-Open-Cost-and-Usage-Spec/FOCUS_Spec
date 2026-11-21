@@ -27,7 +27,7 @@ Not setting UpdatedSince delivers every row in the period, so practitioners rece
 * First push delivery: UpdatedSince is not set.
 * Later push deliveries: UpdatedSince is the capture time of the previous delivery.
 
-When the key values of a previously delivered row change, a practitioner cannot match the new row to the delivered one, so the next delivery ignores UpdatedSince. Matching relies on the dataset's [*row key*](#glossary:row-key).
+If the key values of a delivered row change, the new row does not match the delivered row. The next delivery then ignores UpdatedSince. Matching uses the dataset's [*row key*](#glossary:row-key).
 
 ## Requirements
 
@@ -51,8 +51,8 @@ Dataset conforming to DatasetConfiguration attribute MUST adhere to the followin
   * *FOCUS dataset* MUST include all rows in the period.
   * *FOCUS dataset* MUST include rows with a period that starts before PeriodStart and has no end or ends after PeriodStart.
 * *FOCUS dataset* MUST adhere to the following requirements when UpdatedSince is set:
-  * *FOCUS dataset* MUST NOT include rows last updated before UpdatedSince.
   * *FOCUS dataset* MUST include every row last updated on or after UpdatedSince.
+  * *FOCUS dataset* MUST NOT include rows last updated before UpdatedSince.
 
 ## Example
 
