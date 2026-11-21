@@ -26,12 +26,12 @@ The row key lets a practitioner tell which delivered row a new version supersede
 | --- | --- | --- | --- | --- | --- |
 | 1 | Initial or one-time request for current prices | default | default | not set | Overwrite |
 | 2 | Initial request for historical prices | date | date | not set | Overwrite |
-| 3 | Later request for prices changed since a time | earliest date | none | date | Append (versioned) |
-| 4 | Scheduled delivery after the first | earliest date | none | latest last-updated value in previous delivery | Append (versioned) |
-| 5 | Prices active during S to E, only if changed since S1 | S | E | S1 | Append (versioned) |
-| 6 | Every version of prices active during S to E | S | E | earliest date | Append (versioned) |
+| 3 | Later request for prices changed since a time | earliest date | none | date | Versioned Append |
+| 4 | Scheduled delivery after the first | earliest date | none | latest last-updated value in previous delivery | Versioned Append |
+| 5 | Prices active during S to E, only if changed since S1 | S | E | S1 | Versioned Append |
+| 6 | Every version of prices active during S to E | S | E | earliest date | Versioned Append |
 
-> **Note:** Append (versioned) means each row is a new version that supersedes earlier rows with the same row key. Additive Append, where rows only add, is a different case.
+> **Note:** Versioned Append means each row is a new version that supersedes earlier rows with the same row key. Additive Append, where rows only add, is a different case.
 
 If PeriodStart and PeriodEnd are left at their defaults in scenario 3, only prices active in the current billing period are returned.
 
