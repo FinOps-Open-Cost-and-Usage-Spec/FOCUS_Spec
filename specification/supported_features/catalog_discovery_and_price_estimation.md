@@ -260,6 +260,120 @@ WHERE ServiceProviderName = ?
 ORDER BY SkuId, PricingCurrency, UnitPrice
 ```
 
+### List Every Price for a SKU
+
+This query answers what every current price for one *SKU* is, side by side. A practitioner can then see the public rate, the rate a *contract* fixes, and the negotiated rate together before choosing how to buy. It takes a service provider, a SKU ID, and a point in time. It returns one row for each SKU Price ID, Contract ID, and Pricing Currency, with a column for each Unit Price Type. A public price has a null Contract ID, so it returns on its own row. Joining that row to each *contract* row on SKU Price ID and Pricing Currency puts the public rate beside the negotiated rate.
+
+```sql
+SELECT
+  SkuId,
+  SkuPriceId,
+  ContractId,
+  SkuPriceDescription,
+  ChargeCategory,
+  PricingUnit,
+  PricingCurrency,
+  MAX(CASE WHEN UnitPriceType = 'List' THEN UnitPrice END) AS ListUnitPrice,
+  MAX(CASE WHEN UnitPriceType = 'Base' THEN UnitPrice END) AS BaseUnitPrice,
+  MAX(CASE WHEN UnitPriceType = 'Contracted' THEN UnitPrice END) AS ContractedUnitPrice
+FROM SkuPrice
+WHERE ServiceProviderName = ?
+  AND SkuId = ?
+  AND (SkuPriceEffectiveStart IS NULL OR SkuPriceEffectiveStart <= ?)
+  AND (SkuPriceEffectiveEnd IS NULL OR SkuPriceEffectiveEnd > ?)
+GROUP BY SkuId, SkuPriceId, ContractId, SkuPriceDescription, ChargeCategory, PricingUnit, PricingCurrency
+ORDER BY ChargeCategory, SkuPriceId, ContractId
+```
+
+### Track Price Changes Since a Point in Time
+
+This query answers which prices changed after a given moment and whether each one went up or down. A practitioner can then explain a change in cost that consumption does not explain (e.g., a rate increase in the middle of a budget period). It takes a service provider and a point in time. A change is a record that starts after that moment and replaces a record that ended when it started, for the same SKU Price ID, Contract ID, Pricing Currency, and Unit Price Type. A price that is new to the catalog has no earlier record, so it is not counted as a change. Results are grouped by Unit Price Type, so public and negotiated changes show apart.
+
+This query relies on the dataset keeping records whose SKU Price Effective End has passed. A dataset instance that holds only current prices cannot show what a price was before it changed.
+
+```sql
+SELECT
+  Cur.UnitPriceType,
+  COUNT(*) AS ChangedPrices,
+  SUM(CASE WHEN Cur.UnitPrice > Prev.UnitPrice THEN 1 ELSE 0 END) AS Increases,
+  SUM(CASE WHEN Cur.UnitPrice < Prev.UnitPrice THEN 1 ELSE 0 END) AS Decreases
+FROM SkuPrice Cur
+INNER JOIN SkuPrice Prev
+  ON Prev.ServiceProviderName = Cur.ServiceProviderName
+  AND Prev.SkuPriceId = Cur.SkuPriceId
+  AND Prev.PricingCurrency = Cur.PricingCurrency
+  AND Prev.UnitPriceType = Cur.UnitPriceType
+  AND (Prev.ContractId = Cur.ContractId OR (Prev.ContractId IS NULL AND Cur.ContractId IS NULL))
+  AND Prev.SkuPriceEffectiveEnd = Cur.SkuPriceEffectiveStart
+WHERE Cur.ServiceProviderName = ?
+  AND Cur.SkuPriceEffectiveStart > ?
+GROUP BY Cur.UnitPriceType
+ORDER BY Cur.UnitPriceType
+```
+
+### Show the Price History of a SKU Over a Period
+
+This query answers what every price for a *SKU* was at any time during a past period, and when each one changed. A practitioner can then explain a past cost or rebuild an estimate as of an earlier date (e.g., a prior budget period). It takes a service provider, a SKU ID, and a period start and end. It returns every record whose effective window overlaps that period, oldest first, one row for each SKU Price ID, Contract ID, Pricing Currency, and Unit Price Type.
+
+This query needs a *dataset instance* that holds historical prices. A dataset instance with only current prices returns the prices in force now, not the ones that applied in the period. A historical pull sets Start and End to the dates of the period and includes unchanged rows, so prices active at Start return along with the ones that changed.
+
+```sql
+SELECT
+  SkuId,
+  SkuPriceId,
+  ContractId,
+  UnitPriceType,
+  PricingUnit,
+  PricingCurrency,
+  UnitPrice,
+  SkuPriceEffectiveStart,
+  SkuPriceEffectiveEnd
+FROM SkuPrice
+WHERE ServiceProviderName = ?
+  AND SkuId = ?
+  AND (SkuPriceEffectiveStart IS NULL OR SkuPriceEffectiveStart < ?)
+  AND (SkuPriceEffectiveEnd IS NULL OR SkuPriceEffectiveEnd > ?)
+ORDER BY SkuPriceId, ContractId, PricingCurrency, UnitPriceType, SkuPriceEffectiveStart
+```
+
+### Find Prices Removed Since a Point in Time
+
+This query answers which prices stopped applying after a given moment and were not replaced. A practitioner can then find a price that was removed from the catalog, as opposed to one that only changed. It takes a service provider and a point in time. It returns each record whose SKU Price Effective End falls after that moment and has passed, and for which no later record exists under the same SKU Price ID, Contract ID, Pricing Currency, and Unit Price Type. A price that changed has a successor record that starts where the earlier one ended, so it is not returned. The "Track Price Changes Since a Point in Time" query counts those changes instead.
+
+This query needs a *dataset instance* that holds records whose SKU Price Effective End has passed. Giving Start and End on a pull of changes since a point in time returns these records, so a practitioner can tell a removed price from an unchanged one.
+
+```sql
+SELECT
+  P.SkuId,
+  P.SkuPriceId,
+  P.ContractId,
+  P.UnitPriceType,
+  P.PricingCurrency,
+  P.UnitPrice,
+  P.SkuPriceEffectiveEnd
+FROM SkuPrice P
+WHERE P.ServiceProviderName = ?
+  AND P.SkuPriceEffectiveEnd > ?
+  AND P.SkuPriceEffectiveEnd <= ?
+  AND NOT EXISTS (
+    SELECT 1
+    FROM SkuPrice N
+    WHERE N.ServiceProviderName = P.ServiceProviderName
+      AND N.SkuPriceId = P.SkuPriceId
+      AND N.PricingCurrency = P.PricingCurrency
+      AND N.UnitPriceType = P.UnitPriceType
+      AND (N.ContractId = P.ContractId OR (N.ContractId IS NULL AND P.ContractId IS NULL))
+      AND (N.SkuPriceEffectiveEnd IS NULL OR N.SkuPriceEffectiveEnd > P.SkuPriceEffectiveEnd)
+  )
+ORDER BY P.SkuPriceEffectiveEnd, P.SkuPriceId
+```
+
+> **Note:** The second date input is the end of the period and the time the query is run, so a price scheduled to end later is not returned. Scheduled retirements are found by the "Find Announced Price Changes and Scheduled Retirements" query.
+
+## Limits of This Feature
+
+The SKU Price dataset has no column for a pricing category (e.g., spot) or for the attributes of a *SKU* (e.g., VM size or generation). So queries cannot compare those. It also has no currency conversion rate. So a price in one currency is never compared with a price in another.
+
 ## Version Introduced
 
 1.5

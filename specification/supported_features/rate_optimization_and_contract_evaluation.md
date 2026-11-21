@@ -106,8 +106,10 @@ Each conditional column narrows this feature on its own:
   * ChargePeriodStart
   * CommitmentDiscountId
   * ContractApplied
+  * ContractedCost
   * ContractedUnitPrice
   * EffectiveCost
+  * ListCost
   * ListUnitPrice
   * PricingCurrency
   * PricingCurrencyContractedUnitPrice
@@ -116,6 +118,7 @@ Each conditional column narrows this feature on its own:
   * PricingQuantity
   * PricingUnit
   * ServiceProviderName
+  * SkuId
   * SkuPriceId
 
 ## Example SQL Queries
@@ -641,6 +644,183 @@ LEFT JOIN Prices CP
   AND (CP.SkuPriceEffectiveStart IS NULL OR C.ChargePeriodStart >= CP.SkuPriceEffectiveStart)
   AND (CP.SkuPriceEffectiveEnd IS NULL OR C.ChargePeriodStart < CP.SkuPriceEffectiveEnd)
 ORDER BY ContractedCostDifference DESC NULLS LAST
+```
+
+### Find Where the Public Price Moved Away from the Contract-Fixed Price
+
+This query answers where the current public price no longer matches the list price a *contract* fixed. A practitioner can then see which rates the agreement protects from a public price increase, and which ones it holds above a public price decrease. It takes a service provider, a Contract ID, and a point in time. It pairs each "Base" record under that *contract* with the "List" record in force for the same SKU Price ID and Pricing Currency. It then counts, by service, the prices where the public price is above or below the fixed price, and the largest difference as a percentage of the fixed price.
+
+```sql
+SELECT
+  B.PricingServiceName,
+  COUNT(*) AS Prices,
+  SUM(CASE WHEN L.UnitPrice > B.UnitPrice THEN 1 ELSE 0 END) AS ListAboveBase,
+  SUM(CASE WHEN L.UnitPrice < B.UnitPrice THEN 1 ELSE 0 END) AS ListBelowBase,
+  MAX(CASE WHEN B.UnitPrice > 0 THEN 100.0 * (L.UnitPrice - B.UnitPrice) / B.UnitPrice END) AS MaxDriftPercent
+FROM SkuPrice B
+INNER JOIN SkuPrice L
+  ON L.ServiceProviderName = B.ServiceProviderName
+  AND L.SkuPriceId = B.SkuPriceId
+  AND L.PricingCurrency = B.PricingCurrency
+  AND L.UnitPriceType = 'List'
+  AND (L.SkuPriceEffectiveStart IS NULL OR L.SkuPriceEffectiveStart <= ?)
+  AND (L.SkuPriceEffectiveEnd IS NULL OR L.SkuPriceEffectiveEnd > ?)
+WHERE B.ServiceProviderName = ?
+  AND B.ContractId = ?
+  AND B.UnitPriceType = 'Base'
+  AND (B.SkuPriceEffectiveStart IS NULL OR B.SkuPriceEffectiveStart <= ?)
+  AND (B.SkuPriceEffectiveEnd IS NULL OR B.SkuPriceEffectiveEnd > ?)
+GROUP BY B.PricingServiceName
+ORDER BY ListAboveBase + ListBelowBase DESC, B.PricingServiceName
+```
+
+### Fill Missing Unit Prices on Cost and Usage Records
+
+This query answers what the list and contracted cost of each charge would be when the Cost and Usage dataset leaves List Unit Price or Contracted Unit Price null. Savings from negotiation and from *commitment discounts* can then be measured across all consumption, not just the charges that carry both prices. It takes a time range through Charge Period Start and Charge Period End, a service provider, and a Contract ID. Each charge looks up the "List" record and the "Contracted" record under that Contract ID with the same SKU Price ID and Pricing Currency, in force at its Charge Period Start. A unit price already on the charge is kept. A price is used only when its Pricing Unit matches the charge's Pricing Unit, so the costs are not scaled by a different unit.
+
+```sql
+SELECT
+  C.ChargePeriodStart,
+  C.SkuPriceId,
+  C.PricingUnit,
+  C.PricingQuantity,
+  COALESCE(C.ListUnitPrice, L.UnitPrice) AS ListUnitPrice,
+  COALESCE(C.ContractedUnitPrice, K.UnitPrice) AS ContractedUnitPrice,
+  COALESCE(C.ListCost, C.PricingQuantity * L.UnitPrice) AS ListCost,
+  COALESCE(C.ContractedCost, C.PricingQuantity * K.UnitPrice) AS ContractedCost,
+  C.EffectiveCost
+FROM CostAndUsage C
+LEFT JOIN SkuPrice L
+  ON L.ServiceProviderName = C.ServiceProviderName
+  AND L.SkuPriceId = C.SkuPriceId
+  AND L.PricingCurrency = C.BillingCurrency
+  AND L.PricingUnit = C.PricingUnit
+  AND L.UnitPriceType = 'List'
+  AND (L.SkuPriceEffectiveStart IS NULL OR L.SkuPriceEffectiveStart <= C.ChargePeriodStart)
+  AND (L.SkuPriceEffectiveEnd IS NULL OR L.SkuPriceEffectiveEnd > C.ChargePeriodStart)
+LEFT JOIN SkuPrice K
+  ON K.ServiceProviderName = C.ServiceProviderName
+  AND K.SkuPriceId = C.SkuPriceId
+  AND K.PricingCurrency = C.BillingCurrency
+  AND K.PricingUnit = C.PricingUnit
+  AND K.ContractId = ?
+  AND K.UnitPriceType = 'Contracted'
+  AND (K.SkuPriceEffectiveStart IS NULL OR K.SkuPriceEffectiveStart <= C.ChargePeriodStart)
+  AND (K.SkuPriceEffectiveEnd IS NULL OR K.SkuPriceEffectiveEnd > C.ChargePeriodStart)
+WHERE C.ServiceProviderName = ?
+  AND C.ChargePeriodStart >= ?
+  AND C.ChargePeriodEnd <= ?
+  AND C.SkuPriceId IS NOT NULL
+```
+
+### Reprice On-Demand Consumption at a Commitment Rate
+
+This query answers what consumption that no *commitment discount* covers would cost at the rate a *commitment discount* gives. The difference sizes the value of buying a commitment (e.g., a reservation or savings plan) for that consumption. It takes a time range through Charge Period Start and Charge Period End and a service provider. It adds up the usage that no *commitment discount* covered, by SKU ID and Pricing Unit. It then reprices that usage at each rate published for the same *SKU* with a Commitment Discount Category. One row returns for each commitment rate, so each term or rate offered for the *SKU* shows side by side. Unit Price Type and Contract ID are returned because a *service provider* can publish a commitment rate as a "List" price or as a price under a *contract*.
+
+A *SKU* can have commitment rates in several regions. The query reprices the same usage at each of them. So a row is read on its own, and Pricing Region ID narrows the result when the *operating model* includes regions.
+
+The query reads rates, not purchase fees. A commitment's fees (see the purchase terms query above) and the share of consumption the commitment would cover are outside this result. So the difference is the most the rate alone could save, not a forecast of savings. A commitment to an amount of spend can give a rate that FOCUS does not carry, so it may return no row. The query reads only a single flat rate, a record with no Quantity Tier Minimum above zero and no Quantity Tier Maximum. Tiered commitment rates are not repriced.
+
+```sql
+WITH OnDemandUsage AS (
+  SELECT
+    ServiceProviderName,
+    SkuId,
+    PricingUnit,
+    BillingCurrency,
+    MIN(ChargePeriodStart) AS EarliestChargePeriodStart,
+    SUM(PricingQuantity) AS TotalPricingQuantity,
+    SUM(EffectiveCost) AS TotalEffectiveCost
+  FROM CostAndUsage
+  WHERE ServiceProviderName = ?
+    AND ChargePeriodStart >= ? AND ChargePeriodEnd <= ?
+    AND ChargeCategory = 'Usage'
+    AND SkuId IS NOT NULL
+    AND CommitmentDiscountId IS NULL
+  GROUP BY ServiceProviderName, SkuId, PricingUnit, BillingCurrency
+)
+SELECT
+  OD.SkuId,
+  SP.SkuPriceId,
+  SP.SkuPriceDescription,
+  SP.CommitmentDiscountCategory,
+  SP.UnitPriceType,
+  SP.ContractId,
+  OD.PricingUnit,
+  OD.TotalPricingQuantity,
+  OD.TotalEffectiveCost,
+  SP.UnitPrice AS CommitmentUnitPrice,
+  SP.PricingCurrency,
+  OD.TotalPricingQuantity * SP.UnitPrice AS ProjectedCommitmentRateCost,
+  OD.TotalEffectiveCost - (OD.TotalPricingQuantity * SP.UnitPrice) AS ProjectedRateReduction
+FROM OnDemandUsage OD
+INNER JOIN SkuPrice SP
+  ON SP.ServiceProviderName = OD.ServiceProviderName
+  AND SP.SkuId = OD.SkuId
+  AND SP.PricingUnit = OD.PricingUnit
+  AND SP.PricingCurrency = OD.BillingCurrency
+  AND SP.ChargeCategory = 'Usage'
+  AND SP.CommitmentDiscountCategory IS NOT NULL
+  AND (SP.QuantityTierMinimum IS NULL OR SP.QuantityTierMinimum = 0)
+  AND SP.QuantityTierMaximum IS NULL
+  AND (SP.SkuPriceEffectiveStart IS NULL OR OD.EarliestChargePeriodStart >= SP.SkuPriceEffectiveStart)
+  AND (SP.SkuPriceEffectiveEnd IS NULL OR OD.EarliestChargePeriodStart < SP.SkuPriceEffectiveEnd)
+ORDER BY ProjectedRateReduction DESC
+```
+
+### Find Charges Whose Price is Missing from the Catalog
+
+This query answers which usage charges name a SKU Price ID that the SKU Price dataset has no "List" record for. Those charges can be checked before any query that joins the two datasets, since each one drops out of an inner join. It takes a service provider and a time range through Charge Period Start and Charge Period End. It returns, for each SKU Price ID and Billing Currency, how many charges have no published public rate in force at their Charge Period Start, and their Effective Cost.
+
+A missing record has three common causes. The *dataset instance* may hold only current prices, so a charge from before the latest price change finds nothing. The rate may be quoted in a currency other than the Billing Currency. Or the *service provider* may not publish that price. The query cannot tell these apart.
+
+```sql
+SELECT
+  CU.SkuPriceId,
+  CU.BillingCurrency,
+  COUNT(*) AS Charges,
+  SUM(CU.EffectiveCost) AS TotalEffectiveCost
+FROM CostAndUsage CU
+WHERE CU.ServiceProviderName = ?
+  AND CU.ChargePeriodStart >= ? AND CU.ChargePeriodEnd <= ?
+  AND CU.ChargeCategory = 'Usage'
+  AND CU.SkuPriceId IS NOT NULL
+  AND NOT EXISTS (
+    SELECT 1
+    FROM SkuPrice SP
+    WHERE SP.ServiceProviderName = CU.ServiceProviderName
+      AND SP.SkuPriceId = CU.SkuPriceId
+      AND SP.PricingCurrency = CU.BillingCurrency
+      AND SP.UnitPriceType = 'List'
+      AND (SP.SkuPriceEffectiveStart IS NULL OR SP.SkuPriceEffectiveStart <= CU.ChargePeriodStart)
+      AND (SP.SkuPriceEffectiveEnd IS NULL OR SP.SkuPriceEffectiveEnd > CU.ChargePeriodStart)
+  )
+GROUP BY CU.SkuPriceId, CU.BillingCurrency
+ORDER BY TotalEffectiveCost DESC
+```
+
+### Find Consumed SKUs That Offer a Commitment Discount
+
+This query answers which *SKUs* with on-demand consumption have a *commitment discount* on offer. A practitioner can then limit commitment analysis to consumption a commitment could cover. It takes a service provider and a time range through Charge Period Start and Charge Period End. It adds up the usage no *commitment discount* covered, by SKU ID. It keeps only the *SKUs* with a published record that has a Commitment Discount Category, whether a usage rate or a purchase fee. It returns the categories offered. A commitment to spend can apply across *SKUs*, so a *SKU* with no record here can still be covered by one. The query does not find that.
+
+```sql
+SELECT
+  CU.SkuId,
+  CU.BillingCurrency,
+  SUM(CU.EffectiveCost) AS OnDemandEffectiveCost,
+  MAX(CASE WHEN SP.CommitmentDiscountCategory = 'Usage' THEN 1 ELSE 0 END) AS OffersUsageCommitment,
+  MAX(CASE WHEN SP.CommitmentDiscountCategory = 'Spend' THEN 1 ELSE 0 END) AS OffersSpendCommitment
+FROM CostAndUsage CU
+INNER JOIN SkuPrice SP
+  ON SP.ServiceProviderName = CU.ServiceProviderName
+  AND SP.SkuId = CU.SkuId
+  AND SP.CommitmentDiscountCategory IS NOT NULL
+WHERE CU.ServiceProviderName = ?
+  AND CU.ChargePeriodStart >= ? AND CU.ChargePeriodEnd <= ?
+  AND CU.ChargeCategory = 'Usage'
+  AND CU.CommitmentDiscountId IS NULL
+GROUP BY CU.SkuId, CU.BillingCurrency
+ORDER BY OnDemandEffectiveCost DESC
 ```
 
 ## Version Introduced
