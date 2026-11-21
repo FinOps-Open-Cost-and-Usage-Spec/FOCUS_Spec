@@ -12,7 +12,7 @@ FOCUS recognizes three *FOCUS dataset* delivery mechanisms:
 
 * Overwrite: Each delivery provides a complete snapshot, superseding any previously delivered [*dataset artifact*](#glossary:dataset-artifact) for the same [*delivery scope*](#glossary:delivery-scope) (e.g., temporal grouping such as a [*billing period*](#glossary:billing-period) or non-temporal, logical grouping such as a [*contract*](#glossary:contract)).
 * Additive Append: Each delivery adds new rows, while previously delivered *dataset artifacts* are preserved. Rows are additive, so practitioners sum them.
-* Versioned Append: Each delivery adds rows that are new versions of earlier rows, while previously delivered *dataset artifacts* are preserved. Practitioners take the latest version of each row by [*row key*](#glossary:row-key).
+* Versioned Append: Each delivery adds rows that may be new versions of earlier rows, while previously delivered *dataset artifacts* are preserved. Practitioners take the latest version of each row by [*row key*](#glossary:row-key).
 
 Overwrite, Additive Append, and Versioned Append mechanisms are not mutually exclusive, and hybrid implementations are common in practice, allowing data generators to meet specific technical and auditability requirements.
 
@@ -50,13 +50,13 @@ Subsequent *dataset artifacts* using the Versioned Append mechanism may include 
 
 * Unchanged records are not included.
 * Updated records are included as new versions, carrying the full updated values.
-* Additional records supplement previously delivered data.
+* New records (based on *row key*) supplement previously delivered data.
 
 ## Requirements
 
 Dataset conforming to DeliveryHandling attribute MUST adhere to the following requirements:
 
-* *FOCUS dataset* MUST NOT require practitioners to deduplicate records within or across delivered dataset artifacts when not using Versioned Append delivery mechanism.
+* *FOCUS dataset* MUST NOT require practitioners to deduplicate records within or across delivered dataset artifacts when using Overwrite or Additive Append delivery mechanisms.
 * When using Overwrite delivery mechanism, *FOCUS dataset* MUST adhere to the following additional requirements:
   * *FOCUS dataset* MUST represent a complete snapshot for a given *delivery scope*.
   * *FOCUS dataset* MUST supersede all previously delivered *dataset artifacts* for the same *delivery scope*.
@@ -64,7 +64,7 @@ Dataset conforming to DeliveryHandling attribute MUST adhere to the following re
 * When using Versioned Append delivery mechanism, *FOCUS dataset* MUST adhere to the following additional requirements:
   * *FOCUS dataset* MUST include a last-updated column.
   * *FOCUS dataset* MUST include a *row key*.
-  * *FOCUS dataset* row MUST supersede each earlier row with the same *row key* and an earlier last-updated column value.
+  * *FOCUS dataset* MUST have each row supersede each earlier row with the same *row key* and an earlier last-updated column value.
 * *FOCUS dataset* SHOULD have delivered *dataset artifacts* accompanied by corresponding [FOCUS Metadata](#metadata).
 * *FOCUS dataset* delivery mechanism documentation MUST adhere to the following requirements:
   * *FOCUS dataset* delivery mechanism documentation MUST include the delivery mechanism used (Overwrite, Additive Append, or Versioned Append).

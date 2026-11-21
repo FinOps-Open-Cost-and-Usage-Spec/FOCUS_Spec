@@ -54,7 +54,7 @@ A capacity reservation is an agreement that secures a dedicated amount of resour
 
 <a name="glossary:charge"><b>Charge</b></a>
 
-A row in a FOCUS-compatible dataset.
+A row in a FOCUS-compatible cost and usage dataset.
 
 <a name="glossary:chargeperiod"><b>Charge Period</b></a>
 
@@ -314,14 +314,6 @@ An entity defined in an identity and access management model (e.g., user, servic
 
 A storage mechanism that allows a generative AI workload to reuse previously processed input content across requests to an [*AI model*](#glossary:ai-model). Service providers may meter cache reads, cache writes, and cache retention differently.
 
-<a name="glossary:pull-delivery"><b>Pull Delivery</b></a>
-
-A delivery that starts when a [*practitioner*](#glossary:practitioner) sends a request. Each request carries its own configuration options. A request has no knowledge of earlier deliveries.
-
-<a name="glossary:push-delivery"><b>Push Delivery</b></a>
-
-A delivery that a data generator starts on a schedule, such as a recurring export. The configuration options are set once and apply to every scheduled delivery.
-
 <a name="glossary:service-provider"><b>Service Provider</b></a>
 
 An entity that provides the [*resources*](#glossary:resource) or [*services*](#glossary:service) available for usage or purchase.
@@ -329,6 +321,10 @@ An entity that provides the [*resources*](#glossary:resource) or [*services*](#g
 <a name="glossary:refund"><b>Refund</b></a>
 
 A return of funds that have previously been charged.
+
+<a name="glossary:request-based-delivery"><b>Request-Based Delivery</b></a>
+
+A delivery that starts when a *practitioner* sends a request.
 
 <a name="glossary:requester"><b>Requester</b></a>
 
@@ -344,7 +340,11 @@ A row in a FOCUS-compatible cost and usage dataset.
 
 <a name="glossary:row-key"><b>Row Key</b></a>
 
-The set of columns a dataset declares to identify the entity a [*row*](#glossary:row) represents. Rows with the same key values (including nulls) represent the same record. The dataset's delivery mechanism determines whether a changed row replaces or adds to earlier rows.
+The set of columns a dataset declares to identify the entity a [*row*](#glossary:row) represents. Rows with the same row key values (including nulls) represent the same entity.
+
+<a name="glossary:scheduled-delivery"><b>Scheduled Delivery</b></a>
+
+A delivery that starts on a schedule, without a request for each delivery (e.g., a recurring export). A *practitioner* request may create the schedule and trigger its first delivery.
 
 <a name="glossary:service"><b>Service</b></a>
 

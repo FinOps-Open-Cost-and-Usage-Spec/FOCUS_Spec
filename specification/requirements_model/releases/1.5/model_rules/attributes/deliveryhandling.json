@@ -175,7 +175,7 @@
     "DatasetId": null,
     "DatasetName": null,
     "ValidationCriteria": {
-      "MustSatisfy": "FOCUS dataset MUST preserve all previously delivered dataset artifacts when using Additive Append or Versioned Append delivery mechanism.",
+      "MustSatisfy": "FOCUS dataset MUST preserve all previously delivered dataset artifacts when using Append delivery mechanism.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -269,7 +269,7 @@
     "DatasetId": null,
     "DatasetName": null,
     "ValidationCriteria": {
-      "MustSatisfy": "FOCUS dataset delivery mechanism documentation MUST include the delivery mechanism used (Overwrite, Additive Append, or Versioned Append).",
+      "MustSatisfy": "FOCUS dataset delivery mechanism documentation MUST include the delivery mechanism used (Overwrite or Append).",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},

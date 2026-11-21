@@ -104,9 +104,9 @@ SkuPrice MUST adhere to the following requirements:
 * SkuPrice MUST conform to [DatasetCompleteness](#attributes.datasetcompleteness) requirements.
 * SkuPrice MUST conform to [DatasetConfiguration](#attributes.datasetconfiguration) requirements.
 * SkuPrice MUST conform to [DeliveryHandling](#attributes.deliveryhandling) requirements.
-* SkuPrice [*row key*](#glossary:row-key) MUST be a composite of ServiceProviderName, SkuPriceId, ContractId, SkuPriceEffectiveStart, PricingCurrency, and UnitPriceType.
-* SkuPrice period columns MUST be SkuPriceEffectiveStart and SkuPriceEffectiveEnd.
-* SkuPrice last-updated column MUST be SkuPriceLastUpdated.
+* SkuPrice MUST use a composite [*row key*](#glossary:row-key) including ServiceProviderName, SkuPriceId, ContractId, SkuPriceEffectiveStart, PricingCurrency, and UnitPriceType.
+* SkuPrice MUST use SkuPriceEffectiveStart and SkuPriceEffectiveEnd as period columns.
+* SkuPrice MUST use SkuPriceLastUpdated as its last-updated column.
 * SkuPrice MUST be configurable with an UpdatedSince option.
 * SkuPrice MUST use the [Overwrite delivery mechanism](#attributes.deliveryhandling) with the period delivered as its [*delivery scope*](#glossary:delivery-scope) when UpdatedSince is not configured.
 * SkuPrice MUST use the [Versioned Append delivery mechanism](#attributes.deliveryhandling) when UpdatedSince is configured.
