@@ -68,7 +68,7 @@
     "DatasetId": null,
     "DatasetName": null,
     "ValidationCriteria": {
-      "MustSatisfy": "FOCUS dataset MUST NOT require practitioners to deduplicate records within or across delivered dataset artifacts when not using Versioned Append delivery mechanism.",
+      "MustSatisfy": "FOCUS dataset MUST NOT require practitioners to deduplicate records within or across delivered dataset artifacts.",
       "Keyword": "MUST NOT",
       "Requirement": {},
       "Condition": {},
