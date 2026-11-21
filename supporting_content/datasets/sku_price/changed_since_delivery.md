@@ -63,7 +63,7 @@ Per-month view for SKU Price rows:
 * Each monthly changed-since delivery is about 4% of a full delivery.
 * Closed prices are about one in five changed rows. A changed-since delivery has to carry them as records with an effective end; otherwise a practitioner cannot tell a removed price from an unchanged one.
 
-## Why MUST, Not MAY
+## Why Mandatory, Not Optional
 
 A period option that a service provider is free to ignore gives practitioners no size guarantee. They would still have to plan storage and pipelines for full re-sends and deduplicate every delivery. The requirement therefore makes the configuration mandatory and requires that unchanged records be excluded when it is used.
 
@@ -72,7 +72,7 @@ The cost to a service provider is low. SKU Price Last Updated is already mandato
 ## Implementation Notes
 
 * SKU Price Last Updated has to reflect the last change, not the last time a record was generated. In the prototype, the column holds the last load time, so every current row looks changed in the latest month (all 3.89M current rows show October 2026). A changed-since filter on that value would return the full catalog.
-* Practitioners apply a changed-since delivery by replacing rows that share the dataset key (ServiceProviderName, SkuPriceId, ContractId, SkuPriceEffectiveStart, PricingCurrency, UnitPriceType) and adding the rest.
+* Practitioners apply a changed-since delivery by replacing rows that share the *row key* and adding the rest.
 * A full delivery (no changed-since point) remains available to start over or recover from gaps.
 
 ## Reproducing

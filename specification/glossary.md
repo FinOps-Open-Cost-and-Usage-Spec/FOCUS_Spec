@@ -54,7 +54,7 @@ A capacity reservation is an agreement that secures a dedicated amount of resour
 
 <a name="glossary:charge"><b>Charge</b></a>
 
-A row in a FOCUS-compatible cost and usage dataset.
+A row in a FOCUS-compatible dataset.
 
 <a name="glossary:chargeperiod"><b>Charge Period</b></a>
 
@@ -336,7 +336,7 @@ A row in a FOCUS-compatible cost and usage dataset.
 
 <a name="glossary:row-key"><b>Row Key</b></a>
 
-The set of columns a dataset declares to uniquely identify a [*row*](#glossary:row). Rows that share a key represent the same item. The dataset's delivery mechanism determines whether a changed row replaces or adds to earlier rows.
+The set of columns a dataset declares to uniquely identify a [*row*](#glossary:row). Rows with the same key values (including nulls) represent the same record. The dataset's delivery mechanism determines whether a changed row replaces or adds to earlier rows.
 
 <a name="glossary:service"><b>Service</b></a>
 

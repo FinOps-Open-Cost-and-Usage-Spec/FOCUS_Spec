@@ -19,7 +19,7 @@ A *FOCUS dataset* is configured through the following options. Each applies to r
 | Columns | Columns to include. | Default column set, when offered |
 | PeriodStart | Beginning (inclusive) of the period to deliver. Rows whose period ends on or before PeriodStart are excluded. | Start of the current [*billing period*](#glossary:billing-period) |
 | PeriodEnd | End (exclusive) of the period to deliver. Rows whose period starts on or after PeriodEnd are excluded. | Time of the request |
-| UpdatedSince | Timestamp used to filter rows last updated on or after. Use to receive only changes since an earlier delivery. | None (all rows in the period) |
+| UpdatedSince | Timestamp. Rows last updated before it are excluded. Use to receive only changes since an earlier delivery. | None (all rows in the period) |
 
 Not setting UpdatedSince delivers every row in the period, so practitioners receive every row they may need. Setting it reduces data size. Defaults differ by delivery:
 

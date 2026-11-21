@@ -111,7 +111,7 @@ SkuPrice MUST adhere to the following requirements:
 * SkuPrice MUST use the [Overwrite delivery mechanism](#attributes.deliveryhandling) when UpdatedSince is not configured.
 * SkuPrice MUST use the [Append delivery mechanism](#attributes.deliveryhandling) when UpdatedSince is configured.
 * SkuPrice SHOULD contain at least one record for every [SkuPriceId](#datamodel.skuprice.skupriceid) referenced in the [CostAndUsage](#datamodel.costandusage) dataset.
-* SkuPrice MUST NOT contain multiple records that share identical values (including nulls) across ServiceProviderName, SkuPriceId, ContractId, SkuPriceEffectiveStart, PricingCurrency, and UnitPriceType.
+* SkuPrice MUST NOT contain multiple records that share identical values (including nulls) across the *row key* columns.
 * SkuPrice MUST NOT contain records with overlapping effective periods (defined by SkuPriceEffectiveStart and SkuPriceEffectiveEnd) when those records share identical values (including nulls) across ServiceProviderName, SkuPriceId, ContractId, PricingCurrency, and UnitPriceType; for this constraint, a null SkuPriceEffectiveStart represents the earliest available time, and a null SkuPriceEffectiveEnd represents the latest available time.
 * SkuPrice *FOCUS columns* MUST conform to [FocusColumnHandling](#attributes.focuscolumnhandling) requirements.
 * SkuPrice *FOCUS columns* MUST conform to [NullHandling](#attributes.nullhandling) requirements.
