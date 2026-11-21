@@ -797,6 +797,30 @@ GROUP BY CU.SkuPriceId, CU.BillingCurrency
 ORDER BY TotalEffectiveCost DESC
 ```
 
+### Find Consumed SKUs That Offer a Commitment Discount
+
+This query answers which *SKUs* with on-demand consumption have a *commitment discount* on offer. A practitioner can then limit commitment analysis to consumption a commitment could cover. It takes a service provider and a time range through Charge Period Start and Charge Period End. It adds up the usage no *commitment discount* covered, by SKU ID. It keeps only the *SKUs* with a published record that has a Commitment Discount Category, whether a usage rate or a purchase fee. It returns the categories offered. A commitment to spend can apply across *SKUs*, so a *SKU* with no record here can still be covered by one. The query does not find that.
+
+```sql
+SELECT
+  CU.SkuId,
+  CU.BillingCurrency,
+  SUM(CU.EffectiveCost) AS OnDemandEffectiveCost,
+  MAX(CASE WHEN SP.CommitmentDiscountCategory = 'Usage' THEN 1 ELSE 0 END) AS OffersUsageCommitment,
+  MAX(CASE WHEN SP.CommitmentDiscountCategory = 'Spend' THEN 1 ELSE 0 END) AS OffersSpendCommitment
+FROM CostAndUsage CU
+INNER JOIN SkuPrice SP
+  ON SP.ServiceProviderName = CU.ServiceProviderName
+  AND SP.SkuId = CU.SkuId
+  AND SP.CommitmentDiscountCategory IS NOT NULL
+WHERE CU.ServiceProviderName = ?
+  AND CU.ChargePeriodStart >= ? AND CU.ChargePeriodEnd <= ?
+  AND CU.ChargeCategory = 'Usage'
+  AND CU.CommitmentDiscountId IS NULL
+GROUP BY CU.SkuId, CU.BillingCurrency
+ORDER BY OnDemandEffectiveCost DESC
+```
+
 ## Version Introduced
 
 1.5

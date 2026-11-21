@@ -336,6 +336,44 @@ WHERE ServiceProviderName = ?
 ORDER BY SkuPriceId, ContractId, PricingCurrency, UnitPriceType, SkuPriceEffectiveStart
 ```
 
+### Find Prices Removed Since a Point in Time
+
+This query answers which prices stopped applying after a given moment and were not replaced. A practitioner can then find a price that was removed from the catalog, as opposed to one that only changed. It takes a service provider and a point in time. It returns each record whose SKU Price Effective End falls after that moment and has passed, and for which no later record exists under the same SKU Price ID, Contract ID, Pricing Currency, and Unit Price Type. A price that changed has a successor record that starts where the earlier one ended, so it is not returned. The "Track Price Changes Since a Point in Time" query counts those changes instead.
+
+This query needs a *dataset instance* that holds records whose SKU Price Effective End has passed. Giving Start and End on a pull of changes since a point in time returns these records, so a practitioner can tell a removed price from an unchanged one.
+
+```sql
+SELECT
+  P.SkuId,
+  P.SkuPriceId,
+  P.ContractId,
+  P.UnitPriceType,
+  P.PricingCurrency,
+  P.UnitPrice,
+  P.SkuPriceEffectiveEnd
+FROM SkuPrice P
+WHERE P.ServiceProviderName = ?
+  AND P.SkuPriceEffectiveEnd > ?
+  AND P.SkuPriceEffectiveEnd <= ?
+  AND NOT EXISTS (
+    SELECT 1
+    FROM SkuPrice N
+    WHERE N.ServiceProviderName = P.ServiceProviderName
+      AND N.SkuPriceId = P.SkuPriceId
+      AND N.PricingCurrency = P.PricingCurrency
+      AND N.UnitPriceType = P.UnitPriceType
+      AND (N.ContractId = P.ContractId OR (N.ContractId IS NULL AND P.ContractId IS NULL))
+      AND (N.SkuPriceEffectiveEnd IS NULL OR N.SkuPriceEffectiveEnd > P.SkuPriceEffectiveEnd)
+  )
+ORDER BY P.SkuPriceEffectiveEnd, P.SkuPriceId
+```
+
+> **Note:** The second date input is the end of the period and the time the query is run, so a price scheduled to end later is not returned. Scheduled retirements are found by the "Find Announced Price Changes and Scheduled Retirements" query.
+
+## Limits of This Feature
+
+The SKU Price dataset has no column for a pricing category (e.g., spot) or for the attributes of a *SKU* (e.g., VM size or generation). So queries cannot compare those. It also has no currency conversion rate. So a price in one currency is never compared with a price in another.
+
 ## Version Introduced
 
 1.5
