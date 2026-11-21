@@ -322,6 +322,10 @@ An entity that provides the [*resources*](#glossary:resource) or [*services*](#g
 
 A return of funds that have previously been charged.
 
+<a name="glossary:request-based-delivery"><b>Request-Based Delivery</b></a>
+
+A delivery that starts when a *practitioner* sends a request.
+
 <a name="glossary:requester"><b>Requester</b></a>
 
 An entity defined in an identity and access management model on whose behalf a request is initiated, resulting in a [*charge*](#glossary:charge). A [*service provider*](#glossary:service-provider) commonly represents a requester at more than one level, such as the [*principal*](#glossary:principal) to which access to [*resources*](#glossary:resource) or [*services*](#glossary:service) is granted and the [*credential*](#glossary:credential) presented on the request. A requester is distinct from the party that benefits from the usage or purchase, which a FOCUS dataset does not identify.
@@ -333,6 +337,14 @@ A unique component that incurs a charge.
 <a name="glossary:row"><b>Row</b></a>
 
 A row in a FOCUS-compatible cost and usage dataset.
+
+<a name="glossary:row-key"><b>Row Key</b></a>
+
+The set of columns a dataset declares to identify the entity a [*row*](#glossary:row) represents. Rows with the same row key values (including nulls) represent the same entity.
+
+<a name="glossary:scheduled-delivery"><b>Scheduled Delivery</b></a>
+
+A delivery that starts on a schedule, without a request for each delivery (e.g., a recurring export). A *practitioner* request may create the schedule and trigger its first delivery.
 
 <a name="glossary:service"><b>Service</b></a>
 
