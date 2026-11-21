@@ -715,7 +715,9 @@ WHERE C.ServiceProviderName = ?
 
 ### Reprice On-Demand Consumption at a Commitment Rate
 
-This query answers what consumption that no *commitment discount* covers would cost at the rate a *commitment discount* gives. The difference sizes the value of buying a commitment (e.g., a reservation or savings plan) for that consumption. It takes a time range through Charge Period Start and Charge Period End and a service provider. It adds up the usage that no *commitment discount* covered, by SKU ID and Pricing Unit. It then reprices that usage at each "List" rate published for the same *SKU* with a Commitment Discount Category. One row returns for each commitment rate, so each term or rate offered for the *SKU* shows side by side.
+This query answers what consumption that no *commitment discount* covers would cost at the rate a *commitment discount* gives. The difference sizes the value of buying a commitment (e.g., a reservation or savings plan) for that consumption. It takes a time range through Charge Period Start and Charge Period End and a service provider. It adds up the usage that no *commitment discount* covered, by SKU ID and Pricing Unit. It then reprices that usage at each rate published for the same *SKU* with a Commitment Discount Category. One row returns for each commitment rate, so each term or rate offered for the *SKU* shows side by side. Unit Price Type and Contract ID are returned because a *service provider* can publish a commitment rate as a "List" price or as a price under a *contract*.
+
+A *SKU* can have commitment rates in several regions. The query reprices the same usage at each of them. So a row is read on its own, and Pricing Region ID narrows the result when the *operating model* includes regions.
 
 The query reads rates, not purchase fees. A commitment's fees (see the purchase terms query above) and the share of consumption the commitment would cover are outside this result. So the difference is the most the rate alone could save, not a forecast of savings. A commitment to an amount of spend can give a rate that FOCUS does not carry, so it may return no row. The query reads only a single flat rate, a record with no Quantity Tier Minimum above zero and no Quantity Tier Maximum. Tiered commitment rates are not repriced.
 
@@ -742,6 +744,8 @@ SELECT
   SP.SkuPriceId,
   SP.SkuPriceDescription,
   SP.CommitmentDiscountCategory,
+  SP.UnitPriceType,
+  SP.ContractId,
   OD.PricingUnit,
   OD.TotalPricingQuantity,
   OD.TotalEffectiveCost,
@@ -757,8 +761,6 @@ INNER JOIN SkuPrice SP
   AND SP.PricingCurrency = OD.BillingCurrency
   AND SP.ChargeCategory = 'Usage'
   AND SP.CommitmentDiscountCategory IS NOT NULL
-  AND SP.ContractId IS NULL
-  AND SP.UnitPriceType = 'List'
   AND (SP.QuantityTierMinimum IS NULL OR SP.QuantityTierMinimum = 0)
   AND SP.QuantityTierMaximum IS NULL
   AND (SP.SkuPriceEffectiveStart IS NULL OR OD.EarliestChargePeriodStart >= SP.SkuPriceEffectiveStart)
