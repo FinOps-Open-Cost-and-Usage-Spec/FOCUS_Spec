@@ -311,7 +311,7 @@ GROUP BY Cur.UnitPriceType
 ORDER BY Cur.UnitPriceType
 ```
 
-### Show the Price History of a SKU over a Period
+### Show the Price History of a SKU Over a Period
 
 This query answers what every price for a *SKU* was at any time during a past period, and when each one changed. A practitioner can then explain a past cost or rebuild an estimate as of an earlier date (e.g., a prior budget period). It takes a service provider, a SKU ID, and a period start and end. It returns every record whose effective window overlaps that period, oldest first, one row for each SKU Price ID, Contract ID, Pricing Currency, and Unit Price Type.
 
