@@ -29,6 +29,7 @@ The row key lets a practitioner tell which delivered row a new version supersede
 | 3 | Later request for prices changed since a time | earliest date | none | date | Append (versioned) |
 | 4 | Scheduled delivery after the first | earliest date | none | latest last-updated value in previous delivery | Append (versioned) |
 | 5 | Prices active during S to E, only if changed since S1 | S | E | S1 | Append (versioned) |
+| 6 | Every version of prices active during S to E | S | E | earliest date | Append (versioned) |
 
 > **Note:** Append (versioned) means each row is a new version that supersedes earlier rows with the same row key. Additive Append, where rows only add, is a different case.
 

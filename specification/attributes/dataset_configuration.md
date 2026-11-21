@@ -52,6 +52,7 @@ Dataset conforming to DatasetConfiguration attribute MUST adhere to the followin
   * *FOCUS dataset* MUST use the latest last-updated column value of the previous delivery as UpdatedSince for each scheduled delivery after the first.
 * *FOCUS dataset* MUST adhere to the following requirements when UpdatedSince is not set:
   * *FOCUS dataset* MUST include all rows not excluded by PeriodStart or PeriodEnd.
+  * *FOCUS dataset* MUST include only the row with the latest last-updated column value for each *row key* when the dataset declares a last-updated column and a *row key*.
   * *FOCUS dataset* MUST include rows with a period that starts before PeriodStart and has no end or ends after PeriodStart.
 * *FOCUS dataset* MUST adhere to the following requirements when UpdatedSince is set:
   * *FOCUS dataset* MUST include every row last updated after UpdatedSince.
