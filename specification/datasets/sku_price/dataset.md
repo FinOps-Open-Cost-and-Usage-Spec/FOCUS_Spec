@@ -104,14 +104,13 @@ SkuPrice MUST adhere to the following requirements:
 * SkuPrice MUST conform to [DatasetCompleteness](#attributes.datasetcompleteness) requirements.
 * SkuPrice MUST conform to [DatasetConfiguration](#attributes.datasetconfiguration) requirements.
 * SkuPrice MUST conform to [DeliveryHandling](#attributes.deliveryhandling) requirements.
-* SkuPrice MUST use a composite [*row key*](#glossary:row-key) including ServiceProviderName, SkuPriceId, ContractId, SkuPriceEffectiveStart, PricingCurrency, and UnitPriceType.
-* SkuPrice MUST use SkuPriceEffectiveStart and SkuPriceEffectiveEnd as period columns.
-* SkuPrice MUST use SkuPriceLastUpdated as its last-updated column.
+* SkuPrice [*row key*](#glossary:row-key) MUST be a composite of ServiceProviderName, SkuPriceId, ContractId, SkuPriceEffectiveStart, PricingCurrency, and UnitPriceType.
+* SkuPrice period columns MUST be SkuPriceEffectiveStart and SkuPriceEffectiveEnd.
+* SkuPrice last-updated column MUST be SkuPriceLastUpdated.
 * SkuPrice MUST be configurable with an UpdatedSince option.
-* SkuPrice MUST use the [Overwrite delivery mechanism](#attributes.deliveryhandling) when UpdatedSince is not configured.
+* SkuPrice MUST use the [Overwrite delivery mechanism](#attributes.deliveryhandling) with the period delivered as its [*delivery scope*](#glossary:delivery-scope) when UpdatedSince is not configured.
 * SkuPrice MUST use the [Append delivery mechanism](#attributes.deliveryhandling) when UpdatedSince is configured.
 * SkuPrice SHOULD contain at least one record for every [SkuPriceId](#datamodel.skuprice.skupriceid) referenced in the [CostAndUsage](#datamodel.costandusage) dataset.
-* SkuPrice MUST NOT contain multiple records that share identical values (including nulls) across the *row key* columns.
 * SkuPrice MUST NOT contain records with overlapping effective periods (defined by SkuPriceEffectiveStart and SkuPriceEffectiveEnd) when those records share identical values (including nulls) across ServiceProviderName, SkuPriceId, ContractId, PricingCurrency, and UnitPriceType; for this constraint, a null SkuPriceEffectiveStart represents the earliest available time, and a null SkuPriceEffectiveEnd represents the latest available time.
 * SkuPrice *FOCUS columns* MUST conform to [FocusColumnHandling](#attributes.focuscolumnhandling) requirements.
 * SkuPrice *FOCUS columns* MUST conform to [NullHandling](#attributes.nullhandling) requirements.

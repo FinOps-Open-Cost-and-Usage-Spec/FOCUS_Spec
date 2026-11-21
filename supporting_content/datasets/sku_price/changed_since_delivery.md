@@ -22,13 +22,13 @@ The row key is needed so a practitioner can tell which delivered row an update r
 
 ## Scenarios
 
-| # | Scenario | PeriodStart | PeriodEnd | UpdatedSince |
-| --- | --- | --- | --- | --- |
-| 1 | Initial or one-time pull of current prices | default | default | not set |
-| 2 | Initial pull of historical prices | date | date | not set |
-| 3 | Later pull of prices changed since a time | unbounded | unbounded | date |
-| 4 | Recurring push after the first | unbounded | unbounded | previous capture time |
-| 5 | Prices active during S to E, only if changed since S1 | S | E | S1 |
+| # | Scenario | PeriodStart | PeriodEnd | UpdatedSince | Delivery mechanism |
+| --- | --- | --- | --- | --- | --- |
+| 1 | Initial or one-time pull of current prices | default | default | not set | Overwrite |
+| 2 | Initial pull of historical prices | date | date | not set | Overwrite |
+| 3 | Later pull of prices changed since a time | earliest date | none | date | Append |
+| 4 | Recurring push after the first | earliest date | none | latest last-updated value in previous delivery | Append |
+| 5 | Prices active during S to E, only if changed since S1 | S | E | S1 | Append |
 
 If PeriodStart and PeriodEnd are left at their defaults in scenario 3, only prices active in the current billing period are returned.
 
@@ -68,6 +68,18 @@ Per-month view for SKU Price rows:
 A period option that a service provider is free to ignore gives practitioners no size guarantee. They would still have to plan storage and pipelines for full re-sends and deduplicate every delivery. The requirement therefore makes the configuration mandatory and requires that unchanged records be excluded when it is used.
 
 The cost to a service provider is low. SKU Price Last Updated is already mandatory and already defined as the last time any value on the record changed, so the filter uses data the provider has to produce anyway.
+
+## Avoiding Duplicate Rows
+
+Each changed row must be delivered once. Duplicates raise support requests because practitioners expect unique rows per delivery.
+
+A data generator does not need to track every row it delivered. It can use a dated query instead:
+
+* Pick a cutoff time behind data processing, so no row is still changing at the cutoff.
+* Deliver rows last updated after UpdatedSince and up to the cutoff.
+* Use the latest last-updated value delivered as UpdatedSince for the next delivery.
+
+Example: for a request at 12:00 with a 1-hour margin, deliver rows updated through 11:00. A row added at 12:01 cannot be missed or repeated, because the next delivery starts after 11:00.
 
 ## Implementation Notes
 

@@ -314,6 +314,14 @@ An entity defined in an identity and access management model (e.g., user, servic
 
 A storage mechanism that allows a generative AI workload to reuse previously processed input content across requests to an [*AI model*](#glossary:ai-model). Service providers may meter cache reads, cache writes, and cache retention differently.
 
+<a name="glossary:pull-delivery"><b>Pull Delivery</b></a>
+
+A delivery that starts when a [*practitioner*](#glossary:practitioner) sends a request. Each request carries its own configuration options. A request has no knowledge of earlier deliveries.
+
+<a name="glossary:push-delivery"><b>Push Delivery</b></a>
+
+A delivery that a data generator starts on a schedule, such as a recurring export. The configuration options are set once and apply to every scheduled delivery.
+
 <a name="glossary:service-provider"><b>Service Provider</b></a>
 
 An entity that provides the [*resources*](#glossary:resource) or [*services*](#glossary:service) available for usage or purchase.
@@ -336,7 +344,7 @@ A row in a FOCUS-compatible cost and usage dataset.
 
 <a name="glossary:row-key"><b>Row Key</b></a>
 
-The set of columns a dataset declares to uniquely identify a [*row*](#glossary:row). Rows with the same key values (including nulls) represent the same record. The dataset's delivery mechanism determines whether a changed row replaces or adds to earlier rows.
+The set of columns a dataset declares to identify the entity a [*row*](#glossary:row) represents. Rows with the same key values (including nulls) represent the same record. The dataset's delivery mechanism determines whether a changed row replaces or adds to earlier rows.
 
 <a name="glossary:service"><b>Service</b></a>
 
