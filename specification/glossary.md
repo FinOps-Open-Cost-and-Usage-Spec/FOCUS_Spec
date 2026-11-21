@@ -340,11 +340,11 @@ A row in a FOCUS-compatible cost and usage dataset.
 
 <a name="glossary:row-key"><b>Row Key</b></a>
 
-The set of columns a dataset declares to identify the entity a [*row*](#glossary:row) represents. Rows with the same row key values (including nulls) represent the same record.
+The set of columns a dataset declares to identify the entity a [*row*](#glossary:row) represents. Rows with the same row key values (including nulls) represent the same entity.
 
 <a name="glossary:scheduled-delivery"><b>Scheduled Delivery</b></a>
 
-A delivery that starts on a schedule, without a request from a *practitioner* (e.g., a recurring export).
+A delivery that starts on a schedule, without a request for each delivery (e.g., a recurring export). A *practitioner* request may create the schedule and trigger its first delivery.
 
 <a name="glossary:service"><b>Service</b></a>
 
