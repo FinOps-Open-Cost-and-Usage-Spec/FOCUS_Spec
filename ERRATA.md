@@ -33,7 +33,7 @@ All issues are considered clarifications to intended language and are not meant 
 | Issue | File | Original | Corrected | Tracking |
 | :--- | :--- | :--- | :--- | :--- |
 | **#4: Missing PaymentCurrency Currency Format check** | `paymentcurrency.json` | The `IND-PaymentCurrency-C-000-C` composite has no Currency Format check. | A Currency Format rule is added to `IND-PaymentCurrency-C-000-C`, matching `IND-BillingCurrency-C-003-M`. (Follows erratum #1.) | Issue: [#2837](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2837) |
-| **#5: ContractId not-null composite** | `contractid.json` | `CCT-ContractId-C-004-C` models the "When ContractId is not null" condition removed by erratum #2. | `CCT-ContractId-C-004-C` keeps its ID and its two rules (`CCT-ContractId-C-005-M`, `CCT-ContractId-C-006-O`), and drops its not-null `Condition` and the "When ContractId is not null" wording. (Follows erratum #2.) | Issue: [#2837](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2837) |
+| **#5: ContractId not-null composite** | `contractid.json` | `CCT-ContractId-C-004-C` models the "When ContractId is not null" condition removed by erratum #2. | `CCT-ContractId-C-004-C` is marked Removed. `CCT-ContractId-C-000-M` lists its two rules (`CCT-ContractId-C-005-M`, `CCT-ContractId-C-006-O`) directly, in both `Requirement` and `Dependencies`. (Follows erratum #2.) | Issue: [#2837](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2837) |
 
 ---
 
