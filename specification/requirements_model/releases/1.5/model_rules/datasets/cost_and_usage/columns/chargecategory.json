@@ -338,7 +338,7 @@
         ]
       },
       "Dependencies": [
-        "CAU-SkuPriceId-C-000-C",
+        "CAU-SkuPriceId-C-001-M",
         "CAU-ServiceProviderName-C-000-M"
       ]
     }
