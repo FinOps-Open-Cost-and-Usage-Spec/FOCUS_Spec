@@ -138,7 +138,7 @@ jobs:
 
             case "$STATUS" in
               ""|"Submitted"|"PR In Draft"|"PR Open") ;;
-              *) echo "#$PR_NUM: Status '$STATUS' is set by hand, left as is"; continue ;;
+              *) echo "#$PR_NUM: Status '$STATUS' is outside this sync, left as is"; continue ;;
             esac
 
             if [ "$STATUS" = "$TARGET" ]; then echo "#$PR_NUM: already $TARGET"; continue; fi
