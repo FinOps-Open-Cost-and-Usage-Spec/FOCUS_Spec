@@ -6,12 +6,43 @@ These updates serve as the basis for revising FOCUS enablement artifacts, such a
 
 ---
 
-## Version 1.4
+## Version 1.5
 
-This section outlines discrepancies found in the enablement artifacts (Requirements Model) for the 1.4 release of the FOCUS specification. The underlying specification text for version 1.4 remains accurate and unchanged.
+This section outlines minor discrepancies found in the 1.5 release of the FOCUS specification and its Requirements Model.
+
+All issues are considered clarifications to intended language and are not meant to represent material changes.
 
 ### A. Schema & Validation Logic Corrections
+*The following corrections align requirement lines with the rest of their definitions.*
+
+| Issue | Section / Location | Original | Corrected | Tracking |
+| :--- | :--- | :--- | :--- | :--- |
+| **#1: Missing Currency Format requirement for PaymentCurrency**<br><br>*(Defect also present in the 1.4 specification)* | `datasets/invoice_detail/columns/paymentcurrency.md`, line [10](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/e9cdcc7cbb9bfec2f6d6f6b6a8d872bc0b6b9cc0/specification/datasets/invoice_detail/columns/paymentcurrency.md?plain=1#L10) | No Currency Format requirement follows the StringHandling requirement. | PaymentCurrency MUST conform to CurrencyFormat requirements. (Matches BillingCurrency and the Content Constraints table.) | Issue: [#2837](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2837) |
+| **#2: Redundant ContractId not-null condition**<br><br>*(Defect also present in the 1.3 and 1.4 specifications)* | `datasets/contract_commitment/columns/contractid.md`, lines [12](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/e9cdcc7cbb9bfec2f6d6f6b6a8d872bc0b6b9cc0/specification/datasets/contract_commitment/columns/contractid.md?plain=1#L12), [13](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/e9cdcc7cbb9bfec2f6d6f6b6a8d872bc0b6b9cc0/specification/datasets/contract_commitment/columns/contractid.md?plain=1#L13) and [14](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/e9cdcc7cbb9bfec2f6d6f6b6a8d872bc0b6b9cc0/specification/datasets/contract_commitment/columns/contractid.md?plain=1#L14) | When ContractId is not null, ContractId MUST adhere to the following requirements: (with two nested bullets) | The condition line is removed and its two nested bullets move up one level. ContractId MUST NOT be null (line 11), so the condition was always met. | Issue: [#2837](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2837) |
+| **#3: Lowercase "must" in TimeSectorEnd requirement**<br><br>*(Defect also present in the 1.3 and 1.4 specifications)* | `metadata/recency/time_sectors/time_sector_end.md`, line [11](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/e9cdcc7cbb9bfec2f6d6f6b6a8d872bc0b6b9cc0/specification/metadata/recency/time_sectors/time_sector_end.md?plain=1#L11) | TimeSectorEnd **must** be exclusive of the end time of the subsequent time sector. | TimeSectorEnd **MUST** be exclusive of the end time of the subsequent time sector. | Issue: [#2837](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2837) |
+
+### B. Terminology & Reference Corrections
 *No errata reported for this release.*
+
+### C. Typographical Errors
+*No errata reported for this release.*
+
+### D. Requirements Model Corrections
+*The following corrections address the FOCUS 1.5 Requirements Model validation rules.*
+
+| Issue | File | Original | Corrected | Tracking |
+| :--- | :--- | :--- | :--- | :--- |
+| **#4: Missing PaymentCurrency Currency Format check**<br><br>*(Defect also present in the 1.4 Requirements Model)* | `paymentcurrency.json` | The `IND-PaymentCurrency-C-000-C` composite has no Currency Format check. | A Currency Format rule is added to `IND-PaymentCurrency-C-000-C`, matching `IND-BillingCurrency-C-003-M`. (Follows erratum #1.) | Issue: [#2837](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2837) |
+| **#5: ContractId not-null composite**<br><br>*(Defect also present in the 1.3 and 1.4 Requirements Models)* | `contractid.json` | `CCT-ContractId-C-004-C` models the "When ContractId is not null" condition removed by erratum #2. | `CCT-ContractId-C-004-C` is marked Removed. `CCT-ContractId-C-000-M` lists its two rules (`CCT-ContractId-C-005-M`, `CCT-ContractId-C-006-O`) directly, in both `Requirement` and `Dependencies`. (Follows erratum #2.) | Issue: [#2837](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2837) |
+
+---
+
+## Version 1.4
+
+This section outlines discrepancies found in the enablement artifacts (Requirements Model) for the 1.4 release of the FOCUS specification. The underlying specification text for version 1.4 is unchanged. Errata #1 to #5 in the Version 1.5 section also apply to version 1.4.
+
+### A. Schema & Validation Logic Corrections
+*See errata #1 to #3 in the Version 1.5 section.*
 
 ### B. Terminology & Reference Corrections
 *No errata reported for this release.*
