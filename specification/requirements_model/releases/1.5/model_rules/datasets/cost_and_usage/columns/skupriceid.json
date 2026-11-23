@@ -228,7 +228,9 @@
       },
       "Dependencies": [
         "CAU-ChargeClass-C-000-M",
-        "CAU-ChargeCategory-C-000-M"
+        "CAU-ChargeCategory-C-002-M",
+        "CAU-ChargeCategory-C-004-C",
+        "CAU-ChargeCategory-C-005-C"
       ]
     }
   },
@@ -658,7 +660,9 @@
         ]
       },
       "Dependencies": [
-        "CAU-ChargeCategory-C-000-M",
+        "CAU-ChargeCategory-C-002-M",
+        "CAU-ChargeCategory-C-004-C",
+        "CAU-ChargeCategory-C-005-C",
         "CAU-ServiceProviderName-C-000-M"
       ]
     }
