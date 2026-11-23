@@ -14,7 +14,7 @@ AllocatedServiceName closes this gap: the data generator populates it with the c
 
 Acme Corp runs a shared Aura Web container cluster (`cluster-shared-01`) for a single charge period (2026-04-01). The cluster hosts workloads belonging to three distinct consuming *services*. The data generator is configured to split the cluster host cost across the consuming workloads by measured vCPU-hour consumption.
 
-The origin charge EffectiveCost for the period is $100.00. The data generator measures consumer utilization as:
+The [*origin charge*](#glossary:origin-charge) EffectiveCost for the period is $100.00. The data generator measures consumer utilization as:
 
 * `pod-orders-01` (Orders Service): 40 vCPU-hours (40%)
 * `pod-scoring-01` (ML Inference Service): 35 vCPU-hours (35%)
