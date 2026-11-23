@@ -105,6 +105,8 @@ In agreement (no finding): ED-SCP-02, ED-SCP-05, ED-REF-11, ED-REF-13, ED-LNK-02
 
 State of each rule ID in the step-1 document (unchanged by this review), and the finding that comments on it. "WD" = text kept from `working_draft` at `e9cdcc7`; "Proposal" = text of the Editorial Guidelines Review; "OK" = no finding.
 
+Editorial Rules: https://docs.google.com/document/d/1lGBbzAKqFGYzbwsDB5Lwn49PG_Xxw1zC/edit#heading=h.dcaagki67y3t
+
 | Rule ID   | Review status | Step-1 state before review                 | Finding |
 | :-------- | :------------ | :----------------------------------------- | :------ |
 | ED-SCP-01 | Proposed      | WD text; ED-REF-05 bullet kept             | F-04    |
