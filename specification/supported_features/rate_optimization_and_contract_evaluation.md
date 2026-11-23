@@ -52,7 +52,7 @@ SKU Price Effective Start is inclusive, and SKU Price Effective End is exclusive
 
 A [*dataset instance*](#glossary:dataset-instance) may hold only the prices in force when it was captured. So a charge from before the latest price change finds its record only in an earlier dataset instance kept for that purpose. The queries below that resolve a tier or reprice consumption drop a charge that finds no record. The query that compares recorded unit prices keeps it, with null rates.
 
-The SKU Price dataset links a charge to a price through the charge's Pricing Currency. When the *operating model* does not include pricing and billing currency differences, the link uses the charge's Billing Currency instead. The queries that read Cost and Usage match on Billing Currency, because Effective Cost is in the Billing Currency. So a charge priced in one currency and billed in another matches only a price the *service provider* also quotes in the Billing Currency.
+The SKU Price dataset links a charge to a price through the charge's Pricing Currency. When the *operating model* does not [include pricing and billing currency differences](#operatingmodelconditions.includespricingandbillingcurrencydifferences), the link uses the charge's Billing Currency instead. The queries that read Cost and Usage match on Billing Currency, because Effective Cost is in the Billing Currency. So a charge priced in one currency and billed in another matches only a price the *service provider* also quotes in the Billing Currency.
 
 These queries take a time range through Charge Period Start and Charge Period End. Charge Period End is exclusive, so a charge that ends where the range ends falls inside the range. The range is tested with `ChargePeriodEnd <= ?`.
 
