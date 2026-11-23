@@ -106,13 +106,10 @@ Each preview has a tracking issue with a scope list, which names each requiremen
 
 A supporting entity is an entity defined outside a preview dataset's own section that the dataset depends on and that exists only for the preview (e.g., an operating model condition, or an object schema such as the SKU Price Eligibility Object Schema that the SKU Price dataset uses). A requirement is not a supporting entity.
 
-**Proposed (FR #2782, question 1):**
+**Open (FR #2782, question 1):**
 
-* **Proposed:** The definition of supporting entity above, with its test: an entity outside the dataset that exists only for the preview.
-* **Why:** The SKU Price Preview notes and the scope list rule for requirements already use this test, and all three supporting entities on the [SKU Price scope list](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2768) meet it. Under the test, stable content (e.g., a column in another dataset, a glossary term, or an operating model condition that stable requirements also use, such as Includes Regions) cannot be a supporting entity, so a scope list cannot let stable content change without a deprecation notice.
-* **Open:** Confirm the test.
 * **Open:** How the glossary defines supporting entity, since the specification's overview and General Availability glossary entry use the term.
-* **Open:** What happens when stable content later starts to use a supporting entity, which then no longer meets the test. One answer: before that stable content is published, the entity leaves the scope list, its Preview markings are removed, and it follows the normal change management process. What its Version Introduced section then shows follows FR #2816.
+* **Open:** What happens when stable content later starts to use a supporting entity, which then no longer exists only for the preview. One answer: before that stable content is published, the entity leaves the scope list, its Preview markings are removed, and it follows the normal change management process. What its Version Introduced section then shows follows FR #2816.
 * **Elsewhere:** Whether content in a stable dataset, such as a column, can be a preview stays open on FR #960.
 
 ### Designating a Preview
@@ -136,8 +133,6 @@ A FOCUS dataset preview MUST adhere to the following requirements:
 * **Why:** Section 5.3 of the [FOCUS Operating Procedures](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/operating_procedures.md) has a preview follow the same lifecycle and IPR process as the release it ships in.
 * **Open:** The latest point in a release cycle at which FOCUS Members can still designate a dataset a preview. For comparison, FOCUS Members chose a preview for SKU Price on October 22, 2026, during the 1.5 Final Consistency Review (October 8 to 29).
 
-**TODO (FR #2782, question 8):** Decide whether and how a validator checks preview content on request while conformance checks leave it out. Follows FR #2811, which takes the conformance-exclusion part of this question.
-
 A preview tracking issue MUST adhere to the following requirements:
 
 * A preview tracking issue MUST list any questions to learn from generating or using the dataset, and who raised each one.
@@ -153,14 +148,7 @@ A preview tracking issue MUST adhere to the following requirements:
 
 * **Proposed:** The second and third requirements above. The scope list names each requirement outside the dataset that exists only for the preview, wherever it is defined, and names no other requirement outside the dataset. A requirement that applies to stable content stays evaluated for conformance.
 * **Why:** The [SKU Price scope list](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2768) names two such requirements: the Data Model requirement, which is outside any dataset, and the Cost and Usage requirement that ChargeCategory match SkuPrice.ChargeCategory. The merged text said "in other datasets", which does not cover the Data Model requirement.
-* **Open:** How a grouped requirement is evaluated when one of its checks exists only for the preview. The 1.5 requirements model gives the Charge Category match its own rule, but the Charge Category requirement that groups it requires all nine Charge Category rules, so excluding that grouped requirement would also stop stable checks.
-* **Open:** How the requirements model and validators treat that dependency. Follows FR #2811.
-
-**TODO (FR #2782, question 5):** Decide each of the following. Follows FR #2811.
-
-* Where the specification states, as a normative requirement, that preview content is not evaluated for conformance.
-* Which source fixes the scope list for each version: the tracking issue, the dataset's Preview note, or the requirements model.
-* Whether naming a supporting entity on the scope list excludes that entity's own requirements from conformance (e.g., the two requirements in each of Includes Purchases and Includes Quantity Tier Pricing), or whether the scope list names those requirements too.
+* **Open:** How the guideline covers a stable column that gains a requirement that exists only for a preview, including whether a `SHOULD` treats this as an exception. The example is the Cost and Usage requirement that ChargeCategory match SkuPrice.ChargeCategory. ChargeCategory is stable, and it gained this requirement with the SKU Price dataset. The requirement is not a supporting entity.
 
 **Proposed (FR #2782, question 16):**
 
@@ -181,18 +169,11 @@ A preview tracking issue MUST adhere to the following requirements:
 * Set each Version Introduced section in the dataset, including its columns, to `Preview: <version>` (e.g., `Preview: 1.5`).
 * Set the Version Introduced section of each supporting entity on the scope list to `Preview: <version>`, unless the tracking issue explicitly notes an exception for that entity.
 
-**TODO (FR #2782, question 10):** Decide each of the following. Follows FR #2811.
-
-* How a delivered dataset's metadata marks preview content.
-* How a data generator states that it provides a preview.
-* How published schema files mark preview content.
-
 **Proposed (FR #2782, question 11):**
 
-* **Proposed:** A supported feature is not generally available while the dataset, or any other FOCUS entity it depends on, is a preview. The Promote step below states this.
 * **Proposed:** Move what Version Introduced shows, for a preview and after promotion, to FR #2816, including on a supported feature that depends on a preview.
-* **Why:** A supported feature describes what the data it depends on makes possible. While that data is a preview, it can change without a deprecation notice, so the supported feature cannot be more stable than the data under it.
 * **Why:** FR #2816 covers what Version Introduced records for all content, including content first published as a preview. Until FR #2816 decides, the Promote step below updates each Version Introduced section to `Preview: <version> · GA: <version>`.
+* **Open:** How the General Availability glossary entry covers a supported feature. The entry names only a FOCUS dataset and a supporting entity on a scope list.
 
 **Proposed (FR #2782, question 17):**
 
@@ -210,10 +191,14 @@ At each later version, FOCUS Members choose one outcome and record it with its e
 * **Extend:** Keep the preview for one more version, with a plan for the next evidence.
 * **Remove:** Remove the dataset without a deprecation notice or retention period. This is the default when there is no new evidence since the last decision.
 
-**TODO (FR #2782, question 14):** Decide each of the following.
+**Proposed (FR #2782, question 14):**
 
-* What evidence is enough to promote a preview.
-* What counts as no new evidence for the removal default, including for datasets that no data generator produces yet.
+* **Proposed:** A preview has enough evidence to promote when its tracking issue records an answer to each open question and at least one finding from building or using the dataset. Each answer comes from building or using the dataset with real or realistic data, or says why the question no longer applies.
+* **Proposed:** Evidence is a finding in the tracking issue from someone who built or used the dataset with real or realistic data (e.g., a data generator's output, or billing data a practitioner converted).
+* **Proposed:** No new evidence means the tracking issue has no new finding since the preview was published or since its last status decision, whichever is later. An open question marked as no longer applying is not a finding, and neither is a request for comments that gets no response.
+* **Why:** The Promote step already ties promotion to the open questions. Some datasets are hard to build from native data. Billing Period is one: FOCUS added it in 1.4 because practitioners wanted data generators to declare when billing periods are open or closed. In October 2026, Shawn Alpay noted that no data generator presented that information. Requiring native output could keep such a dataset from ever being promoted.
+* **Open:** Whether the bar should be higher when all the evidence comes from practitioners because no data generator produces the dataset.
+* **Open:** Whether a question needs findings from more than one implementer before it counts as answered.
 
 **Proposed (FR #2782, question 15):**
 
