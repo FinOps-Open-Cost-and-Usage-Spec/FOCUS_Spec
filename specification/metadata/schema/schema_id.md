@@ -6,7 +6,7 @@ SchemaId adheres to the following requirements:
 
 * SchemaId MUST be present in an object within the [Schema](#metadata.schema) collection.
 * SchemaId MUST be of type String.
-* SchemaID MUST NOT be null.
+* SchemaId MUST NOT be null.
 * SchemaId SHOULD be a Globally Unique Identifier (GUID).
 
 ## Metadata ID

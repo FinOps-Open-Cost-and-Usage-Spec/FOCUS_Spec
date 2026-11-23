@@ -1,6 +1,6 @@
-# Includes Pricing-Billing Currency Differences
+# Includes Pricing and Billing Currency Differences
 
-The Includes Pricing-Billing Currency Differences operating model condition represents a verifiable state indicating whether the [*operating model*](#glossary:operating-model) includes pricing and billing in different currencies.
+The Includes Pricing and Billing Currency Differences operating model condition represents a verifiable state indicating whether the [*operating model*](#glossary:operating-model) includes pricing and billing in different currencies.
 
 ## Requirements
 
@@ -15,7 +15,7 @@ IncludesPricingBillingCurrencyDifferences
 
 ## Display Name
 
-Includes Pricing-Billing Currency Differences
+Includes Pricing and Billing Currency Differences
 
 ## Description
 

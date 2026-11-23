@@ -1,6 +1,6 @@
 # Time Sector End
 
-The Time Sector End is the datetime of the end of the time sector. The Time Sector End MUST be later than the Time Sector Start.
+The Time Sector End is the datetime of the end of the time sector. The Time Sector End is later than the Time Sector Start.
 
 TimeSectorEnd adheres to the following requirements:
 
@@ -8,7 +8,7 @@ TimeSectorEnd adheres to the following requirements:
 * TimeSectorEnd MUST be of type Date/Time.
 * TimeSectorEnd MUST NOT be null.
 * TimeSectorEnd MUST conform to [DateTimeFormat](#attributes.date/timeformat).
-* TimeSectorEnd must be exclusive of the end time of the subsequent time sector.
+* TimeSectorEnd MUST be exclusive of the end time of the subsequent time sector.
 * TimeSectorEnd MUST be later than TimeSectorStart.
 
 ## Metadata ID
