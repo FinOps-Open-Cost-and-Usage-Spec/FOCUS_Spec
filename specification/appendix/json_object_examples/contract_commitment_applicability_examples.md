@@ -29,7 +29,7 @@ Organization-wide coverage **except** for Database services running in BillingAc
     {
       "Dimension": "ServiceCategory",
       "Operator": "In",
-      "Values": ["Database"]
+      "Values": ["Databases"]
     }
   ]
 }
