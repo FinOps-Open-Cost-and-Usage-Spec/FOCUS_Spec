@@ -21,17 +21,17 @@ For this example, fictitious service provider, *LatticeScale*, offers the follow
 | Compute | VM_LARGE  | VM_LARGE_ON_DEMAND_HOUR                 | $3.00                | 3                    |
 | Compute | VM_XLARGE | VM_XLARGE_ON_DEMAND_HOUR                | $4.00                | 4                    |
 
-The above SKU Catalog shows that this service provider only has 1 service that offers 4 virtual machine SKUs at various list rates, *commitment discount* rates, and normalization factors. Each SKU's normalization factor classifies its relative size to its *commitment discount* rate. Usage-based [*commitment discounts*](#glossary:commitment-discount) with [*commitment discount flexibility*](#appendix.examples:commitmentdiscountflexibility) can fully cover any combination of 1 or more SKUs where the sum of their normalization factor is less than or equal to the normalization factor of the *commitment discount*.
+The above SKU Catalog shows that this service provider only has 1 service that offers 4 virtual machine SKUs at various list rates, [*commitment discount*](#glossary:commitment-discount) rates, and normalization factors. Each SKU's normalization factor classifies its relative size to its *commitment discount* rate. Usage-based *commitment discounts* with [*commitment discount flexibility*](#appendix.examples:commitmentdiscountflexibility) can fully cover any combination of 1 or more SKUs where the sum of their normalization factor is less than or equal to the normalization factor of the *commitment discount*.
 
 ## Scenario
 
-* 1 no upfront *commitment discount* is purchased for 1 year (2023) for 1 VM_XLARGE which has a normalization factor of 8.
-* 2 VM_MEDIUM resources run for 1 hour from 2023-01-01T00:00:00 to 2023-01-01T01:00:00 with a normalization factor of 4 for each.
+* 1 no upfront *commitment discount* is purchased for 1 year (2023) for 1 VM_XLARGE which has a normalization factor of 4.
+* 2 VM_MEDIUM resources run for 1 hour from 2023-01-01T00:00:00 to 2023-01-01T01:00:00 with a normalization factor of 2 for each.
 
 ## Outcome
 
-* 1 recurring, purchase record exists for 1 eligible "Normalized Hour" for a no upfront, *commitment discount* and incurs a $2.00 [*BilledCost*](#datamodel.costandusage.billedcost).
+* 1 recurring, purchase record exists for 4 eligible "Normalized Hours" for a no upfront, *commitment discount* and incurs a $2.00 [*BilledCost*](#datamodel.costandusage.billedcost).
 * With *commitment discount flexibility*, 1 *commitment discount* for a VM_XLARGE covers 2 VM_MEDIUM resources within the corresponding [*charge period*](#glossary:chargeperiod) and incurs a $2.00 total [*EffectiveCost*](#datamodel.costandusage.effectivecost).
-  * 1 *commitment discount* with a normalization factor of 8 covers 2 resources with normalization factors of 4 (i.e 4 + 4 = 8).
+  * 1 *commitment discount* with a normalization factor of 4 covers 2 resources with normalization factors of 2 (i.e., 2 + 2 = 4).
 
 [CSV Example](/specification/data/commitment_discount_flexibility/one_hundred_percent_utilization_with_commitment_discount_flexibility_with_2_resources.csv)
