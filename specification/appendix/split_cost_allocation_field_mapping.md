@@ -28,7 +28,7 @@ The three consuming workloads and their measured allocation ratios for the perio
 
 ## FOCUS Output: Three-Row Transformation
 
-The data generator emits three records in the FOCUS dataset artifact for this charge period. The column-augmentation structure (all consumers on one record in the native dataset artifact) is dissolved: each consumer becomes a separate *allocated charge* row, and each row carries the preserved instance dimensions. DataGeneratorCalculatedSplitCostAllocationHandling requires that summable metrics across the *allocated charges* reconcile to the origin total. This example does not retain a separate origin row: a retained origin row would still be related to the split, so AllocatedMethodId and AllocatedServiceName would both need values on it. The row tables below show the columns that participate in the split transformation rather than the complete set of columns each row carries.
+The data generator emits three records in the FOCUS dataset artifact for this charge period. The column-augmentation structure (all consumers on one record in the native dataset artifact) is dissolved: each consumer becomes a separate *allocated charge* row, and each row carries the preserved instance dimensions. DataGeneratorCalculatedSplitCostAllocationHandling requires that summable metrics across the *allocated charges* reconcile to the origin total. The row tables below show the columns that participate in the split transformation rather than the complete set of columns each row carries.
 
 ### Column Interactions
 
