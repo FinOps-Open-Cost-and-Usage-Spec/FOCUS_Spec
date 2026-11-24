@@ -295,8 +295,8 @@ To ensure consistent language when describing relationships and evaluations betw
   ```md
   **Exceptions:**
 
-  * This rule does not apply when ChargeCategory is `Adjustment`.
-  * This rule does not apply when ChargeCategory is `Tax`.
+  * This rule does not apply when ChargeCategory is "Adjustment".
+  * This rule does not apply when ChargeCategory is "Tax".
   ```
 
 #### Status Notes
