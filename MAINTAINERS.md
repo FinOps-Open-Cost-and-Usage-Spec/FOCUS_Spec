@@ -10,7 +10,7 @@ The following individuals are the currently active Maintainers of the FOCUS proj
 | :--- | :--- | :--- | :--- | :--- |
 | Andrew Quigley | [@qquigley](https://github.com/qquigley) | Northwestern Mutual | 1.4 (2025/10/30) | |
 | Graham Murphy | [@thecloudman](https://github.com/thecloudman) | TechnologyOne | 1.5 (2026/04/30) | |
-| Irena Jurica | [@ijurica](https://github.com/ijurica) | CloudVane | 0.5 (2023/04/04) | Neos (05 to 1.5) |
+| Irena Jurica | [@ijurica](https://github.com/ijurica) | CloudVane | 0.5 (2023/04/04) | Neos (0.5 to 1.5) |
 | Joaquin Prado | [@jpradocueva](https://github.com/jpradocueva) | FinOps Foundation | 1.0 (2023/06/25) | |
 | Karl Kraft | [@kk09v](https://github.com/kk09v) | Walmart | 0.5 (2023/04/04) | |
 | Larry Advey | [@ljadvey](https://github.com/ljadvey) | CloudZero | 1.0 (2023/06/25) | Twilio (1.0 to 1.3) |

@@ -41,6 +41,7 @@ Thanks to the following FOCUS members for their contributions to the FOCUS Relea
 * Nan Braun (Thavron Solutions)
 * Ruben Vander Stockt (Across Cloud)
 * Samantha White (FinOps Foundation)
+* Tom Cross (Fellscape)
 
 <div style="page-break-after: always"></div>
 
