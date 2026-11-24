@@ -129,9 +129,9 @@ A FOCUS dataset preview MUST adhere to the following requirements:
 
 **Proposed (FR #2782, question 13):**
 
-* **Proposed:** A dataset enters preview through the same pull request gates as any other content in its release.
+* **Proposed:** A dataset enters preview through the same review and approval as any other pull request in its release, including approval by FOCUS Members.
 * **Why:** Section 5.3 of the [FOCUS Operating Procedures](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/operating_procedures.md) has a preview follow the same lifecycle and IPR process as the release it ships in.
-* **Open:** The latest point in a release cycle at which FOCUS Members can still designate a dataset a preview. For comparison, FOCUS Members chose a preview for SKU Price on October 22, 2026, during the 1.5 Final Consistency Review (October 8 to 29).
+* **Open:** The latest point in a release cycle at which FOCUS Members can still designate a dataset a preview. For comparison, FOCUS Members agreed on October 22, 2026, to make SKU Price a preview. They approved PR #2752, which marks it as one, on October 29, the last day of the 1.5 Consistency Review (October 8 to 29).
 
 A preview tracking issue MUST adhere to the following requirements:
 
@@ -146,7 +146,7 @@ A preview tracking issue MUST adhere to the following requirements:
 
 **Proposed (FR #2782, question 4):**
 
-* **Proposed:** The second and third requirements above. The scope list names each requirement outside the dataset that exists only for the preview, wherever it is defined, and names no other requirement outside the dataset. A requirement that applies to stable content stays evaluated for conformance.
+* **Proposed:** The second and third requirements above. The scope list names each requirement outside the dataset that exists only for the preview, wherever it is defined, and names no other requirement outside the dataset. A requirement outside the dataset that does not exist only for the preview stays evaluated for conformance.
 * **Why:** The [SKU Price scope list](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2768) names two such requirements: the Data Model requirement, which is outside any dataset, and the Cost and Usage requirement that ChargeCategory match SkuPrice.ChargeCategory. The merged text said "in other datasets", which does not cover the Data Model requirement.
 * **Open:** How the guideline covers a stable column that gains a requirement that exists only for a preview, including whether a `SHOULD` treats this as an exception. The example is the Cost and Usage requirement that ChargeCategory match SkuPrice.ChargeCategory. ChargeCategory is stable, and it gained this requirement with the SKU Price dataset. The requirement is not a supporting entity.
 
@@ -173,7 +173,8 @@ A preview tracking issue MUST adhere to the following requirements:
 
 * **Proposed:** Move what Version Introduced shows, for a preview and after promotion, to FR #2816, including on a supported feature that depends on a preview.
 * **Why:** FR #2816 covers what Version Introduced records for all content, including content first published as a preview. Until FR #2816 decides, the Promote step below updates each Version Introduced section to `Preview: <version> · GA: <version>`.
-* **Open:** How the General Availability glossary entry covers a supported feature. The entry names only a FOCUS dataset and a supporting entity on a scope list.
+* **Open:** How the glossary covers a supported feature that depends on a preview. The General Availability entry names only a FOCUS dataset and a supporting entity on a scope list. The Preview entry, like the Designating a Preview requirements, covers only a FOCUS dataset.
+* **Open:** Whether the Preview note that the first Marking step adds to a supported feature names each preview it depends on, as the Promote step expects of the note the feature keeps.
 
 **Proposed (FR #2782, question 17):**
 
@@ -193,11 +194,11 @@ At each later version, FOCUS Members choose one outcome and record it with its e
 
 **Proposed (FR #2782, question 14):**
 
-* **Proposed:** A preview has enough evidence to promote when its tracking issue records an answer to each open question and at least one finding from generating or using the dataset. Each answer comes from generating or using the dataset with real data, or says why the question no longer applies.
-* **Proposed:** Evidence is a finding in the tracking issue from someone who generated or used the dataset with real data (e.g., a data generator's output, or billing data a practitioner converted).
-* **Proposed:** No new evidence means the tracking issue has no new finding since the last decision. Before the first status decision, the last decision is when FOCUS Members chose the preview. An open question marked as no longer applying is not a finding, and neither is a request for comments that gets no response.
+* **Proposed:** A preview has enough evidence to promote when its tracking issue records an answer to each open question and at least one finding. Each answer comes from a finding, or says why the question no longer applies.
+* **Proposed:** A finding is a result recorded in the tracking issue by someone who generated or used the dataset with real data (e.g., a data generator's output, or billing data a practitioner converted). Evidence is one or more findings.
+* **Proposed:** No new evidence means the tracking issue has no new finding since the last decision. Before the first status decision, the last decision is the FOCUS Members approval of the pull request that marks the dataset as a preview. An open question marked as no longer applying is not a finding, and neither is a request for comments that gets no response.
 * **Why:** The Promote step already ties promotion to the open questions. Some datasets are hard to generate from native data. Billing Period, generally available since 1.4, shows why: FOCUS added it because practitioners wanted data generators to declare when billing periods are open or closed. In October 2026, Shawn Alpay noted that no data generator presented that information. Had Billing Period entered as a preview, a rule that accepted only a data generator's output could have kept it from ever being promoted.
-* **Open:** Whether fictitious data built to resemble real billing data, such as a synthetic dataset, also counts as evidence.
+* **Open:** Whether a result from fictitious data built to resemble real billing data, such as a synthetic dataset, also counts as a finding.
 * **Open:** Whether the bar should be higher when all the evidence comes from practitioners because no data generator produces the dataset.
 * **Open:** Whether a question needs findings from more than one implementer before it counts as answered.
 * **Open:** Which outcome applies when a preview already has a finding and the only changes since the last decision are that its remaining open questions are marked as no longer applying. The preview then has enough evidence to promote, but it has no new evidence, so removal is the default.
