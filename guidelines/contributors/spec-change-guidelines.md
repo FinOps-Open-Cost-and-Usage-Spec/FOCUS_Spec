@@ -200,6 +200,7 @@ At each later version, FOCUS Members choose one outcome and record it with its e
 * **Open:** Whether fictitious data built to resemble real billing data, such as a synthetic dataset, also counts as evidence.
 * **Open:** Whether the bar should be higher when all the evidence comes from practitioners because no data generator produces the dataset.
 * **Open:** Whether a question needs findings from more than one implementer before it counts as answered.
+* **Open:** Which outcome applies when a preview already has a finding and the only changes since the last decision are that its remaining open questions are marked as no longer applying. The preview then has enough evidence to promote, but it has no new evidence, so removal is the default.
 
 **Proposed (FR #2782, question 15):**
 
