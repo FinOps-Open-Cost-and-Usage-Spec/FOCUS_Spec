@@ -1,0 +1,33 @@
+vendor,line_item_legal_entity,model,product_sku,line_item_line_item_description
+aws,"Anthropic, PBC",Claude Haiku 5.5,2GHZ832VV8MGPU8X,"AWS Marketplace software usage|us-east-1|Output Tokens - Standard, Long Context, Global"
+aws,"Anthropic, PBC",Claude Haiku 5.5,8FP5E8EDA6KXE8UU,"AWS Marketplace software usage|us-east-1|Cache Read Tokens - Standard, Global"
+aws,"Anthropic, PBC",Claude Haiku 5.5,9C6E7ATQE23Q4W66,"AWS Marketplace software usage|us-east-1|Output Tokens - Standard, Global"
+aws,"Anthropic, PBC",Claude Haiku 5.5,CT2JY6DA5N94ZAXN,"AWS Marketplace software usage|us-east-1|Input Tokens - Standard, Global"
+aws,"Anthropic, PBC",Claude Haiku 5.5,CV39UEQ78VU65KM9,"AWS Marketplace software usage|us-east-1|Cache Write Tokens - Standard, Global"
+aws,"Anthropic, PBC",Claude Haiku 5.5,E7TVM9F3MW6M99X9,"AWS Marketplace software usage|us-east-1|Input Tokens - Standard, Long Context, Global"
+aws,"Anthropic, PBC",Claude Haiku 5.5,G2KF4HARNER2AXE4,"AWS Marketplace software usage|us-east-1|Cache Write Tokens - Standard, Long Context, Global"
+aws,"Anthropic, PBC",Claude Haiku 5.5,GVZFQ5E2J3BRKEG3,"AWS Marketplace software usage|us-east-1|Cache Write Tokens (1h TTL) - Standard, Long Context, Global"
+aws,"Anthropic, PBC",Claude Haiku 5.5,MDMT744HMHCN4SWC,"AWS Marketplace software usage|us-east-1|Cache Read Tokens - Standard, Long Context, Global"
+aws,"Anthropic, PBC",Claude Haiku 5.5,QMZ693GXPNRSQRMV,"AWS Marketplace software usage|us-east-1|Cache Write Tokens (1h TTL) - Standard, Global"
+aws,"Anthropic, PBC",Claude Opus 5.5,FBQZ4TZTVHHQMRTD,"AWS Marketplace software usage|us-east-1|Cache Write Tokens (1h TTL) - Standard, Global"
+aws,"Anthropic, PBC",Claude Opus 5.5,KVG5FBPDJPKF5TJY,"AWS Marketplace software usage|us-east-1|Input Tokens - Standard, Global"
+aws,"Anthropic, PBC",Claude Opus 5.5,MWH4TD2A4D5CEBAP,"AWS Marketplace software usage|us-east-1|Output Tokens - Standard, Global"
+aws,"Anthropic, PBC",Claude Opus 5.5,QT3QZUNUXV325ZDF,"AWS Marketplace software usage|us-east-1|Cache Read Tokens - Standard, Global"
+aws,"Anthropic, PBC",Claude Opus 5.5,RVG5HJ3PZEQYVC74,"AWS Marketplace software usage|us-east-1|Cache Write Tokens - Standard, Global"
+aws,"Amazon Web Services, Inc.",GLM 5.3,3KPQQHDWK64MDMKU,$0.00011 per 1K token for zai.glm-5.3-mantle-cache-read-tokens-standard in US East (N. Virginia)
+aws,"Amazon Web Services, Inc.",GLM 5.3,8EDDSJ9UUA26S7FK,$0.0011 per 1K token for zai.glm-5.3-mantle-output-tokens-standard in US East (N. Virginia)
+aws,"Amazon Web Services, Inc.",GLM 5.3,CN2NS66GSFRET7H4,$0.00011 per 1K token for zai.glm-5.3-mantle-cache-read-tokens-global-standard in US East (N. Virginia)
+aws,"Amazon Web Services, Inc.",GLM 5.3,DZDHZG3Q86FKDUDP,$0.0011 per 1K token for zai.glm-5.3-mantle-input-tokens-standard in US East (N. Virginia)
+aws,"Amazon Web Services, Inc.",GLM 5.3,UPSHPG9FFM55EJH4,$0.001 per 1K token for zai.glm-5.3-mantle-output-tokens-global-standard in US East (N. Virginia)
+aws,"Amazon Web Services, Inc.",GLM 5.3,XWRZH6PT9YB3QYKS,$0.0011 per 1K token for zai.glm-5.3-mantle-input-tokens-global-standard in US East (N. Virginia)
+aws,"OpenAI Opco, LLC",OpenAI GPT-6.1 Terra,2HTGPK4EV3MC9SJT,AWS Marketplace software usage|us-east-1|cache_read_tokens_long_ctx_global_standard
+aws,"OpenAI Opco, LLC",OpenAI GPT-6.1 Terra,2KXWXTQCZE5MZJ6V,AWS Marketplace software usage|us-east-1|cache_write_tokens_30m_long_ctx_global_standard
+aws,"OpenAI Opco, LLC",OpenAI GPT-6.1 Terra,3WUU4QUHNXRDPR7R,AWS Marketplace software usage|us-east-1|cache_read_tokens_global_standard
+aws,"OpenAI Opco, LLC",OpenAI GPT-6.1 Terra,4BMC8TMGVZSC5RGM,AWS Marketplace software usage|us-east-1|input_tokens_global_standard
+aws,"OpenAI Opco, LLC",OpenAI GPT-6.1 Terra,6AB4NM68BHDT9NTT,AWS Marketplace software usage|us-east-1|cache_write_tokens_30m_global_standard
+aws,"OpenAI Opco, LLC",OpenAI GPT-6.1 Terra,Q8B5EM328X92V8UW,AWS Marketplace software usage|us-east-1|output_tokens_long_ctx_global_standard
+aws,"OpenAI Opco, LLC",OpenAI GPT-6.1 Terra,TS73YQYNTG3VZSMZ,AWS Marketplace software usage|us-east-1|output_tokens_global_standard
+aws,"OpenAI Opco, LLC",OpenAI GPT-6.1 Terra,W9SW6ZQBH5K8HFCB,AWS Marketplace software usage|us-east-1|input_tokens_long_ctx_global_standard
+aws,"Amazon Web Services, Inc.",xai.grok-4.6,H7HQV4NFHCAT3QY2,$0.0011 per 1K token for xai.grok-4.6-mantle-output-tokens-standard in US West (Oregon)
+aws,"Amazon Web Services, Inc.",xai.grok-4.6,N2KJVRVBJV43QTCQ,$0.00011 per 1K token for xai.grok-4.6-mantle-cache-read-tokens-standard in US West (Oregon)
+aws,"Amazon Web Services, Inc.",xai.grok-4.6,SD5HYBXPEJX8YRY4,$0.0011 per 1K token for xai.grok-4.6-mantle-input-tokens-standard in US West (Oregon)

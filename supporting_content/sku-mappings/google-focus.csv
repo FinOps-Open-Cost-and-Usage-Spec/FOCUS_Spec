@@ -1,0 +1,13 @@
+vendor,PublisherName,SkuId,ChargeDescription
+Google FOCUS,Google Cloud,7C13-537E-1E75,Gemini 2.5 Flash GA Image Input - Predictions
+Google FOCUS,Google Cloud,FDAB-647C-5A22,Gemini 2.5 Flash GA Text Input - Predictions
+Google FOCUS,Google Cloud,A253-E8A3-DE5C,Gemini 2.5 Flash GA Text Output (Thinking On) - Predictions
+Google FOCUS,Google Cloud,1B7F-4B9B-BEA1,Gemini 2.5 Flash GA Text Output Priority (Thinking On) - Predictions
+Google FOCUS,Google Cloud,CD33-11F4-1220,Gemini 2.5 Flash GA Thinking Text Output - Predictions
+Google FOCUS,Google Cloud,F91B-9B51-6A93,Gemini 2.5 Flash GA Thinking Text Output Priority - Predictions
+Google FOCUS,Google Cloud,5A4B-8A14-AE05,Gemini 3.8 Flash Global Image Input - Predictions
+Google FOCUS,Google Cloud,298F-1B35-42DA,Gemini 3.8 Flash Global Image Input Caching
+Google FOCUS,Google Cloud,2A35-AC68-14D6,Gemini 3.8 Flash Global Text Input - Predictions
+Google FOCUS,Google Cloud,8658-6939-8BEC,Gemini 3.8 Flash Global Text Input Caching
+Google FOCUS,Google Cloud,90FD-DC5F-DC55,Gemini 3.8 Flash Global Text Output - Predictions
+Google FOCUS,Google Cloud,1173-9AA0-B77D,Gemini 3.8 Flash Text Input Caching Storage

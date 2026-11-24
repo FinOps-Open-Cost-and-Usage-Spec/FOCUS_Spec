@@ -1,0 +1,42 @@
+vendor,service_description,sku_id,sku_description
+Google,Claude Fable 5.2,1083-7003-2F42,Claude Fable 5 2 — Input Cache Read Tokens — global — Context Window Size from 0 to 200000 Tokens
+Google,Claude Fable 5.2,CEBB-0A8E-AB6E,Claude Fable 5 2 — Input Cache Read Tokens — global — Context Window Size from 200001 to 1000000 Tokens
+Google,Claude Fable 5.2,F3A9-E8F4-FE97,Claude Fable 5 2 — Input Cache Write Tokens (TTL 300 seconds) — global — Context Window Size from 0 to 200000 Tokens
+Google,Claude Fable 5.2,A618-6717-4170,Claude Fable 5 2 — Input Cache Write Tokens (TTL 300 seconds) — global — Context Window Size from 200001 to 1000000 Tokens
+Google,Claude Fable 5.2,1F57-E0DA-8914,Claude Fable 5 2 — Input Cache Write Tokens (TTL 3600 seconds) — global — Context Window Size from 0 to 200000 Tokens
+Google,Claude Fable 5.2,5EFF-7578-03C7,Claude Fable 5 2 — Input Cache Write Tokens (TTL 3600 seconds) — global — Context Window Size from 200001 to 1000000 Tokens
+Google,Claude Fable 5.2,E750-D41C-A833,Claude Fable 5 2 — Input Tokens — global — Context Window Size from 0 to 200000 Tokens
+Google,Claude Fable 5.2,5276-9F04-A802,Claude Fable 5 2 — Input Tokens — global — Context Window Size from 200001 to 1000000 Tokens
+Google,Claude Fable 5.2,F87E-120C-7B14,Claude Fable 5 2 — Input Tokens (Fast) — global — Context Window Size from 0 to 200000 Tokens
+Google,Claude Fable 5.2,7E0F-1E21-DA45,Claude Fable 5 2 — Output Tokens — global — Context Window Size from 0 to 200000 Tokens
+Google,Claude Fable 5.2,FEC1-97EC-2441,Claude Fable 5 2 — Output Tokens — global — Context Window Size from 200001 to 1000000 Tokens
+Google,Claude Fable 5.2,0916-7519-CDA0,Claude Fable 5 2 — Output Tokens (Fast) — global — Context Window Size from 0 to 200000 Tokens
+Google,Claude Fable 5.2,61C1-C395-B724,Claude Fable 5 2 — Web Search Requests
+Google,Vertex AI,93A9-ABC9-A1B1,Gemini 3.5 Flash Lite Global Audio Input - Predictions
+Google,Vertex AI,ABEF-E0AA-A223,Gemini 3.5 Flash Lite Global Image Input - Predictions
+Google,Vertex AI,894C-9AC4-FC86,Gemini 3.5 Flash Lite Global Image Input Caching
+Google,Vertex AI,A2BB-5D97-C5A2,Gemini 3.5 Flash Lite Global Image Input Priority - Predictions
+Google,Vertex AI,E919-BB16-FAD5,Gemini 3.5 Flash Lite Global Text Input - Batch Predictions
+Google,Vertex AI,255D-4FF7-8DB3,Gemini 3.5 Flash Lite Global Text Input - Predictions
+Google,Vertex AI,D1E7-04AD-E5B2,Gemini 3.5 Flash Lite Global Text Input Caching
+Google,Vertex AI,DC5F-8DBB-58F2,Gemini 3.5 Flash Lite Global Text Input Caching Batch
+Google,Vertex AI,A909-DA58-491D,Gemini 3.5 Flash Lite Global Text Input Caching Priority
+Google,Vertex AI,8AFE-F2A6-5966,Gemini 3.5 Flash Lite Global Text Input Priority - Predictions
+Google,Vertex AI,DD7F-093C-4532,Gemini 3.5 Flash Lite Global Text Output - Batch Predictions
+Google,Vertex AI,EF3E-6ED9-3CD1,Gemini 3.5 Flash Lite Global Text Output - Predictions
+Google,Vertex AI,9331-9BC3-A888,Gemini 3.5 Flash Lite Global Text Output Priority - Predictions
+Google,Vertex AI,2DFC-146E-234C,Gemini 3.5 Flash Lite Text Input Caching Storage
+Google,Vertex AI,E52D-D4C1-42BD,Gemini 3.5 Flash Regional Text Input - Predictions
+Google,Vertex AI,B08D-AAA4-D269,Gemini 3.5 Flash Regional Text Output - Predictions
+Google,Vertex AI,2CC2-CEA9-8671,Gemini 3.5 Flash Text Input Caching Storage
+Google,Vertex AI,08ED-AB1A-9921,Gemini 3.5 Transcribe Audio Input Count
+Google,Vertex AI,C291-A76E-87D7,Gemini 3.5 Transcribe Text Output Count
+Google,Vertex AI,0F29-C044-BCAE,Gemini 4 Argon Cyber Permissive Global Text Input - Online Predictions
+Google,Vertex AI,A5BD-15B7-8E95,Gemini 4 Argon Cyber Permissive Global Text Output - Online Predictions
+Google,Vertex AI,7037-A777-5A7E,Gemini 4 Argon Global Audio Input - Online Predictions
+Google,Vertex AI,3328-AE45-E36D,Gemini 4 Argon Global Image Input - Online Predictions
+Google,Vertex AI,C5BB-DFE6-D5A3,Gemini 4 Argon Global Image Input Caching Online
+Google,Vertex AI,3BAE-62B7-C9B9,Gemini 4 Argon Global Text Input - Online Predictions
+Google,Vertex AI,3B3E-7322-E883,Gemini 4 Argon Global Text Input Caching Online
+Google,Vertex AI,1E84-F91D-8B95,Gemini 4 Argon Global Text Output - Online Predictions
+Google,Vertex AI,4764-0BCC-BCA7,Gemini 4 Argon Global Video Input - Online Predictions

@@ -1,0 +1,11 @@
+vendor,PublisherName,model,SkuId,ChargeDescription,SkuMeter
+aws F1.2,"Anthropic, PBC",Claude Haiku 5.5,8FP5E8EDA6KXE8UU,"AWS Marketplace software usage|us-east-1|Cache Read Tokens - Standard, Global",USE1-MP:USE1_cache_read_tokens_global_standard-Units
+aws F1.2,"Anthropic, PBC",Claude Haiku 5.5,MDMT744HMHCN4SWC,"AWS Marketplace software usage|us-east-1|Cache Read Tokens - Standard, Long Context, Global",USE1-MP:USE1_cache_read_tokens_long_ctx_global_standard-Units
+aws F1.2,"Anthropic, PBC",Claude Haiku 5.5,QMZ693GXPNRSQRMV,"AWS Marketplace software usage|us-east-1|Cache Write Tokens (1h TTL) - Standard, Global",USE1-MP:USE1_cache_write_tokens_1h_global_standard-Units
+aws F1.2,"Anthropic, PBC",Claude Haiku 5.5,GVZFQ5E2J3BRKEG3,"AWS Marketplace software usage|us-east-1|Cache Write Tokens (1h TTL) - Standard, Long Context, Global",USE1-MP:USE1_cache_write_tokens_1h_long_ctx_global_standard-Units
+aws F1.2,"Anthropic, PBC",Claude Haiku 5.5,CV39UEQ78VU65KM9,"AWS Marketplace software usage|us-east-1|Cache Write Tokens - Standard, Global",USE1-MP:USE1_cache_write_tokens_global_standard-Units
+aws F1.2,"Anthropic, PBC",Claude Haiku 5.5,G2KF4HARNER2AXE4,"AWS Marketplace software usage|us-east-1|Cache Write Tokens - Standard, Long Context, Global",USE1-MP:USE1_cache_write_tokens_long_ctx_global_standard-Units
+aws F1.2,"Anthropic, PBC",Claude Haiku 5.5,CT2JY6DA5N94ZAXN,"AWS Marketplace software usage|us-east-1|Input Tokens - Standard, Global",USE1-MP:USE1_input_tokens_global_standard-Units
+aws F1.2,"Anthropic, PBC",Claude Haiku 5.5,E7TVM9F3MW6M99X9,"AWS Marketplace software usage|us-east-1|Input Tokens - Standard, Long Context, Global",USE1-MP:USE1_input_tokens_long_ctx_global_standard-Units
+aws F1.2,"Anthropic, PBC",Claude Haiku 5.5,9C6E7ATQE23Q4W66,"AWS Marketplace software usage|us-east-1|Output Tokens - Standard, Global",USE1-MP:USE1_output_tokens_global_standard-Units
+aws F1.2,"Anthropic, PBC",Claude Haiku 5.5,2GHZ832VV8MGPU8X,"AWS Marketplace software usage|us-east-1|Output Tokens - Standard, Long Context, Global",USE1-MP:USE1_output_tokens_long_ctx_global_standard-Units
