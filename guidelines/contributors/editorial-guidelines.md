@@ -193,6 +193,11 @@ semantic:
 ---
 ```
 
+* **Front Matter:** A source file may start with YAML front matter. The build removes it, so readers never see it. Three keys are recognized. Any other key in a file that defines an entity is reported (REG011):
+  * `dataset:` sets the dataset that unqualified column tags resolve in, for a file outside `datasets/`.
+  * `semantic:` records the tag kinds the file has been converted for (see Conversion Status). It is temporary.
+  * `aliases:` lists other names that resolve to the entity a file defines (e.g., `aliases: [invoice issuer name]`). In `glossary.md`, aliases are listed under the glossary key (e.g., `covered-charge: [covered]`). An alias is added only when the specification uses that name in several places. For a single use, write the explicit ID instead (e.g., `[covered](#term:covered-charge)`).
+
 The tools and their checks are in `specification/tools/semantic/`.
 
 ### Entity References

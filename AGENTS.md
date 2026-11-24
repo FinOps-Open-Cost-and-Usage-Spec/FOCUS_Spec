@@ -122,7 +122,7 @@ AI agents generating or reviewing content MUST act as strict technical editors e
 * **No Mixing:** Do not mix Entity IDs and Display Names within the same normative requirement.
 * **Column values:** Enclosed in double quotes (e.g., `"Usage"`, `"Tax"`).
 * **Glossary terms:** Link with `[*term*](#glossary:term)` format.
-* **Semantic tags:** From FOCUS 1.6, a reference MAY be written as a semantic tag (e.g., `[BilledCost](#col)`, `[charges](#term)`, `["Usage"](#val:ChargeCategory)`), and the build applies first-occurrence linking and italics. A file whose `semantic:` front matter lists a tag kind MUST keep references of that kind tagged. See Semantic Tags in the [Editorial Guidelines](guidelines/contributors/editorial-guidelines.md).
+* **Semantic tags:** From FOCUS 1.6, a reference MAY be written as a semantic tag (e.g., `[BilledCost](#col)`, `[charges](#term)`, `["Usage"](#val:ChargeCategory)`), and the build applies first-occurrence linking and italics. A file whose `semantic:` front matter lists a tag kind MUST keep references of that kind tagged. Front matter accepts only `dataset:`, `semantic:`, and `aliases:`. See Semantic Tags in the [Editorial Guidelines](guidelines/contributors/editorial-guidelines.md).
 * **Linking Rule:** Link entity names and Glossary terms ONLY on their first occurrence per source file. Exception: Functional links using different anchor text are exempt.
 * **Lists:** All unordered lists MUST use asterisks (`*`), never dashes (`-`) or plus signs (`+`). Nested bullet points MUST use exactly two spaces per level.
 * **Notes:** Important notes must use the blockquote format (`> **Note:**`), or `> **Preview:**` for notes that mark preview content.
