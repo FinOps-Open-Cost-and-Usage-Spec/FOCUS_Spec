@@ -1,6 +1,6 @@
 # AI SKU Tables
 
-Per-vendor SKU identifiers for AI model serving charges, as recorded in the [source spreadsheet](https://docs.google.com/spreadsheets/d/1FqYU23ZE513HqOBfO2cSmoWobBdIXUcPR9i2TGSzM7o/edit?gid=0#gid=0).
+Per-vendor SKU identifiers for AI model serving charges.
 
 Each table is also available as a CSV file in this folder, named for its vendor.
 
