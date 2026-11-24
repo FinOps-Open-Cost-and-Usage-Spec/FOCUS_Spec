@@ -353,7 +353,7 @@ To ensure consistent language when describing relationships and evaluations betw
 <!-- text and example from proposal (ED-TBL-01); replaces summary table row T8.a (Tables), the note (L149) and the working_draft example (L460-525) -->
 * **Markdown or HTML:** Tables MUST be written in Markdown. An HTML table MAY be used only when the table needs merged rows or columns, embedded images or multi-line cell content, or another layout that reviewers agree Markdown cannot express reliably.
 
-Example (HTML, illustrative):
+* **Example** (HTML, illustrative):
 
 ```html
 <table>
