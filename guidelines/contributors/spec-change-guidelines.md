@@ -102,6 +102,16 @@ To ensure complete and error-free removal of deprecated entities from the FOCUS 
 
 Preview is a status for a FOCUS dataset published in a version of FOCUS so implementers can build it and report what they find. A dataset with this status is called a preview. See [Preview](../../specification/overview.md#preview) in the specification for the definition.
 
+Each preview has a tracking issue with a scope list, which names each requirement excluded from conformance, including any outside the dataset that exist only for the preview, and each supporting entity outside the dataset that is part of the preview (see [Designating a Preview](#designating-a-preview)). Stable content is any content not marked as preview.
+
+A supporting entity is an entity defined outside a preview dataset's own section that the dataset depends on and that exists only for the preview (e.g., an operating model condition, or an object schema such as the SKU Price Eligibility Object Schema that the SKU Price dataset uses). A requirement is not a supporting entity.
+
+**Open (FR #2782, question 1):**
+
+* **Open:** How the glossary defines supporting entity, since the specification's overview and General Availability glossary entry use the term.
+* **Open:** What happens when stable content later starts to use a supporting entity, which then no longer exists only for the preview. One answer: before that stable content is published, the entity leaves the scope list, its Preview markings are removed, and it follows the normal change management process. What its Version Introduced section then shows follows FR #2816.
+* **Elsewhere:** Whether content in a stable dataset, such as a column, can be a preview stays open on FR #960.
+
 ### Designating a Preview
 
 A FOCUS dataset preview MUST adhere to the following requirements:
@@ -117,14 +127,36 @@ A FOCUS dataset preview MUST adhere to the following requirements:
 * A preview MAY change in the next version without a deprecation notice.
 * The Specification MUST follow the normal change management process for all entities when not marked as preview.
 
+**Proposed (FR #2782, question 13):**
+
+* **Proposed:** A dataset enters preview through the same review and approval as any other pull request in its release, including approval by FOCUS Members.
+* **Why:** Section 5.3 of the [FOCUS Operating Procedures](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/operating_procedures.md) has a preview follow the same lifecycle and IPR process as the release it ships in.
+* **Open:** The latest point in a release cycle at which FOCUS Members can still designate a dataset a preview. For comparison, FOCUS Members agreed on October 22, 2026, to make SKU Price a preview. They approved PR #2752, which marks it as one, on October 29, the last day of the 1.5 Consistency Review (October 8 to 29).
+
 A preview tracking issue MUST adhere to the following requirements:
 
 * A preview tracking issue MUST list any questions to learn from generating or using the dataset, and who raised each one.
-* A preview tracking issue MUST include the scope list, naming each requirement excluded from conformance, including any in other datasets that exist only for the preview.
+* A preview tracking issue MUST include the scope list, naming each requirement excluded from conformance, including any outside the dataset that exist only for the preview.
+* A preview tracking issue MUST NOT name on the scope list a requirement outside the dataset unless that requirement exists only for the preview.
 * A preview tracking issue MUST name in the scope list each supporting entity outside the dataset that the preview includes (e.g., an operating model condition).
 * A preview tracking issue SHOULD list at least one early implementer, who is any person or organization, inside or outside the working group, that will generate or use the dataset to answer open questions.
 * A preview tracking issue MUST state the date of the next status decision.
 * A preview tracking issue MUST record that a request for comments went to existing data generators, and who responded.
+* A preview tracking issue MUST name a single person who keeps it up to date.
+
+**Proposed (FR #2782, question 4):**
+
+* **Proposed:** The second and third requirements above. The scope list names each requirement outside the dataset that exists only for the preview, wherever it is defined, and names no other requirement outside the dataset. A requirement outside the dataset that does not exist only for the preview stays evaluated for conformance.
+* **Why:** The [SKU Price scope list](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2768) names two such requirements: the Data Model requirement, which is outside any dataset, and the Cost and Usage requirement that ChargeCategory match SkuPrice.ChargeCategory. The merged text said "in other datasets", which does not cover the Data Model requirement.
+* **Open:** How the guideline covers a stable column that gains a requirement that exists only for a preview, including whether a `SHOULD` treats this as an exception. The example is the Cost and Usage requirement that ChargeCategory match SkuPrice.ChargeCategory. ChargeCategory is stable, and it gained this requirement with the SKU Price dataset. The requirement is not a supporting entity.
+
+**Proposed (FR #2782, question 16):**
+
+* **Proposed:** The last requirement above: each tracking issue names a single person who keeps it up to date.
+* **Proposed:** Tracking issues follow the section layout of the [SKU Price tracking issue](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2768): a detailed description, the pull requests, the open questions, the scope list, and the definition of done. The definition of done carries the other tracking issue requirements above as checklist items (e.g., the early implementer, the date of the next status decision, and the request for comments).
+* **Why:** The SKU Price tracking issue already uses this layout, names one assignee, and carries those requirements as checklist items in its definition of done.
+* **Open:** Who sends the request for comments to data generators, when, and in what form.
+* **Open:** How practitioners and data generators outside the working group commit to trying a preview.
 
 ### Marking a Preview
 
@@ -132,17 +164,52 @@ A preview tracking issue MUST adhere to the following requirements:
 * Add "(preview)" after the dataset's name in listings (e.g., the data model dataset table).
 * Add a note to each section outside the dataset that has requirements on the scope list or defines a supporting entity on it (e.g., the Charge Category column in Cost and Usage), naming them and stating that, while the dataset is in preview, those requirements are excluded from conformance and those supporting entities may change without a deprecation notice.
 * Record the preview and every later change to it in the version changelog, with migration notes.
+* Add "(preview)" after the name of each preview dataset in the version's release notes, including a preview extended from an earlier version, and state there that only the datasets named as previews are previews.
 * Set the status of each requirement on the scope list to Preview in the requirements model.
 * Set each Version Introduced section in the dataset, including its columns, to `Preview: <version>` (e.g., `Preview: 1.5`).
 * Set the Version Introduced section of each supporting entity on the scope list to `Preview: <version>`, unless the tracking issue explicitly notes an exception for that entity.
+
+**Proposed (FR #2782, question 11):**
+
+* **Proposed:** Move what Version Introduced shows, for a preview and after promotion, to FR #2816, including on a supported feature that depends on a preview.
+* **Why:** FR #2816 covers what Version Introduced records for all content, including content first published as a preview. Until FR #2816 decides, the Promote step below updates each Version Introduced section to `Preview: <version> · GA: <version>`.
+* **Open:** How the glossary covers a supported feature that depends on a preview. The General Availability entry names only a FOCUS dataset and a supporting entity on a scope list. The Preview entry, like the Designating a Preview requirements, covers only a FOCUS dataset.
+* **Open:** Whether the Preview note that the first Marking step adds to a supported feature names each preview it depends on, as the Promote step expects of the note the feature keeps.
+
+**Proposed (FR #2782, question 17):**
+
+* **Proposed:** The release notes step above, which also covers a preview extended from an earlier version.
+* **Proposed:** The website and announcements follow the same practice: they name each preview dataset as a preview wherever they list what a version includes, so readers do not take a whole release as a preview.
+* **Why:** Section 7.2 of the [FOCUS Operating Procedures](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/operating_procedures.md) already requires previews to be labeled as such wherever they are published.
+* **Open:** Confirm with whoever owns the release announcement and the website.
+* **Open:** Whether each column page in a preview dataset also carries a `> **Preview:**` note, so a reader who opens one column sees it without reading the dataset's page first.
 
 ### Exiting Preview
 
 At each later version, FOCUS Members choose one outcome and record it with its evidence in the tracking issue:
 
-* **Promote:** Remove the preview designation once the open questions are addressed. The dataset's requirements become Active in the requirements model, and the "(preview)" label and Preview notes are removed. Each Version Introduced section is updated to include the general availability (GA) version (e.g., `Preview: 1.5 · GA: 1.6`).
+* **Promote:** Remove the preview designation once the open questions are addressed. The dataset's requirements become Active in the requirements model, and the "(preview)" label and Preview notes are removed. Each Version Introduced section is updated to include the general availability (GA) version (e.g., `Preview: 1.5 · GA: 1.6`). A supported feature that depends on the dataset is the exception: it becomes generally available only when every FOCUS entity it depends on is generally available. Until then, it keeps a Preview note that names only the entities that are still a preview.
 * **Extend:** Keep the preview for one more version, with a plan for the next evidence.
 * **Remove:** Remove the dataset without a deprecation notice or retention period. This is the default when there is no new evidence since the last decision.
+
+**Proposed (FR #2782, question 14):**
+
+* **Proposed:** A preview has enough evidence to promote when its tracking issue records an answer to each open question and at least one finding. Each answer comes from a finding, or says why the question no longer applies.
+* **Proposed:** A finding is a result recorded in the tracking issue by someone who generated or used the dataset with real data (e.g., a data generator's output, or billing data a practitioner converted). Evidence is one or more findings.
+* **Proposed:** No new evidence means the tracking issue has no new finding since the last decision. Before the first status decision, the last decision is the FOCUS Members approval of the pull request that marks the dataset as a preview. An open question marked as no longer applying is not a finding, and neither is a request for comments that gets no response.
+* **Why:** The Promote step already ties promotion to the open questions. Some datasets are hard to generate from native data. Billing Period, generally available since 1.4, shows why: FOCUS added it because practitioners wanted data generators to declare when billing periods are open or closed. In October 2026, Shawn Alpay noted that no data generator presented that information. Had Billing Period entered as a preview, a rule that accepted only a data generator's output could have kept it from ever being promoted.
+* **Open:** Whether a result from fictitious data built to resemble real billing data, such as a synthetic dataset, also counts as a finding.
+* **Open:** Whether the bar should be higher when all the evidence comes from practitioners because no data generator produces the dataset.
+* **Open:** Whether a question needs findings from more than one implementer before it counts as answered.
+* **Open:** Which outcome applies when a preview already has a finding and the only changes since the last decision are that its remaining open questions are marked as no longer applying. The preview then has enough evidence to promote, but it has no new evidence, so removal is the default.
+
+**Proposed (FR #2782, question 15):**
+
+* **Proposed:** A preview stays for at least one published version, so the first status decision comes in the version after the one that introduced it.
+* **Proposed:** Each decision follows that version's release gates.
+* **Why:** The removal default above already limits how long a preview without new evidence can last. Because release cycles overlap, the time between a preview's publication and its first decision depends on which gate the decision is tied to.
+* **Open:** Which release gate each decision is tied to.
+* **Open:** Whether a preview that keeps producing new evidence also has a maximum number of versions.
 
 ## Change Type Classification
 
