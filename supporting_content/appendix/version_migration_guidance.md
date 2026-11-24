@@ -23,7 +23,7 @@ FOCUS 1.5 introduces changes across the categories defined by the [Change Impact
 | Classification | Summary |
 |----------------|---------|
 | **Compatible** | A new SKU Price dataset (preview), new columns for requester attribution and split cost allocation, new `SkuPriceDetails` properties for AI model billing, three new supported features (two preview), and column presence requirements expressed through operating model conditions. No changes required to existing queries. |
-| **Migration Compatible** | Revised definitions of the list and contracted price and cost columns, consumption currency in place of virtual currency, SKU identifiers scoped to `ServiceProviderName`, a largest-whole-unit rule for `ContractCommitmentDurationType`, and a new "Bare Metal" `ServiceSubcategory` value split from "Virtual Machines", and a `ConsumedQuantity` rule against counting cached tokens twice. Queries or implementations that depend on these require review. |
+| **Migration Compatible** | Revised definitions of the list and contracted price and cost columns, consumption currency in place of virtual currency, SKU identifiers scoped to `ServiceProviderName`, a largest-whole-unit rule for `ContractCommitmentDurationType`, a new "Bare Metal" `ServiceSubcategory` value split from "Virtual Machines", and a `ConsumedQuantity` rule against counting cached tokens twice. Queries or implementations that depend on these require review. |
 | **Incompatible** | None |
 
 FOCUS 1.5 removes and renames no columns, attributes, or datasets. Most of its migration impact is on values, not on schema: the same columns are present, but some of them hold different values for affected service providers. A query that runs without error against FOCUS 1.5 data can still return different results than it did against FOCUS 1.4 data. Practitioners should review the What Requires Migration summary and the Practitioner Guidance below; data generators should review the Data Generator Guidance.
@@ -92,7 +92,7 @@ FOCUS 1.5 revises [`ListCost`](/specification/datasets/cost_and_usage/columns/li
 
 `ListCost` and `ContractedCost` follow the same split for "Usage" and "Purchase" charges that are not corrections.
 
-Two consequences matter for savings analysis:
+A few consequences matter for savings analysis:
 
 * The revised definition states explicitly that a negotiated discount received in exchange for a spend commitment is reflected in Contracted Unit Price. The effect of applying a commitment discount to covered charges is not; it remains in `EffectiveCost`.
 * The gap between List Cost and Contracted Cost measures the effect of negotiated pricing terms. The gap between Contracted Cost and Effective Cost measures the effect of discount-bearing commitment programs being applied to the charge. Negotiated terms of a commitment program that do not depend on it being applied, such as the unit price for its purchase, are reflected in Contracted Cost.
