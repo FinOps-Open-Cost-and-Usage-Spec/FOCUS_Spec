@@ -14,7 +14,7 @@ It brings over, from `supporting_content/semantic_markup_prototype/` on the demo
 
 * **The entity registry** (`build_registry.py`). It reads every entity from the file that defines it (column files, `glossary.md`, attributes, operating model conditions, datasets, JSON objects and schemas, metadata) and checks each definition's structure (REG001 to REG017).
 * **The resolver** (`resolve_semantic.py`, `focus_semantic.py`). It turns tags into ordinary Markdown links and italics and checks every tag (FOCUS001 to FOCUS019). The tests come with it (`test_resolve_semantic.py`).
-* **Build changes.** A Makefile step builds the registry and resolves the tags. The linter configuration accepts front matter. markdown-pp's Include module marks where each included file begins and ends, and strips front matter (`vendored/MarkdownPP/Modules/Include.py`).
+* **Build changes.** A Makefile step builds the registry and resolves the tags. The step is opt-in (`make semantic=1`), so the default build is unchanged until the Working Group turns it on. The linter configuration accepts front matter. markdown-pp's Include module marks where each included file begins and ends, and strips front matter (`vendored/MarkdownPP/Modules/Include.py`).
 * **Tools for the conversion AIs.** The converter (`tag_sources.py`, `convert_all.sh`) takes a list of paths and a list of kinds. The rendered comparison (`compare_rendered.sh`, `classify_rendered.py`) lists every difference in the published specification against a base commit, sorted by kind.
 
 **Conversion status per file.** Each converted file records, for each tag kind, how far its conversion has gone. The keys are the tag kinds exactly as tags write them:

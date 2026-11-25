@@ -47,6 +47,7 @@ The conversion carries over what the markup says today and corrects nothing. For
 * [ ] The Working Group's choice of kinds and files is recorded on this issue.
 * [ ] The converter, with only the approved translation rules switched on, has been run on every file in scope, and nothing else in those files changed.
 * [ ] Each converted file lists each converted kind as `mechanical`, and rerunning the converter changes nothing, which CI checks.
+* [ ] Before the converted files merge, the build resolves tags by default, so CI runs the tag steps (today they run only with `make semantic=1`).
 * [ ] The build passes with 0 errors.
 * [ ] The PR includes the rendered comparison against its base. No visible word changed, and every added or removed link and every italics change is listed.
 * [ ] The PR lists the items left open, for the inference AI and the semantic review.

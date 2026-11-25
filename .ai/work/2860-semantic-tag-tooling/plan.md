@@ -2,7 +2,7 @@
 
 ## Principle
 
-With no tags in the source, the build produces a `spec.md` byte-identical to `working_draft_interim`. Every tag-dependent completeness check is scoped to the kinds a file lists as `reviewed` in `semantic:`.
+The tag steps are opt-in (`make semantic=1`); by default the build is unchanged. With no tags in the source, either mode produces a `spec.md` byte-identical to `working_draft_interim`. Every tag-dependent completeness check is scoped to the kinds a file lists as `reviewed` in `semantic:`.
 
 ## Steps
 

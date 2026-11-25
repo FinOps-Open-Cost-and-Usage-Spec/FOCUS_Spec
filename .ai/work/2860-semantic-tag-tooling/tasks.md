@@ -10,8 +10,9 @@
 * [ ] Reconcile the FR's Maintainer Assessment (pilot, per-area phasing) with the AIs
 * [x] Move core tooling and tests to `specification/tools/semantic/` (registry lookups split into `registry.py`; the prototype Pandoc filter is not carried over)
 * [x] Integrate the registry, status check, and resolver into the Makefile; linter front matter; markdown-pp Include markers
+* [x] Make the tag steps opt-in (`make semantic=1`); Include markers only with `FOCUS_SEMANTIC=1`; default build and console output identical to 12770c1a
 * [x] Parse and validate `semantic:` kind statuses (FOCUS020)
-* [x] FOCUS004 only for `col: reviewed`; `tag_sources.py --check` (FOCUS021) for `mechanical` kinds, run by the build
+* [x] FOCUS004 only for `col: reviewed`; `tag_sources.py --check` (FOCUS021) for `mechanical` kinds, run by `make semantic=1`
 * [x] REG017 skipped in the build (`--rm-release none`); `make check-requirements-model` runs it with `--fail-on REG017`
 * [x] `--kinds` in tag_sources.py and convert_all.sh; path filter in convert_all.sh; `--out -` in build_registry.py
 * [x] `rm_extraction.yml`: no change. The extract step passed on #2819 with 8,504 tags and front matter in 334 files; Matt's assessment found all 181 shared entities unchanged. Ask to amend the #2860 DoD item
@@ -20,4 +21,5 @@
 * [x] Demo billedcost.md (with the demo glossary aliases) resolves identically to the demo; Billing Period pilot in scratch: 145 tags, build passes, rerun idempotent
 * [x] Tests: 48 in `specification/tools/semantic/tests`, run locally with pytest; CI for them is a future AI
 * [ ] User review of #2860 wording; commit and open the PR when asked
+* [ ] Before the first conversion merges (AI #2862): turn the tag steps on by default so CI runs them
 * [ ] Semantic review AIs (later): each kind needs a completeness check before its `semantic:` key can be removed; only `col` has one today (FOCUS004)
