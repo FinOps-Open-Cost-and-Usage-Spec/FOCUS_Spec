@@ -6,6 +6,7 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 import glob
+import os
 import re
 from os import path
 
@@ -53,6 +54,16 @@ class Include(Module):
             data = f.readlines()
             f.close()
 
+            # FOCUS: drop YAML front matter (e.g., semantic aliases) from
+            # included files; it is metadata for the entity registry only.
+            if data and data[0].strip() == "---":
+                for end in range(1, len(data)):
+                    if data[end].strip() == "---":
+                        data = data[end + 1:]
+                        while data and not data[0].strip():
+                            data = data[1:]
+                        break
+
             # line by line, apply shift and recursively include file data
             linenum = 0
             for line in data:
@@ -82,7 +93,16 @@ class Include(Module):
 
                 linenum += 1
 
-            return data
+            # FOCUS: when FOCUS_SEMANTIC=1 (set by `make semantic=1`), mark the
+            # file boundary so the semantic reference resolver can apply per-file
+            # rules (first-mention linking) and report source line numbers. The
+            # resolver removes these lines from spec.md.
+            if os.environ.get("FOCUS_SEMANTIC") != "1":
+                return data
+            if data and not data[-1].endswith("\n"):
+                data[-1] += "\n"
+            return (["<!-- focus:begin %s -->\n" % filename] + data +
+                    ["<!-- focus:end %s -->\n" % filename])
 
         except (IOError, OSError) as exc:
             print(exc)
