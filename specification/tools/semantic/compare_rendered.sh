@@ -24,7 +24,7 @@ export PATH="$(dirname "$("$PYTHON" -c 'import sys; print(sys.executable)')"):$P
 assemble() {  # $1 = checkout root, $2 = output file
   (cd "$1/specification" &&
      cp versions/working_draft.md version.md &&
-     PYTHONPATH=../vendored/ "$PYTHON" ../vendored/bin/markdown-pp spec.mdpp -o "$2.raw")
+     PYTHONPATH=../vendored/ FOCUS_SEMANTIC=1 "$PYTHON" ../vendored/bin/markdown-pp spec.mdpp -o "$2.raw")
 }
 
 # Base: a temporary worktree at BASE_REF, assembled as that ref builds it

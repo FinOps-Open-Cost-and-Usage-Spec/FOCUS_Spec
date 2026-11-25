@@ -6,6 +6,7 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 import glob
+import os
 import re
 from os import path
 
@@ -92,9 +93,12 @@ class Include(Module):
 
                 linenum += 1
 
-            # FOCUS: mark the file boundary so the semantic reference resolver
-            # can apply per-file rules (first-mention linking) and report source
-            # line numbers. The resolver removes these lines from spec.md.
+            # FOCUS: when FOCUS_SEMANTIC=1 (set by `make semantic=1`), mark the
+            # file boundary so the semantic reference resolver can apply per-file
+            # rules (first-mention linking) and report source line numbers. The
+            # resolver removes these lines from spec.md.
+            if os.environ.get("FOCUS_SEMANTIC") != "1":
+                return data
             if data and not data[-1].endswith("\n"):
                 data[-1] += "\n"
             return (["<!-- focus:begin %s -->\n" % filename] + data +

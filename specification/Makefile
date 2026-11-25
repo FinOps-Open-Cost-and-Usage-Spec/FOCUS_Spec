@@ -6,6 +6,8 @@ WKHTMLTOPDF=$(shell which wkhtmltopdf)
 PANDOC_PROJECT_RELATIVE_LINKS=../vendored/pandoc-project-relative-links/pandoc-project-relative-links.py
 # Semantic tags (#2779), such as [BilledCost](#col), are resolved into today's links and
 # formatting between markdown-pp and the rest of the build. Untagged text passes through unchanged.
+# Off by default: set semantic=1 to run these steps (e.g., make semantic=1).
+semantic?=0
 SEMANTIC_TOOLS=tools/semantic
 SEMANTIC_REGISTRY=semantic-registry.json
 SEMANTIC_TOOL_FILES=$(wildcard $(SEMANTIC_TOOLS)/*.py)
@@ -77,7 +79,7 @@ else
 	@$(PYMARKDOWNLNT) --config markdownlnt.cfg scan $(SPEC_SOURCE_MDFILES)
 endif
 
-spec.md: $(SPEC_SOURCE_FILES) $(SEMANTIC_TOOL_FILES)
+spec.md: $(SPEC_SOURCE_FILES) $(if $(filter 1,$(semantic)),$(SEMANTIC_TOOL_FILES))
 	@echo "Running linter on markdown files in the following directories:"
 	@for dir in $$(find $(SPEC_SOURCE_DIRS) -type f \( -name "*.md" -o -name "*.mdpp" \) -exec dirname {} \; | sort -u); do \
 		echo "  - $$dir"; \
@@ -112,6 +114,7 @@ endif
 	while IFS=: read -r file line _; do \
 		echo "WARNING: Found code block escape that is not aligned to the start of the line in file $$file on line $$line"; \
 	done || true
+ifeq ($(semantic),1)
 	@echo "Checking entity definitions and building the semantic registry..."
 	python3 $(SEMANTIC_TOOLS)/build_registry.py --spec-dir . --out $(SEMANTIC_REGISTRY) --rm-release none $(if $(filter 1,$(force)),,--strict)
 	@echo "Checking the conversion status of files that list a tag kind as mechanical..."
@@ -120,9 +123,12 @@ ifeq ($(force),1)
 else
 	@python3 $(SEMANTIC_TOOLS)/tag_sources.py --check --registry $(SEMANTIC_REGISTRY) $(SPEC_SOURCE_MDFILES)
 endif
-	PYTHONPATH=../vendored/ $(MARKDOWNPP) spec.mdpp -o spec.semantic.md
+	PYTHONPATH=../vendored/ FOCUS_SEMANTIC=1 $(MARKDOWNPP) spec.mdpp -o spec.semantic.md
 	@echo "Resolving semantic tags..."
 	python3 $(SEMANTIC_TOOLS)/resolve_semantic.py --registry $(SEMANTIC_REGISTRY) $(if $(filter 1,$(force)),--no-strict) spec.semantic.md -o $@
+else
+	PYTHONPATH=../vendored/ $(MARKDOWNPP) spec.mdpp -o $@
+endif
 ifeq ($(force),1)
 	-@$(PYMARKDOWNLNT) --config markdownlnt.cfg scan $@
 else

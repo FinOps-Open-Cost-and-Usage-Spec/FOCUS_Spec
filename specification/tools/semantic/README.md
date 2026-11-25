@@ -1,16 +1,16 @@
 # Semantic Tag Tools
 
-These scripts let the specification source state which FOCUS entity a reference means, using semantic tags such as `[BilledCost](#col)` and `[charges](#term)`, and check those references on every build (FR #2779). For how to write tags and the `semantic:` front matter, see [Semantic Tags](../../../guidelines/contributors/editorial-guidelines.md#semantic-tags) in the Editorial Guidelines.
+These scripts let the specification source state which FOCUS entity a reference means, using semantic tags such as `[BilledCost](#col)` and `[charges](#term)`, and check those references when the build runs with `semantic=1` (FR #2779). For how to write tags and the `semantic:` front matter, see [Semantic Tags](../../../guidelines/contributors/editorial-guidelines.md#semantic-tags) in the Editorial Guidelines.
 
-Semantic tags apply to FOCUS 1.6 and later. Text without tags passes through the build unchanged, so tagged and untagged files can coexist.
+Semantic tags apply to FOCUS 1.6 and later. Text without tags passes through the build unchanged, so tagged and untagged files can coexist. The build steps are off by default; see [How the Build Uses Them](#how-the-build-uses-them).
 
 ## Scripts
 
 | Script | What it does | When it runs |
 | :--- | :--- | :--- |
-| `build_registry.py` | Reads every entity from the file that defines it (columns, allowed values, datasets, attributes, operating model conditions, JSON objects and schemas, metadata, glossary terms) and writes the entity registry as JSON. Checks each definition's structure (REG codes). | Every build |
-| `tag_sources.py` | Converts references written in today's conventions to tags and records each converted kind in the file's `semantic:` front matter. With `--check`, changes nothing and reports each line a file listed as `mechanical` would still convert (FOCUS021). | `--check` in every build; conversion by hand |
-| `resolve_semantic.py` | Turns tags into today's links and italics in the assembled specification and checks every tag (FOCUS codes). | Every build |
+| `build_registry.py` | Reads every entity from the file that defines it (columns, allowed values, datasets, attributes, operating model conditions, JSON objects and schemas, metadata, glossary terms) and writes the entity registry as JSON. Checks each definition's structure (REG codes). | `make semantic=1` |
+| `tag_sources.py` | Converts references written in today's conventions to tags and records each converted kind in the file's `semantic:` front matter. With `--check`, changes nothing and reports each line a file listed as `mechanical` would still convert (FOCUS021). | `--check` with `make semantic=1`; conversion by hand |
+| `resolve_semantic.py` | Turns tags into today's links and italics in the assembled specification and checks every tag (FOCUS codes). | `make semantic=1` |
 | `registry.py` | Shared lookups: which entity a tag names, in which dataset or metadata collection. | Imported by the scripts above |
 | `convert_all.sh` | Runs `tag_sources.py` on the files the build includes, optionally limited to paths and tag kinds. | By hand |
 | `compare_rendered.sh` | Builds the published `spec.md` for a base commit and for the working tree, and lists every changed line. | By hand |
@@ -20,14 +20,16 @@ Each script's docstring describes its options in full.
 
 ## How the Build Uses Them
 
-`make spec.md` in `specification/` runs these steps after the existing lint and include checks:
+The steps are off by default. Without `semantic=1`, the build runs exactly as it did before these tools: markdown-pp writes `spec.md` directly and none of the scripts run. A tag in the source is then published as written, so specification files stay untagged until the steps are on by default.
+
+`make semantic=1` in `specification/` runs these steps after the existing lint and include checks:
 
 1. `build_registry.py` writes `semantic-registry.json` and reports definition findings. The build skips the Requirements Model comparison (REG017).
 2. `tag_sources.py --check` checks the conversion status of every source file.
-3. markdown-pp assembles `spec.semantic.md`, marking where each included file begins and ends and dropping front matter.
+3. markdown-pp assembles `spec.semantic.md`, marking where each included file begins and ends (`FOCUS_SEMANTIC=1`) and dropping front matter.
 4. `resolve_semantic.py` resolves the tags into `spec.md`, which Pandoc then turns into `spec.html`.
 
-`spec.semantic.md` and `semantic-registry.json` are build outputs and are not committed. `make force=1` reports errors without stopping the build.
+`spec.semantic.md` and `semantic-registry.json` are build outputs and are not committed. `make force=1` reports errors without stopping the build. Make does not rebuild an up-to-date `spec.md` when only the flag changes, so run `make clean` when switching between the two modes.
 
 ## Common Commands
 

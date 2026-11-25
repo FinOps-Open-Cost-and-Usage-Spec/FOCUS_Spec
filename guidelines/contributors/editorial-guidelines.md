@@ -166,7 +166,7 @@ Authors MUST refer to the [Normative Requirements Guidelines](normative-requirem
 
 ### Semantic Tags
 
-A semantic tag is a Markdown link whose target names the kind of entity a reference means, instead of a location. The build resolves each tag into the links and formatting described in Linking, so the author writes the tag on every mention and does not decide which mention links. Semantic tags apply from FOCUS 1.6. A reference written in the existing conventions (a hand-written link, italics, or plain text) remains valid, and both may appear in the same file.
+A semantic tag is a Markdown link whose target names the kind of entity a reference means, instead of a location. The build resolves each tag into the links and formatting described in Linking, so the author writes the tag on every mention and does not decide which mention links. Semantic tags apply from FOCUS 1.6. A reference written in the existing conventions (a hand-written link, italics, or plain text) remains valid, and both may appear in the same file. Tags are resolved only when the specification is built with `make semantic=1`. Without it, a tag is published as written.
 
 | Kind | Entity | Example |
 | :--- | :--- | :--- |

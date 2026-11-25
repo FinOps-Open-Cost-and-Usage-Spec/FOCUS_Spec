@@ -32,7 +32,7 @@ cd "$SPEC"
 OUT="$HERE/build"
 mkdir -p "$OUT"
 cp versions/working_draft.md version.md
-PYTHONPATH=../vendored/ "$PYTHON" ../vendored/bin/markdown-pp spec.mdpp -o "$OUT/assembled.md"
+PYTHONPATH=../vendored/ FOCUS_SEMANTIC=1 "$PYTHON" ../vendored/bin/markdown-pp spec.mdpp -o "$OUT/assembled.md"
 
 list="$(mktemp)"
 trap 'rm -f "$list"' EXIT
