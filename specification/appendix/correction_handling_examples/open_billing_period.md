@@ -2,7 +2,7 @@
 
 The following examples illustrate how corrections to open billing periods, including both current and previous open periods, may be represented in FOCUS Cost and Usage datasets, using various delivery mechanisms and correction styles.
 
-Note: Corrections in this section apply to billing periods that are still open, whether current (Current Open-Period Correction Scenarios) or previous (Previous Open-Period Correction Scenarios). In the examples that follow, the InvoiceId column contains a provisional or placeholder value, even though the invoice has not yet been issued.
+> **Note:** Corrections in this section apply to billing periods that are still open, whether current (Current Open-Period Correction Scenarios) or previous (Previous Open-Period Correction Scenarios). In the examples that follow, the InvoiceId column contains a provisional or placeholder value, even though the invoice has not yet been issued.
 
 ## Current Open-Period Correction Scenarios
 

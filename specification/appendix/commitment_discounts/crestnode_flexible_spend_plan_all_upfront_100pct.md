@@ -34,7 +34,7 @@ This scenario demonstrates **full utilization** where exactly 100% of the commit
 
 Understanding how columns relate to each other is critical for validating FOCUS data. This section explains the key relationships.
 
-### Quantity Columns: PricingQuantity vs. ConsumedQuantity vs. CommitmentDiscountQuantity
+### Quantity Columns: Pricing Quantity vs. Consumed Quantity vs. Commitment Discount Quantity
 
 These three quantity columns serve different purposes and must be understood in context:
 
@@ -46,7 +46,7 @@ These three quantity columns serve different purposes and must be understood in 
 
 **For spend-based commitments:** CommitmentDiscountQuantity represents the dollar amount applied, not a count of resources. For a $52.74/hour commitment, this value is $52.74.
 
-### Pricing Columns: ListUnitPrice vs. ContractedUnitPrice
+### Pricing Columns: List Unit Price vs. Contracted Unit Price
 
 | Column                  | Purpose                  | Commitment-Covered |
 | ----------------------- | ------------------------ | ------------------ |
@@ -55,7 +55,7 @@ These three quantity columns serve different purposes and must be understood in 
 
 **Why this matters:** ContractedUnitPrice reflects enterprise-negotiated pricing (e.g., enterprise-negotiated rates), not commitment discount savings. In non-negotiated scenarios, ContractedUnitPrice equals ListUnitPrice. Commitment discount savings are reflected in EffectiveCost, not in unit prices.
 
-### Cost Columns: BilledCost vs. EffectiveCost vs. ListCost
+### Cost Columns: Billed Cost vs. Effective Cost vs. List Cost
 
 | Scenario         | BilledCost         | EffectiveCost | ListCost           |
 | ---------------- | ------------------ | ------------- | ------------------ |
@@ -69,32 +69,32 @@ The following critical rules apply to commitment discount data:
 
 ## Purchase Row Details
 
-| Column                     | Value                                 | Explanation                                                 |
-| -------------------------- | ------------------------------------- | ----------------------------------------------------------- |
-| ChargeCategory             | Purchase                              | Commitment purchase transaction                             |
-| ChargeFrequency            | One-Time                              | One-time upfront payment                                    |
-| BilledCost                 | $462,002.40                    | Full annual commitment payment                              |
-| EffectiveCost              | $0.00                          | **must be 0** - cost is amortized to usage rows             |
-| PricingQuantity            | 462,002.40                            | Total commitment in USD (PricingUnit = USD)                 |
-| CommitmentDiscountStatus   | null                                  | Status only applies to usage rows                           |
-| CommitmentDiscountQuantity | 462,002.40                            | Full annual commitment ($52.74/hr &times; 8,760 hrs) |
-| CommitmentDiscountUnit     | USD                                   | Unit of commitment capacity (spend-based)                   |
-| SkuId                      | CRESTNODE-EASTUS-COMPUTE-PURCHASE            | Commitment purchase SKU                                     |
-| SkuPriceId                 | CRESTNODE-EASTUS-COMPUTE-PURCHASE-UPFRONT    | Price point for upfront purchase                            |
+| Column                     | Value                                                   | Explanation                                          |
+| -------------------------- | ------------------------------------------------------- | ---------------------------------------------------- |
+| ChargeCategory             | Purchase                                                | Commitment purchase transaction                      |
+| ChargeFrequency            | One-Time                                                | One-time upfront payment                             |
+| BilledCost                 | $462,002.40                                             | Full annual commitment payment                       |
+| EffectiveCost              | $0.00                                                   | **must be 0** - cost is amortized to usage rows      |
+| PricingQuantity            | 462,002.40                                              | Total commitment in USD (PricingUnit = USD)          |
+| CommitmentDiscountStatus   | null                                                    | Status only applies to usage rows                    |
+| CommitmentDiscountQuantity | 462,002.40                                              | Full annual commitment ($52.74/hr &times; 8,760 hrs) |
+| CommitmentDiscountUnit     | USD                                                     | Unit of commitment capacity (spend-based)            |
+| SkuId                      | CRESTNODE-EASTUS-COMPUTE-PURCHASE                       | Commitment purchase SKU                              |
+| SkuPriceId                 | CRESTNODE-EASTUS-COMPUTE-FLEXSPEND-PURCHASE-ALL-UPFRONT | Price point for the all upfront purchase fee         |
 
 ## Usage Row Details (Commitment-Covered)
 
-| Column                     | Value                                                 | Explanation                                |
-| -------------------------- | ----------------------------------------------------- | ------------------------------------------ |
-| ChargeCategory             | Usage                                                 | Compute resource consumption               |
-| PricingCategory            | Committed                                             | Priced under commitment discount           |
-| BilledCost                 | $0.00                                          | **must be 0** - covered by commitment      |
-| EffectiveCost              | $52.74                                         | Amortized cost (annual / hours)            |
-| ListCost                   | $79.11                                         | What you would have paid at list price     |
-| PricingQuantity            | 1                                                     | Units priced                               |
-| ConsumedQuantity           | 1                                                     | Hours used                                 |
-| CommitmentDiscountQuantity | 52.74                                                 | Hourly commitment spend applied            |
-| CommitmentDiscountStatus   | Used                                                  | Commitment applied                         |
-| CommitmentDiscountId       | crestnode:compute:eastus:f0e9d8c7-b6a5-4321-0987-654321...   | Links usage to purchase                    |
-| SkuId                      | CRESTNODE-EASTUS-COMPUTE-USAGE                               | Resource usage SKU (differs from Purchase) |
-| SkuPriceId                 | CRESTNODE-EASTUS-COMPUTE-USAGE-COMMITTED                     | Price point for committed usage            |
+| Column                     | Value                                                      | Explanation                                                |
+| -------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
+| ChargeCategory             | Usage                                                      | Compute resource consumption                               |
+| PricingCategory            | Committed                                                  | Priced under commitment discount                           |
+| BilledCost                 | $0.00                                                      | **must be 0** - covered by commitment                      |
+| EffectiveCost              | $52.74                                                     | Amortized cost (annual / hours)                            |
+| ListCost                   | $79.11                                                     | What you would have paid at list price                     |
+| PricingQuantity            | 1                                                          | Units priced                                               |
+| ConsumedQuantity           | 1                                                          | Hours used                                                 |
+| CommitmentDiscountQuantity | 52.74                                                      | Hourly commitment spend applied                            |
+| CommitmentDiscountStatus   | Used                                                       | Commitment applied                                         |
+| CommitmentDiscountId       | crestnode:compute:eastus:f0e9d8c7-b6a5-4321-0987-654321... | Links usage to purchase                                    |
+| SkuId                      | CRESTNODE-EASTUS-COMPUTE-USAGE                             | Resource usage SKU (differs from Purchase)                 |
+| SkuPriceId                 | CRESTNODE-EASTUS-COMPUTE-USAGE-FLEXSPEND-ALL-UPFRONT       | Price point for committed usage under the all upfront plan |

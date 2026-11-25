@@ -136,12 +136,23 @@
         "Value": null
       },
       "Condition": {
-        "CheckFunction": "CheckValue",
-        "ColumnName": "CommitmentDiscountId",
-        "Value": null
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckNotValue",
+            "ColumnName": "CommitmentDiscountId",
+            "Value": null
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ChargeCategory",
+            "Value": "Usage"
+          }
+        ]
       },
       "Dependencies": [
-        "CommitmentDiscountId-C-000-C"
+        "CommitmentDiscountId-C-000-C",
+        "ChargeCategory-C-002-M"
       ]
     }
   },
@@ -163,17 +174,12 @@
           {
             "CheckFunction": "CheckValue",
             "ColumnName": "CommitmentDiscountStatus",
-            "Value": "Active"
+            "Value": "Used"
           },
           {
             "CheckFunction": "CheckValue",
             "ColumnName": "CommitmentDiscountStatus",
-            "Value": "Expired"
-          },
-          {
-            "CheckFunction": "CheckValue",
-            "ColumnName": "CommitmentDiscountStatus",
-            "Value": "Pending"
+            "Value": "Unused"
           }
         ]
       },

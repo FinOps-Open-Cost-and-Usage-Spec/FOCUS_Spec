@@ -24,7 +24,7 @@ ContractCommitmentOfferCategory MUST adhere to the following requirements:
 * Use Public as your baseline for market comparison.
 * Use Negotiated to track the efficacy of your procurement team's discount efforts.
 
-Sensitivity Note: Records marked as Negotiated often fall under non-disclosure agreements (NDAs). This field can serve as a metadata tag for data masking or access control when sharing reports with third parties.
+> **Note:** Records marked as Negotiated often fall under non-disclosure agreements (NDAs). This field can serve as a metadata tag for data masking or access control when sharing reports with third parties.
 
 ## Column ID
 
@@ -40,14 +40,15 @@ Indicates whether the pricing and terms of a *contract commitment* are based on 
 
 ## Content Constraints
 
-| Constraint      | Value          |
-| :-------------- | :------------- |
-| Dataset         | [Contract Commitment](#datasets.contractcommitment)  |
-| Column type     | Dimension      |
-| Feature level   | Mandatory      |
-| Allows nulls    | False          |
-| Data type       | String         |
-| Value format    | Allowed values |
+| Constraint                 | Value                                                |
+| :------------------------- | :--------------------------------------------------- |
+| Dataset                    | [Contract Commitment](#datamodel.contractcommitment) |
+| Operating model conditions | Not applicable                                       |
+| Column type                | Dimension                                            |
+| Feature level              | Mandatory                                            |
+| Allows nulls               | False                                                |
+| Data type                  | String                                               |
+| Value format               | Allowed values                                       |
 
 ## Version Introduced
 

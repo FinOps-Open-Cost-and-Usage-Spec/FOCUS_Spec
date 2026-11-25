@@ -14,7 +14,7 @@ StringEncoding
 
 ## Metadata Name
 
-StringEncoding
+String Encoding
 
 ## Content Constraints
 

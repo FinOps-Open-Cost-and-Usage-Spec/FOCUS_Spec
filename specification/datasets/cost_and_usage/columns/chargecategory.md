@@ -1,6 +1,8 @@
 # Charge Category
 
-Charge Category represents the highest-level classification of a [*charge*](#glossary:charge) based on the nature of how it is billed. Charge Category is commonly used to identify and distinguish between types of [*charges*](#glossary:charge) that may require different handling.
+Charge Category represents the highest-level classification of a [*charge*](#glossary:charge) based on the nature of how it is billed. Charge Category is commonly used to identify and distinguish between types of *charges* that may require different handling.
+
+> **Preview:** The SKU Price dataset is a preview in this version of FOCUS. The requirement that Charge Category match SKU Price Charge Category is excluded from conformance while that dataset is a preview.
 
 ## Requirements
 
@@ -10,10 +12,11 @@ ChargeCategory MUST adhere to the following requirements:
 * ChargeCategory MUST NOT be null.
 * ChargeCategory MUST be one of the allowed values.
 * ChargeCategory MUST be "Usage" when the *charge* represents consumption of a service or resource.
-* ChargeCategory MUST be "Purchase" when the *charge* represents acquisition of a service, resource, or *commitment*.
+* ChargeCategory MUST be "Purchase" when the *charge* represents acquisition of a service, resource, or [*commitment*](#glossary:commitment).
 * ChargeCategory MUST be "Tax" when the *charge* represents taxes levied by the relevant authorities.
 * ChargeCategory MUST be "Credit" when the *charge* represents a financial incentive or allowance unrelated to other charges.
 * ChargeCategory MUST be "Adjustment" when the *charge* represents a billing modification that does not fall into other ChargeCategories.
+* ChargeCategory for a given [SkuPriceId](#datamodel.costandusage.skupriceid) and [ServiceProviderName](#datamodel.costandusage.serviceprovidername) MUST match [SkuPrice.ChargeCategory](#datamodel.skuprice.chargecategory) for the same [SkuPrice.SkuPriceId](#datamodel.skuprice.skupriceid) and [SkuPrice.ServiceProviderName](#datamodel.skuprice.serviceprovidername) when SkuPriceId is not null and ChargeCategory is "Usage" or "Purchase".
 
 ## Allowed Values
 
@@ -39,14 +42,15 @@ Represents the highest-level classification of a *charge* based on the nature of
 
 ## Content Constraints
 
-| Constraint      | Value                                                |
-| :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datasets.costandusage)             |
-| Column type     | Dimension                                            |
-| Feature level   | Mandatory                                            |
-| Allows nulls    | False                                                |
-| Data type       | String                                               |
-| Value format    | Allowed values                                       |
+| Constraint                 | Value                                     |
+| :------------------------- | :---------------------------------------- |
+| Dataset                    | [Cost and Usage](#datamodel.costandusage) |
+| Operating model conditions | Not applicable                            |
+| Column type                | Dimension                                 |
+| Feature level              | Mandatory                                 |
+| Allows nulls               | False                                     |
+| Data type                  | String                                    |
+| Value format               | Allowed values                            |
 
 ## Version Introduced
 

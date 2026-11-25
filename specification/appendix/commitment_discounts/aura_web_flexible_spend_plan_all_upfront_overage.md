@@ -35,7 +35,7 @@ This scenario demonstrates **100% utilization with overage** where demand exceed
 
 Understanding how columns relate to each other is critical for validating FOCUS data. This section explains the key relationships.
 
-### Quantity Columns: PricingQuantity vs. ConsumedQuantity vs. CommitmentDiscountQuantity
+### Quantity Columns: Pricing Quantity vs. Consumed Quantity vs. Commitment Discount Quantity
 
 These three quantity columns serve different purposes and must be understood in context:
 
@@ -47,7 +47,7 @@ These three quantity columns serve different purposes and must be understood in 
 
 **For spend-based commitments:** CommitmentDiscountQuantity represents the dollar amount applied, not a count of resources. For a $24.20/hour commitment, this value is $24.20.
 
-### Pricing Columns: ListUnitPrice vs. ContractedUnitPrice
+### Pricing Columns: List Unit Price vs. Contracted Unit Price
 
 | Column                  | Purpose                  | Commitment-Covered | Standard      |
 | ----------------------- | ------------------------ | ------------------ | ------------- |
@@ -56,7 +56,7 @@ These three quantity columns serve different purposes and must be understood in 
 
 **Why this matters:** ContractedUnitPrice reflects enterprise-negotiated pricing (e.g., enterprise-negotiated rates), not commitment discount savings. In non-negotiated scenarios, ContractedUnitPrice equals ListUnitPrice. Commitment discount savings are reflected in EffectiveCost, not in unit prices.
 
-### Cost Columns: BilledCost vs. EffectiveCost vs. ListCost
+### Cost Columns: Billed Cost vs. Effective Cost vs. List Cost
 
 | Scenario         | BilledCost         | EffectiveCost | ListCost           |
 | ---------------- | ------------------ | ------------- | ------------------ |
@@ -72,35 +72,35 @@ The following critical rules apply to commitment discount data:
 
 ## Purchase Row Details
 
-| Column                     | Value                                | Explanation                                                 |
-| -------------------------- | ------------------------------------ | ----------------------------------------------------------- |
-| ChargeCategory             | Purchase                             | Commitment purchase transaction                             |
-| ChargeFrequency            | One-Time                             | One-time upfront payment                                    |
-| BilledCost                 | $211,992.00                   | Full annual commitment payment                              |
-| EffectiveCost              | $0.00                         | **must be 0** - cost is amortized to usage rows             |
-| PricingQuantity            | 211,992.00                           | Total commitment in USD (PricingUnit = USD)                 |
-| CommitmentDiscountStatus   | null                                 | Status only applies to usage rows                           |
-| CommitmentDiscountQuantity | 211,992.00                           | Full annual commitment ($24.20/hr &times; 8,760 hrs) |
-| CommitmentDiscountUnit     | USD                                  | Unit of commitment capacity (spend-based)                   |
-| SkuId                      | AURAWEB-USEAST1-COMPUTE-PURCHASE         | Commitment purchase SKU                                     |
-| SkuPriceId                 | AURAWEB-USEAST1-COMPUTE-PURCHASE-UPFRONT | Price point for upfront purchase                            |
+| Column                     | Value                                                  | Explanation                                          |
+| -------------------------- | ------------------------------------------------------ | ---------------------------------------------------- |
+| ChargeCategory             | Purchase                                               | Commitment purchase transaction                      |
+| ChargeFrequency            | One-Time                                               | One-time upfront payment                             |
+| BilledCost                 | $211,992.00                                            | Full annual commitment payment                       |
+| EffectiveCost              | $0.00                                                  | **must be 0** - cost is amortized to usage rows      |
+| PricingQuantity            | 211,992.00                                             | Total commitment in USD (PricingUnit = USD)          |
+| CommitmentDiscountStatus   | null                                                   | Status only applies to usage rows                    |
+| CommitmentDiscountQuantity | 211,992.00                                             | Full annual commitment ($24.20/hr &times; 8,760 hrs) |
+| CommitmentDiscountUnit     | USD                                                    | Unit of commitment capacity (spend-based)            |
+| SkuId                      | AURAWEB-USEAST1-COMPUTE-PURCHASE                       | Commitment purchase SKU                              |
+| SkuPriceId                 | AURAWEB-USEAST1-COMPUTE-FLEXSPEND-PURCHASE-ALL-UPFRONT | Price point for the all upfront purchase fee         |
 
 ## Usage Row Details (Commitment-Covered)
 
-| Column                     | Value                                                 | Explanation                                |
-| -------------------------- | ----------------------------------------------------- | ------------------------------------------ |
-| ChargeCategory             | Usage                                                 | Compute resource consumption               |
-| PricingCategory            | Committed                                             | Priced under commitment discount           |
-| BilledCost                 | $0.00                                          | **must be 0** - covered by commitment      |
-| EffectiveCost              | $24.20                                         | Amortized cost (annual / hours)            |
-| ListCost                   | $36.30                                         | What you would have paid at list price     |
-| PricingQuantity            | 1                                                     | Units priced                               |
-| ConsumedQuantity           | 1                                                     | Hours used                                 |
-| CommitmentDiscountQuantity | 24.20                                                 | Hourly commitment spend applied            |
-| CommitmentDiscountStatus   | Used                                                  | Commitment applied                         |
-| CommitmentDiscountId       | auraweb:flexspend::123456789012:flexspendplan/fsp-... | Links usage to purchase                    |
-| SkuId                      | AURAWEB-USEAST1-COMPUTE-USAGE                             | Resource usage SKU (differs from Purchase) |
-| SkuPriceId                 | AURAWEB-USEAST1-COMPUTE-USAGE-COMMITTED                   | Price point for committed usage            |
+| Column                     | Value                                                 | Explanation                                                |
+| -------------------------- | ----------------------------------------------------- | ---------------------------------------------------------- |
+| ChargeCategory             | Usage                                                 | Compute resource consumption                               |
+| PricingCategory            | Committed                                             | Priced under commitment discount                           |
+| BilledCost                 | $0.00                                                 | **must be 0** - covered by commitment                      |
+| EffectiveCost              | $24.20                                                | Amortized cost (annual / hours)                            |
+| ListCost                   | $36.30                                                | What you would have paid at list price                     |
+| PricingQuantity            | 1                                                     | Units priced                                               |
+| ConsumedQuantity           | 1                                                     | Hours used                                                 |
+| CommitmentDiscountQuantity | 24.20                                                 | Hourly commitment spend applied                            |
+| CommitmentDiscountStatus   | Used                                                  | Commitment applied                                         |
+| CommitmentDiscountId       | auraweb:flexspend::123456789012:flexspendplan/fsp-... | Links usage to purchase                                    |
+| SkuId                      | AURAWEB-USEAST1-COMPUTE-USAGE                         | Resource usage SKU (differs from Purchase)                 |
+| SkuPriceId                 | AURAWEB-USEAST1-COMPUTE-USAGE-FLEXSPEND-ALL-UPFRONT   | Price point for committed usage under the all upfront plan |
 
 ## Standard Pricing Usage Row Details
 

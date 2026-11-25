@@ -2,7 +2,7 @@
 
 Invoice Detail Grain represents the set of key-value pairs that defines the granularity of an invoice line item. The grain may vary from one record to the next, both within a single invoice and across [*invoice issuers*](#glossary:invoice-issuer), and key-value pairs are used instead of separate columns to accommodate this variability.
 
-This gives FinOps practitioners a single point of reference for all possible [Invoice Detail](#datasets.invoicedetail) granularities (e.g., SKU, service, resource, custom dimension), supporting downstream data transformations such as reconciliation and cost allocation.
+This gives FinOps practitioners a single point of reference for all possible [Invoice Detail](#datamodel.invoicedetail) granularities (e.g., SKU, service, resource, custom dimension), supporting downstream data transformations such as reconciliation and cost allocation.
 
 ## Requirements
 
@@ -13,9 +13,9 @@ InvoiceDetailGrain MUST adhere to the following requirements:
 * InvoiceDetailGrain MUST conform to [KeyValueFormat](#attributes.key-valueformat) requirements.
 * InvoiceDetailGrain MUST NOT be null when one or more properties uniquely define the granularity of the invoice line item.
 * InvoiceDetailGrain MUST contain the set of all properties that uniquely define the granularity of the invoice line item.
-* InvoiceDetailGrain SHOULD use the applicable FOCUS-defined Invoice Detail Grain properties listed below to represent the granularity of the invoice line item.
-* InvoiceDetailGrain MUST include all custom Invoice Detail Grain properties that are applicable to the granularity of the invoice line item when there is no equivalent FOCUS-defined property.
-* InvoiceDetailGrain property keys SHOULD conform to [PascalCase](#glossary:pascalcase) format.
+* InvoiceDetailGrain SHOULD use the applicable FOCUS-defined InvoiceDetailGrain properties listed below to represent the granularity of the invoice line item.
+* InvoiceDetailGrain MUST include all custom InvoiceDetailGrain properties that are applicable to the granularity of the invoice line item when there is no equivalent FOCUS-defined property.
+* InvoiceDetailGrain property keys SHOULD conform to [*PascalCase*](#glossary:pascalcase) format.
 * InvoiceDetailGrain property keys MUST begin with the string "x_" unless it is a FOCUS-defined property.
 * FOCUS-defined InvoiceDetailGrain properties MUST adhere to the following requirements:
   * Property key MUST match the spelling and casing specified for the FOCUS-defined property.
@@ -23,17 +23,17 @@ InvoiceDetailGrain MUST adhere to the following requirements:
 
 ## FOCUS-Defined Properties
 
-The following keys should be used when applicable when a relevant concept is represented on an invoice. For more information, see the relevant [Cost and Usage](#datasets.costandusage) column entry.
+The following keys should be used when applicable when a relevant concept is represented on an invoice. For more information, see the relevant [Cost and Usage](#datamodel.costandusage) column entry.
 
-* Contract ID (element of [ContractApplied](#datasets.costandusage.contractapplied))
-* [Region ID](#datasets.costandusage.regionid)
-* [Resource ID](#datasets.costandusage.resourceid)
-* [Resource Type](#datasets.costandusage.resourcetype)
-* [Service Name](#datasets.costandusage.servicename)
-* [SKU ID](#datasets.costandusage.skuid)
-* [SKU Meter](#datasets.costandusage.skumeter)
-* [SKU Price ID](#datasets.costandusage.skupriceid)
-* [Sub Account ID](#datasets.costandusage.subaccountid)
+* Contract ID (element of [ContractApplied](#datamodel.costandusage.contractapplied))
+* [Region ID](#datamodel.costandusage.regionid)
+* [Resource ID](#datamodel.costandusage.resourceid)
+* [Resource Type](#datamodel.costandusage.resourcetype)
+* [Service Name](#datamodel.costandusage.servicename)
+* [SKU ID](#datamodel.costandusage.skuid)
+* [SKU Meter](#datamodel.costandusage.skumeter)
+* [SKU Price ID](#datamodel.costandusage.skupriceid)
+* [Sub Account ID](#datamodel.costandusage.subaccountid)
 
 ## Examples
 
@@ -59,14 +59,15 @@ The set of key-value pairs that defines the granularity of the invoice line item
 
 ## Content Constraints
 
-|    Constraint    |              Value             |
-|:----------------|:--------------------------------|
-| Dataset         | [Invoice Detail](#datasets.invoicedetail)             |
-| Column type     | Dimension                       |
-| Feature level   | Mandatory                       |
-| Allows nulls    | True                            |
-| Data type       | JSON                            |
-| Value format    | [Key-Value Format](#attributes.key-valueformat) |
+| Constraint                 | Value                                           |
+| :------------------------- | :---------------------------------------------- |
+| Dataset                    | [Invoice Detail](#datamodel.invoicedetail)      |
+| Operating model conditions | Not applicable                                  |
+| Column type                | Dimension                                       |
+| Feature level              | Mandatory                                       |
+| Allows nulls               | True                                            |
+| Data type                  | JSON                                            |
+| Value format               | [Key-Value Format](#attributes.key-valueformat) |
 
 ## Version Introduced
 

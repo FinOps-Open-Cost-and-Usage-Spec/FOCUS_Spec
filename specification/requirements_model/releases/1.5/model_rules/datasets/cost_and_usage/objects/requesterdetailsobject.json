@@ -1,0 +1,355 @@
+{
+  "CAU-RequesterDetailsObject-O-000-M": {
+    "Function": "Composite",
+    "Reference": "RequesterDetailsObject",
+    "EntityType": "Object",
+    "EntityName": "Requester Details Object",
+    "EntityId": "RequesterDetailsObject",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Static",
+    "Order": 0,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "RequesterDetailsObject MUST adhere to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-RequesterDetailsObject-O-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-RequesterDetailsObject-O-002-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-RequesterDetailsObject-O-003-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-RequesterDetailsObject-O-004-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-RequesterDetailsObject-O-005-M"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CAU-RequesterDetailsObject-O-001-M",
+        "CAU-RequesterDetailsObject-O-002-M",
+        "CAU-RequesterDetailsObject-O-003-C",
+        "CAU-RequesterDetailsObject-O-004-C",
+        "CAU-RequesterDetailsObject-O-005-M"
+      ]
+    }
+  },
+  "CAU-RequesterDetailsObject-O-001-M": {
+    "Function": "Validation",
+    "Reference": "RequesterDetailsObject",
+    "EntityType": "Object",
+    "EntityName": "Requester Details Object",
+    "EntityId": "RequesterDetailsObject",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Dynamic",
+    "Order": 10,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "RequesterDetailsObject MUST conform to the RequesterDetailsObjectSchema JSON Schema.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-RequesterDetailsObject-O-002-M": {
+    "Function": "Validation",
+    "Reference": "RequesterDetailsObject",
+    "EntityType": "Object",
+    "EntityName": "Requester Details Object",
+    "EntityId": "RequesterDetailsObject",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Dynamic",
+    "Order": 20,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "RequesterDetailsObject MUST NOT include entries that are not applicable to the requester associated with the charge.",
+      "Keyword": "MUST NOT",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-RequesterDetailsObject-O-003-C": {
+    "Function": "Validation",
+    "Reference": "RequesterDetailsObject",
+    "EntityType": "Object",
+    "EntityName": "Requester Details Object",
+    "EntityId": "RequesterDetailsObject",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Dynamic",
+    "Order": 30,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "RequesterDetailsObject MUST NOT include an entry whose Entry.key is \"Principal\" when PrincipalId is null.",
+      "Keyword": "MUST NOT",
+      "Requirement": {},
+      "Condition": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "PrincipalId",
+        "Value": null
+      },
+      "Dependencies": [
+        "CAU-PrincipalId-C-000-C"
+      ]
+    }
+  },
+  "CAU-RequesterDetailsObject-O-004-C": {
+    "Function": "Validation",
+    "Reference": "RequesterDetailsObject",
+    "EntityType": "Object",
+    "EntityName": "Requester Details Object",
+    "EntityId": "RequesterDetailsObject",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Dynamic",
+    "Order": 40,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "RequesterDetailsObject MUST NOT include an entry whose Entry.key is \"Credential\" when CredentialId is null.",
+      "Keyword": "MUST NOT",
+      "Requirement": {},
+      "Condition": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "CredentialId",
+        "Value": null
+      },
+      "Dependencies": [
+        "CAU-CredentialId-C-000-C"
+      ]
+    }
+  },
+  "CAU-RequesterDetailsObject-O-005-M": {
+    "Function": "Composite",
+    "Reference": "RequesterDetailsObject",
+    "EntityType": "Object",
+    "EntityName": "Requester Details Object",
+    "EntityId": "RequesterDetailsObject",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Static",
+    "Order": 50,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "RequesterDetailsObject entries MUST adhere to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-RequesterDetailsObject-O-006-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-RequesterDetailsObject-O-007-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-RequesterDetailsObject-O-008-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-RequesterDetailsObject-O-009-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-RequesterDetailsObject-O-010-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-RequesterDetailsObject-O-011-M"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CAU-RequesterDetailsObject-O-006-M",
+        "CAU-RequesterDetailsObject-O-007-M",
+        "CAU-RequesterDetailsObject-O-008-M",
+        "CAU-RequesterDetailsObject-O-009-M",
+        "CAU-RequesterDetailsObject-O-010-M",
+        "CAU-RequesterDetailsObject-O-011-M"
+      ]
+    }
+  },
+  "CAU-RequesterDetailsObject-O-006-M": {
+    "Function": "Validation",
+    "Reference": "RequesterDetailsObject",
+    "EntityType": "Object",
+    "EntityName": "Requester Details Object",
+    "EntityId": "RequesterDetailsObject",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Dynamic",
+    "Order": 60,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "Entry.key in RequesterDetailsObject MUST be unique within RequesterDetailsObject.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-RequesterDetailsObject-O-007-M": {
+    "Function": "Validation",
+    "Reference": "RequesterDetailsObject",
+    "EntityType": "Object",
+    "EntityName": "Requester Details Object",
+    "EntityId": "RequesterDetailsObject",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Dynamic",
+    "Order": 70,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "Entry.value in RequesterDetailsObject MUST carry the descriptive attributes of the requester level named by Entry.key.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-RequesterDetailsObject-O-008-M": {
+    "Function": "Validation",
+    "Reference": "RequesterDetailsObject",
+    "EntityType": "Object",
+    "EntityName": "Requester Details Object",
+    "EntityId": "RequesterDetailsObject",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Dynamic",
+    "Order": 80,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "Entry.value.Type MUST represent the kind of entity described by the entry.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-RequesterDetailsObject-O-009-M": {
+    "Function": "Validation",
+    "Reference": "RequesterDetailsObject",
+    "EntityType": "Object",
+    "EntityName": "Requester Details Object",
+    "EntityId": "RequesterDetailsObject",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Dynamic",
+    "Order": 90,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "Entry.value.Name MUST represent a readable display name for the entity described by the entry.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-RequesterDetailsObject-O-010-M": {
+    "Function": "Validation",
+    "Reference": "RequesterDetailsObject",
+    "EntityType": "Object",
+    "EntityName": "Requester Details Object",
+    "EntityId": "RequesterDetailsObject",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Dynamic",
+    "Order": 100,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "Entry.value.Email MUST represent an email address associated with the entity described by the entry.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-RequesterDetailsObject-O-011-M": {
+    "Function": "Validation",
+    "Reference": "RequesterDetailsObject",
+    "EntityType": "Object",
+    "EntityName": "Requester Details Object",
+    "EntityId": "RequesterDetailsObject",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.5",
+    "Status": "Active",
+    "Conditions": [],
+    "Type": "Dynamic",
+    "Order": 110,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "Custom entry in RequesterDetailsObject MUST represent a level of the requester that is neither the principal nor the credential.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}

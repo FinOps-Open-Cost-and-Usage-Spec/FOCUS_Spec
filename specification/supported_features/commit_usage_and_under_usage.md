@@ -2,16 +2,15 @@
 
 ## Description
 
-FOCUS supports the tracking of commitment discounts usage and under usage, which can come in the form of commitment discounts or capacity reservations.
+FOCUS supports the tracking of [*commitment discounts*](#glossary:commitment-discount) usage and under usage, which can come in the form of *commitment discounts* or [*capacity reservations*](#glossary:capacity-reservation).
 
 ## Directly Dependent Columns
 
-* CommitmentDiscountID
+* CommitmentDiscountId
 * CommitmentDiscountStatus
 * CommitmentDiscountType
-* CapacityReservationID
+* CapacityReservationId
 * CapacityReservationStatus
-* CapacityReservationType
 
 ## Supporting Columns
 
@@ -19,9 +18,10 @@ FOCUS supports the tracking of commitment discounts usage and under usage, which
 * ChargePeriodStart
 * ChargePeriodEnd
 * EffectiveCost
-* ServiceCategory
 
-## Example SQL Query for Commitment Discounts
+## Example SQL Queries
+
+### Report on Unused Commitment Discounts
 
 ```sql
 SELECT
@@ -32,17 +32,18 @@ SELECT
   CommitmentDiscountStatus,
   SUM(BilledCost) AS TotalBilledCost,
   SUM(EffectiveCost) AS TotalEffectiveCost
-FROM focus_data_table
+FROM CostAndUsage
 WHERE ChargePeriodStart >= ? AND ChargePeriodEnd < ?
   AND CommitmentDiscountStatus = 'Unused'
 GROUP BY
   ServiceProviderName,
   BillingAccountId,
   CommitmentDiscountId,
-  CommitmentDiscountType
+  CommitmentDiscountType,
+  CommitmentDiscountStatus
 ```
 
-## Example SQL Query for Capacity Reservations
+### Report on Unused Capacity Reservations
 
 ```sql
 SELECT
@@ -52,7 +53,7 @@ SELECT
   CapacityReservationStatus,
   SUM(BilledCost) AS TotalBilledCost,
   SUM(EffectiveCost) AS TotalEffectiveCost
-FROM focus_data_table
+FROM CostAndUsage
 WHERE ChargePeriodStart >= ? AND ChargePeriodEnd < ?
   AND CapacityReservationStatus = 'Unused'
 GROUP BY

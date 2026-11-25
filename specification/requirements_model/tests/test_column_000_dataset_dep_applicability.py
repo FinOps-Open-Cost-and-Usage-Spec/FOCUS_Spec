@@ -1,11 +1,12 @@
 """
 For every -000- Column rule, check that each -D- rule in its Dependencies
-carries the same ApplicabilityCriteria as the -000- rule itself.
+carries the same applicability conditions as the -000- rule itself.
 
-Applies to version 1.4 and later.
+Applies to version 1.4 and later. The key is "ApplicabilityCriteria" prior
+to 1.5 and "Conditions" from 1.5 onward.
 """
 import pytest
-from conftest import requires_version
+from conftest import requires_version, get_conditions, conditions_key
 
 
 def test_column_000_dataset_dep_applicability_matches(model_version, cr_json):
@@ -14,13 +15,14 @@ def test_column_000_dataset_dep_applicability_matches(model_version, cr_json):
         pytest.skip(reason)
 
     model_rules = cr_json.get("ModelRules", {})
+    key = conditions_key(model_version)
     errors = []
 
     for rule_id, rule in model_rules.items():
         if "-000-" not in rule_id or rule.get("EntityType") != "Column":
             continue
 
-        col_ac = sorted(rule.get("ApplicabilityCriteria") or [])
+        col_ac = sorted(get_conditions(rule, model_version))
         deps = rule.get("ValidationCriteria", {}).get("Dependencies", [])
 
         for dep_id in deps:
@@ -29,14 +31,14 @@ def test_column_000_dataset_dep_applicability_matches(model_version, cr_json):
             dep_rule = model_rules.get(dep_id)
             if dep_rule is None:
                 continue
-            dep_ac = sorted(dep_rule.get("ApplicabilityCriteria") or [])
+            dep_ac = sorted(get_conditions(dep_rule, model_version))
             if col_ac != dep_ac:
                 errors.append(
-                    f"  {rule_id}  ApplicabilityCriteria={col_ac}\n"
-                    f"    -> {dep_id}  ApplicabilityCriteria={dep_ac}"
+                    f"  {rule_id}  {key}={col_ac}\n"
+                    f"    -> {dep_id}  {key}={dep_ac}"
                 )
 
     assert not errors, (
         f"{len(errors)} -000- Column rule(s) whose -D- dependency has "
-        f"mismatched ApplicabilityCriteria:\n" + "\n".join(errors)
+        f"mismatched {key}:\n" + "\n".join(errors)
     )

@@ -68,7 +68,6 @@ def build_version(version):
     
     files = [
         'model_details.json',
-        'applicability_criteria.json',
         'check_functions.json',
         'model_datasets.json'
     ]
@@ -82,6 +81,16 @@ def build_version(version):
         model_version_tuple = tuple(int(x) for x in _ver_str.split('.')[:2])
     except Exception:
         model_version_tuple = (0, 0)
+
+    # The rule applicability flag catalog was renamed from applicability_criteria.json
+    # ("ApplicabilityCriteria") to conditions.json ("Conditions") in 1.5. Merge whichever
+    # file is present so the builder works across versions.
+    if os.path.exists(os.path.join(version_dir, 'conditions.json')):
+        files.insert(1, 'conditions.json')
+    elif os.path.exists(os.path.join(version_dir, 'applicability_criteria.json')):
+        files.insert(1, 'applicability_criteria.json')
+    else:
+        logger.warning(f'⚠️  Neither conditions.json nor applicability_criteria.json found in {version_dir}')
 
     json_schemas_dir = os.path.join(version_dir, 'json_schemas')
     json_schemas_file = os.path.join(json_schemas_dir, 'json_schemas.json')

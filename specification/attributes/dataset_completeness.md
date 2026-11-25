@@ -10,7 +10,7 @@ Dataset conforming to DatasetCompleteness attribute MUST adhere to the following
 
 * *FOCUS dataset* MUST adhere to the following *custom column* presence requirements:
   * *FOCUS dataset* MUST include *custom columns* (e.g., `x_ChargeSubType`) needed to support [*invoice reconciliation*](#glossary:invoice-reconciliation) when the [*invoice issuer*](#glossary:invoice-issuer) supports payable invoices, and when *FOCUS columns* are not sufficient.
-  * *FOCUS dataset* MUST include *custom columns* corresponding to [*native dataset*](#glossary:native-dataset) columns, except those explicitly listed as exclusions with justification in publicly-available documentation, provided those excluded columns are unrelated to *invoice reconciliation*.
+  * *FOCUS dataset* MUST include *custom columns* corresponding to *native dataset* columns, except those explicitly listed as exclusions with justification in publicly-available documentation, provided those excluded columns are unrelated to *invoice reconciliation*.
   * *FOCUS dataset* MUST have all included *custom columns* documented in publicly-available documentation, including description, purpose, and relationship to *native dataset* columns.
   * *FOCUS dataset* SHOULD include *custom columns* that enable correlation between *FOCUS dataset* records and *native dataset* records (e.g., native [*charge*](#glossary:charge) identifiers), even when they meet the criteria for exclusion.
   * *FOCUS dataset* SHOULD exclude *custom columns* that duplicate information already captured in *FOCUS columns*, except during a transitional period as defined in publicly-available documentation, to enable migration without breaking changes.
@@ -24,7 +24,7 @@ A service provider's native cost dataset includes a column `internal_project_id`
 
 The native dataset also includes a native billing event reference (`billing_event_id`) that does not directly support analysis but allows practitioners to trace *FOCUS dataset* records back to native records. The *FOCUS dataset* includes this as `x_BillingEventId` to enable correlation between the two datasets.
 
-Even when a single native record results in multiple FOCUS records (e.g., separating discounted and non-discounted portions of a charge in a [Cost and Usage](#datasets.costandusage) [*dataset artifact*](#glossary:dataset-artifact)), *custom columns* like `x_InternalProjectId` and `x_BillingEventId` are preserved in all resulting records and cost metrics like `BilledCost` are split accurately, maintaining data integrity.
+Even when a single native record results in multiple FOCUS records (e.g., separating discounted and non-discounted portions of a charge in a [Cost and Usage](#datamodel.costandusage) [*dataset artifact*](#glossary:dataset-artifact)), *custom columns* like `x_InternalProjectId` and `x_BillingEventId` are preserved in all resulting records and cost metrics like `BilledCost` are split accurately, maintaining data integrity.
 
 *Custom columns* that duplicate newly introduced *FOCUS columns* may be preserved during a documented transitional period to enable migration without breaking changes.
 
