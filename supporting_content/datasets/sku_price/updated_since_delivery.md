@@ -33,7 +33,7 @@ The row key lets a practitioner tell which delivered row a new version supersede
 
 > **Note:** Append (versioned) means each row is a new version that supersedes earlier rows with the same row key. Additive Append, where rows only add, is a different case.
 
-If PeriodStart and PeriodEnd are left at their defaults in scenario 3, only prices active in the current billing period are returned.
+If PeriodStart and PeriodEnd are left at their defaults in scenario 3, only prices active on or after the start of the current billing period are returned.
 
 The first scheduled delivery uses scenario 1 or 2 so the practitioner starts with all prices.
 
@@ -45,9 +45,9 @@ Source: 14 monthly Azure EA price sheets (September 2025 to October 2026) for on
 | --- | --- | --- | --- |
 | Today's monthly price sheet (one row per price, all price types as columns) | Full sheet every month | 18.78M | 2.34 GB |
 | SKU Price rows (one row per price type) | Changes only | 4.17M | 0.64 GB |
-| SKU Price rows | Every current row re-sent every month | 45.79M | ~7.5 GB |
+| SKU Price rows | Every current row re-sent every month | 45.79M | ~7.0 GB |
 | Price types as columns (one row per price) | Changes only | 1.79M | 0.33 GB |
-| Price types as columns | Every current row re-sent every month | 18.78M | ~3.7 GB |
+| Price types as columns | Every current row re-sent every month | 18.78M | ~3.5 GB |
 
 Per-month view for SKU Price rows:
 
@@ -61,8 +61,8 @@ Per-month view for SKU Price rows:
 
 ## Findings
 
-* The theory holds. Without UpdatedSince, the SKU Price row layout is about 2.4 times the rows and 3.2 times the size of today's monthly price sheets.
-* With UpdatedSince, the same layout is about 3.7 times smaller than today's price sheets and 12 times smaller than re-sending every row.
+* The theory holds. Without UpdatedSince, the SKU Price row layout is about 2.4 times the rows and 3.0 times the size of today's monthly price sheets.
+* With UpdatedSince, the same layout is about 3.7 times smaller than today's price sheets and 11 times smaller than re-sending every row.
 * Each monthly UpdatedSince delivery is about 4% of a full delivery.
 * Closed prices are about one in five changed rows. An UpdatedSince delivery has to carry them as records with an effective end; otherwise a practitioner cannot tell a removed price from an unchanged one.
 
