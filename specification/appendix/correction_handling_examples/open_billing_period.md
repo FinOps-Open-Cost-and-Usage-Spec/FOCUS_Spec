@@ -35,7 +35,7 @@ CSV Examples:
 
 Note the following details in the example datasets:
 
-* The correction is modeled using either Overwrite or Append mechanisms, as the billing period is still open and invoice has not yet been issued.
+* The correction is modeled using either Overwrite or Additive Append mechanisms, as the billing period is still open and invoice has not yet been issued.
 * Original Dataset includes:
   * A charge record attributed entirely to ResourceId `R-111`.
 * Replacement style correction includes:
@@ -55,7 +55,7 @@ Note the following details in the example datasets:
 
 On July 5th, 2025, CrestNode identified a cost incurred during the current billing period (ChargePeriodStart: `2025-07-01`) that was not included in the initial dataset.
 
-Since the billing period was still open and invoices had not yet been issued, the correction was applied within the same billing period, allowing for more flexible correction mechanisms. To account for the previously omitted usage, CrestNode had the option to use either Overwrite or Append mechanisms, i.e.:
+Since the billing period was still open and invoices had not yet been issued, the correction was applied within the same billing period, allowing for more flexible correction mechanisms. To account for the previously omitted usage, CrestNode had the option to use either Overwrite or Additive Append mechanisms, i.e.:
 
 * Replacement style correction
 * Delta style correction
@@ -72,7 +72,7 @@ CSV Examples:
 Note the following details in the example datasets:
 
 * The original dataset was incomplete and did not capture late-arriving usage and associated cost for July 2025.
-* The correction may be modeled using either Overwrite or Append mechanisms, as the billing period is still open.
+* The correction may be modeled using either Overwrite or Additive Append mechanisms, as the billing period is still open.
 * All three correction styles (Replacement, Delta, and Ledger) introduce a single increment record representing the previously omitted usage and associated cost.
 * The correction record has ChargeClass set to null, indicating that it pertains to an open billing period and is not a retroactive correction to a previously closed billing period.
 * The correction record is assigned to the current billing period (July 2025).
@@ -81,7 +81,7 @@ Note the following details in the example datasets:
 
 On July 5th, 2025, CrestNode detected a minor cost discrepancy caused by accumulated rounding differences across multiple records spanning two distinct SkuPriceId values. While each individual record was correctly rounded, the aggregated cost differed slightly from the precise total, resulting in small drifts.
 
-Since the billing period was still open and invoices had not yet been issued, the correction was applied within the same billing period, allowing for more flexible correction mechanisms. To reconcile this discrepancy, CrestNode had the option to use either Overwrite or Append mechanisms, i.e.:
+Since the billing period was still open and invoices had not yet been issued, the correction was applied within the same billing period, allowing for more flexible correction mechanisms. To reconcile this discrepancy, CrestNode had the option to use either Overwrite or Additive Append mechanisms, i.e.:
 
 * Replacement style correction
 * Delta style correction
@@ -101,7 +101,7 @@ CSV Examples:
 Note the following details in the example datasets:
 
 * The original dataset was complete in terms of usage, but a minor cost discrepancy was identified due to accumulated rounding drift across multiple records spanning two SkuPriceId values.
-* The correction may be modeled using either Overwrite or Append mechanisms, as the billing period is still open.
+* The correction may be modeled using either Overwrite or Additive Append mechanisms, as the billing period is still open.
 * All three correction styles (Replacement, Delta, and Ledger) introduce two itemized increment records representing cost-only adjustments.
 * Each correction record explicitly references the affected SkuPriceId.
 * Each correction record has ChargeClass set to null, indicating that it pertains to an open billing period and is not a retroactive correction to a previously closed billing period.
@@ -112,7 +112,7 @@ Note the following details in the example datasets:
 
 On July 5th, 2025, CrestNode detected a minor cost discrepancy caused by accumulated rounding differences across multiple records spanning two distinct SkuPriceId values. While each individual record was correctly rounded, the aggregated cost differed slightly from the precise total, resulting in small drifts.
 
-Since the billing period was still open and invoices had not yet been issued, the correction was applied within the same billing period, allowing for more flexible correction mechanisms. To reconcile this discrepancy, CrestNode had the option to use either Overwrite or Append mechanisms, i.e.:
+Since the billing period was still open and invoices had not yet been issued, the correction was applied within the same billing period, allowing for more flexible correction mechanisms. To reconcile this discrepancy, CrestNode had the option to use either Overwrite or Additive Append mechanisms, i.e.:
 
 * Replacement style correction
 * Delta style correction
@@ -132,7 +132,7 @@ CSV Examples:
 Note the following details in the example datasets:
 
 * The original dataset was complete in terms of usage, but a minor cost discrepancy was identified due to accumulated rounding drift across multiple records spanning two SkuPriceId values.
-* The correction may be modeled using either Overwrite or Append mechanisms, as the billing period is still open.
+* The correction may be modeled using either Overwrite or Additive Append mechanisms, as the billing period is still open.
 * All three correction styles (Replacement, Delta, and Ledger) introduce a single increment record representing the bulk cost-only adjustment to reconcile the total drift.
 * The correction record does not specify a SkuPriceId, as it spans multiple SKU Price IDs.
 * The correction record has ChargeClass set to null, indicating that it pertains to an open billing period and is not a retroactive correction to a previously closed billing period.
