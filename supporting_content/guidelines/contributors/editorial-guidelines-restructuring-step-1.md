@@ -383,8 +383,6 @@ To ensure consistent language when describing relationships and evaluations betw
 
 ### Column Examples
 
-<!-- added: not in proposal; adapted from working_draft note L300 (ED-SCP-04, removed in proposal); "attribute" changed to "column" -->
-
 #### Pricing Quantity
 
 <!-- added: not in proposal; copy of specification/datasets/cost_and_usage/columns/pricingquantity.md at e9cdcc7; replaces the working_draft worked example (L413-452) -->
