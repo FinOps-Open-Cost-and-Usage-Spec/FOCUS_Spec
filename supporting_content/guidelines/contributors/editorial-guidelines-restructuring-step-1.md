@@ -120,6 +120,12 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 <!-- added: not in proposal; link target part of summary table rows T1.b, T2.c, T5.b (sources of ED-LNK-01) -->
 * **Entity Link Targets:** When a reference to a FOCUS entity (ID or Display Name) is linked, the link MUST point to the section that defines the entity.
 * **Glossary Link Targets:** When a glossary term is linked, the link MUST point to its glossary entry.
+
+<!-- ED-LNK-04 -->
+<!-- exception to the scope of #2847: text from review (PR #2848, jpradocueva), scope sentence reworded; documents specification/tests/test_spec_links.py -->
+* **Internal Links Resolve:** Every internal link (an `#anchor` or a relative path) MUST resolve to an anchor or a file in the built specification. This rule does not apply to external URLs (e.g., `https://`).
+
+<!-- ED-LNK-01 -->
 * **Linking on First Occurrence:** To avoid excessive linking, entity references (including FOCUS entity IDs, display names, and glossary terms) MUST be linked only on their first occurrence within a given source markdown file.
 
   > **Note:** Unless otherwise specified, first-occurrence linking is evaluated relative to the containing source markdown file.
