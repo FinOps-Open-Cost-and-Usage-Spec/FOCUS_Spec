@@ -117,8 +117,7 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 
 ### Linking
 
-<!-- ED-LNK-01 -->
-<!-- added: not in proposal; link target part of summary table rows T1.b, T2.c, T5.b -->
+<!-- added: not in proposal; link target part of summary table rows T1.b, T2.c, T5.b (sources of ED-LNK-01) -->
 * **Entity Link Targets:** When a reference to a FOCUS entity (ID or Display Name) is linked, the link MUST point to the section that defines the entity.
 * **Glossary Link Targets:** When a glossary term is linked, the link MUST point to its glossary entry.
 * **Linking on First Occurrence:** To avoid excessive linking, entity references (including FOCUS entity IDs, display names, and glossary terms) MUST be linked only on their first occurrence within a given source markdown file.
