@@ -138,9 +138,6 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 <!-- ED-LNK-03 -->
 * In the **Glossary** file, entity references MUST be linked only on their first occurrence within each glossary entry, rather than once per source markdown file.
 
-<!-- ED-LNK-04 -->
-<!-- ED-LNK-04: no working_draft source -->
-
 ### Wording
 
 To ensure consistent language when describing relationships and evaluations between values, normative requirements and standard prose MUST use the following terminology:
