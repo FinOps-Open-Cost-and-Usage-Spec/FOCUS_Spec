@@ -384,7 +384,6 @@ To ensure consistent language when describing relationships and evaluations betw
 ### Column Examples
 
 <!-- added: not in proposal; adapted from working_draft note L300 (ED-SCP-04, removed in proposal); "attribute" changed to "column" -->
-> **Note:** Authors should consult the actual FOCUS column specification files as the source of truth, as these guidelines do not necessarily reflect the latest version.
 
 #### Pricing Quantity
 
