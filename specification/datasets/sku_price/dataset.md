@@ -1,6 +1,6 @@
 # SKU Price
 
-> **Preview:** The SKU Price dataset is a preview in this version of FOCUS. Its columns, requirements, and relationships may change in the next version based on implementation feedback. Its requirements are not evaluated for conformance, whether or not the dataset is provided. Two requirements outside the dataset are also excluded from conformance while it is a preview: the [Data Model](#datamodel) requirement to include SKU Price, and the requirement that [Cost and Usage Charge Category](#datamodel.costandusage.chargecategory) match SKU Price Charge Category. The [Includes Purchases](#operatingmodelconditions.includespurchases) and [Includes Quantity Tier Pricing](#operatingmodelconditions.includesquantitytierpricing) operating model conditions and the [SKU Price Eligibility Object Schema](#schemas.skuprice.skupriceeligibilityobjectschema) are part of the preview and may change in the next version without a deprecation notice. [Issue #2768](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2768) tracks the preview.
+> **Preview:** The SKU Price dataset is a preview in this version of FOCUS. Its columns, requirements, and relationships may change in the next version based on implementation feedback. Its requirements are not evaluated for conformance, whether or not the dataset is provided. Two requirements outside the dataset are also excluded from conformance while it is a preview: the [Data Model](#datamodel) requirement to include SKU Price, and the requirement that [Cost and Usage Charge Category](#datamodel.costandusage.chargecategory) match SKU Price Charge Category. The [Includes Context Window Pricing](#operatingmodelconditions.includescontextwindowpricing), [Includes Purchases](#operatingmodelconditions.includespurchases) and [Includes Quantity Tier Pricing](#operatingmodelconditions.includesquantitytierpricing) operating model conditions and the [SKU Price Eligibility Object Schema](#schemas.skuprice.skupriceeligibilityobjectschema) are part of the preview and may change in the next version without a deprecation notice. [Issue #2768](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2768) tracks the preview.
 
 The SKU Price dataset is the primary dataset for standardizing [*service provider*](#glossary:service-provider) catalog rates, multipliers, and negotiated prices. This dataset enables practitioners to perform precise rate lookups, analyze commitment discounts, and understand the cost mechanics of payable and consumable prices.
 
@@ -16,6 +16,8 @@ The columns are presented in alphabetical order.
 | ----------------------------------------------------------------------------------- | ----------- | -------------------------------------------------------------- | ------------ | --------- |
 | [Charge Category](#datamodel.skuprice.chargecategory)                              | Dimension   | Mandatory   | False        | String    |
 | [Commitment Discount Category](#datamodel.skuprice.commitmentdiscountcategory)     | Dimension   | Conditional | True         | String    |
+| [Context Window Maximum](#datamodel.skuprice.contextwindowmaximum)                   | Metric      | Conditional         | True         | Decimal   |
+| [Context Window Minimum](#datamodel.skuprice.contextwindowminimum)                   | Metric      | Conditional         | True         | Decimal   |
 | [Contract ID](#datamodel.skuprice.contractid)                                        | Dimension   | Mandatory                                                      | True         | String    |
 | [Pricing Currency](#datamodel.skuprice.pricingcurrency)                              | Dimension   | Mandatory                                                      | False        | String    |
 | [Pricing Currency Category](#datamodel.skuprice.pricingcurrencycategory)                            | Dimension   | Mandatory                                                      | False        | String    |
@@ -79,6 +81,8 @@ SkuPrice MUST adhere to the following requirements:
 * SkuPrice column presence MUST adhere to the following requirements:
   * SkuPrice MUST include [ChargeCategory](#datamodel.skuprice.chargecategory).
   * SkuPrice MUST include [CommitmentDiscountCategory](#datamodel.skuprice.commitmentdiscountcategory) when the *operating model* [includes commitment discounts](#operatingmodelconditions.includescommitmentdiscounts).  
+  * SkuPrice MUST include [ContextWindowMaximum](#datamodel.skuprice.contextwindowmaximum) when the *operating model* [includes context-window pricing](#operatingmodelconditions.includescontextwindowpricing).
+  * SkuPrice MUST include [ContextWindowMinimum](#datamodel.skuprice.contextwindowminimum) when the *operating model* includes context-window pricing.
   * SkuPrice MUST include [ContractId](#datamodel.skuprice.contractid).
   * SkuPrice MUST include [PricingCurrency](#datamodel.skuprice.pricingcurrency).
   * SkuPrice MUST include [PricingCurrencyCategory](#datamodel.skuprice.pricingcurrencycategory).
