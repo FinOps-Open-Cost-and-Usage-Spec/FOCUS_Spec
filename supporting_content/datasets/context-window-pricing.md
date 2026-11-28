@@ -2,58 +2,56 @@
 
 This document records design intent and is not normative.
 
-Background for [FR #2521](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2521). Some service providers price an AI model differently depending on how many input tokens a single request consumes. A charge and a catalog record both need to identify the input-token range for which a SKU Price applies. That range is not the maximum context length of the model, the observed length of a request, a quantity tier measured in the Pricing Unit, or a token direction or cache action.
+Background for FR [#2521](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2521). Some service providers price an AI model differently depending on how many input tokens a single request consumes. A charge needs to identify the context-window pricing tier to which its SKU Price applies. That tier is not the maximum context length of the model, the observed length of a request, a quantity tier measured in the Pricing Unit, or a token direction or cache action.
 
-This note is self-contained. A 24-model inventory, as of November 3, is in the [November 3 inventory comment](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2521#issuecomment-6611147187). Published threshold wording is in the [November 4 boundary-wording comment](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2521#issuecomment-6633163337) on [FR #2521](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2521).
+This note is self-contained. A 24-model inventory, as of November 3, is in the [November 3 inventory comment](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2521#issuecomment-6611147187). Published threshold wording is in the [November 4 boundary-wording comment](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2521#issuecomment-6633163337) on FR [#2521](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2521).
 
 ## Placements considered
 
 * Provider-specific `x_` keys in SKU Price Details. No change to the specification, but no cross-provider query.
-* FOCUS-defined ContextWindowMinimum and ContextWindowMaximum properties in SKU Price Details on Cost and Usage. Each charge carries its range without a catalog join.
-* Named Context Window Minimum and Context Window Maximum columns in the SKU Price dataset. The catalog carries the range as named fields.
-* Carrying the bounds in both places, sharing one definition. When a provider delivers both the Cost and Usage dataset and the SKU Price dataset, the provider fills in the same bounds in both. Practitioners read whichever dataset they use.
+* A FOCUS-defined ContextWindow property in SKU Price Details on Cost and Usage. Each charge carries the tier label without a catalog join.
+* A named column in the SKU Price dataset, delivered in a separate pull request.
 
-Task Force 1 discussed this on November 10, and carrying the bounds in both places is the direction for now; see the [November 10 Task Force 1 record](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2521#issuecomment-6780497157). The SKU Price dataset is still a preview, and some providers and practitioners do not yet use it, so the design supports both the properties on Cost and Usage, which is generally available, and the columns in SKU Price. The two representations are intended to carry the same values: ContextWindowMinimum and ContextWindowMaximum represent the same bounds on both sides. This note does not add a requirement that they be equal. It records that baseline: the shared definition, the boundary convention, the same-values intent, and the worked-example framing. The properties are specified in SKU Price Details and the columns in the SKU Price dataset. That direction does not settle the exact key names, the inclusion level, or release status.
+## Direction
 
-## Shared definition
+Task Force 1 discussed this on November 10 and November 24. On November 24 the group agreed to replace the two numeric bounds with one String property that holds what the service provider calls the tier, such as "long" or a token range as the provider writes it. See the [November 24 Task Force 1 record](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2521#issuecomment-7145099005).
 
-ContextWindowMinimum is the exclusive lower bound, and ContextWindowMaximum the inclusive upper bound, of the input tokens consumed from a single request, as counted by the service provider toward the threshold in its pricing terms, for which the SKU Price applies. When the service provider counts cached input tokens toward that threshold, the count includes them. Every price in a tier (input, output, cache read, and cache write) carries the same range, because the tier is selected by the request's input size rather than by the tokens a given meter counts.
+Two observations drove the change:
 
-The range is assigned per request, before aggregation. A Cost and Usage row aggregates tokens from many requests over a charge period, so the tier of a row cannot be recovered from [ConsumedQuantity](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/12770c1a7a0b1c84ba5ec24b87eea708bedb9897/specification/datasets/cost_and_usage/columns/consumedquantity.md) or PricingQuantity.
+* A Cost and Usage row aggregates many requests over a charge period, so a numeric bound cannot be checked against the token quantity on the row.
+* Some service providers label a tier only in words (e.g., "long context") and publish no token numbers, so a numeric bound cannot be filled in for them.
 
-## Boundary convention
+## Definition
 
-The definition uses an exclusive minimum and an inclusive maximum, the convention of [Quantity Tier Minimum](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/12770c1a7a0b1c84ba5ec24b87eea708bedb9897/specification/datasets/sku_price/columns/quantitytierminimum.md) and [Quantity Tier Maximum](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/12770c1a7a0b1c84ba5ec24b87eea708bedb9897/specification/datasets/sku_price/columns/quantitytiermaximum.md). A request falls in a tier when its input token count is strictly greater than ContextWindowMinimum and, when ContextWindowMaximum is not null, less than or equal to ContextWindowMaximum. Adjacent tiers meet at a shared boundary value with no gap or overlap.
+ContextWindow is the label or range text the service provider uses for the context-window pricing tier to which the SKU Price applies. The value is defined by the service provider and is not normalized, so values are not comparable across service providers. The tier is selected by the input tokens a single request consumes, as the service provider counts them toward the threshold in its pricing terms. Every price in a tier (input, output, cache read, and cache write) carries the same label, because the tier is selected by the request's input size rather than by the tokens a given meter counts.
 
-Providers word their thresholds differently. Token counts are whole numbers, so an inclusive starting threshold ("128,000 tokens and above") converts to an exclusive minimum one token below it (127999), while an exclusive threshold ("over 200,000") converts directly (200000). The data generator makes the conversion once, so a practitioner applies one comparison to every provider. A per-bound inclusivity flag was considered and not proposed, because every consumer query would then have to handle each combination.
+The property is a String. It states no numeric bounds, so it carries no boundary convention, and the tier of a row is not recoverable from [ConsumedQuantity](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/12770c1a7a0b1c84ba5ec24b87eea708bedb9897/specification/datasets/cost_and_usage/columns/consumedquantity.md) or PricingQuantity.
 
-When the price does not depend on context-window size, the qualifier is absent: the properties omit both keys, and the columns are null. That case is not represented as a tier from 0 to null. An unbounded top tier has a non-null minimum and a null maximum.
+When the price does not depend on context-window size, the property is omitted. Because null is not a label, the property is omitted rather than set to null.
+
+## Name
+
+The name is a bare concept name with no reserved suffix, as with SkuMeter, StorageClass, ModelFamily, and InstanceSeries, which are open, provider-defined strings. FOCUS Column Handling reserves the "Category" suffix for normalized values and requires the "Name" suffix for a column that represents a name, so neither fits a label or range text. The name also avoids the "Type" suffix, which FOCUS uses for provider values that sit under a normalized category, and "Tier", which ProcessingTier in PR [#2873](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pull/2873) uses for a value with FOCUS-defined allowed values.
 
 ## Worked-example framing
 
-The worked examples use two fictitious service providers and fictitious round prices. Solora AI publishes an exclusive threshold ("over 200,000"). Meridian AI publishes an inclusive threshold ("128,000 and above"). Solora General is a price that does not depend on context-window size. Each tier of each token meter has its own SkuPriceId, and the example identifiers are uppercase, for example `SOLORA-REASONING-PRO-INPUT-0-200000`. This naming is illustrative and is not required by FOCUS.
+The worked examples use two fictitious service providers and fictitious round prices. Solora AI labels its tiers with words ("Short context" and "Long context"). Meridian AI labels its tiers with range text ("Below 128,000 input tokens" and "128,000 input tokens and above"). Solora General is a price that does not depend on context-window size, so its rows omit the property. Each tier of each token meter has its own SkuPriceId, and the example identifiers are uppercase, for example `SOLORA-REASONING-PRO-INPUT-SHORT`. This naming is illustrative and is not required by FOCUS.
 
-| Service provider | Published threshold | Request size | ContextWindowMinimum | ContextWindowMaximum |
-| :--- | :--- | :--- | ---: | ---: |
-| Solora AI | "Over 200,000" | Up to and including 200,000 | 0 | 200000 |
-| Solora AI | "Over 200,000" | Above 200,000 | 200000 | *null* |
-| Meridian AI | "128,000 and above" | Below 128,000 | 0 | 127999 |
-| Meridian AI | "128,000 and above" | 128,000 and above | 127999 | *null* |
-
-A request of exactly 200,000 input tokens falls in the Solora AI standard tier. A request of exactly 128,000 input tokens falls in the Meridian AI long-context tier.
+| Service provider | Published tier | ContextWindow |
+| :--- | :--- | :--- |
+| Solora AI | Shorter requests | "Short context" |
+| Solora AI | Longer requests | "Long context" |
+| Meridian AI | Requests below 128,000 input tokens | "Below 128,000 input tokens" |
+| Meridian AI | Requests of 128,000 input tokens and above | "128,000 input tokens and above" |
 
 ## Open questions
 
-* **Zero input tokens.** With an exclusive minimum of 0, a request with zero input tokens falls in no tier. Whether any provider bills such a request has not been established.
 * **Full-session wording.** Some provider pages describe the threshold as applying to a full session rather than a request. A session is not assumed to equal one request.
-* **Inclusion level, explicit null, and key names.** Whether the properties use recommended inclusion of both keys (the inclusion level of the other FOCUS-defined SKU Price Details properties) and an explicit JSON null for an unbounded maximum, along with the exact key names, is addressed in the properties pull request. Because inclusion is recommended rather than required, an omitted ContextWindowMaximum cannot by itself signal a tier with no upper limit, which is why an unbounded maximum is an explicit null rather than an omitted key.
-* **Boundary convention.** Whether to keep the exclusive-minimum, inclusive-maximum convention and state that the bounds are whole numbers, or to adopt an inclusive-minimum, exclusive-maximum convention. Either way, one form of published threshold wording is converted.
-* **Release status.** Whether the properties enter 1.6 as a Cost and Usage change, and how the preview SKU Price columns are classified, is addressed in the properties pull request and the columns pull request.
 * **Inference providers.** Whether an inference provider that serves another provider's model, or an open-weight model, follows the same context-window tiers.
+* **Release status.** Whether the property enters 1.6 as a Cost and Usage change, and how the preview SKU Price columns are classified, is addressed in the properties pull request and the columns pull request.
 
 ## Reference
 
-* [FR #2521](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2521) and the [November 10 Task Force 1 record](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2521#issuecomment-6780497157)
-* [PR #2442](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pull/2442) and [PR #2606](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pull/2606), for the SKU Price Details property pattern
-* [PR #2424](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pull/2424), for the SKU Price dataset and the quantity-tier boundary convention
-* [SKU Price Details](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/12770c1a7a0b1c84ba5ec24b87eea708bedb9897/specification/datasets/cost_and_usage/columns/skupricedetails.md), [Quantity Tier Minimum](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/12770c1a7a0b1c84ba5ec24b87eea708bedb9897/specification/datasets/sku_price/columns/quantitytierminimum.md), [Quantity Tier Maximum](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/12770c1a7a0b1c84ba5ec24b87eea708bedb9897/specification/datasets/sku_price/columns/quantitytiermaximum.md), [Null Handling](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/12770c1a7a0b1c84ba5ec24b87eea708bedb9897/specification/attributes/null_handling.md), and [Numeric Format](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/12770c1a7a0b1c84ba5ec24b87eea708bedb9897/specification/attributes/numeric_format.md)
+* FR [#2521](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2521), the [November 10 Task Force 1 record](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2521#issuecomment-6780497157), and the [November 24 Task Force 1 record](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/2521#issuecomment-7145099005)
+* PR [#2442](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pull/2442) and PR [#2606](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pull/2606), for the SKU Price Details property pattern
+* [SKU Price Details](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/12770c1a7a0b1c84ba5ec24b87eea708bedb9897/specification/datasets/cost_and_usage/columns/skupricedetails.md)
